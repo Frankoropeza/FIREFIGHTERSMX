@@ -1,0 +1,70 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Nosotros — FIREFIGHTERS MX"
+  description="Conoce FIREFIGHTERS MX, el portal líder en equipos para bomberos en México. Más de 15 años especializados, 500+ estaciones equipadas, cobertura en los 32 estados."
+>
+  <!-- HERO -->
+  <section class="bg-gradient-fire py-20 md:py-28">
+    <div class="container-site text-center text-white">
+      <p class="section-eyebrow text-fire-300 mb-3">Nuestra Historia</p>
+      <h1 class="section-title text-white mb-6">El Portal Líder de Equipos para Bomberos en México</h1>
+      <p class="section-subtitle text-fire-200 mx-auto">
+        Más de 15 años dedicados a equipar y proteger a quienes nos protegen.
+        Distribuidores autorizados de las marcas más confiables del mundo.
+      </p>
+    </div>
+  </section>
+
+  <!-- MISIÓN, VISIÓN, VALORES -->
+  <section class="section bg-white">
+    <div class="container-site grid md:grid-cols-3 gap-8">
+      {[
+        { icon: "🎯", title: "Misión", text: "Ser el proveedor integral más confiable de equipos para bomberos y sistemas contra incendio en México, garantizando que cada héroe tenga el equipo certificado que merece." },
+        { icon: "🔭", title: "Visión", text: "Convertirnos en el portal de referencia iberoamericano del sector bomberos para 2028, expandiendo nuestra cobertura hacia Centroamérica y siendo fuente de autoridad técnica para la industria." },
+        { icon: "💎", title: "Valores", text: "Seguridad ante todo. Honestidad técnica. Servicio de excelencia. Compromiso con la vida. Innovación constante. Respeto a las normas." },
+      ].map((item) => (
+        <div class="card-fire p-8 text-center flex flex-col items-center gap-4">
+          <span class="text-4xl">{item.icon}</span>
+          <h2 class="font-heading font-bold text-xl text-dark-900">{item.title}</h2>
+          <p class="text-dark-500 text-sm leading-relaxed">{item.text}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- TRAYECTORIA -->
+  <section class="section bg-dark-50">
+    <div class="container-site max-w-3xl">
+      <h2 class="section-title text-center mb-12">Por Qué Elegirnos</h2>
+      <div class="flex flex-col gap-6">
+        {[
+          { year: "15+", title: "Años de especialización", desc: "Más de una década y media en el sector bomberos, protección civil e industria." },
+          { year: "500+", title: "Estaciones equipadas", desc: "Desde cuerpos municipales con presupuesto ajustado hasta brigadas de PEMEX y CFE." },
+          { year: "32", title: "Estados con cobertura", desc: "Red de distribuidores y logística para envíos a toda la República Mexicana." },
+          { year: "100%", title: "Productos certificados", desc: "Todos los equipos cumplen con NFPA, NOM-002 y normativa STPS vigente." },
+        ].map((item) => (
+          <div class="flex gap-6 items-start">
+            <div class="w-20 shrink-0 text-3xl font-heading font-black text-fire-700 text-right">{item.year}</div>
+            <div class="border-l-2 border-fire-200 pl-6">
+              <h3 class="font-bold text-dark-900 mb-1">{item.title}</h3>
+              <p class="text-dark-500 text-sm">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section bg-gradient-fire">
+    <div class="container-site text-center text-white">
+      <h2 class="font-heading font-black text-3xl md:text-4xl mb-6">¿Listo para equiparte con los mejores?</h2>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/cotizacion" class="btn-gold btn-lg">Solicitar cotización</a>
+        <a href="/contacto" class="btn bg-white/10 border-2 border-white text-white hover:bg-white/20 btn-lg">Contáctanos</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

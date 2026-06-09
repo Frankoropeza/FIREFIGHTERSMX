@@ -1,0 +1,402 @@
+/* ================================================================
+   FIREFIGHTERS MX — Design System v2  "FORGE & PROTECT"
+   Concepto: Navy profundo · Naranja eléctrico · Técnico / Angular
+   Fonts: Rajdhani (display) · Sora (body)
+   ================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ================================================================
+   DESIGN TOKENS
+   ================================================================ */
+:root {
+  /* Core palette — Navy + Electric Orange */
+  --forge-900:   #040A12;
+  --forge-800:   #070E1A;
+  --forge-700:   #0C1825;
+  --forge-600:   #122133;
+  --forge-500:   #1A2E44;
+  --forge-400:   #2C4A63;
+  --forge-300:   #4A7599;
+  --forge-200:   #7AA4C4;
+  --forge-100:   #B8D4E8;
+  --forge-50:    #E8F2F9;
+
+  /* Electric orange */
+  --ember-600:   #C43D00;
+  --ember-500:   #F75000;
+  --ember-400:   #FF6B26;
+  --ember-300:   #FF8F57;
+  --ember-100:   #FFE5D9;
+
+  /* Amber accent */
+  --gold-500:    #F5A623;
+  --gold-100:    #FEF3D0;
+
+  /* Neutros fríos */
+  --slate-900:   #0F172A;
+  --slate-700:   #334155;
+  --slate-500:   #64748B;
+  --slate-400:   #94A3B8;
+  --slate-300:   #B0BEC5;
+  --slate-200:   #CBD5E1;
+  --slate-100:   #E2E8F0;
+  --slate-50:    #F8FAFC;
+
+  /* Semánticos */
+  --color-bg:      var(--forge-900);
+  --color-surface: var(--forge-700);
+  --color-border:  rgba(74,117,153,0.25);
+  --color-accent:  var(--ember-500);
+  --color-accent2: var(--gold-500);
+  --color-text:    var(--slate-200);
+  --color-muted:   var(--forge-300);
+  --color-paper:   #FFFFFF;
+
+  /* Alias backward-compat */
+  --color-fire-red:      var(--ember-500);
+  --color-fire-red-dark: var(--ember-600);
+  --color-ink-900:       #FFFFFF;
+  --color-ink-700:       var(--slate-200);
+  --color-ink-600:       var(--slate-400);
+  --color-ink-400:       var(--forge-200);
+  --color-ink-200:       rgba(74,117,153,0.2);
+  --color-ink-100:       rgba(74,117,153,0.1);
+  --color-ink-50:        rgba(74,117,153,0.05);
+  --color-success:       #34D399;
+  --color-success-bg:    rgba(52,211,153,0.1);
+
+  /* Tipografías */
+  --font-sans:    'Sora', system-ui, -apple-system, sans-serif;
+  --font-display: 'Rajdhani', 'Sora', system-ui, sans-serif;
+  --font-mono:    ui-monospace, 'JetBrains Mono', monospace;
+
+  /* Radios angulares */
+  --radius-card: 0.25rem;
+  --radius-btn:  0.25rem;
+
+  /* Sombras */
+  --shadow-glow:       0 0 40px rgba(247,80,0,0.18);
+  --shadow-card:       0 1px 3px rgba(4,10,18,0.6), 0 4px 16px rgba(4,10,18,0.4);
+  --shadow-card-hover: 0 0 0 1px rgba(247,80,0,0.5), 0 8px 32px rgba(4,10,18,0.6);
+
+  /* Layout */
+  --container-max:     1600px;
+  --container-padding: 1.25rem;
+  --header-height:     72px;
+}
+
+/* ================================================================
+   RESET + BASE
+   ================================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
+  font-family: var(--font-sans);
+  -webkit-text-size-adjust: 100%;
+  background-color: var(--forge-900);
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--forge-900);
+  color: var(--slate-200);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  line-height: 1.65;
+}
+
+img, video, svg { max-width: 100%; height: auto; display: block; }
+
+::selection { background-color: var(--ember-500); color: #fff; }
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    line-height: 1.05;
+    color: #FFFFFF;
+  }
+  h1 { font-size: clamp(2.5rem, 6vw, 5rem); }
+  h2 { font-size: clamp(2rem, 3.5vw, 3rem); }
+  h3 { font-size: clamp(1.375rem, 2vw, 1.875rem); }
+  h4 { font-size: clamp(1.125rem, 1.5vw, 1.375rem); }
+  a  { color: inherit; text-decoration: none; transition: color 0.15s ease; }
+  p  { line-height: 1.75; }
+}
+
+/* ================================================================
+   CONTAINER + SECTION
+   ================================================================ */
+.container-site {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+@media (min-width: 768px)  { .container-site { padding-inline: 2rem; } }
+@media (min-width: 1024px) { .container-site { padding-inline: 3rem; } }
+@media (min-width: 1280px) { .container-site { padding-inline: 4rem; } }
+@media (min-width: 1600px) { .container-site { padding-inline: 5rem; } }
+
+.section       { padding-block: 5rem; position: relative; }
+.section-tight { padding-block: 3rem; }
+.section-wide  { padding-block: 7rem; }
+
+/* ================================================================
+   EYEBROW
+   ================================================================ */
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.75rem;
+  background-color: rgba(247,80,0,0.1);
+  color: var(--ember-400);
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid rgba(247,80,0,0.28);
+  border-radius: 2px;
+}
+
+/* ================================================================
+   BUTTONS
+   ================================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  border-radius: var(--radius-btn);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: 1px solid transparent;
+  min-height: 48px;
+  white-space: nowrap;
+}
+.btn-lg { padding: 1.125rem 2.25rem; font-size: 1.0625rem; min-height: 56px; }
+.btn-sm { padding: 0.5rem 1rem; font-size: 0.8125rem; min-height: 36px; }
+
+.btn-primary {
+  background-color: var(--ember-500);
+  color: #fff;
+  border-color: var(--ember-500);
+}
+.btn-primary:hover {
+  background-color: var(--ember-400);
+  border-color: var(--ember-400);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(247,80,0,0.4);
+}
+.btn-dark {
+  background-color: var(--forge-500);
+  color: #fff;
+  border-color: var(--forge-400);
+}
+.btn-dark:hover {
+  background-color: var(--forge-400);
+  border-color: var(--ember-500);
+}
+.btn-ghost {
+  background-color: transparent;
+  color: #fff;
+  border-color: rgba(255,255,255,0.22);
+}
+.btn-ghost:hover {
+  background-color: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.5);
+}
+.btn-outline {
+  background-color: transparent;
+  color: var(--ember-400);
+  border-color: var(--ember-500);
+}
+.btn-outline:hover {
+  background-color: var(--ember-500);
+  color: #fff;
+}
+.btn-whatsapp {
+  background-color: #25d366;
+  color: #fff;
+  border-color: #25d366;
+}
+.btn-whatsapp:hover {
+  background-color: #1fc45b;
+  transform: translateY(-1px);
+}
+.btn-mobile-full { width: 100%; }
+@media (min-width: 640px) { .btn-mobile-full { width: auto; } }
+
+/* ================================================================
+   CARDS
+   ================================================================ */
+.card {
+  background-color: var(--forge-700);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  transition: all 0.22s ease;
+}
+.card:hover {
+  border-color: var(--ember-500);
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-3px);
+}
+.card-fire {
+  background-color: var(--forge-700);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  transition: all 0.22s ease;
+}
+.card-fire:hover {
+  border-color: var(--ember-500);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* ================================================================
+   BADGES
+   ================================================================ */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+  font-family: var(--font-display);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.badge-fire  { background-color: rgba(247,80,0,0.15); color: var(--ember-400); border: 1px solid rgba(247,80,0,0.3); }
+.badge-dark  { background-color: var(--forge-600); color: var(--slate-300); border: 1px solid var(--forge-400); }
+.badge-gold  { background-color: rgba(245,166,35,0.15); color: var(--gold-500); border: 1px solid rgba(245,166,35,0.3); }
+.badge-green { background-color: rgba(52,211,153,0.1); color: #34D399; border: 1px solid rgba(52,211,153,0.25); }
+
+/* ================================================================
+   FORM ELEMENTS
+   ================================================================ */
+.input, .select, .textarea {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--forge-400);
+  border-radius: var(--radius-btn);
+  background-color: var(--forge-700);
+  color: var(--slate-100);
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.input::placeholder, .textarea::placeholder { color: var(--forge-300); }
+.input:focus, .select:focus, .textarea:focus {
+  outline: none;
+  border-color: var(--ember-500);
+  box-shadow: 0 0 0 3px rgba(247,80,0,0.15);
+}
+.label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--slate-300);
+  margin-bottom: 0.375rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ================================================================
+   ACCENT LINE
+   ================================================================ */
+.accent-line {
+  display: block;
+  width: 3rem;
+  height: 3px;
+  background: linear-gradient(90deg, var(--ember-500), var(--gold-500));
+  border-radius: 2px;
+}
+
+/* ================================================================
+   REVEAL ANIMATIONS — sólo activas cuando JS cargó
+   ================================================================ */
+.js-ready .reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s cubic-bezier(0.22,1,0.36,1), transform 0.5s cubic-bezier(0.22,1,0.36,1);
+}
+.js-ready .reveal.in-view { opacity: 1; transform: translateY(0); }
+.js-ready .reveal-left { opacity: 0; transform: translateX(-20px); transition: opacity 0.5s cubic-bezier(0.22,1,0.36,1), transform 0.5s cubic-bezier(0.22,1,0.36,1); }
+.js-ready .reveal-left.in-view { opacity: 1; transform: translateX(0); }
+.reveal-delay-1 { transition-delay: 0.06s; }
+.reveal-delay-2 { transition-delay: 0.12s; }
+.reveal-delay-3 { transition-delay: 0.18s; }
+.reveal-delay-4 { transition-delay: 0.24s; }
+.reveal-delay-5 { transition-delay: 0.30s; }
+
+/* ================================================================
+   MARQUEE
+   ================================================================ */
+.marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ================================================================
+   FAQ
+   ================================================================ */
+details.faq-item summary { list-style: none; cursor: pointer; }
+details.faq-item summary::-webkit-details-marker { display: none; }
+details.faq-item[open] .faq-icon { transform: rotate(45deg); }
+
+/* ================================================================
+   TEXTURA SUTIL
+   ================================================================ */
+.texture-scan {
+  background-image: repeating-linear-gradient(
+    0deg, transparent, transparent 2px,
+    rgba(255,255,255,0.012) 2px, rgba(255,255,255,0.012) 4px
+  );
+}
+
+/* ================================================================
+   UTILITIES
+   ================================================================ */
+.text-balance  { text-wrap: balance; }
+.font-display  { font-family: var(--font-display); }
+.text-accent   { color: var(--ember-500); }
+.text-accent2  { color: var(--gold-500); }
+.text-muted    { color: var(--forge-300); }
+.bg-surface    { background-color: var(--forge-700); }
+.bg-deep       { background-color: var(--forge-800); }
+
+/* WhatsApp float */
+.wa-float { position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 90; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--forge-800); }
+::-webkit-scrollbar-thumb { background: var(--forge-400); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--ember-500); }

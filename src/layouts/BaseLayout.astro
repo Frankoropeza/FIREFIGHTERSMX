@@ -1,0 +1,105 @@
+---
+import '../styles/global.css';
+import Header from '@components/common/Header.astro';
+import Footer from '@components/common/Footer.astro';
+import SEO from '@components/common/SEO.astro';
+import WhatsAppButton from '@components/common/WhatsAppButton.astro';
+
+export interface Props {
+  title: string;
+  description: string;
+  canonicalURL?: string;
+  ogImage?: string;
+  ogType?: 'website' | 'article' | 'product';
+  noindex?: boolean;
+  schema?: object | object[];
+}
+
+const {
+  title,
+  description,
+  canonicalURL = Astro.url.href,
+  ogImage = '/images/og-default.jpg',
+  ogType = 'website',
+  noindex = false,
+  schema,
+} = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="es-MX" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- SEO Component -->
+    <SEO
+      title={title}
+      description={description}
+      canonicalURL={canonicalURL}
+      ogImage={ogImage}
+      ogType={ogType}
+      noindex={noindex}
+      schema={schema}
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#C0392B" />
+
+    <!-- Slot for extra head content -->
+    <slot name="head" />
+  </head>
+  <body class="min-h-screen flex flex-col" style="background-color:#040A12;color:#CBD5E1">
+    <!-- Skip to main content (accesibilidad) -->
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-50
+             btn-primary py-2 px-4 rounded-lg text-sm font-semibold"
+    >
+      Ir al contenido principal
+    </a>
+
+    <!-- Header -->
+    <Header />
+
+    <!-- Main Content -->
+    <main id="main-content" class="flex-1">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <Footer />
+
+    <!-- WhatsApp Floating Button -->
+    <WhatsAppButton />
+
+    <!-- Reveal on scroll global -->
+    <script>
+      document.documentElement.classList.add('js-ready');
+      const revealObs = new IntersectionObserver(
+        (entries) => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); revealObs.unobserve(e.target); } }),
+        { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
+      );
+      document.querySelectorAll('.reveal, .reveal-left').forEach(el => revealObs.observe(el));
+    </script>
+
+    <!-- Analytics (carga diferida) -->
+    <slot name="analytics" />
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+        height="0" width="0"
+        style="display:none;visibility:hidden"
+      ></iframe>
+    </noscript>
+  </body>
+</html>

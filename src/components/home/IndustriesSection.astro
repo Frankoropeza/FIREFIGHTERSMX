@@ -1,0 +1,76 @@
+---
+const industries = [
+  { slug: 'bomberos-municipales', name: 'Bomberos Municipales', tagline: 'Equipamiento integral y soporte para licitaciones CompraNet', icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20h.01M7 20v-4a5 5 0 0 1 10 0v4M22 20h-5"/><path d="M17 20v-2.5a2.5 2.5 0 0 0-2.5-2.5h-5A2.5 2.5 0 0 0 7 17.5V20"/><path d="M12 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>`, color: '#F75000' },
+  { slug: 'brigadas-industriales', name: 'Brigadas Industriales', tagline: 'NOM-002-STPS llave en mano: equipo + capacitación DC-3', icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>`, color: '#F5A623' },
+  { slug: 'aeropuertos-arff', name: 'Aeropuertos ARFF', tagline: 'Trajes de proximidad, SCBA 60 min y espuma AFFF', icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21 4 19 4s-2 1-3.5 2.5L11 8 2.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 3.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>`, color: '#F75000' },
+  { slug: 'hospitales', name: 'Hospitales y Salud', tagline: 'Agentes limpios FM-200, alarmas y brigada certificada', icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`, color: '#34D399' },
+  { slug: 'refinerias-pemex', name: 'Refinerías PEMEX', tagline: 'HAZMAT Nivel A/B, SCBA 60 min, detectores ATEX', icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`, color: '#F75000' },
+  { slug: 'hoteles', name: 'Hoteles y Turismo', tagline: 'Rociadores NFPA 13, alarmas de voz y brigada', icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 9V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4"/><path d="M2 13h20"/><path d="M5 13v8M19 13v8"/></svg>`, color: '#F5A623' },
+  { slug: 'mineria', name: 'Minería', tagline: 'SCBA espacios confinados, detectores multi-gas NOM-032', icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`, color: '#F75000' },
+  { slug: 'proteccion-civil', name: 'Protección Civil', tagline: 'Equipamiento y capacitación NFPA para PC estatal y municipal', icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`, color: '#34D399' },
+];
+---
+
+<section style="background:#040A12;padding-block:5rem" aria-label="Sectores que atendemos">
+
+  <!-- Header -->
+  <div class="container-site mb-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end">
+      <div>
+        <span class="section-eyebrow mb-4 inline-flex">Sectores</span>
+        <h2 class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          Equipamos a quienes<br/>
+          <span style="color:#F75000">responden ante emergencias.</span>
+        </h2>
+      </div>
+      <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+        <p class="text-sm leading-relaxed mb-3" style="color:#94A3B8">
+          Más de 15 años atendiendo todo tipo de operación: desde brigadas internas
+          de empresas hasta cuerpos de bomberos estatales y plantas petroquímicas.
+        </p>
+        <p class="text-sm leading-relaxed" style="color:#94A3B8">
+          Cada sector tiene normas, presupuestos y calendarios distintos.
+          Te asignamos un ejecutivo que ya equipó proyectos similares al tuyo.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Grid full-width -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style="border-top:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">
+    {industries.map((ind) => (
+      <a
+        href={`/industrias/${ind.slug}`}
+        class="group relative flex flex-col gap-4 p-7 transition-all duration-200"
+        style="background:#0C1825;border-right:1px solid rgba(74,117,153,0.18);border-bottom:1px solid rgba(74,117,153,0.18)"
+        onmouseover="this.style.background='#122133'"
+        onmouseout="this.style.background='#0C1825'"
+      >
+        <!-- Accent bar left -->
+        <div class="absolute left-0 top-0 bottom-0 w-[3px] opacity-0 group-hover:opacity-100 transition-opacity" style={`background:${ind.color}`}></div>
+
+        <!-- Ícono -->
+        <div class="w-10 h-10 flex items-center justify-center shrink-0" style={`border:1px solid rgba(74,117,153,0.3);color:${ind.color}`}>
+          <span class="w-5 h-5 block" set:html={ind.icon}/>
+        </div>
+
+        <!-- Título + tagline -->
+        <div class="flex flex-col gap-1.5 flex-1">
+          <h3 class="font-display font-bold transition-colors" style="font-size:1.2rem;color:#FFFFFF;line-height:1.1">
+            {ind.name}
+          </h3>
+          <p class="text-xs leading-relaxed" style="color:#64748B">{ind.tagline}</p>
+        </div>
+
+        <!-- CTA -->
+        <div class="flex items-center gap-1.5 text-xs font-display font-semibold uppercase tracking-wider transition-colors group-hover:text-[#FF6B26]" style="color:#4A7599;letter-spacing:0.1em">
+          Ver soluciones
+          <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
+          </svg>
+        </div>
+      </a>
+    ))}
+  </div>
+
+</section>

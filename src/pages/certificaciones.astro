@@ -1,0 +1,41 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Certificaciones NFPA y NOM — FIREFIGHTERS MX"
+  description="Todos los productos de FIREFIGHTERS MX están certificados bajo normas NFPA, NOM-002 STPS y estándares internacionales de seguridad para bomberos y protección civil."
+>
+  <section class="bg-gradient-fire py-20">
+    <div class="container-site text-center text-white">
+      <h1 class="section-title text-white mb-6">Certificaciones y Normas</h1>
+      <p class="section-subtitle text-fire-200 mx-auto">
+        Todos nuestros productos y servicios cumplen con los más altos estándares
+        nacionales e internacionales de seguridad.
+      </p>
+    </div>
+  </section>
+
+  <section class="section bg-white">
+    <div class="container-site">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {[
+          { norm: "NFPA 1971", title: "Trajes de Protección Estructural", desc: "Standard on Protective Ensembles for Structural Fire Fighting and Proximity Fire Fighting." },
+          { norm: "NFPA 1977", title: "Trajes para Incendios Forestales", desc: "Standard on Protective Clothing and Equipment for Wildland Fire Fighting." },
+          { norm: "NFPA 1981", title: "Equipos SCBA", desc: "Standard on Open-Circuit Self-Contained Breathing Apparatus for Emergency Services." },
+          { norm: "NFPA 1991/1992", title: "Trajes HAZMAT", desc: "Equipos de protección para materiales peligrosos, Nivel A y Nivel B." },
+          { norm: "NFPA 13", title: "Sistemas de Rociadores", desc: "Standard for the Installation of Sprinkler Systems." },
+          { norm: "NFPA 72", title: "Sistemas de Alarma", desc: "National Fire Alarm and Signaling Code." },
+          { norm: "NOM-002-STPS-2010", title: "Norma Mexicana Principal", desc: "Condiciones de seguridad, prevención y protección contra incendios en centros de trabajo." },
+          { norm: "NOM-100-SCFI", title: "Extintores Portátiles", desc: "Seguridad y métodos de prueba para extintores portátiles en México." },
+          { norm: "ISO 9001", title: "Sistema de Gestión de Calidad", desc: "Certificación internacional de calidad en procesos de manufactura y servicio." },
+        ].map((cert) => (
+          <div class="card-fire p-6">
+            <span class="badge-fire mb-4 inline-block">{cert.norm}</span>
+            <h3 class="font-heading font-bold text-dark-900 mb-3">{cert.title}</h3>
+            <p class="text-dark-500 text-sm leading-relaxed">{cert.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

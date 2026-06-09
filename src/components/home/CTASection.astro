@@ -1,0 +1,145 @@
+---
+const ctaFeatures = [
+  { icon: '📋', text: 'Fichas técnicas para licitaciones' },
+  { icon: '🚚', text: 'Envío a los 32 estados' },
+  { icon: '🎓', text: 'Capacitación y certificación' },
+  { icon: '🛠️', text: 'Mantenimiento y recarga' },
+];
+---
+
+<section class="section bg-dark-800" aria-label="Contacto y cotización">
+  <div class="container-site">
+    <div class="bg-gradient-to-br from-fire-800 to-fire-900 rounded-3xl overflow-hidden">
+      <div class="grid lg:grid-cols-2 gap-0">
+
+        <!-- Left: text -->
+        <div class="p-10 md:p-14 flex flex-col justify-center gap-8">
+          <div>
+            <p class="section-eyebrow text-fire-300 mb-3">¿Listo para equipar tu brigada?</p>
+            <h2 class="font-heading font-black text-3xl md:text-4xl text-white leading-tight text-balance">
+              Solicita tu Cotización<br/>
+              <span class="text-gold-400">Sin Compromiso</span>
+            </h2>
+          </div>
+
+          <p class="text-fire-200 text-lg leading-relaxed">
+            Nuestros especialistas elaboran propuestas técnicas personalizadas según el tipo
+            de operación, normativa aplicable y presupuesto disponible.
+            Respuesta en menos de 2 horas en días hábiles.
+          </p>
+
+          <ul class="flex flex-col gap-3">
+            {ctaFeatures.map((f) => (
+              <li class="flex items-center gap-3 text-fire-100 text-sm">
+                <span class="text-lg shrink-0" aria-hidden="true">{f.icon}</span>
+                {f.text}
+              </li>
+            ))}
+          </ul>
+
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/cotizacion" class="btn-gold btn-lg">
+              Cotizar ahora — gratis
+            </a>
+            <a
+              href="https://wa.me/525512345678?text=Hola, necesito cotización de equipos para bomberos"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn bg-white/10 border border-white/20 text-white hover:bg-white/20 btn-lg"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+              </svg>
+              WhatsApp directo
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: quick form -->
+        <div class="bg-white/5 backdrop-blur-sm p-10 md:p-14 flex flex-col justify-center">
+          <h3 class="font-heading font-bold text-xl text-white mb-6">Formulario de Cotización Rápida</h3>
+          <form
+            class="flex flex-col gap-4"
+            id="quick-quote-form"
+            method="POST"
+            action="/api/cotizacion"
+            novalidate
+          >
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label for="nombre" class="label text-fire-200">Nombre completo *</label>
+                <input
+                  type="text"
+                  id="nombre"
+                  name="nombre"
+                  required
+                  autocomplete="name"
+                  placeholder="Tu nombre"
+                  class="input bg-white/10 border-white/20 text-white placeholder-white/40 focus:ring-fire-400 focus:border-fire-400"
+                />
+              </div>
+              <div>
+                <label for="empresa" class="label text-fire-200">Empresa / Institución</label>
+                <input
+                  type="text"
+                  id="empresa"
+                  name="empresa"
+                  placeholder="Nombre de tu empresa"
+                  class="input bg-white/10 border-white/20 text-white placeholder-white/40 focus:ring-fire-400 focus:border-fire-400"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label for="email" class="label text-fire-200">Correo electrónico *</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                autocomplete="email"
+                placeholder="correo@empresa.com"
+                class="input bg-white/10 border-white/20 text-white placeholder-white/40 focus:ring-fire-400 focus:border-fire-400"
+              />
+            </div>
+
+            <div>
+              <label for="telefono" class="label text-fire-200">Teléfono</label>
+              <input
+                type="tel"
+                id="telefono"
+                name="telefono"
+                autocomplete="tel"
+                placeholder="55 1234-5678"
+                class="input bg-white/10 border-white/20 text-white placeholder-white/40 focus:ring-fire-400 focus:border-fire-400"
+              />
+            </div>
+
+            <div>
+              <label for="equipo" class="label text-fire-200">¿Qué equipo o servicio necesitas? *</label>
+              <textarea
+                id="equipo"
+                name="equipo"
+                rows="3"
+                required
+                placeholder="Describe brevemente lo que necesitas..."
+                class="textarea bg-white/10 border-white/20 text-white placeholder-white/40 focus:ring-fire-400 focus:border-fire-400"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn-gold btn-lg w-full mt-2">
+              Enviar solicitud de cotización
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+              </svg>
+            </button>
+
+            <p class="text-fire-300 text-xs text-center">
+              Respuesta en menos de 2 horas en días hábiles. Sin compromiso.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

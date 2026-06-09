@@ -1,0 +1,41 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Red de Distribuidores — FIREFIGHTERS MX"
+  description="Red de distribuidores autorizados de FIREFIGHTERS MX en los 32 estados de México. Encuentra el distribuidor más cercano de equipos para bomberos en tu estado."
+>
+  <section class="bg-gradient-fire py-20">
+    <div class="container-site text-center text-white">
+      <h1 class="section-title text-white mb-6">Red de Distribuidores Autorizados</h1>
+      <p class="section-subtitle text-fire-200 mx-auto">
+        Presencia en los 32 estados de la República. Encuentra el distribuidor
+        más cercano o consulta envíos a tu ciudad.
+      </p>
+    </div>
+  </section>
+  <section class="section bg-white">
+    <div class="container-site">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          "Ciudad de México","Jalisco","Nuevo León","Puebla","Querétaro",
+          "Estado de México","Guanajuato","Baja California","Coahuila","Veracruz",
+          "Chihuahua","Sonora","Tamaulipas","Sinaloa","San Luis Potosí",
+          "Michoacán","Oaxaca","Chiapas","Yucatán","Quintana Roo",
+        ].map((estado) => (
+          <div class="card p-5 flex items-center gap-3">
+            <span class="text-fire-700 text-xl" aria-hidden="true">📍</span>
+            <div>
+              <div class="font-semibold text-dark-800 text-sm">{estado}</div>
+              <div class="text-dark-400 text-xs">Distribuidor autorizado</div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="text-center mt-10">
+        <p class="text-dark-500 mb-6">¿No encuentras tu estado? Enviamos a toda la República.</p>
+        <a href="/cotizacion" class="btn-primary btn-lg">Consultar disponibilidad en tu ciudad</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

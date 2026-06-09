@@ -1,0 +1,41 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Soporte para Licitaciones de Equipos para Bomberos — FIREFIGHTERS MX"
+  description="Asesoría técnica para ganar licitaciones de equipos para bomberos en CompraNet, PEMEX, CFE. Fichas técnicas, manifiestos NOM/NFPA, registro de proveedor."
+>
+  <section class="bg-gradient-fire py-16">
+    <div class="container-site text-center text-white">
+      <h1 class="section-title text-white mb-4">Soporte para Licitaciones</h1>
+      <p class="section-subtitle text-fire-200 mx-auto">
+        Acompañamiento técnico completo para que tu institución gane
+        concursos de equipos en plataformas gubernamentales.
+      </p>
+      <a href="/cotizacion" class="btn-gold btn-lg mt-8 inline-flex">Hablar con un especialista</a>
+    </div>
+  </section>
+  <section class="section bg-white">
+    <div class="container-site">
+      <div class="grid md:grid-cols-3 gap-6 mb-12">
+        {[
+          { icon: "📋", title: "Fichas Técnicas", desc: "Preparamos toda la documentación técnica que exige la convocatoria: hojas de datos, manuales, certificados de norma." },
+          { icon: "📜", title: "Manifiestos de Normas", desc: "Generamos manifiestos de cumplimiento de normas NFPA y NOM por cada partida de la licitación." },
+          { icon: "🏛️", title: "Registro CompraNet", desc: "Somos proveedor habilitado en CompraNet y en los sistemas de adquisición de PEMEX y CFE." },
+          { icon: "⏱️", title: "Respuesta Rápida", desc: "Entendemos los tiempos de licitación. Entregamos propuesta técnica completa en 48 horas hábiles." },
+          { icon: "✅", title: "Productos Certificados", desc: "Todo nuestro catálogo tiene certificación de tercera parte (UL, Intertek, SGS). Documentación lista." },
+          { icon: "💰", title: "Precios Competitivos", desc: "Acceso directo a fábricas globales. Podemos ser competitivos sin sacrificar calidad ni certificación." },
+        ].map((item) => (
+          <div class="card p-6">
+            <span class="text-3xl mb-4 block">{item.icon}</span>
+            <h3 class="font-bold text-dark-900 mb-2">{item.title}</h3>
+            <p class="text-dark-500 text-sm">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+      <div class="text-center">
+        <a href="/licitaciones" class="btn-primary btn-lg">Ver página de licitaciones →</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

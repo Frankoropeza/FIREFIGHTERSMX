@@ -1,0 +1,36 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Equipos para Brigadas de Minería en México — FIREFIGHTERS MX"
+  description="Equipamiento para brigadas de minería en México. Trajes de protección, SCBA para espacios confinados, detectores de gas, herramientas de rescate minero."
+>
+  <section class="bg-gradient-fire py-20">
+    <div class="container-site text-white">
+      <h1 class="section-title text-white mb-6">Minería</h1>
+      <p class="section-subtitle text-fire-200 max-w-2xl">
+        Soluciones de seguridad y rescate para minería a cielo abierto y subterránea.
+        Cumplimiento NOM-032-STPS y estándares internacionales.
+      </p>
+      <a href="/cotizacion" class="btn-gold btn-lg mt-8 inline-flex">Cotizar para minería</a>
+    </div>
+  </section>
+  <section class="section bg-white">
+    <div class="container-site grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {[
+        { icon: "😷", title: "SCBA para Minería", desc: "Equipos de respiración con autonomía 45-60 min. Resistentes a polvo y ambientes hostiles subterráneos." },
+        { icon: "🔍", title: "Detectores Multi-Gas", desc: "Detección continua de CH₄, CO, O₂, H₂S. Modelos intrinsecamente seguros ATEX." },
+        { icon: "⚙️", title: "Herramientas de Rescate Minero", desc: "Herramientas de corte y expansión para rescate en socavones y áreas de difícil acceso." },
+        { icon: "🦺", title: "EPP Minero", desc: "Cascos, guantes, calzado y chaleco para trabajo en ambientes con riesgo de explosión e incendio." },
+        { icon: "🧯", title: "Supresión en Maquinaria", desc: "Sistemas automáticos de supresión para maquinaria pesada: retroexcavadoras, volquetes, perforadoras." },
+        { icon: "🎓", title: "Capacitación NOM-032", desc: "Cursos de rescate minero y HAZMAT conforme NOM-032-STPS-2008. Equipos de salvamento certificados." },
+      ].map((item) => (
+        <div class="card p-6">
+          <span class="text-3xl mb-4 block">{item.icon}</span>
+          <h3 class="font-bold text-dark-900 mb-2">{item.title}</h3>
+          <p class="text-dark-500 text-sm">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

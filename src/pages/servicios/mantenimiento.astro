@@ -1,0 +1,46 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Mantenimiento y Recarga de Equipos para Bomberos — FIREFIGHTERS MX"
+  description="Mantenimiento preventivo y correctivo de extintores NOM-106, SCBA prueba hidrostática, herramientas Holmatro y cámaras térmicas. Certificado de servicio."
+>
+  <section class="bg-gradient-fire py-16">
+    <div class="container-site text-center text-white">
+      <h1 class="section-title text-white mb-4">Mantenimiento y Recarga</h1>
+      <p class="section-subtitle text-fire-200 mx-auto">
+        Mantenemos tus equipos en condición óptima y cumpliendo con todas las normas.
+        Certificado de servicio en cada intervención.
+      </p>
+    </div>
+  </section>
+
+  <section class="section bg-white">
+    <div class="container-site grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {[
+        { icon: "🧯", title: "Extintores", items: ["Recarga anual NOM-106", "Prueba hidrostática 5 años", "Etiquetado y registro", "Reporte semestral"] },
+        { icon: "😷", title: "Equipos SCBA", items: ["Revisión completa MSA / Dräger / Scott", "Prueba hidrostática cilindros", "Reemplazo de piezas desgastadas", "Certificado de prueba"] },
+        { icon: "⚙️", title: "Herramientas Hidráulicas", items: ["Holmatro, Hurst, Weber", "Revisión de aceites y presiones", "Reemplazo de mangueras", "Lubricación y ajuste"] },
+        { icon: "📷", title: "Cámaras Térmicas", items: ["Actualización de firmware", "Calibración de sensor", "Revisión de batería", "Limpieza de lente"] },
+        { icon: "🔊", title: "Sistemas de Alarma", items: ["Revisión anual NFPA 72", "Cambio de baterías", "Prueba de detectores", "Informe de cumplimiento"] },
+        { icon: "🚿", title: "Rociadores y Válvulas", items: ["Prueba de flujo NFPA 13", "Revisión de válvulas de control", "Limpieza de cabezas", "Documentación"] },
+      ].map((item) => (
+        <div class="card p-6">
+          <span class="text-3xl mb-4 block">{item.icon}</span>
+          <h3 class="font-heading font-bold text-dark-900 mb-4">{item.title}</h3>
+          <ul class="flex flex-col gap-2">
+            {item.items.map((f) => (
+              <li class="flex items-center gap-2 text-sm text-dark-500">
+                <span class="w-1.5 h-1.5 bg-fire-600 rounded-full shrink-0"></span>
+                {f}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+    <div class="container-site mt-12 text-center">
+      <a href="/cotizacion" class="btn-primary btn-lg">Programar servicio de mantenimiento</a>
+    </div>
+  </section>
+</BaseLayout>

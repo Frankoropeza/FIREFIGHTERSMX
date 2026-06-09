@@ -1,0 +1,139 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import type { CollectionEntry } from 'astro:content';
+
+export interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const { title, description, pubDate, updatedDate, author, category, tags, image } = post.data;
+
+const formattedPubDate = new Intl.DateTimeFormat('es-MX', {
+  year: 'numeric', month: 'long', day: 'numeric',
+}).format(pubDate);
+
+const readingTime = Math.ceil(post.body.split(' ').length / 200);
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  image: image?.url ?? '/images/og-default.jpg',
+  author: { '@type': 'Person', name: author },
+  publisher: {
+    '@type': 'Organization',
+    name: 'FIREFIGHTERS MX',
+    logo: { '@type': 'ImageObject', url: 'https://firefightersmx.com/logo.png' },
+  },
+  datePublished: pubDate.toISOString(),
+  dateModified: (updatedDate ?? pubDate).toISOString(),
+  mainEntityOfPage: Astro.url.href,
+};
+---
+<BaseLayout
+  title={`${title} | Blog FIREFIGHTERS MX`}
+  description={description}
+  ogType="article"
+  ogImage={image?.url}
+  schema={articleSchema}
+>
+  <article class="section">
+    <div class="container-site max-w-4xl">
+
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-2 text-sm text-dark-400 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-fire-700 transition-colors">Inicio</a>
+        <span>/</span>
+        <a href="/blog" class="hover:text-fire-700 transition-colors">Blog</a>
+        <span>/</span>
+        <span class="text-dark-700 truncate">{title}</span>
+      </nav>
+
+      <!-- Meta -->
+      <div class="flex flex-wrap items-center gap-3 mb-6">
+        <span class="badge-fire">{category}</span>
+        {tags?.map((tag) => (
+          <span class="badge-dark">{tag}</span>
+        ))}
+      </div>
+
+      <!-- Title -->
+      <h1 class="section-title mb-6 text-balance">{title}</h1>
+
+      <!-- Article meta -->
+      <div class="flex flex-wrap items-center gap-6 text-sm text-dark-500 pb-8 border-b border-dark-100 mb-10">
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+          </svg>
+          <span class="font-medium text-dark-700">{author}</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+          </svg>
+          <time datetime={pubDate.toISOString()}>{formattedPubDate}</time>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+          </svg>
+          <span>{readingTime} min de lectura</span>
+        </div>
+        {updatedDate && (
+          <div class="flex items-center gap-2 text-gold-600">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+            </svg>
+            <span>Actualizado: {new Intl.DateTimeFormat('es-MX', { year: 'numeric', month: 'long', day: 'numeric' }).format(updatedDate)}</span>
+          </div>
+        )}
+      </div>
+
+      <!-- Hero Image -->
+      {image && (
+        <figure class="mb-10 rounded-2xl overflow-hidden">
+          <img
+            src={image.url}
+            alt={image.alt}
+            class="w-full aspect-video object-cover"
+            loading="eager"
+            width="800"
+            height="450"
+          />
+          {image.caption && (
+            <figcaption class="text-center text-sm text-dark-400 mt-3 italic">{image.caption}</figcaption>
+          )}
+        </figure>
+      )}
+
+      <!-- Article content -->
+      <div class="prose prose-lg max-w-none
+                  prose-headings:font-heading prose-headings:text-dark-900
+                  prose-h2:text-2xl prose-h3:text-xl
+                  prose-a:text-fire-700 prose-a:no-underline hover:prose-a:underline
+                  prose-strong:text-dark-900
+                  prose-code:bg-dark-100 prose-code:rounded prose-code:px-1.5 prose-code:py-0.5
+                  prose-img:rounded-xl prose-img:shadow-card
+                  prose-blockquote:border-fire-700 prose-blockquote:bg-fire-50 prose-blockquote:rounded-r-xl">
+        <slot />
+      </div>
+
+      <!-- CTA Post Article -->
+      <div class="mt-12 p-8 bg-gradient-fire rounded-2xl text-white text-center">
+        <h3 class="text-2xl font-heading font-bold mb-3">¿Necesitas asesoría o cotización?</h3>
+        <p class="text-fire-100 mb-6">Nuestros especialistas están disponibles para ayudarte a elegir el equipo correcto.</p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="/cotizacion" class="btn bg-white text-fire-700 hover:bg-fire-50">Solicitar cotización</a>
+          <a href="/contacto" class="btn bg-transparent border-2 border-white text-white hover:bg-white/10">Contáctanos</a>
+        </div>
+      </div>
+
+    </div>
+  </article>
+</BaseLayout>

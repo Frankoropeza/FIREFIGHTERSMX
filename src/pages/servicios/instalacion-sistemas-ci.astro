@@ -1,0 +1,46 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Instalación de Sistemas Contra Incendio NFPA 13 y 72 — FIREFIGHTERS MX"
+  description="Diseño e instalación de sistemas de rociadores NFPA 13, alarmas NFPA 72, supresores FM-200 y Novec 1230. Empresa certificada. Cotización gratis."
+>
+  <section class="bg-gradient-fire py-16">
+    <div class="container-site text-center text-white">
+      <h1 class="section-title text-white mb-4">Instalación de Sistemas Contra Incendio</h1>
+      <p class="section-subtitle text-fire-200 mx-auto">
+        Diseño hidráulico, instalación llave en mano y entrega de memorias de cálculo
+        para rociadores, alarmas y sistemas de supresión especiales.
+      </p>
+      <a href="/cotizacion" class="btn-gold btn-lg mt-8 inline-flex">Cotizar instalación</a>
+    </div>
+  </section>
+  <section class="section bg-white">
+    <div class="container-site grid md:grid-cols-2 gap-8">
+      {[
+        { norm: "NFPA 13", icon: "🚿", title: "Sistemas de Rociadores", items: ["Diseño hidráulico", "Rociadores colgantes / de pared / ESFR", "Memorias de cálculo", "Planos As-Built"] },
+        { norm: "NFPA 72", icon: "🔊", title: "Sistemas de Alarma", items: ["Detección de humo / calor / llama", "Paneles analógicos y convencionales", "Notificación audible y visual", "Integración BMS"] },
+        { norm: "NFPA 12", icon: "💨", title: "Supresión CO₂", items: ["Total flooding / aplicación local", "CO₂ de alta / baja presión", "Riesgos especiales industriales", "Prueba de descarga"] },
+        { norm: "NFPA 2001", icon: "🧪", title: "Agentes Limpios FM-200 / Novec", items: ["Data centers y salas de control", "Sin residuos — sin daño a equipos", "Tiempo de descarga < 10 segundos", "Cumplimiento ASHRAE 34"] },
+      ].map((s) => (
+        <div class="card-fire p-7">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">{s.icon}</span>
+            <span class="badge-gold">{s.norm}</span>
+          </div>
+          <h3 class="font-heading font-bold text-dark-900 mb-4">{s.title}</h3>
+          <ul class="flex flex-col gap-2">
+            {s.items.map((f) => (
+              <li class="flex items-center gap-2 text-sm text-dark-500">
+                <span class="w-1.5 h-1.5 bg-fire-600 rounded-full shrink-0"></span>{f}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+    <div class="container-site text-center mt-10">
+      <a href="/cotizacion" class="btn-primary btn-lg">Cotizar diseño e instalación</a>
+    </div>
+  </section>
+</BaseLayout>

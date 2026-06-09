@@ -1,0 +1,47 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { services } from '@data/services';
+---
+<BaseLayout
+  title="Servicios para Bomberos y Protección Civil — FIREFIGHTERS MX"
+  description="Capacitación NFPA con DC-3, mantenimiento de equipos, instalación de sistemas CI, auditorías NOM-002, brigadas empresariales y soporte para licitaciones."
+>
+  <section class="bg-gradient-fire py-20">
+    <div class="container-site text-center text-white">
+      <h1 class="section-title text-white mb-6">Servicios Especializados</h1>
+      <p class="section-subtitle text-fire-200 mx-auto">
+        Más que equipos — te acompañamos en cada etapa: especificación, instalación,
+        capacitación, mantenimiento y cumplimiento normativo.
+      </p>
+    </div>
+  </section>
+
+  <section class="section bg-white">
+    <div class="container-site">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {services.map((s) => (
+          <a href={s.href} class="card-fire group p-8 flex flex-col gap-5 hover:shadow-fire transition-shadow">
+            <span class="text-4xl" aria-hidden="true">{s.icon}</span>
+            <div>
+              <h2 class="font-heading font-bold text-xl text-dark-900 group-hover:text-fire-700 transition-colors mb-3">{s.title}</h2>
+              <p class="text-dark-500 text-sm leading-relaxed mb-4">{s.description}</p>
+              <ul class="flex flex-col gap-2">
+                {s.features.map((f) => (
+                  <li class="flex items-center gap-2 text-xs text-dark-500">
+                    <svg class="w-3.5 h-3.5 text-fire-600 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                    </svg>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <span class="text-fire-700 text-sm font-semibold flex items-center gap-1 mt-auto">
+              Saber más →
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,99 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Contacto — FIREFIGHTERS MX"
+  description="Contacta a FIREFIGHTERS MX. Asesoría en equipos para bomberos, cotizaciones, licitaciones y servicios. Teléfono, WhatsApp y correo. Respuesta en 2 horas."
+>
+  <section class="bg-gradient-fire py-16">
+    <div class="container-site text-center text-white">
+      <h1 class="section-title text-white mb-4">Contacto</h1>
+      <p class="section-subtitle text-fire-200 mx-auto">Estamos para ayudarte. Respuesta garantizada en horario hábil.</p>
+    </div>
+  </section>
+
+  <section class="section bg-white">
+    <div class="container-site grid lg:grid-cols-2 gap-12">
+      <!-- Info -->
+      <div class="flex flex-col gap-8">
+        <div>
+          <h2 class="font-heading font-bold text-2xl text-dark-900 mb-6">Canales de Atención</h2>
+          <div class="flex flex-col gap-5">
+            {[
+              { icon: "📞", label: "Teléfono", value: "55 1234-5678", href: "tel:+525512345678" },
+              { icon: "💬", label: "WhatsApp", value: "55 1234-5678", href: "https://wa.me/525512345678" },
+              { icon: "📧", label: "Correo", value: "contacto@firefightersmx.com", href: "mailto:contacto@firefightersmx.com" },
+              { icon: "🕒", label: "Horario", value: "Lun–Vie 8am–6pm | Sáb 9am–2pm", href: null },
+            ].map((c) => (
+              <div class="flex items-center gap-4">
+                <span class="text-2xl w-10 text-center shrink-0">{c.icon}</span>
+                <div>
+                  <div class="text-xs text-dark-400 font-medium uppercase tracking-wide">{c.label}</div>
+                  {c.href ? (
+                    <a href={c.href} class="text-dark-800 font-semibold hover:text-fire-700 transition-colors">{c.value}</a>
+                  ) : (
+                    <span class="text-dark-800 font-semibold">{c.value}</span>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h3 class="font-heading font-bold text-lg text-dark-900 mb-4">Cobertura Nacional</h3>
+          <p class="text-dark-500 text-sm leading-relaxed">
+            Contamos con distribuidores autorizados y logística de envío en los 32 estados de la República Mexicana.
+            Entrega express en CDMX en 24-48 horas hábiles. Interior del país en 3-5 días hábiles.
+          </p>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="card p-8">
+        <h2 class="font-heading font-bold text-xl text-dark-900 mb-6">Envíanos un mensaje</h2>
+        <form method="POST" action="/api/contacto" class="flex flex-col gap-5" novalidate>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="nombre" class="label">Nombre *</label>
+              <input type="text" id="nombre" name="nombre" required class="input" placeholder="Tu nombre completo"/>
+            </div>
+            <div>
+              <label for="empresa" class="label">Empresa</label>
+              <input type="text" id="empresa" name="empresa" class="input" placeholder="Opcional"/>
+            </div>
+          </div>
+          <div>
+            <label for="email" class="label">Correo electrónico *</label>
+            <input type="email" id="email" name="email" required class="input" placeholder="correo@empresa.com"/>
+          </div>
+          <div>
+            <label for="telefono" class="label">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" class="input" placeholder="55 1234-5678"/>
+          </div>
+          <div>
+            <label for="asunto" class="label">Asunto *</label>
+            <select id="asunto" name="asunto" required class="select">
+              <option value="">Selecciona un asunto</option>
+              <option>Cotización de equipos</option>
+              <option>Información de productos</option>
+              <option>Servicios de capacitación</option>
+              <option>Instalación de sistemas CI</option>
+              <option>Mantenimiento</option>
+              <option>Licitaciones</option>
+              <option>Otro</option>
+            </select>
+          </div>
+          <div>
+            <label for="mensaje" class="label">Mensaje *</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required class="textarea" placeholder="Cuéntanos en qué podemos ayudarte..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary btn-lg w-full mt-2">
+            Enviar mensaje
+          </button>
+          <p class="text-dark-400 text-xs text-center">Respondemos en menos de 2 horas en días hábiles.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

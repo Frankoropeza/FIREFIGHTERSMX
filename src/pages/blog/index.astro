@@ -1,0 +1,62 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import BlogCard from '@components/blog/BlogCard.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const featured = allPosts[0];
+const rest = allPosts.slice(1);
+
+const categories = [...new Set(allPosts.map(p => p.data.category))];
+---
+<BaseLayout
+  title="Blog Técnico — Guías NFPA y NOM para Bomberos | FIREFIGHTERS MX"
+  description="Blog técnico especializado en equipos para bomberos. Guías NFPA, normatividad NOM-002, extintores, SCBA, trajes y sistemas contra incendio en México."
+>
+  <section class="bg-gradient-fire py-16">
+    <div class="container-site text-center text-white">
+      <h1 class="section-title text-white mb-4">Blog Técnico</h1>
+      <p class="section-subtitle text-fire-200 mx-auto">
+        Guías técnicas, normatividad NFPA/NOM y recursos para bomberos,
+        brigadas y responsables de protección civil en México.
+      </p>
+    </div>
+  </section>
+
+  <section class="section bg-white">
+    <div class="container-site">
+      <!-- Categorías -->
+      <div class="flex flex-wrap gap-2 mb-12">
+        <span class="badge-fire">Todos</span>
+        {categories.map((cat) => (
+          <span class="badge-dark cursor-pointer hover:bg-dark-200 transition-colors">{cat}</span>
+        ))}
+      </div>
+
+      <!-- Featured post -->
+      {featured && (
+        <div class="mb-12">
+          <BlogCard post={featured} featured={true} />
+        </div>
+      )}
+
+      <!-- Grid -->
+      {rest.length > 0 && (
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {rest.map((post) => (
+            <BlogCard post={post} />
+          ))}
+        </div>
+      )}
+
+      {allPosts.length === 0 && (
+        <div class="text-center py-20 text-dark-400">
+          <p class="text-lg mb-2">Blog próximamente</p>
+          <p class="text-sm">Estamos preparando guías técnicas especializadas para el sector bomberos.</p>
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,24 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Página no encontrada — FIREFIGHTERS MX"
+  description="La página que buscas no existe. Vuelve al inicio o explora nuestro catálogo de equipos para bomberos."
+  noIndex={true}
+>
+  <section class="section min-h-[60vh] flex items-center justify-center">
+    <div class="container-site text-center">
+      <p class="font-heading font-black text-8xl text-fire-700 mb-6">404</p>
+      <h1 class="section-title mb-4">Página no encontrada</h1>
+      <p class="section-subtitle mx-auto mb-10 max-w-lg">
+        La página que buscas no existe o fue movida.
+        Explora nuestro catálogo de equipos o regresa al inicio.
+      </p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="/" class="btn-primary btn-lg">← Volver al inicio</a>
+        <a href="/productos" class="btn-secondary btn-lg">Ver catálogo</a>
+        <a href="/contacto" class="btn-ghost btn-lg">Contacto</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

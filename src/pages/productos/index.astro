@@ -1,0 +1,86 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import ProductCard from '@components/products/ProductCard.astro';
+import { featuredProducts } from '@data/products';
+
+const categories = [
+  { slug: "trajes-bombero", label: "Trajes para Bomberos", emoji: "🧥", count: "18 productos", norm: "NFPA 1971" },
+  { slug: "cascos-nfpa", label: "Cascos NFPA", emoji: "⛑️", count: "12 productos", norm: "NFPA 1971" },
+  { slug: "equipos-scba", label: "Equipos SCBA", emoji: "😷", count: "15 productos", norm: "NFPA 1981" },
+  { slug: "herramientas-rescate", label: "Herramientas de Rescate", emoji: "⚙️", count: "24 productos", norm: "NFPA 1936" },
+  { slug: "extintores", label: "Extintores", emoji: "🧯", count: "32 productos", norm: "NOM-100" },
+  { slug: "sistemas-ci", label: "Sistemas Contra Incendio", emoji: "🚿", count: "20 productos", norm: "NFPA 13/72" },
+  { slug: "camaras-termicas", label: "Cámaras Térmicas", emoji: "📷", count: "8 productos", norm: "NFPA 1801" },
+  { slug: "hazmat", label: "Equipos HAZMAT", emoji: "☣️", count: "16 productos", norm: "NFPA 1991" },
+  { slug: "drones-emergencia", label: "Drones de Emergencia", emoji: "🚁", count: "6 productos", norm: "Certificado FAA/AFAC" },
+];
+---
+<BaseLayout
+  title="Catálogo de Equipos para Bomberos — FIREFIGHTERS MX"
+  description="Catálogo completo de equipos para bomberos certificados NFPA en México. Trajes, SCBA, herramientas de rescate, extintores, sistemas CI, cámaras térmicas y más."
+>
+  <section class="bg-gradient-fire py-16">
+    <div class="container-site text-center text-white">
+      <h1 class="section-title text-white mb-4">Catálogo de Productos</h1>
+      <p class="section-subtitle text-fire-200 mx-auto">
+        +150 categorías de equipos certificados NFPA y NOM para bomberos,
+        brigadas industriales y protección civil.
+      </p>
+    </div>
+  </section>
+
+  <!-- CATEGORÍAS -->
+  <section class="section bg-dark-50">
+    <div class="container-site">
+      <h2 class="section-title text-center mb-12">Categorías de Productos</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {categories.map((cat) => (
+          <a
+            href={`/productos/${cat.slug}`}
+            class="card group p-6 flex items-start gap-4 hover:shadow-fire hover:border-fire-200 border border-transparent transition-all"
+          >
+            <span class="text-3xl shrink-0">{cat.emoji}</span>
+            <div class="flex-1 min-w-0">
+              <h3 class="font-heading font-bold text-dark-900 group-hover:text-fire-700 transition-colors mb-1">
+                {cat.label}
+              </h3>
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="text-dark-400 text-xs">{cat.count}</span>
+                <span class="badge-gold text-2xs">{cat.norm}</span>
+              </div>
+            </div>
+            <svg class="w-5 h-5 text-dark-300 group-hover:text-fire-700 shrink-0 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- DESTACADOS -->
+  <section class="section bg-white">
+    <div class="container-site">
+      <div class="flex items-end justify-between mb-12">
+        <div>
+          <p class="section-eyebrow mb-3">Lo más buscado</p>
+          <h2 class="section-title">Productos Destacados</h2>
+        </div>
+        <a href="/cotizacion" class="btn-primary hidden sm:inline-flex">Cotizar ahora</a>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {featuredProducts.map((product) => (
+          <ProductCard
+            title={product.title}
+            description={product.description}
+            href={product.href}
+            brand={product.brand}
+            norm={product.norm}
+            category={product.category}
+            badge={product.badge}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

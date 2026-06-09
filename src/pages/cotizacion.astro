@@ -1,0 +1,100 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Solicitar Cotización — FIREFIGHTERS MX"
+  description="Solicita tu cotización de equipos para bomberos en FIREFIGHTERS MX. Trajes NFPA, SCBA, herramientas de rescate, sistemas CI. Respuesta en menos de 2 horas."
+>
+  <section class="bg-gradient-fire py-16">
+    <div class="container-site text-center text-white">
+      <h1 class="section-title text-white mb-4">Solicitar Cotización</h1>
+      <p class="section-subtitle text-fire-200 mx-auto">
+        Propuestas técnicas personalizadas en menos de 2 horas en días hábiles.
+        Incluye fichas técnicas para licitaciones.
+      </p>
+    </div>
+  </section>
+
+  <section class="section bg-dark-50">
+    <div class="container-site max-w-3xl">
+      <div class="card p-8 md:p-12">
+        <form method="POST" action="/api/cotizacion" class="flex flex-col gap-6" novalidate>
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label for="nombre" class="label">Nombre completo *</label>
+              <input type="text" id="nombre" name="nombre" required class="input" placeholder="Tu nombre"/>
+            </div>
+            <div>
+              <label for="empresa" class="label">Empresa / Institución *</label>
+              <input type="text" id="empresa" name="empresa" required class="input" placeholder="Nombre de tu empresa"/>
+            </div>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label for="email" class="label">Correo electrónico *</label>
+              <input type="email" id="email" name="email" required class="input" placeholder="correo@empresa.com"/>
+            </div>
+            <div>
+              <label for="telefono" class="label">Teléfono *</label>
+              <input type="tel" id="telefono" name="telefono" required class="input" placeholder="55 1234-5678"/>
+            </div>
+          </div>
+          <div>
+            <label for="tipo_cliente" class="label">Tipo de cliente</label>
+            <select id="tipo_cliente" name="tipo_cliente" class="select">
+              <option value="">Selecciona...</option>
+              <option>Cuerpo de Bomberos Municipal</option>
+              <option>Cuerpo de Bomberos Estatal</option>
+              <option>Brigada Industrial / Empresa</option>
+              <option>Aeropuerto</option>
+              <option>Hospital</option>
+              <option>Hotel</option>
+              <option>Gobierno Federal / Estatal</option>
+              <option>Refinerías / Petroquímica</option>
+              <option>Otro</option>
+            </select>
+          </div>
+          <div>
+            <label class="label">Categorías de equipo de interés</label>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-2">
+              {["Trajes para Bomberos","Cascos NFPA","Equipos SCBA","Herramientas Rescate","Extintores","Sistemas CI","Cámaras Térmicas","HAZMAT","Drones","Capacitación","Mantenimiento","Licitación"].map((cat) => (
+                <label class="flex items-center gap-2 cursor-pointer text-sm text-dark-600">
+                  <input type="checkbox" name="categorias" value={cat} class="rounded border-dark-300 text-fire-700 focus:ring-fire-700"/>
+                  {cat}
+                </label>
+              ))}
+            </div>
+          </div>
+          <div>
+            <label for="estado" class="label">Estado / Ciudad</label>
+            <input type="text" id="estado" name="estado" class="input" placeholder="Ciudad de México, Monterrey, Guadalajara..."/>
+          </div>
+          <div>
+            <label for="descripcion" class="label">Describe tu necesidad *</label>
+            <textarea id="descripcion" name="descripcion" rows="5" required class="textarea"
+              placeholder="Describe los equipos o servicios que necesitas, cantidad aproximada, fecha requerida, normas aplicables, etc."></textarea>
+          </div>
+          <div>
+            <label for="presupuesto" class="label">Rango de presupuesto aproximado</label>
+            <select id="presupuesto" name="presupuesto" class="select">
+              <option value="">Selecciona (opcional)</option>
+              <option>Menos de $50,000 MXN</option>
+              <option>$50,000 - $200,000 MXN</option>
+              <option>$200,000 - $500,000 MXN</option>
+              <option>$500,000 - $1,000,000 MXN</option>
+              <option>Más de $1,000,000 MXN</option>
+              <option>Gobierno / Licitación pública</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-primary btn-lg w-full mt-2">
+            Enviar solicitud de cotización gratuita
+          </button>
+          <p class="text-dark-400 text-xs text-center">
+            Recibirás tu cotización en menos de 2 horas en días hábiles.
+            Tus datos están protegidos y nunca serán compartidos.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,26 @@
+---
+const stats = [
+  { value: '500+', label: 'Estaciones de Bomberos Equipadas', icon: '🚒' },
+  { value: '32', label: 'Estados con Cobertura Nacional', icon: '🗺️' },
+  { value: '15+', label: 'Años Especializados en el Sector', icon: '⭐' },
+  { value: '1,200+', label: 'Brigadas Empresariales Atendidas', icon: '🏭' },
+  { value: '50+', label: 'Marcas Internacionales Disponibles', icon: '🌎' },
+  { value: '24h', label: 'Entrega Express en CDMX', icon: '⚡' },
+];
+---
+
+<section class="bg-gradient-fire py-16 md:py-20" aria-label="Estadísticas FIREFIGHTERS MX">
+  <div class="container-site">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8">
+      {stats.map((stat) => (
+        <div class="text-center group">
+          <div class="text-3xl mb-2" aria-hidden="true">{stat.icon}</div>
+          <div class="text-3xl md:text-4xl font-heading font-black text-white leading-none mb-2">
+            {stat.value}
+          </div>
+          <div class="text-fire-200 text-xs font-medium leading-tight">{stat.label}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,119 @@
+---
+import { whatsappUrl } from '@data/site';
+
+const faqs = [
+  { q: '¿Son distribuidores autorizados de las marcas que mencionan?', a: 'Sí. Mantenemos contratos vigentes de distribución con las principales marcas internacionales: Globe, MSA, Dräger, Bullard, Holmatro, 3M Scott y Honeywell, entre otras. Cada producto incluye número de serie verificable directamente con el fabricante y certificado de origen.' },
+  { q: '¿Pueden facturar a gobierno y participar en licitaciones?', a: 'Por supuesto. Tenemos más de 15 años trabajando con dependencias federales, estatales y municipales. Apoyamos con fichas técnicas formato licitación, manifiestos de normas NFPA/NOM, asistencia a juntas de aclaraciones y plantillas CompraNet. Facturación CFDI 4.0.' },
+  { q: '¿Cuánto tarda una cotización formal?', a: 'Respondemos toda cotización en menos de 24 horas hábiles con precios, disponibilidad, tiempos de entrega y fichas técnicas. Para proyectos complejos (licitaciones, brigadas completas, ARFF/HAZMAT) entregamos propuesta detallada en 48 hrs.' },
+  { q: '¿Hacen envíos a toda la República?', a: 'Sí, cubrimos los 32 estados. Tiempos: 24-48 hrs en CDMX y zona metropolitana, 3-5 días hábiles al resto del país. Embalaje especializado y seguro de envío incluido en todos los pedidos institucionales.' },
+  { q: '¿Ofrecen capacitación con DC-3 STPS?', a: 'Sí. Cursos de brigadas NOM-002-STPS, NFPA 1001 (bombero nivel I y II), uso y mantenimiento de SCBA, rescate vehicular y HAZMAT awareness. Todos con constancia DC-3 STPS válida ante IMSS y revisiones de la Secretaría del Trabajo.' },
+  { q: '¿Qué garantía manejan en los equipos?', a: 'Garantía directa de fábrica: hasta 10 años en trajes estructurales premium, 5 años en SCBA, 2 años en cascos y guantes, 1 año en extintores. Disponemos de refacciones originales y servicio técnico autorizado para mantenimiento programado conforme NFPA 1851.' },
+  { q: '¿Manejan precios preferenciales para cuerpos de bomberos?', a: 'Sí. Tenemos esquemas de precio preferencial para H. Cuerpos de Bomberos, Protección Civil, dependencias gubernamentales y compras por volumen (5+ unidades). Consultar por programa de equipamiento integral con financiamiento.' },
+  { q: '¿Tienen equipo en stock para entrega inmediata?', a: 'Mantenemos inventario permanente de trajes estructurales (tallas S-2XL), cascos, guantes, botas, capuchas y linternas. SCBA, herramientas hidráulicas y HAZMAT Nivel A pueden tomar 2-4 semanas según especificación técnica.' },
+];
+---
+
+<section style="background:#040A12;padding-block:5rem" aria-label="Preguntas frecuentes">
+
+  <!-- Header -->
+  <div class="container-site mb-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end">
+      <div>
+        <span class="section-eyebrow mb-4 inline-flex">FAQ</span>
+        <h2 class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          Resolvemos tus dudas<br/>
+          <span style="color:#F75000">y cotizamos al instante.</span>
+        </h2>
+        <p class="text-sm mt-4 leading-relaxed" style="color:#64748B">
+          Lo más consultado por jefes de cuerpo, coordinadores de seguridad y áreas de compras.
+        </p>
+      </div>
+      <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+        <p class="text-sm leading-relaxed mb-3" style="color:#94A3B8">
+          Sabemos que detrás de cada compra hay un proceso interno: comparativos,
+          validación técnica, presupuesto, autorización. Por eso publicamos respuestas
+          claras a las preguntas reales que recibimos cada semana, sin letra chica.
+        </p>
+        <p class="text-sm leading-relaxed" style="color:#94A3B8">
+          Si lo tuyo no aparece, escríbenos por WhatsApp y un ejecutivo te contesta
+          en menos de 24 horas hábiles con propuesta concreta.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ + Formulario -->
+  <div class="container-site">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+
+      <!-- Accordion -->
+      <div style="border:1px solid rgba(74,117,153,0.2);background:#0C1825">
+        <div class="flex flex-col">
+          {faqs.map((faq) => (
+            <details class="faq-item group" style="border-bottom:1px solid rgba(74,117,153,0.15)">
+              <summary class="flex items-start justify-between gap-4 cursor-pointer select-none list-none p-6">
+                <span class="font-display font-semibold text-sm leading-snug pr-2 group-open:text-[#FF6B26] transition-colors" style="color:#FFFFFF">
+                  {faq.q}
+                </span>
+                <span class="faq-icon shrink-0 mt-0.5 w-5 h-5 flex items-center justify-center transition-transform duration-200" style="border:1px solid rgba(74,117,153,0.3);color:#4A7599">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg>
+                </span>
+              </summary>
+              <p class="px-6 pb-6 text-sm leading-relaxed" style="color:#64748B">{faq.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+
+      <!-- Formulario -->
+      <div class="sticky top-24" style="background:#0C1825;border:1px solid rgba(74,117,153,0.2)">
+        <div class="p-7 md:p-8">
+          <h3 class="font-display font-bold text-xl mb-1" style="color:#FFFFFF">Cotización inmediata</h3>
+          <p class="text-sm mb-6" style="color:#64748B">
+            Respuesta en menos de 2 horas en días hábiles. Con fichas técnicas incluidas.
+          </p>
+
+          <form method="POST" action="/api/cotizacion" class="flex flex-col gap-4" novalidate>
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <label for="faq-nombre" class="label">Nombre *</label>
+                <input type="text" id="faq-nombre" name="nombre" required class="input" placeholder="Tu nombre" />
+              </div>
+              <div>
+                <label for="faq-empresa" class="label">Empresa</label>
+                <input type="text" id="faq-empresa" name="empresa" class="input" placeholder="Opcional" />
+              </div>
+            </div>
+            <div>
+              <label for="faq-email" class="label">Correo *</label>
+              <input type="email" id="faq-email" name="email" required class="input" placeholder="correo@empresa.com" />
+            </div>
+            <div>
+              <label for="faq-tel" class="label">Teléfono</label>
+              <input type="tel" id="faq-tel" name="telefono" class="input" placeholder="55 1234-5678" />
+            </div>
+            <div>
+              <label for="faq-msg" class="label">¿Qué necesitas? *</label>
+              <textarea id="faq-msg" name="mensaje" rows="3" required class="input" style="resize:none" placeholder="Tipo de equipo, cantidad, norma requerida..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg w-full justify-center mt-1">
+              Enviar cotización
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </button>
+          </form>
+
+          <div class="mt-4 pt-4" style="border-top:1px solid rgba(74,117,153,0.2)">
+            <a href={whatsappUrl('Hola, quiero cotizar equipo para bomberos.')}
+               target="_blank" rel="noopener"
+               class="btn btn-whatsapp w-full justify-center text-sm">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+              O escribe por WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>

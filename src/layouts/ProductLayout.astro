@@ -1,0 +1,151 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+export interface Props {
+  title: string;
+  description: string;
+  category: string;
+  categorySlug: string;
+  image?: string;
+  brand?: string;
+  norm?: string;
+  sku?: string;
+}
+
+const { title, description, category, categorySlug, image, brand, norm, sku } = Astro.props;
+
+const productSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: title,
+  description,
+  image: image ?? '/images/og-default.jpg',
+  brand: brand ? { '@type': 'Brand', name: brand } : undefined,
+  sku,
+  offers: {
+    '@type': 'Offer',
+    availability: 'https://schema.org/InStock',
+    seller: { '@type': 'Organization', name: 'FIREFIGHTERS MX' },
+    priceCurrency: 'MXN',
+  },
+};
+---
+<BaseLayout
+  title={`${title} | ${category} — FIREFIGHTERS MX`}
+  description={description}
+  ogType="product"
+  ogImage={image}
+  schema={productSchema}
+>
+  <!-- Breadcrumb -->
+  <div class="bg-dark-50 border-b border-dark-100">
+    <div class="container-site py-3">
+      <nav class="flex items-center gap-2 text-sm text-dark-400" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-fire-700 transition-colors">Inicio</a>
+        <span>/</span>
+        <a href="/productos" class="hover:text-fire-700 transition-colors">Productos</a>
+        <span>/</span>
+        <a href={`/productos/${categorySlug}`} class="hover:text-fire-700 transition-colors">{category}</a>
+        <span>/</span>
+        <span class="text-dark-700 truncate">{title}</span>
+      </nav>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container-site">
+      <div class="grid lg:grid-cols-2 gap-12 items-start">
+
+        <!-- Product Image -->
+        <div class="bg-dark-50 rounded-2xl p-8 aspect-square flex items-center justify-center">
+          {image ? (
+            <img
+              src={image}
+              alt={title}
+              class="w-full h-full object-contain"
+              loading="eager"
+              width="600"
+              height="600"
+            />
+          ) : (
+            <div class="text-dark-300 flex flex-col items-center gap-4">
+              <svg class="w-24 h-24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                  d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+              </svg>
+              <span class="text-sm">Imagen del producto</span>
+            </div>
+          )}
+        </div>
+
+        <!-- Product Info -->
+        <div class="flex flex-col gap-6">
+          <!-- Badges -->
+          <div class="flex flex-wrap gap-2">
+            <span class="badge-fire">{category}</span>
+            {norm && <span class="badge-gold">{norm}</span>}
+            {brand && <span class="badge-dark">{brand}</span>}
+          </div>
+
+          <!-- Title -->
+          <h1 class="text-3xl md:text-4xl font-heading font-bold text-dark-900 text-balance">
+            {title}
+          </h1>
+
+          <!-- Description -->
+          <p class="text-dark-600 text-lg leading-relaxed">{description}</p>
+
+          <!-- Product Details Content -->
+          <slot name="specs" />
+
+          <!-- CTAs -->
+          <div class="flex flex-col sm:flex-row gap-4 pt-2">
+            <a
+              href={`https://wa.me/525512345678?text=Hola, necesito información sobre: ${encodeURIComponent(title)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-primary btn-lg"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.107.548 4.086 1.508 5.808L.057 23.386a.5.5 0 00.615.614l5.578-1.451C7.914 23.452 9.893 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.922 0-3.717-.516-5.258-1.415l-.377-.22-3.934 1.023 1.026-3.934-.228-.389A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+              </svg>
+              Consultar por WhatsApp
+            </a>
+            <a href="/cotizacion" class="btn-secondary btn-lg">
+              Solicitar cotización
+            </a>
+          </div>
+
+          <!-- Trust badges -->
+          <div class="flex flex-wrap gap-4 pt-4 border-t border-dark-100">
+            <div class="flex items-center gap-2 text-sm text-dark-500">
+              <svg class="w-4 h-4 text-green-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+              Certificado NFPA
+            </div>
+            <div class="flex items-center gap-2 text-sm text-dark-500">
+              <svg class="w-4 h-4 text-fire-700 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+              </svg>
+              Envío a 32 estados
+            </div>
+            <div class="flex items-center gap-2 text-sm text-dark-500">
+              <svg class="w-4 h-4 text-gold-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
+              </svg>
+              Factura electrónica
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional content (descripción larga, especificaciones, etc.) -->
+      <div class="mt-16">
+        <slot />
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>

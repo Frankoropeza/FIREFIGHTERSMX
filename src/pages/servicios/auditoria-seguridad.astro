@@ -1,0 +1,45 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Auditoría NOM-002-STPS — Diagnóstico de Protección Contra Incendio | FIREFIGHTERS MX"
+  description="Auditoría integral de protección contra incendio conforme NOM-002-STPS-2010. Diagnóstico de instalaciones, brigadas, extintores y plan de mejora. México."
+>
+  <section class="bg-gradient-fire py-16">
+    <div class="container-site text-center text-white">
+      <h1 class="section-title text-white mb-4">Auditoría de Seguridad NOM-002</h1>
+      <p class="section-subtitle text-fire-200 mx-auto">
+        Evaluación técnica completa de tus instalaciones contra incendio.
+        Informe con plan de mejora priorizado y seguimiento a 90 días.
+      </p>
+      <a href="/cotizacion" class="btn-gold btn-lg mt-8 inline-flex">Solicitar auditoría</a>
+    </div>
+  </section>
+  <section class="section bg-white">
+    <div class="container-site max-w-4xl">
+      <h2 class="section-title text-center mb-10">¿Qué evaluamos?</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        {[
+          { icon: "🧯", title: "Extintores", desc: "Tipo, capacidad, ubicación, distancias, estado de mantenimiento y vigencia de cargas." },
+          { icon: "🚿", title: "Sistemas CI Fijos", desc: "Rociadores, alarmas, hidrantes, sistemas de supresión. Estado operativo y cumplimiento NFPA." },
+          { icon: "🏃", title: "Rutas de Evacuación", desc: "Señalización, iluminación de emergencia, libre de obstáculos, distancias máximas de recorrido." },
+          { icon: "👥", title: "Brigada Contra Incendio", desc: "Estructura organizacional, capacitación, DC-3 vigentes, equipo EPP asignado." },
+          { icon: "📋", title: "Documentación PAE", desc: "Plan de Atención a Emergencias, registros de mantenimiento, simulacros documentados." },
+          { icon: "🔌", title: "Riesgos Eléctricos", desc: "Tableros, instalaciones eléctricas de riesgo, áreas clasificadas y equipos de proceso." },
+        ].map((item) => (
+          <div class="flex gap-4 p-5 bg-dark-50 rounded-xl">
+            <span class="text-2xl shrink-0">{item.icon}</span>
+            <div>
+              <h3 class="font-bold text-dark-900 mb-1">{item.title}</h3>
+              <p class="text-dark-500 text-sm">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-12 text-center">
+        <p class="text-dark-500 mb-6">El informe incluye clasificación de hallazgos por criticidad, plan de mejora priorizado y presupuesto estimado de regularización.</p>
+        <a href="/cotizacion" class="btn-primary btn-lg">Agendar diagnóstico sin costo</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,46 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Sistemas Contra Incendio para Hoteles — FIREFIGHTERS MX México"
+  description="Sistemas de rociadores, alarmas y extintores para hoteles en México. NFPA 13, NFPA 72, NOM-002-STPS. Cumplimiento para permisos de operación."
+>
+  <section class="bg-gradient-fire py-16">
+    <div class="container-site text-white">
+      <h1 class="section-title text-white mb-6">Hoteles y Hospitalidad</h1>
+      <p class="section-subtitle text-fire-200 max-w-2xl">
+        Sistemas contra incendio para hoteles, resorts y complejos turísticos.
+        Cumplimiento de normas para obtener o renovar permisos de operación.
+      </p>
+      <a href="/cotizacion" class="btn-gold btn-lg mt-8 inline-flex">Cotizar sistema hotelero</a>
+    </div>
+  </section>
+  <section class="section bg-white">
+    <div class="container-site grid md:grid-cols-2 gap-8 items-start">
+      <div>
+        <h2 class="section-title mb-6">Requisitos Normativos para Hoteles</h2>
+        <div class="flex flex-col gap-4 text-sm text-dark-600 leading-relaxed">
+          <p>Los hoteles en México deben cumplir con la <strong>NOM-002-STPS-2010</strong>, los reglamentos de construcción locales y, en caso de cadenas internacionales, con los estándares de la franquicia (generalmente alineados a NFPA).</p>
+          <p>Un hotel de más de 4 pisos o 50 habitaciones generalmente requiere sistema de rociadores automáticos, sistema de alarma integrado y planes de evacuación documentados.</p>
+          <p>FIREFIGHTERS MX ofrece auditoría inicial gratuita y presupuesto de regularización.</p>
+        </div>
+      </div>
+      <div class="flex flex-col gap-4">
+        {[
+          { icon: "🚿", title: "Rociadores por área", desc: "Diseño diferenciado: habitaciones, lobby, cocina industrial, lavandería, cuartos de máquinas." },
+          { icon: "🔊", title: "Alarma + Evacuación", desc: "Sistema de voz de emergencia, iluminación de evacuación y señalización NOM-026." },
+          { icon: "🧯", title: "Extintores + Clase K", desc: "Extintores de CO₂ para áreas electrónicas, Clase K para cocina industrial." },
+          { icon: "📋", title: "Capacitación de Personal", desc: "Brigada hotelera con DC-3, simulacros anuales documentados para cumplimiento normativo." },
+        ].map((item) => (
+          <div class="card p-5 flex gap-4">
+            <span class="text-2xl shrink-0">{item.icon}</span>
+            <div>
+              <h3 class="font-bold text-dark-900 mb-1 text-sm">{item.title}</h3>
+              <p class="text-dark-500 text-xs">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

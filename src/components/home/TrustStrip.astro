@@ -1,0 +1,46 @@
+---
+const marcas = [
+  { name: 'Globe', sub: 'Trajes estructurales' },
+  { name: 'MSA Safety', sub: 'SCBA & cascos' },
+  { name: 'Dräger', sub: 'Equipos respiratorios' },
+  { name: '3M Scott', sub: 'Aire autónomo' },
+  { name: 'Bullard', sub: 'EPP & cascos' },
+  { name: 'Holmatro', sub: 'Rescate hidráulico' },
+  { name: 'Honeywell', sub: 'Detección & alarmas' },
+  { name: 'FLIR', sub: 'Cámaras térmicas' },
+  { name: 'Rosenbauer', sub: 'Sistemas CI' },
+  { name: 'Haix', sub: 'Botas técnicas' },
+];
+---
+
+<div class="bg-[var(--forge-800)] border-b border-[var(--color-border)]">
+  <div class="container-site py-8">
+
+    <p class="text-center text-[10px] font-display font-semibold uppercase tracking-[0.2em] text-[var(--forge-300)] mb-6">
+      Distribuidores autorizados · Equipos originales certificados
+    </p>
+
+    <!-- Marquee -->
+    <div
+      class="overflow-hidden"
+      style="mask-image:linear-gradient(to right,transparent,black 8%,black 92%,transparent);-webkit-mask-image:linear-gradient(to right,transparent,black 8%,black 92%,transparent);"
+    >
+      <div class="marquee-track">
+        {[...marcas, ...marcas].map(m => (
+          <div class="flex flex-col items-center gap-1 px-2 select-none">
+            <span class="font-display font-bold text-lg text-[var(--forge-200)] hover:text-white transition-colors whitespace-nowrap cursor-default">
+              {m.name}
+            </span>
+            <span class="text-[10px] text-[var(--forge-300)] uppercase tracking-wider whitespace-nowrap">
+              {m.sub}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="text-center mt-6">
+      <a href="/marcas" class="btn btn-sm btn-outline">Ver todas las marcas →</a>
+    </div>
+  </div>
+</div>

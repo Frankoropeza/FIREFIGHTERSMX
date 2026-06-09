@@ -1,0 +1,81 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+export interface Props {
+  post: CollectionEntry<'blog'>;
+  featured?: boolean;
+}
+
+const { post, featured = false } = Astro.props;
+const { title, description, pubDate, author, category, tags, image } = post.data;
+const slug = post.slug;
+
+const formattedDate = new Intl.DateTimeFormat('es-MX', {
+  year: 'numeric', month: 'short', day: 'numeric',
+}).format(pubDate);
+
+const readingTime = Math.ceil(post.body.split(' ').length / 200);
+---
+
+<article class={`blog-card ${featured ? 'lg:flex lg:gap-0' : ''}`}>
+  <!-- Image -->
+  <a href={`/blog/${slug}`} class={`blog-card-img ${featured ? 'lg:w-1/2 lg:aspect-auto lg:min-h-64' : ''}`} aria-label={title}>
+    {image ? (
+      <img
+        src={image.url}
+        alt={image.alt}
+        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+        loading="lazy"
+        width="600"
+        height="338"
+      />
+    ) : (
+      <div class="w-full h-full bg-gradient-to-br from-fire-800 to-fire-600 flex items-center justify-center">
+        <svg class="w-16 h-16 text-white/30" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+            d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/>
+        </svg>
+      </div>
+    )}
+  </a>
+
+  <!-- Content -->
+  <div class={`p-6 flex flex-col gap-3 ${featured ? 'lg:w-1/2 lg:p-8' : ''}`}>
+    <!-- Meta -->
+    <div class="flex flex-wrap items-center gap-2">
+      <span class="badge-fire">{category}</span>
+      {tags?.slice(0, 2).map((tag) => (
+        <span class="badge-dark">{tag}</span>
+      ))}
+    </div>
+
+    <!-- Title -->
+    <h3 class={`font-heading font-bold text-dark-900 leading-snug group-hover:text-fire-700 transition-colors text-balance ${featured ? 'text-xl md:text-2xl' : 'text-lg'}`}>
+      <a href={`/blog/${slug}`}>{title}</a>
+    </h3>
+
+    <!-- Excerpt -->
+    <p class="text-dark-500 text-sm leading-relaxed line-clamp-3">{description}</p>
+
+    <!-- Footer -->
+    <div class="flex items-center justify-between mt-auto pt-3 border-t border-dark-100 text-xs text-dark-400">
+      <div class="flex items-center gap-3">
+        <span class="font-medium text-dark-600">{author}</span>
+        <span>·</span>
+        <time datetime={pubDate.toISOString()}>{formattedDate}</time>
+      </div>
+      <span>{readingTime} min</span>
+    </div>
+
+    <!-- Link -->
+    <a
+      href={`/blog/${slug}`}
+      class="flex items-center gap-2 text-fire-700 text-sm font-semibold hover:gap-3 transition-all"
+    >
+      Leer artículo
+      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+      </svg>
+    </a>
+  </div>
+</article>

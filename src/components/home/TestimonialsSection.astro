@@ -1,0 +1,96 @@
+---
+const testimonios = [
+  {
+    quote: 'Adjudicamos la licitación con 6 días de antelación. Entregaron 30 trajes NFPA 1971, 30 cascos Bullard y 15 SCBA MSA con todas las fichas técnicas que el área de compras pedía. Renovamos contrato al año siguiente.',
+    name: 'Coordinador de Adquisiciones',
+    org: 'H. Cuerpo de Bomberos', location: 'Estado de México',
+    sector: 'Gobierno municipal', initials: 'HCB', color: '#F75000',
+  },
+  {
+    quote: 'Equipamos la brigada con SCBA Honeywell y trajes HAZMAT Nivel B. La capacitación incluida fue clave para que el personal se sintiera cómodo desde el primer turno. Cuatro años de operación sin incidentes.',
+    name: 'Jefe de Seguridad e Higiene',
+    org: 'Refinería Costa del Golfo', location: 'Veracruz',
+    sector: 'Industria petroquímica', initials: 'RCG', color: '#F5A623',
+  },
+  {
+    quote: 'Nuestros bomberos ARFF necesitaban trajes aluminizados NFPA 1976. Pocos los manejan en México. FIREFIGHTERS MX entregó línea completa, capacitación y refacciones originales en tiempo récord.',
+    name: 'Coordinación ARFF',
+    org: 'Aeropuerto Internacional', location: 'México',
+    sector: 'Aviación', initials: 'AI', color: '#F75000',
+  },
+  {
+    quote: 'Cumplir NOM-002-STPS implicaba más que extintores: necesitábamos brigada equipada y capacitada. Coordinaron todo: equipo, DC-3 y evaluación final. Pasamos auditoría STPS sin observaciones.',
+    name: 'Coordinador EHS',
+    org: 'Planta Automotriz', location: 'Región Bajío',
+    sector: 'Manufactura', initials: 'PA', color: '#F5A623',
+  },
+  {
+    quote: 'Para la apertura del nuevo quirófano necesitábamos brigada certificada NOM-002. Nos equiparon con sistemas de detección, extintores especializados y capacitación para el personal de turno. Apertura en tiempo.',
+    name: 'Director de Operaciones',
+    org: 'Hospital Privado de Tercer Nivel', location: 'CDMX',
+    sector: 'Salud', initials: 'HP', color: '#F75000',
+  },
+  {
+    quote: 'Renovamos la línea de protección de 60 bomberos: trajes Globe GX-7 NFPA 1971, cascos Bullard y botas Haix Fire Hunter 2.0. Cero observaciones en la auditoría de la STPS. La calidad se nota en cada guardia.',
+    name: 'Comandante',
+    org: 'Cuerpo de Bomberos Metropolitano', location: 'Bajío',
+    sector: 'Gobierno estatal', initials: 'BM', color: '#F5A623',
+  },
+];
+---
+
+<section style="background:#070E1A;padding-block:5rem" aria-label="Testimonios de clientes">
+
+  <!-- Header -->
+  <div class="container-site mb-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end">
+      <div>
+        <span class="section-eyebrow mb-4 inline-flex">Clientes</span>
+        <h2 class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          Lo que dicen quienes<br/>
+          <span style="color:#F75000">ya confían en nosotros.</span>
+        </h2>
+      </div>
+      <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+        <p class="text-sm leading-relaxed mb-3" style="color:#94A3B8">
+          Cuerpos de bomberos, industria petroquímica, aviación, manufactura y salud.
+          Proyectos reales, resultados verificables.
+        </p>
+        <p class="text-sm leading-relaxed" style="color:#94A3B8">
+          Detrás de cada testimonio hay un proceso real: diagnóstico técnico, cotización rigurosa
+          y entrega coordinada que cumplió con los plazos y las normas.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Grid testimonios -->
+  <div class="container-site">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px" style="background:rgba(74,117,153,0.15)">
+      {testimonios.map(t => (
+        <article class="flex flex-col gap-5 p-8" style="background:#0C1825">
+
+          <!-- Quote icon -->
+          <svg style={`color:${t.color};opacity:0.5`} width="28" height="22" viewBox="0 0 32 24" fill="currentColor" aria-hidden="true">
+            <path d="M0 24V14.4C0 6.4 5.12 1.2 15.36 0l1.28 2.4C10.56 3.6 7.36 6.8 6.4 12H12V24H0zm20 0V14.4C20 6.4 25.12 1.2 35.36 0l1.28 2.4C30.56 3.6 27.36 6.8 26.4 12H32V24H20z"/>
+          </svg>
+
+          <p class="text-sm leading-relaxed flex-1 italic" style="color:#94A3B8">"{t.quote}"</p>
+
+          <!-- Footer -->
+          <div class="flex items-center gap-3 pt-5" style="border-top:1px solid rgba(74,117,153,0.2)">
+            <div class="w-10 h-10 flex items-center justify-center shrink-0 font-display font-bold text-xs" style={`background:${t.color};color:#fff`}>
+              {t.initials}
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="font-semibold text-sm" style="color:#FFFFFF">{t.name}</p>
+              <p class="text-xs truncate" style="color:#64748B">{t.org} · {t.location}</p>
+            </div>
+            <span class="text-xs shrink-0 px-2 py-0.5 font-display" style="color:#4A7599;border:1px solid rgba(74,117,153,0.25)">{t.sector}</span>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+
+</section>

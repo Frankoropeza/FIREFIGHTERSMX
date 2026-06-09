@@ -1,0 +1,34 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { brands } from '@data/brands';
+---
+<BaseLayout
+  title="Marcas de Equipo para Bomberos — FIREFIGHTERS MX"
+  description="Distribuidores autorizados de MSA Safety, Dräger, 3M Scott, Globe Manufacturing, Holmatro, Bullard, Honeywell y más marcas líderes en equipos para bomberos en México."
+>
+  <section class="bg-gradient-fire py-20">
+    <div class="container-site text-center text-white">
+      <h1 class="section-title text-white mb-6">Marcas que Distribuimos</h1>
+      <p class="section-subtitle text-fire-200 mx-auto">
+        Distribuidores autorizados de los fabricantes más reconocidos a nivel mundial
+        en equipos de protección personal y sistemas contra incendio.
+      </p>
+    </div>
+  </section>
+  <section class="section bg-white">
+    <div class="container-site">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {brands.map((brand) => (
+          <div class="card p-6 flex items-start gap-4">
+            <span class="text-3xl shrink-0">{brand.emoji}</span>
+            <div>
+              <h3 class="font-heading font-bold text-dark-900 mb-1">{brand.name}</h3>
+              <p class="text-dark-500 text-sm">{brand.description}</p>
+              {brand.country && <span class="badge-dark mt-2 inline-block">{brand.country}</span>}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

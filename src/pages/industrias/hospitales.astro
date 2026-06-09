@@ -1,0 +1,36 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Sistemas Contra Incendio para Hospitales en México — FIREFIGHTERS MX"
+  description="Extintores, sistemas de alarma, supresión de agentes limpios y capacitación para brigadas hospitalarias en México. NOM-002-STPS, NFPA 101 Life Safety Code."
+>
+  <section class="bg-gradient-fire py-16">
+    <div class="container-site text-white">
+      <h1 class="section-title text-white mb-6">Hospitales y Sector Salud</h1>
+      <p class="section-subtitle text-fire-200 max-w-2xl">
+        Soluciones contra incendio específicas para hospitales, clínicas y laboratorios.
+        NFPA 101 Life Safety Code, NOM-002-STPS y reglamentos de Cofepris.
+      </p>
+      <a href="/cotizacion" class="btn-gold btn-lg mt-8 inline-flex">Cotizar solución hospitalaria</a>
+    </div>
+  </section>
+  <section class="section bg-white">
+    <div class="container-site grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {[
+        { icon: "🚿", title: "Rociadores NFPA 13", desc: "Diseño hidráulico diferenciado por área: UCI, quirófanos, almacenes, cuartos de máquinas." },
+        { icon: "🔊", title: "Alarmas Hospitalarias", desc: "Sistemas de alarma con notificación selectiva por zona para minimizar pánico en pacientes." },
+        { icon: "🧪", title: "Supresión de Agentes Limpios", desc: "FM-200 / Novec 1230 para cuartos de servidores, áreas de documentos médicos y equipos de diagnóstico." },
+        { icon: "🧯", title: "Extintores Especializados", desc: "CO₂ para equipos electrónicos, CO₂ médico para laboratorios, sin contaminación de áreas estériles." },
+        { icon: "👥", title: "Brigada NFPA 99 / NOM", desc: "Capacitación específica para trabajadores de la salud: procedimientos de evacuación de pacientes." },
+        { icon: "📋", title: "Plan de Contingencia", desc: "Plan PAE adaptado a las particularidades del hospital: pacientes dependientes, oxígeno medicinal, áreas de riesgo." },
+      ].map((item) => (
+        <div class="card p-6">
+          <span class="text-3xl mb-4 block">{item.icon}</span>
+          <h3 class="font-bold text-dark-900 mb-2">{item.title}</h3>
+          <p class="text-dark-500 text-sm">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

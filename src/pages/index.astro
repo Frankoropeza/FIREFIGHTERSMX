@@ -1,0 +1,44 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import HeroPro from '@components/home/HeroPro.astro';
+import TrustStrip from '@components/home/TrustStrip.astro';
+import ValueProps from '@components/home/ValueProps.astro';
+import CategoriesGrid from '@components/home/CategoriesGrid.astro';
+import ProcessSteps from '@components/home/ProcessSteps.astro';
+import IndustriesSection from '@components/home/IndustriesSection.astro';
+import TestimonialsSection from '@components/home/TestimonialsSection.astro';
+import FAQSection from '@components/home/FAQSection.astro';
+import { SITE } from '@data/site';
+
+const seoMeta = {
+  title: `${SITE.name} — Equipo Contra Incendio Certificado NFPA | México`,
+  description: 'Distribuidor autorizado de equipo contra incendio: trajes bombero, SCBA, cascos, extintores, sistemas CI y HAZMAT. Certificado NFPA/NOM. Entrega en 32 estados.',
+  canonical: SITE.url,
+};
+---
+
+<BaseLayout {...seoMeta}>
+  <!-- 1. Hero principal con CTA y estadísticas -->
+  <HeroPro />
+
+  <!-- 2. Clientes / marcas marquee -->
+  <TrustStrip />
+
+  <!-- 3. Por qué elegirnos (4 value props) -->
+  <ValueProps />
+
+  <!-- 4. Catálogo de categorías (8 productos) -->
+  <CategoriesGrid />
+
+  <!-- 5. Proceso de compra (4 pasos) -->
+  <ProcessSteps />
+
+  <!-- 6. Industrias que servimos (8 sectores) -->
+  <IndustriesSection />
+
+  <!-- 7. Testimonios (dark section, 6 reviews) -->
+  <TestimonialsSection />
+
+  <!-- 8. FAQ + formulario de cotización -->
+  <FAQSection />
+</BaseLayout>

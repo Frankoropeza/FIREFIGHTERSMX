@@ -1,0 +1,74 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Licitaciones de Equipos para Bomberos — FIREFIGHTERS MX"
+  description="Soporte especializado para licitaciones de equipos para bomberos en CompraNet, PEMEX, CFE y municipios. Fichas técnicas, manifiestos de normas y asesoría técnica."
+>
+  <section class="bg-gradient-fire py-20">
+    <div class="container-site text-center text-white">
+      <p class="section-eyebrow text-fire-300 mb-3">Sector Gobierno</p>
+      <h1 class="section-title text-white mb-6">Licitaciones de Equipo para Bomberos</h1>
+      <p class="section-subtitle text-fire-200 mx-auto">
+        Soporte técnico completo para ganar concursos públicos: CompraNet, PEMEX, CFE, IMSS,
+        municipios y dependencias estatales.
+      </p>
+      <a href="/cotizacion" class="btn-gold btn-lg mt-8 inline-flex">
+        Solicitar asesoría para licitación
+      </a>
+    </div>
+  </section>
+
+  <section class="section bg-white">
+    <div class="container-site">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="section-title mb-6">¿Por qué trabajar con FIREFIGHTERS MX para tus licitaciones?</h2>
+          <div class="flex flex-col gap-5">
+            {[
+              { icon: "📋", title: "Fichas técnicas listas", desc: "Preparamos toda la documentación técnica para cumplir con los requisitos de cada convocatoria." },
+              { icon: "✅", title: "Productos certificados NOM/NFPA", desc: "Todo nuestro catálogo cumple con las normas exigidas en licitaciones gubernamentales." },
+              { icon: "📜", title: "Manifiestos de normas", desc: "Generamos manifiestos de cumplimiento de normas NOM, NFPA, STPS para cada partida." },
+              { icon: "🏛️", title: "Registro en CompraNet", desc: "Empresa habilitada como proveedor en la plataforma CompraNet de la Función Pública." },
+              { icon: "📦", title: "Entrega garantizada", desc: "Cumplimos con los tiempos y condiciones de entrega estipulados en los contratos." },
+              { icon: "💰", title: "Facturación electrónica", desc: "CFDI con todos los requisitos fiscales para instituciones gubernamentales." },
+            ].map((item) => (
+              <div class="flex gap-4">
+                <span class="text-2xl shrink-0">{item.icon}</span>
+                <div>
+                  <h3 class="font-bold text-dark-900 mb-1">{item.title}</h3>
+                  <p class="text-dark-500 text-sm">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div class="bg-dark-50 rounded-2xl p-8">
+          <h3 class="font-heading font-bold text-xl text-dark-900 mb-6">Plataformas donde participamos</h3>
+          <div class="flex flex-col gap-4">
+            {[
+              "CompraNet — Función Pública (Federal)",
+              "PEMEX — Petróleos Mexicanos",
+              "CFE — Comisión Federal de Electricidad",
+              "IMSS — Instituto Mexicano del Seguro Social",
+              "ISSSTE",
+              "Secretarías de Seguridad Pública Estatales",
+              "Protección Civil Municipal y Estatal",
+              "Dependencias Municipales en los 32 estados",
+            ].map((p) => (
+              <div class="flex items-center gap-3 text-sm text-dark-700">
+                <svg class="w-4 h-4 text-fire-700 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                {p}
+              </div>
+            ))}
+          </div>
+          <a href="/cotizacion" class="btn-primary w-full justify-center mt-8">
+            Solicitar asesoría técnica
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
