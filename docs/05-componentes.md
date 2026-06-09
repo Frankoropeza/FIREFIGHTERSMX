@@ -17,6 +17,7 @@
 | Componente | Uso |
 |---|---|
 | `CategoryCard.astro` | **Card compartida** de categoría (visual gradiente + ícono, norma, shortDesc, 3 líneas, botón de acento). Prop: `cat: Category`. La usan el home (ProductCards) y el hub /productos. Cambios de diseño de card → SOLO aquí |
+| `CategorySpotlight.astro` | **Módulo destacado 2 columnas** (título amplio + subsecciones detalladas \| imagen con marco de acento). Props: `cat` (requiere campo `spotlight` en categories.ts), `reverse` (invierte columnas para alternar), `background`. Imágenes en `public/images/categorias/<slug>.svg` |
 | `ProductCard.astro` | v1, usado por trajes-bombero — por migrar |
 
 ## home/ (secciones del index, en orden)

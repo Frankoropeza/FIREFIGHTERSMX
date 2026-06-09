@@ -16,6 +16,15 @@ export interface Category {
   items: { name: string; detail: string }[];
   /** Categoría del array featuredProducts (data/products.ts) para listar productos */
   productCategory?: string;
+  /** Módulo destacado (2 columnas) en el hub /productos */
+  spotlight?: {
+    title: string;
+    highlight: string;
+    paragraphs: string[];
+    subsections: { name: string; detail: string }[];
+    image: string;
+    imageAlt: string;
+  };
 }
 
 /**
@@ -41,6 +50,22 @@ export const trajesBombero: Category = {
     { name: 'Trajes forestales NFPA 1977', detail: 'Ligeros y transpirables para incendio vegetal' },
   ],
   productCategory: 'Trajes Bombero',
+  spotlight: {
+    title: 'Trajes para Bomberos certificados',
+    highlight: 'NFPA 1971 y NFPA 1977',
+    paragraphs: [
+      'El traje estructural es la última barrera entre el bombero y el fuego. Distribuimos conjuntos completos —chaquetón y pantalón— certificados por laboratorio acreditado bajo NFPA 1971:2018, con número de serie verificable con fábrica y ficha técnica lista para licitación o auditoría STPS.',
+      'Manejamos las líneas Globe, Lion y MSA en tallas S–4XL, con stock permanente de las configuraciones más demandadas y entrega en 24–48 horas en CDMX. Cada compra incluye asesoría de tallaje y el programa de inspección y mantenimiento conforme a NFPA 1851.',
+    ],
+    subsections: [
+      { name: 'Trajes estructurales', detail: 'Combate interior de edificios. 3 capas: tejido exterior PBI/Nomex NXT, barrera de humedad Crosstech y forro térmico. Costuras de doble aguja reforzadas y trim reflejante 3M Scotchlite.' },
+      { name: 'Trajes de proximidad', detail: 'Aluminizados para exposición radiante extrema: ARFF en aeropuertos, refinerías y fundiciones. Reflejan hasta el 90 % del calor radiante.' },
+      { name: 'Trajes forestales NFPA 1977', detail: 'Ligeros y transpirables para incendio vegetal: camisola y pantalón en Nomex IIIA, diseñados para jornadas largas con golpe de calor mínimo.' },
+      { name: 'Tallaje, stock y mantenimiento', detail: 'Tallas S–4XL con asesoría de ajuste, stock permanente en CDMX y programa de inspección avanzada, lavado técnico y reparación certificada NFPA 1851.' },
+    ],
+    image: '/images/categorias/trajes-bombero.svg',
+    imageAlt: 'Ilustración técnica de traje estructural para bombero certificado NFPA 1971 con casco y bandas reflejantes',
+  },
 };
 
 /**

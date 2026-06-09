@@ -1,0 +1,93 @@
+---
+/**
+ * Módulo destacado de categoría — 2 columnas:
+ * izquierda título amplio + subsecciones detalladas; derecha imagen.
+ * Datos: campo `spotlight` de la categoría en src/data/categories.ts
+ * Prop `reverse` invierte columnas para alternar módulos consecutivos.
+ */
+import type { Category } from '@data/categories';
+import { whatsappUrl } from '@data/site';
+
+export interface Props {
+  cat: Category;
+  reverse?: boolean;
+  background?: string;
+}
+
+const { cat, reverse = false, background = '#070E1A' } = Astro.props;
+const s = cat.spotlight;
+if (!s) throw new Error(`La categoría "${cat.slug}" no tiene spotlight definido en categories.ts`);
+const href = `/productos/${cat.slug}`;
+---
+
+<section class="section" style={`background:${background}`} aria-labelledby={`spotlight-${cat.slug}`}>
+  <div class="container-site">
+    <div class={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center ${reverse ? 'lg:[direction:rtl]' : ''}`}>
+
+      <!-- Columna texto -->
+      <div class={reverse ? 'lg:[direction:ltr]' : ''}>
+        <span class="section-eyebrow mb-5 inline-flex">{cat.norm}</span>
+
+        <h2 id={`spotlight-${cat.slug}`} class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(2rem,3.8vw,3rem);line-height:1.05">
+          {s.title}<br/>
+          <span style="color:#F75000">{s.highlight}</span>
+        </h2>
+
+        {s.paragraphs.map((p) => (
+          <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">{p}</p>
+        ))}
+
+        <!-- Subsecciones -->
+        <div class="flex flex-col mt-6 mb-8" style="border-top:1px solid rgba(74,117,153,0.18)">
+          {s.subsections.map((sub) => (
+            <div class="flex items-start gap-4 py-4" style="border-bottom:1px solid rgba(74,117,153,0.18)">
+              <span class="w-1.5 h-1.5 mt-2 shrink-0" style="background:#F75000" aria-hidden="true"></span>
+              <div>
+                <h3 class="font-display font-bold text-base leading-tight mb-1" style="color:#FFFFFF">{sub.name}</h3>
+                <p class="text-xs leading-relaxed m-0" style="color:#64748B">{sub.detail}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href={href} class="btn btn-primary">
+            Ver {cat.label.toLowerCase()}
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a
+            href={whatsappUrl(`Hola, quiero cotizar ${cat.label.toLowerCase()}.`)}
+            target="_blank" rel="noopener"
+            class="btn btn-ghost"
+          >
+            Cotizar por WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Columna imagen -->
+      <figure class={`relative m-0 ${reverse ? 'lg:[direction:ltr]' : ''}`}>
+        <div class="relative overflow-hidden" style="border:1px solid rgba(74,117,153,0.25)">
+          <img
+            src={s.image}
+            alt={s.imageAlt}
+            width="640" height="720"
+            loading="lazy" decoding="async"
+            class="w-full h-auto block"
+          />
+          <!-- Marco de acento -->
+          <div class="absolute top-0 left-0 w-12 h-12 pointer-events-none" style="border-top:3px solid #F75000;border-left:3px solid #F75000" aria-hidden="true"></div>
+          <div class="absolute bottom-0 right-0 w-12 h-12 pointer-events-none" style="border-bottom:3px solid #F75000;border-right:3px solid #F75000" aria-hidden="true"></div>
+        </div>
+        <figcaption class="flex items-center justify-between gap-3 mt-3 text-[10px] font-display font-semibold uppercase tracking-widest" style="color:#4A7599">
+          <span>{cat.label}</span>
+          <span style="color:#FF8F57">{cat.norm}</span>
+        </figcaption>
+      </figure>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 720" role="img" aria-label="Traje estructural para bombero certificado NFPA 1971">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0C1825"/>
+      <stop offset="0.6" stop-color="#070E1A"/>
+      <stop offset="1" stop-color="#040A12"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.42" r="0.65">
+      <stop offset="0" stop-color="#F75000" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#F75000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="suitGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1A2E44"/>
+      <stop offset="1" stop-color="#122133"/>
+    </linearGradient>
+    <pattern id="gridP" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#7AA4C4" stroke-width="0.6" opacity="0.08"/>
+    </pattern>
+  </defs>
+
+  <!-- Fondo -->
+  <rect width="640" height="720" fill="url(#bgGrad)"/>
+  <rect width="640" height="720" fill="url(#gridP)"/>
+  <rect width="640" height="720" fill="url(#glow)"/>
+
+  <!-- Casco -->
+  <g>
+    <path d="M320 96c-66 0-104 46-110 92h220c-6-46-44-92-110-92z" fill="#F75000"/>
+    <path d="M196 192c0-10 8-18 18-18h212c10 0 18 8 18 18s-8 18-18 18H214c-10 0-18-8-18-18z" fill="#C43D00"/>
+    <rect x="302" y="78" width="36" height="26" rx="8" fill="#FF6B26"/>
+    <!-- visor -->
+    <path d="M236 214h168c8 0 12 10 7 16l-22 26h-138l-22-26c-5-6-1-16 7-16z" fill="#0A1420" stroke="#2C4A63" stroke-width="2"/>
+  </g>
+
+  <!-- Chaquetón -->
+  <g>
+    <!-- cuello -->
+    <path d="M282 268h76l-10 26h-56z" fill="#2C4A63"/>
+    <!-- cuerpo -->
+    <path d="M208 330c8-34 38-62 74-66h76c36 4 66 32 74 66l10 250c1 14-10 26-24 26H222c-14 0-25-12-24-26z" fill="url(#suitGrad)" stroke="#2C4A63" stroke-width="3"/>
+    <!-- mangas -->
+    <path d="M212 322c-26 10-40 34-44 62l-12 148c-1 12 8 22 20 22h26l14-210z" fill="#1A2E44" stroke="#2C4A63" stroke-width="3"/>
+    <path d="M428 322c26 10 40 34 44 62l12 148c1 12-8 22-20 22h-26l-14-210z" fill="#1A2E44" stroke="#2C4A63" stroke-width="3"/>
+    <!-- cierre central -->
+    <rect x="314" y="282" width="12" height="318" rx="4" fill="#0A1420"/>
+    <!-- bandas reflejantes torso -->
+    <rect x="206" y="380" width="228" height="22" fill="#F5A623"/>
+    <rect x="206" y="404" width="228" height="8" fill="#E8F2F9" opacity="0.85"/>
+    <rect x="202" y="508" width="236" height="22" fill="#F5A623"/>
+    <rect x="202" y="532" width="236" height="8" fill="#E8F2F9" opacity="0.85"/>
+    <!-- bandas mangas -->
+    <rect x="166" y="430" width="44" height="20" fill="#F5A623" transform="rotate(4 188 440)"/>
+    <rect x="430" y="430" width="44" height="20" fill="#F5A623" transform="rotate(-4 452 440)"/>
+    <!-- bolsillos -->
+    <rect x="232" y="560" width="64" height="56" rx="4" fill="#122133" stroke="#2C4A63" stroke-width="2.5"/>
+    <rect x="344" y="560" width="64" height="56" rx="4" fill="#122133" stroke="#2C4A63" stroke-width="2.5"/>
+    <!-- radio strap -->
+    <path d="M236 286l40 96" stroke="#C43D00" stroke-width="10" stroke-linecap="round"/>
+  </g>
+
+  <!-- Etiquetas técnicas -->
+  <g font-family="Rajdhani, Arial, sans-serif" font-weight="700">
+    <g>
+      <rect x="40" y="48" width="148" height="34" fill="rgba(247,80,0,0.12)" stroke="rgba(247,80,0,0.4)"/>
+      <text x="114" y="71" text-anchor="middle" font-size="17" fill="#FF8F57" letter-spacing="2">NFPA 1971:2018</text>
+    </g>
+    <g>
+      <rect x="452" y="48" width="148" height="34" fill="rgba(74,117,153,0.12)" stroke="rgba(74,117,153,0.4)"/>
+      <text x="526" y="71" text-anchor="middle" font-size="17" fill="#7AA4C4" letter-spacing="2">3 CAPAS</text>
+    </g>
+    <!-- líneas de spec -->
+    <g stroke="#4A7599" stroke-width="1.5" opacity="0.8">
+      <path d="M438 392h96"/><circle cx="438" cy="392" r="3.5" fill="#F5A623" stroke="none"/>
+      <path d="M438 568h96"/><circle cx="438" cy="568" r="3.5" fill="#F75000" stroke="none"/>
+      <path d="M204 240h-96"/><circle cx="204" cy="240" r="3.5" fill="#FF6B26" stroke="none"/>
+    </g>
+    <text x="540" y="386" font-size="13" fill="#7AA4C4" letter-spacing="1">TRIM 3M</text>
+    <text x="540" y="398" font-size="13" fill="#7AA4C4" letter-spacing="1">SCOTCHLITE</text>
+    <text x="540" y="562" font-size="13" fill="#7AA4C4" letter-spacing="1">SHELL PBI /</text>
+    <text x="540" y="574" font-size="13" fill="#7AA4C4" letter-spacing="1">NOMEX NXT</text>
+    <text x="100" y="234" text-anchor="end" font-size="13" fill="#7AA4C4" letter-spacing="1">CASCO NFPA</text>
+    <text x="100" y="246" text-anchor="end" font-size="13" fill="#7AA4C4" letter-spacing="1">INTEGRADO</text>
+  </g>
+
+  <!-- Base -->
+  <rect x="0" y="688" width="640" height="32" fill="#0A1420"/>
+  <rect x="0" y="686" width="640" height="2" fill="#F75000" opacity="0.5"/>
+</svg>

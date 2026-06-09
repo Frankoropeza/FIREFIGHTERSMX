@@ -2,7 +2,8 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import CategoryCard from '@components/products/CategoryCard.astro';
-import { allCategories } from '@data/categories';
+import CategorySpotlight from '@components/products/CategorySpotlight.astro';
+import { allCategories, trajesBombero } from '@data/categories';
 import { featuredProducts } from '@data/products';
 import { SITE, whatsappUrl } from '@data/site';
 
@@ -165,6 +166,9 @@ const trustPoints = [
 
     </div>
   </section>
+
+  <!-- Módulos destacados por categoría (texto detallado + imagen) -->
+  <CategorySpotlight cat={trajesBombero} />
 
   <!-- Productos destacados -->
   <section class="section" style="background:#070E1A" aria-labelledby="destacados-title">
