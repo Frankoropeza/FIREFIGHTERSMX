@@ -4,6 +4,12 @@ export interface Category {
   norm: string;
   /** Meta description (≤160 caracteres) */
   description: string;
+  /** Descripción corta para cards (1 línea) */
+  shortDesc: string;
+  /** Color de acento de la card */
+  accent: string;
+  /** Ícono SVG inline de la card */
+  icon: string;
   /** Párrafos de introducción SEO de la página de categoría */
   intro: string[];
   /** Modelos / líneas destacadas */
@@ -19,6 +25,9 @@ export interface Category {
  */
 export const trajesBombero: Category = {
   slug: 'trajes-bombero',
+    shortDesc: 'Trajes estructurales y forestales certificados para protección térmica extrema.',
+    accent: '#F75000',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>`,
   label: 'Trajes para Bomberos',
   norm: 'NFPA 1971 · 1977',
   description: 'Trajes estructurales, de proximidad y forestales certificados NFPA 1971 y 1977 en México: Globe, Lion y MSA. Tallas S–4XL con entrega en 32 estados.',
@@ -42,6 +51,9 @@ export const trajesBombero: Category = {
 export const categories: Category[] = [
   {
     slug: 'cascos-nfpa',
+    shortDesc: 'Cascos de combate y forestales con protección facial integrada y suspensión avanzada.',
+    accent: '#F75000',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 17a10 10 0 0 1 20 0"/><path d="M2 17h20v3H2z"/><path d="M12 7v2"/></svg>`,
     label: 'Cascos NFPA',
     norm: 'NFPA 1971 · 1977',
     description: 'Cascos para bomberos certificados NFPA 1971 y 1977 en México: MSA Gallet, Bullard y Cairns. Estructurales, forestales y de rescate. Cotización en 24 h.',
@@ -59,6 +71,9 @@ export const categories: Category[] = [
   },
   {
     slug: 'equipos-scba',
+    shortDesc: 'Equipos de respiración autónoma de circuito abierto para atmósferas inmediatamente peligrosas.',
+    accent: '#F5A623',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/></svg>`,
     label: 'Equipos SCBA',
     norm: 'NFPA 1981 · NIOSH',
     description: 'Equipos de respiración autónoma SCBA certificados NFPA 1981 y NIOSH: MSA G1, Dräger PSS y 3M Scott Air-Pak. Cilindros 30/45/60 min. Servicio autorizado.',
@@ -76,6 +91,9 @@ export const categories: Category[] = [
   },
   {
     slug: 'herramientas-rescate',
+    shortDesc: 'Sistemas hidráulicos de excarcelación y rescate vehicular de alto rendimiento.',
+    accent: '#F75000',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
     label: 'Herramientas de Rescate',
     norm: 'NFPA 1936',
     description: 'Herramientas hidráulicas de rescate NFPA 1936: cizallas, separadores y arietes Holmatro. Rescate vehicular y estructural. Demostración y capacitación incluidas.',
@@ -93,6 +111,9 @@ export const categories: Category[] = [
   },
   {
     slug: 'extintores',
+    shortDesc: 'Extintores portátiles y sobre ruedas para fuegos clase A, B, C, D y K.',
+    accent: '#F5A623',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M15 6v-3a3 3 0 0 0-6 0v3"/><rect x="6" y="6" width="12" height="14" rx="2"/><path d="M10 11h4M12 11v4"/></svg>`,
     label: 'Extintores',
     norm: 'NOM-154-SCFI · NFPA 10',
     description: 'Extintores certificados NOM-154-SCFI y NFPA 10: PQS ABC, CO₂, Tipo K y agente limpio. Venta, recarga y mantenimiento con collar de garantía en México.',
@@ -110,6 +131,9 @@ export const categories: Category[] = [
   },
   {
     slug: 'sistemas-ci',
+    shortDesc: 'Rociadores automáticos, paneles de detección y agentes limpios para instalaciones críticas.',
+    accent: '#34D399',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/><path d="M8 12h8M12 8v8"/></svg>`,
     label: 'Sistemas Contra Incendio',
     norm: 'NFPA 13 · 72 · 2001',
     description: 'Sistemas contra incendio NFPA: rociadores, detección y alarma, supresión con agente limpio FM-200/Novec. Diseño, instalación y memoria de cálculo en México.',
@@ -127,6 +151,9 @@ export const categories: Category[] = [
   },
   {
     slug: 'camaras-termicas',
+    shortDesc: 'Cámaras de imagen térmica para búsqueda y rescate en ambientes de visibilidad cero.',
+    accent: '#F5A623',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>`,
     label: 'Cámaras Térmicas',
     norm: 'NFPA 1801',
     description: 'Cámaras térmicas para bomberos certificadas NFPA 1801: FLIR, MSA Evolution y Bullard. Búsqueda y rescate, sobrehaul y HAZMAT. Demostración sin costo.',
@@ -144,6 +171,9 @@ export const categories: Category[] = [
   },
   {
     slug: 'hazmat',
+    shortDesc: 'Trajes de protección química Nivel A y B para respuesta a materiales peligrosos.',
+    accent: '#F75000',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`,
     label: 'Equipos HAZMAT',
     norm: 'NFPA 1991 · 1992',
     description: 'Trajes HAZMAT Nivel A y B certificados NFPA 1991/1992, detección multi-gas y descontaminación. Equipamiento para materiales peligrosos en México.',
@@ -161,6 +191,9 @@ export const categories: Category[] = [
   },
   {
     slug: 'drones-emergencia',
+    shortDesc: 'Drones con cámara térmica para evaluación aérea, búsqueda y reconocimiento HAZMAT.',
+    accent: '#34D399',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="3"/><circle cx="4.5" cy="4.5" r="2.5"/><circle cx="19.5" cy="4.5" r="2.5"/><circle cx="4.5" cy="19.5" r="2.5"/><circle cx="19.5" cy="19.5" r="2.5"/><path d="M6.5 6.5l3.4 3.4M17.5 6.5l-3.4 3.4M6.5 17.5l3.4-3.4M17.5 17.5l-3.4-3.4"/></svg>`,
     label: 'Drones de Emergencia',
     norm: 'Certificación AFAC',
     description: 'Drones para bomberos y protección civil: térmicos DJI Matrice, búsqueda y rescate, evaluación de incendios. Capacitación de piloto y trámite AFAC incluidos.',

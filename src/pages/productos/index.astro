@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
+import CategoryCard from '@components/products/CategoryCard.astro';
 import { allCategories } from '@data/categories';
 import { featuredProducts } from '@data/products';
 import { SITE, whatsappUrl } from '@data/site';
@@ -154,35 +155,8 @@ const trustPoints = [
         </div>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" style="border-top:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">
-        {allCategories.map((cat) => (
-          <article class="grid-cell relative flex flex-col gap-4 p-7" style="border-right:1px solid rgba(74,117,153,0.18);border-bottom:1px solid rgba(74,117,153,0.18)">
-            <div class="flex items-start justify-between gap-3">
-              <h3 class="font-display font-bold text-xl leading-tight" style="color:#FFFFFF">
-                <a href={`/productos/${cat.slug}`} class="hover:text-[#FF6B26]">{cat.label}</a>
-              </h3>
-              <span class="text-[10px] font-display font-semibold uppercase tracking-wider text-right shrink-0" style="color:#4A7599">{cat.norm}</span>
-            </div>
-
-            <p class="text-xs leading-relaxed" style="color:#64748B">{cat.description}</p>
-
-            <ul class="flex flex-col gap-1.5 mt-auto list-none m-0 p-0">
-              {cat.items.slice(0, 4).map((item) => (
-                <li class="flex items-center gap-2 text-xs" style="color:#94A3B8">
-                  <span class="w-1 h-1 rounded-full shrink-0" style="background:#F75000;opacity:0.6" aria-hidden="true"></span>
-                  {item.name}
-                </li>
-              ))}
-            </ul>
-
-            <a href={`/productos/${cat.slug}`} class="flex items-center gap-1.5 text-xs font-display font-semibold uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57;letter-spacing:0.1em">
-              Ver {cat.label.toLowerCase()}
-              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
-              </svg>
-            </a>
-          </article>
-        ))}
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {allCategories.map((cat) => <CategoryCard cat={cat} />)}
       </div>
 
     </div>
