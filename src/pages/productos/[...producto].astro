@@ -1,0 +1,138 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { featuredProducts, type Product } from '@data/products';
+import { SITE, whatsappUrl } from '@data/site';
+
+export function getStaticPaths() {
+  return featuredProducts.map((product) => ({
+    // href ="/productos/<categoria>/<slug>" → param resto:"<categoria>/<slug>"
+    params: { producto: product.href.replace(/^\/productos\//, '') },
+    props: { product },
+  }));
+}
+
+interface Props {
+  product: Product;
+}
+
+const { product } = Astro.props;
+const canonicalURL = `${SITE.url}${product.href}`;
+const categoryPath = product.href.split('/').slice(0, 3).join('/');
+
+const productSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: product.title,
+  description: product.description,
+  url: canonicalURL,
+  category: product.category,
+  ...(product.brand ? { brand: { '@type': 'Brand', name: product.brand } } : {}),
+  offers: {
+    '@type': 'Offer',
+    url: canonicalURL,
+    priceCurrency: 'MXN',
+    availability: 'https://schema.org/InStock',
+    seller: { '@type': 'Organization', name: SITE.name },
+  },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Productos', item: `${SITE.url}/productos` },
+    { '@type': 'ListItem', position: 3, name: product.category, item: `${SITE.url}${categoryPath}` },
+    { '@type': 'ListItem', position: 4, name: product.title, item: canonicalURL },
+  ],
+};
+
+const related = featuredProducts.filter((p) => p.slug !== product.slug).slice(0, 3);
+---
+
+<BaseLayout
+  title={`${product.title} — ${SITE.name}`}
+  description={product.description.slice(0, 158)}
+  canonicalURL={canonicalURL}
+  ogType="product"
+  schema={[productSchema, breadcrumbSchema]}
+>
+  <!-- Breadcrumb -->
+  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+    <div class="container-site">
+      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0 flex-wrap" style="color:#4A7599">
+        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="/productos" class="hover:text-[#FF6B26]">Productos</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href={categoryPath} class="hover:text-[#FF6B26]">{product.category}</a></li>
+        <li aria-hidden="true">/</li>
+        <li><span style="color:#94A3B8" aria-current="page">{product.title}</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Detalle -->
+  <section class="section" style="background:#040A12">
+    <div class="container-site">
+      <div class="max-w-4xl">
+        <div class="flex gap-2 flex-wrap mb-5">
+          {product.norm && <span class="badge badge-fire">{product.norm}</span>}
+          {product.brand && <span class="badge badge-dark">{product.brand}</span>}
+          {product.badge && <span class="badge badge-gold">{product.badge}</span>}
+        </div>
+
+        <h1 class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(2rem,4.5vw,3.5rem);line-height:1.05">
+          {product.title}
+        </h1>
+
+        <p class="text-base leading-[1.9] mb-8" style="color:#94A3B8">{product.description}</p>
+
+        <div class="flex flex-col gap-3 mb-10 p-6" style="background:#0C1825;border:1px solid rgba(74,117,153,0.2)">
+          {[
+            'Equipo original con número de serie verificable con fábrica',
+            'Certificado de conformidad y ficha técnica para licitación incluidos',
+            'Garantía directa de fábrica y refacciones originales',
+            'Envío asegurado a los 32 estados',
+          ].map((t) => (
+            <div class="flex items-start gap-3 text-sm" style="color:#94A3B8">
+              <svg class="w-4 h-4 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+              {t}
+            </div>
+          ))}
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a
+            href={whatsappUrl(`Hola, quiero cotizar: ${product.title}`)}
+            target="_blank" rel="noopener"
+            class="btn btn-primary btn-lg"
+          >
+            Cotizar este equipo
+          </a>
+          <a href={categoryPath} class="btn btn-ghost btn-lg">Ver más {product.category}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Relacionados -->
+  <section class="section-tight" style="background:#070E1A" aria-labelledby="related-title">
+    <div class="container-site">
+      <h2 id="related-title" class="font-display font-bold text-sm uppercase tracking-widest mb-6" style="color:#4A7599">
+        También te puede interesar
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
+        {related.map((p) => (
+          <a href={p.href} class="grid-cell group flex flex-col gap-3 p-6">
+            <div class="flex gap-2 flex-wrap">
+              {p.norm && <span class="badge badge-fire">{p.norm}</span>}
+            </div>
+            <h3 class="font-display font-bold text-base leading-snug group-hover:text-[#FF6B26]" style="color:#FFFFFF">{p.title}</h3>
+            <span class="text-xs font-display font-semibold uppercase tracking-wider mt-auto" style="color:#FF8F57">Ver detalles →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

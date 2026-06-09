@@ -1,48 +1,69 @@
 ---
 /**
- * CTA final — cierre del home. El formulario completo vive en FAQSection;
- * aquí solo conversión directa: WhatsApp + catálogo + teléfono.
+ * CTA final — cierre del home en dos columnas:
+ * izquierda mensaje, derecha acciones de conversión.
  */
 import { SITE, whatsappUrl } from '@data/site';
 ---
 
 <section class="relative overflow-hidden" style="background:#070E1A;padding-block:6rem" aria-labelledby="cta-final-title">
 
-  <!-- Glow central -->
-  <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse 60% 80% at 50% 100%, rgba(247,80,0,0.12) 0%, transparent 70%)" aria-hidden="true"></div>
+  <!-- Glow -->
+  <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse 50% 80% at 85% 100%, rgba(247,80,0,0.12) 0%, transparent 70%)" aria-hidden="true"></div>
 
-  <div class="container-site relative z-10 text-center max-w-4xl mx-auto">
-    <span class="section-eyebrow mb-6 inline-flex">Cotización sin compromiso</span>
+  <div class="container-site relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-    <h2 id="cta-final-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(2.25rem,5vw,4rem);line-height:1.02">
-      ¿Listo para equipar a quienes<br/>
-      <span style="color:#F75000">protegen vidas?</span>
-    </h2>
+      <!-- Columna izquierda: mensaje -->
+      <div>
+        <span class="section-eyebrow mb-6 inline-flex">Cotización sin compromiso</span>
 
-    <p class="text-base leading-relaxed mb-10 max-w-2xl mx-auto" style="color:#94A3B8">
-      Mándanos por WhatsApp tu lista de equipo, las bases de tu licitación o simplemente
-      cuéntanos tu operación. Regresamos propuesta con precios, fichas técnicas y tiempos
-      de entrega en menos de 24 horas hábiles.
-    </p>
+        <h2 id="cta-final-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(2.25rem,4.5vw,3.75rem);line-height:1.02">
+          ¿Listo para equipar<br/>
+          a quienes <span style="color:#F75000">protegen vidas?</span>
+        </h2>
 
-    <div class="flex flex-col sm:flex-row gap-3 justify-center">
-      <a
-        href={whatsappUrl('Hola, quiero una cotización de equipo para bomberos / contra incendio.')}
-        target="_blank" rel="noopener"
-        class="btn btn-primary btn-lg"
-      >
-        Cotizar por WhatsApp
-        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-        </svg>
-      </a>
-      <a href="/productos" class="btn btn-ghost btn-lg">Ver catálogo completo</a>
+        <p class="text-base leading-relaxed" style="color:#94A3B8">
+          Mándanos por WhatsApp tu lista de equipo, las bases de tu licitación o
+          simplemente cuéntanos tu operación. Regresamos propuesta con precios,
+          fichas técnicas y tiempos de entrega en menos de 24 horas hábiles.
+        </p>
+      </div>
+
+      <!-- Columna derecha: acciones -->
+      <div class="flex flex-col gap-4 lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+        <div class="flex flex-col gap-3 lg:max-w-md">
+          <a
+            href={whatsappUrl('Hola, quiero una cotización de equipo para bomberos / contra incendio.')}
+            target="_blank" rel="noopener"
+            class="btn btn-primary btn-lg w-full justify-center"
+          >
+            Cotizar por WhatsApp
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            </svg>
+          </a>
+          <a href="/productos" class="btn btn-ghost btn-lg w-full justify-center">Ver catálogo completo</a>
+        </div>
+
+        <div class="flex flex-col gap-2 mt-4 lg:max-w-md">
+          {[
+            'Respuesta en menos de 24 h hábiles',
+            'Fichas técnicas y certificados incluidos',
+          ].map((t) => (
+            <div class="flex items-center gap-3 text-sm" style="color:#94A3B8">
+              <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+              {t}
+            </div>
+          ))}
+          <a href={`tel:${SITE.phoneE164}`} class="flex items-center gap-3 text-sm hover:text-[#FF6B26]" style="color:#94A3B8">
+            <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="#FF6B26" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Tel. {SITE.phone}
+          </a>
+        </div>
+      </div>
+
     </div>
-
-    <p class="text-xs mt-8 uppercase tracking-widest font-display font-semibold" style="color:#4A7599">
-      Respuesta &lt; 24 h hábiles · Fichas técnicas incluidas ·
-      <a href={`tel:${SITE.phoneE164}`} class="transition-colors hover:text-[#FF6B26]" style="color:#7AA4C4">Tel. {SITE.phone}</a>
-    </p>
   </div>
 
   <!-- Línea de acento inferior -->

@@ -1,0 +1,58 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { SITE } from '@data/site';
+---
+<BaseLayout
+  title="Términos y Condiciones — FIREFIGHTERS MX"
+  description="Términos y condiciones de venta de FIREFIGHTERS MX: cotizaciones, precios, entregas, garantías y devoluciones de equipo contra incendio en México."
+>
+  <section class="section" style="background:#040A12">
+    <div class="container-site max-w-3xl">
+      <h1 class="font-display font-bold mb-8" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3rem)">Términos y Condiciones</h1>
+
+      <div class="flex flex-col gap-6 text-sm leading-[1.9]" style="color:#94A3B8">
+        <h2 class="font-display font-bold text-xl" style="color:#FFFFFF">1. Cotizaciones y precios</h2>
+        <p>
+          Las cotizaciones emitidas por {SITE.name} tienen una vigencia de 15 días naturales salvo
+          indicación distinta. Los precios están sujetos a cambios por variaciones de tipo de cambio
+          y disponibilidad de fábrica. Toda cotización incluye fichas técnicas y especificación de normas aplicables.
+        </p>
+
+        <h2 class="font-display font-bold text-xl mt-4" style="color:#FFFFFF">2. Pedidos y facturación</h2>
+        <p>
+          Los pedidos se confirman con orden de compra o anticipo según el esquema acordado.
+          Emitimos factura electrónica CFDI 4.0. Para dependencias de gobierno operamos conforme
+          a los procedimientos de contratación pública aplicables.
+        </p>
+
+        <h2 class="font-display font-bold text-xl mt-4" style="color:#FFFFFF">3. Entregas</h2>
+        <p>
+          Tiempos estimados: 24–48 horas en CDMX y zona metropolitana, 3–5 días hábiles en el resto
+          del país para producto en stock. Equipos sobre pedido (SCBA configurados, HAZMAT, herramientas
+          hidráulicas) según tiempo de fábrica informado en la cotización. Todos los envíos incluyen seguro.
+        </p>
+
+        <h2 class="font-display font-bold text-xl mt-4" style="color:#FFFFFF">4. Garantías</h2>
+        <p>
+          Los equipos cuentan con garantía directa de fábrica según el fabricante y la línea de producto.
+          La garantía cubre defectos de fabricación; no cubre desgaste normal, mal uso o mantenimiento
+          fuera de los lineamientos del fabricante (p. ej. NFPA 1851 para EPP estructural).
+        </p>
+
+        <h2 class="font-display font-bold text-xl mt-4" style="color:#FFFFFF">5. Devoluciones</h2>
+        <p>
+          Se aceptan devoluciones de producto en stock, sin uso y en empaque original, dentro de los
+          15 días naturales posteriores a la entrega. Equipos configurados sobre pedido no son retornables
+          salvo defecto de fabricación.
+        </p>
+
+        <h2 class="font-display font-bold text-xl mt-4" style="color:#FFFFFF">6. Contacto</h2>
+        <p>
+          Para cualquier aclaración sobre estos términos escríbenos a
+          <a href={`mailto:${SITE.email}`} class="font-semibold" style="color:#FF8F57">{SITE.email}</a>
+          o al teléfono {SITE.phone}. Última actualización: junio de 2026.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

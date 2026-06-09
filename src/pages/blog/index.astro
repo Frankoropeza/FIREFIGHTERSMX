@@ -31,7 +31,7 @@ const categories = [...new Set(allPosts.map(p => p.data.category))];
       <div class="flex flex-wrap gap-2 mb-12">
         <span class="badge-fire">Todos</span>
         {categories.map((cat) => (
-          <span class="badge-dark cursor-pointer hover:bg-dark-200 transition-colors">{cat}</span>
+          <span class="badge-dark cursor-pointer hover:bg-dark-200">{cat}</span>
         ))}
       </div>
 

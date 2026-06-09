@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans:    ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Oswald', 'Inter', 'system-ui', 'sans-serif'],
+        sans:    ['Sora', 'system-ui', 'sans-serif'],
+        display: ['Rajdhani', 'Sora', 'system-ui', 'sans-serif'],
         mono:    ['ui-monospace', 'SF Mono', 'Menlo', 'monospace'],
       },
       colors: {
@@ -15,6 +15,38 @@ module.exports = {
           light:    '#FF2A37',
           bg:       '#FDECEE',
           accent:   '#FF6B1A',
+          // Escala numérica (compat páginas interiores)
+          50:  '#FFF4ED',
+          100: '#FFE5D9',
+          200: '#FFC9B0',
+          300: '#FF8F57',
+          400: '#FF6B26',
+          500: '#F75000',
+          600: '#C43D00',
+          700: '#9A3412',
+          800: '#7C2D12',
+          900: '#431407',
+        },
+        gold: {
+          100: '#FEF3D0',
+          200: '#FDE68A',
+          300: '#FCD34D',
+          400: '#F5A623',
+          500: '#F5A623',
+          600: '#D97706',
+        },
+        // Alias "dark" usado por páginas interiores (escala slate)
+        dark: {
+          50:  '#F8FAFC',
+          100: '#F1F5F9',
+          200: '#E2E8F0',
+          300: '#CBD5E1',
+          400: '#94A3B8',
+          500: '#64748B',
+          600: '#475569',
+          700: '#334155',
+          800: '#1E293B',
+          900: '#0F172A',
         },
         ink: {
           900: '#0A0A0A',

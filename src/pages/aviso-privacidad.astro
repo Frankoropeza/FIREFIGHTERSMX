@@ -1,0 +1,55 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { SITE } from '@data/site';
+---
+<BaseLayout
+  title="Aviso de Privacidad — FIREFIGHTERS MX"
+  description="Aviso de privacidad de FIREFIGHTERS MX conforme a la LFPDPPP: tratamiento de datos personales, finalidades, derechos ARCO y medios de contacto."
+>
+  <section class="section" style="background:#040A12">
+    <div class="container-site max-w-3xl">
+      <h1 class="font-display font-bold mb-8" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3rem)">Aviso de Privacidad</h1>
+
+      <div class="flex flex-col gap-6 text-sm leading-[1.9]" style="color:#94A3B8">
+        <p>
+          <strong style="color:#CBD5E1">{SITE.name}</strong>, con domicilio en Ciudad de México, México,
+          es responsable del tratamiento de los datos personales que nos proporcionas, conforme a la
+          Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP).
+        </p>
+
+        <h2 class="font-display font-bold text-xl mt-4" style="color:#FFFFFF">Datos que recabamos</h2>
+        <p>
+          Nombre, empresa o institución, correo electrónico, teléfono y la información que nos compartas
+          en formularios de cotización o contacto, así como datos de facturación cuando se concreta una operación.
+        </p>
+
+        <h2 class="font-display font-bold text-xl mt-4" style="color:#FFFFFF">Finalidades del tratamiento</h2>
+        <p>
+          Elaborar y dar seguimiento a cotizaciones; procesar pedidos, entregas y facturación;
+          brindar soporte técnico y servicio post-venta; y, de forma secundaria, enviarte información
+          comercial sobre productos y servicios. Puedes oponerte a las finalidades secundarias en cualquier momento.
+        </p>
+
+        <h2 class="font-display font-bold text-xl mt-4" style="color:#FFFFFF">Derechos ARCO</h2>
+        <p>
+          Tienes derecho a acceder, rectificar, cancelar u oponerte al tratamiento de tus datos personales.
+          Para ejercerlos, envía tu solicitud a
+          <a href={`mailto:${SITE.email}`} class="font-semibold" style="color:#FF8F57">{SITE.email}</a>
+          indicando tu nombre completo, el derecho que deseas ejercer y los datos de contacto para darte respuesta.
+        </p>
+
+        <h2 class="font-display font-bold text-xl mt-4" style="color:#FFFFFF">Transferencias</h2>
+        <p>
+          No transferimos tus datos personales a terceros sin tu consentimiento, salvo proveedores logísticos
+          necesarios para la entrega de pedidos y los supuestos previstos por la ley.
+        </p>
+
+        <h2 class="font-display font-bold text-xl mt-4" style="color:#FFFFFF">Cambios al aviso</h2>
+        <p>
+          Cualquier modificación a este aviso se publicará en esta misma página.
+          Última actualización: junio de 2026.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

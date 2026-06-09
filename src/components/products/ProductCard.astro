@@ -20,7 +20,7 @@ const { title, description, image, href, brand, norm, category, badge } = Astro.
       <img
         src={image}
         alt={title}
-        class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
+        class="w-full h-full object-contain p-4"
         loading="lazy"
         width="400"
         height="400"
@@ -51,7 +51,7 @@ const { title, description, image, href, brand, norm, category, badge } = Astro.
     </div>
 
     <!-- Title -->
-    <h3 class="font-heading font-bold text-dark-900 text-base leading-snug mb-2 line-clamp-2 group-hover:text-fire-700 transition-colors">
+    <h3 class="font-heading font-bold text-dark-900 text-base leading-snug mb-2 line-clamp-2 group-hover:text-fire-700">
       <a href={href}>{title}</a>
     </h3>
 

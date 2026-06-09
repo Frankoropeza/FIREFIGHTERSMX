@@ -23,17 +23,17 @@ import BaseLayout from '@layouts/BaseLayout.astro';
       <h2 class="section-title mb-10">Soluciones para Cuerpos de Bomberos</h2>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {[
-          { href: "/productos/trajes-bombero", icon: "🧥", title: "Trajes NFPA 1971", desc: "Estructurales, proximidad y forestales. Certificados y con ficha técnica para licitación." },
-          { href: "/productos/equipos-scba", icon: "😷", title: "Equipos SCBA", desc: "MSA G1, Dräger PSS, 3M Scott Air-Pak. Con prueba hidrostática incluida." },
-          { href: "/productos/cascos-nfpa", icon: "⛑️", title: "Cascos NFPA", desc: "Gallet F1, Bullard, Cairns. Certificados NFPA 1971." },
-          { href: "/productos/herramientas-rescate", icon: "⚙️", title: "Herramientas de Rescate", desc: "Holmatro, Hurst, Weber. Cizallas, expansores, cilindros de rescate." },
-          { href: "/servicios/capacitacion", icon: "🎓", title: "Capacitación NFPA", desc: "NFPA 1001, 1021, 1041. DC-3 STPS. In situ o en nuestras instalaciones." },
-          { href: "/licitaciones", icon: "📋", title: "Soporte Licitaciones", desc: "Fichas técnicas, manifiestos de normas, registro CompraNet." },
+          { href:"/productos/trajes-bombero", icon:"🧥", title:"Trajes NFPA 1971", desc:"Estructurales, proximidad y forestales. Certificados y con ficha técnica para licitación." },
+          { href:"/productos/equipos-scba", icon:"😷", title:"Equipos SCBA", desc:"MSA G1, Dräger PSS, 3M Scott Air-Pak. Con prueba hidrostática incluida." },
+          { href:"/productos/cascos-nfpa", icon:"⛑️", title:"Cascos NFPA", desc:"Gallet F1, Bullard, Cairns. Certificados NFPA 1971." },
+          { href:"/productos/herramientas-rescate", icon:"⚙️", title:"Herramientas de Rescate", desc:"Holmatro, Hurst, Weber. Cizallas, expansores, cilindros de rescate." },
+          { href:"/servicios/capacitacion", icon:"🎓", title:"Capacitación NFPA", desc:"NFPA 1001, 1021, 1041. DC-3 STPS. In situ o en nuestras instalaciones." },
+          { href:"/licitaciones", icon:"📋", title:"Soporte Licitaciones", desc:"Fichas técnicas, manifiestos de normas, registro CompraNet." },
         ].map((s) => (
           <a href={s.href} class="card-fire group p-6 flex gap-4">
             <span class="text-3xl shrink-0">{s.icon}</span>
             <div>
-              <h3 class="font-bold text-dark-900 group-hover:text-fire-700 transition-colors mb-2">{s.title}</h3>
+              <h3 class="font-bold text-dark-900 group-hover:text-fire-700 mb-2">{s.title}</h3>
               <p class="text-dark-500 text-sm">{s.desc}</p>
             </div>
           </a>

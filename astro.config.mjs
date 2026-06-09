@@ -4,7 +4,7 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://firefightersmx.com',
+  site: 'https://firefighters.mx',
   integrations: [
     tailwind({ applyBaseStyles: false, configFile: './tailwind.config.cjs' }),
     mdx(),
@@ -12,18 +12,12 @@ export default defineConfig({
       changefreq: 'weekly',
       priority: 0.7,
       lastmod: new Date(),
-      customPages: [
-        'https://firefightersmx.com/productos/trajes-bombero',
-        'https://firefightersmx.com/productos/scba',
-        'https://firefightersmx.com/productos/herramientas-rescate',
-        'https://firefightersmx.com/servicios/capacitacion',
-        'https://firefightersmx.com/servicios/brigadas-empresariales',
-        'https://firefightersmx.com/servicios/licitaciones',
-      ],
+      // Las rutas reales se detectan solas; excluir 404
+      filter: (page) => !page.includes('/404'),
     }),
   ],
   image: {
-    domains: ['firefightersmx.com'],
+    domains: ['firefighters.mx'],
   },
   markdown: {
     shikiConfig: {

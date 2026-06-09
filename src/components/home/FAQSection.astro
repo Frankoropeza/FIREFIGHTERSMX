@@ -42,10 +42,10 @@ import { homeFaqs as faqs } from '@data/faqs';
           {faqs.map((faq) => (
             <details class="faq-item group" style="border-bottom:1px solid rgba(74,117,153,0.15)">
               <summary class="flex items-start justify-between gap-4 cursor-pointer select-none list-none p-6">
-                <h3 class="font-display font-semibold text-sm leading-snug pr-2 group-open:text-[#FF6B26] transition-colors m-0" style="color:#FFFFFF;font-size:0.875rem;line-height:1.375">
+                <h3 class="font-display font-semibold text-sm leading-snug pr-2 group-open:text-[#FF6B26] m-0" style="color:#FFFFFF;font-size:0.875rem;line-height:1.375">
                   {faq.q}
                 </h3>
-                <span class="faq-icon shrink-0 mt-0.5 w-5 h-5 flex items-center justify-center transition-transform duration-200" style="border:1px solid rgba(74,117,153,0.3);color:#4A7599">
+                <span class="faq-icon shrink-0 mt-0.5 w-5 h-5 flex items-center justify-center" style="border:1px solid rgba(74,117,153,0.3);color:#4A7599">
                   <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg>
                 </span>
               </summary>

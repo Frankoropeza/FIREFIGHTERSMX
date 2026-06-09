@@ -15,7 +15,7 @@ import { SITE, whatsappUrl } from '@data/site';
       <span class="w-px h-3 shrink-0" style="background:rgba(74,117,153,0.2)"></span>
 
       <div class="flex items-center gap-1.5">
-        <span class="w-1.5 h-1.5 rounded-full animate-pulse shrink-0" style="background:#34D399"></span>
+        <span class="w-1.5 h-1.5 rounded-full shrink-0" style="background:#34D399"></span>
         <span class="text-[11px] font-medium tracking-wide" style="color:#64748B">
           Disponibilidad inmediata · Stock permanente
         </span>
@@ -51,7 +51,7 @@ import { SITE, whatsappUrl } from '@data/site';
       <!-- Email -->
       <a
         href={`mailto:${SITE.email}`}
-        class="hidden lg:flex items-center gap-1.5 transition-colors"
+        class="hidden lg:flex items-center gap-1.5"
         style="color:#4A7599"
         onmouseover="this.style.color='#CBD5E1'"
         onmouseout="this.style.color='#4A7599'"
@@ -67,7 +67,7 @@ import { SITE, whatsappUrl } from '@data/site';
       <!-- Teléfono -->
       <a
         href={`tel:${SITE.phoneE164}`}
-        class="flex items-center gap-1.5 transition-colors"
+        class="flex items-center gap-1.5"
         style="color:#94A3B8"
         onmouseover="this.style.color='#F75000'"
         onmouseout="this.style.color='#94A3B8'"
@@ -84,7 +84,7 @@ import { SITE, whatsappUrl } from '@data/site';
       <a
         href={whatsappUrl('Hola, necesito información sobre equipo de bomberos.')}
         target="_blank" rel="noopener"
-        class="flex items-center gap-1.5 px-2.5 py-1 transition-all"
+        class="flex items-center gap-1.5 px-2.5 py-1"
         style="background:rgba(37,211,102,0.1);border:1px solid rgba(37,211,102,0.2);color:#25d366"
         onmouseover="this.style.background='rgba(37,211,102,0.18)'"
         onmouseout="this.style.background='rgba(37,211,102,0.1)'"

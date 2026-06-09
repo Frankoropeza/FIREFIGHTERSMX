@@ -1,6 +1,6 @@
 ---
 /**
- * Servicios numerados 01–06 — lista editorial estilo "ledger".
+ * Servicios numerados 01–06 — lista editorial estilo"ledger".
  * Fuente de datos: src/data/services.ts
  */
 import { services } from '@data/services';
@@ -33,7 +33,7 @@ const blurbs: Record<string, string> = {
           Todo desde un solo proveedor, para que tu operación cumpla la normativa
           vigente sin coordinar a tres empresas distintas.
         </p>
-        <a href="/servicios" class="inline-flex items-center gap-2 text-xs font-display font-semibold uppercase tracking-wider transition-colors hover:text-[#FF6B26]" style="color:#FF8F57;letter-spacing:0.1em">
+        <a href="/servicios" class="inline-flex items-center gap-2 text-xs font-display font-semibold uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57;letter-spacing:0.1em">
           Ver todos los servicios
           <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
@@ -48,17 +48,17 @@ const blurbs: Record<string, string> = {
         <li class="m-0 p-0">
           <a
             href={s.href}
-            class="service-row group flex items-start gap-5 p-6 lg:p-7 transition-colors duration-200"
+            class="service-row group flex items-start gap-5 p-6 lg:p-7"
             style={`border-bottom:1px solid rgba(74,117,153,0.15);${i % 2 === 0 ? 'border-right:1px solid rgba(74,117,153,0.15)' : ''}`}
           >
-            <span class="font-display font-bold text-2xl shrink-0 transition-colors group-hover:text-[#F75000]" style="color:rgba(74,117,153,0.55);min-width:2.5rem" aria-hidden="true">
+            <span class="font-display font-bold text-2xl shrink-0 group-hover:text-[#F75000]" style="color:rgba(74,117,153,0.55);min-width:2.5rem" aria-hidden="true">
               {String(i + 1).padStart(2, '0')}
             </span>
             <span class="flex flex-col gap-1.5 flex-1">
-              <span class="font-display font-bold text-lg leading-tight transition-colors group-hover:text-[#FF6B26]" style="color:#FFFFFF">{s.title}</span>
+              <span class="font-display font-bold text-lg leading-tight group-hover:text-[#FF6B26]" style="color:#FFFFFF">{s.title}</span>
               <span class="text-sm leading-relaxed" style="color:#64748B">{blurbs[s.slug] ?? s.description}</span>
             </span>
-            <svg class="w-4 h-4 shrink-0 mt-1.5 transition-all opacity-0 group-hover:opacity-100 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="#FF6B26" stroke-width="2.5" aria-hidden="true">
+            <svg class="w-4 h-4 shrink-0 mt-1.5 opacity-0 group-hover:opacity-100" fill="none" viewBox="0 0 24 24" stroke="#FF6B26" stroke-width="2.5" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
             </svg>
           </a>

@@ -84,16 +84,6 @@ const {
     <!-- WhatsApp Floating Button -->
     <WhatsAppButton />
 
-    <!-- Reveal on scroll global -->
-    <script>
-      document.documentElement.classList.add('js-ready');
-      const revealObs = new IntersectionObserver(
-        (entries) => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); revealObs.unobserve(e.target); } }),
-        { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
-      );
-      document.querySelectorAll('.reveal, .reveal-left').forEach(el => revealObs.observe(el));
-    </script>
-
     <!-- Analytics (carga diferida) -->
     <slot name="analytics" />
   </body>

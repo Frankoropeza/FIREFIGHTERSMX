@@ -20,7 +20,7 @@ const {
 } = Astro.props;
 
 const fullTitle = title.includes('FIREFIGHTERS MX') ? title : `${title} | FIREFIGHTERS MX`;
-const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `https://firefightersmx.com${ogImage}`;
+const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `https://firefighters.mx${ogImage}`;
 
 const schemas = Array.isArray(schema) ? schema : schema ? [schema] : [];
 
@@ -29,8 +29,8 @@ const orgSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'FIREFIGHTERS MX',
-  url: 'https://firefightersmx.com',
-  logo: 'https://firefightersmx.com/logo.png',
+  url: 'https://firefighters.mx',
+  logo: 'https://firefighters.mx/logo.png',
   contactPoint: {
     '@type': 'ContactPoint',
     telephone: '+52-55-1234-5678',

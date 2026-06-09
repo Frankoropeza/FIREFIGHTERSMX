@@ -1,4 +1,7 @@
 ---
+/**
+ * Marcas autorizadas — strip estático (sin marquee ni animaciones).
+ */
 const marcas = [
   { name: 'Globe', sub: 'Trajes estructurales' },
   { name: 'MSA Safety', sub: 'SCBA & cascos' },
@@ -13,31 +16,25 @@ const marcas = [
 ];
 ---
 
-<div class="bg-[var(--forge-800)] border-b border-[var(--color-border)]">
+<div style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.25)">
   <div class="container-site py-8">
 
-    <p class="text-center text-[10px] font-display font-semibold uppercase tracking-[0.2em] text-[var(--forge-300)] mb-6">
+    <p class="text-center text-[10px] font-display font-semibold uppercase tracking-[0.2em] mb-6" style="color:#4A7599">
       Distribuidores autorizados · Equipos originales certificados
     </p>
 
-    <!-- Marquee -->
-    <div
-      class="overflow-hidden"
-      style="mask-image:linear-gradient(to right,transparent,black 8%,black 92%,transparent);-webkit-mask-image:linear-gradient(to right,transparent,black 8%,black 92%,transparent);"
-    >
-      <div class="marquee-track">
-        {[...marcas, ...marcas].map(m => (
-          <div class="flex flex-col items-center gap-1 px-2 select-none">
-            <span class="font-display font-bold text-lg text-[var(--forge-200)] hover:text-white transition-colors whitespace-nowrap cursor-default">
-              {m.name}
-            </span>
-            <span class="text-[10px] text-[var(--forge-300)] uppercase tracking-wider whitespace-nowrap">
-              {m.sub}
-            </span>
-          </div>
-        ))}
-      </div>
-    </div>
+    <ul class="flex flex-wrap justify-center gap-x-10 gap-y-5 list-none m-0 p-0">
+      {marcas.map(m => (
+        <li class="flex flex-col items-center gap-1 select-none">
+          <span class="font-display font-bold text-lg whitespace-nowrap" style="color:#7AA4C4">
+            {m.name}
+          </span>
+          <span class="text-[10px] uppercase tracking-wider whitespace-nowrap" style="color:#4A7599">
+            {m.sub}
+          </span>
+        </li>
+      ))}
+    </ul>
 
     <div class="text-center mt-6">
       <a href="/marcas" class="btn btn-sm btn-outline">Ver todas las marcas →</a>

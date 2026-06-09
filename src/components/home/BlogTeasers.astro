@@ -36,20 +36,20 @@ const fmt = new Intl.DateTimeFormat('es-MX', { day: 'numeric', month: 'long', ye
     <div class="grid grid-cols-1 md:grid-cols-3" style="border-top:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">
       {posts.map((post) => (
         <article class="h-full" style="border-right:1px solid rgba(74,117,153,0.18);border-bottom:1px solid rgba(74,117,153,0.18)">
-          <a href={`/blog/${post.slug}`} class="blog-card group flex flex-col gap-4 p-7 h-full transition-colors duration-200" style="background:#0C1825">
+          <a href={`/blog/${post.slug}`} class="blog-card group flex flex-col gap-4 p-7 h-full" style="background:#0C1825">
             <div class="flex items-center justify-between gap-3">
               <span class="badge badge-fire">{post.data.category}</span>
               <time datetime={post.data.pubDate.toISOString().split('T')[0]} class="text-[11px] uppercase tracking-wider" style="color:#4A7599">
                 {fmt.format(post.data.pubDate)}
               </time>
             </div>
-            <h3 class="font-display font-bold text-xl leading-snug transition-colors group-hover:text-[#FF6B26]" style="color:#FFFFFF">
+            <h3 class="font-display font-bold text-xl leading-snug group-hover:text-[#FF6B26]" style="color:#FFFFFF">
               {post.data.title}
             </h3>
             <p class="text-sm leading-relaxed flex-1" style="color:#64748B">{post.data.description}</p>
-            <span class="flex items-center gap-1.5 text-xs font-display font-semibold uppercase tracking-wider transition-colors group-hover:text-[#FF6B26]" style="color:#4A7599;letter-spacing:0.1em">
+            <span class="flex items-center gap-1.5 text-xs font-display font-semibold uppercase tracking-wider group-hover:text-[#FF6B26]" style="color:#4A7599;letter-spacing:0.1em">
               Leer artículo
-              <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
               </svg>
             </span>

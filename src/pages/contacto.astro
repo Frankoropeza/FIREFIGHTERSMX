@@ -20,17 +20,17 @@ import BaseLayout from '@layouts/BaseLayout.astro';
           <h2 class="font-heading font-bold text-2xl text-dark-900 mb-6">Canales de Atención</h2>
           <div class="flex flex-col gap-5">
             {[
-              { icon: "📞", label: "Teléfono", value: "55 1234-5678", href: "tel:+525512345678" },
-              { icon: "💬", label: "WhatsApp", value: "55 1234-5678", href: "https://wa.me/525512345678" },
-              { icon: "📧", label: "Correo", value: "contacto@firefightersmx.com", href: "mailto:contacto@firefightersmx.com" },
-              { icon: "🕒", label: "Horario", value: "Lun–Vie 8am–6pm | Sáb 9am–2pm", href: null },
+              { icon:"📞", label:"Teléfono", value:"55 1234-5678", href:"tel:+525512345678" },
+              { icon:"💬", label:"WhatsApp", value:"55 1234-5678", href:"https://wa.me/525512345678" },
+              { icon:"📧", label:"Correo", value:"contacto@firefightersmx.com", href:"mailto:contacto@firefightersmx.com" },
+              { icon:"🕒", label:"Horario", value:"Lun–Vie 8am–6pm | Sáb 9am–2pm", href: null },
             ].map((c) => (
               <div class="flex items-center gap-4">
                 <span class="text-2xl w-10 text-center shrink-0">{c.icon}</span>
                 <div>
                   <div class="text-xs text-dark-400 font-medium uppercase tracking-wide">{c.label}</div>
                   {c.href ? (
-                    <a href={c.href} class="text-dark-800 font-semibold hover:text-fire-700 transition-colors">{c.value}</a>
+                    <a href={c.href} class="text-dark-800 font-semibold hover:text-fire-700">{c.value}</a>
                   ) : (
                     <span class="text-dark-800 font-semibold">{c.value}</span>
                   )}

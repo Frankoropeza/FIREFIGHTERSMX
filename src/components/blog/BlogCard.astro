@@ -24,7 +24,7 @@ const readingTime = Math.ceil(post.body.split(' ').length / 200);
       <img
         src={image.url}
         alt={image.alt}
-        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+        class="w-full h-full object-cover"
         loading="lazy"
         width="600"
         height="338"
@@ -50,7 +50,7 @@ const readingTime = Math.ceil(post.body.split(' ').length / 200);
     </div>
 
     <!-- Title -->
-    <h3 class={`font-heading font-bold text-dark-900 leading-snug group-hover:text-fire-700 transition-colors text-balance ${featured ? 'text-xl md:text-2xl' : 'text-lg'}`}>
+    <h3 class={`font-heading font-bold text-dark-900 leading-snug group-hover:text-fire-700 text-balance ${featured ? 'text-xl md:text-2xl' : 'text-lg'}`}>
       <a href={`/blog/${slug}`}>{title}</a>
     </h3>
 
@@ -70,7 +70,7 @@ const readingTime = Math.ceil(post.body.split(' ').length / 200);
     <!-- Link -->
     <a
       href={`/blog/${slug}`}
-      class="flex items-center gap-2 text-fire-700 text-sm font-semibold hover:gap-3 transition-all"
+      class="flex items-center gap-2 text-fire-700 text-sm font-semibold hover:gap-3"
     >
       Leer artículo
       <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">

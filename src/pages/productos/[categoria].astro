@@ -1,0 +1,136 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { categories, type Category } from '@data/categories';
+import { featuredProducts } from '@data/products';
+import { SITE, whatsappUrl } from '@data/site';
+
+export function getStaticPaths() {
+  return categories.map((cat) => ({
+    params: { categoria: cat.slug },
+    props: { cat },
+  }));
+}
+
+interface Props {
+  cat: Category;
+}
+
+const { cat } = Astro.props;
+const products = cat.productCategory
+  ? featuredProducts.filter((p) => p.category === cat.productCategory)
+  : [];
+
+const canonicalURL = `${SITE.url}/productos/${cat.slug}`;
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Productos', item: `${SITE.url}/productos` },
+    { '@type': 'ListItem', position: 3, name: cat.label, item: canonicalURL },
+  ],
+};
+
+const otherCategories = categories.filter((c) => c.slug !== cat.slug).slice(0, 4);
+---
+
+<BaseLayout
+  title={`${cat.label} ${cat.norm.split('·')[0].trim()} — ${SITE.name} México`}
+  description={cat.description}
+  canonicalURL={canonicalURL}
+  schema={breadcrumbSchema}
+>
+  <!-- Breadcrumb -->
+  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+    <div class="container-site">
+      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:#4A7599">
+        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="/productos" class="hover:text-[#FF6B26]">Productos</a></li>
+        <li aria-hidden="true">/</li>
+        <li><span style="color:#94A3B8" aria-current="page">{cat.label}</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Hero de categoría -->
+  <section class="relative overflow-hidden" style="background:#040A12;padding-block:4.5rem">
+    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
+    <div class="container-site relative z-10">
+      <span class="section-eyebrow mb-5 inline-flex">{cat.norm}</span>
+      <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,6vw,4.5rem);line-height:0.95">
+        {cat.label}
+      </h1>
+      <div class="max-w-3xl flex flex-col gap-4">
+        {cat.intro.map((p) => (
+          <p class="text-sm leading-[1.9]" style="color:#94A3B8">{p}</p>
+        ))}
+      </div>
+      <div class="flex flex-col sm:flex-row gap-3 mt-8">
+        <a
+          href={whatsappUrl(`Hola, quiero cotizar ${cat.label.toLowerCase()}.`)}
+          target="_blank" rel="noopener"
+          class="btn btn-primary"
+        >
+          Cotizar {cat.label.toLowerCase()}
+        </a>
+        <a href="/productos" class="btn btn-ghost">Ver todo el catálogo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Líneas / modelos -->
+  <section class="section" style="background:#070E1A" aria-labelledby="lineas-title">
+    <div class="container-site">
+      <h2 id="lineas-title" class="font-display font-bold mb-8" style="color:#FFFFFF;font-size:clamp(1.5rem,2.5vw,2.25rem)">
+        Líneas disponibles
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style="border-top:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">
+        {cat.items.map((item) => (
+          <div class="grid-cell flex flex-col gap-2 p-6" style="border-right:1px solid rgba(74,117,153,0.18);border-bottom:1px solid rgba(74,117,153,0.18)">
+            <h3 class="font-display font-bold text-base" style="color:#FFFFFF">{item.name}</h3>
+            <p class="text-xs leading-relaxed" style="color:#64748B">{item.detail}</p>
+          </div>
+        ))}
+      </div>
+
+      {products.length > 0 && (
+        <div class="mt-12">
+          <h2 class="font-display font-bold mb-8" style="color:#FFFFFF;font-size:clamp(1.5rem,2.5vw,2.25rem)">
+            Productos destacados
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
+            {products.map((product) => (
+              <a href={product.href} class="grid-cell group flex flex-col gap-3 p-6">
+                <div class="flex gap-2 flex-wrap">
+                  {product.norm && <span class="badge badge-fire">{product.norm}</span>}
+                  {product.brand && <span class="badge badge-dark">{product.brand}</span>}
+                </div>
+                <h3 class="font-display font-bold text-lg leading-snug group-hover:text-[#FF6B26]" style="color:#FFFFFF">{product.title}</h3>
+                <p class="text-xs leading-relaxed" style="color:#64748B">{product.description}</p>
+                <span class="text-xs font-display font-semibold uppercase tracking-wider mt-auto" style="color:#FF8F57">Ver detalles →</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- Otras categorías (internal linking) -->
+  <section class="section-tight" style="background:#040A12" aria-labelledby="otras-title">
+    <div class="container-site">
+      <h2 id="otras-title" class="font-display font-bold text-sm uppercase tracking-widest mb-6" style="color:#4A7599">
+        Otras categorías del catálogo
+      </h2>
+      <div class="flex flex-wrap gap-3">
+        {otherCategories.map((c) => (
+          <a href={`/productos/${c.slug}`} class="btn btn-sm btn-dark">{c.label}</a>
+        ))}
+        <a href="/productos/trajes-bombero" class="btn btn-sm btn-dark">Trajes para Bomberos</a>
+        <a href="/productos" class="btn btn-sm btn-outline">Catálogo completo →</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

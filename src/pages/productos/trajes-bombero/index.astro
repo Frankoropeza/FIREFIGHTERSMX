@@ -3,12 +3,12 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 import { featuredProducts } from '@data/products';
 
 const breadcrumb = [
-  { label: "Inicio", href: "/" },
-  { label: "Productos", href: "/productos" },
-  { label: "Trajes para Bomberos", href: "/productos/trajes-bombero" },
+  { label:"Inicio", href:"/" },
+  { label:"Productos", href:"/productos" },
+  { label:"Trajes para Bomberos", href:"/productos/trajes-bombero" },
 ];
 
-const trajes = featuredProducts.filter(p => p.category === "Trajes Bombero");
+const trajes = featuredProducts.filter(p => p.category ==="Trajes Bombero");
 ---
 <BaseLayout
   title="Trajes para Bomberos NFPA 1971 — FIREFIGHTERS MX México"
@@ -24,7 +24,7 @@ const trajes = featuredProducts.filter(p => p.category === "Trajes Bombero");
               {i === breadcrumb.length - 1 ? (
                 <span class="text-dark-600 font-medium">{crumb.label}</span>
               ) : (
-                <a href={crumb.href} class="hover:text-fire-700 transition-colors">{crumb.label}</a>
+                <a href={crumb.href} class="hover:text-fire-700">{crumb.label}</a>
               )}
             </li>
           </>
@@ -47,12 +47,12 @@ const trajes = featuredProducts.filter(p => p.category === "Trajes Bombero");
     <div class="container-site">
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
         {[
-          { title: "Trajes Estructurales", desc: "Para combate interior de edificios. 3 capas: shell, barrera humedad, forro térmico. NFPA 1971.", href: "#estructurales" },
-          { title: "Trajes de Proximidad", desc: "Para exposición radiante intensa: pistas aéreas, refinerías, carga de aviones. Aluminizados.", href: "#proximidad" },
-          { title: "Trajes Forestales", desc: "Ligeros y transpirables para incendios vegetales. NFPA 1977.", href: "#forestales" },
+          { title:"Trajes Estructurales", desc:"Para combate interior de edificios. 3 capas: shell, barrera humedad, forro térmico. NFPA 1971.", href:"#estructurales" },
+          { title:"Trajes de Proximidad", desc:"Para exposición radiante intensa: pistas aéreas, refinerías, carga de aviones. Aluminizados.", href:"#proximidad" },
+          { title:"Trajes Forestales", desc:"Ligeros y transpirables para incendios vegetales. NFPA 1977.", href:"#forestales" },
         ].map((tipo) => (
           <a href={tipo.href} class="card-fire p-6 group">
-            <h3 class="font-heading font-bold text-dark-900 group-hover:text-fire-700 transition-colors mb-2">{tipo.title}</h3>
+            <h3 class="font-heading font-bold text-dark-900 group-hover:text-fire-700 mb-2">{tipo.title}</h3>
             <p class="text-dark-500 text-sm">{tipo.desc}</p>
           </a>
         ))}
@@ -62,12 +62,12 @@ const trajes = featuredProducts.filter(p => p.category === "Trajes Bombero");
         <h2 class="section-title mb-8">Trajes Estructurales Certificados</h2>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {trajes.length > 0 ? trajes.map((product) => (
-            <a href={product.href} class="card group p-6 flex flex-col gap-3 hover:shadow-fire transition-shadow">
+            <a href={product.href} class="card group p-6 flex flex-col gap-3 hover:shadow-fire">
               <div class="flex gap-2 flex-wrap">
                 <span class="badge-fire">{product.norm}</span>
                 {product.brand && <span class="badge-dark">{product.brand}</span>}
               </div>
-              <h3 class="font-heading font-bold text-dark-900 group-hover:text-fire-700 transition-colors">{product.title}</h3>
+              <h3 class="font-heading font-bold text-dark-900 group-hover:text-fire-700">{product.title}</h3>
               <p class="text-dark-500 text-sm line-clamp-2">{product.description}</p>
               <span class="text-fire-700 text-sm font-semibold mt-auto">Ver detalles →</span>
             </a>

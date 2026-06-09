@@ -1,0 +1,203 @@
+---
+const cards = [
+  {
+    titulo: 'Trajes para Bomberos',
+    norm: 'NFPA 1971 · 1977 · 1976',
+    href: '/productos/trajes-bombero',
+    desc: 'Trajes estructurales y forestales certificados para protección térmica extrema.',
+    items: ['Globe GX-7 Estructural', 'Lion TechGen NFPA 1971', 'Traje Forestal NFPA 1977'],
+    accent: '#F75000',
+    gradFrom: 'rgba(247,80,0,0.18)',
+    gradTo: 'rgba(4,10,18,0.92)',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>`,
+  },
+  {
+    titulo: 'Cascos NFPA',
+    norm: 'NFPA 1971 · 1977',
+    href: '/productos/cascos-nfpa',
+    desc: 'Cascos de combate y forestales con protección facial integrada y sistema de suspensión avanzado.',
+    items: ['MSA Gallet F1 XF', 'Bullard USTERM', 'Cairns N6A Houston'],
+    accent: '#F75000',
+    gradFrom: 'rgba(247,80,0,0.14)',
+    gradTo: 'rgba(4,10,18,0.94)',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 17a10 10 0 0 1 20 0"/><path d="M2 17h20v3H2z"/><path d="M12 7v2"/></svg>`,
+  },
+  {
+    titulo: 'Equipos SCBA',
+    norm: 'NFPA 1981 · NIOSH',
+    href: '/productos/equipos-scba',
+    desc: 'Equipos de respiración autónoma de circuito abierto para atmósferas inmediatamente peligrosas.',
+    items: ['MSA G1 SCBA', 'Dräger PSS 7000', '3M Scott Air-Pak NxG7'],
+    accent: '#F5A623',
+    gradFrom: 'rgba(245,166,35,0.16)',
+    gradTo: 'rgba(4,10,18,0.94)',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/></svg>`,
+  },
+  {
+    titulo: 'Herramientas de Rescate',
+    norm: 'NFPA 1936',
+    href: '/productos/herramientas-rescate',
+    desc: 'Sistemas hidráulicos de excarcelación y rescate vehicular de alto rendimiento.',
+    items: ['Holmatro SPR 4250 SC', 'Holmatro CT 4260 HCS', 'Ariete SP 3220'],
+    accent: '#F75000',
+    gradFrom: 'rgba(247,80,0,0.16)',
+    gradTo: 'rgba(4,10,18,0.94)',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
+  },
+  {
+    titulo: 'Extintores',
+    norm: 'NOM-100-SCFI · NFPA 10',
+    href: '/productos/extintores',
+    desc: 'Extintores portátiles y sobre ruedas para fuegos clase A, B, C, D y K.',
+    items: ['CO₂ 10 kg Clase BC', 'PQS ABC 9 kg', 'AFFF 6% espuma'],
+    accent: '#F5A623',
+    gradFrom: 'rgba(245,166,35,0.14)',
+    gradTo: 'rgba(4,10,18,0.94)',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M15 6v-3a3 3 0 0 0-6 0v3"/><rect x="6" y="6" width="12" height="14" rx="2"/><path d="M10 11h4M12 11v4"/></svg>`,
+  },
+  {
+    titulo: 'Sistemas CI',
+    norm: 'NFPA 13 · 72 · 2001',
+    href: '/productos/sistemas-ci',
+    desc: 'Rociadores automáticos, paneles de detección y agentes limpios para instalaciones críticas.',
+    items: ['Rociadores Tyco NFPA 13', 'Panel Honeywell', 'FM-200 Agente limpio'],
+    accent: '#34D399',
+    gradFrom: 'rgba(52,211,153,0.12)',
+    gradTo: 'rgba(4,10,18,0.96)',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/><path d="M8 12h8M12 8v8"/></svg>`,
+  },
+  {
+    titulo: 'Cámaras Térmicas',
+    norm: 'NFPA 1801',
+    href: '/productos/camaras-termicas',
+    desc: 'Cámaras de imagen térmica para búsqueda y rescate en ambientes de visibilidad cero.',
+    items: ['FLIR K65', 'MSA Evolution 6000', 'Bullard TXS'],
+    accent: '#F5A623',
+    gradFrom: 'rgba(245,166,35,0.15)',
+    gradTo: 'rgba(4,10,18,0.94)',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>`,
+  },
+  {
+    titulo: 'Equipos HAZMAT',
+    norm: 'NFPA 1991 · 1992',
+    href: '/productos/hazmat',
+    desc: 'Trajes de protección química Nivel A y B para respuesta a materiales peligrosos.',
+    items: ['Traje Nivel A encapsulado', 'Traje Nivel B splash', 'DuPont Tychem 10000'],
+    accent: '#F75000',
+    gradFrom: 'rgba(247,80,0,0.16)',
+    gradTo: 'rgba(4,10,18,0.94)',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`,
+  },
+];
+---
+
+<section style="background:#040A12;padding-block:5rem" aria-label="Catálogo de productos">
+
+  <!-- Header -->
+  <div class="container-site mb-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end">
+      <div>
+        <span class="section-eyebrow mb-4 inline-flex">Catálogo</span>
+        <h2 class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          Ocho categorías,<br/>
+          <span style="color:#F75000">un solo proveedor.</span>
+        </h2>
+      </div>
+      <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+        <p class="text-sm leading-relaxed mb-3" style="color:#94A3B8">
+          Todo el equipamiento que un cuerpo de bomberos, brigada industrial o área de protección civil necesita:
+          <strong style="color:#CBD5E1">trajes NFPA 1971, SCBA, herramientas de rescate, extintores, sistemas CI, cámaras térmicas y HAZMAT</strong> —
+          cada categoría con ficha técnica y certificado listos.
+        </p>
+        <a href="/productos"
+           class="inline-flex items-center gap-2 text-xs font-display font-semibold uppercase tracking-wider hover:text-[#FF6B26]"
+           style="color:#FF8F57;letter-spacing:0.1em">
+          Ver catálogo completo
+          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cards grid -->
+  <div class="container-site">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      {cards.map((card) => (
+        <a
+          href={card.href}
+          class="group relative flex flex-col overflow-hidden"
+          style="background:#080F1A;border:1px solid rgba(74,117,153,0.18);:border-color 0.2s,transform 0.2s"
+          onmouseover="this.style.borderColor='rgba(247,80,0,0.45)';this.style.transform='translateY(-3px)'"
+          onmouseout={`this.style.borderColor='rgba(74,117,153,0.18)';this.style.transform='translateY(0)'`}
+        >
+          <!-- Visual top: gradient + icon -->
+          <div class="relative flex items-center justify-center overflow-hidden" style="height:148px">
+            <!-- Background gradient -->
+            <div class="absolute inset-0" style={`background:linear-gradient(135deg, ${card.gradFrom} 0%, ${card.gradTo} 100%)`}></div>
+            <!-- Grid pattern overlay -->
+            <svg class="absolute inset-0 w-full h-full" style="opacity:0.06" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <pattern id={`g-${card.titulo.replace(/\s/g,'')}`} width="32" height="32" patternUnits="userSpaceOnUse">
+                  <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#7AA4C4" stroke-width="0.5"/>
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill={`url(#g-${card.titulo.replace(/\s/g,'')})`}/>
+            </svg>
+            <!-- Glow spot -->
+            <div class="absolute inset-0 pointer-events-none" style={`background:radial-gradient(circle at 50% 50%, ${card.accent}22 0%, transparent 65%)`}></div>
+            <!-- Icon -->
+            <div class="relative z-10 flex items-center justify-center rounded-full"
+                 style={`width:72px;height:72px;background:rgba(4,10,18,0.7);border:1.5px solid ${card.accent}44;color:${card.accent}`}>
+              <span class="block" style="width:32px;height:32px" set:html={card.icon}/>
+            </div>
+            <!-- Bottom fade -->
+            <div class="absolute bottom-0 left-0 right-0 h-8 pointer-events-none"
+                 style="background:linear-gradient(to bottom, transparent, #080F1A)"></div>
+          </div>
+
+          <!-- Content -->
+          <div class="flex flex-col flex-1 p-5 gap-3">
+            <!-- Norm badge -->
+            <span class="text-[9px] font-display font-semibold uppercase tracking-widest" style="color:#4A7599">{card.norm}</span>
+
+            <!-- Title -->
+            <h3 class="font-display font-bold text-lg leading-tight" style="color:#FFFFFF">
+              {card.titulo}
+            </h3>
+
+            <!-- Description -->
+            <p class="text-xs leading-relaxed" style="color:#64748B;flex:1">
+              {card.desc}
+            </p>
+
+            <!-- Items list -->
+            <ul class="flex flex-col gap-1.5 py-3" style="border-top:1px solid rgba(74,117,153,0.12);border-bottom:1px solid rgba(74,117,153,0.12)">
+              {card.items.map(item => (
+                <li class="flex items-center gap-2 text-[11px]" style="color:#64748B">
+                  <span class="w-1 h-1 rounded-full shrink-0" style={`background:${card.accent};opacity:0.7`}></span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+
+            <!-- CTA button -->
+            <div class="pt-1">
+              <span
+                class="inline-flex items-center gap-2 w-full justify-center text-xs font-display font-semibold uppercase tracking-wider py-2.5 px-4"
+                style={`color:#040A12;background:${card.accent};letter-spacing:0.08em`}
+              >
+                Ver productos
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
+                </svg>
+              </span>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+
+</section>
