@@ -157,6 +157,9 @@ const year = new Date().getFullYear();
           ['Aeropuertos ARFF','/industrias/aeropuertos-arff'],
           ['Refinerías PEMEX','/industrias/refinerias-pemex'],
           ['Hospitales','/industrias/hospitales'],
+          ['Hoteles y Turismo','/industrias/hoteles'],
+          ['Minería','/industrias/mineria'],
+          ['Protección Civil','/industrias/proteccion-civil'],
         ].map(([label, href]) => (
           <li>
             <a href={href} class="hover:text-[var(--ember-400)]">{label}</a>
@@ -175,6 +178,7 @@ const year = new Date().getFullYear();
         {[
           ['Nosotros','/nosotros'],
           ['Blog Técnico','/blog'],
+          ['Marcas','/marcas'],
           ['Certificaciones','/certificaciones'],
           ['Distribuidores','/distribuidores'],
           ['Cobertura Nacional','/cobertura'],
