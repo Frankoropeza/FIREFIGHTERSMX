@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
+import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 ---
 <BaseLayout
   title="Auditoría NOM-002-STPS — Diagnóstico de Protección Contra Incendio | FIREFIGHTERS MX"
@@ -15,6 +16,9 @@ import BaseLayout from '@layouts/BaseLayout.astro';
       <a href="/cotizacion" class="btn-gold btn-lg mt-8 inline-flex">Solicitar auditoría</a>
     </div>
   </section>
+  <!-- Accesos rápidos (interlinking) -->
+  <QuickLinksBar />
+
   <section class="section bg-white">
     <div class="container-site max-w-4xl">
       <h2 class="section-title text-center mb-10">¿Qué evaluamos?</h2>

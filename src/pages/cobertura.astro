@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
+import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 
 const estados = [
   { name: "Ciudad de México", dias: "24-48 hrs", type: "express" },
@@ -49,6 +50,9 @@ const estados = [
       </p>
     </div>
   </section>
+  <!-- Accesos rápidos (interlinking) -->
+  <QuickLinksBar />
+
 
   <section class="section bg-dark-50">
     <div class="container-site">

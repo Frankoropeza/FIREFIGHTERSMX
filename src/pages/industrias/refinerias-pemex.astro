@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
+import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 ---
 <BaseLayout
   title="Equipos para Refinerías y Petroquímica PEMEX — FIREFIGHTERS MX"
@@ -15,6 +16,9 @@ import BaseLayout from '@layouts/BaseLayout.astro';
       <a href="/cotizacion" class="btn-gold btn-lg mt-8 inline-flex">Cotizar para refinería</a>
     </div>
   </section>
+  <!-- Accesos rápidos (interlinking) -->
+  <QuickLinksBar />
+
   <section class="section bg-white">
     <div class="container-site grid md:grid-cols-2 lg:grid-cols-3 gap-6">
       {[

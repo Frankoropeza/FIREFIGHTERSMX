@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
+import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import { featuredProducts } from '@data/products';
 
 const breadcrumb = [
@@ -42,6 +43,9 @@ const trajes = featuredProducts.filter(p => p.category ==="Trajes Bombero");
       </p>
     </div>
   </section>
+  <!-- Accesos rápidos (interlinking) -->
+  <QuickLinksBar />
+
 
   <section class="section bg-white">
     <div class="container-site">

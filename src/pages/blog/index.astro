@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
+import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import BlogCard from '@components/blog/BlogCard.astro';
 import { getCollection } from 'astro:content';
 
@@ -24,6 +25,9 @@ const categories = [...new Set(allPosts.map(p => p.data.category))];
       </p>
     </div>
   </section>
+  <!-- Accesos rápidos (interlinking) -->
+  <QuickLinksBar />
+
 
   <section class="section bg-white">
     <div class="container-site">

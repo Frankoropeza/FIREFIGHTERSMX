@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
+import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 ---
 <BaseLayout
   title="Soporte para Licitaciones de Equipos para Bomberos — FIREFIGHTERS MX"
@@ -15,6 +16,9 @@ import BaseLayout from '@layouts/BaseLayout.astro';
       <a href="/cotizacion" class="btn-gold btn-lg mt-8 inline-flex">Hablar con un especialista</a>
     </div>
   </section>
+  <!-- Accesos rápidos (interlinking) -->
+  <QuickLinksBar />
+
   <section class="section bg-white">
     <div class="container-site">
       <div class="grid md:grid-cols-3 gap-6 mb-12">

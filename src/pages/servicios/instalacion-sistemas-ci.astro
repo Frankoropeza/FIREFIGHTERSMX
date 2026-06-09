@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
+import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 ---
 <BaseLayout
   title="Instalación de Sistemas Contra Incendio NFPA 13 y 72 — FIREFIGHTERS MX"
@@ -15,6 +16,9 @@ import BaseLayout from '@layouts/BaseLayout.astro';
       <a href="/cotizacion" class="btn-gold btn-lg mt-8 inline-flex">Cotizar instalación</a>
     </div>
   </section>
+  <!-- Accesos rápidos (interlinking) -->
+  <QuickLinksBar />
+
   <section class="section bg-white">
     <div class="container-site grid md:grid-cols-2 gap-8">
       {[

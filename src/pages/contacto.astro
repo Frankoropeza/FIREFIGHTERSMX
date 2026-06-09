@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
+import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 ---
 <BaseLayout
   title="Contacto — FIREFIGHTERS MX"
@@ -11,6 +12,9 @@ import BaseLayout from '@layouts/BaseLayout.astro';
       <p class="section-subtitle text-fire-200 mx-auto">Estamos para ayudarte. Respuesta garantizada en horario hábil.</p>
     </div>
   </section>
+  <!-- Accesos rápidos (interlinking) -->
+  <QuickLinksBar />
+
 
   <section class="section bg-white">
     <div class="container-site grid lg:grid-cols-2 gap-12">

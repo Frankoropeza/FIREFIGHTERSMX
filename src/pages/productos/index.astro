@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
+import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import CategoryCard from '@components/products/CategoryCard.astro';
 import { allCategories } from '@data/categories';
 import { featuredProducts } from '@data/products';
@@ -119,6 +120,9 @@ const trustPoints = [
 
     <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)" aria-hidden="true"></div>
   </section>
+  <!-- Accesos rápidos (interlinking) -->
+  <QuickLinksBar />
+
 
   <!-- Pilares de confianza -->
   <section class="section-tight" style="background:#070E1A" aria-label="Garantías de compra">

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
+import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import { services } from '@data/services';
 ---
 <BaseLayout
@@ -15,6 +16,9 @@ import { services } from '@data/services';
       </p>
     </div>
   </section>
+  <!-- Accesos rápidos (interlinking) -->
+  <QuickLinksBar />
+
 
   <section class="section bg-white">
     <div class="container-site">

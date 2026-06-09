@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
+import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 ---
 <BaseLayout
   title="Capacitación para Bomberos NFPA y NOM-002 con DC-3 — FIREFIGHTERS MX"
@@ -15,6 +16,9 @@ import BaseLayout from '@layouts/BaseLayout.astro';
       <a href="/cotizacion" class="btn-gold btn-lg mt-8 inline-flex">Cotizar capacitación</a>
     </div>
   </section>
+  <!-- Accesos rápidos (interlinking) -->
+  <QuickLinksBar />
+
 
   <section class="section bg-white">
     <div class="container-site">

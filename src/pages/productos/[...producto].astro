@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
+import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import { featuredProducts, type Product } from '@data/products';
 import { SITE, whatsappUrl } from '@data/site';
 
@@ -115,6 +116,9 @@ const related = featuredProducts.filter((p) => p.slug !== product.slug).slice(0,
       </div>
     </div>
   </section>
+  <!-- Accesos rápidos (interlinking) -->
+  <QuickLinksBar />
+
 
   <!-- Relacionados -->
   <section class="section-tight" style="background:#070E1A" aria-labelledby="related-title">
