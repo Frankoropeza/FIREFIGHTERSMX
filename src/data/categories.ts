@@ -13,10 +13,31 @@ export interface Category {
 }
 
 /**
+ * Trajes para Bomberos tiene página estática propia
+ * (src/pages/productos/trajes-bombero/) — se define aquí solo para
+ * el hub /productos y el internal linking.
+ */
+export const trajesBombero: Category = {
+  slug: 'trajes-bombero',
+  label: 'Trajes para Bomberos',
+  norm: 'NFPA 1971 · 1977',
+  description: 'Trajes estructurales, de proximidad y forestales certificados NFPA 1971 y 1977 en México: Globe, Lion y MSA. Tallas S–4XL con entrega en 32 estados.',
+  intro: [
+    'Trajes de combate estructural de 3 capas, trajes aluminizados de proximidad para ARFF y trajes forestales ligeros — todos certificados por laboratorio acreditado bajo NFPA 1971:2018 o NFPA 1977.',
+  ],
+  items: [
+    { name: 'Globe GX-7', detail: 'Estructural premium con Crosstech y PBI/Kevlar' },
+    { name: 'Lion TechGen', detail: 'Estructural NFPA 1971 de uso intensivo' },
+    { name: 'Trajes de proximidad', detail: 'Aluminizados para ARFF y exposición radiante' },
+    { name: 'Trajes forestales NFPA 1977', detail: 'Ligeros y transpirables para incendio vegetal' },
+  ],
+  productCategory: 'Trajes Bombero',
+};
+
+/**
  * Categorías del catálogo — fuente única para:
  * - Páginas /productos/[categoria]
- * - Navegación y grids del home
- * NOTA: trajes-bombero tiene página estática propia (src/pages/productos/trajes-bombero/).
+ * - Hub /productos y grids del home
  */
 export const categories: Category[] = [
   {
@@ -155,3 +176,6 @@ export const categories: Category[] = [
     ],
   },
 ];
+
+/** Catálogo completo (incluye trajes-bombero) — para el hub /productos */
+export const allCategories: Category[] = [trajesBombero, ...categories];

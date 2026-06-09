@@ -1,86 +1,287 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
-import ProductCard from '@components/products/ProductCard.astro';
+import { allCategories } from '@data/categories';
 import { featuredProducts } from '@data/products';
+import { SITE, whatsappUrl } from '@data/site';
 
-const categories = [
-  { slug:"trajes-bombero", label:"Trajes para Bomberos", emoji:"🧥", count:"18 productos", norm:"NFPA 1971" },
-  { slug:"cascos-nfpa", label:"Cascos NFPA", emoji:"⛑️", count:"12 productos", norm:"NFPA 1971" },
-  { slug:"equipos-scba", label:"Equipos SCBA", emoji:"😷", count:"15 productos", norm:"NFPA 1981" },
-  { slug:"herramientas-rescate", label:"Herramientas de Rescate", emoji:"⚙️", count:"24 productos", norm:"NFPA 1936" },
-  { slug:"extintores", label:"Extintores", emoji:"🧯", count:"32 productos", norm:"NOM-100" },
-  { slug:"sistemas-ci", label:"Sistemas Contra Incendio", emoji:"🚿", count:"20 productos", norm:"NFPA 13/72" },
-  { slug:"camaras-termicas", label:"Cámaras Térmicas", emoji:"📷", count:"8 productos", norm:"NFPA 1801" },
-  { slug:"hazmat", label:"Equipos HAZMAT", emoji:"☣️", count:"16 productos", norm:"NFPA 1991" },
-  { slug:"drones-emergencia", label:"Drones de Emergencia", emoji:"🚁", count:"6 productos", norm:"Certificado FAA/AFAC" },
+const canonicalURL = `${SITE.url}/productos`;
+
+const seoMeta = {
+  title: `Catálogo de Equipo para Bomberos y Contra Incendio — ${SITE.name}`,
+  description:
+    'Catálogo completo certificado NFPA y NOM: trajes para bomberos, cascos, SCBA, herramientas de rescate, extintores, sistemas CI, cámaras térmicas, HAZMAT y drones. Cotización en 24 h.',
+  canonicalURL,
+};
+
+/* ─── JSON-LD ──────────────────────────────────────────────── */
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Productos', item: canonicalURL },
+  ],
+};
+
+const collectionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  '@id': `${canonicalURL}#collection`,
+  name: 'Catálogo de equipo para bomberos y contra incendio',
+  description: seoMeta.description,
+  url: canonicalURL,
+  inLanguage: 'es-MX',
+  isPartOf: { '@id': `${SITE.url}/#website` },
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: allCategories.length,
+    itemListElement: allCategories.map((cat, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: cat.label,
+      url: `${SITE.url}/productos/${cat.slug}`,
+    })),
+  },
+};
+
+/* Pilares de confianza bajo el hero */
+const trustPoints = [
+  { title: 'Originales verificables', text: 'Número de serie validable con fábrica y certificado de laboratorio acreditado.' },
+  { title: 'Documentación completa', text: 'Ficha técnica, certificado de conformidad y manifiesto de normas en cada entrega.' },
+  { title: 'Stock permanente', text: 'EPP estructural en tallas S–2XL listo para envío en 24–48 h desde CDMX.' },
+  { title: 'Precios institucionales', text: 'Esquemas preferenciales para bomberos, Protección Civil y compras por volumen.' },
 ];
 ---
-<BaseLayout
-  title="Catálogo de Equipos para Bomberos — FIREFIGHTERS MX"
-  description="Catálogo completo de equipos para bomberos certificados NFPA en México. Trajes, SCBA, herramientas de rescate, extintores, sistemas CI, cámaras térmicas y más."
->
-  <section class="bg-gradient-fire py-16">
-    <div class="container-site text-center text-white">
-      <h1 class="section-title text-white mb-4">Catálogo de Productos</h1>
-      <p class="section-subtitle text-fire-200 mx-auto">
-        +150 categorías de equipos certificados NFPA y NOM para bomberos,
-        brigadas industriales y protección civil.
-      </p>
+
+<BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema]}>
+
+  <!-- Breadcrumb -->
+  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+    <div class="container-site">
+      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:#4A7599">
+        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li aria-hidden="true">/</li>
+        <li><span style="color:#94A3B8" aria-current="page">Productos</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Hero del catálogo -->
+  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">
+    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
+
+    <div class="container-site relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+        <div>
+          <span class="section-eyebrow mb-5 inline-flex">Catálogo completo · NFPA y NOM</span>
+          <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+            Equipo para Bomberos<br/>
+            <span style="color:#F75000">y Contra Incendio</span>
+          </h1>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a
+              href={whatsappUrl('Hola, quiero cotizar equipo del catálogo.')}
+              target="_blank" rel="noopener"
+              class="btn btn-primary btn-lg"
+            >
+              Cotizar por WhatsApp
+            </a>
+            <a href="/cotizacion" class="btn btn-ghost btn-lg">Cotización formal</a>
+          </div>
+        </div>
+
+        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
+          <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">
+            Nueve categorías de equipamiento certificado para cuerpos de bomberos, brigadas
+            industriales y protección civil: <strong style="color:#CBD5E1">trajes estructurales NFPA 1971,
+            cascos, equipos de respiración autónoma SCBA NFPA 1981, herramientas de rescate
+            Holmatro, extintores NOM-154-SCFI, sistemas contra incendio, cámaras térmicas
+            NFPA 1801, trajes HAZMAT y drones de emergencia</strong>.
+          </p>
+          <p class="text-sm leading-[1.9] mb-6" style="color:#64748B">
+            Somos distribuidores autorizados de Globe, MSA, Dräger, Bullard, Holmatro y 3M Scott
+            en México. Cada equipo se entrega con número de serie verificable, certificado de
+            laboratorio acreditado y ficha técnica lista para licitación, auditoría STPS o
+            expediente de Protección Civil.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {['NFPA 1971','NFPA 1981','NFPA 1936','NFPA 1801','NOM-154-SCFI','NOM-002-STPS'].map(n => (
+              <span class="badge badge-dark font-display text-[10px]">{n}</span>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)" aria-hidden="true"></div>
+  </section>
+
+  <!-- Pilares de confianza -->
+  <section class="section-tight" style="background:#070E1A" aria-label="Garantías de compra">
+    <div class="container-site">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style="border:1px solid rgba(74,117,153,0.18)">
+        {trustPoints.map((t, i) => (
+          <div class="flex flex-col gap-2 p-6" style={`background:#0C1825;${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.18);' : ''}`}>
+            <h2 class="font-display font-bold text-sm uppercase tracking-wider" style="color:#FF6B26">{t.title}</h2>
+            <p class="text-xs leading-relaxed" style="color:#64748B">{t.text}</p>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 
-  <!-- CATEGORÍAS -->
-  <section class="section bg-dark-50">
+  <!-- Categorías -->
+  <section class="section" style="background:#040A12" aria-labelledby="categorias-title">
     <div class="container-site">
-      <h2 class="section-title text-center mb-12">Categorías de Productos</h2>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {categories.map((cat) => (
-          <a
-            href={`/productos/${cat.slug}`}
-            class="card group p-6 flex items-start gap-4 hover:shadow-fire hover:border-fire-200 border border-transparent"
-          >
-            <span class="text-3xl shrink-0">{cat.emoji}</span>
-            <div class="flex-1 min-w-0">
-              <h3 class="font-heading font-bold text-dark-900 group-hover:text-fire-700 mb-1">
-                {cat.label}
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Categorías</span>
+          <h2 id="categorias-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            Nueve categorías,<br/>
+            <span style="color:#F75000">todo certificado.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+            Cada categoría tiene su propia página con líneas disponibles, normas aplicables
+            y productos destacados. Si no encuentras un modelo específico, lo conseguimos:
+            trabajamos directo con fábrica y manejamos pedidos especiales sobre especificación técnica.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" style="border-top:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">
+        {allCategories.map((cat) => (
+          <article class="grid-cell relative flex flex-col gap-4 p-7" style="border-right:1px solid rgba(74,117,153,0.18);border-bottom:1px solid rgba(74,117,153,0.18)">
+            <div class="flex items-start justify-between gap-3">
+              <h3 class="font-display font-bold text-xl leading-tight" style="color:#FFFFFF">
+                <a href={`/productos/${cat.slug}`} class="hover:text-[#FF6B26]">{cat.label}</a>
               </h3>
-              <div class="flex items-center gap-2 flex-wrap">
-                <span class="text-dark-400 text-xs">{cat.count}</span>
-                <span class="badge-gold text-2xs">{cat.norm}</span>
-              </div>
+              <span class="text-[10px] font-display font-semibold uppercase tracking-wider text-right shrink-0" style="color:#4A7599">{cat.norm}</span>
             </div>
-            <svg class="w-5 h-5 text-dark-300 group-hover:text-fire-700 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-            </svg>
+
+            <p class="text-xs leading-relaxed" style="color:#64748B">{cat.description}</p>
+
+            <ul class="flex flex-col gap-1.5 mt-auto list-none m-0 p-0">
+              {cat.items.slice(0, 4).map((item) => (
+                <li class="flex items-center gap-2 text-xs" style="color:#94A3B8">
+                  <span class="w-1 h-1 rounded-full shrink-0" style="background:#F75000;opacity:0.6" aria-hidden="true"></span>
+                  {item.name}
+                </li>
+              ))}
+            </ul>
+
+            <a href={`/productos/${cat.slug}`} class="flex items-center gap-1.5 text-xs font-display font-semibold uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57;letter-spacing:0.1em">
+              Ver {cat.label.toLowerCase()}
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </article>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Productos destacados -->
+  <section class="section" style="background:#070E1A" aria-labelledby="destacados-title">
+    <div class="container-site">
+
+      <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Lo más cotizado</span>
+          <h2 id="destacados-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            Productos<br/>
+            <span style="color:#F75000">destacados.</span>
+          </h2>
+        </div>
+        <a href={whatsappUrl('Hola, quiero cotizar productos del catálogo.')} target="_blank" rel="noopener" class="btn btn-outline btn-sm self-start sm:self-auto shrink-0">
+          Cotizar ahora →
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
+        {featuredProducts.map((product) => (
+          <a href={product.href} class="grid-cell group flex flex-col gap-3 p-6">
+            <div class="flex gap-2 flex-wrap">
+              {product.norm && <span class="badge badge-fire">{product.norm}</span>}
+              {product.brand && <span class="badge badge-dark">{product.brand}</span>}
+              {product.badge && <span class="badge badge-gold">{product.badge}</span>}
+            </div>
+            <h3 class="font-display font-bold text-lg leading-snug group-hover:text-[#FF6B26]" style="color:#FFFFFF">{product.title}</h3>
+            <p class="text-xs leading-relaxed" style="color:#64748B">{product.description}</p>
+            <span class="text-xs font-display font-semibold uppercase tracking-wider mt-auto" style="color:#FF8F57">Ver detalles →</span>
           </a>
         ))}
       </div>
+
     </div>
   </section>
 
-  <!-- DESTACADOS -->
-  <section class="section bg-white">
+  <!-- Cómo cotizar + cross-links -->
+  <section class="section" style="background:#040A12" aria-labelledby="como-cotizar-title">
     <div class="container-site">
-      <div class="flex items-end justify-between mb-12">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+
         <div>
-          <p class="section-eyebrow mb-3">Lo más buscado</p>
-          <h2 class="section-title">Productos Destacados</h2>
+          <span class="section-eyebrow mb-4 inline-flex">Cómo cotizar</span>
+          <h2 id="como-cotizar-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+            Del catálogo a tu operación<br/>
+            <span style="color:#F75000">en menos de 24 horas.</span>
+          </h2>
+          <ol class="flex flex-col gap-4 list-none m-0 p-0">
+            {[
+              { n: '01', t: 'Mándanos tu lista por WhatsApp, las bases de tu licitación o una foto del equipo a renovar.' },
+              { n: '02', t: 'Te regresamos propuesta con precios, disponibilidad, fichas técnicas y tiempos de entrega.' },
+              { n: '03', t: 'Confirmas, entregamos con documentación completa y queda asignado tu ejecutivo de seguimiento.' },
+            ].map((s) => (
+              <li class="flex items-start gap-4">
+                <span class="font-display font-bold text-xl shrink-0" style="color:#F75000">{s.n}</span>
+                <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{s.t}</p>
+              </li>
+            ))}
+          </ol>
+          <div class="flex flex-col sm:flex-row gap-3 mt-8">
+            <a href={whatsappUrl('Hola, quiero cotizar equipo del catálogo.')} target="_blank" rel="noopener" class="btn btn-primary">
+              Iniciar cotización
+            </a>
+          </div>
         </div>
-        <a href="/cotizacion" class="btn-primary hidden sm:inline-flex">Cotizar ahora</a>
-      </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {featuredProducts.map((product) => (
-          <ProductCard
-            title={product.title}
-            description={product.description}
-            href={product.href}
-            brand={product.brand}
-            norm={product.norm}
-            category={product.category}
-            badge={product.badge}
-          />
-        ))}
+
+        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:#4A7599">
+            También te puede servir
+          </h2>
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+            {[
+              { label: 'Guía de normas y certificaciones', desc: 'Qué NOM y NFPA aplican según tu giro', href: '/certificaciones' },
+              { label: 'Servicios de mantenimiento y recarga', desc: 'Extintores, SCBA e hidráulicas — NFPA 1851', href: '/servicios/mantenimiento' },
+              { label: 'Soporte para licitaciones', desc: 'Fichas técnicas y plantillas CompraNet', href: '/servicios/licitaciones' },
+              { label: 'Marcas que distribuimos', desc: 'Globe, MSA, Dräger, Holmatro y más', href: '/marcas' },
+              { label: 'Cobertura de entrega', desc: '24–48 h CDMX · 3–5 días nacional', href: '/cobertura' },
+            ].map((l) => (
+              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+                <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
+                  <span class="flex flex-col gap-0.5">
+                    <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
+                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
+                  </span>
+                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#4A7599" stroke-width="2.5" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
+                  </svg>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
       </div>
     </div>
   </section>
+
 </BaseLayout>
