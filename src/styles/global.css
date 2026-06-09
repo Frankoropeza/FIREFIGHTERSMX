@@ -4,7 +4,8 @@
    Fonts: Rajdhani (display) · Sora (body)
    ================================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap');
+/* Fuentes: se cargan vía <link> en BaseLayout.astro (no bloqueante).
+   No usar @import aquí — bloquea el primer render. */
 
 @tailwind base;
 @tailwind components;
@@ -87,7 +88,7 @@
   /* Layout */
   --container-max:     1600px;
   --container-padding: 1.25rem;
-  --header-height:     72px;
+  --header-height:     108px;
 }
 
 /* ================================================================
@@ -370,6 +371,19 @@ img, video, svg { max-width: 100%; height: auto; display: block; }
 details.faq-item summary { list-style: none; cursor: pointer; }
 details.faq-item summary::-webkit-details-marker { display: none; }
 details.faq-item[open] .faq-icon { transform: rotate(45deg); }
+
+/* ================================================================
+   GRID CELLS — celdas de grids full-width del home
+   (sustituye los handlers inline onmouseover/onmouseout)
+   ================================================================ */
+.grid-cell {
+  background-color: var(--forge-700);
+  transition: background-color 0.2s ease;
+}
+.grid-cell:hover,
+.grid-cell:focus-within {
+  background-color: var(--forge-600);
+}
 
 /* ================================================================
    TEXTURA SUTIL

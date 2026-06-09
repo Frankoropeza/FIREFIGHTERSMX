@@ -13,6 +13,7 @@ const blogCollection = defineCollection({
     image: z.object({
       url: z.string(),
       alt: z.string(),
+      caption: z.string().optional(),
     }).optional(),
     draft: z.boolean().default(false),
   }),

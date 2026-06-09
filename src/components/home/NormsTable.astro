@@ -1,0 +1,73 @@
+---
+/**
+ * Tabla de normas y certificaciones — respaldo normativo (SEO: NOM/NFPA keywords).
+ */
+const norms = [
+  { norma: 'NOM-002-STPS-2010', alcance: 'Condiciones de seguridad y prevención contra incendio en centros de trabajo', aplica: 'Todas las empresas con empleados en México' },
+  { norma: 'NFPA 1971', alcance: 'Conjuntos de protección para combate de incendios estructurales y de proximidad', aplica: 'Trajes, cascos, guantes y botas para bomberos y brigadas' },
+  { norma: 'NFPA 1981', alcance: 'Equipos de respiración autónoma (SCBA) de circuito abierto para servicios de emergencia', aplica: 'Bomberos, brigadas HAZMAT y espacios confinados' },
+  { norma: 'NFPA 1851', alcance: 'Selección, cuidado y mantenimiento de conjuntos de protección estructural', aplica: 'Programas de mantenimiento e inspección de EPP' },
+  { norma: 'NFPA 10 · NOM-154-SCFI', alcance: 'Extintores portátiles: selección, instalación, mantenimiento y recarga', aplica: 'Todos los inmuebles comerciales e industriales' },
+  { norma: 'NFPA 13 · NFPA 72', alcance: 'Sistemas de rociadores automáticos y código nacional de alarmas de incendio', aplica: 'Edificios, naves industriales y centros de datos' },
+  { norma: 'NFPA 1936', alcance: 'Herramientas de rescate accionadas (hidráulicas, eléctricas y neumáticas)', aplica: 'Rescate vehicular y estructural' },
+  { norma: 'NOM-026-STPS · NOM-003-SEGOB', alcance: 'Colores, señales de seguridad e higiene y señalización para protección civil', aplica: 'Centros de trabajo e inmuebles con afluencia de público' },
+];
+---
+
+<section class="section" style="background:#040A12" aria-labelledby="norms-title">
+  <div class="container-site">
+
+    <!-- Header -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+      <div>
+        <span class="section-eyebrow mb-4 inline-flex">Respaldo normativo</span>
+        <h2 id="norms-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          Normas que respaldan<br/>
+          <span style="color:#F75000">cada equipo que entregamos.</span>
+        </h2>
+      </div>
+      <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+        <p class="text-sm leading-relaxed mb-3" style="color:#94A3B8">
+          Tener el equipo no basta si no puedes demostrar su conformidad. En una inspección,
+          la autoridad verifica certificados de laboratorio acreditado, número de serie,
+          vigencia de mantenimiento y bitácora — no solo la presencia física del equipo.
+        </p>
+        <p class="text-sm leading-relaxed" style="color:#94A3B8">
+          Todo nuestro catálogo se entrega con ficha técnica, certificado de conformidad
+          y garantía de fábrica: documentación lista para STPS, Protección Civil,
+          CompraNet, PEMEX o auditoría interna.
+        </p>
+      </div>
+    </div>
+
+    <!-- Tabla -->
+    <div class="overflow-x-auto" style="border:1px solid rgba(74,117,153,0.2)">
+      <table class="w-full text-left" style="border-collapse:collapse;min-width:760px">
+        <caption class="sr-only">Normas NOM y NFPA aplicables a equipos contra incendio en México</caption>
+        <thead>
+          <tr style="background:#122133">
+            <th scope="col" class="p-5 font-display font-bold text-xs uppercase tracking-widest" style="color:#FFFFFF;border-bottom:1px solid rgba(74,117,153,0.25)">Norma / Estándar</th>
+            <th scope="col" class="p-5 font-display font-bold text-xs uppercase tracking-widest" style="color:#FFFFFF;border-bottom:1px solid rgba(74,117,153,0.25)">Alcance</th>
+            <th scope="col" class="p-5 font-display font-bold text-xs uppercase tracking-widest" style="color:#FFFFFF;border-bottom:1px solid rgba(74,117,153,0.25)">Aplica a</th>
+          </tr>
+        </thead>
+        <tbody>
+          {norms.map((n, i) => (
+            <tr style={`background:${i % 2 === 0 ? '#0C1825' : '#0A1420'}`}>
+              <th scope="row" class="p-5 align-top font-display font-bold text-sm whitespace-nowrap" style="color:#FF6B26;border-bottom:1px solid rgba(74,117,153,0.12)">{n.norma}</th>
+              <td class="p-5 align-top text-sm leading-relaxed" style="color:#94A3B8;border-bottom:1px solid rgba(74,117,153,0.12)">{n.alcance}</td>
+              <td class="p-5 align-top text-sm leading-relaxed" style="color:#64748B;border-bottom:1px solid rgba(74,117,153,0.12)">{n.aplica}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <p class="text-sm leading-relaxed mt-6 max-w-3xl" style="color:#64748B">
+      ¿No sabes qué normas aplican a tu giro? Nuestro equipo técnico verifica el marco
+      normativo según tamaño, actividad y nivel de riesgo de tu empresa —
+      <a href="/certificaciones" class="font-semibold transition-colors hover:text-[#FF6B26]" style="color:#FF8F57">consulta la guía completa de certificaciones →</a>
+    </p>
+
+  </div>
+</section>

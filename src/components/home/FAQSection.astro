@@ -1,26 +1,16 @@
 ---
 import { whatsappUrl } from '@data/site';
-
-const faqs = [
-  { q: '¿Son distribuidores autorizados de las marcas que mencionan?', a: 'Sí. Mantenemos contratos vigentes de distribución con las principales marcas internacionales: Globe, MSA, Dräger, Bullard, Holmatro, 3M Scott y Honeywell, entre otras. Cada producto incluye número de serie verificable directamente con el fabricante y certificado de origen.' },
-  { q: '¿Pueden facturar a gobierno y participar en licitaciones?', a: 'Por supuesto. Tenemos más de 15 años trabajando con dependencias federales, estatales y municipales. Apoyamos con fichas técnicas formato licitación, manifiestos de normas NFPA/NOM, asistencia a juntas de aclaraciones y plantillas CompraNet. Facturación CFDI 4.0.' },
-  { q: '¿Cuánto tarda una cotización formal?', a: 'Respondemos toda cotización en menos de 24 horas hábiles con precios, disponibilidad, tiempos de entrega y fichas técnicas. Para proyectos complejos (licitaciones, brigadas completas, ARFF/HAZMAT) entregamos propuesta detallada en 48 hrs.' },
-  { q: '¿Hacen envíos a toda la República?', a: 'Sí, cubrimos los 32 estados. Tiempos: 24-48 hrs en CDMX y zona metropolitana, 3-5 días hábiles al resto del país. Embalaje especializado y seguro de envío incluido en todos los pedidos institucionales.' },
-  { q: '¿Ofrecen capacitación con DC-3 STPS?', a: 'Sí. Cursos de brigadas NOM-002-STPS, NFPA 1001 (bombero nivel I y II), uso y mantenimiento de SCBA, rescate vehicular y HAZMAT awareness. Todos con constancia DC-3 STPS válida ante IMSS y revisiones de la Secretaría del Trabajo.' },
-  { q: '¿Qué garantía manejan en los equipos?', a: 'Garantía directa de fábrica: hasta 10 años en trajes estructurales premium, 5 años en SCBA, 2 años en cascos y guantes, 1 año en extintores. Disponemos de refacciones originales y servicio técnico autorizado para mantenimiento programado conforme NFPA 1851.' },
-  { q: '¿Manejan precios preferenciales para cuerpos de bomberos?', a: 'Sí. Tenemos esquemas de precio preferencial para H. Cuerpos de Bomberos, Protección Civil, dependencias gubernamentales y compras por volumen (5+ unidades). Consultar por programa de equipamiento integral con financiamiento.' },
-  { q: '¿Tienen equipo en stock para entrega inmediata?', a: 'Mantenemos inventario permanente de trajes estructurales (tallas S-2XL), cascos, guantes, botas, capuchas y linternas. SCBA, herramientas hidráulicas y HAZMAT Nivel A pueden tomar 2-4 semanas según especificación técnica.' },
-];
+import { homeFaqs as faqs } from '@data/faqs';
 ---
 
-<section style="background:#040A12;padding-block:5rem" aria-label="Preguntas frecuentes">
+<section style="background:#040A12;padding-block:5rem" aria-labelledby="faq-title">
 
   <!-- Header -->
   <div class="container-site mb-12">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end">
       <div>
         <span class="section-eyebrow mb-4 inline-flex">FAQ</span>
-        <h2 class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+        <h2 id="faq-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
           Resolvemos tus dudas<br/>
           <span style="color:#F75000">y cotizamos al instante.</span>
         </h2>
@@ -52,9 +42,9 @@ const faqs = [
           {faqs.map((faq) => (
             <details class="faq-item group" style="border-bottom:1px solid rgba(74,117,153,0.15)">
               <summary class="flex items-start justify-between gap-4 cursor-pointer select-none list-none p-6">
-                <span class="font-display font-semibold text-sm leading-snug pr-2 group-open:text-[#FF6B26] transition-colors" style="color:#FFFFFF">
+                <h3 class="font-display font-semibold text-sm leading-snug pr-2 group-open:text-[#FF6B26] transition-colors m-0" style="color:#FFFFFF;font-size:0.875rem;line-height:1.375">
                   {faq.q}
-                </span>
+                </h3>
                 <span class="faq-icon shrink-0 mt-0.5 w-5 h-5 flex items-center justify-center transition-transform duration-200" style="border:1px solid rgba(74,117,153,0.3);color:#4A7599">
                   <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg>
                 </span>

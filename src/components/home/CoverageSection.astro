@@ -1,0 +1,78 @@
+---
+/**
+ * Cobertura nacional — regiones, tiempos de entrega y diferenciadores logísticos.
+ */
+const regions = [
+  { name: 'CDMX y Zona Metropolitana', time: 'Entrega 24–48 h', detail: 'Centro de operaciones y stock principal', featured: true },
+  { name: 'Centro y Bajío', time: '2–3 días hábiles', detail: 'EdoMex, Querétaro, Guanajuato, Puebla, Hidalgo, Morelos', featured: false },
+  { name: 'Norte', time: '3–5 días hábiles', detail: 'Nuevo León, Coahuila, Chihuahua, Tamaulipas, Sonora, BC', featured: false },
+  { name: 'Occidente y Pacífico', time: '3–5 días hábiles', detail: 'Jalisco, Michoacán, Sinaloa, Nayarit, Colima', featured: false },
+  { name: 'Sur y Sureste', time: '3–5 días hábiles', detail: 'Veracruz, Oaxaca, Chiapas, Tabasco, Yucatán, Q. Roo', featured: false },
+  { name: 'Proyectos especiales', time: 'Logística dedicada', detail: 'Plataformas, minas y sitios remotos con embalaje certificado', featured: false },
+];
+
+const badges = [
+  'Envíos a los 32 estados',
+  'Seguro de envío incluido',
+  'Factura electrónica CFDI 4.0',
+  'Embalaje especializado',
+];
+---
+
+<section class="section" style="background:#070E1A" aria-labelledby="coverage-title">
+  <div class="container-site">
+
+    <!-- Header -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+      <div>
+        <span class="section-eyebrow mb-4 inline-flex">Cobertura</span>
+        <h2 id="coverage-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          Entrega directa en<br/>
+          <span style="color:#F75000">los 32 estados.</span>
+        </h2>
+      </div>
+      <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+        <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
+          Operamos desde la Ciudad de México con stock permanente de los equipos más
+          demandados. Entregamos en 24–48 horas en la zona metropolitana y coordinamos
+          logística dedicada para proyectos de volumen en cualquier punto del país.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          {badges.map(b => (
+            <span class="badge badge-dark font-display text-[10px]">{b}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Grid de regiones -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" style="border-top:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">
+      {regions.map((r) => (
+        <div
+          class="coverage-cell relative flex flex-col gap-2 p-7 transition-colors duration-200"
+          style={`background:${r.featured ? '#122133' : '#0C1825'};border-right:1px solid rgba(74,117,153,0.18);border-bottom:1px solid rgba(74,117,153,0.18)`}
+        >
+          {r.featured && (
+            <div class="absolute left-0 top-0 bottom-0 w-[3px]" style="background:#F75000" aria-hidden="true"></div>
+          )}
+          <div class="flex items-center justify-between gap-3">
+            <h3 class="font-display font-bold text-lg leading-tight" style="color:#FFFFFF">{r.name}</h3>
+            {r.featured && <span class="badge badge-fire shrink-0">HQ</span>}
+          </div>
+          <p class="text-xs font-semibold" style="color:#34D399">{r.time}</p>
+          <p class="text-xs leading-relaxed" style="color:#64748B">{r.detail}</p>
+        </div>
+      ))}
+    </div>
+
+    <p class="text-sm mt-6" style="color:#64748B">
+      ¿Tu proyecto está fuera de estas rutas?
+      <a href="/cobertura" class="font-semibold transition-colors hover:text-[#FF6B26]" style="color:#FF8F57">Consulta la cobertura completa →</a>
+    </p>
+
+  </div>
+</section>
+
+<style>
+  .coverage-cell:hover { background: #122133 !important; }
+</style>

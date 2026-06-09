@@ -2,43 +2,143 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import HeroPro from '@components/home/HeroPro.astro';
 import TrustStrip from '@components/home/TrustStrip.astro';
-import ValueProps from '@components/home/ValueProps.astro';
 import CategoriesGrid from '@components/home/CategoriesGrid.astro';
+import RiskGuide from '@components/home/RiskGuide.astro';
+import ValueProps from '@components/home/ValueProps.astro';
+import ServicesSection from '@components/home/ServicesSection.astro';
+import NormsTable from '@components/home/NormsTable.astro';
 import ProcessSteps from '@components/home/ProcessSteps.astro';
 import IndustriesSection from '@components/home/IndustriesSection.astro';
+import CoverageSection from '@components/home/CoverageSection.astro';
 import TestimonialsSection from '@components/home/TestimonialsSection.astro';
+import BlogTeasers from '@components/home/BlogTeasers.astro';
 import FAQSection from '@components/home/FAQSection.astro';
+import CTASection from '@components/home/CTASection.astro';
 import { SITE } from '@data/site';
+import { homeFaqs } from '@data/faqs';
+import { services } from '@data/services';
 
 const seoMeta = {
-  title: `${SITE.name} — Equipo Contra Incendio Certificado NFPA | México`,
-  description: 'Distribuidor autorizado de equipo contra incendio: trajes bombero, SCBA, cascos, extintores, sistemas CI y HAZMAT. Certificado NFPA/NOM. Entrega en 32 estados.',
-  canonical: SITE.url,
+  title: `Equipo para Bomberos y Contra Incendio Certificado NFPA | ${SITE.name}`,
+  description:
+    'Distribuidor autorizado de equipo para bomberos: trajes NFPA 1971, SCBA, cascos, herramientas de rescate, extintores y sistemas CI. Cotización en 24 h, envío a los 32 estados.',
+  canonicalURL: `${SITE.url}/`,
 };
+
+/* ─── JSON-LD ──────────────────────────────────────────────── */
+
+// Negocio local / tienda especializada
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Store',
+  '@id': `${SITE.url}/#store`,
+  name: SITE.name,
+  description: SITE.description,
+  url: SITE.url,
+  telephone: SITE.phoneE164,
+  email: SITE.email,
+  image: `${SITE.url}/images/og-default.jpg`,
+  priceRange: '$$',
+  currenciesAccepted: 'MXN',
+  paymentAccepted: 'Transferencia, Tarjeta, CFDI 4.0',
+  areaServed: { '@type': 'Country', name: 'México' },
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Ciudad de México',
+    addressCountry: 'MX',
+  },
+  knowsAbout: [
+    'NFPA 1971', 'NFPA 1981', 'NFPA 1851', 'NFPA 10', 'NFPA 13', 'NFPA 72',
+    'NOM-002-STPS-2010', 'NOM-154-SCFI', 'NOM-026-STPS',
+    'Equipo para bomberos', 'Trajes estructurales', 'SCBA', 'Equipos HAZMAT',
+  ],
+};
+
+// Sitio web
+const webSiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${SITE.url}/#website`,
+  name: SITE.name,
+  url: SITE.url,
+  description: SITE.description,
+  inLanguage: 'es-MX',
+  publisher: { '@id': `${SITE.url}/#store` },
+};
+
+// FAQ visible en esta página
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: homeFaqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+
+// Servicios ofrecidos
+const servicesSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Servicios de protección contra incendio',
+  itemListElement: services.map((s, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    item: {
+      '@type': 'Service',
+      name: s.title,
+      description: s.description,
+      url: `${SITE.url}${s.href}`,
+      provider: { '@id': `${SITE.url}/#store` },
+      areaServed: { '@type': 'Country', name: 'México' },
+    },
+  })),
+};
+
+const schemas = [localBusinessSchema, webSiteSchema, faqSchema, servicesSchema];
 ---
 
-<BaseLayout {...seoMeta}>
-  <!-- 1. Hero principal con CTA y estadísticas -->
+<BaseLayout {...seoMeta} schema={schemas}>
+  <!-- 1. Hero: propuesta de valor + stats + CTAs -->
   <HeroPro />
 
-  <!-- 2. Clientes / marcas marquee -->
+  <!-- 2. Marcas autorizadas (prueba social inmediata) -->
   <TrustStrip />
 
-  <!-- 3. Por qué elegirnos (4 value props) -->
-  <ValueProps />
-
-  <!-- 4. Catálogo de categorías (8 productos) -->
+  <!-- 3. Catálogo por categorías (intención de compra) -->
   <CategoriesGrid />
 
-  <!-- 5. Proceso de compra (4 pasos) -->
+  <!-- 4. Guía de selección por nivel de riesgo (SEO + autoridad técnica) -->
+  <RiskGuide />
+
+  <!-- 5. Por qué elegirnos (diferenciadores) -->
+  <ValueProps />
+
+  <!-- 6. Servicios profesionales 01–06 -->
+  <ServicesSection />
+
+  <!-- 7. Respaldo normativo NOM/NFPA (tabla SEO) -->
+  <NormsTable />
+
+  <!-- 8. Proceso de consulta a entrega -->
   <ProcessSteps />
 
-  <!-- 6. Industrias que servimos (8 sectores) -->
+  <!-- 9. Sectores que atendemos -->
   <IndustriesSection />
 
-  <!-- 7. Testimonios (dark section, 6 reviews) -->
+  <!-- 10. Cobertura nacional y logística -->
+  <CoverageSection />
+
+  <!-- 11. Testimonios -->
   <TestimonialsSection />
 
-  <!-- 8. FAQ + formulario de cotización -->
+  <!-- 12. Blog técnico (frescura + internal linking) -->
+  <BlogTeasers />
+
+  <!-- 13. FAQ + formulario de cotización -->
   <FAQSection />
+
+  <!-- 14. CTA final de conversión -->
+  <CTASection />
 </BaseLayout>

@@ -66,10 +66,8 @@ const steps = [
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4" style="border-top:1px solid rgba(74,117,153,0.2)">
     {steps.map((step, i) => (
       <article
-        class="group relative flex flex-col gap-5 p-8 xl:p-10 transition-all duration-200"
-        style={`background:#0C1825;border-right:${i < 3 ? '1px solid rgba(74,117,153,0.15)' : 'none'};border-bottom:1px solid rgba(74,117,153,0.15)`}
-        onmouseover="this.style.background='#122133'"
-        onmouseout="this.style.background='#0C1825'"
+        class="grid-cell group relative flex flex-col gap-5 p-8 xl:p-10"
+        style={`border-right:${i < 3 ? '1px solid rgba(74,117,153,0.15)' : 'none'};border-bottom:1px solid rgba(74,117,153,0.15)`}
       >
         <!-- Número de fondo -->
         <span class="absolute bottom-4 right-6 font-display font-bold select-none pointer-events-none"

@@ -32,9 +32,13 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <!-- Preconnect -->
+    <!-- Fonts: preconnect + hoja no bloqueante (sustituye al @import de CSS) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Sora:wght@300;400;500;600;700&display=swap"
+    />
 
     <!-- SEO Component -->
     <SEO
@@ -51,7 +55,7 @@ const {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <meta name="theme-color" content="#C0392B" />
+    <meta name="theme-color" content="#040A12" />
 
     <!-- Slot for extra head content -->
     <slot name="head" />
@@ -92,14 +96,5 @@ const {
 
     <!-- Analytics (carga diferida) -->
     <slot name="analytics" />
-
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-      <iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
-        height="0" width="0"
-        style="display:none;visibility:hidden"
-      ></iframe>
-    </noscript>
   </body>
 </html>

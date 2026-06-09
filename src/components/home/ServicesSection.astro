@@ -1,0 +1,77 @@
+---
+/**
+ * Servicios numerados 01–06 — lista editorial estilo "ledger".
+ * Fuente de datos: src/data/services.ts
+ */
+import { services } from '@data/services';
+
+const blurbs: Record<string, string> = {
+  'capacitacion': 'Constancias DC-3 válidas ante STPS e IMSS',
+  'mantenimiento': 'Extintores, SCBA, hidráulicas y cámaras térmicas',
+  'instalacion-sistemas-ci': 'Rociadores NFPA 13, alarmas NFPA 72, agentes limpios',
+  'auditoria-seguridad': 'Diagnóstico de planta + plan de cierre de brechas',
+  'brigadas-empresariales': 'Diseño, equipamiento y capacitación llave en mano',
+  'licitaciones': 'Fichas técnicas, manifiestos y plantillas CompraNet',
+};
+---
+
+<section class="section" style="background:#070E1A" aria-labelledby="services-title">
+  <div class="container-site">
+
+    <!-- Header -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+      <div>
+        <span class="section-eyebrow mb-4 inline-flex">Servicios profesionales</span>
+        <h2 id="services-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          Más que productos:<br/>
+          <span style="color:#F75000">protección integral.</span>
+        </h2>
+      </div>
+      <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+        <p class="text-sm leading-relaxed mb-3" style="color:#94A3B8">
+          Venta, capacitación, mantenimiento, instalación y soporte para licitaciones.
+          Todo desde un solo proveedor, para que tu operación cumpla la normativa
+          vigente sin coordinar a tres empresas distintas.
+        </p>
+        <a href="/servicios" class="inline-flex items-center gap-2 text-xs font-display font-semibold uppercase tracking-wider transition-colors hover:text-[#FF6B26]" style="color:#FF8F57;letter-spacing:0.1em">
+          Ver todos los servicios
+          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Lista numerada -->
+    <ol class="grid grid-cols-1 md:grid-cols-2 list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.2)">
+      {services.map((s, i) => (
+        <li class="m-0 p-0">
+          <a
+            href={s.href}
+            class="service-row group flex items-start gap-5 p-6 lg:p-7 transition-colors duration-200"
+            style={`border-bottom:1px solid rgba(74,117,153,0.15);${i % 2 === 0 ? 'border-right:1px solid rgba(74,117,153,0.15)' : ''}`}
+          >
+            <span class="font-display font-bold text-2xl shrink-0 transition-colors group-hover:text-[#F75000]" style="color:rgba(74,117,153,0.55);min-width:2.5rem" aria-hidden="true">
+              {String(i + 1).padStart(2, '0')}
+            </span>
+            <span class="flex flex-col gap-1.5 flex-1">
+              <span class="font-display font-bold text-lg leading-tight transition-colors group-hover:text-[#FF6B26]" style="color:#FFFFFF">{s.title}</span>
+              <span class="text-sm leading-relaxed" style="color:#64748B">{blurbs[s.slug] ?? s.description}</span>
+            </span>
+            <svg class="w-4 h-4 shrink-0 mt-1.5 transition-all opacity-0 group-hover:opacity-100 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="#FF6B26" stroke-width="2.5" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </li>
+      ))}
+    </ol>
+
+  </div>
+</section>
+
+<style>
+  .service-row:hover { background: #0C1825; }
+  @media (max-width: 767px) {
+    .service-row { border-right: none !important; }
+  }
+</style>

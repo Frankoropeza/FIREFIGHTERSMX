@@ -2,71 +2,71 @@
 import { SITE, whatsappUrl } from '@data/site';
 ---
 
-<section class="relative overflow-hidden" style="background:#040A12;min-height:calc(100vh - 71px)" aria-label="Hero">
+<section class="relative overflow-hidden" style="background:#040A12;min-height:calc(100vh - 108px)" aria-label="Hero">
 
-  <!-- Glow naranja lateral derecho -->
-  <div class="absolute top-0 right-0 w-[55%] h-full pointer-events-none" style="background:radial-gradient(ellipse 70% 60% at 85% 40%, rgba(247,80,0,0.12) 0%, transparent 70%)" aria-hidden="true"></div>
-  <!-- Glow azul sutil abajo izquierdo -->
-  <div class="absolute bottom-0 left-0 w-[40%] h-[50%] pointer-events-none" style="background:radial-gradient(ellipse 80% 60% at 10% 100%, rgba(18,33,51,0.9) 0%, transparent 70%)" aria-hidden="true"></div>
+  <!-- Glow naranja derecho -->
+  <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.10) 0%, transparent 65%)" aria-hidden="true"></div>
+  <!-- Glow azul abajo izquierdo -->
+  <div class="absolute bottom-0 left-0 w-2/5 h-2/3 pointer-events-none" style="background:radial-gradient(ellipse 80% 60% at 0% 100%, rgba(18,33,51,0.95) 0%, transparent 70%)" aria-hidden="true"></div>
 
-  <!-- Grid de líneas -->
-  <svg class="absolute inset-0 w-full h-full pointer-events-none" style="opacity:0.03" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <!-- Grid de líneas sutil -->
+  <svg class="absolute inset-0 w-full h-full pointer-events-none" style="opacity:0.025" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <defs>
-      <pattern id="g" width="60" height="60" patternUnits="userSpaceOnUse">
-        <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#7AA4C4" stroke-width="0.5"/>
+      <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+        <path d="M 64 0 L 0 0 0 64" fill="none" stroke="#7AA4C4" stroke-width="0.5"/>
       </pattern>
     </defs>
-    <rect width="100%" height="100%" fill="url(#g)"/>
+    <rect width="100%" height="100%" fill="url(#grid)"/>
   </svg>
 
-  <!-- Línea vertical decorativa -->
-  <div class="absolute top-0 right-[35%] h-full w-px hidden xl:block" style="background:linear-gradient(to bottom, transparent, rgba(247,80,0,0.15) 30%, rgba(247,80,0,0.15) 70%, transparent)" aria-hidden="true"></div>
+  <!-- Línea divisoria vertical decorativa -->
+  <div class="absolute inset-y-0 left-[52%] w-px hidden xl:block pointer-events-none"
+       style="background:linear-gradient(to bottom, transparent 5%, rgba(247,80,0,0.12) 25%, rgba(247,80,0,0.12) 75%, transparent 95%)"
+       aria-hidden="true"></div>
 
-  <div class="container-site relative z-10 flex flex-col justify-center" style="min-height:calc(100vh - 71px); padding-top:4rem; padding-bottom:4rem">
+  <!-- Layout principal -->
+  <div class="container-site relative z-10 grid grid-cols-1 xl:grid-cols-[55fr_45fr] gap-0" style="min-height:calc(100vh - 108px)">
 
-    <!-- Eyebrow -->
-    <div class="flex flex-wrap items-center gap-3 mb-8">
-      <span class="section-eyebrow">Distribución Autorizada · México</span>
-      <span class="flex items-center gap-1.5 text-xs font-medium" style="color:#FF6B26">
-        <span class="w-1.5 h-1.5 rounded-full animate-pulse" style="background:#F75000"></span>
-        Disponibilidad inmediata · 32 estados
-      </span>
-    </div>
+    <!-- ─── COLUMNA IZQUIERDA: Título ─── -->
+    <div class="flex flex-col justify-center py-16 lg:py-20 xl:pr-20">
 
-    <!-- Headline full-width -->
-    <div class="mb-6">
-      <h1 class="font-display font-bold uppercase leading-[0.9] tracking-[0.01em]" style="font-size:clamp(4rem,10vw,9rem);color:#FFFFFF">
-        Equipo<br/>
-        <span style="color:#F75000">Certificado</span><br/>
-        <span style="font-size:0.45em;color:#94A3B8;letter-spacing:0.04em">para Bomberos · Protección Civil · Industria</span>
+      <!-- Eyebrow -->
+      <div class="flex flex-wrap items-center gap-3 mb-8">
+        <span class="section-eyebrow">Distribución Autorizada · México</span>
+        <span class="flex items-center gap-1.5 text-xs font-medium" style="color:#FF6B26">
+          <span class="w-1.5 h-1.5 rounded-full animate-pulse shrink-0" style="background:#F75000"></span>
+          32 estados · Respuesta &lt; 24 h
+        </span>
+      </div>
+
+      <!-- Headline principal -->
+      <h1 class="font-display font-bold uppercase mb-8" style="line-height:0.88;letter-spacing:0.01em">
+        <span class="block" style="font-size:clamp(3.5rem,9vw,8.5rem);color:#FFFFFF">Equipo</span>
+        <span class="block" style="font-size:clamp(3.5rem,9vw,8.5rem);color:#F75000">Certificado</span>
+        <span class="block mt-3" style="font-size:clamp(1.1rem,2.2vw,1.75rem);color:#94A3B8;letter-spacing:0.06em;font-weight:600">
+          para Bomberos · Protección Civil · Industria
+        </span>
       </h1>
-    </div>
 
-    <!-- Stats row — horizontal, full width -->
-    <div class="grid grid-cols-2 sm:grid-cols-4 mb-10" style="border-top:1px solid rgba(74,117,153,0.2);border-bottom:1px solid rgba(74,117,153,0.2)">
-      {[
-        { n: '+15', label: 'Años en el sector' },
-        { n: '500+', label: 'Estaciones equipadas' },
-        { n: '32', label: 'Estados con cobertura' },
-        { n: '16+', label: 'Marcas autorizadas' },
-      ].map((s, i) => (
-        <div class={`py-6 flex flex-col ${i > 0 ? 'border-l' : ''}`} style={`border-color:rgba(74,117,153,0.2);padding-left:${i > 0 ? '2rem' : '0'}`}>
-          <span class="font-display font-bold" style="font-size:clamp(2rem,4vw,3.5rem);color:#FFFFFF;line-height:1">{s.n}</span>
-          <span class="text-sm mt-1" style="color:#64748B;text-transform:uppercase;letter-spacing:0.08em">{s.label}</span>
-        </div>
-      ))}
-    </div>
+      <!-- Stats row -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 mb-10"
+           style="border-top:1px solid rgba(74,117,153,0.2);border-bottom:1px solid rgba(74,117,153,0.2)">
+        {[
+          { n: '+15', label: 'Años en el sector' },
+          { n: '500+', label: 'Estaciones equipadas' },
+          { n: '32', label: 'Estados con cobertura' },
+          { n: '16+', label: 'Marcas autorizadas' },
+        ].map((s, i) => (
+          <div class={`py-5 flex flex-col ${i > 0 ? 'pl-5 border-l' : ''}`}
+               style="border-color:rgba(74,117,153,0.2)">
+            <span class="font-display font-bold leading-none" style="font-size:clamp(1.8rem,3.5vw,3rem);color:#FFFFFF">{s.n}</span>
+            <span class="text-[10px] mt-1.5 uppercase tracking-widest" style="color:#4A7599">{s.label}</span>
+          </div>
+        ))}
+      </div>
 
-    <!-- Descripción + CTAs -->
-    <div class="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start lg:items-center">
-
-      <p class="text-base lg:text-lg leading-relaxed max-w-2xl" style="color:#94A3B8">
-        Distribuidores directos de <strong style="color:#CBD5E1">Globe, MSA, Dräger, Bullard, Holmatro y 3M Scott</strong>.
-        Trajes NFPA 1971, SCBA, cascos, herramientas hidráulicas de rescate, HAZMAT
-        y sistemas contra incendio. Asesoría técnica real, documentación lista para licitación CompraNet y PEMEX.
-      </p>
-
-      <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+      <!-- CTAs -->
+      <div class="flex flex-col sm:flex-row gap-3">
         <a
           href={whatsappUrl('Hola, necesito una cotización para equipo de bomberos.')}
           target="_blank" rel="noopener"
@@ -79,18 +79,74 @@ import { SITE, whatsappUrl } from '@data/site';
         </a>
         <a href="/productos" class="btn btn-ghost btn-lg">Ver catálogo</a>
       </div>
+
     </div>
 
-    <!-- Certifications -->
-    <div class="flex flex-wrap gap-2 mt-8">
-      {['NFPA 1971','NFPA 1981','UL Listed','NOM-002-STPS','ISO 9001','NIOSH'].map(n => (
-        <span class="badge badge-dark font-display text-[10px]">{n}</span>
-      ))}
-    </div>
+    <!-- ─── COLUMNA DERECHA: Dos párrafos ─── -->
+    <div class="flex flex-col justify-center py-16 lg:py-20 xl:pl-20"
+         style="border-left:1px solid rgba(74,117,153,0.1)">
 
+      <!-- Eyebrow columna derecha -->
+      <div class="flex items-center gap-2 mb-8">
+        <span class="w-8 h-px shrink-0" style="background:#F75000"></span>
+        <span class="text-xs font-display font-semibold uppercase tracking-[0.18em]" style="color:#F75000">
+          Por qué elegirnos
+        </span>
+      </div>
+
+      <!-- Párrafo 1 -->
+      <div class="mb-8 pb-8" style="border-bottom:1px solid rgba(74,117,153,0.15)">
+        <h2 class="font-display font-bold text-xl mb-4 leading-snug" style="color:#FFFFFF">
+          Distribuidores directos con más de 15 años equipando a quienes protegen vidas.
+        </h2>
+        <p class="text-sm leading-[1.9]" style="color:#64748B">
+          Somos distribuidores autorizados de <strong style="color:#CBD5E1">Globe, MSA, Dräger, Bullard,
+          Holmatro y 3M Scott</strong> en México. Cada equipo que entregamos lleva número de serie
+          verificable con fábrica, certificado de laboratorio acreditado y ficha técnica lista para
+          auditoría STPS, CompraNet o PEMEX. Sin intermediarios, sin copias, sin sorpresas en la entrega.
+        </p>
+      </div>
+
+      <!-- Párrafo 2 -->
+      <div class="mb-10">
+        <h2 class="font-display font-bold text-xl mb-4 leading-snug" style="color:#FFFFFF">
+          Asesoría técnica real, documentación lista para licitación en menos de 24 horas.
+        </h2>
+        <p class="text-sm leading-[1.9]" style="color:#64748B">
+          Nuestro equipo certificado en <strong style="color:#CBD5E1">NFPA 1001, NOM-002-STPS y HAZMAT</strong>
+          analiza tu operación, detecta brechas normativas y entrega una propuesta detallada en menos de
+          24 horas hábiles. Cobertura en los 32 estados, stock permanente, capacitación DC-3 incluida y
+          garantía de fábrica de hasta 10 años. La relación no termina con la entrega del equipo.
+        </p>
+      </div>
+
+      <!-- Trust indicators -->
+      <div class="flex flex-col gap-3 mb-8">
+        {[
+          { icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>`, text: 'Equipos originales con certificado de origen verificable' },
+          { icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>`, text: 'Soporte técnico y mantenimiento post-venta incluido' },
+          { icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>`, text: 'Ejecutivo dedicado desde la primera consulta hasta la entrega' },
+        ].map(t => (
+          <div class="flex items-start gap-3">
+            <div class="w-7 h-7 flex items-center justify-center shrink-0 mt-0.5" style="color:#F75000;border:1px solid rgba(247,80,0,0.22)">
+              <span class="w-3.5 h-3.5 block" set:html={t.icon}/>
+            </div>
+            <span class="text-xs leading-relaxed" style="color:#64748B">{t.text}</span>
+          </div>
+        ))}
+      </div>
+
+      <!-- Certificaciones -->
+      <div class="flex flex-wrap gap-2">
+        {['NFPA 1971','NFPA 1981','UL Listed','NOM-002-STPS','ISO 9001','NIOSH'].map(n => (
+          <span class="badge badge-dark font-display text-[10px]">{n}</span>
+        ))}
+      </div>
+
+    </div>
   </div>
 
   <!-- Línea de acento inferior -->
-  <div class="h-px w-full" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.5) 30%, rgba(247,80,0,0.5) 70%, transparent)"></div>
+  <div class="h-px w-full" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)"></div>
 
 </section>

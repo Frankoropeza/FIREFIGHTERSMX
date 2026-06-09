@@ -1,0 +1,107 @@
+---
+/**
+ * Guía de selección por nivel de riesgo — tabla SEO con CTA a diagnóstico.
+ * Basada en la clasificación de NOM-002-STPS-2010 y NFPA 1.
+ */
+import { whatsappUrl } from '@data/site';
+
+const riskLevels = [
+  {
+    nivel: 'Ordinario',
+    color: '#34D399',
+    ejemplos: 'Oficinas, escuelas, consultorios, comercios, hoteles pequeños',
+    minimo: 'Extintores PQS ABC a máx. 15 m de recorrido, señalización NOM-026-STPS, detectores de humo, rutas de evacuación señalizadas',
+    recomendado: 'Brigada básica con DC-3, botiquín, alarma centralizada, lámparas de emergencia',
+  },
+  {
+    nivel: 'Moderado',
+    color: '#F5A623',
+    ejemplos: 'Restaurantes, talleres, bodegas comerciales, hospitales, hoteles grandes',
+    minimo: 'Extintor por clase de fuego (K en cocinas, CO₂ en tableros), gabinetes con manguera, sistema de detección y alarma NFPA 72',
+    recomendado: 'EPP básico de brigada (casco, guantes, chaquetón ligero), rociadores en áreas críticas, capacitación NFPA para brigadistas',
+  },
+  {
+    nivel: 'Alto',
+    color: '#F75000',
+    ejemplos: 'Plantas industriales, refinerías, aeropuertos, minería, almacenes de inflamables',
+    minimo: 'Red hidráulica contra incendio NFPA 20, rociadores NFPA 13, tablero FACP, brigada equipada con trajes NFPA 1971 y SCBA NFPA 1981',
+    recomendado: 'SCBA de 60 min, trajes HAZMAT Nivel A/B, cámaras térmicas NFPA 1801, herramientas de rescate hidráulico, detectores multi-gas',
+  },
+];
+---
+
+<section class="section" style="background:#070E1A" aria-labelledby="risk-guide-title">
+  <div class="container-site">
+
+    <!-- Header -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+      <div>
+        <span class="section-eyebrow mb-4 inline-flex">Guía de selección</span>
+        <h2 id="risk-guide-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          ¿Qué equipo necesitas<br/>
+          <span style="color:#F75000">según tu nivel de riesgo?</span>
+        </h2>
+      </div>
+      <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+        <p class="text-sm leading-relaxed mb-3" style="color:#94A3B8">
+          La selección correcta parte de clasificar el riesgo de incendio de tu inmueble
+          conforme a la <strong style="color:#CBD5E1">NOM-002-STPS-2010</strong>: tipo de materiales,
+          carga de fuego y número de ocupantes. A mayor riesgo, mayor densidad de equipamiento
+          y mayor complejidad del sistema.
+        </p>
+        <p class="text-sm leading-relaxed" style="color:#94A3B8">
+          Esta tabla resume el equipamiento mínimo y los complementos recomendados por nivel.
+          Un diagnóstico técnico presencial — que en FIREFIGHTERS MX hacemos sin costo —
+          afina cantidades, agentes y ubicaciones según tu instalación.
+        </p>
+      </div>
+    </div>
+
+    <!-- Tabla -->
+    <div class="overflow-x-auto" style="border:1px solid rgba(74,117,153,0.2)">
+      <table class="w-full text-left" style="border-collapse:collapse;min-width:880px">
+        <caption class="sr-only">Equipamiento contra incendio mínimo y recomendado según nivel de riesgo NOM-002-STPS</caption>
+        <thead>
+          <tr style="background:#122133">
+            <th scope="col" class="p-5 font-display font-bold text-xs uppercase tracking-widest" style="color:#FFFFFF;border-bottom:1px solid rgba(74,117,153,0.25)">Nivel de riesgo</th>
+            <th scope="col" class="p-5 font-display font-bold text-xs uppercase tracking-widest" style="color:#FFFFFF;border-bottom:1px solid rgba(74,117,153,0.25)">Ejemplos de instalaciones</th>
+            <th scope="col" class="p-5 font-display font-bold text-xs uppercase tracking-widest" style="color:#FFFFFF;border-bottom:1px solid rgba(74,117,153,0.25)">Equipamiento mínimo</th>
+            <th scope="col" class="p-5 font-display font-bold text-xs uppercase tracking-widest" style="color:#FFFFFF;border-bottom:1px solid rgba(74,117,153,0.25)">Complementos recomendados</th>
+          </tr>
+        </thead>
+        <tbody>
+          {riskLevels.map((r, i) => (
+            <tr style={`background:${i % 2 === 0 ? '#0C1825' : '#0A1420'}`}>
+              <th scope="row" class="p-5 align-top" style="border-bottom:1px solid rgba(74,117,153,0.12)">
+                <span class="inline-flex items-center gap-2 font-display font-bold text-base" style="color:#FFFFFF">
+                  <span class="w-2 h-2 shrink-0" style={`background:${r.color}`} aria-hidden="true"></span>
+                  {r.nivel}
+                </span>
+              </th>
+              <td class="p-5 align-top text-sm leading-relaxed" style="color:#94A3B8;border-bottom:1px solid rgba(74,117,153,0.12)">{r.ejemplos}</td>
+              <td class="p-5 align-top text-sm leading-relaxed" style="color:#94A3B8;border-bottom:1px solid rgba(74,117,153,0.12)">{r.minimo}</td>
+              <td class="p-5 align-top text-sm leading-relaxed" style="color:#64748B;border-bottom:1px solid rgba(74,117,153,0.12)">{r.recomendado}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Nota + CTA -->
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mt-8 p-6" style="background:#0C1825;border:1px solid rgba(247,80,0,0.2)">
+      <p class="text-sm leading-relaxed max-w-2xl" style="color:#94A3B8">
+        Estas cifras son orientativas. Un diagnóstico técnico presencial determina la cantidad
+        exacta, los agentes necesarios y la ubicación óptima según la distribución de tu inmueble.
+        <strong style="color:#CBD5E1">En FIREFIGHTERS MX realizamos este diagnóstico sin costo.</strong>
+      </p>
+      <a
+        href={whatsappUrl('Hola, necesito un diagnóstico técnico de mi instalación.')}
+        target="_blank" rel="noopener"
+        class="btn btn-primary shrink-0"
+      >
+        Solicitar diagnóstico gratuito
+      </a>
+    </div>
+
+  </div>
+</section>

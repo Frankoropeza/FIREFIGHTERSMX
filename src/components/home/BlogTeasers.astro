@@ -1,0 +1,66 @@
+---
+/**
+ * Últimos artículos del blog — internal linking + frescura SEO en el home.
+ */
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+
+const fmt = new Intl.DateTimeFormat('es-MX', { day: 'numeric', month: 'long', year: 'numeric' });
+---
+
+<section class="section" style="background:#040A12" aria-labelledby="blog-title">
+  <div class="container-site">
+
+    <!-- Header -->
+    <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
+      <div>
+        <span class="section-eyebrow mb-4 inline-flex">Blog técnico</span>
+        <h2 id="blog-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          Guías escritas por<br/>
+          <span style="color:#F75000">especialistas del sector.</span>
+        </h2>
+        <p class="text-sm mt-4 max-w-xl leading-relaxed" style="color:#64748B">
+          Normativa mexicana, selección de equipo, mantenimiento NFPA 1851 y preparación
+          para inspecciones de STPS y Protección Civil — sin tecnicismos innecesarios.
+        </p>
+      </div>
+      <a href="/blog" class="btn btn-outline btn-sm self-start sm:self-auto shrink-0">
+        Ver todos los artículos →
+      </a>
+    </div>
+
+    <!-- Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3" style="border-top:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">
+      {posts.map((post) => (
+        <article class="h-full" style="border-right:1px solid rgba(74,117,153,0.18);border-bottom:1px solid rgba(74,117,153,0.18)">
+          <a href={`/blog/${post.slug}`} class="blog-card group flex flex-col gap-4 p-7 h-full transition-colors duration-200" style="background:#0C1825">
+            <div class="flex items-center justify-between gap-3">
+              <span class="badge badge-fire">{post.data.category}</span>
+              <time datetime={post.data.pubDate.toISOString().split('T')[0]} class="text-[11px] uppercase tracking-wider" style="color:#4A7599">
+                {fmt.format(post.data.pubDate)}
+              </time>
+            </div>
+            <h3 class="font-display font-bold text-xl leading-snug transition-colors group-hover:text-[#FF6B26]" style="color:#FFFFFF">
+              {post.data.title}
+            </h3>
+            <p class="text-sm leading-relaxed flex-1" style="color:#64748B">{post.data.description}</p>
+            <span class="flex items-center gap-1.5 text-xs font-display font-semibold uppercase tracking-wider transition-colors group-hover:text-[#FF6B26]" style="color:#4A7599;letter-spacing:0.1em">
+              Leer artículo
+              <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
+              </svg>
+            </span>
+          </a>
+        </article>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .blog-card:hover { background: #122133 !important; }
+</style>

@@ -1,10 +1,9 @@
 User-agent: *
 Allow: /
 
-# Sitemaps
+# Sitemap
 Sitemap: https://firefightersmx.com/sitemap-index.xml
 
-# Disallow admin/private paths
+# Rutas privadas
 Disallow: /admin/
 Disallow: /api/
-Disallow: /_astro/

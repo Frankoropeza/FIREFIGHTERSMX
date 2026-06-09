@@ -1,6 +1,7 @@
 ---
 import { navigation } from '@data/navigation';
 import { SITE, whatsappUrl } from '@data/site';
+import TopBar from '@components/common/TopBar.astro';
 
 const pathname = Astro.url.pathname;
 const isActive = (href: string) =>
@@ -8,6 +9,9 @@ const isActive = (href: string) =>
 ---
 
 <header id="site-header" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+  <!-- TopBar -->
+  <TopBar />
+
   <!-- Línea naranja top -->
   <div class="h-[3px] bg-gradient-to-r from-[var(--ember-600)] via-[var(--ember-500)] to-[var(--gold-500)]"></div>
 
@@ -179,7 +183,7 @@ const isActive = (href: string) =>
   </div>
 </header>
 
-<div class="h-[71px]" aria-hidden="true"></div>
+<div class="h-[71px] md:h-[107px]" aria-hidden="true"></div>
 
 <script>
   const btn = document.getElementById('mobile-menu-btn') as HTMLButtonElement | null;
