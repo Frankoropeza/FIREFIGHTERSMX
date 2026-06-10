@@ -93,6 +93,22 @@ export const categories: Category[] = [
       { name: 'Cascos forestales NFPA 1977', detail: 'Ligeros, ventilados, compatibles con goggles y capucha' },
     ],
     productCategory: 'Cascos NFPA',
+    spotlight: {
+      title: 'Cascos para Bomberos certificados',
+      highlight: 'NFPA 1971 y NFPA 1977',
+      paragraphs: [
+        'El casco protege contra impacto, penetración, calor radiante y descarga eléctrica — y la NFPA 1971:2018 exige que cada componente lo demuestre en laboratorio acreditado. Distribuimos MSA Gallet, Bullard y Cairns con certificado de conformidad, número de serie verificable y ficha técnica lista para licitación.',
+        'Te asesoramos en la configuración correcta según tu operación: protector facial o goggles, lámpara integrada, soporte para cámara térmica y protección nucal. Stock permanente de los modelos más demandados con entrega en 24–48 horas en CDMX.',
+      ],
+      subsections: [
+        { name: 'Estilo europeo integral', detail: 'MSA Gallet F1 XF: visor retráctil interno, protección nucal integrada, módulo de lámpara y comunicación. El estándar en cuerpos metropolitanos y ARFF.' },
+        { name: 'Estilo americano tradicional', detail: 'Bullard USTM/USTERM y Cairns N6A Houston: fibra de vidrio termoendurecida o cuero, ala completa contra escurrimientos y escudo frontal personalizable.' },
+        { name: 'Cascos forestales NFPA 1977', detail: 'Ligeros y ventilados para incendio vegetal: compatibles con goggles, capucha y protección auditiva en jornadas largas.' },
+        { name: 'Accesorios y refacciones', detail: 'Visores, goggles, lámparas, escudos frontales personalizados y suspensiones de repuesto — todo original de fábrica para conservar la certificación.' },
+      ],
+      image: '/images/categorias/cascos-nfpa.svg',
+      imageAlt: 'Ilustración técnica de casco estructural para bombero certificado NFPA 1971 con visor abatible y banda reflejante',
+    },
   },
   {
     slug: 'equipos-scba',
