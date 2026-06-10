@@ -36,7 +36,7 @@ export const navigation = { main: [
   },
   {
     label: "Industrias",
-    href: "/industrias/bomberos-municipales",
+    href: "/industrias",
     children: [
       { label: "Bomberos Municipales", href: "/industrias/bomberos-municipales" },
       { label: "Brigadas Industriales", href: "/industrias/brigadas-industriales" },

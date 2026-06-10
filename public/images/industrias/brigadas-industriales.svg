@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 720" role="img" aria-label="Planta industrial con brigada y punto de extintores NOM-002">
+  <defs>
+    <linearGradient id="bgbrigad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0C1825"/><stop offset="0.6" stop-color="#070E1A"/><stop offset="1" stop-color="#040A12"/>
+    </linearGradient>
+    <radialGradient id="glbrigad" cx="0.5" cy="0.45" r="0.65">
+      <stop offset="0" stop-color="#F75000" stop-opacity="0.2"/><stop offset="1" stop-color="#F75000" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grbrigad" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#7AA4C4" stroke-width="0.6" opacity="0.08"/>
+    </pattern>
+  </defs>
+  <rect width="640" height="720" fill="url(#bgbrigad)"/>
+  <rect width="640" height="720" fill="url(#grbrigad)"/>
+  <rect width="640" height="720" fill="url(#glbrigad)"/>
+  <g font-family="Rajdhani, Arial, sans-serif" font-weight="700">
+    <rect x="40" y="48" width="158" height="34" fill="rgba(247,80,0,0.12)" stroke="rgba(247,80,0,0.4)"/>
+    <text x="119" y="71" text-anchor="middle" font-size="16" fill="#FF8F57" letter-spacing="2">NOM-002-STPS</text>
+    <rect x="442" y="48" width="158" height="34" fill="rgba(74,117,153,0.12)" stroke="rgba(74,117,153,0.4)"/>
+    <text x="521" y="71" text-anchor="middle" font-size="16" fill="#7AA4C4" letter-spacing="2">DC-3</text>
+  </g>
+
+  <g>
+    <!-- nave industrial -->
+    <path d="M90 320l115-80 115 80v200H90z" fill="#122133" stroke="#4A7599" stroke-width="3.5"/>
+    <path d="M320 320l115-80 115 80v200H320z" fill="#0E1B2B" stroke="#4A7599" stroke-width="3.5"/>
+    <rect x="130" y="380" width="60" height="60" fill="#0A1420" stroke="#2C4A63" stroke-width="2.5"/>
+    <rect x="240" y="380" width="60" height="140" fill="#0A1420" stroke="#2C4A63" stroke-width="2.5"/>
+    <rect x="370" y="380" width="120" height="60" fill="#0A1420" stroke="#2C4A63" stroke-width="2.5"/>
+    <!-- chimenea -->
+    <rect x="480" y="180" width="34" height="140" fill="#1A2E44" stroke="#4A7599" stroke-width="3"/>
+    <!-- punto de extintor -->
+    <rect x="528" y="380" width="64" height="86" rx="6" fill="#C43D00"/>
+    <rect x="544" y="398" width="32" height="52" rx="10" fill="#F75000" stroke="#7C2D12" stroke-width="2.5"/>
+    <text x="560" y="492" text-anchor="middle" font-family="Rajdhani, Arial" font-weight="700" font-size="13" fill="#FF8F57">EXTINTOR</text>
+  </g>
+    <g transform="translate(180 560) scale(0.95)">
+      <path d="M-26-64a26 26 0 0 1 52 0z" fill="#F75000"/>
+      <rect x="-32" y="-66" width="64" height="8" rx="4" fill="#C43D00"/>
+      <circle cx="0" cy="-46" r="18" fill="#E8C9A8"/>
+      <path d="M0-22c-34 0-56 24-56 58v76h112v-76c0-34-22-58-56-58z" fill="#F5A623"/>
+      <rect x="-56" y="22" width="112" height="15" fill="#F5A623"/>
+      <rect x="-56" y="40" width="112" height="6" fill="#E8F2F9" opacity="0.85"/>
+    </g>
+
+    <g transform="translate(300 560) scale(0.95)">
+      <path d="M-26-64a26 26 0 0 1 52 0z" fill="#F5A623"/>
+      <rect x="-32" y="-66" width="64" height="8" rx="4" fill="#C43D00"/>
+      <circle cx="0" cy="-46" r="18" fill="#E8C9A8"/>
+      <path d="M0-22c-34 0-56 24-56 58v76h112v-76c0-34-22-58-56-58z" fill="#F75000"/>
+      <rect x="-56" y="22" width="112" height="15" fill="#F5A623"/>
+      <rect x="-56" y="40" width="112" height="6" fill="#E8F2F9" opacity="0.85"/>
+    </g>
+
+  <rect x="0" y="688" width="640" height="32" fill="#0A1420"/>
+  <rect x="0" y="686" width="640" height="2" fill="#F75000" opacity="0.5"/>
+</svg>

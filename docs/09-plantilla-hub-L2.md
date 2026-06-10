@@ -35,7 +35,7 @@ Breadcrumb → Hero (eyebrow norma + h1 + `intro[]` 2 párrafos + CTAs) → Quic
 ## Cómo replicar a los L2 pendientes
 
 - **/servicios**: hub con hero 2-col + grid de 6 servicios (cards tipo CategoryCard con data en `services.ts` — extender con shortDesc/accent/icon) + spotlights por servicio + cómo trabajamos + cross-links. L3 = 6 páginas migradas a este patrón (idealmente ruta dinámica `[servicio].astro` con data central, igual que productos)
-- **/industrias**: crear hub (hoy no existe) con grid de 8 sectores + spotlights; migrar las 8 páginas v1 a ruta dinámica con data `industries.ts`
+- **/industrias**: ✅ hecho — hub + ruta dinámica con riesgos, cross-selling y FAQ por sector (referencia de L3 más completo)
 - **/blog**: hub con grid de posts (BlogCard rediseñada al patrón grid-cell) + categorías
 - **Empresa** (nosotros, certificaciones, cobertura, distribuidores, contacto, cotizacion, licitaciones, marcas): hero 2-col + secciones del catálogo de complementos
 

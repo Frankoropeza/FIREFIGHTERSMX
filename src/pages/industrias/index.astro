@@ -1,0 +1,264 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import QuickLinksBar from '@components/common/QuickLinksBar.astro';
+import Spotlight from '@components/common/Spotlight.astro';
+import { industries } from '@data/industries';
+import { SITE, whatsappUrl } from '@data/site';
+
+const canonicalURL = `${SITE.url}/industrias`;
+
+const seoMeta = {
+  title: `Industrias que Equipamos Contra Incendio — ${SITE.name}`,
+  description:
+    'Soluciones contra incendio por sector: bomberos municipales, brigadas industriales, aeropuertos ARFF, hospitales, hoteles, refinerías, minería y Protección Civil.',
+  canonicalURL,
+};
+
+/* ─── JSON-LD ──────────────────────────────────────────────── */
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Industrias', item: canonicalURL },
+  ],
+};
+
+const collectionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  '@id': `${canonicalURL}#collection`,
+  name: 'Industrias y sectores que equipamos contra incendio',
+  description: seoMeta.description,
+  url: canonicalURL,
+  inLanguage: 'es-MX',
+  isPartOf: { '@id': `${SITE.url}/#website` },
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: industries.length,
+    itemListElement: industries.map((ind, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: ind.name,
+      url: `${SITE.url}${ind.href}`,
+    })),
+  },
+};
+
+const trustPoints = [
+  { title: 'Experiencia por sector', text: 'Un ejecutivo que ya equipó proyectos como el tuyo: conoce normas, tiempos y presupuestos del giro.' },
+  { title: 'Norma correcta por giro', text: 'NOM, NFPA, ASEA, OACI o COFEPRIS — mapeamos el marco que rige tu operación.' },
+  { title: 'Cross de producto y servicio', text: 'Equipo + capacitación + mantenimiento en un solo contrato con calendario.' },
+  { title: 'Documentación auditable', text: 'Cada entrega con la evidencia que pide tu autoridad, aseguradora o corporativo.' },
+];
+---
+
+<BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema]}>
+
+  <!-- Breadcrumb -->
+  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+    <div class="container-site">
+      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:#4A7599">
+        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li aria-hidden="true">/</li>
+        <li><span style="color:#94A3B8" aria-current="page">Industrias</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">
+    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
+
+    <div class="container-site relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+        <div>
+          <span class="section-eyebrow mb-5 inline-flex">Soluciones por sector</span>
+          <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+            Industrias que<br/>
+            <span style="color:#F75000">Equipamos</span>
+          </h1>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a
+              href={whatsappUrl('Hola, quiero una solución contra incendio para mi sector.')}
+              target="_blank" rel="noopener"
+              class="btn btn-primary btn-lg"
+            >
+              Cotizar por WhatsApp
+            </a>
+            <a href="/cotizacion" class="btn btn-ghost btn-lg">Cotización formal</a>
+          </div>
+        </div>
+
+        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
+          <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">
+            Cada sector responde a riesgos y marcos normativos distintos:
+            <strong style="color:#CBD5E1">cuerpos de bomberos municipales, brigadas industriales NOM-002,
+            aeropuertos ARFF, hospitales, hoteles, refinerías y petroquímica, minería y unidades de
+            Protección Civil</strong>. Conocemos los ocho porque llevamos más de 15 años equipándolos.
+          </p>
+          <p class="text-sm leading-[1.9] mb-6" style="color:#64748B">
+            Por eso no vendemos catálogo genérico: cada solución combina el equipo certificado,
+            los servicios y la documentación que tu autoridad específica va a auditar — STPS,
+            Protección Civil, AFAC, ASEA, COFEPRIS o el órgano fiscalizador de tu municipio.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {['NOM-002-STPS','NFPA 1971','NFPA 403','NFPA 101','ASEA','NOM-023-STPS'].map(n => (
+              <span class="badge badge-dark font-display text-[10px]">{n}</span>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)" aria-hidden="true"></div>
+  </section>
+
+  <!-- Accesos rápidos (interlinking) -->
+  <QuickLinksBar />
+
+  <!-- Pilares -->
+  <section class="section-tight" style="background:#070E1A" aria-label="Por qué por sector">
+    <div class="container-site">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style="border:1px solid rgba(74,117,153,0.18)">
+        {trustPoints.map((t, i) => (
+          <div class="flex flex-col gap-2 p-6" style={`background:#0C1825;${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.18);' : ''}`}>
+            <h2 class="font-display font-bold text-sm uppercase tracking-wider" style="color:#FF6B26">{t.title}</h2>
+            <p class="text-xs leading-relaxed" style="color:#64748B">{t.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Grid de industrias -->
+  <section class="section" style="background:#040A12" aria-labelledby="industrias-title">
+    <div class="container-site">
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Sectores</span>
+          <h2 id="industrias-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            Ocho sectores,<br/>
+            <span style="color:#F75000">una solución a la medida.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+            Cada sector tiene su propia página con los riesgos típicos del giro, la solución
+            recomendada, el equipamiento y los servicios que aplican, y respuestas a las
+            preguntas que más nos hacen sus responsables de seguridad.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {industries.map((ind) => (
+          <a href={ind.href} class="industry-card group relative flex flex-col overflow-hidden" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
+            <div class="relative flex items-center justify-center overflow-hidden" style="height:110px">
+              <div class="absolute inset-0" style={`background:linear-gradient(135deg, ${ind.accent}26 0%, rgba(4,10,18,0.94) 100%)`}></div>
+              <div class="relative z-10 flex items-center justify-center rounded-full"
+                   style={`width:60px;height:60px;background:rgba(4,10,18,0.7);border:1.5px solid ${ind.accent}44;color:${ind.accent}`}>
+                <span class="block" style="width:26px;height:26px" set:html={ind.icon}/>
+              </div>
+              <div class="absolute bottom-0 left-0 right-0 h-8 pointer-events-none" style="background:linear-gradient(to bottom, transparent, #080F1A)"></div>
+            </div>
+            <div class="flex flex-col flex-1 p-5 gap-2.5">
+              <span class="text-[9px] font-display font-semibold uppercase tracking-widest" style="color:#4A7599">{ind.norm}</span>
+              <h3 class="font-display font-bold text-lg leading-tight group-hover:text-[#FF6B26]" style="color:#FFFFFF">{ind.name}</h3>
+              <p class="text-xs leading-relaxed" style="color:#64748B;flex:1">{ind.shortDesc}</p>
+              <span class="flex items-center gap-1.5 text-xs font-display font-semibold uppercase tracking-wider" style="color:#FF8F57;letter-spacing:0.1em">
+                Ver solución
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
+                </svg>
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Spotlights por industria -->
+  {industries.map((ind, i) => (
+    <Spotlight
+      id={ind.slug}
+      eyebrow={ind.norm}
+      title={ind.spotlight.title}
+      highlight={ind.spotlight.highlight}
+      paragraphs={ind.spotlight.paragraphs}
+      subsections={ind.spotlight.subsections}
+      image={ind.spotlight.image}
+      imageAlt={ind.spotlight.imageAlt}
+      href={ind.href}
+      ctaLabel={`Ver solución para ${ind.name.toLowerCase()}`}
+      whatsappMsg={`Hola, quiero una solución contra incendio para ${ind.name.toLowerCase()}.`}
+      captionLeft={ind.name}
+      captionRight={ind.norm}
+      background={i % 2 === 0 ? '#070E1A' : '#040A12'}
+    />
+  ))}
+
+  <!-- Cross-links -->
+  <section class="section" style="background:#070E1A" aria-labelledby="cross-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">¿Tu sector no aparece?</span>
+          <h2 id="cross-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+            Toda operación con riesgo<br/>
+            <span style="color:#F75000">tiene una solución.</span>
+          </h2>
+          <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
+            Centros logísticos, escuelas, centros comerciales, data centers, agroindustria —
+            si tu operación tiene personal y riesgo de incendio, la NOM-002-STPS ya te aplica
+            y nosotros ya hemos equipado a alguien parecido a ti. Cuéntanos tu caso y armamos
+            la solución con el mismo método: diagnóstico, norma correcta y documentación auditable.
+          </p>
+          <a href={whatsappUrl('Hola, mi sector no aparece en su sitio y quiero una solución contra incendio.')} target="_blank" rel="noopener" class="btn btn-primary">
+            Contar mi caso por WhatsApp
+          </a>
+        </div>
+
+        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:#4A7599">
+            También te puede servir
+          </h2>
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+            {[
+              { label: 'Catálogo de productos', desc: 'Equipo certificado NFPA y NOM en 9 categorías', href: '/productos' },
+              { label: 'Servicios profesionales', desc: 'Capacitación, mantenimiento, instalación y auditoría', href: '/servicios' },
+              { label: 'Guía de normas y certificaciones', desc: 'Qué NOM y NFPA aplican según tu giro', href: '/certificaciones' },
+              { label: 'Soporte para licitaciones', desc: 'CompraNet, PEMEX, CFE y gobiernos', href: '/servicios/licitaciones' },
+              { label: 'Cobertura nacional', desc: 'Entrega y servicio en los 32 estados', href: '/cobertura' },
+            ].map((l) => (
+              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+                <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
+                  <span class="flex flex-col gap-0.5">
+                    <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
+                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
+                  </span>
+                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#4A7599" stroke-width="2.5" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
+                  </svg>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .industry-card:hover { border-color: rgba(247, 80, 0, 0.45) !important; }
+</style>

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 720" role="img" aria-label="Refinería con brigadista HAZMAT y detección de gases">
+  <defs>
+    <linearGradient id="bgrefine" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0C1825"/><stop offset="0.6" stop-color="#070E1A"/><stop offset="1" stop-color="#040A12"/>
+    </linearGradient>
+    <radialGradient id="glrefine" cx="0.5" cy="0.45" r="0.65">
+      <stop offset="0" stop-color="#F75000" stop-opacity="0.2"/><stop offset="1" stop-color="#F75000" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grrefine" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#7AA4C4" stroke-width="0.6" opacity="0.08"/>
+    </pattern>
+  </defs>
+  <rect width="640" height="720" fill="url(#bgrefine)"/>
+  <rect width="640" height="720" fill="url(#grrefine)"/>
+  <rect width="640" height="720" fill="url(#glrefine)"/>
+  <g font-family="Rajdhani, Arial, sans-serif" font-weight="700">
+    <rect x="40" y="48" width="158" height="34" fill="rgba(247,80,0,0.12)" stroke="rgba(247,80,0,0.4)"/>
+    <text x="119" y="71" text-anchor="middle" font-size="16" fill="#FF8F57" letter-spacing="2">ASEA · NFPA</text>
+    <rect x="442" y="48" width="158" height="34" fill="rgba(74,117,153,0.12)" stroke="rgba(74,117,153,0.4)"/>
+    <text x="521" y="71" text-anchor="middle" font-size="16" fill="#7AA4C4" letter-spacing="2">ANEXO PEMEX</text>
+  </g>
+
+  <g>
+    <!-- tanques y torre -->
+    <g stroke="#4A7599" stroke-width="3.5">
+      <rect x="80" y="330" width="150" height="180" rx="12" fill="#122133"/>
+      <ellipse cx="155" cy="330" rx="75" ry="20" fill="#1A2E44"/>
+      <rect x="260" y="380" width="120" height="130" rx="10" fill="#0E1B2B"/>
+      <ellipse cx="320" cy="380" rx="60" ry="16" fill="#1A2E44"/>
+      <rect x="420" y="190" width="46" height="320" rx="8" fill="#122133"/>
+      <rect x="500" y="260" width="36" height="250" rx="8" fill="#0E1B2B"/>
+    </g>
+    <!-- flare -->
+    <path d="M443 190c0 0-16-22-6-40 6-10 14-12 14-12s-4 10 2 18c6 8 12 8 12 8s-8 12-22 26z" fill="#F75000"/>
+    <path d="M443 184c0 0-8-12-2-22 3-6 8-7 8-7s-2 6 2 11 7 5 7 5-5 7-15 13z" fill="#F5A623"/>
+    <!-- tuberías -->
+    <g stroke="#C43D00" stroke-width="8" fill="none"><path d="M80 540h480M230 470h110"/></g>
+    <!-- detector -->
+    <g transform="translate(560 420)">
+      <rect x="-34" y="-46" width="68" height="92" rx="10" fill="#1A2E44" stroke="#F5A623" stroke-width="3"/>
+      <rect x="-22" y="-32" width="44" height="28" rx="4" fill="#0A1420"/>
+      <text x="0" y="-13" text-anchor="middle" font-family="Rajdhani, Arial" font-weight="700" font-size="12" fill="#34D399">LEL 0%</text>
+      <circle cx="0" cy="22" r="9" fill="#34D399"/>
+    </g>
+  </g>
+    <g transform="translate(180 596) scale(1.0)">
+      <path d="M-26-64a26 26 0 0 1 52 0z" fill="#F5A623"/>
+      <rect x="-32" y="-66" width="64" height="8" rx="4" fill="#C43D00"/>
+      <circle cx="0" cy="-46" r="18" fill="#E8C9A8"/>
+      <path d="M0-22c-34 0-56 24-56 58v76h112v-76c0-34-22-58-56-58z" fill="#F5A623"/>
+      <rect x="-56" y="22" width="112" height="15" fill="#F5A623"/>
+      <rect x="-56" y="40" width="112" height="6" fill="#E8F2F9" opacity="0.85"/>
+    </g>
+
+  <rect x="0" y="688" width="640" height="32" fill="#0A1420"/>
+  <rect x="0" y="686" width="640" height="2" fill="#F75000" opacity="0.5"/>
+</svg>

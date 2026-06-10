@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 720" role="img" aria-label="Estación de bomberos municipal con personal equipado NFPA">
+  <defs>
+    <linearGradient id="bgbomber" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0C1825"/><stop offset="0.6" stop-color="#070E1A"/><stop offset="1" stop-color="#040A12"/>
+    </linearGradient>
+    <radialGradient id="glbomber" cx="0.5" cy="0.45" r="0.65">
+      <stop offset="0" stop-color="#F75000" stop-opacity="0.2"/><stop offset="1" stop-color="#F75000" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grbomber" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#7AA4C4" stroke-width="0.6" opacity="0.08"/>
+    </pattern>
+  </defs>
+  <rect width="640" height="720" fill="url(#bgbomber)"/>
+  <rect width="640" height="720" fill="url(#grbomber)"/>
+  <rect width="640" height="720" fill="url(#glbomber)"/>
+  <g font-family="Rajdhani, Arial, sans-serif" font-weight="700">
+    <rect x="40" y="48" width="158" height="34" fill="rgba(247,80,0,0.12)" stroke="rgba(247,80,0,0.4)"/>
+    <text x="119" y="71" text-anchor="middle" font-size="16" fill="#FF8F57" letter-spacing="2">NFPA 1971</text>
+    <rect x="442" y="48" width="158" height="34" fill="rgba(74,117,153,0.12)" stroke="rgba(74,117,153,0.4)"/>
+    <text x="521" y="71" text-anchor="middle" font-size="16" fill="#7AA4C4" letter-spacing="2">COMPRANET</text>
+  </g>
+
+  <g>
+    <!-- estación -->
+    <rect x="100" y="200" width="440" height="300" rx="8" fill="#122133" stroke="#4A7599" stroke-width="3.5"/>
+    <rect x="100" y="200" width="440" height="44" fill="#C43D00"/>
+    <text x="320" y="230" text-anchor="middle" font-family="Rajdhani, Arial" font-weight="700" font-size="22" fill="#FFFFFF" letter-spacing="4">ESTACIÓN 1</text>
+    <!-- portón -->
+    <rect x="140" y="270" width="200" height="230" fill="#0A1420" stroke="#2C4A63" stroke-width="3"/>
+    <g stroke="#2C4A63" stroke-width="2.5"><path d="M140 308h200M140 346h200M140 384h200M140 422h200M140 460h200"/></g>
+    <!-- camión asomando -->
+    <rect x="158" y="380" width="164" height="100" rx="8" fill="#C43D00" stroke="#7C2D12" stroke-width="3"/>
+    <rect x="170" y="396" width="56" height="36" rx="4" fill="#7AA4C4" opacity="0.7"/>
+    <circle cx="196" cy="486" r="20" fill="#0A1420" stroke="#4A7599" stroke-width="3"/>
+    <circle cx="290" cy="486" r="20" fill="#0A1420" stroke="#4A7599" stroke-width="3"/>
+    <circle cx="312" cy="372" r="9" fill="#F5A623"/>
+  </g>
+    <g transform="translate(440 470) scale(1.05)">
+      <path d="M-26-64a26 26 0 0 1 52 0z" fill="#F5A623"/>
+      <rect x="-32" y="-66" width="64" height="8" rx="4" fill="#C43D00"/>
+      <circle cx="0" cy="-46" r="18" fill="#E8C9A8"/>
+      <path d="M0-22c-34 0-56 24-56 58v76h112v-76c0-34-22-58-56-58z" fill="#F75000"/>
+      <rect x="-56" y="22" width="112" height="15" fill="#F5A623"/>
+      <rect x="-56" y="40" width="112" height="6" fill="#E8F2F9" opacity="0.85"/>
+    </g>
+
+  <rect x="0" y="688" width="640" height="32" fill="#0A1420"/>
+  <rect x="0" y="686" width="640" height="2" fill="#F75000" opacity="0.5"/>
+</svg>

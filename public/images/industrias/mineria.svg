@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 720" role="img" aria-label="Mina subterránea con brigadista de rescate y detección de gases">
+  <defs>
+    <linearGradient id="bgmineri" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0C1825"/><stop offset="0.6" stop-color="#070E1A"/><stop offset="1" stop-color="#040A12"/>
+    </linearGradient>
+    <radialGradient id="glmineri" cx="0.5" cy="0.45" r="0.65">
+      <stop offset="0" stop-color="#F75000" stop-opacity="0.2"/><stop offset="1" stop-color="#F75000" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grmineri" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#7AA4C4" stroke-width="0.6" opacity="0.08"/>
+    </pattern>
+  </defs>
+  <rect width="640" height="720" fill="url(#bgmineri)"/>
+  <rect width="640" height="720" fill="url(#grmineri)"/>
+  <rect width="640" height="720" fill="url(#glmineri)"/>
+  <g font-family="Rajdhani, Arial, sans-serif" font-weight="700">
+    <rect x="40" y="48" width="158" height="34" fill="rgba(247,80,0,0.12)" stroke="rgba(247,80,0,0.4)"/>
+    <text x="119" y="71" text-anchor="middle" font-size="16" fill="#FF8F57" letter-spacing="2">NOM-023-STPS</text>
+    <rect x="442" y="48" width="158" height="34" fill="rgba(74,117,153,0.12)" stroke="rgba(74,117,153,0.4)"/>
+    <text x="521" y="71" text-anchor="middle" font-size="16" fill="#7AA4C4" letter-spacing="2">NOM-032</text>
+  </g>
+
+  <g>
+    <!-- boca de mina -->
+    <path d="M120 540V330c0-110 90-180 200-180s200 70 200 180v210z" fill="#0A1420" stroke="#4A7599" stroke-width="4"/>
+    <path d="M160 540V340c0-88 72-144 160-144s160 56 160 144v200z" fill="#122133"/>
+    <!-- vigas -->
+    <g stroke="#C28413" stroke-width="10" stroke-linecap="round">
+      <path d="M160 540V340M480 540V340M160 345c40-90 280-90 320 0"/>
+    </g>
+    <!-- rieles -->
+    <g stroke="#4A7599" stroke-width="5"><path d="M250 540l-30 60M390 540l30 60"/><path d="M236 568h170M222 596h200"/></g>
+    <!-- lámpara colgante -->
+    <path d="M320 196v40" stroke="#4A7599" stroke-width="4"/>
+    <circle cx="320" cy="248" r="13" fill="#F5A623"/>
+    <!-- detector -->
+    <g transform="translate(488 430)">
+      <rect x="-32" y="-42" width="64" height="84" rx="9" fill="#1A2E44" stroke="#F5A623" stroke-width="3"/>
+      <rect x="-20" y="-28" width="40" height="24" rx="4" fill="#0A1420"/>
+      <text x="0" y="-11" text-anchor="middle" font-family="Rajdhani, Arial" font-weight="700" font-size="11" fill="#34D399">CH₄ OK</text>
+      <circle cx="0" cy="20" r="8" fill="#34D399"/>
+    </g>
+  </g>
+    <g transform="translate(260 470) scale(1.0)">
+      <path d="M-26-64a26 26 0 0 1 52 0z" fill="#F75000"/>
+      <rect x="-32" y="-66" width="64" height="8" rx="4" fill="#C43D00"/>
+      <circle cx="0" cy="-46" r="18" fill="#E8C9A8"/>
+      <path d="M0-22c-34 0-56 24-56 58v76h112v-76c0-34-22-58-56-58z" fill="#F5A623"/>
+      <rect x="-56" y="22" width="112" height="15" fill="#F5A623"/>
+      <rect x="-56" y="40" width="112" height="6" fill="#E8F2F9" opacity="0.85"/>
+    </g>
+
+  <rect x="0" y="688" width="640" height="32" fill="#0A1420"/>
+  <rect x="0" y="686" width="640" height="2" fill="#F75000" opacity="0.5"/>
+</svg>

@@ -6,7 +6,7 @@
 
 - [x] `productos/trajes-bombero` — absorbida en `[categoria].astro` vía `allCategories` (jun 2026); **rama /productos 100 % homologada (L2+L3+L4)**
 - [x] `servicios/*` — **rama /servicios 100 % homologada** (jun 2026): hub blueprint + ruta dinámica `[servicio].astro` desde services.ts ampliado; evolución: FAQ + schemas Service/OfferCatalog/FAQPage por servicio
-- [ ] `industrias/*.astro` (8 páginas) → blueprint [[09-plantilla-hub-L2]]: crear `industries.ts` + hub + ruta dinámica
+- [x] `industrias/*` — **rama /industrias 100 % homologada** (jun 2026): hub nuevo + `[industria].astro` desde industries.ts; evolución: riesgos por sector + cross-selling a categorías/servicios recomendados + FAQ con FAQPage schema
 - [ ] `blog/index.astro` + `BlogLayout.astro` + `BlogCard`
 - [ ] `nosotros`, `contacto`, `cotizacion`, `cobertura`, `certificaciones`, `distribuidores`, `licitaciones`, `marcas/index`
 - [ ] Al terminar la migración: borrar capa compat de global.css y paletas legacy de tailwind.config
@@ -15,7 +15,7 @@
 
 - [x] **Spotlights de categoría en /productos**: las 9 categorías completas (texto izquierda + imagen SVG derecha, fondos alternados vía loop). Para reemplazar ilustraciones por fotos reales: sustituir `public/images/categorias/<slug>.svg`
 
-- [ ] Crear hub `/industrias` (hoy el menú "Industrias" navega a bomberos-municipales)
+
 - [ ] Formularios (`/api/cotizacion`) no tienen backend — conectar (Formspree/worker/email) o cambiar a mailto/WhatsApp
 - [ ] Imágenes reales de producto (hoy las fichas no llevan imagen; agregar `image` a Product schema cuando existan)
 - [ ] OG images por categoría (hoy todas usan og-default.jpg)

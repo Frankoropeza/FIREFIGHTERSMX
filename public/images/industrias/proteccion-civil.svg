@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 720" role="img" aria-label="Unidad de Protección Civil con respondiente, dron térmico y rescate urbano">
+  <defs>
+    <linearGradient id="bgprotec" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0C1825"/><stop offset="0.6" stop-color="#070E1A"/><stop offset="1" stop-color="#040A12"/>
+    </linearGradient>
+    <radialGradient id="glprotec" cx="0.5" cy="0.45" r="0.65">
+      <stop offset="0" stop-color="#F75000" stop-opacity="0.2"/><stop offset="1" stop-color="#F75000" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grprotec" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#7AA4C4" stroke-width="0.6" opacity="0.08"/>
+    </pattern>
+  </defs>
+  <rect width="640" height="720" fill="url(#bgprotec)"/>
+  <rect width="640" height="720" fill="url(#grprotec)"/>
+  <rect width="640" height="720" fill="url(#glprotec)"/>
+  <g font-family="Rajdhani, Arial, sans-serif" font-weight="700">
+    <rect x="40" y="48" width="158" height="34" fill="rgba(247,80,0,0.12)" stroke="rgba(247,80,0,0.4)"/>
+    <text x="119" y="71" text-anchor="middle" font-size="16" fill="#FF8F57" letter-spacing="2">SINAPROC</text>
+    <rect x="442" y="48" width="158" height="34" fill="rgba(74,117,153,0.12)" stroke="rgba(74,117,153,0.4)"/>
+    <text x="521" y="71" text-anchor="middle" font-size="16" fill="#7AA4C4" letter-spacing="2">USAR · AFAC</text>
+  </g>
+
+  <g>
+    <!-- escudo PC -->
+    <g transform="translate(320 250)">
+      <path d="M0-110l96 34v62c0 64-40 108-96 130-56-22-96-66-96-130v-62z" fill="#0A1420" stroke="#34D399" stroke-width="5"/>
+      <path d="M0-78l70 25v45c0 47-29 79-70 95-41-16-70-48-70-95v-45z" fill="none" stroke="#34D399" stroke-width="2.5" opacity="0.6"/>
+      <!-- triángulo PC -->
+      <path d="M0-52L52 38H-52z" fill="#F5A623"/>
+      <path d="M0-30L33 28H-33z" fill="#0A1420"/>
+      <circle cx="0" cy="10" r="10" fill="#F5A623"/>
+    </g>
+    <!-- dron -->
+    <g transform="translate(510 180) scale(0.55)">
+      <g stroke="#2C4A63" stroke-width="13" stroke-linecap="round"><path d="M-60-48l-60-54M60-48l60-54M-60 48l-60 54M60 48l60 54"/></g>
+      <circle cx="-126" cy="-108" r="20" fill="#122133" stroke="#4A7599" stroke-width="4"/><ellipse cx="-126" cy="-108" rx="78" ry="9" fill="#7AA4C4" opacity="0.3"/>
+      <circle cx="126" cy="-108" r="20" fill="#122133" stroke="#4A7599" stroke-width="4"/><ellipse cx="126" cy="-108" rx="78" ry="9" fill="#7AA4C4" opacity="0.3"/>
+      <circle cx="-126" cy="108" r="20" fill="#122133" stroke="#4A7599" stroke-width="4"/>
+      <circle cx="126" cy="108" r="20" fill="#122133" stroke="#4A7599" stroke-width="4"/>
+      <rect x="-62" y="-44" width="124" height="92" rx="20" fill="#1A2E44" stroke="#4A7599" stroke-width="4"/>
+      <rect x="-62" y="-44" width="124" height="26" rx="13" fill="#34D399"/>
+    </g>
+    <!-- camilla canastilla -->
+    <g transform="translate(150 590)">
+      <path d="M-70-16h140c8 0 12 8 8 16-3 6-9 10-16 10H-62c-7 0-13-4-16-10-4-8 0-16 8-16z" fill="#C43D00" stroke="#7C2D12" stroke-width="3"/>
+      <g stroke="#7C2D12" stroke-width="2.5"><path d="M-48-16v26M-16-16v26M16-16v26M48-16v26"/></g>
+    </g>
+  </g>
+    <g transform="translate(440 560) scale(1.0)">
+      <path d="M-26-64a26 26 0 0 1 52 0z" fill="#F5A623"/>
+      <rect x="-32" y="-66" width="64" height="8" rx="4" fill="#C43D00"/>
+      <circle cx="0" cy="-46" r="18" fill="#E8C9A8"/>
+      <path d="M0-22c-34 0-56 24-56 58v76h112v-76c0-34-22-58-56-58z" fill="#34D399"/>
+      <rect x="-56" y="22" width="112" height="15" fill="#F5A623"/>
+      <rect x="-56" y="40" width="112" height="6" fill="#E8F2F9" opacity="0.85"/>
+    </g>
+
+  <rect x="0" y="688" width="640" height="32" fill="#0A1420"/>
+  <rect x="0" y="686" width="640" height="2" fill="#F75000" opacity="0.5"/>
+</svg>
