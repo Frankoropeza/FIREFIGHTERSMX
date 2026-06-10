@@ -41,7 +41,8 @@ export const trajesBombero: Category = {
   norm: 'NFPA 1971 · 1977',
   description: 'Trajes estructurales, de proximidad y forestales certificados NFPA 1971 y 1977 en México: Globe, Lion y MSA. Tallas S–4XL con entrega en 32 estados.',
   intro: [
-    'Trajes de combate estructural de 3 capas, trajes aluminizados de proximidad para ARFF y trajes forestales ligeros — todos certificados por laboratorio acreditado bajo NFPA 1971:2018 o NFPA 1977.',
+    'Trajes de combate estructural de 3 capas, trajes aluminizados de proximidad para ARFF y trajes forestales ligeros — todos certificados por laboratorio acreditado bajo NFPA 1971:2018 o NFPA 1977, con número de serie verificable con fábrica.',
+    'Distribuimos Globe, Lion y MSA en tallas S–4XL con stock permanente en CDMX. Cada conjunto incluye ficha técnica para licitación, asesoría de tallaje y acceso al programa de inspección y mantenimiento NFPA 1851.',
   ],
   items: [
     { name: 'Globe GX-7', detail: 'Estructural premium con Crosstech y PBI/Kevlar' },

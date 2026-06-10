@@ -13,6 +13,7 @@
 - [[06-interlinking]] — Regla de linkeo obligatorio, QuickLinksBar (2 variantes), header y footer
 - [[07-deploy]] — GitHub Actions, dominio, DNS Cloudflare y cómo publicar
 - [[08-pendientes]] — Deuda técnica: páginas v1 por migrar y mejoras planeadas
+- [[09-plantilla-hub-L2]] — **Blueprint de hubs L2** (anatomía probada en /productos + catálogo de complementos para replicar)
 
 ## Reglas de oro (resumen ejecutivo)
 

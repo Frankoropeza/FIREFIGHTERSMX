@@ -4,9 +4,9 @@
 
 ~25 páginas interiores siguen en el design system v1 (claro: `bg-gradient-fire`, `section-title`, `btn-gold`, paleta `dark-*`). Funcionan gracias a la **capa de compatibilidad** en `global.css` y `tailwind.config.cjs`, pero deben migrarse a la plantilla [[03-plantilla-pagina]]:
 
-- [ ] `productos/trajes-bombero/index.astro` (única categoría no dinámica — evaluar absorberla en `[categoria].astro` agregando su intro larga a categories.ts)
-- [ ] `servicios/index.astro` + 6 páginas de servicio
-- [ ] `industrias/*.astro` (8 páginas)
+- [x] `productos/trajes-bombero` — absorbida en `[categoria].astro` vía `allCategories` (jun 2026); **rama /productos 100 % homologada (L2+L3+L4)**
+- [ ] `servicios/index.astro` + 6 páginas de servicio → seguir blueprint [[09-plantilla-hub-L2]] (ruta dinámica + data central)
+- [ ] `industrias/*.astro` (8 páginas) → blueprint [[09-plantilla-hub-L2]]: crear `industries.ts` + hub + ruta dinámica
 - [ ] `blog/index.astro` + `BlogLayout.astro` + `BlogCard`
 - [ ] `nosotros`, `contacto`, `cotizacion`, `cobertura`, `certificaciones`, `distribuidores`, `licitaciones`, `marcas/index`
 - [ ] Al terminar la migración: borrar capa compat de global.css y paletas legacy de tailwind.config
