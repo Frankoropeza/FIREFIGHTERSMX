@@ -5,7 +5,7 @@
 ~25 páginas interiores siguen en el design system v1 (claro: `bg-gradient-fire`, `section-title`, `btn-gold`, paleta `dark-*`). Funcionan gracias a la **capa de compatibilidad** en `global.css` y `tailwind.config.cjs`, pero deben migrarse a la plantilla [[03-plantilla-pagina]]:
 
 - [x] `productos/trajes-bombero` — absorbida en `[categoria].astro` vía `allCategories` (jun 2026); **rama /productos 100 % homologada (L2+L3+L4)**
-- [ ] `servicios/index.astro` + 6 páginas de servicio → seguir blueprint [[09-plantilla-hub-L2]] (ruta dinámica + data central)
+- [x] `servicios/*` — **rama /servicios 100 % homologada** (jun 2026): hub blueprint + ruta dinámica `[servicio].astro` desde services.ts ampliado; evolución: FAQ + schemas Service/OfferCatalog/FAQPage por servicio
 - [ ] `industrias/*.astro` (8 páginas) → blueprint [[09-plantilla-hub-L2]]: crear `industries.ts` + hub + ruta dinámica
 - [ ] `blog/index.astro` + `BlogLayout.astro` + `BlogCard`
 - [ ] `nosotros`, `contacto`, `cotizacion`, `cobertura`, `certificaciones`, `distribuidores`, `licitaciones`, `marcas/index`

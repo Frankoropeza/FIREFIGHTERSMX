@@ -1,51 +1,290 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
+import Spotlight from '@components/common/Spotlight.astro';
 import { services } from '@data/services';
+import { SITE, whatsappUrl } from '@data/site';
+
+const canonicalURL = `${SITE.url}/servicios`;
+
+const seoMeta = {
+  title: `Servicios Contra Incendio: Capacitación, Mantenimiento e Instalación — ${SITE.name}`,
+  description:
+    'Servicios profesionales contra incendio en México: capacitación DC-3, mantenimiento y recarga, instalación de sistemas NFPA, auditoría NOM-002, brigadas y licitaciones.',
+  canonicalURL,
+};
+
+/* ─── JSON-LD ──────────────────────────────────────────────── */
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Servicios', item: canonicalURL },
+  ],
+};
+
+const collectionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  '@id': `${canonicalURL}#collection`,
+  name: 'Servicios profesionales de protección contra incendio',
+  description: seoMeta.description,
+  url: canonicalURL,
+  inLanguage: 'es-MX',
+  isPartOf: { '@id': `${SITE.url}/#website` },
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: services.length,
+    itemListElement: services.map((s, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      item: {
+        '@type': 'Service',
+        name: s.title,
+        description: s.shortDesc,
+        url: `${SITE.url}${s.href}`,
+        provider: { '@id': `${SITE.url}/#store` },
+        areaServed: { '@type': 'Country', name: 'México' },
+      },
+    })),
+  },
+};
+
+const trustPoints = [
+  { title: 'Evidencia documental', text: 'DC-3, bitácoras, reportes y collares de garantía — todo listo para STPS y Protección Civil.' },
+  { title: 'Personal certificado', text: 'Instructores con registro STPS y técnicos formados por fábrica en cada especialidad.' },
+  { title: 'Un solo proveedor', text: 'Equipo + servicio + documentación sin coordinar a tres empresas para un mismo expediente.' },
+  { title: 'Cobertura nacional', text: 'Servicio en sitio en los 32 estados; pólizas anuales con calendario y recordatorios.' },
+];
 ---
-<BaseLayout
-  title="Servicios para Bomberos y Protección Civil — FIREFIGHTERS MX"
-  description="Capacitación NFPA con DC-3, mantenimiento de equipos, instalación de sistemas CI, auditorías NOM-002, brigadas empresariales y soporte para licitaciones."
->
-  <section class="bg-gradient-fire py-20">
-    <div class="container-site text-center text-white">
-      <h1 class="section-title text-white mb-6">Servicios Especializados</h1>
-      <p class="section-subtitle text-fire-200 mx-auto">
-        Más que equipos — te acompañamos en cada etapa: especificación, instalación,
-        capacitación, mantenimiento y cumplimiento normativo.
-      </p>
+
+<BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema]}>
+
+  <!-- Breadcrumb -->
+  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+    <div class="container-site">
+      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:#4A7599">
+        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li aria-hidden="true">/</li>
+        <li><span style="color:#94A3B8" aria-current="page">Servicios</span></li>
+      </ol>
     </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">
+    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
+
+    <div class="container-site relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+        <div>
+          <span class="section-eyebrow mb-5 inline-flex">Servicios profesionales · NFPA y NOM</span>
+          <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+            Servicios Contra<br/>
+            <span style="color:#F75000">Incendio</span>
+          </h1>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a
+              href={whatsappUrl('Hola, quiero cotizar un servicio contra incendio.')}
+              target="_blank" rel="noopener"
+              class="btn btn-primary btn-lg"
+            >
+              Cotizar por WhatsApp
+            </a>
+            <a href="/cotizacion" class="btn btn-ghost btn-lg">Cotización formal</a>
+          </div>
+        </div>
+
+        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
+          <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">
+            Seis servicios para que tu operación cumpla la normativa y tu gente sepa responder:
+            <strong style="color:#CBD5E1">capacitación con constancia DC-3 STPS, mantenimiento y recarga
+            certificada, instalación de sistemas contra incendio NFPA 13/72, auditoría NOM-002-STPS,
+            brigadas empresariales llave en mano y soporte técnico para licitaciones</strong>.
+          </p>
+          <p class="text-sm leading-[1.9] mb-6" style="color:#64748B">
+            Cada servicio entrega la evidencia documental que pide la autoridad: constancias,
+            bitácoras, reportes fotográficos, collares de garantía y memorias de cálculo.
+            Personal certificado, cobertura en los 32 estados y un ejecutivo responsable de tu cuenta.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {['DC-3 STPS','NOM-002-STPS','NFPA 1851','NFPA 13 · 72','NOM-154-SCFI','CompraNet'].map(n => (
+              <span class="badge badge-dark font-display text-[10px]">{n}</span>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)" aria-hidden="true"></div>
   </section>
+
   <!-- Accesos rápidos (interlinking) -->
   <QuickLinksBar />
 
-
-  <section class="section bg-white">
+  <!-- Pilares -->
+  <section class="section-tight" style="background:#070E1A" aria-label="Por qué nuestros servicios">
     <div class="container-site">
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {services.map((s) => (
-          <a href={s.href} class="card-fire group p-8 flex flex-col gap-5 hover:shadow-fire">
-            <span class="text-4xl" aria-hidden="true">{s.icon}</span>
-            <div>
-              <h2 class="font-heading font-bold text-xl text-dark-900 group-hover:text-fire-700 mb-3">{s.title}</h2>
-              <p class="text-dark-500 text-sm leading-relaxed mb-4">{s.description}</p>
-              <ul class="flex flex-col gap-2">
-                {s.features.map((f) => (
-                  <li class="flex items-center gap-2 text-xs text-dark-500">
-                    <svg class="w-3.5 h-3.5 text-fire-600 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                    </svg>
-                    {f}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <span class="text-fire-700 text-sm font-semibold flex items-center gap-1 mt-auto">
-              Saber más →
-            </span>
-          </a>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style="border:1px solid rgba(74,117,153,0.18)">
+        {trustPoints.map((t, i) => (
+          <div class="flex flex-col gap-2 p-6" style={`background:#0C1825;${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.18);' : ''}`}>
+            <h2 class="font-display font-bold text-sm uppercase tracking-wider" style="color:#FF6B26">{t.title}</h2>
+            <p class="text-xs leading-relaxed" style="color:#64748B">{t.text}</p>
+          </div>
         ))}
       </div>
     </div>
   </section>
+
+  <!-- Grid de servicios -->
+  <section class="section" style="background:#040A12" aria-labelledby="servicios-title">
+    <div class="container-site">
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Servicios</span>
+          <h2 id="servicios-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            Seis servicios,<br/>
+            <span style="color:#F75000">un solo expediente.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+            Cada servicio tiene su propia página con alcances, entregables y preguntas frecuentes.
+            Si tu necesidad cruza varios — equipar, capacitar y documentar a la vez —
+            armamos un programa integral con un solo contrato y calendario.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {services.map((s, i) => (
+          <a href={s.href} class="service-card group relative flex flex-col overflow-hidden" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
+            <div class="relative flex items-center justify-center overflow-hidden" style="height:120px">
+              <div class="absolute inset-0" style={`background:linear-gradient(135deg, ${s.accent}26 0%, rgba(4,10,18,0.94) 100%)`}></div>
+              <div class="relative z-10 flex items-center justify-center rounded-full"
+                   style={`width:64px;height:64px;background:rgba(4,10,18,0.7);border:1.5px solid ${s.accent}44;color:${s.accent}`}>
+                <span class="block" style="width:28px;height:28px" set:html={s.icon}/>
+              </div>
+              <div class="absolute bottom-0 left-0 right-0 h-8 pointer-events-none" style="background:linear-gradient(to bottom, transparent, #080F1A)"></div>
+              <span class="absolute top-4 right-5 font-display font-bold text-2xl select-none" style="color:rgba(74,117,153,0.4)" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+            </div>
+
+            <div class="flex flex-col flex-1 p-5 gap-3">
+              <span class="text-[9px] font-display font-semibold uppercase tracking-widest" style="color:#4A7599">{s.norm}</span>
+              <h3 class="font-display font-bold text-lg leading-tight" style="color:#FFFFFF">{s.title}</h3>
+              <p class="text-xs leading-relaxed" style="color:#64748B;flex:1">{s.shortDesc}</p>
+              <ul class="flex flex-col gap-1.5 py-3 list-none m-0" style="border-top:1px solid rgba(74,117,153,0.12);border-bottom:1px solid rgba(74,117,153,0.12)">
+                {s.items.slice(0, 3).map((item) => (
+                  <li class="flex items-center gap-2 text-[11px]" style="color:#64748B">
+                    <span class="w-1 h-1 rounded-full shrink-0" style={`background:${s.accent};opacity:0.7`} aria-hidden="true"></span>
+                    {item.name}
+                  </li>
+                ))}
+              </ul>
+              <div class="pt-1">
+                <span class="inline-flex items-center gap-2 w-full justify-center text-xs font-display font-semibold uppercase tracking-wider py-2.5 px-4" style={`color:#040A12;background:${s.accent};letter-spacing:0.08em`}>
+                  Ver servicio
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Spotlights por servicio -->
+  {services.map((s, i) => (
+    <Spotlight
+      id={s.slug}
+      eyebrow={s.norm}
+      title={s.spotlight.title}
+      highlight={s.spotlight.highlight}
+      paragraphs={s.spotlight.paragraphs}
+      subsections={s.spotlight.subsections}
+      image={s.spotlight.image}
+      imageAlt={s.spotlight.imageAlt}
+      href={s.href}
+      ctaLabel={`Ver ${s.title.toLowerCase()}`}
+      whatsappMsg={`Hola, quiero cotizar el servicio de ${s.title.toLowerCase()}.`}
+      captionLeft={s.title}
+      captionRight={s.norm}
+      background={i % 2 === 0 ? '#070E1A' : '#040A12'}
+    />
+  ))}
+
+  <!-- Cómo trabajamos + cross-links -->
+  <section class="section" style="background:#070E1A" aria-labelledby="como-trabajamos-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Cómo trabajamos</span>
+          <h2 id="como-trabajamos-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+            De la necesidad al expediente<br/>
+            <span style="color:#F75000">en tres pasos.</span>
+          </h2>
+          <ol class="flex flex-col gap-4 list-none m-0 p-0">
+            {[
+              { n: '01', t: 'Diagnóstico sin costo: visitamos tu instalación o revisamos tu requerimiento y te decimos qué aplica según norma.' },
+              { n: '02', t: 'Propuesta con alcances, entregables, calendario y precio cerrado — en menos de 48 horas hábiles.' },
+              { n: '03', t: 'Ejecutamos, documentamos y te entregamos la evidencia lista para STPS, Protección Civil o tu aseguradora.' },
+            ].map((s) => (
+              <li class="flex items-start gap-4">
+                <span class="font-display font-bold text-xl shrink-0" style="color:#F75000">{s.n}</span>
+                <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{s.t}</p>
+              </li>
+            ))}
+          </ol>
+          <div class="flex flex-col sm:flex-row gap-3 mt-8">
+            <a href={whatsappUrl('Hola, quiero un diagnóstico de servicios contra incendio.')} target="_blank" rel="noopener" class="btn btn-primary">
+              Solicitar diagnóstico gratuito
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:#4A7599">
+            También te puede servir
+          </h2>
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+            {[
+              { label: 'Catálogo de productos', desc: 'Equipo certificado NFPA y NOM en 9 categorías', href: '/productos' },
+              { label: 'Guía de normas y certificaciones', desc: 'Qué NOM y NFPA aplican según tu giro', href: '/certificaciones' },
+              { label: 'Industrias que atendemos', desc: 'Soluciones por sector: bomberos, industria, PC', href: '/industrias/bomberos-municipales' },
+              { label: 'Blog técnico', desc: 'Guías de normativa, selección y mantenimiento', href: '/blog' },
+              { label: 'Cobertura de servicio', desc: 'En sitio en los 32 estados', href: '/cobertura' },
+            ].map((l) => (
+              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+                <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
+                  <span class="flex flex-col gap-0.5">
+                    <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
+                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
+                  </span>
+                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#4A7599" stroke-width="2.5" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
+                  </svg>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
 </BaseLayout>
+
+<style>
+  .service-card:hover { border-color: rgba(247, 80, 0, 0.45) !important; }
+</style>

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 720" role="img" aria-label="Instructor certificado impartiendo capacitación de brigada contra incendio con constancia DC-3">
+  <defs>
+    <linearGradient id="bgcapaci" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0C1825"/><stop offset="0.6" stop-color="#070E1A"/><stop offset="1" stop-color="#040A12"/>
+    </linearGradient>
+    <radialGradient id="glcapaci" cx="0.5" cy="0.45" r="0.65">
+      <stop offset="0" stop-color="#F75000" stop-opacity="0.2"/><stop offset="1" stop-color="#F75000" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grcapaci" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#7AA4C4" stroke-width="0.6" opacity="0.08"/>
+    </pattern>
+  </defs>
+  <rect width="640" height="720" fill="url(#bgcapaci)"/>
+  <rect width="640" height="720" fill="url(#grcapaci)"/>
+  <rect width="640" height="720" fill="url(#glcapaci)"/>
+  <g font-family="Rajdhani, Arial, sans-serif" font-weight="700">
+    <rect x="40" y="48" width="158" height="34" fill="rgba(247,80,0,0.12)" stroke="rgba(247,80,0,0.4)"/>
+    <text x="119" y="71" text-anchor="middle" font-size="16" fill="#FF8F57" letter-spacing="2">DC-3 STPS</text>
+    <rect x="442" y="48" width="158" height="34" fill="rgba(74,117,153,0.12)" stroke="rgba(74,117,153,0.4)"/>
+    <text x="521" y="71" text-anchor="middle" font-size="16" fill="#7AA4C4" letter-spacing="2">NFPA 1001</text>
+  </g>
+
+  <g>
+    <!-- pizarra -->
+    <rect x="120" y="150" width="400" height="250" rx="10" fill="#122133" stroke="#4A7599" stroke-width="3.5"/>
+    <rect x="140" y="170" width="360" height="210" rx="6" fill="#0A1420"/>
+    <path d="M170 230l50 60 40-30 60 70" fill="none" stroke="#F75000" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="410" cy="230" r="34" fill="none" stroke="#F5A623" stroke-width="4"/>
+    <path d="M410 210v40M392 230h36" stroke="#F5A623" stroke-width="4"/>
+    <text x="170" y="356" font-family="Rajdhani, Arial" font-weight="700" font-size="20" fill="#7AA4C4" letter-spacing="2">NOM-002-STPS-2010</text>
+    <!-- instructor -->
+    <g transform="translate(208 470)">
+      <circle cx="0" cy="-26" r="26" fill="#F5A623"/>
+      <path d="M0 0c-30 0-50 22-50 52v68h100v-68c0-30-20-52-50-52z" fill="#F75000"/>
+      <rect x="-50" y="36" width="100" height="16" fill="#F5A623"/>
+    </g>
+    <!-- diploma DC-3 -->
+    <g transform="translate(420 500)">
+      <rect x="-80" y="-50" width="160" height="110" rx="8" fill="#E8F2F9"/>
+      <rect x="-62" y="-30" width="124" height="8" rx="4" fill="#94A3B8"/>
+      <rect x="-62" y="-12" width="124" height="8" rx="4" fill="#CBD5E1"/>
+      <rect x="-62" y="6" width="80" height="8" rx="4" fill="#CBD5E1"/>
+      <circle cx="44" cy="32" r="20" fill="#F75000"/>
+      <text x="44" y="38" text-anchor="middle" font-family="Rajdhani, Arial" font-weight="700" font-size="14" fill="#FFFFFF">DC-3</text>
+    </g>
+  </g>
+  <rect x="0" y="688" width="640" height="32" fill="#0A1420"/>
+  <rect x="0" y="686" width="640" height="2" fill="#F75000" opacity="0.5"/>
+</svg>

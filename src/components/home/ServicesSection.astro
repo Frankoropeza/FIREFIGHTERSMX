@@ -4,15 +4,6 @@
  * Fuente de datos: src/data/services.ts
  */
 import { services } from '@data/services';
-
-const blurbs: Record<string, string> = {
-  'capacitacion': 'Constancias DC-3 válidas ante STPS e IMSS',
-  'mantenimiento': 'Extintores, SCBA, hidráulicas y cámaras térmicas',
-  'instalacion-sistemas-ci': 'Rociadores NFPA 13, alarmas NFPA 72, agentes limpios',
-  'auditoria-seguridad': 'Diagnóstico de planta + plan de cierre de brechas',
-  'brigadas-empresariales': 'Diseño, equipamiento y capacitación llave en mano',
-  'licitaciones': 'Fichas técnicas, manifiestos y plantillas CompraNet',
-};
 ---
 
 <section class="section" style="background:#070E1A" aria-labelledby="services-title">
@@ -56,7 +47,7 @@ const blurbs: Record<string, string> = {
             </span>
             <span class="flex flex-col gap-1.5 flex-1">
               <span class="font-display font-bold text-lg leading-tight group-hover:text-[#FF6B26]" style="color:#FFFFFF">{s.title}</span>
-              <span class="text-sm leading-relaxed" style="color:#64748B">{blurbs[s.slug] ?? s.description}</span>
+              <span class="text-sm leading-relaxed" style="color:#64748B">{s.shortDesc}</span>
             </span>
             <svg class="w-4 h-4 shrink-0 mt-1.5 opacity-0 group-hover:opacity-100" fill="none" viewBox="0 0 24 24" stroke="#FF6B26" stroke-width="2.5" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>

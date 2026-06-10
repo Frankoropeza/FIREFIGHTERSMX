@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 720" role="img" aria-label="Servicio de mantenimiento y recarga de extintor con herramienta y etiqueta vigente">
+  <defs>
+    <linearGradient id="bgmanten" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0C1825"/><stop offset="0.6" stop-color="#070E1A"/><stop offset="1" stop-color="#040A12"/>
+    </linearGradient>
+    <radialGradient id="glmanten" cx="0.5" cy="0.45" r="0.65">
+      <stop offset="0" stop-color="#F75000" stop-opacity="0.2"/><stop offset="1" stop-color="#F75000" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grmanten" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#7AA4C4" stroke-width="0.6" opacity="0.08"/>
+    </pattern>
+  </defs>
+  <rect width="640" height="720" fill="url(#bgmanten)"/>
+  <rect width="640" height="720" fill="url(#grmanten)"/>
+  <rect width="640" height="720" fill="url(#glmanten)"/>
+  <g font-family="Rajdhani, Arial, sans-serif" font-weight="700">
+    <rect x="40" y="48" width="158" height="34" fill="rgba(247,80,0,0.12)" stroke="rgba(247,80,0,0.4)"/>
+    <text x="119" y="71" text-anchor="middle" font-size="16" fill="#FF8F57" letter-spacing="2">NOM-154-SCFI</text>
+    <rect x="442" y="48" width="158" height="34" fill="rgba(74,117,153,0.12)" stroke="rgba(74,117,153,0.4)"/>
+    <text x="521" y="71" text-anchor="middle" font-size="16" fill="#7AA4C4" letter-spacing="2">NFPA 1851</text>
+  </g>
+
+  <g>
+    <!-- extintor en banco -->
+    <rect x="120" y="560" width="400" height="20" rx="6" fill="#122133" stroke="#4A7599" stroke-width="2.5"/>
+    <rect x="200" y="240" width="130" height="310" rx="50" fill="#F75000" stroke="#7C2D12" stroke-width="3"/>
+    <rect x="200" y="340" width="130" height="60" fill="#C43D00"/>
+    <rect x="222" y="352" width="86" height="36" rx="4" fill="#E8F2F9"/>
+    <text x="265" y="377" text-anchor="middle" font-family="Rajdhani, Arial" font-weight="700" font-size="19" fill="#C43D00">ABC</text>
+    <rect x="248" y="196" width="34" height="50" rx="7" fill="#1A2E44" stroke="#4A7599" stroke-width="3"/>
+    <circle cx="312" cy="216" r="18" fill="#122133" stroke="#34D399" stroke-width="3.5"/>
+    <path d="M312 216l9-10" stroke="#34D399" stroke-width="3.5" stroke-linecap="round"/>
+    <!-- llave -->
+    <g transform="translate(440 330) rotate(38)">
+      <rect x="-14" y="-130" width="28" height="200" rx="10" fill="#7AA4C4"/>
+      <path d="M-34-130a34 34 0 1 1 68 0l-18 24h-32z" fill="#7AA4C4"/>
+      <circle cx="0" cy="-130" r="13" fill="#0C1825"/>
+    </g>
+    <!-- etiqueta colgante -->
+    <g transform="translate(452 500) rotate(-8)">
+      <rect x="-58" y="-40" width="116" height="86" rx="8" fill="#F5A623"/>
+      <circle cx="0" cy="-26" r="6" fill="#0C1825"/>
+      <text x="0" y="4" text-anchor="middle" font-family="Rajdhani, Arial" font-weight="700" font-size="16" fill="#0C1825">SERVICIO</text>
+      <text x="0" y="26" text-anchor="middle" font-family="Rajdhani, Arial" font-weight="700" font-size="16" fill="#0C1825">VIGENTE</text>
+    </g>
+    <path d="M452 452c-22-30-66-44-104-34" fill="none" stroke="#4A7599" stroke-width="3.5" stroke-dasharray="7 6"/>
+  </g>
+  <rect x="0" y="688" width="640" height="32" fill="#0A1420"/>
+  <rect x="0" y="686" width="640" height="2" fill="#F75000" opacity="0.5"/>
+</svg>
