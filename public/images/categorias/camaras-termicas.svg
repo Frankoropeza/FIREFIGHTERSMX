@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 720" role="img" aria-label="Cámara de imagen térmica para bomberos certificada NFPA 1801">
+  <defs>
+    <linearGradient id="bgcamara" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0C1825"/><stop offset="0.6" stop-color="#070E1A"/><stop offset="1" stop-color="#040A12"/>
+    </linearGradient>
+    <radialGradient id="glcamara" cx="0.5" cy="0.45" r="0.65">
+      <stop offset="0" stop-color="#F75000" stop-opacity="0.22"/><stop offset="1" stop-color="#F75000" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grcamara" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#7AA4C4" stroke-width="0.6" opacity="0.08"/>
+    </pattern>
+  </defs>
+  <rect width="640" height="720" fill="url(#bgcamara)"/>
+  <rect width="640" height="720" fill="url(#grcamara)"/>
+  <rect width="640" height="720" fill="url(#glcamara)"/>
+  <g font-family="Rajdhani, Arial, sans-serif" font-weight="700">
+    <rect x="40" y="48" width="148" height="34" fill="rgba(247,80,0,0.12)" stroke="rgba(247,80,0,0.4)"/>
+    <text x="114" y="71" text-anchor="middle" font-size="16" fill="#FF8F57" letter-spacing="2">NFPA 1801</text>
+    <rect x="452" y="48" width="148" height="34" fill="rgba(74,117,153,0.12)" stroke="rgba(74,117,153,0.4)"/>
+    <text x="526" y="71" text-anchor="middle" font-size="16" fill="#7AA4C4" letter-spacing="2">320×240 PX</text>
+  </g>
+
+  <g>
+    <!-- cuerpo cámara -->
+    <rect x="170" y="220" width="300" height="230" rx="26" fill="#1A2E44" stroke="#4A7599" stroke-width="3.5"/>
+    <rect x="170" y="220" width="300" height="36" rx="18" fill="#F75000"/>
+    <!-- lente -->
+    <circle cx="236" cy="338" r="46" fill="#0A1420" stroke="#F5A623" stroke-width="5"/>
+    <circle cx="236" cy="338" r="26" fill="#122133" stroke="#4A7599" stroke-width="3"/>
+    <circle cx="228" cy="330" r="8" fill="#7AA4C4" opacity="0.6"/>
+    <!-- pantalla con silueta térmica -->
+    <rect x="304" y="276" width="140" height="124" rx="8" fill="#0A1420" stroke="#2C4A63" stroke-width="3"/>
+    <path d="M374 300c-10 0-17 8-17 18 0 8 4 13 4 13s-16 7-16 26v26h58v-26c0-19-16-26-16-26s4-5 4-13c0-10-7-18-17-18z" fill="#F75000"/>
+    <path d="M374 308c-6 0-10 5-10 11 0 5 3 8 3 8s-11 5-11 18v18h36v-18c0-13-11-18-11-18s3-3 3-8c0-6-4-11-10-11z" fill="#F5A623"/>
+    <rect x="304" y="380" width="140" height="20" fill="#122133"/>
+    <text x="374" y="395" text-anchor="middle" font-family="Rajdhani, Arial" font-weight="700" font-size="12" fill="#34D399">+382 °C</text>
+    <!-- empuñadura -->
+    <path d="M268 450h104l-12 110c-2 18-16 30-34 30h-12c-18 0-32-12-34-30z" fill="#122133" stroke="#4A7599" stroke-width="3.5"/>
+    <rect x="296" y="478" width="48" height="34" rx="8" fill="#F75000"/>
+    <!-- correa -->
+    <path d="M170 300c-36 10-48 60-30 120" fill="none" stroke="#2C4A63" stroke-width="10" stroke-linecap="round"/>
+  </g>
+  <g font-family="Rajdhani, Arial, sans-serif" font-weight="700">
+    <path d="M470 300h70" stroke="#4A7599" stroke-width="1.5" opacity="0.8"/>
+    <circle cx="470" cy="300" r="3.5" fill="#F5A623"/>
+    <text x="548" y="296" text-anchor="start" font-size="13" fill="#7AA4C4" letter-spacing="1">PANTALLA</text>
+    <text x="548" y="309" text-anchor="start" font-size="13" fill="#7AA4C4" letter-spacing="1">ALTA RES.</text>
+  </g>
+  <g font-family="Rajdhani, Arial, sans-serif" font-weight="700">
+    <path d="M470 420h70" stroke="#4A7599" stroke-width="1.5" opacity="0.8"/>
+    <circle cx="470" cy="420" r="3.5" fill="#34D399"/>
+    <text x="548" y="416" text-anchor="start" font-size="13" fill="#7AA4C4" letter-spacing="1">MODO</text>
+    <text x="548" y="429" text-anchor="start" font-size="13" fill="#7AA4C4" letter-spacing="1">TI BASIC+</text>
+  </g>
+  <g font-family="Rajdhani, Arial, sans-serif" font-weight="700">
+    <path d="M180 540h-68" stroke="#4A7599" stroke-width="1.5" opacity="0.8"/>
+    <circle cx="180" cy="540" r="3.5" fill="#F75000"/>
+    <text x="104" y="536" text-anchor="end" font-size="13" fill="#7AA4C4" letter-spacing="1">GATILLO</text>
+    <text x="104" y="549" text-anchor="end" font-size="13" fill="#7AA4C4" letter-spacing="1">CON GUANTE</text>
+  </g>
+  <rect x="0" y="688" width="640" height="32" fill="#0A1420"/>
+  <rect x="0" y="686" width="640" height="2" fill="#F75000" opacity="0.5"/>
+</svg>

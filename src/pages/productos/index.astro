@@ -3,7 +3,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import CategoryCard from '@components/products/CategoryCard.astro';
 import CategorySpotlight from '@components/products/CategorySpotlight.astro';
-import { allCategories, trajesBombero } from '@data/categories';
+import { allCategories } from '@data/categories';
 import { featuredProducts } from '@data/products';
 import { SITE, whatsappUrl } from '@data/site';
 
@@ -168,8 +168,11 @@ const trustPoints = [
   </section>
 
   <!-- Módulos destacados por categoría (texto izquierda, imagen derecha; fondos alternados) -->
-  <CategorySpotlight cat={trajesBombero} />
-  <CategorySpotlight cat={allCategories.find((c) => c.slug === 'cascos-nfpa')!} background="#040A12" />
+  {allCategories
+    .filter((cat) => cat.spotlight)
+    .map((cat, i) => (
+      <CategorySpotlight cat={cat} background={i % 2 === 0 ? '#070E1A' : '#040A12'} />
+    ))}
 
   <!-- Productos destacados -->
   <section class="section" style="background:#070E1A" aria-labelledby="destacados-title">

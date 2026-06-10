@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 720" role="img" aria-label="Equipo de respiración autónoma SCBA certificado NFPA 1981">
+  <defs>
+    <linearGradient id="bgequipo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0C1825"/><stop offset="0.6" stop-color="#070E1A"/><stop offset="1" stop-color="#040A12"/>
+    </linearGradient>
+    <radialGradient id="glequipo" cx="0.5" cy="0.45" r="0.65">
+      <stop offset="0" stop-color="#F75000" stop-opacity="0.22"/><stop offset="1" stop-color="#F75000" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grequipo" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#7AA4C4" stroke-width="0.6" opacity="0.08"/>
+    </pattern>
+  </defs>
+  <rect width="640" height="720" fill="url(#bgequipo)"/>
+  <rect width="640" height="720" fill="url(#grequipo)"/>
+  <rect width="640" height="720" fill="url(#glequipo)"/>
+  <g font-family="Rajdhani, Arial, sans-serif" font-weight="700">
+    <rect x="40" y="48" width="148" height="34" fill="rgba(247,80,0,0.12)" stroke="rgba(247,80,0,0.4)"/>
+    <text x="114" y="71" text-anchor="middle" font-size="16" fill="#FF8F57" letter-spacing="2">NFPA 1981</text>
+    <rect x="452" y="48" width="148" height="34" fill="rgba(74,117,153,0.12)" stroke="rgba(74,117,153,0.4)"/>
+    <text x="526" y="71" text-anchor="middle" font-size="16" fill="#7AA4C4" letter-spacing="2">NIOSH CBRN</text>
+  </g>
+
+  <!-- Cilindro -->
+  <g>
+    <rect x="250" y="160" width="140" height="330" rx="64" fill="#F5A623" stroke="#92600A" stroke-width="3"/>
+    <rect x="250" y="250" width="140" height="36" fill="#C43D00"/>
+    <rect x="250" y="296" width="140" height="10" fill="#E8F2F9" opacity="0.85"/>
+    <rect x="284" y="120" width="72" height="48" rx="8" fill="#122133" stroke="#4A7599" stroke-width="3"/>
+    <circle cx="320" cy="118" r="22" fill="#1A2E44" stroke="#4A7599" stroke-width="3"/>
+    <circle cx="320" cy="118" r="9" fill="#0A1420"/>
+    <!-- arnés -->
+    <path d="M236 200c-22 60-22 230 12 300" fill="none" stroke="#2C4A63" stroke-width="14" stroke-linecap="round"/>
+    <path d="M404 200c22 60 22 230-12 300" fill="none" stroke="#2C4A63" stroke-width="14" stroke-linecap="round"/>
+    <!-- manómetro -->
+    <path d="M392 320c44 16 64 56 60 108" fill="none" stroke="#F75000" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="452" cy="446" r="30" fill="#122133" stroke="#F75000" stroke-width="4"/>
+    <path d="M452 446l14-16" stroke="#FF8F57" stroke-width="4" stroke-linecap="round"/>
+    <!-- máscara -->
+    <g>
+      <path d="M150 470c0-44 32-76 72-76s72 32 72 76c0 50-32 86-72 86s-72-36-72-86z" fill="#1A2E44" stroke="#4A7599" stroke-width="3"/>
+      <path d="M168 460c0-30 24-52 54-52s54 22 54 52c0 26-14 46-32 54h-44c-18-8-32-28-32-54z" fill="#0A1420" stroke="#7AA4C4" stroke-width="2.5" opacity="0.95"/>
+      <circle cx="222" cy="556" r="18" fill="#122133" stroke="#4A7599" stroke-width="3"/>
+      <path d="M278 500c30 6 70 4 96-14" fill="none" stroke="#F5A623" stroke-width="7" stroke-linecap="round"/>
+    </g>
+  </g>
+  <g font-family="Rajdhani, Arial, sans-serif" font-weight="700">
+    <path d="M404 268h96" stroke="#4A7599" stroke-width="1.5" opacity="0.8"/>
+    <circle cx="404" cy="268" r="3.5" fill="#F5A623"/>
+    <text x="508" y="264" text-anchor="start" font-size="13" fill="#7AA4C4" letter-spacing="1">CILINDRO</text>
+    <text x="508" y="277" text-anchor="start" font-size="13" fill="#7AA4C4" letter-spacing="1">4500 PSI</text>
+  </g>
+  <g font-family="Rajdhani, Arial, sans-serif" font-weight="700">
+    <path d="M482 446h60" stroke="#4A7599" stroke-width="1.5" opacity="0.8"/>
+    <circle cx="482" cy="446" r="3.5" fill="#F75000"/>
+    <text x="550" y="442" text-anchor="start" font-size="13" fill="#7AA4C4" letter-spacing="1">MANÓMETRO</text>
+    <text x="550" y="455" text-anchor="start" font-size="13" fill="#7AA4C4" letter-spacing="1">EOSTI</text>
+  </g>
+  <g font-family="Rajdhani, Arial, sans-serif" font-weight="700">
+    <path d="M150 500h-64" stroke="#4A7599" stroke-width="1.5" opacity="0.8"/>
+    <circle cx="150" cy="500" r="3.5" fill="#FF6B26"/>
+    <text x="78" y="496" text-anchor="end" font-size="13" fill="#7AA4C4" letter-spacing="1">MÁSCARA</text>
+    <text x="78" y="509" text-anchor="end" font-size="13" fill="#7AA4C4" letter-spacing="1">FULL-FACE</text>
+  </g>
+  <rect x="0" y="688" width="640" height="32" fill="#0A1420"/>
+  <rect x="0" y="686" width="640" height="2" fill="#F75000" opacity="0.5"/>
+</svg>

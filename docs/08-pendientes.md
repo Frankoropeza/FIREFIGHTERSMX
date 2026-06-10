@@ -13,7 +13,7 @@
 
 ## Prioridad media
 
-- [ ] **Spotlights de categoría en /productos**: hecho trajes-bombero; faltan los otros 8 (definir `spotlight` en categories.ts + imagen en `public/images/categorias/<slug>.svg`, alternar `reverse` y `background` entre módulos consecutivos)
+- [x] **Spotlights de categoría en /productos**: las 9 categorías completas (texto izquierda + imagen SVG derecha, fondos alternados vía loop). Para reemplazar ilustraciones por fotos reales: sustituir `public/images/categorias/<slug>.svg`
 
 - [ ] Crear hub `/industrias` (hoy el menú "Industrias" navega a bomberos-municipales)
 - [ ] Formularios (`/api/cotizacion`) no tienen backend — conectar (Formspree/worker/email) o cambiar a mailto/WhatsApp
