@@ -1,45 +1,181 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
+import { SITE, whatsappUrl } from '@data/site';
+
+const canonicalURL = `${SITE.url}/certificaciones`;
+
+const seoMeta = {
+  title: `Certificaciones NFPA y NOM — Equipo para Bomberos`,
+  description:
+    'Las normas que avalan nuestro equipo: NFPA 1970, NFPA 1850, NFPA 1977, NOM-002-STPS, NOM-154-SCFI e ISO 9001. Qué certifica cada una y cómo se acredita.',
+  canonicalURL,
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Empresa', item: `${SITE.url}/empresa` },
+    { '@type': 'ListItem', position: 3, name: 'Certificaciones', item: canonicalURL },
+  ],
+};
+
+const grupos = [
+  {
+    grupo: 'Equipo de protección personal (NFPA)',
+    eyebrow: 'Protección personal',
+    items: [
+      { norm: 'NFPA 1970', title: 'Conjuntos de protección estructural', desc: 'Standard on Protective Ensembles for Structural and Proximity Fire Fighting. Desde 2024 consolida la antigua NFPA 1971.' },
+      { norm: 'NFPA 1970', title: 'Equipos de respiración SCBA', desc: 'Equipo de aire autónomo de circuito abierto para servicios de emergencia. Desde 2024 dentro de la NFPA 1970 (antes NFPA 1981).' },
+      { norm: 'NFPA 1850', title: 'Selección, cuidado y mantenimiento', desc: 'Norma de cuidado del conjunto estructural y SCBA. Consolidó la NFPA 1851 y 1852; vida útil máxima de 10 años.' },
+      { norm: 'NFPA 1977', title: 'Trajes para incendios forestales', desc: 'Protective Clothing and Equipment for Wildland Fire Fighting, para operaciones de vegetación e interfaz.' },
+      { norm: 'NFPA 1991/1992', title: 'Trajes HAZMAT', desc: 'Equipos de protección para materiales peligrosos, Nivel A y Nivel B.' },
+    ],
+  },
+  {
+    grupo: 'Sistemas y normas mexicanas',
+    eyebrow: 'Sistemas y NOM',
+    items: [
+      { norm: 'NFPA 13', title: 'Sistemas de rociadores', desc: 'Standard for the Installation of Sprinkler Systems.' },
+      { norm: 'NFPA 72', title: 'Sistemas de alarma', desc: 'National Fire Alarm and Signaling Code.' },
+      { norm: 'NOM-002-STPS-2010', title: 'Norma mexicana principal', desc: 'Condiciones de seguridad, prevención y protección contra incendios en centros de trabajo.' },
+      { norm: 'NOM-154-SCFI', title: 'Extintores portátiles', desc: 'Seguridad, servicio y métodos de prueba para extintores portátiles en México.' },
+      { norm: 'ISO 9001', title: 'Gestión de calidad', desc: 'Certificación internacional de calidad en procesos de manufactura y servicio.' },
+    ],
+  },
+];
 ---
-<BaseLayout
-  title="Certificaciones NFPA y NOM — FIREFIGHTERS MX"
-  description="Todos los productos de FIREFIGHTERS MX están certificados bajo normas NFPA, NOM-002 STPS y estándares internacionales de seguridad para bomberos y protección civil."
->
-  <section class="bg-gradient-fire py-20">
-    <div class="container-site text-center text-white">
-      <h1 class="section-title text-white mb-6">Certificaciones y Normas</h1>
-      <p class="section-subtitle text-fire-200 mx-auto">
-        Todos nuestros productos y servicios cumplen con los más altos estándares
-        nacionales e internacionales de seguridad.
-      </p>
+
+<BaseLayout {...seoMeta} schema={[breadcrumbSchema]}>
+
+  <!-- Breadcrumb -->
+  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+    <div class="container-site">
+      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:#4A7599">
+        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="/empresa" class="hover:text-[#FF6B26]">Empresa</a></li>
+        <li aria-hidden="true">/</li>
+        <li><span style="color:#94A3B8" aria-current="page">Certificaciones</span></li>
+      </ol>
     </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">
+    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
+
+    <div class="container-site relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div>
+          <span class="section-eyebrow mb-5 inline-flex">Normatividad · NFPA y NOM</span>
+          <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+            Certificaciones<br/>
+            <span style="color:#F75000">que respaldan</span>
+          </h1>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href={whatsappUrl('Hola, tengo una duda sobre qué norma aplica a mi equipo.')} target="_blank" rel="noopener" class="btn btn-primary btn-lg">Consultar norma</a>
+            <a href="/cotizacion" class="btn btn-ghost btn-lg">Solicitar cotización</a>
+          </div>
+        </div>
+        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
+          <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">
+            Todo nuestro catálogo está certificado bajo
+            <strong style="color:#CBD5E1">normas NFPA, NOM-002-STPS e ISO 9001</strong>, con
+            verificación de laboratorio de tercera parte acreditado. Aquí te explicamos qué
+            certifica cada norma y cómo se acredita.
+          </p>
+          <p class="text-sm leading-[1.9] mb-6" style="color:#64748B">
+            Cada equipo se entrega con su certificado de conformidad, ficha técnica y, cuando
+            aplica, el manifiesto de cumplimiento listo para auditoría STPS, Protección Civil
+            o tu expediente de licitación.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {['NFPA 1970','NFPA 1850','NFPA 1977','NOM-002-STPS','NOM-154-SCFI','ISO 9001'].map(n => (
+              <span class="badge badge-dark font-display text-[10px]">{n}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)" aria-hidden="true"></div>
   </section>
-  <!-- Accesos rápidos (interlinking) -->
+
+  <!-- Accesos rápidos -->
   <QuickLinksBar />
 
+  <!-- Grupos de normas -->
+  {grupos.map((g, gi) => (
+    <section class="section" style={`background:${gi % 2 === 0 ? '#040A12' : '#070E1A'}`} aria-label={g.grupo}>
+      <div class="container-site">
+        <div class="mb-10">
+          <span class="section-eyebrow mb-4 inline-flex">{g.eyebrow}</span>
+          <h2 class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">{g.grupo}</h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {g.items.map((cert) => (
+            <article class="norm-card flex flex-col gap-3 p-6" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
+              <span class="badge badge-fire w-fit">{cert.norm}</span>
+              <h3 class="font-display font-bold text-lg leading-tight" style="color:#FFFFFF">{cert.title}</h3>
+              <p class="text-xs leading-relaxed" style="color:#64748B">{cert.desc}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
 
-  <section class="section bg-white">
+  <!-- CTA + cross-links -->
+  <section class="section" style="background:#040A12" aria-labelledby="cert-cross-title">
     <div class="container-site">
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {[
-          { norm: "NFPA 1971", title: "Trajes de Protección Estructural", desc: "Standard on Protective Ensembles for Structural Fire Fighting and Proximity Fire Fighting." },
-          { norm: "NFPA 1977", title: "Trajes para Incendios Forestales", desc: "Standard on Protective Clothing and Equipment for Wildland Fire Fighting." },
-          { norm: "NFPA 1981", title: "Equipos SCBA", desc: "Standard on Open-Circuit Self-Contained Breathing Apparatus for Emergency Services." },
-          { norm: "NFPA 1991/1992", title: "Trajes HAZMAT", desc: "Equipos de protección para materiales peligrosos, Nivel A y Nivel B." },
-          { norm: "NFPA 13", title: "Sistemas de Rociadores", desc: "Standard for the Installation of Sprinkler Systems." },
-          { norm: "NFPA 72", title: "Sistemas de Alarma", desc: "National Fire Alarm and Signaling Code." },
-          { norm: "NOM-002-STPS-2010", title: "Norma Mexicana Principal", desc: "Condiciones de seguridad, prevención y protección contra incendios en centros de trabajo." },
-          { norm: "NOM-100-SCFI", title: "Extintores Portátiles", desc: "Seguridad y métodos de prueba para extintores portátiles en México." },
-          { norm: "ISO 9001", title: "Sistema de Gestión de Calidad", desc: "Certificación internacional de calidad en procesos de manufactura y servicio." },
-        ].map((cert) => (
-          <div class="card-fire p-6">
-            <span class="badge-fire mb-4 inline-block">{cert.norm}</span>
-            <h3 class="font-heading font-bold text-dark-900 mb-3">{cert.title}</h3>
-            <p class="text-dark-500 text-sm leading-relaxed">{cert.desc}</p>
-          </div>
-        ))}
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">¿Qué norma aplica?</span>
+          <h2 id="cert-cross-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+            Te decimos exactamente<br/>
+            <span style="color:#F75000">qué exige tu giro.</span>
+          </h2>
+          <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
+            La norma correcta depende de tu operación: no es lo mismo un centro de trabajo bajo
+            NOM-002-STPS que un cuerpo de bomberos que exige NFPA 1970. Cuéntanos tu caso y te
+            mapeamos el marco aplicable y el equipo que lo cumple.
+          </p>
+          <a href={whatsappUrl('Hola, quiero saber qué normas aplican a mi operación.')} target="_blank" rel="noopener" class="btn btn-primary">Consultar por WhatsApp</a>
+        </div>
+        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:#4A7599">
+            También te puede servir
+          </h2>
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+            {[
+              { label: 'Catálogo de productos', desc: 'Equipo certificado por categoría', href: '/productos' },
+              { label: 'Blog: NFPA 1970, la nueva norma', desc: 'Qué cambió en trajes estructurales', href: '/blog/nfpa-1970-nueva-norma-trajes-bombero' },
+              { label: 'Soporte para licitaciones', desc: 'Manifiestos de norma por partida', href: '/licitaciones' },
+              { label: 'Industrias que atendemos', desc: 'La norma que rige cada sector', href: '/industrias' },
+              { label: 'Volver a la empresa', desc: 'Visión general de FIREFIGHTERS MX', href: '/empresa' },
+            ].map((l) => (
+              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+                <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
+                  <span class="flex flex-col gap-0.5">
+                    <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
+                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
+                  </span>
+                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#4A7599" stroke-width="2.5" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
+                  </svg>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   </section>
+
 </BaseLayout>
+
+<style>
+  .norm-card:hover { border-color: rgba(247, 80, 0, 0.45) !important; }
+</style>

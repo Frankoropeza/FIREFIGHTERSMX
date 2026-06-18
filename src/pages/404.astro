@@ -3,22 +3,28 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 ---
 <BaseLayout
   title="Página no encontrada — FIREFIGHTERS MX"
-  description="La página que buscas no existe. Vuelve al inicio o explora nuestro catálogo de equipos para bomberos."
+  description="La página que buscas no existe. Vuelve al inicio o explora nuestro catálogo de equipo para bomberos certificado NFPA y NOM."
   noindex={true}
 >
-  <section class="section min-h-[60vh] flex items-center justify-center">
-    <div class="container-site text-center">
-      <p class="font-heading font-black text-8xl text-fire-700 mb-6">404</p>
-      <h1 class="section-title mb-4">Página no encontrada</h1>
-      <p class="section-subtitle mx-auto mb-10 max-w-lg">
-        La página que buscas no existe o fue movida.
-        Explora nuestro catálogo de equipos o regresa al inicio.
+  <section class="relative overflow-hidden" style="background:#040A12;min-height:70vh;display:flex;align-items:center">
+    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
+
+    <div class="container-site relative z-10 text-center">
+      <p class="font-display font-bold mb-2" style="color:#F75000;font-size:clamp(5rem,18vw,11rem);line-height:0.9">404</p>
+      <h1 class="font-display font-bold uppercase mb-5" style="color:#FFFFFF;font-size:clamp(1.75rem,4vw,3rem);line-height:1">
+        Página <span style="color:#F75000">no encontrada</span>
+      </h1>
+      <p class="text-sm leading-[1.9] mx-auto mb-10" style="color:#94A3B8;max-width:34rem">
+        La página que buscas no existe o fue movida. Regresa al inicio o explora
+        nuestro catálogo de equipo para bomberos certificado.
       </p>
-      <div class="flex flex-wrap gap-4 justify-center">
-        <a href="/" class="btn-primary btn-lg">← Volver al inicio</a>
-        <a href="/productos" class="btn-secondary btn-lg">Ver catálogo</a>
-        <a href="/contacto" class="btn-ghost btn-lg">Contacto</a>
+      <div class="flex flex-wrap gap-3 justify-center">
+        <a href="/" class="btn btn-primary btn-lg">Volver al inicio</a>
+        <a href="/productos" class="btn btn-ghost btn-lg">Ver catálogo</a>
+        <a href="/contacto" class="btn btn-dark btn-lg">Contacto</a>
       </div>
     </div>
+
+    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)" aria-hidden="true"></div>
   </section>
 </BaseLayout>

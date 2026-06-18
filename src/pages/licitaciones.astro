@@ -1,78 +1,443 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
+import { SITE, whatsappUrl } from '@data/site';
+
+const canonicalURL = `${SITE.url}/licitaciones`;
+
+const seoMeta = {
+  title: `Licitaciones de Equipo para Bomberos`,
+  description:
+    'Soporte para licitaciones de equipo contra incendio: fichas técnicas, manifiestos de norma NOM/NFPA y CFDI 4.0. CompraNet, PEMEX, CFE y municipios.',
+  canonicalURL,
+};
+
+/* ─── Capacidades (cards) ──────────────────────────────────── */
+const capacidades = [
+  {
+    title: 'Documentación técnica',
+    tag: 'Por partida',
+    desc: 'Fichas técnicas del fabricante y manifiestos de cumplimiento de norma listos para anexar a tu propuesta.',
+    accent: '#F75000',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>`,
+  },
+  {
+    title: 'Equipo certificado',
+    tag: 'NOM · NFPA',
+    desc: 'Catálogo completo con certificación de tercera parte acreditada para cada bien requerido en la convocatoria.',
+    accent: '#F5A623',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>`,
+  },
+  {
+    title: 'Proveedor habilitado',
+    tag: 'CompraNet',
+    desc: 'Empresa registrada como proveedor en CompraNet y en padrones estatales, con expediente al día.',
+    accent: '#34D399',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V7l8-4 8 4v14M9 9h.01M9 13h.01M9 17h.01M15 9h.01M15 13h.01M15 17h.01"/></svg>`,
+  },
+  {
+    title: 'Entrega y cumplimiento',
+    tag: 'Conforme a bases',
+    desc: 'Compromiso en firme de tiempos, lugar y condiciones de entrega, evitando penas convencionales.',
+    accent: '#7AA4C4',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>`,
+  },
+  {
+    title: 'Facturación CFDI 4.0',
+    tag: 'Sector gobierno',
+    desc: 'Comprobantes fiscales con todos los requisitos para dependencias federales, estatales y municipales.',
+    accent: '#FF8F57',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M7 15h4"/></svg>`,
+  },
+  {
+    title: 'Acompañamiento técnico',
+    tag: 'Junta de aclaraciones',
+    desc: 'Apoyo en la interpretación de partidas, especificaciones y normas durante todo el proceso.',
+    accent: '#FF6B26',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M9 10h.01M13 10h.01M17 10h.01"/></svg>`,
+  },
+];
+
+/* ─── Requisito → entregable ───────────────────────────────── */
+const requisitos = [
+  ['Certificación de norma por partida', 'Certificados NFPA / NOM emitidos por laboratorio acreditado'],
+  ['Ficha técnica del bien', 'Ficha del fabricante del modelo exacto ofertado'],
+  ['Manifiesto de cumplimiento', 'Manifiesto firmado de normas, por partida'],
+  ['Carta de distribuidor', 'Carta de distribuidor autorizado del fabricante'],
+  ['Tiempo y condiciones de entrega', 'Compromiso en firme conforme a las bases'],
+  ['Facturación a la dependencia', 'CFDI 4.0 con los requisitos fiscales aplicables'],
+];
+
+/* ─── Plataformas ──────────────────────────────────────────── */
+const plataformas = [
+  'CompraNet — Función Pública (Federal)',
+  'PEMEX — Petróleos Mexicanos',
+  'CFE — Comisión Federal de Electricidad',
+  'IMSS e ISSSTE',
+  'Secretarías de Seguridad Pública estatales',
+  'Protección Civil estatal y municipal',
+  'Gobiernos estatales',
+  'Municipios en los 32 estados',
+];
+
+/* ─── Proceso ──────────────────────────────────────────────── */
+const pasos = [
+  { n: '01', t: 'Analizamos la convocatoria y sus partidas: identificamos las normas exigidas y los requisitos técnicos de cada bien.' },
+  { n: '02', t: 'Armamos la propuesta técnica completa: fichas, manifiestos de norma, catálogos y cartas de distribuidor por partida.' },
+  { n: '03', t: 'Cotizamos en firme: precios, tiempos de entrega y condiciones alineados a las bases, sin sorpresas posteriores.' },
+  { n: '04', t: 'Entregamos el equipo certificado con su CFDI 4.0 y la evidencia documental lista para el expediente de la dependencia.' },
+];
+
+/* ─── FAQ ──────────────────────────────────────────────────── */
+const faqs = [
+  {
+    q: '¿Están registrados como proveedor en CompraNet?',
+    a: 'Sí. Somos proveedor habilitado en CompraNet y en padrones de proveedores estatales, con expediente y documentación legal al día para participar en concursos federales, estatales y municipales.',
+  },
+  {
+    q: '¿Entregan fichas técnicas y manifiestos de norma por partida?',
+    a: 'Sí. Para cada partida preparamos la ficha técnica del fabricante del modelo ofertado y el manifiesto de cumplimiento de normas (NOM, NFPA, STPS), listos para integrarse a la propuesta técnica.',
+  },
+  {
+    q: '¿Qué normas cumple el equipo que ofertan?',
+    a: 'Todo nuestro catálogo está certificado por laboratorio de tercera parte: NFPA 1970 para conjuntos estructurales, NFPA 1970 para SCBA, NOM-002-STPS, NOM-154-SCFI para extintores y las normas aplicables a cada bien.',
+  },
+  {
+    q: '¿Facturan a dependencias de gobierno con CFDI 4.0?',
+    a: 'Sí. Emitimos comprobantes fiscales digitales 4.0 con todos los requisitos que exigen las dependencias federales, estatales y municipales para su comprobación del gasto.',
+  },
+  {
+    q: '¿Pueden cumplir los tiempos de entrega y evitar penas convencionales?',
+    a: 'Cotizamos los plazos de entrega en firme y conforme a las bases. Coordinamos logística a los 32 estados para cumplir el contrato en tiempo y condiciones, minimizando el riesgo de penalización.',
+  },
+  {
+    q: '¿Atienden solo licitaciones federales?',
+    a: 'No. Damos soporte a concursos federales (CompraNet, PEMEX, CFE, IMSS, ISSSTE), estatales y municipales — incluyendo Secretarías de Seguridad Pública y unidades de Protección Civil en todo el país.',
+  },
+];
+
+/* ─── JSON-LD ──────────────────────────────────────────────── */
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Licitaciones', item: canonicalURL },
+  ],
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': `${canonicalURL}#service`,
+  name: 'Soporte para licitaciones de equipo contra incendio',
+  description: seoMeta.description,
+  serviceType: 'Soporte técnico para compras públicas y licitaciones',
+  provider: { '@id': `${SITE.url}/#store` },
+  areaServed: { '@type': 'Country', name: 'México' },
+  url: canonicalURL,
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
 ---
-<BaseLayout
-  title="Licitaciones de Equipos para Bomberos — FIREFIGHTERS MX"
-  description="Soporte especializado para licitaciones de equipos para bomberos en CompraNet, PEMEX, CFE y municipios. Fichas técnicas, manifiestos de normas y asesoría técnica."
->
-  <section class="bg-gradient-fire py-20">
-    <div class="container-site text-center text-white">
-      <p class="section-eyebrow text-fire-300 mb-3">Sector Gobierno</p>
-      <h1 class="section-title text-white mb-6">Licitaciones de Equipo para Bomberos</h1>
-      <p class="section-subtitle text-fire-200 mx-auto">
-        Soporte técnico completo para ganar concursos públicos: CompraNet, PEMEX, CFE, IMSS,
-        municipios y dependencias estatales.
-      </p>
-      <a href="/cotizacion" class="btn-gold btn-lg mt-8 inline-flex">
-        Solicitar asesoría para licitación
-      </a>
+
+<BaseLayout {...seoMeta} schema={[breadcrumbSchema, serviceSchema, faqSchema]}>
+
+  <!-- Breadcrumb -->
+  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+    <div class="container-site">
+      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:#4A7599">
+        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li aria-hidden="true">/</li>
+        <li><span style="color:#94A3B8" aria-current="page">Licitaciones</span></li>
+      </ol>
     </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">
+    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
+
+    <div class="container-site relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+        <div>
+          <span class="section-eyebrow mb-5 inline-flex">Sector gobierno · CompraNet</span>
+          <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+            Licitaciones de<br/>
+            <span style="color:#F75000">equipo contra incendio</span>
+          </h1>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a
+              href={whatsappUrl('Hola, necesito soporte técnico para una licitación de equipo contra incendio.')}
+              target="_blank" rel="noopener"
+              class="btn btn-primary btn-lg"
+            >
+              Asesoría por WhatsApp
+            </a>
+            <a href="/cotizacion" class="btn btn-ghost btn-lg">Solicitar propuesta</a>
+          </div>
+        </div>
+
+        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
+          <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">
+            Acompañamos a dependencias y a proveedores en concursos públicos de equipo para bomberos
+            y sistemas contra incendio: <strong style="color:#CBD5E1">fichas técnicas, manifiestos de
+            cumplimiento de norma NOM y NFPA, cartas de distribuidor y catálogos</strong> listos para
+            integrarse a la propuesta técnica de cada partida.
+          </p>
+          <p class="text-sm leading-[1.9] mb-6" style="color:#64748B">
+            Somos proveedor habilitado en CompraNet, facturamos con CFDI 4.0 y entregamos en los
+            32 estados con tiempos en firme. Federal, estatal o municipal: cubrimos el expediente
+            técnico que el órgano fiscalizador va a auditar.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {['CompraNet','PEMEX','CFE','NOM-002-STPS','NFPA 1970','CFDI 4.0'].map(n => (
+              <span class="badge badge-dark font-display text-[10px]">{n}</span>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)" aria-hidden="true"></div>
   </section>
+
   <!-- Accesos rápidos (interlinking) -->
   <QuickLinksBar />
 
-
-  <section class="section bg-white">
+  <!-- Capacidades -->
+  <section class="section" style="background:#040A12" aria-labelledby="capacidades-title">
     <div class="container-site">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
-          <h2 class="section-title mb-6">¿Por qué trabajar con FIREFIGHTERS MX para tus licitaciones?</h2>
-          <div class="flex flex-col gap-5">
-            {[
-              { icon: "📋", title: "Fichas técnicas listas", desc: "Preparamos toda la documentación técnica para cumplir con los requisitos de cada convocatoria." },
-              { icon: "✅", title: "Productos certificados NOM/NFPA", desc: "Todo nuestro catálogo cumple con las normas exigidas en licitaciones gubernamentales." },
-              { icon: "📜", title: "Manifiestos de normas", desc: "Generamos manifiestos de cumplimiento de normas NOM, NFPA, STPS para cada partida." },
-              { icon: "🏛️", title: "Registro en CompraNet", desc: "Empresa habilitada como proveedor en la plataforma CompraNet de la Función Pública." },
-              { icon: "📦", title: "Entrega garantizada", desc: "Cumplimos con los tiempos y condiciones de entrega estipulados en los contratos." },
-              { icon: "💰", title: "Facturación electrónica", desc: "CFDI con todos los requisitos fiscales para instituciones gubernamentales." },
-            ].map((item) => (
-              <div class="flex gap-4">
-                <span class="text-2xl shrink-0">{item.icon}</span>
-                <div>
-                  <h3 class="font-bold text-dark-900 mb-1">{item.title}</h3>
-                  <p class="text-dark-500 text-sm">{item.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <span class="section-eyebrow mb-4 inline-flex">Qué entregamos</span>
+          <h2 id="capacidades-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            El expediente técnico,<br/>
+            <span style="color:#F75000">resuelto.</span>
+          </h2>
         </div>
-        <div class="bg-dark-50 rounded-2xl p-8">
-          <h3 class="font-heading font-bold text-xl text-dark-900 mb-6">Plataformas donde participamos</h3>
-          <div class="flex flex-col gap-4">
-            {[
-              "CompraNet — Función Pública (Federal)",
-              "PEMEX — Petróleos Mexicanos",
-              "CFE — Comisión Federal de Electricidad",
-              "IMSS — Instituto Mexicano del Seguro Social",
-              "ISSSTE",
-              "Secretarías de Seguridad Pública Estatales",
-              "Protección Civil Municipal y Estatal",
-              "Dependencias Municipales en los 32 estados",
-            ].map((p) => (
-              <div class="flex items-center gap-3 text-sm text-dark-700">
-                <svg class="w-4 h-4 text-fire-700 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                </svg>
-                {p}
-              </div>
-            ))}
-          </div>
-          <a href="/cotizacion" class="btn-primary w-full justify-center mt-8">
-            Solicitar asesoría técnica
-          </a>
+        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+            Una propuesta técnica se gana en los detalles: la certificación correcta por partida,
+            el manifiesto firmado, la carta de distribuidor y los tiempos de entrega creíbles.
+            Eso es exactamente lo que preparamos contigo.
+          </p>
         </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {capacidades.map((c) => (
+          <article class="cap-card group relative flex flex-col overflow-hidden" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
+            <div class="relative flex items-center justify-center overflow-hidden" style="height:110px">
+              <div class="absolute inset-0" style={`background:linear-gradient(135deg, ${c.accent}26 0%, rgba(4,10,18,0.94) 100%)`}></div>
+              <div class="relative z-10 flex items-center justify-center rounded-full"
+                   style={`width:60px;height:60px;background:rgba(4,10,18,0.7);border:1.5px solid ${c.accent}44;color:${c.accent}`}>
+                <span class="block" style="width:26px;height:26px" set:html={c.icon}/>
+              </div>
+              <div class="absolute bottom-0 left-0 right-0 h-8 pointer-events-none" style="background:linear-gradient(to bottom, transparent, #080F1A)"></div>
+            </div>
+            <div class="flex flex-col flex-1 p-5 gap-2.5">
+              <span class="text-[9px] font-display font-semibold uppercase tracking-widest" style="color:#4A7599">{c.tag}</span>
+              <h3 class="font-display font-bold text-lg leading-tight" style="color:#FFFFFF">{c.title}</h3>
+              <p class="text-xs leading-relaxed" style="color:#64748B">{c.desc}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Requisito → entregable -->
+  <section class="section" style="background:#070E1A" aria-labelledby="requisitos-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Punto por punto</span>
+          <h2 id="requisitos-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            Cada requisito,<br/>
+            <span style="color:#F75000">su documento.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+            Las convocatorias se ganan o se descalifican por la documentación. Esto es lo que
+            pide una base típica y lo que entregamos para cubrirlo sin observaciones.
+          </p>
+        </div>
+      </div>
+
+      <div style="border:1px solid rgba(74,117,153,0.18)">
+        <div class="grid grid-cols-1 sm:grid-cols-2" style="background:#0C1825;border-bottom:1px solid rgba(74,117,153,0.18)">
+          <div class="p-4"><span class="font-display font-bold text-xs uppercase tracking-widest" style="color:#FF6B26">Requisito de la convocatoria</span></div>
+          <div class="p-4" style="border-left:1px solid rgba(74,117,153,0.18)"><span class="font-display font-bold text-xs uppercase tracking-widest" style="color:#FF6B26">Lo que entregamos</span></div>
+        </div>
+        {requisitos.map(([req, ent], i) => (
+          <div class="grid grid-cols-1 sm:grid-cols-2" style={`background:${i % 2 === 0 ? '#080F1A' : '#0A1320'};${i < requisitos.length - 1 ? 'border-bottom:1px solid rgba(74,117,153,0.12);' : ''}`}>
+            <div class="p-4 flex items-center gap-3">
+              <span class="w-1.5 h-1.5 rounded-full shrink-0" style="background:#4A7599" aria-hidden="true"></span>
+              <span class="text-sm" style="color:#CBD5E1">{req}</span>
+            </div>
+            <div class="p-4 flex items-center gap-3" style="border-left:1px solid rgba(74,117,153,0.12)">
+              <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#34D399" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              <span class="text-sm" style="color:#94A3B8">{ent}</span>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   </section>
+
+  <!-- Plataformas + Proceso -->
+  <section class="section" style="background:#040A12" aria-labelledby="plataformas-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+
+        <!-- Plataformas -->
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Dónde participamos</span>
+          <h2 id="plataformas-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+            Federal, estatal<br/>
+            <span style="color:#F75000">y municipal.</span>
+          </h2>
+          <ul class="grid grid-cols-1 sm:grid-cols-2 list-none m-0 p-0" style="border:1px solid rgba(74,117,153,0.18)">
+            {plataformas.map((p, i) => (
+              <li class="grid-cell flex items-center gap-3 p-4" style={`border-bottom:1px solid rgba(74,117,153,0.12);${i % 2 === 0 ? 'border-right:1px solid rgba(74,117,153,0.12);' : ''}`}>
+                <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#FF6B26" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span class="text-xs leading-snug" style="color:#94A3B8">{p}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Proceso -->
+        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+          <span class="section-eyebrow mb-4 inline-flex">Cómo te acompañamos</span>
+          <h2 class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+            De la convocatoria<br/>
+            <span style="color:#F75000">al fallo.</span>
+          </h2>
+          <ol class="flex flex-col gap-4 list-none m-0 p-0">
+            {pasos.map((s) => (
+              <li class="flex items-start gap-4">
+                <span class="font-display font-bold text-xl shrink-0" style="color:#F75000">{s.n}</span>
+                <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{s.t}</p>
+              </li>
+            ))}
+          </ol>
+          <div class="flex flex-col sm:flex-row gap-3 mt-8">
+            <a href={whatsappUrl('Hola, tengo una convocatoria y quiero soporte técnico para la propuesta.')} target="_blank" rel="noopener" class="btn btn-primary">
+              Enviar mi convocatoria
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="background:#070E1A" aria-labelledby="faq-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes</span>
+          <h2 id="faq-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+            Lo que más nos<br/>
+            <span style="color:#F75000">preguntan.</span>
+          </h2>
+          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+            ¿Tu duda no aparece aquí? Escríbenos por WhatsApp con los datos de tu convocatoria
+            y te respondemos con la solución concreta para esa licitación.
+          </p>
+        </div>
+
+        <div class="flex flex-col">
+          {faqs.map((f, i) => (
+            <details class="faq-item group" style={`border-top:1px solid rgba(74,117,153,0.18);${i === faqs.length - 1 ? 'border-bottom:1px solid rgba(74,117,153,0.18);' : ''}`}>
+              <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer">
+                <span class="font-display font-semibold text-sm" style="color:#FFFFFF">{f.q}</span>
+                <span class="faq-icon font-display font-bold text-xl shrink-0" style="color:#FF6B26">+</span>
+              </summary>
+              <p class="text-sm leading-relaxed pb-5 m-0" style="color:#94A3B8">{f.a}</p>
+            </details>
+          ))}
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Cross-links -->
+  <section class="section" style="background:#040A12" aria-labelledby="cross-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Un solo proveedor</span>
+          <h2 id="cross-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+            Equipo, servicio<br/>
+            <span style="color:#F75000">y expediente.</span>
+          </h2>
+          <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
+            Más allá de la licitación, somos tu proveedor integral: catálogo certificado,
+            servicios que mantienen el equipo vigente y la documentación auditable que cierra
+            cada contrato. Cuéntanos tu caso y lo armamos completo.
+          </p>
+          <a href={whatsappUrl('Hola, quiero cotizar equipo para una licitación.')} target="_blank" rel="noopener" class="btn btn-primary">
+            Cotizar por WhatsApp
+          </a>
+        </div>
+
+        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:#4A7599">
+            También te puede servir
+          </h2>
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+            {[
+              { label: 'Catálogo de productos', desc: 'Equipo certificado NFPA y NOM en 9 categorías', href: '/productos' },
+              { label: 'Soporte para licitaciones (servicio)', desc: 'Alcance y entregables del servicio', href: '/servicios/licitaciones' },
+              { label: 'Guía de normas y certificaciones', desc: 'Qué NOM y NFPA aplican por bien', href: '/certificaciones' },
+              { label: 'Cómo especificar trajes en licitaciones', desc: 'Guía técnica para redactar bases', href: '/blog/especificaciones-traje-bombero-licitaciones' },
+              { label: 'Cobertura nacional', desc: 'Entrega y servicio en los 32 estados', href: '/cobertura' },
+              { label: 'Conoce la empresa', desc: 'Quiénes somos, cobertura y certificaciones', href: '/empresa' },
+            ].map((l) => (
+              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+                <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
+                  <span class="flex flex-col gap-0.5">
+                    <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
+                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
+                  </span>
+                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#4A7599" stroke-width="2.5" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
+                  </svg>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
 </BaseLayout>
+
+<style>
+  .cap-card:hover { border-color: rgba(247, 80, 0, 0.45) !important; }
+  details.faq-item summary { list-style: none; }
+  details.faq-item summary::-webkit-details-marker { display: none; }
+  details.faq-item[open] .faq-icon { transform: rotate(45deg); }
+</style>

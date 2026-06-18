@@ -1,0 +1,454 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import QuickLinksBar from '@components/common/QuickLinksBar.astro';
+import { trajesBombero, categories } from '@data/categories';
+import { featuredProducts } from '@data/products';
+import { SITE, whatsappUrl } from '@data/site';
+
+const cat = trajesBombero;
+const canonicalURL = `${SITE.url}/productos/trajes-bombero`;
+
+const seoMeta = {
+  title: `Trajes para Bomberos NFPA 1970 y 1977 — Globe, Lion, MSA`,
+  description: cat.description,
+  canonicalURL,
+};
+
+/* Producto real con ficha L4 */
+const productos = featuredProducts.filter((p) => p.category === 'Trajes Bombero');
+
+/* Tipos de traje (educativo) */
+const tipos = [
+  {
+    title: 'Estructural',
+    norm: 'NFPA 1970',
+    accent: '#F75000',
+    desc: 'Combate de incendio dentro de edificios. Tres capas —shell, barrera de humedad y forro térmico— para calor radiante intenso, llama súbita y vapor a presión.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>`,
+  },
+  {
+    title: 'Proximidad',
+    norm: 'NFPA 1970',
+    accent: '#F5A623',
+    desc: 'Conjunto aluminizado que refleja el calor radiante. Para aproximación a fuegos de combustible, ARFF en aeropuertos, refinerías y fundiciones.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="5"/><path d="M12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>`,
+  },
+  {
+    title: 'Forestal',
+    norm: 'NFPA 1977',
+    accent: '#34D399',
+    desc: 'Monocapa ligera y transpirable para incendio de vegetación e interfaz. Privilegia movilidad y manejo del estrés por calor en jornadas largas.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 4 22h16L12 2z"/><path d="M12 8v8"/></svg>`,
+  },
+];
+
+/* Modelos / líneas */
+const modelos = [
+  ...productos.map((p) => ({
+    title: p.title,
+    norm: p.norm ?? 'NFPA 1970',
+    brand: p.brand,
+    desc: p.description,
+    href: p.href,
+    cta: 'Ver ficha técnica',
+    external: false,
+  })),
+  {
+    title: 'Lion TechGen / V-Force',
+    norm: 'NFPA 1970',
+    brand: 'Lion',
+    desc: 'Estructural de uso intensivo con excelente THL y opciones de protección CBRN. Disponible bajo pedido con asesoría de tallaje.',
+    href: whatsappUrl('Hola, quiero cotizar trajes Lion TechGen NFPA 1970.'),
+    cta: 'Cotizar',
+    external: true,
+  },
+  {
+    title: 'Trajes de proximidad aluminizados',
+    norm: 'NFPA 1970',
+    brand: 'ARFF',
+    desc: 'Conjunto reflejante para exposición radiante extrema: aeropuertos, combustibles y procesos calientes. Refleja gran parte del calor radiante.',
+    href: whatsappUrl('Hola, quiero cotizar trajes de proximidad aluminizados para ARFF.'),
+    cta: 'Cotizar',
+    external: true,
+  },
+  {
+    title: 'Trajes forestales NFPA 1977',
+    norm: 'NFPA 1977',
+    brand: 'Nomex IIIA',
+    desc: 'Camisola y pantalón ligeros y transpirables para incendio vegetal e interfaz, diseñados para jornadas largas con golpe de calor mínimo.',
+    href: whatsappUrl('Hola, quiero cotizar trajes forestales NFPA 1977.'),
+    cta: 'Cotizar',
+    external: true,
+  },
+];
+
+/* Tabla comparativa */
+const comparativa = [
+  ['Capas', '3 (shell + humedad + térmica)', '3 + shell aluminizado', '1 (monocapa FR)'],
+  ['Peso aprox.', '4–5 kg', '5–6 kg', '1.5–2.5 kg'],
+  ['Protección radiante', 'Alta', 'Muy alta (reflejante)', 'Moderada'],
+  ['Transpirabilidad', 'Baja', 'Baja', 'Alta'],
+  ['Escenario', 'Incendio en edificio', 'Combustibles · ARFF', 'Vegetación · interfaz'],
+  ['Norma', 'NFPA 1970', 'NFPA 1970', 'NFPA 1977'],
+];
+
+/* Guía de selección */
+const guia = [
+  { n: '01', t: 'Define el escenario dominante: estructura, aproximación a combustible o incendio forestal. La norma correcta (1970 o 1977) sale de ahí.' },
+  { n: '02', t: 'Exige certificación de tercera parte acreditada y la hoja de datos con valores THL y TPP del modelo exacto.' },
+  { n: '03', t: 'Verifica que la capucha incluya bloqueo de partículas — obligatorio bajo NFPA 1970.' },
+  { n: '04', t: 'Asegura tallaje S–4XL con asesoría de ajuste y el programa de inspección y mantenimiento NFPA 1850.' },
+];
+
+/* Artículos del blog relacionados */
+const articulos = [
+  { label: 'NFPA 1970: la nueva norma de trajes', desc: 'Qué cambió y cómo afecta tu compra', href: '/blog/nfpa-1970-nueva-norma-trajes-bombero' },
+  { label: 'Estructural, proximidad o forestal', desc: 'Cuál necesita tu brigada', href: '/blog/traje-estructural-proximidad-forestal-diferencias' },
+  { label: 'Anatomía de un traje de bombero', desc: 'Capas, materiales y marcas', href: '/blog/anatomia-traje-bombero-capas-materiales' },
+  { label: 'Inspección, cuidado y vida útil', desc: 'Guía NFPA 1850 y retiro a 10 años', href: '/blog/inspeccion-cuidado-vida-util-traje-bombero' },
+];
+
+/* FAQ */
+const faqs = [
+  { q: '¿Bajo qué norma debo comprar un traje estructural hoy?', a: 'Bajo NFPA 1970, la norma que desde 2024 consolidó a la NFPA 1971. Todo traje estructural nuevo debe estar certificado NFPA 1970 por laboratorio acreditado, con capucha de bloqueo de partículas incluida.' },
+  { q: '¿Cuánto dura un traje de bombero?', a: 'La NFPA 1850 establece un retiro máximo a los 10 años desde la fecha de fabricación, sin importar su apariencia. Antes de ese límite, se retira si hay daño, contaminación irreversible o falla de la barrera de humedad.' },
+  { q: '¿Qué tallas manejan y hacen ajuste a medida?', a: 'Manejamos tallas S–4XL con asesoría de ajuste. Para pedidos por volumen ofrecemos configuraciones a medida y entrega en 24–48 h en CDMX desde stock permanente.' },
+  { q: '¿Cuál es la diferencia entre traje estructural y de proximidad?', a: 'El estructural es para entrar al fuego en edificios; el de proximidad añade una capa aluminizada que refleja el calor radiante para aproximarse a fuegos de combustible (ARFF, refinerías) sin entrar directamente a la llama.' },
+  { q: '¿Entregan ficha técnica para licitación?', a: 'Sí. Cada traje incluye certificado de conformidad, ficha técnica del fabricante con THL/TPP y, para concursos públicos, el manifiesto de cumplimiento de norma por partida.' },
+];
+
+/* ─── JSON-LD ──────────────────────────────────────────────── */
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Productos', item: `${SITE.url}/productos` },
+    { '@type': 'ListItem', position: 3, name: 'Trajes para Bomberos', item: canonicalURL },
+  ],
+};
+
+const collectionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  '@id': `${canonicalURL}#collection`,
+  name: 'Trajes para Bomberos certificados NFPA 1970 y 1977',
+  description: cat.description,
+  url: canonicalURL,
+  inLanguage: 'es-MX',
+  isPartOf: { '@id': `${SITE.url}/#website` },
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: modelos.length,
+    itemListElement: modelos.map((m, i) => ({ '@type': 'ListItem', position: i + 1, name: m.title })),
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+
+const otrasCategorias = categories.slice(0, 6);
+---
+
+<BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema, faqSchema]}>
+
+  <!-- Breadcrumb -->
+  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+    <div class="container-site">
+      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:#4A7599">
+        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="/productos" class="hover:text-[#FF6B26]">Productos</a></li>
+        <li aria-hidden="true">/</li>
+        <li><span style="color:#94A3B8" aria-current="page">Trajes para Bomberos</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">
+    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
+
+    <div class="container-site relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div>
+          <span class="section-eyebrow mb-5 inline-flex">{cat.norm}</span>
+          <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+            Trajes para<br/>
+            <span style="color:#F75000">Bomberos</span>
+          </h1>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href={whatsappUrl('Hola, quiero cotizar trajes para bomberos.')} target="_blank" rel="noopener" class="btn btn-primary btn-lg">Cotizar por WhatsApp</a>
+            <a href="/cotizacion" class="btn btn-ghost btn-lg">Cotización formal</a>
+          </div>
+        </div>
+        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
+          {cat.intro.map((p) => (
+            <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">{p}</p>
+          ))}
+          <div class="flex flex-wrap gap-2">
+            {['NFPA 1970','NFPA 1977','NFPA 1850','PBI','Crosstech','Globe · Lion · MSA'].map(n => (
+              <span class="badge badge-dark font-display text-[10px]">{n}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)" aria-hidden="true"></div>
+  </section>
+
+  <!-- Accesos rápidos -->
+  <QuickLinksBar />
+
+  <!-- Tipos de traje -->
+  <section class="section" style="background:#040A12" aria-labelledby="tipos-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Tres tipos, tres físicas</span>
+          <h2 id="tipos-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            El traje correcto<br/>
+            <span style="color:#F75000">según el fuego.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+            No todos los incendios son iguales. Elegir entre estructural, proximidad o forestal
+            según el riesgo dominante de tu brigada es lo que separa una compra acertada de
+            una cara equivocación.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        {tipos.map((t) => (
+          <article class="flex flex-col gap-4 p-7" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
+            <div class="flex items-center justify-center rounded-full" style={`width:52px;height:52px;background:${t.accent}1a;border:1.5px solid ${t.accent}59;color:${t.accent}`}>
+              <span class="block" style="width:24px;height:24px" set:html={t.icon}/>
+            </div>
+            <div class="flex items-center justify-between gap-2">
+              <h3 class="font-display font-bold text-xl" style="color:#FFFFFF">{t.title}</h3>
+              <span class="badge badge-dark text-[9px]">{t.norm}</span>
+            </div>
+            <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{t.desc}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Modelos / líneas -->
+  <section class="section" style="background:#070E1A" aria-labelledby="modelos-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Modelos destacados</span>
+          <h2 id="modelos-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            Líneas que<br/>
+            <span style="color:#F75000">distribuimos.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+            Globe, Lion y MSA en tallas S–4XL con stock permanente en CDMX. ¿No ves un modelo
+            específico? Lo conseguimos directo de fábrica sobre especificación técnica.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        {modelos.map((m) => (
+          <article class="model-card group flex flex-col gap-3 p-6" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
+            <div class="flex gap-2 flex-wrap">
+              <span class="badge badge-fire">{m.norm}</span>
+              {m.brand && <span class="badge badge-dark">{m.brand}</span>}
+            </div>
+            <h3 class="font-display font-bold text-lg leading-snug" style="color:#FFFFFF">{m.title}</h3>
+            <p class="text-xs leading-relaxed" style="color:#64748B">{m.desc}</p>
+            <a href={m.href} target={m.external ? '_blank' : undefined} rel={m.external ? 'noopener' : undefined}
+               class="inline-flex items-center gap-2 mt-auto pt-2 text-xs font-display font-semibold uppercase tracking-wider group-hover:gap-3" style="color:#FF6B26;letter-spacing:0.08em">
+              {m.cta}
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Tabla comparativa -->
+  <section class="section" style="background:#040A12" aria-labelledby="comp-title">
+    <div class="container-site">
+      <div class="mb-10">
+        <span class="section-eyebrow mb-4 inline-flex">Comparativa</span>
+        <h2 id="comp-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          Estructural · Proximidad · <span style="color:#F75000">Forestal</span>
+        </h2>
+      </div>
+
+      <div class="overflow-x-auto" style="border:1px solid rgba(74,117,153,0.18)">
+        <table class="w-full border-collapse" style="min-width:640px">
+          <thead>
+            <tr style="background:#0C1825">
+              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:#4A7599;border-bottom:1px solid rgba(74,117,153,0.18)">Característica</th>
+              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:#FF6B26;border-bottom:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">Estructural</th>
+              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:#F5A623;border-bottom:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">Proximidad</th>
+              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:#34D399;border-bottom:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">Forestal</th>
+            </tr>
+          </thead>
+          <tbody>
+            {comparativa.map((row, i) => (
+              <tr style={`background:${i % 2 === 0 ? '#080F1A' : '#0A1320'}`}>
+                <td class="p-4 text-sm font-display font-semibold" style="color:#CBD5E1;border-bottom:1px solid rgba(74,117,153,0.12)">{row[0]}</td>
+                <td class="p-4 text-sm" style="color:#94A3B8;border-bottom:1px solid rgba(74,117,153,0.12);border-left:1px solid rgba(74,117,153,0.12)">{row[1]}</td>
+                <td class="p-4 text-sm" style="color:#94A3B8;border-bottom:1px solid rgba(74,117,153,0.12);border-left:1px solid rgba(74,117,153,0.12)">{row[2]}</td>
+                <td class="p-4 text-sm" style="color:#94A3B8;border-bottom:1px solid rgba(74,117,153,0.12);border-left:1px solid rgba(74,117,153,0.12)">{row[3]}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guía de selección + blog -->
+  <section class="section" style="background:#070E1A" aria-labelledby="guia-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Cómo elegir</span>
+          <h2 id="guia-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+            Del riesgo<br/>
+            <span style="color:#F75000">a la decisión.</span>
+          </h2>
+          <ol class="flex flex-col gap-4 list-none m-0 p-0">
+            {guia.map((s) => (
+              <li class="flex items-start gap-4">
+                <span class="font-display font-bold text-xl shrink-0" style="color:#F75000">{s.n}</span>
+                <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{s.t}</p>
+              </li>
+            ))}
+          </ol>
+          <div class="mt-8">
+            <a href={whatsappUrl('Hola, necesito asesoría para elegir trajes para mi brigada.')} target="_blank" rel="noopener" class="btn btn-primary">Pedir asesoría de tallaje</a>
+          </div>
+        </div>
+
+        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:#4A7599">
+            Aprende más en el blog
+          </h2>
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+            {articulos.map((l) => (
+              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+                <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
+                  <span class="flex flex-col gap-0.5">
+                    <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
+                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
+                  </span>
+                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#4A7599" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="background:#040A12" aria-labelledby="faq-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes</span>
+          <h2 id="faq-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+            Lo que más nos<br/>
+            <span style="color:#F75000">preguntan.</span>
+          </h2>
+          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+            ¿Tu duda no aparece? Escríbenos por WhatsApp con el detalle de tu operación y te
+            asesoramos sobre el traje y el tallaje correctos.
+          </p>
+        </div>
+        <div class="flex flex-col">
+          {faqs.map((f, i) => (
+            <details class="faq-item group" style={`border-top:1px solid rgba(74,117,153,0.18);${i === faqs.length - 1 ? 'border-bottom:1px solid rgba(74,117,153,0.18);' : ''}`}>
+              <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer">
+                <span class="font-display font-semibold text-sm" style="color:#FFFFFF">{f.q}</span>
+                <span class="faq-icon font-display font-bold text-xl shrink-0" style="color:#FF6B26">+</span>
+              </summary>
+              <p class="text-sm leading-relaxed pb-5 m-0" style="color:#94A3B8">{f.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cross-links + otras categorías -->
+  <section class="section" style="background:#070E1A" aria-labelledby="cross-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Equipa el conjunto completo</span>
+          <h2 id="cross-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+            El traje es<br/>
+            <span style="color:#F75000">solo una capa.</span>
+          </h2>
+          <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
+            Un bombero protegido necesita casco, SCBA, guantes y botas certificados — y un
+            programa que mantenga todo vigente. Armamos el conjunto completo con un solo proveedor.
+          </p>
+          <a href={whatsappUrl('Hola, quiero equipar el conjunto completo de EPP para mi brigada.')} target="_blank" rel="noopener" class="btn btn-primary">Cotizar conjunto completo</a>
+        </div>
+        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:#4A7599">
+            También te puede servir
+          </h2>
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+            {[
+              { label: 'Cascos NFPA', desc: 'MSA Gallet, Bullard y Cairns', href: '/productos/cascos-nfpa' },
+              { label: 'Equipos SCBA', desc: 'MSA G1, Dräger y 3M Scott', href: '/productos/equipos-scba' },
+              { label: 'Inspección y mantenimiento', desc: 'Lavado y reparación NFPA 1850', href: '/servicios/mantenimiento' },
+              { label: 'Normas y certificaciones', desc: 'NFPA 1970, 1977 y 1850', href: '/certificaciones' },
+              { label: 'Soporte para licitaciones', desc: 'Fichas y manifiestos por partida', href: '/licitaciones' },
+            ].map((l) => (
+              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+                <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
+                  <span class="flex flex-col gap-0.5">
+                    <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
+                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
+                  </span>
+                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#4A7599" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <!-- Otras categorías -->
+      <div class="mt-14 pt-10" style="border-top:1px solid rgba(74,117,153,0.15)">
+        <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-6" style="color:#4A7599">Otras categorías del catálogo</h2>
+        <div class="flex flex-wrap gap-3">
+          {otrasCategorias.map((c) => (
+            <a href={`/productos/${c.slug}`} class="btn btn-sm btn-dark">{c.label}</a>
+          ))}
+          <a href="/productos" class="btn btn-sm btn-outline">Catálogo completo →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .model-card:hover { border-color: rgba(247, 80, 0, 0.45) !important; }
+  details.faq-item summary { list-style: none; }
+  details.faq-item summary::-webkit-details-marker { display: none; }
+  details.faq-item[open] .faq-icon { transform: rotate(45deg); }
+</style>

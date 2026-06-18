@@ -1,74 +1,219 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
+import { SITE, whatsappUrl } from '@data/site';
+
+const canonicalURL = `${SITE.url}/nosotros`;
+
+const seoMeta = {
+  title: `Sobre FIREFIGHTERS MX — Equipo para Bomberos`,
+  description:
+    'Conoce FIREFIGHTERS MX: 15+ años equipando bomberos, industria y protección civil. 500+ estaciones, distribuidor autorizado y cobertura en los 32 estados.',
+  canonicalURL,
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Empresa', item: `${SITE.url}/empresa` },
+    { '@type': 'ListItem', position: 3, name: 'Nosotros', item: canonicalURL },
+  ],
+};
+
+const figures = [
+  { value: '15+', label: 'Años de especialización', text: 'Una década y media enfocados en el sector bomberos, industria y protección civil.' },
+  { value: '500+', label: 'Estaciones equipadas', text: 'Desde cuerpos municipales hasta brigadas de PEMEX y CFE.' },
+  { value: '32', label: 'Estados con cobertura', text: 'Logística y servicio en sitio en toda la República Mexicana.' },
+  { value: '100%', label: 'Equipo certificado', text: 'Todo cumple NFPA, NOM-002-STPS y normativa vigente.' },
+];
+
+const pillars = [
+  {
+    title: 'Misión',
+    text: 'Ser el proveedor integral más confiable de equipo para bomberos y sistemas contra incendio en México, garantizando que cada responder tenga el equipo certificado que merece.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>`,
+  },
+  {
+    title: 'Visión',
+    text: 'Ser el referente iberoamericano del sector bomberos hacia 2028, ampliando cobertura y siendo fuente de autoridad técnica para la industria de la protección contra incendio.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>`,
+  },
+  {
+    title: 'Valores',
+    text: 'Seguridad ante todo. Honestidad técnica. Servicio de excelencia. Compromiso con la vida. Respeto absoluto a las normas que protegen a quienes nos protegen.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+  },
+];
+
+const razones = [
+  { title: 'Especialización real', desc: 'No somos una ferretería que también vende extintores: vivimos del sector bomberos, protección civil e industria.' },
+  { title: 'Distribuidor autorizado', desc: 'Representamos de forma oficial a las marcas líderes del mundo, con garantía y refacciones respaldadas.' },
+  { title: 'Documentación que cumple', desc: 'Cada entrega llega con certificados, fichas técnicas y manifiestos listos para STPS, Protección Civil o tu aseguradora.' },
+  { title: 'Un ejecutivo por cuenta', desc: 'Una persona responsable de tu proyecto, no un conmutador: seguimiento de principio a fin.' },
+];
 ---
-<BaseLayout
-  title="Nosotros — FIREFIGHTERS MX"
-  description="Conoce FIREFIGHTERS MX, el portal líder en equipos para bomberos en México. Más de 15 años especializados, 500+ estaciones equipadas, cobertura en los 32 estados."
->
-  <!-- HERO -->
-  <section class="bg-gradient-fire py-20 md:py-28">
-    <div class="container-site text-center text-white">
-      <p class="section-eyebrow text-fire-300 mb-3">Nuestra Historia</p>
-      <h1 class="section-title text-white mb-6">El Portal Líder de Equipos para Bomberos en México</h1>
-      <p class="section-subtitle text-fire-200 mx-auto">
-        Más de 15 años dedicados a equipar y proteger a quienes nos protegen.
-        Distribuidores autorizados de las marcas más confiables del mundo.
-      </p>
+
+<BaseLayout {...seoMeta} schema={[breadcrumbSchema]}>
+
+  <!-- Breadcrumb -->
+  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+    <div class="container-site">
+      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:#4A7599">
+        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="/empresa" class="hover:text-[#FF6B26]">Empresa</a></li>
+        <li aria-hidden="true">/</li>
+        <li><span style="color:#94A3B8" aria-current="page">Nosotros</span></li>
+      </ol>
     </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">
+    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
+
+    <div class="container-site relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div>
+          <span class="section-eyebrow mb-5 inline-flex">Nuestra historia</span>
+          <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+            Equipamos a<br/>
+            <span style="color:#F75000">quienes nos protegen</span>
+          </h1>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href={whatsappUrl('Hola, quiero conocer más sobre FIREFIGHTERS MX.')} target="_blank" rel="noopener" class="btn btn-primary btn-lg">Hablar por WhatsApp</a>
+            <a href="/contacto" class="btn btn-ghost btn-lg">Contáctanos</a>
+          </div>
+        </div>
+        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
+          <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">
+            Llevamos más de 15 años dedicados a una sola cosa:
+            <strong style="color:#CBD5E1">poner el equipo certificado correcto en manos de bomberos,
+            brigadas industriales y protección civil</strong> en todo México. Somos distribuidores
+            autorizados de las marcas más confiables del mundo.
+          </p>
+          <p class="text-sm leading-[1.9] mb-6" style="color:#64748B">
+            En ese camino hemos equipado a más de 500 estaciones, desde cuerpos municipales con
+            presupuesto ajustado hasta brigadas de PEMEX y CFE — siempre con la misma exigencia
+            de norma, calidad y documentación auditable.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {['NFPA','ISO 9001','NOM-002-STPS','UL Listed','STPS'].map(n => (
+              <span class="badge badge-dark font-display text-[10px]">{n}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)" aria-hidden="true"></div>
   </section>
-  <!-- Accesos rápidos (interlinking) -->
+
+  <!-- Accesos rápidos -->
   <QuickLinksBar />
 
-
-  <!-- MISIÓN, VISIÓN, VALORES -->
-  <section class="section bg-white">
-    <div class="container-site grid md:grid-cols-3 gap-8">
-      {[
-        { icon: "🎯", title: "Misión", text: "Ser el proveedor integral más confiable de equipos para bomberos y sistemas contra incendio en México, garantizando que cada héroe tenga el equipo certificado que merece." },
-        { icon: "🔭", title: "Visión", text: "Convertirnos en el portal de referencia iberoamericano del sector bomberos para 2028, expandiendo nuestra cobertura hacia Centroamérica y siendo fuente de autoridad técnica para la industria." },
-        { icon: "💎", title: "Valores", text: "Seguridad ante todo. Honestidad técnica. Servicio de excelencia. Compromiso con la vida. Innovación constante. Respeto a las normas." },
-      ].map((item) => (
-        <div class="card-fire p-8 text-center flex flex-col items-center gap-4">
-          <span class="text-4xl">{item.icon}</span>
-          <h2 class="font-heading font-bold text-xl text-dark-900">{item.title}</h2>
-          <p class="text-dark-500 text-sm leading-relaxed">{item.text}</p>
-        </div>
-      ))}
-    </div>
-  </section>
-
-  <!-- TRAYECTORIA -->
-  <section class="section bg-dark-50">
-    <div class="container-site max-w-3xl">
-      <h2 class="section-title text-center mb-12">Por Qué Elegirnos</h2>
-      <div class="flex flex-col gap-6">
-        {[
-          { year: "15+", title: "Años de especialización", desc: "Más de una década y media en el sector bomberos, protección civil e industria." },
-          { year: "500+", title: "Estaciones equipadas", desc: "Desde cuerpos municipales con presupuesto ajustado hasta brigadas de PEMEX y CFE." },
-          { year: "32", title: "Estados con cobertura", desc: "Red de distribuidores y logística para envíos a toda la República Mexicana." },
-          { year: "100%", title: "Productos certificados", desc: "Todos los equipos cumplen con NFPA, NOM-002 y normativa STPS vigente." },
-        ].map((item) => (
-          <div class="flex gap-6 items-start">
-            <div class="w-20 shrink-0 text-3xl font-heading font-black text-fire-700 text-right">{item.year}</div>
-            <div class="border-l-2 border-fire-200 pl-6">
-              <h3 class="font-bold text-dark-900 mb-1">{item.title}</h3>
-              <p class="text-dark-500 text-sm">{item.desc}</p>
-            </div>
+  <!-- Cifras -->
+  <section class="section-tight" style="background:#070E1A" aria-label="La empresa en cifras">
+    <div class="container-site">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style="border:1px solid rgba(74,117,153,0.18)">
+        {figures.map((f, i) => (
+          <div class="flex flex-col gap-2 p-6" style={`background:#0C1825;${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.18);' : ''}`}>
+            <span class="font-display font-bold" style="color:#F75000;font-size:2.25rem;line-height:1">{f.value}</span>
+            <h2 class="font-display font-bold text-sm uppercase tracking-wider" style="color:#FFFFFF">{f.label}</h2>
+            <p class="text-xs leading-relaxed" style="color:#64748B">{f.text}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="section bg-gradient-fire">
-    <div class="container-site text-center text-white">
-      <h2 class="font-heading font-black text-3xl md:text-4xl mb-6">¿Listo para equiparte con los mejores?</h2>
-      <div class="flex flex-wrap justify-center gap-4">
-        <a href="/cotizacion" class="btn-gold btn-lg">Solicitar cotización</a>
-        <a href="/contacto" class="btn bg-white/10 border-2 border-white text-white hover:bg-white/20 btn-lg">Contáctanos</a>
+  <!-- Misión · Visión · Valores -->
+  <section class="section" style="background:#040A12" aria-labelledby="mvv-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Lo que nos mueve</span>
+          <h2 id="mvv-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            Misión, visión<br/>
+            <span style="color:#F75000">y valores.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+            Equipar a quien arriesga su vida no admite atajos. Estos principios definen cómo
+            seleccionamos producto, cómo asesoramos y cómo respondemos cuando una brigada nos necesita.
+          </p>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        {pillars.map((p) => (
+          <div class="flex flex-col gap-4 p-7" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
+            <div class="flex items-center justify-center rounded-full" style="width:52px;height:52px;background:rgba(247,80,0,0.1);border:1.5px solid rgba(247,80,0,0.35);color:#FF6B26">
+              <span class="block" style="width:24px;height:24px" set:html={p.icon}/>
+            </div>
+            <h3 class="font-display font-bold text-xl" style="color:#FFFFFF">{p.title}</h3>
+            <p class="text-sm leading-relaxed" style="color:#94A3B8">{p.text}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
+
+  <!-- Por qué elegirnos + cross-links -->
+  <section class="section" style="background:#070E1A" aria-labelledby="porque-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Por qué elegirnos</span>
+          <h2 id="porque-title" class="font-display font-bold mb-8" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+            La diferencia está<br/>
+            <span style="color:#F75000">en el detalle.</span>
+          </h2>
+          <ul class="flex flex-col gap-5 list-none m-0 p-0">
+            {razones.map((r) => (
+              <li class="flex items-start gap-4">
+                <svg class="w-5 h-5 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="#FF6B26" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <div>
+                  <h3 class="font-display font-semibold text-base mb-1" style="color:#FFFFFF">{r.title}</h3>
+                  <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{r.desc}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+          <div class="flex flex-col sm:flex-row gap-3 mt-8">
+            <a href="/cotizacion" class="btn btn-primary">Solicitar cotización</a>
+          </div>
+        </div>
+
+        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:#4A7599">
+            También te puede servir
+          </h2>
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+            {[
+              { label: 'Catálogo de productos', desc: 'Equipo certificado NFPA y NOM en 9 categorías', href: '/productos' },
+              { label: 'Certificaciones', desc: 'Las normas que avalan nuestro equipo', href: '/certificaciones' },
+              { label: 'Cobertura nacional', desc: 'Entrega y servicio en los 32 estados', href: '/cobertura' },
+              { label: 'Marcas que distribuimos', desc: 'Globe, MSA, Dräger, Holmatro y más', href: '/marcas' },
+              { label: 'Volver a la empresa', desc: 'Visión general de FIREFIGHTERS MX', href: '/empresa' },
+            ].map((l) => (
+              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+                <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
+                  <span class="flex flex-col gap-0.5">
+                    <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
+                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
+                  </span>
+                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#4A7599" stroke-width="2.5" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
+                  </svg>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </BaseLayout>

@@ -1,10 +1,10 @@
 ---
-title: "Traje Estructural Globe GX-7 NFPA 1971:2018"
-description: "Traje de combate estructural Globe GX-7 certificado NFPA 1971:2018. Shell DuPont Nomex NXT, barrera Crosstech, forro PBI/Kevlar. Disponible en tallas S–3XL."
+title: "Traje Estructural Globe GX-7 NFPA 1970"
+description: "Traje de combate estructural Globe GX-7 certificado NFPA 1970. Shell DuPont Nomex NXT, barrera Crosstech, forro PBI/Kevlar. Disponible en tallas S–3XL."
 category: "Trajes Bombero"
 brand: "Globe Manufacturing"
 model: "GX-7"
-norm: "NFPA 1971:2018"
+norm: "NFPA 1970"
 sku: "GLB-GX7-001"
 image: "/images/productos/globe-gx7-traje-bombero.webp"
 images:
@@ -12,7 +12,7 @@ images:
   - "/images/productos/globe-gx7-posterior.webp"
   - "/images/productos/globe-gx7-detalle.webp"
 features:
-  - "Certificación NFPA 1971:2018 — Edición vigente"
+  - "Certificación NFPA 1970 — Edición vigente"
   - "Shell externo: DuPont™ Nomex® NXT (7.5 oz/yd²)"
   - "Barrera de humedad: Gore Crosstech® Black (resistencia CBRN)"
   - "Forro térmico: Caldura® XT + malla interior Nomex®"
@@ -22,7 +22,7 @@ features:
   - "Compatible con arnés SCBA y sistemas de iluminación"
   - "Tallas disponibles: S, M, L, XL, 2XL, 3XL"
 specs:
-  "Norma": "NFPA 1971:2018"
+  "Norma": "NFPA 1970"
   "Shell": "Nomex NXT 7.5 oz"
   "Barrera": "Gore Crosstech Black"
   "Forro": "Caldura XT"

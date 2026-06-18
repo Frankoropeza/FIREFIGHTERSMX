@@ -2,37 +2,132 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import { brands } from '@data/brands';
+import { SITE, whatsappUrl } from '@data/site';
+
+const canonicalURL = `${SITE.url}/marcas`;
+
+const seoMeta = {
+  title: `Marcas de Equipo para Bomberos — FIREFIGHTERS MX`,
+  description:
+    'Distribuidores autorizados de MSA Safety, Dräger, 3M Scott, Globe, Holmatro, Bullard, Honeywell y más marcas líderes en equipo para bomberos. Cotización en 24 h.',
+  canonicalURL,
+};
+
+/* ─── JSON-LD ──────────────────────────────────────────────── */
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Marcas', item: canonicalURL },
+  ],
+};
 ---
-<BaseLayout
-  title="Marcas de Equipo para Bomberos — FIREFIGHTERS MX"
-  description="Distribuidores autorizados de MSA Safety, Dräger, 3M Scott, Globe Manufacturing, Holmatro, Bullard, Honeywell y más marcas líderes en equipos para bomberos en México."
->
-  <section class="bg-gradient-fire py-20">
-    <div class="container-site text-center text-white">
-      <h1 class="section-title text-white mb-6">Marcas que Distribuimos</h1>
-      <p class="section-subtitle text-fire-200 mx-auto">
-        Distribuidores autorizados de los fabricantes más reconocidos a nivel mundial
-        en equipos de protección personal y sistemas contra incendio.
-      </p>
+
+<BaseLayout {...seoMeta} schema={[breadcrumbSchema]}>
+
+  <!-- Breadcrumb -->
+  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+    <div class="container-site">
+      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:#4A7599">
+        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li aria-hidden="true">/</li>
+        <li><span style="color:#94A3B8" aria-current="page">Marcas</span></li>
+      </ol>
     </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">
+    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
+
+    <div class="container-site relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+        <div>
+          <span class="section-eyebrow mb-5 inline-flex">Distribuidores autorizados</span>
+          <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+            Marcas que<br/>
+            <span style="color:#F75000">Distribuimos</span>
+          </h1>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a
+              href={whatsappUrl('Hola, quiero información sobre las marcas que distribuyen.')}
+              target="_blank" rel="noopener"
+              class="btn btn-primary btn-lg"
+            >
+              Consultar por WhatsApp
+            </a>
+            <a href="/cotizacion" class="btn btn-ghost btn-lg">Solicitar cotización</a>
+          </div>
+        </div>
+
+        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
+          <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">
+            Distribuidores autorizados de los <strong style="color:#CBD5E1">fabricantes más reconocidos
+            a nivel mundial en equipos de protección personal y sistemas contra incendio</strong>:
+            MSA Safety, Dräger, 3M Scott, Globe Manufacturing, Holmatro, Bullard, Honeywell y más.
+          </p>
+          <p class="text-sm leading-[1.9] mb-6" style="color:#64748B">
+            Cada equipo se entrega con número de serie verificable, certificado de laboratorio
+            acreditado y ficha técnica lista para licitación, auditoría STPS o expediente de
+            Protección Civil — bajo las normas NFPA 1970 (antes 1971) y NOM aplicables.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {['MSA','Dräger','3M Scott','Globe','Holmatro','NFPA 1970'].map(n => (
+              <span class="badge badge-dark font-display text-[10px]">{n}</span>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)" aria-hidden="true"></div>
   </section>
+
   <!-- Accesos rápidos (interlinking) -->
   <QuickLinksBar />
 
-  <section class="section bg-white">
+  <!-- Marcas -->
+  <section class="section" style="background:#040A12" aria-labelledby="marcas-title">
     <div class="container-site">
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {brands.map((brand) => (
-          <div class="card p-6 flex items-start gap-4">
-            <span class="text-3xl shrink-0">{brand.emoji}</span>
-            <div>
-              <h3 class="font-heading font-bold text-dark-900 mb-1">{brand.name}</h3>
-              <p class="text-dark-500 text-sm">{brand.description}</p>
-              {brand.country && <span class="badge-dark mt-2 inline-block">{brand.country}</span>}
-            </div>
-          </div>
-        ))}
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Fabricantes</span>
+          <h2 id="marcas-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            Marcas líderes,<br/>
+            <span style="color:#F75000">respaldo de fábrica.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+            Trabajamos directo con los fabricantes más reconocidos del sector para garantizar
+            equipo original, repuestos verificables y soporte técnico. Si no encuentras una marca
+            específica, la conseguimos: manejamos pedidos especiales sobre especificación técnica.
+          </p>
+        </div>
       </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
+        {brands.map((brand) => {
+          const monogram = brand.name.replace(/[^A-Za-z0-9]/g, '').charAt(0).toUpperCase();
+          const country = brand.country?.replace(/[\u{1F1E6}-\u{1F1FF}]/gu, '').trim();
+          return (
+            <div class="grid-cell flex items-start gap-4 p-6">
+              <span class="flex items-center justify-center rounded-full shrink-0 font-display font-bold" style="width:48px;height:48px;background:rgba(247,80,0,0.1);border:1.5px solid rgba(247,80,0,0.35);color:#FF6B26;font-size:1.25rem">{monogram}</span>
+              <div>
+                <h3 class="font-display font-bold mb-1" style="color:#FFFFFF">{brand.name}</h3>
+                <p class="text-sm leading-relaxed" style="color:#64748B">{brand.description}</p>
+                {country && <span class="badge badge-dark mt-3 inline-block">{country}</span>}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
     </div>
   </section>
+
 </BaseLayout>

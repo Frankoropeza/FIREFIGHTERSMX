@@ -1,4 +1,5 @@
 ---
+import { SITE } from '@data/site';
 export interface Props {
   title: string;
   description: string;
@@ -39,10 +40,10 @@ const orgSchema = {
     availableLanguage: 'Spanish',
   },
   sameAs: [
-    'https://www.facebook.com/firefightersmx',
-    'https://www.instagram.com/firefightersmx',
-    'https://www.linkedin.com/company/firefightersmx',
-    'https://www.youtube.com/@firefightersmx',
+    SITE.social.facebook,
+    SITE.social.instagram,
+    SITE.social.linkedin,
+    SITE.social.youtube,
   ],
 };
 ---

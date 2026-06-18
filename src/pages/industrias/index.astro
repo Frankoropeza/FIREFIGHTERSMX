@@ -105,7 +105,7 @@ const trustPoints = [
             Protección Civil, AFAC, ASEA, COFEPRIS o el órgano fiscalizador de tu municipio.
           </p>
           <div class="flex flex-wrap gap-2">
-            {['NOM-002-STPS','NFPA 1971','NFPA 403','NFPA 101','ASEA','NOM-023-STPS'].map(n => (
+            {['NOM-002-STPS','NFPA 1970','NFPA 403','NFPA 101','ASEA','NOM-023-STPS'].map(n => (
               <span class="badge badge-dark font-display text-[10px]">{n}</span>
             ))}
           </div>
@@ -235,8 +235,9 @@ const trustPoints = [
               { label: 'Catálogo de productos', desc: 'Equipo certificado NFPA y NOM en 9 categorías', href: '/productos' },
               { label: 'Servicios profesionales', desc: 'Capacitación, mantenimiento, instalación y auditoría', href: '/servicios' },
               { label: 'Guía de normas y certificaciones', desc: 'Qué NOM y NFPA aplican según tu giro', href: '/certificaciones' },
-              { label: 'Soporte para licitaciones', desc: 'CompraNet, PEMEX, CFE y gobiernos', href: '/servicios/licitaciones' },
+              { label: 'Soporte para licitaciones', desc: 'CompraNet, PEMEX, CFE y municipios', href: '/licitaciones' },
               { label: 'Cobertura nacional', desc: 'Entrega y servicio en los 32 estados', href: '/cobertura' },
+              { label: 'Conoce la empresa', desc: 'Quiénes somos, cobertura y certificaciones', href: '/empresa' },
             ].map((l) => (
               <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
                 <a href={l.href} class="group flex items-center justify-between gap-4 py-4">

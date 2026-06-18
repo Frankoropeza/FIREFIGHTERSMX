@@ -8,6 +8,14 @@ export const SITE = {
   phoneE164:   '+525512345678',
   email:       'contacto@firefightersmx.com',
   whatsapp:    '525512345678',
+  hours:       'Lun–Vie 8am–6pm · Sáb 9am–2pm',
+  social: {
+    facebook:  'https://facebook.com/firefightersmx',
+    instagram: 'https://instagram.com/firefightersmx',
+    linkedin:  'https://linkedin.com/company/firefightersmx',
+    youtube:   'https://youtube.com/@firefightersmx',
+    twitter:   '@firefightersmx',
+  },
   yearsInMarket: 15,
   locale: 'es-MX',
 } as const;

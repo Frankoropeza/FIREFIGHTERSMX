@@ -13,21 +13,21 @@ export interface Product {
 export const featuredProducts: Product[] = [
   {
     slug: "traje-estructural-nfpa-1971",
-    title: "Traje Estructural Globe GX-7 NFPA 1971",
-    description: "Traje de combate estructural certificado NFPA 1971:2018, 3 capas (externa DuPont™ Nomex® NXT, barrera de humedad Crosstech®, forro PBI/Kevlar®). Costuras de doble aguja reforzadas.",
+    title: "Traje Estructural Globe GX-7 NFPA 1970",
+    description: "Traje de combate estructural certificado NFPA 1970, 3 capas (externa DuPont™ Nomex® NXT, barrera de humedad Crosstech®, forro PBI/Kevlar®). Costuras de doble aguja reforzadas.",
     category: "Trajes Bombero",
     brand: "Globe Manufacturing",
-    norm: "NFPA 1971",
+    norm: "NFPA 1970",
     badge: "Más vendido",
     href: "/productos/trajes-bombero/globe-gx7-estructural-nfpa-1971",
   },
   {
     slug: "scba-msa-g1",
-    title: "SCBA MSA G1 30 min NFPA 1981",
-    description: "Equipo de aire autónomo MSA G1, cilindro de fibra de carbono 4500 psi, 30 minutos autonomía, válvula EOSTI integrada, compatible NFPA 1981:2019 Ed.",
+    title: "SCBA MSA G1 30 min NFPA 1970",
+    description: "Equipo de aire autónomo MSA G1, cilindro de fibra de carbono 4500 psi, 30 minutos autonomía, válvula EOSTI integrada, compatible NFPA 1970 Ed.",
     category: "Equipos SCBA",
     brand: "MSA Safety",
-    norm: "NFPA 1981",
+    norm: "NFPA 1970",
     href: "/productos/equipos-scba/msa-g1-scba-30min",
   },
   {
@@ -50,11 +50,11 @@ export const featuredProducts: Product[] = [
   },
   {
     slug: "casco-msa-gallet-f1-nfpa",
-    title: "Casco MSA Gallet F1 XF NFPA 1971",
-    description: "Casco estructural certificado NFPA 1971:2018. Cuerpo de fibra de vidrio, protector facial integrado Optrel, talla única ajustable, peso 1.35 kg.",
+    title: "Casco MSA Gallet F1 XF NFPA 1970",
+    description: "Casco estructural certificado NFPA 1970. Cuerpo de fibra de vidrio, protector facial integrado Optrel, talla única ajustable, peso 1.35 kg.",
     category: "Cascos NFPA",
     brand: "MSA Safety",
-    norm: "NFPA 1971",
+    norm: "NFPA 1970",
     href: "/productos/cascos-nfpa/msa-gallet-f1xf",
   },
   {

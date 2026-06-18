@@ -1,28 +1,126 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
+import { SITE, whatsappUrl } from '@data/site';
+
+const canonicalURL = `${SITE.url}/cotizacion`;
+
+const seoMeta = {
+  title: `Solicitar Cotización de Equipo para Bomberos — FFMX`,
+  description:
+    'Solicita tu cotización de equipo para bomberos: trajes NFPA, cascos, SCBA, herramientas de rescate y sistemas CI. Propuesta técnica en menos de 2 horas hábiles.',
+  canonicalURL,
+};
+
+const categorias = [
+  'Trajes para Bomberos',
+  'Cascos NFPA',
+  'Equipos SCBA',
+  'Herramientas Rescate',
+  'Extintores',
+  'Sistemas CI',
+  'Cámaras Térmicas',
+  'HAZMAT',
+  'Drones',
+  'Capacitación',
+  'Mantenimiento',
+  'Licitación',
+];
+
+/* ─── JSON-LD ──────────────────────────────────────────────── */
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Cotización', item: canonicalURL },
+  ],
+};
 ---
-<BaseLayout
-  title="Solicitar Cotización — FIREFIGHTERS MX"
-  description="Solicita tu cotización de equipos para bomberos en FIREFIGHTERS MX. Trajes NFPA, SCBA, herramientas de rescate, sistemas CI. Respuesta en menos de 2 horas."
->
-  <section class="bg-gradient-fire py-16">
-    <div class="container-site text-center text-white">
-      <h1 class="section-title text-white mb-4">Solicitar Cotización</h1>
-      <p class="section-subtitle text-fire-200 mx-auto">
-        Propuestas técnicas personalizadas en menos de 2 horas en días hábiles.
-        Incluye fichas técnicas para licitaciones.
-      </p>
+
+<BaseLayout {...seoMeta} schema={[breadcrumbSchema]}>
+
+  <!-- Breadcrumb -->
+  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+    <div class="container-site">
+      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:#4A7599">
+        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li aria-hidden="true">/</li>
+        <li><span style="color:#94A3B8" aria-current="page">Cotización</span></li>
+      </ol>
     </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">
+    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
+
+    <div class="container-site relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+        <div>
+          <span class="section-eyebrow mb-5 inline-flex">Respuesta en menos de 2 horas</span>
+          <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+            Solicitar<br/>
+            <span style="color:#F75000">Cotización</span>
+          </h1>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="#formulario" class="btn btn-primary btn-lg">Llenar formulario</a>
+            <a
+              href={whatsappUrl('Hola, quiero solicitar una cotización de equipo para bomberos.')}
+              target="_blank" rel="noopener"
+              class="btn btn-ghost btn-lg"
+            >
+              Cotizar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
+          <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">
+            Solicita tu cotización de equipos para bomberos en FIREFIGHTERS MX:
+            <strong style="color:#CBD5E1">trajes NFPA, SCBA, herramientas de rescate y sistemas
+            contra incendio</strong>. Propuestas técnicas personalizadas en menos de 2 horas en
+            días hábiles.
+          </p>
+          <p class="text-sm leading-[1.9] mb-6" style="color:#64748B">
+            Cada propuesta incluye fichas técnicas listas para licitaciones, normas aplicables
+            y tiempos de entrega en firme. Cuéntanos qué necesitas y arma tu requerimiento
+            categoría por categoría.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)" aria-hidden="true"></div>
   </section>
+
   <!-- Accesos rápidos (interlinking) -->
   <QuickLinksBar />
 
+  <!-- Formulario -->
+  <section id="formulario" class="section" style="background:#070E1A" aria-labelledby="formulario-title">
+    <div class="container-site">
 
-  <section class="section bg-dark-50">
-    <div class="container-site max-w-3xl">
-      <div class="card p-8 md:p-12">
-        <form method="POST" action="/api/cotizacion" class="flex flex-col gap-6" novalidate>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Cuéntanos tu necesidad</span>
+          <h2 id="formulario-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            Tu cotización,<br/>
+            <span style="color:#F75000">en marcha.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+            Propuestas técnicas personalizadas en menos de 2 horas en días hábiles.
+            Incluye fichas técnicas para licitaciones.
+          </p>
+        </div>
+      </div>
+
+      <div class="max-w-3xl" style="background:#0C1825;border:1px solid rgba(74,117,153,0.18);padding:2rem">
+        <form data-wa-form data-wa={SITE.whatsapp} method="POST" action="/api/cotizacion" class="flex flex-col gap-6">
           <div class="grid sm:grid-cols-2 gap-5">
             <div>
               <label for="nombre" class="label">Nombre completo *</label>
@@ -61,9 +159,9 @@ import QuickLinksBar from '@components/common/QuickLinksBar.astro';
           <div>
             <label class="label">Categorías de equipo de interés</label>
             <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-2">
-              {["Trajes para Bomberos","Cascos NFPA","Equipos SCBA","Herramientas Rescate","Extintores","Sistemas CI","Cámaras Térmicas","HAZMAT","Drones","Capacitación","Mantenimiento","Licitación"].map((cat) => (
-                <label class="flex items-center gap-2 cursor-pointer text-sm text-dark-600">
-                  <input type="checkbox" name="categorias" value={cat} class="rounded border-dark-300 text-fire-700 focus:ring-fire-700"/>
+              {categorias.map((cat) => (
+                <label class="flex items-center gap-2 cursor-pointer text-sm" style="color:#94A3B8">
+                  <input type="checkbox" name="categorias" value={cat} class="rounded" style="accent-color:#F75000"/>
                   {cat}
                 </label>
               ))}
@@ -90,10 +188,10 @@ import QuickLinksBar from '@components/common/QuickLinksBar.astro';
               <option>Gobierno / Licitación pública</option>
             </select>
           </div>
-          <button type="submit" class="btn-primary btn-lg w-full mt-2">
+          <button type="submit" class="btn btn-primary btn-lg w-full mt-2">
             Enviar solicitud de cotización gratuita
           </button>
-          <p class="text-dark-400 text-xs text-center">
+          <p class="text-xs text-center" style="color:#64748B">
             Recibirás tu cotización en menos de 2 horas en días hábiles.
             Tus datos están protegidos y nunca serán compartidos.
           </p>
@@ -101,4 +199,31 @@ import QuickLinksBar from '@components/common/QuickLinksBar.astro';
       </div>
     </div>
   </section>
+
+  <script>
+    // Envío sin backend → arma un mensaje de WhatsApp con los campos del formulario.
+    document.querySelectorAll('form[data-wa-form]').forEach((form) => {
+      const f = form as HTMLFormElement;
+      if (f.dataset.bound) return;
+      f.dataset.bound = '1';
+      f.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (!f.reportValidity()) return;
+        const num = f.getAttribute('data-wa');
+        const fd = new FormData(f);
+        const lines: string[] = ['Hola FIREFIGHTERS MX, solicito una cotización:', ''];
+        for (const [name, value] of fd.entries()) {
+          const v = String(value).trim();
+          if (!v) continue;
+          const field = f.querySelector(`[name="${name}"]`) as HTMLElement | null;
+          const id = field?.id ?? '';
+          const labelEl = id ? f.querySelector(`label[for="${id}"]`) : null;
+          const label = labelEl?.textContent?.replace('*', '').trim() || name;
+          lines.push(`${label}: ${v}`);
+        }
+        const text = encodeURIComponent(lines.join('\n'));
+        window.open(`https://wa.me/${num}?text=${text}`, '_blank', 'noopener');
+      });
+    });
+  </script>
 </BaseLayout>

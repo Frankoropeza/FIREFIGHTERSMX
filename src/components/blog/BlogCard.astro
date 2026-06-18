@@ -1,4 +1,10 @@
 ---
+/**
+ * BlogCard — Design System v2 "Forge & Protect"
+ * Card oscura homologada con service-card. SIN fechas.
+ * - variant default: vertical (grid)
+ * - featured: horizontal (imagen 1/2 + contenido 1/2)
+ */
 import type { CollectionEntry } from 'astro:content';
 
 export interface Props {
@@ -7,19 +13,23 @@ export interface Props {
 }
 
 const { post, featured = false } = Astro.props;
-const { title, description, pubDate, author, category, tags, image } = post.data;
+const { title, description, category, tags, image } = post.data;
 const slug = post.slug;
-
-const formattedDate = new Intl.DateTimeFormat('es-MX', {
-  year: 'numeric', month: 'short', day: 'numeric',
-}).format(pubDate);
 
 const readingTime = Math.ceil(post.body.split(' ').length / 200);
 ---
 
-<article class={`blog-card ${featured ? 'lg:flex lg:gap-0' : ''}`}>
-  <!-- Image -->
-  <a href={`/blog/${slug}`} class={`blog-card-img ${featured ? 'lg:w-1/2 lg:aspect-auto lg:min-h-64' : ''}`} aria-label={title}>
+<article
+  class={`blog-card group relative flex overflow-hidden ${featured ? 'flex-col lg:flex-row' : 'flex-col'}`}
+  style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)"
+>
+  <!-- Imagen -->
+  <a
+    href={`/blog/${slug}`}
+    class={`relative block overflow-hidden shrink-0 ${featured ? 'lg:w-1/2' : ''}`}
+    style={featured ? 'min-height:240px' : 'height:180px'}
+    aria-label={title}
+  >
     {image ? (
       <img
         src={image.url}
@@ -28,54 +38,54 @@ const readingTime = Math.ceil(post.body.split(' ').length / 200);
         loading="lazy"
         width="600"
         height="338"
+        style={featured ? 'min-height:240px' : 'height:180px'}
       />
     ) : (
-      <div class="w-full h-full bg-gradient-to-br from-fire-800 to-fire-600 flex items-center justify-center">
-        <svg class="w-16 h-16 text-white/30" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+      <div class="w-full h-full flex items-center justify-center" style={`${featured ? 'min-height:240px' : 'height:180px'};background:linear-gradient(135deg, rgba(247,80,0,0.18) 0%, #040A12 100%)`}>
+        <svg class="w-14 h-14" fill="none" viewBox="0 0 24 24" stroke="#FF6B26" stroke-width="1" aria-hidden="true" style="opacity:0.55">
+          <path stroke-linecap="round" stroke-linejoin="round"
             d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/>
         </svg>
       </div>
     )}
+    <!-- Categoría sobre imagen -->
+    <span class="absolute top-3 left-3 badge badge-fire">{category}</span>
+    <div class="absolute bottom-0 left-0 right-0 h-10 pointer-events-none" style="background:linear-gradient(to bottom, transparent, #080F1A)"></div>
   </a>
 
-  <!-- Content -->
-  <div class={`p-6 flex flex-col gap-3 ${featured ? 'lg:w-1/2 lg:p-8' : ''}`}>
-    <!-- Meta -->
-    <div class="flex flex-wrap items-center gap-2">
-      <span class="badge-fire">{category}</span>
-      {tags?.slice(0, 2).map((tag) => (
-        <span class="badge-dark">{tag}</span>
-      ))}
+  <!-- Contenido -->
+  <div class={`flex flex-col gap-3 p-5 ${featured ? 'lg:w-1/2 lg:p-8 lg:justify-center' : 'flex-1'}`}>
+    <div class="flex items-center gap-2">
+      <span class="text-[10px] font-display font-semibold uppercase tracking-widest" style="color:#4A7599">{readingTime} min de lectura</span>
     </div>
 
-    <!-- Title -->
-    <h3 class={`font-heading font-bold text-dark-900 leading-snug group-hover:text-fire-700 text-balance ${featured ? 'text-xl md:text-2xl' : 'text-lg'}`}>
-      <a href={`/blog/${slug}`}>{title}</a>
+    <h3 class={`font-display font-bold leading-tight text-balance ${featured ? 'text-2xl' : 'text-lg'}`} style="color:#FFFFFF">
+      <a href={`/blog/${slug}`} class="group-hover:text-[#FF6B26]">{title}</a>
     </h3>
 
-    <!-- Excerpt -->
-    <p class="text-dark-500 text-sm leading-relaxed line-clamp-3">{description}</p>
+    <p class={`text-sm leading-relaxed ${featured ? '' : 'line-clamp-3'}`} style="color:#64748B">{description}</p>
 
-    <!-- Footer -->
-    <div class="flex items-center justify-between mt-auto pt-3 border-t border-dark-100 text-xs text-dark-400">
-      <div class="flex items-center gap-3">
-        <span class="font-medium text-dark-600">{author}</span>
-        <span>·</span>
-        <time datetime={pubDate.toISOString()}>{formattedDate}</time>
+    {tags && tags.length > 0 && (
+      <div class="flex flex-wrap gap-1.5 pt-1">
+        {tags.slice(0, featured ? 4 : 2).map((tag) => (
+          <span class="badge badge-dark text-[10px]">{tag}</span>
+        ))}
       </div>
-      <span>{readingTime} min</span>
-    </div>
+    )}
 
-    <!-- Link -->
     <a
       href={`/blog/${slug}`}
-      class="flex items-center gap-2 text-fire-700 text-sm font-semibold hover:gap-3"
+      class="inline-flex items-center gap-2 mt-auto pt-3 text-xs font-display font-semibold uppercase tracking-wider group-hover:gap-3"
+      style="color:#FF6B26;letter-spacing:0.08em"
     >
       Leer artículo
-      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+      <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
       </svg>
     </a>
   </div>
 </article>
+
+<style>
+  .blog-card:hover { border-color: rgba(247, 80, 0, 0.45) !important; }
+</style>

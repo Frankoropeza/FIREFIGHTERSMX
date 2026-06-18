@@ -38,34 +38,34 @@ export const trajesBombero: Category = {
     accent: '#F75000',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>`,
   label: 'Trajes para Bomberos',
-  norm: 'NFPA 1971 · 1977',
-  description: 'Trajes estructurales, de proximidad y forestales certificados NFPA 1971 y 1977 en México: Globe, Lion y MSA. Tallas S–4XL con entrega en 32 estados.',
+  norm: 'NFPA 1970 · 1977',
+  description: 'Trajes estructurales, de proximidad y forestales certificados NFPA 1970 y 1977 en México: Globe, Lion y MSA. Tallas S–4XL con entrega en 32 estados.',
   intro: [
-    'Trajes de combate estructural de 3 capas, trajes aluminizados de proximidad para ARFF y trajes forestales ligeros — todos certificados por laboratorio acreditado bajo NFPA 1971:2018 o NFPA 1977, con número de serie verificable con fábrica.',
-    'Distribuimos Globe, Lion y MSA en tallas S–4XL con stock permanente en CDMX. Cada conjunto incluye ficha técnica para licitación, asesoría de tallaje y acceso al programa de inspección y mantenimiento NFPA 1851.',
+    'Trajes de combate estructural de 3 capas, trajes aluminizados de proximidad para ARFF y trajes forestales ligeros — todos certificados por laboratorio acreditado bajo NFPA 1970 o NFPA 1977, con número de serie verificable con fábrica.',
+    'Distribuimos Globe, Lion y MSA en tallas S–4XL con stock permanente en CDMX. Cada conjunto incluye ficha técnica para licitación, asesoría de tallaje y acceso al programa de inspección y mantenimiento NFPA 1850.',
   ],
   items: [
     { name: 'Globe GX-7', detail: 'Estructural premium con Crosstech y PBI/Kevlar' },
-    { name: 'Lion TechGen', detail: 'Estructural NFPA 1971 de uso intensivo' },
+    { name: 'Lion TechGen', detail: 'Estructural NFPA 1970 de uso intensivo' },
     { name: 'Trajes de proximidad', detail: 'Aluminizados para ARFF y exposición radiante' },
     { name: 'Trajes forestales NFPA 1977', detail: 'Ligeros y transpirables para incendio vegetal' },
   ],
   productCategory: 'Trajes Bombero',
   spotlight: {
     title: 'Trajes para Bomberos certificados',
-    highlight: 'NFPA 1971 y NFPA 1977',
+    highlight: 'NFPA 1970 y NFPA 1977',
     paragraphs: [
-      'El traje estructural es la última barrera entre el bombero y el fuego. Distribuimos conjuntos completos —chaquetón y pantalón— certificados por laboratorio acreditado bajo NFPA 1971:2018, con número de serie verificable con fábrica y ficha técnica lista para licitación o auditoría STPS.',
-      'Manejamos las líneas Globe, Lion y MSA en tallas S–4XL, con stock permanente de las configuraciones más demandadas y entrega en 24–48 horas en CDMX. Cada compra incluye asesoría de tallaje y el programa de inspección y mantenimiento conforme a NFPA 1851.',
+      'El traje estructural es la última barrera entre el bombero y el fuego. Distribuimos conjuntos completos —chaquetón y pantalón— certificados por laboratorio acreditado bajo NFPA 1970 (la norma que desde 2024 absorbió a la NFPA 1971), con número de serie verificable con fábrica y ficha técnica lista para licitación o auditoría STPS.',
+      'Manejamos las líneas Globe, Lion y MSA en tallas S–4XL, con stock permanente de las configuraciones más demandadas y entrega en 24–48 horas en CDMX. Cada compra incluye asesoría de tallaje y el programa de inspección y mantenimiento conforme a NFPA 1850.',
     ],
     subsections: [
       { name: 'Trajes estructurales', detail: 'Combate interior de edificios. 3 capas: tejido exterior PBI/Nomex NXT, barrera de humedad Crosstech y forro térmico. Costuras de doble aguja reforzadas y trim reflejante 3M Scotchlite.' },
       { name: 'Trajes de proximidad', detail: 'Aluminizados para exposición radiante extrema: ARFF en aeropuertos, refinerías y fundiciones. Reflejan hasta el 90 % del calor radiante.' },
       { name: 'Trajes forestales NFPA 1977', detail: 'Ligeros y transpirables para incendio vegetal: camisola y pantalón en Nomex IIIA, diseñados para jornadas largas con golpe de calor mínimo.' },
-      { name: 'Tallaje, stock y mantenimiento', detail: 'Tallas S–4XL con asesoría de ajuste, stock permanente en CDMX y programa de inspección avanzada, lavado técnico y reparación certificada NFPA 1851.' },
+      { name: 'Tallaje, stock y mantenimiento', detail: 'Tallas S–4XL con asesoría de ajuste, stock permanente en CDMX y programa de inspección avanzada, lavado técnico y reparación certificada NFPA 1850.' },
     ],
     image: '/images/categorias/trajes-bombero.svg',
-    imageAlt: 'Ilustración técnica de traje estructural para bombero certificado NFPA 1971 con casco y bandas reflejantes',
+    imageAlt: 'Ilustración técnica de traje estructural para bombero certificado NFPA 1970 con casco y bandas reflejantes',
   },
 };
 
@@ -81,10 +81,10 @@ export const categories: Category[] = [
     accent: '#F75000',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 17a10 10 0 0 1 20 0"/><path d="M2 17h20v3H2z"/><path d="M12 7v2"/></svg>`,
     label: 'Cascos NFPA',
-    norm: 'NFPA 1971 · 1977',
-    description: 'Cascos para bomberos certificados NFPA 1971 y 1977 en México: MSA Gallet, Bullard y Cairns. Estructurales, forestales y de rescate. Cotización en 24 h.',
+    norm: 'NFPA 1970 · 1977',
+    description: 'Cascos para bomberos certificados NFPA 1970 y 1977 en México: MSA Gallet, Bullard y Cairns. Estructurales, forestales y de rescate. Cotización en 24 h.',
     intro: [
-      'El casco es la primera línea de protección craneal en combate estructural. Todos los modelos que distribuimos están certificados bajo NFPA 1971:2018 (estructural) o NFPA 1977 (forestal) por laboratorios acreditados, con número de serie verificable con fábrica.',
+      'El casco es la primera línea de protección craneal en combate estructural. Todos los modelos que distribuimos están certificados bajo NFPA 1970 (estructural) o NFPA 1977 (forestal) por laboratorios acreditados, con número de serie verificable con fábrica.',
       'Manejamos configuraciones con protector facial integrado, goggles, lámparas y soportes para cámara térmica. Stock permanente de los modelos más demandados con entrega en 24–48 h en CDMX.',
     ],
     items: [
@@ -96,9 +96,9 @@ export const categories: Category[] = [
     productCategory: 'Cascos NFPA',
     spotlight: {
       title: 'Cascos para Bomberos certificados',
-      highlight: 'NFPA 1971 y NFPA 1977',
+      highlight: 'NFPA 1970 y NFPA 1977',
       paragraphs: [
-        'El casco protege contra impacto, penetración, calor radiante y descarga eléctrica — y la NFPA 1971:2018 exige que cada componente lo demuestre en laboratorio acreditado. Distribuimos MSA Gallet, Bullard y Cairns con certificado de conformidad, número de serie verificable y ficha técnica lista para licitación.',
+        'El casco protege contra impacto, penetración, calor radiante y descarga eléctrica — y la NFPA 1970 exige que cada componente lo demuestre en laboratorio acreditado. Distribuimos MSA Gallet, Bullard y Cairns con certificado de conformidad, número de serie verificable y ficha técnica lista para licitación.',
         'Te asesoramos en la configuración correcta según tu operación: protector facial o goggles, lámpara integrada, soporte para cámara térmica y protección nucal. Stock permanente de los modelos más demandados con entrega en 24–48 horas en CDMX.',
       ],
       subsections: [
@@ -108,7 +108,7 @@ export const categories: Category[] = [
         { name: 'Accesorios y refacciones', detail: 'Visores, goggles, lámparas, escudos frontales personalizados y suspensiones de repuesto — todo original de fábrica para conservar la certificación.' },
       ],
       image: '/images/categorias/cascos-nfpa.svg',
-      imageAlt: 'Ilustración técnica de casco estructural para bombero certificado NFPA 1971 con visor abatible y banda reflejante',
+      imageAlt: 'Ilustración técnica de casco estructural para bombero certificado NFPA 1970 con visor abatible y banda reflejante',
     },
   },
   {
@@ -117,10 +117,10 @@ export const categories: Category[] = [
     accent: '#F5A623',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/></svg>`,
     label: 'Equipos SCBA',
-    norm: 'NFPA 1981 · NIOSH',
-    description: 'Equipos de respiración autónoma SCBA certificados NFPA 1981 y NIOSH: MSA G1, Dräger PSS y 3M Scott Air-Pak. Cilindros 30/45/60 min. Servicio autorizado.',
+    norm: 'NFPA 1970 · NIOSH',
+    description: 'Equipos de respiración autónoma SCBA certificados NFPA 1970 y NIOSH: MSA G1, Dräger PSS y 3M Scott Air-Pak. Cilindros 30/45/60 min. Servicio autorizado.',
     intro: [
-      'El equipo de respiración autónoma es el componente más crítico — y el más regulado — del EPP de un bombero. Distribuimos SCBA certificados NFPA 1981 con aprobación NIOSH CBRN, en configuraciones de 30, 45 y 60 minutos con cilindros de fibra de carbono de 4,500 psi.',
+      'El equipo de respiración autónoma es el componente más crítico — y el más regulado — del EPP de un bombero. Distribuimos SCBA certificados NFPA 1970 (antes NFPA 1981) con aprobación NIOSH CBRN, en configuraciones de 30, 45 y 60 minutos con cilindros de fibra de carbono de 4,500 psi.',
       'Además de la venta, somos servicio técnico autorizado: prueba hidrostática de cilindros, mantenimiento de reguladores, pruebas de flujo anuales y refacciones originales. Tu inversión queda protegida durante toda la vida útil del equipo.',
     ],
     items: [
@@ -132,9 +132,9 @@ export const categories: Category[] = [
     productCategory: 'Equipos SCBA',
     spotlight: {
       title: 'Equipos SCBA certificados',
-      highlight: 'NFPA 1981 y NIOSH CBRN',
+      highlight: 'NFPA 1970 y NIOSH CBRN',
       paragraphs: [
-        'El equipo de respiración autónoma es la pieza más crítica del EPP: de él depende cada minuto dentro de una atmósfera IDLH. Distribuimos SCBA MSA G1, Dräger PSS 7000 y 3M Scott Air-Pak NxG7 certificados NFPA 1981 con aprobación NIOSH CBRN, con número de serie verificable y ficha técnica para licitación.',
+        'El equipo de respiración autónoma es la pieza más crítica del EPP: de él depende cada minuto dentro de una atmósfera IDLH. Distribuimos SCBA MSA G1, Dräger PSS 7000 y 3M Scott Air-Pak NxG7 certificados NFPA 1970 con aprobación NIOSH CBRN, con número de serie verificable y ficha técnica para licitación.',
         'Somos servicio técnico autorizado: prueba hidrostática de cilindros, pruebas de flujo anuales, mantenimiento de reguladores y refacciones originales. Tu inversión queda protegida durante toda la vida útil del equipo, con bitácora lista para auditoría.',
       ],
       subsections: [

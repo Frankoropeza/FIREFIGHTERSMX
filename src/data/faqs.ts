@@ -9,8 +9,8 @@ export interface FAQ {
  */
 export const homeFaqs: FAQ[] = [
   {
-    q: '¿Cuánto cuesta un traje de bombero estructural NFPA 1971 en México?',
-    a: 'Un traje estructural completo certificado NFPA 1971:2018 (chaquetón y pantalón con sus tres capas) va de $45,000 a $95,000 MXN según marca, tejido exterior y configuración. Un casco NFPA 1971 ronda $6,500–$18,000 MXN; botas estructurales $3,500–$8,000 MXN; y un SCBA NFPA 1981 de 30 minutos, $85,000–$140,000 MXN. Envíanos por WhatsApp tallas y cantidades y regresamos cotización formal con ficha técnica el mismo día hábil.',
+    q: '¿Cuánto cuesta un traje de bombero estructural NFPA 1970 en México?',
+    a: 'Un traje estructural completo certificado NFPA 1970 (chaquetón y pantalón con sus tres capas) va de $45,000 a $95,000 MXN según marca, tejido exterior y configuración. Un casco NFPA 1970 ronda $6,500–$18,000 MXN; botas estructurales $3,500–$8,000 MXN; y un SCBA NFPA 1970 de 30 minutos, $85,000–$140,000 MXN. Envíanos por WhatsApp tallas y cantidades y regresamos cotización formal con ficha técnica el mismo día hábil.',
   },
   {
     q: '¿Son distribuidores autorizados de las marcas que mencionan?',
@@ -38,7 +38,7 @@ export const homeFaqs: FAQ[] = [
   },
   {
     q: '¿Qué garantía manejan en los equipos?',
-    a: 'Garantía directa de fábrica: hasta 10 años en trajes estructurales premium, 5 años en SCBA, 2 años en cascos y guantes, 1 año en extintores. Disponemos de refacciones originales y servicio técnico autorizado para mantenimiento programado conforme NFPA 1851.',
+    a: 'Garantía directa de fábrica: hasta 10 años en trajes estructurales premium, 5 años en SCBA, 2 años en cascos y guantes, 1 año en extintores. Disponemos de refacciones originales y servicio técnico autorizado para mantenimiento programado conforme NFPA 1850.',
   },
   {
     q: '¿Manejan precios preferenciales para cuerpos de bomberos?',

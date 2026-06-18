@@ -12,7 +12,7 @@ const canonicalURL = `${SITE.url}/productos`;
 const seoMeta = {
   title: `Catálogo de Equipo para Bomberos y Contra Incendio — ${SITE.name}`,
   description:
-    'Catálogo completo certificado NFPA y NOM: trajes para bomberos, cascos, SCBA, herramientas de rescate, extintores, sistemas CI, cámaras térmicas, HAZMAT y drones. Cotización en 24 h.',
+    'Catálogo certificado NFPA y NOM: trajes, cascos, SCBA, herramientas de rescate, extintores, sistemas CI, cámaras térmicas, HAZMAT y drones. Cotización en 24 h.',
   canonicalURL,
 };
 
@@ -98,8 +98,8 @@ const trustPoints = [
         <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
           <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">
             Nueve categorías de equipamiento certificado para cuerpos de bomberos, brigadas
-            industriales y protección civil: <strong style="color:#CBD5E1">trajes estructurales NFPA 1971,
-            cascos, equipos de respiración autónoma SCBA NFPA 1981, herramientas de rescate
+            industriales y protección civil: <strong style="color:#CBD5E1">trajes estructurales NFPA 1970 (antes 1971),
+            cascos, equipos de respiración autónoma SCBA, herramientas de rescate
             Holmatro, extintores NOM-154-SCFI, sistemas contra incendio, cámaras térmicas
             NFPA 1801, trajes HAZMAT y drones de emergencia</strong>.
           </p>
@@ -110,7 +110,7 @@ const trustPoints = [
             expediente de Protección Civil.
           </p>
           <div class="flex flex-wrap gap-2">
-            {['NFPA 1971','NFPA 1981','NFPA 1936','NFPA 1801','NOM-154-SCFI','NOM-002-STPS'].map(n => (
+            {['NFPA 1970','NFPA 1850','NFPA 1936','NFPA 1801','NOM-154-SCFI','NOM-002-STPS'].map(n => (
               <span class="badge badge-dark font-display text-[10px]">{n}</span>
             ))}
           </div>
@@ -246,10 +246,11 @@ const trustPoints = [
           <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
             {[
               { label: 'Guía de normas y certificaciones', desc: 'Qué NOM y NFPA aplican según tu giro', href: '/certificaciones' },
-              { label: 'Servicios de mantenimiento y recarga', desc: 'Extintores, SCBA e hidráulicas — NFPA 1851', href: '/servicios/mantenimiento' },
-              { label: 'Soporte para licitaciones', desc: 'Fichas técnicas y plantillas CompraNet', href: '/servicios/licitaciones' },
+              { label: 'Servicios de mantenimiento y recarga', desc: 'Extintores, SCBA e hidráulicas — NFPA 1850', href: '/servicios/mantenimiento' },
+              { label: 'Soporte para licitaciones', desc: 'CompraNet, PEMEX, CFE y municipios', href: '/licitaciones' },
               { label: 'Marcas que distribuimos', desc: 'Globe, MSA, Dräger, Holmatro y más', href: '/marcas' },
               { label: 'Cobertura de entrega', desc: '24–48 h CDMX · 3–5 días nacional', href: '/cobertura' },
+              { label: 'Conoce la empresa', desc: 'Quiénes somos, cobertura y certificaciones', href: '/empresa' },
             ].map((l) => (
               <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
                 <a href={l.href} class="group flex items-center justify-between gap-4 py-4">

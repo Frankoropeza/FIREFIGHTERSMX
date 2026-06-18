@@ -1,0 +1,453 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import QuickLinksBar from '@components/common/QuickLinksBar.astro';
+import { categories } from '@data/categories';
+import { featuredProducts } from '@data/products';
+import { SITE, whatsappUrl } from '@data/site';
+
+const cat = categories.find((c) => c.slug === 'cascos-nfpa')!;
+const canonicalURL = `${SITE.url}/productos/cascos-nfpa`;
+
+const seoMeta = {
+  title: `Cascos para Bomberos NFPA 1970 — MSA Gallet, Bullard, Cairns`,
+  description: cat.description,
+  canonicalURL,
+};
+
+/* Producto real con ficha L4 */
+const productos = featuredProducts.filter((p) => p.category === 'Cascos NFPA');
+
+/* Estilos de casco (educativo) */
+const tipos = [
+  {
+    title: 'Europeo integral',
+    norm: 'NFPA 1970',
+    accent: '#F75000',
+    desc: 'Cubierta envolvente tipo jet con visor retráctil interno, protección nucal integrada y módulos de lámpara y comunicación. El estándar en cuerpos metropolitanos y ARFF.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 14a9 9 0 0 1 18 0"/><path d="M3 14h18v3a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M8 14v-2"/></svg>`,
+  },
+  {
+    title: 'Americano tradicional',
+    norm: 'NFPA 1970',
+    accent: '#F5A623',
+    desc: 'Casco de ala completa en fibra de vidrio termoendurecida o cuero, con escudo frontal personalizable. Protege del escurrimiento de agua y brasas; ícono del servicio.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 15a8 8 0 0 1 16 0"/><path d="M2 15h20"/><path d="M12 7V5"/></svg>`,
+  },
+  {
+    title: 'Forestal',
+    norm: 'NFPA 1977',
+    accent: '#34D399',
+    desc: 'Ligero y ventilado para incendio de vegetación e interfaz. Compatible con goggles, capucha y protección auditiva en jornadas largas con manejo de calor.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 14a8 8 0 0 1 16 0"/><path d="M3 14h18"/><path d="M7 11l1.5-1.5M17 11l-1.5-1.5"/></svg>`,
+  },
+];
+
+/* Modelos / líneas */
+const modelos = [
+  ...productos.map((p) => ({
+    title: p.title,
+    norm: p.norm ?? 'NFPA 1970',
+    brand: p.brand,
+    desc: p.description,
+    href: p.href,
+    cta: 'Ver ficha técnica',
+    external: false,
+  })),
+  {
+    title: 'Bullard USTM / USTERM',
+    norm: 'NFPA 1970',
+    brand: 'Bullard',
+    desc: 'Casco tradicional americano en fibra de vidrio termoendurecida, ala completa y escudo frontal personalizable. Disponible bajo pedido.',
+    href: whatsappUrl('Hola, quiero cotizar cascos Bullard USTM/USTERM NFPA 1970.'),
+    cta: 'Cotizar',
+    external: true,
+  },
+  {
+    title: 'Cairns N6A Houston',
+    norm: 'NFPA 1970',
+    brand: 'Cairns',
+    desc: 'Casco de cuero clásico para cuerpos con tradición, conserva la silueta histórica del servicio con certificación vigente.',
+    href: whatsappUrl('Hola, quiero cotizar cascos Cairns N6A Houston.'),
+    cta: 'Cotizar',
+    external: true,
+  },
+  {
+    title: 'Cascos forestales NFPA 1977',
+    norm: 'NFPA 1977',
+    brand: 'Forestal',
+    desc: 'Ligeros, ventilados y compatibles con goggles y capucha para incendio de vegetación e interfaz urbano-forestal.',
+    href: whatsappUrl('Hola, quiero cotizar cascos forestales NFPA 1977.'),
+    cta: 'Cotizar',
+    external: true,
+  },
+];
+
+/* Tabla comparativa */
+const comparativa = [
+  ['Construcción', 'Termoplástico envolvente', 'Fibra de vidrio o cuero', 'Termoplástico ventilado'],
+  ['Protección facial', 'Visor retráctil interno + ocular', 'Escudo frontal + goggles', 'Goggles independientes'],
+  ['Peso aprox.', '1.3–1.6 kg', '1.4–1.8 kg', '0.4–0.6 kg'],
+  ['Protección nucal', 'Integrada', 'Ala completa', 'Cubrenuca textil'],
+  ['Escenario', 'Estructural metropolitano · ARFF', 'Estructural tradicional', 'Vegetación · interfaz'],
+  ['Norma', 'NFPA 1970', 'NFPA 1970', 'NFPA 1977'],
+];
+
+/* Guía de selección */
+const guia = [
+  { n: '01', t: 'Define el estilo según tu operación y tradición: europeo integral para cuerpos metropolitanos y ARFF, americano para corporaciones con identidad histórica, forestal para vegetación.' },
+  { n: '02', t: 'Exige certificación NFPA 1970 (estructural) o NFPA 1977 (forestal) de laboratorio acreditado, con número de serie verificable con fábrica.' },
+  { n: '03', t: 'Configura la protección: visor interno o goggles, lámpara integrada, soporte para cámara térmica, protección nucal y comunicación.' },
+  { n: '04', t: 'Verifica compatibilidad con el SCBA y la capucha de partículas, y asegura refacciones originales —visor, suspensión, barboquejo— para conservar la certificación.' },
+];
+
+/* Artículos del blog relacionados */
+const articulos = [
+  { label: 'NFPA 1970: la nueva norma', desc: 'Qué cambió en el conjunto estructural', href: '/blog/nfpa-1970-nueva-norma-trajes-bombero' },
+  { label: 'Inspección, cuidado y vida útil', desc: 'Criterios de retiro del EPP — NFPA 1850', href: '/blog/inspeccion-cuidado-vida-util-traje-bombero' },
+  { label: 'Cómo especificar EPP en licitaciones', desc: 'Bases por desempeño y certificación', href: '/blog/especificaciones-traje-bombero-licitaciones' },
+  { label: 'Normas y certificaciones', desc: 'NFPA 1970, 1977 y 1850 explicadas', href: '/certificaciones' },
+];
+
+/* FAQ */
+const faqs = [
+  { q: '¿Bajo qué norma debe estar certificado un casco de bombero?', a: 'NFPA 1970 para combate estructural (la norma que desde 2024 consolidó a la NFPA 1971) o NFPA 1977 para incendio forestal. La certificación la emite un laboratorio de tercera parte acreditado y debe constar en la etiqueta interna con número de serie verificable.' },
+  { q: '¿Cada cuánto se retira un casco del servicio?', a: 'El casco se retira según las instrucciones del fabricante y la inspección periódica conforme a NFPA 1850. Independientemente de la antigüedad, se retira de inmediato ante cualquier impacto severo, grieta, deformación o exposición térmica que comprometa la cubierta o la suspensión.' },
+  { q: '¿Casco europeo integral o americano tradicional?', a: 'El europeo (tipo MSA Gallet) ofrece visor retráctil interno, menor perfil y módulos integrados, ideal para cuerpos metropolitanos y ARFF. El americano (Bullard, Cairns) mantiene el ala completa, el escudo frontal y la identidad histórica del servicio. Ambos certifican NFPA 1970.' },
+  { q: '¿Son compatibles con SCBA y cámara térmica?', a: 'Sí. Manejamos configuraciones con adaptadores para máscara full-face del SCBA, soportes para cámara de imagen térmica y montaje de lámpara. Te asesoramos para que el conjunto trabaje sin interferencias.' },
+  { q: '¿Entregan ficha técnica y certificado para licitación?', a: 'Sí. Cada casco incluye certificado de conformidad, ficha técnica del fabricante y, para concursos públicos, el manifiesto de cumplimiento de norma por partida.' },
+];
+
+/* ─── JSON-LD ──────────────────────────────────────────────── */
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Productos', item: `${SITE.url}/productos` },
+    { '@type': 'ListItem', position: 3, name: 'Cascos NFPA', item: canonicalURL },
+  ],
+};
+
+const collectionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  '@id': `${canonicalURL}#collection`,
+  name: 'Cascos para Bomberos certificados NFPA 1970 y 1977',
+  description: cat.description,
+  url: canonicalURL,
+  inLanguage: 'es-MX',
+  isPartOf: { '@id': `${SITE.url}/#website` },
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: modelos.length,
+    itemListElement: modelos.map((m, i) => ({ '@type': 'ListItem', position: i + 1, name: m.title })),
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+
+const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice(0, 6);
+---
+
+<BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema, faqSchema]}>
+
+  <!-- Breadcrumb -->
+  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+    <div class="container-site">
+      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:#4A7599">
+        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="/productos" class="hover:text-[#FF6B26]">Productos</a></li>
+        <li aria-hidden="true">/</li>
+        <li><span style="color:#94A3B8" aria-current="page">Cascos NFPA</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">
+    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
+
+    <div class="container-site relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div>
+          <span class="section-eyebrow mb-5 inline-flex">{cat.norm}</span>
+          <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+            Cascos<br/>
+            <span style="color:#F75000">NFPA</span>
+          </h1>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href={whatsappUrl('Hola, quiero cotizar cascos para bomberos.')} target="_blank" rel="noopener" class="btn btn-primary btn-lg">Cotizar por WhatsApp</a>
+            <a href="/cotizacion" class="btn btn-ghost btn-lg">Cotización formal</a>
+          </div>
+        </div>
+        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
+          {cat.intro.map((p) => (
+            <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">{p}</p>
+          ))}
+          <div class="flex flex-wrap gap-2">
+            {['NFPA 1970','NFPA 1977','MSA Gallet','Bullard','Cairns','Visor integrado'].map(n => (
+              <span class="badge badge-dark font-display text-[10px]">{n}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)" aria-hidden="true"></div>
+  </section>
+
+  <!-- Accesos rápidos -->
+  <QuickLinksBar />
+
+  <!-- Estilos de casco -->
+  <section class="section" style="background:#040A12" aria-labelledby="tipos-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Tres estilos</span>
+          <h2 id="tipos-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            Europeo, americano<br/>
+            <span style="color:#F75000">o forestal.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+            La elección del casco combina norma, escenario y tradición del cuerpo. Te ayudamos a
+            definir el estilo y la configuración exactos para tu operación.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        {tipos.map((t) => (
+          <article class="flex flex-col gap-4 p-7" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
+            <div class="flex items-center justify-center rounded-full" style={`width:52px;height:52px;background:${t.accent}1a;border:1.5px solid ${t.accent}59;color:${t.accent}`}>
+              <span class="block" style="width:24px;height:24px" set:html={t.icon}/>
+            </div>
+            <div class="flex items-center justify-between gap-2">
+              <h3 class="font-display font-bold text-xl" style="color:#FFFFFF">{t.title}</h3>
+              <span class="badge badge-dark text-[9px]">{t.norm}</span>
+            </div>
+            <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{t.desc}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Modelos / líneas -->
+  <section class="section" style="background:#070E1A" aria-labelledby="modelos-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Modelos destacados</span>
+          <h2 id="modelos-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            Líneas que<br/>
+            <span style="color:#F75000">distribuimos.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+            MSA Gallet, Bullard y Cairns con certificado de conformidad y refacciones originales.
+            ¿Buscas otra configuración? La conseguimos directo de fábrica.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        {modelos.map((m) => (
+          <article class="model-card group flex flex-col gap-3 p-6" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
+            <div class="flex gap-2 flex-wrap">
+              <span class="badge badge-fire">{m.norm}</span>
+              {m.brand && <span class="badge badge-dark">{m.brand}</span>}
+            </div>
+            <h3 class="font-display font-bold text-lg leading-snug" style="color:#FFFFFF">{m.title}</h3>
+            <p class="text-xs leading-relaxed" style="color:#64748B">{m.desc}</p>
+            <a href={m.href} target={m.external ? '_blank' : undefined} rel={m.external ? 'noopener' : undefined}
+               class="inline-flex items-center gap-2 mt-auto pt-2 text-xs font-display font-semibold uppercase tracking-wider group-hover:gap-3" style="color:#FF6B26;letter-spacing:0.08em">
+              {m.cta}
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Tabla comparativa -->
+  <section class="section" style="background:#040A12" aria-labelledby="comp-title">
+    <div class="container-site">
+      <div class="mb-10">
+        <span class="section-eyebrow mb-4 inline-flex">Comparativa</span>
+        <h2 id="comp-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          Europeo · Americano · <span style="color:#F75000">Forestal</span>
+        </h2>
+      </div>
+
+      <div class="overflow-x-auto" style="border:1px solid rgba(74,117,153,0.18)">
+        <table class="w-full border-collapse" style="min-width:640px">
+          <thead>
+            <tr style="background:#0C1825">
+              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:#4A7599;border-bottom:1px solid rgba(74,117,153,0.18)">Característica</th>
+              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:#FF6B26;border-bottom:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">Europeo</th>
+              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:#F5A623;border-bottom:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">Americano</th>
+              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:#34D399;border-bottom:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">Forestal</th>
+            </tr>
+          </thead>
+          <tbody>
+            {comparativa.map((row, i) => (
+              <tr style={`background:${i % 2 === 0 ? '#080F1A' : '#0A1320'}`}>
+                <td class="p-4 text-sm font-display font-semibold" style="color:#CBD5E1;border-bottom:1px solid rgba(74,117,153,0.12)">{row[0]}</td>
+                <td class="p-4 text-sm" style="color:#94A3B8;border-bottom:1px solid rgba(74,117,153,0.12);border-left:1px solid rgba(74,117,153,0.12)">{row[1]}</td>
+                <td class="p-4 text-sm" style="color:#94A3B8;border-bottom:1px solid rgba(74,117,153,0.12);border-left:1px solid rgba(74,117,153,0.12)">{row[2]}</td>
+                <td class="p-4 text-sm" style="color:#94A3B8;border-bottom:1px solid rgba(74,117,153,0.12);border-left:1px solid rgba(74,117,153,0.12)">{row[3]}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guía + blog -->
+  <section class="section" style="background:#070E1A" aria-labelledby="guia-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Cómo elegir</span>
+          <h2 id="guia-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+            Del estilo<br/>
+            <span style="color:#F75000">a la configuración.</span>
+          </h2>
+          <ol class="flex flex-col gap-4 list-none m-0 p-0">
+            {guia.map((s) => (
+              <li class="flex items-start gap-4">
+                <span class="font-display font-bold text-xl shrink-0" style="color:#F75000">{s.n}</span>
+                <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{s.t}</p>
+              </li>
+            ))}
+          </ol>
+          <div class="mt-8">
+            <a href={whatsappUrl('Hola, necesito asesoría para elegir cascos para mi cuerpo de bomberos.')} target="_blank" rel="noopener" class="btn btn-primary">Pedir asesoría de configuración</a>
+          </div>
+        </div>
+
+        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:#4A7599">
+            Aprende más
+          </h2>
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+            {articulos.map((l) => (
+              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+                <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
+                  <span class="flex flex-col gap-0.5">
+                    <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
+                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
+                  </span>
+                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#4A7599" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="background:#040A12" aria-labelledby="faq-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes</span>
+          <h2 id="faq-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+            Lo que más nos<br/>
+            <span style="color:#F75000">preguntan.</span>
+          </h2>
+          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+            ¿Tu duda no aparece? Escríbenos por WhatsApp con el detalle de tu operación y te
+            asesoramos sobre el casco y la configuración correctos.
+          </p>
+        </div>
+        <div class="flex flex-col">
+          {faqs.map((f, i) => (
+            <details class="faq-item group" style={`border-top:1px solid rgba(74,117,153,0.18);${i === faqs.length - 1 ? 'border-bottom:1px solid rgba(74,117,153,0.18);' : ''}`}>
+              <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer">
+                <span class="font-display font-semibold text-sm" style="color:#FFFFFF">{f.q}</span>
+                <span class="faq-icon font-display font-bold text-xl shrink-0" style="color:#FF6B26">+</span>
+              </summary>
+              <p class="text-sm leading-relaxed pb-5 m-0" style="color:#94A3B8">{f.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cross-links + otras categorías -->
+  <section class="section" style="background:#070E1A" aria-labelledby="cross-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Equipa el conjunto completo</span>
+          <h2 id="cross-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+            El casco trabaja<br/>
+            <span style="color:#F75000">con todo el EPP.</span>
+          </h2>
+          <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
+            Casco, traje, SCBA y capucha de partículas deben integrarse sin interferencias.
+            Armamos el conjunto completo certificado con un solo proveedor y un expediente auditable.
+          </p>
+          <a href={whatsappUrl('Hola, quiero equipar el conjunto completo de EPP para mi brigada.')} target="_blank" rel="noopener" class="btn btn-primary">Cotizar conjunto completo</a>
+        </div>
+        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:#4A7599">
+            También te puede servir
+          </h2>
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+            {[
+              { label: 'Trajes para bomberos', desc: 'Estructurales, proximidad y forestales', href: '/productos/trajes-bombero' },
+              { label: 'Equipos SCBA', desc: 'MSA G1, Dräger y 3M Scott', href: '/productos/equipos-scba' },
+              { label: 'Cámaras térmicas', desc: 'Montaje en casco y SCBA', href: '/productos/camaras-termicas' },
+              { label: 'Normas y certificaciones', desc: 'NFPA 1970, 1977 y 1850', href: '/certificaciones' },
+              { label: 'Soporte para licitaciones', desc: 'Fichas y manifiestos por partida', href: '/licitaciones' },
+            ].map((l) => (
+              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+                <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
+                  <span class="flex flex-col gap-0.5">
+                    <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
+                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
+                  </span>
+                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#4A7599" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <!-- Otras categorías -->
+      <div class="mt-14 pt-10" style="border-top:1px solid rgba(74,117,153,0.15)">
+        <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-6" style="color:#4A7599">Otras categorías del catálogo</h2>
+        <div class="flex flex-wrap gap-3">
+          {otrasCategorias.map((c) => (
+            <a href={`/productos/${c.slug}`} class="btn btn-sm btn-dark">{c.label}</a>
+          ))}
+          <a href="/productos" class="btn btn-sm btn-outline">Catálogo completo →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .model-card:hover { border-color: rgba(247, 80, 0, 0.45) !important; }
+  details.faq-item summary { list-style: none; }
+  details.faq-item summary::-webkit-details-marker { display: none; }
+  details.faq-item[open] .faq-icon { transform: rotate(45deg); }
+</style>

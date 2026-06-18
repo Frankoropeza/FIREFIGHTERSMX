@@ -51,8 +51,9 @@ export const navigation = { main: [
   { label: "Blog", href: "/blog" },
   {
     label: "Empresa",
-    href: "/nosotros",
+    href: "/empresa",
     children: [
+      { label: "La empresa", href: "/empresa" },
       { label: "Nosotros", href: "/nosotros" },
       { label: "Certificaciones", href: "/certificaciones" },
       { label: "Cobertura Nacional", href: "/cobertura" },

@@ -1,103 +1,207 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
+import { SITE, whatsappUrl } from '@data/site';
+
+const canonicalURL = `${SITE.url}/contacto`;
+
+const seoMeta = {
+  title: `Contacto — Asesoría en Equipo para Bomberos`,
+  description:
+    'Contacta a FIREFIGHTERS MX: asesoría en equipo para bomberos, cotizaciones, licitaciones y servicios. Teléfono, WhatsApp y correo. Respuesta en 2 horas hábiles.',
+  canonicalURL,
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Empresa', item: `${SITE.url}/empresa` },
+    { '@type': 'ListItem', position: 3, name: 'Contacto', item: canonicalURL },
+  ],
+};
+
+const canales = [
+  { label: 'Teléfono', value: SITE.phone, href: `tel:${SITE.phoneE164}`, icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>` },
+  { label: 'WhatsApp', value: SITE.phone, href: `https://wa.me/${SITE.whatsapp}`, icon: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>` },
+  { label: 'Correo', value: SITE.email, href: `mailto:${SITE.email}`, icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>` },
+  { label: 'Horario', value: SITE.hours, href: null, icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>` },
+];
 ---
-<BaseLayout
-  title="Contacto — FIREFIGHTERS MX"
-  description="Contacta a FIREFIGHTERS MX. Asesoría en equipos para bomberos, cotizaciones, licitaciones y servicios. Teléfono, WhatsApp y correo. Respuesta en 2 horas."
->
-  <section class="bg-gradient-fire py-16">
-    <div class="container-site text-center text-white">
-      <h1 class="section-title text-white mb-4">Contacto</h1>
-      <p class="section-subtitle text-fire-200 mx-auto">Estamos para ayudarte. Respuesta garantizada en horario hábil.</p>
+
+<BaseLayout {...seoMeta} schema={[breadcrumbSchema]}>
+
+  <!-- Breadcrumb -->
+  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+    <div class="container-site">
+      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:#4A7599">
+        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="/empresa" class="hover:text-[#FF6B26]">Empresa</a></li>
+        <li aria-hidden="true">/</li>
+        <li><span style="color:#94A3B8" aria-current="page">Contacto</span></li>
+      </ol>
     </div>
-  </section>
-  <!-- Accesos rápidos (interlinking) -->
-  <QuickLinksBar />
+  </nav>
 
+  <!-- Hero -->
+  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">
+    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
 
-  <section class="section bg-white">
-    <div class="container-site grid lg:grid-cols-2 gap-12">
-      <!-- Info -->
-      <div class="flex flex-col gap-8">
+    <div class="container-site relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div>
-          <h2 class="font-heading font-bold text-2xl text-dark-900 mb-6">Canales de Atención</h2>
-          <div class="flex flex-col gap-5">
-            {[
-              { icon:"📞", label:"Teléfono", value:"55 1234-5678", href:"tel:+525512345678" },
-              { icon:"💬", label:"WhatsApp", value:"55 1234-5678", href:"https://wa.me/525512345678" },
-              { icon:"📧", label:"Correo", value:"contacto@firefightersmx.com", href:"mailto:contacto@firefightersmx.com" },
-              { icon:"🕒", label:"Horario", value:"Lun–Vie 8am–6pm | Sáb 9am–2pm", href: null },
-            ].map((c) => (
-              <div class="flex items-center gap-4">
-                <span class="text-2xl w-10 text-center shrink-0">{c.icon}</span>
-                <div>
-                  <div class="text-xs text-dark-400 font-medium uppercase tracking-wide">{c.label}</div>
-                  {c.href ? (
-                    <a href={c.href} class="text-dark-800 font-semibold hover:text-fire-700">{c.value}</a>
-                  ) : (
-                    <span class="text-dark-800 font-semibold">{c.value}</span>
-                  )}
-                </div>
-              </div>
+          <span class="section-eyebrow mb-5 inline-flex">Atención · Respuesta &lt; 2 h</span>
+          <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+            Hablemos de<br/>
+            <span style="color:#F75000">tu proyecto</span>
+          </h1>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href={whatsappUrl('Hola, quiero asesoría sobre equipo contra incendio.')} target="_blank" rel="noopener" class="btn btn-primary btn-lg">Escribir por WhatsApp</a>
+            <a href="/cotizacion" class="btn btn-ghost btn-lg">Solicitar cotización</a>
+          </div>
+        </div>
+        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
+          <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">
+            Un especialista te atiende para
+            <strong style="color:#CBD5E1">cotizaciones, información de productos, capacitación,
+            instalación, mantenimiento o licitaciones</strong>. Sin conmutadores: un ejecutivo
+            responsable de tu cuenta.
+          </p>
+          <p class="text-sm leading-[1.9] mb-6" style="color:#64748B">
+            Atendemos a cuerpos de bomberos, brigadas industriales, protección civil y dependencias
+            de gobierno en los 32 estados, con respuesta en menos de 2 horas en días hábiles.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {['Cotización 24 h','32 estados','Asesoría técnica','CFDI 4.0'].map(n => (
+              <span class="badge badge-dark font-display text-[10px]">{n}</span>
             ))}
           </div>
         </div>
-
-        <div>
-          <h3 class="font-heading font-bold text-lg text-dark-900 mb-4">Cobertura Nacional</h3>
-          <p class="text-dark-500 text-sm leading-relaxed">
-            Contamos con distribuidores autorizados y logística de envío en los 32 estados de la República Mexicana.
-            Entrega express en CDMX en 24-48 horas hábiles. Interior del país en 3-5 días hábiles.
-          </p>
-        </div>
       </div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)" aria-hidden="true"></div>
+  </section>
 
-      <!-- Form -->
-      <div class="card p-8">
-        <h2 class="font-heading font-bold text-xl text-dark-900 mb-6">Envíanos un mensaje</h2>
-        <form method="POST" action="/api/contacto" class="flex flex-col gap-5" novalidate>
-          <div class="grid sm:grid-cols-2 gap-4">
-            <div>
-              <label for="nombre" class="label">Nombre *</label>
-              <input type="text" id="nombre" name="nombre" required class="input" placeholder="Tu nombre completo"/>
+  <!-- Accesos rápidos -->
+  <QuickLinksBar />
+
+  <!-- Canales + Formulario -->
+  <section class="section" style="background:#040A12" aria-labelledby="contacto-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+
+        <!-- Canales -->
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Canales de atención</span>
+          <h2 id="contacto-title" class="font-display font-bold mb-8" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+            Por donde<br/>
+            <span style="color:#F75000">prefieras.</span>
+          </h2>
+
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.18)">
+            {canales.map((c) => (
+              <li style="border-bottom:1px solid rgba(74,117,153,0.18)">
+                <div class="flex items-center gap-4 py-4">
+                  <span class="flex items-center justify-center rounded-full shrink-0" style="width:44px;height:44px;background:rgba(247,80,0,0.1);border:1.5px solid rgba(247,80,0,0.35);color:#FF6B26">
+                    <span class="block" style="width:20px;height:20px" set:html={c.icon}/>
+                  </span>
+                  <span class="flex flex-col gap-0.5 min-w-0">
+                    <span class="text-[10px] font-display font-semibold uppercase tracking-widest" style="color:#4A7599">{c.label}</span>
+                    {c.href ? (
+                      <a href={c.href} target={c.href.startsWith('http') ? '_blank' : undefined} rel={c.href.startsWith('http') ? 'noopener' : undefined} class="font-display font-semibold text-sm hover:text-[#FF6B26]" style="color:#FFFFFF">{c.value}</a>
+                    ) : (
+                      <span class="font-display font-semibold text-sm" style="color:#FFFFFF">{c.value}</span>
+                    )}
+                  </span>
+                </div>
+              </li>
+            ))}
+          </ul>
+
+          <div class="mt-8 p-6" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
+            <h3 class="font-display font-bold text-sm uppercase tracking-wider mb-2" style="color:#FF6B26">Cobertura nacional</h3>
+            <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">
+              Distribuidores autorizados y logística en los 32 estados. Entrega express en CDMX
+              en 24–48 h hábiles; interior del país en 3–5 días hábiles.
+            </p>
+          </div>
+        </div>
+
+        <!-- Formulario -->
+        <div class="p-7" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
+          <h2 class="font-display font-bold text-xl mb-6" style="color:#FFFFFF">Envíanos un mensaje</h2>
+          <form data-wa-form data-wa={SITE.whatsapp} method="POST" action="/api/contacto" class="flex flex-col gap-5">
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label for="nombre" class="label">Nombre *</label>
+                <input type="text" id="nombre" name="nombre" required class="input" placeholder="Tu nombre completo"/>
+              </div>
+              <div>
+                <label for="empresa" class="label">Empresa</label>
+                <input type="text" id="empresa" name="empresa" class="input" placeholder="Opcional"/>
+              </div>
             </div>
             <div>
-              <label for="empresa" class="label">Empresa</label>
-              <input type="text" id="empresa" name="empresa" class="input" placeholder="Opcional"/>
+              <label for="email" class="label">Correo electrónico *</label>
+              <input type="email" id="email" name="email" required class="input" placeholder="correo@empresa.com"/>
             </div>
-          </div>
-          <div>
-            <label for="email" class="label">Correo electrónico *</label>
-            <input type="email" id="email" name="email" required class="input" placeholder="correo@empresa.com"/>
-          </div>
-          <div>
-            <label for="telefono" class="label">Teléfono</label>
-            <input type="tel" id="telefono" name="telefono" class="input" placeholder="55 1234-5678"/>
-          </div>
-          <div>
-            <label for="asunto" class="label">Asunto *</label>
-            <select id="asunto" name="asunto" required class="select">
-              <option value="">Selecciona un asunto</option>
-              <option>Cotización de equipos</option>
-              <option>Información de productos</option>
-              <option>Servicios de capacitación</option>
-              <option>Instalación de sistemas CI</option>
-              <option>Mantenimiento</option>
-              <option>Licitaciones</option>
-              <option>Otro</option>
-            </select>
-          </div>
-          <div>
-            <label for="mensaje" class="label">Mensaje *</label>
-            <textarea id="mensaje" name="mensaje" rows="4" required class="textarea" placeholder="Cuéntanos en qué podemos ayudarte..."></textarea>
-          </div>
-          <button type="submit" class="btn-primary btn-lg w-full mt-2">
-            Enviar mensaje
-          </button>
-          <p class="text-dark-400 text-xs text-center">Respondemos en menos de 2 horas en días hábiles.</p>
-        </form>
+            <div>
+              <label for="telefono" class="label">Teléfono</label>
+              <input type="tel" id="telefono" name="telefono" class="input" placeholder="55 1234-5678"/>
+            </div>
+            <div>
+              <label for="asunto" class="label">Asunto *</label>
+              <select id="asunto" name="asunto" required class="select">
+                <option value="">Selecciona un asunto</option>
+                <option>Cotización de equipos</option>
+                <option>Información de productos</option>
+                <option>Servicios de capacitación</option>
+                <option>Instalación de sistemas CI</option>
+                <option>Mantenimiento</option>
+                <option>Licitaciones</option>
+                <option>Otro</option>
+              </select>
+            </div>
+            <div>
+              <label for="mensaje" class="label">Mensaje *</label>
+              <textarea id="mensaje" name="mensaje" rows="4" required class="textarea" placeholder="Cuéntanos en qué podemos ayudarte..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg w-full mt-2">Enviar mensaje</button>
+            <p class="text-xs text-center m-0" style="color:#64748B">Respondemos en menos de 2 horas en días hábiles.</p>
+          </form>
+        </div>
+
       </div>
     </div>
   </section>
+
+  <script>
+    // Envío sin backend → arma un mensaje de WhatsApp con los campos del formulario.
+    document.querySelectorAll('form[data-wa-form]').forEach((form) => {
+      const f = form as HTMLFormElement;
+      if (f.dataset.bound) return;
+      f.dataset.bound = '1';
+      f.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (!f.reportValidity()) return;
+        const num = f.getAttribute('data-wa');
+        const fd = new FormData(f);
+        const lines: string[] = ['Hola FIREFIGHTERS MX, te escribo desde el sitio web:', ''];
+        for (const [name, value] of fd.entries()) {
+          const v = String(value).trim();
+          if (!v) continue;
+          const field = f.querySelector(`[name="${name}"]`) as HTMLElement | null;
+          const id = field?.id ?? '';
+          const labelEl = id ? f.querySelector(`label[for="${id}"]`) : null;
+          const label = labelEl?.textContent?.replace('*', '').trim() || name;
+          lines.push(`${label}: ${v}`);
+        }
+        const text = encodeURIComponent(lines.join('\n'));
+        window.open(`https://wa.me/${num}?text=${text}`, '_blank', 'noopener');
+      });
+    });
+  </script>
+
 </BaseLayout>

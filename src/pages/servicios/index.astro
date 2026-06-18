@@ -8,9 +8,9 @@ import { SITE, whatsappUrl } from '@data/site';
 const canonicalURL = `${SITE.url}/servicios`;
 
 const seoMeta = {
-  title: `Servicios Contra Incendio: Capacitación, Mantenimiento e Instalación — ${SITE.name}`,
+  title: `Servicios Contra Incendio en México — ${SITE.name}`,
   description:
-    'Servicios profesionales contra incendio en México: capacitación DC-3, mantenimiento y recarga, instalación de sistemas NFPA, auditoría NOM-002, brigadas y licitaciones.',
+    'Servicios contra incendio en México: capacitación DC-3, mantenimiento y recarga, instalación de sistemas NFPA, auditoría NOM-002, brigadas y licitaciones.',
   canonicalURL,
 };
 
@@ -111,7 +111,7 @@ const trustPoints = [
             Personal certificado, cobertura en los 32 estados y un ejecutivo responsable de tu cuenta.
           </p>
           <div class="flex flex-wrap gap-2">
-            {['DC-3 STPS','NOM-002-STPS','NFPA 1851','NFPA 13 · 72','NOM-154-SCFI','CompraNet'].map(n => (
+            {['DC-3 STPS','NOM-002-STPS','NFPA 1850','NFPA 13 · 72','NOM-154-SCFI','CompraNet'].map(n => (
               <span class="badge badge-dark font-display text-[10px]">{n}</span>
             ))}
           </div>
@@ -263,6 +263,7 @@ const trustPoints = [
               { label: 'Industrias que atendemos', desc: 'Soluciones por sector: bomberos, industria, PC', href: '/industrias' },
               { label: 'Blog técnico', desc: 'Guías de normativa, selección y mantenimiento', href: '/blog' },
               { label: 'Cobertura de servicio', desc: 'En sitio en los 32 estados', href: '/cobertura' },
+              { label: 'Conoce la empresa', desc: 'Quiénes somos, cobertura y certificaciones', href: '/empresa' },
             ].map((l) => (
               <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
                 <a href={l.href} class="group flex items-center justify-between gap-4 py-4">

@@ -3,6 +3,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import BlogCard from '@components/blog/BlogCard.astro';
 import { getCollection } from 'astro:content';
+import { SITE, whatsappUrl } from '@data/site';
 
 const allPosts = (await getCollection('blog', ({ data }) => !data.draft))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
@@ -10,57 +11,325 @@ const allPosts = (await getCollection('blog', ({ data }) => !data.draft))
 const featured = allPosts[0];
 const rest = allPosts.slice(1);
 
-const categories = [...new Set(allPosts.map(p => p.data.category))];
+// Categorías con conteo
+const categoryCounts = allPosts.reduce<Record<string, number>>((acc, p) => {
+  acc[p.data.category] = (acc[p.data.category] ?? 0) + 1;
+  return acc;
+}, {});
+const categories = Object.keys(categoryCounts);
+
+// Temas (tags) únicos
+const allTags = [...new Set(allPosts.flatMap((p) => p.data.tags ?? []))].slice(0, 10);
+
+// Recursos para el sidebar (interlinking)
+const recursos = [
+  { label: 'Catálogo de productos', desc: '9 categorías NFPA · NOM', href: '/productos' },
+  { label: 'Normas y certificaciones', desc: 'Qué NOM y NFPA aplican', href: '/certificaciones' },
+  { label: 'Servicios contra incendio', desc: 'Capacitación · Mantenimiento', href: '/servicios' },
+  { label: 'Industrias que atendemos', desc: 'Bomberos · Industria · PC', href: '/industrias' },
+  { label: 'Conoce la empresa', desc: 'Quiénes somos y cobertura', href: '/empresa' },
+];
+
+const canonicalURL = `${SITE.url}/blog`;
+
+const seoMeta = {
+  title: `Blog Técnico — Guías NFPA y NOM para Bomberos | ${SITE.name}`,
+  description:
+    'Blog técnico especializado en equipos para bomberos: guías NFPA 1970, normatividad NOM-002-STPS, extintores, SCBA, trajes y sistemas contra incendio en México.',
+  canonicalURL,
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Blog', item: canonicalURL },
+  ],
+};
+
+const collectionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  '@id': `${canonicalURL}#collection`,
+  name: 'Blog técnico FIREFIGHTERS MX',
+  description: seoMeta.description,
+  url: canonicalURL,
+  inLanguage: 'es-MX',
+  isPartOf: { '@id': `${SITE.url}/#website` },
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: allPosts.length,
+    itemListElement: allPosts.map((p, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      item: {
+        '@type': 'Article',
+        headline: p.data.title,
+        description: p.data.description,
+        url: `${SITE.url}/blog/${p.slug}`,
+      },
+    })),
+  },
+};
 ---
-<BaseLayout
-  title="Blog Técnico — Guías NFPA y NOM para Bomberos | FIREFIGHTERS MX"
-  description="Blog técnico especializado en equipos para bomberos. Guías NFPA, normatividad NOM-002, extintores, SCBA, trajes y sistemas contra incendio en México."
->
-  <section class="bg-gradient-fire py-16">
-    <div class="container-site text-center text-white">
-      <h1 class="section-title text-white mb-4">Blog Técnico</h1>
-      <p class="section-subtitle text-fire-200 mx-auto">
-        Guías técnicas, normatividad NFPA/NOM y recursos para bomberos,
-        brigadas y responsables de protección civil en México.
-      </p>
+
+<BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema]}>
+
+  <!-- Breadcrumb -->
+  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+    <div class="container-site">
+      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:#4A7599">
+        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li aria-hidden="true">/</li>
+        <li><span style="color:#94A3B8" aria-current="page">Blog</span></li>
+      </ol>
     </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">
+    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
+
+    <div class="container-site relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div>
+          <span class="section-eyebrow mb-5 inline-flex">Blog técnico · NFPA y NOM</span>
+          <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+            Conocimiento<br/>
+            <span style="color:#F75000">contra incendio</span>
+          </h1>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="#articulos" class="btn btn-primary btn-lg">Ver artículos</a>
+            <a href="/contacto" class="btn btn-ghost btn-lg">Hablar con un especialista</a>
+          </div>
+        </div>
+
+        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
+          <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">
+            Guías técnicas, normatividad y criterios de selección para
+            <strong style="color:#CBD5E1">bomberos, brigadas industriales y responsables
+            de protección civil</strong>. Material redactado por especialistas y
+            referenciado a la norma vigente.
+          </p>
+          <p class="text-sm leading-[1.9] mb-6" style="color:#64748B">
+            Cada artículo cruza con nuestro catálogo, servicios y guía de certificaciones
+            para que pases de la teoría a la decisión de compra con respaldo documental.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {['NFPA 1970','NFPA 1850','NOM-002-STPS','NOM-100-SCFI','NOM-154-SCFI'].map((n) => (
+              <span class="badge badge-dark font-display text-[10px]">{n}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)" aria-hidden="true"></div>
   </section>
+
   <!-- Accesos rápidos (interlinking) -->
   <QuickLinksBar />
 
-
-  <section class="section bg-white">
+  <!-- Artículos + Sidebar -->
+  <section id="articulos" class="section" style="background:#040A12" aria-labelledby="blog-title">
     <div class="container-site">
-      <!-- Categorías -->
-      <div class="flex flex-wrap gap-2 mb-12">
-        <span class="badge-fire">Todos</span>
-        {categories.map((cat) => (
-          <span class="badge-dark cursor-pointer hover:bg-dark-200">{cat}</span>
-        ))}
-      </div>
 
-      <!-- Featured post -->
-      {featured && (
-        <div class="mb-12">
-          <BlogCard post={featured} featured={true} />
-        </div>
-      )}
-
-      <!-- Grid -->
-      {rest.length > 0 && (
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {rest.map((post) => (
-            <BlogCard post={post} />
-          ))}
-        </div>
-      )}
-
-      {allPosts.length === 0 && (
-        <div class="text-center py-20 text-dark-400">
-          <p class="text-lg mb-2">Blog próximamente</p>
+      {allPosts.length === 0 ? (
+        <div class="text-center py-20" style="color:#64748B">
+          <p class="text-lg mb-2" style="color:#94A3B8">Blog próximamente</p>
           <p class="text-sm">Estamos preparando guías técnicas especializadas para el sector bomberos.</p>
         </div>
+      ) : (
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
+
+          <!-- ── Columna principal ────────────────────────────── -->
+          <div class="lg:col-span-8">
+
+            <div class="mb-8">
+              <span class="section-eyebrow mb-4 inline-flex">Últimas publicaciones</span>
+              <h2 id="blog-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+                Artículos <span style="color:#F75000">técnicos</span>
+              </h2>
+            </div>
+
+            <!-- Filtros por categoría -->
+            <div class="flex flex-wrap gap-2 mb-8" id="blog-filters" role="group" aria-label="Filtrar por categoría">
+              <button type="button" class="blog-filter is-active" data-filter="all">Todos</button>
+              {categories.map((cat) => (
+                <button type="button" class="blog-filter" data-filter={cat}>{cat}</button>
+              ))}
+            </div>
+
+            <!-- Destacado -->
+            {featured && (
+              <div class="blog-item mb-6" data-category={featured.data.category}>
+                <BlogCard post={featured} featured={true} />
+              </div>
+            )}
+
+            <!-- Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5" id="blog-grid">
+              {rest.map((post) => (
+                <div class="blog-item" data-category={post.data.category}>
+                  <BlogCard post={post} />
+                </div>
+              ))}
+            </div>
+
+            <p id="blog-empty" class="py-12 text-center text-sm" style="color:#64748B" hidden>
+              No hay artículos en esta categoría por ahora.
+            </p>
+          </div>
+
+          <!-- ── Sidebar ──────────────────────────────────────── -->
+          <aside class="lg:col-span-4">
+            <div class="flex flex-col gap-8 lg:sticky" style="top:124px">
+
+              <!-- Categorías -->
+              <div style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
+                <h3 class="font-display font-bold text-sm uppercase tracking-widest px-5 py-4" style="color:#FF6B26;letter-spacing:0.1em;border-bottom:1px solid rgba(74,117,153,0.18)">
+                  Categorías
+                </h3>
+                <ul class="flex flex-col list-none m-0 p-0">
+                  <li>
+                    <button type="button" class="blog-filter side-cat is-active w-full flex items-center justify-between gap-3 px-5 py-3" data-filter="all">
+                      <span class="font-display text-sm">Todas</span>
+                      <span class="text-xs" style="color:#4A7599">{allPosts.length}</span>
+                    </button>
+                  </li>
+                  {categories.map((cat) => (
+                    <li style="border-top:1px solid rgba(74,117,153,0.12)">
+                      <button type="button" class="blog-filter side-cat w-full flex items-center justify-between gap-3 px-5 py-3" data-filter={cat}>
+                        <span class="font-display text-sm">{cat}</span>
+                        <span class="text-xs" style="color:#4A7599">{categoryCounts[cat]}</span>
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <!-- Artículos destacados (sin fecha) -->
+              <div style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
+                <h3 class="font-display font-bold text-sm uppercase tracking-widest px-5 py-4" style="color:#FF6B26;letter-spacing:0.1em;border-bottom:1px solid rgba(74,117,153,0.18)">
+                  Artículos destacados
+                </h3>
+                <ul class="flex flex-col list-none m-0 p-0">
+                  {allPosts.slice(0, 5).map((post) => (
+                    <li style="border-top:1px solid rgba(74,117,153,0.12)">
+                      <a href={`/blog/${post.slug}`} class="side-post group flex flex-col gap-1 px-5 py-4">
+                        <span class="text-[10px] font-display font-semibold uppercase tracking-widest" style="color:#4A7599">{post.data.category}</span>
+                        <span class="font-display font-semibold text-sm leading-snug group-hover:text-[#FF6B26]" style="color:#E2E8F0">{post.data.title}</span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <!-- Temas frecuentes -->
+              {allTags.length > 0 && (
+                <div style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
+                  <h3 class="font-display font-bold text-sm uppercase tracking-widest px-5 py-4" style="color:#FF6B26;letter-spacing:0.1em;border-bottom:1px solid rgba(74,117,153,0.18)">
+                    Temas frecuentes
+                  </h3>
+                  <div class="flex flex-wrap gap-2 p-5">
+                    {allTags.map((tag) => (
+                      <span class="badge badge-dark text-[10px]">{tag}</span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              <!-- Recursos (interlinking) -->
+              <div style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
+                <h3 class="font-display font-bold text-sm uppercase tracking-widest px-5 py-4" style="color:#FF6B26;letter-spacing:0.1em;border-bottom:1px solid rgba(74,117,153,0.18)">
+                  También te puede servir
+                </h3>
+                <ul class="flex flex-col list-none m-0 p-0">
+                  {recursos.map((r) => (
+                    <li style="border-top:1px solid rgba(74,117,153,0.12)">
+                      <a href={r.href} class="side-post group flex items-center justify-between gap-3 px-5 py-4">
+                        <span class="flex flex-col gap-0.5">
+                          <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#E2E8F0">{r.label}</span>
+                          <span class="text-xs" style="color:#64748B">{r.desc}</span>
+                        </span>
+                        <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#4A7599" stroke-width="2.5" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
+                        </svg>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <!-- CTA -->
+              <div class="p-6 text-center" style="background:linear-gradient(135deg, #0C1825 0%, rgba(247,80,0,0.12) 130%);border:1px solid rgba(247,80,0,0.3)">
+                <h3 class="font-display font-bold text-lg mb-2" style="color:#FFFFFF">¿Dudas sobre normatividad?</h3>
+                <p class="text-xs leading-relaxed mb-5" style="color:#94A3B8">
+                  Un especialista te orienta sobre la norma y el equipo correcto para tu operación.
+                </p>
+                <div class="flex flex-col gap-2">
+                  <a href={whatsappUrl('Hola, tengo una duda técnica sobre normatividad contra incendio.')} target="_blank" rel="noopener" class="btn btn-primary btn-sm w-full">
+                    Preguntar por WhatsApp
+                  </a>
+                  <a href="/cotizacion" class="btn btn-ghost btn-sm w-full">Solicitar cotización</a>
+                </div>
+              </div>
+
+            </div>
+          </aside>
+
+        </div>
       )}
+
     </div>
   </section>
+
 </BaseLayout>
+
+<style>
+  /* Filtros por categoría — botones chip (sin transición, hover instantáneo) */
+  .blog-filter {
+    font-family: var(--font-display);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 0.4rem 0.9rem;
+    border-radius: 2px;
+    background: #0C1825;
+    color: #94A3B8;
+    border: 1px solid rgba(74,117,153,0.25);
+    cursor: pointer;
+  }
+  .blog-filter:hover { color: #FFFFFF; border-color: rgba(247,80,0,0.45); }
+  .blog-filter.is-active { background: rgba(247,80,0,0.15); color: #FF6B26; border-color: rgba(247,80,0,0.5); }
+
+  /* Categorías y posts del sidebar */
+  .side-cat { background: transparent; color: #CBD5E1; border: none; cursor: pointer; text-align: left; }
+  .side-cat:hover { background: #0C1825; color: #FFFFFF; }
+  .side-cat.is-active { background: rgba(247,80,0,0.1); color: #FF6B26; }
+  .side-cat.is-active .text-xs { color: #FF6B26 !important; }
+  .side-post:hover { background: #0C1825; }
+</style>
+
+<script>
+  // Filtro por categoría — page-local, progressive enhancement (sin JS = todo visible)
+  const filters = document.querySelectorAll<HTMLButtonElement>('.blog-filter');
+  const items = document.querySelectorAll<HTMLElement>('.blog-item');
+  const empty = document.getElementById('blog-empty');
+
+  function applyFilter(value: string) {
+    let visible = 0;
+    items.forEach((item) => {
+      const match = value === 'all' || item.dataset.category === value;
+      item.hidden = !match;
+      if (match) visible++;
+    });
+    filters.forEach((f) => f.classList.toggle('is-active', f.dataset.filter === value));
+    if (empty) empty.hidden = visible !== 0;
+  }
+
+  filters.forEach((btn) => {
+    btn.addEventListener('click', () => applyFilter(btn.dataset.filter || 'all'));
+  });
+</script>

@@ -35,8 +35,8 @@ export const industries: Industry[] = [
   {
     slug: 'bomberos-municipales',
     name: 'Bomberos Municipales',
-    norm: 'NFPA 1971 · CompraNet',
-    description: 'Equipamiento integral para cuerpos de bomberos municipales: trajes NFPA 1971, SCBA, herramientas de rescate y soporte completo para licitaciones públicas.',
+    norm: 'NFPA 1970 · CompraNet',
+    description: 'Equipamiento integral para cuerpos de bomberos municipales: trajes NFPA 1970, SCBA, herramientas de rescate y soporte completo para licitaciones públicas.',
     shortDesc: 'Equipamiento integral y soporte para licitaciones de cuerpos de bomberos.',
     accent: '#F75000',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s8-4 8-10V6l-8-3-8 3v6c0 6 8 10 8 10z"/><path d="M12 8c0 0-3.5 2.8-2 5.6.8 1.4 2 1.4 2 1.4s-.7-1.4 0-2.8c.7-1.4 2-1.4 2-1.4s-.7 2 .7 3.5c.6.6.7 1.4.7 1.4"/></svg>`,
@@ -46,10 +46,10 @@ export const industries: Industry[] = [
       'Trabajamos con esquema de precio preferencial para cuerpos de bomberos y programas de equipamiento por fases, para que el presupuesto anual rinda sin sacrificar certificación ni garantía.',
     ],
     risks: [
-      { name: 'Combate estructural', detail: 'Incendios en vivienda y comercio que exigen EPP NFPA 1971 completo y SCBA con aire suficiente para búsqueda primaria.' },
+      { name: 'Combate estructural', detail: 'Incendios en vivienda y comercio que exigen EPP NFPA 1970 completo y SCBA con aire suficiente para búsqueda primaria.' },
       { name: 'Rescate vehicular', detail: 'Extracción en accidentes carreteros con vehículos modernos de aceros endurecidos.' },
       { name: 'Presupuesto público', detail: 'Procesos de licitación con anexos técnicos estrictos y comprobación ante el órgano fiscalizador.' },
-      { name: 'Equipo heredado', detail: 'Inventarios mixtos y fuera de vida útil NFPA 1851 que comprometen la seguridad del personal.' },
+      { name: 'Equipo heredado', detail: 'Inventarios mixtos y fuera de vida útil NFPA 1850 que comprometen la seguridad del personal.' },
     ],
     spotlight: {
       title: 'Equipa a tu cuerpo de bomberos',
@@ -72,7 +72,7 @@ export const industries: Industry[] = [
     faqs: [
       { q: '¿Manejan precios especiales para cuerpos de bomberos?', a: 'Sí. Tenemos esquema de precio preferencial para H. Cuerpos de Bomberos, patronatos y Protección Civil, además de programas de equipamiento por fases para ajustarse al presupuesto anual disponible.' },
       { q: '¿Pueden participar en nuestra licitación municipal?', a: 'Sí. Participamos directamente o respaldamos a tu proveedor local con cartas de distribuidor autorizado, fichas técnicas formato CompraNet y stock comprometido antes de la firma.' },
-      { q: '¿El equipo usado o de donación cumple la norma?', a: 'El EPP estructural tiene vida útil máxima de 10 años desde fabricación según NFPA 1851, y el equipo donado usado rara vez la cumple o carece de trazabilidad. Podemos inspeccionar tu inventario actual y decirte qué es utilizable y qué debe retirarse.' },
+      { q: '¿El equipo usado o de donación cumple la norma?', a: 'El EPP estructural tiene vida útil máxima de 10 años desde fabricación según NFPA 1850, y el equipo donado usado rara vez la cumple o carece de trazabilidad. Podemos inspeccionar tu inventario actual y decirte qué es utilizable y qué debe retirarse.' },
     ],
   },
   {

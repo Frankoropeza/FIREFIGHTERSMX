@@ -1,61 +1,50 @@
 ---
-title: "Cómo Elegir un Traje para Bombero NFPA 1971: Guía Técnica 2026"
-description: "Guía técnica para seleccionar el traje estructural adecuado según NFPA 1971:2018. Materiales, capas, certificaciones y principales marcas disponibles en México."
+title: "Cómo elegir un traje para bombero certificado NFPA: guía técnica 2026"
+description: "Guía para elegir un traje estructural bajo NFPA 1970: las tres capas, materiales, pruebas THL y TPP, tallaje, vida útil y marcas disponibles en México."
 pubDate: 2026-03-05
+updatedDate: 2026-06-10
 author: "Ing. Carlos Mendoza"
 category: "Equipos EPP"
-tags: ["trajes bomberos", "NFPA 1971", "EPP", "equipo estructural"]
+tags: ["trajes bomberos", "NFPA 1970", "EPP", "equipo estructural"]
 image:
   url: "/images/blog/traje-bombero-nfpa-1971.webp"
-  alt: "Bombero con traje estructural NFPA 1971 en entrenamiento"
+  alt: "Bombero con traje estructural certificado NFPA en entrenamiento"
 ---
 
-## La Norma que Define la Protección: NFPA 1971
+El traje estructural es, probablemente, la pieza de equipo a la que un bombero le confía más veces la vida. Y sin embargo, es de las que más se compran "a ojo": por el color, por la marca que sonaba, por el precio que cuadraba en el presupuesto. Quiero ahorrarte esa lotería. Si entiendes qué hace cada parte del traje y qué le tienes que exigir a un proveedor, vas a comprar con criterio y no con fe.
 
-El **NFPA 1971** — *Standard on Protective Ensembles for Structural Fire Fighting* — es la norma internacional de referencia para trajes de combate estructural. La edición vigente es la **NFPA 1971:2018**, que incorporó actualizaciones críticas sobre resistencia a carcinógenos y rendimiento CBRN.
+Antes de entrar en materia, una aclaración que importa en 2026: el conjunto estructural ya no se certifica bajo la vieja NFPA 1971, sino bajo la **NFPA 1970**, que absorbió esa norma y endureció algunos requisitos. Si todavía ves "NFPA 1971" en una cotización nueva, es señal de que el proveedor no está al día. Lo explico a fondo en [NFPA 1970: la nueva norma de trajes](/blog/nfpa-1970-nueva-norma-trajes-bombero).
 
-Todo traje vendido para bomberos en México debería estar certificado por un laboratorio de tercera parte acreditado (UL, Intertek, SGS) bajo NFPA 1971:2018.
+## La norma que define qué te protege
 
-## Las 3 Capas del Traje Estructural
+La NFPA 1970 (*Standard on Protective Ensembles for Structural Fire Fighting*, entre otros conjuntos) es la referencia internacional para el traje de combate estructural. Lo que de verdad debes verificar no es solo que el proveedor diga "cumple NFPA", sino que el traje esté certificado por un laboratorio de tercera parte acreditado, normalmente UL, Intertek o SGS. Esa certificación de un tercero es la diferencia entre una afirmación y una garantía.
 
-Un traje conforme a NFPA 1971 está compuesto por tres capas independientes que trabajan en conjunto:
+## Las tres capas: un equipo dentro de otro
 
-### Capa Externa (Shell)
+Un traje estructural no es una tela gruesa; son tres capas que trabajan juntas, cada una con un oficio distinto.
 
-Primera línea de defensa. Debe resistir:
+La **capa externa** (shell) es la primera línea de defensa, la que ves. Tiene que resistir al menos 260 °C durante cinco segundos sin encenderse, aguantar tracción y desgarro (del orden de 800 N o más) y repeler líquidos peligrosos como sangre o agentes químicos. Los materiales típicos son DuPont Nomex NXT, mezclas Kevlar/Nomex y PBI Matrix, y la elección entre ellos define cuánto dura el traje y cuánto pesa.
 
-- Temperatura de al menos **260 °C** por 5 segundos sin ignición (ASTM D6413)
-- Resistencia a la tracción y al desgarro (≥ 800 N)
-- Resistencia a líquidos peligrosos (sangre, agentes químicos)
+La **barrera de humedad** (moisture barrier) es la capa intermedia y la más malentendida. Su trabajo es doble y aparentemente contradictorio: impedir que entre agua o agentes biológicos, pero dejar salir el vapor del cuerpo para que el bombero no se cocine en su propio sudor. Materiales como Gore-Tex Crosstech o Stedair hacen ese equilibrio; la versión Crosstech Black suma protección frente a bacterias, virus y sustancias peligrosas.
 
-Materiales más comunes: **DuPont™ Nomex® NXT**, **Kevlar® / Nomex® blend**, PBI Matrix.
+El **forro térmico** (thermal liner) es la capa interior, la que de verdad te separa de la quemadura. Gestiona la transferencia de calor, y aquí entran nombres como Caldura XT de Globe, Glide de Lion o acolchados de PBI/Kevlar. Más forro significa más protección, pero también más calor acumulado: por eso el diseño del traje es siempre un balance, nunca un "más es mejor".
 
-### Barrera de Humedad (Moisture Barrier)
+## Las pruebas que separan un buen traje de uno cualquiera
 
-Impide la penetración de agua y agentes biológicos mientras permite la transpiración.
+Cuando compares modelos, vas a topar con siglas. Estas cuatro son las que importan:
 
-Materiales: **Gore-Tex® Crosstech®**, **Stedair®**, Crosstech® Black.
-
-La versión **Crosstech® Black** añade protección CBRN contra bacterias, virus y sustancias peligrosas.
-
-### Forro Térmico (Thermal Liner)
-
-La capa interna que gestiona la transferencia de calor y protege al bombero de quemaduras.
-
-Materiales: **Caldura® XT** (Globe), **Glide™** (Lion), **PBI® / Kevlar®** quilted.
-
-## Principales Certificaciones de Prueba
-
-| Prueba | Mide |
+| Prueba | Qué mide |
 |---|---|
-| ATPV (cal/cm²) | Protección al arco eléctrico |
-| THL (W/m²) | Carga de calor transferida — confort |
-| TPP | Protección térmica total |
-| WVTR | Permeabilidad al vapor de agua — transpiración |
+| ATPV (cal/cm²) | Protección frente a arco eléctrico |
+| THL (W/m²) | Carga de calor que el traje deja salir — confort y estrés térmico |
+| TPP | Protección térmica total frente a la llama |
+| WVTR | Permeabilidad al vapor — qué tanto transpira |
 
-Un THL más alto = más confort. Un TPP más alto = más protección térmica. Son inversamente proporcionales, por lo que elegir el balance correcto es clave.
+Aquí está la clave que muchos ignoran: el **THL y el TPP juegan en contra**. Un THL alto significa más confort y menos estrés por calor; un TPP alto significa más protección térmica. Subir uno tiende a bajar el otro. El traje "perfecto" no es el de números máximos en todo, sino el que equilibra ambos para el tipo de fuego que enfrenta tu gente. Por eso no existe un solo mejor traje, sino el mejor traje para tu operación.
 
-## Guía de Talla
+## El tallaje no es un trámite
+
+Un traje mal tallado pierde protección donde más la necesitas y estorba en la maniobra. Esta tabla es una referencia, pero la medición real de cada elemento es lo que cuenta:
 
 | Talla | Tórax (cm) | Talla pantalón |
 |---|---|---|
@@ -65,22 +54,14 @@ Un THL más alto = más confort. Un TPP más alto = más protección térmica. S
 | XL | 115–124 | 37–39 |
 | 2XL | 125–134 | 40–42 |
 
-La mayoría de fabricantes ofrecen ajustes a medida sin costo adicional para pedidos de 5+ trajes.
+La mayoría de los fabricantes ofrece ajustes a la medida sin costo extra a partir de pedidos de cinco trajes. Aprovéchalo: comprar "tallas promedio" para un grupo es la receta para que a la mitad de la gente no le quede.
 
-## Marcas Recomendadas (Disponibles en México)
+## Marcas que recomiendo (y que tenemos en México)
 
-**Globe Manufacturing (USA)** — GX-7, G-Xtreme: referencia mundial. Alto THL, materiales de primera generación PBI.
+**Globe Manufacturing** es referencia mundial, con líneas como la GX-7: THL alto y materiales de primera generación en PBI, para quien prioriza desempeño. **Lion Apparel**, con su línea TechGen, ofrece una relación protección-precio difícil de igualar y opciones de cuello levantado para protección adicional. Y **MSA/Cairns** integra de forma natural con los cascos MSA Gallet, con buena disponibilidad de refacciones en el país, algo que importa más de lo que parece a tres años. Los puedes ver en el catálogo de [trajes para bomberos](/productos/trajes-bombero).
 
-**Lion Apparel (USA)** — Janesville, TechGen: excelente relación precio / protección. Disponible con cuello levantado para protección adicional CBRN.
+## ¿Cuánto te dura un traje?
 
-**MSA / Cairns (USA)** — Integración natural con cascos MSA Gallet. Buena disponibilidad de refacciones en México.
+La norma de cuidado y mantenimiento (NFPA 1850, sucesora de la 1851) marca un límite que no depende de cómo se vea el traje: **diez años desde la fecha de fabricación**, y a retiro obligatorio. Antes de eso, el traje vive si se inspecciona bien. La rutina sensata es revisar después de cada uso, hacer una inspección avanzada semestral con técnico certificado y una especializada cada tres años con laboratorio acreditado. Un traje cuidado llega entero a sus diez años; uno descuidado falla mucho antes, casi siempre en el peor momento.
 
-## ¿Cuánto Dura un Traje NFPA 1971?
-
-NFPA 1851 establece que un traje estructural debe retirarse del servicio activo **máximo a los 10 años** desde su fecha de fabricación, independientemente de su estado visual. Los ciclos de inspección recomendados son:
-
-- **Inspección rutinaria**: después de cada uso
-- **Inspección avanzada**: semestralmente por técnico certificado
-- **Inspección especializada**: cada 3 años con laboratorio acreditado
-
-¿Listo para equipar a tu brigada? [Solicita una cotización personalizada](/cotizacion) con especificaciones técnicas incluidas.
+¿Vas a equipar a tu brigada bajo la norma vigente? [Pide una cotización personalizada](/cotizacion) con la especificación NFPA 1970 incluida, o consulta antes [cómo elegir entre traje estructural, de proximidad o forestal](/blog/traje-estructural-proximidad-forestal-diferencias).

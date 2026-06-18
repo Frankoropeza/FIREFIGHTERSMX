@@ -74,28 +74,28 @@ export const services: Service[] = [
   {
     slug: 'mantenimiento',
     title: 'Mantenimiento y Recarga',
-    norm: 'NFPA 1851 · NOM-154',
-    description: 'Mantenimiento y recarga certificada: extintores con collar de garantía, SCBA con prueba de flujo, herramientas Holmatro y EPP conforme NFPA 1851 en México.',
+    norm: 'NFPA 1850 · NOM-154',
+    description: 'Mantenimiento y recarga certificada: extintores con collar de garantía, SCBA con prueba de flujo, herramientas Holmatro y EPP conforme NFPA 1850 en México.',
     shortDesc: 'Extintores, SCBA, herramientas hidráulicas y EPP — con reporte para auditoría.',
     accent: '#F5A623',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
     href: '/servicios/mantenimiento',
     intro: [
-      'Un equipo sin mantenimiento es un riesgo disfrazado de protección. Damos servicio certificado a extintores (recarga y prueba hidrostática NOM-154-SCFI), equipos SCBA (prueba de flujo anual y cilindros), herramientas hidráulicas Holmatro y EPP estructural conforme NFPA 1851.',
+      'Un equipo sin mantenimiento es un riesgo disfrazado de protección. Damos servicio certificado a extintores (recarga y prueba hidrostática NOM-154-SCFI), equipos SCBA (prueba de flujo anual y cilindros), herramientas hidráulicas Holmatro y EPP estructural conforme NFPA 1850.',
       'Cada servicio entrega etiqueta de inspección vigente, collar de garantía cuando aplica y reporte documental para tu expediente ante Protección Civil, STPS o tu aseguradora.',
     ],
     items: [
       { name: 'Extintores NOM-154-SCFI', detail: 'Recarga de todos los agentes, collar de garantía, etiqueta vigente y prueba hidrostática programada.' },
       { name: 'SCBA y cilindros', detail: 'Prueba de flujo anual, mantenimiento de reguladores, prueba hidrostática de cilindros y refacciones originales.' },
       { name: 'Herramientas hidráulicas', detail: 'Servicio preventivo y correctivo Holmatro con refacciones de fábrica para conservar la certificación.' },
-      { name: 'EPP estructural NFPA 1851', detail: 'Inspección avanzada, lavado técnico, reparación certificada y retiro documentado al fin de vida útil.' },
+      { name: 'EPP estructural NFPA 1850', detail: 'Inspección avanzada, lavado técnico, reparación certificada y retiro documentado al fin de vida útil.' },
     ],
     spotlight: {
       title: 'Mantenimiento que conserva',
       highlight: 'la certificación de tu equipo',
       paragraphs: [
         'El mantenimiento no certificado anula garantías y certificaciones. Nuestro taller trabaja con refacciones originales y procedimientos de fábrica para que cada extintor, SCBA o herramienta conserve su conformidad — y tú conserves la evidencia.',
-        'Programamos tu calendario anual completo: recargas, pruebas hidrostáticas, pruebas de flujo e inspecciones NFPA 1851, con recordatorios automáticos para que ningún vencimiento te tome por sorpresa.',
+        'Programamos tu calendario anual completo: recargas, pruebas hidrostáticas, pruebas de flujo e inspecciones NFPA 1850, con recordatorios automáticos para que ningún vencimiento te tome por sorpresa.',
       ],
       subsections: [
         { name: 'Taller y servicio en sitio', detail: 'Unidades móviles para recarga y servicio en tu instalación, o recolección y entrega en taller.' },
