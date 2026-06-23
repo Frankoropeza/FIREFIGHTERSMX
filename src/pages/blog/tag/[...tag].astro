@@ -1,0 +1,212 @@
+---
+// /blog/tag/[...tag].astro — Archivo de etiquetas del blog
+// =====================================================================
+// Genera una URL indexable por tag:
+//   /blog/tag/nfpa-1970
+//   /blog/tag/trajes-bomberos
+//   /blog/tag/extintores
+//
+// Por qué: los tags son cola larga de alta intención.
+// "NFPA 1970 trajes México" puede ranquear con un artículo solo o
+// ranquear mejor con una página de categoría de todos los artículos
+// que cubren ese estándar. Surface area multiplicado sin contenido nuevo.
+// =====================================================================
+import BaseLayout from '@layouts/BaseLayout.astro';
+import QuickLinksBar from '@components/common/QuickLinksBar.astro';
+import BlogCard from '@components/blog/BlogCard.astro';
+import { getCollection } from 'astro:content';
+import { SITE } from '@data/site';
+import type { GetStaticPaths } from 'astro';
+
+export const getStaticPaths = (async () => {
+  const allPosts = (await getCollection('blog', ({ data }) => !data.draft))
+    .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+  // Agrupar artículos por cada tag
+  const tagMap = allPosts.reduce<Record<string, typeof allPosts>>((acc, p) => {
+    for (const tag of p.data.tags ?? []) {
+      if (!acc[tag]) acc[tag] = [];
+      acc[tag].push(p);
+    }
+    return acc;
+  }, {});
+
+  return Object.entries(tagMap).map(([tag, posts]) => ({
+    params: { tag: slugifyTag(tag) },
+    props: { tag, posts, allTags: Object.keys(tagMap) },
+  }));
+}) satisfies GetStaticPaths;
+
+// "NFPA 1970" → "nfpa-1970"
+function slugifyTag(t: string): string {
+  return t
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+
+const { tag, posts, allTags } = Astro.props;
+const { tag: tagSlug } = Astro.params;
+const canonicalURL = `${SITE.url}/blog/tag/${tagSlug}`;
+
+const seoMeta = {
+  title: `${tag} — Blog técnico bomberos | FIREFIGHTERS MX`,
+  description:
+    `Artículos sobre ${tag} en equipos para bomberos y sistemas contra incendio en México. Normatividad NFPA, NOM y criterios de selección.`.slice(0, 160),
+  canonicalURL,
+};
+
+// JSON-LD CollectionPage de tag
+const collectionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: `${tag} — Blog FIREFIGHTERS MX`,
+  url: canonicalURL,
+  description: seoMeta.description,
+  inLanguage: 'es-MX',
+  isPartOf: { '@type': 'Blog', url: `${SITE.url}/blog` },
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: posts.length,
+    itemListElement: posts.map((p, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      item: {
+        '@type': 'Article',
+        headline: p.data.title,
+        description: p.data.description,
+        url: `${SITE.url}/blog/${p.slug}`,
+      },
+    })),
+  },
+};
+---
+
+<BaseLayout {...seoMeta} schema={[collectionSchema]}>
+
+  {/* ─── Breadcrumb ─── */}
+  <nav
+    class="py-3"
+    style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)"
+    aria-label="Breadcrumb"
+  >
+    <div class="container-site">
+      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:#4A7599">
+        <li><a href="/"     class="hover:text-[#FF6B26] transition-colors">Inicio</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="/blog" class="hover:text-[#FF6B26] transition-colors">Blog</a></li>
+        <li aria-hidden="true">/</li>
+        <li><span style="color:#94A3B8" aria-current="page">{tag}</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  {/* ─── Hero de tag ─── */}
+  <section style="background:#040A12;padding-block:4rem">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="section-eyebrow mb-3 inline-flex">Etiqueta · {posts.length} artículo{posts.length !== 1 ? 's' : ''}</span>
+          <h1
+            class="font-display font-bold uppercase"
+            style="color:#FFFFFF;font-size:clamp(2rem,4.5vw,3.5rem);line-height:1"
+          >
+            <span style="color:#F75000">#</span>{tag}
+          </h1>
+        </div>
+        <div class="lg:pl-12" style="border-left:1px solid rgba(74,117,153,0.1)">
+          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+            Todos los artículos técnicos relacionados con <strong style="color:#CBD5E1">{tag}</strong> —
+            guías referenciadas a la norma vigente para bomberos, brigadas industriales y
+            responsables de protección civil en México.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <QuickLinksBar />
+
+  {/* ─── Artículos + Sidebar ─── */}
+  <section class="section" style="background:#040A12" aria-label={`Artículos sobre ${tag}`}>
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
+
+        {/* ── Columna principal ── */}
+        <div class="lg:col-span-8">
+          {posts.length === 0 ? (
+            <p class="py-12 text-center text-sm" style="color:#64748B">
+              No hay artículos publicados con esta etiqueta todavía.
+            </p>
+          ) : (
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              {posts.map((post) => <BlogCard post={post} />)}
+            </div>
+          )}
+        </div>
+
+        {/* ── Sidebar ── */}
+        <aside class="lg:col-span-4">
+          <div class="flex flex-col gap-6 lg:sticky" style="top:124px">
+
+            {/* Otros tags frecuentes */}
+            <div style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
+              <h2
+                class="font-display font-bold text-sm uppercase tracking-widest px-5 py-4"
+                style="color:#FF6B26;letter-spacing:0.1em;border-bottom:1px solid rgba(74,117,153,0.18)"
+              >
+                Otras etiquetas
+              </h2>
+              <div class="flex flex-wrap gap-2 p-5">
+                {allTags
+                  .filter((t) => t !== tag)
+                  .slice(0, 20)
+                  .map((t) => (
+                    <a
+                      href={`/blog/tag/${slugifyTag(t)}`}
+                      class="badge badge-dark text-[10px] transition-colors hover:bg-[#FF6B26] hover:text-white"
+                    >
+                      #{t}
+                    </a>
+                  ))}
+              </div>
+            </div>
+
+            {/* Recursos */}
+            <div style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
+              <h2
+                class="font-display font-bold text-sm uppercase tracking-widest px-5 py-4"
+                style="color:#FF6B26;letter-spacing:0.1em;border-bottom:1px solid rgba(74,117,153,0.18)"
+              >
+                También te puede servir
+              </h2>
+              <ul class="flex flex-col list-none m-0 p-0">
+                {[
+                  { label: 'Catálogo de productos', href: '/productos' },
+                  { label: 'Certificaciones NFPA/NOM', href: '/certificaciones' },
+                  { label: 'Servicios contra incendio', href: '/servicios' },
+                  { label: 'Cobertura nacional', href: '/cobertura' },
+                ].map((r) => (
+                  <li style="border-top:1px solid rgba(74,117,153,0.12)">
+                    <a
+                      href={r.href}
+                      class="flex items-center justify-between gap-3 px-5 py-3 transition-colors hover:bg-[#0C1825]"
+                    >
+                      <span class="font-display text-sm" style="color:#CBD5E1">{r.label}</span>
+                      <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="#4A7599" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

@@ -7,8 +7,8 @@ author: "Lic. Ana Ramírez"
 category: "Licitaciones"
 tags: ["licitaciones", "compras públicas", "NOM", "NFPA", "especificaciones técnicas"]
 image:
-  url: "/images/blog/licitaciones-equipo-bomberos.webp"
-  alt: "Documentación técnica para licitación de equipo contra incendio"
+  url: "/images/blog/blog-licitaciones-equipo.avif"
+  alt: "Equipo contra incendio organizado para licitación pública NOM NFPA México"
 ---
 
 Hay licitaciones que se pierden por una coma. No es exageración: he visto propuestas técnicamente impecables quedar fuera porque la especificación pedía una edición de la norma distinta a la que ofertó el proveedor, o porque faltaba una carta que cualquiera habría podido conseguir a tiempo. Y al revés, he visto convocatorias tan mal redactadas que terminaron comprando equipo que dejaba al cuerpo operativo peor de lo que estaba.

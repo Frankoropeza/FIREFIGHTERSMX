@@ -5,6 +5,9 @@ pubDate: 2026-06-02
 author: "Ing. Carlos Mendoza"
 category: "Normatividad"
 tags: ["NFPA 1970", "NFPA 1971", "trajes bomberos", "normatividad"]
+image:
+  url: "/images/blog/blog-nfpa-1970-norma.avif"
+  alt: "Bombero con traje certificado NFPA 1970 — nueva norma de trajes estructurales México"
 ---
 
 Si llevas algunos años en el sector, te acostumbraste a una palabra: 1971. La pedías en las bases, la buscabas en la etiqueta, la dabas por sentada. Esa palabra acaba de cambiar, y no es un tecnicismo menor. Desde septiembre de 2024 el traje estructural se compra bajo otra referencia —la **NFPA 1970**— y todavía me encuentro órdenes de compra y bases de licitación que citan la norma anterior como si nada hubiera pasado.

@@ -60,27 +60,30 @@ const otherCategories = allCategories.filter((c) => c.slug !== cat.slug).slice(0
   </nav>
 
   <!-- Hero de categoría -->
-  <section class="relative overflow-hidden" style="background:#040A12;padding-block:4.5rem">
+  <section class="relative overflow-hidden" style="background:#040A12" aria-labelledby={`hero-${cat.slug}`}>
     <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
+
     <div class="container-site relative z-10">
-      <span class="section-eyebrow mb-5 inline-flex">{cat.norm}</span>
-      <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,6vw,4.5rem);line-height:0.95">
-        {cat.label}
-      </h1>
-      <div class="max-w-3xl flex flex-col gap-4">
-        {cat.intro.map((p) => (
-          <p class="text-sm leading-[1.9]" style="color:#94A3B8">{p}</p>
-        ))}
-      </div>
-      <div class="flex flex-col sm:flex-row gap-3 mt-8">
-        <a
-          href={whatsappUrl(`Hola, quiero cotizar ${cat.label.toLowerCase()}.`)}
-          target="_blank" rel="noopener"
-          class="btn btn-primary"
-        >
-          Cotizar {cat.label.toLowerCase()}
-        </a>
-        <a href="/productos" class="btn btn-ghost">Ver todo el catálogo</a>
+      <div class="flex flex-col justify-center py-14 lg:py-20">
+        <span class="section-eyebrow mb-5 inline-flex">{cat.norm}</span>
+        <h1 id={`hero-${cat.slug}`} class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,6vw,4.5rem);line-height:0.95">
+          {cat.label}
+        </h1>
+        <div class="flex flex-col gap-4 mb-8" style="max-width:48rem">
+          {cat.intro.map((p) => (
+            <p class="text-sm leading-[1.9]" style="color:#94A3B8">{p}</p>
+          ))}
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a
+            href={whatsappUrl(`Hola, quiero cotizar ${cat.label.toLowerCase()}.`)}
+            target="_blank" rel="noopener"
+            class="btn btn-primary"
+          >
+            Cotizar {cat.label.toLowerCase()}
+          </a>
+          <a href="/productos" class="btn btn-ghost">Ver todo el catálogo</a>
+        </div>
       </div>
     </div>
   </section>
@@ -110,14 +113,31 @@ const otherCategories = allCategories.filter((c) => c.slug !== cat.slug).slice(0
           </h2>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
             {products.map((product) => (
-              <a href={product.href} class="grid-cell group flex flex-col gap-3 p-6">
-                <div class="flex gap-2 flex-wrap">
-                  {product.norm && <span class="badge badge-fire">{product.norm}</span>}
-                  {product.brand && <span class="badge badge-dark">{product.brand}</span>}
+              <a href={product.href} class="grid-cell group flex flex-col overflow-hidden">
+                {product.image && (
+                  <div class="relative overflow-hidden shrink-0" style="aspect-ratio:16/9">
+                    <img
+                      src={product.image}
+                      alt={product.title}
+                      width="480"
+                      height="270"
+                      loading="lazy"
+                      decoding="async"
+                      class="w-full h-full block"
+                      style="object-fit:cover;object-position:center"
+                    />
+                    <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(to top, rgba(4,10,18,0.85) 0%, rgba(4,10,18,0.0) 60%)" aria-hidden="true"></div>
+                  </div>
+                )}
+                <div class="flex flex-col gap-3 p-6 flex-1">
+                  <div class="flex gap-2 flex-wrap">
+                    {product.norm && <span class="badge badge-fire">{product.norm}</span>}
+                    {product.brand && <span class="badge badge-dark">{product.brand}</span>}
+                  </div>
+                  <h3 class="font-display font-bold text-lg leading-snug group-hover:text-[#FF6B26]" style="color:#FFFFFF">{product.title}</h3>
+                  <p class="text-xs leading-relaxed" style="color:#64748B">{product.description}</p>
+                  <span class="text-xs font-display font-semibold uppercase tracking-wider mt-auto" style="color:#FF8F57">Ver detalles →</span>
                 </div>
-                <h3 class="font-display font-bold text-lg leading-snug group-hover:text-[#FF6B26]" style="color:#FFFFFF">{product.title}</h3>
-                <p class="text-xs leading-relaxed" style="color:#64748B">{product.description}</p>
-                <span class="text-xs font-display font-semibold uppercase tracking-wider mt-auto" style="color:#FF8F57">Ver detalles →</span>
               </a>
             ))}
           </div>

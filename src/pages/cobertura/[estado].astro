@@ -1,0 +1,406 @@
+---
+// /cobertura/[estado].astro — Landing individual SEO por estado
+// =====================================================================
+// Genera una URL propia para cada estado de cobertura:
+//   /cobertura/ciudad-de-mexico, /cobertura/jalisco, etc.
+//
+// Propósito SEO:
+//   • Captura búsquedas geo-específicas: "equipo bomberos Jalisco",
+//     "brigadas industriales Nuevo León NFPA", "extintores CDMX"
+//   • LocalBusiness schema con areaServed por estado
+//   • Breadcrumb + FAQPage del estado
+// =====================================================================
+import BaseLayout from '@layouts/BaseLayout.astro';
+import QuickLinksBar from '@components/common/QuickLinksBar.astro';
+import { estados } from '@data/cobertura';
+import { SITE, whatsappUrl } from '@data/site';
+import type { GetStaticPaths } from 'astro';
+
+export const getStaticPaths = (() => {
+  return estados.map((estado) => ({
+    params: { estado: estado.slug },
+    props: { estado },
+  }));
+}) satisfies GetStaticPaths;
+
+const { estado } = Astro.props;
+const canonicalURL = `${SITE.url}/cobertura/${estado.slug}`;
+
+// ── SEO: title (≤60c) y description (≤160c) keyword-first ──────────
+// Patrón: "Equipo Bomberos [Estado] | Distribuidor NFPA | FFMX"
+const seoTitle = `Equipo Bomberos ${estado.name} | Distribuidor NFPA FFMX`;
+const seoDescription =
+  `Distribuidor autorizado de equipo para bomberos en ${estado.name}. ${estado.description} Cotización en 24 h.`
+    .slice(0, 160);
+
+// ── JSON-LD ──────────────────────────────────────────────────────────
+
+// Breadcrumb
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio',    item: `${SITE.url}/`           },
+    { '@type': 'ListItem', position: 2, name: 'Cobertura', item: `${SITE.url}/cobertura`  },
+    { '@type': 'ListItem', position: 3, name: estado.name,  item: canonicalURL             },
+  ],
+};
+
+// Negocio local con areaServed específico del estado
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Store',
+  '@id': `${SITE.url}/#store`,
+  name: SITE.name,
+  url: SITE.url,
+  telephone: SITE.phoneE164,
+  areaServed: [
+    {
+      '@type': 'State',
+      name: estado.name,
+      containedInPlace: { '@type': 'Country', name: 'México' },
+    },
+  ],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: `Equipo para bomberos y contra incendio en ${estado.name}`,
+    itemListElement: estado.industries.map((ind) => ({
+      '@type': 'Offer',
+      itemOffered: {
+        '@type': 'Service',
+        name: `Suministro de equipo para bomberos — ${ind}`,
+        areaServed: { '@type': 'State', name: estado.name },
+      },
+    })),
+  },
+};
+
+// FAQPage de cobertura
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: `¿Entregan equipo para bomberos en ${estado.name}?`,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: `Sí. Entregamos equipo para bomberos, brigadas industriales y sistemas contra incendio en ${estado.name} con tiempo de entrega de ${estado.dias} hábiles. Cada envío viaja con seguro de carga, empaque reforzado y número de guía para rastreo en tiempo real.`,
+      },
+    },
+    {
+      '@type': 'Question',
+      name: `¿Cuánto tiempo tarda el envío a ${estado.name}?`,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: `El tiempo estimado de entrega a ${estado.name} es de ${estado.dias} en días hábiles, sujeto a disponibilidad de stock y la ruta de paquetería. Para pedidos urgentes o entregas programadas por contrato licitado, coordinamos ruta dedicada y confirmamos el tiempo exacto.`,
+      },
+    },
+    {
+      '@type': 'Question',
+      name: `¿Emiten documentación para licitaciones en ${estado.name}?`,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Sí. Cada entrega incluye certificado de laboratorio acreditado, número de serie verificable, ficha técnica en español y carta de distribución del fabricante — toda la documentación que exige un anexo técnico de licitación pública (CompraNet / LAASSP) o una auditoría de STPS o Protección Civil.',
+      },
+    },
+  ],
+};
+
+const schemas = [breadcrumbSchema, localBusinessSchema, faqSchema];
+
+// ── WA message ───────────────────────────────────────────────────────
+const waMsg = `Hola, necesito equipo para bomberos en ${estado.name}. ¿Cuál es el tiempo de entrega y disponibilidad?`;
+---
+
+<BaseLayout
+  title={seoTitle}
+  description={seoDescription}
+  canonicalURL={canonicalURL}
+  schema={schemas}
+>
+
+  {/* ─── Breadcrumb ─── */}
+  <nav
+    class="py-3"
+    style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)"
+    aria-label="Breadcrumb"
+  >
+    <div class="container-site">
+      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:#4A7599">
+        <li><a href="/"           class="hover:text-[#FF6B26] transition-colors">Inicio</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="/cobertura"  class="hover:text-[#FF6B26] transition-colors">Cobertura</a></li>
+        <li aria-hidden="true">/</li>
+        <li><span style="color:#94A3B8" aria-current="page">{estado.name}</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  {/* ─── Hero del estado ─── */}
+  <section
+    class="relative overflow-hidden"
+    style="background:#040A12;padding-block:5rem"
+    aria-labelledby="estado-heading"
+  >
+    <div
+      class="absolute top-0 right-0 w-1/2 h-full pointer-events-none"
+      style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.07) 0%, transparent 65%)"
+      aria-hidden="true"
+    ></div>
+
+    <div class="container-site relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+        {/* Col izquierda */}
+        <div>
+          <span class="section-eyebrow mb-5 inline-flex">Cobertura · {estado.name}</span>
+          <h1
+            id="estado-heading"
+            class="font-display font-bold uppercase mb-4"
+            style="color:#FFFFFF;font-size:clamp(2.2rem,5vw,4rem);line-height:0.95"
+          >
+            Equipo para<br/>
+            <span style="color:#F75000">Bomberos en<br/>{estado.name}</span>
+          </h1>
+
+          <div class="flex flex-wrap gap-2 mb-8">
+            <span class="badge badge-fire font-display text-[10px]">
+              {estado.express ? 'Express' : 'Envío nacional'}
+            </span>
+            <span class="badge badge-dark font-display text-[10px]">{estado.dias} hábiles</span>
+            <span class="badge badge-dark font-display text-[10px]">Seguro de carga</span>
+            <span class="badge badge-dark font-display text-[10px]">Rastreo incluido</span>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a
+              href={whatsappUrl(waMsg)}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-primary btn-lg"
+            >
+              Cotizar por WhatsApp
+            </a>
+            <a href="/cotizacion" class="btn btn-ghost btn-lg">Formulario de cotización</a>
+          </div>
+        </div>
+
+        {/* Col derecha — descripción larga */}
+        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
+          {estado.longDesc.map((para) => (
+            <p class="text-sm leading-[1.9] mb-4 last:mb-0" style="color:#94A3B8">{para}</p>
+          ))}
+        </div>
+
+      </div>
+    </div>
+
+    <div
+      class="absolute bottom-0 left-0 right-0 h-px"
+      style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)"
+      aria-hidden="true"
+    ></div>
+  </section>
+
+  {/* ─── Accesos rápidos ─── */}
+  <QuickLinksBar />
+
+  {/* ─── Sectores que atendemos en este estado ─── */}
+  <section
+    class="section"
+    style="background:#040A12"
+    aria-labelledby="sectores-heading"
+  >
+    <div class="container-site">
+      <span class="section-eyebrow mb-4 inline-flex">Sectores</span>
+      <h2
+        id="sectores-heading"
+        class="font-display font-bold mb-8"
+        style="color:#FFFFFF;font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.05"
+      >
+        Clientes que atendemos<br/>
+        <span style="color:#F75000">en {estado.name}</span>
+      </h2>
+
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px"
+        style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)"
+      >
+        {estado.industries.map((sector, i) => (
+          <div class="grid-cell flex items-start gap-4 p-5">
+            <span
+              class="shrink-0 font-display font-bold text-xs"
+              style="color:#F75000;min-width:1.5rem"
+              aria-hidden="true"
+            >
+              {String(i + 1).padStart(2, '0')}
+            </span>
+            <span class="text-sm font-semibold" style="color:#CBD5E1">{sector}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* ─── Cuerpos de bomberos representativos ─── */}
+  {estado.bomberos.length > 0 && (
+    <section
+      class="section"
+      style="background:#070E1A"
+      aria-labelledby="bomberos-heading"
+    >
+      <div class="container-site">
+        <span class="section-eyebrow mb-4 inline-flex">Organismos</span>
+        <h2
+          id="bomberos-heading"
+          class="font-display font-bold mb-6"
+          style="color:#FFFFFF;font-size:clamp(1.6rem,3vw,2.4rem)"
+        >
+          Cuerpos de bomberos y<br/>
+          <span style="color:#F75000">organismos de PC en {estado.name}</span>
+        </h2>
+
+        <ul class="list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+          {estado.bomberos.map((cuerpo) => (
+            <li
+              class="flex items-center gap-4 py-4"
+              style="border-bottom:1px solid rgba(74,117,153,0.15)"
+            >
+              <span style="color:#FF6B26" aria-hidden="true">▸</span>
+              <span class="text-sm font-semibold" style="color:#CBD5E1">{cuerpo}</span>
+            </li>
+          ))}
+        </ul>
+
+        <p class="text-sm mt-6" style="color:#64748B">
+          ¿Tu cuerpo de bomberos no está en la lista? Atendemos a todos los organismos de la entidad —
+          escríbenos por WhatsApp y te respondemos con disponibilidad y cotización para licitación.
+        </p>
+      </div>
+    </section>
+  )}
+
+  {/* ─── Logística y garantías de envío ─── */}
+  <section
+    class="section"
+    style="background:#040A12"
+    aria-labelledby="logistica-heading"
+  >
+    <div class="container-site">
+      <span class="section-eyebrow mb-4 inline-flex">Logística</span>
+      <h2
+        id="logistica-heading"
+        class="font-display font-bold mb-8"
+        style="color:#FFFFFF;font-size:clamp(1.8rem,3.5vw,2.8rem)"
+      >
+        Envío a {estado.name}:<br/>
+        <span style="color:#F75000">{estado.dias} hábiles</span>
+      </h2>
+
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px"
+        style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)"
+      >
+        {[
+          { icon: '⚡', title: estado.express ? 'Envío express' : 'Envío nacional', desc: `${estado.dias} en días hábiles` },
+          { icon: '🛡️', title: 'Seguro de carga', desc: 'Incluido sin costo adicional en todos los envíos' },
+          { icon: '📦', title: 'Empaque especializado', desc: 'Cajas reforzadas para equipo técnico certificado' },
+          { icon: '📍', title: 'Rastreo en tiempo real', desc: 'Número de guía al confirmar tu pedido' },
+        ].map((f) => (
+          <div class="grid-cell flex flex-col gap-3 p-6">
+            <span class="text-2xl" aria-hidden="true">{f.icon}</span>
+            <h3 class="font-display font-bold text-sm uppercase tracking-wider" style="color:#FFFFFF">
+              {f.title}
+            </h3>
+            <p class="text-xs leading-relaxed" style="color:#64748B">{f.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <p class="text-sm mt-6" style="color:#64748B">
+        Tiempos estimados en días hábiles, sujetos a disponibilidad de stock y ruta de paquetería.
+        Para entregas urgentes o por contrato licitado, coordinamos ruta dedicada y confirmamos el
+        tiempo exacto a tu domicilio o dependencia.
+      </p>
+    </div>
+  </section>
+
+  {/* ─── FAQ del estado ─── */}
+  <section
+    class="section"
+    style="background:#070E1A"
+    aria-labelledby="faq-heading"
+  >
+    <div class="container-site">
+      <span class="section-eyebrow mb-4 inline-flex">FAQ</span>
+      <h2
+        id="faq-heading"
+        class="font-display font-bold mb-8"
+        style="color:#FFFFFF;font-size:clamp(1.6rem,3vw,2.4rem)"
+      >
+        Preguntas frecuentes sobre<br/>
+        <span style="color:#F75000">cobertura en {estado.name}</span>
+      </h2>
+
+      <dl
+        class="flex flex-col gap-px"
+        style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)"
+      >
+        {[
+          {
+            q: `¿Entregan equipo para bomberos en ${estado.name}?`,
+            a: `Sí. Entregamos equipo para bomberos, brigadas industriales y sistemas contra incendio en ${estado.name} con tiempo de entrega de ${estado.dias} hábiles. Cada envío viaja con seguro de carga, empaque reforzado y número de guía para rastreo.`,
+          },
+          {
+            q: `¿Cuánto tarda el envío a ${estado.name}?`,
+            a: `El tiempo estimado es de ${estado.dias} en días hábiles, sujeto a disponibilidad de stock y la ruta de paquetería. Para pedidos urgentes o por contrato licitado, coordinamos ruta dedicada.`,
+          },
+          {
+            q: `¿Emiten documentación para licitaciones en ${estado.name}?`,
+            a: 'Sí. Cada entrega incluye certificado de laboratorio acreditado, número de serie verificable, ficha técnica en español y carta de distribución del fabricante — documentación lista para anexo técnico CompraNet / LAASSP, auditoría STPS o expediente de Protección Civil.',
+          },
+        ].map(({ q, a }) => (
+          <div class="grid-cell p-6">
+            <dt class="font-display font-bold mb-2" style="color:#FFFFFF;font-size:0.95rem">{q}</dt>
+            <dd class="text-sm leading-relaxed m-0" style="color:#64748B">{a}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  {/* ─── CTA de cierre ─── */}
+  <section
+    class="section"
+    style="background:#040A12;border-top:1px solid rgba(74,117,153,0.12)"
+  >
+    <div class="container-site text-center">
+      <span class="section-eyebrow mb-4 inline-flex">Siguiente paso</span>
+      <h2
+        class="font-display font-bold mb-4"
+        style="color:#FFFFFF;font-size:clamp(1.8rem,3.5vw,2.8rem)"
+      >
+        ¿Necesitas equipo para<br/>
+        <span style="color:#F75000">bomberos en {estado.name}?</span>
+      </h2>
+      <p class="text-sm mb-8 max-w-xl mx-auto" style="color:#94A3B8">
+        Cuéntanos qué necesitas — producto, cantidad y destino — y te respondemos
+        con disponibilidad, precio y tiempo de entrega en menos de 24 horas.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a
+          href={whatsappUrl(waMsg)}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-primary btn-lg"
+        >
+          Cotizar por WhatsApp
+        </a>
+        <a href="/cotizacion" class="btn btn-ghost btn-lg">Formulario de cotización</a>
+        <a href="/cobertura"  class="btn btn-ghost btn-lg">Ver toda la cobertura</a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

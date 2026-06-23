@@ -62,7 +62,7 @@ export const services: Service[] = [
         { name: 'Programas por nivel', detail: 'Desde brigadista básico hasta bombero NFPA 1001 II, con rutas de formación anuales para tu personal.' },
         { name: 'Evidencia documental completa', detail: 'DC-3, listas, temario, reporte fotográfico y diploma — expediente listo para auditoría.' },
       ],
-      image: '/images/servicios/capacitacion.svg',
+      image: '/images/servicios/capacitacion.avif',
       imageAlt: 'Ilustración técnica de instructor de brigada contra incendio con constancia DC-3 y extintor de práctica',
     },
     faqs: [
@@ -103,7 +103,7 @@ export const services: Service[] = [
         { name: 'Trazabilidad total', detail: 'Cada equipo queda registrado: fechas, técnico, refacciones y próxima intervención.' },
         { name: 'Recordatorios de vencimiento', detail: 'Te avisamos antes de cada recarga anual, prueba hidrostática o inspección de EPP.' },
       ],
-      image: '/images/servicios/mantenimiento.svg',
+      image: '/images/servicios/mantenimiento.avif',
       imageAlt: 'Ilustración técnica de mantenimiento de extintor con collar de garantía y herramienta de servicio',
     },
     faqs: [
@@ -144,7 +144,7 @@ export const services: Service[] = [
         { name: 'Pruebas de aceptación', detail: 'Protocolo documentado de flujo, presión, detección y descarga ante tu DRO o aseguradora.' },
         { name: 'Mantenimiento posterior', detail: 'Pólizas trimestrales o anuales del sistema instalado, con bitácora NFPA 25.' },
       ],
-      image: '/images/servicios/instalacion-sistemas-ci.svg',
+      image: '/images/servicios/instalacion-sistemas-ci.avif',
       imageAlt: 'Ilustración técnica de rociador automático y panel de control de detección de incendios NFPA',
     },
     faqs: [
@@ -185,7 +185,7 @@ export const services: Service[] = [
         { name: 'Plan priorizado por riesgo', detail: 'Qué cerrar primero según exposición legal y seguridad real, con costos estimados.' },
         { name: 'Seguimiento a 90 días', detail: 'Segunda visita de verificación incluida para validar el cierre de brechas.' },
       ],
-      image: '/images/servicios/auditoria-seguridad.svg',
+      image: '/images/servicios/auditoria-seguridad.avif',
       imageAlt: 'Ilustración técnica de auditoría de seguridad contra incendio con lista de verificación y semáforo de cumplimiento',
     },
     faqs: [
@@ -226,7 +226,7 @@ export const services: Service[] = [
         { name: 'Simulacros documentados', detail: 'Escenarios con observadores, tiempos medidos y reporte fotográfico para tu expediente.' },
         { name: 'Programa anual incluido', detail: 'Calendario de entrenamientos recurrentes y refrescos DC-3 para mantener la vigencia.' },
       ],
-      image: '/images/servicios/brigadas-empresariales.svg',
+      image: '/images/servicios/brigadas-empresariales.avif',
       imageAlt: 'Ilustración técnica de brigada contra incendio empresarial con jefe de brigada y equipo de protección',
     },
     faqs: [
@@ -267,7 +267,7 @@ export const services: Service[] = [
         { name: 'Experiencia federal y estatal', detail: 'CompraNet, PEMEX, CFE, ASA y dependencias estatales — conocemos sus formatos y criterios.' },
         { name: 'Entrega comprometida', detail: 'Programa de suministro realista con stock verificado antes de que firmes el contrato.' },
       ],
-      image: '/images/servicios/licitaciones.svg',
+      image: '/images/servicios/licitaciones.avif',
       imageAlt: 'Ilustración técnica de expediente de licitación con sello de cumplimiento y documentos CompraNet',
     },
     faqs: [

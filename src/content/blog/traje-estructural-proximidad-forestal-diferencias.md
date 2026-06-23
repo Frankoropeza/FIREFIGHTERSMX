@@ -5,6 +5,9 @@ pubDate: 2026-05-20
 author: "Ing. Carlos Mendoza"
 category: "Equipos EPP"
 tags: ["trajes bomberos", "traje forestal", "NFPA 1977", "EPP"]
+image:
+  url: "/images/blog/blog-diferencias-traje-tipos.avif"
+  alt: "Bombero con equipo de protección completo — diferencias entre traje estructural, proximidad y forestal"
 ---
 
 Una de las imágenes que más me preocupa cuando visito una estación es la del bombero que sale a combatir un incendio de pastizal con su traje estructural completo. Va protegido, sí, pero también va cargando cinco kilos de aislamiento térmico bajo el sol, sudando dentro de una barrera de humedad diseñada para retener vapor. En una jornada larga, ese traje no lo protege: lo pone en riesgo de un golpe de calor. Y el caso opuesto es igual de común y más peligroso —un overol forestal ligero frente a un flashover dentro de una vivienda.

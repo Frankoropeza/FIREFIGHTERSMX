@@ -19,9 +19,11 @@ import { homeFaqs } from '@data/faqs';
 import { services } from '@data/services';
 
 const seoMeta = {
-  title: `Equipo para Bomberos y Contra Incendio Certificado NFPA | ${SITE.name}`,
+  // Title: 55c (≤60) — keyword-first, sin truncado Google
+  title: 'Equipo para Bomberos Certificado NFPA | FIREFIGHTERS MX',
+  // Description: 143c (≤160) — modelos reales + segmentos para mayor CTR
   description:
-    'Distribuidor autorizado de equipo para bomberos: trajes NFPA 1970 (antes 1971), SCBA, cascos, rescate, extintores y sistemas CI. Cotización en 24 h.',
+    'Trajes NFPA 1970 Globe y Lion, SCBA MSA G1 y Dräger, cascos Bullard y Gallet. Distribuidor autorizado en México: bomberos, brigadas e industria.',
   canonicalURL: `${SITE.url}/`,
 };
 
@@ -48,9 +50,36 @@ const localBusinessSchema = {
     addressCountry: 'MX',
   },
   knowsAbout: [
-    'NFPA 1970', 'NFPA 1971', 'NFPA 1850', 'NFPA 10', 'NFPA 13', 'NFPA 72',
-    'NOM-002-STPS-2010', 'NOM-154-SCFI', 'NOM-026-STPS',
-    'Equipo para bomberos', 'Trajes estructurales', 'SCBA', 'Equipos HAZMAT',
+    // Normas NFPA — EPP y sistemas
+    'NFPA 1970',               // Trajes estructurales (antes 1971)
+    'NFPA 1977',               // Trajes forestales
+    'NFPA 1850',               // Vida útil y retiro de EPP
+    'NFPA 1981',               // SCBA para emergencias de servicio de urgencias
+    'NFPA 1982',               // PASS — dispositivos de alerta personal
+    'NFPA 1994',               // Trajes CBRN / HAZMAT clase 1–4
+    'NFPA 1021',               // Cualificaciones oficiales de bomberos
+    'NFPA 1001',               // Cualificaciones bombero nivel I y II
+    'NFPA 10',                 // Extintores portátiles
+    'NFPA 13',                 // Rociadores automáticos
+    'NFPA 72',                 // Detección y alarma de incendio
+    // Normas mexicanas
+    'NOM-002-STPS-2010',       // Prevención y protección CI en centros de trabajo
+    'NOM-154-SCFI-2005',       // Mantenimiento y recarga de extintores
+    'NOM-026-STPS-2008',       // Colores y señales de seguridad
+    // Estándares internacionales de referencia
+    'OACI ARFF',               // Categorías de protección contra incendio en aeropuertos
+    'LAASSP',                  // Ley de Adquisiciones — licitaciones públicas México
+    // Familias de producto y servicios
+    'Equipo para bomberos',
+    'Trajes estructurales NFPA',
+    'SCBA aire autónomo',
+    'Cascos para bomberos',
+    'Herramientas de rescate vehicular',
+    'Equipos HAZMAT CBRN',
+    'Extintores y sistemas contra incendio',
+    'Brigadas industriales',
+    'Equipo ARFF aeropuertos',
+    'Licitaciones equipo bomberos',
   ],
 };
 

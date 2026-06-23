@@ -1,0 +1,155 @@
+---
+// /blog/pagina/[page].astro — Paginación del blog
+// =====================================================================
+// Genera /blog/pagina/2, /blog/pagina/3, etc.
+// Canonical → /blog (página 1 siempre en /blog/index.astro)
+//
+// Por qué: con 13+ artículos Google necesita URLs paginadas para
+// indexar todos. Sin paginación el crawler abandona al terminar /blog.
+// =====================================================================
+import BaseLayout from '@layouts/BaseLayout.astro';
+import QuickLinksBar from '@components/common/QuickLinksBar.astro';
+import BlogCard from '@components/blog/BlogCard.astro';
+import { getCollection } from 'astro:content';
+import { SITE } from '@data/site';
+import type { GetStaticPaths } from 'astro';
+
+const PAGE_SIZE = 8;
+
+export const getStaticPaths = (async () => {
+  const allPosts = (await getCollection('blog', ({ data }) => !data.draft))
+    .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+  const totalPages = Math.ceil(allPosts.length / PAGE_SIZE);
+
+  // Genera páginas 2, 3, ... (la 1 la atiende /blog/index.astro)
+  return Array.from({ length: totalPages - 1 }, (_, i) => {
+    const page = i + 2;
+    const start = (page - 1) * PAGE_SIZE;
+    return {
+      params: { page: String(page) },
+      props: {
+        posts: allPosts.slice(start, start + PAGE_SIZE),
+        currentPage: page,
+        totalPages,
+        totalPosts: allPosts.length,
+      },
+    };
+  });
+}) satisfies GetStaticPaths;
+
+const { posts, currentPage, totalPages, totalPosts } = Astro.props;
+const canonicalURL = `${SITE.url}/blog/pagina/${currentPage}`;
+
+const seoMeta = {
+  title: `Blog técnico bomberos — Página ${currentPage} | FIREFIGHTERS MX`,
+  description:
+    `Artículos técnicos sobre equipo para bomberos, NFPA, NOM y sistemas contra incendio. Página ${currentPage} de ${totalPages}.`,
+  canonicalURL,
+};
+
+// JSON-LD CollectionPage paginada
+const collectionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: `Blog FIREFIGHTERS MX — Página ${currentPage}`,
+  url: canonicalURL,
+  description: seoMeta.description,
+  inLanguage: 'es-MX',
+  isPartOf: { '@type': 'Blog', url: `${SITE.url}/blog` },
+};
+
+// Paginación rel prev/next para crawlers
+const prevHref = currentPage === 2 ? `${SITE.url}/blog` : `${SITE.url}/blog/pagina/${currentPage - 1}`;
+const nextHref = currentPage < totalPages ? `${SITE.url}/blog/pagina/${currentPage + 1}` : null;
+---
+
+<BaseLayout {...seoMeta} schema={[collectionSchema]}>
+
+  {/* rel prev/next para indexación paginada */}
+  {currentPage > 1 && <link rel="prev" href={prevHref} slot="head" />}
+  {nextHref && <link rel="next" href={nextHref} slot="head" />}
+
+  {/* ─── Breadcrumb ─── */}
+  <nav
+    class="py-3"
+    style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)"
+    aria-label="Breadcrumb"
+  >
+    <div class="container-site">
+      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:#4A7599">
+        <li><a href="/"     class="hover:text-[#FF6B26] transition-colors">Inicio</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="/blog" class="hover:text-[#FF6B26] transition-colors">Blog</a></li>
+        <li aria-hidden="true">/</li>
+        <li><span style="color:#94A3B8" aria-current="page">Página {currentPage}</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  {/* ─── Header de página ─── */}
+  <section style="background:#040A12;padding-block:3rem">
+    <div class="container-site">
+      <span class="section-eyebrow mb-3 inline-flex">Blog técnico · Página {currentPage} de {totalPages}</span>
+      <h1
+        class="font-display font-bold"
+        style="color:#FFFFFF;font-size:clamp(2rem,4vw,3rem)"
+      >
+        Artículos <span style="color:#F75000">técnicos</span>
+      </h1>
+    </div>
+  </section>
+
+  <QuickLinksBar />
+
+  {/* ─── Grid de artículos ─── */}
+  <section class="section" style="background:#040A12" aria-label="Artículos de la página {currentPage}">
+    <div class="container-site">
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
+        {posts.map((post) => <BlogCard post={post} />)}
+      </div>
+
+      {/* ─── Controles de paginación ─── */}
+      <nav aria-label="Paginación del blog" class="flex items-center justify-between pt-8"
+        style="border-top:1px solid rgba(74,117,153,0.18)">
+        <a
+          href={prevHref}
+          class="btn btn-ghost"
+          aria-label="Página anterior"
+        >
+          ← Anterior
+        </a>
+
+        <div class="flex items-center gap-2">
+          {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
+            <a
+              href={p === 1 ? '/blog' : `/blog/pagina/${p}`}
+              class={`flex items-center justify-center w-8 h-8 font-display font-bold text-sm rounded transition-colors ${p === currentPage ? 'text-white' : 'text-gray-500 hover:text-white'}`}
+              style={p === currentPage ? 'background:rgba(247,80,0,0.2);border:1px solid rgba(247,80,0,0.5);color:#FF6B26' : 'border:1px solid rgba(74,117,153,0.25)'}
+              aria-current={p === currentPage ? 'page' : undefined}
+            >
+              {p}
+            </a>
+          ))}
+        </div>
+
+        {nextHref ? (
+          <a href={nextHref} class="btn btn-ghost" aria-label="Página siguiente">
+            Siguiente →
+          </a>
+        ) : (
+          <span class="btn btn-ghost" style="opacity:0.3;cursor:default" aria-disabled="true">
+            Siguiente →
+          </span>
+        )}
+      </nav>
+
+      <p class="text-center text-xs mt-4" style="color:#4A7599">
+        {totalPosts} artículos · página {currentPage} de {totalPages}
+      </p>
+
+    </div>
+  </section>
+
+</BaseLayout>

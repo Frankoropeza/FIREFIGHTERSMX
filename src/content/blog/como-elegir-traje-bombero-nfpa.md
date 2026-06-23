@@ -7,8 +7,8 @@ author: "Ing. Carlos Mendoza"
 category: "Equipos EPP"
 tags: ["trajes bomberos", "NFPA 1970", "EPP", "equipo estructural"]
 image:
-  url: "/images/blog/traje-bombero-nfpa-1971.webp"
-  alt: "Bombero con traje estructural certificado NFPA en entrenamiento"
+  url: "/images/blog/blog-elegir-traje-nfpa.avif"
+  alt: "Bombero en traje estructural completo certificado NFPA 1970 — guía de selección"
 ---
 
 El traje estructural es, probablemente, la pieza de equipo a la que un bombero le confía más veces la vida. Y sin embargo, es de las que más se compran "a ojo": por el color, por la marca que sonaba, por el precio que cuadraba en el presupuesto. Quiero ahorrarte esa lotería. Si entiendes qué hace cada parte del traje y qué le tienes que exigir a un proveedor, vas a comprar con criterio y no con fe.

@@ -5,6 +5,9 @@ pubDate: 2026-04-03
 author: "Lic. Ana Ramírez"
 category: "Normatividad"
 tags: ["licitaciones", "CompraNet", "trajes bomberos", "compras gobierno"]
+image:
+  url: "/images/blog/blog-especificaciones-licitacion.avif"
+  alt: "Equipo para bomberos en tienda especializada — especificaciones técnicas para licitación"
 ---
 
 He acompañado suficientes procesos de compra de equipo de bomberos para sostener una afirmación incómoda: la mayoría de las malas adquisiciones no se pierden el día del fallo, sino semanas antes, cuando alguien redactó las especificaciones técnicas con prisa. Unas bases vagas son una invitación abierta a que gane el traje más barato, no el que protege. Unas bases bien escritas hacen casi todo el trabajo por ti.

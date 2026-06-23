@@ -11,6 +11,11 @@ const allPosts = (await getCollection('blog', ({ data }) => !data.draft))
 const featured = allPosts[0];
 const rest = allPosts.slice(1);
 
+// Slugify helper (debe coincidir con /categoria y /tag)
+function slugify(s: string): string {
+  return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
 // Categorías con conteo
 const categoryCounts = allPosts.reduce<Record<string, number>>((acc, p) => {
   acc[p.data.category] = (acc[p.data.category] ?? 0) + 1;
@@ -153,11 +158,18 @@ const collectionSchema = {
               </h2>
             </div>
 
-            <!-- Filtros por categoría -->
+            <!-- Filtros por categoría (JS para UX, href para SEO/accesibilidad) -->
             <div class="flex flex-wrap gap-2 mb-8" id="blog-filters" role="group" aria-label="Filtrar por categoría">
-              <button type="button" class="blog-filter is-active" data-filter="all">Todos</button>
+              <a href="/blog" class="blog-filter is-active" data-filter="all" style="text-decoration:none">Todos</a>
               {categories.map((cat) => (
-                <button type="button" class="blog-filter" data-filter={cat}>{cat}</button>
+                <a
+                  href={`/blog/categoria/${slugify(cat)}`}
+                  class="blog-filter"
+                  data-filter={cat}
+                  style="text-decoration:none"
+                >
+                  {cat}
+                </a>
               ))}
             </div>
 
@@ -186,24 +198,28 @@ const collectionSchema = {
           <aside class="lg:col-span-4">
             <div class="flex flex-col gap-8 lg:sticky" style="top:124px">
 
-              <!-- Categorías -->
+              <!-- Categorías (links reales → SEO crawlable) -->
               <div style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
                 <h3 class="font-display font-bold text-sm uppercase tracking-widest px-5 py-4" style="color:#FF6B26;letter-spacing:0.1em;border-bottom:1px solid rgba(74,117,153,0.18)">
                   Categorías
                 </h3>
                 <ul class="flex flex-col list-none m-0 p-0">
                   <li>
-                    <button type="button" class="blog-filter side-cat is-active w-full flex items-center justify-between gap-3 px-5 py-3" data-filter="all">
+                    <a href="/blog" class="side-cat w-full flex items-center justify-between gap-3 px-5 py-3 is-active" style="text-decoration:none">
                       <span class="font-display text-sm">Todas</span>
                       <span class="text-xs" style="color:#4A7599">{allPosts.length}</span>
-                    </button>
+                    </a>
                   </li>
                   {categories.map((cat) => (
                     <li style="border-top:1px solid rgba(74,117,153,0.12)">
-                      <button type="button" class="blog-filter side-cat w-full flex items-center justify-between gap-3 px-5 py-3" data-filter={cat}>
+                      <a
+                        href={`/blog/categoria/${slugify(cat)}`}
+                        class="side-cat w-full flex items-center justify-between gap-3 px-5 py-3"
+                        style="text-decoration:none"
+                      >
                         <span class="font-display text-sm">{cat}</span>
                         <span class="text-xs" style="color:#4A7599">{categoryCounts[cat]}</span>
-                      </button>
+                      </a>
                     </li>
                   ))}
                 </ul>
@@ -226,7 +242,7 @@ const collectionSchema = {
                 </ul>
               </div>
 
-              <!-- Temas frecuentes -->
+              <!-- Temas frecuentes (links reales → SEO crawlable) -->
               {allTags.length > 0 && (
                 <div style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
                   <h3 class="font-display font-bold text-sm uppercase tracking-widest px-5 py-4" style="color:#FF6B26;letter-spacing:0.1em;border-bottom:1px solid rgba(74,117,153,0.18)">
@@ -234,7 +250,13 @@ const collectionSchema = {
                   </h3>
                   <div class="flex flex-wrap gap-2 p-5">
                     {allTags.map((tag) => (
-                      <span class="badge badge-dark text-[10px]">{tag}</span>
+                      <a
+                        href={`/blog/tag/${slugify(tag)}`}
+                        class="badge badge-dark text-[10px] transition-colors hover:bg-[#FF6B26] hover:text-white"
+                        style="text-decoration:none"
+                      >
+                        #{tag}
+                      </a>
                     ))}
                   </div>
                 </div>
@@ -313,8 +335,10 @@ const collectionSchema = {
 </style>
 
 <script>
-  // Filtro por categoría — page-local, progressive enhancement (sin JS = todo visible)
-  const filters = document.querySelectorAll<HTMLButtonElement>('.blog-filter');
+  // Filtro por categoría — progressive enhancement
+  // Sin JS → cada chip navega a /blog/categoria/[slug] (SEO + accesibilidad)
+  // Con JS → filtra en página y previene navegación (mejor UX)
+  const filters = document.querySelectorAll<HTMLAnchorElement>('.blog-filter');
   const items = document.querySelectorAll<HTMLElement>('.blog-item');
   const empty = document.getElementById('blog-empty');
 
@@ -329,7 +353,10 @@ const collectionSchema = {
     if (empty) empty.hidden = visible !== 0;
   }
 
-  filters.forEach((btn) => {
-    btn.addEventListener('click', () => applyFilter(btn.dataset.filter || 'all'));
+  filters.forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault(); // JS activo → filtrar in-page en lugar de navegar
+      applyFilter(link.dataset.filter || 'all');
+    });
   });
 </script>

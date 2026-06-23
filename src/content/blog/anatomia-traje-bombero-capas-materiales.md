@@ -5,6 +5,9 @@ pubDate: 2026-05-08
 author: "Ing. Carlos Mendoza"
 category: "Equipos EPP"
 tags: ["trajes bomberos", "materiales", "PBI", "Nomex", "marcas"]
+image:
+  url: "/images/blog/blog-anatomia-capas-traje.avif"
+  alt: "Bombero con equipo estructural NFPA 1970 — anatomía y capas del traje de combate"
 ---
 
 Dos trajes pueden estar colgados uno al lado del otro, verse idénticos, y proteger de manera radicalmente distinta. La diferencia casi nunca está en lo que se ve. Está en la composición de cada capa, en cómo están rematadas las costuras y en el balance que el fabricante decidió entre protección y confort. Quien aprende a leer esa anatomía deja de comprar por logotipo o por precio y empieza a comprar por desempeño.

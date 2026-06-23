@@ -115,14 +115,35 @@ const breadcrumbSchema = {
           const monogram = brand.name.replace(/[^A-Za-z0-9]/g, '').charAt(0).toUpperCase();
           const country = brand.country?.replace(/[\u{1F1E6}-\u{1F1FF}]/gu, '').trim();
           return (
-            <div class="grid-cell flex items-start gap-4 p-6">
-              <span class="flex items-center justify-center rounded-full shrink-0 font-display font-bold" style="width:48px;height:48px;background:rgba(247,80,0,0.1);border:1.5px solid rgba(247,80,0,0.35);color:#FF6B26;font-size:1.25rem">{monogram}</span>
+            <a
+              href={`/marcas/${brand.slug}`}
+              class="grid-cell flex items-start gap-4 p-6 group transition-colors"
+              style="text-decoration:none"
+            >
+              <span
+                class="flex items-center justify-center rounded-full shrink-0 font-display font-bold transition-colors"
+                style="width:48px;height:48px;background:rgba(247,80,0,0.1);border:1.5px solid rgba(247,80,0,0.35);color:#FF6B26;font-size:1.25rem"
+              >
+                {monogram}
+              </span>
               <div>
-                <h3 class="font-display font-bold mb-1" style="color:#FFFFFF">{brand.name}</h3>
-                <p class="text-sm leading-relaxed" style="color:#64748B">{brand.description}</p>
-                {country && <span class="badge badge-dark mt-3 inline-block">{country}</span>}
+                <h3
+                  class="font-display font-bold mb-1 group-hover:text-[#FF6B26] transition-colors"
+                  style="color:#FFFFFF"
+                >
+                  {brand.name}
+                </h3>
+                <p class="text-sm leading-relaxed mb-2" style="color:#64748B">
+                  {brand.description}
+                </p>
+                <div class="flex items-center gap-2 flex-wrap">
+                  {country && <span class="badge badge-dark">{country}</span>}
+                  <span class="text-[10px] font-display" style="color:#4A7599">
+                    Ver productos →
+                  </span>
+                </div>
               </div>
-            </div>
+            </a>
           );
         })}
       </div>

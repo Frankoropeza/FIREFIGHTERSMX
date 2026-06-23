@@ -5,6 +5,9 @@ pubDate: 2026-04-22
 author: "Ing. Marco García"
 category: "Equipos EPP"
 tags: ["NFPA 1850", "NFPA 1851", "mantenimiento", "trajes bomberos"]
+image:
+  url: "/images/blog/blog-inspeccion-cuidado-traje.avif"
+  alt: "Bombero revisando chaqueta estructural NFPA — inspección y vida útil del traje"
 ---
 
 Hay un detalle que delata la cultura de seguridad de una estación apenas entras: cómo se ven los trajes colgados. Si están tiesos, ennegrecidos y oliendo a humo viejo, sé dos cosas antes de preguntar. Que ese cuerpo está gastando su equipo más rápido de lo necesario, y que sus bomberos están respirando carcinógenos cada vez que se ponen el traje. Porque el hollín que se queda incrustado no es suciedad inofensiva: es exposición crónica.

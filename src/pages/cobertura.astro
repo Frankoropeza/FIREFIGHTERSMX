@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
+import { estados } from '@data/cobertura';
 import { SITE, whatsappUrl } from '@data/site';
 
 const canonicalURL = `${SITE.url}/cobertura`;
@@ -22,6 +23,8 @@ const breadcrumbSchema = {
   ],
 };
 
+// El array `estados` viene de @data/cobertura — ya no se define aquí.
+
 const features = [
   { label: 'Envío express', desc: 'CDMX y área metropolitana en 24–48 hrs', icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>` },
   { label: 'Seguro de carga', desc: 'Todos los envíos asegurados sin costo extra', icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>` },
@@ -29,40 +32,7 @@ const features = [
   { label: 'Rastreo en tiempo real', desc: 'Número de guía al confirmar pedido', icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>` },
 ];
 
-const estados = [
-  { name: 'Ciudad de México', dias: '24–48 hrs', express: true },
-  { name: 'Estado de México', dias: '24–48 hrs', express: true },
-  { name: 'Querétaro', dias: '24–48 hrs', express: true },
-  { name: 'Hidalgo', dias: '24–48 hrs', express: true },
-  { name: 'Morelos', dias: '24–48 hrs', express: true },
-  { name: 'Tlaxcala', dias: '24–48 hrs', express: true },
-  { name: 'Jalisco', dias: '2–3 días', express: false },
-  { name: 'Nuevo León', dias: '2–3 días', express: false },
-  { name: 'Puebla', dias: '2–3 días', express: false },
-  { name: 'Guanajuato', dias: '2–3 días', express: false },
-  { name: 'San Luis Potosí', dias: '2–3 días', express: false },
-  { name: 'Michoacán', dias: '2–3 días', express: false },
-  { name: 'Aguascalientes', dias: '2–3 días', express: false },
-  { name: 'Zacatecas', dias: '2–4 días', express: false },
-  { name: 'Coahuila', dias: '3–4 días', express: false },
-  { name: 'Veracruz', dias: '3–4 días', express: false },
-  { name: 'Tamaulipas', dias: '3–4 días', express: false },
-  { name: 'Colima', dias: '3–4 días', express: false },
-  { name: 'Baja California', dias: '3–5 días', express: false },
-  { name: 'Chihuahua', dias: '3–5 días', express: false },
-  { name: 'Sonora', dias: '3–5 días', express: false },
-  { name: 'Sinaloa', dias: '3–5 días', express: false },
-  { name: 'Oaxaca', dias: '3–5 días', express: false },
-  { name: 'Yucatán', dias: '3–5 días', express: false },
-  { name: 'Quintana Roo', dias: '3–5 días', express: false },
-  { name: 'Tabasco', dias: '3–5 días', express: false },
-  { name: 'Guerrero', dias: '3–5 días', express: false },
-  { name: 'Durango', dias: '3–5 días', express: false },
-  { name: 'Nayarit', dias: '3–5 días', express: false },
-  { name: 'Campeche', dias: '4–5 días', express: false },
-  { name: 'Chiapas', dias: '4–6 días', express: false },
-  { name: 'Baja California Sur', dias: '5–7 días', express: false },
-];
+// estados viene de @data/cobertura (importado arriba)
 ---
 
 <BaseLayout {...seoMeta} schema={[breadcrumbSchema]}>
@@ -158,12 +128,26 @@ const estados = [
 
       <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">
         {estados.map((e) => (
-          <li class="grid-cell flex items-center justify-between gap-3 p-4" style="border-bottom:1px solid rgba(74,117,153,0.18);border-right:1px solid rgba(74,117,153,0.18)">
-            <span class="flex flex-col gap-0.5 min-w-0">
-              <span class="font-display font-semibold text-sm" style="color:#FFFFFF">{e.name}</span>
-              <span class="text-xs" style="color:#64748B">{e.dias} hábiles</span>
-            </span>
-            {e.express && <span class="badge badge-fire text-[9px] shrink-0">Express</span>}
+          <li style="border-bottom:1px solid rgba(74,117,153,0.18);border-right:1px solid rgba(74,117,153,0.18)">
+            <a
+              href={`/cobertura/${e.slug}`}
+              class="grid-cell flex items-center justify-between gap-3 p-4 group transition-colors"
+              style="text-decoration:none"
+            >
+              <span class="flex flex-col gap-0.5 min-w-0">
+                <span
+                  class="font-display font-semibold text-sm group-hover:text-[#FF6B26] transition-colors"
+                  style="color:#FFFFFF"
+                >
+                  {e.name}
+                </span>
+                <span class="text-xs" style="color:#64748B">{e.dias} hábiles</span>
+              </span>
+              <div class="flex items-center gap-2 shrink-0">
+                {e.express && <span class="badge badge-fire text-[9px]">Express</span>}
+                <span class="text-[10px]" style="color:#4A7599">→</span>
+              </div>
+            </a>
           </li>
         ))}
       </ul>

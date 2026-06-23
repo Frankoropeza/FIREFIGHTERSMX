@@ -7,8 +7,8 @@ author: "Ing. Marco García"
 category: "Extintores"
 tags: ["extintores", "NOM-100", "clases de fuego", "protección civil"]
 image:
-  url: "/images/blog/tipos-extintores-mexico.webp"
-  alt: "Diferentes tipos de extintores portátiles en México"
+  url: "/images/categorias/extintores.avif"
+  alt: "Extintores certificados NOM-100-SCFI — tipos y clasificación para México"
 ---
 
 Hay un detalle que casi nadie revisa hasta que es tarde: usar el extintor equivocado puede empeorar el fuego. Echarle agua a un tablero eléctrico energizado, o polvo químico a una freidora, no apaga nada; en el mejor de los casos no sirve, y en el peor convierte un susto en una emergencia. Por eso, antes de comprar un extintor, hay que entender contra qué fuego lo vas a usar.

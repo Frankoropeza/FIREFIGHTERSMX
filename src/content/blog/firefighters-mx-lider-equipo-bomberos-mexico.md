@@ -7,8 +7,8 @@ author: "Lic. Ana Ramírez"
 category: "Empresa"
 tags: ["FIREFIGHTERS MX", "equipo para bomberos", "NFPA", "NOM", "México"]
 image:
-  url: "/images/blog/firefighters-mx-lider-mexico.webp"
-  alt: "Equipo de protección personal para bomberos distribuido por FIREFIGHTERS MX"
+  url: "/images/blog/blog-firefightersmx-lider.avif"
+  alt: "Bombero equipado con EPP moderno certificado NFPA — FIREFIGHTERS MX líder en México"
 ---
 
 Hay una imagen que cualquiera que trabaje en este medio reconoce: el comandante que recibe un traje nuevo, lo voltea, busca la etiqueta cosida en el interior y se queda mirándola unos segundos. Está comprobando que la certificación sea real y esté vigente. Ese gesto, repetido miles de veces en estaciones de todo el país, resume nuestro trabajo mejor que cualquier folleto. Porque cuando alguien va a entrar a un incendio con ese traje puesto, esa etiqueta deja de ser un trámite.

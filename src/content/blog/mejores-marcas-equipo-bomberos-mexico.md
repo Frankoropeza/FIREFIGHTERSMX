@@ -7,8 +7,8 @@ author: "Ing. Carlos Mendoza"
 category: "Marcas"
 tags: ["marcas", "MSA", "Dräger", "Holmatro", "Globe", "SCBA"]
 image:
-  url: "/images/blog/mejores-marcas-equipo-bomberos.webp"
-  alt: "Marcas líderes de equipo para bomberos disponibles en México"
+  url: "/images/blog/blog-mejores-marcas.avif"
+  alt: "Casco profesional para bombero — mejores marcas NFPA disponibles en México"
 ---
 
 Cada que alguien me pregunta "¿cuál es la mejor marca?", le respondo con otra pregunta: "¿La mejor para qué?". Porque en el equipo de bombero no hay una marca que gane en todo. Hay un puñado de fabricantes que llevan décadas poniendo el estándar mundial, y cada uno brilla en lo suyo. Elegir bien no es seguir la moda ni el logo más vistoso; es entender en qué destaca cada quien y cruzarlo con lo que tu operación necesita de verdad.

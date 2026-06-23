@@ -7,8 +7,8 @@ author: "Lic. Ana Ramírez"
 category: "Normatividad"
 tags: ["NOM-002-STPS", "prevención incendios", "brigadas", "STPS"]
 image:
-  url: "/images/blog/nom-002-stps.webp"
-  alt: "Señalización de seguridad contra incendio en empresa mexicana"
+  url: "/images/blog/blog-nom-002-stps.avif"
+  alt: "Equipo de seguridad contra incendio ordenado — guía completa NOM-002-STPS empresas"
 ---
 
 La NOM-002-STPS es una de esas normas que casi nadie lee con calma hasta que la STPS toca la puerta. Y para entonces, lo que pudo resolverse con tiempo se vuelve una carrera contra el reloj, con multas de por medio. Lo escribo no para asustarte, sino para lo contrario: cumplirla es perfectamente alcanzable si entiendes qué te pide y en qué orden conviene atacarlo.

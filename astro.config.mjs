@@ -5,6 +5,8 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://firefighters.mx',
+  // Canonical: nunca slash final → evita duplicate content /productos/ vs /productos
+  trailingSlash: 'never',
   integrations: [
     tailwind({ applyBaseStyles: false, configFile: './tailwind.config.cjs' }),
     mdx(),

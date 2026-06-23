@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
+import ProductCard from '@components/products/ProductCard.astro';
 import { trajesBombero, categories } from '@data/categories';
 import { featuredProducts } from '@data/products';
 import { SITE, whatsappUrl } from '@data/site';
@@ -14,7 +15,12 @@ const seoMeta = {
   canonicalURL,
 };
 
-/* Producto real con ficha L4 */
+/* Productos Globe — 5 modelos para la sección de cards */
+const globeProducts = featuredProducts.filter(
+  (p) => p.category === 'Trajes Bombero' && p.brand === 'Globe Manufacturing' && p.specs
+);
+
+/* Producto real con ficha L4 (legado) */
 const productos = featuredProducts.filter((p) => p.category === 'Trajes Bombero');
 
 /* Tipos de traje (educativo) */
@@ -240,41 +246,92 @@ const otrasCategorias = categories.slice(0, 6);
     </div>
   </section>
 
-  <!-- Modelos / líneas -->
+  <!-- Productos Globe — 5 cards profesionales -->
   <section class="section" style="background:#070E1A" aria-labelledby="modelos-title">
     <div class="container-site">
+
+      {/* Header de sección */}
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
-          <span class="section-eyebrow mb-4 inline-flex">Modelos destacados</span>
+          <span class="section-eyebrow mb-4 inline-flex">Globe Manufacturing · MSA Safety</span>
           <h2 id="modelos-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
-            Líneas que<br/>
-            <span style="color:#F75000">distribuimos.</span>
+            Trajes Globe<br/>
+            <span style="color:#F75000">certificados NFPA.</span>
           </h2>
         </div>
         <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:#94A3B8">
-            Globe, Lion y MSA en tallas S–4XL con stock permanente en CDMX. ¿No ves un modelo
-            específico? Lo conseguimos directo de fábrica sobre especificación técnica.
+          <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
+            Globe Manufacturing — parte de MSA Safety — es la marca de trajes estructurales
+            más solicitada en licitaciones mexicanas tier-1. Más de 110 años fabricando el
+            traje en el que confían departamentos en los 32 estados.
           </p>
+          <div class="flex flex-wrap gap-2">
+            {['NFPA 1971-2018','PBI Matrix','GORE-TEX CrossTech','Distribuidor autorizado MX'].map(b => (
+              <span class="badge badge-dark text-[9px]">{b}</span>
+            ))}
+          </div>
         </div>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-        {modelos.map((m) => (
-          <article class="model-card group flex flex-col gap-3 p-6" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
-            <div class="flex gap-2 flex-wrap">
-              <span class="badge badge-fire">{m.norm}</span>
-              {m.brand && <span class="badge badge-dark">{m.brand}</span>}
-            </div>
-            <h3 class="font-display font-bold text-lg leading-snug" style="color:#FFFFFF">{m.title}</h3>
-            <p class="text-xs leading-relaxed" style="color:#64748B">{m.desc}</p>
-            <a href={m.href} target={m.external ? '_blank' : undefined} rel={m.external ? 'noopener' : undefined}
-               class="inline-flex items-center gap-2 mt-auto pt-2 text-xs font-display font-semibold uppercase tracking-wider group-hover:gap-3" style="color:#FF6B26;letter-spacing:0.08em">
-              {m.cta}
-              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
-            </a>
-          </article>
+      {/* Grid de productos */}
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {globeProducts.slice(0, 3).map((p) => (
+          <ProductCard product={p} />
         ))}
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-5">
+        {globeProducts.slice(3).map((p) => (
+          <ProductCard product={p} />
+        ))}
+      </div>
+
+      {/* CTA de catálogo completo */}
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(74,117,153,0.15)">
+        <div class="flex-1">
+          <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+            ¿Necesitas Lion, Honeywell Morning Pride, Fire-Dex o marcas nacionales como SKÖLD, Brigadier o FEMSA?
+            Distribuidores autorizados de 20+ marcas — cotizamos cualquier modelo sobre especificación técnica.
+          </p>
+        </div>
+        <a
+          href={whatsappUrl('Hola, quiero ver el catálogo completo de trajes para bomberos.')}
+          target="_blank"
+          rel="noopener"
+          class="btn btn-primary btn-lg shrink-0"
+        >
+          Ver catálogo completo
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Galería de producto -->
+  <section class="section-tight" style="background:#040A12" aria-label="Galería trajes para bomberos">
+    <div class="container-site">
+      <div class="flex items-center gap-4 mb-6">
+        <span class="w-8 h-px" style="background:#F75000"></span>
+        <span class="text-xs font-display font-semibold uppercase tracking-[0.18em]" style="color:#F75000">Trajes en uso real</span>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-2 lg:gap-3">
+        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
+          <img src="/images/productos/traje-globe-gx7-estructural-1.avif" alt="Traje Globe GX-7 estructural NFPA 1970 en uso real — equipo certificado México" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+        </figure>
+        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
+          <img src="/images/productos/traje-jacket-detalle-nfpa.avif" alt="Detalle chaqueta traje bombero NFPA 1970 costuras reforzadas Nomex resistente al fuego" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+        </figure>
+        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
+          <img src="/images/productos/traje-bombero-reflectivo-3m.avif" alt="Traje bombero con bandas reflectivas 3M certificado NFPA visibilidad nocturna" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+        </figure>
+        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
+          <img src="/images/productos/traje-bombero-en-servicio.avif" alt="Bombero en traje estructural NFPA 1970 durante servicio de emergencia incendio" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+        </figure>
+        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
+          <img src="/images/productos/traje-bombero-completo-equipo.avif" alt="Equipo completo bombero traje estructural casco SCBA certificado NFPA 1970 México" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+        </figure>
+        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
+          <img src="/images/productos/traje-bombero-preparacion.avif" alt="Bombero preparándose con traje estructural NFPA 1970 listo para emergencia" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+        </figure>
       </div>
     </div>
   </section>

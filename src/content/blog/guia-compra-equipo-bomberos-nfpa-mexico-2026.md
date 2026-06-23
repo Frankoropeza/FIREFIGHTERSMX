@@ -7,8 +7,8 @@ author: "Ing. Carlos Mendoza"
 category: "Guías de compra"
 tags: ["guía de compra", "NFPA", "EPP bomberos", "SCBA", "trajes estructurales"]
 image:
-  url: "/images/blog/guia-compra-equipo-bomberos-2026.webp"
-  alt: "Bombero con equipo de protección personal completo certificado NFPA"
+  url: "/images/blog/blog-guia-compra-equipo-2026.avif"
+  alt: "Tienda de equipo para bomberos con productos certificados NFPA 2026 México"
 ---
 
 He visto comprar trajes de bombero como quien compra refrigeradores: pidiendo descuento por volumen y eligiendo el de la foto más bonita. Y he visto el resultado meses después, cuando ese mismo equipo no pasa una revisión, o cuando un comandante descubre que las tallas que llegaron no le quedan a la mitad de su gente. Comprar equipo bomberil se parece poco a cualquier otra compra: aquí lo barato puede salir carísimo, y no me refiero solo al dinero.

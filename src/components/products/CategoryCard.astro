@@ -16,18 +16,36 @@ const patternId = `g-${cat.slug}`;
 
 <a href={href} class="cat-card group relative flex flex-col overflow-hidden" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
 
-  <!-- Visual top: gradiente + ícono -->
+  <!-- Visual top: imagen de categoría con ícono overlay -->
   <div class="relative flex items-center justify-center overflow-hidden" style="height:148px">
-    <div class="absolute inset-0" style={`background:linear-gradient(135deg, ${cat.accent}26 0%, rgba(4,10,18,0.94) 100%)`}></div>
-    <svg class="absolute inset-0 w-full h-full" style="opacity:0.06" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <defs>
-        <pattern id={patternId} width="32" height="32" patternUnits="userSpaceOnUse">
-          <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#7AA4C4" stroke-width="0.5"/>
-        </pattern>
-      </defs>
-      <rect width="100%" height="100%" fill={`url(#${patternId})`}/>
-    </svg>
-    <div class="absolute inset-0 pointer-events-none" style={`background:radial-gradient(circle at 50% 50%, ${cat.accent}22 0%, transparent 65%)`}></div>
+    {cat.spotlight?.image ? (
+      <>
+        <img
+          src={cat.spotlight.image}
+          alt={cat.spotlight.imageAlt ?? cat.label}
+          width="320"
+          height="148"
+          loading="lazy"
+          decoding="async"
+          class="absolute inset-0 w-full h-full block"
+          style="object-fit:cover;object-position:center 20%"
+        />
+        <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(135deg, rgba(4,10,18,0.55) 0%, rgba(4,10,18,0.25) 50%, rgba(4,10,18,0.55) 100%)" aria-hidden="true"></div>
+      </>
+    ) : (
+      <>
+        <div class="absolute inset-0" style={`background:linear-gradient(135deg, ${cat.accent}26 0%, rgba(4,10,18,0.94) 100%)`}></div>
+        <svg class="absolute inset-0 w-full h-full" style="opacity:0.06" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <pattern id={patternId} width="32" height="32" patternUnits="userSpaceOnUse">
+              <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#7AA4C4" stroke-width="0.5"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill={`url(#${patternId})`}/>
+        </svg>
+        <div class="absolute inset-0 pointer-events-none" style={`background:radial-gradient(circle at 50% 50%, ${cat.accent}22 0%, transparent 65%)`}></div>
+      </>
+    )}
     <div class="relative z-10 flex items-center justify-center rounded-full"
          style={`width:72px;height:72px;background:rgba(4,10,18,0.7);border:1.5px solid ${cat.accent}44;color:${cat.accent}`}>
       <span class="block" style="width:32px;height:32px" set:html={cat.icon}/>

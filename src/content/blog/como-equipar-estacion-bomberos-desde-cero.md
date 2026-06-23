@@ -7,8 +7,8 @@ author: "Ing. Marco García"
 category: "Equipamiento"
 tags: ["estación de bomberos", "equipamiento", "EPP", "rescate", "presupuesto"]
 image:
-  url: "/images/blog/equipar-estacion-bomberos.webp"
-  alt: "Estación de bomberos con equipo de protección y rescate organizado"
+  url: "/images/blog/blog-equipar-estacion-bomberos.avif"
+  alt: "Equipo de bomberos organizado y listo en estación — guía de equipamiento completo"
 ---
 
 Cuando me toca acompañar a un municipio o a una empresa que va a abrir su primera estación, casi siempre empiezan por lo mismo: el camión. Es comprensible. El vehículo se ve, se presta para la foto, llena el patio. El problema es que un camión reluciente con personal mal protegido es una tragedia esperando a pasar. He aprendido, a las malas a veces, que el orden importa tanto como el presupuesto.
