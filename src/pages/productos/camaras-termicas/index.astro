@@ -1,0 +1,668 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import QuickLinksBar from '@components/common/QuickLinksBar.astro';
+import ProductCard from '@components/products/ProductCard.astro';
+import { categories } from '@data/categories';
+import { featuredProducts } from '@data/products';
+import { SITE, whatsappUrl } from '@data/site';
+
+const cat = categories.find((c) => c.slug === 'camaras-termicas')!;
+const canonicalURL = `${SITE.url}/productos/camaras-termicas`;
+
+const seoMeta = {
+  title: 'Cámaras Térmicas para Bomberos NFPA 1801 — FLIR, MSA Evolution, Bullard · México',
+  description: 'Catálogo de cámaras de imagen térmica certificadas NFPA 1801 en México. FLIR K45/K65, MSA Evolution 6000 y Bullard TXS/NXT. Búsqueda y rescate, sobrehaul y HAZMAT. Distribuidor autorizado · stock CDMX.',
+  canonicalURL,
+};
+
+/* ── Productos por marca ─────────────────────────────────────────────────── */
+const flirProducts    = featuredProducts.filter((p) => p.category === 'Cámaras Térmicas' && p.brand === 'FLIR'       && p.specs);
+const msaProducts     = featuredProducts.filter((p) => p.category === 'Cámaras Térmicas' && p.brand === 'MSA Safety' && p.specs);
+const bullardProducts = featuredProducts.filter((p) => p.category === 'Cámaras Térmicas' && p.brand === 'Bullard'    && p.specs);
+const todasCamaras    = featuredProducts.filter((p) => p.category === 'Cámaras Térmicas' && p.specs);
+
+/* ── Tipos / usos ────────────────────────────────────────────────────────── */
+const tipos = [
+  {
+    title: 'Cámara de entrada / personal',
+    norm: 'NFPA 1801',
+    accent: '#F75000',
+    desc: 'Una cámara por bombero. Permite decisión táctica inmediata en el interior sin depender del equipo de mando. Ligera, robusta y con interfaz unificada. Referentes: FLIR K45, MSA Evolution 6000, Bullard TXS.',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5C21.27 7.61 17 4.5 12 4.5z"/><circle cx="12" cy="12" r="3"/>`,
+  },
+  {
+    title: 'Cámara de mando / alta resolución',
+    norm: 'NFPA 1801',
+    accent: '#F5A623',
+    desc: 'Mayor resolución (320×240 px+), grabación de video, transmisión inalámbrica y pantalla amplificada para gestión táctica desde el exterior. Referentes: FLIR K65, MSA Evolution 6000 Plus, Bullard T4MAX.',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M3 7h18M3 12h18M3 17h18"/><rect x="2" y="5" width="20" height="14" rx="2"/>`,
+  },
+  {
+    title: 'Cámara de inspección / sobrehaul',
+    norm: 'NFPA 1801',
+    accent: '#34D399',
+    desc: 'Alta sensibilidad térmica para detectar focos calientes ocultos tras muros, techos y pisos después del control del incendio. Reduce reactivaciones y riesgos de colapso estructural. Referente: FLIR T560 Inspección.',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/>`,
+  },
+];
+
+/* ── Comparativa tecnología ─────────────────────────────────────────────── */
+const comparativa = [
+  { caract: 'Resolución sensor',   flir: '160×120 / 320×240 px', msa: '320×240 px estándar',    bullard: '160×120 / 320×240 px' },
+  { caract: 'Sensibilidad NETD',   flir: '≤ 50 mK',              msa: '≤ 60 mK',                bullard: '≤ 50 mK' },
+  { caract: 'Grabación video',     flir: 'K65 / T560',           msa: 'Evolution 6000 Plus',    bullard: 'T4MAX / NXT' },
+  { caract: 'Transmisión Wi-Fi',   flir: 'K65 (Bluetooth)',      msa: 'Evolution 6000 Plus',    bullard: 'T4MAX' },
+  { caract: 'Temperatura máx.',    flir: '500 °C / 2,000 °C',    msa: '500 °C',                 bullard: '600 °C' },
+  { caract: 'Norma',               flir: 'NFPA 1801',            msa: 'NFPA 1801',              bullard: 'NFPA 1801' },
+  { caract: 'Escenario ideal',     flir: 'Personal · mando',     msa: 'Mando · industrial',     bullard: 'Personal · rescate' },
+];
+
+/* ── Trust Pillars ───────────────────────────────────────────────────────── */
+const razones = [
+  {
+    n: '01',
+    t: 'Tres marcas líderes NFPA 1801',
+    d: 'FLIR (Teledyne), MSA Safety y Bullard — los tres fabricantes con mayor presencia en cuerpos de bomberos de América Latina, disponibles con un solo distribuidor en México. Todas las cámaras con certificación NFPA 1801 vigente.',
+  },
+  {
+    n: '02',
+    t: 'Interfaz NFPA 1801 unificada',
+    d: 'La norma NFPA 1801 exige que los controles de apagado y congelación de imagen estén en posiciones estándar independientemente del fabricante. Un bombero puede operar cualquier cámara certificada sin reentrenamiento, reduciendo errores en entornos de alto estrés.',
+  },
+  {
+    n: '03',
+    t: 'Demostración operativa sin costo',
+    d: 'Realizamos demostraciones operativas con las tres marcas en tu instalación o en nuestras instalaciones. Comparas imagen, manejo y robustez antes de comprometer presupuesto. Incluye práctica con cada modelo en condiciones simuladas.',
+  },
+  {
+    n: '04',
+    t: 'Soporte técnico y recalibraciones',
+    d: 'Servicio de mantenimiento preventivo y correctivo. Verificación periódica de sensores, baterías y pantallas. Gestión de garantías directamente con fábrica para cámaras en servicio activo.',
+  },
+];
+
+/* ── FAQ ────────────────────────────────────────────────────────────────── */
+const faqs = [
+  {
+    q: '¿Qué es NFPA 1801 y por qué es obligatoria para cámaras de bomberos?',
+    a: 'NFPA 1801 es el estándar de la National Fire Protection Association que define los requisitos de diseño, construcción, desempeño y prueba de cámaras de imagen térmica para bomberos. Establece resolución mínima, sensibilidad térmica, resistencia a temperatura, impacto y caída, y — de forma clave — la posición y función estándar de los controles para que cualquier bombero pueda operar cualquier cámara certificada sin reentrenamiento. En México, las licitaciones de equipamiento para cuerpos de bomberos municipales y estatales especifican NFPA 1801 de forma explícita desde 2015.',
+  },
+  {
+    q: '¿Cuál es la diferencia entre una cámara de entrada y una de mando?',
+    a: 'La cámara de entrada (personal) está optimizada para ser ligera, rápida de encender y de operación con guante grueso — su objetivo es dar información al bombero de interior en tiempo real. La cámara de mando tiene mayor resolución (320×240 px+), pantalla más grande, grabación de video y transmisión inalámbrica para que el comandante gestione la operación desde el exterior y documente el evento. Los modelos de alto rango combinan ambas funciones: FLIR K65, MSA Evolution 6000 Plus, Bullard T4MAX.',
+  },
+  {
+    q: '¿FLIR, MSA Evolution o Bullard — cuál elegir?',
+    a: 'FLIR (Teledyne) es el fabricante de sensores térmicos más grande del mundo; la línea K tiene el mayor market share en bomberos a nivel global y ofrece la mejor relación imagen/precio en el segmento de entrada. MSA Evolution 6000 destaca en transmisión inalámbrica y gestión centralizada para operaciones de mando. Bullard TXS/NXT es reconocida por su resistencia mecánica extrema y la mayor rango de temperatura de pantalla. Organizamos una demostración con los tres modelos para que decidas con imagen real.',
+  },
+  {
+    q: '¿Qué resolución de sensor necesita mi cámara?',
+    a: 'Para búsqueda y rescate en interiores, 160×120 px es suficiente para localizar víctimas y detectar puntos de calor en condiciones de humo denso. Para mando, documentación y análisis post-siniestro, 320×240 px ofrece imágenes más detalladas, mejor grabación de video y mayor legibilidad en transmisión inalámbrica. NFPA 1801 no exige una resolución mínima específica — exige criterios de legibilidad en pantalla que 160×120 px cumple en todas las marcas que distribuimos.',
+  },
+  {
+    q: '¿Entregan ficha técnica y documentación para licitación pública?',
+    a: 'Sí. Cada cámara incluye el certificado de conformidad NFPA 1801 con número de modelo, lote y laboratorio acreditado. Para concursos públicos (CompraNet, IMSS, gobiernos estatales y municipales) generamos el manifiesto de cumplimiento de norma por partida con identificación de edición específica y carta de distribución autorizada. Respuesta en menos de 24 horas a solicitudes para licitación.',
+  },
+];
+
+/* ── JSON-LD ─────────────────────────────────────────────────────────────── */
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio',           item: `${SITE.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Productos',        item: `${SITE.url}/productos` },
+    { '@type': 'ListItem', position: 3, name: 'Cámaras Térmicas', item: canonicalURL },
+  ],
+};
+
+const collectionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  '@id': `${canonicalURL}#collection`,
+  name: 'Cámaras Térmicas para Bomberos NFPA 1801 — México',
+  description: seoMeta.description,
+  url: canonicalURL,
+  inLanguage: 'es-MX',
+  isPartOf: { '@id': `${SITE.url}/#website` },
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: todasCamaras.length,
+    itemListElement: todasCamaras.map((p, i) => ({ '@type': 'ListItem', position: i + 1, name: p.title, url: `${SITE.url}${p.href}` })),
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+
+const otrasCategorias = categories.filter((c) => c.slug !== 'camaras-termicas').slice(0, 6);
+
+/* Guía de selección */
+const guia = [
+  { n: '01', t: 'Define el uso principal: interior estructural (combate activo en edificios) → necesitas cámara de entrada con arranque rápido (<5 s) y operación con guante. Operaciones de mando o documentación → prioriza resolución 320×240 px y grabación de video.' },
+  { n: '02', t: 'Verifica la certificación NFPA 1801 por número de modelo, no por marca. La norma exige que la certificación esté vigente y sea verificable en el registro del laboratorio — un modelo descontinuado puede ya no estar listado aunque lo estuvo en su momento.' },
+  { n: '03', t: 'Comprueba la integración con tu EPP: la cámara debe montarse en tu casco sin modificar el perfil de protección y sin interferir con el SCBA. MSA Evolution monta nativamente en Gallet; FLIR y Bullard incluyen adaptadores universales para los cascos más comunes.' },
+  { n: '04', t: 'Solicita la demostración con las tres marcas en condición real (con guante, con casco, con SCBA). La imagen de catálogo no reemplaza la experiencia táctica. Organizamos la demostración en tu instalación o en las nuestras, sin compromiso de compra.' },
+];
+
+/* Artículos del blog */
+const articulos = [
+  { label: 'NFPA 1801: qué certifica y qué no',    desc: 'Guía técnica para evaluadores y licitadores',      href: '/blog/nfpa-1801-camaras-termicas-bomberos' },
+  { label: 'FLIR vs MSA vs Bullard',                desc: 'Comparativa técnica por escenario de uso',         href: '/blog/flir-vs-msa-vs-bullard-camaras-termicas' },
+  { label: 'Cámaras de mando vs entrada',           desc: 'Cuándo necesitas una y cuándo la otra',            href: '/blog/camara-termica-mando-vs-entrada-bomberos' },
+  { label: 'Mantenimiento de cámaras NFPA 1801',    desc: 'Calibración, baterías y criterios de retiro',     href: '/blog/mantenimiento-camaras-termicas-bomberos' },
+];
+---
+
+<BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema, faqSchema]}>
+
+  {/* ══ BREADCRUMB ══════════════════════════════════════════════════════ */}
+  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+    <div class="container-site">
+      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0 flex-wrap" style="color:#4A7599">
+        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="/productos" class="hover:text-[#FF6B26]">Productos</a></li>
+        <li aria-hidden="true">/</li>
+        <li><span style="color:#94A3B8" aria-current="page">Cámaras Térmicas</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  {/* ══ HERO ════════════════════════════════════════════════════════════ */}
+  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">
+    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
+
+    <div class="container-site relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+        <div>
+          <span class="section-eyebrow mb-5 inline-flex">{cat.norm} · FLIR · MSA Evolution · Bullard · Distribuidor Autorizado MX</span>
+          <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+            Cámaras térmicas<br/>
+            <span style="color:#F75000">certificadas NFPA.</span>
+          </h1>
+          <p class="text-lg leading-relaxed mb-8 max-w-xl" style="color:#94A3B8">
+            En visibilidad cero, la imagen térmica es la diferencia entre buscar y encontrar.
+            Distribuimos cámaras FLIR, MSA Evolution y Bullard certificadas NFPA 1801 — el estándar
+            que garantiza legibilidad, durabilidad e interfaz uniforme en condiciones de combate real.
+          </p>
+
+          <div class="flex flex-wrap gap-3 mb-8">
+            {['NFPA 1801','FLIR K45 · K65','MSA Evolution 6000','Bullard TXS · NXT','Stock CDMX','Demostración sin costo'].map(b => (
+              <span class="badge badge-dark">{b}</span>
+            ))}
+          </div>
+
+          <div class="flex flex-wrap gap-4">
+            <a href={whatsappUrl('Hola, quiero información sobre cámaras térmicas certificadas NFPA 1801 para bomberos.')}
+              target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+              Solicitar demostración →
+            </a>
+            <a href="#flir" class="btn btn-ghost btn-lg">Ver catálogo ↓</a>
+          </div>
+        </div>
+
+        <div class="hidden lg:flex flex-col gap-4">
+          <div class="grid grid-cols-3 gap-3">
+            {[
+              { v: '160–320 px', l: 'Resolución sensor' },
+              { v: '≤50 mK',     l: 'Sensibilidad NETD' },
+              { v: '3 marcas',   l: 'FLIR · MSA · Bullard' },
+            ].map(s => (
+              <div class="flex flex-col items-center justify-center text-center p-5" style="background:#070E1A;border:1px solid rgba(74,117,153,0.2)">
+                <span class="font-display font-bold text-2xl mb-1" style="color:#F75000">{s.v}</span>
+                <span class="text-[10px] uppercase tracking-widest" style="color:#4A7599">{s.l}</span>
+              </div>
+            ))}
+          </div>
+          <div class="p-6" style="background:#070E1A;border:1px solid rgba(74,117,153,0.2)">
+            <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+              <strong style="color:#94A3B8">NFPA 1801</strong> establece la posición y función estándar
+              de los controles en todas las cámaras certificadas. Un bombero puede operar cualquier
+              modelo sin reentrenamiento — reduce errores en entornos de alto estrés.
+            </p>
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            {[
+              { v: '< 5 s',   l: 'Tiempo de arranque' },
+              { v: '4+ h',    l: 'Autonomía batería' },
+            ].map(s => (
+              <div class="flex flex-col items-center justify-center text-center p-5" style="background:#070E1A;border:1px solid rgba(74,117,153,0.2)">
+                <span class="font-display font-bold text-2xl mb-1" style="color:#F75000">{s.v}</span>
+                <span class="text-[10px] uppercase tracking-widest" style="color:#4A7599">{s.l}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)" aria-hidden="true"></div>
+  </section>
+
+  <!-- QuickLinksBar -->
+  <QuickLinksBar />
+
+  {/* ══ TRUST PILLARS ════════════════════════════════════════════════════ */}
+  <section class="section-tight" style="background:#070E1A" aria-labelledby="razones-title">
+    <div class="container-site">
+      <div class="text-center mb-8">
+        <span class="section-eyebrow mb-3 inline-flex">Por qué elegir FIREFIGHTERSMX para tus cámaras térmicas</span>
+        <h2 id="razones-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.5rem,3vw,2.25rem)">
+          Tres marcas líderes. Una sola fuente. Soporte técnico real.
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style="border:1px solid rgba(74,117,153,0.18)">
+        {razones.map((r, i) => (
+          <div class="flex flex-col gap-3 p-6" style={`background:#080F1A;${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.12)' : ''}`}>
+            <span class="font-display font-bold text-2xl" style="color:#F75000">{r.n}</span>
+            <h3 class="font-display font-bold text-sm uppercase tracking-wide" style="color:#FFFFFF">{r.t}</h3>
+            <p class="text-xs leading-relaxed m-0" style="color:#64748B">{r.d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* ══ TIPOS DE CÁMARA ═════════════════════════════════════════════════ */}
+  <section class="section" style="background:#070E1A" aria-labelledby="tipos-title">
+    <div class="container-site">
+
+      <div class="text-center mb-12">
+        <span class="section-eyebrow mb-4 inline-flex">Tres escenarios · una norma</span>
+        <h2 id="tipos-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.1">
+          La cámara correcta para cada misión.
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-14">
+        {tipos.map(t => (
+          <div class="flex flex-col gap-4 p-8" style={`background:#080F1A;border:1px solid rgba(74,117,153,0.18);border-top:3px solid ${t.accent}`}>
+            <div class="flex items-center gap-3">
+              <div class="shrink-0 flex items-center justify-center w-10 h-10 rounded-full" style={`background:${t.accent}18`}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={t.accent} stroke-width="1.8">
+                  <Fragment set:html={t.icon} />
+                </svg>
+              </div>
+              <div>
+                <span class="text-[9px] font-bold uppercase tracking-widest block" style={`color:${t.accent}`}>{t.norm}</span>
+                <h3 class="font-display font-bold text-base leading-tight" style="color:#FFFFFF">{t.title}</h3>
+              </div>
+            </div>
+            <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{t.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* Comparativa tecnología */}
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm" style="border-collapse:collapse">
+          <thead>
+            <tr style="background:#040A12;border-bottom:1px solid rgba(74,117,153,0.25)">
+              <th class="text-left py-3 px-4 text-[10px] font-bold uppercase tracking-widest" style="color:#4A7599;min-width:140px">Característica</th>
+              <th class="text-center py-3 px-4 text-[10px] font-bold uppercase tracking-widest" style="color:#F75000">FLIR</th>
+              <th class="text-center py-3 px-4 text-[10px] font-bold uppercase tracking-widest" style="color:#60A5FA">MSA Safety</th>
+              <th class="text-center py-3 px-4 text-[10px] font-bold uppercase tracking-widest" style="color:#F5A623">Bullard</th>
+            </tr>
+          </thead>
+          <tbody>
+            {comparativa.map((row, i) => (
+              <tr style={`background:${i % 2 === 0 ? '#080F1A' : '#040A12'};border-bottom:1px solid rgba(74,117,153,0.1)`}>
+                <td class="py-3 px-4 font-medium" style="color:#94A3B8">{row.caract}</td>
+                <td class="py-3 px-4 text-center text-xs" style="color:#CBD5E1">{row.flir}</td>
+                <td class="py-3 px-4 text-center text-xs" style="color:#CBD5E1">{row.msa}</td>
+                <td class="py-3 px-4 text-center text-xs" style="color:#CBD5E1">{row.bullard}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </section>
+
+  {/* ══ FLIR ════════════════════════════════════════════════════════════ */}
+  <section id="flir" class="section" style="background:#040A12" aria-labelledby="flir-title">
+    <div class="container-site">
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Teledyne FLIR · NFPA 1801 · Distribuidor Autorizado MX</span>
+          <h2 id="flir-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            Cámaras FLIR<br/>
+            <span style="color:#F75000">certificadas NFPA 1801.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
+            Teledyne FLIR es el mayor fabricante mundial de sensores de imagen térmica. Su línea K
+            para bomberos define el estándar global: K45 para entrada personal, K65 para mando con
+            video y transmisión Bluetooth, y T560 para inspección y sobrehaul de alta sensibilidad.
+            Cada modelo certificado NFPA 1801 vigente con número de serie verificable.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {['NFPA 1801','FLIR K45','FLIR K65','FLIR T560','Teledyne FLIR','Video · Bluetooth','Distribuidor autorizado MX'].map(b => (
+              <span class="badge badge-dark text-[9px]">{b}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {flirProducts.map((p) => (
+          <ProductCard product={p} />
+        ))}
+      </div>
+
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(247,80,0,0.15)">
+        <div class="flex-1">
+          <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+            Comparativa completa de modelos FLIR (resolución, rango de temperatura, grabación),
+            ficha técnica NFPA 1801 y documentación para licitación con carta de distribuidor autorizado.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+          <a href="/productos/camaras-termicas/flir" class="btn btn-primary btn-lg">
+            Catálogo FLIR completo →
+          </a>
+          <a href={whatsappUrl('Hola, quiero cotizar cámaras térmicas FLIR K45 o K65 certificadas NFPA 1801.')}
+            target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
+            Cotizar por WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  {/* ══ MSA EVOLUTION ══════════════════════════════════════════════════ */}
+  <section class="section" style="background:#070E1A" aria-labelledby="msa-title">
+    <div class="container-site">
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">MSA Safety · Evolution 6000 · NFPA 1801 · Distribuidor Autorizado MX</span>
+          <h2 id="msa-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            Cámaras MSA Evolution<br/>
+            <span style="color:#60A5FA">certificadas NFPA 1801.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(96,165,250,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
+            MSA Safety —NYSE: MSA— integra su cámara Evolution 6000 con el ecosistema completo de EPP:
+            montaje nativo en casco Gallet, integración con máscara SCBA G1 y transmisión inalámbrica
+            al sistema de mando. La Evolution 6000 Plus añade grabación de video y pantalla de 3.5"
+            para gestión táctica desde el exterior. La opción preferida en operaciones industriales.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {['NFPA 1801','MSA Evolution 6000','Evolution 6000 Plus','Montaje Gallet','SCBA G1 integrado','Transmisión Wi-Fi','Distribuidor autorizado MX'].map(b => (
+              <span class="badge badge-dark text-[9px]">{b}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {msaProducts.map((p) => (
+          <ProductCard product={p} />
+        ))}
+      </div>
+
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(96,165,250,0.15)">
+        <div class="flex-1">
+          <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+            Comparativa Evolution 6000 vs 6000 Plus vs 5200 Industrial, guía de integración con casco
+            MSA Gallet y SCBA G1, y ficha técnica NFPA 1801 para licitación.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+          <a href="/productos/camaras-termicas/msa-evolution" class="btn btn-primary btn-lg">
+            Catálogo MSA Evolution completo →
+          </a>
+          <a href={whatsappUrl('Hola, quiero cotizar cámaras térmicas MSA Evolution 6000 certificadas NFPA 1801.')}
+            target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
+            Cotizar por WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  {/* ══ BULLARD TXS ════════════════════════════════════════════════════ */}
+  <section class="section" style="background:#040A12" aria-labelledby="bullard-title">
+    <div class="container-site">
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Bullard · TXS · NXT · NFPA 1801 · Distribuidor Autorizado MX</span>
+          <h2 id="bullard-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            Cámaras Bullard<br/>
+            <span style="color:#F5A623">certificadas NFPA 1801.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(245,166,35,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
+            Bullard lleva más de 125 años en EPP para bomberos. Su línea TXS y NXT destaca por
+            resistencia mecánica extrema — probadas a caídas de 2 m sobre concreto mientras están
+            activas — y el mayor rango de temperatura de pantalla de la categoría (hasta 600 °C).
+            La T4MAX agrega transmisión Wi-Fi y pantalla de 4" para mando. La primera opción
+            para cuerpos con mayor riesgo de daño físico al equipo.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {['NFPA 1801','Bullard TXS','Bullard NXT','T4MAX mando','600 °C rango','Wi-Fi transmisión','Resistencia mecánica','Distribuidor autorizado MX'].map(b => (
+              <span class="badge badge-dark text-[9px]">{b}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {bullardProducts.map((p) => (
+          <ProductCard product={p} />
+        ))}
+      </div>
+
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(245,166,35,0.15)">
+        <div class="flex-1">
+          <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+            Comparativa TXS vs NXT vs T4MAX, pruebas de resistencia mecánica y ficha técnica
+            NFPA 1801 con carta de distribuidor autorizado para licitación.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+          <a href="/productos/camaras-termicas/bullard-txs" class="btn btn-primary btn-lg">
+            Catálogo Bullard completo →
+          </a>
+          <a href={whatsappUrl('Hola, quiero cotizar cámaras térmicas Bullard TXS o NXT certificadas NFPA 1801.')}
+            target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
+            Cotizar por WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  {/* ══ GUÍA + BLOG ═════════════════════════════════════════════════════ */}
+  <section class="section" style="background:#040A12" aria-labelledby="guia-ct-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Cómo elegir la cámara correcta</span>
+          <h2 id="guia-ct-title" class="font-display font-bold mb-8" style="color:#FFFFFF;font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.1">
+            Del escenario<br/><span style="color:#F75000">a la cámara NFPA 1801.</span>
+          </h2>
+          <ol class="flex flex-col gap-4 list-none m-0 p-0">
+            {guia.map((s) => (
+              <li class="flex items-start gap-4">
+                <span class="font-display font-bold text-xl shrink-0" style="color:#F75000">{s.n}</span>
+                <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{s.t}</p>
+              </li>
+            ))}
+          </ol>
+          <div class="mt-8">
+            <a href={whatsappUrl('Hola, necesito asesoría para elegir la cámara térmica NFPA 1801 correcta para mi cuerpo de bomberos.')}
+              target="_blank" rel="noopener"
+              class="btn btn-primary btn-lg">
+              Asesoría de selección gratuita →
+            </a>
+          </div>
+        </div>
+        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:#4A7599">Aprende más</h2>
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+            {articulos.map((l) => (
+              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+                <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
+                  <span class="flex flex-col gap-0.5">
+                    <span class="font-display font-semibold text-sm transition-colors group-hover:text-[#F75000]" style="color:#FFFFFF">{l.label}</span>
+                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
+                  </span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4A7599" stroke-width="2" class="shrink-0">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
+                  </svg>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* ══ FAQ ══════════════════════════════════════════════════════════════ */}
+  <section class="section" style="background:#040A12" aria-labelledby="faq-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes · Cámaras Térmicas</span>
+          <h2 id="faq-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+            Lo que más nos<br/>
+            <span style="color:#F5A623">preguntan.</span>
+          </h2>
+          <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
+            ¿Tu duda no aparece? Escríbenos por WhatsApp con el detalle de tu corporación — te
+            asesoramos sobre el modelo y la configuración correctos para tu operación.
+          </p>
+          <a
+            href={whatsappUrl('Hola, tengo una pregunta técnica sobre cámaras térmicas NFPA 1801 para bomberos.')}
+            target="_blank" rel="noopener"
+            class="btn btn-primary"
+          >
+            Consulta técnica gratis
+          </a>
+        </div>
+
+        <div class="flex flex-col">
+          {faqs.map((f, i) => (
+            <details class="faq-item group" style={`border-top:1px solid rgba(74,117,153,0.18);${i === faqs.length - 1 ? 'border-bottom:1px solid rgba(74,117,153,0.18);' : ''}`}>
+              <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer">
+                <span class="font-display font-semibold text-sm" style="color:#FFFFFF">{f.q}</span>
+                <span class="faq-icon font-display font-bold text-xl shrink-0" style="color:#F5A623">+</span>
+              </summary>
+              <p class="text-sm leading-relaxed pb-5 m-0" style="color:#94A3B8">{f.a}</p>
+            </details>
+          ))}
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  {/* ══ CTA BAND ════════════════════════════════════════════════════════ */}
+  <section class="section" style="background:#0A1A12;border-top:1px solid rgba(52,211,153,0.2);border-bottom:1px solid rgba(52,211,153,0.2)" aria-label="Llamada a la acción">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex" style="color:#34D399">Demostración operativa sin costo</span>
+          <h2 class="font-display font-bold mb-4" style="color:#FFFFFF;font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.1">
+            Ve la diferencia entre<br/>las tres marcas con imagen real.
+          </h2>
+          <p class="text-base leading-relaxed" style="color:#94A3B8">
+            Organizamos una demostración con FLIR, MSA Evolution y Bullard en tu instalación
+            o en las nuestras. Compara resolución, manejo con guante y robustez antes de decidir.
+            Documentación completa para licitación incluida.
+          </p>
+        </div>
+        <div class="flex flex-col gap-4">
+          <a
+            href={whatsappUrl('Hola, quiero agendar una demostración de cámaras térmicas NFPA 1801 (FLIR, MSA, Bullard).')}
+            target="_blank" rel="noopener"
+            class="btn btn-primary btn-lg text-center"
+          >
+            Agendar demostración →
+          </a>
+          <a href={whatsappUrl('Hola, quiero una cotización de cámaras térmicas certificadas NFPA 1801 para mi corporación.')}
+            target="_blank" rel="noopener"
+            class="btn btn-ghost btn-lg text-center">
+            Solicitar cotización formal
+          </a>
+          <p class="text-xs text-center m-0" style="color:#4A7599">Respuesta en menos de 2 horas · Lunes a sábado 8–20 h</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* ══ CROSS-LINKS EPP ════════════════════════════════════════════════ */}
+  <section class="section-tight" style="background:#040A12" aria-labelledby="epp-ct-title">
+    <div class="container-site">
+      <div class="mb-6">
+        <span class="section-eyebrow mb-2 inline-flex">Equipo de Protección Personal completo</span>
+        <h2 id="epp-ct-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.25rem,2.5vw,1.75rem)">
+          La cámara trabaja en conjunto con tu EPP.
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {[
+          { label: 'Cascos NFPA 1971',            desc: 'MSA Gallet · Bullard · Pacific Helmets',       href: '/productos/cascos-nfpa',         accent: '#F75000' },
+          { label: 'Trajes de Bombero NFPA 1970', desc: 'Globe · Fire-Dex · Honeywell Morning Pride',   href: '/productos/trajes-bombero',       accent: '#F5A623' },
+          { label: 'Equipos SCBA',                desc: 'MSA G1 · Dräger PA5000 · Scott X3Pro',         href: '/productos/equipos-scba',         accent: '#60A5FA' },
+          { label: 'Herramientas de Rescate',     desc: 'Holmatro · AMKUS · Weber Rescue',              href: '/productos/herramientas-rescate', accent: '#34D399' },
+        ].map((l) => (
+          <a href={l.href} class="group flex flex-col gap-2 p-5 transition-colors" style={`background:#080F1A;border:1px solid rgba(74,117,153,0.18);border-top:2px solid ${l.accent}`}>
+            <span class="font-display font-bold text-sm" style={`color:${l.accent}`}>{l.label}</span>
+            <span class="text-xs leading-relaxed" style="color:#64748B">{l.desc}</span>
+            <span class="text-xs font-semibold mt-auto pt-2" style="color:#4A7599">Ver catálogo →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* ══ OTRAS CATEGORÍAS ════════════════════════════════════════════════ */}
+  <section class="section-tight" style="background:#070E1A" aria-labelledby="otras-ct-title">
+    <div class="container-site">
+      <div class="text-center mb-8">
+        <span class="section-eyebrow mb-3 inline-flex">Catálogo completo</span>
+        <h2 id="otras-ct-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.5rem,3vw,2.25rem)">
+          Más categorías certificadas NFPA
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {otrasCategorias.map(c => (
+          <a href={`/productos/${c.slug}`}
+            class="flex flex-col gap-2 p-6 transition-colors"
+            style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)"
+          >
+            <span class="text-[9px] font-bold uppercase tracking-widest" style="color:#F75000">{c.norm}</span>
+            <span class="font-display font-bold text-base" style="color:#FFFFFF">{c.label}</span>
+            <span class="text-xs leading-relaxed" style="color:#64748B">{c.shortDesc}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  details.faq-item summary { list-style: none; }
+  details.faq-item summary::-webkit-details-marker { display: none; }
+  details.faq-item[open] .faq-icon { transform: rotate(45deg); }
+</style>

@@ -160,7 +160,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
   <!-- Breadcrumb -->
   <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
     <div class="container-site">
-      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:#4A7599">
+      <ol class="flex items-center flex-wrap gap-2 text-xs list-none m-0 p-0" style="color:#4A7599">
         <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
         <li aria-hidden="true">/</li>
         <li><a href="/productos" class="hover:text-[#FF6B26]">Productos</a></li>
@@ -178,10 +178,15 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div>
           <span class="section-eyebrow mb-5 inline-flex">{cat.norm}</span>
-          <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+          <h1 class="font-display font-bold uppercase mb-4" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
             Equipos<br/>
             <span style="color:#F5A623">SCBA</span>
           </h1>
+          <p class="text-base leading-relaxed mb-8 max-w-xl" style="color:#94A3B8">
+            Distribuidores autorizados de MSA Safety, Dräger y 3M Scott en México. Equipos de
+            respiración autónoma certificados NFPA 1981 — presión positiva, 30/45/60 min,
+            sistemas PASS y EOSTI integrados para combate estructural, industrial y CBRN.
+          </p>
           <div class="flex flex-col sm:flex-row gap-3">
             <a href={whatsappUrl('Hola, quiero cotizar equipos SCBA NFPA 1970.')} target="_blank" rel="noopener" class="btn btn-primary btn-lg">Cotizar por WhatsApp</a>
             <a href="/cotizacion" class="btn btn-ghost btn-lg">Cotización formal</a>
@@ -408,6 +413,36 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
     </div>
   </section>
 
+  {/* ══ GALERÍA ═════════════════════════════════════════════════════════ */}
+  <section class="section-tight" style="background:#040A12" aria-label="Galería equipos SCBA para bomberos">
+    <div class="container-site">
+      <div class="flex items-center gap-4 mb-6">
+        <span class="w-8 h-px" style="background:#F5A623"></span>
+        <span class="text-xs font-display font-semibold uppercase tracking-[0.18em]" style="color:#F5A623">SCBA en uso real</span>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-2 lg:gap-3">
+        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
+          <img src="/images/productos/scba-msa-g1-bombero-estructural.avif" alt="Bombero con SCBA MSA G1 NFPA 1981 en incendio estructural México" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center"/>
+        </figure>
+        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
+          <img src="/images/productos/scba-drager-pa5000-lateral.avif" alt="Dräger PSS 7000 equipo de respiración autónoma NFPA 1981 vista lateral" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center"/>
+        </figure>
+        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
+          <img src="/images/productos/scba-scott-x3-pro-mascara.avif" alt="Scott Air-Pak X3 Pro con máscara panorámica NFPA 1981 certificado" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center"/>
+        </figure>
+        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
+          <img src="/images/productos/scba-bombero-acceso-edificio.avif" alt="Bombero equipado con SCBA NFPA 1981 en acceso a edificio en llamas" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center"/>
+        </figure>
+        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
+          <img src="/images/productos/scba-msa-g1-hud-display.avif" alt="HUD de presión del MSA G1 en interior de máscara — interface NFPA 1981" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center"/>
+        </figure>
+        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
+          <img src="/images/productos/scba-brigada-equipada-incendio.avif" alt="Brigada de bomberos equipada con SCBA NFPA 1981 en operación de incendio" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center"/>
+        </figure>
+      </div>
+    </div>
+  </section>
+
   <!-- Tabla comparativa -->
   <section class="section" style="background:#040A12" aria-labelledby="comp-title">
     <div class="container-site">
@@ -501,10 +536,16 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
             Lo que más nos<br/>
             <span style="color:#F5A623">preguntan.</span>
           </h2>
-          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+          <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
             ¿Tu duda no aparece? Escríbenos por WhatsApp con el detalle de tu operación y te
             asesoramos sobre el SCBA y la configuración correctos.
           </p>
+          <a href={whatsappUrl('Hola, tengo una pregunta técnica sobre equipos SCBA NFPA 1981 para mi brigada.')}
+            target="_blank" rel="noopener"
+            class="btn btn-primary"
+            style="background:#F5A623;border-color:#F5A623;color:#040A12">
+            Consulta técnica gratis
+          </a>
         </div>
         <div class="flex flex-col">
           {faqs.map((f, i) => (

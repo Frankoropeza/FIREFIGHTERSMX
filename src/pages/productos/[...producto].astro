@@ -6,20 +6,203 @@ import { SITE, whatsappUrl } from '@data/site';
 
 export function getStaticPaths() {
   return featuredProducts.map((product) => ({
-    // href ="/productos/<categoria>/<slug>" → param resto:"<categoria>/<slug>"
     params: { producto: product.href.replace(/^\/productos\//, '') },
     props: { product },
   }));
 }
 
-interface Props {
-  product: Product;
-}
+interface Props { product: Product; }
 
 const { product } = Astro.props;
 const canonicalURL = `${SITE.url}${product.href}`;
 const categoryPath = product.href.split('/').slice(0, 3).join('/');
 
+/* ── Brand page URL ────────────────────────────────────────────────────── */
+const brandSlug = product.brand
+  ? product.brand.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-$/, '')
+  : null;
+const brandPath = brandSlug ? `${categoryPath}/${brandSlug}` : null;
+
+/* ── H1 split — word 1 white, rest orange ──────────────────────────────── */
+const titleWords  = product.title.split(' ');
+const h1line1     = titleWords[0] ?? product.title;
+const h1line2     = titleWords.slice(1).join(' ');
+
+/* ── Related: same brand first, then same category ─────────────────────── */
+const relatedBrand = featuredProducts.filter(
+  (p) => p.slug !== product.slug && p.brand === product.brand && p.specs,
+).slice(0, 2);
+const relatedCat = featuredProducts.filter(
+  (p) =>
+    p.slug !== product.slug &&
+    p.category === product.category &&
+    p.specs &&
+    !relatedBrand.find((r) => r.slug === p.slug),
+).slice(0, 4 - relatedBrand.length);
+const related = [...relatedBrand, ...relatedCat].slice(0, 4);
+
+/* ── Spec metadata: label + explanation + benchmark ────────────────────── */
+type SpecMeta = { label: string; explica: string; min?: string; alto?: string };
+const specMeta: Record<string, SpecMeta> = {
+  tpp:        { label: 'TPP (cal/cm²)',     explica: 'Thermal Protective Performance — resistencia combinada al calor radiante y de llama. NFPA 1970 establece un mínimo de 35 cal/cm² para trajes estructurales.', min: '35 cal/cm²', alto: '50+ cal/cm²' },
+  thl:        { label: 'THL (W/m²)',        explica: 'Total Heat Loss — capacidad del traje de disipar el calor generado por el propio cuerpo. A mayor THL, menor estrés térmico en operaciones largas.', min: '130 W/m²', alto: '205+ W/m²' },
+  outer:      { label: 'Shell exterior',    explica: 'Material de la capa externa del sistema de 3 capas. Determina resistencia al desgaste, agentes químicos y calor de contacto.' },
+  weight:     { label: 'Peso total',        explica: 'Peso del conjunto completo de 3 capas. Incide directamente en la fatiga del bombero durante operaciones de larga duración.' },
+  extra:      { label: 'Especificación',    explica: 'Característica adicional del fabricante relevante para la selección del modelo.' },
+  norma:      { label: 'Norma NFPA',        explica: 'Certificación vigente del equipo. NFPA 1971 para cascos estructurales; NFPA 1977 para incendios forestales.' },
+  material:   { label: 'Material carcasa',  explica: 'Material de la carcasa externa del casco. Determina relación peso-resistencia al impacto y durabilidad térmica.' },
+  protector:  { label: 'Visera facial',     explica: 'Tipo de protector facial — retráctil integrado o desmontable. El integrado preserva el perfil de protección de la norma NFPA.' },
+  suspension: { label: 'Suspensión',        explica: 'Sistema de suspensión y ajuste interno — define comodidad, absorción de impacto y distribución del peso sobre la cabeza.' },
+  peso:       { label: 'Peso',              explica: 'Peso del casco sin accesorios. Menor peso reduce la fatiga cervical en operaciones prolongadas.' },
+  autonomia:  { label: 'Autonomía',         explica: 'Duración nominal del cilindro bajo demanda respiratoria estándar. NFPA 1981 exige que el sistema entregue el volumen declarado bajo condiciones certificadas.' },
+  cilindro:   { label: 'Cilindro',          explica: 'Material y presión de trabajo del cilindro. Fibra de carbono ofrece menor peso; acero, mayor robustez mecánica y costo menor.' },
+  electronica:{ label: 'PASS / HUD',        explica: 'Sistema de alarma de hombre sin movimiento (PASS) y visualizador de presión integrado (HUD). Ambos son requeridos por NFPA 1981 para combate estructural.' },
+  resolucion: { label: 'Resolución sensor', explica: 'Resolución del sensor infrarrojo. 160×120 px es suficiente para búsqueda interior; 320×240 px mejora la imagen de mando y documentación.' },
+  sensor:     { label: 'NETD (sensib.)',    explica: 'Noise Equivalent Temperature Difference — sensibilidad térmica del sensor. Un valor menor (≤50 mK) detecta diferencias más pequeñas de temperatura.' },
+  fuerza:     { label: 'Fuerza máx.',       explica: 'Fuerza de apertura o corte. Vehículos modernos con acero de ultra-alta resistencia exigen herramientas de más de 80 kN para apertura efectiva.' },
+  rango:      { label: 'Rango / carrera',   explica: 'Apertura o carrera máxima de la herramienta. Determina el ancho de brecha o la longitud de corte posible en una sola operación.' },
+  fuente:     { label: 'Fuente de poder',   explica: 'Sistema de alimentación de la herramienta. Eléctrico/batería ofrece movilidad total; hidráulico, mayor potencia sostenida.' },
+  tipo_sis:   { label: 'Tipo de sistema',   explica: 'Subsistema de protección — rociadores automáticos, detección de humo/calor, agente limpio o red de gabinetes. Cada uno rige una norma NFPA distinta.' },
+  cobertura:  { label: 'Cobertura',         explica: 'Área de protección diseñada por el sistema. Determinada mediante memoria de cálculo hidráulico conforme NFPA 13 o 72.' },
+  listado:    { label: 'Listado',           explica: 'Organismo que certifica el equipo — UL (Underwriters Laboratories) o FM (Factory Mutual). Requerido por la mayoría de aseguradoras en México.' },
+  ideal:      { label: 'Ocupación ideal',   explica: 'Tipo de inmueble u operación para el que el sistema fue diseñado y calculado.' },
+  nivel_haz:  { label: 'Nivel EPA',         explica: 'Nivel de protección personal EPA: A = encapsulado + SCBA interno; B = resistente salpicadura + SCBA externo; C = resistente salpicadura + APR. Siempre requiere tabla de permeación.' },
+  barrera:    { label: 'Barrera química',   explica: 'Material de la capa de barrera del traje HAZMAT. Determina la compatibilidad con agentes específicos y el breakthrough time documentado.' },
+  gases:      { label: 'Gases detectables', explica: 'Sensores integrados en el monitor multi-gas. La combinación O₂/LEL/CO/H₂S es el mínimo para monitoreo HAZMAT completo.' },
+};
+
+type SpecRow = { label: string; val: string; explica: string; min?: string; alto?: string };
+const specRows: SpecRow[] = product.specs
+  ? (Object.entries(product.specs) as [string, string | undefined][])
+      .filter(([, v]) => v)
+      .map(([k, v]) => ({
+        label:   specMeta[k]?.label   ?? k,
+        val:     v as string,
+        explica: specMeta[k]?.explica ?? '',
+        min:     specMeta[k]?.min,
+        alto:    specMeta[k]?.alto,
+      }))
+  : [];
+
+/* ── Use cases por categoría ───────────────────────────────────────────── */
+type UseCases = { si: string[]; considera: string[] };
+const catUseCases: Record<string, UseCases> = {
+  'Trajes Bombero': {
+    si: [
+      'Incendios estructurales en edificios residenciales, comerciales e industriales',
+      'Operaciones con riesgo de exposición al calor radiante intenso y llama directa',
+      'Rescate técnico en entornos con riesgo térmico confirmado',
+      'Brigadas industriales con exposición a derrames controlados (Nivel C EPA)',
+      'Cuerpos de bomberos en licitaciones públicas que exigen certificación NFPA 1970',
+      'Operaciones de sobrehaul con riesgo de puntos calientes ocultos en estructura',
+    ],
+    considera: [
+      'Para incendios forestales se requiere traje certificado NFPA 1977 — no el 1970 estructural',
+      'Para HAZMAT con vapores tóxicos o desconocidos se necesita traje encapsulado NFPA 1991',
+      'Para rescate acuático se requiere traje específico NFPA 1952',
+      'El peso del sistema (4–5 kg) es factor relevante en operaciones de resistencia prolongada',
+    ],
+  },
+  'Cascos NFPA': {
+    si: [
+      'Combate estructural en edificios residenciales, comerciales e industriales',
+      'Rescate urbano con riesgo de impacto por escombro o colapso parcial',
+      'Brigadas que integran cámara térmica y máscara SCBA en un mismo conjunto EPP',
+      'Cuerpos con licitaciones que exigen certificación NFPA 1971 verificable',
+      'Operaciones nocturnas con requerimientos de lámpara y reflectivos integrados',
+    ],
+    considera: [
+      'Para incendios forestales se requiere casco certificado NFPA 1977',
+      'Los cascos de estilo americano tienen mayor campo visual pero menos integración con SCBA europeo',
+      'Verificar compatibilidad con la máscara de SCBA antes de definir el modelo',
+    ],
+  },
+  'Equipos SCBA': {
+    si: [
+      'Combate de incendios estructurales en atmósfera IDLH (Immediately Dangerous to Life or Health)',
+      'Entrada a espacios confinados con riesgo atmosférico (NOM-027-STPS / OSHA 1910.146)',
+      'Respuesta HAZMAT Nivel A y B donde se requiere SCBA de presión positiva',
+      'Operaciones en atmósferas con agentes CBRN (químicos, biológicos, radiológicos)',
+      'Sobrehaul con posible presencia de gases de combustión residuales',
+    ],
+    considera: [
+      'Para atmósferas caracterizadas por debajo del IDLH puede utilizarse APR — es más ligero y ágil',
+      'El cilindro de 60 min agrega peso significativo — evaluar la autonomía real según operación',
+      'Verificar compatibilidad de la máscara con el casco antes de adquirir el sistema',
+    ],
+  },
+  'Cámaras Térmicas': {
+    si: [
+      'Búsqueda y rescate de víctimas en interiores con visibilidad cero por humo denso',
+      'Localización de focos calientes ocultos tras muros, techos y pisos en sobrehaul',
+      'Comando e incidente: transmisión de imagen en tiempo real al puesto de mando exterior',
+      'Verificación de zona quemada — confirmar ausencia de puntos activos antes de retirar EPP',
+      'Formación y documentación de incidentes para análisis táctico posterior',
+    ],
+    considera: [
+      'La cámara es herramienta de apoyo a la decisión — no reemplaza la evaluación táctica del bombero',
+      'Resolución 160×120 es suficiente para búsqueda; para mando y documentación preferir 320×240',
+      'En incendios con temperatura superior a 500 °C la pantalla se satura — verificar rango del modelo',
+    ],
+  },
+  'Equipos HAZMAT': {
+    si: [
+      'Respuesta a derrames de sustancias peligrosas con agente identificado y tabla de permeación',
+      'Entrada a zonas contaminadas con nivel de protección definido por protocolo HAZMAT',
+      'Monitoreo continuo de la atmósfera durante todas las fases de la operación',
+      'Reconocimiento de escena con muestreo remoto antes de determinar el nivel de protección',
+      'Brigadas industriales con atención a instalaciones petroquímicas, químicas y de transporte',
+    ],
+    considera: [
+      'La selección del nivel A/B/C requiere obligatoriamente tabla de permeación para el agente específico',
+      'El traje encapsulado Nivel A genera estrés térmico severo — planificar rotación de personal',
+      'Para agentes desconocidos siempre iniciar en Nivel A y degradar únicamente con información verificada',
+    ],
+  },
+  'Herramientas de Rescate': {
+    si: [
+      'Excarcelación vehicular en accidentes de tránsito con víctimas atrapadas',
+      'Apertura de accesos en colapsos estructurales para rescate de personas',
+      'Corte de materiales de construcción en entornos de colapso parcial',
+      'Operaciones de rescate en altura donde se requiere equipo portátil y autónomo',
+      'Brigadas municipales y estatales con recursos para equipo hidráulico o eléctrico',
+    ],
+    considera: [
+      'Los vehículos modernos con acero de ultra-alta resistencia pueden requerir herramientas de mayor fuerza',
+      'El sistema hidráulico ofrece mayor potencia sostenida; el eléctrico, mayor movilidad sin mangueras',
+      'Verificar el peso operativo total incluyendo la unidad de potencia antes de asignar al equipo',
+    ],
+  },
+  'Sistemas Contra Incendio': {
+    si: [
+      'Protección de inmuebles bajo obligación normativa (NOM-002-STPS, NOM-022-STPS)',
+      'Instalaciones que exigen certificación de aseguradora con listado UL o FM',
+      'Proyectos que requieren memoria de cálculo firmada por DRO para aprobación municipal',
+      'Inmuebles con alta concentración de personas o activos críticos no recuperables',
+      'Proyectos con auditoría periódica de Protección Civil estatal o municipal',
+    ],
+    considera: [
+      'El tipo de sistema depende del riesgo de ocupación (ligero, ordinario, extra hazard — NFPA 13)',
+      'Data centers y cuartos de control requieren agente limpio — no rociadores de agua',
+      'La memoria de cálculo firmada por DRO es requisito para la mayoría de aseguradoras en México',
+    ],
+  },
+};
+
+const useCases: UseCases = catUseCases[product.category] ?? {
+  si: [
+    'Operaciones que requieren certificación ' + (product.norm ?? 'NFPA') + ' verificable',
+    'Equipamiento para cuerpos de bomberos y brigadas industriales certificadas',
+    'Licitaciones públicas con especificación de norma NFPA por partida',
+    'Corporaciones que exigen documentación de distribuidor autorizado',
+  ],
+  considera: [
+    'Verificar compatibilidad con el resto del equipo de protección personal del cuerpo',
+    'Solicitar la ficha técnica completa y el certificado de conformidad antes de la compra',
+  ],
+};
+
+/* ── JSON-LD ────────────────────────────────────────────────────────────── */
 const productSchema = {
   '@context': 'https://schema.org',
   '@type': 'Product',
@@ -27,6 +210,7 @@ const productSchema = {
   description: product.description,
   url: canonicalURL,
   category: product.category,
+  ...(product.image ? { image: `${SITE.url}${product.image}` } : {}),
   ...(product.brand ? { brand: { '@type': 'Brand', name: product.brand } } : {}),
   offers: {
     '@type': 'Offer',
@@ -41,102 +225,584 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
-    { '@type': 'ListItem', position: 2, name: 'Productos', item: `${SITE.url}/productos` },
+    { '@type': 'ListItem', position: 1, name: 'Inicio',         item: `${SITE.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Productos',      item: `${SITE.url}/productos` },
     { '@type': 'ListItem', position: 3, name: product.category, item: `${SITE.url}${categoryPath}` },
-    { '@type': 'ListItem', position: 4, name: product.title, item: canonicalURL },
+    { '@type': 'ListItem', position: 4, name: product.title,    item: canonicalURL },
   ],
 };
 
-const related = featuredProducts.filter((p) => p.slug !== product.slug).slice(0, 3);
+const seoTitle = `${product.title}${product.norm ? ` ${product.norm}` : ''} — ${product.brand ?? product.category} · ${SITE.name}`;
+const seoDesc  = `${product.description} Distribuidor autorizado ${product.brand ?? ''} en México. ${product.norm ?? ''} certificado con documentación completa para licitación.`.replace(/\s+/g, ' ').trim().slice(0, 158);
 ---
 
 <BaseLayout
-  title={`${product.title} — ${SITE.name}`}
-  description={product.description.slice(0, 158)}
+  title={seoTitle}
+  description={seoDesc}
   canonicalURL={canonicalURL}
   ogType="product"
   schema={[productSchema, breadcrumbSchema]}
 >
-  <!-- Breadcrumb -->
+
+  {/* ══ BREADCRUMB ══════════════════════════════════════════════════════ */}
   <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
     <div class="container-site">
-      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0 flex-wrap" style="color:#4A7599">
+      <ol class="flex items-center flex-wrap gap-2 text-xs list-none m-0 p-0" style="color:#4A7599">
         <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
         <li aria-hidden="true">/</li>
         <li><a href="/productos" class="hover:text-[#FF6B26]">Productos</a></li>
         <li aria-hidden="true">/</li>
         <li><a href={categoryPath} class="hover:text-[#FF6B26]">{product.category}</a></li>
         <li aria-hidden="true">/</li>
+        {brandPath && product.brand && (
+          <>
+            <li><a href={brandPath} class="hover:text-[#FF6B26]">{product.brand}</a></li>
+            <li aria-hidden="true">/</li>
+          </>
+        )}
         <li><span style="color:#94A3B8" aria-current="page">{product.title}</span></li>
       </ol>
     </div>
   </nav>
 
-  <!-- Detalle -->
-  <section class="section" style="background:#040A12">
-    <div class="container-site">
-      <div class="max-w-4xl">
-        <div class="flex gap-2 flex-wrap mb-5">
-          {product.norm && <span class="badge badge-fire">{product.norm}</span>}
-          {product.brand && <span class="badge badge-dark">{product.brand}</span>}
-          {product.badge && <span class="badge badge-gold">{product.badge}</span>}
+  {/* ══ HERO — patrón idéntico al resto del sitio ═══════════════════════ */}
+  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">
+    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none"
+         style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.08) 0%, transparent 65%)"
+         aria-hidden="true"></div>
+
+    <div class="container-site relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+        {/* ── Columna izquierda ─────────────────────────────────────── */}
+        <div>
+          <span class="section-eyebrow mb-5 inline-flex">
+            {[product.brand, product.norm, product.tier].filter(Boolean).join(' · ')}
+          </span>
+
+          <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+            {h1line1}{h1line2 && (
+              <><br/><span style="color:#F75000">{h1line2}</span></>
+            )}
+          </h1>
+
+          <p class="text-base leading-relaxed mb-8 max-w-xl" style="color:#94A3B8">
+            {product.description}
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a
+              href={whatsappUrl(`Hola, quiero cotizar el ${product.title}${product.norm ? ` (${product.norm})` : ''}. ¿Me pueden enviar precio y disponibilidad?`)}
+              target="_blank" rel="noopener"
+              class="btn btn-primary btn-lg"
+            >
+              Cotizar por WhatsApp →
+            </a>
+            {brandPath && (
+              <a href={brandPath} class="btn btn-ghost btn-lg">
+                Ver catálogo {product.brand}
+              </a>
+            )}
+          </div>
         </div>
 
-        <h1 class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(2rem,4.5vw,3.5rem);line-height:1.05">
-          {product.title}
-        </h1>
+        {/* ── Columna derecha — imagen + datos ─────────────────────── */}
+        <div class="lg:pl-8" style="border-left:1px solid rgba(74,117,153,0.1)">
 
-        <p class="text-base leading-[1.9] mb-8" style="color:#94A3B8">{product.description}</p>
+          {/* Imagen */}
+          <div class="relative overflow-hidden mb-6" style="border:1px solid rgba(74,117,153,0.2);background:#060D18">
+            {product.image ? (
+              <img
+                src={product.image}
+                alt={`${product.title} — ${product.norm ?? ''} ${product.brand ?? ''} distribuidor autorizado México`}
+                width="800" height="600"
+                loading="eager" decoding="async"
+                class="w-full block"
+                style="aspect-ratio:4/3;object-fit:cover;object-position:center"
+              />
+            ) : (
+              <div class="flex flex-col items-center justify-center gap-3"
+                   style="aspect-ratio:4/3;background:linear-gradient(135deg,#060D18 0%,#0A1520 100%)">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(74,117,153,0.35)" stroke-width="1.5" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
+                  <path d="M21 15l-5-5L5 21"/>
+                </svg>
+                <span class="text-xs uppercase tracking-widest" style="color:rgba(74,117,153,0.35)">Imagen del fabricante</span>
+              </div>
+            )}
+            {product.tier && (
+              <div class="absolute top-3 left-3">
+                <span class="text-[9px] font-display font-bold uppercase tracking-widest px-2 py-1"
+                      style="background:rgba(4,10,18,0.88);color:#4A7599;border:1px solid rgba(74,117,153,0.3);backdrop-filter:blur(4px)">
+                  {product.tier}
+                </span>
+              </div>
+            )}
+            {product.highlight && (
+              <div class="absolute top-3 right-3">
+                <span class="text-[9px] font-display font-bold uppercase tracking-widest px-2 py-1"
+                      style="background:#F75000;color:#FFFFFF">★ Destacado</span>
+              </div>
+            )}
+          </div>
 
-        <div class="flex flex-col gap-3 mb-10 p-6" style="background:#0C1825;border:1px solid rgba(74,117,153,0.2)">
+          {/* Spec chips */}
+          {specRows.length > 0 && (
+            <div class="flex flex-wrap gap-2 mb-5">
+              {specRows.map((s) => (
+                <div class="flex flex-col items-start px-3 py-2"
+                     style="background:#080F1A;border:1px solid rgba(74,117,153,0.22)">
+                  <span class="text-[9px] font-bold uppercase tracking-widest mb-0.5" style="color:#4A7599">{s.label}</span>
+                  <span class="font-display font-semibold text-sm" style="color:#F75000">{s.val}</span>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Badge chips */}
+          <div class="flex flex-wrap gap-2">
+            {product.norm  && <span class="badge badge-fire">{product.norm}</span>}
+            {product.brand && <span class="badge badge-dark">{product.brand}</span>}
+            {product.badge && <span class="badge badge-gold">{product.badge}</span>}
+            <span class="badge badge-dark">Distribuidor autorizado MX</span>
+            <span class="badge badge-dark">Ficha técnica incluida</span>
+            <span class="badge badge-dark">Documentación licitación</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="absolute bottom-0 left-0 right-0 h-px"
+         style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)"
+         aria-hidden="true"></div>
+  </section>
+
+  {/* ══ QUICKLINKS ══════════════════════════════════════════════════════ */}
+  <QuickLinksBar />
+
+  {/* ══ DESCRIPCIÓN TÉCNICA + ESPECIFICACIONES ══════════════════════════ */}
+  <section class="section" style="background:#070E1A" aria-labelledby="desc-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+
+        {/* Descripción */}
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">
+            {product.norm ?? product.category} · {product.brand ?? 'Fabricante'}
+          </span>
+          <h2 id="desc-title" class="font-display font-bold mb-6"
+              style="color:#FFFFFF;font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.1">
+            Descripción técnica<br/>
+            <span style="color:#F75000">del equipo.</span>
+          </h2>
+
+          <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">
+            {product.description}
+          </p>
+
+          <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">
+            Como distribuidor autorizado de {product.brand ?? 'esta marca'} en México, entregamos
+            cada unidad con número de serie verificable, certificado de conformidad {product.norm ?? 'NFPA'}
+            con el número de laboratorio acreditado, y documentación completa para licitación pública
+            o proceso de compra corporativo. El equipo cumple íntegramente con los requisitos de
+            la norma {product.norm ?? 'NFPA'} en su edición vigente.
+          </p>
+
+          {product.brand && (
+            <p class="text-sm leading-[1.9] mb-8" style="color:#94A3B8">
+              {product.brand} es uno de los fabricantes líderes en su categoría a nivel mundial,
+              con presencia activa en los principales cuerpos de bomberos y brigadas industriales
+              de América Latina. La línea {product.title} representa el estándar de referencia
+              para {product.category.toLowerCase()} en licitaciones de nivel tier-1.
+            </p>
+          )}
+
+          <a
+            href={whatsappUrl(`Hola, quiero recibir la ficha técnica completa del ${product.title} (${product.norm ?? ''}) para evaluación.`)}
+            target="_blank" rel="noopener"
+            class="btn btn-ghost"
+          >
+            Solicitar ficha técnica completa →
+          </a>
+        </div>
+
+        {/* Especificaciones */}
+        {specRows.length > 0 && (
+          <div>
+            <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5"
+                style="color:#4A7599">Especificaciones técnicas</h2>
+
+            <div style="overflow-x:auto;border:1px solid rgba(74,117,153,0.18)">
+              <table style="width:100%;border-collapse:collapse;min-width:400px">
+                <thead>
+                  <tr style="background:#080F1A;border-bottom:1px solid rgba(74,117,153,0.25)">
+                    <th class="text-left p-3 text-[10px] font-display font-bold uppercase tracking-widest"
+                        style="color:#4A7599;width:35%">Parámetro</th>
+                    <th class="text-left p-3 text-[10px] font-display font-bold uppercase tracking-widest"
+                        style="color:#F75000;width:25%">Valor</th>
+                    <th class="text-left p-3 text-[10px] font-display font-bold uppercase tracking-widest"
+                        style="color:#4A7599">Referencia</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {specRows.map((s, i) => (
+                    <tr style={`border-bottom:1px solid rgba(74,117,153,0.12);background:${i % 2 === 0 ? '#070E1A' : '#080F1A'}`}>
+                      <td class="p-3 font-display font-semibold text-xs" style="color:#CBD5E1">{s.label}</td>
+                      <td class="p-3 font-display font-bold text-xs" style="color:#F75000">{s.val}</td>
+                      <td class="p-3 text-xs leading-relaxed" style="color:#64748B">{s.explica}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            {/* Benchmark rápido si hay valores de referencia */}
+            {specRows.some((s) => s.min || s.alto) && (
+              <div class="mt-4 p-4" style="background:#080F1A;border:1px solid rgba(74,117,153,0.15)">
+                <p class="text-[10px] font-display font-bold uppercase tracking-widest mb-3" style="color:#4A7599">
+                  Contexto de desempeño
+                </p>
+                <div class="flex flex-col gap-2">
+                  {specRows.filter((s) => s.min || s.alto).map((s) => (
+                    <div class="flex items-center gap-3 text-xs">
+                      <span style="color:#64748B;min-width:80px">{s.label}</span>
+                      <div class="flex items-center gap-2 flex-wrap">
+                        {s.min && <span class="px-2 py-0.5" style="background:#040A12;color:#4A7599;border:1px solid rgba(74,117,153,0.2)">Mín NFPA: {s.min}</span>}
+                        <span class="px-2 py-0.5 font-semibold" style="background:rgba(247,80,0,0.12);color:#F75000;border:1px solid rgba(247,80,0,0.3)">Este modelo: {s.val}</span>
+                        {s.alto && <span class="px-2 py-0.5" style="background:#040A12;color:#34D399;border:1px solid rgba(52,211,153,0.2)">Alta perf: {s.alto}</span>}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+
+      </div>
+    </div>
+  </section>
+
+  {/* ══ CARACTERÍSTICAS PRINCIPALES ═════════════════════════════════════ */}
+  {product.features && product.features.length > 0 && (
+    <section class="section" style="background:#040A12" aria-labelledby="feat-title">
+      <div class="container-site">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-10">
+          <div>
+            <span class="section-eyebrow mb-4 inline-flex">Características · {product.norm ?? product.category}</span>
+            <h2 id="feat-title" class="font-display font-bold"
+                style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+              Lo que distingue<br/>
+              <span style="color:#F75000">a este equipo.</span>
+            </h2>
+          </div>
+          <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+            <p class="text-sm leading-relaxed" style="color:#94A3B8">
+              Cada característica listada está documentada en la ficha técnica oficial del fabricante
+              y respaldada por la certificación {product.norm ?? 'NFPA'} vigente — verificable por número
+              de modelo y laboratorio acreditado. Sin letra pequeña.
+            </p>
+          </div>
+        </div>
+
+        <div class={`grid grid-cols-1 ${product.features.length === 2 ? 'md:grid-cols-2' : 'md:grid-cols-3'} gap-px`}
+             style="border:1px solid rgba(74,117,153,0.18)">
+          {product.features.map((feat, i) => {
+            const colors = ['#F75000','#F5A623','#34D399','#60A5FA','#A78BFA'];
+            const color  = colors[i % colors.length];
+            return (
+              <div class="flex flex-col gap-4 p-7" style={`background:#080F1A;border-top:3px solid ${color}`}>
+                <div class="flex items-center gap-3">
+                  <div class="shrink-0 flex items-center justify-center w-9 h-9 rounded-full"
+                       style={`background:${color}18`}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={color} stroke-width="2.5" aria-hidden="true">
+                      <path d="M20 6L9 17l-5-5"/>
+                    </svg>
+                  </div>
+                  <span class="font-display font-bold text-sm uppercase tracking-wide" style={`color:${color}`}>
+                    Característica {i + 1}
+                  </span>
+                </div>
+                <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{feat}</p>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {/* ══ APLICACIONES Y CASOS DE USO ═════════════════════════════════════ */}
+  <section class="section" style="background:#070E1A" aria-labelledby="usos-title">
+    <div class="container-site">
+      <div class="mb-10">
+        <span class="section-eyebrow mb-4 inline-flex">Cuándo es la opción correcta</span>
+        <h2 id="usos-title" class="font-display font-bold"
+            style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          Aplicaciones y<br/>
+          <span style="color:#F75000">casos de uso.</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+        {/* Ideal para */}
+        <div style="background:#080F1A;border:1px solid rgba(74,117,153,0.18);border-top:3px solid #34D399">
+          <div class="px-6 pt-6 pb-4" style="border-bottom:1px solid rgba(74,117,153,0.15)">
+            <span class="text-[10px] font-display font-bold uppercase tracking-widest" style="color:#34D399">
+              ✓ Ideal para estas situaciones
+            </span>
+          </div>
+          <ul class="flex flex-col list-none m-0 p-0">
+            {useCases.si.map((item, i) => (
+              <li class="flex items-start gap-3 px-6 py-4"
+                  style={`border-bottom:${i < useCases.si.length - 1 ? '1px solid rgba(74,117,153,0.1)' : 'none'}`}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="2.5"
+                     class="shrink-0 mt-0.5" aria-hidden="true">
+                  <path d="M20 6L9 17l-5-5"/>
+                </svg>
+                <span class="text-sm leading-relaxed" style="color:#94A3B8">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* A considerar */}
+        <div style="background:#080F1A;border:1px solid rgba(74,117,153,0.18);border-top:3px solid #F5A623">
+          <div class="px-6 pt-6 pb-4" style="border-bottom:1px solid rgba(74,117,153,0.15)">
+            <span class="text-[10px] font-display font-bold uppercase tracking-widest" style="color:#F5A623">
+              ⚠ A considerar antes de elegir
+            </span>
+          </div>
+          <ul class="flex flex-col list-none m-0 p-0">
+            {useCases.considera.map((item, i) => (
+              <li class="flex items-start gap-3 px-6 py-4"
+                  style={`border-bottom:${i < useCases.considera.length - 1 ? '1px solid rgba(74,117,153,0.1)' : 'none'}`}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2.5"
+                     class="shrink-0 mt-0.5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="text-sm leading-relaxed" style="color:#94A3B8">{item}</span>
+              </li>
+            ))}
+          </ul>
+
+          {/* CTA asesoría */}
+          <div class="px-6 py-5" style="border-top:1px solid rgba(74,117,153,0.15)">
+            <p class="text-xs leading-relaxed mb-3" style="color:#64748B">
+              ¿Tienes dudas sobre si este modelo es el correcto para tu operación?
+              Te asesoramos sin compromiso.
+            </p>
+            <a
+              href={whatsappUrl(`Hola, quiero asesoría para saber si el ${product.title} es la opción correcta para mi operación.`)}
+              target="_blank" rel="noopener"
+              class="btn btn-ghost"
+              style="font-size:0.75rem;padding:0.5rem 1rem"
+            >
+              Consulta técnica gratuita →
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  {/* ══ DOCUMENTACIÓN PARA LICITACIÓN ═══════════════════════════════════ */}
+  <section class="section" style="background:#040A12" aria-labelledby="docs-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Distribuidor autorizado · Stock en CDMX</span>
+          <h2 id="docs-title" class="font-display font-bold mb-4"
+              style="color:#FFFFFF;font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.1">
+            Todo lo que necesitas<br/>
+            <span style="color:#F75000">para la licitación.</span>
+          </h2>
+          <p class="text-sm leading-relaxed mb-8" style="color:#64748B">
+            Como distribuidores autorizados de {product.brand ?? 'esta marca'} en México entregamos el dossier
+            documental completo para concursos públicos (CompraNet, IMSS, gobiernos estatales y
+            municipales) y licitaciones corporativas privadas. Sin trámites adicionales — el paquete
+            sale completo desde la primera solicitud. Respuesta en menos de 24 horas.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a
+              href={whatsappUrl(`Hola, necesito el dossier completo de licitación para el ${product.title} (${product.norm ?? ''}): certificado NFPA, ficha técnica y carta de distribuidor.`)}
+              target="_blank" rel="noopener"
+              class="btn btn-primary"
+            >
+              Solicitar dossier completo →
+            </a>
+            <a href="/cotizacion" class="btn btn-ghost">
+              Cotización formal
+            </a>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-px" style="border:1px solid rgba(74,117,153,0.18)">
           {[
-            'Equipo original con número de serie verificable con fábrica',
-            'Certificado de conformidad y ficha técnica para licitación incluidos',
-            'Garantía directa de fábrica y refacciones originales',
-            'Envío asegurado a los 32 estados',
-          ].map((t) => (
-            <div class="flex items-start gap-3 text-sm" style="color:#94A3B8">
-              <svg class="w-4 h-4 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-              {t}
+            {
+              svg: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>`,
+              t: `Certificado ${product.norm ?? 'NFPA'}`,
+              d: 'Número de modelo, lote y laboratorio acreditado. Verificable en el registro oficial del organismo de certificación.',
+              color: '#34D399',
+            },
+            {
+              svg: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>`,
+              t: 'Ficha técnica oficial',
+              d: `Datasheet de ${product.brand ?? 'fabricante'} en español con especificaciones completas, referencias de norma y datos del laboratorio.`,
+              color: '#60A5FA',
+            },
+            {
+              svg: `<path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>`,
+              t: 'Carta de distribuidor autorizado',
+              d: `Acredita que FIREFIGHTERSMX es distribuidor oficial de ${product.brand ?? 'esta marca'} para el mercado mexicano.`,
+              color: '#F5A623',
+            },
+            {
+              svg: `<path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>`,
+              t: 'Garantía directa de fábrica',
+              d: 'Gestión de garantías y refacciones originales directamente con el fabricante, sin intermediarios adicionales.',
+              color: '#A78BFA',
+            },
+          ].map((d, i) => (
+            <div class="flex flex-col gap-3 p-5"
+                 style={`background:${i % 2 === 0 ? '#060D18' : '#080F1A'};border-top:2px solid ${d.color}`}>
+              <div class="w-8 h-8 flex items-center justify-center rounded"
+                   style={`background:${d.color}18`}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={d.color} stroke-width="1.8" aria-hidden="true">
+                  <Fragment set:html={d.svg} />
+                </svg>
+              </div>
+              <h3 class="font-display font-bold text-sm" style="color:#FFFFFF">{d.t}</h3>
+              <p class="text-xs leading-relaxed m-0" style="color:#64748B">{d.d}</p>
             </div>
           ))}
         </div>
 
-        <div class="flex flex-col sm:flex-row gap-3">
-          <a
-            href={whatsappUrl(`Hola, quiero cotizar: ${product.title}`)}
-            target="_blank" rel="noopener"
-            class="btn btn-primary btn-lg"
-          >
-            Cotizar este equipo
+      </div>
+    </div>
+  </section>
+
+  {/* ══ BRAND STRIP ═════════════════════════════════════════════════════ */}
+  {brandPath && product.brand && (
+    <section class="section-tight" style="background:#070E1A;border-top:1px solid rgba(74,117,153,0.15)" aria-label={`Catálogo ${product.brand}`}>
+      <div class="container-site">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div>
+            <span class="text-[9px] font-bold uppercase tracking-widest block mb-1" style="color:#4A7599">
+              Distribuidor autorizado en México
+            </span>
+            <p class="font-display font-bold text-lg m-0" style="color:#FFFFFF">
+              {product.brand}
+              <span style="color:#F75000"> · </span>
+              <span style="color:#94A3B8;font-size:0.875rem;font-weight:400">Catálogo completo de modelos</span>
+            </p>
+          </div>
+          <a href={brandPath} class="btn btn-ghost shrink-0">
+            Ver todos los modelos {product.brand} →
           </a>
-          <a href={categoryPath} class="btn btn-ghost btn-lg">Ver más {product.category}</a>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- Accesos rápidos (interlinking) -->
-  <QuickLinksBar />
+    </section>
+  )}
 
+  {/* ══ RELACIONADOS ════════════════════════════════════════════════════ */}
+  {related.length > 0 && (
+    <section class="section" style="background:#040A12" aria-labelledby="related-title">
+      <div class="container-site">
 
-  <!-- Relacionados -->
-  <section class="section-tight" style="background:#070E1A" aria-labelledby="related-title">
-    <div class="container-site">
-      <h2 id="related-title" class="font-display font-bold text-sm uppercase tracking-widest mb-6" style="color:#4A7599">
-        También te puede interesar
-      </h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
-        {related.map((p) => (
-          <a href={p.href} class="grid-cell group flex flex-col gap-3 p-6">
-            <div class="flex gap-2 flex-wrap">
-              {p.norm && <span class="badge badge-fire">{p.norm}</span>}
-            </div>
-            <h3 class="font-display font-bold text-base leading-snug group-hover:text-[#FF6B26]" style="color:#FFFFFF">{p.title}</h3>
-            <span class="text-xs font-display font-semibold uppercase tracking-wider mt-auto" style="color:#FF8F57">Ver detalles →</span>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-10">
+          <div>
+            <span class="section-eyebrow mb-4 inline-flex">Catálogo {product.category}</span>
+            <h2 id="related-title" class="font-display font-bold"
+                style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+              Otros modelos<br/>
+              <span style="color:#F75000">que pueden interesarte.</span>
+            </h2>
+          </div>
+          <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+            <p class="text-sm leading-relaxed" style="color:#94A3B8">
+              Todos los modelos que distribuimos están certificados {product.norm ?? 'NFPA'} con documentación
+              completa. Te asesoramos para identificar la opción más adecuada para tu operación y presupuesto.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {related.map((p) => (
+            <a
+              href={p.href}
+              class="group flex flex-col overflow-hidden transition-colors"
+              style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)"
+            >
+              {p.image ? (
+                <div class="overflow-hidden" style="aspect-ratio:4/3;background:#060D18">
+                  <img
+                    src={p.image} alt={p.title}
+                    width="400" height="300"
+                    loading="lazy" decoding="async"
+                    class="w-full h-full block transition-transform group-hover:scale-105"
+                    style="object-fit:cover;object-position:center"
+                  />
+                </div>
+              ) : (
+                <div class="flex items-center justify-center" style="aspect-ratio:4/3;background:#060D18">
+                  <span class="text-[9px] uppercase tracking-widest" style="color:rgba(74,117,153,0.3)">Sin imagen</span>
+                </div>
+              )}
+
+              <div class="flex flex-col gap-2 p-4 flex-1">
+                <div class="flex flex-wrap gap-1.5">
+                  {p.norm  && <span class="badge badge-fire text-[9px]">{p.norm}</span>}
+                  {p.badge && <span class="badge badge-gold text-[9px]">{p.badge}</span>}
+                </div>
+                <h3 class="font-display font-bold text-sm leading-snug group-hover:text-[#F75000] transition-colors"
+                    style="color:#FFFFFF">{p.title}</h3>
+                <p class="text-xs leading-relaxed m-0 line-clamp-2" style="color:#64748B">{p.description}</p>
+
+                {p.specs && (
+                  <div class="flex flex-wrap gap-1 mt-2">
+                    {(Object.entries(p.specs) as [string, string | undefined][])
+                      .filter(([, v]) => !!v)
+                      .slice(0, 3)
+                      .map(([k, v]) => (
+                        <span class="text-[9px] font-semibold px-1.5 py-0.5"
+                              style="background:#040A12;color:#4A7599;border:1px solid rgba(74,117,153,0.2)">
+                          {specMeta[k]?.label ?? k}: {v}
+                        </span>
+                      ))}
+                  </div>
+                )}
+
+                <span class="text-xs font-display font-semibold uppercase tracking-wider mt-auto pt-2"
+                      style="color:#F75000">Ver detalles →</span>
+              </div>
+            </a>
+          ))}
+        </div>
+
+        <div class="mt-8 pt-6" style="border-top:1px solid rgba(74,117,153,0.15)">
+          <a href={categoryPath}
+             class="text-sm font-display font-semibold hover:text-[#FF6B26] transition-colors"
+             style="color:#4A7599">
+            ← Ver catálogo completo de {product.category}
           </a>
-        ))}
+        </div>
+
       </div>
-    </div>
-  </section>
+    </section>
+  )}
+
 </BaseLayout>
+
+<style>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

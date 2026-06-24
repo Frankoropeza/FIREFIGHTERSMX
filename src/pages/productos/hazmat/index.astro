@@ -1,0 +1,686 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import QuickLinksBar from '@components/common/QuickLinksBar.astro';
+import ProductCard from '@components/products/ProductCard.astro';
+import { categories } from '@data/categories';
+import { featuredProducts } from '@data/products';
+import { SITE, whatsappUrl } from '@data/site';
+
+const cat = categories.find((c) => c.slug === 'hazmat')!;
+const canonicalURL = `${SITE.url}/productos/hazmat`;
+
+const seoMeta = {
+  title: 'Equipos HAZMAT NFPA 1991 · 1992 — DuPont Tychem, Lakeland ChemMax, MSA Altair · México',
+  description: 'Equipos HAZMAT certificados NFPA 1991 y 1992 en México: trajes encapsulados DuPont Tychem y Lakeland ChemMax (Nivel A y B), monitores multi-gas MSA Altair (ATEX). Tablas de permeación · asesoría por agente. Distribuidor autorizado.',
+  canonicalURL,
+};
+
+/* ── Productos por marca ─────────────────────────────────────────────────── */
+const dupontProducts   = featuredProducts.filter((p) => p.category === 'Equipos HAZMAT' && p.brand === 'DuPont Tychem'      && p.specs);
+const lakelandProducts = featuredProducts.filter((p) => p.category === 'Equipos HAZMAT' && p.brand === 'Lakeland Industries' && p.specs);
+const msaProducts      = featuredProducts.filter((p) => p.category === 'Equipos HAZMAT' && p.brand === 'MSA Safety'          && p.specs);
+const todosHazmat      = featuredProducts.filter((p) => p.category === 'Equipos HAZMAT' && p.specs);
+
+/* ── Niveles de protección EPA ───────────────────────────────────────────── */
+const niveles = [
+  {
+    id: 'nivel-a',
+    nivel: 'Nivel A',
+    norm: 'NFPA 1991',
+    accent: '#EF4444',
+    escenario: 'Atmósferas desconocidas · CBRN · vapor y gas tóxico',
+    desc: 'Máxima protección disponible. Traje encapsulado hermético (vapor-tight) con SCBA interno. Obligatorio cuando el agente es desconocido, la concentración es alta o existe riesgo de exposición cutánea a vapores tóxicos. La selección de Nivel A no puede basarse solo en el nivel — requiere verificación con la tabla de permeación del traje para el agente específico.',
+    marcas: 'DuPont Tychem 10000 · Lakeland ChemMax 4',
+    cuando: ['Agente desconocido o potencialmente letal por inhalación o contacto cutáneo', 'Concentraciones atmosféricas que requieren máxima protección respiratoria y cutánea', 'Operaciones CBRN y respuesta a terrorismo con agentes de guerra química', 'Entrada inicial a zona caliente sin caracterización completa del agente'],
+  },
+  {
+    id: 'nivel-b',
+    nivel: 'Nivel B',
+    norm: 'NFPA 1992',
+    accent: '#F5A623',
+    escenario: 'Agente conocido · salpicadura de líquidos · SCBA externo',
+    desc: 'Protección contra salpicadura de líquidos con máxima protección respiratoria (SCBA externo). El agente debe ser conocido y la ruta de exposición debe ser por líquido —no vapor— verificada con tabla de permeación. Menor estrés térmico que Nivel A, permite operaciones más prolongadas cuando el riesgo de vapor ya fue descartado.',
+    marcas: 'DuPont Tychem 4000S · Lakeland AlphaTec 5000',
+    cuando: ['Agente identificado con riesgo por salpicadura de líquido —no vapor— verificado con tabla de permeación', 'Operaciones de descontaminación en zona templada', 'Respuesta a derrames de ácidos, bases y solventes con concentración atmosférica baja', 'Segunda entrada tras establecer la caracterización del agente en Nivel A'],
+  },
+  {
+    id: 'nivel-c',
+    nivel: 'Nivel C',
+    norm: 'NFPA 1992',
+    accent: '#34D399',
+    escenario: 'Agente conocido · bajo riesgo respiratorio · APR en lugar de SCBA',
+    desc: 'Protección contra salpicadura con respirador purificador de aire (APR) en lugar de SCBA. Solo aplica cuando el agente está completamente caracterizado, la concentración atmosférica es conocida y no supera los umbrales que requieren SCBA. Usado principalmente en descontaminación de segunda línea y muestreo ambiental.',
+    marcas: 'DuPont Tychem 2000 · Lakeland Pyrolon CRFR',
+    cuando: ['Concentración del agente verificada por debajo del umbral de IDLH (Immediately Dangerous to Life or Health)', 'Actividades de soporte fuera de la zona caliente con agente plenamente caracterizado', 'Operaciones de post-emergencia y muestreo ambiental en zonas ya descontaminadas', 'Descontaminación de personal de salida de zona templada'],
+  },
+  {
+    id: 'reconocimiento',
+    nivel: 'Reconocimiento',
+    norm: 'Pre-entrada',
+    accent: '#60A5FA',
+    escenario: 'Antes de seleccionar el nivel · caracterización del agente',
+    desc: 'El paso más crítico de la respuesta HAZMAT: caracterizar el agente antes de seleccionar el nivel de protección. El monitor multi-gas MSA Altair 5X con bomba aspirada permite muestrear el ambiente a hasta 27 m sin exposición del técnico — O₂, LEL, CO, H₂S y un gas tóxico configurable. Sin reconocimiento, la selección del nivel de protección es una estimación.',
+    marcas: 'MSA Altair 5X · MSA Altair 4XR',
+    cuando: ['Primera acción en todo incidente HAZMAT: caracterizar el agente antes de entrar', 'Verificación continua de la atmósfera durante la operación en todas las zonas', 'Confirmación de que el área fue descontaminada antes de reducir el nivel de protección', 'Monitoreo de espacios confinados antes de autorizar la entrada (OSHA 1910.146 / NOM-027-STPS)'],
+  },
+];
+
+/* ── Trust Pillars ───────────────────────────────────────────────────────── */
+const razones = [
+  {
+    n: '01',
+    t: 'Tablas de permeación verificadas por agente',
+    d: 'La selección de un traje HAZMAT por nivel (A, B, C) es insuficiente sin verificar la compatibilidad con el agente específico. Te entregamos las tablas de permeación de DuPont y Lakeland para las sustancias de tu operación — el documento que acredita la selección ante cualquier auditoría de seguridad industrial.',
+  },
+  {
+    n: '02',
+    t: 'Monitores ATEX / Clase I Div 1 certificados',
+    d: 'Todos los monitores MSA Altair que distribuimos están certificados ATEX y Clase I División 1 para uso en atmósferas potencialmente explosivas — el único tipo autorizado por la NOM-027-STPS para entrada a espacios confinados y reconocimiento HAZMAT. Sin esta certificación, el monitor no es válido en zonas de riesgo.',
+  },
+  {
+    n: '03',
+    t: 'Asesoría de selección por operación y agente',
+    d: 'Analizamos los agentes específicos de tu operación (refinería, transporte, respuesta municipal), la concentración de exposición y la duración de las operaciones para recomendar el nivel de protección y el traje correcto. La selección correcta reduce el riesgo de fallo del EPP y el estrés térmico del técnico.',
+  },
+  {
+    n: '04',
+    t: 'Documentación completa para plan de respuesta',
+    d: 'Entregamos las tablas de permeación, fichas de seguridad (SDS) de los agentes, procedimientos de vestido y desvestido, y guías de descontaminación. El paquete completo que exige un plan de respuesta HAZMAT certificado por Protección Civil y auditado bajo NOM-005-STPS.',
+  },
+];
+
+/* ── FAQ ────────────────────────────────────────────────────────────────── */
+const faqs = [
+  {
+    q: '¿Cuál es la diferencia entre Nivel A, B y C según la EPA?',
+    a: 'La EPA define 4 niveles de protección personal para HAZMAT. Nivel A: traje encapsulado hermético (vapor-tight) + SCBA interno — máxima protección cutánea y respiratoria para agentes desconocidos o vapores letales. Nivel B: traje resistente a salpicadura de líquidos + SCBA externo — máxima protección respiratoria cuando el riesgo de vapor ya fue descartado. Nivel C: traje resistente a salpicadura + APR (respirador purificador) — para agentes caracterizados por debajo del umbral de IDLH. Nivel D: EPP mínimo (overol, guantes) para exposición nula a vapores y salpicadura. La selección no puede hacerse solo por el nivel: requiere tabla de permeación para el agente específico.',
+  },
+  {
+    q: '¿Por qué necesito tabla de permeación además de la certificación NFPA 1991?',
+    a: 'La certificación NFPA 1991 garantiza que el traje cumple requisitos generales de protección — pero no certifica la resistencia contra todos los agentes posibles. Un traje Nivel A puede permearse en minutos ante ciertos solventes clorados o ácidos concentrados que atraviesan algunos materiales específicos. La tabla de permeación documenta el breakthrough time (tiempo hasta permeación) y la tasa de permeación para el agente y concentración exacta de tu operación. Es el documento técnico-legal que valida la selección.',
+  },
+  {
+    q: '¿DuPont Tychem 10000 o Lakeland ChemMax 4 — cuál elegir?',
+    a: 'Ambos son Nivel A NFPA 1991 técnicamente equivalentes. La diferencia está en la documentación: Tychem 10000 tiene tablas para 280+ sustancias; ChemMax 4 tiene 350+. Para brigadas con mayor variedad de agentes posibles, ChemMax 4 ofrece mayor cobertura documental. Para licitaciones que especifican DuPont por nombre, el Tychem 10000 es la opción directa. Te facilitamos ambas tablas para el agente específico de tu operación y hacemos la recomendación según la sustancia.',
+  },
+  {
+    q: '¿Cuándo usar MSA Altair 5X vs Altair 4XR?',
+    a: 'El Altair 5X (con bomba aspirada) es el instrumento de reconocimiento de escena: permite muestrear el ambiente a hasta 27 m sin acercar al técnico al área de riesgo, y detecta un 5to gas tóxico configurable (SO₂, HCN, PH₃, Cl₂, NO₂) además de O₂/LEL/CO/H₂S. Es la herramienta para la primera acción en un incidente HAZMAT. El Altair 4XR es el instrumento de monitoreo continuo para uso cotidiano: 4 gases con la carcasa más resistente a golpes para entrada a espacios confinados y patrullaje de zona.',
+  },
+  {
+    q: '¿Qué documentación entregan para un plan de respuesta HAZMAT certificado?',
+    a: 'Entregamos: tablas de permeación de DuPont y Lakeland para los agentes específicos de tu operación, fichas técnicas NFPA 1991/1992 con número de modelo y certificación verificable, procedimientos de vestido y desvestido (donning/doffing) con lista de verificación, guías de descontaminación del traje y el técnico, y protocolo de calibración y prueba de choque para los monitores MSA Altair. El paquete completo para un plan de respuesta auditado bajo NOM-005-STPS.',
+  },
+];
+
+/* ── JSON-LD ─────────────────────────────────────────────────────────────── */
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio',        item: `${SITE.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Productos',     item: `${SITE.url}/productos` },
+    { '@type': 'ListItem', position: 3, name: 'Equipos HAZMAT', item: canonicalURL },
+  ],
+};
+
+const collectionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  '@id': `${canonicalURL}#collection`,
+  name: 'Equipos HAZMAT NFPA 1991 · 1992 — México',
+  description: seoMeta.description,
+  url: canonicalURL,
+  inLanguage: 'es-MX',
+  isPartOf: { '@id': `${SITE.url}/#website` },
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: todosHazmat.length,
+    itemListElement: todosHazmat.map((p, i) => ({ '@type': 'ListItem', position: i + 1, name: p.title, url: `${SITE.url}${p.href}` })),
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+
+const otrasCategorias = categories.filter((c) => c.slug !== 'hazmat').slice(0, 6);
+
+/* ── Guía de selección ───────────────────────────────────────────────────── */
+const guia = [
+  { n: '01', t: 'Identifica el agente o familia de agentes antes de seleccionar el nivel. Nivel A (traje encapsulado) para agentes desconocidos o vapores IDLH; Nivel B (traje resistente + SCBA externo) cuando el riesgo de vapor fue descartado; Nivel C cuando el agente está caracterizado y la concentración permite APR. Sin identificación, no hay selección válida.' },
+  { n: '02', t: 'Solicita la tabla de permeación para el agente específico, no solo para el nivel. Un traje Nivel A NFPA 1991 puede permearse en minutos ante ciertos solventes clorados — la tabla documentará el breakthrough time y la tasa de permeación para tu operación. Es el documento técnico-legal que valida la selección ante una auditoría.' },
+  { n: '03', t: 'Verifica la certificación ATEX / Clase I División 1 de todos los monitores de gas que entren a la zona de riesgo. La NOM-027-STPS exige esta certificación para entrada a espacios confinados y reconocimiento HAZMAT — un monitor sin ella no es válido en zonas de potencial explosividad.' },
+  { n: '04', t: 'Arma el paquete documental del plan de respuesta: tabla de permeación, ficha técnica NFPA 1991/1992 con laboratorio verificable, procedimiento de donning/doffing, guía de descontaminación y protocolo de calibración del monitor. Protección Civil y aseguradoras industriales exigen estos documentos para validar el plan.' },
+];
+
+/* ── Artículos del blog ───────────────────────────────────────────────────── */
+const articulos = [
+  { label: 'Niveles EPA A, B, C y D explicados',    desc: 'Cuándo usar cada nivel y qué protege',          href: '/blog/niveles-proteccion-hazmat-epa-abc' },
+  { label: 'Tablas de permeación DuPont vs Lakeland', desc: 'Cómo leerlas y usarlas en la selección',      href: '/blog/tablas-permeacion-dupont-lakeland-hazmat' },
+  { label: 'MSA Altair 5X vs 4XR — comparativa',    desc: 'Reconocimiento vs monitoreo continuo',          href: '/blog/msa-altair-5x-vs-4xr-deteccion-hazmat' },
+  { label: 'Plan de respuesta HAZMAT certificado',   desc: 'Documentos requeridos por Protección Civil',    href: '/blog/plan-respuesta-hazmat-proteccion-civil' },
+];
+---
+
+<BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema, faqSchema]}>
+
+  {/* ══ BREADCRUMB ══════════════════════════════════════════════════════ */}
+  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+    <div class="container-site">
+      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0 flex-wrap" style="color:#4A7599">
+        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="/productos" class="hover:text-[#FF6B26]">Productos</a></li>
+        <li aria-hidden="true">/</li>
+        <li><span style="color:#94A3B8" aria-current="page">Equipos HAZMAT</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  {/* ══ HERO ════════════════════════════════════════════════════════════ */}
+  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">
+    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(239,68,68,0.07) 0%, transparent 65%)" aria-hidden="true"></div>
+
+    <div class="container-site relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+        <div>
+          <span class="section-eyebrow mb-5 inline-flex">{cat.norm} · DuPont Tychem · Lakeland ChemMax · MSA Altair · Distribuidor Autorizado MX</span>
+          <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+            Equipos HAZMAT<br/>
+            <span style="color:#EF4444">certificados NFPA.</span>
+          </h1>
+          <p class="text-lg leading-relaxed mb-8 max-w-xl" style="color:#94A3B8">
+            Trajes encapsulados Nivel A, trajes de salpicadura Nivel B/C y monitores
+            multi-gas certificados ATEX para respuesta a materiales peligrosos. Cada
+            selección se respalda con tablas de permeación verificadas por agente — no
+            solo la certificación de nivel.
+          </p>
+
+          <div class="flex flex-wrap gap-3 mb-8">
+            {['NFPA 1991','NFPA 1992','Nivel A · B · C','DuPont Tychem 10000','Lakeland ChemMax 4','MSA Altair 5X','ATEX · Cl I Div 1','Tablas de permeación'].map(b => (
+              <span class="badge badge-dark">{b}</span>
+            ))}
+          </div>
+
+          <div class="flex flex-wrap gap-4">
+            <a href={whatsappUrl('Hola, quiero asesoría para seleccionar equipos HAZMAT NFPA 1991/1992 para mi brigada.')}
+              target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+              Solicitar asesoría HAZMAT →
+            </a>
+            <a href="#dupont" class="btn btn-ghost btn-lg">Ver catálogo ↓</a>
+          </div>
+        </div>
+
+        <div class="hidden lg:flex flex-col gap-4">
+          <div class="grid grid-cols-3 gap-3">
+            {[
+              { v: 'NFPA 1991', l: 'Nivel A encapsulado' },
+              { v: 'ATEX',      l: 'Detectores certificados' },
+              { v: '280–350+',  l: 'Sustancias documentadas' },
+            ].map(s => (
+              <div class="flex flex-col items-center justify-center text-center p-5" style="background:#070E1A;border:1px solid rgba(74,117,153,0.2)">
+                <span class="font-display font-bold text-xl mb-1" style="color:#EF4444">{s.v}</span>
+                <span class="text-[10px] uppercase tracking-widest" style="color:#4A7599">{s.l}</span>
+              </div>
+            ))}
+          </div>
+          <div class="p-6" style="background:#070E1A;border:1px solid rgba(74,117,153,0.2);border-left:3px solid #EF4444">
+            <p class="text-xs font-bold uppercase tracking-widest mb-2" style="color:#EF4444">Regla de selección HAZMAT</p>
+            <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+              El nivel de protección (A, B, C) se determina por el agente <strong style="color:#94A3B8">y</strong> su
+              concentración — verificados con la tabla de permeación del fabricante. El nivel solo es un
+              punto de partida, no la selección completa.
+            </p>
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            {[
+              { v: '27 m',    l: 'Alcance bomba MSA Altair 5X' },
+              { v: 'NOM-005', l: 'Norma STPS manejo de sustancias' },
+            ].map(s => (
+              <div class="flex flex-col items-center justify-center text-center p-5" style="background:#070E1A;border:1px solid rgba(74,117,153,0.2)">
+                <span class="font-display font-bold text-xl mb-1" style="color:#EF4444">{s.v}</span>
+                <span class="text-[10px] uppercase tracking-widest" style="color:#4A7599">{s.l}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(239,68,68,0.4) 30%, rgba(239,68,68,0.4) 70%, transparent)" aria-hidden="true"></div>
+  </section>
+
+  <!-- QuickLinksBar -->
+  <QuickLinksBar />
+
+  {/* ══ TRUST PILLARS ════════════════════════════════════════════════════ */}
+  <section class="section-tight" style="background:#0D0101" aria-labelledby="razones-haz-title">
+    <div class="container-site">
+      <div class="text-center mb-8">
+        <span class="section-eyebrow mb-3 inline-flex">Por qué elegir FIREFIGHTERSMX para tu equipo HAZMAT</span>
+        <h2 id="razones-haz-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.5rem,3vw,2.25rem)">
+          La selección correcta requiere más que el catálogo.
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style="border:1px solid rgba(239,68,68,0.18)">
+        {razones.map((r, i) => (
+          <div class="flex flex-col gap-3 p-6" style={`background:#0A0202;${i < 3 ? 'border-right:1px solid rgba(239,68,68,0.1)' : ''}`}>
+            <span class="font-display font-bold text-2xl" style="color:#EF4444">{r.n}</span>
+            <h3 class="font-display font-bold text-sm uppercase tracking-wide" style="color:#FFFFFF">{r.t}</h3>
+            <p class="text-xs leading-relaxed m-0" style="color:#64748B">{r.d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* ══ NIVELES DE PROTECCIÓN EPA ═══════════════════════════════════════ */}
+  <section class="section" style="background:#070E1A" aria-labelledby="niveles-title">
+    <div class="container-site">
+
+      <div class="text-center mb-12">
+        <span class="section-eyebrow mb-4 inline-flex">Marco EPA · Cuatro niveles · Una decisión crítica</span>
+        <h2 id="niveles-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.1">
+          El nivel correcto<br/>para cada incidente.
+        </h2>
+        <p class="text-sm leading-relaxed mt-4 max-w-2xl mx-auto" style="color:#64748B">
+          La selección del nivel de protección no puede hacerse por instinto ni solo por la clasificación
+          de la sustancia. Requiere caracterización del agente, tabla de permeación verificada y
+          evaluación de la ruta de exposición. Estos son los cuatro niveles definidos por la EPA.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-12">
+        {niveles.map(n => (
+          <div id={n.id} class="flex flex-col gap-4 p-8" style={`background:#080F1A;border:1px solid rgba(74,117,153,0.18);border-top:3px solid ${n.accent}`}>
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <span class="font-display font-bold text-xs uppercase tracking-widest block mb-1" style={`color:${n.accent}`}>{n.norm}</span>
+                <h3 class="font-display font-bold text-2xl" style="color:#FFFFFF">{n.nivel}</h3>
+                <p class="text-xs mt-1" style="color:#4A7599">{n.escenario}</p>
+              </div>
+              <span class="badge badge-dark text-[9px] shrink-0">{n.marcas.split(' · ')[0]}</span>
+            </div>
+            <p class="text-sm leading-relaxed" style="color:#94A3B8">{n.desc}</p>
+            <div>
+              <p class="text-[10px] font-bold uppercase tracking-widest mb-2" style={`color:${n.accent}`}>¿Cuándo aplicar?</p>
+              <ul class="flex flex-col gap-2 list-none m-0 p-0">
+                {n.cuando.map(c => (
+                  <li class="flex items-start gap-2">
+                    <svg class="shrink-0 mt-0.5" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke={n.accent} stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                    <span class="text-xs leading-relaxed" style="color:#94A3B8">{c}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div class="pt-3" style="border-top:1px solid rgba(74,117,153,0.15)">
+              <span class="text-[9px] font-bold uppercase tracking-widest" style="color:#4A7599">Marcas referencia: </span>
+              <span class="text-[9px]" style="color:#64748B">{n.marcas}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Aviso de selección */}
+      <div class="p-6 flex gap-4 items-start" style="background:#1A0505;border:1px solid rgba(239,68,68,0.3)">
+        <svg class="shrink-0 mt-0.5" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0zM12 9v4M12 17h.01"/></svg>
+        <div>
+          <p class="text-sm font-bold mb-1" style="color:#EF4444">Selección de nivel: el nivel EPA es un punto de partida, no la decisión completa</p>
+          <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">
+            Un traje NFPA 1991 (Nivel A) puede permearse en minutos ante ciertos agentes si el material no es compatible.
+            La selección correcta requiere verificar la tabla de permeación del fabricante para el agente <em>específico</em> y su
+            concentración. Te facilitamos las tablas de permeación de DuPont y Lakeland para su operación — sin costo.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  {/* ══ DUPONT TYCHEM ═══════════════════════════════════════════════════ */}
+  <section id="dupont" class="section" style="background:#040A12" aria-labelledby="dupont-title">
+    <div class="container-site">
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">DuPont Safety Products · Tychem · NFPA 1991 / 1992 · Distribuidor Autorizado MX</span>
+          <h2 id="dupont-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            Trajes DuPont Tychem<br/>
+            <span style="color:#EF4444">barrera química certificada.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(239,68,68,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
+            DuPont Safety Products —NYSE: DD— define el estándar global de barreras químicas. Tychem 10000
+            (Nivel A, Saranex-23P) es el traje encapsulado con mayor resistencia documentada a vapor y gas.
+            Tychem 6000F agrega resistencia a flama para entornos petroquímicos con doble riesgo. Tablas de
+            permeación verificadas para más de 280 sustancias en toda la gama.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {['NFPA 1991','NFPA 1992','CE Categoría III','Tychem 10000 Nivel A','Tychem 6000F FR','Tychem 4000S Nivel B/C','280+ sustancias','Distribuidor autorizado MX'].map(b => (
+              <span class="badge badge-dark text-[9px]">{b}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {dupontProducts.map((p) => (
+          <ProductCard product={p} />
+        ))}
+      </div>
+
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(239,68,68,0.15)">
+        <div class="flex-1">
+          <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+            Comparativa completa Tychem 10000 vs 6000F vs 4000S vs 2000, tablas de permeación para
+            los agentes de su operación y ficha técnica NFPA 1991/1992 para licitación.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+          <a href="/productos/hazmat/dupont-tychem" class="btn btn-primary btn-lg">
+            Catálogo DuPont Tychem completo →
+          </a>
+          <a href={whatsappUrl('Hola, quiero cotizar trajes DuPont Tychem NFPA 1991 y recibir tablas de permeación para mi operación.')}
+            target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
+            Cotizar por WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  {/* ══ LAKELAND CHEMMAX ════════════════════════════════════════════════ */}
+  <section class="section" style="background:#070E1A" aria-labelledby="lakeland-title">
+    <div class="container-site">
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Lakeland Industries · ChemMax · NFPA 1991 / 1992 · Distribuidor Autorizado MX</span>
+          <h2 id="lakeland-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            Trajes Lakeland ChemMax<br/>
+            <span style="color:#F5A623">350+ sustancias documentadas.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(245,166,35,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
+            Lakeland Industries —NASDAQ: LAKE— es el mayor fabricante independiente de EPP químico del
+            mundo. ChemMax 4 (Nivel A, laminado 4 capas, EN 943-1 Tipo 1) tiene tablas de permeación para
+            350+ sustancias — el mayor catálogo documental de la categoría. ChemMax 3 ofrece el mismo
+            Nivel A con menor peso para operaciones prolongadas en climas cálidos.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {['NFPA 1991','NFPA 1992','EN 943-1 Tipo 1','ChemMax 4 Nivel A','ChemMax 3 ligero','AlphaTec Nivel B','Pyrolon FR','350+ sustancias','Distribuidor autorizado MX'].map(b => (
+              <span class="badge badge-dark text-[9px]">{b}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {lakelandProducts.map((p) => (
+          <ProductCard product={p} />
+        ))}
+      </div>
+
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(245,166,35,0.15)">
+        <div class="flex-1">
+          <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+            Comparativa ChemMax 4 vs 3 vs AlphaTec 5000 vs Pyrolon CRFR, tablas de permeación para
+            350+ sustancias y documentación técnica NFPA 1991/1992 para concursos públicos y privados.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+          <a href="/productos/hazmat/lakeland-chemmax" class="btn btn-primary btn-lg">
+            Catálogo Lakeland ChemMax completo →
+          </a>
+          <a href={whatsappUrl('Hola, quiero cotizar trajes Lakeland ChemMax NFPA 1991 y recibir tablas de permeación.')}
+            target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
+            Cotizar por WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  {/* ══ MSA ALTAIR — DETECCIÓN ══════════════════════════════════════════ */}
+  <section class="section" style="background:#040A12" aria-labelledby="msa-title">
+    <div class="container-site">
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">MSA Safety · Altair · ATEX · Cl I Div 1 · Distribuidor Autorizado MX</span>
+          <h2 id="msa-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            Monitores MSA Altair<br/>
+            <span style="color:#34D399">detección HAZMAT certificada.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(52,211,153,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
+            MSA Safety —NYSE: MSA— fabrica el monitor multi-gas más utilizado en respuesta HAZMAT de
+            América Latina. Altair 5X con bomba aspirada para reconocimiento a 27 m sin exposición,
+            Altair 4XR para monitoreo continuo robusto, Altair io360 con Bluetooth para coordinación
+            táctica, y GALAXY GX2 para calibración automática con trazabilidad OSHA/NOM.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {['ATEX','Clase I Div 1','UL Listed','Altair 5X + bomba','Altair 4XR','Altair io360 Bluetooth','GALAXY GX2','NOM-027-STPS','Distribuidor autorizado MX'].map(b => (
+              <span class="badge badge-dark text-[9px]">{b}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {msaProducts.map((p) => (
+          <ProductCard product={p} />
+        ))}
+      </div>
+
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(52,211,153,0.15)">
+        <div class="flex-1">
+          <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+            Comparativa Altair 5X vs 4XR vs io360, protocolo de calibración y bump test, y
+            documentación OSHA / NOM-027-STPS para entrada a espacios confinados y operaciones HAZMAT.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+          <a href="/productos/hazmat/msa-deteccion" class="btn btn-primary btn-lg">
+            Catálogo MSA Altair completo →
+          </a>
+          <a href={whatsappUrl('Hola, quiero cotizar monitores multi-gas MSA Altair ATEX para HAZMAT o espacios confinados.')}
+            target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
+            Cotizar por WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  {/* ══ GUÍA + BLOG ═════════════════════════════════════════════════════ */}
+  <section class="section" style="background:#070E1A" aria-labelledby="guia-haz-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Cómo seleccionar el nivel correcto</span>
+          <h2 id="guia-haz-title" class="font-display font-bold mb-8" style="color:#FFFFFF;font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.1">
+            Del agente<br/><span style="color:#EF4444">a la tabla de permeación.</span>
+          </h2>
+          <ol class="flex flex-col gap-4 list-none m-0 p-0">
+            {guia.map((s) => (
+              <li class="flex items-start gap-4">
+                <span class="font-display font-bold text-xl shrink-0" style="color:#EF4444">{s.n}</span>
+                <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{s.t}</p>
+              </li>
+            ))}
+          </ol>
+          <div class="mt-8">
+            <a href={whatsappUrl('Hola, necesito asesoría para seleccionar el nivel de protección HAZMAT correcto para mi operación.')}
+              target="_blank" rel="noopener"
+              class="btn btn-primary btn-lg"
+              style="background:#EF4444;border-color:#EF4444">
+              Asesoría de selección gratuita →
+            </a>
+          </div>
+        </div>
+        <div class="lg:pl-16" style="border-left:1px solid rgba(239,68,68,0.15)">
+          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:#4A7599">Aprende más</h2>
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+            {articulos.map((l) => (
+              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+                <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
+                  <span class="flex flex-col gap-0.5">
+                    <span class="font-display font-semibold text-sm transition-colors group-hover:text-[#EF4444]" style="color:#FFFFFF">{l.label}</span>
+                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
+                  </span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4A7599" stroke-width="2" class="shrink-0">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
+                  </svg>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* ══ FAQ ══════════════════════════════════════════════════════════════ */}
+  <section class="section" style="background:#040A12" aria-labelledby="faq-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes · Equipos HAZMAT</span>
+          <h2 id="faq-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+            Lo que más nos<br/>
+            <span style="color:#EF4444">preguntan.</span>
+          </h2>
+          <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
+            ¿Tu duda no aparece? Escríbenos por WhatsApp con el agente o escenario de tu operación — te
+            enviamos la tabla de permeación correspondiente y la recomendación de nivel.
+          </p>
+          <a
+            href={whatsappUrl('Hola, tengo una pregunta técnica sobre equipos HAZMAT NFPA 1991/1992 para mi brigada.')}
+            target="_blank" rel="noopener"
+            class="btn btn-primary"
+            style="background:#EF4444;border-color:#EF4444"
+          >
+            Consulta técnica gratis
+          </a>
+        </div>
+
+        <div class="flex flex-col">
+          {faqs.map((f, i) => (
+            <details class="faq-item group" style={`border-top:1px solid rgba(74,117,153,0.18);${i === faqs.length - 1 ? 'border-bottom:1px solid rgba(74,117,153,0.18);' : ''}`}>
+              <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer">
+                <span class="font-display font-semibold text-sm" style="color:#FFFFFF">{f.q}</span>
+                <span class="faq-icon font-display font-bold text-xl shrink-0" style="color:#EF4444">+</span>
+              </summary>
+              <p class="text-sm leading-relaxed pb-5 m-0" style="color:#94A3B8">{f.a}</p>
+            </details>
+          ))}
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  {/* ══ CTA BAND ════════════════════════════════════════════════════════ */}
+  <section class="section" style="background:#1A0505;border-top:1px solid rgba(239,68,68,0.2);border-bottom:1px solid rgba(239,68,68,0.2)" aria-label="Llamada a la acción">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex" style="color:#EF4444">Tablas de permeación · sin costo</span>
+          <h2 class="font-display font-bold mb-4" style="color:#FFFFFF;font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.1">
+            Dinos el agente.<br/>Te damos la tabla de permeación.
+          </h2>
+          <p class="text-base leading-relaxed" style="color:#94A3B8">
+            Cuéntanos las sustancias específicas de tu operación y te enviamos las tablas de
+            permeación de DuPont y Lakeland para ese agente — con nuestra recomendación de nivel
+            de protección y modelo de traje. Sin compromiso de compra.
+          </p>
+        </div>
+        <div class="flex flex-col gap-4">
+          <a
+            href={whatsappUrl('Hola, quiero recibir tablas de permeación y asesoría para seleccionar equipos HAZMAT para mi operación.')}
+            target="_blank" rel="noopener"
+            class="btn btn-primary btn-lg text-center"
+            style="background:#EF4444;border-color:#EF4444"
+          >
+            Solicitar tablas de permeación →
+          </a>
+          <a href={whatsappUrl('Hola, quiero una cotización de equipos HAZMAT NFPA 1991/1992 (trajes y detectores) para mi brigada.')}
+            target="_blank" rel="noopener"
+            class="btn btn-ghost btn-lg text-center">
+            Cotización formal de brigada
+          </a>
+          <p class="text-xs text-center m-0" style="color:#4A7599">Respuesta en menos de 2 horas · Lunes a sábado 8–20 h</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* ══ CROSS-LINKS EPP ════════════════════════════════════════════════ */}
+  <section class="section-tight" style="background:#070E1A" aria-labelledby="epp-haz-title">
+    <div class="container-site">
+      <div class="mb-6">
+        <span class="section-eyebrow mb-2 inline-flex">Equipo de Protección Personal completo</span>
+        <h2 id="epp-haz-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.25rem,2.5vw,1.75rem)">
+          El equipo HAZMAT trabaja con el resto de tu EPP.
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {[
+          { label: 'Cascos NFPA 1971',            desc: 'MSA Gallet · Bullard · Pacific Helmets',       href: '/productos/cascos-nfpa',         accent: '#F75000' },
+          { label: 'Trajes de Bombero NFPA 1970', desc: 'Globe · Fire-Dex · Honeywell Morning Pride',   href: '/productos/trajes-bombero',       accent: '#F5A623' },
+          { label: 'Equipos SCBA',                desc: 'MSA G1 · Dräger PA5000 · Scott X3Pro',         href: '/productos/equipos-scba',         accent: '#60A5FA' },
+          { label: 'Sistemas Contra Incendio',    desc: 'Rociadores NFPA 13 · Detección NFPA 72 · FM-200', href: '/productos/sistemas-ci',       accent: '#34D399' },
+        ].map((l) => (
+          <a href={l.href} class="group flex flex-col gap-2 p-5 transition-colors" style={`background:#080F1A;border:1px solid rgba(74,117,153,0.18);border-top:2px solid ${l.accent}`}>
+            <span class="font-display font-bold text-sm" style={`color:${l.accent}`}>{l.label}</span>
+            <span class="text-xs leading-relaxed" style="color:#64748B">{l.desc}</span>
+            <span class="text-xs font-semibold mt-auto pt-2" style="color:#4A7599">Ver catálogo →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* ══ OTRAS CATEGORÍAS ════════════════════════════════════════════════ */}
+  <section class="section-tight" style="background:#040A12" aria-labelledby="otras-haz-title">
+    <div class="container-site">
+      <div class="text-center mb-8">
+        <span class="section-eyebrow mb-3 inline-flex">Catálogo completo</span>
+        <h2 id="otras-haz-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.5rem,3vw,2.25rem)">
+          Más categorías certificadas NFPA
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {otrasCategorias.map(c => (
+          <a href={`/productos/${c.slug}`}
+            class="flex flex-col gap-2 p-6 transition-colors"
+            style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)"
+          >
+            <span class="text-[9px] font-bold uppercase tracking-widest" style="color:#EF4444">{c.norm}</span>
+            <span class="font-display font-bold text-base" style="color:#FFFFFF">{c.label}</span>
+            <span class="text-xs leading-relaxed" style="color:#64748B">{c.shortDesc}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  details.faq-item summary { list-style: none; }
+  details.faq-item summary::-webkit-details-marker { display: none; }
+  details.faq-item[open] .faq-icon { transform: rotate(45deg); }
+</style>

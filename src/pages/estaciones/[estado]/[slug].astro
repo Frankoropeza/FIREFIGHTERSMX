@@ -163,7 +163,11 @@ const globeIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
           {estacion.descripcion && (
             <div>
               <span class="section-eyebrow mb-3 inline-flex">Perfil</span>
-              <p class="text-sm leading-[1.9]" style="color:#94A3B8">{estacion.descripcion}</p>
+              <div class="flex flex-col gap-4">
+                {estacion.descripcion.split('\n\n').map((parrafo) => (
+                  <p class="text-sm leading-[1.9] m-0" style="color:#94A3B8">{parrafo}</p>
+                ))}
+              </div>
             </div>
           )}
 
@@ -301,6 +305,30 @@ const globeIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
                 <p class="text-xs m-0 mt-1" style="color:#64748B">Opera: {estacion.operador}</p>
               )}
             </div>
+
+            {(estacion.elementos || estacion.estacionesFisicas || estacion.unidades) && (
+              <div class="pt-3 flex flex-col gap-2" style="border-top:1px solid rgba(74,117,153,0.15)">
+                <div class="text-[10px] uppercase tracking-widest mb-1" style="color:#4A7599">Capacidad operativa</div>
+                {estacion.elementos && (
+                  <div class="flex items-center justify-between">
+                    <span class="text-xs" style="color:#64748B">Personal activo</span>
+                    <span class="font-display font-bold text-sm" style="color:#CBD5E1">{estacion.elementos} elementos</span>
+                  </div>
+                )}
+                {estacion.estacionesFisicas && (
+                  <div class="flex items-center justify-between">
+                    <span class="text-xs" style="color:#64748B">Cuarteles</span>
+                    <span class="font-display font-bold text-sm" style="color:#CBD5E1">{estacion.estacionesFisicas}</span>
+                  </div>
+                )}
+                {estacion.unidades && (
+                  <div class="flex items-center justify-between">
+                    <span class="text-xs" style="color:#64748B">Flota</span>
+                    <span class="font-display font-bold text-sm" style="color:#CBD5E1">{estacion.unidades} vehículos</span>
+                  </div>
+                )}
+              </div>
+            )}
 
             {conf && (
               <div class="flex items-center gap-2 pt-3" style="border-top:1px solid rgba(74,117,153,0.15)">

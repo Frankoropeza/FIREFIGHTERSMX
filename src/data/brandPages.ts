@@ -15,12 +15,14 @@ import { scbaBrandList } from './scbaBrands';
 import { camarasBrandList } from './camarasBrands';
 import { herramientasBrandList } from './herramientasBrands';
 import { sistemasCIBrandList } from './sistemasCIBrands';
+import { hazmatBrandList } from './hazmatBrands';
 
 /* ── Familias / tipo de riesgo — color e ícono ─────────────────────────────── */
 export type TipoKey =
   | 'estructural' | 'proximidad' | 'forestal' | 'usar' | 'mando' | 'industrial' | 'cbrn'
   | 'corte' | 'separacion' | 'combinada' | 'estabilizacion'
-  | 'rociadores' | 'deteccion' | 'agente-ci' | 'red-hidraulica';
+  | 'rociadores' | 'deteccion' | 'agente-ci' | 'red-hidraulica'
+  | 'traje-nivel-a' | 'traje-nivel-b' | 'detector-multigases' | 'kit-descon';
 
 export interface TipoMeta {
   label: string;
@@ -105,20 +107,54 @@ export const tipoEquipo: Record<TipoKey, TipoMeta> = {
     color: '#60A5FA',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/><circle cx="5" cy="12" r="2"/><circle cx="19" cy="12" r="2"/>`,
   },
+  'traje-nivel-a': {
+    label: 'Nivel A Encapsulado',
+    color: '#EF4444',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M12 2 4 5v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V5l-8-3z"/><circle cx="12" cy="12" r="2"/>`,
+  },
+  'traje-nivel-b': {
+    label: 'Nivel B/C Salpicadura',
+    color: '#F5A623',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M12 2 4 5v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V5l-8-3z"/>`,
+  },
+  'detector-multigases': {
+    label: 'Detección Multi-Gas',
+    color: '#34D399',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/><circle cx="12" cy="12" r="2"/>`,
+  },
+  'kit-descon': {
+    label: 'Infraestructura / Calibración',
+    color: '#A78BFA',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><circle cx="12" cy="12" r="3"/>`,
+  },
 };
 
 /* ── Interfaces de datos de marca ──────────────────────────────────────────── */
 export interface BrandStat { valor: string; etiq: string; }
 export interface BrandCredencial { n: string; t: string; d: string; }
-export interface BrandLinea { tipo: TipoKey; badge: string; titulo: string; modelos: string; desc: string; tech: string; }
+export interface BrandLinea {
+  tipo: TipoKey;
+  badge: string;
+  /** Título legible de la familia (nuevo patrón) */
+  familiaLabel?: string;
+  /** Slug del producto estrella de esta línea */
+  flagship?: string;
+  /** Descripción de la línea */
+  desc: string;
+  /** Modelos resumidos — array {m, d} (nuevo patrón) o string (legado) */
+  modelos?: { m: string; d: string }[] | string;
+  /** Campos legado */
+  titulo?: string;
+  tech?: string;
+}
 export interface BrandAnatomia { t: string; d: string; }
 export interface BrandGuia { n: string; t: string; }
 export interface BrandSegmento { num: string; tipo: TipoKey; titulo: string; desc: string; modelos: string; }
 export interface BrandFaq { q: string; a: string; }
 export interface ComparativaRow {
   modelo: string;
-  tipo: TipoKey;
-  rec: boolean;
+  tipo?: TipoKey;
+  rec?: boolean;
   /** Valores por columna; las claves coinciden con comparativaCols de la categoría */
   norma?: string; material?: string; proteccion?: string;
   shell?: string; tpp?: string; thl?: string;
@@ -127,6 +163,8 @@ export interface ComparativaRow {
   fuerza?: string; rango?: string; fuente?: string;
   peso?: string; ideal?: string;
   tipo_sis?: string; cobertura?: string; listado?: string;
+  /** HAZMAT */
+  nivel_haz?: string; barrera?: string; gases?: string;
 }
 
 export interface EquipmentBrand {
@@ -153,18 +191,27 @@ export interface EquipmentBrand {
   credenciales: BrandCredencial[];
   linesIntro: string;
   lineas: BrandLinea[];
-  flagship: string;
-  anatomiaIntro: string;
-  anatomia: BrandAnatomia[];
+  /** Slug del producto estrella (nivel superior) */
+  flagship?: string;
+  anatomiaIntro?: string;
+  anatomia?: BrandAnatomia[];
   comparativa: ComparativaRow[];
-  comparativaNote: string;
-  guia: BrandGuia[];
-  segmentosIntro: string;
-  segmentos: BrandSegmento[];
-  faqs: BrandFaq[];
-  ctaKicker: string;
-  ctaTitleHtml: string;
-  waQuote: string;
+  /** Etiqueta encima de la tabla comparativa */
+  comparativaLabel?: string;
+  comparativaNote?: string;
+  guia?: BrandGuia[];
+  segmentosIntro?: string;
+  segmentos?: BrandSegmento[];
+  faqs?: BrandFaq[];
+  /** Alias moderno de faqs */
+  faq?: BrandFaq[];
+  ctaKicker?: string;
+  ctaTitleHtml?: string;
+  /** Mensaje de WhatsApp CTA */
+  waQuote?: string;
+  /** Alias moderno de waQuote */
+  ctaWhatsapp?: string;
+  notaPie?: string;
 }
 
 /* ── Metadatos por categoría (breadcrumb, filtro, columnas, conjunto) ───────── */
@@ -286,6 +333,24 @@ export const categoriaMarca: Record<string, CategoriaMeta> = {
       { label: 'Soporte para licitaciones', desc: 'Fichas técnicas y manifiestos por partida', href: '/licitaciones' },
     ],
   },
+  'hazmat': {
+    label: 'Equipos HAZMAT',
+    productCategory: 'Equipos HAZMAT',
+    comparativaCols: [
+      { key: 'norma', label: 'Norma', align: 'center', accent: true },
+      { key: 'nivel_haz', label: 'Nivel EPA' },
+      { key: 'barrera', label: 'Material barrera' },
+      { key: 'gases', label: 'Gases / Cobertura' },
+      { key: 'ideal', label: 'Ideal para' },
+    ],
+    conjunto: [
+      { label: 'Equipos SCBA', desc: 'MSA G1, Dräger y 3M Scott — CBRN/NIOSH', href: '/productos/equipos-scba' },
+      { label: 'Trajes para Bomberos', desc: 'Globe, Lion, Honeywell — NFPA 1970', href: '/productos/trajes-bombero' },
+      { label: 'Sistemas Contra Incendio', desc: 'Tyco, Honeywell, Kidde Fenwal — NFPA 13/72', href: '/productos/sistemas-ci' },
+      { label: 'Capacitación HAZMAT', desc: 'Reconocimiento, respuesta y descontaminación', href: '/servicios/capacitacion' },
+      { label: 'Soporte para licitaciones', desc: 'Fichas técnicas y manifiestos por partida', href: '/licitaciones' },
+    ],
+  },
 };
 
 /* ── Registro de marcas + helpers ──────────────────────────────────────────── */
@@ -302,7 +367,7 @@ const cascosAdapted: EquipmentBrand[] = cascosBrands.map((b) => ({
   crossDesc: cascosCrossDesc[b.slug] ?? b.eyebrow,
 } as EquipmentBrand));
 
-export const brandPages: EquipmentBrand[] = [...cascosAdapted, ...trajesBrandList, ...scbaBrandList, ...camarasBrandList, ...herramientasBrandList, ...sistemasCIBrandList];
+export const brandPages: EquipmentBrand[] = [...cascosAdapted, ...trajesBrandList, ...scbaBrandList, ...camarasBrandList, ...herramientasBrandList, ...sistemasCIBrandList, ...hazmatBrandList];
 
 export function brandPageBySlug(slug: string): EquipmentBrand | undefined {
   return brandPages.find((b) => b.slug === slug);

@@ -1,11 +1,17 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
+import ProductCard from '@components/products/ProductCard.astro';
 import { categories } from '@data/categories';
+import { featuredProducts } from '@data/products';
 import { SITE, whatsappUrl } from '@data/site';
 
 const cat = categories.find((c) => c.slug === 'sistemas-ci')!;
 const canonicalURL = `${SITE.url}/productos/sistemas-ci`;
+
+const tycoProducts      = featuredProducts.filter((p) => p.category === 'Sistemas CI' && p.brand === 'Tyco Viking' && p.specs);
+const honeywellProducts = featuredProducts.filter((p) => p.category === 'Sistemas CI' && p.brand === 'Honeywell Notifier' && p.specs);
+const kiddeFenwalProducts = featuredProducts.filter((p) => p.category === 'Sistemas CI' && p.brand === 'Kidde Fenwal' && p.specs);
 
 const seoMeta = {
   title: `Sistemas Contra Incendio NFPA 13 · 72 · 2001 — Diseño, Instalación y Memoria de Cálculo · México`,
@@ -250,6 +256,30 @@ const serviceSchema = {
 };
 
 const otrasCategorias = categories.filter((c) => c.slug !== 'sistemas-ci').slice(0, 6);
+
+/* Guía de selección */
+const guia = [
+  { n: '01', t: 'Clasifica el riesgo de la ocupación conforme NFPA 13 — riesgo ligero (oficinas, hoteles), ordinario (bodegas, manufactura) o alto (pintura, madera). Esta clasificación determina la densidad de rociamiento y el área de operación; sin ella no hay memoria de cálculo válida.' },
+  { n: '02', t: 'Determina los subsistemas requeridos: la aseguradora puede exigir rociadores y detección en paralelo; el tipo de activo (data center, sala de arte, archivo crítico) define si se necesita agente limpio. Verifica si la normativa local del municipio tiene requerimientos adicionales.' },
+  { n: '03', t: 'Revisa las normas aplicables por subsistema: NFPA 13 para rociadores, NFPA 72 para detección, NFPA 2001 para agente limpio, NFPA 20 para bombas, NFPA 25 para el mantenimiento posterior. Cada norma tiene entregables distintos — el dossier final debe cubrir todos.' },
+  { n: '04', t: 'Solicita la memoria de cálculo firmada por DRO junto con la propuesta. Sin memoria, el sistema no es aceptado por la mayoría de las aseguradoras. La memoria es el documento técnico-legal que demuestra diseño correcto — no solo instalación.' },
+];
+
+/* Artículos del blog */
+const articulos = [
+  { label: 'NFPA 13: clasificación de riesgos', desc: 'Riesgo ligero, ordinario y extra hazard explicados', href: '/blog/nfpa-13-clasificacion-riesgos-rociadores' },
+  { label: 'FM-200 vs Novec 1230',               desc: 'Cuál agente limpio elegir para tu data center',   href: '/blog/fm200-vs-novec-1230-data-center' },
+  { label: 'Memoria de cálculo para aseguradoras', desc: 'Qué incluye y por qué la exigen',               href: '/blog/memoria-calculo-sistema-contra-incendio-aseguradora' },
+  { label: 'NFPA 25: mantenimiento anual',        desc: 'El calendario que salva tu póliza de seguros',   href: '/blog/nfpa-25-mantenimiento-rociadores-deteccion' },
+];
+
+/* Tabla comparativa subsistemas */
+const tablaComparativa = [
+  { sub: 'Rociadores automáticos', norm: 'NFPA 13', activ: 'Automática — calor 68–93 °C', ocup: 'Bodegas · manufactura · comercios · hoteles', entr: 'Memoria de cálculo + prueba hidrostática', mant: 'NFPA 25 · anual', accent: '#34D399' },
+  { sub: 'Detección y alarma',     norm: 'NFPA 72', activ: 'Automática — humo · calor · CO · llama', ocup: 'Cualquier inmueble, complementa rociadores', entr: 'Reporte aceptación NFPA 72 Cap. 14 + matrices', mant: 'NFPA 72 · anual', accent: '#60A5FA' },
+  { sub: 'Agente limpio',          norm: 'NFPA 2001', activ: 'Automática — dual-knock (2 detectores)', ocup: 'Data centers · cuartos de control · archivos', entr: 'Cálculo de masa + door fan test integridad', mant: 'NFPA 2001 · semestral', accent: '#A78BFA' },
+  { sub: 'Redes y bombas',         norm: 'NFPA 20', activ: 'Automática — switch de presión o flujo', ocup: 'Todo sistema de rociadores o gabinetes', entr: 'Memoria hidráulica + curva bomba-sistema', mant: 'NFPA 20 · semanal (jockey) + anual', accent: '#FB923C' },
+];
 ---
 
 <BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema, faqSchema, serviceSchema]}>
@@ -309,131 +339,15 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'sistemas-ci').slice
   <!-- QuickLinksBar -->
   <QuickLinksBar />
 
-  <!-- Marcas / Brand L3 -->
-  <section class="section" style="background:#070E1A" aria-labelledby="marcas-title">
-    <div class="container-site">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
-        <div>
-          <span class="section-eyebrow mb-4 inline-flex">Fabricantes Tier 1 — materiales UL Listed y FM Approved</span>
-          <h2 id="marcas-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
-            Las marcas líderes<br/>
-            <span style="color:#34D399">del sistema completo.</span>
-          </h2>
-        </div>
-        <div style="border-left:2px solid rgba(52,211,153,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:#94A3B8">
-            Distribuimos rociadores Tyco y Viking (Johnson Controls), paneles de detección Honeywell
-            y Notifier, y sistemas de agente limpio Kidde Fenwal. Los tres fabricantes con mayor
-            presencia en pólizas industriales de aseguradoras internacionales en México.
-          </p>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
-
-        {/* Tyco Viking */}
-        <article class="flex flex-col" style="border:1px solid rgba(74,117,153,0.18)">
-          <div class="flex flex-col gap-4 p-8" style="background:#080F1A;flex:1">
-            <div class="flex items-start justify-between gap-4">
-              <div>
-                <span class="text-[10px] font-display font-bold uppercase tracking-widest block mb-1" style="color:#34D399">NFPA 13 · Rociadores</span>
-                <h3 class="font-display font-bold text-2xl" style="color:#FFFFFF">Tyco · Viking</h3>
-                <p class="text-xs mt-1" style="color:#4A7599">Johnson Controls International · NYSE:JCI</p>
-              </div>
-              <span class="badge badge-dark text-[9px] shrink-0">UL Listed · FM</span>
-            </div>
-            <p class="text-sm leading-relaxed" style="color:#94A3B8">
-              Los rociadores automáticos más distribuidos en instalaciones industriales y comerciales
-              de México. Portafolio completo: respuesta estándar (TY-B), rápida (TY-FRB), ESFR
-              para almacenes de alta estiba (TY315 K-25) y sistemas de diluvio/espuma AFFF.
-            </p>
-            <ul class="flex flex-col gap-2 list-none m-0 p-0">
-              {['TY-B Pendant — riesgo ligero y ordinario','TY-FRB Quick Response — rápida activación','TY315 ESFR K-25 — almacenes alta estiba','Diluvio y espuma AFFF — riesgos especiales'].map(item => (
-                <li class="flex items-center gap-2">
-                  <svg class="shrink-0" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                  <span class="text-xs" style="color:#94A3B8">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div class="p-5" style="background:#0A1320;border-top:1px solid rgba(74,117,153,0.15)">
-            <a href="/productos/sistemas-ci/tyco-viking" class="btn btn-primary btn-sm w-full text-center">
-              Ver rociadores Tyco / Viking →
-            </a>
-          </div>
-        </article>
-
-        {/* Honeywell Notifier */}
-        <article class="flex flex-col" style="border:1px solid rgba(74,117,153,0.18)">
-          <div class="flex flex-col gap-4 p-8" style="background:#080F1A;flex:1">
-            <div class="flex items-start justify-between gap-4">
-              <div>
-                <span class="text-[10px] font-display font-bold uppercase tracking-widest block mb-1" style="color:#60A5FA">NFPA 72 · Detección</span>
-                <h3 class="font-display font-bold text-2xl" style="color:#FFFFFF">Honeywell · Notifier</h3>
-                <p class="text-xs mt-1" style="color:#4A7599">Honeywell International · NASDAQ:HON</p>
-              </div>
-              <span class="badge badge-dark text-[9px] shrink-0">UL Listed · cUL</span>
-            </div>
-            <p class="text-sm leading-relaxed" style="color:#94A3B8">
-              Paneles FACP direccionables Notifier y detectores Honeywell para sistemas de
-              detección y alarma NFPA 72. Desde sistemas convencionales para pequeñas
-              instalaciones hasta el NFS2-3030 de 3,000 puntos para campus y edificios de gran altura.
-            </p>
-            <ul class="flex flex-col gap-2 list-none m-0 p-0">
-              {['NFS2-640 — hasta 636 puntos direccionables','NFS2-3030 — hasta 3,030 puntos + ONYXWorks','Detectores fotoeléctricos CLIP y SWIFT wireless','Sirenas, estrobos y dispositivos de voz NFPA 72'].map(item => (
-                <li class="flex items-center gap-2">
-                  <svg class="shrink-0" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                  <span class="text-xs" style="color:#94A3B8">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div class="p-5" style="background:#0A1320;border-top:1px solid rgba(74,117,153,0.15)">
-            <a href="/productos/sistemas-ci/honeywell-notifier" class="btn btn-primary btn-sm w-full text-center">
-              Ver paneles Honeywell / Notifier →
-            </a>
-          </div>
-        </article>
-
-        {/* Kidde Fenwal FM-200/Novec */}
-        <article class="flex flex-col" style="border:1px solid rgba(74,117,153,0.18)">
-          <div class="flex flex-col gap-4 p-8" style="background:#080F1A;flex:1">
-            <div class="flex items-start justify-between gap-4">
-              <div>
-                <span class="text-[10px] font-display font-bold uppercase tracking-widest block mb-1" style="color:#A78BFA">NFPA 2001 · Agente Limpio</span>
-                <h3 class="font-display font-bold text-2xl" style="color:#FFFFFF">FM-200 · Novec 1230</h3>
-                <p class="text-xs mt-1" style="color:#4A7599">Kidde Fenwal · Carrier Global · NYSE:CARR</p>
-              </div>
-              <span class="badge badge-dark text-[9px] shrink-0">UL Listed · FM</span>
-            </div>
-            <p class="text-sm leading-relaxed" style="color:#94A3B8">
-              Sistemas fijos de supresión con agente limpio para data centers, cuartos de control
-              y activos de alto valor. FM-200 (HFC-227ea) como estándar global, Novec 1230
-              (GWP = 1) para proyectos ESG y Ecaro-25 como opción económica de transición.
-            </p>
-            <ul class="flex flex-col gap-2 list-none m-0 p-0">
-              {['FM-200 HFC-227ea — el más instalado globalmente','Novec 1230 FK-5-1-12 — GWP = 1 para ESG','Ecaro-25 HFC-125 — opción económica','Panel AutoPulse — dual-knock y retardo programable'].map(item => (
-                <li class="flex items-center gap-2">
-                  <svg class="shrink-0" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#A78BFA" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                  <span class="text-xs" style="color:#94A3B8">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div class="p-5" style="background:#0A1320;border-top:1px solid rgba(74,117,153,0.15)">
-            <a href="/productos/sistemas-ci/fm200-novec" class="btn btn-primary btn-sm w-full text-center">
-              Ver sistemas FM-200 / Novec →
-            </a>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
   <!-- Trust Pillars -->
-  <section class="section-tight" style="background:#070E1A" aria-label="Por qué elegir FirefightersMX para tu sistema contra incendio">
+  <section class="section-tight" style="background:#070E1A" aria-labelledby="razones-ci-title">
     <div class="container-site">
+      <div class="text-center mb-8">
+        <span class="section-eyebrow mb-3 inline-flex">Por qué elegir FIREFIGHTERSMX para tu sistema CI</span>
+        <h2 id="razones-ci-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.5rem,3vw,2.25rem)">
+          Materiales listados. Memoria firmada. Dossier completo.
+        </h2>
+      </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style="border:1px solid rgba(74,117,153,0.18)">
         {razones.map((r, i) => (
           <div class="flex flex-col gap-3 p-6" style={`background:#080F1A;${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.12)' : ''}`}>
@@ -443,6 +357,168 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'sistemas-ci').slice
           </div>
         ))}
       </div>
+    </div>
+  </section>
+
+  {/* ══ TYCO / VIKING — ROCIADORES NFPA 13 ════════════════════════════════ */}
+  <section class="section" style="background:#070E1A" aria-labelledby="tyco-title">
+    <div class="container-site">
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Tyco · Viking (Johnson Controls) · NFPA 13 · Distribuidor Autorizado MX</span>
+          <h2 id="tyco-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            Rociadores Tyco / Viking<br/>
+            <span style="color:#34D399">certificados UL Listed · FM.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(52,211,153,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
+            Tyco y Viking (Johnson Controls —NYSE: JCI— ) son los rociadores automáticos más
+            distribuidos en instalaciones industriales y comerciales de México. Portafolio completo:
+            respuesta estándar TY-B, respuesta rápida TY-FRB, ESFR de alta estiba TY315 K-25 y
+            sistemas especiales de diluvio y espuma AFFF. Cada rociador lleva listing UL y aprobación FM.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {['NFPA 13','UL Listed','FM Approved','TY-B Pendant','TY-FRB Quick Response','TY315 ESFR K-25','Diluvio AFFF','Distribuidor autorizado MX'].map(b => (
+              <span class="badge badge-dark text-[9px]">{b}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {tycoProducts.map((p) => (
+          <ProductCard product={p} />
+        ))}
+      </div>
+
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(52,211,153,0.15)">
+        <div class="flex-1">
+          <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+            Comparativa completa de modelos (K-factor, temperatura, cobertura), hoja de datos UL
+            y ficha técnica para incluir en la memoria de cálculo. Cotización con lote y trazabilidad.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+          <a href="/productos/sistemas-ci/tyco-viking" class="btn btn-primary btn-lg">
+            Catálogo Tyco / Viking completo →
+          </a>
+          <a href={whatsappUrl('Hola, quiero cotizar rociadores Tyco o Viking (NFPA 13) para mi proyecto.')}
+            target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
+            Cotizar por WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  {/* ══ HONEYWELL / NOTIFIER — DETECCIÓN NFPA 72 ═══════════════════════════ */}
+  <section class="section" style="background:#040A12" aria-labelledby="honeywell-title">
+    <div class="container-site">
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Honeywell · Notifier · NFPA 72 · Distribuidor Autorizado MX</span>
+          <h2 id="honeywell-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            Paneles Honeywell / Notifier<br/>
+            <span style="color:#60A5FA">certificados UL Listed · cUL.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(96,165,250,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
+            Honeywell International —NASDAQ: HON— fabrica los paneles FACP direccionables Notifier
+            y los detectores de humo y calor más instalados en México. El NFS2-3030 soporta hasta
+            3,030 puntos y se integra con ONYXWorks para gestión centralizada en campus y edificios
+            de gran altura. Solución completa: detectores, sirenas, módulos de control y tablero FACP.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {['NFPA 72','UL Listed','cUL','NFS2-3030','NFS2-640','FACP Direccionable','Detección CLIP','SWIFT Wireless','Distribuidor autorizado MX'].map(b => (
+              <span class="badge badge-dark text-[9px]">{b}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {honeywellProducts.map((p) => (
+          <ProductCard product={p} />
+        ))}
+      </div>
+
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(96,165,250,0.15)">
+        <div class="flex-1">
+          <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+            Comparativa de paneles por capacidad de puntos, programación de matrices causa-efecto
+            y protocolos de prueba de aceptación NFPA 72 Capítulo 14 entregados al propietario.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+          <a href="/productos/sistemas-ci/honeywell-notifier" class="btn btn-primary btn-lg">
+            Catálogo Honeywell / Notifier completo →
+          </a>
+          <a href={whatsappUrl('Hola, quiero cotizar paneles Honeywell o Notifier NFPA 72 para mi instalación.')}
+            target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
+            Cotizar por WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  {/* ══ KIDDE FENWAL — AGENTE LIMPIO NFPA 2001 ═════════════════════════════ */}
+  <section class="section" style="background:#070E1A" aria-labelledby="kidde-title">
+    <div class="container-site">
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Kidde Fenwal · Carrier Global · NFPA 2001 · Distribuidor Autorizado MX</span>
+          <h2 id="kidde-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            Agente Limpio FM-200 / Novec<br/>
+            <span style="color:#A78BFA">certificados UL Listed · FM.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(167,139,250,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
+            Kidde Fenwal —Carrier Global, NYSE: CARR— es el principal fabricante de sistemas
+            de supresión con agente limpio del mundo. FM-200 (HFC-227ea) extingue en menos de 10
+            segundos sin residuo. Novec 1230 (FK-5-1-12, GWP = 1) es la alternativa ESG. El
+            panel AutoPulse gestiona la detección dual-knock y el disparo controlado del agente.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {['NFPA 2001','UL Listed','FM Approved','FM-200 HFC-227ea','Novec 1230 FK-5-1-12','Ecaro-25 HFC-125','AutoPulse','Data centers','Distribuidor autorizado MX'].map(b => (
+              <span class="badge badge-dark text-[9px]">{b}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {kiddeFenwalProducts.map((p) => (
+          <ProductCard product={p} />
+        ))}
+      </div>
+
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(167,139,250,0.15)">
+        <div class="flex-1">
+          <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+            Comparativa de agentes por GWP, concentración de diseño y costo por kg. Cálculo de
+            masa conforme NFPA 2001 y análisis de integridad del recinto (door fan test) incluidos.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+          <a href="/productos/sistemas-ci/fm200-novec" class="btn btn-primary btn-lg">
+            Catálogo FM-200 / Novec completo →
+          </a>
+          <a href={whatsappUrl('Hola, quiero cotizar un sistema de agente limpio FM-200 o Novec 1230 (NFPA 2001).')}
+            target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
+            Cotizar por WhatsApp
+          </a>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -534,6 +610,46 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'sistemas-ci').slice
           </article>
         ))}
       </div>
+    </div>
+  </section>
+
+  {/* ══ TABLA COMPARATIVA ═══════════════════════════════════════════════ */}
+  <section class="section" style="background:#070E1A" aria-labelledby="comparativa-title">
+    <div class="container-site">
+      <div class="mb-10">
+        <span class="section-eyebrow mb-4 inline-flex">Comparativa de subsistemas</span>
+        <h2 id="comparativa-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.1">
+          Los cuatro subsistemas<br/>en un solo cuadro.
+        </h2>
+        <p class="text-sm leading-relaxed mt-3 max-w-2xl" style="color:#64748B">
+          La mayoría de los proyectos integran más de un subsistema. Esta tabla resume cuándo aplica
+          cada uno — con tu asesor determinas el alcance correcto para tu ocupación y aseguradora.
+        </p>
+      </div>
+      <div style="overflow-x:auto">
+        <table style="width:100%;border-collapse:collapse;min-width:700px;font-size:12px">
+          <thead>
+            <tr style="border-bottom:2px solid rgba(52,211,153,0.35)">
+              {['Subsistema','Norma','Activación','Ocupación típica','Entregable clave','Mantenimiento'].map((c, i) => (
+                <th class="text-left font-display font-bold uppercase tracking-widest p-3" style={`color:${i === 0 ? '#FFFFFF' : '#4A7599'};font-size:10px;background:#080F1A`}>{c}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {tablaComparativa.map((f, i) => (
+              <tr style={`border-bottom:1px solid rgba(74,117,153,0.15);background:${i % 2 === 0 ? '#070E1A' : '#080F1A'}`}>
+                <td class="p-3 font-display font-bold text-xs" style={`color:${f.accent};white-space:nowrap`}>{f.sub}</td>
+                <td class="p-3" style="color:#94A3B8;white-space:nowrap">{f.norm}</td>
+                <td class="p-3" style="color:#94A3B8">{f.activ}</td>
+                <td class="p-3" style="color:#94A3B8">{f.ocup}</td>
+                <td class="p-3" style="color:#94A3B8">{f.entr}</td>
+                <td class="p-3" style="color:#94A3B8;white-space:nowrap">{f.mant}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs mt-4" style="color:#4A7599">* La selección final requiere visita técnica, clasificación del riesgo y memoria de cálculo conforme a cada norma aplicable.</p>
     </div>
   </section>
 
@@ -632,8 +748,55 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'sistemas-ci').slice
     </div>
   </section>
 
+  {/* ══ GUÍA + BLOG ═════════════════════════════════════════════════════ */}
+  <section class="section" style="background:#040A12" aria-labelledby="guia-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Cómo elegir el sistema correcto</span>
+          <h2 id="guia-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+            Del riesgo<br/>
+            <span style="color:#34D399">a la memoria de cálculo.</span>
+          </h2>
+          <ol class="flex flex-col gap-4 list-none m-0 p-0">
+            {guia.map((s) => (
+              <li class="flex items-start gap-4">
+                <span class="font-display font-bold text-xl shrink-0" style="color:#34D399">{s.n}</span>
+                <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{s.t}</p>
+              </li>
+            ))}
+          </ol>
+          <div class="mt-8">
+            <a href={whatsappUrl('Hola, necesito asesoría para determinar qué sistema contra incendio necesita mi instalación.')} target="_blank" rel="noopener" class="btn btn-primary">
+              Asesoría de selección
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:#4A7599">Aprende más</h2>
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+            {articulos.map((l) => (
+              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+                <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
+                  <span class="flex flex-col gap-0.5">
+                    <span class="font-display font-semibold text-sm group-hover:text-[#34D399]" style="color:#FFFFFF">{l.label}</span>
+                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
+                  </span>
+                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#4A7599" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- FAQ -->
-  <section class="section" style="background:#040A12" aria-labelledby="faq-title">
+  <section class="section" style="background:#070E1A" aria-labelledby="faq-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.75fr] gap-12 lg:gap-20">
         <div>
@@ -653,7 +816,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'sistemas-ci').slice
 
         <div class="flex flex-col">
           {faqs.map((f, i) => (
-            <details class="faq-item" style={`border-top:1px solid rgba(74,117,153,0.18);${i === faqs.length - 1 ? 'border-bottom:1px solid rgba(74,117,153,0.18);' : ''}`}>
+            <details class="faq-item group" style={`border-top:1px solid rgba(74,117,153,0.18);${i === faqs.length - 1 ? 'border-bottom:1px solid rgba(74,117,153,0.18);' : ''}`}>
               <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer">
                 <span class="font-display font-semibold text-sm" style="color:#FFFFFF">{f.q}</span>
                 <span class="faq-icon font-display font-bold text-xl shrink-0" style="color:#34D399">+</span>
@@ -715,7 +878,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'sistemas-ci').slice
           <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
             {[
               { label: 'Extintores NOM-154-SCFI',     desc: 'PQS ABC · CO₂ · Tipo K · Agente limpio portable',              href: '/productos/extintores' },
-              { label: 'Trajes de Bombero NFPA 1971',  desc: 'Globe · Honeywell Morning Pride · MSA — equipo de la brigada',  href: '/productos/trajes-bombero' },
+              { label: 'Trajes de Bombero NFPA 1970',  desc: 'Globe · Honeywell Morning Pride · Fire-Dex — equipo de la brigada',  href: '/productos/trajes-bombero' },
               { label: 'Cascos NFPA 1970',             desc: 'Cairns · Bullard · MSA — EPP de cabeza certificado',           href: '/productos/cascos-nfpa' },
               { label: 'Equipos SCBA NFPA 1981',       desc: 'MSA G1 · Dräger · Scott — aire autónomo para la brigada',      href: '/productos/equipos-scba' },
               { label: 'Herramientas de Rescate 1936', desc: 'Holmatro · Hurst · Weber — rescate vehicular certificado',     href: '/productos/herramientas-rescate' },

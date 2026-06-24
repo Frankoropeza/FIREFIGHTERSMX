@@ -203,7 +203,7 @@ const razones = [
   <!-- Breadcrumb -->
   <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
     <div class="container-site">
-      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:#4A7599">
+      <ol class="flex items-center flex-wrap gap-2 text-xs list-none m-0 p-0" style="color:#4A7599">
         <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
         <li aria-hidden="true">/</li>
         <li><a href="/productos" class="hover:text-[#FF6B26]">Productos</a></li>
@@ -221,10 +221,15 @@ const razones = [
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div>
           <span class="section-eyebrow mb-5 inline-flex">{cat.norm}</span>
-          <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+          <h1 class="font-display font-bold uppercase mb-4" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
             Trajes para<br/>
             <span style="color:#F75000">Bomberos</span>
           </h1>
+          <p class="text-base leading-relaxed mb-8 max-w-xl" style="color:#94A3B8">
+            Distribuidores autorizados de Globe Manufacturing, Lion Apparel, Honeywell Morning Pride
+            y Fire-Dex en México. Trajes estructurales certificados NFPA 1970 con PBI, Nomex y
+            Crosstech — todos los materiales de alta performance en un solo distribuidor.
+          </p>
           <div class="flex flex-col sm:flex-row gap-3">
             <a href={whatsappUrl('Hola, quiero cotizar trajes para bomberos.')} target="_blank" rel="noopener" class="btn btn-primary btn-lg">Cotizar por WhatsApp</a>
             <a href="/cotizacion" class="btn btn-ghost btn-lg">Cotización formal</a>
@@ -320,7 +325,7 @@ const razones = [
             traje en el que confían departamentos en los 32 estados.
           </p>
           <div class="flex flex-wrap gap-2">
-            {['NFPA 1971-2018','PBI Matrix','GORE-TEX CrossTech','Distribuidor autorizado MX'].map(b => (
+            {['NFPA 1970','PBI Matrix','GORE-TEX CrossTech','Distribuidor autorizado MX'].map(b => (
               <span class="badge badge-dark text-[9px]">{b}</span>
             ))}
           </div>
@@ -347,7 +352,7 @@ const razones = [
             Catálogo Globe completo →
           </a>
           <a
-            href={whatsappUrl('Hola, quiero cotizar trajes Globe Manufacturing NFPA 1971.')}
+            href={whatsappUrl('Hola, quiero cotizar trajes Globe Manufacturing NFPA 1970.')}
             target="_blank" rel="noopener"
             class="btn btn-ghost btn-lg"
           >
@@ -377,7 +382,7 @@ const razones = [
             industriales y brigadas ARFF. Líneas estructurales, de proximidad y forestales NFPA 1977.
           </p>
           <div class="flex flex-wrap gap-2">
-            {['NFPA 1971','NFPA 1977','PBI Matrix','V-Force®','Distribuidor autorizado MX'].map(b => (
+            {['NFPA 1970','NFPA 1977','PBI Matrix','V-Force®','Distribuidor autorizado MX'].map(b => (
               <span class="badge badge-dark text-[9px]">{b}</span>
             ))}
           </div>
@@ -399,7 +404,7 @@ const razones = [
           <a href="/productos/trajes-bombero/lion-apparel" class="btn btn-primary btn-lg">
             Catálogo Lion completo →
           </a>
-          <a href={whatsappUrl('Hola, quiero cotizar trajes Lion Apparel NFPA 1971.')} target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
+          <a href={whatsappUrl('Hola, quiero cotizar trajes Lion Apparel NFPA 1970.')} target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
             Cotizar por WhatsApp
           </a>
         </div>
@@ -425,7 +430,7 @@ const razones = [
             y aeropuertos internacionales en México. Líneas estructurales, proximity y CBRN.
           </p>
           <div class="flex flex-wrap gap-2">
-            {['NFPA 1971','NFPA 2112','PBI Gold','CarbonX®','BioClad® CBRN'].map(b => (
+            {['NFPA 1970','NFPA 2112','PBI Gold','CarbonX®','BioClad® CBRN'].map(b => (
               <span class="badge badge-dark text-[9px]">{b}</span>
             ))}
           </div>
@@ -447,7 +452,7 @@ const razones = [
           <a href="/productos/trajes-bombero/honeywell-morning-pride" class="btn btn-primary btn-lg">
             Catálogo Honeywell completo →
           </a>
-          <a href={whatsappUrl('Hola, quiero cotizar trajes Honeywell Morning Pride NFPA 1971.')} target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
+          <a href={whatsappUrl('Hola, quiero cotizar trajes Honeywell Morning Pride NFPA 1970.')} target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
             Cotizar por WhatsApp
           </a>
         </div>
@@ -473,7 +478,7 @@ const razones = [
             Ideal para departamentos que buscan tecnología avanzada con precio competitivo.
           </p>
           <div class="flex flex-wrap gap-2">
-            {['NFPA 1971','TECGEN® 71','TECGEN® 51','PBI/TECGEN Hybrid','NFPA 2112'].map(b => (
+            {['NFPA 1970','TECGEN® 71','TECGEN® 51','PBI/TECGEN Hybrid','NFPA 2112'].map(b => (
               <span class="badge badge-dark text-[9px]">{b}</span>
             ))}
           </div>
@@ -495,7 +500,7 @@ const razones = [
           <a href="/productos/trajes-bombero/fire-dex" class="btn btn-primary btn-lg">
             Catálogo Fire-Dex completo →
           </a>
-          <a href={whatsappUrl('Hola, quiero cotizar trajes Fire-Dex NFPA 1971.')} target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
+          <a href={whatsappUrl('Hola, quiero cotizar trajes Fire-Dex NFPA 1970.')} target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
             Cotizar por WhatsApp
           </a>
         </div>
@@ -623,10 +628,15 @@ const razones = [
             Lo que más nos<br/>
             <span style="color:#F75000">preguntan.</span>
           </h2>
-          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+          <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
             ¿Tu duda no aparece? Escríbenos por WhatsApp con el detalle de tu operación y te
             asesoramos sobre el traje y el tallaje correctos.
           </p>
+          <a href={whatsappUrl('Hola, tengo una pregunta técnica sobre trajes de bombero NFPA 1970 para mi brigada.')}
+            target="_blank" rel="noopener"
+            class="btn btn-primary">
+            Consulta técnica gratis
+          </a>
         </div>
         <div class="flex flex-col">
           {faqs.map((f, i) => (

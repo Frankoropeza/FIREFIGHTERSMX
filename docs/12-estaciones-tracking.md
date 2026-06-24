@@ -1,15 +1,15 @@
 # Directorio de Estaciones — Seguimiento de completitud
 
-> DATOS en `src/data/estaciones.ts`. Pase = datos reales verificados al estándar v2 (coords, fuentes citadas, confianza, email/operador).
-> Última actualización: 2026-06-24.
+> DATOS en `src/data/estaciones.ts`. Pase = datos reales verificados al estándar v3 (coords, fuentes citadas, confianza, email/operador, elementos, estacionesFisicas, unidades, descripciones 150-200 palabras).
+> Última actualización: 2026-06-24 (Nayarit cargado — 18/32).
 
 ## Estándar
 
-Campos verificables con fuente oficial; `confianza` (alta/media/baja); `coordenadas` (reales o centroide de ciudad); `fuentes[]` citadas por estación. Se descartan agregadores fabricados (bombero.mx, firefighter.mx).
+Campos verificables con fuente oficial; `confianza` (alta/media/baja); `coordenadas` (reales o centroide de ciudad); `fuentes[]` citadas por estación. Se descartan agregadores fabricados (bombero.mx, firefighter.mx). **v3 (jun 2026):** nuevos campos opcionales `elementos`, `estacionesFisicas`, `unidades`; descripciones 150-200 palabras con contexto histórico, operativo y de cobertura; proceso con 12 agentes en 3 capas (investigación + verificación cruzada + editorial).
 
 ## Resumen
 
-- Estados homologados v2: **13/32** · Estaciones: **284** · Pendientes: **20**
+- Estados homologados v3: **18/32** · Estaciones: **398** · Pendientes: **15**
 
 ## Matriz por estado
 
@@ -28,11 +28,11 @@ Campos verificables con fuente oficial; `confianza` (alta/media/baja); `coordena
 | ✅ | Guanajuato | Centro | 12 | 8 | 100% | 100% | ✅ |
 | ✅ | Guerrero | Sur | 6 | 4 | 100% | 100% | ✅ |
 | ✅ | Hidalgo | Centro | 7 | 5 | 100% | 100% | ✅ |
-| ⬜ | Jalisco | Centro-Occidente | 3 | 3 | – | – | 🔴 |
-| ⬜ | Estado de México | Centro | 4 | 4 | – | – | 🔴 |
-| ⬜ | Michoacán | Centro-Occidente | 2 | 2 | – | – | 🔴 |
-| ⬜ | Morelos | Centro | 1 | 1 | – | – | 🔴 |
-| ⬜ | Nayarit | Centro-Occidente | 2 | 2 | – | – | 🔴 |
+| ✅ | Jalisco | Centro-Occidente | 34 | 27 | 100% | 100% | ✅ |
+| ✅ | Estado de México | Centro | 42 | 35 | 100% | 100% | ✅ v2 |
+| ✅ | Michoacán | Centro-Occidente | 21 | 14 | 100% | 100% | ✅ v2 |
+| ✅ | Morelos | Centro | 15 | 12 | 100% | 100% | ✅ v3 |
+| ✅ | Nayarit | Centro-Occidente | 7 | 5 | 100% | 100% | ✅ v3 |
 | ⬜ | Nuevo León | Noreste | 3 | 3 | – | – | 🔴 |
 | ⬜ | Oaxaca | Sur | 1 | 1 | – | – | 🔴 |
 | ⬜ | Puebla | Centro | 2 | 2 | – | – | 🔴 |
@@ -63,11 +63,11 @@ Campos verificables con fuente oficial; `confianza` (alta/media/baja); `coordena
 - [x] **Guanajuato** (GTO) — 12 est. / 8 mun. ✅ v2
 - [x] **Guerrero** (GRO) — 6 est. / 4 mun. ✅ v2
 - [x] **Hidalgo** (HGO) — 7 est. / 5 mun. ✅ v2
-- [ ] **Jalisco** (JAL) — 3 est. / 3 mun.
-- [ ] **Estado de México** (MEX) — 4 est. / 4 mun.
-- [ ] **Michoacán** (MICH) — 2 est. / 2 mun.
-- [ ] **Morelos** (MOR) — 1 est. / 1 mun.
-- [ ] **Nayarit** (NAY) — 2 est. / 2 mun.
+- [x] **Jalisco** (JAL) — 34 est. / 27 mun. ✅ v2
+- [x] **Estado de México** (MEX) — 42 est. / 35 mun. ✅ v2
+- [x] **Michoacán** (MICH) — 21 est. / 14 mun. ✅ v2
+- [x] **Morelos** (MOR) — 15 est. / 12 mun. ✅ v3
+- [x] **Nayarit** (NAY) — 7 est. / 5 mun. ✅ v3
 - [ ] **Nuevo León** (NL) — 3 est. / 3 mun.
 - [ ] **Oaxaca** (OAX) — 1 est. / 1 mun.
 - [ ] **Puebla** (PUE) — 2 est. / 2 mun.
