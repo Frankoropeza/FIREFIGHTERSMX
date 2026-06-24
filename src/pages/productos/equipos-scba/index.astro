@@ -1,0 +1,612 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import QuickLinksBar from '@components/common/QuickLinksBar.astro';
+import ProductCard from '@components/products/ProductCard.astro';
+import { categories } from '@data/categories';
+import { featuredProducts } from '@data/products';
+import { SITE, whatsappUrl } from '@data/site';
+
+const cat = categories.find((c) => c.slug === 'equipos-scba')!;
+const canonicalURL = `${SITE.url}/productos/equipos-scba`;
+
+const seoMeta = {
+  title: `Equipos SCBA NFPA 1970 — MSA G1, Dräger PSS 7000 y 3M Scott`,
+  description: cat.description,
+  canonicalURL,
+};
+
+/* Productos por marca */
+const msaProducts = featuredProducts.filter(
+  (p) => p.category === 'Equipos SCBA' && p.brand === 'MSA Safety' && p.specs
+);
+const dragerProducts = featuredProducts.filter(
+  (p) => p.category === 'Equipos SCBA' && p.brand === 'Dräger' && p.specs
+);
+const scottProducts = featuredProducts.filter(
+  (p) => p.category === 'Equipos SCBA' && p.brand === '3M Scott' && p.specs
+);
+
+/* Configuraciones (educativo) */
+const configuraciones = [
+  {
+    title: 'Estructural',
+    badge: 'NFPA 1970 · 30/45 min',
+    accent: '#F75000',
+    desc: 'Combate de incendio en edificios. Cilindro de fibra de carbono 4500 psi de 30 ó 45 minutos, presión positiva, EOSTI y alarma PASS integrados.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>`,
+  },
+  {
+    title: 'Industrial / 60 min',
+    badge: 'NFPA 1970 · 60 min',
+    accent: '#F5A623',
+    desc: 'Autonomía extendida para industria pesada, petroquímica, túneles y espacios confinados. Opción ATEX antiestática. Mayor peso, mayor margen operativo.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>`,
+  },
+  {
+    title: 'CBRN / HAZMAT',
+    badge: 'NIOSH CBRN · NFPA 1970',
+    accent: '#34D399',
+    desc: 'Aprobación NIOSH CBRN para agentes químicos, biológicos, radiológicos y nucleares. Materiales descontaminables, compatible con trajes Nivel A encapsulados.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`,
+  },
+  {
+    title: 'RIT / Rescate',
+    badge: 'NFPA 1970 · RIT',
+    accent: '#60A5FA',
+    desc: 'Rescate de bombero caído: segunda fuente de aire, conexión de transferencia (buddy breathing) y bolsa de despliegue rápido de alta visibilidad.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>`,
+  },
+];
+
+/* Tabla comparativa */
+const comparativa = [
+  ['Autonomía', '30 / 45 min', '60 min', 'Según botella', 'Segunda botella'],
+  ['Cilindro', 'Fibra carbono 4500 psi', 'Fibra carbono 4500 psi', 'Fibra carbono 4500 psi', 'Fibra carbono 4500 psi'],
+  ['Peso aprox.', '~5.4 kg', '~6.6 kg', '~5.6 kg', '~5.4 kg'],
+  ['Electrónica', 'EOSTI + PASS', 'EOSTI + telemetría', 'EOSTI + PASS · CBRN', 'EOSTI + transferencia'],
+  ['Escenario', 'Incendio estructural', 'Industria · túneles', 'HAZMAT · CBRN', 'Rescate de bombero'],
+  ['Norma', 'NFPA 1970', 'NFPA 1970', 'NFPA 1970 + NIOSH CBRN', 'NFPA 1970'],
+];
+
+/* Guía de selección */
+const guia = [
+  { n: '01', t: 'Define el escenario dominante: combate estructural (30/45 min), industria/confinados (60 min), HAZMAT/CBRN (NIOSH CBRN) o rescate de bombero (RIT). La configuración sale de ahí.' },
+  { n: '02', t: 'Compara las tres marcas tier-1: MSA G1 lidera en electrónica integrada; Dräger PSS 7000 en ergonomía de arnés; 3M Scott NxG7 en plataforma modular y localizador Pak-Tracker.' },
+  { n: '03', t: 'Exige certificación NFPA 1970 y aprobación NIOSH verificable por número de modelo —no de distribuidor. Para CBRN: aprobación NIOSH CBRN documentada por modelo exacto.' },
+  { n: '04', t: 'Asegura el programa de mantenimiento: prueba de flujo anual, hidrostática de cilindro cada 5 años (vida útil 15 años) y servicio técnico autorizado con bitácora NFPA 1852.' },
+];
+
+/* Artículos relacionados */
+const articulos = [
+  { label: 'NFPA 1970: qué cubre y qué exige', desc: 'La norma que reemplazó a NFPA 1981', href: '/blog/nfpa-1970-equipos-scba-respiracion' },
+  { label: 'MSA G1 vs Dräger vs 3M Scott', desc: 'Comparativa técnica de los tres SCBA tier-1', href: '/blog/msa-g1-drager-scott-comparativa-scba' },
+  { label: 'Prueba hidrostática de cilindros', desc: 'Cuándo, cómo y por qué hacerla', href: '/blog/prueba-hidrostatica-cilindros-scba-nfpa-1852' },
+  { label: 'SCBA para espacios confinados', desc: 'Diferencias vs SCBA estructural', href: '/blog/scba-espacios-confinados-vs-estructural' },
+];
+
+/* FAQ */
+const faqs = [
+  { q: '¿Bajo qué norma debe estar certificado un SCBA de bombero en México?', a: 'Bajo NFPA 1970 (consolidó a la NFPA 1981 desde 2024) con aprobación NIOSH. Para HAZMAT se exige además aprobación NIOSH CBRN. Los pliegos de licitación pública en México referencian directamente NFPA 1970 y NIOSH por edición.' },
+  { q: '¿Qué autonomía elijo: 30, 45 o 60 minutos?', a: 'La autonomía nominal asume consumo de referencia; el tiempo real depende del esfuerzo. 30 min es el estándar urbano, 45 min da margen para combate prolongado, 60 min es para industria, túneles y confinados donde la salida es larga. A mayor autonomía, mayor peso y volumen del cilindro.' },
+  { q: '¿Cuál es la diferencia entre MSA G1, Dräger PSS 7000 y 3M Scott NxG7?', a: 'Los tres son SCBA tier-1 de presión positiva NFPA 1970. MSA G1 lidera en electrónica integrada (EOSTI en el regulador, telemetría ICM). Dräger PSS 7000 destaca por la ergonomía del arnés y distribución de carga. 3M Scott NxG7 sobresale por su plataforma modular y localizador Pak-Tracker. Te facilitamos las tres fichas para evaluación comparativa.' },
+  { q: '¿Qué mantenimiento exige un SCBA y cada cuánto?', a: 'La NFPA 1852 establece: inspección antes de cada uso, prueba de flujo al menos anual, mantenimiento de reguladores según fabricante, prueba hidrostática del cilindro cada 5 años (vida útil 15 años). Somos servicio técnico autorizado: realizamos estas pruebas con equipo calibrado y entregamos bitácora para auditoría.' },
+  { q: '¿Entregan ficha técnica y servicio para licitación pública?', a: 'Sí. Cada SCBA incluye certificado de conformidad NFPA 1970, aprobación NIOSH y ficha técnica por configuración. Para concursos públicos (CompraNet, IMSS, Pemex, gobiernos estatales) generamos el manifiesto de cumplimiento por partida e incluimos el plan de servicio técnico autorizado para toda la vida útil.' },
+];
+
+/* Trust Pillars */
+const razones = [
+  {
+    n: '01',
+    t: 'Tres marcas tier-1 mundiales',
+    d: 'MSA Safety (NYSE: MSA), Dräger y 3M Scott — los tres fabricantes de SCBA más licitados en México. Una sola fuente, servicio técnico autorizado y refacciones originales para toda la vida útil del equipo.',
+  },
+  {
+    n: '02',
+    t: 'Certificación verificable por número de serie',
+    d: 'Cada SCBA incluye etiqueta de trazabilidad con número de modelo, lote y aprobación NIOSH verificable en la base pública de NIOSH. Documentación lista para auditorías NFPA 1852 y licitaciones públicas.',
+  },
+  {
+    n: '03',
+    t: 'Servicio técnico autorizado',
+    d: 'Somos servicio técnico autorizado: prueba hidrostática de cilindros cada 5 años, prueba de flujo anual, mantenimiento de reguladores y refacciones originales con bitácora para auditoría. Tu inversión protegida durante toda la vida útil.',
+  },
+  {
+    n: '04',
+    t: 'Stock permanente en CDMX',
+    d: 'Inventario de los modelos más solicitados con entrega en 24–48 h desde CDMX. Para licitaciones generamos el manifiesto de cumplimiento de norma por partida e incluimos el plan de servicio técnico autorizado.',
+  },
+];
+
+/* JSON-LD */
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Productos', item: `${SITE.url}/productos` },
+    { '@type': 'ListItem', position: 3, name: 'Equipos SCBA', item: canonicalURL },
+  ],
+};
+
+const collectionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  '@id': `${canonicalURL}#collection`,
+  name: 'Equipos SCBA certificados NFPA 1970 y NIOSH',
+  description: cat.description,
+  url: canonicalURL,
+  inLanguage: 'es-MX',
+  isPartOf: { '@id': `${SITE.url}/#website` },
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: msaProducts.length + dragerProducts.length + scottProducts.length,
+    itemListElement: [...msaProducts, ...dragerProducts, ...scottProducts].map((p, i) => ({
+      '@type': 'ListItem', position: i + 1, name: p.title, url: `${SITE.url}${p.href}`,
+    })),
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+
+const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slice(0, 6);
+---
+
+<BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema, faqSchema]}>
+
+  <!-- Breadcrumb -->
+  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+    <div class="container-site">
+      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:#4A7599">
+        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="/productos" class="hover:text-[#FF6B26]">Productos</a></li>
+        <li aria-hidden="true">/</li>
+        <li><span style="color:#94A3B8" aria-current="page">Equipos SCBA</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">
+    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(245,166,35,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
+
+    <div class="container-site relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div>
+          <span class="section-eyebrow mb-5 inline-flex">{cat.norm}</span>
+          <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+            Equipos<br/>
+            <span style="color:#F5A623">SCBA</span>
+          </h1>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href={whatsappUrl('Hola, quiero cotizar equipos SCBA NFPA 1970.')} target="_blank" rel="noopener" class="btn btn-primary btn-lg">Cotizar por WhatsApp</a>
+            <a href="/cotizacion" class="btn btn-ghost btn-lg">Cotización formal</a>
+          </div>
+        </div>
+        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
+          {cat.intro.map((p) => (
+            <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">{p}</p>
+          ))}
+          <div class="flex flex-wrap gap-2">
+            {['NFPA 1970','NIOSH CBRN','4500 psi','30/45/60 min','EOSTI','PASS','MSA · Dräger · 3M Scott'].map(n => (
+              <span class="badge badge-dark font-display text-[10px]">{n}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(245,166,35,0.4) 30%, rgba(245,166,35,0.4) 70%, transparent)" aria-hidden="true"></div>
+  </section>
+
+  <!-- Accesos rápidos -->
+  <QuickLinksBar />
+
+  <!-- Trust Pillars -->
+  <section class="section-tight" style="background:#070E1A" aria-label="Por qué distribuimos estas marcas">
+    <div class="container-site">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style="border:1px solid rgba(74,117,153,0.18)">
+        {razones.map((r, i) => (
+          <div class="flex flex-col gap-3 p-6" style={`background:#080F1A;${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.12)' : ''}`}>
+            <span class="font-display font-bold text-2xl" style="color:#F5A623">{r.n}</span>
+            <h3 class="font-display font-bold text-sm uppercase tracking-wide" style="color:#FFFFFF">{r.t}</h3>
+            <p class="text-xs leading-relaxed m-0" style="color:#64748B">{r.d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Configuraciones -->
+  <section class="section" style="background:#040A12" aria-labelledby="conf-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Cuatro escenarios, una plataforma</span>
+          <h2 id="conf-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            La configuración correcta<br/>
+            <span style="color:#F5A623">según la operación.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(245,166,35,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+            Un SCBA estructural no es lo mismo que uno industrial de 60 minutos, ni que un equipo CBRN.
+            Elegir la configuración según el riesgo dominante de tu brigada —y la autonomía real de la operación—
+            es lo que garantiza protección y cumplimiento normativo.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {configuraciones.map((c) => (
+          <article class="flex flex-col gap-4 p-7" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
+            <div class="flex items-center justify-center rounded-full" style={`width:52px;height:52px;background:${c.accent}1a;border:1.5px solid ${c.accent}59;color:${c.accent}`}>
+              <span class="block" style="width:24px;height:24px" set:html={c.icon}/>
+            </div>
+            <div class="flex flex-col gap-1">
+              <h3 class="font-display font-bold text-lg" style="color:#FFFFFF">{c.title}</h3>
+              <span class="badge badge-dark text-[9px]">{c.badge}</span>
+            </div>
+            <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{c.desc}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- MSA G1 -->
+  <section class="section" style="background:#070E1A" aria-labelledby="msa-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">MSA Safety · NYSE: MSA · Distribuidor Autorizado MX</span>
+          <h2 id="msa-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            SCBA MSA G1<br/>
+            <span style="color:#F5A623">certificado NFPA.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(245,166,35,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
+            MSA Safety —NYSE: MSA— es el grupo industrial de seguridad más grande del mundo. El G1 es su
+            SCBA insignia: la electrónica más integrada del mercado, con la válvula EOSTI montada en el
+            regulador (sin módulo externo), alarma PASS y telemetría ICM opcional. El más solicitado en
+            cuerpos metropolitanos tier-1 de México.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {['NFPA 1970','NIOSH CBRN','EOSTI integrado','Telemetría ICM','4500 psi','Distribuidor autorizado MX'].map(b => (
+              <span class="badge badge-dark text-[9px]">{b}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {msaProducts.map((p) => (
+          <ProductCard product={p} />
+        ))}
+      </div>
+
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(74,117,153,0.15)">
+        <div class="flex-1">
+          <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+            ¿Necesitas la comparativa técnica completa del G1, el FAQ de servicio o cotización con ficha para licitación?
+            Accede al catálogo dedicado de la marca.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+          <a href="/productos/equipos-scba/msa-g1" class="btn btn-primary btn-lg">
+            Catálogo MSA G1 completo →
+          </a>
+          <a href={whatsappUrl('Hola, quiero cotizar equipos SCBA MSA G1 NFPA 1970.')} target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
+            Cotizar por WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dräger PSS 7000 -->
+  <section class="section" style="background:#040A12" aria-labelledby="drager-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Dräger · 130 años de ingeniería de seguridad</span>
+          <h2 id="drager-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            SCBA Dräger PSS 7000<br/>
+            <span style="color:#F5A623">certificado NFPA.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(245,166,35,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
+            Dräger es el referente europeo en tecnología respiratoria para emergencias. El PSS 7000 destaca
+            por su arnés ergonómico de distribución de carga superior — menos fatiga en operaciones largas —
+            y por su historial en petroquímica, minería y brigadas industriales de alta exigencia.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {['NFPA 1970','NIOSH CBRN','Arnés ergonómico','Distribución de carga','4500 psi','Servicio autorizado MX'].map(b => (
+              <span class="badge badge-dark text-[9px]">{b}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {dragerProducts.map((p) => (
+          <ProductCard product={p} />
+        ))}
+      </div>
+
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(74,117,153,0.15)">
+        <div class="flex-1">
+          <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+            ¿Brigada industrial, petroquímica o minería? El PSS 7000 tiene la ergonomía para jornadas largas.
+            Cotizamos con ficha técnica para concurso.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+          <a href="/productos/equipos-scba/drager-pss" class="btn btn-primary btn-lg">
+            Catálogo Dräger completo →
+          </a>
+          <a href={whatsappUrl('Hola, quiero cotizar equipos SCBA Dräger PSS 7000 NFPA 1970.')} target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
+            Cotizar por WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3M Scott Air-Pak NxG7 -->
+  <section class="section" style="background:#070E1A" aria-labelledby="scott-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">3M Scott · Pak-Tracker · Plataforma modular</span>
+          <h2 id="scott-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            SCBA 3M Scott Air-Pak NxG7<br/>
+            <span style="color:#F5A623">certificado NFPA.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(245,166,35,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
+            El Air-Pak NxG7 de 3M Scott sobresale por su plataforma modular y el localizador Pak-Tracker:
+            el sistema de rastreo de bomberos en el interior más adoptado en América del Norte. Ideal para
+            departamentos que priorizan visibilidad táctica y localización de personal en operaciones complejas.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {['NFPA 1970','NIOSH CBRN','Pak-Tracker','Plataforma modular','4500 psi','Distribuidor autorizado MX'].map(b => (
+              <span class="badge badge-dark text-[9px]">{b}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {scottProducts.map((p) => (
+          <ProductCard product={p} />
+        ))}
+      </div>
+
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(74,117,153,0.15)">
+        <div class="flex-1">
+          <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+            ¿Quieres localización de bomberos en el interior y plataforma modular? El NxG7 es la respuesta.
+            Cotizamos con comparativo técnico vs. MSA G1 y Dräger incluido.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+          <a href="/productos/equipos-scba/scott-air-pak" class="btn btn-primary btn-lg">
+            Catálogo 3M Scott completo →
+          </a>
+          <a href={whatsappUrl('Hola, quiero cotizar equipos SCBA 3M Scott Air-Pak NxG7 NFPA 1970.')} target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
+            Cotizar por WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tabla comparativa -->
+  <section class="section" style="background:#040A12" aria-labelledby="comp-title">
+    <div class="container-site">
+      <div class="mb-10">
+        <span class="section-eyebrow mb-4 inline-flex">Comparativa</span>
+        <h2 id="comp-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          Estructural · Industrial · <span style="color:#F5A623">CBRN · RIT</span>
+        </h2>
+      </div>
+
+      <div class="overflow-x-auto" style="border:1px solid rgba(74,117,153,0.18)">
+        <table class="w-full border-collapse" style="min-width:700px">
+          <thead>
+            <tr style="background:#0C1825">
+              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:#4A7599;border-bottom:1px solid rgba(74,117,153,0.18)">Característica</th>
+              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:#F75000;border-bottom:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">Estructural</th>
+              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:#F5A623;border-bottom:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">Industrial 60 min</th>
+              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:#34D399;border-bottom:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">CBRN</th>
+              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:#60A5FA;border-bottom:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">RIT / Rescate</th>
+            </tr>
+          </thead>
+          <tbody>
+            {comparativa.map((row, i) => (
+              <tr style={`background:${i % 2 === 0 ? '#080F1A' : '#0A1320'}`}>
+                <td class="p-4 text-sm font-display font-semibold" style="color:#CBD5E1;border-bottom:1px solid rgba(74,117,153,0.12)">{row[0]}</td>
+                <td class="p-4 text-sm" style="color:#94A3B8;border-bottom:1px solid rgba(74,117,153,0.12);border-left:1px solid rgba(74,117,153,0.12)">{row[1]}</td>
+                <td class="p-4 text-sm" style="color:#94A3B8;border-bottom:1px solid rgba(74,117,153,0.12);border-left:1px solid rgba(74,117,153,0.12)">{row[2]}</td>
+                <td class="p-4 text-sm" style="color:#94A3B8;border-bottom:1px solid rgba(74,117,153,0.12);border-left:1px solid rgba(74,117,153,0.12)">{row[3]}</td>
+                <td class="p-4 text-sm" style="color:#94A3B8;border-bottom:1px solid rgba(74,117,153,0.12);border-left:1px solid rgba(74,117,153,0.12)">{row[4]}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs mt-4" style="color:#4A7599">* SCBA de circuito abierto de presión positiva certificados NFPA 1970 y aprobación NIOSH. Cilindros de fibra de carbono; autonomía nominal según configuración y consumo del usuario.</p>
+    </div>
+  </section>
+
+  <!-- Guía de selección + blog -->
+  <section class="section" style="background:#070E1A" aria-labelledby="guia-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Cómo elegir</span>
+          <h2 id="guia-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+            Del riesgo<br/>
+            <span style="color:#F5A623">a la decisión.</span>
+          </h2>
+          <ol class="flex flex-col gap-4 list-none m-0 p-0">
+            {guia.map((s) => (
+              <li class="flex items-start gap-4">
+                <span class="font-display font-bold text-xl shrink-0" style="color:#F5A623">{s.n}</span>
+                <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{s.t}</p>
+              </li>
+            ))}
+          </ol>
+          <div class="mt-8">
+            <a href={whatsappUrl('Hola, necesito asesoría para elegir equipos SCBA para mi brigada.')} target="_blank" rel="noopener" class="btn btn-primary">Pedir asesoría técnica</a>
+          </div>
+        </div>
+
+        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:#4A7599">
+            Aprende más en el blog
+          </h2>
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+            {articulos.map((l) => (
+              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+                <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
+                  <span class="flex flex-col gap-0.5">
+                    <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
+                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
+                  </span>
+                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#4A7599" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="background:#040A12" aria-labelledby="faq-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes</span>
+          <h2 id="faq-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+            Lo que más nos<br/>
+            <span style="color:#F5A623">preguntan.</span>
+          </h2>
+          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+            ¿Tu duda no aparece? Escríbenos por WhatsApp con el detalle de tu operación y te
+            asesoramos sobre el SCBA y la configuración correctos.
+          </p>
+        </div>
+        <div class="flex flex-col">
+          {faqs.map((f, i) => (
+            <details class="faq-item group" style={`border-top:1px solid rgba(74,117,153,0.18);${i === faqs.length - 1 ? 'border-bottom:1px solid rgba(74,117,153,0.18);' : ''}`}>
+              <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer">
+                <span class="font-display font-semibold text-sm" style="color:#FFFFFF">{f.q}</span>
+                <span class="faq-icon font-display font-bold text-xl shrink-0" style="color:#F5A623">+</span>
+              </summary>
+              <p class="text-sm leading-relaxed pb-5 m-0" style="color:#94A3B8">{f.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Band -->
+  <section style="background:#F5A623;padding-block:4rem" aria-label="Cotizar equipos SCBA">
+    <div class="container-site">
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div>
+          <p class="text-xs font-display font-bold uppercase tracking-[0.2em] mb-3" style="color:rgba(255,255,255,0.65)">MSA G1 · Dräger PSS 7000 · 3M Scott NxG7 · Stock CDMX</p>
+          <h2 class="font-display font-bold uppercase" style="color:#FFFFFF;font-size:clamp(1.75rem,4vw,3rem);line-height:1.05">
+            Certificado NFPA 1970.<br/>Entrega en 48 h.
+          </h2>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+          <a
+            href={whatsappUrl('Hola, quiero cotizar equipos SCBA NFPA 1970. ¿Tienen stock disponible?')}
+            target="_blank" rel="noopener"
+            class="btn btn-lg"
+            style="background:#FFFFFF;color:#F5A623;border-color:#FFFFFF;font-weight:700"
+          >
+            Cotizar por WhatsApp →
+          </a>
+          <a href="/cotizacion" class="btn btn-lg" style="background:transparent;color:#FFFFFF;border:2px solid rgba(255,255,255,0.5)">
+            Cotización formal
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cross-links + otras categorías -->
+  <section class="section" style="background:#070E1A" aria-labelledby="cross-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Equipa el conjunto completo</span>
+          <h2 id="cross-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+            El SCBA es<br/>
+            <span style="color:#F5A623">solo una pieza.</span>
+          </h2>
+          <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
+            Un bombero protegido necesita traje, casco, guantes y botas certificados — y un programa de
+            mantenimiento vigente. Armamos el conjunto completo con un solo proveedor.
+          </p>
+          <a href={whatsappUrl('Hola, quiero equipar el conjunto completo de EPP para mi brigada.')} target="_blank" rel="noopener" class="btn btn-primary">Cotizar conjunto completo</a>
+        </div>
+        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:#4A7599">
+            También te puede servir
+          </h2>
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+            {[
+              { label: 'Trajes para Bomberos', desc: 'Globe, Lion, Honeywell y Fire-Dex NFPA 1970', href: '/productos/trajes-bombero' },
+              { label: 'Cascos NFPA', desc: 'MSA Gallet, Bullard y Cairns', href: '/productos/cascos-nfpa' },
+              { label: 'Cámaras Térmicas', desc: 'FLIR, MSA Evolution y Bullard NFPA 1801', href: '/productos/camaras-termicas' },
+              { label: 'Servicio técnico SCBA', desc: 'Prueba hidrostática, flujo anual y refacciones', href: '/servicios/mantenimiento' },
+              { label: 'Soporte para licitaciones', desc: 'Fichas y manifiestos por partida', href: '/licitaciones' },
+            ].map((l) => (
+              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+                <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
+                  <span class="flex flex-col gap-0.5">
+                    <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
+                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
+                  </span>
+                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#4A7599" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <!-- Otras categorías -->
+      <div class="mt-14 pt-10" style="border-top:1px solid rgba(74,117,153,0.15)">
+        <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-6" style="color:#4A7599">Otras categorías del catálogo</h2>
+        <div class="flex flex-wrap gap-3">
+          {otrasCategorias.map((c) => (
+            <a href={`/productos/${c.slug}`} class="btn btn-sm btn-dark">{c.label}</a>
+          ))}
+          <a href="/productos" class="btn btn-sm btn-outline">Catálogo completo →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  details.faq-item summary { list-style: none; }
+  details.faq-item summary::-webkit-details-marker { display: none; }
+  details.faq-item[open] .faq-icon { transform: rotate(45deg); }
+</style>

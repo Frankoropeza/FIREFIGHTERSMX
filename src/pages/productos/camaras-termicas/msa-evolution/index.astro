@@ -1,0 +1,7 @@
+---
+import BrandPage from '@components/products/BrandPage.astro';
+import { brandPageBySlug } from '@data/brandPages';
+
+const brand = brandPageBySlug('msa-evolution')!;
+---
+<BrandPage brand={brand} />

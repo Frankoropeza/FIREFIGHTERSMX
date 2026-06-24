@@ -108,19 +108,42 @@ const year = new Date().getFullYear();
         Productos
       </h4>
       <ul class="flex flex-col gap-2 text-sm text-[var(--forge-200)]">
-        {[
-          ['Trajes para Bomberos','/productos/trajes-bombero'],
-          ['Cascos NFPA','/productos/cascos-nfpa'],
-          ['Equipos SCBA','/productos/equipos-scba'],
-          ['Herramientas de Rescate','/productos/herramientas-rescate'],
-          ['Extintores','/productos/extintores'],
-          ['Sistemas CI','/productos/sistemas-ci'],
-          ['Cámaras Térmicas','/productos/camaras-termicas'],
-          ['Equipos HAZMAT','/productos/hazmat'],
-          ['Drones de Emergencia','/productos/drones-emergencia'],
-        ].map(([label, href]) => (
-          <li>
-            <a href={href} class="hover:text-[var(--ember-400)]">{label}</a>
+        {([
+          { label: 'Trajes para Bomberos', href: '/productos/trajes-bombero' },
+          { label: 'Globe Manufacturing',  href: '/productos/trajes-bombero/globe-manufacturing', sub: true },
+          { label: 'Lion Apparel',         href: '/productos/trajes-bombero/lion-apparel',         sub: true },
+          { label: 'Honeywell Morning Pride', href: '/productos/trajes-bombero/honeywell-morning-pride', sub: true },
+          { label: 'Fire-Dex',              href: '/productos/trajes-bombero/fire-dex',              sub: true },
+          { label: 'Cascos NFPA',          href: '/productos/cascos-nfpa' },
+          { label: 'MSA Gallet',           href: '/productos/cascos-nfpa/msa-gallet', sub: true },
+          { label: 'Bullard',              href: '/productos/cascos-nfpa/bullard', sub: true },
+          { label: 'Cairns',               href: '/productos/cascos-nfpa/cairns', sub: true },
+          { label: 'Equipos SCBA',         href: '/productos/equipos-scba' },
+          { label: 'MSA G1',               href: '/productos/equipos-scba/msa-g1', sub: true },
+          { label: 'Dräger PSS 7000',      href: '/productos/equipos-scba/drager-pss', sub: true },
+          { label: '3M Scott Air-Pak NxG7', href: '/productos/equipos-scba/scott-air-pak', sub: true },
+          { label: 'Herramientas de Rescate', href: '/productos/herramientas-rescate' },
+          { label: 'Holmatro',             href: '/productos/herramientas-rescate/holmatro', sub: true },
+          { label: 'Hurst Jaws of Life',   href: '/productos/herramientas-rescate/hurst', sub: true },
+          { label: 'Weber Rescue',         href: '/productos/herramientas-rescate/weber-rescue', sub: true },
+          { label: 'Extintores',           href: '/productos/extintores' },
+          { label: 'Sistemas CI',          href: '/productos/sistemas-ci' },
+          { label: 'Cámaras Térmicas',     href: '/productos/camaras-termicas' },
+          { label: 'FLIR',                 href: '/productos/camaras-termicas/flir', sub: true },
+          { label: 'MSA Evolution',        href: '/productos/camaras-termicas/msa-evolution', sub: true },
+          { label: 'Bullard TXS',          href: '/productos/camaras-termicas/bullard-txs', sub: true },
+          { label: 'Equipos HAZMAT',       href: '/productos/hazmat' },
+          { label: 'Drones de Emergencia', href: '/productos/drones-emergencia' },
+        ] as {label:string;href:string;sub?:boolean}[]).map(({ label, href, sub }) => (
+          <li class={sub ? 'pl-3' : ''} style={sub ? 'border-left:2px solid rgba(247,80,0,0.3)' : ''}>
+            <a
+              href={href}
+              class={`hover:text-[var(--ember-400)] ${sub ? 'text-xs' : ''}`}
+              style={sub ? 'color:var(--forge-400)' : ''}
+            >
+              {sub && <span class="mr-1" style="color:var(--ember-500)">›</span>}
+              {label}
+            </a>
           </li>
         ))}
       </ul>
@@ -186,6 +209,7 @@ const year = new Date().getFullYear();
           ['Distribuidores','/distribuidores'],
           ['Cobertura Nacional','/cobertura'],
           ['Licitaciones','/licitaciones'],
+          ['Directorio de Estaciones','/estaciones'],
           ['Contacto','/contacto'],
           ['Cotizar','/cotizacion'],
         ].map(([label, href]) => (

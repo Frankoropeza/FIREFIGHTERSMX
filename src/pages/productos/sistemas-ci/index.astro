@@ -1,0 +1,633 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import QuickLinksBar from '@components/common/QuickLinksBar.astro';
+import { categories } from '@data/categories';
+import { SITE, whatsappUrl } from '@data/site';
+
+const cat = categories.find((c) => c.slug === 'sistemas-ci')!;
+const canonicalURL = `${SITE.url}/productos/sistemas-ci`;
+
+const seoMeta = {
+  title: `Sistemas Contra Incendio NFPA 13 · 72 · 2001 — Diseño, Instalación y Memoria de Cálculo · México`,
+  description: 'Diseño e instalación de sistemas contra incendio en México: rociadores NFPA 13 (Tyco/Viking), detección NFPA 72 (Honeywell/Notifier) y supresión agente limpio NFPA 2001 (FM-200/Novec). Memoria de cálculo y entregables para aseguradoras.',
+  canonicalURL,
+};
+
+/* Subsistemas */
+const subsistemas = [
+  {
+    id: 'rociadores',
+    norm: 'NFPA 13',
+    label: 'Rociadores Automáticos',
+    marcas: 'Tyco · Viking · Victaulic',
+    accent: '#34D399',
+    aplicacion: 'Bodegas · naves industriales · centros comerciales · hoteles · edificios de oficinas · plantas de manufactura',
+    desc: 'El sistema de supresión más extendido a nivel mundial. Los rociadores automáticos activan únicamente en el área del fuego, controlando el incendio antes de que se propague. El diseño hidráulico por densidad de riesgo conforme NFPA 13 garantiza la cobertura correcta para cada tipo de ocupación.',
+    items: [
+      { t: 'Riesgo ligero (Light Hazard)', d: 'Oficinas, hospitales, museos, hoteles — densidad 4.1 mm/min sobre área de 139 m²' },
+      { t: 'Riesgo ordinario Grupo 1 y 2', d: 'Bodegas, manufactura, comercios — el rango más común en instalaciones industriales mexicanas' },
+      { t: 'Riesgo alto (Extra Hazard)', d: 'Pintura, madera, textiles, manufactura de alto riesgo — densidades especiales y cálculo individual' },
+      { t: 'Estantes ESFR (Early Suppression)', d: 'Almacenes de alta estiba — supresión temprana directamente sobre la mercancía almacenada' },
+    ],
+    entregables: ['Memoria de cálculo hidráulico firmada por DRO', 'Planos isométricos y de distribución', 'Lista de materiales y hojas de datos de rociadores', 'Reporte de prueba hidrostática'],
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>`,
+  },
+  {
+    id: 'deteccion',
+    norm: 'NFPA 72',
+    label: 'Detección y Alarma',
+    marcas: 'Honeywell · Notifier · System Sensor',
+    accent: '#60A5FA',
+    aplicacion: 'Cualquier inmueble — complementa el sistema de rociadores o es el único sistema en áreas donde los rociadores no aplican',
+    desc: 'Un sistema de detección temprana puede dar 3 a 10 minutos adicionales de evacuación antes de que lleguen los rociadores. Los paneles FACP (Fire Alarm Control Panel) direccionables de Honeywell y Notifier identifican el detector exacto en alarma, aceleran la respuesta y se integran con HVAC, elevadores y supresión.',
+    items: [
+      { t: 'Detectores de humo fotoeléctricos', d: 'Detección de humo visible — óptimos en pasillos, oficinas y habitaciones' },
+      { t: 'Detectores iónicos de humo', d: 'Detección de partículas de combustión invisibles — cocinas y áreas con vapores' },
+      { t: 'Detectores de calor fijo y combinados', d: 'Áreas con polvo o vapor que causarían falsas alarmas en detectores de humo' },
+      { t: 'Detectores por aspiración (VESDA)', d: 'Detección ultra-temprana para data centers y cuartos de control críticos — alerta antes de que haya humo visible' },
+      { t: 'Detectores de llama UV/IR', d: 'Plantas industriales con riesgo de fuego abierto sin humo previo — respuesta en milisegundos' },
+      { t: 'Paneles FACP direccionables', d: 'Honeywell Fire-Lite/Notifier NFS2-3030 — hasta 3,000 puntos, monitoreo NFPA 72, integración BMS' },
+    ],
+    entregables: ['Diseño de zonificación conforme NFPA 72', 'Programación del panel FACP y matrices de causa-efecto', 'Reporte de pruebas de aceptación (NFPA 72 Capítulo 14)', 'Manual de usuario y plan de mantenimiento anual'],
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>`,
+  },
+  {
+    id: 'agente-limpio',
+    norm: 'NFPA 2001',
+    label: 'Supresión Agente Limpio',
+    marcas: 'Kidde Fenwal · Fike · Amerex',
+    accent: '#A78BFA',
+    aplicacion: 'Data centers · salas de servidores · cuartos de control · archivos críticos · telecomunicaciones · salas de arte',
+    desc: 'La solución óptima para activos que no pueden mojarse, polvearse ni quedar fuera de servicio. Los agentes limpios FM-200 (HFC-227ea) y Novec 1230 (FK-5-1-12) extinguen en menos de 10 segundos sin residuo, sin dañar equipos y en un espacio seguro para personas. El sistema fijo con detección VESDA o dual-knock ofrece la respuesta más rápida posible.',
+    items: [
+      { t: 'FM-200 (HFC-227ea)', d: 'El agente limpio más instalado globalmente. ODP = 0, extinción en 8–10 s, aprobado UL/FM, concentración de diseño 7-8% v/v' },
+      { t: 'Novec 1230 (FK-5-1-12)', d: 'Sin potencial de calentamiento global significativo. GWP = 1. Alternativa preferida en proyectos con criterios de sostenibilidad ESG' },
+      { t: 'Sistema de disparo dual-knock', d: 'Dos detectores en cross-zoning antes de disparar — elimina falsas descargas que dañarían el agente y el cilindro' },
+      { t: 'Integración con VESDA / ASD', d: 'Detección por aspiración en data centers — alarma temprana antes de humo visible, tiempo para investigar antes del disparo' },
+    ],
+    entregables: ['Diseño de concentración conforme NFPA 2001 (cálculo de masa)', 'Análisis de integridad del recinto (door fan test)', 'Planos de distribución de boquillas y cilindros', 'Procedimiento de descarga, reposición y mantenimiento anual'],
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3"/><circle cx="12" cy="12" r="4"/><path d="M5.636 5.636l.707.707M17.657 17.657l.707.707M5.636 18.364l.707-.707M17.657 6.343l.707-.707"/></svg>`,
+  },
+  {
+    id: 'redes-bombas',
+    norm: 'NFPA 20',
+    label: 'Redes Hidráulicas y Bombas',
+    marcas: 'Grundfos · Armstrong · Aurora',
+    accent: '#FB923C',
+    aplicacion: 'Todo sistema de rociadores o gabinetes requiere una red hidráulica y, en la mayoría de los casos, un cuarto de bombas NFPA 20',
+    desc: 'El corazón del sistema de rociadores: la red de tuberías y el cuarto de bombas que garantizan el caudal y la presión en cada rociador. El diseño hidráulico por computadora (pipe schedule o cálculo por densidad) determina los diámetros, la presión residual y la bomba necesaria — todo conforme NFPA 20 y la memoria de cálculo que exige tu aseguradora.',
+    items: [
+      { t: 'Bombas centrífugas horizontales y verticales', d: 'Listadas UL / certificadas FM — caudales desde 100 hasta 5,000 GPM según el riesgo' },
+      { t: 'Bomba jockey (presurización)', d: 'Mantiene la presión del sistema y detecta fugas antes de que activen los rociadores' },
+      { t: 'Tablero de control NFPA 20', d: 'Control automático, alarma de presión baja, registro de eventos — integrable con BMS y panel FACP' },
+      { t: 'Red de tuberías y conexiones', d: 'Programas pipe-schedule y hidráulico. Acero negro, CPVC o tubing de cobre según ocupación y norma local' },
+    ],
+    entregables: ['Memoria de cálculo hidráulico con curva bomba-sistema', 'Planos isométricos de la red de tuberías', 'Data sheet de bombas y tablero de control', 'Protocolo de prueba de la bomba conforme NFPA 20'],
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/></svg>`,
+  },
+];
+
+/* Proceso de proyecto */
+const etapas = [
+  {
+    n: '01',
+    t: 'Ingeniería y diseño',
+    d: 'Visita de sitio, levantamiento arquitectónico, clasificación del riesgo (NFPA 13 / 72 / 2001), selección de sistema y cálculo hidráulico. Elaboramos la memoria de cálculo firmada por Director Responsable de Obra (DRO) — el documento que exige la aseguradora.',
+  },
+  {
+    n: '02',
+    t: 'Propuesta y aprobación',
+    d: 'Propuesta técnica-económica con especificaciones, planos preliminares, cronograma y presupuesto desglosado. Incluye comparativa de alternativas y análisis de ROI para proyectos de alta inversión.',
+  },
+  {
+    n: '03',
+    t: 'Suministro de materiales',
+    d: 'Adquisición de materiales certificados UL/FM de proveedores autorizados Tyco, Viking, Honeywell, Notifier, Kidde Fenwal y Fike. Trazabilidad de lote y hojas de datos para el expediente.',
+  },
+  {
+    n: '04',
+    t: 'Instalación y pruebas',
+    d: 'Instalación por cuadrilla especializada. Prueba hidrostática de la red (200 psi / 2 h), prueba de aceptación del panel FACP conforme NFPA 72 Capítulo 14, y corrida completa del sistema antes de la entrega.',
+  },
+  {
+    n: '05',
+    t: 'Puesta en marcha y entregables',
+    d: 'Activación oficial, capacitación al personal de mantenimiento, entrega del dossier completo: planos as-built, reportes de prueba, hojas de datos de cada componente, manual de usuario y plan de mantenimiento anual.',
+  },
+];
+
+/* Entregables del proyecto */
+const entregables = [
+  { t: 'Memoria de cálculo', d: 'Firmada por DRO. Requerida por aseguradoras y Protección Civil.' },
+  { t: 'Planos as-built', d: 'Planta, isométrico y detalles conforme a lo instalado.' },
+  { t: 'Reportes de prueba', d: 'Hidrostática (rociadores), aceptación (detección), door fan test (agente limpio).' },
+  { t: 'Hojas de datos y trazabilidad', d: 'Data sheet de cada componente y número de lote.' },
+  { t: 'Manual de usuario', d: 'Operación, alarmas, rutas de evacuación y contactos de emergencia.' },
+  { t: 'Plan de mantenimiento', d: 'Calendario anual NFPA 25 (rociadores) y NFPA 72 (detección).' },
+];
+
+/* Trust Pillars */
+const razones = [
+  {
+    n: '01',
+    t: 'Materiales listados UL / FM Global',
+    d: 'Solo rociadores, paneles y agentes con listing UL o certificación FM — los únicos aceptados por aseguradoras internacionales y la mayoría de pólizas industriales en México.',
+  },
+  {
+    n: '02',
+    t: 'Memoria de cálculo firmada por DRO',
+    d: 'El documento técnico-legal que acredita el diseño ante la aseguradora, la autoridad y el propietario. Sin memoria firmada, el sistema no es aceptado en la mayoría de las pólizas.',
+  },
+  {
+    n: '03',
+    t: 'Pruebas de aceptación documentadas',
+    d: 'Entregamos reportes de prueba hidrostática y de aceptación NFPA 72 con firma de técnico responsable — el expediente que exige Protección Civil y la aseguradora al comisionar el sistema.',
+  },
+  {
+    n: '04',
+    t: 'Soporte post-instalación NFPA 25',
+    d: 'Programa de inspección, prueba y mantenimiento anual conforme NFPA 25 para rociadores y NFPA 72 para detección, con reporte documentado para la renovación de tu póliza.',
+  },
+];
+
+/* Normativa */
+const normas = [
+  {
+    clave: 'NFPA 13',
+    titulo: 'Instalación de Rociadores',
+    desc: 'Estándar de referencia mundial para el diseño e instalación de sistemas de rociadores automáticos. Define clasificación de riesgos, densidades de diseño, espaciado y obstrucciones — la base de toda memoria de cálculo de rociadores.',
+  },
+  {
+    clave: 'NFPA 72',
+    titulo: 'Código Nacional de Alarma de Incendio',
+    desc: 'Rige el diseño, instalación, inspección, prueba y mantenimiento de sistemas de detección y alarma. Capítulo 14 establece los protocolos de prueba de aceptación que se entregan al propietario y a la aseguradora.',
+  },
+  {
+    clave: 'NFPA 2001',
+    titulo: 'Sistemas de Supresión con Agente Limpio',
+    desc: 'Estándar para el diseño, instalación y mantenimiento de sistemas de supresión con agentes limpios (FM-200, Novec 1230). Incluye requerimientos de concentración de diseño, integridad del recinto y procedimientos de prueba.',
+  },
+  {
+    clave: 'NFPA 20',
+    titulo: 'Bombas de Agua para Supresión',
+    desc: 'Regula la selección, instalación, prueba y mantenimiento de bombas para sistemas de protección contra incendio. Establece los requerimientos del cuarto de bombas, tablero de control y protocolos de prueba semanal y anual.',
+  },
+  {
+    clave: 'NFPA 25',
+    titulo: 'Inspección, Prueba y Mantenimiento',
+    desc: 'Define el programa de mantenimiento de sistemas de agua (rociadores, redes, bombas): prueba mensual de la bomba jockey, prueba trimestral del flujo, y prueba hidrostática quinquenal — el calendario que presentas a tu aseguradora.',
+  },
+];
+
+/* FAQ */
+const faqs = [
+  {
+    q: '¿Cuándo es obligatorio un sistema de rociadores NFPA 13?',
+    a: 'En México, la obligatoriedad depende del tipo de ocupación, la superficie y el reglamento de construcción local. El Reglamento de Construcciones del DF/CDMX lo requiere en edificios de más de 3,500 m² de bodega, plantas industriales de alto riesgo, centros comerciales y hoteles con más de 5 pisos. Las aseguradoras suelen requerirlo independientemente de la normativa local para emitir pólizas de daños en bodegas y plantas con valor de activos alto. Podemos revisar tu caso específico sin costo.',
+  },
+  {
+    q: '¿Qué es la memoria de cálculo y por qué la exige mi aseguradora?',
+    a: 'La memoria de cálculo hidráulico es el documento técnico que demuestra que el sistema fue diseñado correctamente: clasifica el riesgo, calcula la densidad de rociamiento, determina el área de operación, y verifica que la bomba entrega el caudal y la presión requeridos en el rociador más desfavorable. Las aseguradoras la exigen porque es la única prueba de que el sistema fue diseñado, no solo instalado. Debe estar firmada por un DRO o ingeniero responsable.',
+  },
+  {
+    q: '¿Cuál es la diferencia entre FM-200 y Novec 1230?',
+    a: 'FM-200 (HFC-227ea) es el agente limpio más instalado globalmente — eficaz, listado UL/FM, con décadas de historial. Novec 1230 (FK-5-1-12) es el agente de nueva generación con GWP (Potencial de Calentamiento Global) extremadamente bajo (GWP = 1 vs. 3,220 del FM-200), lo que lo convierte en la opción preferida para proyectos con compromisos ESG o que anticipan regulaciones de HFCs más estrictas. Ambos extinguen en menos de 10 segundos y son seguros para personas. La decisión depende del presupuesto, la disponibilidad local y los criterios de sostenibilidad del proyecto.',
+  },
+  {
+    q: '¿Puedo agregar detección y alarma a un sistema de rociadores existente?',
+    a: 'Sí, y es muy recomendable: la detección temprana NFPA 72 puede alertar de un incendio antes de que active el rociador, dando tiempo adicional de evacuación. El panel FACP se integra con el flujo de agua del sistema de rociadores (switch de flujo) para reportar cuál zona está activa. La integración es estándar y no requiere modificar la red de tuberías existente.',
+  },
+  {
+    q: '¿Qué mantenimiento requiere el sistema una vez instalado?',
+    a: 'NFPA 25 establece el programa para sistemas de agua: inspección visual semanal de manómetros, prueba mensual de la bomba jockey, prueba trimestral del caudal de la bomba principal, e inspección anual completa de rociadores, válvulas y accesorios. NFPA 72 requiere prueba anual del panel FACP, detectores y dispositivos de notificación. Ofrecemos contrato anual de mantenimiento con reporte documentado para la renovación de tu póliza de seguros.',
+  },
+];
+
+/* JSON-LD */
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Productos', item: `${SITE.url}/productos` },
+    { '@type': 'ListItem', position: 3, name: 'Sistemas Contra Incendio', item: canonicalURL },
+  ],
+};
+
+const collectionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  '@id': `${canonicalURL}#collection`,
+  name: 'Sistemas Contra Incendio NFPA 13 · 72 · 2001 — México',
+  description: seoMeta.description,
+  url: canonicalURL,
+  inLanguage: 'es-MX',
+  isPartOf: { '@id': `${SITE.url}/#website` },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Diseño e Instalación de Sistemas Contra Incendio',
+  description: seoMeta.description,
+  url: canonicalURL,
+  areaServed: { '@type': 'Country', name: 'Mexico' },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Sistemas Contra Incendio NFPA',
+    itemListElement: subsistemas.map((s) => ({
+      '@type': 'Offer',
+      name: `${s.label} (${s.norm})`,
+      description: s.desc,
+    })),
+  },
+};
+
+const otrasCategorias = categories.filter((c) => c.slug !== 'sistemas-ci').slice(0, 6);
+---
+
+<BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema, faqSchema, serviceSchema]}>
+
+  <!-- Breadcrumb -->
+  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+    <div class="container-site">
+      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0 flex-wrap" style="color:#4A7599">
+        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="/productos" class="hover:text-[#FF6B26]">Productos</a></li>
+        <li aria-hidden="true">/</li>
+        <li><span style="color:#94A3B8" aria-current="page">Sistemas Contra Incendio</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">
+    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(52,211,153,0.07) 0%, transparent 65%)" aria-hidden="true"></div>
+
+    <div class="container-site relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div>
+          <span class="section-eyebrow mb-5 inline-flex">{cat.norm} · Diseño · Instalación · Entregables</span>
+          <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.25rem,5vw,4rem);line-height:0.95">
+            Sistemas<br/>contra incendio<br/>
+            <span style="color:#34D399">que tu aseguradora</span><br/>
+            <span style="color:#34D399">acepta.</span>
+          </h1>
+          <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
+            Diseñamos, suministramos e instalamos sistemas fijos de protección:
+            rociadores NFPA 13, detección y alarma NFPA 72 y supresión por agente
+            limpio NFPA 2001. Entregamos la memoria de cálculo firmada por DRO y el
+            dossier completo de pruebas — el expediente que exige cualquier aseguradora industrial.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href={whatsappUrl('Hola, quiero cotizar un sistema contra incendio (rociadores / detección / agente limpio). ¿Podrían enviarme información?')} target="_blank" rel="noopener" class="btn btn-primary btn-lg">Cotizar proyecto →</a>
+            <a href="/cotizacion" class="btn btn-ghost btn-lg">Propuesta técnica formal</a>
+          </div>
+        </div>
+        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
+          {cat.intro.map((p: string) => (
+            <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">{p}</p>
+          ))}
+          <div class="flex flex-wrap gap-2 mt-4">
+            {['NFPA 13','NFPA 72','NFPA 2001','NFPA 20','NFPA 25','UL Listed','FM Global','Tyco','Viking','Honeywell','Notifier','FM-200','Novec 1230'].map((n: string) => (
+              <span class="badge badge-dark font-display text-[10px]">{n}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(52,211,153,0.4) 30%, rgba(52,211,153,0.4) 70%, transparent)" aria-hidden="true"></div>
+  </section>
+
+  <!-- QuickLinksBar -->
+  <QuickLinksBar />
+
+  <!-- Trust Pillars -->
+  <section class="section-tight" style="background:#070E1A" aria-label="Por qué elegir FirefightersMX para tu sistema contra incendio">
+    <div class="container-site">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style="border:1px solid rgba(74,117,153,0.18)">
+        {razones.map((r, i) => (
+          <div class="flex flex-col gap-3 p-6" style={`background:#080F1A;${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.12)' : ''}`}>
+            <span class="font-display font-bold text-2xl" style="color:#34D399">{r.n}</span>
+            <h3 class="font-display font-bold text-sm uppercase tracking-wide" style="color:#FFFFFF">{r.t}</h3>
+            <p class="text-xs leading-relaxed m-0" style="color:#64748B">{r.d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Subsistemas -->
+  <section class="section" style="background:#040A12" aria-labelledby="subsistemas-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-14">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Cuatro subsistemas, un proyecto integrado</span>
+          <h2 id="subsistemas-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            Del diseño a la<br/>
+            <span style="color:#34D399">puesta en marcha.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(52,211,153,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+            Un sistema contra incendio moderno integra rociadores, detección, supresión especial
+            y redes hidráulicas en un solo proyecto. Diseñamos cada subsistema en conjunto para
+            garantizar la compatibilidad, la redundancia y el expediente unificado.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-8">
+        {subsistemas.map((s) => (
+          <article id={s.id} class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-0" style="border:1px solid rgba(74,117,153,0.18)">
+
+            {/* Panel izquierdo */}
+            <div class="flex flex-col gap-5 p-8" style="background:#080F1A;border-right:1px solid rgba(74,117,153,0.14)">
+              <div class="flex items-start gap-4">
+                <div class="flex items-center justify-center shrink-0" style={`width:56px;height:56px;background:${s.accent}1a;border:1.5px solid ${s.accent}55;color:${s.accent}`}>
+                  <span class="block" style="width:26px;height:26px" set:html={s.icon}/>
+                </div>
+                <div>
+                  <span class="text-xs font-display font-bold tracking-widest uppercase" style={`color:${s.accent}`}>{s.norm}</span>
+                  <h3 class="font-display font-bold text-xl leading-tight" style="color:#FFFFFF">{s.label}</h3>
+                  <span class="text-xs" style="color:#4A7599">{s.marcas}</span>
+                </div>
+              </div>
+
+              <p class="text-sm leading-relaxed" style="color:#94A3B8">{s.desc}</p>
+
+              <div class="pt-4" style="border-top:1px solid rgba(74,117,153,0.15)">
+                <p class="text-[10px] font-display font-bold uppercase tracking-widest mb-2" style="color:#4A7599">Aplicación típica</p>
+                <p class="text-xs" style={`color:${s.accent};font-weight:600`}>{s.aplicacion}</p>
+              </div>
+
+              <a href={whatsappUrl(`Hola, quiero cotizar un sistema de ${s.label} (${s.norm}) para mi instalación.`)} target="_blank" rel="noopener" class="btn btn-primary btn-sm mt-auto">
+                Cotizar {s.norm} →
+              </a>
+            </div>
+
+            {/* Panel derecho — tipos + entregables */}
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-0">
+              {/* Tipos */}
+              <div class="flex flex-col gap-0 p-8" style="background:#070E1A;border-right:1px solid rgba(74,117,153,0.14)">
+                <p class="text-[10px] font-display font-bold uppercase tracking-widest mb-5" style="color:#4A7599">Componentes y variantes</p>
+                <ul class="flex flex-col gap-4 list-none m-0 p-0">
+                  {s.items.map((item) => (
+                    <li class="flex flex-col gap-1">
+                      <span class="flex items-center gap-2">
+                        <span class="shrink-0" style={`color:${s.accent}`}>
+                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                        </span>
+                        <span class="font-display font-semibold text-xs" style="color:#FFFFFF">{item.t}</span>
+                      </span>
+                      <p class="text-xs leading-relaxed m-0 pl-[20px]" style="color:#64748B">{item.d}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Entregables */}
+              <div class="flex flex-col gap-4 p-8" style="background:#080F1A">
+                <p class="text-[10px] font-display font-bold uppercase tracking-widest mb-1" style="color:#4A7599">Entregables del proyecto</p>
+                <ul class="flex flex-col gap-3 list-none m-0 p-0">
+                  {s.entregables.map((e) => (
+                    <li class="flex items-start gap-2">
+                      <span class="shrink-0 mt-0.5" style="color:#34D399">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                      </span>
+                      <span class="text-xs leading-relaxed" style="color:#94A3B8">{e}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Proceso de proyecto -->
+  <section class="section" style="background:#070E1A" aria-labelledby="proceso-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Metodología de proyecto</span>
+          <h2 id="proceso-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            De la cotización<br/>
+            <span style="color:#34D399">al expediente final.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(52,211,153,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+            Cada proyecto sigue una metodología documentada con entregables definidos en cada etapa.
+            El propietario recibe visibilidad total del avance y un dossier completo al final — no solo el sistema instalado.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        {etapas.map((e, i) => (
+          <article class="relative flex flex-col gap-3 p-6" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
+            {i < etapas.length - 1 && (
+              <div class="hidden lg:block absolute top-1/2 -right-4 z-10" style="transform:translateY(-50%)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2D4A5E" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </div>
+            )}
+            <span class="font-display font-bold text-2xl" style="color:#34D399">{e.n}</span>
+            <h3 class="font-display font-bold text-sm uppercase tracking-wide" style="color:#FFFFFF">{e.t}</h3>
+            <p class="text-xs leading-relaxed m-0" style="color:#64748B">{e.d}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Entregables del dossier -->
+  <section class="section" style="background:#040A12" aria-labelledby="entregables-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Dossier de proyecto</span>
+          <h2 id="entregables-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.05">
+            Lo que entregamos<br/>
+            <span style="color:#34D399">al cierre del proyecto.</span>
+          </h2>
+          <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
+            El sistema instalado es solo una parte. El dossier técnico-legal es lo que protege
+            al propietario en una auditoría de Protección Civil, en una reclamación de seguro
+            y en el mantenimiento futuro. Cada proyecto entrega el expediente completo.
+          </p>
+          <a href={whatsappUrl('Hola, quiero conocer el alcance de entregables de un proyecto de sistema contra incendio.')} target="_blank" rel="noopener" class="btn btn-primary">
+            Conocer el alcance →
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {entregables.map((e) => (
+            <article class="flex flex-col gap-2 p-5" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
+              <div class="flex items-center gap-2 mb-1">
+                <svg class="shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                <h3 class="font-display font-bold text-xs uppercase tracking-wide" style="color:#FFFFFF">{e.t}</h3>
+              </div>
+              <p class="text-xs leading-relaxed m-0" style="color:#64748B">{e.d}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Normativa -->
+  <section class="section" style="background:#070E1A" aria-labelledby="normas-title">
+    <div class="container-site">
+      <div class="mb-10">
+        <span class="section-eyebrow mb-4 inline-flex">Marco normativo</span>
+        <h2 id="normas-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          Las cinco NFPA<br/>
+          <span style="color:#34D399">que rigen tu sistema.</span>
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {normas.map((n) => (
+          <article class="flex flex-col gap-3 p-7" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
+            <div class="flex items-center justify-between gap-4">
+              <span class="font-display font-bold text-xl" style="color:#34D399">{n.clave}</span>
+              <span class="badge badge-dark text-[9px]">{n.titulo}</span>
+            </div>
+            <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{n.desc}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="background:#040A12" aria-labelledby="faq-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.75fr] gap-12 lg:gap-20">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes</span>
+          <h2 id="faq-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+            Las preguntas que<br/>
+            <span style="color:#34D399">nos hacen antes</span><br/>
+            del proyecto.
+          </h2>
+          <p class="text-sm leading-relaxed mb-8" style="color:#64748B">
+            ¿Tienes una pregunta que no está aquí? Escríbenos — respondemos en menos de 2 horas en horario de oficina.
+          </p>
+          <a href={whatsappUrl('Hola, tengo una pregunta sobre sistemas contra incendio para mi instalación.')} target="_blank" rel="noopener" class="btn btn-primary">
+            Preguntar por WhatsApp
+          </a>
+        </div>
+
+        <div class="flex flex-col">
+          {faqs.map((f, i) => (
+            <details class="faq-item" style={`border-top:1px solid rgba(74,117,153,0.18);${i === faqs.length - 1 ? 'border-bottom:1px solid rgba(74,117,153,0.18);' : ''}`}>
+              <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer">
+                <span class="font-display font-semibold text-sm" style="color:#FFFFFF">{f.q}</span>
+                <span class="faq-icon font-display font-bold text-xl shrink-0" style="color:#34D399">+</span>
+              </summary>
+              <p class="text-sm leading-relaxed pb-5 m-0" style="color:#94A3B8">{f.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Band -->
+  <section style="background:#1A3A2E;padding-block:4rem;border-top:2px solid #34D399" aria-label="Cotizar sistema contra incendio">
+    <div class="container-site">
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div>
+          <p class="text-xs font-display font-bold uppercase tracking-[0.2em] mb-3" style="color:rgba(52,211,153,0.7)">NFPA 13 · 72 · 2001 · Memoria de cálculo · Dossier completo</p>
+          <h2 class="font-display font-bold uppercase" style="color:#FFFFFF;font-size:clamp(1.75rem,4vw,3rem);line-height:1.05">
+            Materiales UL Listed.<br/>Memoria firmada por DRO.
+          </h2>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+          <a
+            href={whatsappUrl('Hola, quiero solicitar una cotización para un sistema contra incendio (rociadores / detección / agente limpio). ¿Me pueden enviar información?')}
+            target="_blank" rel="noopener"
+            class="btn btn-lg"
+            style="background:#34D399;color:#0A1A14;border-color:#34D399;font-weight:700"
+          >
+            Cotizar proyecto →
+          </a>
+          <a href="/cotizacion" class="btn btn-lg" style="background:transparent;color:#FFFFFF;border:2px solid rgba(255,255,255,0.4)">
+            Propuesta técnica formal
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cross-links -->
+  <section class="section" style="background:#070E1A" aria-labelledby="cross-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Sistema completo</span>
+          <h2 id="cross-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+            El sistema fijo<br/>
+            <span style="color:#34D399">necesita EPP y extintores.</span>
+          </h2>
+          <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
+            Un sistema contra incendio fijo no reemplaza al extintor portátil ni al EPP de la brigada.
+            Los tres niveles trabajan juntos: el sistema fijo compra tiempo, los extintores son la
+            primera respuesta manual y la brigada necesita el equipo certificado para actuar.
+          </p>
+          <a href={whatsappUrl('Hola, quiero cotizar la protección contra incendio completa: sistema fijo, extintores y EPP de brigada.')} target="_blank" rel="noopener" class="btn btn-primary">Cotizar protección completa</a>
+        </div>
+        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:#4A7599">También te puede servir</h2>
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+            {[
+              { label: 'Extintores NOM-154-SCFI',     desc: 'PQS ABC · CO₂ · Tipo K · Agente limpio portable',              href: '/productos/extintores' },
+              { label: 'Trajes de Bombero NFPA 1971',  desc: 'Globe · Honeywell Morning Pride · MSA — equipo de la brigada',  href: '/productos/trajes-bombero' },
+              { label: 'Cascos NFPA 1970',             desc: 'Cairns · Bullard · MSA — EPP de cabeza certificado',           href: '/productos/cascos-nfpa' },
+              { label: 'Equipos SCBA NFPA 1981',       desc: 'MSA G1 · Dräger · Scott — aire autónomo para la brigada',      href: '/productos/equipos-scba' },
+              { label: 'Herramientas de Rescate 1936', desc: 'Holmatro · Hurst · Weber — rescate vehicular certificado',     href: '/productos/herramientas-rescate' },
+            ].map((l) => (
+              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+                <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
+                  <span class="flex flex-col gap-0.5">
+                    <span class="font-display font-semibold text-sm group-hover:text-[#34D399]" style="color:#FFFFFF">{l.label}</span>
+                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
+                  </span>
+                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#4A7599" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-14 pt-10" style="border-top:1px solid rgba(74,117,153,0.15)">
+        <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-6" style="color:#4A7599">Otras categorías del catálogo</h2>
+        <div class="flex flex-wrap gap-3">
+          {otrasCategorias.map((c) => (
+            <a href={`/productos/${c.slug}`} class="btn btn-sm btn-dark">{c.label}</a>
+          ))}
+          <a href="/productos" class="btn btn-sm btn-outline">Catálogo completo →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  details.faq-item summary { list-style: none; }
+  details.faq-item summary::-webkit-details-marker { display: none; }
+  details.faq-item[open] .faq-icon { transform: rotate(45deg); }
+</style>

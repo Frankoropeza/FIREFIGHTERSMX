@@ -1,0 +1,545 @@
+---
+/**
+ * BrandPage — plantilla compartida de TODAS las páginas L4 de marca (cascos y trajes).
+ * Renderiza la estructura canónica desde un `EquipmentBrand` (src/data/brandPages.ts).
+ * Las 7 marcas usan este mismo componente → homologación total.
+ * Evolucionar estructura = aquí; contenido = la data; columnas/categoría = brandPages.ts.
+ *
+ * Secciones: breadcrumb · hero+stats · QuickLinks · credenciales · líneas (ícono por
+ * familia) · catálogo · anatomía del flagship · comparativa (columnas por categoría)
+ * · guía de selección · segmentos · FAQ · CTA · cross-links.
+ */
+import BaseLayout from '@layouts/BaseLayout.astro';
+import QuickLinksBar from '@components/common/QuickLinksBar.astro';
+import ProductCard from '@components/products/ProductCard.astro';
+import { featuredProducts } from '@data/products';
+import { SITE, whatsappUrl } from '@data/site';
+import { tipoEquipo, categoriaMarca, hermanasMarca, type EquipmentBrand } from '@data/brandPages';
+
+interface Props {
+  brand: EquipmentBrand;
+}
+
+const { brand } = Astro.props;
+const cat = categoriaMarca[brand.categorySlug];
+const hubURL = `/productos/${brand.categorySlug}`;
+const canonicalURL = `${SITE.url}/productos/${brand.categorySlug}/${brand.slug}`;
+
+const productos = featuredProducts.filter(
+  (p) => p.category === cat.productCategory && p.brand === brand.brand && p.specs
+);
+
+const otrasMarcas = [
+  ...hermanasMarca(brand),
+  { label: `Comparativa en el hub de ${cat.label}`, desc: 'Tabla técnica de estilos y modelos', href: `${hubURL}#comp-title` },
+  { label: `Ver todos los ${cat.label}`, desc: 'Catálogo completo de la categoría', href: hubURL },
+];
+
+const categorias: [string, string][] = [
+  ['Cascos NFPA', '/productos/cascos-nfpa'],
+  ['Trajes para Bomberos', '/productos/trajes-bombero'],
+  ['Equipos SCBA', '/productos/equipos-scba'],
+  ['Cámaras Térmicas', '/productos/camaras-termicas'],
+  ['Herramientas Rescate', '/productos/herramientas-rescate'],
+  ['Equipos HAZMAT', '/productos/hazmat'],
+];
+
+/* ── Mensajes de WhatsApp (derivados, homologados) ─────────────────────────── */
+const waFicha = `Hola, quiero cotizar ${brand.brandLabel}. Necesito ficha técnica para licitación.`;
+const waFaq = `Hola, tengo una pregunta técnica sobre ${brand.brandLabel}.`;
+const waStock = `${brand.waQuote} ¿Tienen stock disponible?`;
+const waGuia = `Hola, necesito asesoría para elegir ${brand.brandLabel} para mi brigada.`;
+
+/* ── Schemas JSON-LD ───────────────────────────────────────────────────────── */
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Productos', item: `${SITE.url}/productos` },
+    { '@type': 'ListItem', position: 3, name: cat.label, item: `${SITE.url}${hubURL}` },
+    { '@type': 'ListItem', position: 4, name: brand.brandLabel, item: canonicalURL },
+  ],
+};
+
+const brandSchema = {
+  '@type': 'Brand',
+  name: brand.brandLabel,
+  ...(brand.founding ? { foundingDate: brand.founding } : {}),
+  ...(brand.parentOrg
+    ? { parentOrganization: { '@type': 'Organization', name: brand.parentOrg.name, ...(brand.parentOrg.ticker ? { tickerSymbol: brand.parentOrg.ticker } : {}) } }
+    : {}),
+};
+
+const collectionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  '@id': `${canonicalURL}#collection`,
+  name: `${brand.brandLabel} — ${cat.label} certificados NFPA · México`,
+  description: brand.seoDescription,
+  url: canonicalURL,
+  inLanguage: 'es-MX',
+  isPartOf: { '@id': `${SITE.url}/#website` },
+  about: brandSchema,
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: productos.length,
+    itemListElement: productos.map((p, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      item: {
+        '@type': 'Product',
+        name: p.title,
+        url: `${SITE.url}${p.href}`,
+        category: p.category,
+        brand: { '@type': 'Brand', name: brand.brandLabel },
+        ...(p.norm ? { additionalProperty: { '@type': 'PropertyValue', name: 'Norma', value: p.norm } } : {}),
+        offers: { '@type': 'Offer', url: `${SITE.url}${p.href}`, priceCurrency: 'MXN', availability: 'https://schema.org/InStock', seller: { '@type': 'Organization', name: SITE.name } },
+      },
+    })),
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: brand.faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+---
+
+<BaseLayout
+  title={brand.seoTitle}
+  description={brand.seoDescription}
+  canonicalURL={canonicalURL}
+  schema={[breadcrumbSchema, collectionSchema, faqSchema]}
+>
+
+{/* ══ BREADCRUMB ══════════════════════════════════════════════════════ */}
+<nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+  <div class="container-site">
+    <ol class="flex items-center gap-2 text-xs list-none m-0 p-0 flex-wrap" style="color:#4A7599">
+      <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+      <li aria-hidden="true">/</li>
+      <li><a href="/productos" class="hover:text-[#FF6B26]">Productos</a></li>
+      <li aria-hidden="true">/</li>
+      <li><a href={hubURL} class="hover:text-[#FF6B26]">{cat.label}</a></li>
+      <li aria-hidden="true">/</li>
+      <li><span style="color:#94A3B8" aria-current="page">{brand.brandLabel}</span></li>
+    </ol>
+  </div>
+</nav>
+
+{/* ══ HERO ════════════════════════════════════════════════════════════ */}
+<section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem 0">
+  <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
+
+  <div class="container-site relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center pb-16">
+
+      <div>
+        <span class="section-eyebrow mb-5 inline-flex">{brand.eyebrow}</span>
+        <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+          {brand.heroTitleTop}<br/>
+          <span style="color:#F75000">{brand.heroTitleAccent}</span>
+        </h1>
+        <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">{brand.heroLead}</p>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href={whatsappUrl(brand.waQuote)} target="_blank" rel="noopener" class="btn btn-primary btn-lg">Cotizar por WhatsApp</a>
+          <a href="/cotizacion" class="btn btn-ghost btn-lg">Cotización formal</a>
+        </div>
+      </div>
+
+      <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
+        {brand.heroIntro.map((p) => (
+          <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">{p}</p>
+        ))}
+        <div class="flex flex-wrap gap-2">
+          {brand.heroBadges.map((b) => (
+            <span class="badge badge-dark text-[10px]">{b}</span>
+          ))}
+        </div>
+      </div>
+
+    </div>
+
+    <div style="border-top:1px solid rgba(74,117,153,0.18)">
+      <div class="grid grid-cols-2 sm:grid-cols-4">
+        {brand.stats.map((s, i) => (
+          <div class="flex flex-col gap-1 px-6 py-5" style={`${i > 0 ? 'border-left:1px solid rgba(74,117,153,0.14)' : ''}`}>
+            <span class="font-display font-bold" style="color:#F75000;font-size:clamp(1.4rem,3vw,2rem);line-height:1">{s.valor}</span>
+            <span class="text-xs uppercase tracking-widest" style="color:#4A7599">{s.etiq}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+  </div>
+  <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)" aria-hidden="true"></div>
+</section>
+
+{/* ══ QUICK LINKS ═════════════════════════════════════════════════════ */}
+<QuickLinksBar />
+
+{/* ══ CREDENCIALES ════════════════════════════════════════════════════ */}
+<section class="section-tight" style="background:#070E1A" aria-label={`Por qué ${brand.brandLabel}`}>
+  <div class="container-site">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style="border:1px solid rgba(74,117,153,0.18)">
+      {brand.credenciales.map((r, i) => (
+        <div class="flex flex-col gap-3 p-6" style={`background:#080F1A;${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.12)' : ''}`}>
+          <span class="font-display font-bold text-2xl" style="color:#F75000">{r.n}</span>
+          <h3 class="font-display font-bold text-sm uppercase tracking-wide" style="color:#FFFFFF">{r.t}</h3>
+          <p class="text-xs leading-relaxed m-0" style="color:#64748B">{r.d}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+{/* ══ LÍNEAS DE PRODUCTO ══════════════════════════════════════════════ */}
+<section class="section" style="background:#040A12" aria-labelledby="lineas-title">
+  <div class="container-site">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+      <div>
+        <span class="section-eyebrow mb-4 inline-flex">{brand.lineas.length} familias · un distribuidor</span>
+        <h2 id="lineas-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          Portafolio {brand.brandLabel}<br/>
+          <span style="color:#F75000">por tipo de riesgo.</span>
+        </h2>
+      </div>
+      <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+        <p class="text-sm leading-relaxed" style="color:#94A3B8">{brand.linesIntro}</p>
+      </div>
+    </div>
+
+    <div class={`grid grid-cols-1 sm:grid-cols-2 ${brand.lineas.length >= 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3'} gap-px`} style="border:1px solid rgba(74,117,153,0.18)">
+      {brand.lineas.map((l, i) => {
+        const meta = tipoEquipo[l.tipo];
+        const last = i === brand.lineas.length - 1;
+        return (
+          <div class="flex flex-col gap-5 p-7" style={`background:#080F1A;${!last ? 'border-right:1px solid rgba(74,117,153,0.12)' : ''}`}>
+            <div class="flex items-center justify-center" style={`width:48px;height:48px;background:${meta.color}1a;border:1.5px solid ${meta.color}59;color:${meta.color}`}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" style="width:22px;height:22px" set:html={meta.icon}/>
+            </div>
+            <div>
+              <span class="inline-block text-[10px] font-display font-bold uppercase tracking-widest px-2 py-1 mb-3" style={`background:${meta.color}22;color:${meta.color};border:1px solid ${meta.color}44`}>{l.badge}</span>
+              <h3 class="font-display font-bold text-base uppercase tracking-wide mb-1" style="color:#FFFFFF">{l.titulo}</h3>
+              <p class="text-xs mb-0" style="color:#F75000">{l.modelos}</p>
+            </div>
+            <p class="text-xs leading-relaxed" style="color:#64748B">{l.desc}</p>
+            <div style="border-top:1px solid rgba(74,117,153,0.15);padding-top:0.875rem">
+              <p class="text-[10px] uppercase tracking-widest mb-1" style="color:#4A7599">Tecnología</p>
+              <p class="text-xs" style="color:#94A3B8">{l.tech}</p>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</section>
+
+{/* ══ CATÁLOGO DE MODELOS ════════════════════════════════════════════ */}
+<section class="section" style="background:#070E1A" aria-labelledby="catalogo-title">
+  <div class="container-site">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+      <div>
+        <span class="section-eyebrow mb-4 inline-flex">Catálogo completo — {productos.length} modelos</span>
+        <h2 id="catalogo-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          Elige tu {brand.brandLabel}<br/>
+          <span style="color:#F75000">para tu operación.</span>
+        </h2>
+      </div>
+      <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+        <p class="text-sm leading-relaxed" style="color:#94A3B8">
+          Cada modelo está certificado por laboratorio acreditado con número de serie verificable con fábrica,
+          y se entrega con ficha técnica y manifiesto de cumplimiento NFPA por partida para licitación.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      {productos.map((p) => (
+        <ProductCard product={p} />
+      ))}
+    </div>
+
+    <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(74,117,153,0.15)">
+      <div class="flex-1">
+        <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+          ¿Necesitas una configuración específica o un modelo concreto para tu corporación? Cotizamos la
+          configuración exacta con ficha técnica y manifiesto de cumplimiento NFPA por partida.
+        </p>
+      </div>
+      <a href={whatsappUrl(waFicha)} target="_blank" rel="noopener" class="btn btn-primary btn-lg shrink-0">
+        Cotizar con ficha técnica
+      </a>
+    </div>
+  </div>
+</section>
+
+{/* ══ ANATOMÍA DEL FLAGSHIP ═══════════════════════════════════════════ */}
+<section class="section" style="background:#040A12" aria-labelledby="anat-title">
+  <div class="container-site">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+      <div>
+        <span class="section-eyebrow mb-4 inline-flex">Ingeniería {brand.brandLabel}</span>
+        <h2 id="anat-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          Anatomía del<br/>
+          <span style="color:#F75000">{brand.flagship}.</span>
+        </h2>
+      </div>
+      <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+        <p class="text-sm leading-relaxed" style="color:#94A3B8">{brand.anatomiaIntro}</p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px" style="border:1px solid rgba(74,117,153,0.18)">
+      {brand.anatomia.map((a, i) => (
+        <div class="flex flex-col gap-3 p-7" style={`background:#080F1A;${i % 3 !== 2 ? 'border-right:1px solid rgba(74,117,153,0.12);' : ''}${i < 3 ? 'border-bottom:1px solid rgba(74,117,153,0.12)' : ''}`}>
+          <span class="font-display font-bold text-sm" style="color:#F75000">{String(i + 1).padStart(2, '0')}</span>
+          <h3 class="font-display font-bold text-sm uppercase tracking-wide" style="color:#FFFFFF">{a.t}</h3>
+          <p class="text-xs leading-relaxed m-0" style="color:#64748B">{a.d}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+{/* ══ TABLA COMPARATIVA ══════════════════════════════════════════════ */}
+<section class="section" style="background:#070E1A" aria-labelledby="comp-title">
+  <div class="container-site">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-10">
+      <div>
+        <span class="section-eyebrow mb-4 inline-flex">Comparativa técnica</span>
+        <h2 id="comp-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          Los {brand.comparativa.length} modelos<br/>
+          <span style="color:#F75000">cara a cara.</span>
+        </h2>
+      </div>
+      <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+        <p class="text-sm leading-relaxed" style="color:#94A3B8">
+          Compara tipo, norma y especificaciones de toda la línea {brand.brandLabel} para elegir el modelo
+          correcto según el escenario de tu brigada. Cada modelo se entrega con número de serie verificable y
+          ficha técnica para licitación.
+        </p>
+      </div>
+    </div>
+
+    <div class="overflow-x-auto" style="border:1px solid rgba(74,117,153,0.18)">
+      <table class="w-full border-collapse" style="min-width:900px">
+        <thead>
+          <tr style="background:#0C1825">
+            <th class="text-left p-4 text-xs font-display font-bold uppercase tracking-widest" style="color:#4A7599;border-bottom:1px solid rgba(74,117,153,0.18)">Modelo</th>
+            <th class="text-left p-4 text-xs font-display font-bold uppercase tracking-widest" style="color:#4A7599;border-bottom:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.12)">Tipo</th>
+            {cat.comparativaCols.map((col) => (
+              <th class={`${col.align === 'center' ? 'text-center' : 'text-left'} p-4 text-xs font-display font-bold uppercase tracking-widest`} style={`color:${col.accent ? '#FF6B26' : '#4A7599'};border-bottom:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.12)`}>{col.label}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {brand.comparativa.map((row, i) => {
+            const meta = tipoEquipo[row.tipo];
+            return (
+              <tr style={`background:${i % 2 === 0 ? '#080F1A' : '#0A1320'}`}>
+                <td class="p-4 font-display font-bold text-sm" style="color:#FFFFFF;border-bottom:1px solid rgba(74,117,153,0.10)">
+                  <span>{row.modelo}</span>
+                  {row.rec && <span class="ml-2 text-[9px] font-display font-bold uppercase tracking-wider px-1.5 py-0.5 align-middle" style="background:rgba(247,80,0,0.15);color:#F75000;border:1px solid rgba(247,80,0,0.25)">★ Recomendado</span>}
+                </td>
+                <td class="p-4 text-xs font-display font-semibold" style={`color:${meta.color};border-bottom:1px solid rgba(74,117,153,0.10);border-left:1px solid rgba(74,117,153,0.10)`}>{meta.label}</td>
+                {cat.comparativaCols.map((col) => (
+                  <td class={`p-4 text-xs ${col.align === 'center' ? 'text-center' : ''} ${col.accent ? 'font-display font-semibold' : ''}`} style={`color:${col.accent ? '#FF6B26' : '#94A3B8'};border-bottom:1px solid rgba(74,117,153,0.10);border-left:1px solid rgba(74,117,153,0.10)`}>{(row as any)[col.key]}</td>
+                ))}
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+
+    <p class="mt-4 text-xs" style="color:#4A7599">{brand.comparativaNote}</p>
+  </div>
+</section>
+
+{/* ══ GUÍA DE SELECCIÓN ═══════════════════════════════════════════════ */}
+<section class="section" style="background:#040A12" aria-labelledby="guia-title">
+  <div class="container-site">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+      <div>
+        <span class="section-eyebrow mb-4 inline-flex">Cómo elegir</span>
+        <h2 id="guia-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+          Del escenario<br/>
+          <span style="color:#F75000">a la configuración.</span>
+        </h2>
+        <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
+          Cuatro pasos para especificar el {brand.brandLabel} correcto para tu brigada — del escenario operativo
+          a la configuración exacta y la compatibilidad con el resto del EPP.
+        </p>
+        <a href={whatsappUrl(waGuia)} target="_blank" rel="noopener" class="btn btn-primary">Asesoría de configuración</a>
+      </div>
+      <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+        <ol class="flex flex-col gap-5 list-none m-0 p-0">
+          {brand.guia.map((s) => (
+            <li class="flex items-start gap-4">
+              <span class="font-display font-bold text-xl shrink-0" style="color:#F75000">{s.n}</span>
+              <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{s.t}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+{/* ══ SEGMENTOS DE OPERACIÓN ══════════════════════════════════════════ */}
+<section class="section" style="background:#070E1A" aria-labelledby="seg-title">
+  <div class="container-site">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+      <div>
+        <span class="section-eyebrow mb-4 inline-flex">Segmentos de operación</span>
+        <h2 id="seg-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          Para quién es<br/>
+          <span style="color:#F75000">{brand.brandLabel}.</span>
+        </h2>
+      </div>
+      <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+        <p class="text-sm leading-relaxed" style="color:#94A3B8">{brand.segmentosIntro}</p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-px" style="border:1px solid rgba(74,117,153,0.18)">
+      {brand.segmentos.map((seg, i) => {
+        const color = tipoEquipo[seg.tipo].color;
+        return (
+          <div class="flex flex-col gap-4 p-7" style={`background:#080F1A;${[0,1].includes(i) ? 'border-bottom:1px solid rgba(74,117,153,0.12)' : ''}${[0,2].includes(i) ? ';border-right:1px solid rgba(74,117,153,0.12)' : ''}`}>
+            <div class="flex items-center gap-3">
+              <span class="font-display font-bold text-2xl" style={`color:${color}`}>{seg.num}</span>
+              <div style={`width:2rem;height:2px;background:${color}`}></div>
+            </div>
+            <h3 class="font-display font-bold text-sm uppercase tracking-wide" style="color:#FFFFFF">{seg.titulo}</h3>
+            <p class="text-xs leading-relaxed" style="color:#64748B">{seg.desc}</p>
+            <div class="flex items-center gap-2 mt-auto">
+              <span class="text-[10px] uppercase tracking-widest" style="color:#4A7599">Modelos →</span>
+              <span class="text-xs font-display font-semibold" style="color:#94A3B8">{seg.modelos}</span>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</section>
+
+{/* ══ FAQ ═════════════════════════════════════════════════════════════ */}
+<section class="section" style="background:#040A12" aria-labelledby="faq-title">
+  <div class="container-site">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+      <div>
+        <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes · {brand.brandLabel}</span>
+        <h2 id="faq-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+          Lo que más nos<br/>
+          <span style="color:#F75000">preguntan sobre {brand.brandLabel}.</span>
+        </h2>
+        <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
+          ¿Tu duda no aparece? Escríbenos por WhatsApp con el detalle de tu operación — te asesoramos sobre el
+          modelo y la configuración correctos para tu brigada.
+        </p>
+        <a href={whatsappUrl(waFaq)} target="_blank" rel="noopener" class="btn btn-primary">Consulta técnica gratis</a>
+      </div>
+
+      <div class="flex flex-col">
+        {brand.faqs.map((f, i) => (
+          <details class="faq-item group" style={`border-top:1px solid rgba(74,117,153,0.18);${i === brand.faqs.length - 1 ? 'border-bottom:1px solid rgba(74,117,153,0.18);' : ''}`}>
+            <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer">
+              <span class="font-display font-semibold text-sm" style="color:#FFFFFF">{f.q}</span>
+              <span class="faq-icon font-display font-bold text-xl shrink-0" style="color:#FF6B26">+</span>
+            </summary>
+            <p class="text-sm leading-relaxed pb-5 m-0" style="color:#94A3B8">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+{/* ══ CTA BAND ════════════════════════════════════════════════════════ */}
+<section style="background:#F75000;padding-block:4rem" aria-label={`Cotizar ${brand.brandLabel}`}>
+  <div class="container-site">
+    <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+      <div>
+        <p class="text-xs font-display font-bold uppercase tracking-[0.2em] mb-3" style="color:rgba(255,255,255,0.65)">{brand.ctaKicker}</p>
+        <h2 class="font-display font-bold uppercase" style="color:#FFFFFF;font-size:clamp(1.75rem,4vw,3rem);line-height:1.05" set:html={brand.ctaTitleHtml}/>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+        <a href={whatsappUrl(waStock)} target="_blank" rel="noopener" class="btn btn-lg" style="background:#FFFFFF;color:#F75000;border-color:#FFFFFF;font-weight:700">
+          Cotizar por WhatsApp →
+        </a>
+        <a href="/cotizacion" class="btn btn-lg" style="background:transparent;color:#FFFFFF;border:2px solid rgba(255,255,255,0.5)">
+          Cotización formal
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{/* ══ CROSS-LINKS ═════════════════════════════════════════════════════ */}
+<section class="section" style="background:#070E1A" aria-labelledby="cross-title">
+  <div class="container-site">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+
+      <div>
+        <span class="section-eyebrow mb-4 inline-flex">Otras marcas</span>
+        <h2 id="cross-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+          Compara con<br/>
+          <span style="color:#F75000">otras marcas.</span>
+        </h2>
+        <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+          {otrasMarcas.map((l) => (
+            <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+              <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
+                <span class="flex flex-col gap-0.5">
+                  <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
+                  <span class="text-xs" style="color:#64748B">{l.desc}</span>
+                </span>
+                <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#4A7599" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+        <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:#4A7599">Equipa el conjunto completo</h2>
+        <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+          {cat.conjunto.map((l) => (
+            <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+              <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
+                <span class="flex flex-col gap-0.5">
+                  <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
+                  <span class="text-xs" style="color:#64748B">{l.desc}</span>
+                </span>
+                <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#4A7599" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="mt-14 pt-10" style="border-top:1px solid rgba(74,117,153,0.15)">
+      <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-6" style="color:#4A7599">Otras categorías del catálogo</h2>
+      <div class="flex flex-wrap gap-3">
+        {categorias.map(([label, href]) => (
+          <a href={href} class="btn btn-sm btn-dark">{label}</a>
+        ))}
+        <a href="/productos" class="btn btn-sm btn-outline">Catálogo completo →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</BaseLayout>
+
+<style>
+  details.faq-item summary { list-style: none; }
+  details.faq-item summary::-webkit-details-marker { display: none; }
+  details.faq-item[open] .faq-icon { transform: rotate(45deg); }
+</style>

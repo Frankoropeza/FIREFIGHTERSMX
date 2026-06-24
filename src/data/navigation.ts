@@ -1,7 +1,8 @@
 export interface NavItem {
   label: string;
   href: string;
-  children?: NavItem[];
+  description?: string;   // subtítulo opcional (para mega-menu o tooltips)
+  children?: NavItem[];   // soporta hasta 3 niveles
 }
 
 export const navigation = { main: [
@@ -9,43 +10,89 @@ export const navigation = { main: [
     label: "Productos",
     href: "/productos",
     children: [
-      { label: "Trajes para Bomberos", href: "/productos/trajes-bombero" },
-      { label: "Cascos NFPA", href: "/productos/cascos-nfpa" },
-      { label: "Equipos SCBA", href: "/productos/equipos-scba" },
-      { label: "Herramientas de Rescate", href: "/productos/herramientas-rescate" },
-      { label: "Extintores", href: "/productos/extintores" },
-      { label: "Sistemas Contra Incendio", href: "/productos/sistemas-ci" },
-      { label: "Cámaras Térmicas", href: "/productos/camaras-termicas" },
-      { label: "Equipos HAZMAT", href: "/productos/hazmat" },
-      { label: "Drones de Emergencia", href: "/productos/drones-emergencia" },
-      { label: "Marcas autorizadas", href: "/marcas" },
-      { label: "Ver todo el catálogo", href: "/productos" },
+      {
+        label: "Trajes para Bomberos",
+        href: "/productos/trajes-bombero",
+        description: "Globe, Lion, Honeywell, Fire-Dex",
+        children: [
+          { label: "Globe Manufacturing", href: "/productos/trajes-bombero/globe-manufacturing", description: "NFPA 1971 — 6 modelos" },
+          { label: "Lion Apparel",          href: "/productos/trajes-bombero/lion-apparel",          description: "NFPA 1971 + 1977 — V-Force®" },
+          { label: "Honeywell Morning Pride", href: "/productos/trajes-bombero/honeywell-morning-pride", description: "NFPA 1971 · 2112 · CBRN" },
+          { label: "Fire-Dex",               href: "/productos/trajes-bombero/fire-dex",               description: "TECGEN® · el más ligero" },
+        ],
+      },
+      {
+        label: "Cascos NFPA",
+        href: "/productos/cascos-nfpa",
+        description: "MSA, Bullard, Cairns",
+        children: [
+          { label: "MSA Gallet", href: "/productos/cascos-nfpa/msa-gallet", description: "F1 XF · ARFF · USAR · NFPA 1970" },
+          { label: "Bullard",    href: "/productos/cascos-nfpa/bullard",    description: "USTM · ala completa · NFPA 1970" },
+          { label: "Cairns",     href: "/productos/cascos-nfpa/cairns",     description: "N6A Houston · cuero · NFPA 1970" },
+        ],
+      },
+      {
+        label: "Equipos SCBA",
+        href: "/productos/equipos-scba",
+        description: "MSA G1, Dräger, 3M Scott",
+        children: [
+          { label: "MSA G1",                href: "/productos/equipos-scba/msa-g1",       description: "EOSTI · telemetría ICM · NFPA 1970" },
+          { label: "Dräger PSS 7000",       href: "/productos/equipos-scba/drager-pss",   description: "Arnés ergonómico · EN 137 + NFPA" },
+          { label: "3M Scott Air-Pak NxG7", href: "/productos/equipos-scba/scott-air-pak", description: "Modular · Pak-Tracker · NFPA 1970" },
+        ],
+      },
+      {
+        label: "Herramientas de Rescate",
+        href: "/productos/herramientas-rescate",
+        description: "Holmatro, Hurst, Weber Rescue",
+        children: [
+          { label: "Holmatro",           href: "/productos/herramientas-rescate/holmatro",     description: "Pentheon batería · Combi-Tool" },
+          { label: "Hurst Jaws of Life", href: "/productos/herramientas-rescate/hurst",        description: "eDRAULIC · el inventor del rescate" },
+          { label: "Weber Rescue",       href: "/productos/herramientas-rescate/weber-rescue", description: "E-FORCE · ingeniería alemana" },
+        ],
+      },
+      { label: "Extintores",                 href: "/productos/extintores",             description: "PQS, CO₂, AFFF — NOM-100" },
+      { label: "Sistemas Contra Incendio",   href: "/productos/sistemas-ci",            description: "Rociadores, detection, FM-200" },
+      {
+        label: "Cámaras Térmicas",
+        href: "/productos/camaras-termicas",
+        description: "FLIR, MSA Evolution, Bullard",
+        children: [
+          { label: "FLIR",          href: "/productos/camaras-termicas/flir",          description: "K-Series · FSX · NFPA 1801" },
+          { label: "MSA Evolution", href: "/productos/camaras-termicas/msa-evolution",  description: "Integración G1 · manos libres" },
+          { label: "Bullard TXS",   href: "/productos/camaras-termicas/bullard-txs",    description: "Interfaz intuitiva · montaje casco" },
+        ],
+      },
+      { label: "Equipos HAZMAT",             href: "/productos/hazmat",                 description: "CBRN, nivel A/B/C" },
+      { label: "Drones de Emergencia",       href: "/productos/drones-emergencia",      description: "ISR, búsqueda y rescate" },
+      { label: "Marcas autorizadas",         href: "/marcas",                           description: "20+ fabricantes internacionales" },
+      { label: "Ver catálogo completo →",    href: "/productos" },
     ],
   },
   {
     label: "Servicios",
     href: "/servicios",
     children: [
-      { label: "Capacitación Certificada", href: "/servicios/capacitacion" },
-      { label: "Mantenimiento y Recarga", href: "/servicios/mantenimiento" },
-      { label: "Instalación Sistemas CI", href: "/servicios/instalacion-sistemas-ci" },
-      { label: "Auditoría NOM-002", href: "/servicios/auditoria-seguridad" },
-      { label: "Brigadas Empresariales", href: "/servicios/brigadas-empresariales" },
-      { label: "Soporte para Licitaciones", href: "/servicios/licitaciones" },
+      { label: "Capacitación Certificada",   href: "/servicios/capacitacion",           description: "NFPA, NOM-002, brigadas" },
+      { label: "Mantenimiento y Recarga",    href: "/servicios/mantenimiento",          description: "NFPA 1850, extintores" },
+      { label: "Instalación Sistemas CI",    href: "/servicios/instalacion-sistemas-ci",description: "Diseño e instalación" },
+      { label: "Auditoría NOM-002",          href: "/servicios/auditoria-seguridad",    description: "Diagnóstico y cumplimiento" },
+      { label: "Brigadas Empresariales",     href: "/servicios/brigadas-empresariales", description: "Formación y equipamiento" },
+      { label: "Soporte para Licitaciones",  href: "/servicios/licitaciones",           description: "Fichas técnicas y manifiestos" },
     ],
   },
   {
     label: "Industrias",
     href: "/industrias",
     children: [
-      { label: "Bomberos Municipales", href: "/industrias/bomberos-municipales" },
-      { label: "Brigadas Industriales", href: "/industrias/brigadas-industriales" },
-      { label: "Aeropuertos ARFF", href: "/industrias/aeropuertos-arff" },
-      { label: "Hospitales", href: "/industrias/hospitales" },
-      { label: "Hoteles", href: "/industrias/hoteles" },
-      { label: "Refinerías PEMEX", href: "/industrias/refinerias-pemex" },
-      { label: "Minería", href: "/industrias/mineria" },
-      { label: "Protección Civil", href: "/industrias/proteccion-civil" },
+      { label: "Bomberos Municipales",       href: "/industrias/bomberos-municipales" },
+      { label: "Brigadas Industriales",      href: "/industrias/brigadas-industriales" },
+      { label: "Aeropuertos ARFF",           href: "/industrias/aeropuertos-arff" },
+      { label: "Hospitales",                 href: "/industrias/hospitales" },
+      { label: "Hoteles",                    href: "/industrias/hoteles" },
+      { label: "Refinerías PEMEX",           href: "/industrias/refinerias-pemex" },
+      { label: "Minería",                    href: "/industrias/mineria" },
+      { label: "Protección Civil",           href: "/industrias/proteccion-civil" },
     ],
   },
   { label: "Blog", href: "/blog" },
@@ -53,13 +100,25 @@ export const navigation = { main: [
     label: "Empresa",
     href: "/empresa",
     children: [
-      { label: "La empresa", href: "/empresa" },
-      { label: "Nosotros", href: "/nosotros" },
-      { label: "Certificaciones", href: "/certificaciones" },
-      { label: "Cobertura Nacional", href: "/cobertura" },
-      { label: "Distribuidores", href: "/distribuidores" },
-      { label: "Contacto", href: "/contacto" },
+      { label: "La empresa",                 href: "/empresa" },
+      { label: "Nosotros",                   href: "/nosotros" },
+      { label: "Certificaciones",            href: "/certificaciones" },
+      { label: "Cobertura Nacional",         href: "/cobertura" },
+      { label: "Distribuidores",             href: "/distribuidores" },
+      { label: "Contacto",                   href: "/contacto" },
     ],
   },
   { label: "Licitaciones", href: "/licitaciones" },
+  {
+    label: "Directorio",
+    href: "/estaciones",
+    children: [
+      { label: "Estaciones de Bomberos",  href: "/estaciones",            description: "Directorio nacional — 32 estados" },
+      { label: "Ciudad de México",        href: "/estaciones/ciudad-de-mexico", description: "HCBCDMX + AICM + cuarteles" },
+      { label: "Jalisco",                 href: "/estaciones/jalisco",    description: "GDL, ZMG y municipios" },
+      { label: "Nuevo León",              href: "/estaciones/nuevo-leon", description: "Monterrey y ZMM" },
+      { label: "Estado de México",        href: "/estaciones/estado-de-mexico", description: "Toluca, Naucalpan, Ecatepec" },
+      { label: "Ver todos los estados →", href: "/estaciones" },
+    ],
+  },
 ] };

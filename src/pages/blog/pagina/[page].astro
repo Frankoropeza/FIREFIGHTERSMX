@@ -14,9 +14,8 @@ import { getCollection } from 'astro:content';
 import { SITE } from '@data/site';
 import type { GetStaticPaths } from 'astro';
 
-const PAGE_SIZE = 8;
-
 export const getStaticPaths = (async () => {
+  const PAGE_SIZE = 8;
   const allPosts = (await getCollection('blog', ({ data }) => !data.draft))
     .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 

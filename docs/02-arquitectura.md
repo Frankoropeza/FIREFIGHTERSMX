@@ -1,6 +1,6 @@
 # Arquitectura del proyecto
 
-Astro 4 estático (47 páginas) + Tailwind 3. Alias: `@components`, `@layouts`, `@data` (tsconfig).
+Astro 6 estático (~55 páginas) + Tailwind 3. Alias: `@components`, `@layouts`, `@data` (tsconfig).
 
 ## Estructura
 
@@ -29,7 +29,12 @@ src/
 │   │   ├── index.astro          Hub L2 (v2)
 │   │   ├── [categoria].astro    8 páginas de categoría desde categories.ts
 │   │   ├── [...producto].astro  6 fichas desde featuredProducts (schema Product)
-│   │   └── trajes-bombero/      Página estática propia (v1, por migrar)
+│   │   └── trajes-bombero/      Hub L3 + 4 páginas de marca L4 (homologadas v2)
+│   │       ├── index.astro            Hub L3 · 4 CTAs de marca con dual-button
+│   │       ├── globe-manufacturing/   L4 · stats · 3 líneas · 4 segmentos · CTA band
+│   │       ├── lion-apparel/          L4 · stats · V-Force® · 3 líneas · segmentos
+│   │       ├── honeywell-morning-pride/ L4 · stats · matriz riesgo · CBRN · 4 líneas
+│   │       └── fire-dex/              L4 · stats · gráfica pesos · tabla fibras · TECGEN®
 │   ├── servicios/ industrias/ blog/ + páginas de empresa (v1, por migrar)
 │   └── aviso-privacidad / terminos-condiciones
 └── styles/global.css     Design system v2 + capa compat v1

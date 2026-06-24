@@ -16,6 +16,7 @@ import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import BlogCard from '@components/blog/BlogCard.astro';
 import { getCollection } from 'astro:content';
 import { SITE } from '@data/site';
+import { slugifyTag } from '@utils/slug';
 import type { GetStaticPaths } from 'astro';
 
 export const getStaticPaths = (async () => {
@@ -36,16 +37,6 @@ export const getStaticPaths = (async () => {
     props: { tag, posts, allTags: Object.keys(tagMap) },
   }));
 }) satisfies GetStaticPaths;
-
-// "NFPA 1970" → "nfpa-1970"
-function slugifyTag(t: string): string {
-  return t
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[̀-ͯ]/g, '')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-|-$/g, '');
-}
 
 const { tag, posts, allTags } = Astro.props;
 const { tag: tagSlug } = Astro.params;

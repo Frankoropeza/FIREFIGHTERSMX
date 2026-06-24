@@ -1,0 +1,666 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import QuickLinksBar from '@components/common/QuickLinksBar.astro';
+import ProductCard from '@components/products/ProductCard.astro';
+import { categories } from '@data/categories';
+import { featuredProducts } from '@data/products';
+import { SITE, whatsappUrl } from '@data/site';
+
+const cat = categories.find((c) => c.slug === 'herramientas-rescate')!;
+const canonicalURL = `${SITE.url}/productos/herramientas-rescate`;
+
+const seoMeta = {
+  title: `Herramientas de Rescate NFPA 1936 — Holmatro, Hurst y Weber Rescue · México`,
+  description: cat.description,
+  canonicalURL,
+};
+
+/* Productos por marca */
+const holmatroProducts = featuredProducts.filter(
+  (p) => p.category === 'Herramientas Rescate' && p.brand === 'Holmatro' && p.specs
+);
+const hurstProducts = featuredProducts.filter(
+  (p) => p.category === 'Herramientas Rescate' && p.brand === 'Hurst' && p.specs
+);
+const weberProducts = featuredProducts.filter(
+  (p) => p.category === 'Herramientas Rescate' && p.brand === 'Weber Rescue' && p.specs
+);
+const todosProductos = [...holmatroProducts, ...hurstProducts, ...weberProducts];
+
+/* Familias de herramientas (educativo) */
+const familias = [
+  {
+    title: 'Cizallas',
+    badge: 'NFPA 1936 · EN 13204',
+    accent: '#F75000',
+    desc: 'Cortan postes B reforzados, pedales y estructuras de acero al boro de los vehículos modernos. Fuerza de corte hasta ~1,400 kN. La herramienta principal de toda escena de excarcelación.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 7H9.5a2 2 0 0 0 0 4H14"/><path d="M20 17H9.5a2 2 0 0 1 0-4H14"/><path d="M4 7l4 5-4 5"/></svg>`,
+  },
+  {
+    title: 'Separadores',
+    badge: 'NFPA 1936 · Apertura',
+    accent: '#F5A623',
+    desc: 'Abren puertas, desplazan tableros y crean espacio en el habitáculo. Gran apertura de brazos y puntas de retención de carga para tracción y levantamiento. Fuerza hasta ~67 kN.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12H3M21 12h-2M8.5 12a3.5 3.5 0 0 1 7 0"/><path d="M12 5v2M12 17v2M7.05 7.05l1.41 1.41M15.54 15.54l1.41 1.41M7.05 16.95l1.41-1.41M15.54 8.46l1.41-1.41"/></svg>`,
+  },
+  {
+    title: 'Herramientas Combinadas',
+    badge: 'NFPA 1936 · 2 en 1',
+    accent: '#34D399',
+    desc: 'Cortan y separan con una sola herramienta. La solución compacta del primer respondiente: capacidad de excarcelación completa sin cargar dos equipos. Ideal para unidades ligeras.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
+  },
+  {
+    title: 'Arietes Telescópicos',
+    badge: 'NFPA 1936 · Empuje',
+    accent: '#60A5FA',
+    desc: 'Empuje de tablero, desplazamiento de cargas y estabilización de vehículos. Alta fuerza en línea recta (~135 kN) con carrera telescópica larga. Imprescindible en rescate estructural y USAR.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M15 8l4 4-4 4"/><path d="M3 8v8"/></svg>`,
+  },
+];
+
+/* Trust Pillars */
+const razones = [
+  {
+    n: '01',
+    t: 'Tres marcas tier-1 mundiales',
+    d: 'Holmatro (Pentheon · batería), Hurst Jaws of Life® (eDRAULIC) y Weber Rescue (E-FORCE) — las tres referencias internacionales en herramientas de rescate vehicular a batería, con un solo proveedor en México.',
+  },
+  {
+    n: '02',
+    t: 'Certificación NFPA 1936 + EN 13204',
+    d: 'Cada herramienta incluye la ficha con la clasificación de corte EN 13204 verificable — el dato que define si la cizalla corta los aceros al boro de los vehículos modernos. Documentación lista para licitación.',
+  },
+  {
+    n: '03',
+    t: 'Demostración en sitio con escenarios reales',
+    d: 'Cada venta institucional incluye demostración en tu estación con escenarios de excarcelación reales. Tu equipo opera el equipo antes de la decisión de compra — sin costo adicional.',
+  },
+  {
+    n: '04',
+    t: 'Servicio y mantenimiento certificado',
+    d: 'Mantenimiento preventivo anual con refacciones originales para conservar la certificación NFPA 1936 y EN 13204 del equipo. Soporte técnico en los 32 estados con bitácora para auditoría.',
+  },
+];
+
+/* Tabla comparativa de familias */
+const comparativa = [
+  ['Función principal', 'Corte de estructuras', 'Apertura y desplazamiento', 'Corte + separación', 'Empuje lineal'],
+  ['Fuerza de referencia', '~1,400 kN de corte', '~67 kN de apertura', 'Corte + sep. combinados', '~135 kN de empuje'],
+  ['Rango / carrera', 'Boca ~200 mm', 'Apertura ~850 mm', 'Apertura ~360 mm', 'Carrera ~700 mm'],
+  ['Fuente de poder', 'Batería autocontenida', 'Batería autocontenida', 'Batería autocontenida', 'Batería autocontenida'],
+  ['Escenario ideal', 'Excarcelación · aceros duros', 'Crear acceso · tablero', 'Primer respondiente', 'Rescate estructural · USAR'],
+  ['Norma', 'NFPA 1936 + EN 13204', 'NFPA 1936 + EN 13204', 'NFPA 1936 + EN 13204', 'NFPA 1936 + EN 13204'],
+];
+
+/* Guía de selección */
+const guia = [
+  { n: '01', t: 'Define la misión dominante: excarcelación vehicular → cizalla + separador + ariete; primer respondiente o unidad ligera → combinada; rescate técnico/USAR → ariete + separador.' },
+  { n: '02', t: 'Elige la tecnología: la línea a batería (Pentheon, eDRAULIC, E-FORCE) es hoy el estándar — sin mangueras, sin unidad de poder, despliegue en segundos y movilidad total en la escena.' },
+  { n: '03', t: 'Dimensiona por los vehículos de tu zona: los autos modernos con acero al boro y postes B reforzados exigen clasificación de corte alta (EN 13204). Verifica la categoría de la cizalla antes de especificar.' },
+  { n: '04', t: 'Incluye demostración, capacitación y plan de mantenimiento: la herramienta de rescate debe entrenarse y mantenerse. La certificación NFPA 1936 / EN 13204 depende de ello.' },
+];
+
+/* Blog */
+const articulos = [
+  { label: 'NFPA 1936 vs EN 13204', desc: 'Qué miden y por qué importan en licitación', href: '/blog/nfpa-1936-en-13204-herramientas-rescate' },
+  { label: 'Aceros al boro: el reto del rescatista', desc: 'Por qué los autos modernos son más difíciles de abrir', href: '/blog/aceros-boro-vehiculos-modernos-excarcelacion' },
+  { label: 'Batería vs unidad de poder', desc: 'Cuándo elegir cada sistema', href: '/blog/herramientas-rescate-bateria-vs-unidad-poder' },
+  { label: 'Equipar un equipo de excarcelación', desc: 'Qué herramientas, cuántas y por qué', href: '/blog/equipar-equipo-excarcelacion-vehicular-bomberos' },
+];
+
+/* FAQ */
+const faqs = [
+  {
+    q: '¿Qué norma certifica una herramienta hidráulica de rescate en México?',
+    a: 'En el mercado mexicano se referencian la NFPA 1936 (estándar de la NFPA para herramientas de rescate motorizadas) y la EN 13204 (norma europea que clasifica la capacidad de corte por categorías). La clasificación EN 13204 es clave: define qué tan duros son los aceros que una cizalla puede cortar. Las herramientas que distribuimos cumplen ambas; te entregamos la ficha con la clasificación exacta por modelo para licitación.',
+  },
+  {
+    q: '¿Batería (Pentheon / eDRAULIC / E-FORCE) o sistema con unidad de poder y mangueras?',
+    a: 'La línea a batería es hoy el estándar: autocontenida, sin mangueras ni bomba, se despliega en segundos y el operador se mueve libremente alrededor del vehículo. Es la opción preferida para la mayoría de los cuerpos. El sistema con unidad de poder sigue teniendo sentido para operación muy intensiva con varias herramientas simultáneas desde una sola bomba. Te asesoramos según tu volumen de operación.',
+  },
+  {
+    q: '¿Las cizallas cortan los aceros al boro de los vehículos modernos?',
+    a: 'Sí, siempre que tengan la clasificación de corte adecuada. Los vehículos recientes usan aceros al boro y de alta resistencia en postes B y zonas de seguridad que atascan a las herramientas antiguas. Las cizallas Holmatro Pentheon, Hurst eDRAULIC y Weber E-FORCE tienen hojas y geometría diseñadas para estos materiales, con clasificación EN 13204 alta. Dimensionamos la cizalla según los modelos de vehículo más frecuentes en tu zona.',
+  },
+  {
+    q: '¿Qué diferencia a Holmatro, Hurst y Weber Rescue?',
+    a: 'Las tres son marcas tier-1 con líneas a batería certificadas NFPA 1936 / EN 13204. Holmatro destaca por la línea Pentheon y el sistema Combi-Tool de cambio rápido. Hurst inventó el Jaws of Life® en 1972 y su línea eDRAULIC es la más reconocida mundialmente. Weber Rescue sobresale por la relación peso-potencia y la maniobrabilidad de la línea E-FORCE. La elección depende de preferencia operativa y ecosistema de baterías. Te facilitamos las tres fichas y, cuando es posible, demostración comparativa.',
+  },
+  {
+    q: '¿Incluyen demostración, capacitación y mantenimiento para licitación pública?',
+    a: 'Sí. Cada venta institucional incluye demostración en sitio con escenarios reales, capacitación básica de operación y mantenimiento preventivo anual con refacciones originales. Para concursos públicos (CompraNet, IMSS, gobiernos estatales) generamos el manifiesto de cumplimiento NFPA 1936 / EN 13204 por partida, con la clasificación de corte verificable y el plan de servicio para la vida útil del equipo.',
+  },
+];
+
+/* JSON-LD */
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Productos', item: `${SITE.url}/productos` },
+    { '@type': 'ListItem', position: 3, name: 'Herramientas de Rescate', item: canonicalURL },
+  ],
+};
+
+const collectionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  '@id': `${canonicalURL}#collection`,
+  name: 'Herramientas de Rescate certificadas NFPA 1936 — México',
+  description: cat.description,
+  url: canonicalURL,
+  inLanguage: 'es-MX',
+  isPartOf: { '@id': `${SITE.url}/#website` },
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: todosProductos.length,
+    itemListElement: todosProductos.map((p, i) => ({
+      '@type': 'ListItem', position: i + 1, name: p.title, url: `${SITE.url}${p.href}`,
+    })),
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+
+const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescate').slice(0, 6);
+---
+
+<BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema, faqSchema]}>
+
+  <!-- Breadcrumb -->
+  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+    <div class="container-site">
+      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0 flex-wrap" style="color:#4A7599">
+        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="/productos" class="hover:text-[#FF6B26]">Productos</a></li>
+        <li aria-hidden="true">/</li>
+        <li><span style="color:#94A3B8" aria-current="page">Herramientas de Rescate</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">
+    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
+
+    <div class="container-site relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div>
+          <span class="section-eyebrow mb-5 inline-flex">{cat.norm} · Holmatro · Hurst · Weber Rescue · Distribuidor Autorizado MX</span>
+          <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+            Herramientas<br/>
+            <span style="color:#F75000">de Rescate.</span>
+          </h1>
+          <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
+            Distribuidor autorizado de Holmatro, Hurst Jaws of Life® y Weber Rescue en México.
+            Líneas a batería sin mangueras, clasificación EN 13204 verificable y demostración en sitio incluida.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href={whatsappUrl('Hola, quiero cotizar herramientas de rescate vehicular NFPA 1936.')} target="_blank" rel="noopener" class="btn btn-primary btn-lg">Cotizar por WhatsApp</a>
+            <a href="/cotizacion" class="btn btn-ghost btn-lg">Cotización formal</a>
+          </div>
+        </div>
+        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
+          {cat.intro.map((p) => (
+            <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">{p}</p>
+          ))}
+          <div class="flex flex-wrap gap-2">
+            {['NFPA 1936','EN 13204','Batería autocontenida','Aceros al boro','Cizalla · Separador · Combinada · Ariete','Holmatro · Hurst · Weber'].map(n => (
+              <span class="badge badge-dark font-display text-[10px]">{n}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)" aria-hidden="true"></div>
+  </section>
+
+  <!-- Accesos rápidos -->
+  <QuickLinksBar />
+
+  <!-- Trust Pillars -->
+  <section class="section-tight" style="background:#070E1A" aria-label="Por qué distribuimos estas marcas">
+    <div class="container-site">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style="border:1px solid rgba(74,117,153,0.18)">
+        {razones.map((r, i) => (
+          <div class="flex flex-col gap-3 p-6" style={`background:#080F1A;${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.12)' : ''}`}>
+            <span class="font-display font-bold text-2xl" style="color:#F75000">{r.n}</span>
+            <h3 class="font-display font-bold text-sm uppercase tracking-wide" style="color:#FFFFFF">{r.t}</h3>
+            <p class="text-xs leading-relaxed m-0" style="color:#64748B">{r.d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Familias de herramientas -->
+  <section class="section" style="background:#040A12" aria-labelledby="familias-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Cuatro herramientas, una misión</span>
+          <h2 id="familias-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            La herramienta correcta<br/>
+            <span style="color:#F75000">para cada maniobra.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+            En excarcelación vehicular cada herramienta tiene una función específica. Un equipo bien
+            dimensionado combina cizalla + separador + ariete para la escena completa; un cuerpo ligero
+            puede empezar con la herramienta combinada. Asesoramos la configuración exacta según
+            los vehículos y el volumen de operación de tu brigada.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {familias.map((f) => (
+          <article class="flex flex-col gap-4 p-7" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
+            <div class="flex items-center justify-center rounded-full" style={`width:52px;height:52px;background:${f.accent}1a;border:1.5px solid ${f.accent}59;color:${f.accent}`}>
+              <span class="block" style="width:24px;height:24px" set:html={f.icon}/>
+            </div>
+            <div class="flex flex-col gap-1">
+              <h3 class="font-display font-bold text-lg" style="color:#FFFFFF">{f.title}</h3>
+              <span class="badge badge-dark text-[9px]">{f.badge}</span>
+            </div>
+            <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{f.desc}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Holmatro -->
+  <section class="section" style="background:#070E1A" aria-labelledby="holmatro-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Holmatro · Ingeniería neerlandesa · Pentheon a batería</span>
+          <h2 id="holmatro-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            Herramientas Holmatro<br/>
+            <span style="color:#F75000">certificadas NFPA 1936.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
+            Holmatro es una de las referencias mundiales en herramientas hidráulicas de rescate.
+            Su línea Pentheon es autocontenida a batería: sin mangueras ni unidad de poder,
+            se despliega en segundos y el operador se mueve libremente alrededor del vehículo.
+            Hojas y geometrías diseñadas para los aceros al boro y postes B de los vehículos modernos.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {['NFPA 1936','EN 13204','Pentheon a batería','Sin mangueras','Combi-Tool','LED integrado','Distribuidor autorizado MX'].map(b => (
+              <span class="badge badge-dark text-[9px]">{b}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {holmatroProducts.map((p) => (
+          <ProductCard product={p} />
+        ))}
+      </div>
+
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(74,117,153,0.15)">
+        <div class="flex-1">
+          <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+            ¿Quieres la comparativa técnica completa, la anatomía de la Pentheon y el FAQ de clasificación EN 13204?
+            Accede al catálogo dedicado de la marca.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+          <a href="/productos/herramientas-rescate/holmatro" class="btn btn-primary btn-lg">
+            Catálogo Holmatro completo →
+          </a>
+          <a href={whatsappUrl('Hola, quiero cotizar herramientas de rescate Holmatro Pentheon NFPA 1936.')} target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
+            Cotizar por WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hurst Jaws of Life -->
+  <section class="section" style="background:#040A12" aria-labelledby="hurst-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Hurst · Inventor del Jaws of Life® · Desde 1972</span>
+          <h2 id="hurst-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            Hurst Jaws of Life®<br/>
+            <span style="color:#F75000">eDRAULIC NFPA 1936.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
+            Hurst inventó el Jaws of Life® en 1972 y define el rescate vehicular desde entonces.
+            Su línea eDRAULIC es autocontenida a batería — sin mangueras ni bomba — y es la herramienta
+            de excarcelación más reconocida del mundo, presente en miles de cuerpos de bomberos.
+            La marca que los bomberos más conocen y en la que más confían.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {['NFPA 1936','EN 13204','eDRAULIC batería','Jaws of Life®','Sin mangueras','Desde 1972','Distribuidor autorizado MX'].map(b => (
+              <span class="badge badge-dark text-[9px]">{b}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {hurstProducts.map((p) => (
+          <ProductCard product={p} />
+        ))}
+      </div>
+
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(74,117,153,0.15)">
+        <div class="flex-1">
+          <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+            ¿Tu brigada conoce el Jaws of Life® y quiere la tecnología a batería más moderna?
+            El eDRAULIC es la evolución sin mangueras de la herramienta más famosa del rescate.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+          <a href="/productos/herramientas-rescate/hurst" class="btn btn-primary btn-lg">
+            Catálogo Hurst completo →
+          </a>
+          <a href={whatsappUrl('Hola, quiero cotizar herramientas de rescate Hurst eDRAULIC Jaws of Life NFPA 1936.')} target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
+            Cotizar por WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Weber Rescue -->
+  <section class="section" style="background:#070E1A" aria-labelledby="weber-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Weber Rescue · Ingeniería alemana · E-FORCE</span>
+          <h2 id="weber-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            Weber Rescue E-FORCE<br/>
+            <span style="color:#F75000">certificada NFPA 1936.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
+            Weber Rescue —del grupo Weber-Hydraulik, ingeniería alemana— es la referencia en
+            relación peso-potencia: equipos compactos y ligeros sin sacrificar fuerza de corte.
+            La línea E-FORCE a batería destaca por su maniobrabilidad en habitáculos reducidos
+            y la ergonomía para operaciones prolongadas.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {['NFPA 1936','EN 13204','E-FORCE batería','Ingeniería alemana','Relación peso-potencia','Distribuidor autorizado MX'].map(b => (
+              <span class="badge badge-dark text-[9px]">{b}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {weberProducts.map((p) => (
+          <ProductCard product={p} />
+        ))}
+      </div>
+
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(74,117,153,0.15)">
+        <div class="flex-1">
+          <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+            ¿Buscas la herramienta más ligera de su clase con máxima fuerza de corte?
+            Weber E-FORCE es la opción alemana con mejor relación peso-potencia del mercado.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+          <a href="/productos/herramientas-rescate/weber-rescue" class="btn btn-primary btn-lg">
+            Catálogo Weber Rescue completo →
+          </a>
+          <a href={whatsappUrl('Hola, quiero cotizar herramientas de rescate Weber Rescue E-FORCE NFPA 1936.')} target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
+            Cotizar por WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galería -->
+  <section class="section-tight" style="background:#040A12" aria-label="Herramientas de rescate en operación">
+    <div class="container-site">
+      <div class="flex items-center gap-4 mb-6">
+        <span class="w-8 h-px" style="background:#F75000"></span>
+        <span class="text-xs font-display font-semibold uppercase tracking-[0.18em]" style="color:#F75000">Rescate en la escena</span>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-2 lg:gap-3">
+        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
+          <img src="/images/productos/bombero-hacha-halligan-rescate.avif" alt="Bombero con hacha Halligan en operación de rescate — herramientas de entrada forzada certificadas" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+        </figure>
+        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
+          <img src="/images/productos/bombero-herramientas-entrada-forzada.avif" alt="Bombero con herramientas de entrada forzada — rescate vehicular y estructural certificado NFPA 1936" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+        </figure>
+        <figure class="m-0 overflow-hidden col-span-2 md:col-span-1" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
+          <img src="/images/categorias/herramientas-rescate.avif" alt="Separador hidráulico de rescate vehicular certificado NFPA 1936 — Holmatro Hurst Weber" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tabla comparativa -->
+  <section class="section" style="background:#040A12" aria-labelledby="comp-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-10">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Comparativa técnica</span>
+          <h2 id="comp-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            Cizalla · Separador · <span style="color:#F75000">Combinada · Ariete.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+            Cada herramienta tiene una función diferente en la escena. Esta tabla resume
+            lo que más pregunta un jefe de compras antes de especificar en licitación.
+          </p>
+        </div>
+      </div>
+
+      <div class="overflow-x-auto" style="border:1px solid rgba(74,117,153,0.18)">
+        <table class="w-full border-collapse" style="min-width:700px">
+          <thead>
+            <tr style="background:#0C1825">
+              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:#4A7599;border-bottom:1px solid rgba(74,117,153,0.18)">Característica</th>
+              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:#F75000;border-bottom:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">Cizalla</th>
+              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:#F5A623;border-bottom:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">Separador</th>
+              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:#34D399;border-bottom:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">Combinada</th>
+              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:#60A5FA;border-bottom:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">Ariete</th>
+            </tr>
+          </thead>
+          <tbody>
+            {comparativa.map((row, i) => (
+              <tr style={`background:${i % 2 === 0 ? '#080F1A' : '#0A1320'}`}>
+                <td class="p-4 text-sm font-display font-semibold" style="color:#CBD5E1;border-bottom:1px solid rgba(74,117,153,0.12)">{row[0]}</td>
+                <td class="p-4 text-xs" style="color:#94A3B8;border-bottom:1px solid rgba(74,117,153,0.12);border-left:1px solid rgba(74,117,153,0.12)">{row[1]}</td>
+                <td class="p-4 text-xs" style="color:#94A3B8;border-bottom:1px solid rgba(74,117,153,0.12);border-left:1px solid rgba(74,117,153,0.12)">{row[2]}</td>
+                <td class="p-4 text-xs" style="color:#94A3B8;border-bottom:1px solid rgba(74,117,153,0.12);border-left:1px solid rgba(74,117,153,0.12)">{row[3]}</td>
+                <td class="p-4 text-xs" style="color:#94A3B8;border-bottom:1px solid rgba(74,117,153,0.12);border-left:1px solid rgba(74,117,153,0.12)">{row[4]}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs mt-4" style="color:#4A7599">* Valores de fuerza y carrera son aproximados por modelo. Clasificación de corte EN 13204 varía por modelo — solicita la ficha técnica por partida.</p>
+    </div>
+  </section>
+
+  <!-- Guía + Blog -->
+  <section class="section" style="background:#070E1A" aria-labelledby="guia-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Cómo elegir</span>
+          <h2 id="guia-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+            Del vehículo<br/>
+            <span style="color:#F75000">a la herramienta.</span>
+          </h2>
+          <ol class="flex flex-col gap-4 list-none m-0 p-0">
+            {guia.map((s) => (
+              <li class="flex items-start gap-4">
+                <span class="font-display font-bold text-xl shrink-0" style="color:#F75000">{s.n}</span>
+                <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{s.t}</p>
+              </li>
+            ))}
+          </ol>
+          <div class="mt-8">
+            <a href={whatsappUrl('Hola, necesito asesoría para elegir herramientas de rescate para mi cuerpo de bomberos.')} target="_blank" rel="noopener" class="btn btn-primary">Pedir asesoría técnica</a>
+          </div>
+        </div>
+
+        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:#4A7599">
+            Aprende más en el blog
+          </h2>
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+            {articulos.map((l) => (
+              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+                <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
+                  <span class="flex flex-col gap-0.5">
+                    <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
+                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
+                  </span>
+                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#4A7599" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="background:#040A12" aria-labelledby="faq-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes · Rescate</span>
+          <h2 id="faq-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+            Lo que más nos<br/>
+            <span style="color:#F75000">preguntan.</span>
+          </h2>
+          <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
+            ¿Tu duda no aparece? Escríbenos por WhatsApp con el detalle de tu brigada y los vehículos
+            de tu zona — te asesoramos sobre la herramienta y la marca correctas.
+          </p>
+          <a href={whatsappUrl('Hola, tengo una pregunta técnica sobre herramientas de rescate NFPA 1936.')} target="_blank" rel="noopener" class="btn btn-primary">
+            Consulta técnica gratis
+          </a>
+        </div>
+        <div class="flex flex-col">
+          {faqs.map((f, i) => (
+            <details class="faq-item group" style={`border-top:1px solid rgba(74,117,153,0.18);${i === faqs.length - 1 ? 'border-bottom:1px solid rgba(74,117,153,0.18);' : ''}`}>
+              <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer">
+                <span class="font-display font-semibold text-sm" style="color:#FFFFFF">{f.q}</span>
+                <span class="faq-icon font-display font-bold text-xl shrink-0" style="color:#FF6B26">+</span>
+              </summary>
+              <p class="text-sm leading-relaxed pb-5 m-0" style="color:#94A3B8">{f.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Band -->
+  <section style="background:#F75000;padding-block:4rem" aria-label="Cotizar herramientas de rescate">
+    <div class="container-site">
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div>
+          <p class="text-xs font-display font-bold uppercase tracking-[0.2em] mb-3" style="color:rgba(255,255,255,0.65)">Holmatro · Hurst Jaws of Life® · Weber Rescue · Demo en sitio</p>
+          <h2 class="font-display font-bold uppercase" style="color:#FFFFFF;font-size:clamp(1.75rem,4vw,3rem);line-height:1.05">
+            Certificado NFPA 1936.<br/>Despliega en segundos.
+          </h2>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+          <a
+            href={whatsappUrl('Hola, quiero cotizar herramientas de rescate vehicular NFPA 1936. ¿Tienen demo disponible?')}
+            target="_blank" rel="noopener"
+            class="btn btn-lg"
+            style="background:#FFFFFF;color:#F75000;border-color:#FFFFFF;font-weight:700"
+          >
+            Cotizar por WhatsApp →
+          </a>
+          <a href="/cotizacion" class="btn btn-lg" style="background:transparent;color:#FFFFFF;border:2px solid rgba(255,255,255,0.5)">
+            Cotización formal
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cross-links + otras categorías -->
+  <section class="section" style="background:#070E1A" aria-labelledby="cross-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Equipa el vehículo completo</span>
+          <h2 id="cross-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+            La herramienta es<br/>
+            <span style="color:#F75000">solo el inicio.</span>
+          </h2>
+          <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
+            El equipo de excarcelación necesita bomberos protegidos: traje, casco, SCBA y guantes
+            certificados. Armamos el EPP completo y las herramientas con un solo proveedor
+            y un expediente auditable.
+          </p>
+          <a href={whatsappUrl('Hola, quiero equipar el conjunto completo de EPP y herramientas para mi brigada de rescate.')} target="_blank" rel="noopener" class="btn btn-primary">Cotizar conjunto completo</a>
+        </div>
+        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:#4A7599">También te puede servir</h2>
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+            {[
+              { label: 'Trajes para Bomberos',  desc: 'Globe, Lion, Honeywell, Fire-Dex — NFPA 1970',  href: '/productos/trajes-bombero' },
+              { label: 'Cascos NFPA',           desc: 'MSA Gallet, Bullard y Cairns — NFPA 1970',      href: '/productos/cascos-nfpa' },
+              { label: 'Equipos SCBA',          desc: 'MSA G1, Dräger PSS, 3M Scott — NFPA 1970',     href: '/productos/equipos-scba' },
+              { label: 'Cámaras Térmicas',      desc: 'FLIR, MSA, Bullard — NFPA 1801',               href: '/productos/camaras-termicas' },
+              { label: 'Soporte para licitaciones', desc: 'Fichas técnicas y manifiestos por partida', href: '/licitaciones' },
+            ].map((l) => (
+              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+                <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
+                  <span class="flex flex-col gap-0.5">
+                    <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
+                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
+                  </span>
+                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#4A7599" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <!-- Otras categorías -->
+      <div class="mt-14 pt-10" style="border-top:1px solid rgba(74,117,153,0.15)">
+        <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-6" style="color:#4A7599">Otras categorías del catálogo</h2>
+        <div class="flex flex-wrap gap-3">
+          {otrasCategorias.map((c) => (
+            <a href={`/productos/${c.slug}`} class="btn btn-sm btn-dark">{c.label}</a>
+          ))}
+          <a href="/productos" class="btn btn-sm btn-outline">Catálogo completo →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  details.faq-item summary { list-style: none; }
+  details.faq-item summary::-webkit-details-marker { display: none; }
+  details.faq-item[open] .faq-icon { transform: rotate(45deg); }
+</style>

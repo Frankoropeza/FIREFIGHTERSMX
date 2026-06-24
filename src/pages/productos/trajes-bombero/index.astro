@@ -15,9 +15,24 @@ const seoMeta = {
   canonicalURL,
 };
 
-/* Productos Globe — 5 modelos para la sección de cards */
+/* Productos Globe — 5 modelos */
 const globeProducts = featuredProducts.filter(
   (p) => p.category === 'Trajes Bombero' && p.brand === 'Globe Manufacturing' && p.specs
+);
+
+/* Productos Lion Apparel — 6 modelos */
+const lionProducts = featuredProducts.filter(
+  (p) => p.category === 'Trajes Bombero' && p.brand === 'Lion Apparel' && p.specs
+);
+
+/* Productos Honeywell Morning Pride — 6 modelos */
+const honeywellProducts = featuredProducts.filter(
+  (p) => p.category === 'Trajes Bombero' && p.brand === 'Honeywell Morning Pride' && p.specs
+);
+
+/* Productos Fire-Dex — 6 modelos */
+const firedexProducts = featuredProducts.filter(
+  (p) => p.category === 'Trajes Bombero' && p.brand === 'Fire-Dex' && p.specs
 );
 
 /* Producto real con ficha L4 (legado) */
@@ -157,6 +172,30 @@ const faqSchema = {
 };
 
 const otrasCategorias = categories.slice(0, 6);
+
+/* Trust Pillars */
+const razones = [
+  {
+    n: '01',
+    t: 'Cuatro marcas líderes mundiales',
+    d: 'Globe Manufacturing (MSA Safety), Lion Apparel, Honeywell Morning Pride y Fire-Dex — las cuatro marcas más licitadas en México. Distribuidor autorizado con un solo expediente para todo el EPP.',
+  },
+  {
+    n: '02',
+    t: 'Certificación verificable por número de serie',
+    d: 'Cada traje incluye etiqueta de trazabilidad con número de serie, lote y laboratorio acreditado. Documentación lista para auditorías NFPA 1850, licitaciones públicas y procesos de acreditación institucional.',
+  },
+  {
+    n: '03',
+    t: 'Tallas S–4XL con asesoría de ajuste',
+    d: 'Stock permanente en CDMX con entrega en 24–48 h. Para pedidos por volumen ofrecemos configuraciones a medida y asesoría de tallaje. El traje mal ajustado es tan peligroso como el traje sin certificar.',
+  },
+  {
+    n: '04',
+    t: 'Soporte completo para licitaciones',
+    d: 'Generamos el manifiesto de cumplimiento de norma por partida — NFPA 1970 o 1977 por edición — con ficha técnica y certificado de conformidad del fabricante, para CompraNet, IMSS, Pemex y gobiernos estatales.',
+  },
+];
 ---
 
 <BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema, faqSchema]}>
@@ -208,6 +247,21 @@ const otrasCategorias = categories.slice(0, 6);
 
   <!-- Accesos rápidos -->
   <QuickLinksBar />
+
+  <!-- Trust Pillars -->
+  <section class="section-tight" style="background:#070E1A" aria-label="Por qué distribuimos estas marcas">
+    <div class="container-site">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style="border:1px solid rgba(74,117,153,0.18)">
+        {razones.map((r, i) => (
+          <div class="flex flex-col gap-3 p-6" style={`background:#080F1A;${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.12)' : ''}`}>
+            <span class="font-display font-bold text-2xl" style="color:#F75000">{r.n}</span>
+            <h3 class="font-display font-bold text-sm uppercase tracking-wide" style="color:#FFFFFF">{r.t}</h3>
+            <p class="text-xs leading-relaxed m-0" style="color:#64748B">{r.d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
 
   <!-- Tipos de traje -->
   <section class="section" style="background:#040A12" aria-labelledby="tipos-title">
@@ -273,36 +327,179 @@ const otrasCategorias = categories.slice(0, 6);
         </div>
       </div>
 
-      {/* Grid de productos */}
+      {/* Grid de productos — 3 por fila */}
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        {globeProducts.slice(0, 3).map((p) => (
-          <ProductCard product={p} />
-        ))}
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-5">
-        {globeProducts.slice(3).map((p) => (
+        {globeProducts.map((p) => (
           <ProductCard product={p} />
         ))}
       </div>
 
-      {/* CTA de catálogo completo */}
+      {/* CTA — catálogo Globe + link L2 */}
       <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(74,117,153,0.15)">
         <div class="flex-1">
           <p class="text-sm leading-relaxed m-0" style="color:#64748B">
-            ¿Necesitas Lion, Honeywell Morning Pride, Fire-Dex o marcas nacionales como SKÖLD, Brigadier o FEMSA?
-            Distribuidores autorizados de 20+ marcas — cotizamos cualquier modelo sobre especificación técnica.
+            ¿Quieres ver la comparativa técnica completa, el FAQ de Globe o cotizar con ficha técnica para licitación?
+            Accede al catálogo dedicado de la marca.
           </p>
         </div>
-        <a
-          href={whatsappUrl('Hola, quiero ver el catálogo completo de trajes para bomberos.')}
-          target="_blank"
-          rel="noopener"
-          class="btn btn-primary btn-lg shrink-0"
-        >
-          Ver catálogo completo
-        </a>
+        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+          <a href="/productos/trajes-bombero/globe-manufacturing" class="btn btn-primary btn-lg">
+            Catálogo Globe completo →
+          </a>
+          <a
+            href={whatsappUrl('Hola, quiero cotizar trajes Globe Manufacturing NFPA 1971.')}
+            target="_blank" rel="noopener"
+            class="btn btn-ghost btn-lg"
+          >
+            Cotizar por WhatsApp
+          </a>
+        </div>
       </div>
 
+    </div>
+  </section>
+
+  <!-- Productos Lion Apparel — 6 cards -->
+  <section class="section" style="background:#040A12" aria-labelledby="lion-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Lion Apparel · 135 años de historia</span>
+          <h2 id="lion-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            Trajes Lion<br/>
+            <span style="color:#F75000">certificados NFPA.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
+            Lion Apparel — fundada en 1889 — es el segundo fabricante de trajes de bombero
+            más licitado en México. Fuerte en departamentos metropolitanos, corporativos
+            industriales y brigadas ARFF. Líneas estructurales, de proximidad y forestales NFPA 1977.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {['NFPA 1971','NFPA 1977','PBI Matrix','V-Force®','Distribuidor autorizado MX'].map(b => (
+              <span class="badge badge-dark text-[9px]">{b}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {lionProducts.map((p) => (
+          <ProductCard product={p} />
+        ))}
+      </div>
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(74,117,153,0.15)">
+        <div class="flex-1">
+          <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+            ¿Necesitas configuración personalizada de tallas o un modelo Lion específico para licitación?
+            Cotizamos cualquier modelo sobre especificación técnica con entrega verificada.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+          <a href="/productos/trajes-bombero/lion-apparel" class="btn btn-primary btn-lg">
+            Catálogo Lion completo →
+          </a>
+          <a href={whatsappUrl('Hola, quiero cotizar trajes Lion Apparel NFPA 1971.')} target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
+            Cotizar por WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Productos Honeywell Morning Pride — 6 cards -->
+  <section class="section" style="background:#070E1A" aria-labelledby="honeywell-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Honeywell Morning Pride · Pemex · Refinería</span>
+          <h2 id="honeywell-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            Trajes Honeywell<br/>
+            <span style="color:#F75000">certificados NFPA.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
+            Honeywell Morning Pride es la marca de referencia para operaciones de alto riesgo
+            en petroquímica, refinerías y brigadas HAZMAT. Fuerte presencia en Pemex, CFE
+            y aeropuertos internacionales en México. Líneas estructurales, proximity y CBRN.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {['NFPA 1971','NFPA 2112','PBI Gold','CarbonX®','BioClad® CBRN'].map(b => (
+              <span class="badge badge-dark text-[9px]">{b}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {honeywellProducts.map((p) => (
+          <ProductCard product={p} />
+        ))}
+      </div>
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(74,117,153,0.15)">
+        <div class="flex-1">
+          <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+            ¿Operaciones en refinería, planta petroquímica o brigada HAZMAT? Honeywell Morning Pride
+            tiene la línea correcta. Cotizamos con ficha técnica para concurso.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+          <a href="/productos/trajes-bombero/honeywell-morning-pride" class="btn btn-primary btn-lg">
+            Catálogo Honeywell completo →
+          </a>
+          <a href={whatsappUrl('Hola, quiero cotizar trajes Honeywell Morning Pride NFPA 1971.')} target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
+            Cotizar por WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Productos Fire-Dex — 6 cards -->
+  <section class="section" style="background:#040A12" aria-labelledby="firedex-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Fire-Dex · La marca que más crece en MX</span>
+          <h2 id="firedex-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            Trajes Fire-Dex<br/>
+            <span style="color:#F75000">certificados NFPA.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
+            Fire-Dex es la marca de mayor crecimiento en licitaciones tier-1 de México (2023-2025).
+            Pionera en shells de fibra sintética TECGEN® — más ligeros que Nomex con mejor THL.
+            Ideal para departamentos que buscan tecnología avanzada con precio competitivo.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {['NFPA 1971','TECGEN® 71','TECGEN® 51','PBI/TECGEN Hybrid','NFPA 2112'].map(b => (
+              <span class="badge badge-dark text-[9px]">{b}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {firedexProducts.map((p) => (
+          <ProductCard product={p} />
+        ))}
+      </div>
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(74,117,153,0.15)">
+        <div class="flex-1">
+          <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+            ¿Quieres el traje más ligero del mercado con certificación NFPA completa? Fire-Dex TECGEN
+            es la respuesta. Cotizamos con comparativo técnico vs. Nomex incluido.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+          <a href="/productos/trajes-bombero/fire-dex" class="btn btn-primary btn-lg">
+            Catálogo Fire-Dex completo →
+          </a>
+          <a href={whatsappUrl('Hola, quiero cotizar trajes Fire-Dex NFPA 1971.')} target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
+            Cotizar por WhatsApp
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -441,6 +638,33 @@ const otrasCategorias = categories.slice(0, 6);
               <p class="text-sm leading-relaxed pb-5 m-0" style="color:#94A3B8">{f.a}</p>
             </details>
           ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Band -->
+  <section style="background:#F75000;padding-block:4rem" aria-label="Cotizar trajes para bomberos">
+    <div class="container-site">
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div>
+          <p class="text-xs font-display font-bold uppercase tracking-[0.2em] mb-3" style="color:rgba(255,255,255,0.65)">Globe · Lion · Honeywell · Fire-Dex · Stock CDMX</p>
+          <h2 class="font-display font-bold uppercase" style="color:#FFFFFF;font-size:clamp(1.75rem,4vw,3rem);line-height:1.05">
+            Certificado NFPA 1970.<br/>Entrega en 48 h.
+          </h2>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+          <a
+            href={whatsappUrl('Hola, quiero cotizar trajes para bomberos NFPA 1970. ¿Tienen stock disponible?')}
+            target="_blank" rel="noopener"
+            class="btn btn-lg"
+            style="background:#FFFFFF;color:#F75000;border-color:#FFFFFF;font-weight:700"
+          >
+            Cotizar por WhatsApp →
+          </a>
+          <a href="/cotizacion" class="btn btn-lg" style="background:transparent;color:#FFFFFF;border:2px solid rgba(255,255,255,0.5)">
+            Cotización formal
+          </a>
         </div>
       </div>
     </div>

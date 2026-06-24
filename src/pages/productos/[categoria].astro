@@ -3,6 +3,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import { allCategories, type Category } from '@data/categories';
 import { featuredProducts } from '@data/products';
+import { brandPages } from '@data/brandPages';
 import { SITE, whatsappUrl } from '@data/site';
 
 export function getStaticPaths() {
@@ -24,6 +25,8 @@ const { cat } = Astro.props;
 const products = cat.productCategory
   ? featuredProducts.filter((p) => p.category === cat.productCategory)
   : [];
+/* Marcas con página L4 dedicada en esta categoría (sistema BrandPage) */
+const marcas = brandPages.filter((b) => b.categorySlug === cat.slug);
 
 const canonicalURL = `${SITE.url}/productos/${cat.slug}`;
 
@@ -89,6 +92,41 @@ const otherCategories = allCategories.filter((c) => c.slug !== cat.slug).slice(0
   </section>
   <!-- Accesos rápidos (interlinking) -->
   <QuickLinksBar />
+
+  <!-- Catálogo por marca (páginas L4 dedicadas) -->
+  {marcas.length > 0 && (
+    <section class="section" style="background:#070E1A" aria-labelledby="marcas-title">
+      <div class="container-site">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-10">
+          <div>
+            <span class="section-eyebrow mb-4 inline-flex">Marcas autorizadas</span>
+            <h2 id="marcas-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.05">
+              Catálogo por<br/>
+              <span style="color:#F75000">marca.</span>
+            </h2>
+          </div>
+          <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+            <p class="text-sm leading-relaxed" style="color:#94A3B8">
+              Cada marca tiene su catálogo dedicado con comparativa técnica, anatomía del modelo insignia, guía de
+              selección y FAQ. Distribuidor autorizado con stock en CDMX y ficha para licitación.
+            </p>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {marcas.map((b) => (
+            <a href={`/productos/${b.categorySlug}/${b.slug}`} class="group flex flex-col gap-3 p-7" style="background:#040A12;border:1px solid rgba(74,117,153,0.18)">
+              <h3 class="font-display font-bold text-xl group-hover:text-[#FF6B26]" style="color:#FFFFFF">{b.brandLabel}</h3>
+              <p class="text-xs leading-relaxed flex-1" style="color:#64748B">{b.crossDesc}</p>
+              <span class="inline-flex items-center gap-1.5 text-xs font-display font-semibold uppercase tracking-wider" style="color:#FF8F57">
+                Ver catálogo
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
 
 
   <!-- Líneas / modelos -->

@@ -15,6 +15,7 @@ import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import BlogCard from '@components/blog/BlogCard.astro';
 import { getCollection } from 'astro:content';
 import { SITE } from '@data/site';
+import { slugifyCategory } from '@utils/slug';
 import type { GetStaticPaths } from 'astro';
 
 export const getStaticPaths = (async () => {
@@ -34,16 +35,6 @@ export const getStaticPaths = (async () => {
     props: { category, posts, allCategories: Object.keys(categoryMap) },
   }));
 }) satisfies GetStaticPaths;
-
-// Convierte "Equipos EPP" → "equipos-epp"
-function slugifyCategory(cat: string): string {
-  return cat
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[̀-ͯ]/g, '')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-|-$/g, '');
-}
 
 const { category, posts, allCategories } = Astro.props;
 const { categoria } = Astro.params;

@@ -1,0 +1,676 @@
+---
+// /estaciones/[estado].astro — Detalle del directorio por estado
+// =====================================================================
+// Genera una URL propia para cada estado del directorio de estaciones:
+//   /estaciones/aguascalientes, /estaciones/jalisco, etc.
+//
+// Propósito:
+//   • Listar TODAS las estaciones del estado en cards profesionales
+//   • Captura SEO geo: "bomberos en [estado]", "estaciones de bomberos [estado]"
+//   • Schema FireStation (ItemList) + BreadcrumbList del estado
+//   • Homologado al patrón cobertura/[estado].astro y al index del directorio
+// =====================================================================
+import BaseLayout from '@layouts/BaseLayout.astro';
+import QuickLinksBar from '@components/common/QuickLinksBar.astro';
+import { estados, tipoConfig, confianzaConfig } from '@data/estaciones';
+import { SITE, whatsappUrl } from '@data/site';
+import type { GetStaticPaths } from 'astro';
+
+export const getStaticPaths = (() => {
+  return estados
+    .filter((estado) => estado.estaciones.length > 0)
+    .map((estado) => ({
+      params: { estado: estado.slug },
+      props: { estado },
+    }));
+}) satisfies GetStaticPaths;
+
+const { estado } = Astro.props;
+const canonicalURL = `${SITE.url}/estaciones/${estado.slug}`;
+
+/* ─── Derivados del estado ───────────────────────────────────────── */
+const estaciones      = estado.estaciones;
+const totalEst        = estaciones.length;
+const plural          = (n: number, s: string, p: string) => (n === 1 ? s : p);
+
+const municipios      = [...new Set(estaciones.map((e) => e.municipio))];
+const tiposUnicos     = [...new Set(estaciones.map((e) => e.tipo))];
+const serviciosUnicos = [...new Set(estaciones.flatMap((e) => e.servicios))];
+const certsUnicas     = [...new Set(estaciones.flatMap((e) => e.certificaciones ?? []))];
+
+/* ─── Puntos para el mapa (una marca por ciudad con coordenadas) ── */
+const puntosMapa = Object.values(
+  estaciones
+    .filter((e) => e.coordenadas)
+    .reduce((acc, e) => {
+      const k = e.ciudad;
+      if (!acc[k]) acc[k] = { ciudad: e.ciudad, lat: e.coordenadas!.lat, lng: e.coordenadas!.lng, n: 0 };
+      acc[k].n++;
+      return acc;
+    }, {} as Record<string, { ciudad: string; lat: number; lng: number; n: number }>)
+);
+
+const conteoPorTipo = tiposUnicos
+  .map((t) => ({ tipo: t, ...tipoConfig[t], count: estaciones.filter((e) => e.tipo === t).length }))
+  .sort((a, b) => b.count - a.count);
+
+const tiposLista = conteoPorTipo
+  .map((t) => t.label.toLowerCase())
+  .reduce((acc, cur, i, arr) => {
+    if (i === 0) return cur;
+    return i === arr.length - 1 ? `${acc} y ${cur}` : `${acc}, ${cur}`;
+  }, '');
+
+/* ─── Otros estados de la misma región (cross-link) ──────────────── */
+let otrosEstados = estados
+  .filter((e) => e.region === estado.region && e.slug !== estado.slug && e.estaciones.length > 0);
+if (otrosEstados.length < 3) {
+  const relleno = estados
+    .filter((e) => e.slug !== estado.slug && e.region !== estado.region && e.estaciones.length > 0)
+    .sort((a, b) => b.estaciones.length - a.estaciones.length);
+  otrosEstados = [...otrosEstados, ...relleno].slice(0, 4);
+} else {
+  otrosEstados = otrosEstados.slice(0, 4);
+}
+
+/* ─── SEO ────────────────────────────────────────────────────────── */
+const seoTitle = `Estaciones de Bomberos en ${estado.nombre}`;
+const seoDescription =
+  `Directorio de ${totalEst} ${plural(totalEst, 'estación', 'estaciones')} de bomberos en ${estado.nombre}: ubicación por municipio, teléfonos de emergencia 068, tipos y servicios. Equipo NFPA con envío al estado.`
+    .slice(0, 160);
+
+/* ─── JSON-LD ────────────────────────────────────────────────────── */
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio',                  item: `${SITE.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Directorio de Estaciones', item: `${SITE.url}/estaciones` },
+    { '@type': 'ListItem', position: 3, name: estado.nombre,              item: canonicalURL },
+  ],
+};
+
+const itemListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  '@id': `${canonicalURL}#estaciones`,
+  name: `Estaciones de bomberos en ${estado.nombre}`,
+  numberOfItems: totalEst,
+  itemListElement: estaciones.map((e, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    item: {
+      '@type': 'FireStation',
+      name: e.nombre,
+      ...(e.telefono || e.telefonoEmergencias
+        ? { telephone: e.telefono ?? e.telefonoEmergencias }
+        : {}),
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: e.ciudad,
+        addressRegion: estado.nombre,
+        addressCountry: 'MX',
+        ...(e.direccion ? { streetAddress: e.direccion } : {}),
+      },
+      areaServed: { '@type': 'AdministrativeArea', name: e.municipio },
+    },
+  })),
+};
+
+const schemas = [breadcrumbSchema, itemListSchema];
+
+/* ─── Mensaje WhatsApp contextual ────────────────────────────────── */
+const waMsg = `Hola, necesito equipo certificado NFPA para un cuerpo de bomberos en ${estado.nombre}. ¿Disponibilidad y tiempo de entrega?`;
+
+/* ─── Iconos ─────────────────────────────────────────────────────── */
+const pinIcon   = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`;
+const phoneIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>`;
+const checkIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></svg>`;
+---
+
+<BaseLayout
+  title={seoTitle}
+  description={seoDescription}
+  canonicalURL={canonicalURL}
+  schema={schemas}
+>
+
+  {/* ─── Breadcrumb ─── */}
+  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+    <div class="container-site">
+      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:#4A7599">
+        <li><a href="/" class="hover:text-[#FF6B26] transition-colors">Inicio</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="/estaciones" class="hover:text-[#FF6B26] transition-colors">Directorio de Estaciones</a></li>
+        <li aria-hidden="true">/</li>
+        <li><span style="color:#94A3B8" aria-current="page">{estado.nombre}</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  {/* ─── Hero ─── */}
+  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem" aria-labelledby="estado-heading">
+
+    {/* Glow decorativo */}
+    <div class="absolute top-0 right-0 w-2/3 h-full pointer-events-none" aria-hidden="true"
+      style="background:radial-gradient(ellipse 70% 60% at 85% 40%, rgba(247,80,0,0.07) 0%, transparent 65%)"></div>
+    {/* Grid pattern decorativo */}
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true"
+      style="background-image:linear-gradient(rgba(74,117,153,0.04) 1px, transparent 1px),linear-gradient(90deg,rgba(74,117,153,0.04) 1px,transparent 1px);background-size:40px 40px;mask-image:radial-gradient(ellipse 80% 80% at 80% 30%, black, transparent)"></div>
+
+    <div class="container-site relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+        {/* Col izquierda */}
+        <div>
+          <span class="section-eyebrow mb-5 inline-flex">Directorio · {estado.abreviatura} · {estado.region}</span>
+          <h1 id="estado-heading" class="font-display font-bold uppercase mb-6"
+            style="color:#FFFFFF;font-size:clamp(2.2rem,5vw,4rem);line-height:0.95">
+            Estaciones de<br/>
+            <span style="color:#F75000">Bomberos</span><br/>
+            en {estado.nombre}
+          </h1>
+          <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">
+            El directorio de FIREFIGHTERS MX reúne {totalEst} {plural(totalEst, 'estación', 'estaciones')} de bomberos
+            en {estado.nombre}{tiposLista ? `, entre cuerpos ${tiposLista}` : ''}. Consulta la ubicación por
+            municipio, los teléfonos de emergencia y los servicios de cada unidad.
+          </p>
+          <p class="text-sm leading-[1.9] mb-8" style="color:#94A3B8">
+            Como distribuidor de equipo certificado <strong style="color:#CBD5E1">NFPA y NOM</strong>, equipamos a los
+            cuerpos de bomberos de {estado.nombre} con trajes estructurales, SCBA, herramientas de rescate y sistemas
+            contra incendio, con envío a todo el estado.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href={whatsappUrl(waMsg)} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+              Cotizar por WhatsApp
+            </a>
+            <a href="#estaciones" class="btn btn-ghost btn-lg">Ver estaciones →</a>
+          </div>
+        </div>
+
+        {/* Col derecha — stats */}
+        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
+          <div class="grid grid-cols-2 gap-px" style="background:rgba(74,117,153,0.15);border:1px solid rgba(74,117,153,0.18)">
+            {[
+              { n: totalEst.toString(),          label: plural(totalEst, 'Estación listada', 'Estaciones listadas'), sub: 'en el estado' },
+              { n: municipios.length.toString(),  label: plural(municipios.length, 'Municipio', 'Municipios'),       sub: 'con cobertura' },
+              { n: tiposUnicos.length.toString(), label: plural(tiposUnicos.length, 'Tipo de unidad', 'Tipos de unidad'), sub: 'jurisdicciones' },
+              { n: '068',                         label: 'Emergencias',                                              sub: 'número nacional' },
+            ].map((s) => (
+              <div class="p-6" style="background:#0C1825">
+                <div class="font-display font-bold mb-1"
+                  style={`color:#F75000;font-size:${s.n.length > 3 ? '2rem' : '2.75rem'};line-height:1`}>
+                  {s.n}
+                </div>
+                <div class="font-display font-bold text-xs uppercase tracking-wider mb-0.5" style="color:#FFFFFF">{s.label}</div>
+                <div class="text-[10px] uppercase tracking-widest" style="color:#4A7599">{s.sub}</div>
+              </div>
+            ))}
+          </div>
+
+          <div class="mt-5 flex flex-wrap gap-2">
+            {conteoPorTipo.map((t) => (
+              <span class="badge font-display text-[10px]"
+                style={`color:${t.color};background:${t.bgColor};border:1px solid ${t.color}40`}>
+                {t.label} · {t.count}
+              </span>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    {/* Línea de acento inferior */}
+    <div class="absolute bottom-0 left-0 right-0 h-px" aria-hidden="true"
+      style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)"></div>
+  </section>
+
+  {/* ─── QuickLinksBar ─── */}
+  <QuickLinksBar />
+
+  {/* ─── Mapa del estado ─── */}
+  {puntosMapa.length > 0 && (
+    <section class="section-tight" style="background:#040A12" aria-label="Mapa del estado">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+      <div class="container-site">
+        <span class="section-eyebrow mb-4 inline-flex">Mapa</span>
+        <h2 class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.05">
+          Ubicación de las<br/><span style="color:#F75000">corporaciones.</span>
+        </h2>
+        <div id="estado-map" data-puntos={JSON.stringify(puntosMapa)}
+          style="height:440px;border:1px solid rgba(74,117,153,0.25);background:#0C1825"
+          role="img" aria-label={`Mapa de corporaciones de bomberos en ${estado.nombre}`}></div>
+        <p class="text-[11px] mt-2" style="color:#4A7599">Ubicaciones aproximadas a nivel localidad, con fines de referencia.</p>
+      </div>
+    </section>
+  )}
+
+  {/* ─── Todas las estaciones en cards ─── */}
+  <section id="estaciones" class="section" style="background:#070E1A" aria-labelledby="estaciones-heading">
+    <div class="container-site">
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Directorio · {estado.nombre}</span>
+          <h2 id="estaciones-heading" class="font-display font-bold"
+            style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            {totalEst} {plural(totalEst, 'estación', 'estaciones')}<br/>
+            <span style="color:#F75000">de bomberos.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+            Cada tarjeta muestra el tipo de jurisdicción, la ubicación por ciudad y municipio, los servicios
+            operativos, las certificaciones aplicables y los teléfonos de contacto. La información proviene de
+            datos públicos de los cuerpos de bomberos y se actualiza continuamente.
+          </p>
+        </div>
+      </div>
+
+      {/* Toolbar: buscador + filtro por tipo */}
+      <div class="flex flex-col md:flex-row md:items-center gap-3 mb-6">
+        <div class="relative flex-1">
+          <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none" style="color:#4A7599" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input id="est-search" type="search" placeholder="Buscar por nombre, ciudad o municipio…" aria-label="Buscar estación"
+            class="w-full pl-10 pr-4 py-2.5 text-sm font-display" style="background:#0C1825;border:1px solid rgba(74,117,153,0.3);color:#FFFFFF;outline:none" />
+        </div>
+        <div class="flex flex-wrap gap-1.5" role="group" aria-label="Filtrar por tipo">
+          <button type="button" class="est-filter font-display text-[10px] uppercase tracking-wider px-3 py-1.5" data-tipo="todos"
+            style="color:#FFFFFF;background:#F75000;border:1px solid #F75000">Todos</button>
+          {tiposUnicos.map((t) => (
+            <button type="button" class="est-filter font-display text-[10px] uppercase tracking-wider px-3 py-1.5" data-tipo={t}
+              style={`color:${tipoConfig[t].color};background:transparent;border:1px solid ${tipoConfig[t].color}40`}>{tipoConfig[t].label}</button>
+          ))}
+        </div>
+      </div>
+
+      <div id="estaciones-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {estaciones.map((e) => {
+          const cfg = tipoConfig[e.tipo];
+          const conf = e.confianza ? confianzaConfig[e.confianza] : null;
+          return (
+            <article class="est-card flex flex-col gap-4 p-6"
+              data-nombre={e.nombre.toLowerCase()}
+              data-ciudad={`${e.ciudad} ${e.municipio}`.toLowerCase()}
+              data-tipo={e.tipo}
+              style={`background:#040A12;border:1px solid rgba(74,117,153,0.18);border-top:2px solid ${cfg.color}`}>
+
+              {/* Cabecera: tipo + fundación */}
+              <div class="flex items-start justify-between gap-3">
+                <span class="font-display font-bold text-[10px] uppercase tracking-wider px-2 py-1"
+                  style={`color:${cfg.color};background:${cfg.bgColor};border:1px solid ${cfg.color}40`}>
+                  {cfg.label}
+                </span>
+                <div class="flex flex-col items-end gap-1 shrink-0">
+                  {conf && (
+                    <span class="inline-flex items-center gap-1 font-display text-[9px] uppercase tracking-wider px-1.5 py-0.5"
+                      style={`color:${conf.color};background:${conf.bgColor};border:1px solid ${conf.color}40`}>
+                      <span class="w-2 h-2" set:html={checkIcon} aria-hidden="true"/>{conf.label}
+                    </span>
+                  )}
+                  {e.fundacion && (
+                    <span class="font-display text-[10px] uppercase tracking-wider" style="color:#4A7599">Desde {e.fundacion}</span>
+                  )}
+                </div>
+              </div>
+
+              {/* Nombre */}
+              <h3 class="font-display font-bold text-base leading-snug" style="color:#FFFFFF">{e.nombre}</h3>
+
+              {/* Ubicación */}
+              <div class="flex items-start gap-2">
+                <span class="w-4 h-4 shrink-0 mt-0.5" style="color:#FF6B26" set:html={pinIcon} aria-hidden="true"/>
+                <span class="text-xs leading-relaxed" style="color:#94A3B8">
+                  {e.ciudad}{e.municipio !== e.ciudad ? <span style="color:#64748B"> · Mpio. {e.municipio}</span> : null}
+                  {e.direccion && <span class="block mt-0.5" style="color:#64748B">{e.direccion}</span>}
+                </span>
+              </div>
+
+              {/* Descripción (si existe) */}
+              {e.descripcion && (
+                <p class="text-xs leading-relaxed m-0" style="color:#64748B">{e.descripcion}</p>
+              )}
+
+              {/* Servicios */}
+              <div class="flex flex-wrap gap-1.5">
+                {e.servicios.map((s) => (
+                  <span class="font-display text-[9px] uppercase tracking-wider px-2 py-0.5"
+                    style="color:#4A7599;background:rgba(74,117,153,0.12);border:1px solid rgba(74,117,153,0.2)">
+                    {s}
+                  </span>
+                ))}
+              </div>
+
+              {/* Certificaciones */}
+              {e.certificaciones && e.certificaciones.length > 0 && (
+                <div class="flex flex-wrap gap-1.5">
+                  {e.certificaciones.map((c) => (
+                    <span class="inline-flex items-center gap-1 font-display text-[9px] uppercase tracking-wider px-2 py-0.5"
+                      style="color:#34D399;background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.25)">
+                      <span class="w-2.5 h-2.5" set:html={checkIcon} aria-hidden="true"/>{c}
+                    </span>
+                  ))}
+                </div>
+              )}
+
+              {/* Contacto */}
+              <div class="flex flex-wrap items-center gap-x-4 gap-y-1.5 pt-3"
+                style="border-top:1px solid rgba(74,117,153,0.15)">
+                {e.telefonoEmergencias && (
+                  <span class="inline-flex items-center gap-1.5">
+                    <span class="w-3.5 h-3.5 shrink-0" style="color:#F75000" set:html={phoneIcon} aria-hidden="true"/>
+                    <span class="font-display font-bold text-sm" style="color:#F75000">Emergencias {e.telefonoEmergencias}</span>
+                  </span>
+                )}
+                {e.telefono && (
+                  <span class="text-xs" style="color:#4A7599">{e.telefono}</span>
+                )}
+              </div>
+
+              {/* Ver ficha L3 */}
+              <a href={`/estaciones/${estado.slug}/${e.slug}`}
+                class="inline-flex items-center gap-1.5 mt-auto pt-1 font-display font-semibold text-xs uppercase tracking-wider"
+                style="color:#FF8F57" aria-label={`Ver ficha de ${e.nombre}`}>
+                Ver ficha completa
+                <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="#FF8F57" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </a>
+
+            </article>
+          );
+        })}
+      </div>
+
+      <div id="est-no-results" class="hidden py-16 text-center">
+        <p class="font-display font-bold text-lg mb-2" style="color:#4A7599">Sin resultados</p>
+        <p class="text-sm" style="color:#64748B">Ajusta el buscador o el filtro de tipo.</p>
+      </div>
+
+    </div>
+  </section>
+
+  {/* ─── Servicios y especialidades en el estado ─── */}
+  <section class="section" style="background:#040A12" aria-labelledby="servicios-heading">
+    <div class="container-site">
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-10">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Capacidades</span>
+          <h2 id="servicios-heading" class="font-display font-bold"
+            style="color:#FFFFFF;font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.05">
+            Servicios operativos<br/>
+            <span style="color:#F75000">en {estado.nombre}.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+            Conjunto de servicios y especialidades que cubren las {plural(totalEst, 'estación', 'estaciones')} listadas
+            en el estado, desde atención a incendios estructurales hasta rescate especializado y materiales peligrosos.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" style="border:1px solid rgba(74,117,153,0.18)">
+        {serviciosUnicos.map((s, i) => (
+          <div class="flex items-start gap-4 p-5"
+            style={`background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.12);${(i % 3 !== 2) ? 'border-right:1px solid rgba(74,117,153,0.12);' : ''}`}>
+            <span class="shrink-0 font-display font-bold text-xs" style="color:#F75000;min-width:1.5rem" aria-hidden="true">
+              {String(i + 1).padStart(2, '0')}
+            </span>
+            <span class="text-sm font-semibold" style="color:#CBD5E1">{s}</span>
+          </div>
+        ))}
+      </div>
+
+      {certsUnicas.length > 0 && (
+        <div class="mt-6 flex flex-wrap items-center gap-2">
+          <span class="font-display font-bold text-[10px] uppercase tracking-widest mr-1" style="color:#4A7599">
+            Certificaciones presentes:
+          </span>
+          {certsUnicas.map((c) => (
+            <span class="badge badge-fire font-display text-[10px]">{c}</span>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+
+  {/* ─── Emergencias y marco normativo ─── */}
+  <section class="section" style="background:#070E1A" aria-labelledby="normas-heading">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Marco normativo</span>
+          <h2 id="normas-heading" class="font-display font-bold mb-6"
+            style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.75rem);line-height:1.05">
+            Normas que rigen a los<br/>
+            <span style="color:#F75000">bomberos en {estado.nombre}.</span>
+          </h2>
+          <p class="text-sm leading-[1.9] mb-6" style="color:#94A3B8">
+            Los cuerpos de bomberos de {estado.nombre} operan bajo normas nacionales (NOM) e internacionales (NFPA).
+            El equipamiento debe cumplir estas certificaciones para garantizar la seguridad del personal y la
+            eficiencia operativa en cada intervención.
+          </p>
+          <div class="flex flex-col gap-3">
+            {[
+              { norm: 'NFPA 1001',    desc: 'Competencias profesionales para bomberos estructurales Nivel I y II' },
+              { norm: 'NFPA 1002',    desc: 'Competencias para conductores-operadores de vehículos de bomberos' },
+              { norm: 'NFPA 472',     desc: 'Respuesta a incidentes con materiales peligrosos (HAZMAT)' },
+              { norm: 'NOM-002-STPS', desc: 'Condiciones de seguridad contra incendio — aplica a brigadas industriales' },
+            ].map(({ norm, desc }) => (
+              <div class="flex items-start gap-4 py-3" style="border-bottom:1px solid rgba(74,117,153,0.12)">
+                <span class="badge badge-fire shrink-0 font-display text-[10px]">{norm}</span>
+                <p class="text-xs leading-relaxed m-0" style="color:#94A3B8">{desc}</p>
+              </div>
+            ))}
+          </div>
+          <div class="mt-6">
+            <a href="/certificaciones" class="btn btn-outline btn-sm">Ver todas las normas →</a>
+          </div>
+        </div>
+
+        {/* Tarjeta de emergencias */}
+        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+          <div class="flex flex-col gap-4 p-7" style="background:#040A12;border:1px solid rgba(247,80,0,0.25);border-top:2px solid #F75000">
+            <span class="w-7 h-7" style="color:#F75000" set:html={phoneIcon} aria-hidden="true"/>
+            <h3 class="font-display font-bold text-lg leading-snug" style="color:#FFFFFF">
+              Teléfono de emergencias en {estado.nombre}
+            </h3>
+            <div class="flex items-baseline gap-3">
+              <span class="font-display font-bold" style="color:#F75000;font-size:3rem;line-height:1">068</span>
+              <span class="text-xs uppercase tracking-widest" style="color:#4A7599">número nacional de bomberos</span>
+            </div>
+            <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">
+              El 068 es el número nacional para bomberos en México. En varias ciudades se ha unificado al
+              <strong style="color:#CBD5E1"> 911</strong>. Verifica siempre el número local de tu municipio antes
+              de una emergencia.
+            </p>
+            <div class="grid grid-cols-2 gap-px mt-2" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
+              {[
+                { n: totalEst.toString(),         l: plural(totalEst, 'Estación', 'Estaciones') },
+                { n: municipios.length.toString(), l: plural(municipios.length, 'Municipio', 'Municipios') },
+              ].map((s) => (
+                <div class="p-4" style="background:#070E1A">
+                  <div class="font-display font-bold text-2xl" style="color:#F75000;line-height:1">{s.n}</div>
+                  <div class="text-[10px] uppercase tracking-widest mt-1" style="color:#4A7599">{s.l}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  {/* ─── Otros estados (cross-link) ─── */}
+  {otrosEstados.length > 0 && (
+    <section class="section" style="background:#040A12" aria-labelledby="otros-heading">
+      <div class="container-site">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
+          <div>
+            <span class="section-eyebrow mb-4 inline-flex">Sigue explorando</span>
+            <h2 id="otros-heading" class="font-display font-bold"
+              style="color:#FFFFFF;font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.05">
+              Otros estados<br/>
+              <span style="color:#F75000">del directorio.</span>
+            </h2>
+          </div>
+          <a href="/estaciones" class="btn btn-ghost">Ver los 32 estados →</a>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {otrosEstados.map((o) => {
+            const tipos = [...new Set(o.estaciones.map((e) => e.tipo))];
+            return (
+              <a href={`/estaciones/${o.slug}`}
+                class="estado-card group flex flex-col gap-4 p-5"
+                style="background:#070E1A;border:1px solid rgba(74,117,153,0.18)"
+                aria-label={`${o.nombre} — ${o.estaciones.length} estaciones`}>
+                <div class="flex items-start justify-between gap-3">
+                  <div>
+                    <span class="font-display font-bold text-[10px] uppercase tracking-[0.2em] mb-1 block" style="color:#4A7599">
+                      {o.abreviatura} · {o.region}
+                    </span>
+                    <h3 class="font-display font-bold text-base leading-tight group-hover:text-[#FF6B26]" style="color:#FFFFFF">
+                      {o.nombre}
+                    </h3>
+                  </div>
+                  <span class="font-display font-bold text-2xl shrink-0" style="color:#F75000">{o.estaciones.length}</span>
+                </div>
+                <div class="flex flex-wrap gap-1.5">
+                  {tipos.map((t) => (
+                    <span class="font-display text-[9px] uppercase tracking-wider px-2 py-0.5"
+                      style={`color:${tipoConfig[t].color};background:${tipoConfig[t].bgColor};border:1px solid ${tipoConfig[t].color}30`}>
+                      {tipoConfig[t].label}
+                    </span>
+                  ))}
+                </div>
+                <div class="flex items-center gap-1.5 mt-auto">
+                  <span class="font-display font-semibold text-xs uppercase tracking-wider" style="color:#FF8F57">Ver estaciones</span>
+                  <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="#FF8F57" stroke-width="2.5" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
+                  </svg>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {/* ─── CTA de cierre ─── */}
+  <section class="section-tight" style="background:#070E1A;border-top:1px solid rgba(74,117,153,0.15)" aria-label="Siguiente paso">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">¿Equipas a un cuerpo de bomberos?</span>
+          <h2 class="font-display font-bold mb-4"
+            style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.1">
+            Equipo NFPA para<br/>
+            <span style="color:#F75000">bomberos en {estado.nombre}.</span>
+          </h2>
+          <p class="text-sm leading-relaxed mb-6" style="color:#94A3B8">
+            Trajes estructurales, cascos, SCBA, herramientas de rescate y sistemas contra incendio certificados,
+            con documentación lista para licitación y envío a {estado.nombre}. Cotización en menos de 24 horas.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href={whatsappUrl(waMsg)} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              Cotizar por WhatsApp
+            </a>
+            <a href="/cotizacion" class="btn btn-ghost">Formulario de cotización</a>
+          </div>
+        </div>
+        <div style="border-left:1px solid rgba(74,117,153,0.12);padding-left:2rem">
+          <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:#4A7599">
+            También te puede servir
+          </p>
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+            {[
+              { label: 'Equipo para cuerpos de bomberos', desc: 'Trajes NFPA, cascos, SCBA y herramientas', href: '/productos/trajes-bombero' },
+              { label: 'Bomberos municipales',            desc: 'Soluciones específicas para ayuntamientos', href: '/industrias/bomberos-municipales' },
+              { label: `Cobertura en ${estado.nombre}`,    desc: 'Tiempos de entrega y logística al estado',  href: `/cobertura/${estado.slug}` },
+              { label: 'Directorio nacional',             desc: 'Estaciones de bomberos en los 32 estados',  href: '/estaciones' },
+            ].map((l) => (
+              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+                <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
+                  <span class="flex flex-col gap-0.5">
+                    <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
+                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
+                  </span>
+                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#4A7599" stroke-width="2.5" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
+                  </svg>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* ── JS: filtro por tipo + buscador ── */}
+  <script>
+    const search = document.getElementById('est-search') as HTMLInputElement | null;
+    const grid = document.getElementById('estaciones-grid');
+    const noRes = document.getElementById('est-no-results');
+    const filters = Array.from(document.querySelectorAll<HTMLButtonElement>('.est-filter'));
+    let activeTipo = 'todos';
+
+    function apply() {
+      if (!grid) return;
+      const q = (search?.value ?? '').trim().toLowerCase();
+      let visible = 0;
+      grid.querySelectorAll<HTMLElement>('.est-card').forEach((card) => {
+        const nombre = card.dataset.nombre ?? '';
+        const ciudad = card.dataset.ciudad ?? '';
+        const tipo = card.dataset.tipo ?? '';
+        const okTipo = activeTipo === 'todos' || tipo === activeTipo;
+        const okText = !q || nombre.includes(q) || ciudad.includes(q);
+        const show = okTipo && okText;
+        card.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+      noRes?.classList.toggle('hidden', visible > 0);
+    }
+
+    search?.addEventListener('input', apply);
+    filters.forEach((btn) => btn.addEventListener('click', () => {
+      activeTipo = btn.dataset.tipo ?? 'todos';
+      filters.forEach((x) => {
+        const on = x === btn;
+        x.style.background = on ? '#F75000' : 'transparent';
+        x.style.color = on ? '#FFFFFF' : '#94A3B8';
+      });
+      apply();
+    }));
+  </script>
+
+  {/* ── Mapa Leaflet del estado ── */}
+  {puntosMapa.length > 0 && (
+    <Fragment>
+      <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+      <script is:inline>
+        window.addEventListener('load', function () {
+          var el = document.getElementById('estado-map');
+          if (!el || typeof L === 'undefined') return;
+          var puntos = JSON.parse(el.dataset.puntos || '[]');
+          if (!puntos.length) return;
+          var map = L.map(el, { scrollWheelZoom: false });
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '&copy; OpenStreetMap' }).addTo(map);
+          var bounds = [];
+          puntos.forEach(function (p) {
+            L.marker([p.lat, p.lng]).addTo(map).bindPopup('<strong>' + p.ciudad + '</strong><br>' + p.n + (p.n === 1 ? ' estación' : ' estaciones'));
+            bounds.push([p.lat, p.lng]);
+          });
+          if (bounds.length === 1) map.setView(bounds[0], 12);
+          else map.fitBounds(bounds, { padding: [40, 40], maxZoom: 12 });
+        });
+      </script>
+    </Fragment>
+  )}
+
+</BaseLayout>
