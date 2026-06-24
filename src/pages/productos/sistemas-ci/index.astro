@@ -309,6 +309,128 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'sistemas-ci').slice
   <!-- QuickLinksBar -->
   <QuickLinksBar />
 
+  <!-- Marcas / Brand L3 -->
+  <section class="section" style="background:#070E1A" aria-labelledby="marcas-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Fabricantes Tier 1 — materiales UL Listed y FM Approved</span>
+          <h2 id="marcas-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            Las marcas líderes<br/>
+            <span style="color:#34D399">del sistema completo.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(52,211,153,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+            Distribuimos rociadores Tyco y Viking (Johnson Controls), paneles de detección Honeywell
+            y Notifier, y sistemas de agente limpio Kidde Fenwal. Los tres fabricantes con mayor
+            presencia en pólizas industriales de aseguradoras internacionales en México.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+
+        {/* Tyco Viking */}
+        <article class="flex flex-col" style="border:1px solid rgba(74,117,153,0.18)">
+          <div class="flex flex-col gap-4 p-8" style="background:#080F1A;flex:1">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <span class="text-[10px] font-display font-bold uppercase tracking-widest block mb-1" style="color:#34D399">NFPA 13 · Rociadores</span>
+                <h3 class="font-display font-bold text-2xl" style="color:#FFFFFF">Tyco · Viking</h3>
+                <p class="text-xs mt-1" style="color:#4A7599">Johnson Controls International · NYSE:JCI</p>
+              </div>
+              <span class="badge badge-dark text-[9px] shrink-0">UL Listed · FM</span>
+            </div>
+            <p class="text-sm leading-relaxed" style="color:#94A3B8">
+              Los rociadores automáticos más distribuidos en instalaciones industriales y comerciales
+              de México. Portafolio completo: respuesta estándar (TY-B), rápida (TY-FRB), ESFR
+              para almacenes de alta estiba (TY315 K-25) y sistemas de diluvio/espuma AFFF.
+            </p>
+            <ul class="flex flex-col gap-2 list-none m-0 p-0">
+              {['TY-B Pendant — riesgo ligero y ordinario','TY-FRB Quick Response — rápida activación','TY315 ESFR K-25 — almacenes alta estiba','Diluvio y espuma AFFF — riesgos especiales'].map(item => (
+                <li class="flex items-center gap-2">
+                  <svg class="shrink-0" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  <span class="text-xs" style="color:#94A3B8">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div class="p-5" style="background:#0A1320;border-top:1px solid rgba(74,117,153,0.15)">
+            <a href="/productos/sistemas-ci/tyco-viking" class="btn btn-primary btn-sm w-full text-center">
+              Ver rociadores Tyco / Viking →
+            </a>
+          </div>
+        </article>
+
+        {/* Honeywell Notifier */}
+        <article class="flex flex-col" style="border:1px solid rgba(74,117,153,0.18)">
+          <div class="flex flex-col gap-4 p-8" style="background:#080F1A;flex:1">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <span class="text-[10px] font-display font-bold uppercase tracking-widest block mb-1" style="color:#60A5FA">NFPA 72 · Detección</span>
+                <h3 class="font-display font-bold text-2xl" style="color:#FFFFFF">Honeywell · Notifier</h3>
+                <p class="text-xs mt-1" style="color:#4A7599">Honeywell International · NASDAQ:HON</p>
+              </div>
+              <span class="badge badge-dark text-[9px] shrink-0">UL Listed · cUL</span>
+            </div>
+            <p class="text-sm leading-relaxed" style="color:#94A3B8">
+              Paneles FACP direccionables Notifier y detectores Honeywell para sistemas de
+              detección y alarma NFPA 72. Desde sistemas convencionales para pequeñas
+              instalaciones hasta el NFS2-3030 de 3,000 puntos para campus y edificios de gran altura.
+            </p>
+            <ul class="flex flex-col gap-2 list-none m-0 p-0">
+              {['NFS2-640 — hasta 636 puntos direccionables','NFS2-3030 — hasta 3,030 puntos + ONYXWorks','Detectores fotoeléctricos CLIP y SWIFT wireless','Sirenas, estrobos y dispositivos de voz NFPA 72'].map(item => (
+                <li class="flex items-center gap-2">
+                  <svg class="shrink-0" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  <span class="text-xs" style="color:#94A3B8">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div class="p-5" style="background:#0A1320;border-top:1px solid rgba(74,117,153,0.15)">
+            <a href="/productos/sistemas-ci/honeywell-notifier" class="btn btn-primary btn-sm w-full text-center">
+              Ver paneles Honeywell / Notifier →
+            </a>
+          </div>
+        </article>
+
+        {/* Kidde Fenwal FM-200/Novec */}
+        <article class="flex flex-col" style="border:1px solid rgba(74,117,153,0.18)">
+          <div class="flex flex-col gap-4 p-8" style="background:#080F1A;flex:1">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <span class="text-[10px] font-display font-bold uppercase tracking-widest block mb-1" style="color:#A78BFA">NFPA 2001 · Agente Limpio</span>
+                <h3 class="font-display font-bold text-2xl" style="color:#FFFFFF">FM-200 · Novec 1230</h3>
+                <p class="text-xs mt-1" style="color:#4A7599">Kidde Fenwal · Carrier Global · NYSE:CARR</p>
+              </div>
+              <span class="badge badge-dark text-[9px] shrink-0">UL Listed · FM</span>
+            </div>
+            <p class="text-sm leading-relaxed" style="color:#94A3B8">
+              Sistemas fijos de supresión con agente limpio para data centers, cuartos de control
+              y activos de alto valor. FM-200 (HFC-227ea) como estándar global, Novec 1230
+              (GWP = 1) para proyectos ESG y Ecaro-25 como opción económica de transición.
+            </p>
+            <ul class="flex flex-col gap-2 list-none m-0 p-0">
+              {['FM-200 HFC-227ea — el más instalado globalmente','Novec 1230 FK-5-1-12 — GWP = 1 para ESG','Ecaro-25 HFC-125 — opción económica','Panel AutoPulse — dual-knock y retardo programable'].map(item => (
+                <li class="flex items-center gap-2">
+                  <svg class="shrink-0" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#A78BFA" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  <span class="text-xs" style="color:#94A3B8">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div class="p-5" style="background:#0A1320;border-top:1px solid rgba(74,117,153,0.15)">
+            <a href="/productos/sistemas-ci/fm200-novec" class="btn btn-primary btn-sm w-full text-center">
+              Ver sistemas FM-200 / Novec →
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
   <!-- Trust Pillars -->
   <section class="section-tight" style="background:#070E1A" aria-label="Por qué elegir FirefightersMX para tu sistema contra incendio">
     <div class="container-site">

@@ -14,11 +14,13 @@ import { trajesBrandList } from './trajesBrands';
 import { scbaBrandList } from './scbaBrands';
 import { camarasBrandList } from './camarasBrands';
 import { herramientasBrandList } from './herramientasBrands';
+import { sistemasCIBrandList } from './sistemasCIBrands';
 
 /* ── Familias / tipo de riesgo — color e ícono ─────────────────────────────── */
 export type TipoKey =
   | 'estructural' | 'proximidad' | 'forestal' | 'usar' | 'mando' | 'industrial' | 'cbrn'
-  | 'corte' | 'separacion' | 'combinada' | 'estabilizacion';
+  | 'corte' | 'separacion' | 'combinada' | 'estabilizacion'
+  | 'rociadores' | 'deteccion' | 'agente-ci' | 'red-hidraulica';
 
 export interface TipoMeta {
   label: string;
@@ -83,6 +85,26 @@ export const tipoEquipo: Record<TipoKey, TipoMeta> = {
     color: '#34D399',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M2 12h6M8 9l3 3-3 3M12 7h10v10H12z"/>`,
   },
+  rociadores: {
+    label: 'Rociadores',
+    color: '#4A9ED4',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M12 2v4M6.34 6.34 3.51 3.51M4 12H0M6.34 17.66l-2.83 2.83M12 18v4M17.66 17.66l2.83 2.83M20 12h4M17.66 6.34l2.83-2.83"/><circle cx="12" cy="12" r="3"/>`,
+  },
+  deteccion: {
+    label: 'Detección / Alarma',
+    color: '#F5A623',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0 1 18 14.158V11a6 6 0 0 0-5-5.917V4a1 1 0 0 0-2 0v1.083A6 6 0 0 0 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 0 1-6 0v-1m6 0H9"/>`,
+  },
+  'agente-ci': {
+    label: 'Agente Limpio',
+    color: '#2DD4BF',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 0 0-1.022-.547l-2.387-.477a6 6 0 0 0-3.86.517l-.318.158a6 6 0 0 1-3.86.517L6.05 15.21a2 2 0 0 0-1.806.547M8 4h8l-1 1v5.172a2 2 0 0 0 .586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 0 0 9 10.172V5L8 4z"/>`,
+  },
+  'red-hidraulica': {
+    label: 'Red Hidráulica',
+    color: '#60A5FA',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/><circle cx="5" cy="12" r="2"/><circle cx="19" cy="12" r="2"/>`,
+  },
 };
 
 /* ── Interfaces de datos de marca ──────────────────────────────────────────── */
@@ -104,6 +126,7 @@ export interface ComparativaRow {
   resolucion?: string; sensor?: string;
   fuerza?: string; rango?: string; fuente?: string;
   peso?: string; ideal?: string;
+  tipo_sis?: string; cobertura?: string; listado?: string;
 }
 
 export interface EquipmentBrand {
@@ -245,6 +268,24 @@ export const categoriaMarca: Record<string, CategoriaMeta> = {
       { label: 'Soporte para licitaciones', desc: 'Fichas técnicas y manifiestos por partida', href: '/licitaciones' },
     ],
   },
+  'sistemas-ci': {
+    label: 'Sistemas Contra Incendio',
+    productCategory: 'Sistemas CI',
+    comparativaCols: [
+      { key: 'norma', label: 'Norma', align: 'center', accent: true },
+      { key: 'tipo_sis', label: 'Tipo de sistema' },
+      { key: 'cobertura', label: 'Cobertura / Cap.', align: 'center' },
+      { key: 'listado', label: 'Listado' },
+      { key: 'ideal', label: 'Ideal para' },
+    ],
+    conjunto: [
+      { label: 'Equipos SCBA', desc: 'MSA G1, Dräger y 3M Scott — aire autónomo', href: '/productos/equipos-scba' },
+      { label: 'Herramientas de Rescate', desc: 'Holmatro, Hurst y Weber — NFPA 1936', href: '/productos/herramientas-rescate' },
+      { label: 'Extintores', desc: 'Amerex y Ansul — ABC, CO₂ y cocina', href: '/productos/extintores' },
+      { label: 'Capacitación contra incendio', desc: 'Brigadas, evacuación y respuesta NFPA', href: '/servicios/capacitacion' },
+      { label: 'Soporte para licitaciones', desc: 'Fichas técnicas y manifiestos por partida', href: '/licitaciones' },
+    ],
+  },
 };
 
 /* ── Registro de marcas + helpers ──────────────────────────────────────────── */
@@ -261,7 +302,7 @@ const cascosAdapted: EquipmentBrand[] = cascosBrands.map((b) => ({
   crossDesc: cascosCrossDesc[b.slug] ?? b.eyebrow,
 } as EquipmentBrand));
 
-export const brandPages: EquipmentBrand[] = [...cascosAdapted, ...trajesBrandList, ...scbaBrandList, ...camarasBrandList, ...herramientasBrandList];
+export const brandPages: EquipmentBrand[] = [...cascosAdapted, ...trajesBrandList, ...scbaBrandList, ...camarasBrandList, ...herramientasBrandList, ...sistemasCIBrandList];
 
 export function brandPageBySlug(slug: string): EquipmentBrand | undefined {
   return brandPages.find((b) => b.slug === slug);

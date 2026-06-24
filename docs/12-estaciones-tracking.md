@@ -9,7 +9,7 @@ Campos verificables con fuente oficial; `confianza` (alta/media/baja); `coordena
 
 ## Resumen
 
-- Estados homologados v2: **11/32** · Estaciones: **273** · Pendientes: **22**
+- Estados homologados v2: **13/32** · Estaciones: **284** · Pendientes: **20**
 
 ## Matriz por estado
 
@@ -26,8 +26,8 @@ Campos verificables con fuente oficial; `confianza` (alta/media/baja); `coordena
 | ✅ | Colima | Centro-Occidente | 18 | 10 | 100% | 100% | ✅ |
 | ✅ | Durango | Norte | 17 | 14 | 100% | 100% | ✅ |
 | ✅ | Guanajuato | Centro | 12 | 8 | 100% | 100% | ✅ |
-| ⬜ | Guerrero | Sur | 2 | 2 | – | – | 🔴 |
-| ⬜ | Hidalgo | Centro | 2 | 2 | – | – | 🔴 |
+| ✅ | Guerrero | Sur | 6 | 4 | 100% | 100% | ✅ |
+| ✅ | Hidalgo | Centro | 7 | 5 | 100% | 100% | ✅ |
 | ⬜ | Jalisco | Centro-Occidente | 3 | 3 | – | – | 🔴 |
 | ⬜ | Estado de México | Centro | 4 | 4 | – | – | 🔴 |
 | ⬜ | Michoacán | Centro-Occidente | 2 | 2 | – | – | 🔴 |
@@ -61,8 +61,8 @@ Campos verificables con fuente oficial; `confianza` (alta/media/baja); `coordena
 - [x] **Colima** (COL) — 18 est. / 10 mun. ✅ v2
 - [x] **Durango** (DGO) — 17 est. / 14 mun. ✅ v2
 - [x] **Guanajuato** (GTO) — 12 est. / 8 mun. ✅ v2
-- [ ] **Guerrero** (GRO) — 2 est. / 2 mun.
-- [ ] **Hidalgo** (HGO) — 2 est. / 2 mun.
+- [x] **Guerrero** (GRO) — 6 est. / 4 mun. ✅ v2
+- [x] **Hidalgo** (HGO) — 7 est. / 5 mun. ✅ v2
 - [ ] **Jalisco** (JAL) — 3 est. / 3 mun.
 - [ ] **Estado de México** (MEX) — 4 est. / 4 mun.
 - [ ] **Michoacán** (MICH) — 2 est. / 2 mun.
