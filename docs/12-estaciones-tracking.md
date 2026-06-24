@@ -1,7 +1,7 @@
 # Directorio de Estaciones — Seguimiento de completitud
 
 > DATOS en `src/data/estaciones.ts`. Pase = datos reales verificados al estándar v3 (coords, fuentes citadas, confianza, email/operador, elementos, estacionesFisicas, unidades, descripciones 150-200 palabras).
-> Última actualización: 2026-06-24 (Nayarit cargado — 18/32).
+> Última actualización: 2026-06-24 (Nuevo León cargado — 19/32).
 
 ## Estándar
 
@@ -9,7 +9,7 @@ Campos verificables con fuente oficial; `confianza` (alta/media/baja); `coordena
 
 ## Resumen
 
-- Estados homologados v3: **18/32** · Estaciones: **398** · Pendientes: **15**
+- Estados homologados v3: **19/32** · Estaciones: **407** · Pendientes: **14**
 
 ## Matriz por estado
 
@@ -33,7 +33,7 @@ Campos verificables con fuente oficial; `confianza` (alta/media/baja); `coordena
 | ✅ | Michoacán | Centro-Occidente | 21 | 14 | 100% | 100% | ✅ v2 |
 | ✅ | Morelos | Centro | 15 | 12 | 100% | 100% | ✅ v3 |
 | ✅ | Nayarit | Centro-Occidente | 7 | 5 | 100% | 100% | ✅ v3 |
-| ⬜ | Nuevo León | Noreste | 3 | 3 | – | – | 🔴 |
+| ✅ | Nuevo León | Noreste | 12 | 9 | 100% | 100% | ✅ v3 |
 | ⬜ | Oaxaca | Sur | 1 | 1 | – | – | 🔴 |
 | ⬜ | Puebla | Centro | 2 | 2 | – | – | 🔴 |
 | ⬜ | Querétaro | Centro | 2 | 1 | – | – | 🔴 |
@@ -68,7 +68,7 @@ Campos verificables con fuente oficial; `confianza` (alta/media/baja); `coordena
 - [x] **Michoacán** (MICH) — 21 est. / 14 mun. ✅ v2
 - [x] **Morelos** (MOR) — 15 est. / 12 mun. ✅ v3
 - [x] **Nayarit** (NAY) — 7 est. / 5 mun. ✅ v3
-- [ ] **Nuevo León** (NL) — 3 est. / 3 mun.
+- [x] **Nuevo León** (NL) — 12 est. / 9 mun. ✅ v3
 - [ ] **Oaxaca** (OAX) — 1 est. / 1 mun.
 - [ ] **Puebla** (PUE) — 2 est. / 2 mun.
 - [ ] **Querétaro** (QRO) — 2 est. / 1 mun.
