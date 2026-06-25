@@ -1,7 +1,7 @@
 # Directorio de Estaciones — Seguimiento de completitud
 
 > DATOS en `src/data/estaciones.ts`. Pase = datos reales verificados al estándar v3 (coords, fuentes citadas, confianza, email/operador, elementos, estacionesFisicas, unidades, descripciones 150-200 palabras).
-> Última actualización: 2026-06-25 (Tabasco cargado — 27/32).
+> Última actualización: 2026-06-25 (Tamaulipas cargado — 28/32).
 
 ## Estándar
 
@@ -9,7 +9,7 @@ Campos verificables con fuente oficial; `confianza` (alta/media/baja); `coordena
 
 ## Resumen
 
-- Estados homologados v3: **27/32** · Estaciones: **474** · Pendientes: **5**
+- Estados homologados v3: **28/32** · Estaciones: **486** · Pendientes: **4**
 
 ## Matriz por estado
 
@@ -42,7 +42,7 @@ Campos verificables con fuente oficial; `confianza` (alta/media/baja); `coordena
 | ✅ | Sinaloa | Noroeste | 9 | 6 | 100% | 100% | ✅ v3 |
 | ✅ | Sonora | Noroeste | 12 | 9 | 100% | 100% | ✅ v3 |
 | ✅ | Tabasco | Sur | 5 | 3 | 100% | 100% | ✅ v3 |
-| ⬜ | Tamaulipas | Noreste | 3 | 3 | – | – | 🔴 |
+| ✅ | Tamaulipas | Noreste | 12 | 10 | 100% | 100% | ✅ v3 |
 | ⬜ | Tlaxcala | Centro | 1 | 1 | – | – | 🔴 |
 | ⬜ | Veracruz | Sur | 3 | 3 | – | – | 🔴 |
 | ⬜ | Yucatán | Peninsular | 2 | 2 | – | – | 🔴 |
@@ -77,7 +77,7 @@ Campos verificables con fuente oficial; `confianza` (alta/media/baja); `coordena
 - [x] **Sinaloa** (SIN) — 9 est. / 6 mun. ✅ v3
 - [x] **Sonora** (SON) — 12 est. / 9 mun. ✅ v3
 - [x] **Tabasco** (TAB) — 5 est. / 3 mun. ✅ v3
-- [ ] **Tamaulipas** (TAMPS) — 3 est. / 3 mun.
+- [x] **Tamaulipas** (TAMPS) — 12 est. / 10 mun. ✅ v3
 - [ ] **Tlaxcala** (TLAX) — 1 est. / 1 mun.
 - [ ] **Veracruz** (VER) — 3 est. / 3 mun.
 - [ ] **Yucatán** (YUC) — 2 est. / 2 mun.
