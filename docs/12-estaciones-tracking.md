@@ -1,7 +1,7 @@
 # Directorio de Estaciones — Seguimiento de completitud
 
 > DATOS en `src/data/estaciones.ts`. Pase = datos reales verificados al estándar v3 (coords, fuentes citadas, confianza, email/operador, elementos, estacionesFisicas, unidades, descripciones 150-200 palabras).
-> Última actualización: 2026-06-25 (Sonora cargado — 26/32).
+> Última actualización: 2026-06-25 (Tabasco cargado — 27/32).
 
 ## Estándar
 
@@ -9,7 +9,7 @@ Campos verificables con fuente oficial; `confianza` (alta/media/baja); `coordena
 
 ## Resumen
 
-- Estados homologados v3: **26/32** · Estaciones: **471** · Pendientes: **6**
+- Estados homologados v3: **27/32** · Estaciones: **474** · Pendientes: **5**
 
 ## Matriz por estado
 
@@ -41,7 +41,7 @@ Campos verificables con fuente oficial; `confianza` (alta/media/baja); `coordena
 | ✅ | San Luis Potosí | Centro-Norte | 5 | 4 | 100% | 100% | ✅ v3 |
 | ✅ | Sinaloa | Noroeste | 9 | 6 | 100% | 100% | ✅ v3 |
 | ✅ | Sonora | Noroeste | 12 | 9 | 100% | 100% | ✅ v3 |
-| ⬜ | Tabasco | Sur | 2 | 2 | – | – | 🔴 |
+| ✅ | Tabasco | Sur | 5 | 3 | 100% | 100% | ✅ v3 |
 | ⬜ | Tamaulipas | Noreste | 3 | 3 | – | – | 🔴 |
 | ⬜ | Tlaxcala | Centro | 1 | 1 | – | – | 🔴 |
 | ⬜ | Veracruz | Sur | 3 | 3 | – | – | 🔴 |
@@ -76,7 +76,7 @@ Campos verificables con fuente oficial; `confianza` (alta/media/baja); `coordena
 - [x] **San Luis Potosí** (SLP) — 5 est. / 4 mun. ✅ v3
 - [x] **Sinaloa** (SIN) — 9 est. / 6 mun. ✅ v3
 - [x] **Sonora** (SON) — 12 est. / 9 mun. ✅ v3
-- [ ] **Tabasco** (TAB) — 2 est. / 2 mun.
+- [x] **Tabasco** (TAB) — 5 est. / 3 mun. ✅ v3
 - [ ] **Tamaulipas** (TAMPS) — 3 est. / 3 mun.
 - [ ] **Tlaxcala** (TLAX) — 1 est. / 1 mun.
 - [ ] **Veracruz** (VER) — 3 est. / 3 mun.
