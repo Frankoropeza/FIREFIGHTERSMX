@@ -47,8 +47,16 @@ const categorias: [string, string][] = [
 /* ── Mensajes de WhatsApp (derivados, homologados) ─────────────────────────── */
 const waFicha = `Hola, quiero cotizar ${brand.brandLabel}. Necesito ficha técnica para licitación.`;
 const waFaq = `Hola, tengo una pregunta técnica sobre ${brand.brandLabel}.`;
-const waStock = `${brand.waQuote} ¿Tienen stock disponible?`;
 const waGuia = `Hola, necesito asesoría para elegir ${brand.brandLabel} para mi brigada.`;
+const safeWaQuote = brand.waQuote ?? waFicha;
+const waStock = `${safeWaQuote} ¿Tienen stock disponible?`;
+
+/* ── Arrays opcionales — safe defaults para marcas sin datos completos ───── */
+const safeLineas = brand.lineas ?? [];
+const safeAnatomia = brand.anatomia ?? [];
+const safeGuia = brand.guia ?? [];
+const safeSegmentos = brand.segmentos ?? [];
+const safeFaqs = brand.faqs ?? [];
 
 /* ── Schemas JSON-LD ───────────────────────────────────────────────────────── */
 const breadcrumbSchema = {
@@ -103,7 +111,7 @@ const collectionSchema = {
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: brand.faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  mainEntity: safeFaqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 ---
 
@@ -144,7 +152,7 @@ const faqSchema = {
         </h1>
         <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">{brand.heroLead}</p>
         <div class="flex flex-col sm:flex-row gap-3">
-          <a href={whatsappUrl(brand.waQuote)} target="_blank" rel="noopener" class="btn btn-primary btn-lg">Cotizar por WhatsApp</a>
+          <a href={whatsappUrl(safeWaQuote)} target="_blank" rel="noopener" class="btn btn-primary btn-lg">Cotizar por WhatsApp</a>
           <a href="/cotizacion" class="btn btn-ghost btn-lg">Cotización formal</a>
         </div>
       </div>
@@ -200,7 +208,7 @@ const faqSchema = {
   <div class="container-site">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
       <div>
-        <span class="section-eyebrow mb-4 inline-flex">{brand.lineas.length} familias · un distribuidor</span>
+        <span class="section-eyebrow mb-4 inline-flex">{safeLineas.length} familias · un distribuidor</span>
         <h2 id="lineas-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
           Portafolio {brand.brandLabel}<br/>
           <span style="color:#F75000">por tipo de riesgo.</span>
@@ -211,10 +219,10 @@ const faqSchema = {
       </div>
     </div>
 
-    <div class={`grid grid-cols-1 sm:grid-cols-2 ${brand.lineas.length >= 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3'} gap-px`} style="border:1px solid rgba(74,117,153,0.18)">
-      {brand.lineas.map((l, i) => {
-        const meta = tipoEquipo[l.tipo];
-        const last = i === brand.lineas.length - 1;
+    <div class={`grid grid-cols-1 sm:grid-cols-2 ${safeLineas.length >= 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3'} gap-px`} style="border:1px solid rgba(74,117,153,0.18)">
+      {safeLineas.map((l, i) => {
+        const meta = tipoEquipo[l.tipo] ?? { color: '#94A3B8', icon: '' };
+        const last = i === safeLineas.length - 1;
         return (
           <div class="flex flex-col gap-5 p-7" style={`background:#080F1A;${!last ? 'border-right:1px solid rgba(74,117,153,0.12)' : ''}`}>
             <div class="flex items-center justify-center" style={`width:48px;height:48px;background:${meta.color}1a;border:1.5px solid ${meta.color}59;color:${meta.color}`}>
@@ -293,7 +301,7 @@ const faqSchema = {
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px" style="border:1px solid rgba(74,117,153,0.18)">
-      {brand.anatomia.map((a, i) => (
+      {safeAnatomia.map((a, i) => (
         <div class="flex flex-col gap-3 p-7" style={`background:#080F1A;${i % 3 !== 2 ? 'border-right:1px solid rgba(74,117,153,0.12);' : ''}${i < 3 ? 'border-bottom:1px solid rgba(74,117,153,0.12)' : ''}`}>
           <span class="font-display font-bold text-sm" style="color:#F75000">{String(i + 1).padStart(2, '0')}</span>
           <h3 class="font-display font-bold text-sm uppercase tracking-wide" style="color:#FFFFFF">{a.t}</h3>
@@ -336,8 +344,8 @@ const faqSchema = {
           </tr>
         </thead>
         <tbody>
-          {brand.comparativa.map((row, i) => {
-            const meta = tipoEquipo[row.tipo];
+          {(brand.comparativa ?? []).map((row, i) => {
+            const meta = tipoEquipo[row.tipo] ?? { color: '#94A3B8', icon: '' };
             return (
               <tr style={`background:${i % 2 === 0 ? '#080F1A' : '#0A1320'}`}>
                 <td class="p-4 font-display font-bold text-sm" style="color:#FFFFFF;border-bottom:1px solid rgba(74,117,153,0.10)">
@@ -377,7 +385,7 @@ const faqSchema = {
       </div>
       <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
         <ol class="flex flex-col gap-5 list-none m-0 p-0">
-          {brand.guia.map((s) => (
+          {safeGuia.map((s) => (
             <li class="flex items-start gap-4">
               <span class="font-display font-bold text-xl shrink-0" style="color:#F75000">{s.n}</span>
               <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{s.t}</p>
@@ -406,8 +414,8 @@ const faqSchema = {
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-px" style="border:1px solid rgba(74,117,153,0.18)">
-      {brand.segmentos.map((seg, i) => {
-        const color = tipoEquipo[seg.tipo].color;
+      {safeSegmentos.map((seg, i) => {
+        const color = (tipoEquipo[seg.tipo] ?? { color: '#94A3B8' }).color;
         return (
           <div class="flex flex-col gap-4 p-7" style={`background:#080F1A;${[0,1].includes(i) ? 'border-bottom:1px solid rgba(74,117,153,0.12)' : ''}${[0,2].includes(i) ? ';border-right:1px solid rgba(74,117,153,0.12)' : ''}`}>
             <div class="flex items-center gap-3">
@@ -445,8 +453,8 @@ const faqSchema = {
       </div>
 
       <div class="flex flex-col">
-        {brand.faqs.map((f, i) => (
-          <details class="faq-item group" style={`border-top:1px solid rgba(74,117,153,0.18);${i === brand.faqs.length - 1 ? 'border-bottom:1px solid rgba(74,117,153,0.18);' : ''}`}>
+        {safeFaqs.map((f, i) => (
+          <details class="faq-item group" style={`border-top:1px solid rgba(74,117,153,0.18);${i === safeFaqs.length - 1 ? 'border-bottom:1px solid rgba(74,117,153,0.18);' : ''}`}>
             <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer">
               <span class="font-display font-semibold text-sm" style="color:#FFFFFF">{f.q}</span>
               <span class="faq-icon font-display font-bold text-xl shrink-0" style="color:#FF6B26">+</span>
