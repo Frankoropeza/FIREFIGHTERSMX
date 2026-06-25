@@ -164,6 +164,14 @@ const guia = [
   { n: '04', t: 'Define el programa de mantenimiento: la NOM-002-STPS exige revisión anual y recarga al disparo o cada 5 años. El programa administrado te garantiza el expediente vigente en toda inspección.' },
 ];
 
+/* Artículos del blog relacionados */
+const articulos = [
+  { label: 'Tipos de extintores en México', desc: 'Guía por clase de fuego y norma', href: '/blog/tipos-de-extintores-mexico' },
+  { label: 'NOM-002-STPS: guía completa', desc: 'Dotación, inspección y brigadas de emergencia', href: '/blog/nom-002-stps-guia-completa' },
+  { label: 'Cómo equipar una estación desde cero', desc: 'Checklist y presupuesto por prioridad', href: '/blog/como-equipar-estacion-bomberos-desde-cero' },
+  { label: 'Licitaciones de equipo contra incendio', desc: 'Cómo cumplir NOM y NFPA en concurso', href: '/blog/licitaciones-equipo-contra-incendio-mexico-nom-nfpa' },
+];
+
 /* FAQ */
 const faqs = [
   {
@@ -522,7 +530,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
     </div>
   </section>
 
-  <!-- Guía + FAQ -->
+  <!-- Guía de selección + blog -->
   <section class="section" style="background:#040A12" aria-labelledby="guia-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
@@ -547,8 +555,49 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
           </div>
         </div>
 
+        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:#4A7599">
+            Aprende más en el blog
+          </h2>
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+            {articulos.map((l) => (
+              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+                <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
+                  <span class="flex flex-col gap-0.5">
+                    <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
+                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
+                  </span>
+                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#4A7599" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="background:#070E1A" aria-labelledby="faq-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes</span>
+          <h2 id="faq-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+            Lo que más nos<br/>
+            <span style="color:#F5A623">preguntan.</span>
+          </h2>
+          <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
+            ¿Tu duda no aparece? Escríbenos por WhatsApp con el tipo de establecimiento y el riesgo
+            que quieres proteger — te recomendamos el agente correcto y calculamos la dotación sin costo.
+          </p>
+          <a href={whatsappUrl('Hola, tengo una pregunta sobre extintores para mi establecimiento.')}
+            target="_blank" rel="noopener"
+            class="btn btn-primary">
+            Consulta técnica gratis
+          </a>
+        </div>
         <div class="flex flex-col">
-          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-6" style="color:#4A7599">Preguntas frecuentes</h2>
           {faqs.map((f, i) => (
             <details class="faq-item group" style={`border-top:1px solid rgba(74,117,153,0.18);${i === faqs.length - 1 ? 'border-bottom:1px solid rgba(74,117,153,0.18);' : ''}`}>
               <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer">

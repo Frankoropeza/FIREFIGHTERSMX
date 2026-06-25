@@ -1,7 +1,7 @@
 # Directorio de Estaciones — Seguimiento de completitud
 
 > DATOS en `src/data/estaciones.ts`. Pase = datos reales verificados al estándar v3 (coords, fuentes citadas, confianza, email/operador, elementos, estacionesFisicas, unidades, descripciones 150-200 palabras).
-> Última actualización: 2026-06-24 (Nuevo León cargado — 19/32).
+> Última actualización: 2026-06-24 (Querétaro cargado — 22/32).
 
 ## Estándar
 
@@ -9,7 +9,7 @@ Campos verificables con fuente oficial; `confianza` (alta/media/baja); `coordena
 
 ## Resumen
 
-- Estados homologados v3: **19/32** · Estaciones: **407** · Pendientes: **14**
+- Estados homologados v3: **22/32** · Estaciones: **439** · Pendientes: **11**
 
 ## Matriz por estado
 
@@ -34,9 +34,9 @@ Campos verificables con fuente oficial; `confianza` (alta/media/baja); `coordena
 | ✅ | Morelos | Centro | 15 | 12 | 100% | 100% | ✅ v3 |
 | ✅ | Nayarit | Centro-Occidente | 7 | 5 | 100% | 100% | ✅ v3 |
 | ✅ | Nuevo León | Noreste | 12 | 9 | 100% | 100% | ✅ v3 |
-| ⬜ | Oaxaca | Sur | 1 | 1 | – | – | 🔴 |
-| ⬜ | Puebla | Centro | 2 | 2 | – | – | 🔴 |
-| ⬜ | Querétaro | Centro | 2 | 1 | – | – | 🔴 |
+| ✅ | Oaxaca | Sur | 13 | 11 | 100% | 100% | ✅ v3 |
+| ✅ | Puebla | Centro | 14 | 12 | 100% | 100% | ✅ v3 |
+| ✅ | Querétaro | Centro | 7 | 5 | 100% | 100% | ✅ v3 |
 | ⬜ | Quintana Roo | Peninsular | 3 | 3 | – | – | 🔴 |
 | ⬜ | San Luis Potosí | Centro-Norte | 1 | 1 | – | – | 🔴 |
 | ⬜ | Sinaloa | Noroeste | 2 | 2 | – | – | 🔴 |
@@ -69,9 +69,9 @@ Campos verificables con fuente oficial; `confianza` (alta/media/baja); `coordena
 - [x] **Morelos** (MOR) — 15 est. / 12 mun. ✅ v3
 - [x] **Nayarit** (NAY) — 7 est. / 5 mun. ✅ v3
 - [x] **Nuevo León** (NL) — 12 est. / 9 mun. ✅ v3
-- [ ] **Oaxaca** (OAX) — 1 est. / 1 mun.
-- [ ] **Puebla** (PUE) — 2 est. / 2 mun.
-- [ ] **Querétaro** (QRO) — 2 est. / 1 mun.
+- [x] **Oaxaca** (OAX) — 13 est. / 11 mun. ✅ v3
+- [x] **Puebla** (PUE) — 14 est. / 12 mun. ✅ v3
+- [x] **Querétaro** (QRO) — 7 est. / 5 mun. ✅ v3
 - [ ] **Quintana Roo** (QROO) — 3 est. / 3 mun.
 - [ ] **San Luis Potosí** (SLP) — 1 est. / 1 mun.
 - [ ] **Sinaloa** (SIN) — 2 est. / 2 mun.

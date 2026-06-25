@@ -1,7 +1,7 @@
 # FIREFIGHTERS MX — Documentación del sitio
 
 > Vault de referencia para homologar todas las páginas. Abrir esta carpeta (`docs/`) como vault en Obsidian.
-> Última actualización: 2026-06-23 · Stack: Astro 4 + Tailwind 3 · Deploy: GitHub Pages · Dominio: https://firefighters.mx
+> Última actualización: 2026-06-24 · Stack: Astro 4 + Tailwind 3 · Deploy: GitHub Pages · Dominio: https://firefighters.mx
 
 ## Mapa de contenido
 
@@ -19,6 +19,7 @@
 - [[12-estaciones-tracking]] — **Tracker vivo del directorio de estaciones**: matriz de cobertura y checklist por estado (✅/⬜)
 - [[13-estaciones-directorio]] — **Playbook del directorio de estaciones**: modelo de datos, estándar verificable-only, fuentes válidas/prohibidas, proceso, bitácora y roadmap
 - [[14-sistema-brandpage]] — **Motor unificado de páginas L4 de marca** (cascos · trajes · SCBA · cámaras · herramientas): `EquipmentBrand`, `BrandPage.astro`, `categoriaMarca`, `tipoEquipo`, cómo añadir marca/categoría, gotchas
+- [[15-template-ficha-tecnica-L4]] — **Template ficha técnica de producto** (`[...producto].astro`): hero homologado + galería 3×2 + sidebar 7 bloques + layout main+sidebar 1fr/340px + SEO + checklist alta de producto
 
 ## Reglas de oro (resumen ejecutivo)
 
