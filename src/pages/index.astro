@@ -29,12 +29,13 @@ const seoMeta = {
 
 /* ─── JSON-LD ──────────────────────────────────────────────── */
 
-// Negocio local / tienda especializada
+// Negocio local — distribuidor especializado
 const localBusinessSchema = {
   '@context': 'https://schema.org',
-  '@type': 'Store',
-  '@id': `${SITE.url}/#store`,
+  '@type': 'LocalBusiness',
+  '@id': `${SITE.url}/#business`,
   name: SITE.name,
+  alternateName: ['Firefighters MX', 'FFMX', 'FireFighters México', 'Firefighters Mexico'],
   description: SITE.description,
   url: SITE.url,
   telephone: SITE.phoneE164,
@@ -92,7 +93,7 @@ const webSiteSchema = {
   url: SITE.url,
   description: SITE.description,
   inLanguage: 'es-MX',
-  publisher: { '@id': `${SITE.url}/#store` },
+  publisher: { '@id': `${SITE.url}/#business` },
 };
 
 // FAQ visible en esta página
@@ -119,7 +120,7 @@ const servicesSchema = {
       name: s.title,
       description: s.description,
       url: `${SITE.url}${s.href}`,
-      provider: { '@id': `${SITE.url}/#store` },
+      provider: { '@id': `${SITE.url}/#business` },
       areaServed: { '@type': 'Country', name: 'México' },
     },
   })),
