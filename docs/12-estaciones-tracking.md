@@ -1,7 +1,7 @@
 # Directorio de Estaciones — Seguimiento de completitud
 
 > DATOS en `src/data/estaciones.ts`. Pase = datos reales verificados al estándar v3 (coords, fuentes citadas, confianza, email/operador, elementos, estacionesFisicas, unidades, descripciones 150-200 palabras).
-> Última actualización: 2026-06-24 (Querétaro cargado — 22/32).
+> Última actualización: 2026-06-25 (Quintana Roo cargado — 23/32).
 
 ## Estándar
 
@@ -9,7 +9,7 @@ Campos verificables con fuente oficial; `confianza` (alta/media/baja); `coordena
 
 ## Resumen
 
-- Estados homologados v3: **22/32** · Estaciones: **439** · Pendientes: **11**
+- Estados homologados v3: **23/32** · Estaciones: **451** · Pendientes: **9**
 
 ## Matriz por estado
 
@@ -37,7 +37,7 @@ Campos verificables con fuente oficial; `confianza` (alta/media/baja); `coordena
 | ✅ | Oaxaca | Sur | 13 | 11 | 100% | 100% | ✅ v3 |
 | ✅ | Puebla | Centro | 14 | 12 | 100% | 100% | ✅ v3 |
 | ✅ | Querétaro | Centro | 7 | 5 | 100% | 100% | ✅ v3 |
-| ⬜ | Quintana Roo | Peninsular | 3 | 3 | – | – | 🔴 |
+| ✅ | Quintana Roo | Peninsular | 12 | 9 | 100% | 100% | ✅ v3 |
 | ⬜ | San Luis Potosí | Centro-Norte | 1 | 1 | – | – | 🔴 |
 | ⬜ | Sinaloa | Noroeste | 2 | 2 | – | – | 🔴 |
 | ⬜ | Sonora | Noroeste | 3 | 3 | – | – | 🔴 |
@@ -72,7 +72,7 @@ Campos verificables con fuente oficial; `confianza` (alta/media/baja); `coordena
 - [x] **Oaxaca** (OAX) — 13 est. / 11 mun. ✅ v3
 - [x] **Puebla** (PUE) — 14 est. / 12 mun. ✅ v3
 - [x] **Querétaro** (QRO) — 7 est. / 5 mun. ✅ v3
-- [ ] **Quintana Roo** (QROO) — 3 est. / 3 mun.
+- [x] **Quintana Roo** (QROO) — 12 est. / 9 mun. ✅ v3
 - [ ] **San Luis Potosí** (SLP) — 1 est. / 1 mun.
 - [ ] **Sinaloa** (SIN) — 2 est. / 2 mun.
 - [ ] **Sonora** (SON) — 3 est. / 3 mun.

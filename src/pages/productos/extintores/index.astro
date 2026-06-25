@@ -1,7 +1,9 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
+import ProductCard from '@components/products/ProductCard.astro';
 import { categories } from '@data/categories';
+import { featuredProducts } from '@data/products';
 import { SITE, whatsappUrl } from '@data/site';
 
 const cat = categories.find((c) => c.slug === 'extintores')!;
@@ -13,78 +15,90 @@ const seoMeta = {
   canonicalURL,
 };
 
-/* Tipos de agente */
-const agentes = [
+/* ── Productos por línea ─────────────────────────────────────────────────── */
+const pqsProducts = featuredProducts.filter(
+  (p) => p.category === 'Extintores' && p.brand === 'PQS ABC'
+);
+const co2Products = featuredProducts.filter(
+  (p) => p.category === 'Extintores' && p.brand === 'CO₂'
+);
+const tipokProducts = featuredProducts.filter(
+  (p) => p.category === 'Extintores' && p.brand === 'Tipo K'
+);
+const ruedaProducts = featuredProducts.filter(
+  (p) => p.category === 'Extintores' && p.brand === 'Sobre Ruedas'
+);
+
+/* Tipos de agente (educativo) */
+const tipos = [
   {
-    id: 'pqs-abc',
-    label: 'PQS ABC',
-    norma: 'NOM-154-SCFI · NFPA 10',
-    clase: 'Fuegos A · B · C',
+    title: 'PQS ABC',
+    norm: 'NOM-154-SCFI · NFPA 10',
     accent: '#F75000',
-    capacidades: '4.5 kg · 6 kg · 9 kg · 12 kg',
-    agente: 'Polvo Químico Seco multiuso',
-    ideal: 'Oficinas · comercios · bodegas · industria general · vehículos',
-    desc: 'El extintor más versátil del mercado. El polvo químico seco ABC actúa sobre los tres tipos de fuego más comunes: sólidos combustibles (A), líquidos inflamables (B) y fuegos eléctricos (C). Obligatorio en la mayoría de los programas de Protección Civil.',
-    ventajas: ['Mayor cobertura: clases A, B y C en una sola unidad', 'Amplia disponibilidad de capacidades 4.5–12 kg', 'Precio competitivo para equipamiento masivo', 'Compatible con programas municipales y estatales de PC'],
-    limitaciones: 'Deja residuo de polvo — no recomendado para tableros eléctricos ni electrónica sensible.',
+    desc: 'Polvo químico seco multiuso para fuegos clase A, B y C. El estándar obligatorio en oficinas, comercios, bodegas e industria general. La opción más distribuida en México.',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 6v-3a3 3 0 0 0-6 0v3"/><rect x="6" y="6" width="12" height="14" rx="2"/><path d="M12 10v4M10 12h4"/></svg>`,
   },
   {
-    id: 'co2',
-    label: 'CO₂',
-    norma: 'NOM-154-SCFI · NOM-100-SCFI',
-    clase: 'Fuegos B · C',
+    title: 'CO₂',
+    norm: 'NOM-100-SCFI · NFPA 10',
     accent: '#60A5FA',
-    capacidades: '4.5 kg · 10 kg',
-    agente: 'Dióxido de carbono',
-    ideal: 'Tableros eléctricos · servidores · laboratorios · equipos electrónicos',
-    desc: 'La solución para activos electrónicos de alto valor. El CO₂ extingue sin dejar residuo: no daña equipos, no requiere limpieza posterior y no conduce electricidad. Imprescindible en centros de datos, salas de cómputo y tableros eléctricos de control.',
-    ventajas: ['Cero residuo — no daña equipos ni superficies', 'No conduce electricidad (Clase C)', 'Sin contaminación química posterior', 'Ideal para ambientes cerrados con equipos sensibles'],
-    limitaciones: 'Solo clases B y C — no sirve para fuegos de sólidos. Alcance limitado en exteriores por el viento.',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M9 10a3 3 0 0 1 6 0v1a3 3 0 0 1-6 0v-1z"/><path d="M12 16v2"/></svg>`,
+    desc: 'Dióxido de carbono sin residuo para fuegos clase B y C. La única opción segura para tableros eléctricos, servidores y equipos electrónicos de alto valor.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M9 10a3 3 0 0 1 6 0c0 2-3 3-3 3"/><path d="M12 16h.01"/></svg>`,
   },
   {
-    id: 'tipo-k',
-    label: 'Tipo K',
-    norma: 'NOM-154-SCFI · UL 300',
-    clase: 'Fuegos K',
+    title: 'Tipo K',
+    norm: 'NOM-154-SCFI · UL 300',
     accent: '#F5A623',
-    capacidades: '6 L',
-    agente: 'Acetato de potasio',
-    ideal: 'Cocinas industriales · restaurantes · frituras · aceites vegetales y animales',
-    desc: 'El único agente certificado para fuegos de clase K: aceites y grasas vegetales y animales a alta temperatura, los más peligrosos en cocinas industriales. El acetato de potasio forma una capa jabonosa que sella la superficie y evita la re-ignición.',
-    ventajas: ['Único agente eficaz en fuegos de aceite caliente (> 360 °C)', 'Efecto de saponificación que impide la re-ignición', 'Requerido por aseguradoras y normas para cocinas con campana', 'Se complementa con el sistema de supresión de la campana'],
-    limitaciones: 'Solo para clase K. Requiere limpieza posterior. No sustituye al PQS ABC en otras áreas.',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01M15 9h.01"/></svg>`,
+    desc: 'Acetato de potasio para fuegos clase K: aceites y grasas vegetales y animales a alta temperatura. Obligatorio en cocinas industriales y restaurantes con freidoras.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2c-4 4-6 8-6 11a6 6 0 0 0 12 0c0-3-2-7-6-11z"/><path d="M12 12v4"/></svg>`,
   },
   {
-    id: 'agente-limpio',
-    label: 'Agente Limpio',
-    norma: 'NFPA 2001 · UL 2129',
-    clase: 'Fuegos B · C',
+    title: 'Agente Limpio',
+    norm: 'NFPA 2001 · UL 2129',
     accent: '#34D399',
-    capacidades: 'Según proyecto',
-    agente: 'HFC-227ea (FM-200) · FK-5-1-12 (Novec)',
-    ideal: 'Data centers · salas de servidores · archivos · cuartos de control',
-    desc: 'La protección de máxima calidad para activos críticos. Los agentes limpios HFC-227ea (FM-200) y FK-5-1-12 (Novec 1230) extinguen en segundos sin dejar residuo, sin dañar equipos electrónicos y sin dejar fuera de servicio el espacio protegido más tiempo del necesario.',
-    ventajas: ['Extinción en < 10 segundos sin residuo', 'No daña equipos, medios de almacenamiento ni documentos', 'Espacio habitable durante y después de la descarga', 'Compatible con sistemas automáticos de detección y disparo'],
-    limitaciones: 'Mayor costo inicial. Requiere diseño de sistema fijo. No apto para clase A con fuego latente.',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707"/><circle cx="12" cy="12" r="4"/></svg>`,
+    desc: 'HFC-227ea (FM-200) o FK-5-1-12 (Novec) para data centers y salas de control. Extinción en segundos sin residuo, sin daño a equipos, espacio habitable tras descarga.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>`,
   },
   {
-    id: 'sobre-ruedas',
-    label: 'Sobre Ruedas',
-    norma: 'NOM-154-SCFI · NFPA 10',
-    clase: 'Fuegos A · B · C según agente',
+    title: 'Sobre Ruedas',
+    norm: 'NOM-154-SCFI · NFPA 10',
     accent: '#A78BFA',
-    capacidades: '25 kg · 50 kg · 75 kg · 125 kg',
-    agente: 'PQS ABC · CO₂ · Espuma AFFF',
-    ideal: 'Plantas industriales · almacenes · plataformas · carga y descarga · helipuertos',
-    desc: 'Alta capacidad de agente para riesgos de gran magnitud o donde se requiere tiempo extendido de aplicación. Los extintores sobre ruedas son el complemento del sistema fijo en industria pesada, plantas petroquímicas, refinerías y almacenes de gran altura.',
-    ventajas: ['Capacidad 25–125 kg para riesgos de alta carga de fuego', 'Movilidad para cubrir grandes áreas o maniobrar en plantas', 'Tiempo de descarga extendido vs. portátil', 'Disponibles en PQS ABC, CO₂ y espuma AFFF'],
-    limitaciones: 'Requiere operador con capacitación. Mayor tamaño y peso implica rutas de acceso planificadas.',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="3" width="12" height="16" rx="2"/><path d="M8 19v2M12 19v2"/><circle cx="8" cy="21" r="1"/><circle cx="12" cy="21" r="1"/><path d="M10 7v4M8 9h4"/></svg>`,
+    desc: 'Alta capacidad (25–125 kg) para riesgos industriales de gran magnitud. Descarga extendida en plantas, almacenes de gran altura, helipuertos y plataformas petroquímicas.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="3" width="12" height="16" rx="2"/><path d="M8 19v2M12 19v2"/><circle cx="8" cy="21" r="1"/><circle cx="12" cy="21" r="1"/><path d="M10 8v4M8 10h4"/></svg>`,
   },
+];
+
+/* Trust Pillars */
+const razones = [
+  {
+    n: '01',
+    t: 'Certificación NOM-154-SCFI verificable',
+    d: 'Todos los extintores incluyen etiqueta NOM con número de dictamen verificable ante la SE. Documentación completa para Protección Civil, IMSS, STPS y dictámenes de bomberos.',
+  },
+  {
+    n: '02',
+    t: 'Recarga con collar de garantía',
+    d: 'Recargamos con agente original certificado y colocamos collar de garantía con fecha de recarga, técnico responsable y próxima revisión — el estándar que exige cualquier inspección de NOM-002-STPS.',
+  },
+  {
+    n: '03',
+    t: 'Programa anual de mantenimiento',
+    d: 'Administramos tu inventario y te avisamos cuándo vence la inspección, la recarga y la prueba hidrostática. Sin sorpresas en auditorías de Protección Civil, STPS o aseguradoras.',
+  },
+  {
+    n: '04',
+    t: 'Capacitación de uso básico incluida',
+    d: 'Cada compra institucional incluye capacitación básica de uso con el método PASS y el plan de evacuación. Registros de asistencia para tu expediente de la brigada de emergencias.',
+  },
+];
+
+/* Tabla: qué extintor para qué fuego */
+const tabla = [
+  { clase: 'A — Sólidos',        ejemplo: 'Madera · papel · tela · plástico',      pqs: '✓ Recomendado', co2: '—',       tipok: '—',              limpio: '—',       ruedas: '✓' },
+  { clase: 'B — Líquidos',       ejemplo: 'Gasolina · aceite · solvente · pintura', pqs: '✓ Recomendado', co2: '✓',       tipok: '—',              limpio: '✓',       ruedas: '✓' },
+  { clase: 'C — Eléctrico',      ejemplo: 'Tableros · motores · cableado vivo',     pqs: '✓',             co2: '✓ Ideal', tipok: '—',              limpio: '✓ Ideal', ruedas: '—' },
+  { clase: 'D — Metales',        ejemplo: 'Magnesio · titanio · litio',             pqs: '—',             co2: '—',       tipok: '—',              limpio: '—',       ruedas: 'Agente D' },
+  { clase: 'K — Aceites/grasas', ejemplo: 'Freidoras · cocinas industriales',       pqs: '—',             co2: '—',       tipok: '✓ Único válido', limpio: '—',       ruedas: '—' },
 ];
 
 /* Servicios */
@@ -115,61 +129,20 @@ const servicios = [
   },
 ];
 
-/* Trust Pillars */
-const razones = [
-  {
-    n: '01',
-    t: 'Certificación NOM-154-SCFI verificable',
-    d: 'Todos los extintores incluyen etiqueta NOM con número de dictamen verificable ante la SE. Documentación completa para Protección Civil, IMSS, STPS y dictámenes de bomberos.',
-  },
-  {
-    n: '02',
-    t: 'Recarga con collar de garantía',
-    d: 'Recargamos con agente original certificado y colocamos collar de garantía con fecha de recarga, técnico responsable y próxima revisión — el estándar que exige cualquier inspección de NOM-002-STPS.',
-  },
-  {
-    n: '03',
-    t: 'Programa anual de mantenimiento',
-    d: 'Administramos tu inventario y te avisamos cuándo vence la inspección, la recarga y la prueba hidrostática. Sin sorpresas en auditorías de Protección Civil, STPS o aseguradoras.',
-  },
-  {
-    n: '04',
-    t: 'Capacitación de uso básico incluida',
-    d: 'Cada compra institucional incluye capacitación básica de uso con el método PASS y el plan de evacuación. Registros de asistencia para tu expediente de la brigada de emergencias.',
-  },
-];
-
-/* Tabla: qué extintor para qué fuego */
-const tabla = [
-  { clase: 'A — Sólidos',       ejemplo: 'Madera · papel · tela · plástico',      pqs: '✓ Recomendado', co2: '—', tipok: '—', limpio: '—', ruedas: '✓' },
-  { clase: 'B — Líquidos',      ejemplo: 'Gasolina · aceite · solvente · pintura', pqs: '✓ Recomendado', co2: '✓', tipok: '—', limpio: '✓', ruedas: '✓' },
-  { clase: 'C — Eléctrico',     ejemplo: 'Tableros · motores · cableado vivo',    pqs: '✓',             co2: '✓ Ideal', tipok: '—', limpio: '✓ Ideal', ruedas: '—' },
-  { clase: 'D — Metales',       ejemplo: 'Magnesio · titanio · litio',            pqs: '—',             co2: '—', tipok: '—', limpio: '—', ruedas: 'Agente D' },
-  { clase: 'K — Aceites/grasas',ejemplo: 'Freidoras · cocinas industriales',      pqs: '—',             co2: '—', tipok: '✓ Único válido', limpio: '—', ruedas: '—' },
-];
-
-/* Normativa */
-const normas = [
-  { clave: 'NOM-154-SCFI', titulo: 'Extintores contra incendio', desc: 'Especificaciones, métodos de prueba y requisitos de los extintores portátiles. La norma de referencia para venta en México — el dictamen NOM en la etiqueta es obligatorio.' },
-  { clave: 'NOM-002-STPS', titulo: 'Prevención y protección contra incendio', desc: 'Establece la dotación mínima de extintores por área, el programa anual de revisión, la capacitación de brigadas y el expediente documental que exige la STPS en inspecciones.' },
-  { clave: 'NOM-003-SEGOB', titulo: 'Señalización', desc: 'Define los señalamientos de seguridad y emergencia para la ubicación e identificación de los extintores conforme a Protección Civil.' },
-  { clave: 'NFPA 10', titulo: 'Portable Fire Extinguishers', desc: 'Estándar internacional de referencia para la selección, instalación, inspección, mantenimiento y recarga de extintores portátiles. Referenciada en proyectos con aseguradoras internacionales.' },
-];
-
 /* Guía de selección */
 const guia = [
   { n: '01', t: 'Identifica las clases de fuego presentes en cada área: oficina, bodega, cocina, sala de servidores o planta industrial. La clase de fuego determina el agente — nunca al revés.' },
   { n: '02', t: 'Revisa si hay equipos electrónicos o activos de alto valor: el PQS ABC deja residuo que daña equipos. CO₂ o agente limpio son la única opción para tableros y servidores.' },
   { n: '03', t: 'Calcula la capacidad según la carga de fuego del área: NOM-002-STPS establece la dotación mínima por m² y tipo de riesgo. Te hacemos el cálculo sin costo.' },
-  { n: '04', t: 'Define el programa de mantenimiento: la NOM-002-STPS exige revisión anual y recarga al disparo o cada 5 años. El programa administrado te garantiza el expediente vigente en toda inspección.' },
+  { n: '04', t: 'Define el programa de mantenimiento: la NOM-002-STPS exige revisión anual y recarga al disparo o cada 5 años. El programa administrado garantiza el expediente vigente en toda inspección.' },
 ];
 
-/* Artículos del blog relacionados */
+/* Artículos del blog */
 const articulos = [
-  { label: 'Tipos de extintores en México', desc: 'Guía por clase de fuego y norma', href: '/blog/tipos-de-extintores-mexico' },
-  { label: 'NOM-002-STPS: guía completa', desc: 'Dotación, inspección y brigadas de emergencia', href: '/blog/nom-002-stps-guia-completa' },
-  { label: 'Cómo equipar una estación desde cero', desc: 'Checklist y presupuesto por prioridad', href: '/blog/como-equipar-estacion-bomberos-desde-cero' },
-  { label: 'Licitaciones de equipo contra incendio', desc: 'Cómo cumplir NOM y NFPA en concurso', href: '/blog/licitaciones-equipo-contra-incendio-mexico-nom-nfpa' },
+  { label: 'Tipos de extintores en México',     desc: 'Guía por clase de fuego y norma',             href: '/blog/tipos-de-extintores-mexico' },
+  { label: 'NOM-002-STPS: guía completa',        desc: 'Dotación, inspección y brigadas de emergencia', href: '/blog/nom-002-stps-guia-completa' },
+  { label: 'Cómo equipar una estación desde cero', desc: 'Checklist y presupuesto por prioridad',      href: '/blog/como-equipar-estacion-bomberos-desde-cero' },
+  { label: 'Licitaciones de equipo contra incendio', desc: 'Cómo cumplir NOM y NFPA en concurso',     href: '/blog/licitaciones-equipo-contra-incendio-mexico-nom-nfpa' },
 ];
 
 /* FAQ */
@@ -196,12 +169,20 @@ const faqs = [
   },
 ];
 
+/* Normativa */
+const normas = [
+  { clave: 'NOM-154-SCFI', titulo: 'Extintores contra incendio',        desc: 'La norma de referencia para venta en México — el dictamen NOM en la etiqueta es obligatorio para todo extintor portátil comercializado en el país.' },
+  { clave: 'NOM-002-STPS', titulo: 'Prevención contra incendio',        desc: 'Establece la dotación mínima de extintores por área, el programa anual de revisión, la capacitación de brigadas y el expediente que exige la STPS en inspecciones.' },
+  { clave: 'NOM-003-SEGOB', titulo: 'Señalización',                     desc: 'Define los señalamientos de seguridad y emergencia para la ubicación e identificación de los extintores conforme a Protección Civil.' },
+  { clave: 'NFPA 10',       titulo: 'Portable Fire Extinguishers',      desc: 'Estándar internacional de referencia para la selección, instalación, inspección, mantenimiento y recarga. Referenciada en proyectos con aseguradoras internacionales.' },
+];
+
 /* JSON-LD */
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
+    { '@type': 'ListItem', position: 1, name: 'Inicio',    item: `${SITE.url}/` },
     { '@type': 'ListItem', position: 2, name: 'Productos', item: `${SITE.url}/productos` },
     { '@type': 'ListItem', position: 3, name: 'Extintores', item: canonicalURL },
   ],
@@ -224,28 +205,10 @@ const faqSchema = {
   mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 
-const localBusinessSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: 'FirefightersMX — Extintores',
-  description: seoMeta.description,
-  url: canonicalURL,
-  areaServed: { '@type': 'Country', name: 'Mexico' },
-  hasOfferCatalog: {
-    '@type': 'OfferCatalog',
-    name: 'Extintores y Servicios de Mantenimiento',
-    itemListElement: agentes.map((a) => ({
-      '@type': 'Offer',
-      name: `Extintor ${a.label}`,
-      description: a.desc,
-    })),
-  },
-};
-
 const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(0, 6);
 ---
 
-<BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema, faqSchema, localBusinessSchema]}>
+<BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema, faqSchema]}>
 
   <!-- Breadcrumb -->
   <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
@@ -272,7 +235,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
             Extintores<br/>
             <span style="color:#F5A623">certificados.</span>
           </h1>
-          <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
+          <p class="text-base leading-relaxed mb-8 max-w-xl" style="color:#94A3B8">
             Venta, recarga y mantenimiento de extintores portátiles y sobre ruedas certificados
             NOM-154-SCFI y NFPA 10. Reporte documental completo para tu expediente de Protección Civil,
             STPS y aseguradoras en todo México.
@@ -316,100 +279,229 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
   </section>
 
   <!-- Tipos de agente -->
-  <section class="section" style="background:#040A12" aria-labelledby="agentes-title">
+  <section class="section" style="background:#040A12" aria-labelledby="tipos-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Cinco agentes, cada uno para su fuego</span>
-          <h2 id="agentes-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="tipos-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             El agente correcto<br/>
-            <span style="color:#F5A623">para cada riesgo.</span>
+            <span style="color:#F5A623">según el riesgo.</span>
           </h2>
         </div>
         <div style="border-left:2px solid rgba(245,166,35,0.4);padding-left:1.75rem">
           <p class="text-sm leading-relaxed" style="color:#94A3B8">
-            Usar el agente equivocado no solo no extingue el fuego — puede agravarlo. El PQS ABC es el
-            estándar de uso general, pero un tablero eléctrico necesita CO₂ o agente limpio,
-            y una cocina industrial necesita Tipo K. Asesoramos la dotación correcta por área.
+            Usar el agente equivocado no solo no extingue el fuego — puede agravarlo. La clase de fuego
+            determina el agente, nunca al revés. Te asesoramos la dotación correcta por área sin costo.
           </p>
         </div>
       </div>
 
-      <div class="flex flex-col gap-6">
-        {agentes.map((a) => (
-          <article id={a.id} class="grid grid-cols-1 lg:grid-cols-3 gap-0" style="border:1px solid rgba(74,117,153,0.18)">
-
-            {/* Columna izquierda — identidad */}
-            <div class="flex flex-col gap-4 p-8" style={`background:#080F1A;border-right:1px solid rgba(74,117,153,0.14)`}>
-              <div class="flex items-center gap-4">
-                <div class="flex items-center justify-center shrink-0" style={`width:56px;height:56px;background:${a.accent}1a;border:1.5px solid ${a.accent}59;color:${a.accent}`}>
-                  <span class="block" style="width:26px;height:26px" set:html={a.icon}/>
-                </div>
-                <div>
-                  <h3 class="font-display font-bold text-2xl" style={`color:${a.accent}`}>{a.label}</h3>
-                  <span class="text-xs" style="color:#4A7599">{a.clase}</span>
-                </div>
-              </div>
-              <div class="flex flex-col gap-2">
-                <div>
-                  <p class="text-[10px] font-display font-bold uppercase tracking-widest mb-1" style="color:#4A7599">Agente</p>
-                  <p class="text-xs" style="color:#CBD5E1">{a.agente}</p>
-                </div>
-                <div>
-                  <p class="text-[10px] font-display font-bold uppercase tracking-widest mb-1" style="color:#4A7599">Capacidades</p>
-                  <p class="text-xs" style="color:#CBD5E1">{a.capacidades}</p>
-                </div>
-                <div>
-                  <p class="text-[10px] font-display font-bold uppercase tracking-widest mb-1" style="color:#4A7599">Norma</p>
-                  <p class="text-xs" style="color:#CBD5E1">{a.norma}</p>
-                </div>
-              </div>
-              <a href={whatsappUrl(`Hola, quiero cotizar extintores ${a.label} certificados NOM-154-SCFI.`)} target="_blank" rel="noopener" class="btn btn-primary btn-sm mt-auto">
-                Cotizar {a.label} →
-              </a>
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5">
+        {tipos.map((t) => (
+          <article class="flex flex-col gap-4 p-7" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
+            <div class="flex items-center justify-center" style={`width:52px;height:52px;background:${t.accent}1a;border:1.5px solid ${t.accent}59;color:${t.accent}`}>
+              <span class="block" style="width:24px;height:24px" set:html={t.icon}/>
             </div>
-
-            {/* Columna central — descripción + uso ideal */}
-            <div class="flex flex-col gap-4 p-8" style="background:#070E1A">
-              <div>
-                <p class="text-[10px] font-display font-bold uppercase tracking-widest mb-2" style="color:#4A7599">Descripción</p>
-                <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{a.desc}</p>
-              </div>
-              <div class="mt-auto pt-4" style="border-top:1px solid rgba(74,117,153,0.15)">
-                <p class="text-[10px] font-display font-bold uppercase tracking-widest mb-2" style="color:#4A7599">Ideal para</p>
-                <p class="text-sm" style={`color:${a.accent};font-weight:600`}>{a.ideal}</p>
-              </div>
+            <div class="flex items-center justify-between gap-2 flex-wrap">
+              <h3 class="font-display font-bold text-xl" style="color:#FFFFFF">{t.title}</h3>
+              <span class="badge badge-dark text-[9px]">{t.norm.split(' · ')[0]}</span>
             </div>
-
-            {/* Columna derecha — ventajas + limitación */}
-            <div class="flex flex-col gap-4 p-8" style="background:#080F1A;border-left:1px solid rgba(74,117,153,0.14)">
-              <div>
-                <p class="text-[10px] font-display font-bold uppercase tracking-widest mb-3" style="color:#4A7599">Ventajas</p>
-                <ul class="flex flex-col gap-2 list-none m-0 p-0">
-                  {a.ventajas.map((v) => (
-                    <li class="flex items-start gap-2">
-                      <span class="shrink-0 mt-0.5" style={`color:${a.accent}`}>
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                      </span>
-                      <span class="text-xs leading-relaxed" style="color:#94A3B8">{v}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div class="mt-auto pt-4" style="border-top:1px solid rgba(74,117,153,0.15)">
-                <p class="text-[10px] font-display font-bold uppercase tracking-widest mb-2" style="color:#64748B">Limitación</p>
-                <p class="text-xs leading-relaxed m-0" style="color:#64748B">{a.limitaciones}</p>
-              </div>
-            </div>
-
+            <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{t.desc}</p>
           </article>
         ))}
       </div>
     </div>
   </section>
 
+  <!-- PQS ABC -->
+  <section class="section" style="background:#070E1A" aria-labelledby="pqs-title">
+    <div class="container-site">
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">El estándar de uso general</span>
+          <h2 id="pqs-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            Extintores PQS ABC<br/>
+            <span style="color:#F5A623">certificados NOM.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(245,166,35,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
+            El polvo químico seco ABC es el agente más versátil del mercado: actúa sobre los tres tipos
+            de fuego más comunes (A, B y C) con una sola unidad. Obligatorio en la mayoría de los programas
+            de Protección Civil — la opción estándar para oficinas, comercios, bodegas e industria general.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {['NOM-154-SCFI','NFPA 10','Clase A · B · C','Polvo químico seco','4.5 · 6 · 9 · 12 kg'].map(b => (
+              <span class="badge badge-dark text-[9px]">{b}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {pqsProducts.map((p) => (
+          <ProductCard product={p} />
+        ))}
+      </div>
+
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(74,117,153,0.15)">
+        <div class="flex-1">
+          <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+            ¿Necesitas cotizar por volumen, programa de mantenimiento anual o extintores PQS en
+            capacidades 6 kg y 12 kg? Te enviamos propuesta con ficha técnica para tu expediente.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+          <a href={whatsappUrl('Hola, quiero cotizar extintores PQS ABC certificados NOM-154-SCFI.')} target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+            Cotizar PQS ABC →
+          </a>
+          <a href="/cotizacion" class="btn btn-ghost btn-lg">
+            Cotización formal
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CO₂ -->
+  <section class="section" style="background:#040A12" aria-labelledby="co2-title">
+    <div class="container-site">
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Tableros · Servidores · Electrónica</span>
+          <h2 id="co2-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            Extintores CO₂<br/>
+            <span style="color:#F5A623">sin residuo.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(245,166,35,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
+            La solución correcta para activos electrónicos de alto valor. El CO₂ extingue sin dejar residuo:
+            no daña equipos, no requiere limpieza posterior y no conduce electricidad. La única opción segura
+            para tableros eléctricos vivos, salas de cómputo y cuartos de control.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {['NOM-100-SCFI','NFPA 10','Clase B · C','Dióxido de carbono','4.5 · 10 kg','Cero residuo'].map(b => (
+              <span class="badge badge-dark text-[9px]">{b}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {co2Products.map((p) => (
+          <ProductCard product={p} />
+        ))}
+      </div>
+
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(74,117,153,0.15)">
+        <div class="flex-1">
+          <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+            ¿Data center o sala de servidores de alta disponibilidad? Complementamos el CO₂ portátil
+            con un sistema de agente limpio (FM-200 o Novec) para protección automática total.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+          <a href={whatsappUrl('Hola, quiero cotizar extintores CO₂ para tableros eléctricos o sala de servidores.')} target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+            Cotizar CO₂ →
+          </a>
+          <a href="/cotizacion" class="btn btn-ghost btn-lg">
+            Cotización formal
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Tipo K + Sobre Ruedas -->
+  <section class="section" style="background:#070E1A" aria-labelledby="especiales-title">
+    <div class="container-site">
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Riesgos especiales</span>
+          <h2 id="especiales-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            Tipo K · Sobre Ruedas<br/>
+            <span style="color:#F5A623">para cada riesgo.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(245,166,35,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
+            El Tipo K es el único agente certificado para cocinas industriales con aceites y grasas a alta
+            temperatura. Los extintores sobre ruedas cubren riesgos de gran magnitud donde el portátil
+            no tiene la capacidad de agente necesaria. Cada tipo resuelve un riesgo específico.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {['Tipo K — Clase K','UL 300','Acetato de potasio','Sobre ruedas 25–125 kg','NFPA 10','PQS · CO₂ · AFFF'].map(b => (
+              <span class="badge badge-dark text-[9px]">{b}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {[...tipokProducts, ...ruedaProducts].map((p) => (
+          <ProductCard product={p} />
+        ))}
+      </div>
+
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(74,117,153,0.15)">
+        <div class="flex-1">
+          <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+            ¿Cocina industrial con freidoras o planta con alta carga de fuego? Te asesoramos en la
+            dotación correcta y el programa de mantenimiento con el expediente completo para PC.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+          <a href={whatsappUrl('Hola, quiero cotizar extintores Tipo K o sobre ruedas para mi instalación.')} target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+            Cotizar riesgos especiales →
+          </a>
+          <a href="/cotizacion" class="btn btn-ghost btn-lg">
+            Cotización formal
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Galería -->
+  <section class="section-tight" style="background:#040A12" aria-label="Galería extintores y protección contra incendio">
+    <div class="container-site">
+      <div class="flex items-center gap-4 mb-6">
+        <span class="w-8 h-px" style="background:#F5A623"></span>
+        <span class="text-xs font-display font-semibold uppercase tracking-[0.18em]" style="color:#F5A623">Extintores y protección en uso real</span>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-2 lg:gap-3">
+        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
+          <img src="/images/categorias/extintores.avif" alt="Extintor certificado NOM-154-SCFI con manómetro y collar de garantía — FirefightersMX México" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+        </figure>
+        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
+          <img src="/images/blog/blog-nom-002-stps.avif" alt="Programa de mantenimiento anual NOM-002-STPS extintores — reporte para Protección Civil" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+        </figure>
+        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
+          <img src="/images/servicios/mantenimiento.avif" alt="Servicio de recarga y mantenimiento de extintor con collar de garantía NOM-154-SCFI" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+        </figure>
+        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
+          <img src="/images/blog/bombero-preparacion-emergencia-industrial.avif" alt="Brigada de emergencia industrial con extintor en planta — capacitación uso método PASS" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+        </figure>
+        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
+          <img src="/images/servicios/brigadas-empresariales.avif" alt="Brigada empresarial capacitada en uso de extintor — programa Protección Civil NOM-002-STPS" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+        </figure>
+        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
+          <img src="/images/blog/entrenamiento-bomberos-capacitacion-seguridad.avif" alt="Entrenamiento y capacitación en uso de extintor método PASS — bomberos y brigadas México" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+        </figure>
+      </div>
+    </div>
+  </section>
+
   <!-- Tabla: qué extintor para qué fuego -->
-  <section class="section" style="background:#070E1A" aria-labelledby="tabla-title">
+  <section class="section" style="background:#040A12" aria-labelledby="tabla-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-10">
         <div>
@@ -460,7 +552,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
   </section>
 
   <!-- Servicios -->
-  <section class="section" style="background:#040A12" aria-labelledby="servicios-title">
+  <section class="section" style="background:#070E1A" aria-labelledby="servicios-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
@@ -502,30 +594,6 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
         <a href={whatsappUrl('Hola, quiero cotizar un programa de mantenimiento anual de extintores para mi empresa.')} target="_blank" rel="noopener" class="btn btn-primary shrink-0">
           Cotizar programa anual →
         </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Normativa -->
-  <section class="section" style="background:#070E1A" aria-labelledby="normas-title">
-    <div class="container-site">
-      <div class="mb-10">
-        <span class="section-eyebrow mb-4 inline-flex">Marco normativo</span>
-        <h2 id="normas-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
-          Las normas que rigen<br/>
-          <span style="color:#F5A623">tu extintor.</span>
-        </h2>
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-        {normas.map((n) => (
-          <article class="flex flex-col gap-3 p-7" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
-            <div class="flex items-center justify-between gap-4">
-              <span class="font-display font-bold text-lg" style="color:#F5A623">{n.clave}</span>
-              <span class="badge badge-dark text-[9px]">{n.titulo}</span>
-            </div>
-            <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{n.desc}</p>
-          </article>
-        ))}
       </div>
     </div>
   </section>
@@ -572,6 +640,19 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
               </li>
             ))}
           </ul>
+
+          <!-- Normativa compacta -->
+          <div class="mt-8 pt-6" style="border-top:1px solid rgba(74,117,153,0.15)">
+            <h3 class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:#4A7599">Marco normativo</h3>
+            <div class="flex flex-col gap-3">
+              {normas.map((n) => (
+                <div class="flex items-start gap-3">
+                  <span class="font-display font-bold text-sm shrink-0" style="color:#F5A623;min-width:7rem">{n.clave}</span>
+                  <p class="text-xs leading-relaxed m-0" style="color:#64748B">{n.titulo} — {n.desc.substring(0, 80)}…</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>
