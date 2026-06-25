@@ -1,0 +1,552 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { SITE } from '@data/site';
+
+const seoMeta = {
+  title: 'Precios Equipo para Bomberos NFPA en México | FIREFIGHTERS MX',
+  description:
+    'Precios de referencia verificados: traje NFPA 1970 $45,000–$95,000, SCBA $85,000–$140,000, casco $6,500–$18,000 MXN. Distribuidor autorizado en México.',
+  canonicalURL: `${SITE.url}/precios/`,
+};
+
+/* ─── SCHEMAS JSON-LD ─────────────────────────────────────── */
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Precios', item: `${SITE.url}/precios/` },
+  ],
+};
+
+// 1. Trajes para Bomberos NFPA 1970
+const svcTrajes = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': `${SITE.url}/precios/#svc-trajes`,
+  name: 'Trajes para Bomberos Certificados NFPA 1970',
+  serviceType: 'Venta de Equipo de Protección Personal',
+  description:
+    'Trajes estructurales completos (chaquetón + pantalón) certificados NFPA 1970 — Globe GX-7, Lion TechGen, Honeywell Morning Pride. Tallas S–4XL, stock permanente en CDMX.',
+  url: `${SITE.url}/productos/trajes-bombero/`,
+  provider: { '@id': `${SITE.url}/#business` },
+  areaServed: { '@type': 'Country', name: 'México' },
+  offers: {
+    '@type': 'Offer',
+    priceCurrency: 'MXN',
+    availability: 'https://schema.org/InStock',
+    priceSpecification: {
+      '@type': 'PriceSpecification',
+      priceCurrency: 'MXN',
+      minPrice: 45000,
+      maxPrice: 95000,
+      description: 'Conjunto completo chaquetón + pantalón certificado NFPA 1970. Precio de referencia de mercado verificado en distribuidores México 2026.',
+      eligibleQuantity: { '@type': 'QuantitativeValue', value: 1, unitCode: 'C62', unitText: 'conjunto' },
+    },
+    seller: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+  },
+};
+
+// 2. Equipos SCBA NFPA 1981
+const svcScba = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': `${SITE.url}/precios/#svc-scba`,
+  name: 'Equipos SCBA (Aparato de Respiración Autónoma) NFPA 1981',
+  serviceType: 'Venta de Equipo de Respiración para Bomberos',
+  description:
+    'SCBA certificados NFPA 1981: MSA G1, Dräger PSS AirBoss Evolution, 3M Scott Air-Pak X3 Pro. Cilindro 30 minutos. Número de serie verificable con fábrica.',
+  url: `${SITE.url}/productos/equipos-scba/`,
+  provider: { '@id': `${SITE.url}/#business` },
+  areaServed: { '@type': 'Country', name: 'México' },
+  offers: {
+    '@type': 'Offer',
+    priceCurrency: 'MXN',
+    availability: 'https://schema.org/InStock',
+    priceSpecification: {
+      '@type': 'PriceSpecification',
+      priceCurrency: 'MXN',
+      minPrice: 85000,
+      maxPrice: 140000,
+      description: 'Por equipo completo (cilindro 30 min). Precio de referencia de mercado verificado en distribuidores México 2026.',
+      eligibleQuantity: { '@type': 'QuantitativeValue', value: 1, unitCode: 'C62', unitText: 'equipo' },
+    },
+    seller: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+  },
+};
+
+// 3. Cascos para Bomberos NFPA 1970
+const svcCascos = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': `${SITE.url}/precios/#svc-cascos`,
+  name: 'Cascos para Bomberos Certificados NFPA 1970',
+  serviceType: 'Venta de Cascos de Protección para Bomberos',
+  description:
+    'Cascos estructurales NFPA 1970: Bullard USTM, MSA Gallet F1 XF, Cairns N6A. Protección facial integrada, suspensión avanzada. Stock en CDMX.',
+  url: `${SITE.url}/productos/cascos-nfpa/`,
+  provider: { '@id': `${SITE.url}/#business` },
+  areaServed: { '@type': 'Country', name: 'México' },
+  offers: {
+    '@type': 'Offer',
+    priceCurrency: 'MXN',
+    availability: 'https://schema.org/InStock',
+    priceSpecification: {
+      '@type': 'PriceSpecification',
+      priceCurrency: 'MXN',
+      minPrice: 6500,
+      maxPrice: 18000,
+      description: 'Por casco. Precio de referencia de mercado verificado en distribuidores México 2026.',
+      eligibleQuantity: { '@type': 'QuantitativeValue', value: 1, unitCode: 'C62', unitText: 'casco' },
+    },
+    seller: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+  },
+};
+
+// 4. Botas para Bomberos NFPA 1970
+const svcBotas = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': `${SITE.url}/precios/#svc-botas`,
+  name: 'Botas para Bomberos Certificadas NFPA 1970',
+  serviceType: 'Venta de Botas de Protección para Bomberos',
+  description:
+    'Botas estructurales NFPA 1970: Haix Fire Hero, Weinbrenner Thorogood, Lion Crosstech. Puntera de acero, suela antideslizante, membrana impermeable.',
+  url: `${SITE.url}/productos/botas/`,
+  provider: { '@id': `${SITE.url}/#business` },
+  areaServed: { '@type': 'Country', name: 'México' },
+  offers: {
+    '@type': 'Offer',
+    priceCurrency: 'MXN',
+    availability: 'https://schema.org/InStock',
+    priceSpecification: {
+      '@type': 'PriceSpecification',
+      priceCurrency: 'MXN',
+      minPrice: 3500,
+      maxPrice: 8000,
+      description: 'Por par. Precio de referencia de mercado verificado en distribuidores México 2026.',
+      eligibleQuantity: { '@type': 'QuantitativeValue', value: 1, unitCode: 'PR', unitText: 'par' },
+    },
+    seller: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+  },
+};
+
+// 5. Capacitación DC-3 STPS
+const svcCapacitacion = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': `${SITE.url}/precios/#svc-capacitacion`,
+  name: 'Capacitación Certificada DC-3 STPS — Brigadas NOM-002 y NFPA 1001',
+  serviceType: 'Capacitación contra Incendio',
+  description:
+    'Cursos de brigadas contra incendio NOM-002-STPS, bombero NFPA 1001 Nivel I y II, uso y mantenimiento de SCBA, rescate vehicular y HAZMAT awareness. Constancia DC-3 STPS incluida.',
+  url: `${SITE.url}/servicios/capacitacion/`,
+  provider: { '@id': `${SITE.url}/#business` },
+  areaServed: { '@type': 'Country', name: 'México' },
+  offers: {
+    '@type': 'Offer',
+    priceCurrency: 'MXN',
+    availability: 'https://schema.org/InStock',
+    description: 'Precio según número de participantes, modalidad (en planta o en instalaciones FFMX) y temario. Solicitar cotización.',
+    seller: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+  },
+};
+
+// 6. Dotación brigada llave en mano
+const svcDotacion = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': `${SITE.url}/precios/#svc-dotacion`,
+  name: 'Dotación Completa de Brigada Contra Incendio — Llave en Mano',
+  serviceType: 'Equipamiento Integral de Brigadas Industriales',
+  description:
+    'Paquete completo para brigadas industriales: EPP certificado NFPA (traje + casco + botas + guantes + SCBA), capacitación DC-3 STPS, protocolos NOM-002 y documentación STPS incluida.',
+  url: `${SITE.url}/servicios/brigadas-empresariales/`,
+  provider: { '@id': `${SITE.url}/#business` },
+  areaServed: { '@type': 'Country', name: 'México' },
+  offers: {
+    '@type': 'Offer',
+    priceCurrency: 'MXN',
+    availability: 'https://schema.org/InStock',
+    description: 'Precio según tamaño de brigada, categorías de EPP y módulos de capacitación requeridos. Solicitar cotización.',
+    seller: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+  },
+};
+
+// FAQPage schema
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: '¿Cuánto cuesta un traje de bombero estructural NFPA 1970 en México?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Un traje estructural completo (chaquetón + pantalón) certificado NFPA 1970 va de $45,000 a $95,000 MXN según marca, tejido exterior y configuración. Las marcas disponibles son Globe GX-7, Lion TechGen, Honeywell Morning Pride y Fire-Dex TECGEN.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '¿Cuánto cuesta un equipo SCBA NFPA 1981 en México?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Un SCBA (aparato de respiración autónoma) certificado NFPA 1981 de 30 minutos cuesta entre $85,000 y $140,000 MXN según modelo y fabricante. Los modelos disponibles incluyen MSA G1, Dräger PSS AirBoss Evolution y 3M Scott Air-Pak X3 Pro.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '¿Cuánto cuesta un casco para bombero NFPA 1970?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Los cascos estructurales certificados NFPA 1970 van de $6,500 a $18,000 MXN. El rango varía según marca (Bullard USTM, MSA Gallet F1 XF, Cairns N6A) y configuración (visor, protección facial integrada, acabado).',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '¿Cuánto cuestan las botas para bombero NFPA 1970?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Las botas estructurales certificadas NFPA 1970 van de $3,500 a $8,000 MXN por par. Modelos disponibles: Haix Fire Hero, Weinbrenner Thorogood y Lion Crosstech. Incluyen puntera de acero, suela antideslizante y membrana impermeable.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '¿Cuánto cuesta equipar a una brigada contra incendio completa?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'El costo de una brigada completa depende del número de brigadistas y el nivel de EPP requerido. Un integrante con EPP estructural completo (traje + casco + botas + guantes + SCBA) puede representar $140,000–$270,000 MXN. Ofrecemos paquetes de dotación llave en mano con cotización personalizada.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '¿Dan factura CFDI 4.0?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Sí. Facturamos con CFDI 4.0 a persona física o moral. Trabajamos con dependencias federales, estatales y municipales, y apoyamos con fichas técnicas formato licitación y manifiestos NFPA/NOM para CompraNet.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '¿Tienen precios especiales para cuerpos de bomberos municipales?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Sí. Tenemos esquemas de precio preferencial para H. Cuerpos de Bomberos, Protección Civil, dependencias gubernamentales y compras por volumen (5+ unidades). Consultar por programa de equipamiento integral con posibilidad de financiamiento.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '¿Cuánto tarda una cotización formal con fichas técnicas?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Respondemos toda cotización en menos de 24 horas hábiles con precios, disponibilidad, tiempos de entrega y fichas técnicas en formato licitación. Para proyectos complejos (brigadas completas, ARFF, HAZMAT) entregamos propuesta detallada en 48 horas.',
+      },
+    },
+  ],
+};
+
+const schemas = [breadcrumbSchema, svcTrajes, svcScba, svcCascos, svcBotas, svcCapacitacion, svcDotacion, faqSchema];
+---
+
+<BaseLayout {...seoMeta} schema={schemas}>
+
+  <!-- ── HERO BREADCRUMB ─────────────────────────────────────────── -->
+  <section style="background:#040A12;padding-block:4rem 3rem;border-bottom:1px solid rgba(74,117,153,0.2)">
+    <div class="container-site">
+      <nav aria-label="Breadcrumb" class="mb-6">
+        <ol class="flex items-center gap-2 text-xs" style="color:#4A7599">
+          <li><a href="/" style="color:#4A7599;hover:color:#7AA4C4">Inicio</a></li>
+          <li aria-hidden="true">/</li>
+          <li aria-current="page" style="color:#94A3B8">Precios</li>
+        </ol>
+      </nav>
+
+      <div class="max-w-3xl">
+        <span class="section-eyebrow mb-4 inline-flex">Precios de referencia verificados · Mercado México 2026</span>
+        <h1 class="font-display font-bold mb-5" style="color:#FFFFFF;font-size:clamp(2.25rem,5vw,3.75rem);line-height:1.05">
+          Precios de Equipo<br/>
+          <span style="color:#F75000">para Bomberos NFPA.</span>
+        </h1>
+        <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8;max-width:52ch">
+          Rangos de precio actualizados de nuestro catálogo autorizado — Globe, MSA, Dräger, Bullard y más.
+          Todos los precios son de referencia de mercado verificados; la cotización formal incluye disponibilidad,
+          tiempo de entrega y ficha técnica para licitación.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/cotizacion/" class="btn btn-primary">Solicitar cotización formal</a>
+          <a href="/productos/" class="btn btn-ghost">Ver catálogo completo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── NOTA DE PRECIOS ─────────────────────────────────────────── -->
+  <div style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15);padding:1rem 0">
+    <div class="container-site">
+      <p class="text-xs" style="color:#4A7599">
+        <strong style="color:#7AA4C4">Nota:</strong>
+        Los precios que aparecen en esta página son rangos de referencia de mercado verificados en distribuidores autorizados México 2026.
+        No incluyen IVA. Los precios finales dependen de la especificación exacta (talla, configuración, cantidad y vigencia de tipo de cambio en equipos importados).
+        Cotización formal sin costo en menos de 24 horas hábiles.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── EPP CON PRECIOS ─────────────────────────────────────────── -->
+  <section class="section" style="background:#070E1A" aria-labelledby="precios-epp-title">
+    <div class="container-site">
+      <div class="mb-12">
+        <span class="section-eyebrow mb-4 inline-flex">EPP certificado NFPA · Precios verificados</span>
+        <h2 id="precios-epp-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.1">
+          Equipo de Protección Personal<br/>
+          <span style="color:#F75000">con precio de referencia.</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style="border:1px solid rgba(74,117,153,0.18)">
+
+        <!-- Card: Trajes -->
+        <article class="flex flex-col p-7" style="background:#080F1A" id="trajes-bombero">
+          <div class="mb-5">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#F75000" stroke-width="1.4" style="width:32px;height:32px;margin-bottom:1rem">
+              <path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/>
+            </svg>
+            <div class="inline-block text-[10px] font-display font-bold uppercase tracking-widest px-2 py-1 mb-3" style="background:rgba(247,80,0,0.12);color:#F75000;border:1px solid rgba(247,80,0,0.3)">NFPA 1970</div>
+            <h3 class="font-display font-bold text-base mb-2" style="color:#FFFFFF">Trajes para Bomberos</h3>
+            <p class="text-xs leading-relaxed mb-4" style="color:#64748B">Conjunto estructural completo (chaquetón + pantalón). Globe GX-7, Lion TechGen, Honeywell Morning Pride. Tallas S–4XL.</p>
+          </div>
+          <div class="mt-auto">
+            <div class="mb-1">
+              <span class="font-display font-bold" style="color:#F75000;font-size:1.75rem">$45k–$95k</span>
+              <span class="text-xs ml-1" style="color:#4A7599">MXN + IVA</span>
+            </div>
+            <p class="text-[10px] mb-4" style="color:#4A7599">por conjunto completo</p>
+            <a href="/productos/trajes-bombero/" class="btn btn-sm btn-outline w-full text-center" style="font-size:0.75rem">Ver trajes →</a>
+          </div>
+        </article>
+
+        <!-- Card: SCBA -->
+        <article class="flex flex-col p-7" style="background:#080F1A;border-left:1px solid rgba(74,117,153,0.18)" id="scba-nfpa">
+          <div class="mb-5">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#F75000" stroke-width="1.4" style="width:32px;height:32px;margin-bottom:1rem">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+            <div class="inline-block text-[10px] font-display font-bold uppercase tracking-widest px-2 py-1 mb-3" style="background:rgba(247,80,0,0.12);color:#F75000;border:1px solid rgba(247,80,0,0.3)">NFPA 1981</div>
+            <h3 class="font-display font-bold text-base mb-2" style="color:#FFFFFF">Equipos SCBA</h3>
+            <p class="text-xs leading-relaxed mb-4" style="color:#64748B">Aparatos de respiración autónoma. MSA G1, Dräger PSS AirBoss, 3M Scott Air-Pak X3. Cilindro 30 min.</p>
+          </div>
+          <div class="mt-auto">
+            <div class="mb-1">
+              <span class="font-display font-bold" style="color:#F75000;font-size:1.75rem">$85k–$140k</span>
+              <span class="text-xs ml-1" style="color:#4A7599">MXN + IVA</span>
+            </div>
+            <p class="text-[10px] mb-4" style="color:#4A7599">por equipo completo</p>
+            <a href="/productos/equipos-scba/" class="btn btn-sm btn-outline w-full text-center" style="font-size:0.75rem">Ver SCBA →</a>
+          </div>
+        </article>
+
+        <!-- Card: Cascos -->
+        <article class="flex flex-col p-7" style="background:#080F1A;border-left:1px solid rgba(74,117,153,0.18)" id="cascos-bombero">
+          <div class="mb-5">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#F75000" stroke-width="1.4" style="width:32px;height:32px;margin-bottom:1rem">
+              <path d="M3 17h18M5 17V10a7 7 0 0 1 14 0v7"/>
+              <path d="M3 17a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2"/>
+            </svg>
+            <div class="inline-block text-[10px] font-display font-bold uppercase tracking-widest px-2 py-1 mb-3" style="background:rgba(247,80,0,0.12);color:#F75000;border:1px solid rgba(247,80,0,0.3)">NFPA 1970</div>
+            <h3 class="font-display font-bold text-base mb-2" style="color:#FFFFFF">Cascos NFPA</h3>
+            <p class="text-xs leading-relaxed mb-4" style="color:#64748B">Cascos estructurales y de rescate. Bullard USTM, MSA Gallet F1 XF, Cairns N6A. Protección facial integrada.</p>
+          </div>
+          <div class="mt-auto">
+            <div class="mb-1">
+              <span class="font-display font-bold" style="color:#F75000;font-size:1.75rem">$6.5k–$18k</span>
+              <span class="text-xs ml-1" style="color:#4A7599">MXN + IVA</span>
+            </div>
+            <p class="text-[10px] mb-4" style="color:#4A7599">por casco</p>
+            <a href="/productos/cascos-nfpa/" class="btn btn-sm btn-outline w-full text-center" style="font-size:0.75rem">Ver cascos →</a>
+          </div>
+        </article>
+
+        <!-- Card: Botas -->
+        <article class="flex flex-col p-7" style="background:#080F1A;border-left:1px solid rgba(74,117,153,0.18)" id="botas-bombero">
+          <div class="mb-5">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#F75000" stroke-width="1.4" style="width:32px;height:32px;margin-bottom:1rem">
+              <path d="M3 18h18v2H3zM3 18l3-9h4l2 5 2-3h4l3 7"/>
+            </svg>
+            <div class="inline-block text-[10px] font-display font-bold uppercase tracking-widest px-2 py-1 mb-3" style="background:rgba(247,80,0,0.12);color:#F75000;border:1px solid rgba(247,80,0,0.3)">NFPA 1970</div>
+            <h3 class="font-display font-bold text-base mb-2" style="color:#FFFFFF">Botas para Bomberos</h3>
+            <p class="text-xs leading-relaxed mb-4" style="color:#64748B">Botas estructurales certificadas. Haix Fire Hero, Weinbrenner Thorogood, Lion Crosstech. Membrana impermeable.</p>
+          </div>
+          <div class="mt-auto">
+            <div class="mb-1">
+              <span class="font-display font-bold" style="color:#F75000;font-size:1.75rem">$3.5k–$8k</span>
+              <span class="text-xs ml-1" style="color:#4A7599">MXN + IVA</span>
+            </div>
+            <p class="text-[10px] mb-4" style="color:#4A7599">por par</p>
+            <a href="/productos/botas/" class="btn btn-sm btn-outline w-full text-center" style="font-size:0.75rem">Ver botas →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── RESUMEN BRIGADA ─────────────────────────────────────────── -->
+  <section class="section" style="background:#040A12" aria-labelledby="brigada-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Dotación integral · EPP estructural completo</span>
+          <h2 id="brigada-title" class="font-display font-bold mb-5" style="color:#FFFFFF;font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.1">
+            Costo estimado de<br/>
+            <span style="color:#F75000">un bombero equipado.</span>
+          </h2>
+          <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
+            El EPP estructural completo de un bombero — traje + casco + botas + guantes + SCBA — puede representar
+            entre <strong style="color:#FFFFFF">$140,000 y $270,000 MXN</strong> según marcas y configuración.
+            Ofrecemos cotizaciones por brigada completa con precio preferencial por volumen.
+          </p>
+          <a href="/cotizacion/" class="btn btn-primary">Cotizar brigada completa</a>
+        </div>
+
+        <div class="grid grid-cols-1 gap-px" style="border:1px solid rgba(74,117,153,0.18)">
+          {[
+            { item: 'Traje estructural NFPA 1970', rango: '$45,000–$95,000 MXN', nota: 'chaquetón + pantalón' },
+            { item: 'SCBA NFPA 1981 (30 min)', rango: '$85,000–$140,000 MXN', nota: 'por equipo' },
+            { item: 'Casco NFPA 1970', rango: '$6,500–$18,000 MXN', nota: 'por casco' },
+            { item: 'Botas estructurales NFPA 1970', rango: '$3,500–$8,000 MXN', nota: 'por par' },
+            { item: 'Guantes certificados NFPA', rango: 'A cotizar', nota: 'por par' },
+            { item: 'Total estimado por bombero', rango: '$140,500–$261,000+ MXN', nota: 'sin IVA, referencia' },
+          ].map((row, i) => (
+            <div
+              class="flex items-center justify-between gap-4 px-6 py-4"
+              style={`background:${i === 5 ? 'rgba(247,80,0,0.08)' : '#080F1A'};${i > 0 ? 'border-top:1px solid rgba(74,117,153,0.12)' : ''}`}
+            >
+              <div>
+                <span class="text-xs font-medium" style={`color:${i === 5 ? '#F75000' : '#FFFFFF'}`}>{row.item}</span>
+                <span class="block text-[10px]" style="color:#4A7599">{row.nota}</span>
+              </div>
+              <span class="font-display font-bold text-sm shrink-0" style={`color:${i === 5 ? '#F75000' : '#94A3B8'}`}>{row.rango}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SERVICIOS A COTIZAR ─────────────────────────────────────── -->
+  <section class="section" style="background:#070E1A" aria-labelledby="servicios-title">
+    <div class="container-site">
+      <div class="mb-12">
+        <span class="section-eyebrow mb-4 inline-flex">Servicios · Cotización personalizada</span>
+        <h2 id="servicios-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.1">
+          Servicios de capacitación<br/>
+          <span style="color:#F75000">y dotación de brigadas.</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-px" style="border:1px solid rgba(74,117,153,0.18)">
+
+        <!-- Capacitación -->
+        <div class="flex flex-col p-8" style="background:#080F1A">
+          <div class="inline-block text-[10px] font-display font-bold uppercase tracking-widest px-2 py-1 mb-4 self-start" style="background:rgba(74,117,153,0.15);color:#7AA4C4;border:1px solid rgba(74,117,153,0.3)">DC-3 STPS · NFPA 1001</div>
+          <h3 class="font-display font-bold text-lg mb-3" style="color:#FFFFFF">Capacitación Certificada</h3>
+          <p class="text-xs leading-relaxed mb-6" style="color:#64748B">
+            Cursos de brigadas NOM-002-STPS, bombero NFPA 1001 Nivel I y II, uso de SCBA, rescate vehicular y HAZMAT awareness.
+            Constancia DC-3 STPS incluida. Se realizan en tus instalaciones o en nuestro centro de capacitación.
+          </p>
+          <ul class="flex flex-col gap-2 mb-8">
+            {['Brigada industrial NOM-002-STPS', 'Bombero NFPA 1001 Nivel I y II', 'Uso y mantenimiento de SCBA', 'Rescate vehicular NFPA 1936', 'HAZMAT awareness NFPA 472'].map(item => (
+              <li class="flex items-center gap-2 text-xs" style="color:#94A3B8">
+                <span style="color:#F75000;font-weight:700">✓</span> {item}
+              </li>
+            ))}
+          </ul>
+          <div class="mt-auto flex items-center justify-between">
+            <span class="text-sm font-display font-bold" style="color:#7AA4C4">Cotización por grupo</span>
+            <a href="/servicios/capacitacion/" class="btn btn-sm btn-ghost">Ver detalles →</a>
+          </div>
+        </div>
+
+        <!-- Dotación brigada -->
+        <div class="flex flex-col p-8" style="background:#080F1A;border-left:1px solid rgba(74,117,153,0.18)">
+          <div class="inline-block text-[10px] font-display font-bold uppercase tracking-widest px-2 py-1 mb-4 self-start" style="background:rgba(74,117,153,0.15);color:#7AA4C4;border:1px solid rgba(74,117,153,0.3)">Llave en mano · STPS</div>
+          <h3 class="font-display font-bold text-lg mb-3" style="color:#FFFFFF">Dotación Brigada Completa</h3>
+          <p class="text-xs leading-relaxed mb-6" style="color:#64748B">
+            Paquete integral para brigadas industriales: EPP certificado NFPA, capacitación DC-3 STPS, protocolos NOM-002
+            y documentación ante la Secretaría del Trabajo. Un solo proveedor, todo resuelto.
+          </p>
+          <ul class="flex flex-col gap-2 mb-8">
+            {['EPP completo certificado NFPA', 'Capacitación DC-3 STPS incluida', 'Protocolos NOM-002-STPS', 'Documentación STPS', 'Mantenimiento y seguimiento NFPA 1850'].map(item => (
+              <li class="flex items-center gap-2 text-xs" style="color:#94A3B8">
+                <span style="color:#F75000;font-weight:700">✓</span> {item}
+              </li>
+            ))}
+          </ul>
+          <div class="mt-auto flex items-center justify-between">
+            <span class="text-sm font-display font-bold" style="color:#7AA4C4">Cotización por brigada</span>
+            <a href="/servicios/brigadas-empresariales/" class="btn btn-sm btn-ghost">Ver detalles →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ────────────────────────────────────────────────────── -->
+  <section class="section" style="background:#040A12" aria-labelledby="faq-precios-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes · Precios</span>
+          <h2 id="faq-precios-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.1">
+            Lo que más<br/>
+            <span style="color:#F75000">preguntan sobre precios.</span>
+          </h2>
+          <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
+            Cotización formal con precio exacto, disponibilidad y ficha técnica en menos de 24 horas hábiles.
+          </p>
+          <a href="/cotizacion/" class="btn btn-primary">Solicitar cotización</a>
+        </div>
+
+        <div class="flex flex-col">
+          {[
+            { q: '¿Cuánto cuesta un traje de bombero NFPA 1970?', a: '$45,000–$95,000 MXN por conjunto completo (chaquetón + pantalón). El precio varía según marca (Globe, Lion, Honeywell), tejido exterior y configuración de accesorios.' },
+            { q: '¿Cuánto cuesta un SCBA NFPA 1981?', a: '$85,000–$140,000 MXN por equipo (cilindro 30 min). Modelos: MSA G1, Dräger PSS AirBoss y 3M Scott Air-Pak X3 Pro.' },
+            { q: '¿Cuánto cuesta un casco NFPA 1970?', a: '$6,500–$18,000 MXN. Bullard USTM, MSA Gallet F1 XF y Cairns N6A, con visor y protección facial incluidos según modelo.' },
+            { q: '¿Cuánto cuestan las botas de bombero?', a: '$3,500–$8,000 MXN por par. Haix Fire Hero, Weinbrenner Thorogood y Lion Crosstech, certificados NFPA 1970.' },
+            { q: '¿Tienen precios especiales para gobierno?', a: 'Sí — esquemas preferenciales para cuerpos de bomberos, Protección Civil y dependencias gubernamentales, y por volumen (5+ unidades). Consultar programa de equipamiento.' },
+            { q: '¿Los precios incluyen IVA?', a: 'No. Todos los precios de referencia en esta página son antes de IVA. La facturación es con CFDI 4.0 a la tasa vigente de IVA.' },
+          ].map((faq, i) => (
+            <details class="faq-item group" style={`border-top:1px solid rgba(74,117,153,0.18);${i === 5 ? 'border-bottom:1px solid rgba(74,117,153,0.18);' : ''}`}>
+              <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer">
+                <span class="font-display font-semibold text-sm" style="color:#FFFFFF">{faq.q}</span>
+                <span class="faq-icon font-display font-bold text-xl shrink-0" style="color:#FF6B26">+</span>
+              </summary>
+              <p class="text-sm leading-relaxed pb-5 m-0" style="color:#94A3B8">{faq.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA BAND ────────────────────────────────────────────────── -->
+  <section style="background:#F75000;padding-block:4rem" aria-label="Cotizar equipo para bomberos">
+    <div class="container-site">
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div>
+          <p class="text-xs font-display font-bold uppercase tracking-[0.2em] mb-3" style="color:rgba(255,255,255,0.65)">FIREFIGHTERS MX · Distribuidor Autorizado México</p>
+          <h2 class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.75rem,3.5vw,2.5rem);line-height:1.1">
+            Cotización formal en<br/>menos de 24 horas hábiles.
+          </h2>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+          <a href="/cotizacion/" class="btn" style="background:#FFFFFF;color:#F75000;font-weight:700">Solicitar cotización</a>
+          <a href="/contacto/" class="btn" style="background:rgba(0,0,0,0.2);color:#FFFFFF;border:1px solid rgba(255,255,255,0.3)">Contacto directo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

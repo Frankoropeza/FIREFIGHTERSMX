@@ -108,6 +108,7 @@ export const navigation = { main: [
       { label: "Contacto",                   href: "/contacto" },
     ],
   },
+  { label: "Precios", href: "/precios" },
   { label: "Licitaciones", href: "/licitaciones" },
   {
     label: "Directorio",
