@@ -21,7 +21,7 @@ El debate "europeo vs americano" en cascos de bombero es real — pero la pregun
 
 ## La Cola de Pato No Es Decoración — Por Qué Existe y Qué Hace
 
-El casco americano clásico — el Cairns N6A, el Bullard USTM, el MSA Cairns 1010 — tiene una forma que cualquiera reconoce: visera delantera pronunciada, alas laterales anchas y una proyección posterior extendida que en el mundo de los bomberos se llama *duck tail* o cola de pato.
+El casco americano clásico — el [Cairns N6A](/productos/cascos-nfpa/cairns), el [Bullard USTM](/productos/cascos-nfpa/bullard), el MSA Cairns 1010 — tiene una forma que cualquiera reconoce: visera delantera pronunciada, alas laterales anchas y una proyección posterior extendida que en el mundo de los bomberos se llama *duck tail* o cola de pato.
 
 Esa forma no es tradición sentimental. Es una solución a un problema específico del incendio estructural: el material ardiente que cae desde arriba y desde atrás.
 
@@ -35,7 +35,7 @@ Para un bombero que hace ataque interior en estructuras — el escenario de mayo
 
 ## El Perfil Bajo Europeo — Por Qué Importa en Rescate Técnico
 
-El casco europeo moderno — el Gallet F1 XF de Bullard, el MSA Gallet, el Dräger HPS — tiene una geometría radicalmente diferente: perfil bajo, sin cola de pato prominente, visera frontal integrada en el cuerpo de la carcasa. La protección de nuca se garantiza mediante un protector de cuello articulado, integrado en la carcasa, que envuelve el cuello de forma más ajustada al cuerpo que la cola de pato tradicional.
+El casco europeo moderno — el [MSA Gallet F1 XF](/productos/cascos-nfpa/msa-gallet) de Bullard, el MSA Gallet, el Dräger HPS — tiene una geometría radicalmente diferente: perfil bajo, sin cola de pato prominente, visera frontal integrada en el cuerpo de la carcasa. La protección de nuca se garantiza mediante un protector de cuello articulado, integrado en la carcasa, que envuelve el cuello de forma más ajustada al cuerpo que la cola de pato tradicional.
 
 El primer beneficio que todos mencionan es el peso. Los cascos europeos de referencia pesan entre 1,100 y 1,350 gramos. Los americanos equivalentes, entre 1,350 y 1,650 gramos. En un turno largo con traje completo, SCBA y herramientas, 300 gramos en la cabeza se sienten diferente a mediodía que a las 8 de la mañana.
 
@@ -141,7 +141,7 @@ El casco europeo es la respuesta correcta. El perfil bajo en espacios confinados
 
 **Corporaciones Municipales con Presupuesto Limitado o Licitaciones Masivas**
 
-El casco americano estilo Bullard USTM o equivalente certificado NFPA 1970 ofrece la mejor relación costo-protección-disponibilidad en el mercado mexicano. El diferencial de precio de 20 a 40% frente a los europeos de referencia permite equipar a más elementos con presupuesto equivalente, y la disponibilidad de visores de repuesto y refacciones es mayor a través de distribuidores locales.
+El [catálogo de cascos NFPA](/productos/cascos-nfpa) incluye el Bullard USTM y equivalentes certificados NFPA 1970 ofrece la mejor relación costo-protección-disponibilidad en el mercado mexicano. El diferencial de precio de 20 a 40% frente a los europeos de referencia permite equipar a más elementos con presupuesto equivalente, y la disponibilidad de visores de repuesto y refacciones es mayor a través de distribuidores locales.
 
 ---
 
@@ -171,3 +171,19 @@ Tercero, disponibilidad de refacciones — visores, ear flaps, sistemas de reten
 El debate europeo vs americano es real e interesante. Pero es secundario frente a la pregunta fundamental: ¿este casco, con este SCBA, en las manos de estos bomberos, en los escenarios que atiende esta corporación, va a funcionar correctamente cuando más importa?
 
 Eso no lo responde el catálogo. Lo responde la prueba.
+
+---
+
+## Artículos relacionados
+
+- [Compatibilidad casco-SCBA: lo que nadie verifica](/blog/compatibilidad-casco-scba-bomberos) — el problema silencioso que se descubre adentro del incendio
+- [Comparativa de marcas 2026](/blog/cascos-bombero-comparativa-marcas-2026) — FLIR, MSA, Bullard y las opciones certificadas para México
+- [NFPA 1970: cambios en certificación EPP](/blog/nfpa-1970-nueva-norma-trajes-bombero) — qué actualizó la norma y cómo afecta las licitaciones actuales
+
+---
+
+## Catálogo Cascos NFPA en FIREFIGHTERS MX
+
+Distribuimos cascos estructurales certificados NFPA 1970 en estilos europeo y americano: MSA Gallet F1 XF, Bullard USTM, Cairns N6A y opciones compatibles con los principales sistemas SCBA del mercado mexicano.
+
+[Ver catálogo completo de Cascos NFPA](/productos/cascos-nfpa) · [Solicitar cotización](/cotizacion)

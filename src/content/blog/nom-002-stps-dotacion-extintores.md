@@ -71,7 +71,7 @@ Lo que esta tabla te dice en la práctica: en una bodega de riesgo alto, si colo
 
 El número de extintores es solo una parte. La norma también establece la capacidad mínima expresada en unidades extintoras (la clasificación que ves en la etiqueta: 2-A:10-B:C, por ejemplo).
 
-- **Riesgo bajo:** mínimo 2-A:10-B:C (extintor de 4 kg en PQS ABC, generalmente)
+- **Riesgo bajo:** mínimo 2-A:10-B:C (extintor de 4 kg en [PQS ABC](/productos/extintores/pqs-abc), generalmente)
 - **Riesgo ordinario:** mínimo 2-A:20-B:C (extintor de 6 kg)
 - **Riesgo alto:** mínimo 4-A:80-B:C (extintor de 9 kg)
 
@@ -155,7 +155,7 @@ Verificación de distancia: en un espacio de 25 × 20 metros, con dos extintores
 
 **Dotación mínima: 2 extintores PQS ABC de 4 kg (clasificación 2-A:10-B:C)**
 
-Recomendación práctica: si hay un área de servidores o UPS, sustituye uno de los extintores de PQS por uno de CO₂ de 5 kg. El PQS deja residuo abrasivo que daña el hardware; el CO₂ no deja nada.
+Recomendación práctica: si hay un área de servidores o UPS, sustituye uno de los extintores de PQS por uno de [CO₂](/productos/extintores/co2) de 5 kg. El PQS deja residuo abrasivo que daña el hardware; el CO₂ no deja nada.
 
 ### Ejemplo 2: bodega de solventes de 1,000 m²
 
@@ -169,7 +169,7 @@ Verificación de distancia (límite 15 m): en un rectángulo de 40 × 25 metros,
 
 **Dotación mínima: 11 extintores PQS ABC de 9 kg (clasificación 4-A:80-B:C)**
 
-Recomendación adicional: en bodegas con más de 400 litros de líquidos Clase B, complementa con al menos un extintor sobre ruedas de 50 kg para ataque inicial de derrames grandes. Para concentraciones mayores, evalúa un sistema fijo de espuma AFFF.
+Recomendación adicional: en bodegas con más de 400 litros de líquidos Clase B, complementa con al menos un [extintor especializado](/productos/extintores/especializados) sobre ruedas de 50 kg para ataque inicial de derrames grandes. Para concentraciones mayores, evalúa un sistema fijo de espuma AFFF.
 
 ## Tabla resumen por nivel de riesgo
 
@@ -191,7 +191,7 @@ Si partes de cero, o de una dotación que sabes que no está bien calculada, el 
 2. **Recorre el inmueble** y clasifica cada zona por nivel de riesgo según los materiales presentes.
 3. **Aplica la fórmula** N = A ÷ Am para cada zona. Verifica también el criterio de distancia.
 4. **Selecciona el agente correcto** para cada área: PQS ABC para uso general, CO₂ para electrónica, Tipo K para cocinas.
-5. **Compra extintores con certificación NOM-154-SCFI**: verifica la etiqueta de fábrica con número de lote, fecha y clasificación.
+5. **Compra [extintores](/productos/extintores) con certificación NOM-154-SCFI**: verifica la etiqueta de fábrica con número de lote, fecha y clasificación.
 6. **Instala en soportes fijos**, a la altura correcta, con espacio despejado de 1 metro alrededor.
 7. **Coloca señalización NOM-003-SEGOB** del tamaño correcto según la distancia de observación.
 8. **Abre la bitácora**: número de serie, fecha de instalación, técnico responsable, calendario de mantenimiento.
@@ -199,3 +199,19 @@ Si partes de cero, o de una dotación que sabes que no está bien calculada, el 
 El inspector de STPS que llega sin aviso no viene a encontrarte en falta. Pero si encuentra incumplimientos, los va a documentar. Y el acta no distingue entre "no sabía" y "no lo hice".
 
 La dotación correcta de extintores es el sistema de protección contra incendio más simple, más barato y más fiscalizado que existe en México. No es complicado cumplir. Lo que sí es caro es no haberlo hecho cuando el inspector llegó.
+
+---
+
+## Artículos relacionados
+
+- [PQS ABC vs CO₂ vs Tipo K: Elegir el Extintor Equivocado Puede Empeorar el Incendio](/blog/pqs-abc-vs-co2-vs-tipo-k-extintores) — cómo seleccionar el agente correcto para cada tipo de riesgo
+- [Tipos de Extintores en México](/blog/tipos-de-extintores-mexico) — panorama completo de agentes, clases de fuego y aplicaciones prácticas
+- [NOM-002-STPS Guía Completa](/blog/nom-002-stps-guia-completa) — referencia técnica extendida con todos los requisitos de la norma
+
+---
+
+## Catálogo Extintores en FIREFIGHTERS MX
+
+Contamos con extintores PQS ABC, CO₂ y Tipo K certificados NOM-154-SCFI para todos los niveles de riesgo requeridos por la NOM-002-STPS. Ofrecemos asesoría de cálculo de dotación, instalación y servicio de mantenimiento anual para mantener tu bitácora en orden ante cualquier inspección.
+
+[Ver catálogo completo de Extintores](/productos/extintores) · [Solicitar cotización](/cotizacion)

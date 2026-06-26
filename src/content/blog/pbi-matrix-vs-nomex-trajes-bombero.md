@@ -35,7 +35,7 @@ Dicho eso, las diferencias son reales y tienen consecuencias directas en campo.
 
 El **PBI Matrix Gold** es una mezcla de dos fibras: polibenzimidazol (PBI) y aramida para (el mismo tipo de fibra que el Kevlar). La proporción típica es 40% PBI y 60% aramida. El PBI fue desarrollado originalmente para trajes espaciales de la NASA — lo que da una idea de la escala de sus propiedades térmicas. Su temperatura de carbonización supera los 550°C. El color dorado-amarillo que caracteriza a estos trajes no es un accidente: es el color natural de la fibra PBI.
 
-El **Nomex IIIA** es una mezcla de meta-aramida (93%), Kevlar (5%) y fibra conductora antiestática (2%). DuPont desarrolló el Nomex y lleva décadas siendo el referente del mercado mundial de protección para bomberos. Su temperatura de carbonización ronda los 370°C — significativamente menor que el PBI, aunque eso no lo hace menos efectivo en el rango de temperaturas que NFPA 1971 contempla para los trajes estructurales.
+El **Nomex IIIA** es una mezcla de meta-aramida (93%), Kevlar (5%) y fibra conductora antiestática (2%). DuPont desarrolló el Nomex y lleva décadas siendo el referente del mercado mundial de protección para bomberos. Su temperatura de carbonización ronda los 370°C — significativamente menor que el PBI, aunque eso no lo hace menos efectivo en el rango de temperaturas que NFPA 1971 contempla para los [trajes bombero](/productos/trajes-bombero).
 
 El mecanismo de protección de ambos es similar: se carbonizan formando una capa protectora en lugar de arder. La diferencia está en cuánto calor necesitan para llegar ahí y qué tan estable es esa capa bajo exposición prolongada.
 
@@ -124,7 +124,7 @@ El mercado mexicano de trajes estructurales ha estado dominado históricamente p
 
 El PBI Matrix Gold tiene presencia principalmente en corporaciones de primer nivel. El **Heroico Cuerpo de Bomberos de la Ciudad de México** ha contado en distintas etapas con trajes PBI en sus unidades de respuesta de alto riesgo. Algunos equipos ARFF de aeropuertos internacionales y corporaciones del sector petroquímico han optado por PBI para sus equipos especializados.
 
-El punto crítico para licitaciones: el PBI Matrix Gold en México depende de importación a través de distribuidores de marcas como Globe, Bristol o Morning Pride. **Los tiempos de entrega pueden ser de 12 a 20 semanas**, contra 4 a 8 semanas para trajes Nomex de fabricantes con presencia local. Si tu corporación necesita reemplazar equipo dañado en operaciones con urgencia, la disponibilidad del Nomex es una ventaja operativa real.
+El punto crítico para licitaciones: el PBI Matrix Gold en México depende de importación a través de distribuidores de marcas como [Globe Manufacturing](/productos/trajes-bombero/globe-manufacturing), Bristol o Morning Pride. **Los tiempos de entrega pueden ser de 12 a 20 semanas**, contra 4 a 8 semanas para trajes Nomex de fabricantes con presencia local. Si tu corporación necesita reemplazar equipo dañado en operaciones con urgencia, la disponibilidad del Nomex es una ventaja operativa real.
 
 ---
 
@@ -167,3 +167,19 @@ Si estás preparando bases técnicas o un análisis comparativo para tu corporac
 - **ASTM F1959** — Método de prueba de TPP
 - **ASTM F1868** — Método de prueba de THL
 - **Fichas técnicas de laboratorio** de los fabricantes (Globe, Bristol, PGI, Morning Pride) — siempre en la versión del sistema completo que van a ofertar, no de la tela suelta
+
+---
+
+## Artículos relacionados
+
+- [TPP y THL: los parámetros que marcan la diferencia](/blog/tpp-thl-trajes-bombero-nfpa) — cómo leer los números de protección antes de firmar una licitación
+- [NFPA 1970: qué cambió para EPP](/blog/nfpa-1970-nueva-norma-trajes-bombero) — la actualización normativa que afecta a toda la cadena de certificación
+- [Cómo elegir traje bombero para tu corporación](/blog/como-elegir-traje-bombero-nfpa) — guía de decisión por perfil de operación y presupuesto
+
+---
+
+## Catálogo Trajes Bombero en FIREFIGHTERS MX
+
+Contamos con trajes estructurales certificados NFPA 1971 en outer shell PBI Matrix Gold y Nomex IIIA, con distintas configuraciones de moisture barrier y thermal liner para cada perfil de corporación. Desde equipamiento municipal hasta brigadas petroquímicas de alto riesgo.
+
+[Ver catálogo completo de Trajes Bombero](/productos/trajes-bombero) · [Solicitar cotización](/cotizacion)

@@ -19,7 +19,7 @@ No fue una mala decisión en 2019. Fue una decisión de corto plazo que ignoró 
 
 ---
 
-Cuando el riesgo que proteges no puede mojarse, ensuciarse ni llenarse de polvo — un data center, un cuarto de UPS, una bóveda de documentos, una sala de control de proceso — los rociadores de agua quedan descartados de entrada. Los sistemas de agente limpio son el estándar de la industria, y dentro de esa categoría, dos agentes dominan el mercado global y el mexicano: el **FM-200** (HFC-227ea, heptafluoropropano) y el **Novec 1230** (FK-5-1-12, fluorocetona).
+Cuando el riesgo que proteges no puede mojarse, ensuciarse ni llenarse de polvo — un data center, un cuarto de UPS, una bóveda de documentos, una sala de control de proceso — los rociadores de agua quedan descartados de entrada. Los [sistemas de agente limpio](/productos/sistemas-ci) son el estándar de la industria, y dentro de esa categoría, dos agentes dominan el mercado global y el mexicano: el **[FM-200](/productos/sistemas-ci/fm200-novec)** (HFC-227ea, heptafluoropropano) y el **Novec 1230** (FK-5-1-12, fluorocetona).
 
 Ambos están listados bajo NFPA 2001. Ambos dejan el espacio limpio tras la descarga. Ambos son efectivos. Pero tienen diferencias técnicas, ambientales y de disponibilidad que en 2026 importan mucho más que en 2016.
 
@@ -232,3 +232,19 @@ La selección del agente no es solo un ítem de presupuesto. Es una decisión de
 El análisis correcto incluye el precio del agente hoy, la proyección de disponibilidad y precio en el horizonte de uso, el valor e irreemplazabilidad de los activos protegidos, y los compromisos regulatorios y ambientales de la organización.
 
 Con esos factores sobre la mesa, la diferencia de precio inicial entre FM-200 y Novec 1230 se ve diferente. Y en muchos casos, la decisión es más fácil de lo que parece.
+
+---
+
+## Artículos relacionados
+
+- [NFPA 13 vs 13R vs 13D: el error de diseño que anula tu seguro de incendio](/blog/nfpa-13-vs-13r-vs-13d-rociadores) — cuándo los rociadores son la norma y cuándo el agente limpio es la alternativa correcta
+- [Licitaciones de Equipo Contra Incendio en México](/blog/licitaciones-equipo-contra-incendio-mexico-nom-nfpa) — cómo especificar sistemas de agente limpio en adquisiciones públicas con criterios técnicos verificables
+- [NOM-002-STPS Guía Completa](/blog/nom-002-stps-guia-completa) — complemento normativo mexicano para sistemas de protección activa contra incendio
+
+---
+
+## Catálogo Sistemas CI en FIREFIGHTERS MX
+
+Diseñamos sistemas de supresión con FM-200 y Novec 1230 bajo NFPA 2001 para data centers, salas de control, bóvedas y archivos. Si tienes un proyecto nuevo o necesitas evaluar la disponibilidad de recarga de tu sistema actual ante el Protocolo de Kigali, nuestros ingenieros pueden hacer el análisis de ciclo de vida.
+
+[Ver catálogo completo de Sistemas CI](/productos/sistemas-ci) · [Solicitar cotización](/cotizacion)

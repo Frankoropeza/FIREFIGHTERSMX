@@ -57,7 +57,7 @@ Para las plantas de amoniaco en Monterrey y Nuevo León, el CAS es 7664-41-7. Pa
 
 **Paso 2: Localiza la columna de tu material.**
 
-En las tablas de [DuPont Tychem](/productos/hazmat/dupont-tychem), las columnas corresponden a los materiales de la línea Tychem: Tychem 2000 (antes QC), Tychem 4000 (antes SL), Tychem 6000 (antes TK), Tychem 10000 (antes BR). En [Lakeland ChemMax](/productos/hazmat/lakeland-chemmax), son ChemMax 1, 2, 3 y 4. El nombre comercial del traje que tienes en bodega aparece en la etiqueta; el material correspondiente en la tabla es lo que importa.
+En las tablas de DuPont Tychem, las columnas corresponden a los materiales de la línea Tychem: Tychem 2000 (antes QC), Tychem 4000 (antes SL), Tychem 6000 (antes TK), Tychem 10000 (antes BR). En Lakeland ChemMax, son ChemMax 1, 2, 3 y 4. El nombre comercial del traje que tienes en bodega aparece en la etiqueta; el material correspondiente en la tabla es lo que importa.
 
 No asumas que "Nivel B" o "Nivel A" te dice el material. Te dice la configuración de protección respiratoria y salpicaduras. Un técnico con Tychem 6000 y SCBA y un técnico con Tyvek y SCBA son ambos "Nivel B". Sus permeaciones para tolueno son radicalmente diferentes.
 

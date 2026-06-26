@@ -35,7 +35,7 @@ Eso, en esencia, es todo el sistema. El resto es contexto, escenario y criterio.
 
 El Nivel A es el único nivel que pone al respondedor completamente aislado del ambiente. El traje encapsula todo —incluyendo el SCBA, que va **dentro** del traje. No hay una sola interfaz abierta con el exterior. Eso significa protección total contra vapores, gases, salpicaduras, partículas, y prácticamente cualquier agente que quiera entrar por piel, ojos, o vías respiratorias.
 
-El traje típico en México para Nivel A es el Tychem 10000 o su equivalente —un material laminado de múltiples capas que ofrece alta resistencia a la permeación de la mayoría de los solventes orgánicos, ácidos fuertes y compuestos organofosforados. El precio de entrada en el mercado nacional ronda los 0,000–80,000 MXN por traje. Un solo uso seguido de contaminación seria puede significar que ese traje va a destrucción.
+El traje típico en México para Nivel A es el [Tychem 10000](/productos/hazmat/dupont-tychem) o su equivalente —un material laminado de múltiples capas que ofrece alta resistencia a la permeación de la mayoría de los solventes orgánicos, ácidos fuertes y compuestos organofosforados. El precio de entrada en el mercado nacional ronda los 0,000–80,000 MXN por traje. Un solo uso seguido de contaminación seria puede significar que ese traje va a destrucción.
 
 **Cuándo lo usas sin discusión:**
 
@@ -164,7 +164,7 @@ La tabla siguiente resume los parámetros operativos. Lo que no te dice la tabla
 | **Costo EPP (referencia MXN)** | 0,000–80,000 | 5,000–0,000 | ,000–5,000 | ,000–,000 |
 | **Tiempo trabajo (clima cálido)** | 15–20 min | 25–35 min | 60–90 min | Sin restricción HAZMAT |
 | **Zona de operación** | Caliente | Caliente/Tibia | Tibia | Fría |
-| **Traje típico en México** | Tychem 10000, Responder CSM | Tychem 6000, ChemMax 4 | Tychem C, Tyvek 800J | Uniforme de trabajo |
+| **Traje típico en México** | Tychem 10000, Responder CSM | Tychem 6000, [ChemMax 4](/productos/hazmat/lakeland-chemmax) | Tychem C, Tyvek 800J | Uniforme de trabajo |
 
 Un punto que vale la pena señalar sobre el costo: el error de compra más común en corporaciones medianas es invertir en trajes Nivel A de alta gama y luego no presupuestar los SCBA, los detectores calibrados, o el entrenamiento de uso. Un Tychem 10000 sin SCBA adecuado, sin PID, y sin personal certificado NFPA 472 Technician es una fotografía de catálogo, no un programa HAZMAT.
 
@@ -214,7 +214,7 @@ Si la respuesta a cualquiera de estas preguntas es no, el traje Nivel A en tu bo
 
 El EPP correcto no es el más caro de la lista. Es el que corresponde al riesgo real de tu territorio, que tu personal sabe usar, que está mantenido, y que tiene el soporte logístico para emplearse en una operación real.
 
-Una corporación del corredor petroquímico Veracruz-Coatzacoalcos necesita un programa HAZMAT serio con Nivel A y Nivel B, SCBA de 45 minutos, PID con múltiples sensores, y personal Technician certificado. Una corporación municipal en una zona industrial mediana con riesgo principal de derrames de combustibles y productos de limpieza puede operar con un programa sólido de Nivel B y C, con protocolos claros para cuando escalar y llamar al equipo especializado.
+Una corporación del corredor petroquímico Veracruz-Coatzacoalcos necesita un [programa HAZMAT](/productos/hazmat) serio con Nivel A y Nivel B, SCBA de 45 minutos, PID con múltiples sensores, y personal Technician certificado. Una corporación municipal en una zona industrial mediana con riesgo principal de derrames de combustibles y productos de limpieza puede operar con un programa sólido de Nivel B y C, con protocolos claros para cuando escalar y llamar al equipo especializado.
 
 La trampa del catálogo es vender el nivel más alto como si fuera la solución universal. No lo es.
 
@@ -233,3 +233,19 @@ Todo lo demás es presión. Y la presión en HAZMAT es el mecanismo principal po
 ---
 
 *Referencias: EPA "Personal Protective Equipment" (EPA 9280.00-2C), NFPA 472 (2018 Edition), NIOSH Pocket Guide to Chemical Hazards, NOM-018-STPS-2015, NOM-010-STPS-2014, Emergency Response Guidebook 2024, OSHA HAZWOPER 29 CFR 1910.120.*
+
+---
+
+## Artículos relacionados
+
+- [Tablas de Permeación: DuPont Tychem vs Lakeland ChemMax](/blog/tablas-permeacion-dupont-lakeland-hazmat) — cómo leer los datos de ruptura para seleccionar el traje correcto
+- [Detectores de Gas para Bomberos: MSA, Industrial Scientific y Dräger](/blog/detectores-gas-bomberos-msa-industrial-scientific-draeger) — instrumentos de monitoreo para verificar niveles antes de descalar protección
+- [Licitaciones de Equipo Contra Incendio en México](/blog/licitaciones-equipo-contra-incendio-mexico-nom-nfpa) — cómo especificar EPP HAZMAT correctamente en procesos de adquisición pública
+
+---
+
+## Catálogo Equipos HAZMAT en FIREFIGHTERS MX
+
+Contamos con trajes encapsulados Nivel A y B, incluyendo líneas DuPont Tychem, Lakeland ChemMax y Kappler Zytron certificados para respuesta a materiales peligrosos. Cada equipo se acompaña de asesoría técnica para que tu corporación elija el nivel correcto según el riesgo de tu territorio.
+
+[Ver catálogo completo de Equipos HAZMAT](/productos/hazmat) · [Solicitar cotización](/cotizacion)

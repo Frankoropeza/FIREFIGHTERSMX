@@ -11,7 +11,7 @@ image:
   alt: "Cámara térmica certificada NFPA 1801 para uso en combate estructural de incendio"
 ---
 
-Hace algunos años acompañé la evaluación técnica de una licitación para equipar a una corporación municipal en el Bajío. El área de Protección Civil había pedido cámaras térmicas "de alta resolución para uso en emergencias". Llegaron cuatro propuestas. Tres presentaban cámaras de la línea FLIR E o equivalentes industriales. La cuarta presentaba una cámara certificada bajo NFPA 1801.
+Hace algunos años acompañé la evaluación técnica de una licitación para equipar a una corporación municipal en el Bajío. El área de Protección Civil había pedido cámaras térmicas "de alta resolución para uso en emergencias". Llegaron cuatro propuestas. Tres presentaban cámaras de la línea [FLIR K-Series](/productos/camaras-termicas/flir) o equivalentes industriales. La cuarta presentaba una cámara certificada bajo NFPA 1801.
 
 En papel, las tres propuestas industriales ganaban en resolución declarada, en pantalla más grande y en precio. El evaluador —funcionario de carrera, sin formación técnica en equipos de combate— estaba listo para recomendar la propuesta más barata. Tuve que detener el proceso para explicar algo que nadie había puesto en el pliego técnico: ninguna de esas tres cámaras había demostrado jamás que podía operar a 260 °C de temperatura ambiental sin apagarse.
 
@@ -184,7 +184,7 @@ Agregar ese párrafo al pliego técnico no eleva el costo de la adquisición. Lo
 
 ## Las marcas que sí tienen certificación NFPA 1801 y cómo verificarlas
 
-No es el propósito de este artículo recomendar marcas específicas ni hacer publicidad comparativa. Lo que sí puedo decirte como criterio de búsqueda: en el momento de escribir este artículo, los fabricantes con modelos certificados bajo NFPA 1801 en el registro público de UL o FM incluyen —entre otros— MSA Safety, Scott Safety (ahora Scott-3M), Bullard, Seek Thermal (línea para bomberos) y FLIR en su línea específica para bomberos (no la línea de inspección industrial, que es una familia distinta dentro del mismo fabricante).
+No es el propósito de este artículo recomendar marcas específicas ni hacer publicidad comparativa. Lo que sí puedo decirte como criterio de búsqueda: en el momento de escribir este artículo, los fabricantes con modelos certificados bajo NFPA 1801 en el registro público de UL o FM incluyen —entre otros— [MSA Evolution](/productos/camaras-termicas/msa-evolution) Safety, Scott Safety (ahora Scott-3M), [Bullard TXS](/productos/camaras-termicas/bullard-txs), Seek Thermal (línea para bomberos) y FLIR en su línea específica para bomberos (no la línea de inspección industrial, que es una familia distinta dentro del mismo fabricante).
 
 El último punto es importante porque puede confundir: FLIR fabrica tanto cámaras industriales sin certificación NFPA 1801 como cámaras para bomberos con certificación. Que el fabricante sea FLIR no dice nada por sí solo. Lo que dice el modelo específico y el número de parte, verificado en el registro público.
 
@@ -204,7 +204,7 @@ Si el modelo no aparece, el certificado que te presentaron no tiene respaldo ver
 
 No hay conclusión aquí. Hay un listado de acciones específicas.
 
-**Antes de iniciar cualquier proceso de adquisición:** Redacta el pliego técnico con la cláusula NFPA 1801 edición 2021 y exige verificabilidad pública del certificado. Si no tienes capacidad técnica interna para redactarlo, consúltalo con alguien que tenga experiencia en equipamiento de bomberos —no con el proveedor que quieres evaluar.
+**Antes de iniciar cualquier proceso de adquisición:** Redacta el pliego técnico con la cláusula NFPA 1801 edición 2021 y exige verificabilidad pública del certificado para las [cámaras térmicas](/productos/camaras-termicas) ofertadas. Si no tienes capacidad técnica interna para redactarlo, consúltalo con alguien que tenga experiencia en equipamiento de bomberos —no con el proveedor que quieres evaluar.
 
 **Durante la evaluación de propuestas:** Ejecuta el checklist de diez puntos en cada propuesta antes de pasar a la evaluación de precio. Cualquier propuesta que no pase los primeros cuatro puntos queda descalificada, sin importar el precio ni las especificaciones declaradas en la hoja técnica.
 
@@ -215,3 +215,19 @@ No hay conclusión aquí. Hay un listado de acciones específicas.
 **Si ya compraste equipo sin certificación:** No lo deseches necesariamente, pero documenta sus limitaciones reales y no lo uses como instrumento primario en combate estructural. Puede tener utilidad en operaciones de reconocimiento exterior, inspección post-incendio o entrenamiento. La decisión sobre su uso corresponde al jefe de corporación con criterio técnico claro, no a la inercia del equipo en el inventario.
 
 La NFPA 1801 existe porque la diferencia entre una cámara que funciona dentro de un incendio estructural y una que falla no se ve en la hoja de especificaciones del proveedor. Se ve en las pruebas de laboratorio. Y cuando esas pruebas son independientes, trazables y verificables en línea, son el único lenguaje técnico que un proceso de compra debería aceptar.
+
+---
+
+## Artículos relacionados
+
+- [FLIR vs MSA vs Bullard: comparativa técnica](/blog/flir-vs-msa-vs-bullard-camaras-termicas) — qué cámara elige el atacante de primer ingreso y cuál el comandante de incidente
+- [MSA G1 vs Dräger PSS 7000](/blog/msa-g1-vs-drager-pss7000-scba) — la misma lógica de integración sistémica aplicada a SCBA
+- [Guía de compra SCBA en México](/blog/guia-compra-scba-equipos-respiracion-autonoma) — cómo estructurar una licitación técnicamente sólida
+
+---
+
+## Catálogo Cámaras Térmicas en FIREFIGHTERS MX
+
+Distribuimos cámaras térmicas certificadas bajo NFPA 1801 edición 2021 con número de certificado verificable en los registros públicos de UL y FM. FLIR K-Series, MSA Evolution y Bullard TXS con soporte técnico y disponibilidad de baterías en México.
+
+[Ver catálogo completo de Cámaras Térmicas](/productos/camaras-termicas) · [Solicitar cotización](/cotizacion)

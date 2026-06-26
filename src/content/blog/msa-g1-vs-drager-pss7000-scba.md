@@ -11,7 +11,7 @@ image:
   alt: "Comparativa SCBA MSA G1 y Dräger PSS 7000 para combate estructural de incendio"
 ---
 
-Hay una conversación que ocurre en casi todas las licitaciones de SCBA en México, y va más o menos así: el jefe de adquisiciones pone sobre la mesa las fichas técnicas del MSA G1 y del Dräger PSS 7000, ambas certificadas NFPA 1981:2018, ambas con telemetría inalámbrica, ambas de fabricantes con décadas de trayectoria. Y entonces llega la pregunta incómoda: ¿qué diferencia a estos dos equipos en la práctica?
+Hay una conversación que ocurre en casi todas las licitaciones de SCBA en México, y va más o menos así: el jefe de adquisiciones pone sobre la mesa las fichas técnicas del [MSA G1](/productos/equipos-scba/msa-g1) y del [Dräger PSS 7000](/productos/equipos-scba/drager-pss), ambas certificadas NFPA 1981:2018, ambas con telemetría inalámbrica, ambas de fabricantes con décadas de trayectoria. Y entonces llega la pregunta incómoda: ¿qué diferencia a estos dos equipos en la práctica?
 
 La respuesta honesta es que en papel, casi nada. En el campo, todo.
 
@@ -179,4 +179,20 @@ La pregunta más cara en adquisiciones de equipo de protección personal no es l
 
 **Rescate técnico especializado o USAR:** MSA G1. El peso es crítico. Dos kilos y medio menos, en una operación de 8 horas con rotación de equipos en un derrumbe, no es un dato de catálogo — es la diferencia en la capacidad de trabajo del operador al final del turno.
 
-Lo que no cambia en ninguna corporación es lo siguiente: exige al proveedor — de cualquier marca — un SLA (Service Level Agreement) escrito con tiempo máximo de entrega de refacciones críticas. Un regulador sin membrana de repuesto disponible en 72 horas en una corporación activa es un equipo que no protege a nadie. Ese compromiso escrito vale más que cualquier especificación técnica en la ficha del fabricante.
+Lo que no cambia en ninguna corporación es lo siguiente: exige al proveedor — de cualquier marca — un SLA (Service Level Agreement) escrito con tiempo máximo de entrega de refacciones críticas para sus [equipos SCBA](/productos/equipos-scba). Un regulador sin membrana de repuesto disponible en 72 horas en una corporación activa es un equipo que no protege a nadie. Ese compromiso escrito vale más que cualquier especificación técnica en la ficha del fabricante.
+
+---
+
+## Artículos relacionados
+
+- [Cilindros SCBA: fibra de carbono vs acero](/blog/cilindros-scba-fibra-carbono-vs-acero) — TCO a 10 años y protocolo post-impacto para cada material
+- [Compatibilidad casco-SCBA: el problema silencioso](/blog/compatibilidad-casco-scba-bomberos) — por qué certificación individual no garantiza que los equipos funcionen juntos
+- [Guía de compra SCBA en México](/blog/guia-compra-scba-equipos-respiracion-autonoma) — criterios técnicos y preguntas clave antes de firmar la licitación
+
+---
+
+## Catálogo Equipos SCBA en FIREFIGHTERS MX
+
+Distribuimos equipos SCBA certificados NFPA 1981 de MSA y Dräger con soporte técnico en México, incluyendo análisis de compatibilidad con la infraestructura de llenado existente en tu corporación.
+
+[Ver catálogo completo de Equipos SCBA](/productos/equipos-scba) · [Solicitar cotización](/cotizacion)

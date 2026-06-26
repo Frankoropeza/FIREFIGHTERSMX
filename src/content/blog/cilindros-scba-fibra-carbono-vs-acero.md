@@ -25,7 +25,7 @@ Ese es el riesgo real que nadie menciona en el catálogo del proveedor.
 
 ## El argumento que lleva a la compra equivocada
 
-Cuando un responsable de adquisiciones o un comandante operativo evalúa cilindros SCBA, el argumento de venta para fibra de carbono es siempre el mismo: pesa menos. Y es verdad. Un cilindro full composite de 6 litros / 300 bar pesa entre 2.6 y 3.0 kg vacío. El equivalente en acero llega a 5.2 – 5.8 kg. La diferencia operacional con aire cargado es de 2.6 a 3.2 kg menos sobre la espalda del bombero durante toda la intervención.
+Cuando un responsable de adquisiciones o un comandante operativo evalúa cilindros de [equipos SCBA](/productos/equipos-scba), el argumento de venta para fibra de carbono es siempre el mismo: pesa menos. Y es verdad. Un cilindro full composite de 6 litros / 300 bar pesa entre 2.6 y 3.0 kg vacío. El equivalente en acero llega a 5.2 – 5.8 kg. La diferencia operacional con aire cargado es de 2.6 a 3.2 kg menos sobre la espalda del bombero durante toda la intervención.
 
 Eso importa. No lo voy a minimizar.
 
@@ -65,7 +65,7 @@ Si tu parque incluye cilindros de fibra de carbono, necesitas un procedimiento e
 
 **Paso 4 — Registro en el expediente individual del cilindro.** Número de serie, fecha del incidente, naturaleza del impacto, resultado de inspección visual, y decisión tomada (retiro a prueba o destrucción). Este registro debe estar disponible durante la próxima prueba hidrostática programada.
 
-**Paso 5 — Notificación al fabricante si el cilindro tiene menos de cinco años.** Algunos fabricantes (MSA, Scott Safety de 3M, Draeger) ofrecen evaluación técnica gratuita para cilindros dañados dentro de garantía. Vale la pena el trámite antes de destruir un cilindro reciente.
+**Paso 5 — Notificación al fabricante si el cilindro tiene menos de cinco años.** Algunos fabricantes ([MSA G1](/productos/equipos-scba/msa-g1), Scott Safety de 3M, Draeger) ofrecen evaluación técnica gratuita para cilindros dañados dentro de garantía. Vale la pena el trámite antes de destruir un cilindro reciente.
 
 Esta secuencia no es burocracia. Es la diferencia entre descubrir el daño en el taller o descubrirlo cuando el cilindro falla a 300 bar con un bombero adentro de un edificio en llamas.
 
@@ -177,3 +177,19 @@ Si el proveedor no puede o no quiere incluir esos elementos, es una señal sobre
 El material que elijas no determina por sí solo la seguridad de tu parque. Lo determina la calidad con que lo gestionas. Un cilindro de acero con pruebas hidrostáticas vencidas es más peligroso que un composite correctamente gestionado. Y un composite sin protocolo post-impacto en un entorno industrial es más peligroso que el acero más pesado del mercado.
 
 Lleva los números de TCO a tu próxima reunión de adquisiciones. Define el protocolo antes de abrir la licitación. Y si alguien en tu corporación todavía está argumentando "fibra de carbono porque pesa menos" sin haber leído sobre daño invisible, pásale este artículo antes de que firme el pedido.
+
+---
+
+## Artículos relacionados
+
+- [MSA G1 vs Dräger PSS 7000: comparativa real](/blog/msa-g1-vs-drager-pss7000-scba) — costo total de flota, telemetría y compatibilidad con equipo mexicano
+- [Guía de compra SCBA en México](/blog/guia-compra-scba-equipos-respiracion-autonoma) — qué preguntar antes de comprometer el presupuesto
+- [Compatibilidad casco-SCBA: el problema silencioso](/blog/compatibilidad-casco-scba-bomberos) — cómo verificar que el casco y el SCBA funcionen como sistema
+
+---
+
+## Catálogo Equipos SCBA en FIREFIGHTERS MX
+
+Los cilindros son solo una parte del sistema. Contamos con equipos SCBA completos certificados NFPA 1981, con opciones de cilindro de acero y fibra de carbono según el perfil operacional de tu corporación o brigada industrial.
+
+[Ver catálogo completo de Equipos SCBA](/productos/equipos-scba) · [Solicitar cotización](/cotizacion)

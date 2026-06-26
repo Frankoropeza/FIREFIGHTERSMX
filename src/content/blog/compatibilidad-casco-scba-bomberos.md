@@ -49,7 +49,7 @@ Las máscaras faciales de SCBA del mercado actual se dividen en dos familias geo
 
 **Máscaras de perfil tradicional:** arco de lente pronunciado, mayor proyección frontal desde la cara del usuario. Durante décadas fueron el estándar. Ejemplos: Scott AV-2000 en versiones anteriores, Dräger FPS 7000 clásico, MSA Millennium. Fueron diseñadas cuando el casco americano de perfil alto era universal — la compatibilidad entre ambos estaba garantizada por tradición de uso conjunto.
 
-**Máscaras low-profile:** menor proyección frontal, diseñadas específicamente para mejorar la compatibilidad con cascos de bajo perfil y ampliar el campo visual del bombero. Ejemplos: Scott AV-3000 SurVivor, MSA G1 Facepiece, Dräger FPS 7730. Con estas máscaras, el espacio entre el borde de la máscara y el ala del casco americano es mayor, reduciendo significativamente el riesgo de interferencia al inclinar la cabeza.
+**Máscaras low-profile:** menor proyección frontal, diseñadas específicamente para mejorar la compatibilidad con cascos de bajo perfil y ampliar el campo visual del bombero. Ejemplos: [3M Scott Air-Pak](/productos/equipos-scba/scott-air-pak) AV-3000 SurVivor, [MSA G1](/productos/equipos-scba/msa-g1) Facepiece, Dräger FPS 7730. Con estas máscaras, el espacio entre el borde de la máscara y el ala del casco americano es mayor, reduciendo significativamente el riesgo de interferencia al inclinar la cabeza.
 
 La combinación de mayor riesgo de incompatibilidad es la más común en licitaciones mixtas: **casco americano de perfil alto + máscara de perfil tradicional** — el clásico combo de décadas que funciona bien — reemplazado por **casco europeo de bajo perfil + máscara de perfil tradicional** cuando la corporación actualiza solo los cascos sin revisar la interfaz con el SCBA existente.
 
@@ -121,12 +121,12 @@ Toma esto como punto de partida, no como sustituto de la prueba física en campo
 
 | Casco | SCBA / Máscara | Estado de compatibilidad | Observaciones clave |
 |---|---|---|---|
-| **MSA Gallet F1 XF** | MSA G1 SCBA / G1 Facepiece | Validada (sistema integrado MSA) | Diseñados conjuntamente — máxima integración |
+| **[MSA Gallet F1 XF](/productos/cascos-nfpa/msa-gallet)** | MSA G1 SCBA / G1 Facepiece | Validada (sistema integrado MSA) | Diseñados conjuntamente — máxima integración |
 | **MSA Gallet F1 XF** | MSA Advantage 3200 | Validada por MSA | Verificar ajuste de arnés de máscara |
 | **Bullard USTM** | Scott AV-3000 SurVivor | Validada por Bullard | Máscara low-profile recomendada |
 | **Cairns 1010 / N6A** | Scott AV-3000 SurVivor | Declarada por MSA Cairns | Verificar siempre con inclinación de cabeza |
 | **Cairns 1010 / N6A** | MSA G1 Facepiece | Validada por MSA | Ajuste de ala frontal crítico |
-| **Dräger HPS 7000** | Dräger PSS 5000 / FPS 7730 | Validada (sistema integrado Dräger) | Máxima integración — sistema Dräger |
+| **Dräger HPS 7000** | [Dräger PSS 7000](/productos/equipos-scba/drager-pss) / FPS 7730 | Validada (sistema integrado Dräger) | Máxima integración — sistema Dräger |
 | **Dräger HPS 7000** | Scott AV-3000 SurVivor | Limitada — verificar en campo | Sin validación oficial cruzada |
 | **Bullard FH Series** | Scott AV-3000 SurVivor | Validada por Bullard | Compatible con low-profile |
 | **3M Scott ProStream** | Scott AV-3000 SurVivor | Validada (sistema 3M Scott) | Óptima dentro del ecosistema Scott |
@@ -190,3 +190,19 @@ La única garantía que existe es la prueba física combinada. Con el traje pues
 Eso no es burocracia adicional. Es el mínimo de debida diligencia técnica para equipar a alguien que va a entrar a un edificio en llamas con la confianza de que su equipo de protección funciona como sistema, no solo como colección de piezas certificadas por separado.
 
 La certificación individual de cada componente es el punto de partida. La prueba de compatibilidad combinada es la única forma de llegar al punto de llegada: un bombero protegido, no solo un expediente completo.
+
+---
+
+## Artículos relacionados
+
+- [Casco europeo vs americano: cómo elegir](/blog/casco-bombero-europeo-vs-americano) — cola de pato vs perfil bajo según tu operación
+- [MSA G1 vs Dräger PSS 7000](/blog/msa-g1-vs-drager-pss7000-scba) — comparativa real para corporaciones mexicanas
+- [Guía de compra SCBA en México](/blog/guia-compra-scba-equipos-respiracion-autonoma) — criterios técnicos y costo total de propiedad
+
+---
+
+## Catálogos Cascos NFPA y Equipos SCBA en FIREFIGHTERS MX
+
+La compatibilidad empieza por elegir equipo diseñado para operar en conjunto. Distribuimos cascos certificados NFPA 1970 y equipos SCBA certificados NFPA 1981 con validación de compatibilidad disponible para los sistemas más comunes del mercado mexicano.
+
+[Ver Cascos NFPA](/productos/cascos-nfpa) · [Ver Equipos SCBA](/productos/equipos-scba) · [Solicitar cotización](/cotizacion)

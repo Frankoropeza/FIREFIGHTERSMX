@@ -23,7 +23,7 @@ Ese ajustador tenía razón. Y el desarrollador que firmó el proyecto también 
 
 ---
 
-Las tres normas NFPA de rociadores — 13, 13R y 13D — no son versiones "más o menos completas" del mismo sistema. Son estándares diseñados para occupancies completamente distintos, con objetivos de protección diferentes, y con consecuencias legales, de seguro y de seguridad que no son intercambiables.
+Las tres normas NFPA de [sistemas de rociadores](/productos/sistemas-ci) — 13, 13R y 13D — no son versiones "más o menos completas" del mismo sistema. Son estándares diseñados para occupancies completamente distintos, con objetivos de protección diferentes, y con consecuencias legales, de seguro y de seguridad que no son intercambiables.
 
 El error más común en México no es instalar un sistema malo. Es instalar un sistema diseñado para el edificio equivocado.
 
@@ -63,7 +63,7 @@ Esta cobertura total es la diferencia fundamental. No es burocracia: un incendio
 
 Las aseguradoras de cartera comercial e industrial en México — AXA, Chubb, Zurich, GNP, Mapfre — calculan la prima y el deducible de incendio en función de si el edificio tiene sistema NFPA 13 instalado, certificado y con bitácora de pruebas anual vigente.
 
-Un sistema NFPA 13 en buenas condiciones puede reducir la prima de seguro de incendio entre 15% y 35% anualmente. Eso no es un beneficio adicional: en muchos contratos de reaseguro internacional, es la condición para que la póliza tenga cobertura a valor de reposición en lugar de cobertura a valor actual.
+Un [sistema NFPA 13](/productos/sistemas-ci/tyco-viking) en buenas condiciones puede reducir la prima de seguro de incendio entre 15% y 35% anualmente. Eso no es un beneficio adicional: en muchos contratos de reaseguro internacional, es la condición para que la póliza tenga cobertura a valor de reposición en lugar de cobertura a valor actual.
 
 La diferencia importa cuando hay un siniestro. Con cobertura a valor de reposición, el seguro paga reconstruir el edificio. Con cobertura a valor actual, paga el valor depreciado del edificio con el descuento de los años de uso. Para un edificio comercial de 15 años, esa diferencia puede ser el 40% del valor real.
 
@@ -128,7 +128,7 @@ Lo vemos en el escenario del inicio: el ajustador invalida la póliza. Pero hay 
 
 **Responsabilidad civil post-siniestro.** Si hay víctimas en un incendio y se demuestra que el sistema instalado no correspondía a la norma aplicable para ese tipo de edificio, el desarrollador y el proyectista enfrentan responsabilidad civil. En México, los fondos de daño moral y patrimonial en casos de negligencia en construcción son crecientes en los últimos cinco años.
 
-**El costo de corregir después del acabado.** Un sistema de rociadores mal especificado que se detecta durante la entrega o en la primera inspección de la aseguradora tiene que corregirse con el inmueble terminado. Romper cielo raso, ampliar la red de tuberías, instalar la bomba que faltaba, supervisar las válvulas — en un edificio con acabados instalados, el costo de corrección puede ser 3 a 5 veces el costo de haberlo hecho correctamente desde el proyecto.
+**El costo de corregir después del acabado.** Un sistema de rociadores mal especificado que se detecta durante la entrega o en la primera inspección de la aseguradora tiene que corregirse con el inmueble terminado. Romper cielo raso, ampliar la [red de tuberías](/productos/sistemas-ci/red-hidraulica), instalar la bomba que faltaba, supervisar las válvulas — en un edificio con acabados instalados, el costo de corrección puede ser 3 a 5 veces el costo de haberlo hecho correctamente desde el proyecto.
 
 ## El mapa de decisión que deberías usar antes de aprobar cualquier proyecto
 
@@ -190,3 +190,19 @@ Las **aseguradoras internacionales** — las que reaseguran las carteras industr
 El **mercado de deuda corporativa e inmobiliaria** está incorporando due diligence de seguridad contra incendio en las verificaciones previas a financiamiento. Fondos de inversión y bancos que financian desarrollos comerciales e industriales están solicitando informes de cumplimiento de sistemas de protección pasiva y activa como condición de cierre de crédito.
 
 La norma correcta no es solo un requisito técnico. Es un requisito de negocio.
+
+---
+
+## Artículos relacionados
+
+- [FM-200 vs Novec 1230: la decisión de inversión a 20 años](/blog/fm200-vs-novec-1230-agente-limpio) — cuándo los sistemas de rociadores no son la opción y se necesita agente limpio
+- [Licitaciones de Equipo Contra Incendio en México](/blog/licitaciones-equipo-contra-incendio-mexico-nom-nfpa) — cómo especificar NFPA 13 correctamente en procesos de adquisición pública
+- [NOM-002-STPS Guía Completa](/blog/nom-002-stps-guia-completa) — complemento normativo mexicano para sistemas de protección contra incendio
+
+---
+
+## Catálogo Sistemas CI en FIREFIGHTERS MX
+
+Diseñamos e instalamos sistemas de rociadores bajo NFPA 13, 13R y 13D con componentes Tyco Viking certificados. Si tienes un proyecto nuevo o necesitas verificar que el sistema existente cumple con la norma correcta para tu tipo de ocupación, nuestros ingenieros pueden hacer la evaluación técnica.
+
+[Ver catálogo completo de Sistemas CI](/productos/sistemas-ci) · [Solicitar cotización](/cotizacion)

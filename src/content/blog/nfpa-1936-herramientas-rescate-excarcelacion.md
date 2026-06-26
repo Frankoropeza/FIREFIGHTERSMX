@@ -17,7 +17,7 @@ He visto este escenario repetirse en varios procesos de adquisición municipales
 
 El evaluador técnico recibe la propuesta. Revisa la ficha técnica. Encuentra la frase "cumple con NFPA 1936" o "diseñado según NFPA 1936" impresa en el catálogo del fabricante. Palomea el requisito. La licitación avanza. El equipo llega. El acta de entrega se firma.
 
-Dos años después, una cuadrilla de rescate vehicular intenta cortar el pilar B de una pick-up modelo reciente. La cizalla avanza hasta el 60% del corte y se detiene. El operador reinicia el equipo, lo reposiciona. El tiempo pasa. La víctima sigue dentro.
+Dos años después, una cuadrilla de [rescate vehicular](/productos/herramientas-rescate) intenta cortar el pilar B de una pick-up modelo reciente. La cizalla avanza hasta el 60% del corte y se detiene. El operador reinicia el equipo, lo reposiciona. El tiempo pasa. La víctima sigue dentro.
 
 Entonces alguien, por fin, lee el pie de página de la ficha técnica con atención: "Designed to meet NFPA 1936 requirements." Diseñado para cumplir. No certificado. No ensayado por terceros. No verificado por nadie más que el propio fabricante.
 
@@ -50,7 +50,7 @@ Esta es la sección que la mayoría de los artículos técnicos nunca incluye. A
 **ESPECIFICACIÓN TÉCNICA — HERRAMIENTAS DE RESCATE VEHICULAR**
 **Numeral X.X — Certificación y Documentación Requerida**
 
-Las herramientas de rescate hidráulico ofertadas deberán acreditar cumplimiento con NFPA 1936:2022 (Standard on Rescue Tools, edición vigente) mediante certificación formal emitida por organismo de certificación de tercera parte acreditado ante el ILAC (International Laboratory Accreditation Cooperation) o el IAF (International Accreditation Forum), o sus organismos nacionales reconocidos (ejemplo: TÜV, Intertek, UL, SGS, Bureau Veritas).
+Las herramientas de excarcelación ofertadas deberán acreditar cumplimiento con NFPA 1936:2022 (Standard on Rescue Tools, edición vigente) mediante certificación formal emitida por organismo de certificación de tercera parte acreditado ante el ILAC (International Laboratory Accreditation Cooperation) o el IAF (International Accreditation Forum), o sus organismos nacionales reconocidos (ejemplo: TÜV, Intertek, UL, SGS, Bureau Veritas).
 
 NO se aceptará como evidencia de cumplimiento:
 
@@ -173,3 +173,19 @@ La próxima vez que evalúes una propuesta de herramientas de rescate y escuches
 ---
 
 *Referencias técnicas: NFPA 1936:2022 Standard on Rescue Tools; ILAC P9:06/2014 Policy for Participation in ILAC Arrangements; IAF MD 4:2018 Mandatory Document for the Use of Computer Databases in Certification; TÜV SÜD Certification Procedures for Safety Equipment; Compranet — Plataforma Nacional de Transparencia, lineamientos de especificaciones técnicas para equipamiento de protección civil.*
+
+---
+
+## Artículos relacionados
+
+- [Holmatro vs Lukas: Comparativa de Herramientas de Rescate Vehicular](/blog/holmatro-vs-lukas-herramientas-rescate) — análisis técnico de fuerza, batería y servicio para tomar la decisión correcta
+- [Herramientas Hidráulicas de Rescate: Holmatro, Hurst y Weber](/blog/herramientas-hidraulicas-rescate-holmatro-hurst-weber) — panorama completo del ecosistema de herramientas hidráulicas certificadas
+- [Licitaciones de Equipo Contra Incendio en México](/blog/licitaciones-equipo-contra-incendio-mexico-nom-nfpa) — cómo aplicar esta metodología de verificación en procesos de compra pública
+
+---
+
+## Catálogo Herramientas de Rescate en FIREFIGHTERS MX
+
+Ofrecemos herramientas de excarcelación hidráulica Holmatro y Hurst con certificación NFPA 1936:2022 verificable, soporte técnico en México y refacciones en stock local. Si tu corporación necesita especificaciones técnicas para una licitación, podemos ayudarte a redactarlas correctamente.
+
+[Ver catálogo completo de Herramientas de Rescate](/productos/herramientas-rescate) · [Solicitar cotización](/cotizacion)

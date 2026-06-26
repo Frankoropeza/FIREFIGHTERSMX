@@ -21,7 +21,7 @@ El paciente tiene una escala de Glasgow de 12 y bajando. El protocolo te da ocho
 
 Esto no es un problema de marca. Es un problema de kilonewtons y acero.
 
-El debate Holmatro vs Lukas no se resuelve con lealtad corporativa ni con cuál embarcación tiene mejor logo. Se resuelve con la pregunta: **¿cuántos kN necesito para el acero que voy a cortar en mi zona de cobertura?** El resto es operativo.
+El debate [Holmatro](/productos/herramientas-rescate/holmatro) vs Lukas no se resuelve con lealtad corporativa ni con cuál embarcación tiene mejor logo. Se resuelve con la pregunta: **¿cuántos kN necesito para el acero que voy a cortar en mi zona de cobertura?** El resto es operativo.
 
 ---
 
@@ -138,7 +138,7 @@ Si tu configuración estándar es cizalla + expansor + pistón de rescate, la in
 
 **Tercera pregunta: ¿Tienes servicio técnico certificado a menos de cinco días de tu estación?**
 
-Cinco días calendario, no hábiles. Una herramienta en servicio correctivo una semana es una herramienta que no responde. Mapea físicamente los talleres autorizados para cada marca en tu región, llama y pregunta: ¿cuál es el tiempo promedio de reparación de una falla de motor hidráulico? ¿Tienen mandíbulas de repuesto en inventario local? ¿Qué tan frecuente es necesario sustituir empaques de alta presión y cuánto cuesta? La herramienta más potente que no puedes reparar en tiempo útil es una pieza de exhibición. El servicio postventa no es un detalle administrativo — es parte de la especificación técnica.
+Cinco días calendario, no hábiles. Una herramienta en servicio correctivo una semana es una herramienta que no responde. Mapea físicamente los talleres autorizados para cada marca en tu región, llama y pregunta: ¿cuál es el tiempo promedio de reparación de una falla de motor hidráulico? ¿Tienen mandíbulas de repuesto en inventario local? ¿Qué tan frecuente es necesario sustituir empaques de alta presión y cuánto cuesta? La [herramienta de rescate](/productos/herramientas-rescate) más potente que no puedes reparar en tiempo útil es una pieza de exhibición. El servicio postventa no es un detalle administrativo — es parte de la especificación técnica.
 
 ---
 
@@ -151,3 +151,19 @@ Holmatro Pentheon es una herramienta sólida, bien construida, con una ventaja o
 Lukas eDraulic le gana en fuerza de cizalla y en la carrera del expansor. Para departamentos que responden en corredores con vehículos modernos y alta proporción de pickups y SUVs 2020+, o que ya tienen infraestructura de servicio Dräger, los 680 kN son el argumento correcto.
 
 Lo que no puedes permitirte es comprar por precio, por costumbre, o porque el proveedor lleva años vendiéndole a tu departamento. El acero en los vehículos cambió. La decisión de compra tiene que cambiar con él.
+
+---
+
+## Artículos relacionados
+
+- [NFPA 1936: Guía Técnica para Herramientas de Rescate y Excarcelación](/blog/nfpa-1936-herramientas-rescate-excarcelacion) — cómo verificar certificación real vs declaración del fabricante en licitaciones
+- [Herramientas Hidráulicas de Rescate: Holmatro, Hurst y Weber](/blog/herramientas-hidraulicas-rescate-holmatro-hurst-weber) — visión completa del ecosistema de herramientas hidráulicas para rescate
+- [Licitaciones de Equipo Contra Incendio en México](/blog/licitaciones-equipo-contra-incendio-mexico-nom-nfpa) — cómo redactar especificaciones técnicas para adquisiciones públicas de herramientas
+
+---
+
+## Catálogo Herramientas de Rescate en FIREFIGHTERS MX
+
+Distribuimos herramientas hidráulicas Holmatro, Hurst y Weber Rescue con soporte técnico especializado en México. Si estás evaluando una adquisición para tu corporación, podemos ayudarte a comparar fuerza de cizalla, autonomía de batería y red de servicio según tu zona de cobertura.
+
+[Ver catálogo completo de Herramientas de Rescate](/productos/herramientas-rescate) · [Solicitar cotización](/cotizacion)

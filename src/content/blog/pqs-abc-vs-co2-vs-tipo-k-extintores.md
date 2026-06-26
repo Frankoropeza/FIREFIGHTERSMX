@@ -13,7 +13,7 @@ image:
 
 El operador de la freidora industrial actuó correctamente: vio la llama, tomó el extintor más cercano, activó el seguro y descargó el agente sobre el aceite en combustión.
 
-Lo que nadie le había explicado es que el extintor era de PQS ABC.
+Lo que nadie le había explicado es que el extintor era de [PQS ABC](/productos/extintores/pqs-abc).
 
 El polvo golpeó el aceite hirviendo. El aceite respondió como responde siempre cuando algo impacta su superficie a esa temperatura: con una nube de vapor y gotas en combustión que cubrió tres metros de radio en menos de un segundo. El operador terminó con quemaduras en brazos y cuello. El área de cocina fue pérdida total.
 
@@ -71,7 +71,7 @@ La limpieza profesional de un gabinete de servidores contaminado con PQS cuesta 
 
 **Archivos, museos y espacios con materiales históricos.** El residuo del PQS daña documentos, obras de arte y materiales que no pueden limpiarse sin riesgo. En estos entornos, la pérdida causada por el extintor puede ser mayor que la causada por el fuego contenido.
 
-## CO₂: el agente que no deja nada
+## [CO₂](/productos/extintores/co2): el agente que no deja nada
 
 ### Cómo funciona
 
@@ -95,7 +95,7 @@ La ventaja crítica: no deja absolutamente nada. Sin residuo sólido, sin humeda
 
 **En espacios confinados con personas, la concentración necesaria para extinguir (30-35% en volumen) es fatal.** En cuartos de servidores sin sistema automático, el protocolo exige evacuación antes de la descarga manual. No es una advertencia de etiqueta: es una consideración de diseño real.
 
-## Tipo K: el único agente diseñado para no matarte en la cocina
+## [Tipo K](/productos/extintores/especializados): el único agente diseñado para no matarte en la cocina
 
 ### Por qué las otras clases de fuego no aplican aquí
 
@@ -178,7 +178,7 @@ La decisión no es técnicamente compleja. Requiere responder tres preguntas ant
 
 ## La pregunta que nadie hace en la cotización
 
-Cuando alguien te cotiza extintores para tu empresa y pone PQS ABC en todos los espacios del plano, la pregunta correcta es:
+Cuando alguien te cotiza [extintores](/productos/extintores) para tu empresa y pone PQS ABC en todos los espacios del plano, la pregunta correcta es:
 
 "¿Revisaste cuáles de estos espacios tienen equipo eléctrico de alto valor, cuáles tienen aceites de cocción, y cuáles tienen materiales que no toleran residuo?"
 
@@ -187,3 +187,19 @@ Si el instalador no puede responder esa pregunta con datos del plano, no hizo el
 Un extintor del agente incorrecto no es una protección incompleta. En algunos escenarios, como el operador de freidora con el PQS en la mano, es una herramienta que convierte un incendio controlable en una emergencia con víctimas.
 
 La selección correcta toma 20 minutos de análisis del plano y el riesgo de cada área. Lo que no toma es dinero adicional significativo. Lo que sí cuesta es no haberlo hecho.
+
+---
+
+## Artículos relacionados
+
+- [NOM-002-STPS: lo que el inspector ve que tú no habías calculado](/blog/nom-002-stps-dotacion-extintores) — cómo calcular la dotación correcta por área y nivel de riesgo
+- [Tipos de Extintores en México](/blog/tipos-de-extintores-mexico) — clasificación completa por agente, clase de fuego y aplicación
+- [NOM-002-STPS Guía Completa](/blog/nom-002-stps-guia-completa) — referencia normativa extendida para cumplimiento ante STPS
+
+---
+
+## Catálogo Extintores en FIREFIGHTERS MX
+
+Ofrecemos extintores PQS ABC, CO₂ y Tipo K para cada tipo de riesgo, con la clasificación correcta para cumplir la NOM-002-STPS. Si tienes cocinas comerciales, cuartos de servidores o áreas con solventes, nuestro equipo puede ayudarte a seleccionar el agente correcto antes de que llegue el inspector.
+
+[Ver catálogo completo de Extintores](/productos/extintores) · [Solicitar cotización](/cotizacion)

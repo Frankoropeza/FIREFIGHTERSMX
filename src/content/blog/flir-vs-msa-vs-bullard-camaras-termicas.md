@@ -25,9 +25,9 @@ Este análisis está escrito para quien va a firmar la requisición de compra o 
 
 ## FLIR es el estándar de imagen al que los otros dos tienen que responder
 
-Si hay una verdad de mercado en cámaras térmicas para bomberos, es que FLIR Systems — ahora bajo Teledyne FLIR — define el nivel de referencia en calidad de imagen. Cualquier evaluación seria de la MSA Evolution 6000 o la Bullard TXS tiene que responder primero a la pregunta: ¿para qué función supera o iguala a FLIR?
+Si hay una verdad de mercado en cámaras térmicas para bomberos, es que FLIR Systems — ahora bajo Teledyne FLIR — define el nivel de referencia en calidad de imagen. Cualquier evaluación seria de la [MSA Evolution](/productos/camaras-termicas/msa-evolution) 6000 o la [Bullard TXS](/productos/camaras-termicas/bullard-txs) tiene que responder primero a la pregunta: ¿para qué función supera o iguala a FLIR?
 
-La familia K-Series de FLIR tiene tres escalones. El K33 opera con sensor Lepton de 160×120 píxeles, suficiente para navegación táctica en humo total, pero insuficiente para búsqueda fina de víctimas. El K45 y el K55 suben a 320×240 píxeles — el umbral donde empiezas a distinguir postura corporal, no solo silueta. La frecuencia de 30 Hz da imagen fluida sin saltos, crítico cuando estás moviéndote rápido por un pasillo con visibilidad cero.
+La familia [FLIR K-Series](/productos/camaras-termicas/flir) tiene tres escalones. El K33 opera con sensor Lepton de 160×120 píxeles, suficiente para navegación táctica en humo total, pero insuficiente para búsqueda fina de víctimas. El K45 y el K55 suben a 320×240 píxeles — el umbral donde empiezas a distinguir postura corporal, no solo silueta. La frecuencia de 30 Hz da imagen fluida sin saltos, crítico cuando estás moviéndote rápido por un pasillo con visibilidad cero.
 
 El K55 añade conectividad WiFi. Eso significa que el comandante puede recibir la imagen en tiempo real. No en diferido, no mediante cámara corporal: el feed térmico del bombero, desde el puesto de mando exterior. El rango de medición de temperatura llega a 1,000°C en los tres modelos, lo que en incendios industriales o de aeronaves tiene implicaciones prácticas — una cámara que satura su sensor a 600°C te da imagen plana exactamente donde más necesitas contraste.
 
@@ -129,7 +129,7 @@ Las corporaciones estatales grandes — Jalisco, Nuevo León, Estado de México 
 
 ## El error de compra más común y cómo evitarlo
 
-Después de evaluar decenas de licitaciones de equipamiento en México, el patrón de error más frecuente no es elegir la marca equivocada. Es comprar cámaras de primera línea sin presupuestar baterías de reemplazo, sin definir el proceso de servicio técnico y sin un protocolo de entrenamiento formal antes de la primera operación.
+Después de evaluar decenas de licitaciones de equipamiento en México, el patrón de error más frecuente no es elegir la marca equivocada. Es comprar [cámaras térmicas](/productos/camaras-termicas) de primera línea sin presupuestar baterías de reemplazo, sin definir el proceso de servicio técnico y sin un protocolo de entrenamiento formal antes de la primera operación.
 
 Una cámara térmica con batería degradada al 60% de capacidad por mal almacenamiento o ciclos de carga incorrectos es una cámara que dura 1.2 horas en campo, no 2.5. Una cámara que ningún bombero operativo ha usado en entrenamiento antes del incidente real no es un activo táctico — es un equipo que alguien va a estar intentando encender por primera vez bajo presión.
 
@@ -168,3 +168,19 @@ Si hoy compras SCBA que no son MSA G1 porque son más baratos, estás cerrando l
 El ejercicio correcto es definir la misión operacional proyectada a diez años — no la misión actual, sino la que la corporación necesita poder ejecutar en 2035 — y elegir el equipamiento que habilita esa capacidad. En ese horizonte, el costo incremental del ecosistema MSA LUNAR versus FLIR autónomo muchas veces se justifica para corporaciones con crecimiento de capacidad operativa planificado.
 
 Para quien toma la decisión de compra: la cámara más cara no es siempre la correcta, pero la más barata casi nunca lo es tampoco. La correcta es la que alinea calidad de imagen, conectividad, integración de ecosistema, soporte post-venta y proyección de uso con la misión real de la corporación. Ese análisis no aparece en ningún catálogo. Tiene que hacerse adentro, con los datos de la corporación y con criterio operacional, antes de que el proceso de adquisición empiece.
+
+---
+
+## Artículos relacionados
+
+- [NFPA 1801: guía técnica completa](/blog/nfpa-1801-camaras-termicas-bomberos) — cómo distinguir una cámara certificada de una industrial disfrazada
+- [MSA G1 vs Dräger PSS 7000](/blog/msa-g1-vs-drager-pss7000-scba) — misma lógica de ecosistema integrado vs modularidad industrial en SCBA
+- [Tipos de traje: estructural, proximidad y forestal](/blog/traje-estructural-proximidad-forestal-diferencias) — el EPP completo del bombero más allá de la cámara
+
+---
+
+## Catálogo Cámaras Térmicas en FIREFIGHTERS MX
+
+FLIR K-Series para imagen de referencia, MSA Evolution integrada con el ecosistema LUNAR, y Bullard TXS para cobertura de múltiples unidades. Las tres plataformas certificadas NFPA 1801 con soporte técnico y baterías disponibles en México.
+
+[Ver catálogo completo de Cámaras Térmicas](/productos/camaras-termicas) · [Solicitar cotización](/cotizacion)

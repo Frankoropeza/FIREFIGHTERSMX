@@ -1,7 +1,7 @@
 # Directorio de Estaciones — Seguimiento de completitud
 
 > DATOS en `src/data/estaciones.ts`. Pase = datos reales verificados al estándar v3 (coords, fuentes citadas, confianza, email/operador, elementos, estacionesFisicas, unidades, descripciones 150-200 palabras).
-> Última actualización: 2026-06-25 (Veracruz cargado — 30/32).
+> Última actualización: 2026-06-25 (Yucatán cargado — 31/32).
 
 ## Estándar
 
@@ -9,7 +9,7 @@ Campos verificables con fuente oficial; `confianza` (alta/media/baja); `coordena
 
 ## Resumen
 
-- Estados homologados v3: **30/32** · Estaciones: **499** · Pendientes: **2**
+- Estados homologados v3: **31/32** · Estaciones: **502** · Pendientes: **1**
 
 ## Matriz por estado
 
@@ -45,7 +45,7 @@ Campos verificables con fuente oficial; `confianza` (alta/media/baja); `coordena
 | ✅ | Tamaulipas | Noreste | 12 | 10 | 100% | 100% | ✅ v3 |
 | ✅ | Tlaxcala | Centro | 1 | 1 | 100% | 100% | ✅ v3 |
 | ✅ | Veracruz | Sur | 12 | 10 | 100% | 100% | ✅ v3 |
-| ⬜ | Yucatán | Peninsular | 2 | 2 | – | – | 🔴 |
+| ✅ | Yucatán | Peninsular | 3 | 3 | 100% | 100% | ✅ v3 |
 | ⬜ | Zacatecas | Centro-Norte | 1 | 1 | – | – | 🔴 |
 
 ## Checklist
@@ -80,5 +80,5 @@ Campos verificables con fuente oficial; `confianza` (alta/media/baja); `coordena
 - [x] **Tamaulipas** (TAMPS) — 12 est. / 10 mun. ✅ v3
 - [x] **Tlaxcala** (TLAX) — 1 est. / 1 mun. ✅ v3
 - [x] **Veracruz** (VER) — 12 est. / 10 mun. ✅ v3
-- [ ] **Yucatán** (YUC) — 2 est. / 2 mun.
+- [x] **Yucatán** (YUC) — 3 est. / 3 mun. ✅ v3
 - [ ] **Zacatecas** (ZAC) — 1 est. / 1 mun.

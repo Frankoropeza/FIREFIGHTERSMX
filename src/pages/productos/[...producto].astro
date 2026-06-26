@@ -330,6 +330,46 @@ const sidebarArticulos: SbArt[] = catArticulos[product.category] ?? [
   { label: 'Normatividad vigente de bomberos MX', desc: 'NOM, NFPA y requisitos actualizados', href: '/blog/normatividad-bomberos-mexico' },
 ];
 
+/* ── Sidebar: Completa tu equipo (cross-categoría) ─────────────────────── */
+type CatLink = { label: string; href: string; brands: string };
+const equipoMap: Record<string, CatLink[]> = {
+  'Trajes Bombero': [
+    { label: 'Cascos NFPA',       href: '/productos/cascos-nfpa',       brands: 'MSA Gallet · Bullard · Cairns' },
+    { label: 'Equipos SCBA',      href: '/productos/equipos-scba',      brands: 'MSA G1 · Dräger · 3M Scott' },
+    { label: 'Cámaras Térmicas',  href: '/productos/camaras-termicas',  brands: 'FLIR · MSA Evolution · Bullard TXS' },
+  ],
+  'Cascos NFPA': [
+    { label: 'Trajes Bombero',    href: '/productos/trajes-bombero',    brands: 'Globe · Lion · Honeywell · Fire-Dex' },
+    { label: 'Equipos SCBA',      href: '/productos/equipos-scba',      brands: 'MSA G1 · Dräger · 3M Scott' },
+  ],
+  'Equipos SCBA': [
+    { label: 'Trajes Bombero',    href: '/productos/trajes-bombero',    brands: 'Globe · Lion · Honeywell · Fire-Dex' },
+    { label: 'Cascos NFPA',       href: '/productos/cascos-nfpa',       brands: 'MSA Gallet · Bullard · Cairns' },
+    { label: 'Cámaras Térmicas',  href: '/productos/camaras-termicas',  brands: 'FLIR · MSA Evolution · Bullard TXS' },
+  ],
+  'Cámaras Térmicas': [
+    { label: 'Equipos SCBA',      href: '/productos/equipos-scba',      brands: 'MSA G1 · Dräger · 3M Scott' },
+    { label: 'Trajes Bombero',    href: '/productos/trajes-bombero',    brands: 'Globe · Lion · Honeywell · Fire-Dex' },
+  ],
+  'Herramientas Rescate': [
+    { label: 'Equipos SCBA',      href: '/productos/equipos-scba',      brands: 'MSA G1 · Dräger · 3M Scott' },
+    { label: 'Trajes Bombero',    href: '/productos/trajes-bombero',    brands: 'Globe · Lion · Honeywell · Fire-Dex' },
+  ],
+  'Extintores': [
+    { label: 'Sistemas CI',       href: '/productos/sistemas-ci',       brands: 'Tyco Viking · Notifier · Kidde Fenwal' },
+    { label: 'Herramientas Rescate', href: '/productos/herramientas-rescate', brands: 'Holmatro · Hurst · Weber Rescue' },
+  ],
+  'Sistemas CI': [
+    { label: 'Extintores',        href: '/productos/extintores',        brands: 'PQS ABC · CO₂ · Agente limpio · Tipo K' },
+    { label: 'Herramientas Rescate', href: '/productos/herramientas-rescate', brands: 'Holmatro · Hurst · Weber Rescue' },
+  ],
+  'Equipos HAZMAT': [
+    { label: 'Equipos SCBA',      href: '/productos/equipos-scba',      brands: 'MSA G1 · Dräger · 3M Scott' },
+    { label: 'Extintores',        href: '/productos/extintores',        brands: 'PQS ABC · CO₂ · Agente limpio · Tipo K' },
+  ],
+};
+const catEquipo: CatLink[] = equipoMap[product.category] ?? [];
+
 /* ── JSON-LD ────────────────────────────────────────────────────────────── */
 const productSchema = {
   '@context': 'https://schema.org',
@@ -845,6 +885,30 @@ const seoDesc  = `${product.description} Distribuidor autorizado ${product.brand
               </a>
             </div>
           </div>
+
+          {/* Completa tu equipo */}
+          {catEquipo.length > 0 && (
+            <div style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
+              <div class="px-4 py-3" style="background:#040A12;border-bottom:1px solid rgba(74,117,153,0.18)">
+                <span class="text-[9px] font-display font-bold uppercase tracking-widest" style="color:#4A7599">Completa tu equipo</span>
+              </div>
+              <div class="flex flex-col">
+                {catEquipo.map((eq, i) => (
+                  <a href={eq.href}
+                     class="flex flex-col gap-0.5 px-4 py-3 group transition-colors hover:bg-[#040A12]"
+                     style={`border-bottom:${i < catEquipo.length - 1 ? '1px solid rgba(74,117,153,0.1)' : 'none'}`}>
+                    <span class="text-xs font-display font-semibold leading-snug group-hover:text-[#F75000] transition-colors" style="color:#FFFFFF">{eq.label}</span>
+                    <span class="text-[11px]" style="color:#64748B">{eq.brands}</span>
+                  </a>
+                ))}
+              </div>
+              <div class="px-4 py-3" style="border-top:1px solid rgba(74,117,153,0.15)">
+                <a href="/productos" class="text-[10px] font-display font-semibold hover:text-[#FF6B26] transition-colors" style="color:#4A7599">
+                  Ver catálogo completo →
+                </a>
+              </div>
+            </div>
+          )}
 
           {/* ¿Necesitas ayuda? */}
           <div style="background:#040A12;border:1px solid rgba(74,117,153,0.22);border-top:2px solid #F75000">

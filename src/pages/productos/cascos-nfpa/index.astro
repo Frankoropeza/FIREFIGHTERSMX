@@ -711,6 +711,37 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
     </div>
   </section>
 
+
+  {/* ══ CATEGORÍAS RELACIONADAS ═══════════════════════════════════════ */}
+  <section style="background:#040A12;border-top:1px solid rgba(74,117,153,0.15)" aria-labelledby="cats-rel-title">
+    <div class="container-site py-10 sm:py-12">
+      <p id="cats-rel-title" class="text-[9px] font-display font-bold uppercase tracking-widest mb-6" style="color:#4A7599">Categorías relacionadas</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <a href="/productos/trajes-bombero"
+           class="group flex flex-col gap-2 p-5 transition-colors hover:border-[#F75000]"
+           style="background:#080F1A;border:1px solid rgba(74,117,153,0.2)">
+          <span class="text-sm font-display font-bold group-hover:text-[#F75000] transition-colors" style="color:#FFFFFF">Trajes Bombero</span>
+          <span class="text-xs leading-relaxed" style="color:#64748B">Globe · Lion Apparel · Honeywell · Fire-Dex</span>
+          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Ver catálogo →</span>
+        </a>
+        <a href="/productos/equipos-scba"
+           class="group flex flex-col gap-2 p-5 transition-colors hover:border-[#F75000]"
+           style="background:#080F1A;border:1px solid rgba(74,117,153,0.2)">
+          <span class="text-sm font-display font-bold group-hover:text-[#F75000] transition-colors" style="color:#FFFFFF">Equipos SCBA</span>
+          <span class="text-xs leading-relaxed" style="color:#64748B">MSA G1 · Dräger PSS 7000 · 3M Scott</span>
+          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Ver catálogo →</span>
+        </a>
+        <a href="/productos/herramientas-rescate"
+           class="group flex flex-col gap-2 p-5 transition-colors hover:border-[#F75000]"
+           style="background:#080F1A;border:1px solid rgba(74,117,153,0.2)">
+          <span class="text-sm font-display font-bold group-hover:text-[#F75000] transition-colors" style="color:#FFFFFF">Herramientas de Rescate</span>
+          <span class="text-xs leading-relaxed" style="color:#64748B">Holmatro · Hurst · Weber Rescue</span>
+          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Ver catálogo →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
 </BaseLayout>
 
 <style>

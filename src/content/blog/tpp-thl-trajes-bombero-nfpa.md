@@ -78,7 +78,7 @@ Una **chamarra de esquí de invierno extremo**: gruesa, múltiples capas, mantie
 
 Una **chamarra de running técnica**: delgada, transpirable, deja pasar el calor corporal eficientemente. Si te quedas atrapado en una tormenta de nieve, te mata de hipotermia.
 
-Los trajes de bombero viven en ese mismo dilema, pero en escenarios mucho más extremos. **Todo lo que protege mejor del calor externo del incendio también dificulta más la disipación del calor interno del cuerpo.** No es un defecto de diseño. Es física.
+Los [trajes bombero](/productos/trajes-bombero) viven en ese mismo dilema, pero en escenarios mucho más extremos. **Todo lo que protege mejor del calor externo del incendio también dificulta más la disipación del calor interno del cuerpo.** No es un defecto de diseño. Es física.
 
 Los mismos mecanismos que impiden que el calor del incendio entre al traje — grosor de material, densidad de fibra, membranas de barrera húmeda que bloquean el paso de líquidos — también impiden que el vapor de agua del sudor salga del traje. A mayor protección (mayor TPP), menor capacidad de disipación de calor corporal (menor THL).
 
@@ -170,3 +170,19 @@ Para profundizar en la metodología de prueba y los requisitos normativos:
 - **ASTM F1959 / F1959M** — Standard Test Method for Determining the Thermal Protective Performance of Materials for Clothing
 - **ASTM F1868** — Standard Test Method for Thermal and Evaporative Resistance of Clothing Materials Using a Sweating Hot Plate
 - **NFPA 1977** — Standard on Protective Clothing and Equipment for Wildland Fire Fighting (para referencia de contraste en THL)
+
+---
+
+## Artículos relacionados
+
+- [PBI Matrix vs Nomex: cuál especificar en tu licitación](/blog/pbi-matrix-vs-nomex-trajes-bombero) — análisis de costo de ciclo de vida y guía de decisión por corporación
+- [NFPA 1970 actualizada: cambios en EPP](/blog/nfpa-1970-nueva-norma-trajes-bombero) — qué modificó la norma y cómo impacta los procesos de adquisición
+- [Anatomía del traje: capas y materiales](/blog/anatomia-traje-bombero-capas-materiales) — outer shell, moisture barrier y thermal liner explicados sin jerga de catálogo
+
+---
+
+## Catálogo Trajes Bombero en FIREFIGHTERS MX
+
+Cada traje en nuestro catálogo incluye el TPP y THL del sistema completo certificado por laboratorio acreditado, no solo la declaración del fabricante. Sistemas con outer shell PBI Matrix Gold y Nomex IIIA para cada perfil operacional.
+
+[Ver catálogo completo de Trajes Bombero](/productos/trajes-bombero) · [Solicitar cotización](/cotizacion)
