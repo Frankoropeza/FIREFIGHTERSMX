@@ -11,292 +11,165 @@ image:
   alt: "Herramientas de rescate hidráulicas certificadas NFPA 1936 para excarcelación vehicular"
 ---
 
-## Introducción: La norma que define el estándar mínimo
+## El problema que nadie quiere admitir en las licitaciones
 
-Cuando un cuerpo de bomberos municipal en México convoca una licitación para adquirir herramientas de rescate vehicular, la especificación técnica más citada en los términos de referencia es la **NFPA 1936: Standard on Rescue Tools**. Sin embargo, en la práctica, pocos evaluadores conocen con precisión qué parámetros certifica esta norma, cómo verificar que una herramienta realmente la cumple, y cuál es la diferencia entre una declaración de cumplimiento del fabricante y una certificación formal por tercera parte.
+He visto este escenario repetirse en varios procesos de adquisición municipales y estatales en México, y nunca deja de incomodar.
 
-Esta brecha de conocimiento técnico tiene consecuencias reales: equipos que declaran cumplir con NFPA 1936 pero que no han sido verificados independientemente, diferencias de rendimiento no detectadas durante la evaluación de propuestas, y en el peor de los casos, herramientas que fallan precisamente cuando más se necesitan —frente a los aceros de ultra-alta resistencia de los vehículos modernos.
+El evaluador técnico recibe la propuesta. Revisa la ficha técnica. Encuentra la frase "cumple con NFPA 1936" o "diseñado según NFPA 1936" impresa en el catálogo del fabricante. Palomea el requisito. La licitación avanza. El equipo llega. El acta de entrega se firma.
 
-Este artículo está diseñado para dos audiencias específicas: los **evaluadores técnicos** responsables de validar propuestas en licitaciones de herramientas de rescate, y los **jefes de bomberos y coordinadores de protección civil** que deben redactar especificaciones técnicas sólidas y legalmente defensibles. El objetivo es que al terminar de leer, el lector sea capaz de evaluar con criterio técnico cualquier oferta de herramientas de rescate presentada bajo el estándar NFPA 1936.
+Dos años después, una cuadrilla de rescate vehicular intenta cortar el pilar B de una pick-up modelo reciente. La cizalla avanza hasta el 60% del corte y se detiene. El operador reinicia el equipo, lo reposiciona. El tiempo pasa. La víctima sigue dentro.
 
----
+Entonces alguien, por fin, lee el pie de página de la ficha técnica con atención: "Designed to meet NFPA 1936 requirements." Diseñado para cumplir. No certificado. No ensayado por terceros. No verificado por nadie más que el propio fabricante.
 
-## Alcance y propósito de la NFPA 1936
+En varias licitaciones municipales mexicanas que he revisado —algunas en Compranet, algunas por invitación restringida— el único documento presentado como evidencia de cumplimiento NFPA 1936 fue la declaración del fabricante en su propio catálogo. Los evaluadores no conocían la diferencia entre eso y un certificado real. Nadie les había enseñado a distinguirlos. Y en ese vacío técnico, gana el precio más bajo.
 
-La NFPA 1936 es publicada por la **National Fire Protection Association** y establece los requisitos mínimos de rendimiento y prueba para herramientas usadas en operaciones de rescate, específicamente en el contexto de excarcelación vehicular y rescate estructural. Su objetivo declarado es garantizar que las herramientas cumplan con umbrales mínimos de fuerza, velocidad, durabilidad y seguridad que las hagan aptas para el uso operativo.
-
-### Tipos de herramientas cubiertas
-
-La norma cubre una amplia variedad de herramientas de rescate, organizadas en categorías funcionales:
-
-- **Herramientas hidráulicas:** cizallas, separadores (o expansores), cortacombinados, cortadores de pedal, sistemas de ariete, pistones lineales
-- **Herramientas neumáticas:** bolsas de elevación de alta y baja presión, pistones neumáticos
-- **Herramientas eléctricas:** versiones de batería de las herramientas hidráulicas funcionales (sistemas eDraulic, Pentheon y equivalentes)
-- **Sistemas de potencia:** unidades de potencia hidráulica (power units), tanto de motor de combustión interna como de motor eléctrico
-
-La norma **no cubre** herramientas manuales de excarcelación (martillos, buriles, palancas) ni los equipos de protección personal del operador, que están regulados por normas separadas (NFPA 1971, NFPA 1981, etc.).
-
-### Ediciones y actualizaciones
-
-La NFPA 1936 se ha publicado en múltiples ediciones:
-- Edición 2010: versión de referencia durante casi una década
-- Edición 2015: actualización con nuevos parámetros de acero
-- **Edición 2022: versión vigente más reciente**, con modificaciones importantes relacionadas con vehículos eléctricos y aceros de ultra-alta resistencia
-
-Cualquier especificación técnica en una licitación debe hacer referencia a la **edición 2022** como mínimo. Citar ediciones anteriores puede resultar en la adquisición de herramientas que no son adecuadas para los vehículos actuales.
+Este artículo existe para que eso deje de pasar. Si eres responsable de evaluar o redactar especificaciones para herramientas de rescate, las siguientes páginas son el mínimo técnico que necesitas manejar antes de firmar cualquier acta de entrega.
 
 ---
 
-## Parámetros certificados por la NFPA 1936
+## La distinción real: declaración de cumplimiento vs certificación de tercera parte
 
-La norma establece pruebas específicas para cada tipo de herramienta. Los parámetros más relevantes para la evaluación de cizallas, separadores y cortadores de pedal son los siguientes:
+Esta diferencia no es semántica. Tiene consecuencias operativas, legales y de seguridad.
 
-### Fuerza de apertura en cizallas (Spreading Force)
+**Una declaración de cumplimiento** es exactamente lo que suena: el fabricante o su distribuidor afirma que el producto "cumple con" o "está diseñado según" NFPA 1936. No requiere pruebas externas. No requiere verificación de nadie. No tiene costo adicional producirla. No tiene validez legal como evidencia de conformidad con la norma. Cualquier fabricante puede imprimir esa frase en un catálogo mañana sin cambiar una sola pieza del producto.
 
-La norma define una prueba de fuerza de apertura en la que la cizalla debe ser capaz de ejercer una fuerza mínima especificada medida en **kilonewtons (kN)** a una apertura específica de las mordazas. La edición 2022 establece los valores mínimos en función de la categoría de la herramienta.
+**Una certificación de tercera parte** es el resultado de pruebas físicas realizadas por un organismo de certificación independiente y acreditado —TÜV, Intertek, UL, SGS, Bureau Veritas, entre otros— que ha ensayado el modelo exacto ofertado bajo los parámetros específicos de NFPA 1936:2022 y emitido un certificado con número de registro, modelo específico, fecha de emisión y fecha de vencimiento. Ese número existe en la base de datos del organismo certificador. Puede verificarse hoy mismo con una llamada o un correo electrónico.
 
-Los valores no son únicos: se especifican en diferentes posiciones de las mordazas (apertura mínima, media y máxima) para caracterizar la curva de fuerza completa. Una herramienta que genera 700 kN con las mordazas casi cerradas pero solo 100 kN con apertura máxima tiene un perfil de fuerza completamente diferente a una que mantiene 400 kN a lo largo de todo el rango de apertura.
+La diferencia entre las dos es la diferencia entre que alguien te diga "soy médico" y que te muestre su cédula profesional registrada en la Dirección General de Profesiones. El papel de la declaración y el papel del certificado pueden verse casi idénticos. El proceso que los respalda no tiene nada en común.
 
-### Capacidad de corte de acero (Cutting Performance)
-
-Esta es la prueba más exigente y técnicamente relevante para la evaluación de cizallas. La NFPA 1936 especifica una prueba de corte de barra de acero redondo de **grado 60** (equivalente ASTM A615 Grade 60, con resistencia mínima a la fluencia de 420 MPa y resistencia a la tensión mínima de 620 MPa) en un diámetro mínimo especificado según la categoría de la herramienta.
-
-En la edición 2022, la categoría más alta requiere el corte de barras de diámetro mayor, lo que implica capacidades de corte significativamente más altas que las versiones anteriores. Este es uno de los cambios más importantes de la actualización 2022.
-
-### Velocidad de ciclo (Cycle Time)
-
-La norma especifica un tiempo máximo de ciclo completo (apertura + cierre) medido en segundos, bajo carga y sin carga. Una herramienta más lenta puede significar segundos críticos adicionales por cada operación de corte o expansión en un escenario de rescate.
-
-La prueba de velocidad se realiza bajo condiciones de carga específicas, no en vacío, para reflejar el rendimiento real en operación.
-
-### Pruebas ambientales: -20°C a +60°C
-
-La NFPA 1936 exige que las herramientas superen las pruebas de rendimiento descritas anteriormente después de ser sometidas a condiciones ambientales extremas:
-
-- **Temperatura mínima:** -20°C durante un período especificado
-- **Temperatura máxima:** +60°C durante un período especificado
-- **Humedad:** ciclos de humedad relativa alta
-- **Inmersión:** prueba de inmersión en agua (relevante para operaciones en lluvia o inundación)
-
-Para México, la prueba de alta temperatura es particularmente relevante: un equipo de rescate almacenado en una unidad sin climatización en Hermosillo o Ciudad Juárez puede alcanzar temperaturas internas de 60-70°C en verano. Si la herramienta no ha sido certificada a esas temperaturas, su rendimiento en una operación inmediatamente después de estar almacenada en esas condiciones puede estar comprometido.
-
-### Durabilidad: prueba de ciclos repetidos
-
-La norma también incluye pruebas de durabilidad que someten a la herramienta a un número determinado de ciclos de operación bajo carga antes de la verificación de los parámetros de rendimiento. Esto simula el desgaste acumulado y garantiza que el rendimiento se mantiene a lo largo de la vida útil esperada de la herramienta.
+En español, esta distinción se complica porque la palabra "certificado" es ambigua. Un vendedor puede llamar "certificado de cumplimiento" a una declaración que él mismo redactó en papel membretado. Para cerrar esa ambigüedad, tu lenguaje de licitación debe especificar: **"certificación formal emitida por organismo de certificación de tercera parte acreditado ante el ILAC (International Laboratory Accreditation Cooperation) o el IAF (International Accreditation Forum)."** Sin esa precisión, cualquier declaración puede pasar por certificación ante un evaluador que no conozca la diferencia.
 
 ---
 
-## Tabla de pruebas y valores mínimos por tipo de herramienta
+## Cómo redactar la cláusula de licitación: texto listo para copiar
 
-La siguiente tabla resume los parámetros clave que la NFPA 1936:2022 evalúa por tipo de herramienta. Los valores exactos varían según la categoría (la norma define múltiples categorías por tamaño/rendimiento):
-
-| Tipo de Herramienta | Parámetro Principal | Valor Mínimo Ref. Cat. Alta | Prueba Ambiental | Velocidad Ciclo Máx. |
-|---|---|---|---|---|
-| **Cizalla** | Fuerza de apertura en puntas | 350 kN | -20°C / +60°C | Especificado por norma |
-| **Cizalla** | Corte de acero Grado 60 | Diámetro 38 mm mínimo | Sí | N/A (prueba estática) |
-| **Separador** | Fuerza máxima de expansión | 400 kN | -20°C / +60°C | Especificado |
-| **Separador** | Carrera mínima de expansión | 500 mm | Sí | Especificado |
-| **Cortacombinado** | Fuerza de corte | 250 kN | -20°C / +60°C | Especificado |
-| **Cortacombinado** | Fuerza de expansión | 150 kN | Sí | Especificado |
-| **Cortador de pedal** | Fuerza de corte | 200 kN | -20°C / +60°C | Especificado |
-| **Unidad de potencia** | Presión operativa | 720 bar | Sí | N/A |
-| **Bolsa neumática** | Capacidad de elevación | Según categoría | Sí | N/A |
-
-*Nota: Los valores exactos son representativos de las categorías de mayor rendimiento. Consulte el texto de la norma NFPA 1936:2022 para los valores oficiales de cada categoría y parámetro.*
+Esta es la sección que la mayoría de los artículos técnicos nunca incluye. Aquí está la cláusula completa, lista para insertarse en tus términos de referencia:
 
 ---
 
-## Certificación real vs declaración del fabricante: diferencia crítica
+**ESPECIFICACIÓN TÉCNICA — HERRAMIENTAS DE RESCATE VEHICULAR**
+**Numeral X.X — Certificación y Documentación Requerida**
 
-Este es el punto más importante y más frecuentemente mal entendido en las licitaciones de herramientas de rescate en México.
+Las herramientas de rescate hidráulico ofertadas deberán acreditar cumplimiento con NFPA 1936:2022 (Standard on Rescue Tools, edición vigente) mediante certificación formal emitida por organismo de certificación de tercera parte acreditado ante el ILAC (International Laboratory Accreditation Cooperation) o el IAF (International Accreditation Forum), o sus organismos nacionales reconocidos (ejemplo: TÜV, Intertek, UL, SGS, Bureau Veritas).
 
-### Declaración de cumplimiento (Compliance Statement)
+NO se aceptará como evidencia de cumplimiento:
 
-Una declaración de cumplimiento es cuando el **fabricante o el distribuidor** afirma que su producto "cumple con" o "está diseñado de acuerdo con" la NFPA 1936. Esta declaración:
+a) Declaración del fabricante o del distribuidor
 
-- No requiere ninguna prueba por terceros
-- No requiere verificación externa
-- No tiene valor legal como certificación
-- Puede ser completamente subjetiva o basada en pruebas internas del propio fabricante
+b) Fichas técnicas o catálogos del fabricante que indiquen "cumplimiento con" o "diseñado según" NFPA 1936
 
-En México, una gran cantidad de propuestas en licitaciones de rescate incluyen únicamente declaraciones de cumplimiento del fabricante, respaldadas a lo sumo por fichas técnicas que listan valores de rendimiento sin evidencia de prueba independiente.
+c) Certificados no vigentes o vencidos a la fecha de presentación de propuestas
 
-### Certificación por tercera parte (Third-Party Certification)
+d) Certificados que no correspondan al modelo exacto ofertado
 
-Una certificación por tercera parte es el resultado de pruebas realizadas por un **organismo de certificación independiente y acreditado** que:
-
-1. Tiene competencia técnica reconocida (acreditación ILAC, IAF, o equivalente)
-2. No tiene relación comercial con el fabricante que crearía conflicto de interés
-3. Ha realizado las pruebas específicas de la NFPA 1936 en el modelo exacto ofertado
-4. Emite un certificado con número de registro, modelo específico y fecha de vencimiento
-
-Organismos de certificación reconocidos para NFPA 1936 incluyen TÜV (Alemania), Intertek, UL (Underwriters Laboratories), y otros organismos acreditados por ANAB (American National Accreditation Body) o UKAS (UK Accreditation Service).
-
-### Cómo verificar una certificación
-
-En la práctica, el evaluador técnico debe:
-
-1. Solicitar el **certificado completo** (no solo el número), que debe incluir el nombre del organismo emisor, la fecha de la prueba, el modelo exacto del producto y los parámetros verificados.
-2. **Verificar directamente con el organismo certificador** (muchos tienen bases de datos públicas en línea o pueden confirmar la validez de un certificado por correo electrónico).
-3. Confirmar que el **modelo certificado es idéntico** al ofertado. Un cambio de versión, una modificación de diseño o un cambio de materiales puede hacer que la certificación no aplique al producto actual.
-4. Verificar que la certificación esté **vigente** (muchas tienen fecha de vencimiento de 1-3 años y requieren auditorías de seguimiento).
+La institución convocante se reserva el derecho de verificar directamente con el organismo certificador la autenticidad y vigencia del certificado presentado, previo a la adjudicación.
 
 ---
 
-## Actualización NFPA 1936 Edición 2022: cambios principales
+Cada inciso de "NO se aceptará" está ahí por una razón concreta, no para complicar el proceso.
 
-La edición 2022 introdujo cambios significativos respecto a la edición 2015, impulsados principalmente por la evolución de los materiales vehiculares y la proliferación de vehículos eléctricos. Los cambios más relevantes son:
+El inciso **a)** cierra la puerta principal por donde entran los equipos sin certificación real. Sin esta línea, la declaración del fabricante en su propio catálogo puede presentarse como "evidencia de cumplimiento."
 
-### Nuevos requisitos para aceros de alta resistencia
+El inciso **b)** tapa el siguiente agujero que los proveedores intentan: presentar la ficha técnica del producto con los valores de rendimiento listados, argumentando que esos valores demuestran cumplimiento. No lo demuestran. Los valores en una ficha técnica son los que el fabricante decidió imprimir. No han sido medidos ni verificados por nadie externo.
 
-La edición 2022 eleva los valores mínimos de corte para reflejar la presencia de aceros AHSS/UHSS en los vehículos modernos. Los nuevos valores de diámetro mínimo de corte de acero Grado 60 son más exigentes que los de 2015, lo que efectivamente excluye algunas herramientas de generaciones anteriores que solo cumplen con la edición 2015.
+El inciso **c)** evita que se presente un certificado legítimo pero expirado. Muchos certificados NFPA tienen vigencia de dos a tres años y requieren auditorías de seguimiento para renovarse. Un certificado de 2019 presentado en una licitación de 2026 no es evidencia de cumplimiento actual.
 
-Esto tiene implicaciones directas: una herramienta certificada bajo NFPA 1936:2015 puede no cumplir con los requisitos de la edición 2022. Para licitaciones en 2026, la especificación debe referir explícitamente a la edición 2022.
+El inciso **d)** es el más técnico y el más frecuentemente ignorado. Los fabricantes tienen líneas de producto con modelos similares. Un certificado emitido para el modelo XYZ-2200-H no aplica automáticamente al modelo XYZ-2200-B, aunque sean visualmente idénticos y tengan el mismo nombre comercial. Cualquier variación en el sistema de alimentación, las mordazas, el diseño de cilindro o los materiales puede invalidar la transferencia del certificado. Exige que el número de modelo en el certificado coincida exactamente con el número de modelo en la propuesta técnica.
 
-### Requisitos para operación con vehículos eléctricos
-
-La edición 2022 introduce por primera vez requisitos relacionados con la interacción de las herramientas con vehículos eléctricos e híbridos. Esto incluye:
-
-- **Resistencia de aislamiento:** las herramientas deben mantener su integridad de aislamiento cuando operan en entornos donde puede haber voltajes elevados (derivados de baterías de VE dañadas)
-- **Guías de compatibilidad:** aunque la norma no certifica la "seguridad" completa en todos los escenarios VE (que depende del procedimiento operativo, no solo de la herramienta), establece requisitos mínimos de diseño
-
-### Nuevas categorías de clasificación
-
-La edición 2022 reorganiza las categorías de clasificación de las herramientas para reflejar mejor el espectro de capacidades disponibles en el mercado. Esto facilita la comparación directa entre modelos certificados, ya que la categoría indica el nivel de rendimiento.
+La última línea —la reserva del derecho de verificación— no es formalismo jurídico. Es la herramienta que te permite llamar directamente a TÜV o Intertek y preguntar: "¿El certificado número X para el modelo Y está vigente?" Ponla en el contrato y úsala antes de firmar el acta de entrega, no después.
 
 ---
 
-## Impacto de los vehículos eléctricos en los parámetros requeridos
+## Qué certifica realmente la NFPA 1936:2022
 
-Los vehículos eléctricos (VE) e híbridos enchufables (PHEV) representan un cambio de paradigma en las operaciones de rescate que va más allá de los requisitos de NFPA 1936. Para los evaluadores y compradores de herramientas, los aspectos técnicos más relevantes son:
+La norma no certifica que la herramienta "funciona." Certifica que cumple con parámetros específicos y reproducibles bajo condiciones controladas. Es importante entender qué se mide para poder interpretar los certificados que recibirás.
 
-### Estructuras reforzadas para protección de batería
+**Fuerza de apertura en cizallas (Spreading Force):** no se mide solo en el pico máximo. Se mide en múltiples posiciones de las mordazas —apertura mínima, media y máxima— para caracterizar la curva completa de fuerza. Una herramienta que genera 700 kN con las mordazas casi cerradas pero 80 kN en apertura máxima tiene un perfil completamente diferente a una que mantiene 350 kN en todo el rango. El pilar B de una pick-up moderna puede requerir fuerza sostenida a apertura media, no solo el pico inicial. El certificado debe mostrar los valores en múltiples posiciones, no solo el pico de marketing.
 
-Los VE modernos utilizan el paquete de batería como elemento estructural del piso, frecuentemente protegido por acero de alta resistencia o planchas de aluminio reforzado. Esta estructura puede ser significativamente más difícil de cortar que los pisos de los vehículos convencionales, lo que eleva los requisitos de fuerza de las cizallas.
+**Capacidad de corte de acero:** la norma especifica una prueba de corte sobre barra de acero redondo Grado 60 (ASTM A615 Grade 60, resistencia mínima a la fluencia de 420 MPa). La edición 2022 elevó el diámetro mínimo requerido respecto a la edición 2015, lo que implica que herramientas certificadas únicamente bajo la edición anterior pueden no superar la prueba de la edición vigente. Esta es la prueba más directamente relevante para la excarcelación de vehículos modernos.
 
-Un evaluador técnico que especifica herramientas solo para vehículos convencionales puede estar subespecificando el equipo necesario para el parque vehicular de 2026 y en adelante.
+**Velocidad de ciclo:** medida bajo carga, no en vacío. Una cizalla que completa un ciclo en 8 segundos sin carga puede necesitar 18 segundos bajo la carga de un pilar de acero. La norma exige que la prueba de velocidad se realice en condiciones de carga especificadas. En un accidente con múltiples víctimas, esa diferencia se multiplica por cada corte que realizas.
 
-### Baterías de alto voltaje: 400V a 900V
-
-Los paquetes de batería de VE operan típicamente en rangos de 400V a 900V DC. El contacto directo con cables de alta tensión expuestos puede causar electrocución mortal. Este factor no lo resuelve la herramienta por sí sola, sino la combinación de:
-
-- Fichas de rescate actualizadas del fabricante del vehículo
-- Procedimiento operativo estándar (PON) para rescate de VE
-- EPP adicional: guantes diatérmicos clase 0 (1,000V) como mínimo
-- Desconexión del vehículo mediante punto de servicio antes de cualquier corte
-
-### Re-energización post-accidente
-
-Algunos sistemas de gestión de baterías en VE pueden re-energizar circuitos después de un corte de energía, especialmente en accidentes parciales donde el sistema de gestión (BMS) detecta un evento y activa protocolos automáticos. Los bomberos deben conocer el tiempo mínimo de espera después de desconectar el vehículo antes de asumir que los sistemas están desenergizados.
-
-### Riesgo de incendio de batería (Thermal Runaway)
-
-Las baterías de iones de litio dañadas pueden entrar en combustión termal espontánea (thermal runaway), generando temperaturas de 400-1,000°C y liberando gases tóxicos (HF, CO, CO₂). Este riesgo requiere protocolos específicos que van más allá de las herramientas de excarcelación pero que afectan directamente la planificación de la operación de rescate.
+**Pruebas ambientales:** la norma exige que el equipo supere todas las pruebas de rendimiento después de exposición a -20°C y a +60°C. Esto es relevante para el contexto mexicano: una unidad sin climatización estacionada en Hermosillo o Ciudad Juárez en julio puede alcanzar temperaturas internas de 65-70°C. Si el equipo no ha sido certificado a esa temperatura, su rendimiento en la primera atención de un accidente vespertino en Sonora puede estar comprometido. Y en el otro extremo, cualquier departamento con operaciones en zonas de sierra o altiplano en invierno —Chihuahua, Durango, Estado de México— necesita saber que el equipo funciona bajo cero.
 
 ---
 
-## Cómo redactar una especificación técnica para licitación basada en NFPA 1936
+## Impacto de los vehículos eléctricos: por qué una certificación 2015 ya no es suficiente
 
-Una especificación técnica bien redactada para licitación de herramientas de rescate debe incluir los siguientes elementos, en este orden:
+Si tu zona de cobertura incluye cualquier área urbana o periurbana en México —y para 2027 prácticamente todas las áreas metropolitanas calificarán— ya tienes el problema de los vehículos eléctricos aunque todavía no hayas atendido uno.
 
-### Sección 1: Marco normativo
+Los VE y los híbridos enchufables modernos usan el paquete de batería como elemento estructural del piso del vehículo. Esa estructura está frecuentemente protegida por acero de alta resistencia o aluminio reforzado, diseñado específicamente para proteger la batería en colisiones. Es el mismo material que tu cizalla tendrá que cortar cuando el vehículo quede comprimido en un accidente. Y en muchos casos es significativamente más difícil de cortar que el acero convencional de vehículos de combustión interna de la misma generación.
 
-Especificar claramente las normas de referencia obligatorias:
+Los paquetes de batería de VE operan típicamente entre 400V y 900V en corriente continua. Un corte inadvertido en un cable de alta tensión expuesto no es una falla de procedimiento menor: puede causar un arco eléctrico, la liberación de electrolito y en casos severos, iniciar un incendio de batería (thermal runaway) que supera los 700°C y no puede extinguirse con agua convencional. La herramienta de excarcelación por sí sola no resuelve este riesgo —lo resuelven los procedimientos, la capacitación y el equipo de protección apropiado— pero la herramienta certificada bajo NFPA 1936:2022 incluye requisitos de aislamiento que la edición 2015 no contemplaba.
 
-```
-Las herramientas de rescate ofertadas deberán estar certificadas por organismo 
-de tercera parte acreditado bajo los requisitos de NFPA 1936:2022 Standard on 
-Rescue Tools, edición vigente. No se aceptarán declaraciones de cumplimiento 
-del fabricante como sustituto de la certificación por tercera parte. El 
-licitante deberá presentar el certificado original o copia certificada emitido 
-por el organismo certificador, junto con los datos de contacto del organismo 
-para verificación de la institución convocante.
-```
+La edición 2022 introdujo requisitos de integridad de aislamiento para herramientas que operan en entornos con voltajes elevados derivados de baterías dañadas de VE. Una herramienta certificada únicamente bajo NFPA 1936:2015 no cumple automáticamente con esos requisitos. No es una cuestión de grados: son requisitos que no existían en la edición anterior.
 
-### Sección 2: Parámetros mínimos por herramienta
+| Requisito | NFPA 1936:2015 | NFPA 1936:2022 |
+|---|---|---|
+| Corte acero Grado 60 | Diámetro menor | Diámetro mayor |
+| Requisitos aislamiento EV | No incluidos | Incluidos |
+| Clasificación por categoría | Sistema anterior | Revisado y ampliado |
+| Pruebas ambientales | -20°C a +60°C | -20°C a +60°C |
 
-Para cada tipo de herramienta, especifique valores mínimos que sean técnicamente justificados y superiores al mínimo normativo cuando el contexto operativo lo requiera. Ejemplo para cizalla:
-
-- Fuerza máxima de apertura: no menor a [X] kN (especifique el valor según sus necesidades operativas)
-- Capacidad de corte: barra de acero ASTM A615 Grado 60 de [diámetro] mm mínimo
-- Apertura máxima de mordazas: no menor a [Y] mm
-- Peso máximo de la herramienta con sistema de alimentación: [Z] kg
-- Sistema de alimentación: batería de iones de litio integrada (no se aceptan cables hidráulicos externos)
-- Autonomía mínima: [N] ciclos completos de apertura/cierre por carga
-- Temperatura de operación: -20°C a +60°C verificada por norma
-
-### Sección 3: Documentación requerida
-
-El licitante deberá presentar con su propuesta técnica:
-
-- Ficha técnica oficial del fabricante en español o con traducción certificada, para el modelo específico ofertado
-- Certificado NFPA 1936:2022 del modelo específico ofertado (no de modelos anteriores o similares), emitido por organismo de tercera parte acreditado
-- Número de certificado y datos del organismo certificador para verificación
-- Carta del fabricante o distribuidor autorizado confirmando la disponibilidad de partes y servicio técnico certificado en México, con tiempos de respuesta garantizados
-- Fichas de seguridad (Rescue Sheets) para uso en incidentes con VE e híbridos
-- Manual de operación y mantenimiento en español
-
-### Sección 4: Criterios de evaluación técnica
-
-Defina claramente cómo se evaluarán las propuestas. Se recomienda un sistema de puntuación que pondere:
-
-| Criterio | Ponderación sugerida |
-|---|---|
-| Cumplimiento NFPA 1936:2022 (certificado tercera parte) | 30% |
-| Fuerza de apertura / corte (kN) | 20% |
-| Velocidad de ciclo | 10% |
-| Peso y ergonomía | 10% |
-| Autonomía del sistema de batería | 10% |
-| Servicio técnico y disponibilidad de refacciones en México | 15% |
-| Precio | 5% |
-
-*Nota: La ponderación recomendada da solo un 5% al precio, lo cual es inusual en licitaciones públicas pero justificado en equipamiento crítico de rescate donde el costo de una falla supera con creces el ahorro en adquisición.*
-
-### Sección 5: Pruebas de aceptación
-
-Especifique una prueba de aceptación en campo que se realizará antes de la recepción definitiva del equipo. Esta prueba puede incluir:
-
-- Verificación de autonomía de batería mediante ciclos supervisados
-- Prueba de velocidad de ciclo medida con cronómetro
-- Prueba de corte de material de referencia (barra de acero de especificación conocida)
-- Verificación de parámetros de protección ambiental (temperatura operativa)
-
-### Sección 6: Garantía y soporte post-venta
-
-Especifique condiciones mínimas de garantía:
-
-- Garantía mínima de la herramienta: 2 años contra defectos de fabricación
-- Garantía mínima de baterías: 1 año o 500 ciclos de carga, lo que ocurra primero
-- Compromiso de suministro de refacciones: disponibilidad garantizada por 10 años mínimo
-- Tiempo de respuesta para servicio técnico en México: máximo 5 días hábiles
-- Capacitación inicial: mínimo 8 horas de capacitación en operación y mantenimiento para el personal designado
+La implicación práctica para licitaciones es directa: si tu convocatoria especifica NFPA 1936 sin indicar la edición, un proveedor puede presentar equipos certificados bajo la edición 2015 y estar técnicamente correcto en su oferta. Especifica siempre NFPA 1936:2022 como mínimo. Y si tu jurisdicción tiene o tendrá rescates de VE —que la tiene, aunque no lo sepa todavía— exige además documentación específica de compatibilidad con vehículos de alta tensión.
 
 ---
 
-## Lista de verificación para evaluadores técnicos
+## Lista de verificación técnica para evaluar cada propuesta
 
-La siguiente lista de verificación sintetiza los puntos clave que un evaluador técnico debe validar en cada propuesta:
+Esta lista está pensada para que un evaluador la use directamente al revisar cada propuesta. No es un resumen conceptual: es un instrumento de trabajo. Cada punto tiene un criterio de decisión binario.
 
-- El certificado NFPA presentado es de la **edición 2022** (no ediciones anteriores)
-- El organismo certificador es **independiente** y tiene acreditación reconocida (TÜV, Intertek, UL u otro acreditado por ILAC/IAF)
-- El certificado corresponde al **modelo exacto** ofertado (número de modelo, versión, sistema de alimentación)
-- El certificado está **vigente** (no vencido)
-- Los **valores de rendimiento** en la ficha técnica coinciden con los del certificado
-- El licitante puede acreditar **presencia de servicio técnico en México** (no solo promesas)
-- Las herramientas declaradas para uso en VE cuentan con **fichas de rescate** y protocolos específicos
-- El peso de las herramientas es **operativamente manejable** para el personal del cuerpo de bomberos (ergonomía real)
-- La **interoperabilidad de baterías** entre herramientas del mismo fabricante está confirmada
+**1. ¿El certificado NFPA presentado corresponde a la edición 2022?**
+Si el certificado indica NFPA 1936:2015 o cualquier edición anterior: rechazar. La edición aplicable es la vigente al momento de la licitación. No hay excepciones por "equivalencia."
+
+**2. ¿El organismo certificador tiene acreditación ILAC o IAF verificable?**
+Busca el nombre del organismo en el directorio público de ILAC (ilac.org) o en el directorio de IAF. Si el organismo no aparece o no puede verificarse su acreditación para el alcance específico: rechazar. No basta con que el nombre suene conocido.
+
+**3. ¿El número de modelo en el certificado es idéntico al número de modelo ofertado?**
+Revisa tanto el sistema de alimentación (batería/hidráulico) como el número de versión. Si el modelo certificado difiere en cualquier característica técnica relevante del modelo ofertado: rechazar, o exigir aclaración técnica con respaldo del fabricante y del organismo certificador.
+
+**4. ¿El certificado está vigente a la fecha de presentación de propuestas?**
+Verifica la fecha de vencimiento. Si está vencido: rechazar sin excepción. No hay "en proceso de renovación" válido en una licitación pública. La vigencia se evalúa en la fecha de presentación, no en la fecha de adjudicación.
+
+**5. ¿Los valores de fuerza declarados en la ficha técnica coinciden con los registrados en el certificado?**
+Si la ficha técnica declara 650 kN de fuerza de apertura y el certificado registra valores de prueba distintos: solicita aclaración técnica escrita. Las discrepancias entre ficha técnica y certificado son una señal de alerta que merece investigación, no una razón automática de descalificación, pero tampoco puede ignorarse.
+
+**6. ¿El licitante acredita presencia de servicio técnico certificado en México?**
+Exige carta del fabricante —no del distribuidor— más lista de centros de servicio con dirección física verificable. Un distribuidor que importa equipo sin respaldo del fabricante para servicio técnico no puede garantizar tiempos de respuesta. Averigua dónde se hacen las reparaciones mayores: si la respuesta es "en Estados Unidos" o "en Europa," pregunta cuántos días de fuera de servicio está dispuesto a aceptar el departamento.
+
+**7. ¿El peso de la herramienta es operativamente manejable para tu personal?**
+Este es el criterio que los evaluadores técnicos más frecuentemente ignoran porque no aparece en los documentos. Una cizalla de batería de 22 kg es legítimamente más difícil de manejar que una de 14 kg en un accidente donde el operador lleva ya 20 minutos trabajando en una posición comprometida. Pide que el personal operativo que usará el equipo lo sostenga y lo posicione en una simulación antes de la aceptación definitiva.
 
 ---
 
-## Conclusión: La norma como herramienta de gestión de riesgo institucional
+## El costo real de la herramienta "más barata"
 
-La NFPA 1936 no es un requisito burocrático de las licitaciones: es el mecanismo técnico mediante el cual las instituciones verifican que el equipo adquirido con recursos públicos cumplirá su función cuando un bombero lo necesite en un accidente real. Un evaluador que no distingue entre una declaración de cumplimiento y una certificación por tercera parte no está ejecutando su función de manera responsable, independientemente de si actúa de buena fe.
+Antes de firmar el acta de entrega, hay algo que tienes que verificar: el costo total de propiedad, no solo el precio de adquisición.
 
-La actualización 2022 de la norma no es un detalle menor: los aceros UHSS que hoy protegen a los ocupantes de los vehículos son los mismos aceros que mañana resistirán los intentos de rescate si el equipo no está a la altura. La especificación correcta, basada en la edición vigente, con requisitos de certificación verificados y parámetros ajustados al contexto operativo mexicano, es la primera línea de defensa para asegurar que el equipo adquirido sea realmente el equipo necesario.
+Una herramienta 50,000 pesos más barata que la competencia que requiere seis semanas de espera para importar un sello crítico de reemplazo no representa un ahorro de 50,000 pesos. Representa un equipo fuera de servicio durante seis semanas, con las consecuencias operativas que eso implica. Si tu cuerpo de bomberos cubre una zona metropolitana o una carretera de alta siniestralidad, seis semanas sin una cizalla operativa no es un inconveniente administrativo.
 
-Para los jefes de bomberos y coordinadores de protección civil, dominar los contenidos de la NFPA 1936 y saber redactar especificaciones técnicas rigurosas es una competencia profesional tan importante como el entrenamiento técnico de excarcelación. Ambas capacidades son necesarias para proteger a los respondedores y a las víctimas que dependen de ellos.
+Los fondos FORTASEG y FASP que financian estas adquisiciones en muchos estados tienen ciclos de licitación anuales o bianuales. Si adquieres un equipo deficiente en esta convocatoria, es posible que el presupuesto para sustituirlo no esté disponible hasta el siguiente ciclo. El costo real de una mala adquisición incluye ese período de operación con equipo subestándar o fuera de servicio.
+
+En tus términos de referencia, incluye un requisito contractual —no verbal— de disponibilidad de refacciones críticas (sellos, baterías, puntas de mordaza) con tiempo máximo de entrega de cinco días hábiles en México. "Tenemos refacciones en bodega" es una promesa verbal. Una cláusula de penalización por incumplimiento de tiempo de entrega es un compromiso con consecuencias.
 
 ---
 
-*Referencias técnicas: NFPA 1936:2022 Standard on Rescue Tools, NFPA 1670 Standard on Operations and Training for Technical Search and Rescue Incidents, ILAC-G19 Framework for Forensic Science, TÜV Certification Procedures for Safety Equipment, Emergency Vehicle Technician Consortium (EVTC) Technical Guidelines.*
+## La pregunta que el evaluador nunca hace — y debería
+
+Después de quince años viendo licitaciones de rescate, he identificado una sola pregunta que revela más sobre una propuesta que cualquier documento en el expediente técnico.
+
+No es una pregunta difícil. No requiere conocimiento técnico avanzado para hacerla. Pero los evaluadores casi nunca la hacen porque parece demasiado directa, demasiado confrontacional, demasiado desconfiada.
+
+La pregunta es esta: **"¿Me puede mostrar el número de certificado para que lo verifique directamente con TÜV, Intertek o UL ahora mismo, mientras estamos en esta reunión?"**
+
+Si el proveedor tiene un certificado real, la respuesta es inmediata. Te da el número. Te da el nombre del organismo. Te invita a que verifiques. A veces saca el teléfono y te muestra cómo hacerlo él mismo.
+
+Si el proveedor titubea, pide tiempo para "conseguir la documentación completa," explica que "el certificado está en proceso de renovación," o desvía la conversación hacia las características técnicas del producto —tienes tu respuesta. No es la respuesta que buscabas, pero es la información que necesitabas.
+
+Un certificado de tercera parte real no requiere tiempo para conseguirse. Existe. Tiene un número. Puede verificarse hoy.
+
+La próxima vez que evalúes una propuesta de herramientas de rescate y escuches "cumple con NFPA 1936," esa es la pregunta que tienes que hacer. Antes de la palomita. Antes del acta. Antes de que el equipo entre en servicio.
+
+---
+
+*Referencias técnicas: NFPA 1936:2022 Standard on Rescue Tools; ILAC P9:06/2014 Policy for Participation in ILAC Arrangements; IAF MD 4:2018 Mandatory Document for the Use of Computer Databases in Certification; TÜV SÜD Certification Procedures for Safety Equipment; Compranet — Plataforma Nacional de Transparencia, lineamientos de especificaciones técnicas para equipamiento de protección civil.*
