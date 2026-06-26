@@ -9,9 +9,10 @@ import { SITE, whatsappUrl } from '@data/site';
 const cat = categories.find((c) => c.slug === 'sistemas-ci')!;
 const canonicalURL = `${SITE.url}/productos/sistemas-ci`;
 
-const tycoProducts      = featuredProducts.filter((p) => p.category === 'Sistemas CI' && p.brand === 'Tyco Viking' && p.specs);
-const honeywellProducts = featuredProducts.filter((p) => p.category === 'Sistemas CI' && p.brand === 'Honeywell Notifier' && p.specs);
-const kiddeFenwalProducts = featuredProducts.filter((p) => p.category === 'Sistemas CI' && p.brand === 'Kidde Fenwal' && p.specs);
+const tycoProducts        = featuredProducts.filter((p) => p.category === 'Sistemas CI' && p.brand === 'Tyco Viking'        && p.specs);
+const honeywellProducts   = featuredProducts.filter((p) => p.category === 'Sistemas CI' && p.brand === 'Honeywell Notifier' && p.specs);
+const kiddeFenwalProducts = featuredProducts.filter((p) => p.category === 'Sistemas CI' && p.brand === 'Kidde Fenwal'       && p.specs);
+const redHidraulicaProducts = featuredProducts.filter((p) => p.category === 'Sistemas CI' && p.brand === 'Red Hidráulica'   && p.specs);
 
 const seoMeta = {
   title: `Sistemas Contra Incendio NFPA 13 · 72 · 2001 — Diseño, Instalación y Memoria de Cálculo · México`,
@@ -513,6 +514,63 @@ const tablaComparativa = [
             Catálogo FM-200 / Novec completo →
           </a>
           <a href={whatsappUrl('Hola, quiero cotizar un sistema de agente limpio FM-200 o Novec 1230 (NFPA 2001).')}
+            target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
+            Cotizar por WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Red Hidráulica CI — NFPA 20 -->
+  <section class="section" style="background:#07111F" aria-labelledby="red-hidraulica-title">
+    <div class="container-site">
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Red Hidráulica CI · NFPA 20 · NFPA 14 · NOM-002-STPS · UL Listed · FM Approved</span>
+          <h2 id="red-hidraulica-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            Gabinetes CI · Bombas NFPA 20<br/>
+            <span style="color:#FB923C">y Válvulas Supervisadas.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(251,146,60,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
+            La red hidráulica es la columna vertebral de cualquier sistema contra incendio.
+            Gabinetes con manguera para primera respuesta, sala de bombas NFPA 20 con bomba
+            jockey, eléctrica y diesel de emergencia (UL Listed · FM Approved), y válvulas OS&Y
+            con tamper switch supervisado. La NFPA 20 exige que las bombas arrangen en menos
+            de 30 segundos — verificamos en la prueba de aceptación.
+          </p>
+          <div class="flex gap-4 text-xs font-mono" style="color:#FB923C">
+            <span>NFPA 20 · Bomba &lt; 30 s</span>
+            <span>·</span>
+            <span>8 h autonomía diesel</span>
+            <span>·</span>
+            <span>UL · FM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {redHidraulicaProducts.map((p) => (
+          <ProductCard product={p} />
+        ))}
+      </div>
+
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(251,146,60,0.15)">
+        <div class="flex-1">
+          <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+            Diseño hidráulico con memoria de cálculo firmada por DRO. Prueba de aceptación NFPA 20
+            con medición de curva de bomba en tres puntos. Entregable para aseguradoras internacionales.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+          <a href="/productos/sistemas-ci/red-hidraulica" class="btn btn-primary btn-lg">
+            Red Hidráulica NFPA 20 completa →
+          </a>
+          <a href={whatsappUrl('Hola, quiero cotizar una red hidráulica contra incendio: bomba NFPA 20, gabinetes CI y válvulas supervisadas.')}
             target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
             Cotizar por WhatsApp
           </a>

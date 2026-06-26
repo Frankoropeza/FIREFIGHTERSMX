@@ -731,5 +731,124 @@ const kiddeFenwal: EquipmentBrand = {
   waQuote: 'Hola, quiero cotizar un sistema de agente limpio FM-200 o Novec 1230 NFPA 2001 para mi proyecto.',
 };
 
+/* ════════════════════════════════════════════════════════════════════════════
+   RED HIDRÁULICA — Gabinetes CI, Bombas NFPA 20 y Válvulas de Control
+   ════════════════════════════════════════════════════════════════════════════ */
+const redHidraulica: EquipmentBrand = {
+  categorySlug: 'sistemas-ci',
+  slug: 'red-hidraulica',
+  brand: 'Red Hidráulica',
+  brandLabel: 'Red Hidráulica CI',
+  crossDesc: 'Gabinetes CI · Bombas NFPA 20 · Válvulas OS&Y — Red hidráulica completa',
+  eyebrow: 'NFPA 20 · NFPA 14 · NOM-002-STPS · UL Listed · FM Approved',
+  heroTitleTop: 'Red Hidráulica',
+  heroTitleAccent: 'completa NFPA 20.',
+  heroLead: 'La red hidráulica es la columna vertebral de cualquier sistema contra incendio: gabinetes con manguera, bombas NFPA 20 y válvulas de control supervisadas. Sin una red hidráulica correctamente dimensionada, diseñada y supervisada, los rociadores y los sistemas de agente limpio no pueden funcionar. Seis componentes clave para el proyecto completo.',
+  heroIntro: [
+    'El diseño de la red hidráulica define la presión y el caudal disponibles para cada rociador, gabinete y sistema de agente limpio del proyecto. Una bomba subdimensionada o una válvula sin supervisión puede invalidar toda la certificación del sistema y dejar expuesta la instalación ante aseguradoras y autoridades. La NFPA 20 establece los criterios de diseño, instalación y prueba de la bomba; la NFPA 14 los de la red de gabinetes; y la NOM-002-STPS los requisitos mínimos de dotación en el mercado mexicano.',
+    'Ofrecemos la red hidráulica completa: gabinetes Tipo I y Tipo II con manguera certificada NMX-N-009, bombas jockey, principal eléctrica y diesel de emergencia con controladores UL 218, y válvulas OS&Y supervisadas con switch tamper. Diseño hidráulico, suministro de materiales, instalación y pruebas de aceptación NFPA 20 en un solo proveedor.',
+  ],
+  heroBadges: ['NFPA 20', 'NFPA 14', 'NOM-002-STPS', 'UL Listed', 'FM Approved', 'Gabinetes · Bombas · Válvulas', 'Diseño + Suministro + Instalación'],
+  seoTitle: 'Red Hidráulica Contra Incendio — Gabinetes CI, Bombas NFPA 20 y Válvulas · México',
+  seoDescription: 'Red hidráulica contra incendio en México: gabinetes CI Tipo I y II (NOM-002-STPS), bombas jockey, eléctrica y diesel NFPA 20 (UL Listed/FM Approved) y válvulas OS&Y supervisadas. Diseño, suministro e instalación.',
+  stats: [
+    { valor: 'NFPA 20', etiq: 'Norma de bombas CI' },
+    { valor: 'UL · FM', etiq: 'Doble listado en equipos principales' },
+    { valor: '8 h', etiq: 'Autonomía mínima diesel NFPA 20' },
+    { valor: '30 s', etiq: 'Arranque máx. bomba principal NFPA 20' },
+  ],
+  credenciales: [
+    {
+      n: '01',
+      t: 'Diseño hidráulico NFPA 20 con memoria de cálculo',
+      d: 'La selección de la bomba y el dimensionamiento de la red requieren una memoria de cálculo que relacione el caudal de demanda (de los rociadores, gabinetes o sistemas especiales), las pérdidas de presión en la red y la curva de la bomba. Generamos la memoria firmada por DRO para cumplimiento ante aseguradoras y Protección Civil.',
+    },
+    {
+      n: '02',
+      t: 'Bombas UL Listed y FM Approved',
+      d: 'La NFPA 20 exige que todas las bombas contra incendio estén listadas por UL o aprobadas por FM. Sin el listado, la bomba no puede acreditarse ante aseguradoras internacionales. Suministramos únicamente bombas con listado vigente y controladores UL 218.',
+    },
+    {
+      n: '03',
+      t: 'Supervisión de válvulas con tamper switch',
+      d: 'La NFPA 13, 14 y 25 exigen que todas las válvulas de control estén supervisadas — conectadas al panel FACP para generar alarma si se cierran sin autorización. El tamper switch es el requisito que más frecuentemente falta en sistemas existentes y que las aseguradoras detectan en auditorías.',
+    },
+    {
+      n: '04',
+      t: 'Prueba de aceptación NFPA 20 documentada',
+      d: 'Al terminar la instalación realizamos la prueba de aceptación NFPA 20: medición de caudal y presión en la curva de la bomba, verificación de arranque automático, prueba del diesel bajo carga y reporte firmado. El reporte es el entregable que solicita el inspector de la aseguradora.',
+    },
+  ],
+  linesIntro: 'La red hidráulica se compone de tres subsistemas independientes pero complementarios: gabinetes de manguera para primera respuesta, sala de bombas NFPA 20 para presión y caudal sostenidos, y válvulas de control supervisadas para sectorización y monitoreo. Los tres deben diseñarse juntos para garantizar el desempeño del sistema completo.',
+  lineas: [
+    {
+      tipo: 'red-hidraulica',
+      badge: 'NFPA 14 · NOM-002-STPS',
+      titulo: 'Gabinetes de manguera CI',
+      modelos: 'Tipo I 30 m · Tipo II 20 m',
+      desc: 'Primera respuesta manual ante un incendio incipiente. El gabinete Tipo I con manguera 38mm × 30m para naves industriales y bodegas; el Tipo II con manguera 25mm × 20m para pasillos, hoteles y hospitales. Certificados NOM-002-STPS y NMX-N-009.',
+      tech: 'Manguera NMX-N-009 · Válvula ángulo bronce · Pitón regulable 3 posiciones',
+    },
+    {
+      tipo: 'red-hidraulica',
+      badge: 'NFPA 20 · UL Listed',
+      titulo: 'Sala de bombas NFPA 20',
+      modelos: 'Jockey 5 HP · Eléctrica 20 HP · Diesel 40 HP',
+      desc: 'El corazón de cualquier sistema de rociadores o agente limpio. Bomba jockey para mantenimiento de presión, bomba eléctrica principal para operación normal y bomba diesel de emergencia para blackout. La NFPA 20 define la selección y los tiempos de arranque para cada una.',
+      tech: 'Controlador UL 218 · Arranque < 30 s · Registrador de eventos · Prueba NFPA 20',
+    },
+    {
+      tipo: 'red-hidraulica',
+      badge: 'NFPA 20 · NFPA 13',
+      titulo: 'Válvulas de control supervisadas',
+      modelos: 'OS&Y 2" a 12" · Tamper switch UL',
+      desc: 'Toda válvula de control de la red CI debe estar supervisada — conectada al FACP para detectar cierres no autorizados. La válvula OS&Y con tamper switch es el estándar NFPA 13, 14 y 25. Sin supervisión, la aseguradora no puede emitir la póliza.',
+      tech: 'Vástago exterior visible · Tamper UL Listed · Hierro dúctil epoxi · 2" a 12"',
+    },
+  ],
+  flagship: 'bomba-principal-electrica-20hp',
+  anatomiaIntro: 'La bomba principal eléctrica NFPA 20 es el equipo más crítico de la sala de bombas — su correcto dimensionamiento, instalación y prueba determinan si el sistema completo cumple o no la norma. Un error en la curva de la bomba invalida toda la memoria de cálculo.',
+  anatomia: [
+    { t: 'Controlador UL 218 listado', d: 'El controlador es tan importante como la bomba. La NFPA 20 exige que el controlador sea UL Listed independientemente de la bomba — un controlador genérico invalida el listado del conjunto aunque la bomba sea UL Listed.' },
+    { t: 'Arranque en menos de 30 segundos', d: 'La NFPA 20 exige arranque completo en menos de 30 segundos desde la caída de presión que activa el presostato. En la prueba de aceptación, el inspector cronometra este arranque — si supera los 30 s, el sistema no pasa la prueba.' },
+    { t: 'Registrador de arranques', d: 'El controlador UL 218 registra cada arranque con fecha, hora y duración. El registro es evidencia documental para las pruebas semanales de arranque manual que la NFPA 25 requiere para el programa de mantenimiento.' },
+    { t: 'Curva de la bomba UL Listed', d: 'La curva de la bomba (caudal vs presión) debe estar dentro de los parámetros listados por UL. Si la instalación cambia el diámetro de la descarga o agrega pérdidas no previstas, la bomba puede operar fuera de su curva listada, invalidando el listado.' },
+    { t: 'Carcasa de hierro fundido con impulsor de bronce', d: 'El hierro fundido resiste la corrosión del agua estancada de la red; el bronce del impulsor es compatible con agua con cloro y sin tratamiento. La combinación es el estándar para bombas contra incendio en México.' },
+    { t: 'Prueba de aceptación NFPA 20', d: 'Al terminar la instalación se realiza la prueba de aceptación: medición a caudal cero, caudal nominal (100%) y caudal de sobrecarga (150%). Los tres puntos de la curva medida deben coincidir con la curva listada. El reporte firmado es el entregable para la aseguradora.' },
+  ],
+  comparativa: [
+    { modelo: 'Gabinete Tipo I 30m', tipo: 'red-hidraulica', norma: 'NFPA 14 · NOM-002-STPS', tipo_sis: 'Gabinete manguera 38mm', cobertura: '36 m de alcance', listado: 'NOM-002-STPS', ideal: 'Naves · bodegas industriales' },
+    { modelo: 'Gabinete Tipo II 20m', tipo: 'red-hidraulica', norma: 'NFPA 14 · NOM-002-STPS', tipo_sis: 'Gabinete manguera 25mm', cobertura: '24 m de alcance', listado: 'NOM-002-STPS', ideal: 'Hoteles · hospitales · pasillos' },
+    { modelo: 'Bomba Jockey 5 HP', tipo: 'red-hidraulica', norma: 'NFPA 20', tipo_sis: 'Bomba mantenimiento presión', cobertura: 'Red completa', listado: 'UL Listed', ideal: 'Presurización stand-by permanente' },
+    { modelo: 'Bomba Eléctrica 20 HP', tipo: 'red-hidraulica', rec: true, norma: 'NFPA 20', tipo_sis: 'Bomba principal eléctrica', cobertura: 'Según memoria de cálculo', listado: 'UL Listed · FM Approved', ideal: 'Operación normal · rociadores · gabinetes' },
+    { modelo: 'Bomba Diesel 40 HP', tipo: 'red-hidraulica', norma: 'NFPA 20', tipo_sis: 'Bomba emergencia diesel', cobertura: 'Según memoria de cálculo', listado: 'UL Listed · FM Approved', ideal: 'Blackout · fuente eléctrica no confiable' },
+    { modelo: 'Válvula OS&Y + Tamper', tipo: 'red-hidraulica', norma: 'NFPA 20 · NFPA 13', tipo_sis: 'Válvula control supervisada', cobertura: '2" a 12" según red', listado: 'UL Listed · FM Approved', ideal: 'Control principal y sectorización CI' },
+  ],
+  comparativaLabel: 'Red Hidráulica completa — Gabinetes · Bombas · Válvulas',
+  comparativaNote: '★ Recomendado = Bomba principal eléctrica, el equipo central de la sala de bombas NFPA 20 del que depende el funcionamiento de todo el sistema.',
+  guia: [
+    { n: '01', t: 'Define el tipo de riesgo y el área a proteger: el caudal y la presión requeridos por los rociadores o gabinetes determinan el dimensionamiento de la bomba principal conforme NFPA 20.' },
+    { n: '02', t: 'Evalúa la confiabilidad de la fuente eléctrica: si el suministro eléctrico no es confiable (cortes frecuentes, zona sísmica, generador compartido), la NFPA 20 exige bomba diesel adicional.' },
+    { n: '03', t: 'Verifica que todas las válvulas de control estén supervisadas con tamper switch conectado al FACP — es el requisito que las aseguradoras detectan primero en auditorías de sistemas existentes.' },
+    { n: '04', t: 'Agenda las pruebas NFPA 25 anuales: arranque semanal manual, inspección trimestral de válvulas y prueba anual completa de la curva de la bomba. El incumplimiento puede invalidar la póliza de seguro.' },
+  ],
+  segmentosIntro: 'La red hidráulica es obligatoria en cualquier instalación con rociadores NFPA 13 o gabinetes NFPA 14. Cuatro segmentos de aplicación según la escala del proyecto y los requisitos de la aseguradora.',
+  segmentos: [
+    { num: '01', tipo: 'red-hidraulica', titulo: 'Edificios comerciales y de oficinas', desc: 'Centros comerciales, edificios de oficinas y hoteles donde la NOM-002-STPS y los requisitos de la aseguradora exigen gabinetes en cada nivel y bomba supervisada.', modelos: 'Gabinetes Tipo I · Tipo II · Jockey · Eléctrica' },
+    { num: '02', tipo: 'red-hidraulica', titulo: 'Parques industriales y bodegas', desc: 'Naves de manufactura, almacenes de alta estiba y centros de distribución donde los arrendadores internacionales exigen NFPA 13 con sala de bombas UL Listed y FM Approved.', modelos: 'Bomba eléctrica 20 HP · Diesel · OS&Y supervisadas' },
+    { num: '03', tipo: 'red-hidraulica', titulo: 'Hospitales y sector salud', desc: 'Los hospitales en México deben cumplir NOM-016-SSA3 que incluye sistema contra incendio con bomba supervisada y gabinetes en cada nivel. La continuidad de la operación exige bomba diesel de respaldo.', modelos: 'Gabinetes Tipo II · Bomba diesel · Válvulas supervisadas' },
+    { num: '04', tipo: 'red-hidraulica', titulo: 'Instalaciones con requisito de seguro internacional', desc: 'Plantas con aseguradora del grupo FM Global, AIG, Swiss Re o MAPFRE donde los ingenieros de riesgo auditan la sala de bombas contra NFPA 20 y exigen listados UL y FM en cada equipo.', modelos: 'Sistema completo UL Listed · FM Approved · Prueba NFPA 20' },
+  ],
+  faqs: [
+    { q: '¿Cuándo exige la NFPA 20 bomba diesel además de la eléctrica?', a: 'La NFPA 20 exige bomba diesel cuando: (1) la fuente de energía eléctrica no es confiable, (2) el inmueble supera una determinada clasificación de riesgo según la aseguradora, o (3) el proyecto tiene requisitos especiales de continuidad de operación. En la práctica, la mayoría de las aseguradoras internacionales (FM Global, AIG) exigen bomba diesel en todos los proyectos industriales sin excepción. La bomba diesel debe arrancar en menos de 30 segundos y tener autonomía mínima de 8 horas según NFPA 20.' },
+    { q: '¿Cada cuánto deben hacerse las pruebas de la bomba NFPA 25?', a: 'La NFPA 25 establece tres niveles de prueba: (1) arranque manual semanal de 10 minutos — para verificar que la bomba arranca y no hay fugas; (2) inspección trimestral de válvulas y conexiones; (3) prueba anual completa de la curva de la bomba con medición de caudal y presión en tres puntos. Los registros de todas las pruebas deben conservarse mínimo 1 año y estar disponibles para el inspector de la aseguradora.' },
+    { q: '¿Por qué todas las válvulas deben estar supervisadas?', a: 'Si una válvula de control se cierra (accidentalmente o por vandalismo) y el sistema de rociadores activa, el agua no llegará al incendio. La supervisi­ón con tamper switch conectado al FACP genera una alarma inmediata si cualquier válvula se cierra sin autorización, antes de que haya un incendio. La NFPA 13, 14 y 25 exigen supervisión en todas las válvulas de control — es el requisito que más frecuentemente falta en sistemas existentes y que las aseguradoras detectan en cada auditoría.' },
+    { q: '¿Qué pasa si la bomba no pasa la prueba de aceptación NFPA 20?', a: 'Si la bomba no entrega el caudal y la presión especificados en la memoria de cálculo durante la prueba de aceptación, el sistema no puede certificarse ni entregarse al cliente. Las causas más frecuentes son: bomba subdimensionada, pérdidas de presión no calculadas en la red, o válvulas parcialmente cerradas. La corrección puede implicar sustituir la bomba o rediseñar parte de la red — un costo significativo que se evita con un diseño hidráulico correcto desde el inicio.' },
+  ],
+  ctaKicker: 'NFPA 20 · UL Listed · FM Approved · Diseño + Suministro + Instalación',
+  ctaTitleHtml: 'La red hidráulica que certifica<br/>cualquier aseguradora internacional.',
+  waQuote: 'Hola, quiero cotizar una red hidráulica contra incendio: bomba NFPA 20, gabinetes CI y válvulas supervisadas.',
+};
+
 /* ── Exportaciones ─────────────────────────────────────────────────────────── */
-export const sistemasCIBrandList: EquipmentBrand[] = [tycoViking, honeywellNotifier, kiddeFenwal];
+export const sistemasCIBrandList: EquipmentBrand[] = [tycoViking, honeywellNotifier, kiddeFenwal, redHidraulica];

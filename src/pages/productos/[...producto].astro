@@ -72,6 +72,9 @@ const specMeta: Record<string, SpecMeta> = {
   nivel_haz:  { label: 'Nivel EPA',         explica: 'Nivel de protección personal EPA: A = encapsulado + SCBA interno; B = resistente salpicadura + SCBA externo; C = resistente salpicadura + APR. Siempre requiere tabla de permeación.' },
   barrera:    { label: 'Barrera química',   explica: 'Material de la capa de barrera del traje HAZMAT. Determina la compatibilidad con agentes específicos y el breakthrough time documentado.' },
   gases:      { label: 'Gases detectables', explica: 'Sensores integrados en el monitor multi-gas. La combinación O₂/LEL/CO/H₂S es el mínimo para monitoreo HAZMAT completo.' },
+  /* Drones */
+  alcance:    { label: 'Alcance',           explica: 'Distancia máxima de transmisión entre la aeronave y el controlador bajo condiciones óptimas. En operaciones urbanas restar 30–40 % por interferencias.' },
+  ip:         { label: 'Protección IP',     explica: 'Grado de protección IEC 60529 contra ingreso de polvo y agua. IP55 resiste lluvia y polvo en operaciones de campo; fundamental para uso en emergencias.' },
 };
 
 type SpecRow = { label: string; val: string; explica: string; min?: string; alto?: string };
@@ -182,7 +185,7 @@ const catUseCases: Record<string, UseCases> = {
       'Para agentes desconocidos siempre iniciar en Nivel A y degradar únicamente con información verificada',
     ],
   },
-  'Herramientas de Rescate': {
+  'Herramientas Rescate': {
     si: [
       'Excarcelación vehicular en accidentes de tránsito con víctimas atrapadas',
       'Apertura de accesos en colapsos estructurales para rescate de personas',
@@ -196,7 +199,23 @@ const catUseCases: Record<string, UseCases> = {
       'Verificar el peso operativo total incluyendo la unidad de potencia antes de asignar al equipo',
     ],
   },
-  'Sistemas Contra Incendio': {
+  'Extintores': {
+    si: [
+      'Riesgo de fuego clase A (sólidos), B (líquidos) o C (eléctrico) en cualquier inmueble o vehículo',
+      'Cumplimiento de NOM-002-STPS: puntos de extintor requeridos según área y tipo de riesgo',
+      'Cocinas industriales con aceite a alta temperatura — única clase que exige extintor Tipo K (UL 300)',
+      'Tableros eléctricos, salas de TI y servidores donde el PQS ABC dañaría los equipos (CO₂ o FM-200)',
+      'Programas de Protección Civil municipales, estatales e institucionales — licitaciones NOM-154-SCFI',
+      'Plantas industriales, helipuertos y terminales de combustible con riesgo de alta magnitud (sobre ruedas)',
+    ],
+    considera: [
+      'El PQS ABC no es válido para fuegos de aceite a alta temperatura (Clase K) — usar Tipo K con certificación UL 300',
+      'El PQS ABC daña equipos electrónicos por residuo — en tableros y servidores usar CO₂ o agente limpio FM-200',
+      'El extintor de agua no debe usarse en presencia de riesgos eléctricos — puede causar electrocución',
+      'Ningún extintor portátil reemplaza un sistema fijo de supresión en instalaciones de alta disponibilidad',
+    ],
+  },
+  'Sistemas CI': {
     si: [
       'Protección de inmuebles bajo obligación normativa (NOM-002-STPS, NOM-022-STPS)',
       'Instalaciones que exigen certificación de aseguradora con listado UL o FM',
@@ -286,13 +305,19 @@ const catArticulos: Record<string, SbArt[]> = {
     { label: 'MSA Altair 5X vs 4XR — comparativa', desc: 'Reconocimiento vs monitoreo continuo HAZMAT', href: '/blog/msa-altair-5x-vs-4xr-deteccion-hazmat' },
     { label: 'Plan de respuesta HAZMAT certificado', desc: 'Documentos requeridos por Protección Civil', href: '/blog/plan-respuesta-hazmat-proteccion-civil' },
   ],
-  'Herramientas de Rescate': [
+  'Herramientas Rescate': [
     { label: 'Holmatro vs Lukas — comparativa', desc: 'Acero de ultra-alta resistencia y excarcelación', href: '/blog/holmatro-vs-lukas-herramientas-rescate' },
     { label: 'NFPA 1936 explicada', desc: 'Qué pruebas aplican a cada herramienta', href: '/blog/nfpa-1936-herramientas-rescate-excarcelacion' },
     { label: 'Herramientas hidráulicas vs eléctricas', desc: 'Cuándo la batería supera al hidráulico', href: '/blog/hidraulico-vs-electrico-herramientas-rescate' },
     { label: 'Excarcelación en vehículos modernos', desc: 'Nuevos aceros y su impacto operativo', href: '/blog/excarcelacion-vehiculos-modernos-acero-avanzado' },
   ],
-  'Sistemas Contra Incendio': [
+  'Extintores': [
+    { label: 'NOM-002-STPS: dotación obligatoria de extintores', desc: 'Cómo calcular la dotación por área y riesgo', href: '/blog/nom-002-stps-dotacion-extintores' },
+    { label: 'PQS ABC vs CO₂ vs Tipo K', desc: 'Cuándo usar cada agente y por qué importa', href: '/blog/pqs-abc-vs-co2-vs-tipo-k-extintores' },
+    { label: 'NOM-154-SCFI explicada', desc: 'Qué certifica y qué no — guía para evaluadores', href: '/blog/nom-154-scfi-extintores-guia' },
+    { label: 'Mantenimiento y recarga NOM', desc: 'Periodicidad, costos y documentación requerida', href: '/blog/mantenimiento-recarga-extintores-nom' },
+  ],
+  'Sistemas CI': [
     { label: 'NFPA 13 vs 13R vs 13D', desc: 'Cuál aplica a tu proyecto y por qué', href: '/blog/nfpa-13-vs-13r-vs-13d-rociadores' },
     { label: 'FM-200 vs Novec 1230', desc: 'Comparativa técnica y ambiental de agentes limpios', href: '/blog/fm200-vs-novec-1230-agente-limpio' },
     { label: 'Memoria de cálculo hidráulico', desc: 'Por qué la exigen aseguradoras y Protección Civil', href: '/blog/memoria-calculo-hidraulico-sistemas-ci' },

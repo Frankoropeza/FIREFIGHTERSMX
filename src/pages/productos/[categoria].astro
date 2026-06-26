@@ -8,7 +8,7 @@ import { SITE, whatsappUrl } from '@data/site';
 
 export function getStaticPaths() {
   // Slugs con página estática dedicada (productos/<slug>/index.astro) — excluir del dinámico
-  const staticL3 = ['trajes-bombero', 'cascos-nfpa'];
+  const staticL3 = ['trajes-bombero', 'cascos-nfpa', 'drones-emergencia'];
   return allCategories
     .filter((cat) => !staticL3.includes(cat.slug))
     .map((cat) => ({

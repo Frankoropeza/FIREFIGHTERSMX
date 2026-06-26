@@ -1,0 +1,572 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import QuickLinksBar from '@components/common/QuickLinksBar.astro';
+import ProductCard from '@components/products/ProductCard.astro';
+import { categories, allCategories } from '@data/categories';
+import { featuredProducts } from '@data/products';
+import { brandPages } from '@data/brandPages';
+import { SITE, whatsappUrl } from '@data/site';
+
+const cat = categories.find((c) => c.slug === 'drones-emergencia')!;
+const canonicalURL = `${SITE.url}/productos/drones-emergencia`;
+
+/* Marca DJI y sus productos */
+const marcas = brandPages.filter((b) => b.categorySlug === 'drones-emergencia');
+const dronesProducts = featuredProducts.filter((p) => p.category === 'Drones Emergencia' && p.specs);
+
+const seoMeta = {
+  title: `Drones para Bomberos y Protección Civil — DJI Matrice Térmico México`,
+  description: cat.description,
+  canonicalURL,
+};
+
+/* Tipos de misión */
+const misiones = [
+  {
+    title: 'Evaluación de incendios',
+    norm: 'ISR aéreo',
+    accent: '#F75000',
+    desc: 'Vista cenital del avance del fuego, puntos calientes y rutas de ataque en estructural y forestal. Información táctica en minutos, no horas.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="3" fill="currentColor" fill-opacity=".2"/></svg>`,
+  },
+  {
+    title: 'Búsqueda y rescate',
+    norm: 'Cámara térmica',
+    accent: '#F5A623',
+    desc: 'Sensor radiométrico que detecta firmas de calor humanas de noche, entre vegetación o en estructuras colapsadas. Encuentra lo que el ojo no ve.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v3l2 2"/></svg>`,
+  },
+  {
+    title: 'Reconocimiento HAZMAT',
+    norm: 'Sin exposición',
+    accent: '#34D399',
+    desc: 'Lectura visual de fugas, derrames y placas de identificación a distancia segura antes de comprometer al equipo en la zona caliente.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`,
+  },
+  {
+    title: 'Vigilancia y seguridad pública',
+    norm: 'Patrullaje 24/7',
+    accent: '#60A5FA',
+    desc: 'Monitoreo de eventos masivos, perímetros en incidentes críticos y evaluación de daños post-sismo o inundación. Dock 2 opera sin piloto en sitio.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>`,
+  },
+];
+
+
+/* Tabla comparativa */
+const comparativa = [
+  ['Sensor térmico', 'Radiométrica 640×512', 'FLIR 640×512', 'Radiométrica (via M30T)'],
+  ['Autonomía', '41 min', '45 min', 'Ilimitada (dock)'],
+  ['Alcance', '15 km', '15 km', '7 km radio'],
+  ['Despliegue', '< 5 min', '< 2 min', 'Autónomo'],
+  ['IP / protección', 'IP55', 'No certificado', 'IP55 (estación)'],
+  ['Escenario ideal', 'Operación institucional', 'Respuesta rápida', 'Vigilancia 24/7'],
+];
+
+/* Guía de selección */
+const guia = [
+  { n: '01', t: 'Define la misión dominante: ¿es evaluación táctica de incendios estructurales, búsqueda de personas o vigilancia continua? La aeronave correcta surge de ahí.' },
+  { n: '02', t: 'Verifica que el sensor sea radiométrico real — no solo paleta de colores. La medición de temperatura es lo que diferencia un dron de rescate de un dron con filtro naranja.' },
+  { n: '03', t: 'Tramita el permiso AFAC antes de operar. Para instituciones, existe la figura de operador aéreo no tripulado institucional que simplifica el proceso.' },
+  { n: '04', t: 'Incluye capacitación de piloto y protocolos de operación en el presupuesto. El equipo sin entrenamiento es un recurso que no va a la emergencia.' },
+];
+
+/* Artículos del blog */
+const articulos = [
+  { label: 'Cómo usar un dron en incendio estructural', desc: 'Posición, altitud y lectura de la térmica', href: '/blog/como-usar-dron-incendio-estructural' },
+  { label: 'AFAC para instituciones: paso a paso', desc: 'Registro de operador y permisos de vuelo', href: '/blog/afac-drones-instituciones-bomberos' },
+  { label: 'Matrice 30T vs Mavic 3 Thermal', desc: 'Cuál elegir según tu brigada', href: '/blog/dji-matrice-30t-vs-mavic-3-thermal-bomberos' },
+  { label: 'Búsqueda y rescate con cámara térmica', desc: 'Técnica y configuración del sensor', href: '/blog/busqueda-rescate-camara-termica-dron' },
+];
+
+/* FAQ */
+const faqs = [
+  { q: '¿Necesito permiso para volar un dron en una emergencia?', a: 'Sí. En México la AFAC regula toda operación de RPAS. Para instituciones existe la figura de Operador Aéreo No Tripulado que simplifica el trámite y permite operaciones en zonas restringidas. Incluimos acompañamiento completo en el proceso de registro.' },
+  { q: '¿Cuál es la diferencia entre una cámara térmica radiométrica y una normal?', a: 'Una cámara radiométrica mide la temperatura de cada píxel en grados reales; una cámara térmica convencional solo asigna colores de paleta sin valor numérico. Para búsqueda y rescate o evaluación de puntos calientes, la radiometría es indispensable.' },
+  { q: '¿El DJI Matrice 30T puede volar en lluvia?', a: 'Sí. El Matrice 30T tiene certificación IP55 tanto en aeronave como en estación de carga, lo que permite operaciones bajo lluvia moderada — condición habitual en emergencias.' },
+  { q: '¿Cuánto tarda en implementarse un programa de drones en un cuerpo de bomberos?', a: 'Con el paquete completo (aeronave + capacitación + AFAC), el tiempo promedio es de 6–8 semanas desde la firma de pedido hasta el primer vuelo operacional certificado. El trámite AFAC institucional toma 3–4 semanas en condiciones normales.' },
+  { q: '¿Manejan refacciones y baterías de repuesto?', a: 'Sí. Mantenemos stock de baterías, hélices y módulos de cámara para los modelos que distribuimos, con entrega en 24–48 h en CDMX. Para brigadas fuera de la ZMVM enviamos por paquetería el mismo día.' },
+];
+
+/* Trust Pillars */
+const razones = [
+  {
+    n: '01',
+    t: 'DJI Enterprise: el estándar de la respuesta',
+    d: 'DJI Enterprise es la plataforma de drones más utilizada por cuerpos de bomberos y protección civil a nivel mundial. Distribuidor autorizado en México con soporte técnico, refacciones y baterías en stock.',
+  },
+  {
+    n: '02',
+    t: 'Térmica radiométrica real',
+    d: 'Todos los modelos que distribuimos integran sensor térmico radiométrico — medición de temperatura en grados reales, no solo paleta de colores. Lo que marca la diferencia en búsqueda y rescate nocturno.',
+  },
+  {
+    n: '03',
+    t: 'Trámite AFAC incluido',
+    d: 'Acompañamos el registro ante la Agencia Federal de Aviación Civil para operación institucional legal. Capacitación de piloto, protocolos de misión y documentación completa para licitaciones.',
+  },
+  {
+    n: '04',
+    t: 'Solución llave en mano',
+    d: 'Aeronave + cámara térmica + baterías adicionales + capacitación + AFAC en un solo contrato. Sin integrar proveedores distintos ni coordinar trámites por separado.',
+  },
+];
+
+/* JSON-LD */
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Productos', item: `${SITE.url}/productos` },
+    { '@type': 'ListItem', position: 3, name: 'Drones de Emergencia', item: canonicalURL },
+  ],
+};
+
+const collectionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  '@id': `${canonicalURL}#collection`,
+  name: 'Drones de Emergencia con cámara térmica — DJI Enterprise México',
+  description: cat.description,
+  url: canonicalURL,
+  inLanguage: 'es-MX',
+  isPartOf: { '@id': `${SITE.url}/#website` },
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: dronesProducts.length,
+    itemListElement: dronesProducts.map((m, i) => ({ '@type': 'ListItem', position: i + 1, name: m.title })),
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+
+const otrasCategorias = allCategories.filter((c) => c.slug !== 'drones-emergencia').slice(0, 6);
+---
+
+<BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema, faqSchema]}>
+
+  <!-- Breadcrumb -->
+  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+    <div class="container-site">
+      <ol class="flex items-center flex-wrap gap-2 text-xs list-none m-0 p-0" style="color:#4A7599">
+        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="/productos" class="hover:text-[#FF6B26]">Productos</a></li>
+        <li aria-hidden="true">/</li>
+        <li><span style="color:#94A3B8" aria-current="page">Drones de Emergencia</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">
+    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(52,211,153,0.06) 0%, transparent 65%)" aria-hidden="true"></div>
+
+    <div class="container-site relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div>
+          <span class="section-eyebrow mb-5 inline-flex">{cat.norm}</span>
+          <h1 class="font-display font-bold uppercase mb-4" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+            Drones de<br/>
+            <span style="color:#F75000">Emergencia</span>
+          </h1>
+          <p class="text-base leading-relaxed mb-8 max-w-xl" style="color:#94A3B8">
+            Distribuidores autorizados de DJI Enterprise en México. Matrice 30T con térmica radiométrica,
+            Mavic 3 Thermal y Dock 2 autónomo — más capacitación de piloto y trámite AFAC incluidos.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href={whatsappUrl('Hola, quiero cotizar drones de emergencia con cámara térmica.')} target="_blank" rel="noopener" class="btn btn-primary btn-lg">Cotizar por WhatsApp</a>
+            <a href="/cotizacion" class="btn btn-ghost btn-lg">Cotización formal</a>
+          </div>
+        </div>
+        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
+          {cat.intro.map((p) => (
+            <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">{p}</p>
+          ))}
+          <div class="flex flex-wrap gap-2">
+            {['DJI Matrice 30T','Mavic 3 Thermal','Dock 2','AFAC México','Térmica radiométrica','Rescate · HAZMAT · ISR'].map(n => (
+              <span class="badge badge-dark font-display text-[10px]">{n}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)" aria-hidden="true"></div>
+  </section>
+
+  <!-- Accesos rápidos -->
+  <QuickLinksBar />
+
+  <!-- Trust Pillars -->
+  <section class="section-tight" style="background:#070E1A" aria-label="Por qué distribuimos DJI Enterprise">
+    <div class="container-site">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style="border:1px solid rgba(74,117,153,0.18)">
+        {razones.map((r, i) => (
+          <div class="flex flex-col gap-3 p-6" style={`background:#080F1A;${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.12)' : ''}`}>
+            <span class="font-display font-bold text-2xl" style="color:#F75000">{r.n}</span>
+            <h3 class="font-display font-bold text-sm uppercase tracking-wide" style="color:#FFFFFF">{r.t}</h3>
+            <p class="text-xs leading-relaxed m-0" style="color:#64748B">{r.d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Tipos de misión -->
+  <section class="section" style="background:#040A12" aria-labelledby="misiones-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Cuatro escenarios críticos</span>
+          <h2 id="misiones-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            El dron correcto<br/>
+            <span style="color:#F75000">según la misión.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+            No todas las emergencias piden lo mismo. La evaluación táctica de un incendio estructural,
+            la búsqueda nocturna de una persona o el reconocimiento de un derrame HAZMAT tienen
+            configuraciones distintas — y la plataforma correcta sale de la misión, no del catálogo.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        {misiones.map((m) => (
+          <article class="flex flex-col gap-4 p-7" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
+            <div class="flex items-center justify-center rounded-full" style={`width:52px;height:52px;background:${m.accent}1a;border:1.5px solid ${m.accent}59;color:${m.accent}`}>
+              <span class="block" style="width:24px;height:24px" set:html={m.icon}/>
+            </div>
+            <div class="flex items-center justify-between gap-2">
+              <h3 class="font-display font-bold text-base" style="color:#FFFFFF">{m.title}</h3>
+              <span class="badge badge-dark text-[9px]">{m.norm}</span>
+            </div>
+            <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{m.desc}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Marca DJI Enterprise — card L4 -->
+  {marcas.length > 0 && (
+    <section class="section" style="background:#070E1A" aria-labelledby="marcas-title">
+      <div class="container-site">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-10">
+          <div>
+            <span class="section-eyebrow mb-4 inline-flex">Distribuidor autorizado</span>
+            <h2 id="marcas-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+              Plataformas DJI<br/>
+              <span style="color:#F75000">para emergencias.</span>
+            </h2>
+          </div>
+          <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+            <p class="text-sm leading-relaxed" style="color:#94A3B8">
+              DJI Enterprise es la plataforma de drones más utilizada por cuerpos de bomberos y protección
+              civil a nivel mundial. Distribuimos los tres modelos de referencia con soporte técnico,
+              capacitación y trámite AFAC en un solo paquete llave en mano.
+            </p>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {marcas.map((b) => (
+            <a href={`/productos/${b.categorySlug}/${b.slug}`} class="group flex flex-col gap-3 p-7" style="background:#040A12;border:1px solid rgba(74,117,153,0.18)">
+              <h3 class="font-display font-bold text-xl group-hover:text-[#FF6B26]" style="color:#FFFFFF">{b.brandLabel}</h3>
+              <p class="text-xs leading-relaxed flex-1" style="color:#64748B">{b.crossDesc}</p>
+              <span class="inline-flex items-center gap-1.5 text-xs font-display font-semibold uppercase tracking-wider" style="color:#FF8F57">
+                Ver catálogo completo
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Productos DJI — 3 fichas técnicas -->
+  <section class="section" style="background:#040A12" aria-labelledby="modelos-title">
+    <div class="container-site">
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Matrice 30T · Mavic 3 Thermal · Dock 2</span>
+          <h2 id="modelos-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            Tres modelos,<br/>
+            <span style="color:#F75000">tres misiones.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
+            Desde la plataforma institucional completa hasta el dron compacto de respuesta rápida y la
+            estación autónoma 24/7 — un solo distribuidor para toda la flota con capacitación y AFAC incluidos.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {['AFAC México','Térmica radiométrica','IP55','FlightHub 2','Distribuidor autorizado MX'].map(b => (
+              <span class="badge badge-dark text-[9px]">{b}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {dronesProducts.map((p) => (
+          <ProductCard product={p} />
+        ))}
+      </div>
+
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(74,117,153,0.15)">
+        <div class="flex-1">
+          <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+            ¿Necesitas la ficha técnica completa, comparativa detallada o el paquete con capacitación y AFAC?
+            Accede al catálogo dedicado de DJI Enterprise.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+          <a href="/productos/drones-emergencia/dji-enterprise" class="btn btn-primary btn-lg">
+            Catálogo DJI completo →
+          </a>
+          <a href={whatsappUrl('Hola, quiero cotizar drones DJI Enterprise con cámara térmica para mi corporación.')} target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
+            Cotizar por WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Imagen de categoría -->
+  <section class="section-tight" style="background:#040A12" aria-label="Dron de emergencia en operación">
+    <div class="container-site">
+      <div class="flex items-center gap-4 mb-6">
+        <span class="w-8 h-px" style="background:#F75000"></span>
+        <span class="text-xs font-display font-semibold uppercase tracking-[0.18em]" style="color:#F75000">Drones en operación real</span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <figure class="m-0 overflow-hidden" style="aspect-ratio:16/9;border:1px solid rgba(74,117,153,0.18)">
+          <img src="/images/categorias/drones-emergencia.avif" alt="Dron DJI Matrice 30T con cámara térmica en operación de búsqueda y rescate — protección civil México" width="800" height="450" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center"/>
+        </figure>
+        <div class="grid grid-cols-2 gap-3">
+          {cat.spotlight.subsections.map((s) => (
+            <div class="flex flex-col gap-2 p-5" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
+              <span class="font-display font-bold text-sm" style="color:#F75000">→</span>
+              <h3 class="font-display font-bold text-sm" style="color:#FFFFFF">{s.name}</h3>
+              <p class="text-xs leading-relaxed m-0" style="color:#64748B">{s.detail}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tabla comparativa -->
+  <section class="section" style="background:#070E1A" aria-labelledby="comp-title">
+    <div class="container-site">
+      <div class="mb-10">
+        <span class="section-eyebrow mb-4 inline-flex">Comparativa de modelos</span>
+        <h2 id="comp-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          Matrice 30T · Mavic 3T · <span style="color:#F75000">Dock 2</span>
+        </h2>
+      </div>
+
+      <div class="overflow-x-auto" style="border:1px solid rgba(74,117,153,0.18)">
+        <table class="w-full border-collapse" style="min-width:640px">
+          <thead>
+            <tr style="background:#0C1825">
+              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:#4A7599;border-bottom:1px solid rgba(74,117,153,0.18)">Característica</th>
+              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:#FF6B26;border-bottom:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">Matrice 30T</th>
+              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:#F5A623;border-bottom:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">Mavic 3T</th>
+              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:#34D399;border-bottom:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">Dock 2</th>
+            </tr>
+          </thead>
+          <tbody>
+            {comparativa.map((row, i) => (
+              <tr style={`background:${i % 2 === 0 ? '#080F1A' : '#0A1320'}`}>
+                <td class="p-4 text-sm font-display font-semibold" style="color:#CBD5E1;border-bottom:1px solid rgba(74,117,153,0.12)">{row[0]}</td>
+                <td class="p-4 text-sm" style="color:#94A3B8;border-bottom:1px solid rgba(74,117,153,0.12);border-left:1px solid rgba(74,117,153,0.12)">{row[1]}</td>
+                <td class="p-4 text-sm" style="color:#94A3B8;border-bottom:1px solid rgba(74,117,153,0.12);border-left:1px solid rgba(74,117,153,0.12)">{row[2]}</td>
+                <td class="p-4 text-sm" style="color:#94A3B8;border-bottom:1px solid rgba(74,117,153,0.12);border-left:1px solid rgba(74,117,153,0.12)">{row[3]}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guía de selección + blog -->
+  <section class="section" style="background:#040A12" aria-labelledby="guia-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Cómo elegir</span>
+          <h2 id="guia-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+            De la misión<br/>
+            <span style="color:#F75000">a la decisión.</span>
+          </h2>
+          <ol class="flex flex-col gap-4 list-none m-0 p-0">
+            {guia.map((s) => (
+              <li class="flex items-start gap-4">
+                <span class="font-display font-bold text-xl shrink-0" style="color:#F75000">{s.n}</span>
+                <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{s.t}</p>
+              </li>
+            ))}
+          </ol>
+          <div class="mt-8">
+            <a href={whatsappUrl('Hola, necesito asesoría para elegir el dron correcto para mi corporación.')} target="_blank" rel="noopener" class="btn btn-primary">Pedir asesoría técnica</a>
+          </div>
+        </div>
+
+        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:#4A7599">
+            Aprende más en el blog
+          </h2>
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+            {articulos.map((l) => (
+              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+                <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
+                  <span class="flex flex-col gap-0.5">
+                    <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
+                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
+                  </span>
+                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#4A7599" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="background:#070E1A" aria-labelledby="faq-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes</span>
+          <h2 id="faq-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+            Lo que más nos<br/>
+            <span style="color:#F75000">preguntan.</span>
+          </h2>
+          <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
+            ¿Tu duda no aparece? Escríbenos por WhatsApp con el detalle de tu operación y te
+            asesoramos sobre la plataforma y los trámites AFAC para tu institución.
+          </p>
+          <a href={whatsappUrl('Hola, tengo una pregunta técnica sobre drones de emergencia con cámara térmica.')}
+            target="_blank" rel="noopener"
+            class="btn btn-primary">
+            Consulta técnica gratis
+          </a>
+        </div>
+        <div class="flex flex-col">
+          {faqs.map((f, i) => (
+            <details class="faq-item group" style={`border-top:1px solid rgba(74,117,153,0.18);${i === faqs.length - 1 ? 'border-bottom:1px solid rgba(74,117,153,0.18);' : ''}`}>
+              <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer">
+                <span class="font-display font-semibold text-sm" style="color:#FFFFFF">{f.q}</span>
+                <span class="faq-icon font-display font-bold text-xl shrink-0" style="color:#FF6B26">+</span>
+              </summary>
+              <p class="text-sm leading-relaxed pb-5 m-0" style="color:#94A3B8">{f.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Band -->
+  <section style="background:#F75000;padding-block:4rem" aria-label="Cotizar drones de emergencia">
+    <div class="container-site">
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div>
+          <p class="text-xs font-display font-bold uppercase tracking-[0.2em] mb-3" style="color:rgba(255,255,255,0.65)">DJI Matrice 30T · Mavic 3 Thermal · Dock 2 · Capacitación + AFAC</p>
+          <h2 class="font-display font-bold uppercase" style="color:#FFFFFF;font-size:clamp(1.75rem,4vw,3rem);line-height:1.05">
+            Cámara térmica radiométrica.<br/>Llave en mano con AFAC.
+          </h2>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+          <a
+            href={whatsappUrl('Hola, quiero cotizar drones de emergencia con cámara térmica. ¿Tienen disponibilidad?')}
+            target="_blank" rel="noopener"
+            class="btn btn-lg"
+            style="background:#FFFFFF;color:#F75000;border-color:#FFFFFF;font-weight:700"
+          >
+            Cotizar por WhatsApp →
+          </a>
+          <a href="/cotizacion" class="btn btn-lg" style="background:transparent;color:#FFFFFF;border:2px solid rgba(255,255,255,0.5)">
+            Cotización formal
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cross-links + otras categorías -->
+  <section class="section" style="background:#070E1A" aria-labelledby="cross-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Equipa el conjunto completo</span>
+          <h2 id="cross-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+            El dron amplifica<br/>
+            <span style="color:#F75000">al equipo en tierra.</span>
+          </h2>
+          <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
+            La vista aérea es tan buena como el equipo que actúa con esa información. Cámaras
+            térmicas portátiles, herramientas de rescate y EPP completo para la brigada en tierra
+            — todo en un solo proveedor.
+          </p>
+          <a href={whatsappUrl('Hola, quiero equipar el conjunto completo de respuesta con drones y EPP para mi corporación.')} target="_blank" rel="noopener" class="btn btn-primary">Cotizar conjunto completo</a>
+        </div>
+        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:#4A7599">
+            También te puede servir
+          </h2>
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+            {[
+              { label: 'Cámaras Térmicas portátiles', desc: 'FLIR y MSA para exploración en tierra', href: '/productos/camaras-termicas' },
+              { label: 'Herramientas de rescate', desc: 'Hidráulico Holmatro y USAR', href: '/productos/herramientas-rescate' },
+              { label: 'Equipos SCBA', desc: 'MSA G1, Dräger y 3M Scott', href: '/productos/equipos-scba' },
+              { label: 'Capacitación operativa', desc: 'Cursos de piloto y protocolos de misión', href: '/servicios/capacitacion' },
+              { label: 'Soporte para licitaciones', desc: 'Fichas técnicas y manifiestos por partida', href: '/licitaciones' },
+            ].map((l) => (
+              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+                <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
+                  <span class="flex flex-col gap-0.5">
+                    <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
+                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
+                  </span>
+                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#4A7599" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <!-- Otras categorías -->
+      <div class="mt-14 pt-10" style="border-top:1px solid rgba(74,117,153,0.15)">
+        <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-6" style="color:#4A7599">Otras categorías del catálogo</h2>
+        <div class="flex flex-wrap gap-3">
+          {otrasCategorias.map((c) => (
+            <a href={`/productos/${c.slug}`} class="btn btn-sm btn-dark">{c.label}</a>
+          ))}
+          <a href="/productos" class="btn btn-sm btn-outline">Catálogo completo →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  details.faq-item summary { list-style: none; }
+  details.faq-item summary::-webkit-details-marker { display: none; }
+  details.faq-item[open] .faq-icon { transform: rotate(45deg); }
+</style>

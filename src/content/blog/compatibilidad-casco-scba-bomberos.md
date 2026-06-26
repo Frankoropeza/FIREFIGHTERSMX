@@ -1,6 +1,6 @@
 ---
-title: "Compatibilidad Casco-SCBA para Bomberos: Guía de Verificación"
-description: "Cómo verificar la compatibilidad entre cascos y equipos SCBA. Perfiles, mascarillas y errores de interoperabilidad que afectan la seguridad operativa."
+title: "Casco y SCBA: El Problema de Compatibilidad Que Se Descubre Adentro del Incendio"
+description: "Casco certificado NFPA 1970 + SCBA certificado NFPA 1981 no garantiza que funcionen juntos. Cómo verificar compatibilidad real antes de una licitación en México."
 pubDate: 2026-02-10
 updatedDate: 2026-06-25
 author: "Ing. Marco García"
@@ -11,175 +11,182 @@ image:
   alt: "Verificación de compatibilidad entre casco de bombero y equipo SCBA durante prueba de sellado facial"
 ---
 
-## El Error Más Costoso en la Adquisición de EPP de Bomberos
+El bombero entra al edificio con el casco y el SCBA que le asignaron la semana pasada — ambos nuevos, ambos certificados, ambos que acaban de salir de la caja. El casco tiene su sello NFPA 1970. El SCBA tiene su sello NFPA 1981. El área de adquisiciones los compró en licitaciones separadas, como suele hacerse, y el expediente está perfecto.
 
-Existe un escenario que se repite en corporaciones de bomberos de todo México con una frecuencia preocupante: la corporación adquiere cascos nuevos certificados bajo NFPA 1970 y, por separado, adquiere o ya cuenta con equipos SCBA certificados bajo NFPA 1981. Ambos productos cumplen individualmente con sus respectivas normas. Sin embargo, cuando el bombero intenta usar ambos simultáneamente —que es la condición real de cualquier intervención en atmósfera IDLH (Inmediatamente Peligrosa para la Vida y la Salud)— descubre que la máscara facial no sella correctamente con el casco puesto, o que el ala del casco interfiere con el arco de la máscara, o que el peso combinado y el centro de gravedad desplazan el casco durante el movimiento y comprometen el sellado.
+Lo que descubre a los tres minutos de entrar — cuando se inclina hacia el suelo para buscar a la víctima — es que el ala frontal del casco está presionando el borde superior de la máscara. El sello facial se rompe. El SCBA sigue funcionando perfectamente. El casco sigue en su lugar. Pero ahora hay una vía por donde el humo y los gases de combustión entran directamente a la mascarilla, pasando por el aro de sellado que debería estar hermético.
 
-Este escenario no es hipotético. Es una de las fuentes más comunes de falla silenciosa en el EPP de bomberos, y ocurre precisamente porque **NFPA 1970 y NFPA 1981 certifican cada equipo de forma independiente**, sin exigir necesariamente una prueba de compatibilidad combinada entre casco y SCBA de marcas distintas.
-
-Entender por qué ocurre este problema, cómo verificarlo y qué combinaciones de equipos han sido validadas por los fabricantes es esencial para cualquier responsable de adquisiciones, jefe de corporación o especialista en seguridad ocupacional de bomberos.
+Eso no lo descubrió en la bodega. Lo descubrió adentro del incendio.
 
 ---
 
-## El Problema del Perfil de Máscara Facial
+## El Problema Que Creaste Cuando Compraste Por Separado
 
-### Máscaras de Perfil Tradicional vs Low-Profile
+NFPA 1970 certifica cascos. NFPA 1981 certifica equipos de respiración autónoma. Cada norma prueba su equipo de forma independiente, en condiciones de laboratorio controladas, sin el otro equipo puesto.
 
-Las máscaras faciales completas de SCBA se clasifican, desde el punto de vista de su geometría exterior, en dos grandes familias:
+No existe en el sistema de normas NFPA un estándar que exija a los fabricantes validar la compatibilidad combinada de casco y SCBA cuando provienen de marcas distintas. Lo que esto significa en la práctica: **un casco y un SCBA pueden estar ambos perfectamente certificados y ser incompatibles entre sí en condiciones reales de uso**.
 
-**Máscaras de perfil tradicional:** Presentan un arco de lente más prominente, cuerpo de máscara más voluminoso y una proyección frontal mayor desde la cara del usuario. Históricamente fueron el estándar durante décadas (ejemplos: Scott AV-2000 en versiones anteriores, Dräger FPS 7000 clásico, MSA Millennium). Estas máscaras fueron diseñadas en una época en que los cascos americanos de perfil alto eran el estándar universal, y la compatibilidad entre ambos estaba garantizada por la tradición de uso conjunto.
+Y en México este problema es estructural, porque los procesos de licitación típicamente adquieren el casco en una licitación y el SCBA en otra, con diferentes proveedores, evaluados por criterios técnicos independientes, sin que nadie en el proceso sea responsable de verificar que los dos equipos funcionen como sistema integrado.
 
-**Máscaras low-profile (bajo perfil):** Desarrolladas en los últimos 15 años para mejorar el campo visual del bombero, reducir el peso total del sistema y facilitar la compatibilidad con cascos europeos modernos. Ejemplos: Scott AV-3000 SurVivor, MSA G1 Facepiece, Dräger FPS 7730. La reducción de la proyección frontal del arco de lente en estas máscaras permite que el ala delantera de un casco americano, o la visera de un casco europeo, queden más cerca del borde superior de la máscara sin interferir mecánicamente con el sellado.
-
-La interfaz crítica se produce en la zona superior de la máscara —el borde superior del aro de sellado facial— y el borde inferior del casco (visera delantera o ala). Cuando esta distancia es insuficiente, el ala del casco presiona el borde superior de la máscara al inclinar la cabeza hacia abajo, deformando el aro de sellado y rompiendo el sello facial negativo que garantiza la hermeticidad.
-
-### Consecuencias de la Incompatibilidad
-
-Un sello facial comprometido en condiciones de atmósfera IDLH puede tener consecuencias inmediatas y graves:
-
-- **Ingreso de gases tóxicos o humo hacia la mascarilla**, incluso con el SCBA operando correctamente y suministrando aire positivo.
-- **Falsa sensación de seguridad:** El bombero no siente necesariamente el fallo del sellado durante la intervención, especialmente si la presión positiva del SCBA enmascara el ingreso de pequeñas cantidades de contaminantes.
-- **Exposición acumulada a contaminantes:** En intervenciones repetidas con sellado marginal, el bombero puede acumular exposiciones a CO, HCN y otros productos de combustión que producen efectos adversos a mediano plazo.
+El responsable de adquisiciones entregó cascos certificados. Entregó SCBA certificados. Firmó el acta de recepción. El expediente está completo. Y el bombero está en el incendio con un sello facial comprometido que nadie verificó.
 
 ---
 
-## Prueba de Sellado Facial con Casco Puesto
+## Dónde Ocurre la Incompatibilidad — La Anatomía del Problema
 
-La verificación del sellado facial (*face seal check* o *fit test*) es un procedimiento estándar que todo bombero debe realizar antes de cada intervención. Sin embargo, este procedimiento debe realizarse con **el casco puesto y completamente ajustado**, no únicamente con la máscara. Esta distinción es fundamental y no siempre se implementa correctamente en los protocolos de corporaciones mexicanas.
+La interfaz crítica entre el casco y el SCBA está en una zona muy específica: el borde superior de la máscara facial y el borde inferior del casco — ya sea el ala frontal en los diseños americanos o la visera integrada en los europeos.
 
-### Procedimiento Básico de Verificación Operacional (Pre-Intervención)
+La máscara facial de un SCBA sella contra la cara del bombero mediante un aro de sellado flexible — silicona, neopreno o material similar — que se presiona contra la piel alrededor de la frente, las mejillas y el mentón. Ese sello funciona por presión uniforme del aro sobre la piel. Cualquier fuerza externa que deforme ese aro — incluyendo el borde de un casco que presiona desde arriba — rompe la uniformidad de la presión y crea una vía de ingreso.
 
-Este es el chequeo rápido que el bombero realiza antes de cada uso:
+Eso ocurre principalmente cuando el bombero **inclina la cabeza hacia abajo**, que es precisamente la posición en que pasa más tiempo dentro de un edificio en llamas buscando víctimas en el suelo o avanzando agachado bajo el humo. En esa posición, la gravedad lleva el casco hacia adelante, el ala frontal baja sobre el borde de la máscara, y si el espacio entre ambos no es suficiente, el sello se compromete.
 
-1. Colocarse el casco con el sistema de retención correctamente ajustado (barbiquejo abrochado o sistema de retención interno tensado).
-2. Colocarse la máscara facial del SCBA y ajustar las correas del arnés de máscara en el orden establecido por el fabricante (generalmente de inferior a superior para asegurar simetría).
-3. Cubrir con la palma de la mano la entrada de aire de la válvula de demanda y realizar una inhalación profunda.
-4. Verificar que la máscara colapsa ligeramente hacia el rostro y que no se siente ingreso de aire por los bordes del aro de sellado durante al menos 10 segundos.
-5. Inclinar la cabeza hacia abajo (posición de búsqueda de víctimas en el suelo) y repetir los pasos 3 y 4 para verificar que el casco no presiona el borde de la máscara en esta posición.
-6. Girar la cabeza a ambos lados y verificar que el sistema de retención del casco no desplaza la máscara ni altera el sellado.
-
-### Prueba Formal de Ajuste (Fit Test) para Certificación
-
-La prueba formal de ajuste bajo OSHA 29 CFR 1910.134 y NFPA 1500 debe realizarse periódicamente (anualmente para dispositivos de presión negativa, aunque los SCBA son presión positiva, el fit test del usuario es igualmente recomendado). Esta prueba cuantitativa o cualitativa verifica el sellado con el usuario en distintas posiciones de cabeza, utilizando agentes de prueba como sacarina, Bitrex o instrumental cuantitativo de partículas. Esta prueba debe realizarse en la combinación específica de máscara y casco que el bombero usará en servicio.
+Cuánto espacio es suficiente depende de la geometría específica del casco y de la máscara. No hay un número universal. Depende de la combinación exacta.
 
 ---
 
-## Interferencia de Alas con Tirantes del Arnés SCBA
+## Máscaras de Perfil Tradicional vs Low-Profile — La Distinción que Cambia Todo
 
-Un problema adicional, frecuentemente ignorado, es la interferencia entre el ala posterior o lateral del casco (especialmente en diseños americanos de ala ancha) y los tirantes del arnés del SCBA que cruzan por los hombros y la parte superior del pecho.
+Las máscaras faciales de SCBA del mercado actual se dividen en dos familias geométricas:
 
-En algunos casos, el ala posterior del casco —la cola de pato— puede descansar sobre la correa superior del arnés del SCBA, especialmente cuando el bombero agacha la cabeza. Esta interacción puede:
+**Máscaras de perfil tradicional:** arco de lente pronunciado, mayor proyección frontal desde la cara del usuario. Durante décadas fueron el estándar. Ejemplos: Scott AV-2000 en versiones anteriores, Dräger FPS 7000 clásico, MSA Millennium. Fueron diseñadas cuando el casco americano de perfil alto era universal — la compatibilidad entre ambos estaba garantizada por tradición de uso conjunto.
 
-- Elevar la parte posterior del casco, inclinando el casco hacia adelante y presionando la visera o el borde frontal contra el arco de la máscara.
-- Crear una palanca sobre el arnés del SCBA que reduce la tensión de las correas y desplaza ligeramente la posición del cilindro de aire.
-- Generar fricción que deteriora prematuramente el material de las correas del arnés.
+**Máscaras low-profile:** menor proyección frontal, diseñadas específicamente para mejorar la compatibilidad con cascos de bajo perfil y ampliar el campo visual del bombero. Ejemplos: Scott AV-3000 SurVivor, MSA G1 Facepiece, Dräger FPS 7730. Con estas máscaras, el espacio entre el borde de la máscara y el ala del casco americano es mayor, reduciendo significativamente el riesgo de interferencia al inclinar la cabeza.
 
-La solución más efectiva a este problema es la verificación práctica en campo antes de la adquisición definitiva: el bombero debe vestir el traje completo, el arnés del SCBA con el cilindro montado, la máscara y el casco, y realizar los movimientos típicos de intervención —agacharse, gatear, subir escaleras, cargar una víctima— para identificar cualquier interferencia mecánica entre los componentes.
+La combinación de mayor riesgo de incompatibilidad es la más común en licitaciones mixtas: **casco americano de perfil alto + máscara de perfil tradicional** — el clásico combo de décadas que funciona bien — reemplazado por **casco europeo de bajo perfil + máscara de perfil tradicional** cuando la corporación actualiza solo los cascos sin revisar la interfaz con el SCBA existente.
 
----
+El casco europeo fue diseñado pensando en máscaras low-profile. Con una máscara de perfil tradicional, la interfaz puede ser problemática dependiendo del modelo exacto.
 
-## Certificaciones Combinadas: NFPA 1970 + NFPA 1981
-
-NFPA 1970 (*Standard for Protective Ensembles for Structural Fire Fighting*) y NFPA 1981 (*Standard on Open-Circuit Self-Contained Breathing Apparatus for Emergency Services*) son normas independientes que certifican el casco y el SCBA respectivamente. No existe actualmente en NFPA un estándar específico de compatibilidad casco-SCBA que obligue a los fabricantes a validar combinaciones de productos de distintas marcas.
-
-Sin embargo, algunos fabricantes han tomado la iniciativa de validar sus propios productos contra los equipos SCBA más comunes del mercado, publicando listas de **compatibilidad declarada por fabricante**. Estas listas no son certificaciones de tercera parte, sino declaraciones de compatibilidad verificadas internamente, y deben tratarse como guías de selección, no como garantías absolutas.
-
-Para licitaciones mexicanas que exijan cumplimiento combinado NFPA 1970 + NFPA 1981, la interpretación correcta es que cada equipo debe cumplir individualmente con su norma, y la compatibilidad combinada debe verificarse mediante prueba práctica durante el proceso de evaluación y aceptación del equipo.
+La secuencia correcta cuando actualizas equipo: primero define qué SCBA y qué máscara vas a usar, luego elige el casco compatible con esa máscara. No al revés.
 
 ---
 
-## Combinaciones Validadas por Fabricante
+## Las Consecuencias de un Sello Comprometido — Por Qué No Puedes Asumir que el Bombero Lo Nota
 
-La siguiente tabla presenta combinaciones de casco y SCBA que han sido validadas o declaradas como compatibles por los fabricantes a nivel de especificación técnica. Esta información debe verificarse siempre con el distribuidor autorizado actualizado, ya que los fabricantes actualizan sus listas de compatibilidad con cada nueva versión de producto:
+Un sello facial comprometido en condiciones de atmósfera IDLH — Immediately Dangerous to Life and Health — tiene consecuencias que van desde la exposición crónica a contaminantes hasta la incapacitación aguda:
 
-| Casco | SCBA / Máscara | Tipo de compatibilidad | Observaciones |
+**El bombero puede no sentirlo.** Con el SCBA operando en modo de presión positiva, el flujo de aire dentro de la máscara puede enmascarar la sensación de ingreso por el sello comprometido, especialmente si la fuga es pequeña. El bombero respira aire limpio en su mayoría — pero está acumulando exposición a productos de combustión cada vez que exhala y la presión baja brevemente.
+
+**Los gases más peligrosos no tienen olor perceptible a bajas concentraciones.** El monóxido de carbono, el ácido cianhídrico y varios productos de combustión de materiales modernos (espumas, plásticos, materiales compuestos) son tóxicos a concentraciones que el bombero no detecta olfativamente con la máscara puesta.
+
+**La exposición repetida acumula daño.** Un bombero que realiza múltiples intervenciones con sello marginal — sin saberlo — puede acumular exposiciones que producen efectos adversos cardiovasculares y neurológicos a mediano plazo. Estos efectos raramente se atribuyen al equipo porque nadie sospecha del sello facial cuando el reporte dice "casco NFPA 1970 + SCBA NFPA 1981".
+
+La incompatibilidad casco-SCBA es el problema silencioso del EPP de bomberos. No produce un incidente dramático inmediato. Produce exposición acumulada que deteriora la salud de los elementos a lo largo de años de servicio.
+
+---
+
+## Cómo Verificar la Compatibilidad — El Protocolo Que Debes Aplicar
+
+La verificación de compatibilidad casco-SCBA es una prueba física, no un trámite documental. No existe certificado que la reemplace.
+
+**La prueba de sello con casco puesto** es el procedimiento estándar de verificación operacional. Debe hacerse con el traje completo de intervención — no solo con la máscara en la cara del bombero en camiseta. El traje cambia la forma en que el arnés del SCBA ajusta, lo que afecta la posición de la máscara sobre el rostro.
+
+El procedimiento:
+
+1. El bombero se viste con el traje completo de intervención, incluyendo guantes y botas.
+2. Monta el SCBA completo — cilindro, arnés — y ajusta las correas en el orden establecido por el fabricante del SCBA.
+3. Coloca la máscara facial y ajusta el arnés de máscara comenzando por las correas inferiores y terminando por las superiores, garantizando simetría.
+4. Coloca el casco con el sistema de retención completamente ajustado — ratchet posterior, barbiquejo abrochado o sistema interno tensado, según el modelo.
+5. Cubre con la palma de la mano la entrada de aire de la válvula de demanda y realiza una inhalación profunda.
+6. Verifica que la máscara colapsa hacia el rostro y que no entra aire por los bordes del aro de sellado durante al menos 10 segundos.
+7. **Inclina la cabeza hacia abajo 45 grados** — posición de búsqueda de víctimas — y repite los pasos 5 y 6. Este es el momento donde aparece la incompatibilidad si existe.
+8. Gira la cabeza a izquierda y a la derecha al máximo. Repite la verificación de sello.
+9. Realiza 5 minutos de movimiento activo — caminar, agacharse, gatear — y verifica que el casco no se desplace y que la máscara mantenga el sello en todas las posiciones.
+
+Si el sello falla en cualquiera de estos pasos, la combinación es incompatible para uso en intervención. Sin excepciones.
+
+---
+
+## La Interferencia que Nadie Ve — La Cola de Pato y el Arnés del SCBA
+
+Hay un segundo punto de interferencia que se ignora con más frecuencia aún: la cola de pato del casco americano sobre las correas del arnés del SCBA.
+
+En algunos bomberos — dependiendo de la altura del cuello, el torso y cómo ajusta el arnés del SCBA — la proyección posterior del casco puede descansar sobre la correa superior del arnés cuando el bombero inclina la cabeza hacia adelante. Ese contacto crea una palanca:
+
+- La parte trasera del casco sube
+- La parte delantera baja
+- El ala frontal presiona el borde superior de la máscara
+
+El resultado es exactamente el mismo que con la interfaz directa ala-máscara: sello comprometido. Pero la causa es menos obvia porque el problema no está en el contacto directo entre el casco y la máscara — está en la interacción entre el casco y el arnés del SCBA que eventualmente afecta la máscara.
+
+Esta interferencia también deteriora las correas del arnés por fricción repetida, lo que se traduce en desgaste prematuro de los tirantes del SCBA y posible pérdida de ajuste en el cilindro durante la intervención.
+
+La única forma de detectarla es la prueba física completa — con el cilindro montado, que cambia la distribución del peso y la posición del arnés respecto a cuando solo se prueba el arnés vacío.
+
+---
+
+## Combinaciones Validadas por Fabricante — La Tabla que Tienes que Consultar Antes de Comprar
+
+Los fabricantes principales han realizado pruebas internas de compatibilidad entre sus cascos y los SCBA más comunes del mercado. Esta información se publica como "compatibilidad declarada por fabricante" — no es una certificación de tercera parte, sino la declaración documentada del fabricante de que ha probado la combinación y encontrado que funciona bajo sus condiciones de prueba.
+
+Toma esto como punto de partida, no como sustituto de la prueba física en campo.
+
+| Casco | SCBA / Máscara | Estado de compatibilidad | Observaciones clave |
 |---|---|---|---|
-| **MSA Gallet F1 XF** | MSA G1 SCBA / G1 Facepiece | Fabricante único (validación propia) | Diseñados como sistema conjunto |
-| **MSA Gallet F1 XF** | MSA Advantage 3200 | Validada por MSA | Requiere ajuste correcto del arnés |
-| **Bullard USTM** | Scott Air-Pak X3 Pro / AV-3000 SurVivor | Validada por Bullard | Máscara low-profile recomendada |
-| **Cairns 1010 / N6A** | Scott Air-Pak X3 Pro / AV-3000 SurVivor | Declarada por MSA Cairns | Validar con inclinación de cabeza |
+| **MSA Gallet F1 XF** | MSA G1 SCBA / G1 Facepiece | Validada (sistema integrado MSA) | Diseñados conjuntamente — máxima integración |
+| **MSA Gallet F1 XF** | MSA Advantage 3200 | Validada por MSA | Verificar ajuste de arnés de máscara |
+| **Bullard USTM** | Scott AV-3000 SurVivor | Validada por Bullard | Máscara low-profile recomendada |
+| **Cairns 1010 / N6A** | Scott AV-3000 SurVivor | Declarada por MSA Cairns | Verificar siempre con inclinación de cabeza |
 | **Cairns 1010 / N6A** | MSA G1 Facepiece | Validada por MSA | Ajuste de ala frontal crítico |
-| **Dräger HPS 7000** | Dräger PSS 5000 / FPS 7730 | Fabricante único (sistema Dräger) | Máxima integración como sistema |
-| **Dräger HPS 7000** | Scott AV-3000 SurVivor | Limitada (verificar en campo) | Sin validación oficial cruzada |
-| **Bullard FH Series (europeo)** | Scott AV-3000 SurVivor | Validada por Bullard | Compatible con low-profile |
-| **3M Scott ProStream** | Scott AV-3000 SurVivor | Sistema 3M Scott integrado | Óptima compatibilidad |
+| **Dräger HPS 7000** | Dräger PSS 5000 / FPS 7730 | Validada (sistema integrado Dräger) | Máxima integración — sistema Dräger |
+| **Dräger HPS 7000** | Scott AV-3000 SurVivor | Limitada — verificar en campo | Sin validación oficial cruzada |
+| **Bullard FH Series** | Scott AV-3000 SurVivor | Validada por Bullard | Compatible con low-profile |
+| **3M Scott ProStream** | Scott AV-3000 SurVivor | Validada (sistema 3M Scott) | Óptima dentro del ecosistema Scott |
 | **MSA Cairns XF (europeo)** | MSA G1 Facepiece | Validada por MSA | Sistema MSA integrado |
 
-**Nota importante:** Las combinaciones donde el casco y el SCBA provienen de fabricantes distintos deben verificarse siempre con prueba práctica de sellado, independientemente de que exista validación declarada. Las diferencias entre lotes de producción, ajustes de norma y variaciones de talla facial del usuario pueden generar resultados distintos a los declarados en condiciones ideales.
+Lo que esta tabla muestra claramente: las combinaciones con mayor confiabilidad son las de fabricante único — MSA con MSA, Dräger con Dräger, Scott con Scott. Eso no significa que las combinaciones cruzadas no funcionen — muchas sí funcionan. Significa que cuando cruzas marcas, la responsabilidad de verificar la compatibilidad es tuya, no del fabricante.
 
 ---
 
-## Sistemas de Comunicación Integrados
+## El Checklist de Verificación Antes de Firmar la Licitación
 
-La integración de sistemas de comunicación de radio en el casco añade otra dimensión al problema de compatibilidad. Los sistemas de comunicación integrados en casco (como el Motorola APX, los sistemas de radio de Cairns o los sistemas propietarios de MSA y Bullard) incluyen auriculares y micrófonos que deben funcionar correctamente con el aro de sellado de la máscara facial sin comprometer el sello.
+Diseñado para ser aplicado por el equipo técnico evaluador durante el proceso de aceptación de muestras. No es opcional. Es el proceso mínimo para garantizar que lo que compras va a funcionar como sistema.
 
-Los problemas más frecuentes de incompatibilidad en comunicaciones son:
+**Verificación documental — antes de la prueba física:**
 
-- **Cables de micrófono que cruzan el aro de sellado:** Si el micrófono se monta en el exterior del casco y el cable debe entrar por debajo del aro de la máscara, puede comprometer el sellado si no está correctamente enrutado.
-- **Auriculares que presionan el aro de sellado temporal:** Los auriculares integrados en el interior del casco pueden presionar el aro de sellado temporal de la máscara en la zona de la sien, reduciendo la presión de sellado.
-- **Interferencia electromagnética:** Los sistemas de radio de alta potencia muy cercanos a los electrónicos del SCBA pueden generar interferencias que activan alertas de presión o alarmas de PASS falsas.
+- El casco propuesto tiene certificación NFPA 1970 vigente, emitida por laboratorio acreditado, con número de certificado verificable y fecha de vencimiento
+- El fabricante del casco puede proveer lista de compatibilidad declarada con el modelo de SCBA en uso en la corporación, o con el modelo de SCBA que se adquiere simultáneamente
+- Las tallas de casco disponibles en la licitación cubren el rango de tallas de máscara del SCBA en uso (no todos los tamaños de casco son compatibles con todos los tamaños de máscara)
+- El proveedor puede garantizar disponibilidad de visores de repuesto y accesorios por un mínimo de 5 años
 
-Para evitar estos problemas, la solución más robusta es seleccionar sistemas de comunicación que han sido expresamente validados para uso con el modelo de máscara SCBA de la corporación. Los fabricantes de SCBA como Scott (3M), MSA y Dräger ofrecen sistemas de comunicación propietarios integrados en la propia máscara facial que eliminan los problemas de ruteo de cables y compatibilidad electromagnética.
+**Verificación física — con bomberos operativos, no con personal administrativo:**
 
----
+- Prueba de sello negativo en posición erecta — casco completamente ajustado, traje completo puesto
+- Prueba de sello negativo con cabeza inclinada 45 grados hacia abajo — la posición crítica
+- Prueba de sello negativo con cabeza girada a izquierda y derecha al máximo
+- 5 minutos de movimiento activo sin desplazamiento del casco ni pérdida de sello
+- Verificación de que la cola de pato (en cascos americanos) no interfiere con los tirantes del arnés del SCBA al agacharse
+- Si aplica: verificación del sistema de comunicaciones integrado sin interferencia con la máscara
 
-## Checklist de Verificación de Compatibilidad Antes de Compra en Licitación
+**Documentación post-prueba:**
 
-El siguiente checklist está diseñado para ser aplicado por el equipo técnico evaluador durante el proceso de aceptación de muestras en una licitación de cascos, o durante la evaluación de compatibilidad previa a la especificación técnica de las bases:
-
-### Verificación Documental
-
-- [ ] El casco propuesto cuenta con certificación NFPA 1970 vigente emitida por laboratorio acreditado (incluir número de certificado y fecha de vencimiento).
-- [ ] El fabricante del casco ha publicado o puede proveer lista de compatibilidad declarada con el modelo de SCBA en uso en la corporación.
-- [ ] El SCBA en uso en la corporación cuenta con certificación NFPA 1981 vigente.
-- [ ] Las tallas de máscara disponibles (S/M/L o numeración equivalente) son compatibles con el rango de tallas de casco ofertado.
-- [ ] El proveedor puede demostrar disponibilidad de visores de repuesto y accesorios para el casco durante un mínimo de 5 años.
-
-### Verificación Física (Prueba de Muestra)
-
-- [ ] El bombero evaluador se coloca el traje completo de intervención, botas y guantes antes de iniciar la prueba de casco-SCBA.
-- [ ] El casco se ajusta correctamente con el sistema de retención propio del modelo (ratchet, barbiquejo, sistema interno).
-- [ ] La máscara del SCBA se coloca y ajusta con el casco puesto, verificando que el arnés de máscara puede tensarse simétricamente sin interferencia del casco.
-- [ ] Se realiza la prueba de sello negativo (inhalación con entrada de aire bloqueada) en posición erecta.
-- [ ] Se realiza la prueba de sello negativo con la cabeza inclinada hacia abajo 45° para simular búsqueda de víctimas.
-- [ ] Se realiza la prueba de sello negativo con la cabeza girada a izquierda y derecha al máximo.
-- [ ] Se verifican 5 minutos de movimiento activo (caminar, agacharse, gatear) sin que el casco se desplace o la máscara pierda sellado.
-- [ ] Se verifica que el ala o cola de pato del casco no interfiere con los tirantes del arnés del SCBA al agacharse.
-- [ ] Si aplica, se verifica el funcionamiento del sistema de comunicaciones integrado sin interferencia con la máscara.
-- [ ] El bombero evaluador confirma verbalmente comodidad de uso y ausencia de presiones o fricciones no aceptables.
-
-### Verificación de Documentación Post-Prueba
-
-- [ ] El evaluador firma acta de resultado de prueba de compatibilidad para el expediente de licitación.
-- [ ] Se documenta fotográficamente la prueba con cada combinación de talla de casco / talla de máscara evaluada.
-- [ ] En caso de incompatibilidad detectada, se documenta el tipo y ubicación del problema para análisis técnico.
-- [ ] El fabricante o distribuidor proporciona por escrito su posición sobre la compatibilidad detectada (o no) durante la prueba.
+- El evaluador firma acta de resultado de la prueba de compatibilidad para el expediente
+- Se documenta fotográficamente con cada combinación de talla de casco y talla de máscara evaluada
+- En caso de incompatibilidad detectada, se documenta la ubicación y tipo del problema — no solo "no es compatible" sino dónde y cómo falla
+- El fabricante o distribuidor proporciona por escrito su posición sobre el resultado de la prueba
 
 ---
 
-## Recomendaciones para Licitaciones Mexicanas
+## Cómo Especificarlo en las Bases de Licitación Mexicanas
 
-En el contexto de adquisición pública en México, la evaluación de compatibilidad casco-SCBA debe incluirse explícitamente en las bases técnicas. Algunas recomendaciones concretas:
+En procesos de adquisición pública — IMSS, municipios, estados, CFE, PEMEX — la evaluación de compatibilidad casco-SCBA puede y debe incluirse en las bases técnicas. En la práctica, raramente se hace. Aquí está cómo hacerlo correctamente:
 
-**En las bases de licitación:**
-- Especificar el modelo y fabricante del SCBA actualmente en uso por la corporación como referencia de compatibilidad requerida.
-- Incluir como requisito técnico la presentación de muestra física de casco (en todas las tallas licitadas) para prueba de compatibilidad durante el proceso de evaluación.
-- Requerir que el licitante presente carta del fabricante del casco declarando compatibilidad con el SCBA especificado, o en su defecto, constancia de prueba de compatibilidad realizada en laboratorio o en campo.
+**En las bases:** especifica el modelo y fabricante del SCBA actualmente en uso por la corporación como referencia de compatibilidad requerida. Incluye como requisito técnico la presentación de muestra física de casco en todas las tallas licitadas para prueba de compatibilidad durante la evaluación. Exige carta del fabricante del casco declarando compatibilidad con el SCBA especificado, o constancia de prueba de compatibilidad realizada por laboratorio o en campo.
 
-**Durante la evaluación:**
-- Designar un equipo evaluador integrado por al menos dos bomberos operativos (no solo personal administrativo) que realicen las pruebas de compatibilidad física descritas en el checklist anterior.
-- Evaluar al menos tres tallas de casco con al menos dos tallas de máscara para cubrir el rango de variación facial de la plantilla.
-- Documentar los resultados en formato estandarizado que forme parte del dictamen técnico.
+**Durante la evaluación:** designa al menos dos bomberos operativos — no personal de compras — para realizar las pruebas físicas de compatibilidad. Evalúa al menos tres tallas de casco con dos tallas de máscara para cubrir el rango de variación facial de la plantilla. Documenta en formato estandarizado que forme parte del dictamen técnico.
 
-**En la recepción del equipo:**
-- Realizar verificación aleatoria de compatibilidad con el SCBA en uso para un porcentaje del lote entregado (mínimo 10%), verificando que las unidades entregadas son consistentes con las muestras evaluadas.
+**En la recepción del lote:** realiza verificación aleatoria de compatibilidad con el SCBA en uso para un porcentaje del lote entregado — mínimo 10%. El propósito es confirmar que las unidades entregadas son consistentes con las muestras evaluadas durante el proceso. Esto cierra la brecha entre lo que se evaluó y lo que se entregó.
 
 ---
 
-## Conclusión
+## La Diferencia Entre Equipo Certificado y Equipo que Funciona
 
-La compatibilidad entre casco y SCBA no es un detalle menor ni un trámite burocrático: es una condición de seguridad fundamental que determina si el equipo de protección personal del bombero funciona como sistema integrado en la condición de mayor riesgo, la intervención en atmósfera IDLH.
+Termino con la distinción que da sentido a todo lo anterior:
 
-Verificar esta compatibilidad antes de cualquier adquisición, mediante el checklist sistemático descrito en este artículo y con la participación de bomberos operativos en las pruebas, es una inversión mínima frente al costo —económico y humano— de descubrir la incompatibilidad ya en servicio activo.
+Un casco certificado NFPA 1970 es un casco que pasó las pruebas de NFPA 1970 de forma individual, en condiciones de laboratorio, sin el SCBA puesto. Un SCBA certificado NFPA 1981 es un SCBA que pasó las pruebas de NFPA 1981 de forma individual, en condiciones de laboratorio, sin el casco puesto.
 
-Para las corporaciones de bomberos en México, institucionalizar este proceso de verificación como parte del protocolo estándar de adquisición de EPP es un paso concreto hacia la gestión profesional del equipo de protección individual.
+Esos dos certificados no garantizan nada sobre lo que ocurre cuando los dos equipos están puestos simultáneamente en un bombero real, en un incendio real, inclinando la cabeza en la posición en que más tiempo pasa durante la búsqueda de víctimas.
+
+La única garantía que existe es la prueba física combinada. Con el traje puesto. Con el cilindro montado. Con el bombero realizando los movimientos reales de la intervención.
+
+Eso no es burocracia adicional. Es el mínimo de debida diligencia técnica para equipar a alguien que va a entrar a un edificio en llamas con la confianza de que su equipo de protección funciona como sistema, no solo como colección de piezas certificadas por separado.
+
+La certificación individual de cada componente es el punto de partida. La prueba de compatibilidad combinada es la única forma de llegar al punto de llegada: un bombero protegido, no solo un expediente completo.

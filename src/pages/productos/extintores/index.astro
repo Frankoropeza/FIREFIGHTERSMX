@@ -22,20 +22,20 @@ const pqsProducts = featuredProducts.filter(
 const co2Products = featuredProducts.filter(
   (p) => p.category === 'Extintores' && p.brand === 'CO₂'
 );
-const tipokProducts = featuredProducts.filter(
-  (p) => p.category === 'Extintores' && p.brand === 'Tipo K'
+const especializadosProducts = featuredProducts.filter(
+  (p) => p.category === 'Extintores' && p.brand === 'Especializados'
 );
 const ruedaProducts = featuredProducts.filter(
   (p) => p.category === 'Extintores' && p.brand === 'Sobre Ruedas'
 );
 
-/* Tipos de agente (educativo) */
+/* Tipos de agente (educativo — 6 tipos) */
 const tipos = [
   {
     title: 'PQS ABC',
     norm: 'NOM-154-SCFI · NFPA 10',
     accent: '#F75000',
-    desc: 'Polvo químico seco multiuso para fuegos clase A, B y C. El estándar obligatorio en oficinas, comercios, bodegas e industria general. La opción más distribuida en México.',
+    desc: 'Polvo químico seco multiuso para fuegos clase A, B y C. El estándar obligatorio en oficinas, comercios, bodegas e industria general. De 1 kg a 12 kg.',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 6v-3a3 3 0 0 0-6 0v3"/><rect x="6" y="6" width="12" height="14" rx="2"/><path d="M12 10v4M10 12h4"/></svg>`,
   },
   {
@@ -44,6 +44,20 @@ const tipos = [
     accent: '#60A5FA',
     desc: 'Dióxido de carbono sin residuo para fuegos clase B y C. La única opción segura para tableros eléctricos, servidores y equipos electrónicos de alto valor.',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M9 10a3 3 0 0 1 6 0c0 2-3 3-3 3"/><path d="M12 16h.01"/></svg>`,
+  },
+  {
+    title: 'Agua',
+    norm: 'NOM-154-SCFI · NFPA 10',
+    accent: '#38BDF8',
+    desc: 'El agente más ecológico para fuegos clase A: sólidos combustibles como madera, papel y cartón. Sin residuo tóxico. NUNCA usar en presencia de corriente eléctrica.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>`,
+  },
+  {
+    title: 'Espuma AFFF',
+    norm: 'NOM-154-SCFI · NFPA 11',
+    accent: '#FB923C',
+    desc: 'Espuma formadora de película acuosa para fuegos clase A y B. Sella la superficie del combustible e impide la re-ignición — el más eficaz para hidrocarburos derramados.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3C8 7 6 11 6 14a6 6 0 0 0 12 0c0-3-2-7-6-11z"/><path d="M9 14s1 1 3 1 3-1 3-1"/></svg>`,
   },
   {
     title: 'Tipo K',
@@ -56,15 +70,8 @@ const tipos = [
     title: 'Agente Limpio',
     norm: 'NFPA 2001 · UL 2129',
     accent: '#34D399',
-    desc: 'HFC-227ea (FM-200) o FK-5-1-12 (Novec) para data centers y salas de control. Extinción en segundos sin residuo, sin daño a equipos, espacio habitable tras descarga.',
+    desc: 'HFC-227ea (FM-200) para data centers y salas de control. Extinción en segundos sin residuo, sin daño a equipos, espacio habitable e ininterrumpible tras descarga.',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>`,
-  },
-  {
-    title: 'Sobre Ruedas',
-    norm: 'NOM-154-SCFI · NFPA 10',
-    accent: '#A78BFA',
-    desc: 'Alta capacidad (25–125 kg) para riesgos industriales de gran magnitud. Descarga extendida en plantas, almacenes de gran altura, helipuertos y plataformas petroquímicas.',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="3" width="12" height="16" rx="2"/><path d="M8 19v2M12 19v2"/><circle cx="8" cy="21" r="1"/><circle cx="12" cy="21" r="1"/><path d="M10 8v4M8 10h4"/></svg>`,
   },
 ];
 
@@ -283,7 +290,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
-          <span class="section-eyebrow mb-4 inline-flex">Cinco agentes, cada uno para su fuego</span>
+          <span class="section-eyebrow mb-4 inline-flex">Seis agentes, cada uno para su fuego</span>
           <h2 id="tipos-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             El agente correcto<br/>
             <span style="color:#F5A623">según el riesgo.</span>
@@ -297,7 +304,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
         </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5">
         {tipos.map((t) => (
           <article class="flex flex-col gap-4 p-7" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
             <div class="flex items-center justify-center" style={`width:52px;height:52px;background:${t.accent}1a;border:1.5px solid ${t.accent}59;color:${t.accent}`}>
@@ -354,11 +361,11 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
           </p>
         </div>
         <div class="flex flex-col sm:flex-row gap-3 shrink-0">
-          <a href={whatsappUrl('Hola, quiero cotizar extintores PQS ABC certificados NOM-154-SCFI.')} target="_blank" rel="noopener" class="btn btn-primary btn-lg">
-            Cotizar PQS ABC →
+          <a href="/productos/extintores/pqs-abc" class="btn btn-primary btn-lg">
+            Catálogo PQS ABC completo →
           </a>
-          <a href="/cotizacion" class="btn btn-ghost btn-lg">
-            Cotización formal
+          <a href={whatsappUrl('Hola, quiero cotizar extintores PQS ABC certificados NOM-154-SCFI.')} target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
+            Cotizar por WhatsApp
           </a>
         </div>
       </div>
@@ -385,7 +392,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
             para tableros eléctricos vivos, salas de cómputo y cuartos de control.
           </p>
           <div class="flex flex-wrap gap-2">
-            {['NOM-100-SCFI','NFPA 10','Clase B · C','Dióxido de carbono','4.5 · 10 kg','Cero residuo'].map(b => (
+            {['NOM-100-SCFI','NFPA 10','Clase B · C','Dióxido de carbono','2.3 · 4.5 · 6.8 · 9 · 10 · 15 kg','Cero residuo'].map(b => (
               <span class="badge badge-dark text-[9px]">{b}</span>
             ))}
           </div>
@@ -406,11 +413,11 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
           </p>
         </div>
         <div class="flex flex-col sm:flex-row gap-3 shrink-0">
-          <a href={whatsappUrl('Hola, quiero cotizar extintores CO₂ para tableros eléctricos o sala de servidores.')} target="_blank" rel="noopener" class="btn btn-primary btn-lg">
-            Cotizar CO₂ →
+          <a href="/productos/extintores/co2" class="btn btn-primary btn-lg">
+            Catálogo CO₂ completo →
           </a>
-          <a href="/cotizacion" class="btn btn-ghost btn-lg">
-            Cotización formal
+          <a href={whatsappUrl('Hola, quiero cotizar extintores CO₂ para tableros eléctricos o sala de servidores.')} target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
+            Cotizar por WhatsApp
           </a>
         </div>
       </div>
@@ -418,26 +425,26 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
     </div>
   </section>
 
-  <!-- Tipo K + Sobre Ruedas -->
-  <section class="section" style="background:#070E1A" aria-labelledby="especiales-title">
+  <!-- Especializados: Agua · Espuma · Tipo K · Agente Limpio -->
+  <section class="section" style="background:#070E1A" aria-labelledby="especializados-title">
     <div class="container-site">
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
-          <span class="section-eyebrow mb-4 inline-flex">Riesgos especiales</span>
-          <h2 id="especiales-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
-            Tipo K · Sobre Ruedas<br/>
-            <span style="color:#F5A623">para cada riesgo.</span>
+          <span class="section-eyebrow mb-4 inline-flex">Agua · Espuma · Tipo K · Agente limpio</span>
+          <h2 id="especializados-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            Extintores<br/>
+            <span style="color:#F5A623">especializados.</span>
           </h2>
         </div>
         <div style="border-left:2px solid rgba(245,166,35,0.4);padding-left:1.75rem">
           <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
-            El Tipo K es el único agente certificado para cocinas industriales con aceites y grasas a alta
-            temperatura. Los extintores sobre ruedas cubren riesgos de gran magnitud donde el portátil
-            no tiene la capacidad de agente necesaria. Cada tipo resuelve un riesgo específico.
+            Más allá del PQS ABC, cada riesgo especial exige el agente correcto: agua limpia o AFFF para
+            clase A y B, Tipo K exclusivamente para aceites a alta temperatura en cocinas industriales,
+            y agente limpio FM-200 para activos electrónicos de alto valor donde el CO₂ no es suficiente.
           </p>
           <div class="flex flex-wrap gap-2">
-            {['Tipo K — Clase K','UL 300','Acetato de potasio','Sobre ruedas 25–125 kg','NFPA 10','PQS · CO₂ · AFFF'].map(b => (
+            {['Agua clase A','Espuma AFFF','Tipo K — UL 300','FM-200 NFPA 2001','Sin residuo','Cocinas · Data center'].map(b => (
               <span class="badge badge-dark text-[9px]">{b}</span>
             ))}
           </div>
@@ -445,7 +452,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        {[...tipokProducts, ...ruedaProducts].map((p) => (
+        {especializadosProducts.map((p) => (
           <ProductCard product={p} />
         ))}
       </div>
@@ -453,16 +460,68 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
       <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(74,117,153,0.15)">
         <div class="flex-1">
           <p class="text-sm leading-relaxed m-0" style="color:#64748B">
-            ¿Cocina industrial con freidoras o planta con alta carga de fuego? Te asesoramos en la
-            dotación correcta y el programa de mantenimiento con el expediente completo para PC.
+            ¿Cocina industrial, data center o bodega de materiales inflamables? Te asesoramos el agente correcto
+            para cada zona y dotación completa con expediente para Protección Civil.
           </p>
         </div>
         <div class="flex flex-col sm:flex-row gap-3 shrink-0">
-          <a href={whatsappUrl('Hola, quiero cotizar extintores Tipo K o sobre ruedas para mi instalación.')} target="_blank" rel="noopener" class="btn btn-primary btn-lg">
-            Cotizar riesgos especiales →
+          <a href="/productos/extintores/especializados" class="btn btn-primary btn-lg">
+            Catálogo especializados completo →
           </a>
-          <a href="/cotizacion" class="btn btn-ghost btn-lg">
-            Cotización formal
+          <a href={whatsappUrl('Hola, quiero cotizar extintores especializados: agua, espuma AFFF, Tipo K o agente limpio.')} target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
+            Cotizar por WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Sobre Ruedas -->
+  <section class="section" style="background:#040A12" aria-labelledby="ruedas-title">
+    <div class="container-site">
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Alta capacidad · Industrial · Aeronáutico</span>
+          <h2 id="ruedas-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            Extintores sobre ruedas<br/>
+            <span style="color:#F5A623">25 a 125 kg.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(245,166,35,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
+            Cuando el portátil no tiene la capacidad de agente necesaria para el riesgo, el extintor sobre ruedas
+            es la solución. De 25 kg para almacenes y talleres hasta 125 kg para terminales aeroportuarias,
+            plataformas offshore y plantas petroquímicas. En PQS ABC, CO₂ y espuma AFFF.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {['25 · 50 · 75 · 125 kg','PQS ABC · CO₂ · AFFF','NFPA 10 · NFPA 11','Aeropuertos · Plataformas','Descarga extendida'].map(b => (
+              <span class="badge badge-dark text-[9px]">{b}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {ruedaProducts.map((p) => (
+          <ProductCard product={p} />
+        ))}
+      </div>
+
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(74,117,153,0.15)">
+        <div class="flex-1">
+          <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+            ¿Planta petroquímica, helipuerto o gran almacén con alta carga de fuego? Calculamos la dotación
+            de extintores sobre ruedas conforme NFPA 10 y NOM-002-STPS sin costo.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+          <a href="/productos/extintores/sobre-ruedas" class="btn btn-primary btn-lg">
+            Catálogo sobre ruedas completo →
+          </a>
+          <a href={whatsappUrl('Hola, quiero cotizar extintores sobre ruedas para una instalación industrial.')} target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
+            Cotizar por WhatsApp
           </a>
         </div>
       </div>

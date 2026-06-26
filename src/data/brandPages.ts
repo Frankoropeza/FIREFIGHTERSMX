@@ -16,6 +16,8 @@ import { camarasBrandList } from './camarasBrands';
 import { herramientasBrandList } from './herramientasBrands';
 import { sistemasCIBrandList } from './sistemasCIBrands';
 import { hazmatBrandList } from './hazmatBrands';
+import { extintoresBrandList } from './extintoresBrands';
+import { dronesBrandList } from './dronesBrands';
 
 /* ── Familias / tipo de riesgo — color e ícono ─────────────────────────────── */
 export type TipoKey =
@@ -351,6 +353,42 @@ export const categoriaMarca: Record<string, CategoriaMeta> = {
       { label: 'Soporte para licitaciones', desc: 'Fichas técnicas y manifiestos por partida', href: '/licitaciones' },
     ],
   },
+  'extintores': {
+    label: 'Extintores',
+    productCategory: 'Extintores',
+    comparativaCols: [
+      { key: 'norma', label: 'Norma', align: 'center', accent: true },
+      { key: 'proteccion', label: 'Agente / Clase' },
+      { key: 'material', label: 'Cilindro' },
+      { key: 'peso', label: 'Capacidad', align: 'center' },
+      { key: 'ideal', label: 'Ideal para' },
+    ],
+    conjunto: [
+      { label: 'Sistemas Contra Incendio', desc: 'Detección, rociadores y red hidráulica — NFPA 13/72', href: '/productos/sistemas-ci' },
+      { label: 'Capacitación brigadas', desc: 'Uso correcto método PASS y plan de evacuación', href: '/servicios/capacitacion' },
+      { label: 'Mantenimiento y recarga', desc: 'Recarga certificada, prueba hidrostática y expediente PC', href: '/servicios/mantenimiento' },
+      { label: 'Equipos SCBA', desc: 'MSA G1, Dräger y 3M Scott — respuesta avanzada', href: '/productos/equipos-scba' },
+      { label: 'Soporte para licitaciones', desc: 'Fichas técnicas y manifiestos por partida', href: '/licitaciones' },
+    ],
+  },
+  'drones-emergencia': {
+    label: 'Drones de Emergencia',
+    productCategory: 'Drones Emergencia',
+    comparativaCols: [
+      { key: 'autonomia', label: 'Autonomía', align: 'center', accent: true },
+      { key: 'sensor', label: 'Sensor térmico' },
+      { key: 'rango', label: 'Alcance / Cobertura', align: 'center' },
+      { key: 'peso', label: 'Peso / IP', align: 'center' },
+      { key: 'ideal', label: 'Ideal para' },
+    ],
+    conjunto: [
+      { label: 'Cámaras Térmicas portátiles', desc: 'FLIR y MSA para exploración en tierra', href: '/productos/camaras-termicas' },
+      { label: 'Herramientas de Rescate', desc: 'Holmatro, Hurst y Weber — NFPA 1936', href: '/productos/herramientas-rescate' },
+      { label: 'Equipos SCBA', desc: 'MSA G1, Dräger y 3M Scott — aire autónomo', href: '/productos/equipos-scba' },
+      { label: 'Capacitación operativa', desc: 'Pilotos y protocolos de misión AFAC', href: '/servicios/capacitacion' },
+      { label: 'Soporte para licitaciones', desc: 'Fichas técnicas y manifiestos por partida', href: '/licitaciones' },
+    ],
+  },
 };
 
 /* ── Registro de marcas + helpers ──────────────────────────────────────────── */
@@ -367,7 +405,7 @@ const cascosAdapted: EquipmentBrand[] = cascosBrands.map((b) => ({
   crossDesc: cascosCrossDesc[b.slug] ?? b.eyebrow,
 } as EquipmentBrand));
 
-export const brandPages: EquipmentBrand[] = [...cascosAdapted, ...trajesBrandList, ...scbaBrandList, ...camarasBrandList, ...herramientasBrandList, ...sistemasCIBrandList, ...hazmatBrandList];
+export const brandPages: EquipmentBrand[] = [...cascosAdapted, ...trajesBrandList, ...scbaBrandList, ...camarasBrandList, ...herramientasBrandList, ...sistemasCIBrandList, ...hazmatBrandList, ...extintoresBrandList, ...dronesBrandList];
 
 export function brandPageBySlug(slug: string): EquipmentBrand | undefined {
   return brandPages.find((b) => b.slug === slug);
