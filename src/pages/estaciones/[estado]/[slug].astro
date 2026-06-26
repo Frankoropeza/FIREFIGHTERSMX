@@ -229,78 +229,134 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
     </div>
   </nav>
 
-  {/* ── Hero ── */}
+  {/* ── Hero 2 columnas (homologado con index) ── */}
   <section class="relative overflow-hidden" style="background:#040A12;padding-block:4rem 3.5rem" aria-labelledby="est-heading">
-    {/* Glow de fondo */}
+    {/* Glow naranja derecha */}
     <div class="absolute inset-0 pointer-events-none" aria-hidden="true"
-      style="background:radial-gradient(ellipse 65% 55% at 80% 40%, rgba(247,80,0,0.08) 0%, transparent 60%)"></div>
-    {/* Línea naranja vertical derecha */}
-    <div class="absolute right-0 top-8 bottom-8 w-px opacity-30 pointer-events-none hidden lg:block" aria-hidden="true"
-      style="background:linear-gradient(to bottom, transparent, #F75000, transparent)"></div>
+      style="background:radial-gradient(ellipse 55% 70% at 85% 50%, rgba(247,80,0,0.09) 0%, transparent 60%)"></div>
+    {/* Separador vertical central */}
+    <div class="absolute top-0 bottom-0 pointer-events-none hidden lg:block" aria-hidden="true"
+      style="left:52%;width:1px;background:linear-gradient(to bottom,transparent 5%,rgba(74,117,153,0.18) 30%,rgba(74,117,153,0.18) 70%,transparent 95%)"></div>
 
     <div class="container-site relative z-10">
-      {/* Badges */}
-      <div class="flex flex-wrap items-center gap-2 mb-5">
-        <span class="font-display font-bold text-[10px] uppercase tracking-wider px-2.5 py-1"
-          style={`color:${cfg.color};background:${cfg.bgColor};border:1px solid ${cfg.color}40`}>{cfg.label}</span>
-        {conf && (
-          <span class="inline-flex items-center gap-1 font-display text-[10px] uppercase tracking-wider px-2.5 py-1"
-            style={`color:${conf.color};background:${conf.bgColor};border:1px solid ${conf.color}40`}>
-            <span class="w-2.5 h-2.5" set:html={checkIcon} aria-hidden="true"/>{conf.label}{verif ? ` · ${verif}` : ''}
-          </span>
-        )}
-        {estacion.fundacion && (
-          <span class="font-display text-[10px] uppercase tracking-wider px-2.5 py-1"
-            style="color:#4A7599;border:1px solid rgba(74,117,153,0.3)">Desde {estacion.fundacion}</span>
-        )}
-        <span class="font-display text-[10px] uppercase tracking-wider px-2.5 py-1"
-          style="color:#4A7599;border:1px solid rgba(74,117,153,0.3)">{estado.region}</span>
-      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
-      {/* H1 */}
-      <h1 id="est-heading" class="font-display font-bold mb-4"
-        style="color:#FFFFFF;font-size:clamp(1.75rem,3.5vw,3rem);line-height:1.06;max-width:42rem">
-        {estacion.nombre}
-      </h1>
+        {/* ── Columna izquierda: título + CTAs ── */}
+        <div>
+          {/* Badges */}
+          <div class="flex flex-wrap items-center gap-2 mb-5">
+            <span class="font-display font-bold text-[10px] uppercase tracking-wider px-2.5 py-1"
+              style={`color:${cfg.color};background:${cfg.bgColor};border:1px solid ${cfg.color}40`}>{cfg.label}</span>
+            {conf && (
+              <span class="inline-flex items-center gap-1 font-display text-[10px] uppercase tracking-wider px-2.5 py-1"
+                style={`color:${conf.color};background:${conf.bgColor};border:1px solid ${conf.color}40`}>
+                <span class="w-2.5 h-2.5" set:html={checkIcon} aria-hidden="true"/>{conf.label}{verif ? ` · ${verif}` : ''}
+              </span>
+            )}
+            {estacion.fundacion && (
+              <span class="font-display text-[10px] uppercase tracking-wider px-2.5 py-1"
+                style="color:#4A7599;border:1px solid rgba(74,117,153,0.3)">Desde {estacion.fundacion}</span>
+            )}
+            <span class="font-display text-[10px] uppercase tracking-wider px-2.5 py-1"
+              style="color:#4A7599;border:1px solid rgba(74,117,153,0.3)">{estado.region}</span>
+          </div>
 
-      {/* Ubicación */}
-      <p class="flex items-center gap-2 text-sm mb-4" style="color:#94A3B8">
-        <span class="w-4 h-4 shrink-0" style="color:#FF6B26" set:html={pinIcon} aria-hidden="true"/>
-        {estacion.ciudad}{estacion.municipio !== estacion.ciudad ? ` · Mpio. ${estacion.municipio}` : ''}, {estado.nombre}
-      </p>
+          {/* H1 */}
+          <h1 id="est-heading" class="font-display font-bold mb-4"
+            style="color:#FFFFFF;font-size:clamp(1.6rem,3.2vw,2.75rem);line-height:1.06">
+            {estacion.nombre}
+          </h1>
 
-      {/* Stats operativos inline (cuando existen) */}
-      {(estacion.elementos || estacion.estacionesFisicas || estacion.unidades) && (
-        <div class="flex flex-wrap items-center gap-x-5 gap-y-2 mb-6" style="border-left:3px solid #F75000;padding-left:0.75rem">
-          {estacion.elementos && (
-            <div class="flex items-baseline gap-1.5">
-              <span class="font-display font-bold text-xl" style="color:#F75000">{estacion.elementos}</span>
-              <span class="text-xs" style="color:#64748B">elementos</span>
+          {/* Ubicación */}
+          <p class="flex items-center gap-2 text-sm mb-5" style="color:#94A3B8">
+            <span class="w-4 h-4 shrink-0" style="color:#FF6B26" set:html={pinIcon} aria-hidden="true"/>
+            {estacion.ciudad}{estacion.municipio !== estacion.ciudad ? ` · Mpio. ${estacion.municipio}` : ''}, {estado.nombre}
+          </p>
+
+          {/* Stats operativos (cuando existen) */}
+          {(estacion.elementos || estacion.estacionesFisicas || estacion.unidades) && (
+            <div class="flex flex-wrap items-center gap-x-6 gap-y-2 mb-6"
+              style="border-left:3px solid #F75000;padding-left:0.875rem">
+              {estacion.elementos && (
+                <div class="flex items-baseline gap-1.5">
+                  <span class="font-display font-bold text-2xl" style="color:#F75000">{estacion.elementos}</span>
+                  <span class="text-xs" style="color:#64748B">elementos</span>
+                </div>
+              )}
+              {estacion.estacionesFisicas && (
+                <div class="flex items-baseline gap-1.5">
+                  <span class="font-display font-bold text-2xl" style="color:#F75000">{estacion.estacionesFisicas}</span>
+                  <span class="text-xs" style="color:#64748B">cuarteles</span>
+                </div>
+              )}
+              {estacion.unidades && (
+                <div class="flex items-baseline gap-1.5">
+                  <span class="font-display font-bold text-2xl" style="color:#F75000">{estacion.unidades}</span>
+                  <span class="text-xs" style="color:#64748B">vehículos</span>
+                </div>
+              )}
             </div>
           )}
-          {estacion.estacionesFisicas && (
-            <div class="flex items-baseline gap-1.5">
-              <span class="font-display font-bold text-xl" style="color:#F75000">{estacion.estacionesFisicas}</span>
-              <span class="text-xs" style="color:#64748B">cuarteles</span>
+
+          {/* CTAs */}
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href={whatsappUrl(waMsg)} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+              Cotizar equipo por WhatsApp
+            </a>
+            <a href={`/estaciones/${estado.slug}`} class="btn btn-ghost btn-lg">
+              ← {estado.nombre}
+            </a>
+          </div>
+        </div>
+
+        {/* ── Columna derecha: descripción (2 párrafos) ── */}
+        <div>
+          {/* Eyebrow */}
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-8 h-px shrink-0" style="background:#F75000"></div>
+            <span class="font-display font-bold text-[10px] uppercase tracking-widest" style="color:#F75000">
+              Acerca de esta corporación
+            </span>
+          </div>
+
+          {estacion.descripcion ? (
+            <div class="flex flex-col gap-5">
+              {estacion.descripcion.split('\n\n').slice(0, 2).map((parrafo, i) => (
+                <p class="text-sm leading-[1.9] m-0" style={i === 0 ? 'color:#CBD5E1;font-weight:500' : 'color:#94A3B8'}>
+                  {parrafo}
+                </p>
+              ))}
+              {estacion.descripcion.split('\n\n').length > 2 && (
+                <a href="#perfil" class="text-xs uppercase tracking-wider transition-colors hover:text-[#FF6B26]"
+                  style="color:#4A7599">Leer más ↓</a>
+              )}
             </div>
-          )}
-          {estacion.unidades && (
-            <div class="flex items-baseline gap-1.5">
-              <span class="font-display font-bold text-xl" style="color:#F75000">{estacion.unidades}</span>
-              <span class="text-xs" style="color:#64748B">vehículos</span>
+          ) : (
+            /* Fallback: datos clave cuando no hay descripción */
+            <div class="flex flex-col gap-4">
+              <div class="grid grid-cols-2 gap-3">
+                {[
+                  { label: 'Tipo',       value: cfg.label },
+                  { label: 'Ciudad',     value: estacion.ciudad },
+                  { label: 'Estado',     value: estado.nombre },
+                  ...(estacion.fundacion ? [{ label: 'Fundación', value: String(estacion.fundacion) }] : []),
+                  { label: 'Emergencias', value: estacion.telefonoEmergencias ?? '911' },
+                  { label: 'Municipio',  value: estacion.municipio },
+                ].slice(0, 4).map(({ label, value }) => (
+                  <div class="flex flex-col gap-1 p-3" style="background:#070E1A;border:1px solid rgba(74,117,153,0.15)">
+                    <span class="text-[9px] uppercase tracking-widest" style="color:#4A7599">{label}</span>
+                    <span class="text-sm font-medium" style="color:#CBD5E1">{value}</span>
+                  </div>
+                ))}
+              </div>
+              <p class="text-xs leading-relaxed m-0" style="color:#64748B">
+                Corporación {cfg.label.toLowerCase()} con cobertura en {estacion.municipio}, {estado.nombre}.
+                Datos de contacto y servicios disponibles en el directorio verificado.
+              </p>
             </div>
           )}
         </div>
-      )}
 
-      {/* CTAs */}
-      <div class="flex flex-col sm:flex-row gap-3">
-        <a href={whatsappUrl(waMsg)} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
-          Cotizar equipo por WhatsApp
-        </a>
-        <a href={`/estaciones/${estado.slug}`} class="btn btn-ghost btn-lg">
-          ← {estado.nombre}
-        </a>
       </div>
     </div>
 
