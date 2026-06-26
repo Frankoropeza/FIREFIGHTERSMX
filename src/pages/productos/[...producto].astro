@@ -370,6 +370,43 @@ const equipoMap: Record<string, CatLink[]> = {
 };
 const catEquipo: CatLink[] = equipoMap[product.category] ?? [];
 
+/* ── Sidebar: servicios para este equipo ───────────────────────────────── */
+const serviciosMap: Record<string, {label: string; href: string; norm: string}[]> = {
+  'Trajes Bombero': [
+    { label: 'Capacitación Certificada', href: '/servicios/capacitacion', norm: 'DC-3 STPS · NFPA 1001' },
+    { label: 'Mantenimiento y Recarga', href: '/servicios/mantenimiento', norm: 'NFPA 1850 · NOM-154' },
+  ],
+  'Cascos NFPA': [
+    { label: 'Capacitación Certificada', href: '/servicios/capacitacion', norm: 'DC-3 STPS · NFPA 1001' },
+    { label: 'Brigadas Empresariales', href: '/servicios/brigadas-empresariales', norm: 'NOM-002 · DC-3' },
+  ],
+  'Equipos SCBA': [
+    { label: 'Capacitación Certificada', href: '/servicios/capacitacion', norm: 'DC-3 STPS · NFPA 1001' },
+    { label: 'Mantenimiento y Recarga', href: '/servicios/mantenimiento', norm: 'NFPA 1850 · NOM-154' },
+  ],
+  'Cámaras Térmicas': [
+    { label: 'Capacitación Certificada', href: '/servicios/capacitacion', norm: 'DC-3 STPS · NFPA 1001' },
+    { label: 'Auditoría NOM-002', href: '/servicios/auditoria-seguridad', norm: 'NOM-002-STPS-2010' },
+  ],
+  'Herramientas Rescate': [
+    { label: 'Mantenimiento y Recarga', href: '/servicios/mantenimiento', norm: 'NFPA 1850 · NOM-154' },
+    { label: 'Capacitación Certificada', href: '/servicios/capacitacion', norm: 'DC-3 STPS · NFPA 1001' },
+  ],
+  'Extintores': [
+    { label: 'Mantenimiento y Recarga', href: '/servicios/mantenimiento', norm: 'NFPA 1850 · NOM-154' },
+    { label: 'Auditoría NOM-002', href: '/servicios/auditoria-seguridad', norm: 'NOM-002-STPS-2010' },
+  ],
+  'Sistemas CI': [
+    { label: 'Instalación de Sistemas CI', href: '/servicios/instalacion-sistemas-ci', norm: 'NFPA 13 · 72 · 2001' },
+    { label: 'Mantenimiento y Recarga', href: '/servicios/mantenimiento', norm: 'NFPA 1850 · NOM-154' },
+  ],
+  'Equipos HAZMAT': [
+    { label: 'Capacitación Certificada', href: '/servicios/capacitacion', norm: 'DC-3 STPS · NFPA 1001' },
+    { label: 'Auditoría NOM-002', href: '/servicios/auditoria-seguridad', norm: 'NOM-002-STPS-2010' },
+  ],
+};
+const catServicios = serviciosMap[product.category] ?? [];
+
 /* ── JSON-LD ────────────────────────────────────────────────────────────── */
 const productSchema = {
   '@context': 'https://schema.org',
@@ -905,6 +942,30 @@ const seoDesc  = `${product.description} Distribuidor autorizado ${product.brand
               <div class="px-4 py-3" style="border-top:1px solid rgba(74,117,153,0.15)">
                 <a href="/productos" class="text-[10px] font-display font-semibold hover:text-[#FF6B26] transition-colors" style="color:#4A7599">
                   Ver catálogo completo →
+                </a>
+              </div>
+            </div>
+          )}
+
+          {/* Servicios para este equipo */}
+          {catServicios.length > 0 && (
+            <div style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
+              <div class="px-4 py-3" style="background:#040A12;border-bottom:1px solid rgba(74,117,153,0.18)">
+                <span class="text-[9px] font-display font-bold uppercase tracking-widest" style="color:#4A7599">Servicios para este equipo</span>
+              </div>
+              <div class="flex flex-col">
+                {catServicios.map((sv, i) => (
+                  <a href={sv.href}
+                     class="flex flex-col gap-0.5 px-4 py-3 group transition-colors hover:bg-[#040A12]"
+                     style={`border-bottom:${i < catServicios.length - 1 ? '1px solid rgba(74,117,153,0.1)' : 'none'}`}>
+                    <span class="text-xs font-display font-semibold leading-snug group-hover:text-[#F75000] transition-colors" style="color:#FFFFFF">{sv.label}</span>
+                    <span class="text-[11px]" style="color:#64748B">{sv.norm}</span>
+                  </a>
+                ))}
+              </div>
+              <div class="px-4 py-3" style="border-top:1px solid rgba(74,117,153,0.15)">
+                <a href="/servicios" class="text-[10px] font-display font-semibold hover:text-[#FF6B26] transition-colors" style="color:#4A7599">
+                  Ver todos los servicios →
                 </a>
               </div>
             </div>

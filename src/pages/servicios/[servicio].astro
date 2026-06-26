@@ -61,6 +61,99 @@ const faqSchema = {
 };
 
 const otherServices = services.filter((x) => x.slug !== s.slug);
+
+// Mapa de artículos por servicio
+const articulosMap: Record<string, {title: string; href: string}[]> = {
+  'capacitacion': [
+    { title: 'NOM-002 vs DC-3: qué documenta cada uno', href: '/blog/nom-002-vs-dc3-capacitacion-brigadas' },
+    { title: 'Cómo diseñar el simulacro que sí convence a la STPS', href: '/blog/simulacro-incendio-stps-como-documentarlo' },
+  ],
+  'mantenimiento': [
+    { title: 'Collar de garantía en extintores: qué es y por qué lo exigen', href: '/blog/collar-garantia-extintores-nom-154' },
+    { title: 'SCBA: cuándo hacer la prueba hidrostática de cilindros', href: '/blog/prueba-hidrostatica-cilindros-scba-nfpa' },
+  ],
+  'instalacion-sistemas-ci': [
+    { title: 'Memoria de cálculo hidráulico: qué debe incluir para tu DRO', href: '/blog/memoria-calculo-hidraulico-rociadores-nfpa-13' },
+    { title: 'Detección vs alarma vs supresión: tres sistemas que se confunden', href: '/blog/deteccion-alarma-supresion-nfpa-72-2001' },
+  ],
+  'auditoria-seguridad': [
+    { title: 'Las 8 no-conformidades más frecuentes que encuentra la STPS', href: '/blog/no-conformidades-stps-nom-002-plantas-mexico' },
+    { title: 'Expediente documental NOM-002: qué papeles necesitas listos', href: '/blog/expediente-documental-nom-002-stps-checklist' },
+  ],
+  'brigadas-empresariales': [
+    { title: 'Cuántos brigadistas necesita tu planta según NOM-002', href: '/blog/cuantos-brigadistas-nom-002-dimensionamiento' },
+    { title: 'EPP de brigadista: qué es obligatorio, qué es recomendado', href: '/blog/epp-brigadista-contra-incendio-que-necesitas' },
+  ],
+  'licitaciones': [
+    { title: 'Fichas técnicas para CompraNet: errores que descalifican', href: '/blog/fichas-tecnicas-compranet-equipo-contra-incendio' },
+    { title: 'Junta de aclaraciones en licitaciones CI: cómo preparar', href: '/blog/junta-aclaraciones-licitacion-equipo-ci' },
+  ],
+};
+const catArticulos = articulosMap[s.slug] ?? [];
+
+// Mapa de servicios relacionados (servicio ↔ servicios afines)
+const servicioMap: Record<string, {title: string; href: string; norm: string}[]> = {
+  'capacitacion': [
+    { title: 'Brigadas Empresariales', href: '/servicios/brigadas-empresariales', norm: 'NOM-002 · DC-3' },
+    { title: 'Auditoría NOM-002', href: '/servicios/auditoria-seguridad', norm: 'NOM-002-STPS-2010' },
+  ],
+  'mantenimiento': [
+    { title: 'Instalación de Sistemas CI', href: '/servicios/instalacion-sistemas-ci', norm: 'NFPA 13 · 72 · 2001' },
+    { title: 'Auditoría NOM-002', href: '/servicios/auditoria-seguridad', norm: 'NOM-002-STPS-2010' },
+  ],
+  'instalacion-sistemas-ci': [
+    { title: 'Mantenimiento y Recarga', href: '/servicios/mantenimiento', norm: 'NFPA 1850 · NOM-154' },
+    { title: 'Auditoría NOM-002', href: '/servicios/auditoria-seguridad', norm: 'NOM-002-STPS-2010' },
+  ],
+  'auditoria-seguridad': [
+    { title: 'Capacitación Certificada', href: '/servicios/capacitacion', norm: 'DC-3 STPS · NFPA 1001' },
+    { title: 'Brigadas Empresariales', href: '/servicios/brigadas-empresariales', norm: 'NOM-002 · DC-3' },
+    { title: 'Mantenimiento y Recarga', href: '/servicios/mantenimiento', norm: 'NFPA 1850 · NOM-154' },
+  ],
+  'brigadas-empresariales': [
+    { title: 'Capacitación Certificada', href: '/servicios/capacitacion', norm: 'DC-3 STPS · NFPA 1001' },
+    { title: 'Auditoría NOM-002', href: '/servicios/auditoria-seguridad', norm: 'NOM-002-STPS-2010' },
+  ],
+  'licitaciones': [
+    { title: 'Instalación de Sistemas CI', href: '/servicios/instalacion-sistemas-ci', norm: 'NFPA 13 · 72 · 2001' },
+    { title: 'Mantenimiento y Recarga', href: '/servicios/mantenimiento', norm: 'NFPA 1850 · NOM-154' },
+  ],
+};
+const serviciosRel = servicioMap[s.slug] ?? [];
+
+// Mapa de productos relacionados por servicio
+const productosMap: Record<string, {label: string; href: string; marcas: string}[]> = {
+  'capacitacion': [
+    { label: 'Equipos SCBA', href: '/productos/equipos-scba', marcas: 'MSA G1 · Dräger · 3M Scott' },
+    { label: 'Trajes Bombero', href: '/productos/trajes-bombero', marcas: 'Globe · Lion · Honeywell · Fire-Dex' },
+    { label: 'Extintores', href: '/productos/extintores', marcas: 'PQS ABC · CO₂ · Agente limpio · Tipo K' },
+  ],
+  'mantenimiento': [
+    { label: 'Extintores', href: '/productos/extintores', marcas: 'PQS ABC · CO₂ · Agente limpio · Tipo K' },
+    { label: 'Equipos SCBA', href: '/productos/equipos-scba', marcas: 'MSA G1 · Dräger · 3M Scott' },
+    { label: 'Herramientas Rescate', href: '/productos/herramientas-rescate', marcas: 'Holmatro · Hurst · Weber Rescue' },
+  ],
+  'instalacion-sistemas-ci': [
+    { label: 'Sistemas CI', href: '/productos/sistemas-ci', marcas: 'Tyco Viking · Notifier · Kidde Fenwal' },
+    { label: 'Extintores', href: '/productos/extintores', marcas: 'PQS ABC · CO₂ · Agente limpio · Tipo K' },
+  ],
+  'auditoria-seguridad': [
+    { label: 'Extintores', href: '/productos/extintores', marcas: 'PQS ABC · CO₂ · Agente limpio · Tipo K' },
+    { label: 'Sistemas CI', href: '/productos/sistemas-ci', marcas: 'Tyco Viking · Notifier · Kidde Fenwal' },
+    { label: 'Cámaras Térmicas', href: '/productos/camaras-termicas', marcas: 'FLIR · MSA Evolution · Bullard TXS' },
+  ],
+  'brigadas-empresariales': [
+    { label: 'Trajes Bombero', href: '/productos/trajes-bombero', marcas: 'Globe · Lion · Honeywell · Fire-Dex' },
+    { label: 'Cascos NFPA', href: '/productos/cascos-nfpa', marcas: 'MSA Gallet · Bullard · Cairns' },
+    { label: 'Extintores', href: '/productos/extintores', marcas: 'PQS ABC · CO₂ · Agente limpio · Tipo K' },
+  ],
+  'licitaciones': [
+    { label: 'Extintores', href: '/productos/extintores', marcas: 'PQS ABC · CO₂ · Agente limpio · Tipo K' },
+    { label: 'Equipos SCBA', href: '/productos/equipos-scba', marcas: 'MSA G1 · Dräger · 3M Scott' },
+    { label: 'Sistemas CI', href: '/productos/sistemas-ci', marcas: 'Tyco Viking · Notifier · Kidde Fenwal' },
+  ],
+};
+const productosRel = productosMap[s.slug] ?? [];
 ---
 
 <BaseLayout
@@ -111,106 +204,224 @@ const otherServices = services.filter((x) => x.slug !== s.slug);
   <!-- Accesos rápidos (interlinking) -->
   <QuickLinksBar />
 
-  <!-- Qué incluye -->
-  <section class="section" style="background:#070E1A" aria-labelledby="incluye-title">
-    <div class="container-site">
-      <h2 id="incluye-title" class="font-display font-bold mb-8" style="color:#FFFFFF;font-size:clamp(1.5rem,2.5vw,2.25rem)">
-        Qué incluye el servicio
-      </h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style="border-top:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">
-        {s.items.map((item) => (
-          <div class="grid-cell flex flex-col gap-2 p-6" style="border-right:1px solid rgba(74,117,153,0.18);border-bottom:1px solid rgba(74,117,153,0.18)">
-            <h3 class="font-display font-bold text-base" style="color:#FFFFFF">{item.name}</h3>
-            <p class="text-xs leading-relaxed" style="color:#64748B">{item.detail}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+  <!-- Contenido + sidebar -->
+  <div class="container-site py-12 lg:py-16">
+    <div class="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-10 lg:gap-16 items-start">
 
-  <!-- Detalle (subsecciones del spotlight) + imagen -->
-  <section class="section" style="background:#040A12" aria-labelledby={`detalle-${s.slug}`}>
-    <div class="container-site">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <!-- Columna principal -->
+      <div class="flex flex-col gap-12">
 
-        <div>
-          <span class="section-eyebrow mb-5 inline-flex">{s.norm}</span>
-          <h2 id={`detalle-${s.slug}`} class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(2rem,3.8vw,3rem);line-height:1.05">
-            {s.spotlight.title}<br/>
-            <span style="color:#F75000">{s.spotlight.highlight}</span>
+        <!-- Qué incluye -->
+        <div aria-labelledby="incluye-title">
+          <h2 id="incluye-title" class="font-display font-bold mb-8" style="color:#FFFFFF;font-size:clamp(1.5rem,2.5vw,2.25rem)">
+            Qué incluye el servicio
           </h2>
-          {s.spotlight.paragraphs.map((p) => (
-            <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">{p}</p>
-          ))}
-          <div class="flex flex-col mt-6" style="border-top:1px solid rgba(74,117,153,0.18)">
-            {s.spotlight.subsections.map((sub) => (
-              <div class="flex items-start gap-4 py-4" style="border-bottom:1px solid rgba(74,117,153,0.18)">
-                <span class="w-1.5 h-1.5 mt-2 shrink-0" style="background:#F75000" aria-hidden="true"></span>
-                <div>
-                  <h3 class="font-display font-bold text-base leading-tight mb-1" style="color:#FFFFFF">{sub.name}</h3>
-                  <p class="text-xs leading-relaxed m-0" style="color:#64748B">{sub.detail}</p>
-                </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2" style="border-top:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">
+            {s.items.map((item) => (
+              <div class="grid-cell flex flex-col gap-2 p-6" style="border-right:1px solid rgba(74,117,153,0.18);border-bottom:1px solid rgba(74,117,153,0.18)">
+                <h3 class="font-display font-bold text-base" style="color:#FFFFFF">{item.name}</h3>
+                <p class="text-xs leading-relaxed" style="color:#64748B">{item.detail}</p>
               </div>
             ))}
           </div>
         </div>
 
-        <figure class="relative m-0">
-          <div class="relative overflow-hidden" style="border:1px solid rgba(74,117,153,0.25)">
-            <img src={s.spotlight.image} alt={s.spotlight.imageAlt} width="640" height="720" loading="lazy" decoding="async" class="w-full h-auto block" />
-            <div class="absolute top-0 left-0 w-12 h-12 pointer-events-none" style="border-top:3px solid #F75000;border-left:3px solid #F75000" aria-hidden="true"></div>
-            <div class="absolute bottom-0 right-0 w-12 h-12 pointer-events-none" style="border-bottom:3px solid #F75000;border-right:3px solid #F75000" aria-hidden="true"></div>
+        <!-- Detalle (subsecciones del spotlight) + imagen -->
+        <div aria-labelledby={`detalle-${s.slug}`}>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+            <div>
+              <span class="section-eyebrow mb-5 inline-flex">{s.norm}</span>
+              <h2 id={`detalle-${s.slug}`} class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(2rem,3.8vw,3rem);line-height:1.05">
+                {s.spotlight.title}<br/>
+                <span style="color:#F75000">{s.spotlight.highlight}</span>
+              </h2>
+              {s.spotlight.paragraphs.map((p) => (
+                <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">{p}</p>
+              ))}
+              <div class="flex flex-col mt-6" style="border-top:1px solid rgba(74,117,153,0.18)">
+                {s.spotlight.subsections.map((sub) => (
+                  <div class="flex items-start gap-4 py-4" style="border-bottom:1px solid rgba(74,117,153,0.18)">
+                    <span class="w-1.5 h-1.5 mt-2 shrink-0" style="background:#F75000" aria-hidden="true"></span>
+                    <div>
+                      <h3 class="font-display font-bold text-base leading-tight mb-1" style="color:#FFFFFF">{sub.name}</h3>
+                      <p class="text-xs leading-relaxed m-0" style="color:#64748B">{sub.detail}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <figure class="relative m-0">
+              <div class="relative overflow-hidden" style="border:1px solid rgba(74,117,153,0.25)">
+                <img src={s.spotlight.image} alt={s.spotlight.imageAlt} width="640" height="720" loading="lazy" decoding="async" class="w-full h-auto block" />
+                <div class="absolute top-0 left-0 w-12 h-12 pointer-events-none" style="border-top:3px solid #F75000;border-left:3px solid #F75000" aria-hidden="true"></div>
+                <div class="absolute bottom-0 right-0 w-12 h-12 pointer-events-none" style="border-bottom:3px solid #F75000;border-right:3px solid #F75000" aria-hidden="true"></div>
+              </div>
+              <figcaption class="flex items-center justify-between gap-3 mt-3 text-[10px] font-display font-semibold uppercase tracking-widest" style="color:#4A7599">
+                <span>{s.title}</span>
+                <span style="color:#FF8F57">{s.norm}</span>
+              </figcaption>
+            </figure>
+
           </div>
-          <figcaption class="flex items-center justify-between gap-3 mt-3 text-[10px] font-display font-semibold uppercase tracking-widest" style="color:#4A7599">
-            <span>{s.title}</span>
-            <span style="color:#FF8F57">{s.norm}</span>
-          </figcaption>
-        </figure>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ del servicio -->
-  <section class="section" style="background:#070E1A" aria-labelledby="faq-servicio-title">
-    <div class="container-site">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-start">
-        <div>
-          <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes</span>
-          <h2 id="faq-servicio-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
-            Lo que más nos preguntan<br/>
-            <span style="color:#F75000">sobre este servicio.</span>
-          </h2>
-          <p class="text-sm mt-4 leading-relaxed" style="color:#64748B">
-            ¿Tu duda no aparece? Escríbenos por WhatsApp y un especialista te responde
-            el mismo día hábil.
-          </p>
-          <a href={whatsappUrl(`Hola, tengo una duda sobre ${s.title.toLowerCase()}.`)} target="_blank" rel="noopener" class="btn btn-outline btn-sm mt-6">
-            Preguntar por WhatsApp
-          </a>
         </div>
 
-        <div style="border:1px solid rgba(74,117,153,0.2);background:#0C1825">
-          {s.faqs.map((faq) => (
-            <details class="faq-item group" style="border-bottom:1px solid rgba(74,117,153,0.15)">
-              <summary class="flex items-start justify-between gap-4 cursor-pointer select-none list-none p-6">
-                <h3 class="font-display font-semibold pr-2 group-open:text-[#FF6B26] m-0" style="color:#FFFFFF;font-size:0.875rem;line-height:1.375">
-                  {faq.q}
-                </h3>
-                <span class="faq-icon shrink-0 mt-0.5 w-5 h-5 flex items-center justify-center" style="border:1px solid rgba(74,117,153,0.3);color:#4A7599">
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg>
-                </span>
-              </summary>
-              <p class="px-6 pb-6 text-sm leading-relaxed" style="color:#64748B">{faq.a}</p>
-            </details>
+        <!-- FAQ del servicio -->
+        <div aria-labelledby="faq-servicio-title">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+            <div>
+              <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes</span>
+              <h2 id="faq-servicio-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+                Lo que más nos preguntan<br/>
+                <span style="color:#F75000">sobre este servicio.</span>
+              </h2>
+              <p class="text-sm mt-4 leading-relaxed" style="color:#64748B">
+                ¿Tu duda no aparece? Escríbenos por WhatsApp y un especialista te responde
+                el mismo día hábil.
+              </p>
+              <a href={whatsappUrl(`Hola, tengo una duda sobre ${s.title.toLowerCase()}.`)} target="_blank" rel="noopener" class="btn btn-outline btn-sm mt-6">
+                Preguntar por WhatsApp
+              </a>
+            </div>
+
+            <div style="border:1px solid rgba(74,117,153,0.2);background:#0C1825">
+              {s.faqs.map((faq) => (
+                <details class="faq-item group" style="border-bottom:1px solid rgba(74,117,153,0.15)">
+                  <summary class="flex items-start justify-between gap-4 cursor-pointer select-none list-none p-6">
+                    <h3 class="font-display font-semibold pr-2 group-open:text-[#FF6B26] m-0" style="color:#FFFFFF;font-size:0.875rem;line-height:1.375">
+                      {faq.q}
+                    </h3>
+                    <span class="faq-icon shrink-0 mt-0.5 w-5 h-5 flex items-center justify-center" style="border:1px solid rgba(74,117,153,0.3);color:#4A7599">
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg>
+                    </span>
+                  </summary>
+                  <p class="px-6 pb-6 text-sm leading-relaxed" style="color:#64748B">{faq.a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="flex flex-col gap-4 lg:sticky lg:top-20">
+
+        <!-- Bloque 1: Artículos sobre este servicio -->
+        {catArticulos.length > 0 && (
+          <div style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
+            <div class="px-4 py-3" style="background:#040A12;border-bottom:1px solid rgba(74,117,153,0.18)">
+              <span class="text-[9px] font-display font-bold uppercase tracking-widest" style="color:#4A7599">Artículos sobre este servicio</span>
+            </div>
+            <div class="flex flex-col">
+              {catArticulos.map((art, i) => (
+                <a href={art.href}
+                   class="flex flex-col gap-0.5 px-4 py-3 group transition-colors hover:bg-[#040A12]"
+                   style={`border-bottom:${i < catArticulos.length - 1 ? '1px solid rgba(74,117,153,0.1)' : 'none'}`}>
+                  <span class="text-xs font-display font-semibold leading-snug group-hover:text-[#F75000] transition-colors" style="color:#FFFFFF">{art.title}</span>
+                </a>
+              ))}
+            </div>
+            <div class="px-4 py-3" style="border-top:1px solid rgba(74,117,153,0.15)">
+              <a href="/blog" class="text-[10px] font-display font-semibold hover:text-[#FF6B26] transition-colors" style="color:#4A7599">
+                Ver todos los artículos →
+              </a>
+            </div>
+          </div>
+        )}
+
+        <!-- Bloque 2: Servicios relacionados -->
+        {serviciosRel.length > 0 && (
+          <div style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
+            <div class="px-4 py-3" style="background:#040A12;border-bottom:1px solid rgba(74,117,153,0.18)">
+              <span class="text-[9px] font-display font-bold uppercase tracking-widest" style="color:#4A7599">Servicios relacionados</span>
+            </div>
+            <div class="flex flex-col">
+              {serviciosRel.map((sv, i) => (
+                <a href={sv.href}
+                   class="flex flex-col gap-0.5 px-4 py-3 group transition-colors hover:bg-[#040A12]"
+                   style={`border-bottom:${i < serviciosRel.length - 1 ? '1px solid rgba(74,117,153,0.1)' : 'none'}`}>
+                  <span class="text-xs font-display font-semibold leading-snug group-hover:text-[#F75000] transition-colors" style="color:#FFFFFF">{sv.title}</span>
+                  <span class="text-[11px]" style="color:#64748B">{sv.norm}</span>
+                </a>
+              ))}
+            </div>
+            <div class="px-4 py-3" style="border-top:1px solid rgba(74,117,153,0.15)">
+              <a href="/servicios" class="text-[10px] font-display font-semibold hover:text-[#FF6B26] transition-colors" style="color:#4A7599">
+                Ver todos los servicios →
+              </a>
+            </div>
+          </div>
+        )}
+
+        <!-- Bloque 3: Productos que necesitas -->
+        {productosRel.length > 0 && (
+          <div style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
+            <div class="px-4 py-3" style="background:#040A12;border-bottom:1px solid rgba(74,117,153,0.18)">
+              <span class="text-[9px] font-display font-bold uppercase tracking-widest" style="color:#4A7599">Productos que necesitas</span>
+            </div>
+            <div class="flex flex-col">
+              {productosRel.map((pr, i) => (
+                <a href={pr.href}
+                   class="flex flex-col gap-0.5 px-4 py-3 group transition-colors hover:bg-[#040A12]"
+                   style={`border-bottom:${i < productosRel.length - 1 ? '1px solid rgba(74,117,153,0.1)' : 'none'}`}>
+                  <span class="text-xs font-display font-semibold leading-snug group-hover:text-[#F75000] transition-colors" style="color:#FFFFFF">{pr.label}</span>
+                  <span class="text-[11px]" style="color:#64748B">{pr.marcas}</span>
+                </a>
+              ))}
+            </div>
+            <div class="px-4 py-3" style="border-top:1px solid rgba(74,117,153,0.15)">
+              <a href="/productos" class="text-[10px] font-display font-semibold hover:text-[#FF6B26] transition-colors" style="color:#4A7599">
+                Ver catálogo completo →
+              </a>
+            </div>
+          </div>
+        )}
+
+        <!-- Bloque 4: CTA cotización -->
+        <div style="background:#F75000">
+          <div class="p-5 flex flex-col gap-3">
+            <p class="text-[10px] font-display font-bold uppercase tracking-widest" style="color:rgba(255,255,255,0.7)">¿Necesitas cotización?</p>
+            <p class="text-xs leading-relaxed" style="color:rgba(255,255,255,0.9)">Respuesta el mismo día hábil. Un especialista te atiende por WhatsApp.</p>
+            <a href={whatsappUrl(`Hola, quiero cotizar el servicio de ${s.title.toLowerCase()}.`)}
+               target="_blank" rel="noopener"
+               class="text-xs font-display font-bold uppercase tracking-wider py-2.5 px-4 text-center transition-colors"
+               style="background:#040A12;color:#FFFFFF">
+              Cotizar por WhatsApp
+            </a>
+            <a href="/cotizacion" class="text-[10px] text-center hover:opacity-80 transition-opacity" style="color:rgba(255,255,255,0.7)">
+              Cotización formal →
+            </a>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- Servicios relacionados (sección al fondo) -->
+  {serviciosRel.length > 0 && (
+    <section style="background:#040A12;border-top:1px solid rgba(74,117,153,0.15)" aria-labelledby="svs-rel-title">
+      <div class="container-site py-10 sm:py-12">
+        <p id="svs-rel-title" class="text-[9px] font-display font-bold uppercase tracking-widest mb-6" style="color:#4A7599">Servicios relacionados</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {serviciosRel.map((sv) => (
+            <a href={sv.href} class="group flex flex-col gap-2 p-5 transition-colors hover:border-[#F75000]"
+               style="background:#080F1A;border:1px solid rgba(74,117,153,0.2)">
+              <span class="text-sm font-display font-bold group-hover:text-[#F75000] transition-colors" style="color:#FFFFFF">{sv.title}</span>
+              <span class="text-xs leading-relaxed" style="color:#64748B">{sv.norm}</span>
+              <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Ver servicio →</span>
+            </a>
           ))}
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  )}
 
   <!-- Otros servicios (internal linking) -->
-  <section class="section-tight" style="background:#040A12" aria-labelledby="otros-title">
+  <section class="section-tight" style="background:#070E1A" aria-labelledby="otros-title">
     <div class="container-site">
       <h2 id="otros-title" class="font-display font-bold text-sm uppercase tracking-widest mb-6" style="color:#4A7599">
         Otros servicios
