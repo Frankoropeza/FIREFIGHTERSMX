@@ -5,35 +5,58 @@ const year = new Date().getFullYear();
 
 <footer class="bg-[var(--forge-900)] border-t border-[var(--color-border)]">
 
-  <!-- Barra superior naranja con CTA -->
-  <div class="bg-[var(--ember-500)]">
+  <!-- CTA Bar -->
+  <div class="bg-gradient-to-r from-[var(--ember-600)] to-[var(--ember-500)]">
     <div class="container-site py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="font-display font-bold text-white text-lg uppercase tracking-wider">
-        ¿Necesitas equipo certificado?
-      </p>
-      <div class="flex items-center gap-3">
-        <a href="/cotizacion" class="btn btn-sm bg-white text-[var(--ember-500)] hover:bg-[var(--ember-100)] border-white font-display">
+      <div>
+        <p class="font-display font-bold text-white text-lg uppercase tracking-wider">
+          ¿Necesitas equipo certificado?
+        </p>
+        <p class="text-white/80 text-sm hidden sm:block mt-0.5">
+          Respuesta en menos de 24 h · Envío a toda la república
+        </p>
+      </div>
+      <div class="flex items-center gap-3 shrink-0">
+        <a href="/cotizacion"
+           class="btn btn-sm bg-white text-[var(--ember-600)] hover:bg-[var(--ember-100)] border-white font-display font-bold">
           Solicitar cotización
         </a>
-        <a
-          href={`https://wa.me/${SITE.whatsapp}`}
-          target="_blank" rel="noopener"
-          class="btn btn-sm bg-[var(--ember-600)] hover:bg-[var(--ember-600)] text-white border-[var(--ember-600)] font-display"
-        >
+        <a href={`https://wa.me/${SITE.whatsapp}`} target="_blank" rel="noopener"
+           class="btn btn-sm bg-[var(--ember-700)] hover:bg-[var(--ember-800)] text-white border-transparent font-display flex items-center gap-2">
+          <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.112 1.522 5.843L.053 23.894a.5.5 0 00.617.608l6.218-1.633A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.741 9.741 0 01-4.964-1.354l-.356-.211-3.692.969.985-3.604-.232-.372A9.718 9.718 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/>
+          </svg>
           WhatsApp
         </a>
       </div>
     </div>
   </div>
 
-  <!-- Main -->
-  <div class="container-site py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-12">
+  <!-- Stats Bar -->
+  <div class="bg-[var(--forge-800)] border-b border-[var(--color-border)]">
+    <div class="container-site py-4 grid grid-cols-2 sm:grid-cols-4 divide-x divide-[var(--color-border)]">
+      {[
+        { val: '32',   label: 'Estados con cobertura' },
+        { val: '+15',  label: 'Años de experiencia'   },
+        { val: 'NFPA', label: 'Certificados'           },
+        { val: '24h',  label: 'Tiempo de respuesta'   },
+      ].map(({ val, label }) => (
+        <div class="flex flex-col items-center py-1 px-4 first:pl-0 last:pr-0">
+          <span class="font-display font-bold text-[var(--ember-400)] text-xl leading-none">{val}</span>
+          <span class="text-[var(--forge-300)] text-[11px] mt-1 text-center">{label}</span>
+        </div>
+      ))}
+    </div>
+  </div>
 
-    <!-- Brand -->
-    <div class="lg:col-span-2 flex flex-col gap-6">
-      <!-- Logo -->
+  <!-- Main Grid: 4 columnas equilibradas -->
+  <div class="container-site py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 xl:gap-12">
+
+    <!-- Col 1: Brand -->
+    <div class="flex flex-col gap-5">
       <a href="/" class="flex items-center gap-3 w-fit" aria-label="FIREFIGHTERS MX">
-        <div class="relative w-9 h-9 shrink-0">
+        <div class="w-9 h-9 shrink-0">
           <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
             <polygon points="18,2 32,10 32,26 18,34 4,26 4,10" fill="var(--ember-500)"/>
             <path d="M18 10c0 0-5 4-3 8 1 2 3 2 3 2s-1-2 0-4c1-2 3-2 3-2s-1 3 1 5c.8.8 1 2 1 2s2-1.5 2-4c0-3-2-5-2-5s1 2 0 4c0 0-2-4-5-6z" fill="white" opacity="0.95"/>
@@ -49,200 +72,222 @@ const year = new Date().getFullYear();
 
       <p class="text-sm leading-relaxed text-[var(--forge-200)]">
         Portal líder en México para equipos de bomberos y sistemas contra incendio.
-        Distribuidores autorizados con cobertura en los 32 estados.
-        Certificados NFPA y NOM-002-STPS.
+        Distribuidores autorizados con cobertura en los 32 estados, certificados
+        NFPA y NOM-002-STPS.
       </p>
 
-      <!-- Contact info -->
-      <div class="flex flex-col gap-2 text-sm text-[var(--forge-200)]">
-        <a href={`tel:${SITE.phoneE164}`} class="flex items-center gap-2 hover:text-[var(--ember-400)]">
-          <svg class="w-4 h-4 shrink-0 text-[var(--ember-500)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+      <!-- Contacto -->
+      <div class="flex flex-col gap-2.5 text-sm text-[var(--forge-200)]">
+        <a href={`tel:${SITE.phoneE164}`}
+           class="flex items-center gap-2.5 hover:text-[var(--ember-400)] transition-colors">
+          <svg class="w-4 h-4 shrink-0 text-[var(--ember-500)]" fill="none" viewBox="0 0 24 24"
+               stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
           </svg>
           {SITE.phone}
         </a>
-        <a href={`mailto:${SITE.email}`} class="flex items-center gap-2 hover:text-[var(--ember-400)]">
-          <svg class="w-4 h-4 shrink-0 text-[var(--ember-500)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+        <a href={`mailto:${SITE.email}`}
+           class="flex items-center gap-2.5 hover:text-[var(--ember-400)] transition-colors">
+          <svg class="w-4 h-4 shrink-0 text-[var(--ember-500)]" fill="none" viewBox="0 0 24 24"
+               stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
           </svg>
           {SITE.email}
         </a>
-        <span class="flex items-center gap-2 text-[var(--forge-300)]">
-          <svg class="w-4 h-4 shrink-0 text-[var(--forge-300)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <span class="flex items-center gap-2.5 text-[var(--forge-300)]">
+          <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24"
+               stroke="currentColor" stroke-width="2" aria-hidden="true">
             <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
           </svg>
           {SITE.hours}
         </span>
       </div>
 
-      <!-- Certificaciones -->
-      <div class="flex flex-wrap gap-2">
+      <!-- Redes sociales -->
+      <div class="flex items-center gap-2">
+        {[
+          { href: SITE.social.facebook,  label: 'Facebook',  icon: '<path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>' },
+          { href: SITE.social.instagram, label: 'Instagram', icon: '<rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>' },
+          { href: SITE.social.linkedin,  label: 'LinkedIn',  icon: '<path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>' },
+          { href: SITE.social.youtube,   label: 'YouTube',   icon: '<path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/>' },
+        ].map(({ href, label, icon }) => (
+          <a href={href} target="_blank" rel="noopener noreferrer"
+             class="w-8 h-8 flex items-center justify-center border border-[var(--color-border)] hover:border-[var(--ember-500)] hover:bg-[var(--ember-500)] hover:text-white text-[var(--forge-300)] transition-all"
+             aria-label={label}>
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24"
+                 stroke="currentColor" aria-hidden="true" set:html={icon}/>
+          </a>
+        ))}
+      </div>
+
+      <!-- Badges -->
+      <div class="flex flex-wrap gap-1.5">
         {['NFPA Certified','ISO 9001','NOM-002','STPS','UL Listed'].map(c => (
           <span class="badge badge-dark text-[10px]">{c}</span>
         ))}
       </div>
-
-      <!-- Social -->
-      <div class="flex items-center gap-2">
-        {[
-          { href: SITE.social.facebook, label:'Facebook', icon:'<path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>' },
-          { href: SITE.social.instagram, label:'Instagram', icon:'<rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>' },
-          { href: SITE.social.linkedin, label:'LinkedIn', icon:'<path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>' },
-          { href: SITE.social.youtube, label:'YouTube', icon:'<path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/>' },
-        ].map(({ href, label, icon }) => (
-          <a
-            href={href} target="_blank" rel="noopener noreferrer"
-            class="w-8 h-8 flex items-center justify-center border border-[var(--color-border)] hover:border-[var(--ember-500)] hover:text-[var(--ember-400)] text-[var(--forge-300)]"
-            aria-label={label}
-          >
-            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" set:html={icon}/>
-          </a>
-        ))}
-      </div>
     </div>
 
-    <!-- Productos -->
+    <!-- Col 2: Productos + Marcas -->
     <div>
-      <h4 class="font-display font-bold text-white text-xs uppercase tracking-[0.15em] mb-5 flex items-center gap-2">
-        <span class="w-3 h-[1px] bg-[var(--ember-500)]"></span>
-        Productos
-      </h4>
-      <ul class="flex flex-col gap-2 text-sm text-[var(--forge-200)]">
+      <h4 class="f-heading">Productos</h4>
+      <ul class="f-list">
         {([
-          { label: 'Trajes para Bomberos', href: '/productos/trajes-bombero' },
-          { label: 'Globe Manufacturing',  href: '/productos/trajes-bombero/globe-manufacturing', sub: true },
-          { label: 'Lion Apparel',         href: '/productos/trajes-bombero/lion-apparel',         sub: true },
-          { label: 'Honeywell Morning Pride', href: '/productos/trajes-bombero/honeywell-morning-pride', sub: true },
-          { label: 'Fire-Dex',              href: '/productos/trajes-bombero/fire-dex',              sub: true },
-          { label: 'Cascos NFPA',          href: '/productos/cascos-nfpa' },
-          { label: 'MSA Gallet',           href: '/productos/cascos-nfpa/msa-gallet', sub: true },
-          { label: 'Bullard',              href: '/productos/cascos-nfpa/bullard', sub: true },
-          { label: 'Cairns',               href: '/productos/cascos-nfpa/cairns', sub: true },
-          { label: 'Equipos SCBA',         href: '/productos/equipos-scba' },
-          { label: 'MSA G1',               href: '/productos/equipos-scba/msa-g1', sub: true },
-          { label: 'Dräger PSS 7000',      href: '/productos/equipos-scba/drager-pss', sub: true },
-          { label: '3M Scott Air-Pak NxG7', href: '/productos/equipos-scba/scott-air-pak', sub: true },
-          { label: 'Herramientas de Rescate', href: '/productos/herramientas-rescate' },
-          { label: 'Holmatro',             href: '/productos/herramientas-rescate/holmatro', sub: true },
-          { label: 'Hurst Jaws of Life',   href: '/productos/herramientas-rescate/hurst', sub: true },
-          { label: 'Weber Rescue',         href: '/productos/herramientas-rescate/weber-rescue', sub: true },
-          { label: 'Extintores',           href: '/productos/extintores' },
-          { label: 'PQS ABC',              href: '/productos/extintores/pqs-abc',        sub: true },
-          { label: 'CO₂',                  href: '/productos/extintores/co2',             sub: true },
-          { label: 'Especializados',       href: '/productos/extintores/especializados',  sub: true },
-          { label: 'Sobre Ruedas',         href: '/productos/extintores/sobre-ruedas',    sub: true },
-          { label: 'Sistemas CI',          href: '/productos/sistemas-ci' },
-          { label: 'Tyco Viking',          href: '/productos/sistemas-ci/tyco-viking',      sub: true },
-          { label: 'Honeywell Notifier',   href: '/productos/sistemas-ci/honeywell-notifier', sub: true },
-          { label: 'Kidde Fenwal',         href: '/productos/sistemas-ci/fm200-novec',      sub: true },
-          { label: 'Red Hidráulica',       href: '/productos/sistemas-ci/red-hidraulica',   sub: true },
-          { label: 'Cámaras Térmicas',     href: '/productos/camaras-termicas' },
-          { label: 'FLIR',                 href: '/productos/camaras-termicas/flir',           sub: true },
-          { label: 'MSA Evolution',        href: '/productos/camaras-termicas/msa-evolution',  sub: true },
-          { label: 'Bullard TXS',          href: '/productos/camaras-termicas/bullard-txs',    sub: true },
-          { label: 'Equipos HAZMAT',       href: '/productos/hazmat' },
-          { label: 'DuPont Tychem',        href: '/productos/hazmat/dupont-tychem',      sub: true },
-          { label: 'Lakeland Industries',  href: '/productos/hazmat/lakeland-chemmax',   sub: true },
-          { label: 'MSA Safety',           href: '/productos/hazmat/msa-deteccion',      sub: true },
-          { label: 'Kappler Zytron',       href: '/productos/hazmat/kappler',            sub: true },
-          { label: 'Drones de Emergencia', href: '/productos/drones-emergencia' },
-        ] as {label:string;href:string;sub?:boolean}[]).map(({ label, href, sub }) => (
-          <li class={sub ? 'pl-3' : ''} style={sub ? 'border-left:2px solid rgba(247,80,0,0.3)' : ''}>
-            <a
-              href={href}
-              class={`hover:text-[var(--ember-400)] ${sub ? 'text-xs' : ''}`}
-              style={sub ? 'color:var(--forge-400)' : ''}
-            >
-              {sub && <span class="mr-1" style="color:var(--ember-500)">›</span>}
-              {label}
-            </a>
-          </li>
+          ['Trajes para Bomberos',    '/productos/trajes-bombero'],
+          ['Cascos NFPA',             '/productos/cascos-nfpa'],
+          ['Equipos SCBA',            '/productos/equipos-scba'],
+          ['Herramientas de Rescate', '/productos/herramientas-rescate'],
+          ['Extintores',              '/productos/extintores'],
+          ['Sistemas CI',             '/productos/sistemas-ci'],
+          ['Cámaras Térmicas',        '/productos/camaras-termicas'],
+          ['Equipos HAZMAT',          '/productos/hazmat'],
+          ['Drones de Emergencia',    '/productos/drones-emergencia'],
+        ] as [string,string][]).map(([label, href]) => (
+          <li><a href={href} class="f-link">{label}</a></li>
+        ))}
+      </ul>
+
+      <h4 class="f-heading mt-8">Marcas Destacadas</h4>
+      <ul class="f-list">
+        {([
+          ['Globe Manufacturing',  '/productos/trajes-bombero/globe-manufacturing'],
+          ['MSA Safety',           '/marcas/msa'],
+          ['Honeywell',            '/marcas/honeywell'],
+          ['FLIR Systems',         '/marcas/flir'],
+          ['Holmatro',             '/productos/herramientas-rescate/holmatro'],
+          ['Dräger',               '/productos/equipos-scba/drager-pss'],
+          ['Ver todas las marcas', '/marcas'],
+        ] as [string,string][]).map(([label, href]) => (
+          <li><a href={href} class="f-link">{label}</a></li>
         ))}
       </ul>
     </div>
 
-    <!-- Servicios -->
+    <!-- Col 3: Servicios + Industrias -->
     <div>
-      <h4 class="font-display font-bold text-white text-xs uppercase tracking-[0.15em] mb-5 flex items-center gap-2">
-        <span class="w-3 h-[1px] bg-[var(--ember-500)]"></span>
-        Servicios
-      </h4>
-      <ul class="flex flex-col gap-2 text-sm text-[var(--forge-200)]">
-        {[
-          ['Capacitación','/servicios/capacitacion'],
-          ['Instalación CI','/servicios/instalacion-sistemas-ci'],
-          ['Mantenimiento','/servicios/mantenimiento'],
-          ['Auditoría NOM-002','/servicios/auditoria-seguridad'],
-          ['Brigadas Empresariales','/servicios/brigadas-empresariales'],
-          ['Licitaciones','/servicios/licitaciones'],
-        ].map(([label, href]) => (
-          <li>
-            <a href={href} class="hover:text-[var(--ember-400)]">{label}</a>
-          </li>
+      <h4 class="f-heading">Servicios</h4>
+      <ul class="f-list">
+        {([
+          ['Capacitación',             '/servicios/capacitacion'],
+          ['Instalación CI',           '/servicios/instalacion-sistemas-ci'],
+          ['Mantenimiento',            '/servicios/mantenimiento'],
+          ['Auditoría NOM-002',        '/servicios/auditoria-seguridad'],
+          ['Brigadas Empresariales',   '/servicios/brigadas-empresariales'],
+          ['Licitaciones Públicas',    '/servicios/licitaciones'],
+          ['Ver todos los servicios',  '/servicios'],
+        ] as [string,string][]).map(([label, href]) => (
+          <li><a href={href} class="f-link">{label}</a></li>
         ))}
       </ul>
 
-      <h4 class="font-display font-bold text-white text-xs uppercase tracking-[0.15em] mt-8 mb-5 flex items-center gap-2">
-        <span class="w-3 h-[1px] bg-[var(--ember-500)]"></span>
-        Industrias
-      </h4>
-      <ul class="flex flex-col gap-2 text-sm text-[var(--forge-200)]">
-        {[
-          ['Ver todas las industrias','/industrias'],
-          ['Bomberos Municipales','/industrias/bomberos-municipales'],
-          ['Brigadas Industriales','/industrias/brigadas-industriales'],
-          ['Aeropuertos ARFF','/industrias/aeropuertos-arff'],
-          ['Refinerías PEMEX','/industrias/refinerias-pemex'],
-          ['Hospitales','/industrias/hospitales'],
-          ['Hoteles y Turismo','/industrias/hoteles'],
-          ['Minería','/industrias/mineria'],
-          ['Protección Civil','/industrias/proteccion-civil'],
-        ].map(([label, href]) => (
-          <li>
-            <a href={href} class="hover:text-[var(--ember-400)]">{label}</a>
-          </li>
+      <h4 class="f-heading mt-8">Industrias</h4>
+      <ul class="f-list">
+        {([
+          ['Bomberos Municipales',  '/industrias/bomberos-municipales'],
+          ['Brigadas Industriales', '/industrias/brigadas-industriales'],
+          ['Aeropuertos ARFF',      '/industrias/aeropuertos-arff'],
+          ['Refinerías PEMEX',      '/industrias/refinerias-pemex'],
+          ['Hospitales',            '/industrias/hospitales'],
+          ['Minería',               '/industrias/mineria'],
+          ['Protección Civil',      '/industrias/proteccion-civil'],
+          ['Ver todas',             '/industrias'],
+        ] as [string,string][]).map(([label, href]) => (
+          <li><a href={href} class="f-link">{label}</a></li>
         ))}
       </ul>
     </div>
 
-    <!-- Empresa -->
+    <!-- Col 4: Empresa + Recursos -->
     <div>
-      <h4 class="font-display font-bold text-white text-xs uppercase tracking-[0.15em] mb-5 flex items-center gap-2">
-        <span class="w-3 h-[1px] bg-[var(--ember-500)]"></span>
-        Empresa
-      </h4>
-      <ul class="flex flex-col gap-2 text-sm text-[var(--forge-200)]">
-        {[
-          ['La Empresa','/empresa'],
-          ['Nosotros','/nosotros'],
-          ['Blog Técnico','/blog'],
-          ['Marcas','/marcas'],
-          ['Certificaciones','/certificaciones'],
-          ['Distribuidores','/distribuidores'],
-          ['Cobertura Nacional','/cobertura'],
-          ['Licitaciones','/licitaciones'],
-          ['Directorio de Estaciones','/estaciones'],
-          ['Contacto','/contacto'],
-          ['Cotizar','/cotizacion'],
-        ].map(([label, href]) => (
-          <li>
-            <a href={href} class="hover:text-[var(--ember-400)]">{label}</a>
-          </li>
+      <h4 class="f-heading">Empresa</h4>
+      <ul class="f-list">
+        {([
+          ['Nosotros',               '/nosotros'],
+          ['Certificaciones',        '/certificaciones'],
+          ['Distribuidores',         '/distribuidores'],
+          ['Cobertura Nacional',     '/cobertura'],
+          ['Directorio Estaciones',  '/estaciones'],
+          ['Contacto',               '/contacto'],
+          ['Cotizar',                '/cotizacion'],
+        ] as [string,string][]).map(([label, href]) => (
+          <li><a href={href} class="f-link">{label}</a></li>
+        ))}
+      </ul>
+
+      <h4 class="f-heading mt-8">Recursos</h4>
+      <ul class="f-list">
+        {([
+          ['Blog Técnico',     '/blog'],
+          ['Normativas NFPA',  '/blog/tag/nfpa'],
+          ['Normativas NOM',   '/blog/tag/nom'],
+          ['Casos de éxito',   '/blog/tag/casos-exito'],
+          ['Licitaciones',     '/licitaciones'],
+          ['Sitemap',          '/sitemap-index.xml'],
+        ] as [string,string][]).map(([label, href]) => (
+          <li><a href={href} class="f-link">{label}</a></li>
         ))}
       </ul>
     </div>
+
   </div>
 
-  <!-- Bottom -->
+  <!-- Bottom Bar -->
   <div class="border-t border-[var(--color-border)] py-5">
-    <div class="container-site flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[var(--forge-300)]">
+    <div class="container-site flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[var(--forge-400)]">
       <p>© {year} FIREFIGHTERS MX — Todos los derechos reservados.</p>
       <div class="flex items-center gap-4">
-        <a href="/aviso-privacidad" class="hover:text-[var(--slate-300)]">Aviso de Privacidad</a>
-        <a href="/terminos-condiciones" class="hover:text-[var(--slate-300)]">Términos</a>
-        <a href="/sitemap-index.xml" class="hover:text-[var(--slate-300)]">Sitemap</a>
+        <a href="/aviso-privacidad"    class="hover:text-[var(--forge-200)] transition-colors">Aviso de Privacidad</a>
+        <a href="/terminos-condiciones" class="hover:text-[var(--forge-200)] transition-colors">Términos y Condiciones</a>
+        <a href="/sitemap-index.xml"   class="hover:text-[var(--forge-200)] transition-colors">Sitemap</a>
       </div>
     </div>
   </div>
 
 </footer>
+
+<style>
+  /* Encabezados de sección en el footer */
+  .f-heading {
+    font-family: var(--font-display, sans-serif);
+    font-weight: 700;
+    color: white;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .f-heading::before {
+    content: '';
+    display: block;
+    width: 14px;
+    height: 2px;
+    background: var(--ember-500);
+    flex-shrink: 0;
+  }
+
+  /* Lista de links */
+  .f-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Link individual */
+  .f-link {
+    font-size: 0.875rem;
+    color: var(--forge-200);
+    transition: color 0.15s ease;
+    line-height: 1.4;
+  }
+  .f-link:hover {
+    color: var(--ember-400);
+  }
+</style>

@@ -149,6 +149,146 @@ const blogMapByTipo: Record<string, BlogLink[]> = {
 };
 const blogLinks = blogMapByTipo[estacion.tipo] ?? blogMapByTipo['Municipal'];
 
+/* ── Normativa por tipo de corporación ── */
+type NormaRow = { norma: string; area: string; descripcion: string };
+const normasByTipo: Record<string, NormaRow[]> = {
+  Municipal: [
+    { norma: 'NFPA 1970', area: 'EPP — Protección personal',    descripcion: 'Estándar consolidado de protección personal para bomberos estructurales, forestales y de proximidad' },
+    { norma: 'NFPA 1971', area: 'Traje estructural',             descripcion: 'Diseño, materiales y desempeño del traje de combate de incendios estructurales' },
+    { norma: 'NFPA 1981', area: 'SCBA / ERAR',                  descripcion: 'Aparatos de respiración autónoma de circuito abierto para uso en emergencias IDLH' },
+    { norma: 'NFPA 1851', area: 'Mantenimiento EPP',             descripcion: 'Selección, cuidado, mantenimiento y retiro de servicio del EPP estructural certificado' },
+    { norma: 'NOM-154-SCFI', area: 'Extintores portátiles',     descripcion: 'Especificaciones para extintores portátiles en México: diseño, fabricación y ensayo' },
+    { norma: 'NOM-002-STPS', area: 'Prevención de incendios',   descripcion: 'Condiciones de seguridad-prevención y protección contra incendios en centros de trabajo' },
+  ],
+  Estatal: [
+    { norma: 'NFPA 1970', area: 'EPP — Protección personal',    descripcion: 'Estándar de protección personal para bomberos estructurales y coordinaciones estatales' },
+    { norma: 'NFPA 1971', area: 'Traje estructural',             descripcion: 'Diseño y desempeño del traje de combate de incendios para corporaciones estatales' },
+    { norma: 'NFPA 1981', area: 'SCBA / ERAR',                  descripcion: 'Aparatos de respiración autónoma de circuito abierto para emergencias' },
+    { norma: 'LGPC',       area: 'Ley General de PC',            descripcion: 'Ley General de Protección Civil: marco de coordinación interinstitucional estatal' },
+    { norma: 'NOM-154-SCFI', area: 'Extintores portátiles',     descripcion: 'Especificaciones para extintores portátiles en México' },
+    { norma: 'NOM-002-STPS', area: 'Prevención de incendios',   descripcion: 'Condiciones de seguridad-prevención y protección contra incendios' },
+  ],
+  Voluntarios: [
+    { norma: 'NFPA 1970', area: 'EPP — Protección personal',    descripcion: 'Estándar de protección personal aplicable a cuerpos de bomberos voluntarios' },
+    { norma: 'NFPA 1971', area: 'Traje estructural',             descripcion: 'Diseño y desempeño del traje de bombero para combate de incendios estructurales' },
+    { norma: 'NFPA 1981', area: 'SCBA / ERAR',                  descripcion: 'Aparatos de respiración autónoma de circuito abierto certificados' },
+    { norma: 'NFPA 1143', area: 'Incendios de interfaz',         descripcion: 'Prevención de incendios en la interfaz urbano-forestal: clave para cuerpos voluntarios' },
+    { norma: 'NOM-154-SCFI', area: 'Extintores portátiles',     descripcion: 'Especificaciones para extintores portátiles en México' },
+    { norma: 'NOM-002-STPS', area: 'Prevención de incendios',   descripcion: 'Condiciones básicas de seguridad contra incendios en centros de trabajo' },
+  ],
+  PEMEX: [
+    { norma: 'NFPA 1081', area: 'Brigadas industriales',         descripcion: 'Estándar para brigadas de emergencias industriales y lucha contra incendio' },
+    { norma: 'NFPA 11',   area: 'Sistemas de espuma',            descripcion: 'Sistemas de espuma de baja, media y alta expansión para instalaciones de proceso' },
+    { norma: 'NFPA 30',   area: 'Líquidos inflamables',          descripcion: 'Código de líquidos inflamables y combustibles para almacenamiento seguro' },
+    { norma: 'NOM-005-STPS', area: 'Sustancias químicas',        descripcion: 'Manejo, transporte y almacenamiento de sustancias químicas peligrosas' },
+    { norma: 'API 2001',  area: 'Tanques de almacenamiento',     descripcion: 'Protección contraincendio en tanques de almacenamiento de petróleo y derivados' },
+    { norma: 'NOM-154-SCFI', area: 'Extintores portátiles',     descripcion: 'Especificaciones para extintores portátiles industriales' },
+  ],
+  Industrial: [
+    { norma: 'NFPA 1081', area: 'Brigadas industriales',         descripcion: 'Estándar para brigadas de emergencias en instalaciones industriales' },
+    { norma: 'NOM-002-STPS', area: 'Prevención de incendios',   descripcion: 'Condiciones de seguridad-prevención y protección contra incendios en centros de trabajo' },
+    { norma: 'NOM-005-STPS', area: 'Sustancias químicas',        descripcion: 'Manejo, transporte y almacenamiento de sustancias químicas peligrosas' },
+    { norma: 'NFPA 30',   area: 'Líquidos inflamables',          descripcion: 'Código de líquidos inflamables y combustibles en la industria' },
+    { norma: 'NFPA 704',  area: 'Identificación de peligros',    descripcion: 'Sistema de identificación de riesgos de materiales para respuesta a emergencias' },
+    { norma: 'NOM-154-SCFI', area: 'Extintores portátiles',     descripcion: 'Especificaciones para extintores portátiles' },
+  ],
+  CFE: [
+    { norma: 'NFPA 1081', area: 'Brigadas industriales',         descripcion: 'Brigadas de emergencias en instalaciones de generación y distribución eléctrica' },
+    { norma: 'NFPA 70E',  area: 'Seguridad eléctrica',           descripcion: 'Estándar de seguridad eléctrica en lugares de trabajo energizados' },
+    { norma: 'NOM-022-STPS', area: 'Electricidad estática',      descripcion: 'Seguridad en el aprovechamiento de la electricidad estática en procesos industriales' },
+    { norma: 'NFPA 30',   area: 'Combustibles',                  descripcion: 'Código de líquidos inflamables y combustibles en instalaciones de CFE' },
+    { norma: 'NOM-002-STPS', area: 'Prevención de incendios',   descripcion: 'Condiciones de seguridad-prevención y protección contra incendios' },
+    { norma: 'NOM-154-SCFI', area: 'Extintores portátiles',     descripcion: 'Especificaciones para extintores portátiles sin residuos para equipos eléctricos' },
+  ],
+  Aeropuerto: [
+    { norma: 'OACI Anexo 14', area: 'SSEI aeroportuario',        descripcion: 'Norma internacional para Servicios de Salvamento y Extinción de Incendios en aeropuertos' },
+    { norma: 'NFPA 403',  area: 'Equipos ARFF',                  descripcion: 'Equipamiento para Aircraft Rescue and Fire Fighting (ARFF) en aeropuertos' },
+    { norma: 'NFPA 412',  area: 'Espuma aeroportuaria',          descripcion: 'Evaluación de vehículos contraincendio con agentes espumógenos para aeropuertos' },
+    { norma: 'FAA AC 150/5210-6D', area: 'Formación ARFF',       descripcion: 'Programa de capacitación para personal de Rescate y Lucha Contra Incendios de Aeronaves' },
+    { norma: 'Circular AFAC', area: 'Aeronáutica Civil MX',      descripcion: 'Regulaciones AFAC para servicios de salvamento aeroportuario en México' },
+    { norma: 'NOM-154-SCFI', area: 'Extintores portátiles',     descripcion: 'Especificaciones para extintores portátiles en instalaciones aeroportuarias' },
+  ],
+};
+const normaTable: NormaRow[] = normasByTipo[estacion.tipo] ?? normasByTipo['Municipal'];
+
+/* ── Servicios categorizados (prioridad excluyente: cada item va a una sola categoría) ── */
+type CatServ = { titulo: string; color: string; items: string[] };
+function categorizarServicios(servicios: string[]): CatServ[] {
+  const matched = new Set<string>();
+  function cat(titulo: string, color: string, regex: RegExp): CatServ {
+    const items = servicios.filter(s => regex.test(s) && !matched.has(s));
+    items.forEach(s => matched.add(s));
+    return { titulo, color, items };
+  }
+  const grupos = [
+    cat('Extinción de incendios',              '#EF4444', /incendio|extinc|fuego|pastizal|forestal|combusti/i),
+    cat('Rescate y salvamento',                '#F75000', /rescate|salvam|vertical|confinado|atrapado|altura|extrication|minero|aeronáut/i),
+    cat('Materiales peligrosos',               '#F59E0B', /hazmat|derrame|gas|quím|peligros|tóxico|enjambre/i),
+    cat('Atención médica prehospitalaria',     '#34D399', /auxilio|médic|paramé|prehospital|atenc.*médic/i),
+    cat('Protección civil y formación',        '#60A5FA', /evacuac|protección.?civil|formación|capacit|coord|escuela/i),
+  ];
+  const resto = servicios.filter(s => !matched.has(s));
+  if (resto.length > 0) grupos.push({ titulo: 'Servicios adicionales', color: '#94A3B8', items: resto });
+  return grupos.filter(g => g.items.length > 0);
+}
+const catServicios: CatServ[] = categorizarServicios(estacion.servicios);
+
+/* ── Equipo con descripción por tipo ── */
+type EquipoDesc = { href: string; label: string; desc: string; norma: string };
+const equipoDescByTipo: Record<string, EquipoDesc[]> = {
+  Municipal: [
+    { href: '/productos/cascos-nfpa',         label: 'Cascos NFPA 1971',            norma: 'NFPA 1971',    desc: 'Casco de combate estructural con visor integrado, carcasa termoplástica y suspensión de 8 puntos certificado NFPA 1971/1972' },
+    { href: '/productos/trajes-bombero',       label: 'Trajes Estructurales',        norma: 'NFPA 1971',    desc: 'Ropa de protección personal bicapa y tricapa en fibra meta-aramida para combate de incendios estructurales' },
+    { href: '/productos/equipos-scba',         label: 'Equipos SCBA / ERAR',         norma: 'NFPA 1981',    desc: 'Equipos de respiración autónoma de circuito abierto con cilindros de 30 y 45 minutos certificados NFPA 1981' },
+    { href: '/productos/herramientas-rescate', label: 'Herramientas de Rescate',     norma: 'NFPA 1936',    desc: 'Sets hidráulicos y manuales de expansión y corte para rescate vehicular, extrication y espacios confinados' },
+    { href: '/productos/camaras-termicas',     label: 'Cámaras Térmicas',            norma: 'NFPA 1801',    desc: 'Cámaras de imagen térmica para búsqueda de víctimas en condiciones de humo y visibilidad cero' },
+    { href: '/productos/extintores',           label: 'Extintores NOM-154',          norma: 'NOM-154-SCFI', desc: 'Extintores portátiles Clase A, B, C y K con certificación NOM-154-SCFI para dotación municipal' },
+  ],
+  Estatal: [
+    { href: '/productos/cascos-nfpa',         label: 'Cascos NFPA 1971',            norma: 'NFPA 1971',    desc: 'Casco de combate estructural certificado NFPA 1971/1972 para coordinaciones estatales' },
+    { href: '/productos/trajes-bombero',       label: 'Trajes Estructurales',        norma: 'NFPA 1971',    desc: 'Traje de protección en meta-aramida para combate de incendios estructurales y forestales' },
+    { href: '/productos/equipos-scba',         label: 'Equipos SCBA / ERAR',         norma: 'NFPA 1981',    desc: 'Aparatos de respiración autónoma de circuito abierto certificados para emergencias estatales' },
+    { href: '/productos/herramientas-rescate', label: 'Herramientas de Rescate',     norma: 'NFPA 1936',    desc: 'Herramientas de rescate vehicular y espacios confinados para coordinaciones estatales' },
+    { href: '/productos/camaras-termicas',     label: 'Cámaras Térmicas',            norma: 'NFPA 1801',    desc: 'Cámaras termográficas para búsqueda de personas en ambientes con humo y calor' },
+    { href: '/productos/extintores',           label: 'Extintores NOM-154',          norma: 'NOM-154-SCFI', desc: 'Extintores portátiles NOM-154-SCFI para dotación de la corporación estatal' },
+  ],
+  Voluntarios: [
+    { href: '/productos/cascos-nfpa',         label: 'Cascos NFPA 1971',            norma: 'NFPA 1971',    desc: 'Casco de combero estructural certificado, ideal para dotación inicial de cuerpos voluntarios' },
+    { href: '/productos/trajes-bombero',       label: 'Trajes Estructurales',        norma: 'NFPA 1971',    desc: 'Traje de combate meta-aramida: el EPP esencial de toda brigada voluntaria activa' },
+    { href: '/productos/equipos-scba',         label: 'Equipos SCBA / ERAR',         norma: 'NFPA 1981',    desc: 'Cilindros de 30 minutos y máscaras certificadas: protección respiratoria básica de volcán' },
+    { href: '/productos/extintores',           label: 'Extintores NOM-154',          norma: 'NOM-154-SCFI', desc: 'Extintores portátiles clase múltiple para primera intervención de brigadas voluntarias' },
+    { href: '/productos/herramientas-rescate', label: 'Herramientas de Rescate',     norma: 'NFPA 1936',    desc: 'Herramientas ligeras de rescate vehicular para brigadas de primer respondiente voluntario' },
+  ],
+  PEMEX: [
+    { href: '/productos/sistemas-ci',          label: 'Sistemas Contraincendio',     norma: 'NFPA 1081',    desc: 'Redes fijas de rociadores, monitores y espuma para terminales e instalaciones de proceso' },
+    { href: '/productos/hazmat',               label: 'Equipo HAZMAT',               norma: 'NOM-005-STPS', desc: 'Trajes encapsulados, detectores multi-gas y equipos de decontaminación para hidrocarburos' },
+    { href: '/productos/equipos-scba',         label: 'Equipos SCBA / ERA',          norma: 'NFPA 1981',    desc: 'Equipos de respiración autónoma de circuito abierto para atmósferas IDLH en refinerías' },
+    { href: '/productos/extintores',           label: 'Extintores Industriales',     norma: 'NOM-154-SCFI', desc: 'Extintores de CO₂, polvo seco BC y espuma AFFF para instalaciones de combustibles' },
+    { href: '/productos/camaras-termicas',     label: 'Cámaras de Detección',        norma: 'NFPA 1801',    desc: 'Cámaras de imagen térmica para detección de puntos calientes en tuberías y tanques' },
+  ],
+  Industrial: [
+    { href: '/productos/sistemas-ci',          label: 'Sistemas Contraincendio',     norma: 'NFPA 1081',    desc: 'Sistemas fijos y móviles de extinción para plantas de manufactura e industria en general' },
+    { href: '/productos/hazmat',               label: 'Equipo HAZMAT',               norma: 'NOM-005-STPS', desc: 'EPP y equipos de respuesta a derrames y fugas de sustancias peligrosas' },
+    { href: '/productos/equipos-scba',         label: 'Equipos SCBA / ERA',          norma: 'NFPA 1981',    desc: 'Respiración autónoma para brigadas industriales en atmósferas peligrosas' },
+    { href: '/productos/extintores',           label: 'Extintores Industriales',     norma: 'NOM-154-SCFI', desc: 'Extintores portátiles Clase A, B, C y D para industria manufacturera y química' },
+    { href: '/productos/camaras-termicas',     label: 'Cámaras Térmicas',            norma: 'NFPA 1801',    desc: 'Cámaras termográficas para inspección de equipos eléctricos y detección de incendios incipientes' },
+  ],
+  CFE: [
+    { href: '/productos/sistemas-ci',          label: 'Sistemas CI Eléctricos',      norma: 'NFPA 1081',    desc: 'Sistemas de extinción para instalaciones de generación, transmisión y distribución eléctrica' },
+    { href: '/productos/hazmat',               label: 'Equipo HAZMAT',               norma: 'NOM-005-STPS', desc: 'Protección ante fugas de SF6, aceite dieléctrico y otros fluidos peligrosos en CFE' },
+    { href: '/productos/equipos-scba',         label: 'Equipos SCBA / ERA',          norma: 'NFPA 1981',    desc: 'Equipos de respiración autónoma para brigadas en subestaciones y plantas de generación' },
+    { href: '/productos/extintores',           label: 'Extintores CO₂',              norma: 'NOM-154-SCFI', desc: 'Extintores sin residuos de CO₂ y Halotron para equipos eléctricos y electrónicos sensibles' },
+  ],
+  Aeropuerto: [
+    { href: '/productos/sistemas-ci',          label: 'Sistemas ARFF / CI',          norma: 'NFPA 403',     desc: 'Vehículos y sistemas ARFF (Aircraft Rescue Fire Fighting) para aeropuertos categoría OACI' },
+    { href: '/productos/hazmat',               label: 'Equipo HAZMAT ARFF',          norma: 'OACI A14',     desc: 'Equipos de contención y decontaminación para derrames de combustible de aviación' },
+    { href: '/productos/equipos-scba',         label: 'Equipos SCBA / ERA',          norma: 'NFPA 1981',    desc: 'Aparatos de respiración para operaciones de rescate en cabina y extinción aeroportuaria' },
+    { href: '/productos/camaras-termicas',     label: 'Cámaras Térmicas ARFF',       norma: 'NFPA 1801',    desc: 'Cámaras de imagen térmica para localización de puntos calientes en aeronaves y pistas' },
+    { href: '/productos/extintores',           label: 'Extintores Aeroportuarios',   norma: 'NOM-154-SCFI', desc: 'Extintores de polvo BC, CO₂ y AFFF para instalaciones aeroportuarias' },
+  ],
+};
+const equipoDescs: EquipoDesc[] = equipoDescByTipo[estacion.tipo] ?? equipoDescByTipo['Municipal'];
+
 /* ── SEO ── */
 const seoTitle = estacion.nombre.length <= 38
   ? `${estacion.nombre} — ${estacion.ciudad}`
@@ -372,98 +512,232 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10">
 
         {/* ══ Columna principal (2/3) ══ */}
-        <div class="lg:col-span-2 flex flex-col gap-10">
+        <div class="lg:col-span-2 flex flex-col gap-14">
 
-          {/* ── Perfil / Descripción ── */}
-          {estacion.descripcion && (
-            <div id="perfil">
-              <div class="flex items-center gap-3 mb-4">
-                <div class="w-1 h-5 shrink-0" style="background:#F75000"></div>
-                <span class="font-display font-bold text-xs uppercase tracking-widest" style="color:#F75000">Perfil</span>
-              </div>
-              <div class="flex flex-col gap-4">
-                {estacion.descripcion.split('\n\n').map((parrafo) => (
-                  <p class="text-sm leading-[1.95] m-0" style="color:#94A3B8">{parrafo}</p>
+          {/* ── §1 Perfil institucional ── */}
+          <section aria-labelledby="perfil-h2">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-1 h-6 shrink-0" style="background:#F75000;border-radius:2px"></div>
+              <h2 id="perfil-h2" class="font-display font-bold m-0"
+                style="color:#FFFFFF;font-size:clamp(1.1rem,2vw,1.35rem);letter-spacing:-0.01em">
+                Perfil institucional
+              </h2>
+            </div>
+
+            {estacion.descripcion && (
+              <div class="flex flex-col gap-5 mb-8">
+                {estacion.descripcion.split('\n\n').map((p, i) => (
+                  <p class="text-sm leading-[1.95] m-0"
+                    style={i === 0 ? 'color:#CBD5E1;font-weight:450' : 'color:#94A3B8'}>{p}</p>
                 ))}
               </div>
-            </div>
-          )}
+            )}
 
-          {/* ── Stats operativos (cards visuales cuando existen) ── */}
+            <h3 class="font-display font-bold text-xs uppercase tracking-widest mb-3 m-0" style="color:#4A7599">
+              Ficha técnica institucional
+            </h3>
+            <div class="overflow-hidden" style="border:1px solid rgba(74,117,153,0.2)">
+              <table class="w-full text-sm" style="border-collapse:collapse">
+                <tbody>
+                  {([
+                    { campo: 'Denominación oficial',   valor: estacion.nombre },
+                    { campo: 'Tipo de corporación',    valor: cfg.label },
+                    { campo: 'Dependencia',            valor: estacion.operador ?? `Municipio de ${estacion.municipio}` },
+                    { campo: 'Ciudad cabecera',        valor: estacion.ciudad },
+                    { campo: 'Estado',                 valor: estado.nombre },
+                    { campo: 'Región',                 valor: estado.region },
+                    ...(estacion.fundacion ? [{ campo: 'Año de fundación', valor: String(estacion.fundacion) }] : []),
+                    ...(estacion.elementos ? [{ campo: 'Personal activo',  valor: `${estacion.elementos} elementos` }] : []),
+                    ...(estacion.estacionesFisicas ? [{ campo: 'Cuarteles operativos', valor: String(estacion.estacionesFisicas) }] : []),
+                    ...(estacion.unidades ? [{ campo: 'Flota vehicular',   valor: `${estacion.unidades} vehículos` }] : []),
+                    { campo: 'Número de emergencias',  valor: estacion.telefonoEmergencias ?? '911' },
+                  ] as { campo: string; valor: string }[]).map(({ campo, valor }, i) => (
+                    <tr style={`border-bottom:1px solid rgba(74,117,153,0.12);background:${i % 2 === 0 ? '#040A12' : '#060D16'}`}>
+                      <td class="px-4 py-3 text-xs font-medium whitespace-nowrap" style="color:#4A7599;width:38%">{campo}</td>
+                      <td class="px-4 py-3 text-sm" style="color:#CBD5E1">{valor}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          {/* ── §2 Capacidad operativa (condicional) ── */}
           {(estacion.elementos || estacion.estacionesFisicas || estacion.unidades) && (
-            <div>
-              <div class="flex items-center gap-3 mb-4">
-                <div class="w-1 h-5 shrink-0" style="background:#F75000"></div>
-                <span class="font-display font-bold text-xs uppercase tracking-widest" style="color:#F75000">Capacidad operativa</span>
+            <section aria-labelledby="operativa-h2">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-1 h-6 shrink-0" style="background:#F75000;border-radius:2px"></div>
+                <h2 id="operativa-h2" class="font-display font-bold m-0"
+                  style="color:#FFFFFF;font-size:clamp(1.1rem,2vw,1.35rem);letter-spacing:-0.01em">
+                  Capacidad operativa
+                </h2>
               </div>
-              <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              <div class={`grid gap-4 ${[estacion.elementos, estacion.estacionesFisicas, estacion.unidades].filter(Boolean).length === 1 ? 'grid-cols-1 max-w-xs' : [estacion.elementos, estacion.estacionesFisicas, estacion.unidades].filter(Boolean).length === 2 ? 'grid-cols-2' : 'grid-cols-2 sm:grid-cols-3'}`}>
                 {estacion.elementos && (
-                  <div class="flex flex-col gap-1 p-4" style="background:#040A12;border:1px solid rgba(74,117,153,0.18);border-top:2px solid #F75000">
-                    <span class="font-display font-bold text-3xl" style="color:#FFFFFF">{estacion.elementos}</span>
-                    <span class="text-xs uppercase tracking-wider" style="color:#4A7599">Personal activo</span>
+                  <div class="p-5 flex flex-col gap-2" style="background:#040A12;border:1px solid rgba(74,117,153,0.18);border-top:3px solid #F75000">
+                    <h3 class="font-display font-bold m-0 leading-none" style="color:#FFFFFF;font-size:2.5rem">{estacion.elementos}</h3>
+                    <p class="text-xs uppercase tracking-wider m-0" style="color:#F75000">Personal activo</p>
+                    <p class="text-[11px] leading-relaxed m-0" style="color:#64748B">Elementos en servicio activo incluyendo bomberos de carrera y personal operativo</p>
                   </div>
                 )}
                 {estacion.estacionesFisicas && (
-                  <div class="flex flex-col gap-1 p-4" style="background:#040A12;border:1px solid rgba(74,117,153,0.18);border-top:2px solid #4A7599">
-                    <span class="font-display font-bold text-3xl" style="color:#FFFFFF">{estacion.estacionesFisicas}</span>
-                    <span class="text-xs uppercase tracking-wider" style="color:#4A7599">Cuarteles</span>
+                  <div class="p-5 flex flex-col gap-2" style="background:#040A12;border:1px solid rgba(74,117,153,0.18);border-top:3px solid #4A7599">
+                    <h3 class="font-display font-bold m-0 leading-none" style="color:#FFFFFF;font-size:2.5rem">{estacion.estacionesFisicas}</h3>
+                    <p class="text-xs uppercase tracking-wider m-0" style="color:#4A7599">Cuarteles</p>
+                    <p class="text-[11px] leading-relaxed m-0" style="color:#64748B">Bases operativas que garantizan cobertura territorial en turnos de 24 horas</p>
                   </div>
                 )}
                 {estacion.unidades && (
-                  <div class="flex flex-col gap-1 p-4" style="background:#040A12;border:1px solid rgba(74,117,153,0.18);border-top:2px solid #34D399">
-                    <span class="font-display font-bold text-3xl" style="color:#FFFFFF">{estacion.unidades}</span>
-                    <span class="text-xs uppercase tracking-wider" style="color:#4A7599">Flota vehicular</span>
+                  <div class="p-5 flex flex-col gap-2" style="background:#040A12;border:1px solid rgba(74,117,153,0.18);border-top:3px solid #34D399">
+                    <h3 class="font-display font-bold m-0 leading-none" style="color:#FFFFFF;font-size:2.5rem">{estacion.unidades}</h3>
+                    <p class="text-xs uppercase tracking-wider m-0" style="color:#34D399">Vehículos</p>
+                    <p class="text-[11px] leading-relaxed m-0" style="color:#64748B">Autobombas, escaleras, unidades de rescate y vehículos de apoyo logístico</p>
                   </div>
                 )}
               </div>
-            </div>
+            </section>
           )}
 
-          {/* ── Servicios operativos ── */}
-          <div id="servicios">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="w-1 h-5 shrink-0" style="background:#F75000"></div>
-              <span class="font-display font-bold text-xs uppercase tracking-widest" style="color:#F75000">Servicios operativos</span>
+          {/* ── §3 Servicios de emergencia (categorizados) ── */}
+          <section aria-labelledby="servicios-h2">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-1 h-6 shrink-0" style="background:#F75000;border-radius:2px"></div>
+              <h2 id="servicios-h2" class="font-display font-bold m-0"
+                style="color:#FFFFFF;font-size:clamp(1.1rem,2vw,1.35rem);letter-spacing:-0.01em">
+                Servicios de emergencia
+              </h2>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2" style="border:1px solid rgba(74,117,153,0.18)">
-              {estacion.servicios.map((s, i) => (
-                <div class="flex items-start gap-3 p-4"
-                  style={[
-                    'background:#040A12',
-                    'border-bottom:1px solid rgba(74,117,153,0.12)',
-                    i % 2 === 0 ? 'border-right:1px solid rgba(74,117,153,0.12)' : '',
-                  ].filter(Boolean).join(';')}>
-                  <span class="shrink-0 font-display font-bold text-[11px] mt-0.5" style="color:#F75000;min-width:1.6rem">{String(i + 1).padStart(2, '0')}</span>
-                  <span class="text-sm leading-snug" style="color:#CBD5E1">{s}</span>
+            <p class="text-sm mb-6 m-0 leading-relaxed" style="color:#94A3B8">
+              Especialidades operativas de {estacion.nombre}, agrupadas por categoría conforme a los estándares NFPA y protocolos de protección civil aplicables.
+            </p>
+            <div class="flex flex-col gap-6">
+              {catServicios.map((cat) => (
+                <div>
+                  <h3 class="font-display font-semibold text-sm mb-3 flex items-center gap-2 m-0"
+                    style={`color:${cat.color}`}>
+                    <span class="w-2 h-2 rounded-full shrink-0 inline-block" style={`background:${cat.color}`}></span>
+                    {cat.titulo}
+                  </h3>
+                  <ul class="flex flex-col m-0 p-0 list-none" style="border:1px solid rgba(74,117,153,0.15)">
+                    {cat.items.map((s, i) => (
+                      <li class="flex items-start gap-3 px-4 py-3 text-sm"
+                        style={`color:#CBD5E1;background:#040A12;${i > 0 ? 'border-top:1px solid rgba(74,117,153,0.1)' : ''}`}>
+                        <span class="shrink-0 mt-1.5 w-1 h-1 rounded-full" style={`background:${cat.color}`}></span>
+                        {s}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               ))}
             </div>
-          </div>
+          </section>
 
-          {/* ── Certificaciones ── */}
-          {estacion.certificaciones && estacion.certificaciones.length > 0 && (
-            <div id="certificaciones">
-              <div class="flex items-center gap-3 mb-4">
-                <div class="w-1 h-5 shrink-0" style="background:#34D399"></div>
-                <span class="font-display font-bold text-xs uppercase tracking-widest" style="color:#34D399">Certificaciones</span>
-              </div>
-              <div class="flex flex-wrap gap-2">
-                {estacion.certificaciones.map((c) => (
-                  <span class="inline-flex items-center gap-1.5 font-display text-[11px] uppercase tracking-wider px-3 py-1.5"
-                    style="color:#34D399;background:rgba(52,211,153,0.08);border:1px solid rgba(52,211,153,0.25)">
-                    <span class="w-3 h-3" set:html={checkIcon} aria-hidden="true"/>{c}
-                  </span>
-                ))}
-              </div>
+          {/* ── §4 Normativa y estándares aplicables ── */}
+          <section aria-labelledby="normativa-h2">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-1 h-6 shrink-0" style="background:#4A7599;border-radius:2px"></div>
+              <h2 id="normativa-h2" class="font-display font-bold m-0"
+                style="color:#FFFFFF;font-size:clamp(1.1rem,2vw,1.35rem);letter-spacing:-0.01em">
+                Normativa y estándares aplicables
+              </h2>
             </div>
-          )}
+            <p class="text-sm mb-5 m-0 leading-relaxed" style="color:#94A3B8">
+              Marco normativo de referencia para la dotación de equipamiento en corporaciones {cfg.label.toLowerCase()} en México.
+              Incluye estándares NFPA internacionales y Normas Oficiales Mexicanas (NOM) vigentes.
+            </p>
+            <div class="overflow-x-auto" style="border:1px solid rgba(74,117,153,0.2)">
+              <table class="w-full" style="border-collapse:collapse;min-width:520px">
+                <thead>
+                  <tr style="background:#040A12;border-bottom:2px solid rgba(74,117,153,0.3)">
+                    <th class="px-4 py-3 text-left text-[10px] font-bold uppercase tracking-wider" style="color:#4A7599;width:18%">Norma</th>
+                    <th class="px-4 py-3 text-left text-[10px] font-bold uppercase tracking-wider" style="color:#4A7599;width:30%">Área de aplicación</th>
+                    <th class="px-4 py-3 text-left text-[10px] font-bold uppercase tracking-wider" style="color:#4A7599">Descripción</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {normaTable.map((row, i) => (
+                    <tr style={`border-bottom:1px solid rgba(74,117,153,0.1);background:${i % 2 === 0 ? '#040A12' : '#060D16'}`}>
+                      <td class="px-4 py-3">
+                        <h4 class="font-display font-bold text-xs m-0" style="color:#F75000">{row.norma}</h4>
+                      </td>
+                      <td class="px-4 py-3 text-xs font-medium" style="color:#CBD5E1">{row.area}</td>
+                      <td class="px-4 py-3 text-xs leading-relaxed" style="color:#64748B">{row.descripcion}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            {estacion.certificaciones && estacion.certificaciones.length > 0 && (
+              <div class="mt-5">
+                <h3 class="font-display font-bold text-xs uppercase tracking-widest mb-3 m-0" style="color:#34D399">
+                  Certificaciones activas
+                </h3>
+                <div class="flex flex-wrap gap-2">
+                  {estacion.certificaciones.map((c) => (
+                    <span class="inline-flex items-center gap-1.5 font-display text-[11px] uppercase tracking-wider px-3 py-1.5"
+                      style="color:#34D399;background:rgba(52,211,153,0.08);border:1px solid rgba(52,211,153,0.25)">
+                      <span class="w-3 h-3" set:html={checkIcon} aria-hidden="true"/>{c}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+          </section>
 
-          {/* ── Mapa de ubicación ── */}
+          {/* ── §5 Equipamiento certificado NFPA ── */}
+          <section aria-labelledby="equipo-h2">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-1 h-6 shrink-0" style="background:#F75000;border-radius:2px"></div>
+              <h2 id="equipo-h2" class="font-display font-bold m-0"
+                style="color:#FFFFFF;font-size:clamp(1.1rem,2vw,1.35rem);letter-spacing:-0.01em">
+                Equipamiento certificado NFPA para corporaciones {cfg.label.toLowerCase()}
+              </h2>
+            </div>
+            <p class="text-sm mb-6 m-0 leading-relaxed" style="color:#94A3B8">
+              FIREFIGHTERS MX distribuye en {estado.nombre} equipo certificado NFPA con disponibilidad inmediata, documentación técnica lista para CompraNet y licitaciones públicas, y entrega en menos de 5 días hábiles.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
+              {equipoDescs.map((eq) => (
+                <a href={eq.href}
+                  class="flex flex-col gap-2 p-5 transition-colors group"
+                  style="background:#040A12;border:1px solid rgba(74,117,153,0.18);text-decoration:none">
+                  <div class="flex items-start justify-between gap-3">
+                    <h3 class="font-display font-bold text-sm m-0 leading-snug group-hover:text-[#FF6B26] transition-colors"
+                      style="color:#CBD5E1">{eq.label}</h3>
+                    <span class="font-display font-bold text-[9px] uppercase tracking-wider shrink-0 px-1.5 py-0.5"
+                      style="color:#F75000;background:rgba(247,80,0,0.1);border:1px solid rgba(247,80,0,0.2);white-space:nowrap">
+                      {eq.norma}
+                    </span>
+                  </div>
+                  <p class="text-xs leading-relaxed m-0" style="color:#64748B">{eq.desc}</p>
+                  <span class="text-xs mt-auto transition-colors group-hover:text-[#FF6B26]" style="color:#4A7599">
+                    Ver productos →
+                  </span>
+                </a>
+              ))}
+            </div>
+            <div class="p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3"
+              style="background:#040A12;border:1px solid rgba(247,80,0,0.2)">
+              <p class="text-xs m-0" style="color:#94A3B8">
+                ¿Necesitas cotización formal para licitación en {estado.nombre}?
+                Preparamos la documentación técnica en menos de 24 horas.
+              </p>
+              <a href={whatsappUrl(waMsg)} target="_blank" rel="noopener noreferrer"
+                class="btn btn-primary shrink-0" style="font-size:0.75rem;padding:0.5rem 1.25rem">
+                Cotizar ahora →
+              </a>
+            </div>
+          </section>
+
+          {/* ── §6 Infraestructura y ubicación ── */}
           {hasMap && (
-            <div id="ubicacion">
-              <div class="flex items-center gap-3 mb-4">
-                <div class="w-1 h-5 shrink-0" style="background:#4A7599"></div>
-                <span class="font-display font-bold text-xs uppercase tracking-widest" style="color:#4A7599">Ubicación</span>
+            <section aria-labelledby="ubicacion-h2">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-1 h-6 shrink-0" style="background:#4A7599;border-radius:2px"></div>
+                <h2 id="ubicacion-h2" class="font-display font-bold m-0"
+                  style="color:#FFFFFF;font-size:clamp(1.1rem,2vw,1.35rem);letter-spacing:-0.01em">
+                  Infraestructura y ubicación
+                </h2>
               </div>
               <div class="overflow-hidden" style="border:1px solid rgba(74,117,153,0.25)">
                 <div
@@ -476,37 +750,43 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                   aria-label={`Mapa de ubicación de ${estacion.nombre}`}
                 ></div>
               </div>
-              {estacion.direccion && (
-                <p class="text-xs mt-2 flex items-start gap-1.5" style="color:#4A7599">
+              {estacion.direccion ? (
+                <p class="text-xs mt-3 flex items-start gap-1.5 m-0" style="color:#4A7599">
                   <span class="w-3.5 h-3.5 shrink-0 mt-0.5" set:html={pinIcon} aria-hidden="true"/>
                   {estacion.direccion}
                 </p>
-              )}
-              {!estacion.direccion && (
-                <p class="text-[11px] mt-2" style="color:#4A7599">
-                  Ubicación aproximada con fines de referencia. Coordenadas: {mapLat}, {mapLng}.
+              ) : (
+                <p class="text-[11px] mt-2 m-0" style="color:#4A7599">
+                  Ubicación de referencia. Coordenadas: {mapLat}, {mapLng}.
                 </p>
               )}
-            </div>
+            </section>
           )}
 
-          {/* ── Fuentes oficiales ── */}
+          {/* ── §7 Fuentes oficiales ── */}
           {estacion.fuentes && estacion.fuentes.length > 0 && (
-            <div id="fuentes">
+            <section aria-labelledby="fuentes-h2">
               <div class="flex items-center gap-3 mb-4">
-                <div class="w-1 h-5 shrink-0" style="background:#4A7599"></div>
-                <span class="font-display font-bold text-xs uppercase tracking-widest" style="color:#4A7599">Fuentes oficiales</span>
+                <div class="w-1 h-6 shrink-0" style="background:#4A7599;border-radius:2px"></div>
+                <h2 id="fuentes-h2" class="font-display font-bold m-0"
+                  style="color:#FFFFFF;font-size:clamp(1.1rem,2vw,1.35rem);letter-spacing:-0.01em">
+                  Fuentes oficiales
+                </h2>
               </div>
+              <p class="text-xs mb-4 m-0 leading-relaxed" style="color:#64748B">
+                Información verificada con fuentes de gobierno y registros documentales públicos.
+                Última verificación: {verif ?? 'reciente'}.
+              </p>
               <div class="flex flex-col gap-2 p-4" style="background:#040A12;border:1px solid rgba(74,117,153,0.18)">
                 {estacion.fuentes.map((f, i) => (
                   <div class="flex items-start gap-2.5">
-                    <span class="font-display text-[10px] font-bold shrink-0 mt-1" style="color:#4A7599">{String(i + 1).padStart(2,'0')}</span>
+                    <span class="font-display text-[10px] font-bold shrink-0 mt-0.5" style="color:#4A7599">{String(i + 1).padStart(2,'0')}</span>
                     <a href={f} target="_blank" rel="noopener noreferrer nofollow"
                       class="text-xs break-all transition-colors hover:text-[#FF6B26]" style="color:#4A7599">{f}</a>
                   </div>
                 ))}
               </div>
-            </div>
+            </section>
           )}
 
         </div>
