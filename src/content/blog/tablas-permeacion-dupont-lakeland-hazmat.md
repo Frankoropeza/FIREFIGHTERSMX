@@ -1,6 +1,6 @@
 ---
 title: "Tablas de Permeación Química: DuPont Tychem vs Lakeland ChemMax"
-description: "Cómo leer e interpretar las tablas de permeación química de DuPont Tychem y Lakeland ChemMax para seleccionar el traje HAZMAT correcto. Datos reales para 5 químicos"
+description: "Cómo leer tablas de permeación química DuPont Tychem y Lakeland ChemMax para seleccionar el traje HAZMAT correcto. Datos reales para 5 químicos clave."
 pubDate: 2026-03-01
 updatedDate: 2026-06-25
 author: "Ing. Marco García"
@@ -23,7 +23,7 @@ El tolueno (CAS 108-88-3) empieza a permearse el Tyvek en menos de cinco minutos
 
 El tolueno es un depresor del sistema nervioso central. Los síntomas iniciales —leve mareo, sensación de bienestar, respuesta lenta— se confunden fácilmente con el cansancio normal después de una operación en EPP completo con calor. Las cefaleas y la confusión aparecen entre 30 y 90 minutos después del inicio de la exposición. La exposición prolongada o alta concentración puede producir pérdida del conocimiento. Y aquí el dato que realmente importa: la absorción dérmica de tolueno continúa después de salir de la zona, porque el químico ya está en el cuerpo.
 
-Una tabla de permeación disponible antes de esa decisión habría mostrado en negro sobre blanco que el Tyvek tiene un tiempo de ruptura para tolueno de menos de cinco minutos. Habría mostrado que el Tychem 10000 o el ChemMax 4 dan entre 30 y 60 minutos —suficiente para esa operación, con protocolo correcto y rotación de equipos—. La decisión hubiera sido diferente. Los técnicos hubieran estado protegidos.
+Una tabla de permeación disponible antes de esa decisión habría mostrado en negro sobre blanco que el Tyvek tiene un tiempo de ruptura para tolueno de menos de cinco minutos. Habría mostrado que el [Tychem 10000](/productos/hazmat/dupont-tychem) o el [ChemMax 4](/productos/hazmat/lakeland-chemmax) dan entre 30 y 60 minutos —suficiente para esa operación, con protocolo correcto y rotación de equipos—. La decisión hubiera sido diferente. Los técnicos hubieran estado protegidos.
 
 La tabla existía. Nadie la consultó.
 
@@ -57,7 +57,7 @@ Para las plantas de amoniaco en Monterrey y Nuevo León, el CAS es 7664-41-7. Pa
 
 **Paso 2: Localiza la columna de tu material.**
 
-En las tablas de DuPont, las columnas corresponden a los materiales de la línea Tychem: Tychem 2000 (antes QC), Tychem 4000 (antes SL), Tychem 6000 (antes TK), Tychem 10000 (antes BR). En Lakeland, son ChemMax 1, 2, 3 y 4. El nombre comercial del traje que tienes en bodega aparece en la etiqueta; el material correspondiente en la tabla es lo que importa.
+En las tablas de [DuPont Tychem](/productos/hazmat/dupont-tychem), las columnas corresponden a los materiales de la línea Tychem: Tychem 2000 (antes QC), Tychem 4000 (antes SL), Tychem 6000 (antes TK), Tychem 10000 (antes BR). En [Lakeland ChemMax](/productos/hazmat/lakeland-chemmax), son ChemMax 1, 2, 3 y 4. El nombre comercial del traje que tienes en bodega aparece en la etiqueta; el material correspondiente en la tabla es lo que importa.
 
 No asumas que "Nivel B" o "Nivel A" te dice el material. Te dice la configuración de protección respiratoria y salpicaduras. Un técnico con Tychem 6000 y SCBA y un técnico con Tyvek y SCBA son ambos "Nivel B". Sus permeaciones para tolueno son radicalmente diferentes.
 
@@ -161,3 +161,19 @@ Noventa segundos.
 ---
 
 *Referencias técnicas: ASTM F739 Standard Test Method for Permeation of Liquids and Gases through Protective Clothing Materials under Conditions of Continuous Contact — DuPont Tychem Chemical Resistance Guide (edición vigente, disponible en dupont.com/personal-protection) — Lakeland Industries ChemMax Chemical Resistance Database (lakeland.com) — NIOSH Pocket Guide to Chemical Hazards — NOM-018-STPS-2015 (Sistema Armonizado para la Identificación y Comunicación de Peligros y Riesgos de Sustancias Químicas Peligrosas) — Guía de Criterios ASEA para Selección de EPP en Instalaciones Reguladas.*
+
+---
+
+## Artículos relacionados
+
+- [Niveles de Protección HAZMAT según la EPA](/blog/niveles-proteccion-hazmat-epa-abc) — cuándo usar Nivel A, B, C o D y cómo tomar la decisión en campo
+- [Detectores de Gas para Bomberos: MSA, Industrial Scientific y Dräger](/blog/detectores-gas-bomberos-msa-industrial-scientific-draeger) — cómo confirmar concentraciones antes de seleccionar nivel de protección
+- [Guía de Compra de Equipo para Bomberos NFPA México 2026](/blog/guia-compra-equipo-bomberos-nfpa-mexico-2026) — criterios técnicos y presupuestales para adquisiciones completas de EPP
+
+---
+
+## Catálogo Equipos HAZMAT en FIREFIGHTERS MX
+
+Ofrecemos trajes DuPont Tychem, Lakeland ChemMax y Kappler Zytron con tablas de permeación actualizadas para los químicos más frecuentes en la industria mexicana. Nuestro equipo técnico puede ayudarte a seleccionar el material correcto para tu agente específico antes de que firmes cualquier orden de compra.
+
+[Ver catálogo completo de Equipos HAZMAT](/productos/hazmat) · [Solicitar cotización](/cotizacion)
