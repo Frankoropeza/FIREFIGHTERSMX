@@ -47,8 +47,10 @@ const localBusinessSchema = {
   areaServed: { '@type': 'Country', name: 'México' },
   address: {
     '@type': 'PostalAddress',
-    addressLocality: 'Ciudad de México',
-    addressCountry: 'MX',
+    streetAddress: SITE.address.street,
+    addressLocality: `${SITE.address.colonia}, ${SITE.address.delegacion}`,
+    postalCode: SITE.address.postalCode,
+    addressCountry: SITE.address.country,
   },
   knowsAbout: [
     // Normas NFPA — EPP y sistemas
