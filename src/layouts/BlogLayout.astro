@@ -37,6 +37,11 @@ const articleSchema = {
   ogImage={image?.url}
   schema={articleSchema}
 >
+  <!-- LCP preload hint -->
+  {image?.url && (
+    <link slot="head" rel="preload" as="image" href={image.url} fetchpriority="high" />
+  )}
+
   <!-- Breadcrumb -->
   <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
     <div class="container-site">
@@ -89,6 +94,8 @@ const articleSchema = {
             alt={image.alt}
             class="w-full aspect-video object-cover"
             loading="eager"
+            fetchpriority="high"
+            decoding="async"
             width="800"
             height="450"
           />

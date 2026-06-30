@@ -6,7 +6,7 @@ brand: "MSA Safety"
 model: "MSA G1"
 norm: "NFPA 1970"
 sku: "MSA-G1-30-001"
-image: "/images/productos/msa-g1-scba.webp"
+image: "/images/productos/msa-g1-scba.avif"
 features:
   - "Certificación NFPA 1970 — Edición vigente"
   - "Cilindro de fibra de carbono 45-min o 30-min a 4500 psi (310 bar)"

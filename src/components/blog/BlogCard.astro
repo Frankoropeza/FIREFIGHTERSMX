@@ -36,6 +36,7 @@ const readingTime = Math.ceil(post.body.split(' ').length / 200);
         alt={image.alt}
         class="w-full h-full object-cover"
         loading="lazy"
+        decoding="async"
         width="600"
         height="338"
         style={featured ? 'min-height:240px' : 'height:180px'}

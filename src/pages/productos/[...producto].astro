@@ -550,6 +550,7 @@ const seoDesc  = `${product.description} Distribuidor autorizado ${product.brand
                       alt={`${img.alt} — ${product.norm ?? product.category}`}
                       width="400" height="300"
                       loading={i === 0 ? 'eager' : 'lazy'}
+                      fetchpriority={i === 0 ? 'high' : 'auto'}
                       decoding="async"
                       class="w-full block transition-transform group-hover:scale-105"
                       style="aspect-ratio:4/3;object-fit:cover;object-position:center"
