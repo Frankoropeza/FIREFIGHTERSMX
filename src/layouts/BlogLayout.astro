@@ -23,7 +23,7 @@ const articleSchema = {
   publisher: {
     '@type': 'Organization',
     name: 'FIREFIGHTERS MX',
-    logo: { '@type': 'ImageObject', url: 'https://firefighters.mx/logo.png' },
+    logo: { '@type': 'ImageObject', url: 'https://firefighters.mx/logo.png', width: 512, height: 512 },
   },
   datePublished: pubDate.toISOString(),
   dateModified: (updatedDate ?? pubDate).toISOString(),

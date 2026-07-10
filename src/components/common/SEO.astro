@@ -21,7 +21,26 @@ const {
 } = Astro.props;
 
 const fullTitle = title.includes('FIREFIGHTERS MX') ? title : `${title} | FIREFIGHTERS MX`;
-const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `https://firefighters.mx${ogImage}`;
+const absoluteOgImageRaw = ogImage.startsWith('http') ? ogImage : `https://firefighters.mx${ogImage}`;
+
+// OG requiere formatos universales (WhatsApp/Facebook/Twitter no soportan AVIF/WebP):
+// si la imagen resuelta es .avif/.webp, usar su espejo JPEG 1200×630 en /images/og/
+// (naming aplanado dir-a-guiones, generado en public/images/og/).
+const ogPathname = absoluteOgImageRaw.startsWith('http')
+  ? new URL(absoluteOgImageRaw).pathname
+  : absoluteOgImageRaw;
+const ogExt = (ogPathname.split('.').pop() ?? '').toLowerCase();
+const needsJpegMirror = ogExt === 'avif' || ogExt === 'webp';
+const ogFlatName = ogPathname
+  .replace(/^\//, '')
+  .replace(/^images\//, '')
+  .replace(/\.(avif|webp)$/i, '')
+  .split('/')
+  .join('-');
+const absoluteOgImage = needsJpegMirror
+  ? `https://firefighters.mx/images/og/${ogFlatName}.jpg`
+  : absoluteOgImageRaw;
+const ogMimeType = absoluteOgImage.toLowerCase().endsWith('.png') ? 'image/png' : 'image/jpeg';
 
 const schemas = Array.isArray(schema) ? schema : schema ? [schema] : [];
 
@@ -31,7 +50,12 @@ const orgSchema = {
   '@type': 'Organization',
   name: 'FIREFIGHTERS MX',
   url: 'https://firefighters.mx',
-  logo: 'https://firefighters.mx/logo.png',
+  logo: {
+    '@type': 'ImageObject',
+    url: 'https://firefighters.mx/logo.png',
+    width: 512,
+    height: 512,
+  },
   email: SITE.email,
   address: {
     '@type': 'PostalAddress',
@@ -73,6 +97,8 @@ const orgSchema = {
 <meta property="og:image" content={absoluteOgImage} />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
+<meta property="og:image:type" content={ogMimeType} />
+<meta property="og:image:alt" content={fullTitle} />
 <meta property="og:site_name" content="FIREFIGHTERS MX" />
 <meta property="og:locale" content="es_MX" />
 
