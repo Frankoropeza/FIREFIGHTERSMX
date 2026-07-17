@@ -68,7 +68,7 @@ const readingTime = Math.ceil((post.body ?? '').split(' ').length / 200);
 
     {tags && tags.length > 0 && (
       <div class="flex flex-wrap gap-1.5 pt-1">
-        {tags.slice(0, featured ? 4 : 2).map((tag) => (
+        {tags.slice(0, featured ? 4 : 2).map((tag: string) => (
           <span class="badge badge-dark text-[10px]">{tag}</span>
         ))}
       </div>

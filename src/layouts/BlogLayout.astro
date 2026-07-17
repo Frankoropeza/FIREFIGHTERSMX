@@ -61,7 +61,7 @@ const articleSchema = {
       <!-- Meta -->
       <div class="flex flex-wrap items-center gap-2 mb-6">
         <span class="badge badge-fire">{category}</span>
-        {tags?.map((tag) => (
+        {tags?.map((tag: string) => (
           <a href={`/blog/tag/${slugifyTag(tag)}`} class="badge badge-dark hover:text-[#FF6B26]">{tag}</a>
         ))}
       </div>
