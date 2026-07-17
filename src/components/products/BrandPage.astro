@@ -345,7 +345,7 @@ const faqSchema = {
         </thead>
         <tbody>
           {(brand.comparativa ?? []).map((row, i) => {
-            const meta = tipoEquipo[row.tipo] ?? { color: '#94A3B8', icon: '' };
+            const meta = (row.tipo ? tipoEquipo[row.tipo] : undefined) ?? { color: '#94A3B8', icon: '', label: '' };
             return (
               <tr style={`background:${i % 2 === 0 ? '#080F1A' : '#0A1320'}`}>
                 <td class="p-4 font-display font-bold text-sm" style="color:#FFFFFF;border-bottom:1px solid rgba(74,117,153,0.10)">

@@ -778,13 +778,17 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                 Última verificación: {verif ?? 'reciente'}.
               </p>
               <div class="flex flex-col gap-2 p-4" style="background:#040A12;border:1px solid rgba(74,117,153,0.18)">
-                {estacion.fuentes.map((f, i) => (
-                  <div class="flex items-start gap-2.5">
-                    <span class="font-display text-[10px] font-bold shrink-0 mt-0.5" style="color:#4A7599">{String(i + 1).padStart(2,'0')}</span>
-                    <a href={f} target="_blank" rel="noopener noreferrer nofollow"
-                      class="text-xs break-all transition-colors hover:text-[#FF6B26]" style="color:#4A7599">{f}</a>
-                  </div>
-                ))}
+                {estacion.fuentes.map((f, i) => {
+                  const fUrl = typeof f === 'string' ? f : f.url;
+                  const fLabel = typeof f === 'string' ? f : f.nombre;
+                  return (
+                    <div class="flex items-start gap-2.5">
+                      <span class="font-display text-[10px] font-bold shrink-0 mt-0.5" style="color:#4A7599">{String(i + 1).padStart(2,'0')}</span>
+                      <a href={fUrl} target="_blank" rel="noopener noreferrer nofollow"
+                        class="text-xs break-all transition-colors hover:text-[#FF6B26]" style="color:#4A7599">{fLabel}</a>
+                    </div>
+                  );
+                })}
               </div>
             </section>
           )}

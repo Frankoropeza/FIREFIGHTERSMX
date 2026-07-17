@@ -353,7 +353,7 @@ const otrasCategorias = allCategories.filter((c) => c.slug !== 'drones-emergenci
           <img src="/images/categorias/drones-emergencia.avif" alt="Dron DJI Matrice 30T con cámara térmica en operación de búsqueda y rescate — protección civil México" width="800" height="450" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center"/>
         </figure>
         <div class="grid grid-cols-2 gap-3">
-          {cat.spotlight.subsections.map((s) => (
+          {(cat.spotlight?.subsections ?? []).map((s) => (
             <div class="flex flex-col gap-2 p-5" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
               <span class="font-display font-bold text-sm" style="color:#F75000">→</span>
               <h3 class="font-display font-bold text-sm" style="color:#FFFFFF">{s.name}</h3>

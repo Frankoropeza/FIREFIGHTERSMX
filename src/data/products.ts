@@ -18,6 +18,8 @@ export interface Product {
     outer?: string;
     weight?: string;
     extra?: string;
+    colores?: string;
+    cert_lab?: string;
     /* Cascos */
     norma?: string;
     material?: string;
