@@ -2,7 +2,7 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import { services, type Service } from '@data/services';
-import { SITE, whatsappUrl } from '@data/site';
+import { SITE, whatsappUrl } from '@config/site';
 
 export function getStaticPaths() {
   return services.map((service) => ({

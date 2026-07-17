@@ -1,5 +1,4 @@
 import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import { join, dirname } from 'node:path';
@@ -68,7 +67,6 @@ export default defineConfig({
   // Canonical: nunca slash final → evita duplicate content /productos/ vs /productos
   trailingSlash: 'never',
   integrations: [
-    tailwind({ applyBaseStyles: false, configFile: './tailwind.config.cjs' }),
     mdx(),
     sitemap({
       changefreq: 'weekly',

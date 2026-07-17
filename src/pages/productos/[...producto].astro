@@ -3,7 +3,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import { featuredProducts, type Product } from '@data/products';
 import { categories } from '@data/categories';
-import { SITE, whatsappUrl } from '@data/site';
+import { SITE, whatsappUrl } from '@config/site';
 
 export function getStaticPaths() {
   return featuredProducts.map((product) => ({

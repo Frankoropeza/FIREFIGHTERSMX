@@ -14,9 +14,9 @@ export interface Props {
 
 const { post, featured = false } = Astro.props;
 const { title, description, category, tags, image } = post.data;
-const slug = post.slug;
+const slug = post.id;
 
-const readingTime = Math.ceil(post.body.split(' ').length / 200);
+const readingTime = Math.ceil((post.body ?? '').split(' ').length / 200);
 ---
 
 <article

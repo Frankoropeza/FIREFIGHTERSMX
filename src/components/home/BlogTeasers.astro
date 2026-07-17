@@ -36,7 +36,7 @@ const fmt = new Intl.DateTimeFormat('es-MX', { day: 'numeric', month: 'long', ye
     <div class="grid grid-cols-1 md:grid-cols-3" style="border-top:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">
       {posts.map((post) => (
         <article class="h-full" style="border-right:1px solid rgba(74,117,153,0.18);border-bottom:1px solid rgba(74,117,153,0.18)">
-          <a href={`/blog/${post.slug}`} class="blog-card group flex flex-col gap-4 p-7 h-full" style="background:#0C1825">
+          <a href={`/blog/${post.id}`} class="blog-card group flex flex-col gap-4 p-7 h-full" style="background:#0C1825">
             <div class="flex items-center justify-between gap-3">
               <span class="badge badge-fire">{post.data.category}</span>
               <time datetime={post.data.pubDate.toISOString().split('T')[0]} class="text-[11px] uppercase tracking-wider" style="color:#4A7599">

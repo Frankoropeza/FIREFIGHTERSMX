@@ -3,7 +3,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import BlogCard from '@components/blog/BlogCard.astro';
 import { getCollection } from 'astro:content';
-import { SITE, whatsappUrl } from '@data/site';
+import { SITE, whatsappUrl } from '@config/site';
 
 const allPosts = (await getCollection('blog', ({ data }) => !data.draft))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
@@ -72,7 +72,7 @@ const collectionSchema = {
         '@type': 'Article',
         headline: p.data.title,
         description: p.data.description,
-        url: `${SITE.url}/blog/${p.slug}`,
+        url: `${SITE.url}/blog/${p.id}`,
       },
     })),
   },
@@ -233,7 +233,7 @@ const collectionSchema = {
                 <ul class="flex flex-col list-none m-0 p-0">
                   {allPosts.slice(0, 5).map((post) => (
                     <li style="border-top:1px solid rgba(74,117,153,0.12)">
-                      <a href={`/blog/${post.slug}`} class="side-post group flex flex-col gap-1 px-5 py-4">
+                      <a href={`/blog/${post.id}`} class="side-post group flex flex-col gap-1 px-5 py-4">
                         <span class="text-[10px] font-display font-semibold uppercase tracking-widest" style="color:#4A7599">{post.data.category}</span>
                         <span class="font-display font-semibold text-sm leading-snug group-hover:text-[#FF6B26]" style="color:#E2E8F0">{post.data.title}</span>
                       </a>

@@ -4,7 +4,7 @@ import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import { allCategories, type Category } from '@data/categories';
 import { featuredProducts } from '@data/products';
 import { brandPages } from '@data/brandPages';
-import { SITE, whatsappUrl } from '@data/site';
+import { SITE, whatsappUrl } from '@config/site';
 
 export function getStaticPaths() {
   // Slugs con página estática dedicada (productos/<slug>/index.astro) — excluir del dinámico

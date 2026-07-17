@@ -15,8 +15,8 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import BlogCard from '@components/blog/BlogCard.astro';
 import { getCollection } from 'astro:content';
-import { SITE } from '@data/site';
-import { slugifyTag } from '@utils/slug';
+import { SITE } from '@config/site';
+import { slugifyTag } from '@lib/slug';
 import type { GetStaticPaths } from 'astro';
 
 export const getStaticPaths = (async () => {
@@ -68,7 +68,7 @@ const collectionSchema = {
         '@type': 'Article',
         headline: p.data.title,
         description: p.data.description,
-        url: `${SITE.url}/blog/${p.slug}`,
+        url: `${SITE.url}/blog/${p.id}`,
       },
     })),
   },
