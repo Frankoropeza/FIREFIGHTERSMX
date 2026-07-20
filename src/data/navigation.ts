@@ -15,9 +15,9 @@ export const navigation = { main: [
         href: "/productos/trajes-bombero",
         description: "Globe, Lion, Honeywell, Fire-Dex",
         children: [
-          { label: "Globe Manufacturing", href: "/productos/trajes-bombero/globe-manufacturing", description: "NFPA 1971 — 6 modelos" },
-          { label: "Lion Apparel",          href: "/productos/trajes-bombero/lion-apparel",          description: "NFPA 1971 + 1977 — V-Force®" },
-          { label: "Honeywell Morning Pride", href: "/productos/trajes-bombero/honeywell-morning-pride", description: "NFPA 1971 · 2112 · CBRN" },
+          { label: "Globe Manufacturing", href: "/productos/trajes-bombero/globe-manufacturing", description: "NFPA 1970 — 6 modelos" },
+          { label: "Lion Apparel",          href: "/productos/trajes-bombero/lion-apparel",          description: "NFPA 1970 + 1977 — V-Force®" },
+          { label: "Honeywell Morning Pride", href: "/productos/trajes-bombero/honeywell-morning-pride", description: "NFPA 1970 · 2112 · CBRN" },
           { label: "Fire-Dex",               href: "/productos/trajes-bombero/fire-dex",               description: "TECGEN® · el más ligero" },
         ],
       },

@@ -11,7 +11,7 @@ const canonicalURL = `${SITE.url}/productos/cascos-nfpa`;
 
 const seoMeta = {
   title: 'Cascos para Bomberos NFPA 1970 — MSA Gallet, Bullard, Cairns · México',
-  description: 'Catálogo completo de cascos para bomberos certificados NFPA 1970 y 1977 en México. MSA Gallet F1 XF, Bullard USTM/USTERM y Cairns N6A Houston. Distribuidor autorizado · stock CDMX · fichas para licitación.',
+  description: 'Catálogo completo de cascos para bomberos certificados NFPA 1970 y 1950 en México. MSA Gallet F1 XF, Bullard USTM/USTERM y Cairns N6A Houston. Distribuidor autorizado · stock CDMX · fichas para licitación.',
   canonicalURL,
 };
 
@@ -44,8 +44,8 @@ const tipos = [
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M4 15a8 8 0 0 1 16 0M2 15h20M12 7V5"/>`,
   },
   {
-    title: 'Forestal NFPA 1977',
-    norm: 'NFPA 1977',
+    title: 'Forestal NFPA 1950',
+    norm: 'NFPA 1950',
     accent: '#34D399',
     desc: 'Ligero y ventilado para incendio de vegetación e interfaz urbano-forestal. Compatible con goggles, capucha y protección auditiva en jornadas largas. Privilegia movilidad y manejo del estrés por calor.',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M4 14a8 8 0 0 1 16 0M3 14h18M7 11l1.5-1.5M17 11l-1.5-1.5"/>`,
@@ -59,7 +59,7 @@ const comparativa = [
   { caract: 'Peso aprox.',       europeo: '1.3–1.6 kg',                        americano: '1.5–1.8 kg',                    forestal: '0.4–0.6 kg' },
   { caract: 'Protección nucal',  europeo: 'Integrada articulada',              americano: 'Ala trasera completa',           forestal: 'Cubrenuca textil' },
   { caract: 'Accesorios',        europeo: 'Lámpara · comunicación · TIC',      americano: 'Escudo personalizable · lámpara', forestal: 'Goggles · capucha' },
-  { caract: 'Norma',             europeo: 'NFPA 1970',                         americano: 'NFPA 1970',                     forestal: 'NFPA 1977' },
+  { caract: 'Norma',             europeo: 'NFPA 1970',                         americano: 'NFPA 1970',                     forestal: 'NFPA 1950' },
   { caract: 'Escenario ideal',   europeo: 'Metropolitano · ARFF · industrial', americano: 'Cuerpos con identidad histórica', forestal: 'Vegetación · interfaz' },
 ];
 
@@ -89,7 +89,7 @@ const razones = [
 
 /* ── Guía de selección ────────────────────────────────────────────────────── */
 const guia = [
-  { n: '01', t: 'Define el escenario dominante: estructural en edificios → NFPA 1970; incendio de vegetación → NFPA 1977. Este primer paso elimina la mitad de las opciones.' },
+  { n: '01', t: 'Define el escenario dominante: estructural en edificios → NFPA 1970; incendio de vegetación → NFPA 1950. Este primer paso elimina la mitad de las opciones.' },
   { n: '02', t: 'Elige el estilo según tu tradición e identidad: europeo integral para cuerpos metropolitanos y ARFF; americano para corporaciones con historia; forestal para interfaz.' },
   { n: '03', t: 'Configura los accesorios: visor retráctil o goggles exteriores, módulo de lámpara, soporte para cámara térmica, barboquejo y sistemas de comunicación.' },
   { n: '04', t: 'Verifica compatibilidad con el SCBA y la capucha de partículas NFPA 1970, y asegura refacciones originales —visor, suspensión, barboquejo— para conservar la certificación.' },
@@ -100,14 +100,14 @@ const articulos = [
   { label: 'NFPA 1970: la nueva norma',      desc: 'Qué cambió en el conjunto estructural',       href: '/blog/nfpa-1970-nueva-norma-trajes-bombero' },
   { label: 'Inspección y vida útil de EPP',   desc: 'Criterios de retiro NFPA 1850',               href: '/blog/inspeccion-cuidado-vida-util-traje-bombero' },
   { label: 'Especificar EPP en licitaciones', desc: 'Bases por desempeño y certificación',          href: '/blog/especificaciones-traje-bombero-licitaciones' },
-  { label: 'Normas y certificaciones',        desc: 'NFPA 1970, 1977 y 1850 explicadas',           href: '/certificaciones' },
+  { label: 'Normas y certificaciones',        desc: 'NFPA 1970, 1950 y 1850 explicadas',           href: '/certificaciones' },
 ];
 
 /* ── FAQ ──────────────────────────────────────────────────────────────────── */
 const faqs = [
   {
     q: '¿Bajo qué norma debe estar certificado un casco de bombero en México?',
-    a: 'NFPA 1970 para combate estructural (la norma que consolidó a la NFPA 1971 desde 2024) o NFPA 1977 para incendio forestal. La certificación la emite un laboratorio de tercera parte acreditado y debe constar en la etiqueta interna con número de serie verificable con fábrica. En licitaciones públicas en México, el pliego suele referenciar directamente NFPA 1970 o NFPA 1977 por edición.',
+    a: 'NFPA 1970 para combate estructural (la norma que consolidó a la NFPA 1971 desde 2024) o NFPA 1950 para incendio forestal. La certificación la emite un laboratorio de tercera parte acreditado y debe constar en la etiqueta interna con número de serie verificable con fábrica. En licitaciones públicas en México, el pliego suele referenciar directamente NFPA 1970 o NFPA 1950 por edición.',
   },
   {
     q: '¿Cada cuánto se retira un casco del servicio activo?',
@@ -142,7 +142,7 @@ const collectionSchema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
   '@id': `${canonicalURL}#collection`,
-  name: 'Cascos para Bomberos certificados NFPA 1970 y 1977 — México',
+  name: 'Cascos para Bomberos certificados NFPA 1970 y 1950 — México',
   description: seoMeta.description,
   url: canonicalURL,
   inLanguage: 'es-MX',
@@ -208,7 +208,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
             <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">{p}</p>
           ))}
           <div class="flex flex-wrap gap-2">
-            {['NFPA 1970','NFPA 1977','MSA Gallet F1 XF','Bullard USTM','Cairns N6A','Visor integrado','Distribuidor autorizado MX'].map(n => (
+            {['NFPA 1970','NFPA 1950','MSA Gallet F1 XF','Bullard USTM','Cairns N6A','Visor integrado','Distribuidor autorizado MX'].map(n => (
               <span class="badge badge-dark font-display text-[10px]">{n}</span>
             ))}
           </div>
@@ -296,7 +296,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
             El F1 XF es el casco más solicitado en cuerpos metropolitanos y ARFF de México.
           </p>
           <div class="flex flex-wrap gap-2">
-            {['NFPA 1970','NFPA 1977','Fibra de vidrio','Optrel retráctil','MSA Safety · NYSE','Distribuidor autorizado MX'].map(b => (
+            {['NFPA 1970','NFPA 1950','Fibra de vidrio','Optrel retráctil','MSA Safety · NYSE','Distribuidor autorizado MX'].map(b => (
               <span class="badge badge-dark text-[9px]">{b}</span>
             ))}
           </div>
@@ -528,7 +528,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
       </div>
 
       <p class="mt-4 text-xs" style="color:#4A7599">
-        * Todos los modelos estructurales cumplen NFPA 1970. El forestal cumple NFPA 1977. Valores de peso son aproximados por configuración.
+        * Todos los modelos estructurales cumplen NFPA 1970. El forestal cumple NFPA 1950. Valores de peso son aproximados por configuración.
       </p>
 
     </div>

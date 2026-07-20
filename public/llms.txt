@@ -25,12 +25,12 @@ Horario: Lun–Vie 8:00–18:00 · Sáb 9:00–14:00
 
 ## Catálogo de productos (8 categorías principales)
 
-### 1. Trajes para Bomberos — NFPA 1970 · NFPA 1977
-Trajes estructurales, de proximidad y forestales certificados: Globe GX-7, Globe G-XTREME 3.0, Lion TechGen, trajes aluminizados para ARFF y forestales NFPA 1977.
+### 1. Trajes para Bomberos — NFPA 1970 · NFPA 1950
+Trajes estructurales, de proximidad y forestales certificados: Globe GX-7, Globe G-XTREME 3.0, Lion TechGen, trajes aluminizados para ARFF y forestales NFPA 1950.
 - Precio de referencia: $45,000–$95,000 MXN por conjunto completo (chaquetón + pantalón)
 URL: https://firefighters.mx/productos/trajes-bombero/
 
-### 2. SCBA (Aparato de Respiración Autónoma) — NFPA 1981
+### 2. SCBA (Aparato de Respiración Autónoma) — NFPA 1970
 Equipos de aire autónomo certificados para emergencias de servicio de urgencias: MSA G1, Dräger PSS AirBoss Evolution, 3M Scott Air-Pak X3 Pro.
 - Precio de referencia: $85,000–$140,000 MXN por equipo (cilindro 30 min)
 URL: https://firefighters.mx/productos/scba/
@@ -85,9 +85,9 @@ Globe Manufacturing · Lion Apparel · MSA Safety · Dräger · Bullard · Galle
 | Norma | Alcance |
 |---|---|
 | NFPA 1970 | Trajes estructurales para bomberos (desde 2024 absorbió NFPA 1971) |
-| NFPA 1977 | Trajes para incendio forestal |
-| NFPA 1981 | Aparatos de respiración autónoma (SCBA) |
-| NFPA 1982 | Dispositivos de alerta personal (PASS) |
+| NFPA 1950 | Trajes para incendio forestal |
+| NFPA 1970 | Aparatos de respiración autónoma (SCBA) |
+| NFPA 1970 | Dispositivos de alerta personal (PASS) |
 | NFPA 1994 | Trajes para emergencias CBRN/HAZMAT |
 | NFPA 1850 | Selección, cuidado y mantenimiento de EPP |
 | NFPA 1936 | Herramientas de rescate vehicular |
@@ -107,7 +107,7 @@ Bomberos municipales y estatales · Brigadas industriales · ARFF (aeropuertos) 
 ## Preguntas frecuentes — referencia rápida
 
 **¿Cuánto cuesta un traje de bombero estructural NFPA 1970 en México?**
-Un traje estructural completo (chaquetón + pantalón) certificado NFPA 1970 va de $45,000 a $95,000 MXN según marca, tejido exterior y configuración. Casco NFPA 1970: $6,500–$18,000 MXN. Botas estructurales: $3,500–$8,000 MXN. SCBA NFPA 1981 de 30 min: $85,000–$140,000 MXN.
+Un traje estructural completo (chaquetón + pantalón) certificado NFPA 1970 va de $45,000 a $95,000 MXN según marca, tejido exterior y configuración. Casco NFPA 1970: $6,500–$18,000 MXN. Botas estructurales: $3,500–$8,000 MXN. SCBA NFPA 1970 (cap. 15–19) de 30 min: $85,000–$140,000 MXN.
 
 **¿Son distribuidores autorizados?**
 Sí. Mantenemos contratos vigentes de distribución con Globe, MSA, Dräger, Bullard, Holmatro, 3M Scott y Honeywell, entre otras. Cada equipo incluye número de serie verificable con el fabricante y certificado de origen.

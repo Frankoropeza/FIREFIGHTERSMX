@@ -11,7 +11,7 @@ image:
   alt: "Comparativa de materiales PBI Matrix Gold y Nomex IIIA en trajes estructurales para bomberos"
 ---
 
-Imagina la escena: el área de compras de una coordinación estatal de Protección Civil está terminando las bases técnicas de una licitación para equipar a doce corporaciones municipales. El responsable lleva dos fichas técnicas sobre el escritorio — una de un traje con outer shell de PBI Matrix Gold, otra con Nomex IIIA. Ambas dicen "cumple NFPA 1971". El proveedor del PBI dice que es superior. El del Nomex dice que es el estándar de la industria. El precio del PBI es 40% más alto.
+Imagina la escena: el área de compras de una coordinación estatal de Protección Civil está terminando las bases técnicas de una licitación para equipar a doce corporaciones municipales. El responsable lleva dos fichas técnicas sobre el escritorio — una de un traje con outer shell de PBI Matrix Gold, otra con Nomex IIIA. Ambas dicen "cumple NFPA 1970". El proveedor del PBI dice que es superior. El del Nomex dice que es el estándar de la industria. El precio del PBI es 40% más alto.
 
 ¿Qué especifica en las bases?
 
@@ -23,7 +23,7 @@ Lo que sí es cierto para todos: la decisión tomada sin entender la diferencia 
 
 ## Lo que Ambos Materiales Tienen en Común — y Por Qué Eso No Es Suficiente
 
-Tanto el PBI Matrix Gold como el Nomex IIIA son fibras intrínsecamente resistentes al fuego. Ninguna arde, ninguna se derrite, ninguna produce las gotas incandescentes que causan las peores quemaduras de segundo grado por contacto. Ambas superan el mínimo de NFPA 1971. Ambas las usan corporaciones de primer nivel en el mundo.
+Tanto el PBI Matrix Gold como el Nomex IIIA son fibras intrínsecamente resistentes al fuego. Ninguna arde, ninguna se derrite, ninguna produce las gotas incandescentes que causan las peores quemaduras de segundo grado por contacto. Ambas superan el mínimo de NFPA 1970. Ambas las usan corporaciones de primer nivel en el mundo.
 
 El punto de partida del análisis tiene que ser ese: estamos comparando dos opciones técnicamente válidas, no una buena contra una mala. Lo que estamos eligiendo es cuál es la adecuada para un escenario específico.
 
@@ -35,7 +35,7 @@ Dicho eso, las diferencias son reales y tienen consecuencias directas en campo.
 
 El **PBI Matrix Gold** es una mezcla de dos fibras: polibenzimidazol (PBI) y aramida para (el mismo tipo de fibra que el Kevlar). La proporción típica es 40% PBI y 60% aramida. El PBI fue desarrollado originalmente para trajes espaciales de la NASA — lo que da una idea de la escala de sus propiedades térmicas. Su temperatura de carbonización supera los 550°C. El color dorado-amarillo que caracteriza a estos trajes no es un accidente: es el color natural de la fibra PBI.
 
-El **Nomex IIIA** es una mezcla de meta-aramida (93%), Kevlar (5%) y fibra conductora antiestática (2%). DuPont desarrolló el Nomex y lleva décadas siendo el referente del mercado mundial de protección para bomberos. Su temperatura de carbonización ronda los 370°C — significativamente menor que el PBI, aunque eso no lo hace menos efectivo en el rango de temperaturas que NFPA 1971 contempla para los [trajes bombero](/productos/trajes-bombero).
+El **Nomex IIIA** es una mezcla de meta-aramida (93%), Kevlar (5%) y fibra conductora antiestática (2%). DuPont desarrolló el Nomex y lleva décadas siendo el referente del mercado mundial de protección para bomberos. Su temperatura de carbonización ronda los 370°C — significativamente menor que el PBI, aunque eso no lo hace menos efectivo en el rango de temperaturas que NFPA 1970 contempla para los [trajes bombero](/productos/trajes-bombero).
 
 El mecanismo de protección de ambos es similar: se carbonizan formando una capa protectora en lugar de arder. La diferencia está en cuánto calor necesitan para llegar ahí y qué tan estable es esa capa bajo exposición prolongada.
 
@@ -45,7 +45,7 @@ El mecanismo de protección de ambos es similar: se carbonizan formando una capa
 
 El TPP (Thermal Protective Performance) es el parámetro que mide cuánta energía térmica necesita atravesar el sistema de capas del traje para causar una quemadura de segundo grado en la piel. Se expresa en cal/cm².
 
-NFPA 1971 exige un mínimo de **35 cal/cm²** para el sistema completo. Eso es la barra. Cualquier traje que se venda en México cumpliendo la norma pasa esa barra. La pregunta real no es si la pasa, sino cuánto margen compras sobre ese mínimo.
+NFPA 1970 exige un mínimo de **35 cal/cm²** para el sistema completo. Eso es la barra. Cualquier traje que se venda en México cumpliendo la norma pasa esa barra. La pregunta real no es si la pasa, sino cuánto margen compras sobre ese mínimo.
 
 En la práctica:
 
@@ -64,7 +64,7 @@ El THL (Total Heat Loss) mide la capacidad del sistema de traje para dejar salir
 
 Un traje con THL bajo acumula el calor metabólico del bombero dentro del equipo. El resultado es estrés térmico progresivo que puede llegar al colapso por calor — no por el incendio, sino por el calor que el propio cuerpo genera cargando 25 kilos de equipo a 35°C ambiente en el Bajío de Jalisco en mayo.
 
-NFPA 1971 exige un mínimo de **205 W/m²**. En la práctica:
+NFPA 1970 exige un mínimo de **205 W/m²**. En la práctica:
 
 - Sistemas con PBI Matrix Gold: **205–230 W/m²** (ligeramente menor por la mayor densidad del material)
 - Sistemas con Nomex IIIA: **210–245 W/m²**
@@ -92,8 +92,8 @@ Antes de leer la tabla: el THL depende mucho de la barrera húmeda (moisture bar
 | **Disponibilidad en México** | Limitada (importación) | Amplia |
 | **Costo relativo (outer shell)** | 35–60% más alto | Referencia de mercado |
 | **Vida útil bajo lavado industrial** | Mayor estabilidad | Depende del gramaje |
-| **Cumple NFPA 1971** | Sí | Sí |
-| **Cumple EN 469** | Sí | Sí |
+| **Cumple NFPA 1970** | Sí | Sí |
+| **Cumple EN 469:2020** | Sí | Sí |
 
 Lo que esta tabla te dice: el PBI gana en protección térmica máxima y durabilidad estructural. El Nomex gana en THL, disponibilidad y costo de entrada. El empate técnico se rompe según el escenario de uso y el ciclo de vida que necesitas del equipo.
 
@@ -120,7 +120,7 @@ Para una corporación municipal con 3 intervenciones al mes y lavado mensual, es
 
 ## Dónde Está el PBI en México — y Por Qué Importa Para tu Licitación
 
-El mercado mexicano de trajes estructurales ha estado dominado históricamente por el Nomex IIIA, por razones claras: precio más bajo, disponibilidad inmediata, múltiples fabricantes. Las licitaciones públicas federales y estatales han privilegiado Nomex durante décadas porque permite cumplir NFPA 1971 al menor costo por traje.
+El mercado mexicano de trajes estructurales ha estado dominado históricamente por el Nomex IIIA, por razones claras: precio más bajo, disponibilidad inmediata, múltiples fabricantes. Las licitaciones públicas federales y estatales han privilegiado Nomex durante décadas porque permite cumplir NFPA 1970 al menor costo por traje.
 
 El PBI Matrix Gold tiene presencia principalmente en corporaciones de primer nivel. El **Heroico Cuerpo de Bomberos de la Ciudad de México** ha contado en distintas etapas con trajes PBI en sus unidades de respuesta de alto riesgo. Algunos equipos ARFF de aeropuertos internacionales y corporaciones del sector petroquímico han optado por PBI para sus equipos especializados.
 
@@ -139,7 +139,7 @@ El PBI Matrix Gold justifica su precio adicional si: el equipo se usa intensivam
 El PBI Matrix Gold es el estándar de hecho en este segmento, no por moda sino porque la exposición térmica en incendios de combustible líquido o jet fuel justifica el máximo TPP disponible. PEMEX, refinería Salamanca, aeropuertos con operaciones de carga — aquí el margen adicional de 5–10 cal/cm² del PBI es seguridad real, no marketing.
 
 **Corporaciones municipales con presupuesto ajustado o equipamiento masivo**
-El Nomex IIIA es la respuesta correcta. Cumple NFPA 1971, está disponible, tiene fabricantes con presencia local y permite equipar a más elementos por el mismo presupuesto. Lo que no puedes hacer es bajar el TPP mínimo del sistema especificado en las bases — exige 35 cal/cm² como mínimo verificado por laboratorio acreditado, no la declaración del fabricante.
+El Nomex IIIA es la respuesta correcta. Cumple NFPA 1970, está disponible, tiene fabricantes con presencia local y permite equipar a más elementos por el mismo presupuesto. Lo que no puedes hacer es bajar el TPP mínimo del sistema especificado en las bases — exige 35 cal/cm² como mínimo verificado por laboratorio acreditado, no la declaración del fabricante.
 
 **Licitaciones estatales de equipamiento de múltiples corporaciones**
 El Nomex con especificación técnica sólida (TPP ≥ 38 cal/cm², THL ≥ 210 W/m², prueba de laboratorio de tercera parte) es el camino más viable. Si quieres elevar el estándar sin pagar el precio completo del PBI, puedes especificar TPP mínimo más alto en las bases — eso filtra los trajes marginales sin comprometerte con un material específico ni excluir competencia.
@@ -163,7 +163,7 @@ La licitación perfecta no es la que compra el material más caro ni la que comp
 
 Si estás preparando bases técnicas o un análisis comparativo para tu corporación, los documentos de referencia que necesitas son:
 
-- **NFPA 1971** (edición vigente) — Standard on Protective Ensembles for Structural Fire Fighting and Proximity Fire Fighting
+- **NFPA 1970** (edición vigente) — Standard on Protective Ensembles for Structural Fire Fighting and Proximity Fire Fighting
 - **ASTM F1959** — Método de prueba de TPP
 - **ASTM F1868** — Método de prueba de THL
 - **Fichas técnicas de laboratorio** de los fabricantes (Globe, Bristol, PGI, Morning Pride) — siempre en la versión del sistema completo que van a ofertar, no de la tela suelta
@@ -180,6 +180,6 @@ Si estás preparando bases técnicas o un análisis comparativo para tu corporac
 
 ## Catálogo Trajes Bombero en FIREFIGHTERS MX
 
-Contamos con trajes estructurales certificados NFPA 1971 en outer shell PBI Matrix Gold y Nomex IIIA, con distintas configuraciones de moisture barrier y thermal liner para cada perfil de corporación. Desde equipamiento municipal hasta brigadas petroquímicas de alto riesgo.
+Contamos con trajes estructurales certificados NFPA 1970 en outer shell PBI Matrix Gold y Nomex IIIA, con distintas configuraciones de moisture barrier y thermal liner para cada perfil de corporación. Desde equipamiento municipal hasta brigadas petroquímicas de alto riesgo.
 
 [Ver catálogo completo de Trajes Bombero](/productos/trajes-bombero) · [Solicitar cotización](/cotizacion)

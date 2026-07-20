@@ -6,7 +6,7 @@ export interface Props { product: Product; }
 
 const { product: p } = Astro.props;
 
-const waMsg = `Hola, quiero cotizar el ${p.title} (${p.norm ?? 'NFPA 1971'}).`;
+const waMsg = `Hola, quiero cotizar el ${p.title} (${p.norm ?? 'NFPA 1970'}).`;
 const allSpecs = [
   p.specs?.tpp,
   p.specs?.thl,

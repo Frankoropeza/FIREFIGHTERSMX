@@ -28,9 +28,9 @@ Una especificación bien hecha ata cada partida a su norma, con todo y edición.
 | Partida | Norma a exigir |
 |---|---|
 | Traje estructural | NFPA 1970 (absorbe la 1971) |
-| Cuidado e inspección del traje | NFPA 1850 / 1851 |
+| Cuidado e inspección del traje | NFPA 1850 (absorbe la 1851) |
 | Equipo de respiración autónoma (SCBA) | NFPA 1970 (absorbe la 1981) |
-| Traje forestal | NFPA 1977 |
+| Traje forestal | NFPA 1950 |
 | Extintores portátiles | NOM-100-SCFI / NOM-106-SCFI |
 | Prevención en centros de trabajo | NOM-002-STPS-2010 |
 

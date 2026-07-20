@@ -1,6 +1,6 @@
 ---
 title: "SCBA para Bomberos: Lo que Nadie te Dice antes de Firmar el Pedido"
-description: "Guía para comprar SCBA NFPA 1981: reguladores, cilindros, mask fit y comparativa MSA G1, Scott Air-Pak y Dräger PSS en México 2026."
+description: "Guía para comprar SCBA NFPA 1970: reguladores, cilindros, mask fit y comparativa MSA G1, Scott Air-Pak y Dräger PSS en México 2026."
 pubDate: 2026-06-23
 updatedDate: 2026-06-23
 author: "Ing. Carlos Mendoza"
@@ -30,7 +30,7 @@ Por eso, la decisión de qué SCBA comprar no se toma como se elige un vehículo
 
 ## La norma: NFPA 1981 edición 2019
 
-La **NFPA 1981** (*Standard on Open-Circuit Self-Contained Breathing Apparatus for Emergency Services*) es el marco que cualquier SCBA destinado a entornos IDLH debe cumplir. En México, la NOM-068-STPS-2014 la referencia directamente, por lo que corporaciones formales —estatales, municipales, industriales certificadas— no tienen margen de usar equipos fuera de esta norma.
+La **NFPA 1970** (*Standard on Open-Circuit Self-Contained Breathing Apparatus for Emergency Services*) es el marco que cualquier SCBA destinado a entornos IDLH debe cumplir. En México, la NOM-068-STPS-2014 la referencia directamente, por lo que corporaciones formales —estatales, municipales, industriales certificadas— no tienen margen de usar equipos fuera de esta norma.
 
 Los puntos que más pesan al momento de comparar:
 
@@ -47,7 +47,7 @@ Los puntos que más pesan al momento de comparar:
 > **Lo que exijo en cualquier propuesta:** el certificado NIOSH del modelo específico —no de la familia de productos, sino del modelo exacto con el número de cilindro y la talla de máscara que me están cotizando. Sin ese papel, la conversación no avanza.
 
 ![Panel de control HUD integrado en máscara de SCBA moderno, visible en condiciones de baja iluminación](/images/blog/blog-scba-hud-mascara.avif)
-*El HUD de la máscara es obligatorio en la edición 2019 de NFPA 1981. Un equipo sin él no cumple la norma vigente, sin importar lo que diga el vendedor.*
+*El HUD de la máscara es obligatorio en la edición 2019 de NFPA 1970. Un equipo sin él no cumple la norma vigente, sin importar lo que diga el vendedor.*
 
 ---
 
@@ -215,7 +215,7 @@ No necesitas ser ingeniero para hacer las preguntas correctas. Estas son las que
 
 **Del equipo:**
 - ¿Cuál es el número de certificación NIOSH de este modelo específico? ¿Puedes mostrármelo en el certificado físico o en la base de datos NIOSH en línea?
-- ¿El HUD de la máscara cumple la edición 2019 de NFPA 1981?
+- ¿El HUD de la máscara cumple la edición 2019 de NFPA 1970?
 - ¿Qué presión activa la alarma de baja presión? ¿En qué porcentaje del cilindro?
 - ¿El PASS es integrado o independiente del SCBA?
 
@@ -237,9 +237,9 @@ Un proveedor que responde estas preguntas con documentos, no con palabras, es un
 
 ---
 
-## Vida útil, retiro del servicio y lo que dice la NFPA 1851
+## Vida útil, retiro del servicio y lo que dice la NFPA 1850
 
-La norma de mantenimiento del conjunto de EPP, **NFPA 1851** (ahora integrada en el proceso 1850), establece que el SCBA debe retirarse del servicio cuando:
+La norma de mantenimiento del conjunto de EPP, **NFPA 1850** (ahora integrada en el proceso 1850), establece que el SCBA debe retirarse del servicio cuando:
 
 - Cumple **15 años** desde la fecha de manufactura, independientemente del estado visual.
 - Cualquier componente mayor (cilindro, regulador, máscara) presenta daño que comprometa la integridad.

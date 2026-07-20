@@ -1,6 +1,6 @@
 ---
 title: "Botas para Bombero: El Equipo que Más Horas Trabaja y Menos Atención Recibe"
-description: "Guía técnica de botas de bombero NFPA 1971: materiales, membranas, protecciones y comparativa HAIX, Lion Apparel, Jolly y Ranger en México 2026."
+description: "Guía técnica de botas de bombero NFPA 1970: materiales, membranas, protecciones y comparativa HAIX, Lion Apparel, Jolly y Ranger en México 2026."
 pubDate: 2026-06-23
 updatedDate: 2026-06-23
 author: "Ing. Carlos Mendoza"
@@ -8,7 +8,7 @@ category: "Guías de compra"
 tags: ["botas bombero", "HAIX", "Lion Apparel", "Jolly", "NFPA 1971", "calzado estructural", "EPP"]
 image:
   url: "/images/blog/blog-botas-bombero.avif"
-  alt: "Botas para bombero estructural certificadas NFPA 1971 — comparativa HAIX Fire Hero, Lion Terrain XTR y Jolly Omega"
+  alt: "Botas para bombero estructural certificadas NFPA 1970 — comparativa HAIX Fire Hero, Lion Terrain XTR y Jolly Omega"
 ---
 
 El jefe de una corporación del Bajío me dijo hace unos meses algo que resume mejor que yo el problema con la compra de calzado de bombero: "El casco lo ven todos. La bota no la ve nadie. Por eso siempre recortamos ahí."
@@ -19,9 +19,9 @@ El calzado es el equipo que más horas acumula. No el que más llama la atenció
 
 ---
 
-## Lo que exige la norma NFPA 1971 para calzado estructural
+## Lo que exige la norma NFPA 1970 para calzado estructural
 
-El calzado de bombero estructural forma parte del conjunto de EPP regulado por la **NFPA 1971** (*Protective Ensembles for Structural Fire Fighting*). Los requisitos que más determinan la calidad del calzado en condiciones reales son cuatro.
+El calzado de bombero estructural forma parte del conjunto de EPP regulado por la **NFPA 1970** (*Protective Ensembles for Structural Fire Fighting*). Los requisitos que más determinan la calidad del calzado en condiciones reales son cuatro.
 
 ### Protección térmica: suela, costuras y empeine
 
@@ -29,7 +29,7 @@ El calzado de bombero estructural forma parte del conjunto de EPP regulado por l
 
 **Transmisión de calor a través de la suela.** El calor transmitido no debe causar una elevación de más de **22 °C en 8 segundos** en un sensor interno. Ese umbral corresponde aproximadamente a la temperatura en la que los tejidos del pie empiezan a recibir daño térmico. La bota que cumple esto crea una ventana de tiempo real para que el bombero reaccione ante una superficie caliente.
 
-**Resistencia de costuras.** Las costuras de la suela con el cuerpo de la bota son el punto de falla más frecuente en calzado de uso intensivo. La norma exige resistencia a la separación bajo temperatura. Una bota que se descose a los 18 meses no es una bota NFPA 1971, aunque originalmente lo fuera.
+**Resistencia de costuras.** Las costuras de la suela con el cuerpo de la bota son el punto de falla más frecuente en calzado de uso intensivo. La norma exige resistencia a la separación bajo temperatura. Una bota que se descose a los 18 meses no es una bota NFPA 1970, aunque originalmente lo fuera.
 
 ### Protección mecánica: punta, metatarso y suela antipenetración
 
@@ -41,7 +41,7 @@ El calzado de bombero estructural forma parte del conjunto de EPP regulado por l
 
 ### Protección química y biológica: la membrana que nadie ve
 
-La membrana interior de la bota debe ser impermeable a los **líquidos de la lista F-1 de NFPA 1971**: incluye aceite hidráulico, diesel, sangre, fluidos corporales y soluciones ácidas y básicas diluidas. El tiempo de prueba es **1 hora de inmersión** completa de la bota.
+La membrana interior de la bota debe ser impermeable a los **líquidos de la lista F-1 de NFPA 1970**: incluye aceite hidráulico, diesel, sangre, fluidos corporales y soluciones ácidas y básicas diluidas. El tiempo de prueba es **1 hora de inmersión** completa de la bota.
 
 Esto no es un requisito burocrático: en una escena de incendio post-extracción, el suelo está cubierto de agua contaminada con aceites de motor, refrigerante, sangre del accidentado y residuos de combustión. El bombero trabaja en ese líquido durante horas. Sin membrana funcional, todo eso entra a la bota.
 
@@ -65,7 +65,7 @@ La membrana interior de la bota es el componente que más determina el precio de
 
 **SympaTex®:** alternativa europea ampliamente usada por Lion Apparel. Impermeabilidad comparable a Gore-Tex, transpirabilidad ligeramente menor. No tiene la barrera biológica equivalente al nivel ASTM F1671 en configuración estándar. Para corporaciones sin alta exposición a fluidos biológicos, es una alternativa válida.
 
-**Membranas propietarias del fabricante (Jolly-Tex, etc.):** impermeabilidad inicial similar, pero sin el historial de durabilidad a largo plazo en condiciones de uso intensivo de las marcas anteriores. La membrana propietaria puede cumplir NFPA 1971 el día de la prueba y degradarse antes de lo esperado en uso real.
+**Membranas propietarias del fabricante (Jolly-Tex, etc.):** impermeabilidad inicial similar, pero sin el historial de durabilidad a largo plazo en condiciones de uso intensivo de las marcas anteriores. La membrana propietaria puede cumplir NFPA 1970 el día de la prueba y degradarse antes de lo esperado en uso real.
 
 **La regla práctica:** si el cuerpo tiene más de 100 intervenciones al año, vale la inversión en Gore-Tex Crosstech. Si el cuerpo tiene menos de 30 intervenciones, una membrana propietaria de calidad puede ser suficiente.
 
@@ -98,7 +98,7 @@ El Fire Hero Xtreme es el casco de bombero de HAIX: el modelo que define su lín
 
 Para operaciones donde la agilidad pesa más que la protección máxima: rescate técnico, operaciones forestales combinadas, entrenamiento físico con equipamiento. 200 g menos por par, caña de 20 cm.
 
-| Modelo | Caña | Peso (talla 44) | Membrana | Protec. metatarso | NFPA 1971 | Precio aprox. USD |
+| Modelo | Caña | Peso (talla 44) | Membrana | Protec. metatarso | NFPA 1970 | Precio aprox. USD |
 |---|---|---|---|---|---|---|
 | HAIX Fire Hero Xtreme | 25 cm | 1,380 g | Gore-Tex Crosstech | Variante MET | ✓ | 380–480 |
 | HAIX Fire Eagle | 20 cm | 1,080 g | Gore-Tex Crosstech | No | ✓ | 300–380 |
@@ -128,7 +128,7 @@ En un cuerpo con guardias de alta rotación o con emergencias que requieren equi
 - **Altura de caña:** 22 cm (8.5 pulgadas)
 - **Peso por par (talla 44):** 1,210 g
 
-| Modelo | Caña | Peso | Membrana | Suela | Cierre | NFPA 1971 | Precio aprox. USD |
+| Modelo | Caña | Peso | Membrana | Suela | Cierre | NFPA 1970 | Precio aprox. USD |
 |---|---|---|---|---|---|---|---|
 | Lion Terrain XTR | 22 cm | 1,210 g | SympaTex | Vibram Megagrip | Triple (cremallera+VLcro+cord.) | ✓ | 280–360 |
 | Lion Terrain XT | 22 cm | 1,280 g | SympaTex | Vibram | Cremallera + cordón | ✓ | 240–320 |
@@ -146,19 +146,19 @@ La bota Jolly se puede limpiar, secar y revisar sin herramientas especiales. El 
 - **Material exterior:** cuero sintético de alta densidad con FR integrado
 - **Membrana:** Gore-Tex® Pro en versión premium, Jolly-Tex en versión estándar
 - **Suela:** compuesto de caucho resistente a aceites e hidrocarburos, calor hasta 300 °C
-- **Puntera:** acero NFPA 1971
+- **Puntera:** acero NFPA 1970
 - **Cierre:** cordón con sistema de emergencia —la traba superior se abre de un tirón para quitar la bota rápidamente en caso de quemadura o trauma
 
 El sistema de apertura de emergencia es el detalle que más aprecian los bomberos que han usado Jolly en situaciones donde necesitaron sacar el calzado rápidamente. HAIX y Lion no tienen este sistema en sus modelos estándar.
 
 **Jolly Wildfire — la variante forestal-estructural**
 
-Para corporaciones que operan en ambos entornos: suela de mayor perfil y mayor resistencia a la abrasión lateral en terreno irregular, sin sacrificar la certificación NFPA 1971.
+Para corporaciones que operan en ambos entornos: suela de mayor perfil y mayor resistencia a la abrasión lateral en terreno irregular, sin sacrificar la certificación NFPA 1970.
 
 ![Jolly Omega Pro — sistema de apertura de emergencia de la traba superior para extracción rápida del calzado](/images/blog/blog-botas-jolly-omega-pro.avif)
 *El sistema de apertura de emergencia del Jolly Omega Pro permite quitar la bota de un tirón en situaciones de quemadura o trauma del pie. Es un detalle que no aparece en las fichas técnicas de HAIX o Lion y que algunos bomberos valoran más que cualquier especificación de membrana.*
 
-| Modelo | Caña | Peso | Membrana | Escenario | NFPA 1971 | Precio aprox. USD |
+| Modelo | Caña | Peso | Membrana | Escenario | NFPA 1970 | Precio aprox. USD |
 |---|---|---|---|---|---|---|
 | Jolly Omega Pro | 20 cm | 1,320 g | Gore-Tex Pro | Estructural | ✓ | 260–340 |
 | Jolly Omega | 20 cm | 1,340 g | Jolly-Tex | Estructural | ✓ | 180–240 |
@@ -170,7 +170,7 @@ Para corporaciones que operan en ambos entornos: suela de mayor perfil y mayor r
 
 Ranger es la marca de origen mexicano más presente en corporaciones municipales de presupuesto ajustado. Aparece frecuentemente en licitaciones locales como alternativa "que cumple la norma". La conversación honesta que hay que tener es cuál norma.
 
-El calzado Ranger FR (retardante a la llama) cumple la **NOM-113-STPS-2009** para calzado de uso industrial general. No es una norma de calzado de bombero. La diferencia no es burocrática: la NOM-113 no exige la transmisión de calor a través de la suela que NFPA 1971 sí mide. No exige la impermeabilidad a fluidos biológicos. No exige la resistencia a penetración de clavo que NFPA 1971 establece.
+El calzado Ranger FR (retardante a la llama) cumple la **NOM-113-STPS-2009** para calzado de uso industrial general. No es una norma de calzado de bombero. La diferencia no es burocrática: la NOM-113 no exige la transmisión de calor a través de la suela que NFPA 1970 sí mide. No exige la impermeabilidad a fluidos biológicos. No exige la resistencia a penetración de clavo que NFPA 1970 establece.
 
 Hay un lugar para el Ranger FR: brigadas industriales de primer respuesta con bajo volumen de incendios anuales, donde el riesgo es controlado y los escenarios son conocidos. No hay lugar para él como calzado principal de un bombero estructural que entra a edificios en llamas con regularidad.
 
@@ -184,7 +184,7 @@ Hay un lugar para el Ranger FR: brigadas industriales de primer respuesta con ba
 
 | Criterio | HAIX Fire Hero Xtreme | Lion Terrain XTR | Jolly Omega Pro | Ranger FR |
 |---|---|---|---|---|
-| Norma | NFPA 1971 | NFPA 1971 | NFPA 1971 | NOM-113 (no NFPA) |
+| Norma | NFPA 1970 | NFPA 1970 | NFPA 1970 | NOM-113 (no NFPA) |
 | Membrana | Gore-Tex Crosstech | SympaTex | Gore-Tex Pro | No aplica |
 | Barrera biológica (F1671) | ✓ | Parcial | ✓ (versión Pro) | No |
 | Peso (talla 44) | 1,380 g | 1,210 g | 1,320 g | ~1,100 g |
@@ -201,7 +201,7 @@ Hay un lugar para el Ranger FR: brigadas industriales de primer respuesta con ba
 
 ## El mantenimiento que nadie hace y que lo cambia todo
 
-Una bota NFPA 1971 no dura 5 años sola. Dura 5 años con cuidado. Y el cuidado no es complicado: es consistente.
+Una bota NFPA 1970 no dura 5 años sola. Dura 5 años con cuidado. Y el cuidado no es complicado: es consistente.
 
 **Después de cada intervención:**
 - Retirar la bota de la guardia si está empapada. El cuero y las membranas se degradan cuando permanecen húmedos por periodos largos.
@@ -213,14 +213,14 @@ Una bota NFPA 1971 no dura 5 años sola. Dura 5 años con cuidado. Y el cuidado 
 - Verificar el estado de las costuras de la suela. Separación incipiente se puede corregir con adhesivo especializado; si ya hay separación visible en más de 2 cm, la bota debe revisarse por un técnico.
 
 **Anual:**
-- Prueba de impermeabilidad de la membrana: llenar la bota de agua, cerrar la parte superior con una bolsa, y verificar que no hay filtración después de 30 minutos. Si hay filtración, la membrana está comprometida y la bota ya no cumple NFPA 1971.
+- Prueba de impermeabilidad de la membrana: llenar la bota de agua, cerrar la parte superior con una bolsa, y verificar que no hay filtración después de 30 minutos. Si hay filtración, la membrana está comprometida y la bota ya no cumple NFPA 1970.
 - Revisar el estado de la punta de acero desde el interior: si hay deformación visible en la punta interior, la protección está comprometida.
 
 ---
 
 ## Cuándo retirar las botas del servicio activo
 
-La **NFPA 1851** establece los criterios de retiro para el calzado estructural:
+La **NFPA 1850** establece los criterios de retiro para el calzado estructural:
 
 - **10 años** desde la fecha de manufactura, independientemente del estado visual
 - Separación de suela en cualquier punto superior a 2 cm

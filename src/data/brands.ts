@@ -35,11 +35,11 @@ export const brands: Brand[] = [
     description: 'Líder mundial en EPP para bomberos. SCBA, cascos, trajes y detectores de gas.',
     country: '🇺🇸 USA',
     longDesc: [
-      'MSA Safety es el fabricante de referencia en equipos de protección personal para bomberos a nivel mundial. Su SCBA G1 es el estándar de facto en cuerpos de bomberos que exigen telemetría integrada, alarma PASS y cumplimiento NFPA 1981. El casco Gallet F1 XF, de estilo europeo integral, es el más solicitado en cuerpos metropolitanos y aeropuertos ARFF por su visor retráctil y módulo de comunicación.',
+      'MSA Safety es el fabricante de referencia en equipos de protección personal para bomberos a nivel mundial. Su SCBA G1 es el estándar de facto en cuerpos de bomberos que exigen telemetría integrada, alarma PASS y cumplimiento NFPA 1970. El casco Gallet F1 XF, de estilo europeo integral, es el más solicitado en cuerpos metropolitanos y aeropuertos ARFF por su visor retráctil y módulo de comunicación.',
       'Somos distribuidores autorizados MSA Safety en México. Cada equipo se entrega con número de serie verificable, certificado de laboratorio acreditado y carta de fabricante — documentación lista para anexo técnico de licitación CompraNet, auditoría STPS y expediente de Protección Civil.',
     ],
     products: [
-      { name: 'MSA G1 SCBA', detail: 'SCBA NFPA 1981 con telemetría integrada, EOSTI y alarma PASS. Cilindros 30/45/60 min a 4 500 psi.' },
+      { name: 'MSA G1 SCBA', detail: 'SCBA NFPA 1970 con telemetría integrada, EOSTI y alarma PASS. Cilindros 30/45/60 min a 4 500 psi.' },
       { name: 'MSA Gallet F1 XF', detail: 'Casco integral NFPA 1970 con visor retráctil, protección nucal y módulo de lámpara.' },
       { name: 'MSA Altair 4X', detail: 'Detector de gases multigas para entrada en recintos confinados y búsqueda en interior.' },
       { name: 'Repuestos y refacciones MSA', detail: 'Cilindros de repuesto, piezas faciales, reguladores y kits de mantenimiento originales.' },
@@ -63,7 +63,7 @@ export const brands: Brand[] = [
       { name: 'Dräger X-am 5600', detail: 'Detector de gases multigas portátil para medición simultánea de hasta 6 gases.' },
       { name: 'Dräger-Tubes', detail: 'Tubos de detección colorimétrica para identificación rápida de sustancias HAZMAT.' },
     ],
-    norms: ['NFPA 1981', 'NFPA 1994', 'EN 137', 'NOM-002-STPS-2010'],
+    norms: ['NFPA 1970', 'NFPA 1994', 'EN 137', 'NOM-002-STPS-2010'],
     categoryLinks: ['equipos-scba'],
   },
   {
@@ -77,12 +77,12 @@ export const brands: Brand[] = [
       'Distribuimos 3M Scott en México con soporte técnico, refacciones originales y prueba hidrostática de cilindros. Ideales para cuerpos de bomberos que buscan localización integrada sin infraestructura adicional.',
     ],
     products: [
-      { name: '3M Scott Air-Pak NxG7', detail: 'SCBA con Pak-Tracker localizador integrado. Plataforma modular NFPA 1981.' },
+      { name: '3M Scott Air-Pak NxG7', detail: 'SCBA con Pak-Tracker localizador integrado. Plataforma modular NFPA 1970.' },
       { name: '3M Scott Air-Pak 75', detail: 'SCBA de uso general, peso optimizado para operaciones estructurales.' },
       { name: 'Máscaras AV-3000 SureSeal', detail: 'Pieza facial panorámica con sello facial de doble capa. Compatible Air-Pak.' },
       { name: 'Cilindros y repuestos Scott', detail: 'Cilindros de fibra de carbono 4 500 psi, reguladores y kits de servicio originales.' },
     ],
-    norms: ['NFPA 1981', 'NFPA 1982', 'NOM-002-STPS-2010'],
+    norms: ['NFPA 1970 (cap. 15–19)', 'NFPA 1970 (cap. 20–24)', 'NOM-002-STPS-2010'],
     categoryLinks: ['equipos-scba'],
   },
   {
@@ -101,7 +101,7 @@ export const brands: Brand[] = [
       { name: 'Globe Sidewinder', detail: 'Traje de acceso rápido con cierre de cremallera para estaciones de alta rotación.' },
       { name: 'Globe Proximity / ARFF', detail: 'Traje aluminizado de proximidad para aeropuertos y riesgos con exposición radiante extrema.' },
     ],
-    norms: ['NFPA 1970', 'NFPA 1977', 'NFPA 1850', 'NOM-002-STPS-2010'],
+    norms: ['NFPA 1970', 'NFPA 1950', 'NFPA 1850', 'NOM-002-STPS-2010'],
     categoryLinks: ['trajes-bombero'],
   },
   {
@@ -270,9 +270,9 @@ export const brands: Brand[] = [
       { name: 'Lion TechGen Structural', detail: 'Traje estructural NFPA 1970 de uso intensivo. Buena relación peso-protección para operaciones prolongadas.' },
       { name: 'Lion Proximity', detail: 'Traje aluminizado de proximidad para ARFF y exposición radiante.' },
       { name: 'Lion Station Wear', detail: 'Ropa de cuartel en Nomex IIIA: pantalón y camisola para uso diario en estación.' },
-      { name: 'Lion Wildland NFPA 1977', detail: 'Traje forestal ligero en Nomex IIIA para incendio vegetal.' },
+      { name: 'Lion Wildland NFPA 1950', detail: 'Traje forestal ligero en Nomex IIIA para incendio vegetal.' },
     ],
-    norms: ['NFPA 1970', 'NFPA 1977', 'NFPA 1850'],
+    norms: ['NFPA 1970', 'NFPA 1950', 'NFPA 1850'],
     categoryLinks: ['trajes-bombero'],
   },
   {

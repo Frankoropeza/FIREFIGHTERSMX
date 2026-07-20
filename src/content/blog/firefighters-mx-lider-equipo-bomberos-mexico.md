@@ -38,7 +38,7 @@ Si quieres ver el alcance real, ahí está el detalle de nuestra [cobertura naci
 
 En este punto no hay matices que valga la pena discutir: trabajamos con marcas reconocidas a nivel internacional y entregamos producto original de fábrica. Punto. El equipo "equivalente", el reacondicionado que se vende como nuevo o la certificación que "ya casi sale" no entran a nuestro catálogo, porque cualquiera de esas tres cosas pone en riesgo a su personal y tumba un expediente de protección civil en cuanto alguien lo revisa con cuidado.
 
-Entre las marcas que integramos están MSA, con sus equipos de respiración G1 y los cascos Gallet F1 XF; Dräger, con la línea de respiración autónoma PSS 7000; 3M Scott y su plataforma Air-Pak NxG7; Globe y Lion en trajes estructurales NFPA 1971; Holmatro en herramienta hidráulica de rescate vehicular; y los cascos americanos de Bullard y Cairns. La lista completa, con modelos y aplicaciones, vive en la página de [marcas](/marcas), y el [catálogo de productos](/productos) está organizado por categoría para que encuentre lo suyo sin rodeos.
+Entre las marcas que integramos están MSA, con sus equipos de respiración G1 y los cascos Gallet F1 XF; Dräger, con la línea de respiración autónoma PSS 7000; 3M Scott y su plataforma Air-Pak NxG7; Globe y Lion en trajes estructurales NFPA 1970; Holmatro en herramienta hidráulica de rescate vehicular; y los cascos americanos de Bullard y Cairns. La lista completa, con modelos y aplicaciones, vive en la página de [marcas](/marcas), y el [catálogo de productos](/productos) está organizado por categoría para que encuentre lo suyo sin rodeos.
 
 ## La confianza se documenta, no se promete
 
@@ -48,9 +48,9 @@ Es fácil decir "somos confiables". Lo difícil, y lo que de verdad importa, es 
 
 | Línea de producto | Norma de referencia |
 |---|---|
-| Trajes estructurales | NFPA 1971 / cuidado NFPA 1851 |
-| Equipos SCBA | NFPA 1981 |
-| Trajes forestales | NFPA 1977 |
+| Trajes estructurales | NFPA 1970 / cuidado NFPA 1850 |
+| Equipos SCBA | NFPA 1970 |
+| Trajes forestales | NFPA 1950 |
 | Extintores portátiles | NOM-100-SCFI / NOM-106-SCFI |
 | Centros de trabajo | NOM-002-STPS-2010 |
 

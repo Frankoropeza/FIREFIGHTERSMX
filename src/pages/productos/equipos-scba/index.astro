@@ -73,7 +73,7 @@ const guia = [
   { n: '01', t: 'Define el escenario dominante: combate estructural (30/45 min), industria/confinados (60 min), HAZMAT/CBRN (NIOSH CBRN) o rescate de bombero (RIT). La configuración sale de ahí.' },
   { n: '02', t: 'Compara las tres marcas tier-1: MSA G1 lidera en electrónica integrada; Dräger PSS 7000 en ergonomía de arnés; 3M Scott NxG7 en plataforma modular y localizador Pak-Tracker.' },
   { n: '03', t: 'Exige certificación NFPA 1970 y aprobación NIOSH verificable por número de modelo —no de distribuidor. Para CBRN: aprobación NIOSH CBRN documentada por modelo exacto.' },
-  { n: '04', t: 'Asegura el programa de mantenimiento: prueba de flujo anual, hidrostática de cilindro cada 5 años (vida útil 15 años) y servicio técnico autorizado con bitácora NFPA 1852.' },
+  { n: '04', t: 'Asegura el programa de mantenimiento: prueba de flujo anual, hidrostática de cilindro cada 5 años (vida útil 15 años) y servicio técnico autorizado con bitácora NFPA 1850.' },
 ];
 
 /* Artículos relacionados */
@@ -89,7 +89,7 @@ const faqs = [
   { q: '¿Bajo qué norma debe estar certificado un SCBA de bombero en México?', a: 'Bajo NFPA 1970 (consolidó a la NFPA 1981 desde 2024) con aprobación NIOSH. Para HAZMAT se exige además aprobación NIOSH CBRN. Los pliegos de licitación pública en México referencian directamente NFPA 1970 y NIOSH por edición.' },
   { q: '¿Qué autonomía elijo: 30, 45 o 60 minutos?', a: 'La autonomía nominal asume consumo de referencia; el tiempo real depende del esfuerzo. 30 min es el estándar urbano, 45 min da margen para combate prolongado, 60 min es para industria, túneles y confinados donde la salida es larga. A mayor autonomía, mayor peso y volumen del cilindro.' },
   { q: '¿Cuál es la diferencia entre MSA G1, Dräger PSS 7000 y 3M Scott NxG7?', a: 'Los tres son SCBA tier-1 de presión positiva NFPA 1970. MSA G1 lidera en electrónica integrada (EOSTI en el regulador, telemetría ICM). Dräger PSS 7000 destaca por la ergonomía del arnés y distribución de carga. 3M Scott NxG7 sobresale por su plataforma modular y localizador Pak-Tracker. Te facilitamos las tres fichas para evaluación comparativa.' },
-  { q: '¿Qué mantenimiento exige un SCBA y cada cuánto?', a: 'La NFPA 1852 establece: inspección antes de cada uso, prueba de flujo al menos anual, mantenimiento de reguladores según fabricante, prueba hidrostática del cilindro cada 5 años (vida útil 15 años). Somos servicio técnico autorizado: realizamos estas pruebas con equipo calibrado y entregamos bitácora para auditoría.' },
+  { q: '¿Qué mantenimiento exige un SCBA y cada cuánto?', a: 'La NFPA 1850 establece: inspección antes de cada uso, prueba de flujo al menos anual, mantenimiento de reguladores según fabricante, prueba hidrostática del cilindro cada 5 años (vida útil 15 años). Somos servicio técnico autorizado: realizamos estas pruebas con equipo calibrado y entregamos bitácora para auditoría.' },
   { q: '¿Entregan ficha técnica y servicio para licitación pública?', a: 'Sí. Cada SCBA incluye certificado de conformidad NFPA 1970, aprobación NIOSH y ficha técnica por configuración. Para concursos públicos (CompraNet, IMSS, Pemex, gobiernos estatales) generamos el manifiesto de cumplimiento por partida e incluimos el plan de servicio técnico autorizado para toda la vida útil.' },
 ];
 
@@ -103,7 +103,7 @@ const razones = [
   {
     n: '02',
     t: 'Certificación verificable por número de serie',
-    d: 'Cada SCBA incluye etiqueta de trazabilidad con número de modelo, lote y aprobación NIOSH verificable en la base pública de NIOSH. Documentación lista para auditorías NFPA 1852 y licitaciones públicas.',
+    d: 'Cada SCBA incluye etiqueta de trazabilidad con número de modelo, lote y aprobación NIOSH verificable en la base pública de NIOSH. Documentación lista para auditorías NFPA 1850 y licitaciones públicas.',
   },
   {
     n: '03',
@@ -184,7 +184,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
           </h1>
           <p class="text-base leading-relaxed mb-8 max-w-xl" style="color:#94A3B8">
             Distribuidores autorizados de MSA Safety, Dräger y 3M Scott en México. Equipos de
-            respiración autónoma certificados NFPA 1981 — presión positiva, 30/45/60 min,
+            respiración autónoma certificados NFPA 1970 — presión positiva, 30/45/60 min,
             sistemas PASS y EOSTI integrados para combate estructural, industrial y CBRN.
           </p>
           <div class="flex flex-col sm:flex-row gap-3">
@@ -422,22 +422,22 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
       </div>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-2 lg:gap-3">
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
-          <img src="/images/productos/scba-msa-g1-bombero-estructural.avif" alt="Bombero con SCBA MSA G1 NFPA 1981 en incendio estructural México" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center"/>
+          <img src="/images/productos/scba-msa-g1-bombero-estructural.avif" alt="Bombero con SCBA MSA G1 NFPA 1970 en incendio estructural México" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
-          <img src="/images/productos/scba-drager-pa5000-lateral.avif" alt="Dräger PSS 7000 equipo de respiración autónoma NFPA 1981 vista lateral" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center"/>
+          <img src="/images/productos/scba-drager-pa5000-lateral.avif" alt="Dräger PSS 7000 equipo de respiración autónoma NFPA 1970 vista lateral" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
-          <img src="/images/productos/scba-scott-x3-pro-mascara.avif" alt="Scott Air-Pak X3 Pro con máscara panorámica NFPA 1981 certificado" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center"/>
+          <img src="/images/productos/scba-scott-x3-pro-mascara.avif" alt="Scott Air-Pak X3 Pro con máscara panorámica NFPA 1970 certificado" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
-          <img src="/images/productos/scba-bombero-acceso-edificio.avif" alt="Bombero equipado con SCBA NFPA 1981 en acceso a edificio en llamas" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center"/>
+          <img src="/images/productos/scba-bombero-acceso-edificio.avif" alt="Bombero equipado con SCBA NFPA 1970 en acceso a edificio en llamas" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
-          <img src="/images/productos/scba-msa-g1-hud-display.avif" alt="HUD de presión del MSA G1 en interior de máscara — interface NFPA 1981" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center"/>
+          <img src="/images/productos/scba-msa-g1-hud-display.avif" alt="HUD de presión del MSA G1 en interior de máscara — interface NFPA 1970" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
-          <img src="/images/productos/scba-brigada-equipada-incendio.avif" alt="Brigada de bomberos equipada con SCBA NFPA 1981 en operación de incendio" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center"/>
+          <img src="/images/productos/scba-brigada-equipada-incendio.avif" alt="Brigada de bomberos equipada con SCBA NFPA 1970 en operación de incendio" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center"/>
         </figure>
       </div>
     </div>
@@ -540,7 +540,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
             ¿Tu duda no aparece? Escríbenos por WhatsApp con el detalle de tu operación y te
             asesoramos sobre el SCBA y la configuración correctos.
           </p>
-          <a href={whatsappUrl('Hola, tengo una pregunta técnica sobre equipos SCBA NFPA 1981 para mi brigada.')}
+          <a href={whatsappUrl('Hola, tengo una pregunta técnica sobre equipos SCBA NFPA 1970 para mi brigada.')}
             target="_blank" rel="noopener"
             class="btn btn-primary"
             style="background:#F5A623;border-color:#F5A623;color:#040A12">

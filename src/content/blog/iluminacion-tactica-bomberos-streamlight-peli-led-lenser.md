@@ -105,7 +105,7 @@ La batería es una CR123A —pila estándar de litio, disponible en cualquier Wa
 
 El diseño en ángulo de 90° del Survivor no es estético: reduce la fatiga de muñeca en operación prolongada y permite colgarlo del cinturón o del arnés orientando el haz hacia adelante sin sostenerlo activamente.
 
-La resistencia al calor documentada —260 °C durante 5 minutos sin pérdida de función— cumple el mismo criterio que la NFPA 1971 aplica a los accesorios del casco. No muchas linternas del mercado tienen esa especificación documentada; el Survivor sí.
+La resistencia al calor documentada —260 °C durante 5 minutos sin pérdida de función— cumple el mismo criterio que la NFPA 1970 aplica a los accesorios del casco. No muchas linternas del mercado tienen esa especificación documentada; el Survivor sí.
 
 **Streamlight Fire Vulcan — faro de área magnético**
 
@@ -192,7 +192,7 @@ Su producto más reconocido es la **Nomad Force**: un faro de área de 330° que
 **Foxfury Nomad Force:**
 - 2,000 lm en modo alto / 800 lm modo medio / modo strobe de emergencia
 - **Ángulo de 330°**: ilumina la totalidad del área de trabajo sin punto ciego
-- Resistencia térmica probada a **260 °C durante 5 minutos** (mismo criterio que NFPA 1971 para accesorios de casco)
+- Resistencia térmica probada a **260 °C durante 5 minutos** (mismo criterio que NFPA 1970 para accesorios de casco)
 - Base magnética de 15 kg de sujeción + clip lateral + base de piso integrada: tres opciones de montaje en el mismo producto
 - Batería Li-Ion recargable integrada: 4 horas en modo alto / 10 horas en modo medio
 

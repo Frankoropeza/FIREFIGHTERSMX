@@ -8,7 +8,7 @@ category: "Guías de compra"
 tags: ["cascos bombero", "MSA Cairns", "Bullard", "Rosenbauer", "NFPA 1971", "EPP estructural"]
 image:
   url: "/images/blog/blog-cascos-comparativa.avif"
-  alt: "Cascos de bombero estructural alineados — MSA Cairns, Bullard, Rosenbauer y Pacific Helmets NFPA 1971"
+  alt: "Cascos de bombero estructural alineados — MSA Cairns, Bullard, Rosenbauer y Pacific Helmets NFPA 1970"
 ---
 
 Si hay un equipo en la dotación de un bombero que se compra con el estómago antes que con la cabeza, ese es el casco. No lo digo como crítica: lo digo porque es humano. El casco es lo que aparece en las fotos, lo que lleva el número de identificación del elemento, lo que se personaliza con el escudo de la corporación. Es parte de la identidad del bombero tanto como del equipo de protección.
@@ -17,14 +17,14 @@ El problema es que esa carga simbólica muchas veces domina la decisión y deja 
 
 Este artículo es para quienes quieren tomar esa decisión con ambas cosas en la mesa: la identidad y la técnica.
 
-![Cuatro estilos de casco de bombero estructural certificados NFPA 1971, de izquierda a derecha: traditional americano, europeo streamlined, integral con visor y americano de cuero](/images/blog/blog-cascos-cuatro-estilos.avif)
+![Cuatro estilos de casco de bombero estructural certificados NFPA 1970, de izquierda a derecha: traditional americano, europeo streamlined, integral con visor y americano de cuero](/images/blog/blog-cascos-cuatro-estilos.avif)
 *El diseño no es solo estético: determina la protección de nuca, el campo visual lateral, la compatibilidad con accesorios y el peso que el bombero carga operación tras operación.*
 
 ---
 
-## Lo que mide la norma: NFPA 1971 en detalle
+## Lo que mide la norma: NFPA 1970 en detalle
 
-La **NFPA 1971** (*Standard on Protective Ensembles for Structural Fire Fighting and Proximity Fire Fighting*) es la referencia internacional para cascos de bombero estructural. Aplica al casco como componente del conjunto de EPP y define exactamente qué debe soportar.
+La **NFPA 1970** (*Standard on Protective Ensembles for Structural Fire Fighting and Proximity Fire Fighting*) es la referencia internacional para cascos de bombero estructural. Aplica al casco como componente del conjunto de EPP y define exactamente qué debe soportar.
 
 ### Protección térmica: más que resistir el fuego
 
@@ -50,7 +50,7 @@ El cascarón y sus materiales deben aislar a **1,000 V CA** durante 3 minutos si
 
 ### Visibilidad: norma, no accesorio
 
-La cinta retrorreflejante fluorescente del casco no es decorativa. La NFPA 1971 define el área mínima, la posición y el desempeño fotométrico requerido. Un casco sin esta banda en las especificaciones correctas no cumple la norma, sin importar el modelo o la marca.
+La cinta retrorreflejante fluorescente del casco no es decorativa. La NFPA 1970 define el área mínima, la posición y el desempeño fotométrico requerido. Un casco sin esta banda en las especificaciones correctas no cumple la norma, sin importar el modelo o la marca.
 
 ---
 
@@ -115,7 +115,7 @@ MSA lanzó el **XF80** para capturar el mercado de cuerpos que quieren el respal
 - **Peso:** 1.10 kg, entre los más ligeros del segmento.
 - **Visor:** integrado, tres posiciones, mecanismo de sujeción a prueba de calor.
 - **Ajuste:** dial ratchet de alta precisión, ajustable con guantes de bombero.
-- **Normas:** NFPA 1971-2018 y EN 443, doble certificación útil para corporaciones que operan con estándares internacionales.
+- **Normas:** NFPA 1971-2018 y EN 443:2008, doble certificación útil para corporaciones que operan con estándares internacionales.
 
 | Modelo | Diseño | Material | Peso | Visor | Precio aprox. USD |
 |---|---|---|---|---|---|
@@ -148,9 +148,9 @@ El precio es en consecuencia: el LTX cuesta más del doble que el FH2. Pero si h
 
 | Modelo | Diseño | Material | Peso | Norma | Precio aprox. USD |
 |---|---|---|---|---|---|
-| Bullard FH2 | Traditional | TPA composite | 1.52 kg | NFPA 1971 | 310–400 |
-| Bullard FH3 | Traditional | TPA composite reforzado | 1.65 kg | NFPA 1971 | 340–440 |
-| Bullard LTX | Traditional | Composite carbono | 1.19 kg | NFPA 1971 | 680–820 |
+| Bullard FH2 | Traditional | TPA composite | 1.52 kg | NFPA 1970 | 310–400 |
+| Bullard FH3 | Traditional | TPA composite reforzado | 1.65 kg | NFPA 1970 | 340–440 |
+| Bullard LTX | Traditional | Composite carbono | 1.19 kg | NFPA 1970 | 680–820 |
 
 ---
 
@@ -173,8 +173,8 @@ La modularidad del HEROS xtreme es la mayor del segmento: el cascarón tiene rie
 
 | Modelo | Diseño | Suspensión | Peso | Normas | Precio aprox. USD |
 |---|---|---|---|---|---|
-| HEROS xtreme | Europeo | ActiveStar 8 puntos | 1.12 kg | NFPA 1971 / EN 443 | 520–640 |
-| HEROS smart | Europeo | ActiveStar | 1.08 kg | EN 443 | 380–460 |
+| HEROS xtreme | Europeo | ActiveStar 8 puntos | 1.12 kg | NFPA 1970 / EN 443:2008 | 520–640 |
+| HEROS smart | Europeo | ActiveStar | 1.08 kg | EN 443:2008 | 380–460 |
 
 ---
 
@@ -190,8 +190,8 @@ La modularidad es media: los rieles laterales del F15 aceptan accesorios de dife
 
 | Modelo | Diseño | Peso | Norma | Visor | Precio aprox. USD |
 |---|---|---|---|---|---|
-| Pacific F15 | Europeo | 1.15 kg | NFPA 1971 | ✓ Incluido | 260–340 |
-| Pacific F10 | Europeo | 1.20 kg | NFPA 1971 | ✓ Incluido | 220–300 |
+| Pacific F15 | Europeo | 1.15 kg | NFPA 1970 | ✓ Incluido | 260–340 |
+| Pacific F10 | Europeo | 1.20 kg | NFPA 1970 | ✓ Incluido | 220–300 |
 
 ---
 
@@ -202,7 +202,7 @@ La modularidad es media: los rieles laterales del F15 aceptan accesorios de dife
 | Diseño disponible | Traditional | Traditional | Europeo | Europeo |
 | Peso promedio | 1.41–1.58 kg | 1.52–1.65 kg | 1.08–1.12 kg | 1.15–1.20 kg |
 | NFPA 1971-2018 | ✓ | ✓ | ✓ | ✓ |
-| EN 443 (europeo) | Solo XF80 | No | ✓ | No |
+| EN 443:2008 (europeo) | Solo XF80 | No | ✓ | No |
 | Visor incluido (base) | No | No | ✓ | ✓ |
 | Sistema suspensión | Cricket ratchet | RotaDial 360° | ActiveStar 8 pts. | Estándar |
 | Modularidad accesorios | Alta | Alta | Muy alta | Media |
@@ -233,9 +233,9 @@ Si no tienes un protocolo de inspección y reemplazo de visera, no compres el ca
 
 Tres condiciones absolutas antes de emitir cualquier orden de compra:
 
-**Primero: el certificado NFPA 1971 del modelo exacto.** No de la familia. No "cumple la norma según fábrica". El número de certificación de laboratorio acreditado (UL, Intertek, SGS), del modelo específico, con el color y la talla incluidos si hay variaciones estructurales entre versiones.
+**Primero: el certificado NFPA 1970 del modelo exacto.** No de la familia. No "cumple la norma según fábrica". El número de certificación de laboratorio acreditado (UL, Intertek, SGS), del modelo específico, con el color y la talla incluidos si hay variaciones estructurales entre versiones.
 
-**Segundo: la fecha de manufactura visible en el interior del cascarón.** Un casco con más de 10 años desde la fecha de fabricación está fuera de su vida útil operativa según NFPA 1851, aunque nunca se haya usado. Si el proveedor te ofrece stock "sin costo adicional" que lleva años en bodega, pregunta la fecha antes de emocionarte.
+**Segundo: la fecha de manufactura visible en el interior del cascarón.** Un casco con más de 10 años desde la fecha de fabricación está fuera de su vida útil operativa según NFPA 1850, aunque nunca se haya usado. Si el proveedor te ofrece stock "sin costo adicional" que lleva años en bodega, pregunta la fecha antes de emocionarte.
 
 **Tercero: la garantía con canal de reclamación en México.** Un defecto de fabricación que requiere gestión directa con fábrica en Europa o EUA puede tardar meses. La garantía tiene que tener un representante en México con facultad de resolver, no de transmitir la queja.
 

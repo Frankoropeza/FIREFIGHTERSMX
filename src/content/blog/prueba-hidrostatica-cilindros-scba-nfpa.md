@@ -1,6 +1,6 @@
 ---
 title: "SCBA: cuándo hacer la prueba hidrostática de cilindros y qué pasa si la omites"
-description: "Los cilindros SCBA tienen vida útil regulada. Conoce los intervalos de prueba hidrostática según NFPA 1852 y DOT, y las consecuencias de omitirla."
+description: "Los cilindros SCBA tienen vida útil regulada. Conoce los intervalos de prueba hidrostática según NFPA 1850 y DOT, y las consecuencias de omitirla."
 pubDate: 2026-03-17
 updatedDate: 2026-06-25
 author: "Ing. Marco García"
@@ -23,11 +23,11 @@ A diferencia de una manguera que muestra grietas visibles o una válvula que emp
 
 La prueba hidrostática existe precisamente para eso: someter el cilindro a una presión mayor que la de operación, bajo condiciones controladas, para detectar deformaciones permanentes o fallos antes de que ocurran en campo. No es una burocracia, es el único método confiable de diagnóstico para la integridad estructural del cilindro.
 
-En México, el marco regulatorio para estos equipos combina los estándares DOT (Department of Transportation de EE.UU.) con la NFPA 1852, que es la norma de referencia para la selección, cuidado y mantenimiento de equipos de respiración autónoma. Muchas brigadas industriales en Veracruz, Tamaulipas y el Bajío operan con estos referentes porque la NOM aplicable en equipos SCBA de cuerpo de bomberos y brigadas industriales los adopta directamente.
+En México, el marco regulatorio para estos equipos combina los estándares DOT (Department of Transportation de EE.UU.) con la NFPA 1850, que es la norma de referencia para la selección, cuidado y mantenimiento de equipos de respiración autónoma. Muchas brigadas industriales en Veracruz, Tamaulipas y el Bajío operan con estos referentes porque la NOM aplicable en equipos SCBA de cuerpo de bomberos y brigadas industriales los adopta directamente.
 
-## Intervalos de prueba según NFPA 1852 y DOT
+## Intervalos de prueba según NFPA 1850 y DOT
 
-La NFPA 1852 establece que los cilindros deben probarse hidrostáticamente según los intervalos marcados por el fabricante y la regulación DOT correspondiente al tipo de cilindro. Estos intervalos varían según el material de construcción.
+La NFPA 1850 establece que los cilindros deben probarse hidrostáticamente según los intervalos marcados por el fabricante y la regulación DOT correspondiente al tipo de cilindro. Estos intervalos varían según el material de construcción.
 
 ### Tipo de cilindro vs intervalo hidrostático vs vida útil
 
@@ -36,7 +36,7 @@ La NFPA 1852 establece que los cilindros deben probarse hidrostáticamente segú
 | Tipo 1 | Acero sin costura | 5 años | Sin límite de servicio (sujeto a condición) |
 | Tipo 3 | Aluminio con envoltura de fibra | 3 años | 15 años desde fabricación |
 | Tipo 4 (compuesto total) | Fibra de carbono / aramida | 3 años | 15 años desde fabricación |
-| Cilindros SCBA compuestos (NFPA 1852) | Fibra de carbono | 3 años | 15 años desde fabricación |
+| Cilindros SCBA compuestos (NFPA 1850) | Fibra de carbono | 3 años | 15 años desde fabricación |
 
 El dato crítico aquí es la vida útil de 15 años para cilindros compuestos. No importa cuántas pruebas hidrostáticas hayan pasado: al cumplir 15 años desde la fecha de fabricación marcada en el cilindro, el equipo debe retirarse del servicio. No hay prórroga ni excepción.
 
@@ -48,7 +48,7 @@ Cuando una brigada industrial o un cuerpo de bomberos opera cilindros con prueba
 
 El primero es el riesgo físico. Un cilindro con fatiga no detectada puede fallar durante el llenado, durante el transporte o durante el uso en emergencia. El fallo de un cilindro compuesto a 300 bar no es un evento menor.
 
-El segundo es el legal. En México, SENER regula las instalaciones de llenado de cilindros de alta presión. Si una instalación petroquímica opera con cilindros vencidos y ocurre un incidente, la exposición legal de los responsables de seguridad es directa. La NFPA 1852 no es un referente voluntario en instalaciones que la adoptan contractualmente: es obligación.
+El segundo es el legal. En México, SENER regula las instalaciones de llenado de cilindros de alta presión. Si una instalación petroquímica opera con cilindros vencidos y ocurre un incidente, la exposición legal de los responsables de seguridad es directa. La NFPA 1850 no es un referente voluntario en instalaciones que la adoptan contractualmente: es obligación.
 
 El tercero es operativo. En una auditoría de PEMEX, de una aseguradora industrial o de Protección Civil, cilindros con prueba vencida implican baja inmediata del equipo. Si eso ocurre durante una contingencia operativa, la brigada queda con capacidad reducida en el peor momento posible.
 
@@ -72,7 +72,7 @@ La prueba hidrostática es una operación de laboratorio. Requiere equipo especi
 
 Cuando contratas mantenimiento SCBA, pregunta específicamente si el contrato incluye prueba hidrostática o solo recarga periódica. Si la respuesta es que "hacen todo", pide el certificado del laboratorio y el número de registro del técnico. Si no pueden mostrarlo, solo están haciendo recarga.
 
-El mantenimiento correcto de una flota SCBA combina ambas cosas: recarga periódica con aire de calidad certificada, y prueba hidrostática en los intervalos que marcan la NFPA 1852 y el fabricante. No son intercambiables.
+El mantenimiento correcto de una flota SCBA combina ambas cosas: recarga periódica con aire de calidad certificada, y prueba hidrostática en los intervalos que marcan la NFPA 1850 y el fabricante. No son intercambiables.
 
 ---
 

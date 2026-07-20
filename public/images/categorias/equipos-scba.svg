@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 720" role="img" aria-label="Equipo de respiración autónoma SCBA certificado NFPA 1981">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 720" role="img" aria-label="Equipo de respiración autónoma SCBA certificado NFPA 1970">
   <defs>
     <linearGradient id="bgequipo" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#0C1825"/><stop offset="0.6" stop-color="#070E1A"/><stop offset="1" stop-color="#040A12"/>
@@ -15,7 +15,7 @@
   <rect width="640" height="720" fill="url(#glequipo)"/>
   <g font-family="Rajdhani, Arial, sans-serif" font-weight="700">
     <rect x="40" y="48" width="148" height="34" fill="rgba(247,80,0,0.12)" stroke="rgba(247,80,0,0.4)"/>
-    <text x="114" y="71" text-anchor="middle" font-size="16" fill="#FF8F57" letter-spacing="2">NFPA 1981</text>
+    <text x="114" y="71" text-anchor="middle" font-size="16" fill="#FF8F57" letter-spacing="2">NFPA 1970</text>
     <rect x="452" y="48" width="148" height="34" fill="rgba(74,117,153,0.12)" stroke="rgba(74,117,153,0.4)"/>
     <text x="526" y="71" text-anchor="middle" font-size="16" fill="#7AA4C4" letter-spacing="2">NIOSH CBRN</text>
   </g>

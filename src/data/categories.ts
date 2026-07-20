@@ -39,21 +39,21 @@ export const trajesBombero: Category = {
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>`,
   label: 'Trajes para Bomberos',
   norm: 'NFPA 1970 · 1977',
-  description: 'Trajes estructurales, de proximidad y forestales certificados NFPA 1970 y 1977 en México: Globe, Lion y MSA. Tallas S–4XL con entrega en 32 estados.',
+  description: 'Trajes estructurales, de proximidad y forestales certificados NFPA 1970 y 1950 en México: Globe, Lion y MSA. Tallas S–4XL con entrega en 32 estados.',
   intro: [
-    'Trajes de combate estructural de 3 capas, trajes aluminizados de proximidad para ARFF y trajes forestales ligeros — todos certificados por laboratorio acreditado bajo NFPA 1970 o NFPA 1977, con número de serie verificable con fábrica.',
+    'Trajes de combate estructural de 3 capas, trajes aluminizados de proximidad para ARFF y trajes forestales ligeros — todos certificados por laboratorio acreditado bajo NFPA 1970 o NFPA 1950, con número de serie verificable con fábrica.',
     'Distribuimos Globe, Lion y MSA en tallas S–4XL con stock permanente en CDMX. Cada conjunto incluye ficha técnica para licitación, asesoría de tallaje y acceso al programa de inspección y mantenimiento NFPA 1850.',
   ],
   items: [
     { name: 'Globe GX-7', detail: 'Estructural premium con Crosstech y PBI/Kevlar' },
     { name: 'Lion TechGen', detail: 'Estructural NFPA 1970 de uso intensivo' },
     { name: 'Trajes de proximidad', detail: 'Aluminizados para ARFF y exposición radiante' },
-    { name: 'Trajes forestales NFPA 1977', detail: 'Ligeros y transpirables para incendio vegetal' },
+    { name: 'Trajes forestales NFPA 1950', detail: 'Ligeros y transpirables para incendio vegetal' },
   ],
   productCategory: 'Trajes Bombero',
   spotlight: {
     title: 'Trajes para Bomberos certificados',
-    highlight: 'NFPA 1970 y NFPA 1977',
+    highlight: 'NFPA 1970 y NFPA 1950',
     paragraphs: [
       'El traje estructural es la última barrera entre el bombero y el fuego. Distribuimos conjuntos completos —chaquetón y pantalón— certificados por laboratorio acreditado bajo NFPA 1970 (la norma que desde 2024 absorbió a la NFPA 1971), con número de serie verificable con fábrica y ficha técnica lista para licitación o auditoría STPS.',
       'Manejamos las líneas Globe, Lion y MSA en tallas S–4XL, con stock permanente de las configuraciones más demandadas y entrega en 24–48 horas en CDMX. Cada compra incluye asesoría de tallaje y el programa de inspección y mantenimiento conforme a NFPA 1850.',
@@ -61,7 +61,7 @@ export const trajesBombero: Category = {
     subsections: [
       { name: 'Trajes estructurales', detail: 'Combate interior de edificios. 3 capas: tejido exterior PBI/Nomex NXT, barrera de humedad Crosstech y forro térmico. Costuras de doble aguja reforzadas y trim reflejante 3M Scotchlite.' },
       { name: 'Trajes de proximidad', detail: 'Aluminizados para exposición radiante extrema: ARFF en aeropuertos, refinerías y fundiciones. Reflejan hasta el 90 % del calor radiante.' },
-      { name: 'Trajes forestales NFPA 1977', detail: 'Ligeros y transpirables para incendio vegetal: camisola y pantalón en Nomex IIIA, diseñados para jornadas largas con golpe de calor mínimo.' },
+      { name: 'Trajes forestales NFPA 1950', detail: 'Ligeros y transpirables para incendio vegetal: camisola y pantalón en Nomex IIIA, diseñados para jornadas largas con golpe de calor mínimo.' },
       { name: 'Tallaje, stock y mantenimiento', detail: 'Tallas S–4XL con asesoría de ajuste, stock permanente en CDMX y programa de inspección avanzada, lavado técnico y reparación certificada NFPA 1850.' },
     ],
     image: '/images/categorias/trajes-bombero.avif',
@@ -82,21 +82,21 @@ export const categories: Category[] = [
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 17a10 10 0 0 1 20 0"/><path d="M2 17h20v3H2z"/><path d="M12 7v2"/></svg>`,
     label: 'Cascos NFPA',
     norm: 'NFPA 1970 · 1977',
-    description: 'Cascos para bomberos certificados NFPA 1970 y 1977 en México: MSA Gallet, Bullard y Cairns. Estructurales, forestales y de rescate. Cotización en 24 h.',
+    description: 'Cascos para bomberos certificados NFPA 1970 y 1950 en México: MSA Gallet, Bullard y Cairns. Estructurales, forestales y de rescate. Cotización en 24 h.',
     intro: [
-      'El casco es la primera línea de protección craneal en combate estructural. Todos los modelos que distribuimos están certificados bajo NFPA 1970 (estructural) o NFPA 1977 (forestal) por laboratorios acreditados, con número de serie verificable con fábrica.',
+      'El casco es la primera línea de protección craneal en combate estructural. Todos los modelos que distribuimos están certificados bajo NFPA 1970 (estructural) o NFPA 1950 (forestal) por laboratorios acreditados, con número de serie verificable con fábrica.',
       'Manejamos configuraciones con protector facial integrado, goggles, lámparas y soportes para cámara térmica. Stock permanente de los modelos más demandados con entrega en 24–48 h en CDMX.',
     ],
     items: [
       { name: 'MSA Gallet F1 XF', detail: 'Casco europeo integral con visor retráctil y protección nucal' },
       { name: 'Bullard USTM / USTERM', detail: 'Casco tradicional americano, fibra de vidrio termoendurecida' },
       { name: 'Cairns N6A Houston', detail: 'Casco de cuero clásico para cuerpos con tradición' },
-      { name: 'Cascos forestales NFPA 1977', detail: 'Ligeros, ventilados, compatibles con goggles y capucha' },
+      { name: 'Cascos forestales NFPA 1950', detail: 'Ligeros, ventilados, compatibles con goggles y capucha' },
     ],
     productCategory: 'Cascos NFPA',
     spotlight: {
       title: 'Cascos para Bomberos certificados',
-      highlight: 'NFPA 1970 y NFPA 1977',
+      highlight: 'NFPA 1970 y NFPA 1950',
       paragraphs: [
         'El casco protege contra impacto, penetración, calor radiante y descarga eléctrica — y la NFPA 1970 exige que cada componente lo demuestre en laboratorio acreditado. Distribuimos MSA Gallet, Bullard y Cairns con certificado de conformidad, número de serie verificable y ficha técnica lista para licitación.',
         'Te asesoramos en la configuración correcta según tu operación: protector facial o goggles, lámpara integrada, soporte para cámara térmica y protección nucal. Stock permanente de los modelos más demandados con entrega en 24–48 horas en CDMX.',
@@ -104,7 +104,7 @@ export const categories: Category[] = [
       subsections: [
         { name: 'Estilo europeo integral', detail: 'MSA Gallet F1 XF: visor retráctil interno, protección nucal integrada, módulo de lámpara y comunicación. El estándar en cuerpos metropolitanos y ARFF.' },
         { name: 'Estilo americano tradicional', detail: 'Bullard USTM/USTERM y Cairns N6A Houston: fibra de vidrio termoendurecida o cuero, ala completa contra escurrimientos y escudo frontal personalizable.' },
-        { name: 'Cascos forestales NFPA 1977', detail: 'Ligeros y ventilados para incendio vegetal: compatibles con goggles, capucha y protección auditiva en jornadas largas.' },
+        { name: 'Cascos forestales NFPA 1950', detail: 'Ligeros y ventilados para incendio vegetal: compatibles con goggles, capucha y protección auditiva en jornadas largas.' },
         { name: 'Accesorios y refacciones', detail: 'Visores, goggles, lámparas, escudos frontales personalizados y suspensiones de repuesto — todo original de fábrica para conservar la certificación.' },
       ],
       image: '/images/categorias/cascos-nfpa.avif',

@@ -15,7 +15,7 @@
   <rect width="640" height="720" fill="url(#glbomber)"/>
   <g font-family="Rajdhani, Arial, sans-serif" font-weight="700">
     <rect x="40" y="48" width="158" height="34" fill="rgba(247,80,0,0.12)" stroke="rgba(247,80,0,0.4)"/>
-    <text x="119" y="71" text-anchor="middle" font-size="16" fill="#FF8F57" letter-spacing="2">NFPA 1971</text>
+    <text x="119" y="71" text-anchor="middle" font-size="16" fill="#FF8F57" letter-spacing="2">NFPA 1970</text>
     <rect x="442" y="48" width="158" height="34" fill="rgba(74,117,153,0.12)" stroke="rgba(74,117,153,0.4)"/>
     <text x="521" y="71" text-anchor="middle" font-size="16" fill="#7AA4C4" letter-spacing="2">COMPRANET</text>
   </g>

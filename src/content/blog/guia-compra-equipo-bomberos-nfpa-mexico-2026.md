@@ -17,14 +17,14 @@ Esta guía es, básicamente, la conversación que tengo con quien me llama antes
 
 ## Primero la norma. Siempre.
 
-El error más común que veo es elegir por marca o por precio antes de tener clara la norma. Y es un error caro, porque cada equipo responde a un estándar pensado para un uso muy concreto. Un traje espectacular bajo NFPA 1977 (forestal) no te va a servir para entrar a combatir un incendio dentro de un edificio, por más que la marca sea reconocida. La norma define para qué nació el equipo; todo lo demás viene después.
+El error más común que veo es elegir por marca o por precio antes de tener clara la norma. Y es un error caro, porque cada equipo responde a un estándar pensado para un uso muy concreto. Un traje espectacular bajo NFPA 1950 (forestal) no te va a servir para entrar a combatir un incendio dentro de un edificio, por más que la marca sea reconocida. La norma define para qué nació el equipo; todo lo demás viene después.
 
 | Equipo | Norma principal | Para qué es |
 |---|---|---|
 | Traje estructural | NFPA 1970 (antes 1971) | Combate interior de incendios en edificios |
-| Cuidado del traje | NFPA 1850 / 1851 | Inspección, lavado y reparación del EPP |
+| Cuidado del traje | NFPA 1850 (antes 1851) | Inspección, lavado y reparación del EPP |
 | SCBA (respiración) | NFPA 1970 (antes 1981) | Autonomía respiratoria en atmósferas IDLH |
-| Traje forestal | NFPA 1977 | Incendio de vegetación, jornadas largas |
+| Traje forestal | NFPA 1950 | Incendio de vegetación, jornadas largas |
 | Extintores | NOM-100-SCFI | Equipo portátil contra incendio |
 | Centro de trabajo | NOM-002-STPS-2010 | Prevención y combate en industria |
 
@@ -52,7 +52,7 @@ Una pregunta que casi nadie hace al inicio y todos terminan haciéndose: ¿cuán
 
 | Concepto | Impacto en el costo |
 |---|---|
-| Inspección y lavado técnico | Anual o por uso (NFPA 1850/1851) |
+| Inspección y lavado técnico | Anual o por uso (NFPA 1850) |
 | Pruebas de SCBA | Hidrostática y flujo anual |
 | Refacciones originales | Su disponibilidad mantiene viva la certificación |
 | Vida útil del traje | Normalmente 10 años desde fabricación |

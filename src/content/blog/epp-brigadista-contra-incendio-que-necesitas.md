@@ -45,11 +45,11 @@ Esa distinción cambia completamente el EPP necesario.
 
 | Elemento | Brigadista industrial | Bombero estructural |
 |---|---|---|
-| Casco | Industrial con protección frontal | Casco estructural NFPA 1971 |
-| Protección corporal | Ropa retardante FR | Traje estructural 4 capas NFPA 1971 |
+| Casco | Industrial con protección frontal | Casco estructural NFPA 1970 |
+| Protección corporal | Ropa retardante FR | Traje estructural 4 capas NFPA 1970 |
 | Manos | Guantes térmicos industriales | Guantes estructurales |
-| Pies | Bota industrial con protección térmica | Bota estructural NFPA 1971 |
-| Respiración | No aplica (salida antes de IDLH) | SCBA certificado NFPA 1981 |
+| Pies | Bota industrial con protección térmica | Bota estructural NFPA 1970 |
+| Respiración | No aplica (salida antes de IDLH) | SCBA certificado NFPA 1970 |
 | Visión | Goggle o careta facial | Visor integrado al casco |
 
 El brigadista industrial no necesita SCBA para cumplir su función. Si el ambiente requiere SCBA, la situación ya superó el rol del brigadista y es trabajo de bomberos profesionales.
@@ -76,7 +76,7 @@ Aquí es donde hay que tener criterio. Esto aparece en cotizaciones y casi nunca
 
 **Cámara térmica para brigada:** Herramienta de bomberos para búsqueda en humo. Un brigadista industrial no entra a espacios con humo. La cámara no tiene aplicación en ese rol. Para operaciones de búsqueda y rescate en estructuras, revisa [NFPA 1801 y cámaras térmicas](/blog/nfpa-1801-camaras-termicas-bomberos).
 
-**Traje estructural NFPA 1971 completo:** 25,000–60,000 pesos por unidad, requiere mantenimiento especializado, inspección periódica y entrenamiento para que sea útil. Para una brigada industrial que actúa en conatos, es sobreingeniería.
+**Traje estructural NFPA 1970 completo:** 25,000–60,000 pesos por unidad, requiere mantenimiento especializado, inspección periódica y entrenamiento para que sea útil. Para una brigada industrial que actúa en conatos, es sobreingeniería.
 
 ## El criterio de selección que uso en campo
 

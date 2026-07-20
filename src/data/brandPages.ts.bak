@@ -205,7 +205,7 @@ export const categoriaMarca: Record<string, CategoriaMeta> = {
       { label: 'Cascos NFPA', desc: 'MSA Gallet, Bullard y Cairns — integración con máscara', href: '/productos/cascos-nfpa' },
       { label: 'Trajes para Bomberos', desc: 'Globe, Lion, Honeywell, Fire-Dex — NFPA 1970', href: '/productos/trajes-bombero' },
       { label: 'Cámaras Térmicas', desc: 'Integración en máscara y casco · NFPA 1801', href: '/productos/camaras-termicas' },
-      { label: 'Mantenimiento y servicio', desc: 'Prueba hidrostática y de flujo anual · NFPA 1852', href: '/servicios/mantenimiento' },
+      { label: 'Mantenimiento y servicio', desc: 'Prueba hidrostática y de flujo anual · NFPA 1850', href: '/servicios/mantenimiento' },
       { label: 'Soporte para licitaciones', desc: 'Fichas técnicas y manifiestos por partida', href: '/licitaciones' },
     ],
   },

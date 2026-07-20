@@ -10,7 +10,7 @@ const cat = trajesBombero;
 const canonicalURL = `${SITE.url}/productos/trajes-bombero`;
 
 const seoMeta = {
-  title: `Trajes para Bomberos NFPA 1970 y 1977 — Globe, Lion, MSA`,
+  title: `Trajes para Bomberos NFPA 1970 y 1950 — Globe, Lion, MSA`,
   description: cat.description,
   canonicalURL,
 };
@@ -56,7 +56,7 @@ const tipos = [
   },
   {
     title: 'Forestal',
-    norm: 'NFPA 1977',
+    norm: 'NFPA 1950',
     accent: '#34D399',
     desc: 'Monocapa ligera y transpirable para incendio de vegetación e interfaz. Privilegia movilidad y manejo del estrés por calor en jornadas largas.',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 4 22h16L12 2z"/><path d="M12 8v8"/></svg>`,
@@ -93,11 +93,11 @@ const modelos = [
     external: true,
   },
   {
-    title: 'Trajes forestales NFPA 1977',
-    norm: 'NFPA 1977',
+    title: 'Trajes forestales NFPA 1950',
+    norm: 'NFPA 1950',
     brand: 'Nomex IIIA',
     desc: 'Camisola y pantalón ligeros y transpirables para incendio vegetal e interfaz, diseñados para jornadas largas con golpe de calor mínimo.',
-    href: whatsappUrl('Hola, quiero cotizar trajes forestales NFPA 1977.'),
+    href: whatsappUrl('Hola, quiero cotizar trajes forestales NFPA 1950.'),
     cta: 'Cotizar',
     external: true,
   },
@@ -110,7 +110,7 @@ const comparativa = [
   ['Protección radiante', 'Alta', 'Muy alta (reflejante)', 'Moderada'],
   ['Transpirabilidad', 'Baja', 'Baja', 'Alta'],
   ['Escenario', 'Incendio en edificio', 'Combustibles · ARFF', 'Vegetación · interfaz'],
-  ['Norma', 'NFPA 1970', 'NFPA 1970', 'NFPA 1977'],
+  ['Norma', 'NFPA 1970', 'NFPA 1970', 'NFPA 1950'],
 ];
 
 /* Guía de selección */
@@ -153,7 +153,7 @@ const collectionSchema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
   '@id': `${canonicalURL}#collection`,
-  name: 'Trajes para Bomberos certificados NFPA 1970 y 1977',
+  name: 'Trajes para Bomberos certificados NFPA 1970 y 1950',
   description: cat.description,
   url: canonicalURL,
   inLanguage: 'es-MX',
@@ -193,7 +193,7 @@ const razones = [
   {
     n: '04',
     t: 'Soporte completo para licitaciones',
-    d: 'Generamos el manifiesto de cumplimiento de norma por partida — NFPA 1970 o 1977 por edición — con ficha técnica y certificado de conformidad del fabricante, para CompraNet, IMSS, Pemex y gobiernos estatales.',
+    d: 'Generamos el manifiesto de cumplimiento de norma por partida — NFPA 1970 o 1950 por edición — con ficha técnica y certificado de conformidad del fabricante, para CompraNet, IMSS, Pemex y gobiernos estatales.',
   },
 ];
 ---
@@ -240,7 +240,7 @@ const razones = [
             <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">{p}</p>
           ))}
           <div class="flex flex-wrap gap-2">
-            {['NFPA 1970','NFPA 1977','NFPA 1850','PBI','Crosstech','Globe · Lion · MSA'].map(n => (
+            {['NFPA 1970','NFPA 1950','NFPA 1850','PBI','Crosstech','Globe · Lion · MSA'].map(n => (
               <span class="badge badge-dark font-display text-[10px]">{n}</span>
             ))}
           </div>
@@ -379,10 +379,10 @@ const razones = [
           <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
             Lion Apparel — fundada en 1889 — es el segundo fabricante de trajes de bombero
             más licitado en México. Fuerte en departamentos metropolitanos, corporativos
-            industriales y brigadas ARFF. Líneas estructurales, de proximidad y forestales NFPA 1977.
+            industriales y brigadas ARFF. Líneas estructurales, de proximidad y forestales NFPA 1950.
           </p>
           <div class="flex flex-wrap gap-2">
-            {['NFPA 1970','NFPA 1977','PBI Matrix','V-Force®','Distribuidor autorizado MX'].map(b => (
+            {['NFPA 1970','NFPA 1950','PBI Matrix','V-Force®','Distribuidor autorizado MX'].map(b => (
               <span class="badge badge-dark text-[9px]">{b}</span>
             ))}
           </div>
@@ -705,7 +705,7 @@ const razones = [
               { label: 'Cascos NFPA', desc: 'MSA Gallet, Bullard y Cairns', href: '/productos/cascos-nfpa' },
               { label: 'Equipos SCBA', desc: 'MSA G1, Dräger y 3M Scott', href: '/productos/equipos-scba' },
               { label: 'Inspección y mantenimiento', desc: 'Lavado y reparación NFPA 1850', href: '/servicios/mantenimiento' },
-              { label: 'Normas y certificaciones', desc: 'NFPA 1970, 1977 y 1850', href: '/certificaciones' },
+              { label: 'Normas y certificaciones', desc: 'NFPA 1970, 1950 y 1850', href: '/certificaciones' },
               { label: 'Soporte para licitaciones', desc: 'Fichas y manifiestos por partida', href: '/licitaciones' },
             ].map((l) => (
               <li style="border-bottom:1px solid rgba(74,117,153,0.15)">

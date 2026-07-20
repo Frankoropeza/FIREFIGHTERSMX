@@ -1,6 +1,6 @@
 ---
 title: "Traje Estructural, de Proximidad o Forestal: Cuál Necesita tu Brigada"
-description: "Diferencias entre traje estructural NFPA 1970, de proximidad aluminizado y forestal NFPA 1977: materiales, peso, uso y norma. Guía para elegir correctamente."
+description: "Diferencias entre traje estructural NFPA 1970, de proximidad aluminizado y forestal NFPA 1950: materiales, peso, uso y norma. Guía para elegir correctamente."
 pubDate: 2026-05-20
 author: "Ing. Carlos Mendoza"
 category: "Equipos EPP"
@@ -28,7 +28,7 @@ Toma un conjunto estructural y agrégale una **capa externa aluminizada** que ac
 
 No lo confundas con un traje de entrada directa sostenida ni lo lleves al monte: ahí es exceso de peso sin beneficio.
 
-### Forestal / de interfaz (NFPA 1977)
+### Forestal / de interfaz (NFPA 1950)
 
 Aquí la lógica se invierte por completo. El enemigo en un incendio de vegetación no es el flashover; es la fatiga, el sobrecalentamiento y las horas. Por eso el traje forestal es de **una sola capa de tejido resistente a la llama**, ligero, transpirable y no impermeable. Privilegia que el bombero pueda moverse y respirar durante toda una jornada en la sierra o en la interfaz urbano-forestal.
 
@@ -36,7 +36,7 @@ Es excelente en lo suyo e insuficiente para todo lo demás. Esa honestidad es su
 
 ## La comparación, lado a lado
 
-| Característica | Estructural (NFPA 1970) | Proximidad (NFPA 1970) | Forestal (NFPA 1977) |
+| Característica | Estructural (NFPA 1970) | Proximidad (NFPA 1970) | Forestal (NFPA 1950) |
 |---|---|---|---|
 | Capas | 3 (externa, humedad, térmica) | 3 + externa aluminizada | 1 (monocapa FR) |
 | Peso aproximado | 4–5 kg | 5–6 kg | 1.5–2.5 kg |
@@ -53,13 +53,13 @@ La pregunta útil no es cuál traje es mejor, sino qué enfrenta tu brigada con 
 - **Bomberos municipales urbanos:** el estructural NFPA 1970 es la base no negociable. Si su demarcación incluye zonas con vegetación, suma un set forestal.
 - **Brigadas industriales con combustibles o procesos calientes:** estructural como dotación general y al menos un conjunto de proximidad para las maniobras de aproximación.
 - **Aeropuertos (ARFF):** proximidad para los fuegos de combustible y estructural para las tareas de rescate.
-- **Protección civil en sierra o interfaz:** el forestal NFPA 1977 manda; es donde pasan la mayor parte de sus horas.
+- **Protección civil en sierra o interfaz:** el forestal NFPA 1950 manda; es donde pasan la mayor parte de sus horas.
 - **Cuerpos mixtos:** estructural más forestal cubre el 90% de los escenarios; el de proximidad solo si existe un riesgo real y recurrente de calor radiante extremo.
 
 ## Los errores que salen caros
 
 He visto los mismos tropiezos repetirse de un municipio a otro. El más común es **querer un solo traje para todo**, casi siempre por presupuesto: termina siendo un estructural maltratado en el monte o un forestal expuesto a un fuego para el que no fue hecho. El segundo es **confundir "resistente a la llama" con "estructural"** —un overol FR cumple una función, pero no equivale a un conjunto certificado NFPA 1970. Y el tercero, más sutil, es **ignorar el peso**: el estrés térmico provoca bajas reales, y el traje adecuado reduce la carga cardiovascular tanto como la llama.
 
-En todos los casos, el primer filtro de verdad lo da la etiqueta. La norma que cita —1970 para estructural y proximidad, 1977 para forestal— te dice de inmediato para qué fue diseñado ese traje. Léela antes que el precio.
+En todos los casos, el primer filtro de verdad lo da la etiqueta. La norma que cita —1970 para estructural y proximidad, 1950 para forestal— te dice de inmediato para qué fue diseñado ese traje. Léela antes que el precio.
 
 ¿No tienes claro qué combinación necesita tu brigada? Revisa el [catálogo de trajes para bombero](/productos/trajes-bombero) o [habla con un especialista](/contacto) para definir la dotación por escenario. Y si vas a comprar estructural, ponte al día primero con [NFPA 1970: la nueva norma de trajes](/blog/nfpa-1970-nueva-norma-trajes-bombero).

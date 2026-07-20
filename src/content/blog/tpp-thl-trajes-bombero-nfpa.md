@@ -1,6 +1,6 @@
 ---
 title: "TPP y THL en Trajes de Bombero: Lo Que el Catálogo No Te Explica"
-description: "Dos trajes que 'cumplen NFPA 1971' pueden estar a mundos de distancia en protección real. Aprende a leer TPP y THL antes de tu próxima licitación."
+description: "Dos trajes que 'cumplen NFPA 1970' pueden estar a mundos de distancia en protección real. Aprende a leer TPP y THL antes de tu próxima licitación."
 pubDate: 2026-02-10
 updatedDate: 2026-06-25
 author: "Ing. Marco García"
@@ -11,7 +11,7 @@ image:
   alt: "Parámetros TPP y THL en trajes de bombero según norma NFPA 1971 y NFPA 1970"
 ---
 
-Dos corporaciones. Dos trajes distintos. Ambos dicen "certificado NFPA 1971" en la etiqueta. El responsable de compras de la corporación A pagó menos y se felicitó por haber optimizado el presupuesto. El responsable de la corporación B pagó 30% más y tuvo que justificarlo ante el área de finanzas.
+Dos corporaciones. Dos trajes distintos. Ambos dicen "certificado NFPA 1970" en la etiqueta. El responsable de compras de la corporación A pagó menos y se felicitó por haber optimizado el presupuesto. El responsable de la corporación B pagó 30% más y tuvo que justificarlo ante el área de finanzas.
 
 Seis meses después, en un incendio en una bodega industrial en Querétaro, dos bomberos quedan brevemente atrapados por un colapso parcial de techo. Ambos salen. Uno con quemaduras de primer grado. El otro con quemaduras de segundo grado en el cuello y los antebrazos.
 
@@ -23,13 +23,13 @@ La diferencia estaba en dos números que ninguno de los dos responsables de comp
 
 ## El Número Mínimo No Es el Número Correcto
 
-Empecemos por la norma. NFPA 1971 establece que un traje estructural certificado debe tener un **TPP mínimo de 35 cal/cm²** y un **THL mínimo de 205 W/m²** para el sistema completo.
+Empecemos por la norma. NFPA 1970 establece que un traje estructural certificado debe tener un **TPP mínimo de 35 cal/cm²** y un **THL mínimo de 205 W/m²** para el sistema completo.
 
 Eso es la barra mínima. El piso del estacionamiento.
 
-El problema es que en México — y en toda Latinoamérica — la frase "cumple NFPA 1971" en una base de licitación casi siempre se interpreta como: si pasa el mínimo, está bien. Y eso es un error que tiene consecuencias reales en campo.
+El problema es que en México — y en toda Latinoamérica — la frase "cumple NFPA 1970" en una base de licitación casi siempre se interpreta como: si pasa el mínimo, está bien. Y eso es un error que tiene consecuencias reales en campo.
 
-Considera esto: un traje con TPP de 35 cal/cm² y otro con TPP de 48 cal/cm² ambos "cumplen NFPA 1971". Pero ante una fuente de calor de 2 cal/cm²/s — que es la intensidad estándar de la prueba, equivalente a la exposición en un flashover de baja intensidad — el primero le da al bombero **17.5 segundos** antes del umbral de quemadura de segundo grado. El segundo le da **24 segundos**.
+Considera esto: un traje con TPP de 35 cal/cm² y otro con TPP de 48 cal/cm² ambos "cumplen NFPA 1970". Pero ante una fuente de calor de 2 cal/cm²/s — que es la intensidad estándar de la prueba, equivalente a la exposición en un flashover de baja intensidad — el primero le da al bombero **17.5 segundos** antes del umbral de quemadura de segundo grado. El segundo le da **24 segundos**.
 
 Seis segundos y medio de diferencia. En una habitación en flashover, eso es todo.
 
@@ -88,7 +88,7 @@ Los fabricantes de trajes llevan décadas trabajando para optimizar ese balance.
 - **Liners térmicos de alta relación superficie/masa** — diseños como Caldura SL o Meta-Aramid con estructura tipo panal — que maximizan el aire atrapado (el mejor aislante) con la menor masa posible.
 - **Outer shells de gramaje optimizado** — en algunos diseños se acepta un outer shell ligeramente más ligero a cambio de mejor THL, compensado con un thermal liner más robusto.
 
-Los mejores trajes del mercado logran TPP de 45+ cal/cm² con THL de 230+ W/m². Los trajes que apenas pasan el mínimo de norma frecuentemente tienen TPP de 36 cal/cm² con THL de 207 W/m². Ambos "cumplen NFPA 1971". Solo uno de los dos fue diseñado para proteger al bombero en condiciones reales de operación extendida.
+Los mejores trajes del mercado logran TPP de 45+ cal/cm² con THL de 230+ W/m². Los trajes que apenas pasan el mínimo de norma frecuentemente tienen TPP de 36 cal/cm² con THL de 207 W/m². Ambos "cumplen NFPA 1970". Solo uno de los dos fue diseñado para proteger al bombero en condiciones reales de operación extendida.
 
 ---
 
@@ -98,12 +98,12 @@ La siguiente tabla muestra rangos de TPP y THL típicos por configuración de tr
 
 | Configuración | TPP típico | THL típico | Norma |
 |---|---|---|---|
-| PBI Matrix / Crosstech / Caldura | 42–50 cal/cm² | 205–225 W/m² | NFPA 1971 |
-| Nomex IIIA / Gore-Tex Crosstech / Aralite | 36–44 cal/cm² | 210–240 W/m² | NFPA 1971 |
-| Nomex IIIA / STEDAIR / PolarShield | 35–40 cal/cm² | 220–245 W/m² | NFPA 1971 |
-| Proximidad aluminizado | 35–42 cal/cm² | 135–160 W/m² | NFPA 1971 Proximity |
+| PBI Matrix / Crosstech / Caldura | 42–50 cal/cm² | 205–225 W/m² | NFPA 1970 |
+| Nomex IIIA / Gore-Tex Crosstech / Aralite | 36–44 cal/cm² | 210–240 W/m² | NFPA 1970 |
+| Nomex IIIA / STEDAIR / PolarShield | 35–40 cal/cm² | 220–245 W/m² | NFPA 1970 |
+| Proximidad aluminizado | 35–42 cal/cm² | 135–160 W/m² | NFPA 1970 Proximity |
 | Industrial Nomex sin barrera húmeda | 28–36 cal/cm² | 250–300 W/m² | NFPA 2112 / EN 11612 |
-| Forestal NFPA 1977 | 20–28 cal/cm² | 300–380 W/m² | NFPA 1977 |
+| Forestal NFPA 1950 | 20–28 cal/cm² | 300–380 W/m² | NFPA 1950 |
 
 La parte más reveladora de esta tabla está en los extremos: el traje forestal tiene un THL casi el doble que el estructural — porque el bombero forestal trabaja durante horas en terreno difícil con calor ambiental, y el golpe de calor es su riesgo principal. El traje de proximidad tiene un THL mínimo porque la membrana aluminizada que refleja el calor radiante también bloquea casi todo el paso de vapor. 
 
@@ -116,7 +116,7 @@ Los números no son arbitrarios. Cada uno responde a un escenario de uso especí
 Cuando un proveedor te presenta una oferta de trajes, hay cinco preguntas concretas que separan al vendedor de catálogo del proveedor técnico serio:
 
 **1. "¿El TPP declarado es del sistema completo o de la capa exterior?"**
-Si la respuesta no es "del sistema completo probado como conjunto bajo ASTM F1959", el número no es válido para certificación NFPA 1971.
+Si la respuesta no es "del sistema completo probado como conjunto bajo ASTM F1959", el número no es válido para certificación NFPA 1970.
 
 **2. "¿La prueba fue con air gap o sin él?"**
 El air gap puede elevar el TPP reportado en 8–12 cal/cm² sobre el valor de contacto. Ambas metodologías son válidas según el contexto, pero tienes que saber cuál es.
@@ -138,7 +138,7 @@ Un proveedor que no puede o no quiere responder estas cinco preguntas con docume
 
 En el contexto de licitaciones mexicanas — IMSS, PEMEX, CFE, estados, municipios — la especificación técnica del traje es donde se gana o se pierde la calidad del equipo adquirido. Algunas recomendaciones concretas:
 
-**No especifiques solo "cumplimiento con NFPA 1971".** Especifica valores mínimos concretos de TPP y THL para el sistema completo. Ejemplo: "TPP mínimo del sistema completo: 40 cal/cm², THL mínimo del sistema completo: 215 W/m², verificados mediante certificado de laboratorio acreditado por tercera parte, emitido para la combinación exacta de materiales ofertada."
+**No especifiques solo "cumplimiento con NFPA 1970".** Especifica valores mínimos concretos de TPP y THL para el sistema completo. Ejemplo: "TPP mínimo del sistema completo: 40 cal/cm², THL mínimo del sistema completo: 215 W/m², verificados mediante certificado de laboratorio acreditado por tercera parte, emitido para la combinación exacta de materiales ofertada."
 
 **Usa la combinación TPP + THL como criterio de evaluación técnica, no como mínimo binario.** Un traje con TPP 48 y THL 218 no es automáticamente mejor que uno con TPP 41 y THL 236. Depende del perfil operativo de tu corporación. Para intervenciones cortas e intensas: prioriza TPP. Para intervenciones largas y trabajo físico extendido: prioriza THL.
 
@@ -156,7 +156,7 @@ Un bombero con un traje de 35 cal/cm² y uno con 48 cal/cm² se ven igual desde 
 
 Esa diferencia la construyó alguien en un área de compras que eligió el precio más bajo de dos trajes que "cumplían la norma".
 
-El mínimo de NFPA 1971 es el piso legal, no el estándar de protección real. Para equipar a un bombero que va a entrar a un edificio en llamas, el estándar correcto lo define el perfil de riesgo de tu corporación, no el mínimo que permite la certificación. Los números están disponibles. Las preguntas correctas existen. El proceso de verificación es replicable.
+El mínimo de NFPA 1970 es el piso legal, no el estándar de protección real. Para equipar a un bombero que va a entrar a un edificio en llamas, el estándar correcto lo define el perfil de riesgo de tu corporación, no el mínimo que permite la certificación. Los números están disponibles. Las preguntas correctas existen. El proceso de verificación es replicable.
 
 Lo que no es reemplazable es el bombero que sale del incendio caminando.
 
@@ -166,10 +166,10 @@ Lo que no es reemplazable es el bombero que sale del incendio caminando.
 
 Para profundizar en la metodología de prueba y los requisitos normativos:
 
-- **NFPA 1971** — Standard on Protective Ensembles for Structural Fire Fighting and Proximity Fire Fighting (edición vigente)
+- **NFPA 1970** — Standard on Protective Ensembles for Structural Fire Fighting and Proximity Fire Fighting (edición vigente)
 - **ASTM F1959 / F1959M** — Standard Test Method for Determining the Thermal Protective Performance of Materials for Clothing
 - **ASTM F1868** — Standard Test Method for Thermal and Evaporative Resistance of Clothing Materials Using a Sweating Hot Plate
-- **NFPA 1977** — Standard on Protective Clothing and Equipment for Wildland Fire Fighting (para referencia de contraste en THL)
+- **NFPA 1950** — Standard on Protective Clothing and Equipment for Wildland Fire Fighting (para referencia de contraste en THL)
 
 ---
 

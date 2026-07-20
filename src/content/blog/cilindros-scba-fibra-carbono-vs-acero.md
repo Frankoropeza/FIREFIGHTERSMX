@@ -11,7 +11,7 @@ image:
   alt: "Cilindros SCBA de fibra de carbono y acero comparados para equipos de respiración autónoma"
 ---
 
-Hace tres años revisé el parque de equipos de una brigada industrial en el corredor Veracruz-Coatzacoalcos. Tenían 18 cilindros full composite adquiridos en la licitación anterior —buena decisión en papel, fibra de carbono de marca reconocida, certificados NFPA 1981. El problema era que cuatro de esos cilindros habían sufrido caídas documentadas en bitácora: dos durante operaciones en plataforma, uno en entrenamiento, uno más cayó de un camión en maniobra de descarga. Los cuatro seguían en rotación activa.
+Hace tres años revisé el parque de equipos de una brigada industrial en el corredor Veracruz-Coatzacoalcos. Tenían 18 cilindros full composite adquiridos en la licitación anterior —buena decisión en papel, fibra de carbono de marca reconocida, certificados NFPA 1970. El problema era que cuatro de esos cilindros habían sufrido caídas documentadas en bitácora: dos durante operaciones en plataforma, uno en entrenamiento, uno más cayó de un camión en maniobra de descarga. Los cuatro seguían en rotación activa.
 
 Ninguno mostraba daño visible. Todos pasaban la revisión visual rutinaria. Y ninguno había sido sometido a prueba hidrostática extraordinaria porque "no se veía nada malo".
 
@@ -150,7 +150,7 @@ No todas las situaciones son iguales. Esta tabla sintetiza la recomendación con
 
 ## La trampa en las licitaciones públicas
 
-Un error recurrente en licitaciones de Protección Civil estatales y municipales: la especificación técnica incluye "cilindro de fibra de carbono certificado NFPA 1981" pero no incluye los requerimientos de gestión y mantenimiento que hacen esa elección segura.
+Un error recurrente en licitaciones de Protección Civil estatales y municipales: la especificación técnica incluye "cilindro de fibra de carbono certificado NFPA 1970" pero no incluye los requerimientos de gestión y mantenimiento que hacen esa elección segura.
 
 El proveedor entrega el cilindro. La licitación se cierra. Y la corporación opera un parque de composite sin protocolo post-impacto, sin personal capacitado en inspección visual de fibra, y sin un criterio documentado de retiro. El cilindro es el componente correcto instalado en el contexto equivocado.
 
@@ -190,6 +190,6 @@ Lleva los números de TCO a tu próxima reunión de adquisiciones. Define el pro
 
 ## Catálogo Equipos SCBA en FIREFIGHTERS MX
 
-Los cilindros son solo una parte del sistema. Contamos con equipos SCBA completos certificados NFPA 1981, con opciones de cilindro de acero y fibra de carbono según el perfil operacional de tu corporación o brigada industrial.
+Los cilindros son solo una parte del sistema. Contamos con equipos SCBA completos certificados NFPA 1970, con opciones de cilindro de acero y fibra de carbono según el perfil operacional de tu corporación o brigada industrial.
 
 [Ver catálogo completo de Equipos SCBA](/productos/equipos-scba) · [Solicitar cotización](/cotizacion)

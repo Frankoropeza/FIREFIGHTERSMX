@@ -33,17 +33,17 @@ Lo que hace un evaluador: toma las bases, extrae cada especificación técnica m
 
 Para extintores: la NOM de referencia en México es la NOM-154-SCFI-2005. Muchas fichas citan la NOM-106-SCFI-2000 (que fue cancelada y sustituida) o la UL 299 (estándar estadounidense que no es equivalente directo). La confusión entre estas tres referencias descalifica propuestas con frecuencia.
 
-Para equipos respiratorios tipo SCBA: la referencia es la NFPA 1981 con el año de edición correcto. Si la convocatoria pide NFPA 1981 edición 2019 y la ficha dice "cumple NFPA 1981" sin especificar edición, el evaluador puede rechazarla.
+Para equipos respiratorios tipo SCBA: la referencia es la NFPA 1970 con el año de edición correcto. Si la convocatoria pide NFPA 1981 edición 2019 y la ficha dice "cumple NFPA 1970" sin especificar edición, el evaluador puede rechazarla.
 
 Para rociadores y sistemas fijos: NFPA 13 con año de edición, y en licitaciones con componente mexicano, verificar si se exige NOM aplicable.
 
 | Equipo | NOM mexicana | Estándar NFPA/UL de referencia |
 |---|---|---|
 | Extintores portátiles | NOM-154-SCFI-2005 | UL 299 (referencial, no sustituto) |
-| SCBA | Sin NOM equivalente vigente | NFPA 1981 |
+| SCBA | Sin NOM equivalente vigente | NFPA 1970 |
 | Detectores de humo | NOM-009-ENER (no CI) | NFPA 72 |
 | Mangueras CI | NOM aplicable a presión | NFPA 1961 |
-| Cascos bombero | Sin NOM equivalente vigente | NFPA 1971 |
+| Cascos bombero | Sin NOM equivalente vigente | NFPA 1970 |
 
 ## Error 3: Especificaciones en unidades incorrectas
 
@@ -53,13 +53,13 @@ La solución: revisar cada especificación técnica de la convocatoria y asegura
 
 ## Error 4: Declarar cumplimiento sin demostrar
 
-"Cumple con NFPA 1971" es una declaración. No es evidencia. Las convocatorias más rigurosas (PEMEX Exploración, CFE Transmisión, SSP federal) requieren que el licitante acompañe la ficha técnica con certificados de laboratorio acreditado o cartas del fabricante con número de certificación.
+"Cumple con NFPA 1970" es una declaración. No es evidencia. Las convocatorias más rigurosas (PEMEX Exploración, CFE Transmisión, SSP federal) requieren que el licitante acompañe la ficha técnica con certificados de laboratorio acreditado o cartas del fabricante con número de certificación.
 
 Si la convocatoria pide el certificado y la propuesta solo incluye la ficha con la declaración, es incumplimiento. Si el certificado existe pero tiene una edición anterior de la norma y la convocatoria pide la edición actual, también es incumplimiento.
 
 ## Error 5: Modelo o versión que difiere del certificado
 
-El equipo que el licitante va a entregar debe ser exactamente el que está certificado. Si el fabricante tiene el modelo G1 certificado en NFPA 1981 pero el licitante cotizó el modelo G1-E (versión para exportación con diferencias de componentes), el certificado no aplica aunque el nombre del producto sea similar.
+El equipo que el licitante va a entregar debe ser exactamente el que está certificado. Si el fabricante tiene el modelo G1 certificado en NFPA 1970 pero el licitante cotizó el modelo G1-E (versión para exportación con diferencias de componentes), el certificado no aplica aunque el nombre del producto sea similar.
 
 Este error aparece cuando los distribuidores mezclan documentación de diferentes versiones del producto. El evaluador técnico con experiencia lo detecta comparando el número de parte en la ficha con el número de parte en el certificado.
 

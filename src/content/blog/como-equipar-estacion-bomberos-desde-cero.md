@@ -32,7 +32,7 @@ La regla que nunca rompo: ninguna intervención arranca sin proteger antes a qui
 
 Antes de cotizar nada, contéstame una pregunta: ¿qué tipo de emergencia van a enfrentar la mayoría de las veces? No es lo mismo un municipio con bosque a quince minutos que una zona industrial con tanques de químicos, o una ciudad llena de edificios altos. El perfil de riesgo decide casi todo lo demás.
 
-Si tu realidad es **urbana y estructural**, tu columna vertebral son los trajes NFPA 1970, los SCBA de 30 a 45 minutos y las cámaras térmicas. Si es **forestal**, pesa más la línea NFPA 1977, la herramienta manual y, aunque suene menor, la hidratación para jornadas que se hacen eternas. Si hay **industria o riesgo HAZMAT** cerca, vas a necesitar capacidad de proximidad, trajes encapsulados y SCBA de 60 minutos. Y si lo tuyo es el **rescate vehicular** en carretera, la herramienta hidráulica y la estabilización mandan. Mira cómo se adapta el equipo por sector en [industrias](/industrias).
+Si tu realidad es **urbana y estructural**, tu columna vertebral son los trajes NFPA 1970, los SCBA de 30 a 45 minutos y las cámaras térmicas. Si es **forestal**, pesa más la línea NFPA 1950, la herramienta manual y, aunque suene menor, la hidratación para jornadas que se hacen eternas. Si hay **industria o riesgo HAZMAT** cerca, vas a necesitar capacidad de proximidad, trajes encapsulados y SCBA de 60 minutos. Y si lo tuyo es el **rescate vehicular** en carretera, la herramienta hidráulica y la estabilización mandan. Mira cómo se adapta el equipo por sector en [industrias](/industrias).
 
 ## El equipo de protección individual: tu base
 
@@ -62,7 +62,7 @@ Te voy a ser honesto: no existe una cifra única que te sirva, porque depende de
 | SCBA + cilindros | Por elemento + 2–3 cilindros c/u | Tu mayor partida individual |
 | Herramienta de rescate | Por unidad de atención | Un set hidráulico por vehículo |
 | Detección | Por unidad o por turno | Cámaras térmicas que se comparten |
-| Mantenimiento anual | % del valor del EPP/SCBA | NFPA 1850/1851 más pruebas de SCBA |
+| Mantenimiento anual | % del valor del EPP/SCBA | NFPA 1850 más pruebas de SCBA |
 
 Y un consejo que pocos siguen y todos agradecen después: aparta desde el inicio una bolsa anual para inspección, lavado técnico y refacciones. Ese gasto, que parece prescindible el primer año, es lo que mantiene viva la certificación y estira la vida útil del equipo.
 

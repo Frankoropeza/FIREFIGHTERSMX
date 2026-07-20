@@ -53,7 +53,7 @@ Aquí está la tensión real entre los dos estilos — la que los catálogos no 
 
 **La cola de pato americana protege mejor la nuca en ataque directo de incendio estructural. El perfil bajo europeo es más seguro en rescate técnico y espacios confinados — pero deja más expuesta la nuca en ataque directo.**
 
-No es que el casco europeo no proteja la nuca. Sí la protege — el protector articulado cumple su función y pasa NFPA 1970 y EN 443. El punto es que la protección de nuca del europeo es dependiente del ajuste correcto del protector articulado y del sistema de retención. La cola de pato americana es protección pasiva geométrica — funciona independientemente de que el bombero haya ajustado bien o mal el casco.
+No es que el casco europeo no proteja la nuca. Sí la protege — el protector articulado cumple su función y pasa NFPA 1970 y EN 443:2008. El punto es que la protección de nuca del europeo es dependiente del ajuste correcto del protector articulado y del sistema de retención. La cola de pato americana es protección pasiva geométrica — funciona independientemente de que el bombero haya ajustado bien o mal el casco.
 
 En una corporación con alto volumen de ataque estructural — incendios en edificios residenciales, bodegas industriales, estructuras con riesgo de colapso — esa protección pasiva adicional de la cola de pato tiene valor real.
 
@@ -99,7 +99,7 @@ Antes de la tabla: los precios en México varían significativamente según el d
 | **Visor** | Integrado interior (carril) | Externo abatible |
 | **Integración de comunicaciones** | Alta (sistemas integrados) | Alta (sistemas adaptables) |
 | **Material carcasa dominante** | ABS/PC compuesto, fibra | Policarbonato, fibra de vidrio |
-| **Normas** | EN 443 + NFPA 1970 | NFPA 1970 (principalmente) |
+| **Normas** | EN 443:2008 + NFPA 1970 | NFPA 1970 (principalmente) |
 | **Precio referencia (México)** | $12,000–$22,000 MXN | $8,000–$18,000 MXN |
 | **Disponibilidad en México** | Media (importación) | Alta |
 
@@ -113,9 +113,9 @@ Dos normas dominan este mercado:
 
 **NFPA 1970** — el estándar norteamericano — es la referencia de facto en México para licitaciones públicas. Cubre cascos estructurales, capas de protección, SCBA y el conjunto como sistema. Los cascos que aparecen en licitaciones federales y estatales en México generalmente requieren certificación NFPA 1970.
 
-**EN 443:2008** — el estándar europeo para cascos de bombero estructural — es aceptado en licitaciones mexicanas que lo especifiquen explícitamente. Los cascos Gallet F1 XF y MSA Gallet obtienen certificación bajo ambas normas, lo que los hace elegibles en cualquier licitación que requiera NFPA 1970 o EN 443.
+**EN 443:2008** — el estándar europeo para cascos de bombero estructural — es aceptado en licitaciones mexicanas que lo especifiquen explícitamente. Los cascos Gallet F1 XF y MSA Gallet obtienen certificación bajo ambas normas, lo que los hace elegibles en cualquier licitación que requiera NFPA 1970 o EN 443:2008.
 
-La **NOM-100-STPS** mexicana hace referencia a normas internacionales reconocidas — no establece sus propias especificaciones de prueba para cascos de bombero. En la práctica, una certificación NFPA 1970 o EN 443 válida y vigente, emitida por laboratorio acreditado, es la documentación correcta para cualquier proceso de adquisición en México.
+La **NOM-100-STPS** mexicana hace referencia a normas internacionales reconocidas — no establece sus propias especificaciones de prueba para cascos de bombero. En la práctica, una certificación NFPA 1970 o EN 443:2008 válida y vigente, emitida por laboratorio acreditado, es la documentación correcta para cualquier proceso de adquisición en México.
 
 Un detalle importante para licitaciones: exige que el certificado esté vigente, que identifique el modelo exacto ofertado (no un modelo similar de la misma línea) y que haya sido emitido por un laboratorio de tercera parte acreditado — no por el propio fabricante.
 
@@ -162,7 +162,7 @@ El mercado de cascos en México está más fragmentado que el de SCBA o trajes:
 
 Independientemente del estilo, el material o el presupuesto:
 
-Primero, la certificación bajo norma reconocida — NFPA 1970 o EN 443 — emitida por laboratorio acreditado. No una declaración del fabricante. No un "equivalente". El certificado, con número de laboratorio, modelo específico y fecha de vencimiento.
+Primero, la certificación bajo norma reconocida — NFPA 1970 o EN 443:2008 — emitida por laboratorio acreditado. No una declaración del fabricante. No un "equivalente". El certificado, con número de laboratorio, modelo específico y fecha de vencimiento.
 
 Segundo, la verificación de compatibilidad con el SCBA en uso antes de comprar el lote. Esto no es un trámite — es una prueba física con bomberos reales en las condiciones reales de uso. El bombero se pone el traje, el SCBA montado con el cilindro, la máscara ajustada y el casco. Inclina la cabeza. Gira. Se agacha. El sello tiene que mantenerse en todas las posiciones.
 
