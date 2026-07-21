@@ -37,7 +37,7 @@ Lo que FLIR no tiene, y este es el punto donde MSA les supera por mucho, es inte
 
 ## El MSA G1 + LUNAR cambia la táctica; el FLIR K55 cambia la imagen
 
-Hablar de la MSA Evolution 6000 sin hablar del sistema LUNAR es como evaluar un avión de combate por el asiento del piloto. La cámara en sí tiene un detector de 320×240 píxeles, conectividad WiFi integrada, certificación NFPA 1801 y pesa aproximadamente 900 gramos — el dato que más escuchas criticar en campo. Pero la cámara es solo el nodo de imagen dentro de una arquitectura de comando que no tiene equivalente en los otros dos fabricantes.
+Hablar de la MSA Evolution 6000 sin hablar del sistema LUNAR es como evaluar un avión de combate por el asiento del piloto. La cámara en sí tiene un detector de 320×240 píxeles, conectividad WiFi integrada, certificación NFPA 1930 y pesa aproximadamente 900 gramos — el dato que más escuchas criticar en campo. Pero la cámara es solo el nodo de imagen dentro de una arquitectura de comando que no tiene equivalente en los otros dos fabricantes.
 
 El sistema LUNAR opera así: cada bombero que entra a la estructura porta un SCBA MSA G1 con módulo LUNAR integrado. Ese módulo reporta al puesto de mando exterior, de manera continua, tres cosas: la posición aproximada del bombero dentro de la estructura, el nivel de presión en el cilindro de aire, y el estado de la alarma de movimiento (PASS). El comandante de incidente ve todo esto en tiempo real en una pantalla táctil fuera del edificio.
 
@@ -83,7 +83,7 @@ La siguiente tabla incluye solo los parámetros que en operación real marcan di
 | Integración SCBA | No | No | No | MSA G1 + LUNAR | No |
 | Duración de batería | ~2.5 h | ~2.5 h | ~2 h | ~2 h | ~2.5 h |
 | Clasificación IP | IP67 | IP67 | IP67 | IP67 | IP67 |
-| Certificación NFPA 1801 | Sí | Sí | Sí | Sí | Sí |
+| Certificación NFPA 1930 | Sí | Sí | Sí | Sí | Sí |
 | Peso aproximado | ~590 g | ~680 g | ~680 g | ~900 g | ~700 g |
 | Precio referencia México 2026 | ~$25,000 MXN | ~$45,000 MXN | ~$65,000 MXN | ~$55,000–$70,000 MXN | ~$40,000–$55,000 MXN |
 
@@ -173,7 +173,7 @@ Para quien toma la decisión de compra: la cámara más cara no es siempre la co
 
 ## Artículos relacionados
 
-- [NFPA 1801: guía técnica completa](/blog/nfpa-1801-camaras-termicas-bomberos) — cómo distinguir una cámara certificada de una industrial disfrazada
+- [NFPA 1930: guía técnica completa](/blog/nfpa-1801-camaras-termicas-bomberos) — cómo distinguir una cámara certificada de una industrial disfrazada
 - [MSA G1 vs Dräger PSS 7000](/blog/msa-g1-vs-drager-pss7000-scba) — misma lógica de ecosistema integrado vs modularidad industrial en SCBA
 - [Tipos de traje: estructural, proximidad y forestal](/blog/traje-estructural-proximidad-forestal-diferencias) — el EPP completo del bombero más allá de la cámara
 
@@ -181,6 +181,6 @@ Para quien toma la decisión de compra: la cámara más cara no es siempre la co
 
 ## Catálogo Cámaras Térmicas en FIREFIGHTERS MX
 
-FLIR K-Series para imagen de referencia, MSA Evolution integrada con el ecosistema LUNAR, y Bullard TXS para cobertura de múltiples unidades. Las tres plataformas certificadas NFPA 1801 con soporte técnico y baterías disponibles en México.
+FLIR K-Series para imagen de referencia, MSA Evolution integrada con el ecosistema LUNAR, y Bullard TXS para cobertura de múltiples unidades. Las tres plataformas certificadas NFPA 1930 con soporte técnico y baterías disponibles en México.
 
 [Ver catálogo completo de Cámaras Térmicas](/productos/camaras-termicas) · [Solicitar cotización](/cotizacion)

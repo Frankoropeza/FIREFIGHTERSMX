@@ -10,8 +10,8 @@ const cat = categories.find((c) => c.slug === 'camaras-termicas')!;
 const canonicalURL = `${SITE.url}/productos/camaras-termicas`;
 
 const seoMeta = {
-  title: 'Cámaras Térmicas para Bomberos NFPA 1801 — FLIR, MSA Evolution, Bullard · México',
-  description: 'Catálogo de cámaras de imagen térmica certificadas NFPA 1801 en México. FLIR K45/K65, MSA Evolution 6000 y Bullard TXS/NXT. Búsqueda y rescate, sobrehaul y HAZMAT. Distribuidor autorizado · stock CDMX.',
+  title: 'Cámaras Térmicas para Bomberos NFPA 1930 — FLIR, MSA Evolution, Bullard · México',
+  description: 'Catálogo de cámaras de imagen térmica certificadas NFPA 1930 en México. FLIR K45/K65, MSA Evolution 6000 y Bullard TXS/NXT. Búsqueda y rescate, sobrehaul y HAZMAT. Distribuidor autorizado · stock CDMX.',
   canonicalURL,
 };
 
@@ -25,21 +25,21 @@ const todasCamaras    = featuredProducts.filter((p) => p.category === 'Cámaras 
 const tipos = [
   {
     title: 'Cámara de entrada / personal',
-    norm: 'NFPA 1801',
+    norm: 'NFPA 1930',
     accent: '#F75000',
     desc: 'Una cámara por bombero. Permite decisión táctica inmediata en el interior sin depender del equipo de mando. Ligera, robusta y con interfaz unificada. Referentes: FLIR K45, MSA Evolution 6000, Bullard TXS.',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5C21.27 7.61 17 4.5 12 4.5z"/><circle cx="12" cy="12" r="3"/>`,
   },
   {
     title: 'Cámara de mando / alta resolución',
-    norm: 'NFPA 1801',
+    norm: 'NFPA 1930',
     accent: '#F5A623',
     desc: 'Mayor resolución (320×240 px+), grabación de video, transmisión inalámbrica y pantalla amplificada para gestión táctica desde el exterior. Referentes: FLIR K65, MSA Evolution 6000 Plus, Bullard T4MAX.',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M3 7h18M3 12h18M3 17h18"/><rect x="2" y="5" width="20" height="14" rx="2"/>`,
   },
   {
     title: 'Cámara de inspección / sobrehaul',
-    norm: 'NFPA 1801',
+    norm: 'NFPA 1930',
     accent: '#34D399',
     desc: 'Alta sensibilidad térmica para detectar focos calientes ocultos tras muros, techos y pisos después del control del incendio. Reduce reactivaciones y riesgos de colapso estructural. Referente: FLIR T560 Inspección.',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/>`,
@@ -53,7 +53,7 @@ const comparativa = [
   { caract: 'Grabación video',     flir: 'K65 / T560',           msa: 'Evolution 6000 Plus',    bullard: 'T4MAX / NXT' },
   { caract: 'Transmisión Wi-Fi',   flir: 'K65 (Bluetooth)',      msa: 'Evolution 6000 Plus',    bullard: 'T4MAX' },
   { caract: 'Temperatura máx.',    flir: '500 °C / 2,000 °C',    msa: '500 °C',                 bullard: '600 °C' },
-  { caract: 'Norma',               flir: 'NFPA 1801',            msa: 'NFPA 1801',              bullard: 'NFPA 1801' },
+  { caract: 'Norma',               flir: 'NFPA 1930',            msa: 'NFPA 1930',              bullard: 'NFPA 1930' },
   { caract: 'Escenario ideal',     flir: 'Personal · mando',     msa: 'Mando · industrial',     bullard: 'Personal · rescate' },
 ];
 
@@ -61,13 +61,13 @@ const comparativa = [
 const razones = [
   {
     n: '01',
-    t: 'Tres marcas líderes NFPA 1801',
-    d: 'FLIR (Teledyne), MSA Safety y Bullard — los tres fabricantes con mayor presencia en cuerpos de bomberos de América Latina, disponibles con un solo distribuidor en México. Todas las cámaras con certificación NFPA 1801 vigente.',
+    t: 'Tres marcas líderes NFPA 1930',
+    d: 'FLIR (Teledyne), MSA Safety y Bullard — los tres fabricantes con mayor presencia en cuerpos de bomberos de América Latina, disponibles con un solo distribuidor en México. Todas las cámaras con certificación NFPA 1930 vigente.',
   },
   {
     n: '02',
-    t: 'Interfaz NFPA 1801 unificada',
-    d: 'La norma NFPA 1801 exige que los controles de apagado y congelación de imagen estén en posiciones estándar independientemente del fabricante. Un bombero puede operar cualquier cámara certificada sin reentrenamiento, reduciendo errores en entornos de alto estrés.',
+    t: 'Interfaz NFPA 1930 unificada',
+    d: 'La norma NFPA 1930 exige que los controles de apagado y congelación de imagen estén en posiciones estándar independientemente del fabricante. Un bombero puede operar cualquier cámara certificada sin reentrenamiento, reduciendo errores en entornos de alto estrés.',
   },
   {
     n: '03',
@@ -84,8 +84,8 @@ const razones = [
 /* ── FAQ ────────────────────────────────────────────────────────────────── */
 const faqs = [
   {
-    q: '¿Qué es NFPA 1801 y por qué es obligatoria para cámaras de bomberos?',
-    a: 'NFPA 1801 es el estándar de la National Fire Protection Association que define los requisitos de diseño, construcción, desempeño y prueba de cámaras de imagen térmica para bomberos. Establece resolución mínima, sensibilidad térmica, resistencia a temperatura, impacto y caída, y — de forma clave — la posición y función estándar de los controles para que cualquier bombero pueda operar cualquier cámara certificada sin reentrenamiento. En México, las licitaciones de equipamiento para cuerpos de bomberos municipales y estatales especifican NFPA 1801 de forma explícita desde 2015.',
+    q: '¿Qué es NFPA 1930 y por qué es obligatoria para cámaras de bomberos?',
+    a: 'NFPA 1930 es el estándar de la National Fire Protection Association que define los requisitos de diseño, construcción, desempeño y prueba de cámaras de imagen térmica para bomberos. Establece resolución mínima, sensibilidad térmica, resistencia a temperatura, impacto y caída, y — de forma clave — la posición y función estándar de los controles para que cualquier bombero pueda operar cualquier cámara certificada sin reentrenamiento. En México, las licitaciones de equipamiento para cuerpos de bomberos municipales y estatales especifican NFPA 1930 de forma explícita desde 2015.',
   },
   {
     q: '¿Cuál es la diferencia entre una cámara de entrada y una de mando?',
@@ -97,11 +97,11 @@ const faqs = [
   },
   {
     q: '¿Qué resolución de sensor necesita mi cámara?',
-    a: 'Para búsqueda y rescate en interiores, 160×120 px es suficiente para localizar víctimas y detectar puntos de calor en condiciones de humo denso. Para mando, documentación y análisis post-siniestro, 320×240 px ofrece imágenes más detalladas, mejor grabación de video y mayor legibilidad en transmisión inalámbrica. NFPA 1801 no exige una resolución mínima específica — exige criterios de legibilidad en pantalla que 160×120 px cumple en todas las marcas que distribuimos.',
+    a: 'Para búsqueda y rescate en interiores, 160×120 px es suficiente para localizar víctimas y detectar puntos de calor en condiciones de humo denso. Para mando, documentación y análisis post-siniestro, 320×240 px ofrece imágenes más detalladas, mejor grabación de video y mayor legibilidad en transmisión inalámbrica. NFPA 1930 no exige una resolución mínima específica — exige criterios de legibilidad en pantalla que 160×120 px cumple en todas las marcas que distribuimos.',
   },
   {
     q: '¿Entregan ficha técnica y documentación para licitación pública?',
-    a: 'Sí. Cada cámara incluye el certificado de conformidad NFPA 1801 con número de modelo, lote y laboratorio acreditado. Para concursos públicos (CompraNet, IMSS, gobiernos estatales y municipales) generamos el manifiesto de cumplimiento de norma por partida con identificación de edición específica y carta de distribución autorizada. Respuesta en menos de 24 horas a solicitudes para licitación.',
+    a: 'Sí. Cada cámara incluye el certificado de conformidad NFPA 1930 con número de modelo, lote y laboratorio acreditado. Para concursos públicos (CompraNet, IMSS, gobiernos estatales y municipales) generamos el manifiesto de cumplimiento de norma por partida con identificación de edición específica y carta de distribución autorizada. Respuesta en menos de 24 horas a solicitudes para licitación.',
   },
 ];
 
@@ -120,7 +120,7 @@ const collectionSchema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
   '@id': `${canonicalURL}#collection`,
-  name: 'Cámaras Térmicas para Bomberos NFPA 1801 — México',
+  name: 'Cámaras Térmicas para Bomberos NFPA 1930 — México',
   description: seoMeta.description,
   url: canonicalURL,
   inLanguage: 'es-MX',
@@ -143,17 +143,17 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'camaras-termicas').
 /* Guía de selección */
 const guia = [
   { n: '01', t: 'Define el uso principal: interior estructural (combate activo en edificios) → necesitas cámara de entrada con arranque rápido (<5 s) y operación con guante. Operaciones de mando o documentación → prioriza resolución 320×240 px y grabación de video.' },
-  { n: '02', t: 'Verifica la certificación NFPA 1801 por número de modelo, no por marca. La norma exige que la certificación esté vigente y sea verificable en el registro del laboratorio — un modelo descontinuado puede ya no estar listado aunque lo estuvo en su momento.' },
+  { n: '02', t: 'Verifica la certificación NFPA 1930 por número de modelo, no por marca. La norma exige que la certificación esté vigente y sea verificable en el registro del laboratorio — un modelo descontinuado puede ya no estar listado aunque lo estuvo en su momento.' },
   { n: '03', t: 'Comprueba la integración con tu EPP: la cámara debe montarse en tu casco sin modificar el perfil de protección y sin interferir con el SCBA. MSA Evolution monta nativamente en Gallet; FLIR y Bullard incluyen adaptadores universales para los cascos más comunes.' },
   { n: '04', t: 'Solicita la demostración con las tres marcas en condición real (con guante, con casco, con SCBA). La imagen de catálogo no reemplaza la experiencia táctica. Organizamos la demostración en tu instalación o en las nuestras, sin compromiso de compra.' },
 ];
 
 /* Artículos del blog */
 const articulos = [
-  { label: 'NFPA 1801: qué certifica y qué no',    desc: 'Guía técnica para evaluadores y licitadores',      href: '/blog/nfpa-1801-camaras-termicas-bomberos' },
+  { label: 'NFPA 1930: qué certifica y qué no',    desc: 'Guía técnica para evaluadores y licitadores',      href: '/blog/nfpa-1801-camaras-termicas-bomberos' },
   { label: 'FLIR vs MSA vs Bullard',                desc: 'Comparativa técnica por escenario de uso',         href: '/blog/flir-vs-msa-vs-bullard-camaras-termicas' },
   { label: 'Cámaras de mando vs entrada',           desc: 'Cuándo necesitas una y cuándo la otra',            href: '/blog/camara-termica-mando-vs-entrada-bomberos' },
-  { label: 'Mantenimiento de cámaras NFPA 1801',    desc: 'Calibración, baterías y criterios de retiro',     href: '/blog/mantenimiento-camaras-termicas-bomberos' },
+  { label: 'Mantenimiento de cámaras NFPA 1930',    desc: 'Calibración, baterías y criterios de retiro',     href: '/blog/mantenimiento-camaras-termicas-bomberos' },
 ];
 ---
 
@@ -187,18 +187,18 @@ const articulos = [
           </h1>
           <p class="text-lg leading-relaxed mb-8 max-w-xl" style="color:#94A3B8">
             En visibilidad cero, la imagen térmica es la diferencia entre buscar y encontrar.
-            Distribuimos cámaras FLIR, MSA Evolution y Bullard certificadas NFPA 1801 — el estándar
+            Distribuimos cámaras FLIR, MSA Evolution y Bullard certificadas NFPA 1930 — el estándar
             que garantiza legibilidad, durabilidad e interfaz uniforme en condiciones de combate real.
           </p>
 
           <div class="flex flex-wrap gap-3 mb-8">
-            {['NFPA 1801','FLIR K45 · K65','MSA Evolution 6000','Bullard TXS · NXT','Stock CDMX','Demostración sin costo'].map(b => (
+            {['NFPA 1930','FLIR K45 · K65','MSA Evolution 6000','Bullard TXS · NXT','Stock CDMX','Demostración sin costo'].map(b => (
               <span class="badge badge-dark">{b}</span>
             ))}
           </div>
 
           <div class="flex flex-wrap gap-4">
-            <a href={whatsappUrl('Hola, quiero información sobre cámaras térmicas certificadas NFPA 1801 para bomberos.')}
+            <a href={whatsappUrl('Hola, quiero información sobre cámaras térmicas certificadas NFPA 1930 para bomberos.')}
               target="_blank" rel="noopener" class="btn btn-primary btn-lg">
               Solicitar demostración →
             </a>
@@ -221,7 +221,7 @@ const articulos = [
           </div>
           <div class="p-6" style="background:#070E1A;border:1px solid rgba(74,117,153,0.2)">
             <p class="text-sm leading-relaxed m-0" style="color:#64748B">
-              <strong style="color:#94A3B8">NFPA 1801</strong> establece la posición y función estándar
+              <strong style="color:#94A3B8">NFPA 1930</strong> establece la posición y función estándar
               de los controles en todas las cámaras certificadas. Un bombero puede operar cualquier
               modelo sin reentrenamiento — reduce errores en entornos de alto estrés.
             </p>
@@ -331,10 +331,10 @@ const articulos = [
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
-          <span class="section-eyebrow mb-4 inline-flex">Teledyne FLIR · NFPA 1801 · Distribuidor Autorizado MX</span>
+          <span class="section-eyebrow mb-4 inline-flex">Teledyne FLIR · NFPA 1930 · Distribuidor Autorizado MX</span>
           <h2 id="flir-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Cámaras FLIR<br/>
-            <span style="color:#F75000">certificadas NFPA 1801.</span>
+            <span style="color:#F75000">certificadas NFPA 1930.</span>
           </h2>
         </div>
         <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
@@ -342,10 +342,10 @@ const articulos = [
             Teledyne FLIR es el mayor fabricante mundial de sensores de imagen térmica. Su línea K
             para bomberos define el estándar global: K45 para entrada personal, K65 para mando con
             video y transmisión Bluetooth, y T560 para inspección y sobrehaul de alta sensibilidad.
-            Cada modelo certificado NFPA 1801 vigente con número de serie verificable.
+            Cada modelo certificado NFPA 1930 vigente con número de serie verificable.
           </p>
           <div class="flex flex-wrap gap-2">
-            {['NFPA 1801','FLIR K45','FLIR K65','FLIR T560','Teledyne FLIR','Video · Bluetooth','Distribuidor autorizado MX'].map(b => (
+            {['NFPA 1930','FLIR K45','FLIR K65','FLIR T560','Teledyne FLIR','Video · Bluetooth','Distribuidor autorizado MX'].map(b => (
               <span class="badge badge-dark text-[9px]">{b}</span>
             ))}
           </div>
@@ -362,14 +362,14 @@ const articulos = [
         <div class="flex-1">
           <p class="text-sm leading-relaxed m-0" style="color:#64748B">
             Comparativa completa de modelos FLIR (resolución, rango de temperatura, grabación),
-            ficha técnica NFPA 1801 y documentación para licitación con carta de distribuidor autorizado.
+            ficha técnica NFPA 1930 y documentación para licitación con carta de distribuidor autorizado.
           </p>
         </div>
         <div class="flex flex-col sm:flex-row gap-3 shrink-0">
           <a href="/productos/camaras-termicas/flir" class="btn btn-primary btn-lg">
             Catálogo FLIR completo →
           </a>
-          <a href={whatsappUrl('Hola, quiero cotizar cámaras térmicas FLIR K45 o K65 certificadas NFPA 1801.')}
+          <a href={whatsappUrl('Hola, quiero cotizar cámaras térmicas FLIR K45 o K65 certificadas NFPA 1930.')}
             target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
             Cotizar por WhatsApp
           </a>
@@ -385,10 +385,10 @@ const articulos = [
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
-          <span class="section-eyebrow mb-4 inline-flex">MSA Safety · Evolution 6000 · NFPA 1801 · Distribuidor Autorizado MX</span>
+          <span class="section-eyebrow mb-4 inline-flex">MSA Safety · Evolution 6000 · NFPA 1930 · Distribuidor Autorizado MX</span>
           <h2 id="msa-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Cámaras MSA Evolution<br/>
-            <span style="color:#60A5FA">certificadas NFPA 1801.</span>
+            <span style="color:#60A5FA">certificadas NFPA 1930.</span>
           </h2>
         </div>
         <div style="border-left:2px solid rgba(96,165,250,0.4);padding-left:1.75rem">
@@ -399,7 +399,7 @@ const articulos = [
             para gestión táctica desde el exterior. La opción preferida en operaciones industriales.
           </p>
           <div class="flex flex-wrap gap-2">
-            {['NFPA 1801','MSA Evolution 6000','Evolution 6000 Plus','Montaje Gallet','SCBA G1 integrado','Transmisión Wi-Fi','Distribuidor autorizado MX'].map(b => (
+            {['NFPA 1930','MSA Evolution 6000','Evolution 6000 Plus','Montaje Gallet','SCBA G1 integrado','Transmisión Wi-Fi','Distribuidor autorizado MX'].map(b => (
               <span class="badge badge-dark text-[9px]">{b}</span>
             ))}
           </div>
@@ -416,14 +416,14 @@ const articulos = [
         <div class="flex-1">
           <p class="text-sm leading-relaxed m-0" style="color:#64748B">
             Comparativa Evolution 6000 vs 6000 Plus vs 5200 Industrial, guía de integración con casco
-            MSA Gallet y SCBA G1, y ficha técnica NFPA 1801 para licitación.
+            MSA Gallet y SCBA G1, y ficha técnica NFPA 1930 para licitación.
           </p>
         </div>
         <div class="flex flex-col sm:flex-row gap-3 shrink-0">
           <a href="/productos/camaras-termicas/msa-evolution" class="btn btn-primary btn-lg">
             Catálogo MSA Evolution completo →
           </a>
-          <a href={whatsappUrl('Hola, quiero cotizar cámaras térmicas MSA Evolution 6000 certificadas NFPA 1801.')}
+          <a href={whatsappUrl('Hola, quiero cotizar cámaras térmicas MSA Evolution 6000 certificadas NFPA 1930.')}
             target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
             Cotizar por WhatsApp
           </a>
@@ -439,10 +439,10 @@ const articulos = [
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
-          <span class="section-eyebrow mb-4 inline-flex">Bullard · TXS · NXT · NFPA 1801 · Distribuidor Autorizado MX</span>
+          <span class="section-eyebrow mb-4 inline-flex">Bullard · TXS · NXT · NFPA 1930 · Distribuidor Autorizado MX</span>
           <h2 id="bullard-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Cámaras Bullard<br/>
-            <span style="color:#F5A623">certificadas NFPA 1801.</span>
+            <span style="color:#F5A623">certificadas NFPA 1930.</span>
           </h2>
         </div>
         <div style="border-left:2px solid rgba(245,166,35,0.4);padding-left:1.75rem">
@@ -454,7 +454,7 @@ const articulos = [
             para cuerpos con mayor riesgo de daño físico al equipo.
           </p>
           <div class="flex flex-wrap gap-2">
-            {['NFPA 1801','Bullard TXS','Bullard NXT','T4MAX mando','600 °C rango','Wi-Fi transmisión','Resistencia mecánica','Distribuidor autorizado MX'].map(b => (
+            {['NFPA 1930','Bullard TXS','Bullard NXT','T4MAX mando','600 °C rango','Wi-Fi transmisión','Resistencia mecánica','Distribuidor autorizado MX'].map(b => (
               <span class="badge badge-dark text-[9px]">{b}</span>
             ))}
           </div>
@@ -471,14 +471,14 @@ const articulos = [
         <div class="flex-1">
           <p class="text-sm leading-relaxed m-0" style="color:#64748B">
             Comparativa TXS vs NXT vs T4MAX, pruebas de resistencia mecánica y ficha técnica
-            NFPA 1801 con carta de distribuidor autorizado para licitación.
+            NFPA 1930 con carta de distribuidor autorizado para licitación.
           </p>
         </div>
         <div class="flex flex-col sm:flex-row gap-3 shrink-0">
           <a href="/productos/camaras-termicas/bullard-txs" class="btn btn-primary btn-lg">
             Catálogo Bullard completo →
           </a>
-          <a href={whatsappUrl('Hola, quiero cotizar cámaras térmicas Bullard TXS o NXT certificadas NFPA 1801.')}
+          <a href={whatsappUrl('Hola, quiero cotizar cámaras térmicas Bullard TXS o NXT certificadas NFPA 1930.')}
             target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
             Cotizar por WhatsApp
           </a>
@@ -495,7 +495,7 @@ const articulos = [
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Cómo elegir la cámara correcta</span>
           <h2 id="guia-ct-title" class="font-display font-bold mb-8" style="color:#FFFFFF;font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.1">
-            Del escenario<br/><span style="color:#F75000">a la cámara NFPA 1801.</span>
+            Del escenario<br/><span style="color:#F75000">a la cámara NFPA 1930.</span>
           </h2>
           <ol class="flex flex-col gap-4 list-none m-0 p-0">
             {guia.map((s) => (
@@ -506,7 +506,7 @@ const articulos = [
             ))}
           </ol>
           <div class="mt-8">
-            <a href={whatsappUrl('Hola, necesito asesoría para elegir la cámara térmica NFPA 1801 correcta para mi cuerpo de bomberos.')}
+            <a href={whatsappUrl('Hola, necesito asesoría para elegir la cámara térmica NFPA 1930 correcta para mi cuerpo de bomberos.')}
               target="_blank" rel="noopener"
               class="btn btn-primary btn-lg">
               Asesoría de selección gratuita →
@@ -551,7 +551,7 @@ const articulos = [
             asesoramos sobre el modelo y la configuración correctos para tu operación.
           </p>
           <a
-            href={whatsappUrl('Hola, tengo una pregunta técnica sobre cámaras térmicas NFPA 1801 para bomberos.')}
+            href={whatsappUrl('Hola, tengo una pregunta técnica sobre cámaras térmicas NFPA 1930 para bomberos.')}
             target="_blank" rel="noopener"
             class="btn btn-primary"
           >
@@ -592,13 +592,13 @@ const articulos = [
         </div>
         <div class="flex flex-col gap-4">
           <a
-            href={whatsappUrl('Hola, quiero agendar una demostración de cámaras térmicas NFPA 1801 (FLIR, MSA, Bullard).')}
+            href={whatsappUrl('Hola, quiero agendar una demostración de cámaras térmicas NFPA 1930 (FLIR, MSA, Bullard).')}
             target="_blank" rel="noopener"
             class="btn btn-primary btn-lg text-center"
           >
             Agendar demostración →
           </a>
-          <a href={whatsappUrl('Hola, quiero una cotización de cámaras térmicas certificadas NFPA 1801 para mi corporación.')}
+          <a href={whatsappUrl('Hola, quiero una cotización de cámaras térmicas certificadas NFPA 1930 para mi corporación.')}
             target="_blank" rel="noopener"
             class="btn btn-ghost btn-lg text-center">
             Solicitar cotización formal

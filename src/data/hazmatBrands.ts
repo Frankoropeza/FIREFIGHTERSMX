@@ -12,26 +12,26 @@ const NOTA_HAZMAT =
   '* Niveles EPA de protección personal: el nivel asignado depende del agente específico, la concentración y la ruta de exposición. Siempre consulte las tablas de permeación del fabricante y el plan de respuesta de su brigada antes de seleccionar el nivel de protección.';
 
 /* ════════════════════════════════════════════════════════════════════════════
-   DUPONT TYCHEM — Trajes HAZMAT NFPA 1991 / 1992
+   DUPONT TYCHEM — Trajes HAZMAT NFPA 1990
    ════════════════════════════════════════════════════════════════════════════ */
 const dupontTychem: EquipmentBrand = {
   categorySlug: 'hazmat',
   slug: 'dupont-tychem',
   brand: 'DuPont Tychem',
   brandLabel: 'DuPont Tychem',
-  crossDesc: 'Trajes HAZMAT Nivel A y B · NFPA 1991 / 1992 · Líder mundial en barreras químicas',
+  crossDesc: 'Trajes HAZMAT Nivel A y B · NFPA 1990 · Líder mundial en barreras químicas',
   eyebrow: 'DuPont Safety Products · Tychem · Distribuidor Autorizado MX',
   heroTitleTop: 'Trajes DuPont Tychem',
-  heroTitleAccent: 'barrera química NFPA 1991.',
+  heroTitleAccent: 'barrera química NFPA 1990.',
   heroLead:
     'Distribuidor autorizado de trajes HAZMAT DuPont Tychem en México. La gama completa: Tychem 10000 (Nivel A encapsulado), Tychem 6000F (FR + barrera química), Tychem 4000S (Nivel B/C) y Tychem 2000 (Nivel C/D) — cada traje con tabla de permeación verificada para selección según el agente específico.',
   heroIntro: [
-    'DuPont Safety Products define el estándar global de barreras químicas para respuesta a materiales peligrosos. La línea Tychem cubre el espectro completo de protección: desde el Tychem 10000 —el traje encapsulado con mayor resistencia química disponible, certificado NFPA 1991 y CE Categoría III— hasta el Tychem 2000 para operaciones de post-emergencia y muestreo ambiental de Nivel C/D.',
+    'DuPont Safety Products define el estándar global de barreras químicas para respuesta a materiales peligrosos. La línea Tychem cubre el espectro completo de protección: desde el Tychem 10000 —el traje encapsulado con mayor resistencia química disponible, certificado NFPA 1990 y CE Categoría III— hasta el Tychem 2000 para operaciones de post-emergencia y muestreo ambiental de Nivel C/D.',
     'En México, la selección correcta del traje HAZMAT exige tablas de permeación verificadas por agente y concentración — no solo la certificación de nivel. DuPont publica tablas de permeación para más de 280 sustancias en la gama Tychem, y te asesoramos en la selección específica según las sustancias de tu operación: refinería, petroquímica, transporte de químicos, planta de tratamiento o respuesta municipal.',
   ],
   heroBadges: [
-    'NFPA 1991',
-    'NFPA 1992',
+    'NFPA 1990',
+    'NFPA 1990',
     'CE Categoría III',
     'Nivel A encapsulado',
     'Nivel B/C salpicadura',
@@ -39,13 +39,13 @@ const dupontTychem: EquipmentBrand = {
     'DuPont Safety Products',
     'Distribuidor Autorizado MX',
   ],
-  seoTitle: 'Trajes DuPont Tychem HAZMAT NFPA 1991 — Nivel A · B · México',
+  seoTitle: 'Trajes DuPont Tychem HAZMAT NFPA 1990 — Nivel A · B · México',
   seoDescription:
-    'Trajes HAZMAT DuPont Tychem certificados NFPA 1991 y 1992 en México: Tychem 10000 (Nivel A), Tychem 6000F (FR), Tychem 4000S (Nivel B/C), Tychem 2000 (Nivel C/D). Tablas de permeación · asesoría por agente. Distribuidor autorizado.',
+    'Trajes HAZMAT DuPont Tychem certificados NFPA 1990 en México: Tychem 10000 (Nivel A), Tychem 6000F (FR), Tychem 4000S (Nivel B/C), Tychem 2000 (Nivel C/D). Tablas de permeación · asesoría por agente. Distribuidor autorizado.',
   founding: '1802',
   parentOrg: { name: 'DuPont de Nemours Inc.', ticker: 'NYSE:DD' },
   stats: [
-    { valor: 'NFPA 1991', etiq: 'Norma máxima Nivel A' },
+    { valor: 'NFPA 1990', etiq: 'Norma máxima Nivel A' },
     { valor: '280+', etiq: 'Sustancias con tabla de permeación' },
     { valor: 'CE III', etiq: 'Categoría de riesgo más alta (Europa)' },
     { valor: '32', etiq: 'Estados con cobertura en México' },
@@ -54,7 +54,7 @@ const dupontTychem: EquipmentBrand = {
     {
       n: '01',
       t: 'Tychem 10000: la mayor resistencia química disponible',
-      d: 'El Tychem 10000 (Saranex-23P laminado sobre Tyvek) es el traje encapsulado con mayor resistencia documentada a vapor y gas en el portafolio DuPont. Certificado NFPA 1991 y CE Categoría III. La primera opción para atmósferas desconocidas, operaciones CBRN y eventos con mezclas de agentes no identificados.',
+      d: 'El Tychem 10000 (Saranex-23P laminado sobre Tyvek) es el traje encapsulado con mayor resistencia documentada a vapor y gas en el portafolio DuPont. Certificado NFPA 1990 y CE Categoría III. La primera opción para atmósferas desconocidas, operaciones CBRN y eventos con mezclas de agentes no identificados.',
     },
     {
       n: '02',
@@ -77,18 +77,18 @@ const dupontTychem: EquipmentBrand = {
   lineas: [
     {
       tipo: 'traje-nivel-a',
-      badge: 'NFPA 1991 · Nivel A Encapsulado',
+      badge: 'NFPA 1990 · Nivel A Encapsulado',
       familiaLabel: 'Tychem 10000 / 6000F',
       flagship: 'dupont-tychem-10000',
-      desc: 'Trajes encapsulados de máxima protección química. Tychem 10000 para vapor/gas (Nivel A puro) y Tychem 6000F con resistencia a flama para entornos con doble riesgo. Ambos certificados NFPA 1991 y CE Categoría III.',
+      desc: 'Trajes encapsulados de máxima protección química. Tychem 10000 para vapor/gas (Nivel A puro) y Tychem 6000F con resistencia a flama para entornos con doble riesgo. Ambos certificados NFPA 1990 y CE Categoría III.',
       modelos: [
         { m: 'Tychem 10000',   d: 'Saranex-23P laminado — máxima resistencia a vapor y gas · Nivel A' },
-        { m: 'Tychem 6000F',   d: 'FR + barrera química — NFPA 1991 + NFPA 2112 · Nivel A/B' },
+        { m: 'Tychem 6000F',   d: 'FR + barrera química — NFPA 1990 + NFPA 2112 · Nivel A/B' },
       ],
     },
     {
       tipo: 'traje-nivel-b',
-      badge: 'NFPA 1992 · Nivel B/C Salpicadura',
+      badge: 'NFPA 1990 · Nivel B/C Salpicadura',
       familiaLabel: 'Tychem 4000S / 2000',
       flagship: 'dupont-tychem-4000s',
       desc: 'Trajes de cobertura total para Nivel B, C y D. Tychem 4000S para salpicadura de líquidos industriales y Tychem 2000 para partículas, aerosoles y líquidos de baja presión en post-emergencia.',
@@ -100,10 +100,10 @@ const dupontTychem: EquipmentBrand = {
   ],
   comparativaLabel: 'Comparativa familia Tychem',
   comparativa: [
-    { modelo: 'Tychem 10000', norma: 'NFPA 1991 · CE III', nivel_haz: 'Nivel A', barrera: 'Saranex-23P laminado',    ideal: 'Atmósferas desconocidas · CBRN' },
-    { modelo: 'Tychem 6000F', norma: 'NFPA 1991 · 2112',   nivel_haz: 'Nivel A/B + FR', barrera: 'FR laminado 6 capas', ideal: 'Refinería · petroquímica · gas' },
-    { modelo: 'Tychem 4000S', norma: 'NFPA 1992 · EN 14605', nivel_haz: 'Nivel B/C', barrera: 'Polipropileno laminado', ideal: 'Brigadas industriales · transporte' },
-    { modelo: 'Tychem 2000',  norma: 'NFPA 1992 · EN 13982', nivel_haz: 'Nivel C/D', barrera: 'SMS laminado',           ideal: 'Post-emergencia · muestreo ambiental' },
+    { modelo: 'Tychem 10000', norma: 'NFPA 1990 · CE III', nivel_haz: 'Nivel A', barrera: 'Saranex-23P laminado',    ideal: 'Atmósferas desconocidas · CBRN' },
+    { modelo: 'Tychem 6000F', norma: 'NFPA 1990 · 2112',   nivel_haz: 'Nivel A/B + FR', barrera: 'FR laminado 6 capas', ideal: 'Refinería · petroquímica · gas' },
+    { modelo: 'Tychem 4000S', norma: 'NFPA 1990 · EN 14605', nivel_haz: 'Nivel B/C', barrera: 'Polipropileno laminado', ideal: 'Brigadas industriales · transporte' },
+    { modelo: 'Tychem 2000',  norma: 'NFPA 1990 · EN 13982', nivel_haz: 'Nivel C/D', barrera: 'SMS laminado',           ideal: 'Post-emergencia · muestreo ambiental' },
   ],
   faq: [
     {
@@ -119,31 +119,31 @@ const dupontTychem: EquipmentBrand = {
       a: 'El Tychem 6000F tiene resistencia a flama certificada (NFPA 2112 y ASTM D6413) — no protege contra fuego directo ni es un traje estructural, pero no se inflama ni propaga la llama en exposición momentánea. Esto es crítico en refinería, petroquímica o plantas con vapores inflamables donde puede haber ignición repentina simultánea con salpicadura química.',
     },
   ],
-  ctaWhatsapp: 'Hola, quiero información y tablas de permeación de trajes DuPont Tychem NFPA 1991 para mi brigada HAZMAT.',
+  ctaWhatsapp: 'Hola, quiero información y tablas de permeación de trajes DuPont Tychem NFPA 1990 para mi brigada HAZMAT.',
   notaPie: NOTA_HAZMAT,
 };
 
 /* ════════════════════════════════════════════════════════════════════════════
-   LAKELAND INDUSTRIES — ChemMax NFPA 1991 / 1992
+   LAKELAND INDUSTRIES — ChemMax NFPA 1990
    ════════════════════════════════════════════════════════════════════════════ */
 const lakelandChemMax: EquipmentBrand = {
   categorySlug: 'hazmat',
   slug: 'lakeland-chemmax',
   brand: 'Lakeland Industries',
   brandLabel: 'Lakeland Industries',
-  crossDesc: 'Trajes HAZMAT Nivel A y B · NFPA 1991 / 1992 · ChemMax 4 · AlphaTec',
+  crossDesc: 'Trajes HAZMAT Nivel A y B · NFPA 1990 · ChemMax 4 · AlphaTec',
   eyebrow: 'Lakeland Industries · ChemMax · Distribuidor Autorizado MX',
   heroTitleTop: 'Trajes Lakeland ChemMax',
   heroTitleAccent: 'protección Nivel A certificada.',
   heroLead:
-    'Distribuidor autorizado de trajes HAZMAT Lakeland Industries en México. ChemMax 4 (Nivel A encapsulado NFPA 1991), ChemMax 3 (Nivel A optimizado en peso), AlphaTec 5000 (Nivel B salpicadura) y Pyrolon CRFR (doble protección química + FR) — con tablas de permeación para 350+ sustancias.',
+    'Distribuidor autorizado de trajes HAZMAT Lakeland Industries en México. ChemMax 4 (Nivel A encapsulado NFPA 1990), ChemMax 3 (Nivel A optimizado en peso), AlphaTec 5000 (Nivel B salpicadura) y Pyrolon CRFR (doble protección química + FR) — con tablas de permeación para 350+ sustancias.',
   heroIntro: [
-    'Lakeland Industries es el mayor fabricante independiente de EPP de protección química del mundo. Su línea ChemMax define el estándar de trajes encapsulados Nivel A certificados NFPA 1991 como alternativa técnicamente equivalente a DuPont Tychem, con tablas de permeación para más de 350 sustancias y compatibilidad documentada con SCBA de los principales fabricantes.',
+    'Lakeland Industries es el mayor fabricante independiente de EPP de protección química del mundo. Su línea ChemMax define el estándar de trajes encapsulados Nivel A certificados NFPA 1990 como alternativa técnicamente equivalente a DuPont Tychem, con tablas de permeación para más de 350 sustancias y compatibilidad documentada con SCBA de los principales fabricantes.',
     'La ventaja de Lakeland en el mercado mexicano es la profundidad de su portafolio: desde el ChemMax 4 de máxima protección hasta el Pyrolon CRFR para entornos con doble riesgo (salpicadura química + fuego), con costuras selladas por RF, cierres de entrada verificados y visor panorámico antifog en todos sus modelos encapsulados.',
   ],
   heroBadges: [
-    'NFPA 1991',
-    'NFPA 1992',
+    'NFPA 1990',
+    'NFPA 1990',
     'EN 943-1 Tipo 1',
     'ChemMax 4 Nivel A',
     'AlphaTec Nivel B',
@@ -151,13 +151,13 @@ const lakelandChemMax: EquipmentBrand = {
     'Lakeland Industries',
     'Distribuidor Autorizado MX',
   ],
-  seoTitle: 'Trajes Lakeland ChemMax HAZMAT NFPA 1991 — Nivel A · B · México',
+  seoTitle: 'Trajes Lakeland ChemMax HAZMAT NFPA 1990 — Nivel A · B · México',
   seoDescription:
-    'Trajes HAZMAT Lakeland ChemMax certificados NFPA 1991 y 1992 en México: ChemMax 4 (Nivel A), ChemMax 3 (Nivel A ligero), AlphaTec 5000 (Nivel B), Pyrolon CRFR (FR + químico). Tablas de permeación · 350+ sustancias. Distribuidor autorizado.',
+    'Trajes HAZMAT Lakeland ChemMax certificados NFPA 1990 en México: ChemMax 4 (Nivel A), ChemMax 3 (Nivel A ligero), AlphaTec 5000 (Nivel B), Pyrolon CRFR (FR + químico). Tablas de permeación · 350+ sustancias. Distribuidor autorizado.',
   founding: '1982',
   parentOrg: { name: 'Lakeland Industries Inc.', ticker: 'NASDAQ:LAKE' },
   stats: [
-    { valor: 'NFPA 1991', etiq: 'Norma máxima Nivel A' },
+    { valor: 'NFPA 1990', etiq: 'Norma máxima Nivel A' },
     { valor: '350+', etiq: 'Sustancias con tabla de permeación' },
     { valor: 'EN 943-1', etiq: 'Tipo 1 — equivalente europeo Nivel A' },
     { valor: '32', etiq: 'Estados con cobertura en México' },
@@ -171,12 +171,12 @@ const lakelandChemMax: EquipmentBrand = {
     {
       n: '02',
       t: 'ChemMax 3: mismo Nivel A, menor peso',
-      d: 'El ChemMax 3 ofrece protección Nivel A NFPA 1991 en un laminado de 3 capas optimizado en peso. Menor resistencia al calor radiante = mayor tiempo de trabajo seguro dentro del traje antes de alcanzar el límite de estrés térmico — crítico en operaciones HAZMAT de larga duración o en climas cálidos.',
+      d: 'El ChemMax 3 ofrece protección Nivel A NFPA 1990 en un laminado de 3 capas optimizado en peso. Menor resistencia al calor radiante = mayor tiempo de trabajo seguro dentro del traje antes de alcanzar el límite de estrés térmico — crítico en operaciones HAZMAT de larga duración o en climas cálidos.',
     },
     {
       n: '03',
       t: 'Pyrolon CRFR: doble certificación química + FR',
-      d: 'El Pyrolon CRFR combina resistencia a salpicadura química NFPA 1992 con resistencia a flama NFPA 2112. El tejido FR laminado no propaga llama, lo que protege al técnico ante ignición repentina en entornos con vapores inflamables. La opción preferida en refinerías y plantas petroquímicas donde el doble riesgo es simultáneo.',
+      d: 'El Pyrolon CRFR combina resistencia a salpicadura química NFPA 1990 con resistencia a flama NFPA 2112. El tejido FR laminado no propaga llama, lo que protege al técnico ante ignición repentina en entornos con vapores inflamables. La opción preferida en refinerías y plantas petroquímicas donde el doble riesgo es simultáneo.',
     },
     {
       n: '04',
@@ -189,38 +189,38 @@ const lakelandChemMax: EquipmentBrand = {
   lineas: [
     {
       tipo: 'traje-nivel-a',
-      badge: 'NFPA 1991 · Nivel A Encapsulado',
+      badge: 'NFPA 1990 · Nivel A Encapsulado',
       familiaLabel: 'ChemMax 4 / ChemMax 3',
       flagship: 'lakeland-chemmax-4',
-      desc: 'Trajes encapsulados Nivel A NFPA 1991 para atmósferas desconocidas o con riesgo de vapor y gas. ChemMax 4 para máxima cobertura documental (350+ sustancias), ChemMax 3 para operaciones de mayor duración con menor estrés térmico.',
+      desc: 'Trajes encapsulados Nivel A NFPA 1990 para atmósferas desconocidas o con riesgo de vapor y gas. ChemMax 4 para máxima cobertura documental (350+ sustancias), ChemMax 3 para operaciones de mayor duración con menor estrés térmico.',
       modelos: [
-        { m: 'ChemMax 4',       d: '4 capas laminadas — 350+ sustancias documentadas · Nivel A NFPA 1991' },
-        { m: 'ChemMax 3',       d: '3 capas optimizadas — menor peso · operaciones prolongadas · Nivel A NFPA 1991' },
+        { m: 'ChemMax 4',       d: '4 capas laminadas — 350+ sustancias documentadas · Nivel A NFPA 1990' },
+        { m: 'ChemMax 3',       d: '3 capas optimizadas — menor peso · operaciones prolongadas · Nivel A NFPA 1990' },
       ],
     },
     {
       tipo: 'traje-nivel-b',
-      badge: 'NFPA 1992 · Nivel B/C Salpicadura',
+      badge: 'NFPA 1990 · Nivel B/C Salpicadura',
       familiaLabel: 'AlphaTec 5000 / Pyrolon CRFR',
       flagship: 'lakeland-alphatec-5000',
       desc: 'Trajes de cobertura para Nivel B y C. AlphaTec 5000 para salpicadura química industrial con ergonomía optimizada y Pyrolon CRFR para entornos con riesgo simultáneo de salpicadura química y fuego repentino.',
       modelos: [
-        { m: 'AlphaTec 5000',   d: 'Microporous laminado · articulaciones preformadas · Nivel B NFPA 1992' },
-        { m: 'Pyrolon CRFR',    d: 'FR + químico · NFPA 1992 + NFPA 2112 · Nivel B/C doble riesgo' },
+        { m: 'AlphaTec 5000',   d: 'Microporous laminado · articulaciones preformadas · Nivel B NFPA 1990' },
+        { m: 'Pyrolon CRFR',    d: 'FR + químico · NFPA 1990 + NFPA 2112 · Nivel B/C doble riesgo' },
       ],
     },
   ],
   comparativaLabel: 'Comparativa familia ChemMax / AlphaTec',
   comparativa: [
-    { modelo: 'ChemMax 4',     norma: 'NFPA 1991 · EN 943-1', nivel_haz: 'Nivel A',          barrera: 'Laminado 4 capas',        ideal: 'Máxima cobertura documental · CBRN' },
-    { modelo: 'ChemMax 3',     norma: 'NFPA 1991 · EN 943-1', nivel_haz: 'Nivel A ligero',    barrera: 'Laminado 3 capas opt.',   ideal: 'Operaciones prolongadas · climas cálidos' },
-    { modelo: 'AlphaTec 5000', norma: 'NFPA 1992 · EN 14605', nivel_haz: 'Nivel B',           barrera: 'Microporous laminado',   ideal: 'Brigadas industriales · respuesta química' },
-    { modelo: 'Pyrolon CRFR',  norma: 'NFPA 1992 · NFPA 2112', nivel_haz: 'Nivel B/C + FR',  barrera: 'Tejido FR laminado',     ideal: 'Refinería · petroquímica · doble riesgo' },
+    { modelo: 'ChemMax 4',     norma: 'NFPA 1990 · EN 943-1', nivel_haz: 'Nivel A',          barrera: 'Laminado 4 capas',        ideal: 'Máxima cobertura documental · CBRN' },
+    { modelo: 'ChemMax 3',     norma: 'NFPA 1990 · EN 943-1', nivel_haz: 'Nivel A ligero',    barrera: 'Laminado 3 capas opt.',   ideal: 'Operaciones prolongadas · climas cálidos' },
+    { modelo: 'AlphaTec 5000', norma: 'NFPA 1990 · EN 14605', nivel_haz: 'Nivel B',           barrera: 'Microporous laminado',   ideal: 'Brigadas industriales · respuesta química' },
+    { modelo: 'Pyrolon CRFR',  norma: 'NFPA 1990 · NFPA 2112', nivel_haz: 'Nivel B/C + FR',  barrera: 'Tejido FR laminado',     ideal: 'Refinería · petroquímica · doble riesgo' },
   ],
   faq: [
     {
       q: '¿ChemMax 4 o DuPont Tychem 10000 — cuál elegir?',
-      a: 'Ambos son Nivel A NFPA 1991 técnicamente equivalentes con tablas de permeación verificadas. La diferencia está en la documentación: Tychem 10000 tiene 280+ sustancias; ChemMax 4 tiene 350+. Para brigadas con mayor variedad de agentes posibles, ChemMax 4 ofrece mayor cobertura documental. Para licitaciones que especifican DuPont por nombre, el Tychem 10000 es la opción directa. Te asesoramos según las sustancias específicas de tu operación.',
+      a: 'Ambos son Nivel A NFPA 1990 técnicamente equivalentes con tablas de permeación verificadas. La diferencia está en la documentación: Tychem 10000 tiene 280+ sustancias; ChemMax 4 tiene 350+. Para brigadas con mayor variedad de agentes posibles, ChemMax 4 ofrece mayor cobertura documental. Para licitaciones que especifican DuPont por nombre, el Tychem 10000 es la opción directa. Te asesoramos según las sustancias específicas de tu operación.',
     },
     {
       q: '¿Qué ventaja tiene el ChemMax 3 frente al ChemMax 4?',
@@ -231,7 +231,7 @@ const lakelandChemMax: EquipmentBrand = {
       a: 'El ChemMax 4 está probado y documentado como compatible con MSA G1, Dräger PSS 7000, 3M Scott Air-Pak NxG7, Honeywell Sperian y otros SCBA de 30 y 45 min. La compatibilidad implica que el puerto de entrada del SCBA puede acoplarse al traje de forma hermética sin adaptadores adicionales. Te facilitamos la ficha de compatibilidad específica para el SCBA de tu brigada.',
     },
   ],
-  ctaWhatsapp: 'Hola, quiero información sobre trajes Lakeland ChemMax NFPA 1991 para mi brigada HAZMAT.',
+  ctaWhatsapp: 'Hola, quiero información sobre trajes Lakeland ChemMax NFPA 1990 para mi brigada HAZMAT.',
   notaPie: NOTA_HAZMAT,
 };
 
@@ -356,17 +356,17 @@ const kapplerHazmat: EquipmentBrand = {
   brand: 'Kappler',
   brandLabel: 'Kappler Zytron',
   crossDesc: 'Trajes HAZMAT Nivel A/B/C · Zytron 500 CBRN · Frontline FR · Kits completos Nivel B',
-  eyebrow: 'Kappler Inc. · NFPA 1991 · NFPA 1992 · CBRN-C · Distribuidor Autorizado MX',
+  eyebrow: 'Kappler Inc. · NFPA 1990 · CBRN-C · Distribuidor Autorizado MX',
   heroTitleTop: 'Kappler Zytron',
-  heroTitleAccent: 'CBRN y NFPA 1991/1992.',
+  heroTitleAccent: 'CBRN y NFPA 1990.',
   heroLead: 'La gama completa de trajes HAZMAT Kappler para brigadas que operan en múltiples niveles de riesgo: Zytron 500 XP encapsulado Nivel A con certificación CBRN, Zytron 300 Nivel B para zona cálida de larga duración, Frontline 500 FR con doble certificación química y llama, kits completos Nivel B y trajes Nivel D para consumo masivo.',
   heroIntro: [
-    'Kappler produce trajes HAZMAT para respuesta a materiales peligrosos, defensa civil y operaciones industriales. La línea Zytron cubre el espectro completo: el Zytron 500 XP es el traje encapsulado de mayor protección de la marca, con doble certificación NFPA 1991 y CBRN-C para agentes de guerra química. El Zytron 300 es el traje no encapsulado de Nivel B para zona cálida de larga duración. El Zytron 100 es la opción económica para brigadas de apoyo y Nivel D.',
-    'En México, Kappler es una alternativa certificada a DuPont Tychem que permite cumplir requisitos de licitaciones con dos fabricantes distintos — ambos certificados NFPA 1991. El Frontline 500 FR es el único traje del mercado con doble certificación NFPA 1992 y NFPA 2112, relevante para operaciones en instalaciones con riesgo combinado químico y eléctrico.',
+    'Kappler produce trajes HAZMAT para respuesta a materiales peligrosos, defensa civil y operaciones industriales. La línea Zytron cubre el espectro completo: el Zytron 500 XP es el traje encapsulado de mayor protección de la marca, con doble certificación NFPA 1990 y CBRN-C para agentes de guerra química. El Zytron 300 es el traje no encapsulado de Nivel B para zona cálida de larga duración. El Zytron 100 es la opción económica para brigadas de apoyo y Nivel D.',
+    'En México, Kappler es una alternativa certificada a DuPont Tychem que permite cumplir requisitos de licitaciones con dos fabricantes distintos — ambos certificados NFPA 1990. El Frontline 500 FR es el único traje del mercado con doble certificación NFPA 1990 y NFPA 2112, relevante para operaciones en instalaciones con riesgo combinado químico y eléctrico.',
   ],
-  heroBadges: ['NFPA 1991', 'NFPA 1992', 'NFPA 2112', 'CBRN-C', 'Nivel A · B · C · D', 'Kits completos', 'Alternativa certificada licitación'],
-  seoTitle: 'Trajes HAZMAT Kappler Zytron — Nivel A/B/C NFPA 1991/1992 CBRN · México',
-  seoDescription: 'Distribuidor de trajes HAZMAT Kappler en México: Zytron 500 XP (Nivel A NFPA 1991 CBRN), Zytron 300 (Nivel B), Frontline 500 FR (NFPA 1992+2112) y kits completos. Alternativa certificada DuPont para licitaciones.',
+  heroBadges: ['NFPA 1990', 'NFPA 1990', 'NFPA 2112', 'CBRN-C', 'Nivel A · B · C · D', 'Kits completos', 'Alternativa certificada licitación'],
+  seoTitle: 'Trajes HAZMAT Kappler Zytron — Nivel A/B/C NFPA 1990 CBRN · México',
+  seoDescription: 'Distribuidor de trajes HAZMAT Kappler en México: Zytron 500 XP (Nivel A CBRN), Zytron 300 (Nivel B) y Frontline 500 FR (salpicadura), bajo NFPA 1990 y NFPA 2112 y kits completos. Alternativa certificada DuPont para licitaciones.',
   stats: [
     { valor: '370+', etiq: 'Sustancias con tabla de permeación Zytron' },
     { valor: 'CBRN-C', etiq: 'Certificación agentes de guerra química' },
@@ -376,8 +376,8 @@ const kapplerHazmat: EquipmentBrand = {
   credenciales: [
     {
       n: '01',
-      t: 'Zytron 500 XP — Nivel A NFPA 1991 + CBRN-C simultáneos',
-      d: 'La certificación CBRN-C incluye pruebas de permeación con agentes de guerra química: gas mostaza (HD), VX, sarin (GB) y otros. La mayoría de los trajes NFPA 1991 no tienen CBRN-C. El Zytron 500 XP es uno de los pocos que combina ambas certificaciones, lo que lo hace el traje de referencia para brigadas de defensa civil y contratos de protección civil con requisito CBRN.',
+      t: 'Zytron 500 XP — Nivel A NFPA 1990 + CBRN-C simultáneos',
+      d: 'La certificación CBRN-C incluye pruebas de permeación con agentes de guerra química: gas mostaza (HD), VX, sarin (GB) y otros. La mayoría de los trajes NFPA 1990 no tienen CBRN-C. El Zytron 500 XP es uno de los pocos que combina ambas certificaciones, lo que lo hace el traje de referencia para brigadas de defensa civil y contratos de protección civil con requisito CBRN.',
     },
     {
       n: '02',
@@ -386,8 +386,8 @@ const kapplerHazmat: EquipmentBrand = {
     },
     {
       n: '03',
-      t: 'Frontline 500 — única doble certificación NFPA 1992 + NFPA 2112',
-      d: 'El Frontline 500 FR es el único traje de Nivel C del mercado con certificación simultánea NFPA 1992 (protección química) y NFPA 2112 (resistencia a la llama industrial). Esto lo hace obligatorio en instalaciones donde el riesgo combinado químico y de llama flash es real: refinerías, petroquímicas y plantas de manufactura con disolventes inflamables.',
+      t: 'Frontline 500 — única doble certificación NFPA 1990 + NFPA 2112',
+      d: 'El Frontline 500 FR es el único traje de Nivel C del mercado con certificación simultánea NFPA 1990 (protección química) y NFPA 2112 (resistencia a la llama industrial). Esto lo hace obligatorio en instalaciones donde el riesgo combinado químico y de llama flash es real: refinerías, petroquímicas y plantas de manufactura con disolventes inflamables.',
     },
     {
       n: '04',
@@ -399,15 +399,15 @@ const kapplerHazmat: EquipmentBrand = {
   lineas: [
     {
       tipo: 'traje-nivel-a',
-      badge: 'NFPA 1991 · CBRN-C',
+      badge: 'NFPA 1990 · CBRN-C',
       titulo: 'Zytron 500 XP — Nivel A encapsulado CBRN',
       modelos: 'Zytron 500 XP · Responder CST',
-      desc: 'Nivel A encapsulado con la mayor protección química de Kappler. El Zytron 500 XP agrega la certificación CBRN-C sobre la base NFPA 1991. El Responder CST es el encapsulado de Nivel B para primera respuesta rápida sin encapsulamiento total del SCBA.',
+      desc: 'Nivel A encapsulado con la mayor protección química de Kappler. El Zytron 500 XP agrega la certificación CBRN-C sobre la base NFPA 1990. El Responder CST es el encapsulado de Nivel B para primera respuesta rápida sin encapsulamiento total del SCBA.',
       tech: 'Costuras termoselladas 4 capas · >370 sustancias · SCBA ext./int.',
     },
     {
       tipo: 'traje-nivel-b',
-      badge: 'NFPA 1992',
+      badge: 'NFPA 1990',
       titulo: 'Zytron 300 — Nivel B zona cálida',
       modelos: 'Zytron 300 · SUIT-PACK Kit completo',
       desc: 'Traje no encapsulado de Nivel B para operaciones de larga duración en zona cálida. Menor carga térmica que el encapsulado de Nivel A. Disponible como kit completo SUIT-PACK con guantes, botas y cinta de sellado.',
@@ -415,7 +415,7 @@ const kapplerHazmat: EquipmentBrand = {
     },
     {
       tipo: 'traje-nivel-b',
-      badge: 'NFPA 1992 · NFPA 2112',
+      badge: 'NFPA 1990 · NFPA 2112',
       titulo: 'Frontline 500 — Nivel C FR doble certificación',
       modelos: 'Frontline 500 FR',
       desc: 'El único traje de Nivel C con doble certificación química y resistencia a la llama. Para instalaciones con riesgo combinado: salpicaduras químicas + llama flash + arco eléctrico. Compatible con PAPR.',
@@ -423,7 +423,7 @@ const kapplerHazmat: EquipmentBrand = {
     },
     {
       tipo: 'traje-nivel-b',
-      badge: 'NFPA 1999',
+      badge: 'NFPA 1950',
       titulo: 'Zytron 100 — Nivel D desechable',
       modelos: 'Zytron 100 · MicroMax alternativo',
       desc: 'Traje de cobertura total desechable para Nivel D. Mayor resistencia a la abrasión que los trajes SMS de marca blanca. Para muestreo, post-emergencia y brigadas de apoyo donde el costo por traje es el factor determinante.',
@@ -431,45 +431,45 @@ const kapplerHazmat: EquipmentBrand = {
     },
   ],
   flagship: 'kappler-zytron-500-nivel-a',
-  anatomiaIntro: 'El Kappler Zytron 500 XP es el traje de referencia de la marca — la única unidad con doble certificación NFPA 1991 y CBRN-C. Cada componente del traje tiene una función específica que determina si el sistema completo pasa o falla las pruebas de certificación.',
+  anatomiaIntro: 'El Kappler Zytron 500 XP es el traje de referencia de la marca — la única unidad con doble certificación NFPA 1990 y CBRN-C. Cada componente del traje tiene una función específica que determina si el sistema completo pasa o falla las pruebas de certificación.',
   anatomia: [
-    { t: 'Tela Zytron 500 — barrera multicapa laminada', d: 'La tela es el elemento certificado, no el traje completo. La certificación NFPA 1991 y CBRN-C aplica a la combinación específica de tela + costuras + cierres del traje. Cambiar cualquier componente puede invalidar la certificación — los repuestos deben ser partes originales Kappler.' },
-    { t: 'Costuras termoselladas de cuatro capas', d: 'Las costuras son el punto más vulnerable de cualquier traje de protección química. Una costura sin sellar permite la penetración de vapores aunque la tela sea impermeable. Las cuatro capas del sellado Kappler (hilo + dos capas de cinta + adhesivo) son el estándar de la industria para NFPA 1991.' },
-    { t: 'Cierre de cremallera hermético con guardapolvo', d: 'El cierre frontal es el componente que más frecuentemente falla en las pruebas NFPA 1991. Kappler usa una cremallera de dientes de plástico (no metálica) con guardapolvo interno — el metal puede crear microfisuras que permiten la permeación de vapores en los ciclos de prueba.' },
+    { t: 'Tela Zytron 500 — barrera multicapa laminada', d: 'La tela es el elemento certificado, no el traje completo. La certificación NFPA 1990 y CBRN-C aplica a la combinación específica de tela + costuras + cierres del traje. Cambiar cualquier componente puede invalidar la certificación — los repuestos deben ser partes originales Kappler.' },
+    { t: 'Costuras termoselladas de cuatro capas', d: 'Las costuras son el punto más vulnerable de cualquier traje de protección química. Una costura sin sellar permite la penetración de vapores aunque la tela sea impermeable. Las cuatro capas del sellado Kappler (hilo + dos capas de cinta + adhesivo) son el estándar de la industria para NFPA 1990.' },
+    { t: 'Cierre de cremallera hermético con guardapolvo', d: 'El cierre frontal es el componente que más frecuentemente falla en las pruebas NFPA 1990. Kappler usa una cremallera de dientes de plástico (no metálica) con guardapolvo interno — el metal puede crear microfisuras que permiten la permeación de vapores en los ciclos de prueba.' },
     { t: 'Visor de policarbonato panorámico', d: 'El visor es un componente de sacrificio — no tiene la misma resistencia química que la tela Zytron 500. Para operaciones con solventes que atacan el policarbonato (acetona, tolueno), Kappler ofrece visor alternativo en polimetilpenteno (TPX) con mayor resistencia química.' },
     { t: 'Soporte externo de SCBA', d: 'El Zytron 500 XP usa soporte externo de SCBA — el equipo de respiración va fuera del traje. Esto simplifica el vestido y el ajuste del traje, pero requiere que las interfaces de brazos y cintura sellen correctamente sobre el arnés del SCBA durante toda la operación.' },
-    { t: 'Prueba de campo con detector de partículas', d: 'Antes de cualquier operación con Nivel A, la brigada debe realizar una prueba de integridad del traje con aerosol de dioctilsebacato (DEHS) o nebulizador Fit-Test. Un traje NFPA 1991 que no pasa la prueba de campo no debe usarse — la certificación de fábrica no sustituye la verificación de integridad antes del incidente.' },
+    { t: 'Prueba de campo con detector de partículas', d: 'Antes de cualquier operación con Nivel A, la brigada debe realizar una prueba de integridad del traje con aerosol de dioctilsebacato (DEHS) o nebulizador Fit-Test. Un traje NFPA 1990 que no pasa la prueba de campo no debe usarse — la certificación de fábrica no sustituye la verificación de integridad antes del incidente.' },
   ],
   comparativa: [
-    { modelo: 'Zytron 500 XP Nivel A CBRN', tipo: 'traje-nivel-a', rec: true, norma: 'NFPA 1991 · CBRN-C', nivel_haz: 'Nivel A encapsulado', barrera: 'Zytron 500 multicapa', gases: '370+ sus. · agentes guerra', ideal: 'Brigadas HAZMAT Nivel 1 · CBRN' },
-    { modelo: 'Responder CST Nivel B Encapsulado', tipo: 'traje-nivel-b', norma: 'NFPA 1992', nivel_haz: 'Nivel B encapsulado', barrera: 'CST multicapa', gases: 'Vapores · cloro · gases ácidos', ideal: 'Primera respuesta HAZMAT' },
-    { modelo: 'Zytron 300 Nivel B', tipo: 'traje-nivel-b', norma: 'NFPA 1992', nivel_haz: 'Nivel B no encapsulado', barrera: 'Zytron 300 tres capas', gases: 'Vapores · ácidos · solventes', ideal: 'Zona cálida · larga duración' },
-    { modelo: 'SUIT-PACK Kit Nivel B', tipo: 'traje-nivel-b', norma: 'NFPA 1992', nivel_haz: 'Nivel B kit completo', barrera: 'Zytron 300 + butilo + PVC', gases: 'Configuración completa', ideal: 'Brigadas sin equipo previo' },
-    { modelo: 'Frontline 500 FR Nivel C', tipo: 'traje-nivel-b', norma: 'NFPA 1992 · NFPA 2112', nivel_haz: 'Nivel C FR doble cert.', barrera: 'Frontline FR laminada', gases: 'Salpicaduras · llama flash', ideal: 'Refinería · petroquímica · arco' },
-    { modelo: 'Zytron 100 Nivel D', tipo: 'traje-nivel-b', norma: 'NFPA 1999', nivel_haz: 'Nivel D desechable', barrera: 'Zytron 100 polipropileno', gases: 'Partículas · polvos', ideal: 'Apoyo · post-emergencia' },
+    { modelo: 'Zytron 500 XP Nivel A CBRN', tipo: 'traje-nivel-a', rec: true, norma: 'NFPA 1990 · CBRN-C', nivel_haz: 'Nivel A encapsulado', barrera: 'Zytron 500 multicapa', gases: '370+ sus. · agentes guerra', ideal: 'Brigadas HAZMAT Nivel 1 · CBRN' },
+    { modelo: 'Responder CST Nivel B Encapsulado', tipo: 'traje-nivel-b', norma: 'NFPA 1990', nivel_haz: 'Nivel B encapsulado', barrera: 'CST multicapa', gases: 'Vapores · cloro · gases ácidos', ideal: 'Primera respuesta HAZMAT' },
+    { modelo: 'Zytron 300 Nivel B', tipo: 'traje-nivel-b', norma: 'NFPA 1990', nivel_haz: 'Nivel B no encapsulado', barrera: 'Zytron 300 tres capas', gases: 'Vapores · ácidos · solventes', ideal: 'Zona cálida · larga duración' },
+    { modelo: 'SUIT-PACK Kit Nivel B', tipo: 'traje-nivel-b', norma: 'NFPA 1990', nivel_haz: 'Nivel B kit completo', barrera: 'Zytron 300 + butilo + PVC', gases: 'Configuración completa', ideal: 'Brigadas sin equipo previo' },
+    { modelo: 'Frontline 500 FR Nivel C', tipo: 'traje-nivel-b', norma: 'NFPA 1990 · NFPA 2112', nivel_haz: 'Nivel C FR doble cert.', barrera: 'Frontline FR laminada', gases: 'Salpicaduras · llama flash', ideal: 'Refinería · petroquímica · arco' },
+    { modelo: 'Zytron 100 Nivel D', tipo: 'traje-nivel-b', norma: 'NFPA 1950', nivel_haz: 'Nivel D desechable', barrera: 'Zytron 100 polipropileno', gases: 'Partículas · polvos', ideal: 'Apoyo · post-emergencia' },
   ],
   comparativaLabel: 'Kappler — gama completa Nivel A · B · C · D',
   comparativaNote: '★ Recomendado = Zytron 500 XP con CBRN-C, el traje de mayor nivel de protección de la marca.',
   guia: [
-    { n: '01', t: 'Nivel A (NFPA 1991): cuando el agente es desconocido o cuando la concentración del vapor supera el TLV — cualquier duda sobre el agente → Nivel A, nunca Nivel B.' },
-    { n: '02', t: 'Nivel B (NFPA 1992): cuando el agente es conocido y el vapor no es el vector principal — zona cálida con salpicaduras pero sin saturación de vapor que requiera encapsulamiento.' },
+    { n: '01', t: 'Nivel A (NFPA 1990): cuando el agente es desconocido o cuando la concentración del vapor supera el TLV — cualquier duda sobre el agente → Nivel A, nunca Nivel B.' },
+    { n: '02', t: 'Nivel B (NFPA 1990): cuando el agente es conocido y el vapor no es el vector principal — zona cálida con salpicaduras pero sin saturación de vapor que requiera encapsulamiento.' },
     { n: '03', t: 'Nivel C: solo cuando el agente, la concentración y las condiciones atmosféricas están completamente caracterizadas y el respirador de purificación de aire es adecuado — nunca como primera respuesta.' },
     { n: '04', t: 'Verifica las tablas de permeación de Kappler para el agente específico antes de seleccionar el nivel — la certificación NFPA no garantiza resistencia a toda sustancia, solo a las de las pruebas de certificación.' },
   ],
   segmentosIntro: 'Los trajes Kappler cubren cuatro segmentos según el tipo de operación y el perfil de riesgo de la instalación.',
   segmentos: [
-    { num: '01', tipo: 'traje-nivel-a', titulo: 'Brigadas HAZMAT municipales y Protección Civil', desc: 'El Zytron 500 XP con CBRN-C es el traje requerido por los contratos de protección civil que incluyen respuesta a incidentes con agentes de guerra química. Compatible con la dotación NFPA 1991 que exige la Ley de Protección Civil.', modelos: 'Zytron 500 XP · Responder CST' },
+    { num: '01', tipo: 'traje-nivel-a', titulo: 'Brigadas HAZMAT municipales y Protección Civil', desc: 'El Zytron 500 XP con CBRN-C es el traje requerido por los contratos de protección civil que incluyen respuesta a incidentes con agentes de guerra química. Compatible con la dotación NFPA 1990 que exige la Ley de Protección Civil.', modelos: 'Zytron 500 XP · Responder CST' },
     { num: '02', tipo: 'traje-nivel-b', titulo: 'Refinería y petroquímica', desc: 'El Frontline 500 FR es la opción para instalaciones con riesgo combinado: salpicaduras de hidrocarburos o ácidos + llama flash + arco eléctrico. Pemex y los parques petroquímicos que exigen NFPA 2112 en toda la ropa de trabajo industrial lo adoptan para la brigada HAZMAT.', modelos: 'Frontline 500 FR · Zytron 300 Nivel B' },
     { num: '03', tipo: 'traje-nivel-b', titulo: 'Industria química y plantas de proceso', desc: 'El Zytron 300 de Nivel B es el traje de brigada para plantas con ácidos concentrados, álcalis o solventes clorados donde el riesgo es salpicadura en zona cálida sin saturación de vapor. El kit SUIT-PACK permite dotar a la brigada completa con equipo compatible y trazable.', modelos: 'Zytron 300 · SUIT-PACK Kit · Zytron 100' },
-    { num: '04', tipo: 'traje-nivel-b', titulo: 'Licitaciones con requisito de doble fabricante', desc: 'Pemex, CFE y las secretarías de Protección Civil frecuentemente requieren que la especificación acepte mínimo dos fabricantes certificados NFPA 1991. Kappler Zytron 500 XP es la alternativa calificada al DuPont Tychem 10000 — misma certificación, diferente precio, diferente proveedor.', modelos: 'Zytron 500 XP (alternativa a Tychem 10000)' },
+    { num: '04', tipo: 'traje-nivel-b', titulo: 'Licitaciones con requisito de doble fabricante', desc: 'Pemex, CFE y las secretarías de Protección Civil frecuentemente requieren que la especificación acepte mínimo dos fabricantes certificados NFPA 1990. Kappler Zytron 500 XP es la alternativa calificada al DuPont Tychem 10000 — misma certificación, diferente precio, diferente proveedor.', modelos: 'Zytron 500 XP (alternativa a Tychem 10000)' },
   ],
   faqs: [
-    { q: '¿En qué se diferencia el Kappler Zytron 500 XP del DuPont Tychem 10000?', a: 'Ambos son trajes encapsulados de Nivel A certificados NFPA 1991. Las diferencias clave son: (1) el Zytron 500 XP tiene soporte externo de SCBA estándar (el Tychem 10000 usa soporte interno), lo que cambia el procedimiento de vestido; (2) los materiales de tela son distintos — Zytron 500 vs Tychem 10000 — con tablas de permeación diferentes para algunas sustancias; (3) el precio por traje del Kappler es generalmente menor. Para licitaciones con dos fabricantes certificados, son las dos opciones estándar del mercado mexicano.' },
-    { q: '¿Qué significa la certificación CBRN-C y cuándo es obligatoria?', a: 'CBRN-C (Chemical, Biological, Radiological, Nuclear — Chemical focus) es una certificación adicional a NFPA 1991 que incluye pruebas de permeación con agentes de guerra química (mostaza HD, VX, sarin GB, lewisite). No todos los trajes NFPA 1991 tienen CBRN-C — es una certificación adicional que el fabricante obtiene voluntariamente. Es obligatoria en contratos de defensa, brigadas de respuesta CBRN del ejército y algunos contratos de protección civil. Para incidentes de materiales peligrosos civiles, la NFPA 1991 sin CBRN es generalmente suficiente.' },
-    { q: '¿Cómo verifico la integridad de un traje Kappler antes de usarlo?', a: 'La NFPA 1991 exige una prueba de integridad del traje antes de cada uso. El método estándar es la prueba de presión de aire (inflation test): se infla el traje con aire limpio y se verifica que no hay caída de presión en 60 segundos. Alternativamente, se puede usar un aerosol DEHS (dioctilsebacato) o humo de prueba — cualquier pérdida detectada con detector de partículas indica una falla de sellado. Un traje que falla la prueba de integridad no debe usarse en zona caliente aunque tenga certificación NFPA 1991 vigente.' },
+    { q: '¿En qué se diferencia el Kappler Zytron 500 XP del DuPont Tychem 10000?', a: 'Ambos son trajes encapsulados de Nivel A certificados NFPA 1990. Las diferencias clave son: (1) el Zytron 500 XP tiene soporte externo de SCBA estándar (el Tychem 10000 usa soporte interno), lo que cambia el procedimiento de vestido; (2) los materiales de tela son distintos — Zytron 500 vs Tychem 10000 — con tablas de permeación diferentes para algunas sustancias; (3) el precio por traje del Kappler es generalmente menor. Para licitaciones con dos fabricantes certificados, son las dos opciones estándar del mercado mexicano.' },
+    { q: '¿Qué significa la certificación CBRN-C y cuándo es obligatoria?', a: 'CBRN-C (Chemical, Biological, Radiological, Nuclear — Chemical focus) es una certificación adicional a NFPA 1990 que incluye pruebas de permeación con agentes de guerra química (mostaza HD, VX, sarin GB, lewisite). No todos los trajes NFPA 1990 tienen CBRN-C — es una certificación adicional que el fabricante obtiene voluntariamente. Es obligatoria en contratos de defensa, brigadas de respuesta CBRN del ejército y algunos contratos de protección civil. Para incidentes de materiales peligrosos civiles, la NFPA 1990 sin CBRN es generalmente suficiente.' },
+    { q: '¿Cómo verifico la integridad de un traje Kappler antes de usarlo?', a: 'La NFPA 1990 exige una prueba de integridad del traje antes de cada uso. El método estándar es la prueba de presión de aire (inflation test): se infla el traje con aire limpio y se verifica que no hay caída de presión en 60 segundos. Alternativamente, se puede usar un aerosol DEHS (dioctilsebacato) o humo de prueba — cualquier pérdida detectada con detector de partículas indica una falla de sellado. Un traje que falla la prueba de integridad no debe usarse en zona caliente aunque tenga certificación NFPA 1990 vigente.' },
     { q: '¿Cuántas veces puede usarse un traje Kappler Zytron antes de descartarlo?', a: 'Los trajes Kappler no tienen un número fijo de usos — su vida útil depende del tipo de agente con que tuvo contacto, la limpieza y descontaminación post-uso, y el resultado de las inspecciones visuales y pruebas de integridad. Kappler recomienda: inspección visual después de cada uso, prueba de integridad antes de cada uso, y desecho inmediato si hay desgarro, costuras separadas, visor rayado o cambio de color de la tela. Para los trajes con exposición a agentes de guerra química, el protocolo es descarte inmediato después de una sola exposición real.' },
   ],
-  ctaKicker: 'NFPA 1991 · NFPA 1992 · CBRN-C · Alternativa certificada para licitaciones',
+  ctaKicker: 'NFPA 1990 · CBRN-C · Alternativa certificada para licitaciones',
   ctaTitleHtml: 'Kappler Zytron: protección HAZMAT<br/>certificada para cada nivel de riesgo.',
   waQuote: 'Hola, quiero información sobre trajes HAZMAT Kappler Zytron para mi brigada — operamos en Nivel B y ocasionalmente Nivel A.',
   notaPie: '* La selección del nivel de protección EPA (A/B/C/D) debe basarse en la identificación del agente, las tablas de permeación del fabricante y el plan de respuesta de la brigada. La certificación NFPA no garantiza protección ante toda sustancia — siempre verificar la tabla de permeación específica.',

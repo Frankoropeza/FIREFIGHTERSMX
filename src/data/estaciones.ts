@@ -6398,7 +6398,7 @@ export const estados: EstadoDirectorio[] = [
         sitioWeb: 'https://naucalpan.gob.mx',
         redes: { twitter: '@HCBNAUCALPAN1' },
         servicios: ['Incendios', 'Rescate vehicular', 'HAZMAT industrial', 'Rescate en altura', 'Fugas de gas', 'Primeros auxilios'],
-        descripcion: '126 elementos (97 bomberos + 29 paramédicos). Entre 3,000 y 5,000 emergencias anuales (+380 incendios, +395 fugas de gas). Brigada HAZMAT certificada a nivel Técnico (NFPA 1991 Nivel B). Cubre zona industrial con farmacéuticas internacionales: Sanofi, Roche, Pfizer, AstraZeneca, Novartis. Cuartel: Av. de los Arcos No. 30, Col. Padre Figueroa.',
+        descripcion: '126 elementos (97 bomberos + 29 paramédicos). Entre 3,000 y 5,000 emergencias anuales (+380 incendios, +395 fugas de gas). Brigada HAZMAT certificada a nivel Técnico (NFPA 1990 Nivel B). Cubre zona industrial con farmacéuticas internacionales: Sanofi, Roche, Pfizer, AstraZeneca, Novartis. Cuartel: Av. de los Arcos No. 30, Col. Padre Figueroa.',
         activa: true,
         coordenadas: { lat: 19.4836, lng: -99.2392 },
         fuentes: [
@@ -6422,7 +6422,7 @@ export const estados: EstadoDirectorio[] = [
         sitioWeb: 'https://portal.tlalnepantla.gob.mx',
         redes: { twitter: '@PCTlalne', facebook: 'PCTlalne' },
         servicios: ['Incendios', 'Rescate vehicular', 'HAZMAT industrial', 'Derrames químicos', 'Rescate en altura', 'Primeros auxilios'],
-        descripcion: 'Uno de los corredores industriales más densos del poniente de la ZMVM: 16 colonias industriales, 9 plantas de Gas LP y 65 km de ductos. Brigada HAZMAT certificada a nivel Técnico (NFPA 1991 Nivel B). Documentado derrame de cianuro, acetona y sosa cáustica en empresa Galvanolyte S.A. con evacuación de 150 inmuebles en radio de 400 m. Cuartel: Av. Tequesquináhuac 302, Col. La Romana.',
+        descripcion: 'Uno de los corredores industriales más densos del poniente de la ZMVM: 16 colonias industriales, 9 plantas de Gas LP y 65 km de ductos. Brigada HAZMAT certificada a nivel Técnico (NFPA 1990 Nivel B). Documentado derrame de cianuro, acetona y sosa cáustica en empresa Galvanolyte S.A. con evacuación de 150 inmuebles en radio de 400 m. Cuartel: Av. Tequesquináhuac 302, Col. La Romana.',
         activa: true,
         coordenadas: { lat: 19.5428, lng: -99.2050 },
         fuentes: [

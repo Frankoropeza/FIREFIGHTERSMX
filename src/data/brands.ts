@@ -63,7 +63,7 @@ export const brands: Brand[] = [
       { name: 'Dräger X-am 5600', detail: 'Detector de gases multigas portátil para medición simultánea de hasta 6 gases.' },
       { name: 'Dräger-Tubes', detail: 'Tubos de detección colorimétrica para identificación rápida de sustancias HAZMAT.' },
     ],
-    norms: ['NFPA 1970', 'NFPA 1994', 'EN 137', 'NOM-002-STPS-2010'],
+    norms: ['NFPA 1970', 'NFPA 1990', 'EN 137', 'NOM-002-STPS-2010'],
     categoryLinks: ['equipos-scba'],
   },
   {
@@ -139,7 +139,7 @@ export const brands: Brand[] = [
       { name: 'Bullard T3 Max TIC', detail: 'Cámara de imagen térmica de alta resolución para búsqueda en interior.' },
       { name: 'Accesorios y refacciones Bullard', detail: 'Visores, escudos frontales personalizados, suspensiones y guarniciones de repuesto.' },
     ],
-    norms: ['NFPA 1970', 'NFPA 1801', 'NOM-002-STPS-2010'],
+    norms: ['NFPA 1970', 'NFPA 1930', 'NOM-002-STPS-2010'],
     categoryLinks: ['cascos-nfpa'],
   },
   {
@@ -310,7 +310,7 @@ export const brands: Brand[] = [
       { name: 'FLIR K33', detail: 'Cámara TIC de entrada, compacta y robusta para primera dotación.' },
       { name: 'Baterías y accesorios FLIR', detail: 'Baterías adicionales, cargadores y bolsas de transporte originales.' },
     ],
-    norms: ['NFPA 1801', 'UL Listed'],
+    norms: ['NFPA 1930', 'UL Listed'],
     categoryLinks: [],
   },
   {

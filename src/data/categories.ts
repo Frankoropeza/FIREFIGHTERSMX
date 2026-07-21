@@ -261,10 +261,10 @@ export const categories: Category[] = [
     accent: '#F5A623',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>`,
     label: 'Cámaras Térmicas',
-    norm: 'NFPA 1801',
-    description: 'Cámaras térmicas para bomberos certificadas NFPA 1801: FLIR, MSA Evolution y Bullard. Búsqueda y rescate, sobrehaul y HAZMAT. Demostración sin costo.',
+    norm: 'NFPA 1930',
+    description: 'Cámaras térmicas para bomberos certificadas NFPA 1930: FLIR, MSA Evolution y Bullard. Búsqueda y rescate, sobrehaul y HAZMAT. Demostración sin costo.',
     intro: [
-      'La imagen térmica reduce dramáticamente los tiempos de búsqueda y localización de víctimas. Manejamos cámaras certificadas NFPA 1801 — el estándar que garantiza legibilidad, durabilidad e interfaz uniforme en condiciones de combate.',
+      'La imagen térmica reduce dramáticamente los tiempos de búsqueda y localización de víctimas. Manejamos cámaras certificadas NFPA 1930 — el estándar que garantiza legibilidad, durabilidad e interfaz uniforme en condiciones de combate.',
       'Desde cámaras personales de bolsillo hasta equipos de mando con telemetría, te asesoramos según presupuesto y uso: estructural, HAZMAT, inspección industrial o búsqueda y rescate.',
     ],
     items: [
@@ -276,9 +276,9 @@ export const categories: Category[] = [
     productCategory: 'Cámaras Térmicas',
     spotlight: {
       title: 'Cámaras Térmicas certificadas',
-      highlight: 'NFPA 1801',
+      highlight: 'NFPA 1930',
       paragraphs: [
-        'En visibilidad cero, la imagen térmica es la diferencia entre buscar y encontrar. Distribuimos cámaras FLIR, MSA Evolution y Bullard certificadas NFPA 1801 — el estándar que garantiza legibilidad, durabilidad e interfaz uniforme en condiciones de combate real.',
+        'En visibilidad cero, la imagen térmica es la diferencia entre buscar y encontrar. Distribuimos cámaras FLIR, MSA Evolution y Bullard certificadas NFPA 1930 — el estándar que garantiza legibilidad, durabilidad e interfaz uniforme en condiciones de combate real.',
         'Te asesoramos según uso y presupuesto: desde cámaras personales de bolsillo para cada elemento hasta equipos de mando con grabación y telemetría. Demostración en sitio sin costo para que tu brigada las pruebe antes de decidir.',
       ],
       subsections: [
@@ -288,7 +288,7 @@ export const categories: Category[] = [
         { name: 'Integración y accesorios', detail: 'Montaje en casco o SCBA (MSA G1), grabación de incidentes, cargadores vehiculares y fundas de despliegue rápido.' },
       ],
       image: '/images/categorias/camaras-termicas.avif',
-      imageAlt: 'Ilustración técnica de cámara térmica para bomberos certificada NFPA 1801 con silueta de calor en pantalla',
+      imageAlt: 'Ilustración técnica de cámara térmica para bomberos certificada NFPA 1930 con silueta de calor en pantalla',
     },
   },
   {
@@ -297,10 +297,10 @@ export const categories: Category[] = [
     accent: '#F75000',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`,
     label: 'Equipos HAZMAT',
-    norm: 'NFPA 1991 · 1992',
-    description: 'Trajes HAZMAT Nivel A y B certificados NFPA 1991/1992, detección multi-gas y descontaminación. Equipamiento para materiales peligrosos en México.',
+    norm: 'NFPA 1990',
+    description: 'Trajes HAZMAT Nivel A y B certificados NFPA 1990, detección multi-gas y descontaminación. Equipamiento para materiales peligrosos en México.',
     intro: [
-      'Para respuesta a materiales peligrosos equipamos brigadas con trajes encapsulados Nivel A (NFPA 1991), trajes salpicadura Nivel B/C (NFPA 1992), detección multi-gas, kits de descontaminación y sellado de fugas.',
+      'Para respuesta a materiales peligrosos equipamos brigadas con trajes encapsulados Nivel A y trajes salpicadura Nivel B/C (ambos NFPA 1990), detección multi-gas, kits de descontaminación y sellado de fugas.',
       'El equipo HAZMAT exige compatibilidad química documentada: te entregamos las tablas de permeación del fabricante y asesoramos la selección según las sustancias específicas de tu operación — crítico para refinerías, química y logística.',
     ],
     items: [
@@ -312,9 +312,9 @@ export const categories: Category[] = [
     productCategory: 'Equipos HAZMAT',
     spotlight: {
       title: 'Equipos HAZMAT certificados',
-      highlight: 'NFPA 1991 y 1992',
+      highlight: 'NFPA 1990',
       paragraphs: [
-        'La respuesta a materiales peligrosos exige protección absoluta y compatibilidad química documentada. Equipamos brigadas con trajes encapsulados Nivel A certificados NFPA 1991, trajes de salpicadura Nivel B/C NFPA 1992, detección multi-gas y kits de descontaminación.',
+        'La respuesta a materiales peligrosos exige protección absoluta y compatibilidad química documentada. Equipamos brigadas con trajes encapsulados Nivel A y trajes de salpicadura Nivel B/C certificados NFPA 1990, detección multi-gas y kits de descontaminación.',
         'Cada traje se entrega con las tablas de permeación del fabricante y asesoría de selección según las sustancias específicas de tu operación — crítico para refinerías, plantas químicas, logística y respuesta municipal.',
       ],
       subsections: [
@@ -324,7 +324,7 @@ export const categories: Category[] = [
         { name: 'Descontaminación y sellado', detail: 'Regaderas portátiles, tinas de contención, kits de sellado de fugas y bolsas de recuperación para el cierre del incidente.' },
       ],
       image: '/images/categorias/hazmat.avif',
-      imageAlt: 'Ilustración técnica de traje HAZMAT Nivel A encapsulado certificado NFPA 1991 con visor y guantes químicos',
+      imageAlt: 'Ilustración técnica de traje HAZMAT Nivel A encapsulado certificado NFPA 1990 con visor y guantes químicos',
     },
   },
   {

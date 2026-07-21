@@ -10,8 +10,8 @@ const cat = categories.find((c) => c.slug === 'hazmat')!;
 const canonicalURL = `${SITE.url}/productos/hazmat`;
 
 const seoMeta = {
-  title: 'Equipos HAZMAT NFPA 1991 · 1992 — DuPont Tychem, Lakeland ChemMax, MSA Altair · México',
-  description: 'Equipos HAZMAT certificados NFPA 1991 y 1992 en México: trajes encapsulados DuPont Tychem y Lakeland ChemMax (Nivel A y B), monitores multi-gas MSA Altair (ATEX). Tablas de permeación · asesoría por agente. Distribuidor autorizado.',
+  title: 'Equipos HAZMAT NFPA 1990 — DuPont Tychem, Lakeland ChemMax, MSA Altair · México',
+  description: 'Equipos HAZMAT certificados NFPA 1990 en México: trajes encapsulados DuPont Tychem y Lakeland ChemMax (Nivel A y B), monitores multi-gas MSA Altair (ATEX). Tablas de permeación · asesoría por agente. Distribuidor autorizado.',
   canonicalURL,
 };
 
@@ -27,7 +27,7 @@ const niveles = [
   {
     id: 'nivel-a',
     nivel: 'Nivel A',
-    norm: 'NFPA 1991',
+    norm: 'NFPA 1990',
     accent: '#EF4444',
     escenario: 'Atmósferas desconocidas · CBRN · vapor y gas tóxico',
     desc: 'Máxima protección disponible. Traje encapsulado hermético (vapor-tight) con SCBA interno. Obligatorio cuando el agente es desconocido, la concentración es alta o existe riesgo de exposición cutánea a vapores tóxicos. La selección de Nivel A no puede basarse solo en el nivel — requiere verificación con la tabla de permeación del traje para el agente específico.',
@@ -37,7 +37,7 @@ const niveles = [
   {
     id: 'nivel-b',
     nivel: 'Nivel B',
-    norm: 'NFPA 1992',
+    norm: 'NFPA 1990',
     accent: '#F5A623',
     escenario: 'Agente conocido · salpicadura de líquidos · SCBA externo',
     desc: 'Protección contra salpicadura de líquidos con máxima protección respiratoria (SCBA externo). El agente debe ser conocido y la ruta de exposición debe ser por líquido —no vapor— verificada con tabla de permeación. Menor estrés térmico que Nivel A, permite operaciones más prolongadas cuando el riesgo de vapor ya fue descartado.',
@@ -47,7 +47,7 @@ const niveles = [
   {
     id: 'nivel-c',
     nivel: 'Nivel C',
-    norm: 'NFPA 1992',
+    norm: 'NFPA 1990',
     accent: '#34D399',
     escenario: 'Agente conocido · bajo riesgo respiratorio · APR en lugar de SCBA',
     desc: 'Protección contra salpicadura con respirador purificador de aire (APR) en lugar de SCBA. Solo aplica cuando el agente está completamente caracterizado, la concentración atmosférica es conocida y no supera los umbrales que requieren SCBA. Usado principalmente en descontaminación de segunda línea y muestreo ambiental.',
@@ -97,12 +97,12 @@ const faqs = [
     a: 'La EPA define 4 niveles de protección personal para HAZMAT. Nivel A: traje encapsulado hermético (vapor-tight) + SCBA interno — máxima protección cutánea y respiratoria para agentes desconocidos o vapores letales. Nivel B: traje resistente a salpicadura de líquidos + SCBA externo — máxima protección respiratoria cuando el riesgo de vapor ya fue descartado. Nivel C: traje resistente a salpicadura + APR (respirador purificador) — para agentes caracterizados por debajo del umbral de IDLH. Nivel D: EPP mínimo (overol, guantes) para exposición nula a vapores y salpicadura. La selección no puede hacerse solo por el nivel: requiere tabla de permeación para el agente específico.',
   },
   {
-    q: '¿Por qué necesito tabla de permeación además de la certificación NFPA 1991?',
-    a: 'La certificación NFPA 1991 garantiza que el traje cumple requisitos generales de protección — pero no certifica la resistencia contra todos los agentes posibles. Un traje Nivel A puede permearse en minutos ante ciertos solventes clorados o ácidos concentrados que atraviesan algunos materiales específicos. La tabla de permeación documenta el breakthrough time (tiempo hasta permeación) y la tasa de permeación para el agente y concentración exacta de tu operación. Es el documento técnico-legal que valida la selección.',
+    q: '¿Por qué necesito tabla de permeación además de la certificación NFPA 1990?',
+    a: 'La certificación NFPA 1990 garantiza que el traje cumple requisitos generales de protección — pero no certifica la resistencia contra todos los agentes posibles. Un traje Nivel A puede permearse en minutos ante ciertos solventes clorados o ácidos concentrados que atraviesan algunos materiales específicos. La tabla de permeación documenta el breakthrough time (tiempo hasta permeación) y la tasa de permeación para el agente y concentración exacta de tu operación. Es el documento técnico-legal que valida la selección.',
   },
   {
     q: '¿DuPont Tychem 10000 o Lakeland ChemMax 4 — cuál elegir?',
-    a: 'Ambos son Nivel A NFPA 1991 técnicamente equivalentes. La diferencia está en la documentación: Tychem 10000 tiene tablas para 280+ sustancias; ChemMax 4 tiene 350+. Para brigadas con mayor variedad de agentes posibles, ChemMax 4 ofrece mayor cobertura documental. Para licitaciones que especifican DuPont por nombre, el Tychem 10000 es la opción directa. Te facilitamos ambas tablas para el agente específico de tu operación y hacemos la recomendación según la sustancia.',
+    a: 'Ambos son Nivel A NFPA 1990 técnicamente equivalentes. La diferencia está en la documentación: Tychem 10000 tiene tablas para 280+ sustancias; ChemMax 4 tiene 350+. Para brigadas con mayor variedad de agentes posibles, ChemMax 4 ofrece mayor cobertura documental. Para licitaciones que especifican DuPont por nombre, el Tychem 10000 es la opción directa. Te facilitamos ambas tablas para el agente específico de tu operación y hacemos la recomendación según la sustancia.',
   },
   {
     q: '¿Cuándo usar MSA Altair 5X vs Altair 4XR?',
@@ -110,7 +110,7 @@ const faqs = [
   },
   {
     q: '¿Qué documentación entregan para un plan de respuesta HAZMAT certificado?',
-    a: 'Entregamos: tablas de permeación de DuPont y Lakeland para los agentes específicos de tu operación, fichas técnicas NFPA 1991/1992 con número de modelo y certificación verificable, procedimientos de vestido y desvestido (donning/doffing) con lista de verificación, guías de descontaminación del traje y el técnico, y protocolo de calibración y prueba de choque para los monitores MSA Altair. El paquete completo para un plan de respuesta auditado bajo NOM-005-STPS.',
+    a: 'Entregamos: tablas de permeación de DuPont y Lakeland para los agentes específicos de tu operación, fichas técnicas NFPA 1990 con número de modelo y certificación verificable, procedimientos de vestido y desvestido (donning/doffing) con lista de verificación, guías de descontaminación del traje y el técnico, y protocolo de calibración y prueba de choque para los monitores MSA Altair. El paquete completo para un plan de respuesta auditado bajo NOM-005-STPS.',
   },
 ];
 
@@ -129,7 +129,7 @@ const collectionSchema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
   '@id': `${canonicalURL}#collection`,
-  name: 'Equipos HAZMAT NFPA 1991 · 1992 — México',
+  name: 'Equipos HAZMAT NFPA 1990 — México',
   description: seoMeta.description,
   url: canonicalURL,
   inLanguage: 'es-MX',
@@ -152,9 +152,9 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'hazmat').slice(0, 6
 /* ── Guía de selección ───────────────────────────────────────────────────── */
 const guia = [
   { n: '01', t: 'Identifica el agente o familia de agentes antes de seleccionar el nivel. Nivel A (traje encapsulado) para agentes desconocidos o vapores IDLH; Nivel B (traje resistente + SCBA externo) cuando el riesgo de vapor fue descartado; Nivel C cuando el agente está caracterizado y la concentración permite APR. Sin identificación, no hay selección válida.' },
-  { n: '02', t: 'Solicita la tabla de permeación para el agente específico, no solo para el nivel. Un traje Nivel A NFPA 1991 puede permearse en minutos ante ciertos solventes clorados — la tabla documentará el breakthrough time y la tasa de permeación para tu operación. Es el documento técnico-legal que valida la selección ante una auditoría.' },
+  { n: '02', t: 'Solicita la tabla de permeación para el agente específico, no solo para el nivel. Un traje Nivel A NFPA 1990 puede permearse en minutos ante ciertos solventes clorados — la tabla documentará el breakthrough time y la tasa de permeación para tu operación. Es el documento técnico-legal que valida la selección ante una auditoría.' },
   { n: '03', t: 'Verifica la certificación ATEX / Clase I División 1 de todos los monitores de gas que entren a la zona de riesgo. La NOM-027-STPS exige esta certificación para entrada a espacios confinados y reconocimiento HAZMAT — un monitor sin ella no es válido en zonas de potencial explosividad.' },
-  { n: '04', t: 'Arma el paquete documental del plan de respuesta: tabla de permeación, ficha técnica NFPA 1991/1992 con laboratorio verificable, procedimiento de donning/doffing, guía de descontaminación y protocolo de calibración del monitor. Protección Civil y aseguradoras industriales exigen estos documentos para validar el plan.' },
+  { n: '04', t: 'Arma el paquete documental del plan de respuesta: tabla de permeación, ficha técnica NFPA 1990 con laboratorio verificable, procedimiento de donning/doffing, guía de descontaminación y protocolo de calibración del monitor. Protección Civil y aseguradoras industriales exigen estos documentos para validar el plan.' },
 ];
 
 /* ── Artículos del blog ───────────────────────────────────────────────────── */
@@ -202,13 +202,13 @@ const articulos = [
           </p>
 
           <div class="flex flex-wrap gap-3 mb-8">
-            {['NFPA 1991','NFPA 1992','Nivel A · B · C','DuPont Tychem 10000','Lakeland ChemMax 4','MSA Altair 5X','ATEX · Cl I Div 1','Tablas de permeación'].map(b => (
+            {['NFPA 1990','NFPA 1990','Nivel A · B · C','DuPont Tychem 10000','Lakeland ChemMax 4','MSA Altair 5X','ATEX · Cl I Div 1','Tablas de permeación'].map(b => (
               <span class="badge badge-dark">{b}</span>
             ))}
           </div>
 
           <div class="flex flex-wrap gap-4">
-            <a href={whatsappUrl('Hola, quiero asesoría para seleccionar equipos HAZMAT NFPA 1991/1992 para mi brigada.')}
+            <a href={whatsappUrl('Hola, quiero asesoría para seleccionar equipos HAZMAT NFPA 1990 para mi brigada.')}
               target="_blank" rel="noopener" class="btn btn-primary btn-lg">
               Solicitar asesoría HAZMAT →
             </a>
@@ -219,7 +219,7 @@ const articulos = [
         <div class="hidden lg:flex flex-col gap-4">
           <div class="grid grid-cols-3 gap-3">
             {[
-              { v: 'NFPA 1991', l: 'Nivel A encapsulado' },
+              { v: 'NFPA 1990', l: 'Nivel A encapsulado' },
               { v: 'ATEX',      l: 'Detectores certificados' },
               { v: '280–350+',  l: 'Sustancias documentadas' },
             ].map(s => (
@@ -332,7 +332,7 @@ const articulos = [
         <div>
           <p class="text-sm font-bold mb-1" style="color:#EF4444">Selección de nivel: el nivel EPA es un punto de partida, no la decisión completa</p>
           <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">
-            Un traje NFPA 1991 (Nivel A) puede permearse en minutos ante ciertos agentes si el material no es compatible.
+            Un traje NFPA 1990 (Nivel A) puede permearse en minutos ante ciertos agentes si el material no es compatible.
             La selección correcta requiere verificar la tabla de permeación del fabricante para el agente <em>específico</em> y su
             concentración. Te facilitamos las tablas de permeación de DuPont y Lakeland para su operación — sin costo.
           </p>
@@ -348,7 +348,7 @@ const articulos = [
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
-          <span class="section-eyebrow mb-4 inline-flex">DuPont Safety Products · Tychem · NFPA 1991 / 1992 · Distribuidor Autorizado MX</span>
+          <span class="section-eyebrow mb-4 inline-flex">DuPont Safety Products · Tychem · NFPA 1990 · Distribuidor Autorizado MX</span>
           <h2 id="dupont-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Trajes DuPont Tychem<br/>
             <span style="color:#EF4444">barrera química certificada.</span>
@@ -362,7 +362,7 @@ const articulos = [
             permeación verificadas para más de 280 sustancias en toda la gama.
           </p>
           <div class="flex flex-wrap gap-2">
-            {['NFPA 1991','NFPA 1992','CE Categoría III','Tychem 10000 Nivel A','Tychem 6000F FR','Tychem 4000S Nivel B/C','280+ sustancias','Distribuidor autorizado MX'].map(b => (
+            {['NFPA 1990','NFPA 1990','CE Categoría III','Tychem 10000 Nivel A','Tychem 6000F FR','Tychem 4000S Nivel B/C','280+ sustancias','Distribuidor autorizado MX'].map(b => (
               <span class="badge badge-dark text-[9px]">{b}</span>
             ))}
           </div>
@@ -379,14 +379,14 @@ const articulos = [
         <div class="flex-1">
           <p class="text-sm leading-relaxed m-0" style="color:#64748B">
             Comparativa completa Tychem 10000 vs 6000F vs 4000S vs 2000, tablas de permeación para
-            los agentes de su operación y ficha técnica NFPA 1991/1992 para licitación.
+            los agentes de su operación y ficha técnica NFPA 1990 para licitación.
           </p>
         </div>
         <div class="flex flex-col sm:flex-row gap-3 shrink-0">
           <a href="/productos/hazmat/dupont-tychem" class="btn btn-primary btn-lg">
             Catálogo DuPont Tychem completo →
           </a>
-          <a href={whatsappUrl('Hola, quiero cotizar trajes DuPont Tychem NFPA 1991 y recibir tablas de permeación para mi operación.')}
+          <a href={whatsappUrl('Hola, quiero cotizar trajes DuPont Tychem NFPA 1990 y recibir tablas de permeación para mi operación.')}
             target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
             Cotizar por WhatsApp
           </a>
@@ -402,7 +402,7 @@ const articulos = [
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
-          <span class="section-eyebrow mb-4 inline-flex">Lakeland Industries · ChemMax · NFPA 1991 / 1992 · Distribuidor Autorizado MX</span>
+          <span class="section-eyebrow mb-4 inline-flex">Lakeland Industries · ChemMax · NFPA 1990 · Distribuidor Autorizado MX</span>
           <h2 id="lakeland-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Trajes Lakeland ChemMax<br/>
             <span style="color:#F5A623">350+ sustancias documentadas.</span>
@@ -416,7 +416,7 @@ const articulos = [
             Nivel A con menor peso para operaciones prolongadas en climas cálidos.
           </p>
           <div class="flex flex-wrap gap-2">
-            {['NFPA 1991','NFPA 1992','EN 943-1 Tipo 1','ChemMax 4 Nivel A','ChemMax 3 ligero','AlphaTec Nivel B','Pyrolon FR','350+ sustancias','Distribuidor autorizado MX'].map(b => (
+            {['NFPA 1990','NFPA 1990','EN 943-1 Tipo 1','ChemMax 4 Nivel A','ChemMax 3 ligero','AlphaTec Nivel B','Pyrolon FR','350+ sustancias','Distribuidor autorizado MX'].map(b => (
               <span class="badge badge-dark text-[9px]">{b}</span>
             ))}
           </div>
@@ -433,14 +433,14 @@ const articulos = [
         <div class="flex-1">
           <p class="text-sm leading-relaxed m-0" style="color:#64748B">
             Comparativa ChemMax 4 vs 3 vs AlphaTec 5000 vs Pyrolon CRFR, tablas de permeación para
-            350+ sustancias y documentación técnica NFPA 1991/1992 para concursos públicos y privados.
+            350+ sustancias y documentación técnica NFPA 1990 para concursos públicos y privados.
           </p>
         </div>
         <div class="flex flex-col sm:flex-row gap-3 shrink-0">
           <a href="/productos/hazmat/lakeland-chemmax" class="btn btn-primary btn-lg">
             Catálogo Lakeland ChemMax completo →
           </a>
-          <a href={whatsappUrl('Hola, quiero cotizar trajes Lakeland ChemMax NFPA 1991 y recibir tablas de permeación.')}
+          <a href={whatsappUrl('Hola, quiero cotizar trajes Lakeland ChemMax NFPA 1990 y recibir tablas de permeación.')}
             target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
             Cotizar por WhatsApp
           </a>
@@ -510,18 +510,18 @@ const articulos = [
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
-          <span class="section-eyebrow mb-4 inline-flex">Kappler Inc. · NFPA 1991 · NFPA 1992 · CBRN-C · Alternativa certificada para licitaciones</span>
+          <span class="section-eyebrow mb-4 inline-flex">Kappler Inc. · NFPA 1990 · CBRN-C · Alternativa certificada para licitaciones</span>
           <h2 id="kappler-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Kappler Zytron 500 XP<br/>
-            <span style="color:#F59E0B">Nivel A NFPA 1991 con CBRN-C.</span>
+            <span style="color:#F59E0B">Nivel A NFPA 1990 con CBRN-C.</span>
           </h2>
         </div>
         <div style="border-left:2px solid rgba(245,158,11,0.4);padding-left:1.75rem">
           <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
             Kappler produce trajes HAZMAT con tablas de permeación verificadas para más de 370 sustancias.
-            El Zytron 500 XP es el único traje del portafolio con doble certificación NFPA 1991 y CBRN-C —
+            El Zytron 500 XP es el único traje del portafolio con doble certificación NFPA 1990 y CBRN-C —
             agentes de guerra química (mostaza HD, sarin GB, VX). El Frontline 500 FR combina
-            NFPA 1992 y NFPA 2112 en un solo traje de Nivel C para instalaciones con riesgo
+            NFPA 1990 y NFPA 2112 en un solo traje de Nivel C para instalaciones con riesgo
             combinado: salpicaduras químicas + llama flash. Alternativa calificada al DuPont Tychem
             para licitaciones con requisito de dos fabricantes certificados.
           </p>
@@ -530,7 +530,7 @@ const articulos = [
             <span>·</span>
             <span>CBRN-C</span>
             <span>·</span>
-            <span>NFPA 1991/1992/2112</span>
+            <span>NFPA 1990/2112</span>
           </div>
         </div>
       </div>
@@ -626,7 +626,7 @@ const articulos = [
             enviamos la tabla de permeación correspondiente y la recomendación de nivel.
           </p>
           <a
-            href={whatsappUrl('Hola, tengo una pregunta técnica sobre equipos HAZMAT NFPA 1991/1992 para mi brigada.')}
+            href={whatsappUrl('Hola, tengo una pregunta técnica sobre equipos HAZMAT NFPA 1990 para mi brigada.')}
             target="_blank" rel="noopener"
             class="btn btn-primary"
             style="background:#EF4444;border-color:#EF4444"
@@ -675,7 +675,7 @@ const articulos = [
           >
             Solicitar tablas de permeación →
           </a>
-          <a href={whatsappUrl('Hola, quiero una cotización de equipos HAZMAT NFPA 1991/1992 (trajes y detectores) para mi brigada.')}
+          <a href={whatsappUrl('Hola, quiero una cotización de equipos HAZMAT NFPA 1990 (trajes y detectores) para mi brigada.')}
             target="_blank" rel="noopener"
             class="btn btn-ghost btn-lg text-center">
             Cotización formal de brigada

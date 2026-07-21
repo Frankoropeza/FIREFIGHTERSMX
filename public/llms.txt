@@ -44,7 +44,7 @@ URL: https://firefighters.mx/productos/cascos/
 Equipos de rescate vehicular Holmatro y Hurst Jaws of Life: spreaders, cortadoras, cilindros de rescate, kit ARFF.
 URL: https://firefighters.mx/productos/herramientas-rescate/
 
-### 5. Equipos HAZMAT / CBRN — NFPA 1994
+### 5. Equipos HAZMAT / CBRN — NFPA 1990
 Trajes CBRN clase 1–4 para materiales peligrosos y amenazas químicas, biológicas, radiológicas y nucleares. Marcas Lakeland, Ansell y DuPont.
 URL: https://firefighters.mx/productos/hazmat/
 
@@ -88,7 +88,7 @@ Globe Manufacturing · Lion Apparel · MSA Safety · Dräger · Bullard · Galle
 | NFPA 1950 | Trajes para incendio forestal |
 | NFPA 1970 | Aparatos de respiración autónoma (SCBA) |
 | NFPA 1970 | Dispositivos de alerta personal (PASS) |
-| NFPA 1994 | Trajes para emergencias CBRN/HAZMAT |
+| NFPA 1990 | Trajes para emergencias CBRN/HAZMAT |
 | NFPA 1850 | Selección, cuidado y mantenimiento de EPP |
 | NFPA 1936 | Herramientas de rescate vehicular |
 | NFPA 1001 | Cualificaciones bombero nivel I y II |

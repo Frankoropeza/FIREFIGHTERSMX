@@ -344,7 +344,7 @@ export const estados: Estado[] = [
     express: false,
     description: 'Entrega 3–4 días. Puerto de mayor movimiento en México y petroquímica.',
     longDesc: [
-      'Veracruz alberga el puerto de mayor movimiento de carga de México y el Complejo Petroquímico de Pajaritos (Coatzacoalcos-Poza Rica), que concentra la mayor densidad de riesgo HAZMAT del país. Las plantas de PEMEX, gas natural y derivados exigen brigadas industriales con equipo NFPA 1994 (HAZMAT) y doble estándar.',
+      'Veracruz alberga el puerto de mayor movimiento de carga de México y el Complejo Petroquímico de Pajaritos (Coatzacoalcos-Poza Rica), que concentra la mayor densidad de riesgo HAZMAT del país. Las plantas de PEMEX, gas natural y derivados exigen brigadas industriales con equipo NFPA 1990 (HAZMAT) y doble estándar.',
       'Entregamos equipo en Veracruz ciudad, Coatzacoalcos, Poza Rica, Xalapa, Córdoba y toda la entidad.',
     ],
     industries: ['Puerto de Veracruz (el mayor de México)', 'Complejo petroquímico Coatzacoalcos', 'PEMEX Poza Rica', 'Industria papelera y química'],
@@ -486,7 +486,7 @@ export const estados: Estado[] = [
     express: false,
     description: 'Entrega 3–5 días. PEMEX y petroquímica.',
     longDesc: [
-      'Tabasco es el corazón del petróleo de México: PEMEX Exploración y Producción, PEMEX Gas y la Refinería Carlos A. Madrazo están en esta entidad. Las instalaciones petroleras exigen brigadas industriales con equipo NFPA 1994 (HAZMAT), SCBA con autonomía extendida y trajes de proximidad.',
+      'Tabasco es el corazón del petróleo de México: PEMEX Exploración y Producción, PEMEX Gas y la Refinería Carlos A. Madrazo están en esta entidad. Las instalaciones petroleras exigen brigadas industriales con equipo NFPA 1990 (HAZMAT), SCBA con autonomía extendida y trajes de proximidad.',
       'Entregamos equipo en Villahermosa, Comalcalco y los campos petroleros de Tabasco.',
     ],
     industries: ['PEMEX Exploración y Producción', 'Refinería y plataformas', 'Agroindustria cacao y plátano'],
@@ -544,7 +544,7 @@ export const estados: Estado[] = [
     express: false,
     description: 'Entrega 4–5 días. Plataformas PEMEX en el Golfo.',
     longDesc: [
-      'Campeche alberga las plataformas petroleras offshore más importantes de México en la Sonda de Campeche (Ku-Maloob-Zaap, el campo con mayor producción del país). Las brigadas de rescate y contra incendio en plataformas marinas exigen equipo NFPA 1994 de clase 3 o 4 y SCBA con autonomía extendida.',
+      'Campeche alberga las plataformas petroleras offshore más importantes de México en la Sonda de Campeche (Ku-Maloob-Zaap, el campo con mayor producción del país). Las brigadas de rescate y contra incendio en plataformas marinas exigen equipo NFPA 1990 de clase 3 o 4 y SCBA con autonomía extendida.',
       'Entregamos equipo en Campeche capital, Ciudad del Carmen y los puntos logísticos para abastecimiento de plataformas.',
     ],
     industries: ['Plataformas petroleras offshore PEMEX', 'Pesca de camarón', 'Puerto de Ciudad del Carmen'],

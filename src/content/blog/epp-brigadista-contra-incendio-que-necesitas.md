@@ -74,7 +74,7 @@ Aquí es donde hay que tener criterio. Esto aparece en cotizaciones y casi nunca
 
 **SCBA completo para brigada general:** A menos que la planta tenga áreas con atmósferas IDLH frecuentes y los brigadistas tengan entrenamiento certificado en uso de SCBA, esto es equipo que nadie va a usar correctamente. El SCBA sin entrenamiento es más peligroso que no tenerlo. Para ver qué significa un SCBA de calidad, revisa [MSA G1 vs Dräger PSS7000](/blog/msa-g1-vs-drager-pss7000-scba).
 
-**Cámara térmica para brigada:** Herramienta de bomberos para búsqueda en humo. Un brigadista industrial no entra a espacios con humo. La cámara no tiene aplicación en ese rol. Para operaciones de búsqueda y rescate en estructuras, revisa [NFPA 1801 y cámaras térmicas](/blog/nfpa-1801-camaras-termicas-bomberos).
+**Cámara térmica para brigada:** Herramienta de bomberos para búsqueda en humo. Un brigadista industrial no entra a espacios con humo. La cámara no tiene aplicación en ese rol. Para operaciones de búsqueda y rescate en estructuras, revisa [NFPA 1930 y cámaras térmicas](/blog/nfpa-1801-camaras-termicas-bomberos).
 
 **Traje estructural NFPA 1970 completo:** 25,000–60,000 pesos por unidad, requiere mantenimiento especializado, inspección periódica y entrenamiento para que sea útil. Para una brigada industrial que actúa en conatos, es sobreingeniería.
 

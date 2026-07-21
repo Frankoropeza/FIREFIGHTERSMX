@@ -78,7 +78,7 @@ export const navigation = { main: [
         href: "/productos/camaras-termicas",
         description: "FLIR, MSA Evolution, Bullard",
         children: [
-          { label: "FLIR",          href: "/productos/camaras-termicas/flir",          description: "K-Series · FSX · NFPA 1801" },
+          { label: "FLIR",          href: "/productos/camaras-termicas/flir",          description: "K-Series · FSX · NFPA 1930" },
           { label: "MSA Evolution", href: "/productos/camaras-termicas/msa-evolution",  description: "Integración G1 · manos libres" },
           { label: "Bullard TXS",   href: "/productos/camaras-termicas/bullard-txs",    description: "Interfaz intuitiva · montaje casco" },
         ],
@@ -88,8 +88,8 @@ export const navigation = { main: [
         href: "/productos/hazmat",
         description: "DuPont Tychem · Lakeland · MSA · Kappler",
         children: [
-          { label: "DuPont Tychem",       href: "/productos/hazmat/dupont-tychem",     description: "NFPA 1991 · Nivel A encapsulado · Tychem 10000" },
-          { label: "Lakeland Industries", href: "/productos/hazmat/lakeland-chemmax",  description: "NFPA 1992 · ChemMax · AlphaTec · FR" },
+          { label: "DuPont Tychem",       href: "/productos/hazmat/dupont-tychem",     description: "NFPA 1990 · Nivel A encapsulado · Tychem 10000" },
+          { label: "Lakeland Industries", href: "/productos/hazmat/lakeland-chemmax",  description: "NFPA 1990 · ChemMax · AlphaTec · FR" },
           { label: "MSA Safety",          href: "/productos/hazmat/msa-deteccion",     description: "Altair · multi-gas · ATEX · espacio confinado" },
           { label: "Kappler",             href: "/productos/hazmat/kappler",           description: "Zytron 500 CBRN · Frontline FR · kits Nivel B" },
         ],
