@@ -38,7 +38,7 @@ export const trajesBombero: Category = {
     accent: '#F75000',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>`,
   label: 'Trajes para Bomberos',
-  norm: 'NFPA 1970 · 1977',
+  norm: 'NFPA 1970 · 1950',
   description: 'Trajes estructurales, de proximidad y forestales certificados NFPA 1970 y 1950 en México: Globe, Lion y MSA. Tallas S–4XL con entrega en 32 estados.',
   intro: [
     'Trajes de combate estructural de 3 capas, trajes aluminizados de proximidad para ARFF y trajes forestales ligeros — todos certificados por laboratorio acreditado bajo NFPA 1970 o NFPA 1950, con número de serie verificable con fábrica.',
@@ -81,7 +81,7 @@ export const categories: Category[] = [
     accent: '#F75000',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 17a10 10 0 0 1 20 0"/><path d="M2 17h20v3H2z"/><path d="M12 7v2"/></svg>`,
     label: 'Cascos NFPA',
-    norm: 'NFPA 1970 · 1977',
+    norm: 'NFPA 1970 · 1950',
     description: 'Cascos para bomberos certificados NFPA 1970 y 1950 en México: MSA Gallet, Bullard y Cairns. Estructurales, forestales y de rescate. Cotización en 24 h.',
     intro: [
       'El casco es la primera línea de protección craneal en combate estructural. Todos los modelos que distribuimos están certificados bajo NFPA 1970 (estructural) o NFPA 1950 (forestal) por laboratorios acreditados, con número de serie verificable con fábrica.',

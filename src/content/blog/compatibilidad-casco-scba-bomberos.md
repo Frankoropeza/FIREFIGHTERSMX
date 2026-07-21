@@ -21,7 +21,7 @@ Eso no lo descubrió en la bodega. Lo descubrió adentro del incendio.
 
 ## El Problema Que Creaste Cuando Compraste Por Separado
 
-NFPA 1970 certifica cascos. NFPA 1981 certifica equipos de respiración autónoma. Cada norma prueba su equipo de forma independiente, en condiciones de laboratorio controladas, sin el otro equipo puesto.
+NFPA 1970 (cap. 5–9) certifica cascos. NFPA 1970 (cap. 15–19) certifica equipos de respiración autónoma. Cada norma prueba su equipo de forma independiente, en condiciones de laboratorio controladas, sin el otro equipo puesto.
 
 No existe en el sistema de normas NFPA un estándar que exija a los fabricantes validar la compatibilidad combinada de casco y SCBA cuando provienen de marcas distintas. Lo que esto significa en la práctica: **un casco y un SCBA pueden estar ambos perfectamente certificados y ser incompatibles entre sí en condiciones reales de uso**.
 
@@ -181,7 +181,7 @@ En procesos de adquisición pública — IMSS, municipios, estados, CFE, PEMEX �
 
 Termino con la distinción que da sentido a todo lo anterior:
 
-Un casco certificado NFPA 1970 es un casco que pasó las pruebas de NFPA 1970 de forma individual, en condiciones de laboratorio, sin el SCBA puesto. Un SCBA certificado NFPA 1981 es un SCBA que pasó las pruebas de NFPA 1981 de forma individual, en condiciones de laboratorio, sin el casco puesto.
+Un casco certificado NFPA 1970 (cap. 5–9) es un casco que pasó esas pruebas de forma individual, en condiciones de laboratorio, sin el SCBA puesto. Un SCBA certificado NFPA 1970 (cap. 15–19) es un SCBA que pasó esas pruebas de forma individual, en condiciones de laboratorio, sin el casco puesto.
 
 Esos dos certificados no garantizan nada sobre lo que ocurre cuando los dos equipos están puestos simultáneamente en un bombero real, en un incendio real, inclinando la cabeza en la posición en que más tiempo pasa durante la búsqueda de víctimas.
 
@@ -203,6 +203,6 @@ La certificación individual de cada componente es el punto de partida. La prueb
 
 ## Catálogos Cascos NFPA y Equipos SCBA en FIREFIGHTERS MX
 
-La compatibilidad empieza por elegir equipo diseñado para operar en conjunto. Distribuimos cascos certificados NFPA 1970 y equipos SCBA certificados NFPA 1981 con validación de compatibilidad disponible para los sistemas más comunes del mercado mexicano.
+La compatibilidad empieza por elegir equipo diseñado para operar en conjunto. Distribuimos cascos certificados NFPA 1970 (cap. 5–9) y equipos SCBA certificados NFPA 1970 (cap. 15–19) con validación de compatibilidad disponible para los sistemas más comunes del mercado mexicano.
 
 [Ver Cascos NFPA](/productos/cascos-nfpa) · [Ver Equipos SCBA](/productos/equipos-scba) · [Solicitar cotización](/cotizacion)
