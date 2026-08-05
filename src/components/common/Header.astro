@@ -13,7 +13,7 @@ const isActive = (href: string) =>
   <div class="h-[3px] bg-gradient-to-r from-[var(--ember-600)] via-[var(--ember-500)] to-[var(--gold-500)]"></div>
 
   <div class="header-glass backdrop-blur-md" style="background-color:rgba(7,14,26,0.97);border-bottom:1px solid rgba(74,117,153,0.22)">
-    <div class="container-site h-[68px] flex items-center justify-between gap-6">
+    <div class="container-site h-[68px] flex items-center justify-between gap-6 xl:gap-2 2xl:gap-6">
 
       <!-- ── LOGO ─────────────────────────────────────────────────── -->
       <a href="/" class="flex items-center gap-3 shrink-0" aria-label="FIREFIGHTERS MX">
@@ -32,7 +32,7 @@ const isActive = (href: string) =>
       </a>
 
       <!-- ── DESKTOP NAV ───────────────────────────────────────────── -->
-      <nav class="hidden lg:flex items-center gap-0.5" role="navigation" aria-label="Navegación principal">
+      <nav class="hidden xl:flex items-center gap-0.5" role="navigation" aria-label="Navegación principal">
         {navigation.main.map((item) => (
           <div class="nav-group relative">
             {item.children ? (
@@ -157,7 +157,7 @@ const isActive = (href: string) =>
       <div class="flex items-center gap-2">
         <a
           href={`tel:${SITE.phoneE164}`}
-          class="hidden xl:flex items-center gap-1.5 text-xs font-medium px-3 py-2 border border-[var(--color-border)] rounded-sm hover:border-[var(--ember-500)]"
+          class="hidden 2xl:flex items-center gap-1.5 text-xs font-medium px-3 py-2 border border-[var(--color-border)] rounded-sm hover:border-[var(--ember-500)]"
           style="color:var(--forge-200)"
         >
           <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -178,17 +178,23 @@ const isActive = (href: string) =>
           </svg>
         </a>
 
-        <a href="/cotizacion" class="btn btn-primary btn-sm hidden sm:inline-flex">
-          Cotizar ahora
-          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
-          </svg>
-        </a>
+        <!-- El wrapper lleva el `hidden`: en el propio <a> la regla .btn de
+             global.css (display:inline-flex) gana a la utilidad .hidden por
+             orden de cascada y el botón se mostraba en móvil, empujando el
+             hamburguesa fuera de la pantalla. -->
+        <div class="hidden sm:block">
+          <a href="/cotizacion" class="btn btn-primary btn-sm">
+            Cotizar ahora
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
 
         <!-- Hamburger móvil -->
         <button
           id="mobile-menu-btn"
-          class="lg:hidden p-2"
+          class="xl:hidden p-2"
           style="color:var(--slate-300)"
           aria-label="Abrir menú"
           aria-expanded="false"
@@ -208,7 +214,7 @@ const isActive = (href: string) =>
   <!-- ══ MOBILE MENU ══════════════════════════════════════════════════════ -->
   <div
     id="mobile-menu"
-    class="lg:hidden hidden overflow-y-auto overscroll-contain"
+    class="xl:hidden hidden overflow-y-auto overscroll-contain"
     style="background:#040A12;border-bottom:1px solid rgba(74,117,153,0.2);max-height:calc(100dvh - 71px)"
     role="dialog" aria-modal="true" aria-label="Menú principal"
   >
@@ -434,7 +440,7 @@ document.addEventListener('keydown', (e) => {
 });
 
 /* Volver a desktop cierra el menú */
-window.matchMedia('(min-width: 1024px)').addEventListener('change', (e) => {
+window.matchMedia('(min-width: 1280px)').addEventListener('change', (e) => {
   if (e.matches) setMenuOpen(false);
 });
 
@@ -462,6 +468,92 @@ document.querySelectorAll<HTMLButtonElement>('.mob-sub-btn').forEach((b) => {
     b.setAttribute('aria-expanded', String(!open));
     panel?.classList.toggle('hidden', open);
   });
+});
+
+/* ════════════════════════════════════════════════════════════════
+   DROPDOWNS DESKTOP — encajar siempre dentro de la ventana
+
+   El menú "Productos" mide ~740 px de alto y los fly-out de nivel 3
+   nacen a la altura de su ítem padre: en pantallas de 768–900 px de
+   alto (y en ventanas angostas) varios enlaces caían fuera de la
+   pantalla y eran imposibles de clicar. Aquí se recalcula la posición
+   de cada panel al abrirlo.
+════════════════════════════════════════════════════════════════ */
+const MARGIN = 10;
+const headerEl = document.getElementById('site-header');
+const safeTop = () => (headerEl?.getBoundingClientRect().bottom ?? 0) + 4;
+
+/* Panel de nivel 2 — alto máximo y volteo horizontal si no cabe */
+function placeDropdown(group: Element) {
+  const dd    = group.querySelector<HTMLElement>('.nav-dropdown');
+  const panel = dd?.querySelector<HTMLElement>('.drop-panel');
+  if (!dd || !panel) return;
+
+  dd.style.left = ''; dd.style.right = '';
+  panel.style.maxHeight = ''; panel.style.overflowY = '';
+
+  const r = dd.getBoundingClientRect();
+  const avail = window.innerHeight - r.top - MARGIN * 2;
+  if (panel.scrollHeight > avail) {
+    panel.style.maxHeight = `${Math.max(200, avail)}px`;
+    panel.style.overflowY = 'auto';
+  }
+  if (r.left + r.width + MARGIN > window.innerWidth) {
+    dd.style.left = 'auto';
+    dd.style.right = '0px';
+  }
+}
+
+/* Fly-out de nivel 3 — se saca del panel con position:fixed para que
+   el scroll del panel padre no lo recorte, y se clava dentro de la ventana.
+   El origen del bloque contenedor se mide en caliente (el backdrop-filter
+   del header lo convierte en contenedor de los elementos fixed). */
+function placeFlyout(sub: Element) {
+  const panel = sub.querySelector<HTMLElement>('.nav-sub-panel');
+  const inner = panel?.firstElementChild as HTMLElement | null;
+  if (!panel || !inner) return;
+
+  const anchor = sub.getBoundingClientRect();
+  panel.style.position = 'fixed';
+  panel.style.top = '0px';
+  panel.style.left = '0px';
+  panel.style.zIndex = '60';
+
+  const origin = panel.getBoundingClientRect();
+  const box    = inner.getBoundingClientRect();
+  const w = box.width  || 240;
+  const h = box.height || 0;
+
+  let x = anchor.right;
+  if (x + w + MARGIN > window.innerWidth) x = anchor.left - w;
+  x = Math.max(MARGIN, Math.min(x, window.innerWidth - w - MARGIN));
+
+  let y = Math.min(anchor.top, window.innerHeight - h - MARGIN);
+  y = Math.max(safeTop(), y);
+
+  panel.style.left = `${x - origin.left}px`;
+  panel.style.top  = `${y - origin.top}px`;
+}
+
+function resetFlyout(sub: Element) {
+  const panel = sub.querySelector<HTMLElement>('.nav-sub-panel');
+  if (!panel) return;
+  panel.style.position = ''; panel.style.top = ''; panel.style.left = ''; panel.style.zIndex = '';
+}
+
+document.querySelectorAll('.nav-group').forEach((g) => {
+  const open = () => {
+    placeDropdown(g);
+    g.querySelectorAll('.nav-sub-group').forEach(resetFlyout);
+  };
+  g.addEventListener('mouseenter', open);
+  g.addEventListener('focusin', open);
+});
+
+document.querySelectorAll('.nav-sub-group').forEach((s) => {
+  s.addEventListener('mouseenter', () => placeFlyout(s));
+  s.addEventListener('focusin',    () => placeFlyout(s));
+  s.addEventListener('mouseleave', () => resetFlyout(s));
 });
 
 /* ════════════════════════════════════════════════════════════════
