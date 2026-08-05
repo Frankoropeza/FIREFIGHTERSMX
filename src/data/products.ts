@@ -50,6 +50,11 @@ export interface Product {
     alcance?: string;
     ip?: string;
   };
+  /** Frase de certificación del hero de la ficha. Úsese cuando el modelo NO tenga
+   *  certificación de laboratorio acreditado (marcas que declaran "equivalencia"). */
+  normClaim?: string;
+  /** Frase de dossier documental del hero de la ficha (override del texto por defecto). */
+  dossierClaim?: string;
   /** Tres características destacadas */
   features?: string[];
   /** Si es el modelo estelar de la categoría */
@@ -620,6 +625,169 @@ export const featuredProducts: Product[] = [
       "Tejido Kombat Stretch en hombros, codos y rodillas — movilidad completa en posición de ataque",
       "Panel lumbar extensible para agacharse y escalar sin restricción de movimiento",
       "Ideal para búsqueda y salvamento, rescate técnico y entradas forzadas",
+    ],
+  },
+
+  /* ─── Sköld Safety — 6 modelos, 5 líneas (fabricación mexicana) ─────────────
+     NOTA NORMATIVA: solo el Herö PBI tiene certificación UL de tercero
+     (NFPA 1971 Ed. 2018, lab MH60435). Las demás líneas declaran EQUIVALENCIA
+     con la norma — por eso llevan `normClaim` y `dossierClaim` propios y no
+     deben describirse como "certificadas por laboratorio acreditado". */
+  {
+    slug: "skold-hero-pbi-estructural",
+    title: "Sköld Herö PBI",
+    description: "El traje estructural profesional de Sköld y la única línea de la marca con certificación UL de tercero. Sistema de tres capas con shell PBI Max 7.0, barrera Stedair 3000 y forro Defender M, refuerzos Stedshield en los cinco puntos de desgaste y DRD integrado en la espalda.",
+    category: "Trajes Bombero",
+    brand: "Sköld",
+    norm: "NFPA 1971 Ed. 2018",
+    badge: "Certificado UL · Hecho en México",
+    image: "/images/productos/traje-bombero-en-servicio.avif",
+    href: "/productos/trajes-bombero/skold-hero-pbi",
+    tier: "Fabricación mexicana · Profesional",
+    highlight: true,
+    normClaim: "Certificado bajo NFPA 1971 Edición 2018 por UL, laboratorio MH60435 — número verificable directamente con el fabricante.",
+    dossierClaim: "Sköld Safety fabrica en Monterrey, Nuevo León. Para procesos de adquisición entregamos la ficha técnica del fabricante en español, el número de certificación UL del modelo y el registro SKÖLDTracker para el expediente de vida útil NFPA 1850. Al ser fabricación nacional, acredita contenido nacional y reduce los tiempos de refacción y reparación frente a una marca de importación.",
+    specs: {
+      outer: "PBI Max 7.0 — 70% PBI / 30% Kevlar, 7 oz",
+      tpp: "s/d fabricante",
+      thl: "s/d fabricante",
+      cert_lab: "UL MH60435 — NFPA 1971 Ed. 2018",
+      colores: "Oro y negro · tallas S a 4XL",
+      extra: "Stedair 3000 + Defender M · refuerzos Stedshield · DRD integrado",
+    },
+    features: [
+      "Única línea Sköld con certificación UL de tercero — laboratorio MH60435 bajo NFPA 1971 Ed. 2018",
+      "Cuello tipo escudo con cobertura 360° y DRD en espalda para extracción de elemento caído",
+      "Barreras interiores declaradas resistentes a agentes químicos, bacteriológicos, radiológicos y nucleares",
+    ],
+  },
+  {
+    slug: "skold-hero-nomex",
+    title: "Sköld Herö Nomex",
+    description: "La configuración del Herö con shell Nomex IIIA en lugar de PBI Max, para departamentos que necesitan el mismo diseño, tallaje y sistema de refuerzos con un costo de adquisición menor. Mismo cuello escudo 360°, mismo DRD y mismos refuerzos Stedshield.",
+    category: "Trajes Bombero",
+    brand: "Sköld",
+    norm: "NFPA 1971 Ed. 2018",
+    badge: "Herö de acceso",
+    image: "/images/productos/traje-bombero-reflectivo-3m.avif",
+    href: "/productos/trajes-bombero/skold-hero-nomex",
+    tier: "Fabricación mexicana · Profesional",
+    normClaim: "Configuración Nomex de la línea Herö. Confirme con nosotros el alcance exacto de certificación del lote antes de integrarlo a un pliego — la certificación UL MH60435 corresponde a la configuración con shell PBI Max 7.0.",
+    dossierClaim: "Sköld Safety fabrica en Monterrey, Nuevo León. Entregamos ficha técnica del fabricante en español, alcance documentado de certificación por configuración y registro SKÖLDTracker para el expediente NFPA 1850. Fabricación nacional: acredita contenido nacional y acorta los tiempos de refacción frente a una marca de importación.",
+    specs: {
+      outer: "Nomex IIIA",
+      tpp: "s/d fabricante",
+      thl: "s/d fabricante",
+      colores: "Oro y negro · tallas S a 4XL",
+      extra: "Combo FP-COM-501 · mismo diseño y refuerzos que el Herö PBI",
+    },
+    features: [
+      "Mismo diseño, tallaje y sistema de refuerzos del Herö con menor costo de adquisición",
+      "Shell Nomex IIIA — fibra inherentemente resistente a la flama, no funde ni gotea",
+      "Combo FP-COM-501 disponible con casco, botas, guantes, escafandra y mochila",
+    ],
+  },
+  {
+    slug: "skold-defender-brigadista",
+    title: "Sköld Defender",
+    description: "El traje de brigada industrial más vendido de Sköld. Shell Nomex IIIA con 2% de fibra antiestática, barrera de neopreno y forro chambray, refuerzos UltraShield y una batería de normas europeas —antiestática, químicos, arco eléctrico y térmico— poco común en su rango de precio. Disponible en seis colores, con o sin DRD.",
+    category: "Trajes Bombero",
+    brand: "Sköld",
+    norm: "Equivalente a NFPA 1971:1991 · excede NFPA 2113",
+    badge: "Brigada industrial",
+    image: "/images/productos/traje-bombero-franjas-reflectivas-nfpa.avif",
+    href: "/productos/trajes-bombero/skold-defender-brigadista",
+    tier: "Fabricación mexicana · Brigada industrial",
+    normClaim: "El fabricante declara equivalencia con NFPA 1971 Edición 1991 y cumplimiento por encima de NFPA 2113. Es una declaración del fabricante, no una certificación emitida por laboratorio acreditado — si su pliego exige certificación de tercero, la partida Sköld aplicable es el Herö PBI.",
+    dossierClaim: "Sköld Safety fabrica en Monterrey, Nuevo León. Para este modelo entregamos la ficha técnica del fabricante con la composición exacta por capa, los datos mecánicos de laboratorio (desgarre, tensión, contracción térmica y flamabilidad vertical) y la declaración de equivalencia por escrito. Las piezas se venden por separado —chaquetón FPJ01, pantalón FP001 y tirantes FPT01—, de modo que una prenda dañada no obliga a reponer el conjunto.",
+    specs: {
+      outer: "Nomex IIIA — 93% meta-aramida / 5% Kevlar / 2% antiestática",
+      tpp: "s/d fabricante",
+      thl: "s/d fabricante",
+      colores: "6 colores: azul marino, amarillo, negro, rojo, naranja y arena",
+      extra: "Neopreno + chambray · refuerzos UltraShield · EN 1149-3/5, EN 13034, IEC 61482-2 cl. II, ISO 11612",
+    },
+    features: [
+      "Fibra antiestática al 2% en el shell y certificación EN 1149-3/5 para zonas ATEX 1 y 2",
+      "Datos mecánicos verificados: desgarre 55×35 lbf, tensión 260×230 lbf, flamabilidad vertical 0.0 s",
+      "Seis colores y opción con DRD (FP-COM-2) · piezas de repuesto por separado",
+    ],
+  },
+  {
+    slug: "skold-forestal-nomex",
+    title: "Sköld Forestal FPFTJ / FPFTP",
+    description: "Conjunto forestal de dos piezas en Nomex IIIA de 6.0 oz con acabado repelente al agua: chaquetón FPFTJ con cierre de cinco broches ocultos y pantalón FPFTP con cremallera. Fibra inherentemente resistente a la flama que no funde, no gotea y no flamea durante toda la vida útil de la prenda.",
+    category: "Trajes Bombero",
+    brand: "Sköld",
+    norm: "Equivalencia NFPA 1977:2011",
+    badge: "Forestal · 2 piezas",
+    image: "/images/productos/traje-bombero-preparacion.avif",
+    href: "/productos/trajes-bombero/skold-forestal",
+    tier: "Fabricación mexicana · Forestal",
+    normClaim: "El fabricante declara equivalencia con NFPA 1977 edición 2011. Es una declaración del fabricante, no una certificación emitida por laboratorio acreditado — confírmelo con nosotros antes de integrar la partida a un pliego que exija certificación de tercero.",
+    dossierClaim: "Sköld Safety fabrica en Monterrey, Nuevo León. Entregamos la ficha técnica del fabricante con la composición y el gramaje del tejido, y la declaración de equivalencia por escrito. Al venderse por piezas, una brigada puede reponer solo el pantalón o solo el chaquetón según el desgaste real de la temporada.",
+    specs: {
+      outer: "Nomex IIIA 6.0 oz con repelente al agua",
+      tpp: "s/d fabricante",
+      thl: "s/d fabricante",
+      extra: "Chaquetón FPFTJ (5 broches ocultos) · pantalón FPFTP (cremallera) · banda reflejante Orafol",
+      ideal: "CONAFOR, brigadas estatales e interfaz urbano-forestal",
+    },
+    features: [
+      "Nomex IIIA inherentemente FR: no funde, no gotea y no flamea durante toda la vida útil",
+      "Costura doble y triple en puntos de tensión de ambos brazos, con cinta reflejante en la zona",
+      "Refuerzos de rodilla y bolsas cargo laterales disponibles como opción",
+    ],
+  },
+  {
+    slug: "skold-aproximacion-aluminizado",
+    title: "Sköld Aproximación FPAPROX91",
+    description: "Traje aluminizado para exposición a llama directa e irradiación intensa. Shell de cinco capas —aluminio, película protectora, aluminio, adhesivo estabilizado al calor y para-aramida— sobre tejido rip-stop de 7.0 oz/yd², con forro interior desmontable de dos capas y pantalón 100% Kevlar.",
+    category: "Trajes Bombero",
+    brand: "Sköld",
+    norm: "NFPA 1971 ed. 1991 / 2013",
+    badge: "Aproximación · llama directa",
+    image: "/images/productos/traje-bombero-completo-equipo.avif",
+    href: "/productos/trajes-bombero/skold-aproximacion",
+    tier: "Fabricación mexicana · Aproximación",
+    normClaim: "El fabricante refiere las ediciones 1991 y 2013 de NFPA 1971 para este conjunto. Es una referencia del fabricante, no una certificación emitida por laboratorio acreditado — solicítenos el alcance documentado antes de integrarlo a un pliego que exija certificación de tercero.",
+    dossierClaim: "Sköld Safety fabrica en Monterrey, Nuevo León. Entregamos la ficha técnica del fabricante con el detalle de las cinco capas del shell, los materiales de forro desmontable y las dimensiones de confección. El guante aluminizado de aproximación FPGAP se cotiza como parte del mismo conjunto.",
+    specs: {
+      outer: "Aluminizado 5 capas sobre rip-stop para-aramida 7.0 oz/yd²",
+      tpp: "s/d fabricante",
+      thl: "s/d fabricante",
+      extra: "Forro desmontable Aralite NP + Stedair 3000 (PTFE) · pantalón 100% Kevlar · DRD Kevlar 1½\"",
+      ideal: "ARFF, fundición, vidriera y petroquímica con horno",
+    },
+    features: [
+      "Shell de cinco capas con acabado aluminizado para irradiación intensa y llama directa",
+      "Forro interior de dos capas desmontables: barrera térmica Aralite NP y barrera de humedad PTFE",
+      "Chaqueta de 29\" con cuello de 3.5\", zíper de escape y DRD en Kevlar de 1½\"",
+    ],
+  },
+  {
+    slug: "skold-overol-rescate",
+    title: "Sköld Overol de Rescate FPOR",
+    description: "Overol de una pieza para extricación, rescate vehicular y USAR — donde el traje estructural es excesivo y la ropa de trabajo insuficiente. Tela y reflejante con certificación NFPA 2112, costuras en hilo Kevlar dobles y triples en zonas de desgaste, y bolsa de radio con presillas para lámpara y micrófono.",
+    category: "Trajes Bombero",
+    brand: "Sköld",
+    norm: "NFPA 2112 (tela y reflejante)",
+    badge: "Rescate · extricación",
+    image: "/images/productos/traje-jacket-detalle-nfpa.avif",
+    href: "/productos/trajes-bombero/skold-overol-rescate",
+    tier: "Fabricación mexicana · Rescate",
+    normClaim: "La certificación NFPA 2112 corresponde a la tela ignífuga y al reflejante antiflama de la prenda. No es un traje de combate estructural y no sustituye a un conjunto certificado bajo NFPA 1970 para entrada a estructura en llamas.",
+    dossierClaim: "Sköld Safety fabrica en Monterrey, Nuevo León, con taller de confección propio. Entregamos la ficha técnica del fabricante y el certificado NFPA 2112 de la tela. La prenda se configura a pedido —ancho y color del reflejante, bordado e impresión de la corporación— y cuenta con servicio de reparación express en el país.",
+    specs: {
+      outer: "Tela ignífuga certificada NFPA 2112, con opción repelente al agua",
+      extra: "Reflejante antiflama NFPA 2112 de 1\", 2\" o 3\" en plata o amarillo lima",
+      colores: "Varios colores · bordado e impresión personalizada",
+      ideal: "Extricación, rescate vehicular, USAR y respuesta técnica",
+    },
+    features: [
+      "Costuras en hilo Kevlar, dobles y triples en las zonas de mayor desgaste",
+      "Bolsa de radio en pecho izquierdo y dos presillas para lámpara y micrófono",
+      "Configurable: ancho y color del reflejante, bordado e impresión de la corporación",
     ],
   },
 

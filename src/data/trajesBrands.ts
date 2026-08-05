@@ -366,5 +366,106 @@ const fireDex: EquipmentBrand = {
   waQuote: 'Hola, quiero cotizar trajes Fire-Dex NFPA 1970 con fibra TECGEN.',
 };
 
+/* ════════════════════════════════════════════════════════════════════════════
+   SKÖLD SAFETY
+   ════════════════════════════════════════════════════════════════════════════ */
+
+/* Nota de comparativa específica de Sköld — distingue "certificado" de "equivalente" */
+const NOTA_SKOLD =
+  '* Sköld no publica valores de laboratorio TPP/THL para sus conjuntos: se indica «s/d fabricante» en lugar de estimarlos. ' +
+  'Solo el Herö PBI cuenta con certificación UL verificable (NFPA 1971 Ed. 2018 · laboratorio UL MH60435); las demás líneas declaran ' +
+  '«equivalencia» con la norma, lo cual no es lo mismo que una certificación emitida por un laboratorio acreditado. ' +
+  'Solicítenos la ficha técnica del fabricante antes de integrar cualquier partida a un pliego de licitación.';
+
+const skold: EquipmentBrand = {
+  categorySlug: 'trajes-bombero',
+  slug: 'skold',
+  brand: 'Sköld',
+  brandLabel: 'Sköld Safety',
+  crossDesc: 'Fabricante mexicano · Herö certificado UL · 5 líneas de traje',
+  eyebrow: 'Sköld Safety · Fabricación mexicana · Monterrey, N.L.',
+  heroTitleTop: 'Trajes Sköld',
+  heroTitleAccent: 'fabricados en México.',
+  heroLead:
+    'Sköld Safety fabrica en Monterrey, N.L. las cinco líneas de traje que cubren el ciclo completo de respuesta: estructural, brigadista industrial, forestal, aproximación aluminizado y overol de rescate. Fichas técnicas, tallaje y refacciones desde planta nacional.',
+  heroIntro: [
+    'Sköld Safety es un fabricante mexicano de equipo de protección personal con planta en Monterrey, Nuevo León, y oficina en Concord, Carolina del Norte. A diferencia de las marcas tier-1 estadounidenses del catálogo, Sköld produce en territorio nacional — lo que se traduce en contenido nacional para licitaciones, tiempos de refacción más cortos y un costo de adquisición entre tres y cuatro veces menor en el segmento de brigada industrial.',
+    'Su portafolio de bomberos es el más amplio del catálogo por número de familias: cinco líneas de traje que cubren cinco de los siete tipos de riesgo del sistema. El Herö —su modelo profesional con shell PBI Max 7.0— cuenta con certificación UL bajo NFPA 1971 Edición 2018 (laboratorio MH60435). Las demás líneas se fabrican bajo declaración de equivalencia con la norma, un matiz que documentamos con precisión en cada ficha.',
+  ],
+  heroBadges: ['NFPA 1971 Ed. 2018', 'UL MH60435', 'NFPA 2112', 'Equiv. NFPA 1977:2011', 'PBI Max 7.0', 'Nomex IIIA', 'Fabricación mexicana'],
+  seoTitle: 'Trajes Sköld — fabricante mexicano NFPA | México',
+  seoDescription:
+    'Catálogo Sköld Safety en México: Herö (NFPA 1971 Ed. 2018 certificado UL), Defender brigadista, Forestal, Aproximación aluminizado y Overol de Rescate. Fabricación nacional en Monterrey, N.L. — contenido nacional para licitación.',
+  stats: [
+    { valor: 'Monterrey', etiq: 'Planta de fabricación en N.L.' },
+    { valor: 'UL MH60435', etiq: 'Laboratorio que certifica el Herö PBI' },
+    { valor: '5 líneas', etiq: 'Estructural · industrial · forestal · ARFF · rescate' },
+    { valor: 'SKÖLDTracker', etiq: 'Trazabilidad de EPP del fabricante' },
+  ],
+  credenciales: [
+    { n: '01', t: 'Fabricación en territorio nacional', d: 'Sköld produce en su planta de Monterrey, Nuevo León. Para dependencias que ponderan contenido nacional en el fallo de una licitación, es la única marca del catálogo que lo acredita como fabricante y no como importador. También acorta el ciclo de refacciones, tallas especiales y reparaciones frente a las 10–14 semanas típicas de una marca de importación.' },
+    { n: '02', t: 'Herö — certificación UL verificable', d: 'El Herö con shell PBI Max 7.0 está certificado bajo NFPA 1971 Edición 2018 por UL, laboratorio MH60435. Es un número verificable, no una declaración del fabricante. Las demás líneas Sköld declaran equivalencia con la norma correspondiente; esa diferencia se documenta explícitamente en cada ficha de este catálogo.' },
+    { n: '03', t: 'SKÖLDTracker — trazabilidad del ciclo de vida', d: 'Sköld opera un sistema propio de trazabilidad de EPP que registra el traje desde la fabricación. Facilita el expediente de inspección, lavado técnico y retiro por vida útil que exige NFPA 1850, y da soporte documental a auditorías de Protección Civil y de cliente industrial.' },
+    { n: '04', t: 'Taller propio y reparación express', d: 'El fabricante mantiene taller de confección propio con servicio de reparación express, bordado e impresión personalizada. Un traje dañado en servicio se repara en el país en lugar de salir a planta extranjera — la diferencia entre semanas y meses de un elemento sin equipo.' },
+  ],
+  linesIntro:
+    'Sköld cubre cinco escenarios de riesgo desde una sola planta: combate estructural profesional, brigada industrial, incendio forestal, aproximación a llama directa y rescate. Es la marca con el mayor número de familias del catálogo — cinco de los siete tipos de riesgo del sistema.',
+  lineas: [
+    { tipo: 'estructural', badge: 'NFPA 1971 Ed. 2018 · UL MH60435', titulo: 'Línea Herö — Profesional', familiaLabel: 'Herö', flagship: 'skold-hero-pbi-estructural', modelos: '2 configuraciones — Herö PBI · Herö Nomex', desc: 'El traje profesional de Sköld y la única línea con certificación UL verificable. Sistema de tres capas con DRD integrado, cuello escudo de cobertura 360° y refuerzos Stedshield en mangas, hombros, codos, rodillas y tobillos. Tallas S–4XL en oro y negro.', tech: 'PBI Max 7.0 (70 PBI / 30 Kevlar) · Stedair 3000 · Defender M · S–4XL · rango $44,700–$61,800 MXN' },
+    { tipo: 'industrial', badge: 'Equiv. NFPA 1971:1991 · excede NFPA 2113', titulo: 'Línea Defender — Brigadista industrial', familiaLabel: 'Defender', flagship: 'skold-defender-brigadista', modelos: '1 modelo, 6 colores — combo, kit y piezas sueltas', desc: 'El traje de brigada industrial más vendido de la marca. Shell Nomex IIIA con 2% de fibra antiestática, refuerzos UltraShield y una suite de normas europeas poco común en el segmento: antiestática EN 1149-3/5, químicos EN 13034, arco eléctrico IEC 61482-2 clase II y térmico ISO 11612. Disponible con o sin DRD.', tech: 'Nomex IIIA 93/5/2 · Neopreno · Chambray · 6 colores · rango $15,000–$22,000 MXN' },
+    { tipo: 'forestal', badge: 'Equivalencia NFPA 1977:2011', titulo: 'Línea Forestal', familiaLabel: 'Forestal', flagship: 'skold-forestal-nomex', modelos: '2 piezas — FPFTJ chaquetón · FPFTP pantalón', desc: 'Conjunto de dos piezas en Nomex IIIA de 6.0 oz con acabado repelente al agua: fibra inherentemente resistente a la flama que no funde, no gotea y no flamea durante toda la vida útil de la prenda. Cierre de broches ocultos en chaquetón y cremallera en pantalón, banda reflejante Orafol.', tech: 'Nomex IIIA 6.0 oz hidrorrepelente · reflejante Orafol · conjunto ~$9,200 MXN' },
+    { tipo: 'proximidad', badge: 'NFPA 1971 ed. 1991 / 2013', titulo: 'Línea Aproximación', familiaLabel: 'Aproximación', flagship: 'skold-aproximacion-aluminizado', modelos: '1 modelo — conjunto aluminizado FPAPROX91', desc: 'Traje aluminizado para exposición a llama directa e irradiación intensa. Shell de cinco capas sobre tejido rip-stop de para-aramida, forro interior desmontable de dos capas y pantalón 100% Kevlar. Incluye DRD en Kevlar de 1½" y zíper de escape.', tech: 'Aluminizado 5 capas · rip-stop 7.0 oz/yd² · Aralite NP + Stedair 3000 · ~$33,400 MXN' },
+    { tipo: 'usar', badge: 'Tela certificada NFPA 2112', titulo: 'Línea Overol de Rescate', familiaLabel: 'Overol de Rescate', flagship: 'skold-overol-rescate', modelos: '1 modelo — FPOR, configurable', desc: 'Overol de una pieza para extricación, rescate vehicular y USAR, donde el traje estructural es excesivo y la ropa de trabajo insuficiente. Tela y reflejante con certificación NFPA 2112, costuras en hilo Kevlar y bolsa de radio con presillas para lámpara y micrófono.', tech: 'Tela FR NFPA 2112 · reflejante 1"/2"/3" plata o amarillo lima · ~$6,100 MXN' },
+  ],
+  flagship: 'Herö',
+  anatomiaIntro:
+    'El Herö es el único traje Sköld con certificación UL de tercero. Estos seis elementos, tomados de la ficha técnica del fabricante, explican qué está comprando una dependencia cuando especifica un Herö PBI.',
+  anatomia: [
+    { t: 'Shell exterior PBI Max 7.0', d: 'Tejido de 70% PBI y 30% Kevlar en 7 oz. El PBI no se encoge ni se rompe al carbonizarse, lo que conserva la integridad de la prenda tras la exposición térmica; el Kevlar aporta la resistencia mecánica al desgarre y la abrasión.' },
+    { t: 'Barrera de humedad Stedair 3000', d: 'Capa media impermeable al agua líquida y a los fluidos corporales, pero permeable al vapor. Es la que impide la quemadura por vapor a presión sin bloquear la evacuación del sudor.' },
+    { t: 'Barrera térmica Defender M', d: 'Forro interior que aporta el aislamiento del conjunto. En el Herö, las barreras interiores están declaradas como resistentes a agentes químicos, bacteriológicos, radiológicos y nucleares.' },
+    { t: 'Refuerzos Stedshield', d: 'Zonas de refuerzo en mangas, hombros, codos, rodillas y tobillos — los cinco puntos donde el traje se destruye primero al arrastrarse, escalar y trabajar apoyado sobre escombro.' },
+    { t: 'DRD y cuello escudo 360°', d: 'Drag Rescue Device integrado en la espalda para extracción de un elemento caído, y cuello tipo escudo con cobertura completa de 360° sin áreas descubiertas entre casco, escafandra y chaquetón.' },
+    { t: 'Trim ORALITE Ultra Brilliance', d: 'Banda reflejante ORALITE FTP2575-S de 3" en amarillo verdoso fluorescente, más bies plata en pecho, espalda, brazos, bolsas y tobillos para visibilidad de 360° en humo y baja iluminación.' },
+  ],
+  comparativa: [
+    { modelo: 'Herö PBI', tipo: 'estructural', shell: 'PBI Max 7.0 (70/30 PBI-Kevlar)', tpp: 's/d fab.', thl: 's/d fab.', peso: '—', ideal: 'Bomberos municipales · única con UL', rec: true },
+    { modelo: 'Herö Nomex', tipo: 'estructural', shell: 'Nomex IIIA', tpp: 's/d fab.', thl: 's/d fab.', peso: '—', ideal: 'Herö de menor costo de adquisición', rec: false },
+    { modelo: 'Defender', tipo: 'industrial', shell: 'Nomex IIIA 93/5/2 antiestático', tpp: 's/d fab.', thl: 's/d fab.', peso: '—', ideal: 'Brigadas industriales, refinerías', rec: false },
+    { modelo: 'Forestal FPFTJ/FPFTP', tipo: 'forestal', shell: 'Nomex IIIA 6.0 oz hidrorrepelente', tpp: 's/d fab.', thl: 's/d fab.', peso: '—', ideal: 'CONAFOR, interfaz urbano-forestal', rec: false },
+    { modelo: 'Aproximación FPAPROX91', tipo: 'proximidad', shell: 'Aluminizado 5 capas + para-aramida', tpp: 's/d fab.', thl: 's/d fab.', peso: '—', ideal: 'ARFF, fundición, petroquímica', rec: false },
+    { modelo: 'Overol de Rescate FPOR', tipo: 'usar', shell: 'Tela FR certificada NFPA 2112', tpp: 's/d fab.', thl: 's/d fab.', peso: '—', ideal: 'Extricación, rescate vehicular, USAR', rec: false },
+  ],
+  comparativaLabel: 'Las 5 líneas Sköld — norma real, no norma declarada',
+  comparativaNote: NOTA_SKOLD,
+  guia: [
+    { n: '01', t: 'Define el escenario dominante: combate estructural profesional → Herö; brigada de planta industrial → Defender; incendio de vegetación e interfaz → Forestal; exposición a llama directa e irradiación → Aproximación; extricación y rescate vehicular → Overol de Rescate.' },
+    { n: '02', t: 'Decide si necesita certificación o le basta la equivalencia. Si el pliego exige "certificado NFPA por laboratorio acreditado", la única opción Sköld es el Herö PBI (UL MH60435). Si el requisito es de cumplimiento técnico para brigada interna, las demás líneas son válidas y bajan el costo entre tres y cuatro veces.' },
+    { n: '03', t: 'Configure el conjunto: talla (Herö S–4XL, Defender S/M–2XL), color (Herö en oro o negro, Defender en seis colores), DRD sí o no en el Defender, ancho y color del reflejante en el Overol, y refuerzos de rodilla y bolsas cargo opcionales en el Forestal.' },
+    { n: '04', t: 'Solicite la documentación completa antes de firmar: ficha técnica del fabricante, número de certificación UL cuando aplique, declaración de equivalencia por escrito cuando no aplique, y el registro SKÖLDTracker para el expediente de vida útil NFPA 1850.' },
+  ],
+  segmentosIntro:
+    'Sköld es la opción de las brigadas industriales, los municipios con presupuesto acotado y las dependencias que ponderan contenido nacional. No compite con Globe o Lion por el traje tier-1: compite contra la alternativa real de muchos cuerpos en México, que es operar sin traje certificado.',
+  segmentos: [
+    { num: '01', tipo: 'industrial', titulo: 'Brigadas Industriales & Refinería', desc: 'Plantas, almacenes, refinerías y petroquímica con brigada interna de respuesta. El Defender combina el shell Nomex IIIA con fibra antiestática para zonas ATEX y una suite de normas EN —químicos, arco eléctrico, agua y frío— que ninguna otra línea del catálogo cubre a este precio.', modelos: 'Defender · Overol de Rescate' },
+    { num: '02', tipo: 'estructural', titulo: 'Municipios & Protección Civil', desc: 'Cuerpos municipales y direcciones de Protección Civil que deben equipar una plantilla completa con presupuesto estatal. El Herö entrega certificación UL bajo NFPA 1971 Ed. 2018 a una fracción del costo de un traje tier-1 de importación, con refacción y reparación en el país.', modelos: 'Herö PBI · Herö Nomex' },
+    { num: '03', tipo: 'forestal', titulo: 'Brigadas Forestales & Interfaz', desc: 'CONAFOR, brigadas estatales y voluntarios de interfaz urbano-forestal. El conjunto de dos piezas en Nomex IIIA de 6.0 oz con repelente al agua ofrece equivalencia NFPA 1977:2011 en el rango de precio en el que estas brigadas realmente compran.', modelos: 'Forestal FPFTJ · FPFTP' },
+    { num: '04', tipo: 'proximidad', titulo: 'ARFF, Fundición & Llama Directa', desc: 'Aeropuertos regionales, fundidoras, vidrieras y plantas con horno donde la exposición es de irradiación e llama directa, no de humo. El conjunto aluminizado de cinco capas con pantalón 100% Kevlar y DRD integrado cubre ese escenario dentro del mismo proveedor.', modelos: 'Aproximación FPAPROX91' },
+  ],
+  faqs: [
+    { q: '¿Un traje Sköld sirve para una licitación que pide "certificado NFPA"?', a: 'Depende del modelo, y la distinción es importante. El Herö con shell PBI Max 7.0 está certificado bajo NFPA 1971 Edición 2018 por UL, laboratorio MH60435 — ese número es verificable y sostiene un requisito de certificación por laboratorio acreditado. Las demás líneas (Defender, Forestal, Aproximación) declaran equivalencia con la norma correspondiente, lo cual es una declaración del fabricante y no una certificación de tercero. Si el pliego exige literalmente certificación de laboratorio acreditado, la única partida Sköld que la cumple es el Herö PBI. Si el requisito es de cumplimiento técnico para una brigada interna, las demás líneas son perfectamente válidas. Le preparamos la documentación correspondiente en cualquiera de los dos casos, sin ambigüedad.' },
+    { q: '¿Por qué un traje Sköld cuesta tres o cuatro veces menos que un Globe o un Lion?', a: 'Por tres factores. Primero, fabricación nacional: no hay importación, arancel, flete internacional ni margen de distribuidor extranjero. Segundo, alcance de certificación: solo el Herö sostiene una certificación UL de tercero, y el proceso de certificar y recertificar cada modelo ante un laboratorio acreditado es una parte sustancial del costo de un traje tier-1. Tercero, materiales: el Defender usa Nomex IIIA con barrera de neopreno y forro chambray, una construcción más simple y más pesada que un PBI Matrix con GORE-TEX CrossTech. No es el mismo producto y no debe venderse como tal — es el producto correcto para un escenario distinto.' },
+    { q: '¿Cuánto cuesta un traje Sköld en México?', a: 'Rangos de referencia observados en distribuidores autorizados a agosto de 2026, en pesos: el conjunto Forestal (chaquetón FPFTJ más pantalón FPFTP) ronda los $9,200; el Overol de Rescate FPOR, los $6,100; el Defender brigadista va de $15,000 el traje a cerca de $22,000 el kit completo con casco, botas, guantes y escafandra; el conjunto de Aproximación aluminizado ronda los $33,400; y el Herö va de $44,700 el combo a cerca de $61,800 el kit completo en versión PBI. Son precios de referencia, no cotización: el número final depende de talla, color, configuración con o sin DRD, y volumen. Un pedido de flota completa se cotiza distinto que una pieza.' },
+    { q: '¿Por qué la comparativa dice "s/d fabricante" en TPP y THL?', a: 'Porque Sköld no publica los valores de laboratorio de TPP (Thermal Protective Performance) ni THL (Total Heat Loss) de sus conjuntos, y preferimos declararlo antes que estimar un número que usted podría llevar a un pliego de licitación. Lo que sí está documentado y verificado son los datos mecánicos del Defender —resistencia al desgarre de 55×35 lbf, fuerza de tensión de 260×230 lbf, contracción térmica de 2.5×2.5 in y flamabilidad vertical de 0.0 segundos— junto con la composición exacta de cada capa. Estamos solicitando las fichas de laboratorio directamente al fabricante y actualizaremos esta tabla en cuanto las tengamos. Si su proceso requiere TPP y THL certificados hoy, las líneas Globe, Lion, Honeywell y Fire-Dex del catálogo sí los publican.' },
+    { q: '¿Qué diferencia hay entre el Defender y el Herö, más allá del precio?', a: 'Son trajes para usuarios distintos. El Herö es el traje del bombero profesional: shell PBI Max 7.0, barrera Stedair 3000, forro Defender M, refuerzos Stedshield, DRD integrado, tallas S a 4XL y certificación UL bajo NFPA 1971 Edición 2018. El Defender es el traje del brigadista industrial: shell Nomex IIIA con 2% de fibra antiestática, barrera de neopreno, forro chambray, refuerzos UltraShield, seis colores y una batería de normas europeas de químicos, arco eléctrico y antiestática que el Herö no declara. Un bombero municipal de tiempo completo que entra a estructuras a diario necesita el Herö. Una brigada de planta que responde a conatos y derrames, y que necesita protección antiestática y contra arco eléctrico, está mejor servida con el Defender.' },
+    { q: '¿Sköld da soporte de refacciones y reparación en México?', a: 'Sí, y es su ventaja más concreta frente a las marcas de importación. El fabricante opera taller de confección propio en Monterrey con servicio de reparación express, además de bordado e impresión personalizada de la corporación. Un chaquetón dañado en servicio se repara dentro del país en lugar de salir a planta extranjera, y las piezas se venden por separado —chaquetón FPJ01, pantalón FP001 y tirantes FPT01 en la línea Defender— de modo que una prenda dañada no obliga a reponer el conjunto. El fabricante también opera SKÖLDTracker, su sistema de trazabilidad, que sostiene el expediente de inspección y retiro por vida útil bajo NFPA 1850.' },
+  ],
+  ctaKicker: 'Fabricación mexicana · 5 líneas de traje',
+  ctaTitleHtml: 'Hecho en México.<br/>Documentado sin ambigüedad.',
+  waQuote: 'Hola, quiero cotizar trajes Sköld de fabricación mexicana.',
+  notaPie:
+    'Los rangos de inversión mostrados son precios de referencia en pesos mexicanos observados en distribuidores autorizados (Seguri, Priosa, Grainger México y Mastertec) a agosto de 2026, e incluyen IVA donde el distribuidor lo publica así. No constituyen cotización: el precio final depende de talla, color, configuración y volumen. Datos técnicos tomados de las fichas técnicas publicadas por Sköld Safety.',
+};
+
 /* ── Export ────────────────────────────────────────────────────────────────── */
-export const trajesBrandList: EquipmentBrand[] = [globe, lion, honeywell, fireDex];
+export const trajesBrandList: EquipmentBrand[] = [globe, lion, honeywell, fireDex, skold];

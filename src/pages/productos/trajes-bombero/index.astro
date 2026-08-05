@@ -10,7 +10,7 @@ const cat = trajesBombero;
 const canonicalURL = `${SITE.url}/productos/trajes-bombero`;
 
 const seoMeta = {
-  title: `Trajes para Bomberos NFPA 1970 y 1950 — Globe, Lion, MSA`,
+  title: `Trajes para Bomberos NFPA 1970 y 1950 — 5 marcas en MX`,
   description: cat.description,
   canonicalURL,
 };
@@ -33,6 +33,11 @@ const honeywellProducts = featuredProducts.filter(
 /* Productos Fire-Dex — 6 modelos */
 const firedexProducts = featuredProducts.filter(
   (p) => p.category === 'Trajes Bombero' && p.brand === 'Fire-Dex' && p.specs
+);
+
+/* Productos Sköld — 6 modelos (fabricación mexicana) */
+const skoldProducts = featuredProducts.filter(
+  (p) => p.category === 'Trajes Bombero' && p.brand === 'Sköld' && p.specs
 );
 
 /* Producto real con ficha L4 (legado) */
@@ -127,6 +132,7 @@ const articulos = [
   { label: 'Estructural, proximidad o forestal', desc: 'Cuál necesita tu brigada', href: '/blog/traje-estructural-proximidad-forestal-diferencias' },
   { label: 'Anatomía de un traje de bombero', desc: 'Capas, materiales y marcas', href: '/blog/anatomia-traje-bombero-capas-materiales' },
   { label: 'Inspección, cuidado y vida útil', desc: 'Guía NFPA 1850 y retiro a 10 años', href: '/blog/inspeccion-cuidado-vida-util-traje-bombero' },
+  { label: 'Traje fabricado en México', desc: 'Qué significa "equivalente a NFPA" y cuándo sirve', href: '/blog/traje-bombero-fabricado-mexico-equivalente-nfpa' },
 ];
 
 /* FAQ */
@@ -177,8 +183,8 @@ const otrasCategorias = categories.slice(0, 6);
 const razones = [
   {
     n: '01',
-    t: 'Cuatro marcas líderes mundiales',
-    d: 'Globe Manufacturing (MSA Safety), Lion Apparel, Honeywell Morning Pride y Fire-Dex — las cuatro marcas más licitadas en México. Distribuidor autorizado con un solo expediente para todo el EPP.',
+    t: 'Cinco marcas, tier-1 y nacional',
+    d: 'Globe Manufacturing (MSA Safety), Lion Apparel, Honeywell Morning Pride y Fire-Dex — las cuatro marcas más licitadas en México — más Sköld Safety, fabricante mexicano con planta en Monterrey. Distribuidor autorizado con un solo expediente para todo el EPP.',
   },
   {
     n: '02',
@@ -227,8 +233,9 @@ const razones = [
           </h1>
           <p class="text-base leading-relaxed mb-8 max-w-xl" style="color:#94A3B8">
             Distribuidores autorizados de Globe Manufacturing, Lion Apparel, Honeywell Morning Pride
-            y Fire-Dex en México. Trajes estructurales certificados NFPA 1970 con PBI, Nomex y
-            Crosstech — todos los materiales de alta performance en un solo distribuidor.
+            y Fire-Dex en México, más la línea nacional Sköld Safety. Trajes estructurales certificados
+            NFPA 1970 con PBI, Nomex y Crosstech — todos los materiales de alta performance en un solo
+            distribuidor.
           </p>
           <div class="flex flex-col sm:flex-row gap-3">
             <a href={whatsappUrl('Hola, quiero cotizar trajes para bomberos.')} target="_blank" rel="noopener" class="btn btn-primary btn-lg">Cotizar por WhatsApp</a>
@@ -240,7 +247,7 @@ const razones = [
             <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">{p}</p>
           ))}
           <div class="flex flex-wrap gap-2">
-            {['NFPA 1970','NFPA 1950','NFPA 1850','PBI','Crosstech','Globe · Lion · MSA'].map(n => (
+            {['NFPA 1970','NFPA 1950','NFPA 1850','PBI','Crosstech','5 marcas · tier-1 y nacional'].map(n => (
               <span class="badge badge-dark font-display text-[10px]">{n}</span>
             ))}
           </div>
@@ -508,6 +515,56 @@ const razones = [
     </div>
   </section>
 
+  <!-- Productos Sköld — 6 cards -->
+  <section class="section" style="background:#070E1A" aria-labelledby="skold-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Sköld Safety · Fabricación mexicana</span>
+          <h2 id="skold-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            Trajes Sköld<br/>
+            <span style="color:#F75000">fabricados en México.</span>
+          </h2>
+        </div>
+        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
+            Sköld fabrica en Monterrey, N.L. las cinco líneas que cubren el ciclo completo de respuesta:
+            estructural, brigadista industrial, forestal, aproximación y rescate. El Herö es su única línea
+            con certificación UL de tercero (NFPA 1971 Ed. 2018, lab MH60435); las demás declaran
+            equivalencia con la norma — lo documentamos así, sin ambigüedad.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {['NFPA 1971 Ed. 2018','UL MH60435','NFPA 2112','Equiv. NFPA 1977','PBI Max 7.0','Nomex IIIA'].map(b => (
+              <span class="badge badge-dark text-[9px]">{b}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {skoldProducts.map((p) => (
+          <ProductCard product={p} />
+        ))}
+      </div>
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(74,117,153,0.15)">
+        <div class="flex-1">
+          <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+            ¿Necesita equipar una brigada completa con presupuesto acotado, o acreditar contenido nacional
+            en su licitación? Sköld es fabricante, no importador: refacciones, tallas especiales y reparación
+            dentro del país.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+          <a href="/productos/trajes-bombero/skold" class="btn btn-primary btn-lg">
+            Catálogo Sköld completo →
+          </a>
+          <a href={whatsappUrl('Hola, quiero cotizar trajes Sköld de fabricación mexicana.')} target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
+            Cotizar por WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Galería de producto -->
   <section class="section-tight" style="background:#040A12" aria-label="Galería trajes para bomberos">
     <div class="container-site">
@@ -658,7 +715,7 @@ const razones = [
     <div class="container-site">
       <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
         <div>
-          <p class="text-xs font-display font-bold uppercase tracking-[0.2em] mb-3" style="color:rgba(255,255,255,0.65)">Globe · Lion · Honeywell · Fire-Dex · Stock CDMX</p>
+          <p class="text-xs font-display font-bold uppercase tracking-[0.2em] mb-3" style="color:rgba(255,255,255,0.65)">Globe · Lion · Honeywell · Fire-Dex · Sköld · Stock CDMX</p>
           <h2 class="font-display font-bold uppercase" style="color:#FFFFFF;font-size:clamp(1.75rem,4vw,3rem);line-height:1.05">
             Certificado NFPA 1970.<br/>Entrega en 48 h.
           </h2>

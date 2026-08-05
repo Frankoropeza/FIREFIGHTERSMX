@@ -2,6 +2,7 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import { featuredProducts, type Product } from '@data/products';
+import { brandPages } from '@data/brandPages';
 import { categories } from '@data/categories';
 import { SITE, whatsappUrl } from '@config/site';
 
@@ -19,10 +20,12 @@ const canonicalURL = `${SITE.url}${product.href}`;
 const categoryPath = product.href.split('/').slice(0, 3).join('/');
 
 /* ── Brand page URL ────────────────────────────────────────────────────── */
-const brandSlug = product.brand
-  ? product.brand.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-$/, '')
-  : null;
-const brandPath = brandSlug ? `${categoryPath}/${brandSlug}` : null;
+/* Se resuelve contra el registro real de brand pages: slugificar `brand` producía
+   URLs inexistentes con marcas acentuadas o de slug propio (Sköld, Dräger, MSA). */
+const brandEntry = product.brand
+  ? brandPages.find((b) => `/productos/${b.categorySlug}` === categoryPath && b.brand === product.brand)
+  : undefined;
+const brandPath = brandEntry ? `/productos/${brandEntry.categorySlug}/${brandEntry.slug}` : null;
 
 /* ── H1 split — word 1 white, rest orange ──────────────────────────────── */
 const titleWords  = product.title.split(' ');
@@ -94,8 +97,9 @@ const specRows: SpecRow[] = product.specs
 const specSummary = specRows.length
   ? ` Con ${specRows.map((s) => `${s.label} ${s.val}`).slice(0, 3).join(', ')}.`
   : '';
-const introPara1 = `${product.title} es la referencia${product.tier ? ` ${product.tier.toLowerCase()}` : ''} de ${product.brand ?? product.category} para el mercado mexicano. ${product.description}${specSummary} Certificado bajo ${product.norm ?? 'norma NFPA'} por laboratorio acreditado — número de modelo y serie verificables directamente con el fabricante.`;
-const introPara2 = `Como distribuidores autorizados de ${product.brand ?? 'esta marca'} en México, entregamos el dossier documental completo para licitaciones públicas (CompraNet, IMSS, gobiernos estatales) y corporativas: certificado de conformidad ${product.norm ?? 'NFPA'}, ficha técnica oficial en español, carta de distribuidor autorizado y manifiesto de cumplimiento de norma por partida. Stock permanente en CDMX con entrega en 24–48 h.`;
+const certSentence = product.normClaim ?? `Certificado bajo ${product.norm ?? 'norma NFPA'} por laboratorio acreditado — número de modelo y serie verificables directamente con el fabricante.`;
+const introPara1 = `${product.title} es la referencia${product.tier ? ` ${product.tier.toLowerCase()}` : ''} de ${product.brand ?? product.category} para el mercado mexicano. ${product.description}${specSummary} ${certSentence}`;
+const introPara2 = product.dossierClaim ?? `Como distribuidores autorizados de ${product.brand ?? 'esta marca'} en México, entregamos el dossier documental completo para licitaciones públicas (CompraNet, IMSS, gobiernos estatales) y corporativas: certificado de conformidad ${product.norm ?? 'NFPA'}, ficha técnica oficial en español, carta de distribuidor autorizado y manifiesto de cumplimiento de norma por partida. Stock permanente en CDMX con entrega en 24–48 h.`;
 const heroParas = [introPara1, introPara2];
 
 const heroBadges = [
@@ -280,6 +284,7 @@ const catArticulos: Record<string, SbArt[]> = {
     { label: 'PBI Matrix vs Nomex IIIA', desc: 'Desempeño, durabilidad y costo comparados', href: '/blog/pbi-matrix-vs-nomex-trajes-bombero' },
     { label: 'TPP y THL: los dos parámetros clave', desc: 'Cómo leer e interpretar los valores de norma', href: '/blog/tpp-thl-trajes-bombero-nfpa' },
     { label: 'Inspección y retiro NFPA 1850', desc: 'Criterios y periodicidad para EPP estructural', href: '/blog/inspeccion-cuidado-vida-util-traje-bombero' },
+    { label: 'Traje fabricado en México', desc: 'Certificado vs. "equivalente a NFPA"', href: '/blog/traje-bombero-fabricado-mexico-equivalente-nfpa' },
   ],
   'Cascos NFPA': [
     { label: 'Casco europeo vs americano', desc: 'Cuándo elegir cada estilo para tu corporación', href: '/blog/casco-bombero-europeo-vs-americano' },

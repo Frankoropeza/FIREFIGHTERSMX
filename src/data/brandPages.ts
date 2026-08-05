@@ -238,7 +238,7 @@ export const categoriaMarca: Record<string, CategoriaMeta> = {
       { key: 'ideal', label: 'Ideal para' },
     ],
     conjunto: [
-      { label: 'Trajes para Bomberos', desc: 'Globe, Lion, Honeywell, Fire-Dex — NFPA 1970', href: '/productos/trajes-bombero' },
+      { label: 'Trajes para Bomberos', desc: 'Globe, Lion, Honeywell, Fire-Dex y Sköld — NFPA 1970', href: '/productos/trajes-bombero' },
       { label: 'Equipos SCBA', desc: 'MSA G1, Dräger y 3M Scott — integración con casco', href: '/productos/equipos-scba' },
       { label: 'Cámaras Térmicas', desc: 'Soporte en casco · NFPA 1930', href: '/productos/camaras-termicas' },
       { label: 'Mantenimiento y vida útil', desc: 'Inspección y retiro de cascos NFPA 1850', href: '/servicios/mantenimiento' },
@@ -275,7 +275,7 @@ export const categoriaMarca: Record<string, CategoriaMeta> = {
     ],
     conjunto: [
       { label: 'Cascos NFPA', desc: 'MSA Gallet, Bullard y Cairns — integración con máscara', href: '/productos/cascos-nfpa' },
-      { label: 'Trajes para Bomberos', desc: 'Globe, Lion, Honeywell, Fire-Dex — NFPA 1970', href: '/productos/trajes-bombero' },
+      { label: 'Trajes para Bomberos', desc: 'Globe, Lion, Honeywell, Fire-Dex y Sköld — NFPA 1970', href: '/productos/trajes-bombero' },
       { label: 'Cámaras Térmicas', desc: 'Integración en máscara y casco · NFPA 1930', href: '/productos/camaras-termicas' },
       { label: 'Mantenimiento y servicio', desc: 'Prueba hidrostática y de flujo anual · NFPA 1850', href: '/servicios/mantenimiento' },
       { label: 'Soporte para licitaciones', desc: 'Fichas técnicas y manifiestos por partida', href: '/licitaciones' },
@@ -294,7 +294,7 @@ export const categoriaMarca: Record<string, CategoriaMeta> = {
     conjunto: [
       { label: 'Cascos NFPA', desc: 'MSA Gallet, Bullard y Cairns — montaje de cámara', href: '/productos/cascos-nfpa' },
       { label: 'Equipos SCBA', desc: 'MSA G1, Dräger y 3M Scott — integración TIC', href: '/productos/equipos-scba' },
-      { label: 'Trajes para Bomberos', desc: 'Globe, Lion, Honeywell, Fire-Dex — NFPA 1970', href: '/productos/trajes-bombero' },
+      { label: 'Trajes para Bomberos', desc: 'Globe, Lion, Honeywell, Fire-Dex y Sköld — NFPA 1970', href: '/productos/trajes-bombero' },
       { label: 'Mantenimiento y servicio', desc: 'Calibración y verificación NFPA 1930', href: '/servicios/mantenimiento' },
       { label: 'Soporte para licitaciones', desc: 'Fichas técnicas y manifiestos por partida', href: '/licitaciones' },
     ],
@@ -311,7 +311,7 @@ export const categoriaMarca: Record<string, CategoriaMeta> = {
     ],
     conjunto: [
       { label: 'Cascos NFPA', desc: 'MSA Gallet, Bullard y Cairns — NFPA 1970', href: '/productos/cascos-nfpa' },
-      { label: 'Trajes para Bomberos', desc: 'Globe, Lion, Honeywell, Fire-Dex — NFPA 1970', href: '/productos/trajes-bombero' },
+      { label: 'Trajes para Bomberos', desc: 'Globe, Lion, Honeywell, Fire-Dex y Sköld — NFPA 1970', href: '/productos/trajes-bombero' },
       { label: 'Equipos SCBA', desc: 'MSA G1, Dräger y 3M Scott — aire autónomo', href: '/productos/equipos-scba' },
       { label: 'Capacitación y demostración', desc: 'Operación y mantenimiento NFPA 1936', href: '/servicios/capacitacion' },
       { label: 'Soporte para licitaciones', desc: 'Fichas técnicas y manifiestos por partida', href: '/licitaciones' },
@@ -347,7 +347,7 @@ export const categoriaMarca: Record<string, CategoriaMeta> = {
     ],
     conjunto: [
       { label: 'Equipos SCBA', desc: 'MSA G1, Dräger y 3M Scott — CBRN/NIOSH', href: '/productos/equipos-scba' },
-      { label: 'Trajes para Bomberos', desc: 'Globe, Lion, Honeywell — NFPA 1970', href: '/productos/trajes-bombero' },
+      { label: 'Trajes para Bomberos', desc: 'Globe, Lion, Honeywell y Sköld — NFPA 1970', href: '/productos/trajes-bombero' },
       { label: 'Sistemas Contra Incendio', desc: 'Tyco, Honeywell, Kidde Fenwal — NFPA 13/72', href: '/productos/sistemas-ci' },
       { label: 'Capacitación HAZMAT', desc: 'Reconocimiento, respuesta y descontaminación', href: '/servicios/capacitacion' },
       { label: 'Soporte para licitaciones', desc: 'Fichas técnicas y manifiestos por partida', href: '/licitaciones' },
