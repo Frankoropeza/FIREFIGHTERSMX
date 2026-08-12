@@ -28,7 +28,7 @@ const products = cat.productCategory
 /* Marcas con página L4 dedicada en esta categoría (sistema BrandPage) */
 const marcas = brandPages.filter((b) => b.categorySlug === cat.slug);
 
-const canonicalURL = `${SITE.url}/productos/${cat.slug}`;
+const canonicalURL = `${SITE.url}/productos/${cat.slug}/`;
 
 const breadcrumbSchema = {
   '@context': 'https://schema.org',

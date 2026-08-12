@@ -24,7 +24,7 @@ export const getStaticPaths = (() => {
 }) satisfies GetStaticPaths;
 
 const { estado } = Astro.props;
-const canonicalURL = `${SITE.url}/cobertura/${estado.slug}`;
+const canonicalURL = `${SITE.url}/cobertura/${estado.slug}/`;
 
 // ── SEO: title (≤60c) y description (≤160c) keyword-first ──────────
 // Patrón: "Equipo Bomberos [Estado] | Distribuidor NFPA | FFMX"

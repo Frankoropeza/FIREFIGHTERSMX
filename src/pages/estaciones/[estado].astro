@@ -26,7 +26,7 @@ export const getStaticPaths = (() => {
 }) satisfies GetStaticPaths;
 
 const { estado } = Astro.props;
-const canonicalURL = `${SITE.url}/estaciones/${estado.slug}`;
+const canonicalURL = `${SITE.url}/estaciones/${estado.slug}/`;
 
 /* ─── Derivados del estado ───────────────────────────────────────── */
 const estaciones      = estado.estaciones;

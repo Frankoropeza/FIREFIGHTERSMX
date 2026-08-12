@@ -26,7 +26,7 @@ export const getStaticPaths = (() => {
 }) satisfies GetStaticPaths;
 
 const { brand } = Astro.props;
-const canonicalURL = `${SITE.url}/marcas/${brand.slug}`;
+const canonicalURL = `${SITE.url}/marcas/${brand.slug}/`;
 
 // ── SEO: title (≤60c) y description (≤160c) keyword-first ───────────
 // Patrón: "[Marca] en México | Distribuidor autorizado | FIREFIGHTERS MX"

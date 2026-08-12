@@ -18,7 +18,7 @@ interface Props {
 }
 
 const { industry: ind } = Astro.props;
-const canonicalURL = `${SITE.url}${ind.href}`;
+const canonicalURL = `${SITE.url}${ind.href}/`;
 
 // Cross-selling: categorías y servicios recomendados desde data central
 const recCategories = ind.recommendedCategories

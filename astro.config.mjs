@@ -64,8 +64,9 @@ function lastmodForUrl(url) {
 
 export default defineConfig({
   site: 'https://firefighters.mx',
-  // Canonical: nunca slash final → evita duplicate content /productos/ vs /productos
-  trailingSlash: 'never',
+  // Canonical: siempre slash final — así lo sirve producción (Cloudflare
+  // redirige 308 /pagina → /pagina/). Medido 2026-08-12.
+  trailingSlash: 'always',
   integrations: [
     mdx(),
     sitemap({
@@ -103,6 +104,7 @@ export default defineConfig({
   },
   compressHTML: true,
   build: {
+    format: 'directory',
     inlineStylesheets: 'auto',
   },
 });

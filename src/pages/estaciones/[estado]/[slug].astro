@@ -21,7 +21,7 @@ export const getStaticPaths = (() => {
 const { estado, estacion } = Astro.props;
 const cfg  = tipoConfig[estacion.tipo];
 const conf = estacion.confianza ? confianzaConfig[estacion.confianza] : null;
-const canonicalURL = `${SITE.url}/estaciones/${estado.slug}/${estacion.slug}`;
+const canonicalURL = `${SITE.url}/estaciones/${estado.slug}/${estacion.slug}/`;
 
 /* ── Coordenadas: acepta { lat, lng } y [lat, lng] ── */
 const rawCoord = estacion.coordenadas as any;

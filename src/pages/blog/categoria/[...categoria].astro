@@ -38,7 +38,7 @@ export const getStaticPaths = (async () => {
 
 const { category, posts, allCategories } = Astro.props;
 const { categoria } = Astro.params;
-const canonicalURL = `${SITE.url}/blog/categoria/${categoria}`;
+const canonicalURL = `${SITE.url}/blog/categoria/${categoria}/`;
 
 const seoMeta = {
   title: `${category} — Blog técnico bomberos | FIREFIGHTERS MX`,

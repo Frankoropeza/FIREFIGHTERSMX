@@ -7,7 +7,7 @@ import { featuredProducts } from '@data/products';
 import { SITE, whatsappUrl } from '@config/site';
 
 const cat = categories.find((c) => c.slug === 'sistemas-ci')!;
-const canonicalURL = `${SITE.url}/productos/sistemas-ci`;
+const canonicalURL = `${SITE.url}/productos/sistemas-ci/`;
 
 const tycoProducts        = featuredProducts.filter((p) => p.category === 'Sistemas CI' && p.brand === 'Tyco Viking'        && p.specs);
 const honeywellProducts   = featuredProducts.filter((p) => p.category === 'Sistemas CI' && p.brand === 'Honeywell Notifier' && p.specs);

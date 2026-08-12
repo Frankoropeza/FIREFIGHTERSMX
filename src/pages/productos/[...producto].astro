@@ -16,7 +16,7 @@ export function getStaticPaths() {
 interface Props { product: Product; }
 
 const { product } = Astro.props;
-const canonicalURL = `${SITE.url}${product.href}`;
+const canonicalURL = `${SITE.url}${product.href}/`;
 const categoryPath = product.href.split('/').slice(0, 3).join('/');
 
 /* ── Brand page URL ────────────────────────────────────────────────────── */
