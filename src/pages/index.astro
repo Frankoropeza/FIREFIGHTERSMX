@@ -1,11 +1,10 @@
 ---
-// Home v3 — portal-directorio (2026-09). Orden: buscar → giros → mapa → estados →
+// Home v3 — portal-directorio (2026-09). Orden: buscar → giros → estados →
 // confianza → dos lados → estaciones → guías → marcas → normativa → blog → FAQ → CTA.
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import DirHero from '@components/home/directorio/DirHero.astro';
 import DirGiros from '@components/home/directorio/DirGiros.astro';
-import DirMapa from '@components/home/directorio/DirMapa.astro';
 import DirEstados from '@components/home/directorio/DirEstados.astro';
 import DirConfianza from '@components/home/directorio/DirConfianza.astro';
 import DirDosLados from '@components/home/directorio/DirDosLados.astro';
@@ -91,9 +90,6 @@ const schemas = [organizationSchema, webSiteSchema, directorioSchema, faqSchema]
 
   {/* 3. Los 4 giros con conteos */}
   <DirGiros />
-
-  {/* 4. Mapa nacional con clustering */}
-  <DirMapa />
 
   {/* 5. Los 32 estados por oferta */}
   <DirEstados />
