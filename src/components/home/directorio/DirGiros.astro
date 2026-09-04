@@ -1,0 +1,41 @@
+---
+/** Los 4 giros del directorio con conteos reales — patrón "shop by category" */
+import { giros } from '@data/giros';
+import { conteoPorGiro, conteoPorEstado } from '@lib/empresas';
+const porGiro = await conteoPorGiro();
+const topPorGiro = Object.fromEntries(await Promise.all(giros.map(async (g) => [g.slug, (await conteoPorEstado(g.slug)).filter((s) => s.total > 0).sort((a, b) => b.total - a.total).slice(0, 3)])));
+---
+<section class="section" style="background:#070E1A" aria-labelledby="giros-heading">
+  <div class="container-site">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+      <div class="reveal">
+        <span class="section-eyebrow mb-4 inline-flex">Por giro</span>
+        <h2 id="giros-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Cuatro giros.<br/><span style="color:#F75000">Todo el sector.</span></h2>
+      </div>
+      <div class="reveal" data-delay="1" style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+        <p class="text-sm leading-relaxed mb-3" style="color:#94A3B8">El sector no tiene clasificación oficial propia: el SCIAN reparte a estas empresas en más de treinta clases. Nosotros las agrupamos por lo que realmente hacen, para que un jefe de bomberos, una brigada industrial o un comprador de gobierno encuentre al proveedor correcto sin intermediarios.</p>
+        <a href="/empresas/" class="inline-flex items-center gap-2 text-xs font-display font-semibold uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57;letter-spacing:0.1em">Explorar el directorio completo <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
+      {giros.map((g, i) => { const c = porGiro.find((x) => x.giro === g.slug)!; const top = topPorGiro[g.slug] as { slug: string; nombre: string; total: number }[]; return (
+        <a href={`/empresas/${g.slug}/`} class="reveal grid-cell ledger-cell flex flex-col gap-5 p-7 min-h-[360px]" data-delay={String(Math.min(i, 4))} style="background:#040A12">
+          <div class="flex items-center justify-between">
+            <span class="w-11 h-11 flex items-center justify-center" style={`color:${g.color};border:1px solid ${g.color}55;background:${g.color}10`}>
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" set:html={g.icon} aria-hidden="true"/></span>
+            <span class="font-display text-[10px] uppercase tracking-widest" style="color:#4A7599">0{i + 1}</span>
+          </div>
+          <div>
+            <span class="stat-num font-display font-bold block" style={`color:${g.color};font-size:3.2rem;line-height:1`}>{c.total.toLocaleString('es-MX')}</span>
+            <span class="font-display text-[10px] uppercase tracking-widest" style="color:#4A7599">empresas</span>
+          </div>
+          <span class="font-display font-bold text-xl leading-tight" style="color:#FFFFFF">{g.label}</span>
+          <span class="text-xs leading-relaxed" style="color:#64748B">{g.description}</span>
+          <ul class="mt-auto flex flex-col list-none m-0 p-0 text-xs" style="border-top:1px solid rgba(74,117,153,0.15)">
+            {top.map((t) => <li class="flex justify-between py-1.5" style="border-bottom:1px solid rgba(74,117,153,0.1);color:#94A3B8"><span>{t.nombre}</span><span class="font-display font-bold" style={`color:${g.color}`}>{t.total}</span></li>)}
+          </ul>
+          <span class="font-display font-semibold text-xs uppercase tracking-wider" style="color:#FF8F57">Ver {g.labelCorto.toLowerCase()} →</span>
+        </a>); })}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,40 @@
+---
+/** Bandas editoriales: los dos lados del mercado, ambos en el mismo sitio */
+import { statsDirectorio } from '@lib/empresas';
+import { totalEstaciones } from '@data/estaciones';
+const stats = await statsDirectorio();
+const fmt = (n: number) => n.toLocaleString('es-MX');
+---
+<section class="section" style="background:#070E1A" aria-label="Para quien compra y para quien vende">
+  <div class="container-site grid grid-cols-1 lg:grid-cols-2 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
+
+    <div class="reveal relative overflow-hidden flex flex-col justify-end min-h-[520px] p-8 lg:p-12" style="background:#040A12">
+      <img src="/images/industrias/bomberos-municipales.avif" alt="" width="1200" height="800" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover" style="opacity:0.42;filter:saturate(0.55)" aria-hidden="true" />
+      <div class="absolute inset-0" aria-hidden="true" style="background:linear-gradient(180deg, rgba(4,10,18,0.2) 0%, rgba(4,10,18,0.95) 70%)"></div>
+      <div class="relative z-10">
+        <span class="section-eyebrow mb-4 inline-flex">Para quien compra</span>
+        <h2 class="font-display font-bold mb-4" style="color:#FFFFFF;font-size:clamp(1.8rem,3.4vw,2.8rem);line-height:1.05">Cuerpos de bomberos, brigadas,<br/><span style="color:#F75000">protección civil y gobierno.</span></h2>
+        <p class="text-sm leading-relaxed mb-6 max-w-lg" style="color:#94A3B8">Encuentra proveedores por giro y estado, compara especialidades, revisa el nivel de verificación de cada ficha y llega con la guía de compra y la norma correcta antes de pedir cotización o armar una licitación.</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/empresas/" class="btn btn-primary">Buscar proveedores</a>
+          <a href="/productos/" class="btn btn-ghost">Guías de compra</a>
+          <a href="/licitaciones/" class="btn btn-ghost">Licitaciones</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal relative overflow-hidden flex flex-col justify-end min-h-[520px] p-8 lg:p-12" data-delay="1" style="background:#040A12">
+      <img src="/images/industrias/brigadas-industriales.avif" alt="" width="1200" height="800" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover" style="opacity:0.42;filter:saturate(0.55)" aria-hidden="true" />
+      <div class="absolute inset-0" aria-hidden="true" style="background:linear-gradient(180deg, rgba(4,10,18,0.2) 0%, rgba(4,10,18,0.95) 70%)"></div>
+      <div class="relative z-10">
+        <span class="section-eyebrow mb-4 inline-flex" style="color:#F5A623;background:rgba(245,166,35,0.1);border-color:rgba(245,166,35,0.3)">Para quien vende</span>
+        <h2 class="font-display font-bold mb-4" style="color:#FFFFFF;font-size:clamp(1.8rem,3.4vw,2.8rem);line-height:1.05">Distribuidores, recargadoras,<br/><span style="color:#F5A623">instaladores y capacitadores.</span></h2>
+        <p class="text-sm leading-relaxed mb-6 max-w-lg" style="color:#94A3B8">{fmt(totalEstaciones)} cuerpos de bomberos y miles de brigadas industriales consultan este directorio. Reclama tu ficha, verifica tus datos y aparece primero en tu giro y estado. El registro básico es gratuito.</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/empresas/registro/" class="btn btn-gold">Registrar mi empresa</a>
+          <a href="/empresas/registro/#formulario" class="btn btn-ghost">Reclamar mi ficha</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

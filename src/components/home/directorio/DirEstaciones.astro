@@ -1,0 +1,27 @@
+---
+/** El otro directorio: cuerpos de bomberos — los compradores del sector */
+import { estados, totalEstaciones, todasLasEstaciones, tipoConfig, tiposPresentes } from '@data/estaciones';
+const top = [...estados].sort((a, b) => b.estaciones.length - a.estaciones.length).slice(0, 6);
+const porTipo = tiposPresentes.map((t) => ({ t, ...tipoConfig[t], n: todasLasEstaciones.filter((e) => e.tipo === t).length })).sort((a, b) => b.n - a.n);
+const verificadas = todasLasEstaciones.filter((e) => e.confianza === 'alta').length;
+---
+<section class="section" style="background:#040A12" aria-labelledby="est-heading">
+  <div class="container-site grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-12 lg:gap-20 items-center">
+    <div class="reveal">
+      <span class="section-eyebrow mb-4 inline-flex">Directorio de estaciones</span>
+      <h2 id="est-heading" class="font-display font-bold mb-5" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">{totalEstaciones} cuerpos de bomberos<br/><span style="color:#F75000">en los 32 estados.</span></h2>
+      <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">Municipales, estatales, voluntarios, industriales, aeroportuarios, PEMEX y CFE: cada corporación con ubicación, contacto verificado, servicios operativos y fuentes citadas. {verificadas} fichas con datos verificados contra fuente oficial.</p>
+      <p class="text-sm leading-[1.9] mb-8" style="color:#94A3B8">Es el lado de la demanda del mismo mercado: quien busca un proveedor aquí, también encuentra a quién le compra. Y cada ficha de estación enlaza con las empresas de su zona.</p>
+      <div class="flex flex-wrap gap-2 mb-8">{porTipo.map((x) => <a href="/estaciones/" class="badge font-display text-[10px]" style={`color:${x.color};background:${x.bgColor};border:1px solid ${x.color}40`}>{x.label} · {x.n}</a>)}</div>
+      <a href="/estaciones/" class="btn btn-primary">Explorar estaciones</a>
+    </div>
+    <div class="reveal grid grid-cols-2 sm:grid-cols-3 gap-px" data-delay="1" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
+      {top.map((e) => (
+        <a href={`/estaciones/${e.slug}/`} class="grid-cell ledger-cell flex flex-col gap-1 p-5" style="background:#070E1A">
+          <span class="stat-num font-display font-bold" style="color:#F75000;font-size:2.4rem;line-height:1">{e.estaciones.length}</span>
+          <span class="font-display font-semibold text-sm leading-tight" style="color:#FFFFFF">{e.nombre}</span>
+          <span class="text-[10px] uppercase tracking-widest" style="color:#4A7599">{e.region}</span>
+        </a>))}
+    </div>
+  </div>
+</section>

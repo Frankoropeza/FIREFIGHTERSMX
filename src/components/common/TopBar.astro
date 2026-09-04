@@ -1,5 +1,8 @@
 ---
 import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl } from '@config/site';
+import { statsDirectorio } from '@lib/empresas';
+import { totalEstaciones } from '@data/estaciones';
+const stats = await statsDirectorio();
 ---
 
 <div class="hidden md:block w-full" style="background:#020810;border-bottom:1px solid rgba(74,117,153,0.12)">
@@ -9,15 +12,15 @@ import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl } from '@config/site';
     <div class="flex items-center gap-5">
 
       <span class="font-display font-bold text-[11px] tracking-[0.18em] uppercase shrink-0" style="color:#F75000">
-        Equipo para Bomberos
+        Directorio de equipo contra incendio
       </span>
 
       <span class="w-px h-3 shrink-0" style="background:rgba(74,117,153,0.2)"></span>
 
       <div class="flex items-center gap-1.5">
         <span class="w-1.5 h-1.5 rounded-full shrink-0" style="background:#34D399"></span>
-        <span class="text-[11px] font-medium tracking-wide" style="color:#64748B">
-          Disponibilidad inmediata · Stock permanente
+        <span class="text-[11px] font-medium tracking-wide whitespace-nowrap" style="color:#64748B">
+          {stats.total.toLocaleString('es-MX')} empresas · {totalEstaciones} estaciones
         </span>
       </div>
 

@@ -102,7 +102,7 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
           <p class="text-sm leading-relaxed" style="color:#94A3B8">Filtra por giro o busca por nombre, ciudad o municipio. Para ver un giro con sus especialidades y su propio mapa, entra al directorio de ese giro en {estado.nombre}.</p>
         </div>
       </div>
-      <EmpresasGrid empresas={lista} filtros={porGiro.map((g) => { const m = giros.find((x) => x.slug === g.giro)!; return { key: g.giro, label: `${m.labelCorto} · ${g.total}`, color: m.color }; })} id={`edo-${estado.slug}`} />
+      <EmpresasGrid empresas={lista} filtros={porGiro.map((g) => { const m = giros.find((x) => x.slug === g.giro)!; return { key: g.giro, label: `${m.labelCorto} · ${g.total}`, color: m.color }; })} id={`edo-${estado.slug}`} indexSrc={lista.length > 48 ? '/data/empresas-index.json' : undefined} alcance={{ estado: estado.slug }} limite={48} />
     </div>
   </section>
 

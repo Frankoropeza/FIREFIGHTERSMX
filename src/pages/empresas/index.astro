@@ -6,13 +6,12 @@ import MapaEmpresas from '@components/empresas/MapaEmpresas.astro';
 import EmpresasGrid from '@components/empresas/EmpresasGrid.astro';
 import { SITE } from '@config/site';
 import { giros } from '@data/giros';
-import { todasLasEmpresas, conteoPorEstado, conteoPorGiro, statsDirectorio, puntosMapa, estadosMeta } from '@lib/empresas';
+import { todasLasEmpresas, conteoPorEstado, conteoPorGiro, statsDirectorio, estadosMeta } from '@lib/empresas';
 
 const all = await todasLasEmpresas();
 const stats = await statsDirectorio();
 const porEstado = (await conteoPorEstado()).sort((a, b) => b.total - a.total);
 const porGiro = await conteoPorGiro();
-const puntos = puntosMapa(all);
 const destacadas = all.filter((e) => e.plan !== 'basico').slice(0, 6);
 const muestra = (destacadas.length ? destacadas : all.filter((e) => e.sitioWeb)).slice(0, 12);
 const regiones = [...new Set(estadosMeta.map((e) => e.region))];
@@ -116,7 +115,7 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
     <div class="container-site">
       <span class="section-eyebrow mb-4 inline-flex">Mapa nacional</span>
       <h2 class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.05">{stats.total.toLocaleString('es-MX')} empresas<br/><span style="color:#F75000">georreferenciadas.</span></h2>
-      <MapaEmpresas puntos={puntos} ariaLabel="Mapa nacional de empresas de equipo contra incendio" />
+      <MapaEmpresas src="/data/empresas-puntos.json" ariaLabel="Mapa nacional de empresas de equipo contra incendio" />
       <div class="flex flex-wrap gap-4 mt-3">
         {giros.map((g) => <span class="inline-flex items-center gap-2 text-[11px]" style="color:#94A3B8"><span class="w-2.5 h-2.5 rounded-full" style={`background:${g.color}`}></span>{g.labelCorto}</span>)}
         <span class="text-[11px]" style="color:#4A7599">Coordenadas del registro público DENUE (INEGI).</span>
@@ -159,7 +158,7 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
           <p class="text-sm leading-relaxed" style="color:#94A3B8">Escribe el nombre de la empresa, la ciudad o el municipio. Filtra por giro. El listado prioriza a las empresas con ficha verificada o destacada.</p>
         </div>
       </div>
-      <EmpresasGrid empresas={all} mostrarEstado filtros={giros.map((g) => ({ key: g.slug, label: g.labelCorto, color: g.color }))} id="hub" />
+      <EmpresasGrid empresas={all} mostrarEstado filtros={giros.map((g) => ({ key: g.slug, label: g.labelCorto, color: g.color }))} id="hub" indexSrc="/data/empresas-index.json" limite={36} />
     </div>
   </section>
 

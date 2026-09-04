@@ -23,6 +23,7 @@ const destacado = e.plan === 'destacado';
   data-nombre={`${e.nombre} ${e.razonSocial ?? ''}`.toLowerCase()}
   data-ciudad={`${e.ciudad} ${e.municipio} ${e.estadoNombre}`.toLowerCase()}
   data-giro={e.giros.join(' ')}
+  data-giro-txt={e.giros.map((x) => giroMap[x].labelCorto).join(' ')}
   data-esp={e.especialidades.join(' ')}
   data-estado={e.estado}
   style={`background:${destacado ? '#0C1825' : '#040A12'};border:1px solid ${destacado ? 'rgba(245,166,35,0.35)' : 'rgba(74,117,153,0.18)'};border-top:2px solid ${destacado ? '#F5A623' : g.color}`}

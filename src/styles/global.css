@@ -418,3 +418,50 @@ details.faq-item[open] .faq-icon { transform: rotate(45deg); }
 ::-webkit-scrollbar-track { background: var(--forge-800); }
 ::-webkit-scrollbar-thumb { background: var(--forge-400); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--ember-500); }
+
+/* ================================================================
+   MOVIMIENTO CON CRITERIO (regla abierta 2026-09-04)
+   Reveal al entrar en viewport: una sola vez, 480 ms, sin transform
+   pesado, respeta prefers-reduced-motion. Cards e inputs siguen con
+   hover instantáneo. Nada de parallax ni marquees.
+   ================================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 480ms cubic-bezier(.22,.61,.36,1), transform 480ms cubic-bezier(.22,.61,.36,1);
+  will-change: opacity, transform;
+}
+.reveal.in { opacity: 1; transform: none; }
+.reveal[data-delay="1"] { transition-delay: 80ms; }
+.reveal[data-delay="2"] { transition-delay: 160ms; }
+.reveal[data-delay="3"] { transition-delay: 240ms; }
+.reveal[data-delay="4"] { transition-delay: 320ms; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+/* Sin JS: todo visible */
+html.no-js .reveal { opacity: 1; transform: none; }
+
+/* Hover de card del directorio: instantáneo, solo borde/acento */
+.emp-card:hover { border-color: rgba(247,80,0,0.55) !important; }
+.emp-card:hover h3 a { color: #FF6B26; }
+
+/* Ledger de estados/giros: acento lateral al hover, instantáneo */
+.ledger-cell { position: relative; }
+.ledger-cell::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 0; background: var(--ember-500); }
+.ledger-cell:hover::before { width: 3px; }
+
+/* Buscador del hero */
+.hero-search { background: #0C1825; border: 1px solid rgba(74,117,153,0.35); }
+.hero-search:focus-within { border-color: rgba(247,80,0,0.7); box-shadow: 0 0 0 3px rgba(247,80,0,0.15); }
+.hero-search .input, .hero-search .select { background: transparent; border: 0; border-radius: 0; }
+.hero-search .input:focus, .hero-search .select:focus { box-shadow: none; }
+.hero-search .sep { width: 1px; background: rgba(74,117,153,0.35); align-self: stretch; }
+@media (max-width: 767px) { .hero-search .sep { width: auto; height: 1px; } }
+
+/* Cifra grande con tabular nums */
+.stat-num { font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
+
+/* Leaflet crea z-index internos (400–1000) que se cuelan sobre el header sticky.
+   Aislar el stacking context del contenedor del mapa lo resuelve sin tocar Leaflet. */
+.mapa-empresas, #ficha-map, #estado-map { position: relative; z-index: 0; isolation: isolate; }

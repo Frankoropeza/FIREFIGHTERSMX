@@ -1,0 +1,122 @@
+---
+/**
+ * Hero del portal-directorio: el buscador manda.
+ * Composición: titular display a la izquierda, buscador giro+estado+texto
+ * como pieza central, stats reales debajo. Imagen de fondo con velo
+ * navy para conservar la estética "Forge & Protect".
+ */
+import { giros } from '@data/giros';
+import { estadosMeta, statsDirectorio } from '@lib/empresas';
+import { totalEstaciones } from '@data/estaciones';
+import { getCollection } from 'astro:content';
+
+const stats = await statsDirectorio();
+const guias = (await getCollection('blog', ({ data }) => !data.draft)).length;
+const fmt = (n: number) => n.toLocaleString('es-MX');
+---
+<section class="relative overflow-hidden" style="background:#040A12;min-height:calc(100vh - 108px)" aria-labelledby="hero-heading">
+
+  {/* Imagen de fondo con velo navy — el ambiente, no el mensaje */}
+  <picture aria-hidden="true">
+    <img src="/images/hero/hero-portada-bombero-equipo-estructural.avif" alt="" width="1920" height="1080" fetchpriority="high" decoding="async"
+      class="absolute inset-0 w-full h-full object-cover" style="object-position:70% 40%;opacity:0.22;filter:saturate(0.6) contrast(1.05)" />
+  </picture>
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true" style="background:linear-gradient(90deg, #040A12 0%, rgba(4,10,18,0.92) 45%, rgba(4,10,18,0.55) 100%)"></div>
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true" style="background:linear-gradient(180deg, transparent 60%, #040A12 100%)"></div>
+  <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" aria-hidden="true" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.12) 0%, transparent 65%)"></div>
+  <svg class="absolute inset-0 w-full h-full pointer-events-none" style="opacity:0.03" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs><pattern id="hgrid" width="64" height="64" patternUnits="userSpaceOnUse"><path d="M 64 0 L 0 0 0 64" fill="none" stroke="#7AA4C4" stroke-width="0.5"/></pattern></defs>
+    <rect width="100%" height="100%" fill="url(#hgrid)"/>
+  </svg>
+
+  <div class="container-site relative z-10 flex flex-col justify-center" style="min-height:calc(100vh - 108px);padding-block:4rem">
+
+    {/* Eyebrow */}
+    <div class="reveal flex flex-wrap items-center gap-3 mb-8">
+      <span class="section-eyebrow">Directorio nacional · {stats.estados} estados</span>
+      <span class="flex items-center gap-1.5 text-xs font-medium" style="color:#FF6B26">
+        <span class="w-1.5 h-1.5 rounded-full shrink-0" style="background:#F75000"></span>
+        {fmt(stats.total)} empresas · {fmt(totalEstaciones)} cuerpos de bomberos
+      </span>
+    </div>
+
+    {/* Titular */}
+    <h1 id="hero-heading" class="reveal font-display font-bold uppercase mb-10 max-w-5xl" data-delay="1" style="line-height:0.9;letter-spacing:0.005em">
+      <span class="block" style="font-size:clamp(2.6rem,7vw,6.4rem);color:#FFFFFF">El directorio de</span>
+      <span class="block" style="font-size:clamp(2.6rem,7vw,6.4rem);color:#F75000">equipo contra incendio</span>
+      <span class="block" style="font-size:clamp(2.6rem,7vw,6.4rem);color:#FFFFFF">de México</span>
+    </h1>
+
+    {/* Buscador */}
+    <form class="reveal max-w-5xl" data-delay="2" action="/empresas/" method="get" data-hero-search role="search" aria-label="Buscar empresas">
+      <div class="hero-search flex flex-col md:flex-row md:items-center">
+        <div class="flex items-center gap-3 px-4 flex-1 min-w-0">
+          <svg class="w-5 h-5 shrink-0" style="color:#4A7599" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <label class="sr-only" for="hs-q">Qué buscas</label>
+          <input id="hs-q" name="q" type="search" autocomplete="off" placeholder="Empresa, ciudad o producto…" class="input w-full py-4 text-base font-display" />
+        </div>
+        <span class="sep" aria-hidden="true"></span>
+        <div class="flex items-center px-3">
+          <label class="sr-only" for="hs-giro">Giro</label>
+          <select id="hs-giro" name="giro" class="select py-4 font-display text-sm w-full md:w-52">
+            <option value="">Todos los giros</option>
+            {giros.map((g) => <option value={g.slug}>{g.labelCorto}</option>)}
+          </select>
+        </div>
+        <span class="sep" aria-hidden="true"></span>
+        <div class="flex items-center px-3">
+          <label class="sr-only" for="hs-estado">Estado</label>
+          <select id="hs-estado" name="estado" class="select py-4 font-display text-sm w-full md:w-52">
+            <option value="">Todo México</option>
+            {estadosMeta.map((e) => <option value={e.slug}>{e.nombre}</option>)}
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg md:rounded-none shrink-0" style="min-height:64px">Buscar</button>
+      </div>
+      <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mt-4 text-xs" style="color:#4A7599">
+        <span class="font-display uppercase tracking-wider">Búsquedas frecuentes:</span>
+        {[
+          { l: 'Extintores en CDMX', h: '/empresas/extintores/ciudad-de-mexico/' },
+          { l: 'Recarga en Jalisco', h: '/empresas/extintores/jalisco/' },
+          { l: 'EPP en Nuevo León', h: '/empresas/venta-equipo/nuevo-leon/' },
+          { l: 'Sistemas CI en Edomex', h: '/empresas/sistemas-ci/estado-de-mexico/' },
+          { l: 'Capacitación en Guanajuato', h: '/empresas/capacitacion/guanajuato/' },
+        ].map((x) => <a href={x.h} class="hover:text-[#FF6B26]" style="color:#94A3B8">{x.l}</a>)}
+      </div>
+    </form>
+
+    {/* Stats reales */}
+    <div class="reveal mt-14 grid grid-cols-2 md:grid-cols-4 gap-px max-w-5xl" data-delay="3" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
+      {[
+        { n: fmt(stats.total), l: 'Empresas', s: 'con fuente citada', h: '/empresas/' },
+        { n: fmt(totalEstaciones), l: 'Cuerpos de bomberos', s: 'directorio nacional', h: '/estaciones/' },
+        { n: fmt(stats.ciudades), l: 'Ciudades', s: 'georreferenciadas', h: '/empresas/#buscar' },
+        { n: String(guias), l: 'Guías técnicas', s: 'NFPA y NOM', h: '/blog/' },
+      ].map((s) => (
+        <a href={s.h} class="grid-cell ledger-cell flex flex-col gap-1 p-5" style="background:rgba(12,24,37,0.85);backdrop-filter:blur(4px)">
+          <span class="stat-num font-display font-bold" style="color:#F75000;font-size:clamp(1.9rem,3vw,2.6rem);line-height:1">{s.n}</span>
+          <span class="font-display font-bold text-xs uppercase tracking-wider" style="color:#FFFFFF">{s.l}</span>
+          <span class="text-[10px] uppercase tracking-widest" style="color:#4A7599">{s.s}</span>
+        </a>))}
+    </div>
+  </div>
+
+  <div class="absolute bottom-0 left-0 right-0 h-px" aria-hidden="true" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)"></div>
+
+  <script>
+    // Ruteo del buscador: giro+estado → L3; giro → L2; estado → L2 geo; solo texto → hub con ?q
+    document.querySelectorAll<HTMLFormElement>('[data-hero-search]').forEach((f) => {
+      f.addEventListener('submit', (ev) => {
+        ev.preventDefault();
+        const d = new FormData(f);
+        const q = String(d.get('q') ?? '').trim(), giro = String(d.get('giro') ?? ''), estado = String(d.get('estado') ?? '');
+        let url = '/empresas/';
+        if (giro && estado) url = `/empresas/${giro}/${estado}/`;
+        else if (giro) url = `/empresas/${giro}/`;
+        else if (estado) url = `/empresas/estado/${estado}/`;
+        const anchor = giro || estado ? '#empresas' : '#buscar';
+        window.location.href = url + (q ? `?q=${encodeURIComponent(q)}` : '') + anchor;
+      });
+    });
+  </script>
+</section>

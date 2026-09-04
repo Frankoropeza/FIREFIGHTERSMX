@@ -129,7 +129,7 @@ const waMsg = `Hola, busco proveedores de ${g.sustantivo} en ${estado.nombre}. �
             <p class="text-sm leading-relaxed" style="color:#94A3B8">Las fichas destacadas y verificadas aparecen primero. Los registros básicos provienen del DENUE y se marcan como registro público hasta que la empresa reclama y verifica su ficha.</p>
           </div>
         </div>
-        <EmpresasGrid empresas={lista} dimension="esp" filtros={esp.map((s) => ({ key: s.slug, label: `${s.label} · ${s.total}`, color: g.color }))} id={`ge-${giro}-${estado.slug}`} placeholder="Buscar por nombre, ciudad o municipio…" />
+        <EmpresasGrid empresas={lista} dimension="esp" filtros={esp.map((s) => ({ key: s.slug, label: `${s.label} · ${s.total}`, color: g.color }))} id={`ge-${giro}-${estado.slug}`} placeholder="Buscar por nombre, ciudad o municipio…" indexSrc={lista.length > 48 ? '/data/empresas-index.json' : undefined} alcance={{ giro, estado: estado.slug }} limite={48} indiceCompleto />
       </div>
     </section>
   )}

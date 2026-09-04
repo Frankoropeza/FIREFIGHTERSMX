@@ -143,9 +143,24 @@ const year = new Date().getFullYear();
       </div>
     </div>
 
-    <!-- Col 2: Productos + Marcas -->
+    <!-- Col 2: Directorio + Productos -->
     <div>
-      <h4 class="f-heading">Productos</h4>
+      <h4 class="f-heading">Directorio</h4>
+      <ul class="f-list">
+        {([
+          ['Todas las empresas',          '/empresas'],
+          ['Venta de equipo y EPP',       '/empresas/venta-equipo'],
+          ['Extintores',                  '/empresas/extintores'],
+          ['Sistemas contra incendio',    '/empresas/sistemas-ci'],
+          ['Capacitación y consultoría',  '/empresas/capacitacion'],
+          ['Estaciones de bomberos',      '/estaciones'],
+          ['Registrar mi empresa',        '/empresas/registro'],
+        ] as [string,string][]).map(([label, href]) => (
+          <li><a href={href} class="f-link">{label}</a></li>
+        ))}
+      </ul>
+
+      <h4 class="f-heading mt-8">Guías de compra</h4>
       <ul class="f-list">
         {([
           ['Trajes para Bomberos',    '/productos/trajes-bombero'],

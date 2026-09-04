@@ -1,0 +1,32 @@
+---
+/** Mapa nacional con clustering — módulo firma del portal */
+import MapaEmpresas from '@components/empresas/MapaEmpresas.astro';
+import { giros } from '@data/giros';
+import { statsDirectorio, estadosMeta, conteoPorEstado } from '@lib/empresas';
+const stats = await statsDirectorio();
+const porEstado = await conteoPorEstado();
+const regiones = [...new Set(estadosMeta.map((e) => e.region))].map((r) => ({ r, total: porEstado.filter((s) => estadosMeta.find((e) => e.slug === s.slug)?.region === r).reduce((a, s) => a + s.total, 0) })).sort((a, b) => b.total - a.total);
+---
+<section class="section" style="background:#040A12" aria-labelledby="mapa-heading">
+  <div class="container-site">
+    <div class="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-10 items-end mb-8">
+      <div class="reveal">
+        <span class="section-eyebrow mb-4 inline-flex">Mapa nacional</span>
+        <h2 id="mapa-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">{stats.total.toLocaleString('es-MX')} empresas<br/><span style="color:#F75000">en el mapa.</span></h2>
+      </div>
+      <div class="reveal" data-delay="1">
+        <p class="font-display font-bold text-[10px] uppercase tracking-widest mb-3" style="color:#4A7599">Por región</p>
+        <ul class="flex flex-col list-none m-0 p-0 text-xs" style="border-top:1px solid rgba(74,117,153,0.15)">
+          {regiones.map((x) => <li class="flex justify-between py-1.5" style="border-bottom:1px solid rgba(74,117,153,0.12);color:#94A3B8"><span>{x.r}</span><span class="font-display font-bold" style="color:#F75000">{x.total}</span></li>)}
+        </ul>
+      </div>
+    </div>
+    <div class="reveal" data-delay="2">
+      <MapaEmpresas src="/data/empresas-puntos.json" id="mapa-home" altura="560px" ariaLabel="Mapa nacional de empresas de equipo contra incendio en México" />
+    </div>
+    <div class="flex flex-wrap items-center gap-x-5 gap-y-2 mt-4">
+      {giros.map((g) => <a href={`/empresas/${g.slug}/`} class="inline-flex items-center gap-2 text-[11px] hover:text-[#FF6B26]" style="color:#94A3B8"><span class="w-2.5 h-2.5 rounded-full" style={`background:${g.color}`}></span>{g.labelCorto}</a>)}
+      <span class="text-[11px] ml-auto" style="color:#4A7599">Coordenadas del registro público DENUE · INEGI. Haz zoom o toca un grupo para abrirlo.</span>
+    </div>
+  </div>
+</section>

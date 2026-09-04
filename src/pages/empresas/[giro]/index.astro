@@ -8,7 +8,7 @@ import { SITE } from '@config/site';
 import { giros, giroMap, type GiroKey } from '@data/giros';
 import { allCategories } from '@data/categories';
 import { services } from '@data/services';
-import { empresasPorGiro, conteoPorEstado, puntosMapa, especialidadesPresentes, topCiudades } from '@lib/empresas';
+import { empresasPorGiro, conteoPorEstado, especialidadesPresentes, topCiudades } from '@lib/empresas';
 import type { GetStaticPaths } from 'astro';
 
 export const getStaticPaths = (() => giros.map((g) => ({ params: { giro: g.slug }, props: { giro: g.slug } }))) satisfies GetStaticPaths;
@@ -19,7 +19,6 @@ const lista = await empresasPorGiro(giro);
 const porEstado = (await conteoPorEstado(giro)).filter((s) => s.total > 0).sort((a, b) => b.total - a.total);
 const esp = especialidadesPresentes(lista, giro);
 const ciudades = topCiudades(lista, 10);
-const puntos = puntosMapa(lista);
 const cats = allCategories.filter((c) => g.categoriasRelacionadas.includes(c.slug));
 const servs = services.filter((s) => g.serviciosRelacionados.includes(s.slug));
 const otros = giros.filter((x) => x.slug !== giro);
@@ -85,7 +84,7 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
     <div class="container-site">
       <span class="section-eyebrow mb-4 inline-flex">Mapa</span>
       <h2 class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.05">Dónde están las empresas<br/><span style={`color:${g.color}`}>de {g.sustantivo}.</span></h2>
-      <MapaEmpresas puntos={puntos} id={`mapa-${giro}`} ariaLabel={`Mapa de empresas de ${g.sustantivo} en México`} />
+      <MapaEmpresas src="/data/empresas-puntos.json" filtroGiro={giro} id={`mapa-${giro}`} ariaLabel={`Mapa de empresas de ${g.sustantivo} en México`} />
     </div>
   </section>
 
@@ -121,7 +120,7 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
           <p class="text-sm leading-relaxed" style="color:#94A3B8">Busca por nombre, ciudad o municipio y filtra por especialidad. Cada ficha indica el nivel de verificación de sus datos y la fuente de origen.</p>
         </div>
       </div>
-      <EmpresasGrid empresas={lista} mostrarEstado dimension="esp" filtros={esp.map((s) => ({ key: s.slug, label: `${s.label} · ${s.total}`, color: g.color }))} id={`giro-${giro}`} />
+      <EmpresasGrid empresas={lista} mostrarEstado dimension="esp" filtros={esp.map((s) => ({ key: s.slug, label: `${s.label} · ${s.total}`, color: g.color }))} id={`giro-${giro}`} indexSrc="/data/empresas-index.json" alcance={{ giro }} limite={36} />
     </div>
   </section>
 

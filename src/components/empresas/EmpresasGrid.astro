@@ -1,10 +1,18 @@
 ---
 /**
  * Grid de empresas con buscador en vivo y filtros por chip.
- * `filtros`: lista de { key, label, color } que filtran por data-giro o data-esp.
- * `dimension`: 'giro' | 'esp' — qué atributo de la card se compara.
+ *
+ * Dos modos:
+ *  - inline (default): todas las cards en el HTML; el JS solo muestra/oculta.
+ *    Para conjuntos ≤ ~250 (estado, giro×estado).
+ *  - índice (`indexSrc`): el servidor renderiza `limite` cards; al buscar o
+ *    filtrar, el JS descarga /data/empresas-index.json una vez, filtra sobre
+ *    todo el conjunto (acotado por `alcance`) y re-renderiza. Para hub y giros.
+ *
+ * `dimension`: 'giro' | 'esp' — atributo que comparan los chips.
  */
 import EmpresaCard from './EmpresaCard.astro';
+import { giros } from '@data/giros';
 import type { Empresa } from '@lib/empresas';
 
 export interface Props {
@@ -14,8 +22,17 @@ export interface Props {
   mostrarEstado?: boolean;
   id?: string;
   placeholder?: string;
+  indexSrc?: string;
+  /** Restringe el índice cliente: { giro?: slug, estado?: slug } */
+  alcance?: { giro?: string; estado?: string };
+  limite?: number;
+  /** Lista compacta con TODOS los enlaces (solo en la página canónica de las fichas: la L3 giro×estado) */
+  indiceCompleto?: boolean;
 }
-const { empresas, filtros = [], dimension = 'giro', mostrarEstado = false, id = 'emp', placeholder = 'Buscar por nombre, ciudad o municipio…' } = Astro.props;
+const { empresas, filtros = [], dimension = 'giro', mostrarEstado = false, id = 'emp', placeholder = 'Buscar por nombre, ciudad o municipio…', indexSrc, alcance = {}, limite = 36, indiceCompleto = false } = Astro.props;
+const total = empresas.length;
+const visibles = indexSrc ? empresas.slice(0, limite) : empresas;
+const giroMeta = Object.fromEntries(giros.map((g) => [g.slug, { l: g.labelCorto, c: g.color, e: g.especialidades }]));
 ---
 <div class="flex flex-col md:flex-row md:items-center gap-3 mb-6" data-emp-toolbar={id}>
   <div class="relative flex-1">
@@ -25,58 +42,118 @@ const { empresas, filtros = [], dimension = 'giro', mostrarEstado = false, id = 
   </div>
   {filtros.length > 0 && (
     <div class="flex flex-wrap gap-1.5" role="group" aria-label="Filtrar">
-      <button type="button" class="emp-filter font-display text-[10px] uppercase tracking-wider px-3 py-1.5" data-key="todos" data-grid={id}
-        style="color:#FFFFFF;background:#F75000;border:1px solid #F75000">Todos</button>
+      <button type="button" class="emp-filter font-display text-[10px] uppercase tracking-wider px-3 py-1.5" data-key="todos" data-grid={id} style="color:#FFFFFF;background:#F75000;border:1px solid #F75000">Todos</button>
       {filtros.map((f) => (
-        <button type="button" class="emp-filter font-display text-[10px] uppercase tracking-wider px-3 py-1.5" data-key={f.key} data-grid={id} data-color={f.color}
-          style={`color:${f.color};background:transparent;border:1px solid ${f.color}40`}>{f.label}</button>
-      ))}
+        <button type="button" class="emp-filter font-display text-[10px] uppercase tracking-wider px-3 py-1.5" data-key={f.key} data-grid={id} data-color={f.color} style={`color:${f.color};background:transparent;border:1px solid ${f.color}40`}>{f.label}</button>))}
     </div>
   )}
-  <span id={`${id}-count`} class="font-display text-xs uppercase tracking-wider shrink-0" style="color:#4A7599">{empresas.length} resultados</span>
+  <span id={`${id}-count`} class="font-display text-xs uppercase tracking-wider shrink-0" style="color:#4A7599">{indexSrc && total > visibles.length ? `${visibles.length} de ${total}` : `${total} resultados`}</span>
 </div>
 
-<div id={`${id}-grid`} class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" data-dimension={dimension}>
-  {empresas.map((e) => <EmpresaCard e={e} mostrarEstado={mostrarEstado} />)}
+<div id={`${id}-grid`} class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" data-dimension={dimension}
+  data-index-src={indexSrc} data-alcance-giro={alcance.giro} data-alcance-estado={alcance.estado} data-mostrar-estado={mostrarEstado ? '1' : '0'} data-giros={JSON.stringify(giroMeta)} data-limite={limite}>
+  {visibles.map((e) => <EmpresaCard e={e} mostrarEstado={mostrarEstado} />)}
 </div>
+{indexSrc && total > visibles.length && (
+  <div class="mt-6 flex flex-col sm:flex-row sm:items-center gap-3">
+    <button type="button" id={`${id}-more`} class="btn btn-outline btn-sm">Cargar todas ({total})</button>
+    <span class="text-xs" style="color:#64748B">Mostrando las primeras {visibles.length}. Escribe en el buscador para buscar entre las {total}.</span>
+  </div>
+)}
 <p id={`${id}-none`} class="hidden text-sm py-10 text-center" style="color:#64748B">Ninguna empresa coincide con la búsqueda.</p>
+{indiceCompleto && indexSrc && total > visibles.length && (
+  <details class="mt-10" style="border:1px solid rgba(74,117,153,0.2);background:#0C1825">
+    <summary class="flex items-center justify-between gap-4 px-6 py-4 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+      <span class="font-display font-bold text-xs uppercase tracking-widest" style="color:#94A3B8">Índice completo · {total} empresas</span>
+      <span class="font-display text-lg" style="color:#F75000" aria-hidden="true">+</span>
+    </summary>
+    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 list-none m-0 px-6 pb-6" style="columns:auto">
+      {empresas.map((e) => <li class="py-1 text-xs truncate" style="border-bottom:1px solid rgba(74,117,153,0.1)"><a href={`/empresas/${e.giroPrincipal}/${e.estado}/${e.slug}/`} class="hover:text-[#FF6B26]" style="color:#CBD5E1">{e.nombre}</a><span style="color:#4A7599"> · {e.ciudad}{mostrarEstado ? `, ${e.estadoNombre}` : ''}</span></li>)}
+    </ul>
+  </details>
+)}
 
 <script>
+  type Row = { n: string; r: string; c: string; m: string; e: string; en: string; g: string[]; gp: string; s: string[]; u: string; p: string; k: string; w: number; t: string };
+  const norm = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+  const tokens = (q: string) => norm(q).split(/\s+/).filter((t) => t.length > 1);
+  const coincide = (hay: string, toks: string[]) => toks.every((t) => hay.includes(t));
+  const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c] as string));
+  const CONF: Record<string, [string, string]> = { alta: ['Datos verificados', '#34D399'], media: ['Datos confirmados', '#F5A623'], baja: ['Registro público', '#94A3B8'] };
+  const ordenPlan: Record<string, number> = { destacado: 0, verificado: 1, basico: 2 };
+  const ordenConf: Record<string, number> = { alta: 0, media: 1, baja: 2 };
+
+  function card(r: Row, giros: Record<string, { l: string; c: string; e: Record<string, string> }>, mostrarEstado: boolean): string {
+    const g = giros[r.gp]; const conf = CONF[r.k] ?? CONF.baja; const dest = r.p === 'destacado';
+    const esp = r.s.map((s) => g?.e?.[s]).filter(Boolean).slice(0, 3);
+    const otros = r.g.filter((x) => x !== r.gp).map((x) => giros[x]?.l).filter(Boolean);
+    return `<article class="emp-card flex flex-col gap-3 p-5" style="background:${dest ? '#0C1825' : '#040A12'};border:1px solid ${dest ? 'rgba(245,166,35,0.35)' : 'rgba(74,117,153,0.18)'};border-top:2px solid ${dest ? '#F5A623' : g?.c ?? '#F75000'}">
+      <div class="flex items-start justify-between gap-3"><span class="font-display font-bold text-[10px] uppercase tracking-wider px-2 py-1" style="color:${g?.c};background:${g?.c}1A;border:1px solid ${g?.c}40">${esc(g?.l ?? r.gp)}</span>
+      <span class="font-display text-[9px] uppercase tracking-wider px-1.5 py-0.5" style="color:${conf[1]};border:1px solid ${conf[1]}33">${conf[0]}</span></div>
+      <h3 class="font-display font-bold text-base leading-snug" style="color:#FFFFFF"><a href="${r.u}" class="hover:text-[#FF6B26]">${esc(r.n)}</a></h3>
+      <div class="text-xs leading-relaxed" style="color:#94A3B8">${esc(r.c)}${r.m !== r.c ? ` <span style="color:#64748B">· ${esc(r.m)}</span>` : ''}${mostrarEstado ? ` <span style="color:#64748B">· ${esc(r.en)}</span>` : ''}</div>
+      ${esp.length || otros.length ? `<div class="flex flex-wrap gap-1.5">${esp.map((s) => `<span class="text-[10px] px-2 py-0.5" style="color:#94A3B8;border:1px solid rgba(74,117,153,0.3)">${esc(s as string)}</span>`).join('')}${otros.map((s) => `<span class="text-[10px] px-2 py-0.5" style="color:#4A7599;border:1px dashed rgba(74,117,153,0.3)">+ ${esc(s)}</span>`).join('')}</div>` : ''}
+      <div class="mt-auto pt-3 flex items-center justify-between gap-3" style="border-top:1px solid rgba(74,117,153,0.12)"><span class="text-[10px] uppercase tracking-widest" style="color:#4A7599">${esc(r.t ? r.t.replace(' personas', ' pers.') : 'Registro público')}</span><a href="${r.u}" class="font-display font-semibold text-xs uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57">Ver ficha →</a></div></article>`;
+  }
+
   document.querySelectorAll<HTMLElement>('[data-emp-toolbar]').forEach((bar) => {
     const id = bar.dataset.empToolbar!;
     const search = document.getElementById(`${id}-search`) as HTMLInputElement | null;
-    const grid = document.getElementById(`${id}-grid`);
+    const grid = document.getElementById(`${id}-grid`)!;
     const none = document.getElementById(`${id}-none`);
     const count = document.getElementById(`${id}-count`);
+    const more = document.getElementById(`${id}-more`);
     const filters = Array.from(bar.querySelectorAll<HTMLButtonElement>('.emp-filter'));
-    const dim = grid?.dataset.dimension === 'esp' ? 'esp' : 'giro';
-    let active = 'todos';
-    const norm = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
-    function apply() {
-      if (!grid) return;
-      const q = norm((search?.value ?? '').trim());
-      let visible = 0;
-      grid.querySelectorAll<HTMLElement>('.emp-card').forEach((card) => {
-        const hay = norm(`${card.dataset.nombre ?? ''} ${card.dataset.ciudad ?? ''}`);
-        const keys = (card.dataset[dim] ?? '').split(' ');
-        const okF = active === 'todos' || keys.includes(active);
-        const okQ = !q || hay.includes(q);
-        const show = okF && okQ;
-        card.style.display = show ? '' : 'none';
-        if (show) visible++;
+    const dim = grid.dataset.dimension === 'esp' ? 'esp' : 'giro';
+    const src = grid.dataset.indexSrc; const aG = grid.dataset.alcanceGiro; const aE = grid.dataset.alcanceEstado;
+    const mostrarEstado = grid.dataset.mostrarEstado === '1';
+    const giros = JSON.parse(grid.dataset.giros || '{}');
+    let active = 'todos'; let index: Row[] | null = null; let cargando: Promise<Row[]> | null = null;
+
+    const setCount = (v: number, t?: number) => { if (count) count.textContent = t && t > v ? `${v} de ${t}` : `${v} resultado${v === 1 ? '' : 's'}`; };
+
+    function aplicarInline() {
+      const toks = tokens((search?.value ?? '').trim()); let visible = 0;
+      grid.querySelectorAll<HTMLElement>('.emp-card').forEach((c) => {
+        const hay = norm(`${c.dataset.nombre ?? ''} ${c.dataset.ciudad ?? ''} ${c.dataset.giroTxt ?? ''}`);
+        const keys = (c.dataset[dim] ?? '').split(' ');
+        const show = (active === 'todos' || keys.includes(active)) && coincide(hay, toks);
+        c.style.display = show ? '' : 'none'; if (show) visible++;
       });
-      none?.classList.toggle('hidden', visible > 0);
-      if (count) count.textContent = `${visible} resultado${visible === 1 ? '' : 's'}`;
+      none?.classList.toggle('hidden', visible > 0); setCount(visible);
     }
-    search?.addEventListener('input', apply);
+    async function cargarIndice(): Promise<Row[]> {
+      if (index) return index;
+      if (!cargando) cargando = fetch(src!).then((r) => r.json()).then((rows: Row[]) => {
+        rows = rows.filter((r) => (!aG || r.g.includes(aG)) && (!aE || r.e === aE));
+        rows.sort((a, b) => (ordenPlan[a.p] - ordenPlan[b.p]) || (ordenConf[a.k] - ordenConf[b.k]) || a.n.localeCompare(b.n, 'es'));
+        index = rows; return rows;
+      });
+      return cargando;
+    }
+    async function aplicarIndice(todo = false) {
+      const rows = await cargarIndice();
+      const toks = tokens((search?.value ?? '').trim());
+      const res = rows.filter((r) => {
+        const keys = dim === 'esp' ? r.s : r.g;
+        const giroTxt = r.g.map((x) => giros[x]?.l ?? x).join(' ');
+        return (active === 'todos' || keys.includes(active)) && coincide(norm(`${r.n} ${r.r} ${r.c} ${r.m} ${r.en} ${giroTxt}`), toks);
+      });
+      const lim = todo || toks.length || active !== 'todos' ? res.length : +(grid.dataset.limite || 36);
+      grid.innerHTML = res.slice(0, lim).map((r) => card(r, giros, mostrarEstado)).join('');
+      none?.classList.toggle('hidden', res.length > 0); setCount(Math.min(res.length, lim), res.length);
+      if (more) more.style.display = lim >= res.length ? 'none' : '';
+    }
+    const aplicar = () => (src ? aplicarIndice() : aplicarInline());
+
+    try { const q0 = new URLSearchParams(location.search).get('q'); if (q0 && search) { search.value = q0; aplicar(); } } catch {}
+    search?.addEventListener('input', aplicar);
+    if (src) search?.addEventListener('focus', () => { cargarIndice(); }, { once: true });
+    more?.addEventListener('click', () => aplicarIndice(true));
     filters.forEach((btn) => btn.addEventListener('click', () => {
       active = btn.dataset.key ?? 'todos';
-      filters.forEach((x) => {
-        const on = x === btn;
-        x.style.background = on ? (x.dataset.color ?? '#F75000') : 'transparent';
-        x.style.color = on ? '#FFFFFF' : (x.dataset.color ?? '#94A3B8');
-      });
-      apply();
+      filters.forEach((x) => { const on = x === btn; x.style.background = on ? (x.dataset.color ?? '#F75000') : 'transparent'; x.style.color = on ? '#FFFFFF' : (x.dataset.color ?? '#94A3B8'); });
+      aplicar();
     }));
   });
 </script>

@@ -1,36 +1,51 @@
 ---
 /**
  * Mapa Leaflet con clustering para cientos/miles de puntos.
- * `puntos`: [lat, lng, nombre, url, giro][] · colores por giro desde giros.ts
+ * `puntos` inline ([lat,lng,nombre,url,giro][]) para conjuntos chicos,
+ * o `src` (URL de JSON estático) para el nacional: se descarga solo cuando el
+ * mapa entra en viewport, y el HTML de la página no carga el peso.
  */
 import { giros } from '@data/giros';
-export interface Props { puntos: readonly (readonly [number, number, string, string, string])[]; id?: string; altura?: string; zoom?: number; centro?: [number, number]; ariaLabel: string; }
-const { puntos, id = 'mapa-empresas', altura = '520px', zoom = 5, centro = [23.6, -102.5], ariaLabel } = Astro.props;
+export interface Props { puntos?: readonly (readonly [number, number, string, string, string])[]; src?: string; /** con `src`: filtra por giro (p[4]) tras descargar */ filtroGiro?: string; id?: string; altura?: string; zoom?: number; centro?: [number, number]; ariaLabel: string; }
+const { puntos, src, filtroGiro, id = 'mapa-empresas', altura = '520px', zoom = 5, centro = [23.6, -102.5], ariaLabel } = Astro.props;
 const colores = Object.fromEntries(giros.map((g) => [g.slug, g.color]));
 ---
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.min.css" />
-<div id={id} class="mapa-empresas" data-puntos={JSON.stringify(puntos)} data-colores={JSON.stringify(colores)} data-zoom={zoom} data-centro={JSON.stringify(centro)}
-  style={`height:${altura};border:1px solid rgba(74,117,153,0.25);background:#0C1825`} role="img" aria-label={ariaLabel}></div>
+<div id={id} class="mapa-empresas relative" data-puntos={puntos ? JSON.stringify(puntos) : undefined} data-src={src} data-filtro-giro={filtroGiro} data-colores={JSON.stringify(colores)} data-zoom={zoom} data-centro={JSON.stringify(centro)}
+  style={`height:${altura};border:1px solid rgba(74,117,153,0.25);background:#0C1825`} role="img" aria-label={ariaLabel}>
+  <noscript><p class="p-6 text-sm" style="color:#94A3B8">El mapa requiere JavaScript.</p></noscript>
+</div>
 <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/leaflet.markercluster.min.js"></script>
 <script is:inline>
-  window.addEventListener('load', function () {
-    document.querySelectorAll('.mapa-empresas').forEach(function (el) {
+  (function () {
+    function initMapa(el) {
       if (typeof L === 'undefined' || el.dataset.init) return; el.dataset.init = '1';
-      var puntos = JSON.parse(el.dataset.puntos || '[]'), colores = JSON.parse(el.dataset.colores || '{}');
+      var colores = JSON.parse(el.dataset.colores || '{}');
       var map = L.map(el, { scrollWheelZoom: false, zoomControl: true }).setView(JSON.parse(el.dataset.centro), +el.dataset.zoom);
       L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', { attribution: '&copy; OpenStreetMap &copy; CARTO', maxZoom: 18 }).addTo(map);
-      var grupo = (typeof L.markerClusterGroup === 'function')
-        ? L.markerClusterGroup({ maxClusterRadius: 48, iconCreateFunction: function (c) { var n = c.getChildCount(); return L.divIcon({ html: '<div style="background:#F75000;color:#fff;font:700 12px Rajdhani,sans-serif;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border:2px solid #040A12;box-shadow:0 0 0 2px rgba(247,80,0,.35)">' + n + '</div>', className: '', iconSize: [36, 36] }); } })
-        : L.layerGroup();
-      puntos.forEach(function (p) {
-        var m = L.circleMarker([p[0], p[1]], { radius: 6, color: '#040A12', weight: 1.5, fillColor: colores[p[4]] || '#F75000', fillOpacity: 0.95 });
-        m.bindPopup('<a href="' + p[3] + '" style="font:600 13px Sora,sans-serif;color:#0C1825">' + p[2] + '</a>');
-        grupo.addLayer(m);
-      });
-      map.addLayer(grupo);
-      if (puntos.length > 1 && puntos.length < 400) { try { map.fitBounds(grupo.getBounds(), { padding: [24, 24], maxZoom: 12 }); } catch (e) {} }
-    });
-  });
+      function pintar(puntos) {
+        var grupo = (typeof L.markerClusterGroup === 'function')
+          ? L.markerClusterGroup({ maxClusterRadius: 48, iconCreateFunction: function (c) { var n = c.getChildCount(); return L.divIcon({ html: '<div style="background:#F75000;color:#fff;font:700 12px Rajdhani,sans-serif;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border:2px solid #040A12;box-shadow:0 0 0 2px rgba(247,80,0,.35)">' + n + '</div>', className: '', iconSize: [36, 36] }); } })
+          : L.layerGroup();
+        puntos.forEach(function (p) {
+          var m = L.circleMarker([p[0], p[1]], { radius: 6, color: '#040A12', weight: 1.5, fillColor: colores[p[4]] || '#F75000', fillOpacity: 0.95 });
+          m.bindPopup('<a href="' + p[3] + '" style="font:600 13px Sora,sans-serif;color:#0C1825">' + p[2] + '</a>');
+          grupo.addLayer(m);
+        });
+        map.addLayer(grupo);
+        if (puntos.length > 1 && puntos.length < 400) { try { map.fitBounds(grupo.getBounds(), { padding: [24, 24], maxZoom: 12 }); } catch (e) {} }
+      }
+      if (el.dataset.puntos) { pintar(JSON.parse(el.dataset.puntos)); }
+      else if (el.dataset.src) { var fg = el.dataset.filtroGiro; fetch(el.dataset.src).then(function (r) { return r.json(); }).then(function (p) { pintar(fg ? p.filter(function (x) { return x[4] === fg; }) : p); }).catch(function () {}); }
+    }
+    function arrancar() {
+      var els = document.querySelectorAll('.mapa-empresas');
+      if (!('IntersectionObserver' in window)) { els.forEach(initMapa); return; }
+      var io = new IntersectionObserver(function (entries) { entries.forEach(function (en) { if (en.isIntersecting) { initMapa(en.target); io.unobserve(en.target); } }); }, { rootMargin: '200px 0px' });
+      els.forEach(function (el) { io.observe(el); });
+    }
+    if (document.readyState === 'complete') arrancar(); else window.addEventListener('load', arrancar);
+  })();
 </script>

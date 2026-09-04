@@ -5,7 +5,24 @@ export interface NavItem {
   children?: NavItem[];   // soporta hasta 3 niveles
 }
 
-export const navigation = { main: [
+export const navigation: { main: NavItem[] } = { main: [
+  {
+    label: "Empresas",
+    href: "/empresas",
+    description: "Directorio nacional · 4 giros · 32 estados",
+    children: [
+      { label: "Venta de equipo y EPP",        href: "/empresas/venta-equipo",  description: "Distribuidores de equipo para bomberos y EPP" },
+      { label: "Extintores",                   href: "/empresas/extintores",    description: "Venta, recarga y mantenimiento" },
+      { label: "Sistemas contra incendio",     href: "/empresas/sistemas-ci",   description: "Ingeniería e instalación NFPA" },
+      { label: "Capacitación y consultoría",   href: "/empresas/capacitacion",  description: "Brigadas, DC-3, NOM-002" },
+      { label: "Ciudad de México",             href: "/empresas/estado/ciudad-de-mexico", description: "Todas las empresas de CDMX" },
+      { label: "Estado de México",             href: "/empresas/estado/estado-de-mexico", description: "Todas las empresas del Edomex" },
+      { label: "Jalisco",                      href: "/empresas/estado/jalisco",  description: "Todas las empresas de Jalisco" },
+      { label: "Nuevo León",                   href: "/empresas/estado/nuevo-leon", description: "Todas las empresas de NL" },
+      { label: "Registrar o reclamar ficha",   href: "/empresas/registro",      description: "Alta básica gratuita" },
+      { label: "Ver directorio completo →",    href: "/empresas" },
+    ],
+  },
   {
     label: "Productos",
     href: "/productos",
@@ -142,7 +159,7 @@ export const navigation = { main: [
   { label: "Precios", href: "/precios" },
   { label: "Licitaciones", href: "/licitaciones" },
   {
-    label: "Directorio",
+    label: "Estaciones",
     href: "/estaciones",
     children: [
       { label: "Estaciones de Bomberos",  href: "/estaciones",            description: "Directorio nacional — 32 estados" },

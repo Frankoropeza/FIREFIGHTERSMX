@@ -1,0 +1,24 @@
+---
+/** Fabricantes de referencia del sector — monogramas tipográficos, sin logos */
+import { brands } from '@data/brands';
+---
+<section class="section" style="background:#040A12" aria-labelledby="marcas-heading">
+  <div class="container-site">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-10">
+      <div class="reveal">
+        <span class="section-eyebrow mb-4 inline-flex">Fabricantes</span>
+        <h2 id="marcas-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">{brands.length} marcas que definen<br/><span style="color:#F75000">el estándar del sector.</span></h2>
+      </div>
+      <div class="reveal" data-delay="1" style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+        <p class="text-sm leading-relaxed" style="color:#94A3B8">Perfiles de los fabricantes internacionales y mexicanos que dominan las licitaciones y las brigadas del país: qué líneas tienen, bajo qué normas certifican y qué categorías cubren. Sirven para especificar bases técnicas por desempeño, no por marca.</p>
+      </div>
+    </div>
+    <div class="reveal grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-px" data-delay="2" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
+      {brands.map((b) => (
+        <a href={`/marcas/${b.slug}/`} class="grid-cell ledger-cell flex flex-col items-center justify-center gap-2 p-6 text-center min-h-[120px]" style="background:#070E1A">
+          <span class="font-display font-bold text-2xl" style="color:#FFFFFF;letter-spacing:0.02em">{b.name.split(' ')[0]}</span>
+          <span class="text-[10px] uppercase tracking-widest" style="color:#4A7599">{b.country?.replace(/^\S+\s/, '') ?? ''}</span>
+        </a>))}
+    </div>
+  </div>
+</section>
