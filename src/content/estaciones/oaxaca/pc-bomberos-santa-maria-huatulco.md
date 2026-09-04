@@ -10,10 +10,11 @@ tipo: "Municipal"
 corporacion: "Protección Civil y Bomberos del Municipio de Santa María Huatulco"
 corporacionSlug: "proteccion-civil-y-bomberos-del-municipio-de-santa-maria-huatulco"
 rolEstacion: "unica"
+direccion: "Blvd. Chahue 108, Col. R, C.P. 70987"
 coordenadas:
-  lat: 15.7698
-  lng: -96.1422
-  precision: "aproximada"
+  lat: 15.76470059
+  lng: -96.13465638
+  precision: "exacta"
 telefono: "(958) 587-0847"
 servicios:
   - "incendios-estructurales"
@@ -30,7 +31,9 @@ descripcion: "La Coordinación Municipal de Protección Civil y Bomberos de Sant
 fuentes:
   - nombre: "huatulco.gob.mx"
     url: "https://www.huatulco.gob.mx/es/news/entrega-de-equipamiento-a-proteccion-civil-y-bomberos-de-huatulco-2026-04-06/"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=3224763"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

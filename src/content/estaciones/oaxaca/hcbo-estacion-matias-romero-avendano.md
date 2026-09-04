@@ -10,11 +10,12 @@ tipo: "Estatal"
 corporacion: "HCBO"
 corporacionSlug: "hcbo"
 rolEstacion: "subestacion"
+direccion: "Callejon las Cabañas, Col. Guadalupe, C.P. 70300"
 numeroEstacion: "Estación Matías Romero Avendano"
 coordenadas:
-  lat: 16.8769
-  lng: -95.0373
-  precision: "aproximada"
+  lat: 16.86015093
+  lng: -95.03007154
+  precision: "exacta"
 servicios:
   - "incendios-estructurales"
   - "rescate-vehicular"
@@ -28,7 +29,9 @@ descripcion: "Subestación del Heroico Cuerpo de Bomberos de Oaxaca (HCBO) inaug
 fuentes:
   - nombre: "sspo.gob.mx"
     url: "https://www.sspo.gob.mx/?p=54203"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=9572104"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

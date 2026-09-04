@@ -10,10 +10,11 @@ tipo: "Municipal"
 corporacion: "H. Cuerpo de Bomberos de Tuxtepec"
 corporacionSlug: "h-cuerpo-de-bomberos-de-tuxtepec"
 rolEstacion: "unica"
+direccion: "Blvd. Bicentenario, Col. Costa Verde, C.P. 68370"
 coordenadas:
-  lat: 18.086
-  lng: -96.1258
-  precision: "aproximada"
+  lat: 18.09561995
+  lng: -96.12933967
+  precision: "exacta"
 telefono: "(287) 875-1475"
 servicios:
   - "incendios-estructurales"
@@ -29,7 +30,9 @@ descripcion: "El Heroico Cuerpo de Bomberos de Tuxtepec es el principal cuerpo d
 fuentes:
   - nombre: "facebook.com"
     url: "https://www.facebook.com/pages/H.-Cuerpo-De-Bomberos-Tuxtepec/266825180098367/"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=3107306"
+verificadoEl: "2026-09"
 confianza: "media"
 activa: true
 ---

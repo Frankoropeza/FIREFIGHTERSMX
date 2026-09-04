@@ -11,7 +11,7 @@ corporacion: "Heroico y Benemérito Cuerpo de Bomberos de Veracruz"
 corporacionSlug: "heroico-y-benemerito-cuerpo-de-bomberos-de-veracruz"
 rolEstacion: "subestacion"
 numeroEstacion: "Estación Los Pinos"
-direccion: "CALLE MARIANO MATAMOROS Col. LOS PINOS C.P. 91870"
+direccion: "Calle Mariano Matamoros, Col. Los Pinos, C.P. 91870"
 coordenadas:
   lat: 19.20929868
   lng: -96.16540752

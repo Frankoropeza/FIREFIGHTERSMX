@@ -9,11 +9,13 @@ municipio: "Zamora"
 tipo: "Municipal"
 corporacion: "Coordinación Municipal de Protección Civil y Bomberos de Zamora"
 corporacionSlug: "coordinacion-municipal-de-proteccion-civil-y-bomberos-de-zamora"
-rolEstacion: "unica"
+rolEstacion: "central"
+numeroEstacion: "Cuartel Central"
+direccion: "Calz. 20 de Noviembre 96, Col. 20 de Noviembre, C.P. 59660"
 coordenadas:
-  lat: 19.9867
-  lng: -102.2847
-  precision: "aproximada"
+  lat: 19.98756674
+  lng: -102.27758140
+  precision: "exacta"
 telefono: "(351) 512-0101"
 telefonosAdicionales:
   - "(351) 515-7011"
@@ -36,7 +38,9 @@ fuentes:
     url: "https://www.zamora.gob.mx/category/proteccioncivil/"
   - nombre: "Directorio gobimex — Zamora"
     url: "https://gobimex.com/oficinas/coordinacion-de-proteccion-civil-y-bomberos-municipales-de-zamora"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=8203307"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

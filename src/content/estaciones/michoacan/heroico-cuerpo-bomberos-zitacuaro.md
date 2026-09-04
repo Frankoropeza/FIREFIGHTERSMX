@@ -10,10 +10,11 @@ tipo: "Municipal"
 corporacion: "Heroico Cuerpo de Bomberos de Zitácuaro"
 corporacionSlug: "heroico-cuerpo-de-bomberos-de-zitacuaro"
 rolEstacion: "unica"
+direccion: "Blvd. Revolucion Sur 64, Col. Matamoros, C.P. 61506"
 coordenadas:
-  lat: 19.4378
-  lng: -100.3561
-  precision: "aproximada"
+  lat: 19.43323801
+  lng: -100.35805445
+  precision: "exacta"
 telefono: "(715) 153-8742"
 telefonosAdicionales:
   - "(715) 121-4115"
@@ -37,7 +38,9 @@ fuentes:
     url: "https://pcivil.michoacan.gob.mx/delegacion-regional-zitacuaro/"
   - nombre: "michoacan.gob.mx — Fortapaz Zitácuaro"
     url: "https://michoacan.gob.mx/noticias/con-fortapaz-gobierno-de-michoacan-fortalecera-11-cuerpos-de-bomberos-municipales/"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=2692743"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

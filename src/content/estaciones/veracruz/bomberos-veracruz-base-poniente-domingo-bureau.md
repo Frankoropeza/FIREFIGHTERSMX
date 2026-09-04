@@ -11,7 +11,7 @@ corporacion: "Heroico y Benemérito Cuerpo de Bomberos de Veracruz"
 corporacionSlug: "heroico-y-benemerito-cuerpo-de-bomberos-de-veracruz"
 rolEstacion: "subestacion"
 numeroEstacion: "Base Poniente Domingo Bureau"
-direccion: "CALLE PUESTA DEL SOL Col. HACIENDA LOS PORTALES C.P. 91726"
+direccion: "Calle Puesta del Sol, Col. Hacienda los Portales, C.P. 91726"
 coordenadas:
   lat: 19.18033641
   lng: -96.18733067

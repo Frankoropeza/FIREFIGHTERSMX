@@ -9,13 +9,16 @@ municipio: "Uruapan"
 tipo: "Voluntarios"
 corporacion: "Bomberos Profesionales de Uruapan A.C."
 corporacionSlug: "bomberos-profesionales-de-uruapan-a-c"
-rolEstacion: "unica"
+rolEstacion: "central"
+numeroEstacion: "Cuartel Central"
+direccion: "Av. Lazaro Cardenas Poniente, Col. San Juan Evangelista, C.P. 60060"
 coordenadas:
-  lat: 19.4189
-  lng: -102.063
-  precision: "aproximada"
+  lat: 19.40735004
+  lng: -102.07156305
+  precision: "exacta"
 redes:
   facebook: "bomberosprofesionalesdeuruapan"
+telefono: "(452) 5241-494"
 servicios:
   - "incendios-estructurales"
   - "incendios-forestales"
@@ -35,7 +38,9 @@ fuentes:
     url: "https://www.facebook.com/bomberosprofesionalesdeuruapan/"
   - nombre: "pcivil.michoacan.gob.mx — Delegación Regional Uruapan"
     url: "https://pcivil.michoacan.gob.mx/delegacion-regional-uruapan/"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=8918683"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

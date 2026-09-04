@@ -10,10 +10,11 @@ tipo: "Municipal"
 corporacion: "Dirección de Protección Civil y Bomberos de Sahuayo"
 corporacionSlug: "direccion-de-proteccion-civil-y-bomberos-de-sahuayo"
 rolEstacion: "unica"
+direccion: "Calle Jose Maria Gudiño 350, Col. La Popular, C.P. 59028"
 coordenadas:
-  lat: 20.0528
-  lng: -102.7264
-  precision: "aproximada"
+  lat: 20.04909974
+  lng: -102.71518772
+  precision: "exacta"
 telefono: "(353) 532-0700"
 telefonosAdicionales:
   - "(353) 532-7282"
@@ -35,7 +36,9 @@ fuentes:
     url: "https://gob.sahuayomich.gob.mx/directorio-municipal-2024-2027/"
   - nombre: "Facebook — PC y Bomberos Sahuayo"
     url: "https://www.facebook.com/p/Proteccion-Civil-y-Bomberos-Municipales-Sahuayo-Mich-100082952541426/"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=2563921"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

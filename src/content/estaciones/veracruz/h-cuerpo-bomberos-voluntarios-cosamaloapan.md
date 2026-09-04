@@ -10,7 +10,7 @@ tipo: "Voluntarios"
 corporacion: "H. Cuerpo de Bomberos Voluntarios de Cosamaloapan"
 corporacionSlug: "h-cuerpo-de-bomberos-voluntarios-de-cosamaloapan"
 rolEstacion: "unica"
-direccion: "CARRETERA MIGUEL ALEMAN Col. CENTRO C.P. 95400"
+direccion: "Carretera Miguel Aleman, Col. Centro, C.P. 95400"
 coordenadas:
   lat: 18.36281249
   lng: -95.79675178

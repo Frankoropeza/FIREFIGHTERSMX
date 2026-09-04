@@ -9,11 +9,13 @@ municipio: "Morelia"
 tipo: "Municipal"
 corporacion: "Coordinación Municipal de Protección Civil y Bomberos de Morelia"
 corporacionSlug: "coordinacion-municipal-de-proteccion-civil-y-bomberos-de-morelia"
-rolEstacion: "unica"
+rolEstacion: "central"
+numeroEstacion: "Cuartel Central"
+direccion: "Av. Leandro Valle 50, Col. Nicolaitas Ilustres, C.P. 58149"
 coordenadas:
-  lat: 19.7026
-  lng: -101.1944
-  precision: "aproximada"
+  lat: 19.71982110
+  lng: -101.22848101
+  precision: "exacta"
 telefono: "(443) 322-5506"
 sitioWeb: "https://www.morelia.gob.mx"
 redes:
@@ -42,7 +44,9 @@ fuentes:
     url: "https://www.contramuro.com/suman-170-incendios-en-morelia-en-lo-que-va-de-2026/"
   - nombre: "morelia.gob.mx — referencia de actividad"
     url: "https://www.morelia.gob.mx/saldo-blanco-tras-sismo-proteccion-civil-y-bomberos-de-morelia/"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=2702526"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

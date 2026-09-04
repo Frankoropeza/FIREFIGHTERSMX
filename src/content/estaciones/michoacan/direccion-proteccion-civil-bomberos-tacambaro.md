@@ -10,10 +10,11 @@ tipo: "Municipal"
 corporacion: "Dirección de Protección Civil y Bomberos de Tacámbaro"
 corporacionSlug: "direccion-de-proteccion-civil-y-bomberos-de-tacambaro"
 rolEstacion: "unica"
+direccion: "Andador Valentin Gomez Farias, Col. Jardines de la Purísima, C.P. 61650"
 coordenadas:
-  lat: 19.2381
-  lng: -101.458
-  precision: "aproximada"
+  lat: 19.22892502
+  lng: -101.46262058
+  precision: "exacta"
 telefono: "(459) 596-0020"
 sitioWeb: "https://tacambaro.gob.mx/"
 servicios:
@@ -30,7 +31,9 @@ fuentes:
     url: "https://tacambaro.gob.mx/?page_id=17560"
   - nombre: "michoacan.gob.mx — Fortapaz Tacámbaro"
     url: "https://michoacan.gob.mx/noticias/con-fortapaz-gobierno-de-michoacan-fortalecera-11-cuerpos-de-bomberos-municipales/"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=2756540"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

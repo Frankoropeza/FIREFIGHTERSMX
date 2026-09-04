@@ -10,10 +10,11 @@ tipo: "Municipal"
 corporacion: "Coordinación Municipal de Protección Civil y Bomberos de Pátzcuaro"
 corporacionSlug: "coordinacion-municipal-de-proteccion-civil-y-bomberos-de-patzcuaro"
 rolEstacion: "unica"
+direccion: "Av. Efren Talavera Godinez, Col. Vista del Lago, C.P. 61606"
 coordenadas:
-  lat: 19.5147
-  lng: -101.6139
-  precision: "aproximada"
+  lat: 19.50409866
+  lng: -101.60159721
+  precision: "exacta"
 telefono: "(434) 422-4498"
 email: "proteccioncivilmp@patzcuaro.gob.mx"
 sitioWeb: "https://www.patzcuaro.gob.mx"
@@ -35,7 +36,9 @@ fuentes:
     url: "https://www.patzcuaro.gob.mx/wp-content/uploads/2026/03/coordinacion-municipal-de-proteccion-civil-y-emergencias.pdf"
   - nombre: "pcivil.michoacan.gob.mx — Delegación Regional Pátzcuaro"
     url: "https://pcivil.michoacan.gob.mx/delegacion-regional-patzcuaro/"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=11409052"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

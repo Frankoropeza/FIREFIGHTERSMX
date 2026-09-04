@@ -10,11 +10,12 @@ tipo: "Estatal"
 corporacion: "HCBO"
 corporacionSlug: "hcbo"
 rolEstacion: "subestacion"
+direccion: "Carretera Panamericana, Col. Martires 31 de Julio, C.P. 70014"
 numeroEstacion: "Subestación Regional Juchitán de Zaragoza"
 coordenadas:
-  lat: 16.4326
-  lng: -95.0273
-  precision: "aproximada"
+  lat: 16.44775683
+  lng: -95.01314579
+  precision: "exacta"
 servicios:
   - "incendios-estructurales"
   - "rescate-vehicular"
@@ -33,7 +34,9 @@ fuentes:
     url: "https://www.sspo.gob.mx/?p=56881"
   - nombre: "oaxaca.quadratin.com.mx"
     url: "https://oaxaca.quadratin.com.mx/heroico-cuerpo-bomberos-mas-seis-decadas-al-servicio/"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=3166163"
+verificadoEl: "2026-09"
 confianza: "media"
 activa: true
 ---

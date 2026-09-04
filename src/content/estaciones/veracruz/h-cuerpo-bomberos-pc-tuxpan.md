@@ -10,7 +10,7 @@ tipo: "Municipal"
 corporacion: "H. Cuerpo de Bomberos y Protección Civil de Tuxpan"
 corporacionSlug: "h-cuerpo-de-bomberos-y-proteccion-civil-de-tuxpan"
 rolEstacion: "unica"
-direccion: "AVENIDA ADOLFO LOPEZ MATEOS Col. MIGUEL ALEMAN C.P. 92820"
+direccion: "Av. Adolfo Lopez Mateos, Col. Miguel Aleman, C.P. 92820"
 coordenadas:
   lat: 20.96575924
   lng: -97.40975217

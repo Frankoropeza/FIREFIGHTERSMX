@@ -10,11 +10,12 @@ tipo: "Estatal"
 corporacion: "HCBO"
 corporacionSlug: "hcbo"
 rolEstacion: "subestacion"
+direccion: "Carretera Puerto Angelito, Col. Hidalgo, C.P. 71981"
 numeroEstacion: "Subestación Costa Puerto Escondido"
 coordenadas:
-  lat: 15.8594
-  lng: -97.0637
-  precision: "aproximada"
+  lat: 15.86390136
+  lng: -97.07309511
+  precision: "exacta"
 telefono: "(954) 582-0222"
 servicios:
   - "incendios-estructurales"
@@ -33,7 +34,9 @@ fuentes:
     url: "https://ahoraoaxaca.com/oaxaca/sofoca-hcbo-incendio-en-vivero-de-puerto-escondido/"
   - nombre: "sspo.gob.mx"
     url: "https://www.sspo.gob.mx/?p=55977"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=3234414"
+verificadoEl: "2026-09"
 confianza: "media"
 activa: true
 ---

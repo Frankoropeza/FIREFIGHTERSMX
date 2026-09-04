@@ -10,10 +10,11 @@ tipo: "Municipal"
 corporacion: "Dirección de Protección Civil y Bomberos de Huajuapan de León"
 corporacionSlug: "direccion-de-proteccion-civil-y-bomberos-de-huajuapan-de-leon"
 rolEstacion: "unica"
+direccion: "Calle Libramiento, Col. Del Maestro, C.P. 69005"
 coordenadas:
-  lat: 17.8082
-  lng: -97.7756
-  precision: "aproximada"
+  lat: 17.82278195
+  lng: -97.76523600
+  precision: "exacta"
 telefono: "(953) 538-9016"
 sitioWeb: "https://huajuapandeleon.gob.mx/Sistemas/proteccion-civil/"
 redes:
@@ -37,7 +38,9 @@ fuentes:
     url: "https://huajuapandeleon.gob.mx/files/trans/fld_231/fld_237/91ddfa6c1d408-d9d8f144986fa.pdf"
   - nombre: "facebook.com"
     url: "https://www.facebook.com/p/Proteccion-Civil-y-Bomberos-Huajuapan-de-Leon-100078287197923/"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=8627129"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

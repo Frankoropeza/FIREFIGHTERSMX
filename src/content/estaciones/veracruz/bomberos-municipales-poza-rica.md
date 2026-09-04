@@ -10,7 +10,7 @@ tipo: "Municipal"
 corporacion: "Bomberos Municipales de Poza Rica"
 corporacionSlug: "bomberos-municipales-de-poza-rica"
 rolEstacion: "unica"
-direccion: "AVENIDA JESUS GONZALEZ ORTEGA Col. OBRERA C.P. 93350"
+direccion: "Av. Jesus Gonzalez Ortega, Col. Obrera, C.P. 93350"
 coordenadas:
   lat: 20.52248396
   lng: -97.46633142

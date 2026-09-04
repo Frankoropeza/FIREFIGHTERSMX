@@ -9,7 +9,8 @@ municipio: "Oaxaca de Juárez"
 tipo: "Estatal"
 corporacion: "Heroico Cuerpo de Bomberos de Oaxaca"
 corporacionSlug: "heroico-cuerpo-de-bomberos-de-oaxaca"
-rolEstacion: "unica"
+rolEstacion: "central"
+numeroEstacion: "Cuartel Central"
 coordenadas:
   lat: 17.0732
   lng: -96.7266
@@ -53,7 +54,7 @@ fuentes:
     url: "https://oaxaca.quadratin.com.mx/heroico-cuerpo-bomberos-mas-seis-decadas-al-servicio/"
   - nombre: "imparcialoaxaca.mx"
     url: "https://imparcialoaxaca.mx/oaxaca/deficit-en-bomberos-requiere-oaxaca-de-al-menos-mil/"
-verificadoEl: "2026-06"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

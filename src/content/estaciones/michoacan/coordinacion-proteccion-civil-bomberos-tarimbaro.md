@@ -10,10 +10,11 @@ tipo: "Municipal"
 corporacion: "Coordinación de Protección Civil y Bomberos de Tarímbaro"
 corporacionSlug: "coordinacion-de-proteccion-civil-y-bomberos-de-tarimbaro"
 rolEstacion: "unica"
+direccion: "Av. Francisco Javier Mina Oriente, Col. Barrio de la Cruz, C.P. 58880"
 coordenadas:
-  lat: 19.7806
-  lng: -101.2536
-  precision: "aproximada"
+  lat: 19.79668900
+  lng: -101.16769785
+  precision: "exacta"
 servicios:
   - "incendios-estructurales"
   - "rescate-vehicular"
@@ -26,7 +27,9 @@ descripcion: "Municipio metropolitano de Morelia con crecimiento habitacional ac
 fuentes:
   - nombre: "michoacan.gob.mx — Fortapaz Tarímbaro"
     url: "https://michoacan.gob.mx/noticias/con-fortapaz-gobierno-de-michoacan-fortalecera-11-cuerpos-de-bomberos-municipales/"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=2607961"
+verificadoEl: "2026-09"
 confianza: "media"
 activa: true
 ---

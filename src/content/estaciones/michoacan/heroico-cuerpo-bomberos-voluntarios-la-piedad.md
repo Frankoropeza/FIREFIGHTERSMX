@@ -10,10 +10,11 @@ tipo: "Voluntarios"
 corporacion: "H. Cuerpo de Bomberos Voluntarios de La Piedad"
 corporacionSlug: "h-cuerpo-de-bomberos-voluntarios-de-la-piedad"
 rolEstacion: "unica"
+direccion: "Blvd. Adolfo Lopez Mateos 85, Col. Adolfo Lopez Mateos, C.P. 59300"
 coordenadas:
-  lat: 20.3397
-  lng: -102.0339
-  precision: "aproximada"
+  lat: 20.34215445
+  lng: -102.01859230
+  precision: "exacta"
 telefono: "(352) 522-0440"
 sitioWeb: "http://www.lapiedad.gob.mx"
 redes:
@@ -34,7 +35,9 @@ fuentes:
     url: "http://www.lapiedad.gob.mx/2024/02/09/presidente-municipal-dignifica-cuartel-de-bomberos-la-piedad/"
   - nombre: "Brunoticias — nuevo camión La Piedad"
     url: "https://brunoticias.com/la-piedad-nuevo-camion-de-bomberos/"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=2727771"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---
