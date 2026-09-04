@@ -27,6 +27,11 @@ export interface Giro {
   color: string;
   /** Path interno de un SVG 24×24 con stroke=currentColor */
   icon: string;
+  /** Imagen de la card del giro (home y hub). 640×640 mínimo; se recorta a 16:10 */
+  imagen: string;
+  imagenAlt: string;
+  /** Frase de valor para la card (≤ 110 caracteres) */
+  claim: string;
   /** Párrafos SEO de la landing nacional del giro */
   intro: string[];
   /** Normas de referencia del giro */
@@ -48,6 +53,9 @@ export const giros: Giro[] = [
     description: 'Distribuidores de equipo para bomberos, EPP estructural, SCBA, cascos, herramientas de rescate y seguridad industrial',
     color: '#F75000',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/>`,
+    imagen: '/images/categorias/sistemas-ci.avif',
+    imagenAlt: 'Equipo de protección personal para bombero: chaquetón, casco, guantes, botas y radio dispuestos sobre una superficie',
+    claim: 'Distribuidores de trajes NFPA, cascos, SCBA, herramientas de rescate y EPP industrial.',
     intro: [
       'Distribuidores y fabricantes de equipo de protección personal para bomberos, brigadas industriales y protección civil: trajes estructurales, cascos, equipos de respiración autónoma, herramientas de rescate, cámaras térmicas, equipo HAZMAT y EPP de seguridad industrial.',
       'El directorio agrupa a las empresas que abastecen a cuerpos de bomberos municipales, brigadas de planta, aeropuertos y organismos de protección civil en los 32 estados. Cada ficha indica ubicación, giro y especialidades, con su fuente de origen citada.',
@@ -73,6 +81,10 @@ export const giros: Giro[] = [
     description: 'Empresas de venta, recarga, mantenimiento y prueba hidrostática de extintores conforme a NOM-154-SCFI y NOM-002-STPS',
     color: '#E10A1A',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 5a3 3 0 0 1 6 0v1H9V5zM8 7h8a1 1 0 0 1 1 1v12a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V8a1 1 0 0 1 1-1zM12 2v3M15 8l4-3"/>`,
+    // TODO Frank: generar foto de extintores (PQS/CO2 en fila o recarga en taller). Placeholder temporal.
+    imagen: '/images/categorias/drones-emergencia.avif',
+    imagenAlt: 'Bombero frente a una estructura en llamas con la unidad de bomberos detrás',
+    claim: 'Venta, recarga, mantenimiento y prueba hidrostática conforme a NOM-154-SCFI y NOM-002-STPS.',
     intro: [
       'Empresas dedicadas a la venta, recarga, mantenimiento y prueba hidrostática de extintores portátiles y móviles: polvo químico seco ABC, CO₂, agua, espuma AFFF, agentes limpios y tipo K para cocinas.',
       'Es el giro más capilar del sector: prácticamente cada ciudad del país cuenta con al menos una recargadora. La NOM-002-STPS-2010 obliga a los centros de trabajo a mantener sus extintores con recarga y verificación periódica, y la NOM-154-SCFI-2005 regula el servicio y el collar de garantía.',
@@ -95,6 +107,10 @@ export const giros: Giro[] = [
     description: 'Empresas de ingeniería, instalación y mantenimiento de sistemas contra incendio: rociadores, detección, redes hidráulicas y agentes limpios',
     color: '#4A9ED4',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M12 3v6M8 9h8M12 9c0 4-4 5-4 9a4 4 0 0 0 8 0c0-4-4-5-4-9zM5 6h14"/>`,
+    // TODO Frank: generar foto de rociadores / red hidráulica / tablero de detección. Placeholder temporal.
+    imagen: '/images/categorias/extintores.avif',
+    imagenAlt: 'Equipo contra incendio dispuesto en un taller: chaquetón, casco, equipo de respiración, manguera y herramientas',
+    claim: 'Ingeniería, instalación y mantenimiento de rociadores, detección, redes hidráulicas y agentes limpios.',
     intro: [
       'Empresas de ingeniería, proyecto, instalación y mantenimiento de sistemas fijos de protección contra incendio: rociadores automáticos, detección y alarma, redes hidráulicas con bombas listadas, hidrantes, gabinetes y sistemas de supresión con agentes limpios.',
       'Trabajan bajo NFPA 13, NFPA 72, NFPA 20 y NFPA 2001, con memoria de cálculo hidráulico exigida por aseguradoras y Protección Civil. Son el proveedor natural de plantas industriales, centros de datos, hospitales, hoteles y edificios de gran altura.',
@@ -118,6 +134,9 @@ export const giros: Giro[] = [
     description: 'Centros de capacitación de brigadas contra incendio, consultoría NOM-002-STPS, DC-3 y asesoría en protección civil',
     color: '#34D399',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M12 3 2 8l10 5 10-5-10-5zM6 10.5V16c0 1.5 3 3 6 3s6-1.5 6-3v-5.5M22 8v6"/>`,
+    imagen: '/images/industrias/brigadas-industriales.avif',
+    imagenAlt: 'Bombero mexicano con casco y chaquetón sonriendo frente a las unidades de su estación',
+    claim: 'Formación de brigadas, constancias DC-3, simulacros y consultoría para cumplir la NOM-002-STPS.',
     intro: [
       'Centros de capacitación, instructores y consultores especializados en formación de brigadas contra incendio, cumplimiento de la NOM-002-STPS-2010, constancias DC-3 ante la STPS, simulacros documentados y programas internos de protección civil.',
       'La NOM-002-STPS obliga a todo centro de trabajo a contar con brigadistas capacitados y a documentar su formación. Este giro reúne a quienes imparten esa capacitación y a quienes asesoran en la integración del expediente ante inspecciones de la STPS y Protección Civil.',

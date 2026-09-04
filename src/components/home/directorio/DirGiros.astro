@@ -1,9 +1,15 @@
 ---
-/** Los 4 giros del directorio con conteos reales — patrón "shop by category" */
+/**
+ * Los 4 giros del directorio — cards con imagen, título, texto y botón.
+ * Es el módulo principal del home: son las categorías del directorio.
+ * Imagen y claim vienen de giros.ts (cambiar la foto = una línea).
+ * Hover instantáneo (borde y velo de la imagen), sin transform.
+ */
 import { giros } from '@data/giros';
 import { conteoPorGiro, conteoPorEstado } from '@lib/empresas';
 const porGiro = await conteoPorGiro();
 const topPorGiro = Object.fromEntries(await Promise.all(giros.map(async (g) => [g.slug, (await conteoPorEstado(g.slug)).filter((s) => s.total > 0).sort((a, b) => b.total - a.total).slice(0, 3)])));
+const fmt = (n: number) => n.toLocaleString('es-MX');
 ---
 <section class="section" style="background:#070E1A" aria-labelledby="giros-heading">
   <div class="container-site">
@@ -17,25 +23,53 @@ const topPorGiro = Object.fromEntries(await Promise.all(giros.map(async (g) => [
         <a href="/empresas/" class="inline-flex items-center gap-2 text-xs font-display font-semibold uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57;letter-spacing:0.1em">Explorar el directorio completo <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg></a>
       </div>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
-      {giros.map((g, i) => { const c = porGiro.find((x) => x.giro === g.slug)!; const top = topPorGiro[g.slug] as { slug: string; nombre: string; total: number }[]; return (
-        <a href={`/empresas/${g.slug}/`} class="reveal grid-cell ledger-cell flex flex-col gap-5 p-7 min-h-[360px]" data-delay={String(Math.min(i, 4))} style="background:#040A12">
-          <div class="flex items-center justify-between">
-            <span class="w-11 h-11 flex items-center justify-center" style={`color:${g.color};border:1px solid ${g.color}55;background:${g.color}10`}>
-              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" set:html={g.icon} aria-hidden="true"/></span>
-            <span class="font-display text-[10px] uppercase tracking-widest" style="color:#4A7599">0{i + 1}</span>
-          </div>
-          <div>
-            <span class="stat-num font-display font-bold block" style={`color:${g.color};font-size:3.2rem;line-height:1`}>{c.total.toLocaleString('es-MX')}</span>
-            <span class="font-display text-[10px] uppercase tracking-widest" style="color:#4A7599">empresas</span>
-          </div>
-          <span class="font-display font-bold text-xl leading-tight" style="color:#FFFFFF">{g.label}</span>
-          <span class="text-xs leading-relaxed" style="color:#64748B">{g.description}</span>
-          <ul class="mt-auto flex flex-col list-none m-0 p-0 text-xs" style="border-top:1px solid rgba(74,117,153,0.15)">
-            {top.map((t) => <li class="flex justify-between py-1.5" style="border-bottom:1px solid rgba(74,117,153,0.1);color:#94A3B8"><span>{t.nombre}</span><span class="font-display font-bold" style={`color:${g.color}`}>{t.total}</span></li>)}
-          </ul>
-          <span class="font-display font-semibold text-xs uppercase tracking-wider" style="color:#FF8F57">Ver {g.labelCorto.toLowerCase()} →</span>
-        </a>); })}
+
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
+      {giros.map((g, i) => {
+        const c = porGiro.find((x) => x.giro === g.slug)!;
+        const top = topPorGiro[g.slug] as { slug: string; nombre: string; total: number }[];
+        return (
+          <article class="reveal giro-card group relative flex flex-col overflow-hidden" data-delay={String(i)} style={`--giro:${g.color};background:#040A12;border:1px solid rgba(74,117,153,0.2);border-top:3px solid ${g.color}`}>
+
+            {/* Imagen */}
+            <a href={`/empresas/${g.slug}/`} class="relative block overflow-hidden" style="aspect-ratio:16/10" aria-label={`Ver empresas de ${g.labelCorto.toLowerCase()}`}>
+              <img src={g.imagen} alt={g.imagenAlt} width="640" height="400" loading="lazy" decoding="async"
+                class="giro-img absolute inset-0 w-full h-full object-cover" style="object-position:center 30%" />
+              <div class="absolute inset-0" aria-hidden="true" style="background:linear-gradient(180deg, rgba(4,10,18,0.15) 0%, rgba(4,10,18,0.05) 40%, rgba(4,10,18,0.92) 100%)"></div>
+              {/* Chip del giro */}
+              <span class="absolute top-4 left-4 inline-flex items-center gap-1.5 font-display font-bold text-[10px] uppercase tracking-wider px-2 py-1" style={`color:#FFFFFF;background:${g.color};box-shadow:0 2px 12px ${g.color}66`}>
+                <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" set:html={g.icon} aria-hidden="true"/>{g.labelCorto}
+              </span>
+              <span class="absolute top-4 right-4 font-display font-bold text-xs tracking-widest" style="color:rgba(255,255,255,0.55)">0{i + 1}</span>
+              {/* Conteo sobre la imagen */}
+              <div class="absolute left-5 bottom-4 flex items-baseline gap-2">
+                <span class="stat-num font-display font-bold" style={`color:#FFFFFF;font-size:2.75rem;line-height:1;text-shadow:0 2px 16px rgba(0,0,0,0.6)`}>{fmt(c.total)}</span>
+                <span class="font-display text-[11px] uppercase tracking-widest" style="color:#CBD5E1">empresas</span>
+              </div>
+            </a>
+
+            {/* Cuerpo */}
+            <div class="flex flex-col flex-1 gap-3 p-6">
+              <h3 class="font-display font-bold text-[1.35rem] leading-tight" style="color:#FFFFFF">
+                <a href={`/empresas/${g.slug}/`} class="hover:text-[#FF6B26]">{g.label}</a>
+              </h3>
+              <p class="text-sm leading-relaxed" style="color:#94A3B8">{g.claim}</p>
+              <p class="text-xs leading-relaxed" style="color:#4A7599">
+                <span class="font-display uppercase tracking-wider" style="color:#64748B">Mayor oferta:</span>{' '}
+                {top.map((t, k) => <Fragment>{k > 0 && ' · '}<a href={`/empresas/${g.slug}/${t.slug}/`} class="hover:text-[#FF6B26]" style="color:#94A3B8">{t.nombre} <span style={`color:${g.color}`}>{t.total}</span></a></Fragment>)}
+              </p>
+              <a href={`/empresas/${g.slug}/`} class="btn btn-primary w-full justify-center mt-auto" style="margin-top:auto">Ver empresas →</a>
+            </div>
+          </article>
+        );
+      })}
     </div>
   </div>
 </section>
+
+<style>
+  /* Hover instantáneo, sin transiciones ni transform (regla del design system) */
+  .giro-card:hover { border-color: var(--giro); }
+  .giro-img { filter: saturate(0.75) contrast(1.05); }
+  .giro-card:hover .giro-img { filter: saturate(1) contrast(1.05); }
+</style>

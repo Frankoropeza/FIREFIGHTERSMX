@@ -9,9 +9,9 @@ const stats = await statsDirectorio();
   <div class="container-site h-9 flex items-center justify-between gap-4">
 
     <!-- Izquierda: marca + disponibilidad + cobertura -->
-    <div class="flex items-center gap-5">
+    <div class="flex items-center gap-5 min-w-0">
 
-      <span class="font-display font-bold text-[11px] tracking-[0.18em] uppercase shrink-0" style="color:#F75000">
+      <span class="font-display font-bold text-[11px] tracking-[0.18em] uppercase shrink-0 whitespace-nowrap" style="color:#F75000">
         Directorio de equipo contra incendio
       </span>
 
@@ -26,7 +26,7 @@ const stats = await statsDirectorio();
 
       <span class="w-px h-3 shrink-0" style="background:rgba(74,117,153,0.2)"></span>
 
-      <div class="hidden lg:flex items-center gap-1.5">
+      <div class="hidden 2xl:flex items-center gap-1.5">
         <svg class="w-3 h-3 shrink-0" style="color:#4A7599" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
           <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
@@ -37,12 +37,12 @@ const stats = await statsDirectorio();
     </div>
 
     <!-- Derecha: contacto + normas -->
-    <div class="flex items-center gap-4">
+    <div class="flex items-center gap-4 shrink-0">
 
       <!-- Normas -->
       <div class="hidden xl:flex items-center gap-2">
         {['NFPA 1970', 'NOM-002-STPS', 'UL Listed'].map(n => (
-          <span class="text-[10px] font-display font-semibold tracking-wider px-2 py-0.5"
+          <span class="text-[10px] font-display font-semibold tracking-wider px-2 py-0.5 whitespace-nowrap"
                 style="color:rgba(74,117,153,0.7);border:1px solid rgba(74,117,153,0.15);letter-spacing:0.08em">
             {n}
           </span>
