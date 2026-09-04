@@ -9,7 +9,8 @@ municipio: "Mérida"
 tipo: "Estatal"
 corporacion: "Dirección de Bomberos de Yucatán — SSP"
 corporacionSlug: "direccion-de-bomberos-de-yucatan-ssp"
-rolEstacion: "unica"
+rolEstacion: "central"
+numeroEstacion: "Dirección"
 coordenadas:
   lat: 20.9674
   lng: -89.5926

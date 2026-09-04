@@ -10,10 +10,11 @@ tipo: "Municipal"
 corporacion: "H. Cuerpo de Bomberos de Zihuatanejo de Azueta"
 corporacionSlug: "h-cuerpo-de-bomberos-de-zihuatanejo-de-azueta"
 rolEstacion: "unica"
+direccion: "Calle Paseo del Palmar, Col. La Palapa, C.P. 40893"
 coordenadas:
-  lat: 17.6388
-  lng: -101.5561
-  precision: "aproximada"
+  lat: 17.64032488
+  lng: -101.54973835
+  precision: "exacta"
 telefono: "(755) 554-7551"
 telefonosAdicionales:
   - "(755) 555-0700"
@@ -32,7 +33,9 @@ descripcion: "Corporación municipal que atiende el corredor turístico Zihuatan
 fuentes:
   - nombre: "zihuatanejodeazueta.gob.mx"
     url: "https://zihuatanejodeazueta.gob.mx/transparencia/bomberos"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=1381773"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

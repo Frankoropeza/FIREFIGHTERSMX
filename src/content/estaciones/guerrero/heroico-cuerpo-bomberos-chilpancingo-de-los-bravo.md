@@ -10,10 +10,11 @@ tipo: "Municipal"
 corporacion: "H. Cuerpo de Bomberos de Chilpancingo de los Bravo"
 corporacionSlug: "h-cuerpo-de-bomberos-de-chilpancingo-de-los-bravo"
 rolEstacion: "unica"
+direccion: "Calle, Col. Villa Moderna, C.P. 39074"
 coordenadas:
-  lat: 17.5506
-  lng: -99.4942
-  precision: "aproximada"
+  lat: 17.53573831
+  lng: -99.49916116
+  precision: "exacta"
 telefono: "(747) 472-2280"
 redes:
   facebook: "HeroicoCuerpoDeBomberosChilpancingo"
@@ -30,7 +31,9 @@ descripcion: "Corporación municipal que atiende Chilpancingo de los Bravo, capi
 fuentes:
   - nombre: "chilpancingo.gob.mx"
     url: "https://chilpancingo.gob.mx/portal/contact/"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=1370627"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

@@ -9,11 +9,13 @@ municipio: "Acapulco de Juárez"
 tipo: "Municipal"
 corporacion: "Coordinación General de Protección Civil y Bomberos de Acapulco"
 corporacionSlug: "coordinacion-general-de-proteccion-civil-y-bomberos-de-acapulco"
-rolEstacion: "unica"
+rolEstacion: "central"
+numeroEstacion: "Cuartel Central"
+direccion: "Calle Amates 274, Col. Farrallon del Ovispo, C.P. 39680"
 coordenadas:
-  lat: 16.8531
-  lng: -99.8237
-  precision: "aproximada"
+  lat: 16.86376328
+  lng: -99.86968954
+  precision: "exacta"
 telefono: "(744) 440-7031"
 sitioWeb: "https://acapulco.gob.mx/proteccioncivil/"
 redes:
@@ -38,7 +40,9 @@ fuentes:
     url: "https://acapulco.gob.mx/proteccioncivil/"
   - nombre: "acapulco.gob.mx"
     url: "https://acapulco.gob.mx/proteccioncivil/directorio/"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=1500482"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---
