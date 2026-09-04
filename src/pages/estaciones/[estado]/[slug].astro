@@ -7,12 +7,14 @@
 // ============================================================
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
-import { estados, todasLasParejas, tipoConfig, confianzaConfig } from '@data/estaciones';
+import { tipoConfig, confianzaConfig, capacidadLabel, TELEFONO_EMERGENCIAS } from '@data/estaciones-config';
+import { todasLasParejas, estadosConEstaciones, hermanasDeCorporacion } from '@lib/estaciones';
 import { SITE, contactoUrl } from '@config/site';
 import type { GetStaticPaths } from 'astro';
 
-export const getStaticPaths = (() => {
-  return todasLasParejas.map(({ estado, estacion }) => ({
+export const getStaticPaths = (async () => {
+  const parejas = await todasLasParejas();
+  return parejas.map(({ estado, estacion }) => ({
     params: { estado: estado.slug, slug: estacion.slug },
     props: { estado, estacion },
   }));
@@ -33,12 +35,17 @@ const mapLng: number | null = rawCoord
   : null;
 const hasMap = mapLat != null && mapLng != null;
 
-/* ── Hermanas del estado ── */
-const todasHermanas  = estado.estaciones.filter((e) => e.slug !== estacion.slug);
+/* ── Hermanas: primero los cuarteles de la misma corporación ── */
+const mismaCorporacion = await hermanasDeCorporacion(estacion);
+const restoDelEstado   = estado.estaciones.filter(
+  (e) => e.slug !== estacion.slug && e.corporacionSlug !== estacion.corporacionSlug,
+);
+const todasHermanas = [...mismaCorporacion, ...restoDelEstado];
 const hermanasSidebar = todasHermanas.slice(0, 8);
 const herManasGrid    = todasHermanas.slice(0, 6);
 
 /* ── Estados de la misma región (interlinking regional) ── */
+const estados = await estadosConEstaciones();
 const estadosRegion = estados
   .filter((e) => e.region === estado.region && e.slug !== estado.slug)
   .slice(0, 5);
@@ -231,7 +238,7 @@ function categorizarServicios(servicios: string[]): CatServ[] {
   if (resto.length > 0) grupos.push({ titulo: 'Servicios adicionales', color: '#94A3B8', items: resto });
   return grupos.filter(g => g.items.length > 0);
 }
-const catServicios: CatServ[] = categorizarServicios(estacion.servicios);
+const catServicios: CatServ[] = categorizarServicios(estacion.serviciosDetalle);
 
 /* ── Equipo con descripción por tipo ── */
 type EquipoDesc = { href: string; label: string; desc: string; norma: string };
@@ -289,7 +296,7 @@ const equipoDescByTipo: Record<string, EquipoDesc[]> = {
 };
 const equipoDescs: EquipoDesc[] = equipoDescByTipo[estacion.tipo] ?? equipoDescByTipo['Municipal'];
 
-const servicios3 = estacion.servicios.slice(0, 3).join(', ').toLowerCase();
+const servicios3 = estacion.servicios.slice(0, 3).map(capacidadLabel).join(', ').toLowerCase();
 
 /* ── SEO ── */
 // El titulo SIEMPRE lleva ciudad y estado: es la senal local de la ficha.
@@ -492,7 +499,7 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                   { label: 'Ciudad',     value: estacion.ciudad },
                   { label: 'Estado',     value: estado.nombre },
                   ...(estacion.fundacion ? [{ label: 'Fundación', value: String(estacion.fundacion) }] : []),
-                  { label: 'Emergencias', value: estacion.telefonoEmergencias ?? '911' },
+                  { label: 'Emergencias', value: TELEFONO_EMERGENCIAS },
                   { label: 'Municipio',  value: estacion.municipio },
                 ].slice(0, 4).map(({ label, value }) => (
                   <div class="flex flex-col gap-1 p-3" style="background:#070E1A;border:1px solid rgba(74,117,153,0.15)">
@@ -562,7 +569,7 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                     ...(estacion.elementos ? [{ campo: 'Personal activo',  valor: `${estacion.elementos} elementos` }] : []),
                     ...(estacion.estacionesFisicas ? [{ campo: 'Cuarteles operativos', valor: String(estacion.estacionesFisicas) }] : []),
                     ...(estacion.unidades ? [{ campo: 'Flota vehicular',   valor: `${estacion.unidades} vehículos` }] : []),
-                    { campo: 'Número de emergencias',  valor: estacion.telefonoEmergencias ?? '911' },
+                    { campo: 'Número de emergencias',  valor: TELEFONO_EMERGENCIAS },
                   ] as { campo: string; valor: string }[]).map(({ campo, valor }, i) => (
                     <tr style={`border-bottom:1px solid rgba(74,117,153,0.12);background:${i % 2 === 0 ? '#040A12' : '#060D16'}`}>
                       <td class="px-4 py-3 text-xs font-medium whitespace-nowrap" style="color:#4A7599;width:38%">{campo}</td>
@@ -830,12 +837,12 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
 
               <div class="px-5 pt-4 pb-5 flex flex-col gap-4">
                 {/* Emergencias */}
-                {estacion.telefonoEmergencias && (
+                {TELEFONO_EMERGENCIAS && (
                   <div>
                     <div class="text-[9px] uppercase tracking-widest mb-1" style="color:#4A7599">Emergencias</div>
-                    <a href={`tel:${estacion.telefonoEmergencias.replace(/[^0-9+]/g, '')}`}
+                    <a href={`tel:${TELEFONO_EMERGENCIAS}`}
                       class="font-display font-bold text-2xl hover:text-[#ff8c5a]" style="color:#F75000">
-                      {estacion.telefonoEmergencias}
+                      {TELEFONO_EMERGENCIAS}
                     </a>
                   </div>
                 )}

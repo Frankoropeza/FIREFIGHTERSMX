@@ -7,7 +7,7 @@ import EmpresasGrid from '@components/empresas/EmpresasGrid.astro';
 import { SITE } from '@config/site';
 import { giros } from '@data/giros';
 import { estados as estadosCobertura } from '@data/cobertura';
-import { estadoPorSlug } from '@data/estaciones';
+import { estadoConEstaciones } from '@lib/estaciones';
 import { empresasPorEstado, conteoPorGiro, puntosMapa, topCiudades, estadosMeta } from '@lib/empresas';
 import type { GetStaticPaths } from 'astro';
 
@@ -19,7 +19,7 @@ const porGiro = (await conteoPorGiro(estado.slug)).filter((g) => g.total > 0);
 const ciudades = topCiudades(lista, 12);
 const puntos = puntosMapa(lista);
 const cob = estadosCobertura.find((c) => c.slug === estado.slug);
-const dirEst = estadoPorSlug(estado.slug);
+const dirEst = await estadoConEstaciones(estado.slug);
 const vecinos = estadosMeta.filter((e) => e.region === estado.region && e.slug !== estado.slug);
 const centro: [number, number] | undefined = puntos.length ? [puntos.reduce((a, p) => a + p[0], 0) / puntos.length, puntos.reduce((a, p) => a + p[1], 0) / puntos.length] : undefined;
 

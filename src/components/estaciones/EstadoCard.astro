@@ -11,11 +11,11 @@
  *   <EstadoCard est={est} image={`/images/estaciones/${est.slug}.avif`} />
  * Si `image` está vacío, se muestra el header gráfico de marca.
  */
-import type { EstadoDirectorio } from '@data/estaciones';
-import { tipoConfig } from '@data/estaciones';
+import type { EstadoConEstaciones } from '@lib/estaciones';
+import { tipoConfig, capacidadLabel } from '@data/estaciones-config';
 
 export interface Props {
-  est: EstadoDirectorio;
+  est: EstadoConEstaciones;
   image?: string;
   imageAlt?: string;
 }
@@ -59,7 +59,7 @@ const jurisdiccion =
 // Servicios más frecuentes del estado
 const freq = new Map<string, number>();
 est.estaciones.forEach((e) => e.servicios.forEach((s) => freq.set(s, (freq.get(s) ?? 0) + 1)));
-const topServicios = [...freq.entries()].sort((a, b) => b[1] - a[1]).slice(0, 4).map(([s]) => lcFirst(s));
+const topServicios = [...freq.entries()].sort((a, b) => b[1] - a[1]).slice(0, 4).map(([s]) => lcFirst(capacidadLabel(s)));
 const serviciosFrase = topServicios.length ? ` Entre sus servicios destacan ${join(topServicios)}` : '';
 
 // Corporaciones históricas

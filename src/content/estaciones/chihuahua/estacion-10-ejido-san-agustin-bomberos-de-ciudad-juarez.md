@@ -1,0 +1,33 @@
+---
+id: "chih-18"
+nombre: "Estación 10 (Ejido San Agustín) — Bomberos de Ciudad Juárez"
+slug: "estacion-10-ejido-san-agustin-bomberos-de-ciudad-juarez"
+estado: "chihuahua"
+estadoNombre: "Chihuahua"
+ciudad: "Ciudad Juárez"
+municipio: "Juárez"
+tipo: "Municipal"
+corporacion: "Estación 10 (Ejido San Agustín) — Bomberos de Ciudad Juárez"
+corporacionSlug: "estacion-10-ejido-san-agustin-bomberos-de-ciudad-juarez"
+rolEstacion: "unica"
+direccion: "Ejido San Agustín, Valle de Juárez, Ciudad Juárez"
+coordenadas:
+  lat: 31.51457
+  lng: -106.25479
+  precision: "exacta"
+operador: "Municipio de Juárez"
+servicios:
+  - "incendios-estructurales"
+serviciosDetalle:
+  - "Incendios"
+  - "Rescate"
+  - "Emergencias en el Valle de Juárez"
+fuentes:
+  - nombre: "imip.org.mx"
+    url: "https://www.imip.org.mx/imip/node/54"
+  - nombre: "sigimip.org.mx"
+    url: "https://sigimip.org.mx/download/imip/descargas/EstacionBomberos.kmz"
+verificadoEl: "2026-06"
+confianza: "media"
+activa: true
+---

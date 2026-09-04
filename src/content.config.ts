@@ -91,8 +91,83 @@ const empresasCollection = defineCollection({
   }),
 });
 
+/**
+ * Directorio nacional de estaciones de bomberos — un archivo por ESTACIÓN FÍSICA
+ * en src/content/estaciones/<estado>/<slug>.md (decisión de Frank 2026-09-04:
+ * la unidad del registro es el cuartel, no la corporación).
+ *
+ * El esquema es el gate del estándar mínimo publicable:
+ *   · `fuentes.min(1)`  → imposible publicar una estación sin fuente citada
+ *   · `coordenadas.precision` OBLIGATORIO → nunca más un punto que aparenta ser
+ *     exacto sin serlo (88 fichas compartían coordenada con otra)
+ *   · `serviciosDetalle.min(1)` conserva el texto de la fuente; `servicios`
+ *     es la capacidad derivada del vocabulario controlado
+ */
+const tipoEstacionEnum = z.enum(['Municipal', 'Estatal', 'Industrial', 'Aeropuerto', 'PEMEX', 'CFE', 'Voluntarios']);
+const capacidadEnum = z.enum([
+  'incendios-estructurales', 'incendios-vehiculares', 'incendios-forestales',
+  'rescate-vehicular', 'rescate-altura', 'rescate-acuatico', 'espacios-confinados',
+  'hazmat', 'fugas-gas', 'atencion-prehospitalaria', 'enjambres-fauna',
+  'proteccion-civil', 'capacitacion', 'arff',
+]);
+
+const estacionesCollection = defineCollection({
+  // Mismo generateId que empresas: el id es <estado>/<slug>. Sin esto, dos
+  // estaciones con el mismo slug en estados distintos se pisarían.
+  loader: glob({ pattern: '**/*.md', base: './src/content/estaciones', generateId: ({ entry }) => entry.replace(/\.md$/, '') }),
+  schema: z.object({
+    id: z.string(),
+    nombre: z.string(),
+    slug: z.string(),
+    estado: z.string(),
+    estadoNombre: z.string(),
+    ciudad: z.string(),
+    municipio: z.string(),
+    tipo: tipoEstacionEnum,
+    /* ── Corporación a la que pertenece el cuartel ── */
+    corporacion: z.string(),
+    corporacionSlug: z.string(),
+    rolEstacion: z.enum(['central', 'subestacion', 'unica']).default('unica'),
+    numeroEstacion: z.string().optional(),
+    /* ── Ubicación ── */
+    direccion: z.string().optional(),
+    coordenadas: z.object({
+      lat: z.number(),
+      lng: z.number(),
+      precision: z.enum(['exacta', 'aproximada']),
+    }),
+    /* ── Contacto ── */
+    telefono: z.string().optional(),
+    telefonosAdicionales: z.array(z.string()).default([]),
+    email: z.string().optional(),
+    sitioWeb: z.string().optional(),
+    redes: z.object({
+      facebook: z.string().optional(),
+      instagram: z.string().optional(),
+      x: z.string().optional(),
+      twitter: z.string().optional(),
+    }).optional(),
+    operador: z.string().optional(),
+    /* ── Operación ── */
+    servicios: z.array(capacidadEnum).default([]),
+    serviciosDetalle: z.array(z.string()).min(1),
+    certificaciones: z.array(z.string()).default([]),
+    elementos: z.number().optional(),
+    estacionesFisicas: z.number().optional(),
+    unidades: z.number().optional(),
+    fundacion: z.number().optional(),
+    descripcion: z.string().optional(),
+    /* ── Trazabilidad ── */
+    fuentes: z.array(z.object({ nombre: z.string(), url: z.string() })).min(1),
+    verificadoEl: z.string(),
+    confianza: z.enum(['alta', 'media', 'baja']),
+    activa: z.boolean().default(true),
+  }),
+});
+
 export const collections = {
   blog: blogCollection,
   productos: productosCollection,
   empresas: empresasCollection,
+  estaciones: estacionesCollection,
 };

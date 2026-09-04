@@ -12,22 +12,23 @@
 // =====================================================================
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
-import { estados, tipoConfig, confianzaConfig } from '@data/estaciones';
+import { tipoConfig, confianzaConfig, capacidadLabel, TELEFONO_EMERGENCIAS } from '@data/estaciones-config';
+import { estadosConEstaciones, ultimaVerificacion, fechaLarga } from '@lib/estaciones';
 import { SITE, contactoUrl } from '@config/site';
 import { conteoPorGiro } from '@lib/empresas';
 import { giros } from '@data/giros';
 import type { GetStaticPaths } from 'astro';
 
-export const getStaticPaths = (() => {
-  return estados
-    .filter((estado) => estado.estaciones.length > 0)
-    .map((estado) => ({
-      params: { estado: estado.slug },
-      props: { estado },
-    }));
+export const getStaticPaths = (async () => {
+  const estados = await estadosConEstaciones();
+  return estados.map((estado) => ({
+    params: { estado: estado.slug },
+    props: { estado },
+  }));
 }) satisfies GetStaticPaths;
 
 const { estado } = Astro.props;
+const estados = await estadosConEstaciones();
 const canonicalURL = `${SITE.url}/estaciones/${estado.slug}/`;
 
 /* ─── Derivados del estado ───────────────────────────────────────── */
@@ -37,7 +38,7 @@ const plural          = (n: number, s: string, p: string) => (n === 1 ? s : p);
 
 const municipios      = [...new Set(estaciones.map((e) => e.municipio))];
 const tiposUnicos     = [...new Set(estaciones.map((e) => e.tipo))];
-const serviciosUnicos = [...new Set(estaciones.flatMap((e) => e.servicios))];
+const serviciosUnicos = [...new Set(estaciones.flatMap((e) => e.servicios))].map(capacidadLabel);
 const certsUnicas     = [...new Set(estaciones.flatMap((e) => e.certificaciones ?? []))];
 
 /* ─── Puntos para el mapa (una marca por ciudad con coordenadas) ── */
@@ -84,14 +85,7 @@ const girosConOferta = conteoGiros
   .map((g) => ({ ...g, meta: giros.find((x) => x.slug === g.giro)! }))
   .filter((g) => g.meta);
 
-/* ─── Última verificación real de las fichas de este estado ─── */
-const mesesLargos = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
-const ultimaVerifEstado = estado.estaciones.map((e) => e.verificadoEl).filter(Boolean).sort().pop();
-const ultimaVerifEstadoLabel = (() => {
-  if (!ultimaVerifEstado) return null;
-  const [y, mm] = ultimaVerifEstado.split('-');
-  return mm ? `${mesesLargos[parseInt(mm, 10) - 1]} de ${y}` : y;
-})();
+const ultimaVerifEstadoLabel = fechaLarga(ultimaVerificacion(estado.estaciones));
 
 /* ─── SEO ────────────────────────────────────────────────────────── */
 const seoTitle = `Estaciones de Bomberos en ${estado.nombre}`;
@@ -123,9 +117,7 @@ const itemListSchema = {
     item: {
       '@type': 'FireStation',
       name: e.nombre,
-      ...(e.telefono || e.telefonoEmergencias
-        ? { telephone: e.telefono ?? e.telefonoEmergencias }
-        : {}),
+      ...(e.telefono ? { telephone: e.telefono } : {}),
       address: {
         '@type': 'PostalAddress',
         addressLocality: e.ciudad,
@@ -355,7 +347,7 @@ const checkIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
 
               {/* Servicios */}
               <div class="flex flex-wrap gap-1.5">
-                {e.servicios.map((s) => (
+                {e.serviciosDetalle.map((s) => (
                   <span class="font-display text-[9px] uppercase tracking-wider px-2 py-0.5"
                     style="color:#4A7599;background:rgba(74,117,153,0.12);border:1px solid rgba(74,117,153,0.2)">
                     {s}
@@ -378,10 +370,10 @@ const checkIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
               {/* Contacto */}
               <div class="flex flex-wrap items-center gap-x-4 gap-y-1.5 pt-3"
                 style="border-top:1px solid rgba(74,117,153,0.15)">
-                {e.telefonoEmergencias && (
+                {TELEFONO_EMERGENCIAS && (
                   <span class="inline-flex items-center gap-1.5">
                     <span class="w-3.5 h-3.5 shrink-0" style="color:#F75000" set:html={phoneIcon} aria-hidden="true"/>
-                    <span class="font-display font-bold text-sm" style="color:#F75000">Emergencias {e.telefonoEmergencias}</span>
+                    <span class="font-display font-bold text-sm" style="color:#F75000">Emergencias {TELEFONO_EMERGENCIAS}</span>
                   </span>
                 )}
                 {e.telefono && (

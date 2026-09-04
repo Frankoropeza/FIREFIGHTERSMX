@@ -7,7 +7,7 @@ import EmpresasGrid from '@components/empresas/EmpresasGrid.astro';
 import { SITE, whatsappUrl } from '@config/site';
 import { giros, giroMap, type GiroKey } from '@data/giros';
 import { allCategories } from '@data/categories';
-import { estadoPorSlug } from '@data/estaciones';
+import { estadoConEstaciones } from '@lib/estaciones';
 import { getCollection } from 'astro:content';
 import { todasLasEmpresas, empresasPorGiroEstado, conteoPorEstado, conteoPorGiro, puntosMapa, topCiudades, especialidadesPresentes, estadosMeta } from '@lib/empresas';
 import type { GetStaticPaths } from 'astro';
@@ -30,7 +30,7 @@ const puntos = puntosMapa(lista);
 const otrosGirosEdo = (await conteoPorGiro(estado.slug)).filter((x) => x.giro !== giro && x.total > 0);
 const vecinos = (await conteoPorEstado(giro)).filter((s) => s.total > 0 && s.slug !== estado.slug && estadosMeta.find((e) => e.slug === s.slug)?.region === estado.region);
 const cats = allCategories.filter((c) => g.categoriasRelacionadas.includes(c.slug)).slice(0, 3);
-const dirEst = estadoPorSlug(estado.slug);
+const dirEst = await estadoConEstaciones(estado.slug);
 const posts = (await getCollection('blog', ({ data }) => !data.draft))
   .filter((p) => g.normas.some((n) => p.data.tags.some((t) => t.toLowerCase().includes(n.split(' ')[0].toLowerCase()))) || p.data.category.toLowerCase().includes(g.labelCorto.toLowerCase().split(' ')[0]))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).slice(0, 4);

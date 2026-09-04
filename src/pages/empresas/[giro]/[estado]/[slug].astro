@@ -6,7 +6,7 @@ import EmpresaCard from '@components/empresas/EmpresaCard.astro';
 import { SITE, whatsappUrl } from '@config/site';
 import { giroMap, planConfig, confianzaConfig, INDEXAR_FICHAS_BASICAS } from '@data/giros';
 import { allCategories } from '@data/categories';
-import { estadoPorSlug } from '@data/estaciones';
+import { estadoConEstaciones } from '@lib/estaciones';
 import { todasLasEmpresas, empresasPorGiroEstado, estadoMeta, urlEmpresa, type Empresa } from '@lib/empresas';
 import type { GetStaticPaths } from 'astro';
 
@@ -23,7 +23,7 @@ const esp = e.especialidades.map((s) => ({ slug: s, label: g.especialidades[s] }
 const otrosGiros = e.giros.filter((x) => x !== e.giroPrincipal).map((x) => giroMap[x]);
 const cercanas = (await empresasPorGiroEstado(e.giroPrincipal, e.estado)).filter((x) => x.slug !== e.slug)
   .sort((a, b) => (a.ciudad === e.ciudad ? -1 : 0) - (b.ciudad === e.ciudad ? -1 : 0)).slice(0, 6);
-const dirEst = estadoPorSlug(e.estado);
+const dirEst = await estadoConEstaciones(e.estado);
 const estaciones = dirEst ? dirEst.estaciones.filter((s) => s.ciudad === e.ciudad || s.municipio === e.municipio).slice(0, 4) : [];
 const cats = allCategories.filter((c) => g.categoriasRelacionadas.includes(c.slug)).slice(0, 4);
 const hasMap = !!e.coordenadas;

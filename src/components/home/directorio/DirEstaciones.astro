@@ -1,6 +1,9 @@
 ---
 /** El otro directorio: cuerpos de bomberos — los compradores del sector. Sin contadores. */
-import { estados, tipoConfig, tiposPresentes } from '@data/estaciones';
+import { tipoConfig } from '@data/estaciones-config';
+import { estadosConEstaciones, tiposPresentes } from '@lib/estaciones';
+const estados = await estadosConEstaciones();
+const tipos = await tiposPresentes();
 const destacados = ['ciudad-de-mexico', 'estado-de-mexico', 'jalisco', 'nuevo-leon', 'guanajuato', 'puebla'].map((s) => estados.find((e) => e.slug === s)!).filter(Boolean);
 ---
 <section class="section" style="background:#040A12" aria-labelledby="est-heading">
@@ -10,7 +13,7 @@ const destacados = ['ciudad-de-mexico', 'estado-de-mexico', 'jalisco', 'nuevo-le
       <h2 id="est-heading" class="font-display font-bold mb-5" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Cuerpos de bomberos<br/><span style="color:#F75000">en los 32 estados.</span></h2>
       <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">Municipales, estatales, voluntarios, industriales, aeroportuarios, PEMEX y CFE: cada corporación con ubicación, contacto verificado, servicios operativos y fuentes citadas.</p>
       <p class="text-sm leading-[1.9] mb-8" style="color:#94A3B8">Es el lado de la demanda del mismo mercado: quien busca un proveedor aquí, también encuentra a quién le compra. Y cada ficha de estación enlaza con las empresas de su zona.</p>
-      <div class="flex flex-wrap gap-2 mb-8">{tiposPresentes.map((t) => <a href="/estaciones/" class="badge font-display text-[10px]" style={`color:${tipoConfig[t].color};background:${tipoConfig[t].bgColor};border:1px solid ${tipoConfig[t].color}40`}>{tipoConfig[t].label}</a>)}</div>
+      <div class="flex flex-wrap gap-2 mb-8">{tipos.map((t) => <a href="/estaciones/" class="badge font-display text-[10px]" style={`color:${tipoConfig[t].color};background:${tipoConfig[t].bgColor};border:1px solid ${tipoConfig[t].color}40`}>{tipoConfig[t].label}</a>)}</div>
       <a href="/estaciones/" class="btn btn-primary">Estaciones de bomberos</a>
     </div>
     <div class="grid grid-cols-2 sm:grid-cols-3 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">

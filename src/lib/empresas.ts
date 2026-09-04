@@ -7,12 +7,12 @@
  */
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { giros, giroMap, planConfig, type GiroKey } from '@data/giros';
-import { estados as estadosDir } from '@data/estaciones';
+import { estados as estadosDir } from '@data/estados';
 
 export type Empresa = CollectionEntry<'empresas'>['data'];
 
 /** Estados: nombre + slug + región, tomados del directorio de estaciones (fuente única) */
-export const estadosMeta = estadosDir.map((e) => ({ nombre: e.nombre, slug: e.slug, abreviatura: e.abreviatura, region: e.region }));
+export const estadosMeta = estadosDir;
 export const estadoMeta = (slug: string) => estadosMeta.find((e) => e.slug === slug);
 
 let _cache: Empresa[] | null = null;

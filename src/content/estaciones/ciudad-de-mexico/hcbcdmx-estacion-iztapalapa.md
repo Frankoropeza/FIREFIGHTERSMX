@@ -1,0 +1,38 @@
+---
+id: "cdmx-13"
+nombre: "HCBCDMX — Estación Iztapalapa"
+slug: "hcbcdmx-estacion-iztapalapa"
+estado: "ciudad-de-mexico"
+estadoNombre: "Ciudad de México"
+ciudad: "Ciudad de México"
+municipio: "Iztapalapa"
+tipo: "Municipal"
+corporacion: "HCBCDMX"
+corporacionSlug: "hcbcdmx"
+rolEstacion: "subestacion"
+numeroEstacion: "Estación Iztapalapa"
+direccion: "Calz. Ermita Iztapalapa No. 2121, Col. Constitución de 1917, C.P. 09260"
+coordenadas:
+  lat: 19.3629711
+  lng: -99.0816577
+  precision: "exacta"
+telefono: "(555) 612-1080"
+telefonosAdicionales:
+  - "(555) 612-1140"
+  - "(558) 944-3129"
+operador: "Gobierno de la Ciudad de México"
+servicios:
+  - "incendios-estructurales"
+  - "hazmat"
+serviciosDetalle:
+  - "Incendios estructurales"
+  - "Rescate urbano"
+  - "Materiales peligrosos (HAZMAT)"
+  - "Atención de emergencias"
+fuentes:
+  - nombre: "bomberos.cdmx.gob.mx"
+    url: "https://www.bomberos.cdmx.gob.mx/estaciones/estacion-iztapalapa"
+verificadoEl: "2026-06"
+confianza: "alta"
+activa: true
+---

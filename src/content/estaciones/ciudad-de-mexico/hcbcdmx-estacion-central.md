@@ -1,0 +1,48 @@
+---
+id: "cdmx-01"
+nombre: "HCBCDMX — Estación Central"
+slug: "hcbcdmx-estacion-central"
+estado: "ciudad-de-mexico"
+estadoNombre: "Ciudad de México"
+ciudad: "Ciudad de México"
+municipio: "Venustiano Carranza"
+tipo: "Municipal"
+corporacion: "HCBCDMX"
+corporacionSlug: "hcbcdmx"
+rolEstacion: "central"
+numeroEstacion: "Estación Central"
+direccion: "Av. Fray Servando Teresa de Mier, esq. Eje 1 Oriente, Col. Merced Balbuena, C.P. 15810"
+coordenadas:
+  lat: 19.4222724
+  lng: -99.1260212
+  precision: "exacta"
+telefono: "(555) 768-3700"
+telefonosAdicionales:
+  - "(555) 552-0574"
+  - "(555) 768-2465"
+  - "(555) 768-3477"
+email: "correspondencia_subp@hcb.cdmx.gob.mx"
+sitioWeb: "https://www.bomberos.cdmx.gob.mx"
+redes:
+  facebook: "https://www.facebook.com/BomberosdelaCDMX/"
+  x: "https://x.com/bomberos_cdmx"
+operador: "Gobierno de la Ciudad de México"
+servicios:
+  - "incendios-estructurales"
+  - "rescate-altura"
+  - "hazmat"
+serviciosDetalle:
+  - "Incendios estructurales"
+  - "Rescate urbano"
+  - "Materiales peligrosos (HAZMAT)"
+  - "Rescate en altura"
+  - "Atención de emergencias"
+fundacion: 1873
+descripcion: "Estación Central y sede operativa del Heroico Cuerpo de Bomberos de la Ciudad de México, cuerpo único centralizado del Gobierno de la CDMX que cubre las 16 alcaldías desde 1873."
+fuentes:
+  - nombre: "bomberos.cdmx.gob.mx"
+    url: "https://www.bomberos.cdmx.gob.mx/estaciones/estacion-central"
+verificadoEl: "2026-06"
+confianza: "alta"
+activa: true
+---
