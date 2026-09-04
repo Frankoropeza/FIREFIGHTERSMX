@@ -1,6 +1,6 @@
 ---
 id: "jal-09"
-nombre: "Dirección de Protección Civil y Bomberos de Puerto Vallarta"
+nombre: "Bomberos Puerto Vallarta — Base Operativa (Las Américas)"
 slug: "direccion-proteccion-civil-bomberos-puerto-vallarta"
 estado: "jalisco"
 estadoNombre: "Jalisco"
@@ -9,11 +9,12 @@ municipio: "Puerto Vallarta"
 tipo: "Municipal"
 corporacion: "Dirección de Protección Civil y Bomberos de Puerto Vallarta"
 corporacionSlug: "direccion-de-proteccion-civil-y-bomberos-de-puerto-vallarta"
-rolEstacion: "unica"
+rolEstacion: "central"
+numeroEstacion: "Base Operativa"
 direccion: "Av. Las Américas No. 565, Col. Lázaro Cárdenas, C.P. 48330, Puerto Vallarta, Jal."
 coordenadas:
-  lat: 20.6534
-  lng: -105.2253
+  lat: 20.62488189
+  lng: -105.22454721
   precision: "exacta"
 telefono: "(322) 178-8000"
 email: "proteccioncivil@bomberosvallarta.gob.mx"
@@ -43,10 +44,12 @@ fuentes:
   - nombre: "bomberos.puertovallarta.gob.mx"
     url: "https://bomberos.puertovallarta.gob.mx/"
   - nombre: "bomberosvallarta.gob.mx"
-    url: "https://www.bomberosvallarta.gob.mx/"
+    url: "https://www.bomberosvallarta.gob.mx/pcybomberos.html"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx"
   - nombre: "reportediario.com.mx"
     url: "https://www.reportediario.com.mx/noticias/puerto-vallarta/vallarta-recibe-entrega-historica-de-equipo-para-proteccion-civil-y-bomberos"
-verificadoEl: "2026-06"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---
