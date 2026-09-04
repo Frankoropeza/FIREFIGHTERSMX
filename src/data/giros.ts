@@ -167,4 +167,4 @@ export const confianzaConfig: Record<ConfianzaKey, { label: string; color: strin
  * delgadas afecten al dominio, y da a las empresas una razón para verificar.
  * Cambiar a `true` para indexar todo el directorio.
  */
-export const INDEXAR_FICHAS_BASICAS = false;
+export const INDEXAR_FICHAS_BASICAS = true;

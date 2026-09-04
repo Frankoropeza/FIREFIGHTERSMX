@@ -63,7 +63,7 @@ function lastmodForUrl(url) {
 }
 
 // Espejo de src/data/giros.ts → INDEXAR_FICHAS_BASICAS (el config no importa TS de src/)
-const INDEXAR_FICHAS_BASICAS = false;
+const INDEXAR_FICHAS_BASICAS = true;
 const esFichaEmpresa = (url) => {
   const segs = new URL(url).pathname.replace(/\/+$/, '').split('/').filter(Boolean);
   return segs[0] === 'empresas' && segs.length === 4 && segs[1] !== 'estado';
