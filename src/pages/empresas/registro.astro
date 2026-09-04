@@ -1,0 +1,124 @@
+---
+// /empresas/registro — Alta y reclamo de ficha (fase 1: por correo; fase 5: backend)
+import BaseLayout from '@layouts/BaseLayout.astro';
+import QuickLinksBar from '@components/common/QuickLinksBar.astro';
+import { SITE } from '@config/site';
+import { giros, planConfig } from '@data/giros';
+import { estadosMeta, statsDirectorio } from '@lib/empresas';
+
+const stats = await statsDirectorio();
+const canonicalURL = `${SITE.url}/empresas/registro/`;
+const seoMeta = {
+  title: 'Registra o reclama tu empresa en el directorio',
+  description: `Da de alta tu empresa de equipo contra incendio, extintores, sistemas CI o capacitación en el directorio de FIREFIGHTERS MX, o reclama tu ficha existente y verifica tus datos. Registro básico gratuito.`,
+  canonicalURL,
+};
+const breadcrumbSchema = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+  { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
+  { '@type': 'ListItem', position: 2, name: 'Directorio de Empresas', item: `${SITE.url}/empresas/` },
+  { '@type': 'ListItem', position: 3, name: 'Registro', item: canonicalURL } ] };
+const planes = [
+  { key: 'basico', titulo: 'Básico', precio: 'Gratis', desc: 'Ficha con nombre, giro, ciudad y ubicación. Es el registro que ya tienen las empresas tomadas del DENUE.', puntos: ['Ficha en el directorio', 'Aparece en su giro y estado', 'Ubicación en el mapa'] },
+  { key: 'verificado', titulo: 'Verificado', precio: 'Por definir', desc: 'Reclamas la ficha y confirmas tus datos. Obtienes el sello de datos verificados y la ficha completa.', puntos: ['Contacto completo y sitio web', 'Logo, descripción y marcas que distribuyes', 'Sello de datos verificados', 'Ficha indexable en buscadores'] },
+  { key: 'destacado', titulo: 'Destacado', precio: 'Por definir', desc: 'Todo lo del verificado, más posición prioritaria y presencia cruzada en el sitio.', puntos: ['Primera posición en tu giro y estado', 'Galería y CTA directo', 'Aparece en fichas de producto y de estaciones de tu zona', 'Recibe las solicitudes de cotización de tu estado'] },
+] as const;
+---
+<BaseLayout {...seoMeta} schema={[breadcrumbSchema]}>
+  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+    <div class="container-site"><ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:#4A7599">
+      <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li><li aria-hidden="true">/</li>
+      <li><a href="/empresas/" class="hover:text-[#FF6B26]">Directorio de Empresas</a></li><li aria-hidden="true">/</li>
+      <li><span style="color:#94A3B8" aria-current="page">Registro</span></li></ol></div>
+  </nav>
+
+  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem" aria-labelledby="reg-heading">
+    <div class="absolute top-0 right-0 w-2/3 h-full pointer-events-none" aria-hidden="true" style="background:radial-gradient(ellipse 70% 60% at 85% 40%, rgba(245,166,35,0.08) 0%, transparent 65%)"></div>
+    <div class="container-site relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <div>
+        <span class="section-eyebrow mb-5 inline-flex">Para empresas del sector</span>
+        <h1 id="reg-heading" class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.2rem,5vw,4rem);line-height:0.95">Registra o reclama<br/><span style="color:#F5A623">tu empresa.</span></h1>
+        <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">El directorio reúne {stats.total.toLocaleString('es-MX')} empresas de equipo para bomberos, extintores, sistemas contra incendio y capacitación. Si tu empresa ya aparece, reclama la ficha y verifica tus datos. Si no aparece, regístrala: el alta básica es gratuita.</p>
+        <p class="text-sm leading-[1.9]" style="color:#94A3B8">Quien te busca aquí es un cuerpo de bomberos, una brigada industrial, un responsable de protección civil o un comprador de gobierno. Una ficha verificada y completa es la diferencia entre que te encuentren o no.</p>
+      </div>
+      <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
+        <div class="grid grid-cols-3 gap-px" style="background:rgba(74,117,153,0.15);border:1px solid rgba(74,117,153,0.18)">
+          {[{ n: stats.total.toLocaleString('es-MX'), l: 'Empresas' }, { n: '32', l: 'Estados' }, { n: '4', l: 'Giros' }].map((s) => (<div class="p-5" style="background:#0C1825"><div class="font-display font-bold" style="color:#F5A623;font-size:2.2rem;line-height:1">{s.n}</div><div class="font-display font-bold text-[10px] uppercase tracking-wider mt-1" style="color:#FFFFFF">{s.l}</div></div>))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <QuickLinksBar />
+
+  <section class="section" style="background:#070E1A" aria-labelledby="planes-heading">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div><span class="section-eyebrow mb-4 inline-flex">Niveles de ficha</span><h2 id="planes-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Tres niveles,<br/><span style="color:#F5A623">una regla.</span></h2></div>
+        <div style="border-left:2px solid rgba(245,166,35,0.5);padding-left:1.75rem"><p class="text-sm leading-relaxed" style="color:#94A3B8">El nivel comercial de una ficha y la verificación de sus datos son cosas distintas. Pagar no sube el sello de verificación: ese lo otorga la redacción contra fuentes. Lo que compra el plan es visibilidad, nunca credibilidad.</p></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
+        {planes.map((p) => { const c = planConfig[p.key]; return (
+          <div class="flex flex-col gap-4 p-7" style={`background:#040A12;border-top:2px solid ${c.color}`}>
+            <span class="font-display font-bold text-[10px] uppercase tracking-wider" style={`color:${c.color}`}>{p.titulo}</span>
+            <span class="font-display font-bold text-3xl" style="color:#FFFFFF;line-height:1">{p.precio}</span>
+            <p class="text-xs leading-relaxed" style="color:#64748B">{p.desc}</p>
+            <ul class="flex flex-col gap-2 list-none m-0 p-0 mt-2">{p.puntos.map((x) => <li class="flex items-start gap-2 text-xs" style="color:#CBD5E1"><span style={`color:${c.color}`}>✓</span>{x}</li>)}</ul>
+          </div>); })}
+      </div>
+    </div>
+  </section>
+
+  <section id="formulario" class="section" style="background:#040A12" aria-labelledby="form-heading">
+    <div class="container-site grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 items-start">
+      <div>
+        <span class="section-eyebrow mb-4 inline-flex">Solicitud</span>
+        <h2 id="form-heading" class="font-display font-bold mb-8" style="color:#FFFFFF;font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.05">Envíanos los datos<br/><span style="color:#F5A623">de tu empresa.</span></h2>
+        <form data-reg-form data-mail={SITE.email} class="flex flex-col gap-5" method="POST" action={`mailto:${SITE.email}`}>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div><label class="label" for="r-tipo">Tipo de solicitud</label><select id="r-tipo" name="tipo" class="select" required><option value="reclamar">Reclamar una ficha existente</option><option value="alta">Registrar una empresa nueva</option></select></div>
+            <div><label class="label" for="r-url">URL de la ficha (si existe)</label><input id="r-url" name="url" class="input" type="url" placeholder="https://firefighters.mx/empresas/…" /></div>
+            <div><label class="label" for="r-empresa">Nombre comercial *</label><input id="r-empresa" name="empresa" class="input" required /></div>
+            <div><label class="label" for="r-razon">Razón social</label><input id="r-razon" name="razon" class="input" /></div>
+            <div><label class="label" for="r-giro">Giro principal *</label><select id="r-giro" name="giro" class="select" required>{giros.map((g) => <option value={g.slug}>{g.label}</option>)}</select></div>
+            <div><label class="label" for="r-estado">Estado *</label><select id="r-estado" name="estado" class="select" required>{estadosMeta.map((e) => <option value={e.slug}>{e.nombre}</option>)}</select></div>
+            <div><label class="label" for="r-ciudad">Ciudad *</label><input id="r-ciudad" name="ciudad" class="input" required /></div>
+            <div><label class="label" for="r-web">Sitio web</label><input id="r-web" name="web" class="input" type="url" placeholder="https://" /></div>
+            <div><label class="label" for="r-contacto">Nombre de contacto *</label><input id="r-contacto" name="contacto" class="input" required /></div>
+            <div><label class="label" for="r-correo">Correo de contacto *</label><input id="r-correo" name="correo" class="input" type="email" required /></div>
+            <div><label class="label" for="r-tel">Teléfono</label><input id="r-tel" name="telefono" class="input" type="tel" /></div>
+            <div><label class="label" for="r-plan">Plan de interés</label><select id="r-plan" name="plan" class="select"><option value="basico">Básico (gratis)</option><option value="verificado">Verificado</option><option value="destacado">Destacado</option></select></div>
+          </div>
+          <div><label class="label" for="r-msg">Especialidades, marcas que distribuyes, cobertura</label><textarea id="r-msg" name="mensaje" class="textarea" rows="4"></textarea></div>
+          <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+            <button type="submit" class="btn btn-gold btn-lg">Enviar solicitud</button>
+            <span class="text-xs" style="color:#64748B">Se abre tu correo con la solicitud prellenada. Respondemos en 1–2 días hábiles.</span>
+          </div>
+        </form>
+      </div>
+      <aside class="flex flex-col gap-4 lg:sticky lg:top-28">
+        <div class="p-6" style="background:#0C1825;border:1px solid rgba(74,117,153,0.25)">
+          <p class="font-display font-bold text-xs uppercase tracking-widest mb-3" style="color:#4A7599">Qué verificamos</p>
+          <ul class="flex flex-col gap-2 list-none m-0 p-0 text-xs" style="color:#CBD5E1">
+            <li>· Que la empresa existe y opera en el giro declarado</li><li>· Que el contacto responde desde un dominio o teléfono de la empresa</li><li>· Que las certificaciones declaradas son verificables</li><li>· Que las marcas distribuidas coinciden con lo público del fabricante</li>
+          </ul>
+        </div>
+        <div class="p-6" style="background:#0C1825;border:1px solid rgba(74,117,153,0.25)">
+          <p class="font-display font-bold text-xs uppercase tracking-widest mb-3" style="color:#4A7599">De dónde salen los registros básicos</p>
+          <p class="text-xs leading-relaxed" style="color:#94A3B8">Del Directorio Estadístico Nacional de Unidades Económicas (DENUE) del INEGI, filtrado y clasificado por giro por nuestra redacción. Si un registro es incorrecto o ya no opera, <a href="/contacto/" class="hover:text-[#FF6B26]" style="color:#FF8F57">avísanos</a> y lo corregimos.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <script>
+    document.querySelectorAll<HTMLFormElement>('[data-reg-form]').forEach((f) => {
+      f.addEventListener('submit', (ev) => {
+        ev.preventDefault();
+        const d = new FormData(f); const mail = f.dataset.mail ?? '';
+        const lineas = [...d.entries()].filter(([, v]) => String(v).trim()).map(([k, v]) => `${k}: ${v}`);
+        const subject = `${d.get('tipo') === 'alta' ? 'Alta' : 'Reclamo de ficha'} — ${d.get('empresa')} — Directorio FIREFIGHTERS MX`;
+        window.location.href = `mailto:${mail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lineas.join('\n'))}`;
+      });
+    });
+  </script>
+</BaseLayout>

@@ -1,0 +1,133 @@
+---
+// /empresas/estado/[estado] — L2 geo: todas las empresas de un estado, por giro
+import BaseLayout from '@layouts/BaseLayout.astro';
+import QuickLinksBar from '@components/common/QuickLinksBar.astro';
+import MapaEmpresas from '@components/empresas/MapaEmpresas.astro';
+import EmpresasGrid from '@components/empresas/EmpresasGrid.astro';
+import { SITE } from '@config/site';
+import { giros } from '@data/giros';
+import { estados as estadosCobertura } from '@data/cobertura';
+import { estadoPorSlug } from '@data/estaciones';
+import { empresasPorEstado, conteoPorGiro, puntosMapa, topCiudades, estadosMeta } from '@lib/empresas';
+import type { GetStaticPaths } from 'astro';
+
+export const getStaticPaths = (() => estadosMeta.map((e) => ({ params: { estado: e.slug }, props: { estado: e } }))) satisfies GetStaticPaths;
+
+const { estado } = Astro.props as { estado: (typeof estadosMeta)[number] };
+const lista = await empresasPorEstado(estado.slug);
+const porGiro = (await conteoPorGiro(estado.slug)).filter((g) => g.total > 0);
+const ciudades = topCiudades(lista, 12);
+const puntos = puntosMapa(lista);
+const cob = estadosCobertura.find((c) => c.slug === estado.slug);
+const dirEst = estadoPorSlug(estado.slug);
+const vecinos = estadosMeta.filter((e) => e.region === estado.region && e.slug !== estado.slug);
+const centro: [number, number] | undefined = puntos.length ? [puntos.reduce((a, p) => a + p[0], 0) / puntos.length, puntos.reduce((a, p) => a + p[1], 0) / puntos.length] : undefined;
+
+const canonicalURL = `${SITE.url}/empresas/estado/${estado.slug}/`;
+const seoMeta = {
+  title: `Empresas de Equipo Contra Incendio en ${estado.nombre}`,
+  description: `${lista.length} empresas de equipo para bomberos, extintores, sistemas contra incendio y capacitación en ${estado.nombre}: ${ciudades.slice(0, 4).map((c) => c.ciudad).join(', ')}. Mapa y buscador.`.slice(0, 160),
+  canonicalURL,
+};
+const breadcrumbSchema = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+  { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
+  { '@type': 'ListItem', position: 2, name: 'Directorio de Empresas', item: `${SITE.url}/empresas/` },
+  { '@type': 'ListItem', position: 3, name: estado.nombre, item: canonicalURL } ] };
+const collectionSchema = { '@context': 'https://schema.org', '@type': 'CollectionPage', name: seoMeta.title, url: canonicalURL, inLanguage: 'es-MX', isPartOf: { '@id': `${SITE.url}/#website` },
+  about: { '@type': 'AdministrativeArea', name: estado.nombre, containedInPlace: { '@type': 'Country', name: 'México' } },
+  mainEntity: { '@type': 'ItemList', numberOfItems: porGiro.length, itemListElement: porGiro.map((g, i) => ({ '@type': 'ListItem', position: i + 1, name: `${g.nombre} en ${estado.nombre}`, url: `${SITE.url}/empresas/${g.giro}/${estado.slug}/` })) } };
+---
+<BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema]}>
+  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+    <div class="container-site"><ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:#4A7599">
+      <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li><li aria-hidden="true">/</li>
+      <li><a href="/empresas/" class="hover:text-[#FF6B26]">Directorio de Empresas</a></li><li aria-hidden="true">/</li>
+      <li><span style="color:#94A3B8" aria-current="page">{estado.nombre}</span></li></ol></div>
+  </nav>
+
+  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem" aria-labelledby="edo-heading">
+    <div class="absolute top-0 right-0 w-2/3 h-full pointer-events-none" aria-hidden="true" style="background:radial-gradient(ellipse 70% 60% at 85% 40%, rgba(247,80,0,0.07) 0%, transparent 65%)"></div>
+    <div class="container-site relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div>
+          <span class="section-eyebrow mb-5 inline-flex">Directorio · {estado.abreviatura} · {estado.region}</span>
+          <h1 id="edo-heading" class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.2rem,5vw,4rem);line-height:0.95">Empresas de equipo<br/><span style="color:#F75000">contra incendio</span><br/>en {estado.nombre}</h1>
+          <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">
+            {lista.length} empresas de {porGiro.map((g) => g.nombre.toLowerCase()).join(', ')} en {estado.nombre}, concentradas en {ciudades.slice(0, 4).map((c) => c.ciudad).join(', ')}. Cada registro está georreferenciado y clasificado por giro y especialidad, con su fuente de origen.
+          </p>
+          {cob && <p class="text-sm leading-[1.9] mb-8" style="color:#94A3B8">{cob.longDesc[0]}</p>}
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="#empresas" class="btn btn-primary btn-lg">Ver las {lista.length} empresas</a>
+            <a href="/empresas/registro/" class="btn btn-ghost btn-lg">Registrar mi empresa →</a>
+          </div>
+        </div>
+        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
+          <div class="grid grid-cols-2 gap-px" style="background:rgba(74,117,153,0.15);border:1px solid rgba(74,117,153,0.18)">
+            {porGiro.map((g) => { const meta = giros.find((x) => x.slug === g.giro)!; return (
+              <a href={`/empresas/${g.giro}/${estado.slug}/`} class="grid-cell p-6" style="background:#0C1825">
+                <div class="font-display font-bold mb-1" style={`color:${meta.color};font-size:2.5rem;line-height:1`}>{g.total}</div>
+                <div class="font-display font-bold text-xs uppercase tracking-wider mb-0.5" style="color:#FFFFFF">{meta.labelCorto}</div>
+                <div class="text-[10px] uppercase tracking-widest" style="color:#4A7599">en {estado.nombre} →</div>
+              </a>); })}
+          </div>
+          <div class="mt-5 flex flex-wrap gap-2">
+            {ciudades.slice(0, 8).map((c) => <span class="badge badge-dark font-display text-[10px]">{c.ciudad} · {c.total}</span>)}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-px" aria-hidden="true" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)"></div>
+  </section>
+
+  <QuickLinksBar />
+
+  {puntos.length > 0 && (
+    <section class="section-tight" style="background:#070E1A" aria-label={`Mapa de empresas en ${estado.nombre}`}>
+      <div class="container-site">
+        <span class="section-eyebrow mb-4 inline-flex">Mapa</span>
+        <h2 class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.05">Ubicación de las empresas<br/><span style="color:#F75000">en {estado.nombre}.</span></h2>
+        <MapaEmpresas puntos={puntos} id={`mapa-${estado.slug}`} zoom={7} centro={centro} altura="460px" ariaLabel={`Mapa de empresas de equipo contra incendio en ${estado.nombre}`} />
+      </div>
+    </section>
+  )}
+
+  <section id="empresas" class="section" style="background:#040A12" aria-labelledby="lista-heading">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-10">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Directorio · {estado.nombre}</span>
+          <h2 id="lista-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">{lista.length} empresas<br/><span style="color:#F75000">en {estado.nombre}.</span></h2>
+        </div>
+        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:#94A3B8">Filtra por giro o busca por nombre, ciudad o municipio. Para ver un giro con sus especialidades y su propio mapa, entra al directorio de ese giro en {estado.nombre}.</p>
+        </div>
+      </div>
+      <EmpresasGrid empresas={lista} filtros={porGiro.map((g) => { const m = giros.find((x) => x.slug === g.giro)!; return { key: g.giro, label: `${m.labelCorto} · ${g.total}`, color: m.color }; })} id={`edo-${estado.slug}`} />
+    </div>
+  </section>
+
+  <section class="section" style="background:#070E1A" aria-label="Contenido relacionado">
+    <div class="container-site grid grid-cols-1 lg:grid-cols-3 gap-10">
+      <div>
+        <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:#4A7599">Por giro en {estado.nombre}</p>
+        <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+          {porGiro.map((g) => { const m = giros.find((x) => x.slug === g.giro)!; return (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/empresas/${g.giro}/${estado.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{m.label}</span><span class="font-display font-bold" style={`color:${m.color}`}>{g.total}</span></a></li>); })}
+        </ul>
+      </div>
+      <div>
+        <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:#4A7599">Estados de la región {estado.region}</p>
+        <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+          {vecinos.map((v) => (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/empresas/estado/${v.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Empresas en {v.nombre}</span><span style="color:#4A7599">→</span></a></li>))}
+        </ul>
+      </div>
+      <div>
+        <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:#4A7599">También en {estado.nombre}</p>
+        <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+          {dirEst && dirEst.estaciones.length > 0 && <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/estaciones/${estado.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Estaciones de bomberos en {estado.nombre}</span><span class="text-xs" style="color:#64748B">{dirEst.estaciones.length} corporaciones listadas</span></span><span style="color:#4A7599">→</span></a></li>}
+          {cob && <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/cobertura/${estado.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Cobertura y logística en {estado.nombre}</span><span class="text-xs" style="color:#64748B">{cob.dias}</span></span><span style="color:#4A7599">→</span></a></li>}
+          <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href="/empresas/" class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Directorio nacional</span><span style="color:#4A7599">→</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

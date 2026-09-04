@@ -62,6 +62,13 @@ function lastmodForUrl(url) {
   return null;
 }
 
+// Espejo de src/data/giros.ts → INDEXAR_FICHAS_BASICAS (el config no importa TS de src/)
+const INDEXAR_FICHAS_BASICAS = false;
+const esFichaEmpresa = (url) => {
+  const segs = new URL(url).pathname.replace(/\/+$/, '').split('/').filter(Boolean);
+  return segs[0] === 'empresas' && segs.length === 4 && segs[1] !== 'estado';
+};
+
 export default defineConfig({
   site: 'https://firefighters.mx',
   // Canonical: siempre slash final — así lo sirve producción (Cloudflare
@@ -72,8 +79,11 @@ export default defineConfig({
     sitemap({
       changefreq: 'weekly',
       priority: 0.7,
-      // Las rutas reales se detectan solas; excluir 404
-      filter: (page) => !page.includes('/404'),
+      // Las rutas reales se detectan solas; excluir 404.
+      // Fichas L4 del directorio de empresas (/empresas/<giro>/<estado>/<slug>/):
+      // mientras INDEXAR_FICHAS_BASICAS sea false en src/data/giros.ts, llevan noindex
+      // y se excluyen aquí. Mantener ambos en sincronía.
+      filter: (page) => !page.includes('/404') && !(INDEXAR_FICHAS_BASICAS === false && esFichaEmpresa(page)),
       serialize: (item) => {
         // lastmod real por archivo fuente; si no se resuelve, se omite
         const lm = lastmodForUrl(item.url);

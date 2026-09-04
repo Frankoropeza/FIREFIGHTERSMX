@@ -1,0 +1,36 @@
+---
+/**
+ * Mapa Leaflet con clustering para cientos/miles de puntos.
+ * `puntos`: [lat, lng, nombre, url, giro][] · colores por giro desde giros.ts
+ */
+import { giros } from '@data/giros';
+export interface Props { puntos: readonly (readonly [number, number, string, string, string])[]; id?: string; altura?: string; zoom?: number; centro?: [number, number]; ariaLabel: string; }
+const { puntos, id = 'mapa-empresas', altura = '520px', zoom = 5, centro = [23.6, -102.5], ariaLabel } = Astro.props;
+const colores = Object.fromEntries(giros.map((g) => [g.slug, g.color]));
+---
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.min.css" />
+<div id={id} class="mapa-empresas" data-puntos={JSON.stringify(puntos)} data-colores={JSON.stringify(colores)} data-zoom={zoom} data-centro={JSON.stringify(centro)}
+  style={`height:${altura};border:1px solid rgba(74,117,153,0.25);background:#0C1825`} role="img" aria-label={ariaLabel}></div>
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/leaflet.markercluster.min.js"></script>
+<script is:inline>
+  window.addEventListener('load', function () {
+    document.querySelectorAll('.mapa-empresas').forEach(function (el) {
+      if (typeof L === 'undefined' || el.dataset.init) return; el.dataset.init = '1';
+      var puntos = JSON.parse(el.dataset.puntos || '[]'), colores = JSON.parse(el.dataset.colores || '{}');
+      var map = L.map(el, { scrollWheelZoom: false, zoomControl: true }).setView(JSON.parse(el.dataset.centro), +el.dataset.zoom);
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', { attribution: '&copy; OpenStreetMap &copy; CARTO', maxZoom: 18 }).addTo(map);
+      var grupo = (typeof L.markerClusterGroup === 'function')
+        ? L.markerClusterGroup({ maxClusterRadius: 48, iconCreateFunction: function (c) { var n = c.getChildCount(); return L.divIcon({ html: '<div style="background:#F75000;color:#fff;font:700 12px Rajdhani,sans-serif;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border:2px solid #040A12;box-shadow:0 0 0 2px rgba(247,80,0,.35)">' + n + '</div>', className: '', iconSize: [36, 36] }); } })
+        : L.layerGroup();
+      puntos.forEach(function (p) {
+        var m = L.circleMarker([p[0], p[1]], { radius: 6, color: '#040A12', weight: 1.5, fillColor: colores[p[4]] || '#F75000', fillOpacity: 0.95 });
+        m.bindPopup('<a href="' + p[3] + '" style="font:600 13px Sora,sans-serif;color:#0C1825">' + p[2] + '</a>');
+        grupo.addLayer(m);
+      });
+      map.addLayer(grupo);
+      if (puntos.length > 1 && puntos.length < 400) { try { map.fitBounds(grupo.getBounds(), { padding: [24, 24], maxZoom: 12 }); } catch (e) {} }
+    });
+  });
+</script>

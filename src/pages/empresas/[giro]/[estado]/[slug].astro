@@ -1,0 +1,197 @@
+---
+// /empresas/[giro]/[estado]/[slug] — L4: ficha de empresa
+import BaseLayout from '@layouts/BaseLayout.astro';
+import QuickLinksBar from '@components/common/QuickLinksBar.astro';
+import EmpresaCard from '@components/empresas/EmpresaCard.astro';
+import { SITE, whatsappUrl } from '@config/site';
+import { giroMap, planConfig, confianzaConfig, INDEXAR_FICHAS_BASICAS } from '@data/giros';
+import { allCategories } from '@data/categories';
+import { estadoPorSlug } from '@data/estaciones';
+import { todasLasEmpresas, empresasPorGiroEstado, estadoMeta, urlEmpresa, type Empresa } from '@lib/empresas';
+import type { GetStaticPaths } from 'astro';
+
+export const getStaticPaths = (async () =>
+  (await todasLasEmpresas()).map((e) => ({ params: { giro: e.giroPrincipal, estado: e.estado, slug: e.slug }, props: { e } }))
+) satisfies GetStaticPaths;
+
+const { e } = Astro.props as { e: Empresa };
+const g = giroMap[e.giroPrincipal];
+const edo = estadoMeta(e.estado)!;
+const plan = planConfig[e.plan];
+const conf = confianzaConfig[e.confianza];
+const esp = e.especialidades.map((s) => ({ slug: s, label: g.especialidades[s] })).filter((x) => x.label);
+const otrosGiros = e.giros.filter((x) => x !== e.giroPrincipal).map((x) => giroMap[x]);
+const cercanas = (await empresasPorGiroEstado(e.giroPrincipal, e.estado)).filter((x) => x.slug !== e.slug)
+  .sort((a, b) => (a.ciudad === e.ciudad ? -1 : 0) - (b.ciudad === e.ciudad ? -1 : 0)).slice(0, 6);
+const dirEst = estadoPorSlug(e.estado);
+const estaciones = dirEst ? dirEst.estaciones.filter((s) => s.ciudad === e.ciudad || s.municipio === e.municipio).slice(0, 4) : [];
+const cats = allCategories.filter((c) => g.categoriasRelacionadas.includes(c.slug)).slice(0, 4);
+const hasMap = !!e.coordenadas;
+const fuentes = e.fuentes.map((f) => (typeof f === 'string' ? { nombre: f, url: f } : f));
+const meses = ['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+const verif = e.verificadoEl ? (() => { const [y, m] = e.verificadoEl!.split('-'); return m ? `${meses[+m - 1]} ${y}` : y; })() : null;
+const basica = e.plan === 'basico' && e.confianza === 'baja';
+const noindex = basica && !INDEXAR_FICHAS_BASICAS;
+const webHost = e.sitioWeb ? e.sitioWeb.replace(/^https?:\/\//, '').replace(/\/$/, '') : null;
+
+const canonicalURL = `${SITE.url}${urlEmpresa(e)}`;
+const seoMeta = {
+  title: `${e.nombre} — ${g.labelCorto} en ${e.ciudad}, ${edo.abreviatura}`,
+  description: `${e.nombre}: ${g.sustantivo} en ${e.ciudad}, ${edo.nombre}.${esp.length ? ' ' + esp.map((x) => x.label).join(', ') + '.' : ''} Ubicación, contacto y nivel de verificación en el directorio FIREFIGHTERS MX.`.slice(0, 160),
+  canonicalURL, noindex,
+};
+const breadcrumbSchema = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+  { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
+  { '@type': 'ListItem', position: 2, name: 'Directorio de Empresas', item: `${SITE.url}/empresas/` },
+  { '@type': 'ListItem', position: 3, name: g.labelCorto, item: `${SITE.url}/empresas/${e.giroPrincipal}/` },
+  { '@type': 'ListItem', position: 4, name: edo.nombre, item: `${SITE.url}/empresas/${e.giroPrincipal}/${e.estado}/` },
+  { '@type': 'ListItem', position: 5, name: e.nombre, item: canonicalURL } ] };
+const businessSchema = { '@context': 'https://schema.org', '@type': 'LocalBusiness', '@id': `${canonicalURL}#business`, name: e.nombre, ...(e.razonSocial ? { legalName: e.razonSocial } : {}), url: canonicalURL,
+  ...(e.sitioWeb ? { sameAs: [e.sitioWeb] } : {}), ...(e.telefono ? { telephone: e.telefono } : {}), ...(e.email ? { email: e.email } : {}),
+  address: { '@type': 'PostalAddress', addressLocality: e.ciudad, addressRegion: edo.nombre, addressCountry: 'MX', ...(e.direccion ? { streetAddress: e.direccion } : {}), ...(e.codigoPostal ? { postalCode: e.codigoPostal } : {}) },
+  ...(hasMap ? { geo: { '@type': 'GeoCoordinates', latitude: e.coordenadas!.lat, longitude: e.coordenadas!.lng } } : {}),
+  areaServed: { '@type': 'AdministrativeArea', name: edo.nombre }, knowsAbout: [g.label, ...g.normas, ...esp.map((x) => x.label)] };
+const waMsg = `Hola, vi la ficha de ${e.nombre} en el directorio FIREFIGHTERS MX y quiero reclamarla / actualizar sus datos.`;
+const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>`;
+---
+<BaseLayout {...seoMeta} schema={[breadcrumbSchema, businessSchema]}>
+  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+    <div class="container-site"><ol class="flex items-center gap-2 text-xs list-none m-0 p-0 flex-wrap" style="color:#4A7599">
+      <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li><li aria-hidden="true">/</li>
+      <li><a href="/empresas/" class="hover:text-[#FF6B26]">Empresas</a></li><li aria-hidden="true">/</li>
+      <li><a href={`/empresas/${e.giroPrincipal}/`} class="hover:text-[#FF6B26]">{g.labelCorto}</a></li><li aria-hidden="true">/</li>
+      <li><a href={`/empresas/${e.giroPrincipal}/${e.estado}/`} class="hover:text-[#FF6B26]">{edo.nombre}</a></li><li aria-hidden="true">/</li>
+      <li><span style="color:#94A3B8" aria-current="page">{e.nombre}</span></li></ol></div>
+  </nav>
+
+  <section class="relative overflow-hidden" style="background:#040A12;padding-block:4rem" aria-labelledby="ficha-heading">
+    <div class="absolute top-0 right-0 w-2/3 h-full pointer-events-none" aria-hidden="true" style={`background:radial-gradient(ellipse 70% 60% at 85% 40%, ${g.color}12 0%, transparent 65%)`}></div>
+    <div class="container-site relative z-10">
+      <div class="flex flex-wrap items-center gap-2 mb-5">
+        <span class="inline-flex items-center gap-1.5 font-display font-bold text-[10px] uppercase tracking-wider px-2 py-1" style={`color:${g.color};background:${g.color}1A;border:1px solid ${g.color}40`}>
+          <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" set:html={g.icon} aria-hidden="true"/>{g.labelCorto}</span>
+        {otrosGiros.map((o) => <span class="font-display text-[10px] uppercase tracking-wider px-2 py-1" style={`color:${o.color};border:1px dashed ${o.color}55`}>+ {o.labelCorto}</span>)}
+        {e.plan !== 'basico' && <span class="font-display text-[10px] uppercase tracking-wider px-2 py-1" style={`color:${plan.color};background:${plan.bgColor};border:1px solid ${plan.color}55`}>{plan.label}</span>}
+        <span class="font-display text-[10px] uppercase tracking-wider px-2 py-1" title={conf.descripcion} style={`color:${conf.color};background:${conf.bgColor};border:1px solid ${conf.color}33`}>{conf.label}{verif && ` · ${verif}`}</span>
+      </div>
+      <h1 id="ficha-heading" class="font-display font-bold mb-3" style="color:#FFFFFF;font-size:clamp(1.9rem,4.2vw,3.4rem);line-height:1">{e.nombre}</h1>
+      {e.razonSocial && <p class="font-display text-sm uppercase tracking-wider mb-4" style="color:#4A7599">{e.razonSocial}</p>}
+      <p class="flex items-start gap-2 text-sm max-w-2xl" style="color:#94A3B8">
+        <svg class="w-4 h-4 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="#FF6B26" stroke-width="1.8" set:html={iconPin} aria-hidden="true"/>
+        <span>{e.direccion ? `${e.direccion} · ` : ''}{e.ciudad}{e.municipio !== e.ciudad ? `, ${e.municipio}` : ''}, {edo.nombre}</span>
+      </p>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-px" aria-hidden="true" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)"></div>
+  </section>
+
+  <QuickLinksBar />
+
+  <section class="section" style="background:#070E1A">
+    <div class="container-site grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-10 lg:gap-14 items-start">
+
+      <div class="flex flex-col gap-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Perfil</span>
+          <h2 class="font-display font-bold mb-5" style="color:#FFFFFF;font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.05">{g.labelCorto} en {e.ciudad},<br/><span style={`color:${g.color}`}>{edo.nombre}.</span></h2>
+          <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">
+            {e.nombre} es una empresa de {g.sustantivo} con sede en {e.ciudad}, {edo.nombre}{e.estrato ? `, con una plantilla de ${e.estrato.toLowerCase()}` : ''}.{esp.length ? ` Sus especialidades registradas son ${esp.map((x) => x.label.toLowerCase()).join(', ')}.` : ''}{otrosGiros.length ? ` También opera en ${otrosGiros.map((o) => o.labelCorto.toLowerCase()).join(' y ')}.` : ''}
+          </p>
+          <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">{g.intro[0]}</p>
+          {basica && (
+            <div class="mt-6 p-5 flex flex-col sm:flex-row sm:items-center gap-4" style="background:#0C1825;border:1px solid rgba(74,117,153,0.25);border-left:3px solid #94A3B8">
+              <p class="text-xs leading-relaxed flex-1" style="color:#94A3B8"><strong style="color:#CBD5E1">Registro público sin verificar.</strong> Los datos provienen del DENUE (INEGI) y no han sido confirmados por la empresa. Si eres el responsable, reclama la ficha para completarla y obtener el sello de datos verificados.</p>
+              <a href="/empresas/registro/" class="btn btn-sm btn-outline shrink-0">Reclamar ficha</a>
+            </div>
+          )}
+        </div>
+
+        {esp.length > 0 && (
+          <div>
+            <span class="section-eyebrow mb-4 inline-flex">Especialidades</span>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
+              {esp.map((x) => <a href={`/empresas/${e.giroPrincipal}/${e.estado}/`} class="grid-cell p-5 font-display font-semibold text-sm" style="background:#040A12;color:#FFFFFF">{x.label}</a>)}
+            </div>
+          </div>
+        )}
+
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Marco normativo del giro</span>
+          <div class="flex flex-wrap gap-2 mb-4">{g.normas.map((n) => <span class="badge badge-dark font-display text-[10px]">{n}</span>)}</div>
+          <p class="text-sm leading-[1.9]" style="color:#94A3B8">{g.intro[1]}</p>
+        </div>
+
+        {cercanas.length > 0 && (
+          <div>
+            <span class="section-eyebrow mb-4 inline-flex">Otras empresas de {g.labelCorto.toLowerCase()} en {edo.nombre}</span>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">{cercanas.map((c) => <EmpresaCard e={c} />)}</div>
+            <a href={`/empresas/${e.giroPrincipal}/${e.estado}/`} class="inline-flex mt-5 font-display font-semibold text-xs uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57">Ver todas en {edo.nombre} →</a>
+          </div>
+        )}
+
+        {estaciones.length > 0 && (
+          <div>
+            <span class="section-eyebrow mb-4 inline-flex">Cuerpos de bomberos en la zona</span>
+            <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+              {estaciones.map((s) => (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/estaciones/${e.estado}/${s.slug}/`} class="group flex items-center justify-between gap-4 py-3"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{s.nombre}</span><span class="text-xs" style="color:#64748B">{s.tipo} · {s.ciudad}</span></span><span style="color:#4A7599">→</span></a></li>))}
+            </ul>
+          </div>
+        )}
+      </div>
+
+      <aside class="flex flex-col gap-4 lg:sticky lg:top-28">
+        <div class="p-6" style="background:#0C1825;border:1px solid rgba(74,117,153,0.25)">
+          <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:#4A7599">Contacto</p>
+          <ul class="flex flex-col gap-3 list-none m-0 p-0 text-sm">
+            {e.telefono && <li class="flex items-center gap-3"><span class="font-display text-[10px] uppercase tracking-wider w-16 shrink-0" style="color:#4A7599">Tel.</span><a href={`tel:${e.telefono}`} class="hover:text-[#FF6B26]" style="color:#FFFFFF">{e.telefono}</a></li>}
+            {e.email && <li class="flex items-center gap-3"><span class="font-display text-[10px] uppercase tracking-wider w-16 shrink-0" style="color:#4A7599">Correo</span><a href={`mailto:${e.email}`} class="hover:text-[#FF6B26] break-all" style="color:#FFFFFF">{e.email}</a></li>}
+            {e.sitioWeb && <li class="flex items-center gap-3"><span class="font-display text-[10px] uppercase tracking-wider w-16 shrink-0" style="color:#4A7599">Web</span><a href={e.sitioWeb} target="_blank" rel="noopener nofollow" class="hover:text-[#FF6B26] break-all" style="color:#FFFFFF">{webHost}</a></li>}
+            {e.direccion && <li class="flex items-start gap-3"><span class="font-display text-[10px] uppercase tracking-wider w-16 shrink-0 mt-0.5" style="color:#4A7599">Dirección</span><span style="color:#CBD5E1">{e.direccion}</span></li>}
+            {!e.telefono && !e.email && !e.sitioWeb && <li class="text-xs" style="color:#64748B">Sin datos de contacto en el registro público.</li>}
+          </ul>
+        </div>
+
+        {hasMap && (
+          <div style="border:1px solid rgba(74,117,153,0.25)">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+            <div id="ficha-map" data-lat={e.coordenadas!.lat} data-lng={e.coordenadas!.lng} data-color={g.color} style="height:240px;background:#0C1825" role="img" aria-label={`Mapa de ${e.nombre}`}></div>
+            <a href={`https://www.google.com/maps?q=${e.coordenadas!.lat},${e.coordenadas!.lng}`} target="_blank" rel="noopener nofollow" class="block px-4 py-2.5 font-display text-[11px] uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57;background:#0C1825;border-top:1px solid rgba(74,117,153,0.2)">Abrir en Google Maps →</a>
+          </div>
+        )}
+
+        <div class="p-6" style="background:#0C1825;border:1px solid rgba(74,117,153,0.25)">
+          <p class="font-display font-bold text-xs uppercase tracking-widest mb-3" style="color:#4A7599">Fuente del registro</p>
+          <ul class="flex flex-col gap-2 list-none m-0 p-0">{fuentes.map((f) => <li><a href={f.url} target="_blank" rel="noopener nofollow" class="text-xs hover:text-[#FF6B26]" style="color:#CBD5E1">{f.nombre} ↗</a></li>)}</ul>
+          {e.claseDENUE && <p class="text-[11px] mt-3 leading-relaxed" style="color:#64748B">Clase de actividad: {e.claseDENUE}</p>}
+          <p class="text-[11px] mt-3 leading-relaxed" style="color:#64748B">{conf.descripcion}</p>
+        </div>
+
+        <div class="p-6" style={`background:#0C1825;border:1px solid rgba(245,166,35,0.35);border-left:3px solid #F5A623`}>
+          <p class="font-display font-bold text-sm mb-2" style="color:#FFFFFF">¿Es tu empresa?</p>
+          <p class="text-xs leading-relaxed mb-4" style="color:#94A3B8">Reclama la ficha, completa tus datos y obtén el sello de verificación. Las fichas destacadas aparecen primero en {edo.nombre}.</p>
+          <a href="/empresas/registro/" class="btn btn-gold btn-sm w-full text-center">Reclamar ficha</a>
+          <a href={whatsappUrl(waMsg)} target="_blank" rel="noopener noreferrer" class="block text-center mt-3 font-display text-[11px] uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57">Escribir al equipo →</a>
+        </div>
+
+        <div class="p-6" style="background:#0C1825;border:1px solid rgba(74,117,153,0.25)">
+          <p class="font-display font-bold text-xs uppercase tracking-widest mb-3" style="color:#4A7599">Guías de compra</p>
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">{cats.map((c) => <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/productos/${c.slug}/`} class="block py-2.5 font-display font-semibold text-sm hover:text-[#FF6B26]" style="color:#FFFFFF">{c.label}</a></li>)}</ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  {hasMap && (
+    <Fragment>
+      <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+      <script is:inline>
+        window.addEventListener('load', function () {
+          var el = document.getElementById('ficha-map'); if (!el || typeof L === 'undefined') return;
+          var lat = +el.dataset.lat, lng = +el.dataset.lng;
+          var map = L.map(el, { scrollWheelZoom: false, zoomControl: false, attributionControl: false }).setView([lat, lng], 15);
+          L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', { maxZoom: 19 }).addTo(map);
+          L.circleMarker([lat, lng], { radius: 9, color: '#040A12', weight: 2, fillColor: el.dataset.color || '#F75000', fillOpacity: 1 }).addTo(map);
+        });
+      </script>
+    </Fragment>
+  )}
+</BaseLayout>

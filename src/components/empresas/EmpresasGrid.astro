@@ -1,0 +1,82 @@
+---
+/**
+ * Grid de empresas con buscador en vivo y filtros por chip.
+ * `filtros`: lista de { key, label, color } que filtran por data-giro o data-esp.
+ * `dimension`: 'giro' | 'esp' — qué atributo de la card se compara.
+ */
+import EmpresaCard from './EmpresaCard.astro';
+import type { Empresa } from '@lib/empresas';
+
+export interface Props {
+  empresas: Empresa[];
+  filtros?: { key: string; label: string; color: string }[];
+  dimension?: 'giro' | 'esp';
+  mostrarEstado?: boolean;
+  id?: string;
+  placeholder?: string;
+}
+const { empresas, filtros = [], dimension = 'giro', mostrarEstado = false, id = 'emp', placeholder = 'Buscar por nombre, ciudad o municipio…' } = Astro.props;
+---
+<div class="flex flex-col md:flex-row md:items-center gap-3 mb-6" data-emp-toolbar={id}>
+  <div class="relative flex-1">
+    <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none" style="color:#4A7599" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input id={`${id}-search`} type="search" placeholder={placeholder} aria-label="Buscar empresa" autocomplete="off"
+      class="w-full pl-10 pr-4 py-2.5 text-sm font-display" style="background:#0C1825;border:1px solid rgba(74,117,153,0.3);color:#FFFFFF;outline:none" />
+  </div>
+  {filtros.length > 0 && (
+    <div class="flex flex-wrap gap-1.5" role="group" aria-label="Filtrar">
+      <button type="button" class="emp-filter font-display text-[10px] uppercase tracking-wider px-3 py-1.5" data-key="todos" data-grid={id}
+        style="color:#FFFFFF;background:#F75000;border:1px solid #F75000">Todos</button>
+      {filtros.map((f) => (
+        <button type="button" class="emp-filter font-display text-[10px] uppercase tracking-wider px-3 py-1.5" data-key={f.key} data-grid={id} data-color={f.color}
+          style={`color:${f.color};background:transparent;border:1px solid ${f.color}40`}>{f.label}</button>
+      ))}
+    </div>
+  )}
+  <span id={`${id}-count`} class="font-display text-xs uppercase tracking-wider shrink-0" style="color:#4A7599">{empresas.length} resultados</span>
+</div>
+
+<div id={`${id}-grid`} class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" data-dimension={dimension}>
+  {empresas.map((e) => <EmpresaCard e={e} mostrarEstado={mostrarEstado} />)}
+</div>
+<p id={`${id}-none`} class="hidden text-sm py-10 text-center" style="color:#64748B">Ninguna empresa coincide con la búsqueda.</p>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-emp-toolbar]').forEach((bar) => {
+    const id = bar.dataset.empToolbar!;
+    const search = document.getElementById(`${id}-search`) as HTMLInputElement | null;
+    const grid = document.getElementById(`${id}-grid`);
+    const none = document.getElementById(`${id}-none`);
+    const count = document.getElementById(`${id}-count`);
+    const filters = Array.from(bar.querySelectorAll<HTMLButtonElement>('.emp-filter'));
+    const dim = grid?.dataset.dimension === 'esp' ? 'esp' : 'giro';
+    let active = 'todos';
+    const norm = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+    function apply() {
+      if (!grid) return;
+      const q = norm((search?.value ?? '').trim());
+      let visible = 0;
+      grid.querySelectorAll<HTMLElement>('.emp-card').forEach((card) => {
+        const hay = norm(`${card.dataset.nombre ?? ''} ${card.dataset.ciudad ?? ''}`);
+        const keys = (card.dataset[dim] ?? '').split(' ');
+        const okF = active === 'todos' || keys.includes(active);
+        const okQ = !q || hay.includes(q);
+        const show = okF && okQ;
+        card.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+      none?.classList.toggle('hidden', visible > 0);
+      if (count) count.textContent = `${visible} resultado${visible === 1 ? '' : 's'}`;
+    }
+    search?.addEventListener('input', apply);
+    filters.forEach((btn) => btn.addEventListener('click', () => {
+      active = btn.dataset.key ?? 'todos';
+      filters.forEach((x) => {
+        const on = x === btn;
+        x.style.background = on ? (x.dataset.color ?? '#F75000') : 'transparent';
+        x.style.color = on ? '#FFFFFF' : (x.dataset.color ?? '#94A3B8');
+      });
+      apply();
+    }));
+  });
+</script>

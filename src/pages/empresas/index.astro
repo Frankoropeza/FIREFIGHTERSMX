@@ -1,0 +1,182 @@
+---
+// /empresas — Hub L1 del directorio nacional de empresas
+import BaseLayout from '@layouts/BaseLayout.astro';
+import QuickLinksBar from '@components/common/QuickLinksBar.astro';
+import MapaEmpresas from '@components/empresas/MapaEmpresas.astro';
+import EmpresasGrid from '@components/empresas/EmpresasGrid.astro';
+import { SITE } from '@config/site';
+import { giros } from '@data/giros';
+import { todasLasEmpresas, conteoPorEstado, conteoPorGiro, statsDirectorio, puntosMapa, estadosMeta } from '@lib/empresas';
+
+const all = await todasLasEmpresas();
+const stats = await statsDirectorio();
+const porEstado = (await conteoPorEstado()).sort((a, b) => b.total - a.total);
+const porGiro = await conteoPorGiro();
+const puntos = puntosMapa(all);
+const destacadas = all.filter((e) => e.plan !== 'basico').slice(0, 6);
+const muestra = (destacadas.length ? destacadas : all.filter((e) => e.sitioWeb)).slice(0, 12);
+const regiones = [...new Set(estadosMeta.map((e) => e.region))];
+
+const canonicalURL = `${SITE.url}/empresas/`;
+const seoMeta = {
+  title: 'Directorio de Empresas de Equipo Contra Incendio en México',
+  description: `${stats.total.toLocaleString('es-MX')} empresas de equipo para bomberos, extintores, sistemas contra incendio y capacitación en los 32 estados. Busca por giro, estado y ciudad.`,
+  canonicalURL,
+};
+const breadcrumbSchema = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+  { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
+  { '@type': 'ListItem', position: 2, name: 'Directorio de Empresas', item: canonicalURL } ] };
+const collectionSchema = { '@context': 'https://schema.org', '@type': 'CollectionPage', '@id': `${canonicalURL}#collection`,
+  name: 'Directorio de Empresas de Equipo Contra Incendio en México', description: seoMeta.description, url: canonicalURL, inLanguage: 'es-MX',
+  isPartOf: { '@id': `${SITE.url}/#website` },
+  mainEntity: { '@type': 'ItemList', name: 'Giros del directorio', numberOfItems: giros.length,
+    itemListElement: giros.map((g, i) => ({ '@type': 'ListItem', position: i + 1, name: g.label, url: `${SITE.url}/empresas/${g.slug}/` })) } };
+---
+<BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema]}>
+  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+    <div class="container-site"><ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:#4A7599">
+      <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li><li aria-hidden="true">/</li>
+      <li><span style="color:#94A3B8" aria-current="page">Directorio de Empresas</span></li></ol></div>
+  </nav>
+
+  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem" aria-labelledby="emp-heading">
+    <div class="absolute top-0 right-0 w-2/3 h-full pointer-events-none" aria-hidden="true" style="background:radial-gradient(ellipse 70% 60% at 85% 40%, rgba(247,80,0,0.07) 0%, transparent 65%)"></div>
+    <div class="container-site relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div>
+          <span class="section-eyebrow mb-5 inline-flex">Directorio nacional · {stats.estados} estados</span>
+          <h1 id="emp-heading" class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.2rem,5vw,4rem);line-height:0.95">
+            Empresas de equipo<br/><span style="color:#F75000">contra incendio</span><br/>en México
+          </h1>
+          <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">
+            El directorio más completo del sector: {stats.total.toLocaleString('es-MX')} empresas de venta de equipo para bomberos y EPP, extintores, sistemas contra incendio y capacitación de brigadas, en {stats.ciudades.toLocaleString('es-MX')} ciudades de los {stats.estados} estados. Cada registro tiene ubicación georreferenciada y su fuente de origen citada.
+          </p>
+          <p class="text-sm leading-[1.9] mb-8" style="color:#94A3B8">
+            Clasificamos a cada empresa por giro y especialidad —algo que el <strong style="color:#CBD5E1">SCIAN no distingue</strong>— para que un cuerpo de bomberos, una brigada industrial o un comprador de gobierno encuentre al proveedor correcto en su estado sin intermediarios.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="#buscar" class="btn btn-primary btn-lg">Buscar empresas</a>
+            <a href="/empresas/registro/" class="btn btn-ghost btn-lg">Registrar mi empresa →</a>
+          </div>
+        </div>
+        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
+          <div class="grid grid-cols-2 gap-px" style="background:rgba(74,117,153,0.15);border:1px solid rgba(74,117,153,0.18)">
+            {[
+              { n: stats.total.toLocaleString('es-MX'), label: 'Empresas', sub: 'con fuente citada' },
+              { n: String(stats.estados), label: 'Estados', sub: 'cobertura nacional' },
+              { n: stats.ciudades.toLocaleString('es-MX'), label: 'Ciudades', sub: 'georreferenciadas' },
+              { n: String(stats.giros), label: 'Giros', sub: 'clasificación propia' },
+            ].map((s) => (
+              <div class="p-6" style="background:#0C1825">
+                <div class="font-display font-bold mb-1" style="color:#F75000;font-size:2.5rem;line-height:1">{s.n}</div>
+                <div class="font-display font-bold text-xs uppercase tracking-wider mb-0.5" style="color:#FFFFFF">{s.label}</div>
+                <div class="text-[10px] uppercase tracking-widest" style="color:#4A7599">{s.sub}</div>
+              </div>))}
+          </div>
+          <div class="mt-5 flex flex-wrap gap-2">
+            {porGiro.map((g) => { const meta = giros.find((x) => x.slug === g.giro)!; return (
+              <a href={`/empresas/${g.giro}/`} class="badge font-display text-[10px] hover:brightness-125" style={`color:${meta.color};background:${meta.color}1A;border:1px solid ${meta.color}40`}>{g.nombre} · {g.total}</a>); })}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-px" aria-hidden="true" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)"></div>
+  </section>
+
+  <QuickLinksBar />
+
+  {/* Giros */}
+  <section class="section" style="background:#070E1A" aria-labelledby="giros-heading">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Por giro</span>
+          <h2 id="giros-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Cuatro giros,<br/><span style="color:#F75000">un solo directorio.</span></h2>
+        </div>
+        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:#94A3B8">El sector no tiene una clasificación oficial propia. Nosotros agrupamos a las empresas por lo que realmente hacen: vender equipo, dar servicio a extintores, instalar sistemas fijos o capacitar brigadas. Una empresa puede aparecer en más de un giro.</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
+        {giros.map((g) => { const c = porGiro.find((x) => x.giro === g.slug)!; return (
+          <a href={`/empresas/${g.slug}/`} class="grid-cell flex flex-col gap-4 p-7" style="background:#040A12">
+            <span class="w-10 h-10 flex items-center justify-center" style={`color:${g.color};border:1px solid ${g.color}55`}>
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" set:html={g.icon} aria-hidden="true"/></span>
+            <span class="font-display font-bold text-4xl" style={`color:${g.color};line-height:1`}>{c.total}</span>
+            <span class="font-display font-bold text-lg leading-snug" style="color:#FFFFFF">{g.label}</span>
+            <span class="text-xs leading-relaxed" style="color:#64748B">{g.description}</span>
+            <span class="mt-auto font-display font-semibold text-xs uppercase tracking-wider" style="color:#FF8F57">Ver empresas →</span>
+          </a>); })}
+      </div>
+    </div>
+  </section>
+
+  {/* Mapa nacional */}
+  <section class="section-tight" style="background:#040A12" aria-label="Mapa nacional de empresas">
+    <div class="container-site">
+      <span class="section-eyebrow mb-4 inline-flex">Mapa nacional</span>
+      <h2 class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.05">{stats.total.toLocaleString('es-MX')} empresas<br/><span style="color:#F75000">georreferenciadas.</span></h2>
+      <MapaEmpresas puntos={puntos} ariaLabel="Mapa nacional de empresas de equipo contra incendio" />
+      <div class="flex flex-wrap gap-4 mt-3">
+        {giros.map((g) => <span class="inline-flex items-center gap-2 text-[11px]" style="color:#94A3B8"><span class="w-2.5 h-2.5 rounded-full" style={`background:${g.color}`}></span>{g.labelCorto}</span>)}
+        <span class="text-[11px]" style="color:#4A7599">Coordenadas del registro público DENUE (INEGI).</span>
+      </div>
+    </div>
+  </section>
+
+  {/* Por estado */}
+  <section class="section" style="background:#070E1A" aria-labelledby="estados-heading">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Por estado</span>
+          <h2 id="estados-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Los 32 estados,<br/><span style="color:#F75000">ordenados por oferta.</span></h2>
+        </div>
+        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:#94A3B8">La concentración sigue al mapa industrial del país: Estado de México, Ciudad de México, Jalisco, Nuevo León y el Bajío reúnen la mayor oferta. Cada estado tiene su propio directorio con mapa, buscador y filtros por giro.</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-8 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
+        {porEstado.map((s) => (
+          <a href={`/empresas/estado/${s.slug}/`} class="grid-cell flex flex-col gap-1 p-4" style="background:#040A12">
+            <span class="font-display font-bold text-2xl" style="color:#F75000;line-height:1">{s.total}</span>
+            <span class="font-display font-semibold text-sm leading-tight" style="color:#FFFFFF">{s.nombre}</span>
+            <span class="text-[10px] uppercase tracking-widest" style="color:#4A7599">{estadosMeta.find((e) => e.slug === s.slug)?.region}</span>
+          </a>))}
+      </div>
+    </div>
+  </section>
+
+  {/* Buscador global */}
+  <section id="buscar" class="section" style="background:#040A12" aria-labelledby="buscar-heading">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-10">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Buscador</span>
+          <h2 id="buscar-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Busca entre<br/><span style="color:#F75000">todas las empresas.</span></h2>
+        </div>
+        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:#94A3B8">Escribe el nombre de la empresa, la ciudad o el municipio. Filtra por giro. El listado prioriza a las empresas con ficha verificada o destacada.</p>
+        </div>
+      </div>
+      <EmpresasGrid empresas={all} mostrarEstado filtros={giros.map((g) => ({ key: g.slug, label: g.labelCorto, color: g.color }))} id="hub" />
+    </div>
+  </section>
+
+  {/* Registro */}
+  <section class="section" style="background:#070E1A" aria-labelledby="alta-heading">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-10 items-center p-8 lg:p-12" style="background:#0C1825;border:1px solid rgba(74,117,153,0.25);border-left:3px solid #F5A623">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Para empresas del sector</span>
+          <h2 id="alta-heading" class="font-display font-bold mb-3" style="color:#FFFFFF;font-size:clamp(1.6rem,3vw,2.5rem);line-height:1.05">¿Tu empresa ya está listada?<br/><span style="color:#F5A623">Reclama y verifica tu ficha.</span></h2>
+          <p class="text-sm leading-relaxed max-w-2xl" style="color:#94A3B8">Los registros básicos provienen del registro público del DENUE. Al reclamar tu ficha puedes completar contacto, marcas que distribuyes, certificaciones y cobertura, y obtener el sello de datos verificados. Las fichas destacadas aparecen primero en su giro y estado.</p>
+        </div>
+        <div class="flex flex-col gap-3 shrink-0">
+          <a href="/empresas/registro/" class="btn btn-gold btn-lg">Registrar o reclamar ficha</a>
+          <a href="/contacto/" class="btn btn-ghost">Hablar con el equipo →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

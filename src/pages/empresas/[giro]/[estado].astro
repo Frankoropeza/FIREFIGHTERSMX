@@ -1,0 +1,163 @@
+---
+// /empresas/[giro]/[estado] — L3: giro × estado. Las money pages del directorio.
+import BaseLayout from '@layouts/BaseLayout.astro';
+import QuickLinksBar from '@components/common/QuickLinksBar.astro';
+import MapaEmpresas from '@components/empresas/MapaEmpresas.astro';
+import EmpresasGrid from '@components/empresas/EmpresasGrid.astro';
+import { SITE, whatsappUrl } from '@config/site';
+import { giros, giroMap, type GiroKey } from '@data/giros';
+import { allCategories } from '@data/categories';
+import { estadoPorSlug } from '@data/estaciones';
+import { getCollection } from 'astro:content';
+import { todasLasEmpresas, empresasPorGiroEstado, conteoPorEstado, conteoPorGiro, puntosMapa, topCiudades, especialidadesPresentes, estadosMeta } from '@lib/empresas';
+import type { GetStaticPaths } from 'astro';
+
+// Solo combinaciones giro × estado con al menos una empresa: una L3 vacía sería
+// una página delgada y huérfana. Se genera sola en cuanto entra la primera empresa.
+export const getStaticPaths = (async () => {
+  const all = await todasLasEmpresas();
+  return giros.flatMap((g) => estadosMeta
+    .filter((e) => all.some((x) => x.estado === e.slug && x.giros.includes(g.slug)))
+    .map((e) => ({ params: { giro: g.slug, estado: e.slug }, props: { giro: g.slug, estado: e } })));
+}) satisfies GetStaticPaths;
+
+const { giro, estado } = Astro.props as { giro: GiroKey; estado: (typeof estadosMeta)[number] };
+const g = giroMap[giro];
+const lista = await empresasPorGiroEstado(giro, estado.slug);
+const ciudades = topCiudades(lista, 10);
+const esp = especialidadesPresentes(lista, giro);
+const puntos = puntosMapa(lista);
+const otrosGirosEdo = (await conteoPorGiro(estado.slug)).filter((x) => x.giro !== giro && x.total > 0);
+const vecinos = (await conteoPorEstado(giro)).filter((s) => s.total > 0 && s.slug !== estado.slug && estadosMeta.find((e) => e.slug === s.slug)?.region === estado.region);
+const cats = allCategories.filter((c) => g.categoriasRelacionadas.includes(c.slug)).slice(0, 3);
+const dirEst = estadoPorSlug(estado.slug);
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .filter((p) => g.normas.some((n) => p.data.tags.some((t) => t.toLowerCase().includes(n.split(' ')[0].toLowerCase()))) || p.data.category.toLowerCase().includes(g.labelCorto.toLowerCase().split(' ')[0]))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).slice(0, 4);
+const centro: [number, number] | undefined = puntos.length ? [puntos.reduce((a, p) => a + p[0], 0) / puntos.length, puntos.reduce((a, p) => a + p[1], 0) / puntos.length] : undefined;
+const vacio = lista.length === 0;
+
+const canonicalURL = `${SITE.url}/empresas/${giro}/${estado.slug}/`;
+const tituloCorto = `${g.labelCorto} en ${estado.nombre}`;
+const seoMeta = {
+  title: `${g.label.split(':')[0].trim()} en ${estado.nombre} — Directorio`,
+  description: vacio
+    ? `Directorio de empresas de ${g.sustantivo} en ${estado.nombre}. Aún no hay empresas registradas en este giro y estado: registra la tuya gratis.`
+    : `${lista.length} empresas de ${g.sustantivo} en ${estado.nombre}: ${ciudades.slice(0, 4).map((c) => c.ciudad).join(', ')}. Mapa, contacto, especialidades y fuente de cada registro.`.slice(0, 160),
+  canonicalURL,
+  noindex: vacio,
+};
+const breadcrumbSchema = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+  { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
+  { '@type': 'ListItem', position: 2, name: 'Directorio de Empresas', item: `${SITE.url}/empresas/` },
+  { '@type': 'ListItem', position: 3, name: g.labelCorto, item: `${SITE.url}/empresas/${giro}/` },
+  { '@type': 'ListItem', position: 4, name: estado.nombre, item: canonicalURL } ] };
+const itemListSchema = { '@context': 'https://schema.org', '@type': 'ItemList', name: tituloCorto, numberOfItems: lista.length,
+  itemListElement: lista.slice(0, 50).map((e, i) => ({ '@type': 'ListItem', position: i + 1, item: { '@type': 'LocalBusiness', name: e.nombre, url: `${SITE.url}/empresas/${e.giroPrincipal}/${e.estado}/${e.slug}/`,
+    address: { '@type': 'PostalAddress', addressLocality: e.ciudad, addressRegion: estado.nombre, addressCountry: 'MX', ...(e.direccion ? { streetAddress: e.direccion } : {}), ...(e.codigoPostal ? { postalCode: e.codigoPostal } : {}) },
+    ...(e.coordenadas ? { geo: { '@type': 'GeoCoordinates', latitude: e.coordenadas.lat, longitude: e.coordenadas.lng } } : {}) } })) };
+const waMsg = `Hola, busco proveedores de ${g.sustantivo} en ${estado.nombre}. ¿Me pueden orientar?`;
+---
+<BaseLayout {...seoMeta} schema={[breadcrumbSchema, itemListSchema]}>
+  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+    <div class="container-site"><ol class="flex items-center gap-2 text-xs list-none m-0 p-0 flex-wrap" style="color:#4A7599">
+      <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li><li aria-hidden="true">/</li>
+      <li><a href="/empresas/" class="hover:text-[#FF6B26]">Directorio de Empresas</a></li><li aria-hidden="true">/</li>
+      <li><a href={`/empresas/${giro}/`} class="hover:text-[#FF6B26]">{g.labelCorto}</a></li><li aria-hidden="true">/</li>
+      <li><span style="color:#94A3B8" aria-current="page">{estado.nombre}</span></li></ol></div>
+  </nav>
+
+  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem" aria-labelledby="ge-heading">
+    <div class="absolute top-0 right-0 w-2/3 h-full pointer-events-none" aria-hidden="true" style={`background:radial-gradient(ellipse 70% 60% at 85% 40%, ${g.color}14 0%, transparent 65%)`}></div>
+    <div class="container-site relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div>
+          <span class="section-eyebrow mb-5 inline-flex">Directorio · {estado.abreviatura} · {g.labelCorto}</span>
+          <h1 id="ge-heading" class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2rem,4.6vw,3.6rem);line-height:0.95">
+            {g.label.split(':')[0].trim()}<br/><span style={`color:${g.color}`}>en {estado.nombre}</span>
+          </h1>
+          {vacio ? (
+            <p class="text-sm leading-[1.9] mb-8" style="color:#94A3B8">Todavía no tenemos empresas de {g.sustantivo} registradas en {estado.nombre}. Si tu empresa opera aquí, regístrala gratis y aparecerá en este directorio con mapa y ficha propia.</p>
+          ) : (
+            <Fragment>
+              <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">{lista.length} {lista.length === 1 ? 'empresa' : 'empresas'} de {g.sustantivo} en {estado.nombre}, con presencia en {ciudades.length === 1 ? ciudades[0].ciudad : ciudades.slice(0, 4).map((c) => c.ciudad).join(', ')}. Cada ficha incluye ubicación georreferenciada, giro, especialidades y el nivel de verificación de sus datos.</p>
+              <p class="text-sm leading-[1.9] mb-8" style="color:#94A3B8">{g.intro[1]}</p>
+            </Fragment>
+          )}
+          <div class="flex flex-col sm:flex-row gap-3">
+            {vacio ? <a href="/empresas/registro/" class="btn btn-primary btn-lg">Registrar mi empresa</a> : <a href="#empresas" class="btn btn-primary btn-lg">Ver las {lista.length} empresas</a>}
+            <a href={whatsappUrl(waMsg)} target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-lg">Pedir orientación →</a>
+          </div>
+        </div>
+        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
+          <div class="grid grid-cols-2 gap-px" style="background:rgba(74,117,153,0.15);border:1px solid rgba(74,117,153,0.18)">
+            {[
+              { n: String(lista.length), label: lista.length === 1 ? 'Empresa' : 'Empresas', sub: `en ${estado.abreviatura}` },
+              { n: String(ciudades.length), label: ciudades.length === 1 ? 'Ciudad' : 'Ciudades', sub: 'con oferta' },
+              { n: String(esp.length), label: 'Especialidades', sub: 'detectadas' },
+              { n: String(lista.filter((e) => e.sitioWeb).length), label: 'Con sitio web', sub: 'presencia digital' },
+            ].map((s) => (<div class="p-6" style="background:#0C1825"><div class="font-display font-bold mb-1" style={`color:${g.color};font-size:2.5rem;line-height:1`}>{s.n}</div><div class="font-display font-bold text-xs uppercase tracking-wider mb-0.5" style="color:#FFFFFF">{s.label}</div><div class="text-[10px] uppercase tracking-widest" style="color:#4A7599">{s.sub}</div></div>))}
+          </div>
+          <div class="mt-5 flex flex-wrap gap-2">{g.normas.map((n) => <span class="badge badge-dark font-display text-[10px]">{n}</span>)}</div>
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-px" aria-hidden="true" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)"></div>
+  </section>
+
+  <QuickLinksBar />
+
+  {puntos.length > 0 && (
+    <section class="section-tight" style="background:#070E1A" aria-label={`Mapa de ${tituloCorto}`}>
+      <div class="container-site">
+        <span class="section-eyebrow mb-4 inline-flex">Mapa</span>
+        <h2 class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.05">{g.labelCorto}<br/><span style={`color:${g.color}`}>en el mapa de {estado.nombre}.</span></h2>
+        <MapaEmpresas puntos={puntos} id={`mapa-${giro}-${estado.slug}`} zoom={7} centro={centro} altura="440px" ariaLabel={`Mapa de empresas de ${g.sustantivo} en ${estado.nombre}`} />
+      </div>
+    </section>
+  )}
+
+  {!vacio && (
+    <section id="empresas" class="section" style="background:#040A12" aria-labelledby="lista-heading">
+      <div class="container-site">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-10">
+          <div>
+            <span class="section-eyebrow mb-4 inline-flex">{tituloCorto}</span>
+            <h2 id="lista-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">{lista.length} {lista.length === 1 ? 'empresa' : 'empresas'}<br/><span style={`color:${g.color}`}>de {g.sustantivo}.</span></h2>
+          </div>
+          <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+            <p class="text-sm leading-relaxed" style="color:#94A3B8">Las fichas destacadas y verificadas aparecen primero. Los registros básicos provienen del DENUE y se marcan como registro público hasta que la empresa reclama y verifica su ficha.</p>
+          </div>
+        </div>
+        <EmpresasGrid empresas={lista} dimension="esp" filtros={esp.map((s) => ({ key: s.slug, label: `${s.label} · ${s.total}`, color: g.color }))} id={`ge-${giro}-${estado.slug}`} placeholder="Buscar por nombre, ciudad o municipio…" />
+      </div>
+    </section>
+  )}
+
+  <section class="section" style={`background:${vacio ? '#040A12' : '#070E1A'}`} aria-label="Contenido relacionado">
+    <div class="container-site grid grid-cols-1 lg:grid-cols-3 gap-10">
+      <div>
+        <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:#4A7599">Otros giros en {estado.nombre}</p>
+        <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+          {otrosGirosEdo.map((o) => { const m = giroMap[o.giro]; return (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/empresas/${o.giro}/${estado.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{m.labelCorto} en {estado.nombre}</span><span class="font-display font-bold" style={`color:${m.color}`}>{o.total}</span></a></li>); })}
+          <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/empresas/estado/${estado.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Todas las empresas en {estado.nombre}</span><span style="color:#4A7599">→</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:#4A7599">{g.labelCorto} en la región {estado.region}</p>
+        <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+          {vecinos.map((v) => (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/empresas/${giro}/${v.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{g.labelCorto} en {v.nombre}</span><span class="font-display font-bold" style={`color:${g.color}`}>{v.total}</span></a></li>))}
+          <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/empresas/${giro}/`} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{g.labelCorto} en todo México</span><span style="color:#4A7599">→</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:#4A7599">Guías, normas y compradores</p>
+        <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+          {cats.map((c) => (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/productos/${c.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Guía: {c.label}</span><span class="text-xs" style="color:#64748B">{c.norm}</span></span><span style="color:#4A7599">→</span></a></li>))}
+          {posts.slice(0, 2).map((p) => (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/blog/${p.id}/`} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{p.data.title}</span><span style="color:#4A7599">→</span></a></li>))}
+          {dirEst && dirEst.estaciones.length > 0 && <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/estaciones/${estado.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Cuerpos de bomberos en {estado.nombre}</span><span class="text-xs" style="color:#64748B">{dirEst.estaciones.length} corporaciones — compradores del giro</span></span><span style="color:#4A7599">→</span></a></li>}
+        </ul>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
