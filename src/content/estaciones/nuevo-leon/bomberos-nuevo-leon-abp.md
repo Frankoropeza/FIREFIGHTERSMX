@@ -9,7 +9,8 @@ municipio: "Monterrey"
 tipo: "Municipal"
 corporacion: "Bomberos de Nuevo León, A.B.P."
 corporacionSlug: "bomberos-de-nuevo-leon-a-b-p"
-rolEstacion: "unica"
+rolEstacion: "central"
+numeroEstacion: "Estación Central"
 direccion: "Constitución 407, Centro, C.P. 64000, Monterrey, Nuevo León"
 coordenadas:
   lat: 25.6686
@@ -61,7 +62,7 @@ fuentes:
     url: "https://abcnoticias.mx/local/2026/4/21/andres-elosua-asume-patronato-de-bomberos-de-nl-busca-ampliar-estaciones-279505.html"
   - nombre: "abcnoticias.mx"
     url: "https://abcnoticias.mx/local/2025/5/29/guillermo-dillon-montana-es-el-nuevo-director-de-bomberos-nuevo-leon-250529.html"
-verificadoEl: "2026-06"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

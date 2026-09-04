@@ -9,7 +9,8 @@ municipio: "Guadalupe"
 tipo: "Municipal"
 corporacion: "Patronato de Bomberos de Ciudad Guadalupe, A.C."
 corporacionSlug: "patronato-de-bomberos-de-ciudad-guadalupe-a-c"
-rolEstacion: "unica"
+rolEstacion: "central"
+numeroEstacion: "Estación Central"
 direccion: "Prolongación Churubusco S/N, Col. Valles de Chapultepec, Guadalupe, N.L., C.P. 67140"
 coordenadas:
   lat: 25.6827
@@ -50,7 +51,7 @@ fuentes:
     url: "https://gobimex.com/oficinas/patronato-de-bomberos-de-ciudad-guadalupe"
   - nombre: "elhorizonte.mx"
     url: "https://www.elhorizonte.mx/nuevoleon/analiza-guadalupe-abrir-una-quinta-estacion-de-bomberos/1779691/amp"
-verificadoEl: "2026-06"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---
