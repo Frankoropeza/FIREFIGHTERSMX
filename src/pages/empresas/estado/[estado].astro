@@ -57,7 +57,7 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
           </p>
           {cob && <p class="text-sm leading-[1.9] mb-8" style="color:#94A3B8">{cob.longDesc[0]}</p>}
           <div class="flex flex-col sm:flex-row gap-3">
-            <a href="#empresas" class="btn btn-primary btn-lg">Ver {lista.length} empresas contra incendio en {estado.nombre}</a>
+            <a href="#empresas" class="btn btn-primary btn-lg">{lista.length} empresas en {estado.nombre}</a>
             <a href="/empresas/registro/" class="btn btn-ghost btn-lg">Registrar empresa en {estado.nombre} →</a>
           </div>
         </div>

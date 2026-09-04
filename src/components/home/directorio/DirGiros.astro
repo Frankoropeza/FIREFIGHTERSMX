@@ -58,7 +58,7 @@ const fmt = (n: number) => n.toLocaleString('es-MX');
                 <span class="font-display uppercase tracking-wider" style="color:#64748B">Mayor oferta:</span>{' '}
                 {top.map((t, k) => <Fragment>{k > 0 && ' · '}<a href={`/empresas/${g.slug}/${t.slug}/`} class="hover:text-[#FF6B26]" style="color:#94A3B8">{t.nombre} <span style={`color:${g.color}`}>{t.total}</span></a></Fragment>)}
               </p>
-              <a href={`/empresas/${g.slug}/`} class="btn btn-primary w-full justify-center mt-auto" style="margin-top:auto">Empresas de {g.labelCorto.toLowerCase()} en México →</a>
+              <a href={`/empresas/${g.slug}/`} class="btn btn-primary w-full justify-center mt-auto" style="margin-top:auto">{g.labelCorto} en México →</a>
             </div>
           </article>
         );
