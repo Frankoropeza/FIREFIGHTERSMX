@@ -15,7 +15,7 @@ coordenadas:
   lat: 25.7869
   lng: -100.049
   precision: "exacta"
-telefono: "(812) 473-5647"
+telefono: "(81) 2473-5647"
 operador: "H. Ayuntamiento de Pesquería, N.L."
 servicios:
   - "incendios-estructurales"

@@ -9,14 +9,16 @@ municipio: "Atizapán de Zaragoza"
 tipo: "Municipal"
 corporacion: "Coordinación Municipal de Protección Civil, Bomberos y Medio Ambiente de Atizapán de Zaragoza"
 corporacionSlug: "coordinacion-municipal-de-proteccion-civil-bomberos-y-medio-ambiente-de-atizapan"
-rolEstacion: "unica"
+rolEstacion: "central"
+numeroEstacion: "Cuartel Central"
+direccion: "CALLE MUNICIPIO LIBRE Col. LOMAS DE ATIZAPAN C.P. 52977"
 coordenadas:
-  lat: 19.5628
-  lng: -99.2619
+  lat: 19.55763978
+  lng: -99.25369347
   precision: "aproximada"
-telefono: "(553) 622-1004"
+telefono: "(55) 3622-1004"
 telefonosAdicionales:
-  - "(553) 622-1005"
+  - "(55) 3622-1005"
 sitioWeb: "https://atizapan.gob.mx/direcciones/proteccion-civil-y-bomberos"
 servicios:
   - "incendios-estructurales"
@@ -34,7 +36,9 @@ fuentes:
     url: "https://atizapan.gob.mx/direcciones/proteccion-civil-y-bomberos"
   - nombre: "atizapan.gob.mx — reconocimiento CENAPRED ago 2024"
     url: "https://atizapan.gob.mx/2024/08/04/reconoce-cenapred-a-proteccion-civil-de-atizapan-de-zaragoza/"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=2014113"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

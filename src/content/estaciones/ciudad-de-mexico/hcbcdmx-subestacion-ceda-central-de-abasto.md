@@ -16,7 +16,7 @@ coordenadas:
   lat: 19.3744784
   lng: -99.0843248
   precision: "exacta"
-telefono: "(555) 600-1723"
+telefono: "(55) 5600-1723"
 operador: "Gobierno de la Ciudad de México"
 servicios:
   - "incendios-estructurales"

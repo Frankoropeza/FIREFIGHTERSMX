@@ -16,10 +16,10 @@ coordenadas:
   lat: 19.3629711
   lng: -99.0816577
   precision: "exacta"
-telefono: "(555) 612-1080"
+telefono: "(55) 5612-1080"
 telefonosAdicionales:
-  - "(555) 612-1140"
-  - "(558) 944-3129"
+  - "(55) 5612-1140"
+  - "(55) 8944-3129"
 operador: "Gobierno de la Ciudad de México"
 servicios:
   - "incendios-estructurales"

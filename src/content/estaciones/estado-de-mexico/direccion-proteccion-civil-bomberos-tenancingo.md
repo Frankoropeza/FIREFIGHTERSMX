@@ -10,10 +10,11 @@ tipo: "Municipal"
 corporacion: "Dirección de Protección Civil y Bomberos de Tenancingo"
 corporacionSlug: "direccion-de-proteccion-civil-y-bomberos-de-tenancingo"
 rolEstacion: "unica"
+direccion: "CALLE BENITO JUAREZ 211 Col. TENANCINGO C.P. 52400"
 coordenadas:
-  lat: 18.9619
-  lng: -99.5897
-  precision: "aproximada"
+  lat: 18.95776501
+  lng: -99.59451756
+  precision: "exacta"
 telefono: "(719) 265-0384"
 telefonosAdicionales:
   - "(719) 261-6739"
@@ -30,7 +31,9 @@ fuentes:
     url: "https://alertas.edomex.gob.mx/inicio/unidad-municipal-pc/direccion-de-proteccion-civil-y-bomberos-tenancingo/"
   - nombre: "Directorio CGPC EDOMEX 2024"
     url: "https://cgproteccioncivil.edomex.gob.mx/sites/cgproteccioncivil.edomex.gob.mx/files/files/que%20ofrecemos_pdf/Directorio_U_M_2024/D_U_M_21-05-2024.pdf"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=2550409"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

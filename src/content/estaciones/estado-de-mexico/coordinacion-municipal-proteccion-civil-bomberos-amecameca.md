@@ -10,10 +10,11 @@ tipo: "Municipal"
 corporacion: "Coordinación Municipal de Protección Civil y Bomberos de Amecameca"
 corporacionSlug: "coordinacion-municipal-de-proteccion-civil-y-bomberos-de-amecameca"
 rolEstacion: "unica"
+direccion: "CALLE AYAPANGO Col. PANOHAYA C.P. 56900"
 coordenadas:
-  lat: 19.1275
-  lng: -98.7706
-  precision: "aproximada"
+  lat: 19.13146334
+  lng: -98.77653069
+  precision: "exacta"
 telefono: "(597) 978-4099"
 telefonosAdicionales:
   - "(597) 978-1793"
@@ -34,7 +35,9 @@ fuentes:
     url: "https://amecameca.gob.mx/pdf/mejora-regulatoria/consulta-publica/2025/mayo-2025/manual-de-procedimientos/MANUAL-DE-PROCEDIMIENTOS-PCyB-2025.pdf"
   - nombre: "CGPC EDOMEX — Plan Popocatépetl 2025"
     url: "https://cgproteccioncivil.edomex.gob.mx/sites/cgproteccioncivil.edomex.gob.mx/files/files/Que%20ofrecemos%202025/PLAN_POPOCAT%C3%89PETL%2028.4.25%20EDOMEX.pdf"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=2127506"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

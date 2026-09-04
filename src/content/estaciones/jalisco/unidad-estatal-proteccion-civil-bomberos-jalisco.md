@@ -15,7 +15,7 @@ coordenadas:
   lat: 20.6684
   lng: -103.3637
   precision: "exacta"
-telefono: "(333) 675-3060"
+telefono: "(33) 3675-3060"
 email: "direccion.uepcb@jalisco.gob.mx"
 sitioWeb: "https://proteccioncivil.jalisco.gob.mx/"
 redes:

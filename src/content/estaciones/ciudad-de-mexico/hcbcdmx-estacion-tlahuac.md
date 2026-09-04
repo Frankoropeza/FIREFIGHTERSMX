@@ -16,10 +16,10 @@ coordenadas:
   lat: 19.2793075
   lng: -99.0080477
   precision: "exacta"
-telefono: "(555) 842-0777"
+telefono: "(55) 5842-0777"
 telefonosAdicionales:
-  - "(555) 842-0666"
-  - "(555) 842-9972"
+  - "(55) 5842-0666"
+  - "(55) 5842-9972"
 operador: "Gobierno de la Ciudad de México"
 servicios:
   - "incendios-estructurales"

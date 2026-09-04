@@ -10,13 +10,14 @@ tipo: "Municipal"
 corporacion: "Dirección General de Protección Civil y Bomberos de Chimalhuacán"
 corporacionSlug: "direccion-general-de-proteccion-civil-y-bomberos-de-chimalhuacan"
 rolEstacion: "unica"
+direccion: "CALLE MALINALLI Col. ALFAREROS C.P. 56363"
 coordenadas:
-  lat: 19.4219
-  lng: -98.9539
+  lat: 19.42696329
+  lng: -98.96579073
   precision: "aproximada"
-telefono: "(559) 208-6317"
+telefono: "(55) 9208-6317"
 telefonosAdicionales:
-  - "(559) 208-6318"
+  - "(55) 9208-6318"
 sitioWeb: "https://chimalhuacan.gob.mx/proteccion-civil-y-bomberos/"
 servicios:
   - "incendios-estructurales"
@@ -31,7 +32,9 @@ fuentes:
     url: "https://chimalhuacan.gob.mx/proteccion-civil-y-bomberos/"
   - nombre: "Directorio CGPC EDOMEX 2024"
     url: "https://cgproteccioncivil.edomex.gob.mx/sites/cgproteccioncivil.edomex.gob.mx/files/files/que%20ofrecemos_pdf/Directorio_U_M_2024/D_U_M_21-05-2024.pdf"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=11844661"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

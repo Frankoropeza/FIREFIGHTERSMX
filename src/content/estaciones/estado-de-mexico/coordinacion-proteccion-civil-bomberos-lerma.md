@@ -10,10 +10,11 @@ tipo: "Municipal"
 corporacion: "Coordinación de Protección Civil y Bomberos de Lerma"
 corporacionSlug: "coordinacion-de-proteccion-civil-y-bomberos-de-lerma"
 rolEstacion: "unica"
+direccion: "AVENIDA CAMPO DE LAS PARTIDAS Col. PARQUE INDUSTRIAL LA BOMBA C.P. 52000"
 coordenadas:
-  lat: 19.2906
-  lng: -99.5129
-  precision: "aproximada"
+  lat: 19.30747058
+  lng: -99.53900732
+  precision: "exacta"
 telefono: "(729) 121-6835"
 telefonosAdicionales:
   - "(722) 762-8152"
@@ -34,7 +35,9 @@ fuentes:
     url: "https://cgproteccioncivil.edomex.gob.mx/sites/cgproteccioncivil.edomex.gob.mx/files/files/Que%20ofrecemos%202025/DIR-U-MUNICPALES/DIRECTORIO-JUNIO2025.pdf"
   - nombre: "lerma.gob.mx — teléfonos emergencia"
     url: "https://lerma.gob.mx/ayuntamiento/contacto/telefonos-de-emergencia/"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=7192363"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

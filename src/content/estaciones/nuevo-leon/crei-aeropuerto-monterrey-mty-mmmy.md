@@ -15,7 +15,7 @@ coordenadas:
   lat: 25.7785
   lng: -100.1068
   precision: "exacta"
-telefono: "(818) 288-7700"
+telefono: "(81) 8288-7700"
 sitioWeb: "https://www.oma.aero"
 operador: "OMA — Grupo Aeroportuario del Centro Norte"
 servicios:

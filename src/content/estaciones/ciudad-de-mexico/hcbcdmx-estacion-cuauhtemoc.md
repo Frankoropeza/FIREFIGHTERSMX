@@ -16,10 +16,10 @@ coordenadas:
   lat: 19.4352371
   lng: -99.1601189
   precision: "exacta"
-telefono: "(555) 705-3369"
+telefono: "(55) 5705-3369"
 telefonosAdicionales:
-  - "(555) 705-4230"
-  - "(555) 705-4241"
+  - "(55) 5705-4230"
+  - "(55) 5705-4241"
 operador: "Gobierno de la Ciudad de México"
 servicios:
   - "incendios-estructurales"

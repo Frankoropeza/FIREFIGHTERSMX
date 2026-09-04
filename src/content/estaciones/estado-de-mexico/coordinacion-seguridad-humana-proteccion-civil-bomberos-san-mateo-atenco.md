@@ -10,10 +10,11 @@ tipo: "Municipal"
 corporacion: "Coordinación de Seguridad Humana y Protección Civil (con función Bomberos) de San Mateo Atenco"
 corporacionSlug: "coordinacion-de-seguridad-humana-y-proteccion-civil-con-funcion-bomberos-de-san-"
 rolEstacion: "unica"
+direccion: "CALLE CHABACANO Col. SANTA MARÍA C.P. 52104"
 coordenadas:
-  lat: 19.2667
-  lng: -99.5311
-  precision: "aproximada"
+  lat: 19.27070381
+  lng: -99.55024582
+  precision: "exacta"
 telefono: "(722) 287-0835"
 email: "seguridadhumana@sanmateoatenco.gob.mx"
 servicios:
@@ -29,7 +30,9 @@ fuentes:
     url: "https://cgproteccioncivil.edomex.gob.mx/sites/cgproteccioncivil.edomex.gob.mx/files/files/Que%20ofrecemos%202025/DIR-U-MUNICPALES/DIRECTORIO-JUNIO2025.pdf"
   - nombre: "sanmateoatenco.gob.mx — telemergencia"
     url: "https://www.sanmateoatenco.gob.mx/telemergencia"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=7279418"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

@@ -15,9 +15,9 @@ coordenadas:
   lat: 25.6686
   lng: -100.3095
   precision: "exacta"
-telefono: "(818) 342-0055"
+telefono: "(81) 8342-0055"
 telefonosAdicionales:
-  - "(811) 052-0700"
+  - "(81) 1052-0700"
 email: "recepcion@bomberosdenuevoleon.org"
 sitioWeb: "https://bomberosdenuevoleon.org"
 redes:

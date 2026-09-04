@@ -16,10 +16,10 @@ coordenadas:
   lat: 19.3334959
   lng: -99.3129362
   precision: "exacta"
-telefono: "(551) 543-6240"
+telefono: "(55) 1543-6240"
 telefonosAdicionales:
-  - "(554) 744-7601"
-  - "(551) 543-6364"
+  - "(55) 4744-7601"
+  - "(55) 1543-6364"
 operador: "Gobierno de la Ciudad de México"
 servicios:
   - "incendios-estructurales"

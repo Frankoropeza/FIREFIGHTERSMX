@@ -10,13 +10,14 @@ tipo: "Municipal"
 corporacion: "Dirección de Protección Civil y Bomberos de Tultepec"
 corporacionSlug: "direccion-de-proteccion-civil-y-bomberos-de-tultepec"
 rolEstacion: "unica"
+direccion: "CALLE AVENIDA ESTADO DE MEXICO CARDENAS Col. EL QUEMADO C.P. 54963"
 coordenadas:
-  lat: 19.6986
-  lng: -99.1261
+  lat: 19.67590587
+  lng: -99.13812849
   precision: "aproximada"
-telefono: "(555) 892-5761"
+telefono: "(55) 5892-5761"
 telefonosAdicionales:
-  - "(555) 892-5760"
+  - "(55) 5892-5760"
 email: "proteccioncivil@tultepec.gob.mx"
 redes:
   twitter: "@pcyb_tultepec"
@@ -39,7 +40,9 @@ fuentes:
     url: "https://www.gob.mx/cenapred/articulos/explosion-en-el-mercado-san-pablito"
   - nombre: "Directorio CGPC EDOMEX 2024"
     url: "https://cgproteccioncivil.edomex.gob.mx/sites/cgproteccioncivil.edomex.gob.mx/files/files/que%20ofrecemos_pdf/Directorio_U_M_2024/D_U_M_21-05-2024.pdf"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=2002959"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

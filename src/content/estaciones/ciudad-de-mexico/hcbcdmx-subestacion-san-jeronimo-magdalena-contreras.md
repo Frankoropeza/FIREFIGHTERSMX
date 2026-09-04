@@ -16,7 +16,7 @@ coordenadas:
   lat: 19.3216439
   lng: -99.2235749
   precision: "exacta"
-telefono: "(559) 386-2912"
+telefono: "(55) 9386-2912"
 operador: "Gobierno de la Ciudad de México"
 servicios:
   - "incendios-estructurales"

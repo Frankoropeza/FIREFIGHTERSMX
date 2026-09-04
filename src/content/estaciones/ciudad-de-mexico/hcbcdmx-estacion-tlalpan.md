@@ -16,10 +16,10 @@ coordenadas:
   lat: 19.2861317
   lng: -99.1562746
   precision: "exacta"
-telefono: "(555) 573-6152"
+telefono: "(55) 5573-6152"
 telefonosAdicionales:
-  - "(555) 573-1096"
-  - "(555) 655-2599"
+  - "(55) 5573-1096"
+  - "(55) 5655-2599"
 operador: "Gobierno de la Ciudad de México"
 servicios:
   - "incendios-estructurales"

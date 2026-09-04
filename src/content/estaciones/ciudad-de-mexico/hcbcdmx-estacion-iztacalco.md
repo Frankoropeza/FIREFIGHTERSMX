@@ -16,9 +16,9 @@ coordenadas:
   lat: 19.398638
   lng: -99.0727816
   precision: "exacta"
-telefono: "(552) 345-3844"
+telefono: "(55) 2345-3844"
 telefonosAdicionales:
-  - "(555) 756-6007"
+  - "(55) 5756-6007"
 operador: "Gobierno de la Ciudad de México"
 servicios:
   - "incendios-estructurales"

@@ -10,10 +10,11 @@ tipo: "Municipal"
 corporacion: "Coordinación de Protección Civil y Bomberos de Atlacomulco"
 corporacionSlug: "coordinacion-de-proteccion-civil-y-bomberos-de-atlacomulco"
 rolEstacion: "unica"
+direccion: "PRIVADA NINGUNO Col. LAS FUENTES C.P. 50450"
 coordenadas:
-  lat: 19.7997
-  lng: -99.8731
-  precision: "aproximada"
+  lat: 19.79919882
+  lng: -99.88633982
+  precision: "exacta"
 telefono: "(712) 122-4455"
 sitioWeb: "https://atlacomulco.gob.mx/tramites-proteccion-civil-y-bomberos/"
 servicios:
@@ -29,7 +30,9 @@ fuentes:
     url: "https://atlacomulco.gob.mx/tramites-proteccion-civil-y-bomberos/"
   - nombre: "alertas.edomex.gob.mx — Atlacomulco"
     url: "https://alertas.edomex.gob.mx/inicio/unidad-municipal-pc/coordinacion-de-proteccion-civil-y-bomberos-atlacomulco/"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=7465357"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

@@ -9,15 +9,17 @@ municipio: "Naucalpan de Juárez"
 tipo: "Municipal"
 corporacion: "Coordinación Municipal de Gestión Integral de Riesgos, Protección Civil y Bomberos de Naucalpan de Juárez"
 corporacionSlug: "coordinacion-municipal-de-gestion-integral-de-riesgos-proteccion-civil-y-bombero"
-rolEstacion: "unica"
+rolEstacion: "central"
+numeroEstacion: "Cuartel Central"
+direccion: "AVENIDA DE LAS GRANJAS 243 Col. EL CHAMIZAL C.P. 53770"
 coordenadas:
-  lat: 19.4836
-  lng: -99.2392
-  precision: "aproximada"
-telefono: "(555) 373-1122"
+  lat: 19.44516217
+  lng: -99.24831804
+  precision: "exacta"
+telefono: "(55) 5373-1122"
 telefonosAdicionales:
-  - "(555) 560-3868"
-  - "(555) 560-5989"
+  - "(55) 5560-3868"
+  - "(55) 5560-5989"
 sitioWeb: "https://naucalpan.gob.mx"
 redes:
   twitter: "@HCBNAUCALPAN1"
@@ -41,7 +43,9 @@ fuentes:
     url: "https://naucalpan.gob.mx/wp-content/uploads/2025/06/PROTECCION-CIVIL-Y-BOMBEROS.pdf"
   - nombre: "naucalpan.gob.mx — donación Ford México may 2026"
     url: "https://naucalpan.gob.mx/ford-mexico-reafirma-su-confianza-en-naucalpan-con-inversion-social-tecnologica-y-con-donacion-de-unidad/"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=2081646"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

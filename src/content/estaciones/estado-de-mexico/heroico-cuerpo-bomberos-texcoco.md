@@ -10,10 +10,11 @@ tipo: "Municipal"
 corporacion: "H. Cuerpo de Bomberos de Texcoco"
 corporacionSlug: "h-cuerpo-de-bomberos-de-texcoco"
 rolEstacion: "unica"
+direccion: "CALLE LIRIOS Col. EL XOLACHE C.P. 56170"
 coordenadas:
-  lat: 19.5167
-  lng: -98.8819
-  precision: "aproximada"
+  lat: 19.52037946
+  lng: -98.89079580
+  precision: "exacta"
 telefono: "(595) 954-7995"
 telefonosAdicionales:
   - "(595) 954-2285"
@@ -38,7 +39,9 @@ fuentes:
     url: "https://contrapapel.mx/texcoco/57990/"
   - nombre: "alertas.edomex.gob.mx — Texcoco"
     url: "https://alertas.edomex.gob.mx/inicio/unidad-municipal-pc/coordinacion-de-proteccion-civil-y-bomberos-texcoco/"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=8875958"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

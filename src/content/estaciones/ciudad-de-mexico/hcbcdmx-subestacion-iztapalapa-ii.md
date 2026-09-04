@@ -16,10 +16,10 @@ coordenadas:
   lat: 19.3793613
   lng: -99.1638903
   precision: "exacta"
-telefono: "(555) 744-5345"
+telefono: "(55) 5744-5345"
 telefonosAdicionales:
-  - "(555) 744-5354"
-  - "(552) 633-7442"
+  - "(55) 5744-5354"
+  - "(55) 2633-7442"
 operador: "Gobierno de la Ciudad de México"
 servicios:
   - "incendios-estructurales"

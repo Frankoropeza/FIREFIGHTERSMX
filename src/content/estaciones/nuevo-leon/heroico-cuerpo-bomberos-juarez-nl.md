@@ -14,7 +14,7 @@ coordenadas:
   lat: 25.6559
   lng: -100.1194
   precision: "aproximada"
-telefono: "(811) 771-2070"
+telefono: "(81) 1771-2070"
 sitioWeb: "https://juarez-nl.gob.mx/direccion-proteccion-civil-y-bomberos/"
 operador: "Dirección de Protección Civil y Bomberos del H. Ayuntamiento de Juárez, N.L."
 servicios:

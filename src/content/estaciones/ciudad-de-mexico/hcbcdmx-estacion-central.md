@@ -16,11 +16,11 @@ coordenadas:
   lat: 19.4222724
   lng: -99.1260212
   precision: "exacta"
-telefono: "(555) 768-3700"
+telefono: "(55) 5768-3700"
 telefonosAdicionales:
-  - "(555) 552-0574"
-  - "(555) 768-2465"
-  - "(555) 768-3477"
+  - "(55) 5552-0574"
+  - "(55) 5768-2465"
+  - "(55) 5768-3477"
 email: "correspondencia_subp@hcb.cdmx.gob.mx"
 sitioWeb: "https://www.bomberos.cdmx.gob.mx"
 redes:

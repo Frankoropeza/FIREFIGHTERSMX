@@ -16,9 +16,9 @@ coordenadas:
   lat: 19.1971661
   lng: -99.0357853
   precision: "exacta"
-telefono: "(558) 957-1744"
+telefono: "(55) 8957-1744"
 telefonosAdicionales:
-  - "(558) 957-1743"
+  - "(55) 8957-1743"
 operador: "Gobierno de la Ciudad de México"
 servicios:
   - "incendios-estructurales"

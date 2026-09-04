@@ -15,9 +15,9 @@ coordenadas:
   lat: 19.548874
   lng: -99.1408918
   precision: "exacta"
-telefono: "(555) 667-8004"
+telefono: "(55) 5667-8004"
 telefonosAdicionales:
-  - "(558) 717-9889"
+  - "(55) 8717-9889"
 operador: "Gobierno de la Ciudad de México"
 servicios:
   - "incendios-estructurales"

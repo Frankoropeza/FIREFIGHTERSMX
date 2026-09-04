@@ -16,10 +16,10 @@ coordenadas:
   lat: 19.3726377
   lng: -99.1513845
   precision: "exacta"
-telefono: "(555) 672-8955"
+telefono: "(55) 5672-8955"
 telefonosAdicionales:
-  - "(555) 672-9124"
-  - "(555) 672-9212"
+  - "(55) 5672-9124"
+  - "(55) 5672-9212"
 operador: "Gobierno de la Ciudad de México"
 servicios:
   - "incendios-estructurales"

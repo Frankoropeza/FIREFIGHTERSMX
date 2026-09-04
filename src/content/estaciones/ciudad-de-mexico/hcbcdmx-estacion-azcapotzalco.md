@@ -16,10 +16,10 @@ coordenadas:
   lat: 19.4832228
   lng: -99.1826687
   precision: "exacta"
-telefono: "(555) 561-7040"
+telefono: "(55) 5561-7040"
 telefonosAdicionales:
-  - "(555) 561-9004"
-  - "(558) 934-0176"
+  - "(55) 5561-9004"
+  - "(55) 8934-0176"
 operador: "Gobierno de la Ciudad de México"
 servicios:
   - "incendios-estructurales"

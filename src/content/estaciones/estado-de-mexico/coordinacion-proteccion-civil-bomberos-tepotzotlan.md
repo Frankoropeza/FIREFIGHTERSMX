@@ -10,11 +10,12 @@ tipo: "Municipal"
 corporacion: "Coordinación de Protección Civil y Bomberos de Tepotzotlán"
 corporacionSlug: "coordinacion-de-proteccion-civil-y-bomberos-de-tepotzotlan"
 rolEstacion: "unica"
+direccion: "BOULEVARD LIBRAMIENTO SUR Col. TEXCACOAC C.P. 54605"
 coordenadas:
-  lat: 19.7144
-  lng: -99.2561
-  precision: "aproximada"
-telefono: "(558) 764-8848"
+  lat: 19.70505922
+  lng: -99.22086695
+  precision: "exacta"
+telefono: "(55) 8764-8848"
 sitioWeb: "https://www.tepotzotlan.gob.mx/pcybt"
 redes:
   twitter: "@PCYBTepotzotlan"
@@ -32,7 +33,9 @@ fuentes:
     url: "https://www.tepotzotlan.gob.mx/pcybt"
   - nombre: "capitaledomex.com.mx — subestación Tepotzotlán"
     url: "https://www.capitaledomex.com.mx/local/inaugura-gely-zuppa-nueva-subestacion-de-proteccion-civil-y-bomberos-en-tepotzotlan/"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=2473190"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

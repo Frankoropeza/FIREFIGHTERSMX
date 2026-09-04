@@ -15,7 +15,7 @@ coordenadas:
   lat: 20.6597
   lng: -103.3496
   precision: "exacta"
-telefono: "(331) 201-7200"
+telefono: "(33) 1201-7200"
 sitioWeb: "https://guadalajara.gob.mx/"
 redes:
   twitter: "PCYBOMGDL"

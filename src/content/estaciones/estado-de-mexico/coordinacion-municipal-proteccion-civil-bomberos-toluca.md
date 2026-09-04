@@ -10,9 +10,10 @@ tipo: "Municipal"
 corporacion: "Coordinación Municipal de Protección Civil y Bomberos de Toluca"
 corporacionSlug: "coordinacion-municipal-de-proteccion-civil-y-bomberos-de-toluca"
 rolEstacion: "unica"
+direccion: "CALLE 28 DE OCTUBRE Col. SAN SEBASTIÁN Y VÉRTICE C.P. 50150"
 coordenadas:
-  lat: 19.2826
-  lng: -99.6557
+  lat: 19.28725929
+  lng: -99.63714314
   precision: "aproximada"
 telefono: "(722) 217-8858"
 telefonosAdicionales:
@@ -46,7 +47,9 @@ fuentes:
     url: "https://www.posta.com.mx/mexico/85-anos-del-heroico-cuerpo-de-bomberos-de-toluca/vl1611272"
   - nombre: "Ayuntamiento Toluca — mejoras may 2025"
     url: "https://www2.toluca.gob.mx/mejoran-bomberos-de-toluca-en-beneficio-de-la-ciudania/"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=2498804"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

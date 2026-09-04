@@ -16,10 +16,10 @@ coordenadas:
   lat: 19.250258
   lng: -99.1087764
   precision: "exacta"
-telefono: "(555) 555-8420"
+telefono: "(55) 5555-8420"
 telefonosAdicionales:
-  - "(555) 555-8987"
-  - "(557) 090-8015"
+  - "(55) 5555-8987"
+  - "(55) 7090-8015"
 operador: "Gobierno de la Ciudad de México"
 servicios:
   - "incendios-estructurales"

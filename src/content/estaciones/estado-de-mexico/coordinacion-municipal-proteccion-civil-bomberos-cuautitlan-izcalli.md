@@ -10,11 +10,12 @@ tipo: "Municipal"
 corporacion: "Coordinación Municipal de Protección Civil y Bomberos de Cuautitlán Izcalli"
 corporacionSlug: "coordinacion-municipal-de-proteccion-civil-y-bomberos-de-cuautitlan-izcalli"
 rolEstacion: "unica"
+direccion: "CALLE BOSQUES DE BOLOGNIA Col. BOSQUES DEL LAGO SECTOR 1 C.P. 54766"
 coordenadas:
-  lat: 19.6456
-  lng: -99.2192
-  precision: "aproximada"
-telefono: "(552) 620-1909"
+  lat: 19.61874410
+  lng: -99.23780264
+  precision: "exacta"
+telefono: "(55) 2620-1909"
 sitioWeb: "https://cuautitlanizcalli.gob.mx"
 redes:
   twitter: "@GobIzcalli"
@@ -36,7 +37,9 @@ fuentes:
     url: "https://cuautitlanizcalli.gob.mx/wp-content/uploads/2025/02/PARTES-DE-SERVICIO.pdf"
   - nombre: "cuautitlanizcalli.gob.mx — incendio parque industrial"
     url: "https://cuautitlanizcalli.gob.mx/gobierno-de-cuautitlan-izcalli-sofoca-incendio-en-parque-industrial/"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=1988591"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

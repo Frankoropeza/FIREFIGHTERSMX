@@ -10,10 +10,11 @@ tipo: "Municipal"
 corporacion: "Dirección de Protección Civil, Bomberos y Ecología de Valle de Bravo"
 corporacionSlug: "direccion-de-proteccion-civil-bomberos-y-ecologia-de-valle-de-bravo"
 rolEstacion: "unica"
+direccion: "BOULEVARD JUAN HERRERA Y PIÑA Col. VALLE DE BRAVO C.P. 51200"
 coordenadas:
-  lat: 19.1925
-  lng: -100.1311
-  precision: "aproximada"
+  lat: 19.20567435
+  lng: -100.12639277
+  precision: "exacta"
 telefono: "(726) 262-4498"
 sitioWeb: "https://valledebravo.gob.mx"
 servicios:
@@ -32,7 +33,9 @@ fuentes:
     url: "https://mejoraregulatoria.valledebravo.gob.mx/documentos/rmtys/2025/Direccion_de_protecci%C3%B3n_civil_bomberos_y_ecol%C3%B3gia/Bomberos/escaneo09042025_001.pdf"
   - nombre: "umamexico.com — incendios Valle de Bravo 2025"
     url: "https://umamexico.com/incendios-2025-en-valle-de-bravo-y-el-fondo-ciudadano-en-apoyo-a-brigadistas-forestales/"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=2539538"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

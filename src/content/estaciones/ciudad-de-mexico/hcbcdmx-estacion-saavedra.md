@@ -16,10 +16,10 @@ coordenadas:
   lat: 19.4697713
   lng: -99.1181626
   precision: "exacta"
-telefono: "(555) 517-0330"
+telefono: "(55) 5517-0330"
 telefonosAdicionales:
-  - "(555) 759-5785"
-  - "(555) 517-4469"
+  - "(55) 5759-5785"
+  - "(55) 5517-4469"
 operador: "Gobierno de la Ciudad de México"
 servicios:
   - "incendios-estructurales"

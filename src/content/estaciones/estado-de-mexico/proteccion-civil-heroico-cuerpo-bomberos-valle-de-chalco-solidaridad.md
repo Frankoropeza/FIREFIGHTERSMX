@@ -10,11 +10,12 @@ tipo: "Municipal"
 corporacion: "Protección Civil y H. Cuerpo de Bomberos de Valle de Chalco Solidaridad"
 corporacionSlug: "proteccion-civil-y-h-cuerpo-de-bomberos-de-valle-de-chalco-solidaridad"
 rolEstacion: "unica"
+direccion: "AVENIDA TEZOZOMOC Col. SAN MIGUEL XICO SEGUNDA SECCIÓN C.P. 56617"
 coordenadas:
-  lat: 19.3064
-  lng: -98.9744
-  precision: "aproximada"
-telefono: "(555) 971-1177"
+  lat: 19.27622523
+  lng: -98.93478259
+  precision: "exacta"
+telefono: "(55) 5971-1177"
 email: "bomberos@valledechalco.gob.mx"
 sitioWeb: "https://valledechalco.gob.mx/dependencia.php?id_direccion=6"
 redes:
@@ -30,7 +31,9 @@ serviciosDetalle:
 fuentes:
   - nombre: "valledechalco.gob.mx — PC y Bomberos"
     url: "https://valledechalco.gob.mx/dependencia.php?id_direccion=6"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=2368041"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

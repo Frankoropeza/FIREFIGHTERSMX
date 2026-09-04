@@ -16,7 +16,7 @@ coordenadas:
   lat: 20.45249182
   lng: -103.43374557
   precision: "exacta"
-telefono: "(333) 798-1598"
+telefono: "(33) 3798-1598"
 sitioWeb: "https://tlajomulco.gob.mx/"
 servicios:
   - "incendios-estructurales"

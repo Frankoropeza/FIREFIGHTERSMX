@@ -11,9 +11,9 @@ corporacion: "Coordinación de Protección Civil y H. Cuerpo de Bomberos de El O
 corporacionSlug: "coordinacion-de-proteccion-civil-y-h-cuerpo-de-bomberos-de-el-oro-de-hidalgo"
 rolEstacion: "unica"
 coordenadas:
-  lat: 19.8071
-  lng: -100.1314
-  precision: "aproximada"
+  lat: 19.80318846
+  lng: -100.12727966
+  precision: "exacta"
 telefono: "(711) 125-0475"
 telefonosAdicionales:
   - "(711) 125-0866"
@@ -31,7 +31,9 @@ fuentes:
     url: "https://alertas.edomex.gob.mx/inicio/unidad-municipal-pc/coordinacion-de-proteccion-civil-y-bomberos-el-oro/"
   - nombre: "eloromexico.gob.mx — Reglamento PC Bomberos 2020"
     url: "https://www.eloromexico.gob.mx/GACETAS/2020/Gaceta104RegProtCivil.pdf"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=2460456"
+verificadoEl: "2026-09"
 confianza: "media"
 activa: true
 ---

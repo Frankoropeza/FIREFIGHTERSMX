@@ -16,10 +16,10 @@ coordenadas:
   lat: 19.3062779
   lng: -99.2662154
   precision: "exacta"
-telefono: "(555) 667-4377"
+telefono: "(55) 5667-4377"
 telefonosAdicionales:
-  - "(555) 667-4414"
-  - "(558) 944-7773"
+  - "(55) 5667-4414"
+  - "(55) 8944-7773"
 operador: "Gobierno de la Ciudad de México"
 servicios:
   - "incendios-estructurales"

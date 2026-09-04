@@ -14,7 +14,7 @@ coordenadas:
   lat: 25.7474
   lng: -100.2962
   precision: "aproximada"
-telefono: "(818) 350-6810"
+telefono: "(81) 8350-6810"
 sitioWeb: "https://sanicolas.gob.mx"
 redes:
   facebook: "https://www.facebook.com/GobSanNicolas"

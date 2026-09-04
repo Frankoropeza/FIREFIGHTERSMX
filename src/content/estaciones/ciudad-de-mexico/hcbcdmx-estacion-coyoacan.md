@@ -16,10 +16,10 @@ coordenadas:
   lat: 19.3231514
   lng: -99.1072552
   precision: "exacta"
-telefono: "(555) 656-1044"
+telefono: "(55) 5656-1044"
 telefonosAdicionales:
-  - "(555) 656-1047"
-  - "(558) 985-0080"
+  - "(55) 5656-1047"
+  - "(55) 8985-0080"
 operador: "Gobierno de la Ciudad de México"
 servicios:
   - "incendios-estructurales"

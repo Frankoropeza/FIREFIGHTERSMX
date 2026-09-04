@@ -16,10 +16,10 @@ coordenadas:
   lat: 19.386141
   lng: -99.2017399
   precision: "exacta"
-telefono: "(555) 271-2480"
+telefono: "(55) 5271-2480"
 telefonosAdicionales:
-  - "(555) 271-4616"
-  - "(555) 271-5160"
+  - "(55) 5271-4616"
+  - "(55) 5271-5160"
 operador: "Gobierno de la Ciudad de México"
 servicios:
   - "incendios-estructurales"

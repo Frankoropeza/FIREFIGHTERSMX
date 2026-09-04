@@ -10,11 +10,12 @@ tipo: "Municipal"
 corporacion: "Coordinación de Protección Civil y Bomberos de Tecámac"
 corporacionSlug: "coordinacion-de-proteccion-civil-y-bomberos-de-tecamac"
 rolEstacion: "unica"
+direccion: "AVENIDA MEXIQUENSE Col. LOS HÉROES SECCIÓN BOSQUES C.P. 55764"
 coordenadas:
-  lat: 19.7178
-  lng: -98.9644
-  precision: "aproximada"
-telefono: "(555) 936-1060"
+  lat: 19.63305709
+  lng: -99.02959873
+  precision: "exacta"
+telefono: "(55) 5936-1060"
 email: "proteccioncivil@tecamac.gob.mx"
 sitioWeb: "https://tecamac.gob.mx/APP_tramites/tramitesyservicios/cormunprobom001.php"
 servicios:
@@ -30,7 +31,9 @@ fuentes:
     url: "https://tecamac.gob.mx/APP_tramites/tramitesyservicios/cormunprobom001.php"
   - nombre: "Directorio CGPC EDOMEX jun 2025"
     url: "https://cgproteccioncivil.edomex.gob.mx/sites/cgproteccioncivil.edomex.gob.mx/files/files/Que%20ofrecemos%202025/DIR-U-MUNICPALES/DIRECTORIO-JUNIO2025.pdf"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=11844499"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

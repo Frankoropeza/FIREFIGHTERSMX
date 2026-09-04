@@ -9,12 +9,14 @@ municipio: "Nezahualcóyotl"
 tipo: "Municipal"
 corporacion: "Coordinación de Protección Civil, Bomberos y Rescate de Nezahualcóyotl"
 corporacionSlug: "coordinacion-de-proteccion-civil-bomberos-y-rescate-de-nezahualcoyotl"
-rolEstacion: "unica"
+rolEstacion: "central"
+numeroEstacion: "Cuartel Central"
+direccion: "AVENIDA CUARTA AVENIDA Col. ESTADO DE MEXICO C.P. 57210"
 coordenadas:
-  lat: 19.4014
-  lng: -99.0147
+  lat: 19.42368314
+  lng: -99.04248834
   precision: "aproximada"
-telefono: "(552) 619-7979"
+telefono: "(55) 2619-7979"
 email: "proteccioncivil@nezahualcoyotl.gob.mx"
 sitioWeb: "https://nezahualcoyotl.gob.mx"
 servicios:
@@ -36,7 +38,9 @@ fuentes:
     url: "https://neza.gob.mx/manual/archivos/1.%20Organización/9.%20Organización%20Seguridad%20Ciudadana.pdf"
   - nombre: "Milenio — muere fundador bomberos Neza"
     url: "https://www.milenio.com/estados/muere-fundador-del-cuerpo-de-bomberos-de-nezahualcoyotl"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=2000258"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

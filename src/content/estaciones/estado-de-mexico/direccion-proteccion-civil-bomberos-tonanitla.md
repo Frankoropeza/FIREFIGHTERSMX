@@ -10,11 +10,12 @@ tipo: "Municipal"
 corporacion: "Dirección de Protección Civil y Bomberos de Tonanitla"
 corporacionSlug: "direccion-de-proteccion-civil-y-bomberos-de-tonanitla"
 rolEstacion: "unica"
+direccion: "CALLE 18 DE MARZO Col. LA CONCEPCION C.P. 55785"
 coordenadas:
-  lat: 19.7591
-  lng: -99.0764
-  precision: "aproximada"
-telefono: "(555) 938-2688"
+  lat: 19.69090367
+  lng: -99.04914640
+  precision: "exacta"
+telefono: "(55) 5938-2688"
 email: "proteccioncivil@tonanitla.gob.mx"
 sitioWeb: "https://www.tonanitla.gob.mx/mr-proteccion-civil-y-bomberos"
 servicios:
@@ -30,7 +31,9 @@ fuentes:
     url: "https://www.tonanitla.gob.mx/mr-proteccion-civil-y-bomberos"
   - nombre: "Directorio CGPC EDOMEX 2024"
     url: "https://cgproteccioncivil.edomex.gob.mx/sites/cgproteccioncivil.edomex.gob.mx/files/files/que%20ofrecemos_pdf/Directorio_U_M_2024/D_U_M_21-05-2024.pdf"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=8332972"
+verificadoEl: "2026-09"
 confianza: "media"
 activa: true
 ---

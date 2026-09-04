@@ -16,10 +16,10 @@ coordenadas:
   lat: 19.4554236
   lng: -99.1863297
   precision: "exacta"
-telefono: "(555) 527-7004"
+telefono: "(55) 5527-7004"
 telefonosAdicionales:
-  - "(555) 527-9633"
-  - "(555) 527-1576"
+  - "(55) 5527-9633"
+  - "(55) 5527-1576"
 operador: "Gobierno de la Ciudad de México"
 servicios:
   - "incendios-estructurales"

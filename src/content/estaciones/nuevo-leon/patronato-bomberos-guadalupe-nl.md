@@ -15,7 +15,7 @@ coordenadas:
   lat: 25.6827
   lng: -100.24
   precision: "exacta"
-telefono: "(814) 040-0021"
+telefono: "(81) 4040-0021"
 sitioWeb: "https://guadalupe.gob.mx"
 redes:
   facebook: "https://www.facebook.com/GobSanNicolas"

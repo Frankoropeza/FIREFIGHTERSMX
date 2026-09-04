@@ -16,7 +16,7 @@ coordenadas:
   lat: 19.3529774
   lng: -99.2732471
   precision: "exacta"
-telefono: "(559) 388-5908"
+telefono: "(55) 9388-5908"
 operador: "Gobierno de la Ciudad de México"
 servicios:
   - "incendios-estructurales"

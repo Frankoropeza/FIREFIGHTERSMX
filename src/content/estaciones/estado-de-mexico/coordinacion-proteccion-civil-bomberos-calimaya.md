@@ -10,10 +10,11 @@ tipo: "Municipal"
 corporacion: "Coordinación de Protección Civil y Bomberos de Calimaya"
 corporacionSlug: "coordinacion-de-proteccion-civil-y-bomberos-de-calimaya"
 rolEstacion: "unica"
+direccion: "CALLE PRICILIANO DIAZ GONZALEZ Col. LAS TORRES C.P. 52200"
 coordenadas:
-  lat: 19.1621
-  lng: -99.6187
-  precision: "aproximada"
+  lat: 19.16340889
+  lng: -99.60955820
+  precision: "exacta"
 telefono: "(722) 171-7171"
 email: "proteccion.civil.bomberos@calimaya.gob.mx"
 servicios:
@@ -27,7 +28,9 @@ serviciosDetalle:
 fuentes:
   - nombre: "Directorio CGPC EDOMEX jun 2025"
     url: "https://cgproteccioncivil.edomex.gob.mx/sites/cgproteccioncivil.edomex.gob.mx/files/files/Que%20ofrecemos%202025/DIR-U-MUNICPALES/DIRECTORIO-JUNIO2025.pdf"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=11409875"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

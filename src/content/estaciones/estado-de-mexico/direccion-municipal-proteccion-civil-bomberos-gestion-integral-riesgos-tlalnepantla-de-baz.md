@@ -10,13 +10,14 @@ tipo: "Municipal"
 corporacion: "Dirección Municipal de Protección Civil, Bomberos y Gestión Integral de Riesgos de Tlalnepantla de Baz"
 corporacionSlug: "direccion-municipal-de-proteccion-civil-bomberos-y-gestion-integral-de-riesgos-d"
 rolEstacion: "unica"
+direccion: "ANDADOR CAMILO CIENFUEGOS Col. UNIDAD HABITACIONAL EL ROSARIO II C.P. 54090"
 coordenadas:
-  lat: 19.5428
-  lng: -99.205
+  lat: 19.51114146
+  lng: -99.17941260
   precision: "aproximada"
-telefono: "(555) 088-2725"
+telefono: "(55) 5088-2725"
 telefonosAdicionales:
-  - "(555) 366-4450"
+  - "(55) 5366-4450"
 sitioWeb: "https://portal.tlalnepantla.gob.mx"
 redes:
   twitter: "@PCTlalne"
@@ -40,7 +41,9 @@ fuentes:
     url: "https://portal.tlalnepantla.gob.mx/pages/directorio/"
   - nombre: "tlalnepantla.gob.mx — emergencia química Galvanolyte"
     url: "https://tlalnepantla.gob.mx/pages/noticias/bomberos-y-elementos-de-proteccion-civil-de-tlalnepantla-contienen-emergencia-por-derrame-de-quimi"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=10109559"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

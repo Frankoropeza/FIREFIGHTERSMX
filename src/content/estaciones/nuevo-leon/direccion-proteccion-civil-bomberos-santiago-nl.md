@@ -14,7 +14,7 @@ coordenadas:
   lat: 25.4282
   lng: -100.1485
   precision: "aproximada"
-telefono: "(811) 246-0010"
+telefono: "(81) 1246-0010"
 sitioWeb: "https://www.santiago.gob.mx"
 redes:
   facebook: "https://www.facebook.com/PCSantiagoNL"

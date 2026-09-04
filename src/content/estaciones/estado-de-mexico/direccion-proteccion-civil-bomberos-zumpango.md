@@ -10,10 +10,11 @@ tipo: "Municipal"
 corporacion: "Dirección de Protección Civil y Bomberos de Zumpango"
 corporacionSlug: "direccion-de-proteccion-civil-y-bomberos-de-zumpango"
 rolEstacion: "unica"
+direccion: "CERRADA ZARAGOZA Col. DE SANTIAGO PRIMERA SECCIÓN C.P. 55600"
 coordenadas:
-  lat: 19.7908
-  lng: -99.1
-  precision: "aproximada"
+  lat: 19.80459930
+  lng: -99.10137060
+  precision: "exacta"
 telefono: "(591) 918-3185"
 telefonosAdicionales:
   - "(591) 911-4358"
@@ -33,7 +34,9 @@ fuentes:
     url: "https://zumpango.gob.mx/documentos_bomberos.html"
   - nombre: "alertas.edomex.gob.mx — Zumpango"
     url: "https://alertas.edomex.gob.mx/inicio/unidad-municipal-pc/direccion-de-proteccion-civil-y-bomberos-zumpango/"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=2245929"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

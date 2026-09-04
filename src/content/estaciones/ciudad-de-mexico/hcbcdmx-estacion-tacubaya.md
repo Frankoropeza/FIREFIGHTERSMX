@@ -16,10 +16,10 @@ coordenadas:
   lat: 19.4282673
   lng: -99.255065
   precision: "exacta"
-telefono: "(555) 515-5994"
+telefono: "(55) 5515-5994"
 telefonosAdicionales:
-  - "(555) 515-0437"
-  - "(555) 515-2399"
+  - "(55) 5515-0437"
+  - "(55) 5515-2399"
 operador: "Gobierno de la Ciudad de México"
 servicios:
   - "incendios-estructurales"

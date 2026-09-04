@@ -15,9 +15,9 @@ coordenadas:
   lat: 19.3366578
   lng: -99.2296773
   precision: "exacta"
-telefono: "(555) 705-4233"
+telefono: "(55) 5705-4233"
 telefonosAdicionales:
-  - "(558) 931-0724"
+  - "(55) 8931-0724"
 operador: "Gobierno de la Ciudad de México"
 servicios:
   - "incendios-estructurales"

@@ -14,7 +14,7 @@ coordenadas:
   lat: 20.0133
   lng: -99.7286
   precision: "aproximada"
-telefono: "(554) 911-6262"
+telefono: "(55) 4911-6262"
 servicios:
   - "incendios-estructurales"
   - "rescate-vehicular"
