@@ -456,8 +456,8 @@ html.no-js .reveal { opacity: 1; transform: none; }
 .hero-search:focus-within { border-color: rgba(247,80,0,0.7); box-shadow: 0 0 0 3px rgba(247,80,0,0.15); }
 .hero-search .input, .hero-search .select { background: transparent; border: 0; border-radius: 0; }
 .hero-search .input:focus, .hero-search .select:focus { box-shadow: none; }
-.hero-search .sep { width: 1px; background: rgba(74,117,153,0.35); align-self: stretch; }
-@media (max-width: 767px) { .hero-search .sep { width: auto; height: 1px; } }
+.hero-search .select { color: #FFFFFF; }
+.hero-search .select option { background: #0C1825; }
 
 /* Cifra grande con tabular nums */
 .stat-num { font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
