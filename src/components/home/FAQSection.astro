@@ -1,5 +1,5 @@
 ---
-import { SITE, whatsappUrl } from '@config/site';
+import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl } from '@config/site';
 import { homeFaqs as faqs } from '@data/faqs';
 ---
 
@@ -63,7 +63,7 @@ import { homeFaqs as faqs } from '@data/faqs';
             Respuesta en menos de 2 horas en días hábiles. Con fichas técnicas incluidas.
           </p>
 
-          <form data-wa-form data-wa={SITE.whatsapp} method="POST" action="/api/cotizacion" class="flex flex-col gap-4">
+          <form data-wa-form data-wa={SITE.whatsapp} data-mail={SITE.email} method="POST" action="/api/cotizacion" class="flex flex-col gap-4">
             <div class="grid grid-cols-2 gap-3">
               <div>
                 <label for="faq-nombre" class="label">Nombre *</label>
@@ -130,7 +130,13 @@ import { homeFaqs as faqs } from '@data/faqs';
         lines.push(`${label}: ${v}`);
       }
       const text = encodeURIComponent(lines.join('\n'));
-      window.open(`https://wa.me/${num}?text=${text}`, '_blank', 'noopener');
+      // Sin número verificado (CONTACTO_DIRECTO_ACTIVO=false) el form cae a correo.
+      const mail = f.getAttribute('data-mail');
+      if (num) {
+        window.open(`https://wa.me/${num}?text=${text}`, '_blank', 'noopener');
+      } else if (mail) {
+        window.location.href = `mailto:${mail}?subject=${encodeURIComponent('Cotización — FIREFIGHTERS MX')}&body=${text}`;
+      }
     });
   });
 </script>

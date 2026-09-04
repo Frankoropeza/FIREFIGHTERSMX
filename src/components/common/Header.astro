@@ -1,6 +1,6 @@
 ---
 import { navigation } from '@data/navigation';
-import { SITE, whatsappUrl } from '@config/site';
+import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl } from '@config/site';
 import TopBar from '@components/common/TopBar.astro';
 
 const pathname = Astro.url.pathname;
@@ -155,7 +155,8 @@ const isActive = (href: string) =>
 
       <!-- ── ACCIONES DESKTOP ─────────────────────────────────────── -->
       <div class="flex items-center gap-2">
-        <a
+        {CONTACTO_DIRECTO_ACTIVO && (
+<a
           href={`tel:${SITE.phoneE164}`}
           class="hidden 2xl:flex items-center gap-1.5 text-xs font-medium px-3 py-2 border border-[var(--color-border)] rounded-sm hover:border-[var(--ember-500)]"
           style="color:var(--forge-200)"
@@ -165,6 +166,7 @@ const isActive = (href: string) =>
           </svg>
           {SITE.phone}
         </a>
+)}
 
         <a
           href={whatsappUrl('Hola, quiero cotizar equipo para bomberos.')}
@@ -352,7 +354,8 @@ const isActive = (href: string) =>
 
       <!-- Info de contacto al pie del menú -->
       <div class="mt-5 pt-4 flex flex-col gap-2" style="border-top:1px solid rgba(74,117,153,0.15)">
-        <a
+        {CONTACTO_DIRECTO_ACTIVO && (
+<a
           href={`tel:${SITE.phoneE164}`}
           class="flex items-center gap-2 text-sm py-1"
           style="color:var(--forge-200)"
@@ -362,6 +365,7 @@ const isActive = (href: string) =>
           </svg>
           {SITE.phone}
         </a>
+)}
         <p class="text-xs" style="color:var(--forge-400)">{SITE.hours}</p>
       </div>
     </nav>

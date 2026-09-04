@@ -13,7 +13,7 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import { estados } from '@data/cobertura';
-import { SITE, whatsappUrl } from '@config/site';
+import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl } from '@config/site';
 import type { GetStaticPaths } from 'astro';
 
 export const getStaticPaths = (() => {
@@ -53,7 +53,7 @@ const localBusinessSchema = {
   '@id': `${SITE.url}/#store`,
   name: SITE.name,
   url: SITE.url,
-  telephone: SITE.phoneE164,
+  ...(CONTACTO_DIRECTO_ACTIVO ? { telephone: SITE.phoneE164 } : {}),
   areaServed: [
     {
       '@type': 'State',

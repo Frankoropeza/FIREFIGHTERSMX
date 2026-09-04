@@ -1,5 +1,5 @@
 ---
-import { SITE, whatsappUrl } from '@config/site';
+import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl } from '@config/site';
 ---
 
 <div class="hidden md:block w-full" style="background:#020810;border-bottom:1px solid rgba(74,117,153,0.12)">
@@ -64,8 +64,9 @@ import { SITE, whatsappUrl } from '@config/site';
 
       <span class="hidden lg:block w-px h-3 shrink-0" style="background:rgba(74,117,153,0.2)"></span>
 
-      <!-- Teléfono -->
-      <a
+      <!-- Teléfono (solo si hay número verificado) -->
+      {CONTACTO_DIRECTO_ACTIVO && (
+            <a
         href={`tel:${SITE.phoneE164}`}
         class="flex items-center gap-1.5"
         style="color:#94A3B8"
@@ -77,6 +78,8 @@ import { SITE, whatsappUrl } from '@config/site';
         </svg>
         <span class="text-[11px] font-medium">{SITE.phone}</span>
       </a>
+
+      )}
 
       <span class="w-px h-3 shrink-0" style="background:rgba(74,117,153,0.2)"></span>
 

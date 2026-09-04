@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
-import { SITE, whatsappUrl } from '@config/site';
+import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl } from '@config/site';
 
 const canonicalURL = `${SITE.url}/cotizacion/`;
 
@@ -120,7 +120,7 @@ const breadcrumbSchema = {
       </div>
 
       <div class="max-w-3xl" style="background:#0C1825;border:1px solid rgba(74,117,153,0.18);padding:2rem">
-        <form data-wa-form data-wa={SITE.whatsapp} method="POST" action="/api/cotizacion" class="flex flex-col gap-6">
+        <form data-wa-form data-wa={SITE.whatsapp} data-mail={SITE.email} method="POST" action="/api/cotizacion" class="flex flex-col gap-6">
           <div class="grid sm:grid-cols-2 gap-5">
             <div>
               <label for="nombre" class="label">Nombre completo *</label>
@@ -222,7 +222,13 @@ const breadcrumbSchema = {
           lines.push(`${label}: ${v}`);
         }
         const text = encodeURIComponent(lines.join('\n'));
+        // Sin número verificado (CONTACTO_DIRECTO_ACTIVO=false) el form cae a correo.
+      const mail = f.getAttribute('data-mail');
+      if (num) {
         window.open(`https://wa.me/${num}?text=${text}`, '_blank', 'noopener');
+      } else if (mail) {
+        window.location.href = `mailto:${mail}?subject=${encodeURIComponent('Cotización — FIREFIGHTERS MX')}&body=${text}`;
+      }
       });
     });
   </script>
