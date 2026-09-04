@@ -103,4 +103,4 @@ Si hay una sola casilla sin marcar, no entregues todavía. El tiempo que tardas 
 
 ¿Necesitas que tu memoria de cálculo hidráulico pase el DRO sin contratiempos? En FIREFIGHTERS MX diseñamos e instalamos sistemas de rociadores NFPA 13 con toda la documentación técnica requerida para trámites en CDMX, Estado de México y los principales parques industriales del Bajío.
 
-[Ver servicio de Instalación de Sistemas CI](/servicios/instalacion-sistemas-ci)
+[Servicio de Instalación de Sistemas CI](/servicios/instalacion-sistemas-ci)

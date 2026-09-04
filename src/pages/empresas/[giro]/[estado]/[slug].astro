@@ -100,7 +100,7 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
           {basica && (
             <div class="mt-6 p-5 flex flex-col sm:flex-row sm:items-center gap-4" style="background:#0C1825;border:1px solid rgba(74,117,153,0.25);border-left:3px solid #94A3B8">
               <p class="text-xs leading-relaxed flex-1" style="color:#94A3B8"><strong style="color:#CBD5E1">Registro público sin verificar.</strong> Los datos provienen del DENUE (INEGI) y no han sido confirmados por la empresa. Si eres el responsable, reclama la ficha para completarla y obtener el sello de datos verificados.</p>
-              <a href="/empresas/registro/" class="btn btn-sm btn-outline shrink-0">Reclamar ficha</a>
+              <a href="/empresas/registro/" class="btn btn-sm btn-outline shrink-0">Reclamar la ficha de {e.nombre}</a>
             </div>
           )}
         </div>
@@ -124,7 +124,7 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
           <div>
             <span class="section-eyebrow mb-4 inline-flex">Otras empresas de {g.labelCorto.toLowerCase()} en {edo.nombre}</span>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">{cercanas.map((c) => <EmpresaCard e={c} />)}</div>
-            <a href={`/empresas/${e.giroPrincipal}/${e.estado}/`} class="inline-flex mt-5 font-display font-semibold text-xs uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57">Ver todas en {edo.nombre} →</a>
+            <a href={`/empresas/${e.giroPrincipal}/${e.estado}/`} class="inline-flex mt-5 font-display font-semibold text-xs uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57">Todas las empresas de {g.labelCorto.toLowerCase()} en {edo.nombre} →</a>
           </div>
         )}
 
@@ -154,7 +154,7 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
           <div style="border:1px solid rgba(74,117,153,0.25)">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
             <div id="ficha-map" data-lat={e.coordenadas!.lat} data-lng={e.coordenadas!.lng} data-color={g.color} style="height:240px;background:#0C1825" role="img" aria-label={`Mapa de ${e.nombre}`}></div>
-            <a href={`https://www.google.com/maps?q=${e.coordenadas!.lat},${e.coordenadas!.lng}`} target="_blank" rel="noopener nofollow" class="block px-4 py-2.5 font-display text-[11px] uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57;background:#0C1825;border-top:1px solid rgba(74,117,153,0.2)">Abrir en Google Maps →</a>
+            <a href={`https://www.google.com/maps?q=${e.coordenadas!.lat},${e.coordenadas!.lng}`} target="_blank" rel="noopener nofollow" class="block px-4 py-2.5 font-display text-[11px] uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57;background:#0C1825;border-top:1px solid rgba(74,117,153,0.2)">Ubicación de {e.nombre} en Google Maps →</a>
           </div>
         )}
 
@@ -168,8 +168,8 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
         <div class="p-6" style={`background:#0C1825;border:1px solid rgba(245,166,35,0.35);border-left:3px solid #F5A623`}>
           <p class="font-display font-bold text-sm mb-2" style="color:#FFFFFF">¿Es tu empresa?</p>
           <p class="text-xs leading-relaxed mb-4" style="color:#94A3B8">Reclama la ficha, completa tus datos y obtén el sello de verificación. Las fichas destacadas aparecen primero en {edo.nombre}.</p>
-          <a href="/empresas/registro/" class="btn btn-gold btn-sm w-full text-center">Reclamar ficha</a>
-          <a href={whatsappUrl(waMsg)} target="_blank" rel="noopener noreferrer" class="block text-center mt-3 font-display text-[11px] uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57">Escribir al equipo →</a>
+          <a href="/empresas/registro/" class="btn btn-gold btn-sm w-full text-center">Reclamar la ficha de {e.nombre}</a>
+          <a href={whatsappUrl(waMsg)} target="_blank" rel="noopener noreferrer" class="block text-center mt-3 font-display text-[11px] uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57">Escribir a FIREFIGHTERS MX →</a>
         </div>
 
         <div class="p-6" style="background:#0C1825;border:1px solid rgba(74,117,153,0.25)">

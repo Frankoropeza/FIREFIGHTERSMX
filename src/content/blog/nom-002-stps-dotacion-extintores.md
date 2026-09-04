@@ -214,4 +214,4 @@ La dotación correcta de extintores es el sistema de protección contra incendio
 
 Contamos con extintores PQS ABC, CO₂ y Tipo K certificados NOM-154-SCFI para todos los niveles de riesgo requeridos por la NOM-002-STPS. Ofrecemos asesoría de cálculo de dotación, instalación y servicio de mantenimiento anual para mantener tu bitácora en orden ante cualquier inspección.
 
-[Ver catálogo completo de Extintores](/productos/extintores) · [Solicitar cotización](/cotizacion)
+[Catálogo completo de Extintores](/productos/extintores) · [Solicitar cotización](/cotizacion)

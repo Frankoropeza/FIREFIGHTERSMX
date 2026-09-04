@@ -188,4 +188,4 @@ La próxima vez que evalúes una propuesta de herramientas de rescate y escuches
 
 Ofrecemos herramientas de excarcelación hidráulica Holmatro y Hurst con certificación NFPA 1936:2022 verificable, soporte técnico en México y refacciones en stock local. Si tu corporación necesita especificaciones técnicas para una licitación, podemos ayudarte a redactarlas correctamente.
 
-[Ver catálogo completo de Herramientas de Rescate](/productos/herramientas-rescate) · [Solicitar cotización](/cotizacion)
+[Catálogo completo de Herramientas de Rescate](/productos/herramientas-rescate) · [Solicitar cotización](/cotizacion)

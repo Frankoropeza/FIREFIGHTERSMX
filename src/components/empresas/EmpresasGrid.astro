@@ -56,7 +56,7 @@ const giroMeta = Object.fromEntries(giros.map((g) => [g.slug, { l: g.labelCorto,
 </div>
 {indexSrc && total > visibles.length && (
   <div class="mt-6 flex flex-col sm:flex-row sm:items-center gap-3">
-    <button type="button" id={`${id}-more`} class="btn btn-outline btn-sm">Cargar todas ({total})</button>
+    <button type="button" id={`${id}-more`} class="btn btn-outline btn-sm">Mostrar las {total} empresas</button>
     <span class="text-xs" style="color:#64748B">Mostrando las primeras {visibles.length}. Escribe en el buscador para buscar entre las {total}.</span>
   </div>
 )}
@@ -93,7 +93,7 @@ const giroMeta = Object.fromEntries(giros.map((g) => [g.slug, { l: g.labelCorto,
       <h3 class="font-display font-bold text-base leading-snug" style="color:#FFFFFF"><a href="${r.u}" class="hover:text-[#FF6B26]">${esc(r.n)}</a></h3>
       <div class="text-xs leading-relaxed" style="color:#94A3B8">${esc(r.c)}${r.m !== r.c ? ` <span style="color:#64748B">· ${esc(r.m)}</span>` : ''}${mostrarEstado ? ` <span style="color:#64748B">· ${esc(r.en)}</span>` : ''}</div>
       ${esp.length || otros.length ? `<div class="flex flex-wrap gap-1.5">${esp.map((s) => `<span class="text-[10px] px-2 py-0.5" style="color:#94A3B8;border:1px solid rgba(74,117,153,0.3)">${esc(s as string)}</span>`).join('')}${otros.map((s) => `<span class="text-[10px] px-2 py-0.5" style="color:#4A7599;border:1px dashed rgba(74,117,153,0.3)">+ ${esc(s)}</span>`).join('')}</div>` : ''}
-      <div class="mt-auto pt-3 flex items-center justify-between gap-3" style="border-top:1px solid rgba(74,117,153,0.12)"><span class="text-[10px] uppercase tracking-widest" style="color:#4A7599">${esc(r.t ? r.t.replace(' personas', ' pers.') : 'Registro público')}</span><a href="${r.u}" class="font-display font-semibold text-xs uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57">Ver ficha →</a></div></article>`;
+      <div class="mt-auto pt-3 flex items-center justify-between gap-3" style="border-top:1px solid rgba(74,117,153,0.12)"><span class="text-[10px] uppercase tracking-widest" style="color:#4A7599">${esc(r.t ? r.t.replace(' personas', ' pers.') : 'Registro público')}</span><a href="${r.u}" class="font-display font-semibold text-xs uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57">${esc(g?.l ?? r.gp)} en ${esc(r.c)} →</a></div></article>`;
   }
 
   document.querySelectorAll<HTMLElement>('[data-emp-toolbar]').forEach((bar) => {

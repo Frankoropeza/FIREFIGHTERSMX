@@ -185,4 +185,4 @@ Para profundizar en la metodología de prueba y los requisitos normativos:
 
 Cada traje en nuestro catálogo incluye el TPP y THL del sistema completo certificado por laboratorio acreditado, no solo la declaración del fabricante. Sistemas con outer shell PBI Matrix Gold y Nomex IIIA para cada perfil operacional.
 
-[Ver catálogo completo de Trajes Bombero](/productos/trajes-bombero) · [Solicitar cotización](/cotizacion)
+[Catálogo completo de Trajes Bombero](/productos/trajes-bombero) · [Solicitar cotización](/cotizacion)

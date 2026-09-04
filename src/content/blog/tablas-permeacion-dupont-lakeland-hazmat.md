@@ -176,4 +176,4 @@ Noventa segundos.
 
 Ofrecemos trajes DuPont Tychem, Lakeland ChemMax y Kappler Zytron con tablas de permeación actualizadas para los químicos más frecuentes en la industria mexicana. Nuestro equipo técnico puede ayudarte a seleccionar el material correcto para tu agente específico antes de que firmes cualquier orden de compra.
 
-[Ver catálogo completo de Equipos HAZMAT](/productos/hazmat) · [Solicitar cotización](/cotizacion)
+[Catálogo completo de Equipos HAZMAT](/productos/hazmat) · [Solicitar cotización](/cotizacion)

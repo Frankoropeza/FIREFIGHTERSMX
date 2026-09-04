@@ -205,4 +205,4 @@ La norma correcta no es solo un requisito técnico. Es un requisito de negocio.
 
 Diseñamos e instalamos sistemas de rociadores bajo NFPA 13, 13R y 13D con componentes Tyco Viking certificados. Si tienes un proyecto nuevo o necesitas verificar que el sistema existente cumple con la norma correcta para tu tipo de ocupación, nuestros ingenieros pueden hacer la evaluación técnica.
 
-[Ver catálogo completo de Sistemas CI](/productos/sistemas-ci) · [Solicitar cotización](/cotizacion)
+[Catálogo completo de Sistemas CI](/productos/sistemas-ci) · [Solicitar cotización](/cotizacion)

@@ -182,4 +182,4 @@ Si estás preparando bases técnicas o un análisis comparativo para tu corporac
 
 Contamos con trajes estructurales certificados NFPA 1970 en outer shell PBI Matrix Gold y Nomex IIIA, con distintas configuraciones de moisture barrier y thermal liner para cada perfil de corporación. Desde equipamiento municipal hasta brigadas petroquímicas de alto riesgo.
 
-[Ver catálogo completo de Trajes Bombero](/productos/trajes-bombero) · [Solicitar cotización](/cotizacion)
+[Catálogo completo de Trajes Bombero](/productos/trajes-bombero) · [Solicitar cotización](/cotizacion)

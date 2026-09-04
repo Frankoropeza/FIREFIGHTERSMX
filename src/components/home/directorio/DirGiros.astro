@@ -20,7 +20,7 @@ const fmt = (n: number) => n.toLocaleString('es-MX');
       </div>
       <div class="reveal" data-delay="1" style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
         <p class="text-sm leading-relaxed mb-3" style="color:#94A3B8">El sector no tiene clasificación oficial propia: el SCIAN reparte a estas empresas en más de treinta clases. Nosotros las agrupamos por lo que realmente hacen, para que un jefe de bomberos, una brigada industrial o un comprador de gobierno encuentre al proveedor correcto sin intermediarios.</p>
-        <a href="/empresas/" class="inline-flex items-center gap-2 text-xs font-display font-semibold uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57;letter-spacing:0.1em">Explorar el directorio completo <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+        <a href="/empresas/" class="inline-flex items-center gap-2 text-xs font-display font-semibold uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57;letter-spacing:0.1em">Directorio completo de equipo contra incendios <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg></a>
       </div>
     </div>
 
@@ -58,7 +58,7 @@ const fmt = (n: number) => n.toLocaleString('es-MX');
                 <span class="font-display uppercase tracking-wider" style="color:#64748B">Mayor oferta:</span>{' '}
                 {top.map((t, k) => <Fragment>{k > 0 && ' · '}<a href={`/empresas/${g.slug}/${t.slug}/`} class="hover:text-[#FF6B26]" style="color:#94A3B8">{t.nombre} <span style={`color:${g.color}`}>{t.total}</span></a></Fragment>)}
               </p>
-              <a href={`/empresas/${g.slug}/`} class="btn btn-primary w-full justify-center mt-auto" style="margin-top:auto">Ver empresas →</a>
+              <a href={`/empresas/${g.slug}/`} class="btn btn-primary w-full justify-center mt-auto" style="margin-top:auto">Empresas de {g.labelCorto.toLowerCase()} en México →</a>
             </div>
           </article>
         );

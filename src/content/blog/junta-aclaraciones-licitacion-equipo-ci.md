@@ -104,4 +104,4 @@ Participar en una licitación mal redactada sin hacer preguntas en la junta es e
 
 Acompañamos a empresas distribuidoras y fabricantes en todo el proceso de licitación: análisis de bases, preparación de preguntas para junta de aclaraciones, construcción de propuesta técnica y revisión de fichas antes del cierre. Operamos en CompraNet, PEMEX, CFE y licitaciones de protección civil estatal.
 
-[Ver servicio de Soporte para Licitaciones](/servicios/licitaciones)
+[Servicio de Soporte para Licitaciones](/servicios/licitaciones)

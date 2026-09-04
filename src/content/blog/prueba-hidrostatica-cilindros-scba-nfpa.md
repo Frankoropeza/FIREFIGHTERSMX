@@ -86,4 +86,4 @@ El mantenimiento correcto de una flota SCBA combina ambas cosas: recarga periód
 
 ¿Tu flota de cilindros SCBA tiene las pruebas hidrostáticas al día? En FIREFIGHTERS MX gestionamos el mantenimiento certificado de equipos de respiración autónoma, incluyendo control de vencimientos por número de serie y coordinación de pruebas hidrostáticas con laboratorio autorizado.
 
-[Ver servicio de Mantenimiento y Recarga](/servicios/mantenimiento)
+[Servicio de Mantenimiento y Recarga](/servicios/mantenimiento)

@@ -248,4 +248,4 @@ Todo lo demás es presión. Y la presión en HAZMAT es el mecanismo principal po
 
 Contamos con trajes encapsulados Nivel A y B, incluyendo líneas DuPont Tychem, Lakeland ChemMax y Kappler Zytron certificados para respuesta a materiales peligrosos. Cada equipo se acompaña de asesoría técnica para que tu corporación elija el nivel correcto según el riesgo de tu territorio.
 
-[Ver catálogo completo de Equipos HAZMAT](/productos/hazmat) · [Solicitar cotización](/cotizacion)
+[Catálogo completo de Equipos HAZMAT](/productos/hazmat) · [Solicitar cotización](/cotizacion)

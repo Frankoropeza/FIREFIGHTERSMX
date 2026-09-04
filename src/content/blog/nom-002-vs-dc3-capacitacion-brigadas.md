@@ -109,4 +109,4 @@ Si no, tienes trabajo que hacer antes de que toque la puerta ese inspector.
 
 Si necesitas poner en orden la capacitación de tus brigadistas con DC-3 válidas y alineadas a NOM-002-STPS, en FIREFIGHTERS MX diseñamos el programa completo: desde la clasificación del riesgo hasta la constancia individual de cada trabajador.
 
-[Ver servicio de capacitación certificada →](/servicios/capacitacion)
+[Servicio de capacitación certificada →](/servicios/capacitacion)

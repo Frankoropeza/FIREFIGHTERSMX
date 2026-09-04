@@ -106,4 +106,4 @@ Para dimensionar cuántos brigadistas necesitas en tu planta antes de decidir qu
 
 Ayudamos a las plantas industriales a seleccionar el EPP correcto para su brigada, sin sobrevender ni dejar huecos de protección. El servicio incluye diagnóstico de riesgo, propuesta de equipo justificada y capacitación práctica para que el EPP se use bien.
 
-[Ver servicio de Brigadas Empresariales](/servicios/brigadas-empresariales)
+[Servicio de Brigadas Empresariales](/servicios/brigadas-empresariales)

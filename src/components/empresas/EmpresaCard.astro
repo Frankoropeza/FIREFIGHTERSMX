@@ -65,6 +65,6 @@ const destacado = e.plan === 'destacado';
 
   <div class="mt-auto pt-3 flex items-center justify-between gap-3" style="border-top:1px solid rgba(74,117,153,0.12)">
     <span class="text-[10px] uppercase tracking-widest" style="color:#4A7599">{e.estrato ? e.estrato.replace(' personas', ' pers.') : 'Registro público'}</span>
-    <a href={urlEmpresa(e)} class="font-display font-semibold text-xs uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57">Ver ficha →</a>
+    <a href={urlEmpresa(e)} class="font-display font-semibold text-xs uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57">{g.labelCorto} en {e.ciudad} →</a>
   </div>
 </article>

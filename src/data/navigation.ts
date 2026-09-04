@@ -20,7 +20,7 @@ export const navigation: { main: NavItem[] } = { main: [
       { label: "Jalisco",                      href: "/empresas/estado/jalisco",  description: "Todas las empresas de Jalisco" },
       { label: "Nuevo León",                   href: "/empresas/estado/nuevo-leon", description: "Todas las empresas de NL" },
       { label: "Registrar o reclamar ficha",   href: "/empresas/registro",      description: "Alta básica gratuita" },
-      { label: "Ver directorio completo →",    href: "/empresas" },
+      { label: "Directorio completo de empresas →", href: "/empresas" },
     ],
   },
   {
@@ -114,7 +114,7 @@ export const navigation: { main: NavItem[] } = { main: [
       },
       { label: "Drones de Emergencia",       href: "/productos/drones-emergencia",      description: "ISR, búsqueda y rescate" },
       { label: "Marcas autorizadas",         href: "/marcas",                           description: "20+ fabricantes internacionales" },
-      { label: "Ver catálogo completo →",    href: "/productos" },
+      { label: "Catálogo completo de equipo para bomberos →", href: "/productos" },
     ],
   },
   {
@@ -167,7 +167,7 @@ export const navigation: { main: NavItem[] } = { main: [
       { label: "Jalisco",                 href: "/estaciones/jalisco",    description: "GDL, ZMG y municipios" },
       { label: "Nuevo León",              href: "/estaciones/nuevo-leon", description: "Monterrey y ZMM" },
       { label: "Estado de México",        href: "/estaciones/estado-de-mexico", description: "Toluca, Naucalpan, Ecatepec" },
-      { label: "Ver todos los estados →", href: "/estaciones" },
+      { label: "Estaciones de bomberos en los 32 estados →", href: "/estaciones" },
     ],
   },
 ] };

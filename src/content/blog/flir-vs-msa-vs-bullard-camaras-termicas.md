@@ -183,4 +183,4 @@ Para quien toma la decisión de compra: la cámara más cara no es siempre la co
 
 FLIR K-Series para imagen de referencia, MSA Evolution integrada con el ecosistema LUNAR, y Bullard TXS para cobertura de múltiples unidades. Las tres plataformas certificadas NFPA 1930 con soporte técnico y baterías disponibles en México.
 
-[Ver catálogo completo de Cámaras Térmicas](/productos/camaras-termicas) · [Solicitar cotización](/cotizacion)
+[Catálogo completo de Cámaras Térmicas](/productos/camaras-termicas) · [Solicitar cotización](/cotizacion)

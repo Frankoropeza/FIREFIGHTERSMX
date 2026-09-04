@@ -128,4 +128,4 @@ Los documentos físicos tardan días en conseguirse. Las constancias DC-3 de cap
 
 Revisamos tu expediente documental completo antes de que llegue la STPS. Identificamos los huecos, te ayudamos a conseguir los documentos faltantes y te entregamos el expediente organizado y listo para presentar. El servicio incluye revisión física del centro de trabajo.
 
-[Ver servicio de Auditoría NOM-002](/servicios/auditoria-seguridad)
+[Servicio de Auditoría NOM-002](/servicios/auditoria-seguridad)

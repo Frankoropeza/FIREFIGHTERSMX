@@ -110,4 +110,4 @@ Si no puede, tienes huecos que llenar antes de que los encuentre el inspector.
 
 Si necesitas apoyo para diseñar, ejecutar y documentar simulacros que cumplan NOM-002-STPS y resistan cualquier inspección de Protección Civil o STPS, en FIREFIGHTERS MX lo hacemos contigo: desde el plan hasta el expediente cerrado.
 
-[Ver servicio de capacitación certificada →](/servicios/capacitacion)
+[Servicio de capacitación certificada →](/servicios/capacitacion)

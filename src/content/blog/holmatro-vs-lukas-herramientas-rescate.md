@@ -166,4 +166,4 @@ Lo que no puedes permitirte es comprar por precio, por costumbre, o porque el pr
 
 Distribuimos herramientas hidráulicas Holmatro, Hurst y Weber Rescue con soporte técnico especializado en México. Si estás evaluando una adquisición para tu corporación, podemos ayudarte a comparar fuerza de cizalla, autonomía de batería y red de servicio según tu zona de cobertura.
 
-[Ver catálogo completo de Herramientas de Rescate](/productos/herramientas-rescate) · [Solicitar cotización](/cotizacion)
+[Catálogo completo de Herramientas de Rescate](/productos/herramientas-rescate) · [Solicitar cotización](/cotizacion)

@@ -230,4 +230,4 @@ La NFPA 1930 existe porque la diferencia entre una cámara que funciona dentro d
 
 Distribuimos cámaras térmicas certificadas bajo NFPA 1801 edición 2021 con número de certificado verificable en los registros públicos de UL y FM. FLIR K-Series, MSA Evolution y Bullard TXS con soporte técnico y disponibilidad de baterías en México.
 
-[Ver catálogo completo de Cámaras Térmicas](/productos/camaras-termicas) · [Solicitar cotización](/cotizacion)
+[Catálogo completo de Cámaras Térmicas](/productos/camaras-termicas) · [Solicitar cotización](/cotizacion)

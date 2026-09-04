@@ -85,8 +85,8 @@ const waMsg = `Hola, busco proveedores de ${g.sustantivo} en ${estado.nombre}. �
             </Fragment>
           )}
           <div class="flex flex-col sm:flex-row gap-3">
-            {vacio ? <a href="/empresas/registro/" class="btn btn-primary btn-lg">Registrar mi empresa</a> : <a href="#empresas" class="btn btn-primary btn-lg">Ver las {lista.length} empresas</a>}
-            <a href={whatsappUrl(waMsg)} target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-lg">Pedir orientación →</a>
+            {vacio ? <a href="/empresas/registro/" class="btn btn-primary btn-lg">Registrar empresa de {g.sustantivo}</a> : <a href="#empresas" class="btn btn-primary btn-lg">{lista.length === 1 ? `Ver la empresa de ${g.sustantivo} en ${estado.nombre}` : `Ver ${lista.length} empresas de ${g.sustantivo} en ${estado.nombre}`}</a>}
+            <a href={whatsappUrl(waMsg)} target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-lg">Orientación sobre {g.sustantivo} →</a>
           </div>
         </div>
         <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">

@@ -56,8 +56,8 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
           {g.intro.map((p) => <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">{p}</p>)}
           <div class="flex flex-wrap gap-2 mt-2 mb-8">{g.normas.map((n) => <span class="badge badge-dark font-display text-[10px]">{n}</span>)}</div>
           <div class="flex flex-col sm:flex-row gap-3">
-            <a href="#empresas" class="btn btn-primary btn-lg">Ver las {lista.length} empresas</a>
-            <a href="/empresas/registro/" class="btn btn-ghost btn-lg">Registrar mi empresa →</a>
+            <a href="#empresas" class="btn btn-primary btn-lg">Ver {lista.length} empresas de {g.sustantivo}</a>
+            <a href="/empresas/registro/" class="btn btn-ghost btn-lg">Registrar empresa de {g.sustantivo} →</a>
           </div>
         </div>
         <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
@@ -71,7 +71,7 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
                 </a>
               </li>))}
           </ul>
-          <a href="#estados" class="inline-flex mt-4 font-display font-semibold text-xs uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57">Ver los {porEstado.length} estados →</a>
+          <a href="#estados" class="inline-flex mt-4 font-display font-semibold text-xs uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57">{g.labelCorto} en los {porEstado.length} estados →</a>
         </div>
       </div>
     </div>

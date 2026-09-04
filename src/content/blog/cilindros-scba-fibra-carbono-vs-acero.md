@@ -192,4 +192,4 @@ Lleva los números de TCO a tu próxima reunión de adquisiciones. Define el pro
 
 Los cilindros son solo una parte del sistema. Contamos con equipos SCBA completos certificados NFPA 1970, con opciones de cilindro de acero y fibra de carbono según el perfil operacional de tu corporación o brigada industrial.
 
-[Ver catálogo completo de Equipos SCBA](/productos/equipos-scba) · [Solicitar cotización](/cotizacion)
+[Catálogo completo de Equipos SCBA](/productos/equipos-scba) · [Solicitar cotización](/cotizacion)

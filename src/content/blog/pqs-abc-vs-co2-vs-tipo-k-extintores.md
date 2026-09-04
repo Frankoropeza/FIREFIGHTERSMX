@@ -202,4 +202,4 @@ La selección correcta toma 20 minutos de análisis del plano y el riesgo de cad
 
 Ofrecemos extintores PQS ABC, CO₂ y Tipo K para cada tipo de riesgo, con la clasificación correcta para cumplir la NOM-002-STPS. Si tienes cocinas comerciales, cuartos de servidores o áreas con solventes, nuestro equipo puede ayudarte a seleccionar el agente correcto antes de que llegue el inspector.
 
-[Ver catálogo completo de Extintores](/productos/extintores) · [Solicitar cotización](/cotizacion)
+[Catálogo completo de Extintores](/productos/extintores) · [Solicitar cotización](/cotizacion)

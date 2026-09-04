@@ -54,8 +54,8 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
             Clasificamos a cada empresa por giro y especialidad —algo que el <strong style="color:#CBD5E1">SCIAN no distingue</strong>— para que un cuerpo de bomberos, una brigada industrial o un comprador de gobierno encuentre al proveedor correcto en su estado sin intermediarios.
           </p>
           <div class="flex flex-col sm:flex-row gap-3">
-            <a href="#buscar" class="btn btn-primary btn-lg">Buscar empresas</a>
-            <a href="/empresas/registro/" class="btn btn-ghost btn-lg">Registrar mi empresa →</a>
+            <a href="#buscar" class="btn btn-primary btn-lg">Buscar empresas de equipo contra incendio</a>
+            <a href="/empresas/registro/" class="btn btn-ghost btn-lg">Registrar mi empresa en el directorio →</a>
           </div>
         </div>
         <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
@@ -104,7 +104,7 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
             <span class="font-display font-bold text-4xl" style={`color:${g.color};line-height:1`}>{c.total}</span>
             <span class="font-display font-bold text-lg leading-snug" style="color:#FFFFFF">{g.label}</span>
             <span class="text-xs leading-relaxed" style="color:#64748B">{g.description}</span>
-            <span class="mt-auto font-display font-semibold text-xs uppercase tracking-wider" style="color:#FF8F57">Ver empresas →</span>
+            <span class="mt-auto font-display font-semibold text-xs uppercase tracking-wider" style="color:#FF8F57">Empresas de {g.labelCorto.toLowerCase()} →</span>
           </a>); })}
       </div>
     </div>
@@ -172,8 +172,8 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
           <p class="text-sm leading-relaxed max-w-2xl" style="color:#94A3B8">Los registros básicos provienen del registro público del DENUE. Al reclamar tu ficha puedes completar contacto, marcas que distribuyes, certificaciones y cobertura, y obtener el sello de datos verificados. Las fichas destacadas aparecen primero en su giro y estado.</p>
         </div>
         <div class="flex flex-col gap-3 shrink-0">
-          <a href="/empresas/registro/" class="btn btn-gold btn-lg">Registrar o reclamar ficha</a>
-          <a href="/contacto/" class="btn btn-ghost">Hablar con el equipo →</a>
+          <a href="/empresas/registro/" class="btn btn-gold btn-lg">Registrar o reclamar ficha de empresa</a>
+          <a href="/contacto/" class="btn btn-ghost">Hablar con FIREFIGHTERS MX →</a>
         </div>
       </div>
     </div>

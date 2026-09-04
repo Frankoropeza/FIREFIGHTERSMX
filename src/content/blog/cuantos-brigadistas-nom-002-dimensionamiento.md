@@ -111,4 +111,4 @@ Con esos dos datos, el número sale solo. Lo que cuesta trabajo no es el cálcul
 
 Diseñamos, integramos y capacitamos brigadas contra incendio para plantas industriales en todo México. Incluye análisis de dimensionamiento por turno, plan de capacitación, gestión de constancias DC-3 y acompañamiento en el primer simulacro.
 
-[Ver servicio de Brigadas Empresariales](/servicios/brigadas-empresariales)
+[Servicio de Brigadas Empresariales](/servicios/brigadas-empresariales)

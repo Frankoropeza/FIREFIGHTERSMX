@@ -247,4 +247,4 @@ Con esos factores sobre la mesa, la diferencia de precio inicial entre FM-200 y 
 
 Diseñamos sistemas de supresión con FM-200 y Novec 1230 bajo NFPA 2001 para data centers, salas de control, bóvedas y archivos. Si tienes un proyecto nuevo o necesitas evaluar la disponibilidad de recarga de tu sistema actual ante el Protocolo de Kigali, nuestros ingenieros pueden hacer el análisis de ciclo de vida.
 
-[Ver catálogo completo de Sistemas CI](/productos/sistemas-ci) · [Solicitar cotización](/cotizacion)
+[Catálogo completo de Sistemas CI](/productos/sistemas-ci) · [Solicitar cotización](/cotizacion)

@@ -13,7 +13,7 @@ const verificadas = todasLasEstaciones.filter((e) => e.confianza === 'alta').len
       <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">Municipales, estatales, voluntarios, industriales, aeroportuarios, PEMEX y CFE: cada corporación con ubicación, contacto verificado, servicios operativos y fuentes citadas. {verificadas} fichas con datos verificados contra fuente oficial.</p>
       <p class="text-sm leading-[1.9] mb-8" style="color:#94A3B8">Es el lado de la demanda del mismo mercado: quien busca un proveedor aquí, también encuentra a quién le compra. Y cada ficha de estación enlaza con las empresas de su zona.</p>
       <div class="flex flex-wrap gap-2 mb-8">{porTipo.map((x) => <a href="/estaciones/" class="badge font-display text-[10px]" style={`color:${x.color};background:${x.bgColor};border:1px solid ${x.color}40`}>{x.label} · {x.n}</a>)}</div>
-      <a href="/estaciones/" class="btn btn-primary">Explorar estaciones</a>
+      <a href="/estaciones/" class="btn btn-primary">Directorio de estaciones de bomberos</a>
     </div>
     <div class="reveal grid grid-cols-2 sm:grid-cols-3 gap-px" data-delay="1" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
       {top.map((e) => (

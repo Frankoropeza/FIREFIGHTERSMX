@@ -186,4 +186,4 @@ Eso no lo responde el catálogo. Lo responde la prueba.
 
 Distribuimos cascos estructurales certificados NFPA 1970 en estilos europeo y americano: MSA Gallet F1 XF, Bullard USTM, Cairns N6A y opciones compatibles con los principales sistemas SCBA del mercado mexicano.
 
-[Ver catálogo completo de Cascos NFPA](/productos/cascos-nfpa) · [Solicitar cotización](/cotizacion)
+[Catálogo completo de Cascos NFPA](/productos/cascos-nfpa) · [Solicitar cotización](/cotizacion)

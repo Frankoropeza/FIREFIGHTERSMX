@@ -205,4 +205,4 @@ La certificación individual de cada componente es el punto de partida. La prueb
 
 La compatibilidad empieza por elegir equipo diseñado para operar en conjunto. Distribuimos cascos certificados NFPA 1970 (cap. 5–9) y equipos SCBA certificados NFPA 1970 (cap. 15–19) con validación de compatibilidad disponible para los sistemas más comunes del mercado mexicano.
 
-[Ver Cascos NFPA](/productos/cascos-nfpa) · [Ver Equipos SCBA](/productos/equipos-scba) · [Solicitar cotización](/cotizacion)
+[Guía de Cascos NFPA](/productos/cascos-nfpa) · [Guía de Equipos SCBA](/productos/equipos-scba) · [Solicitar cotización](/cotizacion)

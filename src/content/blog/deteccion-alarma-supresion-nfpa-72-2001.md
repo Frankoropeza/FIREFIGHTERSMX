@@ -99,4 +99,4 @@ Ese documento es la diferencia entre un sistema que protege tu inversión y uno 
 
 ¿Necesitas diseñar e instalar sistemas de detección, alarma y supresión correctamente integrados para un data center o cuarto de cómputo? En FIREFIGHTERS MX trabajamos con ingeniería de integración documentada conforme a NFPA 72 y NFPA 2001 para que tu sistema funcione en una emergencia real y cumpla los requisitos de tu aseguradora.
 
-[Ver servicio de Instalación de Sistemas CI](/servicios/instalacion-sistemas-ci)
+[Servicio de Instalación de Sistemas CI](/servicios/instalacion-sistemas-ci)

@@ -184,7 +184,7 @@ const checkIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
             <a href={whatsappUrl(waMsg)} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
               Cotizar por WhatsApp
             </a>
-            <a href="#estaciones" class="btn btn-ghost btn-lg">Ver estaciones →</a>
+            <a href="#estaciones" class="btn btn-ghost btn-lg">Estaciones de bomberos en {estado.nombre} →</a>
           </div>
         </div>
 
@@ -372,7 +372,7 @@ const checkIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
               <a href={`/estaciones/${estado.slug}/${e.slug}`}
                 class="inline-flex items-center gap-1.5 mt-auto pt-1 font-display font-semibold text-xs uppercase tracking-wider"
                 style="color:#FF8F57" aria-label={`Ver ficha de ${e.nombre}`}>
-                Ver ficha completa
+                Ficha completa de la estación
                 <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="#FF8F57" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
               </a>
 
@@ -466,7 +466,7 @@ const checkIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
             ))}
           </div>
           <div class="mt-6">
-            <a href="/certificaciones" class="btn btn-outline btn-sm">Ver todas las normas →</a>
+            <a href="/certificaciones" class="btn btn-outline btn-sm">Normas NFPA y NOM para cuerpos de bomberos →</a>
           </div>
         </div>
 
@@ -517,7 +517,7 @@ const checkIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
               <span style="color:#F75000">del directorio.</span>
             </h2>
           </div>
-          <a href="/estaciones" class="btn btn-ghost">Ver los 32 estados →</a>
+          <a href="/estaciones" class="btn btn-ghost">Estaciones de bomberos en los 32 estados →</a>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -548,7 +548,7 @@ const checkIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
                   ))}
                 </div>
                 <div class="flex items-center gap-1.5 mt-auto">
-                  <span class="font-display font-semibold text-xs uppercase tracking-wider" style="color:#FF8F57">Ver estaciones</span>
+                  <span class="font-display font-semibold text-xs uppercase tracking-wider" style="color:#FF8F57">Bomberos en {o.nombre}</span>
                   <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="#FF8F57" stroke-width="2.5" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
                   </svg>

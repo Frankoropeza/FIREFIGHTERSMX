@@ -92,4 +92,4 @@ En instalaciones grandes, especialmente bodegas de distribución, parques petroq
 
 ¿Tus extintores tienen collar de garantía con todos los campos completos? En FIREFIGHTERS MX realizamos mantenimiento y recarga de extintores con certificación vigente y collar NOM-154-SCFI que cumple cada requisito de inspección.
 
-[Ver servicio de Mantenimiento y Recarga](/servicios/mantenimiento)
+[Servicio de Mantenimiento y Recarga](/servicios/mantenimiento)

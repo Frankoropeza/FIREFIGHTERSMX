@@ -101,4 +101,4 @@ Los huecos son los que descalifican. No el precio, no la calidad del equipo, no 
 
 Apoyamos a distribuidores y fabricantes en la preparación de propuestas técnicas para licitaciones de equipo contra incendio en CompraNet, PEMEX, CFE y dependencias federales. Revisión de bases, construcción de fichas técnicas y acompañamiento en junta de aclaraciones.
 
-[Ver servicio de Soporte para Licitaciones](/servicios/licitaciones)
+[Servicio de Soporte para Licitaciones](/servicios/licitaciones)
