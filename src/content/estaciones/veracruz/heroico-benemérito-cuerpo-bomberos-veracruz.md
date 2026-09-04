@@ -9,7 +9,8 @@ municipio: "Veracruz"
 tipo: "Municipal"
 corporacion: "Heroico y Benemérito Cuerpo de Bomberos de Veracruz"
 corporacionSlug: "heroico-y-benemerito-cuerpo-de-bomberos-de-veracruz"
-rolEstacion: "unica"
+rolEstacion: "central"
+numeroEstacion: "Cuartel Central"
 direccion: "Av. 1° de Mayo esq. Rayón, Centro Histórico, Veracruz, Veracruz"
 coordenadas:
   lat: 19.1948

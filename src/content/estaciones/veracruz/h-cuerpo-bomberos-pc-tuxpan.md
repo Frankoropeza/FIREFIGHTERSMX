@@ -10,10 +10,11 @@ tipo: "Municipal"
 corporacion: "H. Cuerpo de Bomberos y Protección Civil de Tuxpan"
 corporacionSlug: "h-cuerpo-de-bomberos-y-proteccion-civil-de-tuxpan"
 rolEstacion: "unica"
+direccion: "AVENIDA ADOLFO LOPEZ MATEOS Col. MIGUEL ALEMAN C.P. 92820"
 coordenadas:
-  lat: 20.9569
-  lng: -97.4037
-  precision: "aproximada"
+  lat: 20.96575924
+  lng: -97.40975217
+  precision: "exacta"
 servicios:
   - "incendios-estructurales"
   - "rescate-vehicular"
@@ -34,6 +35,8 @@ fuentes:
     url: "https://forotuxpan.com/gobierno-de-tuxpan-felicito-y-festejo-a-los-bomberos-en-su-dia/"
   - nombre: "tuxpanveracruz.gob.mx"
     url: "https://tuxpanveracruz.gob.mx"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=4352727"
 verificadoEl: "2026-06-25"
 confianza: "alta"
 activa: true

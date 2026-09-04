@@ -10,10 +10,11 @@ tipo: "Voluntarios"
 corporacion: "H. Cuerpo de Bomberos Voluntarios de Cosamaloapan"
 corporacionSlug: "h-cuerpo-de-bomberos-voluntarios-de-cosamaloapan"
 rolEstacion: "unica"
+direccion: "CARRETERA MIGUEL ALEMAN Col. CENTRO C.P. 95400"
 coordenadas:
-  lat: 18.3641
-  lng: -95.797
-  precision: "aproximada"
+  lat: 18.36281249
+  lng: -95.79675178
+  precision: "exacta"
 servicios:
   - "incendios-estructurales"
   - "rescate-vehicular"
@@ -32,6 +33,8 @@ descripcion: "El H. Cuerpo de Bomberos Voluntarios de Cosamaloapan es una de las
 fuentes:
   - nombre: "xeu.mx"
     url: "https://xeu.mx/estado-de-veracruz/1217316/cuerpo-de-bomberos-de-cosamaloapan-recibe-acreditacion-nacional-es-el-primero-en-el-estado"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=4224402"
 verificadoEl: "2026-06-25"
 confianza: "alta"
 activa: true

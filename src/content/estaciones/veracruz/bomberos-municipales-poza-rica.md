@@ -10,10 +10,11 @@ tipo: "Municipal"
 corporacion: "Bomberos Municipales de Poza Rica"
 corporacionSlug: "bomberos-municipales-de-poza-rica"
 rolEstacion: "unica"
+direccion: "AVENIDA JESUS GONZALEZ ORTEGA Col. OBRERA C.P. 93350"
 coordenadas:
-  lat: 20.5333
-  lng: -97.457
-  precision: "aproximada"
+  lat: 20.52248396
+  lng: -97.46633142
+  precision: "exacta"
 servicios:
   - "incendios-estructurales"
   - "rescate-vehicular"
@@ -32,6 +33,8 @@ fuentes:
     url: "https://www.enteratever.com/2023/2021/02/22/presentan-a-primer-cuerpo-de-bomberos-municipales-de-poza-rica/"
   - nombre: "veracruz.quadratin.com.mx"
     url: "https://veracruz.quadratin.com.mx/reconocen-labor-de-bomberos-en-poza-rica/"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=6460560"
 verificadoEl: "2026-06-25"
 confianza: "alta"
 activa: true
