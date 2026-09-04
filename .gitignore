@@ -82,3 +82,6 @@ tmp/
 # worktrees: copias de trabajo, nunca se versionan
 .worktrees/
 .claude/worktrees/
+
+# Locks huerfanos de git y cuarentena de borrado (sandbox sin permiso de unlink)
+_to_delete/
