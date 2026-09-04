@@ -10,10 +10,11 @@ tipo: "Municipal"
 corporacion: "Dirección de Protección Civil y Bomberos de San Andrés Cholula"
 corporacionSlug: "direccion-de-proteccion-civil-y-bomberos-de-san-andres-cholula"
 rolEstacion: "unica"
+direccion: "Calle 2 Norte, Col. Centro, C.P. 72810"
 coordenadas:
-  lat: 19.0564
-  lng: -98.3057
-  precision: "aproximada"
+  lat: 19.05208640
+  lng: -98.29692655
+  precision: "exacta"
 telefono: "(222) 409-0769"
 telefonosAdicionales:
   - "(221) 246-7173"
@@ -37,7 +38,9 @@ fuentes:
     url: "https://sintesis.com.mx/puebla/2025/05/05/nuevo-equipamiento-bomberos/"
   - nombre: "foro21.mx"
     url: "https://foro21.mx/2024/07/incendio-atzompa-cholula/"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=7568782"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

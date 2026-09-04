@@ -10,10 +10,11 @@ tipo: "Municipal"
 corporacion: "Heroico Cuerpo de Bomberos de Isla Mujeres"
 corporacionSlug: "heroico-cuerpo-de-bomberos-de-isla-mujeres"
 rolEstacion: "unica"
+direccion: "Av. Av Gaston Alegre, Col. Urbana, C.P. 77400"
 coordenadas:
-  lat: 21.2333
-  lng: -86.7336
-  precision: "aproximada"
+  lat: 21.22567361
+  lng: -86.85256376
+  precision: "exacta"
 telefono: "(998) 877-0106"
 sitioWeb: "https://islamujeres.gob.mx"
 servicios:
@@ -36,7 +37,9 @@ fuentes:
     url: "https://islamujeres.gob.mx/wp-content/uploads/2023/documentos/transparencia/art93ip.pdf"
   - nombre: "contracorriente.net"
     url: "https://contracorriente.net/2026/05/28/gobierno-de-isla-mujeres-anuncia-proxima-apertura-de-la-nueva-estacion-de-bomberos-de-costa-mujeres/"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=9581897"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

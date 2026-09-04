@@ -10,9 +10,10 @@ tipo: "Municipal"
 corporacion: "Heroico Cuerpo de Bomberos de Puerto Morelos"
 corporacionSlug: "heroico-cuerpo-de-bomberos-de-puerto-morelos"
 rolEstacion: "unica"
+direccion: "Privada Caoba, Col. Pescadores, C.P. 77580"
 coordenadas:
-  lat: 20.848
-  lng: -86.8764
+  lat: 20.85433854
+  lng: -86.89701292
   precision: "aproximada"
 servicios:
   - "incendios-estructurales"
@@ -31,7 +32,9 @@ descripcion: "El Heroico Cuerpo de Bomberos de Puerto Morelos atiende el municip
 fuentes:
   - nombre: "quintopoderqrp.com"
     url: "https://quintopoderqrp.com/2024/08/26/festejan-a-los-bomberos-en-puerto-morelos/"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=10007260"
+verificadoEl: "2026-09"
 confianza: "media"
 activa: true
 ---

@@ -10,9 +10,10 @@ tipo: "Municipal"
 corporacion: "Heroico Cuerpo de Bomberos de Cozumel"
 corporacionSlug: "heroico-cuerpo-de-bomberos-de-cozumel"
 rolEstacion: "unica"
+direccion: "Av. Benito Juarez, Col. Adolfo López Mateos, C.P. 77620"
 coordenadas:
-  lat: 20.5087
-  lng: -86.9477
+  lat: 20.50306263
+  lng: -86.93989458
   precision: "aproximada"
 telefono: "(987) 872-0800"
 sitioWeb: "https://cozumel.gob.mx"
@@ -38,7 +39,9 @@ fuentes:
     url: "https://cozumel.gob.mx/prensa/juanita-alonso-junto-al-patronato-celebra-al-heroico-cuerpo-de-bomberos-de-cozumel/"
   - nombre: "cozumel.gob.mx"
     url: "https://cozumel.gob.mx/prensa/el-heroico-cuerpo-de-bomberos-se-mantiene-a-la-vanguardia-en-materia-de-capacitacion/"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=3625387"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

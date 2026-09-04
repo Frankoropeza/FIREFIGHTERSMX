@@ -10,10 +10,11 @@ tipo: "Municipal"
 corporacion: "H. Cuerpo de Bomberos de Irapuato"
 corporacionSlug: "h-cuerpo-de-bomberos-de-irapuato"
 rolEstacion: "unica"
+direccion: "Blvd. Juan Jose Torres Landa 375, Col. Alvaro Obregón, C.P. 36530"
 coordenadas:
-  lat: 20.6736
-  lng: -101.3487
-  precision: "aproximada"
+  lat: 20.67494943
+  lng: -101.35576173
+  precision: "exacta"
 telefono: "(462) 660-2233"
 email: "proteccioncivil@irapuato.gob.mx"
 sitioWeb: "https://www.irapuato.gob.mx/"
@@ -33,7 +34,9 @@ fuentes:
     url: "https://www.irapuato.gob.mx/2025/08/22/refuerzan-corporacion-de-bomberos-en-irapuato/"
   - nombre: "boletines.guanajuato.gob.mx"
     url: "https://boletines.guanajuato.gob.mx/2023/08/23/en-el-marco-del-dia-nacional-del-bombero-entregan-recursos-y-equipamiento-a-cuerpos-de-bomberos/"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=1335818"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

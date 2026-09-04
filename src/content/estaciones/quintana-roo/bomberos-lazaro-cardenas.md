@@ -10,10 +10,11 @@ tipo: "Municipal"
 corporacion: "Heroico Cuerpo de Bomberos de Lázaro Cárdenas"
 corporacionSlug: "heroico-cuerpo-de-bomberos-de-lazaro-cardenas"
 rolEstacion: "unica"
+direccion: "Otro(especifique), Col. Expo, C.P. 77307"
 coordenadas:
-  lat: 18.6722
-  lng: -88.3962
-  precision: "aproximada"
+  lat: 21.11355442
+  lng: -87.49563891
+  precision: "exacta"
 servicios:
   - "incendios-estructurales"
   - "incendios-forestales"
@@ -30,7 +31,9 @@ descripcion: "El Heroico Cuerpo de Bomberos de Lázaro Cárdenas atiende el muni
 fuentes:
   - nombre: "poresto.com"
     url: "https://www.poresto.com/quintana-roo/riviera-maya/2024/7/29/bomberos-de-lazaro-cardenas-exponen-carencias-extremas-en-su-labor.html"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=11702454"
+verificadoEl: "2026-09"
 confianza: "baja"
 activa: true
 ---

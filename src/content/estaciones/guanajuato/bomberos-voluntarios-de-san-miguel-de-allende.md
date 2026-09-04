@@ -10,10 +10,11 @@ tipo: "Voluntarios"
 corporacion: "H. Cuerpo de Bomberos Voluntarios de San Miguel de Allende, A.C."
 corporacionSlug: "h-cuerpo-de-bomberos-voluntarios-de-san-miguel-de-allende-a-c"
 rolEstacion: "unica"
+direccion: "Blvd. Boulevard de la Conspiracion, Col. Casco de Landeta, C.P. 37748"
 coordenadas:
-  lat: 20.9147
-  lng: -100.7437
-  precision: "aproximada"
+  lat: 20.90597209
+  lng: -100.72689332
+  precision: "exacta"
 telefono: "(415) 152-2888"
 servicios:
   - "incendios-estructurales"
@@ -34,7 +35,9 @@ fuentes:
     url: "https://periodicocorreo.com.mx/san-miguel/2024/jan/30/bomberos-de-san-miguel-de-allende-recurren-a-whatsapp-para-atender-reportes-no-les-habilitan-911-91135.html"
   - nombre: "boletines.guanajuato.gob.mx"
     url: "https://boletines.guanajuato.gob.mx/2023/08/23/en-el-marco-del-dia-nacional-del-bombero-entregan-recursos-y-equipamiento-a-cuerpos-de-bomberos/"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=1345080"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

@@ -10,10 +10,11 @@ tipo: "Voluntarios"
 corporacion: "SIMUB — Sistema Municipal de Bomberos Voluntarios de Guanajuato, A.C."
 corporacionSlug: "simub-sistema-municipal-de-bomberos-voluntarios-de-guanajuato-a-c"
 rolEstacion: "unica"
+direccion: "Blvd. Guanajuato, Col. Pozuelos, C.P. 36089"
 coordenadas:
-  lat: 21.019
-  lng: -101.2574
-  precision: "aproximada"
+  lat: 21.00988444
+  lng: -101.26538933
+  precision: "exacta"
 telefono: "(473) 734-5969"
 telefonosAdicionales:
   - "(473) 118-9164"
@@ -34,7 +35,9 @@ fuentes:
     url: "https://www.guanajuatocapital.gob.mx/noticias/termina-construccion-de-la-nueva-estacion-de-bomberos-simub/"
   - nombre: "boletines.guanajuato.gob.mx"
     url: "https://boletines.guanajuato.gob.mx/2023/08/23/en-el-marco-del-dia-nacional-del-bombero-entregan-recursos-y-equipamiento-a-cuerpos-de-bomberos/"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=1305073"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

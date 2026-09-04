@@ -9,7 +9,8 @@ municipio: "Benito Juárez"
 tipo: "Municipal"
 corporacion: "Heroico Cuerpo de Bomberos de Cancún"
 corporacionSlug: "heroico-cuerpo-de-bomberos-de-cancun"
-rolEstacion: "unica"
+rolEstacion: "central"
+numeroEstacion: "Cuartel Central"
 direccion: "Av. Tulum esq. Chichen Itzá, SM 23, Mz 55, Lote 01, Cancún, Q. Roo"
 coordenadas:
   lat: 21.1619

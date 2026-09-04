@@ -10,9 +10,10 @@ tipo: "Municipal"
 corporacion: "Bomberos de Othón P. Blanco"
 corporacionSlug: "bomberos-de-othon-p-blanco"
 rolEstacion: "unica"
+direccion: "Carretera Cafetal-mahahual, Col. La Victoria, C.P. 77976"
 coordenadas:
-  lat: 18.5001
-  lng: -88.3044
+  lat: 18.73442309
+  lng: -87.71172229
   precision: "aproximada"
 telefono: "(983) 832-0571"
 servicios:
@@ -37,7 +38,9 @@ fuentes:
     url: "https://sipse.com/novedades/bomberos-cierra-2024-con-incremento-de-servicios-en-chetumal-485214.html"
   - nombre: "segob.qroo.gob.mx"
     url: "https://segob.qroo.gob.mx/wp-content/uploads/2025/05/NUMEROS-DE-EMERGENCIA.pdf"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=8193311"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

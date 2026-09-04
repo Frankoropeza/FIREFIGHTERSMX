@@ -10,10 +10,11 @@ tipo: "Municipal"
 corporacion: "Dirección de Protección Civil y Bomberos de Izúcar de Matamoros"
 corporacionSlug: "direccion-de-proteccion-civil-y-bomberos-de-izucar-de-matamoros"
 rolEstacion: "unica"
+direccion: "Carretera Internacional a Oaxaca, Col. San Miguel, C.P. 74480"
 coordenadas:
-  lat: 18.5983
-  lng: -98.468
-  precision: "aproximada"
+  lat: 18.59011411
+  lng: -98.45657309
+  precision: "exacta"
 servicios:
   - "incendios-estructurales"
   - "rescate-vehicular"
@@ -27,7 +28,9 @@ descripcion: "La Dirección de Protección Civil y Bomberos del Ayuntamiento de 
 fuentes:
   - nombre: "izucar.gob.mx"
     url: "https://www.izucar.gob.mx/wp-content/uploads/2024/08/IM2124RIPC110724REGLAMENTOINTERNODIRECCINDEPROTECCINCIVILYBOMBEROSDELAYUNTAMIENTODEIZCARDEMATAMOROS.pdf"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=3446033"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

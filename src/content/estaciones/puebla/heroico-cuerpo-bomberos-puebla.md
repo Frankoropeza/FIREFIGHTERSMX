@@ -9,7 +9,8 @@ municipio: "Puebla"
 tipo: "Estatal"
 corporacion: "Heroico Cuerpo de Bomberos y Bomberas del Estado de Puebla"
 corporacionSlug: "heroico-cuerpo-de-bomberos-y-bomberas-del-estado-de-puebla"
-rolEstacion: "unica"
+rolEstacion: "central"
+numeroEstacion: "Cuartel Central"
 direccion: "Blvd. Capitán Carlos Camacho Espíritu S/N esq. Corregidora, Col. San Baltazar Campeche, C.P. 72550, Puebla, Pue."
 coordenadas:
   lat: 19.0379

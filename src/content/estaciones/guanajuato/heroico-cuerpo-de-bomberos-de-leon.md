@@ -9,7 +9,8 @@ municipio: "León"
 tipo: "Municipal"
 corporacion: "Heroico Cuerpo de Bomberos de León"
 corporacionSlug: "heroico-cuerpo-de-bomberos-de-leon"
-rolEstacion: "unica"
+rolEstacion: "central"
+numeroEstacion: "Cuartel Central"
 direccion: "Apolo 309-A, Col. Obrera, León, Gto., C.P. 37340"
 coordenadas:
   lat: 21.1236

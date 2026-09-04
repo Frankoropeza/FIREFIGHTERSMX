@@ -10,10 +10,12 @@ tipo: "Voluntarios"
 corporacion: "H. Cuerpo de Bomberos Voluntarios de Dolores Hidalgo, C.I.N."
 corporacionSlug: "h-cuerpo-de-bomberos-voluntarios-de-dolores-hidalgo-c-i-n"
 rolEstacion: "unica"
+direccion: "Av. Sur 87, Col. Zona Centro, C.P. 37805"
 coordenadas:
-  lat: 21.1467
-  lng: -100.9342
-  precision: "aproximada"
+  lat: 21.14995368
+  lng: -100.93355398
+  precision: "exacta"
+telefono: "(418) 1820-343"
 servicios:
   - "incendios-estructurales"
   - "atencion-prehospitalaria"
@@ -25,7 +27,9 @@ descripcion: "Corporación de bomberos voluntarios integrada a la Asociación de
 fuentes:
   - nombre: "boletines.guanajuato.gob.mx"
     url: "https://boletines.guanajuato.gob.mx/2023/08/23/en-el-marco-del-dia-nacional-del-bombero-entregan-recursos-y-equipamiento-a-cuerpos-de-bomberos/"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=1282525"
+verificadoEl: "2026-09"
 confianza: "baja"
 activa: true
 ---

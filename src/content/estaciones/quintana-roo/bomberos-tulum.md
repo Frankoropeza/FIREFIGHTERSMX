@@ -10,10 +10,11 @@ tipo: "Municipal"
 corporacion: "Bomberos de Tulum"
 corporacionSlug: "bomberos-de-tulum"
 rolEstacion: "unica"
+direccion: "Col. Tumben Kaa, C.P. 77760"
 coordenadas:
-  lat: 20.2119
-  lng: -87.4654
-  precision: "aproximada"
+  lat: 20.21995446
+  lng: -87.46899411
+  precision: "exacta"
 telefono: "(984) 802-6183"
 email: "bomberos@tulum.gob.mx"
 sitioWeb: "https://tulum.gob.mx"
@@ -34,7 +35,9 @@ descripcion: "La Dirección General de Protección Civil y Bomberos del Municipi
 fuentes:
   - nombre: "tulum.gob.mx"
     url: "https://tulum.gob.mx/Directorio/Proteccioncivilybomberos"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=11655464"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

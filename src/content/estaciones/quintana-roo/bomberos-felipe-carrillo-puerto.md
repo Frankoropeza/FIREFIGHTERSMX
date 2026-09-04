@@ -10,10 +10,11 @@ tipo: "Municipal"
 corporacion: "Bomberos de Felipe Carrillo Puerto"
 corporacionSlug: "bomberos-de-felipe-carrillo-puerto"
 rolEstacion: "unica"
+direccion: "Av. Santiago Pacheco Cruz, Col. Javier Rojo Gómez, C.P. 77259"
 coordenadas:
-  lat: 19.5783
-  lng: -88.0455
-  precision: "aproximada"
+  lat: 19.57559111
+  lng: -88.05222911
+  precision: "exacta"
 telefono: "(983) 834-0927"
 servicios:
   - "incendios-estructurales"
@@ -32,7 +33,9 @@ descripcion: "La Coordinación Municipal de Bomberos de Felipe Carrillo Puerto o
 fuentes:
   - nombre: "felipecarrillopuerto.gob.mx"
     url: "https://www.felipecarrillopuerto.gob.mx/gobierno-municipal/directoriomunicipal"
-verificadoEl: "2026-06"
+  - nombre: "DENUE — INEGI"
+    url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=3640697"
+verificadoEl: "2026-09"
 confianza: "media"
 activa: true
 ---
