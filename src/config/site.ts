@@ -59,6 +59,17 @@ export function whatsappUrl(msg: string): string {
     : `mailto:${SITE.email}?subject=${encodeURIComponent('Cotización — FIREFIGHTERS MX')}&body=${encodeURIComponent(msg)}`;
 }
 
+/**
+ * Contacto con asunto propio. Usar SIEMPRE que el motivo no sea una cotización
+ * (alta en el directorio, corrección de datos, consulta editorial): whatsappUrl()
+ * fuerza el asunto "Cotización" y en /estaciones eso era una promesa falsa.
+ */
+export function contactoUrl(asunto: string, msg: string): string {
+  return CONTACTO_DIRECTO_ACTIVO
+    ? `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(msg)}`
+    : `mailto:${SITE.email}?subject=${encodeURIComponent(`${asunto} — FIREFIGHTERS MX`)}&body=${encodeURIComponent(msg)}`;
+}
+
 /** Link de teléfono (o mailto si no hay contacto directo) */
 export function telUrl(): string {
   return CONTACTO_DIRECTO_ACTIVO ? `tel:${SITE.phoneE164}` : `mailto:${SITE.email}`;

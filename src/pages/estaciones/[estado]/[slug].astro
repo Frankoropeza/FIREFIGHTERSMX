@@ -8,7 +8,7 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import { estados, todasLasParejas, tipoConfig, confianzaConfig } from '@data/estaciones';
-import { SITE, whatsappUrl } from '@config/site';
+import { SITE, contactoUrl } from '@config/site';
 import type { GetStaticPaths } from 'astro';
 
 export const getStaticPaths = (() => {
@@ -289,15 +289,27 @@ const equipoDescByTipo: Record<string, EquipoDesc[]> = {
 };
 const equipoDescs: EquipoDesc[] = equipoDescByTipo[estacion.tipo] ?? equipoDescByTipo['Municipal'];
 
+const servicios3 = estacion.servicios.slice(0, 3).join(', ').toLowerCase();
+
 /* ── SEO ── */
-const seoTitle = estacion.nombre.length <= 38
-  ? `${estacion.nombre} — ${estacion.ciudad}`
-  : estacion.nombre;
-const seoDesc = (
-  `${estacion.nombre}: corporación ${estacion.tipo.toLowerCase()} en ${estacion.ciudad}, ${estado.nombre}. ` +
-  `${estacion.telefonoEmergencias ? `Emergencias ${estacion.telefonoEmergencias}. ` : ''}` +
-  `Contacto, servicios y ubicación. Equipo NFPA certificado.`
-).slice(0, 160);
+// El titulo SIEMPRE lleva ciudad y estado: es la senal local de la ficha.
+// Si el nombre es largo se recorta el nombre, nunca la ubicacion (auditoria E-18).
+const nombreLimpio = estacion.nombre.replace(/["“”]/g, '').trim();
+const ubicacionTitulo = `${estacion.ciudad}, ${estado.abreviatura}`;
+const margenTitulo = 60 - ubicacionTitulo.length - 3; // ' — '
+const nombreTitulo = nombreLimpio.length <= margenTitulo
+  ? nombreLimpio
+  : `${nombreLimpio.slice(0, margenTitulo - 1).replace(/\s+\S*$/, '')}…`;
+const seoTitle = `${nombreTitulo} — ${ubicacionTitulo}`;
+/** Recorta en límite de palabra, sin cortar a media sílaba (máx. 158). */
+function recorta(txt: string, max = 158): string {
+  if (txt.length <= max) return txt;
+  return `${txt.slice(0, max - 1).replace(/[\s,;:.]+\S*$/, '')}…`;
+}
+const seoDesc = recorta(
+  `${nombreLimpio}: corporación ${estacion.tipo.toLowerCase()} en ${estacion.ciudad}, ${estado.nombre}. ` +
+  `Ubicación, contacto y servicios operativos${servicios3 ? `: ${servicios3}` : ''}. Fuente citada en la ficha.`,
+);
 
 /* ── Schemas ── */
 const breadcrumbSchema = {
@@ -316,9 +328,9 @@ const fireStationSchema = {
   '@id': `${canonicalURL}#firestation`,
   name: estacion.nombre,
   url: canonicalURL,
-  ...(estacion.telefono || estacion.telefonoEmergencias
-    ? { telephone: estacion.telefono ?? estacion.telefonoEmergencias }
-    : {}),
+  // Solo el telefono PROPIO de la estacion. Antes caia a telefonoEmergencias y
+  // 187 fichas publicaban 911 como su telefono en datos estructurados (E-16).
+  ...(estacion.telefono ? { telephone: estacion.telefono } : {}),
   address: {
     '@type': 'PostalAddress',
     ...(estacion.direccion ? { streetAddress: estacion.direccion } : {}),
@@ -332,7 +344,7 @@ const fireStationSchema = {
 };
 const schemas = [breadcrumbSchema, fireStationSchema];
 
-const waMsg = `Hola, necesito equipo certificado NFPA para ${estacion.nombre} en ${estacion.ciudad}, ${estado.nombre}. ¿Disponibilidad y tiempo de entrega?`;
+const correccionMsg = `Hola, quiero corregir o completar los datos de ${estacion.nombre} (${estacion.ciudad}, ${estado.nombre}) en el directorio de estaciones. Dato a corregir:`;
 
 /* ── SVG icons ── */
 const pinIcon    = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`;
@@ -347,7 +359,7 @@ const tagIcon    = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
 const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>`;
 ---
 
-<BaseLayout title={seoTitle} description={seoDesc} canonicalURL={canonicalURL} schema={schemas}>
+<BaseLayout title={seoTitle} description={seoDesc} canonicalURL={canonicalURL} schema={schemas} noBrandSuffix>
 
   {/* Leaflet CSS (solo si hay mapa) */}
   {hasMap && (
@@ -440,11 +452,11 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
 
           {/* CTAs */}
           <div class="flex flex-col sm:flex-row gap-3">
-            <a href={whatsappUrl(waMsg)} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
-              Cotizar equipo por WhatsApp
+            <a href={`/empresas/estado/${estado.slug}/`} class="btn btn-primary btn-lg">
+              Proveedores en {estado.nombre}
             </a>
-            <a href={`/estaciones/${estado.slug}`} class="btn btn-ghost btn-lg">
-              ← {estado.nombre}
+            <a href={`/estaciones/${estado.slug}/`} class="btn btn-ghost btn-lg">
+              Estaciones de bomberos en {estado.nombre} →
             </a>
           </div>
         </div>
@@ -719,12 +731,13 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
             <div class="p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3"
               style="background:#040A12;border:1px solid rgba(247,80,0,0.2)">
               <p class="text-xs m-0" style="color:#94A3B8">
-                ¿Necesitas cotización formal para licitación en {estado.nombre}?
-                Preparamos la documentación técnica en menos de 24 horas.
+                ¿Buscas quién surte este equipo en {estado.nombre}? El directorio reúne a los distribuidores de
+                EPP, recargadoras de extintores, instaladoras de sistemas contra incendio y centros de capacitación
+                de la entidad, con su giro y su fuente.
               </p>
-              <a href={whatsappUrl(waMsg)} target="_blank" rel="noopener noreferrer"
+              <a href={`/empresas/estado/${estado.slug}/`}
                 class="btn btn-primary shrink-0" style="font-size:0.75rem;padding:0.5rem 1.25rem">
-                Cotizar ahora →
+                Proveedores en {estado.nombre} →
               </a>
             </div>
           </section>
@@ -918,9 +931,9 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                 )}
 
                 {/* CTA */}
-                <a href={whatsappUrl(waMsg)} target="_blank" rel="noopener noreferrer"
-                  class="btn btn-primary w-full text-center mt-1" style="font-size:0.78rem">
-                  Equipar esta corporación →
+                <a href={contactoUrl('Corrección del directorio de estaciones', correccionMsg)}
+                  class="btn btn-ghost w-full text-center mt-1" style="font-size:0.78rem">
+                  Corregir datos de esta ficha
                 </a>
               </div>
             </div>

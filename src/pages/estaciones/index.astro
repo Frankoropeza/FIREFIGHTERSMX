@@ -2,7 +2,7 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import EstadoCard from '@components/estaciones/EstadoCard.astro';
-import { SITE, whatsappUrl } from '@config/site';
+import { SITE, contactoUrl } from '@config/site';
 import {
   estados,
   totalEstados,
@@ -14,9 +14,10 @@ import {
 const canonicalURL = `${SITE.url}/estaciones/`;
 
 const seoMeta = {
-  title: `Directorio de Estaciones de Bomberos en México — ${SITE.name}`,
+  title: 'Directorio de Estaciones de Bomberos en México',
+  noBrandSuffix: true,
   description:
-    'Directorio completo de cuerpos de bomberos y estaciones contra incendio en los 32 estados de México. Ubicaciones, contactos, tipo de jurisdicción y servicios disponibles.',
+    'Directorio de cuerpos de bomberos en los 32 estados de México: ubicación, tipo de corporación, servicios y contacto, con la fuente citada en cada registro.',
   canonicalURL,
 };
 
@@ -49,9 +50,29 @@ const collectionSchema = {
       '@type': 'ListItem',
       position: i + 1,
       name: `Estaciones de Bomberos en ${est.nombre}`,
-      url: `${SITE.url}/estaciones/${est.slug}`,
+      url: `${SITE.url}/estaciones/${est.slug}/`,
     })),
   },
+};
+
+/* Las corporaciones también como ItemList: el CollectionPage solo declaraba
+   los 32 estados y dejaba fuera la entidad que la página realmente lista (E-17). */
+const estacionesSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  '@id': `${canonicalURL}#estaciones`,
+  name: 'Estaciones de bomberos del directorio',
+  numberOfItems: todasLasEstaciones.length,
+  itemListElement: todasLasEstaciones.map((e, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    item: {
+      '@type': 'FireStation',
+      name: e.nombre,
+      url: `${SITE.url}/estaciones/${estados.find((x) => x.nombre === e.estado)?.slug}/${e.slug}/`,
+      address: { '@type': 'PostalAddress', addressLocality: e.ciudad, addressRegion: e.estado, addressCountry: 'MX' },
+    },
+  })),
 };
 
 /* ─── Datos de regiones para agrupar ─────────────────────── */
@@ -71,6 +92,19 @@ const estacionesDestacadas = todasLasEstaciones
   .filter(e => e.descripcion)
   .slice(0, 4);
 
+/* ─── Última verificación real del directorio (derivada de los datos) ─── */
+const meses = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+const ultimaVerif = todasLasEstaciones
+  .map((e) => e.verificadoEl)
+  .filter(Boolean)
+  .sort()
+  .pop();
+const ultimaVerifLabel = (() => {
+  if (!ultimaVerif) return null;
+  const [y, m] = ultimaVerif.split('-');
+  return m ? `${meses[parseInt(m, 10) - 1]} de ${y}` : y;
+})();
+
 /* ─── Conteo por tipo ─────────────────────────────────────── */
 const conteoPorTipo = tiposPresentes.map(t => ({
   tipo: t,
@@ -81,12 +115,12 @@ const conteoPorTipo = tiposPresentes.map(t => ({
 /* ─── FAQ ─────────────────────────────────────────────────── */
 const faqs = [
   {
-    q: '¿Qué es el número 068?',
-    a: 'El 068 es el número nacional de emergencias para bomberos en México, operado por los cuerpos de bomberos municipales. En algunas ciudades también se ha migrado al 911 unificado.',
+    q: '¿A qué número se llama en una emergencia de bomberos?',
+    a: 'Al 911, que es el número único de emergencias en todo México y deriva la llamada al cuerpo de bomberos que corresponde. El antiguo 068 sigue operando en algunos municipios, pero ya no es la vía general. Los teléfonos que aparecen en cada ficha son administrativos y no sustituyen al 911 en una emergencia.',
   },
   {
     q: '¿Cuántos cuerpos de bomberos hay en México?',
-    a: 'Se estima que existen más de 500 cuerpos de bomberos en todo el territorio nacional, entre municipales, voluntarios, industriales y especializados (aeropuertos, PEMEX, CFE). Este directorio se actualiza continuamente.',
+    a: 'No hay un padrón nacional único. El DENUE del INEGI registra alrededor de 870 unidades económicas de bomberos en el país, y a esa cifra hay que sumar las unidades ARFF de aeropuerto y las brigadas de PEMEX y CFE, que el DENUE no clasifica como tales. Una corporación puede además operar varios cuarteles: este directorio da de alta una ficha por estación física, no por corporación.',
   },
   {
     q: '¿Cuál es la certificación NFPA para bomberos?',
@@ -97,9 +131,19 @@ const faqs = [
     a: 'Si representas un cuerpo de bomberos o estación que no aparece en el directorio, puedes contactarnos por WhatsApp o correo electrónico para solicitar el alta sin costo.',
   },
 ];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
 ---
 
-<BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema]}>
+<BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema, estacionesSchema, faqSchema]}>
 
   <!-- ── Breadcrumb ──────────────────────────────────────────── -->
   <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
@@ -136,19 +180,15 @@ const faqs = [
             en México
           </h1>
           <p class="text-sm leading-[1.9] mb-8" style="color:#94A3B8">
-            El directorio más completo de cuerpos de bomberos, estaciones municipales,
-            brigadas industriales y unidades especializadas ARFF en los 32 estados de la República Mexicana.
+            Cuerpos de bomberos municipales y estatales, voluntarios, brigadas industriales y
+            unidades ARFF de los 32 estados, con ubicación, contacto y la fuente citada en cada registro.
           </p>
           <div class="flex flex-col sm:flex-row gap-3">
-            <a
-              href={whatsappUrl('Hola, quiero información sobre el directorio de estaciones de bomberos.')}
-              target="_blank" rel="noopener"
-              class="btn btn-primary btn-lg"
-            >
-              Contactar por WhatsApp
+            <a href="#estados" class="btn btn-primary btn-lg">
+              Estaciones de bomberos por estado
             </a>
-            <a href="#estados" class="btn btn-ghost btn-lg">
-              Directorio de estaciones de bomberos →
+            <a href="/empresas/" class="btn btn-ghost btn-lg">
+              Proveedores de equipo contra incendio →
             </a>
           </div>
         </div>
@@ -164,6 +204,11 @@ const faqs = [
             ))}
           </ul>
           <p class="text-xs mt-4" style="color:#64748B">Emergencias en todo el país: <strong style="color:#CBD5E1">911</strong>.</p>
+          {ultimaVerifLabel && (
+            <p class="text-xs mt-2 m-0" style="color:#64748B">
+              Registros verificados en <strong style="color:#CBD5E1">{ultimaVerifLabel}</strong>; cada ficha cita su fuente.
+            </p>
+          )}
 
           <div class="mt-5 hidden flex-wrap gap-2">
             {conteoPorTipo.map(t => (
@@ -459,7 +504,7 @@ const faqs = [
           </p>
           <div class="flex flex-col sm:flex-row gap-3">
             <a
-              href={whatsappUrl('Hola, quiero registrar mi estación de bomberos en el directorio de FIREFIGHTERS MX.')}
+              href={contactoUrl('Alta de estación en el directorio', 'Hola, represento a un cuerpo de bomberos y quiero dar de alta nuestra estación en el directorio de FIREFIGHTERS MX. Estación, municipio y estado:')}
               target="_blank" rel="noopener"
               class="btn btn-primary"
             >

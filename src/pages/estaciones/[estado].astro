@@ -13,7 +13,9 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import { estados, tipoConfig, confianzaConfig } from '@data/estaciones';
-import { SITE, whatsappUrl } from '@config/site';
+import { SITE, contactoUrl } from '@config/site';
+import { conteoPorGiro } from '@lib/empresas';
+import { giros } from '@data/giros';
 import type { GetStaticPaths } from 'astro';
 
 export const getStaticPaths = (() => {
@@ -73,11 +75,30 @@ if (otrosEstados.length < 3) {
   otrosEstados = otrosEstados.slice(0, 4);
 }
 
+/* ─── Giros del directorio de empresas CON oferta en este estado ───
+   Las L3 /empresas/<giro>/<estado>/ solo se generan si hay empresas:
+   enlazar a las vacías produce 404 (15 links rotos, medido 2026-09-04). */
+const conteoGiros = await conteoPorGiro(estado.slug);
+const girosConOferta = conteoGiros
+  .filter((g) => g.total > 0)
+  .map((g) => ({ ...g, meta: giros.find((x) => x.slug === g.giro)! }))
+  .filter((g) => g.meta);
+
+/* ─── Última verificación real de las fichas de este estado ─── */
+const mesesLargos = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+const ultimaVerifEstado = estado.estaciones.map((e) => e.verificadoEl).filter(Boolean).sort().pop();
+const ultimaVerifEstadoLabel = (() => {
+  if (!ultimaVerifEstado) return null;
+  const [y, mm] = ultimaVerifEstado.split('-');
+  return mm ? `${mesesLargos[parseInt(mm, 10) - 1]} de ${y}` : y;
+})();
+
 /* ─── SEO ────────────────────────────────────────────────────────── */
 const seoTitle = `Estaciones de Bomberos en ${estado.nombre}`;
-const seoDescription =
-  `Directorio de ${totalEst} ${plural(totalEst, 'estación', 'estaciones')} de bomberos en ${estado.nombre}: ubicación por municipio, teléfonos de emergencia 068, tipos y servicios. Equipo NFPA con envío al estado.`
-    .slice(0, 160);
+const descBase = `Directorio de ${totalEst} ${plural(totalEst, 'estación', 'estaciones')} de bomberos en ${estado.nombre}: ubicación por municipio, tipo de corporación, servicios y contacto, con la fuente citada en cada registro.`;
+const seoDescription = descBase.length <= 158
+  ? descBase
+  : `${descBase.slice(0, 157).replace(/[\s,;:.]+\S*$/, '')}…`;
 
 /* ─── JSON-LD ────────────────────────────────────────────────────── */
 const breadcrumbSchema = {
@@ -120,7 +141,7 @@ const itemListSchema = {
 const schemas = [breadcrumbSchema, itemListSchema];
 
 /* ─── Mensaje WhatsApp contextual ────────────────────────────────── */
-const waMsg = `Hola, necesito equipo certificado NFPA para un cuerpo de bomberos en ${estado.nombre}. ¿Disponibilidad y tiempo de entrega?`;
+const correccionMsg = `Hola, quiero corregir o completar datos del directorio de estaciones de bomberos de ${estado.nombre}. Estación y dato a corregir:`;
 
 /* ─── Iconos ─────────────────────────────────────────────────────── */
 const pinIcon   = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`;
@@ -131,6 +152,7 @@ const checkIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
 <BaseLayout
   title={seoTitle}
   description={seoDescription}
+  noBrandSuffix
   canonicalURL={canonicalURL}
   schema={schemas}
 >
@@ -176,15 +198,18 @@ const checkIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
             municipio, los teléfonos de emergencia y los servicios de cada unidad.
           </p>
           <p class="text-sm leading-[1.9] mb-8" style="color:#94A3B8">
-            Como distribuidor de equipo certificado <strong style="color:#CBD5E1">NFPA y NOM</strong>, equipamos a los
-            cuerpos de bomberos de {estado.nombre} con trajes estructurales, SCBA, herramientas de rescate y sistemas
-            contra incendio, con envío a todo el estado.
+            Cada registro indica el tipo de corporación, el municipio que atiende y sus servicios operativos, con la
+            fuente citada. Si buscas quién surte a estos cuerpos de bomberos, el directorio de
+            <strong style="color:#CBD5E1">proveedores de equipo contra incendio en {estado.nombre}</strong> reúne a las
+            empresas de extintores, EPP, sistemas contra incendio y capacitación de la entidad.
           </p>
           <div class="flex flex-col sm:flex-row gap-3">
-            <a href={whatsappUrl(waMsg)} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
-              Cotizar por WhatsApp
+            <a href="#estaciones" class="btn btn-primary btn-lg">
+              Estaciones en {estado.nombre}
             </a>
-            <a href="#estaciones" class="btn btn-ghost btn-lg">Estaciones de bomberos en {estado.nombre} →</a>
+            <a href={`/empresas/estado/${estado.slug}/`} class="btn btn-ghost btn-lg">
+              Proveedores de equipo contra incendio en {estado.nombre} →
+            </a>
           </div>
         </div>
 
@@ -197,7 +222,12 @@ const checkIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
             ))}
             {municipios.length > 14 && <li class="badge badge-dark font-display text-[10px]">y más</li>}
           </ul>
-          <p class="text-xs mb-5" style="color:#64748B">Emergencias en todo el país: <strong style="color:#CBD5E1">911</strong>. Verifica el número local de tu municipio.</p>
+          <p class="text-xs mb-2" style="color:#64748B">Emergencias en todo el país: <strong style="color:#CBD5E1">911</strong>. Verifica el número local de tu municipio.</p>
+          {ultimaVerifEstadoLabel && (
+            <p class="text-xs mb-5 m-0" style="color:#64748B">
+              Registros verificados en <strong style="color:#CBD5E1">{ultimaVerifEstadoLabel}</strong>; cada ficha cita su fuente.
+            </p>
+          )}
 
           <div class="flex flex-wrap gap-2">
             {conteoPorTipo.map((t) => (
@@ -469,13 +499,14 @@ const checkIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
               Teléfono de emergencias en {estado.nombre}
             </h3>
             <div class="flex items-baseline gap-3">
-              <span class="font-display font-bold" style="color:#F75000;font-size:3rem;line-height:1">068</span>
-              <span class="text-xs uppercase tracking-widest" style="color:#4A7599">número nacional de bomberos</span>
+              <span class="font-display font-bold" style="color:#F75000;font-size:3rem;line-height:1">911</span>
+              <span class="text-xs uppercase tracking-widest" style="color:#4A7599">número único de emergencias</span>
             </div>
             <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">
-              El 068 es el número nacional para bomberos en México. En varias ciudades se ha unificado al
-              <strong style="color:#CBD5E1"> 911</strong>. Verifica siempre el número local de tu municipio antes
-              de una emergencia.
+              El <strong style="color:#CBD5E1">911</strong> es el número único de emergencias en todo México y el
+              que atiende a los cuerpos de bomberos de {estado.nombre}. El antiguo 068 sigue operando en algunos
+              municipios, pero ya no es la vía general. Cada ficha del directorio indica además el teléfono
+              administrativo de la corporación, que no sustituye al 911 en una emergencia.
             </p>
 
           </div>
@@ -547,21 +578,24 @@ const checkIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
         <div>
-          <span class="section-eyebrow mb-4 inline-flex">¿Equipas a un cuerpo de bomberos?</span>
+          <span class="section-eyebrow mb-4 inline-flex">Los dos lados del mismo mercado</span>
           <h2 class="font-display font-bold mb-4"
             style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.1">
-            Equipo NFPA para<br/>
-            <span style="color:#F75000">bomberos en {estado.nombre}.</span>
+            Proveedores de equipo<br/>
+            <span style="color:#F75000">contra incendio en {estado.nombre}.</span>
           </h2>
           <p class="text-sm leading-relaxed mb-6" style="color:#94A3B8">
-            Trajes estructurales, cascos, SCBA, herramientas de rescate y sistemas contra incendio certificados,
-            con documentación lista para licitación y envío a {estado.nombre}. Cotización en menos de 24 horas.
+            Los cuerpos de bomberos de esta página son quienes compran. En el directorio de empresas están
+            los que venden: distribuidores de EPP, recargadoras de extintores, instaladoras de sistemas contra
+            incendio y centros de capacitación de {estado.nombre}, con su giro, especialidad y fuente citada.
           </p>
           <div class="flex flex-col sm:flex-row gap-3">
-            <a href={whatsappUrl(waMsg)} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-              Cotizar por WhatsApp
+            <a href={`/empresas/estado/${estado.slug}/`} class="btn btn-primary">
+              Proveedores en {estado.nombre}
             </a>
-            <a href="/cotizacion" class="btn btn-ghost">Formulario de cotización</a>
+            <a href={contactoUrl('Corrección del directorio de estaciones', correccionMsg)} class="btn btn-ghost">
+              Corregir datos de una estación
+            </a>
           </div>
         </div>
         <div style="border-left:1px solid rgba(74,117,153,0.12);padding-left:2rem">
@@ -570,10 +604,13 @@ const checkIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
           </p>
           <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
             {[
-              { label: 'Equipo para cuerpos de bomberos', desc: 'Trajes NFPA, cascos, SCBA y herramientas', href: '/productos/trajes-bombero' },
-              { label: 'Bomberos municipales',            desc: 'Soluciones específicas para ayuntamientos', href: '/industrias/bomberos-municipales' },
-              { label: `Cobertura en ${estado.nombre}`,    desc: 'Tiempos de entrega y logística al estado',  href: `/cobertura/${estado.slug}` },
-              { label: 'Directorio nacional',             desc: 'Estaciones de bomberos en los 32 estados',  href: '/estaciones' },
+              ...girosConOferta.map((g) => ({
+                label: `${g.meta.labelCorto} en ${estado.nombre}`,
+                desc:  g.meta.claim,
+                href:  `/empresas/${g.giro}/${estado.slug}/`,
+              })),
+              { label: 'Guías de compra de equipo',        desc: 'Qué pedir, qué norma aplica y cómo comparar', href: '/productos/' },
+              { label: 'Estaciones de bomberos en México', desc: 'El directorio nacional en los 32 estados',     href: '/estaciones/' },
             ].map((l) => (
               <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
                 <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
