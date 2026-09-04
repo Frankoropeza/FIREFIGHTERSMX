@@ -1,12 +1,11 @@
 ---
 // Home v3 — portal-directorio (2026-09). Orden: buscar → giros → estados →
-// confianza → dos lados → estaciones → guías → marcas → normativa → blog → FAQ → CTA.
+// dos lados → estaciones → guías → marcas → normativa → blog → FAQ → CTA.
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import DirHero from '@components/home/directorio/DirHero.astro';
 import DirGiros from '@components/home/directorio/DirGiros.astro';
 import DirEstados from '@components/home/directorio/DirEstados.astro';
-import DirConfianza from '@components/home/directorio/DirConfianza.astro';
 import DirDosLados from '@components/home/directorio/DirDosLados.astro';
 import DirEstaciones from '@components/home/directorio/DirEstaciones.astro';
 import DirGuias from '@components/home/directorio/DirGuias.astro';
@@ -89,9 +88,6 @@ const schemas = [organizationSchema, webSiteSchema, directorioSchema, faqSchema]
 
   {/* 5. Los 32 estados por oferta */}
   <DirEstados />
-
-  {/* 6. Cómo se construye: fuente, clasificación, verificación */}
-  <DirConfianza />
 
   {/* 7. Bandas editoriales: quien compra / quien vende */}
   <DirDosLados />
