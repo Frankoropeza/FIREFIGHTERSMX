@@ -77,9 +77,9 @@ const nextHref = currentPage < totalPages ? `${SITE.url}/blog/pagina/${currentPa
   >
     <div class="container-site">
       <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:#4A7599">
-        <li><a href="/"     class="hover:text-[#FF6B26] transition-colors">Inicio</a></li>
+        <li><a href="/"     class="hover:text-[#FF6B26]">Inicio</a></li>
         <li aria-hidden="true">/</li>
-        <li><a href="/blog" class="hover:text-[#FF6B26] transition-colors">Blog</a></li>
+        <li><a href="/blog" class="hover:text-[#FF6B26]">Blog</a></li>
         <li aria-hidden="true">/</li>
         <li><span style="color:#94A3B8" aria-current="page">Página {currentPage}</span></li>
       </ol>
@@ -124,7 +124,7 @@ const nextHref = currentPage < totalPages ? `${SITE.url}/blog/pagina/${currentPa
           {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
             <a
               href={p === 1 ? '/blog' : `/blog/pagina/${p}`}
-              class={`flex items-center justify-center w-8 h-8 font-display font-bold text-sm rounded transition-colors ${p === currentPage ? 'text-white' : 'text-gray-500 hover:text-white'}`}
+              class={`flex items-center justify-center w-8 h-8 font-display font-bold text-sm rounded ${p === currentPage ? 'text-white' : 'text-gray-500 hover:text-white'}`}
               style={p === currentPage ? 'background:rgba(247,80,0,0.2);border:1px solid rgba(247,80,0,0.5);color:#FF6B26' : 'border:1px solid rgba(74,117,153,0.25)'}
               aria-current={p === currentPage ? 'page' : undefined}
             >

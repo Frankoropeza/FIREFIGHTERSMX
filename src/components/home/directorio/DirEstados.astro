@@ -7,15 +7,15 @@ const porRegion = regiones.map((r) => ({ r, estados: estadosMeta.filter((e) => e
 <section class="section" style="background:#070E1A" aria-labelledby="estados-heading">
   <div class="container-site">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
-      <div class="reveal">
+      <div>
         <span class="section-eyebrow mb-4 inline-flex">Por estado</span>
         <h2 id="estados-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Equipo contra incendio<br/><span style="color:#F75000">en los 32 estados.</span></h2>
       </div>
-      <div class="reveal" data-delay="1" style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+      <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
         <p class="text-sm leading-relaxed" style="color:#94A3B8">Cada estado tiene su directorio propio de empresas —con mapa, buscador y filtros por giro— y su directorio de cuerpos de bomberos, que son los compradores naturales del sector. Elige tu entidad para ver los proveedores más cercanos.</p>
       </div>
     </div>
-    <div class="reveal grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" data-delay="2" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
       {porRegion.map((g) => (
         <div class="flex flex-col p-6" style="background:#040A12">
           <span class="font-display font-bold text-[10px] uppercase tracking-widest mb-3" style="color:#F75000">{g.r}</span>

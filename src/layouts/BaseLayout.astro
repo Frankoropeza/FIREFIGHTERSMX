@@ -29,7 +29,7 @@ const {
 } = Astro.props;
 ---
 <!DOCTYPE html>
-<html lang="es-MX" class="scroll-smooth no-js">
+<html lang="es-MX" class="no-js">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -92,20 +92,6 @@ const {
     <!-- WhatsApp Floating Button -->
     <WhatsAppButton />
 
-    <!-- Reveal al scroll: una vez, respeta reduced-motion (ver global.css) -->
-    <script is:inline>
-      (function () {
-        var els = document.querySelectorAll('.reveal');
-        if (!els.length) return;
-        if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-          els.forEach(function (el) { el.classList.add('in'); }); return;
-        }
-        var io = new IntersectionObserver(function (entries) {
-          entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
-        }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
-        els.forEach(function (el) { io.observe(el); });
-      })();
-    </script>
 
     <!-- Analytics (carga diferida) -->
     <slot name="analytics" />

@@ -77,15 +77,6 @@ module.exports = {
         elevated:     '0 10px 40px rgb(0 0 0 / 0.12)',
         fire:         '0 4px 12px rgb(225 10 26 / 0.3)',
       },
-      animation: {
-        marquee: 'marquee 35s linear infinite',
-      },
-      keyframes: {
-        marquee: {
-          '0%':   { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-50%)' },
-        },
-      },
       backgroundImage: {
         'tactical':      'linear-gradient(135deg, #000000 0%, #1a0000 30%, #2d0808 55%, #0a0a0a 100%)',
         'fire-gradient': 'linear-gradient(135deg, #E10A1A 0%, #A80000 100%)',

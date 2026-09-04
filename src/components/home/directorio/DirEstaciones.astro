@@ -5,7 +5,7 @@ const destacados = ['ciudad-de-mexico', 'estado-de-mexico', 'jalisco', 'nuevo-le
 ---
 <section class="section" style="background:#040A12" aria-labelledby="est-heading">
   <div class="container-site grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-12 lg:gap-20 items-center">
-    <div class="reveal">
+    <div>
       <span class="section-eyebrow mb-4 inline-flex">Directorio de estaciones</span>
       <h2 id="est-heading" class="font-display font-bold mb-5" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Cuerpos de bomberos<br/><span style="color:#F75000">en los 32 estados.</span></h2>
       <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">Municipales, estatales, voluntarios, industriales, aeroportuarios, PEMEX y CFE: cada corporación con ubicación, contacto verificado, servicios operativos y fuentes citadas.</p>
@@ -13,7 +13,7 @@ const destacados = ['ciudad-de-mexico', 'estado-de-mexico', 'jalisco', 'nuevo-le
       <div class="flex flex-wrap gap-2 mb-8">{tiposPresentes.map((t) => <a href="/estaciones/" class="badge font-display text-[10px]" style={`color:${tipoConfig[t].color};background:${tipoConfig[t].bgColor};border:1px solid ${tipoConfig[t].color}40`}>{tipoConfig[t].label}</a>)}</div>
       <a href="/estaciones/" class="btn btn-primary">Estaciones de bomberos</a>
     </div>
-    <div class="reveal grid grid-cols-2 sm:grid-cols-3 gap-px" data-delay="1" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
       {destacados.map((e) => (
         <a href={`/estaciones/${e.slug}/`} class="grid-cell ledger-cell flex flex-col gap-1 p-5" style="background:#070E1A">
           <span class="font-display font-semibold text-base leading-tight" style="color:#FFFFFF">Bomberos en {e.nombre}</span>

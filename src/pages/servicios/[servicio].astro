@@ -317,14 +317,14 @@ const productosRel = productosMap[s.slug] ?? [];
             <div class="flex flex-col">
               {catArticulos.map((art, i) => (
                 <a href={art.href}
-                   class="flex flex-col gap-0.5 px-4 py-3 group transition-colors hover:bg-[#040A12]"
+                   class="flex flex-col gap-0.5 px-4 py-3 group hover:bg-[#040A12]"
                    style={`border-bottom:${i < catArticulos.length - 1 ? '1px solid rgba(74,117,153,0.1)' : 'none'}`}>
-                  <span class="text-xs font-display font-semibold leading-snug group-hover:text-[#F75000] transition-colors" style="color:#FFFFFF">{art.title}</span>
+                  <span class="text-xs font-display font-semibold leading-snug group-hover:text-[#F75000]" style="color:#FFFFFF">{art.title}</span>
                 </a>
               ))}
             </div>
             <div class="px-4 py-3" style="border-top:1px solid rgba(74,117,153,0.15)">
-              <a href="/blog" class="text-[10px] font-display font-semibold hover:text-[#FF6B26] transition-colors" style="color:#4A7599">
+              <a href="/blog" class="text-[10px] font-display font-semibold hover:text-[#FF6B26]" style="color:#4A7599">
                 Todos los artículos del blog técnico →
               </a>
             </div>
@@ -340,15 +340,15 @@ const productosRel = productosMap[s.slug] ?? [];
             <div class="flex flex-col">
               {serviciosRel.map((sv, i) => (
                 <a href={sv.href}
-                   class="flex flex-col gap-0.5 px-4 py-3 group transition-colors hover:bg-[#040A12]"
+                   class="flex flex-col gap-0.5 px-4 py-3 group hover:bg-[#040A12]"
                    style={`border-bottom:${i < serviciosRel.length - 1 ? '1px solid rgba(74,117,153,0.1)' : 'none'}`}>
-                  <span class="text-xs font-display font-semibold leading-snug group-hover:text-[#F75000] transition-colors" style="color:#FFFFFF">{sv.title}</span>
+                  <span class="text-xs font-display font-semibold leading-snug group-hover:text-[#F75000]" style="color:#FFFFFF">{sv.title}</span>
                   <span class="text-[11px]" style="color:#64748B">{sv.norm}</span>
                 </a>
               ))}
             </div>
             <div class="px-4 py-3" style="border-top:1px solid rgba(74,117,153,0.15)">
-              <a href="/servicios" class="text-[10px] font-display font-semibold hover:text-[#FF6B26] transition-colors" style="color:#4A7599">
+              <a href="/servicios" class="text-[10px] font-display font-semibold hover:text-[#FF6B26]" style="color:#4A7599">
                 Todos los servicios contra incendio →
               </a>
             </div>
@@ -364,15 +364,15 @@ const productosRel = productosMap[s.slug] ?? [];
             <div class="flex flex-col">
               {productosRel.map((pr, i) => (
                 <a href={pr.href}
-                   class="flex flex-col gap-0.5 px-4 py-3 group transition-colors hover:bg-[#040A12]"
+                   class="flex flex-col gap-0.5 px-4 py-3 group hover:bg-[#040A12]"
                    style={`border-bottom:${i < productosRel.length - 1 ? '1px solid rgba(74,117,153,0.1)' : 'none'}`}>
-                  <span class="text-xs font-display font-semibold leading-snug group-hover:text-[#F75000] transition-colors" style="color:#FFFFFF">{pr.label}</span>
+                  <span class="text-xs font-display font-semibold leading-snug group-hover:text-[#F75000]" style="color:#FFFFFF">{pr.label}</span>
                   <span class="text-[11px]" style="color:#64748B">{pr.marcas}</span>
                 </a>
               ))}
             </div>
             <div class="px-4 py-3" style="border-top:1px solid rgba(74,117,153,0.15)">
-              <a href="/productos" class="text-[10px] font-display font-semibold hover:text-[#FF6B26] transition-colors" style="color:#4A7599">
+              <a href="/productos" class="text-[10px] font-display font-semibold hover:text-[#FF6B26]" style="color:#4A7599">
                 Catálogo de equipo para bomberos →
               </a>
             </div>
@@ -386,11 +386,11 @@ const productosRel = productosMap[s.slug] ?? [];
             <p class="text-xs leading-relaxed" style="color:rgba(255,255,255,0.9)">Respuesta el mismo día hábil. Un especialista te atiende por WhatsApp.</p>
             <a href={whatsappUrl(`Hola, quiero cotizar el servicio de ${s.title.toLowerCase()}.`)}
                target="_blank" rel="noopener"
-               class="text-xs font-display font-bold uppercase tracking-wider py-2.5 px-4 text-center transition-colors"
+               class="text-xs font-display font-bold uppercase tracking-wider py-2.5 px-4 text-center"
                style="background:#040A12;color:#FFFFFF">
               Cotizar por WhatsApp
             </a>
-            <a href="/cotizacion" class="text-[10px] text-center hover:opacity-80 transition-opacity" style="color:rgba(255,255,255,0.7)">
+            <a href="/cotizacion" class="text-[10px] text-center hover:opacity-80" style="color:rgba(255,255,255,0.7)">
               Cotización formal →
             </a>
           </div>
@@ -408,9 +408,9 @@ const productosRel = productosMap[s.slug] ?? [];
         <p id="svs-rel-title" class="text-[9px] font-display font-bold uppercase tracking-widest mb-6" style="color:#4A7599">Servicios relacionados</p>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {serviciosRel.map((sv) => (
-            <a href={sv.href} class="group flex flex-col gap-2 p-5 transition-colors hover:border-[#F75000]"
+            <a href={sv.href} class="group flex flex-col gap-2 p-5 hover:border-[#F75000]"
                style="background:#080F1A;border:1px solid rgba(74,117,153,0.2)">
-              <span class="text-sm font-display font-bold group-hover:text-[#F75000] transition-colors" style="color:#FFFFFF">{sv.title}</span>
+              <span class="text-sm font-display font-bold group-hover:text-[#F75000]" style="color:#FFFFFF">{sv.title}</span>
               <span class="text-xs leading-relaxed" style="color:#64748B">{sv.norm}</span>
               <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Servicio de {sv.title.toLowerCase()} →</span>
             </a>

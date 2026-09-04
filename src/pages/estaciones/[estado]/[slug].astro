@@ -358,11 +358,11 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
   <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
     <div class="container-site">
       <ol class="flex items-center gap-2 text-xs list-none m-0 p-0 flex-wrap" style="color:#4A7599">
-        <li><a href="/" class="hover:text-[#FF6B26] transition-colors">Inicio</a></li>
+        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
         <li aria-hidden="true" class="opacity-40">/</li>
-        <li><a href="/estaciones" class="hover:text-[#FF6B26] transition-colors">Directorio</a></li>
+        <li><a href="/estaciones" class="hover:text-[#FF6B26]">Directorio</a></li>
         <li aria-hidden="true" class="opacity-40">/</li>
-        <li><a href={`/estaciones/${estado.slug}`} class="hover:text-[#FF6B26] transition-colors">{estado.nombre}</a></li>
+        <li><a href={`/estaciones/${estado.slug}`} class="hover:text-[#FF6B26]">{estado.nombre}</a></li>
         <li aria-hidden="true" class="opacity-40">/</li>
         <li><span style="color:#CBD5E1" aria-current="page">{estacion.nombre}</span></li>
       </ol>
@@ -467,7 +467,7 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                 </p>
               ))}
               {estacion.descripcion.split('\n\n').length > 2 && (
-                <a href="#perfil" class="text-xs uppercase tracking-wider transition-colors hover:text-[#FF6B26]"
+                <a href="#perfil" class="text-xs uppercase tracking-wider hover:text-[#FF6B26]"
                   style="color:#4A7599">Leer la descripción completa ↓</a>
               )}
             </div>
@@ -699,10 +699,10 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
               {equipoDescs.map((eq) => (
                 <a href={eq.href}
-                  class="flex flex-col gap-2 p-5 transition-colors group"
+                  class="flex flex-col gap-2 p-5 group"
                   style="background:#040A12;border:1px solid rgba(74,117,153,0.18);text-decoration:none">
                   <div class="flex items-start justify-between gap-3">
-                    <h3 class="font-display font-bold text-sm m-0 leading-snug group-hover:text-[#FF6B26] transition-colors"
+                    <h3 class="font-display font-bold text-sm m-0 leading-snug group-hover:text-[#FF6B26]"
                       style="color:#CBD5E1">{eq.label}</h3>
                     <span class="font-display font-bold text-[9px] uppercase tracking-wider shrink-0 px-1.5 py-0.5"
                       style="color:#F75000;background:rgba(247,80,0,0.1);border:1px solid rgba(247,80,0,0.2);white-space:nowrap">
@@ -710,7 +710,7 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                     </span>
                   </div>
                   <p class="text-xs leading-relaxed m-0" style="color:#64748B">{eq.desc}</p>
-                  <span class="text-xs mt-auto transition-colors group-hover:text-[#FF6B26]" style="color:#4A7599">
+                  <span class="text-xs mt-auto group-hover:text-[#FF6B26]" style="color:#4A7599">
                     Equipo para bomberos →
                   </span>
                 </a>
@@ -785,7 +785,7 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                     <div class="flex items-start gap-2.5">
                       <span class="font-display text-[10px] font-bold shrink-0 mt-0.5" style="color:#4A7599">{String(i + 1).padStart(2,'0')}</span>
                       <a href={fUrl} target="_blank" rel="noopener noreferrer nofollow"
-                        class="text-xs break-all transition-colors hover:text-[#FF6B26]" style="color:#4A7599">{fLabel}</a>
+                        class="text-xs break-all hover:text-[#FF6B26]" style="color:#4A7599">{fLabel}</a>
                     </div>
                   );
                 })}
@@ -821,7 +821,7 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                   <div>
                     <div class="text-[9px] uppercase tracking-widest mb-1" style="color:#4A7599">Emergencias</div>
                     <a href={`tel:${estacion.telefonoEmergencias.replace(/[^0-9+]/g, '')}`}
-                      class="font-display font-bold text-2xl transition-colors hover:text-[#ff8c5a]" style="color:#F75000">
+                      class="font-display font-bold text-2xl hover:text-[#ff8c5a]" style="color:#F75000">
                       {estacion.telefonoEmergencias}
                     </a>
                   </div>
@@ -834,7 +834,7 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                     <div>
                       <div class="text-[9px] uppercase tracking-widest mb-0.5" style="color:#4A7599">Conmutador</div>
                       <a href={`tel:${estacion.telefono.replace(/[^0-9+]/g, '')}`}
-                        class="text-sm transition-colors hover:text-[#FF6B26]" style="color:#CBD5E1">{estacion.telefono}</a>
+                        class="text-sm hover:text-[#FF6B26]" style="color:#CBD5E1">{estacion.telefono}</a>
                     </div>
                   </div>
                 )}
@@ -848,7 +848,7 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                       <div class="flex flex-col gap-0.5">
                         {estacion.telefonosAdicionales.map((t) => (
                           <a href={`tel:${t.replace(/[^0-9+]/g, '')}`}
-                            class="text-sm transition-colors hover:text-[#FF6B26]" style="color:#CBD5E1">{t}</a>
+                            class="text-sm hover:text-[#FF6B26]" style="color:#CBD5E1">{t}</a>
                         ))}
                       </div>
                     </div>
@@ -861,7 +861,7 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                     <span class="w-4 h-4 shrink-0 mt-0.5" style="color:#4A7599" set:html={mailIcon} aria-hidden="true"/>
                     <div>
                       <div class="text-[9px] uppercase tracking-widest mb-0.5" style="color:#4A7599">Correo oficial</div>
-                      <a href={`mailto:${estacion.email}`} class="text-xs break-all transition-colors hover:text-[#FF6B26]" style="color:#CBD5E1">{estacion.email}</a>
+                      <a href={`mailto:${estacion.email}`} class="text-xs break-all hover:text-[#FF6B26]" style="color:#CBD5E1">{estacion.email}</a>
                     </div>
                   </div>
                 )}
@@ -873,7 +873,7 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                     <div>
                       <div class="text-[9px] uppercase tracking-widest mb-0.5" style="color:#4A7599">Sitio oficial</div>
                       <a href={estacion.sitioWeb} target="_blank" rel="noopener noreferrer"
-                        class="text-xs break-all transition-colors hover:text-[#FF6B26]" style="color:#CBD5E1">
+                        class="text-xs break-all hover:text-[#FF6B26]" style="color:#CBD5E1">
                         {estacion.sitioWeb.replace(/^https?:\/\//, '').replace(/\/$/, '')}
                       </a>
                     </div>
@@ -939,15 +939,15 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
               <div class="flex flex-col">
                 {prodLinks.map((p, i) => (
                   <a href={p.href}
-                    class="flex items-center justify-between px-5 py-2.5 transition-colors hover:bg-[rgba(247,80,0,0.06)] group"
+                    class="flex items-center justify-between px-5 py-2.5 hover:bg-[rgba(247,80,0,0.06)] group"
                     style={i > 0 ? 'border-top:1px solid rgba(74,117,153,0.1)' : ''}>
-                    <span class="text-xs group-hover:text-[#FF6B26] transition-colors" style="color:#CBD5E1">{p.label}</span>
-                    <span class="w-3.5 h-3.5 shrink-0 opacity-40 group-hover:opacity-100 group-hover:text-[#FF6B26] transition-all"
+                    <span class="text-xs group-hover:text-[#FF6B26]" style="color:#CBD5E1">{p.label}</span>
+                    <span class="w-3.5 h-3.5 shrink-0 opacity-40 group-hover:opacity-100 group-hover:text-[#FF6B26]"
                       style="color:#4A7599" set:html={arrowIcon} aria-hidden="true"/>
                   </a>
                 ))}
                 <div class="px-5 pt-3 pb-4" style="border-top:1px solid rgba(74,117,153,0.1)">
-                  <a href="/productos" class="text-[10px] uppercase tracking-wider transition-colors hover:text-[#FF6B26]" style="color:#4A7599">
+                  <a href="/productos" class="text-[10px] uppercase tracking-wider hover:text-[#FF6B26]" style="color:#4A7599">
                     Catálogo de equipo para bomberos →
                   </a>
                 </div>
@@ -973,11 +973,11 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                     const hcfg = tipoConfig[h.tipo];
                     return (
                       <a href={`/estaciones/${estado.slug}/${h.slug}`}
-                        class="flex items-start gap-3 px-5 py-3 transition-colors hover:bg-[rgba(74,117,153,0.06)] group"
+                        class="flex items-start gap-3 px-5 py-3 hover:bg-[rgba(74,117,153,0.06)] group"
                         style={i > 0 ? 'border-top:1px solid rgba(74,117,153,0.1)' : ''}>
                         <span class="shrink-0 mt-1 w-1.5 h-1.5 rounded-full" style={`background:${hcfg.color};margin-top:0.35rem`}></span>
                         <div class="flex flex-col gap-0.5 min-w-0">
-                          <span class="text-xs leading-snug group-hover:text-[#FF6B26] transition-colors truncate" style="color:#CBD5E1">{h.nombre}</span>
+                          <span class="text-xs leading-snug group-hover:text-[#FF6B26] truncate" style="color:#CBD5E1">{h.nombre}</span>
                           <span class="text-[10px]" style={`color:${hcfg.color}`}>{hcfg.label} · {h.ciudad}</span>
                         </div>
                       </a>
@@ -985,14 +985,14 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                   })}
                   {todasHermanas.length > 8 && (
                     <div class="px-5 pt-3 pb-4" style="border-top:1px solid rgba(74,117,153,0.1)">
-                      <a href={`/estaciones/${estado.slug}`} class="text-[10px] uppercase tracking-wider transition-colors hover:text-[#FF6B26]" style="color:#4A7599">
+                      <a href={`/estaciones/${estado.slug}`} class="text-[10px] uppercase tracking-wider hover:text-[#FF6B26]" style="color:#4A7599">
                         {todasHermanas.length} cuerpos de bomberos en {estado.nombre} →
                       </a>
                     </div>
                   )}
                   {todasHermanas.length <= 8 && (
                     <div class="px-5 pt-3 pb-4" style="border-top:1px solid rgba(74,117,153,0.1)">
-                      <a href={`/estaciones/${estado.slug}`} class="text-[10px] uppercase tracking-wider transition-colors hover:text-[#FF6B26]" style="color:#4A7599">
+                      <a href={`/estaciones/${estado.slug}`} class="text-[10px] uppercase tracking-wider hover:text-[#FF6B26]" style="color:#4A7599">
                         Directorio {estado.nombre} →
                       </a>
                     </div>
@@ -1012,14 +1012,14 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
               <div class="flex flex-col">
                 {blogLinks.map((b, i) => (
                   <a href={b.href}
-                    class="flex items-start gap-2.5 px-5 py-3 transition-colors hover:bg-[rgba(74,117,153,0.06)] group"
+                    class="flex items-start gap-2.5 px-5 py-3 hover:bg-[rgba(74,117,153,0.06)] group"
                     style={i > 0 ? 'border-top:1px solid rgba(74,117,153,0.1)' : ''}>
                     <span class="shrink-0 font-display text-[10px] font-bold mt-0.5" style="color:#4A7599">{String(i + 1).padStart(2,'0')}</span>
-                    <span class="text-xs leading-snug group-hover:text-[#FF6B26] transition-colors" style="color:#94A3B8">{b.label}</span>
+                    <span class="text-xs leading-snug group-hover:text-[#FF6B26]" style="color:#94A3B8">{b.label}</span>
                   </a>
                 ))}
                 <div class="px-5 pt-3 pb-4" style="border-top:1px solid rgba(74,117,153,0.1)">
-                  <a href="/blog" class="text-[10px] uppercase tracking-wider transition-colors hover:text-[#FF6B26]" style="color:#4A7599">
+                  <a href="/blog" class="text-[10px] uppercase tracking-wider hover:text-[#FF6B26]" style="color:#4A7599">
                     Blog técnico para bomberos →
                   </a>
                 </div>
@@ -1038,18 +1038,18 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                 <div class="flex flex-col">
                   {estadosRegion.map((e, i) => (
                     <a href={`/estaciones/${e.slug}`}
-                      class="flex items-center justify-between px-5 py-2.5 transition-colors hover:bg-[rgba(74,117,153,0.06)] group"
+                      class="flex items-center justify-between px-5 py-2.5 hover:bg-[rgba(74,117,153,0.06)] group"
                       style={i > 0 ? 'border-top:1px solid rgba(74,117,153,0.1)' : ''}>
                       <div class="flex flex-col gap-0.5">
-                        <span class="text-xs group-hover:text-[#FF6B26] transition-colors" style="color:#CBD5E1">{e.nombre}</span>
+                        <span class="text-xs group-hover:text-[#FF6B26]" style="color:#CBD5E1">{e.nombre}</span>
                         <span class="text-[10px]" style="color:#4A7599">{e.estaciones.length} corporacion{e.estaciones.length !== 1 ? 'es' : ''}</span>
                       </div>
-                      <span class="w-3.5 h-3.5 shrink-0 opacity-30 group-hover:opacity-80 transition-opacity"
+                      <span class="w-3.5 h-3.5 shrink-0 opacity-30 group-hover:opacity-80"
                         style="color:#4A7599" set:html={arrowIcon} aria-hidden="true"/>
                     </a>
                   ))}
                   <div class="px-5 pt-3 pb-4" style="border-top:1px solid rgba(74,117,153,0.1)">
-                    <a href="/estaciones" class="text-[10px] uppercase tracking-wider transition-colors hover:text-[#FF6B26]" style="color:#4A7599">
+                    <a href="/estaciones" class="text-[10px] uppercase tracking-wider hover:text-[#FF6B26]" style="color:#4A7599">
                       Directorio nacional de estaciones →
                     </a>
                   </div>
@@ -1081,10 +1081,10 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
             const hcfg = tipoConfig[h.tipo];
             return (
               <a href={`/estaciones/${estado.slug}/${h.slug}`}
-                class="group flex flex-col gap-2 p-4 transition-colors"
+                class="group flex flex-col gap-2 p-4"
                 style={`background:#070E1A;border:1px solid rgba(74,117,153,0.18);border-left:3px solid ${hcfg.color}`}>
                 <span class="font-display text-[9px] uppercase tracking-wider" style={`color:${hcfg.color}`}>{hcfg.label}</span>
-                <span class="font-display font-bold text-sm leading-tight transition-colors group-hover:text-[#FF6B26]"
+                <span class="font-display font-bold text-sm leading-tight group-hover:text-[#FF6B26]"
                   style="color:#FFFFFF">{h.nombre}</span>
                 <span class="text-[11px]" style="color:#64748B">{h.ciudad}</span>
               </a>

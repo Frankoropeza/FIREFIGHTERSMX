@@ -85,9 +85,9 @@ const collectionSchema = {
   >
     <div class="container-site">
       <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:#4A7599">
-        <li><a href="/"     class="hover:text-[#FF6B26] transition-colors">Inicio</a></li>
+        <li><a href="/"     class="hover:text-[#FF6B26]">Inicio</a></li>
         <li aria-hidden="true">/</li>
-        <li><a href="/blog" class="hover:text-[#FF6B26] transition-colors">Blog</a></li>
+        <li><a href="/blog" class="hover:text-[#FF6B26]">Blog</a></li>
         <li aria-hidden="true">/</li>
         <li><span style="color:#94A3B8" aria-current="page">{tag}</span></li>
       </ol>
@@ -157,7 +157,7 @@ const collectionSchema = {
                   .map((t) => (
                     <a
                       href={`/blog/tag/${slugifyTag(t)}`}
-                      class="badge badge-dark text-[10px] transition-colors hover:bg-[#FF6B26] hover:text-white"
+                      class="badge badge-dark text-[10px] hover:bg-[#FF6B26] hover:text-white"
                     >
                       #{t}
                     </a>
@@ -183,7 +183,7 @@ const collectionSchema = {
                   <li style="border-top:1px solid rgba(74,117,153,0.12)">
                     <a
                       href={r.href}
-                      class="flex items-center justify-between gap-3 px-5 py-3 transition-colors hover:bg-[#0C1825]"
+                      class="flex items-center justify-between gap-3 px-5 py-3 hover:bg-[#0C1825]"
                     >
                       <span class="font-display text-sm" style="color:#CBD5E1">{r.label}</span>
                       <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="#4A7599" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>

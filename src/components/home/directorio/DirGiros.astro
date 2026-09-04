@@ -12,21 +12,21 @@ const topPorGiro = Object.fromEntries(await Promise.all(giros.map(async (g) => [
 <section class="section" style="background:#070E1A" aria-labelledby="giros-heading">
   <div class="container-site">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
-      <div class="reveal">
+      <div>
         <span class="section-eyebrow mb-4 inline-flex">Por giro</span>
         <h2 id="giros-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Cuatro giros.<br/><span style="color:#F75000">Todo el sector.</span></h2>
       </div>
-      <div class="reveal" data-delay="1" style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+      <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
         <p class="text-sm leading-relaxed mb-3" style="color:#94A3B8">El sector no tiene clasificación oficial propia: el SCIAN reparte a estas empresas en más de treinta clases. Nosotros las agrupamos por lo que realmente hacen, para que un jefe de bomberos, una brigada industrial o un comprador de gobierno encuentre al proveedor correcto sin intermediarios.</p>
         <a href="/empresas/" class="inline-flex items-center gap-2 text-xs font-display font-semibold uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57;letter-spacing:0.1em">Directorio completo de equipo contra incendios <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg></a>
       </div>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
-      {giros.map((g, i) => {
+      {giros.map((g) => {
         const top = topPorGiro[g.slug] as { slug: string; nombre: string; total: number }[];
         return (
-          <article class="reveal giro-card group relative flex flex-col overflow-hidden" data-delay={String(i)} style={`--giro:${g.color};background:#040A12;border:1px solid rgba(74,117,153,0.2);border-top:3px solid ${g.color}`}>
+          <article class="giro-card group relative flex flex-col overflow-hidden" style={`--giro:${g.color};background:#040A12;border:1px solid rgba(74,117,153,0.2);border-top:3px solid ${g.color}`}>
 
             {/* Imagen */}
             <a href={`/empresas/${g.slug}/`} class="relative block overflow-hidden" style="aspect-ratio:16/10" aria-label={`Ver empresas de ${g.labelCorto.toLowerCase()}`}>
