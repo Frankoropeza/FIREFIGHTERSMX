@@ -7,11 +7,7 @@
  * Sin franja de stats. Foto de fondo con velo navy.
  */
 import { giros } from '@data/giros';
-import { estadosMeta, statsDirectorio } from '@lib/empresas';
-import { totalEstaciones } from '@data/estaciones';
-
-const stats = await statsDirectorio();
-const fmt = (n: number) => n.toLocaleString('es-MX');
+import { estadosMeta } from '@lib/empresas';
 ---
 <section class="relative overflow-hidden" style="background:#040A12;min-height:calc(100vh - 108px)" aria-labelledby="hero-heading">
 
@@ -37,11 +33,7 @@ const fmt = (n: number) => n.toLocaleString('es-MX');
     <div class="flex flex-col justify-center py-14 lg:py-20 xl:pr-16">
 
       <div class="reveal flex flex-wrap items-center gap-3 mb-7">
-        <span class="section-eyebrow">Directorio de equipo para bomberos · {stats.estados} estados</span>
-        <span class="flex items-center gap-1.5 text-xs font-medium" style="color:#FF6B26">
-          <span class="w-1.5 h-1.5 rounded-full shrink-0" style="background:#F75000"></span>
-          {fmt(stats.total)} empresas · {fmt(totalEstaciones)} cuerpos de bomberos
-        </span>
+        <span class="section-eyebrow">Directorio de equipo para bomberos · 32 estados</span>
       </div>
 
       <h1 id="hero-heading" class="reveal font-display font-bold uppercase mb-9" data-delay="1" style="line-height:0.9;letter-spacing:0.005em">
@@ -97,10 +89,10 @@ const fmt = (n: number) => n.toLocaleString('es-MX');
           <span class="text-xs font-display font-semibold uppercase tracking-[0.18em]" style="color:#F75000">Un solo lugar para todo el sector</span>
         </div>
         <p class="text-sm lg:text-[15px] leading-[1.9] mb-5" style="color:#CBD5E1">
-          FIREFIGHTERS MX reúne en un solo directorio a las empresas de <strong style="color:#FFFFFF">equipo contra incendios y equipo para bomberos</strong> de México: distribuidores de EPP estructural, cascos y equipos de respiración autónoma; empresas de venta, recarga y mantenimiento de <strong style="color:#FFFFFF">extintores</strong>; ingenierías e instaladoras de <strong style="color:#FFFFFF">sistemas contra incendio</strong>; y centros de capacitación de brigadas. {fmt(stats.total)} empresas clasificadas por giro y especialidad en los {stats.estados} estados, cada una con ubicación georreferenciada y fuente citada.
+          FIREFIGHTERS MX reúne en un solo directorio a las empresas de <strong style="color:#FFFFFF">equipo contra incendios y equipo para bomberos</strong> de México: distribuidores de EPP estructural, cascos y equipos de respiración autónoma; empresas de venta, recarga y mantenimiento de <strong style="color:#FFFFFF">extintores</strong>; ingenierías e instaladoras de <strong style="color:#FFFFFF">sistemas contra incendio</strong>; y centros de capacitación de brigadas. Cada empresa está clasificada por giro y especialidad, con ubicación georreferenciada y fuente citada, en los 32 estados del país.
         </p>
         <p class="text-sm lg:text-[15px] leading-[1.9]" style="color:#94A3B8">
-          Si equipas un cuerpo de bomberos, una brigada industrial o un área de protección civil, aquí encuentras al proveedor correcto en tu estado y llegas a la cotización o a la licitación con la norma adecuada: <strong style="color:#CBD5E1">NOM-002-STPS, NOM-154-SCFI, NFPA 1970, NFPA 13 y NFPA 72</strong>. Si vendes, instalas, recargas o capacitas, reclama tu ficha, verifica tus datos y aparece frente a los {fmt(totalEstaciones)} cuerpos de bomberos y las miles de brigadas que consultan este directorio.
+          Si equipas un cuerpo de bomberos, una brigada industrial o un área de protección civil, aquí encuentras al proveedor correcto en tu estado y llegas a la cotización o a la licitación con la norma adecuada: <strong style="color:#CBD5E1">NOM-002-STPS, NOM-154-SCFI, NFPA 1970, NFPA 13 y NFPA 72</strong>. Si vendes, instalas, recargas o capacitas, reclama tu ficha, verifica tus datos y aparece frente a los cuerpos de bomberos, brigadas industriales y compradores de gobierno que consultan este directorio.
         </p>
       </div>
     </div>

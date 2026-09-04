@@ -4,9 +4,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import { SITE } from '@config/site';
 import { giros, planConfig } from '@data/giros';
-import { estadosMeta, statsDirectorio } from '@lib/empresas';
-
-const stats = await statsDirectorio();
+import { estadosMeta } from '@lib/empresas';
 const canonicalURL = `${SITE.url}/empresas/registro/`;
 const seoMeta = {
   title: 'Registra o reclama tu empresa en el directorio',
@@ -37,13 +35,14 @@ const planes = [
       <div>
         <span class="section-eyebrow mb-5 inline-flex">Para empresas del sector</span>
         <h1 id="reg-heading" class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.2rem,5vw,4rem);line-height:0.95">Registra o reclama<br/><span style="color:#F5A623">tu empresa.</span></h1>
-        <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">El directorio reúne {stats.total.toLocaleString('es-MX')} empresas de equipo para bomberos, extintores, sistemas contra incendio y capacitación. Si tu empresa ya aparece, reclama la ficha y verifica tus datos. Si no aparece, regístrala: el alta básica es gratuita.</p>
+        <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">El directorio reúne a las empresas de equipo para bomberos, extintores, sistemas contra incendio y capacitación de todo el país. Si tu empresa ya aparece, reclama la ficha y verifica tus datos. Si no aparece, regístrala: el alta básica es gratuita.</p>
         <p class="text-sm leading-[1.9]" style="color:#94A3B8">Quien te busca aquí es un cuerpo de bomberos, una brigada industrial, un responsable de protección civil o un comprador de gobierno. Una ficha verificada y completa es la diferencia entre que te encuentren o no.</p>
       </div>
       <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
-        <div class="grid grid-cols-3 gap-px" style="background:rgba(74,117,153,0.15);border:1px solid rgba(74,117,153,0.18)">
-          {[{ n: stats.total.toLocaleString('es-MX'), l: 'Empresas' }, { n: '32', l: 'Estados' }, { n: '4', l: 'Giros' }].map((s) => (<div class="p-5" style="background:#0C1825"><div class="font-display font-bold" style="color:#F5A623;font-size:2.2rem;line-height:1">{s.n}</div><div class="font-display font-bold text-[10px] uppercase tracking-wider mt-1" style="color:#FFFFFF">{s.l}</div></div>))}
-        </div>
+        <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:#4A7599">Qué obtienes al reclamar tu ficha</p>
+        <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+          {['Contacto completo, logo y descripción', 'Marcas que distribuyes y certificaciones', 'Sello de datos verificados', 'Posición prioritaria en tu giro y estado (destacado)'].map((x) => (<li class="py-3 text-sm" style="border-bottom:1px solid rgba(74,117,153,0.15);color:#CBD5E1">{x}</li>))}
+        </ul>
       </div>
     </div>
   </section>

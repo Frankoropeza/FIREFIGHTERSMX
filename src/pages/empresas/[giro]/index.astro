@@ -26,7 +26,7 @@ const otros = giros.filter((x) => x.slug !== giro);
 const canonicalURL = `${SITE.url}/empresas/${giro}/`;
 const seoMeta = {
   title: `${g.label} en México — Directorio`,
-  description: `${lista.length} empresas de ${g.sustantivo} en ${porEstado.length} estados de México. ${g.description}. Mapa, buscador y fichas por estado.`.slice(0, 160),
+  description: `Empresas de ${g.sustantivo} en México, estado por estado. ${g.description}. Mapa, buscador y fichas.`.slice(0, 160),
   canonicalURL,
 };
 const breadcrumbSchema = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
@@ -49,29 +49,29 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
     <div class="container-site relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div>
-          <span class="section-eyebrow mb-5 inline-flex">Directorio · {lista.length} empresas · {porEstado.length} estados</span>
+          <span class="section-eyebrow mb-5 inline-flex">Directorio nacional · {g.labelCorto}</span>
           <h1 id="giro-heading" class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2rem,4.6vw,3.6rem);line-height:0.95">
             {g.label.split(':')[0]}<br/><span style={`color:${g.color}`}>{g.label.includes(':') ? g.label.split(':')[1].trim() : 'en México'}</span>
           </h1>
           {g.intro.map((p) => <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">{p}</p>)}
           <div class="flex flex-wrap gap-2 mt-2 mb-8">{g.normas.map((n) => <span class="badge badge-dark font-display text-[10px]">{n}</span>)}</div>
           <div class="flex flex-col sm:flex-row gap-3">
-            <a href="#empresas" class="btn btn-primary btn-lg">{lista.length} empresas de {g.labelCorto.toLowerCase()}</a>
+            <a href="#empresas" class="btn btn-primary btn-lg">{g.labelCorto} en México</a>
             <a href="/empresas/registro/" class="btn btn-ghost btn-lg">Registrar empresa de {g.sustantivo} →</a>
           </div>
         </div>
         <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
-          <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:#4A7599">Estados con mayor oferta</p>
+          <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:#4A7599">Principales estados</p>
           <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
             {porEstado.slice(0, 8).map((s) => (
               <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
                 <a href={`/empresas/${giro}/${s.slug}/`} class="group flex items-center justify-between gap-4 py-3">
                   <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{g.labelCorto} en {s.nombre}</span>
-                  <span class="font-display font-bold text-lg" style={`color:${g.color}`}>{s.total}</span>
+                  <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke={g.color} stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
                 </a>
               </li>))}
           </ul>
-          <a href="#estados" class="inline-flex mt-4 font-display font-semibold text-xs uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57">{g.labelCorto} en los {porEstado.length} estados →</a>
+          <a href="#estados" class="inline-flex mt-4 font-display font-semibold text-xs uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57">{g.labelCorto} en todos los estados →</a>
         </div>
       </div>
     </div>
@@ -96,13 +96,12 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
           <h2 id="estados-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">{g.labelCorto}<br/><span style={`color:${g.color}`}>estado por estado.</span></h2>
         </div>
         <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:#94A3B8">Cada estado tiene su directorio propio con mapa, buscador y filtros por especialidad. Las ciudades con mayor concentración: {ciudades.slice(0, 5).map((c) => c.ciudad).join(', ')}.</p>
+          <p class="text-sm leading-relaxed" style="color:#94A3B8">Cada estado tiene su directorio propio con mapa, buscador y filtros por especialidad. Presencia destacada en {ciudades.slice(0, 5).map((c) => c.ciudad).join(', ')}.</p>
         </div>
       </div>
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-8 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
         {porEstado.map((s) => (
-          <a href={`/empresas/${giro}/${s.slug}/`} class="grid-cell flex flex-col gap-1 p-4" style="background:#070E1A">
-            <span class="font-display font-bold text-2xl" style={`color:${g.color};line-height:1`}>{s.total}</span>
+          <a href={`/empresas/${giro}/${s.slug}/`} class="grid-cell ledger-cell flex flex-col gap-1 p-4" style="background:#070E1A">
             <span class="font-display font-semibold text-sm leading-tight" style="color:#FFFFFF">{s.nombre}</span>
           </a>))}
       </div>
@@ -114,7 +113,7 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-10">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Listado nacional</span>
-          <h2 id="lista-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">{lista.length} empresas<br/><span style={`color:${g.color}`}>de {g.sustantivo}.</span></h2>
+          <h2 id="lista-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Empresas de<br/><span style={`color:${g.color}`}>{g.sustantivo}.</span></h2>
         </div>
         <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
           <p class="text-sm leading-relaxed" style="color:#94A3B8">Busca por nombre, ciudad o municipio y filtra por especialidad. Cada ficha indica el nivel de verificación de sus datos y la fuente de origen.</p>

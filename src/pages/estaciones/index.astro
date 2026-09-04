@@ -5,7 +5,6 @@ import EstadoCard from '@components/estaciones/EstadoCard.astro';
 import { SITE, whatsappUrl } from '@config/site';
 import {
   estados,
-  totalEstaciones,
   totalEstados,
   tiposPresentes,
   tipoConfig,
@@ -155,30 +154,22 @@ const faqs = [
         </div>
 
         <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
-          <!-- Stats -->
-          <div class="grid grid-cols-2 gap-px" style="background:rgba(74,117,153,0.15);border:1px solid rgba(74,117,153,0.18)">
-            {[
-              { n: totalEstaciones.toString(), label: 'Estaciones listadas', sub: 'y creciendo' },
-              { n: totalEstados.toString(),    label: 'Estados cubiertos', sub: 'de 32 totales' },
-              { n: '7',                        label: 'Tipos de unidades', sub: 'Municipal a ARFF' },
-              { n: '068',                      label: 'Emergencias', sub: 'número nacional' },
-            ].map((s) => (
-              <div class="p-6" style="background:#0C1825">
-                <div class="font-display font-bold mb-1"
-                  style={`color:#F75000;font-size:${s.n.length > 3 ? '2rem' : '2.75rem'};line-height:1`}>
-                  {s.n}
-                </div>
-                <div class="font-display font-bold text-xs uppercase tracking-wider mb-0.5" style="color:#FFFFFF">{s.label}</div>
-                <div class="text-[10px] uppercase tracking-widest" style="color:#4A7599">{s.sub}</div>
-              </div>
+          <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:#4A7599">Tipos de corporación en el directorio</p>
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+            {conteoPorTipo.map(t => (
+              <li class="flex items-center gap-3 py-3" style="border-bottom:1px solid rgba(74,117,153,0.15)">
+                <span class="w-2.5 h-2.5 shrink-0" style={`background:${t.color}`}></span>
+                <span class="font-display font-semibold text-sm" style="color:#FFFFFF">{t.label}</span>
+              </li>
             ))}
-          </div>
+          </ul>
+          <p class="text-xs mt-4" style="color:#64748B">Emergencias en todo el país: <strong style="color:#CBD5E1">911</strong>.</p>
 
-          <div class="mt-5 flex flex-wrap gap-2">
+          <div class="mt-5 hidden flex-wrap gap-2">
             {conteoPorTipo.map(t => (
               <span class="badge font-display text-[10px]"
                 style={`color:${t.color};background:${t.bgColor};border:1px solid ${t.color}40`}>
-                {t.label} · {t.count}
+                {t.label}
               </span>
             ))}
           </div>

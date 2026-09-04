@@ -190,29 +190,20 @@ const checkIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
 
         {/* Col derecha — stats */}
         <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
-          <div class="grid grid-cols-2 gap-px" style="background:rgba(74,117,153,0.15);border:1px solid rgba(74,117,153,0.18)">
-            {[
-              { n: totalEst.toString(),          label: plural(totalEst, 'Estación listada', 'Estaciones listadas'), sub: 'en el estado' },
-              { n: municipios.length.toString(),  label: plural(municipios.length, 'Municipio', 'Municipios'),       sub: 'con cobertura' },
-              { n: tiposUnicos.length.toString(), label: plural(tiposUnicos.length, 'Tipo de unidad', 'Tipos de unidad'), sub: 'jurisdicciones' },
-              { n: '068',                         label: 'Emergencias',                                              sub: 'número nacional' },
-            ].map((s) => (
-              <div class="p-6" style="background:#0C1825">
-                <div class="font-display font-bold mb-1"
-                  style={`color:#F75000;font-size:${s.n.length > 3 ? '2rem' : '2.75rem'};line-height:1`}>
-                  {s.n}
-                </div>
-                <div class="font-display font-bold text-xs uppercase tracking-wider mb-0.5" style="color:#FFFFFF">{s.label}</div>
-                <div class="text-[10px] uppercase tracking-widest" style="color:#4A7599">{s.sub}</div>
-              </div>
+          <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:#4A7599">Municipios con cobertura</p>
+          <ul class="flex flex-wrap gap-2 list-none m-0 p-0 mb-5">
+            {municipios.slice(0, 14).map((m) => (
+              <li class="badge badge-dark font-display text-[10px]">{m}</li>
             ))}
-          </div>
+            {municipios.length > 14 && <li class="badge badge-dark font-display text-[10px]">y más</li>}
+          </ul>
+          <p class="text-xs mb-5" style="color:#64748B">Emergencias en todo el país: <strong style="color:#CBD5E1">911</strong>. Verifica el número local de tu municipio.</p>
 
-          <div class="mt-5 flex flex-wrap gap-2">
+          <div class="flex flex-wrap gap-2">
             {conteoPorTipo.map((t) => (
               <span class="badge font-display text-[10px]"
                 style={`color:${t.color};background:${t.bgColor};border:1px solid ${t.color}40`}>
-                {t.label} · {t.count}
+                {t.label}
               </span>
             ))}
           </div>
@@ -486,17 +477,7 @@ const checkIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
               <strong style="color:#CBD5E1"> 911</strong>. Verifica siempre el número local de tu municipio antes
               de una emergencia.
             </p>
-            <div class="grid grid-cols-2 gap-px mt-2" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
-              {[
-                { n: totalEst.toString(),         l: plural(totalEst, 'Estación', 'Estaciones') },
-                { n: municipios.length.toString(), l: plural(municipios.length, 'Municipio', 'Municipios') },
-              ].map((s) => (
-                <div class="p-4" style="background:#070E1A">
-                  <div class="font-display font-bold text-2xl" style="color:#F75000;line-height:1">{s.n}</div>
-                  <div class="text-[10px] uppercase tracking-widest mt-1" style="color:#4A7599">{s.l}</div>
-                </div>
-              ))}
-            </div>
+
           </div>
         </div>
 

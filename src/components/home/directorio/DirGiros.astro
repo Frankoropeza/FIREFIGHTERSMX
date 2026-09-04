@@ -6,10 +6,8 @@
  * Hover instantáneo (borde y velo de la imagen), sin transform.
  */
 import { giros } from '@data/giros';
-import { conteoPorGiro, conteoPorEstado } from '@lib/empresas';
-const porGiro = await conteoPorGiro();
+import { conteoPorEstado } from '@lib/empresas';
 const topPorGiro = Object.fromEntries(await Promise.all(giros.map(async (g) => [g.slug, (await conteoPorEstado(g.slug)).filter((s) => s.total > 0).sort((a, b) => b.total - a.total).slice(0, 3)])));
-const fmt = (n: number) => n.toLocaleString('es-MX');
 ---
 <section class="section" style="background:#070E1A" aria-labelledby="giros-heading">
   <div class="container-site">
@@ -26,7 +24,6 @@ const fmt = (n: number) => n.toLocaleString('es-MX');
 
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
       {giros.map((g, i) => {
-        const c = porGiro.find((x) => x.giro === g.slug)!;
         const top = topPorGiro[g.slug] as { slug: string; nombre: string; total: number }[];
         return (
           <article class="reveal giro-card group relative flex flex-col overflow-hidden" data-delay={String(i)} style={`--giro:${g.color};background:#040A12;border:1px solid rgba(74,117,153,0.2);border-top:3px solid ${g.color}`}>
@@ -35,17 +32,11 @@ const fmt = (n: number) => n.toLocaleString('es-MX');
             <a href={`/empresas/${g.slug}/`} class="relative block overflow-hidden" style="aspect-ratio:16/10" aria-label={`Ver empresas de ${g.labelCorto.toLowerCase()}`}>
               <img src={g.imagen} alt={g.imagenAlt} width="640" height="400" loading="lazy" decoding="async"
                 class="giro-img absolute inset-0 w-full h-full object-cover" style="object-position:center 30%" />
-              <div class="absolute inset-0" aria-hidden="true" style="background:linear-gradient(180deg, rgba(4,10,18,0.15) 0%, rgba(4,10,18,0.05) 40%, rgba(4,10,18,0.92) 100%)"></div>
+              <div class="absolute inset-0" aria-hidden="true" style="background:linear-gradient(180deg, rgba(4,10,18,0.1) 0%, rgba(4,10,18,0.05) 55%, rgba(4,10,18,0.75) 100%)"></div>
               {/* Chip del giro */}
               <span class="absolute top-4 left-4 inline-flex items-center gap-1.5 font-display font-bold text-[10px] uppercase tracking-wider px-2 py-1" style={`color:#FFFFFF;background:${g.color};box-shadow:0 2px 12px ${g.color}66`}>
                 <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" set:html={g.icon} aria-hidden="true"/>{g.labelCorto}
               </span>
-              <span class="absolute top-4 right-4 font-display font-bold text-xs tracking-widest" style="color:rgba(255,255,255,0.55)">0{i + 1}</span>
-              {/* Conteo sobre la imagen */}
-              <div class="absolute left-5 bottom-4 flex items-baseline gap-2">
-                <span class="stat-num font-display font-bold" style={`color:#FFFFFF;font-size:2.75rem;line-height:1;text-shadow:0 2px 16px rgba(0,0,0,0.6)`}>{fmt(c.total)}</span>
-                <span class="font-display text-[11px] uppercase tracking-widest" style="color:#CBD5E1">empresas</span>
-              </div>
             </a>
 
             {/* Cuerpo */}
@@ -56,7 +47,7 @@ const fmt = (n: number) => n.toLocaleString('es-MX');
               <p class="text-sm leading-relaxed" style="color:#94A3B8">{g.claim}</p>
               <p class="text-xs leading-relaxed" style="color:#4A7599">
                 <span class="font-display uppercase tracking-wider" style="color:#64748B">Mayor oferta:</span>{' '}
-                {top.map((t, k) => <Fragment>{k > 0 && ' · '}<a href={`/empresas/${g.slug}/${t.slug}/`} class="hover:text-[#FF6B26]" style="color:#94A3B8">{t.nombre} <span style={`color:${g.color}`}>{t.total}</span></a></Fragment>)}
+                {top.map((t, k) => <Fragment>{k > 0 && ' · '}<a href={`/empresas/${g.slug}/${t.slug}/`} class="hover:text-[#FF6B26]" style="color:#94A3B8">{t.nombre}</a></Fragment>)}
               </p>
               <a href={`/empresas/${g.slug}/`} class="btn btn-primary w-full justify-center mt-auto" style="margin-top:auto">{g.labelCorto} en México →</a>
             </div>

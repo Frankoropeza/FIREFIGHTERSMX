@@ -26,7 +26,7 @@ const centro: [number, number] | undefined = puntos.length ? [puntos.reduce((a, 
 const canonicalURL = `${SITE.url}/empresas/estado/${estado.slug}/`;
 const seoMeta = {
   title: `Empresas de Equipo Contra Incendio en ${estado.nombre}`,
-  description: `${lista.length} empresas de equipo para bomberos, extintores, sistemas contra incendio y capacitación en ${estado.nombre}: ${ciudades.slice(0, 4).map((c) => c.ciudad).join(', ')}. Mapa y buscador.`.slice(0, 160),
+  description: `Empresas de equipo para bomberos, extintores, sistemas contra incendio y capacitación en ${estado.nombre}: ${ciudades.slice(0, 4).map((c) => c.ciudad).join(', ')}. Mapa y buscador.`.slice(0, 160),
   canonicalURL,
 };
 const breadcrumbSchema = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
@@ -53,25 +53,25 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
           <span class="section-eyebrow mb-5 inline-flex">Directorio · {estado.abreviatura} · {estado.region}</span>
           <h1 id="edo-heading" class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.2rem,5vw,4rem);line-height:0.95">Empresas de equipo<br/><span style="color:#F75000">contra incendio</span><br/>en {estado.nombre}</h1>
           <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">
-            {lista.length} empresas de {porGiro.map((g) => g.nombre.toLowerCase()).join(', ')} en {estado.nombre}, concentradas en {ciudades.slice(0, 4).map((c) => c.ciudad).join(', ')}. Cada registro está georreferenciado y clasificado por giro y especialidad, con su fuente de origen.
+            Empresas de {porGiro.map((g) => g.nombre.toLowerCase()).join(', ')} en {estado.nombre}, con presencia en {ciudades.slice(0, 4).map((c) => c.ciudad).join(', ')}. Cada registro está georreferenciado y clasificado por giro y especialidad, con su fuente de origen.
           </p>
           {cob && <p class="text-sm leading-[1.9] mb-8" style="color:#94A3B8">{cob.longDesc[0]}</p>}
           <div class="flex flex-col sm:flex-row gap-3">
-            <a href="#empresas" class="btn btn-primary btn-lg">{lista.length} empresas en {estado.nombre}</a>
+            <a href="#empresas" class="btn btn-primary btn-lg">Empresas en {estado.nombre}</a>
             <a href="/empresas/registro/" class="btn btn-ghost btn-lg">Registrar empresa en {estado.nombre} →</a>
           </div>
         </div>
         <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
           <div class="grid grid-cols-2 gap-px" style="background:rgba(74,117,153,0.15);border:1px solid rgba(74,117,153,0.18)">
             {porGiro.map((g) => { const meta = giros.find((x) => x.slug === g.giro)!; return (
-              <a href={`/empresas/${g.giro}/${estado.slug}/`} class="grid-cell p-6" style="background:#0C1825">
-                <div class="font-display font-bold mb-1" style={`color:${meta.color};font-size:2.5rem;line-height:1`}>{g.total}</div>
-                <div class="font-display font-bold text-xs uppercase tracking-wider mb-0.5" style="color:#FFFFFF">{meta.labelCorto}</div>
+              <a href={`/empresas/${g.giro}/${estado.slug}/`} class="grid-cell ledger-cell flex flex-col gap-2 p-6" style="background:#0C1825">
+                <span class="w-9 h-9 flex items-center justify-center" style={`color:${meta.color};border:1px solid ${meta.color}55`}><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" set:html={meta.icon} aria-hidden="true"/></span>
+                <div class="font-display font-bold text-sm uppercase tracking-wider" style="color:#FFFFFF">{meta.labelCorto}</div>
                 <div class="text-[10px] uppercase tracking-widest" style="color:#4A7599">en {estado.nombre} →</div>
               </a>); })}
           </div>
           <div class="mt-5 flex flex-wrap gap-2">
-            {ciudades.slice(0, 8).map((c) => <span class="badge badge-dark font-display text-[10px]">{c.ciudad} · {c.total}</span>)}
+            {ciudades.slice(0, 8).map((c) => <span class="badge badge-dark font-display text-[10px]">{c.ciudad}</span>)}
           </div>
         </div>
       </div>
@@ -96,7 +96,7 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-10">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Directorio · {estado.nombre}</span>
-          <h2 id="lista-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">{lista.length} empresas<br/><span style="color:#F75000">en {estado.nombre}.</span></h2>
+          <h2 id="lista-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Empresas contra incendio<br/><span style="color:#F75000">en {estado.nombre}.</span></h2>
         </div>
         <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
           <p class="text-sm leading-relaxed" style="color:#94A3B8">Filtra por giro o busca por nombre, ciudad o municipio. Para ver un giro con sus especialidades y su propio mapa, entra al directorio de ese giro en {estado.nombre}.</p>
@@ -111,7 +111,7 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
       <div>
         <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:#4A7599">Por giro en {estado.nombre}</p>
         <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
-          {porGiro.map((g) => { const m = giros.find((x) => x.slug === g.giro)!; return (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/empresas/${g.giro}/${estado.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{m.label}</span><span class="font-display font-bold" style={`color:${m.color}`}>{g.total}</span></a></li>); })}
+          {porGiro.map((g) => { const m = giros.find((x) => x.slug === g.giro)!; return (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/empresas/${g.giro}/${estado.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{m.label}</span><span style={`color:${m.color}`}>→</span></a></li>); })}
         </ul>
       </div>
       <div>
@@ -123,7 +123,7 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
       <div>
         <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:#4A7599">También en {estado.nombre}</p>
         <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
-          {dirEst && dirEst.estaciones.length > 0 && <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/estaciones/${estado.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Estaciones de bomberos en {estado.nombre}</span><span class="text-xs" style="color:#64748B">{dirEst.estaciones.length} corporaciones listadas</span></span><span style="color:#4A7599">→</span></a></li>}
+          {dirEst && dirEst.estaciones.length > 0 && <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/estaciones/${estado.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Estaciones de bomberos en {estado.nombre}</span><span class="text-xs" style="color:#64748B">Municipales, estatales, industriales y aeroportuarias</span></span><span style="color:#4A7599">→</span></a></li>}
           {cob && <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/cobertura/${estado.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Cobertura y logística en {estado.nombre}</span><span class="text-xs" style="color:#64748B">{cob.dias}</span></span><span style="color:#4A7599">→</span></a></li>}
           <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href="/empresas/" class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Directorio nacional</span><span style="color:#4A7599">→</span></a></li>
         </ul>

@@ -43,7 +43,7 @@ const seoMeta = {
   title: `${g.label.split(':')[0].trim()} en ${estado.nombre} — Directorio`,
   description: vacio
     ? `Directorio de empresas de ${g.sustantivo} en ${estado.nombre}. Aún no hay empresas registradas en este giro y estado: registra la tuya gratis.`
-    : `${lista.length} empresas de ${g.sustantivo} en ${estado.nombre}: ${ciudades.slice(0, 4).map((c) => c.ciudad).join(', ')}. Mapa, contacto, especialidades y fuente de cada registro.`.slice(0, 160),
+    : `Empresas de ${g.sustantivo} en ${estado.nombre}: ${ciudades.slice(0, 4).map((c) => c.ciudad).join(', ')}. Mapa, contacto, especialidades y fuente de cada registro.`.slice(0, 160),
   canonicalURL,
   noindex: vacio,
 };
@@ -80,25 +80,22 @@ const waMsg = `Hola, busco proveedores de ${g.sustantivo} en ${estado.nombre}. �
             <p class="text-sm leading-[1.9] mb-8" style="color:#94A3B8">Todavía no tenemos empresas de {g.sustantivo} registradas en {estado.nombre}. Si tu empresa opera aquí, regístrala gratis y aparecerá en este directorio con mapa y ficha propia.</p>
           ) : (
             <Fragment>
-              <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">{lista.length} {lista.length === 1 ? 'empresa' : 'empresas'} de {g.sustantivo} en {estado.nombre}, con presencia en {ciudades.length === 1 ? ciudades[0].ciudad : ciudades.slice(0, 4).map((c) => c.ciudad).join(', ')}. Cada ficha incluye ubicación georreferenciada, giro, especialidades y el nivel de verificación de sus datos.</p>
+              <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">Empresas de {g.sustantivo} en {estado.nombre}, con presencia en {ciudades.length === 1 ? ciudades[0].ciudad : ciudades.slice(0, 4).map((c) => c.ciudad).join(', ')}. Cada ficha incluye ubicación georreferenciada, giro, especialidades y el nivel de verificación de sus datos.</p>
               <p class="text-sm leading-[1.9] mb-8" style="color:#94A3B8">{g.intro[1]}</p>
             </Fragment>
           )}
           <div class="flex flex-col sm:flex-row gap-3">
-            {vacio ? <a href="/empresas/registro/" class="btn btn-primary btn-lg">Registrar empresa de {g.sustantivo}</a> : <a href="#empresas" class="btn btn-primary btn-lg">{lista.length === 1 ? `1 empresa de ${g.labelCorto.toLowerCase()} en ${estado.nombre}` : `${lista.length} empresas de ${g.labelCorto.toLowerCase()} en ${estado.nombre}`}</a>}
+            {vacio ? <a href="/empresas/registro/" class="btn btn-primary btn-lg">Registrar empresa de {g.sustantivo}</a> : <a href="#empresas" class="btn btn-primary btn-lg">{g.labelCorto} en {estado.nombre}</a>}
             <a href={whatsappUrl(waMsg)} target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-lg">Orientación sobre {g.sustantivo} →</a>
           </div>
         </div>
         <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
-          <div class="grid grid-cols-2 gap-px" style="background:rgba(74,117,153,0.15);border:1px solid rgba(74,117,153,0.18)">
-            {[
-              { n: String(lista.length), label: lista.length === 1 ? 'Empresa' : 'Empresas', sub: `en ${estado.abreviatura}` },
-              { n: String(ciudades.length), label: ciudades.length === 1 ? 'Ciudad' : 'Ciudades', sub: 'con oferta' },
-              { n: String(esp.length), label: 'Especialidades', sub: 'detectadas' },
-              { n: String(lista.filter((e) => e.sitioWeb).length), label: 'Con sitio web', sub: 'presencia digital' },
-            ].map((s) => (<div class="p-6" style="background:#0C1825"><div class="font-display font-bold mb-1" style={`color:${g.color};font-size:2.5rem;line-height:1`}>{s.n}</div><div class="font-display font-bold text-xs uppercase tracking-wider mb-0.5" style="color:#FFFFFF">{s.label}</div><div class="text-[10px] uppercase tracking-widest" style="color:#4A7599">{s.sub}</div></div>))}
-          </div>
-          <div class="mt-5 flex flex-wrap gap-2">{g.normas.map((n) => <span class="badge badge-dark font-display text-[10px]">{n}</span>)}</div>
+          <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:#4A7599">Ciudades con presencia</p>
+          <ul class="flex flex-col list-none m-0 p-0 mb-5" style="border-top:1px solid rgba(74,117,153,0.15)">
+            {ciudades.slice(0, 6).map((c) => (<li class="py-2.5 font-display font-semibold text-sm" style="border-bottom:1px solid rgba(74,117,153,0.15);color:#CBD5E1">{g.labelCorto} en {c.ciudad}</li>))}
+          </ul>
+          <p class="font-display font-bold text-xs uppercase tracking-widest mb-3" style="color:#4A7599">Marco normativo</p>
+          <div class="flex flex-wrap gap-2">{g.normas.map((n) => <span class="badge badge-dark font-display text-[10px]">{n}</span>)}</div>
         </div>
       </div>
     </div>
@@ -123,7 +120,7 @@ const waMsg = `Hola, busco proveedores de ${g.sustantivo} en ${estado.nombre}. �
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-10">
           <div>
             <span class="section-eyebrow mb-4 inline-flex">{tituloCorto}</span>
-            <h2 id="lista-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">{lista.length} {lista.length === 1 ? 'empresa' : 'empresas'}<br/><span style={`color:${g.color}`}>de {g.sustantivo}.</span></h2>
+            <h2 id="lista-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Empresas de<br/><span style={`color:${g.color}`}>{g.sustantivo}.</span></h2>
           </div>
           <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
             <p class="text-sm leading-relaxed" style="color:#94A3B8">Las fichas destacadas y verificadas aparecen primero. Los registros básicos provienen del DENUE y se marcan como registro público hasta que la empresa reclama y verifica su ficha.</p>
@@ -139,14 +136,14 @@ const waMsg = `Hola, busco proveedores de ${g.sustantivo} en ${estado.nombre}. �
       <div>
         <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:#4A7599">Otros giros en {estado.nombre}</p>
         <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
-          {otrosGirosEdo.map((o) => { const m = giroMap[o.giro]; return (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/empresas/${o.giro}/${estado.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{m.labelCorto} en {estado.nombre}</span><span class="font-display font-bold" style={`color:${m.color}`}>{o.total}</span></a></li>); })}
+          {otrosGirosEdo.map((o) => { const m = giroMap[o.giro]; return (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/empresas/${o.giro}/${estado.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{m.labelCorto} en {estado.nombre}</span><span style={`color:${m.color}`}>→</span></a></li>); })}
           <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/empresas/estado/${estado.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Todas las empresas en {estado.nombre}</span><span style="color:#4A7599">→</span></a></li>
         </ul>
       </div>
       <div>
         <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:#4A7599">{g.labelCorto} en la región {estado.region}</p>
         <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
-          {vecinos.map((v) => (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/empresas/${giro}/${v.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{g.labelCorto} en {v.nombre}</span><span class="font-display font-bold" style={`color:${g.color}`}>{v.total}</span></a></li>))}
+          {vecinos.map((v) => (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/empresas/${giro}/${v.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{g.labelCorto} en {v.nombre}</span><span style={`color:${g.color}`}>→</span></a></li>))}
           <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/empresas/${giro}/`} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{g.labelCorto} en todo México</span><span style="color:#4A7599">→</span></a></li>
         </ul>
       </div>

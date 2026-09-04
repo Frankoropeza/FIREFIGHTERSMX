@@ -1,39 +1,31 @@
 ---
-/** Los 32 estados en ledger compacto, ordenados por oferta; top 4 destacados */
-import { conteoPorEstado, estadosMeta } from '@lib/empresas';
-import { estadoPorSlug } from '@data/estaciones';
-const porEstado = (await conteoPorEstado()).sort((a, b) => b.total - a.total);
-const top = porEstado.slice(0, 4);
-const resto = porEstado.slice(4);
+/** Los 32 estados — enlaces limpios, agrupados por región, sin contadores */
+import { estadosMeta } from '@lib/empresas';
+const regiones = [...new Set(estadosMeta.map((e) => e.region))];
+const porRegion = regiones.map((r) => ({ r, estados: estadosMeta.filter((e) => e.region === r) }));
 ---
 <section class="section" style="background:#070E1A" aria-labelledby="estados-heading">
   <div class="container-site">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
       <div class="reveal">
         <span class="section-eyebrow mb-4 inline-flex">Por estado</span>
-        <h2 id="estados-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Los 32 estados,<br/><span style="color:#F75000">de mayor a menor oferta.</span></h2>
+        <h2 id="estados-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Equipo contra incendio<br/><span style="color:#F75000">en los 32 estados.</span></h2>
       </div>
       <div class="reveal" data-delay="1" style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-        <p class="text-sm leading-relaxed" style="color:#94A3B8">La concentración sigue al mapa industrial del país. Cada estado tiene directorio propio de empresas —con mapa, buscador y filtros— y directorio de cuerpos de bomberos, que son sus compradores naturales.</p>
+        <p class="text-sm leading-relaxed" style="color:#94A3B8">Cada estado tiene su directorio propio de empresas —con mapa, buscador y filtros por giro— y su directorio de cuerpos de bomberos, que son los compradores naturales del sector. Elige tu entidad para ver los proveedores más cercanos.</p>
       </div>
     </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-px mb-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18);border-bottom:0">
-      {top.map((s, i) => { const m = estadosMeta.find((e) => e.slug === s.slug)!; const est = estadoPorSlug(s.slug)?.estaciones.length ?? 0; return (
-        <a href={`/empresas/estado/${s.slug}/`} class="reveal grid-cell ledger-cell flex flex-col gap-3 p-7" data-delay={String(i)} style="background:#040A12">
-          <span class="font-display text-[10px] uppercase tracking-widest" style="color:#4A7599">{m.abreviatura} · {m.region}</span>
-          <span class="stat-num font-display font-bold" style="color:#F75000;font-size:3.4rem;line-height:1">{s.total}</span>
-          <span class="font-display font-bold text-xl leading-tight" style="color:#FFFFFF">{s.nombre}</span>
-          <span class="text-xs" style="color:#64748B">{est} cuerpos de bomberos listados</span>
-          <span class="mt-2 font-display font-semibold text-xs uppercase tracking-wider" style="color:#FF8F57">Equipo contra incendio en {s.nombre} →</span>
-        </a>); })}
-    </div>
-    <div class="reveal grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-px" data-delay="2" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
-      {resto.map((s) => (
-        <a href={`/empresas/estado/${s.slug}/`} class="grid-cell ledger-cell flex items-baseline justify-between gap-2 px-4 py-3" style="background:#070E1A">
-          <span class="font-display font-semibold text-sm leading-tight truncate" style="color:#CBD5E1">{s.nombre}</span>
-          <span class="stat-num font-display font-bold text-lg shrink-0" style="color:#F75000">{s.total}</span>
-        </a>))}
+    <div class="reveal grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" data-delay="2" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
+      {porRegion.map((g) => (
+        <div class="flex flex-col p-6" style="background:#040A12">
+          <span class="font-display font-bold text-[10px] uppercase tracking-widest mb-3" style="color:#F75000">{g.r}</span>
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+            {g.estados.map((e) => (
+              <li style="border-bottom:1px solid rgba(74,117,153,0.12)">
+                <a href={`/empresas/estado/${e.slug}/`} class="ledger-cell block py-2 pl-3 -ml-3 font-display font-semibold text-sm hover:text-[#FF6B26]" style="color:#CBD5E1">Equipo contra incendio en {e.nombre}</a>
+              </li>))}
+          </ul>
+        </div>))}
     </div>
   </div>
 </section>
