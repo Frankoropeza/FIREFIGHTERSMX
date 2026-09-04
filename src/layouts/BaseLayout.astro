@@ -13,6 +13,7 @@ export interface Props {
   ogImage?: string;
   ogType?: 'website' | 'article' | 'product';
   noindex?: boolean;
+  noBrandSuffix?: boolean;
   schema?: object | object[];
 }
 
@@ -23,6 +24,7 @@ const {
   ogImage = '/images/og-default.jpg',
   ogType = 'website',
   noindex = false,
+  noBrandSuffix = false,
   schema,
 } = Astro.props;
 ---
@@ -49,6 +51,7 @@ const {
       ogImage={ogImage}
       ogType={ogType}
       noindex={noindex}
+      noBrandSuffix={noBrandSuffix}
       schema={schema}
     />
 

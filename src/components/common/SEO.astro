@@ -7,6 +7,8 @@ export interface Props {
   ogImage?: string;
   ogType?: string;
   noindex?: boolean;
+  /** true = no anexar " | FIREFIGHTERS MX" (home: título de 3 módulos de keywords) */
+  noBrandSuffix?: boolean;
   schema?: object | object[];
 }
 
@@ -17,10 +19,11 @@ const {
   ogImage = '/images/og-default.jpg',
   ogType = 'website',
   noindex = false,
+  noBrandSuffix = false,
   schema,
 } = Astro.props;
 
-const fullTitle = title.includes('FIREFIGHTERS MX') ? title : `${title} | FIREFIGHTERS MX`;
+const fullTitle = noBrandSuffix || title.includes('FIREFIGHTERS MX') ? title : `${title} | FIREFIGHTERS MX`;
 const absoluteOgImageRaw = ogImage.startsWith('http') ? ogImage : `https://firefighters.mx${ogImage}`;
 
 // OG requiere formatos universales (WhatsApp/Facebook/Twitter no soportan AVIF/WebP):

@@ -26,10 +26,14 @@ const stats = await statsDirectorio();
 const fmt = (n: number) => n.toLocaleString('es-MX');
 
 const seoMeta = {
-  // ≤60c, keyword-first
-  title: 'Directorio de Equipo Contra Incendio en México | FIREFIGHTERS MX',
-  // ≤160c
-  description: `${fmt(stats.total)} empresas de equipo para bomberos, extintores, sistemas contra incendio y capacitación en los 32 estados, más ${fmt(totalEstaciones)} cuerpos de bomberos. Busca por giro y estado.`,
+  // Título de 3 módulos de keywords, 59c, sin sufijo de marca (Google toma el
+  // nombre del sitio del schema WebSite/Organization). Orden = prioridad:
+  // 1 equipo contra incendios · 2 equipo para bomberos · 3 directorio
+  title: 'Equipo Contra Incendios | Equipo para Bomberos | Directorio',
+  noBrandSuffix: true,
+  // ≤155c, semánticamente ligada al título: repite los dos módulos principales
+  // y abre a las entidades relacionadas (extintores, sistemas CI, EPP, 32 estados)
+  description: `Directorio de equipo contra incendios y equipo para bomberos en México: ${fmt(stats.total)} empresas de extintores, sistemas contra incendio y EPP en 32 estados.`,
   canonicalURL: `${SITE.url}/`,
 };
 
