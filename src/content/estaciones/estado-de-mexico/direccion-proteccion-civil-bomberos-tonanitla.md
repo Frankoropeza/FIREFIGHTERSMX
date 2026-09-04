@@ -10,7 +10,7 @@ tipo: "Municipal"
 corporacion: "Dirección de Protección Civil y Bomberos de Tonanitla"
 corporacionSlug: "direccion-de-proteccion-civil-y-bomberos-de-tonanitla"
 rolEstacion: "unica"
-direccion: "CALLE 18 DE MARZO Col. LA CONCEPCION C.P. 55785"
+direccion: "Calle 18 de Marzo, Col. La Concepcion, C.P. 55785"
 coordenadas:
   lat: 19.69090367
   lng: -99.04914640

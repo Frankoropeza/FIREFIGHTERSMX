@@ -11,7 +11,7 @@ corporacion: "Protección Civil y Bomberos de Celaya"
 corporacionSlug: "proteccion-civil-y-bomberos-de-celaya"
 rolEstacion: "subestacion"
 numeroEstacion: "Estación 3 Galaxias del Parque"
-direccion: "Av. Las Torres, Col. Galaxias del Parque, Celaya, Gto. C.P. 38016"
+direccion: "Av. las Torres, Col. Galaxias del Parque, Celaya, Gto., C.P. 38016"
 coordenadas:
   lat: 20.509
   lng: -100.829

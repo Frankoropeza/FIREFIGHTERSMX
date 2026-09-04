@@ -10,7 +10,7 @@ tipo: "Municipal"
 corporacion: "H. Cuerpo de Bomberos de Silao de la Victoria"
 corporacionSlug: "h-cuerpo-de-bomberos-de-silao-de-la-victoria"
 rolEstacion: "unica"
-direccion: "Boulevard Raúl Bailleres Norte 9, Col. La Joya, Silao de la Victoria, Gto. C.P. 36130"
+direccion: "Boulevard Raúl Bailleres Norte 9, Col. La Joya, Silao de la Victoria, Gto., C.P. 36130"
 coordenadas:
   lat: 20.9413
   lng: -101.4296

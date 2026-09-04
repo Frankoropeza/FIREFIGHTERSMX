@@ -11,7 +11,7 @@ corporacion: "HCBCDMX"
 corporacionSlug: "hcbcdmx"
 rolEstacion: "subestacion"
 numeroEstacion: "Estación Álvaro Obregón"
-direccion: "Av. Escuadrón 201, esq. Antiguo Camino a La Venta, Col. San Pedro de los Pinos, C.P. 01150"
+direccion: "Av. Escuadrón 201, esq. Antiguo Camino a la Venta, Col. San Pedro de los Pinos, C.P. 01150"
 coordenadas:
   lat: 19.386141
   lng: -99.2017399

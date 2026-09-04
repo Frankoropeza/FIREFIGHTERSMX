@@ -9,7 +9,8 @@ municipio: "Hermosillo"
 tipo: "Municipal"
 corporacion: "Departamento de Bomberos de Hermosillo"
 corporacionSlug: "departamento-de-bomberos-de-hermosillo"
-rolEstacion: "unica"
+rolEstacion: "central"
+numeroEstacion: "Estación Central"
 direccion: "Calle Matamoros y Nuevo León, Centro, Hermosillo, Sonora"
 coordenadas:
   lat: 29.073

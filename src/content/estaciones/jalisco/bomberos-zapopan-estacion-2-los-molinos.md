@@ -11,7 +11,7 @@ corporacion: "Dirección de Protección Civil y Bomberos de Zapopan"
 corporacionSlug: "direccion-de-proteccion-civil-y-bomberos-de-zapopan"
 rolEstacion: "subestacion"
 numeroEstacion: "Estación 2"
-direccion: "Av. de Los Molinos S/N, Col. Los Molinos, C.P. 45200"
+direccion: "Av. de los Molinos S/N, Col. Los Molinos, C.P. 45200"
 coordenadas:
   lat: 20.82081526
   lng: -103.44320715

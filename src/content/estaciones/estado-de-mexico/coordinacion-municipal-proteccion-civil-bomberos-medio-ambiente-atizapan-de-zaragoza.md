@@ -11,7 +11,7 @@ corporacion: "Coordinación Municipal de Protección Civil, Bomberos y Medio Amb
 corporacionSlug: "coordinacion-municipal-de-proteccion-civil-bomberos-y-medio-ambiente-de-atizapan"
 rolEstacion: "central"
 numeroEstacion: "Cuartel Central"
-direccion: "CALLE MUNICIPIO LIBRE Col. LOMAS DE ATIZAPAN C.P. 52977"
+direccion: "Calle Municipio Libre, Col. Lomas de Atizapan, C.P. 52977"
 coordenadas:
   lat: 19.55763978
   lng: -99.25369347

@@ -10,7 +10,7 @@ tipo: "Municipal"
 corporacion: "Coordinación de Protección Civil y Bomberos de Metepec"
 corporacionSlug: "coordinacion-de-proteccion-civil-y-bomberos-de-metepec"
 rolEstacion: "unica"
-direccion: "CALLE URUAPAN 65 Col. SAN JORGE PUEBLO NUEVO C.P. 52166"
+direccion: "Calle Uruapan 65, Col. San Jorge Pueblo Nuevo, C.P. 52166"
 coordenadas:
   lat: 19.25196433
   lng: -99.61683239

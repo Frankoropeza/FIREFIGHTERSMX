@@ -10,7 +10,7 @@ tipo: "Municipal"
 corporacion: "Dirección de Protección Civil y Bomberos de Zumpango"
 corporacionSlug: "direccion-de-proteccion-civil-y-bomberos-de-zumpango"
 rolEstacion: "unica"
-direccion: "CERRADA ZARAGOZA Col. DE SANTIAGO PRIMERA SECCIÓN C.P. 55600"
+direccion: "Cerrada Zaragoza, Col. De Santiago Primera Sección, C.P. 55600"
 coordenadas:
   lat: 19.80459930
   lng: -99.10137060

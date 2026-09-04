@@ -10,7 +10,7 @@ tipo: "Municipal"
 corporacion: "Coordinación Municipal de Protección Civil y Bomberos de Amecameca"
 corporacionSlug: "coordinacion-municipal-de-proteccion-civil-y-bomberos-de-amecameca"
 rolEstacion: "unica"
-direccion: "CALLE AYAPANGO Col. PANOHAYA C.P. 56900"
+direccion: "Calle Ayapango, Col. Panohaya, C.P. 56900"
 coordenadas:
   lat: 19.13146334
   lng: -98.77653069

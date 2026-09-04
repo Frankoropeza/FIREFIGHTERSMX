@@ -10,7 +10,7 @@ tipo: "Municipal"
 corporacion: "Coordinación Municipal de Protección Civil y Bomberos de Toluca"
 corporacionSlug: "coordinacion-municipal-de-proteccion-civil-y-bomberos-de-toluca"
 rolEstacion: "unica"
-direccion: "CALLE 28 DE OCTUBRE Col. SAN SEBASTIÁN Y VÉRTICE C.P. 50150"
+direccion: "Calle 28 de Octubre, Col. San Sebastián y Vértice, C.P. 50150"
 coordenadas:
   lat: 19.28725929
   lng: -99.63714314

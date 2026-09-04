@@ -11,7 +11,7 @@ corporacion: "Coordinación de Protección Civil, Bomberos y Rescate de Nezahual
 corporacionSlug: "coordinacion-de-proteccion-civil-bomberos-y-rescate-de-nezahualcoyotl"
 rolEstacion: "subestacion"
 numeroEstacion: "Subestación Campestre Guadalupana"
-direccion: "Av. Las Torres, Col. Campestre Guadalupana, C.P. 57120"
+direccion: "Av. las Torres, Col. Campestre Guadalupana, C.P. 57120"
 coordenadas:
   lat: 19.48677713
   lng: -99.06381653

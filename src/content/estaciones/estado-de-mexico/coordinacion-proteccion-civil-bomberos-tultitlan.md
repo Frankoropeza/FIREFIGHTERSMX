@@ -10,7 +10,7 @@ tipo: "Municipal"
 corporacion: "Coordinación de Protección Civil y Bomberos de Tultitlán"
 corporacionSlug: "coordinacion-de-proteccion-civil-y-bomberos-de-tultitlan"
 rolEstacion: "unica"
-direccion: "CARRETERA VIA JOSE LOPEZ PORTILLO Col. SANTA CLARA C.P. 54959"
+direccion: "Carretera Via Jose Lopez Portillo, Col. Santa Clara, C.P. 54959"
 coordenadas:
   lat: 19.60700978
   lng: -99.18203677

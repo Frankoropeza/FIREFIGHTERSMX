@@ -9,7 +9,8 @@ municipio: "Cajeme"
 tipo: "Voluntarios"
 corporacion: "H. Cuerpo de Bomberos de Cajeme"
 corporacionSlug: "h-cuerpo-de-bomberos-de-cajeme"
-rolEstacion: "unica"
+rolEstacion: "central"
+numeroEstacion: "Estación Central"
 direccion: "Chihuahua y 6 de Abril, Ciudad Obregón, Cajeme, Sonora"
 coordenadas:
   lat: 27.4875

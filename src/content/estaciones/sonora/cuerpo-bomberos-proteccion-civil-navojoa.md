@@ -9,7 +9,8 @@ municipio: "Navojoa"
 tipo: "Municipal"
 corporacion: "Cuerpo de Bomberos y Protección Civil de Navojoa"
 corporacionSlug: "cuerpo-de-bomberos-y-proteccion-civil-de-navojoa"
-rolEstacion: "unica"
+rolEstacion: "central"
+numeroEstacion: "Estación Central"
 direccion: "Rayón #205 Oriente, Colonia Centro, Navojoa, Sonora"
 coordenadas:
   lat: 27.0905

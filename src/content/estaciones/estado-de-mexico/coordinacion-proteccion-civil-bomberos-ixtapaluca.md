@@ -10,7 +10,7 @@ tipo: "Municipal"
 corporacion: "Coordinación de Protección Civil y Bomberos de Ixtapaluca"
 corporacionSlug: "coordinacion-de-proteccion-civil-y-bomberos-de-ixtapaluca"
 rolEstacion: "unica"
-direccion: "AVENIDA CUAUHTEMOC Col. JOSE DE LA MORA C.P. 56556"
+direccion: "Av. Cuauhtemoc, Col. Jose de la Mora, C.P. 56556"
 coordenadas:
   lat: 19.30887000
   lng: -98.91560954

@@ -10,7 +10,7 @@ tipo: "Estatal"
 corporacion: "Heroico Cuerpo de Bomberos del Estado de Campeche"
 corporacionSlug: "heroico-cuerpo-de-bomberos-del-estado-de-campeche"
 rolEstacion: "unica"
-direccion: "Prol. Av. Lázaro Cárdenas No. 39-A, sector Las Flores, C.P. 24000, San Francisco de Campeche"
+direccion: "Prol. Av. Lázaro Cárdenas No. 39-A, sector las Flores, C.P. 24000, San Francisco de Campeche"
 coordenadas:
   lat: 19.8301
   lng: -90.5349

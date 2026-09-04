@@ -10,7 +10,7 @@ tipo: "Municipal"
 corporacion: "Dirección de Protección Civil, Bomberos y Ecología de Valle de Bravo"
 corporacionSlug: "direccion-de-proteccion-civil-bomberos-y-ecologia-de-valle-de-bravo"
 rolEstacion: "unica"
-direccion: "BOULEVARD JUAN HERRERA Y PIÑA Col. VALLE DE BRAVO C.P. 51200"
+direccion: "Blvd. Juan Herrera y Piña, Col. Valle de Bravo, C.P. 51200"
 coordenadas:
   lat: 19.20567435
   lng: -100.12639277

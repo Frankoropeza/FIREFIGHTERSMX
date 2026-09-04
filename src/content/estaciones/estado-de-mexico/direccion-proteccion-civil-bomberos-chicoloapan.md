@@ -10,7 +10,7 @@ tipo: "Municipal"
 corporacion: "Dirección de Protección Civil y Bomberos de Chicoloapan"
 corporacionSlug: "direccion-de-proteccion-civil-y-bomberos-de-chicoloapan"
 rolEstacion: "unica"
-direccion: "CALLE LOMAS DE ORIENTE Col. REAL DE COSTITLÁN II C.P. 56386"
+direccion: "Calle Lomas de Oriente, Col. Real de Costitlán Ii, C.P. 56386"
 coordenadas:
   lat: 19.41070921
   lng: -98.88087905

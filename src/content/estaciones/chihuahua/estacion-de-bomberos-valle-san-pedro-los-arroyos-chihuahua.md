@@ -10,7 +10,7 @@ tipo: "Municipal"
 corporacion: "Estación de Bomberos Valle San Pedro (Los Arroyos) — Chihuahua"
 corporacionSlug: "estacion-de-bomberos-valle-san-pedro-los-arroyos-chihuahua"
 rolEstacion: "unica"
-direccion: "Valle San Pedro y San Miguel, Fracc. Los Arroyos, Chihuahua"
+direccion: "Valle San Pedro y San Miguel, Fracc. los Arroyos, Chihuahua"
 coordenadas:
   lat: 28.6353
   lng: -106.0889

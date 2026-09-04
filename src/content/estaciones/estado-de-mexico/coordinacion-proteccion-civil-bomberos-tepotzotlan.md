@@ -10,7 +10,7 @@ tipo: "Municipal"
 corporacion: "Coordinación de Protección Civil y Bomberos de Tepotzotlán"
 corporacionSlug: "coordinacion-de-proteccion-civil-y-bomberos-de-tepotzotlan"
 rolEstacion: "unica"
-direccion: "BOULEVARD LIBRAMIENTO SUR Col. TEXCACOAC C.P. 54605"
+direccion: "Blvd. Libramiento Sur, Col. Texcacoac, C.P. 54605"
 coordenadas:
   lat: 19.70505922
   lng: -99.22086695

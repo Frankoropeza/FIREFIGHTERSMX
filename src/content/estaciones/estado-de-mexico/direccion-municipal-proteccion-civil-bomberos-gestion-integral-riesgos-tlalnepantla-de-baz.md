@@ -10,7 +10,7 @@ tipo: "Municipal"
 corporacion: "Dirección Municipal de Protección Civil, Bomberos y Gestión Integral de Riesgos de Tlalnepantla de Baz"
 corporacionSlug: "direccion-municipal-de-proteccion-civil-bomberos-y-gestion-integral-de-riesgos-d"
 rolEstacion: "unica"
-direccion: "ANDADOR CAMILO CIENFUEGOS Col. UNIDAD HABITACIONAL EL ROSARIO II C.P. 54090"
+direccion: "Andador Camilo Cienfuegos, Col. Unidad Habitacional el Rosario Ii, C.P. 54090"
 coordenadas:
   lat: 19.51114146
   lng: -99.17941260

@@ -10,7 +10,7 @@ tipo: "Municipal"
 corporacion: "Coordinación de Protección Civil y Bomberos de Coacalco de Berriozábal"
 corporacionSlug: "coordinacion-de-proteccion-civil-y-bomberos-de-coacalco-de-berriozabal"
 rolEstacion: "unica"
-direccion: "CALLE JUANA MARIA PAVON Col. JOSÉ MARÍA MORELOS Y PAVÓN PRIMERA SECCIÓN C.P. 55718"
+direccion: "Calle Juana Maria Pavon, Col. José María Morelos y Pavón Primera Sección, C.P. 55718"
 coordenadas:
   lat: 19.65806793
   lng: -99.07836301

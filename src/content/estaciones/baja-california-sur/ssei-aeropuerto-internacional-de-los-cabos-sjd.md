@@ -10,7 +10,7 @@ tipo: "Aeropuerto"
 corporacion: "SSEI — Aeropuerto Internacional de Los Cabos (SJD)"
 corporacionSlug: "ssei-aeropuerto-internacional-de-los-cabos-sjd"
 rolEstacion: "unica"
-direccion: "Aeropuerto Internacional de Los Cabos (SJD), Carretera Transpeninsular Km. 43.5, San José del Cabo, B.C.S."
+direccion: "Aeropuerto Internacional de los Cabos (SJD), Carretera Transpeninsular Km. 43.5, San José del Cabo, B.C.S."
 coordenadas:
   lat: 23.0631
   lng: -109.6975

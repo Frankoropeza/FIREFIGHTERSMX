@@ -11,7 +11,7 @@ corporacion: "Bomberos Torreón"
 corporacionSlug: "bomberos-torreon"
 rolEstacion: "subestacion"
 numeroEstacion: "Subestación Mieleras"
-direccion: "Blvd. La Libertad s/n, Fracc. Santa Sofía, Torreón"
+direccion: "Blvd. la Libertad s/n, Fracc. Santa Sofía, Torreón"
 coordenadas:
   lat: 25.5394
   lng: -103.448

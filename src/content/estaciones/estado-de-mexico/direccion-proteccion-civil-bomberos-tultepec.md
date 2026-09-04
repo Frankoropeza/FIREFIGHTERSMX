@@ -10,7 +10,7 @@ tipo: "Municipal"
 corporacion: "Dirección de Protección Civil y Bomberos de Tultepec"
 corporacionSlug: "direccion-de-proteccion-civil-y-bomberos-de-tultepec"
 rolEstacion: "unica"
-direccion: "CALLE AVENIDA ESTADO DE MEXICO CARDENAS Col. EL QUEMADO C.P. 54963"
+direccion: "Calle Avenida Estado de Mexico Cardenas, Col. El Quemado, C.P. 54963"
 coordenadas:
   lat: 19.67590587
   lng: -99.13812849

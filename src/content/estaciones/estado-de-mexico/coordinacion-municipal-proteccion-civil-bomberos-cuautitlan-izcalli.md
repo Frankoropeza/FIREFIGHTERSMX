@@ -10,7 +10,7 @@ tipo: "Municipal"
 corporacion: "Coordinación Municipal de Protección Civil y Bomberos de Cuautitlán Izcalli"
 corporacionSlug: "coordinacion-municipal-de-proteccion-civil-y-bomberos-de-cuautitlan-izcalli"
 rolEstacion: "unica"
-direccion: "CALLE BOSQUES DE BOLOGNIA Col. BOSQUES DEL LAGO SECTOR 1 C.P. 54766"
+direccion: "Calle Bosques de Bolognia, Col. Bosques del Lago Sector 1, C.P. 54766"
 coordenadas:
   lat: 19.61874410
   lng: -99.23780264

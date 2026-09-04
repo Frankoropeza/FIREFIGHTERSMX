@@ -11,7 +11,7 @@ corporacion: "HCBCDMX"
 corporacionSlug: "hcbcdmx"
 rolEstacion: "subestacion"
 numeroEstacion: "Estación Azcapotzalco"
-direccion: "Av. 22 de Febrero, esq. Nueva Jerusalén, Col. del Maestro, C.P. 02040"
+direccion: "Av. 22 de Febrero, esq. Nueva Jerusalén, Col. Del Maestro, C.P. 02040"
 coordenadas:
   lat: 19.4832228
   lng: -99.1826687

@@ -10,7 +10,7 @@ tipo: "Municipal"
 corporacion: "Coordinación Municipal de Protección Civil y Bomberos de Zinacantepec"
 corporacionSlug: "coordinacion-municipal-de-proteccion-civil-y-bomberos-de-zinacantepec"
 rolEstacion: "unica"
-direccion: "AVENIDA 16 DE SEPTIEMBRE Col. SAN MIGUEL C.P. 51350"
+direccion: "Av. 16 de Septiembre, Col. San Miguel, C.P. 51350"
 coordenadas:
   lat: 19.29490244
   lng: -99.73299476

@@ -11,7 +11,7 @@ corporacion: "Bomberos Tijuana"
 corporacionSlug: "bomberos-tijuana"
 rolEstacion: "subestacion"
 numeroEstacion: "Estación 18 (Hacienda Las Delicias)"
-direccion: "Calle Arroyo del Campo S/N, Fracc. Hacienda Las Delicias, Tijuana"
+direccion: "Calle Arroyo del Campo S/N, Fracc. Hacienda las Delicias, Tijuana"
 coordenadas:
   lat: 32.4073281
   lng: -116.936322

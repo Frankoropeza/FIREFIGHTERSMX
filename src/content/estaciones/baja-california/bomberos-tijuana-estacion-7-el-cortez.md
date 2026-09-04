@@ -11,7 +11,7 @@ corporacion: "Bomberos Tijuana"
 corporacionSlug: "bomberos-tijuana"
 rolEstacion: "subestacion"
 numeroEstacion: "Estación 7 (El Cortez)"
-direccion: "Calle Veracruz y Mexiquito S/N, Fracc. El Cortez, Tijuana"
+direccion: "Calle Veracruz y Mexiquito S/N, Fracc. el Cortez, Tijuana"
 coordenadas:
   lat: 32.5090455
   lng: -117.0666033

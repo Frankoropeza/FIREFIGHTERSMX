@@ -11,7 +11,7 @@ corporacion: "Coordinación de Protección Civil, Bomberos y Rescate de Nezahual
 corporacionSlug: "coordinacion-de-proteccion-civil-bomberos-y-rescate-de-nezahualcoyotl"
 rolEstacion: "central"
 numeroEstacion: "Cuartel Central"
-direccion: "AVENIDA CUARTA AVENIDA Col. ESTADO DE MEXICO C.P. 57210"
+direccion: "Av. Cuarta Avenida, Col. Estado de Mexico, C.P. 57210"
 coordenadas:
   lat: 19.42368314
   lng: -99.04248834

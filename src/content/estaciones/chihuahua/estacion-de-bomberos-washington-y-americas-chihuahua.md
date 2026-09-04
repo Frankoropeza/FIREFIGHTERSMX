@@ -10,7 +10,7 @@ tipo: "Municipal"
 corporacion: "Estación de Bomberos Washington y Américas — Chihuahua"
 corporacionSlug: "estacion-de-bomberos-washington-y-americas-chihuahua"
 rolEstacion: "unica"
-direccion: "Av. George Washington y De las Américas, Complejo Industrial Américas, Chihuahua"
+direccion: "Av. George Washington y de las Américas, Complejo Industrial Américas, Chihuahua"
 coordenadas:
   lat: 28.6353
   lng: -106.0889

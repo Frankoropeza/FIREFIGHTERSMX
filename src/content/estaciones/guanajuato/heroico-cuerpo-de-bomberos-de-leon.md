@@ -10,7 +10,7 @@ tipo: "Municipal"
 corporacion: "Heroico Cuerpo de Bomberos de León"
 corporacionSlug: "heroico-cuerpo-de-bomberos-de-leon"
 rolEstacion: "unica"
-direccion: "Apolo 309-A, Col. Obrera, León, Gto. C.P. 37340"
+direccion: "Apolo 309-A, Col. Obrera, León, Gto., C.P. 37340"
 coordenadas:
   lat: 21.1236
   lng: -101.6832

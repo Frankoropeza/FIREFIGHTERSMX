@@ -9,7 +9,8 @@ municipio: "Nogales"
 tipo: "Municipal"
 corporacion: "Cuerpo de Bomberos de Heroica Nogales"
 corporacionSlug: "cuerpo-de-bomberos-de-heroica-nogales"
-rolEstacion: "unica"
+rolEstacion: "central"
+numeroEstacion: "Estación Central"
 direccion: "Av. Obregón #327, Heroica Nogales, Sonora"
 coordenadas:
   lat: 31.3

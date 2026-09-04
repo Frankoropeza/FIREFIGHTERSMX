@@ -11,7 +11,7 @@ corporacion: "Bomberos Tijuana"
 corporacionSlug: "bomberos-tijuana"
 rolEstacion: "subestacion"
 numeroEstacion: "Estación 13 (El Refugio)"
-direccion: "Av. de los Cedros S/N, Fracc. El Refugio, Tijuana"
+direccion: "Av. de los Cedros S/N, Fracc. el Refugio, Tijuana"
 coordenadas:
   lat: 32.4581862
   lng: -116.821112

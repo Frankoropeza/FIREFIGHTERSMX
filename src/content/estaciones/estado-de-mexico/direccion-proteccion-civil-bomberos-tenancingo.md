@@ -10,7 +10,7 @@ tipo: "Municipal"
 corporacion: "Dirección de Protección Civil y Bomberos de Tenancingo"
 corporacionSlug: "direccion-de-proteccion-civil-y-bomberos-de-tenancingo"
 rolEstacion: "unica"
-direccion: "CALLE BENITO JUAREZ 211 Col. TENANCINGO C.P. 52400"
+direccion: "Calle Benito Juarez 211, Col. Tenancingo, C.P. 52400"
 coordenadas:
   lat: 18.95776501
   lng: -99.59451756

@@ -10,7 +10,7 @@ tipo: "Municipal"
 corporacion: "Coordinación de Protección Civil y Bomberos de Calimaya"
 corporacionSlug: "coordinacion-de-proteccion-civil-y-bomberos-de-calimaya"
 rolEstacion: "unica"
-direccion: "CALLE PRICILIANO DIAZ GONZALEZ Col. LAS TORRES C.P. 52200"
+direccion: "Calle Priciliano Diaz Gonzalez, Col. Las Torres, C.P. 52200"
 coordenadas:
   lat: 19.16340889
   lng: -99.60955820

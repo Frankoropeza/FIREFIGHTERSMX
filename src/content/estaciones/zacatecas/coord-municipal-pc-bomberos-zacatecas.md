@@ -10,7 +10,7 @@ tipo: "Municipal"
 corporacion: "Coordinación Municipal de Protección Civil y Bomberos de Zacatecas"
 corporacionSlug: "coordinacion-municipal-de-proteccion-civil-y-bomberos-de-zacatecas"
 rolEstacion: "unica"
-direccion: "Av. La Plata S/N, Col. Estrella de Oro, C.P. 98087, Zacatecas, Zacatecas"
+direccion: "Av. la Plata S/N, Col. Estrella de Oro, C.P. 98087, Zacatecas, Zacatecas"
 coordenadas:
   lat: 22.7709
   lng: -102.5832

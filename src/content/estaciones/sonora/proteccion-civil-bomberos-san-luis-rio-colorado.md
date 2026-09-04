@@ -9,7 +9,8 @@ municipio: "San Luis Río Colorado"
 tipo: "Municipal"
 corporacion: "Dirección de Protección Civil y Bomberos de San Luis Río Colorado"
 corporacionSlug: "direccion-de-proteccion-civil-y-bomberos-de-san-luis-rio-colorado"
-rolEstacion: "unica"
+rolEstacion: "central"
+numeroEstacion: "Estación Central"
 direccion: "Av. Juárez entre Calles 4 y 5, San Luis Río Colorado, Sonora"
 coordenadas:
   lat: 32.4536

@@ -10,7 +10,7 @@ tipo: "Municipal"
 corporacion: "Coordinación de Protección Civil y Bomberos de Lerma"
 corporacionSlug: "coordinacion-de-proteccion-civil-y-bomberos-de-lerma"
 rolEstacion: "unica"
-direccion: "AVENIDA CAMPO DE LAS PARTIDAS Col. PARQUE INDUSTRIAL LA BOMBA C.P. 52000"
+direccion: "Av. Campo de las Partidas, Col. Parque Industrial la Bomba, C.P. 52000"
 coordenadas:
   lat: 19.30747058
   lng: -99.53900732

@@ -10,7 +10,7 @@ tipo: "Municipal"
 corporacion: "Coordinación Municipal de Gestión Integral de Riesgos, Protección Civil y Bomberos de Guadalajara"
 corporacionSlug: "coordinacion-municipal-de-gestion-integral-de-riesgos-proteccion-civil-y-bombero"
 rolEstacion: "unica"
-direccion: "Av. Del Campesino No. 1097, Col. Moderna, C.P. 44190, Guadalajara, Jal."
+direccion: "Av. del Campesino No. 1097, Col. Moderna, C.P. 44190, Guadalajara, Jal."
 coordenadas:
   lat: 20.6597
   lng: -103.3496

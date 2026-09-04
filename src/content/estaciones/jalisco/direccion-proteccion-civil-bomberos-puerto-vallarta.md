@@ -11,7 +11,7 @@ corporacion: "Dirección de Protección Civil y Bomberos de Puerto Vallarta"
 corporacionSlug: "direccion-de-proteccion-civil-y-bomberos-de-puerto-vallarta"
 rolEstacion: "central"
 numeroEstacion: "Base Operativa"
-direccion: "Av. Las Américas No. 565, Col. Lázaro Cárdenas, C.P. 48330, Puerto Vallarta, Jal."
+direccion: "Av. las Américas No. 565, Col. Lázaro Cárdenas, C.P. 48330, Puerto Vallarta, Jal."
 coordenadas:
   lat: 20.62488189
   lng: -105.22454721

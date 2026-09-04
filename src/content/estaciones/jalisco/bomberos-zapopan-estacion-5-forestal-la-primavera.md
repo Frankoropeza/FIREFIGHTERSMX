@@ -11,7 +11,7 @@ corporacion: "Dirección de Protección Civil y Bomberos de Zapopan"
 corporacionSlug: "direccion-de-proteccion-civil-y-bomberos-de-zapopan"
 rolEstacion: "subestacion"
 numeroEstacion: "Estación 5"
-direccion: "Av. del Carril 1112, Poblado La Primavera"
+direccion: "Av. del Carril 1112, Poblado la Primavera"
 coordenadas:
   lat: 20.7240934
   lng: -103.5747794

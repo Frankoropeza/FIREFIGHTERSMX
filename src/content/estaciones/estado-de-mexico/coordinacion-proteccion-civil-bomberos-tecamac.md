@@ -10,7 +10,7 @@ tipo: "Municipal"
 corporacion: "Coordinación de Protección Civil y Bomberos de Tecámac"
 corporacionSlug: "coordinacion-de-proteccion-civil-y-bomberos-de-tecamac"
 rolEstacion: "unica"
-direccion: "AVENIDA MEXIQUENSE Col. LOS HÉROES SECCIÓN BOSQUES C.P. 55764"
+direccion: "Av. Mexiquense, Col. Los Héroes Sección Bosques, C.P. 55764"
 coordenadas:
   lat: 19.63305709
   lng: -99.02959873

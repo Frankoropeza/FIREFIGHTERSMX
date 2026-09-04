@@ -9,7 +9,8 @@ municipio: "Guaymas"
 tipo: "Municipal"
 corporacion: "Cuerpo de Bomberos del H. Ayuntamiento de Guaymas"
 corporacionSlug: "cuerpo-de-bomberos-del-h-ayuntamiento-de-guaymas"
-rolEstacion: "unica"
+rolEstacion: "central"
+numeroEstacion: "Estación Central"
 coordenadas:
   lat: 27.917
   lng: -110.8974

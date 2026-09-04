@@ -11,7 +11,7 @@ corporacion: "Protección Civil y Bomberos de Celaya"
 corporacionSlug: "proteccion-civil-y-bomberos-de-celaya"
 rolEstacion: "subestacion"
 numeroEstacion: "Estación 2 Zona Industrial"
-direccion: "Poniente 2 Norte 9, Ciudad Industrial, Celaya, Gto. C.P. 38010"
+direccion: "Poniente 2 Norte 9, Ciudad Industrial, Celaya, Gto., C.P. 38010"
 coordenadas:
   lat: 20.5308
   lng: -100.793

@@ -10,7 +10,7 @@ tipo: "Municipal"
 corporacion: "H. Cuerpo de Bomberos de Texcoco"
 corporacionSlug: "h-cuerpo-de-bomberos-de-texcoco"
 rolEstacion: "unica"
-direccion: "CALLE LIRIOS Col. EL XOLACHE C.P. 56170"
+direccion: "Calle Lirios, Col. El Xolache, C.P. 56170"
 coordenadas:
   lat: 19.52037946
   lng: -98.89079580

@@ -10,7 +10,7 @@ tipo: "Municipal"
 corporacion: "Coordinación de Seguridad Humana y Protección Civil (con función Bomberos) de San Mateo Atenco"
 corporacionSlug: "coordinacion-de-seguridad-humana-y-proteccion-civil-con-funcion-bomberos-de-san-"
 rolEstacion: "unica"
-direccion: "CALLE CHABACANO Col. SANTA MARÍA C.P. 52104"
+direccion: "Calle Chabacano, Col. Santa María, C.P. 52104"
 coordenadas:
   lat: 19.27070381
   lng: -99.55024582

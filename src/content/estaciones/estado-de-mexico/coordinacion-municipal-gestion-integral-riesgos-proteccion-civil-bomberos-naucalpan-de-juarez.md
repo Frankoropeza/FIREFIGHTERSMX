@@ -11,7 +11,7 @@ corporacion: "Coordinación Municipal de Gestión Integral de Riesgos, Protecci�
 corporacionSlug: "coordinacion-municipal-de-gestion-integral-de-riesgos-proteccion-civil-y-bombero"
 rolEstacion: "central"
 numeroEstacion: "Cuartel Central"
-direccion: "AVENIDA DE LAS GRANJAS 243 Col. EL CHAMIZAL C.P. 53770"
+direccion: "Av. de las Granjas 243, Col. El Chamizal, C.P. 53770"
 coordenadas:
   lat: 19.44516217
   lng: -99.24831804

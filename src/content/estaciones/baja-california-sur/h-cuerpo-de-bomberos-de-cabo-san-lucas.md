@@ -10,7 +10,7 @@ tipo: "Voluntarios"
 corporacion: "H. Cuerpo de Bomberos de Cabo San Lucas"
 corporacionSlug: "h-cuerpo-de-bomberos-de-cabo-san-lucas"
 rolEstacion: "unica"
-direccion: "Estación Central Gildardo Payán Azcárraga, Colonia El Médano, Cabo San Lucas, Los Cabos, B.C.S."
+direccion: "Estación Central Gildardo Payán Azcárraga, Colonia el Médano, Cabo San Lucas, Los Cabos, B.C.S."
 coordenadas:
   lat: 22.8909
   lng: -109.9124

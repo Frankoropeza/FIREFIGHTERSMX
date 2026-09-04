@@ -10,7 +10,7 @@ tipo: "Estatal"
 corporacion: "Unidad Estatal de Protección Civil de Colima (UEPC)"
 corporacionSlug: "unidad-estatal-de-proteccion-civil-de-colima-uepc"
 rolEstacion: "unica"
-direccion: "Roberto Esperón #1170, Col. de los Trabajadores, C.P. 28067, Colima"
+direccion: "Roberto Esperón #1170, Col. De los Trabajadores, C.P. 28067, Colima"
 coordenadas:
   lat: 19.234984
   lng: -103.708125

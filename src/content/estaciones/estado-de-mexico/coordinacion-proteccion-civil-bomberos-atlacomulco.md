@@ -10,7 +10,7 @@ tipo: "Municipal"
 corporacion: "Coordinación de Protección Civil y Bomberos de Atlacomulco"
 corporacionSlug: "coordinacion-de-proteccion-civil-y-bomberos-de-atlacomulco"
 rolEstacion: "unica"
-direccion: "PRIVADA NINGUNO Col. LAS FUENTES C.P. 50450"
+direccion: "Privada, Col. Las Fuentes, C.P. 50450"
 coordenadas:
   lat: 19.79919882
   lng: -99.88633982

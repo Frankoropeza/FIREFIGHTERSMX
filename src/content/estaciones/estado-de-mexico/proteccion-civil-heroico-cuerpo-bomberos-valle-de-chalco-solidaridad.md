@@ -10,7 +10,7 @@ tipo: "Municipal"
 corporacion: "Protección Civil y H. Cuerpo de Bomberos de Valle de Chalco Solidaridad"
 corporacionSlug: "proteccion-civil-y-h-cuerpo-de-bomberos-de-valle-de-chalco-solidaridad"
 rolEstacion: "unica"
-direccion: "AVENIDA TEZOZOMOC Col. SAN MIGUEL XICO SEGUNDA SECCIÓN C.P. 56617"
+direccion: "Av. Tezozomoc, Col. San Miguel Xico Segunda Sección, C.P. 56617"
 coordenadas:
   lat: 19.27622523
   lng: -98.93478259

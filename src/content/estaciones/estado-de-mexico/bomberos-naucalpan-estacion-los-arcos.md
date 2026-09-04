@@ -11,7 +11,7 @@ corporacion: "Coordinación Municipal de Gestión Integral de Riesgos, Protecci�
 corporacionSlug: "coordinacion-municipal-de-gestion-integral-de-riesgos-proteccion-civil-y-bomberos-de-naucalpan"
 rolEstacion: "subestacion"
 numeroEstacion: "Estación Los Arcos"
-direccion: "Av. Los Arcos, Col. Padre Figueroa, C.P. 53410"
+direccion: "Av. los Arcos, Col. Padre Figueroa, C.P. 53410"
 coordenadas:
   lat: 19.47323855
   lng: -99.24343139

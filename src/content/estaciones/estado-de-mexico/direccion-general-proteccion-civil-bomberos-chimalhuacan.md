@@ -10,7 +10,7 @@ tipo: "Municipal"
 corporacion: "Dirección General de Protección Civil y Bomberos de Chimalhuacán"
 corporacionSlug: "direccion-general-de-proteccion-civil-y-bomberos-de-chimalhuacan"
 rolEstacion: "unica"
-direccion: "CALLE MALINALLI Col. ALFAREROS C.P. 56363"
+direccion: "Calle Malinalli, Col. Alfareros, C.P. 56363"
 coordenadas:
   lat: 19.42696329
   lng: -98.96579073

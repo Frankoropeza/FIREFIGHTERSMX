@@ -10,7 +10,7 @@ tipo: "Aeropuerto"
 corporacion: "SSEI / CREI — Aeropuerto Internacional de la Ciudad de México (AICM)"
 corporacionSlug: "ssei-crei-aeropuerto-internacional-de-la-ciudad-de-mexico-aicm"
 rolEstacion: "unica"
-direccion: "Av. Capitán Carlos León S/N, Col. Peñón de los Baños, C.P. 15620 (recinto AICM)"
+direccion: "Av. Capitán Carlos León S/n, Col. Peñón de los Baños, C.P. 15620 (recinto Aicm)"
 coordenadas:
   lat: 19.4361
   lng: -99.0719

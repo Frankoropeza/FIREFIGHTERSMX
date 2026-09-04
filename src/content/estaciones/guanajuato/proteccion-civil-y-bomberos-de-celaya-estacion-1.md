@@ -11,7 +11,7 @@ corporacion: "Protección Civil y Bomberos de Celaya"
 corporacionSlug: "proteccion-civil-y-bomberos-de-celaya"
 rolEstacion: "subestacion"
 numeroEstacion: "Estación 1 Centro"
-direccion: "Pípila #144-A, Zona Centro, Celaya, Gto. C.P. 38000"
+direccion: "Pípila #144-A, Zona Centro, Celaya, Gto., C.P. 38000"
 coordenadas:
   lat: 20.5234
   lng: -100.8153

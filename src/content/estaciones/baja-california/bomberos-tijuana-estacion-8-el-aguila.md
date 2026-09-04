@@ -11,7 +11,7 @@ corporacion: "Bomberos Tijuana"
 corporacionSlug: "bomberos-tijuana"
 rolEstacion: "subestacion"
 numeroEstacion: "Estación 8 (El Águila)"
-direccion: "Av. Águila Real S/N, Fracc. El Águila, Tijuana"
+direccion: "Av. Águila Real S/N, Fracc. el Águila, Tijuana"
 coordenadas:
   lat: 32.4986435
   lng: -116.9054834
