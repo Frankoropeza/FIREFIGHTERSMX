@@ -1,6 +1,6 @@
 ---
 id: "chih-048"
-nombre: "Sersaa"
+nombre: "Sersa"
 razonSocial: "Seguridad Regiomontana"
 slug: "sersaa"
 estado: "chihuahua"

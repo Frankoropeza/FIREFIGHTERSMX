@@ -1,6 +1,6 @@
 ---
 id: "nl-057"
-nombre: "Mayoreo de Articulos de Seguridad"
+nombre: "Mayoreo de Artículos de Seguridad"
 slug: "mayoreo-de-articulos-de-seguridad"
 estado: "nuevo-leon"
 estadoNombre: "Nuevo León"

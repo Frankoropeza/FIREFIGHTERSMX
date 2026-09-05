@@ -1,6 +1,6 @@
 ---
 id: "gto-008"
-nombre: "Extintores America"
+nombre: "Extintores América"
 slug: "extintores-america"
 estado: "guanajuato"
 estadoNombre: "Guanajuato"

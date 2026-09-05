@@ -1,6 +1,6 @@
 ---
 id: "ver-010"
-nombre: "R3m Extintores"
+nombre: "R3M Extintores"
 slug: "r3m-extintores-2"
 estado: "veracruz"
 estadoNombre: "Veracruz"

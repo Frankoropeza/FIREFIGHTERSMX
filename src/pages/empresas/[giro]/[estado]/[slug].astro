@@ -45,9 +45,19 @@ const webPublicable = esVIP ? e.sitioWeb : undefined;
 const webHost = webPublicable ? webPublicable.replace(/^https?:\/\//, '').replace(/\/$/, '') : null;
 
 const canonicalURL = `${SITE.url}${urlEmpresa(e)}`;
+/**
+ * Los registros sin razón social se nombran «<actividad> — <municipio>»: el nombre
+ * ya lleva la plaza, y repetirla en el <title> daba «Mantenimiento de extintores —
+ * Morelia — Extintores en Morelia, MICH». Cuando el nombre ya la nombra, el title
+ * sólo añade el estado.
+ */
+const nombreLlevaPlaza = [e.ciudad, e.municipio].some((x) => x && e.nombre.toLowerCase().includes(x.toLowerCase()));
+const tituloSEO = nombreLlevaPlaza
+  ? `${e.nombre}, ${edo.abreviatura} — ${g.labelCorto}`
+  : `${e.nombre} — ${g.labelCorto} en ${e.ciudad}, ${edo.abreviatura}`;
 const seoMeta = {
-  title: `${e.nombre} — ${g.labelCorto} en ${e.ciudad}, ${edo.abreviatura}`,
-  description: `${e.nombre}: ${g.sustantivo} en ${e.ciudad}, ${edo.nombre}.${esp.length ? ' ' + esp.map((x) => x.label).join(', ') + '.' : ''} Ubicación, contacto y nivel de verificación en el directorio FIREFIGHTERS MX.`.slice(0, 160),
+  title: tituloSEO,
+  description: `${e.nombre}: ${g.sustantivo} en ${e.ciudad}, ${edo.nombre}.${esp.length ? ' ' + esp.map((x) => x.label).join(', ') + '.' : ''} Ubicación, contacto y nivel de verificación en el directorio FIREFIGHTERS MX.`.replace(/\s+/g, ' ').slice(0, 160),
   canonicalURL, noindex,
 };
 const breadcrumbSchema = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [

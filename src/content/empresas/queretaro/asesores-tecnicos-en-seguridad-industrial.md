@@ -1,6 +1,6 @@
 ---
 id: "qro-027"
-nombre: "Asesores Tecnicos en Seguridad Industrial"
+nombre: "Asesores Técnicos en Seguridad Industrial"
 slug: "asesores-tecnicos-en-seguridad-industrial"
 estado: "queretaro"
 estadoNombre: "Querétaro"

@@ -1,6 +1,6 @@
 ---
 id: "son-006"
-nombre: "Extintores del norte"
+nombre: "Extintores del Norte"
 slug: "extintores-del-norte"
 estado: "sonora"
 estadoNombre: "Sonora"

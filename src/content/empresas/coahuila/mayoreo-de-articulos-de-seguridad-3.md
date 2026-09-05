@@ -1,6 +1,6 @@
 ---
 id: "coah-047"
-nombre: "Mayoreo de Articulos de Seguridad"
+nombre: "Mayoreo de Artículos de Seguridad"
 slug: "mayoreo-de-articulos-de-seguridad-3"
 estado: "coahuila"
 estadoNombre: "Coahuila"

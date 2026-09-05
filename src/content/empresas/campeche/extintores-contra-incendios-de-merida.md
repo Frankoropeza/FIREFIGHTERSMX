@@ -1,6 +1,6 @@
 ---
 id: "cam-002"
-nombre: "Extintores Contra Incendios de Merida"
+nombre: "Extintores Contra Incendios de Mérida"
 slug: "extintores-contra-incendios-de-merida"
 estado: "campeche"
 estadoNombre: "Campeche"

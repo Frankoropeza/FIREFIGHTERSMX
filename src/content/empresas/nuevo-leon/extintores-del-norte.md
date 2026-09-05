@@ -1,6 +1,6 @@
 ---
 id: "nl-005"
-nombre: "Extintores del norte"
+nombre: "Extintores del Norte"
 razonSocial: "Ramon Cobarrubias"
 slug: "extintores-del-norte"
 estado: "nuevo-leon"

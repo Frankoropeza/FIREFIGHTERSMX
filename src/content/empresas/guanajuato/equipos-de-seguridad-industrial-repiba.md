@@ -1,6 +1,6 @@
 ---
 id: "gto-053"
-nombre: "Equipos de Seguridad Industrial Repiba"
+nombre: "Equipos de Seguridad Industrial REPIBA"
 slug: "equipos-de-seguridad-industrial-repiba"
 estado: "guanajuato"
 estadoNombre: "Guanajuato"

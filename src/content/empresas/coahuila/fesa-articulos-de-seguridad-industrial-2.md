@@ -1,6 +1,6 @@
 ---
 id: "coah-026"
-nombre: "Fesa Articulos de Seguridad Industrial"
+nombre: "FESA Artículos de Seguridad Industrial"
 slug: "fesa-articulos-de-seguridad-industrial-2"
 estado: "coahuila"
 estadoNombre: "Coahuila"

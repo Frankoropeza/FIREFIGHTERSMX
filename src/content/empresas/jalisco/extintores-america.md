@@ -1,6 +1,6 @@
 ---
 id: "jal-004"
-nombre: "Extintores America"
+nombre: "Extintores América"
 slug: "extintores-america"
 estado: "jalisco"
 estadoNombre: "Jalisco"

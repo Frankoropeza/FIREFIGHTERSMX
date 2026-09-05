@@ -1,6 +1,6 @@
 ---
 id: "yuc-002"
-nombre: "Extintores Contra Incendios de Merida"
+nombre: "Extintores Contra Incendios de Mérida"
 slug: "extintores-contra-incendios-de-merida"
 estado: "yucatan"
 estadoNombre: "Yucatán"

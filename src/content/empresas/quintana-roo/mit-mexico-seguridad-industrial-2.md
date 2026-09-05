@@ -1,6 +1,6 @@
 ---
 id: "qroo-018"
-nombre: "Mit Mexico Seguridad Industrial"
+nombre: "MIT México Seguridad Industrial"
 slug: "mit-mexico-seguridad-industrial-2"
 estado: "quintana-roo"
 estadoNombre: "Quintana Roo"
