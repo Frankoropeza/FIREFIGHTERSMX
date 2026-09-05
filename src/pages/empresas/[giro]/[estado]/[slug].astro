@@ -40,8 +40,10 @@ const noindex = basica && !INDEXAR_FICHAS_BASICAS;
  * traer `sitioWeb` en el frontmatter tampoco lo publique.
  * `scripts/verificar-enlaces.mjs` lo comprueba sobre dist/ después del build.
  */
-/* Texto propio de la ficha. Si el registro lo trae, sustituye al párrafo
-   auto-generado: ese relleno describe lo que el DENUE sabe, no la empresa. */
+/* Texto propio de la ficha. Si el registro lo trae, sustituye al relleno
+   auto-generado: ese relleno describe lo que el DENUE sabe, no la empresa.
+   Los dos primeros párrafos van al hero; el resto, al perfil. Así la ficha
+   verificada no repite el mismo texto dos veces en la misma página. */
 const parrafos = (e.descripcion ?? '').split(/\n{2,}/).map((s) => s.trim()).filter(Boolean);
 const esVIP = e.plan === 'destacado';
 const webPublicable = esVIP ? e.sitioWeb : undefined;
@@ -74,6 +76,29 @@ const businessSchema = { '@context': 'https://schema.org', '@type': 'LocalBusine
   address: { '@type': 'PostalAddress', addressLocality: e.ciudad, addressRegion: edo.nombre, addressCountry: 'MX', ...(e.direccion ? { streetAddress: e.direccion } : {}), ...(e.codigoPostal ? { postalCode: e.codigoPostal } : {}) },
   ...(hasMap ? { geo: { '@type': 'GeoCoordinates', latitude: e.coordenadas!.lat, longitude: e.coordenadas!.lng } } : {}),
   areaServed: { '@type': 'AdministrativeArea', name: edo.nombre }, knowsAbout: [g.label, ...g.normas, ...esp.map((x) => x.label)] };
+/**
+ * Columna derecha del hero: dos párrafos de venta.
+ *
+ * Con `descripcion` propia se usan sus dos primeros párrafos. Sin ella se
+ * arman con lo que el registro sí sostiene —giro, plaza, especialidades,
+ * plantilla y las normas del giro— en registro comercial pero sin una sola
+ * afirmación que el DENUE no respalde: la ficha básica no presume, orienta.
+ */
+const espTexto = esp.map((x) => x.label.toLowerCase()).join(', ');
+const heroAuto = [
+  [
+    nombreLlevaPlaza
+      ? `Registro de ${g.sustantivo} en ${e.ciudad}, ${edo.nombre}, publicado sin razón social.`
+      : `${e.nombre} es proveedor de ${g.sustantivo} en ${e.ciudad}, ${edo.nombre}.`,
+    espTexto ? `Su actividad registrada cubre ${espTexto}.` : '',
+    otrosGiros.length ? `También aparece en ${otrosGiros.map((o) => o.labelCorto.toLowerCase()).join(' y ')}.` : '',
+    e.estrato ? `El DENUE la ubica con una plantilla de ${e.estrato.toLowerCase()}.` : '',
+  ].filter(Boolean).join(' '),
+  `Antes de cotizar ${g.sustantivo} conviene comparar proveedores por plaza: esta ficha concentra ubicación, contacto y el nivel de verificación de cada dato, con la fuente citada al pie. El giro se rige por ${g.normas.slice(0, 3).join(', ')}.`,
+];
+const heroParrafos = parrafos.length ? parrafos.slice(0, 2) : heroAuto;
+const perfilParrafos = parrafos.length > 2 ? parrafos.slice(2) : (parrafos.length ? [] : [g.intro[0]]);
+
 const waMsg = `Hola, vi la ficha de ${e.nombre} en el directorio FIREFIGHTERS MX y quiero reclamarla / actualizar sus datos.`;
 const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>`;
 ---
@@ -89,7 +114,8 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
 
   <section class="relative overflow-hidden" style="background:#040A12;padding-block:4rem" aria-labelledby="ficha-heading">
     <div class="absolute top-0 right-0 w-2/3 h-full pointer-events-none" aria-hidden="true" style={`background:radial-gradient(ellipse 70% 60% at 85% 40%, ${g.color}12 0%, transparent 65%)`}></div>
-    <div class="container-site relative z-10">
+    <div class="container-site relative z-10 grid grid-cols-1 lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-14 items-start">
+      <div>
       <div class="flex flex-wrap items-center gap-2 mb-5">
         <span class="inline-flex items-center gap-1.5 font-display font-bold text-[10px] uppercase tracking-wider px-2 py-1" style={`color:${g.color};background:${g.color}1A;border:1px solid ${g.color}40`}>
           <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" set:html={g.icon} aria-hidden="true"/>{g.labelCorto}</span>
@@ -103,6 +129,15 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
         <svg class="w-4 h-4 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="#FF6B26" stroke-width="1.8" set:html={iconPin} aria-hidden="true"/>
         <span>{e.direccion ? `${e.direccion} · ` : ''}{e.ciudad}{e.municipio !== e.ciudad ? `, ${e.municipio}` : ''}, {edo.nombre}</span>
       </p>
+      </div>
+
+      <div class="lg:pl-14 lg:border-l" style="border-color:rgba(74,117,153,0.22)">
+        {heroParrafos.map((par) => <p class="text-sm leading-[1.95] mb-4" style="color:#94A3B8">{par}</p>)}
+        <a href={`/empresas/${e.giroPrincipal}/${e.estado}/`} class="inline-flex items-center gap-2 text-sm font-display font-semibold" style={`color:${g.color}`}>
+          {g.labelCorto} en {edo.nombre}
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
     </div>
     <div class="absolute bottom-0 left-0 right-0 h-px" aria-hidden="true" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)"></div>
   </section>
@@ -116,16 +151,9 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Perfil</span>
           <h2 class="font-display font-bold mb-5" style="color:#FFFFFF;font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.05">{g.labelCorto} en {e.ciudad},<br/><span style={`color:${g.color}`}>{edo.nombre}.</span></h2>
-          {parrafos.length > 0 ? (
-            parrafos.map((par) => <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">{par}</p>)
-          ) : (
-            <>
-              <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">
-                {e.nombre} es una empresa de {g.sustantivo} con sede en {e.ciudad}, {edo.nombre}{e.estrato ? `, con una plantilla de ${e.estrato.toLowerCase()}` : ''}.{esp.length ? ` Sus especialidades registradas son ${esp.map((x) => x.label.toLowerCase()).join(', ')}.` : ''}{otrosGiros.length ? ` También opera en ${otrosGiros.map((o) => o.labelCorto.toLowerCase()).join(' y ')}.` : ''}
-              </p>
-              <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">{g.intro[0]}</p>
-            </>
-          )}
+          {(perfilParrafos.length ? perfilParrafos : [g.intro[0]]).map((par) => (
+            <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">{par}</p>
+          ))}
           {basica && (
             <div class="mt-6 p-5 flex flex-col sm:flex-row sm:items-center gap-4" style="background:#0C1825;border:1px solid rgba(74,117,153,0.25);border-left:3px solid #94A3B8">
               <p class="text-xs leading-relaxed flex-1" style="color:#94A3B8"><strong style="color:#CBD5E1">Registro público sin verificar.</strong> Los datos provienen del DENUE (INEGI) y no han sido confirmados por la empresa. Si eres el responsable, reclama la ficha para completarla y obtener el sello de datos verificados.</p>
