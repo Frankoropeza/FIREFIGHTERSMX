@@ -114,6 +114,40 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
           </div>
         )}
 
+        {/* Datos declarados por la propia empresa. El esquema los admite desde el
+            principio pero la plantilla no los publicaba: marcas, certificaciones,
+            normas propias, cobertura y año de fundación quedaban muertos en el
+            frontmatter. Sólo se pintan cuando el registro los trae. */}
+        {(e.marcas.length > 0 || e.certificaciones.length > 0 || e.normas.length > 0 || e.cobertura.length > 0 || e.fundacion) && (
+          <div>
+            <span class="section-eyebrow mb-4 inline-flex">Perfil declarado por la empresa</span>
+            <div class="flex flex-col gap-4">
+              {e.marcas.length > 0 && (
+                <div class="flex flex-col gap-2">
+                  <span class="font-display text-[10px] uppercase tracking-wider" style="color:#4A7599">Marcas que maneja</span>
+                  <div class="flex flex-wrap gap-2">{e.marcas.map((m) => <span class="badge badge-dark font-display text-[10px]">{m}</span>)}</div>
+                </div>
+              )}
+              {e.certificaciones.length > 0 && (
+                <div class="flex flex-col gap-2">
+                  <span class="font-display text-[10px] uppercase tracking-wider" style="color:#4A7599">Certificaciones de producto</span>
+                  <div class="flex flex-wrap gap-2">{e.certificaciones.map((c) => <span class="badge badge-dark font-display text-[10px]">{c}</span>)}</div>
+                </div>
+              )}
+              {e.normas.length > 0 && (
+                <div class="flex flex-col gap-2">
+                  <span class="font-display text-[10px] uppercase tracking-wider" style="color:#4A7599">Normas de referencia</span>
+                  <div class="flex flex-wrap gap-2">{e.normas.map((n) => <span class="badge badge-dark font-display text-[10px]">{n}</span>)}</div>
+                </div>
+              )}
+              <div class="flex flex-wrap gap-x-8 gap-y-2 text-sm" style="color:#94A3B8">
+                {e.fundacion && <span><span class="font-display text-[10px] uppercase tracking-wider mr-2" style="color:#4A7599">Fundación</span>{e.fundacion}</span>}
+                {e.cobertura.length > 0 && <span><span class="font-display text-[10px] uppercase tracking-wider mr-2" style="color:#4A7599">Cobertura</span>{e.cobertura.includes('nacional') ? 'Nacional, 32 estados' : e.cobertura.join(', ')}</span>}
+              </div>
+            </div>
+          </div>
+        )}
+
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Marco normativo del giro</span>
           <div class="flex flex-wrap gap-2 mb-4">{g.normas.map((n) => <span class="badge badge-dark font-display text-[10px]">{n}</span>)}</div>
