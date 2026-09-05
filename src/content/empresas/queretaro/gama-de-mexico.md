@@ -79,6 +79,7 @@ vip:
       entregable: "Contrato anual de suministro o línea de crédito, según el perfil del cliente"
   lineas:
     - nombre: "Monitores contra incendio"
+      pagina: "monitores-contra-incendio"
       subtitulo: "Lanzadores de agua para protección perimetral"
       imagen: "/images/empresas/gama-de-mexico/monitores.avif"
       imagenAlt: "Monitor contra incendio tipo corazón en planta industrial"

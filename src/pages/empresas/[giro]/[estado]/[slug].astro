@@ -9,6 +9,7 @@ import { giroMap, planConfig, confianzaConfig, INDEXAR_FICHAS_BASICAS } from '@d
 import { allCategories } from '@data/categories';
 import { estadoConEstaciones } from '@lib/estaciones';
 import { todasLasEmpresas, empresasPorGiroEstado, estadoMeta, urlEmpresa, type Empresa } from '@lib/empresas';
+import { urlsLineasDeEmpresa } from '@lib/lineas';
 import type { GetStaticPaths } from 'astro';
 
 export const getStaticPaths = (async () =>
@@ -47,6 +48,8 @@ const noindex = basica && !INDEXAR_FICHAS_BASICAS;
    verificada no repite el mismo texto dos veces en la misma página. */
 const parrafos = (e.descripcion ?? '').split(/\n{2,}/).map((s) => s.trim()).filter(Boolean);
 const esVIP = e.plan === 'destacado';
+/* Páginas de línea (L5) de esta empresa: las cards del catálogo apuntan adentro cuando existen */
+const lineasInternas = esVIP ? await urlsLineasDeEmpresa(e.slug) : {};
 const webPublicable = esVIP ? e.sitioWeb : undefined;
 const webHost = webPublicable ? webPublicable.replace(/^https?:\/\//, '').replace(/\/$/, '') : null;
 
@@ -164,7 +167,7 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
         </div>
 
         {/* Bloques de la ficha VIP: sólo cuando el registro trae `vip` (plan destacado) */}
-        {esVIP && e.vip && <FichaVip e={e} g={g} estadoNombre={edo.nombre} web={webPublicable} />}
+        {esVIP && e.vip && <FichaVip e={e} g={g} estadoNombre={edo.nombre} web={webPublicable} lineasInternas={lineasInternas} />}
 
         {esp.length > 0 && (
           <div>

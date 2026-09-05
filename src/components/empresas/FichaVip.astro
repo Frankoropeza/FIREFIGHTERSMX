@@ -19,8 +19,10 @@ interface Props {
   estadoNombre: string;
   /** Sólo la ficha VIP publica enlace saliente; llega ya filtrado desde la página */
   web?: string;
+  /** slug de línea → URL interna (colección `lineas`); si existe, la card apunta adentro */
+  lineasInternas?: Record<string, string>;
 }
-const { e, g, estadoNombre, web } = Astro.props;
+const { e, g, estadoNombre, web, lineasInternas = {} } = Astro.props;
 const v = e.vip ?? { servicios: [], lineas: [], criterios: [], proceso: [], condiciones: [], sectores: [], faq: [] };
 
 const idBase = 'vip';
@@ -99,8 +101,13 @@ const ctaWeb = web ? `${web.replace(/\/$/, '')}/cotizar` : undefined;
                 ))}
               </ul>
             )}
-            {web && l.url && (
-              <a href={l.url} target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary w-full text-center mt-auto">{l.nombre}</a>
+            {l.pagina && lineasInternas[l.pagina] ? (
+              <div class="mt-auto flex flex-col gap-2">
+                <a href={lineasInternas[l.pagina]} class="btn btn-sm btn-primary w-full text-center">{l.nombre}</a>
+                {web && l.url && <a href={l.url} target="_blank" rel="noopener noreferrer" class="block text-center font-display text-[11px] uppercase tracking-wider hover:text-[#FF6B26]" style="color:#4A7599">Modelos en el sitio de la empresa ↗</a>}
+              </div>
+            ) : (
+              web && l.url && <a href={l.url} target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary w-full text-center mt-auto">{l.nombre}</a>
             )}
           </div>
         </article>

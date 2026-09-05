@@ -104,6 +104,10 @@ const empresasCollection = defineCollection({
         imagen: z.string().optional(),
         imagenAlt: z.string().optional(),
         url: z.string().optional(),
+        /* Slug de la página interna de la línea (colección `lineas`). Si existe,
+           el botón de la card apunta adentro del directorio y el sitio de la
+           empresa queda como enlace secundario. */
+        pagina: z.string().optional(),
         familias: z.array(z.string()).default([]),
         rango: z.string().optional(),
         materiales: z.string().optional(),
@@ -201,9 +205,63 @@ const estacionesCollection = defineCollection({
   }),
 });
 
+/**
+ * Páginas de línea de producto de una empresa VIP — nivel L5 del directorio:
+ * /empresas/<giro>/<estado>/<empresa>/<linea>/
+ *
+ * Una página por línea y empresa, anclada a UNA plaza (`estado`): las fichas
+ * hermanas de la misma empresa enlazan a la misma URL en vez de duplicarla.
+ * `fuentes.min(1)` y `urlEmpresa` obligatorios: todo lo publicado es trazable
+ * al sitio de la empresa. Sólo se generan para fichas con `plan: destacado`.
+ */
+const lineasCollection = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/lineas', generateId: ({ entry }) => entry.replace(/\.md$/, '') }),
+  schema: z.object({
+    empresa: z.string(),
+    estado: z.string(),
+    giro: giroEnum,
+    slug: z.string(),
+    nombre: z.string(),
+    subtitulo: z.string(),
+    imagen: z.string().optional(),
+    imagenAlt: z.string().optional(),
+    /* Párrafos separados por línea en blanco: los dos primeros van al hero */
+    intro: z.string(),
+    /* Qué es y cuándo se especifica — prosa larga, párrafos por línea en blanco */
+    contexto: z.string().optional(),
+    familias: z.array(z.object({
+      nombre: z.string(),
+      descripcion: z.string(),
+      cuando: z.string().optional(),
+      modelos: z.number().optional(),
+    })).default([]),
+    modelos: z.array(z.object({
+      modelo: z.string(),
+      marca: z.string().optional(),
+      familia: z.string().optional(),
+      caudal: z.string().optional(),
+      presion: z.string().optional(),
+      material: z.string().optional(),
+      certificacion: z.string().optional(),
+      aplicaciones: z.string().optional(),
+    })).default([]),
+    criterios: z.array(z.object({ titulo: z.string(), descripcion: z.string() })).default([]),
+    aplicaciones: z.array(z.string()).default([]),
+    normas: z.array(z.object({ norma: z.string(), alcance: z.string() })).default([]),
+    datosParaCotizar: z.array(z.string()).default([]),
+    faq: z.array(z.object({ pregunta: z.string(), respuesta: z.string() })).default([]),
+    /* Enlaces internos editoriales: rutas del propio sitio con anchor con keyword */
+    relacionados: z.array(z.object({ titulo: z.string(), url: z.string(), nota: z.string().optional() })).default([]),
+    urlEmpresa: z.string(),
+    fuentes: z.array(z.object({ nombre: z.string(), url: z.string() })).min(1),
+    verificadoEl: z.string(),
+  }),
+});
+
 export const collections = {
   blog: blogCollection,
   productos: productosCollection,
   empresas: empresasCollection,
   estaciones: estacionesCollection,
+  lineas: lineasCollection,
 };

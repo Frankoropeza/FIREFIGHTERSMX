@@ -1,0 +1,328 @@
+---
+/**
+ * /empresas/[giro]/[estado]/[slug]/[linea] — L5: página de línea de producto de
+ * una empresa VIP. Existe sólo para fichas con `plan: destacado` que tengan una
+ * entrada en la colección `lineas`; la ficha básica no genera nada aquí.
+ *
+ * Una URL por línea y empresa, anclada a la plaza que la entrada declara. Las
+ * fichas hermanas (otras plazas de la misma empresa) enlazan a esta misma URL.
+ */
+import BaseLayout from '@layouts/BaseLayout.astro';
+import QuickLinksBar from '@components/common/QuickLinksBar.astro';
+import { SITE } from '@config/site';
+import { giroMap } from '@data/giros';
+import { todasLasEmpresas, estadoMeta, urlEmpresa, type Empresa } from '@lib/empresas';
+import { todasLasLineas, lineasDeEmpresa, urlLinea, type Linea } from '@lib/lineas';
+import type { GetStaticPaths } from 'astro';
+
+export const getStaticPaths = (async () => {
+  const empresas = await todasLasEmpresas();
+  const lineas = await todasLasLineas();
+  return lineas.flatMap((l) => {
+    const e = empresas.find((x) => x.slug === l.empresa && x.estado === l.estado && x.plan === 'destacado');
+    if (!e) return [];
+    return [{ params: { giro: l.giro, estado: l.estado, slug: l.empresa, linea: l.slug }, props: { l, e } }];
+  });
+}) satisfies GetStaticPaths;
+
+const { l, e } = Astro.props as { l: Linea; e: Empresa };
+const g = giroMap[l.giro];
+const edo = estadoMeta(l.estado)!;
+const borde = 'rgba(74,117,153,0.18)';
+
+const canonicalURL = `${SITE.url}${urlLinea(l)}`;
+const fichaURL = urlEmpresa(e);
+const hermanas = (await lineasDeEmpresa(l.empresa)).filter((x) => x.slug !== l.slug);
+/* Otras plazas de la misma empresa: enlazan aquí, y desde aquí se enlazan */
+const otrasPlazas = (await todasLasEmpresas()).filter((x) => x.slug === e.slug && x.estado !== e.estado && x.plan === 'destacado');
+/* Las demás líneas declaradas en la ficha que todavía no tienen página propia */
+const lineasSinPagina = (e.vip?.lineas ?? []).filter((x) => x.pagina !== l.slug && !hermanas.some((h) => h.slug === x.pagina));
+
+const parr = (s?: string) => (s ?? '').split(/\n{2,}/).map((x) => x.trim()).filter(Boolean);
+const intro = parr(l.intro);
+const contexto = parr(l.contexto);
+const web = e.plan === 'destacado' ? l.urlEmpresa : undefined;
+
+const seoMeta = {
+  title: `${l.nombre} — ${e.nombre}, ${edo.abreviatura}`,
+  description: `${l.nombre} de ${e.nombre} en ${e.ciudad}: ${l.subtitulo.toLowerCase()}. ${l.familias.map((f) => f.nombre.toLowerCase()).join(', ')}; modelos, caudales, certificación y criterios de selección.`.replace(/\s+/g, ' ').slice(0, 160),
+  canonicalURL,
+};
+const breadcrumbSchema = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+  { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
+  { '@type': 'ListItem', position: 2, name: 'Directorio de Empresas', item: `${SITE.url}/empresas/` },
+  { '@type': 'ListItem', position: 3, name: g.labelCorto, item: `${SITE.url}/empresas/${l.giro}/` },
+  { '@type': 'ListItem', position: 4, name: edo.nombre, item: `${SITE.url}/empresas/${l.giro}/${l.estado}/` },
+  { '@type': 'ListItem', position: 5, name: e.nombre, item: `${SITE.url}${fichaURL}` },
+  { '@type': 'ListItem', position: 6, name: l.nombre, item: canonicalURL } ] };
+const faqSchema = l.faq.length ? { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: l.faq.map((f) => ({ '@type': 'Question', name: f.pregunta, acceptedAnswer: { '@type': 'Answer', text: f.respuesta } })) } : null;
+const schemas = faqSchema ? [breadcrumbSchema, faqSchema] : [breadcrumbSchema];
+const h2 = 'font-display font-bold mb-3';
+const h2s = 'color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1';
+---
+<BaseLayout {...seoMeta} schema={schemas}>
+  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+    <div class="container-site"><ol class="flex items-center gap-2 text-xs list-none m-0 p-0 flex-wrap" style="color:#4A7599">
+      <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li><li aria-hidden="true">/</li>
+      <li><a href="/empresas/" class="hover:text-[#FF6B26]">Empresas</a></li><li aria-hidden="true">/</li>
+      <li><a href={`/empresas/${l.giro}/`} class="hover:text-[#FF6B26]">{g.labelCorto}</a></li><li aria-hidden="true">/</li>
+      <li><a href={`/empresas/${l.giro}/${l.estado}/`} class="hover:text-[#FF6B26]">{edo.nombre}</a></li><li aria-hidden="true">/</li>
+      <li><a href={fichaURL} class="hover:text-[#FF6B26]">{e.nombre}</a></li><li aria-hidden="true">/</li>
+      <li><span style="color:#94A3B8" aria-current="page">{l.nombre}</span></li></ol></div>
+  </nav>
+
+  <section class="relative overflow-hidden" style="background:#040A12;padding-block:4rem" aria-labelledby="linea-heading">
+    <div class="absolute top-0 right-0 w-2/3 h-full pointer-events-none" aria-hidden="true" style={`background:radial-gradient(ellipse 70% 60% at 85% 40%, ${g.color}12 0%, transparent 65%)`}></div>
+    <div class="container-site relative z-10 grid grid-cols-1 lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-14 items-center">
+      <div>
+        <div class="flex flex-wrap items-center gap-2 mb-5">
+          <span class="inline-flex items-center gap-1.5 font-display font-bold text-[10px] uppercase tracking-wider px-2 py-1" style={`color:${g.color};background:${g.color}1A;border:1px solid ${g.color}40`}>
+            <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" set:html={g.icon} aria-hidden="true"/>{g.labelCorto}</span>
+          <a href={fichaURL} class="font-display text-[10px] uppercase tracking-wider px-2 py-1 hover:text-[#FF6B26]" style="color:#F5A623;background:rgba(245,166,35,0.12);border:1px solid rgba(245,166,35,0.35)">Línea de {e.nombre}</a>
+          <span class="font-display text-[10px] uppercase tracking-wider px-2 py-1" style="color:#94A3B8;border:1px solid rgba(74,117,153,0.35)">{e.ciudad}, {edo.abreviatura}</span>
+        </div>
+        <h1 id="linea-heading" class="font-display font-bold mb-3" style="color:#FFFFFF;font-size:clamp(1.9rem,4.2vw,3.4rem);line-height:1">{l.nombre}</h1>
+        <p class="font-display text-sm uppercase tracking-wider mb-5" style="color:#4A7599">{l.subtitulo}</p>
+        {l.familias.length > 0 && (
+          <ul class="flex flex-wrap gap-2 list-none m-0 p-0">
+            {l.familias.map((f) => <li><a href={`#familia-${f.nombre.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`} class="inline-block text-xs px-3 py-1.5 hover:text-[#FF6B26]" style={`color:#CBD5E1;border:1px solid ${borde}`}>{f.nombre}</a></li>)}
+          </ul>
+        )}
+      </div>
+      <div class="lg:pl-14 lg:border-l" style="border-left-style:solid;border-color:rgba(74,117,153,0.28)">
+        {intro.slice(0, 2).map((p) => <p class="text-sm leading-[1.95] mb-4 last:mb-0" style="color:#94A3B8">{p}</p>)}
+        <a href={fichaURL} class="inline-flex items-center gap-2 text-sm font-display font-semibold mt-5" style={`color:${g.color}`}>
+          {g.labelCorto} de {e.nombre} en {e.ciudad}
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-px" aria-hidden="true" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)"></div>
+  </section>
+
+  <QuickLinksBar />
+
+  <section class="section" style="background:#070E1A">
+    <div class="container-site grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-10 lg:gap-14 items-start">
+      <div class="flex flex-col gap-12 min-w-0">
+
+        {l.imagen && (
+          <figure class="m-0">
+            <div class="aspect-[16/9] overflow-hidden" style={`background:#040A12;border:1px solid ${borde}`}>
+              <img src={l.imagen} alt={l.imagenAlt ?? l.nombre} width="1024" height="576" loading="eager" decoding="async" class="w-full h-full object-cover" />
+            </div>
+            <figcaption class="font-display text-[10px] uppercase tracking-wider mt-2" style="color:#4A7599">{l.nombre} · catálogo de {e.nombre}</figcaption>
+          </figure>
+        )}
+
+        {contexto.length > 0 && (
+          <section aria-labelledby="linea-contexto">
+            <span class="section-eyebrow mb-4 inline-flex">Qué es y cuándo se especifica</span>
+            <h2 id="linea-contexto" class={h2} style={h2s}>{l.nombre}: qué resuelven y cómo se eligen</h2>
+            {contexto.map((p) => <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">{p}</p>)}
+          </section>
+        )}
+
+        {l.familias.length > 0 && (
+          <section aria-labelledby="linea-familias">
+            <span class="section-eyebrow mb-4 inline-flex">Familias</span>
+            <h2 id="linea-familias" class={h2} style={h2s}>Las {l.familias.length} familias de {l.nombre.toLowerCase()} que maneja {e.nombre}</h2>
+            <p class="text-sm leading-[1.9] mb-6" style="color:#94A3B8">Cada familia es una ruta de selección distinta, no un producto: la empresa las separa por geometría de descarga y por respaldo documental. Un mismo modelo puede pertenecer a más de una.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-px" style={`background:${borde};border:1px solid ${borde}`}>
+              {l.familias.map((f) => (
+                <article id={`familia-${f.nombre.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`} class="p-6 flex flex-col gap-3" style="background:#040A12">
+                  <h3 class="font-display font-bold text-base leading-snug" style="color:#FFFFFF">{f.nombre}</h3>
+                  <p class="text-sm leading-[1.85]" style="color:#94A3B8">{f.descripcion}</p>
+                  {f.cuando && (
+                    <div>
+                      <h4 class="font-display text-[10px] uppercase tracking-wider mb-1" style="color:#4A7599">Cuándo conviene</h4>
+                      <p class="text-sm leading-[1.8]" style="color:#CBD5E1">{f.cuando}</p>
+                    </div>
+                  )}
+                  {typeof f.modelos === 'number' && (
+                    <div class="mt-auto pt-3" style={`border-top:1px solid ${borde}`}>
+                      <h5 class="font-display text-[10px] uppercase tracking-wider" style="color:#4A7599">En catálogo</h5>
+                      <p class="text-sm" style="color:#CBD5E1">{f.modelos} {f.modelos === 1 ? 'modelo' : 'modelos'} declarados por la empresa</p>
+                    </div>
+                  )}
+                </article>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {l.modelos.length > 0 && (
+          <section aria-labelledby="linea-modelos">
+            <span class="section-eyebrow mb-4 inline-flex">Modelos</span>
+            <h2 id="linea-modelos" class={h2} style={h2s}>Modelos de {l.nombre.toLowerCase()} en el catálogo</h2>
+            <p class="text-sm leading-[1.9] mb-6" style="color:#94A3B8">Los que la empresa destaca en su página de línea, con los datos que ella misma publica. La certificación es por modelo y se confirma en la ficha técnica del fabricante antes de especificar.</p>
+            <div class="overflow-x-auto" style={`border:1px solid ${borde}`}>
+              <table style="width:100%;border-collapse:collapse;min-width:900px">
+                <thead>
+                  <tr style="background:#080F1A;border-bottom:1px solid rgba(74,117,153,0.25)">
+                    {['Modelo','Marca','Familia','Caudal','Presión','Material','Certificación','Aplicaciones'].map((c, i) => (
+                      <th scope="col" class="text-left p-3 text-[10px] font-display font-bold uppercase tracking-widest" style={`color:${i === 3 ? g.color : '#4A7599'}`}>{c}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {l.modelos.map((m, i) => (
+                    <tr style={`border-bottom:1px solid rgba(74,117,153,0.1);background:${i % 2 === 0 ? '#040A12' : '#080F1A'}`}>
+                      <th scope="row" class="p-3 text-left font-display font-semibold text-xs align-top" style="color:#FFFFFF">{m.modelo}</th>
+                      <td class="p-3 text-xs align-top" style="color:#CBD5E1">{m.marca ?? '—'}</td>
+                      <td class="p-3 text-xs align-top" style="color:#CBD5E1">{m.familia ?? '—'}</td>
+                      <td class="p-3 font-display font-bold text-xs align-top" style={`color:${g.color}`}>{m.caudal ?? '—'}</td>
+                      <td class="p-3 text-xs align-top" style="color:#CBD5E1">{m.presion ?? '—'}</td>
+                      <td class="p-3 text-xs align-top leading-relaxed" style="color:#CBD5E1">{m.material ?? '—'}</td>
+                      <td class="p-3 text-xs align-top leading-relaxed" style="color:#CBD5E1">{m.certificacion ?? '—'}</td>
+                      <td class="p-3 text-xs align-top leading-relaxed" style="color:#94A3B8">{m.aplicaciones ?? '—'}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <h5 class="font-display text-[10px] uppercase tracking-wider mt-3" style="color:#4A7599">Fuente: página de la línea en el sitio de la empresa · datos declarados por modelo</h5>
+          </section>
+        )}
+
+        {l.criterios.length > 0 && (
+          <section aria-labelledby="linea-criterios">
+            <span class="section-eyebrow mb-4 inline-flex">Cómo elegir</span>
+            <h2 id="linea-criterios" class={h2} style={h2s}>Los {l.criterios.length} criterios con los que {e.nombre} especifica un monitor</h2>
+            <p class="text-sm leading-[1.9] mb-6" style="color:#94A3B8">En el orden en que la empresa los aplica. El primero descarta familias; el último descarta modelos.</p>
+            <ol class="flex flex-col gap-px list-none m-0 p-0" style={`background:${borde};border:1px solid ${borde}`}>
+              {l.criterios.map((c, i) => (
+                <li class="grid grid-cols-[3.5rem_1fr] gap-4 p-5 items-start" style="background:#040A12">
+                  <span class="font-display font-bold text-lg leading-none pt-0.5" style={`color:${g.color}`} aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+                  <div>
+                    <h3 class="font-display font-semibold text-sm mb-1.5" style="color:#FFFFFF">{c.titulo}</h3>
+                    <p class="text-sm leading-[1.8]" style="color:#94A3B8">{c.descripcion}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </section>
+        )}
+
+        {l.aplicaciones.length > 0 && (
+          <section aria-labelledby="linea-aplicaciones">
+            <span class="section-eyebrow mb-4 inline-flex">Aplicaciones</span>
+            <h2 id="linea-aplicaciones" class={h2} style={h2s}>Dónde se instalan los {l.nombre.toLowerCase()}</h2>
+            <ul class="grid grid-cols-2 md:grid-cols-3 gap-px list-none m-0 p-0 mt-5" style={`background:${borde};border:1px solid ${borde}`}>
+              {l.aplicaciones.map((a) => <li class="p-4 font-display font-semibold text-sm" style="background:#040A12;color:#FFFFFF">{a}</li>)}
+            </ul>
+          </section>
+        )}
+
+        {l.normas.length > 0 && (
+          <section aria-labelledby="linea-normas">
+            <span class="section-eyebrow mb-4 inline-flex">Normativa</span>
+            <h2 id="linea-normas" class={h2} style={h2s}>Normas de referencia para {l.nombre.toLowerCase()}</h2>
+            <p class="text-sm leading-[1.9] mb-6" style="color:#94A3B8">Las que la empresa cita para la línea y el alcance de cada una en la instalación.</p>
+            <div class="overflow-x-auto" style={`border:1px solid ${borde}`}>
+              <table style="width:100%;border-collapse:collapse;min-width:520px">
+                <thead><tr style="background:#080F1A;border-bottom:1px solid rgba(74,117,153,0.25)">
+                  <th scope="col" class="text-left p-3 text-[10px] font-display font-bold uppercase tracking-widest" style="color:#4A7599;width:26%">Norma</th>
+                  <th scope="col" class="text-left p-3 text-[10px] font-display font-bold uppercase tracking-widest" style="color:#4A7599">Alcance</th></tr></thead>
+                <tbody>{l.normas.map((n, i) => (
+                  <tr style={`border-bottom:1px solid rgba(74,117,153,0.1);background:${i % 2 === 0 ? '#040A12' : '#080F1A'}`}>
+                    <th scope="row" class="p-3 text-left font-display font-semibold text-xs align-top" style="color:#FFFFFF">{n.norma}</th>
+                    <td class="p-3 text-xs align-top leading-relaxed" style="color:#CBD5E1">{n.alcance}</td>
+                  </tr>))}</tbody>
+              </table>
+            </div>
+          </section>
+        )}
+
+        {l.datosParaCotizar.length > 0 && (
+          <section aria-labelledby="linea-cotizar">
+            <span class="section-eyebrow mb-4 inline-flex">Para cotizar</span>
+            <h2 id="linea-cotizar" class={h2} style={h2s}>Qué pide {e.nombre} para cotizar un monitor</h2>
+            <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">Con estos datos la empresa compromete propuesta formal en menos de 24 horas hábiles.</p>
+            <ul class="flex flex-col list-none m-0 p-0" style={`border:1px solid ${borde}`}>
+              {l.datosParaCotizar.map((d, i) => (
+                <li class="flex items-start gap-3 text-sm p-4" style={`color:#CBD5E1;background:${i % 2 === 0 ? '#040A12' : '#080F1A'};border-bottom:1px solid ${borde}`}>
+                  <span class="font-display font-bold text-xs pt-0.5 shrink-0" style={`color:${g.color}`}>{String(i + 1).padStart(2, '0')}</span><span>{d}</span>
+                </li>
+              ))}
+            </ul>
+            {web && (
+              <div class="mt-6 p-5 flex flex-col sm:flex-row sm:items-center gap-4" style={`background:#0C1825;border:1px solid ${borde};border-left:3px solid ${g.color}`}>
+                <p class="text-sm leading-relaxed flex-1" style="color:#94A3B8">Los modelos completos, con ficha técnica por producto, están en la página de la línea en el sitio de la empresa.</p>
+                <a href={web} target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary shrink-0">Ver {l.nombre.toLowerCase()} en {e.nombre}</a>
+              </div>
+            )}
+          </section>
+        )}
+
+        {l.faq.length > 0 && (
+          <section aria-labelledby="linea-faq">
+            <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes</span>
+            <h2 id="linea-faq" class="font-display font-bold mb-6" style={h2s}>Dudas habituales sobre {l.nombre.toLowerCase()}</h2>
+            <div class="flex flex-col gap-px" style={`background:${borde};border:1px solid ${borde}`}>
+              {l.faq.map((f) => (
+                <div class="p-5" style="background:#040A12">
+                  <h3 class="font-display font-semibold text-sm mb-2" style="color:#FFFFFF">{f.pregunta}</h3>
+                  <p class="text-sm leading-[1.85]" style="color:#94A3B8">{f.respuesta}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {l.relacionados.length > 0 && (
+          <section aria-labelledby="linea-relacionados">
+            <span class="section-eyebrow mb-4 inline-flex">Relacionado</span>
+            <h2 id="linea-relacionados" class={h2} style={h2s}>Seguir en FIREFIGHTERS MX</h2>
+            <ul class="grid grid-cols-1 md:grid-cols-2 gap-px list-none m-0 p-0 mt-5" style={`background:${borde};border:1px solid ${borde}`}>
+              {l.relacionados.map((r) => (
+                <li class="p-5" style="background:#040A12">
+                  <a href={r.url} class="font-display font-semibold text-sm hover:text-[#FF6B26]" style="color:#FFFFFF">{r.titulo}</a>
+                  {r.nota && <p class="text-xs leading-relaxed mt-1" style="color:#94A3B8">{r.nota}</p>}
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+      </div>
+
+      <aside class="flex flex-col gap-4 lg:sticky lg:top-28">
+        <div class="p-6" style="background:#0C1825;border:1px solid rgba(74,117,153,0.25)">
+          <p class="font-display font-bold text-xs uppercase tracking-widest mb-3" style="color:#4A7599">Empresa</p>
+          <a href={fichaURL} class="font-display font-bold text-base hover:text-[#FF6B26]" style="color:#FFFFFF">{e.nombre}</a>
+          <p class="text-xs leading-relaxed mt-1 mb-4" style="color:#94A3B8">{e.direccion ? `${e.direccion} · ` : ''}{e.ciudad}, {edo.nombre}</p>
+          <dl class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 text-sm m-0">
+            {e.telefono && <><dt class="font-display text-[10px] uppercase tracking-wider pt-1" style="color:#4A7599">Tel.</dt><dd class="m-0" style="color:#FFFFFF"><a href={`tel:${e.telefono.replace(/[^\d+]/g, '')}`} class="hover:text-[#FF6B26]">{e.telefono}</a></dd></>}
+            {e.email && <><dt class="font-display text-[10px] uppercase tracking-wider pt-1" style="color:#4A7599">Correo</dt><dd class="m-0 break-all" style="color:#FFFFFF"><a href={`mailto:${e.email}`} class="hover:text-[#FF6B26]">{e.email}</a></dd></>}
+          </dl>
+          <a href={fichaURL} class="btn btn-sm btn-outline w-full text-center mt-5">Ficha de {e.nombre} en {e.ciudad}</a>
+        </div>
+
+        {(hermanas.length > 0 || lineasSinPagina.length > 0) && (
+          <div class="p-6" style="background:#0C1825;border:1px solid rgba(74,117,153,0.25)">
+            <p class="font-display font-bold text-xs uppercase tracking-widest mb-3" style="color:#4A7599">Otras líneas de {e.nombre}</p>
+            <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+              {hermanas.map((h) => <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={urlLinea(h)} class="block py-2.5 font-display font-semibold text-sm hover:text-[#FF6B26]" style="color:#FFFFFF">{h.nombre}</a></li>)}
+              {lineasSinPagina.map((x) => <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`${fichaURL}#vip-lineas`} class="block py-2.5 font-display font-semibold text-sm hover:text-[#FF6B26]" style="color:#CBD5E1">{x.nombre}</a></li>)}
+            </ul>
+          </div>
+        )}
+
+        {otrasPlazas.length > 0 && (
+          <div class="p-6" style="background:#0C1825;border:1px solid rgba(74,117,153,0.25)">
+            <p class="font-display font-bold text-xs uppercase tracking-widest mb-3" style="color:#4A7599">La misma empresa en otra plaza</p>
+            <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+              {otrasPlazas.map((p) => <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={urlEmpresa(p)} class="block py-2.5 font-display font-semibold text-sm hover:text-[#FF6B26]" style="color:#FFFFFF">{p.nombre} en {p.ciudad}</a></li>)}
+            </ul>
+          </div>
+        )}
+
+        <div class="p-6" style="background:#0C1825;border:1px solid rgba(74,117,153,0.25)">
+          <p class="font-display font-bold text-xs uppercase tracking-widest mb-3" style="color:#4A7599">Fuentes de esta página</p>
+          <ul class="flex flex-col gap-2 list-none m-0 p-0">{l.fuentes.map((f) => <li><a href={f.url} target="_blank" rel="noopener nofollow" class="text-xs hover:text-[#FF6B26]" style="color:#CBD5E1">{f.nombre} ↗</a></li>)}</ul>
+          <p class="text-[11px] mt-3 leading-relaxed" style="color:#64748B">Datos declarados por la empresa en su sitio y verificados en {l.verificadoEl}. La validación final de cada modelo se hace contra la ficha técnica del fabricante.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>
