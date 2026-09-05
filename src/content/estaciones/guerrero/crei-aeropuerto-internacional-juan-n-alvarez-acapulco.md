@@ -8,7 +8,7 @@ ciudad: "Acapulco de Juárez"
 municipio: "Acapulco de Juárez"
 tipo: "Aeropuerto"
 corporacion: "CREI — Cuerpo de Rescate y Extinción de Incendios del Aeropuerto Internacional Juan N. Álvarez"
-corporacionSlug: "crei-cuerpo-de-rescate-y-extincion-de-incendios-del-aeropuerto-internacional-jua"
+corporacionSlug: "crei-cuerpo-de-rescate-y-extincion-de-incendios-del-aeropuerto-internacional-juan-n-alvarez"
 rolEstacion: "unica"
 coordenadas:
   lat: 16.7572

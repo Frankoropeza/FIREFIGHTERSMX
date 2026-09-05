@@ -26,6 +26,7 @@ serviciosDetalle:
   - "Incendios"
   - "Rescate vehicular"
   - "Primeros auxilios"
+descripcion: "Unidad municipal única de Ixtlahuaca, en el valle del noroeste mexiquense sobre el corredor que une Toluca con Atlacomulco. El municipio combina superficie agrícola extensa, industria ligera junto a la vía y una cabecera concentrada, con numerosas localidades repartidas por el valle. Accidentes en el corredor carretero e incendios de pastizal en estiaje son el grueso de su operación."
 fuentes:
   - nombre: "alertas.edomex.gob.mx — Ixtlahuaca"
     url: "https://alertas.edomex.gob.mx/inicio/unidad-municipal-pc/coordinacion-de-proteccion-civil-y-bomberos-ixtlahuaca/"

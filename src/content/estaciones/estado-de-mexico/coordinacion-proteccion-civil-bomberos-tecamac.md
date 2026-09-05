@@ -26,6 +26,7 @@ serviciosDetalle:
   - "Incendios"
   - "Rescate vehicular"
   - "Primeros auxilios"
+descripcion: "Unidad municipal única de Tecámac, uno de los municipios de crecimiento más acelerado del norte del Valle de México. Los grandes desarrollos de vivienda del tipo Los Héroes concentran a buena parte de la población en conjuntos contiguos, y el municipio quedó además en la zona de influencia directa del Aeropuerto Internacional Felipe Ángeles y del corredor carretero hacia Pachuca, con el tránsito pesado que eso implica."
 fuentes:
   - nombre: "tecamac.gob.mx — PC y Bomberos"
     url: "https://tecamac.gob.mx/APP_tramites/tramitesyservicios/cormunprobom001.php"

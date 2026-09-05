@@ -8,7 +8,7 @@ ciudad: "Lázaro Cárdenas"
 municipio: "Lázaro Cárdenas"
 tipo: "Voluntarios"
 corporacion: "BECAPE I.A.P. — Bomberos Especializados en Capacitación Atención y Prevención de Emergencias (Lázaro Cárdenas)"
-corporacionSlug: "becape-i-a-p-bomberos-especializados-en-capacitacion-atencion-y-prevencion-de-em"
+corporacionSlug: "becape-i-a-p-bomberos-especializados-en-capacitacion-atencion-y-prevencion-de-emergencias-lazaro-cardenas"
 rolEstacion: "unica"
 coordenadas:
   lat: 17.9581

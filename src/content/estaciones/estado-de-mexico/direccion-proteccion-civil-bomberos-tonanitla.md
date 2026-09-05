@@ -26,6 +26,7 @@ serviciosDetalle:
   - "Incendios"
   - "Rescate vehicular"
   - "Primeros auxilios"
+descripcion: "Unidad municipal única de Tonanitla, uno de los municipios más pequeños y jóvenes del Estado de México, en la zona lacustre del norte junto a Jaltenco y Nextlalpan. Su cercanía al Aeropuerto Internacional Felipe Ángeles y a los desarrollos de Zumpango ha acelerado el crecimiento de una zona hasta hace poco agrícola, con suelo blando y encharcamientos en temporada de lluvias."
 fuentes:
   - nombre: "tonanitla.gob.mx — PC y Bomberos"
     url: "https://www.tonanitla.gob.mx/mr-proteccion-civil-y-bomberos"

@@ -28,6 +28,7 @@ serviciosDetalle:
   - "Incendios"
   - "Rescate vehicular"
   - "Primeros auxilios"
+descripcion: "Corporación municipal única de Valle de Chalco Solidaridad, asentada sobre el lecho del antiguo lago de Chalco. El suelo lacustre se hunde de forma diferencial y agrieta calles, tubería y vivienda, y en temporada de lluvias el municipio sufre encharcamientos e inundaciones recurrentes. A eso se suma una de las densidades más altas del oriente conurbado, con calles estrechas y vivienda autoconstruida contigua."
 fuentes:
   - nombre: "valledechalco.gob.mx — PC y Bomberos"
     url: "https://valledechalco.gob.mx/dependencia.php?id_direccion=6"

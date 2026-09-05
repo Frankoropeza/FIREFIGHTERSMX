@@ -26,6 +26,7 @@ serviciosDetalle:
   - "Incendios"
   - "Rescate vehicular"
   - "Primeros auxilios"
+descripcion: "Dirección municipal única de Chicoloapan, en el oriente conurbado del Valle de México. El municipio creció en pocos años a base de conjuntos habitacionales de vivienda en serie, con densidad alta y vialidades saturadas hacia la carretera México-Texcoco. Su carga es predominantemente urbana: incendios domésticos y de comercio, fugas de gas LP y rescate vehicular en los accesos al municipio."
 fuentes:
   - nombre: "chicoloapan.gob.mx — PC y Bomberos"
     url: "https://chicoloapan.gob.mx/contenidos/chicoloapan/docs/99_coordinacion-de-proteccion-civil-y-bomberos_25321185622.pdf"

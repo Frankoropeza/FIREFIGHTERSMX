@@ -25,6 +25,7 @@ serviciosDetalle:
   - "Incendios"
   - "Rescate vehicular"
   - "Primeros auxilios"
+descripcion: "Unidad municipal única de Calimaya, en el valle de Toluca al pie del Nevado. El municipio ha pasado en pocos años de suelo agrícola a grandes conjuntos residenciales, un cambio que multiplica la vivienda y el gas doméstico sin que la traza vial y la red de hidrantes hayan crecido al mismo ritmo. Conserva zona de monte en la parte alta, hacia el área natural protegida del volcán."
 fuentes:
   - nombre: "Directorio CGPC EDOMEX jun 2025"
     url: "https://cgproteccioncivil.edomex.gob.mx/sites/cgproteccioncivil.edomex.gob.mx/files/files/Que%20ofrecemos%202025/DIR-U-MUNICPALES/DIRECTORIO-JUNIO2025.pdf"

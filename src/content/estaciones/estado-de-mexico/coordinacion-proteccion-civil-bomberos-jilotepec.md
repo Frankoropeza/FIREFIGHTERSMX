@@ -23,6 +23,7 @@ serviciosDetalle:
   - "Incendios"
   - "Rescate vehicular"
   - "Primeros auxilios"
+descripcion: "Unidad municipal única de Jilotepec, en el extremo norte del estado. Es un municipio amplio y mayoritariamente rural, atravesado por el eje carretero hacia Querétaro, de modo que su operación se reparte entre los accidentes de carretera con tránsito pesado, los incendios de pastizal del valle y las emergencias domésticas de una cabecera y decenas de localidades separadas por varios kilómetros."
 fuentes:
   - nombre: "alertas.edomex.gob.mx — Jilotepec"
     url: "https://alertas.edomex.gob.mx/inicio/unidad-municipal-pc/coordinacion-de-proteccion-civil-jilotepec/"

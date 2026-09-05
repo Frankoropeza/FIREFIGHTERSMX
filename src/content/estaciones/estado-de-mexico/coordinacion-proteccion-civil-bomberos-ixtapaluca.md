@@ -32,6 +32,7 @@ serviciosDetalle:
   - "Rescate vehicular"
   - "Incendios forestales"
   - "Primeros auxilios"
+descripcion: "Unidad municipal única de Ixtapaluca, en el oriente del Valle de México sobre la autopista México-Puebla. Concentra dos realidades distintas: los conjuntos habitacionales masivos del tipo San Buenaventura, con decenas de miles de viviendas contiguas, y las faldas de la Sierra Nevada hacia el Iztaccíhuatl, que aportan incendios forestales en la temporada seca. La autopista suma accidentes de tránsito pesado a esa carga."
 fuentes:
   - nombre: "ixtapaluca.gob.mx — PC y Bomberos"
     url: "https://www.ixtapaluca.gob.mx/copy-of-projects-1"

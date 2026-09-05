@@ -8,7 +8,7 @@ ciudad: "Tlajomulco de Zúñiga"
 municipio: "Tlajomulco de Zúñiga"
 tipo: "Aeropuerto"
 corporacion: "CREI — Cuerpo de Rescate y Extinción de Incendios del Aeropuerto Internacional Miguel Hidalgo y Costilla"
-corporacionSlug: "crei-cuerpo-de-rescate-y-extincion-de-incendios-del-aeropuerto-internacional-mig"
+corporacionSlug: "crei-cuerpo-de-rescate-y-extincion-de-incendios-del-aeropuerto-internacional-miguel-hidalgo-y-costilla"
 rolEstacion: "unica"
 coordenadas:
   lat: 20.5218

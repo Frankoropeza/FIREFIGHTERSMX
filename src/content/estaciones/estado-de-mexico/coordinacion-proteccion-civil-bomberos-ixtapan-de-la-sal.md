@@ -25,6 +25,7 @@ serviciosDetalle:
   - "Incendios"
   - "Rescate vehicular"
   - "Primeros auxilios"
+descripcion: "Unidad municipal única de Ixtapan de la Sal, destino turístico de aguas termales en el sur del estado. Su población flotante se dispara en fines de semana y vacaciones, y con ella el riesgo asociado a hoteles, balnearios y parques acuáticos: emergencias médicas, ahogamientos y evacuaciones en inmuebles de hospedaje. La carretera de montaña que lo conecta con Tenancingo y Toluca aporta el resto de su operación."
 fuentes:
   - nombre: "ixtapandelasal.gob.mx — PC y Bomberos"
     url: "https://ixtapandelasal.gob.mx/gobierno/proteccion-civil/"

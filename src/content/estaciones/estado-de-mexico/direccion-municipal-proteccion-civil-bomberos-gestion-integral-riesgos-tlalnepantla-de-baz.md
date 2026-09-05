@@ -8,7 +8,7 @@ ciudad: "Tlalnepantla de Baz"
 municipio: "Tlalnepantla de Baz"
 tipo: "Municipal"
 corporacion: "Dirección Municipal de Protección Civil, Bomberos y Gestión Integral de Riesgos de Tlalnepantla de Baz"
-corporacionSlug: "direccion-municipal-de-proteccion-civil-bomberos-y-gestion-integral-de-riesgos-d"
+corporacionSlug: "direccion-municipal-de-proteccion-civil-bomberos-y-gestion-integral-de-riesgos-de-tlalnepantla-de-baz"
 rolEstacion: "unica"
 direccion: "Andador Camilo Cienfuegos, Col. Unidad Habitacional el Rosario Ii, C.P. 54090"
 coordenadas:

@@ -8,7 +8,7 @@ ciudad: "Tultitlán de Mariano Escobedo"
 municipio: "Tultitlán"
 tipo: "PEMEX"
 corporacion: "Brigada Contraincendio — Terminal de Almacenamiento y Despacho Tultitlán (PEMEX Logística)"
-corporacionSlug: "brigada-contraincendio-terminal-de-almacenamiento-y-despacho-tultitlan-pemex-log"
+corporacionSlug: "brigada-contraincendio-terminal-de-almacenamiento-y-despacho-tultitlan-pemex-logistica"
 rolEstacion: "unica"
 coordenadas:
   lat: 19.6419

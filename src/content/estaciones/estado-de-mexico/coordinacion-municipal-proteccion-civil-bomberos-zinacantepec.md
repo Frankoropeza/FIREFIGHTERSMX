@@ -31,6 +31,7 @@ serviciosDetalle:
   - "Rescate vehicular"
   - "Primeros auxilios"
   - "Incendios forestales"
+descripcion: "Unidad municipal única de Zinacantepec, en la falda norte del Nevado de Toluca. El municipio combina la conurbación poniente de la ciudad de Toluca con miles de hectáreas de bosque de pino y oyamel dentro del área natural protegida del volcán, una mezcla que obliga a la misma corporación a atender incendios urbanos e incendios forestales de altura, estos últimos en terreno donde el acceso vehicular se acaba pronto."
 fuentes:
   - nombre: "Directorio CGPC EDOMEX jun 2025"
     url: "https://cgproteccioncivil.edomex.gob.mx/sites/cgproteccioncivil.edomex.gob.mx/files/files/Que%20ofrecemos%202025/DIR-U-MUNICPALES/DIRECTORIO-JUNIO2025.pdf"

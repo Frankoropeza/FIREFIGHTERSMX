@@ -32,6 +32,7 @@ serviciosDetalle:
   - "Fugas de gas"
   - "Rescate en altura"
   - "Primeros auxilios"
+descripcion: "Unidad municipal única de Coacalco de Berriozábal, uno de los municipios más densamente poblados de la conurbación norte del Valle de México. Su territorio es pequeño y está prácticamente saturado: vivienda de interés social, centros comerciales de gran superficie y vialidades que se congestionan en hora pico. Por el sur trepa hacia la Sierra de Guadalupe, donde el pastizal seco arde cada temporada de estiaje."
 fuentes:
   - nombre: "coacalco.gob.mx — PC y Bomberos"
     url: "https://coacalco.gob.mx/portfolio/proteccion-civil/"

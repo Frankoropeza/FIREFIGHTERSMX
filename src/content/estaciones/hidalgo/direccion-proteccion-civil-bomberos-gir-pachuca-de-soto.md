@@ -8,7 +8,7 @@ ciudad: "Pachuca de Soto"
 municipio: "Pachuca de Soto"
 tipo: "Municipal"
 corporacion: "Dirección de Protección Civil, Bomberos y Gestión Integral de Riesgos de Pachuca de Soto"
-corporacionSlug: "direccion-de-proteccion-civil-bomberos-y-gestion-integral-de-riesgos-de-pachuca-"
+corporacionSlug: "direccion-de-proteccion-civil-bomberos-y-gestion-integral-de-riesgos-de-pachuca-de-soto"
 rolEstacion: "unica"
 direccion: "Pino Suárez No. 903, Col. Cubitos, C.P. 42090, Pachuca de Soto, Hgo."
 coordenadas:

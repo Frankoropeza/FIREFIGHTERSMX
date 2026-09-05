@@ -27,6 +27,7 @@ serviciosDetalle:
   - "Incendios"
   - "Rescate vehicular"
   - "Primeros auxilios"
+descripcion: "Dirección municipal única de La Paz, con cabecera en Los Reyes, en el nudo donde confluyen la autopista y la carretera federal México-Puebla. Ese cruce concentra tránsito pesado, mercados, gaseras y bodegas de distribución, y explica buena parte de sus emergencias. Por el norte el municipio sube hacia la Sierra de Santa Catarina, con pastizal que arde cada estiaje y asentamientos en ladera."
 fuentes:
   - nombre: "lapaz.gob.mx — trámites PC"
     url: "https://www.lapaz.gob.mx/catalogo-tramites-servicios/0001"

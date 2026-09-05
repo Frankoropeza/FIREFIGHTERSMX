@@ -26,6 +26,7 @@ serviciosDetalle:
   - "Incendios"
   - "Rescate vehicular"
   - "Primeros auxilios"
+descripcion: "Dirección municipal única de Tenancingo, en el sur del estado. Es la capital florícola de la entidad: miles de invernaderos de plástico con sistemas de riego, agroquímicos y calefacción, un riesgo de incendio muy distinto al urbano y con propagación rápida entre naves contiguas. La carretera de montaña hacia Ixtapan de la Sal y Toluca aporta el rescate vehicular que completa su operación."
 fuentes:
   - nombre: "alertas.edomex.gob.mx — Tenancingo"
     url: "https://alertas.edomex.gob.mx/inicio/unidad-municipal-pc/direccion-de-proteccion-civil-y-bomberos-tenancingo/"

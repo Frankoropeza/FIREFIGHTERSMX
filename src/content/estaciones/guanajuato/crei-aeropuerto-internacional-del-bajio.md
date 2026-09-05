@@ -8,7 +8,7 @@ ciudad: "Silao de la Victoria"
 municipio: "Silao de la Victoria"
 tipo: "Aeropuerto"
 corporacion: "CREI — Cuerpo de Rescate y Extinción de Incendios del Aeropuerto Internacional del Bajío"
-corporacionSlug: "crei-cuerpo-de-rescate-y-extincion-de-incendios-del-aeropuerto-internacional-del"
+corporacionSlug: "crei-cuerpo-de-rescate-y-extincion-de-incendios-del-aeropuerto-internacional-del-bajio"
 rolEstacion: "unica"
 direccion: "Aeropuerto Internacional del Bajío (BJX), Carretera Guanajuato–Silao km 5.5, Silao de la Victoria, Gto."
 coordenadas:

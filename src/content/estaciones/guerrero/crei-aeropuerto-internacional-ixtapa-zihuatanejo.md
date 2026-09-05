@@ -8,7 +8,7 @@ ciudad: "Zihuatanejo de Azueta"
 municipio: "Zihuatanejo de Azueta"
 tipo: "Aeropuerto"
 corporacion: "CREI — Cuerpo de Rescate y Extinción de Incendios del Aeropuerto Internacional Ixtapa-Zihuatanejo"
-corporacionSlug: "crei-cuerpo-de-rescate-y-extincion-de-incendios-del-aeropuerto-internacional-ixt"
+corporacionSlug: "crei-cuerpo-de-rescate-y-extincion-de-incendios-del-aeropuerto-internacional-ixtapa-zihuatanejo"
 rolEstacion: "unica"
 coordenadas:
   lat: 17.6014

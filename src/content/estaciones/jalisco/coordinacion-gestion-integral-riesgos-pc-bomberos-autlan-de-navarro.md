@@ -8,7 +8,7 @@ ciudad: "Autlán de Navarro"
 municipio: "Autlán de Navarro"
 tipo: "Municipal"
 corporacion: "Coordinación para la Gestión Integral de Riesgos, Protección Civil y Bomberos de Autlán de Navarro"
-corporacionSlug: "coordinacion-para-la-gestion-integral-de-riesgos-proteccion-civil-y-bomberos-de-"
+corporacionSlug: "coordinacion-para-la-gestion-integral-de-riesgos-proteccion-civil-y-bomberos-de-autlan-de-navarro"
 rolEstacion: "unica"
 direccion: "Avenida Carlos Santana No. 261, Centro, Autlán de Navarro, Jal."
 coordenadas:

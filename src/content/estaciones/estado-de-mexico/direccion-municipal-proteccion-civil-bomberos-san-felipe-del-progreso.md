@@ -25,6 +25,7 @@ serviciosDetalle:
   - "Incendios"
   - "Rescate vehicular"
   - "Primeros auxilios"
+descripcion: "Unidad municipal única de San Felipe del Progreso, en la región mazahua del noroeste mexiquense. Es un municipio rural y disperso, con bosque templado en la parte alta y decenas de comunidades separadas de la cabecera, de modo que la distancia y el estado de los caminos pesan más en el tiempo de respuesta que cualquier otro factor. Incendios de pastizal y de monte dominan la temporada seca."
 fuentes:
   - nombre: "sanfelipedelprogreso.gob.mx — PC y Bomberos"
     url: "https://sanfelipedelprogreso.gob.mx/remuvid-direccion-municipal-de-proteccion-civil-y-bomberos/"

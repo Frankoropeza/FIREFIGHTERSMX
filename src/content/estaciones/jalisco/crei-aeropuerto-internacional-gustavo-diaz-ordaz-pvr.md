@@ -8,7 +8,7 @@ ciudad: "Puerto Vallarta"
 municipio: "Puerto Vallarta"
 tipo: "Aeropuerto"
 corporacion: "CREI — Cuerpo de Rescate y Extinción de Incendios del Aeropuerto Internacional Licenciado Gustavo Díaz Ordaz"
-corporacionSlug: "crei-cuerpo-de-rescate-y-extincion-de-incendios-del-aeropuerto-internacional-lic"
+corporacionSlug: "crei-cuerpo-de-rescate-y-extincion-de-incendios-del-aeropuerto-internacional-licenciado-gustavo-diaz-ordaz"
 rolEstacion: "unica"
 coordenadas:
   lat: 20.6801

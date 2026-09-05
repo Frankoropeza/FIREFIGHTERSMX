@@ -8,7 +8,7 @@ ciudad: "Guadalajara"
 municipio: "Guadalajara"
 tipo: "Municipal"
 corporacion: "Coordinación Municipal de Gestión Integral de Riesgos, Protección Civil y Bomberos de Guadalajara"
-corporacionSlug: "coordinacion-municipal-de-gestion-integral-de-riesgos-proteccion-civil-y-bombero"
+corporacionSlug: "coordinacion-municipal-de-gestion-integral-de-riesgos-proteccion-civil-y-bomberos-de-guadalajara"
 rolEstacion: "unica"
 direccion: "Av. del Campesino No. 1097, Col. Moderna, C.P. 44190, Guadalajara, Jal."
 coordenadas:

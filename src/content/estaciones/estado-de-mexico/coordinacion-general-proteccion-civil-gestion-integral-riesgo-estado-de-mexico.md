@@ -8,7 +8,7 @@ ciudad: "Zinacantepec"
 municipio: "Zinacantepec"
 tipo: "Estatal"
 corporacion: "Coordinación General de Protección Civil y Gestión Integral del Riesgo del Estado de México"
-corporacionSlug: "coordinacion-general-de-proteccion-civil-y-gestion-integral-del-riesgo-del-estad"
+corporacionSlug: "coordinacion-general-de-proteccion-civil-y-gestion-integral-del-riesgo-del-estado-de-mexico"
 rolEstacion: "unica"
 coordenadas:
   lat: 19.2932

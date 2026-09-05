@@ -8,7 +8,7 @@ ciudad: "El Marqués"
 municipio: "El Marqués"
 tipo: "Aeropuerto"
 corporacion: "SSEI Aeropuerto Intercontinental de Querétaro \"Ing. Fernando Espinosa Gutiérrez\" (QRO / MMQT)"
-corporacionSlug: "ssei-aeropuerto-intercontinental-de-queretaro-ing-fernando-espinosa-gutierrez-qr"
+corporacionSlug: "ssei-aeropuerto-intercontinental-de-queretaro-ing-fernando-espinosa-gutierrez-qro-mmqt"
 rolEstacion: "unica"
 coordenadas:
   lat: 20.6173

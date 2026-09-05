@@ -26,6 +26,7 @@ serviciosDetalle:
   - "Incendios"
   - "Rescate vehicular"
   - "Primeros auxilios"
+descripcion: "Unidad municipal única de El Oro, antiguo distrito minero en la sierra del noroeste mexiquense. El municipio conserva bosque templado, socavones y tiros de minas abandonadas, y una cabecera de arquitectura porfiriana declarada Pueblo Mágico que recibe visitantes los fines de semana. Incendios forestales en estiaje, rescate en terreno accidentado y emergencias en localidades altas y dispersas definen su operación."
 fuentes:
   - nombre: "alertas.edomex.gob.mx — El Oro"
     url: "https://alertas.edomex.gob.mx/inicio/unidad-municipal-pc/coordinacion-de-proteccion-civil-y-bomberos-el-oro/"

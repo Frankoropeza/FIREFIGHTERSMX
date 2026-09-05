@@ -8,7 +8,7 @@ ciudad: "San Juan de los Lagos"
 municipio: "San Juan de los Lagos"
 tipo: "Municipal"
 corporacion: "H. Cuerpo de Bomberos y Unidad Municipal de Protección Civil de San Juan de los Lagos"
-corporacionSlug: "h-cuerpo-de-bomberos-y-unidad-municipal-de-proteccion-civil-de-san-juan-de-los-l"
+corporacionSlug: "h-cuerpo-de-bomberos-y-unidad-municipal-de-proteccion-civil-de-san-juan-de-los-lagos"
 rolEstacion: "unica"
 direccion: "Calle Santa Rosa No. 118, Col. El Rosario, San Juan de los Lagos, Jal."
 coordenadas:

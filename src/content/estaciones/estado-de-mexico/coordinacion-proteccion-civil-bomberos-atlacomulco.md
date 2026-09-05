@@ -25,6 +25,7 @@ serviciosDetalle:
   - "Incendios"
   - "Rescate vehicular"
   - "Primeros auxilios"
+descripcion: "Unidad municipal única de Atlacomulco, cabecera del norte mexiquense sobre el eje de la autopista México-Querétaro. Su perfil de riesgo es de corredor: tránsito pesado de carga, parques industriales y bodegas en las inmediaciones de la vía, y un valle frío y ventoso donde el pastizal seco se propaga con rapidez. Atiende además a las localidades rurales dispersas del municipio."
 fuentes:
   - nombre: "atlacomulco.gob.mx — trámites PC y Bomberos"
     url: "https://atlacomulco.gob.mx/tramites-proteccion-civil-y-bomberos/"

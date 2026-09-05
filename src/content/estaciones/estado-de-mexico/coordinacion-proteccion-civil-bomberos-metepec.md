@@ -32,6 +32,7 @@ serviciosDetalle:
   - "Rescate vehicular"
   - "Emergencias médicas prehospitalarias"
   - "Primeros auxilios"
+descripcion: "Unidad municipal única de Metepec, dentro de la zona metropolitana de Toluca. Es el municipio de mayor densidad comercial del valle: corredores de restaurantes, plazas, hospitales privados y vivienda vertical concentrados en pocos kilómetros, con el barrio alfarero del Pueblo Mágico en el centro. Ese perfil urbano y de servicios domina su carga, junto con el rescate vehicular de las vialidades que lo cruzan hacia Toluca."
 fuentes:
   - nombre: "Directorio CGPC EDOMEX jun 2025"
     url: "https://cgproteccioncivil.edomex.gob.mx/sites/cgproteccioncivil.edomex.gob.mx/files/files/Que%20ofrecemos%202025/DIR-U-MUNICPALES/DIRECTORIO-JUNIO2025.pdf"

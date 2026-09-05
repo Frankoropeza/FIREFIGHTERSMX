@@ -27,6 +27,7 @@ serviciosDetalle:
   - "Incendios"
   - "Rescate vehicular"
   - "Primeros auxilios"
+descripcion: "Dirección municipal única de Chimalhuacán, en el oriente conurbado del Valle de México. Es uno de los municipios más poblados del país y su traza creció sin planeación sobre el lecho del antiguo lago de Texcoco: calles estrechas, vivienda autoconstruida y manzanas donde una autobomba no siempre entra. El cerro Chimalhuachi, con sus canteras, añade rescate en terreno vertical a esa operación urbana."
 fuentes:
   - nombre: "chimalhuacan.gob.mx — PC y Bomberos"
     url: "https://chimalhuacan.gob.mx/proteccion-civil-y-bomberos/"

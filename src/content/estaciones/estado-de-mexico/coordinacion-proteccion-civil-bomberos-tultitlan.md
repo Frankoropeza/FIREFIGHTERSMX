@@ -30,6 +30,7 @@ serviciosDetalle:
   - "Rescate vehicular"
   - "Primeros auxilios"
   - "Emergencias médicas prehospitalarias"
+descripcion: "Unidad municipal única de Tultitlán, en el corredor industrial del norte del Valle de México. La vía José López Portillo concentra naves, bodegas y patios de maniobra donde el incendio industrial y la fuga de materiales son riesgo cotidiano, y alrededor de ellos hay colonias densas de vivienda popular. Es una de las zonas del estado donde el uso industrial y el habitacional comparten manzana."
 fuentes:
   - nombre: "tultitlan.gob.mx — Bomberos 2025"
     url: "https://tultitlan.gob.mx/REMTyS/2025/Direccion_de_Gobierno_y_Proteccion_Civil/Bomberos.pdf"
