@@ -116,19 +116,19 @@ const msaGallet: CascoBrand = {
   slug: 'msa-gallet',
   brand: 'MSA Safety',
   brandLabel: 'MSA Gallet',
-  eyebrow: 'MSA Safety · Gallet · Distribuidor Autorizado MX',
+  eyebrow: 'MSA Safety · Gallet',
   heroTitleTop: 'Cascos MSA Gallet',
   heroTitleAccent: 'certificados NFPA.',
   heroLead:
-    'Distribuidor autorizado de MSA Gallet en México. Stock permanente de las 8 configuraciones —estructural, ARFF, forestal y USAR— con entrega en 24–48 h en CDMX y ficha técnica completa para licitación.',
+    'Línea completa de MSA Gallet en México. Stock permanente de las 8 configuraciones —estructural, ARFF, forestal y USAR— con entrega en 24–48 h en CDMX y ficha técnica completa para licitación.',
   heroIntro: [
     'MSA Safety —NYSE: MSA— es el grupo industrial de seguridad más grande del mundo. Su línea Gallet define el estándar europeo de casco estructural: visor retráctil interno, fibra de vidrio termoendurecida y módulos integrados de lámpara y comunicación.',
     'El F1 XF es el casco más solicitado en cuerpos metropolitanos y ARFF de México. La gama cubre los cuatro escenarios de riesgo: estructural (NFPA 1970), proximidad (NFPA 1970, cap. 5–9), forestal (NFPA 1950) y rescate técnico USAR (EN 16471/16473).',
   ],
-  heroBadges: ['NFPA 1970', 'NFPA 1950', 'Fibra de vidrio', 'Optrel retráctil', 'MSA Safety · NYSE', 'Distribuidor autorizado MX'],
+  heroBadges: ['NFPA 1970', 'NFPA 1950', 'Fibra de vidrio', 'Optrel retráctil', 'MSA Safety · NYSE'],
   seoTitle: 'Cascos MSA Gallet NFPA 1970 — F1 XF · Distribuidor México',
   seoDescription:
-    'Cascos MSA Gallet certificados NFPA 1970 en México: F1 XF, Comandante, EVOGUARD, ARFF, USAR F2 y forestal F1 SF. Distribuidor autorizado · stock CDMX · ficha para licitación.',
+    'Cascos MSA Gallet certificados NFPA 1970 en México: F1 XF, Comandante, EVOGUARD, ARFF, USAR F2 y forestal F1 SF. ficha para licitación.',
   founding: '1865',
   parentOrg: { name: 'MSA Safety Incorporated', ticker: 'NYSE:MSA' },
   stats: [
@@ -212,15 +212,15 @@ const bullard: CascoBrand = {
   heroTitleTop: 'Cascos Bullard',
   heroTitleAccent: 'certificados NFPA.',
   heroLead:
-    'Distribuidor autorizado de Bullard en México. Stock permanente de las 8 configuraciones —estructural, mando, forestal y USAR— con entrega en 24–48 h en CDMX y ficha técnica completa para licitación.',
+    'Línea completa de Bullard en México. Stock permanente de las 8 configuraciones —estructural, mando, forestal y USAR— con entrega en 24–48 h en CDMX y ficha técnica completa para licitación.',
   heroIntro: [
     'Bullard lleva más de 125 años fabricando EPP para bomberos desde California — la empresa que inventó el casco industrial moderno. Su línea USTM/USTERM define el estilo americano de ala completa en material composite: escudo frontal personalizable con emblema institucional y alta resistencia térmica.',
     'Como fabricante también de cámaras de imagen térmica, Bullard ofrece la mejor compatibilidad nativa con TIC del mercado. La primera opción para corporaciones con identidad histórica que exigen tradición y tecnología.',
   ],
-  heroBadges: ['NFPA 1970', 'NFPA 1950', 'Composite ABS / USTERM', 'Ala completa', 'Escudo frontal', 'TIC Mount', 'Distribuidor autorizado MX'],
+  heroBadges: ['NFPA 1970', 'NFPA 1950', 'Composite ABS / USTERM', 'Ala completa', 'Escudo frontal', 'TIC Mount'],
   seoTitle: 'Cascos Bullard NFPA 1970 — USTM · Distribuidor México',
   seoDescription:
-    'Cascos Bullard certificados NFPA en México: USTM, USTERM, XTF, FH2 mando, USAR y forestal SX6. Estilo americano de ala completa. Distribuidor autorizado · stock CDMX · ficha para licitación.',
+    'Cascos Bullard certificados NFPA en México: USTM, USTERM, XTF, FH2 mando, USAR y forestal SX6. Estilo americano de ala completa. ficha para licitación.',
   founding: '1898',
   parentOrg: { name: 'E.D. Bullard Company' },
   stats: [
@@ -304,7 +304,7 @@ const cairns: CascoBrand = {
   heroTitleTop: 'Cascos Cairns',
   heroTitleAccent: 'certificados NFPA.',
   heroLead:
-    'Distribuidor autorizado de Cairns en México. Stock permanente de las 8 configuraciones —del N6A Houston de cuero al composite moderno, mando, ARFF y forestal— con entrega en 24–48 h en CDMX y ficha técnica para licitación.',
+    'Línea completa de Cairns en México. Stock permanente de las 8 configuraciones —del N6A Houston de cuero al composite moderno, mando, ARFF y forestal— con entrega en 24–48 h en CDMX y ficha técnica para licitación.',
   heroIntro: [
     'Cairns es la marca de cascos para bomberos más antigua de América — fundada en 1836. El N6A Houston, en cuero curtido y polipropileno, es el casco más reconocible del servicio en el continente: la silueta de ala trasera larga, el águila frontal y el escudo serigrafiable que se volvieron símbolo del oficio.',
     'Su línea combina ese legado con composite moderno (1010, 1044 Invader), proximidad ARFF (795) y forestal (Wildland). Hoy parte del grupo MSA Safety, conserva tradición e ingeniería bajo un mismo estándar NFPA.',
@@ -312,7 +312,7 @@ const cairns: CascoBrand = {
   heroBadges: ['NFPA 1970', 'NFPA 1950', 'Cuero / Composite', 'N6A Houston', 'Escudo frontal', 'Desde 1836', 'MSA Safety'],
   seoTitle: 'Cascos Cairns NFPA 1970 — N6A Houston · México',
   seoDescription:
-    'Cascos Cairns certificados NFPA en México: N6A Houston de cuero, 1010/1044 composite, 880 mando, 795 ARFF y forestal. La marca de casco más antigua de América · distribuidor autorizado MX.',
+    'Cascos Cairns certificados NFPA en México: N6A Houston de cuero, 1010/1044 composite, 880 mando, 795 ARFF y forestal. La marca de casco más antigua de América.',
   founding: '1836',
   parentOrg: { name: 'MSA Safety Incorporated', ticker: 'NYSE:MSA' },
   stats: [

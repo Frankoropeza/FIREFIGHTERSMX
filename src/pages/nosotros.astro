@@ -26,7 +26,6 @@ const breadcrumbSchema = {
 };
 
 const figures = [
-  { value: '15+', label: 'Años de especialización', text: 'Una década y media enfocados en el sector bomberos, industria y protección civil.' },
   { value: String(totalFichas), label: 'Estaciones documentadas', text: 'Fichas del directorio nacional, cada una con fuente institucional y fecha de verificación.' },
   { value: '32', label: 'Estados con cobertura', text: 'Logística y servicio en sitio en toda la República Mexicana.' },
   { value: '100%', label: 'Equipo certificado', text: 'Todo cumple NFPA, NOM-002-STPS y normativa vigente.' },
@@ -52,7 +51,7 @@ const pillars = [
 
 const razones = [
   { title: 'Especialización real', desc: 'No somos una ferretería que también vende extintores: vivimos del sector bomberos, protección civil e industria.' },
-  { title: 'Distribuidor autorizado', desc: 'Representamos de forma oficial a las marcas líderes del mundo, con garantía y refacciones respaldadas.' },
+  { title: 'Marcas de referencia', desc: 'Trabajamos con las marcas líderes del sector, con garantía de fábrica y refacciones originales.' },
   { title: 'Documentación que cumple', desc: 'Cada entrega llega con certificados, fichas técnicas y manifiestos listos para STPS, Protección Civil o tu aseguradora.' },
   { title: 'Un ejecutivo por cuenta', desc: 'Una persona responsable de tu proyecto, no un conmutador: seguimiento de principio a fin.' },
 ];
@@ -92,10 +91,10 @@ const razones = [
         </div>
         <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
           <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">
-            Llevamos más de 15 años dedicados a una sola cosa:
+            Nos dedicamos a una sola cosa:
             <strong style="color:#CBD5E1">poner el equipo certificado correcto en manos de bomberos,
-            brigadas industriales y protección civil</strong> en todo México. Somos distribuidores
-            autorizados de las marcas más confiables del mundo.
+            brigadas industriales y protección civil</strong> en todo México, con las marcas
+            de referencia del sector.
           </p>
           <p class="text-sm leading-[1.9] mb-6" style="color:#64748B">
             A ese trabajo se suma el directorio nacional: {totalFichas} estaciones de bomberos
@@ -120,9 +119,9 @@ const razones = [
   <!-- Cifras -->
   <section class="section-tight" style="background:#070E1A" aria-label="La empresa en cifras">
     <div class="container-site">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style="border:1px solid rgba(74,117,153,0.18)">
+      <div class="grid grid-cols-1 sm:grid-cols-3" style="border:1px solid rgba(74,117,153,0.18)">
         {figures.map((f, i) => (
-          <div class="flex flex-col gap-2 p-6" style={`background:#0C1825;${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.18);' : ''}`}>
+          <div class="flex flex-col gap-2 p-6" style={`background:#0C1825;${i < figures.length - 1 ? 'border-right:1px solid rgba(74,117,153,0.18);' : ''}`}>
             <span class="font-display font-bold" style="color:#F75000;font-size:2.25rem;line-height:1">{f.value}</span>
             <h2 class="font-display font-bold text-sm uppercase tracking-wider" style="color:#FFFFFF">{f.label}</h2>
             <p class="text-xs leading-relaxed" style="color:#64748B">{f.text}</p>
@@ -147,7 +146,7 @@ const razones = [
           <img src="/images/nosotros/nosotros-equipo-bombero-uniformado.avif" alt="Bombero uniformado con equipo estructural completo NFPA México" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
-          <img src="/images/nosotros/nosotros-distribuidor-autorizado-mexico.avif" alt="Distribuidor autorizado equipo bomberos México FIREFIGHTERS MX 32 estados" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+          <img src="/images/nosotros/nosotros-distribuidor-autorizado-mexico.avif" alt="Equipo certificado para bomberos en México — FIREFIGHTERS MX, 32 estados" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
           <img src="/images/nosotros/bombero-proteccion-completa-mexico.avif" alt="Protección personal completa bombero certificado NFPA 1970 México" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>

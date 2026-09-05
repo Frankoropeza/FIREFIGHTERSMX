@@ -21,19 +21,19 @@ const globe: EquipmentBrand = {
   brand: 'Globe Manufacturing',
   brandLabel: 'Globe Manufacturing',
   crossDesc: 'La más licitada en MX · G-XTREME 3.0 · GORE-TEX PFAS-free',
-  eyebrow: 'Globe Manufacturing · MSA Safety · Distribuidor Autorizado MX',
+  eyebrow: 'Globe Manufacturing · MSA Safety',
   heroTitleTop: 'Trajes Globe',
   heroTitleAccent: 'NFPA 1970.',
   heroLead:
-    'Distribuidor autorizado de Globe Manufacturing en México. Stock permanente de los 6 modelos en tallas S–4XL — entrega en 24–48 h en CDMX con ficha técnica completa para licitación.',
+    'Línea completa de Globe Manufacturing en México. Stock permanente de los 6 modelos en tallas S–4XL — entrega en 24–48 h en CDMX con ficha técnica completa para licitación.',
   heroIntro: [
     'Globe Manufacturing — fundada en 1887 y parte del grupo MSA Safety — es el fabricante de trajes para bomberos más solicitado en licitaciones mexicanas tier-1. Más de 110 años fabricando el traje en el que confían departamentos en los 32 estados.',
     'Su línea cubre los tres tipos de riesgo: trajes estructurales (NFPA 1970) para combate en edificios, traje de proximidad aluminizado para aeropuertos ARFF y refinerías, y traje forestal (NFPA 1950) para incendio de interfaz urbano-forestal.',
   ],
-  heroBadges: ['NFPA 1971-2018', 'NFPA 1950', 'PBI Matrix', 'GORE-TEX CrossTech', 'MSA Safety', '110+ años', 'Distribuidor autorizado MX'],
+  heroBadges: ['NFPA 1971-2018', 'NFPA 1950', 'PBI Matrix', 'GORE-TEX CrossTech', 'MSA Safety', '110+ años'],
   seoTitle: 'Trajes Globe Manufacturing NFPA 1970 — Distribuidor MX',
   seoDescription:
-    'Catálogo completo de trajes Globe Manufacturing certificados NFPA 1970 en México. G-XTREME 3.0, ATHLETIX, CLASSIX, G-XCEL, Proximity ARFF y Warrior Wildland. Distribuidor autorizado con stock en CDMX.',
+    'Catálogo completo de trajes Globe Manufacturing certificados NFPA 1970 en México. G-XTREME 3.0, ATHLETIX, CLASSIX, G-XCEL, Proximity ARFF y Warrior Wildland. Stock en CDMX.',
   founding: '1887',
   parentOrg: { name: 'MSA Safety Incorporated', ticker: 'NYSE:MSA' },
   stats: [
@@ -110,19 +110,19 @@ const lion: EquipmentBrand = {
   brand: 'Lion Apparel',
   brandLabel: 'Lion Apparel',
   crossDesc: 'V-Force® movilidad · Quantum · 135+ años · NFPA 1970+1977',
-  eyebrow: 'Lion Apparel · Fundada 1889 · Distribuidor Autorizado MX',
+  eyebrow: 'Lion Apparel · Fundada 1889',
   heroTitleTop: 'Trajes Lion',
   heroTitleAccent: 'certificados NFPA.',
   heroLead:
-    'Distribuidor autorizado de Lion Apparel en México. Stock permanente de los 6 modelos en tallas S–4XL — entrega en 24–48 h en CDMX con fichas técnicas completas y manifiesto de cumplimiento para licitación pública o adquisición directa.',
+    'Línea completa de Lion Apparel en México. Stock permanente de los 6 modelos en tallas S–4XL — entrega en 24–48 h en CDMX con fichas técnicas completas y manifiesto de cumplimiento para licitación pública o adquisición directa.',
   heroIntro: [
     'Lion Apparel — fundada en 1889 en Dayton, Ohio — es el segundo fabricante de trajes de bombero más licitado en México. Su presencia es especialmente fuerte en departamentos metropolitanos, corporativos industriales y brigadas ARFF en aeropuertos internacionales.',
     'La línea cubre los tres escenarios de riesgo certificados por NFPA: trajes estructurales con tecnología V-Force® para máxima movilidad, traje de proximidad aluminizado para ARFF, y traje forestal NFPA 1950 para interfaz urbano-forestal.',
   ],
-  heroBadges: ['NFPA 1971-2018', 'NFPA 1950', 'PBI Matrix', 'V-Force®', 'Kombat Stretch', '135+ años', 'Distribuidor autorizado MX'],
+  heroBadges: ['NFPA 1971-2018', 'NFPA 1950', 'PBI Matrix', 'V-Force®', 'Kombat Stretch', '135+ años'],
   seoTitle: 'Trajes Lion Apparel NFPA 1970 — Distribuidor México',
   seoDescription:
-    'Catálogo completo Lion Apparel certificados NFPA 1970 en México. Quantum, Alpha, Stealth, Commander, ARFF Proximity e Interface Wildland NFPA 1950. Distribuidor autorizado · stock CDMX · fichas para licitación.',
+    'Catálogo completo Lion Apparel certificados NFPA 1970 en México. Quantum, Alpha, Stealth, Commander, ARFF Proximity e Interface Wildland NFPA 1950. fichas para licitación.',
   founding: '1889',
   stats: [
     { valor: '1889', etiq: 'Año de fundación' },
@@ -198,19 +198,19 @@ const honeywell: EquipmentBrand = {
   brand: 'Honeywell Morning Pride',
   brandLabel: 'Honeywell Morning Pride',
   crossDesc: '4 normas · BioClad® CBRN · CarbonX® · Pemex/CFE',
-  eyebrow: 'Honeywell Morning Pride · Honeywell International · Distribuidor Autorizado MX',
+  eyebrow: 'Honeywell Morning Pride · Honeywell International',
   heroTitleTop: 'Trajes Honeywell',
   heroTitleAccent: 'certificados NFPA.',
   heroLead:
-    'Distribuidor autorizado de Honeywell Morning Pride en México. La única línea que cubre simultáneamente estructural, ARFF, industrial flash fire y CBRN — con stock permanente en CDMX y fichas técnicas para Pemex, CFE y aeropuertos.',
+    'Línea completa de Honeywell Morning Pride en México. La única línea que cubre simultáneamente estructural, ARFF, industrial flash fire y CBRN — con stock permanente en CDMX y fichas técnicas para Pemex, CFE y aeropuertos.',
   heroIntro: [
     'Honeywell Morning Pride — parte del conglomerado Honeywell International — es la marca de referencia para operaciones de alto riesgo en petroquímica, refinerías y brigadas HAZMAT. Con presencia documentada en Pemex Refinación, CFE y los principales aeropuertos internacionales de México.',
     'A diferencia de otras marcas estructurales, Morning Pride cubre cuatro normas NFPA en un mismo catálogo: NFPA 1970 estructural, NFPA 2112 flash fire industrial, NFPA 1990 HAZMAT y NFPA 1970 Proximity para ARFF — más la certificación ICAO Annex 14 para aeropuertos internacionales.',
   ],
-  heroBadges: ['NFPA 1971-2018', 'NFPA 2112', 'NFPA 1990', 'ICAO Annex 14', 'PBI Gold', 'CarbonX®', 'BioClad® CBRN', 'Distribuidor autorizado MX'],
+  heroBadges: ['NFPA 1971-2018', 'NFPA 2112', 'NFPA 1990', 'ICAO Annex 14', 'PBI Gold', 'CarbonX®', 'BioClad® CBRN'],
   seoTitle: 'Trajes Honeywell Morning Pride NFPA 1970 — México',
   seoDescription:
-    'Catálogo completo Honeywell Morning Pride certificados NFPA 1970 en México. TechGen, HP Series, GenII, ARFF Proximity, BioClad CBRN y CarbonX Proximity para Pemex, CFE y aeropuertos. Distribuidor autorizado · stock CDMX.',
+    'Catálogo completo Honeywell Morning Pride certificados NFPA 1970 en México. TechGen, HP Series, GenII, ARFF Proximity, BioClad CBRN y CarbonX Proximity para Pemex, CFE y aeropuertos. stock CDMX.',
   parentOrg: { name: 'Honeywell International' },
   stats: [
     { valor: '1920s', etiq: 'Origen de Morning Pride' },
@@ -287,19 +287,19 @@ const fireDex: EquipmentBrand = {
   brand: 'Fire-Dex',
   brandLabel: 'Fire-Dex',
   crossDesc: 'TECGEN® · el más ligero · PFAS-free nativo · #1 crecimiento',
-  eyebrow: 'Fire-Dex · TECGEN® Technology · Distribuidor Autorizado MX',
+  eyebrow: 'Fire-Dex · TECGEN® Technology',
   heroTitleTop: 'Trajes Fire-Dex',
   heroTitleAccent: 'certificados NFPA.',
   heroLead:
-    'Distribuidor autorizado de Fire-Dex en México. La única línea con fibra TECGEN® nativa — más ligera, más transpirable y PFAS-free sin opciones adicionales. Stock permanente en CDMX con fichas técnicas para licitación.',
+    'Línea completa de Fire-Dex en México. La única línea con fibra TECGEN® nativa — más ligera, más transpirable y PFAS-free sin opciones adicionales. Stock permanente en CDMX con fichas técnicas para licitación.',
   heroIntro: [
     'Fire-Dex es la marca de mayor crecimiento en licitaciones tier-1 de México (2023-2025). No por inercia institucional — sino porque sus especificaciones técnicas ganan en comparativa directa: mejor THL que Nomex NXT, menor peso que PBI Matrix, PFAS-free nativo en toda la línea TECGEN® y precio de adquisición más competitivo.',
     'TECGEN® es una fibra sintética de segunda generación que supera a Nomex en transpirabilidad manteniendo el mismo nivel de protección certificado NFPA 1970. Cuando los departamentos empiezan a medir THL junto con TPP, Fire-Dex gana.',
   ],
-  heroBadges: ['NFPA 1971-2018', 'NFPA 2112', 'TECGEN® 71', 'TECGEN® 51', 'PBI/TECGEN Hybrid', 'PFAS-free', 'Distribuidor autorizado MX'],
+  heroBadges: ['NFPA 1971-2018', 'NFPA 2112', 'TECGEN® 71', 'TECGEN® 51', 'PBI/TECGEN Hybrid', 'PFAS-free'],
   seoTitle: 'Trajes Fire-Dex NFPA 1970 — TECGEN® · México',
   seoDescription:
-    'Catálogo completo Fire-Dex certificados NFPA 1970 en México. TECGEN71, TECGEN51 (el más ligero), H71 Hybrid, FXR Proximity y Kombat. La marca de mayor crecimiento en licitaciones tier-1 MX 2023-2025. Distribuidor autorizado · stock CDMX.',
+    'Catálogo completo Fire-Dex certificados NFPA 1970 en México. TECGEN71, TECGEN51 (el más ligero), H71 Hybrid, FXR Proximity y Kombat. La marca de mayor crecimiento en licitaciones tier-1 MX 2023-2025. stock CDMX.',
   stats: [
     { valor: '3.5 kg', etiq: 'Traje NFPA 1970 más ligero (TECGEN51)' },
     { valor: '165 W/m²', etiq: 'THL más alto del segmento estructural' },

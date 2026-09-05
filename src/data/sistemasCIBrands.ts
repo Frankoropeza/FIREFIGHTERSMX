@@ -20,11 +20,11 @@ const tycoViking: EquipmentBrand = {
   brand: 'Tyco Viking',
   brandLabel: 'Tyco Viking',
   crossDesc: 'Rociadores automáticos NFPA 13 · UL Listed · FM Approved',
-  eyebrow: 'Tyco Viking · Johnson Controls · Distribuidor Autorizado MX',
+  eyebrow: 'Tyco Viking · Johnson Controls',
   heroTitleTop: 'Rociadores Tyco Viking',
   heroTitleAccent: 'supresión NFPA 13.',
   heroLead:
-    'Distribuidor autorizado de rociadores automáticos Tyco Viking en México. La gama completa —riesgo ligero, ordinario, ESFR de alta estiba y diluvio AFFF— certificada UL Listed y FM Approved, con ingeniería de cálculo hidráulico, suministro y puesta en servicio.',
+    'Línea completa de rociadores automáticos Tyco Viking en México. La gama completa —riesgo ligero, ordinario, ESFR de alta estiba y diluvio AFFF— certificada UL Listed y FM Approved, con ingeniería de cálculo hidráulico, suministro y puesta en servicio.',
   heroIntro: [
     'Tyco Viking, bajo la plataforma Johnson Controls International, es uno de los fabricantes de rociadores automáticos más instalados en el mundo. Su catálogo cubre desde el rociador residencial hasta el cabezal ESFR K-25 para almacenes de alta estiba, con listados UL Listed y FM Approved en cada modelo. La ingeniería de fluido detrás de cada cabezal —factor K, temperatura de activación, distancia de protección— garantiza el desempeño proyectado en el cálculo hidráulico NFPA 13.',
     'En México, los parques industriales, centros de distribución, hoteles, hospitales y edificios de oficinas exigen sistemas NFPA 13 para cumplir requisitos de seguros, normativa de Protección Civil y estándares de arrendadores internacionales. Distribuimos Tyco Viking con soporte técnico completo: memoria de cálculo hidráulico, selección de cabezales por tipo de riesgo, suministro de materiales y acompañamiento en la puesta en servicio.',
@@ -37,11 +37,10 @@ const tycoViking: EquipmentBrand = {
     'Diluvio AFFF',
     'Riesgo Ligero / Ordinario',
     'Johnson Controls',
-    'Distribuidor Autorizado MX',
   ],
   seoTitle: 'Rociadores Tyco Viking NFPA 13 — ESFR · Diluvio · México',
   seoDescription:
-    'Rociadores automáticos Tyco Viking certificados NFPA 13 en México: riesgo ligero, ordinario, ESFR K-25 para alta estiba y diluvio AFFF. UL Listed · FM Approved. Cálculo hidráulico, suministro y puesta en servicio. Distribuidor autorizado.',
+    'Rociadores automáticos Tyco Viking certificados NFPA 13 en México: riesgo ligero, ordinario, ESFR K-25 para alta estiba y diluvio AFFF. UL Listed · FM Approved. Cálculo hidráulico, suministro y puesta en servicio.',
   founding: '1976',
   parentOrg: { name: 'Johnson Controls International plc', ticker: 'NYSE:JCI' },
   stats: [
@@ -262,11 +261,11 @@ const honeywellNotifier: EquipmentBrand = {
   brand: 'Honeywell Notifier',
   brandLabel: 'Honeywell Notifier',
   crossDesc: 'Detección y alarma NFPA 72 · Direccionable · UL Listed',
-  eyebrow: 'Honeywell Notifier · NFPA 72 · Distribuidor Autorizado MX',
+  eyebrow: 'Honeywell Notifier · NFPA 72',
   heroTitleTop: 'Sistemas Notifier',
   heroTitleAccent: 'detección NFPA 72.',
   heroLead:
-    'Distribuidor autorizado de sistemas de detección y alarma de incendio Honeywell Notifier en México. Desde paneles convencionales para edificios pequeños hasta FACPs direccionables de gran capacidad para hospitales, torres y campus universitarios, con integración BMS y soporte técnico en los 32 estados.',
+    'Línea completa de sistemas de detección y alarma de incendio Honeywell Notifier en México. Desde paneles convencionales para edificios pequeños hasta FACPs direccionables de gran capacidad para hospitales, torres y campus universitarios, con integración BMS y soporte técnico en los 32 estados.',
   heroIntro: [
     'Honeywell Notifier es la plataforma de detección y alarma de incendio de referencia en proyectos institucionales, hospitalarios y de infraestructura crítica en México. Su gama —desde el panel convencional Fire-Lite ES-200X hasta el FACP NFS2-3030 de 3,000 puntos— cubre el espectro completo de la NFPA 72 (National Fire Alarm and Signaling Code), desde edificios de oficinas de 5 pisos hasta hospitales de alta especialidad y campus universitarios.',
     'La detección temprana es la primera línea de defensa de un sistema de protección contra incendio. Los detectores fotoeléctricos, de calor, de monóxido y el ASD (Air Sampling Detection) de Honeywell Notifier permiten identificar el incendio en su etapa incipiente, activar la evacuación, iniciar la supresión automática y notificar a los servicios de emergencia, todo desde una sola plataforma de gestión centralizada ONYXWorks.',
@@ -280,11 +279,10 @@ const honeywellNotifier: EquipmentBrand = {
     'ONYXWorks BMS',
     'SWIFT Wireless',
     'Honeywell International',
-    'Distribuidor Autorizado MX',
   ],
   seoTitle: 'Detección Incendio Honeywell Notifier NFPA 72 — NFS2-3030 · México',
   seoDescription:
-    'Sistemas de detección y alarma de incendio Honeywell Notifier NFPA 72 en México: paneles convencionales, FACPs direccionables NFS2-3030, integración BMS ONYXWorks y wireless SWIFT. UL Listed. Distribuidor autorizado.',
+    'Sistemas de detección y alarma de incendio Honeywell Notifier NFPA 72 en México: paneles convencionales, FACPs direccionables NFS2-3030, integración BMS ONYXWorks y wireless SWIFT. UL Listed.',
   founding: '1949',
   parentOrg: { name: 'Honeywell International Inc.', ticker: 'NASDAQ:HON' },
   stats: [
@@ -484,7 +482,7 @@ const honeywellNotifier: EquipmentBrand = {
     },
     {
       q: '¿Qué mantenimiento requiere un sistema de detección NFPA 72?',
-      a: 'La NFPA 72 (Capítulo 14) exige prueba e inspección de todos los detectores y dispositivos de notificación al menos una vez al año, con registro documentado de cada prueba. Los sistemas Notifier generan el registro de eventos automáticamente en el historial del panel; sin embargo, la prueba física de cada detector —limpieza, prueba de sensibilidad y verificación de comunicación al panel— debe realizarse por un técnico certificado. Como distribuidor autorizado realizamos el mantenimiento preventivo anual con refacciones originales y entregamos el informe NFPA 72 para los trámites de PC y aseguradoras.',
+      a: 'La NFPA 72 (Capítulo 14) exige prueba e inspección de todos los detectores y dispositivos de notificación al menos una vez al año, con registro documentado de cada prueba. Los sistemas Notifier generan el registro de eventos automáticamente en el historial del panel; sin embargo, la prueba física de cada detector —limpieza, prueba de sensibilidad y verificación de comunicación al panel— debe realizarse por un técnico certificado. Realizamos el mantenimiento preventivo anual con refacciones originales y entregamos el informe NFPA 72 para los trámites de PC y aseguradoras.',
     },
   ],
   ctaKicker: 'NFPA 72 · UL Listed · Direccionable',
@@ -501,11 +499,11 @@ const kiddeFenwal: EquipmentBrand = {
   brand: 'Kidde Fenwal',
   brandLabel: 'Kidde Fenwal',
   crossDesc: 'Supresión agente limpio FM-200 · Novec 1230 · NFPA 2001',
-  eyebrow: 'Kidde Fenwal · Carrier Global · Distribuidor Autorizado MX',
+  eyebrow: 'Kidde Fenwal · Carrier Global',
   heroTitleTop: 'Sistemas de Agente Limpio',
   heroTitleAccent: 'supresión NFPA 2001.',
   heroLead:
-    'Distribuidor autorizado de sistemas de supresión por agente limpio Kidde Fenwal en México. FM-200, Novec 1230, Ecaro-25 y CO₂ para protección de data centers, salas de UPS, cuartos de control, archivos y activos de misión crítica sin daño colateral al equipo protegido.',
+    'Línea completa de sistemas de supresión por agente limpio Kidde Fenwal en México. FM-200, Novec 1230, Ecaro-25 y CO₂ para protección de data centers, salas de UPS, cuartos de control, archivos y activos de misión crítica sin daño colateral al equipo protegido.',
   heroIntro: [
     'Los sistemas de supresión por agente limpio son la solución cuando el agua y la espuma no son una opción: data centers, cuartos de UPS, salas de control, archivos históricos, laboratorios y centros de cómputo donde el agente extintor debe suprimir el incendio sin dañar el equipo, sin dejar residuo y sin requerir desalojo prolongado para limpieza. Kidde Fenwal, bajo Carrier Global Corporation, es uno de los fabricantes de referencia en agentes limpios NFPA 2001 con más de un siglo de historia en protección contra incendio.',
     'La selección del agente correcto —FM-200 (HFC-227ea), Novec 1230 (FK-5-1-12) o Ecaro-25 (HFC-125)— depende de la concentración de diseño requerida, el volumen del espacio protegido, los compromisos ESG de la organización y el régimen de inspección NFPA 2001. En México, los data centers de colocación (colocation), los bancos, las aseguradoras y la industria farmacéutica son los principales usuarios de estos sistemas. Asesoramos la selección del agente, dimensionamos el sistema y ejecutamos la puesta en servicio con prueba de descarga documentada.',
@@ -519,11 +517,10 @@ const kiddeFenwal: EquipmentBrand = {
     'Sin residuo',
     'Misión crítica',
     'Carrier Global',
-    'Distribuidor Autorizado MX',
   ],
   seoTitle: 'Agente Limpio FM-200 · Novec 1230 Kidde Fenwal NFPA 2001 — México',
   seoDescription:
-    'Sistemas de supresión agente limpio Kidde Fenwal en México: FM-200 HFC-227ea, Novec 1230 FK-5-1-12, Ecaro-25 HFC-125 y CO₂. NFPA 2001. Sin residuo, sin daño al equipo. Data centers, salas de control, archivos. Distribuidor autorizado.',
+    'Sistemas de supresión agente limpio Kidde Fenwal en México: FM-200 HFC-227ea, Novec 1230 FK-5-1-12, Ecaro-25 HFC-125 y CO₂. NFPA 2001. Sin residuo, sin daño al equipo. Data centers, salas de control, archivos.',
   founding: '1917',
   parentOrg: { name: 'Carrier Global Corporation', ticker: 'NYSE:CARR' },
   stats: [

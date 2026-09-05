@@ -20,11 +20,11 @@ const dupontTychem: EquipmentBrand = {
   brand: 'DuPont Tychem',
   brandLabel: 'DuPont Tychem',
   crossDesc: 'Trajes HAZMAT Nivel A y B · NFPA 1990 · Líder mundial en barreras químicas',
-  eyebrow: 'DuPont Safety Products · Tychem · Distribuidor Autorizado MX',
+  eyebrow: 'DuPont Safety Products · Tychem',
   heroTitleTop: 'Trajes DuPont Tychem',
   heroTitleAccent: 'barrera química NFPA 1990.',
   heroLead:
-    'Distribuidor autorizado de trajes HAZMAT DuPont Tychem en México. La gama completa: Tychem 10000 (Nivel A encapsulado), Tychem 6000F (FR + barrera química), Tychem 4000S (Nivel B/C) y Tychem 2000 (Nivel C/D) — cada traje con tabla de permeación verificada para selección según el agente específico.',
+    'Línea completa de trajes HAZMAT DuPont Tychem en México. La gama completa: Tychem 10000 (Nivel A encapsulado), Tychem 6000F (FR + barrera química), Tychem 4000S (Nivel B/C) y Tychem 2000 (Nivel C/D) — cada traje con tabla de permeación verificada para selección según el agente específico.',
   heroIntro: [
     'DuPont Safety Products define el estándar global de barreras químicas para respuesta a materiales peligrosos. La línea Tychem cubre el espectro completo de protección: desde el Tychem 10000 —el traje encapsulado con mayor resistencia química disponible, certificado NFPA 1990 y CE Categoría III— hasta el Tychem 2000 para operaciones de post-emergencia y muestreo ambiental de Nivel C/D.',
     'En México, la selección correcta del traje HAZMAT exige tablas de permeación verificadas por agente y concentración — no solo la certificación de nivel. DuPont publica tablas de permeación para más de 280 sustancias en la gama Tychem, y te asesoramos en la selección específica según las sustancias de tu operación: refinería, petroquímica, transporte de químicos, planta de tratamiento o respuesta municipal.',
@@ -37,11 +37,10 @@ const dupontTychem: EquipmentBrand = {
     'Nivel B/C salpicadura',
     'Tablas de permeación 280+ sustancias',
     'DuPont Safety Products',
-    'Distribuidor Autorizado MX',
   ],
   seoTitle: 'Trajes DuPont Tychem HAZMAT NFPA 1990 — Nivel A · B · México',
   seoDescription:
-    'Trajes HAZMAT DuPont Tychem certificados NFPA 1990 en México: Tychem 10000 (Nivel A), Tychem 6000F (FR), Tychem 4000S (Nivel B/C), Tychem 2000 (Nivel C/D). Tablas de permeación · asesoría por agente. Distribuidor autorizado.',
+    'Trajes HAZMAT DuPont Tychem certificados NFPA 1990 en México: Tychem 10000 (Nivel A), Tychem 6000F (FR), Tychem 4000S (Nivel B/C), Tychem 2000 (Nivel C/D). Tablas de permeación · asesoría por agente.',
   founding: '1802',
   parentOrg: { name: 'DuPont de Nemours Inc.', ticker: 'NYSE:DD' },
   stats: [
@@ -132,11 +131,11 @@ const lakelandChemMax: EquipmentBrand = {
   brand: 'Lakeland Industries',
   brandLabel: 'Lakeland Industries',
   crossDesc: 'Trajes HAZMAT Nivel A y B · NFPA 1990 · ChemMax 4 · AlphaTec',
-  eyebrow: 'Lakeland Industries · ChemMax · Distribuidor Autorizado MX',
+  eyebrow: 'Lakeland Industries · ChemMax',
   heroTitleTop: 'Trajes Lakeland ChemMax',
   heroTitleAccent: 'protección Nivel A certificada.',
   heroLead:
-    'Distribuidor autorizado de trajes HAZMAT Lakeland Industries en México. ChemMax 4 (Nivel A encapsulado NFPA 1990), ChemMax 3 (Nivel A optimizado en peso), AlphaTec 5000 (Nivel B salpicadura) y Pyrolon CRFR (doble protección química + FR) — con tablas de permeación para 350+ sustancias.',
+    'Línea completa de trajes HAZMAT Lakeland Industries en México. ChemMax 4 (Nivel A encapsulado NFPA 1990), ChemMax 3 (Nivel A optimizado en peso), AlphaTec 5000 (Nivel B salpicadura) y Pyrolon CRFR (doble protección química + FR) — con tablas de permeación para 350+ sustancias.',
   heroIntro: [
     'Lakeland Industries es el mayor fabricante independiente de EPP de protección química del mundo. Su línea ChemMax define el estándar de trajes encapsulados Nivel A certificados NFPA 1990 como alternativa técnicamente equivalente a DuPont Tychem, con tablas de permeación para más de 350 sustancias y compatibilidad documentada con SCBA de los principales fabricantes.',
     'La ventaja de Lakeland en el mercado mexicano es la profundidad de su portafolio: desde el ChemMax 4 de máxima protección hasta el Pyrolon CRFR para entornos con doble riesgo (salpicadura química + fuego), con costuras selladas por RF, cierres de entrada verificados y visor panorámico antifog en todos sus modelos encapsulados.',
@@ -149,11 +148,10 @@ const lakelandChemMax: EquipmentBrand = {
     'AlphaTec Nivel B',
     'Tablas de permeación 350+ sustancias',
     'Lakeland Industries',
-    'Distribuidor Autorizado MX',
   ],
   seoTitle: 'Trajes Lakeland ChemMax HAZMAT NFPA 1990 — Nivel A · B · México',
   seoDescription:
-    'Trajes HAZMAT Lakeland ChemMax certificados NFPA 1990 en México: ChemMax 4 (Nivel A), ChemMax 3 (Nivel A ligero), AlphaTec 5000 (Nivel B), Pyrolon CRFR (FR + químico). Tablas de permeación · 350+ sustancias. Distribuidor autorizado.',
+    'Trajes HAZMAT Lakeland ChemMax certificados NFPA 1990 en México: ChemMax 4 (Nivel A), ChemMax 3 (Nivel A ligero), AlphaTec 5000 (Nivel B), Pyrolon CRFR (FR + químico). Tablas de permeación · 350+ sustancias.',
   founding: '1982',
   parentOrg: { name: 'Lakeland Industries Inc.', ticker: 'NASDAQ:LAKE' },
   stats: [
@@ -244,11 +242,11 @@ const msaDeteccion: EquipmentBrand = {
   brand: 'MSA Safety',
   brandLabel: 'MSA Safety',
   crossDesc: 'Detección Multi-Gas HAZMAT · Altair 5X · ATEX · Clase I Div 1',
-  eyebrow: 'MSA Safety · Altair · Detección Multi-Gas HAZMAT · Distribuidor Autorizado MX',
+  eyebrow: 'MSA Safety · Altair · Detección Multi-Gas HAZMAT',
   heroTitleTop: 'Monitores MSA Altair',
   heroTitleAccent: 'detección HAZMAT certificada.',
   heroLead:
-    'Distribuidor autorizado de monitores multi-gas MSA Altair en México. Altair 5X (5 gases con bomba aspirada), Altair 4XR (4 gases resistente a golpes), Altair io360 (display 360° + Bluetooth) y estación GALAXY GX2 de calibración automática — todos certificados ATEX y Clase I División 1 para atmósferas potencialmente explosivas.',
+    'Línea completa de monitores multi-gas MSA Altair en México. Altair 5X (5 gases con bomba aspirada), Altair 4XR (4 gases resistente a golpes), Altair io360 (display 360° + Bluetooth) y estación GALAXY GX2 de calibración automática — todos certificados ATEX y Clase I División 1 para atmósferas potencialmente explosivas.',
   heroIntro: [
     'MSA Safety —NYSE: MSA— fabrica los monitores de gas portátiles más utilizados en respuesta HAZMAT, espacios confinados y plantas industriales de América Latina. La línea Altair combina sensores XCell de larga vida con alarmas de triple modo (audio 95 dB + vibración + LED estrobo) detectables con EPP completo — crítico en entornos HAZMAT donde el ruido ambiente puede superar los 90 dB.',
     'El reconocimiento de escena HAZMAT exige identificar el agente antes de seleccionar el nivel de protección. El Altair 5X con bomba aspirada permite muestrear el ambiente a distancia (hasta 27 m) sin exponer al técnico antes de caracterizar el evento — el protocolo correcto antes de seleccionar el traje y establecer las zonas de control.',
@@ -261,11 +259,10 @@ const msaDeteccion: EquipmentBrand = {
     'Altair 5X Bomba Aspirada',
     'Altair 4XR',
     'Bluetooth GALAXY GX2',
-    'Distribuidor Autorizado MX',
   ],
   seoTitle: 'Monitores Multi-Gas MSA Altair HAZMAT — ATEX · Cl I Div 1 · México',
   seoDescription:
-    'Monitores multi-gas MSA Altair para HAZMAT y espacios confinados en México: Altair 5X (5 gases + bomba), Altair 4XR, Altair io360 (Bluetooth), GALAXY GX2 (calibración automática). ATEX · Clase I Div 1. Distribuidor autorizado.',
+    'Monitores multi-gas MSA Altair para HAZMAT y espacios confinados en México: Altair 5X (5 gases + bomba), Altair 4XR, Altair io360 (Bluetooth), GALAXY GX2 (calibración automática). ATEX · Clase I Div 1.',
   founding: '1914',
   parentOrg: { name: 'MSA Safety Incorporated', ticker: 'NYSE:MSA' },
   stats: [
@@ -356,7 +353,7 @@ const kapplerHazmat: EquipmentBrand = {
   brand: 'Kappler',
   brandLabel: 'Kappler Zytron',
   crossDesc: 'Trajes HAZMAT Nivel A/B/C · Zytron 500 CBRN · Frontline FR · Kits completos Nivel B',
-  eyebrow: 'Kappler Inc. · NFPA 1990 · CBRN-C · Distribuidor Autorizado MX',
+  eyebrow: 'Kappler Inc. · NFPA 1990 · CBRN-C',
   heroTitleTop: 'Kappler Zytron',
   heroTitleAccent: 'CBRN y NFPA 1990.',
   heroLead: 'La gama completa de trajes HAZMAT Kappler para brigadas que operan en múltiples niveles de riesgo: Zytron 500 XP encapsulado Nivel A con certificación CBRN, Zytron 300 Nivel B para zona cálida de larga duración, Frontline 500 FR con doble certificación química y llama, kits completos Nivel B y trajes Nivel D para consumo masivo.',

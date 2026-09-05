@@ -29,11 +29,11 @@ const { brand } = Astro.props;
 const canonicalURL = `${SITE.url}/marcas/${brand.slug}/`;
 
 // ── SEO: title (≤60c) y description (≤160c) keyword-first ───────────
-// Patrón: "[Marca] en México | Distribuidor autorizado | FIREFIGHTERS MX"
-const seoTitle = `${brand.name} en México | Distribuidor autorizado FFMX`;
+// Patrón: "[Marca] en México | Equipo certificado | FIREFIGHTERS MX"
+const seoTitle = `${brand.name} en México | Equipo certificado FFMX`;
 const seoDescription = [
   brand.description,
-  `Distribuidor autorizado ${brand.name} en México.`,
+  `Equipo ${brand.name} certificado en México.`,
   `Cotización en 24 h.`,
 ].join(' ').slice(0, 160);
 
@@ -132,7 +132,7 @@ const waMsg = `Hola, quiero información sobre productos ${brand.name} que distr
 
         {/* Col izquierda — identidad + CTAs */}
         <div>
-          <span class="section-eyebrow mb-5 inline-flex">Distribuidor autorizado</span>
+          <span class="section-eyebrow mb-5 inline-flex">Marca que manejamos</span>
 
           {/* Monograma visual de la marca */}
           <div

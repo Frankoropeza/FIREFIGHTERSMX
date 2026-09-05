@@ -118,10 +118,10 @@ export const categories: Category[] = [
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/></svg>`,
     label: 'Equipos SCBA',
     norm: 'NFPA 1970 · NIOSH',
-    description: 'Equipos de respiración autónoma SCBA certificados NFPA 1970 y NIOSH: MSA G1, Dräger PSS y 3M Scott Air-Pak. Cilindros 30/45/60 min. Servicio autorizado.',
+    description: 'Equipos de respiración autónoma SCBA certificados NFPA 1970 y NIOSH: MSA G1, Dräger PSS y 3M Scott Air-Pak. Cilindros 30/45/60 min.',
     intro: [
       'El equipo de respiración autónoma es el componente más crítico — y el más regulado — del EPP de un bombero. Distribuimos SCBA certificados NFPA 1970 (antes NFPA 1981) con aprobación NIOSH CBRN, en configuraciones de 30, 45 y 60 minutos con cilindros de fibra de carbono de 4,500 psi.',
-      'Además de la venta, somos servicio técnico autorizado: prueba hidrostática de cilindros, mantenimiento de reguladores, pruebas de flujo anuales y refacciones originales. Tu inversión queda protegida durante toda la vida útil del equipo.',
+      'Más allá de la venta, la NFPA 1850 exige un programa de mantenimiento: prueba hidrostática de cilindros, mantenimiento de reguladores, pruebas de flujo anuales y refacciones originales durante toda la vida útil del equipo.',
     ],
     items: [
       { name: 'MSA G1 SCBA', detail: 'Electrónica integrada, telemetría opcional, EOSTI integrado' },
@@ -135,13 +135,13 @@ export const categories: Category[] = [
       highlight: 'NFPA 1970 y NIOSH CBRN',
       paragraphs: [
         'El equipo de respiración autónoma es la pieza más crítica del EPP: de él depende cada minuto dentro de una atmósfera IDLH. Distribuimos SCBA MSA G1, Dräger PSS 7000 y 3M Scott Air-Pak NxG7 certificados NFPA 1970 con aprobación NIOSH CBRN, con número de serie verificable y ficha técnica para licitación.',
-        'Somos servicio técnico autorizado: prueba hidrostática de cilindros, pruebas de flujo anuales, mantenimiento de reguladores y refacciones originales. Tu inversión queda protegida durante toda la vida útil del equipo, con bitácora lista para auditoría.',
+        'El mantenimiento que exige la NFPA 1850: prueba hidrostática de cilindros, pruebas de flujo anuales, mantenimiento de reguladores y refacciones originales, con bitácora lista para auditoría.',
       ],
       subsections: [
         { name: 'Configuraciones 30 / 45 / 60 min', detail: 'Cilindros de fibra de carbono a 4,500 psi según el perfil de tu operación: estructural, industrial o HAZMAT con autonomía extendida.' },
         { name: 'Electrónica integrada', detail: 'EOSTI, alarma PASS, telemetría y localizador en cabina de mando — visibilidad total del aire y la posición de cada elemento.' },
         { name: 'Máscaras y reguladores', detail: 'Piezas faciales full-face con ajuste certificado, reguladores de presión positiva y adaptadores para comunicación.' },
-        { name: 'Servicio técnico autorizado', detail: 'Prueba hidrostática, prueba de flujo anual, refacciones originales y bitácora de mantenimiento para tu expediente.' },
+        { name: 'Programa de mantenimiento', detail: 'Prueba hidrostática, prueba de flujo anual, refacciones originales y bitácora de mantenimiento para tu expediente.' },
       ],
       image: '/images/categorias/equipos-scba.avif',
       imageAlt: 'Ilustración técnica de equipo de respiración autónoma SCBA con cilindro de 4500 psi, máscara y manómetro',

@@ -1,6 +1,6 @@
 ---
 title: "SCBA MSA G1 30 min — Equipo de Respiración Autónoma NFPA 1970"
-description: "SCBA MSA G1 con cilindro de fibra de carbono 4500 psi, 30 minutos de autonomía, certificado NFPA 1970. Distribuidor autorizado MSA en México."
+description: "SCBA MSA G1 con cilindro de fibra de carbono 4500 psi, 30 minutos de autonomía, certificado NFPA 1970."
 category: "Equipos SCBA"
 brand: "MSA Safety"
 model: "MSA G1"

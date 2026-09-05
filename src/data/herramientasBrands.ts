@@ -19,19 +19,19 @@ const holmatro: EquipmentBrand = {
   brand: 'Holmatro',
   brandLabel: 'Holmatro',
   crossDesc: 'Línea Pentheon a batería · Combi-Tool · NFPA 1936',
-  eyebrow: 'Holmatro · Pentheon · Distribuidor Autorizado MX',
+  eyebrow: 'Holmatro · Pentheon',
   heroTitleTop: 'Herramientas Holmatro',
   heroTitleAccent: 'rescate NFPA 1936.',
   heroLead:
-    'Distribuidor autorizado de herramientas de rescate Holmatro en México. La línea completa —cizalla, separador, combinada y ariete— en versión Pentheon a batería, con demostración en sitio, capacitación y mantenimiento certificado.',
+    'Línea completa de herramientas de rescate Holmatro en México. La línea completa —cizalla, separador, combinada y ariete— en versión Pentheon a batería, con demostración en sitio, capacitación y mantenimiento certificado.',
   heroIntro: [
     'Holmatro —ingeniería neerlandesa— es una de las referencias mundiales en herramientas hidráulicas de rescate. Su línea Pentheon a batería elimina mangueras y unidad de poder: el equipo se despliega en segundos y se mueve libremente alrededor del vehículo, con velocidad constante bajo carga.',
     'En excarcelación cada minuto cuenta. Distribuimos la gama Holmatro certificada NFPA 1936 y EN 13204, con hojas y geometrías diseñadas para los aceros al boro y endurecidos de los vehículos modernos, más el sistema Combi-Tool de cambio rápido.',
   ],
-  heroBadges: ['NFPA 1936', 'EN 13204', 'Pentheon batería', 'Sin mangueras', 'Combi-Tool', 'Distribuidor autorizado MX'],
+  heroBadges: ['NFPA 1936', 'EN 13204', 'Pentheon batería', 'Sin mangueras', 'Combi-Tool'],
   seoTitle: 'Herramientas Holmatro NFPA 1936 — Pentheon · México',
   seoDescription:
-    'Herramientas de rescate Holmatro certificadas NFPA 1936 en México: cizalla, separador, combinada y ariete Pentheon a batería. Sin mangueras. Demostración, capacitación y mantenimiento. Distribuidor autorizado.',
+    'Herramientas de rescate Holmatro certificadas NFPA 1936 en México: cizalla, separador, combinada y ariete Pentheon a batería. Sin mangueras. Demostración, capacitación y mantenimiento.',
   founding: '1967',
   parentOrg: { name: 'Holmatro Group' },
   stats: [
@@ -108,19 +108,19 @@ const hurst: EquipmentBrand = {
   brand: 'Hurst',
   brandLabel: 'Hurst Jaws of Life',
   crossDesc: 'Inventor del Jaws of Life® · eDRAULIC batería · NFPA 1936',
-  eyebrow: 'Hurst · Jaws of Life® · Distribuidor Autorizado MX',
+  eyebrow: 'Hurst · Jaws of Life®',
   heroTitleTop: 'Herramientas Hurst',
   heroTitleAccent: 'Jaws of Life®.',
   heroLead:
-    'Distribuidor autorizado de herramientas de rescate Hurst Jaws of Life® en México. La línea completa —cizalla, separador, combinada y ariete— en versión eDRAULIC a batería, con demostración en sitio, capacitación y mantenimiento certificado.',
+    'Línea completa de herramientas de rescate Hurst Jaws of Life® en México. La línea completa —cizalla, separador, combinada y ariete— en versión eDRAULIC a batería, con demostración en sitio, capacitación y mantenimiento certificado.',
   heroIntro: [
     'Hurst inventó el Jaws of Life® en 1972 y desde entonces define el rescate vehicular. Su línea eDRAULIC es autocontenida a batería —sin mangueras ni bomba— y es la herramienta de excarcelación más reconocida del mundo, presente en miles de cuerpos de bomberos.',
     'Distribuimos la gama Hurst certificada NFPA 1936 y EN 13204, con cizallas de alta capacidad para los aceros endurecidos de los vehículos modernos, iluminación LED integrada y la fiabilidad que hizo de Jaws of Life® un nombre genérico del rescate.',
   ],
-  heroBadges: ['NFPA 1936', 'EN 13204', 'Jaws of Life®', 'eDRAULIC batería', 'Sin mangueras', 'Distribuidor autorizado MX'],
+  heroBadges: ['NFPA 1936', 'EN 13204', 'Jaws of Life®', 'eDRAULIC batería', 'Sin mangueras'],
   seoTitle: 'Herramientas Hurst Jaws of Life NFPA 1936 — México',
   seoDescription:
-    'Herramientas de rescate Hurst Jaws of Life® certificadas NFPA 1936 en México: cizalla, separador, combinada y ariete eDRAULIC a batería. El inventor del rescate vehicular. Distribuidor autorizado · demo y servicio.',
+    'Herramientas de rescate Hurst Jaws of Life® certificadas NFPA 1936 en México: cizalla, separador, combinada y ariete eDRAULIC a batería. El inventor del rescate vehicular. Demostración y capacitación en sitio.',
   founding: '1972',
   parentOrg: { name: 'IDEX Corporation' },
   stats: [
@@ -197,19 +197,19 @@ const weber: EquipmentBrand = {
   brand: 'Weber Rescue',
   brandLabel: 'Weber Rescue',
   crossDesc: 'Ingeniería alemana · E-FORCE · relación peso-potencia · NFPA 1936',
-  eyebrow: 'Weber Rescue · E-FORCE · Distribuidor Autorizado MX',
+  eyebrow: 'Weber Rescue · E-FORCE',
   heroTitleTop: 'Herramientas Weber',
   heroTitleAccent: 'Rescue NFPA 1936.',
   heroLead:
-    'Distribuidor autorizado de herramientas de rescate Weber Rescue en México. La línea completa —cizalla, separador, combinada y ariete— en versión E-FORCE a batería, con la mejor relación peso-potencia y maniobrabilidad de su clase.',
+    'Línea completa de herramientas de rescate Weber Rescue en México. La línea completa —cizalla, separador, combinada y ariete— en versión E-FORCE a batería, con la mejor relación peso-potencia y maniobrabilidad de su clase.',
   heroIntro: [
     'Weber Rescue —ingeniería alemana del grupo Weber-Hydraulik— es una de las marcas de referencia en herramientas hidráulicas de rescate. Su línea E-FORCE a batería destaca por una relación peso-potencia sobresaliente: equipos compactos y ligeros sin sacrificar fuerza de corte.',
     'Distribuimos la gama Weber certificada NFPA 1936 y EN 13204, ideal para cuerpos que priorizan la maniobrabilidad en espacios reducidos, las motos de rescate y las operaciones donde cada kilogramo importa, con la precisión alemana en cada componente.',
   ],
-  heroBadges: ['NFPA 1936', 'EN 13204', 'E-FORCE batería', 'Ingeniería alemana', 'Ligera', 'Distribuidor autorizado MX'],
+  heroBadges: ['NFPA 1936', 'EN 13204', 'E-FORCE batería', 'Ingeniería alemana', 'Ligera'],
   seoTitle: 'Herramientas Weber Rescue NFPA 1936 — E-FORCE · México',
   seoDescription:
-    'Herramientas de rescate Weber Rescue certificadas NFPA 1936 en México: cizalla, separador, combinada y ariete E-FORCE a batería. Ingeniería alemana, la mejor relación peso-potencia. Distribuidor autorizado · demo y servicio.',
+    'Herramientas de rescate Weber Rescue certificadas NFPA 1936 en México: cizalla, separador, combinada y ariete E-FORCE a batería. Ingeniería alemana, la mejor relación peso-potencia. Demostración y capacitación en sitio.',
   founding: '1939',
   parentOrg: { name: 'Weber-Hydraulik GmbH' },
   stats: [

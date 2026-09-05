@@ -19,19 +19,19 @@ const flir: EquipmentBrand = {
   brand: 'FLIR',
   brandLabel: 'FLIR',
   crossDesc: 'Líder mundial en imagen térmica · K-Series · FSX · NFPA 1930',
-  eyebrow: 'FLIR · Imagen Térmica · Distribuidor Autorizado MX',
+  eyebrow: 'FLIR · Imagen Térmica',
   heroTitleTop: 'Cámaras FLIR',
   heroTitleAccent: 'imagen térmica NFPA.',
   heroLead:
-    'Distribuidor autorizado de cámaras térmicas FLIR en México. Las 4 categorías —búsqueda y rescate, personal, mando e inspección industrial— con tecnología FSX, certificación NFPA 1930 y entrega en CDMX.',
+    'Línea completa de cámaras térmicas FLIR en México. Las 4 categorías —búsqueda y rescate, personal, mando e inspección industrial— con tecnología FSX, certificación NFPA 1930 y entrega en CDMX.',
   heroIntro: [
     'FLIR —parte de Teledyne— es el líder mundial en imagen térmica, con décadas desarrollando sensores para defensa, industria y bomberos. Su línea K para el servicio de incendios incorpora FSX (Flexible Scene Enhancement), que añade detalle de bordes en tiempo real sobre la imagen térmica.',
     'En visibilidad cero, la imagen térmica es la diferencia entre buscar y encontrar. Distribuimos la gama FLIR certificada NFPA 1930 —desde la cámara personal de bolsillo hasta el modelo de mando con grabación— más cámaras de inspección industrial de alta resolución.',
   ],
-  heroBadges: ['NFPA 1930', 'FSX', '320×240 px', 'Grabación', 'Líder mundial TIC', 'Distribuidor autorizado MX'],
+  heroBadges: ['NFPA 1930', 'FSX', '320×240 px', 'Grabación', 'Líder mundial TIC'],
   seoTitle: 'Cámaras Térmicas FLIR NFPA 1930 — K-Series · México',
   seoDescription:
-    'Cámaras térmicas FLIR certificadas NFPA 1930 en México: K45 búsqueda y rescate, K1 personal, K65 mando e inspección industrial T560. Tecnología FSX. Distribuidor autorizado · stock CDMX.',
+    'Cámaras térmicas FLIR certificadas NFPA 1930 en México: K45 búsqueda y rescate, K1 personal, K65 mando e inspección industrial T560. Tecnología FSX. stock CDMX.',
   founding: '1978',
   parentOrg: { name: 'Teledyne FLIR LLC' },
   stats: [
@@ -108,19 +108,19 @@ const msaEvolution: EquipmentBrand = {
   brand: 'MSA Safety',
   brandLabel: 'MSA Evolution',
   crossDesc: 'Integración SCBA G1 · manos libres · NFPA 1930',
-  eyebrow: 'MSA Safety · Evolution · Distribuidor Autorizado MX',
+  eyebrow: 'MSA Safety · Evolution',
   heroTitleTop: 'Cámaras MSA',
   heroTitleAccent: 'Evolution NFPA.',
   heroLead:
-    'Distribuidor autorizado de cámaras térmicas MSA Evolution en México. Las 4 categorías —búsqueda y rescate, integrada en SCBA G1, mando e industrial— con certificación NFPA 1930 y servicio técnico autorizado.',
+    'Línea completa de cámaras térmicas MSA Evolution en México. Las 4 categorías —búsqueda y rescate, integrada en SCBA G1, mando e industrial— con certificación NFPA 1930.',
   heroIntro: [
     'MSA Safety —NYSE: MSA— es el grupo industrial de seguridad más grande del mundo. Su línea Evolution de cámaras de imagen térmica está pensada para integrarse con el resto del ecosistema MSA: casco Gallet, SCBA G1 y telemetría, una sola marca para todo el conjunto.',
-    'Su mayor diferenciador es la G1-TIC: una cámara térmica montada en la máscara del SCBA G1 que proyecta la imagen en la pieza facial y deja ambas manos libres para el rescate. Distribuimos la gama Evolution certificada NFPA 1930 con servicio técnico autorizado.',
+    'Su mayor diferenciador es la G1-TIC: una cámara térmica montada en la máscara del SCBA G1 que proyecta la imagen en la pieza facial y deja ambas manos libres para el rescate. Distribuimos la gama Evolution certificada NFPA 1930.',
   ],
-  heroBadges: ['NFPA 1930', 'Integración G1', 'Manos libres', 'Ecosistema MSA', 'MSA Safety · NYSE', 'Distribuidor autorizado MX'],
+  heroBadges: ['NFPA 1930', 'Integración G1', 'Manos libres', 'Ecosistema MSA', 'MSA Safety · NYSE'],
   seoTitle: 'Cámaras Térmicas MSA Evolution NFPA 1930 — México',
   seoDescription:
-    'Cámaras térmicas MSA Evolution certificadas NFPA 1930 en México: Evolution 6000 búsqueda, G1-TIC integrada en SCBA, mando 6000 Plus e industrial 5200. Ecosistema MSA. Distribuidor autorizado · servicio.',
+    'Cámaras térmicas MSA Evolution certificadas NFPA 1930 en México: Evolution 6000 búsqueda, G1-TIC integrada en SCBA, mando 6000 Plus e industrial 5200. Ecosistema MSA. servicio.',
   founding: '1914',
   parentOrg: { name: 'MSA Safety Incorporated', ticker: 'NYSE:MSA' },
   stats: [
@@ -130,10 +130,10 @@ const msaEvolution: EquipmentBrand = {
     { valor: '32', etiq: 'Estados con cobertura' },
   ],
   credenciales: [
-    { n: '01', t: 'MSA Safety · líder mundial', d: 'La línea Evolution es parte de MSA Safety (NYSE: MSA), el mayor grupo industrial de seguridad del mundo. Continuidad de suministro, refacciones originales y servicio técnico autorizado garantizados.' },
+    { n: '01', t: 'MSA Safety · líder mundial', d: 'La línea Evolution es parte de MSA Safety (NYSE: MSA), el mayor grupo industrial de seguridad del mundo. Continuidad de suministro, refacciones originales garantizados.' },
     { n: '02', t: 'Integración con el ecosistema MSA', d: 'La cámara Evolution se integra con el casco Gallet, el SCBA G1 y la telemetría MSA. Una sola marca para todo el conjunto del bombero, con compatibilidad y soporte unificados.' },
     { n: '03', t: 'G1-TIC — manos libres en la máscara', d: 'La G1-TIC monta la cámara térmica en la máscara del SCBA G1 y proyecta la imagen en la pieza facial. El bombero ve el calor sin sostener nada: ambas manos quedan libres para el rescate y el avance.' },
-    { n: '04', t: 'Servicio técnico autorizado', d: 'Somos servicio autorizado MSA: calibración, verificación de imagen NFPA 1930 y refacciones originales con bitácora para auditoría. Tu inversión queda protegida toda la vida útil del equipo.' },
+    { n: '04', t: 'Calibración y refacciones', d: 'Calibración, verificación de imagen NFPA 1930 y refacciones originales con bitácora para auditoría, durante toda la vida útil del equipo.' },
   ],
   linesIntro:
     'Evolution cubre el espectro de imagen térmica integrado al ecosistema MSA: búsqueda y rescate estructural, la cámara G1-TIC manos libres en la máscara, el modelo de mando con grabación y una opción industrial accesible.',
@@ -152,7 +152,7 @@ const msaEvolution: EquipmentBrand = {
     { t: 'Integración G1-TIC', d: 'En la configuración G1-TIC, la cámara se monta en la máscara del SCBA G1 y proyecta la imagen en la pieza facial, dejando ambas manos libres — el mayor diferenciador de MSA.' },
     { t: 'Ecosistema MSA', d: 'Compatibilidad y soporte unificados con el casco Gallet, el SCBA G1 y la telemetría MSA: una sola marca y un solo proveedor para todo el conjunto del bombero.' },
     { t: 'Carcasa robusta', d: 'Diseño resistente a caída, calor y agua para sobrevivir al ambiente de combate, con operación de un solo botón y con guante puesto.' },
-    { t: 'Servicio y calibración', d: 'Verificación de imagen NFPA 1930, calibración y refacciones originales con servicio técnico autorizado y bitácora para auditoría.' },
+    { t: 'Servicio y calibración', d: 'Verificación de imagen NFPA 1930, calibración y refacciones originales con bitácora para auditoría.' },
   ],
   comparativa: [
     { modelo: 'Evolution 6000', tipo: 'estructural', resolucion: '320×240 px', sensor: 'Microbolómetro · -20 a 650 °C', autonomia: '~4 h', peso: '~1.0 kg', ideal: 'Búsqueda y rescate estructural', rec: true },
@@ -168,7 +168,7 @@ const msaEvolution: EquipmentBrand = {
     { n: '04', t: 'Asegura la verificación NFPA 1930, la calibración periódica con servicio autorizado y la compatibilidad con tu casco, SCBA y comunicación. Agenda demostración en sitio sin costo.' },
   ],
   segmentosIntro:
-    'MSA Evolution es la primera opción de los cuerpos que ya operan el ecosistema MSA (casco Gallet, SCBA G1) y quieren una cámara integrada —incluida la solución manos libres G1-TIC— con servicio técnico autorizado y soporte en los 32 estados.',
+    'MSA Evolution es la primera opción de los cuerpos que ya operan el ecosistema MSA (casco Gallet, SCBA G1) y quieren una cámara integrada —incluida la solución manos libres G1-TIC— con soporte en los 32 estados.',
   segmentos: [
     { num: '01', tipo: 'estructural', titulo: 'Búsqueda y Rescate Estructural', desc: 'Cuerpos que necesitan localizar víctimas en humo denso con una cámara robusta y de alto contraste. La Evolution 6000 cubre el combate estructural con la confiabilidad MSA.', modelos: 'MSA Evolution 6000' },
     { num: '02', tipo: 'usar', titulo: 'Operación Manos Libres', desc: 'Equipos que quieren visión térmica sin renunciar al uso de las manos. La G1-TIC integra la cámara en la máscara del SCBA G1: el bombero ve el calor mientras avanza, fuerza puertas y rescata.', modelos: 'MSA G1-TIC' },
@@ -181,7 +181,7 @@ const msaEvolution: EquipmentBrand = {
     { q: '¿Conviene una cámara por bombero o una por cuadrilla?', a: 'Cada vez más cuerpos combinan ambas: una cámara principal de búsqueda (Evolution 6000) por cuadrilla y una solución personal —la G1-TIC integrada en el SCBA— por elemento. La integración G1-TIC es especialmente atractiva porque no añade un equipo extra que cargar: aprovecha el SCBA que el bombero ya lleva. Te ayudamos a dimensionar la mezcla según el tamaño y presupuesto del cuerpo.' },
     { q: '¿Qué diferencia a MSA Evolution de FLIR y Bullard?', a: 'Las tres son marcas tier-1 de imagen térmica NFPA 1930. MSA Evolution sobresale por la integración con el ecosistema MSA, en particular la G1-TIC manos libres en la máscara del SCBA; FLIR destaca por la calidad pura de sensor y FSX; Bullard, que también fabrica cascos, ofrece montaje en casco e interfaz muy intuitiva. Para un cuerpo que ya opera SCBA G1 y casco Gallet, MSA tiene la ventaja de la integración total. Te facilitamos las tres fichas para evaluación comparativa.' },
     { q: '¿Las cámaras térmicas sirven para sobrehaul y verificación de extinción?', a: 'Sí. Tras el ataque, la cámara detecta combustión oculta y puntos calientes en muros, techos y entrepisos que el ojo no ve, evitando reignición y verificando la extinción total. Los modos de color de la Evolution resaltan las fuentes por encima de un umbral de temperatura, lo que también es útil para inspección industrial con la 5200.' },
-    { q: '¿Entregan ficha técnica, demostración y servicio para licitación?', a: 'Sí. Cada cámara MSA Evolution incluye la ficha técnica, la certificación NFPA 1930 (modelos estructurales) y carta de garantía. Ofrecemos demostración en sitio sin costo y, para concursos públicos, generamos el manifiesto de cumplimiento por partida e incluimos el plan de servicio técnico autorizado y calibración para la vida útil del equipo.' },
+    { q: '¿Entregan ficha técnica, demostración y servicio para licitación?', a: 'Sí. Cada cámara MSA Evolution incluye la ficha técnica, la certificación NFPA 1930 (modelos estructurales) y carta de garantía. Ofrecemos demostración en sitio sin costo y, para concursos públicos, generamos el manifiesto de cumplimiento por partida e incluimos el plan de mantenimiento y calibración para la vida útil del equipo.' },
   ],
   ctaKicker: 'Integrada al ecosistema MSA · manos libres',
   ctaTitleHtml: 'Ve el calor.<br/>Conserva las manos.',
@@ -197,19 +197,19 @@ const bullardTxs: EquipmentBrand = {
   brand: 'Bullard',
   brandLabel: 'Bullard TXS',
   crossDesc: 'Interfaz intuitiva · montaje en casco · NFPA 1930',
-  eyebrow: 'Bullard · Cámaras Térmicas · Distribuidor Autorizado MX',
+  eyebrow: 'Bullard · Cámaras Térmicas',
   heroTitleTop: 'Cámaras Bullard',
   heroTitleAccent: 'imagen térmica NFPA.',
   heroLead:
-    'Distribuidor autorizado de cámaras térmicas Bullard en México. Las 4 categorías —búsqueda y rescate, personal, mando e industrial— con la interfaz más intuitiva del mercado, montaje en casco Bullard y certificación NFPA 1930.',
+    'Línea completa de cámaras térmicas Bullard en México. Las 4 categorías —búsqueda y rescate, personal, mando e industrial— con la interfaz más intuitiva del mercado, montaje en casco Bullard y certificación NFPA 1930.',
   heroIntro: [
     'Bullard fabrica protección para bomberos desde 1898 y es uno de los pioneros de la imagen térmica en el servicio de incendios. Como también fabrica cascos, sus cámaras —encabezadas por la TXS— ofrecen un montaje en casco nativo que libera las manos del bombero.',
     'Su sello es la interfaz: la curva de aprendizaje más corta del mercado, para que cualquier elemento opere la cámara bajo estrés sin menús complejos. Distribuimos la gama Bullard certificada NFPA 1930, de la TXS tope de gama a la QXT personal.',
   ],
-  heroBadges: ['NFPA 1930', 'Montaje en casco', 'Interfaz intuitiva', 'Pantalla 3.5"', 'Desde 1898', 'Distribuidor autorizado MX'],
+  heroBadges: ['NFPA 1930', 'Montaje en casco', 'Interfaz intuitiva', 'Pantalla 3.5"', 'Desde 1898'],
   seoTitle: 'Cámaras Térmicas Bullard NFPA 1930 — TXS · México',
   seoDescription:
-    'Cámaras térmicas Bullard certificadas NFPA 1930 en México: TXS tope de gama, QXT personal, T4MAX mando y Eclipse industrial. Interfaz intuitiva y montaje en casco. Distribuidor autorizado · stock CDMX.',
+    'Cámaras térmicas Bullard certificadas NFPA 1930 en México: TXS tope de gama, QXT personal, T4MAX mando y Eclipse industrial. Interfaz intuitiva y montaje en casco. stock CDMX.',
   founding: '1898',
   parentOrg: { name: 'E.D. Bullard Company' },
   stats: [

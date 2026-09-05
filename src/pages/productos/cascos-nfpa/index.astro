@@ -11,7 +11,7 @@ const canonicalURL = `${SITE.url}/productos/cascos-nfpa/`;
 
 const seoMeta = {
   title: 'Cascos para Bomberos NFPA 1970 — MSA Gallet, Bullard, Cairns · México',
-  description: 'Catálogo completo de cascos para bomberos certificados NFPA 1970 y 1950 en México. MSA Gallet F1 XF, Bullard USTM/USTERM y Cairns N6A Houston. Distribuidor autorizado · stock CDMX · fichas para licitación.',
+  description: 'Catálogo completo de cascos para bomberos certificados NFPA 1970 y 1950 en México. MSA Gallet F1 XF, Bullard USTM/USTERM y Cairns N6A Houston. fichas para licitación.',
   canonicalURL,
 };
 
@@ -186,13 +186,13 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
         <div>
-          <span class="section-eyebrow mb-5 inline-flex">{cat.norm} · MSA Gallet · Bullard · Cairns · Distribuidor Autorizado MX</span>
+          <span class="section-eyebrow mb-5 inline-flex">{cat.norm} · MSA Gallet · Bullard · Cairns</span>
           <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
             Cascos para<br/>
             <span style="color:#F75000">Bomberos NFPA.</span>
           </h1>
           <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
-            Distribuidor autorizado de MSA Gallet, Bullard y Cairns en México. Stock permanente
+            Línea completa de MSA Gallet, Bullard y Cairns en México. Stock permanente
             con entrega en 24–48 h en CDMX y ficha técnica completa para licitación.
           </p>
           <div class="flex flex-col sm:flex-row gap-3">
@@ -208,7 +208,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
             <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">{p}</p>
           ))}
           <div class="flex flex-wrap gap-2">
-            {['NFPA 1970','NFPA 1950','MSA Gallet F1 XF','Bullard USTM','Cairns N6A','Visor integrado','Distribuidor autorizado MX'].map(n => (
+            {['NFPA 1970','NFPA 1950','MSA Gallet F1 XF','Bullard USTM','Cairns N6A','Visor integrado'].map(n => (
               <span class="badge badge-dark font-display text-[10px]">{n}</span>
             ))}
           </div>
@@ -282,7 +282,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
-          <span class="section-eyebrow mb-4 inline-flex">MSA Safety · Gallet · Distribuidor Autorizado MX</span>
+          <span class="section-eyebrow mb-4 inline-flex">MSA Safety · Gallet</span>
           <h2 id="msa-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Cascos MSA Gallet<br/>
             <span style="color:#F75000">certificados NFPA.</span>
@@ -296,7 +296,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
             El F1 XF es el casco más solicitado en cuerpos metropolitanos y ARFF de México.
           </p>
           <div class="flex flex-wrap gap-2">
-            {['NFPA 1970','NFPA 1950','Fibra de vidrio','Optrel retráctil','MSA Safety · NYSE','Distribuidor autorizado MX'].map(b => (
+            {['NFPA 1970','NFPA 1950','Fibra de vidrio','Optrel retráctil','MSA Safety · NYSE'].map(b => (
               <span class="badge badge-dark text-[9px]">{b}</span>
             ))}
           </div>
@@ -353,7 +353,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
             con sistemas de cámara de imagen térmica. La primera opción para corporaciones con identidad histórica.
           </p>
           <div class="flex flex-wrap gap-2">
-            {['NFPA 1970','Composite ABS / USTERM','Ala completa','Escudo frontal','TIC Mount','Distribuidor autorizado MX'].map(b => (
+            {['NFPA 1970','Composite ABS / USTERM','Ala completa','Escudo frontal','TIC Mount'].map(b => (
               <span class="badge badge-dark text-[9px]">{b}</span>
             ))}
           </div>
@@ -410,7 +410,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
             retráctil integrado. Ambos certificados NFPA 1970 vigente.
           </p>
           <div class="flex flex-wrap gap-2">
-            {['NFPA 1970','Cuero / Composite','N6A Houston','1010 Composite','Desde 1836','Distribuidor autorizado MX'].map(b => (
+            {['NFPA 1970','Cuero / Composite','N6A Houston','1010 Composite','Desde 1836'].map(b => (
               <span class="badge badge-dark text-[9px]">{b}</span>
             ))}
           </div>
@@ -459,7 +459,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
           <img src="/images/productos/casco-bombero-visor-facial-nfpa-1970.avif" alt="Casco bombero con visor facial NFPA 1970 certificado — MSA Gallet F1 XF México" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
-          <img src="/images/productos/casco-msa-studio-lateral.avif" alt="Casco MSA Gallet vista lateral certificado NFPA 1970 — distribuidor autorizado México" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+          <img src="/images/productos/casco-msa-studio-lateral.avif" alt="Casco MSA Gallet vista lateral certificado NFPA 1970" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
           <img src="/images/productos/casco-bombero-visor-integrado.avif" alt="Casco bombero con visor retráctil integrado NFPA 1970 protección estructural" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>

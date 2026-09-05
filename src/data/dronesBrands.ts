@@ -16,19 +16,19 @@ const djiEnterprise: EquipmentBrand = {
   brand: 'DJI Enterprise',
   brandLabel: 'DJI Enterprise',
   crossDesc: 'La plataforma de drones más usada por bomberos y protección civil · Matrice 30T · AFAC',
-  eyebrow: 'DJI Enterprise · Distribuidor Autorizado México · AFAC',
+  eyebrow: 'DJI Enterprise · AFAC',
   heroTitleTop: 'Drones DJI',
   heroTitleAccent: 'para emergencias.',
   heroLead:
-    'Distribuidor autorizado de DJI Enterprise en México. Matrice 30T con térmica radiométrica, Mavic 3 Thermal compacto y Dock 2 autónomo — más capacitación de piloto y trámite AFAC incluidos en un solo paquete llave en mano.',
+    'Línea completa de DJI Enterprise en México. Matrice 30T con térmica radiométrica, Mavic 3 Thermal compacto y Dock 2 autónomo — más capacitación de piloto y trámite AFAC incluidos en un solo paquete llave en mano.',
   heroIntro: [
     'DJI Enterprise es la plataforma de drones más utilizada por cuerpos de bomberos y protección civil a nivel mundial. Sus aeronaves integran cámara térmica radiométrica y RGB en una sola unidad, con alcance de 15 km y autonomías de hasta 45 minutos — la herramienta de reconocimiento aéreo de referencia para la primera respuesta.',
     'Distribuimos los tres modelos de referencia para emergencias con soporte técnico, refacciones en stock, capacitación de piloto certificada y acompañamiento completo en el trámite ante la AFAC para operación institucional legal en México.',
   ],
-  heroBadges: ['DJI Matrice 30T', 'Mavic 3 Thermal', 'Dock 2', 'AFAC México', 'Térmica radiométrica', 'Distribuidor autorizado MX'],
+  heroBadges: ['DJI Matrice 30T', 'Mavic 3 Thermal', 'Dock 2', 'AFAC México', 'Térmica radiométrica'],
   seoTitle: 'Drones DJI Enterprise para Bomberos y Protección Civil — Matrice 30T · México',
   seoDescription:
-    'Drones DJI Enterprise en México: Matrice 30T con cámara térmica radiométrica, Mavic 3 Thermal compacto y Dock 2 autónomo. Capacitación de piloto y trámite AFAC incluidos. Distribuidor autorizado.',
+    'Drones DJI Enterprise en México: Matrice 30T con cámara térmica radiométrica, Mavic 3 Thermal compacto y Dock 2 autónomo. Capacitación de piloto y trámite AFAC incluidos.',
   founding: '2006',
   parentOrg: { name: 'DJI — Da-Jiang Innovations' },
   stats: [
@@ -60,7 +60,7 @@ const djiEnterprise: EquipmentBrand = {
     },
   ],
   linesIntro:
-    'Tres plataformas para tres escenarios: el Matrice 30T para operación institucional completa, el Mavic 3 Thermal para respuesta rápida y el Dock 2 para patrullaje autónomo 24/7. Un solo distribuidor autorizado para toda la flota.',
+    'Tres plataformas para tres escenarios: el Matrice 30T para operación institucional completa, el Mavic 3 Thermal para respuesta rápida y el Dock 2 para patrullaje autónomo 24/7. Un solo proveedor para toda la flota.',
   lineas: [
     {
       tipo: 'usar',

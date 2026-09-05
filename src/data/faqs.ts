@@ -13,12 +13,12 @@ export const homeFaqs: FAQ[] = [
     a: 'Un traje estructural completo certificado NFPA 1970 (chaquetón y pantalón con sus tres capas) va de $45,000 a $95,000 MXN según marca, tejido exterior y configuración. Un casco NFPA 1970 ronda $6,500–$18,000 MXN; botas estructurales $3,500–$8,000 MXN; y un SCBA NFPA 1970 de 30 minutos, $85,000–$140,000 MXN. Envíanos por WhatsApp tallas y cantidades y regresamos cotización formal con ficha técnica el mismo día hábil.',
   },
   {
-    q: '¿Son distribuidores autorizados de las marcas que mencionan?',
-    a: 'Sí. Mantenemos contratos vigentes de distribución con las principales marcas internacionales: Globe, MSA, Dräger, Bullard, Holmatro, 3M Scott y Honeywell, entre otras. Cada producto incluye número de serie verificable directamente con el fabricante y certificado de origen.',
+    q: '¿Con qué marcas trabajan?',
+    a: 'Trabajamos con las principales marcas internacionales del sector: Globe, MSA, Dräger, Bullard, Holmatro, 3M Scott y Honeywell, entre otras. Cada producto se entrega con número de serie verificable directamente con el fabricante y certificado de origen.',
   },
   {
     q: '¿Pueden facturar a gobierno y participar en licitaciones?',
-    a: 'Por supuesto. Tenemos más de 15 años trabajando con dependencias federales, estatales y municipales. Apoyamos con fichas técnicas formato licitación, manifiestos de normas NFPA/NOM, asistencia a juntas de aclaraciones y plantillas CompraNet. Facturación CFDI 4.0.',
+    a: 'Por supuesto. Trabajamos con dependencias federales, estatales y municipales. Apoyamos con fichas técnicas formato licitación, manifiestos de normas NFPA/NOM, asistencia a juntas de aclaraciones y plantillas CompraNet. Facturación CFDI 4.0.',
   },
   {
     q: '¿Qué equipo contra incendio exige la NOM-002-STPS-2010 a una empresa?',
@@ -38,7 +38,7 @@ export const homeFaqs: FAQ[] = [
   },
   {
     q: '¿Qué garantía manejan en los equipos?',
-    a: 'Garantía directa de fábrica: hasta 10 años en trajes estructurales premium, 5 años en SCBA, 2 años en cascos y guantes, 1 año en extintores. Disponemos de refacciones originales y servicio técnico autorizado para mantenimiento programado conforme NFPA 1850.',
+    a: 'Garantía directa de fábrica: hasta 10 años en trajes estructurales premium, 5 años en SCBA, 2 años en cascos y guantes, 1 año en extintores. Disponemos de refacciones originales para el mantenimiento programado conforme NFPA 1850.',
   },
   {
     q: '¿Manejan precios preferenciales para cuerpos de bomberos?',

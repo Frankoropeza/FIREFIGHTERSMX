@@ -51,7 +51,7 @@ const sections = [
   },
   {
     title: 'Marcas Autorizadas',
-    tag: 'Distribuidor oficial',
+    tag: 'Marcas y normas',
     href: '/marcas',
     desc: 'Las marcas líderes del mundo que representamos de forma oficial en México.',
     accent: '#FF8F57',
@@ -69,7 +69,6 @@ const sections = [
 
 /* ─── Cifras de la empresa ─────────────────────────────────── */
 const figures = [
-  { value: '15+', label: 'Años de especialización', text: 'Una década y media enfocados en el sector bomberos, industria y protección civil.' },
   { value: String(totalFichas), label: 'Estaciones documentadas', text: 'Fichas del directorio nacional, cada una con fuente institucional y fecha de verificación.' },
   { value: '32', label: 'Estados con cobertura', text: 'Logística y servicio en sitio en toda la República Mexicana.' },
   { value: '100%', label: 'Equipo certificado', text: 'Todo cumple NFPA, NOM-002-STPS y normativa vigente.' },
@@ -169,7 +168,7 @@ const aboutSchema = {
           <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">
             FIREFIGHTERS MX es el portal especializado en
             <strong style="color:#CBD5E1">equipo para bomberos, protección civil e industria</strong>
-            en México. Llevamos más de 15 años como distribuidores autorizados de las marcas más
+            en México. Trabajamos con las marcas más
             confiables del mundo, con todo el catálogo certificado bajo NFPA y NOM-002-STPS.
           </p>
           <p class="text-sm leading-[1.9] mb-6" style="color:#64748B">
@@ -196,9 +195,9 @@ const aboutSchema = {
   <!-- Cifras -->
   <section class="section-tight" style="background:#070E1A" aria-label="La empresa en cifras">
     <div class="container-site">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style="border:1px solid rgba(74,117,153,0.18)">
+      <div class="grid grid-cols-1 sm:grid-cols-3" style="border:1px solid rgba(74,117,153,0.18)">
         {figures.map((f, i) => (
-          <div class="flex flex-col gap-2 p-6" style={`background:#0C1825;${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.18);' : ''}`}>
+          <div class="flex flex-col gap-2 p-6" style={`background:#0C1825;${i < figures.length - 1 ? 'border-right:1px solid rgba(74,117,153,0.18);' : ''}`}>
             <span class="font-display font-bold" style="color:#F75000;font-size:2.25rem;line-height:1">{f.value}</span>
             <h2 class="font-display font-bold text-sm uppercase tracking-wider" style="color:#FFFFFF">{f.label}</h2>
             <p class="text-xs leading-relaxed" style="color:#64748B">{f.text}</p>

@@ -73,7 +73,7 @@ const guia = [
   { n: '01', t: 'Define el escenario dominante: combate estructural (30/45 min), industria/confinados (60 min), HAZMAT/CBRN (NIOSH CBRN) o rescate de bombero (RIT). La configuración sale de ahí.' },
   { n: '02', t: 'Compara las tres marcas tier-1: MSA G1 lidera en electrónica integrada; Dräger PSS 7000 en ergonomía de arnés; 3M Scott NxG7 en plataforma modular y localizador Pak-Tracker.' },
   { n: '03', t: 'Exige certificación NFPA 1970 y aprobación NIOSH verificable por número de modelo —no de distribuidor. Para CBRN: aprobación NIOSH CBRN documentada por modelo exacto.' },
-  { n: '04', t: 'Asegura el programa de mantenimiento: prueba de flujo anual, hidrostática de cilindro cada 5 años (vida útil 15 años) y servicio técnico autorizado con bitácora NFPA 1850.' },
+  { n: '04', t: 'Asegura el programa de mantenimiento: prueba de flujo anual, hidrostática de cilindro cada 5 años (vida útil 15 años) y bitácora conforme NFPA 1850.' },
 ];
 
 /* Artículos relacionados */
@@ -89,8 +89,8 @@ const faqs = [
   { q: '¿Bajo qué norma debe estar certificado un SCBA de bombero en México?', a: 'Bajo NFPA 1970 (consolidó a la NFPA 1981 desde 2024) con aprobación NIOSH. Para HAZMAT se exige además aprobación NIOSH CBRN. Los pliegos de licitación pública en México referencian directamente NFPA 1970 y NIOSH por edición.' },
   { q: '¿Qué autonomía elijo: 30, 45 o 60 minutos?', a: 'La autonomía nominal asume consumo de referencia; el tiempo real depende del esfuerzo. 30 min es el estándar urbano, 45 min da margen para combate prolongado, 60 min es para industria, túneles y confinados donde la salida es larga. A mayor autonomía, mayor peso y volumen del cilindro.' },
   { q: '¿Cuál es la diferencia entre MSA G1, Dräger PSS 7000 y 3M Scott NxG7?', a: 'Los tres son SCBA tier-1 de presión positiva NFPA 1970. MSA G1 lidera en electrónica integrada (EOSTI en el regulador, telemetría ICM). Dräger PSS 7000 destaca por la ergonomía del arnés y distribución de carga. 3M Scott NxG7 sobresale por su plataforma modular y localizador Pak-Tracker. Te facilitamos las tres fichas para evaluación comparativa.' },
-  { q: '¿Qué mantenimiento exige un SCBA y cada cuánto?', a: 'La NFPA 1850 establece: inspección antes de cada uso, prueba de flujo al menos anual, mantenimiento de reguladores según fabricante, prueba hidrostática del cilindro cada 5 años (vida útil 15 años). Somos servicio técnico autorizado: realizamos estas pruebas con equipo calibrado y entregamos bitácora para auditoría.' },
-  { q: '¿Entregan ficha técnica y servicio para licitación pública?', a: 'Sí. Cada SCBA incluye certificado de conformidad NFPA 1970, aprobación NIOSH y ficha técnica por configuración. Para concursos públicos (CompraNet, IMSS, Pemex, gobiernos estatales) generamos el manifiesto de cumplimiento por partida e incluimos el plan de servicio técnico autorizado para toda la vida útil.' },
+  { q: '¿Qué mantenimiento exige un SCBA y cada cuánto?', a: 'La NFPA 1850 establece: inspección antes de cada uso, prueba de flujo al menos anual, mantenimiento de reguladores según fabricante, prueba hidrostática del cilindro cada 5 años (vida útil 15 años).' },
+  { q: '¿Entregan ficha técnica y servicio para licitación pública?', a: 'Sí. Cada SCBA incluye certificado de conformidad NFPA 1970, aprobación NIOSH y ficha técnica por configuración. Para concursos públicos (CompraNet, IMSS, Pemex, gobiernos estatales) generamos el manifiesto de cumplimiento por partida e incluimos el plan de mantenimiento para toda la vida útil.' },
 ];
 
 /* Trust Pillars */
@@ -98,7 +98,7 @@ const razones = [
   {
     n: '01',
     t: 'Tres marcas tier-1 mundiales',
-    d: 'MSA Safety (NYSE: MSA), Dräger y 3M Scott — los tres fabricantes de SCBA más licitados en México. Una sola fuente, servicio técnico autorizado y refacciones originales para toda la vida útil del equipo.',
+    d: 'MSA Safety (NYSE: MSA), Dräger y 3M Scott — los tres fabricantes de SCBA más licitados en México. Una sola fuente, con refacciones originales para toda la vida útil del equipo.',
   },
   {
     n: '02',
@@ -107,13 +107,13 @@ const razones = [
   },
   {
     n: '03',
-    t: 'Servicio técnico autorizado',
-    d: 'Somos servicio técnico autorizado: prueba hidrostática de cilindros cada 5 años, prueba de flujo anual, mantenimiento de reguladores y refacciones originales con bitácora para auditoría. Tu inversión protegida durante toda la vida útil.',
+    t: 'Mantenimiento NFPA 1850',
+    d: 'El programa que exige la norma: prueba hidrostática de cilindros cada 5 años, prueba de flujo anual, mantenimiento de reguladores y refacciones originales con bitácora para auditoría, durante toda la vida útil.',
   },
   {
     n: '04',
     t: 'Stock permanente en CDMX',
-    d: 'Inventario de los modelos más solicitados con entrega en 24–48 h desde CDMX. Para licitaciones generamos el manifiesto de cumplimiento de norma por partida e incluimos el plan de servicio técnico autorizado.',
+    d: 'Inventario de los modelos más solicitados con entrega en 24–48 h desde CDMX. Para licitaciones generamos el manifiesto de cumplimiento de norma por partida e incluimos el plan de mantenimiento.',
   },
 ];
 
@@ -183,7 +183,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
             <span style="color:#F5A623">SCBA</span>
           </h1>
           <p class="text-base leading-relaxed mb-8 max-w-xl" style="color:#94A3B8">
-            Distribuidores autorizados de MSA Safety, Dräger y 3M Scott en México. Equipos de
+            Línea completa de MSA Safety, Dräger y 3M Scott en México. Equipos de
             respiración autónoma certificados NFPA 1970 — presión positiva, 30/45/60 min,
             sistemas PASS y EOSTI integrados para combate estructural, industrial y CBRN.
           </p>
@@ -267,7 +267,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
-          <span class="section-eyebrow mb-4 inline-flex">MSA Safety · NYSE: MSA · Distribuidor Autorizado MX</span>
+          <span class="section-eyebrow mb-4 inline-flex">MSA Safety · NYSE: MSA</span>
           <h2 id="msa-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             SCBA MSA G1<br/>
             <span style="color:#F5A623">certificado NFPA.</span>
@@ -281,7 +281,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
             cuerpos metropolitanos tier-1 de México.
           </p>
           <div class="flex flex-wrap gap-2">
-            {['NFPA 1970','NIOSH CBRN','EOSTI integrado','Telemetría ICM','4500 psi','Distribuidor autorizado MX'].map(b => (
+            {['NFPA 1970','NIOSH CBRN','EOSTI integrado','Telemetría ICM','4500 psi'].map(b => (
               <span class="badge badge-dark text-[9px]">{b}</span>
             ))}
           </div>
@@ -331,7 +331,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
             y por su historial en petroquímica, minería y brigadas industriales de alta exigencia.
           </p>
           <div class="flex flex-wrap gap-2">
-            {['NFPA 1970','NIOSH CBRN','Arnés ergonómico','Distribución de carga','4500 psi','Servicio autorizado MX'].map(b => (
+            {['NFPA 1970','NIOSH CBRN','Arnés ergonómico','Distribución de carga','4500 psi','Refacciones originales'].map(b => (
               <span class="badge badge-dark text-[9px]">{b}</span>
             ))}
           </div>
@@ -381,7 +381,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
             departamentos que priorizan visibilidad táctica y localización de personal en operaciones complejas.
           </p>
           <div class="flex flex-wrap gap-2">
-            {['NFPA 1970','NIOSH CBRN','Pak-Tracker','Plataforma modular','4500 psi','Distribuidor autorizado MX'].map(b => (
+            {['NFPA 1970','NIOSH CBRN','Pak-Tracker','Plataforma modular','4500 psi'].map(b => (
               <span class="badge badge-dark text-[9px]">{b}</span>
             ))}
           </div>

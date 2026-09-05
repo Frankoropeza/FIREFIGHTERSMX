@@ -36,7 +36,7 @@ export const estados: Estado[] = [
     description: 'Entrega express 24–48 hrs. Servicio en sitio disponible. Sede operativa principal.',
     longDesc: [
       'La Ciudad de México es nuestra sede principal de operaciones. Entregamos equipo para bomberos en las 16 alcaldías con tiempo express de 24 a 48 horas en días hábiles. Para pedidos urgentes o licitaciones con entrega inmediata, coordinamos despacho el mismo día.',
-      'Atendemos al H. Cuerpo de Bomberos de la CDMX, brigadas industriales de Azcapotzalco e Iztapalapa, aeropuerto Felipe Ángeles (AIFA) y Benito Juárez (AICM), hospitales, hoteles y empresas con obligación de cumplir la NOM-002-STPS-2010. También apoyamos a organismos de Protección Civil de las alcaldías con equipo de respuesta rápida.',
+      'La demanda de la entidad la marcan el H. Cuerpo de Bomberos de la CDMX, las brigadas industriales de Azcapotzalco e Iztapalapa, los aeropuertos Felipe Ángeles (AIFA) y Benito Juárez (AICM), y hospitales, hoteles y empresas obligadas a cumplir la NOM-002-STPS-2010. A ello se suman los organismos de Protección Civil de las 16 alcaldías, que requieren equipo de respuesta rápida.',
     ],
     industries: [
       'Cuerpos de bomberos CDMX',
@@ -62,7 +62,7 @@ export const estados: Estado[] = [
     description: 'Entrega express 24–48 hrs. Zona metropolitana y corredor industrial Toluca.',
     longDesc: [
       'El Estado de México es la entidad federativa con el mayor número de municipios en México y alberga el corredor industrial más grande del país: Toluca, Lerma, Tlalnepantla, Naucalpan, Ecatepec e Ixtapaluca. Entregamos equipo para bomberos y brigadas industriales en toda la entidad con tiempo express de 24 a 48 horas.',
-      'Atendemos a los H. Cuerpos de Bomberos municipales (Toluca, Ecatepec, Naucalpan, Tlalnepantla y más de 20 municipios), brigadas industriales del parque Toluca-Lerma, aeropuerto de Toluca (AIT) y organismos de Protección Civil del Estado de México. Soporte completo para licitaciones por CompraNet y ayuntamientos.',
+      'En la entidad operan cuerpos de bomberos municipales en Toluca, Ecatepec, Naucalpan, Tlalnepantla y una veintena de ayuntamientos más, además de las brigadas industriales del corredor Toluca-Lerma, el aeropuerto de Toluca (AIT) y los organismos de Protección Civil del Estado de México. Damos soporte documental para licitaciones por CompraNet y por ayuntamiento.',
     ],
     industries: [
       'Corredor industrial Toluca-Lerma',
@@ -133,7 +133,7 @@ export const estados: Estado[] = [
     description: 'Entrega express 24–48 hrs. Corredor industrial y turismo.',
     longDesc: [
       'Morelos es el estado con mayor densidad poblacional de México y un importante corredor industrial en Cuautla y Jiutepec. Su cercanía con la CDMX permite entrega express en 24 a 48 horas para cuerpos de bomberos, brigadas y establecimientos turísticos que requieren cumplir con Protección Civil.',
-      'Atendemos al H. Cuerpo de Bomberos de Cuernavaca, brigadas de hoteles y centros de convenciones, y organismos de Protección Civil municipal.',
+      'La demanda local la concentran el H. Cuerpo de Bomberos de Cuernavaca, las brigadas de hoteles y centros de convenciones, y los organismos de Protección Civil municipales.',
     ],
     industries: [
       'Parque industrial Cuautla-Ayala',

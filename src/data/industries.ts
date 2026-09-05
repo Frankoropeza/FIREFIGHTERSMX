@@ -42,7 +42,7 @@ export const industries: Industry[] = [
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s8-4 8-10V6l-8-3-8 3v6c0 6 8 10 8 10z"/><path d="M12 8c0 0-3.5 2.8-2 5.6.8 1.4 2 1.4 2 1.4s-.7-1.4 0-2.8c.7-1.4 2-1.4 2-1.4s-.7 2 .7 3.5c.6.6.7 1.4.7 1.4"/></svg>`,
     href: '/industrias/bomberos-municipales',
     intro: [
-      'Equipar un cuerpo de bomberos municipal es un proyecto de adquisición pública con presupuesto acotado, anexos técnicos exigentes y vidas de por medio. Llevamos más de 15 años acompañando H. Cuerpos de Bomberos en todo el país: del anexo técnico a la entrega con número de serie verificable.',
+      'Equipar un cuerpo de bomberos municipal es un proyecto de adquisición pública con presupuesto acotado, anexos técnicos exigentes y vidas de por medio. Acompañamos a los H. Cuerpos de Bomberos en todo el país: del anexo técnico a la entrega con número de serie verificable.',
       'Trabajamos con esquema de precio preferencial para cuerpos de bomberos y programas de equipamiento por fases, para que el presupuesto anual rinda sin sacrificar certificación ni garantía.',
     ],
     risks: [
@@ -71,7 +71,7 @@ export const industries: Industry[] = [
     recommendedServices: ['capacitacion', 'licitaciones', 'mantenimiento'],
     faqs: [
       { q: '¿Manejan precios especiales para cuerpos de bomberos?', a: 'Sí. Tenemos esquema de precio preferencial para H. Cuerpos de Bomberos, patronatos y Protección Civil, además de programas de equipamiento por fases para ajustarse al presupuesto anual disponible.' },
-      { q: '¿Pueden participar en nuestra licitación municipal?', a: 'Sí. Participamos directamente o respaldamos a tu proveedor local con cartas de distribuidor autorizado, fichas técnicas formato CompraNet y stock comprometido antes de la firma.' },
+      { q: '¿Pueden participar en nuestra licitación municipal?', a: 'Sí. Participamos directamente o respaldamos a tu proveedor local con fichas técnicas formato CompraNet y stock comprometido antes de la firma.' },
       { q: '¿El equipo usado o de donación cumple la norma?', a: 'El EPP estructural tiene vida útil máxima de 10 años desde fabricación según NFPA 1850, y el equipo donado usado rara vez la cumple o carece de trazabilidad. Podemos inspeccionar tu inventario actual y decirte qué es utilizable y qué debe retirarse.' },
     ],
   },

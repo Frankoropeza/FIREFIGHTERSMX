@@ -13,7 +13,7 @@ image:
 
 Hay una imagen que cualquiera que trabaje en este medio reconoce: el comandante que recibe un traje nuevo, lo voltea, busca la etiqueta cosida en el interior y se queda mirándola unos segundos. Está comprobando que la certificación sea real y esté vigente. Ese gesto, repetido miles de veces en estaciones de todo el país, resume nuestro trabajo mejor que cualquier folleto. Porque cuando alguien va a entrar a un incendio con ese traje puesto, esa etiqueta deja de ser un trámite.
 
-FIREFIGHTERS MX lleva quince años del lado correcto de esa etiqueta. Y de eso queremos hablar aquí: de quiénes somos, de cómo trabajamos y de por qué tantos cuerpos de bomberos, brigadas industriales e instituciones de gobierno nos eligen cuando lo que está en juego no admite improvisaciones.
+FIREFIGHTERS MX está del lado correcto de esa etiqueta. Y de eso queremos hablar aquí: de quiénes somos, de cómo trabajamos y de por qué tantos cuerpos de bomberos, brigadas industriales e instituciones de gobierno nos eligen cuando lo que está en juego no admite improvisaciones.
 
 ## No vendemos de todo. Vendemos esto.
 
@@ -23,16 +23,14 @@ Esa decisión de especializarnos tiene consecuencias prácticas para quien nos c
 
 ## Donde estés, ahí llegamos
 
-México no es un solo país cuando se trata de incendios. La realidad de un cuerpo metropolitano rodeado de torres no se parece en nada a la de un municipio donde el riesgo principal es el monte seco en marzo. Por eso atendemos los 32 estados, apoyados en una red de distribuidores autorizados y en logística propia, con stock permanente en CDMX para no depender de los tiempos de una importación cada vez que alguien necesita una talla o una refacción.
+México no es un solo país cuando se trata de incendios. La realidad de un cuerpo metropolitano rodeado de torres no se parece en nada a la de un municipio donde el riesgo principal es el monte seco en marzo. Por eso atendemos los 32 estados, con logística propia y stock en CDMX para no depender de los tiempos de una importación cada vez que alguien necesita una talla o una refacción.
 
 | Lo que tenemos | Lo que significa para ti |
 |---|---|
 | Cobertura en los 32 estados | El mismo respaldo técnico, sin importar el código postal |
-| Stock permanente en CDMX | Tallas y refacciones a la mano, sin esperar contenedores |
-| Red de distribuidores autorizados | Atención cercana, con respaldo nacional detrás |
-| 15 años en el mercado | Un historial que se puede verificar, no una promesa |
+| Stock en CDMX | Tallas y refacciones a la mano, sin esperar contenedores |
 
-Si quieres ver el alcance real, ahí está el detalle de nuestra [cobertura nacional](/cobertura) y de la red de [distribuidores autorizados](/distribuidores).
+Si quieres ver el alcance real, ahí está el detalle de nuestra [cobertura nacional](/cobertura) y de los [envíos por estado](/distribuidores).
 
 ## Marcas líderes, producto original, sin asteriscos
 

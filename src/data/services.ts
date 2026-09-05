@@ -245,12 +245,12 @@ export const services: Service[] = [
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>`,
     href: '/servicios/licitaciones',
     intro: [
-      'Ganar una licitación de equipo contra incendio se decide en los detalles técnicos: fichas alineadas al anexo, manifiestos de cumplimiento de normas y respuestas precisas en junta de aclaraciones. Llevamos más de 15 años acompañando procesos federales, estatales y municipales.',
-      'Te apoyamos como fabricante/distribuidor respaldo o como tu área técnica externa: documentación lista para CompraNet, cartas de distribuidor autorizado y soporte en la evaluación técnica de tu propuesta.',
+      'Ganar una licitación de equipo contra incendio se decide en los detalles técnicos: fichas alineadas al anexo, manifiestos de cumplimiento de normas y respuestas precisas en junta de aclaraciones. Acompañamos procesos federales, estatales y municipales.',
+      'Te apoyamos como tu área técnica externa: documentación lista para CompraNet, gestión de las cartas de fabricante que pide el anexo y soporte en la evaluación técnica de tu propuesta.',
     ],
     items: [
       { name: 'Fichas técnicas formato licitación', detail: 'Documentación de cada partida alineada al anexo técnico, con normas NFPA/NOM citadas correctamente.' },
-      { name: 'Manifiestos y cartas', detail: 'Cartas de fabricante, distribuidor autorizado, garantía y cumplimiento de normas, firmadas.' },
+      { name: 'Manifiestos y cartas', detail: 'Cartas de fabricante, garantía y cumplimiento de normas, gestionadas y firmadas.' },
       { name: 'Junta de aclaraciones', detail: 'Análisis del anexo, preguntas estratégicas y soporte técnico durante el proceso.' },
       { name: 'Plantillas CompraNet', detail: 'Propuesta técnica y económica estructurada según los formatos del procedimiento.' },
     ],
@@ -259,11 +259,11 @@ export const services: Service[] = [
       highlight: 'respaldo técnico de fábrica',
       paragraphs: [
         'Las propuestas se descalifican por papeles, no por precio: una ficha que no cita la edición correcta de la norma, una carta de fabricante faltante o una partida mal interpretada. Nuestro equipo arma el expediente técnico como lo lee el evaluador.',
-        'Si eres integrador o comercializador, te respaldamos con cartas de distribuidor, stock comprometido y tiempos de entrega reales — para que cotices con seguridad en procesos de PEMEX, CFE, gobiernos estatales y municipios.',
+        'Si eres integrador o comercializador, te respaldamos con la documentación de fábrica, stock comprometido y tiempos de entrega reales — para que cotices con seguridad en procesos de PEMEX, CFE, gobiernos estatales y municipios.',
       ],
       subsections: [
         { name: 'Expediente a prueba de evaluador', detail: 'Cada requisito del anexo cruzado contra tu propuesta, sin huecos descalificables.' },
-        { name: 'Respaldo de distribuidor autorizado', detail: 'Cartas de fábrica y nuestra firma como respaldo de suministro y garantía.' },
+        { name: 'Respaldo documental', detail: 'Cartas de fábrica y nuestra firma como respaldo de suministro y garantía.' },
         { name: 'Experiencia federal y estatal', detail: 'CompraNet, PEMEX, CFE, ASA y dependencias estatales — conocemos sus formatos y criterios.' },
         { name: 'Entrega comprometida', detail: 'Programa de suministro realista con stock verificado antes de que firmes el contrato.' },
       ],
@@ -273,7 +273,7 @@ export const services: Service[] = [
     faqs: [
       { q: '¿Apoyan aunque la licitación ya esté publicada?', a: 'Sí, mientras haya tiempo antes de la junta de aclaraciones o de la presentación de propuestas. Con 5 días hábiles armamos fichas y manifiestos de la mayoría de las partidas de equipo contra incendio.' },
       { q: '¿Trabajan con integradores o solo venta directa?', a: 'Ambos. Respaldamos a integradores y comercializadores con cartas de distribuidor, precios de mayoreo y stock comprometido, o participamos directamente según el proceso.' },
-      { q: '¿Qué documentos de fabricante pueden conseguir?', a: 'Cartas de fabricante y distribuidor autorizado, certificados de conformidad NFPA/NOM/UL, fichas técnicas oficiales en español y cartas de garantía — la paquetería documental estándar de los anexos técnicos.' },
+      { q: '¿Qué documentos de fabricante pueden conseguir?', a: 'Cartas de fabricante, certificados de conformidad NFPA/NOM/UL, fichas técnicas oficiales en español y cartas de garantía — la paquetería documental estándar de los anexos técnicos.' },
     ],
   },
 ];

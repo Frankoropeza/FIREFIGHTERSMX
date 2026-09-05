@@ -36,7 +36,7 @@ export const brands: Brand[] = [
     country: '🇺🇸 USA',
     longDesc: [
       'MSA Safety es el fabricante de referencia en equipos de protección personal para bomberos a nivel mundial. Su SCBA G1 es el estándar de facto en cuerpos de bomberos que exigen telemetría integrada, alarma PASS y cumplimiento NFPA 1970. El casco Gallet F1 XF, de estilo europeo integral, es el más solicitado en cuerpos metropolitanos y aeropuertos ARFF por su visor retráctil y módulo de comunicación.',
-      'Somos distribuidores autorizados MSA Safety en México. Cada equipo se entrega con número de serie verificable, certificado de laboratorio acreditado y carta de fabricante — documentación lista para anexo técnico de licitación CompraNet, auditoría STPS y expediente de Protección Civil.',
+      'Trabajamos con la línea MSA Safety en México. Cada equipo se entrega con número de serie verificable, certificado de laboratorio acreditado y carta de fabricante — documentación lista para anexo técnico de licitación CompraNet, auditoría STPS y expediente de Protección Civil.',
     ],
     products: [
       { name: 'MSA G1 SCBA', detail: 'SCBA NFPA 1970 con telemetría integrada, EOSTI y alarma PASS. Cilindros 30/45/60 min a 4 500 psi.' },
