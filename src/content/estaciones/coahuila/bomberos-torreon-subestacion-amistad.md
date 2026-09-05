@@ -24,6 +24,7 @@ serviciosDetalle:
   - "Combate de incendios"
   - "Rescate"
   - "Atención de emergencias"
+descripcion: "Subestación del cuerpo de bomberos de Torreón junto al Canal del Oeste, en el poniente de la ciudad. La Laguna es una región de riego y el sistema de canales atraviesa la mancha urbana, lo que suma el rescate acuático y las emergencias en cauce a la carga estructural de la zona."
 fuentes:
   - nombre: "torreon.gob.mx"
     url: "https://www.torreon.gob.mx/proteccioncivil/"

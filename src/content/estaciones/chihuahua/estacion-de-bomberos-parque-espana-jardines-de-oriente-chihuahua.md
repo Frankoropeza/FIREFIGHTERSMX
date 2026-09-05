@@ -23,6 +23,7 @@ serviciosDetalle:
   - "Combate de incendios"
   - "Rescate"
   - "Atención de emergencias"
+descripcion: "Estación de Jardines de Oriente, en el sector oriente de Chihuahua capital. Su cobertura es de fraccionamientos de vivienda media y unidades habitacionales construidas en las últimas décadas, con densidad alta y una traza de circuitos cerrados que obliga a conocer los accesos para no perder minutos en la llegada."
 fuentes:
   - nombre: "municipiochihuahua.gob.mx"
     url: "https://www.municipiochihuahua.gob.mx/CCS/Prensa/Colecta_de_juguetes_de_Bomberos:_Una_acci%C3%B3n_de_altruismo_con_mucha_tradici%C3%B3n_en_la_ciudad"

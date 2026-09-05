@@ -27,6 +27,7 @@ serviciosDetalle:
   - "Combate y extinción de incendios estructurales"
   - "Rescate vehicular"
   - "Primeros auxilios y atención prehospitalaria"
+descripcion: "Unidad municipal de Tamazula de Gordiano, en el sureste de Jalisco. Es un municipio cañero de valle y sierra, con ingenio azucarero, superficie de caña que se quema en zafra y comunidades serranas alejadas de la cabecera. Esa combinación explica su carga: quema agrícola, incendio forestal y emergencias a distancia por camino de montaña."
 fuentes:
   - nombre: "tamazuladegordiano.gob.mx"
     url: "https://tamazuladegordiano.gob.mx/new/notas/nuevo-numero-en-proteccion-civil/"

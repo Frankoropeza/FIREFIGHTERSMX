@@ -26,6 +26,7 @@ serviciosDetalle:
   - "Combate de incendios"
   - "Atención de emergencias"
   - "Protección Civil"
+descripcion: "Unidad municipal de Canatlán, al norte de la ciudad de Durango. Es la principal zona manzanera del país: huertas, empacadoras y bodegas de frío repartidas por el valle, con la cabecera como centro de servicios. A la operación urbana se suman los incendios de pastizal del valle y los accidentes de la carretera federal que lo cruza."
 fuentes:
   - nombre: "proteccioncivil.durango.gob.mx"
     url: "https://proteccioncivil.durango.gob.mx/wp-content/uploads/sites/39/2023/04/DIRECTORIO-DE-COORDINADORES-MUNICIPALES-DE-P.-C.-sin-dp-2022-2025.pdf"

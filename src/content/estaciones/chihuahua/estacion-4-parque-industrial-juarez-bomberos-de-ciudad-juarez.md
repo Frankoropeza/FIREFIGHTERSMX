@@ -23,6 +23,7 @@ serviciosDetalle:
   - "Incendios industriales y estructurales"
   - "Rescate"
   - "Emergencias en zona industrial/maquiladora"
+descripcion: "Estación asignada al Parque Industrial Juárez, sobre la vialidad Perimetral Carlos Amaya. Su entorno son naves de maquila, bodegas y patios de maniobra con solventes, resinas y material de proceso: un perfil de riesgo industrial y de materiales peligrosos, distinto al doméstico que atiende el resto de la corporación. Ciudad Juárez concentra una de las mayores plantas maquiladoras del país."
 fuentes:
   - nombre: "imip.org.mx"
     url: "https://www.imip.org.mx/imip/node/54"

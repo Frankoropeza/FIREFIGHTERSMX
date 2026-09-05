@@ -23,6 +23,7 @@ serviciosDetalle:
   - "Combate de incendios"
   - "Rescate"
   - "Atención de emergencias"
+descripcion: "Estación del Heroico Cuerpo de Bomberos de Ciudad Juárez en el primer cuadro de la ciudad, sobre la avenida 16 de Septiembre. Cubre el centro histórico y la franja pegada al Río Bravo, con comercio antiguo, hospedaje y el flujo continuo de los puentes internacionales. Es el tejido urbano más viejo de Juárez, de manzanas compactas y edificaciones sin sistemas contra incendio modernos."
 fuentes:
   - nombre: "imip.org.mx"
     url: "https://www.imip.org.mx/imip/node/54"

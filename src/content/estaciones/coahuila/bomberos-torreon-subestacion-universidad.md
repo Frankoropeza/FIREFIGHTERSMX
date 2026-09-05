@@ -24,6 +24,7 @@ serviciosDetalle:
   - "Combate de incendios"
   - "Rescate"
   - "Atención de emergencias"
+descripcion: "Subestación del cuerpo de bomberos de Torreón sobre el Nuevo Periférico, en el cruce con el bulevar Torreón-Matamoros. Cubre el corredor universitario y de servicios del oriente de la ciudad, un eje de alto aforo vehicular que conecta Torreón con Matamoros y que aporta un volumen constante de rescate vehicular."
 fuentes:
   - nombre: "torreon.gob.mx"
     url: "https://www.torreon.gob.mx/proteccioncivil/"

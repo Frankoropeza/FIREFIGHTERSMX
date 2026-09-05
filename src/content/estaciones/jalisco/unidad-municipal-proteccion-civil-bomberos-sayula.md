@@ -20,6 +20,7 @@ servicios:
 serviciosDetalle:
   - "Combate y extinción de incendios estructurales"
   - "Primeros auxilios y atención prehospitalaria"
+descripcion: "Unidad municipal de Sayula, en el sur de Jalisco. El municipio se asienta junto a la laguna de Sayula, en un valle agrícola rodeado de sierra, con una cabecera de traza histórica y tradición artesanal. Incendios de pastizal en el vaso lacustre durante el estiaje e incendios forestales en la sierra circundante marcan su temporada crítica."
 fuentes:
   - nombre: "lavozdelsur.com.mx"
     url: "https://www.lavozdelsur.com.mx/bomberos-estatales-y-municipales-combaten-incendio-en-el-vertedero-municipal-de-sayula/"

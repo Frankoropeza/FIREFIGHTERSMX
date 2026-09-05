@@ -23,6 +23,7 @@ serviciosDetalle:
   - "Combate de incendios"
   - "Rescate"
   - "Atención de emergencias"
+descripcion: "Estación del fraccionamiento Los Arroyos, en el norponiente de Chihuahua capital. Atiende una de las áreas de expansión habitacional más recientes de la ciudad, alejada del centro, donde la estación acorta un trayecto que de otro modo se cubriría desde el Centro de Mando."
 fuentes:
   - nombre: "municipiochihuahua.gob.mx"
     url: "https://www.municipiochihuahua.gob.mx/CCS/Prensa/Colecta_de_juguetes_de_Bomberos:_Una_acci%C3%B3n_de_altruismo_con_mucha_tradici%C3%B3n_en_la_ciudad"

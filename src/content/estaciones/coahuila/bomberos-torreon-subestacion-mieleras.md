@@ -24,6 +24,7 @@ serviciosDetalle:
   - "Combate de incendios"
   - "Rescate"
   - "Atención de emergencias"
+descripcion: "Subestación del cuerpo de bomberos de Torreón en el corredor de Mieleras, al poniente de la ciudad. Es una de las áreas de crecimiento reciente de la mancha urbana, con fraccionamientos nuevos, vialidad rápida y superficie todavía sin edificar en los bordes, donde el matorral arde durante el estiaje lagunero."
 fuentes:
   - nombre: "torreon.gob.mx"
     url: "https://www.torreon.gob.mx/proteccioncivil/"

@@ -24,6 +24,7 @@ serviciosDetalle:
   - "Combate de incendios"
   - "Rescate"
   - "Atención de emergencias"
+descripcion: "Subestación del cuerpo de bomberos de Torreón en el sur de la ciudad, sobre el bulevar Pedro Rodríguez Triana. Atiende un sector de vivienda popular y de interés social en expansión hacia la periferia, con densidad alta y vialidades primarias largas que separan las colonias del centro urbano."
 fuentes:
   - nombre: "torreon.gob.mx"
     url: "https://www.torreon.gob.mx/proteccioncivil/"

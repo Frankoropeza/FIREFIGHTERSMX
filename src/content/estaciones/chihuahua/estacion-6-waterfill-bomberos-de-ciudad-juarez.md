@@ -23,6 +23,7 @@ serviciosDetalle:
   - "Combate de incendios"
   - "Rescate"
   - "Atención de emergencias"
+descripcion: "Estación del sector Waterfill, sobre la avenida Río Bravo, en la franja fronteriza de Ciudad Juárez. Atiende colonias populares de traza antigua junto al cauce del río y al bordo internacional, con vivienda autoconstruida, talleres y patios de reciclaje que elevan la carga de fuego en manzana cerrada."
 fuentes:
   - nombre: "imip.org.mx"
     url: "https://www.imip.org.mx/imip/node/54"

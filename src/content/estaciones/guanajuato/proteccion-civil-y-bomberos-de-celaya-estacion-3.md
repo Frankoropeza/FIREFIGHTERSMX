@@ -25,6 +25,7 @@ serviciosDetalle:
   - "Combate y extinción de incendios"
   - "Rescate vehicular"
   - "Primeros auxilios"
+descripcion: "Estación 3 de Protección Civil y Bomberos de Celaya, en Galaxias del Parque, sobre la avenida Las Torres. Atiende el sector de fraccionamientos de vivienda en serie que absorbió el crecimiento reciente de la ciudad, con densidad alta y accesos limitados, lejos del cuartel central."
 fuentes:
   - nombre: "celaya.gob.mx"
     url: "https://www.celaya.gob.mx/ssc/proteccion-civil-y-bomberos/"

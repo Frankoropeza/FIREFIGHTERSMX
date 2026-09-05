@@ -21,6 +21,7 @@ servicios:
 serviciosDetalle:
   - "Atención de emergencias"
   - "Protección Civil"
+descripcion: "Unidad municipal de Santiago Papasquiaro Tepehuanes, en la sierra del noroeste de Durango. El municipio está dentro de la Sierra Madre Occidental, con bosque de pino-encino, aserraderos y comunidades de montaña conectadas por caminos de terracería. El incendio forestal en temporada seca y el rescate en terreno serrano definen su carga de trabajo."
 fuentes:
   - nombre: "proteccioncivil.durango.gob.mx"
     url: "https://proteccioncivil.durango.gob.mx/wp-content/uploads/sites/39/2023/04/DIRECTORIO-DE-COORDINADORES-MUNICIPALES-DE-P.-C.-sin-dp-2022-2025.pdf"

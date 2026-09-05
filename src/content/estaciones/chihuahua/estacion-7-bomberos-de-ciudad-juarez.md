@@ -23,6 +23,7 @@ serviciosDetalle:
   - "Combate de incendios"
   - "Rescate"
   - "Atención de emergencias"
+descripcion: "Estación del Heroico Cuerpo de Bomberos de Ciudad Juárez en el cruce de Zaragoza y Sonora, en el oriente de la ciudad. El eje Zaragoza es una de las salidas hacia el valle y hacia el puente internacional Guadalupe-Tornillo, de modo que su cobertura combina vivienda popular densa con tránsito pesado permanente."
 fuentes:
   - nombre: "imip.org.mx"
     url: "https://www.imip.org.mx/imip/node/54"

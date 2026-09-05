@@ -23,6 +23,7 @@ serviciosDetalle:
   - "Combate de incendios"
   - "Rescate"
   - "Atención de emergencias"
+descripcion: "Estación del Complejo Industrial Américas, en Chihuahua capital. Su entorno es el corredor de manufactura y logística de la ciudad: naves, bodegas y patios de carga con material de proceso y transporte pesado permanente. Es la unidad con perfil industrial de la corporación, distinta del servicio doméstico del resto."
 fuentes:
   - nombre: "municipiochihuahua.gob.mx"
     url: "https://www.municipiochihuahua.gob.mx/CCS/Prensa/Colecta_de_juguetes_de_Bomberos:_Una_acci%C3%B3n_de_altruismo_con_mucha_tradici%C3%B3n_en_la_ciudad"

@@ -24,6 +24,7 @@ serviciosDetalle:
   - "Combate de incendios"
   - "Rescate"
   - "Atención de emergencias"
+descripcion: "Subestación del cuerpo de bomberos de Torreón en el oriente de la ciudad, sobre la Calzada México. Su cobertura es de colonias consolidadas y comercio de barrio en una de las salidas de la ciudad, con incendio estructural doméstico, fuga de gas LP y rescate vehicular como servicios habituales."
 fuentes:
   - nombre: "torreon.gob.mx"
     url: "https://www.torreon.gob.mx/proteccioncivil/"

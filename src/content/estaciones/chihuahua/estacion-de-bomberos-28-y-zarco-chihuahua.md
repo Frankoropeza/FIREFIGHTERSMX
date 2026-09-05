@@ -23,6 +23,7 @@ serviciosDetalle:
   - "Combate de incendios"
   - "Rescate"
   - "Atención de emergencias"
+descripcion: "Estación del Heroico Cuerpo de Bomberos y Rescate de Chihuahua en la colonia Zarco, en el primer cuadro de la capital. Cubre el centro histórico y su entorno inmediato: edificación antigua de adobe y mampostería, comercio establecido y calles estrechas donde el despliegue de escalas y mangueras compite con el estacionamiento en vía pública."
 fuentes:
   - nombre: "municipiochihuahua.gob.mx"
     url: "https://www.municipiochihuahua.gob.mx/CCS/Prensa/Colecta_de_juguetes_de_Bomberos:_Una_acci%C3%B3n_de_altruismo_con_mucha_tradici%C3%B3n_en_la_ciudad"

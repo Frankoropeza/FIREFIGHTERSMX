@@ -23,6 +23,7 @@ serviciosDetalle:
   - "Combate de incendios"
   - "Rescate"
   - "Atención de emergencias"
+descripcion: "Estación del Heroico Cuerpo de Bomberos de Ciudad Juárez en el suroriente, una de las zonas de expansión reciente de la ciudad. Su cobertura son fraccionamientos de vivienda en serie construidos en las últimas décadas, con densidad alta, muros compartidos y una red vial que se satura en los accesos a la mancha urbana."
 fuentes:
   - nombre: "imip.org.mx"
     url: "https://www.imip.org.mx/imip/node/54"

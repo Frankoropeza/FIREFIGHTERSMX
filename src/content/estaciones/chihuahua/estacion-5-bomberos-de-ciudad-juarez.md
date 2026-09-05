@@ -23,6 +23,7 @@ serviciosDetalle:
   - "Combate de incendios"
   - "Rescate"
   - "Atención de emergencias"
+descripcion: "Estación del Heroico Cuerpo de Bomberos de Ciudad Juárez en el corredor de Manuel Gómez Morín, uno de los ejes de crecimiento del suroriente. Cubre fraccionamientos de vivienda en serie, plazas comerciales y vialidades de alta velocidad, en una zona que pasó de despoblada a densamente urbanizada en pocas décadas."
 fuentes:
   - nombre: "imip.org.mx"
     url: "https://www.imip.org.mx/imip/node/54"

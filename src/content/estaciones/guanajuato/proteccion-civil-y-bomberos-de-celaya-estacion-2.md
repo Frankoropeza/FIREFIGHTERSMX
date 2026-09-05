@@ -27,6 +27,7 @@ serviciosDetalle:
   - "Rescate vehicular"
   - "Atención de emergencias industriales"
   - "Primeros auxilios"
+descripcion: "Estación 2 de Protección Civil y Bomberos de Celaya, en la Ciudad Industrial. Cubre el corredor manufacturero de la ciudad —naves, bodegas y patios de maniobra del Bajío— con presencia de proceso químico y transporte pesado. Celaya es uno de los nodos logísticos del corredor industrial Querétaro-León, y esta estación es la que responde a ese perfil."
 fuentes:
   - nombre: "celaya.gob.mx"
     url: "https://www.celaya.gob.mx/ssc/proteccion-civil-y-bomberos/"

@@ -23,6 +23,7 @@ serviciosDetalle:
   - "Combate de incendios"
   - "Rescate"
   - "Atención de emergencias"
+descripcion: "Estación sobre el Eje Vial Juan Gabriel, en el poniente de Ciudad Juárez. Cubre las colonias que trepan hacia la Sierra de Juárez, con calles en pendiente, asentamientos de autoconstrucción y arroyos que bajan del cerro y se activan en las lluvias de verano. El relieve condiciona el acceso de las unidades pesadas."
 fuentes:
   - nombre: "imip.org.mx"
     url: "https://www.imip.org.mx/imip/node/54"

@@ -23,6 +23,7 @@ serviciosDetalle:
   - "Incendios"
   - "Rescate"
   - "Emergencias en el Valle de Juárez"
+descripcion: "Estación del ejido San Agustín, en el Valle de Juárez, el extremo suroriente del municipio. Es la unidad más alejada del cuerpo: territorio agrícola y semidesértico a lo largo del Río Bravo, con población dispersa y distancias de decenas de kilómetros hasta la mancha urbana. Aquí el tiempo de respuesta lo marca el camino, no el tráfico."
 fuentes:
   - nombre: "imip.org.mx"
     url: "https://www.imip.org.mx/imip/node/54"

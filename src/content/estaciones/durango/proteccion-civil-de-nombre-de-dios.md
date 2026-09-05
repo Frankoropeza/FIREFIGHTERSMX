@@ -21,6 +21,7 @@ servicios:
 serviciosDetalle:
   - "Atención de emergencias"
   - "Protección Civil"
+descripcion: "Unidad municipal de Nombre de Dios, al sur de la ciudad de Durango. Es el asentamiento español más antiguo del estado, hoy un municipio agrícola de valle regado por el río Súchil, con la cabecera concentrada y comunidades repartidas por la ribera. Incendios de pastizal en estiaje y atención de accidentes en la carretera a Zacatecas son el grueso de sus servicios."
 fuentes:
   - nombre: "proteccioncivil.durango.gob.mx"
     url: "https://proteccioncivil.durango.gob.mx/wp-content/uploads/sites/39/2023/04/DIRECTORIO-DE-COORDINADORES-MUNICIPALES-DE-P.-C.-sin-dp-2022-2025.pdf"

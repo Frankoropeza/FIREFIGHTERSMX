@@ -23,6 +23,7 @@ serviciosDetalle:
   - "Combate de incendios"
   - "Atención de emergencias"
   - "Protección Civil"
+descripcion: "Unidad municipal de Vicente Guerrero, en el sur de Durango, sobre el eje carretero hacia Zacatecas. Es un municipio pequeño y compacto, de vocación agrícola, cuya cabecera concentra a la mayoría de la población. El tránsito de la carretera federal y los incendios de pastizal en la temporada seca marcan el grueso de sus emergencias."
 fuentes:
   - nombre: "vicenteguerrero.gob.mx"
     url: "https://vicenteguerrero.gob.mx/proteccion-civil/"

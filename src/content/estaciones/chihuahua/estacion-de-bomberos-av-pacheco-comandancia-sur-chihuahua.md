@@ -23,6 +23,7 @@ serviciosDetalle:
   - "Combate de incendios"
   - "Rescate"
   - "Atención de emergencias"
+descripcion: "Estación de la avenida Pacheco, junto a la Comandancia Sur de la capital. Cubre el corredor sur de Chihuahua, un eje de vialidad primaria con comercio, servicios y vivienda que conecta el centro con la salida hacia la carretera a Delicias, sumando el rescate vehicular al servicio urbano habitual."
 fuentes:
   - nombre: "municipiochihuahua.gob.mx"
     url: "https://www.municipiochihuahua.gob.mx/CCS/Prensa/Colecta_de_juguetes_de_Bomberos:_Una_acci%C3%B3n_de_altruismo_con_mucha_tradici%C3%B3n_en_la_ciudad"

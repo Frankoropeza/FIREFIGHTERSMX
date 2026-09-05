@@ -25,6 +25,7 @@ serviciosDetalle:
   - "Combate de incendios"
   - "Atención de emergencias"
   - "Protección Civil"
+descripcion: "Unidad municipal de Guadalupe Victoria, en el valle agrícola del oriente de Durango. El municipio vive de la agricultura de riego y de la ganadería lechera, con silos, bodegas y establos alrededor de la cabecera. Es también un nodo carretero hacia Zacatecas y Coahuila, lo que aporta el rescate vehicular a su operación."
 fuentes:
   - nombre: "proteccioncivil.durango.gob.mx"
     url: "https://proteccioncivil.durango.gob.mx/wp-content/uploads/sites/39/2023/04/DIRECTORIO-DE-COORDINADORES-MUNICIPALES-DE-P.-C.-sin-dp-2022-2025.pdf"
