@@ -137,6 +137,9 @@ faq:
   - pregunta: "¿Cotizan desde Querétaro o todo pasa por la Ciudad de México?"
     respuesta: "La sucursal de Avenida Constituyentes en Santiago de Querétaro cotiza y coordina envíos por su cuenta. Ambos domicilios entregan a cualquier punto de la República."
 relacionados:
+  - titulo: "Conexiones y herrajes de Gama de México"
+    url: "/empresas/equipos-contra-incendio/queretaro/gama-de-mexico/conexiones-herrajes-contra-incendio/"
+    nota: "Acoples Storz, NST y reducciones de 2½\" a 1½\""
   - titulo: "Válvulas contra incendio de Gama de México"
     url: "/empresas/equipos-contra-incendio/queretaro/gama-de-mexico/valvulas-contra-incendio/"
     nota: "La válvula angular del gabinete y la check de la toma siamesa"

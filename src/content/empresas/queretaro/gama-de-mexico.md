@@ -142,6 +142,7 @@ vip:
       certificaciones: "UL Listed y FM Approved en modelos seleccionados"
       normas: "NFPA 13 · 14 · 20 · 24"
     - nombre: "Conexiones y herrajes de bronce"
+      pagina: "conexiones-herrajes-contra-incendio"
       subtitulo: "Acoplamiento y distribución para redes contra incendio"
       imagen: "/images/empresas/gama-de-mexico/conexiones-herrajes.avif"
       imagenAlt: "Toma siamesa FDC de dos vías, vista frontal"
