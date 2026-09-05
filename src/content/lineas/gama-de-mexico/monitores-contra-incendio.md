@@ -144,6 +144,9 @@ faq:
   - pregunta: "¿Qué documentación entregan con el monitor?"
     respuesta: "Ficha técnica del fabricante, certificado FM, UL o CE cuando el modelo lo tiene, manual de instalación y operación, y el alcance formal de la garantía del fabricante. Para licitación añaden cartas de respaldo y la documentación fiscal y legal."
 relacionados:
+  - titulo: "Válvulas contra incendio de Gama de México"
+    url: "/empresas/equipos-contra-incendio/queretaro/gama-de-mexico/valvulas-contra-incendio/"
+    nota: "La OS&Y que aísla el ramal del monitor y la check que protege la bomba"
   - titulo: "Mangueras contra incendio de Gama de México"
     url: "/empresas/equipos-contra-incendio/queretaro/gama-de-mexico/mangueras-contra-incendio/"
     nota: "Del hidrante o la bomba al monitor: ataque, succión y forestal"

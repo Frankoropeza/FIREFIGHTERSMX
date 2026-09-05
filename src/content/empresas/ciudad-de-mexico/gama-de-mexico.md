@@ -126,6 +126,7 @@ vip:
       certificaciones: "UL Listed y FM Approved disponibles por modelo"
       normas: "NFPA 13 · 14 · 24 · 1962"
     - nombre: "Válvulas contra incendio"
+      pagina: "valvulas-contra-incendio"
       subtitulo: "Control de flujo hidráulico en sistemas contra incendio"
       imagen: "/images/empresas/gama-de-mexico/valvulas.avif"
       imagenAlt: "Válvula check swing bridada de hierro dúctil"
