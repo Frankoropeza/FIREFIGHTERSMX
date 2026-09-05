@@ -139,6 +139,9 @@ faq:
   - pregunta: "¿Cotizan desde Querétaro o todo pasa por la Ciudad de México?"
     respuesta: "La sucursal de Avenida Constituyentes en Santiago de Querétaro cotiza y coordina envíos por su cuenta. Ambos domicilios entregan a cualquier punto de la República."
 relacionados:
+  - titulo: "Gabinetes e hidrantes de Gama de México"
+    url: "/empresas/equipos-contra-incendio/queretaro/gama-de-mexico/gabinetes-hidrantes-contra-incendio/"
+    nota: "La válvula a 300 PSI del gabinete y el hidrante de columna húmeda o seca"
   - titulo: "Conexiones y herrajes de Gama de México"
     url: "/empresas/equipos-contra-incendio/queretaro/gama-de-mexico/conexiones-herrajes-contra-incendio/"
     nota: "La toma siamesa FDC que va detrás de la check"

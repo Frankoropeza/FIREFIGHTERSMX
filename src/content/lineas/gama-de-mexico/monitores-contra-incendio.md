@@ -144,6 +144,9 @@ faq:
   - pregunta: "¿Qué documentación entregan con el monitor?"
     respuesta: "Ficha técnica del fabricante, certificado FM, UL o CE cuando el modelo lo tiene, manual de instalación y operación, y el alcance formal de la garantía del fabricante. Para licitación añaden cartas de respaldo y la documentación fiscal y legal."
 relacionados:
+  - titulo: "Gabinetes e hidrantes de Gama de México"
+    url: "/empresas/equipos-contra-incendio/queretaro/gama-de-mexico/gabinetes-hidrantes-contra-incendio/"
+    nota: "El hidrante exterior que alimenta la red del monitor"
   - titulo: "Conexiones y herrajes de Gama de México"
     url: "/empresas/equipos-contra-incendio/queretaro/gama-de-mexico/conexiones-herrajes-contra-incendio/"
     nota: "Adaptadores y reducciones para conectar el monitor a la red"

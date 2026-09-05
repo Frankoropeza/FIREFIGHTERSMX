@@ -160,6 +160,7 @@ vip:
       certificaciones: "UL Listed y FM Approved por modelo"
       normas: "NFPA 13 · 14 · 24"
     - nombre: "Gabinetes e hidrantes"
+      pagina: "gabinetes-hidrantes-contra-incendio"
       subtitulo: "Almacenamiento y toma de agua para edificios e industria"
       imagen: "/images/empresas/gama-de-mexico/gabinetes-hidrantes.avif"
       imagenAlt: "Gabinete contra incendio con manguera, vista frontal"
