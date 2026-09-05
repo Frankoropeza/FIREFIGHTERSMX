@@ -2,13 +2,16 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import { SITE, whatsappUrl } from '@config/site';
+import { totalEstaciones } from '@lib/estaciones';
+
+const totalFichas = await totalEstaciones();
 
 const canonicalURL = `${SITE.url}/nosotros/`;
 
 const seoMeta = {
   title: `Sobre FIREFIGHTERS MX — Equipo para Bomberos`,
   description:
-    'Conoce FIREFIGHTERS MX: 15+ años equipando bomberos, industria y protección civil. 500+ estaciones, distribuidor autorizado y cobertura en los 32 estados.',
+    `Conoce FIREFIGHTERS MX: equipo certificado NFPA y NOM para bomberos, industria y protección civil, y el directorio nacional con ${totalFichas} estaciones documentadas en los 32 estados.`,
   canonicalURL,
 };
 
@@ -24,7 +27,7 @@ const breadcrumbSchema = {
 
 const figures = [
   { value: '15+', label: 'Años de especialización', text: 'Una década y media enfocados en el sector bomberos, industria y protección civil.' },
-  { value: '500+', label: 'Estaciones equipadas', text: 'Desde cuerpos municipales hasta brigadas de PEMEX y CFE.' },
+  { value: String(totalFichas), label: 'Estaciones documentadas', text: 'Fichas del directorio nacional, cada una con fuente institucional y fecha de verificación.' },
   { value: '32', label: 'Estados con cobertura', text: 'Logística y servicio en sitio en toda la República Mexicana.' },
   { value: '100%', label: 'Equipo certificado', text: 'Todo cumple NFPA, NOM-002-STPS y normativa vigente.' },
 ];
@@ -95,9 +98,10 @@ const razones = [
             autorizados de las marcas más confiables del mundo.
           </p>
           <p class="text-sm leading-[1.9] mb-6" style="color:#64748B">
-            En ese camino hemos equipado a más de 500 estaciones, desde cuerpos municipales con
-            presupuesto ajustado hasta brigadas de PEMEX y CFE — siempre con la misma exigencia
-            de norma, calidad y documentación auditable.
+            A ese trabajo se suma el directorio nacional: {totalFichas} estaciones de bomberos
+            documentadas en los 32 estados, cada ficha con su fuente institucional y su fecha de
+            verificación. La misma exigencia de norma, trazabilidad y documentación auditable que
+            aplicamos al equipo, aplicada a la información.
           </p>
           <div class="flex flex-wrap gap-2">
             {['NFPA','ISO 9001','NOM-002-STPS','UL Listed','STPS'].map(n => (
@@ -133,7 +137,7 @@ const razones = [
     <div class="container-site">
       <div class="flex items-center gap-4 mb-8">
         <span class="w-8 h-px" style="background:#F75000"></span>
-        <span class="text-xs font-display font-semibold uppercase tracking-[0.18em]" style="color:#F75000">15 años, miles de vidas protegidas</span>
+        <span class="text-xs font-display font-semibold uppercase tracking-[0.18em]" style="color:#F75000">Equipo certificado en operación</span>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-2 lg:gap-3">
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">

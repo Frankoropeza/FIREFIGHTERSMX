@@ -2,13 +2,16 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import { SITE, whatsappUrl } from '@config/site';
+import { totalEstaciones } from '@lib/estaciones';
+
+const totalFichas = await totalEstaciones();
 
 const canonicalURL = `${SITE.url}/empresa/`;
 
 const seoMeta = {
   title: `La Empresa — FIREFIGHTERS MX, Equipo Certificado para Bomberos`,
   description:
-    'Conoce FIREFIGHTERS MX: 15+ años equipando bomberos, industria y protección civil en México. Marcas certificadas NFPA y NOM-002, cobertura en los 32 estados.',
+    'Conoce FIREFIGHTERS MX: equipo certificado NFPA y NOM-002 para bomberos, industria y protección civil, con cobertura en los 32 estados de México.',
   canonicalURL,
 };
 
@@ -18,7 +21,7 @@ const sections = [
     title: 'Nosotros',
     tag: 'Quiénes somos',
     href: '/nosotros',
-    desc: 'Historia, misión y el equipo detrás de más de 500 estaciones equipadas en el país.',
+    desc: 'Historia, misión y los criterios con los que seleccionamos el equipo que distribuimos.',
     accent: '#F75000',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
   },
@@ -67,7 +70,7 @@ const sections = [
 /* ─── Cifras de la empresa ─────────────────────────────────── */
 const figures = [
   { value: '15+', label: 'Años de especialización', text: 'Una década y media enfocados en el sector bomberos, industria y protección civil.' },
-  { value: '500+', label: 'Estaciones equipadas', text: 'Desde cuerpos municipales hasta brigadas de PEMEX y CFE.' },
+  { value: String(totalFichas), label: 'Estaciones documentadas', text: 'Fichas del directorio nacional, cada una con fuente institucional y fecha de verificación.' },
   { value: '32', label: 'Estados con cobertura', text: 'Logística y servicio en sitio en toda la República Mexicana.' },
   { value: '100%', label: 'Equipo certificado', text: 'Todo cumple NFPA, NOM-002-STPS y normativa vigente.' },
 ];

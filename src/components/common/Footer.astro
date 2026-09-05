@@ -1,5 +1,5 @@
 ---
-import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl } from '@config/site';
+import { SITE, CONTACTO_DIRECTO_ACTIVO, DOMICILIO_VERIFICADO, REDES_VERIFICADAS, whatsappUrl } from '@config/site';
 const year = new Date().getFullYear();
 ---
 
@@ -105,7 +105,7 @@ const year = new Date().getFullYear();
           </svg>
           {SITE.hours}
         </span>
-        <a href={`https://maps.google.com/?q=${encodeURIComponent(SITE.address.full)}`}
+        {DOMICILIO_VERIFICADO && <a href={`https://maps.google.com/?q=${encodeURIComponent(SITE.address.full)}`}
            target="_blank" rel="noopener"
            class="flex items-start gap-2.5 hover:text-[var(--ember-400)]">
           <svg class="w-4 h-4 shrink-0 mt-0.5 text-[var(--ember-500)]" fill="none" viewBox="0 0 24 24"
@@ -115,12 +115,12 @@ const year = new Date().getFullYear();
             <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
           </svg>
           <span>{SITE.address.full}</span>
-        </a>
+        </a>}
       </div>
 
-      <!-- Redes sociales -->
+      <!-- Redes sociales (sólo si están verificadas) -->
       <div class="flex items-center gap-2">
-        {[
+        {REDES_VERIFICADAS && [
           { href: SITE.social.facebook,  label: 'Facebook',  icon: '<path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>' },
           { href: SITE.social.instagram, label: 'Instagram', icon: '<rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>' },
           { href: SITE.social.linkedin,  label: 'LinkedIn',  icon: '<path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>' },

@@ -1,5 +1,5 @@
 ---
-import { SITE, CONTACTO_DIRECTO_ACTIVO } from '@config/site';
+import { SITE, CONTACTO_DIRECTO_ACTIVO, DOMICILIO_VERIFICADO, REDES_VERIFICADAS } from '@config/site';
 export interface Props {
   title: string;
   description: string;
@@ -60,13 +60,18 @@ const orgSchema = {
     height: 512,
   },
   email: SITE.email,
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: SITE.address.street,
-    addressLocality: `${SITE.address.colonia}, ${SITE.address.delegacion}`,
-    postalCode: SITE.address.postalCode,
-    addressCountry: SITE.address.country,
-  },
+  // Sin domicilio verificado no se emite `address` (regla: cero NAP fabricado)
+  ...(DOMICILIO_VERIFICADO
+    ? {
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: SITE.address.street,
+          addressLocality: `${SITE.address.colonia}, ${SITE.address.delegacion}`,
+          postalCode: SITE.address.postalCode,
+          addressCountry: SITE.address.country,
+        },
+      }
+    : {}),
   contactPoint: {
     '@type': 'ContactPoint',
     ...(CONTACTO_DIRECTO_ACTIVO ? { telephone: SITE.phoneE164 } : {}),
@@ -75,12 +80,17 @@ const orgSchema = {
     areaServed: 'MX',
     availableLanguage: 'Spanish',
   },
-  sameAs: [
-    SITE.social.facebook,
-    SITE.social.instagram,
-    SITE.social.linkedin,
-    SITE.social.youtube,
-  ],
+  // Sin redes verificadas no se emite `sameAs` (apuntaba a 5 perfiles inexistentes)
+  ...(REDES_VERIFICADAS
+    ? {
+        sameAs: [
+          SITE.social.facebook,
+          SITE.social.instagram,
+          SITE.social.linkedin,
+          SITE.social.youtube,
+        ].filter(Boolean),
+      }
+    : {}),
 };
 ---
 

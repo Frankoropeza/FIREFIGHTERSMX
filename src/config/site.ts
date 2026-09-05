@@ -13,21 +13,30 @@ export const SITE = {
   email:       'firefightersmx50@gmail.com',
   whatsapp:    '',
   hours:       'Lun–Vie 8am–6pm · Sáb 9am–2pm',
+  // ⚠️ DOMICILIO SIN VERIFICAR — ver DOMICILIO_VERIFICADO abajo.
+  // El valor anterior ('Torre A, Av. Baja California 255, Colonia Condesa,
+  // Cuauhtémoc, 06170') era el placeholder del template: la calle existe, pero
+  // corresponde a Col. Hipódromo C.P. 06100, no a Condesa 06170. Se vacía para
+  // no publicar NAP fabricado (regla dura OrigenLab: cero contenido fabricado).
   address: {
-    street:   'Torre A, Av. Baja California 255',
-    colonia:  'Colonia Condesa',
-    delegacion: 'Cuauhtémoc',
-    postalCode: '06170',
+    street:   '',
+    colonia:  '',
+    delegacion: '',
+    postalCode: '',
     city:     'Ciudad de México',
     country:  'MX',
-    full:     'Torre A, Av. Baja California 255, Colonia Condesa, Cuauhtémoc, 06170, CDMX',
+    full:     '',
   },
+  // ⚠️ REDES SIN VERIFICAR — ver REDES_VERIFICADAS abajo.
+  // Verificación 2026-09-05: LinkedIn, YouTube y X responden 404; Facebook e
+  // Instagram renderizan "contenido/perfil no disponible". Ninguno de los cinco
+  // existe. Se vacían para no emitir `sameAs` hacia URLs muertas.
   social: {
-    facebook:  'https://facebook.com/firefightersmx',
-    instagram: 'https://instagram.com/firefightersmx',
-    linkedin:  'https://linkedin.com/company/firefightersmx',
-    youtube:   'https://youtube.com/@firefightersmx',
-    twitter:   '@firefightersmx',
+    facebook:  '',
+    instagram: '',
+    linkedin:  '',
+    youtube:   '',
+    twitter:   '',
   },
   yearsInMarket: 15,
   locale: 'es-MX',
@@ -46,6 +55,22 @@ export const SITE = {
  * (Mismo patrón ya probado en FIESTAENCASA.)
  */
 export const CONTACTO_DIRECTO_ACTIVO = false;
+
+/**
+ * ⚠️ INTERRUPTOR DE DOMICILIO
+ * En `false` el sitio NO publica domicilio: ni en el footer, ni en /contacto,
+ * ni en `address` del JSON-LD (Organization y LocalBusiness).
+ * Para activarlo: llenar `SITE.address` con el domicilio real y poner `true`.
+ */
+export const DOMICILIO_VERIFICADO = false;
+
+/**
+ * ⚠️ INTERRUPTOR DE REDES SOCIALES
+ * En `false` el sitio NO publica perfiles sociales: ni iconos en el footer, ni
+ * `sameAs` en el JSON-LD. Para activarlo: llenar `SITE.social` con los perfiles
+ * que existan y poner `true`. `sameAs` filtra los vacíos aunque esté en `true`.
+ */
+export const REDES_VERIFICADAS = false;
 
 /** Etiqueta del CTA principal de contacto */
 export const CTA_CONTACTO = CONTACTO_DIRECTO_ACTIVO

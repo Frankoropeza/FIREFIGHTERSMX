@@ -14,7 +14,7 @@ import NormsTable from '@components/home/NormsTable.astro';
 import BlogTeasers from '@components/home/BlogTeasers.astro';
 import DirFAQ from '@components/home/directorio/DirFAQ.astro';
 import DirCTA from '@components/home/directorio/DirCTA.astro';
-import { SITE, CONTACTO_DIRECTO_ACTIVO } from '@config/site';
+import { SITE, CONTACTO_DIRECTO_ACTIVO, DOMICILIO_VERIFICADO } from '@config/site';
 import { directorioFaqs } from '@data/faqs';
 import { giros } from '@data/giros';
 
@@ -44,7 +44,7 @@ const organizationSchema = {
   email: SITE.email,
   image: `${SITE.url}/images/og-default.jpg`,
   areaServed: { '@type': 'Country', name: 'México' },
-  address: { '@type': 'PostalAddress', streetAddress: SITE.address.street, addressLocality: `${SITE.address.colonia}, ${SITE.address.delegacion}`, postalCode: SITE.address.postalCode, addressCountry: SITE.address.country },
+  ...(DOMICILIO_VERIFICADO ? { address: { '@type': 'PostalAddress', streetAddress: SITE.address.street, addressLocality: `${SITE.address.colonia}, ${SITE.address.delegacion}`, postalCode: SITE.address.postalCode, addressCountry: SITE.address.country } } : {}),
   knowsAbout: ['Equipo para bomberos', 'Extintores NOM-154', 'Sistemas contra incendio NFPA 13', 'Detección NFPA 72', 'Capacitación de brigadas NOM-002-STPS', 'NFPA 1970', 'NFPA 1990', 'Licitaciones de equipo contra incendio'],
 };
 const webSiteSchema = {
