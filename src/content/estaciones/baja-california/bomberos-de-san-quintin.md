@@ -20,7 +20,7 @@ serviciosDetalle:
   - "Combate de incendios"
   - "Atención a valle agrícola"
   - "Rescate en carretera"
-descripcion: "Estación de bomberos en San Quintín, históricamente operada por el cuerpo de Ensenada; San Quintín se constituyó como municipio de Baja California en 2020."
+descripcion: "Corporación de San Quintín, en la costa del Pacífico al sur de Ensenada. El territorio fue durante décadas parte del municipio de Ensenada y su servicio de bomberos dependía de aquel cuerpo; San Quintín se constituyó como municipio propio en 2020. Es una zona agrícola de riego intensivo, con jornaleros, invernaderos, empacadoras y una franja costera extensa, servida por la carretera Transpeninsular."
 fuentes:
   - nombre: "transparencia.ensenada.gob.mx"
     url: "http://transparencia.ensenada.gob.mx/doc/file283s21d88.pdf"

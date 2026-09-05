@@ -9,7 +9,8 @@ municipio: "Tijuana"
 tipo: "Municipal"
 corporacion: "Heroico Cuerpo de Bomberos de Tijuana"
 corporacionSlug: "heroico-cuerpo-de-bomberos-de-tijuana"
-rolEstacion: "unica"
+numeroEstacion: "Estación Central"
+rolEstacion: "central"
 direccion: "Av. Alberto Aldrete (esq. Madero) #8298, Zona Norte, C.P. 22010, Tijuana"
 coordenadas:
   lat: 32.5394038

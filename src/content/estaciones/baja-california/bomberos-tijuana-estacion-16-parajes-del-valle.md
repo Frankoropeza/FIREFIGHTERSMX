@@ -7,8 +7,8 @@ estadoNombre: "Baja California"
 ciudad: "Tijuana"
 municipio: "Tijuana"
 tipo: "Municipal"
-corporacion: "Bomberos Tijuana"
-corporacionSlug: "bomberos-tijuana"
+corporacion: "Heroico Cuerpo de Bomberos de Tijuana"
+corporacionSlug: "heroico-cuerpo-de-bomberos-de-tijuana"
 rolEstacion: "subestacion"
 numeroEstacion: "Estación 16 (Parajes del Valle)"
 direccion: "Calle Valle de los Encinos S/N, Fracc. Parajes del Valle, Tijuana"
@@ -22,6 +22,7 @@ servicios:
 serviciosDetalle:
   - "Combate de incendios"
   - "Atención de emergencias"
+descripcion: "Estación del fraccionamiento Parajes del Valle, en el oriente de Tijuana. Forma parte del arco de desarrollos habitacionales que crecieron sobre el valle en dirección a Tecate, con vivienda en serie, densidad alta y una red vial que se satura en los accesos. Es un sector joven de la ciudad, con equipamiento de emergencia todavía en construcción."
 fuentes:
   - nombre: "bomberos.tijuana.gob.mx"
     url: "https://bomberos.tijuana.gob.mx/central.aspx"

@@ -25,7 +25,7 @@ serviciosDetalle:
   - "Rescate"
   - "Protección Civil"
   - "Atención en corredor costero"
-descripcion: "Estación Central de la Dirección de Bomberos del municipio de Playas de Rosarito, quinto municipio de Baja California (creado en 1995)."
+descripcion: "Estación Central de la Dirección de Bomberos de Playas de Rosarito, quinto municipio de Baja California, creado en 1995. El municipio es una franja costera estrecha entre Tijuana y Ensenada, con una economía de turismo de playa, hospedaje y segunda residencia que multiplica la población en fines de semana y periodos vacacionales, y con la carretera escénica como eje de acceso."
 fuentes:
   - nombre: "rosarito.gob.mx"
     url: "https://www.rosarito.gob.mx/directorio/"

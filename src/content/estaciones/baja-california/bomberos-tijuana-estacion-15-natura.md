@@ -7,8 +7,8 @@ estadoNombre: "Baja California"
 ciudad: "Tijuana"
 municipio: "Tijuana"
 tipo: "Municipal"
-corporacion: "Bomberos Tijuana"
-corporacionSlug: "bomberos-tijuana"
+corporacion: "Heroico Cuerpo de Bomberos de Tijuana"
+corporacionSlug: "heroico-cuerpo-de-bomberos-de-tijuana"
 rolEstacion: "subestacion"
 numeroEstacion: "Estación 15 (Natura)"
 direccion: "Blvd. Natura y Calle Bosques Azules S/N, Fracc. Natura, Tijuana"
@@ -21,6 +21,7 @@ servicios:
 serviciosDetalle:
   - "Combate de incendios"
   - "Atención de emergencias"
+descripcion: "Estación del desarrollo Natura, en el oriente de Tijuana. Cubre una zona de urbanización reciente sobre lomerío, con conjuntos habitacionales, comercio de servicio y superficie de monte todavía sin edificar en sus bordes. Esa franja de contacto entre vivienda y maleza es la que concentra el riesgo de incendio durante la temporada seca."
 fuentes:
   - nombre: "bomberos.tijuana.gob.mx"
     url: "https://bomberos.tijuana.gob.mx/central.aspx"

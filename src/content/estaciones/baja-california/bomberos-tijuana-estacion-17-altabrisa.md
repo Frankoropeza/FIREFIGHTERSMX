@@ -7,8 +7,8 @@ estadoNombre: "Baja California"
 ciudad: "Tijuana"
 municipio: "Tijuana"
 tipo: "Municipal"
-corporacion: "Bomberos Tijuana"
-corporacionSlug: "bomberos-tijuana"
+corporacion: "Heroico Cuerpo de Bomberos de Tijuana"
+corporacionSlug: "heroico-cuerpo-de-bomberos-de-tijuana"
 rolEstacion: "subestacion"
 numeroEstacion: "Estación 17 (Altabrisa)"
 direccion: "Calle Tomás Aquino y Damián Carmona S/N, Fracc. Altabrisa, Tijuana"
@@ -22,6 +22,7 @@ servicios:
 serviciosDetalle:
   - "Combate de incendios"
   - "Atención de emergencias"
+descripcion: "Estación del sector Altabrisa, en el corredor de Tomás Aquino, en Tijuana. Su cobertura mezcla vivienda, comercio y actividad industrial ligera sobre uno de los ejes viales que conectan el oriente con la Mesa de Otay, lo que suma el rescate vehicular a los incendios estructurales que atiende de forma habitual."
 fuentes:
   - nombre: "bomberos.tijuana.gob.mx"
     url: "https://bomberos.tijuana.gob.mx/central.aspx"

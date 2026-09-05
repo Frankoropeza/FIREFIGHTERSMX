@@ -24,7 +24,7 @@ serviciosDetalle:
   - "Salvamento y extinción de incendios de aeronaves (ARFF)"
   - "Rescate"
   - "Respuesta a emergencias aeroportuarias"
-descripcion: "Cuerpo de Rescate y Extinción de Incendios del Aeropuerto Internacional de Tijuana, con base propia inaugurada en 2021 y flota de vehículos ARFF."
+descripcion: "Cuerpo de rescate y extinción de incendios del Aeropuerto Internacional General Abelardo L. Rodríguez, en la Mesa de Otay, con base propia inaugurada en 2021 y flota de vehículos ARFF. Es una unidad aeroportuaria, no municipal: responde en pistas, plataformas y aeronaves de un aeropuerto que opera pegado a la línea fronteriza y conectado por puente peatonal con San Diego."
 fuentes:
   - nombre: "aeropuertosgap.com.mx"
     url: "https://www.aeropuertosgap.com.mx/es/comunicados-generales/2021-inaguracion-nueva-base-del-crei.html"

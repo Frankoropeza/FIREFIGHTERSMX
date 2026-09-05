@@ -7,8 +7,8 @@ estadoNombre: "Baja California"
 ciudad: "Tijuana"
 municipio: "Tijuana"
 tipo: "Municipal"
-corporacion: "Bomberos Tijuana"
-corporacionSlug: "bomberos-tijuana"
+corporacion: "Heroico Cuerpo de Bomberos de Tijuana"
+corporacionSlug: "heroico-cuerpo-de-bomberos-de-tijuana"
 rolEstacion: "subestacion"
 numeroEstacion: "Estación 5 (Sánchez Taboada)"
 direccion: "Blvd. Sánchez Taboada S/N, Col. Sánchez Taboada, Tijuana"
@@ -22,6 +22,7 @@ servicios:
 serviciosDetalle:
   - "Combate de incendios"
   - "Atención de emergencias"
+descripcion: "Estación de la delegación Sánchez Taboada, una de las más pobladas de Tijuana. La colonia se desarrolló sobre cañadas y laderas, con vivienda escalonada, escaleras en lugar de calles en varios tramos y suelo susceptible a deslizamientos en temporada de lluvias. Ese relieve, más que la distancia, es lo que define la dificultad de sus intervenciones."
 fuentes:
   - nombre: "bomberos.tijuana.gob.mx"
     url: "https://bomberos.tijuana.gob.mx/central.aspx"

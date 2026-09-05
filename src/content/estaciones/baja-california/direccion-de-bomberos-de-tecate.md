@@ -23,7 +23,7 @@ serviciosDetalle:
   - "Rescate"
   - "Atención en carretera (La Rumorosa)"
   - "Protección Civil"
-descripcion: "Dirección municipal de Bomberos y Protección Civil de Tecate, responsable de la atención de emergencias en el municipio fronterizo."
+descripcion: "Dirección municipal de Bomberos y Protección Civil de Tecate, en la frontera con California. El municipio combina una cabecera industrial y cervecera con un territorio rural extenso de sierra y matorral, que incluye la zona de La Rumorosa y su tramo carretero de descenso. Incendios forestales en estiaje y accidentes en carretera de montaña marcan su operación."
 fuentes:
   - nombre: "proteccioncivilbc.gob.mx"
     url: "http://www.proteccioncivilbc.gob.mx/Atras/Tecate.html"

@@ -7,8 +7,8 @@ estadoNombre: "Baja California"
 ciudad: "Tijuana"
 municipio: "Tijuana"
 tipo: "Municipal"
-corporacion: "Bomberos Tijuana"
-corporacionSlug: "bomberos-tijuana"
+corporacion: "Heroico Cuerpo de Bomberos de Tijuana"
+corporacionSlug: "heroico-cuerpo-de-bomberos-de-tijuana"
 rolEstacion: "subestacion"
 numeroEstacion: "Estación 7 (El Cortez)"
 direccion: "Calle Veracruz y Mexiquito S/N, Fracc. el Cortez, Tijuana"
@@ -22,6 +22,7 @@ servicios:
 serviciosDetalle:
   - "Combate de incendios"
   - "Atención de emergencias"
+descripcion: "Estación del sector El Cortez, en el oriente de Tijuana. Atiende un área de vivienda consolidada y comercio de barrio sobre lomerío, con vialidades secundarias angostas y crecimiento continuo hacia las cañadas circundantes. Comparte con el resto de la ciudad la estacionalidad marcada: incendios de maleza en verano y emergencias por escurrimientos en invierno."
 fuentes:
   - nombre: "bomberos.tijuana.gob.mx"
     url: "https://bomberos.tijuana.gob.mx/central.aspx"

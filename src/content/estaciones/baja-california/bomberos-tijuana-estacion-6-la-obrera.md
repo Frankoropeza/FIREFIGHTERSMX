@@ -7,8 +7,8 @@ estadoNombre: "Baja California"
 ciudad: "Tijuana"
 municipio: "Tijuana"
 tipo: "Municipal"
-corporacion: "Bomberos Tijuana"
-corporacionSlug: "bomberos-tijuana"
+corporacion: "Heroico Cuerpo de Bomberos de Tijuana"
+corporacionSlug: "heroico-cuerpo-de-bomberos-de-tijuana"
 rolEstacion: "subestacion"
 numeroEstacion: "Estación 6 (La Obrera)"
 direccion: "Av. Centenario y Francisco Hernández S/N, Col. La Obrera 2da. Secc., Tijuana"
@@ -22,6 +22,7 @@ servicios:
 serviciosDetalle:
   - "Combate de incendios"
   - "Atención de emergencias"
+descripcion: "Estación de la colonia Obrera, en la franja central-oriente de Tijuana. Cubre un tejido urbano consolidado de vivienda popular densa, talleres y comercio de barrio en la misma manzana, donde el incendio estructural y la fuga de gas LP domiciliario son el servicio habitual. Su ubicación céntrica le permite reforzar a las estaciones vecinas."
 fuentes:
   - nombre: "bomberos.tijuana.gob.mx"
     url: "https://bomberos.tijuana.gob.mx/central.aspx"

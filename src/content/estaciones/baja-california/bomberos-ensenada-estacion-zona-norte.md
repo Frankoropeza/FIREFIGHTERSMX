@@ -7,8 +7,8 @@ estadoNombre: "Baja California"
 ciudad: "Ensenada"
 municipio: "Ensenada"
 tipo: "Municipal"
-corporacion: "Bomberos Ensenada"
-corporacionSlug: "bomberos-ensenada"
+corporacion: "Heroico Cuerpo de Bomberos de Ensenada"
+corporacionSlug: "heroico-cuerpo-de-bomberos-de-ensenada"
 rolEstacion: "subestacion"
 numeroEstacion: "Estación Zona Norte"
 coordenadas:
@@ -20,7 +20,7 @@ servicios:
 serviciosDetalle:
   - "Combate de incendios"
   - "Atención de emergencias"
-descripcion: "Estación de la región operativa del Heroico Cuerpo de Bomberos y Protección Civil de Ensenada."
+descripcion: "Estación del Heroico Cuerpo de Bomberos de Ensenada en la zona norte del municipio. Cubre el acceso de la ciudad desde la carretera escénica a Tijuana y las colonias que se extienden a lo largo de ella, un frente donde se combinan el tránsito carretero, la actividad portuaria y turística de la bahía y la vivienda popular en ladera."
 fuentes:
   - nombre: "transparencia.ensenada.gob.mx"
     url: "http://transparencia.ensenada.gob.mx/doc/file283s21d88.pdf"

@@ -7,8 +7,8 @@ estadoNombre: "Baja California"
 ciudad: "Tijuana"
 municipio: "Tijuana"
 tipo: "Municipal"
-corporacion: "Bomberos Tijuana"
-corporacionSlug: "bomberos-tijuana"
+corporacion: "Heroico Cuerpo de Bomberos de Tijuana"
+corporacionSlug: "heroico-cuerpo-de-bomberos-de-tijuana"
 rolEstacion: "subestacion"
 numeroEstacion: "Estación 11 (Tierra y Libertad)"
 direccion: "Calle Baylón Chacón y Av. Santa Rosalía S/N, Col. Tierra y Libertad, Tijuana"
@@ -22,6 +22,7 @@ servicios:
 serviciosDetalle:
   - "Combate de incendios"
   - "Atención de emergencias"
+descripcion: "Estación de la colonia Tierra y Libertad, en el oriente de Tijuana. Es una zona de vivienda popular densa desarrollada sobre lomerío, con traza irregular, calles estrechas y crecimiento sostenido hacia las cañadas. Incendios domésticos, fugas de gas LP y atención prehospitalaria concentran la mayor parte de sus servicios."
 fuentes:
   - nombre: "bomberos.tijuana.gob.mx"
     url: "https://bomberos.tijuana.gob.mx/central.aspx"

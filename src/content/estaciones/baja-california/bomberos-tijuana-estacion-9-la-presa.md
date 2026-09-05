@@ -7,8 +7,8 @@ estadoNombre: "Baja California"
 ciudad: "Tijuana"
 municipio: "Tijuana"
 tipo: "Municipal"
-corporacion: "Bomberos Tijuana"
-corporacionSlug: "bomberos-tijuana"
+corporacion: "Heroico Cuerpo de Bomberos de Tijuana"
+corporacionSlug: "heroico-cuerpo-de-bomberos-de-tijuana"
 rolEstacion: "subestacion"
 numeroEstacion: "Estación 9 (La Presa)"
 direccion: "Carr. Libre a Tecate S/N, Col. La Presa, Tijuana"
@@ -22,6 +22,7 @@ servicios:
 serviciosDetalle:
   - "Combate de incendios"
   - "Atención de emergencias"
+descripcion: "Estación de la delegación La Presa, en el extremo oriente de Tijuana, junto al vaso de la presa Abelardo L. Rodríguez. Es una zona de periferia extensa, con vivienda dispersa, terreno abrupto y arroyos que descargan hacia la presa. La distancia al centro urbano y el estado de los caminos pesan directamente en su tiempo de respuesta."
 fuentes:
   - nombre: "bomberos.tijuana.gob.mx"
     url: "https://bomberos.tijuana.gob.mx/central.aspx"

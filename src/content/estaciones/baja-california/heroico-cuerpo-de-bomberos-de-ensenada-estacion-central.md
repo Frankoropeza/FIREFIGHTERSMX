@@ -9,7 +9,8 @@ municipio: "Ensenada"
 tipo: "Municipal"
 corporacion: "Heroico Cuerpo de Bomberos de Ensenada"
 corporacionSlug: "heroico-cuerpo-de-bomberos-de-ensenada"
-rolEstacion: "unica"
+numeroEstacion: "Estación Central"
+rolEstacion: "central"
 direccion: "Calle Novena (Calle 9) S/N, Zona Centro, Ensenada"
 coordenadas:
   lat: 31.8667
@@ -27,7 +28,7 @@ serviciosDetalle:
   - "Inspecciones de prevención"
   - "Protección Civil"
 fundacion: 1946
-descripcion: "Estación Central de la Dirección de Bomberos y Protección Civil de Ensenada, en servicio desde 1946; coordina las estaciones de la región operativa del municipio más extenso del estado."
+descripcion: "Estación Central del Heroico Cuerpo de Bomberos de Ensenada, en servicio desde 1946. Coordina las estaciones del municipio más extenso del país, un territorio que va del frente costero y el puerto hasta la sierra y el desierto interior, con poblados a horas de distancia de la cabecera. Esa escala, más que la densidad urbana, define su operación."
 fuentes:
   - nombre: "transparencia.ensenada.gob.mx"
     url: "http://transparencia.ensenada.gob.mx/doc/file283s21d88.pdf"

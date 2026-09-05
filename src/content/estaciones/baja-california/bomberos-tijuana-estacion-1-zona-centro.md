@@ -7,8 +7,8 @@ estadoNombre: "Baja California"
 ciudad: "Tijuana"
 municipio: "Tijuana"
 tipo: "Municipal"
-corporacion: "Bomberos Tijuana"
-corporacionSlug: "bomberos-tijuana"
+corporacion: "Heroico Cuerpo de Bomberos de Tijuana"
+corporacionSlug: "heroico-cuerpo-de-bomberos-de-tijuana"
 rolEstacion: "subestacion"
 numeroEstacion: "Estación 1 (Zona Centro)"
 direccion: "Calle Emiliano Zapata y Av. 5 de Mayo #7560, Zona Centro, Tijuana"
@@ -22,6 +22,7 @@ servicios:
 serviciosDetalle:
   - "Combate de incendios"
   - "Atención de emergencias"
+descripcion: "Estación del Heroico Cuerpo de Bomberos de Tijuana en la Zona Centro, el casco urbano más antiguo de la ciudad. Cubre la Avenida Revolución y el corredor turístico, con edificios de comercio y hospedaje de varias décadas, calles estrechas y densidad continua de negocios. Está a unos minutos de la garita de San Ysidro, el cruce fronterizo terrestre de mayor tráfico del continente."
 fuentes:
   - nombre: "bomberos.tijuana.gob.mx"
     url: "https://bomberos.tijuana.gob.mx/central.aspx"
