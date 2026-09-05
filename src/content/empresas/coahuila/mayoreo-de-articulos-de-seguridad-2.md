@@ -16,11 +16,14 @@ claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "0 a 5 personas"
 telefono: "8117612026"
 email: "lilian@mayoreoenlinea.com.mx"
+sitioWeb: "https://mayoreodearticulosdeseguridad.mx/"
+redes: { instagram: "https://www.instagram.com/mayoreoarticulosdeseguridad", linkedin: "https://mx.linkedin.com/company/mayoreo-de-articulos-de-seguridad" }
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=226456" }
+  - { nombre: "mayoreodearticulosdeseguridad.mx — quiénes somos y domicilio", url: "https://mayoreodearticulosdeseguridad.mx/nosotros/" }
 denueId: "226456"
 verificadoEl: "2026-09"
-confianza: "baja"
+confianza: "media"
 plan: "basico"
 activa: true
 ---

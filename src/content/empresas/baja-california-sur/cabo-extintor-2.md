@@ -15,11 +15,14 @@ especialidades: ["venta-de-extintores"]
 claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "6 a 10 personas"
 email: "caboextintor624@hotmail.com"
+telefono: "6241303896"
+sitioWeb: "https://www.caboextintor.com.mx/"
+redes: { facebook: "https://www.facebook.com/CaboExtintor624/" }
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=183411" }
 denueId: "183411"
 verificadoEl: "2026-09"
-confianza: "baja"
+confianza: "media"
 plan: "basico"
 activa: true
 ---

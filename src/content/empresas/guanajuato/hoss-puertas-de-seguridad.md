@@ -15,11 +15,14 @@ especialidades: []
 claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "0 a 5 personas"
 email: "auxiliarhossleon@gmail.com"
+telefono: "8140473423"
+sitioWeb: "https://puertas-de-seguridad-hoss.myshopify.com/"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=11286970" }
+  - { nombre: "Puertas de Seguridad HOSS — directorio de sucursales", url: "https://puertas-de-seguridad-hoss.myshopify.com/pages/sucursales" }
 denueId: "11286970"
 verificadoEl: "2026-09"
-confianza: "baja"
+confianza: "media"
 plan: "basico"
 activa: true
 ---
