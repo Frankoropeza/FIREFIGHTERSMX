@@ -11,7 +11,12 @@
  * 02 - Directorio / Dimensionamiento del DENUE).
  */
 
-export type GiroKey = 'venta-equipo' | 'extintores' | 'sistemas-ci' | 'capacitacion';
+export type GiroKey =
+  | 'venta-equipo'
+  | 'equipos-contra-incendio'
+  | 'extintores'
+  | 'sistemas-ci'
+  | 'capacitacion';
 
 export interface Giro {
   slug: GiroKey;
@@ -72,6 +77,33 @@ export const giros: Giro[] = [
     },
     categoriasRelacionadas: ['trajes-bombero', 'cascos-nfpa', 'equipos-scba', 'herramientas-rescate', 'camaras-termicas', 'hazmat'],
     serviciosRelacionados: ['licitaciones'],
+  },
+  {
+    slug: 'equipos-contra-incendio',
+    label: 'Equipos Contra Incendios',
+    labelCorto: 'Equipos contra incendios',
+    sustantivo: 'equipos contra incendios',
+    description: 'Distribuidores de equipos contra incendios en México: monitores, boquillas, mangueras, válvulas, conexiones, gabinetes e hidrantes con certificación UL y FM',
+    color: '#FF6B26',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M3 12h4l2-3 3 6 2-4h7M5 12v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6M9 6V4h6v2"/>`,
+    imagen: '/images/categorias/sistemas-ci.avif',
+    imagenAlt: 'Equipo de red hidráulica contra incendio: gabinete con manguera, boquilla y válvula listos para operar',
+    claim: 'Monitores, boquillas, mangueras, válvulas, conexiones y gabinetes con certificación UL y FM.',
+    intro: [
+      'Distribuidores y proveedores de equipos contra incendios para la red hidráulica: monitores y cañones de alto caudal, boquillas y chiflones, mangueras de ataque y succión, válvulas OS&Y y de mariposa, conexiones de bronce con toma siamesa, gabinetes e hidrantes. Es el material que va de la toma de agua a la descarga, y el que revisa Protección Civil y la aseguradora cuando piden el expediente de la instalación.',
+      'Es un oficio distinto al de quien diseña e instala el sistema y al de quien vende equipo de protección personal: aquí el proveedor suministra la pieza, la respalda con ficha técnica del fabricante y acredita su certificación UL Listed o FM Approved. Trabajan bajo NFPA 13, 14, 24 y 1964, y abastecen a constructoras, instaladores, plantas industriales, brigadas y dependencias.',
+    ],
+    normas: ['NFPA 13', 'NFPA 14', 'NFPA 24', 'NFPA 25', 'NFPA 1964', 'NOM-002-STPS-2010'],
+    especialidades: {
+      'monitores': 'Monitores y cañones contra incendio',
+      'boquillas': 'Boquillas y chiflones',
+      'mangueras': 'Mangueras contra incendio',
+      'valvulas': 'Válvulas para red contra incendio',
+      'conexiones-herrajes': 'Conexiones, herrajes y tomas siamesas',
+      'gabinetes-hidrantes': 'Gabinetes e hidrantes',
+    },
+    categoriasRelacionadas: ['sistemas-ci', 'extintores'],
+    serviciosRelacionados: ['instalacion-sistemas-ci', 'mantenimiento', 'licitaciones'],
   },
   {
     slug: 'extintores',

@@ -48,7 +48,7 @@ const productosCollection = defineCollection({
  * `confianza` (veracidad editorial) y `plan` (nivel comercial) son ejes
  * independientes y nunca se mezclan.
  */
-const giroEnum = z.enum(['venta-equipo', 'extintores', 'sistemas-ci', 'capacitacion']);
+const giroEnum = z.enum(['venta-equipo', 'equipos-contra-incendio', 'extintores', 'sistemas-ci', 'capacitacion']);
 
 const empresasCollection = defineCollection({
   // generateId: el id es la ruta <estado>/<slug>. Sin esto, glob usa el campo `slug`

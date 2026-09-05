@@ -1,6 +1,6 @@
 ---
 /**
- * Los 4 giros del directorio — cards con imagen, título, texto y botón.
+ * Los 5 giros del directorio — cards con imagen, título, texto y botón.
  * Es el módulo principal del home: son las categorías del directorio.
  * Imagen y claim vienen de giros.ts (cambiar la foto = una línea).
  * Hover instantáneo (borde y velo de la imagen), sin transform.
@@ -22,7 +22,7 @@ const topPorGiro = Object.fromEntries(await Promise.all(giros.map(async (g) => [
       </div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-5">
       {giros.map((g) => {
         const top = topPorGiro[g.slug] as { slug: string; nombre: string; total: number }[];
         return (

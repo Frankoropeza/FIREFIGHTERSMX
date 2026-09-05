@@ -9,7 +9,7 @@ export const navigation: { main: NavItem[] } = { main: [
   {
     label: "Empresas",
     href: "/empresas",
-    description: "Directorio nacional · 4 giros · 32 estados",
+    description: "Directorio nacional · 5 giros · 32 estados",
     children: [
       { label: "Venta de equipo y EPP",        href: "/empresas/venta-equipo",  description: "Distribuidores de equipo para bomberos y EPP" },
       { label: "Extintores",                   href: "/empresas/extintores",    description: "Venta, recarga y mantenimiento" },

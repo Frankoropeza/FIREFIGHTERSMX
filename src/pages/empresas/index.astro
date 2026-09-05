@@ -84,10 +84,10 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
           <h2 id="giros-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Cuatro giros,<br/><span style="color:#F75000">un solo directorio.</span></h2>
         </div>
         <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:#94A3B8">El sector no tiene una clasificación oficial propia. Nosotros agrupamos a las empresas por lo que realmente hacen: vender equipo, dar servicio a extintores, instalar sistemas fijos o capacitar brigadas. Una empresa puede aparecer en más de un giro.</p>
+          <p class="text-sm leading-relaxed" style="color:#94A3B8">El sector no tiene una clasificación oficial propia. Nosotros agrupamos a las empresas por lo que realmente hacen: vender equipo de protección personal, suministrar equipos contra incendios para la red hidráulica, dar servicio a extintores, instalar sistemas fijos o capacitar brigadas. Una empresa puede aparecer en más de un giro.</p>
         </div>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
         {giros.map((g) => { return (
           <a href={`/empresas/${g.slug}/`} class="grid-cell flex flex-col gap-4 p-7" style="background:#040A12">
             <span class="w-10 h-10 flex items-center justify-center" style={`color:${g.color};border:1px solid ${g.color}55`}>
