@@ -3,7 +3,7 @@ title: "Cascos para Bombero: Por qué la Marca No es lo Primero en lo que Debes 
 description: "Guía técnica para elegir casco de bombero NFPA 1971: norma NFPA 1970, tipos europeo/americano y comparativa MSA Gallet, Bullard, Cairns en México 2026."
 pubDate: 2026-06-23
 updatedDate: 2026-06-23
-author: "Ing. Carlos Mendoza"
+author: "Equipo editorial FIREFIGHTERS MX"
 category: "Guías de compra"
 tags: ["cascos bombero", "MSA Cairns", "Bullard", "Rosenbauer", "NFPA 1971", "EPP estructural"]
 image:

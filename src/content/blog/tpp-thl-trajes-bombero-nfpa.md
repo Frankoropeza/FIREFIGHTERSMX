@@ -3,7 +3,7 @@ title: "TPP y THL en Trajes de Bombero: Lo Que el Catálogo No Te Explica"
 description: "Dos trajes que 'cumplen NFPA 1970' pueden estar a mundos de distancia en protección real. Aprende a leer TPP y THL antes de tu próxima licitación."
 pubDate: 2026-02-10
 updatedDate: 2026-06-25
-author: "Ing. Marco García"
+author: "Equipo editorial FIREFIGHTERS MX"
 category: "Trajes Bombero"
 tags: ["TPP", "THL", "NFPA 1971", "trajes bombero", "protección térmica"]
 image:

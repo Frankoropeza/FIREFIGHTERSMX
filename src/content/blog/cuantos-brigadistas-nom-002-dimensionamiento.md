@@ -3,7 +3,7 @@ title: "Cuántos brigadistas necesita tu planta según NOM-002 y cómo dimension
 description: "Método para calcular el número de brigadistas por turno según NOM-002-STPS. Casos reales en plantas de Monterrey, Coatzacoalcos y el Bajío."
 pubDate: 2026-03-20
 updatedDate: 2026-06-25
-author: "Ing. Marco García"
+author: "Equipo editorial FIREFIGHTERS MX"
 category: "Brigadas Empresariales"
 tags: ["brigadas empresariales", "NOM-002-STPS", "dimensionamiento brigada", "seguridad industrial", "DC-3"]
 image:

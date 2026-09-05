@@ -3,7 +3,7 @@ title: "PQS ABC vs CO₂ vs Tipo K: elegir el extintor equivocado puede empeorar
 description: "Cómo elegir el agente extintor correcto según tu riesgo: PQS ABC, CO₂ y Tipo K. Criterios técnicos, normativa NOM-002-STPS y errores comunes en licitaciones."
 pubDate: 2026-03-15
 updatedDate: 2026-06-25
-author: "Ing. Marco García"
+author: "Equipo editorial FIREFIGHTERS MX"
 category: "Extintores"
 tags: ["PQS ABC", "CO2", "extintor Tipo K", "clases de fuego", "NOM-154-SCFI"]
 image:

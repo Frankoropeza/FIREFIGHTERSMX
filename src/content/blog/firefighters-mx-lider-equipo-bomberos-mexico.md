@@ -3,7 +3,7 @@ title: "FIREFIGHTERS MX: el referente en equipo bomberil certificado en México"
 description: "Quiénes somos y por qué cuerpos de bomberos, industria y gobierno en los 32 estados confían en FIREFIGHTERS MX para equipo certificado NFPA y NOM."
 pubDate: 2026-06-10
 updatedDate: 2026-06-10
-author: "Lic. Ana Ramírez"
+author: "Equipo editorial FIREFIGHTERS MX"
 category: "Empresa"
 tags: ["FIREFIGHTERS MX", "equipo para bomberos", "NFPA", "NOM", "México"]
 image:

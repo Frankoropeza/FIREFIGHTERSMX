@@ -3,7 +3,7 @@ title: "Casco Europeo vs Americano: Cómo Elegir el Correcto Para Tu Corporació
 description: "Cola de pato vs perfil bajo europeo: guía técnica para elegir el casco de bombero según norma, tipo de operación y compatibilidad con SCBA."
 pubDate: 2026-02-10
 updatedDate: 2026-06-25
-author: "Ing. Marco García"
+author: "Equipo editorial FIREFIGHTERS MX"
 category: "Cascos NFPA"
 tags: ["cascos bombero", "casco europeo", "casco americano", "NFPA 1970", "EPP bomberos"]
 image:

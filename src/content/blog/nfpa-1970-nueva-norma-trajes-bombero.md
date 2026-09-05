@@ -2,7 +2,7 @@
 title: "NFPA 1970: La Nueva Norma de Trajes para Bombero y Qué Significa para tu Compra"
 description: "La NFPA 1970:2024 reemplaza a la NFPA 1971. Calendario de cumplimiento, cambios clave en trajes estructurales y cómo afecta tus compras en México."
 pubDate: 2026-06-02
-author: "Ing. Carlos Mendoza"
+author: "Equipo editorial FIREFIGHTERS MX"
 category: "Normatividad"
 tags: ["NFPA 1970", "NFPA 1971", "trajes bomberos", "normatividad"]
 image:

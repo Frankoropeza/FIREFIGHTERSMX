@@ -3,7 +3,7 @@ title: "FLIR K-Series vs MSA Evolution 6000 vs Bullard TXS: La comparativa que n
 description: "FLIR vs MSA vs Bullard: qué cámara térmica elige el atacante de primer ingreso y cuál el comandante de incidente. Comparativa técnica para corporaciones mexicanas."
 pubDate: 2026-02-15
 updatedDate: 2026-06-25
-author: "Ing. Marco García"
+author: "Equipo editorial FIREFIGHTERS MX"
 category: "Cámaras Térmicas"
 tags: ["cámaras térmicas", "FLIR", "MSA Evolution", "Bullard TXS", "NFPA 1801"]
 image:

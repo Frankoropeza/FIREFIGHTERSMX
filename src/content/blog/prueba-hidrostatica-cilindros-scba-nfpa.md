@@ -3,7 +3,7 @@ title: "SCBA: cuándo hacer la prueba hidrostática de cilindros y qué pasa si 
 description: "Los cilindros SCBA tienen vida útil regulada. Conoce los intervalos de prueba hidrostática según NFPA 1850 y DOT, y las consecuencias de omitirla."
 pubDate: 2026-03-17
 updatedDate: 2026-06-25
-author: "Ing. Marco García"
+author: "Equipo editorial FIREFIGHTERS MX"
 category: "Mantenimiento y Recarga"
 tags: ["SCBA", "prueba hidrostática", "cilindros aire", "NFPA 1852", "mantenimiento SCBA"]
 image:

@@ -3,7 +3,7 @@ title: "Guía de compra de equipo para bomberos certificado NFPA en México 2026
 description: "Cómo comprar equipo bomberil sin errores: qué norma exigir, cómo comparar SCBA, trajes y cascos, y los puntos que debes verificar antes de pagar."
 pubDate: 2026-06-09
 updatedDate: 2026-06-10
-author: "Ing. Carlos Mendoza"
+author: "Equipo editorial FIREFIGHTERS MX"
 category: "Guías de compra"
 tags: ["guía de compra", "NFPA", "EPP bomberos", "SCBA", "trajes estructurales"]
 image:

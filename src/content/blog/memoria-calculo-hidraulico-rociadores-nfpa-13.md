@@ -3,7 +3,7 @@ title: "Memoria de cálculo hidráulico para rociadores: qué debe incluir para 
 description: "Una memoria de cálculo hidráulico incompleta paraliza tu permiso de construcción. Conoce los datos mínimos que exige el DRO para rociadores NFPA 13."
 pubDate: 2026-03-18
 updatedDate: 2026-06-25
-author: "Ing. Marco García"
+author: "Equipo editorial FIREFIGHTERS MX"
 category: "Instalación de Sistemas CI"
 tags: ["rociadores NFPA 13", "memoria de cálculo", "DRO", "sistemas contra incendio", "instalación CI"]
 image:
@@ -17,7 +17,7 @@ Un contratista general en Cuautitlán Izcalli, Estado de México, presenta los p
 
 Resultado: 45 días de retraso en obra, penalización al contratista principal y un rediseño de emergencia que costó más del doble que haberlo hecho bien desde el inicio.
 
-Lo he visto más veces de las que quisiera contar. Quince años instalando sistemas contra incendio en parques industriales del corredor Toluca-Cuautitlán y en desarrollos de la CDMX me han enseñado que la memoria de cálculo no es un trámite burocrático: es el documento técnico que determina si tu sistema realmente va a funcionar en una emergencia real.
+Ocurre más de lo que se cree, sobre todo en los parques industriales del corredor Toluca-Cuautitlán y en los desarrollos verticales de la CDMX. La memoria de cálculo no es un trámite burocrático: es el documento técnico que determina si el sistema va a funcionar en una emergencia real.
 
 Y cuando el DRO la rechaza, no rechaza un papel. Rechaza toda la lógica detrás del diseño.
 

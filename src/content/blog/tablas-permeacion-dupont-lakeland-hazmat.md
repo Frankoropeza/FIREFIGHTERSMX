@@ -3,7 +3,7 @@ title: "Tablas de Permeación Química: DuPont Tychem vs Lakeland ChemMax"
 description: "Cómo leer tablas de permeación química DuPont Tychem y Lakeland ChemMax para seleccionar el traje HAZMAT correcto. Datos reales para 5 químicos clave."
 pubDate: 2026-03-01
 updatedDate: 2026-06-25
-author: "Ing. Marco García"
+author: "Equipo editorial FIREFIGHTERS MX"
 category: "Equipos HAZMAT"
 tags: ["permeación química", "DuPont Tychem", "Lakeland ChemMax", "selección traje HAZMAT", "tablas químicas"]
 image:

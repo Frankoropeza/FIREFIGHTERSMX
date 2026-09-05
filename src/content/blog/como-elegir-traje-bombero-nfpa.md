@@ -3,7 +3,7 @@ title: "Cómo elegir un traje para bombero certificado NFPA: guía técnica 2026
 description: "Guía para elegir un traje estructural bajo NFPA 1970: las tres capas, materiales, pruebas THL y TPP, tallaje, vida útil y marcas disponibles en México."
 pubDate: 2026-03-05
 updatedDate: 2026-06-10
-author: "Ing. Carlos Mendoza"
+author: "Equipo editorial FIREFIGHTERS MX"
 category: "Equipos EPP"
 tags: ["trajes bomberos", "NFPA 1970", "EPP", "equipo estructural"]
 image:

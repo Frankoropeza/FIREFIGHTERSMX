@@ -3,7 +3,7 @@ title: "PBI Matrix Gold vs Nomex IIIA: Cuál Especificar en Tu Próxima Licitaci
 description: "PBI Matrix vs Nomex IIIA para trajes bombero: TPP, costo de ciclo de vida y cuál especificar según tu corporación. Guía práctica para licitaciones en México."
 pubDate: 2026-02-10
 updatedDate: 2026-06-25
-author: "Ing. Marco García"
+author: "Equipo editorial FIREFIGHTERS MX"
 category: "Trajes Bombero"
 tags: ["trajes bombero", "PBI Matrix", "Nomex", "NFPA 1971", "materiales EPP"]
 image:

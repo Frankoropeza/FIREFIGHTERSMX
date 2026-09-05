@@ -3,7 +3,7 @@ title: "Las mejores marcas de equipo para bomberos disponibles en México"
 description: "Guía de las marcas líderes en equipo bomberil —MSA, Dräger, Scott, Globe, Lion, Holmatro, Bullard, Cairns— y para qué destaca cada una en México."
 pubDate: 2026-06-06
 updatedDate: 2026-06-10
-author: "Ing. Carlos Mendoza"
+author: "Equipo editorial FIREFIGHTERS MX"
 category: "Marcas"
 tags: ["marcas", "MSA", "Dräger", "Holmatro", "Globe", "SCBA"]
 image:

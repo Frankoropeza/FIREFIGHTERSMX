@@ -3,7 +3,7 @@ title: "EPP de brigadista contra incendio: qué es obligatorio, qué es recomend
 description: "Guía práctica del EPP para brigadistas industriales en México. Qué exige la NOM-002-STPS, qué conviene agregar y qué equipo no justifica su costo."
 pubDate: 2026-03-20
 updatedDate: 2026-06-25
-author: "Ing. Marco García"
+author: "Equipo editorial FIREFIGHTERS MX"
 category: "Brigadas Empresariales"
 tags: ["EPP brigadas", "protección personal", "NOM-002-STPS", "brigadistas", "equipo contra incendio"]
 image:

@@ -3,7 +3,7 @@ title: "Botas para Bombero: El Equipo que Más Horas Trabaja y Menos Atención R
 description: "Guía técnica de botas de bombero NFPA 1970: materiales, membranas, protecciones y comparativa HAIX, Lion Apparel, Jolly y Ranger en México 2026."
 pubDate: 2026-06-23
 updatedDate: 2026-06-23
-author: "Ing. Carlos Mendoza"
+author: "Equipo editorial FIREFIGHTERS MX"
 category: "Guías de compra"
 tags: ["botas bombero", "HAIX", "Lion Apparel", "Jolly", "NFPA 1971", "calzado estructural", "EPP"]
 image:

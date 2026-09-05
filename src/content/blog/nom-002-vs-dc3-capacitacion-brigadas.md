@@ -3,7 +3,7 @@ title: "NOM-002 vs DC-3: qué documenta cada uno y por qué el inspector pide lo
 description: "NOM-002-STPS y DC-3 no son lo mismo. Te explicamos qué acredita cada documento y por qué la STPS los exige juntos en una inspección de brigadas."
 pubDate: 2026-03-16
 updatedDate: 2026-06-25
-author: "Ing. Marco García"
+author: "Equipo editorial FIREFIGHTERS MX"
 category: "Capacitación Certificada"
 tags: ["capacitación brigadas", "DC-3 STPS", "NOM-002-STPS", "brigadas contra incendio", "inspección STPS"]
 image:

@@ -29,6 +29,8 @@ const PROHIBIDOS = [
   [/(más\s+de\s+)?500\s+estaciones\s+equipadas/i,                             'F-06 · volumen de clientes sin acreditar'],
   [/miles\s+de\s+vidas\s+protegidas/i,                                      'F-07 · métrica sin sustento'],
   [/Atendemos\s+a(l)?\s+(H\.|los\s+H\.)\s+Cuerpos?\s+de\s+Bomberos/i,             'F-08 · cartera de clientes sin acreditar'],
+  [/(Ing\.|Lic\.)\s*(Marco\s+García|Carlos\s+Mendoza|Ana\s+Ramírez)/i, 'F-10 · autoría atribuida a personas inventadas'],
+  [/quince\s+años\s+(instalando|viendo)/i,                          'F-10 · trayectoria personal sin acreditar'],
   [/Baja\s+California\s+255/i,                                            'F-01 · domicilio sin verificar'],
   [/(facebook|instagram|linkedin|youtube|x)\.com\/(@)?firefightersmx/i, 'F-02 · perfiles sociales inexistentes'],
 ];

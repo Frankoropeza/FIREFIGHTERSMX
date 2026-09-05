@@ -3,7 +3,7 @@ title: "NOM-002-STPS-2010: guía completa para centros de trabajo en México"
 description: "Qué te obliga la NOM-002-STPS-2010: clasificación de riesgo, extintores, brigadas, plan de emergencias, señalización y sanciones. Guía clara para cumplir."
 pubDate: 2026-02-10
 updatedDate: 2026-06-10
-author: "Lic. Ana Ramírez"
+author: "Equipo editorial FIREFIGHTERS MX"
 category: "Normatividad"
 tags: ["NOM-002-STPS", "prevención incendios", "brigadas", "STPS"]
 image:

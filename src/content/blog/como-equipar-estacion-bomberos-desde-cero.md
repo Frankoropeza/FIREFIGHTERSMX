@@ -3,7 +3,7 @@ title: "Cómo equipar una estación de bomberos desde cero: checklist y presupue
 description: "Guía práctica para equipar una estación o brigada nueva: EPP, SCBA, rescate y herramientas, con checklist por prioridad y criterios de presupuesto."
 pubDate: 2026-06-08
 updatedDate: 2026-06-10
-author: "Ing. Marco García"
+author: "Equipo editorial FIREFIGHTERS MX"
 category: "Equipamiento"
 tags: ["estación de bomberos", "equipamiento", "EPP", "rescate", "presupuesto"]
 image:

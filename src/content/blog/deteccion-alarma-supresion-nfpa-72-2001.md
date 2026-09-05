@@ -3,7 +3,7 @@ title: "Detección vs alarma vs supresión: tres sistemas que se confunden y no 
 description: "Detección, alarma y supresión son sistemas distintos con normas distintas. Confundirlos genera instalaciones que no protegen y que no pasan inspección."
 pubDate: 2026-03-18
 updatedDate: 2026-06-25
-author: "Ing. Marco García"
+author: "Equipo editorial FIREFIGHTERS MX"
 category: "Instalación de Sistemas CI"
 tags: ["detección incendio", "alarma NFPA 72", "supresión agente limpio", "sistemas CI", "NFPA 2001"]
 image:
@@ -21,7 +21,7 @@ En la realidad: el panel estaba programado para activar la alarma sonora al dete
 
 El FM-200 finalmente descarga cuatro minutos tarde, accionado manualmente por un técnico. El equipo sufre daño por calor. El asegurador rechaza el siniestro porque los sistemas no estaban integrados conforme a NFPA 72 y NFPA 2001. La póliza era válida, pero la instalación no cumplía los estándares requeridos por la aseguradora.
 
-Quince años instalando sistemas en cuartos de cómputo y data centers en CDMX, Guadalajara y Monterrey me han enseñado que este escenario no es la excepción. Es más común de lo que cualquier gerente de TI o de facilities querría saber.
+En cuartos de cómputo y data centers de CDMX, Guadalajara y Monterrey este escenario no es la excepción: es más común de lo que cualquier gerente de TI o de facilities querría saber.
 
 ## Detección: el primero en enterarse, el menos entendido
 

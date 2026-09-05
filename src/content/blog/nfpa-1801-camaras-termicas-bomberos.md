@@ -3,7 +3,7 @@ title: "NFPA 1930: Lo que nadie te dice cuando compras una cámara térmica para
 description: "Cómo distinguir una cámara térmica certificada NFPA 1930 de una industrial disfrazada. Criterios técnicos y preguntas clave para tu proceso de licitación."
 pubDate: 2026-02-15
 updatedDate: 2026-06-25
-author: "Ing. Marco García"
+author: "Equipo editorial FIREFIGHTERS MX"
 category: "Cámaras Térmicas"
 tags: ["NFPA 1801", "cámaras térmicas", "bomberos", "certificación", "EPP incendio"]
 image:

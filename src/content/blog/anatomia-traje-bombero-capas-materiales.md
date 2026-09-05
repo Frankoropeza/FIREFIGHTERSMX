@@ -2,7 +2,7 @@
 title: "Anatomía de un Traje de Bombero: Capas, Materiales y Marcas que Debes Exigir"
 description: "Las 3 capas del traje estructural, los materiales de cada una (Nomex, Kevlar, PBI, Gore Crosstech) y comparativa de marcas Globe, Lion y MSA Cairns en México."
 pubDate: 2026-05-08
-author: "Ing. Carlos Mendoza"
+author: "Equipo editorial FIREFIGHTERS MX"
 category: "Equipos EPP"
 tags: ["trajes bomberos", "materiales", "PBI", "Nomex", "marcas"]
 image:

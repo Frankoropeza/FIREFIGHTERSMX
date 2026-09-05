@@ -3,7 +3,7 @@ title: "Collar de garantía en extintores: qué es, por qué Protección Civil l
 description: "El collar de garantía en extintores no es opcional. Te explicamos qué es, qué exige la NOM-154-SCFI y qué pasa si faltan en una inspección de PC."
 pubDate: 2026-03-17
 updatedDate: 2026-06-25
-author: "Ing. Marco García"
+author: "Equipo editorial FIREFIGHTERS MX"
 category: "Mantenimiento y Recarga"
 tags: ["extintores", "collar de garantía", "NOM-154-SCFI", "protección civil", "mantenimiento extintores"]
 image:
@@ -49,7 +49,7 @@ El problema no suele ser que las empresas no pongan collar. El problema es que m
 
 Cuando contratas mantenimiento de extintores en una bodega industrial, tu responsabilidad no termina en pagar la factura. Tienes que verificar que el collar colocado cumple con todos los campos de la NOM-154-SCFI y que el número de certificación de la empresa es válido.
 
-COFEPRIS y la EMA (Entidad Mexicana de Acreditación) publican los registros de empresas certificadas. Si el número de certificación en el collar no aparece en ese registro, estás expuesto. He visto instalaciones en parques de Apodaca y San Nicolás que llevaban años contratando empresas no certificadas sin saberlo, porque nadie en la empresa verificó ese dato.
+COFEPRIS y la EMA (Entidad Mexicana de Acreditación) publican los registros de empresas certificadas. Si el número de certificación en el collar no aparece en ese registro, estás expuesto. Hay instalaciones en parques industriales que llevan años contratando empresas no certificadas sin saberlo, simplemente porque nadie verificó ese dato.
 
 La pregunta correcta al contratar mantenimiento no es "¿cuánto cobran?". Es "¿cuál es su número de certificación y puedo verificarlo?"
 

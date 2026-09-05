@@ -3,7 +3,7 @@ title: "Detectores de Gas para Bomberos: El Equipo que Más se Subestima y Más 
 description: "Guía técnica de detectores multigás para bomberos: gases críticos, sensores y comparativa MSA Altair, Industrial Scientific Ventis y Dräger X-am en México 2026."
 pubDate: 2026-06-23
 updatedDate: 2026-06-23
-author: "Ing. Carlos Mendoza"
+author: "Equipo editorial FIREFIGHTERS MX"
 category: "Guías de compra"
 tags: ["detectores de gas", "monóxido de carbono", "MSA Altair", "Industrial Scientific", "Dräger X-am", "IDLH", "gas multigás"]
 image:

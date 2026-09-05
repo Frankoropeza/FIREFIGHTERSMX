@@ -3,7 +3,7 @@ title: "Las 8 no-conformidades más frecuentes que encuentra la STPS en plantas 
 description: "Inspector STPS llega sin avisar. Estas 8 fallas NOM-002 son las que más multas generan en plantas de Monterrey, Querétaro y el Bajío."
 pubDate: 2026-03-19
 updatedDate: 2026-06-25
-author: "Ing. Marco García"
+author: "Equipo editorial FIREFIGHTERS MX"
 category: "Auditoría NOM-002"
 tags: ["auditoría NOM-002", "STPS inspección", "no conformidades", "protección civil", "NOM-002-STPS"]
 image:

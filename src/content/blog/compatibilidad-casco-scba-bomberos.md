@@ -3,7 +3,7 @@ title: "Casco y SCBA: El Problema de Compatibilidad Que Se Descubre Adentro del 
 description: "Casco certificado NFPA 1970 + SCBA certificado NFPA 1981 no garantiza que funcionen juntos. Cómo verificar compatibilidad real antes de una licitación en México."
 pubDate: 2026-02-10
 updatedDate: 2026-06-25
-author: "Ing. Marco García"
+author: "Equipo editorial FIREFIGHTERS MX"
 category: "Cascos NFPA"
 tags: ["casco SCBA", "compatibilidad EPP", "NFPA 1970", "máscara facial", "cascos bombero"]
 image:

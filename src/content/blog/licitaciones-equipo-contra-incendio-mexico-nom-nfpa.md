@@ -3,7 +3,7 @@ title: "Licitaciones de equipo contra incendio en México: cómo cumplir NOM y N
 description: "Qué exige una licitación de equipo bomberil en México, cómo redactar especificaciones técnicas correctas y evitar descalificaciones por certificación."
 pubDate: 2026-06-07
 updatedDate: 2026-06-10
-author: "Lic. Ana Ramírez"
+author: "Equipo editorial FIREFIGHTERS MX"
 category: "Licitaciones"
 tags: ["licitaciones", "compras públicas", "NOM", "NFPA", "especificaciones técnicas"]
 image:

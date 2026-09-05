@@ -3,7 +3,7 @@ title: "Holmatro vs Lukas: Comparativa de Herramientas de Rescate Vehicular"
 description: "Comparativa técnica Holmatro vs Lukas (Dräger) en herramientas hidráulicas de rescate: fuerza, velocidad, sistemas de batería, compatibilidad AHSS/UHSS y servicio"
 pubDate: 2026-03-01
 updatedDate: 2026-06-25
-author: "Ing. Marco García"
+author: "Equipo editorial FIREFIGHTERS MX"
 category: "Herramientas Rescate"
 tags: ["herramientas rescate", "Holmatro", "Lukas", "excarcelación", "NFPA 1936"]
 image:

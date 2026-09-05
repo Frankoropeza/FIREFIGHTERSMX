@@ -3,7 +3,7 @@ title: "SCBA para Bomberos: Lo que Nadie te Dice antes de Firmar el Pedido"
 description: "Guía para comprar SCBA NFPA 1970: reguladores, cilindros, mask fit y comparativa MSA G1, Scott Air-Pak y Dräger PSS en México 2026."
 pubDate: 2026-06-23
 updatedDate: 2026-06-23
-author: "Ing. Carlos Mendoza"
+author: "Equipo editorial FIREFIGHTERS MX"
 category: "Guías de compra"
 tags: ["SCBA", "respiración autónoma", "Scott", "MSA", "Dräger", "NFPA 1981", "equipo bomberos"]
 image:

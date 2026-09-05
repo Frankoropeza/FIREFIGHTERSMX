@@ -3,7 +3,7 @@ title: "NOM-002-STPS: lo que el inspector ve que tú no habías calculado"
 description: "Cómo calcular la dotación de extintores según NOM-002-STPS-2010: fórmulas, clases de riesgo y errores frecuentes en verificación de cumplimiento normativo."
 pubDate: 2026-03-15
 updatedDate: 2026-06-25
-author: "Ing. Marco García"
+author: "Equipo editorial FIREFIGHTERS MX"
 category: "Extintores"
 tags: ["NOM-002-STPS", "dotación extintores", "extintores México", "protección civil", "seguridad industrial"]
 image:

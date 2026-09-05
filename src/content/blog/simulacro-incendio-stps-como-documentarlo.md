@@ -3,7 +3,7 @@ title: "Cómo diseñar el simulacro que sí convence a la STPS — sin improvisa
 description: "Guía práctica para planear y documentar un simulacro de incendio que cumpla NOM-002-STPS y convenza a Protección Civil en planta industrial mexicana."
 pubDate: 2026-03-16
 updatedDate: 2026-06-25
-author: "Ing. Marco García"
+author: "Equipo editorial FIREFIGHTERS MX"
 category: "Capacitación Certificada"
 tags: ["simulacro evacuación", "STPS", "NOM-002-STPS", "brigadas", "protección civil"]
 image:
