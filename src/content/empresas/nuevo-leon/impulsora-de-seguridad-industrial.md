@@ -15,7 +15,6 @@ especialidades: ["epp-industrial"]
 claseDENUE: "Comercio al por menor en ferreterías y tlapalerías"
 estrato: "11 a 30 personas"
 email: "compras@ramak.com.mx"
-sitioWeb: "https://www.ramak.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=6873856" }
 denueId: "6873856"

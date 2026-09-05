@@ -17,7 +17,6 @@ claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "0 a 5 personas"
 telefono: "9612256092"
 email: "tabscoob_tuxtla@hotmail.com"
-sitioWeb: "https://www.tabscoobb.com.mw"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=372971" }
 denueId: "372971"

@@ -14,7 +14,6 @@ giros: ["venta-equipo"]
 especialidades: []
 claseDENUE: "Reparación y mantenimiento de maquinaria y equipo industrial"
 estrato: "0 a 5 personas"
-sitioWeb: "https://www.wilmartcontraincendios.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=9925496" }
 denueId: "9925496"

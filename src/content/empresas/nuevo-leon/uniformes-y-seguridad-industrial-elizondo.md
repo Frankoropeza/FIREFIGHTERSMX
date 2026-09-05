@@ -15,7 +15,6 @@ especialidades: ["uniformes-y-calzado", "epp-industrial"]
 claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "6 a 10 personas"
 email: "ventas@uniformesvigilante.com"
-sitioWeb: "https://www.uniformeselvigilante"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=2928269" }
 denueId: "2928269"

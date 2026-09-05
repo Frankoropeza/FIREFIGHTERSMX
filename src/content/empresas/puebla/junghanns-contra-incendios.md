@@ -16,7 +16,6 @@ especialidades: []
 claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "51 a 100 personas"
 email: "contabilidad@contraincendio.com"
-sitioWeb: "https://www.junghannscontraincendio.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=3265033" }
 denueId: "3265033"

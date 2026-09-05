@@ -15,7 +15,6 @@ especialidades: []
 claseDENUE: "Reparación y mantenimiento de maquinaria y equipo industrial"
 estrato: "31 a 50 personas"
 email: "sam@samprevinc.com"
-sitioWeb: "https://www.orbexserviciosindustriales.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=114009" }
 denueId: "114009"

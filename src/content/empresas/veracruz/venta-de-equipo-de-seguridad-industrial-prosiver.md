@@ -16,7 +16,6 @@ claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "0 a 5 personas"
 telefono: "2283536953"
 email: "adolfosmiranda@prosiver.com"
-sitioWeb: "https://www.prosiver.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=9024043" }
 denueId: "9024043"

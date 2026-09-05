@@ -16,7 +16,6 @@ claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "31 a 50 personas"
 telefono: "6566193433"
 email: "info@seprecisa.com"
-sitioWeb: "https://seprecisa.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=623039" }
 denueId: "623039"

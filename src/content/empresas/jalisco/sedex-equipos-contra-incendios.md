@@ -16,7 +16,6 @@ claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "11 a 30 personas"
 telefono: "3339555148"
 email: "sedex.gdl@hotmail.com"
-sitioWeb: "https://www.sedexequipocontraincendio.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=12309574" }
 denueId: "12309574"

@@ -16,7 +16,6 @@ especialidades: []
 claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "31 a 50 personas"
 email: "rguerrero@sersa.com.mx"
-sitioWeb: "https://www.seguridadregiomontana.c0m"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=9318547" }
 denueId: "9318547"

@@ -16,7 +16,6 @@ claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "0 a 5 personas"
 telefono: "4621380985"
 email: "carlosfabian_78@hotmail.com"
-sitioWeb: "https://www.seguridadindustrialpeso.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=1321266" }
 denueId: "1321266"

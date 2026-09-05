@@ -17,7 +17,6 @@ claseDENUE: "Servicios de protección y custodia mediante el monitoreo de sistem
 estrato: "0 a 5 personas"
 telefono: "8003510212"
 email: "info@corporativovazquezventura.com"
-sitioWeb: "https://www.corporativovazquezventura.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=11032483" }
 denueId: "11032483"

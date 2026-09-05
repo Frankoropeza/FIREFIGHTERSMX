@@ -16,7 +16,6 @@ claseDENUE: "Servicios de protección y custodia mediante el monitoreo de sistem
 estrato: "31 a 50 personas"
 telefono: "8333121427"
 email: "facturas@bustech.com.mx"
-sitioWeb: "https://www.grupobustechindustrial.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=11572241" }
 denueId: "11572241"

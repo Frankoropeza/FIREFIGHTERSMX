@@ -15,7 +15,6 @@ especialidades: []
 claseDENUE: "Comercio al por mayor de maquinaria y equipo para otros servicios y para actividades comerciales"
 estrato: "0 a 5 personas"
 email: "cajasfuertes@siindeseg.com"
-sitioWeb: "https://www.cajasfuertessiindeseg.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=1001721" }
 denueId: "1001721"

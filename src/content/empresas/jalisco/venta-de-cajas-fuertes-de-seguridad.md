@@ -16,7 +16,6 @@ claseDENUE: "Comercio al por mayor de maquinaria y equipo para otros servicios y
 estrato: "0 a 5 personas"
 telefono: "3316572885"
 email: "ventas@strongbox.mx"
-sitioWeb: "https://www.strongbox.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=9021497" }
 denueId: "9021497"

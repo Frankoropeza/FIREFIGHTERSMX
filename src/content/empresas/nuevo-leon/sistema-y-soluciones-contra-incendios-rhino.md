@@ -15,7 +15,6 @@ especialidades: []
 claseDENUE: "Reparación y mantenimiento de maquinaria y equipo industrial"
 estrato: "6 a 10 personas"
 email: "rhino@prodigy.net.mx"
-sitioWeb: "https://www.rhinosci.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=8689164" }
 denueId: "8689164"

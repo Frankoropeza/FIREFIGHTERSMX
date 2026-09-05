@@ -15,7 +15,6 @@ especialidades: ["recarga-y-mantenimiento"]
 claseDENUE: "Reparación y mantenimiento de maquinaria y equipo industrial"
 estrato: "0 a 5 personas"
 telefono: "5565159470"
-sitioWeb: "https://www.extintoreslr"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=9641869" }
 denueId: "9641869"

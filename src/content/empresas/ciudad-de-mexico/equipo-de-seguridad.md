@@ -14,7 +14,6 @@ giros: ["venta-equipo"]
 especialidades: []
 claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "0 a 5 personas"
-sitioWeb: "https://www.mirci.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=798104" }
 denueId: "798104"

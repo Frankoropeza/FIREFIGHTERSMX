@@ -14,7 +14,6 @@ giros: ["sistemas-ci"]
 especialidades: []
 claseDENUE: "Reparación y mantenimiento de maquinaria y equipo industrial"
 estrato: "6 a 10 personas"
-sitioWeb: "https://www.omcjsistemascontraincendio.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=11465188" }
 denueId: "11465188"

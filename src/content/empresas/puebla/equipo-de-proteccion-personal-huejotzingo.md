@@ -16,7 +16,6 @@ claseDENUE: "Comercio al por menor en ferreterías y tlapalerías"
 estrato: "0 a 5 personas"
 telefono: "2224685959"
 email: "omacas002@gmail.com"
-sitioWeb: "https://equipodeproteccionpersonalhuejotzingo.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=11688373" }
 denueId: "11688373"

@@ -16,7 +16,6 @@ especialidades: []
 claseDENUE: "Servicios de protección y custodia mediante el monitoreo de sistemas de seguridad"
 estrato: "101 a 250 personas"
 email: "mx.clientes@tycoint.com"
-sitioWeb: "https://www.adt.commx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=6801997" }
 denueId: "6801997"

@@ -15,7 +15,6 @@ especialidades: []
 claseDENUE: "Servicios de protección y custodia mediante el monitoreo de sistemas de seguridad"
 estrato: "0 a 5 personas"
 telefono: "4427965790"
-sitioWeb: "https://www.praetoriansystemqro.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=9541817" }
 denueId: "9541817"

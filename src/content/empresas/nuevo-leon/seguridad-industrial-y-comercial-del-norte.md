@@ -16,7 +16,6 @@ claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "11 a 30 personas"
 telefono: "8132591315"
 email: "sicnventas1@gmail.com"
-sitioWeb: "https://www.eguridadindustrialycomercialdelnorte.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=10064091" }
 denueId: "10064091"

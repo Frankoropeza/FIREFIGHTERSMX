@@ -17,7 +17,6 @@ claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "0 a 5 personas"
 telefono: "4424614606"
 email: "ramirez.segundo.daniel@gmail.com"
-sitioWeb: "https://www.losapagafuego.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=8618568" }
 denueId: "8618568"

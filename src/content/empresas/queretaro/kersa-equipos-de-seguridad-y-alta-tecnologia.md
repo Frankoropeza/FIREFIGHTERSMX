@@ -15,7 +15,6 @@ especialidades: []
 claseDENUE: "Servicios de protección y custodia mediante el monitoreo de sistemas de seguridad"
 estrato: "0 a 5 personas"
 telefono: "4272744947"
-sitioWeb: "https://www.kersa.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=10350150" }
 denueId: "10350150"

@@ -15,7 +15,6 @@ especialidades: ["recarga-y-mantenimiento"]
 claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "0 a 5 personas"
 email: "xti-mex_58@hotmail.com"
-sitioWeb: "https://www.xti-mediomex.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=4352913" }
 denueId: "4352913"

@@ -14,7 +14,6 @@ giros: ["venta-equipo"]
 especialidades: ["epp-industrial"]
 claseDENUE: "Reparación y mantenimiento de maquinaria y equipo industrial"
 estrato: "11 a 30 personas"
-sitioWeb: "https://www.seguridadmarmol.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=11217686" }
 denueId: "11217686"

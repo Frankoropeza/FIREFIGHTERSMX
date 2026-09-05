@@ -16,7 +16,6 @@ claseDENUE: "Instalaciones eléctricas en construcciones"
 estrato: "11 a 30 personas"
 telefono: "6641977801"
 email: "fani.roman@gevi.com.mx"
-sitioWeb: "https://www.gevicom.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=11018703" }
 denueId: "11018703"

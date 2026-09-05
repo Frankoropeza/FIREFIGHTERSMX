@@ -15,7 +15,6 @@ especialidades: ["epp-industrial"]
 claseDENUE: "Servicios de protección y custodia mediante el monitoreo de sistemas de seguridad"
 estrato: "0 a 5 personas"
 telefono: "8333121427"
-sitioWeb: "https://www.gropobustech.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=10473768" }
 denueId: "10473768"

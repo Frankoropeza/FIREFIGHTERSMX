@@ -16,7 +16,6 @@ claseDENUE: "Servicios de consultoría en administración"
 estrato: "0 a 5 personas"
 telefono: "9384016417"
 email: "direccion@rmseguridadindustrial.com"
-sitioWeb: "https://www.rlseguridadindustrial.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=9672771" }
 denueId: "9672771"

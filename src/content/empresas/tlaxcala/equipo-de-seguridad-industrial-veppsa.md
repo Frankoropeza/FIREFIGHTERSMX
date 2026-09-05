@@ -16,7 +16,6 @@ claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "0 a 5 personas"
 telefono: "2411955292"
 email: "atencion.clientes@veppsa.com"
-sitioWeb: "https://www.veppsaventadeequipodeproteccionpersonal.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=9751410" }
 denueId: "9751410"

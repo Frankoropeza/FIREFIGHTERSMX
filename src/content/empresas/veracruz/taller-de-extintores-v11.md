@@ -14,7 +14,6 @@ giros: ["extintores"]
 especialidades: ["recarga-y-mantenimiento"]
 claseDENUE: "Reparación y mantenimiento de maquinaria y equipo industrial"
 estrato: "6 a 10 personas"
-sitioWeb: "https://www.v11consultores.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=10943818" }
 denueId: "10943818"

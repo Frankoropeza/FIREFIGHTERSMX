@@ -15,7 +15,6 @@ giros: ["extintores", "venta-equipo"]
 especialidades: ["recarga-y-mantenimiento", "epp-industrial"]
 claseDENUE: "Reparación y mantenimiento de maquinaria y equipo industrial"
 estrato: "6 a 10 personas"
-sitioWeb: "https://www.stokmexico.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=10336182" }
 denueId: "10336182"

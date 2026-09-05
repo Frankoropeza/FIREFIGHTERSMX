@@ -17,7 +17,6 @@ claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "0 a 5 personas"
 telefono: "5627596245"
 email: "ventas@generalfire.com.mx"
-sitioWeb: "https://www.extingerneralfire.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=2039381" }
 denueId: "2039381"

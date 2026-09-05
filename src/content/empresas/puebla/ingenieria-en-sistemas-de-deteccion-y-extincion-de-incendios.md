@@ -15,7 +15,6 @@ especialidades: ["deteccion-y-alarma"]
 claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "6 a 10 personas"
 email: "ingenieriaensistemasdedeteccionyextinciondeincendios@hotmail.com.mx"
-sitioWeb: "https://www.ingenieriaensistemasdedeteccionyextinciondeincendios.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=10726747" }
 denueId: "10726747"
