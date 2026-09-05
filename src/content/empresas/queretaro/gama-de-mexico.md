@@ -79,6 +79,10 @@ vip:
       entregable: "Contrato anual de suministro o línea de crédito, según el perfil del cliente"
   lineas:
     - nombre: "Monitores contra incendio"
+      subtitulo: "Lanzadores de agua para protección perimetral"
+      imagen: "/images/empresas/gama-de-mexico/monitores.avif"
+      imagenAlt: "Monitor contra incendio tipo corazón en planta industrial"
+      url: "https://gamademexico.com/monitores-contra-incendios"
       modelos: "Elkhart Scorpion 8294 y EXM2 7400X2 · Sidewinder EXM2 · Copperhead 8593 · Elkhart 294-11 · Protek 611"
       familias:
         - "Tipo corazón"
@@ -90,6 +94,10 @@ vip:
       certificaciones: "FM Approved y UL Listed por modelo; CE (PED) en el 294-11"
       normas: "NFPA 13 · 14 · 24"
     - nombre: "Boquillas contra incendio"
+      subtitulo: "Control y dirección del flujo de agua"
+      imagen: "/images/empresas/gama-de-mexico/boquillas.avif"
+      imagenAlt: "Boquilla contra incendio tipo pistola en estación de bomberos"
+      url: "https://gamademexico.com/boquillas-contra-incendios"
       modelos: "Elkhart Brass · Task Force Tips · Akron Brass · Potter Roemer"
       familias:
         - "Tipo pistola"
@@ -101,6 +109,10 @@ vip:
       certificaciones: "UL Listed y FM Approved por modelo"
       normas: "NFPA 1964"
     - nombre: "Mangueras contra incendio"
+      subtitulo: "Conducción de agua a presión industrial"
+      imagen: "/images/empresas/gama-de-mexico/mangueras.avif"
+      imagenAlt: "Manguera forestal contra incendio, vista lateral"
+      url: "https://gamademexico.com/mangueras-contra-incendios"
       familias:
         - "Millhose"
         - "Blindex"
@@ -111,6 +123,10 @@ vip:
       certificaciones: "UL Listed y FM Approved disponibles por modelo"
       normas: "NFPA 13 · 14 · 24 · 1962"
     - nombre: "Válvulas contra incendio"
+      subtitulo: "Control de flujo hidráulico en sistemas contra incendio"
+      imagen: "/images/empresas/gama-de-mexico/valvulas.avif"
+      imagenAlt: "Válvula check swing bridada de hierro dúctil"
+      url: "https://gamademexico.com/valvulas-contra-incendios"
       modelos: "32 modelos en cuatro familias"
       familias:
         - "Compuerta OS&Y"
@@ -122,6 +138,10 @@ vip:
       certificaciones: "UL Listed y FM Approved en modelos seleccionados"
       normas: "NFPA 13 · 14 · 20 · 24"
     - nombre: "Conexiones y herrajes de bronce"
+      subtitulo: "Acoplamiento y distribución para redes contra incendio"
+      imagen: "/images/empresas/gama-de-mexico/conexiones-herrajes.avif"
+      imagenAlt: "Toma siamesa FDC de dos vías, vista frontal"
+      url: "https://gamademexico.com/conexiones-herrajes-contra-incendios"
       modelos: "Familias Elkhart Brass 327, 435 y B-97A (Wye)"
       familias:
         - "Adaptadores"
@@ -135,6 +155,10 @@ vip:
       certificaciones: "UL Listed y FM Approved por modelo"
       normas: "NFPA 13 · 14 · 24"
     - nombre: "Gabinetes e hidrantes"
+      subtitulo: "Almacenamiento y toma de agua para edificios e industria"
+      imagen: "/images/empresas/gama-de-mexico/gabinetes-hidrantes.avif"
+      imagenAlt: "Gabinete contra incendio con manguera, vista frontal"
+      url: "https://gamademexico.com/gabinetes-hidrantes-contra-incendios"
       familias:
         - "Gabinete tipo 30ME"
         - "Gabinete empotrado"

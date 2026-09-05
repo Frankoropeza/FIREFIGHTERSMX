@@ -98,6 +98,12 @@ const empresasCollection = defineCollection({
       })).default([]),
       lineas: z.array(z.object({
         nombre: z.string(),
+        /* Card estilo catálogo: foto, bajada de una línea y enlace a la página
+           de la línea en el sitio de la empresa (sólo se publica en VIP). */
+        subtitulo: z.string().optional(),
+        imagen: z.string().optional(),
+        imagenAlt: z.string().optional(),
+        url: z.string().optional(),
         familias: z.array(z.string()).default([]),
         rango: z.string().optional(),
         materiales: z.string().optional(),
