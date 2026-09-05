@@ -46,7 +46,7 @@ const anchorId = (s: string) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '
 const recorta = (s: string, n = 155) => {
   const t = s.replace(/\s+/g, ' ').trim(); if (t.length <= n) return t;
   const palabras = t.slice(0, n).split(' '); palabras.pop();
-  const sueltas = new Set(['y', 'o', 'e', 'u', 'de', 'del', 'con', 'en', 'para', 'por', 'a', 'al', 'el', 'la', 'los', 'las', 'un', 'una', 'que', 'sin', 'su', 'sus']);
+  const sueltas = new Set(['y', 'o', 'e', 'u', 'de', 'del', 'con', 'en', 'para', 'por', 'a', 'al', 'el', 'la', 'los', 'las', 'un', 'una', 'que', 'sin', 'su', 'sus', '·', '—', '-', '/', '&']);
   while (palabras.length && sueltas.has(palabras[palabras.length - 1].toLowerCase().replace(/[,;:.]$/, ''))) palabras.pop();
   return palabras.join(' ').replace(/[,;:—-]+$/, '') + '.';
 };
@@ -57,7 +57,7 @@ const web = e.plan === 'destacado' ? l.urlEmpresa : undefined;
 
 const seoMeta = {
   title: `${l.nombre} — ${e.nombre}, ${edo.abreviatura}`,
-  description: recorta(`${l.nombre} de ${e.nombre} en ${e.ciudad}: ${l.subtitulo.toLowerCase()}. ${l.familias.length} familias y ${l.modelos.length} modelos con caudal, presión y certificación, criterios de selección y qué enviar para cotizar.`),
+  description: recorta(`${l.nombre} de ${e.nombre} en ${e.ciudad}: ${l.subtitulo.toLowerCase()}. ${l.familias.length} familias y ${l.modelos.length} modelos con ${(l.columnaRango ?? 'caudal').toLowerCase()}, presión y certificación, criterios de selección y qué enviar para cotizar.`),
   canonicalURL,
   ...(l.imagen ? { ogImage: l.imagen } : {}),
 };
@@ -176,7 +176,7 @@ const h2s = 'color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1'
               <table style="width:100%;border-collapse:collapse;min-width:900px">
                 <thead>
                   <tr style="background:#080F1A;border-bottom:1px solid rgba(74,117,153,0.25)">
-                    {['Modelo','Marca','Familia','Caudal','Presión','Material','Certificación','Aplicaciones'].map((c, i) => (
+                    {['Modelo','Marca','Familia',l.columnaRango ?? 'Caudal','Presión','Material','Certificación','Aplicaciones'].map((c, i) => (
                       <th scope="col" class="text-left p-3 text-[10px] font-display font-bold uppercase tracking-widest" style={`color:${i === 3 ? g.color : '#4A7599'}`}>{c}</th>
                     ))}
                   </tr>

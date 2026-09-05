@@ -71,7 +71,7 @@ const tituloSEO = nombreLlevaPlaza
 const recorta = (s: string, n = 155) => {
   const t = s.replace(/\s+/g, ' ').trim(); if (t.length <= n) return t;
   const palabras = t.slice(0, n).split(' '); palabras.pop();
-  const sueltas = new Set(['y', 'o', 'e', 'u', 'de', 'del', 'con', 'en', 'para', 'por', 'a', 'al', 'el', 'la', 'los', 'las', 'un', 'una', 'que', 'sin', 'su', 'sus']);
+  const sueltas = new Set(['y', 'o', 'e', 'u', 'de', 'del', 'con', 'en', 'para', 'por', 'a', 'al', 'el', 'la', 'los', 'las', 'un', 'una', 'que', 'sin', 'su', 'sus', '·', '—', '-', '/', '&']);
   while (palabras.length && sueltas.has(palabras[palabras.length - 1].toLowerCase().replace(/[,;:.]$/, ''))) palabras.pop();
   return palabras.join(' ').replace(/[,;:—-]+$/, '') + '.';
 };

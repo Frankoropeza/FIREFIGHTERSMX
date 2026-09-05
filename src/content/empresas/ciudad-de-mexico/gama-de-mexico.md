@@ -111,6 +111,7 @@ vip:
       certificaciones: "UL Listed y FM Approved por modelo"
       normas: "NFPA 1964"
     - nombre: "Mangueras contra incendio"
+      pagina: "mangueras-contra-incendio"
       subtitulo: "Conducción de agua a presión industrial"
       imagen: "/images/empresas/gama-de-mexico/mangueras.avif"
       imagenAlt: "Manguera forestal contra incendio, vista lateral"

@@ -224,6 +224,9 @@ const lineasCollection = defineCollection({
     nombre: z.string(),
     /* «un monitor», «una boquilla»: para los h2 que hablan de una pieza */
     singular: z.string().optional(),
+    /* Encabezado de la columna de rango en la tabla de modelos: «Caudal» por defecto,
+       «Diámetro · longitud» en mangueras, «Tamaño · presión» en válvulas */
+    columnaRango: z.string().optional(),
     subtitulo: z.string(),
     imagen: z.string().optional(),
     imagenAlt: z.string().optional(),

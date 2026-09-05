@@ -136,6 +136,9 @@ faq:
   - pregunta: "¿Cotizan desde Querétaro o todo pasa por la Ciudad de México?"
     respuesta: "La sucursal de Avenida Constituyentes en Santiago de Querétaro cotiza y coordina envíos por su cuenta. Ambos domicilios entregan a cualquier punto de la República."
 relacionados:
+  - titulo: "Mangueras contra incendio de Gama de México"
+    url: "/empresas/equipos-contra-incendio/queretaro/gama-de-mexico/mangueras-contra-incendio/"
+    nota: "El tramo antes de la boquilla: diámetro, acople y presión de trabajo"
   - titulo: "Monitores contra incendio de Gama de México"
     url: "/empresas/equipos-contra-incendio/queretaro/gama-de-mexico/monitores-contra-incendio/"
     nota: "Cuando el caudal ya no se sostiene a mano: lanzadores de 700 a 2,500 GPM"
