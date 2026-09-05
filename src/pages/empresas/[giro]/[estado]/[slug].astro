@@ -61,13 +61,28 @@ const canonicalURL = `${SITE.url}${urlEmpresa(e)}`;
  * sólo añade el estado.
  */
 const nombreLlevaPlaza = [e.ciudad, e.municipio].some((x) => x && e.nombre.toLowerCase().includes(x.toLowerCase()));
+/* Title: con la ciudad si cabe en ~60 caracteres; si no, solo la abreviatura del estado.
+   Antes 1,211 fichas pasaban de 70 caracteres por ciudades largas. */
+const tituloLargo = `${e.nombre} — ${g.labelCorto} en ${e.ciudad}, ${edo.abreviatura}`;
 const tituloSEO = nombreLlevaPlaza
   ? `${e.nombre}, ${edo.abreviatura} — ${g.labelCorto}`
-  : `${e.nombre} — ${g.labelCorto} en ${e.ciudad}, ${edo.abreviatura}`;
+  : (tituloLargo.length <= 60 ? tituloLargo : `${e.nombre} — ${g.labelCorto}, ${edo.abreviatura}`);
+/* Meta description cortada en palabra completa; nunca termina en conjunción, preposición o artículo suelto */
+const recorta = (s: string, n = 155) => {
+  const t = s.replace(/\s+/g, ' ').trim(); if (t.length <= n) return t;
+  const palabras = t.slice(0, n).split(' '); palabras.pop();
+  const sueltas = new Set(['y', 'o', 'e', 'u', 'de', 'del', 'con', 'en', 'para', 'por', 'a', 'al', 'el', 'la', 'los', 'las', 'un', 'una', 'que', 'sin', 'su', 'sus']);
+  while (palabras.length && sueltas.has(palabras[palabras.length - 1].toLowerCase().replace(/[,;:.]$/, ''))) palabras.pop();
+  return palabras.join(' ').replace(/[,;:—-]+$/, '') + '.';
+};
+const ogImagenVIP = esVIP ? e.vip?.lineas.find((l) => l.imagen)?.imagen : undefined;
 const seoMeta = {
   title: tituloSEO,
-  description: `${e.nombre}: ${g.sustantivo} en ${e.ciudad}, ${edo.nombre}.${esp.length ? ' ' + esp.map((x) => x.label).join(', ') + '.' : ''} Ubicación, contacto y nivel de verificación en el directorio FIREFIGHTERS MX.`.replace(/\s+/g, ' ').slice(0, 160),
+  description: recorta(esVIP && e.vip
+    ? `${e.nombre}, ${g.sustantivo} en ${e.ciudad}, ${edo.nombre}: ${e.vip.servicios.length} servicios, ${e.vip.lineas.length} líneas de catálogo con certificación, condiciones comerciales y preguntas frecuentes. Ficha verificada.`
+    : `${e.nombre}: ${g.sustantivo} en ${e.ciudad}, ${edo.nombre}.${esp.length ? ' ' + esp.map((x) => x.label.toLowerCase()).join(', ') + '.' : ''} Ubicación, contacto y nivel de verificación en el directorio FIREFIGHTERS MX.`),
   canonicalURL, noindex,
+  ...(ogImagenVIP ? { ogImage: ogImagenVIP } : {}),
 };
 const breadcrumbSchema = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
   { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
@@ -79,7 +94,9 @@ const businessSchema = { '@context': 'https://schema.org', '@type': 'LocalBusine
   ...(webPublicable ? { sameAs: [webPublicable] } : {}), ...(e.telefono ? { telephone: e.telefono } : {}), ...(e.email ? { email: e.email } : {}),
   address: { '@type': 'PostalAddress', addressLocality: e.ciudad, addressRegion: edo.nombre, addressCountry: 'MX', ...(e.direccion ? { streetAddress: e.direccion } : {}), ...(e.codigoPostal ? { postalCode: e.codigoPostal } : {}) },
   ...(hasMap ? { geo: { '@type': 'GeoCoordinates', latitude: e.coordenadas!.lat, longitude: e.coordenadas!.lng } } : {}),
-  areaServed: { '@type': 'AdministrativeArea', name: edo.nombre }, knowsAbout: [g.label, ...g.normas, ...esp.map((x) => x.label)] };
+  areaServed: { '@type': 'AdministrativeArea', name: edo.nombre }, knowsAbout: [g.label, ...g.normas, ...esp.map((x) => x.label)],
+  ...(esVIP && e.vip?.lineas.length ? { hasOfferCatalog: { '@type': 'OfferCatalog', name: `Catálogo de ${e.nombre}`, itemListElement: e.vip.lineas.map((l) => ({ '@type': 'Offer', itemOffered: { '@type': 'Product', name: l.nombre, ...(l.pagina && lineasInternas[l.pagina] ? { url: `${SITE.url}${lineasInternas[l.pagina]}` } : {}) } })) } } : {}) };
+const faqSchemaFicha = esVIP && e.vip?.faq.length ? { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: e.vip.faq.map((f) => ({ '@type': 'Question', name: f.pregunta, acceptedAnswer: { '@type': 'Answer', text: f.respuesta } })) } : null;
 /**
  * Columna derecha del hero: dos párrafos de venta.
  *
@@ -106,7 +123,7 @@ const perfilParrafos = parrafos.length > 2 ? parrafos.slice(2) : (parrafos.lengt
 const waMsg = `Hola, vi la ficha de ${e.nombre} en el directorio FIREFIGHTERS MX y quiero reclamarla / actualizar sus datos.`;
 const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>`;
 ---
-<BaseLayout {...seoMeta} schema={[breadcrumbSchema, businessSchema]}>
+<BaseLayout {...seoMeta} schema={faqSchemaFicha ? [breadcrumbSchema, businessSchema, faqSchemaFicha] : [breadcrumbSchema, businessSchema]}>
   <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
     <div class="container-site"><ol class="flex items-center gap-2 text-xs list-none m-0 p-0 flex-wrap" style="color:#4A7599">
       <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li><li aria-hidden="true">/</li>
@@ -167,7 +184,7 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
         </div>
 
         {/* Bloques de la ficha VIP: sólo cuando el registro trae `vip` (plan destacado) */}
-        {esVIP && e.vip && <FichaVip e={e} g={g} estadoNombre={edo.nombre} web={webPublicable} lineasInternas={lineasInternas} />}
+        {esVIP && e.vip && <FichaVip e={e} g={g} web={webPublicable} lineasInternas={lineasInternas} />}
 
         {esp.length > 0 && (
           <div>
@@ -242,7 +259,7 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
           <ul class="flex flex-col gap-3 list-none m-0 p-0 text-sm">
             {e.telefono && <li class="flex items-center gap-3"><span class="font-display text-[10px] uppercase tracking-wider w-16 shrink-0" style="color:#4A7599">Tel.</span><a href={`tel:${e.telefono}`} class="hover:text-[#FF6B26]" style="color:#FFFFFF">{e.telefono}</a></li>}
             {e.email && <li class="flex items-center gap-3"><span class="font-display text-[10px] uppercase tracking-wider w-16 shrink-0" style="color:#4A7599">Correo</span><a href={`mailto:${e.email}`} class="hover:text-[#FF6B26] break-all" style="color:#FFFFFF">{e.email}</a></li>}
-            {webPublicable && <li class="flex items-center gap-3"><span class="font-display text-[10px] uppercase tracking-wider w-16 shrink-0" style="color:#4A7599">Web</span><a href={webPublicable} target="_blank" rel="noopener nofollow" class="hover:text-[#FF6B26] break-all" style="color:#FFFFFF">{webHost}</a></li>}
+            {webPublicable && <li class="flex items-center gap-3"><span class="font-display text-[10px] uppercase tracking-wider w-16 shrink-0" style="color:#4A7599">Web</span><a href={webPublicable} target="_blank" rel="noopener sponsored" class="hover:text-[#FF6B26] break-all" style="color:#FFFFFF">{webHost}</a></li>}
             {e.direccion && <li class="flex items-start gap-3"><span class="font-display text-[10px] uppercase tracking-wider w-16 shrink-0 mt-0.5" style="color:#4A7599">Dirección</span><span style="color:#CBD5E1">{e.direccion}</span></li>}
             {!e.telefono && !e.email && !webPublicable && <li class="text-xs" style="color:#64748B">Sin datos de contacto en el registro público.</li>}
           </ul>

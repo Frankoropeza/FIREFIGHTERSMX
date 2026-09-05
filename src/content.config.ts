@@ -222,6 +222,8 @@ const lineasCollection = defineCollection({
     giro: giroEnum,
     slug: z.string(),
     nombre: z.string(),
+    /* «un monitor», «una boquilla»: para los h2 que hablan de una pieza */
+    singular: z.string().optional(),
     subtitulo: z.string(),
     imagen: z.string().optional(),
     imagenAlt: z.string().optional(),

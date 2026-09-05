@@ -39,14 +39,27 @@ const otrasPlazas = (await todasLasEmpresas()).filter((x) => x.slug === e.slug &
 const lineasSinPagina = (e.vip?.lineas ?? []).filter((x) => x.pagina !== l.slug && !hermanas.some((h) => h.slug === x.pagina));
 
 const parr = (s?: string) => (s ?? '').split(/\n{2,}/).map((x) => x.trim()).filter(Boolean);
+/* ids de ancla sin acentos: «Monitor tipo corazón» → monitor-tipo-corazon */
+const anchorId = (s: string) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+/* meta description cortada en palabra completa, nunca a mitad */
+/* Meta description cortada en palabra completa; nunca termina en conjunción, preposición o artículo suelto */
+const recorta = (s: string, n = 155) => {
+  const t = s.replace(/\s+/g, ' ').trim(); if (t.length <= n) return t;
+  const palabras = t.slice(0, n).split(' '); palabras.pop();
+  const sueltas = new Set(['y', 'o', 'e', 'u', 'de', 'del', 'con', 'en', 'para', 'por', 'a', 'al', 'el', 'la', 'los', 'las', 'un', 'una', 'que', 'sin', 'su', 'sus']);
+  while (palabras.length && sueltas.has(palabras[palabras.length - 1].toLowerCase().replace(/[,;:.]$/, ''))) palabras.pop();
+  return palabras.join(' ').replace(/[,;:—-]+$/, '') + '.';
+};
+const singular = l.singular ?? l.nombre.toLowerCase();
 const intro = parr(l.intro);
 const contexto = parr(l.contexto);
 const web = e.plan === 'destacado' ? l.urlEmpresa : undefined;
 
 const seoMeta = {
   title: `${l.nombre} — ${e.nombre}, ${edo.abreviatura}`,
-  description: `${l.nombre} de ${e.nombre} en ${e.ciudad}: ${l.subtitulo.toLowerCase()}. ${l.familias.map((f) => f.nombre.toLowerCase()).join(', ')}; modelos, caudales, certificación y criterios de selección.`.replace(/\s+/g, ' ').slice(0, 160),
+  description: recorta(`${l.nombre} de ${e.nombre} en ${e.ciudad}: ${l.subtitulo.toLowerCase()}. ${l.familias.length} familias y ${l.modelos.length} modelos con caudal, presión y certificación, criterios de selección y qué enviar para cotizar.`),
   canonicalURL,
+  ...(l.imagen ? { ogImage: l.imagen } : {}),
 };
 const breadcrumbSchema = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
   { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
@@ -56,7 +69,10 @@ const breadcrumbSchema = { '@context': 'https://schema.org', '@type': 'Breadcrum
   { '@type': 'ListItem', position: 5, name: e.nombre, item: `${SITE.url}${fichaURL}` },
   { '@type': 'ListItem', position: 6, name: l.nombre, item: canonicalURL } ] };
 const faqSchema = l.faq.length ? { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: l.faq.map((f) => ({ '@type': 'Question', name: f.pregunta, acceptedAnswer: { '@type': 'Answer', text: f.respuesta } })) } : null;
-const schemas = faqSchema ? [breadcrumbSchema, faqSchema] : [breadcrumbSchema];
+const webPageSchema = { '@context': 'https://schema.org', '@type': 'WebPage', '@id': canonicalURL, name: `${l.nombre} — ${e.nombre}`, url: canonicalURL, inLanguage: 'es-MX',
+  about: { '@type': 'LocalBusiness', '@id': `${SITE.url}${fichaURL}#business`, name: e.nombre }, isPartOf: { '@type': 'WebSite', url: `${SITE.url}/` },
+  ...(l.imagen ? { primaryImageOfPage: { '@type': 'ImageObject', url: `${SITE.url}${l.imagen}` } } : {}) };
+const schemas = faqSchema ? [breadcrumbSchema, webPageSchema, faqSchema] : [breadcrumbSchema, webPageSchema];
 const h2 = 'font-display font-bold mb-3';
 const h2s = 'color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1';
 ---
@@ -85,7 +101,7 @@ const h2s = 'color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1'
         <p class="font-display text-sm uppercase tracking-wider mb-5" style="color:#4A7599">{l.subtitulo}</p>
         {l.familias.length > 0 && (
           <ul class="flex flex-wrap gap-2 list-none m-0 p-0">
-            {l.familias.map((f) => <li><a href={`#familia-${f.nombre.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`} class="inline-block text-xs px-3 py-1.5 hover:text-[#FF6B26]" style={`color:#CBD5E1;border:1px solid ${borde}`}>{f.nombre}</a></li>)}
+            {l.familias.map((f) => <li><a href={`#familia-${anchorId(f.nombre)}`} class="inline-block text-xs px-3 py-1.5 hover:text-[#FF6B26]" style={`color:#CBD5E1;border:1px solid ${borde}`}>{f.nombre}</a></li>)}
           </ul>
         )}
       </div>
@@ -130,18 +146,18 @@ const h2s = 'color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1'
             <p class="text-sm leading-[1.9] mb-6" style="color:#94A3B8">Cada familia es una ruta de selección distinta, no un producto: la empresa las separa por geometría de descarga y por respaldo documental. Un mismo modelo puede pertenecer a más de una.</p>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-px" style={`background:${borde};border:1px solid ${borde}`}>
               {l.familias.map((f) => (
-                <article id={`familia-${f.nombre.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`} class="p-6 flex flex-col gap-3" style="background:#040A12">
+                <article id={`familia-${anchorId(f.nombre)}`} class="p-6 flex flex-col gap-3" style="background:#040A12">
                   <h3 class="font-display font-bold text-base leading-snug" style="color:#FFFFFF">{f.nombre}</h3>
                   <p class="text-sm leading-[1.85]" style="color:#94A3B8">{f.descripcion}</p>
                   {f.cuando && (
                     <div>
-                      <h4 class="font-display text-[10px] uppercase tracking-wider mb-1" style="color:#4A7599">Cuándo conviene</h4>
+                      <h4 class="font-display text-[10px] uppercase tracking-wider mb-1" style="color:#4A7599">Cuándo conviene<span class="sr-only"> el {f.nombre.toLowerCase()}</span></h4>
                       <p class="text-sm leading-[1.8]" style="color:#CBD5E1">{f.cuando}</p>
                     </div>
                   )}
                   {typeof f.modelos === 'number' && (
                     <div class="mt-auto pt-3" style={`border-top:1px solid ${borde}`}>
-                      <h5 class="font-display text-[10px] uppercase tracking-wider" style="color:#4A7599">En catálogo</h5>
+                      <h5 class="font-display text-[10px] uppercase tracking-wider" style="color:#4A7599">En catálogo<span class="sr-only">: {f.nombre.toLowerCase()}</span></h5>
                       <p class="text-sm" style="color:#CBD5E1">{f.modelos} {f.modelos === 1 ? 'modelo' : 'modelos'} declarados por la empresa</p>
                     </div>
                   )}
@@ -181,14 +197,14 @@ const h2s = 'color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1'
                 </tbody>
               </table>
             </div>
-            <h5 class="font-display text-[10px] uppercase tracking-wider mt-3" style="color:#4A7599">Fuente: página de la línea en el sitio de la empresa · datos declarados por modelo</h5>
+            <p class="font-display text-[10px] uppercase tracking-wider mt-3" style="color:#4A7599">Fuente: página de la línea en el sitio de la empresa · datos declarados por modelo</p>
           </section>
         )}
 
         {l.criterios.length > 0 && (
           <section aria-labelledby="linea-criterios">
             <span class="section-eyebrow mb-4 inline-flex">Cómo elegir</span>
-            <h2 id="linea-criterios" class={h2} style={h2s}>Los {l.criterios.length} criterios con los que {e.nombre} especifica un monitor</h2>
+            <h2 id="linea-criterios" class={h2} style={h2s}>Los {l.criterios.length} criterios con los que {e.nombre} especifica {singular}</h2>
             <p class="text-sm leading-[1.9] mb-6" style="color:#94A3B8">En el orden en que la empresa los aplica. El primero descarta familias; el último descarta modelos.</p>
             <ol class="flex flex-col gap-px list-none m-0 p-0" style={`background:${borde};border:1px solid ${borde}`}>
               {l.criterios.map((c, i) => (
@@ -237,7 +253,7 @@ const h2s = 'color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1'
         {l.datosParaCotizar.length > 0 && (
           <section aria-labelledby="linea-cotizar">
             <span class="section-eyebrow mb-4 inline-flex">Para cotizar</span>
-            <h2 id="linea-cotizar" class={h2} style={h2s}>Qué pide {e.nombre} para cotizar un monitor</h2>
+            <h2 id="linea-cotizar" class={h2} style={h2s}>Qué pide {e.nombre} para cotizar {singular}</h2>
             <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">Con estos datos la empresa compromete propuesta formal en menos de 24 horas hábiles.</p>
             <ul class="flex flex-col list-none m-0 p-0" style={`border:1px solid ${borde}`}>
               {l.datosParaCotizar.map((d, i) => (
@@ -249,7 +265,7 @@ const h2s = 'color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1'
             {web && (
               <div class="mt-6 p-5 flex flex-col sm:flex-row sm:items-center gap-4" style={`background:#0C1825;border:1px solid ${borde};border-left:3px solid ${g.color}`}>
                 <p class="text-sm leading-relaxed flex-1" style="color:#94A3B8">Los modelos completos, con ficha técnica por producto, están en la página de la línea en el sitio de la empresa.</p>
-                <a href={web} target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary shrink-0">Ver {l.nombre.toLowerCase()} en {e.nombre}</a>
+                <a href={web} target="_blank" rel="noopener sponsored" class="btn btn-sm btn-primary shrink-0">Ver {l.nombre.toLowerCase()} en {e.nombre}</a>
               </div>
             )}
           </section>
