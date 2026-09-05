@@ -28,10 +28,11 @@ serviciosDetalle:
   - "Incendios estructurales"
   - "Incendios forestales (zona Ajusco)"
   - "Atención de emergencias"
+descripcion: "Estación del Heroico Cuerpo de Bomberos de la Ciudad de México en Arenal Tepepan, junto al Viaducto Tlalpan. Tlalpan es la alcaldía más extensa de la capital: la estación cubre desde la zona urbana del norte hasta el bosque del Ajusco y la carretera federal a Cuernavaca, con incendios forestales en estiaje y rescate en zona boscosa como servicios propios de su territorio."
 fuentes:
   - nombre: "bomberos.cdmx.gob.mx"
     url: "https://www.bomberos.cdmx.gob.mx/estaciones/estacion-tlalpan"
-verificadoEl: "2026-06"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

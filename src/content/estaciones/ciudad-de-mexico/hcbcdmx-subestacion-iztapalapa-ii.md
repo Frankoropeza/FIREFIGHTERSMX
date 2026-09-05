@@ -26,10 +26,11 @@ servicios:
 serviciosDetalle:
   - "Incendios estructurales"
   - "Atención de emergencias"
+descripcion: "Segunda subestación del Heroico Cuerpo de Bomberos de la Ciudad de México en Iztapalapa, en Chinampac de Juárez. Refuerza la cobertura del oriente de la alcaldía más poblada del país, en el entorno del Cerro de la Estrella y las colonias de la sierra de Santa Catarina, donde la pendiente y la traza irregular complican el acceso."
 fuentes:
   - nombre: "bomberos.cdmx.gob.mx"
     url: "https://www.bomberos.cdmx.gob.mx/estaciones/estacion-iztapalapa/subestacion-iztapalapa"
-verificadoEl: "2026-06"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

@@ -28,10 +28,11 @@ serviciosDetalle:
   - "Incendios estructurales"
   - "Incendios forestales"
   - "Atención de emergencias"
+descripcion: "Estación del Heroico Cuerpo de Bomberos de la Ciudad de México en La Venta, sobre el camino al Desierto de los Leones. Su territorio es mayoritariamente suelo de conservación: bosque, barrancas y la carretera federal México-Toluca. En temporada de estiaje el combate de incendios forestales concentra la carga de trabajo de esta estación, y los accidentes carreteros el resto del año."
 fuentes:
   - nombre: "bomberos.cdmx.gob.mx"
     url: "https://www.bomberos.cdmx.gob.mx/estaciones/estacion-cuajimalpa"
-verificadoEl: "2026-06"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

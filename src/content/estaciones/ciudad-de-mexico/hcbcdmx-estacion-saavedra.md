@@ -26,10 +26,11 @@ servicios:
 serviciosDetalle:
   - "Incendios estructurales"
   - "Atención de emergencias"
+descripcion: "Estación Saavedra del Heroico Cuerpo de Bomberos de la Ciudad de México, en Guadalupe Tepeyac sobre Avenida Henry Ford. Cubre Gustavo A. Madero, la segunda alcaldía más poblada de la capital, con el conjunto de la Basílica y su afluencia masiva, el corredor industrial del norte y las colonias asentadas en la falda de la Sierra de Guadalupe."
 fuentes:
   - nombre: "bomberos.cdmx.gob.mx"
     url: "https://www.bomberos.cdmx.gob.mx/estaciones/estacion-saavedra"
-verificadoEl: "2026-06"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

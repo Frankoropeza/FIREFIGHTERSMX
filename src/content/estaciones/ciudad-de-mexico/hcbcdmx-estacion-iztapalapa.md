@@ -29,10 +29,11 @@ serviciosDetalle:
   - "Rescate urbano"
   - "Materiales peligrosos (HAZMAT)"
   - "Atención de emergencias"
+descripcion: "Estación del Heroico Cuerpo de Bomberos de la Ciudad de México sobre la Calzada Ermita Iztapalapa, en Constitución de 1917. Atiende la alcaldía más poblada del país, un territorio de vivienda densa, mercados y corredores de comercio informal, donde las fugas de gas LP y los incendios en vivienda son el servicio más frecuente. El hundimiento diferencial del subsuelo agrava el riesgo en la red de gas y en las estructuras."
 fuentes:
   - nombre: "bomberos.cdmx.gob.mx"
     url: "https://www.bomberos.cdmx.gob.mx/estaciones/estacion-iztapalapa"
-verificadoEl: "2026-06"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

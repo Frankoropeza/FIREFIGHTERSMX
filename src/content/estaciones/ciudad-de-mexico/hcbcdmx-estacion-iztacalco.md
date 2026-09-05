@@ -25,10 +25,11 @@ servicios:
 serviciosDetalle:
   - "Incendios estructurales"
   - "Atención de emergencias"
+descripcion: "Estación del Heroico Cuerpo de Bomberos de la Ciudad de México en Agrícola Oriental, sobre Avenida Javier Rojo Gómez. Iztacalco es la alcaldía más pequeña en superficie y una de las más densamente pobladas, con predominio de vivienda popular, talleres y pequeña industria intercalados en la traza urbana."
 fuentes:
   - nombre: "bomberos.cdmx.gob.mx"
     url: "https://www.bomberos.cdmx.gob.mx/estaciones/estacion-en-iztacalco"
-verificadoEl: "2026-06"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

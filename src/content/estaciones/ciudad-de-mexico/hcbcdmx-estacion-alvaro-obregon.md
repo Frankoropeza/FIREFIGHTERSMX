@@ -26,10 +26,11 @@ servicios:
 serviciosDetalle:
   - "Incendios estructurales"
   - "Atención de emergencias"
+descripcion: "Estación del Heroico Cuerpo de Bomberos de la Ciudad de México en San Pedro de los Pinos, sobre Avenida Escuadrón 201. Cubre el norte de Álvaro Obregón y la franja que colinda con Benito Juárez y Miguel Hidalgo, una zona urbana consolidada atravesada por el Periférico y el Viaducto. Hacia el sur de la alcaldía su territorio de respuesta cambia por completo: barrancas profundas y colonias asentadas en ladera donde el acceso de las unidades pesadas es limitado."
 fuentes:
   - nombre: "bomberos.cdmx.gob.mx"
     url: "https://www.bomberos.cdmx.gob.mx/estaciones/estacion-obregon"
-verificadoEl: "2026-06"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

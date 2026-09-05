@@ -26,10 +26,11 @@ servicios:
 serviciosDetalle:
   - "Incendios estructurales"
   - "Atención de emergencias"
+descripcion: "Estación del Heroico Cuerpo de Bomberos de la Ciudad de México en el pueblo de Tacuba, Miguel Hidalgo. Atiende el norponiente de la alcaldía: zona de traza histórica y calles estrechas, con los corredores de Marina Nacional y Legaria como vías principales y la franja industrial que colinda con Azcapotzalco."
 fuentes:
   - nombre: "bomberos.cdmx.gob.mx"
     url: "https://www.bomberos.cdmx.gob.mx/estaciones/estacion-tacuba"
-verificadoEl: "2026-06"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

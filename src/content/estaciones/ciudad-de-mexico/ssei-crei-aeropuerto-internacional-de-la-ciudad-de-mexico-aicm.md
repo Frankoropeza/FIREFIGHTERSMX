@@ -24,7 +24,7 @@ serviciosDetalle:
   - "Salvamento y extinción de incendios en aeronaves (ARFF)"
   - "Rescate"
   - "Respuesta a emergencias en plataforma y pistas"
-descripcion: "Unidad de rescate y extinción de incendios del AICM, operando 24 horas con categoría OACI reportada 9 y flota de unidades de extinción."
+descripcion: "Servicio de salvamento y extinción de incendios del Aeropuerto Internacional de la Ciudad de México, con operación permanente las 24 horas y categoría OACI reportada 9. Es una unidad aeroportuaria, no municipal: su responsabilidad son las pistas, plataformas y aeronaves del recinto, con vehículos de extinción de gran capacidad y tiempos de respuesta medidos en la propia pista. Atiende el aeropuerto de mayor tráfico del país, dentro de la mancha urbana y a pocos minutos del oriente de la ciudad."
 fuentes:
   - nombre: "aicm.com.mx"
     url: "https://www.aicm.com.mx/en/passengers/services/aicm-services/emergencies"

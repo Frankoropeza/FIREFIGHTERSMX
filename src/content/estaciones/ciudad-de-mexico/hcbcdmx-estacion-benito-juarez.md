@@ -26,10 +26,11 @@ servicios:
 serviciosDetalle:
   - "Incendios estructurales"
   - "Atención de emergencias"
+descripcion: "Estación del Heroico Cuerpo de Bomberos de la Ciudad de México en la colonia Portales, sobre el Eje Central Lázaro Cárdenas. Atiende una de las alcaldías de mayor densidad vertical de la capital, con edificios de departamentos de varias décadas; fue de las zonas más golpeadas por el sismo del 19 de septiembre de 2017, y desde entonces la respuesta a colapsos y a inmuebles con daño estructural forma parte de su rutina."
 fuentes:
   - nombre: "bomberos.cdmx.gob.mx"
     url: "https://www.bomberos.cdmx.gob.mx/estaciones/estacion-benito-juarez"
-verificadoEl: "2026-06"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

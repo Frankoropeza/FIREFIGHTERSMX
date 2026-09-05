@@ -27,10 +27,11 @@ serviciosDetalle:
   - "Incendios estructurales"
   - "Rescate urbano"
   - "Atención de emergencias"
+descripcion: "Estación del Heroico Cuerpo de Bomberos de la Ciudad de México en la colonia San Rafael, sobre Insurgentes Norte. Da servicio a la alcaldía con mayor población flotante del país: centro histórico, corredores comerciales, mercados y edificios antiguos de uso mixto donde conviven vivienda, bodega y comercio. Es también la zona de mayor concentración de manifestaciones y eventos masivos de la capital."
 fuentes:
   - nombre: "bomberos.cdmx.gob.mx"
     url: "https://www.bomberos.cdmx.gob.mx/estaciones/estacion-cuauhtemoc"
-verificadoEl: "2026-06"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

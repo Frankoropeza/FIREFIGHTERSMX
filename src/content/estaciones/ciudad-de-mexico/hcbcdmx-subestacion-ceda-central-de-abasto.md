@@ -9,7 +9,7 @@ municipio: "Iztapalapa"
 tipo: "Municipal"
 corporacion: "HCBCDMX"
 corporacionSlug: "hcbcdmx"
-rolEstacion: "central"
+rolEstacion: "subestacion"
 numeroEstacion: "Subestación CEDA (Central de Abasto)"
 direccion: "Central de Abastos, Área Federal, Frutas y Legumbres 227, C.P. 09040"
 coordenadas:
@@ -23,10 +23,11 @@ servicios:
 serviciosDetalle:
   - "Incendios estructurales"
   - "Atención de emergencias en la Central de Abasto"
+descripcion: "Subestación del Heroico Cuerpo de Bomberos de la Ciudad de México dentro de la Central de Abasto de Iztapalapa, el mayor mercado mayorista de América Latina. Tener un destacamento en el propio recinto responde a su escala y a su riesgo: cientos de hectáreas de bodegas contiguas, carga y descarga permanente, montacargas, material de embalaje y pasillos donde un incendio se propaga con rapidez."
 fuentes:
   - nombre: "bomberos.cdmx.gob.mx"
     url: "https://www.bomberos.cdmx.gob.mx/estaciones/estacion-iztapalapa/subestacion-ceda"
-verificadoEl: "2026-06"
+verificadoEl: "2026-09"
 confianza: "media"
 activa: true
 ---

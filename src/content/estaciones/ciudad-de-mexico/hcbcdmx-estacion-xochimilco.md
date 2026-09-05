@@ -26,10 +26,11 @@ servicios:
 serviciosDetalle:
   - "Incendios estructurales"
   - "Atención de emergencias"
+descripcion: "Estación del Heroico Cuerpo de Bomberos de la Ciudad de México en el barrio de Xaltocan, Xochimilco. Su zona de respuesta incluye la red de canales y chinampas declarada Patrimonio Mundial, donde la emergencia puede requerir acceso por agua, además de los pueblos originarios de la zona alta y el suelo de conservación de la sierra."
 fuentes:
   - nombre: "bomberos.cdmx.gob.mx"
     url: "https://www.bomberos.cdmx.gob.mx/estaciones/estacion-xochimilco"
-verificadoEl: "2026-06"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

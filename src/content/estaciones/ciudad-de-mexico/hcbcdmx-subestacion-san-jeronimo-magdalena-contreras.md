@@ -23,10 +23,11 @@ servicios:
 serviciosDetalle:
   - "Incendios estructurales"
   - "Atención de emergencias"
+descripcion: "Subestación del Heroico Cuerpo de Bomberos de la Ciudad de México en San Jerónimo Lídice, sobre Avenida Luis Cabrera. Atiende el norte de La Magdalena Contreras y su frontera con Álvaro Obregón y Tlalpan: una zona residencial en ladera, con arbolado denso y proximidad al suelo de conservación del sur de la ciudad."
 fuentes:
   - nombre: "bomberos.cdmx.gob.mx"
     url: "https://www.bomberos.cdmx.gob.mx/estaciones/estacion-magdalena-contreras/subestacion-magdalena-contreras-en-magdalena-contreras"
-verificadoEl: "2026-06"
+verificadoEl: "2026-09"
 confianza: "media"
 activa: true
 ---

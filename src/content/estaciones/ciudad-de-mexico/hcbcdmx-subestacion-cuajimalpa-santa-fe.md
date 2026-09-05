@@ -23,10 +23,11 @@ servicios:
 serviciosDetalle:
   - "Incendios estructurales"
   - "Atención de emergencias"
+descripcion: "Subestación del Heroico Cuerpo de Bomberos de la Ciudad de México en Contadero, Santa Fe. Cubre el distrito corporativo de mayor densidad vertical de la capital, con torres de oficinas y vivienda de gran altura donde el combate de incendios depende del equipamiento del propio inmueble. El contraste con el entorno inmediato —barrancas y colonias populares del poniente— define su zona de respuesta."
 fuentes:
   - nombre: "bomberos.cdmx.gob.mx"
     url: "https://www.bomberos.cdmx.gob.mx/estaciones/estacion-cuajimalpa/subestacion-cuajimalpa"
-verificadoEl: "2026-06"
+verificadoEl: "2026-09"
 confianza: "media"
 activa: true
 ---

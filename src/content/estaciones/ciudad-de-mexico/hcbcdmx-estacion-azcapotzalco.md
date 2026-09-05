@@ -26,10 +26,11 @@ servicios:
 serviciosDetalle:
   - "Incendios estructurales"
   - "Atención de emergencias"
+descripcion: "Estación del Heroico Cuerpo de Bomberos de la Ciudad de México en la colonia Del Maestro, Azcapotzalco. Su zona de cobertura incluye el corredor industrial de Vallejo, uno de los polígonos manufactureros y de almacenamiento más extensos de la capital, y los terrenos de la antigua refinería 18 de Marzo. La combinación de naves industriales, bodegas y vivienda contigua define el perfil de riesgo de esta estación."
 fuentes:
   - nombre: "bomberos.cdmx.gob.mx"
     url: "https://www.bomberos.cdmx.gob.mx/estaciones/estacion-azcapotzalco"
-verificadoEl: "2026-06"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---

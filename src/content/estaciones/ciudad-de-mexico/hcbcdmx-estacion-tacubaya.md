@@ -26,10 +26,11 @@ servicios:
 serviciosDetalle:
   - "Incendios estructurales"
   - "Atención de emergencias"
+descripcion: "Estación del Heroico Cuerpo de Bomberos de la Ciudad de México en Tacubaya, Miguel Hidalgo. Cubre uno de los nodos de transporte más congestionados de la ciudad, con su mercado, su comercio en vía pública y la confluencia de Revolución, Patriotismo y el Viaducto. El sur de la alcaldía, con barrancas y colonias en ladera, completa su zona de respuesta."
 fuentes:
   - nombre: "bomberos.cdmx.gob.mx"
     url: "https://www.bomberos.cdmx.gob.mx/estaciones/estacion-tacubaya"
-verificadoEl: "2026-06"
+verificadoEl: "2026-09"
 confianza: "alta"
 activa: true
 ---
