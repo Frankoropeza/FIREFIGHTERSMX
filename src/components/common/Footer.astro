@@ -1,11 +1,117 @@
 ---
 import { SITE, CONTACTO_DIRECTO_ACTIVO, DOMICILIO_VERIFICADO, REDES_VERIFICADAS, whatsappUrl } from '@config/site';
+import { estados } from '@data/estados';
+
 const year = new Date().getFullYear();
+
+type Link = [label: string, href: string];
+
+// ── PISO 1 ────────────────────────────────────────────────────────────
+const directorio: Link[] = [
+  ['Venta de equipo para bomberos y EPP', '/empresas/venta-equipo'],
+  ['Equipos contra incendios',            '/empresas/equipos-contra-incendio'],
+  ['Extintores: venta y recarga',         '/empresas/extintores'],
+  ['Sistemas contra incendio',            '/empresas/sistemas-ci'],
+  ['Capacitación y consultoría NOM-002',  '/empresas/capacitacion'],
+  ['Empresas por estado',                 '/empresas'],
+  ['Registrar mi empresa en el directorio', '/empresas/registro'],
+];
+
+const equipo: Link[] = [
+  ['Trajes para bombero NFPA 1971',   '/productos/trajes-bombero'],
+  ['Cascos NFPA 1971',                '/productos/cascos-nfpa'],
+  ['Equipos SCBA de respiración autónoma', '/productos/equipos-scba'],
+  ['Herramientas de rescate hidráulicas',  '/productos/herramientas-rescate'],
+  ['Extintores PQS, CO₂ y tipo K',    '/productos/extintores'],
+  ['Sistemas CI: rociadores y detección', '/productos/sistemas-ci'],
+  ['Cámaras térmicas para bomberos',  '/productos/camaras-termicas'],
+  ['Trajes y detección HAZMAT',       '/productos/hazmat'],
+  ['Drones para emergencias',         '/productos/drones-emergencia'],
+  ['Catálogo completo de equipo',     '/productos'],
+];
+
+const servicios: Link[] = [
+  ['Capacitación certificada DC-3',        '/servicios/capacitacion'],
+  ['Instalación de sistemas contra incendio', '/servicios/instalacion-sistemas-ci'],
+  ['Mantenimiento y recarga de extintores', '/servicios/mantenimiento'],
+  ['Auditoría NOM-002-STPS',               '/servicios/auditoria-seguridad'],
+  ['Brigadas empresariales',               '/servicios/brigadas-empresariales'],
+  ['Soporte para licitaciones públicas',   '/servicios/licitaciones'],
+  ['Todos los servicios contra incendio',  '/servicios'],
+];
+
+const industrias: Link[] = [
+  ['Bomberos municipales',   '/industrias/bomberos-municipales'],
+  ['Brigadas industriales',  '/industrias/brigadas-industriales'],
+  ['Aeropuertos ARFF',       '/industrias/aeropuertos-arff'],
+  ['Refinerías y PEMEX',     '/industrias/refinerias-pemex'],
+  ['Hospitales y clínicas',  '/industrias/hospitales'],
+  ['Hoteles y hospedaje',    '/industrias/hoteles'],
+  ['Minería',                '/industrias/mineria'],
+  ['Protección Civil',       '/industrias/proteccion-civil'],
+  ['Todas las industrias que equipamos', '/industrias'],
+];
+
+// ── PISO 2 ────────────────────────────────────────────────────────────
+const marcas: Link[] = [
+  ['Globe Manufacturing', '/marcas/globe-manufacturing'],
+  ['MSA Safety',          '/marcas/msa-safety'],
+  ['Dräger',              '/marcas/drager'],
+  ['3M Scott',            '/marcas/3m-scott'],
+  ['Honeywell',           '/marcas/honeywell'],
+  ['FLIR Teledyne',       '/marcas/flir-teledyne'],
+  ['Holmatro',            '/marcas/holmatro'],
+  ['Bullard',             '/marcas/bullard'],
+  ['Todas las marcas de equipo para bomberos', '/marcas'],
+];
+
+const estacionesLinks: Link[] = [
+  ['Directorio de estaciones de bomberos', '/estaciones'],
+  ['Estaciones en Ciudad de México',       '/estaciones/ciudad-de-mexico'],
+  ['Estaciones en Jalisco',                '/estaciones/jalisco'],
+  ['Estaciones en Nuevo León',             '/estaciones/nuevo-leon'],
+  ['Estaciones en Estado de México',       '/estaciones/estado-de-mexico'],
+  ['Cobertura nacional de equipamiento',   '/cobertura'],
+  ['Licitaciones y compras públicas',      '/licitaciones'],
+];
+
+const recursos: Link[] = [
+  ['Blog técnico contra incendio',      '/blog'],
+  ['Guías de compra de equipo',         '/blog/categoria/guias-de-compra'],
+  ['Normatividad NFPA y NOM',           '/blog/categoria/normatividad'],
+  ['Normas NFPA aplicadas en México',   '/blog/tag/nfpa'],
+  ['NOM-002-STPS paso a paso',          '/blog/tag/nom-002-stps'],
+  ['Precios de equipo para bomberos',   '/precios'],
+  ['Certificaciones y respaldo técnico', '/certificaciones'],
+];
+
+const empresa: Link[] = [
+  ['Quiénes somos',                    '/nosotros'],
+  ['Distribuidores autorizados',       '/distribuidores'],
+  ['Cotizar equipo para bomberos',     '/cotizacion'],
+  ['Contacto y atención a clientes',   '/contacto'],
+  ['Aviso de privacidad',              '/aviso-privacidad'],
+  ['Términos y condiciones',           '/terminos-condiciones'],
+  ['Mapa del sitio',                   '/sitemap-index.xml'],
+];
+
+// ── PISO 3: cobertura por estado, repartida en 4 columnas ─────────────
+const porColumna = Math.ceil(estados.length / 4);
+const columnasEstados = [0, 1, 2, 3].map((i) =>
+  estados.slice(i * porColumna, (i + 1) * porColumna)
+);
+
+const redes = [
+  { href: SITE.social.facebook,  label: 'Facebook',  icon: '<path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>' },
+  { href: SITE.social.instagram, label: 'Instagram', icon: '<rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>' },
+  { href: SITE.social.linkedin,  label: 'LinkedIn',  icon: '<path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>' },
+  { href: SITE.social.youtube,   label: 'YouTube',   icon: '<path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/>' },
+];
 ---
 
 <footer class="bg-[var(--forge-900)] border-t border-[var(--color-border)]">
 
-  <!-- CTA Bar -->
+  <!-- ══ CTA Bar ══════════════════════════════════════════════════ -->
   <div class="bg-gradient-to-r from-[var(--ember-600)] to-[var(--ember-500)]">
     <div class="container-site py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
       <div>
@@ -19,7 +125,7 @@ const year = new Date().getFullYear();
       <div class="flex items-center gap-3 shrink-0">
         <a href="/cotizacion"
            class="btn btn-sm bg-white text-[var(--ember-600)] hover:bg-[var(--ember-100)] border-white font-display font-bold">
-          Solicitar cotización
+          Cotizar equipo NFPA
         </a>
         <a href={whatsappUrl('Hola, quiero cotizar equipo para bomberos.')} target="_blank" rel="noopener"
            class="btn btn-sm bg-[var(--ember-700)] hover:bg-[var(--ember-800)] text-white border-transparent font-display flex items-center gap-2">
@@ -33,243 +139,199 @@ const year = new Date().getFullYear();
     </div>
   </div>
 
-  <!-- Stats Bar -->
-  <div class="bg-[var(--forge-800)] border-b border-[var(--color-border)]">
-    <div class="container-site py-4 grid grid-cols-2 sm:grid-cols-4 divide-x divide-[var(--color-border)]">
-      {[
-        { val: '32',   label: 'Estados con cobertura' },
-        { val: '+15',  label: 'Años de experiencia'   },
-        { val: 'NFPA', label: 'Certificados'           },
-        { val: '24h',  label: 'Tiempo de respuesta'   },
-      ].map(({ val, label }) => (
-        <div class="flex flex-col items-center py-1 px-4 first:pl-0 last:pr-0">
-          <span class="font-display font-bold text-[var(--ember-400)] text-xl leading-none">{val}</span>
-          <span class="text-[var(--forge-300)] text-[11px] mt-1 text-center">{label}</span>
-        </div>
-      ))}
-    </div>
-  </div>
+  <div class="container-site">
 
-  <!-- Main Grid: 4 columnas equilibradas -->
-  <div class="container-site py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 xl:gap-12">
+    <!-- ══ PISO 1: marca · directorio · equipo · servicios ═════════ -->
+    <div class="f-floor pt-12 pb-10">
 
-    <!-- Col 1: Brand -->
-    <div class="flex flex-col gap-5">
-      <a href="/" class="flex items-center gap-3 w-fit" aria-label="FIREFIGHTERS MX">
-        <div class="w-9 h-9 shrink-0">
-          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
-            <polygon points="18,2 32,10 32,26 18,34 4,26 4,10" fill="var(--ember-500)"/>
-            <path d="M18 10c0 0-5 4-3 8 1 2 3 2 3 2s-1-2 0-4c1-2 3-2 3-2s-1 3 1 5c.8.8 1 2 1 2s2-1.5 2-4c0-3-2-5-2-5s1 2 0 4c0 0-2-4-5-6z" fill="white" opacity="0.95"/>
-          </svg>
-        </div>
-        <div>
-          <div class="font-display font-bold text-[1.1rem] text-white leading-none tracking-[0.06em] uppercase">
-            Firefighters<span class="text-[var(--ember-500)]"> MX</span>
+      <!-- Marca y contacto -->
+      <div class="flex flex-col gap-5">
+        <a href="/" class="flex items-center gap-3 w-fit" aria-label="FIREFIGHTERS MX — inicio">
+          <div class="w-9 h-9 shrink-0">
+            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+              <polygon points="18,2 32,10 32,26 18,34 4,26 4,10" fill="var(--ember-500)"/>
+              <path d="M18 10c0 0-5 4-3 8 1 2 3 2 3 2s-1-2 0-4c1-2 3-2 3-2s-1 3 1 5c.8.8 1 2 1 2s2-1.5 2-4c0-3-2-5-2-5s1 2 0 4c0 0-2-4-5-6z" fill="white" opacity="0.95"/>
+            </svg>
           </div>
-          <div class="text-[9px] text-[var(--forge-300)] font-medium tracking-[0.22em] uppercase mt-0.5">Equipo Certificado</div>
-        </div>
-      </a>
-
-      <p class="text-sm leading-relaxed text-[var(--forge-200)]">
-        Portal líder en México para equipos de bomberos y sistemas contra incendio.
-        Equipo certificado con cobertura en los 32 estados, certificados
-        NFPA y NOM-002-STPS.
-      </p>
-
-      <!-- Contacto -->
-      <div class="flex flex-col gap-2.5 text-sm text-[var(--forge-200)]">
-        {CONTACTO_DIRECTO_ACTIVO && (
-<a href={`tel:${SITE.phoneE164}`}
-           class="flex items-center gap-2.5 hover:text-[var(--ember-400)]">
-          <svg class="w-4 h-4 shrink-0 text-[var(--ember-500)]" fill="none" viewBox="0 0 24 24"
-               stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-          </svg>
-          {SITE.phone}
+          <div>
+            <div class="font-display font-bold text-[1.1rem] text-white leading-none tracking-[0.06em] uppercase">
+              Firefighters<span class="text-[var(--ember-500)]"> MX</span>
+            </div>
+            <div class="text-[9px] text-[var(--forge-300)] font-medium tracking-[0.22em] uppercase mt-0.5">Equipo Certificado</div>
+          </div>
         </a>
-)}
-        <a href={`mailto:${SITE.email}`}
-           class="flex items-center gap-2.5 hover:text-[var(--ember-400)]">
-          <svg class="w-4 h-4 shrink-0 text-[var(--ember-500)]" fill="none" viewBox="0 0 24 24"
-               stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-          </svg>
-          {SITE.email}
-        </a>
-        <span class="flex items-center gap-2.5 text-[var(--forge-300)]">
-          <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24"
-               stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
-          </svg>
-          {SITE.hours}
-        </span>
-        {DOMICILIO_VERIFICADO && <a href={`https://maps.google.com/?q=${encodeURIComponent(SITE.address.full)}`}
-           target="_blank" rel="noopener"
-           class="flex items-start gap-2.5 hover:text-[var(--ember-400)]">
-          <svg class="w-4 h-4 shrink-0 mt-0.5 text-[var(--ember-500)]" fill="none" viewBox="0 0 24 24"
-               stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-          </svg>
-          <span>{SITE.address.full}</span>
-        </a>}
-      </div>
 
-      <!-- Redes sociales (sólo si están verificadas) -->
-      <div class="flex items-center gap-2">
-        {REDES_VERIFICADAS && [
-          { href: SITE.social.facebook,  label: 'Facebook',  icon: '<path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>' },
-          { href: SITE.social.instagram, label: 'Instagram', icon: '<rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>' },
-          { href: SITE.social.linkedin,  label: 'LinkedIn',  icon: '<path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>' },
-          { href: SITE.social.youtube,   label: 'YouTube',   icon: '<path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/>' },
-        ].map(({ href, label, icon }) => (
-          <a href={href} target="_blank" rel="noopener noreferrer"
-             class="w-8 h-8 flex items-center justify-center border border-[var(--color-border)] hover:border-[var(--ember-500)] hover:bg-[var(--ember-500)] hover:text-white text-[var(--forge-300)]"
-             aria-label={label}>
-            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24"
-                 stroke="currentColor" aria-hidden="true" set:html={icon}/>
+        <p class="text-sm leading-relaxed text-[var(--forge-200)]">
+          Portal mexicano de equipo para bomberos y sistemas contra incendio:
+          directorio de proveedores, estaciones de bomberos y guías técnicas
+          bajo norma NFPA y NOM-002-STPS, con cobertura en los 32 estados.
+        </p>
+
+        <div class="flex flex-col gap-2.5 text-sm text-[var(--forge-200)]">
+          {CONTACTO_DIRECTO_ACTIVO && (
+            <a href={`tel:${SITE.phoneE164}`} class="flex items-center gap-2.5 hover:text-[var(--ember-400)]">
+              <svg class="w-4 h-4 shrink-0 text-[var(--ember-500)]" fill="none" viewBox="0 0 24 24"
+                   stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+              </svg>
+              {SITE.phone}
+            </a>
+          )}
+          <a href={`mailto:${SITE.email}`} class="flex items-center gap-2.5 hover:text-[var(--ember-400)]">
+            <svg class="w-4 h-4 shrink-0 text-[var(--ember-500)]" fill="none" viewBox="0 0 24 24"
+                 stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+            {SITE.email}
           </a>
-        ))}
+          <span class="flex items-center gap-2.5 text-[var(--forge-300)]">
+            <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24"
+                 stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+            </svg>
+            {SITE.hours}
+          </span>
+          {DOMICILIO_VERIFICADO && (
+            <a href={`https://maps.google.com/?q=${encodeURIComponent(SITE.address.full)}`}
+               target="_blank" rel="noopener"
+               class="flex items-start gap-2.5 hover:text-[var(--ember-400)]">
+              <svg class="w-4 h-4 shrink-0 mt-0.5 text-[var(--ember-500)]" fill="none" viewBox="0 0 24 24"
+                   stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+              <span>{SITE.address.full}</span>
+            </a>
+          )}
+        </div>
+
+        {REDES_VERIFICADAS && (
+          <div class="flex items-center gap-2">
+            {redes.map(({ href, label, icon }) => (
+              <a href={href} target="_blank" rel="noopener noreferrer"
+                 class="w-8 h-8 flex items-center justify-center border border-[var(--color-border)] hover:border-[var(--ember-500)] hover:bg-[var(--ember-500)] hover:text-white text-[var(--forge-300)]"
+                 aria-label={label}>
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24"
+                     stroke="currentColor" aria-hidden="true" set:html={icon}/>
+              </a>
+            ))}
+          </div>
+        )}
       </div>
 
-      <!-- Badges -->
-      <div class="flex flex-wrap gap-1.5">
-        {['NFPA Certified','ISO 9001','NOM-002','STPS','UL Listed'].map(c => (
-          <span class="badge badge-dark text-[10px]">{c}</span>
-        ))}
+      <!-- Directorio -->
+      <nav aria-labelledby="f-directorio">
+        <h2 id="f-directorio" class="f-heading">Directorio de empresas</h2>
+        <ul class="f-list">
+          {directorio.map(([label, href]) => (
+            <li><a href={href} class="f-link">{label}</a></li>
+          ))}
+        </ul>
+      </nav>
+
+      <!-- Equipo y EPP -->
+      <nav aria-labelledby="f-equipo">
+        <h2 id="f-equipo" class="f-heading">Equipo y EPP</h2>
+        <ul class="f-list">
+          {equipo.map(([label, href]) => (
+            <li><a href={href} class="f-link">{label}</a></li>
+          ))}
+        </ul>
+      </nav>
+
+      <!-- Servicios -->
+      <nav aria-labelledby="f-servicios">
+        <h2 id="f-servicios" class="f-heading">Servicios contra incendio</h2>
+        <ul class="f-list">
+          {servicios.map(([label, href]) => (
+            <li><a href={href} class="f-link">{label}</a></li>
+          ))}
+        </ul>
+      </nav>
+    </div>
+
+    <!-- ══ PISO 2: industrias · marcas · estaciones · recursos ═════ -->
+    <div class="f-floor f-floor--divided py-10">
+
+      <nav aria-labelledby="f-industrias">
+        <h2 id="f-industrias" class="f-heading">Industrias que equipamos</h2>
+        <ul class="f-list">
+          {industrias.map(([label, href]) => (
+            <li><a href={href} class="f-link">{label}</a></li>
+          ))}
+        </ul>
+      </nav>
+
+      <nav aria-labelledby="f-marcas">
+        <h2 id="f-marcas" class="f-heading">Marcas de equipo para bomberos</h2>
+        <ul class="f-list">
+          {marcas.map(([label, href]) => (
+            <li><a href={href} class="f-link">{label}</a></li>
+          ))}
+        </ul>
+      </nav>
+
+      <nav aria-labelledby="f-estaciones">
+        <h2 id="f-estaciones" class="f-heading">Estaciones y sector público</h2>
+        <ul class="f-list">
+          {estacionesLinks.map(([label, href]) => (
+            <li><a href={href} class="f-link">{label}</a></li>
+          ))}
+        </ul>
+      </nav>
+
+      <nav aria-labelledby="f-recursos">
+        <h2 id="f-recursos" class="f-heading">Recursos y normatividad</h2>
+        <ul class="f-list">
+          {recursos.map(([label, href]) => (
+            <li><a href={href} class="f-link">{label}</a></li>
+          ))}
+        </ul>
+
+        <h2 class="f-heading mt-8">Empresa</h2>
+        <ul class="f-list">
+          {empresa.slice(0, 4).map(([label, href]) => (
+            <li><a href={href} class="f-link">{label}</a></li>
+          ))}
+        </ul>
+      </nav>
+    </div>
+
+    <!-- ══ PISO 3: cobertura por estado ════════════════════════════ -->
+    <nav class="f-floor f-floor--divided py-10" aria-labelledby="f-cobertura">
+      <div class="f-floor__intro">
+        <h2 id="f-cobertura" class="f-heading">Equipo para bomberos por estado</h2>
+        <p class="text-sm leading-relaxed text-[var(--forge-300)]">
+          Proveedores de equipo contra incendio, extintores y capacitación en cada
+          entidad, con sus estaciones de bomberos y cobertura de envío.
+        </p>
+        <a href="/cobertura" class="f-link f-link--strong mt-3 inline-block">
+          Cobertura nacional de equipo contra incendio →
+        </a>
       </div>
-    </div>
 
-    <!-- Col 2: Directorio + Productos -->
-    <div>
-      <h4 class="f-heading">Directorio</h4>
-      <ul class="f-list">
-        {([
-          ['Todas las empresas',          '/empresas'],
-          ['Venta de equipo y EPP',       '/empresas/venta-equipo'],
-          ['Extintores',                  '/empresas/extintores'],
-          ['Sistemas contra incendio',    '/empresas/sistemas-ci'],
-          ['Capacitación y consultoría',  '/empresas/capacitacion'],
-          ['Estaciones de bomberos',      '/estaciones'],
-          ['Registrar mi empresa',        '/empresas/registro'],
-        ] as [string,string][]).map(([label, href]) => (
-          <li><a href={href} class="f-link">{label}</a></li>
-        ))}
-      </ul>
-
-      <h4 class="f-heading mt-8">Guías de compra</h4>
-      <ul class="f-list">
-        {([
-          ['Trajes para Bomberos',    '/productos/trajes-bombero'],
-          ['Cascos NFPA',             '/productos/cascos-nfpa'],
-          ['Equipos SCBA',            '/productos/equipos-scba'],
-          ['Herramientas de Rescate', '/productos/herramientas-rescate'],
-          ['Extintores',              '/productos/extintores'],
-          ['Sistemas CI',             '/productos/sistemas-ci'],
-          ['Cámaras Térmicas',        '/productos/camaras-termicas'],
-          ['Equipos HAZMAT',          '/productos/hazmat'],
-          ['Drones de Emergencia',    '/productos/drones-emergencia'],
-        ] as [string,string][]).map(([label, href]) => (
-          <li><a href={href} class="f-link">{label}</a></li>
-        ))}
-      </ul>
-
-      <h4 class="f-heading mt-8">Marcas Destacadas</h4>
-      <ul class="f-list">
-        {([
-          ['Globe Manufacturing',  '/productos/trajes-bombero/globe-manufacturing'],
-          ['MSA Safety',           '/marcas/msa-safety'],
-          ['Honeywell',            '/marcas/honeywell'],
-          ['FLIR Systems',         '/marcas/flir-teledyne'],
-          ['Holmatro',             '/productos/herramientas-rescate/holmatro'],
-          ['Dräger',               '/productos/equipos-scba/drager-pss'],
-          ['Sköld Safety',         '/productos/trajes-bombero/skold'],
-          ['Todas las marcas de equipo para bomberos', '/marcas'],
-        ] as [string,string][]).map(([label, href]) => (
-          <li><a href={href} class="f-link">{label}</a></li>
-        ))}
-      </ul>
-    </div>
-
-    <!-- Col 3: Servicios + Industrias -->
-    <div>
-      <h4 class="f-heading">Servicios</h4>
-      <ul class="f-list">
-        {([
-          ['Capacitación',             '/servicios/capacitacion'],
-          ['Instalación CI',           '/servicios/instalacion-sistemas-ci'],
-          ['Mantenimiento',            '/servicios/mantenimiento'],
-          ['Auditoría NOM-002',        '/servicios/auditoria-seguridad'],
-          ['Brigadas Empresariales',   '/servicios/brigadas-empresariales'],
-          ['Licitaciones Públicas',    '/servicios/licitaciones'],
-          ['Todos los servicios contra incendio', '/servicios'],
-        ] as [string,string][]).map(([label, href]) => (
-          <li><a href={href} class="f-link">{label}</a></li>
-        ))}
-      </ul>
-
-      <h4 class="f-heading mt-8">Industrias</h4>
-      <ul class="f-list">
-        {([
-          ['Bomberos Municipales',  '/industrias/bomberos-municipales'],
-          ['Brigadas Industriales', '/industrias/brigadas-industriales'],
-          ['Aeropuertos ARFF',      '/industrias/aeropuertos-arff'],
-          ['Refinerías PEMEX',      '/industrias/refinerias-pemex'],
-          ['Hospitales',            '/industrias/hospitales'],
-          ['Minería',               '/industrias/mineria'],
-          ['Protección Civil',      '/industrias/proteccion-civil'],
-          ['Todas las industrias que equipamos', '/industrias'],
-        ] as [string,string][]).map(([label, href]) => (
-          <li><a href={href} class="f-link">{label}</a></li>
-        ))}
-      </ul>
-    </div>
-
-    <!-- Col 4: Empresa + Recursos -->
-    <div>
-      <h4 class="f-heading">Empresa</h4>
-      <ul class="f-list">
-        {([
-          ['Nosotros',               '/nosotros'],
-          ['Certificaciones',        '/certificaciones'],
-          ['Distribuidores',         '/distribuidores'],
-          ['Cobertura Nacional',     '/cobertura'],
-          ['Directorio Estaciones',  '/estaciones'],
-          ['Contacto',               '/contacto'],
-          ['Cotizar',                '/cotizacion'],
-        ] as [string,string][]).map(([label, href]) => (
-          <li><a href={href} class="f-link">{label}</a></li>
-        ))}
-      </ul>
-
-      <h4 class="f-heading mt-8">Recursos</h4>
-      <ul class="f-list">
-        {([
-          ['Blog Técnico',     '/blog'],
-          ['Normativas NFPA',  '/blog/tag/nfpa'],
-          ['Normativas NOM',   '/blog/tag/nom'],
-          ['Guías de compra',  '/blog/categoria/guias-de-compra'],
-          ['Licitaciones',     '/licitaciones'],
-          ['Sitemap',          '/sitemap-index.xml'],
-        ] as [string,string][]).map(([label, href]) => (
-          <li><a href={href} class="f-link">{label}</a></li>
-        ))}
-      </ul>
-    </div>
+      {columnasEstados.map((grupo) => (
+        <ul class="f-list f-list--compact">
+          {grupo.map((e) => (
+            <li><a href={`/empresas/estado/${e.slug}`} class="f-link">{e.nombre}</a></li>
+          ))}
+        </ul>
+      ))}
+    </nav>
 
   </div>
 
-  <!-- Bottom Bar -->
+  <!-- ══ Bottom Bar ══════════════════════════════════════════════ -->
   <div class="border-t border-[var(--color-border)] py-5">
     <div class="container-site flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[var(--forge-400)]">
       <p>© {year} FIREFIGHTERS MX — Todos los derechos reservados.</p>
-      <div class="flex items-center gap-4">
-        <a href="/aviso-privacidad"    class="hover:text-[var(--forge-200)]">Aviso de Privacidad</a>
-        <a href="/terminos-condiciones" class="hover:text-[var(--forge-200)]">Términos y Condiciones</a>
-        <a href="/sitemap-index.xml"   class="hover:text-[var(--forge-200)]">Sitemap</a>
+      <div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
+        <a href="/aviso-privacidad" class="hover:text-[var(--forge-200)]">Aviso de privacidad</a>
+        <a href="/terminos-condiciones" class="hover:text-[var(--forge-200)]">Términos y condiciones</a>
+        <a href="/sitemap-index.xml" class="hover:text-[var(--forge-200)]">Mapa del sitio</a>
       </div>
     </div>
   </div>
@@ -277,7 +339,28 @@ const year = new Date().getFullYear();
 </footer>
 
 <style>
-  /* Encabezados de sección en el footer */
+  /* Piso: 4 columnas en desktop, 2 en tablet, 1 en móvil */
+  .f-floor {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.25rem 2rem;
+  }
+  @media (min-width: 640px) {
+    .f-floor { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (min-width: 1024px) {
+    .f-floor { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2.5rem 2.5rem; }
+  }
+  /* Línea que separa un piso del anterior */
+  .f-floor--divided { border-top: 1px solid var(--color-border); }
+
+  /* La intro del piso de cobertura ocupa la primera columna completa */
+  .f-floor__intro { grid-column: 1 / -1; }
+  @media (min-width: 1024px) {
+    .f-floor__intro { grid-column: span 1; }
+  }
+
+  /* Encabezados de sección */
   .f-heading {
     font-family: var(--font-display, sans-serif);
     font-weight: 700;
@@ -289,6 +372,7 @@ const year = new Date().getFullYear();
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    line-height: 1.3;
   }
   .f-heading::before {
     content: '';
@@ -299,7 +383,7 @@ const year = new Date().getFullYear();
     flex-shrink: 0;
   }
 
-  /* Lista de links */
+  /* Listas de enlaces */
   .f-list {
     display: flex;
     flex-direction: column;
@@ -308,14 +392,20 @@ const year = new Date().getFullYear();
     padding: 0;
     margin: 0;
   }
+  .f-list--compact { gap: 0.4rem; }
 
-  /* Link individual */
   .f-link {
     font-size: 0.875rem;
     color: var(--forge-200);
     line-height: 1.4;
   }
-  .f-link:hover {
+  .f-link:hover { color: var(--ember-400); }
+
+  .f-link--strong {
     color: var(--ember-400);
+    font-weight: 600;
   }
+  .f-link--strong:hover { color: var(--ember-300, #fca568); }
+
+  .f-list--compact .f-link { font-size: 0.8125rem; }
 </style>
