@@ -25,7 +25,7 @@ serviciosDetalle:
   - "Atención prehospitalaria / ambulancia"
   - "Atención a emergencias y PC"
   - "Apoyo intermunicipal"
-descripcion: "Departamento municipal de PC y Bomberos de Ciudad Frontera; su nueva central (dic. 2024) sustituyó al antiguo cuartel de la colonia PEMEX."
+descripcion: "Departamento municipal de PC y Bomberos de Ciudad Frontera; su nueva central (dic. 2024) sustituyó al antiguo cuartel de la colonia PEMEX. Ciudad Frontera está conurbada con Monclova y comparte con ella el entorno siderúrgico y ferroviario de la Región Centro, con vivienda obrera contigua a la instalación industrial."
 fuentes:
   - nombre: "vanguardia.com.mx"
     url: "https://vanguardia.com.mx/coahuila/monclova/inauguran-nueva-central-de-bomberos-en-frontera-coahuila-BB14517251"

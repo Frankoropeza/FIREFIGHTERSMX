@@ -25,7 +25,7 @@ serviciosDetalle:
   - "Combate y extinción de incendios"
   - "Rescate vehicular"
   - "Atención prehospitalaria"
-descripcion: "Base 2 (Zona Hotelera) del cuerpo de bomberos de Cancún, en la colonia Zona Hotelera. Forma parte de la red de cuarteles con que la corporación cubre el municipio."
+descripcion: "Base 2 (Zona Hotelera) del cuerpo de bomberos de Cancún, en la colonia Zona Hotelera. Cubre los kilómetros de la zona hotelera de Cancún, una franja estrecha entre el mar y la laguna Nizuc-Bojórquez, con hoteles de gran altura, ocupación permanente y un solo eje vial de acceso."
 fuentes:
   - nombre: "DENUE — INEGI"
     url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=8762904"

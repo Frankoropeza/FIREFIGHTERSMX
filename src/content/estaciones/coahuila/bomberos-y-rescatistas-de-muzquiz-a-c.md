@@ -29,7 +29,7 @@ serviciosDetalle:
   - "Traslado de heridos"
   - "Rescate"
 fundacion: 1999
-descripcion: "Asociación civil de bomberos y rescatistas constituida en 1999, registrada en el directorio OSC del Gobierno de Coahuila; presta servicios de emergencia a la comunidad de Múzquiz."
+descripcion: "Asociación civil de bomberos y rescatistas constituida en 1999, registrada en el directorio OSC del Gobierno de Coahuila; presta servicios de emergencia a la comunidad de Múzquiz. Múzquiz es un municipio extenso de la Región Carbonífera, con minería de carbón, sierra y comunidades alejadas de la cabecera, entre ellas El Nacimiento de los Negros Mascogos."
 fuentes:
   - nombre: "oscscoahuila.mx"
     url: "https://www.oscscoahuila.mx/bomberosyrescatistasdemuzquiz-ac"

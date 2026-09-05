@@ -27,7 +27,7 @@ serviciosDetalle:
   - "Combate de incendios (apoyo)"
   - "Primeros auxilios"
   - "Prevención de riesgos"
-descripcion: "Unidad municipal de PC de Ixtlahuacán que opera desde el Ayuntamiento; depende del apoyo estatal para incendios mayores."
+descripcion: "Unidad municipal de PC de Ixtlahuacán que opera desde el Ayuntamiento; depende del apoyo estatal para incendios mayores. Ixtlahuacán es el municipio menos poblado del estado, de territorio serrano y caminos largos entre comunidades, lo que convierte la distancia en el factor determinante de cualquier respuesta."
 fuentes:
   - nombre: "proteccioncivil.gob.mx"
     url: "http://www.proteccioncivil.gob.mx/work/models/sismos/Resource/42/1/images/directorio_umpc.pdf"

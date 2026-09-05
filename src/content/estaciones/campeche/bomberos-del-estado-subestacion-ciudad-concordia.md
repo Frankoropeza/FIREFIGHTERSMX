@@ -22,7 +22,7 @@ servicios:
 serviciosDetalle:
   - "Combate de incendios y atención de emergencias"
   - "Reducción de tiempos de respuesta en zona habitacional"
-descripcion: "Subestación de bomberos en la Unidad Habitacional Ciudad Concordia, una de las zonas residenciales más pobladas de la capital; obra iniciada por el Gobierno del Estado en 2025."
+descripcion: "Subestación de bomberos en la Unidad Habitacional Ciudad Concordia, una de las zonas residenciales más pobladas de la capital; obra iniciada por el Gobierno del Estado en 2025. Ciudad Concordia concentra vivienda de interés social en la periferia de San Francisco de Campeche, lejos del centro histórico donde se ubica la estación principal, de modo que la subestación acorta un trayecto que cruzaba toda la ciudad."
 fuentes:
   - nombre: "ucs.campeche.gob.mx"
     url: "https://ucs.campeche.gob.mx/avanza-construccion-de-subestacion-de-bomberos-en-u-h-ciudad-concordia/"

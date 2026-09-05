@@ -27,7 +27,7 @@ serviciosDetalle:
   - "Combate y extinción de incendios"
   - "Rescate vehicular"
   - "Atención prehospitalaria"
-descripcion: "Estación México 68 del cuerpo de bomberos de Puebla, en la colonia Villa Verde. Forma parte de la red de cuarteles con que la corporación cubre el municipio."
+descripcion: "Estación México 68 del cuerpo de bomberos de Puebla, en la colonia Villa Verde. Atiende el sur de la ciudad de Puebla, un sector de unidades habitacionales y vivienda de interés social construido alrededor del eje que le da nombre."
 fuentes:
   - nombre: "DENUE — INEGI"
     url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=3435954"

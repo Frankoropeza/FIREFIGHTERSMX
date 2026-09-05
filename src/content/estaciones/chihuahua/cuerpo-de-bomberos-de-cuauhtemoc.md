@@ -29,7 +29,7 @@ serviciosDetalle:
   - "Rescate vehicular"
   - "Atención prehospitalaria"
   - "Prevención y capacitación"
-descripcion: "Cuerpo de bomberos municipal de Cuauhtémoc, respaldado por el Patronato del Heroico Cuerpo de Bomberos y Rescate del Municipio de Cuauhtémoc A.C."
+descripcion: "Cuerpo de bomberos municipal de Cuauhtémoc, respaldado por el Patronato del Heroico Cuerpo de Bomberos y Rescate del Municipio de Cuauhtémoc A.C. Ciudad Cuauhtémoc es el centro de la región manzanera del país, con huertas, bodegas de frío y empacadoras alrededor de la ciudad, y una fuerte presencia de campos menonitas en su entorno rural."
 fuentes:
   - nombre: "municipiocuauhtemoc.gob.mx"
     url: "https://municipiocuauhtemoc.gob.mx/servicios-de-emergencia/"

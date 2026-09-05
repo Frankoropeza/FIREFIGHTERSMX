@@ -32,7 +32,7 @@ serviciosDetalle:
   - "Emergencias hidrometeorológicas"
   - "Búsqueda y rescate"
   - "Emergencias portuarias e industriales"
-descripcion: "Dependencia del Ayuntamiento de Manzanillo para prevención, auxilio y recuperación ante emergencias en la principal ciudad portuaria de Colima."
+descripcion: "Dependencia del Ayuntamiento de Manzanillo para prevención, auxilio y recuperación ante emergencias en la principal ciudad portuaria de Colima. El municipio combina el recinto portuario y su corredor industrial con una franja hotelera extensa y colonias populares en ladera, sobre una costa expuesta a ciclones del Pacífico entre junio y noviembre."
 fuentes:
   - nombre: "proteccioncivil.gob.mx"
     url: "http://www.proteccioncivil.gob.mx/work/models/sismos/Resource/42/1/images/directorio_umpc.pdf"

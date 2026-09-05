@@ -30,7 +30,7 @@ serviciosDetalle:
   - "Rescate vehicular"
   - "Incendios forestales"
   - "Primeros auxilios"
-descripcion: "Reconocida por CENAPRED en agosto 2024. Personal con 44 certificaciones de la Escuela Nacional de Protección Civil (ENAPROC). Cuartel: Boulevard Adolfo López Mateos 91, Col. El Potrero, C.P. 52975."
+descripcion: "Reconocida por CENAPRED en agosto 2024. Personal con 44 certificaciones de la Escuela Nacional de Protección Civil (ENAPROC). Cuartel: Boulevard Adolfo López Mateos 91, Col. El Potrero, C.P. 52975. El municipio combina fraccionamientos residenciales en ladera con colonias populares densas, en un territorio de lomeríos y presas al norponiente del Valle de México."
 fuentes:
   - nombre: "atizapan.gob.mx — PC y Bomberos"
     url: "https://atizapan.gob.mx/direcciones/proteccion-civil-y-bomberos"

@@ -25,7 +25,7 @@ servicios:
 serviciosDetalle:
   - "Combate y extinción de incendios"
   - "Atención de emergencias y protección civil municipal"
-descripcion: "Corporación municipal de Lerdo que integra Protección Civil y Bomberos bajo el Ayuntamiento, con cuartel sobre el Libramiento Periférico en la colonia Cerro de la Cruz."
+descripcion: "Corporación municipal de Lerdo que integra Protección Civil y Bomberos bajo el Ayuntamiento, con cuartel sobre el Libramiento Periférico en la colonia Cerro de la Cruz. Lerdo forma parte de la Comarca Lagunera y está conurbado con Gómez Palacio y Torreón, de modo que su operación se mezcla con la de una zona metropolitana que cruza el límite estatal."
 fuentes:
   - nombre: "proteccioncivil.durango.gob.mx"
     url: "https://proteccioncivil.durango.gob.mx/wp-content/uploads/sites/39/2023/04/DIRECTORIO-DE-COORDINADORES-MUNICIPALES-DE-P.-C.-sin-dp-2022-2025.pdf"

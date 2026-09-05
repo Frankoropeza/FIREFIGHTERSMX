@@ -31,7 +31,7 @@ serviciosDetalle:
   - "Atención prehospitalaria"
   - "Emergencias 24/7"
 fundacion: 1962
-descripcion: "Primera estación de bomberos fundada en Chiapas (1962, con apoyo del Dr. Samuel León Brindis); estación del Instituto de Bomberos del Estado en la capital."
+descripcion: "Primera estación de bomberos fundada en Chiapas (1962, con apoyo del Dr. Samuel León Brindis); estación del Instituto de Bomberos del Estado en la capital. La capital se extiende por un valle cálido a orillas del Grijalva, junto al Cañón del Sumidero, con crecimiento urbano sobre laderas y una temporada seca marcada por los incendios de pastizal en los cerros que la rodean."
 fuentes:
   - nombre: "chiapas.gob.mx"
     url: "https://chiapas.gob.mx/funcionarios/estatal/ejecutivo/instituto-bomberos"

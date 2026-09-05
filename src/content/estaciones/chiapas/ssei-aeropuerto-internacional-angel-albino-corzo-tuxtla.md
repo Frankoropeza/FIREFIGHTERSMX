@@ -28,7 +28,7 @@ serviciosDetalle:
 certificaciones:
   - "Aeropuerto certificado AFAC — categoría OACI 7"
   - "Operación 24 horas"
-descripcion: "Cuerpo de salvamento y extinción de incendios del aeropuerto de Tuxtla Gutiérrez, operado por el Grupo Aeroportuario de Chiapas."
+descripcion: "Cuerpo de salvamento y extinción de incendios del aeropuerto de Tuxtla Gutiérrez, operado por el Grupo Aeroportuario de Chiapas. Es una unidad aeroportuaria, no municipal: opera en pistas y plataformas del aeropuerto que sirve a la capital del estado, ubicado en el municipio vecino de Chiapa de Corzo."
 fuentes:
   - nombre: "chiapas.gob.mx"
     url: "https://chiapas.gob.mx/funcionarios/estatal/ejecutivo/sociedad-operadora-aeropuerto"

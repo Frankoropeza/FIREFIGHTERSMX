@@ -21,7 +21,7 @@ serviciosDetalle:
   - "Combate y prevención de incendios"
   - "Atención de emergencias"
   - "Apoyo en temporada de huracanes"
-descripcion: "Cuerpo de bomberos municipal que atiende el municipio de Loreto como parte del sistema estatal de bomberos de Baja California Sur."
+descripcion: "Cuerpo de bomberos municipal que atiende el municipio de Loreto como parte del sistema estatal de bomberos de Baja California Sur. Loreto es un Pueblo Mágico costero entre la sierra de la Giganta y el mar de Cortés, con casco histórico, población pequeña y una afluencia turística que se concentra en temporada."
 fuentes:
   - nombre: "sgg.bcs.gob.mx"
     url: "https://sgg.bcs.gob.mx/proteccioncivil/"

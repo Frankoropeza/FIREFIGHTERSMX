@@ -28,7 +28,7 @@ serviciosDetalle:
   - "Incendios en carretera (tractocamiones, pipas)"
   - "Rescate y atención de emergencias"
   - "Apoyo en incendios de pastizal"
-descripcion: "Cuerpo de bomberos del municipio agrícola y costero de Tecomán; uno de los tres cuerpos funcionales del estado, bajo figura de patronato vinculado al Ayuntamiento."
+descripcion: "Cuerpo de bomberos del municipio agrícola y costero de Tecomán; uno de los tres cuerpos funcionales del estado, bajo figura de patronato vinculado al Ayuntamiento. Tecomán es la capital limonera del país: huertas de cítricos, empacadoras y bodegas de agroquímicos en el valle, más una franja costera de playas abiertas al Pacífico. La quema agrícola en estiaje y el rescate en litoral conviven con el servicio urbano de la cabecera."
 fuentes:
   - nombre: "tecoman.gob.mx"
     url: "https://www.tecoman.gob.mx/directorio.html"

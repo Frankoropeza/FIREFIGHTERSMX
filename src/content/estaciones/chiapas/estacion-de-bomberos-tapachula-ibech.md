@@ -31,7 +31,7 @@ serviciosDetalle:
   - "Atención de inundaciones y deslaves"
   - "Manejo de fauna peligrosa"
   - "Apoyo intermunicipal en la Frontera Sur"
-descripcion: "Estación del Instituto de Bomberos del Estado en la Frontera Sur; atiende Tapachula y municipios del Soconusco."
+descripcion: "Estación del Instituto de Bomberos del Estado en la Frontera Sur; atiende Tapachula y municipios del Soconusco. Tapachula es la ciudad más grande de la frontera sur, con el puerto de Chiapas, el corredor agroindustrial del Soconusco —café, plátano, mango— y el volcán Tacaná al norte, en una región de lluvias intensas y deslaves recurrentes."
 fuentes:
   - nombre: "chiapas.gob.mx"
     url: "https://chiapas.gob.mx/funcionarios/estatal/ejecutivo/instituto-bomberos"

@@ -24,7 +24,7 @@ serviciosDetalle:
   - "Salvamento y extinción de incendios de aeronaves (ARFF)"
   - "Respuesta en plataforma y pista"
   - "Simulacros de accidente de aviación"
-descripcion: "Aeropuerto operado por OMA con servicio interno de salvamento y extinción de incendios; coordina con PC y Bomberos de Torreón."
+descripcion: "Aeropuerto operado por OMA con servicio interno de salvamento y extinción de incendios; coordina con PC y Bomberos de Torreón. Es una unidad aeroportuaria, no municipal: responde en pistas y plataformas del aeropuerto que sirve a la Comarca Lagunera, en el propio municipio de Torreón."
 fuentes:
   - nombre: "aeropuertotorreon.oma.aero"
     url: "https://aeropuertotorreon.oma.aero/es/"

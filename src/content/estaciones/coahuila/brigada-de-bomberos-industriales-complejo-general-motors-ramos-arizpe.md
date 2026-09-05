@@ -24,7 +24,7 @@ serviciosDetalle:
   - "Respuesta a emergencias del complejo"
   - "Apoyo mutuo regional"
   - "Simulacros Incendio/HazMat"
-descripcion: "Complejo automotriz con brigada de bomberos propia; participa en simulacros con PC municipal y ha respondido a emergencias regionales."
+descripcion: "Complejo automotriz con brigada de bomberos propia; participa en simulacros con PC municipal y ha respondido a emergencias regionales. Ramos Arizpe es el corazón del clúster automotriz del noreste: plantas de ensamble, estampado y proveeduría concentradas en pocos kilómetros, con proceso de pintura, solventes y logística pesada permanente."
 fuentes:
   - nombre: "zocalo.com.mx"
     url: "https://www.zocalo.com.mx/impulsan-pc-y-bomberos-de-ramos-arizpe-cultura-de-la-prevencion-realizan-simulacro-en-general-motors/"

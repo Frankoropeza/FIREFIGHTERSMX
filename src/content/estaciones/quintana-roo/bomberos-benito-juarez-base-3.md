@@ -25,7 +25,7 @@ serviciosDetalle:
   - "Combate y extinción de incendios"
   - "Rescate vehicular"
   - "Atención prehospitalaria"
-descripcion: "Base 3 del cuerpo de bomberos de Cancún, en la colonia 100. Forma parte de la red de cuarteles con que la corporación cubre el municipio."
+descripcion: "Base 3 del cuerpo de bomberos de Cancún, en la colonia 100. Atiende las supermanzanas del centro de Cancún, donde vive y trabaja la población local, con comercio, mercados y vivienda densa lejos del frente turístico."
 fuentes:
   - nombre: "DENUE — INEGI"
     url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=3634130"

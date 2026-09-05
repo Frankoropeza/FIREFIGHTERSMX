@@ -26,7 +26,7 @@ serviciosDetalle:
   - "Rescate vehicular / accidentes (Carretera 57)"
   - "Atención de emergencias urbanas"
   - "Capacitación en PC"
-descripcion: "Corporación municipal de bomberos de Piedras Negras, integrada a la Dirección de PC y Bomberos; atiende la zona metropolitana fronteriza con Eagle Pass, Texas."
+descripcion: "Corporación municipal de bomberos de Piedras Negras, integrada a la Dirección de PC y Bomberos; atiende la zona metropolitana fronteriza con Eagle Pass, Texas. Piedras Negras es un cruce fronterizo de carga y pasajeros con Texas, con puente internacional, patios de transporte y parques industriales, sobre la ribera del Río Bravo."
 fuentes:
   - nombre: "piedrasnegras.gob.mx"
     url: "https://piedrasnegras.gob.mx/noticias/67a3a50dab50e4ed81732653"

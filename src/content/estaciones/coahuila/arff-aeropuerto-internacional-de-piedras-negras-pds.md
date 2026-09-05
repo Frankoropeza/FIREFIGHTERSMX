@@ -21,7 +21,7 @@ servicios:
   - "arff"
 serviciosDetalle:
   - "Cuerpo de rescate y extinción de incendios (ARFF/SSEI) de aeródromo"
-descripcion: "Aeropuerto internacional que sirve a la zona metropolitana Piedras Negras–Eagle Pass; cuenta con cuerpo de rescate y extinción de incendios."
+descripcion: "Aeropuerto internacional que sirve a la zona metropolitana Piedras Negras–Eagle Pass; cuenta con cuerpo de rescate y extinción de incendios. Es una unidad aeroportuaria, no municipal: opera en pistas y plataformas de un aeropuerto fronterizo situado en el municipio de Nava, en la Región Carbonífera, junto al corredor carbonero y las plantas de CFE."
 fuentes:
   - nombre: "es.wikipedia.org"
     url: "https://es.wikipedia.org/wiki/Aeropuerto_Internacional_Piedras_Negras"

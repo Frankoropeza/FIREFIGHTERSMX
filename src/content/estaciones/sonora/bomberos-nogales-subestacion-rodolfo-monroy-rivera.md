@@ -25,7 +25,7 @@ serviciosDetalle:
   - "Combate y extinción de incendios"
   - "Rescate vehicular"
   - "Atención prehospitalaria"
-descripcion: "Subestación del cuerpo de bomberos de Heroica Nogales en la colonia San Carlos. Lleva el nombre de un bombero de la corporación y cubre el oriente de la ciudad."
+descripcion: "Subestación del cuerpo de bomberos de Heroica Nogales en la colonia San Carlos. Lleva el nombre de un bombero de la corporación y cubre el oriente de la ciudad. El oriente de Nogales crece sobre lomeríos, con vivienda autoconstruida en pendiente y arroyos que atraviesan la ciudad hacia el norte, en dirección a la línea fronteriza."
 fuentes:
   - nombre: "DENUE — INEGI"
     url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=3940386"

@@ -25,7 +25,7 @@ serviciosDetalle:
   - "Combate y extinción de incendios"
   - "Rescate vehicular"
   - "Atención prehospitalaria"
-descripcion: "Estación 5 del cuerpo de bomberos de Cancún, en la colonia 510. Forma parte de la red de cuarteles con que la corporación cubre el municipio."
+descripcion: "Estación 5 del cuerpo de bomberos de Cancún, en la colonia 510. Cubre el sur de Cancún, la zona de crecimiento habitacional que absorbe a la población trabajadora del corredor turístico, con fraccionamientos extensos y accesos limitados."
 fuentes:
   - nombre: "DENUE — INEGI"
     url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=3629647"

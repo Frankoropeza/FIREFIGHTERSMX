@@ -26,7 +26,7 @@ serviciosDetalle:
   - "Combate y extinción de incendios"
   - "Rescate vehicular"
   - "Atención prehospitalaria"
-descripcion: "Estación 4 del cuerpo de bomberos de León, en la colonia Vibar. Forma parte de la red de cuarteles con que la corporación cubre el municipio."
+descripcion: "Estación 4 del cuerpo de bomberos de León, en la colonia Vibar. Atiende el norte de León, zona de vivienda popular en expansión hacia los cerros que cierran la ciudad, con arroyos que bajan de la sierra y se activan en la temporada de lluvias."
 fuentes:
   - nombre: "DENUE — INEGI"
     url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=1274966"

@@ -29,7 +29,7 @@ serviciosDetalle:
   - "Rescate vehicular"
   - "HAZMAT industrial"
   - "Primeros auxilios"
-descripcion: "Cuartel en Av. de las Partidas s/n dentro del Parque Industrial El Cerrillo II, uno de los corredores industriales más importantes del Valle de Toluca."
+descripcion: "Cuartel en Av. de las Partidas s/n dentro del Parque Industrial El Cerrillo II, uno de los corredores industriales más importantes del Valle de Toluca. El corredor Toluca-Lerma concentra plantas automotrices, químicas y de alimentos junto a la ciénega del alto Lerma, de modo que el riesgo industrial y el humedal conviven en el mismo municipio."
 fuentes:
   - nombre: "Directorio CGPC EDOMEX jun 2025"
     url: "https://cgproteccioncivil.edomex.gob.mx/sites/cgproteccioncivil.edomex.gob.mx/files/files/Que%20ofrecemos%202025/DIR-U-MUNICPALES/DIRECTORIO-JUNIO2025.pdf"

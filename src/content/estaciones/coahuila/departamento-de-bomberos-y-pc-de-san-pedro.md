@@ -23,7 +23,7 @@ serviciosDetalle:
   - "Atención a fugas de amoniaco anhidro en la industria lechera"
   - "Rescate"
   - "Apoyo a municipios vecinos"
-descripcion: "Departamento de Bomberos Municipales y PC de San Pedro de las Colonias; ha recibido equipo donado por la Fundación 911 (Acuña) y bomberos de Texas."
+descripcion: "Departamento de Bomberos Municipales y PC de San Pedro de las Colonias; ha recibido equipo donado por la Fundación 911 (Acuña) y bomberos de Texas. San Pedro de las Colonias es el municipio agrícola más extenso de La Laguna coahuilense, con ejidos dispersos a decenas de kilómetros de la cabecera y una red de canales de riego que atraviesa el territorio."
 fuentes:
   - nombre: "elsiglodetorreon.com.mx"
     url: "https://www.elsiglodetorreon.com.mx/noticia/2026/bomberos-san-pedro-recibe-equipo-en-donacion-de-la-fundacion-911.html"

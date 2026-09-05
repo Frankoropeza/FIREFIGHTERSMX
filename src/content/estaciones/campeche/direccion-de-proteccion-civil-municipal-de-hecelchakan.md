@@ -22,7 +22,7 @@ serviciosDetalle:
   - "Prevención y gestión de riesgos"
   - "Atención y coordinación de emergencias locales"
   - "Orientación y capacitación ciudadana"
-descripcion: "Dirección Municipal de Protección Civil de Hecelchakán; coordina la atención local mientras el combate de incendios corresponde al cuerpo estatal."
+descripcion: "Dirección Municipal de Protección Civil de Hecelchakán; coordina la atención local mientras el combate de incendios corresponde al cuerpo estatal. Hecelchakán es un municipio del Camino Real, agrícola y de tradición henequenera, con la cabecera sobre la carretera federal y comisarías repartidas por la llanura del norte del estado."
 fuentes:
   - nombre: "cotaipec.org.mx"
     url: "https://www.cotaipec.org.mx/pdf/entes_ayuntamientos.pdf"

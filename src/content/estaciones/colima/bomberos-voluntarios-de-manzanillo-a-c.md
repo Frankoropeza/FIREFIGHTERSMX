@@ -32,7 +32,7 @@ serviciosDetalle:
   - "Atención inicial de materiales peligrosos"
   - "Capacitación a brigadas internas"
 fundacion: 2001
-descripcion: "Asociación civil sin fines de lucro integrada por voluntarios; presta servicio 24 horas en la ciudad y puerto de Manzanillo en coordinación con la unidad municipal de protección civil."
+descripcion: "Asociación civil sin fines de lucro integrada por voluntarios; presta servicio 24 horas en la ciudad y puerto de Manzanillo en coordinación con la unidad municipal de protección civil. Manzanillo es el puerto de mayor movimiento de contenedores del país, con patios de carga, terminales de granel y almacenamiento de hidrocarburos en la misma bahía donde se concentra la actividad turística. Ese contraste entre recinto portuario y ciudad define el riesgo del municipio."
 fuentes:
   - nombre: "bomberosmanzanillo.com"
     url: "https://www.bomberosmanzanillo.com/nosotros"

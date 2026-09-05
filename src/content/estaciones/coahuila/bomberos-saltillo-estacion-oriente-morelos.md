@@ -22,7 +22,7 @@ servicios:
 serviciosDetalle:
   - "Combate de incendios"
   - "Atención de emergencias urbanas"
-descripcion: "Estación que atiende cerca del 40% de los siniestros por la alta demanda del sector oriente."
+descripcion: "Estación que atiende cerca del 40% de los siniestros por la alta demanda del sector oriente. El oriente de Saltillo concentra colonias populares densas y el acceso a la zona industrial automotriz de la ciudad, lo que explica el volumen de servicio que absorbe esta estación."
 fuentes:
   - nombre: "elheraldodesaltillo.mx"
     url: "https://elheraldodesaltillo.mx/2025/01/31/prioriza-javier-diaz-construccion-de-una-nueva-estacion-de-bomberos-al-oriente-de-saltillo/"

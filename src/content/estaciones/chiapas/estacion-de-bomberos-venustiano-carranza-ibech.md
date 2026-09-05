@@ -24,7 +24,7 @@ serviciosDetalle:
   - "Combate de incendios"
   - "Atención de emergencias"
   - "Rescate"
-descripcion: "Estación operada por el Instituto de Bomberos del Estado en la región Frontera-Tzotzil."
+descripcion: "Estación operada por el Instituto de Bomberos del Estado en la región Frontera-Tzotzil. El municipio se ubica en la depresión central chiapaneca, con territorio de valle y sierra, comunidades tzotziles dispersas y superficie de pastizal que arde durante el estiaje."
 fuentes:
   - nombre: "chiapas.gob.mx"
     url: "https://chiapas.gob.mx/funcionarios/estatal/ejecutivo/instituto-bomberos"

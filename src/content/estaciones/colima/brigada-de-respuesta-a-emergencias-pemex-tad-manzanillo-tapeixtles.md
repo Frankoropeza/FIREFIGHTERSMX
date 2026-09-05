@@ -24,7 +24,7 @@ servicios:
 serviciosDetalle:
   - "Brigada interna de respuesta a emergencias (incendio y derrame)"
   - "Atención a incidentes con gasolinas, diésel y combustóleo"
-descripcion: "Terminal de almacenamiento y despacho de combustibles de PEMEX Logística en Manzanillo (465,000 barriles); cuenta con brigada de respuesta a incendio y derrame conforme a sus planes de contingencia."
+descripcion: "Terminal de almacenamiento y despacho de combustibles de PEMEX Logística en Manzanillo (465,000 barriles); cuenta con brigada de respuesta a incendio y derrame conforme a sus planes de contingencia. La terminal se ubica en el ejido Tapeixtles, dentro del área de influencia del puerto, de modo que su plan de emergencia se coordina con el recinto portuario y con la corporación municipal."
 fuentes:
   - nombre: "pemex.com"
     url: "https://www.pemex.com/nuestro-negocio/logistica/almacenamiento/Paginas/terminal.aspx?idperm=79"

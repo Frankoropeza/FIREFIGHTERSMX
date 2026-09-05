@@ -24,7 +24,7 @@ serviciosDetalle:
   - "Combate y extinción de incendios"
   - "Rescate vehicular"
   - "Atención prehospitalaria"
-descripcion: "Estación 3 del cuerpo de bomberos de Heroica Nogales, sobre Avenida Álvaro Obregón en San Ramón. Atiende el sur de la ciudad y el corredor industrial maquilador."
+descripcion: "Estación 3 del cuerpo de bomberos de Heroica Nogales, sobre Avenida Álvaro Obregón en San Ramón. Atiende el sur de la ciudad y el corredor industrial maquilador. Nogales es la principal frontera maquiladora de Sonora, con parques industriales en las lomas y colonias populares en cañadas que se inundan con las lluvias de verano."
 fuentes:
   - nombre: "DENUE — INEGI"
     url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=3896437"

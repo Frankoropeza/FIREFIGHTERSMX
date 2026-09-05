@@ -25,7 +25,7 @@ serviciosDetalle:
   - "Combate y extinción de incendios estructurales"
   - "Rescate vehicular"
   - "Primeros auxilios y atención prehospitalaria"
-descripcion: "Corporación municipal de Ameca, cabecera de la Región Valles del estado de Jalisco. Teléfono confirmado desde ameca.gob.mx."
+descripcion: "Corporación municipal de Ameca, cabecera de la Región Valles del estado de Jalisco. Teléfono confirmado desde ameca.gob.mx. Ameca es cabecera de la Región Valles, un municipio agrícola de caña y agave con ingenio azucarero, rodeado por la sierra de Ameca y la de Quila, donde el incendio forestal marca la temporada seca."
 fuentes:
   - nombre: "ameca.gob.mx"
     url: "https://ameca.gob.mx/municipio/telefonos"

@@ -25,7 +25,7 @@ serviciosDetalle:
   - "Combate y extinción de incendios"
   - "Rescate vehicular"
   - "Atención prehospitalaria"
-descripcion: "Estación 3 del cuerpo de bomberos de Yucatán, en la colonia Bicentenario sobre la Avenida Internacional. Cubre el poniente de Mérida y el corredor hacia el aeropuerto."
+descripcion: "Estación 3 del cuerpo de bomberos de Yucatán, en la colonia Bicentenario sobre la Avenida Internacional. Cubre el poniente de Mérida y el corredor hacia el aeropuerto. El poniente de Mérida concentra vivienda de interés social y el corredor hacia el aeropuerto y la salida a Campeche, con superficie de monte bajo todavía presente en los bordes de la mancha urbana."
 fuentes:
   - nombre: "yucatan.gob.mx — Teléfonos de emergencia por municipio"
     url: "https://www.yucatan.gob.mx/?p=emergencias"

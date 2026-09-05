@@ -29,7 +29,7 @@ serviciosDetalle:
   - "Primeros auxilios"
   - "Academia de Bomberos Voluntarios Profesionales"
 fundacion: 1978
-descripcion: "Cuerpo de bomberos municipal de Monclova, nacido en 1978 por iniciativa de trabajadores de AHMSA como cuerpo voluntario; su estación actual data de 1983."
+descripcion: "Cuerpo de bomberos municipal de Monclova, nacido en 1978 por iniciativa de trabajadores de AHMSA como cuerpo voluntario; su estación actual data de 1983. Monclova creció alrededor de la siderúrgica AHMSA y conserva ese perfil: instalación industrial pesada, colonias obreras contiguas a la planta y un valle semidesértico donde el pastizal arde cada estiaje."
 fuentes:
   - nombre: "eltiempomx.com"
     url: "https://eltiempomx.com/noticia/2019/festejan-41-anos-de-fundacion-del-h-cuerpo-de-bomberos-monclova.html"

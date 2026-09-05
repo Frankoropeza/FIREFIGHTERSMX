@@ -28,7 +28,7 @@ serviciosDetalle:
 certificaciones:
   - "Clave de referencia OACI 4D"
   - "Integrado al SMS de ASUR"
-descripcion: "Servicio de salvamento y extinción de incendios del aeropuerto de Tapachula, operado por ASUR (Grupo Aeroportuario del Sureste)."
+descripcion: "Servicio de salvamento y extinción de incendios del aeropuerto de Tapachula, operado por ASUR (Grupo Aeroportuario del Sureste). Es una unidad aeroportuaria, no municipal: responde en pistas y plataformas del aeropuerto de la frontera sur, en una zona de lluvias intensas y alta humedad durante buena parte del año."
 fuentes:
   - nombre: "asur.com.mx"
     url: "https://www.asur.com.mx/sistema-sms/tapachula"

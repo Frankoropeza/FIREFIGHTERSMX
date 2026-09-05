@@ -29,7 +29,7 @@ serviciosDetalle:
   - "Constancias y dictámenes de protección civil"
   - "Inspección y verificación"
   - "Respuesta con el Cuerpo de Bomberos del Estado"
-descripcion: "Dependencia municipal que opera el Centro Municipal de Emergencias de Carmen y coordina la respuesta interinstitucional con el Heroico Cuerpo de Bomberos del Estado."
+descripcion: "Dependencia municipal que opera el Centro Municipal de Emergencias de Carmen y coordina la respuesta interinstitucional con el Heroico Cuerpo de Bomberos del Estado. Ciudad del Carmen es la base logística de la industria petrolera del Golfo: plataformas costa afuera, terminales, astilleros y una isla urbanizada con acceso por puentes, sobre una costa expuesta a la temporada de huracanes."
 fuentes:
   - nombre: "carmen.gob.mx"
     url: "http://www.carmen.gob.mx/home/proteccion-civil-carmen/"

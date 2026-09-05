@@ -23,7 +23,7 @@ serviciosDetalle:
   - "Salvamento y extinción de incendios de aeronaves (ARFF/SSEI)"
   - "Atención a emergencias en plataforma y pista"
   - "Respuesta a aviación comercial y general"
-descripcion: "Servicio de salvamento y extinción de incendios del aeropuerto internacional de Durango (DGO), operado por OMA conforme a la normatividad de aviación civil."
+descripcion: "Servicio de salvamento y extinción de incendios del aeropuerto internacional de Durango (DGO), operado por OMA conforme a la normatividad de aviación civil. Es una unidad aeroportuaria, no municipal: opera en pistas y plataformas del aeropuerto que sirve a la capital del estado y a la conexión aérea de una entidad de territorio extenso y serrano."
 fuentes:
   - nombre: "aeropuertodurango.oma.aero"
     url: "https://aeropuertodurango.oma.aero/es/"

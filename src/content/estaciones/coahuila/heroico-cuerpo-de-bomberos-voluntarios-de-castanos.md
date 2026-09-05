@@ -23,7 +23,7 @@ serviciosDetalle:
   - "Atención sobre la carretera federal 57"
   - "Rescate"
   - "Apoyo de segundo nivel en el corredor siderúrgico"
-descripcion: "Cuerpo de bomberos voluntarios de Castaños, colindante con Monclova; opera coordinado con la UMPC."
+descripcion: "Cuerpo de bomberos voluntarios de Castaños, colindante con Monclova; opera coordinado con la UMPC. Castaños está en el corredor Monclova-Saltillo, con superficie semidesértica extensa y tránsito continuo por la carretera federal, además de la sierra que lo separa de la Región Sureste."
 fuentes:
   - nombre: "eltiempomx.com"
     url: "https://eltiempomx.com/noticia/2025/incendio-de-camioneta-alarma-a-bomberos-de-castanos.html"

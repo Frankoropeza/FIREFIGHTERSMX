@@ -24,7 +24,7 @@ serviciosDetalle:
   - "Combate y extinción de incendios"
   - "Rescate vehicular"
   - "Atención prehospitalaria"
-descripcion: "Estación 3 del cuerpo de bomberos de Morelia en Villas del Pedregal, al norponiente. Atiende uno de los desarrollos habitacionales más extensos del estado, alejado del centro histórico."
+descripcion: "Estación 3 del cuerpo de bomberos de Morelia en Villas del Pedregal, al norponiente. Atiende uno de los desarrollos habitacionales más extensos del estado, alejado del centro histórico. Villas del Pedregal es uno de los conjuntos habitacionales más grandes del país, con decenas de miles de viviendas contiguas en la periferia norponiente de Morelia."
 fuentes:
   - nombre: "DENUE — INEGI"
     url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=10048336"

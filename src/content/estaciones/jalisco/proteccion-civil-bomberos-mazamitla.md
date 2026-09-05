@@ -24,7 +24,7 @@ serviciosDetalle:
   - "Combate y extinción de incendios estructurales y forestales"
   - "Primeros auxilios y atención prehospitalaria"
   - "Atención de emergencias en zona turística serrana"
-descripcion: "Corporación municipal del Pueblo Mágico de Mazamitla, en la Sierra del Tigre. Zona de alto riesgo forestal por densidad boscosa y afluencia turística."
+descripcion: "Corporación municipal del Pueblo Mágico de Mazamitla, en la Sierra del Tigre. Zona de alto riesgo forestal por densidad boscosa y afluencia turística. El municipio vive del turismo de montaña y su población se multiplica en fines de semana y puentes, con cabañas de madera dispersas en el bosque, lejos de la cabecera y de la red de hidrantes."
 fuentes:
   - nombre: "facebook.com"
     url: "https://www.facebook.com/p/Protección-Civil-y-Bomberos-Mazamitla-Jalisco-100071117558303/"

@@ -22,7 +22,7 @@ servicios:
 serviciosDetalle:
   - "Salvamento y extinción de incendios de aeronaves (ARFF)"
   - "Respuesta en pista y plataforma"
-descripcion: "Servicio de salvamento y extinción de incendios del aeropuerto de Ciudad Juárez (CJS), operado por el Grupo Aeroportuario Centro Norte (OMA)."
+descripcion: "Servicio de salvamento y extinción de incendios del aeropuerto de Ciudad Juárez (CJS), operado por el Grupo Aeroportuario Centro Norte (OMA). Es una unidad aeroportuaria, no municipal: opera en pistas y plataformas de un aeropuerto fronterizo que sirve a la mayor concentración maquiladora del país y a su movimiento de carga aérea."
 fuentes:
   - nombre: "oma.aero"
     url: "http://www.oma.aero/es/aeropuertos/ciudad-juarez/"

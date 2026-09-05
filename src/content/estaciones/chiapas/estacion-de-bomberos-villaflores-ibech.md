@@ -25,7 +25,7 @@ serviciosDetalle:
   - "Combate de incendios"
   - "Incendios forestales y de pastizal"
   - "Atención de emergencias"
-descripcion: "Estación del Instituto de Bomberos del Estado en la región Frailesca."
+descripcion: "Estación del Instituto de Bomberos del Estado en la región Frailesca. La Frailesca es la región granera de Chiapas: superficie extensa de maíz, bodegas de acopio y la Reserva de la Biosfera La Sepultura al poniente, donde el incendio forestal es la emergencia dominante en temporada seca."
 fuentes:
   - nombre: "chiapas.gob.mx"
     url: "https://chiapas.gob.mx/funcionarios/estatal/ejecutivo/instituto-bomberos"

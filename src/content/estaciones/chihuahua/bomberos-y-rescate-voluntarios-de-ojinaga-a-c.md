@@ -22,7 +22,7 @@ serviciosDetalle:
   - "Incendios urbanos y forestales"
   - "Accidentes carreteros"
   - "Rescate"
-descripcion: "Ojinaga no cuenta con cuerpo de bomberos municipal; el servicio lo presta una asociación civil de voluntarios con equipo donado por FECHAC."
+descripcion: "Ojinaga no cuenta con cuerpo de bomberos municipal; el servicio lo presta una asociación civil de voluntarios con equipo donado por FECHAC. Ojinaga es un cruce fronterizo con Presidio, Texas, en pleno desierto chihuahuense, con la cabecera junto a la confluencia del Río Bravo y el Conchos y comunidades separadas por decenas de kilómetros de carretera despoblada."
 fuentes:
   - nombre: "facebook.com"
     url: "https://www.facebook.com/p/Bomberos-Voluntarios-De-Ojinaga-100065917844869/"

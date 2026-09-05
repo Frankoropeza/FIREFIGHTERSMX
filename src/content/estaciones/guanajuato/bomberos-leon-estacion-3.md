@@ -25,7 +25,7 @@ serviciosDetalle:
   - "Combate y extinción de incendios"
   - "Rescate vehicular"
   - "Atención prehospitalaria"
-descripcion: "Estación 3 del cuerpo de bomberos de León, en la colonia Deportiva I. Forma parte de la red de cuarteles con que la corporación cubre el municipio."
+descripcion: "Estación 3 del cuerpo de bomberos de León, en la colonia Deportiva I. Cubre el oriente de León, un sector de vivienda consolidada y talleres de curtiduría y calzado instalados en la propia manzana, con solventes y adhesivos almacenados junto a la casa habitación."
 fuentes:
   - nombre: "DENUE — INEGI"
     url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=1139197"

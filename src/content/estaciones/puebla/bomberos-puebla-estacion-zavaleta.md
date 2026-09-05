@@ -26,7 +26,7 @@ serviciosDetalle:
   - "Combate y extinción de incendios"
   - "Rescate vehicular"
   - "Atención prehospitalaria"
-descripcion: "Estación Zavaleta del cuerpo de bomberos de Puebla, en la colonia Bello Horizonte. Forma parte de la red de cuarteles con que la corporación cubre el municipio."
+descripcion: "Estación Zavaleta del cuerpo de bomberos de Puebla, en la colonia Bello Horizonte. Cubre el poniente de la ciudad, el corredor de Zavaleta y La Paz, la zona de mayor densidad comercial, hotelera y de vivienda vertical de Puebla."
 fuentes:
   - nombre: "DENUE — INEGI"
     url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=3434600"

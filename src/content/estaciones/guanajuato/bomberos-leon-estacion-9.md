@@ -25,7 +25,7 @@ serviciosDetalle:
   - "Combate y extinción de incendios"
   - "Rescate vehicular"
   - "Atención prehospitalaria"
-descripcion: "Estación 9 del cuerpo de bomberos de León, en la colonia Industrial Santa Crocce. Forma parte de la red de cuarteles con que la corporación cubre el municipio."
+descripcion: "Estación 9 del cuerpo de bomberos de León, en la colonia Industrial Santa Crocce. Está en la zona industrial de León, entre naves de curtiduría, tenerías y bodegas de producto químico: el perfil de riesgo industrial más característico de la ciudad."
 fuentes:
   - nombre: "DENUE — INEGI"
     url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=10190257"

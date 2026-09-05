@@ -28,7 +28,7 @@ serviciosDetalle:
   - "Combate de incendios forestales"
   - "Atención de emergencias"
   - "Protección Civil"
-descripcion: "Dirección Municipal de Protección Civil y Bomberos que en 2025 estrenó instalaciones propias sobre el bulevar José Antonio Ramírez."
+descripcion: "Dirección Municipal de Protección Civil y Bomberos que en 2025 estrenó instalaciones propias sobre el bulevar José Antonio Ramírez. Santiago Papasquiaro es la puerta de la sierra duranguense: cabecera de valle con actividad maderera y agrícola, y acceso a un territorio de montaña donde el incendio forestal marca la temporada seca."
 fuentes:
   - nombre: "oem.com.mx"
     url: "https://oem.com.mx/elsoldedurango/local/capacita-pc-de-durango-a-bomberos-de-santiago-papasquiaro-27269202"

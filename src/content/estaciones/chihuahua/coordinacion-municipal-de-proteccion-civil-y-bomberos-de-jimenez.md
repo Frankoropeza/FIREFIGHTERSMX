@@ -29,7 +29,7 @@ serviciosDetalle:
   - "Incendios urbanos, de corrales y forestales"
   - "Prevención"
   - "Apoyo en temporada de calor"
-descripcion: "Coordinación municipal de Protección Civil y Bomberos de Jiménez."
+descripcion: "Coordinación municipal de Protección Civil y Bomberos de Jiménez. Jiménez es un nodo carretero del sur de Chihuahua, donde se bifurcan las rutas hacia Torreón y hacia Parral, con territorio semidesértico extenso, ganadería y tránsito pesado permanente."
 fuentes:
   - nombre: "facebook.com"
     url: "https://www.facebook.com/proteccioncivilybomberosdejimenezoficial"

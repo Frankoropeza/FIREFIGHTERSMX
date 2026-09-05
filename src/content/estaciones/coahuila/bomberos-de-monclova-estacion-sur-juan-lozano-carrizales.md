@@ -23,7 +23,7 @@ serviciosDetalle:
   - "Atención al sector sur"
   - "Apoyo al municipio de Castaños"
 fundacion: 2019
-descripcion: "Segunda estación de Bomberos de Monclova, inaugurada el 19 de mayo de 2019; reduce tiempos de respuesta y apoya a Castaños."
+descripcion: "Segunda estación de Bomberos de Monclova, inaugurada el 19 de mayo de 2019; reduce tiempos de respuesta y apoya a Castaños. La estación cubre el sur de Monclova, sobre la avenida Sidermex, en el entorno inmediato de la siderúrgica que dio origen a la ciudad; su cobertura mezcla vivienda obrera densa con instalación industrial pesada."
 fuentes:
   - nombre: "intersip.org"
     url: "https://intersip.org/2019/05/19/en-monclova-riquelme-inaugura-nueva-central-de-bomberos/"

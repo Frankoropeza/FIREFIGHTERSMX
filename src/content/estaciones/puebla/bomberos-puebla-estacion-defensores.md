@@ -26,7 +26,7 @@ serviciosDetalle:
   - "Combate y extinción de incendios"
   - "Rescate vehicular"
   - "Atención prehospitalaria"
-descripcion: "Estación Defensores del cuerpo de bomberos de Puebla, en la colonia Jesus Garcia. Forma parte de la red de cuarteles con que la corporación cubre el municipio."
+descripcion: "Estación Defensores del cuerpo de bomberos de Puebla, en la colonia Jesus Garcia. Cubre el norte de la capital poblana, sobre el corredor de Defensores de la República, un eje de vialidad primaria con comercio, vivienda popular y acceso a la salida hacia la autopista a México."
 fuentes:
   - nombre: "DENUE — INEGI"
     url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=3263145"

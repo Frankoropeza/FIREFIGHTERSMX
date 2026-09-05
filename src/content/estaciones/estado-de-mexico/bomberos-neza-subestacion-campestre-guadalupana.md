@@ -25,7 +25,7 @@ serviciosDetalle:
   - "Combate y extinción de incendios"
   - "Rescate vehicular"
   - "Atención prehospitalaria"
-descripcion: "Subestación del cuerpo de bomberos de Nezahualcóyotl en Campestre Guadalupana, al norte del municipio. Cubre la franja que colinda con Ecatepec sobre el eje de Avenida Las Torres."
+descripcion: "Subestación del cuerpo de bomberos de Nezahualcóyotl en Campestre Guadalupana, al norte del municipio. Cubre la franja que colinda con Ecatepec sobre el eje de Avenida Las Torres. Nezahualcóyotl se asienta sobre el lecho del antiguo lago de Texcoco, con densidad altísima, traza reticular y suelo lacustre que se hunde y encharca en temporada de lluvias."
 fuentes:
   - nombre: "neza.gob.mx"
     url: "https://www.neza.gob.mx/"

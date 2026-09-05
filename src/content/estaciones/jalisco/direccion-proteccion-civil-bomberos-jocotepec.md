@@ -25,7 +25,7 @@ serviciosDetalle:
   - "Rescate vehicular"
   - "Atención de emergencias en zona lacustre"
   - "Primeros auxilios"
-descripcion: "Corporación municipal con reglamento de Protección Civil y Bomberos emitido por el Ayuntamiento de Jocotepec, publicado en jocotepec.gob.mx. Atiende el extremo poniente del Lago de Chapala."
+descripcion: "Corporación municipal con reglamento de Protección Civil y Bomberos emitido por el Ayuntamiento de Jocotepec, publicado en jocotepec.gob.mx. Atiende el extremo poniente del Lago de Chapala. Jocotepec cierra el extremo poniente del lago de Chapala, con franja ribereña, invernaderos de berries en el valle y la sierra de Travesía al sur, lo que combina rescate acuático, riesgo agroindustrial e incendio forestal."
 fuentes:
   - nombre: "jocotepec.gob.mx"
     url: "https://jocotepec.gob.mx/wp-content/uploads/2020/02/REGLAMENTO-DE-PROTECCION-CIVIL-Y-BOMBEROS-JOCOTEPEC.pdf"

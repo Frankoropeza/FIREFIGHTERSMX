@@ -23,7 +23,7 @@ serviciosDetalle:
   - "Atlas Municipal de Riesgos"
   - "Coordinación de refugios temporales"
   - "Coordinación con el cuerpo estatal y SEPROCI"
-descripcion: "Dirección de Protección Civil de Dzitbalché, uno de los municipios más recientes de Campeche (creado a partir de Calkiní); coordina la respuesta local con las instancias estatales."
+descripcion: "Dirección de Protección Civil de Dzitbalché, uno de los municipios más recientes de Campeche (creado a partir de Calkiní); coordina la respuesta local con las instancias estatales. El municipio es parte de la región del Camino Real, de vocación agrícola y con población maya hablante, con la cabecera concentrada y superficie de monte bajo que arde en la temporada seca."
 fuentes:
   - nombre: "dzitbalche.gob.mx"
     url: "https://dzitbalche.gob.mx/proteccion-civil/"

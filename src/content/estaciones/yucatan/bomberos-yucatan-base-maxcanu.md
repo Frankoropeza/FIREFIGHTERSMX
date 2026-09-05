@@ -26,7 +26,7 @@ serviciosDetalle:
   - "Combate y extinción de incendios"
   - "Rescate vehicular"
   - "Atención prehospitalaria"
-descripcion: "Base regional del cuerpo de bomberos de Yucatán en Maxcanú, en el suroeste del estado. Es la respuesta más cercana para el corredor carretero hacia Campeche."
+descripcion: "Base regional del cuerpo de bomberos de Yucatán en Maxcanú, en el suroeste del estado. Es la respuesta más cercana para el corredor carretero hacia Campeche. El municipio está en el Camino Real yucateco, de vocación agrícola y henequenera, con comisarías dispersas y superficie de monte bajo que arde durante la temporada seca, entre marzo y mayo."
 fuentes:
   - nombre: "yucatan.gob.mx — Teléfonos de emergencia por municipio"
     url: "https://www.yucatan.gob.mx/?p=emergencias"

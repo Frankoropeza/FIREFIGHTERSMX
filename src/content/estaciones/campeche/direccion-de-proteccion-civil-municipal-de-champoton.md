@@ -26,7 +26,7 @@ serviciosDetalle:
   - "Verificación de medidas de seguridad"
   - "Atención y coordinación de emergencias locales"
   - "Prevención y orientación ciudadana"
-descripcion: "Dependencia del Ayuntamiento de Champotón responsable de prevención, inspección y coordinación local de emergencias; el combate de incendios corresponde al cuerpo estatal."
+descripcion: "Dependencia del Ayuntamiento de Champotón responsable de prevención, inspección y coordinación local de emergencias; el combate de incendios corresponde al cuerpo estatal. Champotón combina una franja costera de pesca y turismo con superficie agrícola y ganadera tierra adentro, atravesada por la carretera federal del Golfo y expuesta a ciclones entre junio y noviembre."
 fuentes:
   - nombre: "cotaipec.org.mx"
     url: "https://www.cotaipec.org.mx/pdf/entes_ayuntamientos.pdf"

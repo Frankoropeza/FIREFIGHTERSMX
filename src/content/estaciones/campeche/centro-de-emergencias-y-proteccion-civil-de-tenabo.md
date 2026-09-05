@@ -25,7 +25,7 @@ serviciosDetalle:
   - "Prevención y gestión integral de riesgos"
   - "Traslados en ambulancia"
   - "Coordinación con SEPROCI y el cuerpo estatal"
-descripcion: "Centro de Emergencias y Protección Civil de Tenabo; atiende emergencias locales y coordina con el Heroico Cuerpo de Bomberos del Estado."
+descripcion: "Centro de Emergencias y Protección Civil de Tenabo; atiende emergencias locales y coordina con el Heroico Cuerpo de Bomberos del Estado. Tenabo es un municipio pequeño del Camino Real, entre Campeche y Hecelchakán, de vocación agrícola y henequenera, con la cabecera concentrada y comisarías repartidas por la llanura."
 fuentes:
   - nombre: "municipiodetenabo.gob.mx"
     url: "https://municipiodetenabo.gob.mx/los-servicios/"

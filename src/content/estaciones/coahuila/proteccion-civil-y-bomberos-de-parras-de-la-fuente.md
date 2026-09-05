@@ -27,7 +27,7 @@ serviciosDetalle:
   - "Rescate y extracción vehicular"
   - "Atención de emergencias en zona vitivinícola"
   - "Capacitación"
-descripcion: "Dirección municipal de PC y Bomberos del Pueblo Mágico de Parras, integrada al esquema de la Región Sureste; atiende casco urbano, sierra y zona vitivinícola."
+descripcion: "Dirección municipal de PC y Bomberos del Pueblo Mágico de Parras, integrada al esquema de la Región Sureste; atiende casco urbano, sierra y zona vitivinícola. Parras es un oasis en el desierto coahuilense, con viñedos, bodegas vinícolas y casco histórico de adobe, rodeado por la Sierra de Parras, donde el incendio forestal marca la temporada seca."
 fuentes:
   - nombre: "parras.gob.mx"
     url: "https://parras.gob.mx/gaceta/bomberos/"

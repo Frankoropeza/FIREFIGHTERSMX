@@ -24,7 +24,7 @@ serviciosDetalle:
   - "Combate de incendios forestales (brigadas estatales)"
   - "Sanidad forestal y combate de plagas"
   - "Coordinación con CONAFOR y CONANP en temporada de incendios"
-descripcion: "Dependencia estatal responsable de la gestión forestal y ambiental; aporta brigadistas estatales a la campaña anual contra incendios forestales junto con CONAFOR y CONANP."
+descripcion: "Dependencia estatal responsable de la gestión forestal y ambiental; aporta brigadistas estatales a la campaña anual contra incendios forestales junto con CONAFOR y CONANP. Durango concentra la mayor superficie forestal del país en la Sierra Madre Occidental, con bosque de pino-encino y una industria maderera de escala nacional, lo que convierte la campaña anual contra incendios en la operación de mayor peso del estado."
 fuentes:
   - nombre: "medioambiente.durango.gob.mx"
     url: "https://medioambiente.durango.gob.mx/gobierno-del-estado-capacita-brigadas-de-sanidad-forestal-para-fortalecer-el-combate-de-plagas/"

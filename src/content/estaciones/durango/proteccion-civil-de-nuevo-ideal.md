@@ -21,7 +21,7 @@ servicios:
 serviciosDetalle:
   - "Atención de emergencias"
   - "Protección Civil"
-descripcion: "Coordinación Municipal de Protección Civil; no se localizó fuente oficial que confirme un cuerpo de bomberos dedicado independiente."
+descripcion: "Coordinación Municipal de Protección Civil; no se localizó fuente oficial que confirme un cuerpo de bomberos dedicado independiente. Nuevo Ideal es un municipio agrícola del valle norte de Durango, con presencia de campos menonitas, silos y bodegas de grano alrededor de la cabecera."
 fuentes:
   - nombre: "proteccioncivil.durango.gob.mx"
     url: "https://proteccioncivil.durango.gob.mx/wp-content/uploads/sites/39/2023/04/DIRECTORIO-DE-COORDINADORES-MUNICIPALES-DE-P.-C.-sin-dp-2022-2025.pdf"

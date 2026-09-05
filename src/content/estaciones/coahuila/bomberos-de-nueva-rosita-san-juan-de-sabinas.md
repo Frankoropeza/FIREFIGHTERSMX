@@ -23,7 +23,7 @@ serviciosDetalle:
   - "Combate y extinción de incendios"
   - "Rescate y atención de emergencias"
   - "Apoyo intermunicipal"
-descripcion: "Cuerpo de bomberos municipal de Nueva Rosita, cabecera de San Juan de Sabinas; colabora en emergencias de municipios vecinos de la Región Carbonífera."
+descripcion: "Cuerpo de bomberos municipal de Nueva Rosita, cabecera de San Juan de Sabinas; colabora en emergencias de municipios vecinos de la Región Carbonífera. La Región Carbonífera concentra la minería de carbón del país, con tiros, pozos y pocitos repartidos por el municipio; el rescate minero y la emergencia por gas grisú son parte del riesgo local, además del servicio urbano de la cabecera."
 fuentes:
   - nombre: "web.nuevarosita.gob.mx"
     url: "https://web.nuevarosita.gob.mx/colaboran-bomberos-de-nueva-rosita-en-incendio-de-sabinas/"

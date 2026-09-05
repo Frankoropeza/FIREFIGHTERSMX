@@ -25,7 +25,7 @@ serviciosDetalle:
   - "Atención de emergencias"
   - "Rescate vehicular"
   - "Protección Civil"
-descripcion: "Corporación municipal de emergencias que ha participado en encuentros regionales de capacitación de la Coordinación Estatal de PC (rescate vehicular, herramientas de corte)."
+descripcion: "Corporación municipal de emergencias que ha participado en encuentros regionales de capacitación de la Coordinación Estatal de PC (rescate vehicular, herramientas de corte). Cuencamé es un municipio semidesértico del oriente de Durango, sobre el eje carretero hacia Torreón, con territorio extenso, ganadería y comunidades distantes entre sí."
 fuentes:
   - nombre: "proteccioncivil.durango.gob.mx"
     url: "https://proteccioncivil.durango.gob.mx/durango-avanza-en-la-profesionalizacion-de-corporaciones-de-emergencia/"

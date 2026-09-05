@@ -23,7 +23,7 @@ serviciosDetalle:
   - "Incendios estructurales e industriales"
   - "Incendios de basureros"
   - "Simulacros"
-descripcion: "Cuerpo de bomberos municipal de Saucillo; corporación pequeña que solicita apoyo de Bomberos de Delicias en incendios grandes."
+descripcion: "Cuerpo de bomberos municipal de Saucillo; corporación pequeña que solicita apoyo de Bomberos de Delicias en incendios grandes. Saucillo está en el valle del Conchos, junto a Delicias, con agricultura de riego, bodegas y una cabecera compacta sobre la carretera federal."
 fuentes:
   - nombre: "facebook.com"
     url: "https://www.facebook.com/presidenciasaucillo/about"

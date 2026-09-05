@@ -30,7 +30,7 @@ serviciosDetalle:
   - "Emergencias hidrometeorológicas y de zona costera"
   - "Respuesta interinstitucional regional"
   - "Prevención y gestión del riesgo"
-descripcion: "Unidad de Protección Civil del Ayuntamiento de Armería; funge como cuerpo de respuesta a emergencias del municipio costero, sin cuerpo de bomberos independiente funcional."
+descripcion: "Unidad de Protección Civil del Ayuntamiento de Armería; funge como cuerpo de respuesta a emergencias del municipio costero, sin cuerpo de bomberos independiente funcional. Armería es un municipio costero y agrícola del sur de Colima, atravesado por el río del mismo nombre y por la carretera federal a Manzanillo. Inundación en temporada de lluvias y accidentes carreteros pesan tanto como el incendio en su operación."
 fuentes:
   - nombre: "proteccioncivil.gob.mx"
     url: "http://www.proteccioncivil.gob.mx/work/models/sismos/Resource/42/1/images/directorio_umpc.pdf"

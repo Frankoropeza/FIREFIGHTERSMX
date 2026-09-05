@@ -22,7 +22,7 @@ serviciosDetalle:
   - "Prevención y gestión de riesgos"
   - "Atención y coordinación de emergencias locales"
   - "Administración de refugios temporales"
-descripcion: "Dirección Municipal de Protección Civil de Escárcega; coordina la respuesta local y gestiona refugios temporales, con el combate de incendios a cargo del cuerpo estatal."
+descripcion: "Dirección Municipal de Protección Civil de Escárcega; coordina la respuesta local y gestiona refugios temporales, con el combate de incendios a cargo del cuerpo estatal. Escárcega es el nodo carretero del estado: ahí se cruzan las rutas hacia Villahermosa, Chetumal y Campeche, con tránsito pesado permanente y selva a ambos lados de la carretera."
 fuentes:
   - nombre: "cotaipec.org.mx"
     url: "https://www.cotaipec.org.mx/pdf/entes_ayuntamientos.pdf"

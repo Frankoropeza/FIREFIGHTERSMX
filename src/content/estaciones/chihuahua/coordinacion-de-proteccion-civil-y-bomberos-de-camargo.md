@@ -26,7 +26,7 @@ serviciosDetalle:
   - "Combate de incendios"
   - "Rescate"
   - "Atención de emergencias"
-descripcion: "Cuerpo de bomberos y Protección Civil municipal de Camargo, integrados a la Dirección de Seguridad Pública Municipal."
+descripcion: "Cuerpo de bomberos y Protección Civil municipal de Camargo, integrados a la Dirección de Seguridad Pública Municipal. Camargo está en la cuenca del río Conchos, con agricultura de riego, ganadería y una cabecera sobre el eje carretero Chihuahua-Torreón; el incendio de pastizal en estiaje y el accidente carretero dominan su operación."
 fuentes:
   - nombre: "municipiocamargo.com"
     url: "https://municipiocamargo.com/directorio-de-dependencias/"

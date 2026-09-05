@@ -26,7 +26,7 @@ serviciosDetalle:
   - "Atención de emergencias y desastres"
   - "Rescate y primeros auxilios"
   - "Prevención de riesgos"
-descripcion: "Unidad municipal de PC de Minatitlán que ejerce funciones de bomberos en la cabecera y zona serrana, con respaldo de la UEPC."
+descripcion: "Unidad municipal de PC de Minatitlán que ejerce funciones de bomberos en la cabecera y zona serrana, con respaldo de la UEPC. Minatitlán es el municipio más serrano de Colima, con bosque, minería de hierro y comunidades de montaña conectadas por camino sinuoso; el incendio forestal en temporada seca domina su operación."
 fuentes:
   - nombre: "minatitlan-colima.gob.mx"
     url: "https://minatitlan-colima.gob.mx/"

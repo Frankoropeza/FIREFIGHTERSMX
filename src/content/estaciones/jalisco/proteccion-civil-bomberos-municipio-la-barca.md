@@ -20,7 +20,7 @@ servicios:
 serviciosDetalle:
   - "Combate y extinción de incendios estructurales"
   - "Primeros auxilios y atención prehospitalaria"
-descripcion: "Corporación municipal de La Barca, nodo regional al oriente del Lago de Chapala en el límite con Michoacán."
+descripcion: "Corporación municipal de La Barca, nodo regional al oriente del Lago de Chapala en el límite con Michoacán. La Barca está en la ribera del río Lerma, en la Ciénega jalisciense, con superficie agrícola de riego, agroindustria y el cruce carretero hacia Michoacán y el Bajío."
 fuentes:
   - nombre: "rankeando.com"
     url: "https://rankeando.com/1631616-proteccion-civil-y-bomberos"

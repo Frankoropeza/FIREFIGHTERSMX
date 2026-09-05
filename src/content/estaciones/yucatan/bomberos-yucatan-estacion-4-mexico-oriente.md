@@ -25,7 +25,7 @@ serviciosDetalle:
   - "Combate y extinción de incendios"
   - "Rescate vehicular"
   - "Atención prehospitalaria"
-descripcion: "Estación 4 del cuerpo de bomberos de Yucatán, en la colonia México Oriente. Da servicio al nororiente de Mérida, zona de crecimiento residencial reciente."
+descripcion: "Estación 4 del cuerpo de bomberos de Yucatán, en la colonia México Oriente. Da servicio al nororiente de Mérida, zona de crecimiento residencial reciente. El nororiente de Mérida es zona de fraccionamientos residenciales y plazas comerciales construidos en las últimas décadas, con crecimiento continuo hacia la periferia y vialidades primarias de alto aforo."
 fuentes:
   - nombre: "yucatan.gob.mx — Teléfonos de emergencia por municipio"
     url: "https://www.yucatan.gob.mx/?p=emergencias"

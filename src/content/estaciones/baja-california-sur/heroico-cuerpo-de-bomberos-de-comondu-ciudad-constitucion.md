@@ -21,7 +21,7 @@ serviciosDetalle:
   - "Combate y prevención de incendios"
   - "Atención de emergencias"
   - "Apoyo en temporada de huracanes"
-descripcion: "Cuerpo de bomberos municipal con sede en Ciudad Constitución que cubre el municipio de Comondú dentro del sistema estatal de bomberos de BCS."
+descripcion: "Cuerpo de bomberos municipal con sede en Ciudad Constitución que cubre el municipio de Comondú dentro del sistema estatal de bomberos de BCS. Comondú es el valle agrícola de Baja California Sur: superficie de riego alrededor de Ciudad Constitución, empacadoras y bodegas, con la carretera Transpeninsular como único eje y localidades separadas por decenas de kilómetros de desierto."
 fuentes:
   - nombre: "sgg.bcs.gob.mx"
     url: "https://sgg.bcs.gob.mx/proteccioncivil/"

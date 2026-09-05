@@ -25,7 +25,7 @@ serviciosDetalle:
   - "Gestión y recaudación de recursos"
   - "Adquisición de equipo y unidades"
   - "Promoción de la cultura de prevención"
-descripcion: "Organización civil de apoyo (no es estación operativa) que gestiona recursos materiales y económicos para el Cuerpo de Bomberos de Cuauhtémoc."
+descripcion: "Organización civil de apoyo (no es estación operativa) que gestiona recursos materiales y económicos para el Cuerpo de Bomberos de Cuauhtémoc. Su función es sostener económicamente al cuerpo municipal de una ciudad cuya actividad gira alrededor de la producción manzanera y de la industria agroalimentaria de la región."
 fuentes:
   - nombre: "patronatobomberoscuauhtemoc.org"
     url: "https://patronatobomberoscuauhtemoc.org/"

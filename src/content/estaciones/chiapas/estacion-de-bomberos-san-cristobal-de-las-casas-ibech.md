@@ -28,7 +28,7 @@ serviciosDetalle:
   - "Incendios de pastizal y forestales"
   - "Rescate y emergencias urbanas"
   - "Emergencias 24/7"
-descripcion: "Estación del Instituto de Bomberos del Estado que da servicio a San Cristóbal de las Casas y los municipios de Los Altos."
+descripcion: "Estación del Instituto de Bomberos del Estado que da servicio a San Cristóbal de las Casas y los municipios de Los Altos. San Cristóbal es una ciudad colonial de Los Altos a más de 2,100 metros de altitud, con casco histórico de adobe y teja, alta afluencia turística y un entorno de bosque de niebla en los municipios que la rodean."
 fuentes:
   - nombre: "chiapas.gob.mx"
     url: "https://chiapas.gob.mx/funcionarios/estatal/ejecutivo/instituto-bomberos"

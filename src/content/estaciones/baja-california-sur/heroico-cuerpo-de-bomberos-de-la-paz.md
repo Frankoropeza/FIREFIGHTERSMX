@@ -27,7 +27,7 @@ serviciosDetalle:
   - "Rescate urbano y vehicular"
   - "Atención a fenómenos hidrometeorológicos"
 fundacion: 1959
-descripcion: "Corporación municipal responsable de la atención de incendios y emergencias en la capital de Baja California Sur; opera las 24 horas y en 2025 atendió más de 1,200 emergencias."
+descripcion: "Corporación municipal responsable de la atención de incendios y emergencias en la capital de Baja California Sur; opera las 24 horas y en 2025 atendió más de 1,200 emergencias. La capital sudcaliforniana combina el frente de bahía y su actividad portuaria y turística con colonias que suben hacia los cerros, en un municipio de territorio enorme y expuesto a la temporada de ciclones del Pacífico."
 fuentes:
   - nombre: "bcsnoticias.mx"
     url: "https://www.bcsnoticias.mx/en-el-2025-bomberos-de-la-paz-atendieron-mas-de-1200-emergencias-167-fueron-incendios-de-casa/"

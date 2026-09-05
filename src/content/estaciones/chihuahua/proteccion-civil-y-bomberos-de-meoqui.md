@@ -29,7 +29,7 @@ serviciosDetalle:
   - "Apoyo en lluvias y vientos"
   - "Prevención de incendios"
   - "Primeros auxilios"
-descripcion: "Coordinación de Protección Civil y Bomberos de Meoqui, bajo la Dirección de Seguridad Pública Municipal."
+descripcion: "Coordinación de Protección Civil y Bomberos de Meoqui, bajo la Dirección de Seguridad Pública Municipal. Meoqui está en el valle del Conchos, entre Delicias y Chihuahua, con agricultura de riego, agroindustria y una cabecera atravesada por la vía del ferrocarril y la carretera federal."
 fuentes:
   - nombre: "meoqui.com.mx"
     url: "https://meoqui.com.mx/"

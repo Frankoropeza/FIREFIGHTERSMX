@@ -24,7 +24,7 @@ serviciosDetalle:
   - "Protección Civil municipal"
   - "Rescate"
   - "Atención de incendios en zona desértica y de manantiales"
-descripcion: "Departamento municipal de PC y Bomberos del Pueblo Mágico de Cuatro Ciénegas; en marzo 2025 amplió su plantilla a 9 elementos operativos."
+descripcion: "Departamento municipal de PC y Bomberos del Pueblo Mágico de Cuatro Ciénegas; en marzo 2025 amplió su plantilla a 9 elementos operativos. Cuatro Ciénegas es un municipio desértico de enorme extensión, conocido por sus pozas y su Área de Protección de Flora y Fauna, con comunidades muy separadas entre sí y superficie de matorral que arde en estiaje."
 fuentes:
   - nombre: "noticiasnrt.com"
     url: "https://noticiasnrt.com/2025/03/11/contratan-mas-bomberos-para-cuatro-cienegas/"

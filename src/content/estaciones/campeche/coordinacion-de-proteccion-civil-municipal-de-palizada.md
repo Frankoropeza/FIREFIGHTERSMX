@@ -25,7 +25,7 @@ serviciosDetalle:
   - "Prevención y mitigación de riesgos"
   - "Vigilancia del Río Palizada (riesgo de inundación)"
   - "Operación de refugios temporales"
-descripcion: "Coordinación de Protección Civil de Palizada, con especial atención al monitoreo del Río Palizada por su recurrente riesgo de inundación; el combate de incendios está centralizado en SEPROCI."
+descripcion: "Coordinación de Protección Civil de Palizada, con especial atención al monitoreo del Río Palizada por su recurrente riesgo de inundación; el combate de incendios está centralizado en SEPROCI. Palizada es un Pueblo Mágico ribereño en la cuenca del Usumacinta, con buena parte de su territorio en zona de humedal e inundación estacional y comunidades a las que se llega por agua."
 fuentes:
   - nombre: "palizada.gob.mx"
     url: "https://palizada.gob.mx/direcciones/"

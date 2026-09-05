@@ -24,7 +24,7 @@ serviciosDetalle:
   - "Combate de incendios"
   - "Respuesta a emergencias"
   - "Coordinación con CFE bajo Convenio de Ayuda Mutua (derrames, incendios, explosiones, nubes tóxicas)"
-descripcion: "Dirección municipal de PC y Bomberos de Nava; firmó en 2025 un Convenio de Ayuda Mutua con las carboeléctricas de CFE (JLP/Río Escondido y Carbón II) y CENAC Noreste."
+descripcion: "Dirección municipal de PC y Bomberos de Nava; firmó en 2025 un Convenio de Ayuda Mutua con las carboeléctricas de CFE (JLP/Río Escondido y Carbón II) y CENAC Noreste. Nava alberga el mayor complejo carboeléctrico del país y forma parte de la cuenca carbonífera, de modo que la corporación municipal convive con instalación energética de gran escala en su propio territorio."
 fuentes:
   - nombre: "nava.gob.mx"
     url: "http://nava.gob.mx/directorio"

@@ -26,7 +26,7 @@ serviciosDetalle:
   - "Combate y extinción de incendios"
   - "Rescate vehicular"
   - "Atención prehospitalaria"
-descripcion: "Estación 7 del cuerpo de bomberos de León, en la colonia El Potrero. Forma parte de la red de cuarteles con que la corporación cubre el municipio."
+descripcion: "Estación 7 del cuerpo de bomberos de León, en la colonia El Potrero. Da servicio al oriente de la ciudad, un sector de vivienda popular densa donde la industria del calzado opera desde talleres domiciliarios, una carga de fuego distinta a la de la nave industrial."
 fuentes:
   - nombre: "DENUE — INEGI"
     url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=1149573"

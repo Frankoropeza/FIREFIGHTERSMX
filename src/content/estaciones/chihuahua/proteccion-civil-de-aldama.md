@@ -31,7 +31,7 @@ serviciosDetalle:
   - "Simulacros"
   - "Inspecciones"
   - "Capacitación forestal"
-descripcion: "Unidad municipal de Protección Civil de Aldama; para incendios mayores recibe apoyo del Heroico Cuerpo de Bomberos de Chihuahua capital."
+descripcion: "Unidad municipal de Protección Civil de Aldama; para incendios mayores recibe apoyo del Heroico Cuerpo de Bomberos de Chihuahua capital. Aldama es un municipio extenso y semidesértico al oriente de la capital, con la cabecera a pocos kilómetros de Chihuahua y un territorio rural que se adentra en el desierto."
 fuentes:
   - nombre: "municipioaldama.gob.mx"
     url: "https://www.municipioaldama.gob.mx/contactos/"

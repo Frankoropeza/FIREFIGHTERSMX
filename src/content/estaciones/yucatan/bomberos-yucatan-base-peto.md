@@ -25,7 +25,7 @@ serviciosDetalle:
   - "Combate y extinción de incendios"
   - "Rescate vehicular"
   - "Atención prehospitalaria"
-descripcion: "Base regional del cuerpo de bomberos de Yucatán en Peto, al sur del estado. Atiende la región más alejada de Mérida y la frontera con Quintana Roo."
+descripcion: "Base regional del cuerpo de bomberos de Yucatán en Peto, al sur del estado. Atiende la región más alejada de Mérida y la frontera con Quintana Roo. Peto es un municipio del cono sur yucateco, de selva baja y milpa, con población maya hablante y comunidades a las que se llega por caminos vecinales largos; la distancia es aquí el factor crítico."
 fuentes:
   - nombre: "yucatan.gob.mx — Teléfonos de emergencia por municipio"
     url: "https://www.yucatan.gob.mx/?p=emergencias"

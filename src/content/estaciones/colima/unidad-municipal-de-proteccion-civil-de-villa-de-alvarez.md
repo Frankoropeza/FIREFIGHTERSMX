@@ -23,7 +23,7 @@ serviciosDetalle:
   - "Apoyo con transporte de agua"
   - "Coordinación de evacuaciones"
   - "Escalamiento de incendios mayores a Bomberos de Colima"
-descripcion: "Unidad municipal de protección civil que atiende la primera respuesta; para incendios de magnitud depende de Bomberos de Colima y de la UEPC."
+descripcion: "Unidad municipal de protección civil que atiende la primera respuesta; para incendios de magnitud depende de Bomberos de Colima y de la UEPC. Villa de Álvarez está conurbado con la capital y comparte con ella la cercanía al Volcán de Fuego, con crecimiento habitacional continuo hacia el norte, en dirección al propio volcán."
 fuentes:
   - nombre: "villadealvarez.gob.mx"
     url: "https://villadealvarez.gob.mx/ivj/noticias/contactos-de-emergencia/"

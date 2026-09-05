@@ -20,7 +20,7 @@ servicios:
 serviciosDetalle:
   - "Combate y extinción de incendios estructurales"
   - "Primeros auxilios y atención prehospitalaria"
-descripcion: "Corporación municipal de Zapotlanejo, municipio sede de la Terminal de Gas LP de PEMEX (distribución regional) y zona de transición entre la ZMG y Los Altos."
+descripcion: "Corporación municipal de Zapotlanejo, municipio sede de la Terminal de Gas LP de PEMEX (distribución regional) y zona de transición entre la ZMG y Los Altos. Zapotlanejo combina su vocación textil y comercial con la barranca del río Santiago al poniente y el corredor carretero a Los Altos, en un municipio que crece pegado a la zona metropolitana de Guadalajara."
 fuentes:
   - nombre: "zapotlanejo-jal.ncamexico.com"
     url: "https://zapotlanejo-jal.ncamexico.com/proteccion-civil-y-bomberos-zapotlanejo-jalisco/"

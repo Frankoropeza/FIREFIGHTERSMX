@@ -24,7 +24,7 @@ serviciosDetalle:
   - "Combate y extinción de incendios"
   - "Rescate vehicular"
   - "Atención prehospitalaria"
-descripcion: "Estación del cuerpo de bomberos de San Luis Río Colorado en la colonia Diez de Abril, sobre Avenida Álvaro Obregón. Cubre el sector oriente de la ciudad fronteriza."
+descripcion: "Estación del cuerpo de bomberos de San Luis Río Colorado en la colonia Diez de Abril, sobre Avenida Álvaro Obregón. Cubre el sector oriente de la ciudad fronteriza. San Luis Río Colorado es frontera con Arizona y valle agrícola del delta del Colorado, con calor extremo en verano y superficie de riego que rodea la mancha urbana."
 fuentes:
   - nombre: "DENUE — INEGI"
     url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=3953051"

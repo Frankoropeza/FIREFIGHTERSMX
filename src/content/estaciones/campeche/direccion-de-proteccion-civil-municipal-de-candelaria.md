@@ -24,7 +24,7 @@ serviciosDetalle:
   - "Atención y coordinación de emergencias locales"
   - "Prevención y gestión integral de riesgos"
   - "Operación de refugios temporales"
-descripcion: "Dirección de Protección Civil de Candelaria; atiende emergencias locales y opera refugios temporales, con el combate de incendios centralizado en el cuerpo estatal."
+descripcion: "Dirección de Protección Civil de Candelaria; atiende emergencias locales y opera refugios temporales, con el combate de incendios centralizado en el cuerpo estatal. Candelaria es un municipio del sur del estado, de selva y ríos, con población dispersa en ejidos y una temporada de lluvias que aísla comunidades y desborda el río del mismo nombre."
 fuentes:
   - nombre: "municipiodecandelaria.gob.mx"
     url: "https://municipiodecandelaria.gob.mx/ova_dep/proteccion-civil/"

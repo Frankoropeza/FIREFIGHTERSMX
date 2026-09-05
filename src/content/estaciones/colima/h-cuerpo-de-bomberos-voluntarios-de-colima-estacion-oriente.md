@@ -29,7 +29,7 @@ serviciosDetalle:
   - "Auxilio en desastres naturales"
   - "Academia de bomberos voluntarios"
 fundacion: 1969
-descripcion: "Cuerpo de bomberos voluntarios sostenido por un Patronato civil; es la corporación funcional de la capital y atiende por convenio incidentes mayores en municipios conurbados."
+descripcion: "Cuerpo de bomberos voluntarios sostenido por un Patronato civil; es la corporación funcional de la capital y atiende por convenio incidentes mayores en municipios conurbados. La capital se asienta al pie del Volcán de Fuego, uno de los más activos de México, en una zona de sismicidad alta y barrancas que cruzan la mancha urbana. Esa geografía marca tanto la respuesta a incendio como los operativos de contingencia volcánica."
 fuentes:
   - nombre: "bomberosvoluntariosdecolima.com"
     url: "https://bomberosvoluntariosdecolima.com/"

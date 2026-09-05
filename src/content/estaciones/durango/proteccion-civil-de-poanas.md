@@ -21,7 +21,7 @@ servicios:
 serviciosDetalle:
   - "Atención de emergencias"
   - "Protección Civil"
-descripcion: "Coordinación de Protección Civil ligada a Seguridad Pública municipal; sede en la cabecera Villa Unión."
+descripcion: "Coordinación de Protección Civil ligada a Seguridad Pública municipal; sede en la cabecera Villa Unión. Poanas es un municipio agrícola del sur del estado, con superficie de riego en el valle del río Poanas y comunidades repartidas alrededor de Villa Unión."
 fuentes:
   - nombre: "proteccioncivil.durango.gob.mx"
     url: "https://proteccioncivil.durango.gob.mx/wp-content/uploads/sites/39/2023/04/DIRECTORIO-DE-COORDINADORES-MUNICIPALES-DE-P.-C.-sin-dp-2022-2025.pdf"

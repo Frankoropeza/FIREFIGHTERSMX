@@ -26,7 +26,7 @@ serviciosDetalle:
   - "Atención de fugas e incendios de gas LP"
   - "Rescate vehicular"
   - "Apoyo a municipios conurbados"
-descripcion: "Estación sur del cuerpo de bomberos voluntarios de la capital; documentada atendiendo incendios en Colima y Villa de Álvarez."
+descripcion: "Estación sur del cuerpo de bomberos voluntarios de la capital; documentada atendiendo incendios en Colima y Villa de Álvarez. Cubre el sur de la capital y su continuidad urbana con Villa de Álvarez, un tejido conurbado donde el límite municipal no interrumpe ni la mancha urbana ni la demanda de servicio."
 fuentes:
   - nombre: "bomberosvoluntariosdecolima.com"
     url: "https://bomberosvoluntariosdecolima.com/"

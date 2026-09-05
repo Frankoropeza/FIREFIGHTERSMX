@@ -24,7 +24,7 @@ serviciosDetalle:
   - "Atención de reportes ciudadanos de riesgo"
   - "Inspección y prevención en el municipio"
   - "Capacitación en protección civil"
-descripcion: "Área de protección civil del Ayuntamiento de Campeche; el combate de incendios corresponde al Heroico Cuerpo de Bomberos del Estado."
+descripcion: "Área de protección civil del Ayuntamiento de Campeche; el combate de incendios corresponde al Heroico Cuerpo de Bomberos del Estado. El municipio incluye el centro histórico amurallado de San Francisco de Campeche, declarado Patrimonio Mundial, con edificación colonial de mampostería y calles estrechas donde el acceso de unidades pesadas es limitado."
 fuentes:
   - nombre: "municipiocampeche.gob.mx"
     url: "https://www.municipiocampeche.gob.mx/proteccion-civil-municipal/"

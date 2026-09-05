@@ -24,7 +24,7 @@ serviciosDetalle:
   - "Respuesta primaria a emergencias e incendios"
   - "Prevención y atención de riesgos"
   - "Coordinación con UEPC y Bomberos de Colima"
-descripcion: "Unidad municipal de protección civil de Coquimatlán; deriva incidentes mayores a la UEPC y a Bomberos de Colima."
+descripcion: "Unidad municipal de protección civil de Coquimatlán; deriva incidentes mayores a la UEPC y a Bomberos de Colima. Coquimatlán es un municipio de valle y lomerío al poniente de la capital, con superficie agrícola y localidades dispersas, donde el incendio de pastizal en estiaje es la emergencia más frecuente."
 fuentes:
   - nombre: "coquimatlan.gob.mx"
     url: "https://www.coquimatlan.gob.mx/"

@@ -26,7 +26,7 @@ serviciosDetalle:
   - "Combate y extinción de incendios"
   - "Rescate vehicular"
   - "Atención prehospitalaria"
-descripcion: "Estación 9 del cuerpo de bomberos de Yucatán, en Chuburná de Hidalgo. Cubre el norponiente de Mérida, el sector de mayor expansión urbana y comercial de la ciudad."
+descripcion: "Estación 9 del cuerpo de bomberos de Yucatán, en Chuburná de Hidalgo. Cubre el norponiente de Mérida, el sector de mayor expansión urbana y comercial de la ciudad. El norponiente de Mérida concentra la mayor expansión inmobiliaria y comercial de la península, con torres de vivienda, plazas y corredores de servicios que han cambiado el perfil de riesgo de la zona en pocos años."
 fuentes:
   - nombre: "yucatan.gob.mx — Teléfonos de emergencia por municipio"
     url: "https://www.yucatan.gob.mx/?p=emergencias"

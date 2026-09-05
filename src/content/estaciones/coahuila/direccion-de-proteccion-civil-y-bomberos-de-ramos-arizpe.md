@@ -26,7 +26,7 @@ serviciosDetalle:
   - "Atención prehospitalaria"
   - "Supervisión de zonas fabriles"
   - "Cámara térmica y drones"
-descripcion: "Corporación municipal que combina PC y bomberos; en 2025 atendió 871 incidentes y 3,970 servicios prehospitalarios."
+descripcion: "Corporación municipal que combina PC y bomberos; en 2025 atendió 871 incidentes y 3,970 servicios prehospitalarios. El municipio combina el clúster automotriz más grande del noreste con una cabecera histórica y un territorio semidesértico extenso, atravesado por las autopistas hacia Monterrey y Monclova."
 fuentes:
   - nombre: "vanguardia.com.mx"
     url: "https://vanguardia.com.mx/coahuila/proteccion-civil-y-bomberos-de-ramos-arizpe-fortalecen-su-capacidad-operativa-en-2025-GN18731304"

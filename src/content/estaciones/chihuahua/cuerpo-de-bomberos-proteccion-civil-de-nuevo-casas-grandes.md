@@ -27,7 +27,7 @@ serviciosDetalle:
   - "Rescate y evacuación"
   - "Respuesta a inundaciones del Río Casas Grandes"
   - "Capacitación"
-descripcion: "Cuerpo de bomberos y Unidad Municipal de Protección Civil de Nuevo Casas Grandes, que operan de manera conjunta."
+descripcion: "Cuerpo de bomberos y Unidad Municipal de Protección Civil de Nuevo Casas Grandes, que operan de manera conjunta. Nuevo Casas Grandes está en el noroeste del estado, cerca de la zona arqueológica de Paquimé, en un valle agrícola y ganadero rodeado de superficie semidesértica y con la sierra al poniente."
 fuentes:
   - nombre: "proteccioncivil.gob.mx"
     url: "https://www.proteccioncivil.gob.mx/work/models/sismos/Resource/42/1/images/directorio_umpc.pdf"

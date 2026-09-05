@@ -27,7 +27,7 @@ serviciosDetalle:
   - "Protección Civil municipal"
   - "Apoyo a incendios de pastizal en municipios vecinos"
   - "Simulacros y prevención"
-descripcion: "Estación de bomberos municipal de San Buenaventura (Región Centro-Desierto); coordina respuesta con Frontera y Monclova."
+descripcion: "Estación de bomberos municipal de San Buenaventura (Región Centro-Desierto); coordina respuesta con Frontera y Monclova. San Buenaventura está en la Región Centro, junto a Monclova y Frontera, en un valle semidesértico donde la actividad siderúrgica de la conurbación convive con superficie agrícola y ganadera."
 fuentes:
   - nombre: "vanguardia.com.mx"
     url: "https://vanguardia.com.mx/coahuila/moviliza-mega-simulacro-corporaciones-de-monclova-san-buenaventura-y-frontera-DY9320027"

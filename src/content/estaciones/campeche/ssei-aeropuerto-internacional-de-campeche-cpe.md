@@ -24,7 +24,7 @@ serviciosDetalle:
   - "Respuesta a emergencias aeronáuticas en el aeródromo"
 certificaciones:
   - "Certificado de Aeródromo Civil (AFAC)"
-descripcion: "Servicio de Salvamento y Extinción de Incendios del Aeropuerto Internacional de Campeche (CPE), operado por el Grupo Aeroportuario Olmeca-Maya-Mexica (antes ASA hasta 2022)."
+descripcion: "Servicio de Salvamento y Extinción de Incendios del Aeropuerto Internacional de Campeche (CPE), operado por el Grupo Aeroportuario Olmeca-Maya-Mexica (antes ASA hasta 2022). Es una unidad aeroportuaria, no municipal: su responsabilidad son las pistas, plataformas y aeronaves del recinto, en un aeropuerto que sirve a la capital del estado y a la operación aérea ligada a la industria petrolera del Golfo."
 fuentes:
   - nombre: "grupoolmecamayamexica.com.mx"
     url: "https://grupoolmecamayamexica.com.mx/aeropuertos/aeropuerto_campeche.html"

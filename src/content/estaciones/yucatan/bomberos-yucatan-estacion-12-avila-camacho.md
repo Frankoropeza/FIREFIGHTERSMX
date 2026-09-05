@@ -25,7 +25,7 @@ serviciosDetalle:
   - "Combate y extinción de incendios"
   - "Rescate vehicular"
   - "Atención prehospitalaria"
-descripcion: "Estación 12 del cuerpo de bomberos de Yucatán, en la colonia Manuel Ávila Camacho. Atiende el nororiente de Mérida y la salida hacia Motul."
+descripcion: "Estación 12 del cuerpo de bomberos de Yucatán, en la colonia Manuel Ávila Camacho. Atiende el nororiente de Mérida y la salida hacia Motul. El nororiente de Mérida combina colonias consolidadas con el corredor de salida hacia Motul y Progreso, un eje de tránsito continuo que suma rescate vehicular al servicio urbano."
 fuentes:
   - nombre: "yucatan.gob.mx — Teléfonos de emergencia por municipio"
     url: "https://www.yucatan.gob.mx/?p=emergencias"

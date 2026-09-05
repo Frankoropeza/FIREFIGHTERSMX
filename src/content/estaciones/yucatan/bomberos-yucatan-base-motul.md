@@ -26,7 +26,7 @@ serviciosDetalle:
   - "Combate y extinción de incendios"
   - "Rescate vehicular"
   - "Atención prehospitalaria"
-descripcion: "Estación del cuerpo de bomberos de Yucatán en Motul, integrada a un centro de seguridad. Cubre el nororiente del estado y la franja henequenera."
+descripcion: "Estación del cuerpo de bomberos de Yucatán en Motul, integrada a un centro de seguridad. Cubre el nororiente del estado y la franja henequenera. Motul fue uno de los centros de la industria henequenera y hoy es cabecera de una región agrícola y ganadera, con antiguas haciendas y monte bajo alrededor de las comisarías."
 fuentes:
   - nombre: "yucatan.gob.mx — Teléfonos de emergencia por municipio"
     url: "https://www.yucatan.gob.mx/?p=emergencias"

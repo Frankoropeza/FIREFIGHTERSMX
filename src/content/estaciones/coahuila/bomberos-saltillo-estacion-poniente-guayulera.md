@@ -24,7 +24,7 @@ serviciosDetalle:
   - "Atención de emergencias"
   - "Estación conjunta con policía"
 fundacion: 2024
-descripcion: "Estación reaperturada en agosto de 2024 con camión donado por Austin, Texas; primera estación conjunta de bomberos y policía de la ciudad."
+descripcion: "Estación reaperturada en agosto de 2024 con camión donado por Austin, Texas; primera estación conjunta de bomberos y policía de la ciudad. El poniente de Saltillo es una zona de vivienda popular consolidada, en la salida hacia Torreón, alejada del cuartel central y con crecimiento habitacional continuo en su periferia."
 fuentes:
   - nombre: "vanguardia.com.mx"
     url: "https://vanguardia.com.mx/coahuila/saltillo-nueva-estacion-conjunta-en-la-guayulera-mejorara-la-respuesta-de-bomberos-y-policia-este-mes-arranca-OI12928314"

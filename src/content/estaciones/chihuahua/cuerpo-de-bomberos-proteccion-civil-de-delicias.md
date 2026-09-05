@@ -22,7 +22,7 @@ serviciosDetalle:
   - "Combate de incendios"
   - "Rescate"
   - "Emergencias urbanas y rurales"
-descripcion: "Cuerpo de bomberos municipal de Delicias vinculado a Seguridad Pública / Protección Civil municipal."
+descripcion: "Cuerpo de bomberos municipal de Delicias vinculado a Seguridad Pública / Protección Civil municipal. Delicias es el centro agrícola del valle del Conchos, con superficie de riego, agroindustria y bodegas de granos, sobre el corredor carretero que une Chihuahua con el sur del estado."
 fuentes:
   - nombre: "municipiodelicias.com"
     url: "https://municipiodelicias.com/internet-delicias/unidad-de-proteccion-civil-delicias.html"

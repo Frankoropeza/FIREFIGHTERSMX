@@ -24,7 +24,7 @@ serviciosDetalle:
   - "Materiales peligrosos (HAZMAT)"
   - "Primeros auxilios"
   - "Respuesta interna en planta metalúrgica"
-descripcion: "Brigada industrial de la metalúrgica Met-Mex Peñoles; su personal se capacita continuamente en incendios, HazMat y primeros auxilios e integra el Consejo Municipal de PC de Torreón."
+descripcion: "Brigada industrial de la metalúrgica Met-Mex Peñoles; su personal se capacita continuamente en incendios, HazMat y primeros auxilios e integra el Consejo Municipal de PC de Torreón. La planta es uno de los mayores complejos metalúrgicos de plata y plomo del mundo y está inserta en la mancha urbana de Torreón, lo que obliga a coordinar cualquier contingencia con la ciudad que la rodea."
 fuentes:
   - nombre: "outletminero.org"
     url: "https://outletminero.org/director-de-seguridad-de-met-mex-penoles-se-integra-consejo-de-proteccion-civil-de-torreon/"

@@ -28,7 +28,7 @@ serviciosDetalle:
   - "Extinción de incendios de aeronaves y combustible de aviación"
   - "Rescate de pasajeros y tripulación"
   - "Respuesta en plataforma y pista"
-descripcion: "Unidad de salvamento y extinción de incendios del Aeropuerto Internacional Playa de Oro (ZLO), con Centro de Emergencias propio y comandante de bomberos."
+descripcion: "Unidad de salvamento y extinción de incendios del Aeropuerto Internacional Playa de Oro (ZLO), con Centro de Emergencias propio y comandante de bomberos. Es una unidad aeroportuaria, no municipal: responde en pistas y plataformas de un aeropuerto costero que sirve al corredor turístico de Manzanillo y Barra de Navidad, expuesto a la temporada de ciclones del Pacífico."
 fuentes:
   - nombre: "aeropuertosgap.com.mx"
     url: "https://www.aeropuertosgap.com.mx/es/manzanillo.html"

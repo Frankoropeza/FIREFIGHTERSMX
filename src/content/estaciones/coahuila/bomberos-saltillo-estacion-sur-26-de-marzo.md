@@ -22,7 +22,7 @@ servicios:
 serviciosDetalle:
   - "Combate de incendios"
   - "Atención de emergencias sector sur"
-descripcion: "Estación del sur de la ciudad; el sector concentra más del 55% de los incidentes registrados."
+descripcion: "Estación del sur de la ciudad; el sector concentra más del 55% de los incidentes registrados. El sur de Saltillo es el frente de crecimiento de la ciudad: unidades habitacionales y fraccionamientos de vivienda en serie construidos en las últimas décadas, con densidad alta y accesos limitados."
 fuentes:
   - nombre: "saltillo.gob.mx"
     url: "https://saltillo.gob.mx/trabajamos-en-equipo-para-fortalecer-al-cuerpo-de-bomberos-javier-diaz/"

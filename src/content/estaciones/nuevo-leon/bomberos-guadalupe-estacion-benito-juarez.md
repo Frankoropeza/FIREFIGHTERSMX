@@ -26,7 +26,7 @@ serviciosDetalle:
   - "Combate y extinción de incendios"
   - "Rescate vehicular"
   - "Atención prehospitalaria"
-descripcion: "Estación del Patronato de Bomberos de Ciudad Guadalupe sobre Avenida Benito Juárez. Cubre el centro-oriente del municipio, el más poblado del área metropolitana de Monterrey después de la capital."
+descripcion: "Estación del Patronato de Bomberos de Ciudad Guadalupe sobre Avenida Benito Juárez. Cubre el centro-oriente del municipio, el más poblado del área metropolitana de Monterrey después de la capital. Guadalupe es un municipio densamente urbanizado del área metropolitana de Monterrey, atravesado por el río La Silla y por vialidades metropolitanas de alto aforo."
 fuentes:
   - nombre: "guadalupe.gob.mx"
     url: "https://guadalupe.gob.mx"

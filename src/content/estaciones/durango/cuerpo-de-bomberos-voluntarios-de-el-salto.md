@@ -26,7 +26,7 @@ serviciosDetalle:
   - "Atención de emergencias"
   - "Protección Civil"
 fundacion: 1983
-descripcion: "Corporación de bomberos voluntarios fundada en 1983 por iniciativa ciudadana; opera en la región forestal de El Salto, cabecera del municipio de Pueblo Nuevo."
+descripcion: "Corporación de bomberos voluntarios fundada en 1983 por iniciativa ciudadana; opera en la región forestal de El Salto, cabecera del municipio de Pueblo Nuevo. El Salto es el centro maderero de la Sierra Madre duranguense: aserraderos, patios de madera y bosque de pino en todas direcciones, a más de 2,500 metros de altitud y con caminos de montaña como única vía de acceso."
 fuentes:
   - nombre: "elsiglodedurango.com.mx"
     url: "https://www.elsiglodedurango.com.mx/noticia/2018/cuerpo-de-bomberos-voluntarios-de-el-salto-cumple-35-anos.html"

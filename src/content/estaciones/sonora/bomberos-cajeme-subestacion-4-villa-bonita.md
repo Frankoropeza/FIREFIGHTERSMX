@@ -25,7 +25,7 @@ serviciosDetalle:
   - "Combate y extinción de incendios"
   - "Rescate vehicular"
   - "Atención prehospitalaria"
-descripcion: "Subestación 4 del cuerpo de bomberos de Cajeme en Villa Bonita, al norte de Ciudad Obregón. Cubre la zona industrial y los fraccionamientos del acceso norte a la ciudad."
+descripcion: "Subestación 4 del cuerpo de bomberos de Cajeme en Villa Bonita, al norte de Ciudad Obregón. Cubre la zona industrial y los fraccionamientos del acceso norte a la ciudad. Ciudad Obregón es el centro del Valle del Yaqui, la mayor zona de agricultura de riego del noroeste, con silos, bodegas de grano y agroquímicos rodeando la mancha urbana."
 fuentes:
   - nombre: "bomberoscajeme.mx"
     url: "http://www.bomberoscajeme.mx/"

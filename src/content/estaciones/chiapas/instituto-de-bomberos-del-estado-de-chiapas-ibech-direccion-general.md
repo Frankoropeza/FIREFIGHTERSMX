@@ -30,7 +30,7 @@ serviciosDetalle:
   - "Atención de emergencias"
   - "Capacitación y profesionalización"
   - "Dotación de equipo a municipios"
-descripcion: "Organismo estatal que opera las estaciones de bomberos de Chiapas y coordina a patronatos y cuerpos municipales con los sistemas estatales de seguridad pública y protección civil."
+descripcion: "Organismo estatal que opera las estaciones de bomberos de Chiapas y coordina a patronatos y cuerpos municipales con los sistemas estatales de seguridad pública y protección civil. Chiapas resolvió por la vía estatal lo que en otros estados es municipal: un instituto único que sostiene las estaciones de un territorio que va de la costa del Soconusco a Los Altos y la Selva, con perfiles de riesgo muy distintos entre sí."
 fuentes:
   - nombre: "chiapas.gob.mx"
     url: "https://chiapas.gob.mx/funcionarios/estatal/ejecutivo/instituto-bomberos"

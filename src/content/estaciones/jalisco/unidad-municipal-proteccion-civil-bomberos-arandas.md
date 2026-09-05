@@ -24,7 +24,7 @@ serviciosDetalle:
   - "Combate y extinción de incendios estructurales"
   - "Rescate vehicular"
   - "Primeros auxilios y atención prehospitalaria"
-descripcion: "Corporación municipal de Arandas, segunda ciudad en importancia de Los Altos de Jalisco, con fuerte vocación tequilera y agropecuaria."
+descripcion: "Corporación municipal de Arandas, segunda ciudad en importancia de Los Altos de Jalisco, con fuerte vocación tequilera y agropecuaria. Arandas está en el corazón de Los Altos, con destilerías de tequila, campos de agave y granjas avícolas y porcícolas repartidas por un territorio de lomeríos y barrancas."
 fuentes:
   - nombre: "facebook.com"
     url: "https://www.facebook.com/proteccioncivilybomberosarandas/"

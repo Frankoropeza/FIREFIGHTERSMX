@@ -26,7 +26,7 @@ serviciosDetalle:
   - "Protección Civil municipal"
   - "Atención de emergencias y primeros auxilios"
   - "Combate de incendios de pastizal"
-descripcion: "Unidad Municipal de PC de Nadadores (Región Centro-Desierto) con función de bomberos básicos; coordina con corporaciones de Monclova y San Buenaventura."
+descripcion: "Unidad Municipal de PC de Nadadores (Región Centro-Desierto) con función de bomberos básicos; coordina con corporaciones de Monclova y San Buenaventura. Nadadores es un municipio pequeño de la Región Centro, de vocación agrícola y ganadera, con la cabecera concentrada y comunidades a lo largo del río del mismo nombre."
 fuentes:
   - nombre: "proteccioncivil.sfpcoahuila.gob.mx"
     url: "https://proteccioncivil.sfpcoahuila.gob.mx/"

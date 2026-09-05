@@ -25,7 +25,7 @@ serviciosDetalle:
   - "Combate y extinción de incendios"
   - "Rescate vehicular"
   - "Atención prehospitalaria"
-descripcion: "Estación 8 del cuerpo de bomberos de León, en la colonia Ermita Uno Dos. Forma parte de la red de cuarteles con que la corporación cubre el municipio."
+descripcion: "Estación 8 del cuerpo de bomberos de León, en la colonia Ermita Uno Dos. Cubre el sur de León, sobre el corredor que conecta con el bulevar Delta y la salida a Silao, con vivienda de interés social y comercio de barrio en densidad alta."
 fuentes:
   - nombre: "DENUE — INEGI"
     url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=1189890"

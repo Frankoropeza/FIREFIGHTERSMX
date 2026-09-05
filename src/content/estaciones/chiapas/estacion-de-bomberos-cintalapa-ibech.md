@@ -24,7 +24,7 @@ serviciosDetalle:
   - "Combate de incendios"
   - "Atención de emergencias"
   - "Rescate"
-descripcion: "Estación operada por el Instituto de Bomberos del Estado en el occidente de Chiapas."
+descripcion: "Estación operada por el Instituto de Bomberos del Estado en el occidente de Chiapas. Cintalapa es un municipio extenso del occidente chiapaneco, de valle agrícola y ganadero, con la Selva El Ocote en su territorio y la carretera hacia el Istmo cruzándolo de punta a punta."
 fuentes:
   - nombre: "chiapas.gob.mx"
     url: "https://chiapas.gob.mx/funcionarios/estatal/ejecutivo/instituto-bomberos"

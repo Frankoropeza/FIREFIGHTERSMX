@@ -22,7 +22,7 @@ serviciosDetalle:
   - "Incendios forestales y de pastizal"
   - "Atención de emergencias y desastres"
   - "Respuesta ante vientos del Istmo y lluvias"
-descripcion: "Centro regional que integra protección civil y bomberos en Arriaga (región Istmo-Costa), activo en el combate de incendios forestales."
+descripcion: "Centro regional que integra protección civil y bomberos en Arriaga (región Istmo-Costa), activo en el combate de incendios forestales. Arriaga es la puerta del Istmo en Chiapas, nodo ferroviario y carretero hacia Oaxaca, en una llanura costera de calor extremo donde el incendio de pastizal y el paso de vientos del norte marcan la temporada crítica."
 fuentes:
   - nombre: "proteccioncivil.chiapas.gob.mx"
     url: "https://proteccioncivil.chiapas.gob.mx/boletines/2025/029"

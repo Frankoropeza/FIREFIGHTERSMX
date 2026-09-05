@@ -27,7 +27,7 @@ serviciosDetalle:
   - "Combate y extinción de incendios"
   - "Rescate vehicular"
   - "Atención prehospitalaria"
-descripcion: "Estación Zapata del cuerpo de bomberos de Puebla, en la colonia San Francisco Mayorazgo. Forma parte de la red de cuarteles con que la corporación cubre el municipio."
+descripcion: "Estación Zapata del cuerpo de bomberos de Puebla, en la colonia San Francisco Mayorazgo. Da servicio al surponiente de la capital, en el entorno de Mayorazgo y la zona universitaria, con vivienda densa, comercio y vialidades de alto aforo hacia la salida a Atlixco."
 fuentes:
   - nombre: "DENUE — INEGI"
     url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=3523196"

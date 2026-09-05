@@ -26,7 +26,7 @@ serviciosDetalle:
   - "Combate y extinción de incendios"
   - "Rescate vehicular"
   - "Atención prehospitalaria"
-descripcion: "Estación 11 del cuerpo de bomberos de Yucatán, sobre la calle 41 en el centro de Mérida. Refuerza la cobertura del casco histórico junto con la Estación 1."
+descripcion: "Estación 11 del cuerpo de bomberos de Yucatán, sobre la calle 41 en el centro de Mérida. Refuerza la cobertura del casco histórico junto con la Estación 1. El casco histórico de Mérida es de edificación colonial y porfiriana, con casonas de mampostería, techos de vigueta y calles estrechas donde el acceso de unidades pesadas y el despliegue de escalas son limitados."
 fuentes:
   - nombre: "yucatan.gob.mx — Teléfonos de emergencia por municipio"
     url: "https://www.yucatan.gob.mx/?p=emergencias"

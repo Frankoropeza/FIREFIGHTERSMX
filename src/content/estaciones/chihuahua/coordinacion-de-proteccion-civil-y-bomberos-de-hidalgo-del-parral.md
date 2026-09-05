@@ -29,7 +29,7 @@ serviciosDetalle:
   - "Reubicación de enjambres"
   - "Cables caídos"
   - "Inspecciones"
-descripcion: "Unidad municipal de Protección Civil y Bomberos de Parral."
+descripcion: "Unidad municipal de Protección Civil y Bomberos de Parral. Parral es la ciudad minera histórica del sur del estado, con casco antiguo de calles estrechas trazadas sobre cañadas, socavones bajo la mancha urbana y arroyos que se activan en la temporada de lluvias."
 fuentes:
   - nombre: "hidalgodelparral.chihuahua.gob.mx"
     url: "https://hidalgodelparral.chihuahua.gob.mx/?page_id=6508"

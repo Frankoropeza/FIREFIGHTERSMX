@@ -21,7 +21,7 @@ serviciosDetalle:
   - "Incendios (relleno sanitario, vegetación, casa-habitación)"
   - "Rescate"
   - "Apoyo en contingencias ambientales"
-descripcion: "Departamento de Bomberos y PC municipales que responden a incendios y emergencias en el municipio."
+descripcion: "Departamento de Bomberos y PC municipales que responden a incendios y emergencias en el municipio. El municipio está en la Comarca Lagunera, con superficie agrícola de riego, establos lecheros y una cabecera compacta, en una región de estiaje severo donde el incendio de pastizal es la emergencia más frecuente."
 fuentes:
   - nombre: "reportelaguna.com"
     url: "https://reportelaguna.com/incendio-en-relleno-sanitario-de-francisco-i-madero-controlado-en-un-75/"

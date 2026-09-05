@@ -24,7 +24,7 @@ serviciosDetalle:
   - "Combate y extinción de incendios"
   - "Rescate vehicular"
   - "Atención prehospitalaria"
-descripcion: "Base de Protección Civil y Bomberos de Zamora en la colonia Miguel Hidalgo. Da respuesta al norte del municipio, en la zona conurbada con Jacona."
+descripcion: "Base de Protección Civil y Bomberos de Zamora en la colonia Miguel Hidalgo. Da respuesta al norte del municipio, en la zona conurbada con Jacona. Zamora es el centro de la agroindustria de berries y hortalizas de exportación del Bajío michoacano, con empacadoras, cámaras de frío y bodegas de agroquímicos alrededor de la ciudad."
 fuentes:
   - nombre: "DENUE — INEGI"
     url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=10560379"

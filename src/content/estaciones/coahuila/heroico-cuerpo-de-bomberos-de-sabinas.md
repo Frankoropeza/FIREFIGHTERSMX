@@ -29,7 +29,7 @@ serviciosDetalle:
   - "Apoyo en rescate en pozos y minas"
   - "Educación a la ciudadanía"
 fundacion: 1982
-descripcion: "Cuerpo de bomberos de Sabinas fundado en 1982 por iniciativa del Club de Leones; inició con voluntarios capacitados por bomberos de Eagle Pass, Texas, y atiende la Región Carbonífera."
+descripcion: "Cuerpo de bomberos de Sabinas fundado en 1982 por iniciativa del Club de Leones; inició con voluntarios capacitados por bomberos de Eagle Pass, Texas, y atiende la Región Carbonífera. Sabinas es el centro urbano de la cuenca carbonífera, rodeado de minas de carbón, con la actividad extractiva y el transporte pesado marcando el riesgo del municipio."
 fuentes:
   - nombre: "zocalo.com.mx"
     url: "https://www.zocalo.com.mx/bomberos-de-sabinas-heroes-sin-capa/"
