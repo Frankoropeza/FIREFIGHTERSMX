@@ -85,6 +85,32 @@ const empresasCollection = defineCollection({
        Sólo para fichas verificadas contra fuente propia: sustituye al párrafo
        auto-generado del template, que es un relleno derivado del DENUE. */
     descripcion: z.string().optional(),
+    /* Bloques de la ficha VIP (plan destacado). Todo opcional y todo declarado
+       por la empresa contra su propia fuente: servicios en cards, líneas en
+       tabla comparativa, proceso de atención, condiciones comerciales,
+       sectores y preguntas frecuentes. La plantilla sólo pinta lo que existe. */
+    vip: z.object({
+      servicios: z.array(z.object({
+        titulo: z.string(),
+        descripcion: z.string(),
+        incluye: z.array(z.string()).default([]),
+        entregable: z.string().optional(),
+      })).default([]),
+      lineas: z.array(z.object({
+        nombre: z.string(),
+        familias: z.array(z.string()).default([]),
+        rango: z.string().optional(),
+        materiales: z.string().optional(),
+        certificaciones: z.string().optional(),
+        normas: z.string().optional(),
+        modelos: z.string().optional(),
+      })).default([]),
+      criterios: z.array(z.object({ titulo: z.string(), descripcion: z.string() })).default([]),
+      proceso: z.array(z.object({ paso: z.string(), descripcion: z.string() })).default([]),
+      condiciones: z.array(z.object({ concepto: z.string(), detalle: z.string() })).default([]),
+      sectores: z.array(z.string()).default([]),
+      faq: z.array(z.object({ pregunta: z.string(), respuesta: z.string() })).default([]),
+    }).optional(),
     fuentes: z.array(z.union([z.string(), z.object({ nombre: z.string(), url: z.string() })])).min(1),
     denueId: z.string().optional(),
     verificadoEl: z.string().optional(),

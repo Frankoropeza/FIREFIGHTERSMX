@@ -3,6 +3,7 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import EmpresaCard from '@components/empresas/EmpresaCard.astro';
+import FichaVip from '@components/empresas/FichaVip.astro';
 import { SITE, whatsappUrl } from '@config/site';
 import { giroMap, planConfig, confianzaConfig, INDEXAR_FICHAS_BASICAS } from '@data/giros';
 import { allCategories } from '@data/categories';
@@ -147,7 +148,7 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
   <section class="section" style="background:#070E1A">
     <div class="container-site grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-10 lg:gap-14 items-start">
 
-      <div class="flex flex-col gap-12">
+      <div class="flex flex-col gap-12 min-w-0">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Perfil</span>
           <h2 class="font-display font-bold mb-5" style="color:#FFFFFF;font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.05">{g.labelCorto} en {e.ciudad},<br/><span style={`color:${g.color}`}>{edo.nombre}.</span></h2>
@@ -161,6 +162,9 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
             </div>
           )}
         </div>
+
+        {/* Bloques de la ficha VIP: sólo cuando el registro trae `vip` (plan destacado) */}
+        {esVIP && e.vip && <FichaVip e={e} g={g} estadoNombre={edo.nombre} web={webPublicable} />}
 
         {esp.length > 0 && (
           <div>

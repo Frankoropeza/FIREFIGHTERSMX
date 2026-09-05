@@ -1,0 +1,218 @@
+---
+/**
+ * FichaVip — bloques de la ficha de plan destacado.
+ *
+ * Todo lo que se pinta aquí sale de `e.vip`, declarado por la empresa contra
+ * su propia fuente (citada en `fuentes`). Cada bloque es opcional y sólo
+ * aparece si trae datos. Jerarquía: el h1 lo pone el hero; aquí h2 por
+ * bloque, h3 por card/paso/pregunta, h4 y h5 dentro de las cards.
+ *
+ * Reglas de la casa que respeta: cero animaciones (sólo hover instantáneo en
+ * botones), ningún contador decorativo, y todo enlace lleva keyword.
+ */
+import type { Empresa } from '@lib/empresas';
+import type { Giro } from '@data/giros';
+
+interface Props {
+  e: Empresa;
+  g: Giro;
+  estadoNombre: string;
+  /** Sólo la ficha VIP publica enlace saliente; llega ya filtrado desde la página */
+  web?: string;
+}
+const { e, g, estadoNombre, web } = Astro.props;
+const v = e.vip ?? { servicios: [], lineas: [], criterios: [], proceso: [], condiciones: [], sectores: [], faq: [] };
+
+const idBase = 'vip';
+const borde = 'rgba(74,117,153,0.18)';
+const iconCheck = `<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>`;
+const ctaWeb = web ? `${web.replace(/\/$/, '')}/cotizar` : undefined;
+---
+
+{v.servicios.length > 0 && (
+  <section id={`${idBase}-servicios`} aria-labelledby={`${idBase}-servicios-h`}>
+    <span class="section-eyebrow mb-4 inline-flex">Servicios</span>
+    <h2 id={`${idBase}-servicios-h`} class="font-display font-bold mb-3" style="color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1">
+      Servicios de {e.nombre} en {e.ciudad}
+    </h2>
+    <p class="text-sm leading-[1.9] mb-6" style="color:#94A3B8">
+      La empresa describe su operación como suministro con acompañamiento: no vende de catálogo, especifica contra el proyecto. Estos son los servicios que declara en su sitio, con lo que cada uno incluye según sus propias páginas.
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-px" style={`background:${borde};border:1px solid ${borde}`}>
+      {v.servicios.map((s) => (
+        <article class="p-6 flex flex-col gap-4" style="background:#040A12">
+          <h3 class="font-display font-bold text-base leading-snug" style="color:#FFFFFF">{s.titulo}</h3>
+          <p class="text-sm leading-[1.85]" style="color:#94A3B8">{s.descripcion}</p>
+          {s.incluye.length > 0 && (
+            <div>
+              <h4 class="font-display text-[10px] uppercase tracking-wider mb-2" style="color:#4A7599">Qué incluye</h4>
+              <ul class="flex flex-col gap-1.5 list-none m-0 p-0">
+                {s.incluye.map((i) => (
+                  <li class="flex items-start gap-2 text-sm" style="color:#CBD5E1">
+                    <svg class="w-4 h-4 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke={g.color} stroke-width="2" set:html={iconCheck} aria-hidden="true"/>
+                    <span>{i}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {s.entregable && (
+            <div class="mt-auto pt-3" style={`border-top:1px solid ${borde}`}>
+              <h5 class="font-display text-[10px] uppercase tracking-wider mb-1" style="color:#4A7599">Entregable</h5>
+              <p class="text-sm" style="color:#CBD5E1">{s.entregable}</p>
+            </div>
+          )}
+        </article>
+      ))}
+    </div>
+  </section>
+)}
+
+{v.lineas.length > 0 && (
+  <section id={`${idBase}-lineas`} aria-labelledby={`${idBase}-lineas-h`}>
+    <span class="section-eyebrow mb-4 inline-flex">Catálogo</span>
+    <h2 id={`${idBase}-lineas-h`} class="font-display font-bold mb-3" style="color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1">
+      Líneas de {g.sustantivo} que maneja
+    </h2>
+    <p class="text-sm leading-[1.9] mb-6" style="color:#94A3B8">
+      Comparativa de las líneas que la empresa publica en su catálogo. Los rangos son los que ella misma declara por familia; la certificación UL o FM aplica por modelo, no por línea, y se confirma en la ficha técnica del fabricante antes de especificar.
+    </p>
+    <div class="overflow-x-auto" style={`border:1px solid ${borde}`}>
+      <table style="width:100%;border-collapse:collapse;min-width:820px">
+        <thead>
+          <tr style="background:#080F1A;border-bottom:1px solid rgba(74,117,153,0.25)">
+            <th scope="col" class="text-left p-3 text-[10px] font-display font-bold uppercase tracking-widest" style="color:#4A7599">Línea</th>
+            <th scope="col" class="text-left p-3 text-[10px] font-display font-bold uppercase tracking-widest" style="color:#4A7599">Familias</th>
+            <th scope="col" class="text-left p-3 text-[10px] font-display font-bold uppercase tracking-widest" style={`color:${g.color}`}>Rango declarado</th>
+            <th scope="col" class="text-left p-3 text-[10px] font-display font-bold uppercase tracking-widest" style="color:#4A7599">Materiales</th>
+            <th scope="col" class="text-left p-3 text-[10px] font-display font-bold uppercase tracking-widest" style="color:#4A7599">Certificación</th>
+            <th scope="col" class="text-left p-3 text-[10px] font-display font-bold uppercase tracking-widest" style="color:#4A7599">Normas</th>
+          </tr>
+        </thead>
+        <tbody>
+          {v.lineas.map((l, i) => (
+            <tr style={`border-bottom:1px solid rgba(74,117,153,0.1);background:${i % 2 === 0 ? '#040A12' : '#080F1A'}`}>
+              <th scope="row" class="p-3 text-left font-display font-semibold text-xs align-top" style="color:#FFFFFF">
+                {l.nombre}
+                {l.modelos && <span class="block font-normal text-[11px] mt-1" style="color:#4A7599">{l.modelos}</span>}
+              </th>
+              <td class="p-3 text-xs align-top leading-relaxed" style="color:#CBD5E1">{l.familias.join(' · ')}</td>
+              <td class="p-3 font-display font-bold text-xs align-top" style={`color:${g.color}`}>{l.rango ?? '—'}</td>
+              <td class="p-3 text-xs align-top leading-relaxed" style="color:#CBD5E1">{l.materiales ?? '—'}</td>
+              <td class="p-3 text-xs align-top leading-relaxed" style="color:#CBD5E1">{l.certificaciones ?? '—'}</td>
+              <td class="p-3 text-xs align-top leading-relaxed" style="color:#94A3B8">{l.normas ?? '—'}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <h5 class="font-display text-[10px] uppercase tracking-wider mt-3" style="color:#4A7599">Fuente: catálogo publicado por la empresa · rangos y certificaciones declarados por familia</h5>
+
+    {v.criterios.length > 0 && (
+      <div class="mt-8">
+        <h3 class="font-display font-bold text-lg mb-4" style="color:#FFFFFF">Cómo especifica la empresa cada línea</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-px" style={`background:${borde};border:1px solid ${borde}`}>
+          {v.criterios.map((c) => (
+            <div class="p-5" style="background:#040A12">
+              <h4 class="font-display font-semibold text-sm mb-2" style={`color:${g.color}`}>{c.titulo}</h4>
+              <p class="text-sm leading-[1.8]" style="color:#94A3B8">{c.descripcion}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
+  </section>
+)}
+
+{v.proceso.length > 0 && (
+  <section id={`${idBase}-proceso`} aria-labelledby={`${idBase}-proceso-h`}>
+    <span class="section-eyebrow mb-4 inline-flex">Proceso de atención</span>
+    <h2 id={`${idBase}-proceso-h`} class="font-display font-bold mb-3" style="color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1">
+      Cómo cotizar {g.sustantivo} con {e.nombre}
+    </h2>
+    <p class="text-sm leading-[1.9] mb-6" style="color:#94A3B8">
+      Es el recorrido que la propia empresa documenta, del primer contacto al seguimiento posterior a la entrega. Sirve para saber qué preparar antes de escribirle y qué esperar en cada paso.
+    </p>
+    <ol class="flex flex-col gap-px list-none m-0 p-0" style={`background:${borde};border:1px solid ${borde}`}>
+      {v.proceso.map((p, i) => (
+        <li class="grid grid-cols-[3.5rem_1fr] gap-4 p-5 items-start" style="background:#040A12">
+          <span class="font-display font-bold text-lg leading-none pt-0.5" style={`color:${g.color}`} aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+          <div>
+            <h3 class="font-display font-semibold text-sm mb-1.5" style="color:#FFFFFF">{p.paso}</h3>
+            <p class="text-sm leading-[1.8]" style="color:#94A3B8">{p.descripcion}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </section>
+)}
+
+{v.condiciones.length > 0 && (
+  <section id={`${idBase}-condiciones`} aria-labelledby={`${idBase}-condiciones-h`}>
+    <span class="section-eyebrow mb-4 inline-flex">Condiciones comerciales</span>
+    <h2 id={`${idBase}-condiciones-h`} class="font-display font-bold mb-3" style="color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1">
+      Facturación, crédito y entrega
+    </h2>
+    <p class="text-sm leading-[1.9] mb-6" style="color:#94A3B8">
+      Condiciones que la empresa publica para compras corporativas y licitación. Son las suyas, no las del directorio: cualquier cambio se confirma con ella al cotizar.
+    </p>
+    <div class="overflow-x-auto" style={`border:1px solid ${borde}`}>
+      <table style="width:100%;border-collapse:collapse;min-width:520px">
+        <thead>
+          <tr style="background:#080F1A;border-bottom:1px solid rgba(74,117,153,0.25)">
+            <th scope="col" class="text-left p-3 text-[10px] font-display font-bold uppercase tracking-widest" style="color:#4A7599;width:32%">Concepto</th>
+            <th scope="col" class="text-left p-3 text-[10px] font-display font-bold uppercase tracking-widest" style="color:#4A7599">Condición declarada</th>
+          </tr>
+        </thead>
+        <tbody>
+          {v.condiciones.map((c, i) => (
+            <tr style={`border-bottom:1px solid rgba(74,117,153,0.1);background:${i % 2 === 0 ? '#040A12' : '#080F1A'}`}>
+              <th scope="row" class="p-3 text-left font-display font-semibold text-xs align-top" style="color:#FFFFFF">{c.concepto}</th>
+              <td class="p-3 text-xs align-top leading-relaxed" style="color:#CBD5E1">{c.detalle}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+)}
+
+{v.sectores.length > 0 && (
+  <section id={`${idBase}-sectores`} aria-labelledby={`${idBase}-sectores-h`}>
+    <span class="section-eyebrow mb-4 inline-flex">Sectores</span>
+    <h2 id={`${idBase}-sectores-h`} class="font-display font-bold mb-3" style="color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1">
+      A quién atiende desde {e.ciudad}
+    </h2>
+    <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">
+      Perfil de cliente que la empresa declara. Si tu proyecto cae en alguno de estos sectores, la ficha técnica y la documentación regulatoria que entrega están pensadas para ese proceso de compra.
+    </p>
+    <ul class="grid grid-cols-2 md:grid-cols-3 gap-px list-none m-0 p-0" style={`background:${borde};border:1px solid ${borde}`}>
+      {v.sectores.map((s) => (
+        <li class="p-4 font-display font-semibold text-sm" style="background:#040A12;color:#FFFFFF">{s}</li>
+      ))}
+    </ul>
+  </section>
+)}
+
+{v.faq.length > 0 && (
+  <section id={`${idBase}-faq`} aria-labelledby={`${idBase}-faq-h`}>
+    <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes</span>
+    <h2 id={`${idBase}-faq-h`} class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1">
+      Antes de contactar a {e.nombre}
+    </h2>
+    <div class="flex flex-col gap-px" style={`background:${borde};border:1px solid ${borde}`}>
+      {v.faq.map((f) => (
+        <div class="p-5" style="background:#040A12">
+          <h3 class="font-display font-semibold text-sm mb-2" style="color:#FFFFFF">{f.pregunta}</h3>
+          <p class="text-sm leading-[1.85]" style="color:#94A3B8">{f.respuesta}</p>
+        </div>
+      ))}
+    </div>
+    {ctaWeb && (
+      <div class="mt-6 p-5 flex flex-col sm:flex-row sm:items-center gap-4" style={`background:#0C1825;border:1px solid ${borde};border-left:3px solid ${g.color}`}>
+        <p class="text-sm leading-relaxed flex-1" style="color:#94A3B8">La empresa recibe solicitudes de cotización directamente en su sitio. Ten a la mano número de parte o categoría, cantidades, razón social y ciudad de entrega.</p>
+        <a href={ctaWeb} target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary shrink-0">Cotizar {g.labelCorto.toLowerCase()}</a>
+      </div>
+    )}
+  </section>
+)}
