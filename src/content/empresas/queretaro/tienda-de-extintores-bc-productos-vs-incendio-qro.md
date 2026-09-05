@@ -16,7 +16,6 @@ especialidades: ["venta-de-extintores"]
 claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "0 a 5 personas"
 email: "bcqueretaro@gmail.com"
-sitioWeb: "https://productoscontraincendioqueretaro.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=8256729" }
 denueId: "8256729"

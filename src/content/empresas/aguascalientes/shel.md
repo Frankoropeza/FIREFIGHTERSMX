@@ -17,7 +17,6 @@ claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "11 a 30 personas"
 telefono: "4491103395"
 email: "jose.atilano@gova.com.mx"
-sitioWeb: "https://www.shel.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=9415082" }
 denueId: "9415082"

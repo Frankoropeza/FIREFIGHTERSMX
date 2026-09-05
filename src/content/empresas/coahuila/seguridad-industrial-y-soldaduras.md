@@ -16,7 +16,6 @@ claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "11 a 30 personas"
 telefono: "8717127070"
 email: "ventas@sissacv.com"
-sitioWeb: "https://www.sissacv.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=284493" }
 denueId: "284493"

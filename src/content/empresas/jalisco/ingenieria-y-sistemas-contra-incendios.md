@@ -16,7 +16,6 @@ especialidades: []
 claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "101 a 250 personas"
 email: "contacto@iscisa.com.mx"
-sitioWeb: "https://www.iscisa.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=9334024" }
 denueId: "9334024"

@@ -16,7 +16,6 @@ claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "6 a 10 personas"
 telefono: "4444051179"
 email: "ventas2@epppotosina.com"
-sitioWeb: "https://www.epppotosina.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=3683186" }
 denueId: "3683186"

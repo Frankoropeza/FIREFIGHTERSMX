@@ -16,7 +16,6 @@ claseDENUE: "Servicios de ingeniería"
 estrato: "0 a 5 personas"
 telefono: "7717190603"
 email: "info@safetyco.com.mx"
-sitioWeb: "https://www.safetyco.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=6704793" }
 denueId: "6704793"

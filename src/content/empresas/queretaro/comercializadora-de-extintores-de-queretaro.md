@@ -15,7 +15,6 @@ especialidades: ["recarga-y-mantenimiento"]
 claseDENUE: "Reparación y mantenimiento de maquinaria y equipo industrial"
 estrato: "6 a 10 personas"
 telefono: "4422142024"
-sitioWeb: "https://www.extintoresdequeretaro.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=3595594" }
 denueId: "3595594"

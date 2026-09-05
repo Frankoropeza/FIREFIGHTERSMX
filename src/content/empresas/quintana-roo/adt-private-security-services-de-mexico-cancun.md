@@ -17,7 +17,6 @@ claseDENUE: "Servicios de protección y custodia mediante el monitoreo de sistem
 estrato: "0 a 5 personas"
 telefono: "5533323348"
 email: "mx.clientes@tycoint.com"
-sitioWeb: "https://www.adt.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=6385844" }
 denueId: "6385844"

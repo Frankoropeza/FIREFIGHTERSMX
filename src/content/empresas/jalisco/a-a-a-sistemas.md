@@ -17,7 +17,6 @@ claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "31 a 50 personas"
 telefono: "3336499349"
 email: "contadoraaa@aaaproteccioncontraincendios.com"
-sitioWeb: "https://www.aaaproteccioncontraincendios.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=6709321" }
 denueId: "6709321"

@@ -14,7 +14,6 @@ giros: ["venta-equipo"]
 especialidades: []
 claseDENUE: "Servicios de protección y custodia mediante el monitoreo de sistemas de seguridad"
 estrato: "31 a 50 personas"
-sitioWeb: "https://flotasconectadas.michelin.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=8919691" }
 denueId: "8919691"

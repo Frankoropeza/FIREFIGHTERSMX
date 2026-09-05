@@ -16,7 +16,6 @@ claseDENUE: "Servicios de protección y custodia mediante el monitoreo de sistem
 estrato: "101 a 250 personas"
 telefono: "5580758932"
 email: "janetsandoval@tecnomotum.com"
-sitioWeb: "https://www.tecnomotum.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=6885675" }
 denueId: "6885675"

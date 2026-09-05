@@ -16,7 +16,6 @@ especialidades: []
 claseDENUE: "Reparación y mantenimiento de maquinaria y equipo industrial"
 estrato: "6 a 10 personas"
 email: "igncio@ecimart.com.mx"
-sitioWeb: "https://www.ecimart.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=1537766" }
 denueId: "1537766"

@@ -16,7 +16,6 @@ claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "0 a 5 personas"
 telefono: "6143352660"
 email: "iargandona@safetytools.com.mx"
-sitioWeb: "https://www.safetytools.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=8697810" }
 denueId: "8697810"

@@ -14,7 +14,6 @@ giros: ["venta-equipo"]
 especialidades: ["epp-industrial"]
 claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "11 a 30 personas"
-sitioWeb: "https://www.medessa.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=4471721" }
 denueId: "4471721"

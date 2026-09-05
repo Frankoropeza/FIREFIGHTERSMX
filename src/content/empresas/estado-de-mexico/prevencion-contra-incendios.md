@@ -15,7 +15,6 @@ especialidades: []
 claseDENUE: "Reparación y mantenimiento de maquinaria y equipo industrial"
 estrato: "11 a 30 personas"
 telefono: "5543441781"
-sitioWeb: "https://www.precoinsa.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=11441726" }
 denueId: "11441726"

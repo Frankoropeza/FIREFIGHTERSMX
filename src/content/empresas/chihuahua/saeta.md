@@ -15,7 +15,6 @@ giros: ["capacitacion", "venta-equipo"]
 especialidades: ["epp-industrial"]
 claseDENUE: "Otros servicios de consultoría científica y técnica"
 estrato: "0 a 5 personas"
-sitioWeb: "https://saetaconsultoria.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=10595531" }
 denueId: "10595531"

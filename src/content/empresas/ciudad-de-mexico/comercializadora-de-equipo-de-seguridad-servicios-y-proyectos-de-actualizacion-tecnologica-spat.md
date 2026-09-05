@@ -16,7 +16,6 @@ especialidades: []
 claseDENUE: "Servicios de protección y custodia mediante el monitoreo de sistemas de seguridad"
 estrato: "6 a 10 personas"
 telefono: "5556002464"
-sitioWeb: "https://www.spatmexico.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=744999" }
 denueId: "744999"

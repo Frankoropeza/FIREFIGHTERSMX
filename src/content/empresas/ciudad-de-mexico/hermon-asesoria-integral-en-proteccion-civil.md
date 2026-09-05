@@ -15,7 +15,6 @@ especialidades: ["consultoria-nom-002", "epp-industrial"]
 claseDENUE: "Servicios de consultoría en administración"
 estrato: "6 a 10 personas"
 email: "contacto@hermon.com.mx"
-sitioWeb: "https://www.hermon.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=7736518" }
 denueId: "7736518"

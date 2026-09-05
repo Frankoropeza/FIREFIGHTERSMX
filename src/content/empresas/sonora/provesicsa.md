@@ -16,7 +16,6 @@ especialidades: ["epp-industrial"]
 claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "6 a 10 personas"
 email: "jlrodriguez@provesicsa.com"
-sitioWeb: "https://www.provesicsa.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=7604453" }
 denueId: "7604453"

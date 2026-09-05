@@ -17,7 +17,6 @@ claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "0 a 5 personas"
 telefono: "7712175423"
 email: "ventas@orbiscorp.com.mx"
-sitioWeb: "https://www.orbiscorp.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=1522359" }
 denueId: "1522359"

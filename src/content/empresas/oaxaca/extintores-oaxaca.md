@@ -16,7 +16,6 @@ especialidades: ["recarga-y-mantenimiento"]
 claseDENUE: "Reparación y mantenimiento de maquinaria y equipo industrial"
 estrato: "0 a 5 personas"
 email: "exseo6@hotmail.com"
-sitioWeb: "https://www.exseo.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=10608430" }
 denueId: "10608430"

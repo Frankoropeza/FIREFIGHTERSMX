@@ -17,7 +17,6 @@ claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "11 a 30 personas"
 telefono: "5519966393"
 email: "lucia@incendies.mx"
-sitioWeb: "https://www.incendies.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=7768181" }
 denueId: "7768181"

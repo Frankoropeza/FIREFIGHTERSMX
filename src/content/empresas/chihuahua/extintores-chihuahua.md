@@ -15,7 +15,6 @@ especialidades: ["venta-de-extintores"]
 claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "0 a 5 personas"
 email: "aimetrejo0@gmail.com"
-sitioWeb: "https://www.extintoreschihuahua.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=7161355" }
 denueId: "7161355"

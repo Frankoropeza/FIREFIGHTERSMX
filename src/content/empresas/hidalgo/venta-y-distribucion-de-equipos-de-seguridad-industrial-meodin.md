@@ -17,7 +17,6 @@ claseDENUE: "Comercio al por menor en ferreterías y tlapalerías"
 estrato: "0 a 5 personas"
 telefono: "5526952067"
 email: "ventas@meodin.com.mx"
-sitioWeb: "https://www.meodin.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=10283076" }
 denueId: "10283076"

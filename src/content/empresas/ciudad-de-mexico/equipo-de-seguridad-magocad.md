@@ -15,7 +15,6 @@ especialidades: []
 claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "11 a 30 personas"
 email: "jmoran@magocad.com.mx"
-sitioWeb: "https://www.magocad.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=8331524" }
 denueId: "8331524"

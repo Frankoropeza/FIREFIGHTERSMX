@@ -17,7 +17,6 @@ claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "0 a 5 personas"
 telefono: "4772581084"
 email: "admon@ecovial.com.mx"
-sitioWeb: "https://ecovial.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=11590598" }
 denueId: "11590598"

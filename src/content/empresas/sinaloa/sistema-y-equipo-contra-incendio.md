@@ -15,7 +15,6 @@ especialidades: []
 claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "6 a 10 personas"
 email: "ventas@secin.com.mx"
-sitioWeb: "https://secin.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=3834469" }
 denueId: "3834469"

@@ -15,7 +15,6 @@ especialidades: ["venta-de-extintores"]
 claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "0 a 5 personas"
 email: "serviciotecnicoarra@hotmail.com"
-sitioWeb: "https://www.arraseguridad.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=8432600" }
 denueId: "8432600"

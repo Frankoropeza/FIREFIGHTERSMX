@@ -16,7 +16,6 @@ claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "0 a 5 personas"
 telefono: "4776493576"
 email: "contcto@chorniseguridadindustrial.com"
-sitioWeb: "https://www.chorni.getnetstore.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=11655333" }
 denueId: "11655333"

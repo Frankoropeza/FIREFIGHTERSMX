@@ -16,7 +16,6 @@ especialidades: []
 claseDENUE: "Comercio al por mayor de equipo y material eléctrico"
 estrato: "0 a 5 personas"
 email: "ventas@rtmseguridad.com.mx"
-sitioWeb: "https://www.rtmseguridad.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=8386517" }
 denueId: "8386517"

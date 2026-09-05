@@ -16,7 +16,6 @@ claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "0 a 5 personas"
 telefono: "9545594106"
 email: "contysevial@yahoo.com.mx"
-sitioWeb: "https://www.extintorescontysevial.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=8844775" }
 denueId: "8844775"

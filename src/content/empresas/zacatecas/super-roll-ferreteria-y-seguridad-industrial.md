@@ -16,7 +16,6 @@ claseDENUE: "Comercio al por menor en ferreterías y tlapalerías"
 estrato: "6 a 10 personas"
 telefono: "4921545752"
 email: "superroll@hotmail.com"
-sitioWeb: "https://www.superroll.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=4643834" }
 denueId: "4643834"

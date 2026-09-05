@@ -15,7 +15,6 @@ especialidades: []
 claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "11 a 30 personas"
 email: "atencion.clientes@seguirifacil.com"
-sitioWeb: "https://www.segurifacil.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=8381259" }
 denueId: "8381259"

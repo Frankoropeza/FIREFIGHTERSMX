@@ -16,7 +16,6 @@ claseDENUE: "Instalaciones eléctricas en construcciones"
 estrato: "11 a 30 personas"
 telefono: "8120124566"
 email: "administracion@solucionestci.com.mx"
-sitioWeb: "https://www.solucionestci.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=2943500" }
 denueId: "2943500"

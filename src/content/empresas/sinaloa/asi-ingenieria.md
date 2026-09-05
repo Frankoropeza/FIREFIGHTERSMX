@@ -17,7 +17,6 @@ claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "11 a 30 personas"
 telefono: "6682423921"
 email: "info@asiingenieria.com.mx"
-sitioWeb: "https://www.asiingenieria.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=8243951" }
 denueId: "8243951"

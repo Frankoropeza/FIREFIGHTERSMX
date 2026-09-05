@@ -14,7 +14,6 @@ giros: ["venta-equipo"]
 especialidades: ["epp-industrial"]
 claseDENUE: "Reparación y mantenimiento de maquinaria y equipo industrial"
 estrato: "0 a 5 personas"
-sitioWeb: "https://www.progecisa.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=287887" }
 denueId: "287887"

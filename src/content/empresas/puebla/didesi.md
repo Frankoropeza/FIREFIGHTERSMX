@@ -16,7 +16,6 @@ especialidades: ["epp-industrial"]
 claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "6 a 10 personas"
 telefono: "2224059377"
-sitioWeb: "https://didesi.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=6735406" }
 denueId: "6735406"

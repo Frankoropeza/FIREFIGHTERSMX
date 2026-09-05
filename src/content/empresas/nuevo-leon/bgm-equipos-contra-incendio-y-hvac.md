@@ -14,7 +14,6 @@ giros: ["venta-equipo"]
 especialidades: []
 claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "0 a 5 personas"
-sitioWeb: "https://www.bgmequipos.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=12309704" }
 denueId: "12309704"

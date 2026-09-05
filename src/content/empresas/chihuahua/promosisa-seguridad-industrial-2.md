@@ -16,7 +16,6 @@ claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "6 a 10 personas"
 telefono: "6144881206"
 email: "ivan8178@prodigy.net.mx"
-sitioWeb: "https://www.promosisa.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=539531" }
 denueId: "539531"

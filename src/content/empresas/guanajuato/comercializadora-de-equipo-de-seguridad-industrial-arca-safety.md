@@ -15,7 +15,6 @@ especialidades: ["epp-industrial"]
 claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "6 a 10 personas"
 email: "administracion@arcassfety.com.mx"
-sitioWeb: "https://www.arcasafety.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=10336423" }
 denueId: "10336423"

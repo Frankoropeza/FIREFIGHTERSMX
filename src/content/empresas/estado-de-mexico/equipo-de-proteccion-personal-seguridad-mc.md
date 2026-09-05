@@ -15,7 +15,6 @@ especialidades: ["epp-industrial"]
 claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "0 a 5 personas"
 email: "administracion@movimientodecontenedores.com"
-sitioWeb: "https://www.seguridadmc.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=7880487" }
 denueId: "7880487"

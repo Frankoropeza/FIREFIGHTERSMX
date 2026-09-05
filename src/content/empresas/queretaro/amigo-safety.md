@@ -16,7 +16,6 @@ especialidades: ["epp-industrial"]
 claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "11 a 30 personas"
 email: "analuisa.vega@amigosafety.com"
-sitioWeb: "https://amigosafety.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=6391423" }
 denueId: "6391423"

@@ -15,7 +15,6 @@ especialidades: ["epp-industrial"]
 claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "11 a 30 personas"
 email: "seinca_60@hotmail.com"
-sitioWeb: "https://www.seinca.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=3876280" }
 denueId: "3876280"

@@ -16,7 +16,6 @@ claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "0 a 5 personas"
 telefono: "5546139168"
 email: "cuitlahuac@cieseguridad.mx"
-sitioWeb: "https://www.cieseguridad.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=846720" }
 denueId: "846720"

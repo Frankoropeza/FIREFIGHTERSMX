@@ -16,7 +16,6 @@ especialidades: ["epp-industrial"]
 claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "101 a 250 personas"
 email: "martha.sanchez@vallenproveedora.com.mx"
-sitioWeb: "https://www.vallen.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=6780199" }
 denueId: "6780199"

@@ -32,7 +32,17 @@ const meses = ['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov'
 const verif = e.verificadoEl ? (() => { const [y, m] = e.verificadoEl!.split('-'); return m ? `${meses[+m - 1]} ${y}` : y; })() : null;
 const basica = e.plan === 'basico' && e.confianza === 'baja';
 const noindex = basica && !INDEXAR_FICHAS_BASICAS;
-const webHost = e.sitioWeb ? e.sitioWeb.replace(/^https?:\/\//, '').replace(/\/$/, '') : null;
+/**
+ * Enlace externo: SÓLO en fichas VIP (plan `destacado`).
+ * Una ficha básica es un registro público que nosotros levantamos; el enlace
+ * saliente es un beneficio del plan, no un dato del registro. La regla se aplica
+ * aquí y no sólo al retirar el campo, para que una ficha básica que vuelva a
+ * traer `sitioWeb` en el frontmatter tampoco lo publique.
+ * `scripts/verificar-enlaces.mjs` lo comprueba sobre dist/ después del build.
+ */
+const esVIP = e.plan === 'destacado';
+const webPublicable = esVIP ? e.sitioWeb : undefined;
+const webHost = webPublicable ? webPublicable.replace(/^https?:\/\//, '').replace(/\/$/, '') : null;
 
 const canonicalURL = `${SITE.url}${urlEmpresa(e)}`;
 const seoMeta = {
@@ -47,7 +57,7 @@ const breadcrumbSchema = { '@context': 'https://schema.org', '@type': 'Breadcrum
   { '@type': 'ListItem', position: 4, name: edo.nombre, item: `${SITE.url}/empresas/${e.giroPrincipal}/${e.estado}/` },
   { '@type': 'ListItem', position: 5, name: e.nombre, item: canonicalURL } ] };
 const businessSchema = { '@context': 'https://schema.org', '@type': 'LocalBusiness', '@id': `${canonicalURL}#business`, name: e.nombre, ...(e.razonSocial ? { legalName: e.razonSocial } : {}), url: canonicalURL,
-  ...(e.sitioWeb ? { sameAs: [e.sitioWeb] } : {}), ...(e.telefono ? { telephone: e.telefono } : {}), ...(e.email ? { email: e.email } : {}),
+  ...(webPublicable ? { sameAs: [webPublicable] } : {}), ...(e.telefono ? { telephone: e.telefono } : {}), ...(e.email ? { email: e.email } : {}),
   address: { '@type': 'PostalAddress', addressLocality: e.ciudad, addressRegion: edo.nombre, addressCountry: 'MX', ...(e.direccion ? { streetAddress: e.direccion } : {}), ...(e.codigoPostal ? { postalCode: e.codigoPostal } : {}) },
   ...(hasMap ? { geo: { '@type': 'GeoCoordinates', latitude: e.coordenadas!.lat, longitude: e.coordenadas!.lng } } : {}),
   areaServed: { '@type': 'AdministrativeArea', name: edo.nombre }, knowsAbout: [g.label, ...g.normas, ...esp.map((x) => x.label)] };
@@ -178,9 +188,9 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
           <ul class="flex flex-col gap-3 list-none m-0 p-0 text-sm">
             {e.telefono && <li class="flex items-center gap-3"><span class="font-display text-[10px] uppercase tracking-wider w-16 shrink-0" style="color:#4A7599">Tel.</span><a href={`tel:${e.telefono}`} class="hover:text-[#FF6B26]" style="color:#FFFFFF">{e.telefono}</a></li>}
             {e.email && <li class="flex items-center gap-3"><span class="font-display text-[10px] uppercase tracking-wider w-16 shrink-0" style="color:#4A7599">Correo</span><a href={`mailto:${e.email}`} class="hover:text-[#FF6B26] break-all" style="color:#FFFFFF">{e.email}</a></li>}
-            {e.sitioWeb && <li class="flex items-center gap-3"><span class="font-display text-[10px] uppercase tracking-wider w-16 shrink-0" style="color:#4A7599">Web</span><a href={e.sitioWeb} target="_blank" rel="noopener nofollow" class="hover:text-[#FF6B26] break-all" style="color:#FFFFFF">{webHost}</a></li>}
+            {webPublicable && <li class="flex items-center gap-3"><span class="font-display text-[10px] uppercase tracking-wider w-16 shrink-0" style="color:#4A7599">Web</span><a href={webPublicable} target="_blank" rel="noopener nofollow" class="hover:text-[#FF6B26] break-all" style="color:#FFFFFF">{webHost}</a></li>}
             {e.direccion && <li class="flex items-start gap-3"><span class="font-display text-[10px] uppercase tracking-wider w-16 shrink-0 mt-0.5" style="color:#4A7599">Dirección</span><span style="color:#CBD5E1">{e.direccion}</span></li>}
-            {!e.telefono && !e.email && !e.sitioWeb && <li class="text-xs" style="color:#64748B">Sin datos de contacto en el registro público.</li>}
+            {!e.telefono && !e.email && !webPublicable && <li class="text-xs" style="color:#64748B">Sin datos de contacto en el registro público.</li>}
           </ul>
         </div>
 

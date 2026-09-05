@@ -16,7 +16,6 @@ claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "0 a 5 personas"
 telefono: "5536547445"
 email: "jjequiposdeseguridad1@gmail.com"
-sitioWeb: "https://www.chalecosdeseguridad.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=8392426" }
 denueId: "8392426"

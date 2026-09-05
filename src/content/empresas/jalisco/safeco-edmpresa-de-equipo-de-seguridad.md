@@ -16,7 +16,6 @@ especialidades: []
 claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "6 a 10 personas"
 email: "finanzas@safecoseguridad.com"
-sitioWeb: "https://www.safecoseguridad.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=1633993" }
 denueId: "1633993"

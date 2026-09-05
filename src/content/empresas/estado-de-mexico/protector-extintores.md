@@ -15,7 +15,6 @@ especialidades: ["recarga-y-mantenimiento"]
 claseDENUE: "Reparación y mantenimiento de maquinaria y equipo industrial"
 estrato: "11 a 30 personas"
 email: "atencionaclientes@protector.mx"
-sitioWeb: "https://www.protector.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=2225254" }
 denueId: "2225254"

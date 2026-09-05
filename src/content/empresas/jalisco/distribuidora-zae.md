@@ -17,7 +17,6 @@ claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "6 a 10 personas"
 telefono: "3338610904"
 email: "ventaszae@hotmail.com"
-sitioWeb: "https://www.distribuidorazae.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=1961686" }
 denueId: "1961686"

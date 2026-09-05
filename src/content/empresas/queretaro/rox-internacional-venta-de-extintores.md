@@ -15,7 +15,6 @@ giros: ["extintores", "venta-equipo"]
 especialidades: ["venta-de-extintores"]
 claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "0 a 5 personas"
-sitioWeb: "https://www.rox.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=11171509" }
 denueId: "11171509"

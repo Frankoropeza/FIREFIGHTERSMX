@@ -16,7 +16,6 @@ especialidades: ["epp-industrial"]
 claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "0 a 5 personas"
 email: "auxadmon.culiacan@vallenproveedora.com.mx"
-sitioWeb: "https://www.vallen.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=6883941" }
 denueId: "6883941"

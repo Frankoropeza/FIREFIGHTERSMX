@@ -15,7 +15,6 @@ especialidades: ["epp-industrial"]
 claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "0 a 5 personas"
 email: "mostradorcuauht@promosisa.com"
-sitioWeb: "https://www.promosisa.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=9406139" }
 denueId: "9406139"

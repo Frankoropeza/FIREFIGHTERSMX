@@ -16,7 +16,6 @@ especialidades: ["recarga-y-mantenimiento"]
 claseDENUE: "Reparación y mantenimiento de maquinaria y equipo industrial"
 estrato: "11 a 30 personas"
 email: "administracion@edisa.net"
-sitioWeb: "https://www.edisa.net"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=8466210" }
 denueId: "8466210"

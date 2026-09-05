@@ -16,7 +16,6 @@ especialidades: []
 claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "0 a 5 personas"
 email: "salvador.tinajero@nelmar.com"
-sitioWeb: "https://www.nelmar.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=12309244" }
 denueId: "12309244"

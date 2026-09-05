@@ -17,7 +17,6 @@ claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "6 a 10 personas"
 telefono: "9211525598"
 email: "ventas@fimesaindustrial.mx"
-sitioWeb: "https://www.fimesaindustrial.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=7041360" }
 denueId: "7041360"

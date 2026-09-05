@@ -15,7 +15,6 @@ especialidades: ["epp-industrial"]
 claseDENUE: "Comercio al por mayor de productos químicos para la industria farmacéutica y para otro uso industrial"
 estrato: "6 a 10 personas"
 email: "comprascovar@gmail.com"
-sitioWeb: "https://www.covar.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=3934678" }
 denueId: "3934678"

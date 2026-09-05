@@ -16,7 +16,6 @@ claseDENUE: "Reparación y mantenimiento de maquinaria y equipo industrial"
 estrato: "6 a 10 personas"
 telefono: "9992176604"
 email: "extinsur@yahoo.com.mx"
-sitioWeb: "https://www.extinsur.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=7761643" }
 denueId: "7761643"

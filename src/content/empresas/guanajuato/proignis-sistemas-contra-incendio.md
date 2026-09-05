@@ -16,7 +16,6 @@ claseDENUE: "Otras instalaciones y equipamiento en construcciones"
 estrato: "11 a 30 personas"
 telefono: "4423618782"
 email: "conctacto@sistemaspci.com"
-sitioWeb: "https://www.proignis.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=9531436" }
 denueId: "9531436"

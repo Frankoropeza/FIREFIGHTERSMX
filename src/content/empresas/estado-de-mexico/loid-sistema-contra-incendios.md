@@ -15,7 +15,6 @@ giros: ["sistemas-ci"]
 especialidades: []
 claseDENUE: "Servicios de protección y custodia mediante el monitoreo de sistemas de seguridad"
 estrato: "11 a 30 personas"
-sitioWeb: "https://www.loid.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=8714087" }
 denueId: "8714087"

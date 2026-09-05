@@ -15,7 +15,6 @@ especialidades: ["venta-de-extintores", "consultoria-nom-002"]
 claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "6 a 10 personas"
 email: "integraconsultores01@gmail.com"
-sitioWeb: "https://www.integra-consultores.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=11036302" }
 denueId: "11036302"

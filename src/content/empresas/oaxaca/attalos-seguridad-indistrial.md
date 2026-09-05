@@ -16,7 +16,6 @@ claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "0 a 5 personas"
 telefono: "9581161955"
 email: "ventas@attalos.cnx.mx"
-sitioWeb: "https://www.attalos.cnx.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=9376748" }
 denueId: "9376748"

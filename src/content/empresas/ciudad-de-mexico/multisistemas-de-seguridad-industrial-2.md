@@ -15,7 +15,6 @@ especialidades: ["epp-industrial"]
 claseDENUE: "Servicios de protección y custodia mediante el monitoreo de sistemas de seguridad"
 estrato: "51 a 100 personas"
 email: "cnac@multisistemas.com.mx"
-sitioWeb: "https://www.multisistemas.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=6314847" }
 denueId: "6314847"

@@ -15,7 +15,6 @@ especialidades: ["venta-de-extintores"]
 claseDENUE: "Alquiler de maquinaria y equipo agropecuario, pesquero y para la industria manufacturera"
 estrato: "0 a 5 personas"
 telefono: "8787831714"
-sitioWeb: "https://www.extin.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=7683753" }
 denueId: "7683753"

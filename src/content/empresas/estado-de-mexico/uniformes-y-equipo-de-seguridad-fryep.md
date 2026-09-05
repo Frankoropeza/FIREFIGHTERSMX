@@ -16,7 +16,6 @@ claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "0 a 5 personas"
 telefono: "5514239002"
 email: "fryep.ventaslocal@hotmail.com"
-sitioWeb: "https://www.fryep.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=7889963" }
 denueId: "7889963"

@@ -17,7 +17,6 @@ claseDENUE: "Reparación y mantenimiento de maquinaria y equipo industrial"
 estrato: "11 a 30 personas"
 telefono: "7717140419"
 email: "vimec_fuego@hotmail.com"
-sitioWeb: "https://www.vymec.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=1521435" }
 denueId: "1521435"

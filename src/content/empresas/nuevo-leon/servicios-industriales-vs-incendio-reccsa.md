@@ -17,7 +17,6 @@ claseDENUE: "Reparación y mantenimiento de maquinaria y equipo industrial"
 estrato: "11 a 30 personas"
 telefono: "8140660419"
 email: "rgeneroso@reccsa.com.mx"
-sitioWeb: "https://www.reccsa.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=10925614" }
 denueId: "10925614"

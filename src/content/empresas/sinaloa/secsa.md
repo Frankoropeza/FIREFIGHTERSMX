@@ -16,7 +16,6 @@ especialidades: []
 claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "0 a 5 personas"
 email: "contacto@secsasrl.com"
-sitioWeb: "https://www.secsasrl.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=10858739" }
 denueId: "10858739"

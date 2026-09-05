@@ -17,7 +17,6 @@ claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "6 a 10 personas"
 telefono: "3123235916"
 email: "adm.coloma@gova.com.mx"
-sitioWeb: "https://www.shel.copm.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=6807383" }
 denueId: "6807383"

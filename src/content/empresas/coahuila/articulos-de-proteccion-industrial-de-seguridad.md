@@ -17,7 +17,6 @@ claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "0 a 5 personas"
 telefono: "8713607491"
 email: "ventas2@proinsasafety.com.mxp"
-sitioWeb: "https://www.proinsasafety.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=7696446" }
 denueId: "7696446"

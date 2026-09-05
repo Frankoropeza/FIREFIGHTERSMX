@@ -17,7 +17,6 @@ claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "0 a 5 personas"
 telefono: "6692406489"
 email: "auxadmon.culiacan@vallenproveedora.com.mx"
-sitioWeb: "https://www.vallen.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=12309481" }
 denueId: "12309481"

@@ -15,7 +15,6 @@ especialidades: []
 claseDENUE: "Comercio al por mayor de maquinaria y equipo para otros servicios y para actividades comerciales"
 estrato: "11 a 30 personas"
 email: "contacto@firecontrol.com.mx"
-sitioWeb: "https://www.firecontrol.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=9814577" }
 denueId: "9814577"

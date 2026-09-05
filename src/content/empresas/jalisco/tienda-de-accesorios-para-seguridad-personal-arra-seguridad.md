@@ -16,7 +16,6 @@ claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "11 a 30 personas"
 telefono: "3221905170"
 email: "ventas@arraseguridad.com"
-sitioWeb: "https://arraseguridad.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=9089571" }
 denueId: "9089571"

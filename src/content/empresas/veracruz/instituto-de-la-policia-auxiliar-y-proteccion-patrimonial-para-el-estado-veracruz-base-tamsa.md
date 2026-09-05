@@ -16,7 +16,6 @@ claseDENUE: "Servicios de protección y custodia mediante el monitoreo de sistem
 estrato: "11 a 30 personas"
 telefono: "2288418400"
 email: "recepcion@ipax.gob.mx"
-sitioWeb: "https://www.ipax.gob.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=9315205" }
 denueId: "9315205"

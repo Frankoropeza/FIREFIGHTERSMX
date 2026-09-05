@@ -16,7 +16,6 @@ especialidades: ["epp-industrial"]
 claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "31 a 50 personas"
 email: "ventas@mrseguridad.com"
-sitioWeb: "https://www.mrseguridad.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=9437093" }
 denueId: "9437093"

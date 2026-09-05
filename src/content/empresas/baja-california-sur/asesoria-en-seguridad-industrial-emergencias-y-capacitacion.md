@@ -16,7 +16,6 @@ claseDENUE: "Otros servicios de consultoría científica y técnica"
 estrato: "11 a 30 personas"
 telefono: "6121537227"
 email: "contacto@asiec.com.mx"
-sitioWeb: "https://www.asiec.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=6943117" }
 denueId: "6943117"

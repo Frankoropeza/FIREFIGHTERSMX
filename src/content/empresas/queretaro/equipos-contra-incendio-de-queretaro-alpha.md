@@ -15,7 +15,6 @@ especialidades: []
 claseDENUE: "Reparación y mantenimiento de maquinaria y equipo industrial"
 estrato: "0 a 5 personas"
 telefono: "4422260346"
-sitioWeb: "https://www.seccionamarilla.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=3561263" }
 denueId: "3561263"

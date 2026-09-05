@@ -16,7 +16,6 @@ claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "0 a 5 personas"
 telefono: "3334850160"
 email: "dshertec@grupodsmexico.com"
-sitioWeb: "https://www.grupodsmexico.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=9374733" }
 denueId: "9374733"

@@ -16,7 +16,6 @@ claseDENUE: "Reparación y mantenimiento de maquinaria y equipo industrial"
 estrato: "0 a 5 personas"
 telefono: "2222446040"
 email: "jtornel.exyre@usa.net"
-sitioWeb: "https://www.exyre.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=6449994" }
 denueId: "6449994"

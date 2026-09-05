@@ -16,7 +16,6 @@ especialidades: []
 claseDENUE: "Servicios de protección y custodia mediante el monitoreo de sistemas de seguridad"
 estrato: "6 a 10 personas"
 telefono: "8114858279"
-sitioWeb: "https://www.escuadra-sci.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=8712146" }
 denueId: "8712146"

@@ -16,7 +16,6 @@ especialidades: ["epp-industrial"]
 claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "51 a 100 personas"
 email: "estephania_hernandez@sibsa.com"
-sitioWeb: "https://sibsa.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=9427573" }
 denueId: "9427573"

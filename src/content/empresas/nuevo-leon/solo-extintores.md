@@ -16,7 +16,6 @@ claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "11 a 30 personas"
 telefono: "8117669066"
 email: "soloesxtintores@gmail.com"
-sitioWeb: "https://www.soloextintores.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=2967451" }
 denueId: "2967451"

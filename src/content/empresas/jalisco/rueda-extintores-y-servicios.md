@@ -16,7 +16,6 @@ claseDENUE: "Reparación y mantenimiento de maquinaria y equipo industrial"
 estrato: "6 a 10 personas"
 telefono: "3314231012"
 email: "ruedaextintores@gmail.com"
-sitioWeb: "https://www.ruedaextintores.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=1871296" }
 denueId: "1871296"

@@ -17,7 +17,6 @@ claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "51 a 100 personas"
 telefono: "9982349988"
 email: "facturas@farenheitsystem.com"
-sitioWeb: "https://www.farenheitsystem.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=3631376" }
 denueId: "3631376"

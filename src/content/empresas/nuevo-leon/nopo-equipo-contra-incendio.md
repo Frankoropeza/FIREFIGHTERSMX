@@ -15,7 +15,6 @@ especialidades: []
 claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "31 a 50 personas"
 email: "ventas@nopo.com.mx"
-sitioWeb: "https://www.nopo.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=10310341" }
 denueId: "10310341"

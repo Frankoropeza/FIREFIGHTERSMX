@@ -15,7 +15,6 @@ especialidades: ["consultoria-nom-002", "epp-industrial"]
 claseDENUE: "Otros servicios de consultoría científica y técnica"
 estrato: "0 a 5 personas"
 email: "acsimar_2012@live.com.mx"
-sitioWeb: "https://www.acsimar.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=219007" }
 denueId: "219007"

@@ -16,7 +16,6 @@ claseDENUE: "Alquiler de maquinaria y equipo para mover, levantar y acomodar mat
 estrato: "0 a 5 personas"
 telefono: "4495141405"
 email: "administracion@aseclatinoamerica.com"
-sitioWeb: "https://www.asteclatinoamerica.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=10627019" }
 denueId: "10627019"

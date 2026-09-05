@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build && node scripts/verificar-claims.mjs dist",
+    "build": "astro build && node scripts/verificar-claims.mjs dist && node scripts/verificar-enlaces.mjs dist",
     "check-claims": "node scripts/verificar-claims.mjs dist",
+    "check-enlaces": "node scripts/verificar-enlaces.mjs dist",
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint . --ext .ts,.astro",

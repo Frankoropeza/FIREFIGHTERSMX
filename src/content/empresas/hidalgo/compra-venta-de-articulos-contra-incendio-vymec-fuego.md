@@ -15,7 +15,6 @@ especialidades: []
 claseDENUE: "Reparación y mantenimiento de maquinaria y equipo industrial"
 estrato: "0 a 5 personas"
 email: "vymec.tulancingo@hotmail.com"
-sitioWeb: "https://www.vymec.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=1534676" }
 denueId: "1534676"

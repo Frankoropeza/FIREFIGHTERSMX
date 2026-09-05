@@ -16,7 +16,6 @@ especialidades: ["venta-de-extintores", "epp-industrial"]
 claseDENUE: "Otras industrias manufactureras"
 estrato: "51 a 100 personas"
 email: "contabilidad@exain.com.mx"
-sitioWeb: "https://www.exain.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=6697403" }
 denueId: "6697403"

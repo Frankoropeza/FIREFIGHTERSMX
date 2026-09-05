@@ -16,7 +16,6 @@ especialidades: []
 claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "6 a 10 personas"
 email: "superali65@yahoo.com.mx"
-sitioWeb: "https://www.alialloys.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=11167657" }
 denueId: "11167657"

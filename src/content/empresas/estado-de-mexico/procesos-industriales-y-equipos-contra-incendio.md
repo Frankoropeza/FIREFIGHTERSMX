@@ -16,7 +16,6 @@ claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "0 a 5 personas"
 telefono: "5521592989"
 email: "aiprocesosindustriales@prodigy.net.mx"
-sitioWeb: "https://www.aipiecifire.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=1984897" }
 denueId: "1984897"

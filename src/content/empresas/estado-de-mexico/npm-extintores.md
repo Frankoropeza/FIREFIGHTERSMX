@@ -14,7 +14,6 @@ giros: ["extintores", "venta-equipo"]
 especialidades: ["venta-de-extintores"]
 claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "11 a 30 personas"
-sitioWeb: "https://www.npmextintores.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=6757464" }
 denueId: "6757464"

@@ -15,7 +15,6 @@ especialidades: []
 claseDENUE: "Servicios de ingeniería"
 estrato: "0 a 5 personas"
 telefono: "8008903747"
-sitioWeb: "https://www.namtech.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=9834374" }
 denueId: "9834374"

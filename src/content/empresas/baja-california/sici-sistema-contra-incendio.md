@@ -15,7 +15,6 @@ especialidades: []
 claseDENUE: "Servicios de protección y custodia mediante el monitoreo de sistemas de seguridad"
 estrato: "11 a 30 personas"
 email: "contacto@sici.mx"
-sitioWeb: "https://www.sici.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=11215057" }
 denueId: "11215057"

@@ -14,7 +14,6 @@ giros: ["venta-equipo"]
 especialidades: []
 claseDENUE: "Comercio al por mayor de equipo y material eléctrico"
 estrato: "11 a 30 personas"
-sitioWeb: "https://www.sesi.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=675523" }
 denueId: "675523"

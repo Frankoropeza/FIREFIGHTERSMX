@@ -16,7 +16,6 @@ especialidades: []
 claseDENUE: "Servicios de consultoría en administración"
 estrato: "6 a 10 personas"
 email: "hola@srseguridad.com"
-sitioWeb: "https://www.srseguridad.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=10143466" }
 denueId: "10143466"

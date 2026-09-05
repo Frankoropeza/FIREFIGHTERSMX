@@ -15,7 +15,6 @@ giros: ["venta-equipo"]
 especialidades: ["epp-industrial"]
 claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "0 a 5 personas"
-sitioWeb: "https://www.gamakapa.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=7875100" }
 denueId: "7875100"

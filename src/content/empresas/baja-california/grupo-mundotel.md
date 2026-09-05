@@ -17,7 +17,6 @@ claseDENUE: "Servicios de protección y custodia mediante el monitoreo de sistem
 estrato: "11 a 30 personas"
 telefono: "6646236774"
 email: "contabilida@grupomundotel.com"
-sitioWeb: "https://www.grupomundotel.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=111267" }
 denueId: "111267"

@@ -16,7 +16,6 @@ especialidades: ["epp-industrial"]
 claseDENUE: "Servicios de ingeniería"
 estrato: "11 a 30 personas"
 telefono: "6421070781"
-sitioWeb: "https://www.simexverificaciones.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=10552785" }
 denueId: "10552785"

@@ -17,7 +17,6 @@ claseDENUE: "Servicios de protección y custodia mediante el monitoreo de sistem
 estrato: "31 a 50 personas"
 telefono: "8120295961"
 email: "rh@kernelsecurity.com.mx"
-sitioWeb: "https://www.kernelsecurity.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=6445203" }
 denueId: "6445203"

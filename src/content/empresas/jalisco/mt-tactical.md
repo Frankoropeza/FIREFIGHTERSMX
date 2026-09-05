@@ -16,7 +16,6 @@ claseDENUE: "Servicios de protección y custodia mediante el monitoreo de sistem
 estrato: "11 a 30 personas"
 telefono: "3339546925"
 email: "mparra@mt-tactical.com.mx"
-sitioWeb: "https://www.mt-tactical.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=12300817" }
 denueId: "12300817"

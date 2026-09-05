@@ -16,7 +16,6 @@ especialidades: []
 claseDENUE: "Comercio al por menor en ferreterías y tlapalerías"
 estrato: "0 a 5 personas"
 email: "info@emmsa.com"
-sitioWeb: "https://www.emmsa.com"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=9323141" }
 denueId: "9323141"
