@@ -143,6 +143,9 @@ faq:
   - pregunta: "¿Qué documentación entregan con el monitor?"
     respuesta: "Ficha técnica del fabricante, certificado FM, UL o CE cuando el modelo lo tiene, manual de instalación y operación, y el alcance formal de la garantía del fabricante. Para licitación añaden cartas de respaldo y la documentación fiscal y legal."
 relacionados:
+  - titulo: "Boquillas contra incendio de Gama de México"
+    url: "/empresas/equipos-contra-incendio/queretaro/gama-de-mexico/boquillas-contra-incendio/"
+    nota: "El otro extremo de la descarga: 15 a 325 GPM a mano o en gabinete"
   - titulo: "Ficha de Gama de México en Querétaro"
     url: "/empresas/equipos-contra-incendio/queretaro/gama-de-mexico/"
     nota: "Servicios, condiciones comerciales y las otras cinco líneas del catálogo"

@@ -95,6 +95,7 @@ vip:
       certificaciones: "FM Approved y UL Listed por modelo; CE (PED) en el 294-11"
       normas: "NFPA 13 · 14 · 24"
     - nombre: "Boquillas contra incendio"
+      pagina: "boquillas-contra-incendio"
       subtitulo: "Control y dirección del flujo de agua"
       imagen: "/images/empresas/gama-de-mexico/boquillas.avif"
       imagenAlt: "Boquilla contra incendio tipo pistola en estación de bomberos"
