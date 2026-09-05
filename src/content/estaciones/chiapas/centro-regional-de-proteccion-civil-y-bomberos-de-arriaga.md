@@ -10,6 +10,7 @@ tipo: "Estatal"
 corporacion: "Centro Regional de Protección Civil y Bomberos de Arriaga"
 corporacionSlug: "centro-regional-de-proteccion-civil-y-bomberos-de-arriaga"
 rolEstacion: "unica"
+operador: "Gobierno del Estado de Chiapas"
 coordenadas:
   lat: 16.2333
   lng: -93.9

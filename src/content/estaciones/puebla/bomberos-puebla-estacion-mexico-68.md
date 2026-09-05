@@ -10,6 +10,7 @@ tipo: "Estatal"
 corporacion: "Heroico Cuerpo de Bomberos y Bomberas del Estado de Puebla"
 corporacionSlug: "heroico-cuerpo-de-bomberos-y-bomberas-del-estado-de-puebla"
 rolEstacion: "subestacion"
+operador: "Gobierno del Estado de Puebla"
 numeroEstacion: "Estación México 68"
 direccion: "Av. Miguel Hidalgo, Col. Villa Verde, C.P. 72310"
 coordenadas:

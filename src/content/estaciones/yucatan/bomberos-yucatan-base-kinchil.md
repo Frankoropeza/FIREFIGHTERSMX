@@ -10,6 +10,7 @@ tipo: "Estatal"
 corporacion: "Dirección de Bomberos de Yucatán — SSP"
 corporacionSlug: "direccion-de-bomberos-de-yucatan-ssp"
 rolEstacion: "subestacion"
+operador: "Secretaría de Seguridad Pública de Yucatán"
 numeroEstacion: "Base Kinchil"
 direccion: "Calle 20, Col. Centro, C.P. 97360"
 coordenadas:

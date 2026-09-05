@@ -10,6 +10,7 @@ tipo: "Estatal"
 corporacion: "Dirección de Bomberos de Yucatán — SSP"
 corporacionSlug: "direccion-de-bomberos-de-yucatan-ssp"
 rolEstacion: "central"
+operador: "Secretaría de Seguridad Pública de Yucatán"
 numeroEstacion: "Dirección"
 coordenadas:
   lat: 20.9674

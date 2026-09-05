@@ -10,6 +10,7 @@ tipo: "PEMEX"
 corporacion: "Cuerpo Contra Incendio PEMEX — Complejo Procesador de Gas Cactus / Nuevo Pemex"
 corporacionSlug: "cuerpo-contra-incendio-pemex-complejo-procesador-de-gas-cactus-nuevo-pemex"
 rolEstacion: "unica"
+operador: "Petróleos Mexicanos (PEMEX)"
 coordenadas:
   lat: 17.8667
   lng: -93.15

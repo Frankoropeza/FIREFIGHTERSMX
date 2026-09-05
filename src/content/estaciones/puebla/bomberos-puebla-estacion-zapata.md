@@ -10,6 +10,7 @@ tipo: "Estatal"
 corporacion: "Heroico Cuerpo de Bomberos y Bomberas del Estado de Puebla"
 corporacionSlug: "heroico-cuerpo-de-bomberos-y-bomberas-del-estado-de-puebla"
 rolEstacion: "subestacion"
+operador: "Gobierno del Estado de Puebla"
 numeroEstacion: "Estación Zapata"
 direccion: "Calle 11 Sur, Col. San Francisco Mayorazgo, C.P. 72480"
 coordenadas:

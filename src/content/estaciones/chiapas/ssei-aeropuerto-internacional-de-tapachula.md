@@ -10,6 +10,7 @@ tipo: "Aeropuerto"
 corporacion: "SSEI — Aeropuerto Internacional de Tapachula"
 corporacionSlug: "ssei-aeropuerto-internacional-de-tapachula"
 rolEstacion: "unica"
+operador: "Grupo Aeroportuario del Sureste (ASUR)"
 direccion: "Aeropuerto Internacional de Tapachula, Puerto Madero Km 18.5, Tapachula"
 coordenadas:
   lat: 14.9039

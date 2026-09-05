@@ -10,6 +10,7 @@ tipo: "Estatal"
 corporacion: "Heroico Cuerpo de Bomberos de Oaxaca"
 corporacionSlug: "heroico-cuerpo-de-bomberos-de-oaxaca"
 rolEstacion: "subestacion"
+operador: "Secretaría de Seguridad Pública de Oaxaca"
 numeroEstacion: "Subestación Norte"
 direccion: "Calle Martires de Cananea 100, Col. Parque Vinicio Castilla, C.P. 68020"
 coordenadas:

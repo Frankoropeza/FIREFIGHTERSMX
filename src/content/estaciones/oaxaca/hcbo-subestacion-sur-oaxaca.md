@@ -10,6 +10,7 @@ tipo: "Estatal"
 corporacion: "Heroico Cuerpo de Bomberos de Oaxaca"
 corporacionSlug: "heroico-cuerpo-de-bomberos-de-oaxaca"
 rolEstacion: "subestacion"
+operador: "Secretaría de Seguridad Pública de Oaxaca"
 numeroEstacion: "Subestación Sur"
 direccion: "Av. Jorge L Tamayo Castellanos, Col. Agencia de Policía de Candiani, C.P. 68130"
 coordenadas:

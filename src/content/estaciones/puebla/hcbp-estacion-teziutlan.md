@@ -10,6 +10,7 @@ tipo: "Estatal"
 corporacion: "HCBP"
 corporacionSlug: "hcbp"
 rolEstacion: "subestacion"
+operador: "Gobierno del Estado de Puebla"
 numeroEstacion: "Estación Teziutlán"
 direccion: "Antigua Vía de Ferrocarril S/N, Col. Santa Rosa, C.P. 73890, Teziutlán, Pue."
 coordenadas:

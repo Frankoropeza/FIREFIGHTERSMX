@@ -10,6 +10,7 @@ tipo: "Estatal"
 corporacion: "Departamento de Bomberos del IPCET — Tabasco"
 corporacionSlug: "departamento-de-bomberos-del-ipcet-tabasco"
 rolEstacion: "unica"
+operador: "Instituto de Protección Civil del Estado de Tabasco (IPCET)"
 direccion: "Prol. Av. Adolfo Ruiz Cortines S/N, Col. La Manga I, C.P. 86069, Villahermosa, Tabasco"
 coordenadas:
   lat: 17.972

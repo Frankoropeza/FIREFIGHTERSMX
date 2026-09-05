@@ -10,6 +10,7 @@ tipo: "Estatal"
 corporacion: "HCBO"
 corporacionSlug: "hcbo"
 rolEstacion: "subestacion"
+operador: "Secretaría de Seguridad Pública de Oaxaca"
 direccion: "Carretera Panamericana, Col. Martires 31 de Julio, C.P. 70014"
 numeroEstacion: "Subestación Regional Juchitán de Zaragoza"
 coordenadas:

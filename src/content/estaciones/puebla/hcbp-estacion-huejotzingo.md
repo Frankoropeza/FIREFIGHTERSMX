@@ -10,6 +10,7 @@ tipo: "Estatal"
 corporacion: "HCBP"
 corporacionSlug: "hcbp"
 rolEstacion: "subestacion"
+operador: "Gobierno del Estado de Puebla"
 numeroEstacion: "Estación Huejotzingo"
 direccion: "Calle 5 de Mayo No. 20, Centro, Huejotzingo, Pue."
 coordenadas:

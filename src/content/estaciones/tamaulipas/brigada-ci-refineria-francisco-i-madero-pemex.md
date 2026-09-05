@@ -10,6 +10,7 @@ tipo: "PEMEX"
 corporacion: "Brigada Contraincendio Refinería Francisco I. Madero — PEMEX"
 corporacionSlug: "brigada-contraincendio-refineria-francisco-i-madero-pemex"
 rolEstacion: "unica"
+operador: "Petróleos Mexicanos (PEMEX)"
 coordenadas:
   lat: 22.2747
   lng: -97.8342

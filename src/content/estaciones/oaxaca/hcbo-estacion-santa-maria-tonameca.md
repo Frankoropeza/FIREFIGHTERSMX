@@ -10,6 +10,7 @@ tipo: "Estatal"
 corporacion: "HCBO"
 corporacionSlug: "hcbo"
 rolEstacion: "subestacion"
+operador: "Secretaría de Seguridad Pública de Oaxaca"
 numeroEstacion: "Estación Regional Costa Santa María Tonameca"
 coordenadas:
   lat: 15.7373

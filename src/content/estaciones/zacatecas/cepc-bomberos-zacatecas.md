@@ -10,6 +10,7 @@ tipo: "Estatal"
 corporacion: "Coordinación Estatal de Protección Civil — Bomberos de Zacatecas"
 corporacionSlug: "coordinacion-estatal-de-proteccion-civil-bomberos-de-zacatecas"
 rolEstacion: "unica"
+operador: "Gobierno del Estado de Zacatecas"
 direccion: "Calz. Solidaridad y Av. de los Deportes S/N, Zona Conurbada, C.P. 98067, Guadalupe, Zacatecas"
 coordenadas:
   lat: 22.749

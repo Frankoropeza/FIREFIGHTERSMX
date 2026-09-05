@@ -10,6 +10,7 @@ tipo: "PEMEX"
 corporacion: "Brigada Contraincendio Refinería OLMECA / Terminal Marítima Dos Bocas"
 corporacionSlug: "brigada-contraincendio-refineria-olmeca-terminal-maritima-dos-bocas"
 rolEstacion: "unica"
+operador: "Petróleos Mexicanos (PEMEX)"
 coordenadas:
   lat: 18.368
   lng: -93.2145

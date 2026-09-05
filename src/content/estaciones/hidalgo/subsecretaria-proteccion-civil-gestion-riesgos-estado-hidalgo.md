@@ -10,6 +10,7 @@ tipo: "Estatal"
 corporacion: "Subsecretaría de Protección Civil y Gestión de Riesgos del Estado de Hidalgo"
 corporacionSlug: "subsecretaria-de-proteccion-civil-y-gestion-de-riesgos-del-estado-de-hidalgo"
 rolEstacion: "unica"
+operador: "Gobierno del Estado de Hidalgo"
 direccion: "Profra. Laura Lugo No. 115, Col. Revolución, C.P. 42060, Pachuca de Soto, Hgo."
 coordenadas:
   lat: 20.1011

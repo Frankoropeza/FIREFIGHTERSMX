@@ -10,6 +10,7 @@ tipo: "Estatal"
 corporacion: "Heroico Cuerpo de Bomberos y Bomberas del Estado de Puebla"
 corporacionSlug: "heroico-cuerpo-de-bomberos-y-bomberas-del-estado-de-puebla"
 rolEstacion: "subestacion"
+operador: "Gobierno del Estado de Puebla"
 numeroEstacion: "Estación Defensores"
 direccion: "Diagonal Defensores de la Republica, Col. Jesus Garcia, C.P. 72090"
 coordenadas:

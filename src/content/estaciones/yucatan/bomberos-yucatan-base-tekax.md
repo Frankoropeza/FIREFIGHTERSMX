@@ -10,6 +10,7 @@ tipo: "Estatal"
 corporacion: "Dirección de Bomberos de Yucatán — SSP"
 corporacionSlug: "direccion-de-bomberos-de-yucatan-ssp"
 rolEstacion: "subestacion"
+operador: "Secretaría de Seguridad Pública de Yucatán"
 numeroEstacion: "Base Tekax"
 direccion: "Calle 57, Col. Jardines de Santa María, C.P. 97970"
 coordenadas:

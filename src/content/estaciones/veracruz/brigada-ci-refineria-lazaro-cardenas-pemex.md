@@ -10,6 +10,7 @@ tipo: "PEMEX"
 corporacion: "Brigada Contraincendio Refinería Lázaro Cárdenas — PEMEX"
 corporacionSlug: "brigada-contraincendio-refineria-lazaro-cardenas-pemex"
 rolEstacion: "unica"
+operador: "Petróleos Mexicanos (PEMEX)"
 coordenadas:
   lat: 17.9989
   lng: -94.5591

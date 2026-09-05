@@ -10,6 +10,7 @@ tipo: "PEMEX"
 corporacion: "Brigada Contraincendio PEMEX TAD Zacatecas"
 corporacionSlug: "brigada-contraincendio-pemex-tad-zacatecas"
 rolEstacion: "unica"
+operador: "Petróleos Mexicanos (PEMEX)"
 coordenadas:
   lat: 22.4
   lng: -102.4

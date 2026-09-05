@@ -10,6 +10,7 @@ tipo: "Estatal"
 corporacion: "Dirección de Bomberos de Yucatán — SSP"
 corporacionSlug: "direccion-de-bomberos-de-yucatan-ssp"
 rolEstacion: "subestacion"
+operador: "Secretaría de Seguridad Pública de Yucatán"
 numeroEstacion: "Base Motul"
 direccion: "Calle 27, Col. Sac-nicté, C.P. 97430"
 coordenadas:

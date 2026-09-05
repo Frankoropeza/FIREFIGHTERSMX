@@ -10,6 +10,7 @@ tipo: "Estatal"
 corporacion: "HCBO"
 corporacionSlug: "hcbo"
 rolEstacion: "subestacion"
+operador: "Secretaría de Seguridad Pública de Oaxaca"
 direccion: "Callejon las Cabañas, Col. Guadalupe, C.P. 70300"
 numeroEstacion: "Estación Matías Romero Avendano"
 coordenadas:

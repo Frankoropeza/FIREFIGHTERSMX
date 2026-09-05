@@ -10,6 +10,7 @@ tipo: "Estatal"
 corporacion: "Heroico Cuerpo de Bomberos de Oaxaca"
 corporacionSlug: "heroico-cuerpo-de-bomberos-de-oaxaca"
 rolEstacion: "central"
+operador: "Secretaría de Seguridad Pública de Oaxaca"
 numeroEstacion: "Cuartel Central"
 coordenadas:
   lat: 17.0732

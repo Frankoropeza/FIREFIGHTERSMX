@@ -10,6 +10,7 @@ tipo: "Estatal"
 corporacion: "Heroico Cuerpo de Bomberos y Bomberas del Estado de Puebla"
 corporacionSlug: "heroico-cuerpo-de-bomberos-y-bomberas-del-estado-de-puebla"
 rolEstacion: "subestacion"
+operador: "Gobierno del Estado de Puebla"
 numeroEstacion: "Estación San Pablo Xochimehuacán"
 direccion: "Calle Calle de los Palos, Col. San Jeronimo Caleras, C.P. 72100"
 coordenadas:

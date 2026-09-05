@@ -10,6 +10,7 @@ tipo: "Estatal"
 corporacion: "HCBO"
 corporacionSlug: "hcbo"
 rolEstacion: "subestacion"
+operador: "Secretaría de Seguridad Pública de Oaxaca"
 direccion: "Carretera Puerto Angelito, Col. Hidalgo, C.P. 71981"
 numeroEstacion: "Subestación Costa Puerto Escondido"
 coordenadas:

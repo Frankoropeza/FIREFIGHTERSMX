@@ -10,6 +10,7 @@ tipo: "Estatal"
 corporacion: "Coordinación Estatal de Protección Civil Michoacán (CEPCM)"
 corporacionSlug: "coordinacion-estatal-de-proteccion-civil-michoacan-cepcm"
 rolEstacion: "unica"
+operador: "Gobierno del Estado de Michoacán"
 coordenadas:
   lat: 19.685
   lng: -101.1844

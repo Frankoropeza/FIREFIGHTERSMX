@@ -10,6 +10,7 @@ tipo: "Estatal"
 corporacion: "Dirección de Bomberos de Yucatán — SSP"
 corporacionSlug: "direccion-de-bomberos-de-yucatan-ssp"
 rolEstacion: "subestacion"
+operador: "Secretaría de Seguridad Pública de Yucatán"
 numeroEstacion: "Base Maxcanú"
 direccion: "Calle 17, Col. Maxcanu, C.P. 97800"
 coordenadas:

@@ -10,6 +10,7 @@ tipo: "Estatal"
 corporacion: "Heroico Cuerpo de Bomberos y Bomberas del Estado de Puebla"
 corporacionSlug: "heroico-cuerpo-de-bomberos-y-bomberas-del-estado-de-puebla"
 rolEstacion: "subestacion"
+operador: "Gobierno del Estado de Puebla"
 numeroEstacion: "Estación Zavaleta"
 direccion: "Calle Via Volkswagen, Col. Bello Horizonte, C.P. 72730"
 coordenadas:

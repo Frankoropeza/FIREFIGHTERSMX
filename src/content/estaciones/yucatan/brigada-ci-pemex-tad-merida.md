@@ -10,6 +10,7 @@ tipo: "PEMEX"
 corporacion: "Brigada Contraincendio PEMEX TAD Mérida"
 corporacionSlug: "brigada-contraincendio-pemex-tad-merida"
 rolEstacion: "unica"
+operador: "Petróleos Mexicanos (PEMEX)"
 coordenadas:
   lat: 20.9074
   lng: -89.6633

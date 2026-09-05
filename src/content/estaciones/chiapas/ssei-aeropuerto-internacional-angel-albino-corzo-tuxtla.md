@@ -10,6 +10,7 @@ tipo: "Aeropuerto"
 corporacion: "SSEI — Aeropuerto Internacional Ángel Albino Corzo (Tuxtla)"
 corporacionSlug: "ssei-aeropuerto-internacional-angel-albino-corzo-tuxtla"
 rolEstacion: "unica"
+operador: "Sociedad Operadora del Aeropuerto Internacional Ángel Albino Corzo"
 direccion: "Km 12.48 Carr. Vergel–Aeropuerto Ángel Albino Corzo S/N, Francisco Sarabia, C.P. 29176, Chiapa de Corzo"
 coordenadas:
   lat: 16.7064

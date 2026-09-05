@@ -10,6 +10,7 @@ tipo: "Estatal"
 corporacion: "Heroico Cuerpo de Bomberos de Tlaxcala"
 corporacionSlug: "heroico-cuerpo-de-bomberos-de-tlaxcala"
 rolEstacion: "unica"
+operador: "Gobierno del Estado de Tlaxcala"
 direccion: "Carretera Vía Corta Puebla–Santa Ana km 31+800, San Pablo Apetatitlán, C.P. 90600, Tlaxcala"
 coordenadas:
   lat: 19.3573

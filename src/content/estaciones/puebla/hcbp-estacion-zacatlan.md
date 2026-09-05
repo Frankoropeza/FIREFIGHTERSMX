@@ -10,6 +10,7 @@ tipo: "Estatal"
 corporacion: "HCBP"
 corporacionSlug: "hcbp"
 rolEstacion: "subestacion"
+operador: "Gobierno del Estado de Puebla"
 numeroEstacion: "Estación Zacatlán de las Manzanas"
 direccion: "Av. Benito Juárez 15, Centro, Zacatlán, Pue."
 coordenadas:

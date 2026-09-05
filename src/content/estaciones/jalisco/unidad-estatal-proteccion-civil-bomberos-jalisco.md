@@ -10,6 +10,7 @@ tipo: "Estatal"
 corporacion: "Unidad Estatal de Protección Civil y Bomberos de Jalisco (UEPCBJ)"
 corporacionSlug: "unidad-estatal-de-proteccion-civil-y-bomberos-de-jalisco-uepcbj"
 rolEstacion: "unica"
+operador: "Gobierno del Estado de Jalisco"
 direccion: "Av. 18 de Marzo No. 750, esquina Av. Lázaro Cárdenas, Col. La Nogalera, C.P. 44770, Guadalajara, Jal."
 coordenadas:
   lat: 20.6684

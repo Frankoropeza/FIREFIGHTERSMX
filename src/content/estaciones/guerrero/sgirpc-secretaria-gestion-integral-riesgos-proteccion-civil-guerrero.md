@@ -10,6 +10,7 @@ tipo: "Estatal"
 corporacion: "SGIRPC — Secretaría de Gestión Integral de Riesgos y Protección Civil de Guerrero"
 corporacionSlug: "sgirpc-secretaria-de-gestion-integral-de-riesgos-y-proteccion-civil-de-guerrero"
 rolEstacion: "unica"
+operador: "Gobierno del Estado de Guerrero"
 coordenadas:
   lat: 17.5506
   lng: -99.4942
