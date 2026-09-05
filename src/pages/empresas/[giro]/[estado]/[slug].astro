@@ -114,7 +114,7 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
 
   <section class="relative overflow-hidden" style="background:#040A12;padding-block:4rem" aria-labelledby="ficha-heading">
     <div class="absolute top-0 right-0 w-2/3 h-full pointer-events-none" aria-hidden="true" style={`background:radial-gradient(ellipse 70% 60% at 85% 40%, ${g.color}12 0%, transparent 65%)`}></div>
-    <div class="container-site relative z-10 grid grid-cols-1 lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-14 items-start">
+    <div class="container-site relative z-10 grid grid-cols-1 lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-14 items-center">
       <div>
       <div class="flex flex-wrap items-center gap-2 mb-5">
         <span class="inline-flex items-center gap-1.5 font-display font-bold text-[10px] uppercase tracking-wider px-2 py-1" style={`color:${g.color};background:${g.color}1A;border:1px solid ${g.color}40`}>
@@ -125,15 +125,15 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
       </div>
       <h1 id="ficha-heading" class="font-display font-bold mb-3" style="color:#FFFFFF;font-size:clamp(1.9rem,4.2vw,3.4rem);line-height:1">{e.nombre}</h1>
       {e.razonSocial && <p class="font-display text-sm uppercase tracking-wider mb-4" style="color:#4A7599">{e.razonSocial}</p>}
-      <p class="flex items-start gap-2 text-sm max-w-2xl" style="color:#94A3B8">
+      <p class="flex items-start gap-2 text-sm mb-0" style="color:#94A3B8">
         <svg class="w-4 h-4 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="#FF6B26" stroke-width="1.8" set:html={iconPin} aria-hidden="true"/>
         <span>{e.direccion ? `${e.direccion} · ` : ''}{e.ciudad}{e.municipio !== e.ciudad ? `, ${e.municipio}` : ''}, {edo.nombre}</span>
       </p>
       </div>
 
-      <div class="lg:pl-14 lg:border-l" style="border-color:rgba(74,117,153,0.22)">
-        {heroParrafos.map((par) => <p class="text-sm leading-[1.95] mb-4" style="color:#94A3B8">{par}</p>)}
-        <a href={`/empresas/${e.giroPrincipal}/${e.estado}/`} class="inline-flex items-center gap-2 text-sm font-display font-semibold" style={`color:${g.color}`}>
+      <div class="lg:pl-14 lg:border-l" style="border-left-style:solid;border-color:rgba(74,117,153,0.28)">
+        {heroParrafos.map((par) => <p class="text-sm leading-[1.95] mb-4 last:mb-0" style="color:#94A3B8">{par}</p>)}
+        <a href={`/empresas/${e.giroPrincipal}/${e.estado}/`} class="inline-flex items-center gap-2 text-sm font-display font-semibold mt-5" style={`color:${g.color}`}>
           {g.labelCorto} en {edo.nombre}
           <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
