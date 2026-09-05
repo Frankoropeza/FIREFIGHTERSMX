@@ -40,6 +40,9 @@ const noindex = basica && !INDEXAR_FICHAS_BASICAS;
  * traer `sitioWeb` en el frontmatter tampoco lo publique.
  * `scripts/verificar-enlaces.mjs` lo comprueba sobre dist/ después del build.
  */
+/* Texto propio de la ficha. Si el registro lo trae, sustituye al párrafo
+   auto-generado: ese relleno describe lo que el DENUE sabe, no la empresa. */
+const parrafos = (e.descripcion ?? '').split(/\n{2,}/).map((s) => s.trim()).filter(Boolean);
 const esVIP = e.plan === 'destacado';
 const webPublicable = esVIP ? e.sitioWeb : undefined;
 const webHost = webPublicable ? webPublicable.replace(/^https?:\/\//, '').replace(/\/$/, '') : null;
@@ -113,10 +116,16 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Perfil</span>
           <h2 class="font-display font-bold mb-5" style="color:#FFFFFF;font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.05">{g.labelCorto} en {e.ciudad},<br/><span style={`color:${g.color}`}>{edo.nombre}.</span></h2>
-          <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">
-            {e.nombre} es una empresa de {g.sustantivo} con sede en {e.ciudad}, {edo.nombre}{e.estrato ? `, con una plantilla de ${e.estrato.toLowerCase()}` : ''}.{esp.length ? ` Sus especialidades registradas son ${esp.map((x) => x.label.toLowerCase()).join(', ')}.` : ''}{otrosGiros.length ? ` También opera en ${otrosGiros.map((o) => o.labelCorto.toLowerCase()).join(' y ')}.` : ''}
-          </p>
-          <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">{g.intro[0]}</p>
+          {parrafos.length > 0 ? (
+            parrafos.map((par) => <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">{par}</p>)
+          ) : (
+            <>
+              <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">
+                {e.nombre} es una empresa de {g.sustantivo} con sede en {e.ciudad}, {edo.nombre}{e.estrato ? `, con una plantilla de ${e.estrato.toLowerCase()}` : ''}.{esp.length ? ` Sus especialidades registradas son ${esp.map((x) => x.label.toLowerCase()).join(', ')}.` : ''}{otrosGiros.length ? ` También opera en ${otrosGiros.map((o) => o.labelCorto.toLowerCase()).join(' y ')}.` : ''}
+              </p>
+              <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">{g.intro[0]}</p>
+            </>
+          )}
           {basica && (
             <div class="mt-6 p-5 flex flex-col sm:flex-row sm:items-center gap-4" style="background:#0C1825;border:1px solid rgba(74,117,153,0.25);border-left:3px solid #94A3B8">
               <p class="text-xs leading-relaxed flex-1" style="color:#94A3B8"><strong style="color:#CBD5E1">Registro público sin verificar.</strong> Los datos provienen del DENUE (INEGI) y no han sido confirmados por la empresa. Si eres el responsable, reclama la ficha para completarla y obtener el sello de datos verificados.</p>

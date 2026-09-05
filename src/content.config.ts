@@ -81,6 +81,10 @@ const empresasCollection = defineCollection({
     sitioWeb: z.string().optional(),
     redes: z.object({ facebook: z.string().optional(), instagram: z.string().optional(), linkedin: z.string().optional(), x: z.string().optional() }).optional(),
     fundacion: z.number().optional(),
+    /* Texto editorial de la ficha, en párrafos separados por línea en blanco.
+       Sólo para fichas verificadas contra fuente propia: sustituye al párrafo
+       auto-generado del template, que es un relleno derivado del DENUE. */
+    descripcion: z.string().optional(),
     fuentes: z.array(z.union([z.string(), z.object({ nombre: z.string(), url: z.string() })])).min(1),
     denueId: z.string().optional(),
     verificadoEl: z.string().optional(),
