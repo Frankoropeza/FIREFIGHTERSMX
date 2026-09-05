@@ -7,9 +7,10 @@ estadoNombre: "Chihuahua"
 ciudad: "Ciudad Juárez"
 municipio: "Juárez"
 tipo: "Municipal"
-corporacion: "Estación 7 — Bomberos de Ciudad Juárez"
-corporacionSlug: "estacion-7-bomberos-de-ciudad-juarez"
-rolEstacion: "unica"
+corporacion: "Heroico Cuerpo de Bomberos de Ciudad Juárez"
+corporacionSlug: "heroico-cuerpo-de-bomberos-de-ciudad-juarez"
+numeroEstacion: "Estación 7"
+rolEstacion: "subestacion"
 direccion: "Zaragoza y Sonora, Ciudad Juárez"
 coordenadas:
   lat: 31.6458

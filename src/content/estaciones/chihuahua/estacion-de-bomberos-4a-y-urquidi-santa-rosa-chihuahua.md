@@ -7,9 +7,10 @@ estadoNombre: "Chihuahua"
 ciudad: "Chihuahua"
 municipio: "Chihuahua"
 tipo: "Municipal"
-corporacion: "Estación de Bomberos 4a y Urquidi (Santa Rosa) — Chihuahua"
-corporacionSlug: "estacion-de-bomberos-4a-y-urquidi-santa-rosa-chihuahua"
-rolEstacion: "unica"
+corporacion: "Heroico Cuerpo de Bomberos y Rescate de Chihuahua"
+corporacionSlug: "heroico-cuerpo-de-bomberos-y-rescate-de-chihuahua"
+numeroEstacion: "Estación 4a y Urquidi (Santa Rosa)"
+rolEstacion: "subestacion"
 direccion: "Calle 4a y Urquidi, Col. Santa Rosa, Chihuahua"
 coordenadas:
   lat: 28.6353

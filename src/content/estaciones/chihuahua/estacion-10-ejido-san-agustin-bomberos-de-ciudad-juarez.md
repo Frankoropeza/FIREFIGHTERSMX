@@ -7,9 +7,10 @@ estadoNombre: "Chihuahua"
 ciudad: "Ciudad Juárez"
 municipio: "Juárez"
 tipo: "Municipal"
-corporacion: "Estación 10 (Ejido San Agustín) — Bomberos de Ciudad Juárez"
-corporacionSlug: "estacion-10-ejido-san-agustin-bomberos-de-ciudad-juarez"
-rolEstacion: "unica"
+corporacion: "Heroico Cuerpo de Bomberos de Ciudad Juárez"
+corporacionSlug: "heroico-cuerpo-de-bomberos-de-ciudad-juarez"
+numeroEstacion: "Estación 10 (Ejido San Agustín)"
+rolEstacion: "subestacion"
 direccion: "Ejido San Agustín, Valle de Juárez, Ciudad Juárez"
 coordenadas:
   lat: 31.51457

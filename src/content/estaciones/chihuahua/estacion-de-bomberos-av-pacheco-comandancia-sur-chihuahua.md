@@ -7,9 +7,10 @@ estadoNombre: "Chihuahua"
 ciudad: "Chihuahua"
 municipio: "Chihuahua"
 tipo: "Municipal"
-corporacion: "Estación de Bomberos Av. Pacheco (Comandancia Sur) — Chihuahua"
-corporacionSlug: "estacion-de-bomberos-av-pacheco-comandancia-sur-chihuahua"
-rolEstacion: "unica"
+corporacion: "Heroico Cuerpo de Bomberos y Rescate de Chihuahua"
+corporacionSlug: "heroico-cuerpo-de-bomberos-y-rescate-de-chihuahua"
+numeroEstacion: "Estación Av. Pacheco (Comandancia Sur)"
+rolEstacion: "subestacion"
 direccion: "Av. Pacheco, junto a la Comandancia Sur, Col. Lealtad II, Chihuahua"
 coordenadas:
   lat: 28.6353

@@ -9,7 +9,9 @@ municipio: "Tuxtla Gutiérrez"
 tipo: "Estatal"
 corporacion: "Instituto de Bomberos del Estado de Chiapas (IBECH)"
 corporacionSlug: "instituto-de-bomberos-del-estado-de-chiapas-ibech"
-rolEstacion: "unica"
+numeroEstacion: "Dirección General"
+rolEstacion: "central"
+operador: "Gobierno del Estado de Chiapas"
 direccion: "9a. Sur Oriente No. 1910, Col. La Salle, C.P. 29070, Tuxtla Gutiérrez"
 coordenadas:
   lat: 16.7531

@@ -9,7 +9,8 @@ municipio: "Juárez"
 tipo: "Municipal"
 corporacion: "Heroico Cuerpo de Bomberos de Ciudad Juárez"
 corporacionSlug: "heroico-cuerpo-de-bomberos-de-ciudad-juarez"
-rolEstacion: "unica"
+numeroEstacion: "Estación Central"
+rolEstacion: "central"
 direccion: "Ing. Bernardo Norzagaray y 5 de Mayo, Centro, Ciudad Juárez"
 coordenadas:
   lat: 31.74957

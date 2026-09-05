@@ -7,9 +7,10 @@ estadoNombre: "Chihuahua"
 ciudad: "Ciudad Juárez"
 municipio: "Juárez"
 tipo: "Municipal"
-corporacion: "Estación 5 — Bomberos de Ciudad Juárez"
-corporacionSlug: "estacion-5-bomberos-de-ciudad-juarez"
-rolEstacion: "unica"
+corporacion: "Heroico Cuerpo de Bomberos de Ciudad Juárez"
+corporacionSlug: "heroico-cuerpo-de-bomberos-de-ciudad-juarez"
+numeroEstacion: "Estación 5"
+rolEstacion: "subestacion"
 direccion: "Faraday y Manuel Gómez Morín, Ciudad Juárez"
 coordenadas:
   lat: 31.7061

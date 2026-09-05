@@ -7,9 +7,10 @@ estadoNombre: "Chihuahua"
 ciudad: "Chihuahua"
 municipio: "Chihuahua"
 tipo: "Municipal"
-corporacion: "Estación de Bomberos Parque España (Jardines de Oriente) — Chihuahua"
-corporacionSlug: "estacion-de-bomberos-parque-espana-jardines-de-oriente-chihuahua"
-rolEstacion: "unica"
+corporacion: "Heroico Cuerpo de Bomberos y Rescate de Chihuahua"
+corporacionSlug: "heroico-cuerpo-de-bomberos-y-rescate-de-chihuahua"
+numeroEstacion: "Estación Parque España (Jardines de Oriente)"
+rolEstacion: "subestacion"
 direccion: "Parque España y Quinta Real, Jardines de Oriente, Chihuahua"
 coordenadas:
   lat: 28.6353

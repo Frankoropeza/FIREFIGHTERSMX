@@ -7,9 +7,10 @@ estadoNombre: "Chihuahua"
 ciudad: "Chihuahua"
 municipio: "Chihuahua"
 tipo: "Municipal"
-corporacion: "Estación de Bomberos Valle San Pedro (Los Arroyos) — Chihuahua"
-corporacionSlug: "estacion-de-bomberos-valle-san-pedro-los-arroyos-chihuahua"
-rolEstacion: "unica"
+corporacion: "Heroico Cuerpo de Bomberos y Rescate de Chihuahua"
+corporacionSlug: "heroico-cuerpo-de-bomberos-y-rescate-de-chihuahua"
+numeroEstacion: "Estación Valle San Pedro (Los Arroyos)"
+rolEstacion: "subestacion"
 direccion: "Valle San Pedro y San Miguel, Fracc. los Arroyos, Chihuahua"
 coordenadas:
   lat: 28.6353

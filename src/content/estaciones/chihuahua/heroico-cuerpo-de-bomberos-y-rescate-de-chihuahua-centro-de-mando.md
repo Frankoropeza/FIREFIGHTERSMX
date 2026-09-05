@@ -9,7 +9,8 @@ municipio: "Chihuahua"
 tipo: "Municipal"
 corporacion: "Heroico Cuerpo de Bomberos y Rescate de Chihuahua"
 corporacionSlug: "heroico-cuerpo-de-bomberos-y-rescate-de-chihuahua"
-rolEstacion: "unica"
+numeroEstacion: "Centro de Mando"
+rolEstacion: "central"
 direccion: "Avenida Homero 500, Col. Revolución, C.P. 33107, Chihuahua"
 coordenadas:
   lat: 28.6353

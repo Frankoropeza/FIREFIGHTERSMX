@@ -7,9 +7,10 @@ estadoNombre: "Chihuahua"
 ciudad: "Chihuahua"
 municipio: "Chihuahua"
 tipo: "Municipal"
-corporacion: "Estación de Bomberos 28 y Zarco — Chihuahua"
-corporacionSlug: "estacion-de-bomberos-28-y-zarco-chihuahua"
-rolEstacion: "unica"
+corporacion: "Heroico Cuerpo de Bomberos y Rescate de Chihuahua"
+corporacionSlug: "heroico-cuerpo-de-bomberos-y-rescate-de-chihuahua"
+numeroEstacion: "Estación 28 y Zarco"
+rolEstacion: "subestacion"
 direccion: "Calle 28 y Zarco, Col. Zarco, Chihuahua"
 coordenadas:
   lat: 28.6353

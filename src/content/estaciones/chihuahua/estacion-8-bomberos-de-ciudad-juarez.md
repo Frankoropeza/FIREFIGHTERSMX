@@ -7,9 +7,10 @@ estadoNombre: "Chihuahua"
 ciudad: "Ciudad Juárez"
 municipio: "Juárez"
 tipo: "Municipal"
-corporacion: "Estación 8 — Bomberos de Ciudad Juárez"
-corporacionSlug: "estacion-8-bomberos-de-ciudad-juarez"
-rolEstacion: "unica"
+corporacion: "Heroico Cuerpo de Bomberos de Ciudad Juárez"
+corporacionSlug: "heroico-cuerpo-de-bomberos-de-ciudad-juarez"
+numeroEstacion: "Estación 8"
+rolEstacion: "subestacion"
 direccion: "Barranco Azul y Eje Vial Juan Gabriel, Ciudad Juárez"
 coordenadas:
   lat: 31.64203

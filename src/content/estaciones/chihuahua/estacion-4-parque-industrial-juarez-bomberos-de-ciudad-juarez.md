@@ -7,9 +7,10 @@ estadoNombre: "Chihuahua"
 ciudad: "Ciudad Juárez"
 municipio: "Juárez"
 tipo: "Municipal"
-corporacion: "Estación 4 (Parque Industrial Juárez) — Bomberos de Ciudad Juárez"
-corporacionSlug: "estacion-4-parque-industrial-juarez-bomberos-de-ciudad-juarez"
-rolEstacion: "unica"
+corporacion: "Heroico Cuerpo de Bomberos de Ciudad Juárez"
+corporacionSlug: "heroico-cuerpo-de-bomberos-de-ciudad-juarez"
+numeroEstacion: "Estación 4 (Parque Industrial Juárez)"
+rolEstacion: "subestacion"
 direccion: "Perimetral Carlos Amaya y Parque Industrial Juárez, Ciudad Juárez"
 coordenadas:
   lat: 31.71061

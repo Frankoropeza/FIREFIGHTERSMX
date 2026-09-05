@@ -561,7 +561,16 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                   {([
                     { campo: 'Denominación oficial',   valor: estacion.nombre },
                     { campo: 'Tipo de corporación',    valor: cfg.label },
-                    { campo: 'Dependencia',            valor: estacion.operador ?? `Municipio de ${estacion.municipio}` },
+                    // La dependencia sólo se publica cuando consta: el operador declarado en la
+                    // ficha, o el municipio cuando la corporación es municipal (que lo es por
+                    // definición). Un cuerpo estatal, voluntario, industrial o aeroportuario sin
+                    // operador verificado no se rotula: antes caía en "Municipio de X", que era
+                    // una adscripción inventada en 96 fichas (auditoría 2026-09-05).
+                    ...(estacion.operador
+                      ? [{ campo: 'Dependencia', valor: estacion.operador }]
+                      : estacion.tipo === 'Municipal'
+                        ? [{ campo: 'Dependencia', valor: `Municipio de ${estacion.municipio}` }]
+                        : []),
                     { campo: 'Ciudad cabecera',        valor: estacion.ciudad },
                     { campo: 'Estado',                 valor: estado.nombre },
                     { campo: 'Región',                 valor: estado.region },

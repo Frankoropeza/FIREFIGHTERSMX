@@ -7,9 +7,10 @@ estadoNombre: "Chihuahua"
 ciudad: "Chihuahua"
 municipio: "Chihuahua"
 tipo: "Municipal"
-corporacion: "Estación de Bomberos Washington y Américas — Chihuahua"
-corporacionSlug: "estacion-de-bomberos-washington-y-americas-chihuahua"
-rolEstacion: "unica"
+corporacion: "Heroico Cuerpo de Bomberos y Rescate de Chihuahua"
+corporacionSlug: "heroico-cuerpo-de-bomberos-y-rescate-de-chihuahua"
+numeroEstacion: "Estación Washington y Américas"
+rolEstacion: "subestacion"
 direccion: "Av. George Washington y de las Américas, Complejo Industrial Américas, Chihuahua"
 coordenadas:
   lat: 28.6353

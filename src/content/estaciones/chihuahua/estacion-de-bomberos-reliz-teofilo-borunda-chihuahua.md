@@ -7,9 +7,10 @@ estadoNombre: "Chihuahua"
 ciudad: "Chihuahua"
 municipio: "Chihuahua"
 tipo: "Municipal"
-corporacion: "Estación de Bomberos Reliz (Teófilo Borunda) — Chihuahua"
-corporacionSlug: "estacion-de-bomberos-reliz-teofilo-borunda-chihuahua"
-rolEstacion: "unica"
+corporacion: "Heroico Cuerpo de Bomberos y Rescate de Chihuahua"
+corporacionSlug: "heroico-cuerpo-de-bomberos-y-rescate-de-chihuahua"
+numeroEstacion: "Estación Reliz (Teófilo Borunda)"
+rolEstacion: "subestacion"
 direccion: "Prolongación Teófilo Borunda, zona Reliz, Chihuahua"
 coordenadas:
   lat: 28.6353

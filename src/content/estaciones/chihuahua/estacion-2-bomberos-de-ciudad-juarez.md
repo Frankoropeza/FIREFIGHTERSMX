@@ -7,9 +7,10 @@ estadoNombre: "Chihuahua"
 ciudad: "Ciudad Juárez"
 municipio: "Juárez"
 tipo: "Municipal"
-corporacion: "Estación 2 — Bomberos de Ciudad Juárez"
-corporacionSlug: "estacion-2-bomberos-de-ciudad-juarez"
-rolEstacion: "unica"
+corporacion: "Heroico Cuerpo de Bomberos de Ciudad Juárez"
+corporacionSlug: "heroico-cuerpo-de-bomberos-de-ciudad-juarez"
+numeroEstacion: "Estación 2"
+rolEstacion: "subestacion"
 direccion: "16 de Septiembre e Ignacio Ramírez, Ciudad Juárez"
 coordenadas:
   lat: 31.73748
