@@ -15,11 +15,13 @@ especialidades: ["recarga-y-mantenimiento"]
 claseDENUE: "Reparación y mantenimiento de maquinaria y equipo industrial"
 estrato: "31 a 50 personas"
 email: "atencion.clientes2@promexextintores.com.mx"
+telefono: "5551200324"
+sitioWeb: "https://www.promexextintores.com.mx/"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=2109789" }
 denueId: "2109789"
 verificadoEl: "2026-09"
-confianza: "baja"
+confianza: "media"
 plan: "basico"
 activa: true
 ---

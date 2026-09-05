@@ -16,11 +16,12 @@ especialidades: ["epp-industrial"]
 claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "0 a 5 personas"
 email: "nancy.ayala@segisa.com.mx"
+sitioWeb: "https://www.segisa.com.mx/"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=8172054" }
 denueId: "8172054"
 verificadoEl: "2026-09"
-confianza: "baja"
+confianza: "media"
 plan: "basico"
 activa: true
 ---

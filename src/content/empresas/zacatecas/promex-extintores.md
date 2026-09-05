@@ -16,11 +16,12 @@ claseDENUE: "Reparación y mantenimiento de maquinaria y equipo industrial"
 estrato: "31 a 50 personas"
 telefono: "4921356201"
 email: "javier.tenorio@promexextintores.com.mx"
+sitioWeb: "https://www.promexextintores.com.mx/"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=8506934" }
 denueId: "8506934"
 verificadoEl: "2026-09"
-confianza: "baja"
+confianza: "media"
 plan: "basico"
 activa: true
 ---

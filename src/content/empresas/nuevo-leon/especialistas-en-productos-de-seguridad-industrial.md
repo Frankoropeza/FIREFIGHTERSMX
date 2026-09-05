@@ -15,11 +15,13 @@ especialidades: ["epp-industrial"]
 claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "31 a 50 personas"
 email: "auditormatriz@epsicorp.com.mx"
+telefono: "8183705461"
+sitioWeb: "https://www.epsi.com.mx/"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=6269542" }
 denueId: "6269542"
 verificadoEl: "2026-09"
-confianza: "baja"
+confianza: "media"
 plan: "basico"
 activa: true
 ---

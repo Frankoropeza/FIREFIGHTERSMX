@@ -16,11 +16,14 @@ especialidades: []
 claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "11 a 30 personas"
 email: "rguerrero@sersa.mx"
+telefono: "6144131208"
+sitioWeb: "https://sersa.mx/"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=7915875" }
+  - { nombre: "sersa.mx — directorio de sucursales", url: "https://sersa.mx/sucursales" }
 denueId: "7915875"
 verificadoEl: "2026-09"
-confianza: "baja"
+confianza: "media"
 plan: "basico"
 activa: true
 ---
