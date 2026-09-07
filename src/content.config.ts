@@ -128,6 +128,9 @@ const empresasCollection = defineCollection({
     plan: z.enum(['basico', 'verificado', 'destacado']).default('basico'),
     reclamadaEl: z.string().optional(),
     activa: z.boolean().default(true),
+    /* Motivo por el que un registro se retiró del directorio. Se conserva el
+       archivo para no perder el rastro del DENUE ni repetir el trabajo. */
+    fueraDeGiro: z.string().optional(),
   }),
 });
 

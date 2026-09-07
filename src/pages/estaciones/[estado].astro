@@ -152,7 +152,7 @@ const checkIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
   {/* ─── Breadcrumb ─── */}
   <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
     <div class="container-site">
-      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:#4A7599">
+      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
         <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
         <li aria-hidden="true">/</li>
         <li><a href="/estaciones" class="hover:text-[#FF6B26]">Directorio de Estaciones</a></li>
@@ -207,7 +207,7 @@ const checkIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
 
         {/* Col derecha — stats */}
         <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
-          <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:#4A7599">Municipios con cobertura</p>
+          <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:var(--forge-300)">Municipios con cobertura</p>
           <ul class="flex flex-wrap gap-2 list-none m-0 p-0 mb-5">
             {municipios.slice(0, 14).map((m) => (
               <li class="badge badge-dark font-display text-[10px]">{m}</li>
@@ -254,7 +254,7 @@ const checkIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
         <div id="estado-map" data-puntos={JSON.stringify(puntosMapa)}
           style="height:440px;border:1px solid rgba(74,117,153,0.25);background:#0C1825"
           role="img" aria-label={`Mapa de corporaciones de bomberos en ${estado.nombre}`}></div>
-        <p class="text-[11px] mt-2" style="color:#4A7599">Ubicaciones aproximadas a nivel localidad, con fines de referencia.</p>
+        <p class="text-[11px] mt-2" style="color:var(--forge-300)">Ubicaciones aproximadas a nivel localidad, con fines de referencia.</p>
       </div>
     </section>
   )}
@@ -284,7 +284,7 @@ const checkIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
       {/* Toolbar: buscador + filtro por tipo */}
       <div class="flex flex-col md:flex-row md:items-center gap-3 mb-6">
         <div class="relative flex-1">
-          <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none" style="color:#4A7599" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none" style="color:var(--forge-300)" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
           <input id="est-search" type="search" placeholder="Buscar por nombre, ciudad o municipio…" aria-label="Buscar estación"
             class="w-full pl-10 pr-4 py-2.5 text-sm font-display" style="background:#0C1825;border:1px solid rgba(74,117,153,0.3);color:#FFFFFF;outline:none" />
         </div>
@@ -323,7 +323,7 @@ const checkIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
                     </span>
                   )}
                   {e.fundacion && (
-                    <span class="font-display text-[10px] uppercase tracking-wider" style="color:#4A7599">Desde {e.fundacion}</span>
+                    <span class="font-display text-[10px] uppercase tracking-wider" style="color:var(--forge-300)">Desde {e.fundacion}</span>
                   )}
                 </div>
               </div>
@@ -349,7 +349,7 @@ const checkIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
               <div class="flex flex-wrap gap-1.5">
                 {e.serviciosDetalle.map((s) => (
                   <span class="font-display text-[9px] uppercase tracking-wider px-2 py-0.5"
-                    style="color:#4A7599;background:rgba(74,117,153,0.12);border:1px solid rgba(74,117,153,0.2)">
+                    style="color:var(--forge-300);background:rgba(74,117,153,0.12);border:1px solid rgba(74,117,153,0.2)">
                     {s}
                   </span>
                 ))}
@@ -377,7 +377,7 @@ const checkIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
                   </span>
                 )}
                 {e.telefono && (
-                  <span class="text-xs" style="color:#4A7599">{e.telefono}</span>
+                  <span class="text-xs" style="color:var(--forge-300)">{e.telefono}</span>
                 )}
               </div>
 
@@ -395,7 +395,7 @@ const checkIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
       </div>
 
       <div id="est-no-results" class="hidden py-16 text-center">
-        <p class="font-display font-bold text-lg mb-2" style="color:#4A7599">Sin resultados</p>
+        <p class="font-display font-bold text-lg mb-2" style="color:var(--forge-300)">Sin resultados</p>
         <p class="text-sm" style="color:#64748B">Ajusta el buscador o el filtro de tipo.</p>
       </div>
 
@@ -437,7 +437,7 @@ const checkIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
 
       {certsUnicas.length > 0 && (
         <div class="mt-6 flex flex-wrap items-center gap-2">
-          <span class="font-display font-bold text-[10px] uppercase tracking-widest mr-1" style="color:#4A7599">
+          <span class="font-display font-bold text-[10px] uppercase tracking-widest mr-1" style="color:var(--forge-300)">
             Certificaciones presentes:
           </span>
           {certsUnicas.map((c) => (
@@ -492,7 +492,7 @@ const checkIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
             </h3>
             <div class="flex items-baseline gap-3">
               <span class="font-display font-bold" style="color:#F75000;font-size:3rem;line-height:1">911</span>
-              <span class="text-xs uppercase tracking-widest" style="color:#4A7599">número único de emergencias</span>
+              <span class="text-xs uppercase tracking-widest" style="color:var(--forge-300)">número único de emergencias</span>
             </div>
             <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">
               El <strong style="color:#CBD5E1">911</strong> es el número único de emergencias en todo México y el
@@ -534,7 +534,7 @@ const checkIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
                 aria-label={`${o.nombre} — ${o.estaciones.length} estaciones`}>
                 <div class="flex items-start justify-between gap-3">
                   <div>
-                    <span class="font-display font-bold text-[10px] uppercase tracking-[0.2em] mb-1 block" style="color:#4A7599">
+                    <span class="font-display font-bold text-[10px] uppercase tracking-[0.2em] mb-1 block" style="color:var(--forge-300)">
                       {o.abreviatura} · {o.region}
                     </span>
                     <h3 class="font-display font-bold text-base leading-tight group-hover:text-[#FF6B26]" style="color:#FFFFFF">
@@ -591,7 +591,7 @@ const checkIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
           </div>
         </div>
         <div style="border-left:1px solid rgba(74,117,153,0.12);padding-left:2rem">
-          <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:#4A7599">
+          <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:var(--forge-300)">
             También te puede servir
           </p>
           <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
@@ -610,7 +610,7 @@ const checkIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
                     <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
                     <span class="text-xs" style="color:#64748B">{l.desc}</span>
                   </span>
-                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#4A7599" stroke-width="2.5" aria-hidden="true">
+                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="var(--forge-300)" stroke-width="2.5" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
                   </svg>
                 </a>
@@ -670,7 +670,7 @@ const checkIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
           var puntos = JSON.parse(el.dataset.puntos || '[]');
           if (!puntos.length) return;
           var map = L.map(el, { scrollWheelZoom: false });
-          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '&copy; OpenStreetMap' }).addTo(map);
+          L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', { maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" rel="noopener nofollow">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions" rel="noopener nofollow">CARTO</a>' }).addTo(map);
           var bounds = [];
           puntos.forEach(function (p) {
             L.marker([p.lat, p.lng]).addTo(map).bindPopup('<strong>' + p.ciudad + '</strong><br>' + p.n + (p.n === 1 ? ' estación' : ' estaciones'));

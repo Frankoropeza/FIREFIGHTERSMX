@@ -1,0 +1,163 @@
+---
+/*
+  Contenido del drawer móvil del header.
+
+  Vive fuera de Header.astro porque se sirve como parcial estático en
+  /parciales/menu-movil/ y el header lo inyecta la primera vez que se
+  toca el hamburguesa. Así el markup (≈50 KB) deja de viajar en cada
+  una de las 2,711 páginas. No pierde enlaces: los mismos destinos ya
+  están en la navegación de escritorio, que sí viaja en el HTML.
+*/
+import { navigation } from '@data/navigation';
+import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl } from '@config/site';
+
+/*
+  El parcial es el mismo para las 2,711 páginas, así que no puede saber
+  cuál es la ruta actual: el resaltado del enlace activo lo pone el
+  header en cliente al inyectar el markup (marcaActivos en Header.astro).
+*/
+---
+
+
+<!-- Search / CTA bar -->
+<div class="container-site pt-5 pb-4 flex gap-3" style="border-bottom:1px solid rgba(74,117,153,0.15)">
+  <a href="/empresas/registro/" class="btn btn-primary flex-1 justify-center text-sm">Registrar mi empresa</a>
+  <a
+    href={whatsappUrl('Hola, quiero información.')}
+    target="_blank" rel="noopener"
+    class="flex items-center justify-center w-11 h-11 rounded-sm shrink-0 text-white"
+    style="background:#25d366"
+    aria-label="WhatsApp"
+  >
+    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    </svg>
+  </a>
+</div>
+
+<!-- Nav items -->
+<nav class="container-site pb-6" aria-label="Menú móvil">
+  {navigation.main.map((item, idx) => (
+    <div class="mob-l1" style="border-bottom:1px solid rgba(74,117,153,0.12)">
+
+      {item.children ? (
+        /* ── Item con dropdown ── */
+        <>
+          <div class="flex items-stretch">
+            <a
+              href={item.href}
+              class={`mob-link flex-1 flex items-center px-1 py-4 text-[15px] font-display font-semibold ${'text-white'}`}
+            >
+              {item.label}
+            </a>
+            <button
+              class="mob-acc-btn flex items-center justify-center w-12 shrink-0"
+              style="color:var(--forge-300)"
+              data-l1={idx}
+              aria-expanded="false"
+              aria-label={`Expandir ${item.label}`}
+            >
+              <svg class="mob-caret w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- L1 panel -->
+          <div class="mob-l1-panel hidden" data-l1-panel={idx}>
+            <div class="ml-3 pl-3 flex flex-col pb-2" style="border-left:1px solid rgba(74,117,153,0.2)">
+              {item.children.map((child, cidx) => (
+                child.children ? (
+                  /* ── L2 ítem con sub-dropdown ── */
+                  <div class="mob-l2">
+                    <div class="flex items-stretch">
+                      <a
+                        href={child.href}
+                        class={`mob-link flex-1 flex flex-col justify-center px-3 py-3 text-sm ${'text-[var(--slate-300)]'}`}
+                      >
+                        <span class="font-medium">{child.label}</span>
+                        {child.description && (
+                          <span class="text-[10px] mt-0.5" style="color:var(--forge-300)">{child.description}</span>
+                        )}
+                      </a>
+                      <button
+                        class="mob-sub-btn flex items-center justify-center w-10 shrink-0"
+                        style="color:var(--forge-400)"
+                        data-l2={`${idx}-${cidx}`}
+                        aria-expanded="false"
+                        aria-label={`Expandir ${child.label}`}
+                      >
+                        <svg class="mob-sub-caret w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                        </svg>
+                      </button>
+                    </div>
+
+                    <!-- L2 sub-panel -->
+                    <div class="mob-l2-panel hidden" data-l2-panel={`${idx}-${cidx}`}>
+                      <div class="ml-4 pl-3 py-1" style="border-left:2px solid rgba(247,80,0,0.3)">
+                        {child.children.map((sub) => (
+                          <a
+                            href={sub.href}
+                            class={`mob-link flex flex-col px-2 py-2.5 text-xs ${'text-[var(--slate-400)] hover:text-[var(--ember-300)]'}`}
+                          >
+                            <span class="flex items-center gap-1.5">
+                              <svg class="w-2.5 h-2.5 shrink-0 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                              </svg>
+                              <span class="font-medium">{sub.label}</span>
+                            </span>
+                            {sub.description && (
+                              <span class="pl-4 text-[10px]" style="color:var(--forge-300)">{sub.description}</span>
+                            )}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  /* ── L2 ítem normal ── */
+                  <a
+                    href={child.href}
+                    class={`mob-link flex flex-col px-3 py-3 text-sm ${child.label.startsWith('Ver') ? 'mt-1 pt-3' : ''}${child.label.startsWith('Ver') ? 'text-[var(--ember-500)] font-semibold' : 'text-[var(--slate-400)] hover:text-white'}`}
+                    style={child.label.startsWith('Ver') ? 'border-top:1px solid rgba(74,117,153,0.15)' : ''}
+                  >
+                    <span class="font-medium">{child.label}</span>
+                    {child.description && !child.label.startsWith('Ver') && (
+                      <span class="text-[10px] mt-0.5" style="color:var(--forge-300)">{child.description}</span>
+                    )}
+                  </a>
+                )
+              ))}
+            </div>
+          </div>
+        </>
+      ) : (
+        /* ── Item simple sin dropdown ── */
+        <a
+          href={item.href}
+          class={`mob-link block px-1 py-4 text-[15px] font-display font-semibold ${'text-white'}`}
+        >
+          {item.label}
+        </a>
+      )}
+    </div>
+  ))}
+
+  <!-- Info de contacto al pie del menú -->
+  <div class="mt-5 pt-4 flex flex-col gap-2" style="border-top:1px solid rgba(74,117,153,0.15)">
+    {CONTACTO_DIRECTO_ACTIVO && (
+<a
+      href={`tel:${SITE.phoneE164}`}
+      class="flex items-center gap-2 text-sm py-1"
+      style="color:var(--forge-200)"
+    >
+      <svg class="w-4 h-4 shrink-0" style="color:var(--ember-500)" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+      </svg>
+      {SITE.phone}
+    </a>
+)}
+    <p class="text-xs" style="color:var(--forge-400)">{SITE.hours}</p>
+  </div>
+</nav>

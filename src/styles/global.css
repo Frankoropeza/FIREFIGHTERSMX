@@ -22,7 +22,11 @@
   --forge-600:   #122133;
   --forge-500:   #1A2E44;
   --forge-400:   #2C4A63;
-  --forge-300:   #4A7599;
+  /* Subido de #4A7599 a #5E8CB0 el 2026-09-06: el anterior daba 4.06:1
+     sobre --forge-900 y 3.33:1 sobre --forge-600, por debajo del 4.5:1
+     que WCAG AA pide para texto pequeño (rótulos de 10-12 px). El nuevo
+     da 5.54:1 y 4.53:1 respectivamente. */
+  --forge-300:   #5E8CB0;
   --forge-200:   #7AA4C4;
   --forge-100:   #B8D4E8;
   --forge-50:    #E8F2F9;

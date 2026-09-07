@@ -162,7 +162,7 @@ const articulos = [
   {/* ══ BREADCRUMB ══════════════════════════════════════════════════════ */}
   <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
     <div class="container-site">
-      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0 flex-wrap" style="color:#4A7599">
+      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0 flex-wrap" style="color:var(--forge-300)">
         <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
         <li aria-hidden="true">/</li>
         <li><a href="/productos" class="hover:text-[#FF6B26]">Productos</a></li>
@@ -215,7 +215,7 @@ const articulos = [
             ].map(s => (
               <div class="flex flex-col items-center justify-center text-center p-5" style="background:#070E1A;border:1px solid rgba(74,117,153,0.2)">
                 <span class="font-display font-bold text-2xl mb-1" style="color:#F75000">{s.v}</span>
-                <span class="text-[10px] uppercase tracking-widest" style="color:#4A7599">{s.l}</span>
+                <span class="text-[10px] uppercase tracking-widest" style="color:var(--forge-300)">{s.l}</span>
               </div>
             ))}
           </div>
@@ -233,7 +233,7 @@ const articulos = [
             ].map(s => (
               <div class="flex flex-col items-center justify-center text-center p-5" style="background:#070E1A;border:1px solid rgba(74,117,153,0.2)">
                 <span class="font-display font-bold text-2xl mb-1" style="color:#F75000">{s.v}</span>
-                <span class="text-[10px] uppercase tracking-widest" style="color:#4A7599">{s.l}</span>
+                <span class="text-[10px] uppercase tracking-widest" style="color:var(--forge-300)">{s.l}</span>
               </div>
             ))}
           </div>
@@ -303,7 +303,7 @@ const articulos = [
         <table class="w-full text-sm" style="border-collapse:collapse">
           <thead>
             <tr style="background:#040A12;border-bottom:1px solid rgba(74,117,153,0.25)">
-              <th class="text-left py-3 px-4 text-[10px] font-bold uppercase tracking-widest" style="color:#4A7599;min-width:140px">Característica</th>
+              <th class="text-left py-3 px-4 text-[10px] font-bold uppercase tracking-widest" style="color:var(--forge-300);min-width:140px">Característica</th>
               <th class="text-center py-3 px-4 text-[10px] font-bold uppercase tracking-widest" style="color:#F75000">FLIR</th>
               <th class="text-center py-3 px-4 text-[10px] font-bold uppercase tracking-widest" style="color:#60A5FA">MSA Safety</th>
               <th class="text-center py-3 px-4 text-[10px] font-bold uppercase tracking-widest" style="color:#F5A623">Bullard</th>
@@ -514,7 +514,7 @@ const articulos = [
           </div>
         </div>
         <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
-          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:#4A7599">Aprende más</h2>
+          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">Aprende más</h2>
           <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
             {articulos.map((l) => (
               <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
@@ -523,7 +523,7 @@ const articulos = [
                     <span class="font-display font-semibold text-sm group-hover:text-[#F75000]" style="color:#FFFFFF">{l.label}</span>
                     <span class="text-xs" style="color:#64748B">{l.desc}</span>
                   </span>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4A7599" stroke-width="2" class="shrink-0">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--forge-300)" stroke-width="2" class="shrink-0">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
                   </svg>
                 </a>
@@ -603,7 +603,7 @@ const articulos = [
             class="btn btn-ghost btn-lg text-center">
             Solicitar cotización formal
           </a>
-          <p class="text-xs text-center m-0" style="color:#4A7599">Respuesta en menos de 2 horas · Lunes a sábado 8–20 h</p>
+          <p class="text-xs text-center m-0" style="color:var(--forge-300)">Respuesta en menos de 2 horas · Lunes a sábado 8–20 h</p>
         </div>
       </div>
     </div>
@@ -628,7 +628,7 @@ const articulos = [
           <a href={l.href} class="group flex flex-col gap-2 p-5" style={`background:#080F1A;border:1px solid rgba(74,117,153,0.18);border-top:2px solid ${l.accent}`}>
             <span class="font-display font-bold text-sm" style={`color:${l.accent}`}>{l.label}</span>
             <span class="text-xs leading-relaxed" style="color:#64748B">{l.desc}</span>
-            <span class="text-xs font-semibold mt-auto pt-2" style="color:#4A7599">Guía de {l.label} →</span>
+            <span class="text-xs font-semibold mt-auto pt-2" style="color:var(--forge-300)">Guía de {l.label} →</span>
           </a>
         ))}
       </div>
@@ -663,7 +663,7 @@ const articulos = [
   {/* ══ CATEGORÍAS RELACIONADAS ═══════════════════════════════════════ */}
   <section style="background:#040A12;border-top:1px solid rgba(74,117,153,0.15)" aria-labelledby="cats-rel-title">
     <div class="container-site py-10 sm:py-12">
-      <p id="cats-rel-title" class="text-[9px] font-display font-bold uppercase tracking-widest mb-6" style="color:#4A7599">Categorías relacionadas</p>
+      <p id="cats-rel-title" class="text-[9px] font-display font-bold uppercase tracking-widest mb-6" style="color:var(--forge-300)">Categorías relacionadas</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <a href="/productos/equipos-scba"
            class="group flex flex-col gap-2 p-5 hover:border-[#F75000]"

@@ -23,7 +23,21 @@ const {
   schema,
 } = Astro.props;
 
-const fullTitle = noBrandSuffix || title.includes('FIREFIGHTERS MX') ? title : `${title} | FIREFIGHTERS MX`;
+/*
+  El sufijo de marca sólo se anexa si el <title> sigue cabiendo en los ~70
+  caracteres que Google alcanza a mostrar. En 1,419 fichas el nombre de la
+  empresa ya se come el renglón y el sufijo únicamente provocaba que el
+  buscador truncara o reescribiera el título; ahí vale más el nombre.
+*/
+const TITULO_MAX = 70;
+const tituloBase = title.trim();
+const tituloConMarca = `${tituloBase} | ${SITE.name}`;
+const fullTitle =
+  noBrandSuffix || tituloBase.includes(SITE.name)
+    ? tituloBase
+    : tituloConMarca.length <= TITULO_MAX
+      ? tituloConMarca
+      : tituloBase;
 const absoluteOgImageRaw = ogImage.startsWith('http') ? ogImage : `https://firefighters.mx${ogImage}`;
 
 // OG requiere formatos universales (WhatsApp/Facebook/Twitter no soportan AVIF/WebP):

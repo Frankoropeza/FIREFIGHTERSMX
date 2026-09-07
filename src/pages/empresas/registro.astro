@@ -23,7 +23,7 @@ const planes = [
 ---
 <BaseLayout {...seoMeta} schema={[breadcrumbSchema]}>
   <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
-    <div class="container-site"><ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:#4A7599">
+    <div class="container-site"><ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
       <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li><li aria-hidden="true">/</li>
       <li><a href="/empresas/" class="hover:text-[#FF6B26]">Directorio de Empresas</a></li><li aria-hidden="true">/</li>
       <li><span style="color:#94A3B8" aria-current="page">Registro</span></li></ol></div>
@@ -39,7 +39,7 @@ const planes = [
         <p class="text-sm leading-[1.9]" style="color:#94A3B8">Quien te busca aquí es un cuerpo de bomberos, una brigada industrial, un responsable de protección civil o un comprador de gobierno. Una ficha verificada y completa es la diferencia entre que te encuentren o no.</p>
       </div>
       <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
-        <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:#4A7599">Qué obtienes al reclamar tu ficha</p>
+        <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:var(--forge-300)">Qué obtienes al reclamar tu ficha</p>
         <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
           {['Contacto completo, logo y descripción', 'Marcas que distribuyes y certificaciones', 'Sello de datos verificados', 'Posición prioritaria en tu giro y estado (destacado)'].map((x) => (<li class="py-3 text-sm" style="border-bottom:1px solid rgba(74,117,153,0.15);color:#CBD5E1">{x}</li>))}
         </ul>
@@ -96,13 +96,13 @@ const planes = [
       </div>
       <aside class="flex flex-col gap-4 lg:sticky lg:top-28">
         <div class="p-6" style="background:#0C1825;border:1px solid rgba(74,117,153,0.25)">
-          <p class="font-display font-bold text-xs uppercase tracking-widest mb-3" style="color:#4A7599">Qué verificamos</p>
+          <p class="font-display font-bold text-xs uppercase tracking-widest mb-3" style="color:var(--forge-300)">Qué verificamos</p>
           <ul class="flex flex-col gap-2 list-none m-0 p-0 text-xs" style="color:#CBD5E1">
             <li>· Que la empresa existe y opera en el giro declarado</li><li>· Que el contacto responde desde un dominio o teléfono de la empresa</li><li>· Que las certificaciones declaradas son verificables</li><li>· Que las marcas distribuidas coinciden con lo público del fabricante</li>
           </ul>
         </div>
         <div class="p-6" style="background:#0C1825;border:1px solid rgba(74,117,153,0.25)">
-          <p class="font-display font-bold text-xs uppercase tracking-widest mb-3" style="color:#4A7599">De dónde salen los registros básicos</p>
+          <p class="font-display font-bold text-xs uppercase tracking-widest mb-3" style="color:var(--forge-300)">De dónde salen los registros básicos</p>
           <p class="text-xs leading-relaxed" style="color:#94A3B8">Del Directorio Estadístico Nacional de Unidades Económicas (DENUE) del INEGI, filtrado y clasificado por giro por nuestra redacción. Si un registro es incorrecto o ya no opera, <a href="/contacto/" class="hover:text-[#FF6B26]" style="color:#FF8F57">avísanos</a> y lo corregimos.</p>
         </div>
       </aside>

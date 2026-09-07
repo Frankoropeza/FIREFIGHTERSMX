@@ -57,7 +57,7 @@ const readingTime = Math.ceil((post.body ?? '').split(' ').length / 200);
   <!-- Contenido -->
   <div class={`flex flex-col gap-3 p-5 ${featured ? 'lg:w-1/2 lg:p-8 lg:justify-center' : 'flex-1'}`}>
     <div class="flex items-center gap-2">
-      <span class="text-[10px] font-display font-semibold uppercase tracking-widest" style="color:#4A7599">{readingTime} min de lectura</span>
+      <span class="text-[10px] font-display font-semibold uppercase tracking-widest" style="color:var(--forge-300)">{readingTime} min de lectura</span>
     </div>
 
     <h3 class={`font-display font-bold leading-tight text-balance ${featured ? 'text-2xl' : 'text-lg'}`} style="color:#FFFFFF">

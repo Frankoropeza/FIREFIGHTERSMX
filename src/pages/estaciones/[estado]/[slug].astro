@@ -299,15 +299,22 @@ const equipoDescs: EquipoDesc[] = equipoDescByTipo[estacion.tipo] ?? equipoDescB
 const servicios3 = estacion.servicios.slice(0, 3).map(capacidadLabel).join(', ').toLowerCase();
 
 /* ── SEO ── */
-// El titulo SIEMPRE lleva ciudad y estado: es la senal local de la ficha.
-// Si el nombre es largo se recorta el nombre, nunca la ubicacion (auditoria E-18).
+// El titulo lleva ciudad y estado: es la senal local de la ficha (auditoria E-18).
+//
+// Corrección 2026-09-06: recortar el NOMBRE producía titles duplicados entre
+// estaciones hermanas ("Bomberos Acapulco — Subestación… — Acapulco de Juárez,
+// GRO" en tres fichas distintas), porque lo que distingue a una estación de
+// otra es justo la cola del nombre. Ahora el nombre va completo y lo que se
+// cae, si no cabe, es la ciudad — que además ya viene en el nombre en la
+// mayoría de estos casos.
 const nombreLimpio = estacion.nombre.replace(/["“”]/g, '').trim();
 const ubicacionTitulo = `${estacion.ciudad}, ${estado.abreviatura}`;
-const margenTitulo = 60 - ubicacionTitulo.length - 3; // ' — '
-const nombreTitulo = nombreLimpio.length <= margenTitulo
-  ? nombreLimpio
-  : `${nombreLimpio.slice(0, margenTitulo - 1).replace(/\s+\S*$/, '')}…`;
-const seoTitle = `${nombreTitulo} — ${ubicacionTitulo}`;
+const seoTitle =
+  `${nombreLimpio} — ${ubicacionTitulo}`.length <= 70
+    ? `${nombreLimpio} — ${ubicacionTitulo}`
+    : `${nombreLimpio}, ${estado.abreviatura}`.length <= 70
+      ? `${nombreLimpio}, ${estado.abreviatura}`
+      : nombreLimpio;
 /** Recorta en límite de palabra, sin cortar a media sílaba (máx. 158). */
 function recorta(txt: string, max = 158): string {
   if (txt.length <= max) return txt;
@@ -376,7 +383,7 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
   {/* ── Breadcrumb ── */}
   <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
     <div class="container-site">
-      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0 flex-wrap" style="color:#4A7599">
+      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0 flex-wrap" style="color:var(--forge-300)">
         <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
         <li aria-hidden="true" class="opacity-40">/</li>
         <li><a href="/estaciones" class="hover:text-[#FF6B26]">Directorio</a></li>
@@ -414,10 +421,10 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
             )}
             {estacion.fundacion && (
               <span class="font-display text-[10px] uppercase tracking-wider px-2.5 py-1"
-                style="color:#4A7599;border:1px solid rgba(74,117,153,0.3)">Desde {estacion.fundacion}</span>
+                style="color:var(--forge-300);border:1px solid rgba(74,117,153,0.3)">Desde {estacion.fundacion}</span>
             )}
             <span class="font-display text-[10px] uppercase tracking-wider px-2.5 py-1"
-              style="color:#4A7599;border:1px solid rgba(74,117,153,0.3)">{estado.region}</span>
+              style="color:var(--forge-300);border:1px solid rgba(74,117,153,0.3)">{estado.region}</span>
           </div>
 
           {/* H1 */}
@@ -487,7 +494,7 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
               ))}
               {estacion.descripcion.split('\n\n').length > 2 && (
                 <a href="#perfil" class="text-xs uppercase tracking-wider hover:text-[#FF6B26]"
-                  style="color:#4A7599">Leer la descripción completa ↓</a>
+                  style="color:var(--forge-300)">Leer la descripción completa ↓</a>
               )}
             </div>
           ) : (
@@ -503,7 +510,7 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                   { label: 'Municipio',  value: estacion.municipio },
                 ].slice(0, 4).map(({ label, value }) => (
                   <div class="flex flex-col gap-1 p-3" style="background:#070E1A;border:1px solid rgba(74,117,153,0.15)">
-                    <span class="text-[9px] uppercase tracking-widest" style="color:#4A7599">{label}</span>
+                    <span class="text-[9px] uppercase tracking-widest" style="color:var(--forge-300)">{label}</span>
                     <span class="text-sm font-medium" style="color:#CBD5E1">{value}</span>
                   </div>
                 ))}
@@ -552,7 +559,7 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
               </div>
             )}
 
-            <h3 class="font-display font-bold text-xs uppercase tracking-widest mb-3 m-0" style="color:#4A7599">
+            <h3 class="font-display font-bold text-xs uppercase tracking-widest mb-3 m-0" style="color:var(--forge-300)">
               Ficha técnica institucional
             </h3>
             <div class="overflow-hidden" style="border:1px solid rgba(74,117,153,0.2)">
@@ -581,7 +588,7 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                     { campo: 'Número de emergencias',  valor: TELEFONO_EMERGENCIAS },
                   ] as { campo: string; valor: string }[]).map(({ campo, valor }, i) => (
                     <tr style={`border-bottom:1px solid rgba(74,117,153,0.12);background:${i % 2 === 0 ? '#040A12' : '#060D16'}`}>
-                      <td class="px-4 py-3 text-xs font-medium whitespace-nowrap" style="color:#4A7599;width:38%">{campo}</td>
+                      <td class="px-4 py-3 text-xs font-medium whitespace-nowrap" style="color:var(--forge-300);width:38%">{campo}</td>
                       <td class="px-4 py-3 text-sm" style="color:#CBD5E1">{valor}</td>
                     </tr>
                   ))}
@@ -611,7 +618,7 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                 {estacion.estacionesFisicas && (
                   <div class="p-5 flex flex-col gap-2" style="background:#040A12;border:1px solid rgba(74,117,153,0.18);border-top:3px solid #4A7599">
                     <h3 class="font-display font-bold m-0 leading-none" style="color:#FFFFFF;font-size:2.5rem">{estacion.estacionesFisicas}</h3>
-                    <p class="text-xs uppercase tracking-wider m-0" style="color:#4A7599">Cuarteles</p>
+                    <p class="text-xs uppercase tracking-wider m-0" style="color:var(--forge-300)">Cuarteles</p>
                     <p class="text-[11px] leading-relaxed m-0" style="color:#64748B">Bases operativas que garantizan cobertura territorial en turnos de 24 horas</p>
                   </div>
                 )}
@@ -677,9 +684,9 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
               <table class="w-full" style="border-collapse:collapse;min-width:520px">
                 <thead>
                   <tr style="background:#040A12;border-bottom:2px solid rgba(74,117,153,0.3)">
-                    <th class="px-4 py-3 text-left text-[10px] font-bold uppercase tracking-wider" style="color:#4A7599;width:18%">Norma</th>
-                    <th class="px-4 py-3 text-left text-[10px] font-bold uppercase tracking-wider" style="color:#4A7599;width:30%">Área de aplicación</th>
-                    <th class="px-4 py-3 text-left text-[10px] font-bold uppercase tracking-wider" style="color:#4A7599">Descripción</th>
+                    <th class="px-4 py-3 text-left text-[10px] font-bold uppercase tracking-wider" style="color:var(--forge-300);width:18%">Norma</th>
+                    <th class="px-4 py-3 text-left text-[10px] font-bold uppercase tracking-wider" style="color:var(--forge-300);width:30%">Área de aplicación</th>
+                    <th class="px-4 py-3 text-left text-[10px] font-bold uppercase tracking-wider" style="color:var(--forge-300)">Descripción</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -738,7 +745,7 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                     </span>
                   </div>
                   <p class="text-xs leading-relaxed m-0" style="color:#64748B">{eq.desc}</p>
-                  <span class="text-xs mt-auto group-hover:text-[#FF6B26]" style="color:#4A7599">
+                  <span class="text-xs mt-auto group-hover:text-[#FF6B26]" style="color:var(--forge-300)">
                     Equipo para bomberos →
                   </span>
                 </a>
@@ -780,12 +787,12 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                 ></div>
               </div>
               {estacion.direccion ? (
-                <p class="text-xs mt-3 flex items-start gap-1.5 m-0" style="color:#4A7599">
+                <p class="text-xs mt-3 flex items-start gap-1.5 m-0" style="color:var(--forge-300)">
                   <span class="w-3.5 h-3.5 shrink-0 mt-0.5" set:html={pinIcon} aria-hidden="true"/>
                   {estacion.direccion}
                 </p>
               ) : (
-                <p class="text-[11px] mt-2 m-0" style="color:#4A7599">
+                <p class="text-[11px] mt-2 m-0" style="color:var(--forge-300)">
                   Ubicación de referencia. Coordenadas: {mapLat}, {mapLng}.
                 </p>
               )}
@@ -812,9 +819,9 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                   const fLabel = typeof f === 'string' ? f : f.nombre;
                   return (
                     <div class="flex items-start gap-2.5">
-                      <span class="font-display text-[10px] font-bold shrink-0 mt-0.5" style="color:#4A7599">{String(i + 1).padStart(2,'0')}</span>
+                      <span class="font-display text-[10px] font-bold shrink-0 mt-0.5" style="color:var(--forge-300)">{String(i + 1).padStart(2,'0')}</span>
                       <a href={fUrl} target="_blank" rel="noopener noreferrer nofollow"
-                        class="text-xs break-all hover:text-[#FF6B26]" style="color:#4A7599">{fLabel}</a>
+                        class="text-xs break-all hover:text-[#FF6B26]" style="color:var(--forge-300)">{fLabel}</a>
                     </div>
                   );
                 })}
@@ -841,14 +848,14 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                     </span>
                   )}
                 </div>
-                {verif && <p class="text-[10px] mt-0.5 m-0" style="color:#4A7599">Actualizado {verif}</p>}
+                {verif && <p class="text-[10px] mt-0.5 m-0" style="color:var(--forge-300)">Actualizado {verif}</p>}
               </div>
 
               <div class="px-5 pt-4 pb-5 flex flex-col gap-4">
                 {/* Emergencias */}
                 {TELEFONO_EMERGENCIAS && (
                   <div>
-                    <div class="text-[9px] uppercase tracking-widest mb-1" style="color:#4A7599">Emergencias</div>
+                    <div class="text-[9px] uppercase tracking-widest mb-1" style="color:var(--forge-300)">Emergencias</div>
                     <a href={`tel:${TELEFONO_EMERGENCIAS}`}
                       class="font-display font-bold text-2xl hover:text-[#ff8c5a]" style="color:#F75000">
                       {TELEFONO_EMERGENCIAS}
@@ -859,9 +866,9 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                 {/* Teléfono directo */}
                 {estacion.telefono && (
                   <div class="flex items-start gap-2.5">
-                    <span class="w-4 h-4 shrink-0 mt-0.5" style="color:#4A7599" set:html={phoneIcon} aria-hidden="true"/>
+                    <span class="w-4 h-4 shrink-0 mt-0.5" style="color:var(--forge-300)" set:html={phoneIcon} aria-hidden="true"/>
                     <div>
-                      <div class="text-[9px] uppercase tracking-widest mb-0.5" style="color:#4A7599">Conmutador</div>
+                      <div class="text-[9px] uppercase tracking-widest mb-0.5" style="color:var(--forge-300)">Conmutador</div>
                       <a href={`tel:${estacion.telefono.replace(/[^0-9+]/g, '')}`}
                         class="text-sm hover:text-[#FF6B26]" style="color:#CBD5E1">{estacion.telefono}</a>
                     </div>
@@ -871,9 +878,9 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                 {/* Teléfonos adicionales */}
                 {estacion.telefonosAdicionales && estacion.telefonosAdicionales.length > 0 && (
                   <div class="flex items-start gap-2.5">
-                    <span class="w-4 h-4 shrink-0 mt-0.5" style="color:#4A7599" set:html={phoneIcon} aria-hidden="true"/>
+                    <span class="w-4 h-4 shrink-0 mt-0.5" style="color:var(--forge-300)" set:html={phoneIcon} aria-hidden="true"/>
                     <div>
-                      <div class="text-[9px] uppercase tracking-widest mb-0.5" style="color:#4A7599">Otras líneas</div>
+                      <div class="text-[9px] uppercase tracking-widest mb-0.5" style="color:var(--forge-300)">Otras líneas</div>
                       <div class="flex flex-col gap-0.5">
                         {estacion.telefonosAdicionales.map((t) => (
                           <a href={`tel:${t.replace(/[^0-9+]/g, '')}`}
@@ -887,9 +894,9 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                 {/* Email */}
                 {estacion.email && (
                   <div class="flex items-start gap-2.5">
-                    <span class="w-4 h-4 shrink-0 mt-0.5" style="color:#4A7599" set:html={mailIcon} aria-hidden="true"/>
+                    <span class="w-4 h-4 shrink-0 mt-0.5" style="color:var(--forge-300)" set:html={mailIcon} aria-hidden="true"/>
                     <div>
-                      <div class="text-[9px] uppercase tracking-widest mb-0.5" style="color:#4A7599">Correo oficial</div>
+                      <div class="text-[9px] uppercase tracking-widest mb-0.5" style="color:var(--forge-300)">Correo oficial</div>
                       <a href={`mailto:${estacion.email}`} class="text-xs break-all hover:text-[#FF6B26]" style="color:#CBD5E1">{estacion.email}</a>
                     </div>
                   </div>
@@ -898,9 +905,9 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                 {/* Sitio web */}
                 {estacion.sitioWeb && (
                   <div class="flex items-start gap-2.5">
-                    <span class="w-4 h-4 shrink-0 mt-0.5" style="color:#4A7599" set:html={globeIcon} aria-hidden="true"/>
+                    <span class="w-4 h-4 shrink-0 mt-0.5" style="color:var(--forge-300)" set:html={globeIcon} aria-hidden="true"/>
                     <div>
-                      <div class="text-[9px] uppercase tracking-widest mb-0.5" style="color:#4A7599">Sitio oficial</div>
+                      <div class="text-[9px] uppercase tracking-widest mb-0.5" style="color:var(--forge-300)">Sitio oficial</div>
                       <a href={estacion.sitioWeb} target="_blank" rel="noopener noreferrer"
                         class="text-xs break-all hover:text-[#FF6B26]" style="color:#CBD5E1">
                         {estacion.sitioWeb.replace(/^https?:\/\//, '').replace(/\/$/, '')}
@@ -911,7 +918,7 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
 
                 {/* Jurisdicción + operador */}
                 <div class="pt-3" style="border-top:1px solid rgba(74,117,153,0.12)">
-                  <div class="text-[9px] uppercase tracking-widest mb-1" style="color:#4A7599">Jurisdicción</div>
+                  <div class="text-[9px] uppercase tracking-widest mb-1" style="color:var(--forge-300)">Jurisdicción</div>
                   <p class="text-xs m-0" style="color:#94A3B8">
                     <span style={`color:${cfg.color}`}>{cfg.label}</span>
                     {' · '}{estacion.municipio}, {estado.nombre}
@@ -924,7 +931,7 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                 {/* Capacidad (mini) si NO hay descripción larga que la muestre */}
                 {(estacion.elementos || estacion.estacionesFisicas || estacion.unidades) && !estacion.descripcion && (
                   <div class="pt-3 flex flex-col gap-2" style="border-top:1px solid rgba(74,117,153,0.12)">
-                    <div class="text-[9px] uppercase tracking-widest" style="color:#4A7599">Capacidad</div>
+                    <div class="text-[9px] uppercase tracking-widest" style="color:var(--forge-300)">Capacidad</div>
                     {estacion.elementos && (
                       <div class="flex items-center justify-between">
                         <span class="text-xs" style="color:#64748B">Personal</span>
@@ -963,7 +970,7 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                     Equipo para {cfg.label}
                   </span>
                 </div>
-                <p class="text-[10px] mt-1 m-0" style="color:#4A7599">Productos certificados NFPA · Entrega en {estado.nombre}</p>
+                <p class="text-[10px] mt-1 m-0" style="color:var(--forge-300)">Productos certificados NFPA · Entrega en {estado.nombre}</p>
               </div>
               <div class="flex flex-col">
                 {prodLinks.map((p, i) => (
@@ -972,11 +979,11 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                     style={i > 0 ? 'border-top:1px solid rgba(74,117,153,0.1)' : ''}>
                     <span class="text-xs group-hover:text-[#FF6B26]" style="color:#CBD5E1">{p.label}</span>
                     <span class="w-3.5 h-3.5 shrink-0 opacity-40 group-hover:opacity-100 group-hover:text-[#FF6B26]"
-                      style="color:#4A7599" set:html={arrowIcon} aria-hidden="true"/>
+                      style="color:var(--forge-300)" set:html={arrowIcon} aria-hidden="true"/>
                   </a>
                 ))}
                 <div class="px-5 pt-3 pb-4" style="border-top:1px solid rgba(74,117,153,0.1)">
-                  <a href="/productos" class="text-[10px] uppercase tracking-wider hover:text-[#FF6B26]" style="color:#4A7599">
+                  <a href="/productos" class="text-[10px] uppercase tracking-wider hover:text-[#FF6B26]" style="color:var(--forge-300)">
                     Catálogo de equipo para bomberos →
                   </a>
                 </div>
@@ -988,12 +995,12 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
               <div style="background:#040A12;border:1px solid rgba(74,117,153,0.2);border-top:2px solid #4A7599">
                 <div class="px-5 pt-4 pb-3" style="border-bottom:1px solid rgba(74,117,153,0.12)">
                   <div class="flex items-center gap-2">
-                    <span class="w-3.5 h-3.5 shrink-0" style="color:#4A7599" set:html={mapPinIcon} aria-hidden="true"/>
+                    <span class="w-3.5 h-3.5 shrink-0" style="color:var(--forge-300)" set:html={mapPinIcon} aria-hidden="true"/>
                     <span class="font-display font-bold text-xs uppercase tracking-widest" style="color:#FFFFFF">
                       En {estado.nombre}
                     </span>
                   </div>
-                  <p class="text-[10px] mt-1 m-0" style="color:#4A7599">
+                  <p class="text-[10px] mt-1 m-0" style="color:var(--forge-300)">
                     {estado.estaciones.length - 1} corporacion{estado.estaciones.length - 1 !== 1 ? 'es' : ''} más en el estado
                   </p>
                 </div>
@@ -1014,14 +1021,14 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                   })}
                   {todasHermanas.length > 8 && (
                     <div class="px-5 pt-3 pb-4" style="border-top:1px solid rgba(74,117,153,0.1)">
-                      <a href={`/estaciones/${estado.slug}`} class="text-[10px] uppercase tracking-wider hover:text-[#FF6B26]" style="color:#4A7599">
+                      <a href={`/estaciones/${estado.slug}`} class="text-[10px] uppercase tracking-wider hover:text-[#FF6B26]" style="color:var(--forge-300)">
                         {todasHermanas.length} cuerpos de bomberos en {estado.nombre} →
                       </a>
                     </div>
                   )}
                   {todasHermanas.length <= 8 && (
                     <div class="px-5 pt-3 pb-4" style="border-top:1px solid rgba(74,117,153,0.1)">
-                      <a href={`/estaciones/${estado.slug}`} class="text-[10px] uppercase tracking-wider hover:text-[#FF6B26]" style="color:#4A7599">
+                      <a href={`/estaciones/${estado.slug}`} class="text-[10px] uppercase tracking-wider hover:text-[#FF6B26]" style="color:var(--forge-300)">
                         Directorio {estado.nombre} →
                       </a>
                     </div>
@@ -1043,12 +1050,12 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                   <a href={b.href}
                     class="flex items-start gap-2.5 px-5 py-3 hover:bg-[rgba(74,117,153,0.06)] group"
                     style={i > 0 ? 'border-top:1px solid rgba(74,117,153,0.1)' : ''}>
-                    <span class="shrink-0 font-display text-[10px] font-bold mt-0.5" style="color:#4A7599">{String(i + 1).padStart(2,'0')}</span>
+                    <span class="shrink-0 font-display text-[10px] font-bold mt-0.5" style="color:var(--forge-300)">{String(i + 1).padStart(2,'0')}</span>
                     <span class="text-xs leading-snug group-hover:text-[#FF6B26]" style="color:#94A3B8">{b.label}</span>
                   </a>
                 ))}
                 <div class="px-5 pt-3 pb-4" style="border-top:1px solid rgba(74,117,153,0.1)">
-                  <a href="/blog" class="text-[10px] uppercase tracking-wider hover:text-[#FF6B26]" style="color:#4A7599">
+                  <a href="/blog" class="text-[10px] uppercase tracking-wider hover:text-[#FF6B26]" style="color:var(--forge-300)">
                     Blog técnico para bomberos →
                   </a>
                 </div>
@@ -1062,7 +1069,7 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                   <span class="font-display font-bold text-xs uppercase tracking-widest" style="color:#FFFFFF">
                     Región {estado.region}
                   </span>
-                  <p class="text-[10px] mt-1 m-0" style="color:#4A7599">Otros estados de la región</p>
+                  <p class="text-[10px] mt-1 m-0" style="color:var(--forge-300)">Otros estados de la región</p>
                 </div>
                 <div class="flex flex-col">
                   {estadosRegion.map((e, i) => (
@@ -1071,14 +1078,14 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                       style={i > 0 ? 'border-top:1px solid rgba(74,117,153,0.1)' : ''}>
                       <div class="flex flex-col gap-0.5">
                         <span class="text-xs group-hover:text-[#FF6B26]" style="color:#CBD5E1">{e.nombre}</span>
-                        <span class="text-[10px]" style="color:#4A7599">{e.estaciones.length} corporacion{e.estaciones.length !== 1 ? 'es' : ''}</span>
+                        <span class="text-[10px]" style="color:var(--forge-300)">{e.estaciones.length} corporacion{e.estaciones.length !== 1 ? 'es' : ''}</span>
                       </div>
                       <span class="w-3.5 h-3.5 shrink-0 opacity-30 group-hover:opacity-80"
-                        style="color:#4A7599" set:html={arrowIcon} aria-hidden="true"/>
+                        style="color:var(--forge-300)" set:html={arrowIcon} aria-hidden="true"/>
                     </a>
                   ))}
                   <div class="px-5 pt-3 pb-4" style="border-top:1px solid rgba(74,117,153,0.1)">
-                    <a href="/estaciones" class="text-[10px] uppercase tracking-wider hover:text-[#FF6B26]" style="color:#4A7599">
+                    <a href="/estaciones" class="text-[10px] uppercase tracking-wider hover:text-[#FF6B26]" style="color:var(--forge-300)">
                       Directorio nacional de estaciones →
                     </a>
                   </div>
@@ -1134,8 +1141,11 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
         var lat = parseFloat(el.dataset.lat), lng = parseFloat(el.dataset.lng);
         if (isNaN(lat) || isNaN(lng)) return;
         var map = L.map(el, { scrollWheelZoom: false, attributionControl: true }).setView([lat, lng], 14);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          maxZoom: 19, attribution: '© OpenStreetMap'
+        /* Carto en vez de tile.openstreetmap.org: la política de uso de OSM
+           pide no servir sus teselas desde sitios con tráfico sistemático,
+           y el basemap oscuro además va con el diseño. */
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+          maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" rel="noopener nofollow">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions" rel="noopener nofollow">CARTO</a>'
         }).addTo(map);
         var icon = L.divIcon({
           html: '<div style="width:12px;height:12px;background:#F75000;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 3px rgba(247,80,0,0.3)"></div>',

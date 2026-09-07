@@ -17,7 +17,7 @@ import { brands } from '@data/brands';
       {brands.map((b) => (
         <a href={`/marcas/${b.slug}/`} class="grid-cell ledger-cell flex flex-col items-center justify-center gap-2 p-6 text-center min-h-[120px]" style="background:#070E1A">
           <span class="font-display font-bold text-2xl" style="color:#FFFFFF;letter-spacing:0.02em">{b.name.split(' ')[0]}</span>
-          <span class="text-[10px] uppercase tracking-widest" style="color:#4A7599">{b.country?.replace(/^\S+\s/, '') ?? ''}</span>
+          <span class="text-[10px] uppercase tracking-widest" style="color:var(--forge-300)">{b.country?.replace(/^\S+\s/, '') ?? ''}</span>
         </a>))}
     </div>
   </div>

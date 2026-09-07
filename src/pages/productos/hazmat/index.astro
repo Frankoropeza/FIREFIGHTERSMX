@@ -171,7 +171,7 @@ const articulos = [
   {/* ══ BREADCRUMB ══════════════════════════════════════════════════════ */}
   <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
     <div class="container-site">
-      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0 flex-wrap" style="color:#4A7599">
+      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0 flex-wrap" style="color:var(--forge-300)">
         <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
         <li aria-hidden="true">/</li>
         <li><a href="/productos" class="hover:text-[#FF6B26]">Productos</a></li>
@@ -225,7 +225,7 @@ const articulos = [
             ].map(s => (
               <div class="flex flex-col items-center justify-center text-center p-5" style="background:#070E1A;border:1px solid rgba(74,117,153,0.2)">
                 <span class="font-display font-bold text-xl mb-1" style="color:#EF4444">{s.v}</span>
-                <span class="text-[10px] uppercase tracking-widest" style="color:#4A7599">{s.l}</span>
+                <span class="text-[10px] uppercase tracking-widest" style="color:var(--forge-300)">{s.l}</span>
               </div>
             ))}
           </div>
@@ -244,7 +244,7 @@ const articulos = [
             ].map(s => (
               <div class="flex flex-col items-center justify-center text-center p-5" style="background:#070E1A;border:1px solid rgba(74,117,153,0.2)">
                 <span class="font-display font-bold text-xl mb-1" style="color:#EF4444">{s.v}</span>
-                <span class="text-[10px] uppercase tracking-widest" style="color:#4A7599">{s.l}</span>
+                <span class="text-[10px] uppercase tracking-widest" style="color:var(--forge-300)">{s.l}</span>
               </div>
             ))}
           </div>
@@ -302,7 +302,7 @@ const articulos = [
               <div>
                 <span class="font-display font-bold text-xs uppercase tracking-widest block mb-1" style={`color:${n.accent}`}>{n.norm}</span>
                 <h3 class="font-display font-bold text-2xl" style="color:#FFFFFF">{n.nivel}</h3>
-                <p class="text-xs mt-1" style="color:#4A7599">{n.escenario}</p>
+                <p class="text-xs mt-1" style="color:var(--forge-300)">{n.escenario}</p>
               </div>
               <span class="badge badge-dark text-[9px] shrink-0">{n.marcas.split(' · ')[0]}</span>
             </div>
@@ -319,7 +319,7 @@ const articulos = [
               </ul>
             </div>
             <div class="pt-3" style="border-top:1px solid rgba(74,117,153,0.15)">
-              <span class="text-[9px] font-bold uppercase tracking-widest" style="color:#4A7599">Marcas referencia: </span>
+              <span class="text-[9px] font-bold uppercase tracking-widest" style="color:var(--forge-300)">Marcas referencia: </span>
               <span class="text-[9px]" style="color:#64748B">{n.marcas}</span>
             </div>
           </div>
@@ -589,7 +589,7 @@ const articulos = [
           </div>
         </div>
         <div class="lg:pl-16" style="border-left:1px solid rgba(239,68,68,0.15)">
-          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:#4A7599">Aprende más</h2>
+          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">Aprende más</h2>
           <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
             {articulos.map((l) => (
               <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
@@ -598,7 +598,7 @@ const articulos = [
                     <span class="font-display font-semibold text-sm group-hover:text-[#EF4444]" style="color:#FFFFFF">{l.label}</span>
                     <span class="text-xs" style="color:#64748B">{l.desc}</span>
                   </span>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4A7599" stroke-width="2" class="shrink-0">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--forge-300)" stroke-width="2" class="shrink-0">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
                   </svg>
                 </a>
@@ -680,7 +680,7 @@ const articulos = [
             class="btn btn-ghost btn-lg text-center">
             Cotización formal de brigada
           </a>
-          <p class="text-xs text-center m-0" style="color:#4A7599">Respuesta en menos de 2 horas · Lunes a sábado 8–20 h</p>
+          <p class="text-xs text-center m-0" style="color:var(--forge-300)">Respuesta en menos de 2 horas · Lunes a sábado 8–20 h</p>
         </div>
       </div>
     </div>
@@ -705,7 +705,7 @@ const articulos = [
           <a href={l.href} class="group flex flex-col gap-2 p-5" style={`background:#080F1A;border:1px solid rgba(74,117,153,0.18);border-top:2px solid ${l.accent}`}>
             <span class="font-display font-bold text-sm" style={`color:${l.accent}`}>{l.label}</span>
             <span class="text-xs leading-relaxed" style="color:#64748B">{l.desc}</span>
-            <span class="text-xs font-semibold mt-auto pt-2" style="color:#4A7599">Guía de {l.label} →</span>
+            <span class="text-xs font-semibold mt-auto pt-2" style="color:var(--forge-300)">Guía de {l.label} →</span>
           </a>
         ))}
       </div>
@@ -740,7 +740,7 @@ const articulos = [
   {/* ══ CATEGORÍAS RELACIONADAS ═══════════════════════════════════════ */}
   <section style="background:#040A12;border-top:1px solid rgba(74,117,153,0.15)" aria-labelledby="cats-rel-title">
     <div class="container-site py-10 sm:py-12">
-      <p id="cats-rel-title" class="text-[9px] font-display font-bold uppercase tracking-widest mb-6" style="color:#4A7599">Categorías relacionadas</p>
+      <p id="cats-rel-title" class="text-[9px] font-display font-bold uppercase tracking-widest mb-6" style="color:var(--forge-300)">Categorías relacionadas</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <a href="/productos/equipos-scba"
            class="group flex flex-col gap-2 p-5 hover:border-[#F75000]"

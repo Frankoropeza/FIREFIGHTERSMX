@@ -59,12 +59,12 @@ const destacado = e.plan === 'destacado';
   {(esp.length > 0 || otros.length > 0) && (
     <div class="flex flex-wrap gap-1.5">
       {esp.map((s) => <span class="text-[10px] px-2 py-0.5" style="color:#94A3B8;border:1px solid rgba(74,117,153,0.3)">{s}</span>)}
-      {otros.map((s) => <span class="text-[10px] px-2 py-0.5" style="color:#4A7599;border:1px dashed rgba(74,117,153,0.3)">+ {s}</span>)}
+      {otros.map((s) => <span class="text-[10px] px-2 py-0.5" style="color:var(--forge-300);border:1px dashed rgba(74,117,153,0.3)">+ {s}</span>)}
     </div>
   )}
 
   <div class="mt-auto pt-3 flex items-center justify-between gap-3" style="border-top:1px solid rgba(74,117,153,0.12)">
-    <span class="text-[10px] uppercase tracking-widest" style="color:#4A7599">{e.estrato ? e.estrato.replace(' personas', ' pers.') : 'Registro público'}</span>
+    <span class="text-[10px] uppercase tracking-widest" style="color:var(--forge-300)">{e.estrato ? e.estrato.replace(' personas', ' pers.') : 'Registro público'}</span>
     <a href={urlEmpresa(e)} class="font-display font-semibold text-xs uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57">{g.labelCorto} en {e.ciudad} →</a>
   </div>
 </article>

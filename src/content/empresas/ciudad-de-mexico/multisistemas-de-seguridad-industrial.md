@@ -20,5 +20,8 @@ denueId: "9464664"
 verificadoEl: "2026-09"
 confianza: "baja"
 plan: "basico"
-activa: true
+activa: false
+fueraDeGiro: "Clase DENUE de seguridad privada/monitoreo de alarmas, no de
+  protección contra incendio. Retirada del directorio el 2026-09-06; se conserva
+  el registro por si el DENUE corrige la clase o la empresa acredita línea CI."
 ---

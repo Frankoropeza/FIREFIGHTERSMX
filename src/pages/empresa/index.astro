@@ -131,7 +131,7 @@ const aboutSchema = {
   <!-- Breadcrumb -->
   <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
     <div class="container-site">
-      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:#4A7599">
+      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
         <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
         <li aria-hidden="true">/</li>
         <li><span style="color:#94A3B8" aria-current="page">Empresa</span></li>
@@ -240,7 +240,7 @@ const aboutSchema = {
               <div class="absolute bottom-0 left-0 right-0 h-8 pointer-events-none" style="background:linear-gradient(to bottom, transparent, #080F1A)"></div>
             </div>
             <div class="flex flex-col flex-1 p-5 gap-2.5">
-              <span class="text-[9px] font-display font-semibold uppercase tracking-widest" style="color:#4A7599">{s.tag}</span>
+              <span class="text-[9px] font-display font-semibold uppercase tracking-widest" style="color:var(--forge-300)">{s.tag}</span>
               <h3 class="font-display font-bold text-lg leading-tight group-hover:text-[#FF6B26]" style="color:#FFFFFF">{s.title}</h3>
               <p class="text-xs leading-relaxed" style="color:#64748B;flex:1">{s.desc}</p>
               <span class="flex items-center gap-1.5 text-xs font-display font-semibold uppercase tracking-wider" style="color:#FF8F57;letter-spacing:0.1em">
@@ -317,7 +317,7 @@ const aboutSchema = {
         </div>
 
         <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
-          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:#4A7599">
+          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">
             También te puede servir
           </h2>
           <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
@@ -334,7 +334,7 @@ const aboutSchema = {
                     <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
                     <span class="text-xs" style="color:#64748B">{l.desc}</span>
                   </span>
-                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#4A7599" stroke-width="2.5" aria-hidden="true">
+                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="var(--forge-300)" stroke-width="2.5" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
                   </svg>
                 </a>

@@ -12,11 +12,38 @@ import { todasLasEmpresas, empresasPorGiroEstado, estadoMeta, urlEmpresa, type E
 import { urlsLineasDeEmpresa } from '@lib/lineas';
 import type { GetStaticPaths } from 'astro';
 
-export const getStaticPaths = (async () =>
-  (await todasLasEmpresas()).map((e) => ({ params: { giro: e.giroPrincipal, estado: e.estado, slug: e.slug }, props: { e } }))
-) satisfies GetStaticPaths;
+/*
+  Sucursales de una misma cadena en un mismo estado producían el mismo title
+  ("Provesicsa — Equipo y EPP en Chihuahua, CHIH" en cuatro fichas). Aquí se
+  marcan esos casos para que la ficha añada el municipio o la colonia y cada
+  URL tenga un title propio.
+*/
+export const getStaticPaths = (async () => {
+  const todas = await todasLasEmpresas();
+  const clave = (x: Empresa) => `${x.nombre}|${x.giroPrincipal}|${x.estado}`;
+  const claveConMunicipio = (x: Empresa) => `${clave(x)}|${x.municipio ?? ''}`;
+  const veces = new Map<string, number>();
+  const vecesConMunicipio = new Map<string, number>();
+  for (const x of todas) {
+    veces.set(clave(x), (veces.get(clave(x)) ?? 0) + 1);
+    vecesConMunicipio.set(claveConMunicipio(x), (vecesConMunicipio.get(claveConMunicipio(x)) ?? 0) + 1);
+  }
+  return todas.map((e) => ({
+    params: { giro: e.giroPrincipal, estado: e.estado, slug: e.slug },
+    props: {
+      e,
+      /** 'no' | 'municipio' | 'colonia' — qué hace falta para que el title sea único */
+      desambigua:
+        (veces.get(clave(e)) ?? 0) <= 1
+          ? 'no'
+          : (vecesConMunicipio.get(claveConMunicipio(e)) ?? 0) <= 1
+            ? 'municipio'
+            : 'colonia',
+    },
+  }));
+}) satisfies GetStaticPaths;
 
-const { e } = Astro.props as { e: Empresa };
+const { e, desambigua } = Astro.props as { e: Empresa; desambigua: 'no' | 'municipio' | 'colonia' };
 const g = giroMap[e.giroPrincipal];
 const edo = estadoMeta(e.estado)!;
 const plan = planConfig[e.plan];
@@ -64,9 +91,26 @@ const nombreLlevaPlaza = [e.ciudad, e.municipio].some((x) => x && e.nombre.toLow
 /* Title: con la ciudad si cabe en ~60 caracteres; si no, solo la abreviatura del estado.
    Antes 1,211 fichas pasaban de 70 caracteres por ciudades largas. */
 const tituloLargo = `${e.nombre} — ${g.labelCorto} en ${e.ciudad}, ${edo.abreviatura}`;
-const tituloSEO = nombreLlevaPlaza
+const tituloCorto = nombreLlevaPlaza
   ? `${e.nombre}, ${edo.abreviatura} — ${g.labelCorto}`
   : (tituloLargo.length <= 60 ? tituloLargo : `${e.nombre} — ${g.labelCorto}, ${edo.abreviatura}`);
+/* Escalera de recorte para nombres largos ("Venta de Equipo de Seguridad
+   Industrial Prosiver"): primero se cae la etiqueta del giro, luego el
+   estado. El nombre de la empresa nunca se trunca a media palabra: es lo
+   único por lo que alguien busca esta ficha. */
+/* Sufijo que distingue sucursales homónimas dentro del mismo estado. */
+const sufijoPlaza =
+  desambigua === 'municipio' && e.municipio
+    ? ` (${e.municipio})`
+    : desambigua === 'colonia' && e.codigoPostal
+      ? ` (C.P. ${e.codigoPostal})`
+      : '';
+const tituloSEO =
+  `${tituloCorto}${sufijoPlaza}`.length <= 70
+    ? `${tituloCorto}${sufijoPlaza}`
+    : `${e.nombre}, ${edo.abreviatura}${sufijoPlaza}`.length <= 70
+      ? `${e.nombre}, ${edo.abreviatura}${sufijoPlaza}`
+      : `${e.nombre}${sufijoPlaza}`;
 /* Meta description cortada en palabra completa; nunca termina en conjunción, preposición o artículo suelto */
 const recorta = (s: string, n = 155) => {
   const t = s.replace(/\s+/g, ' ').trim(); if (t.length <= n) return t;
@@ -125,7 +169,7 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
 ---
 <BaseLayout {...seoMeta} schema={faqSchemaFicha ? [breadcrumbSchema, businessSchema, faqSchemaFicha] : [breadcrumbSchema, businessSchema]}>
   <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
-    <div class="container-site"><ol class="flex items-center gap-2 text-xs list-none m-0 p-0 flex-wrap" style="color:#4A7599">
+    <div class="container-site"><ol class="flex items-center gap-2 text-xs list-none m-0 p-0 flex-wrap" style="color:var(--forge-300)">
       <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li><li aria-hidden="true">/</li>
       <li><a href="/empresas/" class="hover:text-[#FF6B26]">Empresas</a></li><li aria-hidden="true">/</li>
       <li><a href={`/empresas/${e.giroPrincipal}/`} class="hover:text-[#FF6B26]">{g.labelCorto}</a></li><li aria-hidden="true">/</li>
@@ -145,7 +189,7 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
         <span class="font-display text-[10px] uppercase tracking-wider px-2 py-1" title={conf.descripcion} style={`color:${conf.color};background:${conf.bgColor};border:1px solid ${conf.color}33`}>{conf.label}{verif && ` · ${verif}`}</span>
       </div>
       <h1 id="ficha-heading" class="font-display font-bold mb-3" style="color:#FFFFFF;font-size:clamp(1.9rem,4.2vw,3.4rem);line-height:1">{e.nombre}</h1>
-      {e.razonSocial && <p class="font-display text-sm uppercase tracking-wider mb-4" style="color:#4A7599">{e.razonSocial}</p>}
+      {e.razonSocial && <p class="font-display text-sm uppercase tracking-wider mb-4" style="color:var(--forge-300)">{e.razonSocial}</p>}
       <p class="flex items-start gap-2 text-sm mb-0" style="color:#94A3B8">
         <svg class="w-4 h-4 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="#FF6B26" stroke-width="1.8" set:html={iconPin} aria-hidden="true"/>
         <span>{e.direccion ? `${e.direccion} · ` : ''}{e.ciudad}{e.municipio !== e.ciudad ? `, ${e.municipio}` : ''}, {edo.nombre}</span>
@@ -205,25 +249,25 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
             <div class="flex flex-col gap-4">
               {e.marcas.length > 0 && (
                 <div class="flex flex-col gap-2">
-                  <span class="font-display text-[10px] uppercase tracking-wider" style="color:#4A7599">Marcas que maneja</span>
+                  <span class="font-display text-[10px] uppercase tracking-wider" style="color:var(--forge-300)">Marcas que maneja</span>
                   <div class="flex flex-wrap gap-2">{e.marcas.map((m) => <span class="badge badge-dark font-display text-[10px]">{m}</span>)}</div>
                 </div>
               )}
               {e.certificaciones.length > 0 && (
                 <div class="flex flex-col gap-2">
-                  <span class="font-display text-[10px] uppercase tracking-wider" style="color:#4A7599">Certificaciones de producto</span>
+                  <span class="font-display text-[10px] uppercase tracking-wider" style="color:var(--forge-300)">Certificaciones de producto</span>
                   <div class="flex flex-wrap gap-2">{e.certificaciones.map((c) => <span class="badge badge-dark font-display text-[10px]">{c}</span>)}</div>
                 </div>
               )}
               {e.normas.length > 0 && (
                 <div class="flex flex-col gap-2">
-                  <span class="font-display text-[10px] uppercase tracking-wider" style="color:#4A7599">Normas de referencia</span>
+                  <span class="font-display text-[10px] uppercase tracking-wider" style="color:var(--forge-300)">Normas de referencia</span>
                   <div class="flex flex-wrap gap-2">{e.normas.map((n) => <span class="badge badge-dark font-display text-[10px]">{n}</span>)}</div>
                 </div>
               )}
               <div class="flex flex-wrap gap-x-8 gap-y-2 text-sm" style="color:#94A3B8">
-                {e.fundacion && <span><span class="font-display text-[10px] uppercase tracking-wider mr-2" style="color:#4A7599">Fundación</span>{e.fundacion}</span>}
-                {e.cobertura.length > 0 && <span><span class="font-display text-[10px] uppercase tracking-wider mr-2" style="color:#4A7599">Cobertura</span>{e.cobertura.includes('nacional') ? 'Nacional, 32 estados' : e.cobertura.join(', ')}</span>}
+                {e.fundacion && <span><span class="font-display text-[10px] uppercase tracking-wider mr-2" style="color:var(--forge-300)">Fundación</span>{e.fundacion}</span>}
+                {e.cobertura.length > 0 && <span><span class="font-display text-[10px] uppercase tracking-wider mr-2" style="color:var(--forge-300)">Cobertura</span>{e.cobertura.includes('nacional') ? 'Nacional, 32 estados' : e.cobertura.join(', ')}</span>}
               </div>
             </div>
           </div>
@@ -247,7 +291,7 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
           <div>
             <span class="section-eyebrow mb-4 inline-flex">Cuerpos de bomberos en la zona</span>
             <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
-              {estaciones.map((s) => (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/estaciones/${e.estado}/${s.slug}/`} class="group flex items-center justify-between gap-4 py-3"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{s.nombre}</span><span class="text-xs" style="color:#64748B">{s.tipo} · {s.ciudad}</span></span><span style="color:#4A7599">→</span></a></li>))}
+              {estaciones.map((s) => (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/estaciones/${e.estado}/${s.slug}/`} class="group flex items-center justify-between gap-4 py-3"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{s.nombre}</span><span class="text-xs" style="color:#64748B">{s.tipo} · {s.ciudad}</span></span><span style="color:var(--forge-300)">→</span></a></li>))}
             </ul>
           </div>
         )}
@@ -255,12 +299,12 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
 
       <aside class="flex flex-col gap-4 lg:sticky lg:top-28">
         <div class="p-6" style="background:#0C1825;border:1px solid rgba(74,117,153,0.25)">
-          <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:#4A7599">Contacto</p>
+          <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:var(--forge-300)">Contacto</p>
           <ul class="flex flex-col gap-3 list-none m-0 p-0 text-sm">
-            {e.telefono && <li class="flex items-center gap-3"><span class="font-display text-[10px] uppercase tracking-wider w-16 shrink-0" style="color:#4A7599">Tel.</span><a href={`tel:${e.telefono}`} class="hover:text-[#FF6B26]" style="color:#FFFFFF">{e.telefono}</a></li>}
-            {e.email && <li class="flex items-center gap-3"><span class="font-display text-[10px] uppercase tracking-wider w-16 shrink-0" style="color:#4A7599">Correo</span><a href={`mailto:${e.email}`} class="hover:text-[#FF6B26] break-all" style="color:#FFFFFF">{e.email}</a></li>}
-            {webPublicable && <li class="flex items-center gap-3"><span class="font-display text-[10px] uppercase tracking-wider w-16 shrink-0" style="color:#4A7599">Web</span><a href={webPublicable} target="_blank" rel="noopener sponsored" class="hover:text-[#FF6B26] break-all" style="color:#FFFFFF">{webHost}</a></li>}
-            {e.direccion && <li class="flex items-start gap-3"><span class="font-display text-[10px] uppercase tracking-wider w-16 shrink-0 mt-0.5" style="color:#4A7599">Dirección</span><span style="color:#CBD5E1">{e.direccion}</span></li>}
+            {e.telefono && <li class="flex items-center gap-3"><span class="font-display text-[10px] uppercase tracking-wider w-16 shrink-0" style="color:var(--forge-300)">Tel.</span><a href={`tel:${e.telefono}`} class="hover:text-[#FF6B26]" style="color:#FFFFFF">{e.telefono}</a></li>}
+            {e.email && <li class="flex items-center gap-3"><span class="font-display text-[10px] uppercase tracking-wider w-16 shrink-0" style="color:var(--forge-300)">Correo</span><a href={`mailto:${e.email}`} class="hover:text-[#FF6B26] break-all" style="color:#FFFFFF">{e.email}</a></li>}
+            {webPublicable && <li class="flex items-center gap-3"><span class="font-display text-[10px] uppercase tracking-wider w-16 shrink-0" style="color:var(--forge-300)">Web</span><a href={webPublicable} target="_blank" rel="noopener sponsored" class="hover:text-[#FF6B26] break-all" style="color:#FFFFFF">{webHost}</a></li>}
+            {e.direccion && <li class="flex items-start gap-3"><span class="font-display text-[10px] uppercase tracking-wider w-16 shrink-0 mt-0.5" style="color:var(--forge-300)">Dirección</span><span style="color:#CBD5E1">{e.direccion}</span></li>}
             {!e.telefono && !e.email && !webPublicable && <li class="text-xs" style="color:#64748B">Sin datos de contacto en el registro público.</li>}
           </ul>
         </div>
@@ -274,7 +318,7 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
         )}
 
         <div class="p-6" style="background:#0C1825;border:1px solid rgba(74,117,153,0.25)">
-          <p class="font-display font-bold text-xs uppercase tracking-widest mb-3" style="color:#4A7599">Fuente del registro</p>
+          <p class="font-display font-bold text-xs uppercase tracking-widest mb-3" style="color:var(--forge-300)">Fuente del registro</p>
           <ul class="flex flex-col gap-2 list-none m-0 p-0">{fuentes.map((f) => <li><a href={f.url} target="_blank" rel="noopener nofollow" class="text-xs hover:text-[#FF6B26]" style="color:#CBD5E1">{f.nombre} ↗</a></li>)}</ul>
           {e.claseDENUE && <p class="text-[11px] mt-3 leading-relaxed" style="color:#64748B">Clase de actividad: {e.claseDENUE}</p>}
           <p class="text-[11px] mt-3 leading-relaxed" style="color:#64748B">{conf.descripcion}</p>
@@ -288,7 +332,7 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
         </div>
 
         <div class="p-6" style="background:#0C1825;border:1px solid rgba(74,117,153,0.25)">
-          <p class="font-display font-bold text-xs uppercase tracking-widest mb-3" style="color:#4A7599">Guías de compra</p>
+          <p class="font-display font-bold text-xs uppercase tracking-widest mb-3" style="color:var(--forge-300)">Guías de compra</p>
           <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">{cats.map((c) => <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/productos/${c.slug}/`} class="block py-2.5 font-display font-semibold text-sm hover:text-[#FF6B26]" style="color:#FFFFFF">{c.label}</a></li>)}</ul>
         </div>
       </aside>
@@ -302,8 +346,8 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
         window.addEventListener('load', function () {
           var el = document.getElementById('ficha-map'); if (!el || typeof L === 'undefined') return;
           var lat = +el.dataset.lat, lng = +el.dataset.lng;
-          var map = L.map(el, { scrollWheelZoom: false, zoomControl: false, attributionControl: false }).setView([lat, lng], 15);
-          L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', { maxZoom: 19 }).addTo(map);
+          var map = L.map(el, { scrollWheelZoom: false, zoomControl: false }).setView([lat, lng], 15);
+          L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', { maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" rel="noopener nofollow">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions" rel="noopener nofollow">CARTO</a>' }).addTo(map);
           L.circleMarker([lat, lng], { radius: 9, color: '#040A12', weight: 2, fillColor: el.dataset.color || '#F75000', fillOpacity: 1 }).addTo(map);
         });
       </script>

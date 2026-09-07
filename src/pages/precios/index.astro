@@ -255,8 +255,8 @@ const schemas = [breadcrumbSchema, svcTrajes, svcScba, svcCascos, svcBotas, svcC
   <section style="background:#040A12;padding-block:4rem 3rem;border-bottom:1px solid rgba(74,117,153,0.2)">
     <div class="container-site">
       <nav aria-label="Breadcrumb" class="mb-6">
-        <ol class="flex items-center gap-2 text-xs" style="color:#4A7599">
-          <li><a href="/" style="color:#4A7599;hover:color:#7AA4C4">Inicio</a></li>
+        <ol class="flex items-center gap-2 text-xs" style="color:var(--forge-300)">
+          <li><a href="/" style="color:var(--forge-300);hover:color:#7AA4C4">Inicio</a></li>
           <li aria-hidden="true">/</li>
           <li aria-current="page" style="color:#94A3B8">Precios</li>
         </ol>
@@ -284,7 +284,7 @@ const schemas = [breadcrumbSchema, svcTrajes, svcScba, svcCascos, svcBotas, svcC
   <!-- ── NOTA DE PRECIOS ─────────────────────────────────────────── -->
   <div style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15);padding:1rem 0">
     <div class="container-site">
-      <p class="text-xs" style="color:#4A7599">
+      <p class="text-xs" style="color:var(--forge-300)">
         <strong style="color:#7AA4C4">Nota:</strong>
         Los precios que aparecen en esta página son rangos de referencia de mercado verificados en distribuidores autorizados México 2026.
         No incluyen IVA. Los precios finales dependen de la especificación exacta (talla, configuración, cantidad y vigencia de tipo de cambio en equipos importados).
@@ -319,9 +319,9 @@ const schemas = [breadcrumbSchema, svcTrajes, svcScba, svcCascos, svcBotas, svcC
           <div class="mt-auto">
             <div class="mb-1">
               <span class="font-display font-bold" style="color:#F75000;font-size:1.75rem">$45k–$95k</span>
-              <span class="text-xs ml-1" style="color:#4A7599">MXN + IVA</span>
+              <span class="text-xs ml-1" style="color:var(--forge-300)">MXN + IVA</span>
             </div>
-            <p class="text-[10px] mb-4" style="color:#4A7599">por conjunto completo</p>
+            <p class="text-[10px] mb-4" style="color:var(--forge-300)">por conjunto completo</p>
             <a href="/productos/trajes-bombero/" class="btn btn-sm btn-outline w-full text-center" style="font-size:0.75rem">Trajes para bomberos NFPA →</a>
           </div>
         </article>
@@ -339,9 +339,9 @@ const schemas = [breadcrumbSchema, svcTrajes, svcScba, svcCascos, svcBotas, svcC
           <div class="mt-auto">
             <div class="mb-1">
               <span class="font-display font-bold" style="color:#F75000;font-size:1.75rem">$85k–$140k</span>
-              <span class="text-xs ml-1" style="color:#4A7599">MXN + IVA</span>
+              <span class="text-xs ml-1" style="color:var(--forge-300)">MXN + IVA</span>
             </div>
-            <p class="text-[10px] mb-4" style="color:#4A7599">por equipo completo</p>
+            <p class="text-[10px] mb-4" style="color:var(--forge-300)">por equipo completo</p>
             <a href="/productos/equipos-scba/" class="btn btn-sm btn-outline w-full text-center" style="font-size:0.75rem">Equipos SCBA para bomberos →</a>
           </div>
         </article>
@@ -360,9 +360,9 @@ const schemas = [breadcrumbSchema, svcTrajes, svcScba, svcCascos, svcBotas, svcC
           <div class="mt-auto">
             <div class="mb-1">
               <span class="font-display font-bold" style="color:#F75000;font-size:1.75rem">$6.5k–$18k</span>
-              <span class="text-xs ml-1" style="color:#4A7599">MXN + IVA</span>
+              <span class="text-xs ml-1" style="color:var(--forge-300)">MXN + IVA</span>
             </div>
-            <p class="text-[10px] mb-4" style="color:#4A7599">por casco</p>
+            <p class="text-[10px] mb-4" style="color:var(--forge-300)">por casco</p>
             <a href="/productos/cascos-nfpa/" class="btn btn-sm btn-outline w-full text-center" style="font-size:0.75rem">Cascos para bomberos NFPA →</a>
           </div>
         </article>
@@ -380,9 +380,9 @@ const schemas = [breadcrumbSchema, svcTrajes, svcScba, svcCascos, svcBotas, svcC
           <div class="mt-auto">
             <div class="mb-1">
               <span class="font-display font-bold" style="color:#F75000;font-size:1.75rem">$3.5k–$8k</span>
-              <span class="text-xs ml-1" style="color:#4A7599">MXN + IVA</span>
+              <span class="text-xs ml-1" style="color:var(--forge-300)">MXN + IVA</span>
             </div>
-            <p class="text-[10px] mb-4" style="color:#4A7599">por par</p>
+            <p class="text-[10px] mb-4" style="color:var(--forge-300)">por par</p>
             <a href="/blog/botas-bombero-comparativa-haix-lion-apparel-jolly/" class="btn btn-sm btn-outline w-full text-center" style="font-size:0.75rem">Comparativa de botas →</a>
           </div>
         </article>
@@ -424,7 +424,7 @@ const schemas = [breadcrumbSchema, svcTrajes, svcScba, svcCascos, svcBotas, svcC
             >
               <div>
                 <span class="text-xs font-medium" style={`color:${i === 5 ? '#F75000' : '#FFFFFF'}`}>{row.item}</span>
-                <span class="block text-[10px]" style="color:#4A7599">{row.nota}</span>
+                <span class="block text-[10px]" style="color:var(--forge-300)">{row.nota}</span>
               </div>
               <span class="font-display font-bold text-sm shrink-0" style={`color:${i === 5 ? '#F75000' : '#94A3B8'}`}>{row.rango}</span>
             </div>

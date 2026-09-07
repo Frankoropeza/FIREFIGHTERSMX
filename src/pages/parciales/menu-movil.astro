@@ -1,0 +1,12 @@
+---
+/*
+  Parcial estático del drawer móvil. No es una página: no lleva layout,
+  <html> ni <head>. El header la pide por fetch la primera vez que se
+  abre el menú en móvil y la inyecta en #mobile-menu.
+
+  Fuera del sitemap (filtro en astro.config.mjs) y fuera del checador de
+  huérfanas.
+*/
+import MenuMovilContenido from '@components/common/MenuMovilContenido.astro';
+---
+<MenuMovilContenido />

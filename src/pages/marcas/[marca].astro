@@ -104,7 +104,7 @@ const waMsg = `Hola, quiero información sobre productos ${brand.name} que distr
     aria-label="Breadcrumb"
   >
     <div class="container-site">
-      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:#4A7599">
+      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
         <li><a href="/"        class="hover:text-[#FF6B26]">Inicio</a></li>
         <li aria-hidden="true">/</li>
         <li><a href="/marcas"  class="hover:text-[#FF6B26]">Marcas</a></li>
@@ -152,7 +152,7 @@ const waMsg = `Hola, quiero información sobre productos ${brand.name} que distr
           </h1>
 
           {brand.country && (
-            <p class="text-sm mb-6" style="color:#4A7599">{brand.country}</p>
+            <p class="text-sm mb-6" style="color:var(--forge-300)">{brand.country}</p>
           )}
 
           {/* Badges de normas */}

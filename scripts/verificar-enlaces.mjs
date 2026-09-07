@@ -24,6 +24,9 @@ const PERMITIDOS = [
   /(^|\.)inegi\.org\.mx$/i,
   /(^|\.)google\.com$/i,
   /(^|\.)openstreetmap\.org$/i,
+  // Atribucion obligatoria del basemap (OpenStreetMap + CARTO). No es un
+  // enlace comercial: es la licencia de las teselas del mapa de la ficha.
+  /(^|\.)carto\.com$/i,
   /(^|\.)cdnjs\.cloudflare\.com$/i,
   /(^|\.)unpkg\.com$/i,
   /\.gob\.mx$/i,

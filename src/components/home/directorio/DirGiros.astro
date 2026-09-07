@@ -45,7 +45,7 @@ const topPorGiro = Object.fromEntries(await Promise.all(giros.map(async (g) => [
                 <a href={`/empresas/${g.slug}/`} class="hover:text-[#FF6B26]">{g.label}</a>
               </h3>
               <p class="text-sm leading-relaxed" style="color:#94A3B8">{g.claim}</p>
-              <p class="text-xs leading-relaxed" style="color:#4A7599">
+              <p class="text-xs leading-relaxed" style="color:var(--forge-300)">
                 <span class="font-display uppercase tracking-wider" style="color:#64748B">Mayor oferta:</span>{' '}
                 {top.map((t, k) => <Fragment>{k > 0 && ' · '}<a href={`/empresas/${g.slug}/${t.slug}/`} class="hover:text-[#FF6B26]" style="color:#94A3B8">{t.nombre}</a></Fragment>)}
               </p>

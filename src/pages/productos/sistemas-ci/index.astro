@@ -288,7 +288,7 @@ const tablaComparativa = [
   <!-- Breadcrumb -->
   <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
     <div class="container-site">
-      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0 flex-wrap" style="color:#4A7599">
+      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0 flex-wrap" style="color:var(--forge-300)">
         <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
         <li aria-hidden="true">/</li>
         <li><a href="/productos" class="hover:text-[#FF6B26]">Productos</a></li>
@@ -613,14 +613,14 @@ const tablaComparativa = [
                 <div>
                   <span class="text-xs font-display font-bold tracking-widest uppercase" style={`color:${s.accent}`}>{s.norm}</span>
                   <h3 class="font-display font-bold text-xl leading-tight" style="color:#FFFFFF">{s.label}</h3>
-                  <span class="text-xs" style="color:#4A7599">{s.marcas}</span>
+                  <span class="text-xs" style="color:var(--forge-300)">{s.marcas}</span>
                 </div>
               </div>
 
               <p class="text-sm leading-relaxed" style="color:#94A3B8">{s.desc}</p>
 
               <div class="pt-4" style="border-top:1px solid rgba(74,117,153,0.15)">
-                <p class="text-[10px] font-display font-bold uppercase tracking-widest mb-2" style="color:#4A7599">Aplicación típica</p>
+                <p class="text-[10px] font-display font-bold uppercase tracking-widest mb-2" style="color:var(--forge-300)">Aplicación típica</p>
                 <p class="text-xs" style={`color:${s.accent};font-weight:600`}>{s.aplicacion}</p>
               </div>
 
@@ -633,7 +633,7 @@ const tablaComparativa = [
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-0">
               {/* Tipos */}
               <div class="flex flex-col gap-0 p-8" style="background:#070E1A;border-right:1px solid rgba(74,117,153,0.14)">
-                <p class="text-[10px] font-display font-bold uppercase tracking-widest mb-5" style="color:#4A7599">Componentes y variantes</p>
+                <p class="text-[10px] font-display font-bold uppercase tracking-widest mb-5" style="color:var(--forge-300)">Componentes y variantes</p>
                 <ul class="flex flex-col gap-4 list-none m-0 p-0">
                   {s.items.map((item) => (
                     <li class="flex flex-col gap-1">
@@ -651,7 +651,7 @@ const tablaComparativa = [
 
               {/* Entregables */}
               <div class="flex flex-col gap-4 p-8" style="background:#080F1A">
-                <p class="text-[10px] font-display font-bold uppercase tracking-widest mb-1" style="color:#4A7599">Entregables del proyecto</p>
+                <p class="text-[10px] font-display font-bold uppercase tracking-widest mb-1" style="color:var(--forge-300)">Entregables del proyecto</p>
                 <ul class="flex flex-col gap-3 list-none m-0 p-0">
                   {s.entregables.map((e) => (
                     <li class="flex items-start gap-2">
@@ -689,7 +689,7 @@ const tablaComparativa = [
           <thead>
             <tr style="border-bottom:2px solid rgba(52,211,153,0.35)">
               {['Subsistema','Norma','Activación','Ocupación típica','Entregable clave','Mantenimiento'].map((c, i) => (
-                <th class="text-left font-display font-bold uppercase tracking-widest p-3" style={`color:${i === 0 ? '#FFFFFF' : '#4A7599'};font-size:10px;background:#080F1A`}>{c}</th>
+                <th class="text-left font-display font-bold uppercase tracking-widest p-3" style={`color:${i === 0 ? '#FFFFFF' : 'var(--forge-300)'};font-size:10px;background:#080F1A`}>{c}</th>
               ))}
             </tr>
           </thead>
@@ -707,7 +707,7 @@ const tablaComparativa = [
           </tbody>
         </table>
       </div>
-      <p class="text-xs mt-4" style="color:#4A7599">* La selección final requiere visita técnica, clasificación del riesgo y memoria de cálculo conforme a cada norma aplicable.</p>
+      <p class="text-xs mt-4" style="color:var(--forge-300)">* La selección final requiere visita técnica, clasificación del riesgo y memoria de cálculo conforme a cada norma aplicable.</p>
     </div>
   </section>
 
@@ -833,7 +833,7 @@ const tablaComparativa = [
         </div>
 
         <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
-          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:#4A7599">Aprende más</h2>
+          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">Aprende más</h2>
           <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
             {articulos.map((l) => (
               <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
@@ -842,7 +842,7 @@ const tablaComparativa = [
                     <span class="font-display font-semibold text-sm group-hover:text-[#34D399]" style="color:#FFFFFF">{l.label}</span>
                     <span class="text-xs" style="color:#64748B">{l.desc}</span>
                   </span>
-                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#4A7599" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
+                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="var(--forge-300)" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
                 </a>
               </li>
             ))}
@@ -932,7 +932,7 @@ const tablaComparativa = [
           <a href={whatsappUrl('Hola, quiero cotizar la protección contra incendio completa: sistema fijo, extintores y EPP de brigada.')} target="_blank" rel="noopener" class="btn btn-primary">Cotizar protección completa</a>
         </div>
         <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
-          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:#4A7599">También te puede servir</h2>
+          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">También te puede servir</h2>
           <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
             {[
               { label: 'Extintores NOM-154-SCFI',     desc: 'PQS ABC · CO₂ · Tipo K · Agente limpio portable',              href: '/productos/extintores' },
@@ -947,7 +947,7 @@ const tablaComparativa = [
                     <span class="font-display font-semibold text-sm group-hover:text-[#34D399]" style="color:#FFFFFF">{l.label}</span>
                     <span class="text-xs" style="color:#64748B">{l.desc}</span>
                   </span>
-                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#4A7599" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
+                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="var(--forge-300)" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
                 </a>
               </li>
             ))}
@@ -956,7 +956,7 @@ const tablaComparativa = [
       </div>
 
       <div class="mt-14 pt-10" style="border-top:1px solid rgba(74,117,153,0.15)">
-        <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-6" style="color:#4A7599">Otras categorías del catálogo</h2>
+        <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-6" style="color:var(--forge-300)">Otras categorías del catálogo</h2>
         <div class="flex flex-wrap gap-3">
           {otrasCategorias.map((c) => (
             <a href={`/productos/${c.slug}`} class="btn btn-sm btn-dark">{c.label}</a>
@@ -971,7 +971,7 @@ const tablaComparativa = [
   {/* ══ CATEGORÍAS RELACIONADAS ═══════════════════════════════════════ */}
   <section style="background:#040A12;border-top:1px solid rgba(74,117,153,0.15)" aria-labelledby="cats-rel-title">
     <div class="container-site py-10 sm:py-12">
-      <p id="cats-rel-title" class="text-[9px] font-display font-bold uppercase tracking-widest mb-6" style="color:#4A7599">Categorías relacionadas</p>
+      <p id="cats-rel-title" class="text-[9px] font-display font-bold uppercase tracking-widest mb-6" style="color:var(--forge-300)">Categorías relacionadas</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <a href="/productos/extintores"
            class="group flex flex-col gap-2 p-5 hover:border-[#F75000]"

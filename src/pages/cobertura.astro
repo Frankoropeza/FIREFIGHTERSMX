@@ -40,7 +40,7 @@ const features = [
   <!-- Breadcrumb -->
   <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
     <div class="container-site">
-      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:#4A7599">
+      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
         <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
         <li aria-hidden="true">/</li>
         <li><a href="/empresa" class="hover:text-[#FF6B26]">Empresa</a></li>
@@ -145,7 +145,7 @@ const features = [
               </span>
               <div class="flex items-center gap-2 shrink-0">
                 {e.express && <span class="badge badge-fire text-[9px]">Express</span>}
-                <span class="text-[10px]" style="color:#4A7599">→</span>
+                <span class="text-[10px]" style="color:var(--forge-300)">→</span>
               </div>
             </a>
           </li>
@@ -171,7 +171,7 @@ const features = [
           <a href={whatsappUrl('Hola, quiero confirmar envío a mi ciudad.')} target="_blank" rel="noopener" class="btn btn-primary">Consultar mi envío</a>
         </div>
         <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
-          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:#4A7599">
+          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">
             También te puede servir
           </h2>
           <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
@@ -188,7 +188,7 @@ const features = [
                     <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
                     <span class="text-xs" style="color:#64748B">{l.desc}</span>
                   </span>
-                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#4A7599" stroke-width="2.5" aria-hidden="true">
+                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="var(--forge-300)" stroke-width="2.5" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
                   </svg>
                 </a>

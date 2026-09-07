@@ -15,11 +15,13 @@ especialidades: ["epp-industrial"]
 claseDENUE: "Comercio al por mayor de otra maquinaria y equipo de uso general"
 estrato: "11 a 30 personas"
 telefono: "4777177092"
+sitioWeb: "https://repiba.com.mx"
 fuentes:
   - { nombre: "DENUE — INEGI", url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=12309577" }
+  - { nombre: "REPIBA — Contacto", url: "https://repiba.com.mx/pagina/contacto/" }
 denueId: "12309577"
 verificadoEl: "2026-09"
-confianza: "baja"
+confianza: "media"
 plan: "basico"
 activa: true
 ---

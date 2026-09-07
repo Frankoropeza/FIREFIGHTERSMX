@@ -84,7 +84,7 @@ const collectionSchema = {
   <!-- Breadcrumb -->
   <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
     <div class="container-site">
-      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:#4A7599">
+      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
         <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
         <li aria-hidden="true">/</li>
         <li><span style="color:#94A3B8" aria-current="page">Blog</span></li>
@@ -207,7 +207,7 @@ const collectionSchema = {
                   <li>
                     <a href="/blog" class="side-cat w-full flex items-center justify-between gap-3 px-5 py-3 is-active" style="text-decoration:none">
                       <span class="font-display text-sm">Todas</span>
-                      <span class="text-xs" style="color:#4A7599">{allPosts.length}</span>
+                      <span class="text-xs" style="color:var(--forge-300)">{allPosts.length}</span>
                     </a>
                   </li>
                   {categories.map((cat) => (
@@ -218,7 +218,7 @@ const collectionSchema = {
                         style="text-decoration:none"
                       >
                         <span class="font-display text-sm">{cat}</span>
-                        <span class="text-xs" style="color:#4A7599">{categoryCounts[cat]}</span>
+                        <span class="text-xs" style="color:var(--forge-300)">{categoryCounts[cat]}</span>
                       </a>
                     </li>
                   ))}
@@ -234,7 +234,7 @@ const collectionSchema = {
                   {allPosts.slice(0, 5).map((post) => (
                     <li style="border-top:1px solid rgba(74,117,153,0.12)">
                       <a href={`/blog/${post.id}`} class="side-post group flex flex-col gap-1 px-5 py-4">
-                        <span class="text-[10px] font-display font-semibold uppercase tracking-widest" style="color:#4A7599">{post.data.category}</span>
+                        <span class="text-[10px] font-display font-semibold uppercase tracking-widest" style="color:var(--forge-300)">{post.data.category}</span>
                         <span class="font-display font-semibold text-sm leading-snug group-hover:text-[#FF6B26]" style="color:#E2E8F0">{post.data.title}</span>
                       </a>
                     </li>
@@ -275,7 +275,7 @@ const collectionSchema = {
                           <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#E2E8F0">{r.label}</span>
                           <span class="text-xs" style="color:#64748B">{r.desc}</span>
                         </span>
-                        <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#4A7599" stroke-width="2.5" aria-hidden="true">
+                        <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="var(--forge-300)" stroke-width="2.5" aria-hidden="true">
                           <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
                         </svg>
                       </a>

@@ -31,7 +31,7 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
 ---
 <BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema]}>
   <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
-    <div class="container-site"><ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:#4A7599">
+    <div class="container-site"><ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
       <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li><li aria-hidden="true">/</li>
       <li><span style="color:#94A3B8" aria-current="page">Directorio de Empresas</span></li></ol></div>
   </nav>
@@ -57,7 +57,7 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
           </div>
         </div>
         <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
-          <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:#4A7599">Entra por giro</p>
+          <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:var(--forge-300)">Entra por giro</p>
           <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
             {giros.map((g) => (
               <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
@@ -108,7 +108,7 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
       <MapaEmpresas src="/data/empresas-puntos.json" ariaLabel="Mapa nacional de empresas de equipo contra incendio" />
       <div class="flex flex-wrap gap-4 mt-3">
         {giros.map((g) => <span class="inline-flex items-center gap-2 text-[11px]" style="color:#94A3B8"><span class="w-2.5 h-2.5 rounded-full" style={`background:${g.color}`}></span>{g.labelCorto}</span>)}
-        <span class="text-[11px]" style="color:#4A7599">Coordenadas del registro público DENUE (INEGI).</span>
+        <span class="text-[11px]" style="color:var(--forge-300)">Coordenadas del registro público DENUE (INEGI).</span>
       </div>
     </div>
   </section>
@@ -129,7 +129,7 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
         {porEstado.map((s) => (
           <a href={`/empresas/estado/${s.slug}/`} class="grid-cell ledger-cell flex flex-col gap-1 p-4" style="background:#040A12">
             <span class="font-display font-semibold text-sm leading-tight" style="color:#FFFFFF">{s.nombre}</span>
-            <span class="text-[10px] uppercase tracking-widest" style="color:#4A7599">{estadosMeta.find((e) => e.slug === s.slug)?.region}</span>
+            <span class="text-[10px] uppercase tracking-widest" style="color:var(--forge-300)">{estadosMeta.find((e) => e.slug === s.slug)?.region}</span>
           </a>))}
       </div>
     </div>

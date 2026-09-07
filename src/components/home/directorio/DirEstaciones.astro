@@ -20,7 +20,7 @@ const destacados = ['ciudad-de-mexico', 'estado-de-mexico', 'jalisco', 'nuevo-le
       {destacados.map((e) => (
         <a href={`/estaciones/${e.slug}/`} class="grid-cell ledger-cell flex flex-col gap-1 p-5" style="background:#070E1A">
           <span class="font-display font-semibold text-base leading-tight" style="color:#FFFFFF">Bomberos en {e.nombre}</span>
-          <span class="text-[10px] uppercase tracking-widest" style="color:#4A7599">{e.region}</span>
+          <span class="text-[10px] uppercase tracking-widest" style="color:var(--forge-300)">{e.region}</span>
         </a>))}
     </div>
   </div>

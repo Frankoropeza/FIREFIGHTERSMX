@@ -78,7 +78,7 @@ const h2s = 'color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1'
 ---
 <BaseLayout {...seoMeta} schema={schemas}>
   <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
-    <div class="container-site"><ol class="flex items-center gap-2 text-xs list-none m-0 p-0 flex-wrap" style="color:#4A7599">
+    <div class="container-site"><ol class="flex items-center gap-2 text-xs list-none m-0 p-0 flex-wrap" style="color:var(--forge-300)">
       <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li><li aria-hidden="true">/</li>
       <li><a href="/empresas/" class="hover:text-[#FF6B26]">Empresas</a></li><li aria-hidden="true">/</li>
       <li><a href={`/empresas/${l.giro}/`} class="hover:text-[#FF6B26]">{g.labelCorto}</a></li><li aria-hidden="true">/</li>
@@ -98,7 +98,7 @@ const h2s = 'color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1'
           <span class="font-display text-[10px] uppercase tracking-wider px-2 py-1" style="color:#94A3B8;border:1px solid rgba(74,117,153,0.35)">{e.ciudad}, {edo.abreviatura}</span>
         </div>
         <h1 id="linea-heading" class="font-display font-bold mb-3" style="color:#FFFFFF;font-size:clamp(1.9rem,4.2vw,3.4rem);line-height:1">{l.nombre}</h1>
-        <p class="font-display text-sm uppercase tracking-wider mb-5" style="color:#4A7599">{l.subtitulo}</p>
+        <p class="font-display text-sm uppercase tracking-wider mb-5" style="color:var(--forge-300)">{l.subtitulo}</p>
         {l.familias.length > 0 && (
           <ul class="flex flex-wrap gap-2 list-none m-0 p-0">
             {l.familias.map((f) => <li><a href={`#familia-${anchorId(f.nombre)}`} class="inline-block text-xs px-3 py-1.5 hover:text-[#FF6B26]" style={`color:#CBD5E1;border:1px solid ${borde}`}>{f.nombre}</a></li>)}
@@ -127,7 +127,7 @@ const h2s = 'color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1'
             <div class="aspect-[16/9] overflow-hidden" style={`background:#040A12;border:1px solid ${borde}`}>
               <img src={l.imagen} alt={l.imagenAlt ?? l.nombre} width="1024" height="576" loading="eager" decoding="async" class="w-full h-full object-cover" />
             </div>
-            <figcaption class="font-display text-[10px] uppercase tracking-wider mt-2" style="color:#4A7599">{l.nombre} · catálogo de {e.nombre}</figcaption>
+            <figcaption class="font-display text-[10px] uppercase tracking-wider mt-2" style="color:var(--forge-300)">{l.nombre} · catálogo de {e.nombre}</figcaption>
           </figure>
         )}
 
@@ -151,13 +151,13 @@ const h2s = 'color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1'
                   <p class="text-sm leading-[1.85]" style="color:#94A3B8">{f.descripcion}</p>
                   {f.cuando && (
                     <div>
-                      <h4 class="font-display text-[10px] uppercase tracking-wider mb-1" style="color:#4A7599">Cuándo conviene<span class="sr-only"> el {f.nombre.toLowerCase()}</span></h4>
+                      <h4 class="font-display text-[10px] uppercase tracking-wider mb-1" style="color:var(--forge-300)">Cuándo conviene<span class="sr-only"> el {f.nombre.toLowerCase()}</span></h4>
                       <p class="text-sm leading-[1.8]" style="color:#CBD5E1">{f.cuando}</p>
                     </div>
                   )}
                   {typeof f.modelos === 'number' && (
                     <div class="mt-auto pt-3" style={`border-top:1px solid ${borde}`}>
-                      <h5 class="font-display text-[10px] uppercase tracking-wider" style="color:#4A7599">En catálogo<span class="sr-only">: {f.nombre.toLowerCase()}</span></h5>
+                      <h5 class="font-display text-[10px] uppercase tracking-wider" style="color:var(--forge-300)">En catálogo<span class="sr-only">: {f.nombre.toLowerCase()}</span></h5>
                       <p class="text-sm" style="color:#CBD5E1">{f.modelos} {f.modelos === 1 ? 'modelo' : 'modelos'} declarados por la empresa</p>
                     </div>
                   )}
@@ -177,7 +177,7 @@ const h2s = 'color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1'
                 <thead>
                   <tr style="background:#080F1A;border-bottom:1px solid rgba(74,117,153,0.25)">
                     {['Modelo','Marca','Familia',l.columnaRango ?? 'Caudal','Presión','Material','Certificación','Aplicaciones'].map((c, i) => (
-                      <th scope="col" class="text-left p-3 text-[10px] font-display font-bold uppercase tracking-widest" style={`color:${i === 3 ? g.color : '#4A7599'}`}>{c}</th>
+                      <th scope="col" class="text-left p-3 text-[10px] font-display font-bold uppercase tracking-widest" style={`color:${i === 3 ? g.color : 'var(--forge-300)'}`}>{c}</th>
                     ))}
                   </tr>
                 </thead>
@@ -197,7 +197,7 @@ const h2s = 'color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1'
                 </tbody>
               </table>
             </div>
-            <p class="font-display text-[10px] uppercase tracking-wider mt-3" style="color:#4A7599">Fuente: página de la línea en el sitio de la empresa · datos declarados por modelo</p>
+            <p class="font-display text-[10px] uppercase tracking-wider mt-3" style="color:var(--forge-300)">Fuente: página de la línea en el sitio de la empresa · datos declarados por modelo</p>
           </section>
         )}
 
@@ -238,8 +238,8 @@ const h2s = 'color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1'
             <div class="overflow-x-auto" style={`border:1px solid ${borde}`}>
               <table style="width:100%;border-collapse:collapse;min-width:520px">
                 <thead><tr style="background:#080F1A;border-bottom:1px solid rgba(74,117,153,0.25)">
-                  <th scope="col" class="text-left p-3 text-[10px] font-display font-bold uppercase tracking-widest" style="color:#4A7599;width:26%">Norma</th>
-                  <th scope="col" class="text-left p-3 text-[10px] font-display font-bold uppercase tracking-widest" style="color:#4A7599">Alcance</th></tr></thead>
+                  <th scope="col" class="text-left p-3 text-[10px] font-display font-bold uppercase tracking-widest" style="color:var(--forge-300);width:26%">Norma</th>
+                  <th scope="col" class="text-left p-3 text-[10px] font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Alcance</th></tr></thead>
                 <tbody>{l.normas.map((n, i) => (
                   <tr style={`border-bottom:1px solid rgba(74,117,153,0.1);background:${i % 2 === 0 ? '#040A12' : '#080F1A'}`}>
                     <th scope="row" class="p-3 text-left font-display font-semibold text-xs align-top" style="color:#FFFFFF">{n.norma}</th>
@@ -304,19 +304,19 @@ const h2s = 'color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1'
 
       <aside class="flex flex-col gap-4 lg:sticky lg:top-28">
         <div class="p-6" style="background:#0C1825;border:1px solid rgba(74,117,153,0.25)">
-          <p class="font-display font-bold text-xs uppercase tracking-widest mb-3" style="color:#4A7599">Empresa</p>
+          <p class="font-display font-bold text-xs uppercase tracking-widest mb-3" style="color:var(--forge-300)">Empresa</p>
           <a href={fichaURL} class="font-display font-bold text-base hover:text-[#FF6B26]" style="color:#FFFFFF">{e.nombre}</a>
           <p class="text-xs leading-relaxed mt-1 mb-4" style="color:#94A3B8">{e.direccion ? `${e.direccion} · ` : ''}{e.ciudad}, {edo.nombre}</p>
           <dl class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 text-sm m-0">
-            {e.telefono && <><dt class="font-display text-[10px] uppercase tracking-wider pt-1" style="color:#4A7599">Tel.</dt><dd class="m-0" style="color:#FFFFFF"><a href={`tel:${e.telefono.replace(/[^\d+]/g, '')}`} class="hover:text-[#FF6B26]">{e.telefono}</a></dd></>}
-            {e.email && <><dt class="font-display text-[10px] uppercase tracking-wider pt-1" style="color:#4A7599">Correo</dt><dd class="m-0 break-all" style="color:#FFFFFF"><a href={`mailto:${e.email}`} class="hover:text-[#FF6B26]">{e.email}</a></dd></>}
+            {e.telefono && <><dt class="font-display text-[10px] uppercase tracking-wider pt-1" style="color:var(--forge-300)">Tel.</dt><dd class="m-0" style="color:#FFFFFF"><a href={`tel:${e.telefono.replace(/[^\d+]/g, '')}`} class="hover:text-[#FF6B26]">{e.telefono}</a></dd></>}
+            {e.email && <><dt class="font-display text-[10px] uppercase tracking-wider pt-1" style="color:var(--forge-300)">Correo</dt><dd class="m-0 break-all" style="color:#FFFFFF"><a href={`mailto:${e.email}`} class="hover:text-[#FF6B26]">{e.email}</a></dd></>}
           </dl>
           <a href={fichaURL} class="btn btn-sm btn-outline w-full text-center mt-5">Ficha de {e.nombre} en {e.ciudad}</a>
         </div>
 
         {(hermanas.length > 0 || lineasSinPagina.length > 0) && (
           <div class="p-6" style="background:#0C1825;border:1px solid rgba(74,117,153,0.25)">
-            <p class="font-display font-bold text-xs uppercase tracking-widest mb-3" style="color:#4A7599">Otras líneas de {e.nombre}</p>
+            <p class="font-display font-bold text-xs uppercase tracking-widest mb-3" style="color:var(--forge-300)">Otras líneas de {e.nombre}</p>
             <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
               {hermanas.map((h) => <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={urlLinea(h)} class="block py-2.5 font-display font-semibold text-sm hover:text-[#FF6B26]" style="color:#FFFFFF">{h.nombre}</a></li>)}
               {lineasSinPagina.map((x) => <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`${fichaURL}#vip-lineas`} class="block py-2.5 font-display font-semibold text-sm hover:text-[#FF6B26]" style="color:#CBD5E1">{x.nombre}</a></li>)}
@@ -326,7 +326,7 @@ const h2s = 'color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1'
 
         {otrasPlazas.length > 0 && (
           <div class="p-6" style="background:#0C1825;border:1px solid rgba(74,117,153,0.25)">
-            <p class="font-display font-bold text-xs uppercase tracking-widest mb-3" style="color:#4A7599">La misma empresa en otra plaza</p>
+            <p class="font-display font-bold text-xs uppercase tracking-widest mb-3" style="color:var(--forge-300)">La misma empresa en otra plaza</p>
             <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
               {otrasPlazas.map((p) => <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={urlEmpresa(p)} class="block py-2.5 font-display font-semibold text-sm hover:text-[#FF6B26]" style="color:#FFFFFF">{p.nombre} en {p.ciudad}</a></li>)}
             </ul>
@@ -334,7 +334,7 @@ const h2s = 'color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1'
         )}
 
         <div class="p-6" style="background:#0C1825;border:1px solid rgba(74,117,153,0.25)">
-          <p class="font-display font-bold text-xs uppercase tracking-widest mb-3" style="color:#4A7599">Fuentes de esta página</p>
+          <p class="font-display font-bold text-xs uppercase tracking-widest mb-3" style="color:var(--forge-300)">Fuentes de esta página</p>
           <ul class="flex flex-col gap-2 list-none m-0 p-0">{l.fuentes.map((f) => <li><a href={f.url} target="_blank" rel="noopener nofollow" class="text-xs hover:text-[#FF6B26]" style="color:#CBD5E1">{f.nombre} ↗</a></li>)}</ul>
           <p class="text-[11px] mt-3 leading-relaxed" style="color:#64748B">Datos declarados por la empresa en su sitio y verificados en {l.verificadoEl}. La validación final de cada modelo se hace contra la ficha técnica del fabricante.</p>
         </div>

@@ -66,7 +66,7 @@ const canales = canalesTodos.filter(
   <!-- Breadcrumb -->
   <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
     <div class="container-site">
-      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:#4A7599">
+      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
         <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
         <li aria-hidden="true">/</li>
         <li><a href="/empresa" class="hover:text-[#FF6B26]">Empresa</a></li>
@@ -139,7 +139,7 @@ const canales = canalesTodos.filter(
                     <span class="block" style="width:20px;height:20px" set:html={c.icon}/>
                   </span>
                   <span class="flex flex-col gap-0.5 min-w-0">
-                    <span class="text-[10px] font-display font-semibold uppercase tracking-widest" style="color:#4A7599">{c.label}</span>
+                    <span class="text-[10px] font-display font-semibold uppercase tracking-widest" style="color:var(--forge-300)">{c.label}</span>
                     {c.href ? (
                       <a href={c.href} target={c.href.startsWith('http') ? '_blank' : undefined} rel={c.href.startsWith('http') ? 'noopener' : undefined} class="font-display font-semibold text-sm hover:text-[#FF6B26]" style="color:#FFFFFF">{c.value}</a>
                     ) : (

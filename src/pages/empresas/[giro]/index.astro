@@ -38,7 +38,7 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
 ---
 <BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema]}>
   <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
-    <div class="container-site"><ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:#4A7599">
+    <div class="container-site"><ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
       <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li><li aria-hidden="true">/</li>
       <li><a href="/empresas/" class="hover:text-[#FF6B26]">Directorio de Empresas</a></li><li aria-hidden="true">/</li>
       <li><span style="color:#94A3B8" aria-current="page">{g.labelCorto}</span></li></ol></div>
@@ -61,7 +61,7 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
           </div>
         </div>
         <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
-          <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:#4A7599">Principales estados</p>
+          <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:var(--forge-300)">Principales estados</p>
           <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
             {porEstado.slice(0, 8).map((s) => (
               <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
@@ -126,23 +126,23 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
   <section class="section" style="background:#040A12" aria-label="Contenido relacionado">
     <div class="container-site grid grid-cols-1 lg:grid-cols-3 gap-10">
       <div>
-        <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:#4A7599">Otros giros del directorio</p>
+        <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:var(--forge-300)">Otros giros del directorio</p>
         <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
           {otros.map((o) => (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/empresas/${o.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{o.label}</span><span class="text-xs" style="color:#64748B">{o.description}</span></span><span style={`color:${o.color}`}>→</span></a></li>))}
         </ul>
       </div>
       <div>
-        <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:#4A7599">Guías de compra relacionadas</p>
+        <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:var(--forge-300)">Guías de compra relacionadas</p>
         <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
-          {cats.map((c) => (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/productos/${c.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{c.label}</span><span class="text-xs" style="color:#64748B">{c.norm}</span></span><span style="color:#4A7599">→</span></a></li>))}
+          {cats.map((c) => (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/productos/${c.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{c.label}</span><span class="text-xs" style="color:#64748B">{c.norm}</span></span><span style="color:var(--forge-300)">→</span></a></li>))}
         </ul>
       </div>
       <div>
-        <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:#4A7599">Servicios y normativa</p>
+        <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:var(--forge-300)">Servicios y normativa</p>
         <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
-          {servs.map((s) => (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={s.href} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{s.title}</span><span style="color:#4A7599">→</span></a></li>))}
-          <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href="/blog/categoria/normatividad/" class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Normatividad NFPA y NOM</span><span style="color:#4A7599">→</span></a></li>
-          <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href="/estaciones/" class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Directorio de estaciones de bomberos</span><span style="color:#4A7599">→</span></a></li>
+          {servs.map((s) => (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={s.href} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{s.title}</span><span style="color:var(--forge-300)">→</span></a></li>))}
+          <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href="/blog/categoria/normatividad/" class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Normatividad NFPA y NOM</span><span style="color:var(--forge-300)">→</span></a></li>
+          <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href="/estaciones/" class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Directorio de estaciones de bomberos</span><span style="color:var(--forge-300)">→</span></a></li>
         </ul>
       </div>
     </div>

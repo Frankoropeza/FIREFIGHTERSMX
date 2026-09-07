@@ -125,7 +125,7 @@ const faqSchema = {
 {/* ══ BREADCRUMB ══════════════════════════════════════════════════════ */}
 <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
   <div class="container-site">
-    <ol class="flex items-center gap-2 text-xs list-none m-0 p-0 flex-wrap" style="color:#4A7599">
+    <ol class="flex items-center gap-2 text-xs list-none m-0 p-0 flex-wrap" style="color:var(--forge-300)">
       <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
       <li aria-hidden="true">/</li>
       <li><a href="/productos" class="hover:text-[#FF6B26]">Productos</a></li>
@@ -175,7 +175,7 @@ const faqSchema = {
         {brand.stats.map((s, i) => (
           <div class="flex flex-col gap-1 px-6 py-5" style={`${i > 0 ? 'border-left:1px solid rgba(74,117,153,0.14)' : ''}`}>
             <span class="font-display font-bold" style="color:#F75000;font-size:clamp(1.4rem,3vw,2rem);line-height:1">{s.valor}</span>
-            <span class="text-xs uppercase tracking-widest" style="color:#4A7599">{s.etiq}</span>
+            <span class="text-xs uppercase tracking-widest" style="color:var(--forge-300)">{s.etiq}</span>
           </div>
         ))}
       </div>
@@ -235,7 +235,7 @@ const faqSchema = {
             </div>
             <p class="text-xs leading-relaxed" style="color:#64748B">{l.desc}</p>
             <div style="border-top:1px solid rgba(74,117,153,0.15);padding-top:0.875rem">
-              <p class="text-[10px] uppercase tracking-widest mb-1" style="color:#4A7599">Tecnología</p>
+              <p class="text-[10px] uppercase tracking-widest mb-1" style="color:var(--forge-300)">Tecnología</p>
               <p class="text-xs" style="color:#94A3B8">{l.tech}</p>
             </div>
           </div>
@@ -336,8 +336,8 @@ const faqSchema = {
       <table class="w-full border-collapse" style="min-width:900px">
         <thead>
           <tr style="background:#0C1825">
-            <th class="text-left p-4 text-xs font-display font-bold uppercase tracking-widest" style="color:#4A7599;border-bottom:1px solid rgba(74,117,153,0.18)">Modelo</th>
-            <th class="text-left p-4 text-xs font-display font-bold uppercase tracking-widest" style="color:#4A7599;border-bottom:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.12)">Tipo</th>
+            <th class="text-left p-4 text-xs font-display font-bold uppercase tracking-widest" style="color:var(--forge-300);border-bottom:1px solid rgba(74,117,153,0.18)">Modelo</th>
+            <th class="text-left p-4 text-xs font-display font-bold uppercase tracking-widest" style="color:var(--forge-300);border-bottom:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.12)">Tipo</th>
             {cat.comparativaCols.map((col) => (
               <th class={`${col.align === 'center' ? 'text-center' : 'text-left'} p-4 text-xs font-display font-bold uppercase tracking-widest`} style={`color:${col.accent ? '#FF6B26' : '#4A7599'};border-bottom:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.12)`}>{col.label}</th>
             ))}
@@ -363,7 +363,7 @@ const faqSchema = {
       </table>
     </div>
 
-    <p class="mt-4 text-xs" style="color:#4A7599">{brand.comparativaNote}</p>
+    <p class="mt-4 text-xs" style="color:var(--forge-300)">{brand.comparativaNote}</p>
   </div>
 </section>
 
@@ -425,7 +425,7 @@ const faqSchema = {
             <h3 class="font-display font-bold text-sm uppercase tracking-wide" style="color:#FFFFFF">{seg.titulo}</h3>
             <p class="text-xs leading-relaxed" style="color:#64748B">{seg.desc}</p>
             <div class="flex items-center gap-2 mt-auto">
-              <span class="text-[10px] uppercase tracking-widest" style="color:#4A7599">Modelos →</span>
+              <span class="text-[10px] uppercase tracking-widest" style="color:var(--forge-300)">Modelos →</span>
               <span class="text-xs font-display font-semibold" style="color:#94A3B8">{seg.modelos}</span>
             </div>
           </div>
@@ -506,7 +506,7 @@ const faqSchema = {
                   <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
                   <span class="text-xs" style="color:#64748B">{l.desc}</span>
                 </span>
-                <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#4A7599" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
+                <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="var(--forge-300)" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
               </a>
             </li>
           ))}
@@ -514,7 +514,7 @@ const faqSchema = {
       </div>
 
       <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
-        <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:#4A7599">Equipa el conjunto completo</h2>
+        <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">Equipa el conjunto completo</h2>
         <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
           {cat.conjunto.map((l) => (
             <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
@@ -523,7 +523,7 @@ const faqSchema = {
                   <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
                   <span class="text-xs" style="color:#64748B">{l.desc}</span>
                 </span>
-                <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#4A7599" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
+                <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="var(--forge-300)" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
               </a>
             </li>
           ))}
@@ -533,7 +533,7 @@ const faqSchema = {
     </div>
 
     <div class="mt-14 pt-10" style="border-top:1px solid rgba(74,117,153,0.15)">
-      <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-6" style="color:#4A7599">Otras categorías del catálogo</h2>
+      <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-6" style="color:var(--forge-300)">Otras categorías del catálogo</h2>
       <div class="flex flex-wrap gap-3">
         {categorias.map(([label, href]) => (
           <a href={href} class="btn btn-sm btn-dark">{label}</a>

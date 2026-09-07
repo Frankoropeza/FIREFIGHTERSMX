@@ -165,7 +165,7 @@ const productosRel = productosMap[s.slug] ?? [];
   <!-- Breadcrumb -->
   <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
     <div class="container-site">
-      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:#4A7599">
+      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
         <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
         <li aria-hidden="true">/</li>
         <li><a href="/servicios" class="hover:text-[#FF6B26]">Servicios</a></li>
@@ -258,7 +258,7 @@ const productosRel = productosMap[s.slug] ?? [];
                 <div class="absolute top-0 left-0 w-12 h-12 pointer-events-none" style="border-top:3px solid #F75000;border-left:3px solid #F75000" aria-hidden="true"></div>
                 <div class="absolute bottom-0 right-0 w-12 h-12 pointer-events-none" style="border-bottom:3px solid #F75000;border-right:3px solid #F75000" aria-hidden="true"></div>
               </div>
-              <figcaption class="flex items-center justify-between gap-3 mt-3 text-[10px] font-display font-semibold uppercase tracking-widest" style="color:#4A7599">
+              <figcaption class="flex items-center justify-between gap-3 mt-3 text-[10px] font-display font-semibold uppercase tracking-widest" style="color:var(--forge-300)">
                 <span>{s.title}</span>
                 <span style="color:#FF8F57">{s.norm}</span>
               </figcaption>
@@ -292,7 +292,7 @@ const productosRel = productosMap[s.slug] ?? [];
                     <h3 class="font-display font-semibold pr-2 group-open:text-[#FF6B26] m-0" style="color:#FFFFFF;font-size:0.875rem;line-height:1.375">
                       {faq.q}
                     </h3>
-                    <span class="faq-icon shrink-0 mt-0.5 w-5 h-5 flex items-center justify-center" style="border:1px solid rgba(74,117,153,0.3);color:#4A7599">
+                    <span class="faq-icon shrink-0 mt-0.5 w-5 h-5 flex items-center justify-center" style="border:1px solid rgba(74,117,153,0.3);color:var(--forge-300)">
                       <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg>
                     </span>
                   </summary>
@@ -312,7 +312,7 @@ const productosRel = productosMap[s.slug] ?? [];
         {catArticulos.length > 0 && (
           <div style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
             <div class="px-4 py-3" style="background:#040A12;border-bottom:1px solid rgba(74,117,153,0.18)">
-              <span class="text-[9px] font-display font-bold uppercase tracking-widest" style="color:#4A7599">Artículos sobre este servicio</span>
+              <span class="text-[9px] font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Artículos sobre este servicio</span>
             </div>
             <div class="flex flex-col">
               {catArticulos.map((art, i) => (
@@ -324,7 +324,7 @@ const productosRel = productosMap[s.slug] ?? [];
               ))}
             </div>
             <div class="px-4 py-3" style="border-top:1px solid rgba(74,117,153,0.15)">
-              <a href="/blog" class="text-[10px] font-display font-semibold hover:text-[#FF6B26]" style="color:#4A7599">
+              <a href="/blog" class="text-[10px] font-display font-semibold hover:text-[#FF6B26]" style="color:var(--forge-300)">
                 Todos los artículos del blog técnico →
               </a>
             </div>
@@ -335,7 +335,7 @@ const productosRel = productosMap[s.slug] ?? [];
         {serviciosRel.length > 0 && (
           <div style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
             <div class="px-4 py-3" style="background:#040A12;border-bottom:1px solid rgba(74,117,153,0.18)">
-              <span class="text-[9px] font-display font-bold uppercase tracking-widest" style="color:#4A7599">Servicios relacionados</span>
+              <span class="text-[9px] font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Servicios relacionados</span>
             </div>
             <div class="flex flex-col">
               {serviciosRel.map((sv, i) => (
@@ -348,7 +348,7 @@ const productosRel = productosMap[s.slug] ?? [];
               ))}
             </div>
             <div class="px-4 py-3" style="border-top:1px solid rgba(74,117,153,0.15)">
-              <a href="/servicios" class="text-[10px] font-display font-semibold hover:text-[#FF6B26]" style="color:#4A7599">
+              <a href="/servicios" class="text-[10px] font-display font-semibold hover:text-[#FF6B26]" style="color:var(--forge-300)">
                 Todos los servicios contra incendio →
               </a>
             </div>
@@ -359,7 +359,7 @@ const productosRel = productosMap[s.slug] ?? [];
         {productosRel.length > 0 && (
           <div style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
             <div class="px-4 py-3" style="background:#040A12;border-bottom:1px solid rgba(74,117,153,0.18)">
-              <span class="text-[9px] font-display font-bold uppercase tracking-widest" style="color:#4A7599">Productos que necesitas</span>
+              <span class="text-[9px] font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Productos que necesitas</span>
             </div>
             <div class="flex flex-col">
               {productosRel.map((pr, i) => (
@@ -372,7 +372,7 @@ const productosRel = productosMap[s.slug] ?? [];
               ))}
             </div>
             <div class="px-4 py-3" style="border-top:1px solid rgba(74,117,153,0.15)">
-              <a href="/productos" class="text-[10px] font-display font-semibold hover:text-[#FF6B26]" style="color:#4A7599">
+              <a href="/productos" class="text-[10px] font-display font-semibold hover:text-[#FF6B26]" style="color:var(--forge-300)">
                 Catálogo de equipo para bomberos →
               </a>
             </div>
@@ -405,7 +405,7 @@ const productosRel = productosMap[s.slug] ?? [];
   {serviciosRel.length > 0 && (
     <section style="background:#040A12;border-top:1px solid rgba(74,117,153,0.15)" aria-labelledby="svs-rel-title">
       <div class="container-site py-10 sm:py-12">
-        <p id="svs-rel-title" class="text-[9px] font-display font-bold uppercase tracking-widest mb-6" style="color:#4A7599">Servicios relacionados</p>
+        <p id="svs-rel-title" class="text-[9px] font-display font-bold uppercase tracking-widest mb-6" style="color:var(--forge-300)">Servicios relacionados</p>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {serviciosRel.map((sv) => (
             <a href={sv.href} class="group flex flex-col gap-2 p-5 hover:border-[#F75000]"
@@ -423,7 +423,7 @@ const productosRel = productosMap[s.slug] ?? [];
   <!-- Otros servicios (internal linking) -->
   <section class="section-tight" style="background:#070E1A" aria-labelledby="otros-title">
     <div class="container-site">
-      <h2 id="otros-title" class="font-display font-bold text-sm uppercase tracking-widest mb-6" style="color:#4A7599">
+      <h2 id="otros-title" class="font-display font-bold text-sm uppercase tracking-widest mb-6" style="color:var(--forge-300)">
         Otros servicios
       </h2>
       <div class="flex flex-wrap gap-3">

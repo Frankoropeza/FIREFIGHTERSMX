@@ -76,7 +76,7 @@ const nextHref = currentPage < totalPages ? `${SITE.url}/blog/pagina/${currentPa
     aria-label="Breadcrumb"
   >
     <div class="container-site">
-      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:#4A7599">
+      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
         <li><a href="/"     class="hover:text-[#FF6B26]">Inicio</a></li>
         <li aria-hidden="true">/</li>
         <li><a href="/blog" class="hover:text-[#FF6B26]">Blog</a></li>
@@ -144,7 +144,7 @@ const nextHref = currentPage < totalPages ? `${SITE.url}/blog/pagina/${currentPa
         )}
       </nav>
 
-      <p class="text-center text-xs mt-4" style="color:#4A7599">
+      <p class="text-center text-xs mt-4" style="color:var(--forge-300)">
         {totalPosts} artículos · página {currentPage} de {totalPages}
       </p>
 

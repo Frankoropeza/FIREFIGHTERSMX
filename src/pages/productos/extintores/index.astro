@@ -220,7 +220,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
   <!-- Breadcrumb -->
   <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
     <div class="container-site">
-      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0 flex-wrap" style="color:#4A7599">
+      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0 flex-wrap" style="color:var(--forge-300)">
         <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
         <li aria-hidden="true">/</li>
         <li><a href="/productos" class="hover:text-[#FF6B26]">Productos</a></li>
@@ -582,8 +582,8 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
         <table class="w-full border-collapse" style="min-width:720px">
           <thead>
             <tr style="background:#0C1825">
-              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:#4A7599;border-bottom:1px solid rgba(74,117,153,0.18)">Clase de fuego</th>
-              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:#4A7599;border-bottom:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.12)">Ejemplos</th>
+              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:var(--forge-300);border-bottom:1px solid rgba(74,117,153,0.18)">Clase de fuego</th>
+              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:var(--forge-300);border-bottom:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.12)">Ejemplos</th>
               <th class="text-center p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:#F75000;border-bottom:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.12)">PQS ABC</th>
               <th class="text-center p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:#60A5FA;border-bottom:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.12)">CO₂</th>
               <th class="text-center p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:#F5A623;border-bottom:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.12)">Tipo K</th>
@@ -596,17 +596,17 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
               <tr style={`background:${i % 2 === 0 ? '#080F1A' : '#0A1320'}`}>
                 <td class="p-4 text-sm font-display font-semibold" style="color:#CBD5E1;border-bottom:1px solid rgba(74,117,153,0.12)">{row.clase}</td>
                 <td class="p-4 text-xs" style="color:#64748B;border-bottom:1px solid rgba(74,117,153,0.12);border-left:1px solid rgba(74,117,153,0.12)">{row.ejemplo}</td>
-                <td class="p-4 text-xs text-center" style={`border-bottom:1px solid rgba(74,117,153,0.12);border-left:1px solid rgba(74,117,153,0.12);color:${row.pqs.startsWith('✓') ? '#4ADE80' : '#4A7599'}`}>{row.pqs}</td>
-                <td class="p-4 text-xs text-center" style={`border-bottom:1px solid rgba(74,117,153,0.12);border-left:1px solid rgba(74,117,153,0.12);color:${row.co2.startsWith('✓') ? '#4ADE80' : '#4A7599'}`}>{row.co2}</td>
-                <td class="p-4 text-xs text-center" style={`border-bottom:1px solid rgba(74,117,153,0.12);border-left:1px solid rgba(74,117,153,0.12);color:${row.tipok.startsWith('✓') ? '#4ADE80' : '#4A7599'}`}>{row.tipok}</td>
-                <td class="p-4 text-xs text-center" style={`border-bottom:1px solid rgba(74,117,153,0.12);border-left:1px solid rgba(74,117,153,0.12);color:${row.limpio.startsWith('✓') ? '#4ADE80' : '#4A7599'}`}>{row.limpio}</td>
-                <td class="p-4 text-xs text-center" style={`border-bottom:1px solid rgba(74,117,153,0.12);border-left:1px solid rgba(74,117,153,0.12);color:${row.ruedas.startsWith('✓') ? '#4ADE80' : '#4A7599'}`}>{row.ruedas}</td>
+                <td class="p-4 text-xs text-center" style={`border-bottom:1px solid rgba(74,117,153,0.12);border-left:1px solid rgba(74,117,153,0.12);color:${row.pqs.startsWith('✓') ? '#4ADE80' : 'var(--forge-300)'}`}>{row.pqs}</td>
+                <td class="p-4 text-xs text-center" style={`border-bottom:1px solid rgba(74,117,153,0.12);border-left:1px solid rgba(74,117,153,0.12);color:${row.co2.startsWith('✓') ? '#4ADE80' : 'var(--forge-300)'}`}>{row.co2}</td>
+                <td class="p-4 text-xs text-center" style={`border-bottom:1px solid rgba(74,117,153,0.12);border-left:1px solid rgba(74,117,153,0.12);color:${row.tipok.startsWith('✓') ? '#4ADE80' : 'var(--forge-300)'}`}>{row.tipok}</td>
+                <td class="p-4 text-xs text-center" style={`border-bottom:1px solid rgba(74,117,153,0.12);border-left:1px solid rgba(74,117,153,0.12);color:${row.limpio.startsWith('✓') ? '#4ADE80' : 'var(--forge-300)'}`}>{row.limpio}</td>
+                <td class="p-4 text-xs text-center" style={`border-bottom:1px solid rgba(74,117,153,0.12);border-left:1px solid rgba(74,117,153,0.12);color:${row.ruedas.startsWith('✓') ? '#4ADE80' : 'var(--forge-300)'}`}>{row.ruedas}</td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
-      <p class="text-xs mt-4" style="color:#4A7599">✓ Compatible · ✓ Ideal = opción óptima para ese fuego · — = no adecuado o no certificado para esa clase.</p>
+      <p class="text-xs mt-4" style="color:var(--forge-300)">✓ Compatible · ✓ Ideal = opción óptima para ese fuego · — = no adecuado o no certificado para esa clase.</p>
     </div>
   </section>
 
@@ -683,7 +683,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
         </div>
 
         <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
-          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:#4A7599">
+          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">
             Aprende más en el blog
           </h2>
           <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
@@ -694,7 +694,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
                     <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
                     <span class="text-xs" style="color:#64748B">{l.desc}</span>
                   </span>
-                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#4A7599" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
+                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="var(--forge-300)" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
                 </a>
               </li>
             ))}
@@ -702,7 +702,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
 
           <!-- Normativa compacta -->
           <div class="mt-8 pt-6" style="border-top:1px solid rgba(74,117,153,0.15)">
-            <h3 class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:#4A7599">Marco normativo</h3>
+            <h3 class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:var(--forge-300)">Marco normativo</h3>
             <div class="flex flex-col gap-3">
               {normas.map((n) => (
                 <div class="flex items-start gap-3">
@@ -796,7 +796,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
           <a href={whatsappUrl('Hola, quiero cotizar la protección contra incendio completa para mi instalación.')} target="_blank" rel="noopener" class="btn btn-primary">Cotizar protección completa</a>
         </div>
         <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
-          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:#4A7599">También te puede servir</h2>
+          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">También te puede servir</h2>
           <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
             {[
               { label: 'Sistemas Contra Incendio', desc: 'Rociadores NFPA 13 · detección NFPA 72 · agente limpio', href: '/productos/sistemas-ci' },
@@ -811,7 +811,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
                     <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
                     <span class="text-xs" style="color:#64748B">{l.desc}</span>
                   </span>
-                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#4A7599" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
+                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="var(--forge-300)" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
                 </a>
               </li>
             ))}
@@ -820,7 +820,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
       </div>
 
       <div class="mt-14 pt-10" style="border-top:1px solid rgba(74,117,153,0.15)">
-        <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-6" style="color:#4A7599">Otras categorías del catálogo</h2>
+        <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-6" style="color:var(--forge-300)">Otras categorías del catálogo</h2>
         <div class="flex flex-wrap gap-3">
           {otrasCategorias.map((c) => (
             <a href={`/productos/${c.slug}`} class="btn btn-sm btn-dark">{c.label}</a>
@@ -835,7 +835,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
   {/* ══ CATEGORÍAS RELACIONADAS ═══════════════════════════════════════ */}
   <section style="background:#040A12;border-top:1px solid rgba(74,117,153,0.15)" aria-labelledby="cats-rel-title">
     <div class="container-site py-10 sm:py-12">
-      <p id="cats-rel-title" class="text-[9px] font-display font-bold uppercase tracking-widest mb-6" style="color:#4A7599">Categorías relacionadas</p>
+      <p id="cats-rel-title" class="text-[9px] font-display font-bold uppercase tracking-widest mb-6" style="color:var(--forge-300)">Categorías relacionadas</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <a href="/productos/sistemas-ci"
            class="group flex flex-col gap-2 p-5 hover:border-[#F75000]"

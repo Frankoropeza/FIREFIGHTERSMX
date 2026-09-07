@@ -60,7 +60,7 @@ const waMsg = `Hola, busco proveedores de ${g.sustantivo} en ${estado.nombre}. �
 ---
 <BaseLayout {...seoMeta} schema={[breadcrumbSchema, itemListSchema]}>
   <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
-    <div class="container-site"><ol class="flex items-center gap-2 text-xs list-none m-0 p-0 flex-wrap" style="color:#4A7599">
+    <div class="container-site"><ol class="flex items-center gap-2 text-xs list-none m-0 p-0 flex-wrap" style="color:var(--forge-300)">
       <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li><li aria-hidden="true">/</li>
       <li><a href="/empresas/" class="hover:text-[#FF6B26]">Directorio de Empresas</a></li><li aria-hidden="true">/</li>
       <li><a href={`/empresas/${giro}/`} class="hover:text-[#FF6B26]">{g.labelCorto}</a></li><li aria-hidden="true">/</li>
@@ -90,11 +90,11 @@ const waMsg = `Hola, busco proveedores de ${g.sustantivo} en ${estado.nombre}. �
           </div>
         </div>
         <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
-          <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:#4A7599">Ciudades con presencia</p>
+          <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:var(--forge-300)">Ciudades con presencia</p>
           <ul class="flex flex-col list-none m-0 p-0 mb-5" style="border-top:1px solid rgba(74,117,153,0.15)">
             {ciudades.slice(0, 6).map((c) => (<li class="py-2.5 font-display font-semibold text-sm" style="border-bottom:1px solid rgba(74,117,153,0.15);color:#CBD5E1">{g.labelCorto} en {c.ciudad}</li>))}
           </ul>
-          <p class="font-display font-bold text-xs uppercase tracking-widest mb-3" style="color:#4A7599">Marco normativo</p>
+          <p class="font-display font-bold text-xs uppercase tracking-widest mb-3" style="color:var(--forge-300)">Marco normativo</p>
           <div class="flex flex-wrap gap-2">{g.normas.map((n) => <span class="badge badge-dark font-display text-[10px]">{n}</span>)}</div>
         </div>
       </div>
@@ -134,25 +134,25 @@ const waMsg = `Hola, busco proveedores de ${g.sustantivo} en ${estado.nombre}. �
   <section class="section" style={`background:${vacio ? '#040A12' : '#070E1A'}`} aria-label="Contenido relacionado">
     <div class="container-site grid grid-cols-1 lg:grid-cols-3 gap-10">
       <div>
-        <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:#4A7599">Otros giros en {estado.nombre}</p>
+        <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:var(--forge-300)">Otros giros en {estado.nombre}</p>
         <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
           {otrosGirosEdo.map((o) => { const m = giroMap[o.giro]; return (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/empresas/${o.giro}/${estado.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{m.labelCorto} en {estado.nombre}</span><span style={`color:${m.color}`}>→</span></a></li>); })}
-          <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/empresas/estado/${estado.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Todas las empresas en {estado.nombre}</span><span style="color:#4A7599">→</span></a></li>
+          <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/empresas/estado/${estado.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Todas las empresas en {estado.nombre}</span><span style="color:var(--forge-300)">→</span></a></li>
         </ul>
       </div>
       <div>
-        <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:#4A7599">{g.labelCorto} en la región {estado.region}</p>
+        <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:var(--forge-300)">{g.labelCorto} en la región {estado.region}</p>
         <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
           {vecinos.map((v) => (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/empresas/${giro}/${v.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{g.labelCorto} en {v.nombre}</span><span style={`color:${g.color}`}>→</span></a></li>))}
-          <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/empresas/${giro}/`} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{g.labelCorto} en todo México</span><span style="color:#4A7599">→</span></a></li>
+          <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/empresas/${giro}/`} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{g.labelCorto} en todo México</span><span style="color:var(--forge-300)">→</span></a></li>
         </ul>
       </div>
       <div>
-        <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:#4A7599">Guías, normas y compradores</p>
+        <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:var(--forge-300)">Guías, normas y compradores</p>
         <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
-          {cats.map((c) => (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/productos/${c.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Guía: {c.label}</span><span class="text-xs" style="color:#64748B">{c.norm}</span></span><span style="color:#4A7599">→</span></a></li>))}
-          {posts.slice(0, 2).map((p) => (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/blog/${p.id}/`} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{p.data.title}</span><span style="color:#4A7599">→</span></a></li>))}
-          {dirEst && dirEst.estaciones.length > 0 && <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/estaciones/${estado.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Cuerpos de bomberos en {estado.nombre}</span><span class="text-xs" style="color:#64748B">{dirEst.estaciones.length} corporaciones — compradores del giro</span></span><span style="color:#4A7599">→</span></a></li>}
+          {cats.map((c) => (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/productos/${c.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Guía: {c.label}</span><span class="text-xs" style="color:#64748B">{c.norm}</span></span><span style="color:var(--forge-300)">→</span></a></li>))}
+          {posts.slice(0, 2).map((p) => (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/blog/${p.id}/`} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{p.data.title}</span><span style="color:var(--forge-300)">→</span></a></li>))}
+          {dirEst && dirEst.estaciones.length > 0 && <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/estaciones/${estado.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Cuerpos de bomberos en {estado.nombre}</span><span class="text-xs" style="color:#64748B">{dirEst.estaciones.length} corporaciones — compradores del giro</span></span><span style="color:var(--forge-300)">→</span></a></li>}
         </ul>
       </div>
     </div>

@@ -44,7 +44,7 @@ const otherCategories = allCategories.filter((c) => c.slug !== cat.slug).slice(0
 ---
 
 <BaseLayout
-  title={`${cat.label} ${cat.norm.split('·')[0].trim()} — ${SITE.name} México`}
+  title={`${cat.label} ${cat.norm.split('·')[0].trim()} — México`}
   description={cat.description}
   canonicalURL={canonicalURL}
   schema={breadcrumbSchema}
@@ -52,7 +52,7 @@ const otherCategories = allCategories.filter((c) => c.slug !== cat.slug).slice(0
   <!-- Breadcrumb -->
   <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
     <div class="container-site">
-      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:#4A7599">
+      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
         <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
         <li aria-hidden="true">/</li>
         <li><a href="/productos" class="hover:text-[#FF6B26]">Productos</a></li>
@@ -187,7 +187,7 @@ const otherCategories = allCategories.filter((c) => c.slug !== cat.slug).slice(0
   <!-- Otras categorías (internal linking) -->
   <section class="section-tight" style="background:#040A12" aria-labelledby="otras-title">
     <div class="container-site">
-      <h2 id="otras-title" class="font-display font-bold text-sm uppercase tracking-widest mb-6" style="color:#4A7599">
+      <h2 id="otras-title" class="font-display font-bold text-sm uppercase tracking-widest mb-6" style="color:var(--forge-300)">
         Otras categorías del catálogo
       </h2>
       <div class="flex flex-wrap gap-3">
