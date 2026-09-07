@@ -30,9 +30,9 @@ const articleSchema = {
   mainEntityOfPage: Astro.url.href,
 };
 ---
+{/* Sin sufijo fijo en el title: los titulares de blog ya son largos y el
+    sufijo sólo provocaba que Google truncara. SEO.astro lo anexa si cabe. */}
 <BaseLayout
-  {/* Sin sufijo fijo: los titulares de blog ya son largos y el sufijo sólo
-      provocaba que Google truncara el título. SEO.astro lo anexa si cabe. */}
   title={title}
   description={description}
   ogType="article"
