@@ -54,6 +54,8 @@ const PROHIBIDOS = [
   [/nuestra\s+operaci[óo]n/i,                                           'F-12 · operación comercial propia sin acreditar'],
   [/nuestra\s+sede/i,                                                   'F-12 · sede u operación propia sin acreditar'],
   [/coordinamos\s+(despacho|entrega|env[íi]o)/i,                        'F-12 · logística propia sin acreditar'],
+  [/\bEntrega\s+\d+\s*(–|-|a)?\s*\d*\s*(d[íi]as?|h(oras?)?)\b/i,        'F-12 · plazo de entrega prometido por el sitio'],
+  [/tiempo\s+express/i,                                                'F-12 · plazo de entrega prometido por el sitio'],
   [/Baja\s+California\s+255/i,                                            'F-01 · domicilio sin verificar'],
   [/(facebook|instagram|linkedin|youtube|x)\.com\/(@)?firefightersmx/i, 'F-02 · perfiles sociales inexistentes'],
 ];

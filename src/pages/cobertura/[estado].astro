@@ -28,9 +28,9 @@ const canonicalURL = `${SITE.url}/cobertura/${estado.slug}/`;
 
 // ── SEO: title (≤60c) y description (≤160c) keyword-first ──────────
 // Patrón: "Equipo Bomberos [Estado] | Distribuidor NFPA | FFMX"
-const seoTitle = `Empresas de equipo contra incendio en ${estado.name} | Firefighters MX`;
+const seoTitle = `Cobertura en ${estado.name}: industria, bomberos y protección civil`;
 const seoDescription =
-  `Consulta empresas y referencias del sector contra incendios en ${estado.name}. ${estado.description}`
+  `Qué demanda equipo contra incendio en ${estado.name}: corredores industriales, cuerpos de bomberos y organismos de protección civil. ${estado.description}`
     .slice(0, 160);
 
 // ── JSON-LD ──────────────────────────────────────────────────────────
@@ -93,7 +93,6 @@ const waMsg = `Hola, necesito equipo para bomberos en ${estado.name}. ¿Cuál es
   title={seoTitle}
   description={seoDescription}
   canonicalURL={canonicalURL}
-  noindex={true}
   schema={schemas}
 >
 
@@ -137,8 +136,8 @@ const waMsg = `Hola, necesito equipo para bomberos en ${estado.name}. ¿Cuál es
             class="font-display font-bold uppercase mb-4"
             style="color:#FFFFFF;font-size:clamp(2.2rem,5vw,4rem);line-height:0.95"
           >
-            Equipo para<br/>
-            <span style="color:#F75000">Bomberos en<br/>{estado.name}</span>
+            Cobertura en<br/>
+            <span style="color:#F75000">{estado.name}</span>
           </h1>
 
           <div class="flex flex-wrap gap-2 mb-8">
