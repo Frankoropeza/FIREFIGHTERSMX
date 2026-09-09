@@ -1,29 +1,32 @@
 ---
 import EditorialCategoryHub from '@components/products/EditorialCategoryHub.astro';
 const page = {
-  slug:'herramientas-rescate', breadcrumb:'Herramientas de rescate vehicular', title:'Herramientas Hidráulicas de Rescate Vehicular | México',
-  description:'Guía de herramientas hidráulicas de rescate vehicular y extricación en México: cizallas, separadores, equipos para bomberos, NFPA 1936 y empresas nacionales.',
-  eyebrow:'Guía editorial · Extricación y rescate', h1:'Herramientas de rescate', h1Accent:'vehicular en México', accent:'#F75000',
+  slug:'herramientas-rescate', breadcrumb:'Herramientas de rescate vehicular', title:'Herramientas de rescate vehicular y extricación en México',
+  description:'Guía de herramientas hidráulicas de rescate vehicular y equipos de extricación vehicular en México: cizallas, separadores, herramienta combinada, cuñas, acero UHSS, vehículos eléctricos e híbridos y NFPA 1936.',
+  eyebrow:'Guía editorial · Extricación y rescate', h1:'Herramientas de rescate vehicular y', h1Accent:'equipos de extricación en México', accent:'#F75000',
   image:'/images/categorias/herramientas-rescate.avif', imageAlt:'Herramienta hidráulica de rescate vehicular de referencia',
-  intro:['Las herramientas de rescate vehicular forman un sistema para cortar, separar, empujar, estabilizar y crear acceso. Esta guía ayuda a comparar equipo de extricación, fuentes de energía y soporte.','El desempeño depende de la herramienta, accesorios, técnica y escenario. Confirma datos del modelo, clasificación, capacitación y mantenimiento directamente con la empresa o fabricante.'],
+  intro:['Las herramientas de rescate vehicular forman un sistema para cortar, separar, empujar, estabilizar y crear acceso para rescatistas. Esta guía ayuda a comparar herramientas especializadas de extricación, fuentes de energía y soporte.','El desempeño depende de la herramienta, accesorios, técnica y escenario. Confirma datos del modelo, clasificación, capacitación y mantenimiento directamente con la empresa o fabricante; Holmatro, Hurst y LUKAS son fabricantes de referencia del sector.'],
   badges:['Cizallas','Separadores','Arietes','Combinadas','Batería','Estabilización'],
-  typesHeading:'Herramientas y equipos de extricación vehicular.', compareHeading:'Cómo comparar herramientas hidráulicas de rescate.', standardsHeading:'NFPA y clasificación del equipo de rescate vehicular.',
+  typesHeading:'Herramienta hidráulica y equipos de extricación vehicular.', compareHeading:'Cómo comparar herramientas hidráulicas de rescate vehicular.',
+  documentationHeading:['Documentos para comprobar', 'el acero UHSS y la alta resistencia.'], standardsHeading:'NFPA 1936 para equipos de rescate y operaciones de extricación.',
   types:[
-    {title:'Cizallas de rescate',eyebrow:'Corte',text:'Una cizalla hidráulica se compara por geometría, apertura, fuerza de corte, clasificación, peso y comportamiento con acero de alta y ultra alta resistencia (UHSS) de vehículos modernos.'},
-    {title:'Separadores',eyebrow:'Apertura y tracción',text:'Permiten separar estructuras y, con accesorios previstos, realizar determinadas maniobras de tracción. Evalúa recorrido, fuerza, control y estabilidad.'},
+    {title:'Cizallas de rescate vehicular',eyebrow:'Corte',text:'Una cizalla hidráulica se compara por geometría, apertura, fuerza de corte, clasificación, peso y comportamiento con acero de alta y ultra alta resistencia (UHSS) de vehículos modernos.'},
+    {title:'Separador hidráulico',eyebrow:'Apertura y tracción',text:'Permite separar estructuras y, con accesorios previstos, realizar determinadas maniobras de tracción. Evalúa recorrido, fuerza, control y estabilidad.'},
     {title:'Arietes',eyebrow:'Empuje',text:'Ofrecen extensión para desplazar componentes o crear espacio. Compara longitud cerrada, carrera, etapas, puntos de apoyo y control bajo carga.'},
     {title:'Herramientas combinadas',eyebrow:'Versatilidad',text:'Una herramienta combinada integra corte y separación para despliegues donde importa reducir equipo. Su versatilidad debe compararse con capacidad, ergonomía y necesidades reales.'},
   ],
-  compare:['Define vehículos, estructuras, materiales, personas atrapadas y operaciones de rescate previstas.','Compara la clasificación completa, no solo una cifra de fuerza.','Evalúa peso, balance, apertura, velocidad, ruido y operación con el EPP adecuado.','Decide entre sistema hidráulico con mangueras y unidad de potencia, herramienta a batería o sistema híbrido según logística.','Incluye herramientas manuales, estabilización, accesorios, baterías, cargadores, capacitación y mantenimiento.'],
+  compare:['Define vehículos, estructuras, materiales, personas atrapadas, víctima atrapada y operaciones de rescate previstas.','Compara la clasificación completa, no solo una cifra de fuerza en kN.','Evalúa peso, balance, apertura, velocidad, ruido y operación con el EPP adecuado, incluido el traje estructural.','Decide entre sistema hidráulico de alta presión con mangueras y unidad de potencia, herramienta a batería o sistema híbrido según logística.','Incluye herramientas manuales, estabilización, accesorios, baterías, cargadores, capacitación y mantenimiento.'],
   documentation:['Ficha técnica y clasificación del modelo.','Manual de operación y límites de uso.','Documento de certificación o ensayo solicitado.','Lista de baterías, mangueras, accesorios y fluidos compatibles.','Plan de inspección, mantenimiento, registro y servicio.'],
   standards:[
     {title:'NFPA 1936',text:'La edición 2020 trata herramientas de rescate, incluidas herramientas motorizadas y bolsas de elevación. Verifica clasificación y modelo.'},
     {title:'NFPA 1930',text:'La edición 2025 reúne requisitos sobre uso de varias herramientas y equipos del servicio de bomberos, incluidas herramientas de rescate.'},
     {title:'EN 13204',text:'Puede aparecer como referencia para herramientas de rescate de doble acción. Comprueba versión, clasificación y reporte aplicable.'},
   ],
-  maintenanceTitle:'Disponibilidad operativa del sistema de rescate.',
+  maintenanceTitle:'Mantenimiento de la unidad de rescate y sus herramientas.',
   maintenance:[{title:'Revisión posterior al uso',text:'Inspecciona cuchillas, brazos, puntas, mangueras, conexiones, batería y carcasa; registra daños y comportamiento.'},{title:'Pruebas y mantenimiento',text:'Sigue intervalos y procedimientos del fabricante para verificar función, fugas, batería, calibración y piezas de desgaste.'},{title:'Entrenamiento',text:'Documenta prácticas con escenarios y materiales representativos, control de energía, estabilización y coordinación del equipo.'}],
+  quoteHeading:['Datos para pedir una cotización de', 'equipos de rescate vehicular.'],
   quoteData:['Escenarios y tipos de vehículos.','Herramientas y cantidades requeridas.','Fuente de energía y ecosistema de baterías.','Apertura, carrera y clasificación solicitadas.','Accesorios y estabilización.','Capacitación, garantía, repuestos y mantenimiento.'],
+  faqHeading:['Dudas para comparar', 'herramientas de extricación vehicular.'],
   faqs:[
     {q:'¿Qué herramientas se usan en rescate vehicular?',a:'Son comunes cizallas, separadores, arietes, herramientas combinadas y sistemas de estabilización. La dotación depende de escenarios, vehículos, personal y procedimientos.'},
     {q:'¿Batería o unidad hidráulica con mangueras?',a:'Ambas soluciones tienen ventajas operativas. Compara autonomía, peso, despliegue, mantenimiento, redundancia, temperatura, recarga y compatibilidad con el parque existente.'},
@@ -33,6 +36,7 @@ const page = {
   ],
   related:[{label:'Empresas de equipo para bomberos',href:'/empresas/venta-equipo/',text:'Directorio nacional por estado.'},{label:'Equipos SCBA',href:'/productos/equipos-scba/',text:'Protección respiratoria para rescate.'},{label:'Cámaras térmicas',href:'/productos/camaras-termicas/',text:'Imagen térmica para búsqueda.'},{label:'Guía para cotizar',href:'/cotizacion/',text:'Datos para comparar propuestas.'}],
   sources:[{label:'NFPA 1936 — edición 2020',href:'https://link.nfpa.org/all-publications/1936/2020'},{label:'NFPA 1930 — edición 2025',href:'https://link.nfpa.org/all-publications/1930/2025'}],
+  directoryHeading:'Localiza empresas de equipos de rescate y confirma disponibilidad directamente.',
   directoryHref:'/empresas/venta-equipo/', directoryLabel:'Buscar empresas de equipo',
 };
 ---

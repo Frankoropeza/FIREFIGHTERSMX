@@ -1,33 +1,36 @@
 ---
 import EditorialCategoryHub from '@components/products/EditorialCategoryHub.astro';
 const page = {
-  slug:'cascos-nfpa', breadcrumb:'Cascos para bomberos', title:'Cascos para Bomberos en México | Comparativa y Guía',
-  description:'Guía de cascos para bomberos en México: estructurales, forestales y rescate. Compara protección, ajuste, accesorios, normas, documentos y empresas verificables.',
-  eyebrow:'Guía editorial · Protección de cabeza', h1:'Cascos para', h1Accent:'bomberos en México', accent:'#F75000',
+  slug:'cascos-nfpa', breadcrumb:'Cascos para bomberos', title:'Cascos para bomberos en México | Casco de bombero estructural y de rescate',
+  description:'Guía de cascos para bomberos en México: casco de bombero estructural, forestal y de rescate. Compara protección de la cabeza, ajuste, ventilación, accesorios, soporte de linterna y normas.',
+  eyebrow:'Guía editorial · Protección de cabeza', h1:'Cascos para bomberos en México:', h1Accent:'casco de bombero estructural y forestal', accent:'#F75000',
   image:'/images/categorias/cascos-nfpa.avif', imageAlt:'Referencia visual de un casco para bombero con visor y protección de cuello',
-  intro:['Los cascos para bomberos deben corresponder a la operación, los peligros y el resto del equipo de protección personal. Esta guía organiza tipos, componentes y criterios para comparar modelos y empresas.','Una marca puede ofrecer múltiples configuraciones. Comprueba el modelo, accesorios, talla, norma y documento exactos; su aparición en el sitio no implica distribución, autorización ni disponibilidad.'],
+  intro:['Los cascos para bomberos deben diseñarse para la operación, los peligros y el resto del equipo de protección personal. Esta guía organiza tipos, componentes y criterios para comparar modelos y empresas.','Una marca puede ofrecer múltiples configuraciones. Comprueba el modelo, accesorios, talla, norma y documento exactos; Bullard, MSA Gallet y Cairns son fabricantes de referencia del sector, y su aparición en el sitio no implica distribución, autorización ni disponibilidad.'],
   badges:['Estructural','Forestal','Rescate','Visor','Suspensión','Compatibilidad'],
-  typesHeading:'Tipos de cascos y protección para bomberos.', compareHeading:'Cómo elegir un casco de bombero.', standardsHeading:'Normas y certificación de cascos para bomberos.',
+  typesHeading:'Cascos de bombero: estructural, rescate y protección de la cabeza.', compareHeading:'Cómo comparar ajuste, impacto y accesorios del casco.',
+  documentationHeading:['Documentos para comprobar', 'resistencia al calor y normas del casco.'], standardsHeading:'Normas para cascos de bombero estructurales y de rescate.',
   types:[
     {title:'Casco estructural',eyebrow:'Combate interior',text:'Debe considerarse junto con protección de ojos, cuello, oídos e interfaces del conjunto. Compara forma, cobertura, suspensión, retención, peso y configuración.'},
     {title:'Casco forestal',eyebrow:'Vegetación e interfaz',text:'Prioriza una solución compatible con tareas prolongadas, visibilidad, protección ocular y otros elementos definidos para incendio forestal.'},
-    {title:'Casco de rescate técnico',eyebrow:'Impacto y movilidad',text:'Puede responder a extricación, cuerda, espacios confinados u otras operaciones. Confirma el alcance previsto y no lo equipares automáticamente a un casco estructural.'},
+    {title:'Casco de rescate técnico',eyebrow:'Impacto y movilidad',text:'Puede responder a extricación, cuerda, espacios confinados u otras operaciones. Confirma el alcance previsto y no lo equipares automáticamente a un casco estructural para incendio.'},
     {title:'Accesorios e interfaces',eyebrow:'Sistema completo',text:'Visor, goggles, lámpara, protector de cuello, comunicación y soporte deben estar autorizados para la configuración y no interferir con máscara, capucha o SCBA.'},
   ],
-  compare:['Define operación, impactos, calor, visibilidad y riesgos eléctricos o químicos.','Evalúa ajuste, retención, estabilidad, campo visual, peso y uso con guantes.','Prueba compatibilidad con capucha, máscara SCBA, protección auditiva y comunicación.','Solicita lista de accesorios admitidos y piezas de reemplazo.','Compara documentación, limpieza, inspección, garantía y criterios de retiro.'],
+  compare:['Define operación, impactos, calor, visibilidad y riesgos eléctricos o químicos.','Evalúa ajuste, retención, estabilidad, campo visual, peso y uso con guantes de bombero.','Prueba compatibilidad con capucha, máscara SCBA, protección auditiva y comunicación.','Solicita lista de accesorios admitidos, ventilación y soporte de linterna, además de piezas de reemplazo.','Compara documentación, limpieza, inspección, garantía, durabilidad y criterios de retiro.'],
   documentation:['Ficha técnica y manual del modelo.','Etiqueta e identificación permanente.','Documento de certificación cuando sea requisito.','Lista de accesorios y componentes compatibles.','Instrucciones de inspección, limpieza, almacenamiento y retiro.'],
   standards:[
     {title:'NFPA 1970',text:'Incluye requisitos para cascos como elementos de conjuntos estructurales y de proximidad. Confirma edición y configuración.'},
     {title:'NFPA 1950',text:'Incluye equipo de protección para rescate técnico e incendios forestales y de interfaz.'},
     {title:'Certificación del modelo',text:'La certificación debe corresponder al casco y opciones concretas; accesorios no contemplados pueden cambiar el alcance.'},
   ],
-  maintenanceTitle:'Inspección, limpieza y retiro del casco.',
+  maintenanceTitle:'Ajuste, ventilación, durabilidad y mantenimiento del casco de bombero resistente.',
   maintenance:[
     {title:'Inspección frecuente',text:'Revisa cubierta, suspensión, retención, visor, herrajes, protector de cuello y señales de impacto o exposición.'},
     {title:'Limpieza compatible',text:'Sigue el manual para no degradar materiales, recubrimientos o componentes. Registra exposiciones y descontaminación.'},
     {title:'Piezas y retiro',text:'Usa componentes compatibles y documenta sustituciones. Ante daño, impacto o duda, separa el casco hasta evaluarlo.'},
   ],
+  quoteHeading:['Datos para pedir una cotización de', 'cascos de bombero personalizables.'],
   quoteData:['Tipo de operación.','Cantidad y tallas o rangos de ajuste.','Estilo y nivel de cobertura.','Visor, goggles, lámpara y protección de cuello.','Compatibilidad con SCBA y comunicación.','Norma, documentos, repuestos y mantenimiento solicitados.'],
+  faqHeading:['Dudas para comparar', 'cascos de bombero y rescate.'],
   faqs:[
     {q:'¿Qué casco debe usar un bombero estructural?',a:'Uno diseñado para esa operación y compatible con el conjunto de EPP. La selección debe considerar ajuste, interfaces, riesgos y requisitos adoptados por la organización.'},
     {q:'¿Un casco forestal sirve para combate estructural?',a:'No debe asumirse. Cada familia responde a riesgos y requisitos distintos; verifica el alcance de uso indicado por el fabricante y la norma correspondiente.'},
@@ -37,6 +40,7 @@ const page = {
   ],
   related:[{label:'Empresas de equipo para bomberos',href:'/empresas/venta-equipo/',text:'Directorio nacional por estado.'},{label:'Trajes para bomberos',href:'/productos/trajes-bombero/',text:'Protección estructural y forestal.'},{label:'Equipos SCBA',href:'/productos/equipos-scba/',text:'Respiración autónoma y compatibilidad.'},{label:'Normas y certificaciones',href:'/certificaciones/',text:'Cómo verificar documentos.'}],
   sources:[{label:'NFPA 1970 — información oficial',href:'https://www.nfpa.org/1970'},{label:'NFPA 1950 — información oficial',href:'https://www.nfpa.org/1950'}],
+  directoryHeading:'Localiza empresas de cascos para bomberos y confirma disponibilidad directamente.',
   directoryHref:'/empresas/venta-equipo/', directoryLabel:'Buscar empresas de equipo',
 };
 ---

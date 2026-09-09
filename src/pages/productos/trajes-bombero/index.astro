@@ -3,24 +3,25 @@ import EditorialCategoryHub from '@components/products/EditorialCategoryHub.astr
 
 const page = {
   slug: 'trajes-bombero', breadcrumb: 'Trajes para bomberos',
-  title: 'Trajes para Bomberos en México | Guía Profesional de EPP',
-  description: 'Guía de trajes para bomberos en México: estructurales, proximidad y forestales. Compara capas, tallaje, normas, documentos, mantenimiento y empresas.',
-  eyebrow: 'Guía editorial · Trajes para bomberos en México', h1: 'Trajes para', h1Accent: 'bomberos en México',
+  title: 'Trajes para bomberos en México | Traje de bombero y trajes de protección NFPA',
+  description: 'Guía de trajes para bomberos en México: traje de bombero estructural, de proximidad y forestal. Compara capas, Nomex, Kevlar, tallaje, botas, guantes, norma NFPA y mantenimiento.',
+  eyebrow: 'Guía editorial · Trajes para bomberos en México', h1: 'Trajes para bomberos en México:', h1Accent: 'traje de bombero y equipo de protección',
   intro: [
-    'Los trajes para bomberos deben seleccionarse según la operación: combate estructural, proximidad, incendio forestal u otro escenario. Esta guía organiza tipos, componentes y documentos para comparar opciones.',
+    'Los trajes para bomberos deben fabricarse y seleccionarse según la operación: combate estructural, proximidad, incendio forestal u otro escenario. Esta guía organiza tipos, componentes y documentos para comparar opciones.',
     'La aparición de una marca o norma no implica disponibilidad ni certificación de cada modelo. Confirma configuración, talla, edición aplicable y evidencia directamente con el fabricante o la empresa.',
   ],
   accent: '#F75000', image: '/images/categorias/trajes-bombero.avif',
   imageAlt: 'Referencia visual de un traje para bombero con chaquetón, pantalón y bandas de visibilidad',
   badges: ['Estructural', 'Proximidad', 'Forestal', 'Tallaje', 'Compatibilidad', 'Cuidado'],
-  typesHeading: 'Tipos de trajes y protección para bomberos.',
-  compareHeading: 'Cómo elegir un traje de bombero profesional.',
-  standardsHeading: 'Normas y certificación de trajes para bomberos.',
+  typesHeading: 'Traje de bombero: trajes de protección estructurales y forestales.',
+  compareHeading: 'Cómo comparar protección personal para bomberos.',
+  documentationHeading: ['Documentos para comprobar', 'certificado NFPA y certificación NFPA.'],
+  standardsHeading: 'NFPA y equipo de protección personal para bomberos.',
   types: [
-    { title: 'Traje estructural', eyebrow: 'Combate interior', text: 'El conjunto suele integrar capa exterior, barrera de humedad y barrera térmica. Deben compararse como sistema el chaquetón, pantalón y elementos de interfaz.' },
-    { title: 'Traje de proximidad', eyebrow: 'Calor radiante', text: 'Emplea superficies reflectantes para escenarios específicos. No debe confundirse con un conjunto estructural ordinario ni asumirse apto para cualquier exposición.' },
+    { title: 'Traje de bombero estructural', eyebrow: 'Combate interior', text: 'El conjunto suele integrar capa externa, forro, barrera de humedad y barrera térmica. Compara materiales resistentes al calor, resistencia térmica y alta resistencia como sistema en chaquetón, pantalón y elementos de interfaz.' },
+    { title: 'Traje de proximidad', eyebrow: 'Calor radiante', text: 'Emplea superficies reflectantes, Nomex o Kevlar según la configuración, para escenarios específicos. No debe confundirse con un conjunto estructural ordinario ni asumirse apto para cualquier exposición.' },
     { title: 'Ropa forestal', eyebrow: 'Vegetación e interfaz', text: 'Prioriza movilidad, manejo de calor metabólico y protección acorde con incendios forestales. Su diseño y uso son distintos del traje estructural.' },
-    { title: 'Otras prendas de emergencia', eyebrow: 'Riesgo definido', text: 'Rescate técnico, HAZMAT, ARFF y trabajo industrial pueden requerir prendas diferentes. Primero define el peligro; después selecciona la familia adecuada.' },
+    { title: 'Otras prendas de emergencia', eyebrow: 'Riesgo definido', text: 'Rescate técnico, HAZMAT, materiales peligrosos, ARFF y trabajo industrial pueden requerir prendas diferentes. Primero define el peligro; después selecciona la familia adecuada.' },
   ],
   compare: [
     'Define el tipo de incendio, tareas, duración de la operación y riesgos adicionales.', 'Solicita tallaje individual y criterios de ajuste; no compres únicamente por equivalencia de talla comercial.',
@@ -38,13 +39,15 @@ const page = {
     { title: 'NFPA 1850', text: 'Referencia para selección, cuidado y mantenimiento de conjuntos estructurales, de proximidad y equipos SCBA.' },
     { title: 'Certificación por modelo', text: 'Una afirmación general de la marca no demuestra que una combinación de materiales, talla y opciones esté incluida en el alcance certificado.' },
   ],
-  maintenanceTitle: 'Cuidado, inspección y retiro del traje.',
+  maintenanceTitle: 'Mantenimiento del traje de bombero y sus accesorios.',
   maintenance: [
     { title: 'Después de cada uso', text: 'Registra exposición, contaminación, daño visible y cualquier limpieza realizada. Sigue las instrucciones del fabricante y del programa de la organización.' },
     { title: 'Inspección documentada', text: 'Revisa costuras, cierres, refuerzos, bandas, barreras e interfaces. Separa de servicio cualquier conjunto cuya condición genere duda hasta evaluarlo.' },
     { title: 'Reparación y retiro', text: 'Confirma qué reparaciones están permitidas, quién puede hacerlas y cómo se documentan. La edad por sí sola no sustituye una evaluación de condición y criterios aplicables.' },
   ],
+  quoteHeading: ['Datos para pedir', 'trajes de protección para brigadistas.'],
   quoteData: ['Tipo de operación y riesgos.', 'Cantidad y mediciones de cada usuario.', 'Configuración de chaquetón, pantalón y elementos de interfaz.', 'Norma y edición solicitadas.', 'Documentos, marcado y trazabilidad requeridos.', 'Limpieza, inspección, reparación y capacitación que deban cotizarse aparte.'],
+  faqHeading: ['Dudas para comparar', 'trajes para bomberos profesionales.'],
   faqs: [
     { q: '¿Qué traje necesita un bombero estructural?', a: 'Necesita un conjunto diseñado para combate estructural y compatible con el resto del EPP. La selección debe considerar tareas, talla, interfaces, configuración y requisitos adoptados por la organización.' },
     { q: '¿Un traje forestal sirve para incendio estructural?', a: 'No debe asumirse. La ropa forestal responde a un entorno y balance térmico distintos; el combate estructural requiere un conjunto concebido y evaluado para esa operación.' },
@@ -62,6 +65,7 @@ const page = {
     { label: 'NFPA 1970 — información oficial', href: 'https://www.nfpa.org/1970' },
     { label: 'NFPA 1950 — información oficial', href: 'https://www.nfpa.org/1950' },
   ],
+  directoryHeading: 'Localiza empresas de trajes para bomberos y confirma disponibilidad directamente.',
   directoryHref: '/empresas/venta-equipo/', directoryLabel: 'Buscar empresas de equipo',
 };
 ---

@@ -3,28 +3,28 @@ import EditorialCategoryHub from '@components/products/EditorialCategoryHub.astr
 
 const page = {
   slug: 'extintores', breadcrumb: 'Extintores',
-  title: 'Extintores en México | Tipos, Normas y Mantenimiento',
-  description: 'Guía de extintores en México: tipos, agentes, clases de fuego, NOM-002, NOM-154, recarga, documentos, mantenimiento y directorio nacional de empresas.',
-  eyebrow: 'Guía editorial · Extintores en México', h1: 'Extintores en México', h1Accent: 'tipos y mantenimiento',
+  title: 'Extintores en México | Tipos, venta, recarga y mantenimiento',
+  description: 'Guía de extintores en México: tipos y agentes PQS, CO2 y agente limpio, clases de fuego, venta de extintores, recarga y mantenimiento, señalización, NOM-002-STPS y NOM-154-SCFI.',
+  eyebrow: 'Guía editorial · Extintores en México', h1: 'Extintores en México: tipos,', h1Accent: 'venta de extintores y mantenimiento',
   intro: [
-    'La selección de un extintor depende del combustible, el riesgo, el entorno y la capacidad requerida. Esta guía explica diferencias entre agentes y cómo comparar empresas de venta, mantenimiento y recarga.',
+    'La selección de un extintor depende del combustible, el riesgo, el entorno y la capacidad requerida. Esta guía explica diferencias entre agentes, detectores de humo y alarmas, y cómo comparar empresas de venta, mantenimiento y recarga, además del uso y manejo por el personal.',
     'NOM-154-SCFI-2005 corresponde al servicio de mantenimiento y recarga; no es una certificación genérica de todos los extintores. Verifica por separado el producto, el prestador y el trabajo realizado.',
   ],
   accent: '#F5A623', image: '/images/categorias/extintores.avif',
   imageAlt: 'Extintor portátil de referencia con manguera, manómetro y señalamiento',
   badges: ['PQS', 'CO₂', 'Agua', 'Espuma', 'Clase K', 'Sobre ruedas'],
-  typesHeading: 'Tipos de extintores y agentes para cada fuego.',
-  compareHeading: 'Cómo comparar extintores, recarga y mantenimiento.',
-  standardsHeading: 'Normativa actual sobre extintores en México.',
+  typesHeading: 'Tipos de extintores: PQS, CO2, ABC y agente limpio.',
+  compareHeading: 'Cómo comparar venta de extintores y equipos contra incendio.',
+  documentationHeading: ['Documentos para comprobar', 'certificado, revisión y estándar del proveedor.'], standardsHeading: 'NOM-002-STPS, NOM-154-SCFI y estándares para extintores.',
   types: [
-    { title: 'Polvo químico seco', eyebrow: 'Configuraciones ABC o BC', text: 'El agente y la clasificación declarada deben corresponder al riesgo. Compara capacidad, rating, instrucciones, condición del recipiente y compatibilidad con el área.' },
-    { title: 'Dióxido de carbono', eyebrow: 'Agente sin residuo', text: 'Se usa en aplicaciones definidas para fuegos B y equipos eléctricos energizados. Considera descarga, alcance, ventilación y riesgo para las personas.' },
+    { title: 'Extintores de polvo químico seco', eyebrow: 'PQS, ABC o BC', text: 'El agente y la clasificación declarada deben corresponder al riesgo. Compara capacidad, rating, instrucciones, condición del recipiente y compatibilidad con el área.' },
+    { title: 'Extintores de CO2', eyebrow: 'Agente sin residuo', text: 'Se usa en aplicaciones definidas para fuegos B y equipos eléctricos energizados. Considera descarga, alcance, ventilación y riesgo para las personas.' },
     { title: 'Agua y espuma', eyebrow: 'Combustibles específicos', text: 'Pueden responder a fuegos clase A o determinados líquidos, según el agente y la clasificación. No deben aplicarse por analogía a riesgos eléctricos o químicos.' },
-    { title: 'Agentes especializados', eyebrow: 'Clases K, D y riesgos especiales', text: 'Cocinas, metales combustibles, equipos sensibles y otros riesgos requieren agentes y equipos específicos. La selección debe partir de información técnica del peligro.' },
+    { title: 'Agentes especializados', eyebrow: 'Clases K, D y riesgos especiales', text: 'Cocinas, metales combustibles, líquidos inflamables, aceites, equipos sensibles y otros riesgos requieren agentes y equipos específicos. La selección debe partir de información técnica del peligro.' },
   ],
   compare: [
     'Identifica materiales combustibles, equipos energizados, procesos y riesgos especiales de cada área.', 'Compara agente, clasificación de fuego, capacidad nominal, rating, alcance y tiempo de descarga declarados.',
-    'Distingue suministro de equipo nuevo, inspección, mantenimiento, recarga y prueba hidrostática.', 'Verifica que el prestador pueda atender la familia de extintor y conserve procedimientos y equipo adecuados.',
+    'Distingue suministro de equipo nuevo, inspección, mantenimiento, recarga y prueba hidrostática; los agentes limpios y el agua a presión requieren revisión propia.', 'Verifica que el prestador pueda atender la familia de extintor y conserve procedimientos y equipo adecuados para sus productos y servicios.',
     'Solicita desglose de agente, piezas, etiquetas, pruebas, sustituciones y evidencia del servicio.',
   ],
   documentation: [
@@ -38,13 +38,15 @@ const page = {
     { title: 'NFPA 10', text: 'Referencia internacional para selección, instalación, inspección, mantenimiento y recarga de extintores portátiles.' },
     { title: 'Norma del producto', text: 'La fabricación y desempeño del extintor pueden corresponder a otras normas según tipo y agente. No confundas esos requisitos con la NOM del servicio.' },
   ],
-  maintenanceTitle: 'Mantenimiento y recarga de extintores.',
+  maintenanceTitle: 'Mantenimiento de extintores: recarga y revisión.',
   maintenance: [
     { title: 'Inspección del usuario', text: 'El programa del centro de trabajo debe permitir detectar acceso obstruido, daño, descarga, alteraciones o condiciones que requieran atención.' },
     { title: 'Servicio documentado', text: 'El prestador debe identificar las actividades realizadas, agente, partes sustituidas y resultado. Conserva el reporte asociado al extintor.' },
     { title: 'Prueba y retiro', text: 'La prueba hidrostática depende del recipiente y condiciones establecidas. Equipos obsoletos, dañados o no recargables requieren un tratamiento distinto.' },
   ],
+  quoteHeading: ['Datos para pedir una cotización', 'o asesoría de extintores.'],
   quoteData: ['Cantidad y ubicación de los extintores.', 'Agente, capacidad, marca e identificación disponibles.', 'Riesgos y clases de fuego por área.', 'Servicio solicitado: suministro, mantenimiento, recarga o prueba.', 'Historial y última intervención conocida.', 'Reportes, etiquetas, señalamiento o soportes requeridos.'],
+  faqHeading: ['Dudas para comparar', 'extintores y su mantenimiento.'],
   faqs: [
     { q: '¿Qué tipo de extintor necesito?', a: 'Depende del combustible, los equipos presentes y el riesgo. Identifica las clases de fuego y solicita una selección documentada; no existe un agente universal para todos los escenarios.' },
     { q: '¿NOM-154-SCFI-2005 certifica el extintor?', a: 'Su campo principal es el servicio de mantenimiento y recarga y los prestadores que lo realizan. El producto puede estar sujeto a otras normas y documentos según su tipo.' },
@@ -63,6 +65,7 @@ const page = {
     { label: 'NOM-002-STPS-2010 — Diario Oficial de la Federación', href: 'https://dof.gob.mx/normasOficiales/4228/stps.htm' },
     { label: 'NFPA 10 — información oficial', href: 'https://www.nfpa.org/10' },
   ],
+  directoryHeading: 'Localiza proveedores de extintores y confirma disponibilidad directamente.',
   directoryHref: '/empresas/extintores/', directoryLabel: 'Buscar empresas de extintores',
 };
 ---

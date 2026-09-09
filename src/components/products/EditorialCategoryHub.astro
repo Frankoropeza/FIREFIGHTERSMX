@@ -21,6 +21,10 @@ interface Props {
   badges: string[];
   typesHeading: string;
   compareHeading: string;
+  documentationHeading?: string[];
+  quoteHeading?: string[];
+  faqHeading?: string[];
+  directoryHeading?: string;
   standardsHeading: string;
   types: Card[];
   compare: string[];
@@ -42,6 +46,11 @@ const {
   maintenanceTitle, maintenance, quoteData, faqs, related, sources,
   directoryHref, directoryLabel,
 } = Astro.props;
+
+const documentationHeading = Astro.props.documentationHeading ?? ['Documentos que debes', 'solicitar y comprobar.'];
+const quoteHeading = Astro.props.quoteHeading ?? ['Datos para pedir', 'una cotización.'];
+const faqHeading = Astro.props.faqHeading ?? ['Dudas para comparar', `${breadcrumb.toLowerCase()}.`];
+const directoryHeading = Astro.props.directoryHeading ?? 'Localiza empresas y confirma disponibilidad directamente.';
 
 const canonicalURL = `${SITE.url}/productos/${slug}/`;
 const breadcrumbSchema = {
@@ -118,7 +127,7 @@ const faqSchema = {
       </div>
       <div style="border-left:1px solid rgba(74,117,153,0.18);padding-left:clamp(1.5rem,4vw,3rem)">
         <span class="section-eyebrow mb-4 inline-flex">Trazabilidad</span>
-        <h2 class="font-display font-bold mb-7" style="color:#FFFFFF;font-size:clamp(1.8rem,3.6vw,2.8rem);line-height:1.05">Documentos que debes<br/><span style={`color:${accent}`}>solicitar y comprobar.</span></h2>
+        <h2 class="font-display font-bold mb-7" style="color:#FFFFFF;font-size:clamp(1.8rem,3.6vw,2.8rem);line-height:1.05">{documentationHeading[0]}<br/><span style={`color:${accent}`}>{documentationHeading[1]}</span></h2>
         <ul class="flex flex-col gap-4 m-0 pl-5 text-sm leading-relaxed" style="color:#CBD5E1">{documentation.map((item) => <li>{item}</li>)}</ul>
       </div>
     </div>
@@ -151,7 +160,7 @@ const faqSchema = {
     <div class="container-site grid grid-cols-1 lg:grid-cols-[1fr_1.35fr] gap-10 lg:gap-20 items-start">
       <div>
         <span class="section-eyebrow mb-4 inline-flex">Solicitud comparable</span>
-        <h2 id="cotizar-heading" class="font-display font-bold mb-5" style="color:#FFFFFF;font-size:clamp(1.8rem,3.6vw,2.8rem);line-height:1.05">Datos para pedir<br/><span style={`color:${accent}`}>una cotización.</span></h2>
+        <h2 id="cotizar-heading" class="font-display font-bold mb-5" style="color:#FFFFFF;font-size:clamp(1.8rem,3.6vw,2.8rem);line-height:1.05">{quoteHeading[0]}<br/><span style={`color:${accent}`}>{quoteHeading[1]}</span></h2>
         <a href="/cotizacion/" class="font-display font-semibold text-xs uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57">Consultar guía de cotización →</a>
       </div>
       <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 list-none m-0 p-0">{quoteData.map((item, i) => <li class="p-4 text-sm leading-relaxed" style="color:#CBD5E1;background:#040A12;border:1px solid rgba(74,117,153,0.18)"><span class="font-display font-bold mr-2" style={`color:${accent}`}>{String(i + 1).padStart(2, '0')}</span>{item}</li>)}</ul>
@@ -161,7 +170,7 @@ const faqSchema = {
   <section class="section" style="background:#040A12" aria-labelledby="faq-heading">
     <div class="container-site max-w-4xl">
       <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes</span>
-      <h2 id="faq-heading" class="font-display font-bold mb-8" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Dudas para comparar<br/><span style={`color:${accent}`}>{breadcrumb.toLowerCase()}.</span></h2>
+      <h2 id="faq-heading" class="font-display font-bold mb-8" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">{faqHeading[0]}<br/><span style={`color:${accent}`}>{faqHeading[1]}</span></h2>
       <div style="border-top:1px solid rgba(74,117,153,0.18)">{faqs.map((faq) => <details style="border-bottom:1px solid rgba(74,117,153,0.18)">
         <summary class="cursor-pointer py-5 font-display font-semibold text-base" style="color:#FFFFFF">{faq.q}</summary>
         <p class="pb-5 text-sm leading-relaxed" style="color:#94A3B8">{faq.a}</p>
@@ -171,7 +180,7 @@ const faqSchema = {
 
   <section class="section-tight" style={`background:${accent}18;border-block:1px solid ${accent}44`} aria-label="Directorio relacionado">
     <div class="container-site flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
-      <div><p class="font-display font-bold text-xs uppercase tracking-widest mb-2" style={`color:${accent}`}>Directorio nacional</p><h2 class="font-display font-bold text-2xl" style="color:#FFFFFF">Localiza empresas y confirma disponibilidad directamente.</h2></div>
+      <div><p class="font-display font-bold text-xs uppercase tracking-widest mb-2" style={`color:${accent}`}>Directorio nacional</p><h2 class="font-display font-bold text-2xl" style="color:#FFFFFF">{directoryHeading}</h2></div>
       <a href={directoryHref} class="btn btn-primary btn-lg">{directoryLabel}</a>
     </div>
   </section>

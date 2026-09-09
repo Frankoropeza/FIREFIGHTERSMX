@@ -3,24 +3,25 @@ import EditorialCategoryHub from '@components/products/EditorialCategoryHub.astr
 
 const page = {
   slug: 'sistemas-ci', breadcrumb: 'Sistemas contra incendio',
-  title: 'Sistemas Contra Incendio en México | Guía Nacional',
-  description: 'Guía de sistemas contra incendio en México: detección, alarma, rociadores, redes, bombas y supresión. Compara empresas, documentos y mantenimiento preventivo.',
-  eyebrow: 'Guía editorial · Sistemas contra incendio en México', h1: 'Sistemas contra', h1Accent: 'incendio en México',
+  title: 'Sistemas contra incendios en México | Protección contra incendios y normas',
+  description: 'Guía de sistemas contra incendios en México: protección contra incendios, detección y alarma, rociadores automáticos, hidrantes, bombas contra incendios, NFPA y NOM-002-STPS-2010.',
+  eyebrow: 'Guía editorial · Sistemas contra incendios en México', h1: 'Sistemas contra incendios en México:', h1Accent: 'protección contra incendios',
   intro: [
-    'Los sistemas contra incendio integran equipos, ingeniería, instalación, pruebas y mantenimiento. Esta guía explica sus componentes y qué información solicitar antes de comparar empresas en México.',
-    'La solución depende del riesgo, el inmueble y los requisitos del proyecto. FIREFIGHTERS MX no diseña ni instala sistemas: organiza información y enlaza al directorio nacional de empresas del sector.',
+    'Los sistemas contra incendios integran equipos, ingeniería, instalación, pruebas y mantenimiento; un sistema fijo requiere criterios distintos de un equipo portátil. Esta guía explica sus componentes y qué información solicitar antes de comparar empresas en México.',
+    'La solución depende del tipo de riesgo, el inmueble y los requisitos legales del proyecto: materiales inflamables, cocinas y centros de trabajo requieren evaluación propia bajo la norma oficial mexicana aplicable. FIREFIGHTERS MX no diseña ni instala sistemas: organiza información y enlaza al directorio nacional de empresas del sector.',
   ],
   accent: '#34D399', image: '/images/categorias/sistemas-ci.avif',
   imageAlt: 'Componentes de referencia de un sistema contra incendio con tuberías, válvulas y detección',
   badges: ['Detección y alarma', 'Rociadores', 'Red hidráulica', 'Bombas', 'Supresión', 'Mantenimiento'],
-  typesHeading: 'Tipos y componentes de sistemas contra incendio.',
-  compareHeading: 'Cómo comparar equipos y empresas de instalación.',
-  standardsHeading: 'Normas para sistemas contra incendios en México.',
+  typesHeading: 'Tipos de sistemas de protección: rociadores automáticos, hidrantes y alarmas.',
+  compareHeading: 'Cómo comparar equipos y sistemas contra incendios.',
+  documentationHeading: ['Documentos para comprobar', 'certificados y certificación del sistema.'],
+  standardsHeading: 'NFPA, NOM-002-STPS-2010 y requisitos legales del inmueble.',
   types: [
-    { title: 'Detección y alarma de incendio', eyebrow: 'Señalización temprana', text: 'Puede incluir panel, detectores, módulos, estaciones manuales y dispositivos de notificación. La comparación debe considerar compatibilidad, programación, alimentación, supervisión e integración.' },
+    { title: 'Detección y alarmas de incendio', eyebrow: 'Señalización temprana', text: 'Puede incluir panel, detectores de humo, alarmas de incendio, módulos, estaciones manuales y dispositivos de notificación. La comparación debe considerar compatibilidad, programación, alimentación, supervisión e integración.' },
     { title: 'Rociadores automáticos', eyebrow: 'Control con agua', text: 'La selección y distribución dependen de la ocupación, el riesgo, el almacenamiento, las obstrucciones y el abastecimiento. Requieren base de diseño y cálculo documentado.' },
-    { title: 'Redes, hidrantes y bombas', eyebrow: 'Abastecimiento', text: 'Tuberías, válvulas, gabinetes, hidrantes, depósito y bombas deben evaluarse como un conjunto hidráulico, no como piezas aisladas.' },
-    { title: 'Sistemas de supresión', eyebrow: 'Riesgos específicos', text: 'Agua nebulizada, espuma, agentes gaseosos u otras tecnologías responden a aplicaciones distintas. El agente y la descarga requieren criterios técnicos y de seguridad propios.' },
+    { title: 'Manguera, hidrantes y bombas', eyebrow: 'Abastecimiento', text: 'Tuberías, válvulas, gabinetes, manguera, hidrantes, depósito y bombas contra incendios deben evaluarse como un conjunto hidráulico, no como piezas aisladas.' },
+    { title: 'Sistemas de supresión', eyebrow: 'Riesgos específicos', text: 'Agua nebulizada, espuma, agentes gaseosos u otras tecnologías responden a aplicaciones distintas. El agente y la descarga requieren criterios técnicos y de seguridad propios para ocupantes del edificio.' },
   ],
   compare: [
     'Define el uso, ocupación, procesos, materiales y riesgos de las áreas que se protegerán.',
@@ -42,13 +43,15 @@ const page = {
     { title: 'NFPA 2001', text: 'Referencia para sistemas de extinción con agentes limpios. El agente, recinto y concentración deben evaluarse como sistema.' },
     { title: 'UL y FM', text: 'Un listado o aprobación corresponde a productos y configuraciones concretas. Solicita el documento exacto en vez de aceptar una mención genérica.' },
   ],
-  maintenanceTitle: 'Inspección y mantenimiento del sistema.',
+  maintenanceTitle: 'Inspección y mantenimiento preventivo del sistema contra incendios.',
   maintenance: [
     { title: 'Inventario y línea base', text: 'Conserva planos, equipos, válvulas, zonas, versiones de programación y resultados iniciales para comparar cambios posteriores.' },
     { title: 'Programa por componente', text: 'La frecuencia y el procedimiento dependen del sistema, la referencia adoptada, el fabricante y la autoridad competente.' },
     { title: 'Registro de hallazgos', text: 'Documenta pruebas, fallas, indisponibilidades, correcciones y piezas sustituidas. Una etiqueta aislada no sustituye el expediente técnico.' },
   ],
+  quoteHeading: ['Datos del inmueble y', 'del sistema de bombeo.'],
   quoteData: ['Ubicación y uso del inmueble.', 'Planos y superficies disponibles.', 'Procesos, almacenamiento y riesgos especiales.', 'Sistemas existentes e interfaces requeridas.', 'Normas o criterios exigidos por comprador, autoridad o aseguradora.', 'Entregables, pruebas, capacitación y mantenimiento solicitados.'],
+  faqHeading: ['Dudas para comparar', 'sistemas de protección contra incendios.'],
   faqs: [
     { q: '¿Qué tipos de sistemas contra incendio existen?', a: 'Entre los principales están detección y alarma, rociadores, redes con hidrantes o gabinetes, bombeo y sistemas de supresión para riesgos específicos. Un inmueble puede necesitar varios sistemas integrados.' },
     { q: '¿Cómo elegir una empresa de sistemas contra incendio?', a: 'Compara experiencia documentable en el alcance requerido, responsables técnicos, metodología, equipos propuestos, pruebas, entregables, garantías y mantenimiento. Verifica cada afirmación directamente.' },
@@ -66,6 +69,7 @@ const page = {
     { label: 'NFPA — códigos y estándares', href: 'https://www.nfpa.org/codes-and-standards' },
     { label: 'NOM-002-STPS-2010 — Diario Oficial de la Federación', href: 'https://dof.gob.mx/normasOficiales/4228/stps.htm' },
   ],
+  directoryHeading: 'Localiza empresas de sistemas contra incendios y confirma disponibilidad directamente.',
   directoryHref: '/empresas/sistemas-ci/', directoryLabel: 'Buscar empresas de sistemas CI',
 };
 ---

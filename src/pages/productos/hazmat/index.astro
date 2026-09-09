@@ -1,13 +1,14 @@
 ---
 import EditorialCategoryHub from '@components/products/EditorialCategoryHub.astro';
 const page = {
-  slug:'hazmat', breadcrumb:'Equipos HAZMAT', title:'Equipos HAZMAT para Materiales Peligrosos en México',
-  description:'Guía de equipos HAZMAT para materiales peligrosos: traje químico, protección personal, detector multigás, descontaminación, normativa y empresas en México.',
-  eyebrow:'Guía editorial · Materiales peligrosos', h1:'Equipos HAZMAT para', h1Accent:'materiales peligrosos', accent:'#EF4444',
+  slug:'hazmat', breadcrumb:'Equipos HAZMAT', title:'Equipos HAZMAT en México | Materiales peligrosos y transporte',
+  description:'Guía de equipos HAZMAT para materiales peligrosos en México: niveles de protección A, B, C y D, traje químico, detector multigás, descontaminación, transporte de materiales peligrosos y NOM-002-SCT-2011.',
+  eyebrow:'Guía editorial · Materiales peligrosos', h1:'Equipos HAZMAT para materiales', h1Accent:'peligrosos en México', accent:'#EF4444',
   image:'/images/categorias/hazmat.avif', imageAlt:'Equipo HAZMAT de referencia con traje químico y protección respiratoria',
-  intro:['La respuesta a materiales peligrosos exige identificar la sustancia química, concentración, estado físico, vías de exposición y tareas. Ningún traje o detector es universal.','Esta guía organiza equipo de protección personal, trajes HAZMAT, protección respiratoria, detección de gas y descontaminación para el control de materiales peligrosos. Si el alcance incluye transporte de materiales y residuos peligrosos, también debe verificarse la regulación de transporte aplicable.'],
+  intro:['La respuesta a materiales peligrosos exige identificar la sustancia química, concentración, estado físico, vías de exposición y tareas de manejo. Ningún traje o detector es universal.','Esta guía organiza equipo de protección personal, trajes HAZMAT, protección respiratoria, detección de gas y descontaminación para el control de materiales peligrosos. Si el alcance incluye transporte de materiales y residuos peligrosos, también debe verificarse la regulación de transporte aplicable para operadores, almacenes y logística.'],
   badges:['Trajes químicos','SCBA','Multigás','Permeación','Descontaminación','NFPA 1990'],
-  typesHeading:'Equipos HAZMAT y protección para sustancias peligrosas.', compareHeading:'Cómo seleccionar equipo ante un incidente HAZMAT.', standardsHeading:'Normativas y cumplimiento para materiales peligrosos.',
+  typesHeading:'Equipos HAZMAT y niveles de protección A, B, C y D.', compareHeading:'Cómo seleccionar equipo para transporte de materiales peligrosos.',
+  documentationHeading:['Documentos para comprobar', 'certificación y control de materiales peligrosos.'], standardsHeading:'NOM-002-SCT-2011, logística y cumplimiento normativo.',
   types:[
     {title:'Trajes encapsulados',eyebrow:'Protección de cuerpo completo',text:'La configuración y nivel de hermeticidad deben corresponder a la sustancia y tarea. Compara material, costuras, visor, guantes, botas, válvulas y uso con SCBA.'},
     {title:'Ropa contra salpicaduras',eyebrow:'Alcance definido',text:'Puede utilizarse cuando el análisis permita menor encapsulado. La clasificación por letras o niveles no sustituye una tabla de permeación y un conjunto compatible.'},
@@ -21,9 +22,11 @@ const page = {
     {title:'NIOSH para respiradores',text:'La aprobación de un respirador debe comprobarse por configuración en la Certified Equipment List; CBRN requiere identificación específica.'},
     {title:'Transporte terrestre',text:'Cuando el alcance incluya transportar mercancía peligrosa, aplica un marco distinto al equipo de respuesta. Verifica reglamento, clasificación, documentos y NOM vigentes de la SICT.'},
   ],
-  maintenanceTitle:'Preparación y control del equipo HAZMAT.',
-  maintenance:[{title:'Antes de la entrada',text:'Verifica integridad, talla, cierres, válvulas, guantes, botas, SCBA, comunicación, detector y equipo de respaldo.'},{title:'Detectores',text:'Realiza prueba funcional y calibración conforme al fabricante y programa; documenta sensores, gas patrón, resultado y fecha.'},{title:'Después del incidente',text:'Controla descontaminación, inspección, exposición, almacenamiento y retiro. Algunos equipos son limitados o desechables según su diseño y condición.'}],
+  maintenanceTitle:'Preparación de la brigada de emergencias ante un riesgo.',
+  maintenance:[{title:'Antes de la entrada',text:'Verifica integridad, talla, cierres, válvulas, guantes, botas, SCBA, comunicación, detector y equipo de respaldo. Capacitar al operador y definir un protocolo permite prevenir situaciones de riesgo.'},{title:'Detectores',text:'Realiza prueba funcional y calibración conforme al fabricante y programa; documenta sensores, gas patrón, resultado y fecha.'},{title:'Después del incidente',text:'Controla descontaminación, inspección, exposición, almacenamiento y retiro. Algunos equipos son limitados o desechables según su diseño y condición; un especialista debe valorar fugas o sustancias inflamables conforme al estándar aplicable.'}],
+  quoteHeading:['Datos de la carga y', 'la unidad de transporte.'],
   quoteData:['Sustancias y SDS disponibles.','Concentración, estado y temperatura esperados.','Tareas, duración y nivel de encapsulado.','Tallas y número de usuarios.','Gases, sensores y rangos de medición.','SCBA, comunicación, descontaminación, capacitación y repuestos.'],
+  faqHeading:['Dudas para prevenir', 'situaciones de riesgo HAZMAT.'],
   faqs:[
     {q:'¿Qué significa HAZMAT?',a:'Es una abreviatura de hazardous materials, o materiales peligrosos. En respuesta a emergencias abarca identificación, control, protección, monitoreo y descontaminación.'},
     {q:'¿Cómo elegir un traje HAZMAT?',a:'Parte de la sustancia, concentración, temperatura, exposición y tarea. Comprueba permeación, degradación, costuras y compatibilidad del conjunto; el nivel por sí solo no basta.'},
@@ -33,6 +36,7 @@ const page = {
   ],
   related:[{label:'Empresas de equipo para bomberos',href:'/empresas/venta-equipo/',text:'Directorio nacional por estado.'},{label:'Equipos SCBA',href:'/productos/equipos-scba/',text:'Protección respiratoria autónoma.'},{label:'Capacitación contra incendios',href:'/empresas/capacitacion/',text:'Empresas clasificadas por estado.'},{label:'Normas y certificaciones',href:'/certificaciones/',text:'Cómo verificar documentos.'}],
   sources:[{label:'NFPA 1990 — información oficial',href:'https://www.nfpa.org/1990'},{label:'NIOSH — Certified Equipment List',href:'https://wwwn.cdc.gov/niosh-cel/'},{label:'SICT — NOM de materiales y residuos peligrosos',href:'https://micrs.sct.gob.mx/transporte-y-medicina-preventiva/autotransporte-federal/marco-normativo/noms-de-materiales-y-residuos-peligrosos/'}],
+  directoryHeading:'Localiza especialistas en materiales peligrosos y confirma disponibilidad directamente.',
   directoryHref:'/empresas/venta-equipo/', directoryLabel:'Buscar empresas de equipo',
 };
 ---

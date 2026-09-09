@@ -1,29 +1,32 @@
 ---
 import EditorialCategoryHub from '@components/products/EditorialCategoryHub.astro';
 const page = {
-  slug:'camaras-termicas', breadcrumb:'Cámaras térmicas para bomberos', title:'Cámaras Termográficas para Bomberos en México | Guía',
-  description:'Guía de cámara térmica y termográfica para bomberos: imagen infrarroja, búsqueda, rescate, extinción de incendios, NFPA 1930 y empresas del sector en México.',
-  eyebrow:'Guía editorial · Imagen térmica', h1:'Cámaras termográficas', h1Accent:'para bomberos en México', accent:'#F75000',
+  slug:'camaras-termicas', breadcrumb:'Cámaras térmicas para bomberos', title:'Cámaras térmicas y termográficas para bomberos en México | Imagen térmica',
+  description:'Guía de cámara térmica y cámara termográfica para bomberos en México: imagen térmica infrarroja, búsqueda y rescate, extinción de incendios, puntos calientes y NFPA 1801.',
+  eyebrow:'Guía editorial · Imagen térmica', h1:'Cámaras térmicas y termográficas', h1Accent:'para bomberos en México', accent:'#F75000',
   image:'/images/categorias/camaras-termicas.avif', imageAlt:'Cámara térmica para bomberos mostrando una imagen de calor',
-  intro:['Las cámaras térmicas ayudan a interpretar diferencias de temperatura durante búsqueda y rescate, extinción de incendios, reconocimiento y revisión. Una cámara infrarroja detecta radiación de superficies y genera una imagen térmica; no sustituye entrenamiento ni evaluación del entorno.','Esta guía explica criterios para comparar una cámara térmica o cámara termográfica para bomberos. Las prestaciones y certificaciones deben comprobarse en la ficha del modelo y con la empresa correspondiente.'],
+  intro:['Las cámaras térmicas ayudan a interpretar diferencias de temperatura durante búsqueda y rescate, extinción de incendios, reconocimiento y revisión. Las cámaras infrarrojas detectan radiación de superficies y generan una imagen térmica; no sustituyen entrenamiento ni evaluación del entorno.','Esta guía explica criterios para comparar una cámara térmica o cámara termográfica para bomberos. Las cámaras termográficas portátiles pueden ayudar a localizar puntos calientes y apoyar la toma de decisiones; FLIR, MSA y Bullard son fabricantes de referencia del sector.'],
   badges:['Imagen térmica','Búsqueda','Rango','Modos','Batería','NFPA 1930'],
-  typesHeading:'Tipos de cámara termográfica para incendio y rescate.', compareHeading:'Cómo elegir una cámara térmica de bomberos.', standardsHeading:'NFPA y documentación de cámaras termográficas.',
+  typesHeading:'Cámara térmica y cámara termográfica para bomberos.', compareHeading:'Cómo elegir imagen térmica para extinción de incendios.',
+  documentationHeading:['Documentos para comprobar', 'el accesorio y la imagen térmica.'], standardsHeading:'NFPA 1801 y documentación de cámaras termográficas.',
   types:[
-    {title:'Cámara de mano',eyebrow:'Uso compartido',text:'Formato dedicado para búsqueda, reconocimiento y evaluación. Compara agarre con guantes, pantalla, controles, peso, resistencia y mejora de imagen.'},
+    {title:'Cámara de imagen térmica',eyebrow:'Uso compartido',text:'Formato dedicado para búsqueda, reconocimiento y evaluación. Compara agarre con guantes, pantalla, controles, peso, resistencia y mejora de imagen.'},
     {title:'Cámara personal',eyebrow:'Asignación individual',text:'Prioriza portabilidad y acceso rápido. Evalúa campo de visión, autonomía, sujeción y limitaciones frente a una unidad de mayor tamaño.'},
     {title:'Imagen para mando',eyebrow:'Documentación y transmisión',text:'Algunos equipos incorporan grabación o transmisión. Confirma alcance, almacenamiento, seguridad de datos y utilidad dentro del sistema de mando.'},
     {title:'Inspección técnica',eyebrow:'Aplicación diferenciada',text:'Una cámara termográfica de alta resolución para inspección puede medir y documentar temperatura, pero no debe confundirse automáticamente con una cámara diseñada para lucha contra incendios.'},
   ],
-  compare:['Define tareas: búsqueda, orientación, revisión, mando, HAZMAT o inspección.','Compara resolución, campo de visión, rango, frecuencia y forma de presentar temperaturas.','Evalúa modos de imagen, paletas y comportamiento cuando cambia el rango térmico.','Prueba controles, pantalla, agarre, correa y lectura con EPP y baja visibilidad.','Revisa batería, carga, repuestos, actualizaciones, garantía y mantenimiento.'],
+  compare:['Define tareas: búsqueda y rescate, orientación, revisión, mando, HAZMAT u operaciones de rescate o inspección.','Compara resolución, campo de visión, rango, frecuencia y forma de presentar temperaturas.','Evalúa modos de imagen, paletas y comportamiento cuando cambia el rango térmico.','Prueba controles, pantalla, agarre, correa y lectura con EPP y baja visibilidad; un formato inalámbrico puede facilitar la lectura en medio del humo, según el modelo.','Revisa batería, carga, repuestos, actualizaciones, garantía y mantenimiento.'],
   documentation:['Ficha técnica y manual del modelo.','Descripción de modos, rangos, precisión y limitaciones.','Documento de certificación cuando sea requisito.','Baterías, cargadores, accesorios y repuestos compatibles.','Procedimiento de inspección, limpieza, actualización y servicio.'],
   standards:[
     {title:'NFPA 1930',text:'La edición 2025 incluye el uso de cámaras térmicas por servicios de bomberos y emergencia, junto con otros equipos operativos.'},
     {title:'Alcance del modelo',text:'No todas las cámaras térmicas son equipos para combate. Verifica que el diseño, ensayos y documentación correspondan al uso previsto.'},
     {title:'Formación del usuario',text:'La interpretación de la imagen depende del escenario, emisividad, reflejos, humo, agua y límites del sensor; requiere práctica documentada.'},
   ],
-  maintenanceTitle:'Control operativo de la cámara térmica.',
+  maintenanceTitle:'Mantenimiento de la cámara térmica y su accesorio.',
   maintenance:[{title:'Revisión antes del uso',text:'Confirma batería, pantalla, lente, carcasa, controles, accesorios y funcionamiento general.'},{title:'Limpieza y actualización',text:'Sigue las instrucciones del fabricante para lente, sellos, software y almacenamiento; evita métodos que dañen el sensor.'},{title:'Registro de fallas',text:'Documenta golpes, exposición, anomalías de imagen, baterías degradadas y reparaciones para decidir disponibilidad.'}],
+  quoteHeading:['Datos para pedir una cotización de', 'cámaras térmicas compactas.'],
   quoteData:['Uso principal y usuarios previstos.','Resolución, rango y campo de visión requeridos.','Modos, grabación o transmisión.','Peso, montaje y operación con guantes.','Número de baterías, cargadores y accesorios.','Norma, capacitación, garantía y mantenimiento.'],
+  faqHeading:['Dudas para comparar', 'cámaras termográficas para bomberos.'],
   faqs:[
     {q:'¿Para qué sirve una cámara térmica en un incendio?',a:'Puede apoyar búsqueda, orientación, localización de diferencias térmicas y revisión. La imagen debe interpretarse junto con condiciones, procedimientos y otras señales.'},
     {q:'¿Una cámara térmica permite ver a través del humo o paredes?',a:'Puede formar imagen en determinadas condiciones de humo, pero no ve a través de paredes. Detecta radiación térmica de superficies dentro de su campo de visión y sus límites deben conocerse.'},
@@ -33,6 +36,7 @@ const page = {
   ],
   related:[{label:'Empresas de equipo para bomberos',href:'/empresas/venta-equipo/',text:'Directorio nacional por estado.'},{label:'Drones para bomberos',href:'/productos/drones-emergencia/',text:'Plataformas aéreas e imagen térmica.'},{label:'Herramientas de rescate',href:'/productos/herramientas-rescate/',text:'Equipo para extricación.'},{label:'Guía para cotizar',href:'/cotizacion/',text:'Datos para comparar propuestas.'}],
   sources:[{label:'NFPA 1930 — edición 2025',href:'https://link.nfpa.org/all-publications/1930/2025'}],
+  directoryHeading:'Localiza empresas de cámaras térmicas y confirma disponibilidad directamente.',
   directoryHref:'/empresas/venta-equipo/', directoryLabel:'Buscar empresas de equipo',
 };
 ---

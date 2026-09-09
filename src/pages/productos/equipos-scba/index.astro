@@ -3,27 +3,28 @@ import EditorialCategoryHub from '@components/products/EditorialCategoryHub.astr
 
 const page = {
   slug: 'equipos-scba', breadcrumb: 'Equipos SCBA',
-  title: 'Equipos SCBA para Bomberos en México | Guía Técnica',
-  description: 'Guía técnica de equipos SCBA para bomberos en México: componentes, aire, autonomía nominal, NIOSH, NFPA, protección respiratoria, mantenimiento y empresas.',
-  eyebrow: 'Guía editorial · Respiración autónoma', h1: 'Equipos SCBA para', h1Accent: 'bomberos en México',
+  title: 'Equipos SCBA de respiración autónoma para bomberos en México',
+  description: 'Guía de equipos SCBA y equipos de respiración autónoma para bomberos en México: protección respiratoria, autonomía nominal, regulador, arnés, máscara, PASS, certificación NFPA y aprobación NIOSH.',
+  eyebrow: 'Guía editorial · Respiración autónoma', h1: 'Equipos SCBA de respiración', h1Accent: 'autónoma para bomberos en México',
   intro: [
-    'Un equipo de respiración autónoma —SCBA— suministra aire desde un cilindro y forma parte de un sistema que incluye arnés, reguladores, máscara, alarmas y componentes compatibles.',
-    'Esta guía ayuda a comparar configuraciones y documentación. No atribuye aprobación a un modelo: comprueba el número NIOSH, el alcance NFPA y cada componente en las fuentes oficiales.',
+    'Un equipo de respiración autónoma —SCBA— suministra aire respirable desde un cilindro y forma parte de un sistema que incluye arnés, reguladores, máscara, alarmas y componentes compatibles para cuerpos de bomberos. Su diseño debe considerar gases tóxicos, psi y uso correcto.',
+    'Esta guía ayuda a brigadas y cuerpos de bomberos a comparar configuraciones y documentación. No atribuye aprobación a un modelo: comprueba el número NIOSH, el alcance NFPA y cada componente en las fuentes oficiales.',
   ],
   accent: '#F5A623', image: '/images/categorias/equipos-scba.avif',
   imageAlt: 'Referencia visual de un equipo de respiración autónoma SCBA con cilindro, arnés y máscara',
   badges: ['Circuito abierto', 'Cilindro', 'Máscara', 'Regulador', 'PASS', 'NIOSH'],
-  typesHeading: 'Componentes de un equipo de respiración autónoma.',
-  compareHeading: 'Cómo comparar equipos SCBA para bomberos.',
-  standardsHeading: 'Certificación NFPA y aprobación NIOSH para SCBA.',
+  typesHeading: 'Equipo de respiración autónoma: regulador, arnés y máscara.',
+  compareHeading: 'Cómo comparar equipos de respiración para bomberos.',
+  documentationHeading: ['Documentos para comprobar', 'certificados NFPA y trazabilidad.'],
+  standardsHeading: 'NFPA 1970, NIOSH y protección respiratoria para bomberos.',
   types: [
     { title: 'Cilindro y autonomía nominal', eyebrow: 'Suministro de aire', text: 'La duración indicada es nominal; el consumo real cambia con esfuerzo, usuario y condiciones. Compara presión, material, capacidad, peso e identificación del cilindro.' },
-    { title: 'Arnés y soporte', eyebrow: 'Ergonomía', text: 'El arnés distribuye la carga y conecta los elementos. Revisa ajuste, puntos de desgaste, facilidad de descontaminación y compatibilidad con el traje.' },
+    { title: 'Arnés y soporte', eyebrow: 'Ergonomía', text: 'El arnés distribuye la carga y conecta los elementos. Revisa ajuste, puntos de desgaste, facilidad de descontaminación y compatibilidad con trajes estructurales.' },
     { title: 'Máscara y reguladores', eyebrow: 'Ruta respiratoria', text: 'La pieza facial, el regulador de primera etapa y el regulador de demanda deben corresponder a la configuración aprobada. Evalúa ajuste, visión, comunicación y conexión.' },
     { title: 'Alarmas y electrónica', eyebrow: 'Información al usuario', text: 'Manómetro, HUD, alarma de fin de servicio, PASS y telemetría varían por modelo. Define cuáles funciones necesita la operación y cómo se probarán.' },
   ],
   compare: [
-    'Define si el uso será estructural, industrial, HAZMAT, CBRN, rescate o entrenamiento.', 'Compara el equipo como configuración completa y no mezcles componentes fuera de la aprobación indicada.',
+    'Define si el uso será combate de incendios estructurales, industrial, HAZMAT, CBRN, rescate u operaciones de rescate, o entrenamiento.', 'Compara el equipo como configuración completa y no mezcles componentes fuera de la aprobación indicada; revisa compatibilidad con casco estructural y trajes estructurales.',
     'Evalúa ergonomía, ajuste facial, peso, autonomía nominal, alarmas, comunicación y facilidad de operación con guantes.', 'Confirma disponibilidad de pruebas, mantenimiento, cilindros, baterías y refacciones compatibles.',
     'Solicita demostración documentada de cada aprobación exigida por la especificación.',
   ],
@@ -38,13 +39,15 @@ const page = {
     { title: 'NFPA 1850', text: 'Referencia para selección, cuidado y mantenimiento de conjuntos estructurales, de proximidad y SCBA.' },
     { title: 'CBRN', text: 'La protección CBRN debe aparecer en el alcance y etiquetado correspondiente. Una aprobación SCBA general no implica automáticamente aprobación CBRN.' },
   ],
-  maintenanceTitle: 'Programa de inspección y mantenimiento SCBA.',
+  maintenanceTitle: 'Recarga, inspección y mantenimiento del equipo SCBA.',
   maintenance: [
     { title: 'Antes y después del uso', text: 'Revisa condición, presión, alarmas, conexiones, máscara y componentes de acuerdo con el manual y registra cualquier anomalía.' },
     { title: 'Pruebas programadas', text: 'Define pruebas funcionales, de flujo y del cilindro según el fabricante, la configuración, el programa adoptado y los requisitos aplicables.' },
     { title: 'Control de configuración', text: 'Conserva piezas compatibles y trazabilidad de reparaciones. Componentes no incluidos pueden sacar al respirador de la configuración aprobada.' },
   ],
+  quoteHeading: ['Datos para pedir', 'recarga del equipo SCBA.'],
   quoteData: ['Tipo de operación y atmósfera prevista.', 'Número de usuarios y equipos.', 'Presión y autonomía nominal requeridas.', 'Tallas de máscara y pruebas de ajuste previstas.', 'Funciones de PASS, HUD, voz o telemetría.', 'Cilindros, accesorios, capacitación y mantenimiento incluidos.'],
+  faqHeading: ['Dudas para comparar', 'protección respiratoria autónoma.'],
   faqs: [
     { q: '¿Qué significa SCBA?', a: 'Es el acrónimo en inglés de self-contained breathing apparatus: equipo de respiración autónoma. El usuario lleva su propio suministro de aire y la configuración debe evaluarse completa.' },
     { q: '¿La autonomía indicada siempre coincide con el tiempo real?', a: 'No. Es una duración nominal bajo condiciones definidas; el consumo real depende del esfuerzo, la persona, el equipo y el ambiente. La planeación operativa debe considerar esa diferencia.' },
@@ -63,6 +66,7 @@ const page = {
     { label: 'NIOSH — cómo consultar la CEL', href: 'https://www.cdc.gov/niosh/ppe/niosh-approved-respirators/cel-tips.html' },
     { label: 'NFPA 1970 — información oficial', href: 'https://www.nfpa.org/1970' },
   ],
+  directoryHeading: 'Localiza empresas de equipo SCBA y confirma disponibilidad directamente.',
   directoryHref: '/empresas/venta-equipo/', directoryLabel: 'Buscar empresas de equipo',
 };
 ---
