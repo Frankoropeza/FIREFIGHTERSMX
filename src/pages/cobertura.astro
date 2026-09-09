@@ -1,203 +1,57 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
-import { estados } from '@data/cobertura';
-import { SITE, whatsappUrl } from '@config/site';
+import { estados, regionesPresentes } from '@data/estados';
+import { SITE } from '@config/site';
 
 const canonicalURL = `${SITE.url}/cobertura/`;
-
 const seoMeta = {
-  title: `Cobertura Nacional — Envíos a los 32 Estados de México`,
-  description:
-    'Entregamos equipo para bomberos en los 32 estados. Envío express en CDMX, Edomex, Querétaro, Hidalgo, Morelos y Tlaxcala; seguro de carga y rastreo incluidos.',
+  title: 'Empresas de Equipo Contra Incendio por Estado | México',
+  description: 'Consulta empresas de equipo contra incendio y equipo para bomberos en los 32 estados de México. Explora el directorio por entidad y especialidad.',
   canonicalURL,
 };
 
-const breadcrumbSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
-    { '@type': 'ListItem', position: 2, name: 'Empresa', item: `${SITE.url}/empresa` },
-    { '@type': 'ListItem', position: 3, name: 'Cobertura', item: canonicalURL },
-  ],
-};
-
-// El array `estados` viene de @data/cobertura — ya no se define aquí.
-
-const features = [
-  { label: 'Envío express', desc: 'CDMX y área metropolitana en 24–48 hrs', icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>` },
-  { label: 'Seguro de carga', desc: 'Todos los envíos asegurados sin costo extra', icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>` },
-  { label: 'Empaque especializado', desc: 'Cajas reforzadas para equipo técnico', icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.27 6.96 12 12l8.73-5.04M12 22V12"/></svg>` },
-  { label: 'Rastreo en tiempo real', desc: 'Número de guía al confirmar pedido', icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>` },
+const criterios = [
+  { title: 'Ubicación registrada', text: 'La página estatal organiza empresas por la entidad y el municipio presentes en su registro.' },
+  { title: 'Giro relacionado', text: 'Cada ficha se agrupa por actividades como equipo, extintores, sistemas o capacitación.' },
+  { title: 'Datos por confirmar', text: 'Cobertura comercial, envíos y servicio en sitio deben confirmarse directamente con cada empresa.' },
+  { title: 'Correcciones', text: 'Las empresas pueden solicitar revisión de datos o aportar información verificable para completar su ficha.' },
 ];
 
-// estados viene de @data/cobertura (importado arriba)
+const breadcrumbSchema = {
+  '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Empresas por estado', item: canonicalURL },
+  ],
+};
+const collectionSchema = {
+  '@context': 'https://schema.org', '@type': 'CollectionPage', '@id': `${canonicalURL}#collection`,
+  name: seoMeta.title, description: seoMeta.description, url: canonicalURL, inLanguage: 'es-MX',
+  isPartOf: { '@id': `${SITE.url}/#website` },
+};
 ---
 
-<BaseLayout {...seoMeta} schema={[breadcrumbSchema]}>
+<BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema]}>
+  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb"><div class="container-site"><ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)"><li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li><li aria-hidden="true">/</li><li aria-current="page" style="color:#94A3B8">Empresas por estado</li></ol></div></nav>
 
-  <!-- Breadcrumb -->
-  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
-    <div class="container-site">
-      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
-        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
-        <li aria-hidden="true">/</li>
-        <li><a href="/empresa" class="hover:text-[#FF6B26]">Empresa</a></li>
-        <li aria-hidden="true">/</li>
-        <li><span style="color:#94A3B8" aria-current="page">Cobertura</span></li>
-      </ol>
-    </div>
-  </nav>
-
-  <!-- Hero -->
   <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">
-    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
-
-    <div class="container-site relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-        <div>
-          <span class="section-eyebrow mb-5 inline-flex">Logística · 32 estados</span>
-          <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
-            Cobertura<br/>
-            <span style="color:#F75000">nacional</span>
-          </h1>
-          <div class="flex flex-col sm:flex-row gap-3">
-            <a href={whatsappUrl('Hola, quiero confirmar el tiempo de entrega a mi ciudad.')} target="_blank" rel="noopener" class="btn btn-primary btn-lg">Confirmar mi entrega</a>
-            <a href="/cotizacion" class="btn btn-ghost btn-lg">Solicitar cotización de equipo contra incendio</a>
-          </div>
-        </div>
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
-          <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">
-            Entregamos equipo certificado en
-            <strong style="color:#CBD5E1">los 32 estados de la República</strong>, con envío
-            express en el centro del país y logística asegurada al resto del territorio.
-          </p>
-          <p class="text-sm leading-[1.9] mb-6" style="color:#64748B">
-            Cada envío viaja con seguro de carga sin costo, empaque reforzado para equipo técnico
-            y número de guía para rastreo en tiempo real. Para servicios en sitio, coordinamos
-            técnico en tu instalación.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            {['Envío express','Seguro de carga','Rastreo','Servicio en sitio'].map(n => (
-              <span class="badge badge-dark font-display text-[10px]">{n}</span>
-            ))}
-          </div>
-        </div>
-      </div>
+    <div class="container-site relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <div><span class="section-eyebrow mb-5 inline-flex">Directorio nacional · 32 estados</span><h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.4rem,5.5vw,4.4rem);line-height:0.95">Empresas por<br/><span style="color:#F75000">estado de México.</span></h1><div class="flex flex-col sm:flex-row gap-3"><a href="#estados" class="btn btn-primary btn-lg">Elegir estado</a><a href="/empresas/" class="btn btn-ghost btn-lg">Directorio nacional</a></div></div>
+      <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)"><p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">Explora empresas de equipo contra incendio y equipo para bomberos según la ubicación registrada en cada ficha.</p><p class="text-sm leading-[1.9]" style="color:#64748B">La presencia de una empresa en un estado no demuestra cobertura de entrega o servicio fuera de su ubicación. Confirma directamente alcance, disponibilidad y condiciones comerciales.</p></div>
     </div>
-    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)" aria-hidden="true"></div>
   </section>
 
-  <!-- Accesos rápidos -->
   <QuickLinksBar />
 
-  <!-- Features -->
-  <section class="section-tight" style="background:#070E1A" aria-label="Garantías de envío">
+  <section class="section-tight" style="background:#070E1A" aria-label="Cómo interpretar la cobertura del directorio"><div class="container-site"><div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">{criterios.map((criterio) => <article class="p-6" style="background:#080F1A"><h2 class="font-display font-bold text-sm uppercase tracking-wider mb-3" style="color:#FFFFFF">{criterio.title}</h2><p class="text-xs leading-relaxed" style="color:#64748B">{criterio.text}</p></article>)}</div></div></section>
+
+  <section id="estados" class="section" style="background:#040A12" aria-labelledby="estados-title">
     <div class="container-site">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style="border:1px solid rgba(74,117,153,0.18)">
-        {features.map((f, i) => (
-          <div class="flex flex-col gap-3 p-6" style={`background:#0C1825;${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.18);' : ''}`}>
-            <span class="block" style="width:24px;height:24px;color:#FF6B26" set:html={f.icon}/>
-            <h2 class="font-display font-bold text-sm uppercase tracking-wider" style="color:#FFFFFF">{f.label}</h2>
-            <p class="text-xs leading-relaxed" style="color:#64748B">{f.desc}</p>
-          </div>
-        ))}
-      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12"><div><span class="section-eyebrow mb-4 inline-flex">Cobertura del directorio</span><h2 id="estados-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.9rem,3.8vw,3rem);line-height:1.05">Directorio de empresas<br/><span style="color:#F75000">en cada entidad.</span></h2></div><p class="text-sm leading-relaxed" style="color:#94A3B8">Las 32 entidades se organizan en {regionesPresentes.length} regiones editoriales. Entra a un estado para consultar giros, municipios y fichas disponibles.</p></div>
+      <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">{estados.map((estado) => <li style="border-bottom:1px solid rgba(74,117,153,0.18);border-right:1px solid rgba(74,117,153,0.18)"><a href={`/empresas/estado/${estado.slug}/`} class="grid-cell flex items-center justify-between gap-3 p-4 group"><span><span class="block font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{estado.nombre}</span><span class="block text-[10px] uppercase tracking-wider mt-1" style="color:#64748B">{estado.region}</span></span><span aria-hidden="true" style="color:#FF8F57">→</span></a></li>)}</ul>
     </div>
   </section>
 
-  <!-- Tabla de estados -->
-  <section class="section" style="background:#040A12" aria-labelledby="estados-title">
-    <div class="container-site">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
-        <div>
-          <span class="section-eyebrow mb-4 inline-flex">Tiempos de entrega</span>
-          <h2 id="estados-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
-            Estado por<br/>
-            <span style="color:#F75000">estado.</span>
-          </h2>
-        </div>
-        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:#94A3B8">
-            Tiempos estimados en días hábiles, sujetos a disponibilidad de stock y paquetería.
-            Para envíos urgentes o entregas programadas por contrato, coordinamos rutas dedicadas.
-          </p>
-        </div>
-      </div>
-
-      <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">
-        {estados.map((e) => (
-          <li style="border-bottom:1px solid rgba(74,117,153,0.18);border-right:1px solid rgba(74,117,153,0.18)">
-            <a
-              href={`/cobertura/${e.slug}`}
-              class="grid-cell flex items-center justify-between gap-3 p-4 group"
-              style="text-decoration:none"
-            >
-              <span class="flex flex-col gap-0.5 min-w-0">
-                <span
-                  class="font-display font-semibold text-sm group-hover:text-[#FF6B26]"
-                  style="color:#FFFFFF"
-                >
-                  {e.name}
-                </span>
-                <span class="text-xs" style="color:#64748B">{e.dias} hábiles</span>
-              </span>
-              <div class="flex items-center gap-2 shrink-0">
-                {e.express && <span class="badge badge-fire text-[9px]">Express</span>}
-                <span class="text-[10px]" style="color:var(--forge-300)">→</span>
-              </div>
-            </a>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </section>
-
-  <!-- CTA + cross-links -->
-  <section class="section" style="background:#070E1A" aria-labelledby="cob-cross-title">
-    <div class="container-site">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-        <div>
-          <span class="section-eyebrow mb-4 inline-flex">¿Tu ciudad no aparece?</span>
-          <h2 id="cob-cross-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
-            Llegamos a toda<br/>
-            <span style="color:#F75000">la República.</span>
-          </h2>
-          <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
-            Si no ves tu estado o necesitas una entrega urgente, escríbenos: confirmamos
-            disponibilidad de stock y el tiempo exacto a tu domicilio o a la dependencia.
-          </p>
-          <a href={whatsappUrl('Hola, quiero confirmar envío a mi ciudad.')} target="_blank" rel="noopener" class="btn btn-primary">Consultar mi envío</a>
-        </div>
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
-          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">
-            También te puede servir
-          </h2>
-          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
-            {[
-              { label: 'Red de distribuidores', desc: 'Presencia autorizada por estado', href: '/distribuidores' },
-              { label: 'Catálogo de productos', desc: 'Equipo certificado listo para envío', href: '/productos' },
-              { label: 'Servicios en sitio', desc: 'Capacitación y mantenimiento en tu instalación', href: '/servicios' },
-              { label: 'Contacto', desc: 'Teléfono, WhatsApp y correo', href: '/contacto' },
-              { label: 'Volver a la empresa', desc: 'Visión general de FIREFIGHTERS MX', href: '/empresa' },
-            ].map((l) => (
-              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
-                <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
-                  <span class="flex flex-col gap-0.5">
-                    <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
-                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
-                  </span>
-                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="var(--forge-300)" stroke-width="2.5" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
-                  </svg>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
+  <section style="background:#F75000;padding-block:4rem" aria-label="Registrar o corregir una empresa"><div class="container-site"><div class="flex flex-col lg:flex-row items-center justify-between gap-8"><div><p class="text-xs font-display font-bold uppercase tracking-[0.2em] mb-3" style="color:rgba(255,255,255,0.7)">Datos del directorio</p><h2 class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.75rem,3.5vw,2.5rem);line-height:1.1">¿Tu empresa no aparece o<br/>necesita una corrección?</h2></div><a href="/empresas/registro/" class="btn" style="background:#FFFFFF;color:#F75000;font-weight:700">Registrar o corregir ficha</a></div></div></section>
 </BaseLayout>

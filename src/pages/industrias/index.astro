@@ -3,14 +3,14 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import Spotlight from '@components/common/Spotlight.astro';
 import { industries } from '@data/industries';
-import { SITE, whatsappUrl } from '@config/site';
+import { SITE } from '@config/site';
 
 const canonicalURL = `${SITE.url}/industrias/`;
 
 const seoMeta = {
-  title: `Industrias que Equipamos Contra Incendio — ${SITE.name}`,
+  title: `Guía de Industrias y Riesgos Contra Incendio — ${SITE.name}`,
   description:
-    'Soluciones contra incendio por sector: bomberos municipales, brigadas industriales, aeropuertos ARFF, hospitales, hoteles, refinerías, minería y Protección Civil.',
+    'Guía de prevención y protección contra incendio por sector: bomberos, industria, aeropuertos, hospitales, hoteles, minería y Protección Civil.',
   canonicalURL,
 };
 
@@ -47,10 +47,10 @@ const collectionSchema = {
 };
 
 const trustPoints = [
-  { title: 'Experiencia por sector', text: 'Un ejecutivo que ya equipó proyectos como el tuyo: conoce normas, tiempos y presupuestos del giro.' },
-  { title: 'Norma correcta por giro', text: 'NOM, NFPA, ASEA, OACI o COFEPRIS — mapeamos el marco que rige tu operación.' },
-  { title: 'Cross de producto y servicio', text: 'Equipo + capacitación + mantenimiento en un solo contrato con calendario.' },
-  { title: 'Documentación auditable', text: 'Cada entrega con la evidencia que pide tu autoridad, aseguradora o corporativo.' },
+  { title: 'Riesgo por sector', text: 'Identifica los equipos, servicios y referencias normativas que suelen relacionarse con cada actividad.' },
+  { title: 'Fuentes que revisar', text: 'Confirma la norma aplicable con la autoridad, la aseguradora y el responsable técnico del proyecto.' },
+  { title: 'Empresas relacionadas', text: 'Localiza proveedores por giro y estado desde el directorio nacional.' },
+  { title: 'Comparación responsable', text: 'No confundas una referencia editorial con certificación, recomendación o garantía comercial.' },
 ];
 ---
 
@@ -75,20 +75,19 @@ const trustPoints = [
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
         <div>
-          <span class="section-eyebrow mb-5 inline-flex">Soluciones por sector</span>
+          <span class="section-eyebrow mb-5 inline-flex">Guía editorial por sector</span>
           <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
-            Industrias que<br/>
-            <span style="color:#F75000">Equipamos</span>
+            Industrias y<br/>
+            <span style="color:#F75000">riesgos</span>
           </h1>
           <div class="flex flex-col sm:flex-row gap-3">
             <a
-              href={whatsappUrl('Hola, quiero una solución contra incendio para mi sector.')}
-              target="_blank" rel="noopener"
+              href="/empresas/"
               class="btn btn-primary btn-lg"
             >
-              Cotizar por WhatsApp
+              Explorar el directorio
             </a>
-            <a href="/cotizacion" class="btn btn-ghost btn-lg">Cotización formal</a>
+            <a href="/empresas/registro/" class="btn btn-ghost btn-lg">Registrar una empresa</a>
           </div>
         </div>
 
@@ -100,9 +99,9 @@ const trustPoints = [
             Protección Civil</strong>. Conocemos los ocho y el equipo que exige cada uno.
           </p>
           <p class="text-sm leading-[1.9] mb-6" style="color:#64748B">
-            Por eso no vendemos catálogo genérico: cada solución combina el equipo certificado,
-            los servicios y la documentación que tu autoridad específica va a auditar — STPS,
-            Protección Civil, AFAC, ASEA, COFEPRIS o el órgano fiscalizador de tu municipio.
+            Esta sección sirve como punto de partida editorial. La norma y los requisitos deben
+            confirmarse para cada inmueble, actividad, municipio y proyecto con la autoridad,
+            aseguradora o responsable técnico correspondiente.
           </p>
           <div class="flex flex-wrap gap-2">
             {['NOM-002-STPS','NFPA 1970','NFPA 403','NFPA 101','ASEA','NOM-023-STPS'].map(n => (
@@ -221,8 +220,8 @@ const trustPoints = [
             y nosotros ya hemos equipado a alguien parecido a ti. Cuéntanos tu caso y armamos
             la solución con el mismo método: diagnóstico, norma correcta y documentación auditable.
           </p>
-          <a href={whatsappUrl('Hola, mi sector no aparece en su sitio y quiero una solución contra incendio.')} target="_blank" rel="noopener" class="btn btn-primary">
-            Contar mi caso por WhatsApp
+          <a href="/empresas/" class="btn btn-primary">
+            Buscar empresas relacionadas
           </a>
         </div>
 

@@ -7,9 +7,9 @@ import { SITE, whatsappUrl } from '@config/site';
 const canonicalURL = `${SITE.url}/marcas/`;
 
 const seoMeta = {
-  title: `Marcas de Equipo para Bomberos — FIREFIGHTERS MX`,
+  title: `Marcas y Fabricantes de Equipo para Bomberos — FIREFIGHTERS MX`,
   description:
-    'Línea completa de MSA Safety, Dräger, 3M Scott, Globe, Holmatro, Bullard, Honeywell y más marcas líderes en equipo para bomberos. Cotización en 24 h.',
+    'Guía de marcas y fabricantes de equipo para bomberos y sistemas contra incendio. Compara categorías, normas y fichas antes de contactar a una empresa.',
   canonicalURL,
 };
 
@@ -45,33 +45,33 @@ const breadcrumbSchema = {
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
         <div>
-          <span class="section-eyebrow mb-5 inline-flex">Marcas que manejamos</span>
+          <span class="section-eyebrow mb-5 inline-flex">Fabricantes de referencia</span>
           <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
-            Marcas que<br/>
-            <span style="color:#F75000">Distribuimos</span>
+            Marcas y<br/>
+            <span style="color:#F75000">fabricantes</span>
           </h1>
           <div class="flex flex-col sm:flex-row gap-3">
             <a
-              href={whatsappUrl('Hola, quiero información sobre las marcas que distribuyen.')}
+              href={whatsappUrl('Hola, quiero información sobre una marca o fabricante del directorio.')}
               target="_blank" rel="noopener"
               class="btn btn-primary btn-lg"
             >
-              Consultar por WhatsApp
+              Consultar por correo
             </a>
-            <a href="/cotizacion" class="btn btn-ghost btn-lg">Solicitar cotización de equipo contra incendio</a>
+            <a href="/empresas/" class="btn btn-ghost btn-lg">Buscar empresas relacionadas</a>
           </div>
         </div>
 
         <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
           <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">
-            Línea completa de los <strong style="color:#CBD5E1">fabricantes más reconocidos
-            a nivel mundial en equipos de protección personal y sistemas contra incendio</strong>:
+            Esta guía reúne <strong style="color:#CBD5E1">fabricantes y marcas mencionados
+            en las categorías editoriales del sector</strong>:
             MSA Safety, Dräger, 3M Scott, Globe Manufacturing, Holmatro, Bullard, Honeywell y más.
           </p>
           <p class="text-sm leading-[1.9] mb-6" style="color:#64748B">
-            Cada equipo se entrega con número de serie verificable, certificado de laboratorio
-            acreditado y ficha técnica lista para licitación, auditoría STPS o expediente de
-            Protección Civil — bajo las normas NFPA 1970 (antes 1971) y NOM aplicables.
+            La presencia de una marca no implica distribución, autorización, certificación
+            ni disponibilidad por parte de FIREFIGHTERS MX. Confirma directamente con cada
+            empresa del directorio el alcance comercial y la documentación vigente.
           </p>
           <div class="flex flex-wrap gap-2">
             {['MSA','Dräger','3M Scott','Globe','Holmatro','NFPA 1970'].map(n => (
@@ -97,15 +97,15 @@ const breadcrumbSchema = {
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Fabricantes</span>
           <h2 id="marcas-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
-            Marcas líderes,<br/>
-            <span style="color:#F75000">respaldo de fábrica.</span>
+            Marcas para comparar,<br/>
+            <span style="color:#F75000">fuentes que revisar.</span>
           </h2>
         </div>
         <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
           <p class="text-sm leading-relaxed" style="color:#94A3B8">
-            Trabajamos directo con los fabricantes más reconocidos del sector para garantizar
-            equipo original, repuestos verificables y soporte técnico. Si no encuentras una marca
-            específica, la conseguimos: manejamos pedidos especiales sobre especificación técnica.
+            Usa esta sección para identificar fabricantes, categorías y normas de referencia.
+            Antes de tomar una decisión, revisa la ficha técnica del producto y confirma con
+            la empresa proveedora la representación, cobertura, disponibilidad y soporte.
           </p>
         </div>
       </div>

@@ -45,7 +45,6 @@ const seoMeta = {
     ? `Directorio de empresas de ${g.sustantivo} en ${estado.nombre}. Aún no hay empresas registradas en este giro y estado: registra la tuya gratis.`
     : `Empresas de ${g.sustantivo} en ${estado.nombre}: ${ciudades.slice(0, 4).map((c) => c.ciudad).join(', ')}. Mapa, contacto, especialidades y fuente de cada registro.`.slice(0, 160),
   canonicalURL,
-  noindex: vacio,
 };
 const breadcrumbSchema = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
   { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },

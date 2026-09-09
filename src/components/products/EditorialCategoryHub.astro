@@ -1,0 +1,185 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import QuickLinksBar from '@components/common/QuickLinksBar.astro';
+import { SITE } from '@config/site';
+
+interface Card { title: string; text: string; eyebrow?: string }
+interface LinkItem { label: string; href: string; text: string }
+interface Source { label: string; href: string }
+interface Props {
+  slug: string;
+  breadcrumb: string;
+  title: string;
+  description: string;
+  eyebrow: string;
+  h1: string;
+  h1Accent: string;
+  intro: string[];
+  accent: string;
+  image: string;
+  imageAlt: string;
+  badges: string[];
+  typesHeading: string;
+  compareHeading: string;
+  standardsHeading: string;
+  types: Card[];
+  compare: string[];
+  documentation: string[];
+  standards: Card[];
+  maintenanceTitle: string;
+  maintenance: Card[];
+  quoteData: string[];
+  faqs: { q: string; a: string }[];
+  related: LinkItem[];
+  sources: Source[];
+  directoryHref: string;
+  directoryLabel: string;
+}
+
+const {
+  slug, breadcrumb, title, description, eyebrow, h1, h1Accent, intro, accent,
+  image, imageAlt, badges, typesHeading, compareHeading, standardsHeading, types, compare, documentation, standards,
+  maintenanceTitle, maintenance, quoteData, faqs, related, sources,
+  directoryHref, directoryLabel,
+} = Astro.props;
+
+const canonicalURL = `${SITE.url}/productos/${slug}/`;
+const breadcrumbSchema = {
+  '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Guías de equipo', item: `${SITE.url}/productos/` },
+    { '@type': 'ListItem', position: 3, name: breadcrumb, item: canonicalURL },
+  ],
+};
+const collectionSchema = {
+  '@context': 'https://schema.org', '@type': 'CollectionPage', '@id': `${canonicalURL}#collection`,
+  name: title, description, url: canonicalURL, inLanguage: 'es-MX',
+  isPartOf: { '@id': `${SITE.url}/#website` },
+};
+const faqSchema = {
+  '@context': 'https://schema.org', '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+---
+
+<BaseLayout title={title} description={description} canonicalURL={canonicalURL} schema={[breadcrumbSchema, collectionSchema, faqSchema]} noBrandSuffix>
+  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+    <div class="container-site"><ol class="flex items-center flex-wrap gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
+      <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li><li aria-hidden="true">/</li>
+      <li><a href="/productos/" class="hover:text-[#FF6B26]">Guías de equipo</a></li><li aria-hidden="true">/</li>
+      <li aria-current="page" style="color:#94A3B8">{breadcrumb}</li>
+    </ol></div>
+  </nav>
+
+  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem" aria-labelledby="category-heading">
+    <div class="container-site grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <div>
+        <span class="section-eyebrow mb-5 inline-flex">{eyebrow}</span>
+        <h1 id="category-heading" class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.35rem,5.2vw,4.25rem);line-height:0.95">
+          {h1}<br/><span style={`color:${accent}`}>{h1Accent}</span>
+        </h1>
+        {intro.map((p) => <p class="text-sm leading-[1.9] mb-4 max-w-2xl" style="color:#94A3B8">{p}</p>)}
+        <div class="flex flex-wrap gap-2 mt-6 mb-8">{badges.map((badge) => <span class="badge badge-dark font-display text-[10px]">{badge}</span>)}</div>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href={directoryHref} class="btn btn-primary btn-lg">{directoryLabel}</a>
+          <a href="#comparar" class="btn btn-ghost btn-lg">Cómo comparar</a>
+        </div>
+      </div>
+      <figure class="relative overflow-hidden aspect-[4/3]" style={`border:1px solid ${accent}55;background:#070E1A`}>
+        <img src={image} alt={imageAlt} width="960" height="720" loading="eager" fetchpriority="high" decoding="async" class="w-full h-full object-cover" />
+        <figcaption class="absolute bottom-0 left-0 right-0 p-4 text-xs" style="color:#CBD5E1;background:linear-gradient(transparent,rgba(4,10,18,.95))">Referencia visual de la categoría; confirma la configuración exacta con cada empresa.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <QuickLinksBar />
+
+  <section class="section" style="background:#070E1A" aria-labelledby="tipos-heading">
+    <div class="container-site">
+      <span class="section-eyebrow mb-4 inline-flex">Panorama técnico</span>
+      <h2 id="tipos-heading" class="font-display font-bold mb-10" style={`color:${accent};font-size:clamp(2rem,4vw,3.25rem);line-height:1.05`}>{typesHeading}</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
+        {types.map((item) => <article class="p-7" style="background:#040A12">
+          {item.eyebrow && <span class="font-display font-bold text-[10px] uppercase tracking-widest" style={`color:${accent}`}>{item.eyebrow}</span>}
+          <h3 class="font-display font-bold text-lg mt-2 mb-3" style="color:#FFFFFF">{item.title}</h3>
+          <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{item.text}</p>
+        </article>)}
+      </div>
+    </div>
+  </section>
+
+  <section id="comparar" class="section" style="background:#040A12" aria-labelledby="comparar-heading">
+    <div class="container-site grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+      <div>
+        <span class="section-eyebrow mb-4 inline-flex">Decisión de compra</span>
+        <h2 id="comparar-heading" class="font-display font-bold mb-7" style={`color:${accent};font-size:clamp(1.8rem,3.6vw,2.8rem);line-height:1.05`}>{compareHeading}</h2>
+        <ol class="flex flex-col gap-4 m-0 pl-5 text-sm leading-relaxed" style="color:#CBD5E1">{compare.map((item) => <li>{item}</li>)}</ol>
+      </div>
+      <div style="border-left:1px solid rgba(74,117,153,0.18);padding-left:clamp(1.5rem,4vw,3rem)">
+        <span class="section-eyebrow mb-4 inline-flex">Trazabilidad</span>
+        <h2 class="font-display font-bold mb-7" style="color:#FFFFFF;font-size:clamp(1.8rem,3.6vw,2.8rem);line-height:1.05">Documentos que debes<br/><span style={`color:${accent}`}>solicitar y comprobar.</span></h2>
+        <ul class="flex flex-col gap-4 m-0 pl-5 text-sm leading-relaxed" style="color:#CBD5E1">{documentation.map((item) => <li>{item}</li>)}</ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:#070E1A" aria-labelledby="normas-heading">
+    <div class="container-site">
+      <span class="section-eyebrow mb-4 inline-flex">Referencias, no sellos automáticos</span>
+      <h2 id="normas-heading" class="font-display font-bold mb-10" style={`color:${accent};font-size:clamp(2rem,4vw,3.25rem);line-height:1.05`}>{standardsHeading}</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">{standards.map((item) => <article class="p-6" style="background:#040A12;border:1px solid rgba(74,117,153,0.18)">
+        <h3 class="font-display font-bold text-lg mb-3" style={`color:${accent}`}>{item.title}</h3>
+        <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{item.text}</p>
+      </article>)}</div>
+      <p class="text-xs leading-relaxed mt-6 max-w-4xl" style="color:#64748B">Una referencia normativa en una ficha, marca o familia no demuestra por sí sola que todos los modelos cumplan. Verifica edición, alcance, configuración y documento directamente con el fabricante, organismo o autoridad correspondiente.</p>
+    </div>
+  </section>
+
+  <section class="section" style="background:#040A12" aria-labelledby="mantenimiento-heading">
+    <div class="container-site">
+      <span class="section-eyebrow mb-4 inline-flex">Ciclo de vida</span>
+      <h2 id="mantenimiento-heading" class="font-display font-bold mb-10" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">{maintenanceTitle}</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">{maintenance.map((item) => <article class="p-7" style="background:#070E1A">
+        <h3 class="font-display font-bold text-base mb-3" style="color:#FFFFFF">{item.title}</h3>
+        <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{item.text}</p>
+      </article>)}</div>
+    </div>
+  </section>
+
+  <section class="section-tight" style="background:#070E1A" aria-labelledby="cotizar-heading">
+    <div class="container-site grid grid-cols-1 lg:grid-cols-[1fr_1.35fr] gap-10 lg:gap-20 items-start">
+      <div>
+        <span class="section-eyebrow mb-4 inline-flex">Solicitud comparable</span>
+        <h2 id="cotizar-heading" class="font-display font-bold mb-5" style="color:#FFFFFF;font-size:clamp(1.8rem,3.6vw,2.8rem);line-height:1.05">Datos para pedir<br/><span style={`color:${accent}`}>una cotización.</span></h2>
+        <a href="/cotizacion/" class="font-display font-semibold text-xs uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57">Consultar guía de cotización →</a>
+      </div>
+      <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 list-none m-0 p-0">{quoteData.map((item, i) => <li class="p-4 text-sm leading-relaxed" style="color:#CBD5E1;background:#040A12;border:1px solid rgba(74,117,153,0.18)"><span class="font-display font-bold mr-2" style={`color:${accent}`}>{String(i + 1).padStart(2, '0')}</span>{item}</li>)}</ul>
+    </div>
+  </section>
+
+  <section class="section" style="background:#040A12" aria-labelledby="faq-heading">
+    <div class="container-site max-w-4xl">
+      <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes</span>
+      <h2 id="faq-heading" class="font-display font-bold mb-8" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Dudas para comparar<br/><span style={`color:${accent}`}>{breadcrumb.toLowerCase()}.</span></h2>
+      <div style="border-top:1px solid rgba(74,117,153,0.18)">{faqs.map((faq) => <details style="border-bottom:1px solid rgba(74,117,153,0.18)">
+        <summary class="cursor-pointer py-5 font-display font-semibold text-base" style="color:#FFFFFF">{faq.q}</summary>
+        <p class="pb-5 text-sm leading-relaxed" style="color:#94A3B8">{faq.a}</p>
+      </details>)}</div>
+    </div>
+  </section>
+
+  <section class="section-tight" style={`background:${accent}18;border-block:1px solid ${accent}44`} aria-label="Directorio relacionado">
+    <div class="container-site flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
+      <div><p class="font-display font-bold text-xs uppercase tracking-widest mb-2" style={`color:${accent}`}>Directorio nacional</p><h2 class="font-display font-bold text-2xl" style="color:#FFFFFF">Localiza empresas y confirma disponibilidad directamente.</h2></div>
+      <a href={directoryHref} class="btn btn-primary btn-lg">{directoryLabel}</a>
+    </div>
+  </section>
+
+  <section class="section" style="background:#070E1A" aria-label="Recursos relacionados">
+    <div class="container-site grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+      <div><p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:var(--forge-300)">Guías relacionadas</p><ul class="list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">{related.map((item) => <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={item.href} class="group flex items-center justify-between gap-5 py-4"><span><strong class="block font-display text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{item.label}</strong><span class="text-xs" style="color:#64748B">{item.text}</span></span><span style={`color:${accent}`}>→</span></a></li>)}</ul></div>
+      <div><p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:var(--forge-300)">Fuentes primarias para verificar</p><ul class="list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">{sources.map((source) => <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={source.href} target="_blank" rel="noopener noreferrer" class="flex items-center justify-between gap-4 py-4 font-display font-semibold text-sm hover:text-[#FF6B26]" style="color:#FFFFFF"><span>{source.label}</span><span aria-hidden="true">↗</span></a></li>)}</ul></div>
+    </div>
+  </section>
+</BaseLayout>

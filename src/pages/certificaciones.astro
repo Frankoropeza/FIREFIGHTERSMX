@@ -1,14 +1,14 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
-import { SITE, whatsappUrl } from '@config/site';
+import { SITE } from '@config/site';
 
 const canonicalURL = `${SITE.url}/certificaciones/`;
 
 const seoMeta = {
-  title: `Certificaciones NFPA y NOM — Equipo para Bomberos`,
+  title: `Guía de Normas NFPA y NOM para Equipo Contra Incendio`,
   description:
-    'Las normas que avalan nuestro equipo: NFPA 1970, NFPA 1850, NFPA 1950, NOM-002-STPS, NOM-154-SCFI e ISO 9001. Qué certifica cada una y cómo se acredita.',
+    'Guía de normas NFPA, NOM e ISO relacionadas con equipo para bomberos, extintores y sistemas contra incendio en México, y cómo verificar documentos.',
   canonicalURL,
 };
 
@@ -17,8 +17,7 @@ const breadcrumbSchema = {
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
-    { '@type': 'ListItem', position: 2, name: 'Empresa', item: `${SITE.url}/empresa` },
-    { '@type': 'ListItem', position: 3, name: 'Certificaciones', item: canonicalURL },
+    { '@type': 'ListItem', position: 2, name: 'Normas y certificación', item: canonicalURL },
   ],
 };
 
@@ -27,9 +26,8 @@ const grupos = [
     grupo: 'Equipo de protección personal (NFPA)',
     eyebrow: 'Protección personal',
     items: [
-      { norm: 'NFPA 1970', title: 'Conjuntos de protección estructural', desc: 'Standard on Protective Ensembles for Structural and Proximity Fire Fighting. Desde 2024 consolida la antigua NFPA 1971.' },
-      { norm: 'NFPA 1970', title: 'Equipos de respiración SCBA', desc: 'Equipo de aire autónomo de circuito abierto para servicios de emergencia. Desde 2024 dentro de la NFPA 1970 (antes NFPA 1981).' },
-      { norm: 'NFPA 1850', title: 'Selección, cuidado y mantenimiento', desc: 'Norma de cuidado del conjunto estructural y SCBA. Consolidó la NFPA 1851 y 1852; vida útil máxima de 10 años.' },
+      { norm: 'NFPA 1970', title: 'Conjuntos estructurales y SCBA', desc: 'Referencia de NFPA para conjuntos de protección estructural y de proximidad, ropa de trabajo, SCBA de circuito abierto y PASS.' },
+      { norm: 'NFPA 1850', title: 'Selección, cuidado y mantenimiento', desc: 'Referencia de NFPA para selección, cuidado y mantenimiento de conjuntos estructurales, de proximidad y equipos SCBA.' },
       { norm: 'NFPA 1950', title: 'Trajes para incendios forestales', desc: 'Protective Clothing and Equipment for Wildland Fire Fighting, para operaciones de vegetación e interfaz.' },
       { norm: 'NFPA 1990', title: 'Trajes HAZMAT', desc: 'Equipos de protección para materiales peligrosos, Nivel A y Nivel B.' },
     ],
@@ -41,8 +39,8 @@ const grupos = [
       { norm: 'NFPA 13', title: 'Sistemas de rociadores', desc: 'Standard for the Installation of Sprinkler Systems.' },
       { norm: 'NFPA 72', title: 'Sistemas de alarma', desc: 'National Fire Alarm and Signaling Code.' },
       { norm: 'NOM-002-STPS-2010', title: 'Norma mexicana principal', desc: 'Condiciones de seguridad, prevención y protección contra incendios en centros de trabajo.' },
-      { norm: 'NOM-154-SCFI', title: 'Extintores portátiles', desc: 'Seguridad, servicio y métodos de prueba para extintores portátiles en México.' },
-      { norm: 'ISO 9001', title: 'Gestión de calidad', desc: 'Certificación internacional de calidad en procesos de manufactura y servicio.' },
+      { norm: 'NOM-154-SCFI-2005', title: 'Mantenimiento y recarga de extintores', desc: 'Establece requerimientos y procedimientos para prestadores de mantenimiento y recarga de extintores portátiles y móviles sobre ruedas.' },
+      { norm: 'ISO 9001', title: 'Sistemas de gestión de calidad', desc: 'Referencia para sistemas de gestión. Una certificación de la empresa no demuestra por sí sola el cumplimiento de un producto.' },
     ],
   },
 ];
@@ -55,8 +53,6 @@ const grupos = [
     <div class="container-site">
       <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
         <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
-        <li aria-hidden="true">/</li>
-        <li><a href="/empresa" class="hover:text-[#FF6B26]">Empresa</a></li>
         <li aria-hidden="true">/</li>
         <li><span style="color:#94A3B8" aria-current="page">Certificaciones</span></li>
       </ol>
@@ -72,25 +68,24 @@ const grupos = [
         <div>
           <span class="section-eyebrow mb-5 inline-flex">Normatividad · NFPA y NOM</span>
           <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
-            Certificaciones<br/>
-            <span style="color:#F75000">que respaldan</span>
+            Normas y<br/>
+            <span style="color:#F75000">certificación</span>
           </h1>
           <div class="flex flex-col sm:flex-row gap-3">
-            <a href={whatsappUrl('Hola, tengo una duda sobre qué norma aplica a mi equipo.')} target="_blank" rel="noopener" class="btn btn-primary btn-lg">Consultar norma</a>
-            <a href="/cotizacion" class="btn btn-ghost btn-lg">Solicitar cotización de equipo contra incendio</a>
+            <a href="#verificacion" class="btn btn-primary btn-lg">Cómo verificar documentación</a>
+            <a href="/empresas/" class="btn btn-ghost btn-lg">Buscar empresas del sector</a>
           </div>
         </div>
         <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
           <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">
-            Todo nuestro catálogo está certificado bajo
-            <strong style="color:#CBD5E1">normas NFPA, NOM-002-STPS e ISO 9001</strong>, con
-            verificación de laboratorio de tercera parte acreditado. Aquí te explicamos qué
-            certifica cada norma y cómo se acredita.
+            Las normas NFPA, NOM e ISO tienen alcances distintos y no certifican por sí mismas
+            todo un catálogo. Aquí explicamos qué cubre cada referencia y qué documentación
+            conviene solicitar a una empresa o fabricante.
           </p>
           <p class="text-sm leading-[1.9] mb-6" style="color:#64748B">
-            Cada equipo se entrega con su certificado de conformidad, ficha técnica y, cuando
-            aplica, el manifiesto de cumplimiento listo para auditoría STPS, Protección Civil
-            o tu expediente de licitación.
+            La presencia de una norma en esta guía no demuestra que una empresa, marca o producto
+            específico la cumpla. Verifica el modelo exacto, el organismo emisor, la vigencia y
+            el alcance documental antes de comprar o contratar.
           </p>
           <div class="flex flex-wrap gap-2">
             {['NFPA 1970','NFPA 1850','NFPA 1950','NOM-002-STPS','NOM-154-SCFI','ISO 9001'].map(n => (
@@ -128,21 +123,24 @@ const grupos = [
   ))}
 
   <!-- CTA + cross-links -->
-  <section class="section" style="background:#040A12" aria-labelledby="cert-cross-title">
+  <section id="verificacion" class="section" style="background:#040A12" aria-labelledby="cert-cross-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
         <div>
-          <span class="section-eyebrow mb-4 inline-flex">¿Qué norma aplica?</span>
+          <span class="section-eyebrow mb-4 inline-flex">Verificación documental</span>
           <h2 id="cert-cross-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
-            Te decimos exactamente<br/>
-            <span style="color:#F75000">qué exige tu giro.</span>
+            Qué revisar antes de<br/>
+            <span style="color:#F75000">aceptar un certificado.</span>
           </h2>
           <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
-            La norma correcta depende de tu operación: no es lo mismo un centro de trabajo bajo
-            NOM-002-STPS que un cuerpo de bomberos que exige NFPA 1970. Cuéntanos tu caso y te
-            mapeamos el marco aplicable y el equipo que lo cumple.
+            Identifica el requisito aplicable, la edición solicitada, el producto o proceso cubierto,
+            el organismo emisor y la vigencia. La referencia a una norma en una ficha comercial no
+            sustituye el documento correspondiente ni demuestra que todas las configuraciones cumplan.
           </p>
-          <a href={whatsappUrl('Hola, quiero saber qué normas aplican a mi operación.')} target="_blank" rel="noopener" class="btn btn-primary">Consultar por WhatsApp</a>
+          <div class="flex flex-wrap gap-3">
+            <a href="https://www.nfpa.org/1970" target="_blank" rel="noopener" class="btn btn-primary">Consultar NFPA 1970</a>
+            <a href="https://dof.gob.mx/normasOficiales/4228/stps.htm" target="_blank" rel="noopener" class="btn btn-ghost">Consultar NOM-002-STPS-2010</a>
+          </div>
         </div>
         <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
           <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">
@@ -150,11 +148,11 @@ const grupos = [
           </h2>
           <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
             {[
-              { label: 'Catálogo de productos', desc: 'Equipo certificado por categoría', href: '/productos' },
+              { label: 'Guías de productos', desc: 'Categorías, aplicaciones y criterios de comparación', href: '/productos' },
               { label: 'Blog: NFPA 1970, la nueva norma', desc: 'Qué cambió en trajes estructurales', href: '/blog/nfpa-1970-nueva-norma-trajes-bombero' },
-              { label: 'Soporte para licitaciones', desc: 'Manifiestos de norma por partida', href: '/licitaciones' },
-              { label: 'Industrias que atendemos', desc: 'La norma que rige cada sector', href: '/industrias' },
-              { label: 'Volver a la empresa', desc: 'Visión general de FIREFIGHTERS MX', href: '/empresa' },
+              { label: 'Guía de licitaciones', desc: 'Cómo revisar evidencia por partida', href: '/licitaciones' },
+              { label: 'Guías por industria', desc: 'Riesgos y referencias que conviene revisar', href: '/industrias' },
+              { label: 'Directorio nacional', desc: 'Empresas por giro y estado', href: '/empresas' },
             ].map((l) => (
               <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
                 <a href={l.href} class="group flex items-center justify-between gap-4 py-4">

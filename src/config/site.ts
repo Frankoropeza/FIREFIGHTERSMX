@@ -1,8 +1,8 @@
 export const SITE = {
   name:        'FIREFIGHTERS MX',
   shortName:   'FFMX',
-  tagline:     'Equipos para bomberos certificados NFPA en México',
-  description: 'Portal líder en México para venta de equipos para bomberos certificados NFPA y NOM. Trajes estructurales, SCBA, herramientas de rescate, extintores y sistemas contra incendio. Cobertura en los 32 estados.',
+  tagline:     'Directorio nacional de empresas de equipo contra incendios y equipo para bomberos',
+  description: 'Directorio nacional de empresas de equipo contra incendios, equipo para bomberos, extintores, sistemas contra incendio y capacitación en México.',
   url:         'https://firefighters.mx',
   // ⚠️ Teléfono / WhatsApp SIN VERIFICAR — ver CONTACTO_DIRECTO_ACTIVO abajo.
   // Los valores anteriores ('55 1234-5678' / '+525512345678' / '525512345678') eran

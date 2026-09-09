@@ -1,191 +1,84 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
-import { SITE, whatsappUrl } from '@config/site';
+import { estados } from '@data/estados';
+import { SITE } from '@config/site';
 
 const canonicalURL = `${SITE.url}/distribuidores/`;
-
 const seoMeta = {
-  title: `Cobertura y Envíos en los 32 Estados`,
-  description:
-    'Cobertura de FIREFIGHTERS MX en los 32 estados: envíos de equipo para bomberos a toda la República y coordinación de servicio en sitio.',
+  title: 'Distribuidores de Equipo Contra Incendio en México',
+  description: 'Guía para localizar y verificar distribuidores de equipo contra incendio en México. Consulta empresas por especialidad y estado en el directorio nacional.',
   canonicalURL,
 };
 
+const criterios = [
+  { title: 'Identidad y ubicación', text: 'Confirma razón social, domicilio, medios de contacto y la entidad desde la que opera la empresa.' },
+  { title: 'Relación con la marca', text: 'Si una autorización es indispensable, solicita evidencia vigente y comprueba su alcance directamente con el fabricante.' },
+  { title: 'Producto exacto', text: 'Verifica modelo, configuración, accesorios, documentación y compatibilidad; una marca no acredita automáticamente todos sus productos.' },
+  { title: 'Condiciones comerciales', text: 'Solicita por escrito precio, impuestos, entrega, garantía, devoluciones, instalación y servicio posterior.' },
+];
+
+const giros = [
+  { label: 'Equipo para bomberos y EPP', href: '/empresas/venta-equipo/', text: 'Empresas relacionadas con protección personal, respiración, rescate y equipamiento operativo.' },
+  { label: 'Equipo contra incendio', href: '/empresas/equipos-contra-incendio/', text: 'Empresas que aparecen en registros relacionados con suministro o servicio del sector.' },
+  { label: 'Extintores', href: '/empresas/extintores/', text: 'Empresas relacionadas con venta, recarga, inspección o mantenimiento de extintores.' },
+  { label: 'Sistemas contra incendio', href: '/empresas/sistemas-ci/', text: 'Empresas relacionadas con detección, alarma, redes, rociadores y supresión.' },
+  { label: 'Capacitación', href: '/empresas/capacitacion/', text: 'Empresas y centros relacionados con capacitación y preparación de brigadas.' },
+];
+
 const breadcrumbSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
+  '@context': 'https://schema.org', '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
-    { '@type': 'ListItem', position: 2, name: 'Empresa', item: `${SITE.url}/empresa` },
-    { '@type': 'ListItem', position: 3, name: 'Distribuidores', item: canonicalURL },
+    { '@type': 'ListItem', position: 2, name: 'Distribuidores', item: canonicalURL },
   ],
 };
-
-const ventajas = [
-  { label: 'Garantía de fábrica', desc: 'Equipo original de las marcas líderes, con su garantía vigente', icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>` },
-  { label: 'Refacciones locales', desc: 'Disponibilidad de partes y servicio en tu región', icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>` },
-  { label: 'Precios institucionales', desc: 'Esquemas para gobierno, industria y volumen', icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>` },
-  { label: 'Cobertura completa', desc: 'Presencia y logística en los 32 estados', icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>` },
-];
-
-const estados = [
-  'Ciudad de México', 'Estado de México', 'Jalisco', 'Nuevo León',
-  'Puebla', 'Querétaro', 'Guanajuato', 'Baja California',
-  'Coahuila', 'Veracruz', 'Chihuahua', 'Sonora',
-  'Tamaulipas', 'Sinaloa', 'San Luis Potosí', 'Michoacán',
-  'Oaxaca', 'Chiapas', 'Yucatán', 'Quintana Roo',
-];
+const collectionSchema = {
+  '@context': 'https://schema.org', '@type': 'CollectionPage', '@id': `${canonicalURL}#collection`,
+  name: seoMeta.title, description: seoMeta.description, url: canonicalURL, inLanguage: 'es-MX',
+  isPartOf: { '@id': `${SITE.url}/#website` },
+};
 ---
 
-<BaseLayout {...seoMeta} schema={[breadcrumbSchema]}>
-
-  <!-- Breadcrumb -->
+<BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema]} noBrandSuffix>
   <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
-    <div class="container-site">
-      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
-        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
-        <li aria-hidden="true">/</li>
-        <li><a href="/empresa" class="hover:text-[#FF6B26]">Empresa</a></li>
-        <li aria-hidden="true">/</li>
-        <li><span style="color:#94A3B8" aria-current="page">Distribuidores</span></li>
-      </ol>
-    </div>
+    <div class="container-site"><ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)"><li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li><li aria-hidden="true">/</li><li aria-current="page" style="color:#94A3B8">Distribuidores</li></ol></div>
   </nav>
 
-  <!-- Hero -->
   <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">
-    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
-
-    <div class="container-site relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-        <div>
-          <span class="section-eyebrow mb-5 inline-flex">Cobertura · 32 estados</span>
-          <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
-            Cobertura<br/>
-            <span style="color:#F75000">nacional</span>
-          </h1>
-          <div class="flex flex-col sm:flex-row gap-3">
-            <a href={whatsappUrl('Hola, quiero saber cómo envían a mi ciudad.')} target="_blank" rel="noopener" class="btn btn-primary btn-lg">Consultar envío a mi estado</a>
-            <a href="/cotizacion" class="btn btn-ghost btn-lg">Solicitar cotización de equipo contra incendio</a>
-          </div>
-        </div>
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
-          <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">
-            Enviamos equipo certificado a
-            <strong style="color:#CBD5E1">los 32 estados de la República</strong>, con garantía de
-            fábrica, refacciones originales y coordinación de servicio en sitio.
-          </p>
-          <p class="text-sm leading-[1.9] mb-6" style="color:#64748B">
-            ¿Te interesa ser distribuidor o no encuentras tu estado? Enviamos a toda la República
-            y evaluamos nuevas alianzas comerciales para acercar el equipo certificado a tu región.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            {['Garantía de fábrica','Refacciones','Servicio local','Precios institucionales'].map(n => (
-              <span class="badge badge-dark font-display text-[10px]">{n}</span>
-            ))}
-          </div>
-        </div>
+    <div class="container-site relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <div>
+        <span class="section-eyebrow mb-5 inline-flex">Directorio nacional · México</span>
+        <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.4rem,5.5vw,4.4rem);line-height:0.95">Distribuidores de<br/><span style="color:#F75000">equipo contra incendio.</span></h1>
+        <div class="flex flex-col sm:flex-row gap-3"><a href="/empresas/" class="btn btn-primary btn-lg">Buscar empresas</a><a href="/productos/" class="btn btn-ghost btn-lg">Consultar equipos</a></div>
+      </div>
+      <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
+        <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">Esta página ayuda a localizar empresas relacionadas con equipo contra incendio y equipo para bomberos por giro y estado.</p>
+        <p class="text-sm leading-[1.9]" style="color:#64748B">FIREFIGHTERS MX no acredita que una empresa sea distribuidor autorizado. Confirma directamente con el fabricante y el proveedor cualquier autorización, disponibilidad, garantía o cobertura.</p>
       </div>
     </div>
-    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)" aria-hidden="true"></div>
   </section>
 
-  <!-- Accesos rápidos -->
   <QuickLinksBar />
 
-  <!-- Ventajas -->
-  <section class="section-tight" style="background:#070E1A" aria-label="Ventajas de la red">
+  <section class="section" style="background:#070E1A" aria-labelledby="criterios-title">
     <div class="container-site">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style="border:1px solid rgba(74,117,153,0.18)">
-        {ventajas.map((v, i) => (
-          <div class="flex flex-col gap-3 p-6" style={`background:#0C1825;${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.18);' : ''}`}>
-            <span class="block" style="width:24px;height:24px;color:#FF6B26" set:html={v.icon}/>
-            <h2 class="font-display font-bold text-sm uppercase tracking-wider" style="color:#FFFFFF">{v.label}</h2>
-            <p class="text-xs leading-relaxed" style="color:#64748B">{v.desc}</p>
-          </div>
-        ))}
-      </div>
+      <div class="max-w-3xl mb-10"><span class="section-eyebrow mb-4 inline-flex">Verificación</span><h2 id="criterios-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.9rem,3.8vw,3rem);line-height:1.05">Cómo verificar un<br/><span style="color:#F75000">distribuidor.</span></h2></div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">{criterios.map((c) => <article class="p-6" style="background:#080F1A"><h3 class="font-display font-bold text-base mb-3" style="color:#FFFFFF">{c.title}</h3><p class="text-xs leading-relaxed" style="color:#64748B">{c.text}</p></article>)}</div>
     </div>
   </section>
 
-  <!-- Estados con presencia -->
-  <section class="section" style="background:#040A12" aria-labelledby="dist-estados-title">
+  <section class="section" style="background:#040A12" aria-labelledby="giros-title">
     <div class="container-site">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
-        <div>
-          <span class="section-eyebrow mb-4 inline-flex">Dónde estamos</span>
-          <h2 id="dist-estados-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
-            Presencia<br/>
-            <span style="color:#F75000">en todo México.</span>
-          </h2>
-        </div>
-        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:#94A3B8">
-            Estados a los que enviamos con mayor frecuencia. ¿No ves el tuyo?
-            Enviamos a toda la República y coordinamos servicio en sitio donde lo necesites.
-          </p>
-        </div>
-      </div>
-
-      <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">
-        {estados.map((e) => (
-          <li class="grid-cell flex items-center gap-3 p-4" style="border-bottom:1px solid rgba(74,117,153,0.18);border-right:1px solid rgba(74,117,153,0.18)">
-            <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#FF6B26" stroke-width="1.8" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span class="flex flex-col gap-0.5 min-w-0">
-              <span class="font-display font-semibold text-sm" style="color:#FFFFFF">{e}</span>
-              <span class="text-xs" style="color:#64748B">Envíos y servicio</span>
-            </span>
-          </li>
-        ))}
-      </ul>
+      <div class="max-w-3xl mb-10"><span class="section-eyebrow mb-4 inline-flex">Por especialidad</span><h2 id="giros-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.9rem,3.8vw,3rem);line-height:1.05">Empresas del sector<br/><span style="color:#F75000">por tipo de actividad.</span></h2></div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">{giros.map((g) => <a href={g.href} class="group flex flex-col p-7" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)"><h3 class="font-display font-bold text-lg mb-3 group-hover:text-[#FF6B26]" style="color:#FFFFFF">{g.label}</h3><p class="text-xs leading-relaxed mb-5 flex-1" style="color:#64748B">{g.text}</p><span class="text-xs font-display font-semibold uppercase tracking-wider" style="color:#FF8F57">Ver empresas →</span></a>)}</div>
     </div>
   </section>
 
-  <!-- CTA + cross-links -->
-  <section class="section" style="background:#070E1A" aria-labelledby="dist-cross-title">
+  <section class="section" style="background:#070E1A" aria-labelledby="estados-title">
     <div class="container-site">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-        <div>
-          <span class="section-eyebrow mb-4 inline-flex">¿Quieres ser distribuidor?</span>
-          <h2 id="dist-cross-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
-            Hagamos equipo<br/>
-            <span style="color:#F75000">en tu región.</span>
-          </h2>
-          <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
-            Buscamos aliados comerciales que quieran llevar equipo certificado a su estado.
-            Si te interesa distribuir o necesitas ubicar el punto más cercano, escríbenos.
-          </p>
-          <a href={whatsappUrl('Hola, me interesa ser distribuidor de FIREFIGHTERS MX.')} target="_blank" rel="noopener" class="btn btn-primary">Quiero ser distribuidor</a>
-        </div>
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
-          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">
-            También te puede servir
-          </h2>
-          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
-            {[
-              { label: 'Cobertura nacional', desc: 'Tiempos de entrega por estado', href: '/cobertura' },
-              { label: 'Marcas que distribuimos', desc: 'Globe, MSA, Dräger, Holmatro y más', href: '/marcas' },
-              { label: 'Catálogo de productos', desc: 'Equipo certificado por categoría', href: '/productos' },
-              { label: 'Contacto', desc: 'Teléfono, WhatsApp y correo', href: '/contacto' },
-              { label: 'Volver a la empresa', desc: 'Visión general de FIREFIGHTERS MX', href: '/empresa' },
-            ].map((l) => (
-              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
-                <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
-                  <span class="flex flex-col gap-0.5">
-                    <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
-                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
-                  </span>
-                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="var(--forge-300)" stroke-width="2.5" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
-                  </svg>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
+      <div class="max-w-3xl mb-10"><span class="section-eyebrow mb-4 inline-flex">32 entidades</span><h2 id="estados-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.9rem,3.8vw,3rem);line-height:1.05">Buscar empresas<br/><span style="color:#F75000">por estado.</span></h2></div>
+      <ul class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">{estados.map((estado) => <li style="border-right:1px solid rgba(74,117,153,0.18);border-bottom:1px solid rgba(74,117,153,0.18)"><a href={`/empresas/estado/${estado.slug}/`} class="grid-cell flex items-center justify-between gap-3 p-4 group"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{estado.nombre}</span><span aria-hidden="true" style="color:#FF8F57">→</span></a></li>)}</ul>
     </div>
   </section>
-
 </BaseLayout>

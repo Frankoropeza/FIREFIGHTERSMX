@@ -10,9 +10,7 @@ import { todasLasEmpresas, estadosMeta } from '@lib/empresas';
 
 const all = await todasLasEmpresas();
 const porEstado = estadosMeta.map((e) => ({ slug: e.slug, nombre: e.nombre }));
-const destacadas = all.filter((e) => e.plan !== 'basico').slice(0, 6);
-const muestra = (destacadas.length ? destacadas : all.filter((e) => e.sitioWeb)).slice(0, 12);
-const regiones = [...new Set(estadosMeta.map((e) => e.region))];
+const totalEmpresas = all.length;
 
 const canonicalURL = `${SITE.url}/empresas/`;
 const seoMeta = {
@@ -28,8 +26,16 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
   isPartOf: { '@id': `${SITE.url}/#website` },
   mainEntity: { '@type': 'ItemList', name: 'Giros del directorio', numberOfItems: giros.length,
     itemListElement: giros.map((g, i) => ({ '@type': 'ListItem', position: i + 1, name: g.label, url: `${SITE.url}/empresas/${g.slug}/` })) } };
+const faqItems = [
+  { pregunta: '¿Qué es este directorio?', respuesta: 'Es un directorio nacional que organiza empresas relacionadas con equipo para bomberos, equipos contra incendios, extintores, sistemas contra incendio y capacitación por giro y ubicación.' },
+  { pregunta: '¿Cómo busco una empresa?', respuesta: 'Puedes entrar por giro, elegir un estado o usar el buscador para consultar por nombre, ciudad o municipio. Las fichas muestran el nivel de confianza disponible.' },
+  { pregunta: '¿De dónde salen los datos?', respuesta: 'Los registros básicos provienen de fuentes públicas y cada ficha muestra la fuente de origen disponible. La información puede solicitar corrección o actualización por parte de la empresa.' },
+  { pregunta: '¿FIREFIGHTERS MX vende directamente todo el equipo?', respuesta: 'Esta sección funciona como directorio. Su objetivo es ayudarte a localizar y comparar información publicada de empresas del sector; la disponibilidad, cobertura y condiciones deben confirmarse directamente con cada empresa.' },
+  { pregunta: '¿Cómo registro o corrijo una ficha?', respuesta: 'Puedes solicitar el alta, reclamación o corrección desde la página de registro del directorio.' },
+];
+const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqItems.map((f) => ({ '@type': 'Question', name: f.pregunta, acceptedAnswer: { '@type': 'Answer', text: f.respuesta } })) };
 ---
-<BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema]}>
+<BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema, faqSchema]}>
   <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
     <div class="container-site"><ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
       <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li><li aria-hidden="true">/</li>
@@ -46,11 +52,12 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
             Empresas de equipo<br/><span style="color:#F75000">contra incendio</span><br/>en México
           </h1>
           <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">
-            El directorio más completo del sector: empresas de venta de equipo para bomberos y EPP, extintores, sistemas contra incendio y capacitación de brigadas en los 32 estados. Cada registro tiene ubicación georreferenciada y su fuente de origen citada.
+            Encuentra empresas de equipo para bomberos y EPP, extintores, sistemas contra incendio y capacitación de brigadas en los 32 estados. Cada registro muestra su ubicación y la fuente de origen disponible.
           </p>
           <p class="text-sm leading-[1.9] mb-8" style="color:#94A3B8">
-            Clasificamos a cada empresa por giro y especialidad —algo que el <strong style="color:#CBD5E1">SCIAN no distingue</strong>— para que un cuerpo de bomberos, una brigada industrial o un comprador de gobierno encuentre al proveedor correcto en su estado sin intermediarios.
+            Clasificamos a cada empresa por giro y especialidad para que cuerpos de bomberos, brigadas industriales y compradores institucionales puedan encontrar opciones en su estado y comparar la información publicada.
           </p>
+          <p class="font-display text-xs uppercase tracking-widest mb-8" style="color:var(--forge-300)">{totalEmpresas.toLocaleString('es-MX')} empresas registradas · 32 estados</p>
           <div class="flex flex-col sm:flex-row gap-3">
             <a href="#buscar" class="btn btn-primary btn-lg">Buscar empresas contra incendio</a>
             <a href="/empresas/registro/" class="btn btn-ghost btn-lg">Registrar mi empresa →</a>
@@ -81,10 +88,10 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Por giro</span>
-          <h2 id="giros-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Cuatro giros,<br/><span style="color:#F75000">un solo directorio.</span></h2>
+          <h2 id="giros-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Cinco giros,<br/><span style="color:#F75000">un solo directorio.</span></h2>
         </div>
         <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:#94A3B8">El sector no tiene una clasificación oficial propia. Nosotros agrupamos a las empresas por lo que realmente hacen: vender equipo de protección personal, suministrar equipos contra incendios para la red hidráulica, dar servicio a extintores, instalar sistemas fijos o capacitar brigadas. Una empresa puede aparecer en más de un giro.</p>
+          <p class="text-sm leading-relaxed" style="color:#94A3B8">Agrupamos a las empresas por la actividad que describen sus fuentes públicas: vender equipo de protección personal, suministrar equipos para redes contra incendio, dar servicio a extintores, instalar sistemas fijos o capacitar brigadas. Una empresa puede aparecer en más de un giro.</p>
         </div>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
@@ -163,6 +170,26 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
         <div class="flex flex-col gap-3 shrink-0">
           <a href="/empresas/registro/" class="btn btn-gold btn-lg">Registrar o reclamar ficha</a>
           <a href="/contacto/" class="btn btn-ghost">Hablar con FIREFIGHTERS MX →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:#040A12" aria-labelledby="faq-heading">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-start">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes</span>
+          <h2 id="faq-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Cómo funciona<br/><span style="color:#F75000">el directorio.</span></h2>
+          <p class="text-sm leading-relaxed mt-6" style="color:#94A3B8">Consulta la metodología, el alcance de las fichas y la forma correcta de contactar a cada empresa antes de solicitar una cotización.</p>
+        </div>
+        <div class="flex flex-col" style="border-top:1px solid rgba(74,117,153,0.2)">
+          {faqItems.map((f) => (
+            <details style="border-bottom:1px solid rgba(74,117,153,0.2)">
+              <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer font-display font-semibold text-sm" style="color:#FFFFFF">{f.pregunta}<span style="color:#F75000" aria-hidden="true">+</span></summary>
+              <p class="text-sm leading-relaxed pb-5" style="color:#94A3B8">{f.respuesta}{f.pregunta === '¿Cómo registro o corrijo una ficha?' && <> <a href="/empresas/registro/" class="underline" style="color:#FF8F57">Ir al registro.</a></>}</p>
+            </details>
+          ))}
         </div>
       </div>
     </div>

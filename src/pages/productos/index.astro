@@ -2,17 +2,16 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import CategoryCard from '@components/products/CategoryCard.astro';
-import CategorySpotlight from '@components/products/CategorySpotlight.astro';
 import { allCategories } from '@data/categories';
 import { featuredProducts } from '@data/products';
-import { SITE, whatsappUrl } from '@config/site';
+import { SITE } from '@config/site';
 
 const canonicalURL = `${SITE.url}/productos/`;
 
 const seoMeta = {
-  title: `Catálogo de Equipo para Bomberos y Contra Incendio — ${SITE.name}`,
+  title: `Equipo para Bomberos y Contra Incendios en México | Guía`,
   description:
-    'Catálogo certificado NFPA y NOM: trajes, cascos, SCBA, herramientas de rescate, extintores, sistemas CI, cámaras térmicas, HAZMAT y drones. Cotización en 24 h.',
+    'Guía nacional de equipo para bomberos y contra incendios en México: trajes, cascos, SCBA, extintores, sistemas, rescate, HAZMAT y directorio de empresas.',
   canonicalURL,
 };
 
@@ -31,7 +30,7 @@ const collectionSchema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
   '@id': `${canonicalURL}#collection`,
-  name: 'Catálogo de equipo para bomberos y contra incendio',
+  name: 'Guía de equipo para bomberos y equipo contra incendios en México',
   description: seoMeta.description,
   url: canonicalURL,
   inLanguage: 'es-MX',
@@ -50,14 +49,43 @@ const collectionSchema = {
 
 /* Pilares de confianza bajo el hero */
 const trustPoints = [
-  { title: 'Originales verificables', text: 'Número de serie validable con fábrica y certificado de laboratorio acreditado.' },
-  { title: 'Documentación completa', text: 'Ficha técnica, certificado de conformidad y manifiesto de normas en cada entrega.' },
-  { title: 'Stock permanente', text: 'EPP estructural en tallas S–2XL listo para envío en 24–48 h desde CDMX.' },
-  { title: 'Precios institucionales', text: 'Esquemas preferenciales para bomberos, Protección Civil y compras por volumen.' },
+  { title: 'Categorías por necesidad', text: 'Explora familias de equipo para bomberos, extintores, sistemas contra incendio y rescate.' },
+  { title: 'Fichas de referencia', text: 'Consulta características y normas publicadas en cada página antes de comparar opciones.' },
+  { title: 'Búsqueda nacional', text: 'Usa el directorio de empresas para localizar proveedores por giro, estado y ciudad.' },
+  { title: 'Información por confirmar', text: 'La disponibilidad, precio, cobertura y certificación deben confirmarse con cada empresa o fabricante.' },
 ];
+
+const faqs = [
+  {
+    q: '¿Cuáles son los equipos de protección personal esenciales para bomberos?',
+    a: 'El conjunto suele incluir traje de protección, casco, capucha, guantes, botas y equipo de respiración autónoma (SCBA). La selección depende del tipo de operación, el riesgo, la norma aplicable y la ficha técnica de cada fabricante.',
+  },
+  {
+    q: '¿Qué tipos de equipos y sistemas de protección contra incendios existen?',
+    a: 'El sector incluye extintores portátiles y sobre ruedas, sistemas de rociadores, detección y alarma, redes hidráulicas, equipo de protección personal, herramientas de rescate, cámaras térmicas y soluciones HAZMAT.',
+  },
+  {
+    q: '¿Qué certificaciones deben revisarse en México?',
+    a: 'La respuesta depende del producto y del uso. Pueden intervenir normas NOM, estándares NFPA y certificaciones del fabricante. La norma no debe asumirse como prueba automática: conviene revisar la edición aplicable, el alcance y la documentación del modelo.',
+  },
+  {
+    q: '¿Dónde localizar empresas de equipo para bomberos en México?',
+    a: 'El directorio nacional de FIREFIGHTERS MX organiza empresas por giro y estado. La disponibilidad, cobertura, precios y certificaciones deben confirmarse directamente con cada empresa.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.q,
+    acceptedAnswer: { '@type': 'Answer', text: faq.a },
+  })),
+};
 ---
 
-<BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema]}>
+<BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema, faqSchema]} noBrandSuffix>
 
   <!-- Breadcrumb -->
   <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
@@ -78,36 +106,24 @@ const trustPoints = [
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
         <div>
-          <span class="section-eyebrow mb-5 inline-flex">Catálogo completo · NFPA y NOM</span>
+          <span class="section-eyebrow mb-5 inline-flex">Guía nacional · Equipo para bomberos · Equipo contra incendios</span>
           <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
             Equipo para Bomberos<br/>
-            <span style="color:#F75000">y Contra Incendio</span>
+            <span style="color:#F75000">y Contra Incendios</span><br/>
+            <span style="color:#CBD5E1">en México</span>
           </h1>
           <div class="flex flex-col sm:flex-row gap-3">
-            <a
-              href={whatsappUrl('Hola, quiero cotizar equipo del catálogo.')}
-              target="_blank" rel="noopener"
-              class="btn btn-primary btn-lg"
-            >
-              Cotizar por WhatsApp
-            </a>
-            <a href="/cotizacion" class="btn btn-ghost btn-lg">Cotización formal</a>
+            <a href="/empresas/" class="btn btn-primary btn-lg">Buscar empresas proveedoras</a>
+            <a href="/empresa/" class="btn btn-ghost btn-lg">Cómo funciona el directorio</a>
           </div>
         </div>
 
         <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
           <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">
-            Nueve categorías de equipamiento certificado para cuerpos de bomberos, brigadas
-            industriales y protección civil: <strong style="color:#CBD5E1">trajes estructurales NFPA 1970 (antes 1971),
-            cascos, equipos de respiración autónoma SCBA, herramientas de rescate
-            Holmatro, extintores NOM-154-SCFI, sistemas contra incendio, cámaras térmicas
-            NFPA 1930, trajes HAZMAT y drones de emergencia</strong>.
+            Consulta categorías de equipo para cuerpos de bomberos, brigadas industriales y Protección Civil: <strong style="color:#CBD5E1">trajes estructurales, cascos, equipos SCBA, herramientas de rescate, extintores, sistemas contra incendios, cámaras térmicas, HAZMAT y drones de emergencia</strong>.
           </p>
           <p class="text-sm leading-[1.9] mb-6" style="color:#64748B">
-            Trabajamos con las líneas de Globe, MSA, Dräger, Bullard, Holmatro y 3M Scott
-            en México. Cada equipo se entrega con número de serie verificable, certificado de
-            laboratorio acreditado y ficha técnica lista para licitación, auditoría STPS o
-            expediente de Protección Civil.
+            Las páginas funcionan como referencia editorial. Las especificaciones, normas, marcas, disponibilidad y condiciones de compra deben validarse en la ficha técnica correspondiente y directamente con la empresa del directorio.
           </p>
           <div class="flex flex-wrap gap-2">
             {['NFPA 1970','NFPA 1850','NFPA 1936','NFPA 1930','NOM-154-SCFI','NOM-002-STPS'].map(n => (
@@ -126,7 +142,7 @@ const trustPoints = [
 
 
   <!-- Pilares de confianza -->
-  <section class="section-tight" style="background:#070E1A" aria-label="Garantías de compra">
+  <section class="section-tight" style="background:#070E1A" aria-label="Criterios editoriales de la guía">
     <div class="container-site">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style="border:1px solid rgba(74,117,153,0.18)">
         {trustPoints.map((t, i) => (
@@ -147,15 +163,13 @@ const trustPoints = [
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Categorías</span>
           <h2 id="categorias-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
-            Nueve categorías,<br/>
-            <span style="color:#F75000">todo certificado.</span>
+            Categorías para comparar,<br/>
+            <span style="color:#F75000">una decisión informada.</span>
           </h2>
         </div>
         <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
           <p class="text-sm leading-relaxed" style="color:#94A3B8">
-            Cada categoría tiene su propia página con líneas disponibles, normas aplicables
-            y productos destacados. Si no encuentras un modelo específico, lo conseguimos:
-            trabajamos directo con fábrica y manejamos pedidos especiales sobre especificación técnica.
+            Cada categoría tiene su propia página con familias de producto, especificaciones y referencias normativas cuando están disponibles. Después puedes consultar el directorio para localizar empresas del giro correspondiente.
           </p>
         </div>
       </div>
@@ -167,27 +181,20 @@ const trustPoints = [
     </div>
   </section>
 
-  <!-- Módulos destacados por categoría (texto izquierda, imagen derecha; fondos alternados) -->
-  {allCategories
-    .filter((cat) => cat.spotlight)
-    .map((cat, i) => (
-      <CategorySpotlight cat={cat} background={i % 2 === 0 ? '#070E1A' : '#040A12'} />
-    ))}
-
   <!-- Productos destacados -->
   <section class="section" style="background:#070E1A" aria-labelledby="destacados-title">
     <div class="container-site">
 
       <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
         <div>
-          <span class="section-eyebrow mb-4 inline-flex">Lo más cotizado</span>
+        <span class="section-eyebrow mb-4 inline-flex">Referencias de producto</span>
           <h2 id="destacados-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
-            Productos<br/>
-            <span style="color:#F75000">destacados.</span>
+            Referencias para<br/>
+            <span style="color:#F75000">comparar opciones.</span>
           </h2>
         </div>
-        <a href={whatsappUrl('Hola, quiero cotizar productos del catálogo.')} target="_blank" rel="noopener" class="btn btn-outline btn-sm self-start sm:self-auto shrink-0">
-          Cotizar ahora →
+        <a href="/empresas/" class="btn btn-outline btn-sm self-start sm:self-auto shrink-0">
+          Buscar proveedor →
         </a>
       </div>
 
@@ -217,14 +224,14 @@ const trustPoints = [
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Cómo cotizar</span>
           <h2 id="como-cotizar-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
-            Del catálogo a tu operación<br/>
-            <span style="color:#F75000">en menos de 24 horas.</span>
+            Del catálogo al proveedor<br/>
+            <span style="color:#F75000">que necesitas localizar.</span>
           </h2>
           <ol class="flex flex-col gap-4 list-none m-0 p-0">
             {[
-              { n: '01', t: 'Mándanos tu lista por WhatsApp, las bases de tu licitación o una foto del equipo a renovar.' },
-              { n: '02', t: 'Te regresamos propuesta con precios, disponibilidad, fichas técnicas y tiempos de entrega.' },
-              { n: '03', t: 'Confirmas, entregamos con documentación completa y queda asignado tu ejecutivo de seguimiento.' },
+              { n: '01', t: 'Identifica la categoría y las especificaciones que necesitas.' },
+              { n: '02', t: 'Consulta el directorio por giro, estado y ciudad.' },
+              { n: '03', t: 'Confirma directamente con cada empresa sus datos, cobertura y condiciones.' },
             ].map((s) => (
               <li class="flex items-start gap-4">
                 <span class="font-display font-bold text-xl shrink-0" style="color:#F75000">{s.n}</span>
@@ -233,9 +240,7 @@ const trustPoints = [
             ))}
           </ol>
           <div class="flex flex-col sm:flex-row gap-3 mt-8">
-            <a href={whatsappUrl('Hola, quiero cotizar equipo del catálogo.')} target="_blank" rel="noopener" class="btn btn-primary">
-              Iniciar cotización
-            </a>
+            <a href="/empresas/" class="btn btn-primary">Ir al directorio nacional</a>
           </div>
         </div>
 
@@ -246,11 +251,11 @@ const trustPoints = [
           <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
             {[
               { label: 'Guía de normas y certificaciones', desc: 'Qué NOM y NFPA aplican según tu giro', href: '/certificaciones' },
-              { label: 'Servicios de mantenimiento y recarga', desc: 'Extintores, SCBA e hidráulicas — NFPA 1850', href: '/servicios/mantenimiento' },
-              { label: 'Soporte para licitaciones', desc: 'CompraNet, PEMEX, CFE y municipios', href: '/licitaciones' },
-              { label: 'Marcas que distribuimos', desc: 'Globe, MSA, Dräger, Holmatro y más', href: '/marcas' },
-              { label: 'Cobertura de entrega', desc: '24–48 h CDMX · 3–5 días nacional', href: '/cobertura' },
-              { label: 'Conoce la empresa', desc: 'Quiénes somos, cobertura y certificaciones', href: '/empresa' },
+              { label: 'Guía de mantenimiento y recarga', desc: 'Cómo comparar empresas, alcance y documentación', href: '/servicios/mantenimiento' },
+              { label: 'Guía para licitaciones', desc: 'Checklist editorial de requisitos y proveedores', href: '/licitaciones' },
+              { label: 'Marcas y fabricantes de referencia', desc: 'Globe, MSA, Dräger, Holmatro y más', href: '/marcas' },
+              { label: 'Cobertura del directorio', desc: 'Empresas organizadas por estado y ciudad', href: '/cobertura' },
+              { label: 'Cómo funciona', desc: 'Fuentes, alcance y contacto editorial', href: '/empresa' },
             ].map((l) => (
               <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
                 <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
@@ -267,6 +272,33 @@ const trustPoints = [
           </ul>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:#070E1A" aria-labelledby="faq-productos-title">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.7fr] gap-12 lg:gap-20">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes</span>
+          <h2 id="faq-productos-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+            Cómo elegir<br/><span style="color:#F75000">equipo contra incendios.</span>
+          </h2>
+          <p class="text-sm leading-relaxed mt-5" style="color:#94A3B8">
+            Usa esta guía para definir qué información necesitas antes de comparar empresas del sector.
+          </p>
+        </div>
+        <div class="flex flex-col">
+          {faqs.map((faq, i) => (
+            <details class="faq-item group" style={`border-top:1px solid rgba(74,117,153,0.18);${i === faqs.length - 1 ? 'border-bottom:1px solid rgba(74,117,153,0.18);' : ''}`}>
+              <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer">
+                <span class="font-display font-semibold text-sm" style="color:#FFFFFF">{faq.q}</span>
+                <span class="faq-icon font-display font-bold text-xl shrink-0" style="color:#F75000">+</span>
+              </summary>
+              <p class="text-sm leading-relaxed pb-5 m-0" style="color:#94A3B8">{faq.a}</p>
+            </details>
+          ))}
+        </div>
       </div>
     </div>
   </section>

@@ -80,9 +80,7 @@ export default defineConfig({
       changefreq: 'weekly',
       priority: 0.7,
       // Las rutas reales se detectan solas; excluir 404.
-      // Fichas L4 del directorio de empresas (/empresas/<giro>/<estado>/<slug>/):
-      // mientras INDEXAR_FICHAS_BASICAS sea false en src/data/giros.ts, llevan noindex
-      // y se excluyen aquí. Mantener ambos en sincronía.
+      // Fichas básicas del directorio: indexables por decisión editorial.
       filter: (page) => !page.includes('/404') && !page.includes('/parciales/') && !(INDEXAR_FICHAS_BASICAS === false && esFichaEmpresa(page)),
       serialize: (item) => {
         // lastmod real por archivo fuente; si no se resuelve, se omite

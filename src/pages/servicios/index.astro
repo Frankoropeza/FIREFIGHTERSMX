@@ -1,16 +1,15 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
-import Spotlight from '@components/common/Spotlight.astro';
 import { services } from '@data/services';
-import { SITE, whatsappUrl } from '@config/site';
+import { SITE } from '@config/site';
 
 const canonicalURL = `${SITE.url}/servicios/`;
 
 const seoMeta = {
-  title: `Servicios Contra Incendio en México — ${SITE.name}`,
+  title: `Guía de Servicios Contra Incendio en México — ${SITE.name}`,
   description:
-    'Servicios contra incendio en México: capacitación DC-3, mantenimiento y recarga, instalación de sistemas NFPA, auditoría NOM-002, brigadas y licitaciones.',
+    'Guía de servicios contra incendio en México: capacitación, mantenimiento, recarga, instalación, auditoría, brigadas y licitaciones.',
   canonicalURL,
 };
 
@@ -53,10 +52,10 @@ const collectionSchema = {
 };
 
 const trustPoints = [
-  { title: 'Evidencia documental', text: 'DC-3, bitácoras, reportes y collares de garantía — todo listo para STPS y Protección Civil.' },
-  { title: 'Personal certificado', text: 'Instructores con registro STPS y técnicos formados por fábrica en cada especialidad.' },
-  { title: 'Un solo proveedor', text: 'Equipo + servicio + documentación sin coordinar a tres empresas para un mismo expediente.' },
-  { title: 'Cobertura nacional', text: 'Servicio en sitio en los 32 estados; pólizas anuales con calendario y recordatorios.' },
+  { title: 'Qué revisar', text: 'Alcance, fuentes, documentación y experiencia comprobable antes de contratar un servicio.' },
+  { title: 'Normativa de referencia', text: 'Consulta la norma relacionada con cada servicio y confirma su vigencia con la autoridad competente.' },
+  { title: 'Comparación de proveedores', text: 'Usa el directorio para localizar empresas por giro, estado y especialidad.' },
+  { title: 'Información editorial', text: 'Las fichas distinguen datos verificados, confirmados y registros públicos pendientes.' },
 ];
 ---
 
@@ -81,34 +80,32 @@ const trustPoints = [
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
         <div>
-          <span class="section-eyebrow mb-5 inline-flex">Servicios profesionales · NFPA y NOM</span>
+          <span class="section-eyebrow mb-5 inline-flex">Guía del sector · NFPA y NOM</span>
           <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
-            Servicios Contra<br/>
-            <span style="color:#F75000">Incendio</span>
+            Servicios contra<br/>
+            <span style="color:#F75000">incendio</span>
           </h1>
           <div class="flex flex-col sm:flex-row gap-3">
             <a
-              href={whatsappUrl('Hola, quiero cotizar un servicio contra incendio.')}
-              target="_blank" rel="noopener"
+              href="/empresas/"
               class="btn btn-primary btn-lg"
             >
-              Cotizar por WhatsApp
+              Buscar empresas
             </a>
-            <a href="/cotizacion" class="btn btn-ghost btn-lg">Cotización formal</a>
+            <a href="/empresas/registro/" class="btn btn-ghost btn-lg">Registrar una empresa</a>
           </div>
         </div>
 
         <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
           <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">
-            Seis servicios para que tu operación cumpla la normativa y tu gente sepa responder:
-            <strong style="color:#CBD5E1">capacitación con constancia DC-3 STPS, mantenimiento y recarga
-            certificada, instalación de sistemas contra incendio NFPA 13/72, auditoría NOM-002-STPS,
-            brigadas empresariales llave en mano y soporte técnico para licitaciones</strong>.
+            Esta sección organiza servicios relacionados con la prevención y protección contra
+            incendios: <strong style="color:#CBD5E1">capacitación, mantenimiento y recarga,
+            instalación de sistemas, auditoría, brigadas y licitaciones</strong>.
           </p>
           <p class="text-sm leading-[1.9] mb-6" style="color:#64748B">
-            Cada servicio entrega la evidencia documental que pide la autoridad: constancias,
-            bitácoras, reportes fotográficos, collares de garantía y memorias de cálculo.
-            Personal certificado, cobertura en los 32 estados y un ejecutivo responsable de tu cuenta.
+            La información es una guía para comparar alcances y localizar empresas. Confirma
+            directamente con cada proveedor sus acreditaciones, cobertura, documentación, precios
+            y condiciones de servicio.
           </p>
           <div class="flex flex-wrap gap-2">
             {['DC-3 STPS','NOM-002-STPS','NFPA 1850','NFPA 13 · 72','NOM-154-SCFI','CompraNet'].map(n => (
@@ -127,7 +124,7 @@ const trustPoints = [
   <QuickLinksBar />
 
   <!-- Pilares -->
-  <section class="section-tight" style="background:#070E1A" aria-label="Por qué nuestros servicios">
+  <section class="section-tight" style="background:#070E1A" aria-label="Criterios para comparar servicios">
     <div class="container-site">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style="border:1px solid rgba(74,117,153,0.18)">
         {trustPoints.map((t, i) => (
@@ -148,15 +145,15 @@ const trustPoints = [
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Servicios</span>
           <h2 id="servicios-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
-            Seis servicios,<br/>
-            <span style="color:#F75000">un solo expediente.</span>
+            Seis áreas para<br/>
+            <span style="color:#F75000">comparar proveedores.</span>
           </h2>
         </div>
         <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
           <p class="text-sm leading-relaxed" style="color:#94A3B8">
-            Cada servicio tiene su propia página con alcances, entregables y preguntas frecuentes.
-            Si tu necesidad cruza varios — equipar, capacitar y documentar a la vez —
-            armamos un programa integral con un solo contrato y calendario.
+            Cada guía reúne criterios, vocabulario técnico y preguntas útiles para evaluar proveedores.
+            Confirma directamente el alcance, la documentación, la cobertura y las condiciones de cada
+            empresa antes de contratar.
           </p>
         </div>
       </div>
@@ -202,26 +199,6 @@ const trustPoints = [
     </div>
   </section>
 
-  <!-- Spotlights por servicio -->
-  {services.map((s, i) => (
-    <Spotlight
-      id={s.slug}
-      eyebrow={s.norm}
-      title={s.spotlight.title}
-      highlight={s.spotlight.highlight}
-      paragraphs={s.spotlight.paragraphs}
-      subsections={s.spotlight.subsections}
-      image={s.spotlight.image}
-      imageAlt={s.spotlight.imageAlt}
-      href={s.href}
-      ctaLabel={`Servicio de ${s.title.toLowerCase()}`}
-      whatsappMsg={`Hola, quiero cotizar el servicio de ${s.title.toLowerCase()}.`}
-      captionLeft={s.title}
-      captionRight={s.norm}
-      background={i % 2 === 0 ? '#070E1A' : '#040A12'}
-    />
-  ))}
-
   <!-- Cómo trabajamos + cross-links -->
   <section class="section" style="background:#070E1A" aria-labelledby="como-trabajamos-title">
     <div class="container-site">
@@ -246,8 +223,8 @@ const trustPoints = [
             ))}
           </ol>
           <div class="flex flex-col sm:flex-row gap-3 mt-8">
-            <a href={whatsappUrl('Hola, quiero un diagnóstico de servicios contra incendio.')} target="_blank" rel="noopener" class="btn btn-primary">
-              Solicitar diagnóstico gratuito
+            <a href="/empresas/" class="btn btn-primary">
+              Buscar empresas del servicio
             </a>
           </div>
         </div>

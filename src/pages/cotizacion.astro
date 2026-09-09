@@ -1,235 +1,68 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
-import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl } from '@config/site';
+import { SITE } from '@config/site';
 
 const canonicalURL = `${SITE.url}/cotizacion/`;
-
 const seoMeta = {
-  title: `Solicitar Cotización de Equipo para Bomberos — FFMX`,
-  description:
-    'Solicita tu cotización de equipo para bomberos: trajes NFPA, cascos, SCBA, herramientas de rescate y sistemas CI. Propuesta técnica en menos de 2 horas hábiles.',
+  title: 'Cómo Solicitar una Cotización de Equipo Contra Incendio',
+  description: 'Prepara una solicitud de cotización de equipo contra incendio: especificaciones, cantidades, entrega, documentación y empresas para comparar en México.',
   canonicalURL,
 };
 
-const categorias = [
-  'Trajes para Bomberos',
-  'Cascos NFPA',
-  'Equipos SCBA',
-  'Herramientas Rescate',
-  'Extintores',
-  'Sistemas CI',
-  'Cámaras Térmicas',
-  'HAZMAT',
-  'Drones',
-  'Capacitación',
-  'Mantenimiento',
-  'Licitación',
+const pasos = [
+  { n: '01', title: 'Define la necesidad', text: 'Describe el uso, riesgo, equipo o sistema que necesitas resolver; evita comenzar únicamente con una marca.' },
+  { n: '02', title: 'Especifica el alcance', text: 'Indica cantidades, capacidades, tallas, accesorios, compatibilidad, instalación, pruebas o capacitación.' },
+  { n: '03', title: 'Aclara la documentación', text: 'Señala fichas, manuales, evidencias normativas o formatos de licitación que deban entregarse.' },
+  { n: '04', title: 'Comparte datos logísticos', text: 'Incluye ciudad, estado, fecha requerida y condiciones conocidas de entrega o trabajo en sitio.' },
+  { n: '05', title: 'Compara sobre la misma base', text: 'Envía el mismo requerimiento a varias empresas y revisa inclusiones, exclusiones, vigencia y responsables.' },
 ];
 
-/* ─── JSON-LD ──────────────────────────────────────────────── */
+const rutas = [
+  { title: 'Equipo para bomberos y EPP', text: 'Trajes, cascos, SCBA, rescate, cámaras térmicas, HAZMAT y otras categorías.', href: '/empresas/venta-equipo/' },
+  { title: 'Extintores', text: 'Venta, recarga, inspección o mantenimiento según la actividad declarada por cada empresa.', href: '/empresas/extintores/' },
+  { title: 'Sistemas contra incendio', text: 'Detección, alarma, redes, rociadores, bombeo y supresión.', href: '/empresas/sistemas-ci/' },
+  { title: 'Equipo contra incendio', text: 'Empresas relacionadas con suministro y servicios generales del sector.', href: '/empresas/equipos-contra-incendio/' },
+  { title: 'Capacitación', text: 'Empresas y centros relacionados con capacitación contra incendios y brigadas.', href: '/empresas/capacitacion/' },
+];
+
+const checklist = [
+  'Descripción del equipo, servicio o sistema requerido.',
+  'Cantidad, unidad de medida y configuración por partida.',
+  'Aplicación, entorno y condiciones relevantes de operación.',
+  'Normas o documentos solicitados, con edición si el proyecto la define.',
+  'Lugar y fecha requeridos para entrega, instalación o capacitación.',
+  'Impuestos, moneda, forma de pago y vigencia de la propuesta.',
+  'Garantía, mantenimiento, consumibles, refacciones y soporte posterior.',
+];
+
 const breadcrumbSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
+  '@context': 'https://schema.org', '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
-    { '@type': 'ListItem', position: 2, name: 'Cotización', item: canonicalURL },
+    { '@type': 'ListItem', position: 2, name: 'Cómo solicitar una cotización', item: canonicalURL },
   ],
+};
+const articleSchema = {
+  '@context': 'https://schema.org', '@type': 'Article', '@id': `${canonicalURL}#article`,
+  headline: seoMeta.title, description: seoMeta.description, url: canonicalURL, inLanguage: 'es-MX',
+  author: { '@type': 'Organization', '@id': `${SITE.url}/#organization`, name: SITE.name },
+  publisher: { '@id': `${SITE.url}/#organization` }, mainEntityOfPage: canonicalURL,
 };
 ---
 
-<BaseLayout {...seoMeta} schema={[breadcrumbSchema]}>
+<BaseLayout {...seoMeta} schema={[breadcrumbSchema, articleSchema]}>
+  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb"><div class="container-site"><ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)"><li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li><li aria-hidden="true">/</li><li aria-current="page" style="color:#94A3B8">Solicitar cotización</li></ol></div></nav>
 
-  <!-- Breadcrumb -->
-  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
-    <div class="container-site">
-      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
-        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
-        <li aria-hidden="true">/</li>
-        <li><span style="color:#94A3B8" aria-current="page">Cotización</span></li>
-      </ol>
-    </div>
-  </nav>
+  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem"><div class="container-site relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"><div><span class="section-eyebrow mb-5 inline-flex">Guía de compra</span><h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.4rem,5.5vw,4.4rem);line-height:0.95">Cómo solicitar una<br/><span style="color:#F75000">cotización completa.</span></h1><div class="flex flex-col sm:flex-row gap-3"><a href="#pasos" class="btn btn-primary btn-lg">Preparar solicitud</a><a href="/empresas/" class="btn btn-ghost btn-lg">Buscar empresas</a></div></div><div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)"><p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">Una solicitud clara permite comparar equipos, documentación, entrega, instalación y servicio sobre una base equivalente.</p><p class="text-sm leading-[1.9]" style="color:#64748B">FIREFIGHTERS MX no emite cotizaciones ni representa a las empresas listadas. Utiliza esta guía y contacta directamente a los proveedores del directorio.</p></div></div></section>
 
-  <!-- Hero -->
-  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">
-    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
-
-    <div class="container-site relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-
-        <div>
-          <span class="section-eyebrow mb-5 inline-flex">Respuesta en menos de 2 horas</span>
-          <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
-            Solicitar<br/>
-            <span style="color:#F75000">Cotización</span>
-          </h1>
-          <div class="flex flex-col sm:flex-row gap-3">
-            <a href="#formulario" class="btn btn-primary btn-lg">Llenar formulario</a>
-            <a
-              href={whatsappUrl('Hola, quiero solicitar una cotización de equipo para bomberos.')}
-              target="_blank" rel="noopener"
-              class="btn btn-ghost btn-lg"
-            >
-              Cotizar por WhatsApp
-            </a>
-          </div>
-        </div>
-
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
-          <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">
-            Solicita tu cotización de equipos para bomberos en FIREFIGHTERS MX:
-            <strong style="color:#CBD5E1">trajes NFPA, SCBA, herramientas de rescate y sistemas
-            contra incendio</strong>. Propuestas técnicas personalizadas en menos de 2 horas en
-            días hábiles.
-          </p>
-          <p class="text-sm leading-[1.9] mb-6" style="color:#64748B">
-            Cada propuesta incluye fichas técnicas listas para licitaciones, normas aplicables
-            y tiempos de entrega en firme. Cuéntanos qué necesitas y arma tu requerimiento
-            categoría por categoría.
-          </p>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)" aria-hidden="true"></div>
-  </section>
-
-  <!-- Accesos rápidos (interlinking) -->
   <QuickLinksBar />
 
-  <!-- Formulario -->
-  <section id="formulario" class="section" style="background:#070E1A" aria-labelledby="formulario-title">
-    <div class="container-site">
+  <section id="pasos" class="section" style="background:#070E1A" aria-labelledby="pasos-title"><div class="container-site"><div class="max-w-3xl mb-10"><span class="section-eyebrow mb-4 inline-flex">Paso a paso</span><h2 id="pasos-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.9rem,3.8vw,3rem);line-height:1.05">Preparar una solicitud<br/><span style="color:#F75000">comparable.</span></h2></div><ol class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 list-none m-0 p-0 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">{pasos.map((paso) => <li class="p-6" style="background:#080F1A"><span class="font-display font-bold text-2xl" style="color:#F75000">{paso.n}</span><h3 class="font-display font-bold text-base my-3" style="color:#FFFFFF">{paso.title}</h3><p class="text-xs leading-relaxed" style="color:#64748B">{paso.text}</p></li>)}</ol></div></section>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
-        <div>
-          <span class="section-eyebrow mb-4 inline-flex">Cuéntanos tu necesidad</span>
-          <h2 id="formulario-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
-            Tu cotización,<br/>
-            <span style="color:#F75000">en marcha.</span>
-          </h2>
-        </div>
-        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:#94A3B8">
-            Propuestas técnicas personalizadas en menos de 2 horas en días hábiles.
-            Incluye fichas técnicas para licitaciones.
-          </p>
-        </div>
-      </div>
+  <section class="section" style="background:#040A12" aria-labelledby="rutas-title"><div class="container-site"><div class="max-w-3xl mb-10"><span class="section-eyebrow mb-4 inline-flex">Directorio por giro</span><h2 id="rutas-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.9rem,3.8vw,3rem);line-height:1.05">Empresas a las que puedes<br/><span style="color:#F75000">solicitar información.</span></h2></div><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">{rutas.map((ruta) => <a href={ruta.href} class="group flex flex-col p-7" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)"><h3 class="font-display font-bold text-lg mb-3 group-hover:text-[#FF6B26]" style="color:#FFFFFF">{ruta.title}</h3><p class="text-xs leading-relaxed mb-5 flex-1" style="color:#64748B">{ruta.text}</p><span class="text-xs font-display font-semibold uppercase tracking-wider" style="color:#FF8F57">Explorar empresas →</span></a>)}</div></div></section>
 
-      <div class="max-w-3xl" style="background:#0C1825;border:1px solid rgba(74,117,153,0.18);padding:2rem">
-        <form data-wa-form data-wa={SITE.whatsapp} data-mail={SITE.email} method="POST" action="/api/cotizacion" class="flex flex-col gap-6">
-          <div class="grid sm:grid-cols-2 gap-5">
-            <div>
-              <label for="nombre" class="label">Nombre completo *</label>
-              <input type="text" id="nombre" name="nombre" required class="input" placeholder="Tu nombre"/>
-            </div>
-            <div>
-              <label for="empresa" class="label">Empresa / Institución *</label>
-              <input type="text" id="empresa" name="empresa" required class="input" placeholder="Nombre de tu empresa"/>
-            </div>
-          </div>
-          <div class="grid sm:grid-cols-2 gap-5">
-            <div>
-              <label for="email" class="label">Correo electrónico *</label>
-              <input type="email" id="email" name="email" required class="input" placeholder="correo@empresa.com"/>
-            </div>
-            <div>
-              <label for="telefono" class="label">Teléfono *</label>
-              <input type="tel" id="telefono" name="telefono" required class="input" placeholder="55 1234-5678"/>
-            </div>
-          </div>
-          <div>
-            <label for="tipo_cliente" class="label">Tipo de cliente</label>
-            <select id="tipo_cliente" name="tipo_cliente" class="select">
-              <option value="">Selecciona...</option>
-              <option>Cuerpo de Bomberos Municipal</option>
-              <option>Cuerpo de Bomberos Estatal</option>
-              <option>Brigada Industrial / Empresa</option>
-              <option>Aeropuerto</option>
-              <option>Hospital</option>
-              <option>Hotel</option>
-              <option>Gobierno Federal / Estatal</option>
-              <option>Refinerías / Petroquímica</option>
-              <option>Otro</option>
-            </select>
-          </div>
-          <div>
-            <label class="label">Categorías de equipo de interés</label>
-            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-2">
-              {categorias.map((cat) => (
-                <label class="flex items-center gap-2 cursor-pointer text-sm" style="color:#94A3B8">
-                  <input type="checkbox" name="categorias" value={cat} class="rounded" style="accent-color:#F75000"/>
-                  {cat}
-                </label>
-              ))}
-            </div>
-          </div>
-          <div>
-            <label for="estado" class="label">Estado / Ciudad</label>
-            <input type="text" id="estado" name="estado" class="input" placeholder="Ciudad de México, Monterrey, Guadalajara..."/>
-          </div>
-          <div>
-            <label for="descripcion" class="label">Describe tu necesidad *</label>
-            <textarea id="descripcion" name="descripcion" rows="5" required class="textarea"
-              placeholder="Describe los equipos o servicios que necesitas, cantidad aproximada, fecha requerida, normas aplicables, etc."></textarea>
-          </div>
-          <div>
-            <label for="presupuesto" class="label">Rango de presupuesto aproximado</label>
-            <select id="presupuesto" name="presupuesto" class="select">
-              <option value="">Selecciona (opcional)</option>
-              <option>Menos de $50,000 MXN</option>
-              <option>$50,000 - $200,000 MXN</option>
-              <option>$200,000 - $500,000 MXN</option>
-              <option>$500,000 - $1,000,000 MXN</option>
-              <option>Más de $1,000,000 MXN</option>
-              <option>Gobierno / Licitación pública</option>
-            </select>
-          </div>
-          <button type="submit" class="btn btn-primary btn-lg w-full mt-2">
-            Enviar solicitud de cotización gratuita
-          </button>
-          <p class="text-xs text-center" style="color:#64748B">
-            Recibirás tu cotización en menos de 2 horas en días hábiles.
-            Tus datos están protegidos y nunca serán compartidos.
-          </p>
-        </form>
-      </div>
-    </div>
-  </section>
+  <section class="section" style="background:#070E1A" aria-labelledby="checklist-title"><div class="container-site grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start"><div><span class="section-eyebrow mb-4 inline-flex">Checklist</span><h2 id="checklist-title" class="font-display font-bold mb-5" style="color:#FFFFFF;font-size:clamp(1.9rem,3.8vw,3rem);line-height:1.05">Información para enviar<br/><span style="color:#F75000">a cada empresa.</span></h2><p class="text-sm leading-relaxed mb-6" style="color:#94A3B8">Copia esta lista en tu solicitud y adapta únicamente lo que conozcas. No inventes una norma o especificación: pide apoyo técnico al responsable de tu proyecto cuando falte definirla.</p><a href="/precios/" class="btn btn-outline">Factores que cambian el precio</a></div><ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.18)">{checklist.map((item, index) => <li class="flex items-start gap-4 py-4" style="border-bottom:1px solid rgba(74,117,153,0.18)"><span class="font-display font-bold text-sm shrink-0" style="color:#F75000">{String(index + 1).padStart(2, '0')}</span><span class="text-sm leading-relaxed" style="color:#94A3B8">{item}</span></li>)}</ul></div></section>
 
-  <script>
-    // Envío sin backend → arma un mensaje de WhatsApp con los campos del formulario.
-    document.querySelectorAll('form[data-wa-form]').forEach((form) => {
-      const f = form as HTMLFormElement;
-      if (f.dataset.bound) return;
-      f.dataset.bound = '1';
-      f.addEventListener('submit', (e) => {
-        e.preventDefault();
-        if (!f.reportValidity()) return;
-        const num = f.getAttribute('data-wa');
-        const fd = new FormData(f);
-        const lines: string[] = ['Hola FIREFIGHTERS MX, solicito una cotización:', ''];
-        for (const [name, value] of fd.entries()) {
-          const v = String(value).trim();
-          if (!v) continue;
-          const field = f.querySelector(`[name="${name}"]`) as HTMLElement | null;
-          const id = field?.id ?? '';
-          const labelEl = id ? f.querySelector(`label[for="${id}"]`) : null;
-          const label = labelEl?.textContent?.replace('*', '').trim() || name;
-          lines.push(`${label}: ${v}`);
-        }
-        const text = encodeURIComponent(lines.join('\n'));
-        // Sin número verificado (CONTACTO_DIRECTO_ACTIVO=false) el form cae a correo.
-      const mail = f.getAttribute('data-mail');
-      if (num) {
-        window.open(`https://wa.me/${num}?text=${text}`, '_blank', 'noopener');
-      } else if (mail) {
-        window.location.href = `mailto:${mail}?subject=${encodeURIComponent('Cotización — FIREFIGHTERS MX')}&body=${text}`;
-      }
-      });
-    });
-  </script>
+  <section style="background:#F75000;padding-block:4rem" aria-label="Buscar proveedores en el directorio"><div class="container-site"><div class="flex flex-col lg:flex-row items-center justify-between gap-8"><div><p class="text-xs font-display font-bold uppercase tracking-[0.2em] mb-3" style="color:rgba(255,255,255,0.7)">Siguiente paso</p><h2 class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.75rem,3.5vw,2.5rem);line-height:1.1">Compara empresas por<br/>giro y ubicación.</h2></div><a href="/empresas/" class="btn" style="background:#FFFFFF;color:#F75000;font-weight:700">Abrir directorio</a></div></div></section>
 </BaseLayout>

@@ -4,7 +4,7 @@ import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import { allCategories, type Category } from '@data/categories';
 import { featuredProducts } from '@data/products';
 import { brandPages } from '@data/brandPages';
-import { SITE, whatsappUrl } from '@config/site';
+import { SITE } from '@config/site';
 
 export function getStaticPaths() {
   // Slugs con página estática dedicada (productos/<slug>/index.astro) — excluir del dinámico
@@ -44,7 +44,7 @@ const otherCategories = allCategories.filter((c) => c.slug !== cat.slug).slice(0
 ---
 
 <BaseLayout
-  title={`${cat.label} ${cat.norm.split('·')[0].trim()} — México`}
+  title={`Guía de ${cat.label} ${cat.norm.split('·')[0].trim()} — México`}
   description={cat.description}
   canonicalURL={canonicalURL}
   schema={breadcrumbSchema}
@@ -78,12 +78,8 @@ const otherCategories = allCategories.filter((c) => c.slug !== cat.slug).slice(0
           ))}
         </div>
         <div class="flex flex-col sm:flex-row gap-3">
-          <a
-            href={whatsappUrl(`Hola, quiero cotizar ${cat.label.toLowerCase()}.`)}
-            target="_blank" rel="noopener"
-            class="btn btn-primary"
-          >
-            Cotizar {cat.label.toLowerCase()}
+          <a href="/empresas/" class="btn btn-primary">
+            Buscar empresas relacionadas
           </a>
           <a href="/productos" class="btn btn-ghost">Todas las guías de equipo para bomberos</a>
         </div>
@@ -99,16 +95,17 @@ const otherCategories = allCategories.filter((c) => c.slug !== cat.slug).slice(0
       <div class="container-site">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-10">
           <div>
-            <span class="section-eyebrow mb-4 inline-flex">Marcas autorizadas</span>
+            <span class="section-eyebrow mb-4 inline-flex">Fabricantes de referencia</span>
             <h2 id="marcas-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.05">
-              Catálogo por<br/>
+              Referencias por<br/>
               <span style="color:#F75000">marca.</span>
             </h2>
           </div>
           <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
             <p class="text-sm leading-relaxed" style="color:#94A3B8">
-              Cada marca tiene su catálogo dedicado con comparativa técnica, anatomía del modelo insignia, guía de
-              selección y FAQ. Stock en CDMX y ficha para licitación.
+              Cada marca enlaza a una página editorial con comparativa técnica, guía de selección
+              y preguntas frecuentes. La presencia de una marca no implica distribución,
+              autorización, stock ni disponibilidad por parte de FIREFIGHTERS MX.
             </p>
           </div>
         </div>
@@ -118,7 +115,7 @@ const otherCategories = allCategories.filter((c) => c.slug !== cat.slug).slice(0
               <h3 class="font-display font-bold text-xl group-hover:text-[#FF6B26]" style="color:#FFFFFF">{b.brandLabel}</h3>
               <p class="text-xs leading-relaxed flex-1" style="color:#64748B">{b.crossDesc}</p>
               <span class="inline-flex items-center gap-1.5 text-xs font-display font-semibold uppercase tracking-wider" style="color:#FF8F57">
-                Ver catálogo
+                Ver guía
                 <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
               </span>
             </a>
@@ -147,7 +144,7 @@ const otherCategories = allCategories.filter((c) => c.slug !== cat.slug).slice(0
       {products.length > 0 && (
         <div class="mt-12">
           <h2 class="font-display font-bold mb-8" style="color:#FFFFFF;font-size:clamp(1.5rem,2.5vw,2.25rem)">
-            Productos destacados
+            Referencias de producto
           </h2>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
             {products.map((product) => (
@@ -174,7 +171,7 @@ const otherCategories = allCategories.filter((c) => c.slug !== cat.slug).slice(0
                   </div>
                   <h3 class="font-display font-bold text-lg leading-snug group-hover:text-[#FF6B26]" style="color:#FFFFFF">{product.title}</h3>
                   <p class="text-xs leading-relaxed" style="color:#64748B">{product.description}</p>
-                  <span class="text-xs font-display font-semibold uppercase tracking-wider mt-auto" style="color:#FF8F57">Ficha técnica de {product.title} →</span>
+                  <span class="text-xs font-display font-semibold uppercase tracking-wider mt-auto" style="color:#FF8F57">Ver referencia de {product.title} →</span>
                 </div>
               </a>
             ))}
@@ -188,13 +185,13 @@ const otherCategories = allCategories.filter((c) => c.slug !== cat.slug).slice(0
   <section class="section-tight" style="background:#040A12" aria-labelledby="otras-title">
     <div class="container-site">
       <h2 id="otras-title" class="font-display font-bold text-sm uppercase tracking-widest mb-6" style="color:var(--forge-300)">
-        Otras categorías del catálogo
+        Otras categorías de la guía
       </h2>
       <div class="flex flex-wrap gap-3">
         {otherCategories.map((c) => (
           <a href={`/productos/${c.slug}`} class="btn btn-sm btn-dark">{c.label}</a>
         ))}
-        <a href="/productos" class="btn btn-sm btn-outline">Catálogo completo →</a>
+        <a href="/productos" class="btn btn-sm btn-outline">Guía completa →</a>
       </div>
     </div>
   </section>

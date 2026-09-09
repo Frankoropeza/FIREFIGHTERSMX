@@ -1,252 +1,55 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
-import { SITE, whatsappUrl } from '@config/site';
-import { totalEstaciones } from '@lib/estaciones';
-
-const totalFichas = await totalEstaciones();
+import { SITE } from '@config/site';
 
 const canonicalURL = `${SITE.url}/nosotros/`;
-
 const seoMeta = {
-  title: `Sobre FIREFIGHTERS MX — Equipo para Bomberos`,
-  description:
-    `Conoce FIREFIGHTERS MX: equipo certificado NFPA y NOM para bomberos, industria y protección civil, y el directorio nacional con ${totalFichas} estaciones documentadas en los 32 estados.`,
+  title: 'Metodología Editorial de FIREFIGHTERS MX | Directorio',
+  description: 'Conoce cómo FIREFIGHTERS MX organiza, distingue y corrige información pública sobre empresas, productos y estaciones del sector contra incendio.',
   canonicalURL,
 };
 
+const proceso = [
+  { n: '01', title: 'Recolección', text: 'Se parte de registros públicos, fuentes institucionales o información aportada por la entidad correspondiente.' },
+  { n: '02', title: 'Normalización', text: 'Nombres, ubicaciones, giros y campos se estructuran para permitir búsqueda y navegación consistentes.' },
+  { n: '03', title: 'Atribución', text: 'La ficha distingue información pública, datos confirmados y elementos que requieren verificación adicional.' },
+  { n: '04', title: 'Publicación', text: 'El contenido se organiza por entidad, giro y municipio sin completar datos ausentes por inferencia.' },
+  { n: '05', title: 'Corrección', text: 'Empresas y usuarios pueden aportar fuentes para revisar errores, actualizar datos o ampliar una ficha.' },
+];
+
+const principios = [
+  { title: 'Sin datos fabricados', text: 'No se inventan teléfonos, direcciones, certificaciones, reseñas, clientes, años de experiencia ni relaciones con marcas.' },
+  { title: 'Fuente antes que claim', text: 'Una afirmación específica debe poder atribuirse a una fuente pertinente y al sujeto correcto.' },
+  { title: 'Directorio, no proveedor', text: 'FIREFIGHTERS MX organiza información; cada empresa responde por sus productos, servicios y condiciones.' },
+  { title: 'Corrección abierta', text: 'La metodología contempla revisar registros cuando se presenta información comprobable.' },
+];
+
 const breadcrumbSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
+  '@context': 'https://schema.org', '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
-    { '@type': 'ListItem', position: 2, name: 'Empresa', item: `${SITE.url}/empresa` },
-    { '@type': 'ListItem', position: 3, name: 'Nosotros', item: canonicalURL },
+    { '@type': 'ListItem', position: 2, name: 'FIREFIGHTERS MX', item: `${SITE.url}/empresa/` },
+    { '@type': 'ListItem', position: 3, name: 'Metodología editorial', item: canonicalURL },
   ],
 };
-
-const figures = [
-  { value: String(totalFichas), label: 'Estaciones documentadas', text: 'Fichas del directorio nacional, cada una con fuente institucional y fecha de verificación.' },
-  { value: '32', label: 'Estados con cobertura', text: 'Logística y servicio en sitio en toda la República Mexicana.' },
-  { value: '100%', label: 'Equipo certificado', text: 'Todo cumple NFPA, NOM-002-STPS y normativa vigente.' },
-];
-
-const pillars = [
-  {
-    title: 'Misión',
-    text: 'Ser el proveedor integral más confiable de equipo para bomberos y sistemas contra incendio en México, garantizando que cada responder tenga el equipo certificado que merece.',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>`,
-  },
-  {
-    title: 'Visión',
-    text: 'Ser el referente iberoamericano del sector bomberos hacia 2028, ampliando cobertura y siendo fuente de autoridad técnica para la industria de la protección contra incendio.',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>`,
-  },
-  {
-    title: 'Valores',
-    text: 'Seguridad ante todo. Honestidad técnica. Servicio de excelencia. Compromiso con la vida. Respeto absoluto a las normas que protegen a quienes nos protegen.',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
-  },
-];
-
-const razones = [
-  { title: 'Especialización real', desc: 'No somos una ferretería que también vende extintores: vivimos del sector bomberos, protección civil e industria.' },
-  { title: 'Marcas de referencia', desc: 'Trabajamos con las marcas líderes del sector, con garantía de fábrica y refacciones originales.' },
-  { title: 'Documentación que cumple', desc: 'Cada entrega llega con certificados, fichas técnicas y manifiestos listos para STPS, Protección Civil o tu aseguradora.' },
-  { title: 'Un ejecutivo por cuenta', desc: 'Una persona responsable de tu proyecto, no un conmutador: seguimiento de principio a fin.' },
-];
+const aboutSchema = {
+  '@context': 'https://schema.org', '@type': 'AboutPage', '@id': `${canonicalURL}#methodology`,
+  name: seoMeta.title, description: seoMeta.description, url: canonicalURL, inLanguage: 'es-MX',
+  isPartOf: { '@id': `${SITE.url}/#website` }, about: { '@id': `${SITE.url}/#organization` },
+};
 ---
 
-<BaseLayout {...seoMeta} schema={[breadcrumbSchema]}>
+<BaseLayout {...seoMeta} schema={[breadcrumbSchema, aboutSchema]}>
+  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb"><div class="container-site"><ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)"><li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li><li aria-hidden="true">/</li><li><a href="/empresa/" class="hover:text-[#FF6B26]">FIREFIGHTERS MX</a></li><li aria-hidden="true">/</li><li aria-current="page" style="color:#94A3B8">Metodología</li></ol></div></nav>
 
-  <!-- Breadcrumb -->
-  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
-    <div class="container-site">
-      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
-        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
-        <li aria-hidden="true">/</li>
-        <li><a href="/empresa" class="hover:text-[#FF6B26]">Empresa</a></li>
-        <li aria-hidden="true">/</li>
-        <li><span style="color:#94A3B8" aria-current="page">Nosotros</span></li>
-      </ol>
-    </div>
-  </nav>
+  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem"><div class="container-site relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"><div><span class="section-eyebrow mb-5 inline-flex">Transparencia y datos</span><h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.4rem,5.5vw,4.4rem);line-height:0.95">Metodología del<br/><span style="color:#F75000">directorio nacional.</span></h1><div class="flex flex-col sm:flex-row gap-3"><a href="#proceso" class="btn btn-primary btn-lg">Conocer el proceso</a><a href="/contacto/" class="btn btn-ghost btn-lg">Solicitar una corrección</a></div></div><div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)"><p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">FIREFIGHTERS MX busca que la información del directorio sea útil, atribuible y corregible.</p><p class="text-sm leading-[1.9]" style="color:#64748B">La metodología separa los datos disponibles de cualquier interpretación comercial y evita presentar una ficha como certificación o recomendación de la empresa.</p></div></div></section>
 
-  <!-- Hero -->
-  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">
-    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
-
-    <div class="container-site relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-        <div>
-          <span class="section-eyebrow mb-5 inline-flex">Nuestra historia</span>
-          <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
-            Equipamos a<br/>
-            <span style="color:#F75000">quienes nos protegen</span>
-          </h1>
-          <div class="flex flex-col sm:flex-row gap-3">
-            <a href={whatsappUrl('Hola, quiero conocer más sobre FIREFIGHTERS MX.')} target="_blank" rel="noopener" class="btn btn-primary btn-lg">Hablar por WhatsApp</a>
-            <a href="/contacto" class="btn btn-ghost btn-lg">Contáctanos</a>
-          </div>
-        </div>
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
-          <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">
-            Nos dedicamos a una sola cosa:
-            <strong style="color:#CBD5E1">poner el equipo certificado correcto en manos de bomberos,
-            brigadas industriales y protección civil</strong> en todo México, con las marcas
-            de referencia del sector.
-          </p>
-          <p class="text-sm leading-[1.9] mb-6" style="color:#64748B">
-            A ese trabajo se suma el directorio nacional: {totalFichas} estaciones de bomberos
-            documentadas en los 32 estados, cada ficha con su fuente institucional y su fecha de
-            verificación. La misma exigencia de norma, trazabilidad y documentación auditable que
-            aplicamos al equipo, aplicada a la información.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            {['NFPA','ISO 9001','NOM-002-STPS','UL Listed','STPS'].map(n => (
-              <span class="badge badge-dark font-display text-[10px]">{n}</span>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)" aria-hidden="true"></div>
-  </section>
-
-  <!-- Accesos rápidos -->
   <QuickLinksBar />
 
-  <!-- Cifras -->
-  <section class="section-tight" style="background:#070E1A" aria-label="La empresa en cifras">
-    <div class="container-site">
-      <div class="grid grid-cols-1 sm:grid-cols-3" style="border:1px solid rgba(74,117,153,0.18)">
-        {figures.map((f, i) => (
-          <div class="flex flex-col gap-2 p-6" style={`background:#0C1825;${i < figures.length - 1 ? 'border-right:1px solid rgba(74,117,153,0.18);' : ''}`}>
-            <span class="font-display font-bold" style="color:#F75000;font-size:2.25rem;line-height:1">{f.value}</span>
-            <h2 class="font-display font-bold text-sm uppercase tracking-wider" style="color:#FFFFFF">{f.label}</h2>
-            <p class="text-xs leading-relaxed" style="color:#64748B">{f.text}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+  <section id="proceso" class="section" style="background:#070E1A" aria-labelledby="proceso-title"><div class="container-site"><div class="max-w-3xl mb-10"><span class="section-eyebrow mb-4 inline-flex">Ciclo editorial</span><h2 id="proceso-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.9rem,3.8vw,3rem);line-height:1.05">De la fuente a<br/><span style="color:#F75000">la ficha pública.</span></h2></div><ol class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 list-none m-0 p-0 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">{proceso.map((paso) => <li class="p-6" style="background:#080F1A"><span class="font-display font-bold text-2xl" style="color:#F75000">{paso.n}</span><h3 class="font-display font-bold text-base my-3" style="color:#FFFFFF">{paso.title}</h3><p class="text-xs leading-relaxed" style="color:#64748B">{paso.text}</p></li>)}</ol></div></section>
 
-  <!-- Galería fotográfica -->
-  <section class="section-tight" style="background:#040A12" aria-label="FIREFIGHTERS MX en acción">
-    <div class="container-site">
-      <div class="flex items-center gap-4 mb-8">
-        <span class="w-8 h-px" style="background:#F75000"></span>
-        <span class="text-xs font-display font-semibold uppercase tracking-[0.18em]" style="color:#F75000">Equipo certificado en operación</span>
-      </div>
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-2 lg:gap-3">
-        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
-          <img src="/images/nosotros/bombero-equipo-nfpa-firefightersmx.avif" alt="Bombero con equipo completo NFPA certificado — FIREFIGHTERS MX distribuidores México" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
-        </figure>
-        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
-          <img src="/images/nosotros/nosotros-equipo-bombero-uniformado.avif" alt="Bombero uniformado con equipo estructural completo NFPA México" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
-        </figure>
-        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
-          <img src="/images/nosotros/nosotros-distribuidor-autorizado-mexico.avif" alt="Equipo certificado para bomberos en México — FIREFIGHTERS MX, 32 estados" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
-        </figure>
-        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
-          <img src="/images/nosotros/bombero-proteccion-completa-mexico.avif" alt="Protección personal completa bombero certificado NFPA 1970 México" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
-        </figure>
-        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
-          <img src="/images/nosotros/nosotros-bombero-emergencia-accion.avif" alt="Bombero en acción respondiendo emergencia con equipo NFPA certificado" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
-        </figure>
-        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
-          <img src="/images/nosotros/firefightersmx-equipo-profesional-mexico.avif" alt="Equipo profesional para bomberos distribuido por FIREFIGHTERS MX en México" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
-        </figure>
-      </div>
-    </div>
-  </section>
+  <section class="section" style="background:#040A12" aria-labelledby="principios-title"><div class="container-site"><div class="max-w-3xl mb-10"><span class="section-eyebrow mb-4 inline-flex">Principios</span><h2 id="principios-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.9rem,3.8vw,3rem);line-height:1.05">Criterios que protegen<br/><span style="color:#F75000">la calidad del directorio.</span></h2></div><div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">{principios.map((principio) => <article class="p-7" style="background:#080F1A"><h3 class="font-display font-bold text-lg mb-3" style="color:#FFFFFF">{principio.title}</h3><p class="text-xs leading-relaxed" style="color:#64748B">{principio.text}</p></article>)}</div></div></section>
 
-  <!-- Misión · Visión · Valores -->
-  <section class="section" style="background:#040A12" aria-labelledby="mvv-title">
-    <div class="container-site">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
-        <div>
-          <span class="section-eyebrow mb-4 inline-flex">Lo que nos mueve</span>
-          <h2 id="mvv-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
-            Misión, visión<br/>
-            <span style="color:#F75000">y valores.</span>
-          </h2>
-        </div>
-        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:#94A3B8">
-            Equipar a quien arriesga su vida no admite atajos. Estos principios definen cómo
-            seleccionamos producto, cómo asesoramos y cómo respondemos cuando una brigada nos necesita.
-          </p>
-        </div>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-        {pillars.map((p) => (
-          <div class="flex flex-col gap-4 p-7" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
-            <div class="flex items-center justify-center rounded-full" style="width:52px;height:52px;background:rgba(247,80,0,0.1);border:1.5px solid rgba(247,80,0,0.35);color:#FF6B26">
-              <span class="block" style="width:24px;height:24px" set:html={p.icon}/>
-            </div>
-            <h3 class="font-display font-bold text-xl" style="color:#FFFFFF">{p.title}</h3>
-            <p class="text-sm leading-relaxed" style="color:#94A3B8">{p.text}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Por qué elegirnos + cross-links -->
-  <section class="section" style="background:#070E1A" aria-labelledby="porque-title">
-    <div class="container-site">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-        <div>
-          <span class="section-eyebrow mb-4 inline-flex">Por qué elegirnos</span>
-          <h2 id="porque-title" class="font-display font-bold mb-8" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
-            La diferencia está<br/>
-            <span style="color:#F75000">en el detalle.</span>
-          </h2>
-          <ul class="flex flex-col gap-5 list-none m-0 p-0">
-            {razones.map((r) => (
-              <li class="flex items-start gap-4">
-                <svg class="w-5 h-5 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="#FF6B26" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                <div>
-                  <h3 class="font-display font-semibold text-base mb-1" style="color:#FFFFFF">{r.title}</h3>
-                  <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{r.desc}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
-          <div class="flex flex-col sm:flex-row gap-3 mt-8">
-            <a href="/cotizacion" class="btn btn-primary">Solicitar cotización de equipo contra incendio</a>
-          </div>
-        </div>
-
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
-          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">
-            También te puede servir
-          </h2>
-          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
-            {[
-              { label: 'Catálogo de productos', desc: 'Equipo certificado NFPA y NOM en 9 categorías', href: '/productos' },
-              { label: 'Certificaciones', desc: 'Las normas que avalan nuestro equipo', href: '/certificaciones' },
-              { label: 'Cobertura nacional', desc: 'Entrega y servicio en los 32 estados', href: '/cobertura' },
-              { label: 'Marcas que distribuimos', desc: 'Globe, MSA, Dräger, Holmatro y más', href: '/marcas' },
-              { label: 'Volver a la empresa', desc: 'Visión general de FIREFIGHTERS MX', href: '/empresa' },
-            ].map((l) => (
-              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
-                <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
-                  <span class="flex flex-col gap-0.5">
-                    <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
-                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
-                  </span>
-                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="var(--forge-300)" stroke-width="2.5" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
-                  </svg>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
+  <section class="section" style="background:#070E1A" aria-labelledby="participar-title"><div class="container-site grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"><div><span class="section-eyebrow mb-4 inline-flex">Actualización</span><h2 id="participar-title" class="font-display font-bold mb-5" style="color:#FFFFFF;font-size:clamp(1.9rem,3.8vw,3rem);line-height:1.05">Cómo aportar información<br/><span style="color:#F75000">verificable.</span></h2><p class="text-sm leading-relaxed" style="color:#94A3B8">Indica la URL de la ficha, el dato que debe revisarse y una fuente pública o documento que permita comprobar el cambio. No envíes datos personales que no deban publicarse.</p></div><div class="flex flex-col gap-3"><a href="/empresas/registro/" class="btn btn-primary">Registrar o actualizar una empresa</a><a href="/contacto/" class="btn btn-outline">Reportar un problema del directorio</a></div></div></section>
 </BaseLayout>

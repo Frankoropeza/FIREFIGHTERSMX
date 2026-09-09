@@ -1,14 +1,14 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
-import { SITE, CONTACTO_DIRECTO_ACTIVO, DOMICILIO_VERIFICADO, telUrl, whatsappUrl } from '@config/site';
+import { SITE } from '@config/site';
 
 const canonicalURL = `${SITE.url}/contacto/`;
 
 const seoMeta = {
-  title: `Contacto — Asesoría en Equipo para Bomberos`,
+  title: `Contacto | FIREFIGHTERS MX`,
   description:
-    'Contacta a FIREFIGHTERS MX: asesoría en equipo para bomberos, cotizaciones, licitaciones y servicios. Teléfono, WhatsApp y correo. Respuesta en 2 horas hábiles.',
+    'Contacta a FIREFIGHTERS MX por correo para solicitar correcciones, registrar una empresa o enviar información verificable para el directorio nacional.',
   canonicalURL,
 };
 
@@ -22,46 +22,12 @@ const breadcrumbSchema = {
   ],
 };
 
-const localBusinessSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  '@id': `${SITE.url}/#business`,
-  name: SITE.name,
-  url: SITE.url,
-  ...(CONTACTO_DIRECTO_ACTIVO ? { telephone: SITE.phoneE164 } : {}),
-  email: SITE.email,
-  ...(DOMICILIO_VERIFICADO
-    ? {
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: SITE.address.street,
-          addressLocality: `${SITE.address.colonia}, ${SITE.address.delegacion}`,
-          postalCode: SITE.address.postalCode,
-          addressCountry: SITE.address.country,
-        },
-      }
-    : {}),
-  openingHours: 'Mo-Fr 08:00-18:00, Sa 09:00-14:00',
-  areaServed: { '@type': 'Country', name: 'México' },
-};
-
-const canalesTodos = [
-  { soloConContactoDirecto: true, label: 'Teléfono', value: SITE.phone, href: telUrl(), icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>` },
-  { soloConContactoDirecto: true, label: 'WhatsApp', value: SITE.phone, href: `https://wa.me/${SITE.whatsapp}`, icon: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>` },
-  { label: 'Correo', value: SITE.email, href: `mailto:${SITE.email}`, icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>` },
-  { label: 'Horario', value: SITE.hours, href: null, icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>` },
-  { soloConDomicilio: true, label: 'Dirección', value: SITE.address.full, href: `https://maps.google.com/?q=${encodeURIComponent(SITE.address.full)}`, icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>` },
+const canales = [
+  { label: 'Correo editorial', value: SITE.email, href: `mailto:${SITE.email}`, icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>` },
 ];
-
-// Sin teléfono/WhatsApp verificado no se publica el canal (regla: cero contacto fabricado)
-const canales = canalesTodos.filter(
-  (c) =>
-    (CONTACTO_DIRECTO_ACTIVO || !('soloConContactoDirecto' in c)) &&
-    (DOMICILIO_VERIFICADO || !('soloConDomicilio' in c))
-);
 ---
 
-<BaseLayout {...seoMeta} schema={[breadcrumbSchema, localBusinessSchema]}>
+<BaseLayout {...seoMeta} schema={[breadcrumbSchema]}>
 
   <!-- Breadcrumb -->
   <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
@@ -83,29 +49,27 @@ const canales = canalesTodos.filter(
     <div class="container-site relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div>
-          <span class="section-eyebrow mb-5 inline-flex">Atención · Respuesta &lt; 2 h</span>
+          <span class="section-eyebrow mb-5 inline-flex">Contacto editorial</span>
           <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
-            Hablemos de<br/>
-            <span style="color:#F75000">tu proyecto</span>
+            Contacta al<br/>
+            <span style="color:#F75000">directorio nacional</span>
           </h1>
           <div class="flex flex-col sm:flex-row gap-3">
-            <a href={whatsappUrl('Hola, quiero asesoría sobre equipo contra incendio.')} target="_blank" rel="noopener" class="btn btn-primary btn-lg">Escribir por WhatsApp</a>
-            <a href="/cotizacion" class="btn btn-ghost btn-lg">Solicitar cotización de equipo contra incendio</a>
+            <a href={`mailto:${SITE.email}`} class="btn btn-primary btn-lg">Enviar correo</a>
+            <a href="/empresas/registro/" class="btn btn-ghost btn-lg">Registrar una empresa</a>
           </div>
         </div>
         <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
           <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">
-            Un especialista te atiende para
-            <strong style="color:#CBD5E1">cotizaciones, información de productos, capacitación,
-            instalación, mantenimiento o licitaciones</strong>. Sin conmutadores: un ejecutivo
-            responsable de tu cuenta.
+            Usa este canal para <strong style="color:#CBD5E1">corregir una ficha, registrar una empresa,
+            aportar una fuente o reportar un problema del sitio</strong>.
           </p>
           <p class="text-sm leading-[1.9] mb-6" style="color:#64748B">
-            Atendemos a cuerpos de bomberos, brigadas industriales, protección civil y dependencias
-            de gobierno en los 32 estados, con respuesta en menos de 2 horas en días hábiles.
+            FIREFIGHTERS MX no vende equipos ni presta los servicios de las empresas listadas.
+            Para precios, disponibilidad o cobertura, contacta directamente a cada proveedor.
           </p>
           <div class="flex flex-wrap gap-2">
-            {['Cotización 24 h','32 estados','Asesoría técnica','CFDI 4.0'].map(n => (
+            {['Corrección de fichas','Alta de empresas','Fuentes verificables','Reporte del sitio'].map(n => (
               <span class="badge badge-dark font-display text-[10px]">{n}</span>
             ))}
           </div>
@@ -152,10 +116,10 @@ const canales = canalesTodos.filter(
           </ul>
 
           <div class="mt-8 p-6" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
-            <h3 class="font-display font-bold text-sm uppercase tracking-wider mb-2" style="color:#FF6B26">Cobertura nacional</h3>
+            <h3 class="font-display font-bold text-sm uppercase tracking-wider mb-2" style="color:#FF6B26">Alcance del contacto</h3>
             <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">
-              Equipo certificado y logística en los 32 estados. Entrega express en CDMX
-              en 24–48 h hábiles; interior del país en 3–5 días hábiles.
+              Este correo corresponde al proyecto editorial. No representa un canal de ventas,
+              soporte técnico ni atención comercial de las empresas del directorio.
             </p>
           </div>
         </div>
@@ -163,7 +127,7 @@ const canales = canalesTodos.filter(
         <!-- Formulario -->
         <div class="p-7" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
           <h2 class="font-display font-bold text-xl mb-6" style="color:#FFFFFF">Envíanos un mensaje</h2>
-          <form data-wa-form data-wa={SITE.whatsapp} data-mail={SITE.email} method="POST" action="/api/contacto" class="flex flex-col gap-5">
+          <form data-mail={SITE.email} method="POST" action={`mailto:${SITE.email}`} class="flex flex-col gap-5">
             <div class="grid sm:grid-cols-2 gap-4">
               <div>
                 <label for="nombre" class="label">Nombre *</label>
@@ -186,13 +150,11 @@ const canales = canalesTodos.filter(
               <label for="asunto" class="label">Asunto *</label>
               <select id="asunto" name="asunto" required class="select">
                 <option value="">Selecciona un asunto</option>
-                <option>Cotización de equipos</option>
-                <option>Información de productos</option>
-                <option>Servicios de capacitación</option>
-                <option>Instalación de sistemas CI</option>
-                <option>Mantenimiento</option>
-                <option>Licitaciones</option>
-                <option>Otro</option>
+                <option>Registrar una empresa</option>
+                <option>Corregir una ficha</option>
+                <option>Aportar una fuente</option>
+                <option>Reportar un problema del sitio</option>
+                <option>Consulta editorial</option>
               </select>
             </div>
             <div>
@@ -200,7 +162,7 @@ const canales = canalesTodos.filter(
               <textarea id="mensaje" name="mensaje" rows="4" required class="textarea" placeholder="Cuéntanos en qué podemos ayudarte..."></textarea>
             </div>
             <button type="submit" class="btn btn-primary btn-lg w-full mt-2">Enviar mensaje</button>
-            <p class="text-xs text-center m-0" style="color:#64748B">Respondemos en menos de 2 horas en días hábiles.</p>
+            <p class="text-xs text-center m-0" style="color:#64748B">El envío abrirá tu aplicación de correo.</p>
           </form>
         </div>
 
@@ -209,17 +171,16 @@ const canales = canalesTodos.filter(
   </section>
 
   <script>
-    // Envío sin backend → arma un mensaje de WhatsApp con los campos del formulario.
-    document.querySelectorAll('form[data-wa-form]').forEach((form) => {
+    // Envío sin backend: compone un correo con los campos visibles del formulario.
+    document.querySelectorAll('form[data-mail]').forEach((form) => {
       const f = form as HTMLFormElement;
       if (f.dataset.bound) return;
       f.dataset.bound = '1';
       f.addEventListener('submit', (e) => {
         e.preventDefault();
         if (!f.reportValidity()) return;
-        const num = f.getAttribute('data-wa');
         const fd = new FormData(f);
-        const lines: string[] = ['Hola FIREFIGHTERS MX, te escribo desde el sitio web:', ''];
+        const lines: string[] = ['Hola FIREFIGHTERS MX, envío esta solicitud editorial desde el sitio web:', ''];
         for (const [name, value] of fd.entries()) {
           const v = String(value).trim();
           if (!v) continue;
@@ -230,13 +191,8 @@ const canales = canalesTodos.filter(
           lines.push(`${label}: ${v}`);
         }
         const text = encodeURIComponent(lines.join('\n'));
-        // Sin número verificado (CONTACTO_DIRECTO_ACTIVO=false) el form cae a correo.
-      const mail = f.getAttribute('data-mail');
-      if (num) {
-        window.open(`https://wa.me/${num}?text=${text}`, '_blank', 'noopener');
-      } else if (mail) {
-        window.location.href = `mailto:${mail}?subject=${encodeURIComponent('Cotización — FIREFIGHTERS MX')}&body=${text}`;
-      }
+        const mail = f.getAttribute('data-mail');
+        if (mail) window.location.href = `mailto:${mail}?subject=${encodeURIComponent('Solicitud editorial — FIREFIGHTERS MX')}&body=${text}`;
       });
     });
   </script>

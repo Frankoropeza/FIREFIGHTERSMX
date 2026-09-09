@@ -113,8 +113,8 @@ export const navigation: { main: NavItem[] } = { main: [
         ],
       },
       { label: "Drones de Emergencia",       href: "/productos/drones-emergencia",      description: "ISR, búsqueda y rescate" },
-      { label: "Marcas autorizadas",         href: "/marcas",                           description: "20+ fabricantes internacionales" },
-      { label: "Catálogo completo de equipo para bomberos →", href: "/productos" },
+      { label: "Marcas y fabricantes de referencia", href: "/marcas",                 description: "Guía de fabricantes del sector" },
+      { label: "Guía completa de equipo para bomberos →", href: "/productos" },
     ],
   },
   {
