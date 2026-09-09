@@ -155,17 +155,17 @@ export const giros: Giro[] = [
     outline: {
       h1: { linea1: 'Empresas de extintores', linea2: 'en México' },
       alcance: { linea1: 'Empresas de extintores en México', linea2: 'por especialidad y estado.' },
-      comparar: { linea1: 'Tipos de extintores y agentes extintores:', linea2: 'PQS, CO₂, agua, espuma y agente limpio.' },
+      comparar: { linea1: 'Tipos de extintores y agentes extintores:', linea2: 'polvo químico seco, bióxido de carbono, agua, espuma y agente limpio.' },
       verificar: { linea1: 'Cómo verificar un servicio de recarga y mantenimiento de extintores', linea2: 'bajo la NOM-154-SCFI-2005.' },
-      cotizar: { linea1: 'Datos para pedir una cotización de venta de extintores', linea2: 'y mantenimiento.' },
+      cotizar: { linea1: 'Datos para pedir una cotización de venta de extintores,', linea2: 'sistemas fijos y asesoría.' },
       mapa: { linea1: 'Dónde están las empresas de extintores', linea2: 'y equipo contra incendio.' },
       estados: { linea1: 'Extintores', linea2: 'estado por estado.' },
-      lista: { linea1: 'Empresas de venta de extintores, recarga', linea2: 'y mantenimiento en México.' },
-      faq: { linea1: 'Qué comparar al elegir una empresa', linea2: 'de extintores en México.' },
+      lista: { linea1: 'Empresas de extintores y equipos de protección contra incendios', linea2: 'en México: venta, recarga y mantenimiento.' },
+      faq: { linea1: 'Qué comparar al elegir un fabricante, distribuidor', linea2: 'o empresa de extintores en México.' },
     },
     intro: [
-      'Empresas de venta y mantenimiento, recarga de extintores y prueba hidrostática, con extintores nuevos portátiles y móviles: polvo químico seco ABC, CO2, agua, espuma, agentes limpios y tipo K. Muchas manejan además mangueras contra incendio, detectores de humo, alarmas, señalización, porta extintores y equipo de seguridad.',
-      'El giro es nacional: el directorio lista empresas en los 32 estados, la CDMX incluida. Al comparar productos y servicios conviene identificar si la empresa es fabricante o distribuidor, pedir asesoría sobre protección contra incendios y separar extintores, sistemas fijos y mantenimiento; la norma mexicana NOM-154-SCFI-2005 y la NOM-002-STPS-2010 delimitan qué servicio aplica.',
+      'Empresas de venta y mantenimiento, recarga de extintores y prueba hidrostática, con extintores nuevos, extintores portátiles y móviles: polvo químico seco ABC, CO2, agua, espuma, agentes limpios y tipo K. Muchas manejan además mangueras contra incendio, detectores de humo, sistemas de detección, alarmas, señalización, porta extintores, herrajes contra incendio y equipo de seguridad.',
+      'El giro es nacional: el directorio lista empresas en los 32 estados, la CDMX incluida. Al comparar productos y servicios conviene identificar si la empresa es fabricante o distribuidor, pedir asesoría sobre protección contra incendios y separar extintores portátiles, sistemas fijos de supresión y mantenimiento. Las recargas certificadas y los estándares de calidad se acreditan con documento, no de palabra: la norma mexicana NOM-154-SCFI-2005 y la NOM-002-STPS-2010 delimitan qué servicio aplica a la seguridad contra incendios del inmueble.',
     ],
     normas: ['NOM-154-SCFI-2005', 'NOM-002-STPS-2010', 'NOM-100-SCFI-1994', 'NFPA 10'],
     especialidades: {
