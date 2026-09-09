@@ -86,8 +86,8 @@ export const giros: Giro[] = [
       faq: { linea1: 'Qué comparar al elegir un proveedor', linea2: 'de equipo contra incendio en México.' },
     },
     intro: [
-      'Distribuidores y fabricantes de equipo de protección personal para bomberos, brigadas industriales y protección civil: trajes estructurales, cascos, equipos de respiración autónoma, herramientas de rescate, cámaras térmicas, equipo HAZMAT y EPP de seguridad industrial.',
-      'El directorio agrupa a las empresas que abastecen a cuerpos de bomberos municipales, brigadas de planta, aeropuertos y organismos de protección civil en los 32 estados. Cada ficha indica ubicación, giro y especialidades, con su fuente de origen citada.',
+      'Distribuidores y fabricantes que equipan a cuerpos de bomberos, brigadas internas y brigada industrial con equipo de protección personal y protección contra incendios: traje estructural NFPA 1970, cascos, equipos de respiración autónoma, mangueras contra incendios, herramientas de rescate, cámaras térmicas, equipo HAZMAT y equipo para incendios forestales.',
+      'El directorio reúne a las empresas que equipan a bomberos municipales, aeropuertos y organismos de protección civil en los 32 estados. Al comparar el catálogo completo de un proveedor conviene pedir asesoría técnica y tiempos de entrega, y verificar que los equipos certificados correspondan a la norma NFPA que exige el combate de incendios de tu operación antes de equipar a toda la corporación.',
     ],
     normas: ['NFPA 1970', 'NFPA 1950', 'NFPA 1990', 'NFPA 1936', 'NFPA 1930', 'NOM-002-STPS-2010', 'NOM-017-STPS-2008'],
     especialidades: {
@@ -125,8 +125,8 @@ export const giros: Giro[] = [
       faq: { linea1: 'Qué comparar al elegir un proveedor', linea2: 'de equipos y sistemas contra incendios en México.' },
     },
     intro: [
-      'Distribuidores y proveedores de equipos contra incendios para la red hidráulica: monitores y cañones de alto caudal, boquillas y chiflones, mangueras de ataque y succión, válvulas OS&Y y de mariposa, conexiones de bronce con toma siamesa, gabinetes e hidrantes. Es el material que va de la toma de agua a la descarga, y el que revisa Protección Civil y la aseguradora cuando piden el expediente de la instalación.',
-      'Este giro reúne a las empresas que suministran piezas y accesorios para redes contra incendio. La ficha de cada empresa puede indicar sus especialidades y, cuando exista una fuente específica, las marcas o certificaciones que publica.',
+      'Distribuidores y proveedores de protección contra incendios para redes hidráulicas y extinción de incendios: monitores, boquillas, mangueras, válvulas, conexiones, gabinetes e hidrantes, más sistema de detección, sistemas de detección de humo y señalización. El alcance de cada empresa puede incluir la instalación de sistemas contra incendio.',
+      'Este giro reúne el equipo de seguridad de las redes y sus componentes, desde extintores de polvo químico seco y agente limpio hasta sistemas de alarma y recarga de extintores. Compara el equipo certificado contra el riesgo real del inmueble y el nivel de seguridad contra incendios que exige; cada ficha indica especialidades y, cuando hay fuente, marcas o certificaciones publicadas.',
     ],
     normas: ['NFPA 13', 'NFPA 14', 'NFPA 24', 'NFPA 25', 'NFPA 1964', 'NOM-002-STPS-2010'],
     especialidades: {
@@ -164,8 +164,8 @@ export const giros: Giro[] = [
       faq: { linea1: 'Qué comparar al elegir una empresa', linea2: 'de extintores en México.' },
     },
     intro: [
-      'Empresas dedicadas a la venta, recarga, mantenimiento y prueba hidrostática de extintores portátiles y móviles: polvo químico seco ABC, CO₂, agua, espuma AFFF, agentes limpios y tipo K para cocinas.',
-      'Es el giro más capilar del sector: prácticamente cada ciudad del país cuenta con al menos una recargadora. La NOM-002-STPS-2010 obliga a los centros de trabajo a mantener sus extintores con recarga y verificación periódica, y la NOM-154-SCFI-2005 regula el servicio y el collar de garantía.',
+      'Empresas de venta y mantenimiento, recarga de extintores y prueba hidrostática, con extintores nuevos portátiles y móviles: polvo químico seco ABC, CO2, agua, espuma, agentes limpios y tipo K. Muchas manejan además mangueras contra incendio, detectores de humo, alarmas, señalización, porta extintores y equipo de seguridad.',
+      'El giro es nacional: el directorio lista empresas en los 32 estados, la CDMX incluida. Al comparar productos y servicios conviene identificar si la empresa es fabricante o distribuidor, pedir asesoría sobre protección contra incendios y separar extintores, sistemas fijos y mantenimiento; la norma mexicana NOM-154-SCFI-2005 y la NOM-002-STPS-2010 delimitan qué servicio aplica.',
     ],
     normas: ['NOM-154-SCFI-2005', 'NOM-002-STPS-2010', 'NOM-100-SCFI-1994', 'NFPA 10'],
     especialidades: {
@@ -201,8 +201,8 @@ export const giros: Giro[] = [
       faq: { linea1: 'Qué comparar al elegir un proveedor', linea2: 'de sistemas contra incendios en México.' },
     },
     intro: [
-      'Empresas de ingeniería, proyecto, instalación y mantenimiento de sistemas fijos de protección contra incendio: rociadores automáticos, detección y alarma, redes hidráulicas con bombas listadas, hidrantes, gabinetes y sistemas de supresión con agentes limpios.',
-      'Trabajan bajo NFPA 13, NFPA 72, NFPA 20 y NFPA 2001, con memoria de cálculo hidráulico exigida por aseguradoras y Protección Civil. Son el proveedor natural de plantas industriales, centros de datos, hospitales, hoteles y edificios de gran altura.',
+      'Empresas de ingeniería, proyecto, instalación y mantenimiento de sistemas de protección contra incendio: sistemas de rociadores, sistemas de alarma, alarma y detección, sistemas de detección de incendio, redes hidráulicas, hidrantes, gabinetes y equipos de combate con agentes limpios.',
+      'Cada sistema de protección se define contra un estándar, y el alcance debe cubrir asesoría técnica, inspecciones y mantenimiento preventivo. Compara las alarmas contra incendios, los sistemas de rociadores y los entregables de cada propuesta, y revisa la norma NFPA aplicable; la referencia FM Approved corresponde a productos específicos, no al catálogo completo de un proveedor.',
     ],
     normas: ['NFPA 13', 'NFPA 72', 'NFPA 20', 'NFPA 25', 'NFPA 2001', 'NOM-002-STPS-2010'],
     especialidades: {
