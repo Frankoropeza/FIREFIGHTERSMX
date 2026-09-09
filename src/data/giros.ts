@@ -37,6 +37,19 @@ export interface Giro {
   imagenAlt: string;
   /** Frase de valor para la card (≤ 110 caracteres) */
   claim: string;
+  /** Encabezados propios del hub del giro. Cada par es el patrón de dos líneas
+   *  que ya usa la plantilla: linea1 + <span de color>linea2</span>. */
+  outline: {
+    h1: { linea1: string; linea2: string };
+    alcance: { linea1: string; linea2: string };
+    comparar: { linea1: string; linea2: string };
+    verificar: { linea1: string; linea2: string };
+    cotizar: { linea1: string; linea2: string };
+    mapa: { linea1: string; linea2: string };
+    estados: { linea1: string; linea2: string };
+    lista: { linea1: string; linea2: string };
+    faq: { linea1: string; linea2: string };
+  };
   /** Párrafos SEO de la landing nacional del giro */
   intro: string[];
   /** Normas de referencia del giro */
@@ -61,6 +74,17 @@ export const giros: Giro[] = [
     imagen: '/images/categorias/sistemas-ci.avif',
     imagenAlt: 'Equipo de protección personal para bombero: chaquetón, casco, guantes, botas y radio dispuestos sobre una superficie',
     claim: 'Distribuidores de trajes NFPA, cascos, SCBA, herramientas de rescate y EPP industrial.',
+    outline: {
+      h1: { linea1: 'Empresas de venta de equipo para bomberos', linea2: 'y equipo contra incendio en México' },
+      alcance: { linea1: 'Empresas de venta de equipo para bomberos en México', linea2: 'por especialidad y estado.' },
+      comparar: { linea1: 'Qué equipo de protección personal necesita un bombero:', linea2: 'traje estructural, casco, guantes, botas y equipo de respiración.' },
+      verificar: { linea1: 'Cómo verificar a una empresa de equipo para bomberos', linea2: 'y las certificaciones NFPA del equipo.' },
+      cotizar: { linea1: 'Datos para pedir una cotización de equipo para bomberos', linea2: 'y mangueras contra incendio.' },
+      mapa: { linea1: 'Dónde están los proveedores de equipo contra incendio', linea2: 'y equipo de protección personal.' },
+      estados: { linea1: 'Equipo para bomberos y EPP', linea2: 'estado por estado.' },
+      lista: { linea1: 'Empresas de venta de equipos contra incendios', linea2: 'y equipo de protección para bomberos.' },
+      faq: { linea1: 'Qué comparar al elegir un proveedor', linea2: 'de equipo contra incendio en México.' },
+    },
     intro: [
       'Distribuidores y fabricantes de equipo de protección personal para bomberos, brigadas industriales y protección civil: trajes estructurales, cascos, equipos de respiración autónoma, herramientas de rescate, cámaras térmicas, equipo HAZMAT y EPP de seguridad industrial.',
       'El directorio agrupa a las empresas que abastecen a cuerpos de bomberos municipales, brigadas de planta, aeropuertos y organismos de protección civil en los 32 estados. Cada ficha indica ubicación, giro y especialidades, con su fuente de origen citada.',
@@ -89,6 +113,17 @@ export const giros: Giro[] = [
     imagen: '/images/categorias/sistemas-ci.avif',
     imagenAlt: 'Equipo de red hidráulica contra incendio: gabinete con manguera, boquilla y válvula listos para operar',
     claim: 'Monitores, boquillas, mangueras, válvulas, conexiones, gabinetes e hidrantes.',
+    outline: {
+      h1: { linea1: 'Empresas de equipos contra incendios', linea2: 'en México' },
+      alcance: { linea1: 'Empresas de equipos contra incendios en México', linea2: 'por especialidad y estado.' },
+      comparar: { linea1: 'Qué equipos y sistemas contra incendio existen:', linea2: 'extintores, hidrantes, rociadores y detección de incendio.' },
+      verificar: { linea1: 'Cómo verificar a una empresa de equipo contra incendio', linea2: 'y sus certificaciones UL, FM, NOM y NFPA.' },
+      cotizar: { linea1: 'Datos para pedir una cotización de equipos', linea2: 'y sistemas contra incendio.' },
+      mapa: { linea1: 'Dónde están las empresas de equipo contra incendio', linea2: 'y sistemas de detección.' },
+      estados: { linea1: 'Equipos contra incendios', linea2: 'estado por estado.' },
+      lista: { linea1: 'Empresas de equipos y sistemas contra incendio:', linea2: 'instalación, mantenimiento de extintores y diseño e ingeniería.' },
+      faq: { linea1: 'Qué comparar al elegir un proveedor', linea2: 'de equipos y sistemas contra incendios en México.' },
+    },
     intro: [
       'Distribuidores y proveedores de equipos contra incendios para la red hidráulica: monitores y cañones de alto caudal, boquillas y chiflones, mangueras de ataque y succión, válvulas OS&Y y de mariposa, conexiones de bronce con toma siamesa, gabinetes e hidrantes. Es el material que va de la toma de agua a la descarga, y el que revisa Protección Civil y la aseguradora cuando piden el expediente de la instalación.',
       'Este giro reúne a las empresas que suministran piezas y accesorios para redes contra incendio. La ficha de cada empresa puede indicar sus especialidades y, cuando exista una fuente específica, las marcas o certificaciones que publica.',
@@ -117,6 +152,17 @@ export const giros: Giro[] = [
     imagen: '/images/categorias/drones-emergencia.avif',
     imagenAlt: 'Bombero frente a una estructura en llamas con la unidad de bomberos detrás',
     claim: 'Venta, recarga, mantenimiento y prueba hidrostática de extintores.',
+    outline: {
+      h1: { linea1: 'Empresas de extintores', linea2: 'en México' },
+      alcance: { linea1: 'Empresas de extintores en México', linea2: 'por especialidad y estado.' },
+      comparar: { linea1: 'Tipos de extintores y agentes extintores:', linea2: 'PQS, CO₂, agua, espuma y agente limpio.' },
+      verificar: { linea1: 'Cómo verificar un servicio de recarga y mantenimiento de extintores', linea2: 'bajo la NOM-154-SCFI-2005.' },
+      cotizar: { linea1: 'Datos para pedir una cotización de venta de extintores', linea2: 'y mantenimiento.' },
+      mapa: { linea1: 'Dónde están las empresas de extintores', linea2: 'y equipo contra incendio.' },
+      estados: { linea1: 'Extintores', linea2: 'estado por estado.' },
+      lista: { linea1: 'Empresas de venta de extintores, recarga', linea2: 'y mantenimiento en México.' },
+      faq: { linea1: 'Qué comparar al elegir una empresa', linea2: 'de extintores en México.' },
+    },
     intro: [
       'Empresas dedicadas a la venta, recarga, mantenimiento y prueba hidrostática de extintores portátiles y móviles: polvo químico seco ABC, CO₂, agua, espuma AFFF, agentes limpios y tipo K para cocinas.',
       'Es el giro más capilar del sector: prácticamente cada ciudad del país cuenta con al menos una recargadora. La NOM-002-STPS-2010 obliga a los centros de trabajo a mantener sus extintores con recarga y verificación periódica, y la NOM-154-SCFI-2005 regula el servicio y el collar de garantía.',
@@ -143,6 +189,17 @@ export const giros: Giro[] = [
     imagen: '/images/categorias/extintores.avif',
     imagenAlt: 'Equipo contra incendio dispuesto en un taller: chaquetón, casco, equipo de respiración, manguera y herramientas',
     claim: 'Ingeniería, instalación y mantenimiento de rociadores, detección, redes hidráulicas y agentes limpios.',
+    outline: {
+      h1: { linea1: 'Empresas de sistemas contra incendio', linea2: 'en México' },
+      alcance: { linea1: 'Empresas de sistemas contra incendio en México', linea2: 'por especialidad y estado.' },
+      comparar: { linea1: 'Detección y alarma, sistemas de agua y supresión:', linea2: 'rociadores automáticos, hidrantes y bombas contra incendios.' },
+      verificar: { linea1: 'Cómo verificar a un proveedor de sistemas contra incendio', linea2: 'y el equipo certificado bajo normas NFPA.' },
+      cotizar: { linea1: 'Datos para pedir una cotización de instalación', linea2: 'de sistemas contra incendio.' },
+      mapa: { linea1: 'Dónde están los proveedores de sistemas contra incendios', linea2: 'y detección de incendio.' },
+      estados: { linea1: 'Sistemas contra incendio', linea2: 'estado por estado.' },
+      lista: { linea1: 'Empresas de diseño e ingeniería, instalación', linea2: 'y mantenimiento de sistemas contra incendios.' },
+      faq: { linea1: 'Qué comparar al elegir un proveedor', linea2: 'de sistemas contra incendios en México.' },
+    },
     intro: [
       'Empresas de ingeniería, proyecto, instalación y mantenimiento de sistemas fijos de protección contra incendio: rociadores automáticos, detección y alarma, redes hidráulicas con bombas listadas, hidrantes, gabinetes y sistemas de supresión con agentes limpios.',
       'Trabajan bajo NFPA 13, NFPA 72, NFPA 20 y NFPA 2001, con memoria de cálculo hidráulico exigida por aseguradoras y Protección Civil. Son el proveedor natural de plantas industriales, centros de datos, hospitales, hoteles y edificios de gran altura.',
@@ -169,6 +226,17 @@ export const giros: Giro[] = [
     imagen: '/images/industrias/brigadas-industriales.avif',
     imagenAlt: 'Bombero mexicano con casco y chaquetón sonriendo frente a las unidades de su estación',
     claim: 'Formación de brigadas, constancias DC-3, simulacros y consultoría para cumplir la NOM-002-STPS.',
+    outline: {
+      h1: { linea1: 'Empresas de capacitación contra incendios', linea2: 'en México' },
+      alcance: { linea1: 'Empresas de capacitación contra incendios en México', linea2: 'por especialidad y estado.' },
+      comparar: { linea1: 'Cursos de prevención y combate de incendios:', linea2: 'temario, práctica con fuego real y evacuación.' },
+      verificar: { linea1: 'Cómo verificar a una empresa de capacitación contra incendios', linea2: 'y la constancia DC-3 ante la STPS.' },
+      cotizar: { linea1: 'Datos para pedir una cotización de capacitación', linea2: 'contra incendios.' },
+      mapa: { linea1: 'Dónde están los centros de capacitación', linea2: 'contra incendios y protección civil.' },
+      estados: { linea1: 'Capacitación contra incendios', linea2: 'estado por estado.' },
+      lista: { linea1: 'Empresas de capacitación, formación de brigadistas', linea2: 'y simulacros en México.' },
+      faq: { linea1: 'Qué comparar al elegir una empresa', linea2: 'de capacitación contra incendios en México.' },
+    },
     intro: [
       'Centros de capacitación, instructores y consultores especializados en formación de brigadas contra incendio, cumplimiento de la NOM-002-STPS-2010, constancias DC-3 ante la STPS, simulacros documentados y programas internos de protección civil.',
       'La NOM-002-STPS obliga a todo centro de trabajo a contar con brigadistas capacitados y a documentar su formación. Este giro reúne a quienes imparten esa capacitación y a quienes asesoran en la integración del expediente ante inspecciones de la STPS y Protección Civil.',

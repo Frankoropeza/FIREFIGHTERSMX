@@ -22,27 +22,19 @@ const ciudades = topCiudades(lista, 10);
 const cats = allCategories.filter((c) => g.categoriasRelacionadas.includes(c.slug));
 const servs = services.filter((s) => g.serviciosRelacionados.includes(s.slug));
 const otros = giros.filter((x) => x.slug !== giro);
-const keywordPrincipal: Record<GiroKey, string> = {
-  'venta-equipo': 'empresas de equipo para bomberos en México',
-  'equipos-contra-incendio': 'empresas de equipos contra incendios en México',
-  extintores: 'empresas de extintores en México',
-  'sistemas-ci': 'empresas de sistemas contra incendio en México',
-  capacitacion: 'empresas de capacitación contra incendios en México',
-};
-const keyword = keywordPrincipal[giro];
 const seoTitles: Record<GiroKey, string> = {
-  'venta-equipo': 'Empresas de Equipo para Bomberos en México | Directorio',
-  'equipos-contra-incendio': 'Empresas de Equipo Contra Incendio en México | Directorio',
-  extintores: 'Empresas de Extintores en México | Directorio Nacional',
-  'sistemas-ci': 'Empresas de Sistemas Contra Incendio en México | Directorio',
-  capacitacion: 'Empresas de Capacitación Contra Incendios en México',
+  'venta-equipo': 'Empresas de venta de equipo para bomberos en México | EPP y equipo contra incendio NFPA',
+  'equipos-contra-incendio': 'Empresas de equipos contra incendios en México | Sistemas y extintores',
+  extintores: 'Empresas de extintores en México | Venta, recarga y mantenimiento',
+  'sistemas-ci': 'Empresas de sistemas contra incendio en México | Rociadores, detección y bombas',
+  capacitacion: 'Empresas de capacitación contra incendios en México | Brigadas y cursos',
 };
 const seoDescriptions: Record<GiroKey, string> = {
-  'venta-equipo': 'Directorio de empresas de equipo para bomberos en México. Busca proveedores por estado, ciudad y especialidad; compara EPP, SCBA, rescate y soporte.',
-  'equipos-contra-incendio': 'Directorio de empresas de equipo contra incendio en México. Localiza proveedores por estado y compara suministro, instalación, mantenimiento y documentos.',
-  extintores: 'Directorio de empresas de extintores en México. Busca por estado y compara venta, recarga, mantenimiento, agentes, capacidades y documentación del servicio.',
-  'sistemas-ci': 'Directorio de empresas de sistemas contra incendio en México. Compara proveedores de diseño, suministro, instalación, pruebas y mantenimiento por estado.',
-  capacitacion: 'Directorio de empresas de capacitación contra incendios en México. Busca cursos por estado y compara temario, práctica, instructores y evidencias.',
+  'venta-equipo': 'Directorio de empresas de venta de equipo para bomberos y equipo contra incendio en México: EPP certificado NFPA, trajes estructurales, SCBA, cascos, mangueras y herramientas de rescate para cuerpos de bomberos y brigadas industriales.',
+  'equipos-contra-incendio': 'Directorio de empresas de equipo contra incendio en México: sistemas contra incendio, extintores, hidrantes, detectores de humo y equipo certificado NOM y NFPA, por estado y especialidad.',
+  extintores: 'Directorio de empresas de extintores en México: venta de extintores, recarga y mantenimiento de extintores PQS, CO₂ y agente limpio, con servicio por estado y NOM-154-SCFI-2005.',
+  'sistemas-ci': 'Directorio de empresas de sistemas contra incendio en México: diseño e ingeniería, instalación de sistemas contra incendio, rociadores automáticos, detección y alarma, hidrantes y bombas contra incendios.',
+  capacitacion: 'Directorio de empresas de capacitación contra incendios en México: cursos de prevención y combate de incendios, formación de brigadas contra incendio, práctica con fuego real, simulacros y DC-3 ante la STPS.',
 };
 const decisionGuide: Record<GiroKey, {
   intro: string;
@@ -164,7 +156,7 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
         <div>
           <span class="section-eyebrow mb-5 inline-flex">Directorio nacional · {g.labelCorto}</span>
           <h1 id="giro-heading" class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2rem,4.6vw,3.6rem);line-height:0.95">
-            Empresas de<br/><span style={`color:${g.color}`}>{g.sustantivo}</span><br/>en México
+            {g.outline.h1.linea1}<br/><span style={`color:${g.color}`}>{g.outline.h1.linea2}</span>
           </h1>
           {g.intro.map((p) => <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">{p}</p>)}
           <div class="flex flex-wrap gap-2 mt-2 mb-8">{g.normas.map((n) => <span class="badge badge-dark font-display text-[10px]">{n}</span>)}</div>
@@ -197,7 +189,7 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
     <div class="container-site grid grid-cols-1 lg:grid-cols-[1fr_1.7fr] gap-8 lg:gap-16 items-start">
       <div>
         <span class="section-eyebrow mb-4 inline-flex">Alcance del directorio</span>
-        <h2 id="alcance-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.05">{keyword}<br/><span style={`color:${g.color}`}>por especialidad y estado.</span></h2>
+        <h2 id="alcance-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.05">{g.outline.alcance.linea1}<br/><span style={`color:${g.color}`}>{g.outline.alcance.linea2}</span></h2>
       </div>
       <p class="text-sm leading-[1.9] m-0" style="color:#94A3B8">
         Esta página organiza empresas de {g.sustantivo} por entidad, ciudad y especialidad. Puedes revisar {esp.slice(0, 6).map((e) => e.label).join(', ')} y confirmar con cada ficha los datos de contacto, alcance, documentación y disponibilidad.
@@ -210,7 +202,7 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
       <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.35fr] gap-10 lg:gap-20 mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Guía de comparación</span>
-          <h2 id="comparar-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Qué comparar al buscar<br/><span style={`color:${g.color}`}>un proveedor en México.</span></h2>
+          <h2 id="comparar-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">{g.outline.comparar.linea1}<br/><span style={`color:${g.color}`}>{g.outline.comparar.linea2}</span></h2>
         </div>
         <p class="text-sm leading-[1.9] m-0" style="color:#94A3B8">{guide.intro}</p>
       </div>
@@ -230,14 +222,14 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
     <div class="container-site grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
       <div>
         <span class="section-eyebrow mb-4 inline-flex">Selección responsable</span>
-        <h2 id="verificar-heading" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.05">Cómo verificar empresas de<br/><span style={`color:${g.color}`}>{g.sustantivo}.</span></h2>
+        <h2 id="verificar-heading" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.05">{g.outline.verificar.linea1}<br/><span style={`color:${g.color}`}>{g.outline.verificar.linea2}</span></h2>
         <ol class="flex flex-col gap-3 m-0 pl-5 text-sm leading-relaxed" style="color:#CBD5E1">
           {guide.verificar.map((item) => <li>{item}</li>)}
         </ol>
       </div>
       <div style="border-left:1px solid rgba(74,117,153,0.18);padding-left:clamp(1.5rem,4vw,3rem)">
         <span class="section-eyebrow mb-4 inline-flex">Solicitud comparable</span>
-        <h2 class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.05">Datos para pedir<br/><span style={`color:${g.color}`}>una cotización.</span></h2>
+        <h2 class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.05">{g.outline.cotizar.linea1}<br/><span style={`color:${g.color}`}>{g.outline.cotizar.linea2}</span></h2>
         <ul class="flex flex-col gap-3 m-0 pl-5 text-sm leading-relaxed" style="color:#CBD5E1">
           {guide.cotizar.map((item) => <li>{item}</li>)}
         </ul>
@@ -249,7 +241,7 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
   <section class="section-tight" style="background:#070E1A" aria-label={`Mapa nacional de ${g.sustantivo}`}>
     <div class="container-site">
       <span class="section-eyebrow mb-4 inline-flex">Mapa</span>
-      <h2 class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.05">Dónde están las empresas<br/><span style={`color:${g.color}`}>de {g.sustantivo}.</span></h2>
+      <h2 class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.05">{g.outline.mapa.linea1}<br/><span style={`color:${g.color}`}>{g.outline.mapa.linea2}</span></h2>
       <MapaEmpresas src="/data/empresas-puntos.json" filtroGiro={giro} id={`mapa-${giro}`} ariaLabel={`Mapa de empresas de ${g.sustantivo} en México`} />
     </div>
   </section>
@@ -259,7 +251,7 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Por estado</span>
-          <h2 id="estados-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">{g.labelCorto}<br/><span style={`color:${g.color}`}>estado por estado.</span></h2>
+          <h2 id="estados-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">{g.outline.estados.linea1}<br/><span style={`color:${g.color}`}>{g.outline.estados.linea2}</span></h2>
         </div>
         <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
           <p class="text-sm leading-relaxed" style="color:#94A3B8">Cada estado tiene su directorio propio con mapa, buscador y filtros por especialidad. Presencia destacada en {ciudades.slice(0, 5).map((c) => c.ciudad).join(', ')}.</p>
@@ -279,7 +271,7 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-10">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Listado nacional</span>
-          <h2 id="lista-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Empresas de<br/><span style={`color:${g.color}`}>{g.sustantivo}.</span></h2>
+          <h2 id="lista-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">{g.outline.lista.linea1}<br/><span style={`color:${g.color}`}>{g.outline.lista.linea2}</span></h2>
         </div>
         <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
           <p class="text-sm leading-relaxed" style="color:#94A3B8">Busca por nombre, ciudad o municipio y filtra por especialidad. Cada ficha indica el nivel de verificación de sus datos y la fuente de origen.</p>
@@ -292,7 +284,7 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
   <section class="section" style="background:#040A12" aria-labelledby="faq-heading">
     <div class="container-site max-w-4xl">
       <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes</span>
-      <h2 id="faq-heading" class="font-display font-bold mb-8" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Cómo usar el directorio de<br/><span style={`color:${g.color}`}>{g.sustantivo}.</span></h2>
+      <h2 id="faq-heading" class="font-display font-bold mb-8" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">{g.outline.faq.linea1}<br/><span style={`color:${g.color}`}>{g.outline.faq.linea2}</span></h2>
       <div class="flex flex-col" style="border-top:1px solid rgba(74,117,153,0.18)">
         {faqItems.map((f) => (
           <details style="border-bottom:1px solid rgba(74,117,153,0.18)">
