@@ -15,7 +15,7 @@ const totalEmpresas = all.length;
 const canonicalURL = `${SITE.url}/empresas/`;
 const seoMeta = {
   title: 'Directorio de Empresas de Equipo Contra Incendio en México',
-  description: 'Directorio de empresas de equipo para bomberos, extintores, sistemas contra incendio y capacitación en los 32 estados de México. Busca por giro, estado y ciudad.',
+  description: 'Directorio de proveedores de equipo contra incendio en México: venta de equipos contra incendios, extintores, hidrantes, sistemas contra incendios y capacitación para equipar a bomberos y brigadas en los 32 estados.',
   canonicalURL,
 };
 const breadcrumbSchema = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
@@ -27,11 +27,11 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
   mainEntity: { '@type': 'ItemList', name: 'Giros del directorio', numberOfItems: giros.length,
     itemListElement: giros.map((g, i) => ({ '@type': 'ListItem', position: i + 1, name: g.label, url: `${SITE.url}/empresas/${g.slug}/` })) } };
 const faqItems = [
-  { pregunta: '¿Qué es este directorio?', respuesta: 'Es un directorio nacional que organiza por giro y ubicación a las empresas de equipo para bomberos y EPP, equipos contra incendios, extintores, sistemas contra incendio y capacitación. No vende equipo: sirve para localizar proveedores en toda la República y comparar lo que cada uno publica.' },
-  { pregunta: '¿Cómo busco una empresa?', respuesta: 'Puedes entrar por giro, elegir un estado o usar el buscador por nombre, ciudad o municipio. Si buscas un servicio concreto —recarga y mantenimiento preventivo de extintores, pruebas hidrostáticas, sistemas de supresión con agente limpio, boquillas y mangueras o un sistema de detección— conviene entrar por el giro correspondiente y filtrar después por estado. Las fichas muestran el nivel de confianza disponible.' },
+  { pregunta: '¿Qué es este directorio?', respuesta: 'Es un directorio nacional que organiza por giro y ubicación a las empresas de venta de equipos contra incendios y equipo de bombero: EPP, equipos de combate, extintores, sistemas contra incendios y capacitación. No vende equipo: sirve para que un cuerpo de bomberos o una brigada localice proveedores en toda la República y compare lo que cada uno publica.' },
+  { pregunta: '¿Cómo busco una empresa?', respuesta: 'Puedes entrar por giro, elegir un estado o usar el buscador por nombre, ciudad o municipio. Si buscas un servicio concreto —recarga de extintores portátiles, mantenimiento preventivo, pruebas hidrostáticas, supresión con agente limpio, boquillas y mangueras, detección y alarma o sistemas de rociadores— conviene entrar por el giro correspondiente y filtrar después por estado. Las fichas muestran el nivel de confianza disponible.' },
   { pregunta: '¿De dónde salen los datos?', respuesta: 'Los registros básicos provienen de fuentes públicas y cada ficha muestra la fuente de origen disponible. La información puede solicitar corrección o actualización por parte de la empresa.' },
   { pregunta: '¿FIREFIGHTERS MX vende directamente todo el equipo?', respuesta: 'Esta sección funciona como directorio. Su objetivo es ayudarte a localizar y comparar información publicada de empresas del sector; la disponibilidad, cobertura y condiciones deben confirmarse directamente con cada empresa.' },
-  { pregunta: '¿Qué certificaciones debo pedir al comparar equipo contra incendio?', respuesta: 'Depende del producto y del uso. La NOM-002-STPS-2010 fija obligaciones del centro de trabajo, mientras que las referencias NFPA, UL o FM aplican al equipo certificado según su tipo. Pide siempre el documento del modelo concreto: una mención comercial a la norma NFPA no sustituye la evidencia.' },
+  { pregunta: '¿Qué certificaciones debo pedir al comparar equipo contra incendio?', respuesta: 'Depende del producto y del uso. En la normativa mexicana, la NOM-002-STPS-2010 fija obligaciones del centro de trabajo y la NOM-154-SCFI-2005 aplica al servicio de extintores certificados; las referencias NFPA, UL o FM aplican al equipo certificado según su tipo. Pide siempre el documento del modelo concreto: una mención comercial a la norma NFPA no sustituye la evidencia.' },
   { pregunta: '¿Cómo registro o corrijo una ficha?', respuesta: 'Puedes solicitar el alta, reclamación o corrección desde la página de registro del directorio.' },
 ];
 const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqItems.map((f) => ({ '@type': 'Question', name: f.pregunta, acceptedAnswer: { '@type': 'Answer', text: f.respuesta } })) };
@@ -56,7 +56,7 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEn
             Encuentra empresas que equipan a cuerpos de bomberos, brigadas y protección civil con equipo para bomberos y EPP, extintores, sistemas contra incendios y capacitación en los 32 estados. Cada registro muestra su ubicación y la fuente de origen disponible.
           </p>
           <p class="text-sm leading-[1.9] mb-8" style="color:#94A3B8">
-            Clasificamos a cada empresa por giro y especialidad —venta de equipos, protección contra incendio, sistemas de detección, hidrantes, mangueras, gabinetes y rociadores— para que un cuerpo de bomberos, una brigada industrial o un comprador institucional pueda equipar su operación comparando la información publicada de proveedores y distribuidores en su estado.
+            Clasificamos a cada empresa por giro y especialidad —venta de equipos, protección contra incendio, sistemas de detección, hidrantes, mangueras, gabinetes y rociadores— para que un cuerpo de bomberos, una brigada industrial o un comprador institucional pueda equipar su operación y elegir un sistema contra incendios comparando la información publicada de proveedores y distribuidores en su estado.
           </p>
           <p class="font-display text-xs uppercase tracking-widest mb-8" style="color:var(--forge-300)">{totalEmpresas.toLocaleString('es-MX')} empresas registradas · 32 estados</p>
           <div class="flex flex-col sm:flex-row gap-3">
@@ -89,7 +89,7 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEn
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Por giro</span>
-          <h2 id="giros-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Cinco giros de equipo contra incendio, EPP y sistemas<br/><span style="color:#F75000">en un solo directorio.</span></h2>
+          <h2 id="giros-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Cinco giros para equipar a bomberos, brigadas y protección civil<br/><span style="color:#F75000">en un solo directorio.</span></h2>
         </div>
         <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
           <p class="text-sm leading-relaxed" style="color:#94A3B8">Agrupamos a las empresas por la actividad que describen sus fuentes públicas: vender equipo de protección personal, suministrar equipos para redes contra incendio, dar servicio a extintores, instalar sistemas fijos o capacitar brigadas. Una empresa puede aparecer en más de un giro.</p>
@@ -112,7 +112,7 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEn
   <section class="section-tight" style="background:#040A12" aria-label="Mapa nacional de empresas">
     <div class="container-site">
       <span class="section-eyebrow mb-4 inline-flex">Mapa nacional</span>
-      <h2 class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.05">Proveedores y distribuidores de equipo contra incendio<br/><span style="color:#F75000">en el mapa nacional.</span></h2>
+      <h2 class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.05">Proveedores de venta de equipos y sistemas de detección<br/><span style="color:#F75000">en el mapa nacional.</span></h2>
       <MapaEmpresas src="/data/empresas-puntos.json" ariaLabel="Mapa nacional de empresas de equipo contra incendio" />
       <div class="flex flex-wrap gap-4 mt-3">
         {giros.map((g) => <span class="inline-flex items-center gap-2 text-[11px]" style="color:#94A3B8"><span class="w-2.5 h-2.5 rounded-full" style={`background:${g.color}`}></span>{g.labelCorto}</span>)}
@@ -127,7 +127,7 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEn
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Por estado</span>
-          <h2 id="estados-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Equipo contra incendio, extintores, hidrantes y mangueras<br/><span style="color:#F75000">en los 32 estados.</span></h2>
+          <h2 id="estados-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Equipo contra incendio, extintores, hidrantes, gabinetes y rociadores<br/><span style="color:#F75000">en los 32 estados.</span></h2>
         </div>
         <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
           <p class="text-sm leading-relaxed" style="color:#94A3B8">Cada estado tiene su propio directorio con mapa, buscador y filtros por giro. Elige tu entidad para ver a los proveedores más cercanos.</p>
@@ -181,7 +181,7 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEn
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-start">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes</span>
-          <h2 id="faq-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Cómo elegir un proveedor de equipo contra incendio<br/><span style="color:#F75000">y cómo funciona el directorio.</span></h2>
+          <h2 id="faq-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Cómo elegir un proveedor y verificar equipo certificado<br/><span style="color:#F75000">bajo norma NFPA.</span></h2>
           <p class="text-sm leading-relaxed mt-6" style="color:#94A3B8">Consulta la metodología, el alcance de las fichas y la forma correcta de contactar a cada empresa antes de solicitar una cotización.</p>
         </div>
         <div class="flex flex-col" style="border-top:1px solid rgba(74,117,153,0.2)">
