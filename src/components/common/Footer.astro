@@ -224,7 +224,7 @@ const redes = [
 
       <!-- Directorio -->
       <nav aria-labelledby="f-directorio">
-        <h2 id="f-directorio" class="f-heading">Directorio de empresas</h2>
+        <p id="f-directorio" class="f-heading">Directorio de empresas</p>
         <ul class="f-list">
           {directorio.map(([label, href]) => (
             <li><a href={href} class="f-link">{label}</a></li>
@@ -234,7 +234,7 @@ const redes = [
 
       <!-- Equipo y EPP -->
       <nav aria-labelledby="f-equipo">
-        <h2 id="f-equipo" class="f-heading">Equipo y EPP</h2>
+        <p id="f-equipo" class="f-heading">Equipo y EPP</p>
         <ul class="f-list">
           {equipo.map(([label, href]) => (
             <li><a href={href} class="f-link">{label}</a></li>
@@ -244,7 +244,7 @@ const redes = [
 
       <!-- Servicios -->
       <nav aria-labelledby="f-servicios">
-        <h2 id="f-servicios" class="f-heading">Servicios contra incendio</h2>
+        <p id="f-servicios" class="f-heading">Servicios contra incendio</p>
         <ul class="f-list">
           {servicios.map(([label, href]) => (
             <li><a href={href} class="f-link">{label}</a></li>
@@ -257,7 +257,7 @@ const redes = [
     <div class="f-floor f-floor--divided py-10">
 
       <nav aria-labelledby="f-industrias">
-        <h2 id="f-industrias" class="f-heading">Industrias que equipamos</h2>
+        <p id="f-industrias" class="f-heading">Industrias que equipamos</p>
         <ul class="f-list">
           {industrias.map(([label, href]) => (
             <li><a href={href} class="f-link">{label}</a></li>
@@ -266,7 +266,7 @@ const redes = [
       </nav>
 
       <nav aria-labelledby="f-marcas">
-        <h2 id="f-marcas" class="f-heading">Marcas de equipo para bomberos</h2>
+        <p id="f-marcas" class="f-heading">Marcas de equipo para bomberos</p>
         <ul class="f-list">
           {marcas.map(([label, href]) => (
             <li><a href={href} class="f-link">{label}</a></li>
@@ -275,7 +275,7 @@ const redes = [
       </nav>
 
       <nav aria-labelledby="f-estaciones">
-        <h2 id="f-estaciones" class="f-heading">Estaciones y sector público</h2>
+        <p id="f-estaciones" class="f-heading">Estaciones y sector público</p>
         <ul class="f-list">
           {estacionesLinks.map(([label, href]) => (
             <li><a href={href} class="f-link">{label}</a></li>
@@ -284,14 +284,14 @@ const redes = [
       </nav>
 
       <nav aria-labelledby="f-recursos">
-        <h2 id="f-recursos" class="f-heading">Recursos y normatividad</h2>
+        <p id="f-recursos" class="f-heading">Recursos y normatividad</p>
         <ul class="f-list">
           {recursos.map(([label, href]) => (
             <li><a href={href} class="f-link">{label}</a></li>
           ))}
         </ul>
 
-        <h2 class="f-heading mt-8">Empresa</h2>
+        <p class="f-heading mt-8">Empresa</p>
         <ul class="f-list">
           {empresa.slice(0, 4).map(([label, href]) => (
             <li><a href={href} class="f-link">{label}</a></li>
@@ -303,7 +303,7 @@ const redes = [
     <!-- ══ PISO 3: cobertura por estado ════════════════════════════ -->
     <nav class="f-floor f-floor--divided py-10" aria-labelledby="f-cobertura">
       <div class="f-floor__intro">
-        <h2 id="f-cobertura" class="f-heading">Equipo para bomberos por estado</h2>
+        <p id="f-cobertura" class="f-heading">Equipo para bomberos por estado</p>
         <p class="text-sm leading-relaxed text-[var(--forge-300)]">
           Proveedores de equipo contra incendio, extintores y capacitación en cada
           entidad, con sus estaciones de bomberos y cobertura de envío.
