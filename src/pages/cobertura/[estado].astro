@@ -46,34 +46,10 @@ const breadcrumbSchema = {
   ],
 };
 
-// Negocio local con areaServed específico del estado
-const localBusinessSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Store',
-  '@id': `${SITE.url}/#store`,
-  name: SITE.name,
-  url: SITE.url,
-  ...(CONTACTO_DIRECTO_ACTIVO ? { telephone: SITE.phoneE164 } : {}),
-  areaServed: [
-    {
-      '@type': 'State',
-      name: estado.name,
-      containedInPlace: { '@type': 'Country', name: 'México' },
-    },
-  ],
-  hasOfferCatalog: {
-    '@type': 'OfferCatalog',
-    name: `Equipo para bomberos y contra incendio en ${estado.name}`,
-    itemListElement: estado.industries.map((ind) => ({
-      '@type': 'Offer',
-      itemOffered: {
-        '@type': 'Service',
-        name: `Suministro de equipo para bomberos — ${ind}`,
-        areaServed: { '@type': 'State', name: estado.name },
-      },
-    })),
-  },
-};
+/* Sin schema de negocio local. El sitio es un directorio: declararse `Store`
+   con `hasOfferCatalog` de servicios de suministro afirmaba un comercio que no
+   existe. La identidad del sitio ya se declara una sola vez como `Organization`
+   en SEO.astro, así que aquí no se pierde nada. */
 
 // FAQPage de cobertura
 const faqSchema = {
@@ -107,7 +83,7 @@ const faqSchema = {
   ],
 };
 
-const schemas = [breadcrumbSchema, localBusinessSchema, faqSchema];
+const schemas = [breadcrumbSchema, faqSchema];
 
 // ── WA message ───────────────────────────────────────────────────────
 const waMsg = `Hola, necesito equipo para bomberos en ${estado.name}. ¿Cuál es el tiempo de entrega y disponibilidad?`;

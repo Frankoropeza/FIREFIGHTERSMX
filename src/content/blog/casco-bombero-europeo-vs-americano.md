@@ -182,8 +182,8 @@ Eso no lo responde el catálogo. Lo responde la prueba.
 
 ---
 
-## Catálogo Cascos NFPA en FIREFIGHTERS MX
+## Directorio de Cascos NFPA en FIREFIGHTERS MX
 
-Distribuimos cascos estructurales certificados NFPA 1970 en estilos europeo y americano: MSA Gallet F1 XF, Bullard USTM, Cairns N6A y opciones compatibles con los principales sistemas SCBA del mercado mexicano.
+En el directorio puedes comparar empresas que manejan cascos estructurales certificados NFPA 1970 en estilos europeo y americano: MSA Gallet F1 XF, Bullard USTM, Cairns N6A y opciones compatibles con los principales sistemas SCBA del mercado mexicano. Solicita a cada proveedor evidencia de compatibilidad.
 
-[Catálogo completo de Cascos NFPA](/productos/cascos-nfpa) · [Solicitar cotización](/cotizacion)
+[Directorio de Cascos NFPA](/productos/cascos-nfpa) · [Empresas por estado](/empresas/)

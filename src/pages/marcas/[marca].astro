@@ -1,7 +1,7 @@
 ---
 // /marcas/[marca].astro — Landing individual por marca
 // =====================================================================
-// Genera una URL propia para cada fabricante que distribuimos:
+// Genera una URL propia para cada fabricante del directorio:
 //   /marcas/msa-safety, /marcas/globe-manufacturing, etc.
 //
 // Propósito SEO:
@@ -59,11 +59,11 @@ const manufacturerSchema = {
   ...(brand.website ? { url: brand.website } : {}),
 };
 
-// Productos que distribuimos de esta marca
+// Productos representativos de esta marca
 const productListSchema = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
-  name: `Productos ${brand.name} distribuidos por FIREFIGHTERS MX`,
+  name: `Productos representativos de ${brand.name}`,
   numberOfItems: brand.products.length,
   itemListElement: brand.products.map((p, i) => ({
     '@type': 'ListItem',
@@ -73,12 +73,8 @@ const productListSchema = {
       name: p.name,
       description: p.detail,
       brand: { '@type': 'Brand', name: brand.name },
-      offers: {
-        '@type': 'Offer',
-        availability: 'https://schema.org/InStock',
-        areaServed: { '@type': 'Country', name: 'México' },
-        seller: { '@type': 'Store', name: SITE.name, url: SITE.url },
-      },
+      /* Sin `offers`: el sitio es un directorio, no vende ni tiene existencias.
+         Declarar availability/seller aquí seria afirmar comercio inexistente. */
     },
   })),
 };
@@ -86,7 +82,7 @@ const productListSchema = {
 const schemas = [breadcrumbSchema, manufacturerSchema, productListSchema];
 
 // ── WA message ────────────────────────────────────────────────────────
-const waMsg = `Hola, quiero información sobre productos ${brand.name} que distribuyen.`;
+const waMsg = `Hola, quiero comparar empresas del directorio que manejen productos ${brand.name}.`;
 ---
 
 <BaseLayout
@@ -131,7 +127,7 @@ const waMsg = `Hola, quiero información sobre productos ${brand.name} que distr
 
         {/* Col izquierda — identidad + CTAs */}
         <div>
-          <span class="section-eyebrow mb-5 inline-flex">Marca que manejamos</span>
+          <span class="section-eyebrow mb-5 inline-flex">Marca en el directorio</span>
 
           {/* Monograma visual de la marca */}
           <div
@@ -194,7 +190,7 @@ const waMsg = `Hola, quiero información sobre productos ${brand.name} que distr
   {/* ─── Accesos rápidos ─── */}
   <QuickLinksBar />
 
-  {/* ─── Productos que distribuimos ─── */}
+  {/* ─── Productos representativos de la marca ─── */}
   <section
     class="section"
     style="background:#040A12"
@@ -211,7 +207,7 @@ const waMsg = `Hola, quiero información sobre productos ${brand.name} que distr
             style="color:#FFFFFF;font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.05"
           >
             Productos <span style="color:#F75000">{brand.name}</span><br/>
-            que distribuimos
+            relacionados con esta marca
           </h2>
         </div>
         <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
@@ -258,7 +254,7 @@ const waMsg = `Hola, quiero información sobre productos ${brand.name} que distr
       {/* CTA bajo el grid */}
       <div class="mt-8 text-center">
         <p class="text-sm mb-4" style="color:#64748B">
-          ¿Buscas un modelo específico? Lo conseguimos: manejamos pedidos sobre especificación técnica.
+          ¿Buscas un modelo específico? Localiza empresas que lo manejan y confirma directamente sus condiciones sobre especificación técnica.
         </p>
         <a
           href={whatsappUrl(waMsg)}

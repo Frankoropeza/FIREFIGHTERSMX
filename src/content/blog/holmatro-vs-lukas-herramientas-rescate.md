@@ -162,8 +162,8 @@ Lo que no puedes permitirte es comprar por precio, por costumbre, o porque el pr
 
 ---
 
-## Catálogo Herramientas de Rescate en FIREFIGHTERS MX
+## Directorio de Herramientas de Rescate en FIREFIGHTERS MX
 
-Distribuimos herramientas hidráulicas Holmatro, Hurst y Weber Rescue con soporte técnico especializado en México. Si estás evaluando una adquisición para tu corporación, podemos ayudarte a comparar fuerza de cizalla, autonomía de batería y red de servicio según tu zona de cobertura.
+En el directorio puedes comparar empresas que manejan herramientas hidráulicas Holmatro, Hurst y Weber Rescue. Si estás evaluando una adquisición para tu corporación, solicita a cada una evidencia de soporte técnico especializado en México y compara fuerza de cizalla, autonomía de batería y red de servicio según tu zona de cobertura.
 
-[Catálogo completo de Herramientas de Rescate](/productos/herramientas-rescate) · [Solicitar cotización](/cotizacion)
+[Directorio de Herramientas de Rescate](/productos/herramientas-rescate) · [Empresas por estado](/empresas/)

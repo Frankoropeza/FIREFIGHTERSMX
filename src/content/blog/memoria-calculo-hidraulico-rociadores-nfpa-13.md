@@ -99,8 +99,8 @@ Si hay una sola casilla sin marcar, no entregues todavía. El tiempo que tardas 
 - [Detección vs alarma vs supresión: tres sistemas que no deben instalarse como si fueran uno](/blog/deteccion-alarma-supresion-nfpa-72-2001)
 - [FM-200 vs Novec 1230: cuál agente limpio elegir para tu cuarto de servidores](/blog/fm200-vs-novec-1230-agente-limpio)
 
-## Instalación de Sistemas CI en FIREFIGHTERS MX
+## Directorio de Instalación de Sistemas CI
 
-¿Necesitas que tu memoria de cálculo hidráulico pase el DRO sin contratiempos? En FIREFIGHTERS MX diseñamos e instalamos sistemas de rociadores NFPA 13 con toda la documentación técnica requerida para trámites en CDMX, Estado de México y los principales parques industriales del Bajío.
+¿Necesitas que tu memoria de cálculo hidráulico pase el DRO sin contratiempos? En el directorio puedes localizar empresas que diseñan e instalan sistemas de rociadores NFPA 13; solicita la documentación técnica requerida para trámites en CDMX, Estado de México y los principales parques industriales del Bajío.
 
-[Servicio de Instalación de Sistemas CI](/servicios/instalacion-sistemas-ci)
+[Empresas de Sistemas CI por estado](/empresas/sistemas-ci/)

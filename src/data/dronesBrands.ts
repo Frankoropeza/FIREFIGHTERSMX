@@ -23,7 +23,7 @@ const djiEnterprise: EquipmentBrand = {
     'Línea completa de DJI Enterprise en México. Matrice 30T con térmica radiométrica, Mavic 3 Thermal compacto y Dock 2 autónomo — más capacitación de piloto y trámite AFAC incluidos en un solo paquete llave en mano.',
   heroIntro: [
     'DJI Enterprise es la plataforma de drones más utilizada por cuerpos de bomberos y protección civil a nivel mundial. Sus aeronaves integran cámara térmica radiométrica y RGB en una sola unidad, con alcance de 15 km y autonomías de hasta 45 minutos — la herramienta de reconocimiento aéreo de referencia para la primera respuesta.',
-    'Distribuimos los tres modelos de referencia para emergencias con soporte técnico, refacciones en stock, capacitación de piloto certificada y acompañamiento completo en el trámite ante la AFAC para operación institucional legal en México.',
+    'En el directorio puedes comparar los tres modelos de referencia para emergencias; solicita soporte técnico, refacciones, capacitación de piloto certificada y acompañamiento en el trámite ante la AFAC para operación institucional legal en México.',
   ],
   heroBadges: ['DJI Matrice 30T', 'Mavic 3 Thermal', 'Dock 2', 'AFAC México', 'Térmica radiométrica'],
   seoTitle: 'Drones DJI Enterprise para Bomberos y Protección Civil — Matrice 30T · México',
@@ -46,7 +46,7 @@ const djiEnterprise: EquipmentBrand = {
     {
       n: '02',
       t: 'Térmica radiométrica real, no paleta de colores',
-      d: 'Los modelos que distribuimos integran sensores radiométricos que miden la temperatura de cada píxel en grados reales — indispensable para búsqueda y rescate, detección de puntos calientes en incendios y evaluación HAZMAT sin contacto.',
+      d: 'Los modelos descritos integran sensores radiométricos que miden la temperatura de cada píxel en grados reales — indispensable para búsqueda y rescate, detección de puntos calientes en incendios y evaluación HAZMAT sin contacto.',
     },
     {
       n: '03',
@@ -125,7 +125,7 @@ const djiEnterprise: EquipmentBrand = {
     { q: '¿Cuál es la diferencia entre el Matrice 30T y el Mavic 3 Thermal?', a: 'El Matrice 30T es la plataforma institucional completa: mayor sensor térmico radiométrico, laser rangefinder, IP55 y mayor resistencia al viento — diseñado para operaciones prolongadas. El Mavic 3 Thermal es más compacto y ligero (920 g), despliega en menos de 2 min y es ideal como segunda aeronave de respuesta rápida o para brigadas con presupuesto más ajustado.' },
     { q: '¿El Matrice 30T puede volar bajo lluvia?', a: 'Sí. Tanto la aeronave como la estación de carga del Matrice 30T tienen certificación IP55, lo que permite operación bajo lluvia moderada — condición habitual en emergencias reales. El Mavic 3 Thermal no tiene certificación IP formal.' },
     { q: '¿Cuánto tarda implementar el programa de drones en un cuerpo de bomberos?', a: 'Con el paquete completo (aeronave + capacitación + AFAC), el tiempo promedio es 6–8 semanas desde la firma del pedido hasta el primer vuelo operacional certificado. El trámite AFAC institucional toma 3–4 semanas en condiciones normales.' },
-    { q: '¿Manejan baterías y refacciones de repuesto?', a: 'Sí. Mantenemos stock de baterías, hélices y módulos de sensor para los modelos que distribuimos, con entrega en 24–48 h en CDMX. Para corporaciones fuera de la ZMVM enviamos por paquetería el mismo día del pedido.' },
+    { q: '¿Hay baterías y refacciones de repuesto?', a: 'Confirma con cada empresa del directorio la disponibilidad de baterías, hélices y módulos de sensor para el modelo elegido, así como sus plazos de entrega en CDMX y las opciones de envío fuera de la ZMVM.' },
   ],
   ctaKicker: 'DJI Matrice 30T · Mavic 3 Thermal · Dock 2 · Capacitación + AFAC · Stock CDMX',
   ctaTitleHtml: 'Cámara térmica radiométrica.<br/>Llave en mano con AFAC.',

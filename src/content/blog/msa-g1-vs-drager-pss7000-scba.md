@@ -191,8 +191,8 @@ Lo que no cambia en ninguna corporación es lo siguiente: exige al proveedor —
 
 ---
 
-## Catálogo Equipos SCBA en FIREFIGHTERS MX
+## Directorio de Equipos SCBA en FIREFIGHTERS MX
 
-Distribuimos equipos SCBA certificados NFPA 1970 de MSA y Dräger con soporte técnico en México, incluyendo análisis de compatibilidad con la infraestructura de llenado existente en tu corporación.
+En el directorio puedes comparar empresas que manejan equipos SCBA certificados NFPA 1970 de MSA y Dräger; solicita soporte técnico en México y análisis de compatibilidad con la infraestructura de llenado existente en tu corporación.
 
-[Catálogo completo de Equipos SCBA](/productos/equipos-scba) · [Solicitar cotización](/cotizacion)
+[Directorio de Equipos SCBA](/productos/equipos-scba) · [Empresas por estado](/empresas/)

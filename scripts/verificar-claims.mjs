@@ -31,6 +31,20 @@ const PROHIBIDOS = [
   [/Atendemos\s+a(l)?\s+(H\.|los\s+H\.)\s+Cuerpos?\s+de\s+Bomberos/i,             'F-08 · cartera de clientes sin acreditar'],
   [/(Ing\.|Lic\.)\s*(Marco\s+García|Carlos\s+Mendoza|Ana\s+Ramírez)/i, 'F-10 · autoría atribuida a personas inventadas'],
   [/quince\s+años\s+(instalando|viendo)/i,                          'F-10 · trayectoria personal sin acreditar'],
+  // ── F-11/F-12 · el sitio es un directorio: no vende, no distribuye, no tiene stock.
+  //    Sólo primera persona del plural: «las empresas distribuyen» es descripción legítima.
+  [/\b(distribuimos|vendemos|comercializamos|importamos|instalamos|recargamos)\b/i, 'F-11 · el sitio es un directorio y no vende, distribuye ni instala'],
+  [/\bque\s+distribuimos\b/i,                                          'F-11 · el sitio es un directorio y no vende, distribuye ni instala'],
+  [/(mantenemos|tenemos|manejamos|contamos\s+con)\s+(stock|inventario|existencias?)/i, 'F-12 · inventario propio sin acreditar'],
+  [/stock\s+permanente/i,                                                'F-12 · inventario propio sin acreditar'],
+  [/enviamos\s+por\s+paqueter/i,                                        'F-12 · logística propia sin acreditar'],
+  [/nuestros?\s+(clientes|almacén|almacen|catálogo|catalogo|stock|inventario)/i, 'F-12 · operación comercial propia sin acreditar'],
+  // ── F-13 · señales de comercio en datos estructurados. El sitio es un directorio:
+  //    no declara existencias, no es vendedor y no publica ofertas ni calificaciones.
+  [/schema\.org\/(InStock|OutOfStock|PreOrder|LimitedAvailability)/i, 'F-13 · disponibilidad declarada en schema sin operación de venta'],
+  [/"@type"\s*:\s*"Store"/i,                                          'F-13 · el sitio se declara tienda en schema'],
+  [/"aggregateRating"/i,                                               'F-13 · calificación agregada sin sustento'],
+  [/(distribuid|vendid|comercializad)[oa]s?\s+por\s+FIREFIGHTERS/i,     'F-11 · el sitio es un directorio y no vende, distribuye ni instala'],
   [/Baja\s+California\s+255/i,                                            'F-01 · domicilio sin verificar'],
   [/(facebook|instagram|linkedin|youtube|x)\.com\/(@)?firefightersmx/i, 'F-02 · perfiles sociales inexistentes'],
 ];

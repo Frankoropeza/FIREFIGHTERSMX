@@ -28,7 +28,7 @@ const allTags = [...new Set(allPosts.flatMap((p) => p.data.tags ?? []))].slice(0
 
 // Recursos para el sidebar (interlinking)
 const recursos = [
-  { label: 'Catálogo de productos', desc: '9 categorías NFPA · NOM', href: '/productos' },
+  { label: 'Directorio de productos', desc: '9 categorías NFPA · NOM', href: '/productos' },
   { label: 'Normas y certificaciones', desc: 'Qué NOM y NFPA aplican', href: '/certificaciones' },
   { label: 'Servicios contra incendio', desc: 'Capacitación · Mantenimiento', href: '/servicios' },
   { label: 'Industrias que atendemos', desc: 'Bomberos · Industria · PC', href: '/industrias' },
@@ -118,8 +118,8 @@ const collectionSchema = {
             referenciado a la norma vigente.
           </p>
           <p class="text-sm leading-[1.9] mb-6" style="color:#64748B">
-            Cada artículo cruza con nuestro catálogo, servicios y guía de certificaciones
-            para que pases de la teoría a la decisión de compra con respaldo documental.
+            Cada artículo cruza con el directorio, los servicios descritos y la guía de
+            certificaciones para que pases de la teoría a la decisión de compra con respaldo documental.
           </p>
           <div class="flex flex-wrap gap-2">
             {['NFPA 1970','NFPA 1850','NOM-002-STPS','NOM-100-SCFI','NOM-154-SCFI'].map((n) => (

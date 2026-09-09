@@ -26,7 +26,7 @@ const msaG1: EquipmentBrand = {
     'Línea completa del SCBA MSA G1 en México. Las 4 configuraciones —estructural, industrial 60 min, CBRN y RIT— con cilindros de fibra de carbono 4500 psi, entrega en CDMX.',
   heroIntro: [
     'MSA Safety —NYSE: MSA— es el grupo industrial de seguridad más grande del mundo. El G1 es su equipo de respiración autónoma insignia: la electrónica más integrada del mercado, con la válvula EOSTI montada en el regulador (sin módulo externo), alarma PASS y telemetría ICM opcional.',
-    'Es la pieza más crítica del EPP: de él depende cada minuto dentro de una atmósfera IDLH. Distribuimos el G1 en configuraciones de 30, 45 y 60 minutos con aprobación NFPA 1970 y NIOSH CBRN.',
+    'Es la pieza más crítica del EPP: de él depende cada minuto dentro de una atmósfera IDLH. En el directorio puedes comparar el G1 en configuraciones de 30, 45 y 60 minutos con aprobación NFPA 1970 y NIOSH CBRN.',
   ],
   heroBadges: ['NFPA 1970', 'NIOSH', 'EOSTI integrado', 'Telemetría ICM', '4500 psi', 'MSA Safety · NYSE'],
   seoTitle: 'SCBA MSA G1 NFPA 1970 — Aire Autónomo · México',

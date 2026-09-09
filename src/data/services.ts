@@ -53,7 +53,7 @@ export const services: Service[] = [
       title: 'Capacitación que tu brigada',
       highlight: 'puede demostrar ante la STPS',
       paragraphs: [
-        'La diferencia entre un curso y una capacitación certificada es la evidencia: constancias DC-3 registradas, temario alineado a NOM-002-STPS y un instructor con registro vigente ante la STPS. Eso es lo que entregamos en cada formación.',
+        'La diferencia entre un curso y una capacitación certificada es la evidencia: constancias DC-3 registradas, temario alineado a NOM-002-STPS y un instructor con registro vigente ante la STPS. Eso es lo que conviene exigir a la empresa capacitadora en cada formación.',
         'Entrenamos con el equipo que tu gente usará en la realidad: extintores con fuego vivo, SCBA presurizados y escenarios montados en tu propia instalación para que el simulacro final refleje tu riesgo real.',
       ],
       subsections: [
@@ -122,7 +122,7 @@ export const services: Service[] = [
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/><path d="M8 12h8M12 8v8"/></svg>`,
     href: '/servicios/instalacion-sistemas-ci',
     intro: [
-      'Diseñamos e instalamos sistemas fijos de protección contra incendio llave en mano: rociadores automáticos NFPA 13, detección y alarma NFPA 72 con tableros direccionables, redes hidráulicas con bombas NFPA 20 y supresión por agente limpio NFPA 2001 para activos críticos.',
+      'En el directorio puedes localizar empresas que diseñan e instalan sistemas fijos de protección contra incendio llave en mano: rociadores automáticos NFPA 13, detección y alarma NFPA 72 con tableros direccionables, redes hidráulicas con bombas NFPA 20 y supresión por agente limpio NFPA 2001 para activos críticos.',
       'Cada proyecto entrega memoria de cálculo hidráulico, planos as-built, protocolo de pruebas de aceptación y capacitación a tu personal — el expediente completo para tu aseguradora, tu DRO y la autoridad.',
     ],
     items: [

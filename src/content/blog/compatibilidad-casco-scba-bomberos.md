@@ -201,8 +201,8 @@ La certificación individual de cada componente es el punto de partida. La prueb
 
 ---
 
-## Catálogos Cascos NFPA y Equipos SCBA en FIREFIGHTERS MX
+## Directorio de Cascos NFPA y Equipos SCBA en FIREFIGHTERS MX
 
-La compatibilidad empieza por elegir equipo diseñado para operar en conjunto. Distribuimos cascos certificados NFPA 1970 (cap. 5–9) y equipos SCBA certificados NFPA 1970 (cap. 15–19) con validación de compatibilidad disponible para los sistemas más comunes del mercado mexicano.
+La compatibilidad empieza por elegir equipo diseñado para operar en conjunto. En el directorio puedes comparar empresas que manejan cascos certificados NFPA 1970 (cap. 5–9) y equipos SCBA certificados NFPA 1970 (cap. 15–19); solicita validación de compatibilidad para los sistemas más comunes del mercado mexicano.
 
-[Guía de Cascos NFPA](/productos/cascos-nfpa) · [Guía de Equipos SCBA](/productos/equipos-scba) · [Solicitar cotización](/cotizacion)
+[Directorio de Cascos NFPA](/productos/cascos-nfpa) · [Directorio de Equipos SCBA](/productos/equipos-scba) · [Empresas por estado](/empresas/)

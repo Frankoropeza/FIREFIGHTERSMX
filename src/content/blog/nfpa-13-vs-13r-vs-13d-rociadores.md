@@ -201,8 +201,8 @@ La norma correcta no es solo un requisito técnico. Es un requisito de negocio.
 
 ---
 
-## Catálogo Sistemas CI en FIREFIGHTERS MX
+## Directorio de Sistemas CI en FIREFIGHTERS MX
 
-Diseñamos e instalamos sistemas de rociadores bajo NFPA 13, 13R y 13D con componentes Tyco Viking certificados. Si tienes un proyecto nuevo o necesitas verificar que el sistema existente cumple con la norma correcta para tu tipo de ocupación, nuestros ingenieros pueden hacer la evaluación técnica.
+En el directorio puedes localizar empresas que diseñan e instalan sistemas de rociadores bajo NFPA 13, 13R y 13D con componentes Tyco Viking certificados. Si tienes un proyecto nuevo o necesitas verificar que el sistema existente cumple con la norma correcta para tu tipo de ocupación, solicita a cada empresa una evaluación técnica.
 
-[Catálogo completo de Sistemas CI](/productos/sistemas-ci) · [Solicitar cotización](/cotizacion)
+[Directorio de Sistemas CI](/productos/sistemas-ci) · [Empresas por estado](/empresas/sistemas-ci/)

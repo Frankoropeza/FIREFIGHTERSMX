@@ -13,7 +13,7 @@ image:
 
 Cada que alguien me pregunta "¿cuál es la mejor marca?", le respondo con otra pregunta: "¿La mejor para qué?". Porque en el equipo de bombero no hay una marca que gane en todo. Hay un puñado de fabricantes que llevan décadas poniendo el estándar mundial, y cada uno brilla en lo suyo. Elegir bien no es seguir la moda ni el logo más vistoso; es entender en qué destaca cada quien y cruzarlo con lo que tu operación necesita de verdad.
 
-Este es mi recorrido, sin medias tintas, por las marcas líderes que manejamos en FIREFIGHTERS MX.
+Este es mi recorrido, sin medias tintas, por las marcas líderes que aparecen en el directorio de FIREFIGHTERS MX.
 
 ## Respiración autónoma (SCBA): aquí la marca pesa de verdad
 
@@ -62,6 +62,6 @@ Llega un punto en que todas las marcas sobre la mesa son de primer nivel, y ento
 
 ## La marca abre la puerta; el respaldo la mantiene abierta
 
-Tener la mejor marca no sirve de mucho si el producto no es original, la certificación no está vigente o no hay quién dé el servicio después. En FIREFIGHTERS MX distribuimos estas marcas líderes con documentación de fábrica, asesoría técnica de quien conoce el oficio y cobertura en los 32 estados. La lista completa está en [marcas](/marcas) y el [catálogo de productos](/productos).
+Tener la mejor marca no sirve de mucho si el producto no es original, la certificación no está vigente o no hay quién dé el servicio después. En el directorio puedes comparar estas marcas líderes y pedir a cada empresa documentación de fábrica, asesoría técnica y cobertura en tu estado. La lista completa está en [marcas](/marcas) y el [directorio de productos](/productos).
 
-¿No tienes claro qué marca le conviene a tu operación? [Pide una cotización sin costo](/cotizacion) y un asesor se sienta contigo a comparar opciones certificadas según tu perfil de riesgo.
+¿No tienes claro qué marca le conviene a tu operación? [Compara empresas por estado](/empresas/) y solicita a cada proveedor opciones certificadas según tu perfil de riesgo.

@@ -181,8 +181,8 @@ Para profundizar en la metodología de prueba y los requisitos normativos:
 
 ---
 
-## Catálogo Trajes Bombero en FIREFIGHTERS MX
+## Directorio de Trajes Bombero en FIREFIGHTERS MX
 
-Cada traje en nuestro catálogo incluye el TPP y THL del sistema completo certificado por laboratorio acreditado, no solo la declaración del fabricante. Sistemas con outer shell PBI Matrix Gold y Nomex IIIA para cada perfil operacional.
+En el directorio puedes comparar empresas que manejan trajes con TPP y THL del sistema completo certificado por laboratorio acreditado, no solo la declaración del fabricante. Solicita sistemas con outer shell PBI Matrix Gold y Nomex IIIA según cada perfil operacional.
 
-[Catálogo completo de Trajes Bombero](/productos/trajes-bombero) · [Solicitar cotización](/cotizacion)
+[Directorio de Trajes Bombero](/productos/trajes-bombero) · [Empresas por estado](/empresas/)
