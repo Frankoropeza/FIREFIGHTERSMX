@@ -222,7 +222,7 @@ No necesitas ser ingeniero para hacer las preguntas correctas. Estas son las que
 **Del servicio:**
 - ¿Dónde está el técnico certificado más cercano a mi zona?
 - ¿Cuál es el tiempo de respuesta garantizado para revisión mayor?
-- ¿Qué refacciones tienen en stock en México ahora mismo?
+- ¿Qué refacciones tienen disponibles en México ahora mismo?
 - ¿Qué incluye el mantenimiento anual y cuánto cuesta?
 
 **De la operación:**

@@ -157,7 +157,7 @@ export const categories: Category[] = [
     description: 'Herramientas hidráulicas de rescate NFPA 1936: cizallas, separadores y arietes Holmatro. Rescate vehicular y estructural. Demostración y capacitación incluidas.',
     intro: [
       'Para extracción vehicular y rescate urbano, el directorio reúne empresas que manejan la línea completa Holmatro certificada NFPA 1936: cizallas, separadores, herramientas combinadas y arietes telescópicos, en versiones con manguera y batería (Pentheon).',
-      'Cada venta institucional incluye demostración en sitio y capacitación básica de operación. Ofrecemos también mantenimiento preventivo anual con refacciones originales para mantener la certificación del equipo.',
+        'Al solicitar una solución institucional, exige demostración en sitio y capacitación básica de operación. También conviene confirmar con la empresa el mantenimiento preventivo anual y las refacciones originales aplicables al equipo.',
     ],
     items: [
       { name: 'Holmatro SPR 4250 SC', detail: 'Separador de alto tonelaje para vehículos modernos' },
@@ -243,7 +243,7 @@ export const categories: Category[] = [
       highlight: 'NFPA 13, 72 y 2001',
       paragraphs: [
         'Un sistema fijo bien diseñado detecta, alerta y suprime antes de que el fuego tome el edificio. En el directorio puedes comparar empresas que diseñan e instalan rociadores automáticos NFPA 13, detección y alarma NFPA 72 con tableros FACP direccionables, y supresión por agente limpio NFPA 2001 para activos críticos.',
-        'Cada proyecto entrega memoria de cálculo hidráulico, planos as-built, puesta en marcha documentada y capacitación al personal — el expediente completo que piden tu aseguradora, tu DRO y la autoridad.',
+        'Cada proyecto debe incluir memoria de cálculo hidráulico, planos as-built, puesta en marcha documentada y capacitación al personal — el expediente completo que piden tu aseguradora, tu DRO y la autoridad.',
       ],
       subsections: [
         { name: 'Rociadores automáticos NFPA 13', detail: 'Diseño por densidad de riesgo con Tyco y Viking: oficinas, naves industriales, almacenes de gran altura y estacionamientos.' },
@@ -301,7 +301,7 @@ export const categories: Category[] = [
     description: 'Trajes HAZMAT Nivel A y B certificados NFPA 1990, detección multi-gas y descontaminación. Equipamiento para materiales peligrosos en México.',
     intro: [
       'Para respuesta a materiales peligrosos equipamos brigadas con trajes encapsulados Nivel A y trajes salpicadura Nivel B/C (ambos NFPA 1990), detección multi-gas, kits de descontaminación y sellado de fugas.',
-      'El equipo HAZMAT exige compatibilidad química documentada: te entregamos las tablas de permeación del fabricante y asesoramos la selección según las sustancias específicas de tu operación — crítico para refinerías, química y logística.',
+      'El equipo HAZMAT exige compatibilidad química documentada: solicita a la empresa las tablas de permeación del fabricante y asesoría de selección según las sustancias específicas de tu operación — crítico para refinerías, química y logística.',
     ],
     items: [
       { name: 'Nivel A encapsulado', detail: 'Protección total a vapor con SCBA interno' },
@@ -315,7 +315,7 @@ export const categories: Category[] = [
       highlight: 'NFPA 1990',
       paragraphs: [
         'La respuesta a materiales peligrosos exige protección absoluta y compatibilidad química documentada. Equipamos brigadas con trajes encapsulados Nivel A y trajes de salpicadura Nivel B/C certificados NFPA 1990, detección multi-gas y kits de descontaminación.',
-        'Cada traje se entrega con las tablas de permeación del fabricante y asesoría de selección según las sustancias específicas de tu operación — crítico para refinerías, plantas químicas, logística y respuesta municipal.',
+        'Cada traje debe incluir las tablas de permeación del fabricante y asesoría de selección según las sustancias específicas de tu operación — crítico para refinerías, plantas químicas, logística y respuesta municipal.',
       ],
       subsections: [
         { name: 'Nivel A encapsulado', detail: 'Protección total a gas y vapor con SCBA interno: la máxima barrera para atmósferas desconocidas o tóxicas.' },
@@ -337,7 +337,7 @@ export const categories: Category[] = [
     description: 'Drones para bomberos y protección civil: térmicos DJI Matrice, búsqueda y rescate, evaluación de incendios. Capacitación de piloto y trámite AFAC incluidos.',
     intro: [
       'El dron se volvió herramienta estándar de la respuesta a emergencias: evaluación aérea de incendios estructurales y forestales, búsqueda de personas con cámara térmica, y reconocimiento HAZMAT sin exponer personal.',
-      'Entregamos soluciones completas: aeronave con cámara térmica radiométrica, baterías de ciclo extendido, capacitación de piloto y acompañamiento en el registro ante AFAC para operación institucional.',
+      'Compara soluciones completas: aeronave con cámara térmica radiométrica, baterías de ciclo extendido, capacitación de piloto y acompañamiento en el registro ante AFAC para operación institucional.',
     ],
     items: [
       { name: 'DJI Matrice con térmica', detail: 'Plataforma institucional con cámara radiométrica' },
@@ -350,7 +350,7 @@ export const categories: Category[] = [
       highlight: 'cámara térmica y registro AFAC',
       paragraphs: [
         'El dron se volvió herramienta estándar de la primera respuesta: evaluación aérea de incendios estructurales y forestales, búsqueda de personas con cámara térmica radiométrica y reconocimiento HAZMAT sin exponer personal en la zona caliente.',
-        'Entregamos soluciones completas listas para operar: aeronave DJI Matrice con sensor térmico, baterías de ciclo extendido, capacitación de piloto y acompañamiento en el registro ante AFAC para operación institucional legal.',
+        'Compara soluciones completas listas para operar: aeronave DJI Matrice con sensor térmico, baterías de ciclo extendido, capacitación de piloto y acompañamiento en el registro ante AFAC para operación institucional legal.',
       ],
       subsections: [
         { name: 'Evaluación de incendios', detail: 'Vista cenital del avance del fuego, puntos calientes y rutas de ataque en estructural y forestal — en minutos, no horas.' },

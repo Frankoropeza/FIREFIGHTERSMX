@@ -1,67 +1,73 @@
 ---
-title: "FIREFIGHTERS MX: el referente en equipo bomberil certificado en México"
-description: "Quiénes somos y por qué cuerpos de bomberos, industria y gobierno en los 32 estados confían en FIREFIGHTERS MX para equipo certificado NFPA y NOM."
+title: "Cómo se construye el directorio de FIREFIGHTERS MX"
+description: "Las reglas de verificación, las fuentes y los límites editoriales con los que se publica cada estación de bomberos y cada empresa del directorio nacional."
 pubDate: 2026-06-10
-updatedDate: 2026-06-10
+updatedDate: 2026-09-09
 author: "Equipo editorial FIREFIGHTERS MX"
 category: "Empresa"
-tags: ["FIREFIGHTERS MX", "equipo para bomberos", "NFPA", "NOM", "México"]
+tags: ["FIREFIGHTERS MX", "directorio", "verificación", "NFPA", "NOM", "México"]
 image:
   url: "/images/blog/blog-firefightersmx-lider.avif"
-  alt: "Bombero equipado con EPP moderno certificado NFPA — FIREFIGHTERS MX líder en México"
+  alt: "Bombero equipado con EPP certificado NFPA — directorio FIREFIGHTERS MX"
 ---
 
-Hay una imagen que cualquiera que trabaje en este medio reconoce: el comandante que recibe un traje nuevo, lo voltea, busca la etiqueta cosida en el interior y se queda mirándola unos segundos. Está comprobando que la certificación sea real y esté vigente. Ese gesto, repetido miles de veces en estaciones de todo el país, resume nuestro trabajo mejor que cualquier folleto. Porque cuando alguien va a entrar a un incendio con ese traje puesto, esa etiqueta deja de ser un trámite.
+Hay una imagen que cualquiera que trabaje en este medio reconoce: el comandante que recibe un traje nuevo, lo voltea, busca la etiqueta cosida en el interior y se queda mirándola unos segundos. Está comprobando que la certificación sea real y esté vigente. Ese gesto, repetido miles de veces en estaciones de todo el país, explica por qué existe este directorio. Cuando alguien va a entrar a un incendio con ese traje puesto, esa etiqueta deja de ser un trámite.
 
-FIREFIGHTERS MX está del lado correcto de esa etiqueta. Y de eso queremos hablar aquí: de quiénes somos, de cómo trabajamos y de por qué tantos cuerpos de bomberos, brigadas industriales e instituciones de gobierno nos eligen cuando lo que está en juego no admite improvisaciones.
+Este artículo no habla de lo que ofrece el sitio a la venta, porque el sitio no vende. Habla de cómo se construye el directorio: qué se publica, qué se omite y bajo qué reglas.
 
-## No cubrimos de todo. Cubrimos esto.
+## Qué es y qué no es este sitio
 
-Si buscas tornillos, mangueras de jardín o señalética genérica, hay mejores opciones que nosotros. Lo decimos en serio. FIREFIGHTERS MX existe para una sola cosa: documentar el sector de la protección contra incendio y rescate. El directorio no creció hacia los lados agregando categorías; creció hacia adentro, profundizando en las normas que de verdad rigen este oficio, la familia NFPA (1970, 1851, 1977, entre otras) y las Normas Oficiales Mexicanas que aplican en cada caso.
+FIREFIGHTERS MX es un directorio. Documenta dos cosas: las **estaciones de bomberos** del país y las **empresas** del sector de protección contra incendio. No vende equipo, no lo distribuye, no lo instala y no tiene existencias. No cobra por aparecer ni ordena los resultados por pago.
 
-Esa decisión de especializarnos tiene consecuencias prácticas para quien nos compra. La primera es que del otro lado del teléfono hay alguien que entiende la diferencia entre una barrera de humedad Crosstech y una de PTFE, y sabe por qué esa diferencia importa según dónde y cómo opere tu gente. No leemos fichas técnicas en voz alta: las explicamos. La segunda es que el producto llega con su certificación en regla y su documentación lista, esa que después te piden en una auditoría o en una licitación y que, si falta, se vuelve un dolor de cabeza. Y la tercera, quizá la más subestimada, es que seguimos ahí después de la venta. Un traje o un equipo de respiración no terminan su vida cuando se entregan; apenas la empiezan. Necesitan inspección, mantenimiento y refacciones originales para conservar la certificación con la que salieron de fábrica.
+Esa distinción importa porque cambia el incentivo. Un catálogo tiene motivos para que su producto se vea bien. Un directorio que no vende sólo tiene un activo: que lo publicado sea cierto.
 
-## Donde estés, ahí llegamos
+## La regla dura: sin fuente, no se publica
 
-México no es un solo país cuando se trata de incendios. La realidad de un cuerpo metropolitano rodeado de torres no se parece en nada a la de un municipio donde el riesgo principal es el monte seco en marzo. Por eso atendemos los 32 estados, con logística propia y stock en CDMX para no depender de los tiempos de una importación cada vez que alguien necesita una talla o una refacción.
+Cada ficha se sostiene en una fuente citada y verificable. No es una aspiración editorial, es un candado técnico: el esquema de datos del sitio exige al menos una fuente por registro, y una ficha sin ella **no compila**. El sitio no se puede publicar con un dato inventado aunque alguien quiera meterlo.
 
-| Lo que documentamos | Lo que significa para ti |
+Un campo sin fuente confiable se omite. Es preferible una ficha incompleta a una ficha adornada.
+
+| Lo que se publica | Con qué condición |
 |---|---|
-| Cobertura en los 32 estados | El mismo respaldo técnico, sin importar el código postal |
-| Stock en CDMX | Tallas y refacciones a la mano, sin esperar contenedores |
+| Estación de bomberos | Verificación municipal o institucional previa; el DENUE por sí solo no basta |
+| Coordenadas | Con precisión declarada: `exacta` o `aproximada`, nunca un punto que aparente exactitud sin serla |
+| Empresa | Fuente citada, giro y ubicación; el nivel de confianza se muestra en la ficha |
+| Certificaciones y marcas | Sólo cuando coinciden con lo que el fabricante publica |
 
-Si quieres ver el alcance real, ahí está el detalle de nuestra [cobertura nacional](/cobertura) y de los [envíos por estado](/distribuidores).
+La unidad del registro de estaciones es el **cuartel físico**, no la corporación. Un municipio con seis estaciones son seis fichas, no una: quien busca ayuda o quien planea cobertura necesita saber dónde está el cuartel, no cuántos tiene el ayuntamiento.
 
-## Marcas líderes, producto original, sin asteriscos
+## Lo que el directorio no puede afirmar por ti
 
-En este punto no hay matices que valga la pena discutir: trabajamos con marcas reconocidas a nivel internacional y describimos producto original de fábrica. Punto. El equipo "equivalente", el reacondicionado que se vende como nuevo o la certificación que "ya casi sale" no entran al directorio, porque cualquiera de esas tres cosas pone en riesgo a su personal y tumba un expediente de protección civil en cuanto alguien lo revisa con cuidado.
+Aparecer en el directorio no acredita nada sobre una empresa más allá de que existe y opera en el giro declarado. En particular, el directorio **no** demuestra disponibilidad, cobertura de entrega, precio, autorización de fábrica ni vigencia de una certificación.
 
-Entre las marcas del directorio están MSA, con sus equipos de respiración G1 y los cascos Gallet F1 XF; Dräger, con la línea de respiración autónoma PSS 7000; 3M Scott y su plataforma Air-Pak NxG7; Globe y Lion en trajes estructurales NFPA 1970; Holmatro en herramienta hidráulica de rescate vehicular; y los cascos americanos de Bullard y Cairns. La lista completa, con modelos y aplicaciones, vive en la página de [marcas](/marcas), y el [directorio de productos](/productos) está organizado por categoría para que encuentre lo suyo sin rodeos.
+Eso se confirma directamente con cada proveedor, y conviene pedirlo por escrito:
 
-## La confianza se documenta, no se promete
+- El documento del **modelo concreto**, no una mención comercial a la norma. Una certificación NFPA acredita un producto, no un catálogo completo.
+- Quién firma las cartas y manifiestos, y si la convocatoria realmente los exige.
+- Alcance del servicio posterior: inspección, mantenimiento, refacciones y quién responde por ellos.
 
-Es fácil decir "somos confiables". Lo difícil, y lo que de verdad importa, es poder demostrarlo con papeles cuando toca. Cada equipo que entregamos llega con la certificación que corresponde a su uso, y nuestra operación cumple con las normas mexicanas aplicables. Para un cuerpo oficial, para una industria de alto riesgo o para un proceso de licitación, esto no es un plus: es la línea entre poder usar el equipo y tenerlo guardado esperando un trámite.
+## Las normas que estructuran el sector
 
-
+El directorio se organiza alrededor de las normas que de verdad rigen este oficio, porque son el único lenguaje común entre un comprador público, una brigada industrial y un fabricante.
 
 | Línea de producto | Norma de referencia |
 |---|---|
-| Trajes estructurales | NFPA 1970 / cuidado NFPA 1850 |
-| Equipos SCBA | NFPA 1970 |
+| Trajes estructurales | NFPA 1970 · cuidado bajo NFPA 1850 |
+| Equipos de respiración autónoma (SCBA) | NFPA 1970 |
 | Trajes forestales | NFPA 1950 |
-| Extintores portátiles | NOM-100-SCFI / NOM-106-SCFI |
+| Extintores portátiles | NOM-100-SCFI · NOM-106-SCFI · servicio bajo NOM-154-SCFI |
 | Centros de trabajo | NOM-002-STPS-2010 |
 
-El detalle completo está en la sección de [certificaciones](/certificaciones).
+El detalle completo está en la sección de [certificaciones](/certificaciones), con la advertencia que la acompaña: una norma no demuestra por sí sola el cumplimiento de un producto o de una empresa.
 
-## Tres mundos distintos, el mismo respaldo
+## México no es un solo país cuando se trata de incendios
 
-Con los años aprendimos que a nuestra puerta llegan, en realidad, tres tipos de cliente muy diferentes. Están los cuerpos de bomberos municipales y estatales, que pelean por equipar bien a su gente dentro de presupuestos públicos y procesos de [licitación](/licitaciones) que no perdonan errores. Está la industria de alto riesgo (petróleo, química, energía, aeropuertos) que necesita brigadas listas para combate estructural, de proximidad o HAZMAT, y que encuentra en nuestras [industrias](/industrias) el enfoque que su operación exige. Y están las brigadas y empresas que arrancan un programa de protección civil desde cero y que, más que un proveedor, buscan alguien que las tome de la mano en el camino.
+La realidad de un cuerpo metropolitano rodeado de torres no se parece en nada a la de un municipio donde el riesgo principal es el monte seco en marzo. Por eso el directorio se recorre por estado y por giro, no por catálogo: lo que sirve para una planta industrial en el Bajío rara vez es lo que necesita una brigada forestal.
 
-A cada uno le hablamos en su idioma, pero a todos les entregamos lo mismo: equipo correcto, certificado y respaldado.
+Puedes entrar por el [directorio de empresas](/empresas/), elegir un [giro](/empresas/venta-equipo/) o consultar las [estaciones de bomberos](/estaciones/) de tu entidad.
 
-## Por qué nos quedamos en tu lista corta
+## Cómo corregir o completar una ficha
 
-Si tuviéramos que resumirlo sin adornos: el directorio ayuda a comparar la pieza que protege a tu gente y resiste una auditoría, no necesariamente la más barata del mercado. Esa es la conversación honesta. A veces significa considerar algo distinto a lo que venías a pedir, y a veces significa esperar a tener bien definido el riesgo antes de comprar.
+Si una empresa aparece con datos incorrectos, o si una corporación no está listada, la corrección es parte del método y no un favor. Se solicita desde la [página de registro](/empresas/registro) y se verifica antes de publicarse: que la empresa existe y opera en el giro declarado, que el contacto responde desde un dominio o teléfono propio, y que lo declarado coincide con lo que publica el fabricante.
 
-¿Vas a equipar a tu cuerpo o brigada y quieres hacerlo bien desde la primera compra? [Pide una cotización sin costo](/cotizacion) y te respondemos en menos de dos horas, o [escríbenos](/contacto) y arrancamos por una asesoría técnica, sin compromiso.
+Es más lento que aceptar cualquier alta. Es la única forma de que la siguiente persona que revise una etiqueta encuentre lo que esperaba encontrar.

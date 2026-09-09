@@ -45,6 +45,15 @@ const PROHIBIDOS = [
   [/"@type"\s*:\s*"Store"/i,                                          'F-13 · el sitio se declara tienda en schema'],
   [/"aggregateRating"/i,                                               'F-13 · calificación agregada sin sustento'],
   [/(distribuid|vendid|comercializad)[oa]s?\s+por\s+FIREFIGHTERS/i,     'F-11 · el sitio es un directorio y no vende, distribuye ni instala'],
+  // ── F-11b · el resto de la operación comercial en primera persona.
+  //    «documentamos», «describimos» y «publicamos» son legítimos: eso sí lo hace un directorio.
+  [/\b(entregamos|cotizamos|facturamos|reacondicionamos|calibramos)\b/i, 'F-11 · el sitio es un directorio y no opera comercialmente'],
+  [/\bte\s+respondemos\s+en\b/i,                                      'F-11 · compromiso de respuesta sin operación propia'],
+  [/log[íi]stica\s+propia/i,                                            'F-12 · logística propia sin acreditar'],
+  [/stock\s+en\s+(CDMX|M[ée]xico|la\s+Ciudad)/i,                        'F-12 · inventario propio sin acreditar'],
+  [/nuestra\s+operaci[óo]n/i,                                           'F-12 · operación comercial propia sin acreditar'],
+  [/nuestra\s+sede/i,                                                   'F-12 · sede u operación propia sin acreditar'],
+  [/coordinamos\s+(despacho|entrega|env[íi]o)/i,                        'F-12 · logística propia sin acreditar'],
   [/Baja\s+California\s+255/i,                                            'F-01 · domicilio sin verificar'],
   [/(facebook|instagram|linkedin|youtube|x)\.com\/(@)?firefightersmx/i, 'F-02 · perfiles sociales inexistentes'],
 ];

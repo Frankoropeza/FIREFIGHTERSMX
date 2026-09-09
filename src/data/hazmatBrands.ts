@@ -68,7 +68,7 @@ const dupontTychem: EquipmentBrand = {
     {
       n: '04',
       t: 'Asesoría de selección por agente específico',
-      d: 'La selección de un traje HAZMAT por nivel (A, B, C) es insuficiente sin verificar la compatibilidad con el agente específico. Te entregamos las tablas de permeación correspondientes a las sustancias de tu operación y asesoramos el nivel correcto según concentración, ruta de exposición y duración de la operación.',
+      d: 'La selección de un traje HAZMAT por nivel (A, B, C) es insuficiente sin verificar la compatibilidad con el agente específico. Solicita a las empresas del directorio las tablas de permeación correspondientes a las sustancias de tu operación y confirma el nivel correcto según concentración, ruta de exposición y duración de la operación.',
     },
   ],
   linesIntro:

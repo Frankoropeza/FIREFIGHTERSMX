@@ -673,7 +673,7 @@ export const featuredProducts: Product[] = [
     href: "/productos/trajes-bombero/skold-hero-nomex",
     tier: "Fabricación mexicana · Profesional",
     normClaim: "Configuración Nomex de la línea Herö. Confirme con nosotros el alcance exacto de certificación del lote antes de integrarlo a un pliego — la certificación UL MH60435 corresponde a la configuración con shell PBI Max 7.0.",
-    dossierClaim: "Sköld Safety fabrica en Monterrey, Nuevo León. Entregamos ficha técnica del fabricante en español, alcance documentado de certificación por configuración y registro SKÖLDTracker para el expediente NFPA 1850. Fabricación nacional: acredita contenido nacional y acorta los tiempos de refacción frente a una marca de importación.",
+    dossierClaim: "Sköld Safety fabrica en Monterrey, Nuevo León. El fabricante publica ficha técnica en español, alcance documentado de certificación por configuración y registro SKÖLDTracker para el expediente NFPA 1850. Fabricación nacional: acredita contenido nacional y acorta los tiempos de refacción frente a una marca de importación.",
     specs: {
       outer: "Nomex IIIA",
       tpp: "s/d fabricante",
@@ -725,7 +725,7 @@ export const featuredProducts: Product[] = [
     href: "/productos/trajes-bombero/skold-forestal",
     tier: "Fabricación mexicana · Forestal",
     normClaim: "El fabricante declara equivalencia con NFPA 1977 edición 2011. Es una declaración del fabricante, no una certificación emitida por laboratorio acreditado — confírmelo con nosotros antes de integrar la partida a un pliego que exija certificación de tercero.",
-    dossierClaim: "Sköld Safety fabrica en Monterrey, Nuevo León. Entregamos la ficha técnica del fabricante con la composición y el gramaje del tejido, y la declaración de equivalencia por escrito. Al venderse por piezas, una brigada puede reponer solo el pantalón o solo el chaquetón según el desgaste real de la temporada.",
+    dossierClaim: "Sköld Safety fabrica en Monterrey, Nuevo León. El fabricante publica la ficha técnica con la composición y el gramaje del tejido, y la declaración de equivalencia por escrito. Al venderse por piezas, una brigada puede reponer solo el pantalón o solo el chaquetón según el desgaste real de la temporada.",
     specs: {
       outer: "Nomex IIIA 6.0 oz con repelente al agua",
       tpp: "s/d fabricante",
@@ -751,7 +751,7 @@ export const featuredProducts: Product[] = [
     href: "/productos/trajes-bombero/skold-aproximacion",
     tier: "Fabricación mexicana · Aproximación",
     normClaim: "El fabricante refiere las ediciones 1991 y 2013 de NFPA 1971 para este conjunto. Es una referencia del fabricante, no una certificación emitida por laboratorio acreditado — solicítenos el alcance documentado antes de integrarlo a un pliego que exija certificación de tercero.",
-    dossierClaim: "Sköld Safety fabrica en Monterrey, Nuevo León. Entregamos la ficha técnica del fabricante con el detalle de las cinco capas del shell, los materiales de forro desmontable y las dimensiones de confección. El guante aluminizado de aproximación FPGAP se cotiza como parte del mismo conjunto.",
+    dossierClaim: "Sköld Safety fabrica en Monterrey, Nuevo León. El fabricante publica la ficha técnica con el detalle de las cinco capas del shell, los materiales de forro desmontable y las dimensiones de confección. El guante aluminizado de aproximación FPGAP se cotiza como parte del mismo conjunto.",
     specs: {
       outer: "Aluminizado 5 capas sobre rip-stop para-aramida 7.0 oz/yd²",
       tpp: "s/d fabricante",
@@ -777,7 +777,7 @@ export const featuredProducts: Product[] = [
     href: "/productos/trajes-bombero/skold-overol-rescate",
     tier: "Fabricación mexicana · Rescate",
     normClaim: "La certificación NFPA 2112 corresponde a la tela ignífuga y al reflejante antiflama de la prenda. No es un traje de combate estructural y no sustituye a un conjunto certificado bajo NFPA 1970 para entrada a estructura en llamas.",
-    dossierClaim: "Sköld Safety fabrica en Monterrey, Nuevo León, con taller de confección propio. Entregamos la ficha técnica del fabricante y el certificado NFPA 2112 de la tela. La prenda se configura a pedido —ancho y color del reflejante, bordado e impresión de la corporación— y cuenta con servicio de reparación express en el país.",
+    dossierClaim: "Sköld Safety fabrica en Monterrey, Nuevo León, con taller de confección propio. El fabricante publica la ficha técnica y el certificado NFPA 2112 de la tela. La prenda se configura a pedido —ancho y color del reflejante, bordado e impresión de la corporación— y cuenta con servicio de reparación express en el país.",
     specs: {
       outer: "Tela ignífuga certificada NFPA 2112, con opción repelente al agua",
       extra: "Reflejante antiflama NFPA 2112 de 1\", 2\" o 3\" en plata o amarillo lima",

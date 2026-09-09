@@ -126,6 +126,6 @@ Los documentos físicos tardan días en conseguirse. Las constancias DC-3 de cap
 
 ## Auditoría NOM-002 en FIREFIGHTERS MX
 
-Revisamos tu expediente documental completo antes de que llegue la STPS. Identificamos los huecos, te ayudamos a conseguir los documentos faltantes y te entregamos el expediente organizado y listo para presentar. El servicio incluye revisión física del centro de trabajo.
+El directorio te ayuda a localizar empresas que revisan expedientes documentales antes de una inspección de la STPS. Con la empresa seleccionada identifica los huecos, reúne los documentos faltantes y conserva el expediente organizado y listo para presentar. El servicio puede incluir revisión física del centro de trabajo.
 
 [Servicio de Auditoría NOM-002](/servicios/auditoria-seguridad)

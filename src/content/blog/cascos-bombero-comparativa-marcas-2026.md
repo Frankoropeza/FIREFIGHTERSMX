@@ -241,7 +241,7 @@ Tres condiciones absolutas antes de emitir cualquier orden de compra:
 
 ---
 
-En [FIREFIGHTERS MX](/productos/cascos-nfpa) manejamos la línea completa de MSA Cairns, Bullard, Rosenbauer y Pacific Helmets con disponibilidad de stock en México. Si tu corporación está evaluando opciones para renovación o licitación, [solicita una propuesta técnica personalizada](/cotizacion) con la comparativa específica para tus escenarios operativos. No necesitas saber cuál quieres antes de llamar; para eso está el asesor.
+En el [directorio de cascos NFPA](/productos/cascos-nfpa) puedes comparar registros de MSA Cairns, Bullard, Rosenbauer y Pacific Helmets. Si tu corporación está evaluando opciones para renovación o licitación, solicita a las empresas registradas disponibilidad y una propuesta técnica personalizada con la comparativa específica para tus escenarios operativos.
 
 ---
 

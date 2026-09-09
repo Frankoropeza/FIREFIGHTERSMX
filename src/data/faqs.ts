@@ -26,7 +26,7 @@ export const homeFaqs: FAQ[] = [
   },
   {
     q: '¿Cuánto tarda una cotización formal?',
-    a: 'Respondemos toda cotización en menos de 24 horas hábiles con precios, disponibilidad, tiempos de entrega y fichas técnicas. Para proyectos complejos (licitaciones, brigadas completas, ARFF/HAZMAT) entregamos propuesta detallada en 48 horas.',
+    a: 'Al solicitar una cotización, conviene pedir precios, disponibilidad, tiempos de entrega y fichas técnicas. Para proyectos complejos (licitaciones, brigadas completas, ARFF/HAZMAT), solicita una propuesta detallada y un plazo de respuesta por escrito.',
   },
   {
     q: '¿Hacen envíos a toda la República Mexicana?',

@@ -61,7 +61,7 @@ El traje barato de un proveedor que mañana no tiene refacciones suele terminar 
 
 ## Y por último: ¿quién contesta el teléfono después de la venta?
 
-El proveedor correcto no desaparece cuando le firmas la factura. Busca uno que ofrezca servicio técnico autorizado, refacciones originales y asesoría de tallaje, esa que evita comprar 30 trajes de "talla promedio" para descubrir que el promedio no existe. En FIREFIGHTERS MX estos servicios vienen integrados, con cobertura en los 32 estados y stock en CDMX; el panorama completo está en [servicios](/servicios).
+El proveedor correcto no desaparece cuando le firmas la factura. Busca uno que ofrezca servicio técnico autorizado, refacciones originales y asesoría de tallaje, esa que evita comprar 30 trajes de "talla promedio" para descubrir que el promedio no existe. En el directorio de [servicios](/servicios) puedes localizar empresas y confirmar directamente su cobertura, disponibilidad y condiciones.
 
 ## Antes de pagar, repasa esto
 

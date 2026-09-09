@@ -32,7 +32,7 @@ const collectionSchema = {
 };
 ---
 
-<BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema]}>
+<BaseLayout {...seoMeta} noindex={true} schema={[breadcrumbSchema, collectionSchema]}>
   <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb"><div class="container-site"><ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)"><li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li><li aria-hidden="true">/</li><li aria-current="page" style="color:#94A3B8">Empresas por estado</li></ol></div></nav>
 
   <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">

@@ -232,7 +232,7 @@ const tycoViking: EquipmentBrand = {
   faqs: [
     {
       q: '¿Qué norma regula el diseño e instalación de un sistema de rociadores en México?',
-      a: 'La norma de referencia internacional es la NFPA 13 (Standard for the Installation of Sprinkler Systems), adoptada ampliamente en México para proyectos de Protección Civil, seguros internacionales y requisitos de arrendadores en parques industriales. La NOM-002-STPS-2010 establece la obligatoriedad de sistemas contra incendio en centros de trabajo; para el diseño específico se remite a la NFPA 13. Te entregamos la memoria de cálculo hidráulico firmada por DRO con referencia explícita a NFPA 13 para los trámites de PC.',
+      a: 'La norma de referencia internacional es la NFPA 13 (Standard for the Installation of Sprinkler Systems), adoptada ampliamente en México para proyectos de Protección Civil, seguros internacionales y requisitos de arrendadores en parques industriales. La NOM-002-STPS-2010 establece la obligatoriedad de sistemas contra incendio en centros de trabajo; para el diseño específico se remite a la NFPA 13. Solicita a la empresa seleccionada la memoria de cálculo hidráulico firmada por DRO con referencia explícita a NFPA 13 para los trámites de PC.',
     },
     {
       q: '¿Qué es un rociador ESFR y cuándo se usa?',
@@ -482,7 +482,7 @@ const honeywellNotifier: EquipmentBrand = {
     },
     {
       q: '¿Qué mantenimiento requiere un sistema de detección NFPA 72?',
-      a: 'La NFPA 72 (Capítulo 14) exige prueba e inspección de todos los detectores y dispositivos de notificación al menos una vez al año, con registro documentado de cada prueba. Los sistemas Notifier generan el registro de eventos automáticamente en el historial del panel; sin embargo, la prueba física de cada detector —limpieza, prueba de sensibilidad y verificación de comunicación al panel— debe realizarse por un técnico certificado. Realizamos el mantenimiento preventivo anual con refacciones originales y entregamos el informe NFPA 72 para los trámites de PC y aseguradoras.',
+      a: 'La NFPA 72 (Capítulo 14) exige prueba e inspección de todos los detectores y dispositivos de notificación al menos una vez al año, con registro documentado de cada prueba. Los sistemas Notifier generan el registro de eventos automáticamente en el historial del panel; sin embargo, la prueba física de cada detector —limpieza, prueba de sensibilidad y verificación de comunicación al panel— debe realizarse por un técnico certificado. Solicita a una empresa especializada el mantenimiento preventivo anual con refacciones originales y el informe NFPA 72 para los trámites de PC y aseguradoras.',
     },
   ],
   ctaKicker: 'NFPA 72 · UL Listed · Direccionable',

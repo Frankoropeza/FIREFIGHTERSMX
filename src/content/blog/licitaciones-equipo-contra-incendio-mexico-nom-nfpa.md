@@ -57,7 +57,7 @@ La diferencia entre responder con holgura y correr a última hora es preparar la
 
 ## En qué te entra FIREFIGHTERS MX
 
-Trabajamos de forma habitual con cuerpos municipales, estatales e instituciones que compran por licitación, y conocemos el terreno desde los dos lados. Cuando alguien convoca, lo apoyamos a redactar especificaciones técnicas ancladas a norma, que protejan el presupuesto sin volverse impugnables. Cuando alguien participa, entregamos la documentación de certificación completa y lista para expediente, con producto original de marcas líderes y carta de distribuidor, respaldado por cobertura en los 32 estados y servicio posventa. El detalle está en nuestras páginas de [licitaciones](/licitaciones) y de [certificaciones](/certificaciones).
+El [directorio de licitaciones](/licitaciones) sirve para localizar empresas que trabajan con cuerpos municipales, estatales e instituciones que compran por licitación. Cuando alguien convoca, conviene exigir especificaciones técnicas ancladas a norma; cuando alguien participa, debe presentar documentación de certificación completa, producto original de las marcas propuestas y carta de distribuidor cuando aplique. Consulta también las páginas de [licitaciones](/licitaciones) y [certificaciones](/certificaciones).
 
 ## En resumen
 

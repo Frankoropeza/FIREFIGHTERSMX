@@ -38,7 +38,7 @@ Si tu realidad es **urbana y estructural**, tu columna vertebral son los trajes 
 
 Aquí no hay atajos. Por cada elemento operativo necesitas, como piso mínimo, un traje estructural certificado [NFPA 1970](/productos/trajes-bombero), un casco con la norma vigente (los tienes en [cascos NFPA](/productos/cascos-nfpa)), capucha protectora con bloqueo de partículas, guantes y botas estructurales, y el monitor o dosímetro que pida tu operación.
 
-Te insisto en algo que parece detalle y no lo es: compra por tallaje real, no por talla promedio. Un traje que le queda grande a un bombero pierde protección justo donde más la necesita. Nosotros asesoramos el tallaje de la S a la 4XL con stock en CDMX, precisamente porque hemos visto demasiadas compras grandes arruinadas por no medir bien a la gente.
+Te insisto en algo que parece detalle y no lo es: compra por tallaje real, no por talla promedio. Un traje que le queda grande a un bombero pierde protección justo donde más la necesita. Solicita a las empresas del directorio asesoría de tallaje de la S a la 4XL y confirma la disponibilidad en CDMX antes de comprar, precisamente porque demasiadas compras grandes se arruinan por no medir bien a la gente.
 
 ## La respiración autónoma: tu mayor cuidado
 
@@ -78,6 +78,6 @@ Y un consejo que pocos siguen y todos agradecen después: aparta desde el inicio
 
 ## No tienes que hacerlo solo
 
-Equipar una estación es un proyecto, con sus etapas y sus decisiones, no una compra suelta de fin de mes. En FIREFIGHTERS MX acompañamos el proceso completo: definimos el equipo según tu perfil de riesgo, armamos la cotización por etapas, entregamos con la documentación en regla y seguimos disponibles para el servicio en los 32 estados.
+Equipar una estación es un proyecto, con sus etapas y sus decisiones, no una compra suelta de fin de mes. En FIREFIGHTERS MX puedes consultar categorías y empresas registradas para comparar el proceso completo: define el equipo según tu perfil de riesgo, solicita cotizaciones por etapas y exige la documentación en regla; la cobertura real del servicio debe confirmarse directamente con cada empresa.
 
 ¿Vas a abrir una estación o brigada? [Pide una cotización sin costo](/cotizacion) con tu perfil de riesgo y te armamos un plan por prioridades, o [escríbenos](/contacto) y lo platicamos.

@@ -262,7 +262,7 @@ La combinación más costo-efectiva con certificaciones válidas: **Streamlight 
 
 ---
 
-En [FIREFIGHTERS MX](/productos) contamos con las líneas Streamlight, Peli, LED Lenser y Foxfury con stock en México. Si tu corporación está equipando unidades de rescate o renovando la dotación individual de iluminación, [solicita una propuesta técnica](/cotizacion) con la configuración correcta para cada escenario de tu operación.
+En el [directorio de iluminación táctica](/productos) puedes comparar registros de Streamlight, Peli, LED Lenser y Foxfury. Si tu corporación está equipando unidades de rescate o renovando la dotación individual de iluminación, solicita a las empresas registradas disponibilidad y una propuesta técnica con la configuración correcta para cada escenario de tu operación.
 
 ---
 
