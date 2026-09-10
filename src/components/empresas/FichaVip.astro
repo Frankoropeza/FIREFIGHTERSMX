@@ -11,6 +11,7 @@
  * botones), ningún contador decorativo, y todo enlace lleva keyword.
  */
 import type { Empresa } from '@lib/empresas';
+import { relEmpresa } from '@lib/rel-portafolio';
 import type { Giro } from '@data/giros';
 
 interface Props {
@@ -103,10 +104,10 @@ const ctaWeb = web ? `${web.replace(/\/$/, '')}/cotizar` : undefined;
             {l.pagina && lineasInternas[l.pagina] ? (
               <div class="mt-auto flex flex-col gap-2">
                 <a href={lineasInternas[l.pagina]} class="btn btn-sm btn-primary w-full text-center">{l.nombre}</a>
-                {web && l.url && <a href={l.url} target="_blank" rel="noopener sponsored" class="block text-center font-display text-[11px] uppercase tracking-wider hover:text-[#FF6B26]" style="color:var(--forge-300)">Modelos en el sitio de la empresa ↗</a>}
+                {web && l.url && <a href={l.url} target="_blank" rel={relEmpresa(l.url)} class="block text-center font-display text-[11px] uppercase tracking-wider hover:text-[#FF6B26]" style="color:var(--forge-300)">Modelos en el sitio de la empresa ↗</a>}
               </div>
             ) : (
-              web && l.url && <a href={l.url} target="_blank" rel="noopener sponsored" class="btn btn-sm btn-primary w-full text-center mt-auto">{l.nombre}</a>
+              web && l.url && <a href={l.url} target="_blank" rel={relEmpresa(l.url)} class="btn btn-sm btn-primary w-full text-center mt-auto">{l.nombre}</a>
             )}
           </div>
         </article>
@@ -251,7 +252,7 @@ const ctaWeb = web ? `${web.replace(/\/$/, '')}/cotizar` : undefined;
     {ctaWeb && (
       <div class="mt-6 p-5 flex flex-col sm:flex-row sm:items-center gap-4" style={`background:#0C1825;border:1px solid ${borde};border-left:3px solid ${g.color}`}>
         <p class="text-sm leading-relaxed flex-1" style="color:#94A3B8">La empresa recibe solicitudes de cotización directamente en su sitio. Ten a la mano número de parte o categoría, cantidades, razón social y ciudad de entrega.</p>
-        <a href={ctaWeb} target="_blank" rel="noopener sponsored" class="btn btn-sm btn-primary shrink-0">Cotizar {g.labelCorto.toLowerCase()}</a>
+        <a href={ctaWeb} target="_blank" rel={relEmpresa(ctaWeb)} class="btn btn-sm btn-primary shrink-0">Cotizar {g.labelCorto.toLowerCase()}</a>
       </div>
     )}
   </section>

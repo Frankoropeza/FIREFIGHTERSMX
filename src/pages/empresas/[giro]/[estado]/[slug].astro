@@ -8,6 +8,7 @@ import { SITE, whatsappUrl } from '@config/site';
 import { giroMap, planConfig, confianzaConfig, INDEXAR_FICHAS_BASICAS } from '@data/giros';
 import { allCategories } from '@data/categories';
 import { estadoConEstaciones } from '@lib/estaciones';
+import { relEmpresa } from '@lib/rel-portafolio';
 import { todasLasEmpresas, empresasPorGiroEstado, estadoMeta, urlEmpresa, type Empresa } from '@lib/empresas';
 import { urlsLineasDeEmpresa } from '@lib/lineas';
 import type { GetStaticPaths } from 'astro';
@@ -303,7 +304,7 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
           <ul class="flex flex-col gap-3 list-none m-0 p-0 text-sm">
             {e.telefono && <li class="flex items-center gap-3"><span class="font-display text-[10px] uppercase tracking-wider w-16 shrink-0" style="color:var(--forge-300)">Tel.</span><a href={`tel:${e.telefono}`} class="hover:text-[#FF6B26]" style="color:#FFFFFF">{e.telefono}</a></li>}
             {e.email && <li class="flex items-center gap-3"><span class="font-display text-[10px] uppercase tracking-wider w-16 shrink-0" style="color:var(--forge-300)">Correo</span><a href={`mailto:${e.email}`} class="hover:text-[#FF6B26] break-all" style="color:#FFFFFF">{e.email}</a></li>}
-            {webPublicable && <li class="flex items-center gap-3"><span class="font-display text-[10px] uppercase tracking-wider w-16 shrink-0" style="color:var(--forge-300)">Web</span><a href={webPublicable} target="_blank" rel="noopener sponsored" class="hover:text-[#FF6B26] break-all" style="color:#FFFFFF">{webHost}</a></li>}
+            {webPublicable && <li class="flex items-center gap-3"><span class="font-display text-[10px] uppercase tracking-wider w-16 shrink-0" style="color:var(--forge-300)">Web</span><a href={webPublicable} target="_blank" rel={relEmpresa(webPublicable)} class="hover:text-[#FF6B26] break-all" style="color:#FFFFFF">{webHost}</a></li>}
             {e.direccion && <li class="flex items-start gap-3"><span class="font-display text-[10px] uppercase tracking-wider w-16 shrink-0 mt-0.5" style="color:var(--forge-300)">Dirección</span><span style="color:#CBD5E1">{e.direccion}</span></li>}
             {!e.telefono && !e.email && !webPublicable && <li class="text-xs" style="color:#64748B">Sin datos de contacto en el registro público.</li>}
           </ul>

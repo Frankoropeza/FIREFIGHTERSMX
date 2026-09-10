@@ -8,6 +8,7 @@
  * fichas hermanas (otras plazas de la misma empresa) enlazan a esta misma URL.
  */
 import BaseLayout from '@layouts/BaseLayout.astro';
+import { relEmpresa } from '@lib/rel-portafolio';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import { SITE } from '@config/site';
 import { giroMap } from '@data/giros';
@@ -265,7 +266,7 @@ const h2s = 'color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1'
             {web && (
               <div class="mt-6 p-5 flex flex-col sm:flex-row sm:items-center gap-4" style={`background:#0C1825;border:1px solid ${borde};border-left:3px solid ${g.color}`}>
                 <p class="text-sm leading-relaxed flex-1" style="color:#94A3B8">Los modelos completos, con ficha técnica por producto, están en la página de la línea en el sitio de la empresa.</p>
-                <a href={web} target="_blank" rel="noopener sponsored" class="btn btn-sm btn-primary shrink-0">Ver {l.nombre.toLowerCase()} en {e.nombre}</a>
+                <a href={web} target="_blank" rel={relEmpresa(web)} class="btn btn-sm btn-primary shrink-0">Ver {l.nombre.toLowerCase()} en {e.nombre}</a>
               </div>
             )}
           </section>
