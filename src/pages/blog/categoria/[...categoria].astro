@@ -16,6 +16,7 @@ import BlogCard from '@components/blog/BlogCard.astro';
 import { getCollection } from 'astro:content';
 import { SITE } from '@config/site';
 import { slugifyCategory } from '@lib/slug';
+import { categoriaIndexable } from '@lib/blog-taxonomia';
 import type { GetStaticPaths } from 'astro';
 
 export const getStaticPaths = (async () => {
@@ -45,6 +46,10 @@ const seoMeta = {
   description:
     `Artículos técnicos sobre ${category.toLowerCase()} en equipo para bomberos y sistemas contra incendio. Normatividad NFPA, NOM y criterios de selección.`.slice(0, 160),
   canonicalURL,
+  /* Umbral propio, más bajo que el de las etiquetas: la categoría es la
+     navegación del blog y cada artículo declara una sola. Ver
+     @lib/blog-taxonomia. */
+  noindex: !categoriaIndexable(posts.length),
 };
 
 // JSON-LD CollectionPage de categoría

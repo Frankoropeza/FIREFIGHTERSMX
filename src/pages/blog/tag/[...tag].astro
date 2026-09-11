@@ -6,10 +6,16 @@
 //   /blog/tag/trajes-bomberos
 //   /blog/tag/extintores
 //
-// Por qué: los tags son cola larga de alta intención.
-// "NFPA 1970 trajes México" puede ranquear con un artículo solo o
-// ranquear mejor con una página de categoría de todos los artículos
-// que cubren ese estándar. Surface area multiplicado sin contenido nuevo.
+// Por qué: los tags son cola larga de alta intención. "NFPA 1970 trajes
+// México" ranquea mejor con una página que reúne todos los artículos que
+// cubren ese estándar que con uno suelto.
+//
+// PERO sólo cuando de verdad reúne varios. Medido el 2026-09-11: de las 176
+// etiquetas, 140 agrupaban UN artículo. Una etiqueta con un artículo no
+// agrupa: su único contenido propio es el título de ese artículo, y compite
+// con él. Desde entonces se indexa la que llega al umbral de
+// `MIN_ARTICULOS_TAG`; el resto se genera igual, navegable y pasando
+// enlaces, pero con `noindex, follow`.
 // =====================================================================
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
@@ -17,6 +23,7 @@ import BlogCard from '@components/blog/BlogCard.astro';
 import { getCollection } from 'astro:content';
 import { SITE } from '@config/site';
 import { slugifyTag } from '@lib/slug';
+import { tagIndexable } from '@lib/blog-taxonomia';
 import type { GetStaticPaths } from 'astro';
 
 export const getStaticPaths = (async () => {
@@ -47,6 +54,10 @@ const seoMeta = {
   description:
     `Artículos sobre ${tag} en equipos para bomberos y sistemas contra incendio en México. Normatividad NFPA, NOM y criterios de selección.`.slice(0, 160),
   canonicalURL,
+  /* Una etiqueta que no reúne varios artículos no es un destino de búsqueda:
+     `follow` para no romper el grafo interno, `noindex` para no competir con
+     el propio artículo que la lleva. */
+  noindex: !tagIndexable(posts.length),
 };
 
 // JSON-LD CollectionPage de tag
