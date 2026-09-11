@@ -89,3 +89,27 @@ export async function statsDirectorio() {
 export function puntosMapa(lista: Empresa[]) {
   return lista.filter((e) => e.coordenadas).map((e) => [e.coordenadas!.lat, e.coordenadas!.lng, e.nombre, urlEmpresa(e), e.giroPrincipal] as const);
 }
+
+/**
+ * La colonia que va dentro de `direccion`.
+ *
+ * El esquema no tiene campo propio para ella, pero 1,420 de las 1,424 fichas
+ * con dirección la traen dentro del texto («…, Col. Mármol Viejo, C.P. 31063»).
+ * Sirve para distinguir sucursales de una misma cadena en un mismo municipio:
+ * cuatro fichas de Provesicsa en la ciudad de Chihuahua sólo se diferencian por
+ * ahí, y sin ese dato compartían `meta description` palabra por palabra.
+ *
+ * Se prefiere a la de código postal porque una meta description la lee una
+ * persona: «Mármol Viejo» ubica, «C.P. 31063» no.
+ */
+const RE_COLONIA =
+  /\b(?:Col\.?|Colonia|Fracc\.?|Fraccionamiento|Barrio|Unidad Habitacional|U\.\s*H\.|Residencial|Ejido|Zona)\s+([^,]+)/i;
+
+export function colonia(direccion?: string): string | undefined {
+  if (!direccion) return undefined;
+  const m = RE_COLONIA.exec(direccion);
+  if (!m) return undefined;
+  const v = m[1].trim().replace(/\s+/g, ' ');
+  // «Col. 1106» y demás ruido de numeración no ubican a nadie.
+  return v && !/^\d+$/.test(v) && v.length <= 40 ? v : undefined;
+}

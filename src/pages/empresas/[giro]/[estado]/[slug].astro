@@ -9,7 +9,7 @@ import { giroMap, planConfig, confianzaConfig, INDEXAR_FICHAS_BASICAS } from '@d
 import { allCategories } from '@data/categories';
 import { estadoConEstaciones } from '@lib/estaciones';
 import { relEmpresa } from '@lib/rel-portafolio';
-import { todasLasEmpresas, empresasPorGiroEstado, estadoMeta, urlEmpresa, type Empresa } from '@lib/empresas';
+import { todasLasEmpresas, empresasPorGiroEstado, estadoMeta, urlEmpresa, colonia, type Empresa } from '@lib/empresas';
 import { urlsLineasDeEmpresa } from '@lib/lineas';
 import type { GetStaticPaths } from 'astro';
 
@@ -23,28 +23,43 @@ export const getStaticPaths = (async () => {
   const todas = await todasLasEmpresas();
   const clave = (x: Empresa) => `${x.nombre}|${x.giroPrincipal}|${x.estado}`;
   const claveConMunicipio = (x: Empresa) => `${clave(x)}|${x.municipio ?? ''}`;
+  const claveConColonia = (x: Empresa) => `${claveConMunicipio(x)}|${colonia(x.direccion) ?? ''}`;
   const veces = new Map<string, number>();
   const vecesConMunicipio = new Map<string, number>();
+  const vecesConColonia = new Map<string, number>();
   for (const x of todas) {
     veces.set(clave(x), (veces.get(clave(x)) ?? 0) + 1);
     vecesConMunicipio.set(claveConMunicipio(x), (vecesConMunicipio.get(claveConMunicipio(x)) ?? 0) + 1);
+    vecesConColonia.set(claveConColonia(x), (vecesConColonia.get(claveConColonia(x)) ?? 0) + 1);
   }
   return todas.map((e) => ({
     params: { giro: e.giroPrincipal, estado: e.estado, slug: e.slug },
     props: {
       e,
-      /** 'no' | 'municipio' | 'colonia' — qué hace falta para que el title sea único */
+      /*
+        Escalera de desambiguación. Se sube un peldaño sólo cuando el anterior
+        deja dos fichas iguales, para no ensuciar las 1,372 que son únicas:
+          'no'        — nombre + giro + estado ya distingue
+          'municipio' — cadena con sucursales en varios municipios del estado
+          'colonia'   — varias sucursales en el mismo municipio (Provesicsa ×4
+                        en la ciudad de Chihuahua)
+          'cp'        — dos sucursales en la misma colonia (Vallen ×2 en
+                        Universidad Poniente, Tampico): el único caso del
+                        directorio donde la colonia tampoco basta
+      */
       desambigua:
         (veces.get(clave(e)) ?? 0) <= 1
           ? 'no'
           : (vecesConMunicipio.get(claveConMunicipio(e)) ?? 0) <= 1
             ? 'municipio'
-            : 'colonia',
+            : (vecesConColonia.get(claveConColonia(e)) ?? 0) <= 1 && colonia(e.direccion)
+              ? 'colonia'
+              : 'cp',
     },
   }));
 }) satisfies GetStaticPaths;
 
-const { e, desambigua } = Astro.props as { e: Empresa; desambigua: 'no' | 'municipio' | 'colonia' };
+const { e, desambigua } = Astro.props as { e: Empresa; desambigua: 'no' | 'municipio' | 'colonia' | 'cp' };
 const g = giroMap[e.giroPrincipal];
 const edo = estadoMeta(e.estado)!;
 const plan = planConfig[e.plan];
@@ -100,12 +115,15 @@ const tituloCorto = nombreLlevaPlaza
    estado. El nombre de la empresa nunca se trunca a media palabra: es lo
    único por lo que alguien busca esta ficha. */
 /* Sufijo que distingue sucursales homónimas dentro del mismo estado. */
-const sufijoPlaza =
+const plaza =
   desambigua === 'municipio' && e.municipio
-    ? ` (${e.municipio})`
-    : desambigua === 'colonia' && e.codigoPostal
-      ? ` (C.P. ${e.codigoPostal})`
-      : '';
+    ? e.municipio
+    : desambigua === 'colonia'
+      ? colonia(e.direccion)
+      : desambigua === 'cp' && e.codigoPostal
+        ? `C.P. ${e.codigoPostal}`
+        : undefined;
+const sufijoPlaza = plaza ? ` (${plaza})` : '';
 const tituloSEO =
   `${tituloCorto}${sufijoPlaza}`.length <= 70
     ? `${tituloCorto}${sufijoPlaza}`
@@ -125,7 +143,10 @@ const seoMeta = {
   title: tituloSEO,
   description: recorta(esVIP && e.vip
     ? `${e.nombre}, ${g.sustantivo} en ${e.ciudad}, ${edo.nombre}: ${e.vip.servicios.length} servicios, ${e.vip.lineas.length} líneas de catálogo con certificación, condiciones comerciales y preguntas frecuentes. Ficha verificada.`
-    : `${e.nombre}: ${g.sustantivo} en ${e.ciudad}, ${edo.nombre}.${esp.length ? ' ' + esp.map((x) => x.label.toLowerCase()).join(', ') + '.' : ''} Ubicación, contacto y nivel de verificación en el directorio FIREFIGHTERS MX.`),
+    /* La plaza entra también aquí: sin ella, las sucursales de una cadena en
+       un mismo municipio compartían description palabra por palabra — 51
+       fichas en 21 grupos, medido el 2026-09-11. */
+    : `${e.nombre}: ${g.sustantivo} en ${plaza ? `${plaza}, ` : ''}${e.ciudad}, ${edo.nombre}.${esp.length ? ' ' + esp.map((x) => x.label.toLowerCase()).join(', ') + '.' : ''} Ubicación, contacto y nivel de verificación en el directorio FIREFIGHTERS MX.`),
   canonicalURL, noindex,
   ...(ogImagenVIP ? { ogImage: ogImagenVIP } : {}),
 };
