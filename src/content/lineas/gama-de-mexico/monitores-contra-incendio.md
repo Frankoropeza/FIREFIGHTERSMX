@@ -17,7 +17,7 @@ contexto: |
 
   Hay dos decisiones que ordenan todo lo demás. La primera es geométrica: si el punto de montaje ve el riesgo de frente, un cuerpo compacto tipo corazón resuelve; si hay que pasar por encima de obstáculos o alcanzar altura, la configuración cuello de cisne eleva la trayectoria. La segunda es documental: si la póliza, el ingeniero de riesgos o la especificación piden listado FM o UL, la elección se reduce a los modelos que traen ese expediente, y se valida modelo por modelo.
 
-  Gama de México clasifica la línea con esas dos decisiones a la vista. Sus cuatro familias no son cuatro productos distintos sino cuatro rutas de selección: dos por geometría —corazón y cuello de cisne— y dos por respaldo documental —FM y UL—. Un mismo modelo puede aparecer en más de una.
+  Gama de México clasifica la línea con esas dos decisiones a la vista. Sus cuatro familias no son cuatro productos distintos sino cuatro rutas de selección: dos por geometría —corazón y cuello de cisne— y dos por respaldo documental, con [monitores con listado FM y UL](https://gamademexico.com/monitores-contra-incendios). Un mismo modelo puede aparecer en más de una.
 familias:
   - nombre: "Monitor tipo corazón"
     descripcion: "Base fija de cuerpo compacto para cobertura perimetral y maniobra horizontal en patios de proceso. Control mecánico de elevación y operación manual; la variante de una cremallera de fabricación propia opera con palanca vertical y freno manual horizontal."

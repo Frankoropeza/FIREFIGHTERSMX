@@ -9,6 +9,7 @@
  */
 import BaseLayout from '@layouts/BaseLayout.astro';
 import { relEmpresa } from '@lib/rel-portafolio';
+import { conEnlaces } from '@lib/enlaces';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import { SITE } from '@config/site';
 import { giroMap } from '@data/giros';
@@ -136,7 +137,11 @@ const h2s = 'color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1'
           <section aria-labelledby="linea-contexto">
             <span class="section-eyebrow mb-4 inline-flex">Qué es y cuándo se especifica</span>
             <h2 id="linea-contexto" class={h2} style={h2s}>{l.nombre}: qué resuelven y cómo se eligen</h2>
-            {contexto.map((p) => <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">{p}</p>)}
+            {/* `conEnlaces` deja pasar sólo el patrón [ancla](https://…) y escapa el
+                resto; el `rel` lo sigue decidiendo relEmpresa() por dominio. Sin esto,
+                el único enlace al sitio de la empresa era el botón de plantilla, igual
+                en las seis líneas. */}
+            {contexto.map((p) => <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8" set:html={conEnlaces(p, relEmpresa)} />)}
           </section>
         )}
 
