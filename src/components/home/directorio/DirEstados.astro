@@ -4,7 +4,7 @@ import { estadosMeta } from '@lib/empresas';
 const regiones = [...new Set(estadosMeta.map((e) => e.region))];
 const porRegion = regiones.map((r) => ({ r, estados: estadosMeta.filter((e) => e.region === r) }));
 ---
-<section class="section" style="background:#070E1A" aria-labelledby="estados-heading">
+<section class="section home-deferred-section" style="background:#070E1A" aria-labelledby="estados-heading">
   <div class="container-site">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
       <div>

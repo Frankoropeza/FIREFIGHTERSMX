@@ -152,6 +152,10 @@ img, video, svg { max-width: 100%; height: auto; display: block; }
 @media (min-width: 1600px) { .container-site { padding-inline: 5rem; } }
 
 .section       { padding-block: 5rem; position: relative; }
+.home-deferred-section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
+}
 .section-tight { padding-block: 3rem; }
 .section-wide  { padding-block: 7rem; }
 

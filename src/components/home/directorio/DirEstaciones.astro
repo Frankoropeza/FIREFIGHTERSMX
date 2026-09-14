@@ -6,7 +6,7 @@ const estados = await estadosConEstaciones();
 const tipos = await tiposPresentes();
 const destacados = ['ciudad-de-mexico', 'estado-de-mexico', 'jalisco', 'nuevo-leon', 'guanajuato', 'puebla'].map((s) => estados.find((e) => e.slug === s)!).filter(Boolean);
 ---
-<section class="section" style="background:#040A12" aria-labelledby="est-heading">
+<section class="section home-deferred-section" style="background:#040A12" aria-labelledby="est-heading">
   <div class="container-site grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-12 lg:gap-20 items-center">
     <div>
       <span class="section-eyebrow mb-4 inline-flex">Directorio de estaciones</span>
