@@ -31,7 +31,7 @@ Una especificación bien hecha ata cada partida a su norma, con todo y edición.
 | Cuidado e inspección del traje | NFPA 1850 (absorbe la 1851) |
 | Equipo de respiración autónoma (SCBA) | NFPA 1970 (absorbe la 1981) |
 | Traje forestal | NFPA 1950 |
-| Extintores portátiles | NOM-100-SCFI / NOM-106-SCFI |
+| Extintores portátiles | NOM-100 a NOM-103-STPS-1994 / NOM-154-SCFI-2005 |
 | Prevención en centros de trabajo | NOM-002-STPS-2010 |
 
 Nombrar la norma, y su año, es la forma más simple de cerrarle la puerta a productos "equivalentes" que llegan sin certificación válida. Un detalle de actualidad: desde 2024 el conjunto estructural y el SCBA se certifican bajo NFPA 1970, así que conviene redactar con esa referencia y no con las normas que quedaron absorbidas.

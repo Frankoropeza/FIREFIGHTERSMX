@@ -25,7 +25,7 @@ El error más común que veo es elegir por marca o por precio antes de tener cla
 | Cuidado del traje | NFPA 1850 (antes 1851) | Inspección, lavado y reparación del EPP |
 | SCBA (respiración) | NFPA 1970 (antes 1981) | Autonomía respiratoria en atmósferas IDLH |
 | Traje forestal | NFPA 1950 | Incendio de vegetación, jornadas largas |
-| Extintores | NOM-100-SCFI | Equipo portátil contra incendio |
+| Extintores | NOM-100 a NOM-103-STPS-1994 | Equipo portátil contra incendio |
 | Centro de trabajo | NOM-002-STPS-2010 | Prevención y combate en industria |
 
 Si te quedas con una sola idea de todo este artículo, que sea esta: primero la norma, luego la marca y al final el precio. En ese orden.

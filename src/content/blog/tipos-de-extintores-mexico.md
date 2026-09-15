@@ -8,7 +8,7 @@ category: "Extintores"
 tags: ["extintores", "NOM-100", "clases de fuego", "protección civil"]
 image:
   url: "/images/categorias/extintores.avif"
-  alt: "Extintores certificados NOM-100-SCFI — tipos y clasificación para México"
+  alt: "Extintores portátiles — tipos y clasificación por clase de fuego en México"
 ---
 
 Hay un detalle que casi nadie revisa hasta que es tarde: usar el extintor equivocado puede empeorar el fuego. Echarle agua a un tablero eléctrico energizado, o polvo químico a una freidora, no apaga nada; en el mejor de los casos no sirve, y en el peor convierte un susto en una emergencia. Por eso, antes de comprar un extintor, hay que entender contra qué fuego lo vas a usar.
@@ -29,7 +29,7 @@ La idea es simple: identifica qué se quema en tu espacio y elige el extintor qu
 
 ## Extintor de agua (Clase A)
 
-El más económico para fuegos de sólidos. Apaga bien madera, papel o textiles, pero hay una regla que no se rompe: **nunca en fuego eléctrico**, porque el agua conduce. Su capacidad típica es de 9 litros y pide revisión semestral conforme a la NOM-106-SCFI.
+El más económico para fuegos de sólidos. Apaga bien madera, papel o textiles, pero hay una regla que no se rompe: **nunca en fuego eléctrico**, porque el agua conduce. Su capacidad típica es de 9 litros y, como cualquier extintor, requiere revisión mensual y mantenimiento anual.
 
 ## Extintor de polvo químico seco (PQS) — Clase ABC
 
@@ -56,14 +56,17 @@ Específico para cocinas industriales. Usa un agente químico húmedo (acetato d
 | Norma | Aplica a |
 |---|---|
 | NOM-002-STPS-2010 | Centros de trabajo — prevención y combate de incendios |
-| NOM-100-SCFI | Seguridad en extintores portátiles |
-| NOM-106-SCFI | Mantenimiento y recarga de extintores |
+| NOM-100-STPS-1994 | Extintores a base de polvo químico seco con presión contenida |
+| NOM-101-STPS-1994 | Extintores a base de espuma química |
+| NOM-102-STPS-1994 | Extintores a base de bióxido de carbono (recipientes) |
+| NOM-103-STPS-1994 | Extintores a base de agua con presión contenida |
+| NOM-154-SCFI-2005 | Servicio de mantenimiento y recarga de extintores |
 | NFPA 10 | Standard for Portable Fire Extinguishers |
 
 Si tu empresa cae bajo la NOM-002-STPS, conviene leer también [la guía completa de esa norma](/blog/nom-002-stps-guia-completa), porque define cuántos extintores necesitas y a qué distancia.
 
 ## ¿Cada cuándo se revisan?
 
-Un extintor sin mantenimiento es decoración. El ritmo correcto es una inspección visual mensual (presión, pasador de seguridad, etiqueta vigente), una revisión semestral por técnico certificado bajo la NOM-106-SCFI, y recarga anual o inmediatamente después de cualquier uso, por mínimo que haya sido. Que se vea lleno no significa que sirva.
+Un extintor sin mantenimiento es decoración. El ritmo que marca la norma es una inspección visual mensual (presión, pasador de seguridad, etiqueta vigente) conforme a la NOM-002-STPS-2010, mantenimiento anual por un prestador que cumpla la NOM-154-SCFI-2005, y recarga inmediatamente después de cualquier uso, por mínimo que haya sido. Que se vea lleno no significa que sirva.
 
 ¿Necesitas mantenimiento o adquisición de extintores certificados? [Pide una cotización sin costo](/cotizacion) y te respondemos en menos de 2 horas, o [escríbenos](/contacto) si quieres asesoría sobre qué agente te conviene.

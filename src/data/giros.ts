@@ -167,7 +167,7 @@ export const giros: Giro[] = [
       'Empresas de venta y mantenimiento, recarga de extintores y prueba hidrostática, con extintores nuevos, extintores portátiles y móviles: polvo químico seco ABC, CO2, agua, espuma, agentes limpios y tipo K. Muchas manejan además mangueras contra incendio, detectores de humo, sistemas de detección, alarmas, señalización, porta extintores, herrajes contra incendio y equipo de seguridad.',
       'El giro es nacional: el directorio lista empresas en los 32 estados, la CDMX incluida. Al comparar productos y servicios conviene identificar si la empresa es fabricante o distribuidor, pedir asesoría sobre protección contra incendios y separar extintores portátiles, sistemas fijos de supresión y mantenimiento. Las recargas certificadas y los estándares de calidad se acreditan con documento, no de palabra: la norma mexicana NOM-154-SCFI-2005 y la NOM-002-STPS-2010 delimitan qué servicio aplica a la seguridad contra incendios del inmueble.',
     ],
-    normas: ['NOM-154-SCFI-2005', 'NOM-002-STPS-2010', 'NOM-100-SCFI-1994', 'NFPA 10'],
+    normas: ['NOM-154-SCFI-2005', 'NOM-002-STPS-2010', 'NOM-100-STPS-1994', 'NFPA 10'],
     especialidades: {
       'recarga-y-mantenimiento': 'Recarga y mantenimiento',
       'venta-de-extintores': 'Venta de extintores',

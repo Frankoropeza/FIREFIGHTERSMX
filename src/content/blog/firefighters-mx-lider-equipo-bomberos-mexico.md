@@ -51,7 +51,7 @@ Es fácil decir "somos confiables". Lo difícil, y lo que de verdad importa, es 
 | Trajes estructurales | NFPA 1970 / cuidado NFPA 1850 |
 | Equipos SCBA | NFPA 1970 |
 | Trajes forestales | NFPA 1950 |
-| Extintores portátiles | NOM-100-SCFI / NOM-106-SCFI |
+| Extintores portátiles | NOM-100 a NOM-103-STPS-1994 / NOM-154-SCFI-2005 |
 | Centros de trabajo | NOM-002-STPS-2010 |
 
 El detalle completo está en la sección de [certificaciones](/certificaciones).
