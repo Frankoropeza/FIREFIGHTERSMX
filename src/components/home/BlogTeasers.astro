@@ -10,7 +10,7 @@ const curatedIds = ['tipos-de-extintores-mexico', 'nom-002-stps-guia-completa', 
 const curatedPosts = curatedIds.map((id) => allPosts.find((post) => post.id === id)).filter((post) => post !== undefined);
 const posts = [...curatedPosts, ...allPosts.filter((post) => !curatedPosts.some((curated) => curated.id === post.id))].slice(0, 4);
 
-const fmt = new Intl.DateTimeFormat('es-MX', { day: 'numeric', month: 'long', year: 'numeric' });
+const fmt = new Intl.DateTimeFormat('es-MX', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
 ---
 
 <section class="section home-deferred-section" style="background:#040A12" aria-labelledby="blog-title">

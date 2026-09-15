@@ -1,6 +1,6 @@
 ---
 title: "Tipos de extintores en México: guía completa por clase de fuego"
-description: "Qué extintor usar según la clase de fuego y la NOM-100-SCFI: agua, PQS, CO₂, espuma, agente limpio y clase K. Guía clara para elegir bien en México."
+description: "Qué extintor usar según la clase de fuego: agua, PQS, CO₂, espuma, agente limpio y clase K, con las normas que aplican. Guía clara para elegir bien en México."
 pubDate: 2026-01-15
 updatedDate: 2026-06-10
 author: "Ing. Marco García"

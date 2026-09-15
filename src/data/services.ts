@@ -114,7 +114,7 @@ export const services: Service[] = [
   },
   {
     slug: 'instalacion-sistemas-ci',
-    title: 'Instalación de Sistemas CI',
+    title: 'Instalación de Sistemas Contra Incendio',
     norm: 'NFPA 13 · 72 · 2001',
     description: 'Diseño e instalación de sistemas contra incendio: rociadores NFPA 13, detección y alarma NFPA 72, supresión FM-200/Novec. Memoria de cálculo y llave en mano.',
     shortDesc: 'Rociadores, detección y alarma, y agentes limpios — proyecto llave en mano.',
