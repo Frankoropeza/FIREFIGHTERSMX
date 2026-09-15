@@ -1,0 +1,89 @@
+---
+// /directorio/ — sección del directorio nacional (antes era la portada, 2026-09-04 → 2026-09-15). Orden: buscar → giros → estados →
+// dos lados → estaciones → guías → marcas → normativa → blog → FAQ → CTA.
+import BaseLayout from '@layouts/BaseLayout.astro';
+import QuickLinksBar from '@components/common/QuickLinksBar.astro';
+import DirHero from '@components/home/directorio/DirHero.astro';
+import DirGiros from '@components/home/directorio/DirGiros.astro';
+import DirEstados from '@components/home/directorio/DirEstados.astro';
+import DirDosLados from '@components/home/directorio/DirDosLados.astro';
+import DirEstaciones from '@components/home/directorio/DirEstaciones.astro';
+import DirFAQ from '@components/home/directorio/DirFAQ.astro';
+import DirCTA from '@components/home/directorio/DirCTA.astro';
+import { SITE, CONTACTO_DIRECTO_ACTIVO, DOMICILIO_VERIFICADO, TELEFONO_ACTIVO } from '@config/site';
+import { directorioFaqs } from '@data/faqs';
+import { giros } from '@data/giros';
+
+
+const seoMeta = {
+  // Título de 3 módulos de keywords, 59c, sin sufijo de marca (Google toma el
+  // nombre del sitio del schema WebSite/Organization). Orden = prioridad:
+  // 1 equipo contra incendios · 2 equipo para bomberos · 3 directorio
+  title: 'Directorio de bomberos y equipo contra incendio en México | Estaciones y empresas',
+  noBrandSuffix: true,
+  // ≤155c, semánticamente ligada al título: repite los dos módulos principales
+  // y abre a las entidades relacionadas (extintores, sistemas CI, EPP, 32 estados)
+  description: 'Directorio nacional de estaciones de bomberos y empresas de equipo contra incendio en México: extintores, hidrantes, sistemas contra incendios, EPP con certificado NFPA y capacitación, en los 32 estados.',
+  canonicalURL: `${SITE.url}/directorio/`,
+};
+
+/* ─── JSON-LD ─────────────────────────────────────────────── */
+// Organization y WebSite los emite SEO.astro / la portada. Aquí sólo lo propio
+// de la sección: migas, la lista de giros y el FAQ del directorio.
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Directorio nacional', item: `${SITE.url}/directorio/` },
+  ],
+};
+const pageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  '@id': `${SITE.url}/directorio/#webpage`,
+  name: seoMeta.title,
+  description: seoMeta.description,
+  url: `${SITE.url}/directorio/`,
+  inLanguage: 'es-MX',
+  isPartOf: { '@id': `${SITE.url}/#website` },
+};
+const directorioSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Directorio nacional de empresas de equipo contra incendio',
+  numberOfItems: giros.length,
+  itemListElement: giros.map((g, i) => ({ '@type': 'ListItem', position: i + 1, name: g.label, url: `${SITE.url}/empresas/${g.slug}/` })),
+};
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: directorioFaqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+const schemas = [breadcrumbSchema, pageSchema, directorioSchema, faqSchema];
+---
+<BaseLayout {...seoMeta} schema={schemas}>
+  {/* 1. Hero: buscador protagonista + stats reales */}
+  <DirHero />
+
+  {/* 2. Accesos rápidos (interlinking global) */}
+  <QuickLinksBar />
+
+  {/* 3. Los 5 giros con conteos */}
+  <DirGiros />
+
+  {/* 5. Los 32 estados por oferta */}
+  <DirEstados />
+
+  {/* 7. Bandas editoriales: quien compra / quien vende */}
+  <DirDosLados />
+
+  {/* 8. Directorio de estaciones (la demanda) */}
+  <DirEstaciones />
+
+  {/* 13. FAQ del directorio */}
+  <DirFAQ />
+
+  {/* 14. Cierre */}
+  <DirCTA />
+</BaseLayout>

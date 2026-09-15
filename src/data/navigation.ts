@@ -145,10 +145,11 @@ export const navigation: { main: NavItem[] } = { main: [
   { label: "Licitaciones", href: "/licitaciones" },
   {
     label: "Directorio",
-    href: "/empresas",
+    href: "/directorio",
     zona: "directorio",
     description: "Empresas del sector y estaciones de bomberos",
     children: [
+      { label: "Portada del directorio", href: "/directorio", description: "Empresas del sector y estaciones de bomberos" },
       {
         label: "Empresas del sector",
         href: "/empresas",

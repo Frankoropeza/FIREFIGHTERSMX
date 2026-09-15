@@ -1,115 +1,155 @@
 ---
-// Home v3 — portal-directorio (2026-09). Orden: buscar → giros → estados →
-// dos lados → estaciones → guías → marcas → normativa → blog → FAQ → CTA.
 import BaseLayout from '@layouts/BaseLayout.astro';
+import HeroPro from '@components/home/HeroPro.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
-import DirHero from '@components/home/directorio/DirHero.astro';
-import DirGiros from '@components/home/directorio/DirGiros.astro';
-import DirEstados from '@components/home/directorio/DirEstados.astro';
-import DirDosLados from '@components/home/directorio/DirDosLados.astro';
-import DirEstaciones from '@components/home/directorio/DirEstaciones.astro';
-import DirGuias from '@components/home/directorio/DirGuias.astro';
-import DirMarcas from '@components/home/directorio/DirMarcas.astro';
+import ProductCards from '@components/home/ProductCards.astro';
+import RiskGuide from '@components/home/RiskGuide.astro';
+import ValueProps from '@components/home/ValueProps.astro';
+import ServicesSection from '@components/home/ServicesSection.astro';
 import NormsTable from '@components/home/NormsTable.astro';
+import ProcessSteps from '@components/home/ProcessSteps.astro';
+import IndustriesSection from '@components/home/IndustriesSection.astro';
+import CoverageSection from '@components/home/CoverageSection.astro';
+import DirectorioSeccion from '@components/home/DirectorioSeccion.astro';
 import BlogTeasers from '@components/home/BlogTeasers.astro';
-import DirFAQ from '@components/home/directorio/DirFAQ.astro';
-import DirCTA from '@components/home/directorio/DirCTA.astro';
-import { SITE, CONTACTO_DIRECTO_ACTIVO, DOMICILIO_VERIFICADO } from '@config/site';
-import { directorioFaqs } from '@data/faqs';
-import { giros } from '@data/giros';
-
+import FAQSection from '@components/home/FAQSection.astro';
+import CTASection from '@components/home/CTASection.astro';
+import { SITE, TELEFONO_ACTIVO, DOMICILIO_VERIFICADO } from '@config/site';
+import { homeFaqs } from '@data/faqs';
+import { services } from '@data/services';
 
 const seoMeta = {
-  // Título de 3 módulos de keywords, 59c, sin sufijo de marca (Google toma el
-  // nombre del sitio del schema WebSite/Organization). Orden = prioridad:
-  // 1 equipo contra incendios · 2 equipo para bomberos · 3 directorio
-  title: 'Directorio de bomberos y equipo contra incendio en México | Estaciones y empresas',
+  // Portada de la tienda (2026-09-15). El directorio vive en /directorio/.
+  title: 'Equipo para Bomberos y Contra Incendio Certificado NFPA | FIREFIGHTERS MX',
   noBrandSuffix: true,
-  // ≤155c, semánticamente ligada al título: repite los dos módulos principales
-  // y abre a las entidades relacionadas (extintores, sistemas CI, EPP, 32 estados)
-  description: 'Directorio nacional de estaciones de bomberos y empresas de equipo contra incendio en México: extintores, hidrantes, sistemas contra incendios, EPP con certificado NFPA y capacitación, en los 32 estados.',
+  description:
+    'Distribuidor autorizado de equipo para bomberos en México: trajes NFPA 1970, SCBA MSA y Dräger, cascos, extintores y sistemas contra incendio. Envíos a los 32 estados.',
   canonicalURL: `${SITE.url}/`,
 };
 
-/* ─── JSON-LD ─────────────────────────────────────────────── */
-const organizationSchema = {
+/* ─── JSON-LD ──────────────────────────────────────────────── */
+const localBusinessSchema = {
   '@context': 'https://schema.org',
-  '@type': 'Organization',
+  '@type': 'LocalBusiness',
   '@id': `${SITE.url}/#business`,
   name: SITE.name,
   alternateName: ['Firefighters MX', 'FFMX', 'FireFighters México'],
   description: SITE.description,
   url: SITE.url,
-  ...(CONTACTO_DIRECTO_ACTIVO ? { telephone: SITE.phoneE164 } : {}),
+  ...(TELEFONO_ACTIVO ? { telephone: SITE.phoneE164 } : {}),
   email: SITE.email,
   image: `${SITE.url}/images/og-default.jpg`,
   areaServed: { '@type': 'Country', name: 'México' },
-  ...(DOMICILIO_VERIFICADO ? { address: { '@type': 'PostalAddress', streetAddress: SITE.address.street, addressLocality: `${SITE.address.colonia}, ${SITE.address.delegacion}`, postalCode: SITE.address.postalCode, addressCountry: SITE.address.country } } : {}),
-  knowsAbout: ['Equipo para bomberos', 'Extintores NOM-154', 'Sistemas contra incendio NFPA 13', 'Detección NFPA 72', 'Capacitación de brigadas NOM-002-STPS', 'NFPA 1970', 'NFPA 1990', 'Licitaciones de equipo contra incendio'],
+  openingHours: ['Mo-Fr 08:00-18:00', 'Sa 09:00-14:00'],
+  ...(DOMICILIO_VERIFICADO
+    ? {
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: SITE.address.street,
+          addressLocality: `${SITE.address.colonia}, ${SITE.address.delegacion}`,
+          addressRegion: 'CDMX',
+          postalCode: SITE.address.postalCode,
+          addressCountry: SITE.address.country,
+        },
+      }
+    : {}),
+  knowsAbout: [
+    'NFPA 1970', 'NFPA 1950', 'NFPA 1850', 'NFPA 1990', 'NFPA 10', 'NFPA 13', 'NFPA 72',
+    'NOM-002-STPS-2010', 'NOM-154-SCFI-2005', 'NOM-026-STPS-2008', 'LAASSP',
+    'Equipo para bomberos', 'Trajes estructurales NFPA', 'SCBA', 'Cascos para bomberos',
+    'Herramientas de rescate vehicular', 'Equipos HAZMAT', 'Extintores', 'Sistemas contra incendio',
+    'Brigadas industriales', 'Equipo ARFF', 'Licitaciones de equipo contra incendio',
+  ],
 };
+
 const webSiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   '@id': `${SITE.url}/#website`,
   name: SITE.name,
   url: SITE.url,
-  description: seoMeta.description,
+  description: SITE.description,
   inLanguage: 'es-MX',
   publisher: { '@id': `${SITE.url}/#business` },
+  // La búsqueda del sitio es la del directorio de empresas.
   potentialAction: {
     '@type': 'SearchAction',
     target: { '@type': 'EntryPoint', urlTemplate: `${SITE.url}/empresas/?q={search_term_string}` },
     'query-input': 'required name=search_term_string',
   },
 };
-const directorioSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'ItemList',
-  name: 'Directorio nacional de empresas de equipo contra incendio',
-  numberOfItems: giros.length,
-  itemListElement: giros.map((g, i) => ({ '@type': 'ListItem', position: i + 1, name: g.label, url: `${SITE.url}/empresas/${g.slug}/` })),
-};
+
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: directorioFaqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  mainEntity: homeFaqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
 };
-const schemas = [organizationSchema, webSiteSchema, directorioSchema, faqSchema];
----
-<BaseLayout {...seoMeta} schema={schemas}>
-  {/* 1. Hero: buscador protagonista + stats reales */}
-  <DirHero />
 
-  {/* 2. Accesos rápidos (interlinking global) */}
+const servicesSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Servicios de protección contra incendio',
+  itemListElement: services.map((s, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    item: {
+      '@type': 'Service',
+      name: s.title,
+      description: s.description,
+      url: `${SITE.url}${s.href}`,
+      provider: { '@id': `${SITE.url}/#business` },
+      areaServed: { '@type': 'Country', name: 'México' },
+    },
+  })),
+};
+
+const schemas = [localBusinessSchema, webSiteSchema, faqSchema, servicesSchema];
+---
+
+<BaseLayout {...seoMeta} schema={schemas}>
+  {/* 1. Hero: propuesta de valor + stats + CTAs */}
+  <HeroPro />
+
+  {/* 2. Accesos rápidos (botones a secciones clave) */}
   <QuickLinksBar />
 
-  {/* 3. Los 5 giros con conteos */}
-  <DirGiros />
+  {/* 3. Catálogo por categorías (intención de compra) */}
+  <ProductCards />
 
-  {/* 5. Los 32 estados por oferta */}
-  <DirEstados />
+  {/* 4. Guía de selección por nivel de riesgo (SEO + autoridad técnica) */}
+  <RiskGuide />
 
-  {/* 7. Bandas editoriales: quien compra / quien vende */}
-  <DirDosLados />
+  {/* 5. Por qué elegirnos (diferenciadores) */}
+  <ValueProps />
 
-  {/* 8. Directorio de estaciones (la demanda) */}
-  <DirEstaciones />
+  {/* 6. Servicios profesionales 01–06 */}
+  <ServicesSection />
 
-  {/* 9. Guías de compra (el catálogo, reencuadrado) */}
-  <DirGuias />
-
-  {/* 10. Fabricantes de referencia */}
-  <DirMarcas />
-
-  {/* 11. Normativa NOM / NFPA */}
+  {/* 7. Respaldo normativo NOM/NFPA (tabla SEO) */}
   <NormsTable />
 
-  {/* 12. Blog técnico */}
+  {/* 8. Proceso de consulta a entrega */}
+  <ProcessSteps />
+
+  {/* 9. Sectores que atendemos */}
+  <IndustriesSection />
+
+  {/* 10. Cobertura nacional y logística */}
+  <CoverageSection />
+
+  {/* 11. Sección del sitio: directorio nacional (terceros) */}
+  <DirectorioSeccion />
+
+  {/* 12. Blog técnico (frescura + internal linking) */}
   <BlogTeasers />
 
-  {/* 13. FAQ del directorio */}
-  <DirFAQ />
+  {/* 13. FAQ + formulario de cotización */}
+  <FAQSection />
 
-  {/* 14. Cierre */}
-  <DirCTA />
+  {/* 14. CTA final de conversión */}
+  <CTASection />
 </BaseLayout>

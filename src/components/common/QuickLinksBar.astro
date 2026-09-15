@@ -22,7 +22,7 @@ interface QuickLink {
 // Dos juegos de accesos: la tienda (FIREFIGHTERS MX como vendedor) y el
 // directorio (registros de terceros). La zona sale de la ruta actual.
 const rutaActual = Astro.url.pathname;
-const esDirectorio = rutaActual === '/' || ['/empresas', '/estaciones', '/cobertura'].some((p) => rutaActual.startsWith(p));
+const esDirectorio = ['/directorio', '/empresas', '/estaciones', '/cobertura'].some((p) => rutaActual.startsWith(p));
 
 const poolsTienda: Record<'top' | 'footer', QuickLink[]> = {
   top: [

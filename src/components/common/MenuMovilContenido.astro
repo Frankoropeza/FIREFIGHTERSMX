@@ -9,7 +9,7 @@
   están en la navegación de escritorio, que sí viaja en el HTML.
 */
 import { navigation } from '@data/navigation';
-import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl } from '@config/site';
+import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl, TELEFONO_ACTIVO } from '@config/site';
 
 /*
   El parcial es el mismo para las 2,711 páginas, así que no puede saber
@@ -151,7 +151,7 @@ import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl } from '@config/site';
 
   <!-- Info de contacto al pie del menú -->
   <div class="mt-5 pt-4 flex flex-col gap-2" style="border-top:1px solid rgba(74,117,153,0.15)">
-    {CONTACTO_DIRECTO_ACTIVO && (
+    {TELEFONO_ACTIVO && (
 <a
       href={`tel:${SITE.phoneE164}`}
       class="flex items-center gap-2 text-sm py-1"

@@ -1,5 +1,5 @@
 ---
-import { SITE, CONTACTO_DIRECTO_ACTIVO, DOMICILIO_VERIFICADO, REDES_VERIFICADAS, whatsappUrl } from '@config/site';
+import { SITE, CONTACTO_DIRECTO_ACTIVO, DOMICILIO_VERIFICADO, REDES_VERIFICADAS, whatsappUrl, TELEFONO_ACTIVO } from '@config/site';
 import { estados } from '@data/estados';
 
 const year = new Date().getFullYear();
@@ -8,6 +8,7 @@ type Link = [label: string, href: string];
 
 // ── PISO 1 ────────────────────────────────────────────────────────────
 const directorio: Link[] = [
+  ['Portada del directorio nacional',     '/directorio'],
   ['Venta de equipo para bomberos y EPP', '/empresas/venta-equipo'],
   ['Equipos contra incendios',            '/empresas/equipos-contra-incendio'],
   ['Extintores: venta y recarga',         '/empresas/extintores'],
@@ -168,7 +169,7 @@ const redes = [
         </p>
 
         <div class="flex flex-col gap-2.5 text-sm text-[var(--forge-200)]">
-          {CONTACTO_DIRECTO_ACTIVO && (
+          {TELEFONO_ACTIVO && (
             <a href={`tel:${SITE.phoneE164}`} class="flex items-center gap-2.5 hover:text-[var(--ember-400)]">
               <svg class="w-4 h-4 shrink-0 text-[var(--ember-500)]" fill="none" viewBox="0 0 24 24"
                    stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -302,7 +303,7 @@ const redes = [
     </div>
 
     <!-- ══ PISO 3: cobertura por estado ════════════════════════════ -->
-    <nav class="f-floor f-floor--divided py-10" aria-labelledby="f-cobertura">
+    <nav class="f-floor f-floor--divided f-floor--estados py-10" aria-labelledby="f-cobertura">
       <div class="f-floor__intro">
         <p id="f-cobertura" class="f-heading">Directorio por estado</p>
         <p class="text-sm leading-relaxed text-[var(--forge-300)]">
@@ -359,6 +360,8 @@ const redes = [
   .f-floor__intro { grid-column: 1 / -1; }
   @media (min-width: 1024px) {
     .f-floor__intro { grid-column: span 1; }
+    /* Intro + 4 columnas de estados: 5 pistas (antes la cuarta caía a otra fila) */
+    .f-floor--estados { grid-template-columns: 1.3fr repeat(4, minmax(0, 1fr)); }
   }
 
   /* Encabezados de sección */

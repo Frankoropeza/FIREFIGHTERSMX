@@ -21,8 +21,8 @@
  *    blog (Ing. Marco García, Ing. Carlos Mendoza, Lic. Ana Ramírez). El stock y
  *    la entrega en 24–48 h ya los había confirmado el 2026-09-05.
  *
- *  · DIRECTORIO — registros de terceros: /empresas/, /estaciones/, /cobertura/
- *    y, mientras la portada siga siendo el portal del directorio, «/». Aquí el
+ *  · DIRECTORIO — registros de terceros, sección propia desde 2026-09-15:
+ *    /directorio/, /empresas/, /estaciones/ y /cobertura/. Aquí el
  *    sitio no vende nada: describe empresas y estaciones ajenas. Cualquier
  *    afirmación comercial en primera persona en esta zona es una mezcla de las
  *    dos partes y se rechaza.
@@ -42,10 +42,11 @@ const TIENDA = [
   '/licitaciones/', '/cotizacion/', '/distribuidores/', '/certificaciones/',
   '/marcas/', '/industrias/', '/contacto/', '/blog/',
 ];
-const DIRECTORIO = ['/empresas/', '/estaciones/', '/cobertura/'];
+// La portada «/» es la tienda (2026-09-15).
+const DIRECTORIO = ['/directorio/', '/empresas/', '/estaciones/', '/cobertura/'];
 
 const zonaDe = (ruta) => {
-  if (ruta === '/') return 'directorio';
+  if (ruta === '/') return 'tienda';
   if (DIRECTORIO.some((p) => ruta.startsWith(p))) return 'directorio';
   if (TIENDA.some((p) => ruta.startsWith(p))) return 'tienda';
   return 'neutral';

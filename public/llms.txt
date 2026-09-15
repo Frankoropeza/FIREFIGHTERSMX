@@ -40,6 +40,7 @@ No hay lista de precios publicada: cada partida se cotiza por escrito.
 
 ## El directorio nacional (terceros)
 
+- Portada de la sección: https://firefighters.mx/directorio/
 - Empresas del sector: https://firefighters.mx/empresas/
 - Empresas por estado: https://firefighters.mx/cobertura/
 - Estaciones de bomberos: https://firefighters.mx/estaciones/

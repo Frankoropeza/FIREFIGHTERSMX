@@ -1,0 +1,36 @@
+---
+import { giros } from '@data/giros';
+import { todasLasEmpresas, conteoPorEstado } from '@lib/empresas';
+import { totalEstaciones } from '@lib/estaciones';
+
+const totalEmpresas = (await todasLasEmpresas()).length;
+const estaciones = await totalEstaciones();
+const estadosConEmpresas = (await conteoPorEstado()).filter((e) => e.total > 0).length;
+---
+
+<section class="section home-deferred-section" style="background:#070E1A" aria-labelledby="dir-sec-heading">
+  <div class="container-site grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-12 lg:gap-20 items-start">
+    <div>
+      <span class="section-eyebrow mb-4 inline-flex">Sección · Directorio nacional</span>
+      <h2 id="dir-sec-heading" class="font-display font-bold mb-5" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Directorio nacional de bomberos<br/><span style="color:#F75000">y empresas del sector.</span></h2>
+      <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">Además de la tienda, FIREFIGHTERS MX publica un directorio nacional con {estaciones} estaciones de bomberos y {totalEmpresas} empresas del sector en {estadosConEmpresas} estados. Son registros de terceros, organizados por giro, estado y municipio, cada uno con su fuente.</p>
+      <p class="text-sm leading-[1.9] mb-8" style="color:#94A3B8">El directorio es una sección independiente del catálogo: las condiciones comerciales de cada empresa se confirman directamente con ella.</p>
+      <div class="flex flex-wrap gap-3">
+        <a href="/directorio/" class="btn btn-primary">Ir al directorio</a>
+        <a href="/estaciones/" class="text-sm font-display font-semibold uppercase tracking-wider self-center" style="color:#FF8F57">Estaciones de bomberos →</a>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
+      {giros.map((g) => (
+        <a href={`/empresas/${g.slug}/`} class="grid-cell ledger-cell flex flex-col gap-1 p-5" style="background:#040A12">
+          <span class="font-display font-semibold text-base leading-tight" style="color:#FFFFFF">{g.labelCorto}</span>
+          <span class="text-xs leading-relaxed" style="color:#64748B">{g.claim}</span>
+        </a>
+      ))}
+      <a href="/cobertura/" class="grid-cell ledger-cell flex flex-col gap-1 p-5" style="background:#040A12">
+        <span class="font-display font-semibold text-base leading-tight" style="color:#FFFFFF">Empresas por estado</span>
+        <span class="text-xs leading-relaxed" style="color:#64748B">Consulta el directorio por entidad.</span>
+      </a>
+    </div>
+  </div>
+</section>

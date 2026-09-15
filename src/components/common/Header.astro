@@ -1,6 +1,6 @@
 ---
 import { navigation } from '@data/navigation';
-import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl } from '@config/site';
+import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl, TELEFONO_ACTIVO } from '@config/site';
 import TopBar from '@components/common/TopBar.astro';
 
 const pathname = Astro.url.pathname;
@@ -10,7 +10,7 @@ const isActive = (href: string) => {
   const base = href.replace(/\/$/, '');
   return pathname === base || pathname.startsWith(`${base}/`);
 };
-const ZONA_DIRECTORIO = ['/empresas', '/estaciones', '/cobertura'];
+const ZONA_DIRECTORIO = ['/directorio', '/empresas', '/estaciones', '/cobertura'];
 const activoItem = (item: { href: string; zona?: string }) =>
   item.zona === 'directorio' ? ZONA_DIRECTORIO.some((p) => isActive(p)) : isActive(item.href);
 ---
@@ -163,7 +163,7 @@ const activoItem = (item: { href: string; zona?: string }) =>
 
       <!-- ── ACCIONES DESKTOP ─────────────────────────────────────── -->
       <div class="flex items-center gap-2">
-        {CONTACTO_DIRECTO_ACTIVO && (
+        {TELEFONO_ACTIVO && (
 <a
           href={`tel:${SITE.phoneE164}`}
           class="hidden 2xl:flex items-center gap-1.5 text-xs font-medium px-3 py-2 border border-[var(--color-border)] rounded-sm hover:border-[var(--ember-500)]"

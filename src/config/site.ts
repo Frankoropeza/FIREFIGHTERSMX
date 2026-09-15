@@ -6,15 +6,14 @@ export const SITE = {
   tagline:     'Venta y distribución de equipo para bomberos y equipo contra incendio en México',
   description: 'Distribuidor de equipo para bomberos y equipo contra incendio en México: trajes, SCBA, cascos, extintores y sistemas contra incendio, con envíos a los 32 estados. Incluye el directorio nacional de empresas y estaciones de bomberos.',
   url:         'https://firefighters.mx',
-  // ⚠️ Teléfono / WhatsApp SIN VERIFICAR — ver CONTACTO_DIRECTO_ACTIVO abajo.
-  // Los valores anteriores ('55 1234-5678' / '+525512345678' / '525512345678') eran
-  // el placeholder del template, no un número real. Se vacían para no publicar
-  // contacto fabricado (regla dura OrigenLab: cero contenido fabricado).
-  phone:       '',
-  phoneE164:   '',
+  // Teléfono confirmado por Frank Oropeza el 2026-09-15 (ver TELEFONO_ACTIVO).
+  // WhatsApp sigue sin confirmar (ver CONTACTO_DIRECTO_ACTIVO). El valor de la
+  // plantilla ('55 1234-5678') era falso y no debe volver.
+  phone:       '55 1005 4323',
+  phoneE164:   '+525510054323',
   email:       'firefightersmx50@gmail.com',
-  whatsapp:    '',
-  hours:       'Lun–Vie 8am–6pm · Sáb 9am–2pm',
+  whatsapp:    '', // pendiente: confirmar si el 55 1005 4323 atiende WhatsApp
+  hours:       'Lun–Vie 8–18 h · Sáb 9–14 h', // confirmado por Frank 2026-09-15
   // Domicilio confirmado por Frank Oropeza el 2026-09-15 (oficinas y operación).
   // El valor de la plantilla ('Av. Baja California 255, Condesa') era falso y
   // sigue bloqueado por scripts/verificar-claims.mjs (F-01).
@@ -54,6 +53,12 @@ export const SITE = {
  * (Mismo patrón ya probado en FIESTAENCASA.)
  */
 export const CONTACTO_DIRECTO_ACTIVO = false;
+
+/**
+ * Teléfono publicado (texto visible, enlaces `tel:` y `telephone` en JSON-LD).
+ * Independiente del WhatsApp: el número se confirmó el 2026-09-15.
+ */
+export const TELEFONO_ACTIVO = true;
 
 /**
  * ⚠️ INTERRUPTOR DE DOMICILIO
@@ -99,5 +104,5 @@ export function contactoUrl(asunto: string, msg: string): string {
 
 /** Link de teléfono (o mailto si no hay contacto directo) */
 export function telUrl(): string {
-  return CONTACTO_DIRECTO_ACTIVO ? `tel:${SITE.phoneE164}` : `mailto:${SITE.email}`;
+  return TELEFONO_ACTIVO ? `tel:${SITE.phoneE164}` : `mailto:${SITE.email}`;
 }

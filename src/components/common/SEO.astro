@@ -1,5 +1,5 @@
 ---
-import { SITE, CONTACTO_DIRECTO_ACTIVO, DOMICILIO_VERIFICADO, REDES_VERIFICADAS } from '@config/site';
+import { SITE, CONTACTO_DIRECTO_ACTIVO, DOMICILIO_VERIFICADO, REDES_VERIFICADAS, TELEFONO_ACTIVO } from '@config/site';
 export interface Props {
   title: string;
   description: string;
@@ -90,7 +90,7 @@ const orgSchema = {
     : {}),
   contactPoint: {
     '@type': 'ContactPoint',
-    ...(CONTACTO_DIRECTO_ACTIVO ? { telephone: SITE.phoneE164 } : {}),
+    ...(TELEFONO_ACTIVO ? { telephone: SITE.phoneE164 } : {}),
     email: SITE.email,
     contactType: 'customer service',
     areaServed: 'MX',
