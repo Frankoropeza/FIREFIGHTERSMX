@@ -1,5 +1,6 @@
 ---
 title: "Junta de aclaraciones en licitaciones de equipo CI: cómo preparar las preguntas que realmente importan"
+seoTitle: "Junta de aclaraciones en licitaciones de equipo contra incendio"
 description: "Cómo usar la junta de aclaraciones en CompraNet, PEMEX y CFE para corregir especificaciones técnicas de equipo CI antes de presentar propuesta."
 pubDate: 2026-03-21
 updatedDate: 2026-06-25

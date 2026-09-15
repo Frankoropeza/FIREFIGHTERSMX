@@ -1,5 +1,6 @@
 ---
 title: "Herramientas Hidráulicas de Rescate: Cómo el Acero Moderno Cambió las Reglas de la Excarcelación"
+seoTitle: "Herramientas hidráulicas de rescate: Holmatro, Hurst y Weber"
 description: "Guía técnica de herramientas hidráulicas para rescate vehicular: comparativa Holmatro, Hurst Jaws of Life y Weber Rescue Systems en México 2026."
 pubDate: 2026-06-23
 updatedDate: 2026-06-23

@@ -442,11 +442,15 @@ const breadcrumbSchema = {
 /* Sin sufijo de marca embebido: lo anexa SEO.astro sólo si el título
    sigue cabiendo en 70 caracteres. Si no cabe, se cae también la marca
    del fabricante antes que el nombre del producto. */
-const seoTituloLargo = `${product.title}${product.norm ? ` ${product.norm}` : ''} — ${product.brand ?? product.category}`;
+const seoNorm = product.norm
+  ?.split(' · ')
+  .filter((part) => !product.title.toLocaleLowerCase().includes(part.toLocaleLowerCase()))
+  .join(' · ');
+const seoTituloLargo = `${product.title}${seoNorm ? ` ${seoNorm}` : ''} — ${product.brand ?? product.category}`;
 const seoTitle =
   seoTituloLargo.length <= 70
     ? seoTituloLargo
-    : `${product.title}${product.norm ? ` ${product.norm}` : ''}`;
+    : `${product.title}${seoNorm ? ` ${seoNorm}` : ''}`;
 const seoDesc  = `${product.description} Distribuidor autorizado ${product.brand ?? ''} en México. ${product.norm ?? ''} certificado con documentación completa para licitación.`.replace(/\s+/g, ' ').trim().slice(0, 158);
 ---
 

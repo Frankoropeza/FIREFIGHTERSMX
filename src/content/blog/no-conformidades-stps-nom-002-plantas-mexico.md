@@ -1,5 +1,6 @@
 ---
 title: "Las 8 no-conformidades más frecuentes que encuentra la STPS en plantas mexicanas"
+seoTitle: "NOM-002-STPS: las 8 no conformidades más frecuentes"
 description: "Inspector STPS llega sin avisar. Estas 8 fallas NOM-002 son las que más multas generan en plantas de Monterrey, Querétaro y el Bajío."
 pubDate: 2026-03-19
 updatedDate: 2026-06-25

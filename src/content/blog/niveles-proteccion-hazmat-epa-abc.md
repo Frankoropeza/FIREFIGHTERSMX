@@ -1,5 +1,6 @@
 ---
 title: "Niveles de Protección HAZMAT según la EPA: Cómo elegir A, B, C o D sin cometer el error que cuesta vidas"
+seoTitle: "Niveles de protección HAZMAT A, B, C y D: cómo elegir"
 description: "Guía de campo para elegir el nivel de protección HAZMAT correcto: cuándo usar A, B o C según el agente, la concentración y el rol del respondedor."
 pubDate: 2026-03-01
 updatedDate: 2026-06-25

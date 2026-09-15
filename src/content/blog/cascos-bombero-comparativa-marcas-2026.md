@@ -1,5 +1,6 @@
 ---
 title: "Cascos para Bombero: Por qué la Marca No es lo Primero en lo que Debes Fijarte"
+seoTitle: "Cascos para bomberos: comparativa de marcas 2026"
 description: "Guía técnica para elegir casco de bombero NFPA 1971: norma NFPA 1970, tipos europeo/americano y comparativa MSA Gallet, Bullard, Cairns en México 2026."
 pubDate: 2026-06-23
 updatedDate: 2026-06-23

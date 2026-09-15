@@ -1,5 +1,6 @@
 ---
 title: "Fichas técnicas para CompraNet: los errores que descalifican una propuesta de equipo CI"
+seoTitle: "Fichas técnicas para CompraNet de equipo contra incendio"
 description: "Los errores en fichas técnicas que descartan propuestas de equipo contra incendio en CompraNet, PEMEX y CFE. Guía para licitantes en México."
 pubDate: 2026-03-21
 updatedDate: 2026-06-25

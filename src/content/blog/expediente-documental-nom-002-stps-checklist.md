@@ -1,5 +1,6 @@
 ---
 title: "Expediente documental NOM-002: qué papeles necesitas tener listos antes de que llegue el inspector"
+seoTitle: "Expediente NOM-002-STPS: checklist de documentos"
 description: "Checklist del expediente NOM-002-STPS que revisa la STPS en plantas mexicanas. Qué documentos son obligatorios y cómo organizarlos antes de la inspección."
 pubDate: 2026-03-19
 updatedDate: 2026-06-25

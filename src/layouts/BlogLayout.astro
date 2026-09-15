@@ -9,7 +9,7 @@ export interface Props {
 }
 
 const { post } = Astro.props;
-const { title, description, pubDate, updatedDate, author, category, tags, image } = post.data;
+const { title, seoTitle, description, pubDate, updatedDate, author, category, tags, image } = post.data;
 
 const readingTime = Math.ceil((post.body ?? '').split(' ').length / 200);
 
@@ -33,7 +33,7 @@ const articleSchema = {
 {/* Sin sufijo fijo en el title: los titulares de blog ya son largos y el
     sufijo sólo provocaba que Google truncara. SEO.astro lo anexa si cabe. */}
 <BaseLayout
-  title={title}
+  title={seoTitle ?? title}
   description={description}
   ogType="article"
   ogImage={image?.url}

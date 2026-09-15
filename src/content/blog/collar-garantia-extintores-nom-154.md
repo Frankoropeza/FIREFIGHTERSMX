@@ -1,5 +1,6 @@
 ---
 title: "Collar de garantía en extintores: qué es, por qué Protección Civil lo exige y qué pasa sin él"
+seoTitle: "Collar de garantía en extintores: qué es y por qué se exige"
 description: "El collar de garantía en extintores no es opcional. Te explicamos qué es, qué exige la NOM-154-SCFI y qué pasa si faltan en una inspección de PC."
 pubDate: 2026-03-17
 updatedDate: 2026-06-25

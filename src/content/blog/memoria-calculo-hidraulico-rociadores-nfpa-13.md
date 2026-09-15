@@ -1,5 +1,6 @@
 ---
 title: "Memoria de cálculo hidráulico para rociadores: qué debe incluir para que tu DRO la apruebe"
+seoTitle: "Memoria de cálculo hidráulico de rociadores NFPA 13"
 description: "Una memoria de cálculo hidráulico incompleta paraliza tu permiso de construcción. Conoce los datos mínimos que exige el DRO para rociadores NFPA 13."
 pubDate: 2026-03-18
 updatedDate: 2026-06-25

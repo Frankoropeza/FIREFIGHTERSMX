@@ -1,5 +1,6 @@
 ---
 title: "Cilindros SCBA: El Error Invisible que Nadie te Advierte al Comprar Fibra de Carbono"
+seoTitle: "Cilindros SCBA: fibra de carbono vs acero"
 description: "Cilindros SCBA fibra de carbono vs acero: TCO a 10 años en MXN, protocolo post-impacto y cuándo elegir cada material según tipo de operación."
 pubDate: 2026-02-15
 updatedDate: 2026-06-25

@@ -1,5 +1,6 @@
 ---
 title: "MSA G1 vs Dräger PSS 7000: Lo que el papel no te dice cuando compras 30 SCBA"
+seoTitle: "MSA G1 vs Dräger PSS 7000: comparativa de SCBA"
 description: "MSA G1 vs Dräger PSS 7000: comparativa real para corporaciones mexicanas. Costo total a 5 años, compatibilidad con equipo mexicano y recomendación por escenario."
 pubDate: 2026-02-15
 updatedDate: 2026-06-25

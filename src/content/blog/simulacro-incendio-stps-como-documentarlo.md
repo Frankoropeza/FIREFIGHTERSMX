@@ -1,5 +1,6 @@
 ---
 title: "Cómo diseñar el simulacro que sí convence a la STPS — sin improvisar en el día"
+seoTitle: "Simulacro de incendio STPS: cómo planearlo y documentarlo"
 description: "Guía práctica para planear y documentar un simulacro de incendio que cumpla NOM-002-STPS y convenza a Protección Civil en planta industrial mexicana."
 pubDate: 2026-03-16
 updatedDate: 2026-06-25

@@ -1,5 +1,6 @@
 ---
 title: "NFPA 13 vs 13R vs 13D: el error de diseño que anula tu seguro de incendio"
+seoTitle: "NFPA 13 vs 13R vs 13D: qué norma de rociadores aplica"
 description: "NFPA 13, 13R o 13D: cuál aplica a tu proyecto, por qué el error más común anula el seguro y qué preguntar antes de aprobar el diseño de rociadores en México."
 pubDate: 2026-03-15
 updatedDate: 2026-06-25

@@ -1,5 +1,6 @@
 ---
 title: "FM-200 vs Novec 1230: la decisión de inversión a 20 años que se toma hoy"
+seoTitle: "FM-200 vs Novec 1230: qué agente limpio elegir"
 description: "FM-200 vs Novec 1230: GWP, Protocolo de Kigali, disponibilidad de recarga en México 2026-2035 y criterios de selección por tipo de industria según NFPA 2001."
 pubDate: 2026-03-15
 updatedDate: 2026-06-25

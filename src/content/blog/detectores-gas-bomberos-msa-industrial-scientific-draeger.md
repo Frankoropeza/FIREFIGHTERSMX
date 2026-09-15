@@ -1,5 +1,6 @@
 ---
 title: "Detectores de Gas para Bomberos: El Equipo que Más se Subestima y Más Vidas Salva"
+seoTitle: "Detector de gas para bomberos y brigadas: guía de compra"
 description: "Guía técnica de detectores multigás para bomberos: gases críticos, sensores y comparativa MSA Altair, Industrial Scientific Ventis y Dräger X-am en México 2026."
 pubDate: 2026-06-23
 updatedDate: 2026-06-23

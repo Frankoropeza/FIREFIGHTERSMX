@@ -1,5 +1,6 @@
 ---
 title: "Detección vs alarma vs supresión: tres sistemas que se confunden y no deben instalarse como si fueran uno"
+seoTitle: "Detección, alarma y supresión de incendios: diferencias"
 description: "Detección, alarma y supresión son sistemas distintos con normas distintas. Confundirlos genera instalaciones que no protegen y que no pasan inspección."
 pubDate: 2026-03-18
 updatedDate: 2026-06-25
