@@ -1,30 +1,30 @@
 ---
 /**
  * Guía de selección por nivel de riesgo — tabla SEO con CTA a diagnóstico.
- * Basada en la clasificación de NOM-002-STPS-2010 y NFPA 1.
+ * Basada en la clasificación del grado de riesgo de incendio de la NOM-002-STPS-2010 (Tabla 1).
  */
 import { whatsappUrl } from '@config/site';
 
 const riskLevels = [
   {
-    nivel: 'Ordinario',
+    nivel: 'Riesgo ordinario',
     color: '#34D399',
-    ejemplos: 'Oficinas, escuelas, consultorios, comercios, hoteles pequeños',
-    minimo: 'Extintores PQS ABC a máx. 23 m de recorrido, señalización NOM-026-STPS, detectores de humo, rutas de evacuación señalizadas',
-    recomendado: 'Brigada básica con DC-3, botiquín, alarma centralizada, lámparas de emergencia',
+    ejemplos: 'Oficinas, escuelas, consultorios, comercios y hoteles pequeños',
+    minimo: 'Un extintor por cada 300 m² con recorrido máximo de 23 m, señalización NOM-026-STPS, rutas de evacuación y simulacros documentados',
+    recomendado: 'Detectores de humo y alarma, brigada básica con constancia DC-3, botiquín y lámparas de emergencia',
   },
   {
-    nivel: 'Moderado',
+    nivel: 'Ordinario con riesgos específicos',
     color: '#F5A623',
-    ejemplos: 'Restaurantes, talleres, bodegas comerciales, hospitales, hoteles grandes',
-    minimo: 'Extintor por clase de fuego (K en cocinas, CO₂ en tableros), gabinetes con manguera, sistema de detección y alarma NFPA 72',
-    recomendado: 'Equipo de protección personal de brigadista (casco, guantes, chaquetón ligero), rociadores en áreas críticas, capacitación NFPA para brigadistas',
+    ejemplos: 'Restaurantes, talleres, hospitales, hoteles grandes y centros de datos',
+    minimo: 'Lo del riesgo ordinario más extintor por clase de fuego: tipo K en cocinas, CO₂ o agente limpio en tableros y servidores',
+    recomendado: 'Sistema de detección y alarma NFPA 72, gabinetes con manguera, rociadores en áreas críticas, supresión con FM-200 o Novec 1230 y EPP de brigadista',
   },
   {
-    nivel: 'Alto',
+    nivel: 'Riesgo alto',
     color: '#F75000',
     ejemplos: 'Plantas industriales, refinerías, aeropuertos, minería, almacenes de inflamables',
-    minimo: 'Red hidráulica contra incendio NFPA 20, rociadores NFPA 13, tablero FACP, brigada equipada con trajes NFPA 1970 y SCBA NFPA 1970',
+    minimo: 'Un extintor por cada 200 m², brigada contra incendio capacitada, sistemas fijos de protección (red hidráulica NFPA 20, hidrantes y rociadores NFPA 13) y alarma de incendio',
     recomendado: 'Equipo de respiración autónoma (SCBA) de 60 min para protección respiratoria, trajes HAZMAT Nivel A/B, ropa forestal NFPA 1977 donde hay riesgo de incendio forestal, cámaras térmicas NFPA 1930, herramientas de rescate hidráulico, detectores multi-gas',
   },
 ];
@@ -44,10 +44,7 @@ const riskLevels = [
       </div>
       <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
         <p class="text-sm leading-relaxed mb-3" style="color:#94A3B8">
-          La selección correcta parte de clasificar el riesgo de incendio de tu inmueble
-          conforme a la <strong style="color:#CBD5E1">NOM-002-STPS-2010</strong>: tipo de materiales,
-          carga de fuego y número de ocupantes. A mayor riesgo, mayor densidad de equipamiento
-          y mayor complejidad del sistema.
+          La selección correcta parte de determinar el grado de riesgo de incendio de tu centro de trabajo conforme a la <strong style="color:#CBD5E1">NOM-002-STPS-2010</strong>. Es riesgo alto si la superficie construida es de 3,000 m² o más, si el inventario supera 1,400 L de líquidos inflamables, 2,000 L de líquidos combustibles, 3,000 L de gases inflamables o 15,000 kg de sólidos combustibles, o si hay materiales pirofóricos o explosivos; en cualquier otro caso es riesgo ordinario.
         </p>
         <p class="text-sm leading-relaxed" style="color:#94A3B8">
           Esta tabla resume el equipamiento mínimo y los complementos recomendados por nivel.

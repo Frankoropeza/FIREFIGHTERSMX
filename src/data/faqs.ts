@@ -21,6 +21,14 @@ export const homeFaqs: FAQ[] = [
     a: 'Depende de la superficie, el nivel de riesgo, el tipo de ocupación y el alcance: no cuesta lo mismo un sistema de detección para oficinas que una red de rociadores con cuarto de bombas para una nave industrial. Por eso cotizamos por proyecto: con el plano o una visita técnica definimos el equipo contra incendio necesario y enviamos la propuesta con fichas técnicas.',
   },
   {
+    q: '¿Por qué es importante contar con equipo contra incendio?',
+    a: 'Porque un incendio es mucho más fácil de controlar en su etapa inicial: la detección temprana alerta a los ocupantes, el extintor o el rociador actúa en los primeros minutos y la señalización ordena la evacuación. Además, la NOM-002-STPS-2010 obliga a todo centro de trabajo a contar con el equipo que corresponde a su grado de riesgo, y Protección Civil y las aseguradoras lo revisan en cada inspección.',
+  },
+  {
+    q: '¿Cuáles son los 4 tipos de brigadas de emergencia?',
+    a: 'En el Programa Interno de Protección Civil suelen integrarse cuatro brigadas: prevención y combate de incendios, evacuación, primeros auxilios y búsqueda y rescate; algunos programas sustituyen esta última por la de comunicación. En la NOM-002-STPS-2010, la brigada contra incendio es obligatoria en los centros de trabajo de riesgo alto. Equipamos y capacitamos a cada brigada con constancia DC-3.',
+  },
+  {
     q: '¿Cómo se llama el equipo que usan los bomberos?',
     a: 'Se llama equipo de protección personal (EPP) para bomberos. Para combate estructural, la NFPA 1970 lo define como un conjunto: traje estructural (chaquetón y pantalón), casco, capucha, guantes, botas y protección respiratoria con equipo de respiración autónoma (SCBA) y dispositivo PASS. Para incendio forestal se usa ropa ligera específica y para HAZMAT, trajes de protección química.',
   },
