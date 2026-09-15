@@ -4,7 +4,7 @@ import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import { industries, type Industry } from '@data/industries';
 import { allCategories } from '@data/categories';
 import { services } from '@data/services';
-import { SITE, whatsappUrl } from '@config/site';
+import { SITE, whatsappUrl, CANAL_CONTACTO } from '@config/site';
 
 export function getStaticPaths() {
   return industries.map((industry) => ({
@@ -38,7 +38,7 @@ const serviceSchema = {
   description: ind.description,
   url: canonicalURL,
   serviceType: 'Equipamiento y servicios de protección contra incendio',
-  provider: { '@id': `${SITE.url}/#store` },
+  provider: { '@id': `${SITE.url}/#business` },
   areaServed: { '@type': 'Country', name: 'México' },
   audience: { '@type': 'BusinessAudience', name: ind.name },
 };
@@ -235,11 +235,11 @@ const otherIndustries = industries.filter((x) => x.slug !== ind.slug);
             <span style="color:#F75000">de seguridad del sector.</span>
           </h2>
           <p class="text-sm mt-4 leading-relaxed" style="color:#64748B">
-            ¿Tu caso es distinto? Escríbenos por WhatsApp y un especialista que conoce
+            ¿Tu caso es distinto? Escríbenos por {CANAL_CONTACTO} y un especialista que conoce
             tu giro te responde el mismo día hábil.
           </p>
           <a href={whatsappUrl(`Hola, tengo una duda sobre protección contra incendio en ${ind.name.toLowerCase()}.`)} target="_blank" rel="noopener" class="btn btn-outline btn-sm mt-6">
-            Preguntar por WhatsApp
+            Preguntar por {CANAL_CONTACTO}
           </a>
         </div>
 

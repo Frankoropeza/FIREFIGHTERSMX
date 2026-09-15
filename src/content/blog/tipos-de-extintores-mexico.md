@@ -3,7 +3,7 @@ title: "Tipos de extintores en México: guía completa por clase de fuego"
 description: "Qué extintor usar según la clase de fuego y la NOM-100-SCFI: agua, PQS, CO₂, espuma, agente limpio y clase K. Guía clara para elegir bien en México."
 pubDate: 2026-01-15
 updatedDate: 2026-06-10
-author: "Equipo editorial FIREFIGHTERS MX"
+author: "Ing. Marco García"
 category: "Extintores"
 tags: ["extintores", "NOM-100", "clases de fuego", "protección civil"]
 image:
@@ -66,4 +66,4 @@ Si tu empresa cae bajo la NOM-002-STPS, conviene leer también [la guía complet
 
 Un extintor sin mantenimiento es decoración. El ritmo correcto es una inspección visual mensual (presión, pasador de seguridad, etiqueta vigente), una revisión semestral por técnico certificado bajo la NOM-106-SCFI, y recarga anual o inmediatamente después de cualquier uso, por mínimo que haya sido. Que se vea lleno no significa que sirva.
 
-¿Necesitas mantenimiento o adquisición de extintores certificados? [Localiza empresas en el directorio](/empresas) y solicita directamente una cotización; compara con ellas el agente adecuado para tu operación.
+¿Necesitas mantenimiento o adquisición de extintores certificados? [Pide una cotización sin costo](/cotizacion) y te respondemos en menos de 2 horas, o [escríbenos](/contacto) si quieres asesoría sobre qué agente te conviene.

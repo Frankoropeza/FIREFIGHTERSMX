@@ -3,7 +3,7 @@ title: "NFPA 13 vs 13R vs 13D: el error de diseño que anula tu seguro de incend
 description: "NFPA 13, 13R o 13D: cuál aplica a tu proyecto, por qué el error más común anula el seguro y qué preguntar antes de aprobar el diseño de rociadores en México."
 pubDate: 2026-03-15
 updatedDate: 2026-06-25
-author: "Equipo editorial FIREFIGHTERS MX"
+author: "Ing. Marco García"
 category: "Sistemas CI"
 tags: ["NFPA 13", "NFPA 13R", "rociadores incendio", "sistemas contra incendio", "NFPA 13D"]
 image:
@@ -201,8 +201,8 @@ La norma correcta no es solo un requisito técnico. Es un requisito de negocio.
 
 ---
 
-## Directorio de Sistemas CI en FIREFIGHTERS MX
+## Catálogo Sistemas CI en FIREFIGHTERS MX
 
-En el directorio puedes localizar empresas que diseñan e instalan sistemas de rociadores bajo NFPA 13, 13R y 13D con componentes Tyco Viking certificados. Si tienes un proyecto nuevo o necesitas verificar que el sistema existente cumple con la norma correcta para tu tipo de ocupación, solicita a cada empresa una evaluación técnica.
+Diseñamos e instalamos sistemas de rociadores bajo NFPA 13, 13R y 13D con componentes Tyco Viking certificados. Si tienes un proyecto nuevo o necesitas verificar que el sistema existente cumple con la norma correcta para tu tipo de ocupación, nuestros ingenieros pueden hacer la evaluación técnica.
 
-[Directorio de Sistemas CI](/productos/sistemas-ci) · [Empresas por estado](/empresas/sistemas-ci/)
+[Catálogo completo de Sistemas CI](/productos/sistemas-ci) · [Solicitar cotización](/cotizacion)

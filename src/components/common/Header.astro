@@ -4,8 +4,15 @@ import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl } from '@config/site';
 import TopBar from '@components/common/TopBar.astro';
 
 const pathname = Astro.url.pathname;
-const isActive = (href: string) =>
-  href === '/' ? pathname === '/' : pathname.startsWith(href);
+// Coincidencia por segmento: /empresa no debe marcarse activo dentro de /empresas/.
+const isActive = (href: string) => {
+  if (href === '/') return pathname === '/';
+  const base = href.replace(/\/$/, '');
+  return pathname === base || pathname.startsWith(`${base}/`);
+};
+const ZONA_DIRECTORIO = ['/empresas', '/estaciones', '/cobertura'];
+const activoItem = (item: { href: string; zona?: string }) =>
+  item.zona === 'directorio' ? ZONA_DIRECTORIO.some((p) => isActive(p)) : isActive(item.href);
 ---
 
 <header id="site-header" class="fixed top-0 inset-x-0 z-50">
@@ -27,20 +34,26 @@ const isActive = (href: string) =>
           <div class="font-display font-bold text-[1.1rem] text-white leading-none tracking-[0.06em] uppercase">
             Firefighters<span style="color:var(--ember-500)"> MX</span>
           </div>
-          <div class="text-[9px] font-medium tracking-[0.22em] uppercase mt-0.5" style="color:var(--forge-200)">Directorio nacional</div>
+          <div class="text-[9px] font-medium tracking-[0.22em] uppercase mt-0.5" style="color:var(--forge-200)">Equipo para bomberos</div>
         </div>
       </a>
 
       <!-- ── DESKTOP NAV ───────────────────────────────────────────── -->
       <nav class="hidden xl:flex items-center gap-0.5" role="navigation" aria-label="Navegación principal">
         {navigation.main.map((item) => (
+          <>
+          {item.zona === 'directorio' && (
+            <span class="flex items-center gap-2 pl-2 pr-1" aria-hidden="true">
+              <span class="block w-px h-6" style="background:rgba(94,140,176,0.45)"></span>
+            </span>
+          )}
           <div class="nav-group relative">
             {item.children ? (
               <>
                 <!-- Trigger -->
                 <a
                   href={item.href}
-                  class={`nav-trigger flex items-center gap-1.5 px-3 py-2 text-sm font-medium rounded-sm ${isActive(item.href) ? 'text-[var(--ember-400)]' : 'text-[var(--slate-300)] hover:text-white'}`}
+                  class={`nav-trigger flex items-center gap-1.5 px-3 py-2 text-sm font-medium rounded-sm ${activoItem(item) ? 'text-[var(--ember-400)]' : 'text-[var(--slate-300)] hover:text-white'}`}
                   aria-haspopup="true"
                 >
                   {item.label}
@@ -50,7 +63,7 @@ const isActive = (href: string) =>
                 </a>
 
                 <!-- Dropdown panel (pt-2 = puente continuo de hover) -->
-                <div class="nav-dropdown absolute top-full left-0 pt-2 z-50" style="width:19rem" role="menu">
+                <div class={`nav-dropdown absolute top-full ${item.zona === 'directorio' ? 'right-0' : 'left-0'} pt-2 z-50`} style="width:19rem" role="menu">
                   <div class="drop-panel" style="background:#080F1A;border:1px solid rgba(74,117,153,0.22);border-top:2px solid var(--ember-500);box-shadow:0 12px 40px rgba(4,10,18,0.85)">
                     <div class="py-1.5">
                       {item.children.map((child) => (
@@ -78,7 +91,7 @@ const isActive = (href: string) =>
                             </a>
 
                             <!-- Sub-panel fly-out a la derecha (pl-0.5 = puente) -->
-                            <div class="nav-sub-panel absolute top-0 left-full pl-0.5 z-50" style="width:15rem">
+                            <div class={`nav-sub-panel absolute top-0 ${item.zona === 'directorio' ? 'right-full pr-0.5' : 'left-full pl-0.5'} z-50`} style="width:15rem">
                               <div style="background:#0A1320;border:1px solid rgba(74,117,153,0.22);border-top:2px solid var(--ember-500);box-shadow:0 12px 40px rgba(4,10,18,0.85)">
                                 <div class="px-4 py-2.5" style="border-bottom:1px solid rgba(74,117,153,0.15)">
                                   <span class="text-[9px] font-display font-bold uppercase tracking-[0.16em]" style="color:#F75000">Subcategorías</span>
@@ -144,6 +157,7 @@ const isActive = (href: string) =>
               </a>
             )}
           </div>
+          </>
         ))}
       </nav>
 
@@ -179,8 +193,8 @@ const isActive = (href: string) =>
              orden de cascada y el botón se mostraba en móvil, empujando el
              hamburguesa fuera de la pantalla. -->
         <div class="hidden sm:block">
-          <a href="/empresas/registro/" class="btn btn-primary btn-sm">
-            Registrar empresa
+          <a href="/cotizacion/" class="btn btn-primary btn-sm">
+            Cotizar equipo
             <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
             </svg>

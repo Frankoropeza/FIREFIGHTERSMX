@@ -3,7 +3,7 @@ title: "Casco y SCBA: El Problema de Compatibilidad Que Se Descubre Adentro del 
 description: "Casco certificado NFPA 1970 + SCBA certificado NFPA 1981 no garantiza que funcionen juntos. Cómo verificar compatibilidad real antes de una licitación en México."
 pubDate: 2026-02-10
 updatedDate: 2026-06-25
-author: "Equipo editorial FIREFIGHTERS MX"
+author: "Ing. Marco García"
 category: "Cascos NFPA"
 tags: ["casco SCBA", "compatibilidad EPP", "NFPA 1970", "máscara facial", "cascos bombero"]
 image:
@@ -201,8 +201,8 @@ La certificación individual de cada componente es el punto de partida. La prueb
 
 ---
 
-## Directorio de Cascos NFPA y Equipos SCBA en FIREFIGHTERS MX
+## Catálogos Cascos NFPA y Equipos SCBA en FIREFIGHTERS MX
 
-La compatibilidad empieza por elegir equipo diseñado para operar en conjunto. En el directorio puedes comparar empresas que manejan cascos certificados NFPA 1970 (cap. 5–9) y equipos SCBA certificados NFPA 1970 (cap. 15–19); solicita validación de compatibilidad para los sistemas más comunes del mercado mexicano.
+La compatibilidad empieza por elegir equipo diseñado para operar en conjunto. Distribuimos cascos certificados NFPA 1970 (cap. 5–9) y equipos SCBA certificados NFPA 1970 (cap. 15–19) con validación de compatibilidad disponible para los sistemas más comunes del mercado mexicano.
 
-[Directorio de Cascos NFPA](/productos/cascos-nfpa) · [Directorio de Equipos SCBA](/productos/equipos-scba) · [Empresas por estado](/empresas/)
+[Guía de Cascos NFPA](/productos/cascos-nfpa) · [Guía de Equipos SCBA](/productos/equipos-scba) · [Solicitar cotización](/cotizacion)

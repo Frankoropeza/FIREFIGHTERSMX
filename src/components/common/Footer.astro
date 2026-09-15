@@ -18,26 +18,26 @@ const directorio: Link[] = [
 ];
 
 const equipo: Link[] = [
-  ['Guía de trajes para bombero',     '/productos/trajes-bombero'],
-  ['Guía de cascos para bomberos',    '/productos/cascos-nfpa'],
-  ['Guía de equipos SCBA',            '/productos/equipos-scba'],
-  ['Guía de herramientas de rescate', '/productos/herramientas-rescate'],
-  ['Guía de extintores',              '/productos/extintores'],
-  ['Guía de sistemas contra incendio','/productos/sistemas-ci'],
-  ['Guía de cámaras térmicas',        '/productos/camaras-termicas'],
-  ['Guía de equipo HAZMAT',           '/productos/hazmat'],
-  ['Guía de drones de emergencia',    '/productos/drones-emergencia'],
-  ['Guía completa de equipo',         '/productos'],
+  ['Trajes para bombero NFPA 1971',   '/productos/trajes-bombero'],
+  ['Cascos NFPA 1971',                '/productos/cascos-nfpa'],
+  ['Equipos SCBA de respiración autónoma', '/productos/equipos-scba'],
+  ['Herramientas de rescate hidráulicas',  '/productos/herramientas-rescate'],
+  ['Extintores PQS, CO₂ y tipo K',    '/productos/extintores'],
+  ['Sistemas CI: rociadores y detección', '/productos/sistemas-ci'],
+  ['Cámaras térmicas para bomberos',  '/productos/camaras-termicas'],
+  ['Trajes y detección HAZMAT',       '/productos/hazmat'],
+  ['Drones para emergencias',         '/productos/drones-emergencia'],
+  ['Catálogo completo de equipo',     '/productos'],
 ];
 
 const servicios: Link[] = [
-  ['Guía de capacitación DC-3',             '/servicios/capacitacion'],
-  ['Guía de instalación de sistemas CI',    '/servicios/instalacion-sistemas-ci'],
-  ['Guía de mantenimiento de extintores',   '/servicios/mantenimiento'],
-  ['Guía de auditoría NOM-002-STPS',        '/servicios/auditoria-seguridad'],
-  ['Guía de brigadas empresariales',        '/servicios/brigadas-empresariales'],
-  ['Guía para licitaciones públicas',       '/servicios/licitaciones'],
-  ['Todos los servicios del sector',        '/servicios'],
+  ['Capacitación certificada DC-3',        '/servicios/capacitacion'],
+  ['Instalación de sistemas contra incendio', '/servicios/instalacion-sistemas-ci'],
+  ['Mantenimiento y recarga de extintores', '/servicios/mantenimiento'],
+  ['Auditoría NOM-002-STPS',               '/servicios/auditoria-seguridad'],
+  ['Brigadas empresariales',               '/servicios/brigadas-empresariales'],
+  ['Soporte para licitaciones públicas',   '/servicios/licitaciones'],
+  ['Todos los servicios contra incendio',  '/servicios'],
 ];
 
 const industrias: Link[] = [
@@ -71,8 +71,7 @@ const estacionesLinks: Link[] = [
   ['Estaciones en Jalisco',                '/estaciones/jalisco'],
   ['Estaciones en Nuevo León',             '/estaciones/nuevo-leon'],
   ['Estaciones en Estado de México',       '/estaciones/estado-de-mexico'],
-  ['Cobertura nacional de equipamiento',   '/cobertura'],
-  ['Licitaciones y compras públicas',      '/licitaciones'],
+  ['Empresas del sector por estado',       '/cobertura'],
 ];
 
 const recursos: Link[] = [
@@ -83,12 +82,13 @@ const recursos: Link[] = [
   ['NOM-002-STPS paso a paso',          '/blog/tag/nom-002-stps'],
   ['Precios de equipo para bomberos',   '/precios'],
   ['Certificaciones y respaldo técnico', '/certificaciones'],
+  ['Licitaciones y compras públicas',  '/licitaciones'],
 ];
 
 const empresa: Link[] = [
   ['Quiénes somos',                    '/nosotros'],
-  ['Empresas del sector',              '/empresas'],
-  ['Registrar una empresa',            '/empresas/registro'],
+  ['Cobertura y envíos',               '/distribuidores'],
+  ['Cotizar equipo para bomberos',     '/cotizacion'],
   ['Contacto y atención a clientes',   '/contacto'],
   ['Aviso de privacidad',              '/aviso-privacidad'],
   ['Términos y condiciones',           '/terminos-condiciones'],
@@ -116,16 +116,16 @@ const redes = [
     <div class="container-site py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
       <div>
         <p class="font-display font-bold text-white text-lg uppercase tracking-wider">
-          ¿Buscas empresas del sector?
+          ¿Necesitas equipo certificado?
         </p>
         <p class="text-white/80 text-sm hidden sm:block mt-0.5">
-          Consulta el directorio nacional por giro y estado
+          Distribuidor autorizado · Envíos a los 32 estados de la República
         </p>
       </div>
       <div class="flex items-center gap-3 shrink-0">
-        <a href="/empresas"
+        <a href="/cotizacion/"
            class="btn btn-sm bg-white text-[var(--ember-600)] hover:bg-[var(--ember-100)] border-white font-display font-bold">
-          Ver directorio
+          Cotizar equipo NFPA
         </a>
         <a href={whatsappUrl('Hola, quiero cotizar equipo para bomberos.')} target="_blank" rel="noopener"
            class="btn btn-sm bg-[var(--ember-700)] hover:bg-[var(--ember-800)] text-white border-transparent font-display flex items-center gap-2">
@@ -133,7 +133,7 @@ const redes = [
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
             <path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.112 1.522 5.843L.053 23.894a.5.5 0 00.617.608l6.218-1.633A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.741 9.741 0 01-4.964-1.354l-.356-.211-3.692.969.985-3.604-.232-.372A9.718 9.718 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/>
           </svg>
-          Contactar por correo
+          {CONTACTO_DIRECTO_ACTIVO ? 'WhatsApp' : 'Contactar por correo'}
         </a>
       </div>
     </div>
@@ -141,7 +141,7 @@ const redes = [
 
   <div class="container-site">
 
-    <!-- ══ PISO 1: marca · directorio · equipo · servicios ═════════ -->
+    <!-- ══ PISO 1 (tienda): marca · industrias · equipo · servicios ═════════ -->
     <div class="f-floor pt-12 pb-10">
 
       <!-- Marca y contacto -->
@@ -157,14 +157,14 @@ const redes = [
             <div class="font-display font-bold text-[1.1rem] text-white leading-none tracking-[0.06em] uppercase">
               Firefighters<span class="text-[var(--ember-500)]"> MX</span>
             </div>
-            <div class="text-[9px] text-[var(--forge-300)] font-medium tracking-[0.22em] uppercase mt-0.5">Directorio nacional</div>
+            <div class="text-[9px] text-[var(--forge-300)] font-medium tracking-[0.22em] uppercase mt-0.5">Equipo certificado</div>
           </div>
         </a>
 
         <p class="text-sm leading-relaxed text-[var(--forge-200)]">
-          Directorio nacional de empresas de equipo contra incendios y equipo
-          para bomberos, con fichas organizadas por giro y estado. También reúne
-          estaciones, guías técnicas y referencias normativas.
+          Distribuidor de equipo para bomberos y equipo contra incendio
+          certificado NFPA y NOM, con envíos a los 32 estados. Publica además el
+          directorio nacional de empresas del sector y de estaciones de bomberos.
         </p>
 
         <div class="flex flex-col gap-2.5 text-sm text-[var(--forge-200)]">
@@ -222,11 +222,11 @@ const redes = [
         )}
       </div>
 
-      <!-- Directorio -->
-      <nav aria-labelledby="f-directorio">
-        <p id="f-directorio" class="f-heading">Directorio de empresas</p>
+      <!-- Industrias (tienda) -->
+      <nav aria-labelledby="f-industrias">
+        <p id="f-industrias" class="f-heading">Industrias que equipamos</p>
         <ul class="f-list">
-          {directorio.map(([label, href]) => (
+          {industrias.map(([label, href]) => (
             <li><a href={href} class="f-link">{label}</a></li>
           ))}
         </ul>
@@ -253,31 +253,13 @@ const redes = [
       </nav>
     </div>
 
-    <!-- ══ PISO 2: industrias · marcas · estaciones · recursos ═════ -->
+    <!-- ══ PISO 2: marcas · recursos (tienda) · directorio · estaciones (terceros) ═════ -->
     <div class="f-floor f-floor--divided py-10">
-
-      <nav aria-labelledby="f-industrias">
-        <p id="f-industrias" class="f-heading">Industrias que equipamos</p>
-        <ul class="f-list">
-          {industrias.map(([label, href]) => (
-            <li><a href={href} class="f-link">{label}</a></li>
-          ))}
-        </ul>
-      </nav>
 
       <nav aria-labelledby="f-marcas">
         <p id="f-marcas" class="f-heading">Marcas de equipo para bomberos</p>
         <ul class="f-list">
           {marcas.map(([label, href]) => (
-            <li><a href={href} class="f-link">{label}</a></li>
-          ))}
-        </ul>
-      </nav>
-
-      <nav aria-labelledby="f-estaciones">
-        <p id="f-estaciones" class="f-heading">Estaciones y sector público</p>
-        <ul class="f-list">
-          {estacionesLinks.map(([label, href]) => (
             <li><a href={href} class="f-link">{label}</a></li>
           ))}
         </ul>
@@ -298,18 +280,37 @@ const redes = [
           ))}
         </ul>
       </nav>
+      <!-- Directorio (terceros) -->
+      <nav aria-labelledby="f-directorio">
+        <p id="f-directorio" class="f-heading">Directorio · empresas del sector</p>
+        <ul class="f-list">
+          {directorio.map(([label, href]) => (
+            <li><a href={href} class="f-link">{label}</a></li>
+          ))}
+        </ul>
+      </nav>
+
+      <nav aria-labelledby="f-estaciones">
+        <p id="f-estaciones" class="f-heading">Directorio · estaciones de bomberos</p>
+        <ul class="f-list">
+          {estacionesLinks.map(([label, href]) => (
+            <li><a href={href} class="f-link">{label}</a></li>
+          ))}
+        </ul>
+      </nav>
+
     </div>
 
     <!-- ══ PISO 3: cobertura por estado ════════════════════════════ -->
     <nav class="f-floor f-floor--divided py-10" aria-labelledby="f-cobertura">
       <div class="f-floor__intro">
-        <p id="f-cobertura" class="f-heading">Equipo para bomberos por estado</p>
+        <p id="f-cobertura" class="f-heading">Directorio por estado</p>
         <p class="text-sm leading-relaxed text-[var(--forge-300)]">
-          Proveedores de equipo contra incendio, extintores y capacitación en cada
-          entidad, con sus estaciones de bomberos y cobertura de envío.
+          Empresas del sector registradas en cada entidad. Son fichas de
+          terceros: cada empresa confirma su propia cobertura y condiciones.
         </p>
         <a href="/cobertura" class="f-link f-link--strong mt-3 inline-block">
-          Cobertura nacional de equipo contra incendio →
+          Empresas del sector por estado →
         </a>
       </div>
 

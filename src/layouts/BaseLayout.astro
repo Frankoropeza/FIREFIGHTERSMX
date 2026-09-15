@@ -5,6 +5,7 @@ import Footer from '@components/common/Footer.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import SEO from '@components/common/SEO.astro';
 import WhatsAppButton from '@components/common/WhatsAppButton.astro';
+import { CONTACTO_DIRECTO_ACTIVO } from '@config/site';
 
 export interface Props {
   title: string;
@@ -89,8 +90,8 @@ const {
     <!-- Footer -->
     <Footer />
 
-    <!-- WhatsApp Floating Button -->
-    <WhatsAppButton />
+    {/* Botón flotante de WhatsApp: sólo con un número real publicado */}
+    {CONTACTO_DIRECTO_ACTIVO && <WhatsAppButton />}
 
 
     <!-- Analytics (carga diferida) -->

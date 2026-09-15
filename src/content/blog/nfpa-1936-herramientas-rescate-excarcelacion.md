@@ -3,7 +3,7 @@ title: "NFPA 1936: Guía Técnica para Herramientas de Rescate y Excarcelación"
 description: "NFPA 1936: alcance, parámetros certificados, actualización 2022, impacto de vehículos eléctricos y cómo redactar especificaciones técnicas para licitación."
 pubDate: 2026-03-01
 updatedDate: 2026-06-25
-author: "Equipo editorial FIREFIGHTERS MX"
+author: "Ing. Marco García"
 category: "Herramientas Rescate"
 tags: ["NFPA 1936", "herramientas rescate", "excarcelación", "licitación rescate", "certificación herramientas"]
 image:
@@ -156,7 +156,7 @@ En tus términos de referencia, incluye un requisito contractual —no verbal—
 
 ## La pregunta que el evaluador nunca hace — y debería
 
-Hay una sola pregunta que revela más sobre una propuesta de rescate que cualquier documento del expediente técnico.
+Después de quince años viendo licitaciones de rescate, he identificado una sola pregunta que revela más sobre una propuesta que cualquier documento en el expediente técnico.
 
 No es una pregunta difícil. No requiere conocimiento técnico avanzado para hacerla. Pero los evaluadores casi nunca la hacen porque parece demasiado directa, demasiado confrontacional, demasiado desconfiada.
 

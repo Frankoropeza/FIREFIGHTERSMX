@@ -3,7 +3,7 @@ title: "Casco Europeo vs Americano: Cómo Elegir el Correcto Para Tu Corporació
 description: "Cola de pato vs perfil bajo europeo: guía técnica para elegir el casco de bombero según norma, tipo de operación y compatibilidad con SCBA."
 pubDate: 2026-02-10
 updatedDate: 2026-06-25
-author: "Equipo editorial FIREFIGHTERS MX"
+author: "Ing. Marco García"
 category: "Cascos NFPA"
 tags: ["cascos bombero", "casco europeo", "casco americano", "NFPA 1970", "EPP bomberos"]
 image:
@@ -182,8 +182,8 @@ Eso no lo responde el catálogo. Lo responde la prueba.
 
 ---
 
-## Directorio de Cascos NFPA en FIREFIGHTERS MX
+## Catálogo Cascos NFPA en FIREFIGHTERS MX
 
-En el directorio puedes comparar empresas que manejan cascos estructurales certificados NFPA 1970 en estilos europeo y americano: MSA Gallet F1 XF, Bullard USTM, Cairns N6A y opciones compatibles con los principales sistemas SCBA del mercado mexicano. Solicita a cada proveedor evidencia de compatibilidad.
+Distribuimos cascos estructurales certificados NFPA 1970 en estilos europeo y americano: MSA Gallet F1 XF, Bullard USTM, Cairns N6A y opciones compatibles con los principales sistemas SCBA del mercado mexicano.
 
-[Directorio de Cascos NFPA](/productos/cascos-nfpa) · [Empresas por estado](/empresas/)
+[Catálogo completo de Cascos NFPA](/productos/cascos-nfpa) · [Solicitar cotización](/cotizacion)

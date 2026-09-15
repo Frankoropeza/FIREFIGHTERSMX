@@ -3,7 +3,7 @@ title: "TPP y THL en Trajes de Bombero: Lo Que el Catálogo No Te Explica"
 description: "Dos trajes que 'cumplen NFPA 1970' pueden estar a mundos de distancia en protección real. Aprende a leer TPP y THL antes de tu próxima licitación."
 pubDate: 2026-02-10
 updatedDate: 2026-06-25
-author: "Equipo editorial FIREFIGHTERS MX"
+author: "Ing. Marco García"
 category: "Trajes Bombero"
 tags: ["TPP", "THL", "NFPA 1971", "trajes bombero", "protección térmica"]
 image:
@@ -181,8 +181,8 @@ Para profundizar en la metodología de prueba y los requisitos normativos:
 
 ---
 
-## Directorio de Trajes Bombero en FIREFIGHTERS MX
+## Catálogo Trajes Bombero en FIREFIGHTERS MX
 
-En el directorio puedes comparar empresas que manejan trajes con TPP y THL del sistema completo certificado por laboratorio acreditado, no solo la declaración del fabricante. Solicita sistemas con outer shell PBI Matrix Gold y Nomex IIIA según cada perfil operacional.
+Cada traje en nuestro catálogo incluye el TPP y THL del sistema completo certificado por laboratorio acreditado, no solo la declaración del fabricante. Sistemas con outer shell PBI Matrix Gold y Nomex IIIA para cada perfil operacional.
 
-[Directorio de Trajes Bombero](/productos/trajes-bombero) · [Empresas por estado](/empresas/)
+[Catálogo completo de Trajes Bombero](/productos/trajes-bombero) · [Solicitar cotización](/cotizacion)

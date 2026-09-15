@@ -1,7 +1,7 @@
 ---
 // /marcas/[marca].astro — Landing individual por marca
 // =====================================================================
-// Genera una URL propia para cada fabricante del directorio:
+// Genera una URL propia para cada fabricante que distribuimos:
 //   /marcas/msa-safety, /marcas/globe-manufacturing, etc.
 //
 // Propósito SEO:
@@ -15,7 +15,7 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import { brands } from '@data/brands';
-import { SITE, whatsappUrl } from '@config/site';
+import { SITE, whatsappUrl, CANAL_CONTACTO } from '@config/site';
 import type { GetStaticPaths } from 'astro';
 
 export const getStaticPaths = (() => {
@@ -29,11 +29,12 @@ const { brand } = Astro.props;
 const canonicalURL = `${SITE.url}/marcas/${brand.slug}/`;
 
 // ── SEO: title (≤60c) y description (≤160c) keyword-first ───────────
-// Patrón: "[Marca] en México | Equipo certificado | FIREFIGHTERS MX"
-const seoTitle = `${brand.name} en México | Guía de fabricante | Firefighters MX`;
+// Patrón: "[Marca] en México | Distribuidor autorizado | FIREFIGHTERS MX"
+const seoTitle = `${brand.name} en México | Distribuidor autorizado FFMX`;
 const seoDescription = [
   brand.description,
-  `Referencia de fabricante para equipo de bomberos y protección contra incendios.`,
+  `Distribuidor autorizado ${brand.name} en México.`,
+  `Cotización en 24 h.`,
 ].join(' ').slice(0, 160);
 
 // ── JSON-LD ───────────────────────────────────────────────────────────
@@ -59,30 +60,24 @@ const manufacturerSchema = {
   ...(brand.website ? { url: brand.website } : {}),
 };
 
-// Productos representativos de esta marca
+// Productos que distribuimos de esta marca
 const productListSchema = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
-  name: `Productos representativos de ${brand.name}`,
+  name: `Productos ${brand.name} distribuidos por FIREFIGHTERS MX`,
   numberOfItems: brand.products.length,
   itemListElement: brand.products.map((p, i) => ({
     '@type': 'ListItem',
     position: i + 1,
-    item: {
-      '@type': 'Product',
-      name: p.name,
-      description: p.detail,
-      brand: { '@type': 'Brand', name: brand.name },
-      /* Sin `offers`: el sitio es un directorio, no vende ni tiene existencias.
-         Declarar availability/seller aquí seria afirmar comercio inexistente. */
-    },
+    // Sin Product/Offer mientras no haya precios publicados (candado F-14).
+    name: `${brand.name} ${p.name}`,
   })),
 };
 
 const schemas = [breadcrumbSchema, manufacturerSchema, productListSchema];
 
 // ── WA message ────────────────────────────────────────────────────────
-const waMsg = `Hola, quiero comparar empresas del directorio que manejen productos ${brand.name}.`;
+const waMsg = `Hola, quiero información sobre productos ${brand.name} que distribuyen.`;
 ---
 
 <BaseLayout
@@ -127,7 +122,7 @@ const waMsg = `Hola, quiero comparar empresas del directorio que manejen product
 
         {/* Col izquierda — identidad + CTAs */}
         <div>
-          <span class="section-eyebrow mb-5 inline-flex">Marca en el directorio</span>
+          <span class="section-eyebrow mb-5 inline-flex">Distribuidor autorizado</span>
 
           {/* Monograma visual de la marca */}
           <div
@@ -164,7 +159,7 @@ const waMsg = `Hola, quiero comparar empresas del directorio que manejen product
               rel="noopener noreferrer"
               class="btn btn-primary btn-lg"
             >
-              Cotizar por WhatsApp
+              Cotizar por {CANAL_CONTACTO}
             </a>
             <a href="/cotizacion" class="btn btn-ghost btn-lg">Solicitar cotización de equipo {brand.name}</a>
           </div>
@@ -190,7 +185,7 @@ const waMsg = `Hola, quiero comparar empresas del directorio que manejen product
   {/* ─── Accesos rápidos ─── */}
   <QuickLinksBar />
 
-  {/* ─── Productos representativos de la marca ─── */}
+  {/* ─── Productos que distribuimos ─── */}
   <section
     class="section"
     style="background:#040A12"
@@ -207,7 +202,7 @@ const waMsg = `Hola, quiero comparar empresas del directorio que manejen product
             style="color:#FFFFFF;font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.05"
           >
             Productos <span style="color:#F75000">{brand.name}</span><br/>
-            relacionados con esta marca
+            que distribuimos
           </h2>
         </div>
         <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
@@ -254,7 +249,7 @@ const waMsg = `Hola, quiero comparar empresas del directorio que manejen product
       {/* CTA bajo el grid */}
       <div class="mt-8 text-center">
         <p class="text-sm mb-4" style="color:#64748B">
-          ¿Buscas un modelo específico? Localiza empresas que lo manejan y confirma directamente sus condiciones sobre especificación técnica.
+          ¿Buscas un modelo específico? Lo conseguimos: manejamos pedidos sobre especificación técnica.
         </p>
         <a
           href={whatsappUrl(waMsg)}
@@ -262,7 +257,7 @@ const waMsg = `Hola, quiero comparar empresas del directorio que manejen product
           rel="noopener noreferrer"
           class="btn btn-primary"
         >
-          Consultar disponibilidad por WhatsApp
+          Consultar disponibilidad por {CANAL_CONTACTO}
         </a>
       </div>
 
@@ -299,7 +294,7 @@ const waMsg = `Hola, quiero comparar empresas del directorio que manejen product
         </div>
 
         <p class="text-sm max-w-2xl" style="color:#64748B">
-          Cada equipo {brand.name} debe contar con certificado de laboratorio
+          Cada equipo {brand.name} que entregamos lleva certificado de laboratorio
           acreditado, número de serie verificable y ficha técnica — la documentación que
           el área de compras, el órgano fiscalizador y tu aseguradora pueden auditar.
         </p>
@@ -331,7 +326,7 @@ const waMsg = `Hola, quiero comparar empresas del directorio que manejen product
           rel="noopener noreferrer"
           class="btn btn-primary btn-lg"
         >
-          Cotizar {brand.name} por WhatsApp
+          Cotizar {brand.name} por {CANAL_CONTACTO}
         </a>
         <a href="/cotizacion" class="btn btn-ghost btn-lg">
           Formulario de cotización

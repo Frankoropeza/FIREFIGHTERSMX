@@ -2,7 +2,7 @@
 title: "Traje Estructural, de Proximidad o Forestal: Cuál Necesita tu Brigada"
 description: "Diferencias entre traje estructural NFPA 1970, de proximidad aluminizado y forestal NFPA 1950: materiales, peso, uso y norma. Guía para elegir correctamente."
 pubDate: 2026-05-20
-author: "Equipo editorial FIREFIGHTERS MX"
+author: "Ing. Carlos Mendoza"
 category: "Equipos EPP"
 tags: ["trajes bomberos", "traje forestal", "NFPA 1977", "EPP"]
 image:

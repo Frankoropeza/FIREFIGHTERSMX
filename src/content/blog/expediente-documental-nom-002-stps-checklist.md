@@ -3,7 +3,7 @@ title: "Expediente documental NOM-002: qué papeles necesitas tener listos antes
 description: "Checklist del expediente NOM-002-STPS que revisa la STPS en plantas mexicanas. Qué documentos son obligatorios y cómo organizarlos antes de la inspección."
 pubDate: 2026-03-19
 updatedDate: 2026-06-25
-author: "Equipo editorial FIREFIGHTERS MX"
+author: "Ing. Marco García"
 category: "Auditoría NOM-002"
 tags: ["NOM-002-STPS", "expediente documental", "STPS", "protección civil", "auditoría"]
 image:
@@ -126,6 +126,6 @@ Los documentos físicos tardan días en conseguirse. Las constancias DC-3 de cap
 
 ## Auditoría NOM-002 en FIREFIGHTERS MX
 
-El directorio te ayuda a localizar empresas que revisan expedientes documentales antes de una inspección de la STPS. Con la empresa seleccionada identifica los huecos, reúne los documentos faltantes y conserva el expediente organizado y listo para presentar. El servicio puede incluir revisión física del centro de trabajo.
+Revisamos tu expediente documental completo antes de que llegue la STPS. Identificamos los huecos, te ayudamos a conseguir los documentos faltantes y te entregamos el expediente organizado y listo para presentar. El servicio incluye revisión física del centro de trabajo.
 
 [Servicio de Auditoría NOM-002](/servicios/auditoria-seguridad)

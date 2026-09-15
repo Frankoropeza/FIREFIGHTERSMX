@@ -3,7 +3,7 @@ title: "Iluminación Táctica para Bomberos: Ver en la Oscuridad que el Humo Cre
 description: "Guía de iluminación táctica para bomberos: linternas de casco, escena y búsqueda — comparativa Streamlight, Peli y LED Lenser en México 2026."
 pubDate: 2026-06-23
 updatedDate: 2026-06-23
-author: "Equipo editorial FIREFIGHTERS MX"
+author: "Ing. Carlos Mendoza"
 category: "Guías de compra"
 tags: ["iluminación táctica", "linternas bomberos", "Streamlight", "Peli", "LED Lenser", "Foxfury", "linterna de casco"]
 image:
@@ -262,7 +262,7 @@ La combinación más costo-efectiva con certificaciones válidas: **Streamlight 
 
 ---
 
-En el [directorio de iluminación táctica](/productos) puedes comparar registros de Streamlight, Peli, LED Lenser y Foxfury. Si tu corporación está equipando unidades de rescate o renovando la dotación individual de iluminación, solicita a las empresas registradas disponibilidad y una propuesta técnica con la configuración correcta para cada escenario de tu operación.
+En [FIREFIGHTERS MX](/productos) contamos con las líneas Streamlight, Peli, LED Lenser y Foxfury con stock en México. Si tu corporación está equipando unidades de rescate o renovando la dotación individual de iluminación, [solicita una propuesta técnica](/cotizacion) con la configuración correcta para cada escenario de tu operación.
 
 ---
 

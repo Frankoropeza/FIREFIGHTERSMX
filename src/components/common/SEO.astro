@@ -65,7 +65,9 @@ const schemas = Array.isArray(schema) ? schema : schema ? [schema] : [];
 const orgSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
+  '@id': `${SITE.url}/#business`,
   name: 'FIREFIGHTERS MX',
+  description: SITE.description,
   url: 'https://firefighters.mx',
   logo: {
     '@type': 'ImageObject',
@@ -106,6 +108,16 @@ const orgSchema = {
       }
     : {}),
 };
+// Nodo WebSite común: las páginas lo referencian con isPartOf → #website.
+const webSiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${SITE.url}/#website`,
+  name: SITE.name,
+  url: SITE.url,
+  inLanguage: 'es-MX',
+  publisher: { '@id': `${SITE.url}/#business` },
+};
 ---
 
 <!-- Primary Meta Tags -->
@@ -135,7 +147,6 @@ const orgSchema = {
 <meta name="twitter:title" content={fullTitle} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={absoluteOgImage} />
-<meta name="twitter:site" content="@firefightersmx" />
 
 <!-- Additional SEO -->
 <meta name="author" content="FIREFIGHTERS MX" />
@@ -147,6 +158,9 @@ const orgSchema = {
 
 <!-- Structured Data (JSON-LD) -->
 <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
+{!schemas.some((s) => s?.['@type'] === 'WebSite') && (
+  <script type="application/ld+json" set:html={JSON.stringify(webSiteSchema)} />
+)}
 {schemas.map((s) => (
   <script type="application/ld+json" set:html={JSON.stringify(s)} />
 ))}

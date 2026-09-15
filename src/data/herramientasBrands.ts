@@ -19,19 +19,19 @@ const holmatro: EquipmentBrand = {
   brand: 'Holmatro',
   brandLabel: 'Holmatro',
   crossDesc: 'Línea Pentheon a batería · Combi-Tool · NFPA 1936',
-  eyebrow: 'Holmatro · Pentheon',
+  eyebrow: 'Holmatro · Pentheon · Distribuidor Autorizado MX',
   heroTitleTop: 'Herramientas Holmatro',
   heroTitleAccent: 'rescate NFPA 1936.',
   heroLead:
-    'Línea completa de herramientas de rescate Holmatro en México. La línea completa —cizalla, separador, combinada y ariete— en versión Pentheon a batería, con demostración en sitio, capacitación y mantenimiento certificado.',
+    'Distribuidor autorizado de herramientas de rescate Holmatro en México. La línea completa —cizalla, separador, combinada y ariete— en versión Pentheon a batería, con demostración en sitio, capacitación y mantenimiento certificado.',
   heroIntro: [
     'Holmatro —ingeniería neerlandesa— es una de las referencias mundiales en herramientas hidráulicas de rescate. Su línea Pentheon a batería elimina mangueras y unidad de poder: el equipo se despliega en segundos y se mueve libremente alrededor del vehículo, con velocidad constante bajo carga.',
-    'En excarcelación cada minuto cuenta. En el directorio puedes comparar la gama Holmatro certificada NFPA 1936 y EN 13204, con hojas y geometrías diseñadas para los aceros al boro y endurecidos de los vehículos modernos, más el sistema Combi-Tool de cambio rápido.',
+    'En excarcelación cada minuto cuenta. Distribuimos la gama Holmatro certificada NFPA 1936 y EN 13204, con hojas y geometrías diseñadas para los aceros al boro y endurecidos de los vehículos modernos, más el sistema Combi-Tool de cambio rápido.',
   ],
-  heroBadges: ['NFPA 1936', 'EN 13204', 'Pentheon batería', 'Sin mangueras', 'Combi-Tool'],
+  heroBadges: ['NFPA 1936', 'EN 13204', 'Pentheon batería', 'Sin mangueras', 'Combi-Tool', 'Distribuidor autorizado MX'],
   seoTitle: 'Herramientas Holmatro NFPA 1936 — Pentheon · México',
   seoDescription:
-    'Herramientas de rescate Holmatro certificadas NFPA 1936 en México: cizalla, separador, combinada y ariete Pentheon a batería. Sin mangueras. Demostración, capacitación y mantenimiento.',
+    'Herramientas de rescate Holmatro certificadas NFPA 1936 en México: cizalla, separador, combinada y ariete Pentheon a batería. Sin mangueras. Demostración, capacitación y mantenimiento. Distribuidor autorizado.',
   founding: '1967',
   parentOrg: { name: 'Holmatro Group' },
   stats: [
@@ -87,7 +87,7 @@ const holmatro: EquipmentBrand = {
     { num: '04', tipo: 'separacion', titulo: 'Brigadas Industriales', desc: 'Brigadas de planta y atención a atrapamientos en maquinaria que necesitan apertura, levantamiento y empuje. El separador Pentheon crea acceso y desplaza cargas con seguridad.', modelos: 'Pentheon Separador' },
   ],
   faqs: [
-    { q: '¿Qué norma certifica una herramienta hidráulica de rescate?', a: 'En el mercado mexicano se referencian la NFPA 1936 (estándar de la NFPA para herramientas de rescate motorizadas) y la EN 13204 (norma europea que además clasifica la capacidad de corte por categorías). La clasificación EN 13204 es clave: define qué tan duros son los aceros que una cizalla puede cortar. Verifica con la empresa del directorio si las herramientas Holmatro cumplen ambas y solicita la ficha con la clasificación exacta por modelo para licitación.' },
+    { q: '¿Qué norma certifica una herramienta hidráulica de rescate?', a: 'En el mercado mexicano se referencian la NFPA 1936 (estándar de la NFPA para herramientas de rescate motorizadas) y la EN 13204 (norma europea que además clasifica la capacidad de corte por categorías). La clasificación EN 13204 es clave: define qué tan duros son los aceros que una cizalla puede cortar. Las herramientas Holmatro cumplen ambas; te entregamos la ficha con la clasificación exacta por modelo para licitación.' },
     { q: '¿Batería (Pentheon) o sistema hidráulico con unidad de poder y mangueras?', a: 'La línea Pentheon a batería es autocontenida: sin mangueras ni unidad de poder, se despliega en segundos y el operador se mueve libremente alrededor del vehículo, sin el cable umbilical que limita el alcance. Es hoy la opción preferida para la mayoría de los cuerpos. El sistema con unidad de poder y mangueras sigue teniendo sentido para operación continua muy intensiva con varias herramientas simultáneas desde una sola bomba. Te ayudamos a elegir según tu volumen de operación.' },
     { q: '¿Cizalla, separador, combinada o ariete — qué necesita mi cuerpo?', a: 'La cizalla corta (postes, pilares, pedales); el separador abre, levanta y empuja (puertas, tablero); el ariete empuja en línea recta (desplazamiento de tablero, estabilización); la combinada hace corte y separación en una sola herramienta, ideal como primer respondiente. Un equipo de excarcelación completo suele llevar cizalla + separador + ariete; un cuerpo ligero o de primer respondiente puede empezar con una combinada. Asesoramos la configuración según tus vehículos y operación.' },
     { q: '¿Las herramientas cortan los aceros al boro de los vehículos modernos?', a: 'Sí, siempre que tengan la clasificación de corte adecuada. Los vehículos recientes usan aceros al boro y de alta resistencia en postes B y zonas de seguridad que atascan a las herramientas antiguas. Las cizallas Holmatro Pentheon tienen hojas y geometría diseñadas para estos materiales, con clasificación EN 13204 alta. Para tu zona, dimensionamos la cizalla según los modelos de vehículo más frecuentes.' },
@@ -108,19 +108,19 @@ const hurst: EquipmentBrand = {
   brand: 'Hurst',
   brandLabel: 'Hurst Jaws of Life',
   crossDesc: 'Inventor del Jaws of Life® · eDRAULIC batería · NFPA 1936',
-  eyebrow: 'Hurst · Jaws of Life®',
+  eyebrow: 'Hurst · Jaws of Life® · Distribuidor Autorizado MX',
   heroTitleTop: 'Herramientas Hurst',
   heroTitleAccent: 'Jaws of Life®.',
   heroLead:
-    'Línea completa de herramientas de rescate Hurst Jaws of Life® en México. La línea completa —cizalla, separador, combinada y ariete— en versión eDRAULIC a batería, con demostración en sitio, capacitación y mantenimiento certificado.',
+    'Distribuidor autorizado de herramientas de rescate Hurst Jaws of Life® en México. La línea completa —cizalla, separador, combinada y ariete— en versión eDRAULIC a batería, con demostración en sitio, capacitación y mantenimiento certificado.',
   heroIntro: [
     'Hurst inventó el Jaws of Life® en 1972 y desde entonces define el rescate vehicular. Su línea eDRAULIC es autocontenida a batería —sin mangueras ni bomba— y es la herramienta de excarcelación más reconocida del mundo, presente en miles de cuerpos de bomberos.',
-    'En el directorio puedes comparar la gama Hurst certificada NFPA 1936 y EN 13204, con cizallas de alta capacidad para los aceros endurecidos de los vehículos modernos, iluminación LED integrada y la fiabilidad que hizo de Jaws of Life® un nombre genérico del rescate.',
+    'Distribuimos la gama Hurst certificada NFPA 1936 y EN 13204, con cizallas de alta capacidad para los aceros endurecidos de los vehículos modernos, iluminación LED integrada y la fiabilidad que hizo de Jaws of Life® un nombre genérico del rescate.',
   ],
-  heroBadges: ['NFPA 1936', 'EN 13204', 'Jaws of Life®', 'eDRAULIC batería', 'Sin mangueras'],
+  heroBadges: ['NFPA 1936', 'EN 13204', 'Jaws of Life®', 'eDRAULIC batería', 'Sin mangueras', 'Distribuidor autorizado MX'],
   seoTitle: 'Herramientas Hurst Jaws of Life NFPA 1936 — México',
   seoDescription:
-    'Herramientas de rescate Hurst Jaws of Life® certificadas NFPA 1936 en México: cizalla, separador, combinada y ariete eDRAULIC a batería. El inventor del rescate vehicular. Demostración y capacitación en sitio.',
+    'Herramientas de rescate Hurst Jaws of Life® certificadas NFPA 1936 en México: cizalla, separador, combinada y ariete eDRAULIC a batería. El inventor del rescate vehicular. Distribuidor autorizado · demo y servicio.',
   founding: '1972',
   parentOrg: { name: 'IDEX Corporation' },
   stats: [
@@ -176,7 +176,7 @@ const hurst: EquipmentBrand = {
     { num: '04', tipo: 'separacion', titulo: 'Brigadas Industriales', desc: 'Brigadas de planta y atención a atrapamientos en maquinaria que necesitan apertura, levantamiento y empuje. El separador eDRAULIC SP 555 crea acceso y desplaza cargas con seguridad.', modelos: 'eDRAULIC SP 555' },
   ],
   faqs: [
-    { q: '¿Qué norma certifica una herramienta hidráulica de rescate?', a: 'Se referencian la NFPA 1936 (estándar de la NFPA para herramientas de rescate motorizadas) y la EN 13204 (norma europea que clasifica además la capacidad de corte por categorías). Verifica con la empresa del directorio si las herramientas Hurst Jaws of Life® cumplen ambas y solicita la ficha con la clasificación EN 13204 por modelo, que es la que define qué aceros puede cortar la cizalla.' },
+    { q: '¿Qué norma certifica una herramienta hidráulica de rescate?', a: 'Se referencian la NFPA 1936 (estándar de la NFPA para herramientas de rescate motorizadas) y la EN 13204 (norma europea que clasifica además la capacidad de corte por categorías). Las herramientas Hurst Jaws of Life® cumplen ambas; te entregamos la ficha con la clasificación EN 13204 por modelo, que es la que define qué aceros puede cortar la cizalla.' },
     { q: '¿Por qué se le llama "Jaws of Life" a las herramientas de rescate?', a: 'Porque Hurst inventó la primera herramienta de excarcelación en 1972 con ese nombre comercial, y se volvió tan icónica que hoy "Jaws of Life" se usa como término genérico para cualquier separador/cizalla de rescate. Comprar Hurst es comprar la marca original; su línea eDRAULIC a batería es la evolución moderna de aquel invento, certificada NFPA 1936 / EN 13204.' },
     { q: '¿Batería (eDRAULIC) o sistema hidráulico con unidad de poder?', a: 'La línea eDRAULIC a batería es autocontenida: sin mangueras ni bomba, se despliega en segundos y el operador se mueve libre por la escena. Es hoy la opción preferida de la mayoría de los cuerpos. El sistema con unidad de poder y mangueras conserva sentido para operación continua muy intensiva con varias herramientas simultáneas. Te ayudamos a elegir según tu volumen de operación.' },
     { q: '¿Las cizallas cortan los aceros al boro de los vehículos modernos?', a: 'Sí, con la clasificación de corte adecuada. Los autos recientes usan acero al boro y de alta resistencia en postes B y zonas de seguridad. La cizalla eDRAULIC S 700 tiene hojas y geometría para estos materiales con clasificación EN 13204 alta. Dimensionamos la herramienta según los modelos de vehículo más frecuentes en tu zona.' },
@@ -197,19 +197,19 @@ const weber: EquipmentBrand = {
   brand: 'Weber Rescue',
   brandLabel: 'Weber Rescue',
   crossDesc: 'Ingeniería alemana · E-FORCE · relación peso-potencia · NFPA 1936',
-  eyebrow: 'Weber Rescue · E-FORCE',
+  eyebrow: 'Weber Rescue · E-FORCE · Distribuidor Autorizado MX',
   heroTitleTop: 'Herramientas Weber',
   heroTitleAccent: 'Rescue NFPA 1936.',
   heroLead:
-    'Línea completa de herramientas de rescate Weber Rescue en México. La línea completa —cizalla, separador, combinada y ariete— en versión E-FORCE a batería, con la mejor relación peso-potencia y maniobrabilidad de su clase.',
+    'Distribuidor autorizado de herramientas de rescate Weber Rescue en México. La línea completa —cizalla, separador, combinada y ariete— en versión E-FORCE a batería, con la mejor relación peso-potencia y maniobrabilidad de su clase.',
   heroIntro: [
     'Weber Rescue —ingeniería alemana del grupo Weber-Hydraulik— es una de las marcas de referencia en herramientas hidráulicas de rescate. Su línea E-FORCE a batería destaca por una relación peso-potencia sobresaliente: equipos compactos y ligeros sin sacrificar fuerza de corte.',
-    'En el directorio puedes comparar la gama Weber certificada NFPA 1936 y EN 13204, ideal para cuerpos que priorizan la maniobrabilidad en espacios reducidos, las motos de rescate y las operaciones donde cada kilogramo importa, con la precisión alemana en cada componente.',
+    'Distribuimos la gama Weber certificada NFPA 1936 y EN 13204, ideal para cuerpos que priorizan la maniobrabilidad en espacios reducidos, las motos de rescate y las operaciones donde cada kilogramo importa, con la precisión alemana en cada componente.',
   ],
-  heroBadges: ['NFPA 1936', 'EN 13204', 'E-FORCE batería', 'Ingeniería alemana', 'Ligera'],
+  heroBadges: ['NFPA 1936', 'EN 13204', 'E-FORCE batería', 'Ingeniería alemana', 'Ligera', 'Distribuidor autorizado MX'],
   seoTitle: 'Herramientas Weber Rescue NFPA 1936 — E-FORCE · México',
   seoDescription:
-    'Herramientas de rescate Weber Rescue certificadas NFPA 1936 en México: cizalla, separador, combinada y ariete E-FORCE a batería. Ingeniería alemana, la mejor relación peso-potencia. Demostración y capacitación en sitio.',
+    'Herramientas de rescate Weber Rescue certificadas NFPA 1936 en México: cizalla, separador, combinada y ariete E-FORCE a batería. Ingeniería alemana, la mejor relación peso-potencia. Distribuidor autorizado · demo y servicio.',
   founding: '1939',
   parentOrg: { name: 'Weber-Hydraulik GmbH' },
   stats: [
@@ -265,7 +265,7 @@ const weber: EquipmentBrand = {
     { num: '04', tipo: 'separacion', titulo: 'Brigadas Industriales', desc: 'Brigadas de planta y atención a atrapamientos en maquinaria que valoran precisión y maniobrabilidad. El separador SPS crea acceso y desplaza cargas con la ingeniería alemana.', modelos: 'Weber SPS' },
   ],
   faqs: [
-    { q: '¿Qué norma certifica una herramienta hidráulica de rescate?', a: 'Se referencian la NFPA 1936 y la EN 13204 (que clasifica la capacidad de corte por categorías). Verifica con la empresa del directorio si las herramientas Weber Rescue cumplen ambas y solicita la ficha con la clasificación EN 13204 por modelo, que define qué aceros puede cortar la cizalla — el dato técnico clave para licitación.' },
+    { q: '¿Qué norma certifica una herramienta hidráulica de rescate?', a: 'Se referencian la NFPA 1936 y la EN 13204 (que clasifica la capacidad de corte por categorías). Las herramientas Weber Rescue cumplen ambas; te entregamos la ficha con la clasificación EN 13204 por modelo, que define qué aceros puede cortar la cizalla — el dato técnico clave para licitación.' },
     { q: '¿Por qué se destaca a Weber por su relación peso-potencia?', a: 'Porque la ingeniería alemana de Weber-Hydraulik optimiza cada componente para entregar alta fuerza de corte en equipos notablemente compactos y ligeros. Eso importa por dos razones: maniobrabilidad (cabe y opera en espacios reducidos, motos de rescate, habitáculos estrechos) y menor fatiga del operador en intervenciones prolongadas. La RSX 200 combinada es de las más ligeras de su clase manteniendo capacidad de excarcelación completa.' },
     { q: '¿Batería (E-FORCE) o sistema hidráulico con unidad de poder?', a: 'La línea E-FORCE a batería es autocontenida: sin mangueras ni bomba, se despliega en segundos y el operador se mueve libre por la escena. Es hoy la opción preferida de la mayoría de los cuerpos, especialmente los que priorizan ligereza. El sistema con unidad de poder conserva sentido para operación continua muy intensiva. Te ayudamos a elegir según tu volumen de operación.' },
     { q: '¿Las cizallas cortan los aceros al boro de los vehículos modernos?', a: 'Sí, con la clasificación de corte adecuada. Los autos recientes usan acero al boro y de alta resistencia en postes B y zonas de seguridad. Las cizallas Weber RSX tienen geometría de precisión para estos materiales con clasificación EN 13204 alta. Dimensionamos la herramienta según los modelos de vehículo más frecuentes en tu zona.' },

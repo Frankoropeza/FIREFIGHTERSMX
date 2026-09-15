@@ -21,19 +21,19 @@ const globe: EquipmentBrand = {
   brand: 'Globe Manufacturing',
   brandLabel: 'Globe Manufacturing',
   crossDesc: 'La más licitada en MX · G-XTREME 3.0 · GORE-TEX PFAS-free',
-  eyebrow: 'Globe Manufacturing · MSA Safety',
+  eyebrow: 'Globe Manufacturing · MSA Safety · Distribuidor Autorizado MX',
   heroTitleTop: 'Trajes Globe',
   heroTitleAccent: 'NFPA 1970.',
   heroLead:
-    'Línea completa de Globe Manufacturing en México. Stock permanente de los 6 modelos en tallas S–4XL — entrega en 24–48 h en CDMX con ficha técnica completa para licitación.',
+    'Distribuidor autorizado de Globe Manufacturing en México. Stock permanente de los 6 modelos en tallas S–4XL — entrega en 24–48 h en CDMX con ficha técnica completa para licitación.',
   heroIntro: [
     'Globe Manufacturing — fundada en 1887 y parte del grupo MSA Safety — es el fabricante de trajes para bomberos más solicitado en licitaciones mexicanas tier-1. Más de 110 años fabricando el traje en el que confían departamentos en los 32 estados.',
     'Su línea cubre los tres tipos de riesgo: trajes estructurales (NFPA 1970) para combate en edificios, traje de proximidad aluminizado para aeropuertos ARFF y refinerías, y traje forestal (NFPA 1950) para incendio de interfaz urbano-forestal.',
   ],
-  heroBadges: ['NFPA 1971-2018', 'NFPA 1950', 'PBI Matrix', 'GORE-TEX CrossTech', 'MSA Safety', '110+ años'],
+  heroBadges: ['NFPA 1971-2018', 'NFPA 1950', 'PBI Matrix', 'GORE-TEX CrossTech', 'MSA Safety', '110+ años', 'Distribuidor autorizado MX'],
   seoTitle: 'Trajes Globe Manufacturing NFPA 1970 — Distribuidor MX',
   seoDescription:
-    'Catálogo completo de trajes Globe Manufacturing certificados NFPA 1970 en México. G-XTREME 3.0, ATHLETIX, CLASSIX, G-XCEL, Proximity ARFF y Warrior Wildland. Stock en CDMX.',
+    'Catálogo completo de trajes Globe Manufacturing certificados NFPA 1970 en México. G-XTREME 3.0, ATHLETIX, CLASSIX, G-XCEL, Proximity ARFF y Warrior Wildland. Distribuidor autorizado con stock en CDMX.',
   founding: '1887',
   parentOrg: { name: 'MSA Safety Incorporated', ticker: 'NYSE:MSA' },
   stats: [
@@ -110,19 +110,19 @@ const lion: EquipmentBrand = {
   brand: 'Lion Apparel',
   brandLabel: 'Lion Apparel',
   crossDesc: 'V-Force® movilidad · Quantum · 135+ años · NFPA 1970+1977',
-  eyebrow: 'Lion Apparel · Fundada 1889',
+  eyebrow: 'Lion Apparel · Fundada 1889 · Distribuidor Autorizado MX',
   heroTitleTop: 'Trajes Lion',
   heroTitleAccent: 'certificados NFPA.',
   heroLead:
-    'Línea completa de Lion Apparel en México. Stock permanente de los 6 modelos en tallas S–4XL — entrega en 24–48 h en CDMX con fichas técnicas completas y manifiesto de cumplimiento para licitación pública o adquisición directa.',
+    'Distribuidor autorizado de Lion Apparel en México. Stock permanente de los 6 modelos en tallas S–4XL — entrega en 24–48 h en CDMX con fichas técnicas completas y manifiesto de cumplimiento para licitación pública o adquisición directa.',
   heroIntro: [
     'Lion Apparel — fundada en 1889 en Dayton, Ohio — es el segundo fabricante de trajes de bombero más licitado en México. Su presencia es especialmente fuerte en departamentos metropolitanos, corporativos industriales y brigadas ARFF en aeropuertos internacionales.',
     'La línea cubre los tres escenarios de riesgo certificados por NFPA: trajes estructurales con tecnología V-Force® para máxima movilidad, traje de proximidad aluminizado para ARFF, y traje forestal NFPA 1950 para interfaz urbano-forestal.',
   ],
-  heroBadges: ['NFPA 1971-2018', 'NFPA 1950', 'PBI Matrix', 'V-Force®', 'Kombat Stretch', '135+ años'],
+  heroBadges: ['NFPA 1971-2018', 'NFPA 1950', 'PBI Matrix', 'V-Force®', 'Kombat Stretch', '135+ años', 'Distribuidor autorizado MX'],
   seoTitle: 'Trajes Lion Apparel NFPA 1970 — Distribuidor México',
   seoDescription:
-    'Catálogo completo Lion Apparel certificados NFPA 1970 en México. Quantum, Alpha, Stealth, Commander, ARFF Proximity e Interface Wildland NFPA 1950. fichas para licitación.',
+    'Catálogo completo Lion Apparel certificados NFPA 1970 en México. Quantum, Alpha, Stealth, Commander, ARFF Proximity e Interface Wildland NFPA 1950. Distribuidor autorizado · stock CDMX · fichas para licitación.',
   founding: '1889',
   stats: [
     { valor: '1889', etiq: 'Año de fundación' },
@@ -198,19 +198,19 @@ const honeywell: EquipmentBrand = {
   brand: 'Honeywell Morning Pride',
   brandLabel: 'Honeywell Morning Pride',
   crossDesc: '4 normas · BioClad® CBRN · CarbonX® · Pemex/CFE',
-  eyebrow: 'Honeywell Morning Pride · Honeywell International',
+  eyebrow: 'Honeywell Morning Pride · Honeywell International · Distribuidor Autorizado MX',
   heroTitleTop: 'Trajes Honeywell',
   heroTitleAccent: 'certificados NFPA.',
   heroLead:
-    'Línea completa de Honeywell Morning Pride en México. La única línea que cubre simultáneamente estructural, ARFF, industrial flash fire y CBRN — con stock permanente en CDMX y fichas técnicas para Pemex, CFE y aeropuertos.',
+    'Distribuidor autorizado de Honeywell Morning Pride en México. La única línea que cubre simultáneamente estructural, ARFF, industrial flash fire y CBRN — con stock permanente en CDMX y fichas técnicas para Pemex, CFE y aeropuertos.',
   heroIntro: [
     'Honeywell Morning Pride — parte del conglomerado Honeywell International — es la marca de referencia para operaciones de alto riesgo en petroquímica, refinerías y brigadas HAZMAT. Con presencia documentada en Pemex Refinación, CFE y los principales aeropuertos internacionales de México.',
     'A diferencia de otras marcas estructurales, Morning Pride cubre cuatro normas NFPA en un mismo catálogo: NFPA 1970 estructural, NFPA 2112 flash fire industrial, NFPA 1990 HAZMAT y NFPA 1970 Proximity para ARFF — más la certificación ICAO Annex 14 para aeropuertos internacionales.',
   ],
-  heroBadges: ['NFPA 1971-2018', 'NFPA 2112', 'NFPA 1990', 'ICAO Annex 14', 'PBI Gold', 'CarbonX®', 'BioClad® CBRN'],
+  heroBadges: ['NFPA 1971-2018', 'NFPA 2112', 'NFPA 1990', 'ICAO Annex 14', 'PBI Gold', 'CarbonX®', 'BioClad® CBRN', 'Distribuidor autorizado MX'],
   seoTitle: 'Trajes Honeywell Morning Pride NFPA 1970 — México',
   seoDescription:
-    'Catálogo completo Honeywell Morning Pride certificados NFPA 1970 en México. TechGen, HP Series, GenII, ARFF Proximity, BioClad CBRN y CarbonX Proximity para Pemex, CFE y aeropuertos. stock CDMX.',
+    'Catálogo completo Honeywell Morning Pride certificados NFPA 1970 en México. TechGen, HP Series, GenII, ARFF Proximity, BioClad CBRN y CarbonX Proximity para Pemex, CFE y aeropuertos. Distribuidor autorizado · stock CDMX.',
   parentOrg: { name: 'Honeywell International' },
   stats: [
     { valor: '1920s', etiq: 'Origen de Morning Pride' },
@@ -287,19 +287,19 @@ const fireDex: EquipmentBrand = {
   brand: 'Fire-Dex',
   brandLabel: 'Fire-Dex',
   crossDesc: 'TECGEN® · el más ligero · PFAS-free nativo · #1 crecimiento',
-  eyebrow: 'Fire-Dex · TECGEN® Technology',
+  eyebrow: 'Fire-Dex · TECGEN® Technology · Distribuidor Autorizado MX',
   heroTitleTop: 'Trajes Fire-Dex',
   heroTitleAccent: 'certificados NFPA.',
   heroLead:
-    'Línea completa de Fire-Dex en México. La única línea con fibra TECGEN® nativa — más ligera, más transpirable y PFAS-free sin opciones adicionales. Stock permanente en CDMX con fichas técnicas para licitación.',
+    'Distribuidor autorizado de Fire-Dex en México. La única línea con fibra TECGEN® nativa — más ligera, más transpirable y PFAS-free sin opciones adicionales. Stock permanente en CDMX con fichas técnicas para licitación.',
   heroIntro: [
     'Fire-Dex es la marca de mayor crecimiento en licitaciones tier-1 de México (2023-2025). No por inercia institucional — sino porque sus especificaciones técnicas ganan en comparativa directa: mejor THL que Nomex NXT, menor peso que PBI Matrix, PFAS-free nativo en toda la línea TECGEN® y precio de adquisición más competitivo.',
     'TECGEN® es una fibra sintética de segunda generación que supera a Nomex en transpirabilidad manteniendo el mismo nivel de protección certificado NFPA 1970. Cuando los departamentos empiezan a medir THL junto con TPP, Fire-Dex gana.',
   ],
-  heroBadges: ['NFPA 1971-2018', 'NFPA 2112', 'TECGEN® 71', 'TECGEN® 51', 'PBI/TECGEN Hybrid', 'PFAS-free'],
+  heroBadges: ['NFPA 1971-2018', 'NFPA 2112', 'TECGEN® 71', 'TECGEN® 51', 'PBI/TECGEN Hybrid', 'PFAS-free', 'Distribuidor autorizado MX'],
   seoTitle: 'Trajes Fire-Dex NFPA 1970 — TECGEN® · México',
   seoDescription:
-    'Catálogo completo Fire-Dex certificados NFPA 1970 en México. TECGEN71, TECGEN51 (el más ligero), H71 Hybrid, FXR Proximity y Kombat. La marca de mayor crecimiento en licitaciones tier-1 MX 2023-2025. stock CDMX.',
+    'Catálogo completo Fire-Dex certificados NFPA 1970 en México. TECGEN71, TECGEN51 (el más ligero), H71 Hybrid, FXR Proximity y Kombat. La marca de mayor crecimiento en licitaciones tier-1 MX 2023-2025. Distribuidor autorizado · stock CDMX.',
   stats: [
     { valor: '3.5 kg', etiq: 'Traje NFPA 1970 más ligero (TECGEN51)' },
     { valor: '165 W/m²', etiq: 'THL más alto del segmento estructural' },
@@ -411,11 +411,11 @@ const skold: EquipmentBrand = {
   linesIntro:
     'Sköld cubre cinco escenarios de riesgo desde una sola planta: combate estructural profesional, brigada industrial, incendio forestal, aproximación a llama directa y rescate. Es la marca con el mayor número de familias del catálogo — cinco de los siete tipos de riesgo del sistema.',
   lineas: [
-    { tipo: 'estructural', badge: 'NFPA 1971 Ed. 2018 · UL MH60435', titulo: 'Línea Herö — Profesional', familiaLabel: 'Herö', flagship: 'skold-hero-pbi-estructural', modelos: '2 configuraciones — Herö PBI · Herö Nomex', desc: 'El traje profesional de Sköld y la única línea con certificación UL verificable. Sistema de tres capas con DRD integrado, cuello escudo de cobertura 360° y refuerzos Stedshield en mangas, hombros, codos, rodillas y tobillos. Tallas S–4XL en oro y negro.', tech: 'PBI Max 7.0 (70 PBI / 30 Kevlar) · Stedair 3000 · Defender M · S–4XL · rango $44,700–$61,800 MXN' },
-    { tipo: 'industrial', badge: 'Equiv. NFPA 1971:1991 · excede NFPA 2113', titulo: 'Línea Defender — Brigadista industrial', familiaLabel: 'Defender', flagship: 'skold-defender-brigadista', modelos: '1 modelo, 6 colores — combo, kit y piezas sueltas', desc: 'El traje de brigada industrial más vendido de la marca. Shell Nomex IIIA con 2% de fibra antiestática, refuerzos UltraShield y una suite de normas europeas poco común en el segmento: antiestática EN 1149-3/5, químicos EN 13034, arco eléctrico IEC 61482-2 clase II y térmico ISO 11612. Disponible con o sin DRD.', tech: 'Nomex IIIA 93/5/2 · Neopreno · Chambray · 6 colores · rango $15,000–$22,000 MXN' },
-    { tipo: 'forestal', badge: 'Equivalencia NFPA 1977:2011', titulo: 'Línea Forestal', familiaLabel: 'Forestal', flagship: 'skold-forestal-nomex', modelos: '2 piezas — FPFTJ chaquetón · FPFTP pantalón', desc: 'Conjunto de dos piezas en Nomex IIIA de 6.0 oz con acabado repelente al agua: fibra inherentemente resistente a la flama que no funde, no gotea y no flamea durante toda la vida útil de la prenda. Cierre de broches ocultos en chaquetón y cremallera en pantalón, banda reflejante Orafol.', tech: 'Nomex IIIA 6.0 oz hidrorrepelente · reflejante Orafol · conjunto ~$9,200 MXN' },
-    { tipo: 'proximidad', badge: 'NFPA 1971 ed. 1991 / 2013', titulo: 'Línea Aproximación', familiaLabel: 'Aproximación', flagship: 'skold-aproximacion-aluminizado', modelos: '1 modelo — conjunto aluminizado FPAPROX91', desc: 'Traje aluminizado para exposición a llama directa e irradiación intensa. Shell de cinco capas sobre tejido rip-stop de para-aramida, forro interior desmontable de dos capas y pantalón 100% Kevlar. Incluye DRD en Kevlar de 1½" y zíper de escape.', tech: 'Aluminizado 5 capas · rip-stop 7.0 oz/yd² · Aralite NP + Stedair 3000 · ~$33,400 MXN' },
-    { tipo: 'usar', badge: 'Tela certificada NFPA 2112', titulo: 'Línea Overol de Rescate', familiaLabel: 'Overol de Rescate', flagship: 'skold-overol-rescate', modelos: '1 modelo — FPOR, configurable', desc: 'Overol de una pieza para extricación, rescate vehicular y USAR, donde el traje estructural es excesivo y la ropa de trabajo insuficiente. Tela y reflejante con certificación NFPA 2112, costuras en hilo Kevlar y bolsa de radio con presillas para lámpara y micrófono.', tech: 'Tela FR NFPA 2112 · reflejante 1"/2"/3" plata o amarillo lima · ~$6,100 MXN' },
+    { tipo: 'estructural', badge: 'NFPA 1971 Ed. 2018 · UL MH60435', titulo: 'Línea Herö — Profesional', familiaLabel: 'Herö', flagship: 'skold-hero-pbi-estructural', modelos: '2 configuraciones — Herö PBI · Herö Nomex', desc: 'El traje profesional de Sköld y la única línea con certificación UL verificable. Sistema de tres capas con DRD integrado, cuello escudo de cobertura 360° y refuerzos Stedshield en mangas, hombros, codos, rodillas y tobillos. Tallas S–4XL en oro y negro.', tech: 'PBI Max 7.0 (70 PBI / 30 Kevlar) · Stedair 3000 · Defender M · S–4XL' },
+    { tipo: 'industrial', badge: 'Equiv. NFPA 1971:1991 · excede NFPA 2113', titulo: 'Línea Defender — Brigadista industrial', familiaLabel: 'Defender', flagship: 'skold-defender-brigadista', modelos: '1 modelo, 6 colores — combo, kit y piezas sueltas', desc: 'El traje de brigada industrial más vendido de la marca. Shell Nomex IIIA con 2% de fibra antiestática, refuerzos UltraShield y una suite de normas europeas poco común en el segmento: antiestática EN 1149-3/5, químicos EN 13034, arco eléctrico IEC 61482-2 clase II y térmico ISO 11612. Disponible con o sin DRD.', tech: 'Nomex IIIA 93/5/2 · Neopreno · Chambray · 6 colores' },
+    { tipo: 'forestal', badge: 'Equivalencia NFPA 1977:2011', titulo: 'Línea Forestal', familiaLabel: 'Forestal', flagship: 'skold-forestal-nomex', modelos: '2 piezas — FPFTJ chaquetón · FPFTP pantalón', desc: 'Conjunto de dos piezas en Nomex IIIA de 6.0 oz con acabado repelente al agua: fibra inherentemente resistente a la flama que no funde, no gotea y no flamea durante toda la vida útil de la prenda. Cierre de broches ocultos en chaquetón y cremallera en pantalón, banda reflejante Orafol.', tech: 'Nomex IIIA 6.0 oz hidrorrepelente · reflejante Orafol' },
+    { tipo: 'proximidad', badge: 'NFPA 1971 ed. 1991 / 2013', titulo: 'Línea Aproximación', familiaLabel: 'Aproximación', flagship: 'skold-aproximacion-aluminizado', modelos: '1 modelo — conjunto aluminizado FPAPROX91', desc: 'Traje aluminizado para exposición a llama directa e irradiación intensa. Shell de cinco capas sobre tejido rip-stop de para-aramida, forro interior desmontable de dos capas y pantalón 100% Kevlar. Incluye DRD en Kevlar de 1½" y zíper de escape.', tech: 'Aluminizado 5 capas · rip-stop 7.0 oz/yd² · Aralite NP + Stedair 3000' },
+    { tipo: 'usar', badge: 'Tela certificada NFPA 2112', titulo: 'Línea Overol de Rescate', familiaLabel: 'Overol de Rescate', flagship: 'skold-overol-rescate', modelos: '1 modelo — FPOR, configurable', desc: 'Overol de una pieza para extricación, rescate vehicular y USAR, donde el traje estructural es excesivo y la ropa de trabajo insuficiente. Tela y reflejante con certificación NFPA 2112, costuras en hilo Kevlar y bolsa de radio con presillas para lámpara y micrófono.', tech: 'Tela FR NFPA 2112 · reflejante 1"/2"/3" plata o amarillo lima' },
   ],
   flagship: 'Herö',
   anatomiaIntro:
@@ -455,7 +455,7 @@ const skold: EquipmentBrand = {
   faqs: [
     { q: '¿Un traje Sköld sirve para una licitación que pide "certificado NFPA"?', a: 'Depende del modelo, y la distinción es importante. El Herö con shell PBI Max 7.0 está certificado bajo NFPA 1971 Edición 2018 por UL, laboratorio MH60435 — ese número es verificable y sostiene un requisito de certificación por laboratorio acreditado. Las demás líneas (Defender, Forestal, Aproximación) declaran equivalencia con la norma correspondiente, lo cual es una declaración del fabricante y no una certificación de tercero. Si el pliego exige literalmente certificación de laboratorio acreditado, la única partida Sköld que la cumple es el Herö PBI. Si el requisito es de cumplimiento técnico para una brigada interna, las demás líneas son perfectamente válidas. Le preparamos la documentación correspondiente en cualquiera de los dos casos, sin ambigüedad.' },
     { q: '¿Por qué un traje Sköld cuesta tres o cuatro veces menos que un Globe o un Lion?', a: 'Por tres factores. Primero, fabricación nacional: no hay importación, arancel, flete internacional ni margen de distribuidor extranjero. Segundo, alcance de certificación: solo el Herö sostiene una certificación UL de tercero, y el proceso de certificar y recertificar cada modelo ante un laboratorio acreditado es una parte sustancial del costo de un traje tier-1. Tercero, materiales: el Defender usa Nomex IIIA con barrera de neopreno y forro chambray, una construcción más simple y más pesada que un PBI Matrix con GORE-TEX CrossTech. No es el mismo producto y no debe venderse como tal — es el producto correcto para un escenario distinto.' },
-    { q: '¿Cuánto cuesta un traje Sköld en México?', a: 'Rangos de referencia observados en distribuidores autorizados a agosto de 2026, en pesos: el conjunto Forestal (chaquetón FPFTJ más pantalón FPFTP) ronda los $9,200; el Overol de Rescate FPOR, los $6,100; el Defender brigadista va de $15,000 el traje a cerca de $22,000 el kit completo con casco, botas, guantes y escafandra; el conjunto de Aproximación aluminizado ronda los $33,400; y el Herö va de $44,700 el combo a cerca de $61,800 el kit completo en versión PBI. Son precios de referencia, no cotización: el número final depende de talla, color, configuración con o sin DRD, y volumen. Un pedido de flota completa se cotiza distinto que una pieza.' },
+    { q: '¿Cuánto cuesta un traje Sköld en México?', a: 'No publicamos precios fijos: cada partida se cotiza por escrito. El importe depende de la línea (Herö, Defender, Forestal, Aproximación u Overol de Rescate), la talla, el color, la configuración con o sin DRD y el volumen; un pedido de flota completa se cotiza distinto que una pieza. Envíanos tallas, cantidades y línea desde la página de cotización.' },
     { q: '¿Por qué la comparativa dice "s/d fabricante" en TPP y THL?', a: 'Porque Sköld no publica los valores de laboratorio de TPP (Thermal Protective Performance) ni THL (Total Heat Loss) de sus conjuntos, y preferimos declararlo antes que estimar un número que usted podría llevar a un pliego de licitación. Lo que sí está documentado y verificado son los datos mecánicos del Defender —resistencia al desgarre de 55×35 lbf, fuerza de tensión de 260×230 lbf, contracción térmica de 2.5×2.5 in y flamabilidad vertical de 0.0 segundos— junto con la composición exacta de cada capa. Estamos solicitando las fichas de laboratorio directamente al fabricante y actualizaremos esta tabla en cuanto las tengamos. Si su proceso requiere TPP y THL certificados hoy, las líneas Globe, Lion, Honeywell y Fire-Dex del catálogo sí los publican.' },
     { q: '¿Qué diferencia hay entre el Defender y el Herö, más allá del precio?', a: 'Son trajes para usuarios distintos. El Herö es el traje del bombero profesional: shell PBI Max 7.0, barrera Stedair 3000, forro Defender M, refuerzos Stedshield, DRD integrado, tallas S a 4XL y certificación UL bajo NFPA 1971 Edición 2018. El Defender es el traje del brigadista industrial: shell Nomex IIIA con 2% de fibra antiestática, barrera de neopreno, forro chambray, refuerzos UltraShield, seis colores y una batería de normas europeas de químicos, arco eléctrico y antiestática que el Herö no declara. Un bombero municipal de tiempo completo que entra a estructuras a diario necesita el Herö. Una brigada de planta que responde a conatos y derrames, y que necesita protección antiestática y contra arco eléctrico, está mejor servida con el Defender.' },
     { q: '¿Sköld da soporte de refacciones y reparación en México?', a: 'Sí, y es su ventaja más concreta frente a las marcas de importación. El fabricante opera taller de confección propio en Monterrey con servicio de reparación express, además de bordado e impresión personalizada de la corporación. Un chaquetón dañado en servicio se repara dentro del país en lugar de salir a planta extranjera, y las piezas se venden por separado —chaquetón FPJ01, pantalón FP001 y tirantes FPT01 en la línea Defender— de modo que una prenda dañada no obliga a reponer el conjunto. El fabricante también opera SKÖLDTracker, su sistema de trazabilidad, que sostiene el expediente de inspección y retiro por vida útil bajo NFPA 1850.' },

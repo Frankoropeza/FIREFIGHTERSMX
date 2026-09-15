@@ -3,26 +3,11 @@ export interface NavItem {
   href: string;
   description?: string;   // subtítulo opcional (para mega-menu o tooltips)
   children?: NavItem[];   // soporta hasta 3 niveles
+  /** 'directorio' = registros de terceros. El header lo separa visualmente de la tienda. */
+  zona?: 'tienda' | 'directorio';
 }
 
 export const navigation: { main: NavItem[] } = { main: [
-  {
-    label: "Empresas",
-    href: "/empresas",
-    description: "Directorio nacional · 5 giros · 32 estados",
-    children: [
-      { label: "Venta de equipo y EPP",        href: "/empresas/venta-equipo",  description: "Distribuidores de equipo para bomberos y EPP" },
-      { label: "Extintores",                   href: "/empresas/extintores",    description: "Venta, recarga y mantenimiento" },
-      { label: "Sistemas contra incendio",     href: "/empresas/sistemas-ci",   description: "Ingeniería e instalación NFPA" },
-      { label: "Capacitación y consultoría",   href: "/empresas/capacitacion",  description: "Brigadas, DC-3, NOM-002" },
-      { label: "Ciudad de México",             href: "/empresas/estado/ciudad-de-mexico", description: "Todas las empresas de CDMX" },
-      { label: "Estado de México",             href: "/empresas/estado/estado-de-mexico", description: "Todas las empresas del Edomex" },
-      { label: "Jalisco",                      href: "/empresas/estado/jalisco",  description: "Todas las empresas de Jalisco" },
-      { label: "Nuevo León",                   href: "/empresas/estado/nuevo-leon", description: "Todas las empresas de NL" },
-      { label: "Registrar o reclamar ficha",   href: "/empresas/registro",      description: "Alta básica gratuita" },
-      { label: "Directorio completo de empresas →", href: "/empresas" },
-    ],
-  },
   {
     label: "Productos",
     href: "/productos",
@@ -113,8 +98,8 @@ export const navigation: { main: NavItem[] } = { main: [
         ],
       },
       { label: "Drones de Emergencia",       href: "/productos/drones-emergencia",      description: "ISR, búsqueda y rescate" },
-      { label: "Marcas y fabricantes de referencia", href: "/marcas",                 description: "Guía de fabricantes del sector" },
-      { label: "Guía completa de equipo para bomberos →", href: "/productos" },
+      { label: "Marcas que distribuimos",     href: "/marcas",                           description: "Distribuidor autorizado · 20+ fabricantes" },
+      { label: "Catálogo completo de equipo para bomberos →", href: "/productos" },
     ],
   },
   {
@@ -151,23 +136,50 @@ export const navigation: { main: NavItem[] } = { main: [
       { label: "La empresa",                 href: "/empresa" },
       { label: "Nosotros",                   href: "/nosotros" },
       { label: "Certificaciones",            href: "/certificaciones" },
-      { label: "Cobertura Nacional",         href: "/cobertura" },
-      { label: "Distribuidores",             href: "/distribuidores" },
+      { label: "Cobertura y envíos",         href: "/distribuidores" },
+      { label: "Cotizar equipo",             href: "/cotizacion" },
       { label: "Contacto",                   href: "/contacto" },
     ],
   },
   { label: "Precios", href: "/precios" },
   { label: "Licitaciones", href: "/licitaciones" },
   {
-    label: "Estaciones",
-    href: "/estaciones",
+    label: "Directorio",
+    href: "/empresas",
+    zona: "directorio",
+    description: "Empresas del sector y estaciones de bomberos",
     children: [
-      { label: "Estaciones de Bomberos",  href: "/estaciones",            description: "Directorio nacional — 32 estados" },
-      { label: "Ciudad de México",        href: "/estaciones/ciudad-de-mexico", description: "HCBCDMX + AICM + cuarteles" },
-      { label: "Jalisco",                 href: "/estaciones/jalisco",    description: "GDL, ZMG y municipios" },
-      { label: "Nuevo León",              href: "/estaciones/nuevo-leon", description: "Monterrey y ZMM" },
-      { label: "Estado de México",        href: "/estaciones/estado-de-mexico", description: "Toluca, Naucalpan, Ecatepec" },
-      { label: "Estaciones de bomberos en los 32 estados →", href: "/estaciones" },
+      {
+        label: "Empresas del sector",
+        href: "/empresas",
+        description: "Fichas de terceros · 5 giros · 32 estados",
+        children: [
+          { label: "Venta de equipo y EPP",        href: "/empresas/venta-equipo",  description: "Distribuidores de equipo para bomberos y EPP" },
+          { label: "Extintores",                   href: "/empresas/extintores",    description: "Venta, recarga y mantenimiento" },
+          { label: "Sistemas contra incendio",     href: "/empresas/sistemas-ci",   description: "Ingeniería e instalación NFPA" },
+          { label: "Capacitación y consultoría",   href: "/empresas/capacitacion",  description: "Brigadas, DC-3, NOM-002" },
+          { label: "Ciudad de México",             href: "/empresas/estado/ciudad-de-mexico", description: "Todas las empresas de CDMX" },
+          { label: "Estado de México",             href: "/empresas/estado/estado-de-mexico", description: "Todas las empresas del Edomex" },
+          { label: "Jalisco",                      href: "/empresas/estado/jalisco",  description: "Todas las empresas de Jalisco" },
+          { label: "Nuevo León",                   href: "/empresas/estado/nuevo-leon", description: "Todas las empresas de NL" },
+          { label: "Registrar o reclamar ficha",   href: "/empresas/registro",      description: "Alta básica gratuita" },
+          { label: "Directorio completo de empresas →", href: "/empresas" },
+        ],
+      },
+      {
+        label: "Estaciones de bomberos",
+        href: "/estaciones",
+        description: "Directorio nacional · 32 estados",
+        children: [
+          { label: "Estaciones de Bomberos",  href: "/estaciones",            description: "Todas las estaciones del país" },
+          { label: "Ciudad de México",        href: "/estaciones/ciudad-de-mexico", description: "HCBCDMX + AICM + cuarteles" },
+          { label: "Jalisco",                 href: "/estaciones/jalisco",    description: "GDL, ZMG y municipios" },
+          { label: "Nuevo León",              href: "/estaciones/nuevo-leon", description: "Monterrey y ZMM" },
+          { label: "Estado de México",        href: "/estaciones/estado-de-mexico", description: "Toluca, Naucalpan, Ecatepec" },
+          { label: "Estaciones de bomberos en los 32 estados →", href: "/estaciones" },
+        ],
+      },
+      { label: "Empresas por estado", href: "/cobertura", description: "Consulta el directorio por entidad" },
     ],
   },
 ] };

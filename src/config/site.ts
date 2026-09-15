@@ -1,8 +1,10 @@
 export const SITE = {
   name:        'FIREFIGHTERS MX',
   shortName:   'FFMX',
-  tagline:     'Directorio nacional de empresas de equipo contra incendios y equipo para bomberos',
-  description: 'Directorio nacional de empresas de equipo contra incendios, equipo para bomberos, extintores, sistemas contra incendio y capacitación en México.',
+  // Identidad híbrida (2026-09-15): FIREFIGHTERS MX vende y distribuye equipo
+  // (la tienda) y además publica el directorio nacional de empresas y estaciones.
+  tagline:     'Venta y distribución de equipo para bomberos y equipo contra incendio en México',
+  description: 'Distribuidor de equipo para bomberos y equipo contra incendio en México: trajes, SCBA, cascos, extintores y sistemas contra incendio, con envíos a los 32 estados. Incluye el directorio nacional de empresas y estaciones de bomberos.',
   url:         'https://firefighters.mx',
   // ⚠️ Teléfono / WhatsApp SIN VERIFICAR — ver CONTACTO_DIRECTO_ACTIVO abajo.
   // Los valores anteriores ('55 1234-5678' / '+525512345678' / '525512345678') eran
@@ -13,19 +15,17 @@ export const SITE = {
   email:       'firefightersmx50@gmail.com',
   whatsapp:    '',
   hours:       'Lun–Vie 8am–6pm · Sáb 9am–2pm',
-  // ⚠️ DOMICILIO SIN VERIFICAR — ver DOMICILIO_VERIFICADO abajo.
-  // El valor anterior ('Torre A, Av. Baja California 255, Colonia Condesa,
-  // Cuauhtémoc, 06170') era el placeholder del template: la calle existe, pero
-  // corresponde a Col. Hipódromo C.P. 06100, no a Condesa 06170. Se vacía para
-  // no publicar NAP fabricado (regla dura OrigenLab: cero contenido fabricado).
+  // Domicilio confirmado por Frank Oropeza el 2026-09-15 (oficinas y operación).
+  // El valor de la plantilla ('Av. Baja California 255, Condesa') era falso y
+  // sigue bloqueado por scripts/verificar-claims.mjs (F-01).
   address: {
-    street:   '',
-    colonia:  '',
-    delegacion: '',
-    postalCode: '',
-    city:     'Ciudad de México',
-    country:  'MX',
-    full:     '',
+    street:     'Av. Homero 229, Piso 5',
+    colonia:    'Polanco V Sección',
+    delegacion: 'Miguel Hidalgo',
+    postalCode: '11560',
+    city:       'Ciudad de México',
+    country:    'MX',
+    full:       'Av. Homero 229, Piso 5, Polanco V Sección, Miguel Hidalgo, 11560 Ciudad de México, CDMX',
   },
   // ⚠️ REDES SIN VERIFICAR — ver REDES_VERIFICADAS abajo.
   // Verificación 2026-09-05: LinkedIn, YouTube y X responden 404; Facebook e
@@ -61,7 +61,7 @@ export const CONTACTO_DIRECTO_ACTIVO = false;
  * ni en `address` del JSON-LD (Organization y LocalBusiness).
  * Para activarlo: llenar `SITE.address` con el domicilio real y poner `true`.
  */
-export const DOMICILIO_VERIFICADO = false;
+export const DOMICILIO_VERIFICADO = true;
 
 /**
  * ⚠️ INTERRUPTOR DE REDES SOCIALES
@@ -70,6 +70,9 @@ export const DOMICILIO_VERIFICADO = false;
  * que existan y poner `true`. `sameAs` filtra los vacíos aunque esté en `true`.
  */
 export const REDES_VERIFICADAS = false;
+
+/** Canal de contacto directo, para textos visibles («Cotizar por {CANAL_CONTACTO}») */
+export const CANAL_CONTACTO = CONTACTO_DIRECTO_ACTIVO ? 'WhatsApp' : 'correo';
 
 /** Etiqueta del CTA principal de contacto */
 export const CTA_CONTACTO = CONTACTO_DIRECTO_ACTIVO

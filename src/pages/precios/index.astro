@@ -6,9 +6,9 @@ import { SITE } from '@config/site';
 const canonicalURL = `${SITE.url}/precios/`;
 
 const seoMeta = {
-  title: 'Precios de Equipo para Bomberos: Factores y Cotización',
+  title: 'Precios de Equipo para Bomberos: Cómo Cotizar con FIREFIGHTERS MX',
   description:
-    'Guía sobre precios de equipo para bomberos y contra incendios en México. Conoce qué cambia el costo y qué datos comparar al solicitar cotizaciones.',
+    'Precios de equipo para bomberos y contra incendio en México: qué cambia el costo y qué datos enviarnos para cotizar trajes, SCBA, extintores y sistemas.',
   canonicalURL,
 };
 
@@ -22,12 +22,12 @@ const factores = [
 ];
 
 const categorias = [
-  { title: 'Extintores', text: 'Define agente, capacidad, aplicación, cantidad y servicio requerido.', guide: '/productos/extintores/', companies: '/empresas/extintores/' },
-  { title: 'Sistemas contra incendio', text: 'Separa ingeniería, suministro, instalación, pruebas y mantenimiento.', guide: '/productos/sistemas-ci/', companies: '/empresas/sistemas-ci/' },
-  { title: 'Trajes para bomberos', text: 'Especifica tipo de operación, tallas, configuración y documentación requerida.', guide: '/productos/trajes-bombero/', companies: '/empresas/venta-equipo/' },
-  { title: 'Equipos SCBA', text: 'Indica duración nominal, cilindros, compatibilidad, accesorios y soporte necesario.', guide: '/productos/equipos-scba/', companies: '/empresas/venta-equipo/' },
-  { title: 'Cascos y EPP', text: 'Detalla uso, tallas, accesorios, compatibilidad y norma solicitada.', guide: '/productos/cascos-nfpa/', companies: '/empresas/venta-equipo/' },
-  { title: 'Herramientas de rescate', text: 'Compara tecnología, fuente de energía, accesorios, capacitación y mantenimiento.', guide: '/productos/herramientas-rescate/', companies: '/empresas/venta-equipo/' },
+  { title: 'Extintores', text: 'Define agente, capacidad, aplicación, cantidad y servicio requerido.', guide: '/productos/extintores/' },
+  { title: 'Sistemas contra incendio', text: 'Separa ingeniería, suministro, instalación, pruebas y mantenimiento.', guide: '/productos/sistemas-ci/' },
+  { title: 'Trajes para bomberos', text: 'Especifica tipo de operación, tallas, configuración y documentación requerida.', guide: '/productos/trajes-bombero/' },
+  { title: 'Equipos SCBA', text: 'Indica duración nominal, cilindros, compatibilidad, accesorios y soporte necesario.', guide: '/productos/equipos-scba/' },
+  { title: 'Cascos y EPP', text: 'Detalla uso, tallas, accesorios, compatibilidad y norma solicitada.', guide: '/productos/cascos-nfpa/' },
+  { title: 'Herramientas de rescate', text: 'Compara tecnología, fuente de energía, accesorios, capacitación y mantenimiento.', guide: '/productos/herramientas-rescate/' },
 ];
 
 const datosCotizacion = [
@@ -41,11 +41,11 @@ const datosCotizacion = [
 ];
 
 const faqs = [
-  { q: '¿Por qué FIREFIGHTERS MX no publica una lista de precios fijos?', a: 'FIREFIGHTERS MX es un directorio y una plataforma editorial, no el vendedor de los equipos. Además, una propuesta puede cambiar por configuración, cantidad, documentación, logística y servicios asociados. El precio vigente debe confirmarse directamente con cada empresa.' },
-  { q: '¿Cómo puedo comparar cotizaciones de equipo contra incendio?', a: 'Entrega el mismo alcance a todas las empresas y compara por separado equipo, accesorios, impuestos, entrega, instalación, pruebas, capacitación, mantenimiento, garantía y documentación. Revisa también exclusiones y vigencia de cada propuesta.' },
+  { q: '¿Por qué FIREFIGHTERS MX no publica una lista de precios fijos?', a: 'Porque el precio de cada partida cambia con la marca, la configuración, las tallas, la cantidad, la documentación solicitada y el destino de entrega. Cotizamos cada solicitud por escrito, con disponibilidad y condiciones de entrega.' },
+  { q: '¿Cómo puedo comparar cotizaciones de equipo contra incendio?', a: 'Pide todas las propuestas sobre el mismo alcance y compara por separado equipo, accesorios, impuestos, entrega, instalación, pruebas, capacitación, mantenimiento, garantía y documentación. Revisa también exclusiones y vigencia de cada propuesta.' },
   { q: '¿El precio más bajo representa la misma solución?', a: 'No necesariamente. Dos propuestas pueden incluir capacidades, materiales, accesorios, documentación o servicios diferentes. La comparación debe hacerse sobre especificaciones y alcances equivalentes.' },
-  { q: '¿Dónde encuentro empresas para solicitar precios?', a: 'Consulta el directorio nacional por giro y estado. FIREFIGHTERS MX facilita la localización de registros; cada empresa es responsable de sus datos, condiciones y cotizaciones.' },
-  { q: '¿Qué debo verificar antes de aceptar una cotización?', a: 'Confirma la identidad de la empresa, especificaciones, cantidades, documentación, impuestos, forma de pago, entrega, instalación, garantía y servicio posterior. Cuando una norma sea indispensable, solicita evidencia aplicable al modelo y configuración cotizados.' },
+  { q: '¿Cómo solicito una cotización a FIREFIGHTERS MX?', a: 'Envíanos el alcance desde la página de cotización o por correo: equipo o sistema, cantidades, tallas o configuraciones, norma requerida, documentos para licitación y estado de entrega. Enviamos a los 32 estados.' },
+  { q: '¿Qué debo verificar antes de aceptar una cotización?', a: 'Confirma especificaciones, cantidades, documentación, impuestos, forma de pago, entrega, instalación, garantía y servicio posterior. Cuando una norma sea indispensable, solicita evidencia aplicable al modelo y configuración cotizados.' },
 ];
 
 const breadcrumbSchema = {
@@ -96,14 +96,14 @@ const faqSchema = {
           <span style="color:#F75000">para bomberos.</span>
         </h1>
         <p class="text-base leading-[1.9] mb-4 max-w-3xl" style="color:#94A3B8">
-          El precio de equipo para bomberos y contra incendios depende de la especificación, cantidad, documentación, logística y servicios incluidos. Esta guía explica qué información reunir para solicitar propuestas comparables a empresas del sector en México.
+          El precio de equipo para bomberos y contra incendios depende de la especificación, cantidad, documentación, logística y servicios incluidos. Esta página explica qué información reunir para que te enviemos una cotización completa y comparable.
         </p>
         <p class="text-sm leading-[1.9] mb-8 max-w-3xl" style="color:#64748B">
-          FIREFIGHTERS MX no vende ni cotiza equipos. Los importes, disponibilidad y condiciones deben confirmarse directamente con cada empresa del directorio.
+          No publicamos una lista de precios fijos: cada partida se cotiza por escrito con disponibilidad, condiciones de entrega y la documentación que requiera tu proyecto.
         </p>
         <div class="flex flex-col sm:flex-row gap-3">
-          <a href="/empresas/" class="btn btn-primary btn-lg">Buscar empresas</a>
-          <a href="/productos/" class="btn btn-ghost btn-lg">Consultar guías de equipo</a>
+          <a href="/cotizacion/" class="btn btn-primary btn-lg">Solicitar cotización</a>
+          <a href="/productos/" class="btn btn-ghost btn-lg">Ver catálogo de equipo</a>
         </div>
       </div>
     </div>
@@ -119,7 +119,7 @@ const faqSchema = {
           Factores que cambian el precio<br/>
           <span style="color:#F75000">del equipo contra incendio.</span>
         </h2>
-        <p class="text-sm leading-relaxed" style="color:#94A3B8">Para comparar propuestas, define primero un alcance común. Un importe aislado no permite saber si dos empresas están cotizando la misma solución.</p>
+        <p class="text-sm leading-relaxed" style="color:#94A3B8">Para comparar propuestas, define primero un alcance común. Un importe aislado no permite saber si dos propuestas cubren la misma solución.</p>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
         {factores.map((factor) => (
@@ -144,8 +144,8 @@ const faqSchema = {
             <h3 class="font-display font-bold text-xl mb-3" style="color:#FFFFFF">{categoria.title}</h3>
             <p class="text-xs leading-relaxed mb-6 flex-1" style="color:#64748B">{categoria.text}</p>
             <div class="flex flex-wrap gap-2">
-              <a href={categoria.guide} class="btn btn-sm btn-dark">Ver guía</a>
-              <a href={categoria.companies} class="btn btn-sm btn-outline">Buscar empresas</a>
+              <a href={categoria.guide} class="btn btn-sm btn-dark">Ver catálogo</a>
+              <a href="/cotizacion/" class="btn btn-sm btn-outline">Cotizar</a>
             </div>
           </article>
         ))}
@@ -159,7 +159,7 @@ const faqSchema = {
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Solicitud comparable</span>
           <h2 id="datos-title" class="font-display font-bold mb-5" style="color:#FFFFFF;font-size:clamp(1.9rem,3.8vw,3rem);line-height:1.05">Datos para pedir una<br/><span style="color:#F75000">cotización completa.</span></h2>
-          <p class="text-sm leading-relaxed" style="color:#94A3B8">Utiliza la misma lista con cada empresa. Así podrás identificar diferencias de alcance y evitar comparar solo el importe final.</p>
+          <p class="text-sm leading-relaxed" style="color:#94A3B8">Con esta información preparamos una propuesta completa, sin supuestos que después cambien el importe final.</p>
         </div>
         <ol class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.18)">
           {datosCotizacion.map((dato, index) => (
@@ -195,14 +195,14 @@ const faqSchema = {
     </div>
   </section>
 
-  <section style="background:#F75000;padding-block:4rem" aria-label="Buscar empresas de equipo contra incendio">
+  <section style="background:#F75000;padding-block:4rem" aria-label="Solicitar cotización de equipo para bomberos">
     <div class="container-site">
       <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
         <div>
-          <p class="text-xs font-display font-bold uppercase tracking-[0.2em] mb-3" style="color:rgba(255,255,255,0.7)">Directorio nacional</p>
-          <h2 class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.75rem,3.5vw,2.5rem);line-height:1.1">Compara empresas por<br/>giro, estado y especialidad.</h2>
+          <p class="text-xs font-display font-bold uppercase tracking-[0.2em] mb-3" style="color:rgba(255,255,255,0.7)">Distribuidor autorizado · envíos a los 32 estados</p>
+          <h2 class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.75rem,3.5vw,2.5rem);line-height:1.1">Cotiza tu equipo<br/>con FIREFIGHTERS MX.</h2>
         </div>
-        <a href="/empresas/" class="btn" style="background:#FFFFFF;color:#F75000;font-weight:700">Explorar empresas</a>
+        <a href="/cotizacion/" class="btn" style="background:#FFFFFF;color:#F75000;font-weight:700">Solicitar cotización</a>
       </div>
     </div>
   </section>

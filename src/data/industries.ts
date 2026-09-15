@@ -42,7 +42,7 @@ export const industries: Industry[] = [
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s8-4 8-10V6l-8-3-8 3v6c0 6 8 10 8 10z"/><path d="M12 8c0 0-3.5 2.8-2 5.6.8 1.4 2 1.4 2 1.4s-.7-1.4 0-2.8c.7-1.4 2-1.4 2-1.4s-.7 2 .7 3.5c.6.6.7 1.4.7 1.4"/></svg>`,
     href: '/industrias/bomberos-municipales',
     intro: [
-      'Equipar un cuerpo de bomberos municipal es un proyecto de adquisición pública con presupuesto acotado, anexos técnicos exigentes y vidas de por medio. Acompañamos a los H. Cuerpos de Bomberos en todo el país: del anexo técnico a la entrega con número de serie verificable.',
+      'Equipar un cuerpo de bomberos municipal es un proyecto de adquisición pública con presupuesto acotado, anexos técnicos exigentes y vidas de por medio. Llevamos más de 15 años acompañando H. Cuerpos de Bomberos en todo el país: del anexo técnico a la entrega con número de serie verificable.',
       'Trabajamos con esquema de precio preferencial para cuerpos de bomberos y programas de equipamiento por fases, para que el presupuesto anual rinda sin sacrificar certificación ni garantía.',
     ],
     risks: [
@@ -55,7 +55,7 @@ export const industries: Industry[] = [
       title: 'Equipa a tu cuerpo de bomberos',
       highlight: 'con respaldo de fábrica',
       paragraphs: [
-      'Un cuerpo de bomberos no compra equipo: invierte presupuesto público en la seguridad de su gente. Por eso cada partida debe incluir certificado de laboratorio acreditado, número de serie verificable y carta de fabricante — la documentación que el órgano fiscalizador y el ayuntamiento pueden auditar.',
+        'Un cuerpo de bomberos no compra equipo: invierte presupuesto público en la seguridad de su gente. Por eso cada partida que entregamos lleva certificado de laboratorio acreditado, número de serie verificable y carta de fabricante — la documentación que el órgano fiscalizador y el ayuntamiento pueden auditar.',
         'Armamos programas de equipamiento por etapas: primero EPP estructural completo, después aire autónomo y herramientas de rescate, con capacitación NFPA 1001 incluida para que la inversión se traduzca en capacidad operativa real.',
       ],
       subsections: [
@@ -71,7 +71,7 @@ export const industries: Industry[] = [
     recommendedServices: ['capacitacion', 'licitaciones', 'mantenimiento'],
     faqs: [
       { q: '¿Manejan precios especiales para cuerpos de bomberos?', a: 'Sí. Tenemos esquema de precio preferencial para H. Cuerpos de Bomberos, patronatos y Protección Civil, además de programas de equipamiento por fases para ajustarse al presupuesto anual disponible.' },
-      { q: '¿Pueden participar en nuestra licitación municipal?', a: 'Sí. Participamos directamente o respaldamos a tu proveedor local con fichas técnicas formato CompraNet y stock comprometido antes de la firma.' },
+      { q: '¿Pueden participar en nuestra licitación municipal?', a: 'Sí. Participamos directamente o respaldamos a tu proveedor local con cartas de distribuidor autorizado, fichas técnicas formato CompraNet y stock comprometido antes de la firma.' },
       { q: '¿El equipo usado o de donación cumple la norma?', a: 'El EPP estructural tiene vida útil máxima de 10 años desde fabricación según NFPA 1850, y el equipo donado usado rara vez la cumple o carece de trazabilidad. Podemos inspeccionar tu inventario actual y decirte qué es utilizable y qué debe retirarse.' },
     ],
   },
@@ -86,7 +86,7 @@ export const industries: Industry[] = [
     href: '/industrias/brigadas-industriales',
     intro: [
       'Toda planta con empleados en México debe cumplir la NOM-002-STPS-2010: clasificar su riesgo, equipar contra incendio, formar brigada y documentarlo todo. Resolvemos el paquete completo para plantas manufactureras, centros logísticos y parques industriales.',
-      'Nuestro enfoque es el expediente: además de los extintores y EPP, exige la evidencia documental — constancias DC-3, bitácoras, reportes de simulacro — que el inspector de la STPS va a pedir.',
+      'Nuestro enfoque es el expediente: no solo entregamos extintores y EPP, entregamos la evidencia documental — constancias DC-3, bitácoras, reportes de simulacro — que el inspector de la STPS va a pedir.',
     ],
     risks: [
       { name: 'Cumplimiento NOM-002', detail: 'Clasificación de riesgo, equipamiento mínimo y simulacros documentados ante inspección STPS.' },
@@ -271,7 +271,7 @@ export const industries: Industry[] = [
       highlight: 'de PEMEX y ASEA',
       paragraphs: [
         'En el sector hidrocarburos, un equipo sin la documentación correcta simplemente no entra a planta. Cada partida que suministramos llega con certificado de conformidad, tabla de compatibilidad química cuando aplica y trazabilidad de fábrica — armado para el formato del anexo que te rige.',
-        'El suministro a PEMEX y sus contratistas se rige por tiempos de residencia, libranzas y paros programados. Al comparar proveedores en el directorio, confirma que puedan coordinar entregas y mantenimiento dentro de tus ventanas operativas y que su personal cuente con la acreditación para acceder a instalaciones.',
+        'Conocemos los procesos de PEMEX y sus contratistas: tiempos de residencia, libranzas y paros programados. Coordinamos entregas y servicios de mantenimiento dentro de tus ventanas operativas, con personal acreditado para acceso a instalaciones.',
       ],
       subsections: [
         { name: 'HAZMAT con permeación documentada', detail: 'Nivel A y B con tablas del fabricante por sustancia específica de tu proceso.' },
@@ -372,7 +372,7 @@ export const industries: Industry[] = [
     recommendedServices: ['capacitacion', 'licitaciones', 'brigadas-empresariales'],
     faqs: [
       { q: '¿Qué equipo básico necesita una unidad municipal de PC?', a: 'Como base: EPP de respondiente por elemento (casco, guantes, botas, lámpara), extintores y herramienta básica de rescate, botiquín prehospitalario, radios y señalización de escena. A partir de ahí se escala según las amenazas del municipio: rescate acuático, vertical o USAR.' },
-      { q: '¿Apoyan con la justificación de la compra?', a: 'Consulta el directorio para localizar empresas y solicita fichas técnicas, comparativos y la documentación de adquisición que facilita la comprobación ante el órgano fiscalizador, además de soporte en procesos de licitación o adjudicación.' },
+      { q: '¿Apoyan con la justificación de la compra?', a: 'Sí. Entregamos fichas técnicas, comparativos y la documentación de adquisición que facilita la comprobación ante el órgano fiscalizador, además de soporte en procesos de licitación o adjudicación.' },
       { q: '¿El dron térmico requiere permisos para operar?', a: 'Sí, registro de aeronave y operador ante la AFAC para operación institucional. Lo tramitamos como parte del paquete, junto con la capacitación de piloto y los protocolos de operación.' },
     ],
   },

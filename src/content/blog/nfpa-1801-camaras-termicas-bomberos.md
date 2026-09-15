@@ -3,7 +3,7 @@ title: "NFPA 1930: Lo que nadie te dice cuando compras una cámara térmica para
 description: "Cómo distinguir una cámara térmica certificada NFPA 1930 de una industrial disfrazada. Criterios técnicos y preguntas clave para tu proceso de licitación."
 pubDate: 2026-02-15
 updatedDate: 2026-06-25
-author: "Equipo editorial FIREFIGHTERS MX"
+author: "Ing. Marco García"
 category: "Cámaras Térmicas"
 tags: ["NFPA 1801", "cámaras térmicas", "bomberos", "certificación", "EPP incendio"]
 image:
@@ -226,8 +226,8 @@ La NFPA 1930 existe porque la diferencia entre una cámara que funciona dentro d
 
 ---
 
-## Directorio de Cámaras Térmicas en FIREFIGHTERS MX
+## Catálogo Cámaras Térmicas en FIREFIGHTERS MX
 
-En el directorio puedes comparar empresas que manejan cámaras térmicas certificadas bajo NFPA 1801 edición 2021 con número de certificado verificable en los registros públicos de UL y FM. FLIR K-Series, MSA Evolution y Bullard TXS; solicita soporte técnico y disponibilidad de baterías en México.
+Distribuimos cámaras térmicas certificadas bajo NFPA 1801 edición 2021 con número de certificado verificable en los registros públicos de UL y FM. FLIR K-Series, MSA Evolution y Bullard TXS con soporte técnico y disponibilidad de baterías en México.
 
-[Directorio de Cámaras Térmicas](/productos/camaras-termicas) · [Empresas por estado](/empresas/)
+[Catálogo completo de Cámaras Térmicas](/productos/camaras-termicas) · [Solicitar cotización](/cotizacion)

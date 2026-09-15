@@ -38,7 +38,7 @@ const organizationSchema = {
   '@id': `${SITE.url}/#business`,
   name: SITE.name,
   alternateName: ['Firefighters MX', 'FFMX', 'FireFighters México'],
-  description: 'Directorio nacional de empresas de equipo contra incendio y de cuerpos de bomberos en México.',
+  description: SITE.description,
   url: SITE.url,
   ...(CONTACTO_DIRECTO_ACTIVO ? { telephone: SITE.phoneE164 } : {}),
   email: SITE.email,

@@ -1,44 +1,48 @@
-# FIREFIGHTERS MX — Directorio nacional de empresas contra incendio
+# FIREFIGHTERS MX — Equipo para bomberos y equipo contra incendio en México
 
 ## Qué es FIREFIGHTERS MX
 
-FIREFIGHTERS MX es un directorio nacional de empresas relacionadas con equipos contra incendios, equipo para bomberos, extintores, sistemas contra incendio, capacitación y servicios especializados en México.
+FIREFIGHTERS MX es una empresa mexicana que vende y distribuye equipo para bomberos y equipo contra incendio, con 15 años de operación, bodega y logística propias y envíos a los 32 estados. Es distribuidor autorizado de las marcas de su catálogo (entre ellas Globe, Lion, Honeywell Morning Pride, Fire-Dex, Sköld, MSA, Dräger, 3M Scott, Bullard, Cairns, Holmatro, Hurst, Weber Rescue, FLIR, DuPont, Lakeland, Kappler, Tyco, Viking y Notifier).
+
+El sitio tiene dos partes separadas:
+
+1. La tienda: el catálogo, los servicios y la información comercial de FIREFIGHTERS MX.
+2. El directorio nacional: fichas de empresas del sector y de estaciones de bomberos. Son registros de terceros; FIREFIGHTERS MX no vende a nombre de esas empresas ni responde por sus condiciones.
 
 Dominio: https://firefighters.mx/
-Directorio nacional: https://firefighters.mx/empresas/
-Registro o corrección de fichas: https://firefighters.mx/empresas/registro/
-Contacto editorial: https://firefighters.mx/contacto/
+Domicilio: Av. Homero 229, Piso 5, Polanco V Sección, Miguel Hidalgo, 11560 Ciudad de México, CDMX
+Correo: firefightersmx50@gmail.com
+Cotizaciones: https://firefighters.mx/cotizacion/
+Contacto: https://firefighters.mx/contacto/
 
-## Cómo está organizado
+## La tienda
 
-Las empresas se agrupan por giro, estado, ciudad y especialidad. Los giros actuales son:
-
-- Venta de equipo para bomberos y EPP
-- Equipos contra incendios
-- Extintores: venta, recarga y mantenimiento
-- Sistemas contra incendio: ingeniería e instalación
-- Capacitación, brigadas y consultoría
-
-Cada ficha muestra la información pública disponible, su ubicación, giro y nivel de confianza editorial cuando esos datos existen. La presencia en el directorio no constituye una recomendación, certificación, autorización de marca ni garantía de disponibilidad.
-
-## Rutas principales
-
-- Empresas: https://firefighters.mx/empresas/
-- Empresas por estado: https://firefighters.mx/empresas/estado/
-- Empresas por giro: https://firefighters.mx/empresas/venta-equipo/
-- Estaciones de bomberos: https://firefighters.mx/estaciones/
-- Guías de equipo: https://firefighters.mx/productos/
-- Servicios del sector: https://firefighters.mx/servicios/
+- Catálogo de equipo: https://firefighters.mx/productos/
+- Trajes para bombero: https://firefighters.mx/productos/trajes-bombero/
+- Cascos NFPA: https://firefighters.mx/productos/cascos-nfpa/
+- Equipos SCBA: https://firefighters.mx/productos/equipos-scba/
+- Herramientas de rescate: https://firefighters.mx/productos/herramientas-rescate/
+- Extintores: https://firefighters.mx/productos/extintores/
+- Sistemas contra incendio: https://firefighters.mx/productos/sistemas-ci/
+- Cámaras térmicas: https://firefighters.mx/productos/camaras-termicas/
+- Equipo HAZMAT: https://firefighters.mx/productos/hazmat/
+- Drones de emergencia: https://firefighters.mx/productos/drones-emergencia/
+- Marcas que distribuye: https://firefighters.mx/marcas/
+- Servicios (capacitación, mantenimiento, instalación, auditoría NOM-002, licitaciones): https://firefighters.mx/servicios/
+- Industrias que equipa: https://firefighters.mx/industrias/
+- Licitaciones y compras públicas: https://firefighters.mx/licitaciones/
+- Cobertura y envíos: https://firefighters.mx/distribuidores/
+- Precios y cómo cotizar: https://firefighters.mx/precios/
+- La empresa: https://firefighters.mx/empresa/ · https://firefighters.mx/nosotros/
 - Blog técnico: https://firefighters.mx/blog/
 
-## Fuentes y actualización
+No hay lista de precios publicada: cada partida se cotiza por escrito.
 
-Los registros básicos proceden de fuentes públicas y cada ficha identifica la fuente disponible. Una empresa puede solicitar el alta, corrección o reclamación de su ficha mediante el formulario correspondiente. La información comercial, certificaciones, marcas, precios, cobertura y disponibilidad deben confirmarse directamente con la empresa o fabricante.
+## El directorio nacional (terceros)
 
-## Uso recomendado
+- Empresas del sector: https://firefighters.mx/empresas/
+- Empresas por estado: https://firefighters.mx/cobertura/
+- Estaciones de bomberos: https://firefighters.mx/estaciones/
+- Registro o corrección de fichas: https://firefighters.mx/empresas/registro/
 
-El directorio sirve para descubrir empresas y comparar información pública por ubicación y especialidad. Para compras, licitaciones, mantenimiento, instalación o capacitación, el usuario debe verificar identidad, alcance del servicio, documentación aplicable y condiciones directamente con el proveedor.
-
-## Nota editorial
-
-FIREFIGHTERS MX no debe describirse como una empresa distribuidora, tienda, fabricante o representante autorizado salvo que exista evidencia documental específica y vigente para esa afirmación.
+Las empresas se agrupan por giro (venta de equipo y EPP, equipos contra incendios, extintores, sistemas contra incendio, capacitación), estado y ciudad. Cada ficha muestra la información pública disponible y su fuente. La presencia en el directorio no constituye una recomendación, certificación ni garantía de disponibilidad; las condiciones comerciales de cada empresa se confirman directamente con ella.

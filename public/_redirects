@@ -147,3 +147,7 @@
 /empresas/venta-equipo/tamaulipas/grupo-industrial-bustech/ /empresas/venta-equipo/tamaulipas/ 301
 /empresas/capacitacion/veracruz/instituto-de-la-policia-auxiliar-y-proteccion-patrimonial-para-el-estado-veracruz-base-tamsa/ /empresas/capacitacion/veracruz/ 301
 /empresas/venta-equipo/veracruz/tecnomotum/ /empresas/venta-equipo/veracruz/ 301
+
+# 301 de etiquetas del blog que desaparecen al restaurar la tienda (2026-09-15)
+/blog/tag/directorio/ /empresas/ 301
+/blog/tag/verificacion/ /blog/ 301

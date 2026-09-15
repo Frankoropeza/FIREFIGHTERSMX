@@ -3,7 +3,7 @@ title: "MSA G1 vs Dräger PSS 7000: Lo que el papel no te dice cuando compras 30
 description: "MSA G1 vs Dräger PSS 7000: comparativa real para corporaciones mexicanas. Costo total a 5 años, compatibilidad con equipo mexicano y recomendación por escenario."
 pubDate: 2026-02-15
 updatedDate: 2026-06-25
-author: "Equipo editorial FIREFIGHTERS MX"
+author: "Ing. Marco García"
 category: "Equipos SCBA"
 tags: ["SCBA", "MSA G1", "Dräger PSS 7000", "NFPA 1981", "equipo respiración autónoma"]
 image:
@@ -191,8 +191,8 @@ Lo que no cambia en ninguna corporación es lo siguiente: exige al proveedor —
 
 ---
 
-## Directorio de Equipos SCBA en FIREFIGHTERS MX
+## Catálogo Equipos SCBA en FIREFIGHTERS MX
 
-En el directorio puedes comparar empresas que manejan equipos SCBA certificados NFPA 1970 de MSA y Dräger; solicita soporte técnico en México y análisis de compatibilidad con la infraestructura de llenado existente en tu corporación.
+Distribuimos equipos SCBA certificados NFPA 1970 de MSA y Dräger con soporte técnico en México, incluyendo análisis de compatibilidad con la infraestructura de llenado existente en tu corporación.
 
-[Directorio de Equipos SCBA](/productos/equipos-scba) · [Empresas por estado](/empresas/)
+[Catálogo completo de Equipos SCBA](/productos/equipos-scba) · [Solicitar cotización](/cotizacion)

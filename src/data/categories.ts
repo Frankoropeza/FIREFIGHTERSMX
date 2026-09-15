@@ -42,7 +42,7 @@ export const trajesBombero: Category = {
   description: 'Trajes estructurales, de proximidad y forestales certificados NFPA 1970 y 1950 en México: Globe, Lion y MSA. Tallas S–4XL con entrega en 32 estados.',
   intro: [
     'Trajes de combate estructural de 3 capas, trajes aluminizados de proximidad para ARFF y trajes forestales ligeros — todos certificados por laboratorio acreditado bajo NFPA 1970 o NFPA 1950, con número de serie verificable con fábrica.',
-    'En el directorio puedes comparar empresas que manejan Globe, Lion y MSA en tallas S–4XL. Solicita ficha técnica para licitación, asesoría de tallaje y acceso al programa de inspección y mantenimiento NFPA 1850.',
+    'Distribuimos Globe, Lion y MSA en tallas S–4XL con stock permanente en CDMX. Cada conjunto incluye ficha técnica para licitación, asesoría de tallaje y acceso al programa de inspección y mantenimiento NFPA 1850.',
   ],
   items: [
     { name: 'Globe GX-7', detail: 'Estructural premium con Crosstech y PBI/Kevlar' },
@@ -55,14 +55,14 @@ export const trajesBombero: Category = {
     title: 'Trajes para Bomberos certificados',
     highlight: 'NFPA 1970 y NFPA 1950',
     paragraphs: [
-      'El traje estructural es la última barrera entre el bombero y el fuego. En el directorio puedes localizar empresas que manejan conjuntos completos —chaquetón y pantalón— certificados por laboratorio acreditado bajo NFPA 1970 (la norma que desde 2024 absorbió a la NFPA 1971), con número de serie verificable con fábrica y ficha técnica para licitación o auditoría STPS.',
-      'Compara empresas que manejan las líneas Globe, Lion y MSA en tallas S–4XL; confirma directamente la disponibilidad, los plazos, la asesoría de tallaje y el programa de inspección y mantenimiento conforme a NFPA 1850.',
+      'El traje estructural es la última barrera entre el bombero y el fuego. Distribuimos conjuntos completos —chaquetón y pantalón— certificados por laboratorio acreditado bajo NFPA 1970 (la norma que desde 2024 absorbió a la NFPA 1971), con número de serie verificable con fábrica y ficha técnica lista para licitación o auditoría STPS.',
+      'Manejamos las líneas Globe, Lion y MSA en tallas S–4XL, con stock permanente de las configuraciones más demandadas y entrega en 24–48 horas en CDMX. Cada compra incluye asesoría de tallaje y el programa de inspección y mantenimiento conforme a NFPA 1850.',
     ],
     subsections: [
       { name: 'Trajes estructurales', detail: 'Combate interior de edificios. 3 capas: tejido exterior PBI/Nomex NXT, barrera de humedad Crosstech y forro térmico. Costuras de doble aguja reforzadas y trim reflejante 3M Scotchlite.' },
       { name: 'Trajes de proximidad', detail: 'Aluminizados para exposición radiante extrema: ARFF en aeropuertos, refinerías y fundiciones. Reflejan hasta el 90 % del calor radiante.' },
       { name: 'Trajes forestales NFPA 1950', detail: 'Ligeros y transpirables para incendio vegetal: camisola y pantalón en Nomex IIIA, diseñados para jornadas largas con golpe de calor mínimo.' },
-      { name: 'Tallaje, disponibilidad y mantenimiento', detail: 'Tallas S–4XL; solicita asesoría de ajuste, disponibilidad en CDMX y programa de inspección avanzada, lavado técnico y reparación certificada NFPA 1850.' },
+      { name: 'Tallaje, stock y mantenimiento', detail: 'Tallas S–4XL con asesoría de ajuste, stock permanente en CDMX y programa de inspección avanzada, lavado técnico y reparación certificada NFPA 1850.' },
     ],
     image: '/images/categorias/trajes-bombero.avif',
     imageAlt: 'Ilustración técnica de traje estructural para bombero certificado NFPA 1970 con casco y bandas reflejantes',
@@ -84,8 +84,8 @@ export const categories: Category[] = [
     norm: 'NFPA 1970 · 1950',
     description: 'Cascos para bomberos certificados NFPA 1970 y 1950 en México: MSA Gallet, Bullard y Cairns. Estructurales, forestales y de rescate. Cotización en 24 h.',
     intro: [
-      'El casco es la primera línea de protección craneal en combate estructural. Los modelos descritos en el directorio cuentan con certificación bajo NFPA 1970 (estructural) o NFPA 1950 (forestal) por laboratorios acreditados; solicita el número de serie verificable con fábrica.',
-      'Compara configuraciones con protector facial integrado, goggles, lámparas y soportes para cámara térmica. Confirma con cada empresa la disponibilidad y el plazo de los modelos que necesites en CDMX.',
+      'El casco es la primera línea de protección craneal en combate estructural. Todos los modelos que distribuimos están certificados bajo NFPA 1970 (estructural) o NFPA 1950 (forestal) por laboratorios acreditados, con número de serie verificable con fábrica.',
+      'Manejamos configuraciones con protector facial integrado, goggles, lámparas y soportes para cámara térmica. Stock permanente de los modelos más demandados con entrega en 24–48 h en CDMX.',
     ],
     items: [
       { name: 'MSA Gallet F1 XF', detail: 'Casco europeo integral con visor retráctil y protección nucal' },
@@ -98,8 +98,8 @@ export const categories: Category[] = [
       title: 'Cascos para Bomberos certificados',
       highlight: 'NFPA 1970 y NFPA 1950',
       paragraphs: [
-        'El casco protege contra impacto, penetración, calor radiante y descarga eléctrica — y la NFPA 1970 exige que cada componente lo demuestre en laboratorio acreditado. En el directorio puedes comparar MSA Gallet, Bullard y Cairns; solicita certificado de conformidad, número de serie verificable y ficha técnica para licitación.',
-        'Pide a las empresas del directorio asesoría sobre la configuración correcta según tu operación: protector facial o goggles, lámpara integrada, soporte para cámara térmica y protección nucal. Confirma disponibilidad y plazo de los modelos más demandados.',
+        'El casco protege contra impacto, penetración, calor radiante y descarga eléctrica — y la NFPA 1970 exige que cada componente lo demuestre en laboratorio acreditado. Distribuimos MSA Gallet, Bullard y Cairns con certificado de conformidad, número de serie verificable y ficha técnica lista para licitación.',
+        'Te asesoramos en la configuración correcta según tu operación: protector facial o goggles, lámpara integrada, soporte para cámara térmica y protección nucal. Stock permanente de los modelos más demandados con entrega en 24–48 horas en CDMX.',
       ],
       subsections: [
         { name: 'Estilo europeo integral', detail: 'MSA Gallet F1 XF: visor retráctil interno, protección nucal integrada, módulo de lámpara y comunicación. El estándar en cuerpos metropolitanos y ARFF.' },
@@ -118,10 +118,10 @@ export const categories: Category[] = [
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/></svg>`,
     label: 'Equipos SCBA',
     norm: 'NFPA 1970 · NIOSH',
-    description: 'Equipos de respiración autónoma SCBA certificados NFPA 1970 y NIOSH: MSA G1, Dräger PSS y 3M Scott Air-Pak. Cilindros 30/45/60 min.',
+    description: 'Equipos de respiración autónoma SCBA certificados NFPA 1970 y NIOSH: MSA G1, Dräger PSS y 3M Scott Air-Pak. Cilindros 30/45/60 min. Servicio autorizado.',
     intro: [
-      'El equipo de respiración autónoma es el componente más crítico — y el más regulado — del EPP de un bombero. En el directorio puedes comparar SCBA certificados NFPA 1970 (antes NFPA 1981) con aprobación NIOSH CBRN, en configuraciones de 30, 45 y 60 minutos con cilindros de fibra de carbono de 4,500 psi.',
-      'Más allá de la venta, la NFPA 1850 exige un programa de mantenimiento: prueba hidrostática de cilindros, mantenimiento de reguladores, pruebas de flujo anuales y refacciones originales durante toda la vida útil del equipo.',
+      'El equipo de respiración autónoma es el componente más crítico — y el más regulado — del EPP de un bombero. Distribuimos SCBA certificados NFPA 1970 (antes NFPA 1981) con aprobación NIOSH CBRN, en configuraciones de 30, 45 y 60 minutos con cilindros de fibra de carbono de 4,500 psi.',
+      'Además de la venta, somos servicio técnico autorizado: prueba hidrostática de cilindros, mantenimiento de reguladores, pruebas de flujo anuales y refacciones originales. Tu inversión queda protegida durante toda la vida útil del equipo.',
     ],
     items: [
       { name: 'MSA G1 SCBA', detail: 'Electrónica integrada, telemetría opcional, EOSTI integrado' },
@@ -134,14 +134,14 @@ export const categories: Category[] = [
       title: 'Equipos SCBA certificados',
       highlight: 'NFPA 1970 y NIOSH CBRN',
       paragraphs: [
-        'El equipo de respiración autónoma es la pieza más crítica del EPP: de él depende cada minuto dentro de una atmósfera IDLH. En el directorio puedes comparar SCBA MSA G1, Dräger PSS 7000 y 3M Scott Air-Pak NxG7 certificados NFPA 1970 con aprobación NIOSH CBRN; solicita número de serie verificable y ficha técnica para licitación.',
-        'El mantenimiento que exige la NFPA 1850: prueba hidrostática de cilindros, pruebas de flujo anuales, mantenimiento de reguladores y refacciones originales, con bitácora lista para auditoría.',
+        'El equipo de respiración autónoma es la pieza más crítica del EPP: de él depende cada minuto dentro de una atmósfera IDLH. Distribuimos SCBA MSA G1, Dräger PSS 7000 y 3M Scott Air-Pak NxG7 certificados NFPA 1970 con aprobación NIOSH CBRN, con número de serie verificable y ficha técnica para licitación.',
+        'Somos servicio técnico autorizado: prueba hidrostática de cilindros, pruebas de flujo anuales, mantenimiento de reguladores y refacciones originales. Tu inversión queda protegida durante toda la vida útil del equipo, con bitácora lista para auditoría.',
       ],
       subsections: [
         { name: 'Configuraciones 30 / 45 / 60 min', detail: 'Cilindros de fibra de carbono a 4,500 psi según el perfil de tu operación: estructural, industrial o HAZMAT con autonomía extendida.' },
         { name: 'Electrónica integrada', detail: 'EOSTI, alarma PASS, telemetría y localizador en cabina de mando — visibilidad total del aire y la posición de cada elemento.' },
         { name: 'Máscaras y reguladores', detail: 'Piezas faciales full-face con ajuste certificado, reguladores de presión positiva y adaptadores para comunicación.' },
-        { name: 'Programa de mantenimiento', detail: 'Prueba hidrostática, prueba de flujo anual, refacciones originales y bitácora de mantenimiento para tu expediente.' },
+        { name: 'Servicio técnico autorizado', detail: 'Prueba hidrostática, prueba de flujo anual, refacciones originales y bitácora de mantenimiento para tu expediente.' },
       ],
       image: '/images/categorias/equipos-scba.avif',
       imageAlt: 'Ilustración técnica de equipo de respiración autónoma SCBA con cilindro de 4500 psi, máscara y manómetro',
@@ -156,8 +156,8 @@ export const categories: Category[] = [
     norm: 'NFPA 1936',
     description: 'Herramientas hidráulicas de rescate NFPA 1936: cizallas, separadores y arietes Holmatro. Rescate vehicular y estructural. Demostración y capacitación incluidas.',
     intro: [
-      'Para extracción vehicular y rescate urbano, el directorio reúne empresas que manejan la línea completa Holmatro certificada NFPA 1936: cizallas, separadores, herramientas combinadas y arietes telescópicos, en versiones con manguera y batería (Pentheon).',
-        'Al solicitar una solución institucional, exige demostración en sitio y capacitación básica de operación. También conviene confirmar con la empresa el mantenimiento preventivo anual y las refacciones originales aplicables al equipo.',
+      'Para extracción vehicular y rescate urbano, distribuimos la línea completa Holmatro certificada NFPA 1936: cizallas, separadores, herramientas combinadas y arietes telescópicos, en versiones con manguera y batería (Pentheon).',
+      'Cada venta institucional incluye demostración en sitio y capacitación básica de operación. Ofrecemos también mantenimiento preventivo anual con refacciones originales para mantener la certificación del equipo.',
     ],
     items: [
       { name: 'Holmatro SPR 4250 SC', detail: 'Separador de alto tonelaje para vehículos modernos' },
@@ -170,7 +170,7 @@ export const categories: Category[] = [
       title: 'Herramientas de Rescate certificadas',
       highlight: 'NFPA 1936',
       paragraphs: [
-        'En extracción vehicular cada minuto cuenta. En el directorio puedes comparar la línea completa Holmatro certificada NFPA 1936: cizallas, separadores, herramientas combinadas y arietes telescópicos con fuerzas de corte de más de 1,000 kN, capaces de abrir los aceros endurecidos de los vehículos modernos.',
+        'En extracción vehicular cada minuto cuenta. Distribuimos la línea completa Holmatro certificada NFPA 1936: cizallas, separadores, herramientas combinadas y arietes telescópicos con fuerzas de corte de más de 1,000 kN, capaces de abrir los aceros endurecidos de los vehículos modernos.',
         'Cada venta institucional incluye demostración en sitio y capacitación básica de operación. Damos mantenimiento preventivo anual con refacciones originales para conservar la certificación y el rendimiento del equipo.',
       ],
       subsections: [
@@ -192,8 +192,8 @@ export const categories: Category[] = [
     norm: 'NOM-154-SCFI · NFPA 10',
     description: 'Extintores certificados NOM-154-SCFI y NFPA 10: PQS ABC, CO₂, Tipo K y agente limpio. Venta, recarga y mantenimiento con collar de garantía en México.',
     intro: [
-      'En el directorio puedes localizar empresas que manejan extintores portátiles y móviles certificados NOM-154-SCFI para todo tipo de riesgo: polvo químico seco ABC para uso general, CO₂ para tableros y electrónica, Tipo K para cocinas industriales y agentes limpios para centros de datos.',
-      'Solicita a cada empresa del directorio la recarga de los tipos de agente que correspondan, con collar de garantía, etiqueta de inspección vigente y reporte para tu expediente de Protección Civil, conforme al programa anual que exige la NOM-002-STPS.',
+      'Distribuimos extintores portátiles y móviles certificados NOM-154-SCFI para todo tipo de riesgo: polvo químico seco ABC para uso general, CO₂ para tableros y electrónica, Tipo K para cocinas industriales y agentes limpios para centros de datos.',
+      'El servicio no termina en la venta: recargamos todos los tipos de agente con collar de garantía, etiqueta de inspección vigente y reporte para tu expediente de Protección Civil, conforme al programa anual que exige la NOM-002-STPS.',
     ],
     items: [
       { name: 'PQS ABC 4.5 / 6 / 9 kg', detail: 'El estándar para oficinas, comercios y bodegas' },
@@ -207,7 +207,7 @@ export const categories: Category[] = [
       highlight: 'NOM-154-SCFI y NFPA 10',
       paragraphs: [
         'El extintor correcto depende del fuego que vas a combatir: PQS ABC para uso general, CO₂ para tableros y electrónica, Tipo K para cocinas industriales y agentes limpios para centros de datos. Todos nuestros equipos cumplen NOM-154-SCFI con certificado de conformidad y etiqueta de inspección vigente.',
-        'Solicita a la empresa elegida la recarga de los tipos de agente que correspondan, con collar de garantía y reporte para tu expediente de Protección Civil, conforme al programa anual que exige la NOM-002-STPS. También confirma la prueba hidrostática obligatoria de tus cilindros.',
+        'El servicio no termina en la venta: recargamos todos los tipos de agente con collar de garantía y reporte para tu expediente de Protección Civil, conforme al programa anual que exige la NOM-002-STPS. También programamos la prueba hidrostática obligatoria de tus cilindros.',
       ],
       subsections: [
         { name: 'PQS ABC multiuso', detail: 'El estándar para oficinas, comercios y bodegas: 4.5, 6 y 9 kg, portátiles y móviles sobre ruedas para áreas industriales.' },
@@ -228,7 +228,7 @@ export const categories: Category[] = [
     norm: 'NFPA 13 · 72 · 2001',
     description: 'Sistemas contra incendio NFPA: rociadores, detección y alarma, supresión con agente limpio FM-200/Novec. Diseño, instalación y memoria de cálculo en México.',
     intro: [
-      'En el directorio puedes localizar empresas que diseñan e instalan sistemas fijos de protección: rociadores automáticos NFPA 13, detección y alarma NFPA 72 con tableros FACP, y supresión por agente limpio NFPA 2001 (FM-200, Novec 1230) para activos críticos.',
+      'Diseñamos e instalamos sistemas fijos de protección: rociadores automáticos NFPA 13, detección y alarma NFPA 72 con tableros FACP, y supresión por agente limpio NFPA 2001 (FM-200, Novec 1230) para activos críticos.',
       'Cada proyecto incluye memoria de cálculo hidráulico, planos as-built, puesta en marcha documentada y capacitación al personal de mantenimiento — el expediente completo que pide tu aseguradora y la autoridad.',
     ],
     items: [
@@ -242,8 +242,8 @@ export const categories: Category[] = [
       title: 'Sistemas Contra Incendio',
       highlight: 'NFPA 13, 72 y 2001',
       paragraphs: [
-        'Un sistema fijo bien diseñado detecta, alerta y suprime antes de que el fuego tome el edificio. En el directorio puedes comparar empresas que diseñan e instalan rociadores automáticos NFPA 13, detección y alarma NFPA 72 con tableros FACP direccionables, y supresión por agente limpio NFPA 2001 para activos críticos.',
-        'Cada proyecto debe incluir memoria de cálculo hidráulico, planos as-built, puesta en marcha documentada y capacitación al personal — el expediente completo que piden tu aseguradora, tu DRO y la autoridad.',
+        'Un sistema fijo bien diseñado detecta, alerta y suprime antes de que el fuego tome el edificio. Diseñamos e instalamos rociadores automáticos NFPA 13, detección y alarma NFPA 72 con tableros FACP direccionables, y supresión por agente limpio NFPA 2001 para activos críticos.',
+        'Cada proyecto entrega memoria de cálculo hidráulico, planos as-built, puesta en marcha documentada y capacitación al personal — el expediente completo que piden tu aseguradora, tu DRO y la autoridad.',
       ],
       subsections: [
         { name: 'Rociadores automáticos NFPA 13', detail: 'Diseño por densidad de riesgo con Tyco y Viking: oficinas, naves industriales, almacenes de gran altura y estacionamientos.' },
@@ -264,7 +264,7 @@ export const categories: Category[] = [
     norm: 'NFPA 1930',
     description: 'Cámaras térmicas para bomberos certificadas NFPA 1930: FLIR, MSA Evolution y Bullard. Búsqueda y rescate, sobrehaul y HAZMAT. Demostración sin costo.',
     intro: [
-      'La imagen térmica reduce dramáticamente los tiempos de búsqueda y localización de víctimas. En el directorio puedes comparar cámaras certificadas NFPA 1930 — el estándar que garantiza legibilidad, durabilidad e interfaz uniforme en condiciones de combate.',
+      'La imagen térmica reduce dramáticamente los tiempos de búsqueda y localización de víctimas. Manejamos cámaras certificadas NFPA 1930 — el estándar que garantiza legibilidad, durabilidad e interfaz uniforme en condiciones de combate.',
       'Desde cámaras personales de bolsillo hasta equipos de mando con telemetría, te asesoramos según presupuesto y uso: estructural, HAZMAT, inspección industrial o búsqueda y rescate.',
     ],
     items: [
@@ -278,7 +278,7 @@ export const categories: Category[] = [
       title: 'Cámaras Térmicas certificadas',
       highlight: 'NFPA 1930',
       paragraphs: [
-        'En visibilidad cero, la imagen térmica es la diferencia entre buscar y encontrar. En el directorio puedes comparar cámaras FLIR, MSA Evolution y Bullard certificadas NFPA 1930 — el estándar que garantiza legibilidad, durabilidad e interfaz uniforme en condiciones de combate real.',
+        'En visibilidad cero, la imagen térmica es la diferencia entre buscar y encontrar. Distribuimos cámaras FLIR, MSA Evolution y Bullard certificadas NFPA 1930 — el estándar que garantiza legibilidad, durabilidad e interfaz uniforme en condiciones de combate real.',
         'Te asesoramos según uso y presupuesto: desde cámaras personales de bolsillo para cada elemento hasta equipos de mando con grabación y telemetría. Demostración en sitio sin costo para que tu brigada las pruebe antes de decidir.',
       ],
       subsections: [
@@ -301,7 +301,7 @@ export const categories: Category[] = [
     description: 'Trajes HAZMAT Nivel A y B certificados NFPA 1990, detección multi-gas y descontaminación. Equipamiento para materiales peligrosos en México.',
     intro: [
       'Para respuesta a materiales peligrosos equipamos brigadas con trajes encapsulados Nivel A y trajes salpicadura Nivel B/C (ambos NFPA 1990), detección multi-gas, kits de descontaminación y sellado de fugas.',
-      'El equipo HAZMAT exige compatibilidad química documentada: solicita a la empresa las tablas de permeación del fabricante y asesoría de selección según las sustancias específicas de tu operación — crítico para refinerías, química y logística.',
+      'El equipo HAZMAT exige compatibilidad química documentada: te entregamos las tablas de permeación del fabricante y asesoramos la selección según las sustancias específicas de tu operación — crítico para refinerías, química y logística.',
     ],
     items: [
       { name: 'Nivel A encapsulado', detail: 'Protección total a vapor con SCBA interno' },
@@ -315,7 +315,7 @@ export const categories: Category[] = [
       highlight: 'NFPA 1990',
       paragraphs: [
         'La respuesta a materiales peligrosos exige protección absoluta y compatibilidad química documentada. Equipamos brigadas con trajes encapsulados Nivel A y trajes de salpicadura Nivel B/C certificados NFPA 1990, detección multi-gas y kits de descontaminación.',
-        'Cada traje debe incluir las tablas de permeación del fabricante y asesoría de selección según las sustancias específicas de tu operación — crítico para refinerías, plantas químicas, logística y respuesta municipal.',
+        'Cada traje se entrega con las tablas de permeación del fabricante y asesoría de selección según las sustancias específicas de tu operación — crítico para refinerías, plantas químicas, logística y respuesta municipal.',
       ],
       subsections: [
         { name: 'Nivel A encapsulado', detail: 'Protección total a gas y vapor con SCBA interno: la máxima barrera para atmósferas desconocidas o tóxicas.' },
@@ -337,7 +337,7 @@ export const categories: Category[] = [
     description: 'Drones para bomberos y protección civil: térmicos DJI Matrice, búsqueda y rescate, evaluación de incendios. Capacitación de piloto y trámite AFAC incluidos.',
     intro: [
       'El dron se volvió herramienta estándar de la respuesta a emergencias: evaluación aérea de incendios estructurales y forestales, búsqueda de personas con cámara térmica, y reconocimiento HAZMAT sin exponer personal.',
-      'Compara soluciones completas: aeronave con cámara térmica radiométrica, baterías de ciclo extendido, capacitación de piloto y acompañamiento en el registro ante AFAC para operación institucional.',
+      'Entregamos soluciones completas: aeronave con cámara térmica radiométrica, baterías de ciclo extendido, capacitación de piloto y acompañamiento en el registro ante AFAC para operación institucional.',
     ],
     items: [
       { name: 'DJI Matrice con térmica', detail: 'Plataforma institucional con cámara radiométrica' },
@@ -350,7 +350,7 @@ export const categories: Category[] = [
       highlight: 'cámara térmica y registro AFAC',
       paragraphs: [
         'El dron se volvió herramienta estándar de la primera respuesta: evaluación aérea de incendios estructurales y forestales, búsqueda de personas con cámara térmica radiométrica y reconocimiento HAZMAT sin exponer personal en la zona caliente.',
-        'Compara soluciones completas listas para operar: aeronave DJI Matrice con sensor térmico, baterías de ciclo extendido, capacitación de piloto y acompañamiento en el registro ante AFAC para operación institucional legal.',
+        'Entregamos soluciones completas listas para operar: aeronave DJI Matrice con sensor térmico, baterías de ciclo extendido, capacitación de piloto y acompañamiento en el registro ante AFAC para operación institucional legal.',
       ],
       subsections: [
         { name: 'Evaluación de incendios', detail: 'Vista cenital del avance del fuego, puntos calientes y rutas de ataque en estructural y forestal — en minutos, no horas.' },

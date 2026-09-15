@@ -3,7 +3,7 @@ title: "Holmatro vs Lukas: Comparativa de Herramientas de Rescate Vehicular"
 description: "Comparativa técnica Holmatro vs Lukas (Dräger) en herramientas hidráulicas de rescate: fuerza, velocidad, sistemas de batería, compatibilidad AHSS/UHSS y servicio"
 pubDate: 2026-03-01
 updatedDate: 2026-06-25
-author: "Equipo editorial FIREFIGHTERS MX"
+author: "Ing. Marco García"
 category: "Herramientas Rescate"
 tags: ["herramientas rescate", "Holmatro", "Lukas", "excarcelación", "NFPA 1936"]
 image:
@@ -162,8 +162,8 @@ Lo que no puedes permitirte es comprar por precio, por costumbre, o porque el pr
 
 ---
 
-## Directorio de Herramientas de Rescate en FIREFIGHTERS MX
+## Catálogo Herramientas de Rescate en FIREFIGHTERS MX
 
-En el directorio puedes comparar empresas que manejan herramientas hidráulicas Holmatro, Hurst y Weber Rescue. Si estás evaluando una adquisición para tu corporación, solicita a cada una evidencia de soporte técnico especializado en México y compara fuerza de cizalla, autonomía de batería y red de servicio según tu zona de cobertura.
+Distribuimos herramientas hidráulicas Holmatro, Hurst y Weber Rescue con soporte técnico especializado en México. Si estás evaluando una adquisición para tu corporación, podemos ayudarte a comparar fuerza de cizalla, autonomía de batería y red de servicio según tu zona de cobertura.
 
-[Directorio de Herramientas de Rescate](/productos/herramientas-rescate) · [Empresas por estado](/empresas/)
+[Catálogo completo de Herramientas de Rescate](/productos/herramientas-rescate) · [Solicitar cotización](/cotizacion)
