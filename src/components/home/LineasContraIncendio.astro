@@ -1,60 +1,90 @@
 ---
+import CategoryCard from '@components/products/CategoryCard.astro';
+import { allCategories } from '@data/categories';
+
+const categoryBySlug = new Map(allCategories.map((category) => [category.slug, category]));
+const category = (slug: string) => categoryBySlug.get(slug)!;
+
 const lineas = [
   {
-    titulo: 'Extintores',
-    texto: 'Extintores portátiles de polvo químico seco, CO₂ y tipo K, y sobre ruedas para alto riesgo.',
-    items: ['PQS ABC', 'CO₂', 'Tipo K', 'Agente limpio'],
+    label: 'Extintores',
+    norm: 'NOM-154-SCFI · NFPA 10',
+    desc: 'Extintores portátiles de polvo químico seco, CO₂ y tipo K, y sobre ruedas para alto riesgo.',
+    items: ['PQS ABC', 'CO₂', 'Tipo K'],
     href: '/productos/extintores/',
-    cta: 'Extintores',
+    ctaLabel: 'Extintores',
+    icon: category('extintores').icon,
+    accent: category('extintores').accent,
   },
   {
-    titulo: 'Rociadores automáticos',
-    texto: 'Rociadores que liberan agua sobre el fuego en su etapa inicial, diseñados conforme a NFPA 13.',
-    items: ['Tyco', 'Viking', 'ESFR', 'Respuesta rápida'],
+    label: 'Rociadores automáticos',
+    norm: 'NFPA 13',
+    desc: 'Rociadores que liberan agua sobre el fuego en su etapa inicial, diseñados conforme a NFPA 13.',
+    items: ['Tyco', 'Viking', 'ESFR'],
     href: '/productos/sistemas-ci/tyco-viking/',
-    cta: 'Rociadores contra incendio',
+    ctaLabel: 'Rociadores contra incendio',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3v5M6 8h12M8 8v3M16 8v3M5 12h14M7 12v3M12 12v3M17 12v3M4 18h16"/><path d="M8 21v-3M12 21v-3M16 21v-3"/></svg>',
+    accent: category('sistemas-ci').accent,
   },
   {
-    titulo: 'Detectores de humo y alarmas',
-    texto: 'Paneles direccionables, detectores y estaciones manuales que alertan a los ocupantes.',
+    label: 'Detectores de humo y alarmas',
+    norm: 'NFPA 72',
+    desc: 'Paneles direccionables, detectores y estaciones manuales que alertan a los ocupantes.',
     items: ['Notifier', 'Honeywell', 'System Sensor'],
     href: '/productos/sistemas-ci/honeywell-notifier/',
-    cta: 'Alarma contra incendio',
+    ctaLabel: 'Alarma contra incendio',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 17h12l-1.2-1.8V11a4.8 4.8 0 0 0-9.6 0v4.2L6 17Z"/><path d="M9 20h6M12 3v1"/></svg>',
+    accent: '#F5A623',
   },
   {
-    titulo: 'Red hidráulica y bombas',
-    texto: 'Bombas, gabinetes, mangueras, monitores y conexiones para un suministro constante de agua.',
+    label: 'Red hidráulica y bombas',
+    norm: 'NFPA 14 · 20',
+    desc: 'Bombas, gabinetes, mangueras, monitores y conexiones para un suministro constante de agua.',
     items: ['Bomba jockey', 'Bomba diésel', 'Gabinete tipo I y II'],
     href: '/productos/sistemas-ci/red-hidraulica/',
-    cta: 'Red contra incendio',
+    ctaLabel: 'Red contra incendio',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3v18M12 7H7a3 3 0 0 0-3 3v2M12 7h5a3 3 0 0 1 3 3v2M4 12h4M16 12h4M8 12v5M16 12v5M5 17h6M13 17h6"/></svg>',
+    accent: '#F75000',
   },
   {
-    titulo: 'Supresión con agentes limpios',
-    texto: 'Sistemas fijos sin agua para centros de datos, archivos y cuartos eléctricos.',
+    label: 'Supresión con agentes limpios',
+    norm: 'NFPA 2001',
+    desc: 'Sistemas fijos sin agua para centros de datos, archivos y cuartos eléctricos.',
     items: ['FM-200', 'Novec 1230', 'CO₂ alta presión'],
     href: '/productos/sistemas-ci/fm200-novec/',
-    cta: 'Sistemas de supresión',
+    ctaLabel: 'Sistemas de supresión',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9 4h6M8 7h8v12H8zM10 4v3M14 4v3M10 11h4M10 15h4"/><path d="M12 2v2"/></svg>',
+    accent: category('sistemas-ci').accent,
   },
   {
-    titulo: 'Señalización y emergencia',
-    texto: 'Señales de protección civil y seguridad industrial, lámparas de emergencia y botiquines.',
-    items: ['NOM-003-SEGOB', 'NOM-026-STPS', 'Lámparas', 'Botiquines'],
+    label: 'Señalización y emergencia',
+    norm: 'NOM-003-SEGOB · NOM-026-STPS',
+    desc: 'Señales de protección civil y seguridad industrial, lámparas de emergencia y botiquines.',
+    items: ['Señales de protección civil', 'Lámparas de emergencia', 'Botiquines'],
     href: '/cotizacion/',
-    cta: 'Cotizar señalización',
+    ctaLabel: 'Cotizar señalización',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 5h16v14H4z"/><path d="M8 12h8M12 8l4 4-4 4"/></svg>',
+    accent: '#34D399',
   },
   {
-    titulo: 'Equipo para bomberos',
-    texto: 'Trajes estructurales, cascos, guantes y botas certificados NFPA 1970.',
-    items: ['Globe', 'Lion', 'Bullard', 'MSA'],
+    label: 'Equipo para bomberos',
+    norm: 'NFPA 1970',
+    desc: 'Trajes estructurales, cascos, guantes y botas certificados NFPA 1970.',
+    items: ['Globe', 'Lion', 'Bullard y MSA'],
     href: '/productos/trajes-bombero/',
-    cta: 'Equipo para bomberos',
+    ctaLabel: 'Equipo para bomberos',
+    icon: category('trajes-bombero').icon,
+    accent: category('trajes-bombero').accent,
   },
   {
-    titulo: 'Respiración y rescate',
-    texto: 'Equipo de respiración autónoma, herramientas hidráulicas, cámaras térmicas y HAZMAT.',
-    items: ['MSA', 'Dräger', '3M Scott', 'Holmatro'],
+    label: 'Respiración y rescate',
+    norm: 'NFPA 1970 · 1936',
+    desc: 'Equipo de respiración autónoma, herramientas hidráulicas, cámaras térmicas y HAZMAT.',
+    items: ['MSA y Dräger', '3M Scott', 'Holmatro'],
     href: '/productos/equipos-scba/',
-    cta: 'Equipos SCBA',
+    ctaLabel: 'Equipos SCBA',
+    icon: category('equipos-scba').icon,
+    accent: category('equipos-scba').accent,
   },
 ];
 ---
@@ -86,22 +116,18 @@ const lineas = [
   </div>
 
   <div class="container-site">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
-      {lineas.map((l, index) => (
-        <article class="grid-cell ledger-cell flex flex-col gap-3 p-6" style="background:#070E1A">
-          <span class="text-[11px] font-display font-semibold tracking-wider" style="color:var(--forge-300)">{String(index + 1).padStart(2, '0')}</span>
-          <h3 class="font-display font-bold text-lg" style="color:#FFFFFF">{l.titulo}</h3>
-          <p class="text-xs leading-relaxed" style="color:#94A3B8">{l.texto}</p>
-          <p class="text-[11px] uppercase tracking-wider" style="color:#FF8F57">{l.items.join(' · ')}</p>
-          <a href={l.href}
-             class="inline-flex items-center gap-2 text-xs font-display font-semibold uppercase tracking-wider hover:text-[#FF6B26] mt-auto"
-             style="color:#FF8F57;letter-spacing:0.1em">
-            {l.cta}
-            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
-            </svg>
-          </a>
-        </article>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      {lineas.map((linea) => (
+        <CategoryCard
+          href={linea.href}
+          norm={linea.norm}
+          label={linea.label}
+          desc={linea.desc}
+          items={linea.items}
+          ctaLabel={linea.ctaLabel}
+          accent={linea.accent}
+          icon={linea.icon}
+        />
       ))}
     </div>
   </div>
