@@ -1,0 +1,108 @@
+---
+const lineas = [
+  {
+    titulo: 'Extintores',
+    texto: 'Extintores portátiles de polvo químico seco, CO₂ y tipo K, y sobre ruedas para alto riesgo.',
+    items: ['PQS ABC', 'CO₂', 'Tipo K', 'Agente limpio'],
+    href: '/productos/extintores/',
+    cta: 'Extintores',
+  },
+  {
+    titulo: 'Rociadores automáticos',
+    texto: 'Rociadores que liberan agua sobre el fuego en su etapa inicial, diseñados conforme a NFPA 13.',
+    items: ['Tyco', 'Viking', 'ESFR', 'Respuesta rápida'],
+    href: '/productos/sistemas-ci/tyco-viking/',
+    cta: 'Rociadores contra incendio',
+  },
+  {
+    titulo: 'Detectores de humo y alarmas',
+    texto: 'Paneles direccionables, detectores y estaciones manuales que alertan a los ocupantes.',
+    items: ['Notifier', 'Honeywell', 'System Sensor'],
+    href: '/productos/sistemas-ci/honeywell-notifier/',
+    cta: 'Alarma contra incendio',
+  },
+  {
+    titulo: 'Red hidráulica y bombas',
+    texto: 'Bombas, gabinetes, mangueras, monitores y conexiones para un suministro constante de agua.',
+    items: ['Bomba jockey', 'Bomba diésel', 'Gabinete tipo I y II'],
+    href: '/productos/sistemas-ci/red-hidraulica/',
+    cta: 'Red contra incendio',
+  },
+  {
+    titulo: 'Supresión con agentes limpios',
+    texto: 'Sistemas fijos sin agua para centros de datos, archivos y cuartos eléctricos.',
+    items: ['FM-200', 'Novec 1230', 'CO₂ alta presión'],
+    href: '/productos/sistemas-ci/fm200-novec/',
+    cta: 'Sistemas de supresión',
+  },
+  {
+    titulo: 'Señalización y emergencia',
+    texto: 'Señales de protección civil y seguridad industrial, lámparas de emergencia y botiquines.',
+    items: ['NOM-003-SEGOB', 'NOM-026-STPS', 'Lámparas', 'Botiquines'],
+    href: '/cotizacion/',
+    cta: 'Cotizar señalización',
+  },
+  {
+    titulo: 'Equipo para bomberos',
+    texto: 'Trajes estructurales, cascos, guantes y botas certificados NFPA 1970.',
+    items: ['Globe', 'Lion', 'Bullard', 'MSA'],
+    href: '/productos/trajes-bombero/',
+    cta: 'Equipo para bomberos',
+  },
+  {
+    titulo: 'Respiración y rescate',
+    texto: 'Equipo de respiración autónoma, herramientas hidráulicas, cámaras térmicas y HAZMAT.',
+    items: ['MSA', 'Dräger', '3M Scott', 'Holmatro'],
+    href: '/productos/equipos-scba/',
+    cta: 'Equipos SCBA',
+  },
+];
+---
+
+<section class="section home-deferred-section" style="background:#040A12" aria-labelledby="lineas-ci-heading">
+  <div class="container-site mb-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end">
+      <div>
+        <span class="section-eyebrow mb-4 inline-flex">Catálogo contra incendio</span>
+        <h2 id="lineas-ci-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          Equipo contra incendio<br/>
+          <span style="color:#F75000">para cada tipo de riesgo.</span>
+        </h2>
+      </div>
+      <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+        <p class="text-sm leading-relaxed mb-3" style="color:#94A3B8">
+          Los equipos contra incendios se dividen en cuatro grupos: los que detectan el fuego en su etapa inicial (detectores de humo y alarmas), los que lo combaten (extintores, hidrantes y rociadores), los que orientan la evacuación (señalamientos y lámparas de emergencia) y el equipo de protección personal de quien responde. Surtimos las cuatro familias con equipo contra incendios certificado bajo NFPA y Normas Oficiales Mexicanas, y te ayudamos a ubicarlo en los lugares estratégicos de oficinas, comercios, hoteles, almacenes e industria de alto riesgo.
+        </p>
+        <a href="/productos/"
+           class="inline-flex items-center gap-2 text-xs font-display font-semibold uppercase tracking-wider hover:text-[#FF6B26]"
+           style="color:#FF8F57;letter-spacing:0.1em">
+          Catálogo de equipo contra incendio
+          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-site">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
+      {lineas.map((l, index) => (
+        <article class="grid-cell ledger-cell flex flex-col gap-3 p-6" style="background:#070E1A">
+          <span class="text-[11px] font-display font-semibold tracking-wider" style="color:var(--forge-300)">{String(index + 1).padStart(2, '0')}</span>
+          <h3 class="font-display font-bold text-lg" style="color:#FFFFFF">{l.titulo}</h3>
+          <p class="text-xs leading-relaxed" style="color:#94A3B8">{l.texto}</p>
+          <p class="text-[11px] uppercase tracking-wider" style="color:#FF8F57">{l.items.join(' · ')}</p>
+          <a href={l.href}
+             class="inline-flex items-center gap-2 text-xs font-display font-semibold uppercase tracking-wider hover:text-[#FF6B26] mt-auto"
+             style="color:#FF8F57;letter-spacing:0.1em">
+            {l.cta}
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

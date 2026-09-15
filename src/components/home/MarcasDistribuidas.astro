@@ -1,7 +1,7 @@
 ---
 import { brands, type Brand } from '@data/brands';
 
-const destacadas = ['globe-manufacturing', 'lion-apparel', 'msa-safety', 'drager', '3m-scott', 'bullard', 'cairns-helmets', 'holmatro', 'flir-teledyne'];
+const destacadas = ['tyco-johnson-controls', 'honeywell', 'msa-safety', 'drager', '3m-scott', 'globe-manufacturing', 'bullard', 'holmatro'];
 const lista = destacadas
   .map((s) => brands.find((b) => b.slug === s))
   .filter((brand): brand is Brand => Boolean(brand));
@@ -13,13 +13,13 @@ const lista = destacadas
       <div>
         <span class="section-eyebrow mb-4 inline-flex">Distribuidor autorizado</span>
         <h2 id="marcas-home-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
-          Marcas de equipo para bomberos<br/>
+          Marcas de equipo contra incendio<br/>
           <span style="color:#F75000">que distribuimos en México.</span>
         </h2>
       </div>
       <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
         <p class="text-sm leading-relaxed mb-3" style="color:#94A3B8">
-          Trajes estructurales Globe y Lion, cascos Bullard, Cairns y MSA Gallet, equipo de respiración autónoma MSA, Dräger y 3M Scott, herramientas de rescate Holmatro y cámaras térmicas FLIR. Cada equipo de protección personal para bomberos se entrega con número de serie verificable y certificado NFPA.
+          Rociadores y válvulas Tyco, paneles de alarma Notifier y detectores Honeywell para el sistema contra incendio; trajes Globe y Lion, cascos Bullard y MSA Gallet, equipo de respiración autónoma MSA, Dräger y 3M Scott, herramientas de rescate Holmatro y cámaras térmicas FLIR para el equipo de bomberos. Cada equipo se entrega con número de serie verificable y certificado de fábrica.
         </p>
         <a href="/marcas/"
            class="inline-flex items-center gap-2 text-xs font-display font-semibold uppercase tracking-wider hover:text-[#FF6B26]"
@@ -34,7 +34,7 @@ const lista = destacadas
   </div>
 
   <div class="container-site">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
       {lista.map((b) => (
         <a href={`/marcas/${b.slug}/`} class="grid-cell ledger-cell flex flex-col gap-2 p-6" style="background:#070E1A">
           <div class="flex items-baseline justify-between gap-4">

@@ -12,6 +12,7 @@ import IndustriesSection from '@components/home/IndustriesSection.astro';
 import CoverageSection from '@components/home/CoverageSection.astro';
 import DirectorioSeccion from '@components/home/DirectorioSeccion.astro';
 import MarcasDistribuidas from '@components/home/MarcasDistribuidas.astro';
+import LineasContraIncendio from '@components/home/LineasContraIncendio.astro';
 import BlogTeasers from '@components/home/BlogTeasers.astro';
 import FAQSection from '@components/home/FAQSection.astro';
 import CTASection from '@components/home/CTASection.astro';
@@ -21,10 +22,10 @@ import { services } from '@data/services';
 
 const seoMeta = {
   // Portada de la tienda (2026-09-15). El directorio vive en /directorio/.
-  title: 'Distribuidor de Equipo para Bomberos NFPA | FIREFIGHTERS MX',
+  title: 'Equipo contra Incendio y Equipo para Bomberos en México',
   noBrandSuffix: true,
   description:
-    'Distribuidor autorizado de equipo de protección para bomberos: trajes Globe y Lion, cascos Bullard, SCBA MSA y Dräger, Holmatro. Envíos a todo México.',
+    'Venta de equipo contra incendio en todo México: extintores, sistemas contra incendio, detectores de humo, mangueras y equipo para bomberos certificado NFPA.',
   canonicalURL: `${SITE.url}/`,
 };
 
@@ -60,6 +61,9 @@ const localBusinessSchema = {
     'Equipo para bomberos', 'Trajes estructurales NFPA', 'SCBA', 'Cascos para bomberos',
     'Herramientas de rescate vehicular', 'Equipos HAZMAT', 'Extintores', 'Sistemas contra incendio',
     'Brigadas industriales', 'Equipo ARFF', 'Licitaciones de equipo contra incendio',
+    'Equipo contra incendio', 'Rociadores automáticos', 'Detección y alarma contra incendio',
+    'Bombas contra incendio', 'Hidrantes y gabinetes contra incendio', 'Supresión con agentes limpios',
+    'Señalización de protección civil', 'Lámparas de emergencia',
   ],
 };
 
@@ -118,10 +122,13 @@ const schemas = [localBusinessSchema, webSiteSchema, faqSchema, servicesSchema];
   {/* 2. Accesos rápidos (botones a secciones clave) */}
   <QuickLinksBar />
 
-  {/* 3. Catálogo por categorías (intención de compra) */}
+  {/* 3. Líneas de equipo contra incendio en general (decisión SEO 2026-09-15: giro general) */}
+  <LineasContraIncendio />
+
+  {/* 3a. Catálogo por categorías (intención de compra) */}
   <ProductCards />
 
-  {/* 3b. Marcas que distribuimos (decisión SEO 2026-09-15: especialista en marcas y líneas) */}
+  {/* 3b. Marcas que distribuimos */}
   <MarcasDistribuidas />
 
   {/* 4. Guía de selección por nivel de riesgo (SEO + autoridad técnica) */}

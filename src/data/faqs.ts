@@ -9,6 +9,18 @@ export interface FAQ {
  */
 export const homeFaqs: FAQ[] = [
   {
+    q: '¿Cuáles son los equipos contra incendios?',
+    a: 'Se agrupan por función. De detección: detectores de humo y calor, paneles y alarmas contra incendio. De combate: extintores portátiles y sobre ruedas, hidrantes, gabinetes con manguera, rociadores automáticos y sistemas de supresión con agentes limpios. De evacuación: señalamientos de protección civil y lámparas de emergencia. Y de protección personal: el equipo para bomberos y brigadistas, desde el traje y el casco hasta el equipo de respiración autónoma.',
+  },
+  {
+    q: '¿Qué elementos conforman un sistema contra incendio?',
+    a: 'Un sistema contra incendio completo combina detección y alarma (panel, detectores y estaciones manuales), suministro de agua (cisterna, bomba principal, bomba jockey y red hidráulica), elementos de descarga (rociadores, hidrantes y gabinetes con manguera) y, en áreas donde el agua causaría daño, supresión con FM-200 o Novec 1230. Se diseña según el nivel de riesgo del inmueble y las normas NFPA 13, NFPA 20 y NFPA 72.',
+  },
+  {
+    q: '¿Cuánto cuesta un sistema contra incendio?',
+    a: 'Depende de la superficie, el nivel de riesgo, el tipo de ocupación y el alcance: no cuesta lo mismo un sistema de detección para oficinas que una red de rociadores con cuarto de bombas para una nave industrial. Por eso cotizamos por proyecto: con el plano o una visita técnica definimos el equipo contra incendio necesario y enviamos la propuesta con fichas técnicas.',
+  },
+  {
     q: '¿Cómo se llama el equipo que usan los bomberos?',
     a: 'Se llama equipo de protección personal (EPP) para bomberos. Para combate estructural, la NFPA 1970 lo define como un conjunto: traje estructural (chaquetón y pantalón), casco, capucha, guantes, botas y protección respiratoria con equipo de respiración autónoma (SCBA) y dispositivo PASS. Para incendio forestal se usa ropa ligera específica y para HAZMAT, trajes de protección química.',
   },
@@ -30,7 +42,7 @@ export const homeFaqs: FAQ[] = [
   },
   {
     q: '¿Qué equipo contra incendio exige la NOM-002-STPS-2010 a una empresa?',
-    a: 'La NOM-002-STPS-2010 obliga a clasificar el riesgo de incendio del centro de trabajo (ordinario o alto), contar con extintores del agente adecuado a menos de 15 m de recorrido, señalización conforme a NOM-026-STPS, brigada capacitada con constancia DC-3 y simulacros documentados. Para riesgo alto se suman detección automática, hidrantes y plan de atención a emergencias. Hacemos auditoría de cumplimiento y entregamos el plan de cierre de brechas.',
+    a: 'La NOM-002-STPS-2010 obliga a clasificar el riesgo de incendio del centro de trabajo (ordinario o alto), contar con extintores del agente adecuado (distancia máxima de recorrido de 23 m, menor para fuegos clase B y K), señalización conforme a NOM-026-STPS y simulacros documentados. En riesgo alto se suman la brigada contra incendio capacitada, sistemas fijos de protección contra incendios y plan de atención a emergencias. Hacemos auditoría de cumplimiento y entregamos el plan de cierre de brechas.',
   },
   {
     q: '¿Cuánto tarda una cotización formal?',
