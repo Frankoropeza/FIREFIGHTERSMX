@@ -58,6 +58,29 @@ const safeGuia = brand.guia ?? [];
 const safeSegmentos = brand.segmentos ?? [];
 const safeFaqs = brand.faqs ?? [];
 
+const recortarTituloSEO = (title: string) => {
+  if ([...title].length <= 70) return title;
+
+  const separadores = [' — ', ' · ', ', '];
+  const candidatos = separadores.flatMap((separador) => {
+    const partes: string[] = [];
+    let posicion = title.indexOf(separador);
+    while (posicion > 0) {
+      const candidato = title.slice(0, posicion).trim();
+      if ([...candidato].length <= 70) partes.push(candidato);
+      posicion = title.indexOf(separador, posicion + separador.length);
+    }
+    return partes;
+  });
+  const porSeparador = candidatos.sort((a, b) => [...b].length - [...a].length)[0];
+  if (porSeparador) return porSeparador;
+
+  const limite = [...title].slice(0, 71).join('');
+  const ultimoEspacio = limite.lastIndexOf(' ');
+  return ultimoEspacio > 0 ? limite.slice(0, ultimoEspacio) : [...title].slice(0, 70).join('');
+};
+const seoTitle = recortarTituloSEO(brand.seoTitle);
+
 /* ── Schemas JSON-LD ───────────────────────────────────────────────────────── */
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
@@ -111,7 +134,7 @@ const faqSchema = {
 ---
 
 <BaseLayout
-  title={brand.seoTitle}
+  title={seoTitle}
   description={brand.seoDescription}
   canonicalURL={canonicalURL}
   schema={[breadcrumbSchema, collectionSchema, faqSchema]}

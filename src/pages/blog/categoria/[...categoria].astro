@@ -17,6 +17,7 @@ import { getCollection } from 'astro:content';
 import { SITE } from '@config/site';
 import { slugifyCategory } from '@lib/slug';
 import { categoriaIndexable } from '@lib/blog-taxonomia';
+import { blogCategorias } from '@data/blogCategorias';
 import type { GetStaticPaths } from 'astro';
 
 export const getStaticPaths = (async () => {
@@ -40,6 +41,7 @@ export const getStaticPaths = (async () => {
 const { category, posts, allCategories } = Astro.props;
 const { categoria } = Astro.params;
 const canonicalURL = `${SITE.url}/blog/categoria/${categoria}/`;
+const categoriaInfo = categoria ? blogCategorias[categoria] : undefined;
 
 const seoMeta = {
   title: `${category} — Blog técnico bomberos | FIREFIGHTERS MX`,
@@ -115,11 +117,24 @@ const collectionSchema = {
           </h1>
         </div>
         <div class="lg:pl-12" style="border-left:1px solid rgba(74,117,153,0.1)">
-          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+          {categoriaInfo ? (
+            <>
+              {categoriaInfo.intro.map((paragraph) => (
+                <p class="text-sm leading-relaxed" style="color:#94A3B8">{paragraph}</p>
+              ))}
+              <div class="flex flex-wrap gap-3">
+                {categoriaInfo.enlaces.map((enlace) => (
+                  <a href={enlace.href} class="text-sm font-bold hover:text-[#FF6B26]" style="color:#CBD5E1">{enlace.label} →</a>
+                ))}
+              </div>
+            </>
+          ) : (
+            <p class="text-sm leading-relaxed" style="color:#94A3B8">
             Artículos técnicos en la categoría <strong style="color:#CBD5E1">{category}</strong> —
             guías referenciadas a la norma vigente (NFPA, NOM) para bomberos, brigadas y
             responsables de protección civil.
-          </p>
+            </p>
+          )}
         </div>
       </div>
     </div>

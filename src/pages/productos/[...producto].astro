@@ -447,10 +447,35 @@ const seoNorm = product.norm
   .filter((part) => !product.title.toLocaleLowerCase().includes(part.toLocaleLowerCase()))
   .join(' · ');
 const seoTituloLargo = `${product.title}${seoNorm ? ` ${seoNorm}` : ''} — ${product.brand ?? product.category}`;
-const seoTitle =
+const seoTituloCorto =
   seoTituloLargo.length <= 70
     ? seoTituloLargo
     : `${product.title}${seoNorm ? ` ${seoNorm}` : ''}`;
+const recortarTituloSEO = (title: string) => {
+  if ([...title].length <= 70) return title;
+
+  const separadores = [' — ', ' · ', ', '];
+  const candidatos = separadores.flatMap((separador) => {
+    const partes: string[] = [];
+    let posicion = title.indexOf(separador);
+    while (posicion > 0) {
+      const candidato = title.slice(0, posicion).trim();
+      if ([...candidato].length <= 70) partes.push(candidato);
+      posicion = title.indexOf(separador, posicion + separador.length);
+    }
+    return partes;
+  });
+  const porSeparador = candidatos.sort((a, b) => [...b].length - [...a].length)[0];
+  if (porSeparador) return porSeparador;
+
+  const limite = [...title].slice(0, 71).join('');
+  const ultimoEspacio = limite.lastIndexOf(' ');
+  return ultimoEspacio > 0 ? limite.slice(0, ultimoEspacio) : [...title].slice(0, 70).join('');
+};
+const seoTitle =
+  [...seoTituloCorto].length <= 70
+    ? seoTituloCorto
+    : recortarTituloSEO(product.title);
 const seoDesc  = `${product.description} Distribuidor autorizado ${product.brand ?? ''} en México. ${product.norm ?? ''} certificado con documentación completa para licitación.`.replace(/\s+/g, ' ').trim().slice(0, 158);
 ---
 

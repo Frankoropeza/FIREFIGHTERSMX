@@ -26,7 +26,7 @@ const djiEnterprise: EquipmentBrand = {
     'Distribuimos los tres modelos de referencia para emergencias con soporte técnico, refacciones en stock, capacitación de piloto certificada y acompañamiento completo en el trámite ante la AFAC para operación institucional legal en México.',
   ],
   heroBadges: ['DJI Matrice 30T', 'Mavic 3 Thermal', 'Dock 2', 'AFAC México', 'Térmica radiométrica', 'Distribuidor autorizado MX'],
-  seoTitle: 'Drones DJI Enterprise para Bomberos y Protección Civil — Matrice 30T · México',
+  seoTitle: 'Drones DJI Enterprise para Bomberos y Protección Civil',
   seoDescription:
     'Drones DJI Enterprise en México: Matrice 30T con cámara térmica radiométrica, Mavic 3 Thermal compacto y Dock 2 autónomo. Capacitación de piloto y trámite AFAC incluidos. Distribuidor autorizado.',
   founding: '2006',
