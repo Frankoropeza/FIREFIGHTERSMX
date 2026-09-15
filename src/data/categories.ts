@@ -189,10 +189,10 @@ export const categories: Category[] = [
     accent: '#F5A623',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M15 6v-3a3 3 0 0 0-6 0v3"/><rect x="6" y="6" width="12" height="14" rx="2"/><path d="M10 11h4M12 11v4"/></svg>`,
     label: 'Extintores',
-    norm: 'NOM-154-SCFI · NFPA 10',
-    description: 'Extintores certificados NOM-154-SCFI y NFPA 10: PQS ABC, CO₂, Tipo K y agente limpio. Venta, recarga y mantenimiento con collar de garantía en México.',
+    norm: 'NOM-100-STPS · NOM-102-STPS · NFPA 10',
+    description: 'Extintores PQS ABC (NOM-100-STPS), CO₂ (NOM-102-STPS), tipo K y agente limpio bajo NFPA 10. Venta, recarga y mantenimiento NOM-154-SCFI',
     intro: [
-      'Distribuimos extintores portátiles y móviles certificados NOM-154-SCFI para todo tipo de riesgo: polvo químico seco ABC para uso general, CO₂ para tableros y electrónica, Tipo K para cocinas industriales y agentes limpios para centros de datos.',
+      'Distribuimos extintores portátiles y móviles para todo tipo de riesgo: polvo químico seco ABC (NOM-100-STPS) para uso general, CO₂ (NOM-102-STPS) para tableros y electrónica, Tipo K para cocinas industriales y agentes limpios para centros de datos.',
       'El servicio no termina en la venta: recargamos todos los tipos de agente con collar de garantía, etiqueta de inspección vigente y reporte para tu expediente de Protección Civil, conforme al programa anual que exige la NOM-002-STPS.',
     ],
     items: [
@@ -203,10 +203,10 @@ export const categories: Category[] = [
     ],
     productCategory: 'Extintores',
     spotlight: {
-      title: 'Extintores certificados',
-      highlight: 'NOM-154-SCFI y NFPA 10',
+      title: 'Extintores y servicio',
+      highlight: 'PQS NOM-100-STPS · CO₂ NOM-102-STPS · NFPA 10',
       paragraphs: [
-        'El extintor correcto depende del fuego que vas a combatir: PQS ABC para uso general, CO₂ para tableros y electrónica, Tipo K para cocinas industriales y agentes limpios para centros de datos. Todos nuestros equipos cumplen NOM-154-SCFI con certificado de conformidad y etiqueta de inspección vigente.',
+        'El extintor correcto depende del fuego que vas a combatir: PQS ABC (NOM-100-STPS) para uso general, CO₂ (NOM-102-STPS) para tableros y electrónica, Tipo K para cocinas industriales y agentes limpios para centros de datos. El servicio de recarga y mantenimiento se realiza conforme a NOM-154-SCFI.',
         'El servicio no termina en la venta: recargamos todos los tipos de agente con collar de garantía y reporte para tu expediente de Protección Civil, conforme al programa anual que exige la NOM-002-STPS. También programamos la prueba hidrostática obligatoria de tus cilindros.',
       ],
       subsections: [
@@ -216,7 +216,7 @@ export const categories: Category[] = [
         { name: 'Recarga y mantenimiento', detail: 'Recarga certificada con collar de garantía, etiqueta de inspección, reporte documental y prueba hidrostática programada.' },
       ],
       image: '/images/categorias/extintores.avif',
-      imageAlt: 'Ilustración técnica de extintor PQS ABC certificado NOM-154-SCFI con manómetro y collar de garantía',
+      imageAlt: 'Ilustración técnica de extintor PQS ABC con manómetro y collar de garantía',
     },
   },
   {

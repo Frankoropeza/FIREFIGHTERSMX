@@ -59,7 +59,7 @@ export const navigation: { main: NavItem[] } = { main: [
         href: "/productos/extintores",
         description: "PQS ABC · CO₂ · Especializados · Sobre Ruedas",
         children: [
-          { label: "PQS ABC",          href: "/productos/extintores/pqs-abc",        description: "NOM-154-SCFI · 1 a 12 kg · A·B·C" },
+          { label: "PQS ABC",          href: "/productos/extintores/pqs-abc",        description: "NOM-100-STPS · 1 a 12 kg · A·B·C" },
           { label: "CO₂",             href: "/productos/extintores/co2",            description: "NOM-102-STPS · Sin residuo · Clase C" },
           { label: "Especializados",   href: "/productos/extintores/especializados", description: "Agua · AFFF · Tipo K · FM-200" },
           { label: "Sobre Ruedas",     href: "/productos/extintores/sobre-ruedas",   description: "25 a 125 kg · Industrial · Aeronáutico" },

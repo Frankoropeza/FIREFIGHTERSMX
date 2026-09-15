@@ -10,8 +10,8 @@ const cat = categories.find((c) => c.slug === 'extintores')!;
 const canonicalURL = `${SITE.url}/productos/extintores/`;
 
 const seoMeta = {
-  title: `Extintores Certificados NOM-154-SCFI y NFPA 10 — Venta, Recarga y Mantenimiento · México`,
-  description: 'Extintores certificados NOM-154-SCFI y NFPA 10 en México: PQS ABC, CO₂, Tipo K y agente limpio. Venta, recarga con collar de garantía y mantenimiento con reporte para Protección Civil.',
+  title: `Extintores en México: PQS, CO₂ y Tipo K — Venta y Recarga`,
+  description: 'Venta de extintores PQS (NOM-100-STPS), CO₂ (NOM-102-STPS), tipo K y agente limpio en México, con recarga y mantenimiento NOM-154-SCFI.',
   canonicalURL,
 };
 
@@ -33,7 +33,7 @@ const ruedaProducts = featuredProducts.filter(
 const tipos = [
   {
     title: 'PQS ABC',
-    norm: 'NOM-154-SCFI · NFPA 10',
+    norm: 'NOM-100-STPS · NFPA 10',
     accent: '#F75000',
     desc: 'Polvo químico seco multiuso para fuegos clase A, B y C. El estándar obligatorio en oficinas, comercios, bodegas e industria general. De 1 kg a 12 kg.',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 6v-3a3 3 0 0 0-6 0v3"/><rect x="6" y="6" width="12" height="14" rx="2"/><path d="M12 10v4M10 12h4"/></svg>`,
@@ -47,21 +47,21 @@ const tipos = [
   },
   {
     title: 'Agua',
-    norm: 'NOM-154-SCFI · NFPA 10',
+    norm: 'NOM-103-STPS · NFPA 10',
     accent: '#38BDF8',
     desc: 'El agente más ecológico para fuegos clase A: sólidos combustibles como madera, papel y cartón. Sin residuo tóxico. NUNCA usar en presencia de corriente eléctrica.',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>`,
   },
   {
     title: 'Espuma AFFF',
-    norm: 'NOM-154-SCFI · NFPA 11',
+    norm: 'NFPA 11',
     accent: '#FB923C',
     desc: 'Espuma formadora de película acuosa para fuegos clase A y B. Sella la superficie del combustible e impide la re-ignición — el más eficaz para hidrocarburos derramados.',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3C8 7 6 11 6 14a6 6 0 0 0 12 0c0-3-2-7-6-11z"/><path d="M9 14s1 1 3 1 3-1 3-1"/></svg>`,
   },
   {
     title: 'Tipo K',
-    norm: 'NOM-154-SCFI · UL 300',
+    norm: 'UL 300',
     accent: '#F5A623',
     desc: 'Acetato de potasio para fuegos clase K: aceites y grasas vegetales y animales a alta temperatura. Obligatorio en cocinas industriales y restaurantes con freidoras.',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2c-4 4-6 8-6 11a6 6 0 0 0 12 0c0-3-2-7-6-11z"/><path d="M12 12v4"/></svg>`,
@@ -79,8 +79,8 @@ const tipos = [
 const razones = [
   {
     n: '01',
-    t: 'Certificación NOM-154-SCFI verificable',
-    d: 'Todos los extintores incluyen etiqueta NOM con número de dictamen verificable ante la SE. Documentación completa para Protección Civil, IMSS, STPS y dictámenes de bomberos.',
+    t: 'Servicio NOM-154-SCFI verificable',
+    d: 'La recarga y el mantenimiento incluyen collar de garantía y reporte documental para Protección Civil, IMSS, STPS y dictámenes de bomberos.',
   },
   {
     n: '02',
@@ -160,7 +160,7 @@ const faqs = [
   },
   {
     q: '¿Cuándo es obligatorio el extintor Tipo K en una cocina?',
-    a: 'La NOM-154-SCFI y las normas de Protección Civil establecen el Tipo K (acetato de potasio) como obligatorio en cocinas industriales donde se usen aceites o grasas vegetales y animales a alta temperatura (freidoras, salamandras). El PQS ABC no es eficaz en fuegos de clase K — la grasa se re-enciende. Siempre debe complementarse con el sistema de supresión automático de la campana.',
+    a: 'La selección del Tipo K (acetato de potasio) depende del riesgo de aceites o grasas vegetales y animales a alta temperatura en cocinas industriales (freidoras, salamandras). El PQS ABC no es eficaz en fuegos de clase K — la grasa se re-enciende. Siempre debe complementarse con el sistema de supresión automático de la campana.',
   },
   {
     q: '¿Cada cuánto se revisa y se recarga un extintor?',
@@ -178,7 +178,7 @@ const faqs = [
 
 /* Normativa */
 const normas = [
-  { clave: 'NOM-154-SCFI', titulo: 'Extintores contra incendio',        desc: 'La norma de referencia para venta en México — el dictamen NOM en la etiqueta es obligatorio para todo extintor portátil comercializado en el país.' },
+  { clave: 'NOM-154-SCFI', titulo: 'Servicio de extintores',            desc: 'Regula el servicio de mantenimiento y recarga de extintores portátiles en México.' },
   { clave: 'NOM-002-STPS', titulo: 'Prevención contra incendio',        desc: 'Establece la dotación mínima de extintores por área, el programa anual de revisión, la capacitación de brigadas y el expediente que exige la STPS en inspecciones.' },
   { clave: 'NOM-003-SEGOB', titulo: 'Señalización',                     desc: 'Define los señalamientos de seguridad y emergencia para la ubicación e identificación de los extintores conforme a Protección Civil.' },
   { clave: 'NFPA 10',       titulo: 'Portable Fire Extinguishers',      desc: 'Estándar internacional de referencia para la selección, instalación, inspección, mantenimiento y recarga. Referenciada en proyectos con aseguradoras internacionales.' },
@@ -199,7 +199,7 @@ const collectionSchema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
   '@id': `${canonicalURL}#collection`,
-  name: 'Extintores certificados NOM-154-SCFI y NFPA 10 — México',
+  name: 'Extintores PQS, CO₂, tipo K y agente limpio — México',
   description: seoMeta.description,
   url: canonicalURL,
   inLanguage: 'es-MX',
@@ -243,12 +243,12 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
             <span style="color:#F5A623">certificados.</span>
           </h1>
           <p class="text-base leading-relaxed mb-8 max-w-xl" style="color:#94A3B8">
-            Venta, recarga y mantenimiento de extintores portátiles y sobre ruedas certificados
-            NOM-154-SCFI y NFPA 10. Reporte documental completo para tu expediente de Protección Civil,
+            Venta de extintores portátiles y sobre ruedas, con recarga y mantenimiento
+            NOM-154-SCFI. Reporte documental completo para tu expediente de Protección Civil,
             STPS y aseguradoras en todo México.
           </p>
           <div class="flex flex-col sm:flex-row gap-3">
-            <a href={whatsappUrl('Hola, quiero cotizar extintores certificados NOM-154-SCFI para mi establecimiento.')} target="_blank" rel="noopener" class="btn btn-primary btn-lg">Cotizar por {CANAL_CONTACTO}</a>
+            <a href={whatsappUrl('Hola, quiero cotizar extintores para mi establecimiento. Necesito ficha técnica y opciones de recarga.')} target="_blank" rel="noopener" class="btn btn-primary btn-lg">Cotizar por {CANAL_CONTACTO}</a>
             <a href="/cotizacion" class="btn btn-ghost btn-lg">Cotización formal</a>
           </div>
         </div>
@@ -340,7 +340,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
             de Protección Civil — la opción estándar para oficinas, comercios, bodegas e industria general.
           </p>
           <div class="flex flex-wrap gap-2">
-            {['NOM-154-SCFI','NFPA 10','Clase A · B · C','Polvo químico seco','4.5 · 6 · 9 · 12 kg'].map(b => (
+            {['NOM-100-STPS','NFPA 10','Clase A · B · C','Polvo químico seco','4.5 · 6 · 9 · 12 kg'].map(b => (
               <span class="badge badge-dark text-[9px]">{b}</span>
             ))}
           </div>
@@ -364,7 +364,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
           <a href="/productos/extintores/pqs-abc" class="btn btn-primary btn-lg">
             Catálogo PQS ABC completo →
           </a>
-          <a href={whatsappUrl('Hola, quiero cotizar extintores PQS ABC certificados NOM-154-SCFI.')} target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
+          <a href={whatsappUrl('Hola, quiero cotizar extintores PQS ABC. Necesito ficha técnica y opciones de recarga.')} target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
             Cotizar por {CANAL_CONTACTO}
           </a>
         </div>
@@ -538,13 +538,13 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
       </div>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-2 lg:gap-3">
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
-          <img src="/images/categorias/extintores.avif" alt="Extintor certificado NOM-154-SCFI con manómetro y collar de garantía — FirefightersMX México" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+          <img src="/images/categorias/extintores.avif" alt="Extintor PQS ABC con manómetro y collar de garantía" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
           <img src="/images/blog/blog-nom-002-stps.avif" alt="Programa de mantenimiento anual NOM-002-STPS extintores — reporte para Protección Civil" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
-          <img src="/images/servicios/mantenimiento.avif" alt="Servicio de recarga y mantenimiento de extintor con collar de garantía NOM-154-SCFI" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+          <img src="/images/servicios/mantenimiento.avif" alt="Servicio de recarga y mantenimiento de extintor con collar de garantía" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
           <img src="/images/blog/bombero-preparacion-emergencia-industrial.avif" alt="Brigada de emergencia industrial con extintor en planta — capacitación uso método PASS" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
@@ -759,12 +759,12 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
         <div>
           <p class="text-xs font-display font-bold uppercase tracking-[0.2em] mb-3" style="color:rgba(255,255,255,0.7)">PQS ABC · CO₂ · Tipo K · Agente limpio · Recarga · Mantenimiento</p>
           <h2 class="font-display font-bold uppercase" style="color:#FFFFFF;font-size:clamp(1.75rem,4vw,3rem);line-height:1.05">
-            Certificado NOM-154-SCFI.<br/>Expediente completo para PC.
+            Servicio NOM-154-SCFI.<br/>Expediente completo para PC.
           </h2>
         </div>
         <div class="flex flex-col sm:flex-row gap-3 shrink-0">
           <a
-            href={whatsappUrl('Hola, quiero cotizar extintores certificados NOM-154-SCFI. ¿Hacen recarga y mantenimiento?')}
+            href={whatsappUrl('Hola, quiero cotizar extintores. ¿Hacen recarga y mantenimiento?')}
             target="_blank" rel="noopener"
             class="btn btn-lg"
             style="background:#FFFFFF;color:#F5A623;border-color:#FFFFFF;font-weight:700"

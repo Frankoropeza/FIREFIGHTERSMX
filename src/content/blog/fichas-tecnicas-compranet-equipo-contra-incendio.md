@@ -11,7 +11,7 @@ image:
   alt: "Documentos de propuesta técnica para licitación de equipo contra incendio en CompraNet"
 ---
 
-Una empresa distribuidora de equipo contra incendio en Monterrey ganó la evaluación económica de una licitación PEMEX por un margen significativo. Tenía el precio más bajo, los tiempos de entrega eran viables y la empresa tenía experiencia. La propuesta fue descalificada en la revisión técnica porque la ficha del extintor listaba capacidad en libras en lugar de kilogramos, y la norma de referencia citada (UL 299) no era la que la convocatoria exigía (NOM-154-SCFI-2005).
+Una empresa distribuidora de equipo contra incendio en Monterrey ganó la evaluación económica de una licitación PEMEX por un margen significativo. Tenía el precio más bajo, los tiempos de entrega eran viables y la empresa tenía experiencia. La propuesta fue descalificada en la revisión técnica porque la ficha del extintor listaba capacidad en libras en lugar de kilogramos, y la norma de producto citada (UL 299) no era la que la convocatoria exigía para PQS (NOM-100-STPS-1994).
 
 Dos datos incorrectos en una sola página. Meses de trabajo perdidos.
 
@@ -31,7 +31,7 @@ Lo que hace un evaluador: toma las bases, extrae cada especificación técnica m
 
 ## Error 2: Normas incorrectas o desactualizadas
 
-Para extintores: la NOM de referencia en México es la NOM-154-SCFI-2005. Muchas fichas citan la NOM-106-SCFI-2000 (que fue cancelada y sustituida) o la UL 299 (estándar estadounidense que no es equivalente directo). La confusión entre estas tres referencias descalifica propuestas con frecuencia.
+Para extintores: identifica la NOM de producto según el agente: NOM-100-STPS-1994 para PQS, NOM-101-STPS-1994 para espuma química, NOM-102-STPS-1994 para CO₂ y NOM-103-STPS-1994 para agua. NOM-154-SCFI-2005 aplica al servicio de mantenimiento y recarga. La confusión entre referencias puede descalificar propuestas.
 
 Para equipos respiratorios tipo SCBA: la referencia es la NFPA 1970 con el año de edición correcto. Si la convocatoria pide NFPA 1981 edición 2019 y la ficha dice "cumple NFPA 1970" sin especificar edición, el evaluador puede rechazarla.
 
@@ -39,7 +39,7 @@ Para rociadores y sistemas fijos: NFPA 13 con año de edición, y en licitacione
 
 | Equipo | NOM mexicana | Estándar NFPA/UL de referencia |
 |---|---|---|
-| Extintores portátiles | NOM-154-SCFI-2005 | UL 299 (referencial, no sustituto) |
+| Extintores portátiles | NOM-100 a NOM-103-STPS-1994 según el agente; NOM-154-SCFI-2005 para servicio | UL 299 (referencial, no sustituto) |
 | SCBA | Sin NOM equivalente vigente | NFPA 1970 |
 | Detectores de humo | NOM-009-ENER (no CI) | NFPA 72 |
 | Mangueras CI | NOM aplicable a presión | NFPA 1961 |

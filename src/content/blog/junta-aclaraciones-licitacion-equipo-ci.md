@@ -11,7 +11,7 @@ image:
   alt: "Mesa de trabajo con bases de licitación y equipos contra incendio para junta de aclaraciones"
 ---
 
-Las bases de una licitación CFE para equipo de extinción salieron con un error en la especificación del agente extintor: pedían PQS multiusos con 90% de eficiencia mínima en prueba UL, pero la norma de referencia que citaban (NOM-154-SCFI-2005) establece el método de prueba mexicano con parámetros distintos. Los licitantes que no lo detectaron presentaron equipo que cumplía uno pero no el otro.
+Las bases de una licitación CFE para equipo de extinción salieron con un error en la especificación del agente extintor: pedían PQS multiusos con 90% de eficiencia mínima en prueba UL, pero citaron NOM-154-SCFI-2005, que aplica al servicio de mantenimiento y recarga, en lugar de la norma de producto correspondiente. Los licitantes que no lo detectaron presentaron equipo que cumplía uno pero no el otro.
 
 Dos empresas levantaron la pregunta en la junta de aclaraciones. El convocante emitió una adenda que corrigió la especificación. Esas dos empresas pudieron ofertar con claridad. Las otras nueve no.
 
@@ -60,7 +60,7 @@ El proceso que funciona:
 
 Para una licitación de extintores en una dependencia federal en CDMX, encontré estas situaciones que merecieron pregunta formal:
 
-**Caso 1:** Las bases pedían extintor de 6 kg con presión de trabajo de 15 bar, pero la NOM-154-SCFI-2005 establece que los extintores de ese tipo se ensayan a 25 bar. La pregunta fue: "En el apartado 3.2, la especificación señala presión de trabajo de 15 bar. ¿Esto se refiere a la presión de carga o a la presión de prueba hidrostática? Si es presión de prueba, solicitamos se aclare si aplica el método de la NOM-154-SCFI o el señalado en las bases, ya que son distintos."
+**Caso 1:** Las bases pedían extintor PQS de 6 kg con presión de trabajo de 15 bar. La pregunta fue: "En el apartado 3.2, la especificación señala presión de trabajo de 15 bar. ¿Esto se refiere a la presión de carga o a la presión de prueba hidrostática? Si es presión de prueba, solicitamos se aclare la norma de producto aplicable, ya que NOM-154-SCFI corresponde al servicio de mantenimiento y recarga."
 
 El convocante emitió adenda aclarando que se refería a presión de carga. Eso cambió qué equipos podían ofertarse.
 

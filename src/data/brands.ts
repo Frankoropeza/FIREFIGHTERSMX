@@ -169,7 +169,7 @@ export const brands: Brand[] = [
     country: '🇺🇸 USA',
     longDesc: [
       'Kidde, parte de UTC (United Technologies), es uno de los fabricantes más grandes del mundo en extintores portátiles y sistemas de supresión. Sus extintores PQS, CO₂ y Clase K son de los más utilizados en comercio, industria y gobierno por su disponibilidad, precio y soporte de servicio.',
-      'Distribuimos extintores Kidde y accesorios con mantenimiento y recarga certificada NOM-154-SCFI-2005, entregando ficha técnica y constancia de servicio lista para expediente ante Protección Civil y STPS.',
+      'Distribuimos extintores Kidde y accesorios con mantenimiento y recarga conforme a NOM-154-SCFI-2005, entregando ficha técnica y constancia de servicio lista para expediente ante Protección Civil y STPS.',
     ],
     products: [
       { name: 'Kidde Pro Line PQS ABC', detail: 'Extintores de polvo químico seco multipropósito para oficinas, comercios e industria ligera.' },

@@ -191,7 +191,7 @@ Si partes de cero, o de una dotación que sabes que no está bien calculada, el 
 2. **Recorre el inmueble** y clasifica cada zona por nivel de riesgo según los materiales presentes.
 3. **Aplica la fórmula** N = A ÷ Am para cada zona. Verifica también el criterio de distancia.
 4. **Selecciona el agente correcto** para cada área: PQS ABC para uso general, CO₂ para electrónica, Tipo K para cocinas.
-5. **Compra [extintores](/productos/extintores) con certificación NOM-154-SCFI**: verifica la etiqueta de fábrica con número de lote, fecha y clasificación.
+5. **Compra [extintores](/productos/extintores) con la norma de producto aplicable**: NOM-100-STPS para PQS, NOM-102-STPS para CO₂ y la referencia correspondiente según el agente.
 6. **Instala en soportes fijos**, a la altura correcta, con espacio despejado de 1 metro alrededor.
 7. **Coloca señalización NOM-003-SEGOB** del tamaño correcto según la distancia de observación.
 8. **Abre la bitácora**: número de serie, fecha de instalación, técnico responsable, calendario de mantenimiento.
@@ -212,6 +212,6 @@ La dotación correcta de extintores es el sistema de protección contra incendio
 
 ## Catálogo Extintores en FIREFIGHTERS MX
 
-Contamos con extintores PQS ABC, CO₂ y Tipo K certificados NOM-154-SCFI para todos los niveles de riesgo requeridos por la NOM-002-STPS. Ofrecemos asesoría de cálculo de dotación, instalación y servicio de mantenimiento anual para mantener tu bitácora en orden ante cualquier inspección.
+Contamos con extintores PQS ABC (NOM-100-STPS), CO₂ (NOM-102-STPS) y Tipo K para los niveles de riesgo requeridos por la NOM-002-STPS. Ofrecemos asesoría de cálculo de dotación, instalación y servicio de mantenimiento anual conforme NOM-154-SCFI para mantener tu bitácora en orden ante cualquier inspección.
 
 [Catálogo completo de Extintores](/productos/extintores) · [Solicitar cotización](/cotizacion)

@@ -8,7 +8,7 @@ category: "Mantenimiento y Recarga"
 tags: ["extintores", "collar de garantía", "NOM-154-SCFI", "protección civil", "mantenimiento extintores"]
 image:
   url: "/images/servicios/mantenimiento.avif"
-  alt: "Collar de garantía en extintor durante mantenimiento certificado NOM-154-SCFI"
+  alt: "Collar de garantía en extintor durante mantenimiento"
 ---
 
 Un inspector de Protección Civil llega a una bodega logística en Monterrey. Los extintores están cargados, rojos, en sus soportes, con el manómetro en verde. Todo parece en orden. El inspector los revisa uno por uno y los reprueba a todos. El encargado de instalaciones no entiende qué pasó. La respuesta del inspector fue sencilla: ninguno tenía collar de garantía.

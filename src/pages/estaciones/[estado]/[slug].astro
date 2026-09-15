@@ -68,7 +68,7 @@ const prodMapByTipo: Record<string, ProdLink[]> = {
     { href: '/productos/equipos-scba',         label: 'Equipos SCBA / ERAR' },
     { href: '/productos/herramientas-rescate', label: 'Herramientas de Rescate' },
     { href: '/productos/camaras-termicas',     label: 'Cámaras Térmicas NFPA' },
-    { href: '/productos/extintores',           label: 'Extintores NOM-154' },
+    { href: '/productos/extintores',           label: 'Extintores' },
   ],
   Estatal: [
     { href: '/productos/cascos-nfpa',         label: 'Cascos NFPA 1970' },
@@ -76,13 +76,13 @@ const prodMapByTipo: Record<string, ProdLink[]> = {
     { href: '/productos/equipos-scba',         label: 'Equipos SCBA / ERAR' },
     { href: '/productos/herramientas-rescate', label: 'Herramientas de Rescate' },
     { href: '/productos/camaras-termicas',     label: 'Cámaras Térmicas NFPA' },
-    { href: '/productos/extintores',           label: 'Extintores NOM-154' },
+    { href: '/productos/extintores',           label: 'Extintores' },
   ],
   Voluntarios: [
     { href: '/productos/cascos-nfpa',         label: 'Cascos NFPA 1970' },
     { href: '/productos/trajes-bombero',       label: 'Trajes Estructurales NFPA' },
     { href: '/productos/equipos-scba',         label: 'Equipos SCBA / ERAR' },
-    { href: '/productos/extintores',           label: 'Extintores NOM-154' },
+    { href: '/productos/extintores',           label: 'Extintores' },
     { href: '/productos/herramientas-rescate', label: 'Herramientas de Rescate' },
   ],
   PEMEX: [
@@ -164,7 +164,7 @@ const normasByTipo: Record<string, NormaRow[]> = {
     { norma: 'NFPA 1970', area: 'Traje estructural',             descripcion: 'Diseño, materiales y desempeño del traje de combate de incendios estructurales' },
     { norma: 'NFPA 1970', area: 'SCBA / ERAR',                  descripcion: 'Aparatos de respiración autónoma de circuito abierto para uso en emergencias IDLH' },
     { norma: 'NFPA 1850', area: 'Mantenimiento EPP',             descripcion: 'Selección, cuidado, mantenimiento y retiro de servicio del EPP estructural certificado' },
-    { norma: 'NOM-154-SCFI', area: 'Extintores portátiles',     descripcion: 'Especificaciones para extintores portátiles en México: diseño, fabricación y ensayo' },
+    { norma: 'NOM-154-SCFI', area: 'Servicio de extintores',     descripcion: 'Servicio de mantenimiento y recarga de extintores portátiles en México' },
     { norma: 'NOM-002-STPS', area: 'Prevención de incendios',   descripcion: 'Condiciones de seguridad-prevención y protección contra incendios en centros de trabajo' },
   ],
   Estatal: [
@@ -172,7 +172,7 @@ const normasByTipo: Record<string, NormaRow[]> = {
     { norma: 'NFPA 1970', area: 'Traje estructural',             descripcion: 'Diseño y desempeño del traje de combate de incendios para corporaciones estatales' },
     { norma: 'NFPA 1970', area: 'SCBA / ERAR',                  descripcion: 'Aparatos de respiración autónoma de circuito abierto para emergencias' },
     { norma: 'LGPC',       area: 'Ley General de PC',            descripcion: 'Ley General de Protección Civil: marco de coordinación interinstitucional estatal' },
-    { norma: 'NOM-154-SCFI', area: 'Extintores portátiles',     descripcion: 'Especificaciones para extintores portátiles en México' },
+    { norma: 'NOM-154-SCFI', area: 'Servicio de extintores',     descripcion: 'Servicio de mantenimiento y recarga de extintores portátiles' },
     { norma: 'NOM-002-STPS', area: 'Prevención de incendios',   descripcion: 'Condiciones de seguridad-prevención y protección contra incendios' },
   ],
   Voluntarios: [
@@ -180,7 +180,7 @@ const normasByTipo: Record<string, NormaRow[]> = {
     { norma: 'NFPA 1970', area: 'Traje estructural',             descripcion: 'Diseño y desempeño del traje de bombero para combate de incendios estructurales' },
     { norma: 'NFPA 1970', area: 'SCBA / ERAR',                  descripcion: 'Aparatos de respiración autónoma de circuito abierto certificados' },
     { norma: 'NFPA 1143', area: 'Incendios de interfaz',         descripcion: 'Prevención de incendios en la interfaz urbano-forestal: clave para cuerpos voluntarios' },
-    { norma: 'NOM-154-SCFI', area: 'Extintores portátiles',     descripcion: 'Especificaciones para extintores portátiles en México' },
+    { norma: 'NOM-154-SCFI', area: 'Servicio de extintores',     descripcion: 'Servicio de mantenimiento y recarga de extintores portátiles' },
     { norma: 'NOM-002-STPS', area: 'Prevención de incendios',   descripcion: 'Condiciones básicas de seguridad contra incendios en centros de trabajo' },
   ],
   PEMEX: [
@@ -189,7 +189,7 @@ const normasByTipo: Record<string, NormaRow[]> = {
     { norma: 'NFPA 30',   area: 'Líquidos inflamables',          descripcion: 'Código de líquidos inflamables y combustibles para almacenamiento seguro' },
     { norma: 'NOM-005-STPS', area: 'Sustancias químicas',        descripcion: 'Manejo, transporte y almacenamiento de sustancias químicas peligrosas' },
     { norma: 'API 2001',  area: 'Tanques de almacenamiento',     descripcion: 'Protección contraincendio en tanques de almacenamiento de petróleo y derivados' },
-    { norma: 'NOM-154-SCFI', area: 'Extintores portátiles',     descripcion: 'Especificaciones para extintores portátiles industriales' },
+    { norma: 'NOM-154-SCFI', area: 'Servicio de extintores',     descripcion: 'Servicio de mantenimiento y recarga de extintores industriales' },
   ],
   Industrial: [
     { norma: 'NFPA 1081', area: 'Brigadas industriales',         descripcion: 'Estándar para brigadas de emergencias en instalaciones industriales' },
@@ -197,7 +197,7 @@ const normasByTipo: Record<string, NormaRow[]> = {
     { norma: 'NOM-005-STPS', area: 'Sustancias químicas',        descripcion: 'Manejo, transporte y almacenamiento de sustancias químicas peligrosas' },
     { norma: 'NFPA 30',   area: 'Líquidos inflamables',          descripcion: 'Código de líquidos inflamables y combustibles en la industria' },
     { norma: 'NFPA 704',  area: 'Identificación de peligros',    descripcion: 'Sistema de identificación de riesgos de materiales para respuesta a emergencias' },
-    { norma: 'NOM-154-SCFI', area: 'Extintores portátiles',     descripcion: 'Especificaciones para extintores portátiles' },
+    { norma: 'NOM-154-SCFI', area: 'Servicio de extintores',     descripcion: 'Servicio de mantenimiento y recarga de extintores' },
   ],
   CFE: [
     { norma: 'NFPA 1081', area: 'Brigadas industriales',         descripcion: 'Brigadas de emergencias en instalaciones de generación y distribución eléctrica' },
@@ -205,7 +205,7 @@ const normasByTipo: Record<string, NormaRow[]> = {
     { norma: 'NOM-022-STPS', area: 'Electricidad estática',      descripcion: 'Seguridad en el aprovechamiento de la electricidad estática en procesos industriales' },
     { norma: 'NFPA 30',   area: 'Combustibles',                  descripcion: 'Código de líquidos inflamables y combustibles en instalaciones de CFE' },
     { norma: 'NOM-002-STPS', area: 'Prevención de incendios',   descripcion: 'Condiciones de seguridad-prevención y protección contra incendios' },
-    { norma: 'NOM-154-SCFI', area: 'Extintores portátiles',     descripcion: 'Especificaciones para extintores portátiles sin residuos para equipos eléctricos' },
+    { norma: 'NOM-154-SCFI', area: 'Servicio de extintores',     descripcion: 'Servicio de mantenimiento y recarga de extintores para equipos eléctricos' },
   ],
   Aeropuerto: [
     { norma: 'OACI Anexo 14', area: 'SSEI aeroportuario',        descripcion: 'Norma internacional para Servicios de Salvamento y Extinción de Incendios en aeropuertos' },
@@ -213,7 +213,7 @@ const normasByTipo: Record<string, NormaRow[]> = {
     { norma: 'NFPA 412',  area: 'Espuma aeroportuaria',          descripcion: 'Evaluación de vehículos contraincendio con agentes espumógenos para aeropuertos' },
     { norma: 'FAA AC 150/5210-6D', area: 'Formación ARFF',       descripcion: 'Programa de capacitación para personal de Rescate y Lucha Contra Incendios de Aeronaves' },
     { norma: 'Circular AFAC', area: 'Aeronáutica Civil MX',      descripcion: 'Regulaciones AFAC para servicios de salvamento aeroportuario en México' },
-    { norma: 'NOM-154-SCFI', area: 'Extintores portátiles',     descripcion: 'Especificaciones para extintores portátiles en instalaciones aeroportuarias' },
+    { norma: 'NOM-154-SCFI', area: 'Servicio de extintores',     descripcion: 'Servicio de mantenimiento y recarga de extintores en instalaciones aeroportuarias' },
   ],
 };
 const normaTable: NormaRow[] = normasByTipo[estacion.tipo] ?? normasByTipo['Municipal'];
@@ -249,7 +249,7 @@ const equipoDescByTipo: Record<string, EquipoDesc[]> = {
     { href: '/productos/equipos-scba',         label: 'Equipos SCBA / ERAR',         norma: 'NFPA 1970',    desc: 'Equipos de respiración autónoma de circuito abierto con cilindros de 30 y 45 minutos certificados NFPA 1970' },
     { href: '/productos/herramientas-rescate', label: 'Herramientas de Rescate',     norma: 'NFPA 1936',    desc: 'Sets hidráulicos y manuales de expansión y corte para rescate vehicular, extrication y espacios confinados' },
     { href: '/productos/camaras-termicas',     label: 'Cámaras Térmicas',            norma: 'NFPA 1930',    desc: 'Cámaras de imagen térmica para búsqueda de víctimas en condiciones de humo y visibilidad cero' },
-    { href: '/productos/extintores',           label: 'Extintores NOM-154',          norma: 'NOM-154-SCFI', desc: 'Extintores portátiles Clase A, B, C y K con certificación NOM-154-SCFI para dotación municipal' },
+    { href: '/productos/extintores',           label: 'Extintores',          norma: 'Servicio NOM-154-SCFI', desc: 'Extintores portátiles Clase A, B, C y K con servicio de mantenimiento y recarga NOM-154-SCFI para dotación municipal' },
   ],
   Estatal: [
     { href: '/productos/cascos-nfpa',         label: 'Cascos NFPA 1970',            norma: 'NFPA 1970',    desc: 'Casco de combate estructural certificado NFPA 1970/1972 para coordinaciones estatales' },
@@ -257,41 +257,41 @@ const equipoDescByTipo: Record<string, EquipoDesc[]> = {
     { href: '/productos/equipos-scba',         label: 'Equipos SCBA / ERAR',         norma: 'NFPA 1970',    desc: 'Aparatos de respiración autónoma de circuito abierto certificados para emergencias estatales' },
     { href: '/productos/herramientas-rescate', label: 'Herramientas de Rescate',     norma: 'NFPA 1936',    desc: 'Herramientas de rescate vehicular y espacios confinados para coordinaciones estatales' },
     { href: '/productos/camaras-termicas',     label: 'Cámaras Térmicas',            norma: 'NFPA 1930',    desc: 'Cámaras termográficas para búsqueda de personas en ambientes con humo y calor' },
-    { href: '/productos/extintores',           label: 'Extintores NOM-154',          norma: 'NOM-154-SCFI', desc: 'Extintores portátiles NOM-154-SCFI para dotación de la corporación estatal' },
+    { href: '/productos/extintores',           label: 'Extintores',          norma: 'Servicio NOM-154-SCFI', desc: 'Extintores portátiles con servicio de mantenimiento y recarga NOM-154-SCFI para dotación de la corporación estatal' },
   ],
   Voluntarios: [
     { href: '/productos/cascos-nfpa',         label: 'Cascos NFPA 1970',            norma: 'NFPA 1970',    desc: 'Casco de combero estructural certificado, ideal para dotación inicial de cuerpos voluntarios' },
     { href: '/productos/trajes-bombero',       label: 'Trajes Estructurales',        norma: 'NFPA 1970',    desc: 'Traje de combate meta-aramida: el EPP esencial de toda brigada voluntaria activa' },
     { href: '/productos/equipos-scba',         label: 'Equipos SCBA / ERAR',         norma: 'NFPA 1970',    desc: 'Cilindros de 30 minutos y máscaras certificadas: protección respiratoria básica de volcán' },
-    { href: '/productos/extintores',           label: 'Extintores NOM-154',          norma: 'NOM-154-SCFI', desc: 'Extintores portátiles clase múltiple para primera intervención de brigadas voluntarias' },
+    { href: '/productos/extintores',           label: 'Extintores',          norma: 'Servicio NOM-154-SCFI', desc: 'Extintores portátiles clase múltiple con servicio NOM-154-SCFI para primera intervención de brigadas voluntarias' },
     { href: '/productos/herramientas-rescate', label: 'Herramientas de Rescate',     norma: 'NFPA 1936',    desc: 'Herramientas ligeras de rescate vehicular para brigadas de primer respondiente voluntario' },
   ],
   PEMEX: [
     { href: '/productos/sistemas-ci',          label: 'Sistemas Contraincendio',     norma: 'NFPA 1081',    desc: 'Redes fijas de rociadores, monitores y espuma para terminales e instalaciones de proceso' },
     { href: '/productos/hazmat',               label: 'Equipo HAZMAT',               norma: 'NOM-005-STPS', desc: 'Trajes encapsulados, detectores multi-gas y equipos de decontaminación para hidrocarburos' },
     { href: '/productos/equipos-scba',         label: 'Equipos SCBA / ERA',          norma: 'NFPA 1970',    desc: 'Equipos de respiración autónoma de circuito abierto para atmósferas IDLH en refinerías' },
-    { href: '/productos/extintores',           label: 'Extintores Industriales',     norma: 'NOM-154-SCFI', desc: 'Extintores de CO₂, polvo seco BC y espuma AFFF para instalaciones de combustibles' },
+    { href: '/productos/extintores',           label: 'Extintores Industriales',     norma: 'Servicio NOM-154-SCFI', desc: 'Extintores de CO₂, polvo seco BC y espuma AFFF con servicio NOM-154-SCFI para instalaciones de combustibles' },
     { href: '/productos/camaras-termicas',     label: 'Cámaras de Detección',        norma: 'NFPA 1930',    desc: 'Cámaras de imagen térmica para detección de puntos calientes en tuberías y tanques' },
   ],
   Industrial: [
     { href: '/productos/sistemas-ci',          label: 'Sistemas Contraincendio',     norma: 'NFPA 1081',    desc: 'Sistemas fijos y móviles de extinción para plantas de manufactura e industria en general' },
     { href: '/productos/hazmat',               label: 'Equipo HAZMAT',               norma: 'NOM-005-STPS', desc: 'EPP y equipos de respuesta a derrames y fugas de sustancias peligrosas' },
     { href: '/productos/equipos-scba',         label: 'Equipos SCBA / ERA',          norma: 'NFPA 1970',    desc: 'Respiración autónoma para brigadas industriales en atmósferas peligrosas' },
-    { href: '/productos/extintores',           label: 'Extintores Industriales',     norma: 'NOM-154-SCFI', desc: 'Extintores portátiles Clase A, B, C y D para industria manufacturera y química' },
+    { href: '/productos/extintores',           label: 'Extintores Industriales',     norma: 'Servicio NOM-154-SCFI', desc: 'Extintores portátiles Clase A, B, C y D con servicio NOM-154-SCFI para industria manufacturera y química' },
     { href: '/productos/camaras-termicas',     label: 'Cámaras Térmicas',            norma: 'NFPA 1930',    desc: 'Cámaras termográficas para inspección de equipos eléctricos y detección de incendios incipientes' },
   ],
   CFE: [
     { href: '/productos/sistemas-ci',          label: 'Sistemas CI Eléctricos',      norma: 'NFPA 1081',    desc: 'Sistemas de extinción para instalaciones de generación, transmisión y distribución eléctrica' },
     { href: '/productos/hazmat',               label: 'Equipo HAZMAT',               norma: 'NOM-005-STPS', desc: 'Protección ante fugas de SF6, aceite dieléctrico y otros fluidos peligrosos en CFE' },
     { href: '/productos/equipos-scba',         label: 'Equipos SCBA / ERA',          norma: 'NFPA 1970',    desc: 'Equipos de respiración autónoma para brigadas en subestaciones y plantas de generación' },
-    { href: '/productos/extintores',           label: 'Extintores CO₂',              norma: 'NOM-154-SCFI', desc: 'Extintores sin residuos de CO₂ y Halotron para equipos eléctricos y electrónicos sensibles' },
+    { href: '/productos/extintores',           label: 'Extintores CO₂',              norma: 'NOM-102-STPS', desc: 'Extintores sin residuos de CO₂ y Halotron para equipos eléctricos y electrónicos sensibles' },
   ],
   Aeropuerto: [
     { href: '/productos/sistemas-ci',          label: 'Sistemas ARFF / CI',          norma: 'NFPA 403',     desc: 'Vehículos y sistemas ARFF (Aircraft Rescue Fire Fighting) para aeropuertos categoría OACI' },
     { href: '/productos/hazmat',               label: 'Equipo HAZMAT ARFF',          norma: 'OACI A14',     desc: 'Equipos de contención y decontaminación para derrames de combustible de aviación' },
     { href: '/productos/equipos-scba',         label: 'Equipos SCBA / ERA',          norma: 'NFPA 1970',    desc: 'Aparatos de respiración para operaciones de rescate en cabina y extinción aeroportuaria' },
     { href: '/productos/camaras-termicas',     label: 'Cámaras Térmicas ARFF',       norma: 'NFPA 1930',    desc: 'Cámaras de imagen térmica para localización de puntos calientes en aeronaves y pistas' },
-    { href: '/productos/extintores',           label: 'Extintores Aeroportuarios',   norma: 'NOM-154-SCFI', desc: 'Extintores de polvo BC, CO₂ y AFFF para instalaciones aeroportuarias' },
+    { href: '/productos/extintores',           label: 'Extintores Aeroportuarios',   norma: 'Servicio NOM-154-SCFI', desc: 'Extintores de polvo BC, CO₂ y AFFF con servicio NOM-154-SCFI para instalaciones aeroportuarias' },
   ],
 };
 const equipoDescs: EquipoDesc[] = equipoDescByTipo[estacion.tipo] ?? equipoDescByTipo['Municipal'];
