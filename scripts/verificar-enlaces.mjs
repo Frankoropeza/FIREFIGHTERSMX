@@ -18,6 +18,7 @@ import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 
 const DIST = process.argv[2] ?? 'dist';
+const WHATSAPP_PROPIO = '525510054323';
 
 /** Hosts permitidos en cualquier ficha: fuentes, mapas y assets */
 const PERMITIDOS = [
@@ -59,6 +60,9 @@ for (const file of htmls(raizEmpresas)) {
     let host;
     try { host = new URL(url).hostname; } catch { continue; }
     if (/(^|\.)firefighters\.mx$/i.test(host)) continue;
+    // El WhatsApp propio de FIREFIGHTERS MX (2026-09-15) es contacto del sitio,
+    // no un enlace hacia la empresa de la ficha. Cualquier otro número sí cuenta.
+    if (/^wa\.me$/i.test(host) && new URL(url).pathname === `/${WHATSAPP_PROPIO}`) continue;
     if (PERMITIDOS.some((re) => re.test(host))) continue;
     // Cita de fuente: el enlace lleva el nombre de la fuente y la flecha ↗
     const esFuente = new RegExp(`href="${url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"[^>]*>[^<]*↗`).test(html);
