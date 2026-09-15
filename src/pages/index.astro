@@ -11,6 +11,7 @@ import ProcessSteps from '@components/home/ProcessSteps.astro';
 import IndustriesSection from '@components/home/IndustriesSection.astro';
 import CoverageSection from '@components/home/CoverageSection.astro';
 import DirectorioSeccion from '@components/home/DirectorioSeccion.astro';
+import MarcasDistribuidas from '@components/home/MarcasDistribuidas.astro';
 import BlogTeasers from '@components/home/BlogTeasers.astro';
 import FAQSection from '@components/home/FAQSection.astro';
 import CTASection from '@components/home/CTASection.astro';
@@ -20,10 +21,10 @@ import { services } from '@data/services';
 
 const seoMeta = {
   // Portada de la tienda (2026-09-15). El directorio vive en /directorio/.
-  title: 'Equipo para Bomberos y Contra Incendio Certificado NFPA | FIREFIGHTERS MX',
+  title: 'Distribuidor de Equipo para Bomberos NFPA | FIREFIGHTERS MX',
   noBrandSuffix: true,
   description:
-    'Distribuidor autorizado de equipo para bomberos en México: trajes NFPA 1970, SCBA MSA y Dräger, cascos, extintores y sistemas contra incendio. Envíos a los 32 estados.',
+    'Distribuidor autorizado de equipo de protección para bomberos: trajes Globe y Lion, cascos Bullard, SCBA MSA y Dräger, Holmatro. Envíos a todo México.',
   canonicalURL: `${SITE.url}/`,
 };
 
@@ -119,6 +120,9 @@ const schemas = [localBusinessSchema, webSiteSchema, faqSchema, servicesSchema];
 
   {/* 3. Catálogo por categorías (intención de compra) */}
   <ProductCards />
+
+  {/* 3b. Marcas que distribuimos (decisión SEO 2026-09-15: especialista en marcas y líneas) */}
+  <MarcasDistribuidas />
 
   {/* 4. Guía de selección por nivel de riesgo (SEO + autoridad técnica) */}
   <RiskGuide />

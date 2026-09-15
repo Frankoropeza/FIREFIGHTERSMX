@@ -9,8 +9,16 @@ export interface FAQ {
  */
 export const homeFaqs: FAQ[] = [
   {
-    q: '¿Cuánto cuesta un traje de bombero estructural NFPA 1970 en México?',
-    a: 'El precio depende de la marca, el tejido exterior, la configuración, las tallas y el volumen, por eso no publicamos una lista fija. Envíanos por correo o desde la página de cotización el tipo de traje, tallas y cantidades, y te enviamos la cotización formal con ficha técnica.',
+    q: '¿Cómo se llama el equipo que usan los bomberos?',
+    a: 'Se llama equipo de protección personal (EPP) para bomberos. Para combate estructural, la NFPA 1970 lo define como un conjunto: traje estructural (chaquetón y pantalón), casco, capucha, guantes, botas y protección respiratoria con equipo de respiración autónoma (SCBA) y dispositivo PASS. Para incendio forestal se usa ropa ligera específica y para HAZMAT, trajes de protección química.',
+  },
+  {
+    q: '¿Cuáles son los 7 equipos de protección personal de un bombero?',
+    a: 'En el combate estructural son siete piezas que trabajan como sistema: casco, capucha, chaquetón, pantalón, guantes, botas y equipo de respiración autónoma (SCBA) con su pieza facial. El dispositivo PASS, que alerta si el bombero queda inmóvil, suele integrarse al SCBA. Todas deben ser compatibles entre sí y estar certificadas bajo NFPA 1970.',
+  },
+  {
+    q: '¿Cuánto cuesta un equipo de bombero completo?',
+    a: 'Depende de la marca, el tejido exterior del traje estructural, la configuración del casco y del SCBA, las tallas y el volumen, por eso no publicamos una lista fija. Envíanos por WhatsApp, correo o desde la página de cotización qué piezas necesitas, tallas y cantidades, y te enviamos la cotización formal del equipo completo con ficha técnica.',
   },
   {
     q: '¿Son distribuidores autorizados de las marcas que mencionan?',
@@ -26,7 +34,7 @@ export const homeFaqs: FAQ[] = [
   },
   {
     q: '¿Cuánto tarda una cotización formal?',
-    a: 'Al solicitar una cotización, conviene pedir precios, disponibilidad, tiempos de entrega y fichas técnicas. Para proyectos complejos (licitaciones, brigadas completas, ARFF/HAZMAT), solicita una propuesta detallada y un plazo de respuesta por escrito.',
+    a: 'Respondemos con cotización formal en menos de 24 horas hábiles: precios, disponibilidad, tiempos de entrega y fichas técnicas. Para proyectos complejos (licitaciones, brigadas completas, ARFF o HAZMAT) acordamos por escrito el plazo de la propuesta detallada.',
   },
   {
     q: '¿Hacen envíos a toda la República Mexicana?',
