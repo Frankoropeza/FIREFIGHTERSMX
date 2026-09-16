@@ -2,13 +2,15 @@
 /**
  * Cobertura nacional — regiones, tiempos de entrega y diferenciadores logísticos.
  */
+import CardMedia from '@components/common/CardMedia.astro';
+
 const regions = [
-  { name: 'CDMX y Zona Metropolitana', time: 'Entrega 24–48 h', detail: 'Centro de operaciones y stock principal', featured: true },
-  { name: 'Centro y Bajío', time: '2–3 días hábiles', detail: 'EdoMex, Querétaro, Guanajuato, Puebla, Hidalgo, Morelos', featured: false },
-  { name: 'Norte', time: '3–5 días hábiles', detail: 'Nuevo León, Coahuila, Chihuahua, Tamaulipas, Sonora, BC', featured: false },
-  { name: 'Occidente y Pacífico', time: '3–5 días hábiles', detail: 'Jalisco, Michoacán, Sinaloa, Nayarit, Colima', featured: false },
-  { name: 'Sur y Sureste', time: '3–5 días hábiles', detail: 'Veracruz, Oaxaca, Chiapas, Tabasco, Yucatán, Q. Roo', featured: false },
-  { name: 'Proyectos especiales', time: 'Logística dedicada', detail: 'Plataformas, minas y sitios remotos con embalaje certificado', featured: false },
+  { name: 'CDMX y Zona Metropolitana', img: '/images/home/cobertura-cdmx.avif', time: 'Entrega 24–48 h', detail: 'Centro de operaciones y stock principal', featured: true },
+  { name: 'Centro y Bajío', img: '/images/home/cobertura-centro-bajio.avif', time: '2–3 días hábiles', detail: 'EdoMex, Querétaro, Guanajuato, Puebla, Hidalgo, Morelos', featured: false },
+  { name: 'Norte', img: '/images/home/cobertura-norte.avif', time: '3–5 días hábiles', detail: 'Nuevo León, Coahuila, Chihuahua, Tamaulipas, Sonora, BC', featured: false },
+  { name: 'Occidente y Pacífico', img: '/images/home/cobertura-occidente-pacifico.avif', time: '3–5 días hábiles', detail: 'Jalisco, Michoacán, Sinaloa, Nayarit, Colima', featured: false },
+  { name: 'Sur y Sureste', img: '/images/home/cobertura-sur-sureste.avif', time: '3–5 días hábiles', detail: 'Veracruz, Oaxaca, Chiapas, Tabasco, Yucatán, Q. Roo', featured: false },
+  { name: 'Proyectos especiales', img: '/images/home/cobertura-proyectos-especiales.avif', time: 'Logística dedicada', detail: 'Plataformas, minas y sitios remotos con embalaje certificado', featured: false },
 ];
 
 const badges = [
@@ -55,6 +57,7 @@ const badges = [
           {r.featured && (
             <div class="absolute left-0 top-0 bottom-0 w-[3px]" style="background:#F75000" aria-hidden="true"></div>
           )}
+          <CardMedia src={r.img} alt={`Cobertura de entrega: ${r.name}`} />
           <div class="flex items-center justify-between gap-3">
             <h3 class="font-display font-bold text-lg leading-tight" style="color:#FFFFFF">{r.name}</h3>
             {r.featured && <span class="badge badge-fire shrink-0">HQ</span>}

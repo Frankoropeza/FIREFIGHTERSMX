@@ -3,6 +3,7 @@
  * Últimos artículos del blog — internal linking + frescura SEO en el home.
  */
 import { getCollection } from 'astro:content';
+import CardMedia from '@components/common/CardMedia.astro';
 
 const allPosts = (await getCollection('blog', ({ data }) => !data.draft))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
@@ -38,6 +39,7 @@ const fmt = new Intl.DateTimeFormat('es-MX', { day: 'numeric', month: 'long', ye
       {posts.map((post) => (
         <article class="h-full" style="border-right:1px solid rgba(74,117,153,0.18);border-bottom:1px solid rgba(74,117,153,0.18)">
           <a href={`/blog/${post.id}`} class="blog-card group flex flex-col gap-4 p-6 h-full" style="background:#0C1825">
+            {post.data.image && <CardMedia src={post.data.image.url} alt={post.data.image.alt} />}
             <div class="flex items-center justify-between gap-3">
               <span class="badge badge-fire">{post.data.category}</span>
               <time datetime={post.data.pubDate.toISOString().split('T')[0]} class="text-[11px] uppercase tracking-wider" style="color:var(--forge-300)">

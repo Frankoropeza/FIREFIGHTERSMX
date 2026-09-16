@@ -8,8 +8,8 @@ author: "Ing. Marco García"
 category: "Instalación de Sistemas CI"
 tags: ["detección incendio", "alarma NFPA 72", "supresión agente limpio", "sistemas CI", "NFPA 2001"]
 image:
-  url: "/images/servicios/instalacion-sistemas-ci.avif"
-  alt: "Sistemas de detección alarma y supresión de incendio instalados en cuarto de servidores"
+  url: "/images/blog/blog-deteccion-alarma.avif"
+  alt: "Detector de humo, estrobo de alarma y rociador en el techo de una oficina"
 ---
 
 ## El sistema que "protegía" pero no extinguía

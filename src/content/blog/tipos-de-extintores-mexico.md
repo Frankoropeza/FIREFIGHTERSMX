@@ -7,8 +7,8 @@ author: "Ing. Marco García"
 category: "Extintores"
 tags: ["extintores", "NOM-100", "clases de fuego", "protección civil"]
 image:
-  url: "/images/categorias/extintores.avif"
-  alt: "Extintores portátiles — tipos y clasificación por clase de fuego en México"
+  url: "/images/blog/blog-tipos-extintores.avif"
+  alt: "Tipos de extintores: polvo químico seco, CO₂, agua, químico húmedo y agente limpio"
 ---
 
 Elegir el tipo de extintor adecuado importa más de lo que parece. Un agente que no corresponde puede no apagar el fuego y, en ciertos casos, empeorarlo. Agua sobre un equipo eléctrico energizado o sobre líquidos inflamables es un ejemplo claro. Antes de comprar, hay que reconocer el combustible, la clase de fuego y el lugar donde podría iniciar un conato de incendio.

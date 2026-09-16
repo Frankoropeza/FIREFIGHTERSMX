@@ -63,7 +63,7 @@ export const services: Service[] = [
         { name: 'Evidencia documental completa', detail: 'DC-3, listas, temario, reporte fotográfico y diploma — expediente listo para auditoría.' },
       ],
       image: '/images/servicios/capacitacion.avif',
-      imageAlt: 'Ilustración técnica de instructor de brigada contra incendio con constancia DC-3 y extintor de práctica',
+      imageAlt: 'Instructor mostrando el uso de un extintor portátil a una brigada contra incendio',
     },
     faqs: [
       { q: '¿La constancia DC-3 es válida ante la STPS?', a: 'Sí. Somos agente capacitador externo con registro vigente ante la STPS; las constancias DC-3 que emitimos son válidas en inspecciones de la Secretaría del Trabajo y ante el IMSS.' },
@@ -104,7 +104,7 @@ export const services: Service[] = [
         { name: 'Recordatorios de vencimiento', detail: 'Te avisamos antes de cada mantenimiento anual, prueba hidrostática o inspección de EPP.' },
       ],
       image: '/images/servicios/mantenimiento.avif',
-      imageAlt: 'Ilustración técnica de mantenimiento de extintor con collar de garantía y herramienta de servicio',
+      imageAlt: 'Técnico revisando manómetros y válvulas de extintores en banco de servicio',
     },
     faqs: [
       { q: '¿Cada cuánto se recarga un extintor?', a: 'La NOM-002-STPS exige revisión mensual con registro y mantenimiento al menos una vez al año conforme a la NOM-154-SCFI-2005. La recarga se realiza después de cada uso y, en su caso, por resultado del mantenimiento. Los cilindros de CO₂ requieren prueba hidrostática cada 5 años.' },
@@ -145,7 +145,7 @@ export const services: Service[] = [
         { name: 'Mantenimiento posterior', detail: 'Pólizas trimestrales o anuales del sistema instalado, con bitácora NFPA 25.' },
       ],
       image: '/images/servicios/instalacion-sistemas-ci.avif',
-      imageAlt: 'Ilustración técnica de rociador automático y panel de control de detección de incendios NFPA',
+      imageAlt: 'Instalación de tubería de rociadores contra incendio en el techo de un almacén',
     },
     faqs: [
       { q: '¿Cuánto tarda la instalación de un sistema contra incendio?', a: 'Detección y alarma en oficina mediana: 1 a 3 semanas. Rociadores en nave industrial: 4 a 8 semanas según metros cuadrados y trazo. Red hidráulica completa con bomba: 6 a 10 semanas. La memoria de cálculo y el anteproyecto se entregan antes de iniciar obra.' },
@@ -186,7 +186,7 @@ export const services: Service[] = [
         { name: 'Seguimiento a 90 días', detail: 'Segunda visita de verificación incluida para validar el cierre de brechas.' },
       ],
       image: '/images/servicios/auditoria-seguridad.avif',
-      imageAlt: 'Ilustración técnica de auditoría de seguridad contra incendio con lista de verificación y semáforo de cumplimiento',
+      imageAlt: 'Auditor revisando extintor, señal de salida y estación manual de alarma',
     },
     faqs: [
       { q: '¿Qué revisa exactamente la auditoría NOM-002?', a: 'Clasificación del riesgo de incendio, cantidad y ubicación de extintores, detección y alarma, rutas y señalización NOM-026, brigada y sus constancias DC-3, simulacros documentados, y el expediente del programa interno de Protección Civil.' },
@@ -227,7 +227,7 @@ export const services: Service[] = [
         { name: 'Programa anual incluido', detail: 'Calendario de entrenamientos recurrentes y refrescos DC-3 para mantener la vigencia.' },
       ],
       image: '/images/servicios/brigadas-empresariales.avif',
-      imageAlt: 'Ilustración técnica de brigada contra incendio empresarial con jefe de brigada y equipo de protección',
+      imageAlt: 'Brigada empresarial practicando un simulacro de evacuación en una planta',
     },
     faqs: [
       { q: '¿Cuántos brigadistas necesita mi empresa?', a: 'La NOM-002 no fija un número único: depende de la superficie, la plantilla por turno y la clasificación de riesgo. Como referencia práctica se dimensiona para que cada área ocupada tenga cobertura en menos de 3 minutos; el diseño organizacional lo define con precisión.' },
@@ -268,7 +268,7 @@ export const services: Service[] = [
         { name: 'Entrega comprometida', detail: 'Programa de suministro realista con stock verificado antes de que firmes el contrato.' },
       ],
       image: '/images/servicios/licitaciones.avif',
-      imageAlt: 'Ilustración técnica de expediente de licitación con sello de cumplimiento y documentos CompraNet',
+      imageAlt: 'Fichas técnicas, carpetas y certificados preparados para una licitación',
     },
     faqs: [
       { q: '¿Apoyan aunque la licitación ya esté publicada?', a: 'Sí, mientras haya tiempo antes de la junta de aclaraciones o de la presentación de propuestas. Con 5 días hábiles armamos fichas y manifiestos de la mayoría de las partidas de equipo contra incendio.' },

@@ -71,8 +71,8 @@ export const giros: Giro[] = [
     description: 'Distribuidores de equipo para bomberos, EPP estructural, SCBA, cascos, herramientas de rescate y seguridad industrial',
     color: '#F75000',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/>`,
-    imagen: '/images/categorias/sistemas-ci.avif',
-    imagenAlt: 'Equipo de protección personal para bombero: chaquetón, casco, guantes, botas y radio dispuestos sobre una superficie',
+    imagen: '/images/giros/venta-equipo.avif',
+    imagenAlt: 'Equipo de protección personal para bombero: chaquetón, casco, guantes y botas',
     claim: 'Distribuidores de trajes NFPA, cascos, SCBA, herramientas de rescate y EPP industrial.',
     outline: {
       h1: { linea1: 'Empresas de venta de equipo para bomberos', linea2: 'y equipo contra incendio en México' },
@@ -110,8 +110,8 @@ export const giros: Giro[] = [
     description: 'Empresas de equipos contra incendios en México: monitores, boquillas, mangueras, válvulas, conexiones, gabinetes e hidrantes',
     color: '#FF6B26',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M3 12h4l2-3 3 6 2-4h7M5 12v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6M9 6V4h6v2"/>`,
-    imagen: '/images/categorias/sistemas-ci.avif',
-    imagenAlt: 'Equipo de red hidráulica contra incendio: gabinete con manguera, boquilla y válvula listos para operar',
+    imagen: '/images/giros/equipos-contra-incendio.avif',
+    imagenAlt: 'Boquillas, coples, válvulas y monitor para red contra incendio',
     claim: 'Monitores, boquillas, mangueras, válvulas, conexiones, gabinetes e hidrantes.',
     outline: {
       h1: { linea1: 'Empresas de equipos contra incendios', linea2: 'en México' },
@@ -149,8 +149,8 @@ export const giros: Giro[] = [
     color: '#E10A1A',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 5a3 3 0 0 1 6 0v1H9V5zM8 7h8a1 1 0 0 1 1 1v12a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V8a1 1 0 0 1 1-1zM12 2v3M15 8l4-3"/>`,
     // TODO Frank: generar foto de extintores (PQS/CO2 en fila o recarga en taller). Placeholder temporal.
-    imagen: '/images/categorias/drones-emergencia.avif',
-    imagenAlt: 'Bombero frente a una estructura en llamas con la unidad de bomberos detrás',
+    imagen: '/images/giros/extintores.avif',
+    imagenAlt: 'Extintores de distintas capacidades en exhibición',
     claim: 'Venta, recarga, mantenimiento y prueba hidrostática de extintores.',
     outline: {
       h1: { linea1: 'Empresas de extintores', linea2: 'en México' },
@@ -186,8 +186,8 @@ export const giros: Giro[] = [
     color: '#4A9ED4',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M12 3v6M8 9h8M12 9c0 4-4 5-4 9a4 4 0 0 0 8 0c0-4-4-5-4-9zM5 6h14"/>`,
     // TODO Frank: generar foto de rociadores / red hidráulica / tablero de detección. Placeholder temporal.
-    imagen: '/images/categorias/extintores.avif',
-    imagenAlt: 'Equipo contra incendio dispuesto en un taller: chaquetón, casco, equipo de respiración, manguera y herramientas',
+    imagen: '/images/giros/sistemas-ci.avif',
+    imagenAlt: 'Red de tubería de rociadores y bomba contra incendio en una nave industrial',
     claim: 'Ingeniería, instalación y mantenimiento de rociadores, detección, redes hidráulicas y agentes limpios.',
     outline: {
       h1: { linea1: 'Empresas de sistemas contra incendio', linea2: 'en México' },
@@ -223,8 +223,8 @@ export const giros: Giro[] = [
     description: 'Centros de capacitación de brigadas contra incendio, consultoría NOM-002-STPS, DC-3 y asesoría en protección civil',
     color: '#34D399',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M12 3 2 8l10 5 10-5-10-5zM6 10.5V16c0 1.5 3 3 6 3s6-1.5 6-3v-5.5M22 8v6"/>`,
-    imagen: '/images/industrias/brigadas-industriales.avif',
-    imagenAlt: 'Bombero mexicano con casco y chaquetón sonriendo frente a las unidades de su estación',
+    imagen: '/images/giros/capacitacion.avif',
+    imagenAlt: 'Práctica de brigada con línea de manguera en campo de entrenamiento',
     claim: 'Formación de brigadas, constancias DC-3, simulacros y consultoría para cumplir la NOM-002-STPS.',
     outline: {
       h1: { linea1: 'Empresas de capacitación contra incendios', linea2: 'en México' },

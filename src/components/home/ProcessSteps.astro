@@ -1,10 +1,13 @@
 ---
 import { whatsappUrl } from '@config/site';
+import CardMedia from '@components/common/CardMedia.astro';
 
 const steps = [
   {
     n: '01',
     title: 'Consulta y diagnóstico',
+    img: '/images/home/proceso-consulta-diagnostico.avif',
+    alt: 'Consultor revisando gabinetes y tubería contra incendio en una planta',
     text: 'Analizamos tu operación, nivel de riesgo y normativas aplicables. Detectamos brechas vs. NFPA y NOM-002-STPS. Sin costo, sin compromiso.',
     metric: 'Sin costo · Sin compromiso',
     href: '/contacto', cta: 'Iniciar consulta',
@@ -13,6 +16,8 @@ const steps = [
   {
     n: '02',
     title: 'Cotización formal',
+    img: '/images/home/proceso-cotizacion-formal.avif',
+    alt: 'Preparación de una cotización con fichas técnicas impresas',
     text: 'Propuesta detallada en menos de 24 horas con fichas técnicas, certificaciones y precios. Plantillas listas para licitación CompraNet, PEMEX y CFE.',
     metric: 'Respuesta < 24 horas hábiles',
     href: whatsappUrl('Hola, necesito una cotización formal de equipos.'), cta: 'Cotizar ahora',
@@ -21,6 +26,8 @@ const steps = [
   {
     n: '03',
     title: 'Entrega coordinada',
+    img: '/images/home/proceso-entrega-coordinada.avif',
+    alt: 'Carga de extintores y equipo contra incendio en una camioneta de reparto',
     text: 'Stock permanente para los productos más demandados. 24-48 hrs en CDMX, 3-5 días al resto del país. Embalaje especializado y seguro de envío incluido.',
     metric: '24-48h CDMX · 3-5 días nacional',
     href: '/cobertura', cta: 'Cobertura nacional en 32 estados',
@@ -29,6 +36,8 @@ const steps = [
   {
     n: '04',
     title: 'Soporte post-venta',
+    img: '/images/home/proceso-soporte-postventa.avif',
+    alt: 'Capacitación en la colocación de la máscara de un equipo de respiración',
     text: 'Capacitación de uso, refacciones originales, mantenimiento programado y recordatorios de renovación de equipos según vida útil NFPA 1850.',
     metric: 'Garantía hasta 10 años · NFPA 1850',
     href: '/servicios/mantenimiento', cta: 'Servicios de mantenimiento y recarga',
@@ -72,6 +81,8 @@ const steps = [
         <!-- Número de fondo -->
         <span class="absolute bottom-4 right-6 font-display font-bold select-none pointer-events-none"
               style="font-size:7rem;line-height:1;color:rgba(44,74,99,0.25)" aria-hidden="true">{step.n}</span>
+
+        <CardMedia src={step.img} alt={step.alt} class="relative z-10" />
 
         <!-- Ícono + número step -->
         <div class="flex items-start justify-between gap-4 relative z-10">

@@ -8,7 +8,7 @@ category: "Normatividad"
 tags: ["NOM-002-STPS", "prevención incendios", "brigadas", "STPS"]
 image:
   url: "/images/blog/blog-nom-002-stps.avif"
-  alt: "Equipo de seguridad contra incendio ordenado — guía completa NOM-002-STPS empresas"
+  alt: "Inspección de seguridad contra incendio en un centro de trabajo"
 ---
 
 La NOM-002-STPS-2010 no conviene leerla por primera vez cuando llega una inspección. Entender el riesgo de incendio, los equipos y los documentos antes permite ordenar el trabajo y proteger a las personas.

@@ -1,5 +1,6 @@
 ---
 import { giros } from '@data/giros';
+import CardMedia from '@components/common/CardMedia.astro';
 import { todasLasEmpresas, conteoPorEstado } from '@lib/empresas';
 import { totalEstaciones } from '@lib/estaciones';
 
@@ -23,11 +24,13 @@ const estadosConEmpresas = (await conteoPorEstado()).filter((e) => e.total > 0).
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
       {giros.map((g) => (
         <a href={`/empresas/${g.slug}/`} class="grid-cell ledger-cell flex flex-col gap-1 p-5" style="background:#040A12">
+          <CardMedia src={`/images/giros/${g.slug}.avif`} alt={g.imagenAlt} class="mb-2" />
           <span class="font-display font-semibold text-base leading-tight" style="color:#FFFFFF">{g.labelCorto}</span>
           <span class="text-xs leading-relaxed" style="color:#64748B">{g.claim}</span>
         </a>
       ))}
       <a href="/cobertura/" class="grid-cell ledger-cell flex flex-col gap-1 p-5" style="background:#040A12">
+        <CardMedia src="/images/giros/estados.avif" alt="Mapa de México para consultar empresas por estado" class="mb-2" />
         <span class="font-display font-semibold text-base leading-tight" style="color:#FFFFFF">Empresas por estado</span>
         <span class="text-xs leading-relaxed" style="color:#64748B">Consulta el directorio por entidad.</span>
       </a>

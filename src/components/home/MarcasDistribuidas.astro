@@ -1,5 +1,6 @@
 ---
 import { brands, type Brand } from '@data/brands';
+import CardMedia from '@components/common/CardMedia.astro';
 
 const destacadas = ['tyco-johnson-controls', 'honeywell', 'msa-safety', 'drager', '3m-scott', 'globe-manufacturing', 'bullard', 'holmatro'];
 const lista = destacadas
@@ -37,6 +38,7 @@ const lista = destacadas
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
       {lista.map((b) => (
         <a href={`/marcas/${b.slug}/`} class="grid-cell ledger-cell flex flex-col gap-2 p-6" style="background:#070E1A">
+          <CardMedia src={`/images/home/marca-${b.slug}.avif`} alt={`Equipo de la línea ${b.name}`} class="mb-2" />
           <div class="flex items-baseline justify-between gap-4">
             <h3 class="font-display font-bold text-lg" style="color:#FFFFFF">{b.name}</h3>
             {b.country && <span class="text-xs shrink-0" style="color:var(--forge-300)">{b.country}</span>}
