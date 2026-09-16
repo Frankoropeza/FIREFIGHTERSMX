@@ -23,9 +23,9 @@ De todo el equipo, el SCBA es donde más importa la marca, por la electrónica d
 |---|---|---|
 | MSA | G1 SCBA | Electrónica integrada, telemetría opcional, EOSTI |
 | Dräger | PSS 7000 | Arnés ergonómico para uso intensivo |
-| 3M Scott | Air-Pak NxG7 | Plataforma modular con localizador Pak-Tracker |
+| 3M Scott | Air-Pak X3 Pro | Certificado NFPA 1970 (2025) |
 
-El **MSA G1** se volvió referencia en cuerpos metropolitanos justamente por su electrónica integrada y la opción de telemetría, que le da al puesto de mando una visión que antes no existía. El **Dräger PSS 7000** brilla en lo que muchos descuidan hasta que les duele la espalda: la ergonomía en jornadas largas. Y el **3M Scott NxG7** apuesta por la modularidad y por saber siempre dónde está cada elemento gracias al Pak-Tracker. Los puedes comparar lado a lado en [equipos SCBA](/productos/equipos-scba).
+El **MSA G1** integra PASS, EOSTI y telemetría. El **Dräger PSS 7000** existe en versión europea EN 137 y en versión certificada NFPA para América. El **3M Scott Air-Pak X3 Pro** está certificado NFPA 1970 (2025) por SEI con aprobación NIOSH. Los puedes comparar lado a lado en [equipos SCBA](/productos/equipos-scba).
 
 ## Trajes estructurales (NFPA 1970): premium contra uso intensivo
 

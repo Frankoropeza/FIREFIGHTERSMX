@@ -126,7 +126,7 @@ export const categories: Category[] = [
     items: [
       { name: 'MSA G1 SCBA', detail: 'Electrónica integrada, telemetría opcional, EOSTI integrado' },
       { name: 'Dräger PSS 7000', detail: 'Arnés ergonómico profesional para uso intensivo' },
-      { name: '3M Scott Air-Pak NxG7', detail: 'Plataforma modular con Pak-Tracker localizador' },
+      { name: '3M Scott Air-Pak X3 Pro', detail: 'Certificado NFPA 1970 (2025) por SEI con aprobación NIOSH' },
       { name: 'Cilindros y refacciones', detail: 'Cilindros 4500 psi, máscaras, reguladores y repuestos originales' },
     ],
     productCategory: 'Equipos SCBA',
@@ -134,7 +134,7 @@ export const categories: Category[] = [
       title: 'Equipos SCBA certificados',
       highlight: 'NFPA 1970 y NIOSH CBRN',
       paragraphs: [
-        'El equipo de respiración autónoma es la pieza más crítica del EPP: de él depende cada minuto dentro de una atmósfera IDLH. Distribuimos SCBA MSA G1, Dräger PSS 7000 y 3M Scott Air-Pak NxG7 certificados NFPA 1970 con aprobación NIOSH CBRN, con número de serie verificable y ficha técnica para licitación.',
+        'El equipo de respiración autónoma incluye MSA G1, Dräger PSS 7000 y 3M Scott Air-Pak X3 Pro. El X3 Pro está certificado NFPA 1970 (2025) por SEI con aprobación NIOSH.',
         'Somos servicio técnico autorizado: prueba hidrostática de cilindros, pruebas de flujo anuales, mantenimiento de reguladores y refacciones originales. Tu inversión queda protegida durante toda la vida útil del equipo, con bitácora lista para auditoría.',
       ],
       subsections: [

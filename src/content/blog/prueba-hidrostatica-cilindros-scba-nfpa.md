@@ -6,7 +6,7 @@ pubDate: 2026-03-17
 updatedDate: 2026-06-25
 author: "Ing. Marco García"
 category: "Mantenimiento y Recarga"
-tags: ["SCBA", "prueba hidrostática", "cilindros aire", "NFPA 1852", "mantenimiento SCBA"]
+tags: ["SCBA", "prueba hidrostática", "cilindros aire", "NFPA 1850 (edición 2026, antes NFPA 1852)", "mantenimiento SCBA"]
 image:
   url: "/images/servicios/mantenimiento.avif"
   alt: "Prueba hidrostática de cilindros SCBA en taller certificado para equipos de respiración autónoma"

@@ -73,11 +73,11 @@ export const brands: Brand[] = [
     description: 'SCBA Scott Air-Pak, mascarillas y equipos respiratorios para emergencias.',
     country: '🇺🇸 USA',
     longDesc: [
-      '3M Scott es reconocido mundialmente por su línea Air-Pak de SCBA. El Air-Pak NxG7 incorpora Pak-Tracker para localización en interior — una ventaja operativa crítica en búsqueda y rescate. La plataforma modular permite configurar el equipo según las necesidades específicas de cada cuerpo de bomberos o brigada industrial.',
+      'El 3M Scott Air-Pak X3 Pro está certificado NFPA 1970 (2025) por SEI con aprobación NIOSH. Su EOSTI está recalibrado al 31 % en 4500 psi conforme NFPA 1970.',
       'Distribuimos 3M Scott en México con soporte técnico, refacciones originales y prueba hidrostática de cilindros. Ideales para cuerpos de bomberos que buscan localización integrada sin infraestructura adicional.',
     ],
     products: [
-      { name: '3M Scott Air-Pak NxG7', detail: 'SCBA con Pak-Tracker localizador integrado. Plataforma modular NFPA 1970.' },
+      { name: '3M Scott Air-Pak X3 Pro', detail: 'Certificado NFPA 1970 (2025) por SEI con aprobación NIOSH.' },
       { name: '3M Scott Air-Pak 75', detail: 'SCBA de uso general, peso optimizado para operaciones estructurales.' },
       { name: 'Máscaras AV-3000 SureSeal', detail: 'Pieza facial panorámica con sello facial de doble capa. Compatible Air-Pak.' },
       { name: 'Cilindros y repuestos Scott', detail: 'Cilindros de fibra de carbono 4 500 psi, reguladores y kits de servicio originales.' },

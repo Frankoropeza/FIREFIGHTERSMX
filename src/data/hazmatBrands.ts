@@ -181,7 +181,7 @@ const lakelandChemMax: EquipmentBrand = {
     {
       n: '04',
       t: 'Compatible con todos los SCBA certificados',
-      d: 'Los trajes encapsulados Lakeland ChemMax están diseñados y probados con SCBA de los principales fabricantes: MSA G1, Dräger PSS 7000, 3M Scott Air-Pak NxG7 y Honeywell Sperian. La compatibilidad está documentada en las fichas técnicas de cada modelo — no requiere adaptadores no originales que comprometan la hermeticidad.',
+      d: 'Para la compatibilidad con SCBA, consulta la ficha técnica del modelo de traje y del equipo respiratorio. El 3M Scott Air-Pak X3 Pro está certificado NFPA 1970 (2025) por SEI con aprobación NIOSH.',
     },
   ],
   linesIntro:
@@ -228,7 +228,7 @@ const lakelandChemMax: EquipmentBrand = {
     },
     {
       q: '¿Con qué SCBA es compatible el ChemMax 4?',
-      a: 'El ChemMax 4 está probado y documentado como compatible con MSA G1, Dräger PSS 7000, 3M Scott Air-Pak NxG7, Honeywell Sperian y otros SCBA de 30 y 45 min. La compatibilidad implica que el puerto de entrada del SCBA puede acoplarse al traje de forma hermética sin adaptadores adicionales. Te facilitamos la ficha de compatibilidad específica para el SCBA de tu brigada.',
+      a: 'La compatibilidad entre un traje encapsulado y un SCBA debe verificarse en las fichas técnicas de ambos modelos. El 3M Scott Air-Pak X3 Pro está certificado NFPA 1970 (2025) por SEI con aprobación NIOSH.',
     },
   ],
   ctaWhatsapp: 'Hola, quiero información sobre trajes Lakeland ChemMax NFPA 1990 para mi brigada HAZMAT.',

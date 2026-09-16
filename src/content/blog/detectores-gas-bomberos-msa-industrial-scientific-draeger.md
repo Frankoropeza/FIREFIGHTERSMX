@@ -149,7 +149,7 @@ El concepto no es nuevo en la industria petroquímica, donde el gas Alive de ISC
 
 ### Dräger X-am 2500 y X-am 8000 — precisión alemana, preferencia industrial
 
-Dräger tiene 130 años fabricando equipos de protección respiratoria y detección de gas. En ese tiempo, sus ingenieros han desarrollado la tecnología de sensor más consistente bajo condiciones de temperatura extrema del segmento.
+Dräger, fundada en Lübeck en 1889.
 
 ![Dräger X-am 2500 con sensores XXS — detalle del display de lectura y el sistema Autocal de calibración automática](/images/blog/blog-detectores-draeger-xam.avif)
 *El sistema Autocal del Dräger X-am automatiza la calibración: el operador conecta el cilindro de gas de referencia y el instrumento hace el ajuste sin intervención adicional. Para corporaciones con muchos detectores, eso reduce el tiempo de mantenimiento semanalmente.*

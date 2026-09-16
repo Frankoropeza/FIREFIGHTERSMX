@@ -11,8 +11,8 @@ const cat = categories.find((c) => c.slug === 'equipos-scba')!;
 const canonicalURL = `${SITE.url}/productos/equipos-scba/`;
 
 const seoMeta = {
-  title: `Equipos SCBA NFPA 1970 — MSA G1, Dräger PSS 7000 y 3M Scott`,
-  description: cat.description,
+  title: 'Equipo de respiración autónoma NFPA 1970 | MSA, Scott, Dräger',
+  description: 'Equipo de respiración autónoma SCBA para bomberos e industria: componentes, tipos, autonomía y NFPA 1970. MSA G1, Scott Air-Pak X3 Pro y Dräger PSS 7000.',
   canonicalURL,
 };
 
@@ -63,7 +63,6 @@ const configuraciones = [
 const comparativa = [
   ['Autonomía', '30 / 45 min', '60 min', 'Según botella', 'Segunda botella'],
   ['Cilindro', 'Fibra carbono 4500 psi', 'Fibra carbono 4500 psi', 'Fibra carbono 4500 psi', 'Fibra carbono 4500 psi'],
-  ['Peso aprox.', '~5.4 kg', '~6.6 kg', '~5.6 kg', '~5.4 kg'],
   ['Electrónica', 'EOSTI + PASS', 'EOSTI + telemetría', 'EOSTI + PASS · CBRN', 'EOSTI + transferencia'],
   ['Escenario', 'Incendio estructural', 'Industria · túneles', 'HAZMAT · CBRN', 'Rescate de bombero'],
   ['Norma', 'NFPA 1970', 'NFPA 1970', 'NFPA 1970 + NIOSH CBRN', 'NFPA 1970'],
@@ -72,7 +71,7 @@ const comparativa = [
 /* Guía de selección */
 const guia = [
   { n: '01', t: 'Define el escenario dominante: combate estructural (30/45 min), industria/confinados (60 min), HAZMAT/CBRN (NIOSH CBRN) o rescate de bombero (RIT). La configuración sale de ahí.' },
-  { n: '02', t: 'Compara las tres marcas tier-1: MSA G1 lidera en electrónica integrada; Dräger PSS 7000 en ergonomía de arnés; 3M Scott NxG7 en plataforma modular y localizador Pak-Tracker.' },
+  { n: '02', t: 'Compara las tres marcas: MSA G1 integra PASS, EOSTI y telemetría; Dräger PSS 7000 existe en versión europea EN 137 y en versión certificada NFPA para América; 3M Scott Air-Pak X3 Pro está certificado NFPA 1970 (2025) por SEI con aprobación NIOSH.' },
   { n: '03', t: 'Exige certificación NFPA 1970 y aprobación NIOSH verificable por número de modelo —no de distribuidor. Para CBRN: aprobación NIOSH CBRN documentada por modelo exacto.' },
   { n: '04', t: 'Asegura el programa de mantenimiento: prueba de flujo anual, hidrostática de cilindro cada 5 años (vida útil 15 años) y servicio técnico autorizado con bitácora NFPA 1850.' },
 ];
@@ -89,8 +88,8 @@ const articulos = [
 const faqs = [
   { q: '¿Bajo qué norma debe estar certificado un SCBA de bombero en México?', a: 'Bajo NFPA 1970 (consolidó a la NFPA 1981 desde 2024) con aprobación NIOSH. Para HAZMAT se exige además aprobación NIOSH CBRN. Los pliegos de licitación pública en México referencian directamente NFPA 1970 y NIOSH por edición.' },
   { q: '¿Qué autonomía elijo: 30, 45 o 60 minutos?', a: 'La autonomía nominal asume consumo de referencia; el tiempo real depende del esfuerzo. 30 min es el estándar urbano, 45 min da margen para combate prolongado, 60 min es para industria, túneles y confinados donde la salida es larga. A mayor autonomía, mayor peso y volumen del cilindro.' },
-  { q: '¿Cuál es la diferencia entre MSA G1, Dräger PSS 7000 y 3M Scott NxG7?', a: 'Los tres son SCBA tier-1 de presión positiva NFPA 1970. MSA G1 lidera en electrónica integrada (EOSTI en el regulador, telemetría ICM). Dräger PSS 7000 destaca por la ergonomía del arnés y distribución de carga. 3M Scott NxG7 sobresale por su plataforma modular y localizador Pak-Tracker. Te facilitamos las tres fichas para evaluación comparativa.' },
-  { q: '¿Qué mantenimiento exige un SCBA y cada cuánto?', a: 'La NFPA 1850 establece: inspección antes de cada uso, prueba de flujo al menos anual, mantenimiento de reguladores según fabricante, prueba hidrostática del cilindro cada 5 años (vida útil 15 años). Somos servicio técnico autorizado: realizamos estas pruebas con equipo calibrado y entregamos bitácora para auditoría.' },
+  { q: '¿Cuál es la diferencia entre MSA G1, Dräger PSS 7000 y 3M Scott Air-Pak X3 Pro?', a: 'El MSA G1 integra PASS y EOSTI, telemetría y cilindros de 2216, 4500 y 5500 psi. El Dräger PSS 7000 existe en versión europea EN 137 y en versión certificada NFPA para América. El 3M Scott Air-Pak X3 Pro está certificado NFPA 1970 (2025) por SEI con aprobación NIOSH.' },
+  { q: '¿Qué mantenimiento exige un SCBA y cada cuánto?', a: 'La NFPA 1850 (edición 2026, antes NFPA 1852) consolida el mantenimiento de SCBA. La recalificación de cilindros se realiza según su permiso especial y el control de su vida útil de 15 años.' },
   { q: '¿Entregan ficha técnica y servicio para licitación pública?', a: 'Sí. Cada SCBA incluye certificado de conformidad NFPA 1970, aprobación NIOSH y ficha técnica por configuración. Para concursos públicos (CompraNet, IMSS, Pemex, gobiernos estatales) generamos el manifiesto de cumplimiento por partida e incluimos el plan de servicio técnico autorizado para toda la vida útil.' },
 ];
 
@@ -109,7 +108,7 @@ const razones = [
   {
     n: '03',
     t: 'Servicio técnico autorizado',
-    d: 'Somos servicio técnico autorizado: prueba hidrostática de cilindros cada 5 años, prueba de flujo anual, mantenimiento de reguladores y refacciones originales con bitácora para auditoría. Tu inversión protegida durante toda la vida útil.',
+    d: 'Somos servicio técnico autorizado: recalificación de cilindros según su permiso especial y control de su vida útil de 15 años, prueba de flujo anual, mantenimiento de reguladores y refacciones originales con bitácora para auditoría.',
   },
   {
     n: '04',
@@ -180,15 +179,15 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
         <div>
           <span class="section-eyebrow mb-5 inline-flex">{cat.norm}</span>
           <h1 class="font-display font-bold uppercase mb-4" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
-            Equipos<br/>
-            <span style="color:#F5A623">SCBA</span>
+            Equipo de respiración autónoma<br/>
+            <span style="color:#F5A623">SCBA para bomberos e industria.</span>
           </h1>
           <p class="text-base leading-relaxed mb-8 max-w-xl" style="color:#94A3B8">
             Distribuidores autorizados de MSA Safety, Dräger y 3M Scott en México. Equipos de
             respiración autónoma certificados NFPA 1970 — presión positiva, 30/45/60 min,
             sistemas PASS y EOSTI integrados para combate estructural, industrial y CBRN.
           </p>
-          <div class="flex flex-col sm:flex-row gap-3">
+          <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
             <a href={whatsappUrl('Hola, quiero cotizar equipos SCBA NFPA 1970.')} target="_blank" rel="noopener" class="btn btn-primary btn-lg">Cotizar por {CANAL_CONTACTO}</a>
             <a href="/cotizacion" class="btn btn-ghost btn-lg">Cotización formal</a>
           </div>
@@ -206,6 +205,43 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
       </div>
     </div>
     <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(245,166,35,0.4) 30%, rgba(245,166,35,0.4) 70%, transparent)" aria-hidden="true"></div>
+  </section>
+
+  <section id="guia-scba" class="section" style="background:#040A12" aria-labelledby="guia-scba-title">
+    <div class="container-site content-copy">
+      <div class="section-head mb-5">
+        <h2 id="guia-scba-title">¿Qué es un equipo de respiración autónoma?</h2>
+      </div>
+      <p class="mb-8">Un equipo de respiración autónoma (ERA o SCBA, por sus siglas en inglés: self-contained breathing apparatus) es un equipo de protección respiratoria que permite al usuario respirar aire limpio de una botella que lleva en la espalda, sin depender del aire del entorno. Es el equipo que usan los bomberos para entrar a un incendio y el que usa la industria para trabajar en atmósferas IDLH, espacios confinados, túneles, alcantarillas o áreas con gases tóxicos.</p>
+      <div class="section-head mt-14 mb-5"><h2>Componentes de un equipo de respiración autónoma</h2></div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {[
+          ['Espaldera y arnés:', 'sostienen la botella y distribuyen el peso.'],
+          ['Botella de aire comprimido:', 'de fibra de carbono (composite) con liner de aluminio, a alta presión (2216, 4500 o 5500 psi según el modelo).'],
+          ['Regulador de presión:', 'reduce la presión del aire de la botella.'],
+          ['Pulmoautomático:', 'entrega el aire respirable a la máscara a demanda, en presión positiva.'],
+          ['Máscara facial:', 'sella el rostro y aísla al usuario del aire nocivo.'],
+          ['Manómetro y alarma de fin de servicio (EOSTI):', 'indican el aire restante y avisan cuando hay que salir.'],
+          ['PASS:', 'alarma de hombre muerto que suena si el bombero deja de moverse.'],
+        ].map(([titulo, texto]) => <p class="p-5 m-0" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)"><strong>{titulo}</strong> {texto}</p>)}
+      </div>
+      <div class="section-head mt-14 mb-5"><h2>¿Cómo funciona un SCBA de circuito abierto?</h2></div>
+      <p>El usuario inhala el aire de la botella a través del regulador y del pulmoautomático, y al exhalar el aire sale al exterior. La presión positiva mantiene la máscara ligeramente presurizada para que, ante una fuga, el aire salga en lugar de entrar el humo. Los equipos de circuito cerrado, en cambio, reciclan el aire exhalado y agregan oxígeno; se usan en rescate minero y operaciones prolongadas.</p>
+      <div class="section-head mt-14 mb-5"><h2>¿Cuándo usar un equipo de aire autónomo?</h2></div>
+      <p>Siempre que el aire del entorno no sea respirable o no se conozca su composición: extinción de incendios en interiores, rescate en humo, fugas de gas o de productos químicos, atmósferas con poco oxígeno, espacios confinados, tanques y alcantarillas. Una mascarilla con filtro no sirve en esos casos, porque depende del aire exterior; el equipo autónomo aísla por completo al usuario y le suministra aire de su propia botella.</p>
+      <div class="section-head mt-14 mb-5"><h2>Tipos de equipos de protección respiratoria autónomos</h2></div>
+      <div class="overflow-x-auto max-w-full min-w-0"><table class="w-full text-left text-sm" style="border-collapse:collapse;min-width:700px"><thead><tr style="background:#0C1825;color:#FFFFFF"><th class="p-4">Tipo</th><th class="p-4">Uso</th></tr></thead><tbody>{[['SCBA estructural de circuito abierto', 'Extinción de incendios y rescate de bomberos'], ['SCBA industrial de larga duración', 'Petroquímica, minería, túneles y espacios confinados'], ['SCBA con aprobación NIOSH CBRN', 'Materiales peligrosos y agentes químicos, biológicos, radiológicos y nucleares'], ['Equipo de línea de aire', 'Trabajos largos con suministro de aire externo desde un compresor o banco de cilindros'], ['Equipo de escape', 'Evacuación de corta duración'], ['Circuito cerrado', 'Rescate minero y operaciones prolongadas']].map((fila) => <tr style="border-bottom:1px solid rgba(74,117,153,.18);color:#94A3B8"><td class="p-4 font-display font-bold" style="color:#FFFFFF">{fila[0]}</td><td class="p-4">{fila[1]}</td></tr>)}</tbody></table></div>
+      <div class="section-head mt-14 mb-5"><h2>¿Cuánto dura un equipo de respiración autónoma?</h2></div>
+      <p>Las botellas se clasifican en 30, 45 y 60 minutos, pero esa es una duración nominal. La autonomía real depende del consumo de aire del usuario: el esfuerzo, el calor y el estrés la reducen. Por eso la NFPA 1970 recalibró la alarma de fin de servicio para que suene entre el 28 % y el 34 % de la presión (31 % en un equipo de 4500 psi). La vida útil de las botellas de fibra de carbono es de 15 años.</p>
+      <div class="section-head mt-14 mb-5"><h2>Cómo se coloca y se revisa antes de usarlo</h2></div>
+      <ol class="flex flex-col gap-4 list-none m-0 p-0">{['Revisa que la botella esté llena en el manómetro y que la válvula abra por completo.', 'Colócate la espaldera y ajusta hombreras y cinturón para que el peso quede en la cadera.', 'Ponte la máscara, ajusta las correas y comprueba el sello antes de conectar el pulmoautomático.', 'Verifica que suenen las alarmas y que el PASS esté activo.', 'Después de cada uso: limpieza, inspección, recarga de la botella y registro de la revisión.'].map((paso, index) => <li class="flex items-start gap-4"><span class="font-display font-bold text-xl shrink-0" style="color:#F5A623">{index + 1}</span><span>{paso}</span></li>)}</ol>
+      <div class="section-head mt-14 mb-5"><h2>Normativa: NFPA 1970, NIOSH y NFPA 1850</h2></div>
+      <p>En 2024 la NFPA consolidó en la NFPA 1970 las normas de trajes, ropa de trabajo, SCBA (antes NFPA 1981) y PASS (antes NFPA 1982). Para SCBA exige certificación por un tercero como SEI y la aprobación de respiradores de NIOSH; los equipos CBRN llevan además la aprobación NIOSH CBRN. El mantenimiento de los SCBA se rige hoy por la NFPA 1850, edición 2026, que integró la antigua NFPA 1852. En Europa el estándar equivalente es EN 137.</p>
+      <div class="section-head mt-14 mb-5"><h2>Marcas de SCBA que manejamos</h2></div>
+      <ul><li><strong>MSA G1:</strong> PASS y EOSTI integrados, telemetría y cilindros de 2216, 4500 y 5500 psi; la versión G1 XR está certificada NFPA 1970 (2025).</li><li><strong>3M Scott Air-Pak X3 Pro:</strong> certificado NFPA 1970 (2025).</li><li><strong>Dräger PSS 7000:</strong> en versión certificada NFPA para América y en versión EN 137; Dräger fue fundada en Lübeck en 1889.</li></ul>
+      <div class="section-head mt-14 mb-5"><h2>¿Cuánto cuesta un equipo de respiración autónoma?</h2></div>
+      <p>El precio depende de la marca y el modelo, la presión y duración de la botella, la electrónica (PASS, telemetría), la aprobación CBRN y los accesorios. Cotizamos por configuración completa para que compares equipos equivalentes.</p>
+    </div>
   </section>
 
   <!-- Accesos rápidos -->
@@ -276,10 +312,8 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
         </div>
         <div style="border-left:2px solid rgba(245,166,35,0.4);padding-left:1.75rem">
           <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
-            MSA Safety —NYSE: MSA— es el grupo industrial de seguridad más grande del mundo. El G1 es su
-            SCBA insignia: la electrónica más integrada del mercado, con la válvula EOSTI montada en el
-            regulador (sin módulo externo), alarma PASS y telemetría ICM opcional. El más solicitado en
-            cuerpos metropolitanos tier-1 de México.
+            MSA Safety cotiza en la Bolsa de Nueva York (NYSE: MSA). El G1 integra PASS y EOSTI,
+            telemetría y cilindros de 2216, 4500 y 5500 psi.
           </p>
           <div class="flex flex-wrap gap-2">
             {['NFPA 1970','NIOSH CBRN','EOSTI integrado','Telemetría ICM','4500 psi','Distribuidor autorizado MX'].map(b => (
@@ -302,7 +336,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
             Accede al catálogo dedicado de la marca.
           </p>
         </div>
-        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+        <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/equipos-scba/msa-g1" class="btn btn-primary btn-lg">
             Catálogo MSA G1 completo →
           </a>
@@ -319,7 +353,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
-          <span class="section-eyebrow mb-4 inline-flex">Dräger · 130 años de ingeniería de seguridad</span>
+          <span class="section-eyebrow mb-4 inline-flex">Dräger, fundada en Lübeck en 1889</span>
           <h2 id="drager-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             SCBA Dräger PSS 7000<br/>
             <span style="color:#F5A623">certificado NFPA.</span>
@@ -352,11 +386,11 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
             Cotizamos con ficha técnica para concurso.
           </p>
         </div>
-        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+        <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/equipos-scba/drager-pss" class="btn btn-primary btn-lg">
             Catálogo Dräger completo →
           </a>
-          <a href={whatsappUrl('Hola, quiero cotizar equipos SCBA Dräger PSS 7000 NFPA 1970.')} target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
+          <a href={whatsappUrl('Hola, quiero cotizar equipos SCBA Dräger PSS 7000.')} target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
             Cotizar por {CANAL_CONTACTO}
           </a>
         </div>
@@ -364,25 +398,24 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
     </div>
   </section>
 
-  <!-- 3M Scott Air-Pak NxG7 -->
+  <!-- 3M Scott Air-Pak X3 Pro -->
   <section class="section" style="background:#070E1A" aria-labelledby="scott-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
-          <span class="section-eyebrow mb-4 inline-flex">3M Scott · Pak-Tracker · Plataforma modular</span>
+          <span class="section-eyebrow mb-4 inline-flex">3M Scott · Air-Pak X3 Pro</span>
           <h2 id="scott-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
-            SCBA 3M Scott Air-Pak NxG7<br/>
-            <span style="color:#F5A623">certificado NFPA.</span>
+            SCBA 3M Scott Air-Pak X3 Pro<br/>
+            <span style="color:#F5A623">NFPA 1970 (2025).</span>
           </h2>
         </div>
         <div style="border-left:2px solid rgba(245,166,35,0.4);padding-left:1.75rem">
           <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
-            El Air-Pak NxG7 de 3M Scott sobresale por su plataforma modular y el localizador Pak-Tracker:
-            el sistema de rastreo de bomberos en el interior más adoptado en América del Norte. Ideal para
-            departamentos que priorizan visibilidad táctica y localización de personal en operaciones complejas.
+            El Air-Pak X3 Pro está certificado NFPA 1970 (2025) por SEI con aprobación NIOSH.
+            Su EOSTI está recalibrado al 31 % en 4500 psi conforme NFPA 1970.
           </p>
           <div class="flex flex-wrap gap-2">
-            {['NFPA 1970','NIOSH CBRN','Pak-Tracker','Plataforma modular','4500 psi','Distribuidor autorizado MX'].map(b => (
+            {['NFPA 1970 (2025)','SEI','NIOSH','EOSTI al 31 %','4500 psi','Distribuidor autorizado MX'].map(b => (
               <span class="badge badge-dark text-[9px]">{b}</span>
             ))}
           </div>
@@ -398,15 +431,14 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
       <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(74,117,153,0.15)">
         <div class="flex-1">
           <p class="text-sm leading-relaxed m-0" style="color:#64748B">
-            ¿Quieres localización de bomberos en el interior y plataforma modular? El NxG7 es la respuesta.
-            Cotizamos con comparativo técnico vs. MSA G1 y Dräger incluido.
+            El Air-Pak X3 Pro está disponible para cotización.
           </p>
         </div>
-        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+        <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/equipos-scba/scott-air-pak" class="btn btn-primary btn-lg">
             Catálogo 3M Scott completo →
           </a>
-          <a href={whatsappUrl('Hola, quiero cotizar equipos SCBA 3M Scott Air-Pak NxG7 NFPA 1970.')} target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
+          <a href={whatsappUrl('Hola, quiero cotizar equipos SCBA 3M Scott Air-Pak X3 Pro.')} target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
             Cotizar por {CANAL_CONTACTO}
           </a>
         </div>
@@ -426,7 +458,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
           <img src="/images/productos/scba-msa-g1-bombero-estructural.avif" alt="Bombero con SCBA MSA G1 NFPA 1970 en incendio estructural México" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
-          <img src="/images/productos/scba-drager-pa5000-lateral.avif" alt="Dräger PSS 7000 equipo de respiración autónoma NFPA 1970 vista lateral" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center"/>
+          <img src="/images/productos/scba-drager-pa5000-lateral.avif" alt="Dräger PSS 7000 equipo de respiración autónoma en versión certificada NFPA" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
           <img src="/images/productos/scba-scott-x3-pro-mascara.avif" alt="Scott Air-Pak X3 Pro con máscara panorámica NFPA 1970 certificado" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center"/>
@@ -568,12 +600,12 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
     <div class="container-site">
       <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
         <div>
-          <p class="text-xs font-display font-bold uppercase tracking-[0.2em] mb-3" style="color:rgba(255,255,255,0.65)">MSA G1 · Dräger PSS 7000 · 3M Scott NxG7 · Stock CDMX</p>
+          <p class="text-xs font-display font-bold uppercase tracking-[0.2em] mb-3" style="color:rgba(255,255,255,0.65)">MSA G1 · Dräger PSS 7000 · 3M Scott Air-Pak X3 Pro · Stock CDMX</p>
           <h2 class="font-display font-bold uppercase" style="color:#FFFFFF;font-size:clamp(1.75rem,4vw,3rem);line-height:1.05">
             Certificado NFPA 1970.<br/>Entrega en 48 h.
           </h2>
         </div>
-        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+        <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a
             href={whatsappUrl('Hola, quiero cotizar equipos SCBA NFPA 1970. ¿Tienen stock disponible?')}
             target="_blank" rel="noopener"

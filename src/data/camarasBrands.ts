@@ -114,7 +114,7 @@ const msaEvolution: EquipmentBrand = {
   heroLead:
     'Distribuidor autorizado de cámaras térmicas MSA Evolution en México. Las 4 categorías —búsqueda y rescate, integrada en SCBA G1, mando e industrial— con certificación NFPA 1930 y servicio técnico autorizado.',
   heroIntro: [
-    'MSA Safety —NYSE: MSA— es el grupo industrial de seguridad más grande del mundo. Su línea Evolution de cámaras de imagen térmica está pensada para integrarse con el resto del ecosistema MSA: casco Gallet, SCBA G1 y telemetría, una sola marca para todo el conjunto.',
+    'MSA Safety cotiza en la Bolsa de Nueva York (NYSE: MSA).',
     'Su mayor diferenciador es la G1-TIC: una cámara térmica montada en la máscara del SCBA G1 que proyecta la imagen en la pieza facial y deja ambas manos libres para el rescate. Distribuimos la gama Evolution certificada NFPA 1930 con servicio técnico autorizado.',
   ],
   heroBadges: ['NFPA 1930', 'Integración G1', 'Manos libres', 'Ecosistema MSA', 'MSA Safety · NYSE', 'Distribuidor autorizado MX'],
@@ -130,7 +130,7 @@ const msaEvolution: EquipmentBrand = {
     { valor: '32', etiq: 'Estados con cobertura' },
   ],
   credenciales: [
-    { n: '01', t: 'MSA Safety · líder mundial', d: 'La línea Evolution es parte de MSA Safety (NYSE: MSA), el mayor grupo industrial de seguridad del mundo. Continuidad de suministro, refacciones originales y servicio técnico autorizado garantizados.' },
+    { n: '01', t: 'MSA Safety · NYSE', d: 'MSA Safety cotiza en la Bolsa de Nueva York (NYSE: MSA).' },
     { n: '02', t: 'Integración con el ecosistema MSA', d: 'La cámara Evolution se integra con el casco Gallet, el SCBA G1 y la telemetría MSA. Una sola marca para todo el conjunto del bombero, con compatibilidad y soporte unificados.' },
     { n: '03', t: 'G1-TIC — manos libres en la máscara', d: 'La G1-TIC monta la cámara térmica en la máscara del SCBA G1 y proyecta la imagen en la pieza facial. El bombero ve el calor sin sostener nada: ambas manos quedan libres para el rescate y el avance.' },
     { n: '04', t: 'Servicio técnico autorizado', d: 'Somos servicio autorizado MSA: calibración, verificación de imagen NFPA 1930 y refacciones originales con bitácora para auditoría. Tu inversión queda protegida toda la vida útil del equipo.' },

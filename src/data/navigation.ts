@@ -41,7 +41,7 @@ export const navigation: { main: NavItem[] } = { main: [
         children: [
           { label: "MSA G1",                href: "/productos/equipos-scba/msa-g1",       description: "EOSTI · telemetría ICM · NFPA 1970" },
           { label: "Dräger PSS 7000",       href: "/productos/equipos-scba/drager-pss",   description: "Arnés ergonómico · EN 137 + NFPA" },
-          { label: "3M Scott Air-Pak NxG7", href: "/productos/equipos-scba/scott-air-pak", description: "Modular · Pak-Tracker · NFPA 1970" },
+          { label: "3M Scott Air-Pak X3 Pro", href: "/productos/equipos-scba/scott-air-pak", description: "NFPA 1970 (2025) · SEI · NIOSH" },
         ],
       },
       {
