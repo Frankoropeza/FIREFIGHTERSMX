@@ -2,7 +2,6 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import HeroPro from '@components/home/HeroPro.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
-import ProductCards from '@components/home/ProductCards.astro';
 import RiskGuide from '@components/home/RiskGuide.astro';
 import ValueProps from '@components/home/ValueProps.astro';
 import ServicesSection from '@components/home/ServicesSection.astro';
@@ -12,7 +11,7 @@ import IndustriesSection from '@components/home/IndustriesSection.astro';
 import CoverageSection from '@components/home/CoverageSection.astro';
 import DirectorioSeccion from '@components/home/DirectorioSeccion.astro';
 import MarcasDistribuidas from '@components/home/MarcasDistribuidas.astro';
-import LineasContraIncendio from '@components/home/LineasContraIncendio.astro';
+import CatalogoHome from '@components/home/CatalogoHome.astro';
 import BlogTeasers from '@components/home/BlogTeasers.astro';
 import FAQSection from '@components/home/FAQSection.astro';
 import CTASection from '@components/home/CTASection.astro';
@@ -122,11 +121,8 @@ const schemas = [localBusinessSchema, webSiteSchema, faqSchema, servicesSchema];
   {/* 2. Accesos rápidos (botones a secciones clave) */}
   <QuickLinksBar />
 
-  {/* 3. Líneas de equipo contra incendio en general (decisión SEO 2026-09-15: giro general) */}
-  <LineasContraIncendio />
-
-  {/* 3a. Catálogo por categorías (intención de compra) */}
-  <ProductCards />
+  {/* 3. Catálogo único: familias → líneas (src/data/catalogo.ts, 2026-09-16) */}
+  <CatalogoHome />
 
   {/* 3b. Marcas que distribuimos */}
   <MarcasDistribuidas />
