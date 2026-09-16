@@ -1,7 +1,7 @@
 ---
 title: "SCBA: cuándo hacer la prueba hidrostática de cilindros y qué pasa si la omites"
 seoTitle: "Prueba hidrostática de cilindros SCBA: cuándo hacerla"
-description: "Intervalos de prueba hidrostática para cilindros SCBA conforme a permisos DOT y NFPA 1850."
+description: "Prueba hidrostática de cilindros SCBA: cada cuánto hacerla según el permiso DOT y NFPA 1850, qué revisar y cómo documentarla antes de la siguiente recarga."
 pubDate: 2026-03-17
 updatedDate: 2026-09-16
 author: "Ing. Marco García"
