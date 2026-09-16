@@ -153,6 +153,16 @@ export interface BrandAnatomia { t: string; d: string; }
 export interface BrandGuia { n: string; t: string; }
 export interface BrandSegmento { num: string; tipo: TipoKey; titulo: string; desc: string; modelos: string; }
 export interface BrandFaq { q: string; a: string; }
+export interface BloqueTexto {
+  id: string;
+  eyebrow?: string;
+  titulo: string;
+  parrafos?: string[];
+  items?: { t: string; d: string }[];
+  pasos?: string[];
+  tabla?: { cols: string[]; filas: string[][] };
+  nota?: string;
+}
 export interface ComparativaRow {
   modelo: string;
   tipo?: TipoKey;
@@ -170,6 +180,8 @@ export interface ComparativaRow {
 }
 
 export interface EquipmentBrand {
+  /** Una línea agrupa productos; una marca identifica al fabricante. */
+  tipoPagina?: 'marca' | 'linea';
   /** Categoría L3: 'cascos-nfpa' | 'trajes-bombero' */
   categorySlug: string;
   /** Slug de URL bajo /productos/<categorySlug>/ */
@@ -177,6 +189,8 @@ export interface EquipmentBrand {
   /** Valor exacto de `brand` en products.ts para filtrar el catálogo */
   brand: string;
   brandLabel: string;
+  /** Catálogo explícito para una línea, respetando este orden. */
+  productSlugs?: string[];
   /** Descripción corta cuando esta marca aparece como cross-link hermano */
   crossDesc: string;
   eyebrow: string;
@@ -191,6 +205,8 @@ export interface EquipmentBrand {
   parentOrg?: { name: string; ticker?: string };
   stats: BrandStat[];
   credenciales: BrandCredencial[];
+  /** Contenido editorial opcional entre credenciales y líneas. */
+  bloques?: BloqueTexto[];
   linesIntro: string;
   lineas: BrandLinea[];
   /** Slug del producto estrella (nivel superior) */

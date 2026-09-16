@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
+import RelatedLinks from '@components/common/RelatedLinks.astro';
 import { services, type Service } from '@data/services';
 import { SITE, whatsappUrl, CANAL_CONTACTO } from '@config/site';
 
@@ -419,6 +420,8 @@ const productosRel = productosMap[s.slug] ?? [];
       </div>
     </section>
   )}
+
+  <RelatedLinks ruta={s.href} />
 
   <!-- Otros servicios (internal linking) -->
   <section class="section-tight" style="background:#070E1A" aria-labelledby="otros-title">

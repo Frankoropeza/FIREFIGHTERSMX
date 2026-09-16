@@ -79,7 +79,7 @@ La revisión mensual forma parte del programa anual. Para mantenimiento y recarg
 
 El numeral 5.10 distingue el nivel de protección. En riesgo ordinario se requieren medios de detección y equipos contra incendio. En riesgo alto se requieren además sistemas fijos de protección contra incendio y alarmas de incendio, acordes con la clase de fuego.
 
-La solución debe partir de los materiales y el área, no del nombre comercial de un sistema. Puedes revisar opciones de [alarma contra incendio](/productos/alarma-contra-incendio/) y [sistemas contra incendio](/productos/sistemas-ci/) al definir el alcance de protección.
+La solución debe partir de los materiales y el área, no del nombre comercial de un sistema. Puedes revisar opciones de [alarma contra incendio](/productos/sistemas-ci/alarma-contra-incendio/) y [sistemas contra incendio](/productos/sistemas-ci/) al definir el alcance de protección.
 
 ## Brigada contra incendio y capacitación
 

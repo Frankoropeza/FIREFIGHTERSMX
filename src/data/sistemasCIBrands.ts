@@ -850,5 +850,117 @@ const redHidraulica: EquipmentBrand = {
   waQuote: 'Hola, quiero cotizar una red hidráulica contra incendio: bomba NFPA 20, gabinetes CI y válvulas supervisadas.',
 };
 
+/* ════════════════════════════════════════════════════════════════════════════
+   ALARMA CONTRA INCENDIO — línea NFPA 72
+   ════════════════════════════════════════════════════════════════════════════ */
+const alarmaContraIncendio: EquipmentBrand = {
+  tipoPagina: 'linea',
+  categorySlug: 'sistemas-ci',
+  slug: 'alarma-contra-incendio',
+  brand: 'Honeywell Notifier',
+  brandLabel: 'Alarma contra incendio',
+  productSlugs: ['notifier-nfs2-640', 'notifier-nfs2-3030', 'honeywell-detector-humo', 'notifier-sd851-detector-calor', 'system-sensor-spcrl', 'notifier-fmm-1-modulo-monitor', 'kidde-autopulse-panel'],
+  crossDesc: 'Detección y alarma NFPA 72 para proyectos contra incendio',
+  eyebrow: 'Detección y alarma de incendio · NFPA 72',
+  heroTitleTop: 'Alarma contra incendio',
+  heroTitleAccent: 'detección y alarma NFPA 72.',
+  heroLead: 'Un sistema de alarma contra incendio detecta el fuego en su etapa inicial y avisa a los ocupantes antes de que el humo bloquee las rutas de evacuación. Se diseña conforme a la NFPA 72 y, en México, forma parte de las condiciones de seguridad que la NOM-002-STPS-2010 exige a los centros de trabajo; en los de riesgo alto, la alarma de incendio es obligatoria.',
+  heroIntro: ['Suministramos el sistema de detección y alarma de incendios completo: panel de control, detectores de humo y de calor, estaciones manuales, sirenas con estrobo y módulos de supervisión, con marcas Honeywell Notifier y System Sensor. Diseñamos la ubicación de cada dispositivo según el plano y el tipo de riesgo, instalamos y entregamos la documentación para Protección Civil.'],
+  heroBadges: ['NFPA 72', 'NOM-002-STPS-2010', 'Honeywell Notifier', 'System Sensor'],
+  seoTitle: 'Alarma contra incendio: sistemas de detección NFPA 72',
+  seoDescription: 'Sistemas de alarma contra incendio NFPA 72 en México: paneles direccionables Notifier, detectores de humo y calor, estaciones manuales y sirenas. Diseño e instalación.',
+  stats: [
+    { valor: 'NFPA 72', etiq: 'Norma de diseño' },
+    { valor: '4', etiq: 'Tipos de sistema' },
+    { valor: '7', etiq: 'Componentes en catálogo' },
+    { valor: 'NOM-002-STPS-2010', etiq: 'Alarma obligatoria en riesgo alto' },
+  ],
+  credenciales: [
+    { n: '01', t: 'Detección temprana', d: 'Detectores y estaciones manuales identifican el incendio y envían la señal al panel de control.' },
+    { n: '02', t: 'Notificación', d: 'Sirenas y estrobos alertan a los ocupantes e inician la evacuación.' },
+    { n: '03', t: 'Supervisión', d: 'El panel supervisa dispositivos, cableado, averías y baterías de respaldo.' },
+    { n: '04', t: 'Diseño por proyecto', d: 'La ubicación de cada dispositivo se define según plano, uso y tipo de riesgo.' },
+  ],
+  bloques: [
+    {
+      id: 'funciona',
+      eyebrow: 'Detección · control · notificación',
+      titulo: '¿Cómo funciona una alarma contra incendio?',
+      parrafos: ['Todo sistema de detección de incendios tiene tres partes que trabajan en secuencia:'],
+      items: [
+        { t: 'Iniciación', d: 'Los detectores y las estaciones manuales identifican el incendio. Sus sensores están diseñados para detectar partículas de combustión, un aumento de temperatura o la radiación de la flama, y mandan la señal al panel.' },
+        { t: 'Control', d: 'El panel de control de alarma de incendio (FACP) recibe la señal, identifica la zona o el dispositivo exacto, supervisa los dispositivos asociados y el cableado, registra averías y ejecuta la secuencia de salidas que se programa en la puesta en marcha.' },
+        { t: 'Notificación', d: 'El panel emite la señal de alarma con sirenas y estrobos para alertar a los ocupantes e iniciar la evacuación; también puede enviar la señal a monitoreo, liberar puertas o activar un sistema de supresión.' },
+      ],
+      nota: 'Si falla la energía eléctrica, las baterías de respaldo mantienen el sistema en reposo y le permiten sonar en caso de incendio, con la autonomía que exige la NFPA 72 para el tipo de sistema.',
+    },
+    {
+      id: 'sistemas',
+      eyebrow: 'Selección según el inmueble',
+      titulo: 'Tipos de sistemas de alarma contra incendios',
+      tabla: {
+        cols: ['Tipo', 'Cómo identifica el evento', 'Dónde conviene'],
+        filas: [
+          ['Convencional', 'Por zonas: el panel indica el área, no el dispositivo', 'Oficinas, comercios y edificios pequeños'],
+          ['Direccionable', 'Cada detector tiene dirección propia: el panel indica el punto exacto', 'Hospitales, hoteles, plantas y edificios de varios niveles'],
+          ['Inalámbrico', 'Dispositivos por radiofrecuencia enlazados al panel', 'Inmuebles históricos o donde no se puede cablear'],
+          ['Por aspiración (ASD)', 'Toma muestras de aire por tubería y detecta partículas de humo', 'Centros de datos, cuartos limpios y bodegas de gran altura'],
+        ],
+      },
+    },
+    {
+      id: 'componentes',
+      eyebrow: 'Paneles · detectores · notificación',
+      titulo: 'Componentes del sistema de detección y alarma',
+      items: [{ t: 'Estación manual contra incendio', d: 'Estaciones manuales de doble acción para activar la alarma manualmente desde las rutas de evacuación.' }],
+    },
+    {
+      id: 'detectores',
+      eyebrow: 'Detección según el riesgo',
+      titulo: 'Tipos de detectores de incendio',
+      items: [
+        { t: 'Detector de humo fotoeléctrico', d: 'Detección de humo visible de fuegos latentes; el más usado en oficinas, habitaciones y pasillos.' },
+        { t: 'Detector de calor o de temperatura', d: 'Se activa a temperatura fija o por aumento rápido; para cocinas, estacionamientos y áreas con polvo o vapor donde un detector de humo daría falsas alarmas.' },
+        { t: 'Detector de flama', d: 'Identifica la radiación de la flama; para naves con líquidos inflamables.' },
+        { t: 'Detección por aspiración', d: 'Detección muy temprana en centros de datos y áreas críticas.' },
+        { t: 'Detector de gas', d: 'Complementa la alarma en cuartos de máquinas y áreas con gases inflamables.' },
+      ],
+    },
+    { id: 'ubicacion', titulo: '¿Dónde se colocan las alarmas contra incendio?', parrafos: ['La ubicación y el espaciamiento de detectores, estaciones manuales y sirenas se calculan con la NFPA 72 según la altura del techo, la ventilación y el uso del área de la edificación. Como regla de diseño, las estaciones manuales se ubican junto a las salidas y en las rutas de evacuación, y las sirenas con estrobo deben escucharse y verse desde cualquier punto ocupado. Con el plano del inmueble entregamos la propuesta de distribución.'] },
+    { id: 'monitoreo', titulo: 'Monitoreo y conexión con otros sistemas contra incendios', parrafos: ['El panel puede conectarse a una central de monitoreo, al sistema de rociadores —supervisión de válvulas y flujo con módulos monitor— y a la supresión con agentes limpios. En caso de incendio, la activación de la alarma puede cerrar puertas cortafuego, detener la ventilación y liberar el agente. El sistema de detección da la detección temprana; el extintor y el rociador son los que combaten el fuego.'] },
+    { id: 'kit', titulo: 'Kit de alarma o sistema diseñado', parrafos: ['Un kit de alarma genérico no considera la altura del techo, el uso del área ni el tipo de riesgo. Diseñamos cada sistema con equipos de fabricantes con listado UL y de las marcas más reconocidas del mercado, para garantizar que cada dispositivo quede donde la norma lo pide.'] },
+    { id: 'instalacion', eyebrow: 'Puesta en marcha y conservación', titulo: 'Instalación, pruebas y mantenimiento', pasos: ['Levantamiento y diseño con plano de dispositivos.', 'Instalación de cableado, panel y dispositivos.', 'Programación de zonas o direcciones y de la secuencia de salidas.', 'Pruebas de funcionamiento con acta de entrega.', 'Mantenimiento periódico: prueba de detectores y sirenas, revisión de baterías y limpieza de suciedad y polvo, con bitácora para Protección Civil.'] },
+    { id: 'falsas-alarmas', titulo: 'Cómo evitar falsas alarmas', parrafos: ['Elegir el detector correcto para cada área (calor en cocinas, humo en oficinas), limpiar los detectores en el mantenimiento programado, supervisar las averías que reporta el panel y capacitar al personal para no activar las estaciones manuales por error.'] },
+  ],
+  linesIntro: 'Suministramos paneles, detectores, estaciones manuales, sirenas con estrobo y módulos de supervisión para sistemas de detección y alarma de incendios.',
+  lineas: [
+    { tipo: 'deteccion', badge: 'NFPA 72', titulo: 'Paneles de control', modelos: 'Notifier NFS2-640 · NFS2-3030', desc: 'Paneles FACP para sistemas direccionables.', tech: 'Direcciones, zonas y secuencias de salidas' },
+    { tipo: 'deteccion', badge: 'NFPA 72', titulo: 'Detección y notificación', modelos: 'Humo · calor · sirena-estrobo', desc: 'Dispositivos de iniciación y notificación para el inmueble.', tech: 'Detección, alarma y evacuación' },
+    { tipo: 'deteccion', badge: 'NFPA 72', titulo: 'Supervisión', modelos: 'FMM-1 · AutoPulse', desc: 'Módulos y paneles para supervisión y control de descargas.', tech: 'Monitoreo de válvulas, flujo y dispositivos' },
+  ],
+  comparativa: [
+    { modelo: 'Notifier NFS2-640', tipo: 'deteccion', norma: 'NFPA 72', tipo_sis: 'FACP direccionable 636 puntos', cobertura: 'Hasta 636 dispositivos / 3 lazos SLC', listado: 'UL Listed', ideal: 'Centros comerciales · plantas industriales' },
+    { modelo: 'Notifier NFS2-3030', tipo: 'deteccion', norma: 'NFPA 72', tipo_sis: 'FACP direccionable 3,030 puntos', cobertura: 'Hasta 3,030 dispositivos por panel', listado: 'UL Listed · cUL', ideal: 'Edificios de gran altura · campus · hospitales' },
+    { modelo: 'Honeywell GSME-A', tipo: 'deteccion', norma: 'NFPA 72', tipo_sis: 'Detector humo fotoeléctrico direccionable', cobertura: '93 m² por detector', listado: 'UL Listed', ideal: 'Oficinas · pasillos · cuartos de control' },
+    { modelo: 'Notifier SD851', tipo: 'deteccion', norma: 'NFPA 72', tipo_sis: 'Detector de calor fijo direccionable', cobertura: 'Hasta 37.2 m² (30 ft²) por punto', listado: 'UL Listed · NFPA 72', ideal: 'Cocinas · maquinaria · vapor · polvo' },
+    { modelo: 'System Sensor SPCRL', tipo: 'deteccion', norma: 'NFPA 72', tipo_sis: 'Sirena-estrobo de notificación', cobertura: 'Hasta 110 cd · 97 dB', listado: 'UL Listed', ideal: 'Oficinas · pasillos · plantas ruidosas' },
+    { modelo: 'Notifier FMM-1', tipo: 'deteccion', norma: 'NFPA 72', tipo_sis: 'Módulo monitor de entrada SLC', cobertura: '1 punto direccionable por módulo', listado: 'UL Listed · NFPA 72', ideal: 'Supervisión válvulas · tamper · flow switch · HVAC' },
+    { modelo: 'Kidde AutoPulse', tipo: 'deteccion', norma: 'NFPA 2001 · NFPA 72', tipo_sis: 'Panel de control de descarga', cobertura: 'Dual-knock · retardo 30 s · aborto manual', listado: 'UL 864 Listed', ideal: 'Todos los sistemas de agente limpio Kidde' },
+  ],
+  comparativaLabel: 'Componentes de detección y alarma NFPA 72',
+  faqs: [
+    { q: '¿Cómo funciona la alarma contra incendios?', a: 'Los detectores o una estación manual mandan la señal al panel de control, que identifica la zona o el dispositivo y activa sirenas y estrobos para evacuar. El panel supervisa el cableado y usa baterías de respaldo si falla la energía.' },
+    { q: '¿Cuáles son los tipos de alarmas contra incendios?', a: 'Convencionales (por zonas), direccionables (identifican cada dispositivo), inalámbricas y por aspiración. La elección depende del tamaño del inmueble, el número de niveles y el tipo de riesgo.' },
+    { q: '¿Cuánto cuesta una alarma contra incendios?', a: 'Depende del número de dispositivos, el tipo de panel, el cableado y la superficie. Cotizamos por proyecto con el plano o una visita técnica y entregamos la propuesta con fichas técnicas.' },
+    { q: '¿Qué es un sistema de detección y alarma de incendios?', a: 'Es el conjunto de detectores, estaciones manuales, panel de control y dispositivos de notificación que identifica un incendio y alerta a los ocupantes. Se diseña conforme a la NFPA 72.' },
+    { q: '¿La NOM-002-STPS-2010 obliga a tener alarma contra incendio?', a: 'En los centros de trabajo de riesgo alto, sí: la norma pide alarma de incendio y sistemas fijos de protección. En riesgo ordinario se recomienda para detectar el fuego a tiempo.' },
+    { q: '¿Qué diferencia hay entre un detector de humo y una alarma de humo?', a: 'El detector de un sistema sólo detecta y envía la señal al panel, que es quien activa la alarma. La alarma de humo autónoma detecta y suena por sí misma, sin panel; se usa en casas.' },
+    { q: '¿Cada cuándo se da mantenimiento a una alarma contra incendio?', a: 'Se prueba y se da mantenimiento de forma periódica según la NFPA 72 y el programa de mantenimiento del inmueble; registramos cada servicio en la bitácora para la inspección de Protección Civil.' },
+  ],
+  ctaKicker: 'Propuesta por proyecto',
+  ctaTitleHtml: '¿Necesitas una alarma contra incendio para tu empresa?',
+  waQuote: 'Hola, quiero cotizar un sistema de alarma contra incendio.',
+};
+
 /* ── Exportaciones ─────────────────────────────────────────────────────────── */
-export const sistemasCIBrandList: EquipmentBrand[] = [tycoViking, honeywellNotifier, kiddeFenwal, redHidraulica];
+export const sistemasCIBrandList: EquipmentBrand[] = [tycoViking, honeywellNotifier, kiddeFenwal, redHidraulica, alarmaContraIncendio];

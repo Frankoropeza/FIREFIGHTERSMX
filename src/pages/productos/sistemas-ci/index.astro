@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
+import RelatedLinks from '@components/common/RelatedLinks.astro';
 import ProductCard from '@components/products/ProductCard.astro';
 import { categories } from '@data/categories';
 import { featuredProducts } from '@data/products';
@@ -434,7 +435,7 @@ const tablaComparativa = [
             3,030 puntos y se integra con ONYXWorks para gestión centralizada en campus y edificios
             de gran altura. Solución completa: detectores, sirenas, módulos de control y tablero FACP.
           </p>
-          <a href="/productos/alarma-contra-incendio/" class="text-sm font-bold hover:text-[#60A5FA]" style="color:#FFFFFF">Alarma contra incendio →</a>
+          <a href="/productos/sistemas-ci/alarma-contra-incendio/" class="text-sm font-bold hover:text-[#60A5FA]" style="color:#FFFFFF">Alarma contra incendio →</a>
           <div class="flex flex-wrap gap-2">
             {['NFPA 72','UL Listed','cUL','NFS2-3030','NFS2-640','FACP Direccionable','Detección CLIP','SWIFT Wireless','Distribuidor autorizado MX'].map(b => (
               <span class="badge badge-dark text-[9px]">{b}</span>
@@ -999,6 +1000,7 @@ const tablaComparativa = [
     </div>
   </section>
 
+  <RelatedLinks ruta="/productos/sistemas-ci/" />
 </BaseLayout>
 
 <style>

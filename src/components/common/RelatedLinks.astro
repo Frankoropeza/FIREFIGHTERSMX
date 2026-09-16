@@ -1,0 +1,27 @@
+---
+import { relacionados } from '@data/interlinking';
+
+interface Props {
+  ruta: string;
+  titulo?: string;
+}
+
+const { ruta, titulo = 'Productos y servicios relacionados' } = Astro.props;
+const enlaces = relacionados(ruta);
+---
+
+{enlaces.length > 0 && (
+  <section class="section-tight" style="background:#070E1A" aria-label={titulo}>
+    <div class="container-site">
+      <h2 class="font-display font-bold text-2xl mb-6" style="color:#FFFFFF">{titulo}</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {enlaces.map((enlace) => (
+          <a href={enlace.href} class="group p-5 hover:border-[#F75000]" style="background:#080F1A;border:1px solid rgba(74,117,153,.18)">
+            <span class="font-display font-bold text-sm block group-hover:text-[#FF6B26]" style="color:#FFFFFF">{enlace.label}</span>
+            {enlace.desc && <span class="text-xs leading-relaxed mt-2 block" style="color:#64748B">{enlace.desc}</span>}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+)}

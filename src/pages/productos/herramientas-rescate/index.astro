@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
+import RelatedLinks from '@components/common/RelatedLinks.astro';
 import ProductCard from '@components/products/ProductCard.astro';
 import { categories } from '@data/categories';
 import { featuredProducts } from '@data/products';
@@ -688,6 +689,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
     </div>
   </section>
 
+  <RelatedLinks ruta="/productos/herramientas-rescate/" />
 </BaseLayout>
 
 <style>

@@ -12,6 +12,7 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import ProductCard from '@components/products/ProductCard.astro';
+import RelatedLinks from '@components/common/RelatedLinks.astro';
 import { featuredProducts } from '@data/products';
 import { SITE, whatsappUrl, CANAL_CONTACTO } from '@config/site';
 import { tipoEquipo, categoriaMarca, hermanasMarca, type EquipmentBrand } from '@data/brandPages';
@@ -24,25 +25,16 @@ const { brand } = Astro.props;
 const cat = categoriaMarca[brand.categorySlug];
 const hubURL = `/productos/${brand.categorySlug}`;
 const canonicalURL = `${SITE.url}/productos/${brand.categorySlug}/${brand.slug}`;
+const ruta = `/productos/${brand.categorySlug}/${brand.slug}/`;
+const esLinea = brand.tipoPagina === 'linea';
+const etiquetaPlural = esLinea ? `Otras líneas de ${cat.label}` : 'Otras marcas';
 
-const productos = featuredProducts.filter(
-  (p) => p.category === cat.productCategory && p.brand === brand.brand && p.specs
-);
-
-const otrasMarcas = [
-  ...hermanasMarca(brand),
-  { label: `Comparativa en el hub de ${cat.label}`, desc: 'Tabla técnica de estilos y modelos', href: `${hubURL}#comp-title` },
-  { label: `Todos los ${cat.label} del catálogo`, desc: 'Catálogo completo de la categoría', href: hubURL },
-];
-
-const categorias: [string, string][] = [
-  ['Cascos NFPA', '/productos/cascos-nfpa'],
-  ['Trajes para Bomberos', '/productos/trajes-bombero'],
-  ['Equipos SCBA', '/productos/equipos-scba'],
-  ['Cámaras Térmicas', '/productos/camaras-termicas'],
-  ['Herramientas Rescate', '/productos/herramientas-rescate'],
-  ['Equipos HAZMAT', '/productos/hazmat'],
-];
+const productos = brand.productSlugs
+  ? brand.productSlugs
+    .map((slug) => featuredProducts.find((product) => product.slug === slug))
+    .filter((product): product is (typeof featuredProducts)[number] => Boolean(product))
+  : featuredProducts.filter((p) => p.category === cat.productCategory && p.brand === brand.brand && p.specs);
+const lineasHermanas = hermanasMarca(brand);
 
 /* ── Mensajes de WhatsApp (derivados, homologados) ─────────────────────────── */
 const waFicha = `Hola, quiero cotizar ${brand.brandLabel}. Necesito ficha técnica para licitación.`;
@@ -57,6 +49,7 @@ const safeAnatomia = brand.anatomia ?? [];
 const safeGuia = brand.guia ?? [];
 const safeSegmentos = brand.segmentos ?? [];
 const safeFaqs = brand.faqs ?? [];
+const safeBloques = brand.bloques ?? [];
 
 const recortarTituloSEO = (title: string) => {
   if ([...title].length <= 70) return title;
@@ -93,7 +86,10 @@ const breadcrumbSchema = {
   ],
 };
 
-const brandSchema = {
+const aboutSchema = esLinea ? {
+  '@type': 'Thing',
+  name: brand.brandLabel,
+} : {
   '@type': 'Brand',
   name: brand.brandLabel,
   ...(brand.founding ? { foundingDate: brand.founding } : {}),
@@ -111,7 +107,7 @@ const collectionSchema = {
   url: canonicalURL,
   inLanguage: 'es-MX',
   isPartOf: { '@id': `${SITE.url}/#website` },
-  about: brandSchema,
+  about: aboutSchema,
   mainEntity: {
     '@type': 'ItemList',
     numberOfItems: productos.length,
@@ -220,6 +216,60 @@ const faqSchema = {
     </div>
   </div>
 </section>
+
+{/* ══ BLOQUES EDITORIALES ═════════════════════════════════════════════ */}
+{safeBloques.map((bloque, index) => (
+  <section id={bloque.id} class={index % 2 === 0 ? 'section' : 'section-tight'} style={`background:${index % 2 === 0 ? '#040A12' : '#070E1A'}`} aria-labelledby={`${bloque.id}-title`}>
+    <div class="container-site">
+      <div class="section-head">
+        {bloque.eyebrow && <span class="section-eyebrow">{bloque.eyebrow}</span>}
+        <h2 id={`${bloque.id}-title`}>{bloque.titulo}</h2>
+      </div>
+      {bloque.parrafos?.map((parrafo) => (
+        <p class="content-copy mb-5">{parrafo}</p>
+      ))}
+      {bloque.items && (
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-8">
+          {bloque.items.map((item) => (
+            <article class="p-6" style="background:#080F1A;border:1px solid rgba(74,117,153,.18)">
+              <h3 class="font-display font-bold text-lg mb-3" style="color:#FFFFFF">{item.t}</h3>
+              <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{item.d}</p>
+            </article>
+          ))}
+        </div>
+      )}
+      {bloque.tabla && (
+        <div class="overflow-x-auto mt-8">
+          <table class="w-full text-left text-sm" style="border-collapse:collapse">
+            <thead>
+              <tr style="background:#0C1825;color:#FFFFFF">
+                {bloque.tabla.cols.map((columna) => <th class="p-4">{columna}</th>)}
+              </tr>
+            </thead>
+            <tbody>
+              {bloque.tabla.filas.map((fila) => (
+                <tr style="border-bottom:1px solid rgba(74,117,153,.18);color:#94A3B8">
+                  {fila.map((celda, celdaIndex) => <td class="p-4" style={celdaIndex === 0 ? 'color:#FFFFFF;font-family:var(--font-display);font-weight:700' : ''}>{celda}</td>)}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+      {bloque.pasos && (
+        <ol class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 list-none p-0 m-0 mt-8">
+          {bloque.pasos.map((paso, pasoIndex) => (
+            <li class="p-5" style="background:#080F1A;border:1px solid rgba(74,117,153,.18)">
+              <span class="font-display font-bold text-xl block mb-3" style="color:#F75000">{String(pasoIndex + 1).padStart(2, '0')}</span>
+              <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{paso}</p>
+            </li>
+          ))}
+        </ol>
+      )}
+      {bloque.nota && <p class="content-copy mt-8">{bloque.nota}</p>}
+    </div>
+  </section>
+))}
 
 {/* ══ LÍNEAS DE PRODUCTO ══════════════════════════════════════════════ */}
 <section class="section" style="background:#040A12" aria-labelledby="lineas-title">
@@ -505,62 +555,23 @@ const faqSchema = {
   </div>
 </section>
 
-{/* ══ CROSS-LINKS ═════════════════════════════════════════════════════ */}
-<section class="section" style="background:#070E1A" aria-labelledby="cross-title">
-  <div class="container-site">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-
-      <div>
-        <span class="section-eyebrow mb-4 inline-flex">Otras marcas</span>
-        <h2 id="cross-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
-          Compara con<br/>
-          <span style="color:#F75000">otras marcas.</span>
-        </h2>
-        <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
-          {otrasMarcas.map((l) => (
-            <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
-              <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
-                <span class="flex flex-col gap-0.5">
-                  <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
-                  <span class="text-xs" style="color:#64748B">{l.desc}</span>
-                </span>
-                <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="var(--forge-300)" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
-        <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">Equipa el conjunto completo</h2>
-        <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
-          {cat.conjunto.map((l) => (
-            <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
-              <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
-                <span class="flex flex-col gap-0.5">
-                  <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
-                  <span class="text-xs" style="color:#64748B">{l.desc}</span>
-                </span>
-                <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="var(--forge-300)" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-    </div>
-
-    <div class="mt-14 pt-10" style="border-top:1px solid rgba(74,117,153,0.15)">
-      <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-6" style="color:var(--forge-300)">Otras categorías del catálogo</h2>
-      <div class="flex flex-wrap gap-3">
-        {categorias.map(([label, href]) => (
-          <a href={href} class="btn btn-sm btn-dark">{label}</a>
+{/* hermanasMarca conserva las líneas hermanas; el mapa central añade el resto. */}
+{lineasHermanas.length > 0 && (
+  <section class="section-tight" style="background:#070E1A">
+    <div class="container-site">
+      <span class="section-eyebrow mb-4 inline-flex">{etiquetaPlural}</span>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {lineasHermanas.map((linea) => (
+          <a href={linea.href} class="p-5" style="background:#080F1A;border:1px solid rgba(74,117,153,.18)">
+            <span class="font-display font-bold block" style="color:#FFFFFF">{linea.label}</span>
+            <span class="text-xs mt-2 block" style="color:#64748B">{linea.desc}</span>
+          </a>
         ))}
-        <a href="/productos" class="btn btn-sm btn-outline">Catálogo completo →</a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+)}
+<RelatedLinks ruta={ruta} />
 
 </BaseLayout>
 
@@ -568,4 +579,7 @@ const faqSchema = {
   details.faq-item summary { list-style: none; }
   details.faq-item summary::-webkit-details-marker { display: none; }
   details.faq-item[open] .faq-icon { transform: rotate(45deg); }
+  .section-head { display:grid; grid-template-columns:1fr; gap:1rem; margin-bottom:2.5rem; }
+  .section-head h2 { color:#fff; font-family:var(--font-display); font-size:clamp(1.8rem,3.5vw,2.75rem); font-weight:700; line-height:1.08; margin:0; }
+  .content-copy { color:#94A3B8; font-size:.95rem; line-height:1.8; max-width:65rem; }
 </style>

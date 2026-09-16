@@ -151,3 +151,7 @@
 # 301 de etiquetas del blog que desaparecen al restaurar la tienda (2026-09-15)
 /blog/tag/directorio/ /empresas/ 301
 /blog/tag/verificacion/ /blog/ 301
+
+# Homologación de alarma contra incendio a línea L3 (2026-09-16)
+/productos/alarma-contra-incendio /productos/sistemas-ci/alarma-contra-incendio/ 301
+/productos/alarma-contra-incendio/ /productos/sistemas-ci/alarma-contra-incendio/ 301
