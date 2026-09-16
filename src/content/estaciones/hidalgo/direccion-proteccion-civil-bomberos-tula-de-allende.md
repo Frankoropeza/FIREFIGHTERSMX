@@ -30,7 +30,7 @@ fuentes:
   - nombre: "tula.gob.mx"
     url: "https://tula.gob.mx/gobierno/directorio/"
   - nombre: "tula.gob.mx"
-    url: "https://tula.gob.mx/comunicacion-social/pc-y-bomberos-de-tula-2/"
+    retirada: "https://tula.gob.mx/comunicacion-social/pc-y-bomberos-de-tula-2/"
 verificadoEl: "2026-06"
 confianza: "media"
 activa: true

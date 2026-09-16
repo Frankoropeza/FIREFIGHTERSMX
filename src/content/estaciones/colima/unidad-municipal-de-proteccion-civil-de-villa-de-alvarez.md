@@ -26,7 +26,7 @@ serviciosDetalle:
 descripcion: "Unidad municipal de protección civil que atiende la primera respuesta; para incendios de magnitud depende de Bomberos de Colima y de la UEPC. Villa de Álvarez está conurbado con la capital y comparte con ella la cercanía al Volcán de Fuego, con crecimiento habitacional continuo hacia el norte, en dirección al propio volcán."
 fuentes:
   - nombre: "villadealvarez.gob.mx"
-    url: "https://villadealvarez.gob.mx/ivj/noticias/contactos-de-emergencia/"
+    retirada: "https://villadealvarez.gob.mx/ivj/noticias/contactos-de-emergencia/"
   - nombre: "afmedios.com"
     url: "https://www.afmedios.com/la-villa-carro-bomberos-136-mil-habitantes/"
 verificadoEl: "2026-06"

@@ -36,7 +36,7 @@ fuentes:
   - nombre: "periodicocentral.mx"
     url: "https://www.periodicocentral.mx/municipios/norma-layon-reconoce-la-gran-labor-del-cuerpo-de-bomberos-de-san-martin-texmelucan/69525/"
   - nombre: "tribunanoticias.mx"
-    url: "https://tribunanoticias.mx/san-martin-texmelucan-celebra-el-dia-del-bombero/"
+    retirada: "https://tribunanoticias.mx/san-martin-texmelucan-celebra-el-dia-del-bombero/"
   - nombre: "todopuebla.com"
     url: "https://www.todopuebla.com/directorio/bomberosdesanmartintexmelucan"
 verificadoEl: "2026-06"

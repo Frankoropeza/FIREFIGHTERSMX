@@ -19,7 +19,7 @@ telefono: "(938) 382-4266"
 telefonosAdicionales:
   - "(938) 384-1663"
 email: "proteccioncivil.carmen@gmail.com"
-sitioWeb: "http://www.carmen.gob.mx/home/proteccion-civil-carmen/"
+sitioWeb: "http://www.carmen.gob.mx/"
 operador: "H. Ayuntamiento de Carmen"
 servicios:
   - "proteccion-civil"
@@ -32,7 +32,7 @@ serviciosDetalle:
 descripcion: "Dependencia municipal que opera el Centro Municipal de Emergencias de Carmen y coordina la respuesta interinstitucional con el Heroico Cuerpo de Bomberos del Estado. Ciudad del Carmen es la base logística de la industria petrolera del Golfo: plataformas costa afuera, terminales, astilleros y una isla urbanizada con acceso por puentes, sobre una costa expuesta a la temporada de huracanes."
 fuentes:
   - nombre: "carmen.gob.mx"
-    url: "http://www.carmen.gob.mx/home/proteccion-civil-carmen/"
+    retirada: "http://www.carmen.gob.mx/home/proteccion-civil-carmen/"
 verificadoEl: "2026-06"
 confianza: "alta"
 activa: true

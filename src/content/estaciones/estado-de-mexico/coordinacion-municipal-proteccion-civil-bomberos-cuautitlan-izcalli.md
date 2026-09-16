@@ -36,7 +36,7 @@ fuentes:
   - nombre: "cuautitlanizcalli.gob.mx — partes de servicio 2025"
     url: "https://cuautitlanizcalli.gob.mx/wp-content/uploads/2025/02/PARTES-DE-SERVICIO.pdf"
   - nombre: "cuautitlanizcalli.gob.mx — incendio parque industrial"
-    url: "https://cuautitlanizcalli.gob.mx/gobierno-de-cuautitlan-izcalli-sofoca-incendio-en-parque-industrial/"
+    retirada: "https://cuautitlanizcalli.gob.mx/gobierno-de-cuautitlan-izcalli-sofoca-incendio-en-parque-industrial/"
   - nombre: "DENUE — INEGI"
     url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=1988591"
 verificadoEl: "2026-09"

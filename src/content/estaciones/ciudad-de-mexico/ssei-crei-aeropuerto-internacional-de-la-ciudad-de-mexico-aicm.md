@@ -27,7 +27,7 @@ serviciosDetalle:
 descripcion: "Servicio de salvamento y extinción de incendios del Aeropuerto Internacional de la Ciudad de México, con operación permanente las 24 horas y categoría OACI reportada 9. Es una unidad aeroportuaria, no municipal: su responsabilidad son las pistas, plataformas y aeronaves del recinto, con vehículos de extinción de gran capacidad y tiempos de respuesta medidos en la propia pista. Atiende el aeropuerto de mayor tráfico del país, dentro de la mancha urbana y a pocos minutos del oriente de la ciudad."
 fuentes:
   - nombre: "aicm.com.mx"
-    url: "https://www.aicm.com.mx/en/passengers/services/aicm-services/emergencies"
+    url: "https://www.aicm.com.mx/pasajeros/servicios/servicios-aicm/emergencias"
 verificadoEl: "2026-06"
 confianza: "media"
 activa: true

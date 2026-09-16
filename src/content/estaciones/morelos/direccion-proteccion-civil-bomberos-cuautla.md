@@ -47,7 +47,7 @@ fuentes:
   - nombre: "oem.com.mx"
     url: "https://oem.com.mx/elsoldecuautla/local/reconoce-alcalde-de-cuautla-la-labor-del-cuerpo-de-bomberos-16145373"
   - nombre: "boletindemorelos.com.mx"
-    url: "https://boletindemorelos.com.mx/recibe-cuerpo-de-bomberos-de-cuautla-equipo-portatil-para-combatir-incendios/"
+    retirada: "https://boletindemorelos.com.mx/recibe-cuerpo-de-bomberos-de-cuautla-equipo-portatil-para-combatir-incendios/"
 verificadoEl: "2026-06"
 confianza: "media"
 activa: true

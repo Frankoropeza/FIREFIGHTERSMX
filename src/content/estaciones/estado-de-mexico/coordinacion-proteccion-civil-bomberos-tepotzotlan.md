@@ -16,7 +16,7 @@ coordenadas:
   lng: -99.22086695
   precision: "exacta"
 telefono: "(55) 8764-8848"
-sitioWeb: "https://www.tepotzotlan.gob.mx/pcybt"
+sitioWeb: "https://www.tepotzotlan.gob.mx/tramite-s-proteccioncivil"
 redes:
   twitter: "@PCYBTepotzotlan"
 servicios:
@@ -30,9 +30,9 @@ serviciosDetalle:
 descripcion: "Corporación con 4 puntos de cobertura: cuartel central (Av. del Trabajo 2-A, Barrio Texcacoa, C.P. 54600) y 3 subestaciones activas en Barrio San Martín, Cañadas y Barrio de la Luz / Santiago Cuautlalpan. Inversión de +3 MDP para la tercera subestación."
 fuentes:
   - nombre: "tepotzotlan.gob.mx — PC y Bomberos"
-    url: "https://www.tepotzotlan.gob.mx/pcybt"
-  - nombre: "capitaledomex.com.mx — subestación Tepotzotlán"
-    url: "https://www.capitaledomex.com.mx/local/inaugura-gely-zuppa-nueva-subestacion-de-proteccion-civil-y-bomberos-en-tepotzotlan/"
+    url: "https://www.tepotzotlan.gob.mx/tramite-s-proteccioncivil"
+  - nombre: "zonaceronoticias.com.mx — subestación Tepotzotlán"
+    url: "https://www.zonaceronoticias.com.mx/inaugura-ma-de-los-angeles-zuppa-villegas-tercer-subestacion-de-bomberos-en-tepotzotlan-esta-en-barrio-la-luz/"
   - nombre: "DENUE — INEGI"
     url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=2473190"
 verificadoEl: "2026-09"

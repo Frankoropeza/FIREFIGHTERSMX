@@ -24,7 +24,7 @@ interface Props {
 const { brand } = Astro.props;
 const cat = categoriaMarca[brand.categorySlug];
 const hubURL = `/productos/${brand.categorySlug}`;
-const canonicalURL = `${SITE.url}/productos/${brand.categorySlug}/${brand.slug}`;
+const canonicalURL = `${SITE.url}/productos/${brand.categorySlug}/${brand.slug}/`;
 const ruta = `/productos/${brand.categorySlug}/${brand.slug}/`;
 const esLinea = brand.tipoPagina === 'linea';
 const nombreLinea = brand.brandLabel.charAt(0).toLowerCase() + brand.brandLabel.slice(1);

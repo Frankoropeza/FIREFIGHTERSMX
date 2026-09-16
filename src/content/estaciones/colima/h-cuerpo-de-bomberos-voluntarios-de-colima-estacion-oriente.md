@@ -36,7 +36,7 @@ fuentes:
   - nombre: "afmedios.com"
     url: "https://www.afmedios.com/falta-inversion-y-formalizacion-para-cuerpos-de-bomberos-en-colima-admite-proteccion-civil/"
   - nombre: "diariodecolima.com"
-    url: "https://diariodecolima.com/noticias/detalle/2026-04-10-llegan-a-colima-nuevas-unidades-para-bomberos-voluntarios"
+    retirada: "https://diariodecolima.com/noticias/detalle/2026-04-10-llegan-a-colima-nuevas-unidades-para-bomberos-voluntarios"
 verificadoEl: "2026-06"
 confianza: "alta"
 activa: true

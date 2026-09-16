@@ -10,6 +10,7 @@
  * Reglas de la casa que respeta: cero animaciones (sólo hover instantáneo en
  * botones), ningún contador decorativo, y todo enlace lleva keyword.
  */
+import { urlCotizar } from '@lib/cta-empresa';
 import type { Empresa } from '@lib/empresas';
 import { relEmpresa } from '@lib/rel-portafolio';
 import type { Giro } from '@data/giros';
@@ -28,7 +29,7 @@ const v = e.vip ?? { servicios: [], lineas: [], criterios: [], proceso: [], cond
 const idBase = 'vip';
 const borde = 'rgba(74,117,153,0.18)';
 const iconCheck = `<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>`;
-const ctaWeb = web ? `${web.replace(/\/$/, '')}/cotizar` : undefined;
+const ctaWeb = urlCotizar(web);
 ---
 
 {v.servicios.length > 0 && (

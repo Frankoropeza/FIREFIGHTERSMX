@@ -17,7 +17,7 @@ coordenadas:
   precision: "exacta"
 telefono: "(55) 5936-1060"
 email: "proteccioncivil@tecamac.gob.mx"
-sitioWeb: "https://tecamac.gob.mx/APP_tramites/tramitesyservicios/cormunprobom001.php"
+sitioWeb: "https://tecamac.gob.mx/"
 servicios:
   - "incendios-estructurales"
   - "rescate-vehicular"
@@ -29,7 +29,7 @@ serviciosDetalle:
 descripcion: "Unidad municipal única de Tecámac, uno de los municipios de crecimiento más acelerado del norte del Valle de México. Los grandes desarrollos de vivienda del tipo Los Héroes concentran a buena parte de la población en conjuntos contiguos, y el municipio quedó además en la zona de influencia directa del Aeropuerto Internacional Felipe Ángeles y del corredor carretero hacia Pachuca, con el tránsito pesado que eso implica."
 fuentes:
   - nombre: "tecamac.gob.mx — PC y Bomberos"
-    url: "https://tecamac.gob.mx/APP_tramites/tramitesyservicios/cormunprobom001.php"
+    retirada: "https://tecamac.gob.mx/APP_tramites/tramitesyservicios/cormunprobom001.php"
   - nombre: "Directorio CGPC EDOMEX jun 2025"
     url: "https://cgproteccioncivil.edomex.gob.mx/sites/cgproteccioncivil.edomex.gob.mx/files/files/Que%20ofrecemos%202025/DIR-U-MUNICPALES/DIRECTORIO-JUNIO2025.pdf"
   - nombre: "DENUE — INEGI"

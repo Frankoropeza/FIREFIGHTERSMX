@@ -202,7 +202,14 @@ const estacionesCollection = defineCollection({
     fundacion: z.number().optional(),
     descripcion: z.string().optional(),
     /* ── Trazabilidad ── */
-    fuentes: z.array(z.object({ nombre: z.string(), url: z.string() })).min(1),
+    /* `retirada`: la fuente existió y respaldó el dato, pero su URL ya no
+       responde (404) y no hay copia viva verificable. Se conserva la
+       referencia sin enlace, en vez de borrar la cita o dejar un enlace roto
+       (Ahrefs 2026-09-16). Cada fuente lleva `url` o `retirada`. */
+    fuentes: z.array(
+      z.object({ nombre: z.string(), url: z.string().optional(), retirada: z.string().optional() })
+        .refine((f) => Boolean(f.url || f.retirada), { message: 'fuente sin url ni retirada' }),
+    ).min(1),
     verificadoEl: z.string(),
     confianza: z.enum(['alta', 'media', 'baja']),
     activa: z.boolean().default(true),

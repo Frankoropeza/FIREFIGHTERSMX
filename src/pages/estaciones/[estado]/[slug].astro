@@ -820,8 +820,12 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                   return (
                     <div class="flex items-start gap-2.5">
                       <span class="font-display text-[10px] font-bold shrink-0 mt-0.5" style="color:var(--forge-300)">{String(i + 1).padStart(2,'0')}</span>
-                      <a href={fUrl} target="_blank" rel="noopener noreferrer nofollow"
-                        class="text-xs break-all hover:text-[#FF6B26]" style="color:var(--forge-300)">{fLabel}</a>
+                      {fUrl ? (
+                        <a href={fUrl} target="_blank" rel="noopener noreferrer nofollow"
+                          class="text-xs break-all hover:text-[#FF6B26]" style="color:var(--forge-300)">{fLabel}</a>
+                      ) : (
+                        <span class="text-xs break-all" style="color:var(--forge-300)">{fLabel} <span style="color:#64748B">· publicación retirada por la fuente</span></span>
+                      )}
                     </div>
                   );
                 })}

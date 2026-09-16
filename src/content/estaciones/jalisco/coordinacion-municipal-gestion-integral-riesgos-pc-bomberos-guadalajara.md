@@ -45,7 +45,7 @@ fundacion: 1923
 descripcion: "Fundado el 23 de mayo de 1923 por acuerdo de cabildo del 6 de marzo de ese año, es la corporación de bomberos más antigua y grande de Jalisco. Opera con 5 bases principales (Central/Moderna 1944, Miraflores 1967, Zona Industrial 1973, San Andrés 1997, Jardines de Santa Isabel 2001), 5 módulos operativos, 450 elementos y tiempo de respuesta promedio de 5 minutos. En 2026 cumplió 103 años con inversión de 68.5 millones de pesos en 2 motobombas, 5 camionetas y 5 pipas. Ha respondido a la explosión de colectores del 22 de abril de 1992 (212 muertos), el terremoto de Haití 2010, el sismo 2017 y el Huracán Patricia 2015. Posee unidad USAR reconocida internacionalmente, escuadrón canino y brigada forestal para el Bosque La Primavera con helicóptero Zeus."
 fuentes:
   - nombre: "transparencia.guadalajara.gob.mx"
-    url: "https://transparencia.guadalajara.gob.mx/sites/default/files/iniciativasLey/bomberosAuto.pdf"
+    retirada: "https://transparencia.guadalajara.gob.mx/sites/default/files/iniciativasLey/bomberosAuto.pdf"
   - nombre: "informador.mx"
     url: "https://www.informador.mx/Bomberos-de-Guadalajara-suman-100-anos-de-servicio-l202305210001.html"
   - nombre: "udgtv.com"

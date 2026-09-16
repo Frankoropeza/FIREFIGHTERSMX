@@ -37,7 +37,7 @@ fuentes:
   - nombre: "sintesis.com.mx"
     url: "https://sintesis.com.mx/puebla/2025/05/05/nuevo-equipamiento-bomberos/"
   - nombre: "foro21.mx"
-    url: "https://foro21.mx/2024/07/incendio-atzompa-cholula/"
+    url: "https://foro21.mx/2024/07/03/destaca-labor-de-bomberos-de-san-andres-cholula-en-incendio-ocurrido-en-atzompa/"
   - nombre: "DENUE — INEGI"
     url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=7568782"
 verificadoEl: "2026-09"

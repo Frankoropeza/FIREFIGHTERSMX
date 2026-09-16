@@ -30,7 +30,7 @@ descripcion: "La Brigada Contraincendio de la Terminal de Almacenamiento y Despa
   La terminal obtuvo el Certificado de Industria Limpia de PROFEPA y está incluida en el programa de mantenimiento capitalizable 2024-2028 de PEMEX Logística para 6 terminales de la región norte. Opera en el nodo carretero más importante del altiplano centro-norte de México, sobre la ruta federal 45D que conecta la Ciudad de México con Ciudad Juárez — el mismo corredor que registró el accidente de 24 muertos en octubre de 2024, evidenciando el riesgo permanente asociado al tránsito intensivo de materiales peligrosos."
 fuentes:
   - nombre: "zhn.com.mx"
-    url: "https://zhn.com.mx/2018/08/29/terminal-de-pemex-en-zacatecas-cumple-19-anos-de-distribuir-combustibles-con-eficiencia-y-seguridad/"
+    retirada: "https://zhn.com.mx/2018/08/29/terminal-de-pemex-en-zacatecas-cumple-19-anos-de-distribuir-combustibles-con-eficiencia-y-seguridad/"
   - nombre: "pemex.com"
     url: "https://www.pemex.com/saladeprensa/boletines_regionales/Paginas/2013-004_mty.aspx"
 verificadoEl: "2026-06-25"

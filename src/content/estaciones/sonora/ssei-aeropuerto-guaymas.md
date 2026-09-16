@@ -28,8 +28,8 @@ descripcion: "El Servicio de Salvamento y Extinción de Incendios del Aeropuerto
 fuentes:
   - nombre: "es.wikipedia.org"
     url: "https://es.wikipedia.org/wiki/Aeropuerto_Internacional_General_Jos%C3%A9_Mar%C3%ADa_Y%C3%A1%C3%B1ez"
-  - nombre: "aeropuertosasa.mx"
-    url: "https://www.aeropuertosasa.mx/aeropuerto_de_guaymas.php"
+  - nombre: "asa.gob.mx — Aeropuerto de Guaymas"
+    url: "https://www.asa.gob.mx/es/ASA/GUAYMAS"
 verificadoEl: "2026-06-25"
 confianza: "media"
 activa: true
