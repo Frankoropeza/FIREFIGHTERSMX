@@ -62,7 +62,8 @@ for (const file of htmls(raizEmpresas)) {
     if (/(^|\.)firefighters\.mx$/i.test(host)) continue;
     // El WhatsApp propio de FIREFIGHTERS MX (2026-09-15) es contacto del sitio,
     // no un enlace hacia la empresa de la ficha. Cualquier otro número sí cuenta.
-    if (/^wa\.me$/i.test(host) && new URL(url).pathname === `/${WHATSAPP_PROPIO}`) continue;
+    // Desde 2026-09-16 se enlaza api.whatsapp.com directo (wa.me redirige 302).
+    if (/^api\.whatsapp\.com$/i.test(host) && new URL(url.replace(/&amp;/g, '&')).searchParams.get('phone') === WHATSAPP_PROPIO) continue;
     if (PERMITIDOS.some((re) => re.test(host))) continue;
     // Cita de fuente: el enlace lleva el nombre de la fuente y la flecha ↗
     const esFuente = new RegExp(`href="${url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"[^>]*>[^<]*↗`).test(html);
@@ -72,6 +73,15 @@ for (const file of htmls(raizEmpresas)) {
     fallos++;
   }
 }
+
+// Ningún enlace a wa.me en todo el sitio: responde 302 y Ahrefs lo cuenta como
+// «enlace a redirección» (2026-09-16). Usar whatsappLink() de src/config/site.ts.
+let waMe = 0;
+for (const file of htmls(DIST)) {
+  const n = (readFileSync(file, 'utf8').match(/https:\/\/wa\.me\//g) ?? []).length;
+  if (n) { waMe += n; console.error(`  x ${file.replace(/^.*?dist/, '')}  -> ${n} enlace(s) a wa.me (redirige)`); }
+}
+if (waMe) fallos += waMe;
 
 if (fallos) {
   console.error(`\nENLACES: ${fallos} enlace(s) saliente(s) en fichas no VIP (${fichas} fichas revisadas). Build rechazado.`);

@@ -84,10 +84,23 @@ export const CTA_CONTACTO = CONTACTO_DIRECTO_ACTIVO
   ? 'Escríbenos por WhatsApp'
   : 'Escríbenos por correo';
 
+/**
+ * Enlace de WhatsApp SIN redirección. `https://wa.me/<num>` responde 302 a
+ * `https://api.whatsapp.com/send/?phone=<num>&...` (medido 2026-09-16); Ahrefs
+ * contó ~70 páginas «con enlaces a redirección» por eso. Todo enlace de
+ * WhatsApp del sitio se arma aquí; los scripts de formulario usan
+ * WHATSAPP_API_BASE con el mismo formato.
+ */
+export const WHATSAPP_API_BASE = 'https://api.whatsapp.com/send/?phone=';
+export function whatsappLink(msg?: string, num: string = SITE.whatsapp): string {
+  const base = `${WHATSAPP_API_BASE}${num}`;
+  return msg ? `${base}&text=${encodeURIComponent(msg)}` : base;
+}
+
 /** Genera URL de WhatsApp con mensaje pre-llenado (o mailto si no hay contacto directo) */
 export function whatsappUrl(msg: string): string {
   return CONTACTO_DIRECTO_ACTIVO
-    ? `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(msg)}`
+    ? whatsappLink(msg)
     : `mailto:${SITE.email}?subject=${encodeURIComponent('Cotización — FIREFIGHTERS MX')}&body=${encodeURIComponent(msg)}`;
 }
 
@@ -98,7 +111,7 @@ export function whatsappUrl(msg: string): string {
  */
 export function contactoUrl(asunto: string, msg: string): string {
   return CONTACTO_DIRECTO_ACTIVO
-    ? `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(msg)}`
+    ? whatsappLink(msg)
     : `mailto:${SITE.email}?subject=${encodeURIComponent(`${asunto} — FIREFIGHTERS MX`)}&body=${encodeURIComponent(msg)}`;
 }
 

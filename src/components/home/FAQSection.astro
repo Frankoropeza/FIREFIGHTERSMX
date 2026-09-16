@@ -135,7 +135,7 @@ import { homeFaqs as faqs } from '@data/faqs';
       // Sin número verificado (CONTACTO_DIRECTO_ACTIVO=false) el form cae a correo.
       const mail = f.getAttribute('data-mail');
       if (num) {
-        window.open(`https://wa.me/${num}?text=${text}`, '_blank', 'noopener');
+        window.open(`https://api.whatsapp.com/send/?phone=${num}&text=${text}`, '_blank', 'noopener');
       } else if (mail) {
         window.location.href = `mailto:${mail}?subject=${encodeURIComponent('Cotización — FIREFIGHTERS MX')}&body=${text}`;
       }
