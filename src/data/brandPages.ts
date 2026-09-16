@@ -18,13 +18,15 @@ import { sistemasCIBrandList } from './sistemasCIBrands';
 import { hazmatBrandList } from './hazmatBrands';
 import { extintoresBrandList } from './extintoresBrands';
 import { dronesBrandList } from './dronesBrands';
+import { senalizacionBrandList } from './senalizacionBrands';
 
 /* ── Familias / tipo de riesgo — color e ícono ─────────────────────────────── */
 export type TipoKey =
   | 'estructural' | 'proximidad' | 'forestal' | 'usar' | 'mando' | 'industrial' | 'cbrn'
   | 'corte' | 'separacion' | 'combinada' | 'estabilizacion'
   | 'rociadores' | 'deteccion' | 'agente-ci' | 'red-hidraulica'
-  | 'traje-nivel-a' | 'traje-nivel-b' | 'detector-multigases' | 'kit-descon';
+  | 'traje-nivel-a' | 'traje-nivel-b' | 'detector-multigases' | 'kit-descon'
+  | 'senalizacion' | 'iluminacion-emergencia' | 'primeros-auxilios';
 
 export interface TipoMeta {
   label: string;
@@ -128,6 +130,21 @@ export const tipoEquipo: Record<TipoKey, TipoMeta> = {
     label: 'Infraestructura / Calibración',
     color: '#A78BFA',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><circle cx="12" cy="12" r="3"/>`,
+  },
+  senalizacion: {
+    label: 'Señalización',
+    color: '#34D399',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M4 4h16v16H4zM8 12h8M13 8l4 4-4 4"/>`,
+  },
+  'iluminacion-emergencia': {
+    label: 'Iluminación de emergencia',
+    color: '#F5A623',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 2h6l-1 7h3l-5 13 1-9H9l0-11z"/>`,
+  },
+  'primeros-auxilios': {
+    label: 'Primeros auxilios',
+    color: '#60A5FA',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M4 5h16v14H4zM12 8v8M8 12h8"/>`,
   },
 };
 
@@ -243,6 +260,21 @@ export interface CategoriaMeta {
 }
 
 export const categoriaMarca: Record<string, CategoriaMeta> = {
+  'senalizacion-emergencia': {
+    label: 'Señalización y Emergencia',
+    productCategory: 'Señalización y Emergencia',
+    comparativaCols: [
+      { key: 'norma', label: 'Norma', align: 'center', accent: true },
+      { key: 'material', label: 'Material' },
+      { key: 'autonomia', label: 'Autonomía', align: 'center' },
+      { key: 'ideal', label: 'Uso' },
+    ],
+    conjunto: [
+      { label: 'Extintores', desc: 'Equipo para combate de incendios.', href: '/productos/extintores' },
+      { label: 'Alarma contra incendio', desc: 'Detección y alarma NFPA 72.', href: '/productos/sistemas-ci/alarma-contra-incendio' },
+      { label: 'Capacitación contra incendio', desc: 'Brigadas, evacuación y respuesta.', href: '/servicios/capacitacion' },
+    ],
+  },
   'cascos-nfpa': {
     label: 'Cascos NFPA',
     productCategory: 'Cascos NFPA',
@@ -421,7 +453,7 @@ const cascosAdapted: EquipmentBrand[] = cascosBrands.map((b) => ({
   crossDesc: cascosCrossDesc[b.slug] ?? b.eyebrow,
 } as EquipmentBrand));
 
-export const brandPages: EquipmentBrand[] = [...cascosAdapted, ...trajesBrandList, ...scbaBrandList, ...camarasBrandList, ...herramientasBrandList, ...sistemasCIBrandList, ...hazmatBrandList, ...extintoresBrandList, ...dronesBrandList];
+export const brandPages: EquipmentBrand[] = [...cascosAdapted, ...trajesBrandList, ...scbaBrandList, ...camarasBrandList, ...herramientasBrandList, ...sistemasCIBrandList, ...hazmatBrandList, ...extintoresBrandList, ...dronesBrandList, ...senalizacionBrandList];
 
 export function brandPageBySlug(slug: string): EquipmentBrand | undefined {
   return brandPages.find((b) => b.slug === slug);

@@ -1,0 +1,8 @@
+---
+import BrandPage from '@components/products/BrandPage.astro';
+import { brandPageBySlug } from '@data/brandPages';
+
+const brand = brandPageBySlug('lamparas-de-emergencia')!;
+---
+
+<BrandPage brand={brand} />

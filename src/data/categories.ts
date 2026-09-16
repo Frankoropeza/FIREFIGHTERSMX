@@ -362,6 +362,25 @@ export const categories: Category[] = [
       imageAlt: 'Ilustración técnica de dron cuadricóptero con gimbal térmico detectando a una persona en búsqueda y rescate',
     },
   },
+  {
+    slug: 'senalizacion-emergencia',
+    shortDesc: 'Señalamientos de seguridad, lámparas de emergencia y botiquines de primeros auxilios para centros de trabajo.',
+    accent: '#34D399',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 4h18v16H3z"/><path d="M8 12h8M13 8l4 4-4 4"/></svg>`,
+    label: 'Señalización y Emergencia',
+    norm: 'NOM-026-STPS · NOM-003-SSPC · UL 924',
+    description: 'Señalamientos de seguridad NOM-026 y NOM-003-SSPC, lámparas de emergencia UL 924 y botiquines de primeros auxilios para empresas en México.',
+    intro: [
+      'Señalización, iluminación de emergencia y primeros auxilios completan la protección contra incendio: permiten que las personas identifiquen el riesgo, encuentren la salida y reciban la primera atención.',
+      'Suministramos señalamientos industriales y de protección civil (incluida la señalización fotoluminiscente Brady), lámparas de emergencia Lithonia y letreros de salida Sure-Lites listados UL 924, y botiquines First Aid Only conforme a ANSI/ISEA Z308.1.',
+    ],
+    items: [
+      { name: 'Señalamientos de seguridad', detail: 'Señalización industrial y de protección civil, incluida la señalización fotoluminiscente Brady.' },
+      { name: 'Lámparas de emergencia', detail: 'Lámparas Lithonia y letreros de salida Sure-Lites listados UL 924.' },
+      { name: 'Botiquines de primeros auxilios', detail: 'Botiquines First Aid Only conforme a ANSI/ISEA Z308.1.' },
+    ],
+    productCategory: 'Señalización y Emergencia',
+  },
 ];
 
 /** Catálogo completo (incluye trajes-bombero) — para el hub /productos */

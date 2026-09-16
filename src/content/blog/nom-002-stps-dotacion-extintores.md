@@ -99,7 +99,7 @@ La norma es muy específica en tres puntos que con frecuencia se ignoran:
 
 ## La señalización: más específica de lo que crees
 
-La **NOM-003-SSPC-2011** (antes NOM-003-SEGOB-2011) regula las señales de protección civil, y la **NOM-026-STPS-2008** las de seguridad en el centro de trabajo. No es un letrero cualquiera: el equipo contra incendio se identifica en color rojo de seguridad con contraste blanco, y el color de seguridad debe cubrir al menos el 50 % de la señal. Las normas permiten señales fotoluminiscentes para mejorar la visibilidad cuando falla la luz, y la NOM-026 pide al menos 50 lx sobre la superficie de la señal.
+La **NOM-003-SSPC-2011** (antes NOM-003-SEGOB-2011) regula las señales de protección civil, y la **NOM-026-STPS-2008** las de seguridad en el centro de trabajo. No es un letrero cualquiera: el equipo contra incendio se identifica en color rojo de seguridad con contraste blanco, y el color de seguridad debe cubrir al menos el 50 % de la señal. Las normas permiten [señales fotoluminiscentes](/productos/senalizacion-emergencia/senalamientos-de-seguridad/) para mejorar la visibilidad cuando falla la luz, y la NOM-026 pide al menos 50 lx sobre la superficie de la señal.
 
 El tamaño se calcula con la distancia de observación (L): la superficie mínima es S ≥ L²/2000 (S en m², L en m).
 

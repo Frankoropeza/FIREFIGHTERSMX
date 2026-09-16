@@ -14,7 +14,7 @@ image:
 
 Hay una estadística que incomoda a quien trabaja en seguridad de bomberos y que pocos discuten abiertamente: una parte significativa de los bomberos que mueren en incendios estructurales en el mundo desarrollado no mueren por quemaduras. Mueren por inhalación de humo y gases tóxicos, muchas veces después de haber salido del edificio, en el proceso de rehabilitación. Algunos, con SCBA puesto durante la intervención.
 
-La razón es conocida por quienes trabajan en medicina de bomberos: la exposición a humo no se termina cuando el bombero sale del fuego. Los gases se absorben a través de la piel y mucosas. El monóxido de carbono y el ácido cianhídrico permanecen en la atmósfera de la escena mucho después de que el fuego está controlado. Y en México, donde el uso del SCBA en rehabilitación post-incendio aún no es protocolo universal, los bomberos que descansan en el perímetro sin equipo de aire siguen respirando una atmósfera que los detectores de gas califican como peligrosa.
+La razón es conocida por quienes trabajan en medicina de bomberos: la exposición a humo no se termina cuando el bombero sale del fuego. Los gases se absorben a través de la piel y mucosas. El monóxido de carbono y el ácido cianhídrico permanecen en la atmósfera de la escena mucho después de que el fuego está controlado. Y en México, donde el uso del SCBA en rehabilitación post-incendio aún no es protocolo universal, los bomberos que descansan en el perímetro sin equipo de aire siguen respirando una atmósfera que los [detectores de gas](/productos/hazmat/detectores-de-gas/) califican como peligrosa.
 
 El detector de gas no es el equipo más caro de la dotación ni el más llamativo. Pero es, estadísticamente, uno de los que más capacidad tiene de prevenir muertes —no durante el pico de la intervención, sino antes y después de ella.
 
@@ -219,6 +219,8 @@ Tener el mejor detector de gas del mundo no sirve de nada si el protocolo de uso
 ---
 
 En [FIREFIGHTERS MX](/productos) suministramos la línea completa MSA Altair, Industrial Scientific Ventis y Dräger X-am, con kits de calibración y gas de referencia. Si tu corporación quiere evaluar qué opción corresponde a sus escenarios predominantes —estructural urbano, industrial o HazMat— [solicita una asesoría técnica sin costo](/cotizacion).
+
+Fichas disponibles: [Dräger Pac 6500](/productos/hazmat/drager-pac-6500-detector-monogas), [Dräger X-am 5600](/productos/hazmat/drager-x-am-5600-detector-multigas), [Dräger X-am 5800](/productos/hazmat/drager-x-am-5800-detector-multigas), [Honeywell BW Clip4](/productos/hazmat/honeywell-bw-clip4-detector-4-gases) e [Industrial Scientific Ventis Pro5](/productos/hazmat/industrial-scientific-ventis-pro5). Compara todos en [detectores de gas](/productos/hazmat/detectores-de-gas/).
 
 ---
 

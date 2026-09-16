@@ -1,0 +1,123 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import QuickLinksBar from '@components/common/QuickLinksBar.astro';
+import RelatedLinks from '@components/common/RelatedLinks.astro';
+import ProductCard from '@components/products/ProductCard.astro';
+import { categories } from '@data/categories';
+import { featuredProducts } from '@data/products';
+import { brandPages } from '@data/brandPages';
+import { SITE, whatsappUrl, CANAL_CONTACTO } from '@config/site';
+
+const cat = categories.find((category) => category.slug === 'senalizacion-emergencia')!;
+const canonicalURL = `${SITE.url}/productos/senalizacion-emergencia/`;
+const lineas = brandPages.filter((brand) => brand.categorySlug === cat.slug);
+const products = featuredProducts.filter((product) => product.category === cat.productCategory);
+const faqs = [
+  { q: '¿Qué norma regula los señalamientos de seguridad en México?', a: 'La NOM-026-STPS-2008 en centros de trabajo y la NOM-003-SSPC-2011 para protección civil.' },
+  { q: '¿Cuánto debe durar la luz de emergencia?', a: 'La NFPA 101 pide al menos 90 minutos de iluminación de emergencia, con un promedio inicial de 10.8 lux (1 ft-cd) al nivel del piso en la ruta de salida.' },
+  { q: '¿Qué botiquín necesito para mi negocio?', a: 'Clase A para oficinas y comercios de bajo riesgo; clase B para industria, construcción o áreas con más personal.' },
+];
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Productos', item: `${SITE.url}/productos/` },
+    { '@type': 'ListItem', position: 3, name: cat.label, item: canonicalURL },
+  ],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({ '@type': 'Question', name: faq.q, acceptedAnswer: { '@type': 'Answer', text: faq.a } })),
+};
+---
+
+<BaseLayout title="Señalización y emergencia — México" description={cat.description} canonicalURL={canonicalURL} schema={[breadcrumbSchema, faqSchema]}>
+  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+    <div class="container-site">
+      <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
+        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="/productos/" class="hover:text-[#FF6B26]">Productos</a></li>
+        <li aria-hidden="true">/</li>
+        <li><span style="color:#94A3B8" aria-current="page">{cat.label}</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">
+    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(52,211,153,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
+    <div class="container-site relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div>
+          <span class="section-eyebrow mb-5 inline-flex">{cat.norm}</span>
+          <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+            Señalización y emergencia<br/>
+            <span style="color:#F75000">para evacuar y atender con seguridad.</span>
+          </h1>
+          <a href={whatsappUrl('Cotiza señalamientos de seguridad, lámparas de emergencia y botiquines de primeros auxilios con un especialista.')} target="_blank" rel="noopener" class="btn btn-primary btn-lg">Cotizar por {CANAL_CONTACTO}</a>
+        </div>
+        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
+          {cat.intro.map((paragraph) => (
+            <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">{paragraph}</p>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <QuickLinksBar />
+
+  <section class="section" style="background:#070E1A" aria-labelledby="lineas-title">
+    <div class="container-site">
+      <div class="section-head">
+        <span class="section-eyebrow">Líneas</span>
+        <h2 id="lineas-title">Señalización, iluminación y<br/><span>primeros auxilios.</span></h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        {lineas.map((linea) => (
+          <a href={`/productos/${linea.categorySlug}/${linea.slug}/`} class="group flex flex-col gap-4 p-7" style="background:#040A12;border:1px solid rgba(74,117,153,0.18)">
+            <span class="badge badge-dark self-start">{linea.eyebrow}</span>
+            <h3 class="font-display font-bold text-xl group-hover:text-[#FF6B26]" style="color:#FFFFFF">{linea.brandLabel}</h3>
+            <p class="text-sm leading-relaxed flex-1" style="color:#94A3B8">{linea.crossDesc}</p>
+            <span class="text-xs font-display font-semibold uppercase tracking-wider" style="color:#FF8F57">Ver línea →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:#040A12" aria-labelledby="productos-title">
+    <div class="container-site">
+      <div class="section-head">
+        <span class="section-eyebrow">Productos</span>
+        <h2 id="productos-title">Productos de señalización<br/><span>y emergencia.</span></h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {products.map((product) => <ProductCard product={product} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:#070E1A" aria-labelledby="faq-title">
+    <div class="container-site max-w-4xl">
+      <div class="section-head">
+        <span class="section-eyebrow">Preguntas frecuentes</span>
+        <h2 id="faq-title">Información para<br/><span>tu centro de trabajo.</span></h2>
+      </div>
+      <div class="flex flex-col" style="border-top:1px solid rgba(74,117,153,0.18)">
+        {faqs.map((faq) => (
+          <article class="py-6" style="border-bottom:1px solid rgba(74,117,153,0.18)">
+            <h3 class="font-display font-bold text-lg mb-3" style="color:#FFFFFF">{faq.q}</h3>
+            <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{faq.a}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <RelatedLinks ruta="/productos/senalizacion-emergencia/" />
+</BaseLayout>

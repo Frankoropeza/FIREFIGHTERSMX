@@ -98,7 +98,18 @@ export const navigation: { main: NavItem[] } = { main: [
           { label: "DuPont Tychem",       href: "/productos/hazmat/dupont-tychem",     description: "NFPA 1990 · Nivel A encapsulado · Tychem 10000" },
           { label: "Lakeland Industries", href: "/productos/hazmat/lakeland-chemmax",  description: "NFPA 1990 · ChemMax · AlphaTec · FR" },
           { label: "MSA Safety",          href: "/productos/hazmat/msa-deteccion",     description: "Altair · multi-gas · ATEX · espacio confinado" },
+          { label: "Detectores de gas",   href: "/productos/hazmat/detectores-de-gas", description: "Personales · monogás · multigás" },
           { label: "Kappler",             href: "/productos/hazmat/kappler",           description: "Zytron 500 CBRN · Frontline FR · kits Nivel B" },
+        ],
+      },
+      {
+        label: 'Señalización y Emergencia',
+        href: '/productos/senalizacion-emergencia',
+        description: 'Señalamientos, lámparas de emergencia y botiquines',
+        children: [
+          { label: 'Señalamientos de seguridad', href: '/productos/senalizacion-emergencia/senalamientos-de-seguridad', description: 'NOM-026-STPS-2008 · NOM-003-SSPC-2011' },
+          { label: 'Lámparas de emergencia', href: '/productos/senalizacion-emergencia/lamparas-de-emergencia', description: 'UL 924 · NFPA 101' },
+          { label: 'Botiquines de primeros auxilios', href: '/productos/senalizacion-emergencia/botiquines-primeros-auxilios', description: 'ANSI/ISEA Z308.1' },
         ],
       },
       { label: "Drones de Emergencia",       href: "/productos/drones-emergencia",      description: "ISR, búsqueda y rescate" },

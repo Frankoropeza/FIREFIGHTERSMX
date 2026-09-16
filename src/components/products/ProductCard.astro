@@ -72,11 +72,13 @@ const pid = `pat-${p.slug}`;
     )}
 
     {/* Tier pill — top right */}
+    {p.tier && (
     <div class="flex justify-end relative z-10" style={p.highlight ? 'margin-top:0.5rem' : ''}>
       <span class="text-[9px] font-display font-semibold uppercase tracking-widest px-2.5 py-1" style="background:rgba(74,117,153,0.15);border:1px solid rgba(74,117,153,0.30);color:#4A9ED4">
-        {p.tier ?? 'Tier 1 · Internacional'}
+        {p.tier}
       </span>
     </div>
+    )}
 
     {/* Bottom: brand + norm */}
     <div class="relative z-10 flex items-end justify-between gap-2">

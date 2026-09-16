@@ -23,7 +23,10 @@ const categoryPath = product.href.split('/').slice(0, 3).join('/');
 /* Se resuelve contra el registro real de brand pages: slugificar `brand` producía
    URLs inexistentes con marcas acentuadas o de slug propio (Sköld, Dräger, MSA). */
 const brandEntry = product.brand
-  ? brandPages.find((b) => `/productos/${b.categorySlug}` === categoryPath && b.brand === product.brand)
+  ? brandPages.find((b) =>
+    `/productos/${b.categorySlug}` === categoryPath &&
+    (b.brand === product.brand || b.productSlugs?.includes(product.slug)),
+  )
   : undefined;
 const brandPath = brandEntry ? `/productos/${brandEntry.categorySlug}/${brandEntry.slug}` : null;
 
@@ -78,6 +81,10 @@ const specMeta: Record<string, SpecMeta> = {
   /* Drones */
   alcance:    { label: 'Alcance',           explica: 'Distancia máxima de transmisión entre la aeronave y el controlador bajo condiciones óptimas. En operaciones urbanas restar 30–40 % por interferencias.' },
   ip:         { label: 'Protección IP',     explica: 'Grado de protección IEC 60529 contra ingreso de polvo y agua. IP55 resiste lluvia y polvo en operaciones de campo; fundamental para uso en emergencias.' },
+  bateria:    { label: 'Batería',           explica: 'Tipo de batería del equipo.' },
+  potencia:   { label: 'Iluminación',       explica: 'Potencia y cantidad de lámparas LED.' },
+  prueba:     { label: 'Prueba',            explica: 'Mecanismo para verificar el funcionamiento.' },
+  capacidad:  { label: 'Capacidad',         explica: 'Capacidad indicada para el centro de trabajo.' },
 };
 
 type SpecRow = { label: string; val: string; explica: string; min?: string; alto?: string };
@@ -87,7 +94,7 @@ const specRows: SpecRow[] = product.specs
       .map(([k, v]) => ({
         label:   specMeta[k]?.label   ?? k,
         val:     v as string,
-        explica: specMeta[k]?.explica ?? '',
+        explica: product.suppressDefaultClaims ? '' : (specMeta[k]?.explica ?? ''),
         min:     specMeta[k]?.min,
         alto:    specMeta[k]?.alto,
       }))
@@ -100,17 +107,19 @@ const specSummary = specRows.length
 const certSentence = product.normClaim ?? `Certificado bajo ${product.norm ?? 'norma NFPA'} por laboratorio acreditado — número de modelo y serie verificables directamente con el fabricante.`;
 const introPara1 = `${product.title} es la referencia${product.tier ? ` ${product.tier.toLowerCase()}` : ''} de ${product.brand ?? product.category} para el mercado mexicano. ${product.description}${specSummary} ${certSentence}`;
 const introPara2 = product.dossierClaim ?? `Como distribuidores autorizados de ${product.brand ?? 'esta marca'} en México, entregamos el dossier documental completo para licitaciones públicas (CompraNet, IMSS, gobiernos estatales) y corporativas: certificado de conformidad ${product.norm ?? 'NFPA'}, ficha técnica oficial en español, carta de distribuidor autorizado y manifiesto de cumplimiento de norma por partida. Stock permanente en CDMX con entrega en 24–48 h.`;
-const heroParas = [introPara1, introPara2];
+const heroParas = product.detailIntro ?? [introPara1, introPara2];
 
 const heroBadges = [
   product.norm,
   product.brand,
   product.badge,
   product.tier,
-  'Distribuidor autorizado MX',
-  'Stock CDMX · 24–48 h',
-  'Ficha técnica incluida',
-  'Licitación pública / privada',
+  ...(!product.suppressDefaultClaims ? [
+    'Distribuidor autorizado MX',
+    'Stock CDMX · 24–48 h',
+    'Ficha técnica incluida',
+    'Licitación pública / privada',
+  ] : []),
   ...specRows.slice(0, 2).map((s) => `${s.label}: ${s.val}`),
 ].filter(Boolean) as string[];
 
@@ -476,7 +485,10 @@ const seoTitle =
   [...seoTituloCorto].length <= 70
     ? seoTituloCorto
     : recortarTituloSEO(product.title);
-const seoDesc  = `${product.description} Distribuidor autorizado ${product.brand ?? ''} en México. ${product.norm ?? ''} certificado con documentación completa para licitación.`.replace(/\s+/g, ' ').trim().slice(0, 158);
+const seoDesc = (product.suppressDefaultClaims
+  ? product.description
+  : `${product.description} Distribuidor autorizado ${product.brand ?? ''} en México. ${product.norm ?? ''} certificado con documentación completa para licitación.`
+).replace(/\s+/g, ' ').trim().slice(0, 158);
 ---
 
 <BaseLayout
@@ -531,8 +543,8 @@ const seoDesc  = `${product.description} Distribuidor autorizado ${product.brand
 
           <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
             {product.description}
-            {product.norm && <> Certificado <strong style="color:#FFFFFF">{product.norm}</strong>.</>}
-            {' '}Distribuidor autorizado en México.
+            {!product.suppressDefaultClaims && product.norm && <> Certificado <strong style="color:#FFFFFF">{product.norm}</strong>.</>}
+            {!product.suppressDefaultClaims && ' Distribuidor autorizado en México.'}
           </p>
 
           <div class="flex flex-col sm:flex-row gap-3">
@@ -613,7 +625,7 @@ const seoDesc  = `${product.description} Distribuidor autorizado ${product.brand
                 ))}
               </div>
               <p class="text-[10px] mt-2 text-right" style="color:var(--forge-300)">
-                {product.category} · {product.brand ?? ''} · Distribuidor autorizado México
+                {product.category} · {product.brand ?? ''}{!product.suppressDefaultClaims && ' · Distribuidor autorizado México'}
               </p>
             </div>
           )}
@@ -626,10 +638,12 @@ const seoDesc  = `${product.description} Distribuidor autorizado ${product.brand
                 Descripción técnica <span style="color:#F75000">del equipo.</span>
               </h2>
               <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">{product.description}</p>
-              <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">
-                Como distribuidor autorizado de {product.brand ?? 'esta marca'} en México, entregamos cada unidad con número de serie verificable, certificado de conformidad {product.norm ?? 'NFPA'} con el número de laboratorio acreditado, y documentación completa para licitación pública o proceso de compra corporativo.
-              </p>
-              {product.brand && (
+              {!product.suppressDefaultClaims && (
+                <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">
+                  Como distribuidor autorizado de {product.brand ?? 'esta marca'} en México, entregamos cada unidad con número de serie verificable, certificado de conformidad {product.norm ?? 'NFPA'} con el número de laboratorio acreditado, y documentación completa para licitación pública o proceso de compra corporativo.
+                </p>
+              )}
+              {!product.suppressDefaultClaims && product.brand && (
                 <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">
                   {product.brand} es referencia mundial en {product.category.toLowerCase()} con presencia activa en los principales cuerpos de bomberos y brigadas industriales de América Latina. La línea {product.title} representa el estándar tier-1 en licitaciones públicas en México.
                 </p>
@@ -694,9 +708,11 @@ const seoDesc  = `${product.description} Distribuidor autorizado ${product.brand
                 <h2 class="font-display font-bold mb-2" style="color:#FFFFFF;font-size:clamp(1.25rem,2.5vw,1.875rem);line-height:1.1">
                   Lo que distingue <span style="color:#F75000">a este equipo.</span>
                 </h2>
-                <p class="text-sm leading-relaxed mb-6" style="color:#64748B">
-                  Documentado en la ficha técnica oficial — verificable por número de modelo y laboratorio acreditado.
-                </p>
+                {!product.suppressDefaultClaims && (
+                  <p class="text-sm leading-relaxed mb-6" style="color:#64748B">
+                    Documentado en la ficha técnica oficial — verificable por número de modelo y laboratorio acreditado.
+                  </p>
+                )}
               </div>
               <div class={`grid grid-cols-1 ${product.features.length === 2 ? 'sm:grid-cols-2' : 'sm:grid-cols-3'} gap-px`}
                    style="border-top:1px solid rgba(74,117,153,0.18)">
@@ -719,6 +735,7 @@ const seoDesc  = `${product.description} Distribuidor autorizado ${product.brand
           )}
 
           {/* Aplicaciones */}
+          {!product.suppressDefaultClaims && (
           <div style="background:#040A12;border:1px solid rgba(74,117,153,0.18)">
             <div class="px-6 py-4" style="border-bottom:1px solid rgba(74,117,153,0.18)">
               <span class="section-eyebrow inline-flex">Cuándo es la opción correcta</span>
@@ -764,8 +781,10 @@ const seoDesc  = `${product.description} Distribuidor autorizado ${product.brand
               </div>
             </div>
           </div>
+          )}
 
           {/* Documentación para licitación */}
+          {!product.suppressDefaultClaims && (
           <div style="background:#040A12;border:1px solid rgba(74,117,153,0.18)">
             <div class="px-6 py-4" style="border-bottom:1px solid rgba(74,117,153,0.18)">
               <span class="section-eyebrow inline-flex">Distribuidor autorizado · Stock CDMX</span>
@@ -805,6 +824,7 @@ const seoDesc  = `${product.description} Distribuidor autorizado ${product.brand
               </div>
             </div>
           </div>
+          )}
 
         </main>
 
@@ -816,7 +836,7 @@ const seoDesc  = `${product.description} Distribuidor autorizado ${product.brand
             <div class="p-5">
               <p class="text-[10px] font-display font-bold uppercase tracking-widest mb-1" style="color:rgba(255,255,255,0.7)">Cotización inmediata</p>
               <p class="font-display font-bold text-base mb-3" style="color:#FFFFFF;line-height:1.2">{product.title}</p>
-              {product.norm && <p class="text-[10px] mb-4" style="color:rgba(255,255,255,0.75)">{product.norm} · Distribuidor autorizado MX</p>}
+              {product.norm && <p class="text-[10px] mb-4" style="color:rgba(255,255,255,0.75)">{product.norm}{!product.suppressDefaultClaims && ' · Distribuidor autorizado MX'}</p>}
               <a href={whatsappUrl(`Hola, quiero cotizar el ${product.title}${product.norm ? ` (${product.norm})` : ''}. ¿Precio y disponibilidad?`)} target="_blank" rel="noopener"
                  class="block text-center text-sm font-display font-bold py-3 px-4 w-full hover:opacity-90"
                  style="background:#FFFFFF;color:#F75000">
@@ -1041,16 +1061,18 @@ const seoDesc  = `${product.description} Distribuidor autorizado ${product.brand
       <div class="container-site">
         <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
-            <span class="text-[9px] font-bold uppercase tracking-widest block mb-1" style="color:var(--forge-300)">
-              Distribuidor autorizado en México
-            </span>
+            {!product.suppressDefaultClaims && (
+              <span class="text-[9px] font-bold uppercase tracking-widest block mb-1" style="color:var(--forge-300)">
+                Distribuidor autorizado en México
+              </span>
+            )}
             <p class="font-display font-bold text-lg m-0" style="color:#FFFFFF">
               {product.brand}
               <span style="color:#F75000"> · </span>
               <span style="color:#94A3B8;font-size:0.875rem;font-weight:400">Catálogo completo de modelos</span>
             </p>
           </div>
-          <a href={brandPath} class="btn btn-ghost shrink-0">
+          <a href={brandPath} class="btn btn-ghost max-w-full min-w-0 whitespace-normal text-center">
             Todos los modelos {product.brand} →
           </a>
         </div>
@@ -1072,12 +1094,14 @@ const seoDesc  = `${product.description} Distribuidor autorizado ${product.brand
               <span style="color:#F75000">que pueden interesarte.</span>
             </h2>
           </div>
-          <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-            <p class="text-sm leading-relaxed" style="color:#94A3B8">
-              Todos los modelos que distribuimos están certificados {product.norm ?? 'NFPA'} con documentación
-              completa. Te asesoramos para identificar la opción más adecuada para tu operación y presupuesto.
-            </p>
-          </div>
+          {!product.suppressDefaultClaims && (
+            <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
+              <p class="text-sm leading-relaxed" style="color:#94A3B8">
+                Todos los modelos que distribuimos están certificados {product.norm ?? 'NFPA'} con documentación
+                completa. Te asesoramos para identificar la opción más adecuada para tu operación y presupuesto.
+              </p>
+            </div>
+          )}
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">

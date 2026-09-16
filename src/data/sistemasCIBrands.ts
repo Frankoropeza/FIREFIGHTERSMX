@@ -770,7 +770,7 @@ const redHidraulica: EquipmentBrand = {
   heroLead: 'La red hidráulica es la columna vertebral de cualquier sistema contra incendio: gabinetes con manguera, bombas NFPA 20 y válvulas de control supervisadas. Sin una red hidráulica correctamente dimensionada, diseñada y supervisada, los rociadores y los sistemas de agente limpio no pueden funcionar. Seis componentes clave para el proyecto completo.',
   heroIntro: [
     'El diseño de la red hidráulica define la presión y el caudal disponibles para cada rociador, gabinete y sistema de agente limpio del proyecto. Una bomba subdimensionada o una válvula sin supervisión puede invalidar toda la certificación del sistema y dejar expuesta la instalación ante aseguradoras y autoridades. La NFPA 20 establece los criterios de diseño, instalación y prueba de la bomba; la NFPA 14 los de la red de gabinetes; y la NOM-002-STPS los requisitos mínimos de dotación en el mercado mexicano.',
-    'Ofrecemos la red hidráulica completa: gabinetes Tipo I y Tipo II con manguera certificada NMX-N-009, bombas jockey, principal eléctrica y diesel de emergencia con controladores UL 218, y válvulas OS&Y supervisadas con switch tamper. Diseño hidráulico, suministro de materiales, instalación y pruebas de aceptación NFPA 20 en un solo proveedor.',
+    'Ofrecemos la red hidráulica completa: gabinetes Tipo I y Tipo II con manguera, bombas jockey, principal eléctrica y diesel de emergencia con controladores UL 218, y válvulas OS&Y supervisadas con switch tamper. Diseño hidráulico, suministro de materiales, instalación y pruebas de aceptación NFPA 20 en un solo proveedor.',
   ],
   heroBadges: ['NFPA 20', 'NFPA 14', 'NOM-002-STPS', 'UL Listed', 'FM Approved', 'Gabinetes · Bombas · Válvulas', 'Diseño + Suministro + Instalación'],
   seoTitle: 'Red Hidráulica Contra Incendio — Gabinetes CI, Bombas NFPA 20 y Válvulas · México',
@@ -810,8 +810,8 @@ const redHidraulica: EquipmentBrand = {
       badge: 'NFPA 14 · NOM-002-STPS',
       titulo: 'Gabinetes de manguera CI',
       modelos: 'Tipo I 30 m · Tipo II 20 m',
-      desc: 'Primera respuesta manual ante un incendio incipiente. El gabinete Tipo I con manguera 38mm × 30m para naves industriales y bodegas; el Tipo II con manguera 25mm × 20m para pasillos, hoteles y hospitales. Certificados NOM-002-STPS y NMX-N-009.',
-      tech: 'Manguera NMX-N-009 · Válvula ángulo bronce · Pitón regulable 3 posiciones',
+      desc: 'Primera respuesta manual ante un incendio incipiente. El gabinete Tipo I con manguera 38mm × 30m para naves industriales y bodegas; el Tipo II con manguera 25mm × 20m para pasillos, hoteles y hospitales. Equipo para cumplir la NOM-002-STPS-2010.',
+      tech: 'Manguera · Válvula ángulo bronce · Pitón regulable 3 posiciones',
     },
     {
       tipo: 'red-hidraulica',

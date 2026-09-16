@@ -475,4 +475,108 @@ const kapplerHazmat: EquipmentBrand = {
   notaPie: '* La selección del nivel de protección EPA (A/B/C/D) debe basarse en la identificación del agente, las tablas de permeación del fabricante y el plan de respuesta de la brigada. La certificación NFPA no garantiza protección ante toda sustancia — siempre verificar la tabla de permeación específica.',
 };
 
-export const hazmatBrandList: EquipmentBrand[] = [dupontTychem, lakelandChemMax, msaDeteccion, kapplerHazmat];
+const detectoresDeGas: EquipmentBrand = {
+  tipoPagina: 'linea',
+  categorySlug: 'hazmat',
+  slug: 'detectores-de-gas',
+  brand: 'MSA Safety',
+  brandLabel: 'Detectores de gas',
+  productSlugs: [
+    'msa-altair-4xr',
+    'msa-altair-2x-detector-monogas',
+    'drager-pac-6500-detector-monogas',
+    'drager-x-am-5600-detector-multigas',
+    'drager-x-am-5800-detector-multigas',
+    'honeywell-bw-clip4-detector-4-gases',
+    'industrial-scientific-ventis-pro5',
+  ],
+  crossDesc: 'Detectores personales, monogás y multigás.',
+  eyebrow: 'Detección de gases · NOM-010-STPS-2014',
+  heroTitleTop: 'Detectores de gas',
+  heroTitleAccent: 'personales y multigás.',
+  heroLead: 'Un detector de gas es un instrumento con sensor que mide la concentración de un gas en el aire y activa una alarma cuando se alcanza un nivel peligroso. Sirve para detectar fugas de gas natural o LP, monóxido de carbono y gases tóxicos antes de que alguien respire una dosis dañina o se forme una mezcla explosiva. Suministramos detectores de gases personales y multigás de MSA, Dräger, Honeywell e Industrial Scientific para la industria, la brigada y los cuerpos de bomberos.',
+  heroIntro: [],
+  heroBadges: ['NOM-010-STPS-2014'],
+  seoTitle: 'Detector de gas portátil y multigás: detecta fugas y gases tóxicos',
+  seoDescription: 'Detectores de gas MSA, Dräger, Honeywell e Industrial Scientific: cómo funciona un detector de gas, tipos, dónde instalarlo y qué hacer ante una fuga de gas.',
+  stats: [],
+  credenciales: [],
+  bloques: [
+    {
+      id: 'como-funciona-un-detector-de-gas',
+      titulo: '¿Cómo funciona un detector de gas?',
+      parrafos: ['El detector toma el aire del ambiente y lo hace pasar por su sensor. Según la tecnología, el sensor responde a la presencia de gases combustibles, de gases tóxicos o a la falta de oxígeno, y el equipo traduce esa señal a una concentración en ppm o en % LEL. Si la concentración de gas supera el nivel de alarma configurado, enciende luces LED, suena una alerta sonora y vibra.'],
+      items: [
+        { t: 'Electroquímico', d: 'para gases tóxicos como monóxido de carbono (CO) y sulfuro de hidrógeno (H₂S).' },
+        { t: 'Catalítico', d: 'para combustibles como metano, propano y gas LP.' },
+        { t: 'Infrarrojo', d: 'para combustibles y CO₂.' },
+        { t: 'PID (fotoionización)', d: 'para compuestos orgánicos volátiles.' },
+      ],
+    },
+    {
+      id: 'tipos-de-detectores-de-gas',
+      titulo: 'Tipos de detectores de gas',
+      tabla: {
+        cols: ['Tipo', 'Para qué sirve', 'Modelos'],
+        filas: [
+          ['Monogás personal', 'Cuando el riesgo se reduce a un solo gas (CO, H₂S, SO₂, O₂)', 'MSA ALTAIR 2X, Dräger Pac 6500'],
+          ['Multigás portátil', 'Varios gases a la vez: combustibles, O₂, CO, H₂S y otros tóxicos', 'MSA ALTAIR 4XR, Dräger X-am 5600 y X-am 5800, Honeywell BW Clip4, Industrial Scientific Ventis Pro5'],
+          ['Detector fijo', 'Monitoreo permanente de un área, cuarto de máquinas o cocina', 'Se integra al sistema de alarma del inmueble'],
+        ],
+      },
+    },
+    {
+      id: 'detectores-de-gas-que-manejamos',
+      titulo: 'Detectores de gas que manejamos',
+      items: [
+        { t: 'MSA ALTAIR 4XR', d: 'multigás para combustibles (LEL), O₂ y pares tóxicos; IP68, resiste caídas de 7.5 m sobre concreto, batería recargable de 20 h y alertas MotionAlert e InstantAlert.' },
+        { t: 'Dräger X-am 5800', d: '4 puertos para 1 a 6 gases, incluidos inflamables y COV por PID; IP68.' },
+        { t: 'Honeywell BW Clip4', d: 'H₂S, CO, O₂ y combustibles; 2 años de operación continua sin cargar ni cambiar batería; IP68.' },
+        { t: 'Industrial Scientific Ventis Pro5', d: 'hasta 5 gases simultáneos con conectividad inalámbrica, LTE y satelital; IP68.' },
+      ],
+    },
+    {
+      id: 'detector-de-gas-fijo-o-portatil-cual-elegir',
+      titulo: 'Detector de gas fijo o portátil: cuál elegir',
+      parrafos: ['El detector fijo vigila un solo punto las 24 horas: cocinas industriales, cuartos de calefacción, calderas y áreas de almacenamiento de combustible. El detector portátil acompaña al trabajador y detecta fugas donde esté, lo que lo hace indispensable en mantenimiento, espacios confinados, respuesta a emergencias y trabajos con materiales peligrosos. En el hogar, un detector de gas doméstico cerca de la cocina y del calentador es una medida de seguridad básica para prevenir intoxicaciones y explosiones.'],
+    },
+    {
+      id: 'limites-de-exposicion-en-mexico',
+      titulo: 'Límites de exposición en México',
+      parrafos: ['La NOM-010-STPS-2014 fija valores límite de exposición para agentes químicos en el ambiente laboral. Para el monóxido de carbono el promedio ponderado en tiempo es de 25 ppm, y para el sulfuro de hidrógeno de 1 ppm, con un valor de corto tiempo de 5 ppm. Un detector bien configurado avisa antes de llegar a esos niveles.'],
+    },
+    {
+      id: 'donde-instalar-un-detector-de-gas-para-fugas-de-gas-natural-o-lp',
+      titulo: '¿Dónde instalar un detector de gas para fugas de gas natural o LP?',
+      parrafos: ['Depende de la densidad del gas. El gas natural (metano) es más ligero que el aire y se acumula arriba, por lo que el detector fijo va cerca del techo. El gas LP (propano y butano) es más pesado y se acumula abajo, así que el detector va cerca del piso. El detector personal se porta en la zona de respiración del trabajador.'],
+    },
+    {
+      id: 'que-hacer-si-suena-la-alarma',
+      titulo: 'Qué hacer si suena la alarma',
+      pasos: [
+        'Sal del área y aleja a las personas.',
+        'No enciendas luces ni aparatos eléctricos si sospechas una fuga de gas combustible.',
+        'Cierra la válvula de suministro si puedes hacerlo sin riesgo.',
+        'Llama a los servicios de emergencia al 911 y ventila solo si es seguro.',
+      ],
+    },
+    {
+      id: 'calibracion-y-mantenimiento',
+      titulo: 'Calibración y mantenimiento',
+      parrafos: ['Todo detector de gas requiere prueba funcional, calibración con gas patrón y cambio de sensores según el manual del fabricante. Sin esa verificación, la lectura pierde sensibilidad y el equipo puede no dar aviso a tiempo.'],
+    },
+  ],
+  linesIntro: '',
+  lineas: [],
+  comparativa: [],
+  faq: [
+    { q: '¿Qué diferencia hay entre un detector monogás y uno multigás?', a: 'El monogás mide un solo gas y se usa cuando el riesgo se reduce a ese gas; el multigás mide varios gases a la vez, por ejemplo combustibles, oxígeno, CO y H₂S.' },
+    { q: '¿Qué límite de monóxido de carbono fija la NOM-010-STPS-2014?', a: 'Un valor límite de exposición promedio ponderado en tiempo de 25 ppm.' },
+    { q: '¿Dónde se coloca un detector de gas LP?', a: 'Cerca del piso, porque el gas LP es más pesado que el aire; el de gas natural va cerca del techo.' },
+  ],
+  ctaKicker: 'Detectores de gas',
+  ctaTitleHtml: 'Cotiza tu detector de gas con un especialista y recibe la configuración de sensores para tu operación.',
+  waQuote: 'Cotiza tu detector de gas con un especialista y recibe la configuración de sensores para tu operación.',
+};
+
+export const hazmatBrandList: EquipmentBrand[] = [dupontTychem, lakelandChemMax, msaDeteccion, kapplerHazmat, detectoresDeGas];
