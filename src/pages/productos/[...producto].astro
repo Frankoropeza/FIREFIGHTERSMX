@@ -485,8 +485,13 @@ const seoTitle =
   [...seoTituloCorto].length <= 70
     ? seoTituloCorto
     : recortarTituloSEO(product.title);
-const seoDesc = (product.suppressDefaultClaims
+/* Descripción corta (<110, Ahrefs 2026-09-16): se completa con datos de la propia
+   ficha —nombre, categoría, norma— sin añadir afirmaciones comerciales. */
+const descBase = product.description.length >= 110
   ? product.description
+  : `${product.description} ${product.title}: especificaciones, ${product.norm ? `${product.norm}, ` : ''}ficha técnica y cotización en México.`;
+const seoDesc = (product.suppressDefaultClaims
+  ? descBase
   : `${product.description} Distribuidor autorizado ${product.brand ?? ''} en México. ${product.norm ?? ''} certificado con documentación completa para licitación.`
 ).replace(/\s+/g, ' ').trim().slice(0, 158);
 ---

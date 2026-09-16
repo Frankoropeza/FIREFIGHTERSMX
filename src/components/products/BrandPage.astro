@@ -91,7 +91,9 @@ const aboutSchema = esLinea ? {
   '@type': 'Thing',
   name: brand.brandLabel,
 } : {
-  '@type': 'Brand',
+  /* Organization y no Brand: foundingDate y parentOrganization no existen en Brand
+     (schema.org lo marcaba como error en las 22 páginas de marca, Ahrefs 2026-09-16). */
+  '@type': 'Organization',
   name: brand.brandLabel,
   ...(brand.founding ? { foundingDate: brand.founding } : {}),
   ...(brand.parentOrg

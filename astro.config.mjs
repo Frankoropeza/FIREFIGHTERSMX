@@ -103,6 +103,7 @@ const barraFinalInterna = () => ({
         return esPagina.get(ruta);
       };
       const re = /href="(?:https:\/\/firefighters\.mx)?(\/[^"#?]*?[^\/"#?])([?#][^"]*)?"/g;
+      const reAbs = /"https:\/\/firefighters\.mx(\/[^"#?\s<>]*?[^\/"#?\s<>])([?#][^"]*)?"/g;
       let archivos = 0, cambios = 0;
       const recorrer = (d) => {
         for (const e of readdirSync(d, { withFileTypes: true })) {
@@ -111,11 +112,14 @@ const barraFinalInterna = () => ({
           if (!e.name.endsWith('.html')) continue;
           const src = readFileSync(f, 'utf8');
           let n = 0;
-          const out = src.replace(re, (m, ruta, resto = '') => {
+          const arreglar = (m, ruta, resto = '') => {
             if (/\.[a-z0-9]{2,5}$/i.test(ruta) || ruta.startsWith('/cdn-cgi/') || !existe(ruta)) return m;
             n++;
             return m.replace(ruta + resto + '"', ruta + '/' + resto + '"');
-          });
+          };
+          // 1) href relativos y absolutos · 2) URLs absolutas entre comillas en
+          // JSON-LD y metadatos (migas, ItemList, url de entidades)
+          const out = src.replace(re, arreglar).replace(reAbs, arreglar);
           if (n) { writeFileSync(f, out); archivos++; cambios += n; }
         }
       };

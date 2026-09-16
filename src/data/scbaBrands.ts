@@ -119,7 +119,7 @@ const dragerPss: EquipmentBrand = {
   heroBadges: ['Versión certificada NFPA', 'EN 137', 'Fundada en Lübeck en 1889', 'Distribuidor autorizado MX'],
   seoTitle: 'SCBA Dräger PSS 7000 — Aire Autónomo MX',
   seoDescription:
-    'Dräger PSS 7000 en versión europea EN 137 y en versión certificada NFPA para América.',
+    'Equipo de respiración autónoma Dräger PSS 7000 en versión europea EN 137 y en versión certificada NFPA para América: modelos, arnés y cotización en México.',
   founding: '1889',
   parentOrg: { name: 'Drägerwerk AG & Co. KGaA' },
   stats: [

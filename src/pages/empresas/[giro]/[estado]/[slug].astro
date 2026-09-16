@@ -161,7 +161,8 @@ const businessSchema = { '@context': 'https://schema.org', '@type': 'LocalBusine
   address: { '@type': 'PostalAddress', addressLocality: e.ciudad, addressRegion: edo.nombre, addressCountry: 'MX', ...(e.direccion ? { streetAddress: e.direccion } : {}), ...(e.codigoPostal ? { postalCode: e.codigoPostal } : {}) },
   ...(hasMap ? { geo: { '@type': 'GeoCoordinates', latitude: e.coordenadas!.lat, longitude: e.coordenadas!.lng } } : {}),
   areaServed: { '@type': 'AdministrativeArea', name: edo.nombre }, knowsAbout: [g.label, ...g.normas, ...esp.map((x) => x.label)],
-  ...(esVIP && e.vip?.lineas.length ? { hasOfferCatalog: { '@type': 'OfferCatalog', name: `Catálogo de ${e.nombre}`, itemListElement: e.vip.lineas.map((l) => ({ '@type': 'Offer', itemOffered: { '@type': 'Product', name: l.nombre, ...(l.pagina && lineasInternas[l.pagina] ? { url: `${SITE.url}${lineasInternas[l.pagina]}` } : {}) } })) } } : {}) };
+  ...(esVIP && e.vip?.lineas.length ? { hasOfferCatalog: { '@type': 'OfferCatalog', name: `Catálogo de ${e.nombre}`, itemListElement: e.vip.lineas.map((l, i) => ({ '@type': 'ListItem', position: i + 1, name: l.nombre, ...(l.pagina && lineasInternas[l.pagina] ? { url: `${SITE.url}${lineasInternas[l.pagina]}` } : {}) })) } } : {}) };
+// Catálogo VIP con ListItem y no Offer→Product: un Product sin precio ni reseñas es error de rich results (Ahrefs 2026-09-16). No inventamos precios.
 const faqSchemaFicha = esVIP && e.vip?.faq.length ? { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: e.vip.faq.map((f) => ({ '@type': 'Question', name: f.pregunta, acceptedAnswer: { '@type': 'Answer', text: f.respuesta } })) } : null;
 /**
  * Columna derecha del hero: dos párrafos de venta.

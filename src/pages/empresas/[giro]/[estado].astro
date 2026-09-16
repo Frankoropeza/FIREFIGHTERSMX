@@ -43,7 +43,12 @@ const seoMeta = {
   title: `${g.label.split(':')[0].trim()} en ${estado.nombre} — Directorio`,
   description: vacio
     ? `Directorio de empresas de ${g.sustantivo} en ${estado.nombre}. Aún no hay empresas registradas en este giro y estado: registra la tuya gratis.`
-    : `Empresas de ${g.sustantivo} en ${estado.nombre}: ${ciudades.slice(0, 4).map((c) => c.ciudad).join(', ')}. Mapa, contacto, especialidades y fuente de cada registro.`.slice(0, 160),
+    : (() => {
+        // Si la única ciudad se llama igual que el estado («Colima: Colima») se omite la lista.
+        const lista = ciudades.slice(0, 4).map((c) => c.ciudad).filter((c) => c !== estado.nombre);
+        const base = `Empresas de ${g.sustantivo} en ${estado.nombre}${lista.length ? ` (${lista.join(', ')})` : ''}`;
+        return `${base}: directorio con mapa, datos de contacto, especialidades y la fuente pública de cada registro.`;
+      })(),
   canonicalURL,
 };
 const breadcrumbSchema = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [

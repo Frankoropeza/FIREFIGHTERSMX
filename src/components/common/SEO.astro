@@ -1,4 +1,5 @@
 ---
+import { acortarTitulo, TITULO_MAX } from '@lib/titulo-seo';
 import { SITE, CONTACTO_DIRECTO_ACTIVO, DOMICILIO_VERIFICADO, REDES_VERIFICADAS, TELEFONO_ACTIVO } from '@config/site';
 export interface Props {
   title: string;
@@ -29,8 +30,7 @@ const {
   empresa ya se come el renglón y el sufijo únicamente provocaba que el
   buscador truncara o reescribiera el título; ahí vale más el nombre.
 */
-const TITULO_MAX = 70;
-const tituloBase = title.trim();
+const tituloBase = acortarTitulo(title);
 const tituloConMarca = `${tituloBase} | ${SITE.name}`;
 const fullTitle =
   noBrandSuffix || tituloBase.includes(SITE.name)
