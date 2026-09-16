@@ -97,7 +97,7 @@ export const navigation: { main: NavItem[] } = { main: [
         description: "DuPont Tychem · Lakeland · MSA · Kappler",
         children: [
           { label: "DuPont Tychem",       href: "/productos/hazmat/dupont-tychem",     description: "NFPA 1990 · Nivel A encapsulado · Tychem 10000" },
-          { label: "Lakeland Industries", href: "/productos/hazmat/lakeland-chemmax",  description: "NFPA 1990 · ChemMax · AlphaTec · FR" },
+          { label: "Lakeland Industries", href: "/productos/hazmat/lakeland-chemmax",  description: "ChemMax · Interceptor Plus · Pyrolon CRFR" },
           { label: "MSA Safety",          href: "/productos/hazmat/msa-deteccion",     description: "Altair · multi-gas · ATEX · espacio confinado" },
           { label: "Detectores de gas",   href: "/productos/hazmat/detectores-de-gas", description: "Personales · monogás · multigás" },
           { label: "Kappler",             href: "/productos/hazmat/kappler",           description: "Zytron 500 CBRN · Frontline FR · kits Nivel B" },

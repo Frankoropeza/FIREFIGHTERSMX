@@ -168,3 +168,23 @@
 # SCBA Dräger PSS 7000: la ficha CBRN pasa a versión NFPA (CBRN no verificado) 2026-09-16
 /productos/equipos-scba/drager-pss7000-cbrn /productos/equipos-scba/drager-pss7000-nfpa 301
 /productos/equipos-scba/drager-pss7000-cbrn/ /productos/equipos-scba/drager-pss7000-nfpa 301
+
+# Depuración de fichas HAZMAT inexistentes y homologación de slugs (2026-09-15)
+/productos/hazmat/dupont-tychem-f3-class3 /productos/hazmat/dupont-tychem/ 301
+/productos/hazmat/dupont-tychem-f3-class3/ /productos/hazmat/dupont-tychem/ 301
+/productos/hazmat/dupont-tychem-400-nivel-c /productos/hazmat/dupont-tychem/ 301
+/productos/hazmat/dupont-tychem-400-nivel-c/ /productos/hazmat/dupont-tychem/ 301
+/productos/hazmat/kappler-responder-cst-nivel-b /productos/hazmat/kappler/ 301
+/productos/hazmat/kappler-responder-cst-nivel-b/ /productos/hazmat/kappler/ 301
+/productos/hazmat/kappler-suit-pack-kit-nivel-b /productos/hazmat/kappler/ 301
+/productos/hazmat/kappler-suit-pack-kit-nivel-b/ /productos/hazmat/kappler/ 301
+/productos/hazmat/lakeland-alphatec-5000 /productos/hazmat/lakeland-chemmax/ 301
+/productos/hazmat/lakeland-alphatec-5000/ /productos/hazmat/lakeland-chemmax/ 301
+/productos/hazmat/msa-meridian-monitor-portatil /productos/hazmat/detectores-de-gas/ 301
+/productos/hazmat/msa-meridian-monitor-portatil/ /productos/hazmat/detectores-de-gas/ 301
+/productos/hazmat/msa-chillgard-rt-monitor-refrigerante /productos/hazmat/detectores-de-gas/ 301
+/productos/hazmat/msa-chillgard-rt-monitor-refrigerante/ /productos/hazmat/detectores-de-gas/ 301
+/productos/hazmat/kappler-frontline-500-nivel-c /productos/hazmat/kappler-frontline-500-nivel-a/ 301
+/productos/hazmat/kappler-frontline-500-nivel-c/ /productos/hazmat/kappler-frontline-500-nivel-a/ 301
+/productos/hazmat/lakeland-pyrolon-fr /productos/hazmat/lakeland-pyrolon-crfr/ 301
+/productos/hazmat/lakeland-pyrolon-fr/ /productos/hazmat/lakeland-pyrolon-crfr/ 301

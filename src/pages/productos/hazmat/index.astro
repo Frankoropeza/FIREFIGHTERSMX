@@ -11,8 +11,8 @@ const cat = categories.find((c) => c.slug === 'hazmat')!;
 const canonicalURL = `${SITE.url}/productos/hazmat/`;
 
 const seoMeta = {
-  title: 'Equipos HAZMAT NFPA 1990: DuPont Tychem y Lakeland · México',
-  description: 'Equipos HAZMAT certificados NFPA 1990 en México: trajes encapsulados DuPont Tychem y Lakeland ChemMax (Nivel A y B), monitores multi-gas MSA Altair (ATEX). Tablas de permeación · asesoría por agente. Distribuidor autorizado.',
+  title: 'Traje HAZMAT: niveles A, B, C y D y certificación NFPA 1990',
+  description: 'Trajes HAZMAT de protección química: qué son, niveles de protección, NFPA 1990 (1991, 1992 y 1994), encapsulados vs. no encapsulados, descontaminación y cómo elegir.',
   canonicalURL,
 };
 
@@ -28,7 +28,7 @@ const niveles = [
   {
     id: 'nivel-a',
     nivel: 'Nivel A',
-    norm: 'NFPA 1990',
+    norm: 'EPA · Nivel de protección',
     accent: '#EF4444',
     escenario: 'Atmósferas desconocidas · CBRN · vapor y gas tóxico',
     desc: 'Máxima protección disponible. Traje encapsulado hermético (vapor-tight) con SCBA interno. Obligatorio cuando el agente es desconocido, la concentración es alta o existe riesgo de exposición cutánea a vapores tóxicos. La selección de Nivel A no puede basarse solo en el nivel — requiere verificación con la tabla de permeación del traje para el agente específico.',
@@ -38,17 +38,17 @@ const niveles = [
   {
     id: 'nivel-b',
     nivel: 'Nivel B',
-    norm: 'NFPA 1990',
+    norm: 'EPA · Nivel de protección',
     accent: '#F5A623',
     escenario: 'Agente conocido · salpicadura de líquidos · SCBA externo',
     desc: 'Protección contra salpicadura de líquidos con máxima protección respiratoria (SCBA externo). El agente debe ser conocido y la ruta de exposición debe ser por líquido —no vapor— verificada con tabla de permeación. Menor estrés térmico que Nivel A, permite operaciones más prolongadas cuando el riesgo de vapor ya fue descartado.',
-    marcas: 'DuPont Tychem 4000S · Lakeland AlphaTec 5000',
+    marcas: 'DuPont Tychem 4000S · Lakeland ChemMax 4 Plus',
     cuando: ['Agente identificado con riesgo por salpicadura de líquido —no vapor— verificado con tabla de permeación', 'Operaciones de descontaminación en zona templada', 'Respuesta a derrames de ácidos, bases y solventes con concentración atmosférica baja', 'Segunda entrada tras establecer la caracterización del agente en Nivel A'],
   },
   {
     id: 'nivel-c',
     nivel: 'Nivel C',
-    norm: 'NFPA 1990',
+    norm: 'EPA · Nivel de protección',
     accent: '#34D399',
     escenario: 'Agente conocido · bajo riesgo respiratorio · APR en lugar de SCBA',
     desc: 'Protección contra salpicadura con respirador purificador de aire (APR) en lugar de SCBA. Solo aplica cuando el agente está completamente caracterizado, la concentración atmosférica es conocida y no supera los umbrales que requieren SCBA. Usado principalmente en descontaminación de segunda línea y muestreo ambiental.',
@@ -61,8 +61,8 @@ const niveles = [
     norm: 'Pre-entrada',
     accent: '#60A5FA',
     escenario: 'Antes de seleccionar el nivel · caracterización del agente',
-    desc: 'El paso más crítico de la respuesta HAZMAT: caracterizar el agente antes de seleccionar el nivel de protección. El monitor multi-gas MSA Altair 5X con bomba aspirada permite muestrear el ambiente a hasta 27 m sin exposición del técnico — O₂, LEL, CO, H₂S y un gas tóxico configurable. Sin reconocimiento, la selección del nivel de protección es una estimación.',
-    marcas: 'MSA Altair 5X · MSA Altair 4XR',
+    desc: 'El paso más crítico de la respuesta HAZMAT es caracterizar el agente antes de seleccionar el nivel de protección. Un detector configurado para los gases esperados permite monitorear la atmósfera durante la operación; sin reconocimiento, la selección del nivel de protección es una estimación.',
+    marcas: 'MSA ALTAIR 4XR · MSA ALTAIR 2X',
     cuando: ['Primera acción en todo incidente HAZMAT: caracterizar el agente antes de entrar', 'Verificación continua de la atmósfera durante la operación en todas las zonas', 'Confirmación de que el área fue descontaminada antes de reducir el nivel de protección', 'Monitoreo de espacios confinados antes de autorizar la entrada (OSHA 1910.146 / NOM-027-STPS)'],
   },
 ];
@@ -76,8 +76,8 @@ const razones = [
   },
   {
     n: '02',
-    t: 'Monitores ATEX / Clase I Div 1 certificados',
-    d: 'Todos los monitores MSA Altair que distribuimos están certificados ATEX y Clase I División 1 para uso en atmósferas potencialmente explosivas — el único tipo autorizado por la NOM-027-STPS para entrada a espacios confinados y reconocimiento HAZMAT. Sin esta certificación, el monitor no es válido en zonas de riesgo.',
+    t: 'Certificación para atmósferas explosivas',
+    d: 'Antes de entrar a una atmósfera potencialmente explosiva, confirma en la ficha y en la placa del detector su certificación de área peligrosa (por ejemplo, ATEX o Clase I División 1) y que corresponde a la clasificación del área.',
   },
   {
     n: '03',
@@ -106,8 +106,8 @@ const faqs = [
     a: 'Ambos son Nivel A NFPA 1990 técnicamente equivalentes. La diferencia está en la documentación: Tychem 10000 tiene tablas para 280+ sustancias; ChemMax 4 tiene 350+. Para brigadas con mayor variedad de agentes posibles, ChemMax 4 ofrece mayor cobertura documental. Para licitaciones que especifican DuPont por nombre, el Tychem 10000 es la opción directa. Te facilitamos ambas tablas para el agente específico de tu operación y hacemos la recomendación según la sustancia.',
   },
   {
-    q: '¿Cuándo usar MSA Altair 5X vs Altair 4XR?',
-    a: 'El Altair 5X (con bomba aspirada) es el instrumento de reconocimiento de escena: permite muestrear el ambiente a hasta 27 m sin acercar al técnico al área de riesgo, y detecta un 5to gas tóxico configurable (SO₂, HCN, PH₃, Cl₂, NO₂) además de O₂/LEL/CO/H₂S. Es la herramienta para la primera acción en un incidente HAZMAT. El Altair 4XR es el instrumento de monitoreo continuo para uso cotidiano: 4 gases con la carcasa más resistente a golpes para entrada a espacios confinados y patrullaje de zona.',
+    q: '¿Cuándo usar MSA ALTAIR 4XR vs ALTAIR 2X?',
+    a: 'ALTAIR 4XR es un detector multigás para combustibles, oxígeno y pares tóxicos según la configuración. ALTAIR 2X es un detector monogás o de configuraciones dobles. La elección depende de los gases identificados en la evaluación de riesgos.',
   },
   {
     q: '¿Qué documentación entregan para un plan de respuesta HAZMAT certificado?',
@@ -154,7 +154,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'hazmat').slice(0, 6
 const guia = [
   { n: '01', t: 'Identifica el agente o familia de agentes antes de seleccionar el nivel. Nivel A (traje encapsulado) para agentes desconocidos o vapores IDLH; Nivel B (traje resistente + SCBA externo) cuando el riesgo de vapor fue descartado; Nivel C cuando el agente está caracterizado y la concentración permite APR. Sin identificación, no hay selección válida.' },
   { n: '02', t: 'Solicita la tabla de permeación para el agente específico, no solo para el nivel. Un traje Nivel A NFPA 1990 puede permearse en minutos ante ciertos solventes clorados — la tabla documentará el breakthrough time y la tasa de permeación para tu operación. Es el documento técnico-legal que valida la selección ante una auditoría.' },
-  { n: '03', t: 'Verifica la certificación ATEX / Clase I División 1 de todos los monitores de gas que entren a la zona de riesgo. La NOM-027-STPS exige esta certificación para entrada a espacios confinados y reconocimiento HAZMAT — un monitor sin ella no es válido en zonas de potencial explosividad.' },
+  { n: '03', t: 'Verifica que los monitores de gas que entren a la zona de riesgo tengan certificación para atmósferas explosivas (por ejemplo, ATEX o Clase I División 1) acorde con la clasificación del área.' },
   { n: '04', t: 'Arma el paquete documental del plan de respuesta: tabla de permeación, ficha técnica NFPA 1990 con laboratorio verificable, procedimiento de donning/doffing, guía de descontaminación y protocolo de calibración del monitor. Protección Civil y aseguradoras industriales exigen estos documentos para validar el plan.' },
 ];
 
@@ -162,7 +162,7 @@ const guia = [
 const articulos = [
   { label: 'Niveles EPA A, B, C y D explicados',    desc: 'Cuándo usar cada nivel y qué protege',          href: '/blog/niveles-proteccion-hazmat-epa-abc' },
   { label: 'Tablas de permeación DuPont vs Lakeland', desc: 'Cómo leerlas y usarlas en la selección',      href: '/blog/tablas-permeacion-dupont-lakeland-hazmat' },
-  { label: 'MSA Altair 5X vs 4XR — comparativa',    desc: 'Reconocimiento vs monitoreo continuo',          href: '/blog/detectores-gas-bomberos-msa-industrial-scientific-draeger' },
+  { label: 'MSA ALTAIR 4XR y 2X — comparativa',     desc: 'Detección multigás y monogás',                  href: '/blog/detectores-gas-bomberos-msa-industrial-scientific-draeger' },
   { label: 'Plan de respuesta HAZMAT certificado',   desc: 'Documentos requeridos por Protección Civil',    href: '/blog/categoria/equipos-hazmat' },
 ];
 ---
@@ -192,8 +192,8 @@ const articulos = [
         <div>
           <span class="section-eyebrow mb-5 inline-flex">{cat.norm} · DuPont Tychem · Lakeland ChemMax · MSA Altair · Distribuidor Autorizado MX</span>
           <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
-            Equipos HAZMAT<br/>
-            <span style="color:#EF4444">certificados NFPA.</span>
+            Traje HAZMAT<br/>
+            <span style="color:#EF4444">trajes de protección química y materiales peligrosos.</span>
           </h1>
           <p class="text-lg leading-relaxed mb-8 max-w-xl" style="color:#94A3B8">
             Trajes encapsulados Nivel A, trajes de salpicadura Nivel B/C y monitores
@@ -203,7 +203,7 @@ const articulos = [
           </p>
 
           <div class="flex flex-wrap gap-3 mb-8">
-            {['NFPA 1990','NFPA 1990','Nivel A · B · C','DuPont Tychem 10000','Lakeland ChemMax 4','MSA Altair 5X','ATEX · Cl I Div 1','Tablas de permeación'].map(b => (
+            {['NFPA 1990 por modelo','Nivel A · B · C · D','DuPont Tychem 10000','Lakeland ChemMax','MSA ALTAIR 4XR y 2X','Tablas de permeación'].map(b => (
               <span class="badge badge-dark">{b}</span>
             ))}
           </div>
@@ -221,9 +221,9 @@ const articulos = [
         <div class="hidden lg:flex flex-col gap-4">
           <div class="grid grid-cols-3 gap-3">
             {[
-              { v: 'NFPA 1990', l: 'Nivel A encapsulado' },
-              { v: 'ATEX',      l: 'Detectores certificados' },
-              { v: '280–350+',  l: 'Sustancias documentadas' },
+              { v: 'NFPA 1990', l: 'Según modelo' },
+              { v: 'ALTAIR', l: 'Detectores de gas' },
+              { v: 'A · B · C · D', l: 'Niveles EPA' },
             ].map(s => (
               <div class="flex flex-col items-center justify-center text-center p-5" style="background:#070E1A;border:1px solid rgba(74,117,153,0.2)">
                 <span class="font-display font-bold text-xl mb-1" style="color:#EF4444">{s.v}</span>
@@ -241,7 +241,7 @@ const articulos = [
           </div>
           <div class="grid grid-cols-2 gap-3">
             {[
-              { v: '27 m',    l: 'Alcance bomba MSA Altair 5X' },
+              { v: '4XR / 2X', l: 'Detectores MSA vigentes' },
               { v: 'NOM-005', l: 'Norma STPS manejo de sustancias' },
             ].map(s => (
               <div class="flex flex-col items-center justify-center text-center p-5" style="background:#070E1A;border:1px solid rgba(74,117,153,0.2)">
@@ -255,6 +255,90 @@ const articulos = [
       </div>
     </div>
     <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(239,68,68,0.4) 30%, rgba(239,68,68,0.4) 70%, transparent)" aria-hidden="true"></div>
+  </section>
+
+  <section id="guia-hazmat" class="section" style="background:#040A12" aria-labelledby="guia-hazmat-title">
+    <div class="container-site content-copy">
+      <div class="section-head mb-5">
+        <h2 id="guia-hazmat-title">¿Qué es un traje HAZMAT y qué significa HAZMAT?</h2>
+      </div>
+      <p class="mb-8">HAZMAT viene del inglés <em>hazardous materials</em>, es decir, materiales peligrosos. Un traje HAZMAT es ropa de protección química que aísla al usuario de sustancias químicas, agentes tóxicos, vapores, líquidos, aerosoles y partículas peligrosas. Lo usan bomberos, brigadas industriales y equipos de respuesta a emergencias para atender fugas, derrames y otros incidentes con materiales peligrosos. Suministramos trajes de protección química DuPont Tychem y Kappler, desde overoles para partículas hasta trajes encapsulados certificados NFPA 1990.</p>
+
+      <div class="section-head mt-14 mb-5">
+        <h2>Niveles de protección de los trajes HAZMAT</h2>
+      </div>
+      <p>La EPA de Estados Unidos define cuatro niveles de protección que se usan como referencia para elegir el equipo de protección personal (EPP):</p>
+      <div class="overflow-x-auto max-w-full min-w-0 mb-8">
+        <table class="w-full text-left text-sm" style="border-collapse:collapse;min-width:640px;color:#CBD5E1">
+          <thead>
+            <tr>
+              <th class="p-3" style="background:#0C1825;color:#FFFFFF">Nivel</th>
+              <th class="p-3" style="background:#0C1825;color:#FFFFFF">Cuándo se usa</th>
+              <th class="p-3" style="background:#0C1825;color:#FFFFFF">Equipo típico</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Nivel A</td>
+              <td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Mayor exposición posible: máxima protección de piel, vías respiratorias y ojos</td>
+              <td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Traje encapsulado a prueba de vapores con protección respiratoria</td>
+            </tr>
+            <tr>
+              <td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Nivel B</td>
+              <td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Máxima protección respiratoria con menor protección de la piel</td>
+              <td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Traje contra salpicaduras con equipo de respiración autónoma</td>
+            </tr>
+            <tr>
+              <td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Nivel C</td>
+              <td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Se conocen la concentración y el tipo de contaminante y se pueden usar respiradores con filtro</td>
+              <td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Overol de protección química y respirador</td>
+            </tr>
+            <tr>
+              <td class="p-3">Nivel D</td>
+              <td class="p-3">Protección mínima, sin contaminantes ni riesgo de salpicadura</td>
+              <td class="p-3">Overol de trabajo o traje desechable contra polvo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section-head mt-14 mb-5">
+        <h2>Normas: NFPA 1990 para trajes de protección química</h2>
+      </div>
+      <p>La NFPA 1990 (edición 2022) reunió en una sola norma tres estándares que antes estaban separados:</p>
+      <ul class="list-disc pl-6 space-y-2 text-sm leading-relaxed" style="color:#CBD5E1">
+        <li><strong>NFPA 1991:</strong> trajes a prueba de vapores para emergencias con materiales peligrosos.</li>
+        <li><strong>NFPA 1992:</strong> ropa de protección contra salpicaduras de líquidos.</li>
+        <li><strong>NFPA 1994:</strong> ropa para incidentes CBRN, clasificada por clases.</li>
+      </ul>
+      <p>La certificación aplica a modelos específicos: los DuPont Tychem 10000 TK612T y TK613T cuentan con NFPA 1990 (1994 Clase 2); el Kappler Frontline 500 F5H582-91/F5H583-91 cuenta con NFPA 1990 (1991); y los DuPont Tychem 6000 FR TP198T y TP199T cuentan con NFPA 1990 (1992). Revisa siempre el número de modelo y la etiqueta del traje. En México, la NOM-017-STPS-2008 regula la selección, el uso y el manejo del EPP en los centros de trabajo.</p>
+
+      <div class="section-head mt-14 mb-5"><h2>Materiales de los trajes de protección química</h2></div>
+      <p>Los trajes HAZMAT se fabrican con películas y laminados de polímeros que forman una barrera contra sustancias químicas. La resistencia química depende de cada sustancia y del tiempo de exposición: consulta siempre la tabla de permeación del fabricante.</p>
+
+      <div class="section-head mt-14 mb-5"><h2>Trajes encapsulados vs. no encapsulados</h2></div>
+      <ul class="list-disc pl-6 space-y-2 text-sm leading-relaxed" style="color:#CBD5E1">
+        <li><strong>Trajes encapsulados:</strong> cubren el cuerpo y el equipo de respiración; el interior queda aislado del ambiente. Se usan ante fugas de vapores y gases tóxicos.</li>
+        <li><strong>Trajes no encapsulados:</strong> overol con capucha que deja el equipo respiratorio por fuera; protegen contra salpicaduras de líquidos.</li>
+        <li><strong>Trajes desechables:</strong> overoles ligeros para polvo, partículas y salpicaduras ligeras en el entorno de trabajo.</li>
+      </ul>
+
+      <div class="section-head mt-14 mb-5"><h2>¿Los trajes HAZMAT protegen contra el fuego y la radiación?</h2></div>
+      <p>Un traje de protección química no es un traje de bombero: salvo que el fabricante indique una opción de protección contra fogonazo para escape, no está diseñado para el calor ni las llamas. En incidentes radiológicos, el traje evita que las partículas contaminantes toquen la piel, pero no bloquea la radiación penetrante; para eso se requiere control de tiempo, distancia y blindaje.</p>
+
+      <div class="section-head mt-14 mb-5"><h2>Descontaminación y reutilización</h2></div>
+      <p>Al salir de la zona caliente, el usuario pasa por un corredor de descontaminación donde se lava el traje antes de retirarlo. Algunos trajes son de uso limitado y se desechan tras la exposición; otros pueden reutilizarse solo si el fabricante lo permite y el traje supera la inspección y las pruebas de hermeticidad. Registra cada uso y almacénalo conforme al manual.</p>
+
+      <div class="section-head mt-14 mb-5"><h2>¿Cómo elegir el traje HAZMAT adecuado?</h2></div>
+      <ol class="list-decimal pl-6 space-y-2 text-sm leading-relaxed" style="color:#CBD5E1">
+        <li>Identifica la sustancia peligrosa, su estado y su concentración.</li>
+        <li>Define el nivel de protección (A, B, C o D) según la evaluación de riesgos.</li>
+        <li>Verifica la certificación NFPA 1990 del modelo y la tabla de permeación para esa sustancia.</li>
+        <li>Asegura la compatibilidad con el equipo de respiración, guantes y botas.</li>
+        <li>Elige las tallas correctas y capacita a la brigada en colocación, uso y descontaminación.</li>
+      </ol>
+      <p>Cotiza tus trajes HAZMAT con un especialista y recibe la recomendación por nivel de protección y sustancia.</p>
+    </div>
   </section>
 
   <!-- QuickLinksBar -->
@@ -358,13 +442,12 @@ const articulos = [
         </div>
         <div style="border-left:2px solid rgba(239,68,68,0.4);padding-left:1.75rem">
           <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
-            DuPont Safety Products —NYSE: DD— define el estándar global de barreras químicas. Tychem 10000
-            (Nivel A, Saranex-23P) es el traje encapsulado con mayor resistencia documentada a vapor y gas.
-            Tychem 6000F agrega resistencia a flama para entornos petroquímicos con doble riesgo. Tablas de
-            permeación verificadas para más de 280 sustancias en toda la gama.
+            Tychem 10000 TK612T/TK613T es un traje encapsulado Nivel A con NFPA 1990 (1994 Clase 2).
+            Tychem 6000 FR TP198T/TP199T cuenta con NFPA 1990 (1992). Tychem 4000S y
+            Tychem 2000 se seleccionan según la evaluación de riesgos y la tabla de permeación.
           </p>
           <div class="flex flex-wrap gap-2">
-            {['NFPA 1990','NFPA 1990','CE Categoría III','Tychem 10000 Nivel A','Tychem 6000F FR','Tychem 4000S Nivel B/C','280+ sustancias','Distribuidor autorizado MX'].map(b => (
+            {['Tychem 10000: NFPA 1990 (1994 Clase 2)','Tychem 6000 FR: NFPA 1990 (1992)','Tychem 4000S','Tychem 2000','Tabla de permeación','Distribuidor autorizado MX'].map(b => (
               <span class="badge badge-dark text-[9px]">{b}</span>
             ))}
           </div>
@@ -380,11 +463,11 @@ const articulos = [
       <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(239,68,68,0.15)">
         <div class="flex-1">
           <p class="text-sm leading-relaxed m-0" style="color:#64748B">
-            Comparativa completa Tychem 10000 vs 6000F vs 4000S vs 2000, tablas de permeación para
-            los agentes de su operación y ficha técnica NFPA 1990 para licitación.
+            Comparativa de Tychem 10000, Tychem 6000 FR, Tychem 4000S y Tychem 2000, con selección por
+            agente, concentración, ruta de exposición y tabla de permeación.
           </p>
         </div>
-        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+        <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/hazmat/dupont-tychem" class="btn btn-primary btn-lg">
             Catálogo DuPont Tychem completo →
           </a>
@@ -412,13 +495,12 @@ const articulos = [
         </div>
         <div style="border-left:2px solid rgba(245,166,35,0.4);padding-left:1.75rem">
           <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
-            Lakeland Industries —NASDAQ: LAKE— es el mayor fabricante independiente de EPP químico del
-            mundo. ChemMax 4 (Nivel A, laminado 4 capas, EN 943-1 Tipo 1) tiene tablas de permeación para
-            350+ sustancias — el mayor catálogo documental de la categoría. ChemMax 3 ofrece el mismo
-            Nivel A con menor peso para operaciones prolongadas en climas cálidos.
+            ChemMax 4 Plus y ChemMax 3 son opciones de Nivel B que se seleccionan con la tabla de permeación del fabricante. Interceptor Plus es un
+            encapsulado Nivel A conforme a EN 943 tipo 1a. Pyrolon CRFR aporta resistencia secundaria a la
+            flama sobre ropa FR primaria y cumple requisitos NFPA 2113.
           </p>
           <div class="flex flex-wrap gap-2">
-            {['NFPA 1990','NFPA 1990','EN 943-1 Tipo 1','ChemMax 4 Nivel A','ChemMax 3 ligero','AlphaTec Nivel B','Pyrolon FR','350+ sustancias','Distribuidor autorizado MX'].map(b => (
+            {['EN 943 Tipo 1a','Interceptor Plus Nivel A','ChemMax 4 Plus Nivel B','ChemMax 3 Nivel B','Pyrolon CRFR','NFPA 2113: selección','Distribuidor autorizado MX'].map(b => (
               <span class="badge badge-dark text-[9px]">{b}</span>
             ))}
           </div>
@@ -434,11 +516,11 @@ const articulos = [
       <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(245,166,35,0.15)">
         <div class="flex-1">
           <p class="text-sm leading-relaxed m-0" style="color:#64748B">
-            Comparativa ChemMax 4 vs 3 vs AlphaTec 5000 vs Pyrolon CRFR, tablas de permeación para
-            350+ sustancias y documentación técnica NFPA 1990 para concursos públicos y privados.
+            Comparativa ChemMax 4 Plus, ChemMax 3, Interceptor Plus y Pyrolon CRFR, con selección por
+            evaluación de riesgos, tabla de permeación y documentación técnica del fabricante.
           </p>
         </div>
-        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+        <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/hazmat/lakeland-chemmax" class="btn btn-primary btn-lg">
             Catálogo Lakeland ChemMax completo →
           </a>
@@ -466,13 +548,12 @@ const articulos = [
         </div>
         <div style="border-left:2px solid rgba(52,211,153,0.4);padding-left:1.75rem">
           <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
-            MSA Safety —NYSE: MSA— fabrica el monitor multi-gas más utilizado en respuesta HAZMAT de
-            América Latina. Altair 5X con bomba aspirada para reconocimiento a 27 m sin exposición,
-            Altair 4XR para monitoreo continuo robusto, Altair io360 con Bluetooth para coordinación
-            táctica, y GALAXY GX2 para calibración automática con trazabilidad OSHA/NOM.
+            MSA ALTAIR 4XR es un detector multigás para combustibles, oxígeno y pares tóxicos según
+            configuración. MSA ALTAIR 2X es un detector monogás o de configuraciones dobles. Selecciona
+            sensores, alarmas y procedimientos de verificación conforme al riesgo de la operación.
           </p>
           <div class="flex flex-wrap gap-2">
-            {['ATEX','Clase I Div 1','UL Listed','Altair 5X + bomba','Altair 4XR','Altair io360 Bluetooth','GALAXY GX2','NOM-027-STPS','Distribuidor autorizado MX'].map(b => (
+            {['ALTAIR 4XR multigás','ALTAIR 2X monogás','Configuración por gas','Prueba funcional','Calibración','Distribuidor autorizado MX'].map(b => (
               <span class="badge badge-dark text-[9px]">{b}</span>
             ))}
           </div>
@@ -488,11 +569,11 @@ const articulos = [
       <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(52,211,153,0.15)">
         <div class="flex-1">
           <p class="text-sm leading-relaxed m-0" style="color:#64748B">
-            Comparativa Altair 5X vs 4XR vs io360, protocolo de calibración y bump test, y
-            documentación OSHA / NOM-027-STPS para entrada a espacios confinados y operaciones HAZMAT.
+            Comparativa ALTAIR 4XR y ALTAIR 2X, selección de sensores y protocolo de prueba funcional,
+            calibración y mantenimiento conforme al fabricante para operaciones HAZMAT.
           </p>
         </div>
-        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+        <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/hazmat/msa-deteccion" class="btn btn-primary btn-lg">
             Catálogo MSA Altair completo →
           </a>
@@ -512,27 +593,25 @@ const articulos = [
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
-          <span class="section-eyebrow mb-4 inline-flex">Kappler Inc. · NFPA 1990 · CBRN-C · Alternativa certificada para licitaciones</span>
+          <span class="section-eyebrow mb-4 inline-flex">Kappler Inc. · NFPA 1990 por modelo · Distribuidor Autorizado MX</span>
           <h2 id="kappler-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
-            Kappler Zytron 500 XP<br/>
-            <span style="color:#F59E0B">Nivel A NFPA 1990 con CBRN-C.</span>
+            Kappler Zytron 500<br/>
+            <span style="color:#F59E0B">certificación NFPA según modelo.</span>
           </h2>
         </div>
         <div style="border-left:2px solid rgba(245,158,11,0.4);padding-left:1.75rem">
           <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
-            Kappler produce trajes HAZMAT con tablas de permeación verificadas para más de 370 sustancias.
-            El Zytron 500 XP es el único traje del portafolio con doble certificación NFPA 1990 y CBRN-C —
-            agentes de guerra química (mostaza HD, sarin GB, VX). El Frontline 500 FR combina
-            NFPA 1990 y NFPA 2112 en un solo traje de Nivel C para instalaciones con riesgo
-            combinado: salpicaduras químicas + llama flash. Alternativa calificada al DuPont Tychem
-            para licitaciones con requisito de dos fabricantes certificados.
+            Kappler Zytron 500 Z5H577-92 cuenta con NFPA 1990 (1992), mientras que Z5H582/583-94C2RPBC
+            cuenta con NFPA 1994 Clase 2. Frontline 500 F5H582-91/F5H583-91 es un encapsulado de vapor
+            Nivel A con NFPA 1990 (1991) y opciones de flash fire solo para escape y gas licuado.
+            Confirma siempre el número de modelo y la tabla de permeación antes de seleccionar.
           </p>
           <div class="flex gap-4 text-xs font-mono" style="color:#F59E0B">
-            <span>370+ sustancias</span>
+            <span>NFPA según modelo</span>
             <span>·</span>
-            <span>CBRN-C</span>
+            <span>NFPA 1994 Clase 2</span>
             <span>·</span>
-            <span>NFPA 1990/2112</span>
+            <span>Frontline: NFPA 1990 (1991)</span>
           </div>
         </div>
       </div>
@@ -550,7 +629,7 @@ const articulos = [
             por agente específico para brigadas de refinería, petroquímica y protección civil.
           </p>
         </div>
-        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+        <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/hazmat/kappler" class="btn btn-primary btn-lg">
             Catálogo Kappler Zytron completo →
           </a>
