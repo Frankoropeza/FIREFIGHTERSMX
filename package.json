@@ -6,10 +6,11 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build && node scripts/verificar-claims.mjs dist && node scripts/verificar-enlaces.mjs dist && node scripts/verificar-interlinking.mjs dist",
+    "build": "astro build && node scripts/verificar-claims.mjs dist && node scripts/verificar-enlaces.mjs dist && node scripts/verificar-interlinking.mjs dist && node scripts/verificar-sitemap.mjs dist",
     "check-claims": "node scripts/verificar-claims.mjs dist",
     "check-enlaces": "node scripts/verificar-enlaces.mjs dist",
     "check-interlinking": "node scripts/verificar-interlinking.mjs dist",
+    "check-sitemap": "node scripts/verificar-sitemap.mjs dist",
     "test:home-performance": "node scripts/check-home-performance.mjs",
     "preview": "astro preview",
     "astro": "astro",

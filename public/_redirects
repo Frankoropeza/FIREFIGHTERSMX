@@ -284,3 +284,21 @@
 /productos/cascos-nfpa/cairns-1044-invader/ /productos/cascos-nfpa/cairns-invader-664/ 301
 /productos/cascos-nfpa/cairns-arff-795 /productos/cascos-nfpa/cairns-360s/ 301
 /productos/cascos-nfpa/cairns-arff-795/ /productos/cascos-nfpa/cairns-360s/ 301
+
+# 301 de etiquetas del blog renombradas en la Fase 4 (commit 3187649, 2026-09-16):
+# las normas se actualizaron a su edición consolidada y las etiquetas viejas
+# dejaron de generarse (Ahrefs 2026-09-16: nfpa-1981 y nfpa-1936 pasaron de 200 a 404).
+/blog/tag/nfpa-1981 /blog/tag/nfpa-1970/ 301
+/blog/tag/nfpa-1981/ /blog/tag/nfpa-1970/ 301
+/blog/tag/nfpa-1936 /blog/tag/nfpa-1960/ 301
+/blog/tag/nfpa-1936/ /blog/tag/nfpa-1960/ 301
+/blog/tag/nfpa-1801 /blog/tag/nfpa-1930/ 301
+/blog/tag/nfpa-1801/ /blog/tag/nfpa-1930/ 301
+/blog/tag/nfpa-1977 /blog/tag/nfpa-1950/ 301
+/blog/tag/nfpa-1977/ /blog/tag/nfpa-1950/ 301
+/blog/tag/scott /blog/tag/3m-scott/ 301
+/blog/tag/scott/ /blog/tag/3m-scott/ 301
+/blog/tag/rosenbauer /blog/tag/cascos-bombero/ 301
+/blog/tag/rosenbauer/ /blog/tag/cascos-bombero/ 301
+/blog/tag/idlh /blog/tag/detectores-de-gas/ 301
+/blog/tag/idlh/ /blog/tag/detectores-de-gas/ 301
