@@ -44,7 +44,7 @@ const globe: EquipmentBrand = {
   ],
   credenciales: [
     { n: '01', t: '110+ años fabricando EPP', d: 'Globe fue fundada en 1887 en Pittsfield, New Hampshire. Hoy forma parte del grupo MSA Safety — una empresa de seguridad industrial que cotiza en NYSE como MSA. Más de un siglo de innovación en protección de bomberos.' },
-    { n: '02', t: 'La marca más licitada en MX', d: 'En departamentos tier-1 de México (CDMX, Guadalajara, Monterrey, Pemex) Globe es el fabricante de trajes estructurales con mayor presencia en concursos públicos y adquisiciones directas, según datos de CompraNet 2020-2024.' },
+    { n: '02', t: 'Especificación para licitaciones', d: 'Para concursos públicos y adquisiciones directas, te entregamos la ficha técnica y el certificado NFPA 1970 del modelo Globe que especifiques.' },
     { n: '03', t: 'Trazabilidad completa NFPA 1850', d: 'Cada traje Globe incluye etiqueta con número de lote, fecha de fabricación y certificación del laboratorio acreditado. Documentación completa para auditorías NFPA 1850, licitaciones y procesos de acreditación institucional.' },
     { n: '04', t: 'Stock permanente en CDMX', d: 'Mantenemos inventario de los modelos principales en tallas S–4XL en nuestro almacén en CDMX. Entrega en 24–48 horas para emergencias operativas y reposición de trajes dañados o retirados por vida útil.' },
   ],

@@ -188,3 +188,21 @@
 /productos/hazmat/kappler-frontline-500-nivel-c/ /productos/hazmat/kappler-frontline-500-nivel-a/ 301
 /productos/hazmat/lakeland-pyrolon-fr /productos/hazmat/lakeland-pyrolon-crfr/ 301
 /productos/hazmat/lakeland-pyrolon-fr/ /productos/hazmat/lakeland-pyrolon-crfr/ 301
+
+# Fase 3: cámaras térmicas descontinuadas (2026-09-16)
+/productos/camaras-termicas/flir-k45 /productos/camaras-termicas/flir-k75/ 301
+/productos/camaras-termicas/flir-k45/ /productos/camaras-termicas/flir-k75/ 301
+/productos/camaras-termicas/flir-k65 /productos/camaras-termicas/flir-k85-n/ 301
+/productos/camaras-termicas/flir-k65/ /productos/camaras-termicas/flir-k85-n/ 301
+/productos/camaras-termicas/flir-k1 /productos/camaras-termicas/flir/ 301
+/productos/camaras-termicas/flir-k1/ /productos/camaras-termicas/flir/ 301
+/productos/camaras-termicas/msa-evolution-6000-plus /productos/camaras-termicas/msa-evolution-6000/ 301
+/productos/camaras-termicas/msa-evolution-6000-plus/ /productos/camaras-termicas/msa-evolution-6000/ 301
+/productos/camaras-termicas/msa-evolution-5200-industrial /productos/camaras-termicas/msa-evolution/ 301
+/productos/camaras-termicas/msa-evolution-5200-industrial/ /productos/camaras-termicas/msa-evolution/ 301
+/productos/camaras-termicas/bullard-qxt /productos/camaras-termicas/bullard-qxt-pro/ 301
+/productos/camaras-termicas/bullard-qxt/ /productos/camaras-termicas/bullard-qxt-pro/ 301
+/productos/camaras-termicas/bullard-t4max /productos/camaras-termicas/bullard-nxt-pro/ 301
+/productos/camaras-termicas/bullard-t4max/ /productos/camaras-termicas/bullard-nxt-pro/ 301
+/productos/camaras-termicas/bullard-eclipse-industrial /productos/camaras-termicas/bullard-dxt/ 301
+/productos/camaras-termicas/bullard-eclipse-industrial/ /productos/camaras-termicas/bullard-dxt/ 301

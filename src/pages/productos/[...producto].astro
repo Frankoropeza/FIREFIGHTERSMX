@@ -68,7 +68,7 @@ const specMeta: Record<string, SpecMeta> = {
   electronica:{ label: 'PASS / HUD',        explica: 'Sistema de alarma de hombre sin movimiento (PASS) y visualizador de presión integrado (HUD). Ambos son requeridos por NFPA 1970 para combate estructural.' },
   resolucion: { label: 'Resolución sensor', explica: 'Resolución del sensor infrarrojo. 160×120 px es suficiente para búsqueda interior; 320×240 px mejora la imagen de mando y documentación.' },
   sensor:     { label: 'NETD (sensib.)',    explica: 'Noise Equivalent Temperature Difference — sensibilidad térmica del sensor. Un valor menor (≤50 mK) detecta diferencias más pequeñas de temperatura.' },
-  fuerza:     { label: 'Fuerza máx.',       explica: 'Fuerza de apertura o corte. Vehículos modernos con acero de ultra-alta resistencia exigen herramientas de más de 80 kN para apertura efectiva.' },
+  fuerza:     { label: 'Fuerza máx.',       explica: 'Fuerza de apertura o empuje publicada por el fabricante. En cizallas compara la clasificación de corte (EN 13204 o NFPA), no la fuerza teórica en kN.' },
   rango:      { label: 'Rango / carrera',   explica: 'Apertura o carrera máxima de la herramienta. Determina el ancho de brecha o la longitud de corte posible en una sola operación.' },
   fuente:     { label: 'Fuente de poder',   explica: 'Sistema de alimentación de la herramienta. Eléctrico/batería ofrece movilidad total; hidráulico, mayor potencia sostenida.' },
   tipo_sis:   { label: 'Tipo de sistema',   explica: 'Subsistema de protección — rociadores automáticos, detección de humo/calor, agente limpio o red de gabinetes. Cada uno rige una norma NFPA distinta.' },
@@ -321,7 +321,7 @@ const catArticulos: Record<string, SbArt[]> = {
   ],
   'Herramientas Rescate': [
     { label: 'Holmatro vs Lukas — comparativa', desc: 'Acero de ultra-alta resistencia y excarcelación', href: '/blog/holmatro-vs-lukas-herramientas-rescate' },
-    { label: 'NFPA 1936 explicada', desc: 'Qué pruebas aplican a cada herramienta', href: '/blog/nfpa-1936-herramientas-rescate-excarcelacion' },
+    { label: 'Normas de herramientas de rescate', desc: 'NFPA 1936 (hoy NFPA 1960) y EN 13204', href: '/blog/nfpa-1936-herramientas-rescate-excarcelacion' },
     { label: 'Herramientas hidráulicas de rescate', desc: 'Holmatro, Hurst y Weber comparados', href: '/blog/herramientas-hidraulicas-rescate-holmatro-hurst-weber' },
     { label: 'Todos los artículos de rescate', desc: 'Excarcelación, normas y comparativas de equipo', href: '/blog/categoria/herramientas-rescate' },
   ],

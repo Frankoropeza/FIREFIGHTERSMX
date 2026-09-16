@@ -32,7 +32,7 @@ export const brands: Brand[] = [
     slug: 'msa-safety',
     name: 'MSA Safety',
     emoji: '🛡️',
-    description: 'Líder mundial en EPP para bomberos. SCBA, cascos, trajes y detectores de gas.',
+    description: 'EPP para bomberos: SCBA, cascos, trajes y detectores de gas.',
     country: '🇺🇸 USA',
     longDesc: [
       'MSA Safety es un fabricante de equipos de protección personal para bomberos. Su SCBA G1 es el estándar de facto en cuerpos de bomberos que exigen telemetría integrada, alarma PASS y cumplimiento NFPA 1970. El casco Gallet F1 XF, de estilo europeo integral, se utiliza en cuerpos metropolitanos y aeropuertos ARFF por su visor retráctil y módulo de comunicación.',
@@ -120,7 +120,7 @@ export const brands: Brand[] = [
       { name: 'Holmatro RAP 3240 SC (Pentheon)', detail: 'Ariete telescópico inalámbrico para empuje de tablero y estabilización de cargas.' },
       { name: 'Unidades de poder Holmatro', detail: 'Unidades de poder de gasolina y eléctricas para sistemas de una y dos herramientas.' },
     ],
-    norms: ['NFPA 1936', 'ISO 13852', 'NOM-002-STPS-2010'],
+    norms: ['NFPA 1960', 'EN 13204', 'ISO 13852', 'NOM-002-STPS-2010'],
     categoryLinks: ['herramientas-rescate'],
   },
   {
@@ -130,7 +130,7 @@ export const brands: Brand[] = [
     description: 'Cascos para bomberos, cámaras de imagen térmica y EPP de alta performance.',
     country: '🇺🇸 USA',
     longDesc: [
-      'Bullard es el fabricante americano más reconocido en cascos para bomberos estructurales. Sus modelos USTM y USTERM de fibra de vidrio termoendurecida son el estándar en cuerpos con tradición americana: ala completa, escudo frontal personalizable y resistencia térmica superior. La línea de cámaras de imagen térmica T3 Max ofrece resolución y autonomía para búsqueda en interior.',
+      'Bullard es un fabricante estadounidense de cascos para bomberos estructurales. Sus modelos USTM y USTERM de fibra de vidrio termoendurecida son el estándar en cuerpos con tradición americana: ala completa, escudo frontal personalizable y resistencia térmica superior. La línea de cámaras de imagen térmica T3 Max ofrece resolución y autonomía para búsqueda en interior.',
       'En FIREFIGHTERS MX distribuimos cascos Bullard con escudo frontal personalizado para tu cuerpo de bomberos, refacciones originales (visores, suspensiones, escudos) y soporte técnico. Ideales para licitaciones que exigen NFPA 1970 con certificado de laboratorio acreditado.',
     ],
     products: [
@@ -301,11 +301,11 @@ export const brands: Brand[] = [
     description: 'Cámaras de imagen térmica para bomberos y búsqueda y rescate.',
     country: '🇺🇸 USA',
     longDesc: [
-      'FLIR, ahora parte de Teledyne, es el fabricante de referencia en cámaras de imagen térmica (TIC) para bomberos. Sus modelos K65 y K55 ofrecen la resolución y el contraste necesarios para localizar víctimas y puntos calientes en interior con cero visibilidad. Resistentes al agua, polvo y caídas, diseñadas para trabajo real en combate.',
+      'FLIR, ahora parte de Teledyne, es el fabricante de referencia en cámaras de imagen térmica (TIC) para bomberos. Sus modelos K75 y K85-N ofrecen la resolución y el contraste necesarios para localizar víctimas y puntos calientes en interior con cero visibilidad. Resistentes al agua, polvo y caídas, diseñadas para trabajo real en combate.',
       'Distribuimos cámaras FLIR con garantía oficial, calibración y soporte técnico. La inversión correcta para equipos de búsqueda y rescate que trabajan en condiciones de visibilidad cero.',
     ],
     products: [
-      { name: 'FLIR K65', detail: 'Cámara TIC de alta resolución 320×240 px para búsqueda en interior y navegación en humo.' },
+      { name: 'FLIR K85-N', detail: 'Cámara térmica 640×480 px certificada NFPA 1930 para búsqueda en interior y navegación en humo.' },
       { name: 'FLIR K55', detail: 'Cámara TIC de resolución estándar 160×120 px. La opción de dotación para equipos de rescate.' },
       { name: 'FLIR K33', detail: 'Cámara TIC de entrada, compacta y robusta para primera dotación.' },
       { name: 'Baterías y accesorios FLIR', detail: 'Baterías adicionales, cargadores y bolsas de transporte originales.' },

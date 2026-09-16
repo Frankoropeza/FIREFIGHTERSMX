@@ -11,8 +11,8 @@ const cat = categories.find((c) => c.slug === 'camaras-termicas')!;
 const canonicalURL = `${SITE.url}/productos/camaras-termicas/`;
 
 const seoMeta = {
-  title: 'Cámaras Térmicas para Bomberos NFPA 1930 — FLIR, MSA Evolution, Bullard · México',
-  description: 'Catálogo de cámaras de imagen térmica certificadas NFPA 1930 en México. FLIR K45/K65, MSA Evolution 6000 y Bullard TXS/NXT. Búsqueda y rescate, sobrehaul y HAZMAT. Distribuidor autorizado · stock CDMX.',
+  title: 'Cámara térmica para bomberos: cómo funciona, NFPA 1930 y cómo elegir',
+  description: 'Guía de cámaras térmicas para bomberos: para qué sirven, resolución, modos de sensibilidad, NFPA 1930 (antes NFPA 1801) y modelos FLIR, MSA y Bullard vigentes.',
   canonicalURL,
 };
 
@@ -28,14 +28,14 @@ const tipos = [
     title: 'Cámara de entrada / personal',
     norm: 'NFPA 1930',
     accent: '#F75000',
-    desc: 'Una cámara por bombero. Permite decisión táctica inmediata en el interior sin depender del equipo de mando. Ligera, robusta y con interfaz unificada. Referentes: FLIR K45, MSA Evolution 6000, Bullard TXS.',
+    desc: 'Una cámara por bombero. Permite decisión táctica inmediata en el interior sin depender del equipo de mando. Ligera, robusta y con interfaz unificada. Referentes: FLIR K75, MSA Evolution 6000, Bullard TXS.',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5C21.27 7.61 17 4.5 12 4.5z"/><circle cx="12" cy="12" r="3"/>`,
   },
   {
     title: 'Cámara de mando / alta resolución',
     norm: 'NFPA 1930',
     accent: '#F5A623',
-    desc: 'Mayor resolución (320×240 px+), grabación de video, transmisión inalámbrica y pantalla amplificada para gestión táctica desde el exterior. Referentes: FLIR K65, MSA Evolution 6000 Plus, Bullard T4MAX.',
+    desc: 'Mayor resolución (320×240 px+), grabación de video, transmisión inalámbrica y pantalla amplificada para gestión táctica desde el exterior. Referentes: FLIR K85-N, MSA Evolution 6000, Bullard NXT Pro.',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M3 7h18M3 12h18M3 17h18"/><rect x="2" y="5" width="20" height="14" rx="2"/>`,
   },
   {
@@ -49,11 +49,11 @@ const tipos = [
 
 /* ── Comparativa tecnología ─────────────────────────────────────────────── */
 const comparativa = [
-  { caract: 'Resolución sensor',   flir: '160×120 / 320×240 px', msa: '320×240 px estándar',    bullard: '160×120 / 320×240 px' },
+  { caract: 'Resolución sensor',   flir: '320×240 / 640×480 px', msa: '320×240 px (Evolution 6000)', bullard: '320×240 / 640×480 px' },
   { caract: 'Sensibilidad NETD',   flir: '≤ 50 mK',              msa: '≤ 60 mK',                bullard: '≤ 50 mK' },
-  { caract: 'Grabación video',     flir: 'K65 / T560',           msa: 'Evolution 6000 Plus',    bullard: 'T4MAX / NXT' },
-  { caract: 'Transmisión Wi-Fi',   flir: 'K65 (Bluetooth)',      msa: 'Evolution 6000 Plus',    bullard: 'T4MAX' },
-  { caract: 'Temperatura máx.',    flir: '500 °C / 2,000 °C',    msa: '500 °C',                 bullard: '600 °C' },
+  { caract: 'Grabación video',     flir: 'K85-N / T560',           msa: 'Evolution 6000',    bullard: 'NXT Pro / NXT Pro' },
+  { caract: 'Transmisión Wi-Fi',   flir: 'K85-N (Bluetooth)',      msa: 'Evolution 6000',    bullard: 'NXT Pro' },
+  { caract: 'Temperatura máx.',    flir: '650 °C (K75 / K85-N)', msa: '550 °C (baja sensibilidad)', bullard: '—' },
   { caract: 'Norma',               flir: 'NFPA 1930',            msa: 'NFPA 1930',              bullard: 'NFPA 1930' },
   { caract: 'Escenario ideal',     flir: 'Personal · mando',     msa: 'Mando · industrial',     bullard: 'Personal · rescate' },
 ];
@@ -63,7 +63,7 @@ const razones = [
   {
     n: '01',
     t: 'Tres marcas líderes NFPA 1930',
-    d: 'FLIR (Teledyne), MSA Safety y Bullard — los tres fabricantes con mayor presencia en cuerpos de bomberos de América Latina, disponibles con un solo distribuidor en México. Todas las cámaras con certificación NFPA 1930 vigente.',
+    d: 'FLIR (Teledyne), MSA Safety y Bullard — tres fabricantes de cámaras térmicas para bomberos con un solo distribuidor en México. Verificamos la certificación de cada modelo: la FLIR K85-N y la Bullard NXT Pro están certificadas NFPA 1930.',
   },
   {
     n: '02',
@@ -90,19 +90,19 @@ const faqs = [
   },
   {
     q: '¿Cuál es la diferencia entre una cámara de entrada y una de mando?',
-    a: 'La cámara de entrada (personal) está optimizada para ser ligera, rápida de encender y de operación con guante grueso — su objetivo es dar información al bombero de interior en tiempo real. La cámara de mando tiene mayor resolución (320×240 px+), pantalla de mayor tamaño, grabación de video y transmisión inalámbrica para que el comandante gestione la operación desde el exterior y documente el evento. Los modelos de alto rango combinan ambas funciones: FLIR K65, MSA Evolution 6000 Plus, Bullard T4MAX.',
+    a: 'La cámara de entrada (personal) está optimizada para ser ligera, rápida de encender y de operación con guante grueso — su objetivo es dar información al bombero de interior en tiempo real. La cámara de mando tiene mayor resolución (320×240 px+), pantalla de mayor tamaño, grabación de video y transmisión inalámbrica para que el comandante gestione la operación desde el exterior y documente el evento. Los modelos de alto rango combinan ambas funciones: FLIR K85-N, MSA Evolution 6000, Bullard NXT Pro.',
   },
   {
     q: '¿FLIR, MSA Evolution o Bullard — cuál elegir?',
-    a: 'La elección depende del uso previsto, la resolución, la grabación y la transmisión que requiera tu equipo. Organizamos una demostración con FLIR K65, MSA Evolution 6000 Plus y Bullard T4MAX para comparar los modelos con imagen real.',
+    a: 'La elección depende del uso previsto, la resolución, la grabación y la transmisión que requiera tu equipo. Organizamos una demostración con FLIR K85-N, MSA Evolution 6000 y Bullard NXT Pro para comparar los modelos con imagen real.',
   },
   {
     q: '¿Qué resolución de sensor necesita mi cámara?',
-    a: 'Para búsqueda y rescate en interiores, 160×120 px es suficiente para localizar víctimas y detectar puntos de calor en condiciones de humo denso. Para mando, documentación y análisis post-siniestro, 320×240 px ofrece imágenes más detalladas, mejor grabación de video y mayor legibilidad en transmisión inalámbrica. NFPA 1930 no exige una resolución mínima específica — exige criterios de legibilidad en pantalla que 160×120 px cumple en todas las marcas que distribuimos.',
+    a: 'A mayor resolución, más detalle a distancia: los modelos vigentes van de 320×240 px (FLIR K75, MSA Evolution 6000, Bullard TXS y DXT) a 640×480 px (FLIR K85-N, Bullard NXT Pro y QXT Pro). Para mando, documentación y análisis post-siniestro, 640×480 px ofrece imágenes más detalladas, mejor grabación de video y mayor legibilidad en transmisión inalámbrica. NFPA 1930 no exige una resolución mínima específica — exige criterios de legibilidad en pantalla que 160×120 px cumple en todas las marcas que distribuimos.',
   },
   {
     q: '¿Entregan ficha técnica y documentación para licitación pública?',
-    a: 'Sí. Cada cámara incluye el certificado de conformidad NFPA 1930 con número de modelo, lote y laboratorio acreditado. Para concursos públicos (CompraNet, IMSS, gobiernos estatales y municipales) generamos el manifiesto de cumplimiento de norma por partida con identificación de edición específica y carta de distribución autorizada. Respuesta en menos de 24 horas a solicitudes para licitación.',
+    a: 'Sí. Cada cámara incluye su ficha técnica y, en los modelos certificados (FLIR K85-N, Bullard NXT Pro), el certificado NFPA 1930 con número de modelo y laboratorio acreditado. Para concursos públicos (CompraNet, IMSS, gobiernos estatales y municipales) generamos el manifiesto de cumplimiento de norma por partida con identificación de edición específica y carta de distribución autorizada. Respuesta en menos de 24 horas a solicitudes para licitación.',
   },
 ];
 
@@ -183,23 +183,23 @@ const articulos = [
         <div>
           <span class="section-eyebrow mb-5 inline-flex">{cat.norm} · FLIR · MSA Evolution · Bullard · Distribuidor Autorizado MX</span>
           <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
-            Cámaras térmicas<br/>
-            <span style="color:#F75000">certificadas NFPA.</span>
+            Cámara térmica para bomberos<br/>
+            <span style="color:#F75000">FLIR, MSA y Bullard para búsqueda y rescate.</span>
           </h1>
           <p class="text-lg leading-relaxed mb-8 max-w-xl" style="color:#94A3B8">
             En visibilidad cero, la imagen térmica es la diferencia entre buscar y encontrar.
-            Distribuimos cámaras FLIR, MSA Evolution y Bullard certificadas NFPA 1930 — el estándar
+            Distribuimos cámaras FLIR, MSA Evolution y Bullard; verificamos la certificación NFPA 1930 de cada modelo — el estándar
             que garantiza legibilidad, durabilidad e interfaz uniforme en condiciones de combate real.
           </p>
 
           <div class="flex flex-wrap gap-3 mb-8">
-            {['NFPA 1930','FLIR K45 · K65','MSA Evolution 6000','Bullard TXS · NXT','Stock CDMX','Demostración sin costo'].map(b => (
+            {['NFPA 1930','FLIR K75 · K85-N','MSA Evolution 6000','Bullard TXS · NXT Pro','Stock CDMX','Demostración sin costo'].map(b => (
               <span class="badge badge-dark">{b}</span>
             ))}
           </div>
 
           <div class="flex flex-wrap gap-4">
-            <a href={whatsappUrl('Hola, quiero información sobre cámaras térmicas certificadas NFPA 1930 para bomberos.')}
+            <a href={whatsappUrl('Hola, quiero información sobre cámaras térmicas para bomberos.')}
               target="_blank" rel="noopener" class="btn btn-primary btn-lg">
               Solicitar demostración →
             </a>
@@ -243,6 +243,66 @@ const articulos = [
       </div>
     </div>
     <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)" aria-hidden="true"></div>
+  </section>
+
+  <section id="guia-camaras" class="section" style="background:#040A12" aria-labelledby="guia-camaras-title">
+    <div class="container-site content-copy">
+      <div class="section-head mb-5">
+        <h2 id="guia-camaras-title">¿Qué es una cámara térmica para bomberos?</h2>
+      </div>
+      <p class="mb-8">Una cámara térmica (TIC, por <em>thermal imaging camera</em>) convierte la radiación infrarroja en una imagen visible. El bombero ve diferencias de temperatura aunque el humo impida ver con luz normal. A diferencia de una cámara térmica de inspección o de una cámara térmica para celular, la de bomberos está construida para operar dentro de estructuras incendiadas: soporta calor, llama, impactos y agua, y se usa con guantes.</p>
+
+      <div class="section-head mt-14 mb-5">
+        <h2>¿Para qué sirve una cámara térmica en un incendio?</h2>
+      </div>
+      <ul class="list-disc pl-6 space-y-2 text-sm leading-relaxed" style="color:#CBD5E1">
+        <li><strong>Búsqueda y rescate:</strong> localizar víctimas y compañeros en humo denso.</li>
+        <li><strong>Orientación:</strong> reconocer puertas, ventanas y rutas de salida dentro de un edificio con humo.</li>
+        <li><strong>Propagación del fuego:</strong> seguir el avance del calor por muros, techos y ductos.</li>
+        <li><strong>Remoción de escombros:</strong> encontrar puntos calientes antes de retirarse para evitar la reignición.</li>
+      </ul>
+
+      <div class="section-head mt-14 mb-5">
+        <h2>Especificaciones que importan</h2>
+      </div>
+      <div class="overflow-x-auto max-w-full min-w-0 mb-4"><table class="w-full text-left text-sm" style="border-collapse:collapse;min-width:640px;color:#CBD5E1">
+        <thead><tr><th class="p-3" style="background:#0C1825;color:#FFFFFF">Especificación</th><th class="p-3" style="background:#0C1825;color:#FFFFFF">Qué significa</th><th class="p-3" style="background:#0C1825;color:#FFFFFF">Rango en modelos vigentes</th></tr></thead>
+        <tbody>
+          <tr><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Resolución del detector</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Más píxeles térmicos = más detalle a distancia</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">320×240 a 640×480</td></tr>
+          <tr><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Frecuencia de imagen</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Fluidez al moverse o girar</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">30 Hz o 60 Hz</td></tr>
+          <tr><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Rango de temperatura</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Hasta dónde mide antes de saturarse</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Hasta 650 °C en FLIR K75 y K85-N</td></tr>
+          <tr><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Autonomía</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Tiempo de uso por batería</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">~4 h a 8.5 h según modelo</td></tr>
+          <tr><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Certificación</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Pruebas de desempeño y durabilidad para servicio de bomberos</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">NFPA 1930 en FLIR K85-N y Bullard NXT Pro</td></tr>
+        </tbody>
+      </table></div>
+
+      <div class="section-head mt-14 mb-5"><h2>Modos de alta y baja sensibilidad</h2></div>
+      <p>Las cámaras de bomberos trabajan con dos modos. En alta sensibilidad muestran más contraste en temperaturas bajas, útil para buscar personas. Cuando aparece mucho calor en la imagen, cambian a baja sensibilidad: amplían el rango de temperatura y evitan que la pantalla se sature en blanco.</p>
+
+      <div class="section-head mt-14 mb-5"><h2>Norma NFPA 1930 (antes NFPA 1801)</h2></div>
+      <p>La NFPA 1801 era la norma de cámaras térmicas para el servicio de bomberos. Desde diciembre de 2024 quedó integrada en la <strong>NFPA 1930, edición 2025</strong>, que también reúne las normas de radios portátiles, escaleras, herramientas de rescate y mangueras. Sus capítulos de cámaras térmicas definen los formatos de operación <em>TI Basic</em> y <em>TI Basic Plus</em> y pruebas de reconocimiento de imagen, impacto, vibración, corrosión, calor y llama, rango de temperatura, campo de visión y sensibilidad térmica. Los equipos certificados con ediciones anteriores pueden indicar «NFPA 1801 (2013)» o «NFPA 1801 (2021)».</p>
+
+      <div class="section-head mt-14 mb-5"><h2>Cámaras térmicas vigentes por marca</h2></div>
+      <ul class="list-disc pl-6 space-y-2 text-sm leading-relaxed" style="color:#CBD5E1">
+        <li><strong>FLIR K85-N:</strong> 640×480, 30 Hz, −20 a 650 °C, certificada NFPA 1930, transmisión Wi-Fi a la app Flir Responder.</li>
+        <li><strong>FLIR K75:</strong> 320×240, 30 Hz, −20 a 650 °C, realce de imagen FSX y Wi-Fi.</li>
+        <li><strong>MSA Evolution 6000:</strong> 320×240, hasta 550 °C en baja sensibilidad; NFPA 1801 en sus versiones certificadas.</li>
+        <li><strong>MSA G1 iTIC:</strong> cámara de 220×176 integrada al módulo de control del equipo de respiración autónoma G1.</li>
+        <li><strong>Bullard NXT Pro:</strong> 640×480, 60 Hz, certificada NFPA 1930.</li>
+        <li><strong>Bullard QXT Pro, DXT y TXS:</strong> 640×480 a 60 Hz, 320×240 a 60 Hz con hasta 8.5 h, y 320×240 a 30 Hz con 0.73 kg.</li>
+      </ul>
+      <p>La FLIR T560 es una cámara industrial de inspección (hasta 1500 °C): sirve a brigadas de mantenimiento, pero no es una cámara de bomberos.</p>
+
+      <div class="section-head mt-14 mb-5"><h2>¿Cómo elegir una cámara térmica para tu cuerpo de bomberos?</h2></div>
+      <ol class="list-decimal pl-6 space-y-2 text-sm leading-relaxed" style="color:#CBD5E1">
+        <li>Define el uso principal: búsqueda y rescate, mando o inspección industrial.</li>
+        <li>Exige certificación NFPA 1930 si la cámara entrará a estructuras incendiadas.</li>
+        <li>Compara resolución, frecuencia de imagen y autonomía con la duración de tus operaciones.</li>
+        <li>Verifica cómo se carga, cómo se sujeta al equipo y si transmite video al puesto de mando.</li>
+        <li>Capacita a tu personal: la cámara complementa, no sustituye, las técnicas de búsqueda.</li>
+      </ol>
+      <p>Cotiza tu cámara térmica con un especialista y recibe la recomendación por tipo de operación.</p>
+    </div>
   </section>
 
   <!-- QuickLinksBar -->
@@ -335,18 +395,18 @@ const articulos = [
           <span class="section-eyebrow mb-4 inline-flex">Teledyne FLIR · NFPA 1930 · Distribuidor Autorizado MX</span>
           <h2 id="flir-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Cámaras FLIR<br/>
-            <span style="color:#F75000">certificadas NFPA 1930.</span>
+            <span style="color:#F75000">K75 y K85-N (NFPA 1930).</span>
           </h2>
         </div>
         <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
           <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
             Teledyne FLIR es el mayor fabricante mundial de sensores de imagen térmica. Su línea K
-            para bomberos define el estándar global: K45 para entrada personal, K65 para mando con
+            para bomberos define el estándar global: K75 para entrada personal, K85-N para mando con
             video y transmisión Bluetooth, y T560 para inspección y sobrehaul de alta sensibilidad.
-            Cada modelo certificado NFPA 1930 vigente con número de serie verificable.
+            La K85-N está certificada NFPA 1930 (2025); te entregamos la documentación de cada equipo.
           </p>
           <div class="flex flex-wrap gap-2">
-            {['NFPA 1930','FLIR K45','FLIR K65','FLIR T560','Teledyne FLIR','Video · Bluetooth','Distribuidor autorizado MX'].map(b => (
+            {['NFPA 1930','FLIR K75','FLIR K85-N','FLIR T560','Teledyne FLIR','Wi-Fi · Flir Responder','Distribuidor autorizado MX'].map(b => (
               <span class="badge badge-dark text-[9px]">{b}</span>
             ))}
           </div>
@@ -366,11 +426,11 @@ const articulos = [
             ficha técnica NFPA 1930 y documentación para licitación con carta de distribuidor autorizado.
           </p>
         </div>
-        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+        <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/camaras-termicas/flir" class="btn btn-primary btn-lg">
             Catálogo FLIR completo →
           </a>
-          <a href={whatsappUrl('Hola, quiero cotizar cámaras térmicas FLIR K45 o K65 certificadas NFPA 1930.')}
+          <a href={whatsappUrl('Hola, quiero cotizar cámaras térmicas FLIR K75 o K85-N.')}
             target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
             Cotizar por {CANAL_CONTACTO}
           </a>
@@ -386,21 +446,21 @@ const articulos = [
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
-          <span class="section-eyebrow mb-4 inline-flex">MSA Safety · Evolution 6000 · NFPA 1930 · Distribuidor Autorizado MX</span>
+          <span class="section-eyebrow mb-4 inline-flex">MSA Safety · Evolution 6000 · G1 iTIC · Distribuidor Autorizado MX</span>
           <h2 id="msa-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Cámaras MSA Evolution<br/>
-            <span style="color:#60A5FA">certificadas NFPA 1930.</span>
+            <span style="color:#60A5FA">Evolution 6000 y G1 iTIC.</span>
           </h2>
         </div>
         <div style="border-left:2px solid rgba(96,165,250,0.4);padding-left:1.75rem">
           <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
             MSA Safety —NYSE: MSA— integra su cámara Evolution 6000 con el ecosistema completo de EPP:
             montaje nativo en casco Gallet, integración con máscara SCBA G1 y transmisión inalámbrica
-            al sistema de mando. La Evolution 6000 Plus añade grabación de video y pantalla de 3.5"
+            al sistema de mando. La Evolution 6000 añade grabación de video y pantalla de 3.5"
             para gestión táctica desde el exterior. La opción preferida en operaciones industriales.
           </p>
           <div class="flex flex-wrap gap-2">
-            {['NFPA 1930','MSA Evolution 6000','Evolution 6000 Plus','Montaje Gallet','SCBA G1 integrado','Transmisión Wi-Fi','Distribuidor autorizado MX'].map(b => (
+            {['NFPA 1930','MSA Evolution 6000','Evolution 6000','Montaje Gallet','SCBA G1 integrado','Transmisión Wi-Fi','Distribuidor autorizado MX'].map(b => (
               <span class="badge badge-dark text-[9px]">{b}</span>
             ))}
           </div>
@@ -416,15 +476,15 @@ const articulos = [
       <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(96,165,250,0.15)">
         <div class="flex-1">
           <p class="text-sm leading-relaxed m-0" style="color:#64748B">
-            Comparativa Evolution 6000 vs 6000 Plus vs 5200 Industrial, guía de integración con casco
+            Comparativa Evolution 6000 vs Evolution 6000 vs Evolution 6000 Industrial, guía de integración con casco
             MSA Gallet y SCBA G1, y ficha técnica NFPA 1930 para licitación.
           </p>
         </div>
-        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+        <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/camaras-termicas/msa-evolution" class="btn btn-primary btn-lg">
             Catálogo MSA Evolution completo →
           </a>
-          <a href={whatsappUrl('Hola, quiero cotizar cámaras térmicas MSA Evolution 6000 certificadas NFPA 1930.')}
+          <a href={whatsappUrl('Hola, quiero cotizar cámaras térmicas MSA Evolution 6000.')}
             target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
             Cotizar por {CANAL_CONTACTO}
           </a>
@@ -440,22 +500,22 @@ const articulos = [
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
-          <span class="section-eyebrow mb-4 inline-flex">Bullard · TXS · NXT · NFPA 1930 · Distribuidor Autorizado MX</span>
+          <span class="section-eyebrow mb-4 inline-flex">Bullard · TXS · NXT Pro · NFPA 1930 · Distribuidor Autorizado MX</span>
           <h2 id="bullard-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Cámaras Bullard<br/>
-            <span style="color:#F5A623">certificadas NFPA 1930.</span>
+            <span style="color:#F5A623">TXS, QXT Pro, DXT y NXT Pro.</span>
           </h2>
         </div>
         <div style="border-left:2px solid rgba(245,166,35,0.4);padding-left:1.75rem">
           <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
-            Bullard lleva más de 125 años en EPP para bomberos. Su línea TXS y NXT destaca por
+            Bullard fabrica EPP para bomberos. Su línea TXS y NXT Pro destaca por
             resistencia mecánica extrema — probadas a caídas de 2 m sobre concreto mientras están
-            activas — y el mayor rango de temperatura de pantalla de la categoría (hasta 600 °C).
-            La T4MAX agrega transmisión Wi-Fi y pantalla de 4" para mando. La primera opción
+            activas — y la NXT Pro de 640×480 px certificada NFPA 1930.
+            La NXT Pro agrega transmisión Wi-Fi y pantalla de 4" para mando. La primera opción
             para cuerpos con mayor riesgo de daño físico al equipo.
           </p>
           <div class="flex flex-wrap gap-2">
-            {['NFPA 1930','Bullard TXS','Bullard NXT','T4MAX mando','600 °C rango','Wi-Fi transmisión','Resistencia mecánica','Distribuidor autorizado MX'].map(b => (
+            {['NFPA 1930','Bullard TXS','Bullard NXT Pro','NXT Pro mando','640×480 · 60 Hz','NXT Pro NFPA 1930','Resistencia mecánica','Distribuidor autorizado MX'].map(b => (
               <span class="badge badge-dark text-[9px]">{b}</span>
             ))}
           </div>
@@ -471,15 +531,15 @@ const articulos = [
       <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(245,166,35,0.15)">
         <div class="flex-1">
           <p class="text-sm leading-relaxed m-0" style="color:#64748B">
-            Comparativa TXS vs NXT vs T4MAX, pruebas de resistencia mecánica y ficha técnica
+            Comparativa TXS vs NXT Pro vs NXT Pro, pruebas de resistencia mecánica y ficha técnica
             NFPA 1930 con carta de distribuidor autorizado para licitación.
           </p>
         </div>
-        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+        <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/camaras-termicas/bullard-txs" class="btn btn-primary btn-lg">
             Catálogo Bullard completo →
           </a>
-          <a href={whatsappUrl('Hola, quiero cotizar cámaras térmicas Bullard TXS o NXT certificadas NFPA 1930.')}
+          <a href={whatsappUrl('Hola, quiero cotizar cámaras térmicas Bullard TXS o NXT Pro.')}
             target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
             Cotizar por {CANAL_CONTACTO}
           </a>
@@ -599,7 +659,7 @@ const articulos = [
           >
             Agendar demostración →
           </a>
-          <a href={whatsappUrl('Hola, quiero una cotización de cámaras térmicas certificadas NFPA 1930 para mi corporación.')}
+          <a href={whatsappUrl('Hola, quiero una cotización de cámaras térmicas para mi corporación.')}
             target="_blank" rel="noopener"
             class="btn btn-ghost btn-lg text-center">
             Solicitar cotización formal
@@ -670,7 +730,7 @@ const articulos = [
            class="group flex flex-col gap-2 p-5 hover:border-[#F75000]"
            style="background:#080F1A;border:1px solid rgba(74,117,153,0.2)">
           <span class="text-sm font-display font-bold group-hover:text-[#F75000]" style="color:#FFFFFF">Equipos SCBA</span>
-          <span class="text-xs leading-relaxed" style="color:#64748B">MSA G1 · Dräger PSS 7000 · 3M Scott</span>
+          <span class="text-xs leading-relaxed" style="color:#64748B">MSA G1 · Dräger PSS · 3M Scott</span>
           <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Equipos SCBA →</span>
         </a>
         <a href="/productos/trajes-bombero"

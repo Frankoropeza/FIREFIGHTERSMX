@@ -361,7 +361,7 @@ export const categoriaMarca: Record<string, CategoriaMeta> = {
       { label: 'Cascos NFPA', desc: 'MSA Gallet F1 XF EN 443, Bullard y Cairns', href: '/productos/cascos-nfpa' },
       { label: 'Trajes para Bomberos', desc: 'Globe, Lion, Honeywell, Fire-Dex y Sköld — NFPA 1970', href: '/productos/trajes-bombero' },
       { label: 'Equipos SCBA', desc: 'MSA G1, Dräger y 3M Scott — aire autónomo', href: '/productos/equipos-scba' },
-      { label: 'Capacitación y demostración', desc: 'Operación y mantenimiento NFPA 1936', href: '/servicios/capacitacion' },
+      { label: 'Capacitación y demostración', desc: 'Operación y mantenimiento de herramientas de rescate', href: '/servicios/capacitacion' },
       { label: 'Soporte para licitaciones', desc: 'Fichas técnicas y manifiestos por partida', href: '/licitaciones' },
     ],
   },
@@ -377,7 +377,7 @@ export const categoriaMarca: Record<string, CategoriaMeta> = {
     ],
     conjunto: [
       { label: 'Equipos SCBA', desc: 'MSA G1, Dräger y 3M Scott — aire autónomo', href: '/productos/equipos-scba' },
-      { label: 'Herramientas de Rescate', desc: 'Holmatro, Hurst y Weber — NFPA 1936', href: '/productos/herramientas-rescate' },
+      { label: 'Herramientas de Rescate', desc: 'Holmatro, Hurst y Weber — EN 13204', href: '/productos/herramientas-rescate' },
       { label: 'Extintores', desc: 'Amerex y Ansul — ABC, CO₂ y cocina', href: '/productos/extintores' },
       { label: 'Capacitación contra incendio', desc: 'Brigadas, evacuación y respuesta NFPA', href: '/servicios/capacitacion' },
       { label: 'Soporte para licitaciones', desc: 'Fichas técnicas y manifiestos por partida', href: '/licitaciones' },
@@ -431,7 +431,7 @@ export const categoriaMarca: Record<string, CategoriaMeta> = {
     ],
     conjunto: [
       { label: 'Cámaras Térmicas portátiles', desc: 'FLIR y MSA para exploración en tierra', href: '/productos/camaras-termicas' },
-      { label: 'Herramientas de Rescate', desc: 'Holmatro, Hurst y Weber — NFPA 1936', href: '/productos/herramientas-rescate' },
+      { label: 'Herramientas de Rescate', desc: 'Holmatro, Hurst y Weber — EN 13204', href: '/productos/herramientas-rescate' },
       { label: 'Equipos SCBA', desc: 'MSA G1, Dräger y 3M Scott — aire autónomo', href: '/productos/equipos-scba' },
       { label: 'Capacitación operativa', desc: 'Pilotos y protocolos de misión AFAC', href: '/servicios/capacitacion' },
       { label: 'Soporte para licitaciones', desc: 'Fichas técnicas y manifiestos por partida', href: '/licitaciones' },

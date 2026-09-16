@@ -153,10 +153,10 @@ export const categories: Category[] = [
     accent: '#F75000',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
     label: 'Herramientas de Rescate',
-    norm: 'NFPA 1936',
-    description: 'Herramientas hidráulicas de rescate NFPA 1936: cizallas, separadores y arietes Holmatro. Rescate vehicular y estructural. Demostración y capacitación incluidas.',
+    norm: 'EN 13204 · NFPA 1960',
+    description: 'Herramientas hidráulicas de rescate (quijadas de la vida): cizallas, separadores, combinadas y arietes Holmatro, Hurst y Weber. Rescate vehicular y estructural. Demostración y capacitación incluidas.',
     intro: [
-      'Para extracción vehicular y rescate urbano, distribuimos la línea completa Holmatro certificada NFPA 1936: cizallas, separadores, herramientas combinadas y arietes telescópicos, en versiones con manguera y batería (Pentheon).',
+      'Para extracción vehicular y rescate urbano, distribuimos herramientas Holmatro, Hurst y Weber con clasificación EN 13204: cizallas, separadores, herramientas combinadas y arietes telescópicos, en versiones con manguera y batería (Pentheon).',
       'Cada venta institucional incluye demostración en sitio y capacitación básica de operación. Ofrecemos también mantenimiento preventivo anual con refacciones originales para mantener la certificación del equipo.',
     ],
     items: [
@@ -168,9 +168,9 @@ export const categories: Category[] = [
     productCategory: 'Herramientas Rescate',
     spotlight: {
       title: 'Herramientas de Rescate certificadas',
-      highlight: 'NFPA 1936',
+      highlight: 'EN 13204',
       paragraphs: [
-        'En extracción vehicular cada minuto cuenta. Distribuimos la línea completa Holmatro certificada NFPA 1936: cizallas, separadores, herramientas combinadas y arietes telescópicos con fuerzas de corte de más de 1,000 kN, capaces de abrir los aceros endurecidos de los vehículos modernos.',
+        'En extracción vehicular cada minuto cuenta. Distribuimos herramientas Holmatro, Hurst y Weber con clasificación EN 13204: cizallas, separadores, herramientas combinadas y arietes telescópicos con fuerzas de corte de más de 1,000 kN, capaces de abrir los aceros endurecidos de los vehículos modernos.',
         'Cada venta institucional incluye demostración en sitio y capacitación básica de operación. Damos mantenimiento preventivo anual con refacciones originales para conservar la certificación y el rendimiento del equipo.',
       ],
       subsections: [
@@ -180,7 +180,7 @@ export const categories: Category[] = [
         { name: 'Demostración y capacitación', detail: 'Demo en tu estación con escenarios reales, capacitación de operación y mantenimiento preventivo anual certificado.' },
       ],
       image: '/images/categorias/herramientas-rescate.avif',
-      imageAlt: 'Ilustración técnica de separador hidráulico de rescate vehicular certificado NFPA 1936',
+      imageAlt: 'Ilustración técnica de separador hidráulico de rescate vehicular de clasificación EN 13204',
     },
   },
   {
@@ -268,7 +268,7 @@ export const categories: Category[] = [
       'Desde cámaras personales de bolsillo hasta equipos de mando con telemetría, te asesoramos según presupuesto y uso: estructural, HAZMAT, inspección industrial o búsqueda y rescate.',
     ],
     items: [
-      { name: 'FLIR K45 / K65', detail: 'Línea estructural con FSX y grabación' },
+      { name: 'FLIR K75 / K85-N', detail: 'Línea estructural con FSX y transmisión Wi-Fi' },
       { name: 'MSA Evolution 6000', detail: 'Integración con SCBA G1 y telemetría' },
       { name: 'Bullard TXS / NXT', detail: 'Ligeras, intuitivas, alta resolución' },
       { name: 'Cámaras personales', detail: 'Una cámara por bombero: decisión táctica inmediata' },
@@ -285,7 +285,7 @@ export const categories: Category[] = [
         { name: 'Búsqueda y rescate', detail: 'Localización de víctimas en humo denso: sensores de alta sensibilidad con paletas de color para identificar fuentes de calor.' },
         { name: 'Sobrehaul y puntos calientes', detail: 'Verificación de extinción total tras el ataque: detecta combustión oculta en muros, techos y entrepisos.' },
         { name: 'Cámaras personales', detail: 'Una cámara por bombero cambia la táctica: decisión inmediata en el interior sin esperar al equipo de mando.' },
-        { name: 'Integración y accesorios', detail: 'Montaje en casco o SCBA (MSA G1), grabación de incidentes, cargadores vehiculares y fundas de despliegue rápido.' },
+        { name: 'Integración y accesorios', detail: 'Cámara integrada al SCBA (MSA G1 iTIC), grabación de incidentes, cargadores vehiculares y fundas de despliegue rápido.' },
       ],
       image: '/images/categorias/camaras-termicas.avif',
       imageAlt: 'Ilustración técnica de cámara térmica para bomberos certificada NFPA 1930 con silueta de calor en pantalla',

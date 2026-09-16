@@ -16,8 +16,8 @@ const marcas = brandPages.filter((b) => b.categorySlug === 'drones-emergencia');
 const dronesProducts = featuredProducts.filter((p) => p.category === 'Drones Emergencia' && p.specs);
 
 const seoMeta = {
-  title: `Drones para Bomberos y Protección Civil — DJI Matrice Térmico México`,
-  description: cat.description,
+  title: 'Dron con cámara térmica para bomberos y protección civil en México',
+  description: 'Drones con cámara térmica radiométrica para bomberos: usos, especificaciones, DJI Matrice y Mavic 3 Thermal, estaciones Dock y requisitos de la NOM-107-SCT3-2019.',
   canonicalURL,
 };
 
@@ -56,9 +56,9 @@ const misiones = [
 
 /* Tabla comparativa */
 const comparativa = [
-  ['Sensor térmico', 'Radiométrica 640×512', 'FLIR 640×512', 'Radiométrica (via M30T)'],
+  ['Sensor térmico', 'Radiométrica 640×512', 'Radiométrica 640×512', 'Matrice 3TD'],
   ['Autonomía', '41 min', '45 min', 'Ilimitada (dock)'],
-  ['Alcance', '15 km', '15 km', '7 km radio'],
+  ['Alcance', '15 km', '15 km FCC / 8 km CE', '10 km radio'],
   ['Despliegue', '< 5 min', '< 2 min', 'Autónomo'],
   ['IP / protección', 'IP55', 'No certificado', 'IP55 (estación)'],
   ['Escenario ideal', 'Operación institucional', 'Respuesta rápida', 'Vigilancia 24/7'],
@@ -173,8 +173,8 @@ const otrasCategorias = allCategories.filter((c) => c.slug !== 'drones-emergenci
         <div>
           <span class="section-eyebrow mb-5 inline-flex">{cat.norm}</span>
           <h1 class="font-display font-bold uppercase mb-4" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
-            Drones de<br/>
-            <span style="color:#F75000">Emergencia</span>
+            Dron con cámara térmica<br/>
+            <span style="color:#F75000">drones DJI Enterprise para bomberos y protección civil.</span>
           </h1>
           <p class="text-base leading-relaxed mb-8 max-w-xl" style="color:#94A3B8">
             Distribuidores autorizados de DJI Enterprise en México. Matrice 30T con térmica radiométrica,
@@ -198,6 +198,50 @@ const otrasCategorias = allCategories.filter((c) => c.slug !== 'drones-emergenci
       </div>
     </div>
     <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)" aria-hidden="true"></div>
+  </section>
+
+  <section id="guia-drones" class="section" style="background:#040A12" aria-labelledby="guia-drones-title">
+    <div class="container-site content-copy">
+      <div class="section-head mb-5"><h2 id="guia-drones-title">¿Para qué sirve un dron con cámara térmica en emergencias?</h2></div>
+      <p class="mb-8">Un dron con cámara térmica permite ver el calor desde el aire, de día y de noche. Los cuerpos de bomberos y de protección civil lo usan en combate de incendios, búsqueda y rescate, inspección y operaciones nocturnas. Desde el aire, el mando obtiene una vista completa del incidente sin exponer al personal.</p>
+
+      <div class="section-head mt-14 mb-5"><h2>Cámara térmica radiométrica: qué la hace diferente</h2></div>
+      <p>Una cámara radiométrica mide la temperatura de cada píxel, no solo muestra contraste. Los modelos DJI Matrice 30T, Mavic 3 Thermal y Matrice 4T usan sensores de 640×512 con precisión de ±2 °C o ±2 %. Así se pueden registrar temperaturas en la imagen y compararlas entre vuelos.</p>
+
+      <div class="section-head mt-14 mb-5"><h2>Comparativa de drones térmicos DJI Enterprise</h2></div>
+      <div class="overflow-x-auto max-w-full min-w-0 mb-4"><table class="w-full text-left text-sm" style="border-collapse:collapse;min-width:640px;color:#CBD5E1">
+        <thead><tr><th class="p-3" style="background:#0C1825;color:#FFFFFF">Modelo</th><th class="p-3" style="background:#0C1825;color:#FFFFFF">Térmica</th><th class="p-3" style="background:#0C1825;color:#FFFFFF">Vuelo</th><th class="p-3" style="background:#0C1825;color:#FFFFFF">Protección</th><th class="p-3" style="background:#0C1825;color:#FFFFFF">Peso</th></tr></thead>
+        <tbody>
+          <tr><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Mavic 3 Thermal</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">640×512 radiométrica</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">45 min</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Sin IP</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">920 g</td></tr>
+          <tr><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Matrice 4T</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">640×512 radiométrica</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">49 min</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">—</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">1.22 kg</td></tr>
+          <tr><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Matrice 30T</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">640×512 radiométrica + telémetro láser</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">41 min</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">IP55</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">3.77 kg</td></tr>
+          <tr><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Matrice 350 RTK</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Según carga útil</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">55 min sin carga</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">IP55</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">9.2 kg máx. al despegue</td></tr>
+        </tbody>
+      </table></div>
+
+      <div class="section-head mt-14 mb-5"><h2>Estaciones Dock: vuelo automatizado</h2></div>
+      <p>Las estaciones DJI Dock guardan, cargan y despachan el dron para misiones programadas o remotas. El <strong>Dock 2</strong> opera con los Matrice 3D/3TD en un radio de 10 km; el <strong>Dock 3</strong> opera con los Matrice 4D/4TD, tiene base IP56 y se puede montar en un vehículo. Ambos se gestionan con <strong>DJI FlightHub 2</strong>, una plataforma en la nube para coordinar misiones y transmisiones.</p>
+
+      <div class="section-head mt-14 mb-5"><h2>Normativa: NOM-107-SCT3-2019</h2></div>
+      <p>En México, los drones se regulan con la NOM-107-SCT3-2019, vigente y confirmada en 2024. Lo más importante para bomberos y protección civil:</p>
+      <ul class="list-disc pl-6 space-y-2 text-sm leading-relaxed" style="color:#CBD5E1">
+        <li>Todo dron de más de 250 g requiere registro ante la autoridad aeronáutica.</li>
+        <li>Categorías por peso: micro (hasta 2 kg), pequeño (más de 2 y hasta 25 kg) y grande (más de 25 kg).</li>
+        <li>Las operaciones de gobierno siguen los requisitos del uso privado no comercial: seguro de responsabilidad civil y, en drones pequeños, autorización de operación y de piloto.</li>
+        <li>Límites generales: 122 m de altura, 457 m de distancia horizontal, siempre a la vista del piloto y a 9.2 km de aeródromos; las operaciones especiales tienen reglas propias.</li>
+      </ul>
+      <p>Por peso, el Mavic 3 Thermal y el Matrice 4T son micro; el Matrice 30T y el Matrice 350 RTK son pequeños.</p>
+
+      <div class="section-head mt-14 mb-5"><h2>¿Cómo elegir un dron térmico?</h2></div>
+      <ol class="list-decimal pl-6 space-y-2 text-sm leading-relaxed" style="color:#CBD5E1">
+        <li>Define la misión: respuesta rápida, búsqueda y rescate de largo alcance o patrullaje automatizado.</li>
+        <li>Elige entre un dron compacto (despliegue rápido) y uno con protección IP55 para lluvia y polvo.</li>
+        <li>Verifica que la cámara sea radiométrica si necesitas medir temperaturas.</li>
+        <li>Considera la categoría NOM-107 del equipo y los trámites que implica.</li>
+        <li>Planea capacitación de pilotos, baterías de reserva y software de gestión de misiones.</li>
+      </ol>
+      <p>Cotiza tu dron con cámara térmica y recibe la recomendación según tu operación.</p>
+    </div>
   </section>
 
   <!-- Accesos rápidos -->
@@ -329,7 +373,7 @@ const otrasCategorias = allCategories.filter((c) => c.slug !== 'drones-emergenci
             Accede al catálogo dedicado de DJI Enterprise.
           </p>
         </div>
-        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+        <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/drones-emergencia/dji-enterprise" class="btn btn-primary btn-lg">
             Catálogo DJI completo →
           </a>
@@ -491,7 +535,7 @@ const otrasCategorias = allCategories.filter((c) => c.slug !== 'drones-emergenci
             Cámara térmica radiométrica.<br/>Llave en mano con AFAC.
           </h2>
         </div>
-        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+        <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a
             href={whatsappUrl('Hola, quiero cotizar drones de emergencia con cámara térmica. ¿Tienen disponibilidad?')}
             target="_blank" rel="noopener"

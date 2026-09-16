@@ -11,8 +11,8 @@ const cat = categories.find((c) => c.slug === 'herramientas-rescate')!;
 const canonicalURL = `${SITE.url}/productos/herramientas-rescate/`;
 
 const seoMeta = {
-  title: `Herramientas de Rescate NFPA 1936 — Holmatro, Hurst y Weber Rescue · México`,
-  description: cat.description,
+  title: 'Quijadas de la vida: herramientas hidráulicas de rescate y cómo elegirlas',
+  description: 'Qué son las quijadas de la vida, tipos de herramientas de rescate (cizalla, separador, combinada, ariete), EN 13204:2025, NFPA y modelos Holmatro, Hurst y Weber.',
   canonicalURL,
 };
 
@@ -32,30 +32,30 @@ const todosProductos = [...holmatroProducts, ...hurstProducts, ...weberProducts]
 const familias = [
   {
     title: 'Cizallas',
-    badge: 'NFPA 1936 · EN 13204',
+    badge: 'NFPA 1960 · EN 13204:2025',
     accent: '#F75000',
-    desc: 'Cortan postes B reforzados, pedales y estructuras de acero al boro de los vehículos modernos. Fuerza de corte hasta ~1,400 kN. La herramienta principal de toda escena de excarcelación.',
+    desc: 'Cortan postes B reforzados, pedales y estructuras de acero al boro de los vehículos modernos. La herramienta principal de toda escena de excarcelación.',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 7H9.5a2 2 0 0 0 0 4H14"/><path d="M20 17H9.5a2 2 0 0 1 0-4H14"/><path d="M4 7l4 5-4 5"/></svg>`,
   },
   {
     title: 'Separadores',
-    badge: 'NFPA 1936 · Apertura',
+    badge: 'NFPA 1960 · Apertura',
     accent: '#F5A623',
-    desc: 'Abren puertas, desplazan tableros y crean espacio en el habitáculo. Gran apertura de brazos y puntas de retención de carga para tracción y levantamiento. Fuerza hasta ~67 kN.',
+    desc: 'Abren puertas, desplazan tableros y crean espacio en el habitáculo. Gran apertura de brazos y puntas de retención de carga para tracción y levantamiento. Fuerza máxima de 366 kN en PSP50.',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12H3M21 12h-2M8.5 12a3.5 3.5 0 0 1 7 0"/><path d="M12 5v2M12 17v2M7.05 7.05l1.41 1.41M15.54 15.54l1.41 1.41M7.05 16.95l1.41-1.41M15.54 8.46l1.41-1.41"/></svg>`,
   },
   {
     title: 'Herramientas Combinadas',
-    badge: 'NFPA 1936 · 2 en 1',
+    badge: 'NFPA 1960 · 2 en 1',
     accent: '#34D399',
     desc: 'Cortan y separan con una sola herramienta. La solución compacta del primer respondiente: capacidad de excarcelación completa sin cargar dos equipos. Ideal para unidades ligeras.',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
   },
   {
     title: 'Arietes Telescópicos',
-    badge: 'NFPA 1936 · Empuje',
+    badge: 'NFPA 1960 · Empuje',
     accent: '#60A5FA',
-    desc: 'Empuje de tablero, desplazamiento de cargas y estabilización de vehículos. Alta fuerza en línea recta (~135 kN) con carrera telescópica larga. Imprescindible en rescate estructural y USAR.',
+    desc: 'Empuje de tablero, desplazamiento de cargas y estabilización de vehículos. Alta fuerza en línea recta (136 kN en PRA50) con carrera telescópica larga. Imprescindible en rescate estructural y USAR.',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M15 8l4 4-4 4"/><path d="M3 8v8"/></svg>`,
   },
 ];
@@ -64,13 +64,13 @@ const familias = [
 const razones = [
   {
     n: '01',
-    t: 'Tres marcas tier-1 mundiales',
+    t: 'Tres fabricantes internacionales',
     d: 'Holmatro (Pentheon · batería), Hurst Jaws of Life® (eDRAULIC) y Weber Rescue (E-FORCE) — las tres referencias internacionales en herramientas de rescate vehicular a batería, con un solo proveedor en México.',
   },
   {
     n: '02',
-    t: 'Certificación NFPA 1936 + EN 13204',
-    d: 'Cada herramienta incluye la ficha con la clasificación de corte EN 13204 verificable — el dato que define si la cizalla corta los aceros al boro de los vehículos modernos. Documentación lista para licitación.',
+    t: 'Certificación NFPA 1960 + EN 13204:2025',
+    d: 'Cada herramienta incluye la ficha con la clasificación de corte EN 13204:2025 verificable — el dato que define si la cizalla corta los aceros al boro de los vehículos modernos. Documentación lista para licitación.',
   },
   {
     n: '03',
@@ -80,31 +80,31 @@ const razones = [
   {
     n: '04',
     t: 'Servicio y mantenimiento certificado',
-    d: 'Mantenimiento preventivo anual con refacciones originales para conservar la certificación NFPA 1936 y EN 13204 del equipo. Soporte técnico en los 32 estados con bitácora para auditoría.',
+    d: 'Mantenimiento preventivo anual con refacciones originales para conservar la certificación NFPA 1960 y EN 13204:2025 del equipo. Soporte técnico en los 32 estados con bitácora para auditoría.',
   },
 ];
 
 /* Tabla comparativa de familias */
 const comparativa = [
   ['Función principal', 'Corte de estructuras', 'Apertura y desplazamiento', 'Corte + separación', 'Empuje lineal'],
-  ['Fuerza de referencia', '~1,400 kN de corte', '~67 kN de apertura', 'Corte + sep. combinados', '~135 kN de empuje'],
-  ['Rango / carrera', 'Boca ~200 mm', 'Apertura ~850 mm', 'Apertura ~360 mm', 'Carrera ~700 mm'],
+  ['Fuerza de referencia', 'Clasificación publicada por modelo', '366 kN máximo (PSP50)', 'Corte + sep. combinados', '136 kN (PRA50)'],
+  ['Rango / carrera', 'Apertura 182 mm', 'Apertura 725 mm', '—', '—'],
   ['Fuente de poder', 'Batería autocontenida', 'Batería autocontenida', 'Batería autocontenida', 'Batería autocontenida'],
   ['Escenario ideal', 'Excarcelación · aceros duros', 'Crear acceso · tablero', 'Primer respondiente', 'Rescate estructural · USAR'],
-  ['Norma', 'NFPA 1936 + EN 13204', 'NFPA 1936 + EN 13204', 'NFPA 1936 + EN 13204', 'NFPA 1936 + EN 13204'],
+  ['Norma', 'NFPA 1960 + EN 13204:2025', 'NFPA 1960 + EN 13204:2025', 'NFPA 1960 + EN 13204:2025', 'NFPA 1960 + EN 13204:2025'],
 ];
 
 /* Guía de selección */
 const guia = [
   { n: '01', t: 'Define la misión dominante: excarcelación vehicular → cizalla + separador + ariete; primer respondiente o unidad ligera → combinada; rescate técnico/USAR → ariete + separador.' },
   { n: '02', t: 'Elige la tecnología: la línea a batería (Pentheon, eDRAULIC, E-FORCE) es hoy el estándar — sin mangueras, sin unidad de poder, despliegue en segundos y movilidad total en la escena.' },
-  { n: '03', t: 'Dimensiona por los vehículos de tu zona: los autos modernos con acero al boro y postes B reforzados exigen clasificación de corte alta (EN 13204). Verifica la categoría de la cizalla antes de especificar.' },
-  { n: '04', t: 'Incluye demostración, capacitación y plan de mantenimiento: la herramienta de rescate debe entrenarse y mantenerse. La certificación NFPA 1936 / EN 13204 depende de ello.' },
+  { n: '03', t: 'Dimensiona por los vehículos de tu zona: los autos modernos con acero al boro y postes B reforzados exigen clasificación de corte alta (EN 13204:2025). Verifica la categoría de la cizalla antes de especificar.' },
+  { n: '04', t: 'Incluye demostración, capacitación y plan de mantenimiento: la herramienta de rescate debe entrenarse y mantenerse. La certificación NFPA 1960 / EN 13204:2025 depende de ello.' },
 ];
 
 /* Blog */
 const articulos = [
-  { label: 'NFPA 1936 vs EN 13204', desc: 'Qué miden y por qué importan en licitación', href: '/blog/nfpa-1936-herramientas-rescate-excarcelacion' },
+  { label: 'NFPA 1960 vs EN 13204:2025', desc: 'Qué miden y por qué importan en licitación', href: '/blog/nfpa-1936-herramientas-rescate-excarcelacion' },
   { label: 'Aceros al boro: el reto del rescatista', desc: 'Por qué los autos modernos son más difíciles de abrir', href: '/blog/holmatro-vs-lukas-herramientas-rescate' },
   { label: 'Batería vs unidad de poder', desc: 'Cuándo elegir cada sistema', href: '/blog/herramientas-hidraulicas-rescate-holmatro-hurst-weber' },
   { label: 'Equipar un equipo de excarcelación', desc: 'Qué herramientas, cuántas y por qué', href: '/blog/categoria/herramientas-rescate' },
@@ -114,7 +114,7 @@ const articulos = [
 const faqs = [
   {
     q: '¿Qué norma certifica una herramienta hidráulica de rescate en México?',
-    a: 'En el mercado mexicano se referencian la NFPA 1936 (estándar de la NFPA para herramientas de rescate motorizadas) y la EN 13204 (norma europea que clasifica la capacidad de corte por categorías). La clasificación EN 13204 es clave: define qué tan duros son los aceros que una cizalla puede cortar. Las herramientas que distribuimos cumplen ambas; te entregamos la ficha con la clasificación exacta por modelo para licitación.',
+    a: 'En el mercado mexicano se referencian la NFPA 1960 (estándar de la NFPA para herramientas de rescate motorizadas) y la EN 13204:2025 (norma europea que clasifica la capacidad de corte por categorías). La clasificación EN 13204:2025 es clave: define qué tan duros son los aceros que una cizalla puede cortar. Las herramientas que distribuimos cumplen ambas; te entregamos la ficha con la clasificación exacta por modelo para licitación.',
   },
   {
     q: '¿Batería (Pentheon / eDRAULIC / E-FORCE) o sistema con unidad de poder y mangueras?',
@@ -122,15 +122,15 @@ const faqs = [
   },
   {
     q: '¿Las cizallas cortan los aceros al boro de los vehículos modernos?',
-    a: 'Sí, siempre que tengan la clasificación de corte adecuada. Los vehículos recientes usan aceros al boro y de alta resistencia en postes B y zonas de seguridad que atascan a las herramientas antiguas. Las cizallas Holmatro Pentheon, Hurst eDRAULIC y Weber E-FORCE tienen hojas y geometría diseñadas para estos materiales, con clasificación EN 13204 alta. Dimensionamos la cizalla según los modelos de vehículo más frecuentes en tu zona.',
+    a: 'Sí, siempre que tengan la clasificación de corte adecuada. Los vehículos recientes usan aceros al boro y de alta resistencia en postes B y zonas de seguridad que atascan a las herramientas antiguas. Las cizallas Holmatro Pentheon, Hurst eDRAULIC y Weber E-FORCE tienen hojas y geometría diseñadas para estos materiales, con clasificación EN 13204:2025 alta. Dimensionamos la cizalla según los modelos de vehículo más frecuentes en tu zona.',
   },
   {
     q: '¿Qué diferencia a Holmatro, Hurst y Weber Rescue?',
-    a: 'Las tres son marcas tier-1 con líneas a batería certificadas NFPA 1936 / EN 13204. Holmatro destaca por la línea Pentheon y el sistema Combi-Tool de cambio rápido. Hurst inventó el Jaws of Life® en 1972 y su línea eDRAULIC es la más reconocida mundialmente. Weber Rescue sobresale por la relación peso-potencia y la maniobrabilidad de la línea E-FORCE. La elección depende de preferencia operativa y ecosistema de baterías. Te facilitamos las tres fichas y, cuando es posible, demostración comparativa.',
+    a: 'Las tres son fabricantes con líneas a batería con clasificación EN 13204 publicada por modelo. Holmatro destaca por la línea Pentheon y las puntas desmontables en las combinadas. Hurst presentó Jaws of Life® en 1971 y su línea eDRAULIC es la reconocida en rescate vehicular. Weber Rescue sobresale por la relación peso-potencia y la maniobrabilidad de la línea E-FORCE. La elección depende de preferencia operativa y ecosistema de baterías. Te facilitamos las tres fichas y, cuando es posible, demostración comparativa.',
   },
   {
     q: '¿Incluyen demostración, capacitación y mantenimiento para licitación pública?',
-    a: 'Sí. Cada venta institucional incluye demostración en sitio con escenarios reales, capacitación básica de operación y mantenimiento preventivo anual con refacciones originales. Para concursos públicos (CompraNet, IMSS, gobiernos estatales) generamos el manifiesto de cumplimiento NFPA 1936 / EN 13204 por partida, con la clasificación de corte verificable y el plan de servicio para la vida útil del equipo.',
+    a: 'Sí. Cada venta institucional incluye demostración en sitio con escenarios reales, capacitación básica de operación y mantenimiento preventivo anual con refacciones originales. Para concursos públicos (CompraNet, IMSS, gobiernos estatales) generamos el manifiesto de cumplimiento NFPA 1960 / EN 13204:2025 por partida, con la clasificación de corte verificable y el plan de servicio para la vida útil del equipo.',
   },
 ];
 
@@ -149,7 +149,7 @@ const collectionSchema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
   '@id': `${canonicalURL}#collection`,
-  name: 'Herramientas de Rescate certificadas NFPA 1936 — México',
+  name: 'Herramientas de Rescate Holmatro, Hurst y Weber — México',
   description: cat.description,
   url: canonicalURL,
   inLanguage: 'es-MX',
@@ -196,15 +196,15 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
         <div>
           <span class="section-eyebrow mb-5 inline-flex">{cat.norm} · Holmatro · Hurst · Weber Rescue · Distribuidor Autorizado MX</span>
           <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
-            Herramientas<br/>
-            <span style="color:#F75000">de Rescate.</span>
+            Quijadas de la vida<br/>
+            <span style="color:#F75000">herramientas hidráulicas de rescate Holmatro, Hurst y Weber.</span>
           </h1>
           <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
             Distribuidor autorizado de Holmatro, Hurst Jaws of Life® y Weber Rescue en México.
-            Líneas a batería sin mangueras, clasificación EN 13204 verificable y demostración en sitio incluida.
+            Líneas a batería sin mangueras, clasificación EN 13204:2025 verificable y demostración en sitio incluida.
           </p>
           <div class="flex flex-col sm:flex-row gap-3">
-            <a href={whatsappUrl('Hola, quiero cotizar herramientas de rescate vehicular NFPA 1936.')} target="_blank" rel="noopener" class="btn btn-primary btn-lg">Cotizar por {CANAL_CONTACTO}</a>
+            <a href={whatsappUrl('Hola, quiero cotizar herramientas de rescate vehicular NFPA 1960.')} target="_blank" rel="noopener" class="btn btn-primary btn-lg">Cotizar por {CANAL_CONTACTO}</a>
             <a href="/cotizacion" class="btn btn-ghost btn-lg">Cotización formal</a>
           </div>
         </div>
@@ -213,7 +213,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
             <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">{p}</p>
           ))}
           <div class="flex flex-wrap gap-2">
-            {['NFPA 1936','EN 13204','Batería autocontenida','Aceros al boro','Cizalla · Separador · Combinada · Ariete','Holmatro · Hurst · Weber'].map(n => (
+            {['NFPA 1960','EN 13204:2025','Batería autocontenida','Aceros al boro','Cizalla · Separador · Combinada · Ariete','Holmatro · Hurst · Weber'].map(n => (
               <span class="badge badge-dark font-display text-[10px]">{n}</span>
             ))}
           </div>
@@ -221,6 +221,48 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
       </div>
     </div>
     <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)" aria-hidden="true"></div>
+  </section>
+
+  <section id="guia-rescate" class="section" style="background:#040A12" aria-labelledby="guia-rescate-title">
+    <div class="container-site content-copy">
+      <div class="section-head mb-5"><h2 id="guia-rescate-title">¿Qué son las quijadas de la vida?</h2></div>
+      <p class="mb-8">«Quijadas de la vida» es el nombre con el que se conoce en México a las herramientas hidráulicas de rescate que usan los bomberos para liberar a personas atrapadas en vehículos y estructuras. El nombre viene de <em>Jaws of Life</em>, marca registrada de Hurst: la herramienta se presentó en 1971 y su primer modelo de producción, el JL-32, salió en 1972. Hoy el término se usa para cualquier herramienta de excarcelación, de cualquier fabricante.</p>
+
+      <div class="section-head mt-14 mb-5"><h2>Tipos de herramientas hidráulicas de rescate</h2></div>
+      <div class="overflow-x-auto max-w-full min-w-0 mb-4"><table class="w-full text-left text-sm" style="border-collapse:collapse;min-width:640px;color:#CBD5E1">
+        <thead><tr><th class="p-3" style="background:#0C1825;color:#FFFFFF">Herramienta</th><th class="p-3" style="background:#0C1825;color:#FFFFFF">Función</th><th class="p-3" style="background:#0C1825;color:#FFFFFF">Uso típico</th></tr></thead>
+        <tbody>
+          <tr><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Cizalla</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Cortar</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Postes, bisagras y el techo del vehículo</td></tr>
+          <tr><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Separador</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Abrir, separar y levantar</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Puertas atoradas y espacios para trabajar</td></tr>
+          <tr><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Combinada</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Cortar y separar con una sola herramienta</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Unidades de primera respuesta con espacio limitado</td></tr>
+          <tr><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Ariete</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Empujar y estabilizar</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Desplazar el tablero y liberar las piernas</td></tr>
+        </tbody>
+      </table></div>
+
+      <div class="section-head mt-14 mb-5"><h2>Herramientas a batería o con bomba hidráulica</h2></div>
+      <p>Las herramientas con bomba usan una unidad de poder y mangueras. Las de batería llevan el sistema hidráulico integrado: no hay mangueras que tender y cada herramienta opera sola. Hurst lanzó su línea eDRAULIC en 2010, Holmatro su línea Pentheon en 2020 y Weber Rescue ofrece la generación E-FORCE3; en Weber, las herramientas se pueden convertir entre versión a batería y versión con manguera.</p>
+
+      <div class="section-head mt-14 mb-5"><h2>Normas: EN 13204:2025 y clasificación NFPA</h2></div>
+      <p>La <strong>EN 13204:2025</strong> sustituye a la edición 2016 y clasifica las herramientas de rescate. En las cizallas, las letras A a K indican el nivel de corte y los números 1 a 5 el perfil probado: barra redonda, pletina, tubo redondo, tubo cuadrado y tubo rectangular. Los fabricantes estadounidenses publican además una clasificación de corte NFPA con letras A a F y niveles 1 a 9. En NFPA, la antigua norma de herramientas de rescate (NFPA 1936) se integró en la <strong>NFPA 1960, edición 2024</strong>.</p>
+      <p>La fuerza de corte en kilonewtons es un valor teórico calculado; para comparar cizallas, usa la clasificación de corte publicada del modelo.</p>
+
+      <div class="section-head mt-14 mb-5"><h2>Modelos por marca</h2></div>
+      <ul class="list-disc pl-6 space-y-2 text-sm leading-relaxed" style="color:#CBD5E1">
+        <li><strong>Holmatro Pentheon</strong> (Países Bajos, fundada en 1967): cizalla PCU50 (apertura 182 mm), separador PSP50 (725 mm, 366 kN máx.), combinada PCT50 con puntas desmontables y ariete PRA50 (136 kN).</li>
+        <li><strong>Hurst eDRAULIC E3</strong> (Jaws of Life): cizalla S 789 E3 (NFPA A8/B9/C8/D9/E9/F5), separador SP 555 E3, combinada SC 358 E3 y ariete R 521 E3.</li>
+        <li><strong>Weber Rescue E-FORCE3</strong> (Alemania): cizalla RSC 190 (EN 13204:2025 F-CU2-187K), separador SP 54 AS (55–501 kN), combinada SPS 400 MK2 y ariete telescópico RZT 2-1360.</li>
+      </ul>
+
+      <div class="section-head mt-14 mb-5"><h2>¿Cómo elegir herramientas de rescate?</h2></div>
+      <ol class="list-decimal pl-6 space-y-2 text-sm leading-relaxed" style="color:#CBD5E1">
+        <li>Revisa los accidentes que atiende tu unidad: autos, transporte pesado o estructuras.</li>
+        <li>Compara la clasificación de corte con los aceros de alta resistencia de los vehículos modernos.</li>
+        <li>Define si necesitas un juego completo (cizalla, separador y ariete) o una combinada para primera respuesta.</li>
+        <li>Considera el peso con batería, la apertura y la autonomía de las baterías.</li>
+        <li>Planea capacitación, baterías de reserva y mantenimiento con servicio técnico autorizado.</li>
+      </ol>
+      <p>Cotiza tus herramientas de rescate con un especialista y arma el equipo según tu tipo de operación.</p>
+    </div>
   </section>
 
   <!-- Accesos rápidos -->
@@ -287,7 +329,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
           <span class="section-eyebrow mb-4 inline-flex">Holmatro · Ingeniería neerlandesa · Pentheon a batería</span>
           <h2 id="holmatro-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Herramientas Holmatro<br/>
-            <span style="color:#F75000">certificadas NFPA 1936.</span>
+            <span style="color:#F75000">Holmatro, Hurst y Weber.</span>
           </h2>
         </div>
         <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
@@ -298,7 +340,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
             Hojas y geometrías diseñadas para los aceros al boro y postes B de los vehículos modernos.
           </p>
           <div class="flex flex-wrap gap-2">
-            {['NFPA 1936','EN 13204','Pentheon a batería','Sin mangueras','Combi-Tool','LED integrado','Distribuidor autorizado MX'].map(b => (
+            {['NFPA 1960','EN 13204:2025','Pentheon a batería','Sin mangueras','puntas desmontables en las combinadas','LED integrado','Distribuidor autorizado MX'].map(b => (
               <span class="badge badge-dark text-[9px]">{b}</span>
             ))}
           </div>
@@ -314,15 +356,15 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
       <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(74,117,153,0.15)">
         <div class="flex-1">
           <p class="text-sm leading-relaxed m-0" style="color:#64748B">
-            ¿Quieres la comparativa técnica completa, la anatomía de la Pentheon y el FAQ de clasificación EN 13204?
+            ¿Quieres la comparativa técnica completa, la anatomía de la Pentheon y el FAQ de clasificación EN 13204:2025?
             Accede al catálogo dedicado de la marca.
           </p>
         </div>
-        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+        <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/herramientas-rescate/holmatro" class="btn btn-primary btn-lg">
             Catálogo Holmatro completo →
           </a>
-          <a href={whatsappUrl('Hola, quiero cotizar herramientas de rescate Holmatro Pentheon NFPA 1936.')} target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
+          <a href={whatsappUrl('Hola, quiero cotizar herramientas de rescate Holmatro Pentheon NFPA 1960.')} target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
             Cotizar por {CANAL_CONTACTO}
           </a>
         </div>
@@ -338,18 +380,18 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
           <span class="section-eyebrow mb-4 inline-flex">Hurst · Inventor del Jaws of Life® · Desde 1972</span>
           <h2 id="hurst-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Hurst Jaws of Life®<br/>
-            <span style="color:#F75000">eDRAULIC NFPA 1936.</span>
+            <span style="color:#F75000">eDRAULIC NFPA 1960.</span>
           </h2>
         </div>
         <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
           <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
-            Hurst inventó el Jaws of Life® en 1972 y define el rescate vehicular desde entonces.
+            Hurst presentó Jaws of Life® en 1971 y define el rescate vehicular desde entonces.
             Su línea eDRAULIC es autocontenida a batería — sin mangueras ni bomba — y es la herramienta
-            de excarcelación más reconocida del mundo, presente en miles de cuerpos de bomberos.
+            de excarcelación reconocida en rescate vehicular, presente en miles de cuerpos de bomberos.
             La marca que los bomberos más conocen y en la que más confían.
           </p>
           <div class="flex flex-wrap gap-2">
-            {['NFPA 1936','EN 13204','eDRAULIC batería','Jaws of Life®','Sin mangueras','Desde 1972','Distribuidor autorizado MX'].map(b => (
+            {['NFPA 1960','EN 13204:2025','eDRAULIC batería','Jaws of Life®','Sin mangueras','Desde 1972','Distribuidor autorizado MX'].map(b => (
               <span class="badge badge-dark text-[9px]">{b}</span>
             ))}
           </div>
@@ -369,11 +411,11 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
             El eDRAULIC es la evolución sin mangueras de la herramienta más famosa del rescate.
           </p>
         </div>
-        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+        <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/herramientas-rescate/hurst" class="btn btn-primary btn-lg">
             Catálogo Hurst completo →
           </a>
-          <a href={whatsappUrl('Hola, quiero cotizar herramientas de rescate Hurst eDRAULIC Jaws of Life NFPA 1936.')} target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
+          <a href={whatsappUrl('Hola, quiero cotizar herramientas de rescate Hurst eDRAULIC Jaws of Life NFPA 1960.')} target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
             Cotizar por {CANAL_CONTACTO}
           </a>
         </div>
@@ -389,7 +431,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
           <span class="section-eyebrow mb-4 inline-flex">Weber Rescue · Ingeniería alemana · E-FORCE</span>
           <h2 id="weber-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Weber Rescue E-FORCE<br/>
-            <span style="color:#F75000">certificada NFPA 1936.</span>
+            <span style="color:#F75000">con clasificación EN 13204.</span>
           </h2>
         </div>
         <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
@@ -400,7 +442,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
             y la ergonomía para operaciones prolongadas.
           </p>
           <div class="flex flex-wrap gap-2">
-            {['NFPA 1936','EN 13204','E-FORCE batería','Ingeniería alemana','Relación peso-potencia','Distribuidor autorizado MX'].map(b => (
+            {['NFPA 1960','EN 13204:2025','E-FORCE batería','Ingeniería alemana','Relación peso-potencia','Distribuidor autorizado MX'].map(b => (
               <span class="badge badge-dark text-[9px]">{b}</span>
             ))}
           </div>
@@ -416,15 +458,15 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
       <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(74,117,153,0.15)">
         <div class="flex-1">
           <p class="text-sm leading-relaxed m-0" style="color:#64748B">
-            ¿Buscas la herramienta más ligera de su clase con máxima fuerza de corte?
+            ¿Buscas la herramienta compacta con máxima fuerza de corte?
             Weber E-FORCE es la opción alemana con mejor relación peso-potencia del mercado.
           </p>
         </div>
-        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+        <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/herramientas-rescate/weber-rescue" class="btn btn-primary btn-lg">
             Catálogo Weber Rescue completo →
           </a>
-          <a href={whatsappUrl('Hola, quiero cotizar herramientas de rescate Weber Rescue E-FORCE NFPA 1936.')} target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
+          <a href={whatsappUrl('Hola, quiero cotizar herramientas de rescate Weber Rescue E-FORCE NFPA 1960.')} target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
             Cotizar por {CANAL_CONTACTO}
           </a>
         </div>
@@ -441,13 +483,13 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
       </div>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-2 lg:gap-3">
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
-          <img src="/images/productos/bombero-hacha-halligan-rescate.avif" alt="Bombero con hacha Halligan en operación de rescate — herramientas de entrada forzada certificadas" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+          <img src="/images/productos/bombero-hacha-halligan-rescate.avif" alt="Bombero con hacha Halligan en operación de rescate — herramientas de entrada forzada" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
-          <img src="/images/productos/bombero-herramientas-entrada-forzada.avif" alt="Bombero con herramientas de entrada forzada — rescate vehicular y estructural certificado NFPA 1936" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+          <img src="/images/productos/bombero-herramientas-entrada-forzada.avif" alt="Bombero con herramientas de entrada forzada — rescate vehicular y estructural" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
         <figure class="m-0 overflow-hidden col-span-2 md:col-span-1" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
-          <img src="/images/categorias/herramientas-rescate.avif" alt="Separador hidráulico de rescate vehicular certificado NFPA 1936 — Holmatro Hurst Weber" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+          <img src="/images/categorias/herramientas-rescate.avif" alt="Separador hidráulico de rescate vehicular — Holmatro Hurst Weber" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
       </div>
     </div>
@@ -495,7 +537,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
           </tbody>
         </table>
       </div>
-      <p class="text-xs mt-4" style="color:var(--forge-300)">* Valores de fuerza y carrera son aproximados por modelo. Clasificación de corte EN 13204 varía por modelo — solicita la ficha técnica por partida.</p>
+      <p class="text-xs mt-4" style="color:var(--forge-300)">* Valores de fuerza y carrera son aproximados por modelo. Clasificación de corte EN 13204:2025 varía por modelo — solicita la ficha técnica por partida.</p>
     </div>
   </section>
 
@@ -558,7 +600,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
             ¿Tu duda no aparece? Escríbenos por {CANAL_CONTACTO} con el detalle de tu brigada y los vehículos
             de tu zona — te asesoramos sobre la herramienta y la marca correctas.
           </p>
-          <a href={whatsappUrl('Hola, tengo una pregunta técnica sobre herramientas de rescate NFPA 1936.')} target="_blank" rel="noopener" class="btn btn-primary">
+          <a href={whatsappUrl('Hola, tengo una pregunta técnica sobre herramientas de rescate NFPA 1960.')} target="_blank" rel="noopener" class="btn btn-primary">
             Consulta técnica gratis
           </a>
         </div>
@@ -584,12 +626,12 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
         <div>
           <p class="text-xs font-display font-bold uppercase tracking-[0.2em] mb-3" style="color:rgba(255,255,255,0.65)">Holmatro · Hurst Jaws of Life® · Weber Rescue · Demo en sitio</p>
           <h2 class="font-display font-bold uppercase" style="color:#FFFFFF;font-size:clamp(1.75rem,4vw,3rem);line-height:1.05">
-            Certificado NFPA 1936.<br/>Despliega en segundos.
+            Certificado NFPA 1960.<br/>Despliega en segundos.
           </h2>
         </div>
         <div class="flex flex-col sm:flex-row gap-3 shrink-0">
           <a
-            href={whatsappUrl('Hola, quiero cotizar herramientas de rescate vehicular NFPA 1936. ¿Tienen demo disponible?')}
+            href={whatsappUrl('Hola, quiero cotizar herramientas de rescate vehicular NFPA 1960. ¿Tienen demo disponible?')}
             target="_blank" rel="noopener"
             class="btn btn-lg"
             style="background:#FFFFFF;color:#F75000;border-color:#FFFFFF;font-weight:700"
@@ -668,7 +710,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
            class="group flex flex-col gap-2 p-5 hover:border-[#F75000]"
            style="background:#080F1A;border:1px solid rgba(74,117,153,0.2)">
           <span class="text-sm font-display font-bold group-hover:text-[#F75000]" style="color:#FFFFFF">Equipos SCBA</span>
-          <span class="text-xs leading-relaxed" style="color:#64748B">MSA G1 · Dräger PSS 7000 · 3M Scott</span>
+          <span class="text-xs leading-relaxed" style="color:#64748B">MSA G1 · Dräger PSS · 3M Scott</span>
           <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Equipos SCBA →</span>
         </a>
         <a href="/productos/trajes-bombero"

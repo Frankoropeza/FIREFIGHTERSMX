@@ -15,14 +15,14 @@ const djiEnterprise: EquipmentBrand = {
   slug: 'dji-enterprise',
   brand: 'DJI Enterprise',
   brandLabel: 'DJI Enterprise',
-  crossDesc: 'La plataforma de drones más usada por bomberos y protección civil · Matrice 30T · AFAC',
+  crossDesc: 'Drones para emergencias · Matrice 30T · NOM-107-SCT3-2019',
   eyebrow: 'DJI Enterprise · Distribuidor Autorizado México · AFAC',
   heroTitleTop: 'Drones DJI',
   heroTitleAccent: 'para emergencias.',
   heroLead:
     'Distribuidor autorizado de DJI Enterprise en México. Matrice 30T con térmica radiométrica, Mavic 3 Thermal compacto y Dock 2 autónomo — más capacitación de piloto y trámite AFAC incluidos en un solo paquete llave en mano.',
   heroIntro: [
-    'DJI Enterprise es la plataforma de drones más utilizada por cuerpos de bomberos y protección civil a nivel mundial. Sus aeronaves integran cámara térmica radiométrica y RGB en una sola unidad, con alcance de 15 km y autonomías de hasta 45 minutos — la herramienta de reconocimiento aéreo de referencia para la primera respuesta.',
+    'DJI Enterprise ofrece aeronaves para operaciones de emergencia, con cámaras térmicas radiométricas y RGB según el modelo. La Matrice 4T/4TD y el Dock 3 representan la generación actual.',
     'Distribuimos los tres modelos de referencia para emergencias con soporte técnico, refacciones en stock, capacitación de piloto certificada y acompañamiento completo en el trámite ante la AFAC para operación institucional legal en México.',
   ],
   heroBadges: ['DJI Matrice 30T', 'Mavic 3 Thermal', 'Dock 2', 'AFAC México', 'Térmica radiométrica', 'Distribuidor autorizado MX'],
@@ -32,7 +32,7 @@ const djiEnterprise: EquipmentBrand = {
   founding: '2006',
   parentOrg: { name: 'DJI — Da-Jiang Innovations' },
   stats: [
-    { valor: '#1', etiq: 'Plataforma de drones para emergencias a nivel mundial' },
+    { valor: 'DJI', etiq: 'Drones para emergencias' },
     { valor: '15 km', etiq: 'Alcance de transmisión Matrice 30T' },
     { valor: '41 min', etiq: 'Autonomía de vuelo Matrice 30T' },
     { valor: 'IP55', etiq: 'Protección aeronave y estación de carga' },
@@ -40,8 +40,8 @@ const djiEnterprise: EquipmentBrand = {
   credenciales: [
     {
       n: '01',
-      t: 'El estándar mundial en drones de emergencia',
-      d: 'DJI Enterprise equipa a los principales cuerpos de bomberos, protección civil y fuerzas de seguridad pública en más de 100 países. La plataforma Matrice es la referencia de licitaciones tier-1 en México y América Latina.',
+      t: 'Drones para operaciones de emergencia',
+      d: 'DJI Enterprise ofrece plataformas para búsqueda, rescate, evaluación de incendios y vigilancia.',
     },
     {
       n: '02',
@@ -78,10 +78,10 @@ const djiEnterprise: EquipmentBrand = {
       badge: 'Compacto · Despliegue rápido',
       familiaLabel: 'Respuesta Rápida',
       flagship: 'dji-mavic-3-thermal',
-      desc: 'El dron de respuesta rápida para la brigada de campo. Despliega en menos de 2 minutos desde la camioneta. Sensor FLIR 640×512 integrado, 45 min de vuelo y cámara RGB 4K — térmica real en un cuerpo compacto que cabe en una mochila.',
+      desc: 'El dron de respuesta rápida para la brigada de campo. Integra sensor térmico radiométrico 640×512, 45 min de vuelo y cámara gran angular de 48 MP.',
       modelos: [
-        { m: 'DJI Mavic 3 Thermal', d: 'Sensor FLIR 640×512 · 45 min · 15 km · 920 g — la opción más accesible con cámara térmica real.' },
-        { m: 'DJI Mavic 3 Enterprise', d: 'Versión con cámara RGB 48 MP + zoom óptico 28× para reconocimiento visual de alta resolución.' },
+        { m: 'DJI Mavic 3 Thermal', d: 'Sensor radiométrico 640×512 · 45 min · 920 g.' },
+        { m: 'DJI Mavic 3 Enterprise', d: 'Gran angular 20 MP 4/3 + tele 12 MP + zoom híbrido 56×.' },
       ],
     },
     {
@@ -91,7 +91,7 @@ const djiEnterprise: EquipmentBrand = {
       flagship: 'dji-dock-2-autonomo',
       desc: 'La estación de vuelo autónomo para patrullaje continuo sin piloto en sitio. El Dock 2 despega, ejecuta la misión y regresa solo a cargar. Integrado con FlightHub 2 para gestión de misiones en tiempo real desde el centro de mando.',
       modelos: [
-        { m: 'DJI Dock 2', d: 'Vuelo autónomo sin piloto · 7 km radio · IP55 estación · FlightHub 2 — patrullaje y respuesta 24/7.' },
+        { m: 'DJI Dock 2', d: 'Matrice 3D/3TD · 10 km radio · IP55 estación · FlightHub 2 — patrullaje y respuesta 24/7.' },
         { m: 'DJI FlightHub 2', d: 'Plataforma SaaS de gestión de flotas, misiones y streaming para coordinar múltiples drones desde un centro de mando.' },
       ],
     },
@@ -109,11 +109,11 @@ const djiEnterprise: EquipmentBrand = {
   ],
   comparativa: [
     { modelo: 'DJI Matrice 30T',    tipo: 'usar',       autonomia: '41 min',       sensor: 'Radiométrica 640×512',  rango: '15 km',     peso: 'IP55',            ideal: 'SAR · ISR · incendios · institucional', rec: true },
-    { modelo: 'DJI Mavic 3 Thermal',tipo: 'industrial', autonomia: '45 min',       sensor: 'FLIR 640×512',          rango: '15 km',     peso: 'Sin cert. IP',    ideal: 'Respuesta rápida · compacto · móvil',   rec: false },
-    { modelo: 'DJI Dock 2',         tipo: 'mando',      autonomia: 'Ilimitada',    sensor: 'Via M30T (payload)',    rango: '7 km radio', peso: 'IP55 estación',   ideal: 'Patrullaje 24/7 · sin piloto',          rec: false },
+    { modelo: 'DJI Mavic 3 Thermal',tipo: 'industrial', autonomia: '45 min',       sensor: 'Radiométrica 640×512',  rango: '15 km FCC / 8 km CE', peso: '920 g', ideal: 'Respuesta rápida · compacto · móvil', rec: false },
+    { modelo: 'DJI Dock 2',         tipo: 'mando',      autonomia: '—',            sensor: 'Matrice 3TD',           rango: '10 km radio', peso: '34 kg · IP55', ideal: 'Patrullaje 24/7 · sin piloto', rec: false },
   ],
   comparativaLabel: 'Matrice 30T · Mavic 3 Thermal · Dock 2',
-  comparativaNote: '* Autonomía y alcance nominales bajo condiciones óptimas. En operaciones urbanas con interferencias, reducir alcance 30–40 %. AFAC y capacitación requeridos para operación institucional legal en México.',
+  comparativaNote: '* Autonomía y alcance nominales según modelo. Aplican las disposiciones de NOM-107-SCT3-2019 para operación institucional legal en México.',
   guia: [
     { n: '01', t: 'Define la misión dominante: evaluación táctica de incendios y SAR → Matrice 30T; respuesta rápida de campo → Mavic 3 Thermal; patrullaje continuo sin piloto → Dock 2.' },
     { n: '02', t: 'Verifica que el sensor sea radiométrico real: la medición de temperatura en grados es lo que diferencia un dron de rescate de uno con filtro de color. Pregunta el rango y la resolución del sensor antes de comprar.' },

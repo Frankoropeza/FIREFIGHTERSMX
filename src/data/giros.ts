@@ -89,7 +89,7 @@ export const giros: Giro[] = [
       'Distribuidores y fabricantes que equipan a cuerpos de bomberos, brigadas internas y brigada industrial con equipo de protección personal y protección contra incendios: traje estructural NFPA 1970, cascos, equipos de respiración autónoma, mangueras contra incendios, herramientas de rescate, cámaras térmicas, equipo HAZMAT y equipo para incendios forestales.',
       'El directorio reúne a las empresas que equipan a bomberos municipales, aeropuertos y organismos de protección civil en los 32 estados. Al comparar el catálogo completo de un proveedor conviene pedir asesoría técnica y tiempos de entrega, y verificar que los equipos certificados correspondan a la norma NFPA que exige el combate de incendios de tu operación antes de equipar a toda la corporación.',
     ],
-    normas: ['NFPA 1970', 'NFPA 1950', 'NFPA 1990', 'NFPA 1936', 'NFPA 1930', 'NOM-002-STPS-2010', 'NOM-017-STPS-2008'],
+    normas: ['NFPA 1970', 'NFPA 1950', 'NFPA 1990', 'NFPA 1960', 'NFPA 1930', 'NOM-002-STPS-2010', 'NOM-017-STPS-2008'],
     especialidades: {
       'epp-industrial': 'EPP y seguridad industrial',
       'uniformes-y-calzado': 'Uniformes y calzado de seguridad',
