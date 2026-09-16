@@ -1520,7 +1520,7 @@ export const featuredProducts: Product[] = [
     features: [
       "Cobertura para locales de 100–200 m² según NOM-002-STPS en riesgo ordinario",
       "Manguera flexible de descarga con alcance de 3–4 m para operar a distancia segura",
-      "Soportes murales e instalación con señalización NOM-003-SEGOB disponibles a pedido",
+      "Soportes murales e instalación con señalización NOM-003-SSPC-2011 disponibles a pedido",
     ],
   },
   {
@@ -1733,7 +1733,7 @@ export const featuredProducts: Product[] = [
     features: [
       "Agente 100% agua sin aditivos — sin residuo tóxico, el único extintor certificado completamente ecológico",
       "Ideal para archivos históricos, bibliotecas, museos y bodegas de papel sin riesgo eléctrico",
-      "NUNCA usar en fuegos eléctricos (Clase C) — requiere señalización de advertencia conforme NOM-003-SEGOB",
+      "NUNCA usar en fuegos eléctricos (Clase C) — requiere señalización de advertencia conforme NOM-003-SSPC-2011",
     ],
   },
   {
@@ -3516,13 +3516,13 @@ export const featuredProducts: Product[] = [
       "Controlador UL 218 con registrador de arranques — evidencia documental para auditorías NFPA 20",
       "Arranque a voltaje reducido (soft starter) — protege el motor y la red eléctrica ante arranques frecuentes",
       "Carcasa de hierro fundido con impulsor de bronce — resistente a la corrosión del agua de la red",
-      "La bomba eléctrica NFPA 20 debe arrancar en menos de 30 segundos desde la detección de caída de presión",
+      "La NFPA 20 exige arranque automático por caída de presión",
     ],
   },
   {
     slug: "bomba-diesel-emergencia-ci",
     title: "Bomba Diesel de Emergencia 40 HP NFPA 20 — Red Contra Incendio",
-    description: "Bomba diesel de emergencia 40 HP para sistemas contra incendio NFPA 20. Arranque automático independiente de la red eléctrica. La NFPA 20 exige bomba diesel cuando la fuente eléctrica no es confiable o cuando la instalación supera determinada área. Autonomía mínima 8 horas.",
+    description: "Cuando la fuente eléctrica no se considera confiable, la NFPA 20 pide una fuente alterna: un generador dedicado o una bomba con motor diésel.",
     category: "Sistemas CI",
     brand: "Red Hidráulica",
     norm: "NFPA 20",
@@ -3540,7 +3540,7 @@ export const featuredProducts: Product[] = [
       "Arranque automático por batería de 12V/24V independiente de la red eléctrica — opera en blackout total",
       "6 intentos de arranque automáticos con alarma al panel FACP si no arranca — supervisión NFPA 20",
       "Motor diesel certificado Tier 4 Final — cumple normas de emisiones para operación en interior con ventilación",
-      "La NFPA 20 exige bomba diesel en edificios de más de 4 niveles y en instalaciones con fuente eléctrica de categoría no confiable",
+      "Cuando la fuente eléctrica no se considera confiable, la NFPA 20 pide una fuente alterna: un generador dedicado o una bomba con motor diésel.",
     ],
   },
   {

@@ -6,7 +6,31 @@
  * Familias: rociadores · deteccion · agente-ci · red-hidraulica
  * (TipoKey extendido en brandPages.ts para incluir estos cuatro nuevos valores)
  */
-import type { EquipmentBrand } from './brandPages';
+import { featuredProducts, type Product } from './products';
+import type { BrandLinea, ComparativaRow, EquipmentBrand, TipoKey } from './brandPages';
+
+const productosPorSlug = (slugs: string[]): Product[] => slugs
+  .map((slug) => featuredProducts.find((product) => product.slug === slug))
+  .filter((product): product is Product => Boolean(product));
+
+const lineasDeProductos = (slugs: string[], tipo: TipoKey): BrandLinea[] => productosPorSlug(slugs).map((product) => ({
+  tipo,
+  badge: product.tier ?? product.norm ?? '',
+  titulo: product.title,
+  modelos: product.slug,
+  desc: product.description,
+  tech: product.features?.[0] ?? '',
+}));
+
+const comparativaDeProductos = (slugs: string[], tipo: TipoKey): ComparativaRow[] => productosPorSlug(slugs).map((product) => ({
+  modelo: product.title,
+  tipo,
+  norma: product.specs?.norma ?? product.norm,
+  tipo_sis: product.specs?.tipo_sis,
+  cobertura: product.specs?.cobertura,
+  listado: product.specs?.listado,
+  ideal: product.specs?.ideal,
+}));
 
 const NOTA_SCI =
   '* Sistemas certificados NFPA 13, NFPA 72 y NFPA 2001 según aplique. Cobertura y concentración de diseño en condiciones nominales; el cálculo hidráulico final depende de la clasificación de riesgo, geometría del inmueble y normativa local vigente.';
@@ -755,7 +779,7 @@ const redHidraulica: EquipmentBrand = {
     { valor: 'NFPA 20', etiq: 'Norma de bombas CI' },
     { valor: 'UL · FM', etiq: 'Doble listado en equipos principales' },
     { valor: '8 h', etiq: 'Autonomía mínima diesel NFPA 20' },
-    { valor: '30 s', etiq: 'Arranque máx. bomba principal NFPA 20' },
+    { valor: 'NFPA 20', etiq: 'Arranque automático por caída de presión' },
   ],
   credenciales: [
     {
@@ -795,7 +819,7 @@ const redHidraulica: EquipmentBrand = {
       titulo: 'Sala de bombas NFPA 20',
       modelos: 'Jockey 5 HP · Eléctrica 20 HP · Diesel 40 HP',
       desc: 'El corazón de cualquier sistema de rociadores o agente limpio. Bomba jockey para mantenimiento de presión, bomba eléctrica principal para operación normal y bomba diesel de emergencia para blackout. La NFPA 20 define la selección y los tiempos de arranque para cada una.',
-      tech: 'Controlador UL 218 · Arranque < 30 s · Registrador de eventos · Prueba NFPA 20',
+      tech: 'Controlador UL 218 · Arranque automático por caída de presión · Registrador de eventos · Prueba NFPA 20',
     },
     {
       tipo: 'red-hidraulica',
@@ -810,7 +834,7 @@ const redHidraulica: EquipmentBrand = {
   anatomiaIntro: 'La bomba principal eléctrica NFPA 20 es el equipo más crítico de la sala de bombas — su correcto dimensionamiento, instalación y prueba determinan si el sistema completo cumple o no la norma. Un error en la curva de la bomba invalida toda la memoria de cálculo.',
   anatomia: [
     { t: 'Controlador UL 218 listado', d: 'El controlador es tan importante como la bomba. La NFPA 20 exige que el controlador sea UL Listed independientemente de la bomba — un controlador genérico invalida el listado del conjunto aunque la bomba sea UL Listed.' },
-    { t: 'Arranque en menos de 30 segundos', d: 'La NFPA 20 exige arranque completo en menos de 30 segundos desde la caída de presión que activa el presostato. En la prueba de aceptación, el inspector cronometra este arranque — si supera los 30 s, el sistema no pasa la prueba.' },
+    { t: 'Arranque automático por caída de presión', d: 'La NFPA 20 exige arranque automático por caída de presión y prueba de aceptación con flujo.' },
     { t: 'Registrador de arranques', d: 'El controlador UL 218 registra cada arranque con fecha, hora y duración. El registro es evidencia documental para las pruebas semanales de arranque manual que la NFPA 25 requiere para el programa de mantenimiento.' },
     { t: 'Curva de la bomba UL Listed', d: 'La curva de la bomba (caudal vs presión) debe estar dentro de los parámetros listados por UL. Si la instalación cambia el diámetro de la descarga o agrega pérdidas no previstas, la bomba puede operar fuera de su curva listada, invalidando el listado.' },
     { t: 'Carcasa de hierro fundido con impulsor de bronce', d: 'El hierro fundido resiste la corrosión del agua estancada de la red; el bronce del impulsor es compatible con agua con cloro y sin tratamiento. La combinación es el estándar para bombas contra incendio en México.' },
@@ -828,7 +852,7 @@ const redHidraulica: EquipmentBrand = {
   comparativaNote: '★ Recomendado = Bomba principal eléctrica, el equipo central de la sala de bombas NFPA 20 del que depende el funcionamiento de todo el sistema.',
   guia: [
     { n: '01', t: 'Define el tipo de riesgo y el área a proteger: el caudal y la presión requeridos por los rociadores o gabinetes determinan el dimensionamiento de la bomba principal conforme NFPA 20.' },
-    { n: '02', t: 'Evalúa la confiabilidad de la fuente eléctrica: si el suministro eléctrico no es confiable (cortes frecuentes, zona sísmica, generador compartido), la NFPA 20 exige bomba diesel adicional.' },
+    { n: '02', t: 'Cuando la fuente eléctrica no se considera confiable, la NFPA 20 pide una fuente alterna: un generador dedicado o una bomba con motor diésel.' },
     { n: '03', t: 'Verifica que todas las válvulas de control estén supervisadas con tamper switch conectado al FACP — es el requisito que las aseguradoras detectan primero en auditorías de sistemas existentes.' },
     { n: '04', t: 'Agenda las pruebas NFPA 25 anuales: arranque semanal manual, inspección trimestral de válvulas y prueba anual completa de la curva de la bomba. El incumplimiento puede invalidar la póliza de seguro.' },
   ],
@@ -840,7 +864,7 @@ const redHidraulica: EquipmentBrand = {
     { num: '04', tipo: 'red-hidraulica', titulo: 'Instalaciones con requisito de seguro internacional', desc: 'Plantas con aseguradora del grupo FM Global, AIG, Swiss Re o MAPFRE donde los ingenieros de riesgo auditan la sala de bombas contra NFPA 20 y exigen listados UL y FM en cada equipo.', modelos: 'Sistema completo UL Listed · FM Approved · Prueba NFPA 20' },
   ],
   faqs: [
-    { q: '¿Cuándo exige la NFPA 20 bomba diesel además de la eléctrica?', a: 'La NFPA 20 exige bomba diesel cuando: (1) la fuente de energía eléctrica no es confiable, (2) el inmueble supera una determinada clasificación de riesgo según la aseguradora, o (3) el proyecto tiene requisitos especiales de continuidad de operación. En la práctica, la mayoría de las aseguradoras internacionales (FM Global, AIG) exigen bomba diesel en todos los proyectos industriales sin excepción. La bomba diesel debe arrancar en menos de 30 segundos y tener autonomía mínima de 8 horas según NFPA 20.' },
+    { q: '¿Cuándo exige la NFPA 20 bomba diesel además de la eléctrica?', a: 'Cuando la fuente eléctrica no se considera confiable, la NFPA 20 pide una fuente alterna: un generador dedicado o una bomba con motor diésel.' },
     { q: '¿Cada cuánto deben hacerse las pruebas de la bomba NFPA 25?', a: 'La NFPA 25 establece tres niveles de prueba: (1) arranque manual semanal de 10 minutos — para verificar que la bomba arranca y no hay fugas; (2) inspección trimestral de válvulas y conexiones; (3) prueba anual completa de la curva de la bomba con medición de caudal y presión en tres puntos. Los registros de todas las pruebas deben conservarse mínimo 1 año y estar disponibles para el inspector de la aseguradora.' },
     { q: '¿Por qué todas las válvulas deben estar supervisadas?', a: 'Si una válvula de control se cierra (accidentalmente o por vandalismo) y el sistema de rociadores activa, el agua no llegará al incendio. La supervisi­ón con tamper switch conectado al FACP genera una alarma inmediata si cualquier válvula se cierra sin autorización, antes de que haya un incendio. La NFPA 13, 14 y 25 exigen supervisión en todas las válvulas de control — es el requisito que más frecuentemente falta en sistemas existentes y que las aseguradoras detectan en cada auditoría.' },
     { q: '¿Qué pasa si la bomba no pasa la prueba de aceptación NFPA 20?', a: 'Si la bomba no entrega el caudal y la presión especificados en la memoria de cálculo durante la prueba de aceptación, el sistema no puede certificarse ni entregarse al cliente. Las causas más frecuentes son: bomba subdimensionada, pérdidas de presión no calculadas en la red, o válvulas parcialmente cerradas. La corrección puede implicar sustituir la bomba o rediseñar parte de la red — un costo significativo que se evita con un diseño hidráulico correcto desde el inicio.' },
@@ -962,5 +986,136 @@ const alarmaContraIncendio: EquipmentBrand = {
   waQuote: 'Hola, quiero cotizar un sistema de alarma contra incendio.',
 };
 
+const rociadoresContraIncendio: EquipmentBrand = {
+  tipoPagina: 'linea',
+  categorySlug: 'sistemas-ci',
+  slug: 'rociadores-contra-incendio',
+  brand: 'Tyco Viking',
+  brandLabel: 'Rociadores contra incendio',
+  productSlugs: ['tyco-tyb-pendant', 'tyco-tyb-upright', 'tyco-tyjv-pendent-concealed', 'tyco-ty3131-respuesta-rapida', 'tyco-ty315-esfr', 'viking-vk100-estandar', 'valvula-osy-nfpa-20'],
+  crossDesc: 'Rociadores contra incendio Tyco y Viking.',
+  eyebrow: 'Rociadores automáticos · NFPA 13',
+  heroTitleTop: 'Rociadores contra incendio',
+  heroTitleAccent: 'sistemas automáticos NFPA 13.',
+  heroLead: 'Un rociador contra incendio es un dispositivo que descarga agua automáticamente sobre el fuego cuando el calor alcanza su temperatura de activación. También se les llama sprinklers, aspersores o rociadores automáticos. Conectados a una red de tuberías con suministro de agua, forman el sistema de rociadores: la protección contra incendios más eficaz para controlar un incendio en su etapa inicial en inmuebles comerciales, industriales y de uso residencial.',
+  heroIntro: [],
+  heroBadges: ['NFPA 13'],
+  seoTitle: 'Rociadores contra incendio: tipos, funcionamiento y NFPA 13',
+  seoDescription: 'Rociadores contra incendio Tyco y Viking: colgantes, montantes, ESFR y de respuesta rápida. Sistemas de tubería húmeda, seca, preacción y diluvio bajo NFPA 13.',
+  stats: [],
+  credenciales: [],
+  bloques: [
+    { id: 'como-funcionan-los-rociadores-contra-incendio', titulo: '¿Cómo funcionan los rociadores contra incendio?', parrafos: ['Cada rociador tiene un elemento sensible al calor, normalmente una ampolla de vidrio con líquido o un fusible metálico, que mantiene cerrada la boquilla. No es un sensor de humo o calor electrónico: cuando el incendio eleva la temperatura del entorno, la ampolla se rompe, el tapón se libera y la descarga de agua golpea el deflector, que la distribuye sobre el área protegida. El agente extintor es el agua.'], pasos: ['Se activan uno por uno: sólo abren los rociadores expuestos al calor del incendio, no todos los del edificio. Por eso el daño por agua es mucho menor que el de un incendio sin control.', 'El flujo de agua mueve un detector de flujo que envía la señal de alarma al panel y a la central de monitoreo.', 'La red se mantiene presurizada con el suministro de agua y las bombas contra incendio; la bomba jockey compensa pequeñas fugas.'] },
+    { id: 'como-se-llaman-y-que-tipos-de-rociadores-contra-incendio-existen', titulo: '¿Cómo se llaman y qué tipos de rociadores contra incendio existen?', tabla: { cols: ['Tipo de rociador', 'Cómo se instala', 'Dónde se usa'], filas: [['Colgante (pendent)', 'Hacia abajo, bajo plafón o tubería', 'Oficinas, comercios, hoteles'], ['Rociadores montantes (upright)', 'Hacia arriba, sobre la tubería expuesta', 'Naves industriales y bodegas sin plafón'], ['Oculto (concealed)', 'Con cubierta decorativa al ras del plafón', 'Hoteles, centros comerciales y oficinas corporativas'], ['De respuesta rápida (QR)', 'Elemento térmico de activación más rápida', 'Hospitales, hoteles, escuelas y ocupación de riesgo ligero'], ['ESFR (supresión temprana)', 'Gran caudal para suprimir, no sólo controlar', 'Almacenes de alta estiba'], ['Lateral (sidewall)', 'En muro', 'Pasillos y habitaciones']] } },
+    { id: 'tuberia-humeda-tuberia-seca-rociadores-de-accion-previa-y-sistemas-de-diluvio', titulo: 'Tubería húmeda, tubería seca, rociadores de acción previa y sistemas de diluvio', pasos: ['Tubería húmeda: la red está llena de agua y descarga en cuanto se activa un rociador. Es el sistema más común.', 'Tubería seca: hay aire a presión en la tubería y el agua entra al abrir un rociador; se usa donde hay riesgo de heladas.', 'Rociadores de acción previa (preacción): el agua sólo entra a la tubería cuando el sistema de detección confirma el incendio; protegen centros de datos, archivos y áreas sensibles al daño por agua.', 'Sistemas de diluvio: rociadores abiertos que descargan agua en toda el área al mismo tiempo; para riesgos donde el fuego se propaga muy rápido.'] },
+    { id: 'componentes-de-un-sistema-de-rociadores', titulo: 'Componentes de un sistema de rociadores', pasos: ['Suministro de agua: cisterna o tanque y bombas contra incendio.', 'Válvulas de control supervisadas (OS&Y) y válvula de alarma o riser.', 'Red de tuberías principales, ramales y conexiones.', 'Rociadores automáticos.', 'Detector de flujo, supervisión de válvulas y conexión al sistema de alarma.', 'Toma siamesa para que los bomberos alimenten el sistema.'] },
+    { id: 'normativa-nfpa-13-y-nom-002-stps-2010', titulo: 'Normativa: NFPA 13 y NOM-002-STPS-2010', parrafos: ['La NFPA 13 regula el diseño e instalación de los sistemas de rociadores en edificios comerciales, industriales y residenciales; la NFPA 25 regula su inspección, prueba y mantenimiento para asegurar su desempeño. En México, la NOM-002-STPS-2010 exige sistemas fijos de protección contra incendio en los centros de trabajo de riesgo de incendio alto, y la autoridad local o la aseguradora pueden pedirlos por el tipo de inmueble.'] },
+    { id: 'como-instalar-rociadores-y-cuantos-se-necesitan', titulo: '¿Cómo instalar rociadores y cuántos se necesitan?', parrafos: ['El área máxima que cubre cada rociador depende del riesgo de la ocupación y del tipo de rociador, y la define la NFPA 13. El número exacto, el diámetro de las tuberías y el caudal de las bombas salen de la memoria de cálculo hidráulico, que se elabora con el plano del edificio.'], pasos: ['Levantamiento y clasificación del riesgo.', 'Diseño y memoria de cálculo hidráulico.', 'Instalación de tubería, válvulas y rociadores.', 'Prueba hidrostática de la red y prueba de funcionamiento.', 'Inspección y mantenimiento periódicos conforme a NFPA 25: válvulas abiertas y supervisadas, rociadores sin pintura ni obstrucciones y pruebas de flujo.'] },
+    { id: 'extincion-automatica-vs-otros-equipos-contra-incendio', titulo: 'Extinción automática vs. otros equipos contra incendio', parrafos: ['El sistema de rociadores se complementa con extintores, hidrantes y gabinetes para el ataque manual, y con la detección y alarma para avisar a los ocupantes. Juntos forman el sistema contra incendio del inmueble.'] },
+  ],
+  linesIntro: '',
+  lineas: lineasDeProductos(['tyco-tyb-pendant', 'tyco-tyb-upright', 'tyco-tyjv-pendent-concealed', 'tyco-ty3131-respuesta-rapida', 'tyco-ty315-esfr', 'viking-vk100-estandar', 'valvula-osy-nfpa-20'], 'rociadores'),
+  flagship: 'tyco-tyb-pendant',
+  comparativa: comparativaDeProductos(['tyco-tyb-pendant', 'tyco-tyb-upright', 'tyco-tyjv-pendent-concealed', 'tyco-ty3131-respuesta-rapida', 'tyco-ty315-esfr', 'viking-vk100-estandar', 'valvula-osy-nfpa-20'], 'rociadores'),
+  faqs: [
+    { q: '¿Los rociadores se activan con el humo?', a: 'No. Se activan con el calor: la ampolla se rompe al alcanzar su temperatura. El humo lo detectan los detectores del sistema de alarma.' },
+    { q: '¿Se activan todos los rociadores al mismo tiempo?', a: 'No, salvo en un sistema de diluvio. En los sistemas húmedo, seco y de preacción sólo abren los rociadores que reciben el calor del incendio.' },
+    { q: '¿Qué diferencia hay entre un rociador y un aspersor?', a: 'Son el mismo dispositivo. Aspersor y sprinkler son otras formas de llamar al rociador automático contra incendio.' },
+    { q: '¿Cuándo es obligatorio un sistema de rociadores?', a: 'La NOM-002-STPS-2010 pide sistemas fijos en los centros de trabajo de riesgo alto; además, el reglamento local, el tipo de ocupación o la aseguradora pueden exigirlos.' },
+    { q: '¿Cada cuánto se da mantenimiento a los rociadores?', a: 'Según el programa de inspección, prueba y mantenimiento de la NFPA 25 y el programa anual del centro de trabajo; registramos cada servicio en bitácora.' },
+  ],
+  ctaKicker: '¿Necesitas un sistema de rociadores?',
+  ctaTitleHtml: 'Envíanos el plano del inmueble y te proponemos el diseño, la memoria de cálculo y la instalación del sistema de rociadores contra incendio.',
+  waQuote: 'Hola, quiero cotizar un sistema de rociadores contra incendio.',
+};
+
+const bombasContraIncendio: EquipmentBrand = {
+  tipoPagina: 'linea',
+  categorySlug: 'sistemas-ci',
+  slug: 'bombas-contra-incendio',
+  brand: 'Red Hidráulica',
+  brandLabel: 'Bombas contra incendio',
+  productSlugs: ['bomba-jockey-ci-5hp', 'bomba-principal-electrica-20hp', 'bomba-diesel-emergencia-ci', 'valvula-osy-nfpa-20'],
+  crossDesc: 'Bombas contra incendio NFPA 20.',
+  eyebrow: 'Bombas contra incendio · NFPA 20',
+  heroTitleTop: 'Bombas contra incendios',
+  heroTitleAccent: 'sistemas de bombeo NFPA 20.',
+  heroLead: 'Una bomba contra incendios es el equipo que da al sistema contra incendios el caudal y la presión que necesitan los rociadores, los hidrantes y los gabinetes para combatir un incendio. Cuando el suministro de agua de la red municipal o de la cisterna no alcanza la presión adecuada, la bomba la eleva y la mantiene estable mientras el sistema está en operación. Es una pieza crucial de los sistemas de protección contra incendios: si la bomba no arranca, el agua no llega y el sistema no protege vidas y propiedades.',
+  heroIntro: [],
+  heroBadges: ['NFPA 20'],
+  seoTitle: 'Bombas contra incendio NFPA 20: eléctrica, diésel y jockey',
+  seoDescription: 'Bombas contra incendio NFPA 20: bomba principal eléctrica, bomba diésel y bomba jockey con controlador listado. Diseño del cuarto de bombas e instalación en México.',
+  stats: [],
+  credenciales: [],
+  bloques: [
+    { id: 'como-funciona-una-bomba-contra-incendios', titulo: '¿Cómo funciona una bomba contra incendios?', parrafos: ['El sistema de bombeo trabaja por etapas de presión. En reposo, la red se mantiene presurizada. Cuando un rociador o un hidrante se abre, la presión baja y el controlador arranca automáticamente la bomba principal, que entrega el flujo constante que pide el sistema. Normalmente la bomba sigue operando hasta que un operador la detiene en el controlador; así se garantiza que no se apague mientras dura la emergencia.'], pasos: ['La bomba jockey sirve para mantener la presión de la red y compensa pequeñas fugas, para que la bomba principal no arranque sin necesidad.', 'La bomba principal (eléctrica o diésel) arranca cuando la presión cae por una demanda real de agua.', 'La bomba diésel da respaldo cuando el suministro eléctrico no es confiable; su motor funciona de forma independiente de la red eléctrica, incluso en un sitio remoto.'] },
+    { id: 'tipos-de-bombas-contra-incendios', titulo: 'Tipos de bombas contra incendios', parrafos: ['Hay diferentes tipos de bombas para aplicaciones específicas. Todas son bombas centrífugas; cambian su configuración y la forma de tomar el agua.'], tabla: { cols: ['Tipo de bomba', 'Cómo es', 'Aplicación'], filas: [['Bombas horizontales de carcasa bipartida', 'Carcasa dividida para dar mantenimiento al impulsor sin desmontar la tubería', 'Caudales grandes en plantas industriales y centros comerciales'], ['De succión final (end suction)', 'Bomba compacta con succión por un extremo', 'Caudales moderados en edificios comerciales'], ['Vertical en línea', 'Succión y descarga en la misma línea', 'Cuartos de bombas con poco espacio'], ['Vertical tipo turbina', 'Impulsores sumergidos en la fuente de agua', 'Succión desde cárcamos, pozos o cisternas bajo nivel'], ['Bomba jockey', 'Bomba pequeña de mantenimiento de presión', 'Todos los sistemas con bomba principal']] } },
+    { id: 'bombas-jockey-para-que-sirven', titulo: 'Bombas jockey: para qué sirven', parrafos: ['La bomba jockey es una bomba pequeña que mantiene la presión de la red contra incendio en reposo. Arranca y se detiene sola con el controlador de presión y evita que la bomba principal se active por fugas o variaciones menores. No sustituye a la bomba principal: su caudal no alcanza para combatir un incendio.'] },
+    { id: 'bomba-contra-incendios-electrica-o-diesel', titulo: 'Bomba contra incendios eléctrica o diésel', parrafos: ['La bomba contra incendios eléctrica es la más común cuando el suministro de energía es confiable. La bomba contra incendios diésel se elige cuando se necesita una fuente independiente de la red eléctrica, en sitios remotos o como respaldo de la eléctrica. Cada bomba debe tener su propio controlador listado para servicio contra incendio.'] },
+    { id: 'bombas-contra-incendio-que-ofrecemos', titulo: 'Bombas contra incendio que ofrecemos', pasos: ['Bomba jockey de presurización de 5 HP para redes NFPA 20.', 'Bomba principal eléctrica de 20 HP con controlador UL 218.', 'Bomba diésel de emergencia de 40 HP con arranque independiente de la red eléctrica.', 'Válvulas OS&Y supervisadas, cabezal de pruebas y accesorios del cuarto de bombas.'] },
+    { id: 'cuarto-de-bombas-y-sistemas-prearmados', titulo: 'Cuarto de bombas y sistemas prearmados', parrafos: ['El cuarto de bombas reúne las bombas, los controladores, las válvulas, la tubería de succión y descarga y el cabezal de pruebas. También hay soluciones de bombeo prearmadas (skid o paquete) que se entregan montadas sobre una base y ya probadas, lo que reduce el tiempo de instalación de bombas.'] },
+    { id: 'certificacion-nfpa-20-ul-y-fm', titulo: 'Certificación: NFPA 20, UL y FM', parrafos: ['La NFPA 20 regula la instalación de las bombas estacionarias para protección contra incendios (fire protection); la NFPA 25 regula su inspección, prueba y mantenimiento. La certificación de un laboratorio como Underwriters Laboratories (UL) o Factory Mutual (FM) indica que cada bomba contra incendios y su controlador fueron probados para ese servicio. En México, la NOM-002-STPS-2010 exige sistemas fijos de protección contra incendio en los centros de trabajo de riesgo alto; la bomba es parte de esos sistemas cuando la red la requiere.'] },
+    { id: 'seleccion-de-bombas-caudal-y-presion', titulo: 'Selección de bombas: caudal y presión', parrafos: ['La selección de bombas parte de la memoria de cálculo hidráulico: el caudal y la presión que piden el rociador y el hidrante más desfavorables, la altura del edificio y el suministro de agua disponible. En edificios de gran altura o con varios riesgos se diseña la configuración para cada zona. No se elige por HP: se elige por la curva que pide el cálculo.'] },
+    { id: 'errores-comunes-en-la-instalacion-y-el-mantenimiento', titulo: 'Errores comunes en la instalación y el mantenimiento', pasos: ['Elegir la bomba por potencia en HP y no por la curva de caudal y presión.', 'Tubería de succión mal diseñada, que provoca cavitación en el impulsor.', 'Controladores no listados para servicio contra incendio.', 'No hacer las pruebas periódicas de arranque y de flujo ni registrar las inspecciones.', 'Dejar válvulas cerradas o sin supervisión después de un servicio.'], parrafos: ['Un sistema fiable exige inspecciones periódicas: los incendios en edificios no avisan.'] },
+  ],
+  linesIntro: '',
+  lineas: lineasDeProductos(['bomba-jockey-ci-5hp', 'bomba-principal-electrica-20hp', 'bomba-diesel-emergencia-ci', 'valvula-osy-nfpa-20'], 'red-hidraulica'),
+  flagship: 'bomba-principal-electrica-20hp',
+  comparativa: comparativaDeProductos(['bomba-jockey-ci-5hp', 'bomba-principal-electrica-20hp', 'bomba-diesel-emergencia-ci', 'valvula-osy-nfpa-20'], 'red-hidraulica'),
+  faqs: [
+    { q: '¿Qué son las bombas contra incendios?', a: 'Son bombas que entregan el caudal y la presión que el sistema contra incendio necesita para que funcionen rociadores, hidrantes y gabinetes durante un incendio.' },
+    { q: '¿Cuáles son los tipos de bombas contra incendios?', a: 'Por su construcción: horizontal de carcasa bipartida, de succión final, vertical en línea y vertical tipo turbina. Por su motor: eléctrica o diésel. Además, la bomba jockey mantiene la presión.' },
+    { q: '¿Qué dice la NOM-002-STPS sobre las bombas contra incendios?', a: 'La NOM-002-STPS-2010 pide sistemas fijos de protección contra incendio en los centros de trabajo de riesgo alto. El diseño de la bomba se hace con la NFPA 20.' },
+    { q: '¿Cada cuánto se prueba una bomba contra incendio?', a: 'Según el programa de inspección y prueba de la NFPA 25 y el programa anual del centro de trabajo, con registro de cada prueba.' },
+  ],
+  ctaKicker: '¿Necesitas una bomba contra incendio?',
+  ctaTitleHtml: 'Envíanos la memoria de cálculo o el plano del inmueble y te proponemos la bomba, el controlador y el cuarto de bombas.',
+  waQuote: 'Hola, quiero cotizar una bomba contra incendio.',
+};
+
+const hidrantesContraIncendio: EquipmentBrand = {
+  tipoPagina: 'linea',
+  categorySlug: 'sistemas-ci',
+  slug: 'hidrantes-contra-incendio',
+  brand: 'Red Hidráulica',
+  brandLabel: 'Hidrantes contra incendio',
+  productSlugs: ['gabinete-ci-tipo-i-30m', 'gabinete-ci-tipo-ii-20m', 'valvula-osy-nfpa-20', 'bomba-jockey-ci-5hp'],
+  crossDesc: 'Hidrantes contra incendio y gabinetes.',
+  eyebrow: 'Hidrantes contra incendio · NFPA 14',
+  heroTitleTop: 'Hidrantes contra incendios',
+  heroTitleAccent: 'red de hidrantes y gabinetes NFPA 14.',
+  heroLead: 'Un hidrante contra incendio es una toma de agua conectada a una red presurizada que permite a la brigada o a los bomberos conectar una manguera y combatir un incendio con un flujo de agua continuo. Es parte del sistema contra incendio del edificio junto con los rociadores, la bomba y la detección: el extintor controla un conato; el hidrante da el caudal para atacar un fuego ya desarrollado.',
+  heroIntro: [],
+  heroBadges: ['NFPA 14'],
+  seoTitle: 'Hidrantes contra incendios: tipos, NFPA 14 y gabinetes',
+  seoDescription: 'Hidrantes contra incendios y gabinetes con manguera: tipos, clases NFPA 14, presión y caudal, toma siamesa e instalación de la red contra incendio en México.',
+  stats: [],
+  credenciales: [],
+  bloques: [
+    { id: 'que-es-un-hidrante-y-como-funciona-el-sistema-de-hidrantes', titulo: '¿Qué es un hidrante y cómo funciona el sistema de hidrantes?', parrafos: ['Los sistemas de hidrantes toman agua de una red de abastecimiento: una cisterna exclusiva para incendio o la red municipal. Una bomba contra incendio eleva la presión y una bomba jockey la mantiene en reposo. Al abrir la válvula del hidrante, la presión baja, arranca la bomba principal y el agua llega a la manguera con la presión y el caudal de diseño. La toma siamesa en fachada permite que el cuerpo de bomberos inyecte agua a la red desde su equipo.'] },
+    { id: 'tipos-de-hidrantes-contra-incendios', titulo: 'Tipos de hidrantes contra incendios', tabla: { cols: ['Tipo', 'Dónde se usa', 'Característica'], filas: [['Hidrantes de pared en gabinete', 'Interior de edificios, naves y plantas', 'Manguera, válvula de ángulo y pitón listos para la brigada'], ['Columna húmeda exterior', 'Patios, estacionamientos y perímetro industrial', 'Agua permanente en el cuerpo; respuesta inmediata'], ['Columna seca', 'Zonas con heladas o redes que deben mantenerse vacías', 'El agua queda bajo tierra, en la arqueta o bajo el nivel de congelación; la columna se drena al cerrar'], ['Toma siamesa', 'Fachada del edificio', 'Conexión para que los bomberos alimenten la red'], ['Hidrante urbano', 'Vía pública', 'Operado por el organismo de agua y los bomberos']] }, parrafos: ['En regiones con temperatura bajo cero conviene la columna seca: el agua retenida en una columna húmeda puede congelarse y causar daño en la válvula.'] },
+    { id: 'clases-de-sistemas-de-hidrantes-segun-nfpa-14', titulo: 'Clases de sistemas de hidrantes según NFPA 14', items: [{ t: 'Clase I', d: 'conexiones de 2½" (65 mm) para uso de bomberos y personal entrenado en caudales altos.' }, { t: 'Clase II', d: 'conexiones de 1½" (38 mm) con manguera para uso de los ocupantes o de la brigada.' }, { t: 'Clase III', d: 'combina ambas conexiones en el mismo sistema.' }] },
+    { id: 'presion-y-caudal-de-un-hidrante-contra-incendio', titulo: 'Presión y caudal de un hidrante contra incendio', parrafos: ['NFPA 14 pide una presión residual mínima de 100 psi (unos 690 kPa) en la salida de 2½" hidráulicamente más remota y de 65 psi (unos 450 kPa) en la conexión de 1½" más remota, con el caudal de diseño fluyendo. Esos valores definen el tamaño de la tubería, de la bomba y de la cisterna; por eso la red se calcula antes de comprar equipo.'] },
+    { id: 'gabinetes-contra-incendio-tipo-i-y-tipo-ii', titulo: 'Gabinetes contra incendio tipo I y tipo II', items: [{ t: 'Gabinete tipo I', d: 'manguera de 38 mm × 30 m, válvula de ángulo, pitón y espacio para extintor.' }, { t: 'Gabinete tipo II', d: 'manguera de 25 mm × 20 m para áreas pequeñas y oficinas.' }], parrafos: ['Cada gabinete debe tener señalización visible, acceso libre y la manguera conectada lista para usarse.'] },
+    { id: 'norma-y-normativas-aplicables-en-mexico', titulo: 'Norma y normativas aplicables en México', parrafos: ['La NOM-002-STPS-2010 obliga a los centros de trabajo a contar con equipo contra incendio acorde a su riesgo de incendio y a mantenerlo en condiciones de operación; en riesgo alto exige además sistemas fijos. El diseño de la red se toma de NFPA 14 (hidrantes y montantes), NFPA 24 (red privada de abastecimiento) y NFPA 20 (bombas). La inspección, prueba y mantenimiento sigue NFPA 25. Protección civil local y la aseguradora suelen pedir la memoria de cálculo y las pruebas.'] },
+    { id: 'cuando-es-obligatorio-un-hidrante-y-donde-se-instalan', titulo: '¿Cuándo es obligatorio un hidrante y dónde se instalan?', parrafos: ['Los hidrantes se exigen en inmuebles de riesgo alto, naves industriales, centros comerciales, hospitales, hoteles y edificios altos, según el reglamento de construcción municipal y el dictamen de protección civil. Se instalan en rutas de evacuación, cerca de escaleras y accesos, a una altura cómoda para operar la válvula, y de modo que la manguera alcance toda el área protegida.'] },
+    { id: 'instalacion-verificacion-y-mantenimiento-de-hidrantes', titulo: 'Instalación, verificación y mantenimiento de hidrantes', pasos: ['Cálculo hidráulico: caudal, presión y reserva de agua.', 'Instalación de tubería, válvulas, gabinetes y toma siamesa.', 'Prueba hidrostática de la red antes de ponerla en servicio.', 'Prueba de flujo para comprobar presión y caudal en la salida más remota.', 'Inspección y mantenimiento periódico conforme a NFPA 25: fugas, conexiones, tuerca y llave de operación, empaques y estado de la manguera.'] },
+    { id: 'diferencia-entre-hidrante-y-boca-de-incendio-equipada-bie', titulo: 'Diferencia entre hidrante y boca de incendio equipada (BIE)', parrafos: ['La BIE es el término que usa la normativa española (RIPCI) para el gabinete con manguera listo para los ocupantes. En México el equivalente es el gabinete contra incendio de pared. El hidrante exterior o la conexión de 2½" están pensados para caudales mayores y para uso de bomberos.'] },
+  ],
+  linesIntro: '',
+  lineas: lineasDeProductos(['gabinete-ci-tipo-i-30m', 'gabinete-ci-tipo-ii-20m', 'valvula-osy-nfpa-20', 'bomba-jockey-ci-5hp'], 'red-hidraulica'),
+  flagship: 'gabinete-ci-tipo-i-30m',
+  comparativa: comparativaDeProductos(['gabinete-ci-tipo-i-30m', 'gabinete-ci-tipo-ii-20m', 'valvula-osy-nfpa-20', 'bomba-jockey-ci-5hp'], 'red-hidraulica'),
+  faqs: [
+    { q: '¿Cuál es la norma NFPA para hidrantes?', a: 'NFPA 14 para sistemas de montantes y mangueras, NFPA 24 para la red privada e hidrantes exteriores y NFPA 25 para su mantenimiento.' },
+    { q: '¿Cada cuánto se revisa un hidrante?', a: 'NFPA 25 pide inspecciones periódicas y pruebas de flujo en hidrantes privados; el programa exacto lo define el tipo de sistema. Recomendamos revisión visual mensual por la brigada.' },
+    { q: '¿Cuántos tipos de hidrantes hay?', a: 'Los principales son de pared en gabinete, columna húmeda, columna seca, toma siamesa e hidrante urbano.' },
+    { q: '¿Un hidrante sustituye al extintor?', a: 'No. Son equipos complementarios de prevención y extinción; la NOM-002 sigue exigiendo extintores.' },
+  ],
+  ctaKicker: '¿Necesitas una red de hidrantes?',
+  ctaTitleHtml: 'Solicita una cotización con un especialista en protección contra incendios.',
+  waQuote: 'Solicita una cotización con un especialista en protección contra incendios.',
+};
+
 /* ── Exportaciones ─────────────────────────────────────────────────────────── */
-export const sistemasCIBrandList: EquipmentBrand[] = [tycoViking, honeywellNotifier, kiddeFenwal, redHidraulica, alarmaContraIncendio];
+export const sistemasCIBrandList: EquipmentBrand[] = [tycoViking, honeywellNotifier, kiddeFenwal, redHidraulica, alarmaContraIncendio, rociadoresContraIncendio, bombasContraIncendio, hidrantesContraIncendio];

@@ -71,6 +71,9 @@ export const navigation: { main: NavItem[] } = { main: [
         description: "Tyco Viking · Notifier · Kidde Fenwal · Red Hidráulica",
         children: [
           { label: "Alarma contra incendio", href: "/productos/sistemas-ci/alarma-contra-incendio", description: "Detección y alarma NFPA 72" },
+          { label: "Rociadores contra incendio", href: "/productos/sistemas-ci/rociadores-contra-incendio", description: "Rociadores automáticos NFPA 13" },
+          { label: "Bombas contra incendio", href: "/productos/sistemas-ci/bombas-contra-incendio", description: "Bombas eléctrica, diésel y jockey NFPA 20" },
+          { label: "Hidrantes contra incendio", href: "/productos/sistemas-ci/hidrantes-contra-incendio", description: "Red de hidrantes y gabinetes NFPA 14" },
           { label: "Tyco Viking",          href: "/productos/sistemas-ci/tyco-viking",          description: "NFPA 13 · rociadores UL/FM · Viking EC" },
           { label: "Honeywell Notifier",   href: "/productos/sistemas-ci/honeywell-notifier",   description: "NFPA 72 · detección · NFS2-3030" },
           { label: "Kidde Fenwal",         href: "/productos/sistemas-ci/fm200-novec",          description: "NFPA 2001 · FM-200 · Novec 1230" },

@@ -81,6 +81,8 @@ El numeral 5.10 distingue el nivel de protección. En riesgo ordinario se requie
 
 La solución debe partir de los materiales y el área, no del nombre comercial de un sistema. Puedes revisar opciones de [alarma contra incendio](/productos/sistemas-ci/alarma-contra-incendio/) y [sistemas contra incendio](/productos/sistemas-ci/) al definir el alcance de protección.
 
+También puedes revisar [rociadores contra incendio](/productos/sistemas-ci/rociadores-contra-incendio/), [bombas contra incendio](/productos/sistemas-ci/bombas-contra-incendio/) e [hidrantes contra incendio](/productos/sistemas-ci/hidrantes-contra-incendio/).
+
 ## Brigada contra incendio y capacitación
 
 En riesgo de incendio alto, la brigada contra incendio es obligatoria conforme al numeral 5.6. La NOM-002 no establece una proporción normativa de integrantes de las brigadas por cantidad de trabajadores; debe organizarse de acuerdo con las necesidades de la operación y el plan de atención a emergencias.

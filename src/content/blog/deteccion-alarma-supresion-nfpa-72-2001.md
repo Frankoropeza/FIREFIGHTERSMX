@@ -92,6 +92,10 @@ Ese documento es la diferencia entre un sistema que protege tu inversión y uno 
 
 ## Artículos relacionados
 
+- [Rociadores contra incendio](/productos/sistemas-ci/rociadores-contra-incendio/)
+- [Bombas contra incendio](/productos/sistemas-ci/bombas-contra-incendio/)
+- [Hidrantes contra incendio](/productos/sistemas-ci/hidrantes-contra-incendio/)
+
 - [FM-200 vs Novec 1230: cuál agente limpio elegir para tu cuarto de servidores](/blog/fm200-vs-novec-1230-agente-limpio)
 - [NFPA 13 vs 13R vs 13D: cuál aplica a tu proyecto de rociadores](/blog/nfpa-13-vs-13r-vs-13d-rociadores)
 - [Memoria de cálculo hidráulico para rociadores: qué debe incluir para que tu DRO la apruebe](/blog/memoria-calculo-hidraulico-rociadores-nfpa-13)

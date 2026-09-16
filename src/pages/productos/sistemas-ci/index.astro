@@ -16,8 +16,8 @@ const kiddeFenwalProducts = featuredProducts.filter((p) => p.category === 'Siste
 const redHidraulicaProducts = featuredProducts.filter((p) => p.category === 'Sistemas CI' && p.brand === 'Red Hidráulica'   && p.specs);
 
 const seoMeta = {
-  title: 'Sistemas contra incendio: rociadores, detección y agentes limpios',
-  description: 'Diseño e instalación de sistemas contra incendio en México: rociadores NFPA 13 (Tyco/Viking), detección NFPA 72 (Honeywell/Notifier) y supresión agente limpio NFPA 2001 (FM-200/Novec). Memoria de cálculo y entregables para aseguradoras.',
+  title: 'Sistema contra incendio: rociadores, alarmas, bombas e hidrantes',
+  description: 'Sistemas contra incendio: tipos, componentes y normativas. Diseño e instalación de rociadores, alarmas, bombas contra incendio e hidrantes NFPA.',
   canonicalURL,
 };
 
@@ -93,6 +93,13 @@ const subsistemas = [
     entregables: ['Memoria de cálculo hidráulico con curva bomba-sistema', 'Planos isométricos de la red de tuberías', 'Data sheet de bombas y tablero de control', 'Protocolo de prueba de la bomba conforme NFPA 20'],
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/></svg>`,
   },
+];
+
+const guiaLineas = [
+  { href: '/productos/sistemas-ci/rociadores-contra-incendio/', label: 'Rociadores contra incendio' },
+  { href: '/productos/sistemas-ci/alarma-contra-incendio/', label: 'Alarma contra incendio' },
+  { href: '/productos/sistemas-ci/bombas-contra-incendio/', label: 'Bombas contra incendio' },
+  { href: '/productos/sistemas-ci/hidrantes-contra-incendio/', label: 'Hidrantes contra incendio' },
 ];
 
 /* Proceso de proyecto */
@@ -308,9 +315,8 @@ const tablaComparativa = [
         <div>
           <span class="section-eyebrow mb-5 inline-flex">{cat.norm} · Diseño · Instalación · Entregables</span>
           <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.25rem,5vw,4rem);line-height:0.95">
-            Sistemas<br/>contra incendio<br/>
-            <span style="color:#34D399">que tu aseguradora</span><br/>
-            <span style="color:#34D399">acepta.</span>
+            Sistemas contra incendio<br/>
+            <span style="color:#34D399">protección contra incendios que tu aseguradora acepta.</span>
           </h1>
           <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
             Diseñamos, suministramos e instalamos sistemas fijos de protección:
@@ -340,6 +346,84 @@ const tablaComparativa = [
 
   <!-- QuickLinksBar -->
   <QuickLinksBar />
+
+  <section id="guia-sistemas" class="section" style="background:#040A12" aria-labelledby="guia-sistemas-title">
+    <div class="container-site">
+      <div class="section-head mb-5">
+        <h2 id="guia-sistemas-title">¿Qué es un sistema contra incendio?</h2>
+      </div>
+      <p class="content-copy mb-8">Un sistema contra incendio es el conjunto de equipos y sistemas que un inmueble usa para detectar un incendio, alertar a los ocupantes y controlar y extinguir el fuego. Su objetivo es actuar sobre los incendios en su etapa inicial, antes de que puedan propagarse y causar daños a las personas, a la operación y a la continuidad del negocio. Es la base de la estrategia de seguridad contra incendios de cualquier edificio comercial o industrial y el primer requisito que revisan la aseguradora y protección civil.</p>
+
+      <div class="section-head mt-14 mb-5">
+        <h2>Tipos de sistemas contra incendios</h2>
+      </div>
+      <div class="overflow-x-auto max-w-full min-w-0">
+        <table class="w-full text-left text-sm" style="border-collapse:collapse;min-width:700px">
+          <thead>
+            <tr style="background:#0C1825;color:#FFFFFF">
+              <th class="p-4">Tipo de sistema</th>
+              <th class="p-4">Qué hace</th>
+              <th class="p-4">Dónde se usa</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ['Sistemas de detección y alarma', 'Detectores de humo y calor conectados a un tablero de control que activa alarmas audibles y visuales', 'Todo inmueble con ocupantes: oficinas, hoteles, hospitales, naves'],
+              ['Sistemas de rociadores automáticos', 'Cada rociador (aspersor) abre por temperatura y libera agua sobre el área del fuego', 'Bodegas, centros comerciales, hoteles, edificios altos'],
+              ['Red de hidrantes y gabinetes', 'Manguera conectada a una red presurizada para combatir incendios de forma manual', 'Instalaciones industriales y edificios de riesgo alto'],
+              ['Supresión con agentes limpios', 'Descarga de agente gaseoso que no daña dispositivos electrónicos', 'Centros de datos, cuartos eléctricos, archivos'],
+              ['Supresión con CO₂ o espuma', 'Agua o agentes extintores especiales para materiales inflamables', 'Cuartos de máquinas, almacenes de materiales peligrosos, tanques'],
+              ['Extintores portátiles', 'Primer ataque sobre un conato de incendio', 'Obligatorios en todo centro de trabajo'],
+            ].map((fila) => (
+              <tr style="border-bottom:1px solid rgba(74,117,153,.18);color:#94A3B8">
+                {fila.map((celda, index) => <td class="p-4" style={index === 0 ? 'color:#FFFFFF;font-family:var(--font-display);font-weight:700' : ''}>{celda}</td>)}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-14">
+        <article class="p-7" style="background:#080F1A;border:1px solid rgba(74,117,153,.18)">
+          <h2 class="font-display font-bold text-2xl mb-4" style="color:#FFFFFF">¿Cómo funciona un sistema contra incendios?</h2>
+          <p class="content-copy m-0">Ante la presencia de humo o calor, un detector envía la señal al tablero de control. El tablero activa las alarmas sonoras y visuales para una evacuación rápida por las rutas de evacuación, avisa a la brigada y a los servicios de emergencia y, si el diseño lo prevé, dispara la supresión. En un sistema de rociadores, el rociador expuesto al calor se abre, la presión en la tubería baja y arrancan las bombas contra incendios para dar un suministro constante de agua hasta controlar un incendio.</p>
+        </article>
+        <article class="p-7" style="background:#080F1A;border:1px solid rgba(74,117,153,.18)">
+          <h2 class="font-display font-bold text-2xl mb-4" style="color:#FFFFFF">Componentes de un sistema contra incendio</h2>
+          <ul class="flex flex-col gap-3 m-0 pl-5 text-sm leading-relaxed" style="color:#94A3B8">
+            <li><strong>Detección:</strong> detectores de humo, de calor y de flama, estaciones manuales y tablero de control.</li>
+            <li><strong>Notificación:</strong> sirenas y luces estroboscópicas que ayudan a alertar a los ocupantes del edificio.</li>
+            <li><strong>Abastecimiento y bombeo:</strong> cisterna, bomba eléctrica, bomba diesel y bomba jockey conforme a NFPA 20; garantizan el suministro de agua.</li>
+            <li><strong>Distribución:</strong> tubería, válvula de control, hidrante, gabinete y manguera.</li>
+            <li><strong>Supresión:</strong> rociadores, boquillas de agente limpio, CO₂ o espuma, y extintores portátiles.</li>
+          </ul>
+        </article>
+        <article class="p-7" style="background:#080F1A;border:1px solid rgba(74,117,153,.18)">
+          <h2 class="font-display font-bold text-2xl mb-4" style="color:#FFFFFF">Protección activa y pasiva contra incendios</h2>
+          <p class="content-copy m-0">La protección activa incluye los equipos que actúan ante el fuego: detección, alarmas contra incendios, rociadores, hidrantes y extintores. La protección pasiva limita el avance del fuego sin intervenir: muros y puertas cortafuego, sellos en pasos de instalaciones eléctricas y compartimentación. Un programa completo de prevención y protección contra incendios combina ambas.</p>
+        </article>
+        <article class="p-7" style="background:#080F1A;border:1px solid rgba(74,117,153,.18)">
+          <h2 class="font-display font-bold text-2xl mb-4" style="color:#FFFFFF">Normativas: sistemas contra incendios en México</h2>
+          <p class="content-copy m-0">La norma oficial mexicana NOM-002-STPS-2010 obliga a clasificar el tipo de riesgo de incendio del centro de trabajo (ordinario o alto) y a contar con equipo contra incendio acorde a ese riesgo; en riesgo alto exige además sistemas fijos de protección y de alarma. El diseño técnico se toma de las normas NFPA: NFPA 13 para rociadores, NFPA 14 para hidrantes, NFPA 20 para bombas, NFPA 72 para detección y alarma y NFPA 25 para las inspecciones y el mantenimiento. También aplican los reglamentos de construcción locales y el dictamen de protección civil.</p>
+        </article>
+        <article class="p-7" style="background:#080F1A;border:1px solid rgba(74,117,153,.18)">
+          <h2 class="font-display font-bold text-2xl mb-4" style="color:#FFFFFF">¿Cuánto cuesta instalar un sistema contra incendios?</h2>
+          <p class="content-copy m-0">No hay un precio por metro cuadrado válido para todos los proyectos. El costo depende de la superficie y la altura del inmueble, del tipo de riesgo y de los materiales almacenados, del sistema elegido, de si existe suministro de agua suficiente o hace falta cisterna y cuarto de bombas, y de lo que pida la aseguradora. Por eso cotizamos a partir de un levantamiento y un cálculo hidráulico, con partidas separadas de equipo, instalación y pruebas.</p>
+        </article>
+        <article class="p-7" style="background:#080F1A;border:1px solid rgba(74,117,153,.18)">
+          <h2 class="font-display font-bold text-2xl mb-4" style="color:#FFFFFF">Mantenimiento y confiabilidad del sistema</h2>
+          <p class="content-copy m-0">Un sistema solo protege si funciona el día del incendio. Las inspecciones, pruebas y mantenimiento periódicos conforme a NFPA 25 y NFPA 72 verifican el correcto funcionamiento de detectores, tablero, bombas, válvulas y rociadores, y dejan evidencia para la aseguradora y la STPS. Ofrecemos soluciones de protección con programa de mantenimiento para garantizar la seguridad y mantener entornos seguros en instalaciones comerciales e industriales y en proyectos residenciales de gran tamaño.</p>
+        </article>
+      </div>
+
+      <p class="content-copy mt-10 mb-5">Explora cada línea:</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {guiaLineas.map((linea) => (
+          <a href={linea.href} class="p-5 font-display font-bold text-sm" style="background:#080F1A;border:1px solid rgba(74,117,153,.18);color:#FFFFFF">{linea.label}</a>
+        ))}
+      </div>
+    </div>
+  </section>
 
   <!-- Trust Pillars -->
   <section class="section-tight" style="background:#070E1A" aria-labelledby="razones-ci-title">
@@ -402,7 +486,7 @@ const tablaComparativa = [
             y ficha técnica para incluir en la memoria de cálculo. Cotización con lote y trazabilidad.
           </p>
         </div>
-        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+        <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/sistemas-ci/tyco-viking" class="btn btn-primary btn-lg">
             Catálogo Tyco / Viking completo →
           </a>
@@ -457,7 +541,7 @@ const tablaComparativa = [
             y protocolos de prueba de aceptación NFPA 72 Capítulo 14 entregados al propietario.
           </p>
         </div>
-        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+        <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/sistemas-ci/honeywell-notifier" class="btn btn-primary btn-lg">
             Catálogo Honeywell / Notifier completo →
           </a>
@@ -511,7 +595,7 @@ const tablaComparativa = [
             masa conforme NFPA 2001 y análisis de integridad del recinto (door fan test) incluidos.
           </p>
         </div>
-        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+        <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/sistemas-ci/fm200-novec" class="btn btn-primary btn-lg">
             Catálogo FM-200 / Novec completo →
           </a>
@@ -542,11 +626,11 @@ const tablaComparativa = [
             La red hidráulica es la columna vertebral de cualquier sistema contra incendio.
             Gabinetes con manguera para primera respuesta, sala de bombas NFPA 20 con bomba
             jockey, eléctrica y diesel de emergencia (UL Listed · FM Approved), y válvulas OS&Y
-            con tamper switch supervisado. La NFPA 20 exige que las bombas arrangen en menos
-            de 30 segundos — verificamos en la prueba de aceptación.
+            con tamper switch supervisado. La NFPA 20 exige arranque automático por caída de
+            presión.
           </p>
           <div class="flex gap-4 text-xs font-mono" style="color:#FB923C">
-            <span>NFPA 20 · Bomba &lt; 30 s</span>
+            <span>NFPA 20 · Arranque automático</span>
             <span>·</span>
             <span>8 h autonomía diesel</span>
             <span>·</span>
@@ -568,7 +652,7 @@ const tablaComparativa = [
             con medición de curva de bomba en tres puntos. Entregable para aseguradoras internacionales.
           </p>
         </div>
-        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+        <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/sistemas-ci/red-hidraulica" class="btn btn-primary btn-lg">
             Red Hidráulica NFPA 20 completa →
           </a>
@@ -686,7 +770,7 @@ const tablaComparativa = [
           cada uno — con tu asesor determinas el alcance correcto para tu ocupación y aseguradora.
         </p>
       </div>
-      <div style="overflow-x:auto">
+      <div style="overflow-x:auto;max-width:100%;min-width:0">
         <table style="width:100%;border-collapse:collapse;min-width:700px;font-size:12px">
           <thead>
             <tr style="border-bottom:2px solid rgba(52,211,153,0.35)">
@@ -899,7 +983,7 @@ const tablaComparativa = [
             Materiales UL Listed.<br/>Memoria firmada por DRO.
           </h2>
         </div>
-        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+        <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a
             href={whatsappUrl('Hola, quiero solicitar una cotización para un sistema contra incendio (rociadores / detección / agente limpio). ¿Me pueden enviar información?')}
             target="_blank" rel="noopener"

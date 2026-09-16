@@ -27,6 +27,7 @@ const hubURL = `/productos/${brand.categorySlug}`;
 const canonicalURL = `${SITE.url}/productos/${brand.categorySlug}/${brand.slug}`;
 const ruta = `/productos/${brand.categorySlug}/${brand.slug}/`;
 const esLinea = brand.tipoPagina === 'linea';
+const nombreLinea = brand.brandLabel.charAt(0).toLowerCase() + brand.brandLabel.slice(1);
 const etiquetaPlural = esLinea ? `Otras líneas de ${cat.label}` : 'Otras marcas';
 
 const productos = brand.productSlugs
@@ -278,7 +279,7 @@ const faqSchema = {
       <div>
         <span class="section-eyebrow mb-4 inline-flex">{safeLineas.length} familias · un distribuidor</span>
         <h2 id="lineas-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
-          Portafolio {brand.brandLabel}<br/>
+          {esLinea ? `Portafolio de ${nombreLinea}` : `Portafolio ${brand.brandLabel}`}<br/>
           <span style="color:#F75000">por tipo de riesgo.</span>
         </h2>
       </div>
@@ -320,7 +321,7 @@ const faqSchema = {
       <div>
         <span class="section-eyebrow mb-4 inline-flex">Catálogo completo — {productos.length} modelos</span>
         <h2 id="catalogo-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
-          Elige tu {brand.brandLabel}<br/>
+          {esLinea ? `Elige el equipo de ${nombreLinea}` : `Elige tu ${brand.brandLabel}`}<br/>
           <span style="color:#F75000">para tu operación.</span>
         </h2>
       </div>
@@ -472,8 +473,8 @@ const faqSchema = {
       <div>
         <span class="section-eyebrow mb-4 inline-flex">Segmentos de operación</span>
         <h2 id="seg-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
-          Para quién es<br/>
-          <span style="color:#F75000">{brand.brandLabel}.</span>
+          {esLinea ? 'Aplicaciones de' : 'Para quién es'}<br/>
+          <span style="color:#F75000">{esLinea ? nombreLinea : brand.brandLabel}.</span>
         </h2>
       </div>
       <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
@@ -511,7 +512,7 @@ const faqSchema = {
         <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes · {brand.brandLabel}</span>
         <h2 id="faq-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
           Lo que más nos<br/>
-          <span style="color:#F75000">preguntan sobre {brand.brandLabel}.</span>
+          <span style="color:#F75000">preguntan sobre {esLinea ? nombreLinea : brand.brandLabel}.</span>
         </h2>
         <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
           ¿Tu duda no aparece? Escríbenos por {CANAL_CONTACTO} con el detalle de tu operación — te asesoramos sobre el

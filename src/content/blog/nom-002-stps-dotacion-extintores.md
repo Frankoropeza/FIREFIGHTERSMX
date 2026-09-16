@@ -99,11 +99,13 @@ La norma es muy específica en tres puntos que con frecuencia se ignoran:
 
 ## La señalización: más específica de lo que crees
 
-La **NOM-003-SEGOB-2011** regula la señalización. No es un letrero cualquiera: debe ser fotoluminiscente o reflectante de alta visibilidad, en color rojo de seguridad con pictograma oficial, y con dimensiones proporcionales a la distancia desde la que debe verse.
+La **NOM-003-SSPC-2011** (antes NOM-003-SEGOB-2011) regula las señales de protección civil, y la **NOM-026-STPS-2008** las de seguridad en el centro de trabajo. No es un letrero cualquiera: el equipo contra incendio se identifica en color rojo de seguridad con contraste blanco, y el color de seguridad debe cubrir al menos el 50 % de la señal. Las normas permiten señales fotoluminiscentes para mejorar la visibilidad cuando falla la luz, y la NOM-026 pide al menos 50 lx sobre la superficie de la señal.
 
-- Hasta 10 metros de distancia de observación: formato A (20 × 30 cm mínimo)
-- Hasta 20 metros: formato B (30 × 45 cm)
-- Más de 20 metros: formato C (45 × 60 cm)
+El tamaño se calcula con la distancia de observación (L): la superficie mínima es S ≥ L²/2000 (S en m², L en m).
+
+- A 5 metros: 125 cm² como mínimo
+- A 10 metros: 500 cm²
+- A 20 metros: 2,000 cm²
 
 La señal va **sobre** el extintor, visible desde el pasillo de acceso principal. Una señal desteñida, ilegible o de tamaño incorrecto es hallazgo de no conformidad en inspección.
 
@@ -193,7 +195,7 @@ Si partes de cero, o de una dotación que sabes que no está bien calculada, el 
 4. **Selecciona el agente correcto** para cada área: PQS ABC para uso general, CO₂ para electrónica, Tipo K para cocinas.
 5. **Compra [extintores](/productos/extintores) con la norma de producto aplicable**: NOM-100-STPS para PQS, NOM-102-STPS para CO₂ y la referencia correspondiente según el agente.
 6. **Instala en soportes fijos**, a la altura correcta, con espacio despejado de 1 metro alrededor.
-7. **Coloca señalización NOM-003-SEGOB** del tamaño correcto según la distancia de observación.
+7. **Coloca señalización NOM-003-SSPC-2011** del tamaño correcto según la distancia de observación.
 8. **Abre la bitácora**: número de serie, fecha de instalación, técnico responsable, calendario de mantenimiento.
 
 El inspector de STPS que llega sin aviso no viene a encontrarte en falta. Pero si encuentra incumplimientos, los va a documentar. Y el acta no distingue entre "no sabía" y "no lo hice".
