@@ -54,7 +54,7 @@ export const brands: Brand[] = [
     description: 'Tecnología alemana de precisión. SCBA, equipos médicos y detección de gases.',
     country: '🇩🇪 Alemania',
     longDesc: [
-      'Dräger es el fabricante alemán líder en equipos de seguridad para la vida. Su SCBA PSS 7000 destaca por la ergonomía de arnés, la presión positiva constante y el rendimiento en operaciones prolongadas de hasta 60 minutos. La plataforma de detección de gases Dräger-Tubes es referencia mundial en identificación de HAZMAT.',
+      'Dräger es un fabricante alemán de equipos de seguridad para la vida. Su SCBA PSS 7000 cuenta con ergonomía de arnés, presión positiva constante y rendimiento en operaciones prolongadas de hasta 60 minutos. La plataforma de detección de gases Dräger-Tubes se usa para identificación de HAZMAT.',
       'En FIREFIGHTERS MX distribuimos los equipos Dräger más demandados en industria petrolera, brigadas industriales y aeropuertos ARFF, con soporte técnico local y prueba hidrostática autorizada.',
     ],
     products: [
@@ -89,7 +89,7 @@ export const brands: Brand[] = [
     slug: 'globe-manufacturing',
     name: 'Globe Manufacturing',
     emoji: '🧥',
-    description: 'El fabricante #1 de trajes estructurales para bomberos en Norteamérica.',
+    description: 'Fabricante de trajes estructurales para bomberos en Norteamérica.',
     country: '🇺🇸 USA',
     longDesc: [
       'Globe Manufacturing es un fabricante de trajes estructurales de Norteamérica y la marca de referencia para cuerpos de bomberos que exigen cumplimiento NFPA 1970 con diseño a medida. Su modelo GX-7 combina tela exterior PBI/Kevlar NXT, barrera de humedad Crosstech y forro térmico, con costuras de doble aguja y trim reflejante 3M Scotchlite.',
@@ -111,7 +111,7 @@ export const brands: Brand[] = [
     description: 'Herramientas hidráulicas de rescate vehicular: cizallas, expansores, cilindros.',
     country: '🇳🇱 Países Bajos',
     longDesc: [
-      'Holmatro es la marca holandesa de referencia en herramientas hidráulicas para rescate vehicular. Su línea Pentheon inalámbrica permite despliegue en segundos sin unidad de poder central — crítico en accidentes carreteros con vehículos de aceros endurecidos de tercera generación. El separador SPR 4250 SC y la herramienta combinada CT 4260 HCS son los más usados en México por cuerpos de bomberos metropolitanos.',
+      'Holmatro es una marca holandesa de herramientas hidráulicas para rescate vehicular. Su línea Pentheon inalámbrica permite despliegue en segundos sin unidad de poder central — útil en accidentes carreteros con vehículos de aceros endurecidos de tercera generación. El separador SPR 4250 SC y la herramienta combinada CT 4260 HCS forman parte de su línea para cuerpos de bomberos metropolitanos.',
       'Distribuimos Holmatro con refacciones originales, servicio técnico y calibración. Compatible con sistemas hidráulicos de unidad de poder existentes o en configuración inalámbrica Pentheon de última generación.',
     ],
     products: [
@@ -168,7 +168,7 @@ export const brands: Brand[] = [
     description: 'Extintores, sistemas de supresión y alarmas para mercado comercial e industrial.',
     country: '🇺🇸 USA',
     longDesc: [
-      'Kidde, parte de UTC (United Technologies), es un fabricante internacional en extintores portátiles y sistemas de supresión. Sus extintores PQS, CO₂ y Clase K son de los más utilizados en comercio, industria y gobierno por su disponibilidad, precio y soporte de servicio.',
+      'Kidde, parte de UTC (United Technologies), es un fabricante internacional en extintores portátiles y sistemas de supresión. Sus extintores PQS, CO₂ y Clase K se ofrecen para comercio, industria y gobierno con opciones de disponibilidad, precio y servicio.',
       'Distribuimos extintores Kidde y accesorios con mantenimiento y recarga conforme a NOM-154-SCFI-2005, entregando ficha técnica y constancia de servicio lista para expediente ante Protección Civil y STPS.',
     ],
     products: [
@@ -282,7 +282,7 @@ export const brands: Brand[] = [
     description: 'Cascos tradicionales para bomberos estructurales, iconos del sector.',
     country: '🇺🇸 USA',
     longDesc: [
-      'Cairns Helmets es la marca americana de cascos de cuero y fibra de vidrio más icónica del sector bomberos. El modelo N6A Houston de cuero es el preferido por cuerpos con tradición americana que buscan imagen y durabilidad. Sus cascos de fibra de vidrio ofrecen protección NFPA 1970 con el estilo clásico americano.',
+      'Cairns Helmets es una marca americana de cascos de cuero y fibra de vidrio para el sector bomberos. El modelo N6A Houston de cuero se ofrece para cuerpos con tradición americana que buscan imagen y durabilidad. Sus cascos de fibra de vidrio ofrecen protección NFPA 1970 con estilo clásico americano.',
       'Distribuimos cascos Cairns con escudo frontal personalizado para tu cuerpo de bomberos y refacciones originales: visores, suspensiones y guarniciones de repuesto.',
     ],
     products: [

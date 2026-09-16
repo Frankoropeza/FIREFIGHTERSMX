@@ -12,29 +12,29 @@ image:
   alt: "Comparativa FM-200 HFC-227ea vs Novec 1230 FK-5-1-12 para sistemas de agente limpio"
 ---
 
-El cliente aprobó el FM-200. Era 2019, el agente costaba menos, el sistema quedaba dentro del presupuesto, y en ese momento nadie en la sala conocía el Protocolo de Kigali.
+Al evaluar un sistema de agente limpio, el precio inicial no debe ser el criterio aislado. Una descarga, un cambio regulatorio o la disponibilidad del agente pueden modificar el costo y la operación durante la vida del sistema.
 
-Cinco años después, ese mismo cliente me llama porque necesita recargar el sistema después de una descarga accidental durante mantenimiento. El precio del FM-200 subió 38% respecto a 2019. El distribuidor le advierte que los tiempos de entrega son de 8 a 12 semanas porque los volúmenes de importación están sujetos a cuotas. Y el cliente tiene un data center que lleva mes y medio con el sistema descargado.
+Por ejemplo, una organización que debe recargar después de una descarga necesita confirmar la disponibilidad local, el procedimiento de recuperación y el tiempo de reposición antes de comprometer la protección del espacio.
 
-No fue una mala decisión en 2019. Fue una decisión de corto plazo que ignoró el horizonte de vida del sistema.
+La decisión debe considerar el horizonte de vida del sistema y el plan de mantenimiento, no solo la cotización inicial.
 
 ---
 
 Cuando el riesgo que proteges no puede mojarse, ensuciarse ni llenarse de polvo — un data center, un cuarto de UPS, una bóveda de documentos, una sala de control de proceso — los rociadores de agua quedan descartados de entrada. Los [sistemas de agente limpio](/productos/sistemas-ci) son el estándar de la industria, y dentro de esa categoría, dos agentes dominan el mercado global y el mexicano: el **[FM-200](/productos/sistemas-ci/fm200-novec)** (HFC-227ea, heptafluoropropano) y el **Novec 1230** (FK-5-1-12, fluorocetona).
 
-Ambos están listados bajo NFPA 2001. Ambos dejan el espacio limpio tras la descarga. Ambos son efectivos. Pero tienen diferencias técnicas, ambientales y de disponibilidad que en 2026 importan mucho más que en 2016.
+Ambos se consideran en sistemas diseñados bajo NFPA 2001 y no dejan residuo tras la descarga. Pero tienen diferencias técnicas, ambientales y de disponibilidad que deben revisarse para cada proyecto.
 
 La pregunta correcta ya no es solo "¿cuál es más barato hoy?" Es: "¿cuál voy a poder recargar en 2030?"
 
 ## Qué es un agente limpio y por qué importa en ciertos espacios
 
-Un agente limpio actúa en fase gaseosa, extingue el fuego en segundos y se disipa sin dejar residuo sólido, líquido ni polvo sobre los equipos y materiales del espacio protegido. La NFPA 2001 regula el diseño, instalación, prueba y mantenimiento de estos sistemas.
+Un agente limpio actúa en fase gaseosa y se disipa sin dejar residuo sólido, líquido ni polvo sobre los equipos y materiales del espacio protegido. La NFPA 2001 regula el diseño, instalación, prueba y mantenimiento de estos sistemas.
 
 El campo de aplicación está definido por lo que no tolera el agua, el polvo ni la espuma: infraestructura de tecnología de información, colecciones documentales y bibliográficas, equipos de metrología y control de procesos, instalaciones eléctricas de alta densidad, y cualquier entorno donde la continuidad operativa sea crítica. Un data center financiero, una sala de control hospitalaria, un cuarto de telefonía de operadora de telecomunicaciones.
 
 En esos espacios, la elección del agente no es solo técnica. Es una decisión de continuidad de negocio.
 
-## FM-200: el agente que dominó el mercado durante 30 años
+## FM-200: agente limpio para evaluación de proyecto
 
 ### Cómo funciona
 
@@ -61,11 +61,9 @@ La concentración de diseño del 7.9% es menor que el NOAEL del 9%, lo que signi
 
 ### El FM-200 en el mercado mexicano hoy
 
-Durante los años 90 y 2000, el FM-200 fue adoptado masivamente como sustituto del Halon 1301 (prohibido por el Protocolo de Montreal en 1994). Tiene la base instalada más grande del mundo y la más amplia en México.
+El FM-200 se usa como alternativa de agente limpio en instalaciones existentes y proyectos que requieren proteger equipos sensibles al agua o al residuo. Antes de seleccionarlo, conviene documentar la disponibilidad de recarga y las condiciones regulatorias que apliquen al proyecto.
 
-En 2026, esa base instalada es también su mayor problema desde la perspectiva de disponibilidad futura. El HFC-227ea es un hidrofluorocarbono de alto GWP — exactamente el tipo de sustancia que el Protocolo de Kigali tiene en la mira.
-
-## Novec 1230: el agente diseñado para durar
+## Novec 1230: agente limpio para evaluación de proyecto
 
 ### Cómo funciona
 
@@ -90,57 +88,39 @@ La molécula de fluorocetona se descompone en productos no tóxicos con una vida
 
 El NOAEL del Novec 1230 es 10%, mayor que su concentración de diseño máxima de 5.9%. El margen de seguridad toxicológico es más amplio que el del FM-200. En espacios donde la evacuación completa no puede garantizarse antes de la descarga — sala de control con operadores en turno, por ejemplo — ese margen adicional tiene peso en la decisión.
 
-## La pregunta que el cliente nunca hace en la cotización
+## La pregunta que conviene hacer en la cotización
 
 Cuando alguien cotiza un sistema de agente limpio, la conversación casi siempre termina en precio por kilogramo y costo total del sistema. Raramente se hace la pregunta más importante:
 
 **"¿En cuántos años más voy a poder conseguir recarga de este agente en México?"**
 
-Para el FM-200, la respuesta honesta en 2026 es: probablemente puedes conseguirlo durante los próximos 5 a 7 años sin problemas graves de disponibilidad. Para 2030–2032, las cuotas de importación bajo el Protocolo de Kigali habrán reducido los volúmenes disponibles de manera significativa. Para 2035, el panorama es incierto y el precio será considerablemente mayor que hoy.
+La respuesta debe obtenerse del proveedor y de la documentación regulatoria vigente: disponibilidad de agente, capacidad de recarga, compatibilidad del sistema y plazo de reposición.
 
-Para el Novec 1230, la respuesta es: no está sujeto a restricciones de Kigali. Su disponibilidad depende de la capacidad de producción del fabricante (Chemours y licenciatarios), no de cuotas regulatorias. El precio puede variar por factores de mercado, pero no por restricciones ambientales programadas.
+Para Novec 1230, revisa con el proveedor el origen del agente, la continuidad de suministro y las alternativas admitidas por el diseño. El precio puede variar por factores de mercado y disponibilidad.
 
-Esta no es una proyección alarmista. Es el calendario de reducción publicado y firmado por México.
+La selección debe basarse en documentación vigente, no en proyecciones comerciales sin respaldo técnico.
 
-## El Protocolo de Kigali: fechas concretas, no teoría
+## El Protocolo de Kigali: un factor que debe verificarse
 
-México ratificó el Protocolo de Kigali en 2018. La enmienda establece calendarios de reducción gradual de HFCs de alto GWP, diferenciados entre países desarrollados y países en desarrollo (Artículo 5, donde aplica México).
+El Protocolo de Kigali y la regulación aplicable a HFCs son factores relevantes cuando se evalúa la continuidad de suministro. El proyecto debe revisar con fuentes regulatorias vigentes si el agente propuesto está sujeto a controles de importación o disponibilidad.
 
-El calendario de reducción para México:
+Solicita al proveedor un plan de recarga y evidencia de compatibilidad del agente con el sistema. La vida útil prevista de la instalación debe formar parte de esa evaluación.
 
-- **2024:** línea base establecida (promedio 2020–2022 de consumo de HFCs)
-- **2029:** reducción del 10% respecto a la línea base
-- **2035:** reducción del 30% respecto a la línea base
-- **2045:** reducción del 80% respecto a la línea base
-
-La SEMARNAT administra las cuotas de importación de HFCs bajo este esquema. El HFC-227ea (FM-200) está en la lista de sustancias controladas.
-
-¿Qué significa en la práctica? Ya está pasando. Los distribuidores de FM-200 en México reportan para 2025–2026:
-
-- Precios del agente incrementados entre 18% y 35% respecto a 2022
-- Tiempos de entrega extendidos a 6–12 semanas en algunos proveedores (vs 2–3 semanas antes de 2023)
-- Disponibilidad concentrada en pocas importadoras con cuota asignada
-
-Un sistema de FM-200 instalado hoy tiene un horizonte de uso de 15–20 años. Durante ese período, los calendarios de Kigali se ejecutarán. La primera recarga post-descarga puede llegar con un precio 50–80% mayor que el de hoy y tiempos de espera que hacen la protección del espacio no operativa durante semanas.
-
-El Novec 1230 no está en la lista del Protocolo de Kigali. Su GWP de 1 lo excluye de las restricciones. No hay cuota de importación, no hay calendario de reducción, no hay presión regulatoria sobre su precio.
+Para cualquier alternativa, valida con documentación vigente la disponibilidad, el agente admitido por el diseño y el cumplimiento de la NFPA 2001.
 
 ## Comparativa económica honesta
 
 ### Costo del agente hoy
 
-- **FM-200:** $180–$250 USD/kg (importación, 2026)
-- **Novec 1230:** $280–$380 USD/kg (importación, 2026)
+Solicita cotizaciones vigentes para el agente, los cilindros, el diseño, la instalación y una eventual recarga. El costo debe revisarse junto con la disponibilidad y la compatibilidad con el sistema.
 
-Para un espacio de 50 m³, el consumo típico es aproximadamente 40 kg de FM-200 (a 0.80 kg/m³) vs 60 kg de Novec 1230 (a 1.20 kg/m³). La diferencia en costo de agente puede ser de $8,000–$15,000 USD a favor del FM-200 en ese escenario.
-
-Esa diferencia es real hoy. El problema es que no es estática.
+La comparación debe especificar qué incluye cada propuesta y cuál es el procedimiento de reposición tras una descarga.
 
 ### El costo del ciclo de vida a 15 años
 
-El análisis de costo total del ciclo de vida cambia el cuadro. Un sistema de agente limpio típico tiene 1–2 descargas accidentales durante su vida útil (mantenimiento incorrecto, falsas alarmas, fallas del sistema de detección). Cada recarga tiene el costo del agente al precio del momento de la recarga — no del momento de la instalación.
+El análisis de costo total del ciclo de vida debe considerar las descargas, el mantenimiento, la prueba del recinto y la reposición del agente. Cada recarga se cotiza con las condiciones vigentes al momento del servicio.
 
-Si el precio del FM-200 sube 40–60% para 2030 (escenario conservador dado el precedente del R-22 bajo el Protocolo de Montreal), la diferencia de costo entre FM-200 y Novec 1230 se reduce o invierte en la primera recarga.
+Por ello, la comparación debe contemplar escenarios de reposición sin asumir una variación concreta de precio.
 
 El argumento económico del FM-200 descansa enteramente en el precio actual del agente. El argumento económico del Novec 1230 descansa en la estabilidad regulatoria de largo plazo.
 
@@ -160,24 +140,24 @@ Los componentes de hardware — cilindros, válvulas, difusores, panel de contro
 | Vida atmosférica | 31–36 años | < 5 días |
 | NOAEL | 9% en volumen | 10% en volumen |
 | Consumo típico (kg/m³) | 0.75–0.90 | 1.00–1.25 |
-| Costo del agente (USD/kg, 2026) | $180–$250 | $280–$380 |
-| Costo relativo del sistema (2026) | Base (más económico) | 20–35% más caro |
+| Costo del agente | Solicitar cotización vigente | Solicitar cotización vigente |
+| Costo relativo del sistema | Evaluar diseño y suministro | Evaluar diseño y suministro |
 | Sujeto a restricciones Kigali | Sí (HFC alto GWP) | No (GWP = 1) |
-| Riesgo de suministro 2030–2035 | Alto (cuotas SEMARNAT crecientes) | Bajo (sin restricción regulatoria) |
-| Riesgo de precio 2030–2035 | Alto (escasez programada) | Bajo-medio (mercado libre) |
+| Riesgo de suministro | Verificar regulación y proveedor | Verificar regulación y proveedor |
+| Riesgo de precio | Verificar cotización y reposición | Verificar cotización y reposición |
 | Certificaciones | NFPA 2001, UL 2166, FM, ISO 14520 | NFPA 2001, UL 2166, FM, ISO 14520 |
 
-La fila "Riesgo de suministro 2030–2035" es la que debe pesar más en la decisión de un sistema que se instala hoy para durar 15–20 años.
+La fila de suministro debe considerarse junto con la ingeniería, la disponibilidad de mantenimiento y la compatibilidad del sistema.
 
 ## Cuándo elegir FM-200
 
 El FM-200 sigue siendo una opción válida en 2026 cuando se cumplen condiciones específicas:
 
-**El horizonte de uso es corto.** Si el espacio que proteges tiene una vida útil proyectada de menos de 7–8 años (un data center que se mudará, una instalación temporal, un contrato de arrendamiento con plazo definido), el diferencial de precio del FM-200 tiene sentido y el riesgo de disponibilidad no es relevante para ese horizonte.
+**El horizonte de uso es definido.** Si el espacio que proteges tiene una vida útil conocida, documenta la disponibilidad del agente durante ese periodo y el procedimiento de recarga.
 
-**El espacio es pequeño y el diferencial de costo es significativo en proporción al presupuesto.** Para un cuarto de servidores de 20–30 m³ en una pyme que opera con presupuesto ajustado, la diferencia de $4,000–$8,000 USD entre agentes puede ser determinante. Si el cliente entiende el riesgo de disponibilidad futura y lo acepta, la decisión es técnicamente válida.
+**El espacio y presupuesto están definidos.** Para un cuarto de servidores, compara propuestas completas y registra las condiciones de suministro y recarga antes de decidir.
 
-**El instalador tiene stock de agente y puede garantizar recarga en tiempo razonable.** Verifica la capacidad de recarga local antes de comprometerte. Un sistema que tarda 10 semanas en recargarse después de una descarga accidental es un riesgo operativo real.
+**El instalador puede demostrar capacidad de recarga.** Verifica la capacidad local, el procedimiento y el plazo comprometido antes de seleccionar el sistema.
 
 ## Cuándo elegir Novec 1230
 

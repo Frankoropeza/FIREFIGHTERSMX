@@ -101,12 +101,17 @@ const specRows: SpecRow[] = product.specs
   : [];
 
 /* ── Hero right col — dos párrafos SEO/marketing ────────────────────── */
-const specSummary = specRows.length
-  ? ` Con ${specRows.map((s) => `${s.label} ${s.val}`).slice(0, 3).join(', ')}.`
+/* Norma certificable: existe, no es «—» y no es una equivalencia declarada ni un equipo industrial */
+const normaCertificada = Boolean(product.norm && product.norm.trim() !== '—' && !/equival|industrial|no nfpa/i.test(product.norm));
+const specResumen = specRows.filter((s) => s.val && s.val.trim() !== '—' && !/^norma/i.test(s.label));
+const specSummary = specResumen.length
+  ? ` Especificaciones: ${specResumen.map((s) => `${s.label.toLowerCase()} ${s.val}`).slice(0, 3).join('; ')}.`
   : '';
-const certSentence = product.normClaim ?? `Certificado bajo ${product.norm ?? 'norma NFPA'} por laboratorio acreditado — número de modelo y serie verificables directamente con el fabricante.`;
-const introPara1 = `${product.title} es la referencia${product.tier ? ` ${product.tier.toLowerCase()}` : ''} de ${product.brand ?? product.category} para el mercado mexicano. ${product.description}${specSummary} ${certSentence}`;
-const introPara2 = product.dossierClaim ?? `Como distribuidores autorizados de ${product.brand ?? 'esta marca'} en México, entregamos el dossier documental completo para licitaciones públicas (CompraNet, IMSS, gobiernos estatales) y corporativas: certificado de conformidad ${product.norm ?? 'NFPA'}, ficha técnica oficial en español, carta de distribuidor autorizado y manifiesto de cumplimiento de norma por partida. Stock permanente en CDMX con entrega en 24–48 h.`;
+const certSentence = product.normClaim ?? (normaCertificada
+  ? `Certificado bajo ${product.norm} por laboratorio acreditado — número de modelo y serie verificables directamente con el fabricante.`
+  : 'Solicita la ficha técnica y la documentación de norma del modelo antes de especificarlo.');
+const introPara1 = `${product.description}${specSummary} ${certSentence}`;
+const introPara2 = product.dossierClaim ?? `Como distribuidores autorizados de ${product.brand ?? 'esta marca'} en México, entregamos el dossier documental completo para licitaciones públicas (CompraNet, IMSS, gobiernos estatales) y corporativas: ${normaCertificada ? `certificado de conformidad ${product.norm}, ` : ''}ficha técnica oficial en español, carta de distribuidor autorizado y manifiesto de cumplimiento de norma por partida. Stock permanente en CDMX con entrega en 24–48 h.`;
 const heroParas = product.detailIntro ?? [introPara1, introPara2];
 
 const heroBadges = [
@@ -246,7 +251,7 @@ const catUseCases: Record<string, UseCases> = {
 
 const useCases: UseCases = catUseCases[product.category] ?? {
   si: [
-    'Operaciones que requieren certificación ' + (product.norm ?? 'NFPA') + ' verificable',
+    normaCertificada ? 'Operaciones que requieren certificación ' + product.norm + ' verificable' : 'Operaciones que requieren documentación de norma del modelo',
     'Equipamiento para cuerpos de bomberos y brigadas industriales certificadas',
     'Licitaciones públicas con especificación de norma NFPA por partida',
     'Corporaciones que exigen documentación de distribuidor autorizado',
@@ -548,7 +553,7 @@ const seoDesc = (product.suppressDefaultClaims
 
           <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
             {product.description}
-            {!product.suppressDefaultClaims && product.norm && <> Certificado <strong style="color:#FFFFFF">{product.norm}</strong>.</>}
+            {!product.suppressDefaultClaims && normaCertificada && <> Certificado <strong style="color:#FFFFFF">{product.norm}</strong>.</>}
             {!product.suppressDefaultClaims && ' Distribuidor autorizado en México.'}
           </p>
 
@@ -645,12 +650,7 @@ const seoDesc = (product.suppressDefaultClaims
               <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">{product.description}</p>
               {!product.suppressDefaultClaims && (
                 <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">
-                  Como distribuidor autorizado de {product.brand ?? 'esta marca'} en México, entregamos cada unidad con número de serie verificable, certificado de conformidad {product.norm ?? 'NFPA'} con el número de laboratorio acreditado, y documentación completa para licitación pública o proceso de compra corporativo.
-                </p>
-              )}
-              {!product.suppressDefaultClaims && product.brand && (
-                <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">
-                  {product.brand} es referencia mundial en {product.category.toLowerCase()} con presencia activa en los principales cuerpos de bomberos y brigadas industriales de América Latina. La línea {product.title} representa el estándar tier-1 en licitaciones públicas en México.
+                  Como distribuidor autorizado de {product.brand ?? 'esta marca'} en México, entregamos cada unidad con número de serie verificable{normaCertificada ? `, certificado de conformidad ${product.norm} con el número de laboratorio acreditado,` : ','} y documentación completa para licitación pública o proceso de compra corporativo.
                 </p>
               )}
               <a href={whatsappUrl(`Hola, quiero la ficha técnica completa del ${product.title} (${product.norm ?? ''}) para evaluación.`)} target="_blank" rel="noopener" class="btn btn-ghost" style="margin-bottom:1.5rem">
@@ -803,7 +803,7 @@ const seoDesc = (product.suppressDefaultClaims
               </p>
               <div class="grid grid-cols-2 gap-px mb-5" style="border:1px solid rgba(74,117,153,0.18)">
                 {[
-                  { svg: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>`, t: `Certificado ${product.norm ?? 'NFPA'}`, d: 'Laboratorio acreditado, verificable', color: '#34D399' },
+                  { svg: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>`, t: normaCertificada ? `Certificado ${product.norm}` : 'Documentación de norma', d: normaCertificada ? 'Laboratorio acreditado, verificable' : 'Ficha técnica del fabricante por modelo', color: '#34D399' },
                   { svg: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>`, t: 'Ficha técnica oficial', d: 'Datasheet en español del fabricante', color: '#60A5FA' },
                   { svg: `<path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>`, t: 'Carta de distribuidor', d: 'FIREFIGHTERSMX distribuidor autorizado', color: '#F5A623' },
                   { svg: `<path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>`, t: 'Garantía de fábrica', d: 'Refacciones y servicio directo con fábrica', color: '#A78BFA' },
@@ -1102,8 +1102,8 @@ const seoDesc = (product.suppressDefaultClaims
           {!product.suppressDefaultClaims && (
             <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
               <p class="text-sm leading-relaxed" style="color:#94A3B8">
-                Todos los modelos que distribuimos están certificados {product.norm ?? 'NFPA'} con documentación
-                completa. Te asesoramos para identificar la opción más adecuada para tu operación y presupuesto.
+                Cada modelo se entrega con su ficha técnica y la documentación de norma que publica el fabricante.
+                Te asesoramos para identificar la opción más adecuada para tu operación y presupuesto.
               </p>
             </div>
           )}

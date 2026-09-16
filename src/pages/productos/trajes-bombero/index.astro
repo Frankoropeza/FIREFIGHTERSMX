@@ -28,7 +28,7 @@ const lionProducts = featuredProducts.filter(
 
 /* Productos Honeywell Morning Pride — 6 modelos */
 const honeywellProducts = featuredProducts.filter(
-  (p) => p.category === 'Trajes Bombero' && p.brand === 'Honeywell Morning Pride' && p.specs
+  (p) => p.category === 'Trajes Bombero' && p.brand === 'Morning Pride' && p.specs
 );
 
 /* Productos Fire-Dex — 6 modelos */
@@ -81,11 +81,11 @@ const modelos = [
     external: false,
   })),
   {
-    title: 'Lion TechGen / V-Force',
+    title: 'Lion TAILS / V-Force',
     norm: 'NFPA 1970',
     brand: 'Lion',
     desc: 'Estructural de uso intensivo con opciones de protección CBRN. Disponible bajo pedido con asesoría de tallaje.',
-    href: whatsappUrl('Hola, quiero cotizar trajes Lion TechGen NFPA 1970.'),
+    href: whatsappUrl('Hola, quiero cotizar trajes Lion TAILS NFPA 1970.'),
     cta: 'Cotizar',
     external: true,
   },
@@ -183,8 +183,8 @@ const otrasCategorias = categories.slice(0, 6);
 const razones = [
   {
     n: '01',
-    t: 'Cinco marcas, tier-1 y nacional',
-    d: 'Globe Manufacturing (MSA Safety), Lion Apparel, Honeywell Morning Pride y Fire-Dex — las cuatro marcas más licitadas en México — más Sköld Safety, fabricante mexicano con planta en Monterrey. Distribuidor autorizado con un solo expediente para todo el EPP.',
+    t: 'Cinco marcas, internacional y nacional',
+    d: 'Globe Manufacturing (MSA Safety), Lion Apparel, Honeywell Morning Pride y Fire-Dex, más Sköld Safety, fabricante mexicano con oficina en Monterrey. Distribuidor autorizado con un solo expediente para todo el EPP.',
   },
   {
     n: '02',
@@ -247,7 +247,7 @@ const razones = [
             <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">{p}</p>
           ))}
           <div class="flex flex-wrap gap-2">
-            {['NFPA 1970','NFPA 1950','NFPA 1850','PBI','Crosstech','5 marcas · tier-1 y nacional'].map(n => (
+            {['NFPA 1970','NFPA 1950','NFPA 1850','PBI','Crosstech','5 marcas · internacional y nacional'].map(n => (
               <span class="badge badge-dark font-display text-[10px]">{n}</span>
             ))}
           </div>
@@ -421,12 +421,12 @@ const razones = [
         </div>
         <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
           <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
-            Globe Manufacturing — parte de MSA Safety — es la marca de trajes estructurales
-            más solicitada en licitaciones mexicanas tier-1. Más de 110 años fabricando el
-            traje en el que confían departamentos en los 32 estados.
+            Globe Manufacturing — parte de MSA Safety — fabrica trajes estructurales
+            con documentación técnica para licitaciones mexicanas. Su catálogo incluye
+            modelos para distintos escenarios operativos.
           </p>
           <div class="flex flex-wrap gap-2">
-            {['NFPA 1970','PBI Matrix','GORE-TEX CrossTech','Distribuidor autorizado MX'].map(b => (
+            {['NFPA 1970','PBI MAX','GORE-TEX CrossTech','Distribuidor autorizado MX'].map(b => (
               <span class="badge badge-dark text-[9px]">{b}</span>
             ))}
           </div>
@@ -478,12 +478,12 @@ const razones = [
         </div>
         <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
           <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
-            Lion Apparel — fundada en 1889 — es el segundo fabricante de trajes de bombero
-            más licitado en México. Fuerte en departamentos metropolitanos, corporativos
-            industriales y brigadas ARFF. Líneas estructurales, de proximidad y forestales NFPA 1950.
+            Lion Apparel — fundada en 1889 — fabrica trajes de bombero para
+            departamentos metropolitanos, corporativos industriales y brigadas ARFF.
+            Líneas estructurales, de proximidad y forestales NFPA 1950.
           </p>
           <div class="flex flex-wrap gap-2">
-            {['NFPA 1970','NFPA 1950','PBI Matrix','V-Force®','Distribuidor autorizado MX'].map(b => (
+            {['NFPA 1970','NFPA 1950','PBI MAX','V-Force®','Distribuidor autorizado MX'].map(b => (
               <span class="badge badge-dark text-[9px]">{b}</span>
             ))}
           </div>
@@ -531,7 +531,7 @@ const razones = [
             y aeropuertos internacionales en México. Líneas estructurales, proximity y CBRN.
           </p>
           <div class="flex flex-wrap gap-2">
-            {['NFPA 1970','NFPA 2112','PBI Gold','CarbonX®','BioClad® CBRN'].map(b => (
+            {['NFPA 1970','NFPA 2112','PBI Gold','VIPER®','TAILS® CBRN'].map(b => (
               <span class="badge badge-dark text-[9px]">{b}</span>
             ))}
           </div>
@@ -574,9 +574,9 @@ const razones = [
         </div>
         <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
           <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
-            Fire-Dex es la marca de mayor crecimiento en licitaciones tier-1 de México (2023-2025).
-            Pionera en shells de fibra sintética TECGEN®.
-            Ideal para departamentos que buscan tecnología avanzada con precio competitivo.
+            Fire-Dex ofrece documentación para licitaciones en México.
+            Su línea incluye shells de fibra sintética TECGEN®.
+            Para departamentos que buscan tecnología avanzada con opciones de cotización.
           </p>
           <div class="flex flex-wrap gap-2">
             {['NFPA 1970','TECGEN® 71','TECGEN® 51','PBI/TECGEN Hybrid','NFPA 2112'].map(b => (
@@ -668,7 +668,7 @@ const razones = [
       </div>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-2 lg:gap-3">
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
-          <img src="/images/productos/traje-globe-gx7-estructural-1.avif" alt="Traje Globe GX-7 estructural NFPA 1970 en uso real — equipo certificado México" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+          <img src="/images/productos/traje-globe-gx7-estructural-1.avif" alt="Traje Globe G-XTREME 3.0 estructural NFPA 1970 en uso real — equipo certificado México" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
           <img src="/images/productos/traje-jacket-detalle-nfpa.avif" alt="Detalle chaqueta traje bombero NFPA 1970 costuras reforzadas Nomex resistente al fuego" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>

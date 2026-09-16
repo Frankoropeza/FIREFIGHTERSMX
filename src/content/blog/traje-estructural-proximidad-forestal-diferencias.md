@@ -4,13 +4,13 @@ description: "Diferencias entre traje estructural NFPA 1970, de proximidad alumi
 pubDate: 2026-05-20
 author: "Ing. Carlos Mendoza"
 category: "Equipos EPP"
-tags: ["trajes bomberos", "traje forestal", "NFPA 1977", "EPP"]
+tags: ["trajes bomberos", "traje forestal", "NFPA 1950", "EPP"]
 image:
   url: "/images/blog/blog-diferencias-traje-tipos.avif"
   alt: "Bombero con equipo de protección completo — diferencias entre traje estructural, proximidad y forestal"
 ---
 
-Una de las imágenes que más me preocupa cuando visito una estación es la del bombero que sale a combatir un incendio de pastizal con su traje estructural completo. Va protegido, sí, pero también va cargando cinco kilos de aislamiento térmico bajo el sol, sudando dentro de una barrera de humedad diseñada para retener vapor. En una jornada larga, ese traje no lo protege: lo pone en riesgo de un golpe de calor. Y el caso opuesto es igual de común y más peligroso —un overol forestal ligero frente a un flashover dentro de una vivienda.
+Un escenario que exige revisión es el de una brigada que usa el mismo conjunto para un incendio de vegetación y para un incendio estructural. Un traje estructural incorpora barrera de humedad y aislamiento térmico; un conjunto forestal privilegia movilidad y una sola capa resistente a la llama. Ninguno sustituye al otro frente a riesgos distintos.
 
 El traje correcto no es el más protector que exista, sino el que corresponde al fuego que tu gente enfrenta de verdad. Aquí está la diferencia entre los tres grandes tipos, sin rodeos.
 
@@ -18,19 +18,19 @@ El traje correcto no es el más protector que exista, sino el que corresponde al
 
 ### Estructural (NFPA 1970, antes 1971)
 
-Es el "bunker gear" de toda la vida: tres capas pensadas para el interior de un edificio, donde el calor radiante es brutal, el contacto con llama es súbito y el vapor a presión quema tanto como el fuego. Es el traje más protector del catálogo —y precisamente por eso, el más pesado y caluroso. Funciona en ráfagas intensas de minutos, no en operaciones de horas al aire libre.
+Es el "bunker gear" de tres capas pensado para el interior de un edificio: exterior, barrera de humedad y barrera térmica. Su selección debe partir de la certificación del conjunto y de los riesgos que contempla el procedimiento de la brigada. No debe sustituirse por un overol FR ni usarse fuera de las indicaciones del fabricante.
 
 Lo eliges cuando el riesgo dominante es entrar: rescate en estructura, fuego confinado, humo denso.
 
 ### Proximidad (conjunto de aproximación, NFPA 1970)
 
-Toma un conjunto estructural y agrégale una **capa externa aluminizada** que actúa como espejo del calor radiante. Eso es el traje de proximidad. Su escenario es el fuego de muy alta intensidad al que uno se acerca pero en el que no entra: derrames de combustible, incendios de aeronaves, procesos industriales calientes. El recubrimiento reflejante compra esos metros y esos segundos críticos.
+Un conjunto de proximidad incorpora una **capa externa aluminizada** para el calor radiante. Se utiliza en escenarios de aproximación como derrames de combustible, incendios de aeronaves o procesos industriales calientes. El modelo debe revisarse por su certificación, materiales y limitaciones de uso.
 
 No lo confundas con un traje de entrada directa sostenida ni lo lleves al monte: ahí es exceso de peso sin beneficio.
 
 ### Forestal / de interfaz (NFPA 1950)
 
-Aquí la lógica se invierte por completo. El enemigo en un incendio de vegetación no es el flashover; es la fatiga, el sobrecalentamiento y las horas. Por eso el traje forestal es de **una sola capa de tejido resistente a la llama**, ligero, transpirable y no impermeable. Privilegia que el bombero pueda moverse y respirar durante toda una jornada en la sierra o en la interfaz urbano-forestal.
+Aquí la lógica se invierte. En un incendio de vegetación, el conjunto forestal es de **una sola capa de tejido resistente a la llama** y está diseñado para movilidad en sierra o interfaz urbano-forestal. La certificación vigente que consolida la NFPA 1977 es NFPA 1950 (2025).
 
 Es excelente en lo suyo e insuficiente para todo lo demás. Esa honestidad es su virtud.
 
@@ -39,11 +39,11 @@ Es excelente en lo suyo e insuficiente para todo lo demás. Esa honestidad es su
 | Característica | Estructural (NFPA 1970) | Proximidad (NFPA 1970) | Forestal (NFPA 1950) |
 |---|---|---|---|
 | Capas | 3 (externa, humedad, térmica) | 3 + externa aluminizada | 1 (monocapa FR) |
-| Peso aproximado | 4–5 kg | 5–6 kg | 1.5–2.5 kg |
+| Peso | Consultar ficha del conjunto | Consultar ficha del conjunto | Consultar ficha del conjunto |
 | Protección radiante | Alta | Muy alta (reflejante) | Moderada |
 | Transpirabilidad | Baja | Baja | Alta |
 | Resistencia a líquidos | Sí (barrera de humedad) | Sí | No |
-| Duración de uso típica | Minutos a 1–2 h | Minutos | Jornadas largas |
+| Duración de uso | Definida por el procedimiento y el riesgo | Definida por el procedimiento y el riesgo | Definida por el procedimiento y el riesgo |
 | Su terreno | Incendio en edificio | Combustibles, ARFF, industria | Vegetación, interfaz |
 
 ## Entonces, ¿qué le compro a mi gente?
@@ -54,11 +54,11 @@ La pregunta útil no es cuál traje es mejor, sino qué enfrenta tu brigada con 
 - **Brigadas industriales con combustibles o procesos calientes:** estructural como dotación general y al menos un conjunto de proximidad para las maniobras de aproximación.
 - **Aeropuertos (ARFF):** proximidad para los fuegos de combustible y estructural para las tareas de rescate.
 - **Protección civil en sierra o interfaz:** el forestal NFPA 1950 manda; es donde pasan la mayor parte de sus horas.
-- **Cuerpos mixtos:** estructural más forestal cubre el 90% de los escenarios; el de proximidad solo si existe un riesgo real y recurrente de calor radiante extremo.
+- **Cuerpos mixtos:** considera estructural y forestal según sus escenarios; incorpora proximidad cuando exista un riesgo documentado de calor radiante extremo.
 
 ## Los errores que salen caros
 
-He visto los mismos tropiezos repetirse de un municipio a otro. El más común es **querer un solo traje para todo**, casi siempre por presupuesto: termina siendo un estructural maltratado en el monte o un forestal expuesto a un fuego para el que no fue hecho. El segundo es **confundir "resistente a la llama" con "estructural"** —un overol FR cumple una función, pero no equivale a un conjunto certificado NFPA 1970. Y el tercero, más sutil, es **ignorar el peso**: el estrés térmico provoca bajas reales, y el traje adecuado reduce la carga cardiovascular tanto como la llama.
+Un tropiezo frecuente es **querer un solo traje para todo**: puede terminar en un estructural usado fuera de su aplicación o un forestal expuesto a un fuego para el que no fue hecho. El segundo es **confundir "resistente a la llama" con "estructural"**: un overol FR cumple una función, pero no equivale a un conjunto certificado NFPA 1970. El tercero es **ignorar la configuración**: revisa materiales, capas, talla, estado de la barrera y las instrucciones de inspección antes de asignar el conjunto.
 
 En todos los casos, el primer filtro de verdad lo da la etiqueta. La norma que cita —1970 para estructural y proximidad, 1950 para forestal— te dice de inmediato para qué fue diseñado ese traje. Léela antes que el precio.
 

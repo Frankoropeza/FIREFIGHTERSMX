@@ -41,7 +41,7 @@ const holmatro: EquipmentBrand = {
     { valor: '32', etiq: 'Estados con cobertura' },
   ],
   credenciales: [
-    { n: '01', t: 'Referencia mundial en rescate', d: 'Holmatro lleva décadas desarrollando herramientas hidráulicas de rescate con ingeniería neerlandesa. Su tecnología es estándar en cuerpos de bomberos y equipos de excarcelación en todo el mundo.' },
+    { n: '01', t: 'Herramientas para rescate', d: 'Holmatro desarrolla herramientas hidráulicas de rescate con ingeniería neerlandesa. Su tecnología se utiliza en cuerpos de bomberos y equipos de excarcelación.' },
     { n: '02', t: 'Pentheon — sin mangueras, sin bomba', d: 'La línea Pentheon es autocontenida a batería: elimina la unidad de poder y las mangueras. El equipo se despliega en segundos, se mueve libre alrededor del vehículo y mantiene velocidad constante bajo carga.' },
     { n: '03', t: 'Diseñada para vehículos modernos', d: 'Las hojas y geometrías Holmatro cortan los aceros al boro, los postes B reforzados y las estructuras de los autos recientes — donde las herramientas antiguas se atascan o fallan.' },
     { n: '04', t: 'Demostración, capacitación y servicio', d: 'Cada venta institucional incluye demostración en sitio con escenarios reales, capacitación de operación y mantenimiento preventivo anual con refacciones originales para conservar la certificación NFPA 1960.' },
@@ -56,7 +56,7 @@ const holmatro: EquipmentBrand = {
   ],
   flagship: 'Pentheon',
   anatomiaIntro:
-    'La cizalla Pentheon es la herramienta más solicitada de la línea. Estos seis elementos explican por qué la tecnología a batería de Holmatro cambió la forma de operar en la escena de un accidente.',
+    'La cizalla Pentheon es una herramienta de la línea. Estos seis elementos describen la tecnología a batería de Holmatro para operar en la escena de un accidente.',
   anatomia: [
     { t: 'Hojas de corte de geometría optimizada', d: 'Diseñadas para morder y cortar los aceros de alta resistencia de los vehículos modernos sin atascarse, con una clasificación de corte EN 13204:2025 alta.' },
     { t: 'Sistema autocontenido Pentheon', d: 'Sin mangueras ni unidad de poder: el motor, la bomba y la batería viven en la propia herramienta, eliminando el cable umbilical que limita el movimiento.' },
@@ -79,7 +79,7 @@ const holmatro: EquipmentBrand = {
     { n: '04', t: 'Incluye en el proyecto la demostración en sitio con escenarios reales, la capacitación de operación y el mantenimiento preventivo anual con refacciones originales para conservar la certificación.' },
   ],
   segmentosIntro:
-    'Holmatro es la primera opción de los cuerpos que buscan la libertad de la tecnología a batería (sin mangueras) con la fiabilidad de una marca de referencia mundial, demostración en sitio y mantenimiento certificado, con soporte en los 32 estados.',
+    'Holmatro ofrece tecnología a batería sin mangueras, demostración en sitio y mantenimiento certificado, con soporte en los 32 estados.',
   segmentos: [
     { num: '01', tipo: 'corte', titulo: 'Excarcelación Vehicular', desc: 'Bomberos urbanos y de carretera que atienden accidentes con atrapamiento. La cizalla Pentheon corta los aceros modernos y, junto al separador, abre el habitáculo para liberar a la víctima.', modelos: 'Pentheon Cizalla · Separador' },
     { num: '02', tipo: 'estabilizacion', titulo: 'Rescate Técnico y Estructural', desc: 'Equipos USAR y de rescate técnico que requieren empuje y estabilización en colapsos y maniobras. El ariete Pentheon crea y mantiene espacio con alta fuerza de empuje.', modelos: 'Pentheon Ariete' },
@@ -215,7 +215,7 @@ const weber: EquipmentBrand = {
   stats: [
     { valor: '1939', etiq: 'Ingeniería alemana Weber' },
     { valor: 'E-FORCE', etiq: 'Línea a batería ligera' },
-    { valor: 'Peso-potencia', etiq: 'La mejor de la línea' },
+    { valor: 'Peso-potencia', etiq: 'Relación de la línea' },
     { valor: '32', etiq: 'Estados con cobertura' },
   ],
   credenciales: [

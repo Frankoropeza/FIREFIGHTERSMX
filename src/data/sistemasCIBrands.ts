@@ -77,7 +77,7 @@ const tycoViking: EquipmentBrand = {
   credenciales: [
     {
       n: '01',
-      t: 'Líder mundial en rociadores NFPA 13',
+      t: 'Fabricante de rociadores NFPA 13',
       d: 'Tyco Viking, bajo Johnson Controls International, es uno de los fabricantes más instalados globalmente. Su catálogo abarca riesgo ligero, ordinario Grupos 1 y 2, riesgo extra, ESFR y diluvio, con decenas de configuraciones de temperatura, orientación y factor K para cada tipo de ocupación.',
     },
     {
@@ -261,7 +261,7 @@ const tycoViking: EquipmentBrand = {
     },
     {
       q: '¿Qué es un rociador ESFR y cuándo se usa?',
-      a: 'ESFR significa Early Suppression Fast Response (supresión temprana de respuesta rápida). A diferencia de los rociadores de control, un cabezal ESFR está diseñado para suprimir el fuego —no solo controlarlo— en almacenes de alta estiba antes de que el incendio alcance el techo. Esto elimina la necesidad de rociadores intermedios dentro del rack, ahorrando costo y complejidad. Se especifica para almacenes Clase I a IV y plásticos expandidos con estiba de hasta 12 m (40 ft) bajo el NFPA 13. El factor K-25 TY3256 Tyco Viking es el de mayor caudal en la gama y el más usado en centros de distribución de gran volumen.',
+      a: 'ESFR significa Early Suppression Fast Response (supresión temprana de respuesta rápida). A diferencia de los rociadores de control, un cabezal ESFR está diseñado para suprimir el fuego —no solo controlarlo— en almacenes de alta estiba antes de que el incendio alcance el techo. Esto elimina la necesidad de rociadores intermedios dentro del rack, ahorrando costo y complejidad. Se especifica para almacenes Clase I a IV y plásticos expandidos con estiba de hasta 12 m (40 ft) bajo el NFPA 13. El factor K-25 TY3256 Tyco Viking se ofrece para centros de distribución de gran volumen.',
     },
     {
       q: '¿Qué diferencia hay entre UL Listed y FM Approved?',
@@ -320,7 +320,7 @@ const honeywellNotifier: EquipmentBrand = {
   credenciales: [
     {
       n: '01',
-      t: 'Referencia mundial en detección NFPA 72',
+      t: 'Detección bajo NFPA 72',
       d: 'Honeywell Notifier es una de las marcas de detección y alarma de incendio más instaladas globalmente. Su plataforma cubre el espectro completo: paneles convencionales para edificios pequeños hasta FACPs de gran capacidad para infraestructura crítica, todos bajo la NFPA 72 y con listado UL Listed.',
     },
     {
@@ -389,7 +389,7 @@ const honeywellNotifier: EquipmentBrand = {
     },
     {
       t: 'Detector de humo fotoeléctrico (FSP-851)',
-      d: 'El detector más utilizado en la plataforma Notifier. Usa dispersión de luz (principio Tyndall) para detectar partículas de humo visible en la cámara de medición. Sensibilidad ajustable por software; compensa la deriva por envejecimiento y reporta el nivel de sensibilidad real al panel para el mantenimiento predictivo NFPA 72.',
+      d: 'Detector fotoeléctrico de la plataforma Notifier. Usa dispersión de luz (principio Tyndall) para detectar partículas de humo visible en la cámara de medición. Sensibilidad ajustable por software; compensa la deriva por envejecimiento y reporta el nivel de sensibilidad real al panel para el mantenimiento predictivo NFPA 72.',
     },
     {
       t: 'Detector de calor fijo / combinado (FD851HT)',
@@ -943,7 +943,7 @@ const alarmaContraIncendio: EquipmentBrand = {
       eyebrow: 'Detección según el riesgo',
       titulo: 'Tipos de detectores de incendio',
       items: [
-        { t: 'Detector de humo fotoeléctrico', d: 'Detección de humo visible de fuegos latentes; el más usado en oficinas, habitaciones y pasillos.' },
+        { t: 'Detector de humo fotoeléctrico', d: 'Detección de humo visible de fuegos latentes; adecuado para oficinas, habitaciones y pasillos.' },
         { t: 'Detector de calor o de temperatura', d: 'Se activa a temperatura fija o por aumento rápido; para cocinas, estacionamientos y áreas con polvo o vapor donde un detector de humo daría falsas alarmas.' },
         { t: 'Detector de flama', d: 'Identifica la radiación de la flama; para naves con líquidos inflamables.' },
         { t: 'Detección por aspiración', d: 'Detección muy temprana en centros de datos y áreas críticas.' },
@@ -952,7 +952,7 @@ const alarmaContraIncendio: EquipmentBrand = {
     },
     { id: 'ubicacion', titulo: '¿Dónde se colocan las alarmas contra incendio?', parrafos: ['La ubicación y el espaciamiento de detectores, estaciones manuales y sirenas se calculan con la NFPA 72 según la altura del techo, la ventilación y el uso del área de la edificación. Como regla de diseño, las estaciones manuales se ubican junto a las salidas y en las rutas de evacuación, y las sirenas con estrobo deben escucharse y verse desde cualquier punto ocupado. Con el plano del inmueble entregamos la propuesta de distribución.'] },
     { id: 'monitoreo', titulo: 'Monitoreo y conexión con otros sistemas contra incendios', parrafos: ['El panel puede conectarse a una central de monitoreo, al sistema de rociadores —supervisión de válvulas y flujo con módulos monitor— y a la supresión con agentes limpios. En caso de incendio, la activación de la alarma puede cerrar puertas cortafuego, detener la ventilación y liberar el agente. El sistema de detección da la detección temprana; el extintor y el rociador son los que combaten el fuego.'] },
-    { id: 'kit', titulo: 'Kit de alarma o sistema diseñado', parrafos: ['Un kit de alarma genérico no considera la altura del techo, el uso del área ni el tipo de riesgo. Diseñamos cada sistema con equipos de fabricantes con listado UL y de las marcas más reconocidas del mercado, para garantizar que cada dispositivo quede donde la norma lo pide.'] },
+    { id: 'kit', titulo: 'Kit de alarma o sistema diseñado', parrafos: ['Un kit de alarma genérico no considera la altura del techo, el uso del área ni el tipo de riesgo. Diseñamos cada sistema con equipos de fabricantes con listado UL, para garantizar que cada dispositivo quede donde la norma lo pide.'] },
     { id: 'instalacion', eyebrow: 'Puesta en marcha y conservación', titulo: 'Instalación, pruebas y mantenimiento', pasos: ['Levantamiento y diseño con plano de dispositivos.', 'Instalación de cableado, panel y dispositivos.', 'Programación de zonas o direcciones y de la secuencia de salidas.', 'Pruebas de funcionamiento con acta de entrega.', 'Mantenimiento periódico: prueba de detectores y sirenas, revisión de baterías y limpieza de suciedad y polvo, con bitácora para Protección Civil.'] },
     { id: 'falsas-alarmas', titulo: 'Cómo evitar falsas alarmas', parrafos: ['Elegir el detector correcto para cada área (calor en cocinas, humo en oficinas), limpiar los detectores en el mantenimiento programado, supervisar las averías que reporta el panel y capacitar al personal para no activar las estaciones manuales por error.'] },
   ],

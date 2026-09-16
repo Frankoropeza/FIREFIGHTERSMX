@@ -40,7 +40,7 @@ export const extintoresBrandList: EquipmentBrand[] = [
       {
         n: '01',
         t: 'Etiqueta NOM verificable ante SE',
-        d: 'Todos los extintores incluyen número de dictamen verificable ante la Secretaría de Economía. El único requisito que ninguna inspección puede omitir — y que los extintores sin certificar no pueden cumplir.',
+        d: 'Todos los extintores incluyen número de dictamen verificable ante la Secretaría de Economía. Un dato documental para revisar durante la inspección y en el expediente del equipo.',
       },
       {
         n: '02',
@@ -73,7 +73,7 @@ export const extintoresBrandList: EquipmentBrand[] = [
         badge: 'Uso general · Comercio',
         titulo: 'Uso general',
         modelos: '4.5 · 6 kg',
-        desc: 'El estándar para oficinas, comercios, restaurantes y locales de hasta 200 m². Equilibrio entre capacidad de agente y facilidad de manejo. El de 4.5 kg es el más vendido en vehículos de servicio y puntos de salida de emergencia.',
+        desc: 'El estándar para oficinas, comercios, restaurantes y locales de hasta 200 m². Equilibrio entre capacidad de agente y facilidad de manejo. El de 4.5 kg es una opción para vehículos de servicio y puntos de salida de emergencia.',
         tech: 'PQS ABC · NOM-100-STPS · Acero SAE 1008 · Manguera 3–4 m',
       },
       {
@@ -86,7 +86,7 @@ export const extintoresBrandList: EquipmentBrand[] = [
       },
     ],
     flagship: 'extintor-pqs-abc-9kg',
-    anatomiaIntro: 'El extintor PQS ABC de 9 kg es el modelo de referencia: el más licitado en México, el que audita Protección Civil y el que exigen las aseguradoras. Conocer su anatomía ayuda a entender por qué la certificación NOM importa más que el precio.',
+    anatomiaIntro: 'El extintor PQS ABC de 9 kg es un modelo para licitaciones y programas de Protección Civil. Conocer su anatomía ayuda a entender por qué la certificación NOM importa más que el precio.',
     anatomia: [
       { t: 'Cilindro de acero SAE 1008', d: 'Resistente a las presiones de trabajo y prueba hidrostática. La calidad del acero determina la vida útil del cilindro — uno sin certificar puede fallar en la prueba a los 5 años, invalidando el seguro.' },
       { t: 'Válvula de palanca con manómetro', d: 'El manómetro indica el estado de presión en tres zonas: baja, normal y alta. Una lectura fuera del rango verde activa la inspección inmediata conforme NOM-002-STPS.' },
@@ -104,7 +104,7 @@ export const extintoresBrandList: EquipmentBrand[] = [
       { modelo: 'PQS ABC 12 kg',  tipo: 'industrial', norma: 'NOM-100-STPS · NFPA 10', proteccion: 'PQS ABC · A·B·C', material: 'Acero SAE 1008', peso: '12 kg',   ideal: 'Alta carga de fuego · Talleres' },
     ],
     comparativaLabel: 'Línea completa PQS ABC — 6 capacidades',
-    comparativaNote: '★ Recomendado = el modelo más licitado en México y el estándar de referencia en programas de Protección Civil municipales y estatales.',
+    comparativaNote: '★ Recomendado = modelo de 9 kg con NOM-100-STPS y NFPA 10 para licitaciones y programas de Protección Civil.',
     guia: [
       { n: '01', t: 'Identifica el área y el riesgo: vehículo, oficina, bodega o planta industrial. El área y la actividad determinan la capacidad mínima conforme NOM-002-STPS.' },
       { n: '02', t: 'Revisa si hay equipos electrónicos de valor en el área. El PQS ABC deja residuo que daña equipos — en esas zonas el CO₂ o agente limpio son la alternativa correcta.' },
@@ -144,7 +144,7 @@ export const extintoresBrandList: EquipmentBrand[] = [
     heroTitleAccent: 'sin residuo.',
     heroLead: 'La solución correcta para tableros eléctricos, salas de servidores y equipos electrónicos de alto valor. El CO₂ extingue sin dejar residuo — no daña equipos, no requiere limpieza posterior y no conduce electricidad. Seis capacidades de 2.3 kg a 15 kg para cada escala de instalación TI e industrial.',
     heroIntro: [
-      'El dióxido de carbono es el único agente extintor que cumple tres condiciones simultáneamente: extingue fuegos clase B y C, no deja residuo conductor y no daña equipos activos. El PQS ABC contamina circuitos y es difícil de limpiar; el CO₂ deja el espacio operativo en minutos.',
+      'El dióxido de carbono se usa en fuegos clase B y C, no deja residuo conductor y puede emplearse cerca de equipos activos. El PQS ABC deja residuo en circuitos y es difícil de limpiar; el CO₂ se disipa tras la descarga.',
       'Seis modelos en línea — desde el compacto de 2.3 kg para racks de telecomunicaciones hasta el de 15 kg para salas de servidores de alta densidad o como respaldo de sistemas fijos. Todos certificados NOM-102-STPS con etiqueta de dictamen verificable ante la Secretaría de Economía.',
     ],
     heroBadges: ['NOM-102-STPS', 'NFPA 10', 'Clase B · C', 'Dióxido de carbono', '2.3 · 4.5 · 6.8 · 9 · 10 · 15 kg', 'Cero residuo', 'No conduce electricidad'],
@@ -158,7 +158,7 @@ export const extintoresBrandList: EquipmentBrand[] = [
     ],
     credenciales: [
       { n: '01', t: 'Cero residuo — equipo operativo en minutos', d: 'El CO₂ se disipa completamente sin dejar residuo. A diferencia del PQS ABC, no requiere limpieza post-incidente — el área o el equipo vuelve a operación normal en minutos tras la descarga.' },
-      { n: '02', t: 'No conduce electricidad — seguro en Clase C', d: 'El dióxido de carbono es eléctricamente no conductor. La única opción segura para extinguir fuegos en tableros eléctricos vivos, salas de transformadores y equipos energizados activos.' },
+      { n: '02', t: 'No conduce electricidad — seguro en Clase C', d: 'El dióxido de carbono es eléctricamente no conductor. Una opción para fuegos en tableros eléctricos vivos, salas de transformadores y equipos energizados activos.' },
       { n: '03', t: 'Sin daño a equipos de alto valor', d: 'El PQS contamina, penetra y puede destruir componentes electrónicos. El CO₂ no — actúa y se disipa. La elección correcta para CNC, servidores, celdas de prueba y equipos de medición de precisión.' },
       { n: '04', t: 'Certificado NOM-102-STPS verificable', d: 'Etiqueta con número de dictamen verificable ante la Secretaría de Economía. Reporte de mantenimiento firmado para tu expediente de Protección Civil, STPS e IMSS tras cada inspección.' },
     ],
@@ -263,13 +263,13 @@ export const extintoresBrandList: EquipmentBrand[] = [
     ],
     segmentosIntro: 'El CO₂ portátil protege instalaciones con equipos eléctricos y electrónicos de alto valor donde el PQS ABC no es una opción viable. Cuatro segmentos con la capacidad correcta para cada escala.',
     segmentos: [
-      { num: '01', tipo: 'agente-ci', titulo: 'Telecomunicaciones y TI',   desc: 'Cuartos de telecomunicaciones, gabinetes de red, UPS y pequeñas instalaciones de acceso. El CO₂ es el único extintor portátil que no daña los equipos activos.', modelos: '2.3 · 4.5 kg' },
+      { num: '01', tipo: 'agente-ci', titulo: 'Telecomunicaciones y TI',   desc: 'Cuartos de telecomunicaciones, gabinetes de red, UPS y pequeñas instalaciones de acceso. El CO₂ no deja residuo en los equipos activos.', modelos: '2.3 · 4.5 kg' },
       { num: '02', tipo: 'agente-ci', titulo: 'Data centers y NOC',        desc: 'Salas de servidores, centros de operaciones de red y cuartos de switcheo con múltiples racks activos. El de 10 kg es el estándar en licitaciones para instalaciones de TI en México.', modelos: '6.8 · 9 · 10 kg' },
       { num: '03', tipo: 'industrial', titulo: 'Industria con CNC y robótica', desc: 'Plantas de manufactura avanzada con maquinaria CNC, celdas robóticas y equipos de precisión de alto valor donde el PQS destruiría los equipos por residuo.', modelos: '9 · 10 kg' },
       { num: '04', tipo: 'agente-ci', titulo: 'Respaldo de sistemas fijos', desc: 'Como extintor portátil de respaldo en instalaciones con sistema fijo de agente limpio (FM-200 o Novec) en mantenimiento o emergencia.', modelos: '15 kg' },
     ],
     faqs: [
-      { q: '¿Por qué CO₂ y no PQS ABC para mi tablero eléctrico?', a: 'El PQS ABC no conduce electricidad, pero deja un residuo de polvo que penetra en los componentes del tablero y puede causar cortocircuitos, corrosión y falla de equipos días o semanas después del incendio. El CO₂ extingue y se disipa — el tablero queda limpio y operativo. Para equipos de alto valor y operación continua, el CO₂ es la única opción que no crea un segundo problema.' },
+      { q: '¿Por qué CO₂ y no PQS ABC para mi tablero eléctrico?', a: 'El PQS ABC no conduce electricidad, pero deja un residuo de polvo que penetra en los componentes del tablero y puede causar cortocircuitos, corrosión y falla de equipos días o semanas después del incendio. El CO₂ extingue y se disipa — el tablero queda limpio y operativo. Para equipos de alto valor y operación continua, el CO₂ evita introducir residuo de polvo.' },
       { q: '¿Es peligroso usar el extintor CO₂ en espacios cerrados?', a: 'El CO₂ desplaza oxígeno. En espacios muy confinados sin ventilación, el protocolo correcto es evacuar antes de disparar. Para instalaciones de alta densidad sin posibilidad de evacuación, un sistema fijo de agente limpio (FM-200) con detección automática es la alternativa adecuada.' },
       { q: '¿El CO₂ extingue fuegos clase A (madera, papel)?', a: 'El CO₂ es poco eficaz en clase A porque no deja residuo que inhiba la re-ignición — el material sólido puede re-encenderse al recuperar temperatura. La clase A requiere PQS ABC, agua o espuma AFFF. El CO₂ se especifica exclusivamente para clase B y C.' },
       { q: '¿Cuánto dura la carga del extintor CO₂?', a: 'El CO₂ puede perderse por microfiltraciones en la válvula. La NOM-002-STPS exige revisión mensual con registro y mantenimiento al menos una vez al año conforme a la NOM-154-SCFI-2005. Se recarga después de cada uso y, en su caso, por resultado del mantenimiento. El cilindro de CO₂ requiere prueba hidrostática cada 5 años, hasta un máximo de 4 veces, por lo que su vida útil máxima es de 20 años.' },
@@ -403,7 +403,7 @@ export const extintoresBrandList: EquipmentBrand[] = [
       { n: '01', t: 'Tipo K para cocinas industriales', d: 'El PQS ABC y el CO₂ no son para fuegos clase K. El acetato de potasio (Tipo K) produce saponificación: forma una capa que sofoca el fuego y enfría la superficie.' },
       { n: '02', t: 'Espuma AFFF: supresión total de hidrocarburos', d: 'La espuma formadora de película acuosa sella la superficie del hidrocarburo con una capa que impide la re-ignición permanentemente — algo que el PQS ABC no puede garantizar. El estándar en helipuertos, terminales de combustible y plantas petroquímicas bajo NFPA 11.' },
       { n: '03', t: 'FM-200: extinción sin residuo en activos críticos', d: 'El HFC-227ea (FM-200) extingue en segundos sin residuo, sin daño a equipos y sin desplazar oxígeno de forma peligrosa. El agente limpio portátil correcto para data centers, salas de control y activos de alto valor donde ni el CO₂ ni el PQS son aceptables.' },
-      { n: '04', t: 'Agua: el agente más ecológico para clase A profundo', d: 'Sin productos químicos, sin residuo tóxico y con la mayor capacidad de penetración en materiales porosos (con aditivo AF). El único extintor completamente ecológico y el más eficaz para archivos, textiles y sólidos de alta profundidad.' },
+      { n: '04', t: 'Agua: agente para clase A profundo', d: 'Sin productos químicos ni residuo tóxico, y con penetración en materiales porosos con aditivo AF. Una alternativa para archivos, textiles y sólidos de alta profundidad.' },
     ],
     linesIntro: 'Cuatro familias de agentes especializados para los riesgos que el PQS ABC y el CO₂ no pueden controlar. Cada uno con la norma y la aplicación correcta.',
     lineas: [
@@ -474,9 +474,9 @@ export const extintoresBrandList: EquipmentBrand[] = [
       { num: '04', tipo: 'rociadores', titulo: 'Archivos · Museos · Textil y papel',   desc: 'Instalaciones donde el PQS ABC contaminaría materiales valiosos o históricos y donde no existe riesgo eléctrico. El agente más ecológico y el más limpio para clase A profundo.', modelos: 'Agua 9L · Agua+AF' },
     ],
     faqs: [
-      { q: '¿Por qué el PQS ABC no sirve para mi cocina industrial?', a: 'El polvo ABC extingue temporalmente los fuegos de aceite vegetal o animal a alta temperatura, pero no puede impedir la re-ignición — el aceite sigue caliente y se re-enciende en segundos. El acetato de potasio (Tipo K) reacciona con el aceite formando una capa de jabón sólido (saponificación) que sella la superficie permanentemente e impide el acceso de oxígeno. Es la única reacción química eficaz para fuegos de clase K.' },
+      { q: '¿Por qué el PQS ABC no sirve para mi cocina industrial?', a: 'El polvo ABC extingue temporalmente los fuegos de aceite vegetal o animal a alta temperatura, pero no puede impedir la re-ignición — el aceite sigue caliente y se re-enciende en segundos. El acetato de potasio (Tipo K) reacciona con el aceite formando una capa de jabón sólido (saponificación) que sella la superficie e impide el acceso de oxígeno. Es una reacción química usada para fuegos de clase K.' },
       { q: '¿El FM-200 es peligroso para las personas?', a: 'El FM-200 (HFC-227ea) es seguro a las concentraciones de diseño (normalmente 7–8% vol). A diferencia del CO₂, no desplaza oxígeno a niveles peligrosos. El espacio sigue habitable durante y después de la descarga. Para sistemas fijos, la NFPA 2001 exige que la concentración de diseño sea inferior a la concentración NOAEL.' },
-      { q: '¿La espuma AFFF sirve para fuegos eléctricos (Clase C)?', a: 'No. La espuma AFFF es una mezcla acuosa que conduce electricidad — no debe usarse en fuegos eléctricos activos. Para fuegos clase C, la única opción segura es CO₂ o agente limpio no conductor.' },
+      { q: '¿La espuma AFFF sirve para fuegos eléctricos (Clase C)?', a: 'No. La espuma AFFF es una mezcla acuosa que conduce electricidad — no debe usarse en fuegos eléctricos activos. Para fuegos clase C, se usa CO₂ o agente limpio no conductor.' },
       { q: '¿El extintor Tipo K reemplaza el sistema automático de supresión de la campana?', a: 'No. El extintor Tipo K portátil es el respaldo manual del sistema automático de supresión de la campana. Las aseguradoras exigen ambos: el sistema automático actúa primero cuando el calor activa el fusible de la línea de enfriamiento, y el extintor Tipo K es la herramienta manual de primera respuesta. Uno no reemplaza al otro.' },
     ],
     ctaKicker: 'Agua · Espuma AFFF · Tipo K · Agente Limpio FM-200',
@@ -550,7 +550,7 @@ export const extintoresBrandList: EquipmentBrand[] = [
       { t: 'Cilindro de gran capacidad con válvula proporcional', d: 'El cilindro de 125 kg opera con válvula proporcional que permite controlar el caudal de descarga. El operador puede regular la intensidad según la evolución del incendio — diferente al portátil que descarga de una sola vez.' },
       { t: 'Manguera de 6 m con boquilla de control', d: 'La manguera larga mantiene al operador a distancia segura del foco y permite rodear el fuego. La boquilla de palanca permite parar y reanudar la descarga para optimizar el uso del agente.' },
       { t: 'Requisitos aeronáuticos adicionales', d: 'Para uso en helipuertos y aeropuertos, revisa los requisitos aplicables de la AFAC y NFPA 403/407, además del servicio NOM-154-SCFI.' },
-      { t: 'Manómetro visible desde distancia', d: 'El manómetro de gran escala es visible desde la distancia para inspección visual rápida sin acercarse al equipo. En zonas de producción activa, es la única forma práctica de verificar el estado sin interrumpir la operación.' },
+      { t: 'Manómetro visible desde distancia', d: 'El manómetro de gran escala es visible desde la distancia para inspección visual rápida sin acercarse al equipo. En zonas de producción activa, permite verificar el estado sin interrumpir la operación.' },
       { t: 'Prueba hidrostática a los 5 años', d: 'La prueba hidrostática del cilindro es obligatoria y crítica dada la capacidad del equipo. El reporte de prueba con la presión de ensayo y el resultado debe integrarse al expediente de mantenimiento de la instalación.' },
     ],
     comparativa: [
@@ -573,7 +573,7 @@ export const extintoresBrandList: EquipmentBrand[] = [
     segmentos: [
       { num: '01', tipo: 'industrial', titulo: 'Manufactura y almacenaje',    desc: 'Naves de manufactura, bodegas de gran altura y plantas de producción con alta carga de fuego donde la dotación de portátiles no cubre la magnitud del riesgo.', modelos: 'PQS 25 · 50 kg' },
       { num: '02', tipo: 'industrial', titulo: 'Petroquímica y terminales',   desc: 'Plantas petroquímicas, refinerías, terminales de combustible y carga/descarga de hidrocarburos donde los requerimientos NFPA 10, NFPA 11 y PEMEX HSE exigen alta capacidad.', modelos: 'PQS 75 · 125 kg · AFFF 25L' },
-      { num: '03', tipo: 'agente-ci',  titulo: 'Subestaciones y robótica',    desc: 'Subestaciones de alta tensión, grandes instalaciones de CNC y plantas con robótica industrial donde el CO₂ sobre ruedas es el único agente móvil seguro en presencia de alta tensión.', modelos: 'CO₂ 25 kg' },
+      { num: '03', tipo: 'agente-ci',  titulo: 'Subestaciones y robótica',    desc: 'Subestaciones de alta tensión, grandes instalaciones de CNC y plantas con robótica industrial donde el CO₂ sobre ruedas es un agente móvil no conductor.', modelos: 'CO₂ 25 kg' },
       { num: '04', tipo: 'industrial', titulo: 'Aeronáutico y ARFF',          desc: 'Helipuertos civiles y militares, aeropuertos regionales y plataformas de aterrizaje donde los extintores deben cumplir NFPA 403/407 y los requisitos de la AFAC para protección aeronáutica.', modelos: 'PQS 125 kg · AFFF 25L' },
     ],
     faqs: [

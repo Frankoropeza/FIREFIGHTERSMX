@@ -49,14 +49,14 @@ const msaG1: EquipmentBrand = {
   linesIntro:
     'El G1 cubre los cuatro escenarios de uso desde una sola plataforma: estructural para combate en edificios, larga duración para industria y túneles, CBRN para HAZMAT y RIT para rescate de bombero. Una sola flota interoperable con refacciones comunes.',
   lineas: [
-    { tipo: 'estructural', badge: 'NFPA 1970 · 30/45 min', titulo: 'Configuración Estructural', modelos: 'MSA G1 Estructural', desc: 'El SCBA de combate estructural metropolitano: EOSTI integrado, alarma PASS y máscara G1 anti-empañante, con cilindro de 30 ó 45 minutos a 4500 psi. El más solicitado en cuerpos tier-1 de México.', tech: 'EOSTI + PASS · Máscara G1 full-face · 4500 psi · NFPA 1970' },
+    { tipo: 'estructural', badge: 'NFPA 1970 · 30/45 min', titulo: 'Configuración Estructural', modelos: 'MSA G1 Estructural', desc: 'SCBA de combate estructural: EOSTI integrado, alarma PASS y máscara G1 anti-empañante, con cilindro de 30 ó 45 minutos a 4500 psi. Configuración para cuerpos metropolitanos en México.', tech: 'EOSTI + PASS · Máscara G1 full-face · 4500 psi · NFPA 1970' },
     { tipo: 'industrial', badge: 'NFPA 1970 · 60 min', titulo: 'Configuración Industrial', modelos: 'MSA G1 Industrial 60 min', desc: 'Autonomía extendida de 60 minutos para industria pesada, petroquímica, túneles y espacios confinados. Telemetría ICM para control de aire del equipo y opción antiestática ATEX.', tech: 'Cilindro 60 min · Telemetría ICM · ATEX opcional · NFPA 1970' },
     { tipo: 'cbrn', badge: 'NFPA 1970 · NIOSH CBRN', titulo: 'Configuración CBRN', modelos: 'MSA G1 CBRN', desc: 'Aprobación NIOSH CBRN para respuesta a materiales peligrosos y agentes químicos, biológicos, radiológicos y nucleares. Materiales y conexiones aptos para descontaminación.', tech: 'NIOSH CBRN · Descontaminable · Compatible Nivel A · NFPA 1970' },
     { tipo: 'usar', badge: 'NFPA 1970 · RIT', titulo: 'Configuración RIT / Rescate', modelos: 'MSA G1 RIT', desc: 'Equipo de intervención rápida para rescate de bombero caído: segunda fuente de aire, conexión de transferencia (buddy breathing) y bolsa de despliegue rápido de alta visibilidad.', tech: 'Segunda botella · Transferencia de aire · Despliegue rápido' },
   ],
   flagship: 'G1',
   anatomiaIntro:
-    'El G1 es un sistema de soporte vital, no un accesorio. Estos seis elementos explican por qué es el SCBA más solicitado en los cuerpos metropolitanos de México y por qué su electrónica marca la diferencia operativa.',
+    'El G1 es un sistema de soporte vital, no un accesorio. Estos seis elementos describen su electrónica y componentes para operación estructural.',
   anatomia: [
     { t: 'Regulador de presión positiva', d: 'Entrega aire a demanda manteniendo presión positiva dentro de la máscara para impedir la entrada de humo. Integra la válvula EOSTI de fin de servicio, sin módulo externo que se dañe.' },
     { t: 'Máscara full-face G1', d: 'Pieza facial de amplio campo visual con pantalla anti-empañante, sellado certificado y puerto para comunicación y amplificador de voz.' },
@@ -81,7 +81,7 @@ const msaG1: EquipmentBrand = {
   segmentosIntro:
     'El G1 es la primera opción de los cuerpos que requieren la electrónica más integrada, telemetría para control de aire y servicio técnico autorizado, con el respaldo de MSA Safety y soporte en los 32 estados.',
   segmentos: [
-    { num: '01', tipo: 'estructural', titulo: 'Departamentos Estructurales Tier-1', desc: 'CDMX, GDL, MTY y los principales cuerpos del país. El G1 Estructural domina por su EOSTI integrado, máscara anti-empañante y la telemetría que da visibilidad de aire de toda la cuadrilla en cabina de mando.', modelos: 'G1 Estructural' },
+    { num: '01', tipo: 'estructural', titulo: 'Departamentos Estructurales Internacionales', desc: 'CDMX, GDL, MTY y cuerpos del país. El G1 Estructural integra EOSTI, máscara anti-empañante y telemetría para visibilidad de aire de la cuadrilla en cabina de mando.', modelos: 'G1 Estructural' },
     { num: '02', tipo: 'industrial', titulo: 'Industria, Petroquímica y Confinados', desc: 'Refinerías, plantas de proceso y rescate en espacios confinados requieren autonomía de 60 minutos y opción antiestática ATEX. El G1 Industrial cubre las jornadas largas con control de aire del equipo.', modelos: 'G1 Industrial 60 min' },
     { num: '03', tipo: 'cbrn', titulo: 'Brigadas HAZMAT / CBRN', desc: 'Equipos de respuesta a materiales peligrosos necesitan aprobación NIOSH CBRN y materiales descontaminables. El G1 CBRN es compatible con máscara CBRN y trajes encapsulados Nivel A.', modelos: 'G1 CBRN' },
     { num: '04', tipo: 'usar', titulo: 'Equipos RIT / Rescate', desc: 'Los equipos de intervención rápida (RIT/RIC) necesitan una segunda fuente de aire y transferencia rápida para rescatar a un bombero caído. El G1 RIT se despliega en segundos e interopera con la flota.', modelos: 'G1 RIT' },

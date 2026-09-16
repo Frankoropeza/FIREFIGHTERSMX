@@ -1,22 +1,22 @@
 ---
-title: "MSA G1 vs Dräger PSS 7000: Lo que el papel no te dice cuando compras 30 SCBA"
+title: "MSA G1 vs Dräger PSS 7000: criterios para revisar la compra"
 seoTitle: "MSA G1 vs Dräger PSS 7000: comparativa de SCBA"
-description: "MSA G1 vs Dräger PSS 7000: comparativa real para corporaciones mexicanas. Costo total a 5 años, compatibilidad con equipo mexicano y recomendación por escenario."
+description: "MSA G1 vs Dräger PSS 7000: criterios de documentación, compatibilidad y mantenimiento para revisar una compra de SCBA."
 pubDate: 2026-02-15
 updatedDate: 2026-06-25
-author: "Ing. Marco García"
+author: "FIREFIGHTERS MX"
 category: "Equipos SCBA"
-tags: ["SCBA", "MSA G1", "Dräger PSS 7000", "NFPA 1981", "equipo respiración autónoma"]
+tags: ["SCBA", "MSA G1", "Dräger PSS 7000", "NFPA 1970", "equipo respiración autónoma"]
 image:
   url: "/images/categorias/equipos-scba.avif"
   alt: "Comparativa SCBA MSA G1 y Dräger PSS 7000 para combate estructural de incendio"
 ---
 
-Hay una conversación que ocurre en casi todas las licitaciones de SCBA en México, y va más o menos así: el jefe de adquisiciones pone sobre la mesa las fichas técnicas del [MSA G1](/productos/equipos-scba/msa-g1) y del [Dräger PSS 7000](/productos/equipos-scba/drager-pss), ambas certificadas NFPA 1981:2018, ambas con telemetría inalámbrica, ambas de fabricantes con décadas de trayectoria. Y entonces llega la pregunta incómoda: ¿qué diferencia a estos dos equipos en la práctica?
+En una licitación de SCBA, el equipo técnico puede comparar las fichas del [MSA G1](/productos/equipos-scba/msa-g1) y del [Dräger PSS 7000](/productos/equipos-scba/drager-pss). El G1 cuenta con aprobaciones NIOSH CBRN y NFPA 1981 en su documentación; el PSS 7000 existe en versión certificada NFPA. Para una oferta actual, pide el certificado correspondiente al modelo y configuración exactos.
 
 La respuesta honesta es que en papel, casi nada. En el campo, todo.
 
-El problema con las comparativas técnicas de SCBA es que se concentran en los números que los fabricantes publican — peso, presión de trabajo, temperatura de operación — y eluden las preguntas que realmente importan cuando tu corporación va a comprometer dos o tres millones de pesos en una flota de 20 a 40 equipos. Preguntas como: ¿cuánto cuesta realmente el sistema completo con telemetría operativa? ¿Qué pasa con las máscaras cuando cambias de SCBA y ya tienes una flota de cascos de un fabricante distinto? ¿Tu estación de llenado soporta 310 bar o solo 300 bar?
+Una comparativa útil no debe depender solo de peso, presión o cifras de catálogo. Debe preguntar qué piezas faciales son compatibles, qué certificación tiene la configuración propuesta, cómo se realizará el mantenimiento y qué documentación acompañará a cada unidad.
 
 Eso es lo que vamos a revisar aquí.
 
@@ -26,35 +26,37 @@ Eso es lo que vamos a revisar aquí.
 
 La diferencia de fondo entre el G1 y el PSS 7000 no es el peso ni la presión de trabajo. Es la filosofía de diseño.
 
-El **MSA G1** fue concebido como un sistema integrado. El arnés, el módulo LUNAR de telemetría, la alarma PASS y el HUD de la máscara son una sola arquitectura diseñada para operar junta desde el día uno. No hay módulos opcionales para tener telemetría funcional de flota. Compras el G1 y el comandante de incidente puede monitorear la presión de cada bomero en tiempo real con el equipo base.
+El **MSA G1** integra alarma PASS, indicador de baja presión y opciones de telemetría bidireccional. Sus cilindros disponibles incluyen configuraciones de 2216, 4500 y 5500 psi, con duraciones nominales de 30, 45 o 60 minutos según la configuración.
 
-El **Dräger PSS 7000** fue diseñado con otra lógica: un núcleo robusto, probado en entornos industriales y mineros, que acepta módulos adicionales según las necesidades de cada operador. El arnés de acero, el regulador y el PASS básico son el punto de partida. La telemetría, el HUD avanzado y la integración con sistemas de gestión de incidentes son capas que se agregan — y se pagan por separado.
+El **Dräger PSS 7000** se ofrece en una versión europea EN 137:2006 Tipo 2 y existe una versión certificada NFPA en Estados Unidos. Para cualquier función de alarma, pieza facial, telemetría o cilindro, solicita al proveedor la configuración incluida y su documentación de aprobación.
 
 Ninguno de los dos enfoques es incorrecto. El problema surge cuando no se entiende la implicación económica antes de firmar el contrato.
 
 ---
 
-## Lo que nadie calcula: el costo total de flota con telemetría
+## Cómo documentar el alcance de una flota con telemetría
 
-Cuando una licitación de Protección Civil estatal pide SCBA con "telemetría inalámbrica de flota para monitoreo de presión en tiempo real desde puesto de mando", las propuestas llegan con precios de equipos base que se ven comparables. Lo que no está en el resumen ejecutivo son los módulos adicionales que el PSS 7000 necesita para cumplir esa especificación.
+Cuando una licitación pide telemetría de flota para monitoreo desde puesto de mando, la propuesta debe describir los componentes que integran el sistema y las condiciones de operación. No basta con usar el término “telemetría” sin indicar qué recibe el puesto de mando, qué información se transmite y qué accesorios se incluyen.
 
-La tabla siguiente no es de catálogo. Está construida con precios de referencia de licitaciones recientes en México (2024-2026) para corporaciones que adquirieron entre 20 y 40 unidades.
+La tabla siguiente sirve para pedir información comparable al proveedor. Los valores comerciales deben cotizarse directamente para la configuración requerida.
 
-**Comparativa de costo total de flota — 20 unidades equipadas con telemetría**
+Además de la cotización, conviene anexar una lista de entregables: certificado aplicable, número de aprobación, manuales, instrucciones de inspección, identificación de cilindros, piezas faciales, accesorios y programa de capacitación. La lista debe indicar qué componente corresponde a cada unidad y qué funciones requieren equipo adicional. Al recibir muestras, compara esa relación con los componentes físicamente instalados; así se detectan diferencias entre una demostración, una ficha general y la configuración que se propone entregar.
 
-| Concepto | MSA G1 (×20) | Dräger PSS 7000 (×20) |
+**Comparativa de alcance de flota con telemetría**
+
+| Concepto | MSA G1 | Dräger PSS 7000 |
 |---|---|---|
-| Equipo base (arnés + regulador + máscara estándar) | $28,000–38,000 c/u | $32,000–45,000 c/u |
-| Cilindro 45 min carbono / composite | $12,000–18,000 c/u | $14,000–22,000 c/u |
-| Módulo de telemetría por unidad | **Incluido (LUNAR integrado)** | $8,000–15,000 adicional (Bodyguard MSI) |
-| Unidad de comando para IC (1 por flota) | Incluida en ecosistema LUNAR | $35,000–60,000 adicional (consola Dräger) |
-| **Total flota 20 unidades (rango medio)** | **~$1,040,000–1,280,000 MXN** | **~$1,380,000–1,940,000 MXN** |
-| Mantenimiento anual por unidad (certificado) | $3,500–5,500 | $4,500–7,000 |
-| **Costo de mantenimiento 5 años (flota completa)** | **~$350,000–550,000 MXN** | **~$450,000–700,000 MXN** |
+| Configuración base | Solicitar lista de componentes | Solicitar lista de componentes |
+| Cilindro | Confirmar presión y duración nominal | Confirmar presión y duración nominal |
+| Telemetría por unidad | Verificar función y accesorios | Verificar función y accesorios |
+| Puesto de mando | Definir información requerida | Definir información requerida |
+| Alcance de la flota | Documentar unidades y componentes | Documentar unidades y componentes |
+| Mantenimiento | Solicitar programa de servicio | Solicitar programa de servicio |
+| Cotización | — | — |
 
-El dato que importa está en esa columna del centro: una flota de 20 PSS 7000 con telemetría operativa puede costar entre 300,000 y 660,000 pesos más que el equivalente en G1 cuando se suman los módulos Bodyguard MSI y la consola de comando. Para una corporación municipal con presupuesto justo, esa diferencia es el costo de cuatro equipos adicionales.
+El dato importante es el alcance documentado de cada propuesta: equipo, cilindros, pieza facial, alarma, telemetría, accesorios, capacitación y programa de mantenimiento. Esa lista permite revisar cotizaciones sin suponer que dos equipos con el mismo nombre comercial incluyen lo mismo.
 
-Si la telemetría no es un requisito en tu especificación técnica — cosa que yo no recomendaría en corporaciones que operan en edificios de más de tres pisos, hospitales, bodegas o cualquier estructura con riesgo de colapso — la ecuación cambia. Pero si es requisito, que figure en el análisis comparativo, no solo el precio del equipo base.
+Si la telemetría es un requisito, debe figurar en el análisis comparativo y en la documentación técnica, no solo como una referencia comercial del equipo base.
 
 ---
 
@@ -64,9 +66,9 @@ Hay una conversación que los vendedores de SCBA evitan tener hasta que la compr
 
 No todas las máscaras de cara completa cierran correctamente con todos los cascos del mercado. El perfil del sellado facial — la zona donde el aro de la máscara contacta con la cara del usuario — varía entre fabricantes, y cuando hay un casco con suspensión gruesa o una visera de protección que presiona la parte superior de la máscara, el sello puede comprometerse.
 
-El **G1 con máscara AirHawk II** tiene un aro facial de diseño norteamericano, amplio en los laterales y con buena geometría de sellado para rangos de talla S/M/L. Es compatible sin problemas con cascos MSA F1/Cairns 660/Bullard FH, que son los modelos más comunes en corporaciones mexicanas con estándar NFPA. El campo visual panorámico de la AirHawk II es genuinamente amplio — los bomberos que lo usan por primera vez generalmente comentan que "ven hacia los lados de manera diferente."
+El G1 debe evaluarse con la pieza facial aprobada para la configuración propuesta. El ajuste depende de la talla, el casco, la capucha y el arnés; por ello se requiere una prueba física con los equipos de la brigada.
 
-El **PSS 7000 con Panorama Nova o FPS 7000** usa el estándar de perfil europeo EN 136. En general, el sellado es excelente para la mayoría de rostros, pero en combinación con cascos de visera tipo "europeo" (como los Rosenbauer Heros Titan que están entrando en algunas corporaciones de AICM y ARFF privados) puede aparecer interferencia en la parte frontal que requiere ajuste de la suspensión interna del casco.
+El PSS 7000 puede requerir la misma revisión con su pieza facial y el casco propuestos. El Dräger HPS 7000 está documentado con EN 443, EN 16471 y EN 16473; esa información no equivale por sí sola a una declaración de compatibilidad con una pieza facial concreta.
 
 Esto no es un defecto de ninguno de los dos equipos. Es una consecuencia de que los estándares NFPA y EN no definieron una geometría de interfaz casco-máscara universal.
 
@@ -76,51 +78,59 @@ Esto no es un defecto de ninguno de los dos equipos. Es una consecuencia de que 
 
 ## Infraestructura de llenado: el argumento que el PSS 7000 gana en ciertos contextos
 
-Existe una razón por la cual el Dräger PSS 7000 domina en instalaciones industriales y mineras de México, y no tiene que ver con las especificaciones del SCBA. Tiene que ver con la infraestructura de llenado que ya existe en esos ambientes.
+La infraestructura de llenado debe revisarse antes de cambiar de plataforma SCBA. La presión nominal del cilindro, conexiones, procedimiento de llenado y mantenimiento deben coincidir con lo indicado por el fabricante.
 
-El estándar europeo DIN de 300 bar es el que se instaló durante décadas en la industria petroquímica mexicana — PEMEX Exploración y Producción en la Sonda de Campeche, las plantas de proceso del corredor industrial Veracruz-Coatzacoalcos, las minas de carbón de Coahuila, las instalaciones de gas natural del noreste. Cuando Dräger entró a esos mercados hace 30 o 40 años, instaló compresoras, manifolds y estaciones de llenado a 300 bar que siguen operativas hoy.
+La versión europea del PSS 7000 se documenta con un cilindro de 6.8 L y 300 bar. Antes de seleccionar una versión, solicita la ficha del equipo que se entregará y verifica la compatibilidad de la estación de llenado existente.
 
-Si tu corporación opera en uno de esos contextos — brigada interna de PEMEX, equipo de emergencias de una refinería, cuerpo de bomberos de un parque industrial petroquímico — la pregunta correcta no es "¿cuál SCBA es mejor?" sino "¿cuánto me cuesta modificar mi infraestructura de llenado si cambio a un equipo que opera a 310 bar?"
+Si tu corporación opera en un entorno industrial con infraestructura existente, la pregunta correcta no es “¿cuál SCBA es mejor?”, sino “¿la estación de llenado y sus procedimientos son compatibles con la presión y configuración propuestas?”.
 
-Una compresora de aire respirable de alta presión de 310 bar / 4500 psi cuesta entre 250,000 y 600,000 pesos dependiendo del caudal. Si ya tienes una a 300 bar funcionando, el PSS 7000 no requiere ninguna inversión adicional. El G1 sí.
+La necesidad de adaptar una estación de llenado depende de su especificación y de la configuración de cilindro ofrecida. El proveedor debe documentar el procedimiento compatible y cualquier requisito de servicio antes de la compra.
 
-Por el contrario, los cuerpos de bomberos municipales en México que se renovaron en la última década — HCBCM (Heroico Cuerpo de Bomberos de la Ciudad de México), Bomberos Guadalajara, Bomberos Monterrey — y que adoptaron estándar NFPA tienen compresoras compatibles con 310 bar. Para ellos, el argumento de infraestructura DIN no aplica.
+En cualquier corporación, documenta la presión máxima certificada de la estación, el procedimiento de llenado y los cilindros autorizados. Con esa evidencia se determina si la infraestructura existente es adecuada o si requiere una evaluación adicional.
 
 ---
 
 ## Cilindros: las consecuencias de la rosca
 
-El G1 usa cilindros con válvula propietaria MSA. No son intercambiables con cilindros de otras marcas sin adaptadores que no están certificados NFPA. Esto tiene una consecuencia práctica: si en diez años MSA cambia el diseño de su válvula, o si tu distribuidor regional cierra, la reposición de cilindros puede complicarse.
+Los cilindros y conexiones deben ser los aprobados para cada SCBA. No se deben asumir intercambiables entre marcas o configuraciones sin documentación del fabricante y de la certificación aplicable.
 
-El PSS 7000 usa la rosca DIN estándar, lo que en teoría permite usar cilindros de distintos fabricantes certificados al mismo estándar. En la práctica, Dräger recomienda sus propios cilindros para garantizar la conformidad de la certificación, pero el mercado de cilindros DIN de reposición es más amplio y menos dependiente de un solo proveedor.
+Para el PSS 7000, solicita la documentación de los cilindros, conexiones y piezas autorizadas para la versión ofertada. El criterio de reemplazo debe ser la conformidad de la configuración, no una suposición sobre la rosca.
 
-Para una corporación que planifica a 15 años — que es la vida útil certificada de los cilindros de carbono — la modularidad del sistema DIN es un argumento real de gestión de riesgo de suministro.
+En cada prueba, identifica el cilindro, válvula, regulador, pieza facial y accesorios utilizados. Registra el resultado, la configuración y las instrucciones consultadas. Si una combinación no está expresamente aprobada, no la conviertas en componente de operación solo porque puede conectarse físicamente. La trazabilidad de estas pruebas también simplifica las compras posteriores de repuestos y evita mezclar configuraciones durante el mantenimiento.
 
-**El contraargumento:** MSA tiene 150 años de historia y no está en riesgo de desaparecer mañana. Y la dependencia de proveedor en SCBA no es solo la válvula del cilindro — es también el regulador, la membrana de demanda, los empaques de alta presión. Tanto el G1 como el PSS 7000 te atan a su ecosistema de refacciones en los componentes críticos.
+Los cilindros compuestos de fibra de carbono normalmente se documentan con vida útil de 15 años y recalificación según el permiso especial correspondiente. El expediente del cilindro debe conservarse como parte del programa de mantenimiento.
+
+**El contraargumento:** la dependencia de proveedor no se limita a la válvula del cilindro; también incluye regulador, pieza facial, empaques y accesorios. Tanto el G1 como el PSS 7000 requieren que los componentes críticos se mantengan dentro de la configuración aprobada.
+
+Antes de emitir el fallo o la orden de compra, integra una matriz de recepción. Debe relacionar el número de serie de cada unidad con su cilindro, pieza facial, certificado y accesorios. Añade el procedimiento de inspección de entrega, la capacitación prevista y el contacto del servicio técnico autorizado. Esta matriz permite comprobar que la unidad que se capacita y prueba es la misma que después entra al programa de mantenimiento. También facilita separar equipos que requieran revisión sin perder la trazabilidad de la flota completa.
+
+La matriz debe incluir también los criterios de aceptación de la muestra: verificación de sellos, estado del arnés, lectura de manómetros e indicadores, identificación de la pieza facial y confirmación de las instrucciones entregadas. Si se identifica una discrepancia, registra el número de serie y solicita la aclaración antes de asignar la unidad. Este control evita sustituir componentes durante la entrega sin que la corporación pueda confirmar que siguen dentro de la configuración documentada.
+
+Conserva los formatos firmados, fotografías de la muestra y comunicaciones del proveedor junto con el expediente técnico. Esa información sirve para revisar el equipo durante inspecciones posteriores y para pedir componentes equivalentes aprobados.
 
 ---
 
-## Arnés y ergonomía: los 2.5 kilogramos que importan en el turno 12
+## Arnés y ergonomía: evaluación con la brigada
 
-El G1 con cilindro de carbono de 45 minutos pesa aproximadamente 11.5 kg. El PSS 7000 con cilindro de composite de 6.8 L llega a 13.5–14 kg en configuración típica. Diferencia: alrededor de 2.5 kg.
+El peso de una configuración SCBA depende del cilindro, pieza facial, accesorios y versión del equipo. La información disponible no permite establecer un peso comparable para todas las configuraciones; pide la ficha del conjunto exacto.
 
-En una llamada de 20 minutos en una estructura de dos pisos, esos 2.5 kg no determinan el resultado. En una operación de búsqueda y rescate de tres horas en un edificio industrial del AICM, con rotación de equipos, escalada de escaleras de mano y posiciones de trabajo prolongadas bajo el techo en calor — esos 2.5 kg se acumulan en la fatiga del operador de manera que no es académica.
+La evaluación debe incluir distribución de carga, rango de movimiento, acceso a válvulas, ajuste de hombros y cadera, y relación con traje, casco y pieza facial. Estas observaciones deben registrarse con usuarios representativos de la brigada.
 
-El arnés del G1 distribuye el peso hacia las caderas de forma más agresiva que el PSS 7000, cuyo armazón de acero es más rígido. Para bomberos con lesiones previas de hombro o columna cervical — que en una corporación con antigüedad son más de los que la gente cree — el diferencial ergonómico puede ser la diferencia entre poder completar un turno o no.
+La comodidad o ajuste de un arnés no se puede inferir solo de una ficha. Prueba las tallas y configuraciones previstas, y solicita instrucciones de ajuste y mantenimiento del arnés.
 
-El arnés de acero del PSS 7000, en cambio, tiene ventaja en entornos donde el equipo puede recibir impactos físicos — trabajo en derrumbes, operaciones de extracción industrial, entornos con maquinaria pesada. La estructura de polímero del G1 es de alta resistencia, pero el armazón de acero Dräger tiene una percepción de robustez mecánica que algunos operadores industriales prefieren.
+El análisis de uso debe considerar el entorno operativo, las instrucciones de inspección y la disponibilidad de piezas de servicio. Cualquier afirmación de resistencia debe corresponder al certificado o ficha del modelo ofertado.
 
 ---
 
 ## PASS y telemetría: dónde se separan los sistemas
 
-Ambos equipos cumplen NFPA 1982:2018. Ambos activan la alarma acústica (>95 dB), visual y vibratoria si el bombero queda inmóvil más de 20 segundos. Hasta ahí van juntos.
+La documentación del G1 incluye PASS integrado, activado tras 30 segundos sin movimiento. Para el PSS 7000 y cualquier configuración con alarma, solicita el documento de aprobación y las instrucciones de comprobación correspondientes.
 
 La separación ocurre en la gestión del incidente desde puesto de mando.
 
-Con el **G1 + sistema LUNAR**, el comandante de incidente ve en su terminal (o dispositivo compatible) la presión de cada bombero en tiempo real, recibe alertas instantáneas si un PASS se activa y puede correlacionar esa información con la última posición registrada del operador. Todo esto con el equipo base, sin módulos adicionales, en frecuencia propietaria 900 MHz con alcance efectivo de 100 a 150 metros en estructura.
+Con el **MSA G1**, revisa qué funciones de telemetría bidireccional están incluidas en la propuesta y cómo se consultan durante la operación. Deben documentarse el sistema, accesorios, cobertura prevista y capacitación.
 
-Con el **PSS 7000**, para lograr lo equivalente necesitas el módulo Bodyguard MSI en cada unidad y la consola de gestión Dräger en el puesto de mando. El sistema funciona bien — Dräger tiene décadas de experiencia en telemetría industrial — pero el costo ya aparece en la tabla de flota que presentamos arriba.
+Con el **PSS 7000**, revisa la configuración de telemetría que ofrece el proveedor y compárala contra los requerimientos de la brigada. La función debe verificarse con equipo demostrativo y documentación de la versión ofertada.
 
 Para corporaciones que operan en estructuras complejas — el HCBCM respondiendo en Torres Mayor, Bomberos Guadalajara en el centro histórico, cualquier brigada con responsabilidad en hospitales de alta densidad — la telemetría de flota en tiempo real no es opcional. Es la diferencia entre rescatar a un bombero caído en los primeros tres minutos o encontrarlo demasiado tarde.
 
@@ -128,59 +138,59 @@ Para corporaciones que operan en estructuras complejas — el HCBCM respondiendo
 
 ## Compatibilidad ambiental: Golfo de México y zonas tropicales
 
-Las condiciones climáticas del sureste mexicano — Tabasco, Veracruz, Campeche, Yucatán — presentan un desafío específico para los equipos electrónicos de los SCBA: humedad relativa sostenida por encima del 80-90%, ciclos de temperatura con picos de 38-42°C y ocasionalmente exposición a ambientes salinos en zonas costeras e instalaciones marítimas.
+En ambientes húmedos, polvosos o salinos, la inspección y el mantenimiento de componentes electrónicos deben seguir las instrucciones del fabricante. El entorno operativo debe quedar descrito en el plan de servicio.
 
-Ambos equipos tienen certificación para rangos de temperatura de -30°C a +60°C y sellado contra polvo y agua. Sin embargo, la experiencia de campo en el corredor Veracruz-Coatzacoalcos muestra que los conectores eléctricos de los módulos de telemetría son el punto débil en ambos sistemas — pero más aún en configuraciones donde esos módulos son accesorios externos (como el Bodyguard MSI del PSS 7000) que en los que están integrados en el cuerpo del equipo (como el LUNAR del G1).
+No atribuyas un rango ambiental o desempeño de sellado a una familia de equipos sin la ficha de la configuración exacta. Revisa conectores, baterías y componentes según el intervalo indicado por su fabricante.
 
-La integración del G1 da una ventaja de sellado real en ambientes húmedos tropicales. No porque el PSS 7000 sea frágil, sino porque hay menos interfaces de conexión entre módulos que puedan acumular humedad con el tiempo.
+La comparación entre configuraciones debe basarse en documentación técnica, inspección periódica y pruebas que correspondan al entorno de uso, no en supuestos sobre la cantidad de interfaces.
 
 ---
 
-## El G1 gana en integración; el PSS 7000 gana en modularidad industrial
+## Selección según requisitos documentados
 
 Después de revisar cada variable, la diferenciación se sostiene en la filosofía de diseño con la que empezamos.
 
-El **MSA G1** es la elección para corporaciones que:
+El **MSA G1** puede evaluarse cuando la corporación:
 
-- Operan bajo estándar NFPA y tienen infraestructura de llenado a 310 bar / 4500 psi ya instalada o planificada.
-- Requieren telemetría de flota como especificación técnica y no pueden permitirse el costo adicional de los módulos Dräger.
-- Priorizan la reducción de peso en combate estructural y rescate técnico (cada kilogramo importa cuando escales con equipo por escaleras de emergencia).
-- Son corporaciones municipales o estatales que adquieren entre 10 y 60 unidades con presupuesto de Protección Civil o fondos federales y necesitan predecibilidad en el costo total de propiedad.
+- Requiere una configuración con documentación NIOSH y certificación NFPA aplicable.
+- Necesita revisar las opciones de telemetría bidireccional incluidas en la oferta.
+- Puede probar el arnés, pieza facial y cilindro con su personal operativo.
+- Cuenta con un programa documentado de llenado, inspección, mantenimiento y refacciones.
 
-El **Dräger PSS 7000** es la elección para:
+El **Dräger PSS 7000** puede evaluarse cuando:
 
-- Brigadas industriales y de oil & gas con infraestructura de llenado DIN 300 bar ya instalada — PEMEX, CFE, plantas petroquímicas del corredor Veracruz-Coatzacoalcos, instalaciones portuarias de Veracruz o Altamira.
-- Corporaciones que ya tienen contratos de servicio Dräger para otros equipos de seguridad industrial (detectores multigas, cámaras de inspección, equipos de rescate en espacio confinado) y quieren consolidar el soporte técnico en un solo proveedor.
-- Operaciones donde la robustez mecánica del armazón de acero tiene valor real: derrumbes, minería subterránea, rescate industrial.
-- Instalaciones ARFF de aeropuertos privados (AICM concesionado, GDL, MTY) que ya operan con ecosistema Dräger y buscan continuidad.
+- La versión ofrecida cuenta con certificado NFPA y documentación de su configuración.
+- La estación de llenado se ha verificado contra la presión y conexiones del cilindro.
+- La pieza facial y el casco se pueden probar como conjunto con las tallas requeridas.
+- El proveedor entrega instrucciones de inspección, mantenimiento y refacciones aplicables.
 
 ---
 
 ## Antes de firmar la orden de compra: tres preguntas que debes responder
 
-Primera: ¿Tu infraestructura de llenado es 300 bar o 310 bar? Si no lo sabes, llama a quien instaló tu compresora y pregúntale la presión máxima certificada. Esta pregunta tiene respuesta en diez minutos y puede cambiar completamente el análisis.
+Primera: ¿La infraestructura de llenado corresponde a la presión y conexiones del cilindro ofertado? Solicita el dato documentado de la compresora y compáralo con la ficha de la configuración propuesta.
 
-Segunda: ¿La especificación técnica de tu licitación exige telemetría de flota o solo PASS individual? Si exige telemetría, incluye en tu análisis comparativo el costo de los módulos Bodyguard MSI del PSS 7000 más la consola de comando — no solo el precio del equipo base. El precio que te da el vendedor en la primera reunión casi nunca incluye eso.
+Segunda: ¿La especificación técnica exige telemetría de flota o solo alarma individual? Si exige telemetría, incluye todos los componentes, condiciones de operación, capacitación y mantenimiento en la comparación, no solo el equipo base.
 
 Tercera: ¿Qué cascos estructurales tiene tu flota hoy? Antes de comprometer el presupuesto, haz el fit test de la máscara SCBA con tus cascos actuales. Con los bomberos de tu plantilla, con guantes puestos, en las tallas extremas de tu corporación. No en sala de juntas con el vendedor — en la bahía de la estación.
 
-La pregunta más cara en adquisiciones de equipo de protección personal no es la que haces antes de comprar. Es la que no hiciste.
+Las preguntas documentadas antes de comprar reducen incertidumbre durante la recepción, capacitación y mantenimiento del equipo.
 
 ---
 
 ## Recomendación final por tipo de corporación
 
-**Cuerpo de bomberos municipal o estatal (1 a 10 estaciones, México):** MSA G1. La telemetría integrada, el menor peso y el costo total de flota más predecible lo hacen la elección correcta para el presupuesto y la operación típica de una corporación pública bajo estándar NFPA.
+**Cuerpo de bomberos municipal o estatal:** evalúa el MSA G1 y el PSS 7000 con una matriz que incluya certificados, prueba de ajuste, cilindros, programa de servicio y alcance de telemetría.
 
-**Brigada industrial petroquímica o minera con infraestructura DIN:** Dräger PSS 7000. No tiene sentido ignorar la infraestructura de llenado y los contratos de servicio existentes. La modularidad industrial de Dräger fue diseñada exactamente para este contexto.
+**Brigada industrial con infraestructura existente:** verifica primero que la estación de llenado, las conexiones y el programa de mantenimiento son compatibles con la configuración seleccionada.
 
-**ARFF de aeropuerto concesionado o brigada aeroportuaria privada (AICM, GDL, MTY):** Evalúa primero qué equipo usa hoy tu proveedor de mantenimiento en sitio. La continuidad del soporte técnico en aeropuertos es un argumento que puede superar las diferencias de especificación entre ambos equipos.
+**Brigada aeroportuaria:** evalúa la capacidad de servicio, la documentación de cada componente y la prueba física con el equipo de protección existente.
 
-**Corporación en clima tropical húmedo (Golfo de México, sureste):** MSA G1, por la menor cantidad de interfaces de módulos electrónicos expuestas a humedad sostenida. Si el PSS 7000 es la elección por otros motivos, exige al proveedor un protocolo de inspección semestral de los conectores del Bodyguard MSI.
+**Corporación en ambiente húmedo o salino:** solicita un programa de inspección de conectores, baterías y componentes electrónicos conforme a las instrucciones del fabricante.
 
-**Rescate técnico especializado o USAR:** MSA G1. El peso es crítico. Dos kilos y medio menos, en una operación de 8 horas con rotación de equipos en un derrumbe, no es un dato de catálogo — es la diferencia en la capacidad de trabajo del operador al final del turno.
+**Rescate técnico especializado o USAR:** prueba el conjunto con las tareas y tallas representativas; registra movilidad, ajuste y acceso a controles sin atribuir desempeño a cifras no verificadas.
 
-Lo que no cambia en ninguna corporación es lo siguiente: exige al proveedor — de cualquier marca — un SLA (Service Level Agreement) escrito con tiempo máximo de entrega de refacciones críticas para sus [equipos SCBA](/productos/equipos-scba). Un regulador sin membrana de repuesto disponible en 72 horas en una corporación activa es un equipo que no protege a nadie. Ese compromiso escrito vale más que cualquier especificación técnica en la ficha del fabricante.
+Lo que no cambia en ninguna corporación es la necesidad de exigir al proveedor un acuerdo escrito de servicio para sus [equipos SCBA](/productos/equipos-scba): alcance del mantenimiento, refacciones críticas, responsable técnico y procedimiento de atención.
 
 ---
 
@@ -194,6 +204,6 @@ Lo que no cambia en ninguna corporación es lo siguiente: exige al proveedor —
 
 ## Catálogo Equipos SCBA en FIREFIGHTERS MX
 
-Distribuimos equipos SCBA certificados NFPA 1970 de MSA y Dräger con soporte técnico en México, incluyendo análisis de compatibilidad con la infraestructura de llenado existente en tu corporación.
+Distribuimos equipos SCBA de MSA y Dräger con servicio técnico autorizado. Podemos apoyar la revisión documental de la configuración propuesta y de la infraestructura de llenado existente en tu corporación.
 
 [Catálogo completo de Equipos SCBA](/productos/equipos-scba) · [Solicitar cotización](/cotizacion)

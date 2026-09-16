@@ -11,11 +11,9 @@ image:
   alt: "Dotación de extintores según NOM-002-STPS-2010 — cálculo por área y nivel de riesgo"
 ---
 
-El patrón llegó al almacén esa mañana igual que cualquier otro día. Pero la visita de la inspectora de STPS no estaba en el calendario.
+Una visita de verificación puede encontrar que el centro de trabajo tiene extintores, pero que su ubicación, mantenimiento o señalización no corresponden al riesgo de cada área. Comprar y colgar unidades no basta para demostrar que la dotación fue calculada.
 
-Cuarenta minutos después, el acta de infracción documentaba tres hallazgos: dotación insuficiente en el área de producción, un extintor con tarjeta de mantenimiento vencida desde hacía 14 meses, y uno montado a 1.85 metros de altura — 35 centímetros por encima del límite legal. El patrón tenía extintores. Los había comprado, los había colgado. Estaba convencido de que cumplía.
-
-Este escenario lo veo con una frecuencia que ya no me sorprende. El problema no es la ausencia total de extintores: es la dotación mal calculada, el extintor "de relleno" puesto en el pasillo para que "se vea que hay", y el instalador que nunca explicó la diferencia entre colgar un extintor y dotarlo correctamente.
+Un escenario frecuente es el de un almacén con unidades colocadas por disponibilidad, no por el análisis del área. El problema no es la ausencia total de extintores: es la dotación mal calculada, el extintor colocado solo para cubrir visualmente un pasillo y la falta de una explicación técnica sobre cómo seleccionar y distribuir el equipo.
 
 La NOM-002-STPS-2010 no es complicada. Pero tiene más requisitos de los que la mayoría de los responsables de mantenimiento sabe que existen.
 
@@ -23,7 +21,7 @@ La NOM-002-STPS-2010 no es complicada. Pero tiene más requisitos de los que la 
 
 Antes de hacer cualquier cálculo, tienes que saber a qué nivel de riesgo pertenece cada zona de tu centro de trabajo. La norma distingue tres categorías, y el criterio es simple: qué tan fácil se enciende lo que hay ahí y qué tan rápido se propagaría el fuego.
 
-**Riesgo bajo** son las áreas donde el único combustible real es el mobiliario ordinario: madera, papel, textiles normales. Piensa en oficinas administrativas, salas de juntas, vestíbulos, auditorios. La carga de fuego es baja, la propagación es lenta. Si un conato ocurre aquí, tienes tiempo para reaccionar.
+**Riesgo bajo** comprende áreas donde predominan combustibles ordinarios: madera, papel y textiles normales. Piensa en oficinas administrativas, salas de juntas, vestíbulos y auditorios. La clasificación debe confirmarse contra los materiales y condiciones reales del área.
 
 **Riesgo ordinario** abarca la mayoría de los espacios industriales y comerciales: manufactura ligera, almacenes de producto terminado no inflamable, comercios al menudeo, cocinas comerciales sin fritura intensiva, talleres de mantenimiento general. Es el nivel más frecuente en la industria nacional y donde más errores de cálculo ocurren precisamente porque parece "normal".
 
@@ -91,9 +89,9 @@ Antes de poner más extintores, verifica que los que tienes están en la posici�
 
 La norma es muy específica en tres puntos que con frecuencia se ignoran:
 
-**Altura de montaje.** La parte superior (la cabeza) del extintor no puede quedar a más de 1.50 metros del piso. Parece obvio, pero muchos instaladores los montan a 1.80 o 1.90 metros "para que no estorben". Eso es infracción documentable.
+**Altura de montaje.** Verifica el criterio de instalación aplicable al tipo y capacidad del extintor. La unidad debe poder tomarse con rapidez y sin maniobras que retrasen la respuesta.
 
-**Espacio despejado.** Debe haber mínimo un metro de radio libre alrededor del extintor, sin muebles, cajas, maquinaria ni cualquier obstáculo que impida tomarlo. Un extintor detrás de una estantería, aunque esté señalizado, es hallazgo de no conformidad.
+**Espacio despejado.** El acceso debe permanecer libre de muebles, cajas, maquinaria u otros obstáculos. Un extintor detrás de una estantería, aunque esté señalizado, no cumple su función operativa.
 
 **Soporte fijo.** Los extintores deben estar montados en bracket, gancho o armario especializado que los mantenga verticales y accesibles sin herramienta. Un extintor apoyado en el suelo, recargado en la pared, no cumple — aunque esté cargado y con mantenimiento vigente.
 
@@ -119,7 +117,7 @@ La norma exige:
 
 - **Inspección mensual visual** realizada por el responsable del área: manómetro en zona verde, seguro y precinto intactos, boquilla libre, señal legible, acceso despejado. Se registra con firma y fecha.
 - **Mantenimiento anual** por técnico certificado: inspección del recipiente, válvula, manguera y agente; pesaje o verificación de carga; reemplazo de precinto y tarjeta.
-- **Prueba hidrostática** cada 5 años (acero al carbón) o cada 12 años (algunos modelos de aluminio).
+- **Prueba hidrostática:** verificarla conforme al tipo de recipiente, su marcado y el programa de mantenimiento aplicable.
 
 El número de serie de cada extintor debe estar en la bitácora. La tarjeta de mantenimiento colgada del extintor no sustituye la bitácora del patrón; es complementaria.
 
@@ -127,19 +125,19 @@ Un extintor con tarjeta de mantenimiento vencida es hallazgo crítico. Genera ac
 
 ## Lo que le cuesta a tu empresa incumplir
 
-Las sanciones se expresan en UMAs (Unidad de Medida y Actualización; valor 2026: $108.57 pesos/día). El régimen sancionador está en el **Reglamento Federal de Seguridad y Salud en el Trabajo** y los **artículos 994 y siguientes de la Ley Federal del Trabajo**.
+Las sanciones se expresan en UMAs y dependen de la autoridad, el tipo de incumplimiento y las circunstancias de la visita. El régimen sancionador debe revisarse directamente en el **Reglamento Federal de Seguridad y Salud en el Trabajo** y la **Ley Federal del Trabajo** vigentes.
 
 | Tipo de infracción | Rango de sanción | Monto aproximado 2026 |
 |---|---|---|
-| No contar con extintores en el área | 250 – 5,000 UMA | $27,000 – $543,000 |
-| Dotación insuficiente (menos unidades de las requeridas) | 100 – 1,000 UMA | $10,857 – $108,570 |
-| Extintores con mantenimiento vencido | 50 – 500 UMA | $5,429 – $54,285 |
-| Acceso bloqueado al extintor | 50 – 500 UMA | $5,429 – $54,285 |
-| Señalización ausente o ilegible | 50 – 500 UMA | $5,429 – $54,285 |
-| Falta de bitácora o registros | 50 – 250 UMA | $5,429 – $27,143 |
-| Reincidencia | Hasta el doble de la sanción original | Variable |
+| No contar con extintores en el área | Consultar régimen vigente | — |
+| Dotación insuficiente (menos unidades de las requeridas) | Consultar régimen vigente | — |
+| Extintores con mantenimiento vencido | Consultar régimen vigente | — |
+| Acceso bloqueado al extintor | Consultar régimen vigente | — |
+| Señalización ausente o ilegible | Consultar régimen vigente | — |
+| Falta de bitácora o registros | Consultar régimen vigente | — |
+| Reincidencia | Consultar régimen vigente | — |
 
-El monto sube hacia el extremo superior del rango cuando el establecimiento tiene más de 100 trabajadores o maneja materiales peligrosos. La reincidencia puede derivar en clausura temporal del área de riesgo.
+La autoridad determina la consecuencia aplicable con base en el caso concreto. Por eso la revisión documental y física debe hacerse antes de una visita, no como respuesta a un requerimiento.
 
 El costo del cumplimiento — comprar los extintores correctos, darles mantenimiento anual, llevar una bitácora — es una fracción de la sanción mínima por dotación insuficiente. Esa aritmética debería ser el argumento que convence a cualquier patrón.
 

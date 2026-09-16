@@ -12,17 +12,15 @@ image:
   alt: "Comparativa de extintores PQS ABC, CO₂ y Tipo K por agente extintor y aplicación"
 ---
 
-El operador de la freidora industrial actuó correctamente: vio la llama, tomó el extintor más cercano, activó el seguro y descargó el agente sobre el aceite en combustión.
+En una cocina industrial, una brigada puede encontrar una llama en aceite de cocción y tomar el extintor más cercano. Antes de intervenir, el procedimiento debe confirmar que el agente corresponde a fuego clase K.
 
-Lo que nadie le había explicado es que el extintor era de [PQS ABC](/productos/extintores/pqs-abc).
+El [PQS ABC](/productos/extintores/pqs-abc) no sustituye al agente previsto para aceites y grasas de cocción. La guía de la NOM-002-STPS-2010 identifica el químico húmedo para clase K y no recomienda PQS ni CO₂ para esa clase.
 
-El polvo golpeó el aceite hirviendo. El aceite respondió como responde siempre cuando algo impacta su superficie a esa temperatura: con una nube de vapor y gotas en combustión que cubrió tres metros de radio en menos de un segundo. El operador terminó con quemaduras en brazos y cuello. El área de cocina fue pérdida total.
-
-El extintor funcionó exactamente como fue diseñado. Simplemente no estaba diseñado para ese fuego.
+La selección del extintor debe quedar definida antes de una emergencia: un agente puede ser adecuado para ciertos riesgos y no serlo para aceite de cocción.
 
 ---
 
-La pregunta "¿qué extintor pongo aquí?" parece simple. Pero la respuesta equivocada no es solo ineficaz: en varios escenarios, es activamente peligrosa. El problema es que en México el 90% de los extintores instalados en todo tipo de espacio son PQS ABC. No porque sea la elección correcta siempre, sino porque es el más barato y el que el instalador tiene en el camión.
+La pregunta "¿qué extintor pongo aquí?" parece simple. Pero la respuesta equivocada no es solo ineficaz: en varios escenarios, puede aumentar el riesgo. El PQS ABC es un agente de uso general, pero no sustituye el análisis del riesgo específico.
 
 La selección correcta no es por "cuál es mejor en general". Es por "cuál protege mi riesgo específico". Y ese riesgo tienes que definirlo antes de comprar el extintor, no durante el incendio.
 
@@ -40,7 +38,7 @@ La nomenclatura de las clases de fuego no es capricho académico. Es el mapa que
 
 **Clase K** — aceites y grasas de cocción a alta temperatura. Esta es la clase que más se confunde. No es Clase B aunque sea un líquido. Los aceites de cocción calientes se comportan de manera completamente diferente a los líquidos inflamables industriales.
 
-## PQS ABC: el más común, el más malentendido
+## PQS ABC: un agente de uso general que requiere selección correcta
 
 ### Cómo funciona realmente
 
@@ -66,9 +64,9 @@ Es barato, está disponible en toda la cadena de suministro mexicana, y para la 
 
 **Cuartos de servidores y data centers.** El fosfato monoamónico es higroscópico: absorbe humedad ambiental y forma ácidos fosfóricos suaves. Ese residuo, depositado sobre circuitos impresos, ventiladores y conectores, genera corrosión progresiva. Los componentes que sobrevivieron el incendio pueden fallar semanas o meses después por el residuo del extintor.
 
-La limpieza profesional de un gabinete de servidores contaminado con PQS cuesta entre $15,000 y $80,000 pesos dependiendo del equipo. En muchos casos, la limpieza no es viable y el equipo se da de baja. El seguro normalmente no cubre el daño por el agente extintor si el agente era el incorrecto para el riesgo.
+El residuo de PQS requiere una evaluación de limpieza y compatibilidad antes de volver a operar equipo electrónico. El plan de protección debe definir el agente adecuado para cada zona y revisar las condiciones de cobertura aplicables.
 
-**Cocinas con aceites de cocción.** Ya describimos lo que pasa. El PQS no saponifica la grasa ni enfría el aceite por debajo del punto de re-ignición. Puede suprimir visualmente la llama durante la descarga, pero el aceite permanece a 300°C o más. Cuando el polvo se dispersa, el aceite re-ignita con el oxígeno del ambiente. En el peor caso, el impacto del polvo sobre el aceite provoca una dispersión de gotas en combustión.
+**Cocinas con aceites de cocción.** El PQS no realiza la saponificación requerida para la clase K. La guía de la NOM-002-STPS-2010 señala químico húmedo para este riesgo y excluye PQS y CO₂ de esa aplicación.
 
 **Archivos, museos y espacios con materiales históricos.** El residuo del PQS daña documentos, obras de arte y materiales que no pueden limpiarse sin riesgo. En estos entornos, la pérdida causada por el extintor puede ser mayor que la causada por el fuego contenido.
 
@@ -76,7 +74,7 @@ La limpieza profesional de un gabinete de servidores contaminado con PQS cuesta 
 
 ### Cómo funciona
 
-El CO₂ opera por sofocación: desplaza el oxígeno en el área de descarga hasta bajar su concentración por debajo del umbral de combustión (aproximadamente 15% en volumen). También hay un efecto secundario de enfriamiento por la expansión del gas desde el estado líquido almacenado a -78°C, pero es menor comparado con el efecto de desplazamiento de oxígeno.
+El CO₂ opera por sofocación: desplaza el oxígeno en el área de descarga. También tiene un efecto de enfriamiento por expansión.
 
 La ventaja crítica: no deja absolutamente nada. Sin residuo sólido, sin humedad, sin riesgo de daño secundario al equipo.
 
@@ -94,19 +92,19 @@ La ventaja crítica: no deja absolutamente nada. Sin residuo sólido, sin humeda
 
 **En sólidos Clase A con brasa profunda, la re-ignición es probable.** El CO₂ apaga la llama superficial, pero no penetra el material. Una viga de madera con brasa interior va a re-ignitar cuando el CO₂ se disperse y el oxígeno vuelva. Para Clase A profundo, el PQS o el agua tienen mejor desempeño.
 
-**En espacios confinados con personas, la concentración necesaria para extinguir (30-35% en volumen) es fatal.** En cuartos de servidores sin sistema automático, el protocolo exige evacuación antes de la descarga manual. No es una advertencia de etiqueta: es una consideración de diseño real.
+**En espacios confinados con personas, el CO₂ requiere controles de seguridad.** En cuartos de servidores sin sistema automático, el procedimiento debe considerar la evacuación antes de una descarga manual.
 
-## [Tipo K](/productos/extintores/especializados): el único agente diseñado para no matarte en la cocina
+## [Tipo K](/productos/extintores/especializados): agente previsto para cocinas con aceites y grasas
 
 ### Por qué las otras clases de fuego no aplican aquí
 
-Un aceite de cocción a temperatura de trabajo (175-230°C para fritura, hasta 350°C en sobrecalentamiento) se comporta de manera completamente diferente a un líquido inflamable industrial.
+Un aceite de cocción a temperatura de trabajo se comporta de manera diferente a un líquido inflamable industrial.
 
 Su punto de inflamación es alto comparado con solventes, pero una vez que se enciende, tiene tres características que lo hacen extraordinariamente peligroso:
 
 1. **Alta densidad energética.** El aceite en combustión libera mucha más energía por unidad de superficie que un líquido inflamable industrial típico.
-2. **Alta temperatura de ignición sostenida.** El aceite en una freidora a 300°C, una vez encendido, permanece a esa temperatura aunque se apague la llama visualmente. Re-ignita automáticamente al contacto con el oxígeno del ambiente.
-3. **Reacción violenta con agua.** El agua a temperatura ambiente sobre aceite a 300°C produce vaporización instantánea y proyección de gotitas de aceite en combustión. Es la causa de las quemaduras más graves en incendios de cocina.
+2. **Temperatura de ignición sostenida.** El aceite puede conservar calor aun cuando la llama visible disminuye, por lo que se debe evitar una aplicación que no controle la re-ignición.
+3. **Reacción con agua.** El agua no es el agente previsto para aceite de cocción y puede proyectar el combustible en combustión.
 
 El CO₂ no saponifica. El PQS no saponifica. El agua empeora el incendio. Nada de lo anterior resuelve el problema.
 
@@ -118,21 +116,21 @@ El agente de acetato de potasio opera mediante dos mecanismos simultáneos que n
 
 **Enfriamiento por neblina.** La aplicación en forma de neblina fina (no chorro sólido) absorbe calor de forma muy eficiente. La temperatura del aceite baja por debajo del punto de re-ignición. La capa de jabón se mantiene intacta mientras el aceite se enfría.
 
-Es el único agente que ataca los dos problemas simultáneamente: elimina el oxígeno en la superficie Y baja la temperatura del combustible. Por eso es el único que previene la re-ignición de forma definitiva.
+El agente combina la formación de una capa superficial y el enfriamiento del combustible. Por ello se selecciona para controlar la re-ignición en fuegos de clase K.
 
 ### Obligatoriedad y normativa
 
-La **NFPA 17A** y la **NFPA 10** son claras: toda cocina comercial con equipo de fritura debe tener extintor Tipo K instalado a no más de 9 metros del equipo de cocción. La NFPA 10 establece que el extintor Tipo K es la primera línea de respuesta manual, complementaria (no sustituta) del sistema fijo de supresión húmeda bajo la campana de extracción.
+La guía de la NOM-002-STPS-2010 contempla químico húmedo para clase K y establece un recorrido máximo de 10 m para esa clase. El sistema fijo de campana es la protección primaria; el extintor tipo K funciona como respaldo manual.
 
-En México, la normativa específica de cocinas comerciales la operan la Secretaría de Salud (a través de la NOM-093-SSA1 de manejo higiénico de alimentos, que incluye condiciones de seguridad) y Protección Civil local. Los hoteles con cocinas industriales en destinos turísticos como Cancún, Los Cabos y Puerto Vallarta están sujetos a verificación periódica donde el extintor Tipo K es requisito documentado, especialmente cuando la aseguradora del inmueble es de origen internacional.
+En México, la selección debe documentarse contra la NOM-002-STPS-2010 y las disposiciones aplicables de Protección Civil. Solicita al proveedor la ficha del equipo y verifica que la protección fija y portátil correspondan al riesgo de la cocina.
 
 Un restaurante con sistema de supresión fijo pero sin extintor Tipo K portátil como complemento incumple NFPA 10. El sistema fijo se diseña para supresión automática; el extintor portátil es para que el personal intervenga antes de que el sistema descargue o después de que lo haya hecho.
 
-## La realidad del mercado mexicano
+## La selección en el mercado mexicano
 
-El PQS ABC domina porque es barato. Un extintor de 4 kg cuesta entre $350 y $550 pesos. El CO₂ de 5 kg sale entre $1,600 y $2,400 pesos. El Tipo K de 6 litros entre $2,000 y $3,200 pesos.
+El costo de adquisición no debe definir por sí solo la selección del agente. PQS ABC, CO₂ y Tipo K responden a riesgos distintos y deben cotizarse a partir del plano y la clasificación de cada área.
 
-Esa diferencia de precio explica por qué muchos instaladores cotijan proyectos con PQS ABC en todos los espacios, independientemente del riesgo. El cliente ve el número final y aprueba. Nadie pregunta si hay cocina industrial o cuarto de servidores en el plano.
+Una cotización responsable identifica si hay cocina industrial, cuarto de servidores u otros riesgos que exijan un agente específico. El cliente debe revisar la ficha técnica y la aplicación propuesta antes de aprobarla.
 
 El problema aparece cuando hay un incendio real, cuando llega el inspector de STPS o Protección Civil que sí revisa el tipo de agente instalado versus el riesgo documentado del área, o cuando la aseguradora del inmueble niega la reclamación porque el sistema de extinción no correspondía al riesgo asegurado.
 
@@ -146,12 +144,12 @@ La diferencia en precio entre instalar correctamente y hacer lo mínimo barato e
 | Clase A (sólidos) | Sí | Parcial (re-ignición probable) | Sí (parcial) |
 | Clase B (líquidos inf.) | Sí | Sí | No recomendado |
 | Clase C (eléctrico) | Sí (no conduce) | Sí (ideal) | No (conductora) |
-| Clase K (aceites cocción) | No — peligroso | No — re-ignición | Sí — único efectivo |
+| Clase K (aceites cocción) | No recomendado | No recomendado | Sí — agente previsto |
 | Residuo post-descarga | Sí, abundante y abrasivo | Ninguno | Sí, acuoso (limpiable) |
 | Daño a equipo electrónico | Alto (corrosión progresiva) | Ninguno | No aplica |
 | Eficacia en exterior | Buena | Baja (se dispersa) | Buena (neblina) |
-| Disponibilidad en México | Muy alta (en toda la cadena) | Alta | Media (specialty suppliers) |
-| Costo relativo | Bajo | Alto | Medio-alto |
+| Disponibilidad en México | Confirmar con proveedor | Confirmar con proveedor | Confirmar con proveedor |
+| Costo relativo | Solicitar cotización | Solicitar cotización | Solicitar cotización |
 
 La columna que más importa leer es "Clase K": en aceites de cocción, el PQS y el CO₂ no son opciones incorrectas — son peligrosas. Esa es la diferencia entre "no funciona" y "empeora la situación".
 
@@ -163,7 +161,7 @@ La decisión no es técnicamente compleja. Requiere responder tres preguntas ant
 
 **¿Hay equipo eléctrico de alto valor o equipos de precisión que no toleren residuo?** Si la respuesta es sí, el PQS queda descartado para esa zona.
 
-**¿Hay equipo de cocción con aceites?** Si la respuesta es sí, el Tipo K es obligatorio, independientemente de qué otros extintores haya.
+**¿Hay equipo de cocción con aceites?** Si la respuesta es sí, incorpora Tipo K y revisa la protección fija de campana conforme al riesgo.
 
 | Tipo de espacio | Agente recomendado | Por qué |
 |---|---|---|

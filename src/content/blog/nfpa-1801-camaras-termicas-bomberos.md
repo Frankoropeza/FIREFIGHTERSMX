@@ -1,36 +1,32 @@
 ---
-title: "NFPA 1930: Lo que nadie te dice cuando compras una cámara térmica para bomberos"
+title: "NFPA 1801 (hoy NFPA 1930): criterios para comprar una cámara térmica para bomberos"
 seoTitle: "Cámara térmica para bomberos: qué exige la NFPA 1930"
-description: "Cómo distinguir una cámara térmica certificada NFPA 1930 de una industrial disfrazada. Criterios técnicos y preguntas clave para tu proceso de licitación."
+description: "Criterios para distinguir una cámara térmica para bomberos de una industrial y verificar la certificación NFPA 1930 en una adquisición."
 pubDate: 2026-02-15
-updatedDate: 2026-06-25
+updatedDate: 2026-09-16
 author: "Ing. Marco García"
 category: "Cámaras Térmicas"
-tags: ["NFPA 1801", "cámaras térmicas", "bomberos", "certificación", "EPP incendio"]
+tags: ["NFPA 1930", "cámaras térmicas", "bomberos", "certificación", "EPP incendio"]
 image:
   url: "/images/categorias/camaras-termicas.avif"
   alt: "Cámara térmica certificada NFPA 1930 para uso en combate estructural de incendio"
 ---
 
-Hace algunos años acompañé la evaluación técnica de una licitación para equipar a una corporación municipal en el Bajío. El área de Protección Civil había pedido cámaras térmicas "de alta resolución para uso en emergencias". Llegaron cuatro propuestas. Tres presentaban cámaras de la línea [FLIR K-Series](/productos/camaras-termicas/flir) o equivalentes industriales. La cuarta presentaba una cámara certificada bajo NFPA 1930.
+En una licitación de cámaras térmicas, una ficha industrial y una ficha para bomberos pueden presentar resoluciones y rangos que parecen comparables. La evaluación debe partir del uso previsto y de la certificación verificable del modelo ofertado.
 
-En papel, las tres propuestas industriales ganaban en resolución declarada, en pantalla más grande y en precio. El evaluador —funcionario de carrera, sin formación técnica en equipos de combate— estaba listo para recomendar la propuesta más barata. Tuve que detener el proceso para explicar algo que nadie había puesto en el pliego técnico: ninguna de esas tres cámaras había demostrado jamás que podía operar a 260 °C de temperatura ambiental sin apagarse.
-
-Ese escenario se repite en México con una frecuencia que debería incomodar a todos los que tomamos decisiones de equipo.
+La [línea FLIR para bomberos](/productos/camaras-termicas/flir) y las cámaras industriales responden a aplicaciones distintas. La diferencia no se resuelve por precio, tamaño de pantalla o una declaración comercial: requiere revisar el modelo, su uso previsto y el certificado aplicable.
 
 ---
 
 ## El problema real: una cámara industrial se ve igual en papel
 
-Una cámara termográfica FLIR E96 o una HIKMICRO Pocket tiene resolución de 640 × 480, pantalla HD, rangos de detección de temperatura amplísimos y un precio de 30 a 60 mil pesos. Una cámara certificada bajo NFPA 1930 puede tener resolución de 320 × 240 y costar el doble o el triple.
+Una cámara termográfica industrial puede declarar alta resolución o rangos amplios de medición. Una cámara destinada al servicio de bomberos debe evaluarse también por su aplicación y certificación.
 
-¿Cómo va a justificar un evaluador sin experiencia de campo que rechaza la opción "más completa" a la mitad del precio? No puede. A menos que el pliego técnico esté escrito con criterios normativos claros, y a menos que ese evaluador sepa exactamente qué diferencia una cámara de inspección eléctrica de un instrumento de combate estructural.
+El pliego debe separar las necesidades de inspección de las de supresión estructural, búsqueda y rescate. Un criterio claro evita comparar como equivalentes equipos diseñados para finalidades distintas.
 
-La industria de cámaras termográficas industriales lleva décadas invirtiendo en resolución, conectividad y software de análisis. Son herramientas extraordinarias para paneles eléctricos, envolventes de edificios y mantenimiento predictivo. Sus fabricantes no dicen que sean para bomberos. Son los distribuidores —y a veces los propios compradores desinformados— quienes dan ese salto sin sustento.
+Las cámaras termográficas industriales son herramientas para inspección y mantenimiento. Las cámaras térmicas para bomberos se emplean para ver a través del humo, seguir la propagación del fuego, identificar puntos calientes, apoyar la búsqueda y rescate y orientar al personal dentro de edificios con humo.
 
-Lo que no aparece en la hoja técnica de esas cámaras: no han sido sometidas a la prueba de 260 °C de temperatura ambiental que exige la NFPA 1930. No han sobrevivido una caída libre desde dos metros sobre superficie de concreto. No han sido verificadas por un laboratorio independiente acreditado en ningún protocolo de servicio de bomberos.
-
-Eso es lo que ningún evaluador no capacitado puede ver en papel. Y eso es exactamente lo que este artículo busca resolver.
+Una hoja técnica no sustituye un certificado. Para el servicio de bomberos, solicita el certificado del modelo ofertado y confirma que corresponda con la norma y la edición requeridas.
 
 ---
 
@@ -42,7 +38,7 @@ No es una guía de buenas prácticas. Es un protocolo de pruebas objetivas ejecu
 
 La diferencia con una hoja de especificaciones técnicas es radical: una especificación declara lo que el fabricante diseñó. Una certificación NFPA 1930 demuestra lo que el equipo sobrevivió bajo condiciones controladas e independientes.
 
-Para los fines de una adquisición pública en México, la NFPA 1801 edición 2021 es el único marco técnico existente que permite evaluar cámaras térmicas para bomberos con criterios objetivos y verificables. No existe NOM equivalente. La LAASSP permite referenciar normas internacionales cuando no hay NOM aplicable, y ese es exactamente el caso aquí.
+NFPA 1930, edición 2025 (antes NFPA 1801), consolidó otras normas relativas a cámaras térmicas para el servicio de bomberos. Las certificaciones anteriores pueden indicar las ediciones 2013 o 2021. No existe una NOM equivalente indicada en las fuentes de este artículo.
 
 ---
 
@@ -50,31 +46,31 @@ Para los fines de una adquisición pública en México, la NFPA 1801 edición 20
 
 Aquí está el núcleo del problema técnico. No se trata de marketing ni de precios: se trata de lo que ocurre cuando el equipo está dentro de un incendio estructural activo y tiene que seguir funcionando.
 
-### Temperatura ambiental de operación: 260 °C
+### Temperatura ambiental de operación
 
-Este es el parámetro que define toda la categoría. La NFPA 1930 exige que la cámara opere sin degradación funcional a 260 °C de temperatura ambiental —no temperatura de superficie, sino el aire alrededor del equipo. Una cámara industrial de inspección está diseñada para operar en ambientes de -20 °C a +50 °C en la mayoría de los casos. Algunos modelos llegan a 120 °C. Ninguna llega a 260 °C.
+El rango declarado debe revisarse junto con el uso previsto. FLIR K75 y K85-N indican un rango de −20 a 650 °C; la MSA Evolution 6000 declara rangos de alta y baja sensibilidad distintos. La especificación no sustituye la certificación del modelo.
 
-¿Qué ocurre a esa temperatura con una cámara no certificada? El sellado de goma se degrada o falla. Los circuitos electrónicos que no están diseñados para ese rango térmico se comportan de manera impredecible. La pantalla puede volverse ilegible o apagarse. La batería acelera su degradación y puede recortar drásticamente su duración real. En el mejor de los casos, el equipo falla y el bombero queda sin instrumento. En el peor, falla silenciosamente —da lecturas incorrectas sin indicar el fallo.
+Los modos de alta y baja sensibilidad cumplen funciones diferentes: la baja sensibilidad amplía el rango y evita la saturación de imagen. La operación debe contemplar esas diferencias.
 
-### Resistencia al impacto: caída de 2 metros sobre superficie dura
+### Resistencia al impacto
 
-La norma exige que la cámara sobreviva una caída libre desde dos metros sobre concreto u otra superficie dura especificada, sin pérdida de función. Los bomberos operan en entornos dinámicos: caídas, golpes, detritos. Una cámara industrial no ha sido sometida a ese protocolo. Puede tener carcasa resistente para inspección de campo, pero no para combate estructural activo.
+La resistencia al impacto debe verificarse en la documentación del modelo y en su certificado; no debe inferirse de la carcasa o de accesorios añadidos.
 
 ### Tiempo de arranque en frío
 
-La NFPA 1930 establece requisitos para el tiempo de arranque (*cold start*) de la cámara: el equipo debe estar operativo en un tiempo máximo definido desde el encendido en frío. En una situación de emergencia donde cada segundo cuenta, un equipo que tarda 30 o 45 segundos en calibrar y mostrar imagen estable es un equipo que puede costarte la localización de una víctima.
+El tiempo de arranque debe validarse con el equipo ofertado durante la evaluación operativa, sin asumirlo a partir de otra familia de producto.
 
 ### Legibilidad de pantalla bajo calor y humo
 
-La norma verifica que la pantalla siga siendo legible bajo condiciones combinadas de calor ambiental elevado y presencia de humo. Los displays no diseñados para ese rango térmico pueden perder contraste, volverse excesivamente brillantes o directamente dejar de mostrar imagen correcta antes de que la electrónica falle.
+La legibilidad debe evaluarse con el equipo y los guantes que utilizará el personal operativo.
 
 ### Duración de batería bajo estrés térmico
 
-El mínimo normativo es dos horas de operación continua. Esa medición la hace el laboratorio certificador, no el fabricante declarando en su ficha técnica. La diferencia importa: una batería que dura dos horas en condiciones de laboratorio a 25 °C puede durar 40 minutos dentro de un incendio estructural a 200 °C de temperatura ambiental si no ha sido diseñada y certificada para ese entorno.
+La autonomía debe revisarse por modelo. Las fuentes consultadas indican aproximadamente cuatro horas para FLIR K75 y K85-N, de 2.5 a 3.5 horas para MSA Evolution 6000 y hasta seis horas para Bullard TXS.
 
-### Resistencia al agua: sumersión a un metro durante 30 minutos
+### Resistencia al agua
 
-Equivalente mínimo a IPX7. No resistencia a salpicaduras, no "resistente a la lluvia": sumersión total a un metro de profundidad durante media hora. Las operaciones de supresión de incendio involucran volúmenes de agua significativos, y la cámara debe sobrevivir ese escenario sin degradación funcional.
+La resistencia al agua debe confirmarse en la ficha vigente y, cuando corresponda, en el certificado del modelo.
 
 ---
 
@@ -84,63 +80,63 @@ Esta es la diferencia cuantificable entre una cámara certificada NFPA 1930 y un
 
 | Parámetro | Cámara industrial típica | NFPA 1930 (mínimo certificado) |
 |---|---|---|
-| Temperatura ambiental operacional | -20 °C a +50 °C / hasta 120 °C en algunos modelos | 260 °C — verificado en laboratorio |
-| Resistencia al impacto | Varía / generalmente no especificado | Caída de 2 m sobre superficie dura — verificado |
-| Resistencia al agua | IP54 a IP67 — declarada por fabricante | Sumersión 1 m / 30 min — verificado en laboratorio |
-| Duración de batería | 3-8 horas en condiciones normales | Mínimo 2 horas — verificado bajo condiciones de prueba |
+| Temperatura ambiental operacional | Consultar ficha vigente | Consultar certificado y ficha del modelo |
+| Resistencia al impacto | Consultar ficha vigente | Verificar documentación del modelo |
+| Resistencia al agua | Consultar ficha vigente | Verificar documentación del modelo |
+| Duración de batería | Consultar ficha vigente | Verificar autonomía declarada del modelo |
 | Tiempo de arranque | Variable, sin requisito en servicio de bomberos | Definido por norma, verificado en laboratorio |
 | Legibilidad del display bajo calor | No verificada para ese entorno | Verificada bajo condiciones combinadas de calor y humo |
-| Certificación independiente | Ninguna para servicio de bomberos | Tercera parte acreditada (UL, FM, Intertek u equivalente) |
+| Certificación independiente | No equivale a una certificación para bomberos | Verificar certificado aplicable al modelo |
 
 La tabla no dice que las cámaras industriales sean malas herramientas. Son excelentes herramientas para lo que fueron diseñadas. El problema es que no fueron diseñadas para esto.
 
 ---
 
-## Las tres ediciones de la NFPA 1930: por qué el año importa
+## La edición de la NFPA 1930: por qué el año importa
 
-La NFPA 1930 ha sido publicada en tres ediciones con diferencias técnicas relevantes. Especificar solo "certificación NFPA 1930" sin edición es un vacío legal que algunos proveedores conocen y explotan.
+La edición importa porque NFPA 1930, edición 2025 (antes NFPA 1801), consolidó varias normas relacionadas.
 
-**Edición 2010:** Primera edición formal completa. Estableció los parámetros base de temperatura de exposición a 260 °C, resistencia al agua y duración mínima de batería. Fue un avance real sobre la ausencia de norma, pero los protocolos de prueba de legibilidad de display y resistencia a vibración eran menos exigentes que en ediciones posteriores.
+**NFPA 1930 (2025, antes NFPA 1801):** Las certificaciones anteriores de cámaras térmicas pueden indicar la edición 2013.
 
-**Edición 2015:** Incorporó requisitos más estrictos para la legibilidad del display bajo condiciones combinadas de calor y humo. Actualizó los ciclos de prueba de vibración para simular con mayor fidelidad las condiciones reales de vehículos de emergencias en operación. Refinó los protocolos de prueba de impacto.
+**NFPA 1930 (2025, antes NFPA 1801):** Las certificaciones anteriores pueden indicar la edición 2021; por ejemplo, la FLIR K65 descontinuada indicaba esa certificación.
 
-**Edición 2021 (la vigente):** La más completa y exigente. Actualiza los requisitos de resistencia térmica de los materiales del cuerpo de la cámara, refina los protocolos de sumersión, y establece criterios más detallados para la operabilidad de controles con guantes estructurales puestos. También actualiza las referencias cruzadas con los estándares de laboratorios certificadores.
+**NFPA 1930 (2025, antes NFPA 1801):** Norma vigente. La FLIR K85-N está certificada bajo NFPA 1930 (2025).
 
-La pregunta que debes hacer siempre: ¿el certificado que me presentan dice específicamente "edición 2021"?
+La pregunta que debes hacer siempre: ¿el certificado corresponde al modelo ofertado y a la edición solicitada?
 
-Si el pliego dice "NFPA 1930" sin edición, un proveedor puede presentar un certificado de 2010 y estar dentro de lo que pediste técnicamente. Para cerrar ese vacío, usa esta redacción en cualquier especificación técnica: *"certificación vigente bajo NFPA 1930, edición 2021, emitida por laboratorio de tercera parte acreditado."* Esas doce palabras eliminan la laguna.
+Para cerrar ambigüedades, solicita una certificación vigente bajo NFPA 1930, edición 2025, y verifica que el certificado corresponda exactamente al modelo ofertado.
 
 ---
 
-## Los fraudes del mercado mexicano: reconócelos antes de que cuesten vidas
+## Documentación comercial que debes revisar con cuidado
 
-El mercado de cámaras térmicas en México tiene patrones de riesgo bien documentados. No son casos aislados; son estrategias de venta que se repiten con variantes. Estas son las que debes identificar de inmediato.
+La documentación comercial debe distinguirse del certificado de un modelo. Estas son situaciones que conviene revisar antes de evaluar una propuesta.
 
 ### La carta de cumplimiento del distribuidor
 
-Es el fraude más común y el más difícil de detectar para un evaluador sin experiencia. El distribuidor emite un documento con membrete propio que declara que la cámara "cumple con los requerimientos de la NFPA 1930" o que está "diseñada según los estándares de la NFPA 1930". El documento se ve formal. Tiene firmas, sellos, números de referencia.
+El distribuidor puede emitir un documento con membrete propio que declara que la cámara cumple o fue diseñada conforme a una norma.
 
-No tiene ningún valor normativo.
+Ese documento no sustituye el certificado aplicable al modelo.
 
-La certificación NFPA 1930 solo puede ser emitida por el laboratorio acreditado que realizó las pruebas. No puede ser transferida, endosada ni reemitida por ningún intermediario. Una carta de cumplimiento del distribuidor no es evidencia de certificación; es evidencia de que no hay certificación real que presentar.
+Solicita el certificado y verifica la correspondencia entre la norma, la edición y el número de parte del modelo ofertado.
 
 ### "Cumple especificaciones similares a NFPA 1930"
 
-Esta frase aparece en cotizaciones de cámaras que no han pasado ninguna prueba bajo la norma. Lo que dice es: "diseñamos este equipo con parámetros similares a los que la norma exige." Lo que no dice es que esos parámetros hayan sido verificados por nadie fuera de la propia empresa.
+La frase describe una intención de diseño, no una certificación del modelo.
 
-La certificación NFPA 1930 no certifica especificaciones de diseño. Certifica que un modelo específico pasó pruebas específicas ejecutadas por un laboratorio independiente. Son cosas fundamentalmente distintas.
+Una especificación de diseño y un certificado son documentos distintos; la adquisición debe pedir ambos cuando sean necesarios.
 
 ### El modelo descontinuado con certificación real
 
 Aquí hay un matiz importante: algunos distribuidores presentan modelos que sí tienen —o tuvieron— certificación NFPA 1930, pero que ya fueron descontinuados por el fabricante. El modelo apareció en el registro público en algún momento. El distribuidor aún tiene inventario.
 
-El problema es estructural: si el modelo fue descontinuado, no hay soporte técnico garantizado, no hay actualizaciones de firmware, no hay baterías de reemplazo certificadas con certeza de continuidad. En equipamiento de emergencias con vida útil de 5 a 10 años, eso es una bomba de tiempo administrativa y operacional.
+Los modelos descontinuados requieren una revisión adicional de soporte y consumibles. FLIR K45, K65 y K1 están descontinuadas; la K65 fue reemplazada por la K85-N. Bullard T4MAX, Eclipse y QXT original también están descontinuadas.
 
-Verifica siempre que el modelo esté en producción activa con el fabricante y que exista carta de soporte técnico con compromiso mínimo de cinco años.
+Verifica que el modelo siga vigente y solicita información de soporte técnico y baterías de reemplazo.
 
 ### La cámara "renovada para bomberos"
 
-Algunos distribuidores toman cámaras industriales de segunda generación, les agregan accesorios de color amarillo o naranja, les ponen funda de goma y las presentan como "resistentes para bomberos". La cámara subyacente sigue siendo industrial. Los accesorios no cambian su rating térmico, su resistencia al impacto certificada ni su duración de batería en condiciones extremas.
+Los accesorios no convierten una cámara industrial en una cámara certificada para bomberos. La evaluación debe partir de la documentación del modelo.
 
 ---
 
@@ -150,18 +146,18 @@ Esta lista está diseñada para ejecutarse antes de evaluar cualquier propuesta 
 
 | # | Qué verificar | Cómo verificarlo |
 |---|---|---|
-| 1 | Certificado NFPA 1801 edición 2021 emitido por laboratorio acreditado | Solicitar el certificado original, no copia ni declaración del distribuidor |
+| 1 | Certificado NFPA 1930 (2025) emitido por laboratorio acreditado | Solicitar el certificado, no una declaración del distribuidor |
 | 2 | El organismo certificador es reconocido: UL, FM Approvals, Intertek/ETL u equivalente | Verificar que el nombre del laboratorio corresponda a un organismo acreditado |
 | 3 | El número de parte del certificado coincide exactamente con el de la cotización | Comparar dígito por dígito; cualquier diferencia invalida la certificación para ese modelo |
 | 4 | El certificado aparece en el registro público en línea del organismo | UL: iq.ul.com — FM: approvals.fm.com — Intertek: intertek.com/marks — buscar por número de modelo |
-| 5 | La edición de la norma en el certificado dice explícitamente "2021" | Una certificación bajo edición 2010 o 2015 no cumple si el pliego especifica edición 2021 |
+| 5 | La edición de la norma en el certificado corresponde al pliego | Confirmar si el certificado refiere NFPA 1930 (2025) o una certificación anterior, antes NFPA 1801 |
 | 6 | El modelo está en producción activa según el fabricante | Solicitar carta del fabricante —no del distribuidor— confirmando disponibilidad y soporte |
-| 7 | Resolución del detector declarada por separado de la resolución del display | El proveedor debe especificar ambas; mínimo 160 × 120 en detector; preferible 320 × 240 |
-| 8 | Frecuencia de actualización de 30 Hz | 9 Hz es el mínimo normativo; 30 Hz es el estándar operacional que debes exigir en el pliego |
-| 9 | Duración de batería certificada mínimo 2 horas, con indicador de nivel visible | No "hasta 3 horas" en condiciones de laboratorio a 25 °C; verificado bajo protocolo NFPA |
+| 7 | Resolución del detector declarada por separado de la resolución del display | Solicitar ambas especificaciones para el modelo ofertado |
+| 8 | Frecuencia de actualización | Solicitar el dato en la ficha vigente del modelo |
+| 9 | Duración de batería declarada | Solicitar el dato en la ficha vigente del modelo |
 | 10 | Los controles principales son operables con guantes estructurales puestos | Si es posible, verificar físicamente con guante de combate estructural certificado |
 
-La verificación del punto 4 —buscar el número de modelo en el registro público— toma menos de tres minutos y es el paso que más propuestas fraudulentas eliminaría si se ejecutara de manera sistemática en los procesos de evaluación del país.
+La verificación del punto 4 permite contrastar el certificado con la documentación del modelo antes de la evaluación técnica.
 
 ---
 
@@ -171,33 +167,33 @@ México no tiene una NOM que regule las cámaras térmicas para bomberos. La STP
 
 Ese razonamiento es incorrecto desde la perspectiva técnica y tiene consecuencias previsibles en la operación.
 
-La Ley de Adquisiciones, Arrendamientos y Servicios del Sector Público (LAASSP) permite —y en su espíritu lo fomenta— referenciar normas internacionales reconocidas cuando no existe NOM equivalente. La práctica está establecida en el artículo 31 del reglamento, que permite a las dependencias establecer especificaciones técnicas basadas en normas internacionales aplicables cuando la normatividad nacional no cubre el caso.
+Cuando el proceso de adquisición permita referenciar normas internacionales, la especificación debe expresar con precisión la norma y edición solicitadas.
 
 Esta es la redacción que recomiendo para el apartado de especificaciones técnicas en cualquier pliego de licitación o adquisición directa de cámaras térmicas para bomberos:
 
-> *El equipo ofertado deberá contar con certificación vigente emitida por organismo de tercera parte acreditado bajo la norma NFPA 1930, Standard on Thermal Imagers for the Fire Service, edición 2021. El licitante deberá presentar el certificado original o copia legible emitida directamente por el organismo certificador, con número de parte que corresponda exactamente al modelo ofertado. No se aceptarán declaraciones de cumplimiento del fabricante ni del distribuidor en sustitución del certificado de tercera parte. El número de certificado deberá ser verificable en el registro público en línea del organismo certificador.*
+> *El equipo ofertado deberá contar con certificación vigente bajo NFPA 1930, edición 2025. El licitante deberá presentar el certificado y el número de parte deberá corresponder exactamente al modelo ofertado. Las declaraciones de cumplimiento no sustituyen el certificado aplicable al modelo.*
 
-Esta redacción hace tres cosas: especifica la edición (cierra el vacío de edición), exige el documento del organismo correcto (elimina las cartas del distribuidor) y exige verificabilidad pública (hace imposible presentar un certificado fabricado).
+Esta redacción especifica la edición, exige correspondencia con el modelo y diferencia el certificado de una declaración de cumplimiento.
 
-Agregar ese párrafo al pliego técnico no eleva el costo de la adquisición. Lo que hace es dejar fuera a los proveedores que no trabajan con equipo certificado, que es el resultado correcto.
+El pliego debe definir también el uso previsto y la documentación técnica que la evaluación requiere.
 
 ---
 
-## Las marcas que sí tienen certificación NFPA 1930 y cómo verificarlas
+## Modelos y certificación NFPA 1930: cómo verificarlos
 
-No es el propósito de este artículo recomendar marcas específicas ni hacer publicidad comparativa. Lo que sí puedo decirte como criterio de búsqueda: en el momento de escribir este artículo, los fabricantes con modelos certificados bajo NFPA 1930 en el registro público de UL o FM incluyen —entre otros— [MSA Evolution](/productos/camaras-termicas/msa-evolution) Safety, Scott Safety (ahora Scott-3M), [Bullard TXS](/productos/camaras-termicas/bullard-txs), Seek Thermal (línea para bomberos) y FLIR en su línea específica para bomberos (no la línea de inspección industrial, que es una familia distinta dentro del mismo fabricante).
+La FLIR K85-N está certificada bajo NFPA 1930 (2025). La MSA Evolution 6000 tiene versiones certificadas bajo la norma anterior, antes NFPA 1801. Para cualquier modelo, la decisión debe basarse en su certificado vigente y no solo en la marca o familia comercial.
 
-El último punto es importante porque puede confundir: FLIR fabrica tanto cámaras industriales sin certificación NFPA 1930 como cámaras para bomberos con certificación. Que el fabricante sea FLIR no dice nada por sí solo. Lo que dice el modelo específico y el número de parte, verificado en el registro público.
+FLIR fabrica cámaras industriales y cámaras para bomberos. El fabricante no determina por sí solo la certificación: la revisión corresponde al modelo y al número de parte.
 
 Para verificar cualquier modelo, el proceso es:
 
 1. Obtener el número de parte exacto de la cotización.
 2. Ir a iq.ul.com (para UL) o approvals.fm.com (para FM Approvals).
 3. Buscar el número de modelo o número de parte en el buscador de productos certificados.
-4. Verificar que la norma listada sea NFPA 1930 y que la edición corresponda a lo especificado.
-5. Verificar que el estado del certificado sea activo, no expirado ni retirado.
+4. Verificar que la norma y la edición listadas correspondan a lo especificado.
+5. Verificar que el certificado corresponda al modelo ofertado.
 
-Si el modelo no aparece, el certificado que te presentaron no tiene respaldo verificable.
+Si el modelo no puede verificarse, solicita al proveedor la documentación técnica correspondiente antes de continuar la evaluación.
 
 ---
 
@@ -205,30 +201,30 @@ Si el modelo no aparece, el certificado que te presentaron no tiene respaldo ver
 
 No hay conclusión aquí. Hay un listado de acciones específicas.
 
-**Antes de iniciar cualquier proceso de adquisición:** Redacta el pliego técnico con la cláusula NFPA 1801 edición 2021 y exige verificabilidad pública del certificado para las [cámaras térmicas](/productos/camaras-termicas) ofertadas. Si no tienes capacidad técnica interna para redactarlo, consúltalo con alguien que tenga experiencia en equipamiento de bomberos —no con el proveedor que quieres evaluar.
+**Antes de iniciar cualquier proceso de adquisición:** Redacta el pliego técnico con la cláusula NFPA 1930 (2025) y exige la documentación del modelo para las [cámaras térmicas](/productos/camaras-termicas) ofertadas.
 
-**Durante la evaluación de propuestas:** Ejecuta el checklist de diez puntos en cada propuesta antes de pasar a la evaluación de precio. Cualquier propuesta que no pase los primeros cuatro puntos queda descalificada, sin importar el precio ni las especificaciones declaradas en la hoja técnica.
+**Durante la evaluación de propuestas:** Ejecuta el checklist en cada propuesta antes de evaluar las condiciones comerciales. Confirma que el certificado, modelo y uso previsto sean congruentes.
 
 **Al recibir el equipo:** Solicita el certificado original junto con el equipo. Verifica que el número de serie del equipo recibido corresponde al modelo certificado. Guarda el certificado en el expediente técnico del equipo.
 
-**En la vida útil del equipo:** Establece una política de reemplazo de baterías con componentes del fabricante o equivalentes certificados. Una batería de reemplazo genérica en una cámara certificada NFPA 1930 puede invalidar el comportamiento que la certificación garantizó.
+**En la vida útil del equipo:** Establece una política de reemplazo de baterías y solicita información de soporte para el modelo adquirido.
 
 **Si ya compraste equipo sin certificación:** No lo deseches necesariamente, pero documenta sus limitaciones reales y no lo uses como instrumento primario en combate estructural. Puede tener utilidad en operaciones de reconocimiento exterior, inspección post-incendio o entrenamiento. La decisión sobre su uso corresponde al jefe de corporación con criterio técnico claro, no a la inercia del equipo en el inventario.
 
-La NFPA 1930 existe porque la diferencia entre una cámara que funciona dentro de un incendio estructural y una que falla no se ve en la hoja de especificaciones del proveedor. Se ve en las pruebas de laboratorio. Y cuando esas pruebas son independientes, trazables y verificables en línea, son el único lenguaje técnico que un proceso de compra debería aceptar.
+La diferencia entre una cámara industrial y una cámara para bomberos no se resuelve solo con una hoja de especificaciones. La evaluación debe considerar el uso previsto, el modelo y la documentación verificable.
 
 ---
 
 ## Artículos relacionados
 
 - [FLIR vs MSA vs Bullard: comparativa técnica](/blog/flir-vs-msa-vs-bullard-camaras-termicas) — qué cámara elige el atacante de primer ingreso y cuál el comandante de incidente
-- [MSA G1 vs Dräger PSS 7000](/blog/msa-g1-vs-drager-pss7000-scba) — la misma lógica de integración sistémica aplicada a SCBA
+- [Comparativa MSA G1 y Dräger](/blog/msa-g1-vs-drager-pss7000-scba) — la misma lógica de integración sistémica aplicada a SCBA
 - [Guía de compra SCBA en México](/blog/guia-compra-scba-equipos-respiracion-autonoma) — cómo estructurar una licitación técnicamente sólida
 
 ---
 
 ## Catálogo Cámaras Térmicas en FIREFIGHTERS MX
 
-Distribuimos cámaras térmicas certificadas bajo NFPA 1801 edición 2021 con número de certificado verificable en los registros públicos de UL y FM. FLIR K-Series, MSA Evolution y Bullard TXS con soporte técnico y disponibilidad de baterías en México.
+Consulta cámaras térmicas para bomberos y solicita la ficha técnica y la documentación de certificación del modelo de interés.
 
 [Catálogo completo de Cámaras Térmicas](/productos/camaras-termicas) · [Solicitar cotización](/cotizacion)
