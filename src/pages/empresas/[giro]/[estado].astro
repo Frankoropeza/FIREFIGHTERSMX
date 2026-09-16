@@ -142,6 +142,7 @@ const waMsg = `Hola, busco proveedores de ${g.sustantivo} en ${estado.nombre}. �
         <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
           {otrosGirosEdo.map((o) => { const m = giroMap[o.giro]; return (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/empresas/${o.giro}/${estado.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{m.labelCorto} en {estado.nombre}</span><span style={`color:${m.color}`}>→</span></a></li>); })}
           <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/empresas/estado/${estado.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Todas las empresas en {estado.nombre}</span><span style="color:var(--forge-300)">→</span></a></li>
+          <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/cobertura/${estado.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Cobertura y demanda en {estado.nombre}</span><span style="color:var(--forge-300)">→</span></a></li>
         </ul>
       </div>
       <div>

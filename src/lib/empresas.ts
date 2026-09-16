@@ -8,6 +8,7 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { giros, giroMap, planConfig, type GiroKey } from '@data/giros';
 import { estados as estadosDir } from '@data/estados';
+import { vecinosEnAnillo } from '@lib/enlazado';
 
 export type Empresa = CollectionEntry<'empresas'>['data'];
 
@@ -42,6 +43,55 @@ export async function empresasPorEstado(estado: string) {
 }
 export async function empresasPorGiroEstado(giro: GiroKey, estado: string) {
   return (await todasLasEmpresas()).filter((e) => e.giros.includes(giro) && e.estado === estado);
+}
+
+export interface EnlacesFichaEmpresa {
+  cercanas: Empresa[];
+  otrosGiros: Empresa[];
+  nacionales: Empresa[];
+}
+
+const ordenesPorGiroEstado = new Map<string, Empresa[]>();
+const ordenesOtrosGirosPorEstado = new Map<string, Empresa[]>();
+let ordenNacionalParaEnlaces: Empresa[] | null = null;
+
+const ordenCiudadSlug = (a: Empresa, b: Empresa) =>
+  a.ciudad.localeCompare(b.ciudad, 'es') || a.slug.localeCompare(b.slug, 'es');
+const ordenGiroCiudadSlug = (a: Empresa, b: Empresa) =>
+  a.giroPrincipal.localeCompare(b.giroPrincipal, 'es') || ordenCiudadSlug(a, b);
+const ordenEstadoGiroCiudadSlug = (a: Empresa, b: Empresa) =>
+  a.estado.localeCompare(b.estado, 'es') || ordenGiroCiudadSlug(a, b);
+
+/** Listas estables cacheadas una vez por build para las fichas del directorio. */
+export async function enlacesParaFichaEmpresa(e: Empresa): Promise<EnlacesFichaEmpresa> {
+  const claveGiroEstado = `${e.giroPrincipal}:${e.estado}`;
+  let mismoGiro = ordenesPorGiroEstado.get(claveGiroEstado);
+  if (!mismoGiro) {
+    mismoGiro = (await empresasPorGiroEstado(e.giroPrincipal, e.estado)).sort(ordenCiudadSlug);
+    ordenesPorGiroEstado.set(claveGiroEstado, mismoGiro);
+  }
+  const indiceActual = mismoGiro.findIndex((x) => x.slug === e.slug);
+  const cercanas = indiceActual >= 0 ? vecinosEnAnillo(mismoGiro, indiceActual, 6) : [];
+
+  let otrosDelEstado = ordenesOtrosGirosPorEstado.get(claveGiroEstado);
+  if (!otrosDelEstado) {
+    otrosDelEstado = (await empresasPorEstado(e.estado))
+      .filter((x) => x.giroPrincipal !== e.giroPrincipal)
+      .sort(ordenGiroCiudadSlug);
+    ordenesOtrosGirosPorEstado.set(claveGiroEstado, otrosDelEstado);
+  }
+  const posicion = otrosDelEstado.findIndex((x) => ordenGiroCiudadSlug(x, e) > 0);
+  const conActual = [...otrosDelEstado];
+  conActual.splice(posicion === -1 ? conActual.length : posicion, 0, e);
+  const otrosGiros = vecinosEnAnillo(conActual, conActual.indexOf(e), 4);
+
+  if (!ordenNacionalParaEnlaces) {
+    ordenNacionalParaEnlaces = [...await todasLasEmpresas()].sort(ordenEstadoGiroCiudadSlug);
+  }
+  const indiceNacional = ordenNacionalParaEnlaces.findIndex((x) => x.estado === e.estado && x.slug === e.slug);
+  const nacionales = indiceNacional >= 0 ? vecinosEnAnillo(ordenNacionalParaEnlaces, indiceNacional, 4) : [];
+
+  return { cercanas, otrosGiros, nacionales };
 }
 
 export interface Conteo { slug: string; nombre: string; total: number }

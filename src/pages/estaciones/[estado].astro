@@ -202,6 +202,9 @@ const checkIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
             <a href={`/empresas/estado/${estado.slug}/`} class="btn btn-ghost btn-lg">
               Proveedores de equipo contra incendio en {estado.nombre} →
             </a>
+            <a href={`/cobertura/${estado.slug}/`} class="btn btn-ghost btn-lg">
+              Cobertura en {estado.nombre} →
+            </a>
           </div>
         </div>
 
@@ -584,6 +587,9 @@ const checkIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
           <div class="flex flex-col sm:flex-row gap-3">
             <a href={`/empresas/estado/${estado.slug}/`} class="btn btn-primary">
               Proveedores en {estado.nombre}
+            </a>
+            <a href={`/cobertura/${estado.slug}/`} class="btn btn-ghost">
+              Cobertura en {estado.nombre}
             </a>
             <a href={contactoUrl('Corrección del directorio de estaciones', correccionMsg)} class="btn btn-ghost">
               Corregir datos de una estación

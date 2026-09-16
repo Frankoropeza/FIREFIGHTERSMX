@@ -12,6 +12,7 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { estados as estadosMetaData, estadoPorSlug as metaPorSlug, type EstadoMeta } from '@data/estados';
 import { TIPOS, type TipoEstacion } from '@data/estaciones-config';
+import { vecinosEnAnillo } from '@lib/enlazado';
 
 export type Estacion = CollectionEntry<'estaciones'>['data'];
 
@@ -88,6 +89,17 @@ export async function totalEstaciones(): Promise<number> {
 export async function hermanasDeCorporacion(e: Estacion): Promise<Estacion[]> {
   return (await estacionesPorEstado(e.estado))
     .filter((x) => x.corporacionSlug === e.corporacionSlug && x.slug !== e.slug);
+}
+
+let _ordenNacionalParaEnlaces: Estacion[] | null = null;
+/** Vecinos nacionales estables para que incluso una estación sin pares locales reciba enlaces. */
+export async function vecinasNacionales(e: Estacion, n = 6): Promise<Estacion[]> {
+  if (!_ordenNacionalParaEnlaces) {
+    _ordenNacionalParaEnlaces = [...await todasLasEstaciones()]
+      .sort((a, b) => a.estado.localeCompare(b.estado, 'es') || a.slug.localeCompare(b.slug, 'es'));
+  }
+  const indice = _ordenNacionalParaEnlaces.findIndex((x) => x.estado === e.estado && x.slug === e.slug);
+  return indice >= 0 ? vecinosEnAnillo(_ordenNacionalParaEnlaces, indice, n) : [];
 }
 
 export const urlEstacion = (e: Estacion) => `/estaciones/${e.estado}/${e.slug}/`;

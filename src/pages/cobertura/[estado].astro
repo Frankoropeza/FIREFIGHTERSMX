@@ -13,6 +13,10 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import { estados } from '@data/cobertura';
+import { estados as estadosMeta } from '@data/estados';
+import { empresasPorEstado } from '@lib/empresas';
+import { estadoConEstaciones } from '@lib/estaciones';
+import { vecinosEnAnillo } from '@lib/enlazado';
 import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl } from '@config/site';
 import type { GetStaticPaths } from 'astro';
 
@@ -25,6 +29,17 @@ export const getStaticPaths = (() => {
 
 const { estado } = Astro.props;
 const canonicalURL = `${SITE.url}/cobertura/${estado.slug}/`;
+const metaEstado = estadosMeta.find((e) => e.slug === estado.slug);
+const indiceCobertura = estados.findIndex((e) => e.slug === estado.slug);
+const mismaRegion = metaEstado
+  ? estados.filter((e) => e.slug !== estado.slug && estadosMeta.find((m) => m.slug === e.slug)?.region === metaEstado.region)
+  : [];
+const otrosEstados = [...mismaRegion];
+for (const candidato of vecinosEnAnillo(estados, indiceCobertura, 6)) {
+  if (!otrosEstados.some((e) => e.slug === candidato.slug) && otrosEstados.length < 6) otrosEstados.push(candidato);
+}
+const tieneEmpresas = (await empresasPorEstado(estado.slug)).length > 0;
+const tieneEstaciones = !!(await estadoConEstaciones(estado.slug))?.estaciones.length;
 
 // ── SEO: title (≤60c) y description (≤160c) keyword-first ──────────
 // Patrón: "Equipo Bomberos [Estado] | Distribuidor NFPA | FFMX"
@@ -159,6 +174,8 @@ const waMsg = `Hola, necesito equipo para bomberos en ${estado.name}. ¿Cuál es
               Consultar empresas
             </a>
             <a href="/empresas/" class="btn btn-ghost btn-lg">Directorio nacional</a>
+            {tieneEmpresas && <a href={`/empresas/estado/${estado.slug}/`} class="btn btn-ghost btn-lg">Empresas en {estado.name}</a>}
+            {tieneEstaciones && <a href={`/estaciones/${estado.slug}/`} class="btn btn-ghost btn-lg">Cuerpos de bomberos en {estado.name}</a>}
           </div>
         </div>
 
@@ -344,6 +361,19 @@ const waMsg = `Hola, necesito equipo para bomberos en ${estado.name}. ¿Cuál es
       </dl>
     </div>
   </section>
+
+  {/* ─── Estados relacionados ─── */}
+  {otrosEstados.length > 0 && (
+    <section class="section-tight" style="background:#070E1A;border-top:1px solid rgba(74,117,153,0.12)" aria-labelledby="otros-estados-heading">
+      <div class="container-site">
+        <span class="section-eyebrow mb-4 inline-flex">Cobertura nacional</span>
+        <h2 id="otros-estados-heading" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.5rem,3vw,2.25rem)">Otros estados con cobertura</h2>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15);border-left:1px solid rgba(74,117,153,0.15)">
+          {otrosEstados.map((otro) => <li style="border-bottom:1px solid rgba(74,117,153,0.15);border-right:1px solid rgba(74,117,153,0.15)"><a href={`/cobertura/${otro.slug}/`} class="group flex items-center justify-between gap-4 p-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Cobertura en {otro.name}</span><span style="color:var(--forge-300)">→</span></a></li>)}
+        </ul>
+      </div>
+    </section>
+  )}
 
   {/* ─── CTA de cierre ─── */}
   <section

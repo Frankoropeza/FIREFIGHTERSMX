@@ -8,7 +8,8 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import { tipoConfig, confianzaConfig, capacidadLabel, TELEFONO_EMERGENCIAS } from '@data/estaciones-config';
-import { todasLasParejas, estadosConEstaciones, hermanasDeCorporacion } from '@lib/estaciones';
+import { todasLasParejas, estadosConEstaciones, vecinasNacionales } from '@lib/estaciones';
+import { vecinosEnAnillo } from '@lib/enlazado';
 import { SITE, contactoUrl } from '@config/site';
 import type { GetStaticPaths } from 'astro';
 
@@ -36,13 +37,28 @@ const mapLng: number | null = rawCoord
 const hasMap = mapLat != null && mapLng != null;
 
 /* ── Hermanas: primero los cuarteles de la misma corporación ── */
-const mismaCorporacion = await hermanasDeCorporacion(estacion);
-const restoDelEstado   = estado.estaciones.filter(
-  (e) => e.slug !== estacion.slug && e.corporacionSlug !== estacion.corporacionSlug,
+const corporacionOrdenada = estado.estaciones
+  .filter((e) => e.slug !== estacion.slug && e.corporacionSlug === estacion.corporacionSlug)
+  .sort((a, b) => a.slug.localeCompare(b.slug, 'es'));
+const indiceCorporacion = corporacionOrdenada.findIndex((e) => e.slug > estacion.slug);
+const mismaCorporacion = vecinosEnAnillo(
+  [...corporacionOrdenada.slice(0, indiceCorporacion === -1 ? corporacionOrdenada.length : indiceCorporacion), estacion, ...corporacionOrdenada.slice(indiceCorporacion === -1 ? corporacionOrdenada.length : indiceCorporacion)],
+  indiceCorporacion === -1 ? corporacionOrdenada.length : indiceCorporacion,
+  corporacionOrdenada.length,
 );
+const restoDelEstado = estado.estaciones.filter(
+  (e) => e.slug !== estacion.slug && e.corporacionSlug !== estacion.corporacionSlug,
+).sort((a, b) => a.slug.localeCompare(b.slug, 'es'));
+const indiceActual = restoDelEstado.findIndex((e) => e.slug > estacion.slug);
+const anilloResto = vecinosEnAnillo(
+  [...restoDelEstado.slice(0, indiceActual === -1 ? restoDelEstado.length : indiceActual), estacion, ...restoDelEstado.slice(indiceActual === -1 ? restoDelEstado.length : indiceActual)],
+  indiceActual === -1 ? restoDelEstado.length : indiceActual,
+  restoDelEstado.length,
+);
+const herManasGrid = [...mismaCorporacion, ...anilloResto].slice(0, 6);
+const hermanasSidebar = [...mismaCorporacion, ...anilloResto.filter((e) => !herManasGrid.some((g) => g.slug === e.slug))].slice(0, 8);
 const todasHermanas = [...mismaCorporacion, ...restoDelEstado];
-const hermanasSidebar = todasHermanas.slice(0, 8);
-const herManasGrid    = todasHermanas.slice(0, 6);
+const estacionesNacionales = await vecinasNacionales(estacion);
 
 /* ── Estados de la misma región (interlinking regional) ── */
 const estados = await estadosConEstaciones();
@@ -388,7 +404,7 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
         <li aria-hidden="true" class="opacity-40">/</li>
         <li><a href="/estaciones" class="hover:text-[#FF6B26]">Directorio</a></li>
         <li aria-hidden="true" class="opacity-40">/</li>
-        <li><a href={`/estaciones/${estado.slug}`} class="hover:text-[#FF6B26]">{estado.nombre}</a></li>
+        <li><a href={`/estaciones/${estado.slug}/`} class="hover:text-[#FF6B26]">{estado.nombre}</a></li>
         <li aria-hidden="true" class="opacity-40">/</li>
         <li><span style="color:#CBD5E1" aria-current="page">{estacion.nombre}</span></li>
       </ol>
@@ -468,6 +484,9 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
           <div class="flex flex-col sm:flex-row gap-3">
             <a href={`/empresas/estado/${estado.slug}/`} class="btn btn-primary btn-lg">
               Proveedores en {estado.nombre}
+            </a>
+            <a href={`/cobertura/${estado.slug}/`} class="btn btn-ghost btn-lg">
+              Cobertura en {estado.nombre}
             </a>
             <a href={`/estaciones/${estado.slug}/`} class="btn btn-ghost btn-lg">
               Estaciones de bomberos en {estado.nombre} →
@@ -758,10 +777,16 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                 EPP, recargadoras de extintores, instaladoras de sistemas contra incendio y centros de capacitación
                 de la entidad, con su giro y su fuente.
               </p>
-              <a href={`/empresas/estado/${estado.slug}/`}
-                class="btn btn-primary shrink-0" style="font-size:0.75rem;padding:0.5rem 1.25rem">
-                Proveedores en {estado.nombre} →
-              </a>
+              <div class="flex flex-col sm:flex-row gap-2 shrink-0">
+                <a href={`/empresas/estado/${estado.slug}/`}
+                  class="btn btn-primary shrink-0" style="font-size:0.75rem;padding:0.5rem 1.25rem">
+                  Proveedores en {estado.nombre} →
+                </a>
+                <a href={`/cobertura/${estado.slug}/`}
+                  class="btn btn-ghost shrink-0" style="font-size:0.75rem;padding:0.5rem 1.25rem">
+                  Cobertura en {estado.nombre} →
+                </a>
+              </div>
             </div>
           </section>
 
@@ -1012,7 +1037,7 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                   {hermanasSidebar.map((h, i) => {
                     const hcfg = tipoConfig[h.tipo];
                     return (
-                      <a href={`/estaciones/${estado.slug}/${h.slug}`}
+                      <a href={`/estaciones/${estado.slug}/${h.slug}/`}
                         class="flex items-start gap-3 px-5 py-3 hover:bg-[rgba(74,117,153,0.06)] group"
                         style={i > 0 ? 'border-top:1px solid rgba(74,117,153,0.1)' : ''}>
                         <span class="shrink-0 mt-1 w-1.5 h-1.5 rounded-full" style={`background:${hcfg.color};margin-top:0.35rem`}></span>
@@ -1025,18 +1050,33 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                   })}
                   {todasHermanas.length > 8 && (
                     <div class="px-5 pt-3 pb-4" style="border-top:1px solid rgba(74,117,153,0.1)">
-                      <a href={`/estaciones/${estado.slug}`} class="text-[10px] uppercase tracking-wider hover:text-[#FF6B26]" style="color:var(--forge-300)">
+                      <a href={`/estaciones/${estado.slug}/`} class="text-[10px] uppercase tracking-wider hover:text-[#FF6B26]" style="color:var(--forge-300)">
                         {todasHermanas.length} cuerpos de bomberos en {estado.nombre} →
                       </a>
                     </div>
                   )}
                   {todasHermanas.length <= 8 && (
                     <div class="px-5 pt-3 pb-4" style="border-top:1px solid rgba(74,117,153,0.1)">
-                      <a href={`/estaciones/${estado.slug}`} class="text-[10px] uppercase tracking-wider hover:text-[#FF6B26]" style="color:var(--forge-300)">
+                      <a href={`/estaciones/${estado.slug}/`} class="text-[10px] uppercase tracking-wider hover:text-[#FF6B26]" style="color:var(--forge-300)">
                         Directorio {estado.nombre} →
                       </a>
                     </div>
                   )}
+                </div>
+              </div>
+            )}
+
+            {estacionesNacionales.length > 0 && (
+              <div style="background:#040A12;border:1px solid rgba(74,117,153,0.2);border-top:2px solid #4A7599">
+                <div class="px-5 pt-4 pb-3" style="border-bottom:1px solid rgba(74,117,153,0.12)">
+                  <span class="font-display font-bold text-xs uppercase tracking-widest" style="color:#FFFFFF">Otros cuerpos de bomberos en México</span>
+                </div>
+                <div class="flex flex-col">
+                  {estacionesNacionales.map((nacional, i) => (
+                    <a href={`/estaciones/${nacional.estado}/${nacional.slug}/`} class="flex items-start gap-3 px-5 py-3 hover:bg-[rgba(74,117,153,0.06)] group" style={i > 0 ? 'border-top:1px solid rgba(74,117,153,0.1)' : ''}>
+                      <div class="flex flex-col gap-0.5 min-w-0"><span class="text-xs leading-snug group-hover:text-[#FF6B26] truncate" style="color:#CBD5E1">{nacional.nombre}</span><span class="text-[10px]" style="color:var(--forge-300)">{nacional.ciudad}, {nacional.estado}</span></div>
+                    </a>
+                  ))}
                 </div>
               </div>
             )}
@@ -1077,7 +1117,7 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                 </div>
                 <div class="flex flex-col">
                   {estadosRegion.map((e, i) => (
-                    <a href={`/estaciones/${e.slug}`}
+                    <a href={`/estaciones/${e.slug}/`}
                       class="flex items-center justify-between px-5 py-2.5 hover:bg-[rgba(74,117,153,0.06)] group"
                       style={i > 0 ? 'border-top:1px solid rgba(74,117,153,0.1)' : ''}>
                       <div class="flex flex-col gap-0.5">
@@ -1114,13 +1154,13 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
             style="color:#FFFFFF;font-size:clamp(1.25rem,2.5vw,1.75rem)">
             Más estaciones en <span style="color:#F75000">{estado.nombre}</span>
           </h2>
-          <a href={`/estaciones/${estado.slug}`} class="btn btn-ghost btn-sm shrink-0">Todas las estaciones de {estado.nombre} →</a>
+          <a href={`/estaciones/${estado.slug}/`} class="btn btn-ghost btn-sm shrink-0">Todas las estaciones de {estado.nombre} →</a>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {herManasGrid.map((h) => {
             const hcfg = tipoConfig[h.tipo];
             return (
-              <a href={`/estaciones/${estado.slug}/${h.slug}`}
+              <a href={`/estaciones/${estado.slug}/${h.slug}/`}
                 class="group flex flex-col gap-2 p-4"
                 style={`background:#070E1A;border:1px solid rgba(74,117,153,0.18);border-left:3px solid ${hcfg.color}`}>
                 <span class="font-display text-[9px] uppercase tracking-wider" style={`color:${hcfg.color}`}>{hcfg.label}</span>

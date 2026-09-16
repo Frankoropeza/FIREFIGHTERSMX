@@ -9,7 +9,7 @@ import { giroMap, planConfig, confianzaConfig, INDEXAR_FICHAS_BASICAS } from '@d
 import { allCategories } from '@data/categories';
 import { estadoConEstaciones } from '@lib/estaciones';
 import { relEmpresa } from '@lib/rel-portafolio';
-import { todasLasEmpresas, empresasPorGiroEstado, estadoMeta, urlEmpresa, colonia, type Empresa } from '@lib/empresas';
+import { todasLasEmpresas, enlacesParaFichaEmpresa, estadoMeta, urlEmpresa, colonia, type Empresa } from '@lib/empresas';
 import { urlsLineasDeEmpresa } from '@lib/lineas';
 import type { GetStaticPaths } from 'astro';
 
@@ -66,8 +66,7 @@ const plan = planConfig[e.plan];
 const conf = confianzaConfig[e.confianza];
 const esp = e.especialidades.map((s) => ({ slug: s, label: g.especialidades[s] })).filter((x) => x.label);
 const otrosGiros = e.giros.filter((x) => x !== e.giroPrincipal).map((x) => giroMap[x]);
-const cercanas = (await empresasPorGiroEstado(e.giroPrincipal, e.estado)).filter((x) => x.slug !== e.slug)
-  .sort((a, b) => (a.ciudad === e.ciudad ? -1 : 0) - (b.ciudad === e.ciudad ? -1 : 0)).slice(0, 6);
+const { cercanas, otrosGiros: otrasEmpresasEstado, nacionales: empresasNacionales } = await enlacesParaFichaEmpresa(e);
 const dirEst = await estadoConEstaciones(e.estado);
 const estaciones = dirEst ? dirEst.estaciones.filter((s) => s.ciudad === e.ciudad || s.municipio === e.municipio).slice(0, 4) : [];
 const cats = allCategories.filter((c) => g.categoriasRelacionadas.includes(c.slug)).slice(0, 4);
@@ -307,6 +306,31 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
             <span class="section-eyebrow mb-4 inline-flex">Otras empresas de {g.labelCorto.toLowerCase()} en {edo.nombre}</span>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">{cercanas.map((c) => <EmpresaCard e={c} />)}</div>
             <a href={`/empresas/${e.giroPrincipal}/${e.estado}/`} class="inline-flex mt-5 font-display font-semibold text-xs uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57">Todas las empresas de {g.labelCorto.toLowerCase()} en {edo.nombre} →</a>
+          </div>
+        )}
+
+        {otrasEmpresasEstado.length > 0 && (
+          <div>
+            <span class="section-eyebrow mb-4 inline-flex">Otras empresas en {edo.nombre}</span>
+            <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+              {otrasEmpresasEstado.map((otra) => {
+                const otroGiro = giroMap[otra.giroPrincipal];
+                return <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={urlEmpresa(otra)} class="group flex items-center justify-between gap-4 py-3"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{otra.nombre}</span><span class="text-xs" style="color:#64748B">{otroGiro.labelCorto} en {otra.ciudad}</span></span><span style="color:var(--forge-300)">→</span></a></li>;
+              })}
+            </ul>
+            <div class="flex flex-col gap-2 mt-5">
+              <a href={`/empresas/estado/${e.estado}/`} class="inline-flex font-display font-semibold text-xs uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57">Directorio de empresas en {edo.nombre} →</a>
+              <a href={`/cobertura/${e.estado}/`} class="inline-flex font-display font-semibold text-xs uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57">Cobertura en {edo.nombre} →</a>
+            </div>
+          </div>
+        )}
+
+        {empresasNacionales.length > 0 && (
+          <div>
+            <span class="section-eyebrow mb-4 inline-flex">Otras empresas en México</span>
+            <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+              {empresasNacionales.map((nacional) => <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={urlEmpresa(nacional)} class="group flex items-center justify-between gap-4 py-3"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{nacional.nombre}</span><span class="text-xs" style="color:#64748B">{giroMap[nacional.giroPrincipal].labelCorto} en {nacional.ciudad}</span></span><span style="color:var(--forge-300)">→</span></a></li>)}
+            </ul>
           </div>
         )}
 
