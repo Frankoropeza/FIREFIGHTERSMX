@@ -29,7 +29,7 @@ export const navigation: { main: NavItem[] } = { main: [
         href: "/productos/cascos-nfpa",
         description: "MSA, Bullard, Cairns",
         children: [
-          { label: "MSA Gallet", href: "/productos/cascos-nfpa/msa-gallet", description: "F1 XF · ARFF · USAR · NFPA 1970" },
+          { label: "MSA Gallet", href: "/productos/cascos-nfpa/msa-gallet", description: "F1 XF · cascos estilo jet EN 443" },
           { label: "Bullard",    href: "/productos/cascos-nfpa/bullard",    description: "USTM · ala completa · NFPA 1970" },
           { label: "Cairns",     href: "/productos/cascos-nfpa/cairns",     description: "N6A Houston · cuero · NFPA 1970" },
         ],

@@ -35,12 +35,12 @@ export const brands: Brand[] = [
     description: 'Líder mundial en EPP para bomberos. SCBA, cascos, trajes y detectores de gas.',
     country: '🇺🇸 USA',
     longDesc: [
-      'MSA Safety es el fabricante de referencia en equipos de protección personal para bomberos a nivel mundial. Su SCBA G1 es el estándar de facto en cuerpos de bomberos que exigen telemetría integrada, alarma PASS y cumplimiento NFPA 1970. El casco Gallet F1 XF, de estilo europeo integral, es el más solicitado en cuerpos metropolitanos y aeropuertos ARFF por su visor retráctil y módulo de comunicación.',
+      'MSA Safety es un fabricante de equipos de protección personal para bomberos. Su SCBA G1 es el estándar de facto en cuerpos de bomberos que exigen telemetría integrada, alarma PASS y cumplimiento NFPA 1970. El casco Gallet F1 XF, de estilo europeo integral, se utiliza en cuerpos metropolitanos y aeropuertos ARFF por su visor retráctil y módulo de comunicación.',
       'Somos distribuidores autorizados MSA Safety en México. Cada equipo se entrega con número de serie verificable, certificado de laboratorio acreditado y carta de fabricante — documentación lista para anexo técnico de licitación CompraNet, auditoría STPS y expediente de Protección Civil.',
     ],
     products: [
       { name: 'MSA G1 SCBA', detail: 'SCBA NFPA 1970 con telemetría integrada, EOSTI y alarma PASS. Cilindros 30/45/60 min a 4 500 psi.' },
-      { name: 'MSA Gallet F1 XF', detail: 'Casco integral NFPA 1970 con visor retráctil, protección nucal y módulo de lámpara.' },
+      { name: 'MSA Gallet F1 XF', detail: 'Casco integral con visor retráctil, protección nucal y módulo de lámpara.' },
       { name: 'MSA Altair 4X', detail: 'Detector de gases multigas para entrada en recintos confinados y búsqueda en interior.' },
       { name: 'Repuestos y refacciones MSA', detail: 'Cilindros de repuesto, piezas faciales, reguladores y kits de mantenimiento originales.' },
     ],
@@ -92,7 +92,7 @@ export const brands: Brand[] = [
     description: 'El fabricante #1 de trajes estructurales para bomberos en Norteamérica.',
     country: '🇺🇸 USA',
     longDesc: [
-      'Globe Manufacturing es el fabricante de trajes estructurales más grande de Norteamérica y la marca de referencia para cuerpos de bomberos que exigen cumplimiento NFPA 1970 con diseño a medida. Su modelo GX-7 combina tela exterior PBI/Kevlar NXT, barrera de humedad Crosstech y forro térmico, con costuras de doble aguja y trim reflejante 3M Scotchlite.',
+      'Globe Manufacturing es un fabricante de trajes estructurales de Norteamérica y la marca de referencia para cuerpos de bomberos que exigen cumplimiento NFPA 1970 con diseño a medida. Su modelo GX-7 combina tela exterior PBI/Kevlar NXT, barrera de humedad Crosstech y forro térmico, con costuras de doble aguja y trim reflejante 3M Scotchlite.',
       'En FIREFIGHTERS MX distribuimos trajes Globe con toma de medidas directa en estación, stock permanente en tallas S–4XL y programa de inspección avanzada y lavado técnico certificado NFPA 1850. Ideales para licitaciones que exigen certificado de laboratorio acreditado y carta de fabricante.',
     ],
     products: [
@@ -134,7 +134,7 @@ export const brands: Brand[] = [
       'En FIREFIGHTERS MX distribuimos cascos Bullard con escudo frontal personalizado para tu cuerpo de bomberos, refacciones originales (visores, suspensiones, escudos) y soporte técnico. Ideales para licitaciones que exigen NFPA 1970 con certificado de laboratorio acreditado.',
     ],
     products: [
-      { name: 'Bullard USTM', detail: 'Casco tradicional americano en fibra de vidrio termoendurecida NFPA 1970. El más vendido.' },
+      { name: 'Bullard USTM', detail: 'Casco tradicional americano en fibra de vidrio termoendurecida NFPA 1970. Modelo de la línea Bullard.' },
       { name: 'Bullard USTERM', detail: 'Versión mejorada del USTM con cubierta exterior de mayor resistencia térmica.' },
       { name: 'Bullard T3 Max TIC', detail: 'Cámara de imagen térmica de alta resolución para búsqueda en interior.' },
       { name: 'Accesorios y refacciones Bullard', detail: 'Visores, escudos frontales personalizados, suspensiones y guarniciones de repuesto.' },
@@ -168,7 +168,7 @@ export const brands: Brand[] = [
     description: 'Extintores, sistemas de supresión y alarmas para mercado comercial e industrial.',
     country: '🇺🇸 USA',
     longDesc: [
-      'Kidde, parte de UTC (United Technologies), es uno de los fabricantes más grandes del mundo en extintores portátiles y sistemas de supresión. Sus extintores PQS, CO₂ y Clase K son de los más utilizados en comercio, industria y gobierno por su disponibilidad, precio y soporte de servicio.',
+      'Kidde, parte de UTC (United Technologies), es un fabricante internacional en extintores portátiles y sistemas de supresión. Sus extintores PQS, CO₂ y Clase K son de los más utilizados en comercio, industria y gobierno por su disponibilidad, precio y soporte de servicio.',
       'Distribuimos extintores Kidde y accesorios con mantenimiento y recarga conforme a NOM-154-SCFI-2005, entregando ficha técnica y constancia de servicio lista para expediente ante Protección Civil y STPS.',
     ],
     products: [
@@ -206,7 +206,7 @@ export const brands: Brand[] = [
     description: 'Fabricante global de extintores, equipos CI y vehículos bomberos.',
     country: '🇦🇪 EAU',
     longDesc: [
-      'NAFFCO (National Fire Fighting Manufacturing) es el mayor fabricante de equipos contra incendio de Oriente Medio y uno de los más grandes a nivel mundial. Su catálogo abarca extintores portátiles, sistemas de rociadores, gabinetes, mangueras, vehículos contra incendio y equipo de respuesta de emergencia.',
+      'NAFFCO (National Fire Fighting Manufacturing) es un fabricante de equipos contra incendio de Oriente Medio. Su catálogo abarca extintores portátiles, sistemas de rociadores, gabinetes, mangueras, vehículos contra incendio y equipo de respuesta de emergencia.',
       'Distribuimos extintores NAFFCO y accesorios de sistemas CI en México, con relación calidad-precio competitiva para proyectos de gran volumen y equipamiento de estaciones.',
     ],
     products: [
@@ -263,7 +263,7 @@ export const brands: Brand[] = [
     description: 'Trajes estructurales y de proximidad, capas y prendas de protección.',
     country: '🇺🇸 USA',
     longDesc: [
-      'Lion Apparel es el segundo fabricante de trajes estructurales para bomberos más grande de Norteamérica. Su línea TechGen es reconocida por la combinación de protección térmica, transpirabilidad y durabilidad en condiciones de combate interior. También fabrica trajes de proximidad y ropa de estación.',
+      'Lion Apparel es un fabricante de trajes estructurales para bomberos de Norteamérica. Su línea TechGen es reconocida por la combinación de protección térmica, transpirabilidad y durabilidad en condiciones de combate interior. También fabrica trajes de proximidad y ropa de estación.',
       'Distribuimos trajes Lion en México con toma de medidas, stock permanente y programa de inspección NFPA 1850 — la segunda opción premium junto a Globe para cuerpos que requieren variedad de fabricante en licitaciones.',
     ],
     products: [
@@ -288,7 +288,7 @@ export const brands: Brand[] = [
     products: [
       { name: 'Cairns N6A Houston (cuero)', detail: 'Casco de cuero americano clásico. El favorito de cuerpos con tradición. Personalizable.' },
       { name: 'Cairns 1010 Composite', detail: 'Casco de fibra de vidrio americano NFPA 1970. Ala completa, escudo frontal desmontable.' },
-      { name: 'Cairns 660 Boston', detail: 'Casco de cuero más ligero, diseño compacto para cuerpos con preferencia de peso reducido.' },
+      { name: 'Cairns 660 Boston', detail: 'Casco de cuero de diseño compacto para cuerpos con preferencia de peso reducido.' },
       { name: 'Accesorios y escudos Cairns', detail: 'Escudos frontales personalizados con el nombre y número de tu estación.' },
     ],
     norms: ['NFPA 1970'],

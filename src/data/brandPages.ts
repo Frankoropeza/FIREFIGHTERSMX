@@ -304,7 +304,7 @@ export const categoriaMarca: Record<string, CategoriaMeta> = {
       { key: 'ideal', label: 'Ideal para' },
     ],
     conjunto: [
-      { label: 'Cascos NFPA', desc: 'MSA Gallet, Bullard y Cairns — NFPA 1970', href: '/productos/cascos-nfpa' },
+      { label: 'Cascos NFPA', desc: 'MSA Gallet F1 XF EN 443, Bullard y Cairns', href: '/productos/cascos-nfpa' },
       { label: 'Equipos SCBA', desc: 'MSA G1, Dräger y 3M Scott — aire autónomo', href: '/productos/equipos-scba' },
       { label: 'Mantenimiento y vida útil', desc: 'Lavado, reparación e inspección NFPA 1850', href: '/servicios/mantenimiento' },
       { label: 'Normas y certificaciones', desc: 'NFPA 1970, 1950 y 1850 explicadas', href: '/certificaciones' },
@@ -358,7 +358,7 @@ export const categoriaMarca: Record<string, CategoriaMeta> = {
       { key: 'ideal', label: 'Ideal para' },
     ],
     conjunto: [
-      { label: 'Cascos NFPA', desc: 'MSA Gallet, Bullard y Cairns — NFPA 1970', href: '/productos/cascos-nfpa' },
+      { label: 'Cascos NFPA', desc: 'MSA Gallet F1 XF EN 443, Bullard y Cairns', href: '/productos/cascos-nfpa' },
       { label: 'Trajes para Bomberos', desc: 'Globe, Lion, Honeywell, Fire-Dex y Sköld — NFPA 1970', href: '/productos/trajes-bombero' },
       { label: 'Equipos SCBA', desc: 'MSA G1, Dräger y 3M Scott — aire autónomo', href: '/productos/equipos-scba' },
       { label: 'Capacitación y demostración', desc: 'Operación y mantenimiento NFPA 1936', href: '/servicios/capacitacion' },
@@ -441,7 +441,7 @@ export const categoriaMarca: Record<string, CategoriaMeta> = {
 
 /* ── Registro de marcas + helpers ──────────────────────────────────────────── */
 const cascosCrossDesc: Record<string, string> = {
-  'msa-gallet': 'Estilo europeo integral · F1 XF · visor retráctil · NFPA 1970',
+  'msa-gallet': 'Estilo jet EN 443 · F1 XF · visor retráctil',
   'bullard': 'Estilo americano de ala completa · USTM · TIC · NFPA 1970',
   'cairns': 'Cuero icónico desde 1836 · N6A Houston · NFPA 1970',
 };

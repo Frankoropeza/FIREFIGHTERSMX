@@ -11,8 +11,8 @@ const cat = categories.find((c) => c.slug === 'cascos-nfpa')!;
 const canonicalURL = `${SITE.url}/productos/cascos-nfpa/`;
 
 const seoMeta = {
-  title: 'Cascos para Bomberos NFPA 1970 — MSA Gallet, Bullard, Cairns · México',
-  description: 'Catálogo completo de cascos para bomberos certificados NFPA 1970 y 1950 en México. MSA Gallet F1 XF, Bullard USTM/USTERM y Cairns N6A Houston. Distribuidor autorizado · stock CDMX · fichas para licitación.',
+  title: 'Casco de bombero: tipos, NFPA 1970 y marcas — MSA, Bullard, Dräger',
+  description: 'Cascos de bombero estructurales, de rescate y forestales: tipos, certificación NFPA 1970 y EN 443, materiales, accesorios y marcas MSA Cairns, Bullard y Dräger.',
   canonicalURL,
 };
 
@@ -57,7 +57,6 @@ const tipos = [
 const comparativa = [
   { caract: 'Construcción',      europeo: 'Termoplástico/fibra de vidrio',    americano: 'Composite / cuero',              forestal: 'Termoplástico ventilado' },
   { caract: 'Protección facial', europeo: 'Visor retráctil interno + ocular',  americano: 'Escudo frontal + goggles ext.',  forestal: 'Goggles independientes' },
-  { caract: 'Peso aprox.',       europeo: '1.3–1.6 kg',                        americano: '1.5–1.8 kg',                    forestal: '0.4–0.6 kg' },
   { caract: 'Protección nucal',  europeo: 'Integrada articulada',              americano: 'Ala trasera completa',           forestal: 'Cubrenuca textil' },
   { caract: 'Accesorios',        europeo: 'Lámpara · comunicación · TIC',      americano: 'Escudo personalizable · lámpara', forestal: 'Goggles · capucha' },
   { caract: 'Norma',             europeo: 'NFPA 1970',                         americano: 'NFPA 1970',                     forestal: 'NFPA 1950' },
@@ -120,7 +119,7 @@ const faqs = [
   },
   {
     q: '¿Son compatibles con SCBA y cámara térmica?',
-    a: 'Para verificar la compatibilidad entre un casco y un SCBA, consulta las fichas técnicas de ambos modelos. El 3M Scott Air-Pak X3 Pro está certificado NFPA 1970 (2025) por SEI con aprobación NIOSH.',
+    a: 'Para verificar la compatibilidad entre un casco y un SCBA, consulta las fichas técnicas de ambos modelos. El 3M Scott Air-Pak X3 Pro está certificado NFPA 1970 por SEI con aprobación NIOSH.',
   },
   {
     q: '¿Entregan ficha técnica y certificado para licitación pública?',
@@ -189,8 +188,8 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
         <div>
           <span class="section-eyebrow mb-5 inline-flex">{cat.norm} · MSA Gallet · Bullard · Cairns · Distribuidor Autorizado MX</span>
           <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
-            Cascos para<br/>
-            <span style="color:#F75000">Bomberos NFPA.</span>
+            Casco de bombero<br/>
+            <span style="color:#F75000">cascos para bomberos estructurales, de rescate y forestales.</span>
           </h1>
           <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
             Distribuidor autorizado de MSA Gallet, Bullard y Cairns en México. Stock permanente
@@ -218,6 +217,66 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
       </div>
     </div>
     <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)" aria-hidden="true"></div>
+  </section>
+
+  <section id="guia-cascos" class="section" style="background:#040A12" aria-labelledby="guia-cascos-title">
+    <div class="container-site content-copy">
+      <div class="section-head mb-5">
+        <h2 id="guia-cascos-title">¿Cómo se llama el casco de los bomberos y para qué sirve?</h2>
+      </div>
+      <p class="mb-8">El casco de bombero es el equipo de protección de la cabeza que forma parte del traje de protección personal del bombero. Está diseñado para resistir el impacto y la caída de objetos, el calor y las llamas, y para integrarse con el equipo de respiración, la máscara, la protección ocular, la linterna y los sistemas de comunicación. Suministramos cascos para servicios de bomberos de MSA Cairns, MSA Gallet, Bullard y Dräger.</p>
+
+      <div class="section-head mt-14 mb-5">
+        <h2>Tipos de cascos de bombero</h2>
+      </div>
+      <div class="overflow-x-auto mb-8">
+        <table class="w-full text-left text-sm" style="border-collapse:collapse;min-width:640px;color:#CBD5E1">
+          <thead>
+            <tr>
+              <th class="p-3" style="background:#0C1825;color:#FFFFFF">Tipo de casco</th>
+              <th class="p-3" style="background:#0C1825;color:#FFFFFF">Diseño</th>
+              <th class="p-3" style="background:#0C1825;color:#FFFFFF">Uso</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Tradicional o americano</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Ala larga que desvía el agua y los escombros; en cuero o compuesto</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Combate estructural</td></tr>
+            <tr><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Moderno</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Perfil más compacto y ligero con visor integrado</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Combate estructural y rescate</td></tr>
+            <tr><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Estilo jet (europeo)</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Casco integral con visor y protección ocular retráctiles</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Incendio y rescate</td></tr>
+            <tr><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Cascos de rescate</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Ligeros y ventilados</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Salvamento, rescate vehicular y técnico</td></tr>
+            <tr><td class="p-3">Forestal</td><td class="p-3">Ligero y ventilado para jornadas largas</td><td class="p-3">Extinción de incendios forestales</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section-head mt-14 mb-5"><h2>Certificaciones: NFPA 1970 y EN 443</h2></div>
+      <p>En América, los cascos estructurales se certifican conforme a la NFPA 1970, la norma que desde 2024 consolidó la antigua NFPA 1971. La certificación la otorga un tercero; por ejemplo, el Bullard UST LowRider está certificado NFPA 1970 (edición 2025) por el Safety Equipment Institute (SEI). Los cascos estilo jet europeos, como el MSA Gallet F1 XF y el Dräger HPS 7000, se certifican con la norma europea EN 443. Elige la certificación que pida tu cuerpo de bomberos o tu licitación y verifica la etiqueta del casco.</p>
+
+      <div class="section-head mt-14 mb-5"><h2>Materiales y características de protección</h2></div>
+      <ul class="list-disc pl-6 space-y-2 text-sm leading-relaxed" style="color:#CBD5E1">
+        <li><strong>Coraza:</strong> termoplástico, compuesto de fibra o cuero, resistente al impacto y al calor.</li>
+        <li><strong>Suspensión y arnés:</strong> ajustan el casco a la cabeza y amortiguan el golpe.</li>
+        <li><strong>Cubrenuca y orejeras:</strong> protegen orejas y cuello del calor; deben bajarse al usar el casco.</li>
+        <li><strong>Visor o goggles:</strong> protección ocular frente a partículas y calor.</li>
+        <li><strong>Accesorios:</strong> soporte de linterna, insignia o emblema frontal, cintas de visibilidad y adaptadores para la máscara del equipo de respiración.</li>
+      </ul>
+
+      <div class="section-head mt-14 mb-5"><h2>Marcas de cascos de bombero</h2></div>
+      <ul class="list-disc pl-6 space-y-2 text-sm leading-relaxed" style="color:#CBD5E1">
+        <li><strong>MSA Cairns:</strong> marca fundada en 1836 y parte de MSA desde 2000; su N6A Houston fue el primer casco de cuero aprobado por NFPA.</li>
+        <li><strong>Bullard:</strong> fabricante estadounidense fundado en 1898, con sede en Cynthiana, Kentucky.</li>
+        <li><strong>MSA Gallet:</strong> cascos estilo jet con certificación EN 443.</li>
+        <li><strong>Dräger:</strong> casco HPS 7000 con certificación EN 443.</li>
+      </ul>
+
+      <div class="section-head mt-14 mb-5"><h2>¿Qué significan los colores de los cascos de bomberos?</h2></div>
+      <p>No existe un código de colores único en México: cada cuerpo de bomberos define el color según el rango o la función, por ejemplo para distinguir mandos, oficiales y bomberos. Te ayudamos a configurar el color, la insignia y la personalización de tu flota.</p>
+
+      <div class="section-head mt-14 mb-5"><h2>Vida útil y mantenimiento</h2></div>
+      <p>La NFPA 1850 (edición 2026) indica retirar los elementos del equipo estructural, incluido el casco, a más tardar 10 años después de su fabricación. Inspecciona el casco después de cada uso: grietas, deformaciones, suspensión, barboquejo y visor.</p>
+
+      <div class="section-head mt-14 mb-5"><h2>¿Cuánto cuesta un casco de bombero?</h2></div>
+      <p>El precio depende del tipo y el material, la certificación y los accesorios. Cotizamos el casco con su configuración completa para que compares modelos equivalentes.</p>
+    </div>
   </section>
 
   {/* ══ QUICK LINKS ═════════════════════════════════════════════════════ */}
@@ -286,7 +345,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
           <span class="section-eyebrow mb-4 inline-flex">MSA Safety · Gallet · Distribuidor Autorizado MX</span>
           <h2 id="msa-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Cascos MSA Gallet<br/>
-            <span style="color:#F75000">certificados NFPA.</span>
+            <span style="color:#F75000">cascos estilo jet EN 443.</span>
           </h2>
         </div>
         <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
@@ -294,7 +353,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
             MSA Safety cotiza en la Bolsa de Nueva York (NYSE: MSA).
           </p>
           <div class="flex flex-wrap gap-2">
-            {['NFPA 1970','NFPA 1950','Fibra de vidrio','Optrel retráctil','MSA Safety · NYSE','Distribuidor autorizado MX'].map(b => (
+            {['EN 443','EN 14458','MSA Safety · NYSE','Distribuidor autorizado MX'].map(b => (
               <span class="badge badge-dark text-[9px]">{b}</span>
             ))}
           </div>
@@ -314,12 +373,12 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
             o cotizar con ficha para licitación? Accede al catálogo dedicado de la marca.
           </p>
         </div>
-        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+        <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/cascos-nfpa/msa-gallet" class="btn btn-primary btn-lg">
             Catálogo MSA Gallet completo →
           </a>
           <a
-            href={whatsappUrl('Hola, quiero cotizar cascos MSA Gallet F1 XF NFPA 1970.')}
+            href={whatsappUrl('Hola, quiero cotizar cascos MSA Gallet F1 XF EN 443.')}
             target="_blank" rel="noopener"
             class="btn btn-ghost btn-lg"
           >
@@ -371,7 +430,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
             o cotizar con ficha para licitación? Accede al catálogo dedicado de la marca.
           </p>
         </div>
-        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+        <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/cascos-nfpa/bullard" class="btn btn-primary btn-lg">
             Catálogo Bullard completo →
           </a>
@@ -402,7 +461,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
         </div>
         <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
           <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
-            Cairns es la marca de cascos para bomberos más antigua de América — fundada en Nueva York
+            Cairns fue fundada en 1836 y forma parte de MSA desde 2000
             en 1836. El N6A Houston en cuero y polipropileno es el casco más reconocible del servicio
             en el continente. El 1010 Composite lleva el ADN Cairns a materiales modernos con visor
             retráctil integrado. Ambos certificados NFPA 1970 vigente.
@@ -428,7 +487,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
             o cotizar con ficha para licitación? Accede al catálogo dedicado de la marca.
           </p>
         </div>
-        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+        <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/cascos-nfpa/cairns" class="btn btn-primary btn-lg">
             Catálogo Cairns completo →
           </a>
@@ -526,7 +585,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
       </div>
 
       <p class="mt-4 text-xs" style="color:var(--forge-300)">
-        * Todos los modelos estructurales cumplen NFPA 1970. El forestal cumple NFPA 1950. Valores de peso son aproximados por configuración.
+        * Verifica la configuración del casco en la ficha técnica del fabricante.
       </p>
 
     </div>
@@ -629,7 +688,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
             Certificado NFPA.<br/>Entrega en 48 h.
           </h2>
         </div>
-        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+        <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a
             href={whatsappUrl('Hola, quiero cotizar cascos para bomberos NFPA 1970. ¿Tienen stock disponible?')}
             target="_blank" rel="noopener"

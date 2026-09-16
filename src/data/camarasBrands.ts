@@ -237,7 +237,7 @@ const bullardTxs: EquipmentBrand = {
     'La Bullard TXS combina la mejor pantalla de la marca con su interfaz característica y el montaje en casco nativo. Estos seis elementos explican por qué es la opción de los cuerpos que valoran la simplicidad y ya operan cascos Bullard.',
   anatomia: [
     { t: 'Sensor microbolómetro', d: 'Convierte la radiación infrarroja en imagen térmica con rango de -20 a 650 °C, cubriendo desde la víctima hasta el fuego en combate estructural.' },
-    { t: 'Pantalla de 3.5" alta resolución', d: 'La pantalla más grande y brillante de la gama Bullard, legible en humo y a plena luz, con modos de color para búsqueda y sobrehaul.' },
+    { t: 'Pantalla de 3.5" alta resolución', d: 'La pantalla amplia y brillante de la gama Bullard, legible en humo y a plena luz, con modos de color para búsqueda y sobrehaul.' },
     { t: 'Interfaz intuitiva', d: 'El sello Bullard: operación de un botón con la curva de aprendizaje más corta del mercado, pensada para usarse con guante y bajo estrés sin menús complejos.' },
     { t: 'Montaje en casco nativo', d: 'Diseñado de fábrica para acoplarse al casco Bullard, libera las manos del bombero — una ventaja única para corporaciones que ya operan cascos de la marca.' },
     { t: 'Mango ergonómico intercambiable', d: 'Empuñadura cómoda y reemplazable que facilita el agarre con guante y el mantenimiento de la cámara a lo largo de su vida útil.' },

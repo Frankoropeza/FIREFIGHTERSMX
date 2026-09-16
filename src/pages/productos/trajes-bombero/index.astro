@@ -11,8 +11,8 @@ const cat = trajesBombero;
 const canonicalURL = `${SITE.url}/productos/trajes-bombero/`;
 
 const seoMeta = {
-  title: `Trajes para Bomberos NFPA 1970 y 1950 — 5 marcas en MX`,
-  description: cat.description,
+  title: 'Traje de bombero NFPA 1970: tipos, capas y certificación',
+  description: 'Trajes de bombero estructurales, de proximidad y forestales: qué incluye, capas, TPP y THL, certificación NFPA 1970 (antes 1971), vida útil y marcas Globe y LION.',
   canonicalURL,
 };
 
@@ -84,7 +84,7 @@ const modelos = [
     title: 'Lion TechGen / V-Force',
     norm: 'NFPA 1970',
     brand: 'Lion',
-    desc: 'Estructural de uso intensivo con excelente THL y opciones de protección CBRN. Disponible bajo pedido con asesoría de tallaje.',
+    desc: 'Estructural de uso intensivo con opciones de protección CBRN. Disponible bajo pedido con asesoría de tallaje.',
     href: whatsappUrl('Hola, quiero cotizar trajes Lion TechGen NFPA 1970.'),
     cta: 'Cotizar',
     external: true,
@@ -112,7 +112,6 @@ const modelos = [
 /* Tabla comparativa */
 const comparativa = [
   ['Capas', '3 (shell + humedad + térmica)', '3 + shell aluminizado', '1 (monocapa FR)'],
-  ['Peso aprox.', '4–5 kg', '5–6 kg', '1.5–2.5 kg'],
   ['Protección radiante', 'Alta', 'Muy alta (reflejante)', 'Moderada'],
   ['Transpirabilidad', 'Baja', 'Baja', 'Alta'],
   ['Escenario', 'Incendio en edificio', 'Combustibles · ARFF', 'Vegetación · interfaz'],
@@ -122,7 +121,7 @@ const comparativa = [
 /* Guía de selección */
 const guia = [
   { n: '01', t: 'Define el escenario dominante: estructura, aproximación a combustible o incendio forestal. La norma correcta (1970 o 1977) sale de ahí.' },
-  { n: '02', t: 'Exige certificación de tercera parte acreditada y la hoja de datos con valores THL y TPP del modelo exacto.' },
+  { n: '02', t: 'Exige certificación de tercera parte acreditada y verifica que el traje estructural cumpla con TPP ≥ 35 y THL ≥ 205 W/m² (mínimos NFPA).' },
   { n: '03', t: 'Verifica que la capucha incluya bloqueo de partículas — obligatorio bajo NFPA 1970.' },
   { n: '04', t: 'Asegura tallaje S–4XL con asesoría de ajuste y el programa de inspección y mantenimiento NFPA 1850.' },
 ];
@@ -142,7 +141,7 @@ const faqs = [
   { q: '¿Cuánto dura un traje de bombero?', a: 'La NFPA 1850 establece un retiro máximo a los 10 años desde la fecha de fabricación, sin importar su apariencia. Antes de ese límite, se retira si hay daño, contaminación irreversible o falla de la barrera de humedad.' },
   { q: '¿Qué tallas manejan y hacen ajuste a medida?', a: 'Manejamos tallas S–4XL con asesoría de ajuste. Para pedidos por volumen ofrecemos configuraciones a medida y entrega en 24–48 h en CDMX desde stock permanente.' },
   { q: '¿Cuál es la diferencia entre traje estructural y de proximidad?', a: 'El estructural es para entrar al fuego en edificios; el de proximidad añade una capa aluminizada que refleja el calor radiante para aproximarse a fuegos de combustible (ARFF, refinerías) sin entrar directamente a la llama.' },
-  { q: '¿Entregan ficha técnica para licitación?', a: 'Sí. Cada traje incluye certificado de conformidad, ficha técnica del fabricante con THL/TPP y, para concursos públicos, el manifiesto de cumplimiento de norma por partida.' },
+  { q: '¿Entregan ficha técnica para licitación?', a: 'Sí. Cada traje incluye certificado de conformidad, ficha técnica del fabricante y, para concursos públicos, el manifiesto de cumplimiento de norma por partida.' },
 ];
 
 /* ─── JSON-LD ──────────────────────────────────────────────── */
@@ -229,8 +228,8 @@ const razones = [
         <div>
           <span class="section-eyebrow mb-5 inline-flex">{cat.norm}</span>
           <h1 class="font-display font-bold uppercase mb-4" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
-            Trajes para<br/>
-            <span style="color:#F75000">Bomberos</span>
+            Traje de bombero<br/>
+            <span style="color:#F75000">trajes de protección para bomberos NFPA 1970.</span>
           </h1>
           <p class="text-base leading-relaxed mb-8 max-w-xl" style="color:#94A3B8">
             Distribuidores autorizados de Globe Manufacturing, Lion Apparel, Honeywell Morning Pride
@@ -256,6 +255,100 @@ const razones = [
       </div>
     </div>
     <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)" aria-hidden="true"></div>
+  </section>
+
+  <section id="guia-trajes" class="section" style="background:#040A12" aria-labelledby="guia-trajes-title">
+    <div class="container-site content-copy">
+      <div class="section-head mb-5">
+        <h2 id="guia-trajes-title">¿Cómo se llama el traje que usan los bomberos?</h2>
+      </div>
+      <p class="mb-8">El traje de bombero, también llamado equipo de protección personal o traje estructural, es la chaqueta y el pantalón que protegen al bombero del calor, las llamas, el vapor y el agua durante el combate de incendios. Se completa con casco, capucha, guantes, botas y el equipo de respiración autónoma. Suministramos trajes de bombero profesional Globe y LION para cuerpos de bomberos, brigadas industriales y brigadistas en México.</p>
+
+      <div class="section-head mt-14 mb-5">
+        <h2>¿Qué incluye un traje de bombero?</h2>
+      </div>
+      <ul class="list-disc pl-6 space-y-2 text-sm leading-relaxed" style="color:#CBD5E1">
+        <li><strong>Chaqueta y pantalón:</strong> las dos piezas del traje, con cierres, refuerzos y cintas de alta visibilidad.</li>
+        <li><strong>Casco:</strong> protección de la cabeza contra impacto y calor.</li>
+        <li><strong>Capucha:</strong> protege cuello y rostro entre la máscara y la chaqueta.</li>
+        <li><strong>Guantes y botas:</strong> completan la protección térmica de manos y pies.</li>
+        <li><strong>Equipo de respiración:</strong> máscara y SCBA para atmósferas con humo.</li>
+      </ul>
+
+      <div class="section-head mt-14 mb-5">
+        <h2>Capas del traje de bombero estructural</h2>
+      </div>
+      <div class="overflow-x-auto mb-8">
+        <table class="w-full text-left text-sm" style="border-collapse:collapse;min-width:640px;color:#CBD5E1">
+          <thead>
+            <tr>
+              <th class="p-3" style="background:#0C1825;color:#FFFFFF">Capa</th>
+              <th class="p-3" style="background:#0C1825;color:#FFFFFF">Función</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Capa externa</td>
+              <td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Resiste llamas, abrasión y cortes; es la primera barrera contra el calor</td>
+            </tr>
+            <tr>
+              <td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Barrera de humedad</td>
+              <td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Impide el paso de agua, vapor y líquidos, y permite la transpiración</td>
+            </tr>
+            <tr>
+              <td class="p-3">Barrera térmica</td>
+              <td class="p-3">Aísla del calor para proteger la piel</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Las fibras resistentes al calor como las aramidas (Nomex y Kevlar, entre otras) son la base de estos materiales. Cada fabricante diseña el traje para equilibrar protección, movilidad y confort del usuario: cortes articulados en rodillas y codos, pantalón con tirantes, refuerzos resistentes en zonas de desgaste y cintas reflejantes para la visibilidad.</p>
+
+      <div class="section-head mt-14 mb-5">
+        <h2>Cómo elegir un traje de bombero profesional</h2>
+      </div>
+      <ol class="list-decimal pl-6 space-y-2 text-sm leading-relaxed" style="color:#CBD5E1">
+        <li>Define el tipo de combate: estructural, proximidad, forestal o rescate.</li>
+        <li>Pide la certificación vigente en la etiqueta y el certificado del laboratorio.</li>
+        <li>Mide a cada bombero: la talla correcta evita zonas sin protección y mejora la movilidad.</li>
+        <li>Verifica la compatibilidad con casco, capucha, guantes, botas y equipo de respiración.</li>
+        <li>Planea el mantenimiento, la limpieza y el reemplazo.</li>
+      </ol>
+
+      <div class="section-head mt-14 mb-5">
+        <h2>Tipos de trajes de bombero</h2>
+      </div>
+      <ul class="list-disc pl-6 space-y-2 text-sm leading-relaxed" style="color:#CBD5E1">
+        <li><strong>Estructural:</strong> para combate de incendios en edificios; es el traje más completo.</li>
+        <li><strong>Proximidad o aluminizado:</strong> con capa exterior reflectiva para el calor radiante, como en rescate aeroportuario (ARFF) e industria.</li>
+        <li><strong>Forestal:</strong> ligero y transpirable para incendios forestales y jornadas largas.</li>
+        <li><strong>Rescate:</strong> diseñado para movilidad en rescate técnico y vehicular.</li>
+        <li><strong>Químico (HAZMAT):</strong> para materiales peligrosos; se rige por otra norma, la NFPA 1990.</li>
+      </ul>
+
+      <div class="section-head mt-14 mb-5">
+        <h2>Certificación: de NFPA 1971 a NFPA 1970</h2>
+      </div>
+      <p>La NFPA 1970 consolidó en 2024 las normas de trajes estructurales y de proximidad (antes NFPA 1971, cuya última edición fue la NFPA 1971-2018), trajes de trabajo, SCBA y PASS. El traje estructural debe cumplir TPP ≥ 35 y THL ≥ 205 W/m² (mínimos NFPA), que miden la protección térmica y la capacidad del conjunto para dejar salir el calor corporal. La edición 2025 añadió una certificación independiente de sustancias restringidas, como los PFAS. La certificación la otorga un laboratorio de tercera parte, como UL o SEI, y se identifica en la etiqueta de cada prenda.</p>
+
+      <div class="section-head mt-14 mb-5">
+        <h2>Vida útil y mantenimiento</h2>
+      </div>
+      <p>La NFPA 1850 (edición 2026) indica retirar el traje estructural a más tardar 10 años después de su fabricación, y la capa reflectiva de los trajes de proximidad a más tardar a los 5 años. Inspecciona el traje después de cada uso y límpialo conforme al fabricante para eliminar contaminantes.</p>
+
+      <div class="section-head mt-14 mb-5">
+        <h2>Marcas de trajes para bomberos</h2>
+      </div>
+      <ul class="list-disc pl-6 space-y-2 text-sm leading-relaxed" style="color:#CBD5E1">
+        <li><strong>Globe:</strong> fundada en 1887 en Pittsfield, New Hampshire; parte de MSA desde 2017.</li>
+        <li><strong>LION:</strong> fabricante con sede en Dayton, Ohio.</li>
+      </ul>
+
+      <div class="section-head mt-14 mb-5">
+        <h2>¿Cuánto cuesta un traje de bombero?</h2>
+      </div>
+      <p>El precio depende del tipo de traje, los materiales de cada capa, la certificación, las tallas y los accesorios. Cotizamos por conjunto completo para que tu corporación compare trajes equivalentes.</p>
+    </div>
   </section>
 
   <!-- Accesos rápidos -->
@@ -355,7 +448,7 @@ const razones = [
             Accede al catálogo dedicado de la marca.
           </p>
         </div>
-        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+        <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/trajes-bombero/globe-manufacturing" class="btn btn-primary btn-lg">
             Catálogo Globe completo →
           </a>
@@ -408,7 +501,7 @@ const razones = [
             Cotizamos cualquier modelo sobre especificación técnica con entrega verificada.
           </p>
         </div>
-        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+        <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/trajes-bombero/lion-apparel" class="btn btn-primary btn-lg">
             Catálogo Lion completo →
           </a>
@@ -456,7 +549,7 @@ const razones = [
             tiene la línea correcta. Cotizamos con ficha técnica para concurso.
           </p>
         </div>
-        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+        <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/trajes-bombero/honeywell-morning-pride" class="btn btn-primary btn-lg">
             Catálogo Honeywell completo →
           </a>
@@ -482,7 +575,7 @@ const razones = [
         <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
           <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
             Fire-Dex es la marca de mayor crecimiento en licitaciones tier-1 de México (2023-2025).
-            Pionera en shells de fibra sintética TECGEN® — más ligeros que Nomex con mejor THL.
+            Pionera en shells de fibra sintética TECGEN®.
             Ideal para departamentos que buscan tecnología avanzada con precio competitivo.
           </p>
           <div class="flex flex-wrap gap-2">
@@ -500,11 +593,11 @@ const razones = [
       <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(74,117,153,0.15)">
         <div class="flex-1">
           <p class="text-sm leading-relaxed m-0" style="color:#64748B">
-            ¿Quieres el traje más ligero del mercado con certificación NFPA completa? Fire-Dex TECGEN
+            ¿Buscas un traje Fire-Dex con certificación NFPA? TECGEN
             es la respuesta. Cotizamos con comparativo técnico vs. Nomex incluido.
           </p>
         </div>
-        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+        <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/trajes-bombero/fire-dex" class="btn btn-primary btn-lg">
             Catálogo Fire-Dex completo →
           </a>
@@ -554,7 +647,7 @@ const razones = [
             dentro del país.
           </p>
         </div>
-        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+        <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/trajes-bombero/skold" class="btn btn-primary btn-lg">
             Catálogo Sköld completo →
           </a>
@@ -721,7 +814,7 @@ const razones = [
             Certificado NFPA 1970.<br/>Entrega en 48 h.
           </h2>
         </div>
-        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+        <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a
             href={whatsappUrl('Hola, quiero cotizar trajes para bomberos NFPA 1970. ¿Tienen stock disponible?')}
             target="_blank" rel="noopener"
