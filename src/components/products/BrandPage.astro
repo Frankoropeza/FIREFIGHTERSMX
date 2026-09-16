@@ -273,6 +273,7 @@ const faqSchema = {
 ))}
 
 {/* ══ LÍNEAS DE PRODUCTO ══════════════════════════════════════════════ */}
+{safeLineas.length > 0 && (
 <section class="section" style="background:#040A12" aria-labelledby="lineas-title">
   <div class="container-site">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
@@ -313,6 +314,7 @@ const faqSchema = {
     </div>
   </div>
 </section>
+)}
 
 {/* ══ CATÁLOGO DE MODELOS ════════════════════════════════════════════ */}
 <section class="section" style="background:#070E1A" aria-labelledby="catalogo-title">
@@ -354,6 +356,7 @@ const faqSchema = {
 </section>
 
 {/* ══ ANATOMÍA DEL FLAGSHIP ═══════════════════════════════════════════ */}
+{safeAnatomia.length > 0 && (
 <section class="section" style="background:#040A12" aria-labelledby="anat-title">
   <div class="container-site">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
@@ -380,6 +383,7 @@ const faqSchema = {
     </div>
   </div>
 </section>
+)}
 
 {/* ══ TABLA COMPARATIVA ══════════════════════════════════════════════ */}
 <section class="section" style="background:#070E1A" aria-labelledby="comp-title">
@@ -437,6 +441,7 @@ const faqSchema = {
 </section>
 
 {/* ══ GUÍA DE SELECCIÓN ═══════════════════════════════════════════════ */}
+{safeGuia.length > 0 && (
 <section class="section" style="background:#040A12" aria-labelledby="guia-title">
   <div class="container-site">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
@@ -465,8 +470,10 @@ const faqSchema = {
     </div>
   </div>
 </section>
+)}
 
 {/* ══ SEGMENTOS DE OPERACIÓN ══════════════════════════════════════════ */}
+{safeSegmentos.length > 0 && (
 <section class="section" style="background:#070E1A" aria-labelledby="seg-title">
   <div class="container-site">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
@@ -503,6 +510,7 @@ const faqSchema = {
     </div>
   </div>
 </section>
+)}
 
 {/* ══ FAQ ═════════════════════════════════════════════════════════════ */}
 <section class="section" style="background:#040A12" aria-labelledby="faq-title">

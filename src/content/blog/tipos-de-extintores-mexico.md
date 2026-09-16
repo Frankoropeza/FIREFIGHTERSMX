@@ -43,7 +43,7 @@ Los extintores de polvo químico seco son muy comunes porque hay versiones BC y 
 
 Son una opción práctica para oficinas, comercios, vehículos y áreas con combustibles sólidos, líquidos inflamables o riesgo eléctrico. Su desventaja es el residuo: el polvo puede ensuciar y complicar la limpieza de equipos eléctricos. Si hay electrónica sensible, conviene valorar otro agente.
 
-### Extintores de CO₂ (dióxido de carbono)
+### Extintores de [CO₂](/productos/extintores/co2/) (dióxido de carbono)
 
 Los extintores de CO₂, también llamados extintores de dióxido de carbono, sirven para clases B y C. No dejan residuo, por lo que suelen considerarse cerca de tableros y equipos eléctricos. El CO₂ desplaza el oxígeno; por eso no debe descargarse sin valorar el riesgo de asfixia en espacios cerrados ocupados.
 
@@ -139,4 +139,4 @@ Yo recomiendo este orden antes de comprar o reubicar equipos:
 
 La mejor selección combina extintores y su uso con una estrategia completa de protección contra incendios. No se trata de llenar muros de equipos, sino de que cada uno pueda responder al riesgo para el que fue instalado.
 
-Si quieres revisar opciones de [extintores PQS, CO₂ y tipo K](/productos/extintores/), puedo orientarte a partir de los materiales y áreas de tu operación. También contamos con [mantenimiento y recarga de extintores](/servicios/mantenimiento/). Para entender cómo se integra todo en el centro de trabajo, consulta la [guía de la NOM-002-STPS-2010](/blog/nom-002-stps-guia-completa/).
+Si quieres revisar opciones de extintores PQS, CO₂ y [tipo K](/productos/extintores/extintor-tipo-k/), puedo orientarte a partir de los materiales y áreas de tu operación. También contamos con [mantenimiento y recarga de extintores](/servicios/mantenimiento/). Para entender cómo se integra todo en el centro de trabajo, consulta la [guía de la NOM-002-STPS-2010](/blog/nom-002-stps-guia-completa/).

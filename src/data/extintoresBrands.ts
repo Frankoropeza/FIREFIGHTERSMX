@@ -121,7 +121,7 @@ export const extintoresBrandList: EquipmentBrand[] = [
     faqs: [
       { q: '¿Cuál es la diferencia entre el extintor de 9 kg y el de 12 kg?', a: 'La diferencia principal es el tiempo de descarga: el de 9 kg descarga en 25–30 segundos y el de 12 kg en 35–40 segundos. El de 12 kg es necesario cuando la carga de fuego del área es alta y el de 9 kg podría quedarse corto. Para la mayoría de aplicaciones comerciales e industriales ordinarias, el de 9 kg es la capacidad estándar y el modelo de referencia en licitaciones.' },
       { q: '¿El extintor de 4.5 kg cumple la NOM-002-STPS para mi local?', a: 'Depende del área y el tipo de riesgo. La NOM-002-STPS establece una unidad extintora (UE) mínima por tipo de riesgo: en riesgo bajo, 1A es suficiente para hasta 278 m²; en riesgo ordinario, 2A para hasta 139 m². Un extintor de 4.5 kg aporta entre 4A y 10BC según el modelo. Te calculamos la dotación exacta sin costo.' },
-      { q: '¿Cada cuánto se recarga un extintor PQS ABC?', a: 'La NOM-002-STPS exige recarga obligatoria tras cualquier disparo (aunque sea parcial) y revisión anual del estado general. Si la inspección detecta pérdida de presión o el agente está compactado, se recarga antes. La prueba hidrostática del cilindro se realiza cada 5 años.' },
+      { q: '¿Cada cuánto se recarga un extintor PQS ABC?', a: 'La NOM-002-STPS exige revisión mensual con registro y mantenimiento al menos una vez al año conforme a la NOM-154-SCFI-2005. La recarga se realiza después de cada uso y, en su caso, por resultado del mantenimiento.' },
       { q: '¿El PQS ABC daña equipos eléctricos o electrónicos?', a: 'Sí. El polvo químico seco es difícil de limpiar, puede penetrar en equipos y dañar componentes electrónicos. Para tableros eléctricos, servidores, CNC y equipos de alto valor, la alternativa correcta es CO₂ o agente limpio (FM-200). Consulta nuestro catálogo de extintores CO₂ y especializados.' },
     ],
     ctaKicker: 'NOM-100-STPS · Servicio NOM-154-SCFI · Collar de garantía',
@@ -133,6 +133,7 @@ export const extintoresBrandList: EquipmentBrand[] = [
      CO₂ — 6 modelos, 2.3–15 kg
      ══════════════════════════════════════════════════════════════════════════ */
   {
+    tipoPagina: 'linea',
     categorySlug: 'extintores',
     slug: 'co2',
     brand: 'CO2',
@@ -147,19 +148,65 @@ export const extintoresBrandList: EquipmentBrand[] = [
       'Seis modelos en línea — desde el compacto de 2.3 kg para racks de telecomunicaciones hasta el de 15 kg para salas de servidores de alta densidad o como respaldo de sistemas fijos. Todos certificados NOM-102-STPS con etiqueta de dictamen verificable ante la Secretaría de Economía.',
     ],
     heroBadges: ['NOM-102-STPS', 'NFPA 10', 'Clase B · C', 'Dióxido de carbono', '2.3 · 4.5 · 6.8 · 9 · 10 · 15 kg', 'Cero residuo', 'No conduce electricidad'],
-    seoTitle: 'Extintores CO₂ Certificados NOM-102-STPS — 2.3 a 15 kg · Tableros · Servidores · México',
-    seoDescription: 'Extintores CO₂ certificados NOM-102-STPS y NFPA 10 en México: 2.3, 4.5, 6.8, 9, 10 y 15 kg para tableros eléctricos, servidores y data centers. Sin residuo, sin daño a equipos — la única opción segura para clase C.',
+    seoTitle: 'Extintor de CO2 (dióxido de carbono) clase B:C — NOM-102-STPS',
+    seoDescription: 'Extintor de CO2 para equipo eléctrico y líquidos inflamables: qué fuegos apaga, diferencia con PQS, cómo usar un extintor de dióxido de carbono y mantenimiento.',
     stats: [
       { valor: '6', etiq: 'modelos en línea' },
       { valor: '2.3–15 kg', etiq: 'rango de capacidad' },
       { valor: 'B · C', etiq: 'clases de fuego' },
-      { valor: 'NOM-100', etiq: 'certificación' },
+      { valor: 'NOM-102', etiq: 'certificación' },
     ],
     credenciales: [
       { n: '01', t: 'Cero residuo — equipo operativo en minutos', d: 'El CO₂ se disipa completamente sin dejar residuo. A diferencia del PQS ABC, no requiere limpieza post-incidente — el área o el equipo vuelve a operación normal en minutos tras la descarga.' },
       { n: '02', t: 'No conduce electricidad — seguro en Clase C', d: 'El dióxido de carbono es eléctricamente no conductor. La única opción segura para extinguir fuegos en tableros eléctricos vivos, salas de transformadores y equipos energizados activos.' },
       { n: '03', t: 'Sin daño a equipos de alto valor', d: 'El PQS contamina, penetra y puede destruir componentes electrónicos. El CO₂ no — actúa y se disipa. La elección correcta para CNC, servidores, celdas de prueba y equipos de medición de precisión.' },
       { n: '04', t: 'Certificado NOM-102-STPS verificable', d: 'Etiqueta con número de dictamen verificable ante la Secretaría de Economía. Reporte de mantenimiento firmado para tu expediente de Protección Civil, STPS e IMSS tras cada inspección.' },
+    ],
+    bloques: [
+      {
+        id: 'que-es-un-extintor-de-co2-y-para-que-sirve',
+        titulo: '¿Qué es un extintor de CO2 y para qué sirve?',
+        parrafos: ['El extintor de CO2 contiene dióxido de carbono a presión como agente extintor. Al descargarlo, el CO2 pasa de líquido a gaseoso y sale como una nube fría que desplaza el oxígeno alrededor del fuego y lo sofoca. Es un agente no conductor de la electricidad y no contaminante, por eso es el extintor que se usa en tableros, cuartos eléctricos, equipo electrónico delicado, laboratorios y oficinas con aparatos electrónicos, donde un polvo o un extintor de agua dañaría el equipo y exigiría limpieza posterior.'],
+      },
+      {
+        id: 'que-tipo-de-fuego-apaga-el-extintor-de-co2',
+        titulo: '¿Qué tipo de fuego apaga el extintor de CO2?',
+        parrafos: ['El extintor de dióxido de carbono tiene clasificación B:C. Según la guía de la NOM-002-STPS-2010, sirve para fuegos clase B (líquidos inflamables y combustibles) y clase C (equipo e instalaciones eléctricas). No es adecuado para fuegos clase A de sólidos, clase D de metales ni clase K de aceites de cocina.'],
+      },
+      {
+        id: 'extintor-de-co2-vs-pqs-abc',
+        titulo: 'Extintor de CO2 vs. PQS (ABC)',
+        tabla: {
+          cols: ['Característica', 'Extintor de CO2', 'Extintor de PQS tipo ABC'],
+          filas: [
+            ['Agente', 'Dióxido de carbono (gas)', 'Polvo químico seco de fosfato monoamónico'],
+            ['Clases de fuego', 'B y C', 'A, B y C'],
+            ['Residuo', 'No deja polvo', 'Deja partículas de polvo que hay que limpiar'],
+            ['Uso ideal', 'Equipo eléctrico y electrónico', 'Uso general en oficinas, bodegas y comercios'],
+            ['Norma del extintor', 'NOM-102-STPS-1994', 'NOM-100-STPS-1994 (agente: NOM-104-STPS-2001)'],
+          ],
+        },
+      },
+      {
+        id: 'limitaciones-y-precauciones-al-usar-un-extintor-de-co2',
+        titulo: 'Limitaciones y precauciones al usar un extintor de CO2',
+        items: [
+          { t: 'Espacios cerrados', d: 'la concentración de CO2 reduce el oxígeno necesario para la vida; en cuartos reducidos se requiere protección y salir del área después de la descarga.' },
+          { t: 'Exteriores y viento', d: 'la NOM-002 indica no usarlo al aire libre o donde haya corrientes de aire, porque el gas se dispersa.' },
+          { t: 'Alcance corto', d: 'su descarga llega de 1 a 2.5 m, así que hay que acercarse al conato de incendio.' },
+          { t: 'Temperatura', d: 'la descarga es muy fría; no toques la boquilla ni dirijas el chorro a las personas.' },
+        ],
+      },
+      {
+        id: 'como-usar-un-extintor-co2',
+        titulo: 'Cómo usar un extintor CO2',
+        pasos: ['Corta la energía del equipo si es seguro hacerlo.', 'Colócate de espaldas a la salida y acércate a corta distancia.', 'Descarga el CO2 a la base del fuego hasta apagarlo y vigila que no se reavive.', 'Ventila el área y sal de ella al terminar.'],
+      },
+      {
+        id: 'capacidades-mantenimiento-y-recarga',
+        titulo: 'Capacidades, mantenimiento y recarga',
+        parrafos: ['Manejamos extintores de CO2 portátiles de distintas capacidades en kilos y libras, con cilindro, válvula y soporte, para tableros, oficinas y centros de datos. Como todo extintor, se revisa cada mes y recibe mantenimiento al menos una vez al año conforme a la NOM-154-SCFI-2005; la recarga de extintores se hace después de su uso. El cilindro de CO2 lleva prueba hidrostática cada 5 años, hasta un máximo de 4 veces, por lo que su vida útil máxima es de 20 años.'],
+      },
     ],
     linesIntro: 'Tres subfamilias de CO₂ para cubrir desde el rack de telecomunicaciones hasta la sala de servidores Tier 3 y el respaldo de sistemas fijos de agente limpio. Todas con el mismo proceso de recarga certificada y el mismo expediente documental.',
     lineas: [
@@ -225,11 +272,105 @@ export const extintoresBrandList: EquipmentBrand[] = [
       { q: '¿Por qué CO₂ y no PQS ABC para mi tablero eléctrico?', a: 'El PQS ABC no conduce electricidad, pero deja un residuo de polvo que penetra en los componentes del tablero y puede causar cortocircuitos, corrosión y falla de equipos días o semanas después del incendio. El CO₂ extingue y se disipa — el tablero queda limpio y operativo. Para equipos de alto valor y operación continua, el CO₂ es la única opción que no crea un segundo problema.' },
       { q: '¿Es peligroso usar el extintor CO₂ en espacios cerrados?', a: 'El CO₂ desplaza oxígeno. En espacios muy confinados sin ventilación, el protocolo correcto es evacuar antes de disparar. Para instalaciones de alta densidad sin posibilidad de evacuación, un sistema fijo de agente limpio (FM-200) con detección automática es la alternativa adecuada.' },
       { q: '¿El CO₂ extingue fuegos clase A (madera, papel)?', a: 'El CO₂ es poco eficaz en clase A porque no deja residuo que inhiba la re-ignición — el material sólido puede re-encenderse al recuperar temperatura. La clase A requiere PQS ABC, agua o espuma AFFF. El CO₂ se especifica exclusivamente para clase B y C.' },
-      { q: '¿Cuánto dura la carga del extintor CO₂?', a: 'El CO₂ no caduca, pero se puede perder por microfiltraciones en la válvula. La inspección anual incluye verificación del peso o presión del cilindro. Un extintor de 10 kg debe pesar entre 10 y 11 kg; si pesa menos, hay pérdida de agente y se recarga.' },
+      { q: '¿Cuánto dura la carga del extintor CO₂?', a: 'El CO₂ puede perderse por microfiltraciones en la válvula. La NOM-002-STPS exige revisión mensual con registro y mantenimiento al menos una vez al año conforme a la NOM-154-SCFI-2005. Se recarga después de cada uso y, en su caso, por resultado del mantenimiento. El cilindro de CO₂ requiere prueba hidrostática cada 5 años, hasta un máximo de 4 veces, por lo que su vida útil máxima es de 20 años.' },
     ],
     ctaKicker: 'NOM-102-STPS · Sin residuo · Cero daño a equipos',
     ctaTitleHtml: 'El extintor CO₂ que no daña<br/>ni los equipos ni el expediente.',
     waQuote: 'Hola, quiero cotizar extintores CO₂ certificados NOM-102-STPS para tableros eléctricos o sala de servidores.',
+  },
+
+  /* ══════════════════════════════════════════════════════════════════════════
+     Tipo K — 6 L y 9 L
+     ══════════════════════════════════════════════════════════════════════════ */
+  {
+    tipoPagina: 'linea',
+    categorySlug: 'extintores',
+    slug: 'extintor-tipo-k',
+    brand: 'Especializados',
+    brandLabel: 'Extintor tipo K',
+    productSlugs: ['extintor-tipo-k-6l', 'extintor-tipo-k-9l'],
+    crossDesc: 'Tipo K · Acetato de potasio · Clase K · 6 L y 9 L',
+    eyebrow: 'Extintores clase K · NOM-002-STPS · NFPA 10',
+    heroTitleTop: 'Extintor tipo K',
+    heroTitleAccent: 'para cocinas industriales.',
+    heroLead: 'El extintor tipo K es el extintor diseñado para fuegos de clase K: los incendios de aceites y grasas vegetales o animales que se producen en cocinas industriales, restaurantes y comedores. Su agente extintor es un químico húmedo a base de acetato de potasio que apaga el fuego de la freidora, la plancha o la parrilla donde el polvo químico seco y el CO₂ no son eficaces. Suministramos extintores clase K de 6 L y 9 L para cocinas profesionales en México.',
+    heroIntro: [],
+    heroBadges: ['Clase K', 'Acetato de potasio', 'NOM-002-STPS', 'NFPA 10', '6 L · 9 L'],
+    seoTitle: 'Extintor tipo K (clase K) para cocinas: 6 L y 9 L',
+    seoDescription: 'Extintor tipo K de acetato de potasio para fuegos clase K de aceites y grasas en cocinas industriales/restaurantes: cómo funciona, NOM-002, NFPA 10 y ubicación.',
+    stats: [
+      { valor: '2', etiq: 'capacidades' },
+      { valor: '6 L · 9 L', etiq: 'modelos en línea' },
+      { valor: 'K', etiq: 'clase de fuego' },
+      { valor: '10 m', etiq: 'recorrido máximo NOM-002' },
+    ],
+    credenciales: [
+      { n: '01', t: 'Acetato de potasio para clase K', d: 'El agente químico húmedo a base de acetato de potasio corresponde a fuegos de aceites y grasas vegetales o animales en instalaciones de cocina.' },
+      { n: '02', t: 'Saponificación que sofoca y enfría', d: 'El agente reacciona con la grasa caliente y forma una capa jabonosa sobre el aceite que sofoca el fuego y enfría la superficie.' },
+      { n: '03', t: 'Respaldo del sistema fijo de campana', d: 'En cocinas comerciales, el sistema automático de supresión de la campana es la protección principal y el extintor clase K es el respaldo.' },
+    ],
+    bloques: [
+      {
+        id: 'que-es-un-fuego-clase-k',
+        titulo: '¿Qué es un fuego clase K?',
+        parrafos: ['La NOM-002-STPS-2010 define el fuego clase K como el que ocurre básicamente en instalaciones de cocina y en el que intervienen aceites y grasas vegetales o animales. Es un tipo de incendio distinto al de un combustible sólido o un líquido inflamable común: el aceite de cocción alcanza temperaturas muy altas y puede volver a encenderse si solo se apagan las llamas.'],
+      },
+      {
+        id: 'como-funciona-un-extintor-tipo-k',
+        titulo: '¿Cómo funciona un extintor tipo K?',
+        parrafos: ['El agente líquido a base de acetato de potasio reacciona con la grasa caliente y produce saponificación: forma una capa jabonosa sobre el aceite que sofoca el fuego y enfría la superficie. Por eso el extintor clase K se aplica de forma suave, para no salpicar el aceite fuera de la freidora.'],
+      },
+      {
+        id: 'extintor-tipo-k-vs-otros-tipos-de-extintor',
+        titulo: 'Extintor tipo K vs. otros tipos de extintor',
+        tabla: {
+          cols: ['Tipo de extintor', 'Clases de fuego (NOM-002, guía VII)', '¿Sirve para cocina?'],
+          filas: [
+            ['Químico húmedo (tipo K)', 'K', 'Sí, es el adecuado'],
+            ['PQS tipo ABC', 'A, B y C', 'No para fuegos clase K'],
+            ['PQS tipo BC', 'B y C', 'No para fuegos clase K'],
+            ['CO₂', 'B y C', 'No para fuegos clase K'],
+          ],
+        },
+      },
+      {
+        id: 'normativa-y-ubicacion-del-extintor-clase-k',
+        titulo: 'Normativa y ubicación del extintor clase K',
+        items: [
+          { t: 'NOM-002-STPS-2010', d: 'la distancia máxima de recorrido hasta un extintor para fuego clase K es de 10 m, tanto en riesgo ordinario como en riesgo alto.' },
+          { t: 'NFPA 10', d: 'fija un recorrido máximo de 30 ft (9.1 m) del peligro al extintor clase K.' },
+          { t: 'NFPA 96', d: 'en cocinas comerciales, el sistema automático de supresión de la campana es la protección principal y el extintor clase K es el respaldo.' },
+        ],
+        nota: 'Coloca el extintor en un lugar visible, con señalización, cerca de la salida de la cocina y lejos del alcance directo de las llamas, para poder tomarlo sin exponerse al fuego.',
+      },
+      {
+        id: 'como-usar-el-extintor-tipo-k',
+        titulo: 'Cómo usar el extintor tipo K',
+        pasos: ['Activa primero el sistema de supresión de la campana y corta el gas o la energía de los equipos de cocción.', 'Toma el extintor y aplícalo desde la distancia indicada por el fabricante.', 'Descarga el agente de forma suave sobre la superficie del aceite hasta cubrirla.', 'No uses agua sobre grasa encendida.', 'Después del uso, envía el extintor a recarga y revisa la campana y sus filtros.'],
+      },
+      {
+        id: 'mantenimiento-de-extintores-tipo-k',
+        titulo: 'Mantenimiento de extintores tipo K',
+        parrafos: ['Como cualquier extintor en un centro de trabajo, el tipo K debe revisarse cada mes y recibir mantenimiento al menos una vez al año conforme a la NOM-154-SCFI-2005; se recarga después de cada uso. Ofrecemos el servicio con etiqueta de mantenimiento y registro para tu programa de protección contra incendios.'],
+      },
+    ],
+    linesIntro: 'Extintores clase K de 6 L y 9 L para cocinas profesionales.',
+    lineas: [
+      { tipo: 'usar', badge: 'Clase K · Cocina profesional', titulo: 'Extintor tipo K', modelos: '6 L · 9 L', desc: 'Químico húmedo a base de acetato de potasio para fuegos de aceites y grasas de cocina.', tech: 'Clase K · Acetato de potasio · NOM-002-STPS · NFPA 10' },
+    ],
+    comparativa: [
+      { modelo: 'Extintor tipo K 6 L', tipo: 'usar', norma: 'NFPA 10 · NFPA 96', proteccion: 'Acetato de potasio · K', peso: '6 L', ideal: 'Cocinas profesionales' },
+      { modelo: 'Extintor tipo K 9 L', tipo: 'usar', norma: 'NFPA 10 · NFPA 96', proteccion: 'Acetato de potasio · K', peso: '9 L', ideal: 'Cocinas profesionales' },
+    ],
+    comparativaLabel: 'Extintores tipo K — 6 L y 9 L',
+    faq: [
+      { q: '¿Qué apaga el extintor clase K?', a: 'Fuegos de aceites y grasas de cocina en freidoras, planchas, parrillas y equipos de cocción.' },
+      { q: '¿Es obligatorio en un restaurante?', a: 'Si la cocina tiene riesgo de fuego clase K, la NOM-002 pide que el extintor adecuado esté a no más de 10 m de recorrido; el tipo K es el que corresponde a ese fuego.' },
+      { q: '¿Qué capacidad necesito?', a: 'Depende del número y tamaño de los equipos de cocción; ofrecemos 6 L y 9 L y te ayudamos a definir la cantidad.' },
+    ],
+    ctaKicker: 'Extintor clase K · Acetato de potasio · 6 L · 9 L',
+    ctaTitleHtml: 'Extintores tipo K<br/>para cocinas profesionales.',
+    waQuote: 'Cotiza tus extintores tipo K y su instalación con un especialista.',
   },
 
   /* ══════════════════════════════════════════════════════════════════════════
@@ -249,9 +390,9 @@ export const extintoresBrandList: EquipmentBrand[] = [
       'Cada extintor especializado resuelve un riesgo específico que los extintores de uso general no pueden controlar correctamente. El PQS ABC no extingue fuegos clase K — la grasa se re-enciende. El CO₂ no es suficiente para data centers de alta disponibilidad. El agua limpia o la espuma AFFF son más eficaces en clase A y B que el polvo, y sin los residuos del polvo.',
       'Seis modelos en la línea especializada: Agua 9L, Agua+Aditivo AF 9L, Espuma AFFF 9L, Tipo K 6L, Tipo K 9L y Agente Limpio FM-200 2.5 kg. Cada uno con la norma, el agente y la aplicación correcta para el riesgo específico que ningún extintor de uso general puede resolver.',
     ],
-    heroBadges: ['Servicio NOM-154-SCFI', 'NFPA 2001 · UL 300', 'Clase A · B · K', 'Agua · AFFF · Tipo K · FM-200', 'Sin residuo', 'Cocinas · Data center · Hidrocarburos'],
+    heroBadges: ['Servicio NOM-154-SCFI', 'NFPA 10 · NFPA 96', 'Clase A · B · K', 'Agua · AFFF · Tipo K · FM-200', 'Sin residuo', 'Cocinas · Data center · Hidrocarburos'],
     seoTitle: 'Extintores Especializados — Agua, Espuma AFFF, Tipo K y FM-200 · NOM · México',
-    seoDescription: 'Extintores especializados en México: Agua 9L (NOM-103-STPS), Espuma AFFF, Tipo K (UL 300) y Agente Limpio FM-200 (NFPA 2001) para data centers. Servicio NOM-154-SCFI.',
+    seoDescription: 'Extintores especializados en México: Agua 9L (NOM-103-STPS), Espuma AFFF, Tipo K (NFPA 10 · NFPA 96) y Agente Limpio FM-200 (NFPA 2001) para data centers. Servicio NOM-154-SCFI.',
     stats: [
       { valor: '6', etiq: 'modelos en línea' },
       { valor: 'A · B · K', etiq: 'clases de fuego' },
@@ -259,7 +400,7 @@ export const extintoresBrandList: EquipmentBrand[] = [
       { valor: 'NOM+NFPA', etiq: 'doble certificación' },
     ],
     credenciales: [
-      { n: '01', t: 'Tipo K para cocinas industriales', d: 'El PQS ABC no extingue fuegos de aceite a alta temperatura — la grasa se re-enciende. El acetato de potasio (Tipo K) forma una capa de saponificación que sella la superficie e impide la re-ignición. UL 300 es una referencia aplicable para cocinas con freidoras.' },
+      { n: '01', t: 'Tipo K para cocinas industriales', d: 'El PQS ABC y el CO₂ no son para fuegos clase K. El acetato de potasio (Tipo K) produce saponificación: forma una capa que sofoca el fuego y enfría la superficie.' },
       { n: '02', t: 'Espuma AFFF: supresión total de hidrocarburos', d: 'La espuma formadora de película acuosa sella la superficie del hidrocarburo con una capa que impide la re-ignición permanentemente — algo que el PQS ABC no puede garantizar. El estándar en helipuertos, terminales de combustible y plantas petroquímicas bajo NFPA 11.' },
       { n: '03', t: 'FM-200: extinción sin residuo en activos críticos', d: 'El HFC-227ea (FM-200) extingue en segundos sin residuo, sin daño a equipos y sin desplazar oxígeno de forma peligrosa. El agente limpio portátil correcto para data centers, salas de control y activos de alto valor donde ni el CO₂ ni el PQS son aceptables.' },
       { n: '04', t: 'Agua: el agente más ecológico para clase A profundo', d: 'Sin productos químicos, sin residuo tóxico y con la mayor capacidad de penetración en materiales porosos (con aditivo AF). El único extintor completamente ecológico y el más eficaz para archivos, textiles y sólidos de alta profundidad.' },
@@ -287,8 +428,8 @@ export const extintoresBrandList: EquipmentBrand[] = [
         badge: 'Clase K · Cocina industrial',
         titulo: 'Tipo K 6L y 9L',
         modelos: '6 · 9 L',
-        desc: 'Acetato de potasio para aceites y grasas a alta temperatura. El de 6L para cocinas de hasta 6 m de campana; el de 9L para grandes comedores industriales y cocinas de hotel. UL 300 es una referencia aplicable para cocinas industriales.',
-        tech: 'Acetato de potasio · UL 300 · Efecto saponificación',
+        desc: 'Acetato de potasio para aceites y grasas a alta temperatura. El sistema fijo de supresión de la campana es la protección principal y el extintor tipo K es el respaldo.',
+        tech: 'Acetato de potasio · NFPA 10 · NFPA 96 · Efecto saponificación',
       },
       {
         tipo: 'agente-ci',
@@ -300,34 +441,34 @@ export const extintoresBrandList: EquipmentBrand[] = [
       },
     ],
     flagship: 'extintor-tipo-k-9l',
-    anatomiaIntro: 'El extintor Tipo K 9L requiere una selección cuidadosa para cocina industrial; UL 300 es una referencia aplicable y su uso incorrecto puede agravar un fuego de cocina industrial.',
+    anatomiaIntro: 'El extintor Tipo K 9L requiere una selección cuidadosa para cocina industrial; el sistema fijo de supresión de la campana es la protección principal y el extintor es el respaldo.',
     anatomia: [
-      { t: 'Cilindro de acero inox presurizado', d: 'El acetato de potasio es corrosivo a largo plazo — el inoxidable es obligatorio para resistir el agente y la limpieza repetida. Un cilindro de acero ordinario degradaría el agente en meses.' },
-      { t: 'Referencia UL 300', d: 'Indica una referencia para fuegos de aceite a alta temperatura en cocina industrial.' },
+      { t: 'Agente químico húmedo', d: 'El acetato de potasio corresponde a fuegos clase K de aceites y grasas vegetales o animales en instalaciones de cocina.' },
+      { t: 'NFPA 10 · NFPA 96', d: 'NFPA 10 fija un recorrido máximo de 30 ft (9.1 m) y NFPA 96 reconoce al sistema fijo de la campana como protección principal.' },
       { t: 'Boquilla de descarga de baja velocidad', d: 'El acetato de potasio debe aplicarse en flujo suave para no dispersar el aceite incendiado. Una boquilla de alta velocidad convierte el extintor en un dispersor de aceite caliente — el efecto contrario.' },
-      { t: 'Saponificación: la ciencia detrás de la extinción', d: 'El acetato de potasio reacciona con el aceite caliente formando un jabón sólido que sella la superficie e impide el acceso de oxígeno. La única reacción química que impide la re-ignición en fuegos de aceite a más de 360 °C.' },
-      { t: 'Complemento obligatorio de la campana automática', d: 'El Tipo K portátil es el respaldo del sistema automático de supresión de la campana. Las aseguradoras exigen ambos — el sistema actúa primero y el extintor Tipo K es el primer respondedor manual.' },
+      { t: 'Saponificación: la ciencia detrás de la extinción', d: 'El acetato de potasio reacciona con el aceite caliente y forma una capa jabonosa que sofoca el fuego y enfría la superficie.' },
+      { t: 'Complemento de la campana automática', d: 'El Tipo K portátil es el respaldo del sistema automático de supresión de la campana.' },
       { t: 'Señalización de restricción de uso', d: 'El extintor Tipo K debe señalizarse con restricción de uso exclusivo en cocina — es ineficaz en clase A y B ordinaria. La confusión con el extintor general es un riesgo real si no se distinguen claramente.' },
     ],
     comparativa: [
       { modelo: 'Agua 9L',              tipo: 'rociadores', norma: 'NOM-103-STPS',           proteccion: 'Agua · A',         material: 'Acero inox / polietileno', peso: '9 L',    ideal: 'Archivos · Papel · Madera · Ecológico' },
       { modelo: 'Agua + Aditivo AF 9L', tipo: 'rociadores', norma: 'NOM-103-STPS',           proteccion: 'Agua+AF · A',      material: 'Acero inox presurizado',   peso: '9 L',    ideal: 'Pacas · Textiles · Residuos profundos' },
       { modelo: 'Espuma AFFF 9L',       tipo: 'deteccion',  norma: 'NFPA 11', proteccion: 'AFFF · A·B',       material: 'Acero inox presurizado',   peso: '9 L',    ideal: 'Hidrocarburos · Helipuertos · Talleres' },
-      { modelo: 'Tipo K 6L',            tipo: 'usar',       norma: 'UL 300',  proteccion: 'Acetato K · K',    material: 'Acero inox presurizado',   peso: '6 L',    ideal: 'Cocinas ≤ 6 m de campana' },
-      { modelo: 'Tipo K 9L',            tipo: 'usar',       rec: true, norma: 'UL 300', proteccion: 'Acetato K · K', material: 'Acero inox presurizado', peso: '9 L',  ideal: 'Grandes cocinas · Hospital · Hotel' },
+      { modelo: 'Tipo K 6L',            tipo: 'usar',       norma: 'NFPA 10 · NFPA 96', proteccion: 'Acetato K · K', peso: '6 L', ideal: 'Cocinas profesionales' },
+      { modelo: 'Tipo K 9L',            tipo: 'usar',       rec: true, norma: 'NFPA 10 · NFPA 96', proteccion: 'Acetato K · K', peso: '9 L', ideal: 'Cocinas profesionales' },
       { modelo: 'FM-200 2.5 kg',        tipo: 'agente-ci',  norma: 'NFPA 2001 · UL 2129',    proteccion: 'HFC-227ea · B·C',  material: 'Acero alta presión',       peso: '2.5 kg', ideal: 'Data center · Rack · Sala de control' },
     ],
     comparativaLabel: 'Extintores especializados — Agua · AFFF · Tipo K · FM-200',
-    comparativaNote: '★ Recomendado = el Tipo K 9L es el estándar para grandes cocinas industriales con campana de supresión de más de 6 m lineales.',
+    comparativaNote: '★ Recomendado = confirma la capacidad con los equipos de cocción, el sistema fijo de la campana y el análisis de riesgo de la cocina.',
     guia: [
       { n: '01', t: 'Identifica el tipo de fuego específico: clase K para cocinas con aceite, AFFF para hidrocarburos derramados, FM-200 para equipos electrónicos críticos, agua para sólidos sin riesgo eléctrico.' },
-      { n: '02', t: 'Para cocinas: verifica la longitud de la campana. El Tipo K de 6L cubre hasta 6 m de campana; el de 9L para cocinas industriales de mayor envergadura con múltiples freidoras.' },
+      { n: '02', t: 'Para cocinas: verifica que el extintor tipo K esté a un recorrido máximo de 10 m conforme a la NOM-002-STPS y que complemente el sistema fijo de la campana.' },
       { n: '03', t: 'Para data centers: determina si existe sistema fijo. El FM-200 portátil es el complemento del sistema fijo — para instalaciones sin sistema fijo, el sistema fijo + portátil como respaldo es la solución completa.' },
       { n: '04', t: 'Para AFFF: considera el tipo de hidrocarburo. El AFFF estándar es eficaz en gasolina y solventes apolares; para alcoholes y solventes polares (acetona, IPA), se requiere espuma AFFF-AR.' },
     ],
     segmentosIntro: 'Cuatro riesgos específicos que los extintores de uso general no pueden resolver correctamente. Cada agente especializado para su escenario único.',
     segmentos: [
-      { num: '01', tipo: 'usar',       titulo: 'Cocinas industriales y restaurantes', desc: 'Cocinas con freidoras, salamandras y planchas de producción donde el PQS ABC es insuficiente para clase K. UL 300 es una referencia aplicable para el riesgo de aceite a alta temperatura.', modelos: 'Tipo K 6L · 9L' },
+      { num: '01', tipo: 'usar',       titulo: 'Cocinas industriales y restaurantes', desc: 'Cocinas con freidoras, salamandras y planchas de producción donde el PQS ABC y el CO₂ no son para fuegos clase K. El sistema fijo de la campana es la protección principal y el tipo K es el respaldo.', modelos: 'Tipo K 6L · 9L' },
       { num: '02', tipo: 'deteccion',  titulo: 'Plantas petroquímicas y helipuertos',  desc: 'Áreas de manejo de hidrocarburos, helipuertos civiles y militares, terminales de combustible y almacenes de solventes donde la re-ignición tras el PQS es un riesgo real.', modelos: 'Espuma AFFF 9L' },
       { num: '03', tipo: 'agente-ci',  titulo: 'Data centers y salas de control',      desc: 'Instalaciones sin sistema fijo de supresión o como respaldo portátil de un sistema en mantenimiento. Extinción sin residuo, sin desplazamiento peligroso de oxígeno.', modelos: 'FM-200 2.5 kg' },
       { num: '04', tipo: 'rociadores', titulo: 'Archivos · Museos · Textil y papel',   desc: 'Instalaciones donde el PQS ABC contaminaría materiales valiosos o históricos y donde no existe riesgo eléctrico. El agente más ecológico y el más limpio para clase A profundo.', modelos: 'Agua 9L · Agua+AF' },
@@ -437,7 +578,7 @@ export const extintoresBrandList: EquipmentBrand[] = [
     ],
     faqs: [
       { q: '¿Cuándo necesito un extintor sobre ruedas en lugar de portátiles?', a: 'Cuando la carga de fuego del área supera lo que puede cubrir un extintor portátil de 12 kg en el tiempo de descarga disponible, o cuando la norma aplicable (NFPA 10, PEMEX HSE, aseguradora) lo exige explícitamente. La NFPA 10 establece que en zonas de riesgo alto con más de 250 unidades extintoras requeridas, los extintores sobre ruedas son la solución adecuada.' },
-      { q: '¿Los extintores sobre ruedas tienen el mismo mantenimiento que los portátiles?', a: 'Sí, con la misma frecuencia pero mayor complejidad técnica: inspección visual mensual, mantenimiento anual por técnico certificado, recarga tras cualquier disparo y prueba hidrostática del cilindro cada 5 años. El costo del mantenimiento es mayor que el portátil por el volumen de agente y la complejidad del cilindro de gran capacidad.' },
+      { q: '¿Los extintores sobre ruedas tienen el mismo mantenimiento que los portátiles?', a: 'Sí, requieren revisión mensual con registro, mantenimiento al menos una vez al año conforme a la NOM-154-SCFI-2005 y recarga después de cada uso o, en su caso, por resultado del mantenimiento. El costo del mantenimiento es mayor que el portátil por el volumen de agente y la complejidad del cilindro de gran capacidad.' },
       { q: '¿El extintor sobre ruedas puede operar una sola persona?', a: 'Los modelos de 25 a 50 kg pueden ser operados por una sola persona entrenada. Los modelos de 75 a 125 kg requieren dos personas para operación eficiente: una para conducir el equipo hasta el foco y otra para dirigir la manguera. La capacitación de uso es crítica — un extintor de 125 kg mal operado es un riesgo para el operador.' },
       { q: '¿Qué diferencia hay entre el PQS sobre ruedas y el AFFF para helipuerto?', a: 'El PQS ABC sobre ruedas (125 kg) es eficaz para fuegos de gran magnitud en clase A, B y C. El AFFF sobre ruedas (25L) forma una película sobre el combustible que impide la re-ignición — crítico en helipuertos donde el combustible de aviación derramado puede re-encenderse. La NFPA 403 suele exigir AFFF como primario en helipuertos y PQS como respaldo.' },
     ],

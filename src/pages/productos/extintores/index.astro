@@ -11,8 +11,8 @@ const cat = categories.find((c) => c.slug === 'extintores')!;
 const canonicalURL = `${SITE.url}/productos/extintores/`;
 
 const seoMeta = {
-  title: `Extintores en México: PQS, CO₂ y Tipo K — Venta y Recarga`,
-  description: 'Venta de extintores PQS (NOM-100-STPS), CO₂ (NOM-102-STPS), tipo K y agente limpio en México, con recarga y mantenimiento NOM-154-SCFI.',
+  title: 'Extintores en México: tipos, NOM y venta — PQS, CO₂ y tipo K',
+  description: 'Venta de extintores de incendios en México: tipos y clasificación, cómo elegir el extintor adecuado, cómo usarlo, mantenimiento NOM-002 y NOM-154, y precio.',
   canonicalURL,
 };
 
@@ -34,7 +34,7 @@ const ruedaProducts = featuredProducts.filter(
 const tipos = [
   {
     title: 'PQS ABC',
-    norm: 'NOM-100-STPS · NFPA 10',
+    norm: 'NOM-100-STPS (agente: NOM-104-STPS-2001) · NFPA 10',
     accent: '#F75000',
     desc: 'Polvo químico seco multiuso para fuegos clase A, B y C. El estándar obligatorio en oficinas, comercios, bodegas e industria general. De 1 kg a 12 kg.',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 6v-3a3 3 0 0 0-6 0v3"/><rect x="6" y="6" width="12" height="14" rx="2"/><path d="M12 10v4M10 12h4"/></svg>`,
@@ -62,9 +62,9 @@ const tipos = [
   },
   {
     title: 'Tipo K',
-    norm: 'UL 300',
+    norm: 'NOM-002-STPS · NFPA 10',
     accent: '#F5A623',
-    desc: 'Acetato de potasio para fuegos clase K: aceites y grasas vegetales y animales a alta temperatura. Obligatorio en cocinas industriales y restaurantes con freidoras.',
+    desc: 'Acetato de potasio para fuegos clase K: aceites y grasas vegetales y animales a alta temperatura. Para cocinas industriales y restaurantes con freidoras.',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2c-4 4-6 8-6 11a6 6 0 0 0 12 0c0-3-2-7-6-11z"/><path d="M12 12v4"/></svg>`,
   },
   {
@@ -142,7 +142,7 @@ const guia = [
   { n: '01', t: 'Identifica las clases de fuego presentes en cada área: oficina, bodega, cocina, sala de servidores o planta industrial. La clase de fuego determina el agente — nunca al revés.' },
   { n: '02', t: 'Revisa si hay equipos electrónicos o activos de alto valor: el PQS ABC deja residuo que daña equipos. CO₂ o agente limpio son la única opción para tableros y servidores.' },
   { n: '03', t: 'Calcula la capacidad según la carga de fuego del área: NOM-002-STPS establece la dotación mínima por m² y tipo de riesgo. Te hacemos el cálculo sin costo.' },
-  { n: '04', t: 'Define el programa de mantenimiento: la NOM-002-STPS exige revisión anual y recarga al disparo o cada 5 años. El programa administrado garantiza el expediente vigente en toda inspección.' },
+  { n: '04', t: 'Define el programa de mantenimiento: la NOM-002-STPS exige revisión mensual, mantenimiento al menos una vez al año conforme a la NOM-154-SCFI y recarga después de cada uso. El programa administrado garantiza el expediente vigente en toda inspección.' },
 ];
 
 /* Artículos del blog */
@@ -165,7 +165,7 @@ const faqs = [
   },
   {
     q: '¿Cada cuánto se revisa y se recarga un extintor?',
-    a: 'La NOM-002-STPS exige inspección visual mensual (por el usuario) y mantenimiento anual por técnico certificado. La recarga es obligatoria tras cualquier disparo, aunque sea parcial, y preventiva cuando el fabricante lo indica o cuando la inspección detecta pérdida de presión. La prueba hidrostática del cilindro se realiza cada 5 años para PQS y CO₂.',
+    a: 'La NOM-002-STPS exige revisión mensual con registro y mantenimiento al menos una vez al año conforme a la NOM-154-SCFI-2005. La recarga se realiza después de cada uso y, en su caso, por resultado del mantenimiento. Los cilindros de CO₂ requieren prueba hidrostática cada 5 años.',
   },
   {
     q: '¿Qué documentos entrega el mantenimiento para Protección Civil?',
@@ -180,7 +180,7 @@ const faqs = [
 /* Normativa */
 const normas = [
   { clave: 'NOM-154-SCFI', titulo: 'Servicio de extintores',            desc: 'Regula el servicio de mantenimiento y recarga de extintores portátiles en México.' },
-  { clave: 'NOM-002-STPS', titulo: 'Prevención contra incendio',        desc: 'Establece la dotación mínima de extintores por área, el programa anual de revisión, la capacitación de brigadas y el expediente que exige la STPS en inspecciones.' },
+  { clave: 'NOM-002-STPS', titulo: 'Prevención contra incendio',        desc: 'Establece la dotación mínima de extintores por área, la revisión mensual, el mantenimiento al menos anual, la capacitación de brigadas y el expediente que exige la STPS en inspecciones.' },
   { clave: 'NOM-003-SSPC-2011', titulo: 'Señalización',                     desc: 'Define los señalamientos de seguridad y emergencia para la ubicación e identificación de los extintores conforme a Protección Civil.' },
   { clave: 'NFPA 10',       titulo: 'Portable Fire Extinguishers',      desc: 'Estándar internacional de referencia para la selección, instalación, inspección, mantenimiento y recarga. Referenciada en proyectos con aseguradoras internacionales.' },
 ];
@@ -241,7 +241,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
           <span class="section-eyebrow mb-5 inline-flex">{cat.norm} · Venta · Recarga · Mantenimiento</span>
           <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
             Extintores<br/>
-            <span style="color:#F5A623">certificados.</span>
+            <span style="color:#F5A623">venta de extintores PQS, CO₂ y tipo K en México.</span>
           </h1>
           <p class="text-base leading-relaxed mb-8 max-w-xl" style="color:#94A3B8">
             Venta de extintores portátiles y sobre ruedas, con recarga y mantenimiento
@@ -266,6 +266,97 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
       </div>
     </div>
     <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(245,166,35,0.4) 30%, rgba(245,166,35,0.4) 70%, transparent)" aria-hidden="true"></div>
+  </section>
+
+  <section id="guia-extintores" class="section" style="background:#040A12" aria-labelledby="guia-extintores-title">
+    <div class="container-site content-copy">
+      <div class="section-head mb-5">
+        <h2 id="guia-extintores-title">¿Qué es un extintor de incendios?</h2>
+      </div>
+      <p class="mb-8">Un extintor es un equipo portátil de protección contra incendios que contiene un agente extintor a presión dentro de un recipiente. Al accionar la palanca o la válvula, el agente sale por la boquilla o la manguera y apaga el fuego en su etapa inicial. Es la primera respuesta en caso de incendio mientras se activan las alarmas de incendio, la brigada y los servicios de emergencia, y forma parte de los equipos y sistemas de seguridad contra incendios junto con los detectores de humo, las alarmas de incendio y, cuando se requieren, los rociadores.</p>
+
+      <div class="section-head mt-14 mb-5">
+        <h2>Clasificación de extintores por tipo de fuego</h2>
+      </div>
+      <p>Para elegir el extintor adecuado hay que conocer los tipos de extintores y las diferentes clases de fuego que define la NOM-002-STPS-2010:</p>
+      <div class="overflow-x-auto mb-8">
+        <div class="overflow-x-auto max-w-full min-w-0 mb-4"><table class="w-full text-left text-sm" style="border-collapse:collapse;min-width:640px;color:#CBD5E1">
+          <thead>
+            <tr>
+              <th class="p-3" style="background:#0C1825;color:#FFFFFF">Clase de fuego</th>
+              <th class="p-3" style="background:#0C1825;color:#FFFFFF">Combustible</th>
+              <th class="p-3" style="background:#0C1825;color:#FFFFFF">Extintor adecuado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Clase A</td>
+              <td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Sólidos: madera, papel, telas, plásticos</td>
+              <td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">PQS tipo ABC, agua</td>
+            </tr>
+            <tr>
+              <td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Clase B</td>
+              <td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Líquidos y gases inflamables y combustibles</td>
+              <td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">PQS ABC o BC, CO2</td>
+            </tr>
+            <tr>
+              <td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Clase C</td>
+              <td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Equipos eléctricos e instalaciones eléctricas</td>
+              <td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">PQS ABC o BC, CO2</td>
+            </tr>
+            <tr>
+              <td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Clase D</td>
+              <td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Metales combustibles</td>
+              <td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Agente especial para metales</td>
+            </tr>
+            <tr>
+              <td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Clase K</td>
+              <td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Aceites y grasas de cocina</td>
+              <td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Químico húmedo (tipo K)</td>
+            </tr>
+          </tbody>
+        </table></div>
+      </div>
+
+      <div class="section-head mt-14 mb-5">
+        <h2>Tipos de extintores y sus normas</h2>
+      </div>
+      <ul class="list-disc pl-6 space-y-2 text-sm leading-relaxed" style="color:#CBD5E1">
+        <li><strong>Extintores de polvo químico seco (PQS):</strong> NOM-100-STPS-1994. El agente ABC de fosfato monoamónico se rige por la NOM-104-STPS-2001 y el BC de bicarbonato de sodio por la NOM-106-STPS-1994.</li>
+        <li><strong>Extintores de CO2:</strong> NOM-102-STPS-1994; para equipo eléctrico, sin residuo.</li>
+        <li><strong>Extintores de agua:</strong> NOM-103-STPS-1994; para fuegos clase A.</li>
+        <li><strong>Extintores de espuma:</strong> NOM-101-STPS-1994; para líquidos inflamables.</li>
+        <li><strong>Extintores tipo K:</strong> químico húmedo de acetato de potasio para cocinas.</li>
+        <li><strong>Extintores sobre ruedas:</strong> mayor capacidad para áreas industriales con alto riesgo de fuego.</li>
+      </ul>
+
+      <div class="section-head mt-14 mb-5">
+        <h2>¿Cómo elegir el extintor adecuado?</h2>
+      </div>
+      <p>Primero identifica los riesgos de incendio del área y el tipo de fuego que puede ocurrir. Después define la cantidad: la NOM-002-STPS-2010 pide al menos un extintor por cada 300 m² en riesgo ordinario o por cada 200 m² en riesgo alto, respetando la distancia máxima de recorrido de cada clase de fuego (23 m para clases A, C y D; 15 m para clase B en riesgo ordinario y 10 m en riesgo alto; 10 m para clase K). Colócalos a no más de 1.50 m de altura, señalizados y sin obstáculos.</p>
+
+      <div class="section-head mt-14 mb-5">
+        <h2>Cómo utilizar un extintor de forma segura</h2>
+      </div>
+      <ol class="list-decimal pl-6 space-y-2 text-sm leading-relaxed" style="color:#CBD5E1">
+        <li>Da la alarma y verifica que tienes una ruta de salida.</li>
+        <li>Retira el extintor de su soporte y revisa que el manómetro indique carga.</li>
+        <li>Colócate a la distancia especificada por el fabricante, con la salida a tu espalda.</li>
+        <li>Acciona la palanca y dirige la descarga hacia la base del fuego, no a las llamas.</li>
+        <li>Si el fuego no se controla, evacúa y deja la extinción de incendios a los bomberos.</li>
+      </ol>
+      <p>El uso seguro requiere personal capacitado: practica en cada simulacro de incendio.</p>
+
+      <div class="section-head mt-14 mb-5">
+        <h2>Mantenimiento de extintores: lo que exige la NOM-002</h2>
+      </div>
+      <p>La NOM-002-STPS-2010 pide un programa de revisiones mensuales de los extintores (ubicación, señalización, manómetro, sello, etiqueta del último mantenimiento, golpes o deformaciones) con su registro, un mantenimiento al menos una vez al año conforme a la NOM-154-SCFI-2005 y la recarga después de cada uso. Mientras un extintor está en mantenimiento debe sustituirse por otro del mismo tipo y capacidad nominal.</p>
+
+      <div class="section-head mt-14 mb-5">
+        <h2>¿Cuánto cuesta un extintor?</h2>
+      </div>
+      <p>El precio de un extintor depende del agente, la capacidad, si es portátil o sobre ruedas, y de los accesorios como soporte y señal. En nuestra venta de extintores cotizamos el equipo junto con su instalación y el programa de mantenimiento para cumplir con las normativas.</p>
+    </div>
   </section>
 
   <!-- Accesos rápidos -->
@@ -341,7 +432,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
             de Protección Civil — la opción estándar para oficinas, comercios, bodegas e industria general.
           </p>
           <div class="flex flex-wrap gap-2">
-            {['NOM-100-STPS','NFPA 10','Clase A · B · C','Polvo químico seco','4.5 · 6 · 9 · 12 kg'].map(b => (
+            {['NOM-100-STPS (agente: NOM-104-STPS-2001)','NFPA 10','Clase A · B · C','Polvo químico seco','4.5 · 6 · 9 · 12 kg'].map(b => (
               <span class="badge badge-dark text-[9px]">{b}</span>
             ))}
           </div>
@@ -445,7 +536,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
             y agente limpio FM-200 para activos electrónicos de alto valor donde el CO₂ no es suficiente.
           </p>
           <div class="flex flex-wrap gap-2">
-            {['Agua clase A','Espuma AFFF','Tipo K — UL 300','FM-200 NFPA 2001','Sin residuo','Cocinas · Data center'].map(b => (
+            {['Agua clase A','Espuma AFFF','Tipo K — NFPA 10','FM-200 NFPA 2001','Sin residuo','Cocinas · Data center'].map(b => (
               <span class="badge badge-dark text-[9px]">{b}</span>
             ))}
           </div>
@@ -466,6 +557,9 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
           </p>
         </div>
         <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
+          <a href="/productos/extintores/extintor-tipo-k" class="btn btn-primary btn-lg whitespace-normal text-center">
+            Línea tipo K para cocinas →
+          </a>
           <a href="/productos/extintores/especializados" class="btn btn-primary btn-lg whitespace-normal text-center">
             Catálogo especializados completo →
           </a>
@@ -651,7 +745,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
           ¿Quieres un programa administrado de mantenimiento anual? Gestionamos el calendario,
           te avisamos de vencimientos y entregamos el expediente completo para cada inspección.
         </p>
-        <a href={whatsappUrl('Hola, quiero cotizar un programa de mantenimiento anual de extintores para mi empresa.')} target="_blank" rel="noopener" class="btn btn-primary shrink-0">
+        <a href={whatsappUrl('Hola, quiero cotizar un programa de mantenimiento anual de extintores para mi empresa.')} target="_blank" rel="noopener" class="btn btn-primary flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           Cotizar programa anual →
         </a>
       </div>
