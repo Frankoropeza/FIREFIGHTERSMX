@@ -34,28 +34,28 @@ const configuraciones = [
     badge: 'NFPA 1970 · 30/45 min',
     accent: '#F75000',
     desc: 'Combate de incendio en edificios. Cilindro de fibra de carbono 4500 psi de 30 ó 45 minutos, presión positiva, EOSTI y alarma PASS integrados.',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>`,
+    icon: ``,
   },
   {
     title: 'Industrial / 60 min',
     badge: 'NFPA 1970 · 60 min',
     accent: '#F5A623',
     desc: 'Autonomía extendida para industria pesada, petroquímica, túneles y espacios confinados. Opción ATEX antiestática. Mayor peso, mayor margen operativo.',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>`,
+    icon: ``,
   },
   {
     title: 'CBRN / HAZMAT',
     badge: 'NIOSH CBRN · NFPA 1970',
     accent: '#34D399',
     desc: 'Aprobación NIOSH CBRN para agentes químicos, biológicos, radiológicos y nucleares. Materiales descontaminables, compatible con trajes Nivel A encapsulados.',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`,
+    icon: ``,
   },
   {
     title: 'RIT / Rescate',
     badge: 'NFPA 1970 · RIT',
     accent: '#60A5FA',
     desc: 'Rescate de bombero caído: segunda fuente de aire, conexión de transferencia (buddy breathing) y bolsa de despliegue rápido de alta visibilidad.',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>`,
+    icon: ``,
   },
 ];
 
@@ -198,8 +198,8 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
           ))}
           <div class="flex flex-wrap gap-2">
             {['NFPA 1970','NIOSH CBRN','4500 psi','30/45/60 min','EOSTI','PASS','MSA · Dräger · 3M Scott'].map(n => (
-              <span class="badge badge-dark font-display text-[10px]">{n}</span>
-            ))}
+            <span class="badge badge-dark font-display text-[10px]">{n}</span>
+          ))}
           </div>
         </div>
       </div>
@@ -253,7 +253,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style="border:1px solid rgba(74,117,153,0.18)">
         {razones.map((r, i) => (
           <div class="flex flex-col gap-3 p-6" style={`background:#080F1A;${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.12)' : ''}`}>
-            <span class="font-display font-bold text-2xl" style="color:#F5A623">{r.n}</span>
+            
             <h3 class="font-display font-bold text-sm uppercase tracking-wide" style="color:#FFFFFF">{r.t}</h3>
             <p class="text-xs leading-relaxed m-0" style="color:#64748B">{r.d}</p>
           </div>
@@ -338,7 +338,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
         </div>
         <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/equipos-scba/msa-g1" class="btn btn-primary btn-lg">
-            Catálogo MSA G1 completo →
+            Catálogo MSA G1 completo 
           </a>
           <a href={whatsappUrl('Hola, quiero cotizar equipos SCBA MSA G1 NFPA 1970.')} target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
             Cotizar por {CANAL_CONTACTO}
@@ -388,7 +388,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
         </div>
         <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/equipos-scba/drager-pss" class="btn btn-primary btn-lg">
-            Catálogo Dräger completo →
+            Catálogo Dräger completo 
           </a>
           <a href={whatsappUrl('Hola, quiero cotizar equipos SCBA Dräger PSS 7000.')} target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
             Cotizar por {CANAL_CONTACTO}
@@ -436,7 +436,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
         </div>
         <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/equipos-scba/scott-air-pak" class="btn btn-primary btn-lg">
-            Catálogo 3M Scott completo →
+            Catálogo 3M Scott completo 
           </a>
           <a href={whatsappUrl('Hola, quiero cotizar equipos SCBA 3M Scott Air-Pak X3 Pro.')} target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
             Cotizar por {CANAL_CONTACTO}
@@ -527,7 +527,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
           <ol class="flex flex-col gap-4 list-none m-0 p-0">
             {guia.map((s) => (
               <li class="flex items-start gap-4">
-                <span class="font-display font-bold text-xl shrink-0" style="color:#F5A623">{s.n}</span>
+                
                 <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{s.t}</p>
               </li>
             ))}
@@ -549,7 +549,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
                     <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
                     <span class="text-xs" style="color:#64748B">{l.desc}</span>
                   </span>
-                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="var(--forge-300)" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
+                  
                 </a>
               </li>
             ))}
@@ -612,7 +612,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
             class="btn btn-lg"
             style="background:#FFFFFF;color:#F5A623;border-color:#FFFFFF;font-weight:700"
           >
-            Cotizar por {CANAL_CONTACTO} →
+            Cotizar por {CANAL_CONTACTO} 
           </a>
           <a href="/cotizacion" class="btn btn-lg" style="background:transparent;color:#FFFFFF;border:2px solid rgba(255,255,255,0.5)">
             Cotización formal
@@ -656,7 +656,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
                     <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
                     <span class="text-xs" style="color:#64748B">{l.desc}</span>
                   </span>
-                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="var(--forge-300)" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
+                  
                 </a>
               </li>
             ))}
@@ -671,7 +671,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
           {otrasCategorias.map((c) => (
             <a href={`/productos/${c.slug}`} class="btn btn-sm btn-dark">{c.label}</a>
           ))}
-          <a href="/productos" class="btn btn-sm btn-outline">Catálogo completo →</a>
+          <a href="/productos" class="btn btn-sm btn-outline">Catálogo completo </a>
         </div>
       </div>
     </div>
@@ -688,21 +688,21 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
            style="background:#080F1A;border:1px solid rgba(74,117,153,0.2)">
           <span class="text-sm font-display font-bold group-hover:text-[#F75000]" style="color:#FFFFFF">Trajes Bombero</span>
           <span class="text-xs leading-relaxed" style="color:#64748B">Globe · Lion Apparel · Honeywell · Fire-Dex</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Trajes Bombero →</span>
+          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Trajes Bombero </span>
         </a>
         <a href="/productos/cascos-nfpa"
            class="group flex flex-col gap-2 p-5 hover:border-[#F75000]"
            style="background:#080F1A;border:1px solid rgba(74,117,153,0.2)">
           <span class="text-sm font-display font-bold group-hover:text-[#F75000]" style="color:#FFFFFF">Cascos NFPA</span>
           <span class="text-xs leading-relaxed" style="color:#64748B">MSA Gallet · Bullard · Cairns</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Cascos NFPA →</span>
+          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Cascos NFPA </span>
         </a>
         <a href="/productos/camaras-termicas"
            class="group flex flex-col gap-2 p-5 hover:border-[#F75000]"
            style="background:#080F1A;border:1px solid rgba(74,117,153,0.2)">
           <span class="text-sm font-display font-bold group-hover:text-[#F75000]" style="color:#FFFFFF">Cámaras Térmicas</span>
           <span class="text-xs leading-relaxed" style="color:#64748B">FLIR · MSA Evolution · Bullard TXS</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Cámaras Térmicas →</span>
+          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Cámaras Térmicas </span>
         </a>
       </div>
     </div>

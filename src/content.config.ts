@@ -141,8 +141,8 @@ const empresasCollection = defineCollection({
  * la unidad del registro es el cuartel, no la corporación).
  *
  * El esquema es el gate del estándar mínimo publicable:
- *   · `fuentes.min(1)`  → imposible publicar una estación sin fuente citada
- *   · `coordenadas.precision` OBLIGATORIO → nunca más un punto que aparenta ser
+ *   · `fuentes.min(1)`   imposible publicar una estación sin fuente citada
+ *   · `coordenadas.precision` OBLIGATORIO  nunca más un punto que aparenta ser
  *     exacto sin serlo (88 fichas compartían coordenada con otra)
  *   · `serviciosDetalle.min(1)` conserva el texto de la fuente; `servicios`
  *     es la capacidad derivada del vocabulario controlado

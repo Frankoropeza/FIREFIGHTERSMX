@@ -73,7 +73,7 @@ const holmatro: EquipmentBrand = {
   ],
   comparativaNote: NOTA_HR,
   guia: [
-    { n: '01', t: 'Define el escenario: excarcelación vehicular pesada → cizalla + separador; primer respondiente o una sola unidad → combinada; empuje de tablero y estabilización → ariete.' },
+    { n: '01', t: 'Define el escenario: excarcelación vehicular pesada  cizalla + separador; primer respondiente o una sola unidad  combinada; empuje de tablero y estabilización  ariete.' },
     { n: '02', t: 'Decide la fuente: la línea Pentheon a batería es autocontenida (sin mangueras ni unidad de poder), se despliega en segundos y da movilidad total. Es hoy la opción preferida frente al sistema con unidad de poder y mangueras.' },
     { n: '03', t: 'Dimensiona por los vehículos de tu zona: los autos modernos con acero al boro y postes B reforzados exigen alta clasificación de corte EN 13204:2025 — verifica la categoría de la cizalla antes de especificar.' },
     { n: '04', t: 'Incluye en el proyecto la demostración en sitio con escenarios reales, la capacitación de operación y el mantenimiento preventivo anual con refacciones originales para conservar la certificación.' },
@@ -162,7 +162,7 @@ const hurst: EquipmentBrand = {
   ],
   comparativaNote: NOTA_HR,
   guia: [
-    { n: '01', t: 'Define el escenario: excarcelación vehicular pesada → cizalla + separador; primer respondiente o una sola unidad → combinada; empuje de tablero y estabilización → ariete.' },
+    { n: '01', t: 'Define el escenario: excarcelación vehicular pesada  cizalla + separador; primer respondiente o una sola unidad  combinada; empuje de tablero y estabilización  ariete.' },
     { n: '02', t: 'Aprovecha la herencia eDRAULIC: la línea a batería es autocontenida y de despliegue inmediato, con la fiabilidad del inventor del Jaws of Life®. Define la autonomía con baterías de repuesto para intervenciones largas.' },
     { n: '03', t: 'Dimensiona por los vehículos de tu zona: verifica la clasificación de corte EN 13204:2025 de la cizalla S 789 E3 ante los aceros al boro y postes B reforzados de los autos modernos.' },
     { n: '04', t: 'Incluye demostración en sitio, capacitación de operación y mantenimiento preventivo anual con refacciones originales para conservar la certificación NFPA 1960.' },
@@ -251,7 +251,7 @@ const weber: EquipmentBrand = {
   ],
   comparativaNote: NOTA_HR,
   guia: [
-    { n: '01', t: 'Define el escenario: excarcelación vehicular pesada → cizalla + separador; primer respondiente, motos de rescate o espacios estrechos → combinada SP 54 AS E-FORCE3 400 MK2 E-FORCE3; empuje de tablero y estabilización → ariete.' },
+    { n: '01', t: 'Define el escenario: excarcelación vehicular pesada  cizalla + separador; primer respondiente, motos de rescate o espacios estrechos  combinada SP 54 AS E-FORCE3 400 MK2 E-FORCE3; empuje de tablero y estabilización  ariete.' },
     { n: '02', t: 'Prioriza el peso y la maniobrabilidad: si tu operación implica espacios reducidos, unidades ligeras o intervenciones largas, la relación peso-potencia E-FORCE reduce la fatiga sin sacrificar fuerza.' },
     { n: '03', t: 'Dimensiona por los vehículos de tu zona: verifica la clasificación de corte EN 13204:2025 de la cizalla ante los aceros al boro y postes B reforzados de los autos modernos.' },
     { n: '04', t: 'Incluye demostración en sitio, capacitación de operación y mantenimiento preventivo anual con refacciones originales para conservar la certificación NFPA 1960.' },

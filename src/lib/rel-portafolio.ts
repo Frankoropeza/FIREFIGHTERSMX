@@ -49,7 +49,7 @@ export function esPortafolio(url: string | null | undefined): boolean {
 
 /**
  * `rel` para el enlace saliente de una ficha de empresa.
- * Tercero → `noopener sponsored`. Grupo → `noopener`.
+ * Tercero  `noopener sponsored`. Grupo  `noopener`.
  */
 export function relEmpresa(url: string | null | undefined): string {
   return esPortafolio(url) ? "noopener" : "noopener sponsored";

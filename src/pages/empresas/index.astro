@@ -62,7 +62,7 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEn
           <p class="font-display text-xs uppercase tracking-widest mb-8" style="color:var(--forge-300)">{totalEmpresas.toLocaleString('es-MX')} empresas registradas · 32 estados</p>
           <div class="flex flex-col sm:flex-row gap-3">
             <a href="#buscar" class="btn btn-primary btn-lg">Buscar empresas contra incendio</a>
-            <a href="/empresas/registro/" class="btn btn-ghost btn-lg">Registrar mi empresa →</a>
+            <a href="/empresas/registro/" class="btn btn-ghost btn-lg">Registrar mi empresa </a>
           </div>
         </div>
         <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
@@ -72,7 +72,7 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEn
               <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
                 <a href={`/empresas/${g.slug}/`} class="group flex items-center justify-between gap-4 py-3.5">
                   <span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{g.label}</span><span class="text-xs" style="color:#64748B">{g.description}</span></span>
-                  <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke={g.color} stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
+                  
                 </a>
               </li>))}
           </ul>
@@ -100,10 +100,10 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEn
         {giros.map((g) => { return (
           <a href={`/empresas/${g.slug}/`} class="grid-cell flex flex-col gap-4 p-7" style="background:#040A12">
             <span class="w-10 h-10 flex items-center justify-center" style={`color:${g.color};border:1px solid ${g.color}55`}>
-              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" set:html={g.icon} aria-hidden="true"/></span>
+              </span>
             <span class="font-display font-bold text-lg leading-snug" style="color:#FFFFFF">{g.label}</span>
             <span class="text-xs leading-relaxed" style="color:#64748B">{g.description}</span>
-            <span class="mt-auto font-display font-semibold text-xs uppercase tracking-wider" style="color:#FF8F57">{g.labelCorto} en México →</span>
+            <span class="mt-auto font-display font-semibold text-xs uppercase tracking-wider" style="color:#FF8F57">{g.labelCorto} en México </span>
           </a>); })}
       </div>
     </div>
@@ -171,7 +171,7 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEn
         </div>
         <div class="flex flex-col gap-3 shrink-0">
           <a href="/empresas/registro/" class="btn btn-gold btn-lg">Registrar o reclamar ficha</a>
-          <a href="/contacto/" class="btn btn-ghost">Contacto del directorio →</a>
+          <a href="/contacto/" class="btn btn-ghost">Contacto del directorio </a>
         </div>
       </div>
     </div>

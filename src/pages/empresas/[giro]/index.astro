@@ -162,7 +162,7 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
           <div class="flex flex-wrap gap-2 mt-2 mb-8">{g.normas.map((n) => <span class="badge badge-dark font-display text-[10px]">{n}</span>)}</div>
           <div class="flex flex-col sm:flex-row gap-3">
             <a href="#empresas" class="btn btn-primary btn-lg">{g.labelCorto} en México</a>
-            <a href="/empresas/registro/" class="btn btn-ghost btn-lg">Registrar empresa de {g.sustantivo} →</a>
+            <a href="/empresas/registro/" class="btn btn-ghost btn-lg">Registrar empresa de {g.sustantivo} </a>
           </div>
         </div>
         <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
@@ -172,11 +172,11 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
               <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
                 <a href={`/empresas/${giro}/${s.slug}/`} class="group flex items-center justify-between gap-4 py-3">
                   <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{g.labelCorto} en {s.nombre}</span>
-                  <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke={g.color} stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
+                  
                 </a>
               </li>))}
           </ul>
-          <a href="#estados" class="inline-flex mt-4 font-display font-semibold text-xs uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57">{g.labelCorto} en todos los estados →</a>
+          <a href="#estados" class="inline-flex mt-4 font-display font-semibold text-xs uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57">{g.labelCorto} en todos los estados </a>
         </div>
       </div>
     </div>
@@ -209,7 +209,7 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
       <div class="grid grid-cols-1 md:grid-cols-3 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
         {guide.comparar.map((item, i) => (
           <article class="p-7" style="background:#070E1A">
-            <span class="font-display font-bold text-xs" style={`color:${g.color}`}>{String(i + 1).padStart(2, '0')}</span>
+            <span class="font-display font-bold text-xs" style={`color:${g.color}`}></span>
             <h3 class="font-display font-bold text-lg mt-3 mb-3" style="color:#FFFFFF">{item.title}</h3>
             <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{item.text}</p>
           </article>
@@ -233,7 +233,7 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
         <ul class="flex flex-col gap-3 m-0 pl-5 text-sm leading-relaxed" style="color:#CBD5E1">
           {guide.cotizar.map((item) => <li>{item}</li>)}
         </ul>
-        <a href="/cotizacion/" class="inline-flex mt-7 font-display font-semibold text-xs uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57">Consultar la guía de cotización →</a>
+        <a href="/cotizacion/" class="inline-flex mt-7 font-display font-semibold text-xs uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57">Consultar la guía de cotización </a>
       </div>
     </div>
   </section>
@@ -301,21 +301,21 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
       <div>
         <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:var(--forge-300)">Otros giros del directorio</p>
         <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
-          {otros.map((o) => (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/empresas/${o.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{o.label}</span><span class="text-xs" style="color:#64748B">{o.description}</span></span><span style={`color:${o.color}`}>→</span></a></li>))}
+          {otros.map((o) => (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/empresas/${o.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{o.label}</span><span class="text-xs" style="color:#64748B">{o.description}</span></span><span style={`color:${o.color}`}></span></a></li>))}
         </ul>
       </div>
       <div>
         <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:var(--forge-300)">Guías de compra relacionadas</p>
         <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
-          {cats.map((c) => (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/productos/${c.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{c.label}</span><span class="text-xs" style="color:#64748B">{c.norm}</span></span><span style="color:var(--forge-300)">→</span></a></li>))}
+          {cats.map((c) => (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/productos/${c.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{c.label}</span><span class="text-xs" style="color:#64748B">{c.norm}</span></span><span style="color:var(--forge-300)"></span></a></li>))}
         </ul>
       </div>
       <div>
         <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:var(--forge-300)">Servicios y normativa</p>
         <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
-          {servs.map((s) => (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={s.href} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{s.title}</span><span style="color:var(--forge-300)">→</span></a></li>))}
-          <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href="/blog/categoria/normatividad/" class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Normatividad NFPA y NOM</span><span style="color:var(--forge-300)">→</span></a></li>
-          <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href="/estaciones/" class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Directorio de estaciones de bomberos</span><span style="color:var(--forge-300)">→</span></a></li>
+          {servs.map((s) => (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={s.href} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{s.title}</span><span style="color:var(--forge-300)"></span></a></li>))}
+          <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href="/blog/categoria/normatividad/" class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Normatividad NFPA y NOM</span><span style="color:var(--forge-300)"></span></a></li>
+          <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href="/estaciones/" class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Directorio de estaciones de bomberos</span><span style="color:var(--forge-300)"></span></a></li>
         </ul>
       </div>
     </div>

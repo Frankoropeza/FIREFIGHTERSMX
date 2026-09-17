@@ -51,4 +51,4 @@ El GX-7 utiliza el sistema de capas más avanzado del mercado:
 
 Importado directamente desde fábrica con documentación de certificación NFPA. Tiempo de entrega: **3-5 días hábiles** en CDMX, **5-8 días** interior del país.
 
-[Solicitar cotización personalizada →](/cotizacion)
+[Solicitar cotización personalizada ](/cotizacion)

@@ -4,9 +4,9 @@
  * Ahrefs (crawl 2026-09-16) marcó 141 títulos largos: el umbral que aplica es
  * 70 caracteres. El <h1> de cada página no se toca; esto sólo afecta a la
  * etiqueta <title>. Pasos, del menos al más invasivo:
- *   1. quita repeticiones pegadas («NFPA 72 NFPA 72» → «NFPA 72»);
+ *   1. quita repeticiones pegadas («NFPA 72 NFPA 72»  «NFPA 72»);
  *   2. corta en el último separador (— · | : /) si lo que queda es sustancial;
- *   3. abrevia términos institucionales largos (Coordinación → Coord., …);
+ *   3. abrevia términos institucionales largos (Coordinación  Coord., …);
  *   4. corta en frontera de palabra, sin dejar conectores colgando.
  */
 export const TITULO_MAX = 70;

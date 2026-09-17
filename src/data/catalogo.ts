@@ -1,7 +1,7 @@
 /**
  * Árbol del catálogo — FUENTE ÚNICA (2026-09-16).
  *
- * Familia → línea → páginas hijas. Sustituye a las dos rejillas duplicadas de
+ * Familia  línea  páginas hijas. Sustituye a las dos rejillas duplicadas de
  * la portada (LineasContraIncendio + ProductCards) y es la base del árbol de
  * /productos/ y del menú. Cada línea aparece UNA sola vez.
  *
@@ -39,11 +39,11 @@ export interface FamiliaCatalogo {
 }
 
 const ICON = {
-  rociador: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3v5M6 8h12M8 8v3M16 8v3M5 12h14M7 12v3M12 12v3M17 12v3M4 18h16"/><path d="M8 21v-3M12 21v-3M16 21v-3"/></svg>',
-  alarma: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 17h12l-1.2-1.8V11a4.8 4.8 0 0 0-9.6 0v4.2L6 17Z"/><path d="M9 20h6M12 3v1"/></svg>',
-  bomba: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3v18M12 7H7a3 3 0 0 0-3 3v2M12 7h5a3 3 0 0 1 3 3v2M4 12h4M16 12h4M8 12v5M16 12v5M5 17h6M13 17h6"/></svg>',
-  hidrante: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3v18M7 7h10M5 12h14M8 12v5M16 12v5M5 17h14"/></svg>',
-  supresion: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9 4h6M8 7h8v12H8zM10 4v3M14 4v3M10 11h4M10 15h4"/><path d="M12 2v2"/></svg>',
+  rociador: '',
+  alarma: '',
+  bomba: '',
+  hidrante: '',
+  supresion: '',
 };
 
 const FOTO = 'Professional commercial product photograph, dark navy studio background with subtle blueprint grid, soft orange rim light, sharp focus, realistic materials, 16:10 wide composition, no text, no logos, no people faces';

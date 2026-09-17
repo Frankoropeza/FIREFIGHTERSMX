@@ -112,8 +112,8 @@ const trustPoints = [
           </p>
           <div class="flex flex-wrap gap-2">
             {['DC-3 STPS','NOM-002-STPS','NFPA 1850','NFPA 13 · 72','NOM-154-SCFI','CompraNet'].map(n => (
-              <span class="badge badge-dark font-display text-[10px]">{n}</span>
-            ))}
+            <span class="badge badge-dark font-display text-[10px]">{n}</span>
+          ))}
           </div>
         </div>
 
@@ -171,7 +171,7 @@ const trustPoints = [
                 <span class="block" style="width:28px;height:28px" set:html={s.icon}/>
               </div>
               <div class="absolute bottom-0 left-0 right-0 h-8 pointer-events-none" style="background:linear-gradient(to bottom, transparent, #080F1A)"></div>
-              <span class="absolute top-4 right-5 font-display font-bold text-2xl select-none" style="color:rgba(74,117,153,0.4)" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+              <span class="absolute top-4 right-5 font-display font-bold text-2xl select-none" style="color:rgba(74,117,153,0.4)" aria-hidden="true"></span>
             </div>
 
             <div class="flex flex-col flex-1 p-5 gap-3">
@@ -189,9 +189,7 @@ const trustPoints = [
               <div class="pt-1">
                 <span class="inline-flex items-center gap-2 w-full justify-center text-xs font-display font-semibold uppercase tracking-wider py-2.5 px-4" style={`color:#040A12;background:${s.accent};letter-spacing:0.08em`}>
                   Ver servicio
-                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
-                  </svg>
+                  
                 </span>
               </div>
             </div>
@@ -240,7 +238,7 @@ const trustPoints = [
               { n: '03', t: 'Ejecutamos, documentamos y te entregamos la evidencia lista para STPS, Protección Civil o tu aseguradora.' },
             ].map((s) => (
               <li class="flex items-start gap-4">
-                <span class="font-display font-bold text-xl shrink-0" style="color:#F75000">{s.n}</span>
+                
                 <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{s.t}</p>
               </li>
             ))}
@@ -271,9 +269,7 @@ const trustPoints = [
                     <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
                     <span class="text-xs" style="color:#64748B">{l.desc}</span>
                   </span>
-                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="var(--forge-300)" stroke-width="2.5" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
-                  </svg>
+                  
                 </a>
               </li>
             ))}

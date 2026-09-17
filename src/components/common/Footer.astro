@@ -131,10 +131,7 @@ const redes = [
         </a>
         <a href={whatsappUrl('Hola, quiero cotizar equipo para bomberos.')} target="_blank" rel="noopener"
            class="btn btn-sm bg-[var(--ember-700)] hover:bg-[var(--ember-800)] text-white border-transparent font-display flex items-center gap-2">
-          <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.112 1.522 5.843L.053 23.894a.5.5 0 00.617.608l6.218-1.633A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.741 9.741 0 01-4.964-1.354l-.356-.211-3.692.969.985-3.604-.232-.372A9.718 9.718 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/>
-          </svg>
+          
           {CONTACTO_DIRECTO_ACTIVO ? 'WhatsApp' : 'Contactar por correo'}
         </a>
       </div>
@@ -150,7 +147,7 @@ const redes = [
       <div class="flex flex-col gap-5">
         <a href="/" class="flex items-center gap-3 w-fit" aria-label="FIREFIGHTERS MX — inicio">
           <div class="w-9 h-9 shrink-0">
-            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+            <svg data-logo viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
               <polygon points="18,2 32,10 32,26 18,34 4,26 4,10" fill="var(--ember-500)"/>
               <path d="M18 10c0 0-5 4-3 8 1 2 3 2 3 2s-1-2 0-4c1-2 3-2 3-2s-1 3 1 5c.8.8 1 2 1 2s2-1.5 2-4c0-3-2-5-2-5s1 2 0 4c0 0-2-4-5-6z" fill="white" opacity="0.95"/>
             </svg>
@@ -172,39 +169,23 @@ const redes = [
         <div class="flex flex-col gap-2.5 text-sm text-[var(--forge-200)]">
           {TELEFONO_ACTIVO && (
             <a href={`tel:${SITE.phoneE164}`} class="flex items-center gap-2.5 hover:text-[var(--ember-400)]">
-              <svg class="w-4 h-4 shrink-0 text-[var(--ember-500)]" fill="none" viewBox="0 0 24 24"
-                   stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-              </svg>
+              
               {SITE.phone}
             </a>
           )}
           <a href={`mailto:${SITE.email}`} class="flex items-center gap-2.5 hover:text-[var(--ember-400)]">
-            <svg class="w-4 h-4 shrink-0 text-[var(--ember-500)]" fill="none" viewBox="0 0 24 24"
-                 stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-            </svg>
+            
             {SITE.email}
           </a>
           <span class="flex items-center gap-2.5 text-[var(--forge-300)]">
-            <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24"
-                 stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
-            </svg>
+            
             {SITE.hours}
           </span>
           {DOMICILIO_VERIFICADO && (
             <a href={`https://maps.google.com/?q=${encodeURIComponent(SITE.address.full)}`}
                target="_blank" rel="noopener"
                class="flex items-start gap-2.5 hover:text-[var(--ember-400)]">
-              <svg class="w-4 h-4 shrink-0 mt-0.5 text-[var(--ember-500)]" fill="none" viewBox="0 0 24 24"
-                   stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-              </svg>
+              
               <span>{SITE.address.full}</span>
             </a>
           )}
@@ -216,8 +197,7 @@ const redes = [
               <a href={href} target="_blank" rel="noopener noreferrer"
                  class="w-8 h-8 flex items-center justify-center border border-[var(--color-border)] hover:border-[var(--ember-500)] hover:bg-[var(--ember-500)] hover:text-white text-[var(--forge-300)]"
                  aria-label={label}>
-                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24"
-                     stroke="currentColor" aria-hidden="true" set:html={icon}/>
+                
               </a>
             ))}
           </div>
@@ -312,7 +292,7 @@ const redes = [
           terceros: cada empresa confirma su propia cobertura y condiciones.
         </p>
         <a href="/cobertura" class="f-link f-link--strong mt-3 inline-block">
-          Empresas del sector por estado →
+          Empresas del sector por estado 
         </a>
       </div>
 

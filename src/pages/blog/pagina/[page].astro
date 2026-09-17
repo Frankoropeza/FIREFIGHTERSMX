@@ -2,7 +2,7 @@
 // /blog/pagina/[page].astro — Paginación del blog
 // =====================================================================
 // Genera /blog/pagina/2, /blog/pagina/3, etc.
-// Canonical → /blog (página 1 siempre en /blog/index.astro)
+// Canonical  /blog (página 1 siempre en /blog/index.astro)
 //
 // Por qué: con 13+ artículos Google necesita URLs paginadas para
 // indexar todos. Sin paginación el crawler abandona al terminar /blog.
@@ -117,7 +117,7 @@ const nextHref = currentPage < totalPages ? `${SITE.url}/blog/pagina/${currentPa
           class="btn btn-ghost"
           aria-label="Página anterior"
         >
-          ← Anterior
+           Anterior
         </a>
 
         <div class="flex items-center gap-2">
@@ -135,11 +135,11 @@ const nextHref = currentPage < totalPages ? `${SITE.url}/blog/pagina/${currentPa
 
         {nextHref ? (
           <a href={nextHref} class="btn btn-ghost" aria-label="Página siguiente">
-            Siguiente →
+            Siguiente 
           </a>
         ) : (
           <span class="btn btn-ghost" style="opacity:0.3;cursor:default" aria-disabled="true">
-            Siguiente →
+            Siguiente 
           </span>
         )}
       </nav>

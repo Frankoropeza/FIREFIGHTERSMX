@@ -563,7 +563,7 @@ const seoDesc = (product.suppressDefaultClaims
               target="_blank" rel="noopener"
               class="btn btn-primary btn-lg"
             >
-              Cotizar por {CANAL_CONTACTO} →
+              Cotizar por {CANAL_CONTACTO} 
             </a>
             {brandPath && (
               <a href={brandPath} class="btn btn-ghost btn-lg">
@@ -618,7 +618,7 @@ const seoDesc = (product.suppressDefaultClaims
                     {i === 0 && product.badge && (
                       <div class="absolute top-2 left-2 pointer-events-none">
                         <span class="text-[9px] font-display font-bold uppercase tracking-widest px-2 py-1"
-                              style="background:#F75000;color:#FFFFFF">★ {product.badge}</span>
+                              style="background:#F75000;color:#FFFFFF"> {product.badge}</span>
                       </div>
                     )}
                   </figure>
@@ -627,10 +627,7 @@ const seoDesc = (product.suppressDefaultClaims
                 {Array.from({ length: Math.max(0, 6 - galleryImages.length) }).map((_, i) => (
                   <div class="flex flex-col items-center justify-center gap-2"
                        style="aspect-ratio:4/3;background:#060D18;border:1px solid rgba(74,117,153,0.12)">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(74,117,153,0.2)" stroke-width="1.5" aria-hidden="true">
-                      <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
-                      <path d="M21 15l-5-5L5 21"/>
-                    </svg>
+                    
                   </div>
                 ))}
               </div>
@@ -654,7 +651,7 @@ const seoDesc = (product.suppressDefaultClaims
                 </p>
               )}
               <a href={whatsappUrl(`Hola, quiero la ficha técnica completa del ${product.title} (${product.norm ?? ''}) para evaluación.`)} target="_blank" rel="noopener" class="btn btn-ghost" style="margin-bottom:1.5rem">
-                Solicitar ficha técnica →
+                Solicitar ficha técnica 
               </a>
             </div>
 
@@ -727,9 +724,7 @@ const seoDesc = (product.suppressDefaultClaims
                   return (
                     <div class="flex flex-col gap-3 p-5" style={`background:#080F1A;border-top:3px solid ${color}`}>
                       <div class="w-8 h-8 flex items-center justify-center rounded-full" style={`background:${color}18`}>
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={color} stroke-width="2.5" aria-hidden="true">
-                          <path d="M20 6L9 17l-5-5"/>
-                        </svg>
+                        
                       </div>
                       <p class="text-xs leading-relaxed m-0" style="color:#94A3B8">{feat}</p>
                     </div>
@@ -753,13 +748,13 @@ const seoDesc = (product.suppressDefaultClaims
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-px" style="border-top:1px solid rgba(74,117,153,0.18)">
               <div style="background:#080F1A;border-top:3px solid #34D399">
                 <div class="px-5 pt-4 pb-3" style="border-bottom:1px solid rgba(74,117,153,0.12)">
-                  <span class="text-[10px] font-display font-bold uppercase tracking-widest" style="color:#34D399">✓ Ideal para</span>
+                  <span class="text-[10px] font-display font-bold uppercase tracking-widest" style="color:#34D399">Ideal para</span>
                 </div>
                 <ul class="flex flex-col list-none m-0 p-0">
                   {useCases.si.map((item, i) => (
                     <li class="flex items-start gap-2 px-5 py-3"
                         style={`border-bottom:${i < useCases.si.length - 1 ? '1px solid rgba(74,117,153,0.08)' : 'none'}`}>
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="2.5" class="shrink-0 mt-1" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+                      
                       <span class="text-xs leading-relaxed" style="color:#94A3B8">{item}</span>
                     </li>
                   ))}
@@ -767,20 +762,20 @@ const seoDesc = (product.suppressDefaultClaims
               </div>
               <div style="background:#080F1A;border-top:3px solid #F5A623">
                 <div class="px-5 pt-4 pb-3" style="border-bottom:1px solid rgba(74,117,153,0.12)">
-                  <span class="text-[10px] font-display font-bold uppercase tracking-widest" style="color:#F5A623">⚠ A considerar</span>
+                  <span class="text-[10px] font-display font-bold uppercase tracking-widest" style="color:#F5A623"> A considerar</span>
                 </div>
                 <ul class="flex flex-col list-none m-0 p-0">
                   {useCases.considera.map((item, i) => (
                     <li class="flex items-start gap-2 px-5 py-3"
                         style={`border-bottom:${i < useCases.considera.length - 1 ? '1px solid rgba(74,117,153,0.08)' : 'none'}`}>
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2.5" class="shrink-0 mt-1" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                      
                       <span class="text-xs leading-relaxed" style="color:#94A3B8">{item}</span>
                     </li>
                   ))}
                 </ul>
                 <div class="px-5 py-4" style="border-top:1px solid rgba(74,117,153,0.12)">
                   <a href={whatsappUrl(`Hola, necesito asesoría para saber si el ${product.title} es la opción correcta para mi operación.`)} target="_blank" rel="noopener" class="text-xs font-display font-semibold hover:text-[#FF6B26]" style="color:var(--forge-300)">
-                    Consulta técnica gratuita →
+                    Consulta técnica gratuita 
                   </a>
                 </div>
               </div>
@@ -810,9 +805,7 @@ const seoDesc = (product.suppressDefaultClaims
                 ].map((d, i) => (
                   <div class="flex items-start gap-3 p-4" style={`background:${i % 2 === 0 ? '#060D18' : '#080F1A'};border-top:2px solid ${d.color}`}>
                     <div class="shrink-0 w-7 h-7 flex items-center justify-center" style={`background:${d.color}18`}>
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={d.color} stroke-width="1.8" aria-hidden="true">
-                        <Fragment set:html={d.svg} />
-                      </svg>
+                      
                     </div>
                     <div>
                       <p class="font-display font-bold text-xs mb-0.5" style="color:#FFFFFF">{d.t}</p>
@@ -823,7 +816,7 @@ const seoDesc = (product.suppressDefaultClaims
               </div>
               <div class="flex flex-col sm:flex-row gap-3">
                 <a href={whatsappUrl(`Hola, necesito el dossier de licitación para el ${product.title} (${product.norm ?? ''}): certificado NFPA, ficha técnica y carta de distribuidor.`)} target="_blank" rel="noopener" class="btn btn-primary">
-                  Solicitar dossier completo →
+                  Solicitar dossier completo 
                 </a>
                 <a href="/cotizacion" class="btn btn-ghost">Cotización formal</a>
               </div>
@@ -845,7 +838,7 @@ const seoDesc = (product.suppressDefaultClaims
               <a href={whatsappUrl(`Hola, quiero cotizar el ${product.title}${product.norm ? ` (${product.norm})` : ''}. ¿Precio y disponibilidad?`)} target="_blank" rel="noopener"
                  class="block text-center text-sm font-display font-bold py-3 px-4 w-full hover:opacity-90"
                  style="background:#FFFFFF;color:#F75000">
-                Cotizar por {CANAL_CONTACTO} →
+                Cotizar por {CANAL_CONTACTO} 
               </a>
               <a href="/cotizacion" class="block text-center text-xs mt-2 py-2 font-display font-semibold" style="color:rgba(255,255,255,0.8)">
                 Cotización formal
@@ -887,21 +880,21 @@ const seoDesc = (product.suppressDefaultClaims
                            class="shrink-0" style="width:48px;height:48px;object-fit:cover;object-position:center;background:#060D18" />
                     ) : (
                       <div class="shrink-0 flex items-center justify-center" style="width:48px;height:48px;background:#060D18;border:1px solid rgba(74,117,153,0.15)">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(74,117,153,0.3)" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                        
                       </div>
                     )}
                     <div class="flex-1 min-w-0">
                       <p class="font-display font-semibold text-xs truncate group-hover:text-[#F75000]" style="color:#FFFFFF">{p.title}</p>
                       {p.norm && <p class="text-[10px] mt-0.5" style="color:var(--forge-300)">{p.norm}</p>}
                     </div>
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--forge-300)" stroke-width="2" class="shrink-0" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+                    
                   </a>
                 ))}
               </div>
               {brandPath && (
                 <div class="px-4 py-3" style="border-top:1px solid rgba(74,117,153,0.15)">
                   <a href={brandPath} class="text-[10px] font-display font-semibold hover:text-[#FF6B26]" style="color:var(--forge-300)">
-                    Catálogo completo {product.brand} →
+                    Catálogo completo {product.brand} 
                   </a>
                 </div>
               )}
@@ -929,13 +922,13 @@ const seoDesc = (product.suppressDefaultClaims
                       <p class="font-display font-semibold text-xs truncate group-hover:text-[#F75000]" style="color:#CBD5E1">{p.title}</p>
                       {p.brand && <p class="text-[10px] mt-0.5" style="color:var(--forge-300)">{p.brand}</p>}
                     </div>
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--forge-300)" stroke-width="2" class="shrink-0" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+                    
                   </a>
                 ))}
               </div>
               <div class="px-4 py-3" style="border-top:1px solid rgba(74,117,153,0.15)">
                 <a href={categoryPath} class="text-[10px] font-display font-semibold hover:text-[#FF6B26]" style="color:var(--forge-300)">
-                  Todo el catálogo de {product.category} →
+                  Todo el catálogo de {product.category} 
                 </a>
               </div>
             </div>
@@ -952,7 +945,7 @@ const seoDesc = (product.suppressDefaultClaims
                    class="flex items-center gap-2 px-3 py-2.5 group hover:bg-[#040A12]"
                    style="border-right:1px solid rgba(74,117,153,0.1)">
                   <div class="shrink-0 w-5 h-5 flex items-center justify-center" style="color:var(--forge-300)">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" set:html={cat.icon} aria-hidden="true"/>
+                    
                   </div>
                   <span class="text-[10px] font-display font-semibold truncate group-hover:text-[#F75000]" style="color:#94A3B8">{cat.label}</span>
                 </a>
@@ -960,7 +953,7 @@ const seoDesc = (product.suppressDefaultClaims
             </div>
             <div class="px-4 py-3">
               <a href="/productos" class="text-[10px] font-display font-semibold hover:text-[#FF6B26]" style="color:var(--forge-300)">
-                Todos los productos para bomberos →
+                Todos los productos para bomberos 
               </a>
             </div>
           </div>
@@ -982,7 +975,7 @@ const seoDesc = (product.suppressDefaultClaims
             </div>
             <div class="px-4 py-3" style="border-top:1px solid rgba(74,117,153,0.15)">
               <a href="/blog" class="text-[10px] font-display font-semibold hover:text-[#FF6B26]" style="color:var(--forge-300)">
-                Todos los artículos del blog técnico →
+                Todos los artículos del blog técnico 
               </a>
             </div>
           </div>
@@ -1005,7 +998,7 @@ const seoDesc = (product.suppressDefaultClaims
               </div>
               <div class="px-4 py-3" style="border-top:1px solid rgba(74,117,153,0.15)">
                 <a href="/productos" class="text-[10px] font-display font-semibold hover:text-[#FF6B26]" style="color:var(--forge-300)">
-                  Catálogo de equipo para bomberos →
+                  Catálogo de equipo para bomberos 
                 </a>
               </div>
             </div>
@@ -1029,7 +1022,7 @@ const seoDesc = (product.suppressDefaultClaims
               </div>
               <div class="px-4 py-3" style="border-top:1px solid rgba(74,117,153,0.15)">
                 <a href="/servicios" class="text-[10px] font-display font-semibold hover:text-[#FF6B26]" style="color:var(--forge-300)">
-                  Servicios contra incendio →
+                  Servicios contra incendio 
                 </a>
               </div>
             </div>
@@ -1046,7 +1039,7 @@ const seoDesc = (product.suppressDefaultClaims
                  target="_blank" rel="noopener"
                  class="block text-center text-xs font-display font-bold py-2.5 px-4 w-full hover:opacity-90"
                  style="background:#F75000;color:#FFFFFF">
-                Hablar con un asesor →
+                Hablar con un asesor 
               </a>
               <a href="/certificaciones" class="block text-center text-[10px] mt-2 font-display" style="color:var(--forge-300)">
                 Certificaciones y normas NFPA y NOM
@@ -1078,7 +1071,7 @@ const seoDesc = (product.suppressDefaultClaims
             </p>
           </div>
           <a href={brandPath} class="btn btn-ghost max-w-full min-w-0 whitespace-normal text-center">
-            Todos los modelos {product.brand} →
+            Todos los modelos {product.brand} 
           </a>
         </div>
       </div>
@@ -1156,7 +1149,7 @@ const seoDesc = (product.suppressDefaultClaims
                 )}
 
                 <span class="text-xs font-display font-semibold uppercase tracking-wider mt-auto pt-2"
-                      style="color:#F75000">Ficha técnica completa →</span>
+                      style="color:#F75000">Ficha técnica completa </span>
               </div>
             </a>
           ))}
@@ -1166,7 +1159,7 @@ const seoDesc = (product.suppressDefaultClaims
           <a href={categoryPath}
              class="text-sm font-display font-semibold hover:text-[#FF6B26]"
              style="color:var(--forge-300)">
-            ← Catálogo completo de {product.category}
+             Catálogo completo de {product.category}
           </a>
         </div>
 

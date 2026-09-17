@@ -89,7 +89,7 @@ const razones = [
 
 /* ── Guía de selección ────────────────────────────────────────────────────── */
 const guia = [
-  { n: '01', t: 'Define el escenario dominante: estructural en edificios → NFPA 1970; incendio de vegetación → NFPA 1950. Este primer paso elimina la mitad de las opciones.' },
+  { n: '01', t: 'Define el escenario dominante: estructural en edificios  NFPA 1970; incendio de vegetación  NFPA 1950. Este primer paso elimina la mitad de las opciones.' },
   { n: '02', t: 'Elige el estilo según tu tradición e identidad: europeo integral para cuerpos metropolitanos y ARFF; americano para corporaciones con historia; forestal para interfaz.' },
   { n: '03', t: 'Configura los accesorios: visor retráctil o goggles exteriores, módulo de lámpara, soporte para cámara térmica, barboquejo y sistemas de comunicación.' },
   { n: '04', t: 'Verifica compatibilidad con el SCBA y la capucha de partículas NFPA 1970, y asegura refacciones originales —visor, suspensión, barboquejo— para conservar la certificación.' },
@@ -209,8 +209,8 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
           ))}
           <div class="flex flex-wrap gap-2">
             {['NFPA 1970','NFPA 1950','MSA Gallet F1 XF','Bullard USTM','Cairns N6A','Visor integrado','Distribuidor autorizado MX'].map(n => (
-              <span class="badge badge-dark font-display text-[10px]">{n}</span>
-            ))}
+            <span class="badge badge-dark font-display text-[10px]">{n}</span>
+          ))}
           </div>
         </div>
 
@@ -288,7 +288,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style="border:1px solid rgba(74,117,153,0.18)">
         {razones.map((r, i) => (
           <div class="flex flex-col gap-3 p-6" style={`background:#080F1A;${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.12)' : ''}`}>
-            <span class="font-display font-bold text-2xl" style="color:#F75000">{r.n}</span>
+            
             <h3 class="font-display font-bold text-sm uppercase tracking-wide" style="color:#FFFFFF">{r.t}</h3>
             <p class="text-xs leading-relaxed m-0" style="color:#64748B">{r.d}</p>
           </div>
@@ -322,7 +322,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
         {tipos.map((t) => (
           <article class="flex flex-col gap-4 p-7" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
             <div class="flex items-center justify-center" style={`width:52px;height:52px;background:${t.accent}1a;border:1.5px solid ${t.accent}59;color:${t.accent}`}>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" style="width:24px;height:24px" set:html={t.icon}/>
+              
             </div>
             <div class="flex items-center justify-between gap-2">
               <h3 class="font-display font-bold text-xl" style="color:#FFFFFF">{t.title}</h3>
@@ -375,7 +375,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
         </div>
         <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/cascos-nfpa/msa-gallet" class="btn btn-primary btn-lg">
-            Catálogo MSA Gallet completo →
+            Catálogo MSA Gallet completo 
           </a>
           <a
             href={whatsappUrl('Hola, quiero cotizar cascos MSA Gallet F1 XF EN 443.')}
@@ -432,7 +432,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
         </div>
         <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/cascos-nfpa/bullard" class="btn btn-primary btn-lg">
-            Catálogo Bullard completo →
+            Catálogo Bullard completo 
           </a>
           <a
             href={whatsappUrl('Hola, quiero cotizar cascos Bullard USTM o UST LowRider NFPA 1970.')}
@@ -489,7 +489,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
         </div>
         <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/cascos-nfpa/cairns" class="btn btn-primary btn-lg">
-            Catálogo Cairns completo →
+            Catálogo Cairns completo 
           </a>
           <a
             href={whatsappUrl('Hola, quiero cotizar cascos Cairns N6A Houston o 1836 NFPA 1970.')}
@@ -605,7 +605,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
           <ol class="flex flex-col gap-4 list-none m-0 p-0">
             {guia.map((s) => (
               <li class="flex items-start gap-4">
-                <span class="font-display font-bold text-xl shrink-0" style="color:#F75000">{s.n}</span>
+                
                 <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{s.t}</p>
               </li>
             ))}
@@ -627,7 +627,6 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
                     <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
                     <span class="text-xs" style="color:#64748B">{l.desc}</span>
                   </span>
-                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="var(--forge-300)" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
                 </a>
               </li>
             ))}
@@ -695,7 +694,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
             class="btn btn-lg"
             style="background:#FFFFFF;color:#F75000;border-color:#FFFFFF;font-weight:700"
           >
-            Cotizar por {CANAL_CONTACTO} →
+            Cotizar por {CANAL_CONTACTO} 
           </a>
           <a href="/cotizacion" class="btn btn-lg" style="background:transparent;color:#FFFFFF;border:2px solid rgba(255,255,255,0.5)">
             Cotización formal
@@ -745,7 +744,6 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
                     <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
                     <span class="text-xs" style="color:#64748B">{l.desc}</span>
                   </span>
-                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="var(--forge-300)" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
                 </a>
               </li>
             ))}
@@ -761,7 +759,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
           {otrasCategorias.map((c) => (
             <a href={`/productos/${c.slug}`} class="btn btn-sm btn-dark">{c.label}</a>
           ))}
-          <a href="/productos" class="btn btn-sm btn-outline">Catálogo completo →</a>
+          <a href="/productos" class="btn btn-sm btn-outline">Catálogo completo </a>
         </div>
       </div>
 
@@ -779,21 +777,21 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
            style="background:#080F1A;border:1px solid rgba(74,117,153,0.2)">
           <span class="text-sm font-display font-bold group-hover:text-[#F75000]" style="color:#FFFFFF">Trajes Bombero</span>
           <span class="text-xs leading-relaxed" style="color:#64748B">Globe · Lion Apparel · Honeywell · Fire-Dex</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Trajes Bombero →</span>
+          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Trajes Bombero </span>
         </a>
         <a href="/productos/equipos-scba"
            class="group flex flex-col gap-2 p-5 hover:border-[#F75000]"
            style="background:#080F1A;border:1px solid rgba(74,117,153,0.2)">
           <span class="text-sm font-display font-bold group-hover:text-[#F75000]" style="color:#FFFFFF">Equipos SCBA</span>
           <span class="text-xs leading-relaxed" style="color:#64748B">MSA G1 · Dräger PSS 7000 · 3M Scott</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Equipos SCBA →</span>
+          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Equipos SCBA </span>
         </a>
         <a href="/productos/herramientas-rescate"
            class="group flex flex-col gap-2 p-5 hover:border-[#F75000]"
            style="background:#080F1A;border:1px solid rgba(74,117,153,0.2)">
           <span class="text-sm font-display font-bold group-hover:text-[#F75000]" style="color:#FFFFFF">Herramientas de Rescate</span>
           <span class="text-xs leading-relaxed" style="color:#64748B">Holmatro · Hurst · Weber Rescue</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Herramientas de Rescate →</span>
+          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Herramientas de Rescate </span>
         </a>
       </div>
     </div>

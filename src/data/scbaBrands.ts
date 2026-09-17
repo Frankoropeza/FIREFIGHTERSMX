@@ -73,7 +73,7 @@ const msaG1: EquipmentBrand = {
   ],
   comparativaNote: NOTA_SCBA,
   guia: [
-    { n: '01', t: 'Define el escenario dominante: combate estructural → G1 Estructural (30/45 min); industria, túneles o confinados → G1 Industrial (60 min); HAZMAT/CBRN → G1 CBRN; equipo de rescate de bombero → G1 RIT.' },
+    { n: '01', t: 'Define el escenario dominante: combate estructural  G1 Estructural (30/45 min); industria, túneles o confinados  G1 Industrial (60 min); HAZMAT/CBRN  G1 CBRN; equipo de rescate de bombero  G1 RIT.' },
     { n: '02', t: 'Elige la autonomía según la operación: 30 min para respuesta urbana estándar, 45 min para mayor margen, 60 min para industria y rescate prolongado. A mayor autonomía, mayor peso y volumen del cilindro.' },
     { n: '03', t: 'Define la electrónica: EOSTI y PASS son base; suma telemetría ICM y localizador si quieres control de aire del equipo en cabina de mando y capacidad de búsqueda RIT.' },
     { n: '04', t: 'Asegura el servicio: prueba hidrostática de cilindros, prueba de flujo anual y refacciones originales con servicio autorizado, y verifica la compatibilidad con tu máscara, casco y sistema de comunicación.' },
@@ -157,7 +157,7 @@ const dragerPss: EquipmentBrand = {
   ],
   comparativaNote: NOTA_SCBA,
   guia: [
-    { n: '01', t: 'Define el escenario dominante: combate estructural → PSS 7000 Estructural (30/45 min); industria/túneles → Industrial (60 min); HAZMAT/CBRN → un SCBA con aprobación NIOSH CBRN como el MSA G1 CBRN; equipo de rescate de bombero → RIT.' },
+    { n: '01', t: 'Define el escenario dominante: combate estructural  PSS 7000 Estructural (30/45 min); industria/túneles  Industrial (60 min); HAZMAT/CBRN  un SCBA con aprobación NIOSH CBRN como el MSA G1 CBRN; equipo de rescate de bombero  RIT.' },
     { n: '02', t: 'Aprovecha la ergonomía: si tu operación implica jornadas largas o mucho desplazamiento con carga, la placa dorsal flexible del PSS 7000 reduce la fatiga frente a arneses rígidos. Define la autonomía (30/45/60) por escenario.' },
     { n: '03', t: 'Define la electrónica Sentinel: alarma de inmovilidad y manómetro electrónico de base; suma telemetría si quieres gestión de aire del equipo en cabina de mando.' },
     { n: '04', t: 'Asegura el servicio: prueba de flujo anual, hidrostática del cilindro y refacciones originales con servicio autorizado, y verifica compatibilidad de máscara FPS 7000 con tu casco y comunicación.' },

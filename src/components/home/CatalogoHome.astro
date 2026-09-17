@@ -29,7 +29,7 @@ const img = (slug: string) => {
       </p>
       <a href="/productos/" class="ch-link">
         Catálogo de equipo contra incendio
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        
       </a>
     </div>
   </div>
@@ -38,7 +38,7 @@ const img = (slug: string) => {
     <div class="container-site ch-fam" aria-labelledby={`fam-${familia.slug}`}>
       <header class="ch-fam-head">
         <div>
-          <span class="ch-fam-num">{String(fi + 1).padStart(2, '0')}</span>
+          <span class="ch-fam-num"></span>
           <div>
             <p class="ch-fam-eyebrow">{familia.eyebrow}</p>
             <h3 id={`fam-${familia.slug}`} class="ch-fam-title">{familia.titulo}</h3>
@@ -63,7 +63,7 @@ const img = (slug: string) => {
                 <p class="ch-text">{l.texto}</p>
                 <a href={l.href} class="ch-btn" aria-label={`${l.cta}: ${l.titulo}`}>
                   {l.cta}
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                  
                 </a>
               </div>
             </li>
@@ -73,7 +73,7 @@ const img = (slug: string) => {
 
       <a href={familia.hub.href} class="ch-link ch-hub">
         {familia.hub.label}
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        
       </a>
     </div>
   ))}

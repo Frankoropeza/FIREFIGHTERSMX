@@ -115,7 +115,7 @@ export const navigation: { main: NavItem[] } = { main: [
       },
       { label: "Drones de Emergencia",       href: "/productos/drones-emergencia",      description: "ISR, búsqueda y rescate" },
       { label: "Marcas que distribuimos",     href: "/marcas",                           description: "Distribuidor autorizado · 20+ fabricantes" },
-      { label: "Catálogo completo de equipo para bomberos →", href: "/productos" },
+      { label: "Catálogo completo de equipo para bomberos ", href: "/productos" },
     ],
   },
   {
@@ -180,7 +180,7 @@ export const navigation: { main: NavItem[] } = { main: [
           { label: "Jalisco",                      href: "/empresas/estado/jalisco",  description: "Todas las empresas de Jalisco" },
           { label: "Nuevo León",                   href: "/empresas/estado/nuevo-leon", description: "Todas las empresas de NL" },
           { label: "Registrar o reclamar ficha",   href: "/empresas/registro",      description: "Alta básica gratuita" },
-          { label: "Directorio completo de empresas →", href: "/empresas" },
+          { label: "Directorio completo de empresas ", href: "/empresas" },
         ],
       },
       {
@@ -193,7 +193,7 @@ export const navigation: { main: NavItem[] } = { main: [
           { label: "Jalisco",                 href: "/estaciones/jalisco",    description: "GDL, ZMG y municipios" },
           { label: "Nuevo León",              href: "/estaciones/nuevo-leon", description: "Monterrey y ZMM" },
           { label: "Estado de México",        href: "/estaciones/estado-de-mexico", description: "Toluca, Naucalpan, Ecatepec" },
-          { label: "Estaciones de bomberos en los 32 estados →", href: "/estaciones" },
+          { label: "Estaciones de bomberos en los 32 estados ", href: "/estaciones" },
         ],
       },
       { label: "Empresas por estado", href: "/cobertura", description: "Consulta el directorio por entidad" },

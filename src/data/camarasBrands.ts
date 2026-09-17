@@ -73,7 +73,7 @@ const flir: EquipmentBrand = {
   ],
   comparativaNote: NOTA_TIC,
   guia: [
-    { n: '01', t: 'Define el uso dominante: búsqueda y rescate estructural → K75; transmisión Wi-Fi → K75; mando y análisis → K85-N; inspección industrial y mantenimiento → T560.' },
+    { n: '01', t: 'Define el uso dominante: búsqueda y rescate estructural  K75; transmisión Wi-Fi  K75; mando y análisis  K85-N; inspección industrial y mantenimiento  T560.' },
     { n: '02', t: 'Elige la resolución por la tarea: 320×240 px para búsqueda y rescate; 640×480 px para mando e inspección industrial de detalle.' },
     { n: '03', t: 'Decide el modelo de despliegue: una cámara compartida por cuadrilla (K75) o una cámara de mando (K85-N) según la operación.' },
     { n: '04', t: 'Verifica certificación NFPA 1930 en los modelos estructurales, define grabación/streaming si necesitas documentación, y agenda demostración en sitio sin costo para que la brigada la pruebe antes de decidir.' },
@@ -162,7 +162,7 @@ const msaEvolution: EquipmentBrand = {
   ],
   comparativaNote: NOTA_TIC,
   guia: [
-    { n: '01', t: 'Define el uso dominante: búsqueda y rescate → Evolution 6000; manos libres integrada en el SCBA → G1 iTIC; mando, grabación y análisis → Evolution 6000; industrial con presupuesto controlado → Evolution 6000.' },
+    { n: '01', t: 'Define el uso dominante: búsqueda y rescate  Evolution 6000; manos libres integrada en el SCBA  G1 iTIC; mando, grabación y análisis  Evolution 6000; industrial con presupuesto controlado  Evolution 6000.' },
     { n: '02', t: 'Aprovecha el ecosistema MSA: si tu cuerpo ya opera casco Gallet y SCBA G1, la integración G1 iTIC y la compatibilidad de marca reducen complejidad, capacitación y soporte. Define el modelo por la tarea: Evolution 6000 (320×240) o G1 iTIC (220×176).' },
     { n: '03', t: 'Decide el despliegue: cámara compartida de búsqueda (Evolution 6000) y/o la solución manos libres por elemento (G1 iTIC) para que cada bombero conserve visión sin sostener nada.' },
     { n: '04', t: 'Asegura la verificación NFPA 1930, la calibración periódica con servicio autorizado y la compatibilidad con tu casco, SCBA y comunicación. Agenda demostración en sitio sin costo.' },
@@ -251,7 +251,7 @@ const bullardTxs: EquipmentBrand = {
   ],
   comparativaNote: NOTA_TIC,
   guia: [
-    { n: '01', t: 'Define el uso dominante: búsqueda y rescate → TXS; una cámara por bombero → QXT Pro personal; mando, grabación y análisis → NXT Pro; inspección industrial → DXT.' },
+    { n: '01', t: 'Define el uso dominante: búsqueda y rescate  TXS; una cámara por bombero  QXT Pro personal; mando, grabación y análisis  NXT Pro; inspección industrial  DXT.' },
     { n: '02', t: 'Define el uso operativo y la capacitación requerida para integrar la cámara a tu respuesta.' },
     { n: '03', t: 'Decide el despliegue: cámara compartida de búsqueda (TXS) y/o cámara personal por elemento (QXT Pro). Define la resolución (320×240 o 640×480) según la tarea.' },
     { n: '04', t: 'Verifica certificación NFPA 1930 en los modelos estructurales, agenda demostración en sitio sin costo y define el plan de calibración y verificación con servicio autorizado.' },

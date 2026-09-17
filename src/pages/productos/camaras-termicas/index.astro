@@ -143,7 +143,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'camaras-termicas').
 
 /* Guía de selección */
 const guia = [
-  { n: '01', t: 'Define el uso principal: interior estructural (combate activo en edificios) → necesitas cámara de entrada con arranque rápido (<5 s) y operación con guante. Operaciones de mando o documentación → prioriza resolución 320×240 px y grabación de video.' },
+  { n: '01', t: 'Define el uso principal: interior estructural (combate activo en edificios)  necesitas cámara de entrada con arranque rápido (<5 s) y operación con guante. Operaciones de mando o documentación  prioriza resolución 320×240 px y grabación de video.' },
   { n: '02', t: 'Verifica la certificación NFPA 1930 por número de modelo, no por marca. La norma exige que la certificación esté vigente y sea verificable en el registro del laboratorio — un modelo descontinuado puede ya no estar listado aunque lo estuvo en su momento.' },
   { n: '03', t: 'Comprueba la integración con tu EPP: la cámara debe montarse en tu casco sin modificar el perfil de protección y sin interferir con el SCBA. MSA Evolution monta nativamente en Gallet; FLIR y Bullard incluyen adaptadores universales para los cascos más comunes.' },
   { n: '04', t: 'Solicita la demostración con las tres marcas en condición real (con guante, con casco, con SCBA). La imagen de catálogo no reemplaza la experiencia táctica. Organizamos la demostración en tu instalación o en las nuestras, sin compromiso de compra.' },
@@ -201,9 +201,9 @@ const articulos = [
           <div class="flex flex-wrap gap-4">
             <a href={whatsappUrl('Hola, quiero información sobre cámaras térmicas para bomberos.')}
               target="_blank" rel="noopener" class="btn btn-primary btn-lg">
-              Solicitar demostración →
+              Solicitar demostración 
             </a>
-            <a href="#flir" class="btn btn-ghost btn-lg">Cámaras térmicas por marca ↓</a>
+            <a href="#flir" class="btn btn-ghost btn-lg">Cámaras térmicas por marca </a>
           </div>
         </div>
 
@@ -294,7 +294,7 @@ const articulos = [
       <p>La FLIR T560 es una cámara industrial de inspección (hasta 1500 °C): sirve a brigadas de mantenimiento, pero no es una cámara de bomberos.</p>
 
       <div class="section-head mt-14 mb-5"><h2>¿Cómo elegir una cámara térmica para tu cuerpo de bomberos?</h2></div>
-      <ol class="list-decimal pl-6 space-y-2 text-sm leading-relaxed" style="color:#CBD5E1">
+      <ol class="list-none pl-6 space-y-2 text-sm leading-relaxed" style="color:#CBD5E1">
         <li>Define el uso principal: búsqueda y rescate, mando o inspección industrial.</li>
         <li>Exige certificación NFPA 1930 si la cámara entrará a estructuras incendiadas.</li>
         <li>Compara resolución, frecuencia de imagen y autonomía con la duración de tus operaciones.</li>
@@ -320,7 +320,7 @@ const articulos = [
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style="border:1px solid rgba(74,117,153,0.18)">
         {razones.map((r, i) => (
           <div class="flex flex-col gap-3 p-6" style={`background:#080F1A;${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.12)' : ''}`}>
-            <span class="font-display font-bold text-2xl" style="color:#F75000">{r.n}</span>
+            
             <h3 class="font-display font-bold text-sm uppercase tracking-wide" style="color:#FFFFFF">{r.t}</h3>
             <p class="text-xs leading-relaxed m-0" style="color:#64748B">{r.d}</p>
           </div>
@@ -345,9 +345,7 @@ const articulos = [
           <div class="flex flex-col gap-4 p-8" style={`background:#080F1A;border:1px solid rgba(74,117,153,0.18);border-top:3px solid ${t.accent}`}>
             <div class="flex items-center gap-3">
               <div class="shrink-0 flex items-center justify-center w-10 h-10 rounded-full" style={`background:${t.accent}18`}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={t.accent} stroke-width="1.8">
-                  <Fragment set:html={t.icon} />
-                </svg>
+                
               </div>
               <div>
                 <span class="text-[9px] font-bold uppercase tracking-widest block" style={`color:${t.accent}`}>{t.norm}</span>
@@ -428,7 +426,7 @@ const articulos = [
         </div>
         <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/camaras-termicas/flir" class="btn btn-primary btn-lg">
-            Catálogo FLIR completo →
+            Catálogo FLIR completo 
           </a>
           <a href={whatsappUrl('Hola, quiero cotizar cámaras térmicas FLIR K75 o K85-N.')}
             target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
@@ -482,7 +480,7 @@ const articulos = [
         </div>
         <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/camaras-termicas/msa-evolution" class="btn btn-primary btn-lg">
-            Catálogo MSA Evolution completo →
+            Catálogo MSA Evolution completo 
           </a>
           <a href={whatsappUrl('Hola, quiero cotizar cámaras térmicas MSA Evolution 6000.')}
             target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
@@ -537,7 +535,7 @@ const articulos = [
         </div>
         <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/camaras-termicas/bullard-txs" class="btn btn-primary btn-lg">
-            Catálogo Bullard completo →
+            Catálogo Bullard completo 
           </a>
           <a href={whatsappUrl('Hola, quiero cotizar cámaras térmicas Bullard TXS o NXT Pro.')}
             target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
@@ -561,7 +559,7 @@ const articulos = [
           <ol class="flex flex-col gap-4 list-none m-0 p-0">
             {guia.map((s) => (
               <li class="flex items-start gap-4">
-                <span class="font-display font-bold text-xl shrink-0" style="color:#F75000">{s.n}</span>
+                
                 <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{s.t}</p>
               </li>
             ))}
@@ -570,7 +568,7 @@ const articulos = [
             <a href={whatsappUrl('Hola, necesito asesoría para elegir la cámara térmica NFPA 1930 correcta para mi cuerpo de bomberos.')}
               target="_blank" rel="noopener"
               class="btn btn-primary btn-lg">
-              Asesoría de selección gratuita →
+              Asesoría de selección gratuita 
             </a>
           </div>
         </div>
@@ -584,9 +582,7 @@ const articulos = [
                     <span class="font-display font-semibold text-sm group-hover:text-[#F75000]" style="color:#FFFFFF">{l.label}</span>
                     <span class="text-xs" style="color:#64748B">{l.desc}</span>
                   </span>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--forge-300)" stroke-width="2" class="shrink-0">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
-                  </svg>
+                  
                 </a>
               </li>
             ))}
@@ -657,7 +653,7 @@ const articulos = [
             target="_blank" rel="noopener"
             class="btn btn-primary btn-lg text-center"
           >
-            Agendar demostración →
+            Agendar demostración 
           </a>
           <a href={whatsappUrl('Hola, quiero una cotización de cámaras térmicas para mi corporación.')}
             target="_blank" rel="noopener"
@@ -689,7 +685,7 @@ const articulos = [
           <a href={l.href} class="group flex flex-col gap-2 p-5" style={`background:#080F1A;border:1px solid rgba(74,117,153,0.18);border-top:2px solid ${l.accent}`}>
             <span class="font-display font-bold text-sm" style={`color:${l.accent}`}>{l.label}</span>
             <span class="text-xs leading-relaxed" style="color:#64748B">{l.desc}</span>
-            <span class="text-xs font-semibold mt-auto pt-2" style="color:var(--forge-300)">Guía de {l.label} →</span>
+            <span class="text-xs font-semibold mt-auto pt-2" style="color:var(--forge-300)">Guía de {l.label} </span>
           </a>
         ))}
       </div>
@@ -731,21 +727,21 @@ const articulos = [
            style="background:#080F1A;border:1px solid rgba(74,117,153,0.2)">
           <span class="text-sm font-display font-bold group-hover:text-[#F75000]" style="color:#FFFFFF">Equipos SCBA</span>
           <span class="text-xs leading-relaxed" style="color:#64748B">MSA G1 · Dräger PSS · 3M Scott</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Equipos SCBA →</span>
+          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Equipos SCBA </span>
         </a>
         <a href="/productos/trajes-bombero"
            class="group flex flex-col gap-2 p-5 hover:border-[#F75000]"
            style="background:#080F1A;border:1px solid rgba(74,117,153,0.2)">
           <span class="text-sm font-display font-bold group-hover:text-[#F75000]" style="color:#FFFFFF">Trajes Bombero</span>
           <span class="text-xs leading-relaxed" style="color:#64748B">Globe · Lion Apparel · Honeywell · Fire-Dex</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Trajes Bombero →</span>
+          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Trajes Bombero </span>
         </a>
         <a href="/productos/cascos-nfpa"
            class="group flex flex-col gap-2 p-5 hover:border-[#F75000]"
            style="background:#080F1A;border:1px solid rgba(74,117,153,0.2)">
           <span class="text-sm font-display font-bold group-hover:text-[#F75000]" style="color:#FFFFFF">Cascos NFPA</span>
           <span class="text-xs leading-relaxed" style="color:#64748B">MSA Gallet · Bullard · Cairns</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Cascos NFPA →</span>
+          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Cascos NFPA </span>
         </a>
       </div>
     </div>

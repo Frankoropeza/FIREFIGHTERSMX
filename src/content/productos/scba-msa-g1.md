@@ -39,4 +39,4 @@ El G1 es parte del ecosistema **MSA Connected Firefighter**, que permite al ofic
 
 El diseño panorámico de la mascarilla ofrece un campo visual superior al 80° horizontal, reduciendo la fatiga visual en operaciones prolongadas. La visera resistente a rasguños y el sistema de sellado ergonómico aseguran hermeticidad incluso en perfiles faciales difíciles.
 
-[Cotizar este equipo →](/cotizacion)
+[Cotizar este equipo ](/cotizacion)

@@ -35,28 +35,28 @@ const familias = [
     badge: 'NFPA 1960 · EN 13204:2025',
     accent: '#F75000',
     desc: 'Cortan postes B reforzados, pedales y estructuras de acero al boro de los vehículos modernos. La herramienta principal de toda escena de excarcelación.',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 7H9.5a2 2 0 0 0 0 4H14"/><path d="M20 17H9.5a2 2 0 0 1 0-4H14"/><path d="M4 7l4 5-4 5"/></svg>`,
+    icon: ``,
   },
   {
     title: 'Separadores',
     badge: 'NFPA 1960 · Apertura',
     accent: '#F5A623',
     desc: 'Abren puertas, desplazan tableros y crean espacio en el habitáculo. Gran apertura de brazos y puntas de retención de carga para tracción y levantamiento. Fuerza máxima de 366 kN en PSP50.',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12H3M21 12h-2M8.5 12a3.5 3.5 0 0 1 7 0"/><path d="M12 5v2M12 17v2M7.05 7.05l1.41 1.41M15.54 15.54l1.41 1.41M7.05 16.95l1.41-1.41M15.54 8.46l1.41-1.41"/></svg>`,
+    icon: ``,
   },
   {
     title: 'Herramientas Combinadas',
     badge: 'NFPA 1960 · 2 en 1',
     accent: '#34D399',
     desc: 'Cortan y separan con una sola herramienta. La solución compacta del primer respondiente: capacidad de excarcelación completa sin cargar dos equipos. Ideal para unidades ligeras.',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
+    icon: ``,
   },
   {
     title: 'Arietes Telescópicos',
     badge: 'NFPA 1960 · Empuje',
     accent: '#60A5FA',
     desc: 'Empuje de tablero, desplazamiento de cargas y estabilización de vehículos. Alta fuerza en línea recta (136 kN en PRA50) con carrera telescópica larga. Imprescindible en rescate estructural y USAR.',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M15 8l4 4-4 4"/><path d="M3 8v8"/></svg>`,
+    icon: ``,
   },
 ];
 
@@ -96,7 +96,7 @@ const comparativa = [
 
 /* Guía de selección */
 const guia = [
-  { n: '01', t: 'Define la misión dominante: excarcelación vehicular → cizalla + separador + ariete; primer respondiente o unidad ligera → combinada; rescate técnico/USAR → ariete + separador.' },
+  { n: '01', t: 'Define la misión dominante: excarcelación vehicular  cizalla + separador + ariete; primer respondiente o unidad ligera  combinada; rescate técnico/USAR  ariete + separador.' },
   { n: '02', t: 'Elige la tecnología: la línea a batería (Pentheon, eDRAULIC, E-FORCE) es hoy el estándar — sin mangueras, sin unidad de poder, despliegue en segundos y movilidad total en la escena.' },
   { n: '03', t: 'Dimensiona por los vehículos de tu zona: los autos modernos con acero al boro y postes B reforzados exigen clasificación de corte alta (EN 13204:2025). Verifica la categoría de la cizalla antes de especificar.' },
   { n: '04', t: 'Incluye demostración, capacitación y plan de mantenimiento: la herramienta de rescate debe entrenarse y mantenerse. La certificación NFPA 1960 / EN 13204:2025 depende de ello.' },
@@ -214,8 +214,8 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
           ))}
           <div class="flex flex-wrap gap-2">
             {['NFPA 1960','EN 13204:2025','Batería autocontenida','Aceros al boro','Cizalla · Separador · Combinada · Ariete','Holmatro · Hurst · Weber'].map(n => (
-              <span class="badge badge-dark font-display text-[10px]">{n}</span>
-            ))}
+            <span class="badge badge-dark font-display text-[10px]">{n}</span>
+          ))}
           </div>
         </div>
       </div>
@@ -254,7 +254,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
       </ul>
 
       <div class="section-head mt-14 mb-5"><h2>¿Cómo elegir herramientas de rescate?</h2></div>
-      <ol class="list-decimal pl-6 space-y-2 text-sm leading-relaxed" style="color:#CBD5E1">
+      <ol class="list-none pl-6 space-y-2 text-sm leading-relaxed" style="color:#CBD5E1">
         <li>Revisa los accidentes que atiende tu unidad: autos, transporte pesado o estructuras.</li>
         <li>Compara la clasificación de corte con los aceros de alta resistencia de los vehículos modernos.</li>
         <li>Define si necesitas un juego completo (cizalla, separador y ariete) o una combinada para primera respuesta.</li>
@@ -274,7 +274,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style="border:1px solid rgba(74,117,153,0.18)">
         {razones.map((r, i) => (
           <div class="flex flex-col gap-3 p-6" style={`background:#080F1A;${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.12)' : ''}`}>
-            <span class="font-display font-bold text-2xl" style="color:#F75000">{r.n}</span>
+            
             <h3 class="font-display font-bold text-sm uppercase tracking-wide" style="color:#FFFFFF">{r.t}</h3>
             <p class="text-xs leading-relaxed m-0" style="color:#64748B">{r.d}</p>
           </div>
@@ -362,7 +362,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
         </div>
         <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/herramientas-rescate/holmatro" class="btn btn-primary btn-lg">
-            Catálogo Holmatro completo →
+            Catálogo Holmatro completo 
           </a>
           <a href={whatsappUrl('Hola, quiero cotizar herramientas de rescate Holmatro Pentheon NFPA 1960.')} target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
             Cotizar por {CANAL_CONTACTO}
@@ -413,7 +413,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
         </div>
         <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/herramientas-rescate/hurst" class="btn btn-primary btn-lg">
-            Catálogo Hurst completo →
+            Catálogo Hurst completo 
           </a>
           <a href={whatsappUrl('Hola, quiero cotizar herramientas de rescate Hurst eDRAULIC Jaws of Life NFPA 1960.')} target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
             Cotizar por {CANAL_CONTACTO}
@@ -464,7 +464,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
         </div>
         <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/herramientas-rescate/weber-rescue" class="btn btn-primary btn-lg">
-            Catálogo Weber Rescue completo →
+            Catálogo Weber Rescue completo 
           </a>
           <a href={whatsappUrl('Hola, quiero cotizar herramientas de rescate Weber Rescue E-FORCE NFPA 1960.')} target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
             Cotizar por {CANAL_CONTACTO}
@@ -554,7 +554,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
           <ol class="flex flex-col gap-4 list-none m-0 p-0">
             {guia.map((s) => (
               <li class="flex items-start gap-4">
-                <span class="font-display font-bold text-xl shrink-0" style="color:#F75000">{s.n}</span>
+                
                 <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{s.t}</p>
               </li>
             ))}
@@ -576,7 +576,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
                     <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
                     <span class="text-xs" style="color:#64748B">{l.desc}</span>
                   </span>
-                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="var(--forge-300)" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
+                  
                 </a>
               </li>
             ))}
@@ -636,7 +636,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
             class="btn btn-lg"
             style="background:#FFFFFF;color:#F75000;border-color:#FFFFFF;font-weight:700"
           >
-            Cotizar por {CANAL_CONTACTO} →
+            Cotizar por {CANAL_CONTACTO} 
           </a>
           <a href="/cotizacion" class="btn btn-lg" style="background:transparent;color:#FFFFFF;border:2px solid rgba(255,255,255,0.5)">
             Cotización formal
@@ -679,7 +679,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
                     <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
                     <span class="text-xs" style="color:#64748B">{l.desc}</span>
                   </span>
-                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="var(--forge-300)" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
+                  
                 </a>
               </li>
             ))}
@@ -694,7 +694,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
           {otrasCategorias.map((c) => (
             <a href={`/productos/${c.slug}`} class="btn btn-sm btn-dark">{c.label}</a>
           ))}
-          <a href="/productos" class="btn btn-sm btn-outline">Catálogo completo →</a>
+          <a href="/productos" class="btn btn-sm btn-outline">Catálogo completo </a>
         </div>
       </div>
     </div>
@@ -711,21 +711,21 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
            style="background:#080F1A;border:1px solid rgba(74,117,153,0.2)">
           <span class="text-sm font-display font-bold group-hover:text-[#F75000]" style="color:#FFFFFF">Equipos SCBA</span>
           <span class="text-xs leading-relaxed" style="color:#64748B">MSA G1 · Dräger PSS · 3M Scott</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Equipos SCBA →</span>
+          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Equipos SCBA </span>
         </a>
         <a href="/productos/trajes-bombero"
            class="group flex flex-col gap-2 p-5 hover:border-[#F75000]"
            style="background:#080F1A;border:1px solid rgba(74,117,153,0.2)">
           <span class="text-sm font-display font-bold group-hover:text-[#F75000]" style="color:#FFFFFF">Trajes Bombero</span>
           <span class="text-xs leading-relaxed" style="color:#64748B">Globe · Lion Apparel · Honeywell · Fire-Dex</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Trajes Bombero →</span>
+          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Trajes Bombero </span>
         </a>
         <a href="/productos/cascos-nfpa"
            class="group flex flex-col gap-2 p-5 hover:border-[#F75000]"
            style="background:#080F1A;border:1px solid rgba(74,117,153,0.2)">
           <span class="text-sm font-display font-bold group-hover:text-[#F75000]" style="color:#FFFFFF">Cascos NFPA</span>
           <span class="text-xs leading-relaxed" style="color:#64748B">MSA Gallet · Bullard · Cairns</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Cascos NFPA →</span>
+          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Cascos NFPA </span>
         </a>
       </div>
     </div>

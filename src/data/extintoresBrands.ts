@@ -104,7 +104,7 @@ export const extintoresBrandList: EquipmentBrand[] = [
       { modelo: 'PQS ABC 12 kg',  tipo: 'industrial', norma: 'NOM-100-STPS · NFPA 10', proteccion: 'PQS ABC · A·B·C', material: 'Acero SAE 1008', peso: '12 kg',   ideal: 'Alta carga de fuego · Talleres' },
     ],
     comparativaLabel: 'Línea completa PQS ABC — 6 capacidades',
-    comparativaNote: '★ Recomendado = modelo de 9 kg con NOM-100-STPS y NFPA 10 para licitaciones y programas de Protección Civil.',
+    comparativaNote: ' Recomendado = modelo de 9 kg con NOM-100-STPS y NFPA 10 para licitaciones y programas de Protección Civil.',
     guia: [
       { n: '01', t: 'Identifica el área y el riesgo: vehículo, oficina, bodega o planta industrial. El área y la actividad determinan la capacidad mínima conforme NOM-002-STPS.' },
       { n: '02', t: 'Revisa si hay equipos electrónicos de valor en el área. El PQS ABC deja residuo que daña equipos — en esas zonas el CO₂ o agente limpio son la alternativa correcta.' },
@@ -254,7 +254,7 @@ export const extintoresBrandList: EquipmentBrand[] = [
       { modelo: 'CO₂ 15 kg',   tipo: 'agente-ci', norma: 'NOM-102-STPS · NFPA 10', proteccion: 'CO₂ · B·C', material: 'Acero alta presión', peso: '15 kg',   ideal: 'Industrial · Respaldo sistema fijo' },
     ],
     comparativaLabel: 'Línea completa CO₂ — 6 capacidades',
-    comparativaNote: '★ Recomendado = el modelo más distribuido en licitaciones para instalaciones con tableros eléctricos y salas de TI en México.',
+    comparativaNote: ' Recomendado = el modelo más distribuido en licitaciones para instalaciones con tableros eléctricos y salas de TI en México.',
     guia: [
       { n: '01', t: 'Confirma que el riesgo es clase B o C: líquidos inflamables o equipos eléctricos vivos. El CO₂ no es eficaz en clase A (sólidos) y no debe usarse en clase K (aceites de cocina).' },
       { n: '02', t: 'Dimensiona el espacio y la densidad de equipos: el de 2.3 kg para un rack, el de 10 kg para una sala de servidores mediana, el de 15 kg como respaldo de un sistema fijo.' },
@@ -459,7 +459,7 @@ export const extintoresBrandList: EquipmentBrand[] = [
       { modelo: 'FM-200 2.5 kg',        tipo: 'agente-ci',  norma: 'NFPA 2001 · UL 2129',    proteccion: 'HFC-227ea · B·C',  material: 'Acero alta presión',       peso: '2.5 kg', ideal: 'Data center · Rack · Sala de control' },
     ],
     comparativaLabel: 'Extintores especializados — Agua · AFFF · Tipo K · FM-200',
-    comparativaNote: '★ Recomendado = confirma la capacidad con los equipos de cocción, el sistema fijo de la campana y el análisis de riesgo de la cocina.',
+    comparativaNote: ' Recomendado = confirma la capacidad con los equipos de cocción, el sistema fijo de la campana y el análisis de riesgo de la cocina.',
     guia: [
       { n: '01', t: 'Identifica el tipo de fuego específico: clase K para cocinas con aceite, AFFF para hidrocarburos derramados, FM-200 para equipos electrónicos críticos, agua para sólidos sin riesgo eléctrico.' },
       { n: '02', t: 'Para cocinas: verifica que el extintor tipo K esté a un recorrido máximo de 10 m conforme a la NOM-002-STPS y que complemente el sistema fijo de la campana.' },
@@ -562,7 +562,7 @@ export const extintoresBrandList: EquipmentBrand[] = [
       { modelo: 'AFFF ruedas 25 L',  tipo: 'deteccion',  norma: 'NFPA 11',          proteccion: 'AFFF · A·B',       material: 'Acero inox',        peso: '25 L',   ideal: 'Helipuertos · Hidrocarburo · ARFF' },
     ],
     comparativaLabel: 'Extintores sobre ruedas — PQS ABC · CO₂ · AFFF',
-    comparativaNote: '★ Recomendado = el PQS 125 kg es el estándar en terminales aeroportuarias bajo NFPA 403/407 y en plataformas petroquímicas con requisitos PEMEX HSE.',
+    comparativaNote: ' Recomendado = el PQS 125 kg es el estándar en terminales aeroportuarias bajo NFPA 403/407 y en plataformas petroquímicas con requisitos PEMEX HSE.',
     guia: [
       { n: '01', t: 'Calcula la carga de fuego del área según NFPA 10: el tipo de materiales, el volumen de combustible y el área determinan la categoría de riesgo y la capacidad mínima del extintor sobre ruedas.' },
       { n: '02', t: 'Elige el agente según el riesgo: PQS ABC para riesgos generales, CO₂ para zonas eléctricas o CNC, y AFFF para derrames de hidrocarburos en helipuerto o terminales de combustible.' },

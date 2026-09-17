@@ -193,15 +193,15 @@ El **ERG 2024** (Emergency Response Guidebook) sigue siendo la referencia de cam
 
 Este es el proceso que funciona en la realidad, no el diagrama de flujo de 14 cajas del manual de capacitación.
 
-**Paso 1: Lee el placard y usa el ERG.** El placard de cuatro dígitos te da el número ONU. El ERG te da la guía de respuesta inicial y los químicos por nombre si los tienes. Si el placard dice 1830, es ácido sulfúrico. Si dice 1017, es cloro. Empieza desde ahí, no desde cero.
+**Lee el placard y usa el ERG.** El placard de cuatro dígitos te da el número ONU. El ERG te da la guía de respuesta inicial y los químicos por nombre si los tienes. Si el placard dice 1830, es ácido sulfúrico. Si dice 1017, es cloro. Empieza desde ahí, no desde cero.
 
-**Paso 2: Determina si el agente te mata por el aire o por la piel.** Si la respuesta es "ambos" o "no sé todavía", el nivel mínimo es A. Si la respuesta es "por el aire sí, por la piel no en forma de vapor sino de líquido", es B. Si sabes exactamente qué es, en qué concentración, y el cartucho lo cubre, puedes ir a C.
+**Determina si el agente te mata por el aire o por la piel.** Si la respuesta es "ambos" o "no sé todavía", el nivel mínimo es A. Si la respuesta es "por el aire sí, por la piel no en forma de vapor sino de líquido", es B. Si sabes exactamente qué es, en qué concentración, y el cartucho lo cubre, puedes ir a C.
 
-**Paso 3: Mide antes de entrar.** Detector multigas para verificar atmósfera inmediatamente peligrosa para la vida (O₂, LEL, CO, H₂S como mínimo). PID o detector específico para el agente identificado. Sin lectura, no bajes de nivel. Sin lectura, no declares zona segura.
+**Mide antes de entrar.** Detector multigas para verificar atmósfera inmediatamente peligrosa para la vida (O₂, LEL, CO, H₂S como mínimo). PID o detector específico para el agente identificado. Sin lectura, no bajes de nivel. Sin lectura, no declares zona segura.
 
-**Paso 4: Verifica que el EPP es compatible con el agente.** Los trajes tienen tablas de permeación que se deben consultar por sustancia, concentración, temperatura y modelo. Los cartuchos no sirven para todos los agentes; verifica la aprobación y el programa de cambio antes de que alguien entre.
+**Verifica que el EPP es compatible con el agente.** Los trajes tienen tablas de permeación que se deben consultar por sustancia, concentración, temperatura y modelo. Los cartuchos no sirven para todos los agentes; verifica la aprobación y el programa de cambio antes de que alguien entre.
 
-**Paso 5: Documenta el nivel, el criterio y el responsable.** Nombre del oficial HAZMAT que tomó la decisión, hora, nivel seleccionado, lectura del detector en ese momento. Esto no es papeleo: es lo que te protege a ti y a tu corporación si el incidente llega a investigación de ASEA, STPS, o a un tribunal. Y también es lo que permite al equipo siguiente tomar decisiones informadas cuando te releven.
+**Documenta el nivel, el criterio y el responsable.** Nombre del oficial HAZMAT que tomó la decisión, hora, nivel seleccionado, lectura del detector en ese momento. Esto no es papeleo: es lo que te protege a ti y a tu corporación si el incidente llega a investigación de ASEA, STPS, o a un tribunal. Y también es lo que permite al equipo siguiente tomar decisiones informadas cuando te releven.
 
 ---
 

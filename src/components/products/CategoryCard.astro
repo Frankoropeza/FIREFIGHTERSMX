@@ -1,42 +1,8 @@
 ---
-/**
- * Card de categoría — diseño ÚNICO compartido por el catálogo (ProductCards,
- * /productos, DirGuias) y las líneas contra incendio de la portada.
- * Ligera: estilos en una sola hoja global con prefijo `cc-`, acento por
- * variable CSS (--cc-a) y rejilla de fondo en CSS (sin <svg><pattern> por card).
- */
 import type { Category } from '@data/categories';
-
-type CategoryProps = {
-  cat: Category;
-  href?: string;
-  norm?: string;
-  label?: string;
-  desc?: string;
-  items?: string[];
-  ctaLabel?: string;
-  accent?: string;
-  icon?: string;
-  image?: string;
-  imageAlt?: string;
-};
-
-type ExplicitProps = {
-  cat?: never;
-  href: string;
-  norm: string;
-  label: string;
-  desc: string;
-  items: string[];
-  ctaLabel?: string;
-  accent: string;
-  icon: string;
-  image?: string;
-  imageAlt?: string;
-};
-
+type CategoryProps = { cat: Category; href?: string; norm?: string; label?: string; desc?: string; items?: string[]; ctaLabel?: string; accent?: string; image?: string; imageAlt?: string; };
+type ExplicitProps = { cat?: never; href: string; norm: string; label: string; desc: string; items: string[]; ctaLabel?: string; accent: string; image?: string; imageAlt?: string; };
 export type Props = CategoryProps | ExplicitProps;
-
 const props = Astro.props;
 const cat = 'cat' in props && props.cat ? props.cat : undefined;
 const href = cat ? props.href ?? `/productos/${cat.slug}` : props.href;
@@ -46,46 +12,15 @@ const desc = cat ? props.desc ?? cat.shortDesc : props.desc;
 const items = (cat ? props.items ?? cat.items.map((item) => item.name) : props.items) ?? [];
 const ctaLabel = cat ? props.ctaLabel ?? `Guía de ${cat.label}` : props.ctaLabel ?? `Guía de ${props.label}`;
 const accent = cat ? props.accent ?? cat.accent : props.accent;
-const icon = cat ? props.icon ?? cat.icon : props.icon;
 const image = cat ? props.image ?? cat.spotlight?.image : props.image;
 const imageAlt = cat ? props.imageAlt ?? cat.spotlight?.imageAlt ?? cat.label : props.imageAlt ?? props.label;
 ---
-
 <a href={href} class="cat-card cc" style={`--cc-a:${accent}`}>
-  <div class:list={['cc-top', !image && 'cc-top--icon']}>
-    {image && <img src={image} alt={imageAlt} width="320" height="148" loading="lazy" decoding="async" class="cc-img" />}
-    <span class="cc-ico" set:html={icon}></span>
+  <div class:list={['cc-top', !image && 'cc-top--panel']}>
+    {image ? <img src={image} alt={imageAlt} width="320" height="148" loading="lazy" decoding="async" class="cc-img" /> : <span class="cc-fallback">{norm}<strong>{label}</strong></span>}
   </div>
-  <div class="cc-body">
-    <span class="cc-norm">{norm}</span>
-    <h3 class="cc-title">{label}</h3>
-    <p class="cc-desc">{desc}</p>
-    <ul class="cc-list">{items.slice(0, 3).map((item) => <li>{item}</li>)}</ul>
-    <span class="cc-cta">{ctaLabel}<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
-  </div>
+  <div class="cc-body"><span class="cc-norm">{norm}</span><h3 class="cc-title">{label}</h3><p class="cc-desc">{desc}</p><ul class="cc-list">{items.slice(0, 3).map((item) => <li>{item}</li>)}</ul><span class="cc-cta">{ctaLabel}</span></div>
 </a>
-
 <style is:global>
-  .cc { position: relative; display: flex; flex-direction: column; overflow: hidden; background: #080F1A; border: 1px solid rgba(74,117,153,.18); text-decoration: none; }
-  .cc:hover { border-color: rgba(247,80,0,.45); }
-  .cc-top { position: relative; height: 148px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-  .cc-top::after { content: ''; position: absolute; inset: auto 0 0; z-index: 1; height: 2rem; background: linear-gradient(to bottom, transparent, #080F1A); pointer-events: none; }
-  .cc-top--icon { background:
-      radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--cc-a) 13%, transparent) 0, transparent 65%),
-      linear-gradient(rgba(122,164,196,.06) 1px, transparent 1px) 0 0 / 32px 32px,
-      linear-gradient(90deg, rgba(122,164,196,.06) 1px, transparent 1px) 0 0 / 32px 32px,
-      linear-gradient(135deg, color-mix(in srgb, var(--cc-a) 15%, transparent) 0, rgba(4,10,18,.94) 100%); }
-  .cc-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
-  .cc-top:not(.cc-top--icon)::before { content: ''; position: absolute; inset: 0; z-index: 1; background: linear-gradient(135deg, rgba(4,10,18,.55), rgba(4,10,18,.25) 50%, rgba(4,10,18,.55)); }
-  .cc-ico { position: relative; z-index: 2; display: flex; align-items: center; justify-content: center; width: 72px; height: 72px; border-radius: 50%; background: rgba(4,10,18,.7); border: 1.5px solid color-mix(in srgb, var(--cc-a) 27%, transparent); color: var(--cc-a); }
-  .cc-ico > svg { width: 32px; height: 32px; }
-  .cc-body { display: flex; flex-direction: column; flex: 1; gap: .75rem; padding: 1.25rem; }
-  .cc-norm { font-family: var(--font-display); font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; color: var(--forge-300); }
-  .cc-title { margin: 0; font-family: var(--font-display); font-size: 1.125rem; font-weight: 700; line-height: 1.25; color: #fff; }
-  .cc-desc { flex: 1; margin: 0; font-size: .75rem; line-height: 1.625; color: #64748B; }
-  .cc-list { display: flex; flex-direction: column; gap: .375rem; margin: 0; padding: .75rem 0; list-style: none; border-block: 1px solid rgba(74,117,153,.12); }
-  .cc-list li { display: flex; align-items: center; gap: .5rem; font-size: 11px; color: #64748B; }
-  .cc-list li::before { content: ''; flex: none; width: 4px; height: 4px; border-radius: 50%; background: var(--cc-a); opacity: .7; }
-  .cc-cta { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; width: 100%; margin-top: .25rem; padding: .625rem 1rem; font-family: var(--font-display); font-size: .75rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: #040A12; background: var(--cc-a); }
-  .cc-cta svg { width: .875rem; height: .875rem; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+  .cc { position:relative; display:flex; flex-direction:column; overflow:hidden; background:#080F1A; border:1px solid rgba(74,117,153,.18); text-decoration:none; }.cc:hover { border-color:rgba(247,80,0,.45); }.cc-top { position:relative; height:148px; display:flex; align-items:center; justify-content:center; overflow:hidden; }.cc-top::after { content:''; position:absolute; inset:auto 0 0; z-index:1; height:2rem; background:linear-gradient(to bottom,transparent,#080F1A); pointer-events:none; }.cc-top--panel { background:radial-gradient(circle at 50% 50%,color-mix(in srgb,var(--cc-a) 13%,transparent) 0,transparent 65%),linear-gradient(rgba(122,164,196,.06) 1px,transparent 1px) 0 0 / 32px 32px,linear-gradient(90deg,rgba(122,164,196,.06) 1px,transparent 1px) 0 0 / 32px 32px,linear-gradient(135deg,color-mix(in srgb,var(--cc-a) 15%,transparent) 0,rgba(4,10,18,.94) 100%); }.cc-img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 20%; }.cc-top:not(.cc-top--panel)::before { content:''; position:absolute; inset:0; z-index:1; background:linear-gradient(135deg,rgba(4,10,18,.55),rgba(4,10,18,.25) 50%,rgba(4,10,18,.55)); }.cc-fallback { position:relative; z-index:2; display:flex; flex-direction:column; align-items:center; gap:.5rem; padding:1rem; text-align:center; color:var(--cc-a); font-size:.7rem; text-transform:uppercase; letter-spacing:.1em; }.cc-fallback strong { color:#fff; font-family:var(--font-display); font-size:1rem; letter-spacing:normal; text-transform:none; }.cc-body { display:flex; flex-direction:column; flex:1; gap:.75rem; padding:1.25rem; }.cc-norm { font-family:var(--font-display); font-size:9px; font-weight:600; text-transform:uppercase; letter-spacing:.1em; color:var(--forge-300); }.cc-title { margin:0; font-family:var(--font-display); font-size:1.125rem; font-weight:700; line-height:1.25; color:#fff; }.cc-desc { flex:1; margin:0; font-size:.75rem; line-height:1.625; color:#64748B; }.cc-list { display:flex; flex-direction:column; gap:.375rem; margin:0; padding:.75rem 0; list-style:none; border-block:1px solid rgba(74,117,153,.12); }.cc-list li { font-size:11px; color:#64748B; }.cc-cta { display:inline-flex; align-items:center; justify-content:center; width:100%; margin-top:.25rem; padding:.625rem 1rem; font-family:var(--font-display); font-size:.75rem; font-weight:600; text-transform:uppercase; letter-spacing:.08em; color:#040A12; background:var(--cc-a); }
 </style>

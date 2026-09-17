@@ -1,7 +1,7 @@
 // cobertura.ts — Estados con cobertura de entrega de FIREFIGHTERS MX
 // Alimenta:
-//   • /cobertura.astro        → tabla de estados con links
-//   • /cobertura/[estado].astro → landing individual SEO por estado
+//   • /cobertura.astro         tabla de estados con links
+//   • /cobertura/[estado].astro  landing individual SEO por estado
 // ─────────────────────────────────────────────────────────────────────
 
 export interface Estado {

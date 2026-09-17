@@ -148,8 +148,8 @@ const waMsg = `Hola, quiero información sobre productos ${brand.name} que distr
           {/* Badges de normas */}
           <div class="flex flex-wrap gap-2 mb-8">
             {brand.norms.map((n) => (
-              <span class="badge badge-dark font-display text-[10px]">{n}</span>
-            ))}
+            <span class="badge badge-dark font-display text-[10px]">{n}</span>
+          ))}
           </div>
 
           <div class="flex flex-col sm:flex-row gap-3">
@@ -228,7 +228,7 @@ const waMsg = `Hola, quiero información sobre productos ${brand.name} que distr
                 style="color:#F75000;min-width:1.5rem"
                 aria-hidden="true"
               >
-                {String(i + 1).padStart(2, '0')}
+                
               </span>
               <div>
                 <h3
@@ -288,7 +288,7 @@ const waMsg = `Hola, quiero información sobre productos ${brand.name} que distr
               class="inline-flex items-center gap-2 px-4 py-2 rounded font-display font-bold text-xs"
               style="background:rgba(247,80,0,0.08);border:1px solid rgba(247,80,0,0.3);color:#FF6B26"
             >
-              ✓ {norm}
+              Sí {norm}
             </span>
           ))}
         </div>

@@ -24,7 +24,7 @@ export async function todasLasEmpresas(): Promise<Empresa[]> {
   return _cache;
 }
 
-/** Orden de listado: plan (destacado → básico), luego confianza, luego nombre */
+/** Orden de listado: plan (destacado  básico), luego confianza, luego nombre */
 const confOrden = { alta: 0, media: 1, baja: 2 } as const;
 export function ordenListing(a: Empresa, b: Empresa): number {
   const p = planConfig[a.plan].orden - planConfig[b.plan].orden; if (p) return p;

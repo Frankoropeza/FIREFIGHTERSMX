@@ -443,9 +443,9 @@ const kapplerHazmat: EquipmentBrand = {
     { modelo: 'Zytron 100 Nivel D', tipo: 'traje-nivel-b', norma: 'NFPA 1950', nivel_haz: 'Nivel D desechable', barrera: 'Zytron 100 polipropileno', gases: 'Partículas · polvos', ideal: 'Apoyo · post-emergencia' },
   ],
   comparativaLabel: 'Kappler — modelos por certificación y exposición',
-  comparativaNote: '★ Recomendado = seleccionar el Zytron 500 por número de modelo, certificación y tabla de permeación.',
+  comparativaNote: ' Recomendado = seleccionar el Zytron 500 por número de modelo, certificación y tabla de permeación.',
   guia: [
-    { n: '01', t: 'Nivel A (NFPA 1990): cuando el agente es desconocido o cuando la concentración del vapor supera el TLV — cualquier duda sobre el agente → Nivel A, nunca Nivel B.' },
+    { n: '01', t: 'Nivel A (NFPA 1990): cuando el agente es desconocido o cuando la concentración del vapor supera el TLV — cualquier duda sobre el agente  Nivel A, nunca Nivel B.' },
     { n: '02', t: 'Nivel B (NFPA 1990): cuando el agente es conocido y el vapor no es el vector principal — zona cálida con salpicaduras pero sin saturación de vapor que requiera encapsulamiento.' },
     { n: '03', t: 'Nivel C: solo cuando el agente, la concentración y las condiciones atmosféricas están completamente caracterizadas y el respirador de purificación de aire es adecuado — nunca como primera respuesta.' },
     { n: '04', t: 'Verifica las tablas de permeación de Kappler para el agente específico antes de seleccionar el nivel — la certificación NFPA no garantiza resistencia a toda sustancia, solo a las de las pruebas de certificación.' },

@@ -73,14 +73,14 @@ Los metales combustibles requieren agentes especiales para clase D. Magnesio, so
 
 | Agente | A | B | C | D | K | Dónde se usa |
 |---|---:|---:|---:|---:|---:|---|
-| PQS BC | ✗ | ✓ | ✓ | ✗ | ✗ | Líquidos inflamables, gases inflamables y equipos eléctricos. |
-| PQS ABC | ✓ | ✓ | ✓ | ✗ | ✗ | Oficinas, comercios y áreas de uso general. |
-| CO₂ | ✗ | ✓ | ✓ | ✗ | ✗ | Tableros, equipos eléctricos y líquidos inflamables. |
-| Agua | ✓ | ✗ | ✗ | ✗ | ✗ | Papel, madera, textiles y otros combustibles sólidos. |
-| Espuma AFFF | ✓ | ✓ | ✗ | ✗ | ✗ | Áreas con líquidos inflamables. |
-| Acetato de potasio | ✗ | ✗ | ✗ | ✗ | ✓ | Cocinas comerciales, aceites y grasas. |
-| Agente limpio* | ✓ | ✓ | ✓ | ✗ | ✗ | Electrónica o áreas donde el residuo es un problema. |
-| Agente especial clase D | ✗ | ✗ | ✗ | ✓ | ✗ | Procesos con metales combustibles. |
+| PQS BC | No | Sí | Sí | No | No | Líquidos inflamables, gases inflamables y equipos eléctricos. |
+| PQS ABC | Sí | Sí | Sí | No | No | Oficinas, comercios y áreas de uso general. |
+| CO₂ | No | Sí | Sí | No | No | Tableros, equipos eléctricos y líquidos inflamables. |
+| Agua | Sí | No | No | No | No | Papel, madera, textiles y otros combustibles sólidos. |
+| Espuma AFFF | Sí | Sí | No | No | No | Áreas con líquidos inflamables. |
+| Acetato de potasio | No | No | No | No | Sí | Cocinas comerciales, aceites y grasas. |
+| Agente limpio* | Sí | Sí | Sí | No | No | Electrónica o áreas donde el residuo es un problema. |
+| Agente especial clase D | No | No | No | Sí | No | Procesos con metales combustibles. |
 
 \*Confirma siempre la clasificación del agente y del equipo específico. La tabla orienta los tipos de extintores según la clase de fuego; la etiqueta del extintor y el análisis de riesgo mandan.
 

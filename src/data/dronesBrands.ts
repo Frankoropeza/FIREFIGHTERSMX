@@ -115,7 +115,7 @@ const djiEnterprise: EquipmentBrand = {
   comparativaLabel: 'Matrice 30T · Mavic 3 Thermal · Dock 2',
   comparativaNote: '* Autonomía y alcance nominales según modelo. Aplican las disposiciones de NOM-107-SCT3-2019 para operación institucional legal en México.',
   guia: [
-    { n: '01', t: 'Define la misión dominante: evaluación táctica de incendios y SAR → Matrice 30T; respuesta rápida de campo → Mavic 3 Thermal; patrullaje continuo sin piloto → Dock 2.' },
+    { n: '01', t: 'Define la misión dominante: evaluación táctica de incendios y SAR  Matrice 30T; respuesta rápida de campo  Mavic 3 Thermal; patrullaje continuo sin piloto  Dock 2.' },
     { n: '02', t: 'Verifica que el sensor sea radiométrico real: la medición de temperatura en grados es lo que diferencia un dron de rescate de uno con filtro de color. Pregunta el rango y la resolución del sensor antes de comprar.' },
     { n: '03', t: 'Tramita el permiso AFAC antes de operar. Para instituciones existe la figura de Operador Aéreo No Tripulado Institucional que simplifica el proceso y permite operar en zonas restringidas cerca de aeropuertos.' },
     { n: '04', t: 'Incluye capacitación de piloto y protocolos de misión en el presupuesto. La aeronave más avanzada no va a la emergencia si el piloto no tiene entrenamiento operacional certificado y procedimientos escritos.' },

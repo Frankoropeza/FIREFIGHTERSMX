@@ -90,7 +90,7 @@ const waMsg = `Hola, busco proveedores de ${g.sustantivo} en ${estado.nombre}. �
           )}
           <div class="flex flex-col sm:flex-row gap-3">
             {vacio ? <a href="/empresas/registro/" class="btn btn-primary btn-lg">Registrar empresa de {g.sustantivo}</a> : <a href="#empresas" class="btn btn-primary btn-lg">{g.labelCorto} en {estado.nombre}</a>}
-            <a href={whatsappUrl(waMsg)} target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-lg">Orientación sobre {g.sustantivo} →</a>
+            <a href={whatsappUrl(waMsg)} target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-lg">Orientación sobre {g.sustantivo} </a>
           </div>
         </div>
         <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
@@ -140,24 +140,24 @@ const waMsg = `Hola, busco proveedores de ${g.sustantivo} en ${estado.nombre}. �
       <div>
         <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:var(--forge-300)">Otros giros en {estado.nombre}</p>
         <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
-          {otrosGirosEdo.map((o) => { const m = giroMap[o.giro]; return (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/empresas/${o.giro}/${estado.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{m.labelCorto} en {estado.nombre}</span><span style={`color:${m.color}`}>→</span></a></li>); })}
-          <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/empresas/estado/${estado.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Todas las empresas en {estado.nombre}</span><span style="color:var(--forge-300)">→</span></a></li>
-          <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/cobertura/${estado.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Cobertura y demanda en {estado.nombre}</span><span style="color:var(--forge-300)">→</span></a></li>
+          {otrosGirosEdo.map((o) => { const m = giroMap[o.giro]; return (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/empresas/${o.giro}/${estado.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{m.labelCorto} en {estado.nombre}</span><span style={`color:${m.color}`}></span></a></li>); })}
+          <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/empresas/estado/${estado.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Todas las empresas en {estado.nombre}</span><span style="color:var(--forge-300)"></span></a></li>
+          <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/cobertura/${estado.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Cobertura y demanda en {estado.nombre}</span><span style="color:var(--forge-300)"></span></a></li>
         </ul>
       </div>
       <div>
         <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:var(--forge-300)">{g.labelCorto} en la región {estado.region}</p>
         <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
-          {vecinos.map((v) => (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/empresas/${giro}/${v.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{g.labelCorto} en {v.nombre}</span><span style={`color:${g.color}`}>→</span></a></li>))}
-          <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/empresas/${giro}/`} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{g.labelCorto} en todo México</span><span style="color:var(--forge-300)">→</span></a></li>
+          {vecinos.map((v) => (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/empresas/${giro}/${v.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{g.labelCorto} en {v.nombre}</span><span style={`color:${g.color}`}></span></a></li>))}
+          <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/empresas/${giro}/`} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{g.labelCorto} en todo México</span><span style="color:var(--forge-300)"></span></a></li>
         </ul>
       </div>
       <div>
         <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:var(--forge-300)">Guías, normas y compradores</p>
         <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
-          {cats.map((c) => (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/productos/${c.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Guía: {c.label}</span><span class="text-xs" style="color:#64748B">{c.norm}</span></span><span style="color:var(--forge-300)">→</span></a></li>))}
-          {posts.slice(0, 2).map((p) => (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/blog/${p.id}/`} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{p.data.title}</span><span style="color:var(--forge-300)">→</span></a></li>))}
-          {dirEst && dirEst.estaciones.length > 0 && <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/estaciones/${estado.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Cuerpos de bomberos en {estado.nombre}</span><span class="text-xs" style="color:#64748B">{dirEst.estaciones.length} corporaciones — compradores del giro</span></span><span style="color:var(--forge-300)">→</span></a></li>}
+          {cats.map((c) => (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/productos/${c.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Guía: {c.label}</span><span class="text-xs" style="color:#64748B">{c.norm}</span></span><span style="color:var(--forge-300)"></span></a></li>))}
+          {posts.slice(0, 2).map((p) => (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/blog/${p.id}/`} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{p.data.title}</span><span style="color:var(--forge-300)"></span></a></li>))}
+          {dirEst && dirEst.estaciones.length > 0 && <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/estaciones/${estado.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Cuerpos de bomberos en {estado.nombre}</span><span class="text-xs" style="color:#64748B">{dirEst.estaciones.length} corporaciones — compradores del giro</span></span><span style="color:var(--forge-300)"></span></a></li>}
         </ul>
       </div>
     </div>

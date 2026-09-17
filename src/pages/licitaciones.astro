@@ -19,46 +19,46 @@ const capacidades = [
     tag: 'Por partida',
     desc: 'Fichas técnicas del fabricante y manifiestos de cumplimiento de norma listos para anexar a tu propuesta.',
     accent: '#F75000',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>`,
+    icon: ``,
   },
   {
     title: 'Equipo certificado',
     tag: 'NOM · NFPA',
     desc: 'Catálogo completo con certificación de tercera parte acreditada para cada bien requerido en la convocatoria.',
     accent: '#F5A623',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>`,
+    icon: ``,
   },
   {
     title: 'Proveedor habilitado',
     tag: 'CompraNet',
     desc: 'Empresa registrada como proveedor en CompraNet y en padrones estatales, con expediente al día.',
     accent: '#34D399',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V7l8-4 8 4v14M9 9h.01M9 13h.01M9 17h.01M15 9h.01M15 13h.01M15 17h.01"/></svg>`,
+    icon: ``,
   },
   {
     title: 'Entrega y cumplimiento',
     tag: 'Conforme a bases',
     desc: 'Compromiso en firme de tiempos, lugar y condiciones de entrega, evitando penas convencionales.',
     accent: '#7AA4C4',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>`,
+    icon: ``,
   },
   {
     title: 'Facturación CFDI 4.0',
     tag: 'Sector gobierno',
     desc: 'Comprobantes fiscales con todos los requisitos para dependencias federales, estatales y municipales.',
     accent: '#FF8F57',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M7 15h4"/></svg>`,
+    icon: ``,
   },
   {
     title: 'Acompañamiento técnico',
     tag: 'Junta de aclaraciones',
     desc: 'Apoyo en la interpretación de partidas, especificaciones y normas durante todo el proceso.',
     accent: '#FF6B26',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M9 10h.01M13 10h.01M17 10h.01"/></svg>`,
+    icon: ``,
   },
 ];
 
-/* ─── Requisito → entregable ───────────────────────────────── */
+/* ─── Requisito  entregable ───────────────────────────────── */
 const requisitos = [
   ['Certificación de norma por partida', 'Certificados NFPA / NOM emitidos por laboratorio acreditado'],
   ['Ficha técnica del bien', 'Ficha del fabricante del modelo exacto ofertado'],
@@ -201,8 +201,8 @@ const faqSchema = {
           </p>
           <div class="flex flex-wrap gap-2">
             {['CompraNet','PEMEX','CFE','NOM-002-STPS','NFPA 1970','CFDI 4.0'].map(n => (
-              <span class="badge badge-dark font-display text-[10px]">{n}</span>
-            ))}
+            <span class="badge badge-dark font-display text-[10px]">{n}</span>
+          ))}
           </div>
         </div>
 
@@ -259,7 +259,7 @@ const faqSchema = {
     </div>
   </section>
 
-  <!-- Requisito → entregable -->
+  <!-- Requisito  entregable -->
   <section class="section" style="background:#070E1A" aria-labelledby="requisitos-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
@@ -290,7 +290,7 @@ const faqSchema = {
               <span class="text-sm" style="color:#CBD5E1">{req}</span>
             </div>
             <div class="p-4 flex items-center gap-3" style="border-left:1px solid rgba(74,117,153,0.12)">
-              <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#34D399" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              
               <span class="text-sm" style="color:#94A3B8">{ent}</span>
             </div>
           </div>
@@ -314,7 +314,7 @@ const faqSchema = {
           <ul class="grid grid-cols-1 sm:grid-cols-2 list-none m-0 p-0" style="border:1px solid rgba(74,117,153,0.18)">
             {plataformas.map((p, i) => (
               <li class="grid-cell flex items-center gap-3 p-4" style={`border-bottom:1px solid rgba(74,117,153,0.12);${i % 2 === 0 ? 'border-right:1px solid rgba(74,117,153,0.12);' : ''}`}>
-                <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#FF6B26" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                
                 <span class="text-xs leading-snug" style="color:#94A3B8">{p}</span>
               </li>
             ))}
@@ -331,7 +331,7 @@ const faqSchema = {
           <ol class="flex flex-col gap-4 list-none m-0 p-0">
             {pasos.map((s) => (
               <li class="flex items-start gap-4">
-                <span class="font-display font-bold text-xl shrink-0" style="color:#F75000">{s.n}</span>
+                
                 <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{s.t}</p>
               </li>
             ))}
@@ -420,9 +420,7 @@ const faqSchema = {
                     <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
                     <span class="text-xs" style="color:#64748B">{l.desc}</span>
                   </span>
-                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="var(--forge-300)" stroke-width="2.5" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
-                  </svg>
+                  
                 </a>
               </li>
             ))}

@@ -111,7 +111,7 @@ export function ultimaVerificacion(lista: Estacion[]): string | null {
 }
 
 const MESES = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
-/** '2026-06' → 'junio de 2026'. Devuelve null si no hay fecha. */
+/** '2026-06'  'junio de 2026'. Devuelve null si no hay fecha. */
 export function fechaLarga(v: string | null | undefined): string | null {
   if (!v) return null;
   const [y, m] = v.split('-');

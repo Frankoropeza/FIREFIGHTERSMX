@@ -92,7 +92,7 @@ const articulosMap: Record<string, {title: string; href: string}[]> = {
 };
 const catArticulos = articulosMap[s.slug] ?? [];
 
-// Mapa de servicios relacionados (servicio ↔ servicios afines)
+// Mapa de servicios relacionados (servicio  servicios afines)
 const servicioMap: Record<string, {title: string; href: string; norm: string}[]> = {
   'capacitacion': [
     { title: 'Brigadas Empresariales', href: '/servicios/brigadas-empresariales', norm: 'NOM-002 · DC-3' },
@@ -294,7 +294,7 @@ const productosRel = productosMap[s.slug] ?? [];
                       {faq.q}
                     </h3>
                     <span class="faq-icon shrink-0 mt-0.5 w-5 h-5 flex items-center justify-center" style="border:1px solid rgba(74,117,153,0.3);color:var(--forge-300)">
-                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg>
+                      
                     </span>
                   </summary>
                   <p class="px-6 pb-6 text-sm leading-relaxed" style="color:#64748B">{faq.a}</p>
@@ -326,7 +326,7 @@ const productosRel = productosMap[s.slug] ?? [];
             </div>
             <div class="px-4 py-3" style="border-top:1px solid rgba(74,117,153,0.15)">
               <a href="/blog" class="text-[10px] font-display font-semibold hover:text-[#FF6B26]" style="color:var(--forge-300)">
-                Todos los artículos del blog técnico →
+                Todos los artículos del blog técnico 
               </a>
             </div>
           </div>
@@ -350,7 +350,7 @@ const productosRel = productosMap[s.slug] ?? [];
             </div>
             <div class="px-4 py-3" style="border-top:1px solid rgba(74,117,153,0.15)">
               <a href="/servicios" class="text-[10px] font-display font-semibold hover:text-[#FF6B26]" style="color:var(--forge-300)">
-                Todos los servicios contra incendio →
+                Todos los servicios contra incendio 
               </a>
             </div>
           </div>
@@ -374,7 +374,7 @@ const productosRel = productosMap[s.slug] ?? [];
             </div>
             <div class="px-4 py-3" style="border-top:1px solid rgba(74,117,153,0.15)">
               <a href="/productos" class="text-[10px] font-display font-semibold hover:text-[#FF6B26]" style="color:var(--forge-300)">
-                Catálogo de equipo para bomberos →
+                Catálogo de equipo para bomberos 
               </a>
             </div>
           </div>
@@ -392,7 +392,7 @@ const productosRel = productosMap[s.slug] ?? [];
               Cotizar por {CANAL_CONTACTO}
             </a>
             <a href="/cotizacion" class="text-[10px] text-center hover:opacity-80" style="color:rgba(255,255,255,0.7)">
-              Cotización formal →
+              Cotización formal 
             </a>
           </div>
         </div>
@@ -413,7 +413,7 @@ const productosRel = productosMap[s.slug] ?? [];
                style="background:#080F1A;border:1px solid rgba(74,117,153,0.2)">
               <span class="text-sm font-display font-bold group-hover:text-[#F75000]" style="color:#FFFFFF">{sv.title}</span>
               <span class="text-xs leading-relaxed" style="color:#64748B">{sv.norm}</span>
-              <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Servicio de {sv.title.toLowerCase()} →</span>
+              <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Servicio de {sv.title.toLowerCase()} </span>
             </a>
           ))}
         </div>
@@ -433,7 +433,7 @@ const productosRel = productosMap[s.slug] ?? [];
         {otherServices.map((x) => (
           <a href={x.href} class="btn btn-sm btn-dark">{x.title}</a>
         ))}
-        <a href="/servicios" class="btn btn-sm btn-outline">Todos los servicios →</a>
+        <a href="/servicios" class="btn btn-sm btn-outline">Todos los servicios </a>
       </div>
     </div>
   </section>

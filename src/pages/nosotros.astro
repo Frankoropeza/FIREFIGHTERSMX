@@ -33,17 +33,17 @@ const pillars = [
   {
     title: 'Misión',
     text: 'Ser el proveedor integral más confiable de equipo para bomberos y sistemas contra incendio en México, garantizando que cada responder tenga el equipo certificado que merece.',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>`,
+    icon: ``,
   },
   {
     title: 'Visión',
     text: 'Ser el referente iberoamericano del sector bomberos hacia 2028, ampliando cobertura y siendo fuente de autoridad técnica para la industria de la protección contra incendio.',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>`,
+    icon: ``,
   },
   {
     title: 'Valores',
     text: 'Seguridad ante todo. Honestidad técnica. Servicio de excelencia. Compromiso con la vida. Respeto absoluto a las normas que protegen a quienes nos protegen.',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+    icon: ``,
   },
 ];
 
@@ -101,8 +101,8 @@ const razones = [
           </p>
           <div class="flex flex-wrap gap-2">
             {['NFPA','ISO 9001','NOM-002-STPS','UL Listed','STPS'].map(n => (
-              <span class="badge badge-dark font-display text-[10px]">{n}</span>
-            ))}
+            <span class="badge badge-dark font-display text-[10px]">{n}</span>
+          ))}
           </div>
         </div>
       </div>
@@ -203,7 +203,7 @@ const razones = [
           <ul class="flex flex-col gap-5 list-none m-0 p-0">
             {razones.map((r) => (
               <li class="flex items-start gap-4">
-                <svg class="w-5 h-5 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="#FF6B26" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                
                 <div>
                   <h3 class="font-display font-semibold text-base mb-1" style="color:#FFFFFF">{r.title}</h3>
                   <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{r.desc}</p>
@@ -234,9 +234,7 @@ const razones = [
                     <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
                     <span class="text-xs" style="color:#64748B">{l.desc}</span>
                   </span>
-                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="var(--forge-300)" stroke-width="2.5" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
-                  </svg>
+                  
                 </a>
               </li>
             ))}

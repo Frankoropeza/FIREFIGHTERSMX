@@ -163,7 +163,7 @@ const lion: EquipmentBrand = {
   ],
   comparativaNote: NOTA_TPP_THL,
   guia: [
-    { n: '01', t: 'Define el escenario dominante: combate estructural → Lion V-Force, Lion RedZone, Lion V-Force EVO o Lion Super-Deluxe; incendio forestal o de maleza → Lion ENgage Wildland.' },
+    { n: '01', t: 'Define el escenario dominante: combate estructural  Lion V-Force, Lion RedZone, Lion V-Force EVO o Lion Super-Deluxe; incendio forestal o de maleza  Lion ENgage Wildland.' },
     { n: '02', t: 'Para Lion V-Force, revisa el sistema de humedad IsoDri, las mangas raglán y la opción de shell PBI Max según la configuración requerida.' },
     { n: '03', t: 'Solicita la ficha técnica y el certificado aplicable del modelo exacto antes de integrarlo a una especificación.' },
     { n: '04', t: 'Registra la fecha de fabricación y el programa de inspección, limpieza y reparación. NFPA 1850 (2026) exige el retiro a más tardar 10 años después de la fabricación.' },
@@ -252,7 +252,7 @@ const honeywell: EquipmentBrand = {
   ],
   comparativaNote: NOTA_TPP_THL,
   guia: [
-    { n: '01', t: 'Define el escenario dominante: combate estructural → TAILS o VIPER; incendios con calor radiante intenso → TAILS Proximity o VIPER Proximity.' },
+    { n: '01', t: 'Define el escenario dominante: combate estructural  TAILS o VIPER; incendios con calor radiante intenso  TAILS Proximity o VIPER Proximity.' },
     { n: '02', t: 'Revisa en la ficha técnica la configuración de shell, barrera de humedad y forro térmico del modelo.' },
     { n: '03', t: 'Define tallas, capucha y accesorios, y verifica que el conjunto completo esté certificado.' },
     { n: '04', t: 'Exige el certificado del modelo y registra la fecha de fabricación para el programa de cuidado NFPA 1850 (2026).' },
@@ -340,7 +340,7 @@ const fireDex: EquipmentBrand = {
   ],
   comparativaNote: NOTA_TPP_THL,
   guia: [
-    { n: '01', t: 'Define el escenario dominante: combate estructural → Fire-Dex FXR con shell TECGEN71 o Fire-Dex AeroFlex; rescate, forestal o servicios no estructurales → Fire-Dex TECGEN51 multifuncional; ARFF → Fire-Dex Proximity Turnouts.' },
+    { n: '01', t: 'Define el escenario dominante: combate estructural  Fire-Dex FXR con shell TECGEN71 o Fire-Dex AeroFlex; rescate, forestal o servicios no estructurales  Fire-Dex TECGEN51 multifuncional; ARFF  Fire-Dex Proximity Turnouts.' },
     { n: '02', t: 'Para Fire-Dex FXR con shell TECGEN71, revisa el shell Nomex/Kevlar y fibra TECGEN, la sarga ripstop y la configuración de capas indicada en la ficha técnica.' },
     { n: '03', t: 'Para Fire-Dex Wildland, confirma si se requiere chamarra, pantalón u overol y la opción de algodón Ultrasoft o Nomex Essential. Para Proximity Turnouts, revisa la opción de shell aluminizado requerida.' },
     { n: '04', t: 'Solicita la ficha técnica y el certificado aplicable del modelo exacto. Registra la fecha de fabricación para el programa de cuidado conforme a NFPA 1850 (2026).' },
@@ -438,7 +438,7 @@ const skold: EquipmentBrand = {
   comparativaLabel: 'Modelos Sköld — certificación y declaración aplicable',
   comparativaNote: NOTA_SKOLD,
   guia: [
-    { n: '01', t: 'Define el escenario: combate estructural → Sköld Herö; brigada industrial → Sköld Defender; incendio forestal → Sköld Forestal FPFTJ / FPFTP; aproximación → Sköld Aproximación; rescate → Sköld Overol de Rescate.' },
+    { n: '01', t: 'Define el escenario: combate estructural  Sköld Herö; brigada industrial  Sköld Defender; incendio forestal  Sköld Forestal FPFTJ / FPFTP; aproximación  Sköld Aproximación; rescate  Sköld Overol de Rescate.' },
     { n: '02', t: 'Si el requisito exige certificación de tercero, revisa el certificado UL de Sköld Herö bajo NFPA 1971 (2018). Defender y Forestal tienen equivalencia declarada por el fabricante.' },
     { n: '03', t: 'Revisa los materiales y la configuración documentada para el modelo: PBI MAX 7.0, Stedair 3000, Defender M y DRD en Herö; Nomex IIIA y neopreno en Defender; o los componentes listados para los demás modelos.' },
     { n: '04', t: 'Solicita la ficha técnica, certificado o declaración aplicable antes de la compra. Registra la fecha de fabricación y el historial de cuidado conforme a NFPA 1850 (2026).' },

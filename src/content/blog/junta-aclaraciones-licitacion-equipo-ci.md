@@ -40,9 +40,9 @@ Hay tres razones que veo repetidamente:
 
 El proceso que funciona:
 
-**Paso 1: Leer las bases con el catálogo de equipo al lado.** Cada especificación técnica requerida debe compararse contra lo que el equipo real ofrece. Las contradicciones aparecen aquí: especificaciones que ningún equipo disponible en el mercado cumple, normas incompatibles entre sí, parámetros que no aplican al tipo de equipo solicitado.
+**Leer las bases con el catálogo de equipo al lado.** Cada especificación técnica requerida debe compararse contra lo que el equipo real ofrece. Las contradicciones aparecen aquí: especificaciones que ningún equipo disponible en el mercado cumple, normas incompatibles entre sí, parámetros que no aplican al tipo de equipo solicitado.
 
-**Paso 2: Clasificar los hallazgos.** No todas las ambigüedades merecen una pregunta formal. Clasifica:
+**Clasificar los hallazgos.** No todas las ambigüedades merecen una pregunta formal. Clasifica:
 
 | Tipo de hallazgo | Acción recomendada |
 |---|---|
@@ -52,7 +52,7 @@ El proceso que funciona:
 | Ambigüedad que te favorece | Evaluar si conviene dejar sin preguntar |
 | Error menor sin impacto en la oferta | No preguntar |
 
-**Paso 3: Redactar preguntas con base técnica.** Una buena pregunta en junta de aclaraciones:
+**Redactar preguntas con base técnica.** Una buena pregunta en junta de aclaraciones:
 - Identifica el apartado exacto de las bases donde está la ambigüedad o el error
 - Cita la norma o referencia técnica que genera la contradicción
 - Termina con una pregunta específica o una propuesta de corrección

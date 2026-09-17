@@ -38,7 +38,7 @@ const subsistemas = [
       { t: 'Estantes ESFR (Early Suppression)', d: 'Almacenes de alta estiba — supresión temprana directamente sobre la mercancía almacenada' },
     ],
     entregables: ['Memoria de cálculo hidráulico firmada por DRO', 'Planos isométricos y de distribución', 'Lista de materiales y hojas de datos de rociadores', 'Reporte de prueba hidrostática'],
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>`,
+    icon: ``,
   },
   {
     id: 'deteccion',
@@ -57,7 +57,7 @@ const subsistemas = [
       { t: 'Paneles FACP direccionables', d: 'Honeywell Fire-Lite/Notifier NFS2-3030 — hasta 3,000 puntos, monitoreo NFPA 72, integración BMS' },
     ],
     entregables: ['Diseño de zonificación conforme NFPA 72', 'Programación del panel FACP y matrices de causa-efecto', 'Reporte de pruebas de aceptación (NFPA 72 Capítulo 14)', 'Manual de usuario y plan de mantenimiento anual'],
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>`,
+    icon: ``,
   },
   {
     id: 'agente-limpio',
@@ -74,7 +74,7 @@ const subsistemas = [
       { t: 'Integración con VESDA / ASD', d: 'Detección por aspiración en data centers — alarma temprana antes de humo visible, tiempo para investigar antes del disparo' },
     ],
     entregables: ['Diseño de concentración conforme NFPA 2001 (cálculo de masa)', 'Análisis de integridad del recinto (door fan test)', 'Planos de distribución de boquillas y cilindros', 'Procedimiento de descarga, reposición y mantenimiento anual'],
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3"/><circle cx="12" cy="12" r="4"/><path d="M5.636 5.636l.707.707M17.657 17.657l.707.707M5.636 18.364l.707-.707M17.657 6.343l.707-.707"/></svg>`,
+    icon: ``,
   },
   {
     id: 'redes-bombas',
@@ -91,7 +91,7 @@ const subsistemas = [
       { t: 'Red de tuberías y conexiones', d: 'Programas pipe-schedule y hidráulico. Acero negro, CPVC o tubing de cobre según ocupación y norma local' },
     ],
     entregables: ['Memoria de cálculo hidráulico con curva bomba-sistema', 'Planos isométricos de la red de tuberías', 'Data sheet de bombas y tablero de control', 'Protocolo de prueba de la bomba conforme NFPA 20'],
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/></svg>`,
+    icon: ``,
   },
 ];
 
@@ -325,7 +325,7 @@ const tablaComparativa = [
             dossier completo de pruebas — el expediente que exige cualquier aseguradora industrial.
           </p>
           <div class="flex flex-col sm:flex-row gap-3">
-            <a href={whatsappUrl('Hola, quiero cotizar un sistema contra incendio (rociadores / detección / agente limpio). ¿Podrían enviarme información?')} target="_blank" rel="noopener" class="btn btn-primary btn-lg">Cotizar proyecto →</a>
+            <a href={whatsappUrl('Hola, quiero cotizar un sistema contra incendio (rociadores / detección / agente limpio). ¿Podrían enviarme información?')} target="_blank" rel="noopener" class="btn btn-primary btn-lg">Cotizar proyecto </a>
             <a href="/cotizacion" class="btn btn-ghost btn-lg">Propuesta técnica formal</a>
           </div>
         </div>
@@ -335,8 +335,8 @@ const tablaComparativa = [
           ))}
           <div class="flex flex-wrap gap-2 mt-4">
             {['NFPA 13','NFPA 72','NFPA 2001','NFPA 20','NFPA 25','UL Listed','FM Global','Tyco','Viking','Honeywell','Notifier','FM-200','Novec 1230'].map((n: string) => (
-              <span class="badge badge-dark font-display text-[10px]">{n}</span>
-            ))}
+            <span class="badge badge-dark font-display text-[10px]">{n}</span>
+          ))}
           </div>
         </div>
       </div>
@@ -437,7 +437,7 @@ const tablaComparativa = [
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style="border:1px solid rgba(74,117,153,0.18)">
         {razones.map((r, i) => (
           <div class="flex flex-col gap-3 p-6" style={`background:#080F1A;${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.12)' : ''}`}>
-            <span class="font-display font-bold text-2xl" style="color:#34D399">{r.n}</span>
+            
             <h3 class="font-display font-bold text-sm uppercase tracking-wide" style="color:#FFFFFF">{r.t}</h3>
             <p class="text-xs leading-relaxed m-0" style="color:#64748B">{r.d}</p>
           </div>
@@ -488,7 +488,7 @@ const tablaComparativa = [
         </div>
         <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/sistemas-ci/tyco-viking" class="btn btn-primary btn-lg">
-            Catálogo Tyco / Viking completo →
+            Catálogo Tyco / Viking completo 
           </a>
           <a href={whatsappUrl('Hola, quiero cotizar rociadores Tyco o Viking (NFPA 13) para mi proyecto.')}
             target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
@@ -519,7 +519,7 @@ const tablaComparativa = [
             3,030 puntos y se integra con ONYXWorks para gestión centralizada en campus y edificios
             de gran altura. Solución completa: detectores, sirenas, módulos de control y tablero FACP.
           </p>
-          <a href="/productos/sistemas-ci/alarma-contra-incendio/" class="text-sm font-bold hover:text-[#60A5FA]" style="color:#FFFFFF">Alarma contra incendio →</a>
+          <a href="/productos/sistemas-ci/alarma-contra-incendio/" class="text-sm font-bold hover:text-[#60A5FA]" style="color:#FFFFFF">Alarma contra incendio </a>
           <div class="flex flex-wrap gap-2">
             {['NFPA 72','UL Listed','cUL','NFS2-3030','NFS2-640','FACP Direccionable','Detección CLIP','SWIFT Wireless','Distribuidor autorizado MX'].map(b => (
               <span class="badge badge-dark text-[9px]">{b}</span>
@@ -543,7 +543,7 @@ const tablaComparativa = [
         </div>
         <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/sistemas-ci/honeywell-notifier" class="btn btn-primary btn-lg">
-            Catálogo Honeywell / Notifier completo →
+            Catálogo Honeywell / Notifier completo 
           </a>
           <a href={whatsappUrl('Hola, quiero cotizar paneles Honeywell o Notifier NFPA 72 para mi instalación.')}
             target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
@@ -597,7 +597,7 @@ const tablaComparativa = [
         </div>
         <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/sistemas-ci/fm200-novec" class="btn btn-primary btn-lg">
-            Catálogo FM-200 / Novec completo →
+            Catálogo FM-200 / Novec completo 
           </a>
           <a href={whatsappUrl('Hola, quiero cotizar un sistema de agente limpio FM-200 o Novec 1230 (NFPA 2001).')}
             target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
@@ -654,7 +654,7 @@ const tablaComparativa = [
         </div>
         <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/sistemas-ci/red-hidraulica" class="btn btn-primary btn-lg">
-            Red Hidráulica NFPA 20 completa →
+            Red Hidráulica NFPA 20 completa 
           </a>
           <a href={whatsappUrl('Hola, quiero cotizar una red hidráulica contra incendio: bomba NFPA 20, gabinetes CI y válvulas supervisadas.')}
             target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
@@ -711,7 +711,7 @@ const tablaComparativa = [
               </div>
 
               <a href={whatsappUrl(`Hola, quiero cotizar un sistema de ${s.label} (${s.norm}) para mi instalación.`)} target="_blank" rel="noopener" class="btn btn-primary btn-sm mt-auto">
-                Cotizar {s.norm} →
+                Cotizar {s.norm} 
               </a>
             </div>
 
@@ -725,7 +725,7 @@ const tablaComparativa = [
                     <li class="flex flex-col gap-1">
                       <span class="flex items-center gap-2">
                         <span class="shrink-0" style={`color:${s.accent}`}>
-                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                          
                         </span>
                         <span class="font-display font-semibold text-xs" style="color:#FFFFFF">{item.t}</span>
                       </span>
@@ -742,7 +742,7 @@ const tablaComparativa = [
                   {s.entregables.map((e) => (
                     <li class="flex items-start gap-2">
                       <span class="shrink-0 mt-0.5" style="color:#34D399">
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                        
                       </span>
                       <span class="text-xs leading-relaxed" style="color:#94A3B8">{e}</span>
                     </li>
@@ -821,10 +821,10 @@ const tablaComparativa = [
           <article class="relative flex flex-col gap-3 p-6" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
             {i < etapas.length - 1 && (
               <div class="hidden lg:block absolute top-1/2 -right-4 z-10" style="transform:translateY(-50%)">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2D4A5E" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
+                
               </div>
             )}
-            <span class="font-display font-bold text-2xl" style="color:#34D399">{e.n}</span>
+            
             <h3 class="font-display font-bold text-sm uppercase tracking-wide" style="color:#FFFFFF">{e.t}</h3>
             <p class="text-xs leading-relaxed m-0" style="color:#64748B">{e.d}</p>
           </article>
@@ -849,7 +849,7 @@ const tablaComparativa = [
             y en el mantenimiento futuro. Cada proyecto entrega el expediente completo.
           </p>
           <a href={whatsappUrl('Hola, quiero conocer el alcance de entregables de un proyecto de sistema contra incendio.')} target="_blank" rel="noopener" class="btn btn-primary">
-            Conocer el alcance →
+            Conocer el alcance 
           </a>
         </div>
 
@@ -857,7 +857,7 @@ const tablaComparativa = [
           {entregables.map((e) => (
             <article class="flex flex-col gap-2 p-5" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
               <div class="flex items-center gap-2 mb-1">
-                <svg class="shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                
                 <h3 class="font-display font-bold text-xs uppercase tracking-wide" style="color:#FFFFFF">{e.t}</h3>
               </div>
               <p class="text-xs leading-relaxed m-0" style="color:#64748B">{e.d}</p>
@@ -906,7 +906,7 @@ const tablaComparativa = [
           <ol class="flex flex-col gap-4 list-none m-0 p-0">
             {guia.map((s) => (
               <li class="flex items-start gap-4">
-                <span class="font-display font-bold text-xl shrink-0" style="color:#34D399">{s.n}</span>
+                
                 <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{s.t}</p>
               </li>
             ))}
@@ -928,7 +928,7 @@ const tablaComparativa = [
                     <span class="font-display font-semibold text-sm group-hover:text-[#34D399]" style="color:#FFFFFF">{l.label}</span>
                     <span class="text-xs" style="color:#64748B">{l.desc}</span>
                   </span>
-                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="var(--forge-300)" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
+                  
                 </a>
               </li>
             ))}
@@ -990,7 +990,7 @@ const tablaComparativa = [
             class="btn btn-lg"
             style="background:#34D399;color:#0A1A14;border-color:#34D399;font-weight:700"
           >
-            Cotizar proyecto →
+            Cotizar proyecto 
           </a>
           <a href="/cotizacion" class="btn btn-lg" style="background:transparent;color:#FFFFFF;border:2px solid rgba(255,255,255,0.4)">
             Propuesta técnica formal
@@ -1033,7 +1033,7 @@ const tablaComparativa = [
                     <span class="font-display font-semibold text-sm group-hover:text-[#34D399]" style="color:#FFFFFF">{l.label}</span>
                     <span class="text-xs" style="color:#64748B">{l.desc}</span>
                   </span>
-                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="var(--forge-300)" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
+                  
                 </a>
               </li>
             ))}
@@ -1047,7 +1047,7 @@ const tablaComparativa = [
           {otrasCategorias.map((c) => (
             <a href={`/productos/${c.slug}`} class="btn btn-sm btn-dark">{c.label}</a>
           ))}
-          <a href="/productos" class="btn btn-sm btn-outline">Catálogo completo →</a>
+          <a href="/productos" class="btn btn-sm btn-outline">Catálogo completo </a>
         </div>
       </div>
     </div>
@@ -1064,21 +1064,21 @@ const tablaComparativa = [
            style="background:#080F1A;border:1px solid rgba(74,117,153,0.2)">
           <span class="text-sm font-display font-bold group-hover:text-[#F75000]" style="color:#FFFFFF">Extintores</span>
           <span class="text-xs leading-relaxed" style="color:#64748B">PQS ABC · CO₂ · Agente Limpio · Sobre Ruedas</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Extintores →</span>
+          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Extintores </span>
         </a>
         <a href="/productos/hazmat"
            class="group flex flex-col gap-2 p-5 hover:border-[#F75000]"
            style="background:#080F1A;border:1px solid rgba(74,117,153,0.2)">
           <span class="text-sm font-display font-bold group-hover:text-[#F75000]" style="color:#FFFFFF">Equipos HAZMAT</span>
           <span class="text-xs leading-relaxed" style="color:#64748B">DuPont Tychem · Lakeland · MSA · Kappler</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Equipos HAZMAT →</span>
+          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Equipos HAZMAT </span>
         </a>
         <a href="/productos/herramientas-rescate"
            class="group flex flex-col gap-2 p-5 hover:border-[#F75000]"
            style="background:#080F1A;border:1px solid rgba(74,117,153,0.2)">
           <span class="text-sm font-display font-bold group-hover:text-[#F75000]" style="color:#FFFFFF">Herramientas de Rescate</span>
           <span class="text-xs leading-relaxed" style="color:#64748B">Holmatro · Hurst · Weber Rescue</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Herramientas de Rescate →</span>
+          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Herramientas de Rescate </span>
         </a>
       </div>
     </div>

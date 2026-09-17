@@ -205,7 +205,7 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
       <div>
       <div class="flex flex-wrap items-center gap-2 mb-5">
         <span class="inline-flex items-center gap-1.5 font-display font-bold text-[10px] uppercase tracking-wider px-2 py-1" style={`color:${g.color};background:${g.color}1A;border:1px solid ${g.color}40`}>
-          <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" set:html={g.icon} aria-hidden="true"/>{g.labelCorto}</span>
+{g.labelCorto}</span>
         {otrosGiros.map((o) => <span class="font-display text-[10px] uppercase tracking-wider px-2 py-1" style={`color:${o.color};border:1px dashed ${o.color}55`}>+ {o.labelCorto}</span>)}
         {e.plan !== 'basico' && <span class="font-display text-[10px] uppercase tracking-wider px-2 py-1" style={`color:${plan.color};background:${plan.bgColor};border:1px solid ${plan.color}55`}>{plan.label}</span>}
         <span class="font-display text-[10px] uppercase tracking-wider px-2 py-1" title={conf.descripcion} style={`color:${conf.color};background:${conf.bgColor};border:1px solid ${conf.color}33`}>{conf.label}{verif && ` · ${verif}`}</span>
@@ -213,7 +213,6 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
       <h1 id="ficha-heading" class="font-display font-bold mb-3" style="color:#FFFFFF;font-size:clamp(1.9rem,4.2vw,3.4rem);line-height:1">{e.nombre}</h1>
       {e.razonSocial && <p class="font-display text-sm uppercase tracking-wider mb-4" style="color:var(--forge-300)">{e.razonSocial}</p>}
       <p class="flex items-start gap-2 text-sm mb-0" style="color:#94A3B8">
-        <svg class="w-4 h-4 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="#FF6B26" stroke-width="1.8" set:html={iconPin} aria-hidden="true"/>
         <span>{e.direccion ? `${e.direccion} · ` : ''}{e.ciudad}{e.municipio !== e.ciudad ? `, ${e.municipio}` : ''}, {edo.nombre}</span>
       </p>
       </div>
@@ -222,7 +221,6 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
         {heroParrafos.map((par) => <p class="text-sm leading-[1.95] mb-4 last:mb-0" style="color:#94A3B8">{par}</p>)}
         <a href={`/empresas/${e.giroPrincipal}/${e.estado}/`} class="inline-flex items-center gap-2 text-sm font-display font-semibold mt-5" style={`color:${g.color}`}>
           {g.labelCorto} en {edo.nombre}
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
       </div>
     </div>
@@ -305,7 +303,7 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
           <div>
             <span class="section-eyebrow mb-4 inline-flex">Otras empresas de {g.labelCorto.toLowerCase()} en {edo.nombre}</span>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">{cercanas.map((c) => <EmpresaCard e={c} />)}</div>
-            <a href={`/empresas/${e.giroPrincipal}/${e.estado}/`} class="inline-flex mt-5 font-display font-semibold text-xs uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57">Todas las empresas de {g.labelCorto.toLowerCase()} en {edo.nombre} →</a>
+            <a href={`/empresas/${e.giroPrincipal}/${e.estado}/`} class="inline-flex mt-5 font-display font-semibold text-xs uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57">Todas las empresas de {g.labelCorto.toLowerCase()} en {edo.nombre}</a>
           </div>
         )}
 
@@ -315,12 +313,12 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
             <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
               {otrasEmpresasEstado.map((otra) => {
                 const otroGiro = giroMap[otra.giroPrincipal];
-                return <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={urlEmpresa(otra)} class="group flex items-center justify-between gap-4 py-3"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{otra.nombre}</span><span class="text-xs" style="color:#64748B">{otroGiro.labelCorto} en {otra.ciudad}</span></span><span style="color:var(--forge-300)">→</span></a></li>;
+                return <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={urlEmpresa(otra)} class="group flex items-center justify-between gap-4 py-3"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{otra.nombre}</span><span class="text-xs" style="color:#64748B">{otroGiro.labelCorto} en {otra.ciudad}</span></span></a></li>;
               })}
             </ul>
             <div class="flex flex-col gap-2 mt-5">
-              <a href={`/empresas/estado/${e.estado}/`} class="inline-flex font-display font-semibold text-xs uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57">Directorio de empresas en {edo.nombre} →</a>
-              <a href={`/cobertura/${e.estado}/`} class="inline-flex font-display font-semibold text-xs uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57">Cobertura en {edo.nombre} →</a>
+              <a href={`/empresas/estado/${e.estado}/`} class="inline-flex font-display font-semibold text-xs uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57">Directorio de empresas en {edo.nombre}</a>
+              <a href={`/cobertura/${e.estado}/`} class="inline-flex font-display font-semibold text-xs uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57">Cobertura en {edo.nombre}</a>
             </div>
           </div>
         )}
@@ -329,7 +327,7 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
           <div>
             <span class="section-eyebrow mb-4 inline-flex">Otras empresas en México</span>
             <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
-              {empresasNacionales.map((nacional) => <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={urlEmpresa(nacional)} class="group flex items-center justify-between gap-4 py-3"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{nacional.nombre}</span><span class="text-xs" style="color:#64748B">{giroMap[nacional.giroPrincipal].labelCorto} en {nacional.ciudad}</span></span><span style="color:var(--forge-300)">→</span></a></li>)}
+              {empresasNacionales.map((nacional) => <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={urlEmpresa(nacional)} class="group flex items-center justify-between gap-4 py-3"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{nacional.nombre}</span><span class="text-xs" style="color:#64748B">{giroMap[nacional.giroPrincipal].labelCorto} en {nacional.ciudad}</span></span></a></li>)}
             </ul>
           </div>
         )}
@@ -338,7 +336,7 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
           <div>
             <span class="section-eyebrow mb-4 inline-flex">Cuerpos de bomberos en la zona</span>
             <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
-              {estaciones.map((s) => (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/estaciones/${e.estado}/${s.slug}/`} class="group flex items-center justify-between gap-4 py-3"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{s.nombre}</span><span class="text-xs" style="color:#64748B">{s.tipo} · {s.ciudad}</span></span><span style="color:var(--forge-300)">→</span></a></li>))}
+              {estaciones.map((s) => (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/estaciones/${e.estado}/${s.slug}/`} class="group flex items-center justify-between gap-4 py-3"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{s.nombre}</span><span class="text-xs" style="color:#64748B">{s.tipo} · {s.ciudad}</span></span></a></li>))}
             </ul>
           </div>
         )}
@@ -360,13 +358,13 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
           <div style="border:1px solid rgba(74,117,153,0.25)">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
             <div id="ficha-map" data-lat={e.coordenadas!.lat} data-lng={e.coordenadas!.lng} data-color={g.color} style="height:240px;background:#0C1825" role="img" aria-label={`Mapa de ${e.nombre}`}></div>
-            <a href={`https://www.google.com/maps?q=${e.coordenadas!.lat},${e.coordenadas!.lng}`} target="_blank" rel="noopener nofollow" class="block px-4 py-2.5 font-display text-[11px] uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57;background:#0C1825;border-top:1px solid rgba(74,117,153,0.2)">Ubicación de {e.nombre} en Google Maps →</a>
+            <a href={`https://www.google.com/maps?q=${e.coordenadas!.lat},${e.coordenadas!.lng}`} target="_blank" rel="noopener nofollow" class="block px-4 py-2.5 font-display text-[11px] uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57;background:#0C1825;border-top:1px solid rgba(74,117,153,0.2)">Ubicación de {e.nombre} en Google Maps</a>
           </div>
         )}
 
         <div class="p-6" style="background:#0C1825;border:1px solid rgba(74,117,153,0.25)">
           <p class="font-display font-bold text-xs uppercase tracking-widest mb-3" style="color:var(--forge-300)">Fuente del registro</p>
-          <ul class="flex flex-col gap-2 list-none m-0 p-0">{fuentes.map((f) => <li><a href={f.url} target="_blank" rel="noopener nofollow" class="text-xs hover:text-[#FF6B26]" style="color:#CBD5E1">{f.nombre} ↗</a></li>)}</ul>
+          <ul class="flex flex-col gap-2 list-none m-0 p-0">{fuentes.map((f) => <li><a href={f.url} data-fuente target="_blank" rel="noopener nofollow" class="text-xs hover:text-[#FF6B26]" style="color:#CBD5E1">{f.nombre}</a></li>)}</ul>
           {e.claseDENUE && <p class="text-[11px] mt-3 leading-relaxed" style="color:#64748B">Clase de actividad: {e.claseDENUE}</p>}
           <p class="text-[11px] mt-3 leading-relaxed" style="color:#64748B">{conf.descripcion}</p>
         </div>
@@ -375,7 +373,7 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
           <p class="font-display font-bold text-sm mb-2" style="color:#FFFFFF">¿Es tu empresa?</p>
           <p class="text-xs leading-relaxed mb-4" style="color:#94A3B8">Reclama la ficha, completa tus datos y obtén el sello de verificación. Las fichas destacadas aparecen primero en {edo.nombre}.</p>
           <a href="/empresas/registro/" class="btn btn-gold btn-sm w-full text-center">Reclamar esta ficha</a>
-          <a href={whatsappUrl(waMsg)} target="_blank" rel="noopener noreferrer" class="block text-center mt-3 font-display text-[11px] uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57">Escribir a FIREFIGHTERS MX →</a>
+          <a href={whatsappUrl(waMsg)} target="_blank" rel="noopener noreferrer" class="block text-center mt-3 font-display text-[11px] uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57">Escribir a FIREFIGHTERS MX</a>
         </div>
 
         <div class="p-6" style="background:#0C1825;border:1px solid rgba(74,117,153,0.25)">

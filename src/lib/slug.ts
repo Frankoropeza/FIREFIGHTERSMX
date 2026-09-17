@@ -1,6 +1,6 @@
 /**
  * Convierte texto legible en un slug de URL.
- *   "NFPA 1970" → "nfpa-1970"   ·   "Equipos EPP" → "equipos-epp"
+ *   "NFPA 1970"  "nfpa-1970"   ·   "Equipos EPP"  "equipos-epp"
  *
  * Vive en un módulo externo (no en el frontmatter del .astro) porque el
  * build de producción de Astro extrae `getStaticPaths` a un scope aislado
@@ -16,8 +16,8 @@ export function slugify(value: string): string {
     .replace(/^-|-$/g, '');
 }
 
-/** Slug de categoría del blog: "Equipos EPP" → "equipos-epp". */
+/** Slug de categoría del blog: "Equipos EPP"  "equipos-epp". */
 export const slugifyCategory = slugify;
 
-/** Slug de tag del blog: "NFPA 1970" → "nfpa-1970". */
+/** Slug de tag del blog: "NFPA 1970"  "nfpa-1970". */
 export const slugifyTag = slugify;

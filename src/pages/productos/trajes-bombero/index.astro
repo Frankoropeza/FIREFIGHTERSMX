@@ -51,21 +51,21 @@ const tipos = [
     norm: 'NFPA 1970',
     accent: '#F75000',
     desc: 'Combate de incendio dentro de edificios. Tres capas —shell, barrera de humedad y forro térmico— para calor radiante intenso, llama súbita y vapor a presión.',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>`,
+    icon: ``,
   },
   {
     title: 'Proximidad',
     norm: 'NFPA 1970',
     accent: '#F5A623',
     desc: 'Conjunto aluminizado que refleja el calor radiante. Para aproximación a fuegos de combustible, ARFF en aeropuertos, refinerías y fundiciones.',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="5"/><path d="M12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>`,
+    icon: ``,
   },
   {
     title: 'Forestal',
     norm: 'NFPA 1950',
     accent: '#34D399',
     desc: 'Monocapa ligera y transpirable para incendio de vegetación e interfaz. Privilegia movilidad y manejo del estrés por calor en jornadas largas.',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 4 22h16L12 2z"/><path d="M12 8v8"/></svg>`,
+    icon: ``,
   },
 ];
 
@@ -248,8 +248,8 @@ const razones = [
           ))}
           <div class="flex flex-wrap gap-2">
             {['NFPA 1970','NFPA 1950','NFPA 1850','PBI','Crosstech','5 marcas · internacional y nacional'].map(n => (
-              <span class="badge badge-dark font-display text-[10px]">{n}</span>
-            ))}
+            <span class="badge badge-dark font-display text-[10px]">{n}</span>
+          ))}
           </div>
         </div>
       </div>
@@ -307,7 +307,7 @@ const razones = [
       <div class="section-head mt-14 mb-5">
         <h2>Cómo elegir un traje de bombero profesional</h2>
       </div>
-      <ol class="list-decimal pl-6 space-y-2 text-sm leading-relaxed" style="color:#CBD5E1">
+      <ol class="list-none pl-6 space-y-2 text-sm leading-relaxed" style="color:#CBD5E1">
         <li>Define el tipo de combate: estructural, proximidad, forestal o rescate.</li>
         <li>Pide la certificación vigente en la etiqueta y el certificado del laboratorio.</li>
         <li>Mide a cada bombero: la talla correcta evita zonas sin protección y mejora la movilidad.</li>
@@ -360,7 +360,7 @@ const razones = [
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style="border:1px solid rgba(74,117,153,0.18)">
         {razones.map((r, i) => (
           <div class="flex flex-col gap-3 p-6" style={`background:#080F1A;${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.12)' : ''}`}>
-            <span class="font-display font-bold text-2xl" style="color:#F75000">{r.n}</span>
+            
             <h3 class="font-display font-bold text-sm uppercase tracking-wide" style="color:#FFFFFF">{r.t}</h3>
             <p class="text-xs leading-relaxed m-0" style="color:#64748B">{r.d}</p>
           </div>
@@ -450,7 +450,7 @@ const razones = [
         </div>
         <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/trajes-bombero/globe-manufacturing" class="btn btn-primary btn-lg">
-            Catálogo Globe completo →
+            Catálogo Globe completo 
           </a>
           <a
             href={whatsappUrl('Hola, quiero cotizar trajes Globe Manufacturing NFPA 1970.')}
@@ -503,7 +503,7 @@ const razones = [
         </div>
         <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/trajes-bombero/lion-apparel" class="btn btn-primary btn-lg">
-            Catálogo Lion completo →
+            Catálogo Lion completo 
           </a>
           <a href={whatsappUrl('Hola, quiero cotizar trajes Lion Apparel NFPA 1970.')} target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
             Cotizar por {CANAL_CONTACTO}
@@ -551,7 +551,7 @@ const razones = [
         </div>
         <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/trajes-bombero/honeywell-morning-pride" class="btn btn-primary btn-lg">
-            Catálogo Honeywell completo →
+            Catálogo Honeywell completo 
           </a>
           <a href={whatsappUrl('Hola, quiero cotizar trajes Honeywell Morning Pride NFPA 1970.')} target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
             Cotizar por {CANAL_CONTACTO}
@@ -599,7 +599,7 @@ const razones = [
         </div>
         <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/trajes-bombero/fire-dex" class="btn btn-primary btn-lg">
-            Catálogo Fire-Dex completo →
+            Catálogo Fire-Dex completo 
           </a>
           <a href={whatsappUrl('Hola, quiero cotizar trajes Fire-Dex NFPA 1970.')} target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
             Cotizar por {CANAL_CONTACTO}
@@ -649,7 +649,7 @@ const razones = [
         </div>
         <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
           <a href="/productos/trajes-bombero/skold" class="btn btn-primary btn-lg">
-            Catálogo Sköld completo →
+            Catálogo Sköld completo 
           </a>
           <a href={whatsappUrl('Hola, quiero cotizar trajes Sköld de fabricación mexicana.')} target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
             Cotizar por {CANAL_CONTACTO}
@@ -737,7 +737,7 @@ const razones = [
           <ol class="flex flex-col gap-4 list-none m-0 p-0">
             {guia.map((s) => (
               <li class="flex items-start gap-4">
-                <span class="font-display font-bold text-xl shrink-0" style="color:#F75000">{s.n}</span>
+                
                 <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{s.t}</p>
               </li>
             ))}
@@ -759,7 +759,7 @@ const razones = [
                     <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
                     <span class="text-xs" style="color:#64748B">{l.desc}</span>
                   </span>
-                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="var(--forge-300)" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
+                  
                 </a>
               </li>
             ))}
@@ -821,7 +821,7 @@ const razones = [
             class="btn btn-lg"
             style="background:#FFFFFF;color:#F75000;border-color:#FFFFFF;font-weight:700"
           >
-            Cotizar por {CANAL_CONTACTO} →
+            Cotizar por {CANAL_CONTACTO} 
           </a>
           <a href="/cotizacion" class="btn btn-lg" style="background:transparent;color:#FFFFFF;border:2px solid rgba(255,255,255,0.5)">
             Cotización formal
@@ -865,7 +865,7 @@ const razones = [
                     <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
                     <span class="text-xs" style="color:#64748B">{l.desc}</span>
                   </span>
-                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="var(--forge-300)" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
+                  
                 </a>
               </li>
             ))}
@@ -880,7 +880,7 @@ const razones = [
           {otrasCategorias.map((c) => (
             <a href={`/productos/${c.slug}`} class="btn btn-sm btn-dark">{c.label}</a>
           ))}
-          <a href="/productos" class="btn btn-sm btn-outline">Catálogo completo →</a>
+          <a href="/productos" class="btn btn-sm btn-outline">Catálogo completo </a>
         </div>
       </div>
     </div>
@@ -897,21 +897,21 @@ const razones = [
            style="background:#080F1A;border:1px solid rgba(74,117,153,0.2)">
           <span class="text-sm font-display font-bold group-hover:text-[#F75000]" style="color:#FFFFFF">Cascos NFPA</span>
           <span class="text-xs leading-relaxed" style="color:#64748B">MSA Gallet · Bullard · Cairns</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Cascos NFPA →</span>
+          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Cascos NFPA </span>
         </a>
         <a href="/productos/equipos-scba"
            class="group flex flex-col gap-2 p-5 hover:border-[#F75000]"
            style="background:#080F1A;border:1px solid rgba(74,117,153,0.2)">
           <span class="text-sm font-display font-bold group-hover:text-[#F75000]" style="color:#FFFFFF">Equipos SCBA</span>
           <span class="text-xs leading-relaxed" style="color:#64748B">MSA G1 · Dräger PSS 7000 · 3M Scott</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Equipos SCBA →</span>
+          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Equipos SCBA </span>
         </a>
         <a href="/productos/camaras-termicas"
            class="group flex flex-col gap-2 p-5 hover:border-[#F75000]"
            style="background:#080F1A;border:1px solid rgba(74,117,153,0.2)">
           <span class="text-sm font-display font-bold group-hover:text-[#F75000]" style="color:#FFFFFF">Cámaras Térmicas</span>
           <span class="text-xs leading-relaxed" style="color:#64748B">FLIR · MSA Evolution · Bullard TXS</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Cámaras Térmicas →</span>
+          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Cámaras Térmicas </span>
         </a>
       </div>
     </div>

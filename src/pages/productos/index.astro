@@ -111,8 +111,8 @@ const trustPoints = [
           </p>
           <div class="flex flex-wrap gap-2">
             {['NFPA 1970','NFPA 1850','NFPA 1960','NFPA 1930','NOM-100-STPS','NOM-002-STPS'].map(n => (
-              <span class="badge badge-dark font-display text-[10px]">{n}</span>
-            ))}
+            <span class="badge badge-dark font-display text-[10px]">{n}</span>
+          ))}
           </div>
         </div>
 
@@ -187,7 +187,7 @@ const trustPoints = [
           </h2>
         </div>
         <a href={whatsappUrl('Hola, quiero cotizar productos del catálogo.')} target="_blank" rel="noopener" class="btn btn-outline btn-sm self-start sm:self-auto shrink-0">
-          Cotizar ahora →
+          Cotizar ahora 
         </a>
       </div>
 
@@ -201,7 +201,7 @@ const trustPoints = [
             </div>
             <h3 class="font-display font-bold text-lg leading-snug group-hover:text-[#FF6B26]" style="color:#FFFFFF">{product.title}</h3>
             <p class="text-xs leading-relaxed" style="color:#64748B">{product.description}</p>
-            <span class="text-xs font-display font-semibold uppercase tracking-wider mt-auto" style="color:#FF8F57">Ficha técnica de {product.title} →</span>
+            <span class="text-xs font-display font-semibold uppercase tracking-wider mt-auto" style="color:#FF8F57">Ficha técnica de {product.title} </span>
           </a>
         ))}
       </div>
@@ -227,7 +227,7 @@ const trustPoints = [
               { n: '03', t: 'Confirmas, entregamos con documentación completa y queda asignado tu ejecutivo de seguimiento.' },
             ].map((s) => (
               <li class="flex items-start gap-4">
-                <span class="font-display font-bold text-xl shrink-0" style="color:#F75000">{s.n}</span>
+                
                 <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{s.t}</p>
               </li>
             ))}
@@ -258,9 +258,7 @@ const trustPoints = [
                     <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
                     <span class="text-xs" style="color:#64748B">{l.desc}</span>
                   </span>
-                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="var(--forge-300)" stroke-width="2.5" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
-                  </svg>
+                  
                 </a>
               </li>
             ))}

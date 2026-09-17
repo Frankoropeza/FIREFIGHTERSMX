@@ -23,7 +23,7 @@ export async function lineasDeEmpresa(empresa: string): Promise<Linea[]> {
   return (await todasLasLineas()).filter((l) => l.empresa === empresa);
 }
 
-/** Mapa slug-de-línea → URL interna, para que la card de la ficha apunte adentro */
+/** Mapa slug-de-línea  URL interna, para que la card de la ficha apunte adentro */
 export async function urlsLineasDeEmpresa(empresa: string): Promise<Record<string, string>> {
   const out: Record<string, string> = {};
   for (const l of await lineasDeEmpresa(empresa)) out[l.slug] = urlLinea(l);

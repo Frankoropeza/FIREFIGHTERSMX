@@ -20,7 +20,7 @@ const sections = [
     href: '/nosotros',
     desc: 'Historia, misión y el equipo detrás de más de 500 estaciones equipadas en el país.',
     accent: '#F75000',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+    icon: ``,
   },
   {
     title: 'Certificaciones',
@@ -28,7 +28,7 @@ const sections = [
     href: '/certificaciones',
     desc: 'Las normas que avalan nuestro equipo y cómo saber cuál aplica a tu operación.',
     accent: '#F5A623',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>`,
+    icon: ``,
   },
   {
     title: 'Cobertura Nacional',
@@ -36,7 +36,7 @@ const sections = [
     href: '/cobertura',
     desc: 'Logística y servicio en sitio en toda la República, con tiempos de entrega comprometidos.',
     accent: '#34D399',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`,
+    icon: ``,
   },
   {
     title: 'Distribuidores',
@@ -44,7 +44,7 @@ const sections = [
     href: '/distribuidores',
     desc: 'Alianzas y puntos de distribución que acercan el equipo certificado a tu región.',
     accent: '#7AA4C4',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>`,
+    icon: ``,
   },
   {
     title: 'Marcas Autorizadas',
@@ -52,7 +52,7 @@ const sections = [
     href: '/marcas',
     desc: 'Las marcas líderes del mundo que representamos de forma oficial en México.',
     accent: '#FF8F57',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.59 13.41 13.42 20.6a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>`,
+    icon: ``,
   },
   {
     title: 'Contacto',
@@ -60,7 +60,7 @@ const sections = [
     href: '/contacto',
     desc: CONTACTO_DIRECTO_ACTIVO ? 'Atención por teléfono, correo o WhatsApp con un ejecutivo asignado a tu cuenta.' : 'Atención por teléfono o correo con un ejecutivo asignado a tu cuenta.',
     accent: '#FF6B26',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>`,
+    icon: ``,
   },
 ];
 
@@ -77,17 +77,17 @@ const pillars = [
   {
     title: 'Misión',
     text: 'Ser el proveedor integral más confiable de equipo para bomberos y sistemas contra incendio en México, garantizando que cada responder tenga el equipo certificado que merece.',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>`,
+    icon: ``,
   },
   {
     title: 'Visión',
     text: 'Ser el referente iberoamericano del sector bomberos hacia 2028, ampliando cobertura y siendo fuente de autoridad técnica para la industria de la protección contra incendio.',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>`,
+    icon: ``,
   },
   {
     title: 'Valores',
     text: 'Seguridad ante todo. Honestidad técnica. Servicio de excelencia. Compromiso con la vida. Respeto absoluto a las normas que protegen a quienes nos protegen.',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+    icon: ``,
   },
 ];
 
@@ -176,8 +176,8 @@ const aboutSchema = {
           </p>
           <div class="flex flex-wrap gap-2">
             {['NFPA','ISO 9001','NOM-002-STPS','UL Listed','STPS'].map(n => (
-              <span class="badge badge-dark font-display text-[10px]">{n}</span>
-            ))}
+            <span class="badge badge-dark font-display text-[10px]">{n}</span>
+          ))}
           </div>
         </div>
 
@@ -243,9 +243,7 @@ const aboutSchema = {
               <p class="text-xs leading-relaxed" style="color:#64748B;flex:1">{s.desc}</p>
               <span class="flex items-center gap-1.5 text-xs font-display font-semibold uppercase tracking-wider" style="color:#FF8F57;letter-spacing:0.1em">
                 Ver más
-                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
-                </svg>
+                
               </span>
             </div>
           </a>
@@ -332,9 +330,7 @@ const aboutSchema = {
                     <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
                     <span class="text-xs" style="color:#64748B">{l.desc}</span>
                   </span>
-                  <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="var(--forge-300)" stroke-width="2.5" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
-                  </svg>
+                  
                 </a>
               </li>
             ))}

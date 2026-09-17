@@ -174,7 +174,7 @@ const msaGallet: CascoBrand = {
   ],
   comparativaNote: 'Los tres modelos del catálogo se presentan con normas EN. Confirma en la ficha técnica del modelo la norma y la configuración requeridas por tu operación.',
   guia: [
-    { n: '01', t: 'Define el escenario dominante: combate estructural → MSA Gallet F1 XF; incendios forestales, rescate técnico o USAR → MSA Gallet F2XR o MSA Gallet F2 X-TREM.' },
+    { n: '01', t: 'Define el escenario dominante: combate estructural  MSA Gallet F1 XF; incendios forestales, rescate técnico o USAR  MSA Gallet F2XR o MSA Gallet F2 X-TREM.' },
     { n: '02', t: 'Revisa la norma aplicable: el F1 XF cuenta con EN 443:2008; F1 XF, F2XR y F2 X-TREM cuentan con EN 16471 y EN 16473 según la edición indicada en su ficha.' },
     { n: '03', t: 'Si especificas el F1 XF, define si requieres sus accesorios aluminizados opcionales: cubierta, cubrenuca y visor dorado.' },
     { n: '04', t: 'Solicita la ficha técnica y el certificado del modelo, y registra la fecha de fabricación para el programa de inspección y retiro conforme a NFPA 1850 (2026).' },
@@ -266,7 +266,7 @@ const bullard: CascoBrand = {
   comparativaNote:
     'Las normas y materiales se indican por modelo. NFPA 1970 (2025) consolidó NFPA 1971; NFPA 1950 (2025) consolidó NFPA 1977. Confirma el certificado y la ficha técnica aplicables.',
   guia: [
-    { n: '01', t: 'Define el escenario dominante: combate estructural → USTM, UST LowRider, USRX, FX Series, PX Series, LT Series o AX Series; incendio forestal → Wildfire FH911C.' },
+    { n: '01', t: 'Define el escenario dominante: combate estructural  USTM, UST LowRider, USRX, FX Series, PX Series, LT Series o AX Series; incendio forestal  Wildfire FH911C.' },
     { n: '02', t: 'Revisa la norma indicada para el modelo: NFPA 1970 (2025), NFPA 1971 o NFPA 1977 (2022), según corresponda.' },
     { n: '03', t: 'Para proximidad, revisa la configuración AX Series con cubierta aluminizada, cubrenuca y visor dorado.' },
     { n: '04', t: 'Solicita la ficha técnica y el certificado del modelo, y registra la fecha de fabricación para el programa de inspección y retiro conforme a NFPA 1850 (2026).' },
@@ -358,7 +358,7 @@ const cairns: CascoBrand = {
   comparativaNote:
     'La tabla reproduce la norma y el material indicados para cada modelo. NFPA 1970 (2025) consolidó NFPA 1971, entre otras normas; confirma el requisito de tu proceso con la ficha y el certificado vigentes.',
   guia: [
-    { n: '01', t: 'Define el escenario dominante: combate estructural → N6A Houston, 1836, XF1, 880, Invader 664, 360S o 660C Metro; rescate técnico → Cairns XF1.' },
+    { n: '01', t: 'Define el escenario dominante: combate estructural  N6A Houston, 1836, XF1, 880, Invader 664, 360S o 660C Metro; rescate técnico  Cairns XF1.' },
     { n: '02', t: 'Revisa el material indicado para el modelo: cuero en N6A Houston; fibra de vidrio compuesta en 1836, Invader 664 y 660C Metro; termoplástico de alta temperatura en 880 y 360S.' },
     { n: '03', t: 'Confirma la norma del modelo: N6A Houston, 1836 y XF1 indican NFPA 1971 (2018); XF1 también indica NFPA 1951 (2013) para rescate técnico; Invader 664 indica NFPA 1971 e IRAM.' },
     { n: '04', t: 'Solicita la ficha técnica y el certificado del modelo, y registra la fecha de fabricación para el programa de inspección y retiro conforme a NFPA 1850 (2026).' },

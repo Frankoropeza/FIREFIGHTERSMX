@@ -46,7 +46,7 @@ Número de extintores = Área total ÷ Área máxima por extintor
 Para tu bodega de 800 m²:
 
 ```
-800 ÷ 93 = 8.6 → se redondea siempre hacia arriba → 9 extintores
+800 ÷ 93 = 8.6  se redondea siempre hacia arriba  9 extintores
 ```
 
 Pero eso no termina el cálculo. La norma tiene un segundo criterio que opera de forma independiente: la **distancia máxima de recorrido**. Es decir, cualquier punto del área debe quedar a no más de cierta distancia del extintor más cercano. Para riesgo alto ese límite es 15 metros. Para riesgo bajo y ordinario, 23 metros.
@@ -148,7 +148,7 @@ El costo del cumplimiento — comprar los extintores correctos, darles mantenimi
 Actividad: oficinas (computadoras, mobiliario, papel). Nivel de riesgo: **bajo**.
 
 ```
-N = 500 m² ÷ 279 m² = 1.79 → 2 extintores
+N = 500 m² ÷ 279 m² = 1.79  2 extintores
 ```
 
 Verificación de distancia: en un espacio de 25 × 20 metros, con dos extintores en extremos opuestos del pasillo central, el punto más alejado queda a menos de 15 metros. Cumple el criterio de 23 metros.
@@ -162,7 +162,7 @@ Recomendación práctica: si hay un área de servidores o UPS, sustituye uno de 
 Actividad: almacenamiento de thinner, acetona, alcohol isopropílico en tambos de 200 L. Nivel de riesgo: **alto**.
 
 ```
-N = 1,000 m² ÷ 93 m² = 10.75 → 11 extintores
+N = 1,000 m² ÷ 93 m² = 10.75  11 extintores
 ```
 
 Verificación de distancia (límite 15 m): en un rectángulo de 40 × 25 metros, distribuyendo los extintores en cuadrícula de 3 × 4, la separación entre unidades es aproximadamente 13 × 8 metros. El punto más lejano de cualquier extintor queda a unos 9 metros. Cumple con margen.

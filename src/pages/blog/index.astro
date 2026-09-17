@@ -123,8 +123,8 @@ const collectionSchema = {
           </p>
           <div class="flex flex-wrap gap-2">
             {['NFPA 1970','NFPA 1850','NOM-002-STPS','NOM-100-STPS','NOM-154-SCFI'].map((n) => (
-              <span class="badge badge-dark font-display text-[10px]">{n}</span>
-            ))}
+            <span class="badge badge-dark font-display text-[10px]">{n}</span>
+          ))}
           </div>
         </div>
       </div>
@@ -198,7 +198,7 @@ const collectionSchema = {
           <aside class="lg:col-span-4">
             <div class="flex flex-col gap-8 lg:sticky" style="top:124px">
 
-              <!-- Categorías (links reales → SEO crawlable) -->
+              <!-- Categorías (links reales  SEO crawlable) -->
               <div style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
                 <h3 class="font-display font-bold text-sm uppercase tracking-widest px-5 py-4" style="color:#FF6B26;letter-spacing:0.1em;border-bottom:1px solid rgba(74,117,153,0.18)">
                   Categorías
@@ -242,7 +242,7 @@ const collectionSchema = {
                 </ul>
               </div>
 
-              <!-- Temas frecuentes (links reales → SEO crawlable) -->
+              <!-- Temas frecuentes (links reales  SEO crawlable) -->
               {allTags.length > 0 && (
                 <div style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
                   <h3 class="font-display font-bold text-sm uppercase tracking-widest px-5 py-4" style="color:#FF6B26;letter-spacing:0.1em;border-bottom:1px solid rgba(74,117,153,0.18)">
@@ -275,9 +275,7 @@ const collectionSchema = {
                           <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#E2E8F0">{r.label}</span>
                           <span class="text-xs" style="color:#64748B">{r.desc}</span>
                         </span>
-                        <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="var(--forge-300)" stroke-width="2.5" aria-hidden="true">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
-                        </svg>
+                        
                       </a>
                     </li>
                   ))}
@@ -336,8 +334,8 @@ const collectionSchema = {
 
 <script>
   // Filtro por categoría — progressive enhancement
-  // Sin JS → cada chip navega a /blog/categoria/[slug] (SEO + accesibilidad)
-  // Con JS → filtra en página y previene navegación (mejor UX)
+  // Sin JS  cada chip navega a /blog/categoria/[slug] (SEO + accesibilidad)
+  // Con JS  filtra en página y previene navegación (mejor UX)
   const filters = document.querySelectorAll<HTMLAnchorElement>('.blog-filter');
   const items = document.querySelectorAll<HTMLElement>('.blog-item');
   const empty = document.getElementById('blog-empty');
@@ -355,7 +353,7 @@ const collectionSchema = {
 
   filters.forEach((link) => {
     link.addEventListener('click', (e) => {
-      e.preventDefault(); // JS activo → filtrar in-page en lugar de navegar
+      e.preventDefault(); // JS activo  filtrar in-page en lugar de navegar
       applyFilter(link.dataset.filter || 'all');
     });
   });

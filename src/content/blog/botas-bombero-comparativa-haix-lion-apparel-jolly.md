@@ -181,12 +181,12 @@ Hay un lugar para el Ranger FR: brigadas industriales de primer respuesta con ba
 |---|---|---|---|---|
 | Norma | NFPA 1970 | NFPA 1970 | NFPA 1970 | NOM-113 (no NFPA) |
 | Membrana | Gore-Tex Crosstech | SympaTex | Gore-Tex Pro | No aplica |
-| Barrera biológica (F1671) | ✓ | Parcial | ✓ (versión Pro) | No |
+| Barrera biológica (F1671) | Sí | Parcial | Sí (versión Pro) | No |
 | Peso | Confirmar ficha vigente | Confirmar ficha vigente | Confirmar ficha vigente | Confirmar ficha vigente |
 | Suela especializada | HAIX CERFLEX | Vibram Megagrip | FR estándar | Industrial |
 | Sistema de cierre | Cordón + velcro | Cremallera + velcro + cordón | Cordón + emergencia | Cordón |
-| Estabilizador tobillo | ✓ Climate System | ✓ TPU medial | Básico | No |
-| Apertura de emergencia | No | No | ✓ | No |
+| Estabilizador tobillo | Sí (Climate System) | Sí (TPU medial) | Básico | No |
+| Apertura de emergencia | No | No | Sí | No |
 | Integración con trajes | Compatible general | Optimizada Globe/Lion | Compatible general | No aplica |
 | Vida útil en uso intensivo | Definir por inspección | Definir por inspección | Definir por inspección | Definir por inspección |
 | Referencia comercial | Solicitar cotización | Solicitar cotización | Solicitar cotización | Solicitar cotización |

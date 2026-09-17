@@ -377,16 +377,16 @@ const schemas = [breadcrumbSchema, fireStationSchema];
 const correccionMsg = `Hola, quiero corregir o completar los datos de ${estacion.nombre} (${estacion.ciudad}, ${estado.nombre}) en el directorio de estaciones. Dato a corregir:`;
 
 /* ── SVG icons ── */
-const pinIcon    = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`;
-const phoneIcon  = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>`;
-const checkIcon  = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></svg>`;
-const globeIcon  = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>`;
-const mailIcon   = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>`;
-const arrowIcon  = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>`;
-const articleIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>`;
-const shieldIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>`;
-const tagIcon    = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/></svg>`;
-const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>`;
+const pinIcon    = ``;
+const phoneIcon  = ``;
+const checkIcon  = ``;
+const globeIcon  = ``;
+const mailIcon   = ``;
+const arrowIcon  = ``;
+const articleIcon = ``;
+const shieldIcon = ``;
+const tagIcon    = ``;
+const mapPinIcon = ``;
 ---
 
 <BaseLayout title={seoTitle} description={seoDesc} canonicalURL={canonicalURL} schema={schemas} noBrandSuffix>
@@ -489,7 +489,7 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
               Cobertura en {estado.nombre}
             </a>
             <a href={`/estaciones/${estado.slug}/`} class="btn btn-ghost btn-lg">
-              Estaciones de bomberos en {estado.nombre} →
+              Estaciones de bomberos en {estado.nombre} 
             </a>
           </div>
         </div>
@@ -513,7 +513,7 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
               ))}
               {estacion.descripcion.split('\n\n').length > 2 && (
                 <a href="#perfil" class="text-xs uppercase tracking-wider hover:text-[#FF6B26]"
-                  style="color:var(--forge-300)">Leer la descripción completa ↓</a>
+                  style="color:var(--forge-300)">Leer la descripción completa </a>
               )}
             </div>
           ) : (
@@ -765,7 +765,7 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                   </div>
                   <p class="text-xs leading-relaxed m-0" style="color:#64748B">{eq.desc}</p>
                   <span class="text-xs mt-auto group-hover:text-[#FF6B26]" style="color:var(--forge-300)">
-                    Equipo para bomberos →
+                    Equipo para bomberos 
                   </span>
                 </a>
               ))}
@@ -780,11 +780,11 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
               <div class="flex flex-col sm:flex-row gap-2 shrink-0">
                 <a href={`/empresas/estado/${estado.slug}/`}
                   class="btn btn-primary shrink-0" style="font-size:0.75rem;padding:0.5rem 1.25rem">
-                  Proveedores en {estado.nombre} →
+                  Proveedores en {estado.nombre} 
                 </a>
                 <a href={`/cobertura/${estado.slug}/`}
                   class="btn btn-ghost shrink-0" style="font-size:0.75rem;padding:0.5rem 1.25rem">
-                  Cobertura en {estado.nombre} →
+                  Cobertura en {estado.nombre} 
                 </a>
               </div>
             </div>
@@ -844,7 +844,7 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                   const fLabel = typeof f === 'string' ? f : f.nombre;
                   return (
                     <div class="flex items-start gap-2.5">
-                      <span class="font-display text-[10px] font-bold shrink-0 mt-0.5" style="color:var(--forge-300)">{String(i + 1).padStart(2,'0')}</span>
+                      <span class="font-display text-[10px] font-bold shrink-0 mt-0.5" style="color:var(--forge-300)"></span>
                       {fUrl ? (
                         <a href={fUrl} target="_blank" rel="noopener noreferrer nofollow"
                           class="text-xs break-all hover:text-[#FF6B26]" style="color:var(--forge-300)">{fLabel}</a>
@@ -1013,7 +1013,7 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                 ))}
                 <div class="px-5 pt-3 pb-4" style="border-top:1px solid rgba(74,117,153,0.1)">
                   <a href="/productos" class="text-[10px] uppercase tracking-wider hover:text-[#FF6B26]" style="color:var(--forge-300)">
-                    Catálogo de equipo para bomberos →
+                    Catálogo de equipo para bomberos 
                   </a>
                 </div>
               </div>
@@ -1051,14 +1051,14 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                   {todasHermanas.length > 8 && (
                     <div class="px-5 pt-3 pb-4" style="border-top:1px solid rgba(74,117,153,0.1)">
                       <a href={`/estaciones/${estado.slug}/`} class="text-[10px] uppercase tracking-wider hover:text-[#FF6B26]" style="color:var(--forge-300)">
-                        {todasHermanas.length} cuerpos de bomberos en {estado.nombre} →
+                        {todasHermanas.length} cuerpos de bomberos en {estado.nombre} 
                       </a>
                     </div>
                   )}
                   {todasHermanas.length <= 8 && (
                     <div class="px-5 pt-3 pb-4" style="border-top:1px solid rgba(74,117,153,0.1)">
                       <a href={`/estaciones/${estado.slug}/`} class="text-[10px] uppercase tracking-wider hover:text-[#FF6B26]" style="color:var(--forge-300)">
-                        Directorio {estado.nombre} →
+                        Directorio {estado.nombre} 
                       </a>
                     </div>
                   )}
@@ -1094,13 +1094,13 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                   <a href={b.href}
                     class="flex items-start gap-2.5 px-5 py-3 hover:bg-[rgba(74,117,153,0.06)] group"
                     style={i > 0 ? 'border-top:1px solid rgba(74,117,153,0.1)' : ''}>
-                    <span class="shrink-0 font-display text-[10px] font-bold mt-0.5" style="color:var(--forge-300)">{String(i + 1).padStart(2,'0')}</span>
+                    <span class="shrink-0 font-display text-[10px] font-bold mt-0.5" style="color:var(--forge-300)"></span>
                     <span class="text-xs leading-snug group-hover:text-[#FF6B26]" style="color:#94A3B8">{b.label}</span>
                   </a>
                 ))}
                 <div class="px-5 pt-3 pb-4" style="border-top:1px solid rgba(74,117,153,0.1)">
                   <a href="/blog" class="text-[10px] uppercase tracking-wider hover:text-[#FF6B26]" style="color:var(--forge-300)">
-                    Blog técnico para bomberos →
+                    Blog técnico para bomberos 
                   </a>
                 </div>
               </div>
@@ -1130,7 +1130,7 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
                   ))}
                   <div class="px-5 pt-3 pb-4" style="border-top:1px solid rgba(74,117,153,0.1)">
                     <a href="/estaciones" class="text-[10px] uppercase tracking-wider hover:text-[#FF6B26]" style="color:var(--forge-300)">
-                      Directorio nacional de estaciones →
+                      Directorio nacional de estaciones 
                     </a>
                   </div>
                 </div>
@@ -1154,7 +1154,7 @@ const mapPinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
             style="color:#FFFFFF;font-size:clamp(1.25rem,2.5vw,1.75rem)">
             Más estaciones en <span style="color:#F75000">{estado.nombre}</span>
           </h2>
-          <a href={`/estaciones/${estado.slug}/`} class="btn btn-ghost btn-sm shrink-0">Todas las estaciones de {estado.nombre} →</a>
+          <a href={`/estaciones/${estado.slug}/`} class="btn btn-ghost btn-sm shrink-0">Todas las estaciones de {estado.nombre} </a>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {herManasGrid.map((h) => {

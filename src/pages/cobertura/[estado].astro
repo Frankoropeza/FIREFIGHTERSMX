@@ -227,7 +227,7 @@ const waMsg = `Hola, necesito equipo para bomberos en ${estado.name}. ¿Cuál es
               style="color:#F75000;min-width:1.5rem"
               aria-hidden="true"
             >
-              {String(i + 1).padStart(2, '0')}
+              
             </span>
             <span class="text-sm font-semibold" style="color:#CBD5E1">{sector}</span>
           </div>
@@ -296,10 +296,10 @@ const waMsg = `Hola, necesito equipo para bomberos en ${estado.name}. ¿Cuál es
         style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)"
       >
         {[
-          { icon: '⚡', title: 'Empresas registradas', desc: 'Consulta los giros y municipios presentes en cada ficha' },
-          { icon: '🛡️', title: 'Alcance declarado', desc: 'Confirma directamente la cobertura comercial y de servicio' },
-          { icon: '📦', title: 'Condiciones comerciales', desc: 'Solicita precios, disponibilidad y plazos a cada empresa' },
-          { icon: '📍', title: 'Ubicación', desc: 'Compara empresas por estado y municipio' },
+          { icon: '', title: 'Empresas registradas', desc: 'Consulta los giros y municipios presentes en cada ficha' },
+          { icon: '️', title: 'Alcance declarado', desc: 'Confirma directamente la cobertura comercial y de servicio' },
+          { icon: '', title: 'Condiciones comerciales', desc: 'Solicita precios, disponibilidad y plazos a cada empresa' },
+          { icon: '', title: 'Ubicación', desc: 'Compara empresas por estado y municipio' },
         ].map((f) => (
           <div class="grid-cell flex flex-col gap-3 p-6">
             <span class="text-2xl" aria-hidden="true">{f.icon}</span>
@@ -369,7 +369,7 @@ const waMsg = `Hola, necesito equipo para bomberos en ${estado.name}. ¿Cuál es
         <span class="section-eyebrow mb-4 inline-flex">Cobertura nacional</span>
         <h2 id="otros-estados-heading" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.5rem,3vw,2.25rem)">Otros estados con cobertura</h2>
         <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15);border-left:1px solid rgba(74,117,153,0.15)">
-          {otrosEstados.map((otro) => <li style="border-bottom:1px solid rgba(74,117,153,0.15);border-right:1px solid rgba(74,117,153,0.15)"><a href={`/cobertura/${otro.slug}/`} class="group flex items-center justify-between gap-4 p-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Cobertura en {otro.name}</span><span style="color:var(--forge-300)">→</span></a></li>)}
+          {otrosEstados.map((otro) => <li style="border-bottom:1px solid rgba(74,117,153,0.15);border-right:1px solid rgba(74,117,153,0.15)"><a href={`/cobertura/${otro.slug}/`} class="group flex items-center justify-between gap-4 p-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Cobertura en {otro.name}</span><span style="color:var(--forge-300)"></span></a></li>)}
         </ul>
       </div>
     </section>

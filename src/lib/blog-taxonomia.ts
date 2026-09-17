@@ -6,8 +6,8 @@
  * El blog tiene 48 artículos y generaba 176 páginas de etiqueta más 21 de
  * categoría, todas indexables. El reparto de artículos por página era:
  *
- *   etiquetas    1 artículo → 140   2 → 21   3 o más → 15
- *   categorías   1 artículo →   4   2 → 13   3 o más →  4
+ *   etiquetas    1 artículo  140   2  21   3 o más  15
+ *   categorías   1 artículo    4   2  13   3 o más   4
  *
  * **140 de las 176 etiquetas agrupaban un solo artículo.** Una etiqueta con un
  * artículo no agrupa nada: su único contenido propio es el título de ese

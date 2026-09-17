@@ -65,8 +65,8 @@ for (const file of htmls(raizEmpresas)) {
     // Desde 2026-09-16 se enlaza api.whatsapp.com directo (wa.me redirige 302).
     if (/^api\.whatsapp\.com$/i.test(host) && new URL(url.replace(/&amp;/g, '&')).searchParams.get('phone') === WHATSAPP_PROPIO) continue;
     if (PERMITIDOS.some((re) => re.test(host))) continue;
-    // Cita de fuente: el enlace lleva el nombre de la fuente y la flecha ↗
-    const esFuente = new RegExp(`href="${url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"[^>]*>[^<]*↗`).test(html);
+    // Cita de fuente: atributo estable, independiente de su presentación visual.
+    const esFuente = new RegExp(`data-fuente(?:="[^"]*")?[^>]*href="${url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"|href="${url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"[^>]*data-fuente`).test(html);
     if (esFuente) continue;
     if (esVIP) continue;
     console.error(`  x ${ruta}\n      ${url}  -> enlace saliente en ficha no VIP`);

@@ -46,7 +46,7 @@ import { homeFaqs as faqs } from '@data/faqs';
                   {faq.q}
                 </h3>
                 <span class="faq-icon shrink-0 mt-0.5 w-5 h-5 flex items-center justify-center" style="border:1px solid rgba(74,117,153,0.3);color:var(--forge-300)">
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg>
+                  
                 </span>
               </summary>
               <p class="px-6 pb-6 text-sm leading-relaxed" style="color:#64748B">{faq.a}</p>
@@ -88,7 +88,7 @@ import { homeFaqs as faqs } from '@data/faqs';
             </div>
             <button type="submit" class="btn btn-primary btn-lg w-full justify-center mt-1">
               Enviar cotización
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              
             </button>
           </form>
 
@@ -96,9 +96,7 @@ import { homeFaqs as faqs } from '@data/faqs';
             <a href={whatsappUrl('Hola, quiero cotizar equipo para bomberos.')}
                target="_blank" rel="noopener"
                class={`btn ${CONTACTO_DIRECTO_ACTIVO ? 'btn-whatsapp' : 'btn-outline'} w-full justify-center text-sm`}>
-              {CONTACTO_DIRECTO_ACTIVO && (
-<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
-)}
+              
               O escribe por {CANAL_CONTACTO}
             </a>
           </div>
@@ -111,7 +109,7 @@ import { homeFaqs as faqs } from '@data/faqs';
 </section>
 
 <script>
-  // Envío sin backend → arma un mensaje de WhatsApp con los campos del formulario.
+  // Envío sin backend  arma un mensaje de WhatsApp con los campos del formulario.
   document.querySelectorAll('form[data-wa-form]').forEach((form) => {
     const f = form as HTMLFormElement;
     if (f.dataset.bound) return;

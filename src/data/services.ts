@@ -37,7 +37,7 @@ export const services: Service[] = [
     description: 'Capacitación contra incendio con constancia DC-3 STPS: brigadas NOM-002, bombero NFPA 1001, uso de SCBA, rescate y HAZMAT. Cursos en tu planta o estación.',
     shortDesc: 'Cursos NFPA y NOM-002 con constancia DC-3 válida ante STPS e IMSS.',
     accent: '#F75000',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/><path d="M22 10v6"/></svg>`,
+    icon: ``,
     href: '/servicios/capacitacion',
     intro: [
       'Una brigada solo responde como fue entrenada. Impartimos cursos teórico-prácticos con fuego real controlado, alineados a NOM-002-STPS-2010 y a los estándares NFPA 1001 y 1041, en tu planta, estación o en campo de entrenamiento.',
@@ -78,7 +78,7 @@ export const services: Service[] = [
     description: 'Mantenimiento y recarga certificada: extintores con collar de garantía, SCBA con prueba de flujo, herramientas Holmatro y EPP conforme NFPA 1850 en México.',
     shortDesc: 'Extintores, SCBA, herramientas hidráulicas y EPP — con reporte para auditoría.',
     accent: '#F5A623',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
+    icon: ``,
     href: '/servicios/mantenimiento',
     intro: [
       'Un equipo sin mantenimiento es un riesgo disfrazado de protección. Damos servicio certificado a extintores (recarga y prueba hidrostática NOM-154-SCFI), equipos SCBA (prueba de flujo anual y cilindros), herramientas hidráulicas Holmatro y EPP estructural conforme NFPA 1850.',
@@ -119,7 +119,7 @@ export const services: Service[] = [
     description: 'Diseño e instalación de sistemas contra incendio: rociadores NFPA 13, detección y alarma NFPA 72, supresión FM-200/Novec. Memoria de cálculo y llave en mano.',
     shortDesc: 'Rociadores, detección y alarma, y agentes limpios — proyecto llave en mano.',
     accent: '#34D399',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/><path d="M8 12h8M12 8v8"/></svg>`,
+    icon: ``,
     href: '/servicios/instalacion-sistemas-ci',
     intro: [
       'Diseñamos e instalamos sistemas fijos de protección contra incendio llave en mano: rociadores automáticos NFPA 13, detección y alarma NFPA 72 con tableros direccionables, redes hidráulicas con bombas NFPA 20 y supresión por agente limpio NFPA 2001 para activos críticos.',
@@ -160,7 +160,7 @@ export const services: Service[] = [
     description: 'Auditoría de cumplimiento NOM-002-STPS-2010: diagnóstico de instalaciones, brigada y documentación contra incendio, con plan de cierre de brechas priorizado.',
     shortDesc: 'Diagnóstico integral de planta + plan de cierre de brechas priorizado.',
     accent: '#F75000',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/></svg>`,
+    icon: ``,
     href: '/servicios/auditoria-seguridad',
     intro: [
       'Antes de que llegue la inspección, conviene saber exactamente qué va a encontrar. Nuestra auditoría evalúa tu instalación contra la NOM-002-STPS-2010 punto por punto: clasificación de riesgo, equipamiento, señalización, brigada, simulacros y expediente documental.',
@@ -201,7 +201,7 @@ export const services: Service[] = [
     description: 'Diseño, equipamiento y capacitación de brigadas contra incendio empresariales llave en mano: estructura, EPP, protocolos y DC-3 STPS incluido.',
     shortDesc: 'Diseño, equipamiento y capacitación de tu brigada — llave en mano.',
     accent: '#F5A623',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+    icon: ``,
     href: '/servicios/brigadas-empresariales',
     intro: [
       'Formar una brigada desde cero implica diseño organizacional, equipamiento correcto y entrenamiento certificado. Lo entregamos llave en mano: definimos la estructura según tu plantilla y riesgo, equipamos con EPP conforme a norma y capacitamos con constancia DC-3.',
@@ -242,7 +242,7 @@ export const services: Service[] = [
     description: 'Soporte técnico para licitaciones de equipo contra incendio: fichas técnicas NOM/NFPA, manifiestos, juntas de aclaraciones y plantillas CompraNet, PEMEX y CFE.',
     shortDesc: 'Fichas técnicas, manifiestos y acompañamiento en CompraNet, PEMEX y CFE.',
     accent: '#34D399',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>`,
+    icon: ``,
     href: '/servicios/licitaciones',
     intro: [
       'Ganar una licitación de equipo contra incendio se decide en los detalles técnicos: fichas alineadas al anexo, manifiestos de cumplimiento de normas y respuestas precisas en junta de aclaraciones. Llevamos más de 15 años acompañando procesos federales, estatales y municipales.',

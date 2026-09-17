@@ -207,7 +207,7 @@ const tycoViking: EquipmentBrand = {
   guia: [
     {
       n: '01',
-      t: 'Clasifica el riesgo de la ocupación según NFPA 13: riesgo ligero (oficinas, hoteles, museos) → TY-B estándar; riesgo ordinario Grupo 1-2 (manufactura, bodegas de baja estiba) → TY-FRB rápido; almacén de alta estiba clase I–IV o plásticos → ESFR K-25; ocupación especial con inflamables → sistema de diluvio o espuma AFFF.',
+      t: 'Clasifica el riesgo de la ocupación según NFPA 13: riesgo ligero (oficinas, hoteles, museos)  TY-B estándar; riesgo ordinario Grupo 1-2 (manufactura, bodegas de baja estiba)  TY-FRB rápido; almacén de alta estiba clase I–IV o plásticos  ESFR K-25; ocupación especial con inflamables  sistema de diluvio o espuma AFFF.',
     },
     {
       n: '02',
@@ -849,7 +849,7 @@ const redHidraulica: EquipmentBrand = {
     { modelo: 'Válvula OS&Y + Tamper', tipo: 'red-hidraulica', norma: 'NFPA 20 · NFPA 13', tipo_sis: 'Válvula control supervisada', cobertura: '2" a 12" según red', listado: 'UL Listed · FM Approved', ideal: 'Control principal y sectorización CI' },
   ],
   comparativaLabel: 'Red Hidráulica completa — Gabinetes · Bombas · Válvulas',
-  comparativaNote: '★ Recomendado = Bomba principal eléctrica, el equipo central de la sala de bombas NFPA 20 del que depende el funcionamiento de todo el sistema.',
+  comparativaNote: ' Recomendado = Bomba principal eléctrica, el equipo central de la sala de bombas NFPA 20 del que depende el funcionamiento de todo el sistema.',
   guia: [
     { n: '01', t: 'Define el tipo de riesgo y el área a proteger: el caudal y la presión requeridos por los rociadores o gabinetes determinan el dimensionamiento de la bomba principal conforme NFPA 20.' },
     { n: '02', t: 'Cuando la fuente eléctrica no se considera confiable, la NFPA 20 pide una fuente alterna: un generador dedicado o una bomba con motor diésel.' },

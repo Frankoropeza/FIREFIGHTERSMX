@@ -39,7 +39,7 @@ export const industries: Industry[] = [
     description: 'Equipamiento integral para cuerpos de bomberos municipales: trajes NFPA 1970, SCBA, herramientas de rescate y soporte completo para licitaciones públicas.',
     shortDesc: 'Equipamiento integral y soporte para licitaciones de cuerpos de bomberos.',
     accent: '#F75000',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s8-4 8-10V6l-8-3-8 3v6c0 6 8 10 8 10z"/><path d="M12 8c0 0-3.5 2.8-2 5.6.8 1.4 2 1.4 2 1.4s-.7-1.4 0-2.8c.7-1.4 2-1.4 2-1.4s-.7 2 .7 3.5c.6.6.7 1.4.7 1.4"/></svg>`,
+    icon: ``,
     href: '/industrias/bomberos-municipales',
     intro: [
       'Equipar un cuerpo de bomberos municipal es un proyecto de adquisición pública con presupuesto acotado, anexos técnicos exigentes y vidas de por medio. Llevamos más de 15 años acompañando H. Cuerpos de Bomberos en todo el país: del anexo técnico a la entrega con número de serie verificable.',
@@ -82,7 +82,7 @@ export const industries: Industry[] = [
     description: 'Equipamiento y capacitación para brigadas industriales conforme NOM-002-STPS: EPP, extintores, detección y constancias DC-3. Llave en mano para tu planta.',
     shortDesc: 'NOM-002 llave en mano: equipo, capacitación DC-3 y documentación.',
     accent: '#F5A623',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>`,
+    icon: ``,
     href: '/industrias/brigadas-industriales',
     intro: [
       'Toda planta con empleados en México debe cumplir la NOM-002-STPS-2010: clasificar su riesgo, equipar contra incendio, formar brigada y documentarlo todo. Resolvemos el paquete completo para plantas manufactureras, centros logísticos y parques industriales.',
@@ -125,7 +125,7 @@ export const industries: Industry[] = [
     description: 'Equipamiento ARFF para aeropuertos: trajes de proximidad aluminizados, SCBA 60 min, espuma AFFF y capacitación para rescate y extinción en aeronaves.',
     shortDesc: 'Trajes de proximidad, SCBA de 60 min y espuma para rescate en aeronaves.',
     accent: '#F75000',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21 4 19 4s-2 1-3.5 2.5L11 8 2.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 3.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>`,
+    icon: ``,
     href: '/industrias/aeropuertos-arff',
     intro: [
       'El rescate y extinción en aeronaves (ARFF) opera bajo los estándares más exigentes: NFPA 403, los criterios de la OACI y los tiempos de respuesta que audita la AFAC. El equipamiento debe soportar combustible en llamas y exposición radiante extrema.',
@@ -168,7 +168,7 @@ export const industries: Industry[] = [
     description: 'Protección contra incendio para hospitales: agentes limpios, detección y alarma por zonas, brigadas con evacuación de pacientes y cumplimiento COFEPRIS.',
     shortDesc: 'Agentes limpios, alarmas por zona y brigadas con evacuación de pacientes.',
     accent: '#34D399',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M12 9v6M9 12h6"/></svg>`,
+    icon: ``,
     href: '/industrias/hospitales',
     intro: [
       'Un hospital no puede evacuar como una oficina: hay pacientes en terapia intensiva, quirófanos en uso y oxígeno medicinal en red. La protección contra incendio hospitalaria se diseña para defender en el lugar y evacuar por etapas, como pide el Life Safety Code NFPA 101.',
@@ -211,7 +211,7 @@ export const industries: Industry[] = [
     description: 'Protección contra incendio para hoteles: rociadores, detección en habitaciones, señalización de evacuación multilingüe y brigadas — cumplimiento PC y aseguradoras.',
     shortDesc: 'Rociadores, detección en habitaciones y brigadas para huéspedes seguros.',
     accent: '#F5A623',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 9V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4"/><path d="M2 13h20"/><path d="M5 13v8M19 13v8"/></svg>`,
+    icon: ``,
     href: '/industrias/hoteles',
     intro: [
       'Un hotel duerme cada noche a cientos de personas que no conocen el edificio. La protección contra incendio hotelera se juega en la detección temprana en habitación, rutas de evacuación señalizadas para extranjeros y una brigada nocturna que sabe tocar puerta por puerta.',
@@ -254,7 +254,7 @@ export const industries: Industry[] = [
     description: 'Equipamiento contra incendio para refinerías y petroquímica: HAZMAT Nivel A, SCBA 60 min, detección de gases, espumas y cumplimiento de anexos PEMEX.',
     shortDesc: 'HAZMAT, SCBA de autonomía extendida y detección para hidrocarburos.',
     accent: '#F75000',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><path d="M12 9v4M12 17h.01"/></svg>`,
+    icon: ``,
     href: '/industrias/refinerias-pemex',
     intro: [
       'La industria del hidrocarburo opera con los anexos técnicos más estrictos del país: especificaciones PEMEX, regulación ASEA y estándares NFPA en simultáneo. El equipo que entra a una refinería se audita contra los tres marcos.',
@@ -297,7 +297,7 @@ export const industries: Industry[] = [
     description: 'Equipamiento contra incendio y rescate para minería: SCBA para espacios confinados, detección multi-gas NOM-032, autorrescatadores y brigadas de rescate minero.',
     shortDesc: 'SCBA, detección multi-gas y rescate para tiro y tajo abierto.',
     accent: '#F5A623',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 17a10 10 0 0 1 20 0"/><path d="M2 17h20v3H2z"/><circle cx="12" cy="10" r="2.5"/></svg>`,
+    icon: ``,
     href: '/industrias/mineria',
     intro: [
       'La minería combina los riesgos más difíciles de la respuesta a emergencias: espacios confinados, atmósferas irrespirables, distancias largas y, en carbón, gas explosivo regulado por la NOM-032-STPS. El equipo se selecciona para funcionar donde no hay segundo intento.',
@@ -340,7 +340,7 @@ export const industries: Industry[] = [
     description: 'Equipamiento para unidades de Protección Civil estatal y municipal: EPP de respondiente, rescate urbano USAR, drones térmicos y capacitación certificada.',
     shortDesc: 'EPP, rescate USAR y drones para coordinaciones estatales y municipales.',
     accent: '#34D399',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>`,
+    icon: ``,
     href: '/industrias/proteccion-civil',
     intro: [
       'Las coordinaciones de Protección Civil responden a todo: incendios, sismos, inundaciones y materiales peligrosos, casi siempre con presupuesto limitado y comprobación pública. El equipamiento debe ser versátil, certificado y justificable ante el órgano fiscalizador.',

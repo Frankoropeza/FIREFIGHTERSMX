@@ -40,15 +40,15 @@ Después de un impacto, inspecciona el cilindro de acuerdo con las instrucciones
 
 ## El protocolo post-impacto que toda corporación debe implementar ahora
 
-**Paso 1 — Retiro de servicio para evaluación.** Un cilindro que haya sufrido un evento que pueda afectar su condición debe evaluarse conforme a las instrucciones del fabricante antes de volver a operación.
+**Retiro de servicio para evaluación.** Un cilindro que haya sufrido un evento que pueda afectar su condición debe evaluarse conforme a las instrucciones del fabricante antes de volver a operación.
 
-**Paso 2 — Inspección visual documentada.** Registra el número de serie, la fecha del incidente, la condición observada y la decisión técnica.
+**Inspección visual documentada.** Registra el número de serie, la fecha del incidente, la condición observada y la decisión técnica.
 
-**Paso 3 — Requalificación cuando corresponda.** Para cilindros compuestos, la requalificación programada incluye inspección visual externa e interna y prueba hidrostática cada 5 años.
+**Requalificación cuando corresponda.** Para cilindros compuestos, la requalificación programada incluye inspección visual externa e interna y prueba hidrostática cada 5 años.
 
-**Paso 4 — Registro en el expediente individual del cilindro.** Conserva la fecha de fabricación, las inspecciones y las pruebas aplicables a cada cilindro.
+**Registro en el expediente individual del cilindro.** Conserva la fecha de fabricación, las inspecciones y las pruebas aplicables a cada cilindro.
 
-**Paso 5 — Consulta al fabricante.** El manual y el marcado del cilindro determinan el procedimiento aplicable tras un impacto o condición fuera de servicio.
+**Consulta al fabricante.** El manual y el marcado del cilindro determinan el procedimiento aplicable tras un impacto o condición fuera de servicio.
 
 ---
 

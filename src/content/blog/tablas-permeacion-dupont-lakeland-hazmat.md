@@ -49,29 +49,29 @@ Por eso existe el ensayo ASTM F739, y por eso los fabricantes publican tablas de
 
 Estás en el almacén de EPP. Tienes el catálogo de DuPont o el de Lakeland. Tienes un incidente en 20 minutos o una auditoría de selección de equipo para el corredor petroquímico de Coatzacoalcos. Aquí está el proceso, paso a paso, sin rodeos académicos.
 
-**Paso 1: Consigue el número CAS, no el nombre genérico.**
+**Consigue el número CAS, no el nombre genérico.**
 
 "Solvente de limpieza", "disolvente industrial", "ácido" no existen en la tabla. No son moléculas, son descripciones comerciales. Tolueno (CAS 108-88-3) sí existe. Ácido fluorhídrico al 48% (CAS 7664-39-3) sí existe. Si tienes la hoja de datos de seguridad —y deberías tenerla para cualquier químico en tu zona de respuesta— el número CAS está en la Sección 1 o la Sección 3. Sin ese número, estás adivinando.
 
 Para las plantas de amoniaco en Monterrey y Nuevo León, el CAS es 7664-41-7. Para el ácido sulfúrico en las plantas de tratamiento de agua o refinerías como PEMEX Tula, es 7664-93-9. Tenlos anotados. No busques en el momento del incidente.
 
-**Paso 2: Localiza la columna de tu material.**
+**Localiza la columna de tu material.**
 
 En las tablas de DuPont Tychem, las columnas corresponden a los materiales de la línea Tychem: Tychem 2000 (antes QC), Tychem 4000 (antes SL), Tychem 6000 (antes TK), Tychem 10000 (antes BR). En Lakeland ChemMax, son ChemMax 1, 2, 3 y 4. El nombre comercial del traje que tienes en bodega aparece en la etiqueta; el material correspondiente en la tabla es lo que importa.
 
 No asumas que "Nivel B" o "Nivel A" te dice el material. Te dice la configuración de protección respiratoria y salpicaduras. Un técnico con Tychem 6000 y SCBA y un técnico con Tyvek y SCBA son ambos "Nivel B". Sus permeaciones para tolueno son radicalmente diferentes.
 
-**Paso 3: Lee el tiempo de ruptura. Luego divídelo a la mitad.**
+**Lee el tiempo de ruptura. Luego divídelo a la mitad.**
 
 El tiempo de ruptura (breakthrough time) es el momento en que el laboratorio detecta el químico atravesando el material a una tasa de 0.1 µg/cm²/min. En la tabla de DuPont lo verás en minutos con el número de material; en Lakeland puede aparecer como letra (A = >480 min, B = 240-480, C = 60-240, D = <60, F = falla inmediata).
 
 Este tiempo es el punto de no retorno en condiciones de laboratorio a 23°C. Tu tiempo máximo de trabajo es la mitad de ese número. Ese es el margen de seguridad mínimo. Si el tiempo de ruptura es 60 minutos, tu técnico tiene como máximo 30 minutos de operación desde el primer contacto con el químico. Si el trabajo requiere más tiempo, necesitas rotación de equipos o un material diferente.
 
-**Paso 4: Revisa la tasa de permeación en estado estacionario.**
+**Revisa la tasa de permeación en estado estacionario.**
 
 Expresada en µg/cm²/min, esta cifra te dice qué tan rápido pasa el químico después de la ruptura inicial. Algunos materiales "frenan" la permeación —la tasa sube y se estabiliza en un valor relativamente bajo. Otros no frenan: la tasa sigue subiendo. La diferencia importa si hay cualquier posibilidad de que el tiempo de exposición se extienda más allá del planeado —que en incidentes reales ocurre con frecuencia.
 
-**Paso 5: Aplica el factor de temperatura. Sin excepciones.**
+**Aplica el factor de temperatura. Sin excepciones.**
 
 Las tablas se midieron a 23°C. En agosto en Monterrey, los interiores de una planta o almacén llegan fácilmente a 38-42°C. Por cada 10°C de aumento sobre los 23°C de la prueba, el tiempo de ruptura se reduce aproximadamente a la mitad. Eso significa que si la tabla dice 60 minutos y estás trabajando a 38°C (15 grados sobre la referencia), tu tiempo de ruptura real es de alrededor de 15 minutos. No 60. Quince.
 
@@ -127,19 +127,19 @@ Nadie mide el tiempo de ruptura real de los trajes en servicio. Eso significa qu
 
 No estás en un laboratorio. Estás en el patio de una refinería a las 3 AM con el jefe de operaciones al teléfono y un derrame que no para. Así se hace en campo:
 
-**Paso 1 — Identifica el agente antes de moverse.**
+**Identifica el agente antes de moverse.**
 Número CAS en la hoja de seguridad o en la base de datos que tienes offline en el tablet del equipo. Si no tienes el CAS, tienes un problema de información antes de tener un problema de equipo. Nombre genérico, concentración aproximada, estado físico (líquido, vapor, aerosol). Sin esto, cualquier decisión de traje es una suposición.
 
-**Paso 2 — Consulta la tabla para ese CAS y ese material.**
+**Consulta la tabla para ese CAS y ese material.**
 Si tienes Tychem 6000 en tu inventario, busca Tychem 6000. Si tienes ChemMax 4, busca ChemMax 4. El tiempo de ruptura es el número que importa primero. Si no aparece en tu tabla —porque el producto es una mezcla no documentada o un químico exótico— aplica el principio de mayor protección disponible.
 
-**Paso 3 — Calcula tu tiempo máximo de exposición.**
+**Calcula tu tiempo máximo de exposición.**
 Tiempo de ruptura de la tabla, dividido entre dos, menos el factor de temperatura. Si la tabla dice 60 minutos, tus técnicos tienen 30 minutos como máximo en condiciones de laboratorio. Si están trabajando a 38°C, reduce eso a 15 minutos. Ese es el tiempo del cronómetro que arranca cuando el primer técnico toca la zona de contacto.
 
-**Paso 4 — Planifica la rotación antes de entrar.**
+**Planifica la rotación antes de entrar.**
 Si la operación requiere más tiempo que tu ventana de seguridad, planifica equipos de rotación. Dos técnicos que entran y salen en 15 minutos son más seguros que uno que está 30 minutos porque "casi termina". La rotación de equipo no es señal de debilidad —es señal de que el comandante sabe leer una tabla.
 
-**Paso 5 — Documenta la decisión.**
+**Documenta la decisión.**
 Agente, número CAS, material del traje, tiempo de ruptura de referencia, temperatura de trabajo, tiempo máximo autorizado, nombre del responsable de la decisión. En cinco líneas. Si hay un incidente posterior y hay una investigación de STPS o ASEA, esa hoja de decisión es la diferencia entre un proceso documentado y una presunción de negligencia. Si todo salió bien, es el registro que te dice qué funcionó.
 
 ---

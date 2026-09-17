@@ -26,7 +26,7 @@ export const SITE = {
     country:    'MX',
     full:       'Av. Homero 229, Piso 5, Polanco V Sección, Miguel Hidalgo, 11560 Ciudad de México, CDMX',
   },
-  // ⚠️ REDES SIN VERIFICAR — ver REDES_VERIFICADAS abajo.
+  // ️ REDES SIN VERIFICAR — ver REDES_VERIFICADAS abajo.
   // Verificación 2026-09-05: LinkedIn, YouTube y X responden 404; Facebook e
   // Instagram renderizan "contenido/perfil no disponible". Ninguno de los cinco
   // existe. Se vacían para no emitir `sameAs` hacia URLs muertas.
@@ -41,7 +41,7 @@ export const SITE = {
 } as const;
 
 /**
- * ⚠️ INTERRUPTOR DE CONTACTO DIRECTO
+ * ️ INTERRUPTOR DE CONTACTO DIRECTO
  * ----------------------------------
  * En `false` el sitio NO publica teléfono ni WhatsApp en ningún lado:
  * ni texto visible, ni links `tel:`/`wa.me`, ni `telephone` en JSON-LD.
@@ -61,7 +61,7 @@ export const CONTACTO_DIRECTO_ACTIVO = true; // WhatsApp 55 1005 4323 confirmado
 export const TELEFONO_ACTIVO = true;
 
 /**
- * ⚠️ INTERRUPTOR DE DOMICILIO
+ * ️ INTERRUPTOR DE DOMICILIO
  * En `false` el sitio NO publica domicilio: ni en el footer, ni en /contacto,
  * ni en `address` del JSON-LD (Organization y LocalBusiness).
  * Para activarlo: llenar `SITE.address` con el domicilio real y poner `true`.
@@ -69,7 +69,7 @@ export const TELEFONO_ACTIVO = true;
 export const DOMICILIO_VERIFICADO = true;
 
 /**
- * ⚠️ INTERRUPTOR DE REDES SOCIALES
+ * ️ INTERRUPTOR DE REDES SOCIALES
  * En `false` el sitio NO publica perfiles sociales: ni iconos en el footer, ni
  * `sameAs` en el JSON-LD. Para activarlo: llenar `SITE.social` con los perfiles
  * que existan y poner `true`. `sameAs` filtra los vacíos aunque esté en `true`.

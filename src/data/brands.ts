@@ -1,7 +1,7 @@
 // brands.ts — Catálogo de marcas distribuidas por FIREFIGHTERS MX
 // Cada entrada alimenta:
-//   • /marcas/index.astro  → grid de fabricantes
-//   • /marcas/[marca].astro → landing individual SEO por marca
+//   • /marcas/index.astro   grid de fabricantes
+//   • /marcas/[marca].astro  landing individual SEO por marca
 // ─────────────────────────────────────────────────────────────────
 
 export interface Brand {
@@ -31,7 +31,7 @@ export const brands: Brand[] = [
   {
     slug: 'msa-safety',
     name: 'MSA Safety',
-    emoji: '🛡️',
+    emoji: '️',
     description: 'EPP para bomberos: SCBA, cascos, trajes y detectores de gas.',
     country: '🇺🇸 USA',
     longDesc: [
@@ -50,7 +50,7 @@ export const brands: Brand[] = [
   {
     slug: 'drager',
     name: 'Dräger',
-    emoji: '🔵',
+    emoji: '',
     description: 'Tecnología alemana de precisión. SCBA, equipos médicos y detección de gases.',
     country: '🇩🇪 Alemania',
     longDesc: [
@@ -69,7 +69,7 @@ export const brands: Brand[] = [
   {
     slug: '3m-scott',
     name: '3M Scott',
-    emoji: '🟠',
+    emoji: '',
     description: 'SCBA Scott Air-Pak, mascarillas y equipos respiratorios para emergencias.',
     country: '🇺🇸 USA',
     longDesc: [
@@ -88,7 +88,7 @@ export const brands: Brand[] = [
   {
     slug: 'globe-manufacturing',
     name: 'Globe Manufacturing',
-    emoji: '🧥',
+    emoji: '',
     description: 'Fabricante de trajes estructurales para bomberos en Norteamérica.',
     country: '🇺🇸 USA',
     longDesc: [
@@ -107,7 +107,7 @@ export const brands: Brand[] = [
   {
     slug: 'holmatro',
     name: 'Holmatro',
-    emoji: '⚙️',
+    emoji: '️',
     description: 'Herramientas hidráulicas de rescate vehicular: cizallas, expansores, cilindros.',
     country: '🇳🇱 Países Bajos',
     longDesc: [
@@ -126,7 +126,7 @@ export const brands: Brand[] = [
   {
     slug: 'bullard',
     name: 'Bullard',
-    emoji: '⛑️',
+    emoji: '️',
     description: 'Cascos para bomberos, cámaras de imagen térmica y EPP de alta performance.',
     country: '🇺🇸 USA',
     longDesc: [
@@ -145,7 +145,7 @@ export const brands: Brand[] = [
   {
     slug: 'honeywell',
     name: 'Honeywell',
-    emoji: '🔶',
+    emoji: '',
     description: 'Detectores de gas, alarmas contra incendio y soluciones de seguridad integral.',
     country: '🇺🇸 USA',
     longDesc: [
@@ -164,7 +164,7 @@ export const brands: Brand[] = [
   {
     slug: 'kidde-utc',
     name: 'Kidde / UTC',
-    emoji: '🚨',
+    emoji: '',
     description: 'Extintores, sistemas de supresión y alarmas para mercado comercial e industrial.',
     country: '🇺🇸 USA',
     longDesc: [
@@ -183,7 +183,7 @@ export const brands: Brand[] = [
   {
     slug: 'ansul',
     name: 'Ansul',
-    emoji: '🔴',
+    emoji: '',
     description: 'Sistemas de supresión para cocinas industriales, transformadores y riesgos especiales.',
     country: '🇺🇸 USA',
     longDesc: [
@@ -202,7 +202,7 @@ export const brands: Brand[] = [
   {
     slug: 'naffco',
     name: 'NAFFCO',
-    emoji: '🏗️',
+    emoji: '️',
     description: 'Fabricante global de extintores, equipos CI y vehículos bomberos.',
     country: '🇦🇪 EAU',
     longDesc: [
@@ -221,7 +221,7 @@ export const brands: Brand[] = [
   {
     slug: 'tyco-johnson-controls',
     name: 'Tyco / Johnson Controls',
-    emoji: '🟢',
+    emoji: '',
     description: 'Rociadores NFPA 13, sistemas de alarma y soluciones CI a gran escala.',
     country: '🇮🇪 Irlanda',
     longDesc: [
@@ -240,7 +240,7 @@ export const brands: Brand[] = [
   {
     slug: 'rosenbauer',
     name: 'Rosenbauer',
-    emoji: '🚒',
+    emoji: '',
     description: 'Vehículos y equipos para cuerpos de bomberos a nivel mundial.',
     country: '🇦🇹 Austria',
     longDesc: [
@@ -259,7 +259,7 @@ export const brands: Brand[] = [
   {
     slug: 'lion-apparel',
     name: 'Lion Apparel',
-    emoji: '🦁',
+    emoji: '',
     description: 'Trajes estructurales y de proximidad, capas y prendas de protección.',
     country: '🇺🇸 USA',
     longDesc: [
@@ -278,7 +278,7 @@ export const brands: Brand[] = [
   {
     slug: 'cairns-helmets',
     name: 'Cairns Helmets',
-    emoji: '⛑️',
+    emoji: '️',
     description: 'Cascos tradicionales para bomberos estructurales, iconos del sector.',
     country: '🇺🇸 USA',
     longDesc: [
@@ -297,7 +297,7 @@ export const brands: Brand[] = [
   {
     slug: 'flir-teledyne',
     name: 'FLIR / Teledyne',
-    emoji: '📷',
+    emoji: '',
     description: 'Cámaras de imagen térmica para bomberos y búsqueda y rescate.',
     country: '🇺🇸 USA',
     longDesc: [
@@ -316,7 +316,7 @@ export const brands: Brand[] = [
   {
     slug: 'dji-enterprise',
     name: 'DJI Enterprise',
-    emoji: '🚁',
+    emoji: '',
     description: 'Drones para emergencias, búsqueda y rescate y vigilancia aérea.',
     country: '🇨🇳 China',
     longDesc: [
