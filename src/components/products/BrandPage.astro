@@ -87,6 +87,8 @@ const breadcrumbSchema = {
   ],
 };
 
+/* «—» es el marcador visual de «sin dato»: en JSON-LD es un valor inválido (Ahrefs 2026-09-16, 11 páginas de marca). */
+const dato = (v?: string | null) => Boolean(v && v.trim() && !/^[—–-]+$/.test(v.trim()));
 const aboutSchema = esLinea ? {
   '@type': 'Thing',
   name: brand.brandLabel,
@@ -95,9 +97,9 @@ const aboutSchema = esLinea ? {
      (schema.org lo marcaba como error en las 22 páginas de marca, Ahrefs 2026-09-16). */
   '@type': 'Organization',
   name: brand.brandLabel,
-  ...(brand.founding ? { foundingDate: brand.founding } : {}),
+  ...(dato(brand.founding) ? { foundingDate: brand.founding } : {}),
   ...(brand.parentOrg
-    ? { parentOrganization: { '@type': 'Organization', name: brand.parentOrg.name, ...(brand.parentOrg.ticker ? { tickerSymbol: brand.parentOrg.ticker } : {}) } }
+    ? { parentOrganization: { '@type': 'Organization', name: brand.parentOrg.name, ...(dato(brand.parentOrg.ticker) ? { tickerSymbol: brand.parentOrg.ticker } : {}) } }
     : {}),
 };
 
