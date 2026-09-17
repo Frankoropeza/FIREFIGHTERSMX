@@ -35,7 +35,7 @@ descripcion: "La Dirección de Protección Civil, Bomberos y ERUM de Xochitepec,
   El presidente municipal Roberto \"Chalo\" Flores dotó a la corporación de uniformes, cascos y linternas en la misma fecha, señalando el inicio de un proceso de modernización. Xochitepec colinda con Cuernavaca y Emiliano Zapata, integrando el corredor metropolitano sur de la capital morelense."
 fuentes:
   - nombre: "rtvnoticiasmorelos.mx"
-    url: "https://rtvnoticiasmorelos.mx/28-bomberos-del-municipio-de-xochitepec-se-profesionalizan"
+    retirada: "https://rtvnoticiasmorelos.mx/28-bomberos-del-municipio-de-xochitepec-se-profesionalizan"
   - nombre: "diariodemorelos.com"
     url: "https://diariodemorelos.com"
 verificadoEl: "2026-06"

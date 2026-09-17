@@ -45,7 +45,7 @@ descripcion: "El Centro de Control de Emergencias de CIVAC (CCEC), financiado í
   Sobresale que más del 90% de los servicios del CCEC se dirigen a la comunidad exterior, no solo a las empresas de CIVAC. Con la clausura definitiva de Nissan Mexicana en CIVAC el 27 de marzo de 2026 (60 años de operaciones, ~5,000 empleos), la carga de atención comunitaria del CCEC ha tomado mayor relevancia para el corredor industrial del municipio de Jiutepec."
 fuentes:
   - nombre: "procivac.com"
-    url: "http://www.procivac.com/CCEC.htm"
+    retirada: "http://www.procivac.com/CCEC.htm"
   - nombre: "expansion.mx"
     url: "https://expansion.mx/empresas/2026/03/27/nissan-cierra-historica-planta-civac-en-morelos-tras-60-anos"
 verificadoEl: "2026-06"

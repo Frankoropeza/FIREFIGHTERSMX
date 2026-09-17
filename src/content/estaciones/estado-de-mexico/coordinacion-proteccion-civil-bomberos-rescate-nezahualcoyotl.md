@@ -35,7 +35,7 @@ fundacion: 1977
 descripcion: "Segundo municipio más poblado del Estado de México (~1.1 M hab.). Fundado ca. 1977. Cuenta con la app \"Neza Segura\" para solicitar apoyo de bomberos desde dispositivo móvil. Cuartel: Av. Chimalhuacán esq. Av. Tepozanes, Col. Esperanza."
 fuentes:
   - nombre: "neza.gob.mx — organización Seguridad Ciudadana"
-    url: "https://neza.gob.mx/manual/archivos/1.%20Organización/9.%20Organización%20Seguridad%20Ciudadana.pdf"
+    retirada: "https://neza.gob.mx/manual/archivos/1.%20Organización/9.%20Organización%20Seguridad%20Ciudadana.pdf"
   - nombre: "Milenio — muere fundador bomberos Neza"
     url: "https://www.milenio.com/estados/muere-fundador-del-cuerpo-de-bomberos-de-nezahualcoyotl"
   - nombre: "DENUE — INEGI"

@@ -19,7 +19,7 @@ coordenadas:
 telefono: "(55) 3622-1004"
 telefonosAdicionales:
   - "(55) 3622-1005"
-sitioWeb: "https://atizapan.gob.mx/direcciones/proteccion-civil-y-bomberos"
+sitioWeb: "https://atizapan.gob.mx/"
 servicios:
   - "incendios-estructurales"
   - "incendios-forestales"
@@ -33,9 +33,9 @@ serviciosDetalle:
 descripcion: "Reconocida por CENAPRED en agosto 2024. Personal con 44 certificaciones de la Escuela Nacional de Protección Civil (ENAPROC). Cuartel: Boulevard Adolfo López Mateos 91, Col. El Potrero, C.P. 52975. El municipio combina fraccionamientos residenciales en ladera con colonias populares densas, en un territorio de lomeríos y presas al norponiente del Valle de México."
 fuentes:
   - nombre: "atizapan.gob.mx — PC y Bomberos"
-    url: "https://atizapan.gob.mx/direcciones/proteccion-civil-y-bomberos"
+    retirada: "https://atizapan.gob.mx/direcciones/proteccion-civil-y-bomberos"
   - nombre: "atizapan.gob.mx — reconocimiento CENAPRED ago 2024"
-    url: "https://atizapan.gob.mx/2024/08/04/reconoce-cenapred-a-proteccion-civil-de-atizapan-de-zaragoza/"
+    retirada: "https://atizapan.gob.mx/2024/08/04/reconoce-cenapred-a-proteccion-civil-de-atizapan-de-zaragoza/"
   - nombre: "DENUE — INEGI"
     url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=2014113"
 verificadoEl: "2026-09"
