@@ -12,8 +12,9 @@ Disallow: /404
 Disallow: /404.html
 
 # Bloquear crawlers de herramientas SEO de terceros
+# AhrefsBot permitido (2026-09-27): Ahrefs es la herramienta de monitoreo del portafolio
 User-agent: AhrefsBot
-Disallow: /
+Allow: /
 
 User-agent: SemrushBot
 Disallow: /
