@@ -8,9 +8,13 @@ import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { catalogo } from '@data/catalogo';
 
+// Imagen de la línea: primero la propia del catálogo; si no existe, la de la
+// categoría homónima (mismo formato 1200×750). Así ninguna card queda en blanco.
 const img = (slug: string) => {
-  const src = `/images/catalogo/${slug}.avif`;
-  return existsSync(join(process.cwd(), 'public', src)) ? src : null;
+  for (const src of [`/images/catalogo/${slug}.avif`, `/images/categorias/${slug}.avif`]) {
+    if (existsSync(join(process.cwd(), 'public', src))) return src;
+  }
+  return null;
 };
 ---
 
