@@ -131,7 +131,7 @@ const trustPoints = [
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style="border:1px solid rgba(74,117,153,0.18)">
         {trustPoints.map((t, i) => (
           <div class="flex flex-col gap-2 p-6" style={`background:#0C1825;${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.18);' : ''}`}>
-            <h2 class="font-display font-bold text-sm uppercase tracking-wider" style="color:#FF6B26">{t.title}</h2>
+            <h3 class="font-display font-bold text-sm uppercase tracking-wider" style="color:#FF6B26">{t.title}</h3>
             <p class="text-xs leading-relaxed" style="color:#64748B">{t.text}</p>
           </div>
         ))}

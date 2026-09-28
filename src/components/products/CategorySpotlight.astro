@@ -2,6 +2,8 @@
 /**
  * Spotlight de categoría — wrapper delgado sobre el Spotlight genérico.
  * Datos: campo `spotlight` de la categoría en src/data/categories.ts
+ * En el hub se muestra sólo el primer párrafo: el desarrollo completo vive en la
+ * página de la categoría y repetirlo aquí duplicaba contenido (auditoría 2026-09-28).
  */
 import Spotlight from '@components/common/Spotlight.astro';
 import type { Category } from '@data/categories';
@@ -21,7 +23,7 @@ if (!s) throw new Error(`La categoría "${cat.slug}" no tiene spotlight definido
   eyebrow={cat.norm}
   title={s.title}
   highlight={s.highlight}
-  paragraphs={s.paragraphs}
+  paragraphs={s.paragraphs.slice(0, 1)}
   subsections={s.subsections}
   image={s.image}
   imageAlt={s.imageAlt}
