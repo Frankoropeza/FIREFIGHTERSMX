@@ -17,6 +17,8 @@ import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import { brands } from '@data/brands';
 import { SITE, whatsappUrl, CANAL_CONTACTO } from '@config/site';
 import type { GetStaticPaths } from 'astro';
+import { featuredProducts, fabricanteDe } from '@data/products';
+import { brandPages } from '@data/brandPages';
 
 export const getStaticPaths = (() => {
   return brands.map((brand) => ({
@@ -75,6 +77,21 @@ const productListSchema = {
 };
 
 const schemas = [breadcrumbSchema, manufacturerSchema, productListSchema];
+
+// ── Fichas del catálogo de esta marca (auditoría del catálogo 2026-09-28) ──
+// La página de marca deja de ser una lista de texto: enlaza cada ficha técnica
+// y cada línea de la marca en /productos/. Coincidencia por fabricante o nombre.
+const TOKEN: Record<string, string> = {
+  'msa-safety': 'msa', 'drager': 'dräger', '3m-scott': 'scott', 'bullard': 'bullard',
+  'cairns-helmets': 'cairns', 'dji-enterprise': 'dji', 'flir-teledyne': 'flir',
+  'globe-manufacturing': 'globe', 'holmatro': 'holmatro', 'honeywell': 'honeywell',
+  'kidde-utc': 'kidde', 'lion-apparel': 'lion', 'naffco': 'naffco', 'rosenbauer': 'rosenbauer',
+  'tyco-johnson-controls': 'tyco', 'ansul': 'ansul',
+};
+const token = TOKEN[brand.slug] ?? brand.name.split(' ')[0].toLowerCase();
+const coincide = (s?: string) => Boolean(s && new RegExp(`(^|[^a-záéíóúñ])${token}([^a-záéíóúñ]|$)`, 'i').test(s));
+const fichasMarca = featuredProducts.filter((p) => coincide(fabricanteDe(p)) || coincide(p.title));
+const lineasMarca = brandPages.filter((b) => b.tipoPagina !== 'linea' && (coincide(b.brand) || coincide(b.brandLabel)));
 
 // ── WA message ────────────────────────────────────────────────────────
 const waMsg = `Hola, quiero información sobre productos ${brand.name} que distribuyen.`;
@@ -245,6 +262,33 @@ const waMsg = `Hola, quiero información sobre productos ${brand.name} que distr
           </div>
         ))}
       </div>
+
+      {/* Fichas técnicas de la marca en el catálogo */}
+      {fichasMarca.length > 0 && (
+        <div class="mt-12">
+          <h3 class="font-display font-bold mb-2" style="color:#FFFFFF;font-size:clamp(1.25rem,2.5vw,1.75rem)">
+            Fichas técnicas <span style="color:#F75000">{brand.name}</span> en el catálogo
+          </h3>
+          <p class="text-sm mb-5" style="color:#64748B">{fichasMarca.length} modelos con especificaciones, norma y documentación para licitación.</p>
+          <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px list-none m-0 p-0"
+              style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
+            {fichasMarca.map((p) => (
+              <li class="grid-cell p-4">
+                <a href={`${p.href}/`} class="font-display font-semibold text-sm hover:text-[#FF6B26]" style="color:#FFFFFF">{p.title.split(' — ')[0]}</a>
+                <p class="text-xs mt-1 mb-0" style="color:#64748B">{[p.category, p.norm].filter(Boolean).join(' · ')}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+      {lineasMarca.length > 0 && (
+        <p class="text-sm mt-6" style="color:#94A3B8">
+          Catálogos completos por categoría:{' '}
+          {lineasMarca.map((l, i) => (
+            <>{i > 0 && ' · '}<a href={`/productos/${l.categorySlug}/${l.slug}/`} class="hover:text-[#FF6B26]" style="color:#FF6B26">{l.brandLabel}</a></>
+          ))}
+        </p>
+      )}
 
       {/* CTA bajo el grid */}
       <div class="mt-8 text-center">
