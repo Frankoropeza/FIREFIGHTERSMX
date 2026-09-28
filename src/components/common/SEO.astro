@@ -1,4 +1,5 @@
 ---
+import { metaCerrada } from '@lib/meta-seo';
 import { acortarTitulo, TITULO_MAX } from '@lib/titulo-seo';
 import { SITE, CONTACTO_DIRECTO_ACTIVO, DOMICILIO_VERIFICADO, REDES_VERIFICADAS, TELEFONO_ACTIVO } from '@config/site';
 export interface Props {
@@ -38,9 +39,15 @@ const fullTitle =
     : tituloConMarca.length <= TITULO_MAX
       ? tituloConMarca
       : tituloBase;
-const metaDescription = description.length > 160
-  ? `${description.slice(0, 157).replace(/\s+[^\s]*$/, '').replace(/[,:;—\-·]+$/, '')}…`
-  : description;
+/* Catálogo (/productos/, /marcas/): la meta se cierra en frase completa ≤155
+   caracteres, sin «…» ni cortes a media palabra (auditoría del catálogo 2026-09-28).
+   El resto del sitio conserva el recorte a 160 con elipsis. */
+const esCatalogo = /^\/(productos|marcas)(\/|$)/.test(Astro.url.pathname);
+const metaDescription = esCatalogo
+  ? metaCerrada(description, ['Ficha técnica y cotización en todo México'])
+  : description.length > 160
+    ? `${description.slice(0, 157).replace(/\s+[^\s]*$/, '').replace(/[,:;—\-·]+$/, '')}…`
+    : description;
 const absoluteOgImageRaw = ogImage.startsWith('http') ? ogImage : `https://firefighters.mx${ogImage}`;
 
 // OG requiere formatos universales (WhatsApp/Facebook/Twitter no soportan AVIF/WebP):

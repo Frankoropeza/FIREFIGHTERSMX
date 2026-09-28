@@ -2,6 +2,7 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import { featuredProducts, fabricanteDe, type Product } from '@data/products';
+import { metaCerrada } from '@lib/meta-seo';
 import { brandPages } from '@data/brandPages';
 import { categories } from '@data/categories';
 import { SITE, whatsappUrl, CANAL_CONTACTO } from '@config/site';
@@ -525,15 +526,11 @@ const seoTitle =
   [...seoTituloCorto].length <= 70
     ? seoTituloCorto
     : recortarTituloSEO(product.title);
-/* Descripción corta (<110, Ahrefs 2026-09-16): se completa con datos de la propia
-   ficha —nombre, categoría, norma— sin añadir afirmaciones comerciales. */
-const descBase = product.description.length >= 110
-  ? product.description
-  : `${product.description} ${product.title}: especificaciones, ${product.norm ? `${product.norm}, ` : ''}ficha técnica y cotización en México.`;
-const seoDesc = (product.suppressDefaultClaims
-  ? descBase
-  : `${product.description}${esDistribuidor ? ` Distribuidor autorizado ${fabricante} en México.` : ''} ${product.norm ?? ''} certificado con documentación completa para licitación.`
-).replace(/\s+/g, ' ').trim().slice(0, 158);
+const seoDesc = metaCerrada(product.description, [
+  esDistribuidor && `Distribuidor autorizado ${fabricante} en México`,
+  normaCertificada && /NFPA|NOM|EN\s?\d|UL\b|ANSI|NIOSH|ISO/.test(product.norm ?? '') && `Norma ${product.norm}`,
+  'Ficha técnica y cotización para licitación',
+]);
 ---
 
 <BaseLayout
