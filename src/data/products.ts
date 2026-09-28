@@ -34,6 +34,10 @@ export interface Product {
     barrera_humedad?: string;
     forro_termico?: string;
     configuracion?: string;
+    clasificacion?: string;
+    netd?: string;
+    rango_temp?: string;
+    pantalla?: string;
     /* Cascos */
     norma?: string;
     material?: string;
