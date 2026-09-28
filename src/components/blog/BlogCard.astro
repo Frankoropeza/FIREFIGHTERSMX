@@ -6,6 +6,7 @@
  * - featured: horizontal (imagen 1/2 + contenido 1/2)
  */
 import type { CollectionEntry } from 'astro:content';
+import { portadaBlog } from '@lib/portada-blog';
 
 export interface Props {
   post: CollectionEntry<'blog'>;
@@ -13,7 +14,8 @@ export interface Props {
 }
 
 const { post, featured = false } = Astro.props;
-const { title, description, category, tags, image } = post.data;
+const { title, description, category, tags } = post.data;
+const image = portadaBlog(post);
 const slug = post.id;
 
 const readingTime = Math.ceil((post.body ?? '').split(' ').length / 200);

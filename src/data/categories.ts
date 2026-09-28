@@ -65,7 +65,7 @@ export const trajesBombero: Category = {
       { name: 'Tallaje, stock y mantenimiento', detail: 'Asesoría de tallaje con prueba de ajuste, stock permanente en CDMX y programa de inspección avanzada, lavado técnico y reparación certificada NFPA 1850.' },
     ],
     image: '/images/categorias/trajes-bombero.avif',
-    imageAlt: 'Ilustración técnica de traje estructural para bombero certificado NFPA 1970 con casco y bandas reflejantes',
+    imageAlt: 'Traje estructural de bombero en maniquí',
   },
 };
 
@@ -168,7 +168,7 @@ export const categories: Category[] = [
         { name: 'Accesorios y refacciones', detail: 'Visores, goggles, lámparas, escudos frontales personalizados y suspensiones de repuesto — todo original de fábrica para conservar la certificación.' },
       ],
       image: '/images/categorias/cascos-nfpa.avif',
-      imageAlt: 'Ilustración técnica de casco estructural para bombero certificado NFPA 1970 con visor abatible y banda reflejante',
+      imageAlt: 'Casco estructural de bombero sobre banco de estación',
     },
   },
   {
@@ -204,7 +204,7 @@ export const categories: Category[] = [
         { name: 'Servicio técnico autorizado', detail: 'Prueba hidrostática, prueba de flujo anual, refacciones originales y bitácora de mantenimiento para tu expediente.' },
       ],
       image: '/images/categorias/equipos-scba.avif',
-      imageAlt: 'Ilustración técnica de equipo de respiración autónoma SCBA con cilindro de 4500 psi, máscara y manómetro',
+      imageAlt: 'Equipo de respiración autónoma completo',
     },
   },
   {
@@ -240,7 +240,7 @@ export const categories: Category[] = [
         { name: 'Demostración y capacitación', detail: 'Demo en tu estación con escenarios reales, capacitación de operación y mantenimiento preventivo anual certificado.' },
       ],
       image: '/images/categorias/herramientas-rescate.avif',
-      imageAlt: 'Ilustración técnica de separador hidráulico de rescate vehicular de clasificación EN 13204',
+      imageAlt: 'Herramientas hidráulicas de rescate vehicular',
     },
   },
   {
@@ -276,7 +276,7 @@ export const categories: Category[] = [
         { name: 'Recarga y mantenimiento', detail: 'Recarga certificada con collar de garantía, etiqueta de inspección, reporte documental y prueba hidrostática programada.' },
       ],
       image: '/images/categorias/extintores.avif',
-      imageAlt: 'Ilustración técnica de extintor PQS ABC con manómetro y collar de garantía',
+      imageAlt: 'Extintores portátiles de distintas capacidades',
     },
   },
   {
@@ -312,7 +312,7 @@ export const categories: Category[] = [
         { name: 'Redes hidráulicas y bombas', detail: 'Bombas certificadas, tableros NFPA 20, hidrantes y tomas siamesas con memoria de cálculo y pruebas de aceptación.' },
       ],
       image: '/images/categorias/sistemas-ci.avif',
-      imageAlt: 'Ilustración técnica de rociador automático contra incendio y panel de detección FACP conforme NFPA 13 y 72',
+      imageAlt: 'Montante contra incendio con válvula y manómetros',
     },
   },
   {
@@ -348,7 +348,7 @@ export const categories: Category[] = [
         { name: 'Integración y accesorios', detail: 'Cámara integrada al SCBA (MSA G1 iTIC), grabación de incidentes, cargadores vehiculares y fundas de despliegue rápido.' },
       ],
       image: '/images/categorias/camaras-termicas.avif',
-      imageAlt: 'Ilustración técnica de cámara térmica para bomberos certificada NFPA 1930 con silueta de calor en pantalla',
+      imageAlt: 'Cámara térmica de mano para bomberos',
     },
   },
   {
@@ -384,7 +384,7 @@ export const categories: Category[] = [
         { name: 'Descontaminación y sellado', detail: 'Regaderas portátiles, tinas de contención, kits de sellado de fugas y bolsas de recuperación para el cierre del incidente.' },
       ],
       image: '/images/categorias/hazmat.avif',
-      imageAlt: 'Ilustración técnica de traje HAZMAT Nivel A encapsulado certificado NFPA 1990 con visor y guantes químicos',
+      imageAlt: 'Traje encapsulado de protección química',
     },
   },
   {
@@ -459,7 +459,7 @@ export const categories: Category[] = [
         { name: 'Capacitación y registro AFAC', detail: 'Formación de piloto institucional, protocolos de operación y trámite completo ante la autoridad aeronáutica.' },
       ],
       image: '/images/categorias/drones-emergencia.avif',
-      imageAlt: 'Ilustración técnica de dron cuadricóptero con gimbal térmico detectando a una persona en búsqueda y rescate',
+      imageAlt: 'Dron con cámara térmica sobrevolando una escena de emergencia',
     },
   },
   {
