@@ -61,7 +61,7 @@ Una pregunta debe identificar el apartado y pedir una precisión que permita a t
 
 Otro ejemplo: «La partida __ cita una referencia histórica de protección respiratoria. Considerando que NFPA 1970 (2025) consolidó a la antigua NFPA 1981, favor de indicar la edición y el certificado que serán aceptados para la configuración ofertada». La pregunta no supone una respuesta ni propone una marca; permite que la convocante defina su criterio documental.
 
-Para entender mejor las especificaciones técnicas de SCBA que aparecen en licitaciones, revisa [MSA G1 vs Dräger PSS7000](/blog/msa-g1-vs-drager-pss7000-scba).
+Para entender mejor las especificaciones técnicas de SCBA que aparecen en licitaciones, revisa [MSA G1 vs Dräger PSS7000](/blog/msa-g1-vs-drager-pss7000-scba/).
 
 ## Lo que nunca debes preguntar en una junta de aclaraciones
 
@@ -75,7 +75,7 @@ Después de la junta, el convocante publica el acta con preguntas y respuestas. 
 
 Si el acta tiene respuestas que contradicen las bases originales, la adenda prevalece. Actualiza tu checklist de cumplimiento con las especificaciones corregidas antes de armar la propuesta técnica.
 
-Para la etapa siguiente —la preparación de las fichas técnicas— el artículo [Fichas técnicas para CompraNet: los errores que descalifican](/blog/fichas-tecnicas-compranet-equipo-contra-incendio) te da la estructura y los errores más frecuentes.
+Para la etapa siguiente —la preparación de las fichas técnicas— el artículo [Fichas técnicas para CompraNet: los errores que descalifican](/blog/fichas-tecnicas-compranet-equipo-contra-incendio/) te da la estructura y los errores más frecuentes.
 
 ## El criterio para decidir si participas en una licitación
 

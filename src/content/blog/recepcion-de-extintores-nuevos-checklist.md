@@ -85,4 +85,3 @@ Sólo si ese alcance fue acordado. Confirma quién realizará la instalación, s
 
 - [NOM-002-STPS-2010 — STPS](https://www.stps.gob.mx/bp/secciones/dgsst/normatividad/normas/Nom-002.pdf)
 - [NOM-100-STPS-1994 — PLATIICA, Secretaría de Economía](https://platiica.economia.gob.mx/normalizacion/nom-100-stps-1994/)
-- [Pyme.es — Importancia de contar con extintores de calidad](https://www.pyme.es/importancia-de-contar-con-extintores-de-calidad/)

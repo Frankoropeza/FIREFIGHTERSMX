@@ -36,7 +36,7 @@ Eso, en esencia, es todo el sistema. El resto es contexto, escenario y criterio.
 
 El Nivel A busca aislar al respondedor del ambiente. El traje encapsula el conjunto de protección; la colocación del SCBA y la configuración exacta deben confirmarse con el modelo y su manual. La protección depende de la compatibilidad química, el ajuste y el procedimiento de uso.
 
-Un ejemplo de traje para un escenario Nivel A es el [Tychem 10000](/productos/hazmat/dupont-tychem), siempre que el modelo concreto y su tabla de permeación sean compatibles con el agente. Tychem 10000 TK612T/TK613T cuenta con certificación NFPA 1990 para las configuraciones indicadas en su ficha; no se debe extender esa afirmación a toda la familia.
+Un ejemplo de traje para un escenario Nivel A es el [Tychem 10000](/productos/hazmat/dupont-tychem/), siempre que el modelo concreto y su tabla de permeación sean compatibles con el agente. Tychem 10000 TK612T/TK613T cuenta con certificación NFPA 1990 para las configuraciones indicadas en su ficha; no se debe extender esa afirmación a toda la familia.
 
 **Cuándo lo usas sin discusión:**
 

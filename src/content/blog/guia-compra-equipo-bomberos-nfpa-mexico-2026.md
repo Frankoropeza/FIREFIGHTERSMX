@@ -35,17 +35,17 @@ Si te quedas con una sola idea de todo este artículo, que sea esta: primero la 
 
 Esta distinción ha tumbado más de una compra. Un producto "certificable" es uno que, en teoría, podría cumplir la norma; uno "certificado" es uno que ya la cumple y lo puede demostrar. La diferencia se ve en los papeles. Antes de pagar, pide ver la etiqueta de certificación cosida o impresa de fábrica, que esté legible y vigente. Pide la documentación que acompaña la entrega, no la promesa de que "te la mandan después" (esa documentación, curiosamente, a veces nunca llega). Y verifica la trazabilidad: marca, modelo, lote, fecha de fabricación y, sobre todo, que el producto sea original y no un reacondicionado vendido como nuevo.
 
-En una [licitación](/licitaciones) este punto es directamente eliminatorio. Sin documentación correcta, no importa qué tan buena sea tu oferta: queda fuera.
+En una [licitación](/licitaciones/) este punto es directamente eliminatorio. Sin documentación correcta, no importa qué tan buena sea tu oferta: queda fuera.
 
 ## Compara con cabeza técnica, no con folleto
 
 Aquí es donde conviene afinar el ojo, porque dos equipos que se ven idénticos pueden ser muy distintos por dentro.
 
-En **trajes estructurales**, compara el conjunto terminado: capa exterior, barrera de humedad, barrera térmica, accesorios y tallas. Nomex (Arclin, antes DuPont), PBI y otros materiales no sustituyen por sí solos la certificación del conjunto. Pide que la ficha y la documentación identifiquen la configuración realmente ofertada. El detalle de las familias está en [trajes para bomberos](/productos/trajes-bombero).
+En **trajes estructurales**, compara el conjunto terminado: capa exterior, barrera de humedad, barrera térmica, accesorios y tallas. Nomex (Arclin, antes DuPont), PBI y otros materiales no sustituyen por sí solos la certificación del conjunto. Pide que la ficha y la documentación identifiquen la configuración realmente ofertada. El detalle de las familias está en [trajes para bomberos](/productos/trajes-bombero/).
 
-En **equipos SCBA** se concentra la mayor inversión y, francamente, el mayor riesgo. Compara la autonomía real según tu operación (30, 45 o 60 minutos no es un capricho), la presión del cilindro (fibra de carbono a 4,500 psi), la electrónica de seguridad como la alarma PASS, el EOSTI y la telemetría para el puesto de mando, y algo que muchos olvidan hasta que es tarde: el servicio. Prueba hidrostática, prueba de flujo anual y refacciones originales. Las plataformas disponibles están en [equipos SCBA](/productos/equipos-scba).
+En **equipos SCBA** se concentra la mayor inversión y, francamente, el mayor riesgo. Compara la autonomía real según tu operación (30, 45 o 60 minutos no es un capricho), la presión del cilindro (fibra de carbono a 4,500 psi), la electrónica de seguridad como la alarma PASS, el EOSTI y la telemetría para el puesto de mando, y algo que muchos olvidan hasta que es tarde: el servicio. Prueba hidrostática, prueba de flujo anual y refacciones originales. Las plataformas disponibles están en [equipos SCBA](/productos/equipos-scba/).
 
-En **cascos**, la decisión entre el estilo europeo integral (visor retráctil, protección nucal) y el americano tradicional (ala completa, escudo frontal) tiene menos que ver con cuál es "mejor" y más con la cultura de tu cuerpo y el tipo de intervención. Ambos se certifican. Los puedes comparar en [cascos NFPA](/productos/cascos-nfpa).
+En **cascos**, la decisión entre el estilo europeo integral (visor retráctil, protección nucal) y el americano tradicional (ala completa, escudo frontal) tiene menos que ver con cuál es "mejor" y más con la cultura de tu cuerpo y el tipo de intervención. Ambos se certifican. Los puedes comparar en [cascos NFPA](/productos/cascos-nfpa/).
 
 ## El precio de la etiqueta no es el costo real
 
@@ -62,7 +62,7 @@ El precio de compra no muestra por sí solo los costos de inspección, limpieza,
 
 ## Y por último: ¿quién contesta el teléfono después de la venta?
 
-El proveedor correcto no desaparece cuando le firmas la factura. Busca uno que ofrezca servicio técnico autorizado, refacciones originales y asesoría de tallaje, esa que evita comprar 30 trajes de "talla promedio" para descubrir que el promedio no existe. En FIREFIGHTERS MX estos servicios vienen integrados, con cobertura en los 32 estados y stock en CDMX; el panorama completo está en [servicios](/servicios).
+El proveedor correcto no desaparece cuando le firmas la factura. Busca uno que ofrezca servicio técnico autorizado, refacciones originales y asesoría de tallaje, esa que evita comprar 30 trajes de "talla promedio" para descubrir que el promedio no existe. En FIREFIGHTERS MX estos servicios vienen integrados, con cobertura en los 32 estados y stock en CDMX; el panorama completo está en [servicios](/servicios/).
 
 ## Antes de pagar, repasa esto
 

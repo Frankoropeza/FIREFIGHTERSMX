@@ -56,6 +56,8 @@ La instrucción de cada turno debe ser directa: activar el aviso interno, cortar
 
 La capacitación debe repetirse para todos los horarios, incluidas aperturas, cierres, fines de semana y personal temporal. No asumas que una explicación dada a un encargado llegó al resto del equipo. Una práctica útil es verificar que cada persona sepa ubicar la salida, el mecanismo de aviso, el extintor y el responsable de turno; cualquier duda debe registrarse y corregirse antes del siguiente servicio.
 
+Para ubicar equipo de apoyo, el [catálogo de extintores](/productos/extintores/) incluye la ficha del [extintor tipo K Ansul K-Guard](/productos/extintores/ansul-k-guard/), de agente húmedo para aceites y grasas de cocina, y el [directorio de empresas de sistemas contra incendio](/empresas/sistemas-ci/) reúne a quienes instalan y dan servicio a sistemas fijos de supresión.
+
 ## Registros que ayudan a sostener la rutina
 
 Un registro sencillo permite pasar de “se revisó” a saber qué se hizo, cuándo y qué falta. No requiere incluir afirmaciones técnicas que el establecimiento no pueda comprobar. Basta con conservar fechas, área revisada, responsable, observaciones, evidencia de servicio y acciones pendientes.
@@ -86,4 +88,3 @@ No debe usar agua ni mover el recipiente en llamas. Debe seguir el procedimiento
 
 - [NOM-002-STPS-2010 — STPS](https://www.stps.gob.mx/bp/secciones/dgsst/normatividad/normas/Nom-002.pdf)
 - [NOM-154-SCFI-2005 — PLATIICA, Secretaría de Economía](https://platiica.economia.gob.mx/normalizacion/nom-154-scfi-2005/)
-- [Mundo Contact — Protección contra incendios en restaurantes](https://mundocontact.com/proteccion-contra-incendios-en-restaurantes-extintores-tipo-k-mantenimiento-y-equipo-certificado-para-cocinas-comerciales/)

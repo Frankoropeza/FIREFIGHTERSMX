@@ -15,7 +15,7 @@ image:
 
 En un rescate vehicular, la selección de herramienta debe responder al vehículo, el procedimiento y la documentación técnica del modelo. La comparación no debe partir de cifras de corte no verificadas.
 
-El debate [Holmatro](/productos/herramientas-rescate/holmatro) vs Lukas se resuelve revisando apertura, peso, configuración de energía, clasificación publicada y soporte técnico requerido para el equipo ofertado.
+El debate [Holmatro](/productos/herramientas-rescate/holmatro/) vs Lukas se resuelve revisando apertura, peso, configuración de energía, clasificación publicada y soporte técnico requerido para el equipo ofertado.
 
 ---
 

@@ -242,11 +242,11 @@ La condición visual no sustituye los límites de vida útil, inspección y reca
 
 No existe una configuración única para todas las corporaciones. El SCBA adecuado es el que corresponde a la evaluación de riesgos, certificación, infraestructura de llenado, prueba de compatibilidad y programa de mantenimiento de la organización.
 
-El [catálogo de equipos SCBA](/productos/equipos-scba/) permite identificar configuraciones para la muestra de compra. Para completar el expediente, revisa [MSA G1 frente a Dräger PSS 7000](/blog/msa-g1-vs-drager-pss7000-scba/), [cilindros de fibra de carbono y acero](/blog/cilindros-scba-fibra-carbono-vs-acero/) y la [compatibilidad entre casco y SCBA](/blog/compatibilidad-casco-scba-bomberos/). Si necesitas comparar propuestas, [solicita una cotización](/cotizacion) con escenario operativo e infraestructura de llenado definidos.
+El [catálogo de equipos SCBA](/productos/equipos-scba/) permite identificar configuraciones para la muestra de compra. Para completar el expediente, revisa [MSA G1 frente a Dräger PSS 7000](/blog/msa-g1-vs-drager-pss7000-scba/), [cilindros de fibra de carbono y acero](/blog/cilindros-scba-fibra-carbono-vs-acero/) y la [compatibilidad entre casco y SCBA](/blog/compatibilidad-casco-scba-bomberos/). Si necesitas comparar propuestas, [solicita una cotización](/cotizacion/) con escenario operativo e infraestructura de llenado definidos.
 
 ---
 
-*Para el conjunto estructural también puedes consultar [especificaciones de equipo para licitaciones](/blog/especificaciones-traje-bombero-licitaciones) y [EPP para bombero](/productos/epp-bombero/).*
+*Para el conjunto estructural también puedes consultar [especificaciones de equipo para licitaciones](/blog/especificaciones-traje-bombero-licitaciones/) y [EPP para bombero](/productos/epp-bombero/).*
 
 ## Preguntas frecuentes
 

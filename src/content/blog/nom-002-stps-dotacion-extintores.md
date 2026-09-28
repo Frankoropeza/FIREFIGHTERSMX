@@ -119,7 +119,7 @@ Verificación de distancia: en un espacio de 25 × 20 metros, con dos extintores
 
 **Dotación mínima: 2 extintores PQS ABC de 4 kg (clasificación 2-A:10-B:C)**
 
-Recomendación práctica: si hay un área de servidores o UPS, sustituye uno de los extintores de PQS por uno de [CO₂](/productos/extintores/co2) de 5 kg. El PQS deja residuo abrasivo que daña el hardware; el CO₂ no deja nada.
+Recomendación práctica: si hay un área de servidores o UPS, sustituye uno de los extintores de PQS por uno de [CO₂](/productos/extintores/co2/) de 5 kg. El PQS deja residuo abrasivo que daña el hardware; el CO₂ no deja nada.
 
 ### Ejemplo 2: bodega de solventes de 1,000 m²
 
@@ -133,7 +133,7 @@ Verificación de distancia (límite 15 m): en un rectángulo de 40 × 25 metros,
 
 **Dotación mínima: 11 extintores PQS ABC de 9 kg (clasificación 4-A:80-B:C)**
 
-Recomendación adicional: en bodegas con más de 400 litros de líquidos Clase B, complementa con al menos un [extintor especializado](/productos/extintores/especializados) sobre ruedas de 50 kg para ataque inicial de derrames grandes. Para concentraciones mayores, evalúa un sistema fijo de espuma AFFF.
+Recomendación adicional: en bodegas con más de 400 litros de líquidos Clase B, complementa con al menos un [extintor especializado](/productos/extintores/especializados/) sobre ruedas de 50 kg para ataque inicial de derrames grandes. Para concentraciones mayores, evalúa un sistema fijo de espuma AFFF.
 
 ## Tabla resumen por nivel de riesgo
 
@@ -155,7 +155,7 @@ Si partes de cero, o de una dotación que sabes que no está bien calculada, el 
 2. **Recorre el inmueble** y clasifica cada zona por nivel de riesgo según los materiales presentes.
 3. **Aplica la fórmula** N = A ÷ Am para cada zona. Verifica también el criterio de distancia.
 4. **Selecciona el agente correcto** para cada área: PQS ABC para uso general, CO₂ para electrónica, Tipo K para cocinas.
-5. **Compra [extintores](/productos/extintores) con la norma de producto aplicable**: NOM-100-STPS para PQS, NOM-102-STPS para CO₂ y la referencia correspondiente según el agente.
+5. **Compra [extintores](/productos/extintores/) con la norma de producto aplicable**: NOM-100-STPS para PQS, NOM-102-STPS para CO₂ y la referencia correspondiente según el agente.
 6. **Instala en soportes fijos**, a la altura correcta, con espacio despejado de 1 metro alrededor.
 7. **Coloca señalización NOM-003-SSPC-2011** del tamaño correcto según la distancia de observación.
 8. **Abre la bitácora**: número de serie, fecha de instalación, técnico responsable, calendario de mantenimiento.
@@ -168,9 +168,9 @@ La dotación correcta de extintores es el sistema de protección contra incendio
 
 ## Artículos relacionados
 
-- [PQS ABC vs CO₂ vs Tipo K: Elegir el Extintor Equivocado Puede Empeorar el Incendio](/blog/pqs-abc-vs-co2-vs-tipo-k-extintores) — cómo seleccionar el agente correcto para cada tipo de riesgo
-- [Tipos de Extintores en México](/blog/tipos-de-extintores-mexico) — panorama completo de agentes, clases de fuego y aplicaciones prácticas
-- [NOM-002-STPS Guía Completa](/blog/nom-002-stps-guia-completa) — referencia técnica extendida con todos los requisitos de la norma
+- [PQS ABC vs CO₂ vs Tipo K: Elegir el Extintor Equivocado Puede Empeorar el Incendio](/blog/pqs-abc-vs-co2-vs-tipo-k-extintores/) — cómo seleccionar el agente correcto para cada tipo de riesgo
+- [Tipos de Extintores en México](/blog/tipos-de-extintores-mexico/) — panorama completo de agentes, clases de fuego y aplicaciones prácticas
+- [NOM-002-STPS Guía Completa](/blog/nom-002-stps-guia-completa/) — referencia técnica extendida con todos los requisitos de la norma
 
 ---
 

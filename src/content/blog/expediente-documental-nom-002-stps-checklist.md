@@ -41,7 +41,7 @@ El programa debe estar actualizado. Si tu planta cambió de layout, incorporó n
 - Registros de revisión mensual (la revisión básica que hace el personal interno)
 - Comprobante de recarga o reemplazo cuando aplica
 
-Para entender si la dotación de tu inventario es la correcta según la norma, revisa [Dotación de extintores NOM-002-STPS](/blog/nom-002-stps-dotacion-extintores).
+Para entender si la dotación de tu inventario es la correcta según la norma, revisa [Dotación de extintores NOM-002-STPS](/blog/nom-002-stps-dotacion-extintores/).
 
 **Bloque 3: Sistema fijo de supresión (si aplica)**
 
@@ -50,7 +50,7 @@ Para entender si la dotación de tu inventario es la correcta según la norma, r
 - Registros de mantenimiento preventivo y correctivo con firma de empresa responsable
 - Constancias de pruebas hidrostáticas o funcionales según corresponda
 
-Si tienes un sistema de FM-200 o Novec 1230, el mantenimiento del agente y los cilindros también entra aquí. Más sobre esos sistemas en [FM-200 vs Novec 1230](/blog/fm200-vs-novec-1230-agente-limpio).
+Si tienes un sistema de FM-200 o Novec 1230, el mantenimiento del agente y los cilindros también entra aquí. Más sobre esos sistemas en [FM-200 vs Novec 1230](/blog/fm200-vs-novec-1230-agente-limpio/).
 
 **Bloque 4: Detección y alarma**
 
@@ -67,7 +67,7 @@ Si tienes un sistema de FM-200 o Novec 1230, el mantenimiento del agente y los c
 
 Este bloque es el que más fácil falla. Personas que ya no trabajan en la empresa siguen en la lista de brigadistas, o las constancias DC-3 son de una empresa que cerró. El inspector cruza nombres y RFC.
 
-Si necesitas dimensionar cuántos brigadistas documentar, el artículo [Cuántos brigadistas necesita tu planta según NOM-002](/blog/cuantos-brigadistas-nom-002-dimensionamiento) te da la metodología.
+Si necesitas dimensionar cuántos brigadistas documentar, el artículo [Cuántos brigadistas necesita tu planta según NOM-002](/blog/cuantos-brigadistas-nom-002-dimensionamiento/) te da la metodología.
 
 **Bloque 6: Simulacros**
 
@@ -117,9 +117,9 @@ Los documentos físicos tardan días en conseguirse. Las constancias DC-3 de cap
 
 ## Artículos relacionados
 
-- [Las 8 no-conformidades más frecuentes en inspecciones STPS](/blog/no-conformidades-stps-nom-002-plantas-mexico)
-- [Dotación de extintores NOM-002-STPS](/blog/nom-002-stps-dotacion-extintores)
-- [Cuántos brigadistas necesita tu planta según NOM-002](/blog/cuantos-brigadistas-nom-002-dimensionamiento)
+- [Las 8 no-conformidades más frecuentes en inspecciones STPS](/blog/no-conformidades-stps-nom-002-plantas-mexico/)
+- [Dotación de extintores NOM-002-STPS](/blog/nom-002-stps-dotacion-extintores/)
+- [Cuántos brigadistas necesita tu planta según NOM-002](/blog/cuantos-brigadistas-nom-002-dimensionamiento/)
 
 ---
 
@@ -127,7 +127,7 @@ Los documentos físicos tardan días en conseguirse. Las constancias DC-3 de cap
 
 Revisamos tu expediente documental completo antes de que llegue la STPS. Identificamos los huecos, te ayudamos a conseguir los documentos faltantes y te entregamos el expediente organizado y listo para presentar. El servicio incluye revisión física del centro de trabajo.
 
-[Servicio de Auditoría NOM-002](/servicios/auditoria-seguridad)
+[Servicio de Auditoría NOM-002](/servicios/auditoria-seguridad/)
 
 ## Verificación cruzada del expediente
 

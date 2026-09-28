@@ -32,7 +32,7 @@ La nomenclatura de las clases de fuego no es capricho académico. Es el mapa que
 
 ### Cómo funciona realmente
 
-El PQS ABC emplea fosfato monoamónico y cubre clases A, B y C. Los equipos BC usan otros polvos para B y C; no son equivalentes al ABC cuando existen sólidos combustibles. La NOM-104-STPS-2001 corresponde al agente ABC a base de fosfato monoamónico y la NOM-106-STPS-1994 al agente BC a base de bicarbonato de sodio. La NOM-100-STPS-1994 regula las especificaciones del extintor de PQS con presión contenida.
+El PQS ABC emplea fosfato monoamónico y cubre clases A, B y C. Los equipos BC usan otros polvos para B y C; no son equivalentes al ABC cuando existen sólidos combustibles. El polvo ABC (fosfato monoamónico) tiene su propia norma de agente, la NOM-104-STPS-2001; el polvo BC (bicarbonato de sodio) se rige por la NOM-106-STPS-1994. La NOM-100-STPS-1994 regula las especificaciones del extintor de PQS con presión contenida.
 
 La versatilidad de un ABC es útil en áreas generales, pero no convierte al equipo en solución para todas las clases. En especial, no está contemplado para clase K ni para clase D.
 
@@ -54,7 +54,7 @@ La ficha técnica y la clasificación declarada en la etiqueta deben coincidir c
 
 **Áreas con materiales sensibles.** Antes de seleccionar PQS en archivos o colecciones, se revisa el efecto del residuo, la clasificación de fuego y la estrategia de recuperación. No es suficiente elegir un agente sólo porque es de uso general.
 
-## [CO₂](/productos/extintores/co2): el agente que no deja nada
+## [CO₂](/productos/extintores/co2/): el agente que no deja nada
 
 ### Cómo funciona
 
@@ -74,7 +74,7 @@ El CO₂ opera principalmente al desplazar el oxígeno en el área de descarga. 
 
 **En espacios cerrados ocupados, el CO₂ requiere controles de seguridad.** La misma guía advierte que reduce el oxígeno necesario para la vida; el procedimiento debe priorizar la evacuación y la seguridad de las personas.
 
-## [Tipo K](/productos/extintores/especializados): agente previsto para cocinas con aceites y grasas
+## [Tipo K](/productos/extintores/especializados/): agente previsto para cocinas con aceites y grasas
 
 ### Por qué las otras clases de fuego no aplican aquí
 

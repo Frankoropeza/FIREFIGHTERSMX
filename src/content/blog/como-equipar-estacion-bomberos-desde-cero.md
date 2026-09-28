@@ -33,11 +33,11 @@ La regla que nunca rompo: ninguna intervención arranca sin proteger antes a qui
 
 Antes de cotizar nada, contéstame una pregunta: ¿qué tipo de emergencia van a enfrentar la mayoría de las veces? No es lo mismo un municipio con bosque a quince minutos que una zona industrial con tanques de químicos, o una ciudad llena de edificios altos. El perfil de riesgo decide casi todo lo demás.
 
-Si el perfil es **urbano y estructural**, la revisión se centra en EPP estructural, SCBA, abastecimiento, búsqueda y herramientas de acceso. Si es **forestal**, se requieren prendas y herramientas para esa exposición; NFPA 1950 (2025) consolidó, entre otras, la antigua NFPA 1977. En industria o HAZMAT, el tipo de sustancia y el escenario determinan si corresponde equipo de proximidad, encapsulado u otra protección. Para rescate vehicular, define primero los procedimientos de estabilización, acceso y extricación. Mira las aplicaciones por sector en [industrias](/industrias).
+Si el perfil es **urbano y estructural**, la revisión se centra en EPP estructural, SCBA, abastecimiento, búsqueda y herramientas de acceso. Si es **forestal**, se requieren prendas y herramientas para esa exposición; NFPA 1950 (2025) consolidó, entre otras, la antigua NFPA 1977. En industria o HAZMAT, el tipo de sustancia y el escenario determinan si corresponde equipo de proximidad, encapsulado u otra protección. Para rescate vehicular, define primero los procedimientos de estabilización, acceso y extricación. Mira las aplicaciones por sector en [industrias](/industrias/).
 
 ## El equipo de protección individual: tu base
 
-Para cada puesto operativo, define el EPP que exige su función: traje adecuado al riesgo, casco, capucha, guantes, botas y los equipos de detección que requiera el procedimiento. Un traje estructural debe evaluarse como conjunto bajo [NFPA 1970](/productos/trajes-bombero), no por la tela aislada. Los [cascos para bombero](/productos/cascos-nfpa/) deben probarse con la protección respiratoria y los accesorios que se usarán.
+Para cada puesto operativo, define el EPP que exige su función: traje adecuado al riesgo, casco, capucha, guantes, botas y los equipos de detección que requiera el procedimiento. Un traje estructural debe evaluarse como conjunto bajo [NFPA 1970](/productos/trajes-bombero/), no por la tela aislada. Los [cascos para bombero](/productos/cascos-nfpa/) deben probarse con la protección respiratoria y los accesorios que se usarán.
 
 Levanta medidas y prueba de movilidad antes de cerrar las tallas. Documenta para cada persona el conjunto entregado y su fecha de fabricación; esa información será necesaria durante la inspección, cuidado y retiro.
 

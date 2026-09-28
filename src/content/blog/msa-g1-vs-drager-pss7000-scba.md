@@ -186,15 +186,15 @@ Las preguntas documentadas antes de comprar reducen incertidumbre durante la rec
 
 **Rescate técnico especializado o USAR:** prueba el conjunto con las tareas y tallas representativas; registra movilidad, ajuste y acceso a controles sin atribuir desempeño a cifras no verificadas.
 
-Lo que no cambia en ninguna corporación es la necesidad de exigir al proveedor un acuerdo escrito de servicio para sus [equipos SCBA](/productos/equipos-scba): alcance del mantenimiento, refacciones críticas, responsable técnico y procedimiento de atención.
+Lo que no cambia en ninguna corporación es la necesidad de exigir al proveedor un acuerdo escrito de servicio para sus [equipos SCBA](/productos/equipos-scba/): alcance del mantenimiento, refacciones críticas, responsable técnico y procedimiento de atención.
 
 ---
 
 ## Lecturas y productos relacionados
 
 - [Cilindros SCBA: fibra de carbono vs acero](/blog/cilindros-scba-fibra-carbono-vs-acero/) — cómo leer el marcado, vida útil y requalificación
-- [Compatibilidad casco-SCBA: el problema silencioso](/blog/compatibilidad-casco-scba-bomberos) — por qué certificación individual no garantiza que los equipos funcionen juntos
-- [Guía de compra SCBA en México](/blog/guia-compra-scba-equipos-respiracion-autonoma) — criterios técnicos y preguntas clave antes de firmar la licitación
+- [Compatibilidad casco-SCBA: el problema silencioso](/blog/compatibilidad-casco-scba-bomberos/) — por qué certificación individual no garantiza que los equipos funcionen juntos
+- [Guía de compra SCBA en México](/blog/guia-compra-scba-equipos-respiracion-autonoma/) — criterios técnicos y preguntas clave antes de firmar la licitación
 
 ---
 
@@ -202,7 +202,7 @@ Lo que no cambia en ninguna corporación es la necesidad de exigir al proveedor 
 
 El [catálogo de equipos SCBA](/productos/equipos-scba/) y las fichas de [MSA G1 estructural](/productos/equipos-scba/msa-g1-estructural/) y [PSS 7000 NFPA](/productos/equipos-scba/drager-pss7000-nfpa/) ayudan a identificar las configuraciones que deben aparecer en la muestra, certificado y programa de mantenimiento. Completa el expediente con [la guía de compra de SCBA](/blog/guia-compra-scba-equipos-respiracion-autonoma/) y una solicitud de cotización que detalle los componentes.
 
-[Solicitar cotización](/cotizacion)
+[Solicitar cotización](/cotizacion/)
 
 ## Preguntas frecuentes
 

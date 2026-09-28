@@ -152,7 +152,7 @@ El bump test confirma que el sensor responde; no sustituye la calibración. Indu
 
 ---
 
-La comparación final debe incluir los gases de interés, sensores, bomba cuando se requiera muestreo remoto, energía, protección ambiental y el programa de prueba funcional. Revisa las fichas de [Dräger X-am 5600](/productos/hazmat/drager-x-am-5600-detector-multigas), [Dräger X-am 5800](/productos/hazmat/drager-x-am-5800-detector-multigas), [MSA ALTAIR 4XR](/productos/hazmat/msa-altair-4xr/) e [Industrial Scientific Ventis Pro5](/productos/hazmat/industrial-scientific-ventis-pro5/), además del [catálogo de detectores de gas](/productos/hazmat/detectores-de-gas/). Si el monitoreo condiciona la selección de protección, consulta los [niveles HAZMAT EPA](/blog/niveles-proteccion-hazmat-epa-abc/).
+La comparación final debe incluir los gases de interés, sensores, bomba cuando se requiera muestreo remoto, energía, protección ambiental y el programa de prueba funcional. Revisa las fichas de [Dräger X-am 5600](/productos/hazmat/drager-x-am-5600-detector-multigas/), [Dräger X-am 5800](/productos/hazmat/drager-x-am-5800-detector-multigas/), [MSA ALTAIR 4XR](/productos/hazmat/msa-altair-4xr/) e [Industrial Scientific Ventis Pro5](/productos/hazmat/industrial-scientific-ventis-pro5/), además del [catálogo de detectores de gas](/productos/hazmat/detectores-de-gas/). Si el monitoreo condiciona la selección de protección, consulta los [niveles HAZMAT EPA](/blog/niveles-proteccion-hazmat-epa-abc/).
 
 ## Preguntas frecuentes
 

@@ -61,9 +61,9 @@ Aquí es donde hay que tener criterio. Esto aparece en cotizaciones y casi nunca
 
 **Traje de proximidad:** Diseñado para trabajos con exposición a calor radiante intenso, como ciertos procesos de fundición, acero o respuesta especializada. Un brigadista industrial que requiere este conjunto debe detenerse y revisar si el escenario ya rebasa el alcance de su función.
 
-**SCBA completo para brigada general:** A menos que la planta tenga áreas con atmósferas IDLH frecuentes y los brigadistas tengan entrenamiento certificado en uso de SCBA, esto es equipo que nadie va a usar correctamente. El SCBA sin entrenamiento es más peligroso que no tenerlo. Para ver qué significa un SCBA de calidad, revisa [MSA G1 vs Dräger PSS7000](/blog/msa-g1-vs-drager-pss7000-scba).
+**SCBA completo para brigada general:** A menos que la planta tenga áreas con atmósferas IDLH frecuentes y los brigadistas tengan entrenamiento certificado en uso de SCBA, esto es equipo que nadie va a usar correctamente. El SCBA sin entrenamiento es más peligroso que no tenerlo. Para ver qué significa un SCBA de calidad, revisa [MSA G1 vs Dräger PSS7000](/blog/msa-g1-vs-drager-pss7000-scba/).
 
-**Cámara térmica para brigada:** Herramienta de bomberos para búsqueda en humo. Un brigadista industrial no entra a espacios con humo. La cámara no tiene aplicación en ese rol. Para operaciones de búsqueda y rescate en estructuras, revisa [NFPA 1930 y cámaras térmicas](/blog/nfpa-1801-camaras-termicas-bomberos).
+**Cámara térmica para brigada:** Herramienta de bomberos para búsqueda en humo. Un brigadista industrial no entra a espacios con humo. La cámara no tiene aplicación en ese rol. Para operaciones de búsqueda y rescate en estructuras, revisa [NFPA 1930 y cámaras térmicas](/blog/nfpa-1801-camaras-termicas-bomberos/).
 
 **Traje estructural NFPA 1970 completo:** requiere mantenimiento especializado, inspección periódica y entrenamiento para que sea útil. Para una brigada industrial que actúa en conatos, puede ser un conjunto sobredimensionado frente al riesgo identificado.
 
@@ -79,15 +79,15 @@ Si alguna respuesta es no, el equipo no va en la cotización recomendada.
 
 La brigada más efectiva no es la que tiene el EPP más caro. Es la que tiene el EPP correcto, los brigadistas entrenados para usarlo y el sistema de mantenimiento activo para que esté disponible cuando se necesita.
 
-Para dimensionar cuántos brigadistas necesitas en tu planta antes de decidir qué equipo comprar, revisa [Cuántos brigadistas necesita tu planta según NOM-002](/blog/cuantos-brigadistas-nom-002-dimensionamiento).
+Para dimensionar cuántos brigadistas necesitas en tu planta antes de decidir qué equipo comprar, revisa [Cuántos brigadistas necesita tu planta según NOM-002](/blog/cuantos-brigadistas-nom-002-dimensionamiento/).
 
 ---
 
 ## Artículos relacionados
 
-- [Cuántos brigadistas necesita tu planta según NOM-002](/blog/cuantos-brigadistas-nom-002-dimensionamiento)
-- [Niveles de protección HazMat EPA A, B, C, D](/blog/niveles-proteccion-hazmat-epa-abc)
-- [MSA G1 vs Dräger PSS7000: comparativa SCBA](/blog/msa-g1-vs-drager-pss7000-scba)
+- [Cuántos brigadistas necesita tu planta según NOM-002](/blog/cuantos-brigadistas-nom-002-dimensionamiento/)
+- [Niveles de protección HazMat EPA A, B, C, D](/blog/niveles-proteccion-hazmat-epa-abc/)
+- [MSA G1 vs Dräger PSS7000: comparativa SCBA](/blog/msa-g1-vs-drager-pss7000-scba/)
 
 ---
 
@@ -95,7 +95,7 @@ Para dimensionar cuántos brigadistas necesitas en tu planta antes de decidir qu
 
 Ayudamos a las plantas industriales a seleccionar el EPP correcto para su brigada, sin sobrevender ni dejar huecos de protección. El servicio incluye diagnóstico de riesgo, propuesta de equipo justificada y capacitación práctica para que el EPP se use bien.
 
-[Servicio de Brigadas Empresariales](/servicios/brigadas-empresariales)
+[Servicio de Brigadas Empresariales](/servicios/brigadas-empresariales/)
 
 ## Cómo pedir el EPP por escrito
 

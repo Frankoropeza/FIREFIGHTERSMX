@@ -76,9 +76,9 @@ La estructura que funciona:
 
 Esa estructura hace el trabajo del evaluador fácil. Cuando la comparación está hecha en la propia ficha, las posibilidades de error por interpretación se reducen drásticamente.
 
-Para articular bien las preguntas sobre especificaciones técnicas durante la etapa de junta de aclaraciones, revisa [Junta de aclaraciones en licitaciones de equipo CI](/blog/junta-aclaraciones-licitacion-equipo-ci).
+Para articular bien las preguntas sobre especificaciones técnicas durante la etapa de junta de aclaraciones, revisa [Junta de aclaraciones en licitaciones de equipo CI](/blog/junta-aclaraciones-licitacion-equipo-ci/).
 
-Para el contexto normativo general de licitaciones de equipo CI en México, el artículo [Licitaciones de equipo contra incendio en México: NOM y NFPA](/blog/licitaciones-equipo-contra-incendio-mexico-nom-nfpa) da el panorama completo.
+Para el contexto normativo general de licitaciones de equipo CI en México, el artículo [Licitaciones de equipo contra incendio en México: NOM y NFPA](/blog/licitaciones-equipo-contra-incendio-mexico-nom-nfpa/) da el panorama completo.
 
 ## El criterio antes de enviar la propuesta
 

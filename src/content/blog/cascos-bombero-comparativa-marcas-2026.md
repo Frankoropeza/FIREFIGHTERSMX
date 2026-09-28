@@ -241,11 +241,11 @@ Tres condiciones absolutas antes de emitir cualquier orden de compra:
 
 ---
 
-El [catálogo de cascos NFPA](/productos/cascos-nfpa/) reúne modelos y categorías para iniciar la comparación. Puedes complementar la evaluación con [casco europeo o americano](/blog/casco-bombero-europeo-vs-americano/), la guía de [compatibilidad entre casco y SCBA](/blog/compatibilidad-casco-scba-bomberos/) y los componentes de [EPP para bombero](/productos/epp-bombero/). Si la corporación evalúa una renovación, [solicita una propuesta técnica](/cotizacion) con modelo, certificación, accesorios y refacciones documentados.
+El [catálogo de cascos NFPA](/productos/cascos-nfpa/) reúne modelos y categorías para iniciar la comparación. Puedes complementar la evaluación con [casco europeo o americano](/blog/casco-bombero-europeo-vs-americano/), la guía de [compatibilidad entre casco y SCBA](/blog/compatibilidad-casco-scba-bomberos/) y los componentes de [EPP para bombero](/productos/epp-bombero/). Si la corporación evalúa una renovación, [solicita una propuesta técnica](/cotizacion/) con modelo, certificación, accesorios y refacciones documentados.
 
 ---
 
-*Para revisar el conjunto estructural, consulta también [cómo elegir un traje para bombero](/blog/como-elegir-traje-bombero-nfpa) y [la actualización de NFPA 1970](/blog/nfpa-1970-nueva-norma-trajes-bombero).*
+*Para revisar el conjunto estructural, consulta también [cómo elegir un traje para bombero](/blog/como-elegir-traje-bombero-nfpa/) y [la actualización de NFPA 1970](/blog/nfpa-1970-nueva-norma-trajes-bombero/).*
 
 ## Preguntas frecuentes
 

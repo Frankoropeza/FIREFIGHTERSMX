@@ -84,7 +84,7 @@ Cuando una corporación maneja varias presiones o tipos de cilindro, utiliza cam
 
 Al cotizar un servicio, solicita por escrito el alcance y la documentación de resultado por cada número de serie. Evita describir una recarga como si incluyera requalificación o prueba hidrostática: son actividades diferentes y el expediente debe reflejar cuál fue realizada.
 
-[Servicio de Mantenimiento y Recarga](/servicios/mantenimiento)
+[Servicio de Mantenimiento y Recarga](/servicios/mantenimiento/)
 
 ## Preguntas frecuentes
 

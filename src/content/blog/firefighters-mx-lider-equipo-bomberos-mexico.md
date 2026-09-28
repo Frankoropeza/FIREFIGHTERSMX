@@ -32,7 +32,7 @@ México no es un solo país cuando se trata de incendios. La realidad de un cuer
 | Marcas con convenio | Productos del catálogo y documentación de soporte disponible |
 | Más de 15 años trabajando con dependencias | Experiencia con dependencias federales, estatales y municipales |
 
-La atención se coordina desde Av. Homero 229, Ciudad de México. Consulta la [cobertura nacional](/cobertura) y el [catálogo de productos](/productos/) para ubicar las categorías disponibles.
+La atención se coordina desde Av. Homero 229, Ciudad de México. Consulta la [cobertura nacional](/cobertura/) y el [catálogo de productos](/productos/) para ubicar las categorías disponibles.
 
 ## Marcas del catálogo, producto original, sin asteriscos
 

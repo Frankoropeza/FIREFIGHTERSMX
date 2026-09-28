@@ -25,7 +25,7 @@ De todo el equipo, el SCBA es donde más importa la marca, por la electrónica d
 | Dräger | PSS 7000 | Arnés ergonómico para uso intensivo |
 | 3M Scott | Air-Pak X3 Pro | Certificado NFPA 1970 (2025) |
 
-El **MSA G1** integra PASS, EOSTI y telemetría. El **Dräger PSS 7000** existe en versión europea EN 137 y en versión certificada NFPA para América. El **3M Scott Air-Pak X3 Pro** está certificado NFPA 1970 (2025) por SEI con aprobación NIOSH. Los puedes comparar lado a lado en [equipos SCBA](/productos/equipos-scba).
+El **MSA G1** integra PASS, EOSTI y telemetría. El **Dräger PSS 7000** existe en versión europea EN 137 y en versión certificada NFPA para América. El **3M Scott Air-Pak X3 Pro** está certificado NFPA 1970 (2025) por SEI con aprobación NIOSH. Los puedes comparar lado a lado en [equipos SCBA](/productos/equipos-scba/).
 
 ## Trajes estructurales (NFPA 1970): revisar el modelo
 
@@ -34,7 +34,7 @@ El **MSA G1** integra PASS, EOSTI y telemetría. El **Dräger PSS 7000** existe 
 | Globe | G-XTREME 3.0 | Barrera GORE-TEX CROSSTECH Innovate; configuración de shell según ficha |
 | Lion | V-Force | Traje estructural con mangas raglán y sistema de humedad IsoDri |
 
-El **Globe G-XTREME 3.0** se ofrece con barrera GORE-TEX CROSSTECH Innovate y opciones de shell publicadas por el fabricante. El **Lion V-Force** se ofrece con mangas raglán, sistema de humedad IsoDri y opción de shell PBI Max. Los conjuntos estructurales usan tres capas: exterior, barrera de humedad y barrera térmica. Confirma el certificado y la configuración del modelo antes de especificarlo. El detalle vive en [trajes para bomberos](/productos/trajes-bombero).
+El **Globe G-XTREME 3.0** se ofrece con barrera GORE-TEX CROSSTECH Innovate y opciones de shell publicadas por el fabricante. El **Lion V-Force** se ofrece con mangas raglán, sistema de humedad IsoDri y opción de shell PBI Max. Los conjuntos estructurales usan tres capas: exterior, barrera de humedad y barrera térmica. Confirma el certificado y la configuración del modelo antes de especificarlo. El detalle vive en [trajes para bomberos](/productos/trajes-bombero/).
 
 ## Cascos: una decisión más cultural de lo que parece
 
@@ -44,7 +44,7 @@ El **Globe G-XTREME 3.0** se ofrece con barrera GORE-TEX CROSSTECH Innovate y op
 | Bullard | UST / USTM | Americano tradicional, fibra de vidrio Thermoglas |
 | Cairns | N6A Houston | Americano clásico de cuero |
 
-Aquí pasa algo curioso: la elección rara vez es puramente técnica. El **MSA Gallet F1 XF** es un casco europeo tipo B con EN 443:2008, EN 16471:2014 y EN 16473:2014 publicadas. NFPA 1970 (2025) consolidó a la antigua NFPA 1971, que sigue apareciendo en documentación de modelos anteriores: el **Bullard UST / USTM** publica carcasa de fibra de vidrio Thermoglas y NFPA 1971; el **Cairns N6A Houston** publica NFPA 1971 (2018). Ambos estilos deben probarse con el SCBA, la capucha y los accesorios de la corporación. Los tienes en [cascos NFPA](/productos/cascos-nfpa).
+Aquí pasa algo curioso: la elección rara vez es puramente técnica. El **MSA Gallet F1 XF** es un casco europeo tipo B con EN 443:2008, EN 16471:2014 y EN 16473:2014 publicadas. NFPA 1970 (2025) consolidó a la antigua NFPA 1971, que sigue apareciendo en documentación de modelos anteriores: el **Bullard UST / USTM** publica carcasa de fibra de vidrio Thermoglas y NFPA 1971; el **Cairns N6A Houston** publica NFPA 1971 (2018). Ambos estilos deben probarse con el SCBA, la capucha y los accesorios de la corporación. Los tienes en [cascos NFPA](/productos/cascos-nfpa/).
 
 ## Herramienta de rescate: aquí hay un nombre que se repite
 
@@ -54,7 +54,7 @@ Aquí pasa algo curioso: la elección rara vez es puramente técnica. El **MSA G
 | Holmatro | PCT50 | Herramienta combinada con puntas desmontables |
 | Holmatro | Línea Pentheon | Herramientas a batería con PBPA288 |
 
-En rescate vehicular, compara cada herramienta por función, apertura, fuerza publicada, peso y clasificación aplicable. La línea **Pentheon a batería** usa batería PBPA288. La gama está en [herramientas de rescate](/productos/herramientas-rescate); solicita la ficha del modelo antes de definir una especificación.
+En rescate vehicular, compara cada herramienta por función, apertura, fuerza publicada, peso y clasificación aplicable. La línea **Pentheon a batería** usa batería PBPA288. La gama está en [herramientas de rescate](/productos/herramientas-rescate/); solicita la ficha del modelo antes de definir una especificación.
 
 ## Cuando todas son buenas, ¿cómo decides?
 

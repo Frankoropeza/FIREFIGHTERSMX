@@ -13,7 +13,7 @@ image:
 
 El traje estructural es, probablemente, la pieza de equipo a la que un bombero le confía más veces la vida. Y sin embargo, es de las que más se compran "a ojo": por el color, por la marca que sonaba, por el precio que cuadraba en el presupuesto. Quiero ahorrarte esa lotería. Si entiendes qué hace cada parte del traje y qué le tienes que exigir a un proveedor, vas a comprar con criterio y no con fe.
 
-Antes de entrar en materia, una aclaración que importa en 2026: el conjunto estructural ya no se certifica bajo la vieja NFPA 1971, sino bajo la **NFPA 1970**, que absorbió esa norma y endureció algunos requisitos. Si todavía ves "NFPA 1971" en una cotización nueva, es señal de que el proveedor no está al día. Lo explico a fondo en [NFPA 1970: la nueva norma de trajes](/blog/nfpa-1970-nueva-norma-trajes-bombero).
+Antes de entrar en materia, una aclaración que importa en 2026: el conjunto estructural ya no se certifica bajo la vieja NFPA 1971, sino bajo la **NFPA 1970**, que absorbió esa norma y endureció algunos requisitos. Si todavía ves "NFPA 1971" en una cotización nueva, es señal de que el proveedor no está al día. Lo explico a fondo en [NFPA 1970: la nueva norma de trajes](/blog/nfpa-1970-nueva-norma-trajes-bombero/).
 
 ## La norma que define qué te protege
 

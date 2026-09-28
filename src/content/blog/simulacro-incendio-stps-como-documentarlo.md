@@ -87,15 +87,15 @@ Si no puede, tienes huecos que llenar antes de que los encuentre el inspector.
 
 ## Artículos relacionados
 
-- [NOM-002 vs DC-3: qué documenta cada uno y por qué el inspector pide los dos](/blog/nom-002-vs-dc3-capacitacion-brigadas)
-- [Dotación de extintores según NOM-002-STPS: cuántos necesitas y dónde](/blog/nom-002-stps-dotacion-extintores)
-- [Collar de garantía y NOM-154: qué verifica el inspector en cada extintor](/blog/collar-garantia-extintores-nom-154)
+- [NOM-002 vs DC-3: qué documenta cada uno y por qué el inspector pide los dos](/blog/nom-002-vs-dc3-capacitacion-brigadas/)
+- [Dotación de extintores según NOM-002-STPS: cuántos necesitas y dónde](/blog/nom-002-stps-dotacion-extintores/)
+- [Collar de garantía y NOM-154: qué verifica el inspector en cada extintor](/blog/collar-garantia-extintores-nom-154/)
 
 ## Capacitación Certificada en FIREFIGHTERS MX
 
 Si necesitas apoyo para diseñar, ejecutar y documentar simulacros que cumplan NOM-002-STPS y resistan cualquier inspección de Protección Civil o STPS, en FIREFIGHTERS MX lo hacemos contigo: desde el plan hasta el expediente cerrado.
 
-[Servicio de capacitación certificada ](/servicios/capacitacion)
+[Servicio de capacitación certificada ](/servicios/capacitacion/)
 
 ## Secuencia de trabajo verificable
 

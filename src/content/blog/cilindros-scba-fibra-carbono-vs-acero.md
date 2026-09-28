@@ -139,9 +139,9 @@ La condición del cilindro depende de su diseño, su historial documentado y el 
 
 ## Enlaces para el programa SCBA
 
-- [MSA G1 vs Dräger PSS 7000: comparativa real](/blog/msa-g1-vs-drager-pss7000-scba) — compatibilidad con equipo SCBA
-- [Guía de compra SCBA en México](/blog/guia-compra-scba-equipos-respiracion-autonoma) — qué preguntar antes de comprometer el presupuesto
-- [Compatibilidad casco-SCBA: el problema silencioso](/blog/compatibilidad-casco-scba-bomberos) — cómo verificar que el casco y el SCBA funcionen como sistema
+- [MSA G1 vs Dräger PSS 7000: comparativa real](/blog/msa-g1-vs-drager-pss7000-scba/) — compatibilidad con equipo SCBA
+- [Guía de compra SCBA en México](/blog/guia-compra-scba-equipos-respiracion-autonoma/) — qué preguntar antes de comprometer el presupuesto
+- [Compatibilidad casco-SCBA: el problema silencioso](/blog/compatibilidad-casco-scba-bomberos/) — cómo verificar que el casco y el SCBA funcionen como sistema
 
 ---
 
@@ -149,7 +149,7 @@ La condición del cilindro depende de su diseño, su historial documentado y el 
 
 Los cilindros forman parte del sistema SCBA. Consulta el [catálogo de equipos de respiración autónoma](/productos/equipos-scba/) junto con la [prueba hidrostática de cilindros SCBA](/blog/prueba-hidrostatica-cilindros-scba-nfpa/), la [guía de compra de SCBA](/blog/guia-compra-scba-equipos-respiracion-autonoma/) y el [EPP para bombero](/productos/epp-bombero/) para no especificar el cilindro como una partida aislada.
 
-[Solicitar cotización](/cotizacion)
+[Solicitar cotización](/cotizacion/)
 
 ## Preguntas frecuentes
 

@@ -26,7 +26,7 @@ El cálculo de extintores no es "uno por piso". La NOM-002 establece criterios p
 
 Lo que encuentro: plantas que tienen 2 extintores PQS de 6 kg para un área de 800 m² con materias primas inflamables. La cobertura es insuficiente y el agente puede ser inadecuado si hay fuego clase B o C.
 
-Si quieres entender cómo se calcula la dotación correctamente, el artículo [Dotación de extintores NOM-002-STPS](/blog/nom-002-stps-dotacion-extintores) te da el método paso a paso.
+Si quieres entender cómo se calcula la dotación correctamente, el artículo [Dotación de extintores NOM-002-STPS](/blog/nom-002-stps-dotacion-extintores/) te da el método paso a paso.
 
 ## 3. Rutas de evacuación obstruidas o sin señalización
 
@@ -52,7 +52,7 @@ Tener una lista de brigadistas no es suficiente. La norma exige programa anual t
 
 Lo que encuentro: listas de brigadistas con nombres de personas que ya no laboran en la planta, o constancias de capacitación con una empresa que no tiene registro ante STPS.
 
-Para entender cómo dimensionar tu brigada correctamente, revisa [Cuántos brigadistas necesita tu planta según NOM-002](/blog/cuantos-brigadistas-nom-002-dimensionamiento).
+Para entender cómo dimensionar tu brigada correctamente, revisa [Cuántos brigadistas necesita tu planta según NOM-002](/blog/cuantos-brigadistas-nom-002-dimensionamiento/).
 
 ## 7. Detectores de humo o alarma sin prueba de funcionamiento
 
@@ -64,7 +64,7 @@ También cuenta la integración: detectores que no están conectados a la centra
 
 Esta es la que más sorprende a los gerentes: tener todo físicamente en orden pero no tener los papeles que lo demuestran. La NOM-002 requiere un expediente documental accesible en el centro de trabajo. Si el inspector pide el expediente y no existe o está incompleto, genera no-conformidad aunque los extintores estén perfectos.
 
-Qué debe tener ese expediente lo cubrimos en detalle en [Expediente documental NOM-002: qué papeles necesitas](/blog/expediente-documental-nom-002-stps-checklist).
+Qué debe tener ese expediente lo cubrimos en detalle en [Expediente documental NOM-002: qué papeles necesitas](/blog/expediente-documental-nom-002-stps-checklist/).
 
 ## Prioriza condiciones y evidencia
 
@@ -76,9 +76,9 @@ La falta de un documento no demuestra por sí sola que un equipo nunca recibió 
 
 ## Artículos relacionados
 
-- [Dotación de extintores NOM-002-STPS: método de cálculo](/blog/nom-002-stps-dotacion-extintores)
-- [Expediente documental NOM-002: checklist completo](/blog/expediente-documental-nom-002-stps-checklist)
-- [Cuántos brigadistas necesita tu planta según NOM-002](/blog/cuantos-brigadistas-nom-002-dimensionamiento)
+- [Dotación de extintores NOM-002-STPS: método de cálculo](/blog/nom-002-stps-dotacion-extintores/)
+- [Expediente documental NOM-002: checklist completo](/blog/expediente-documental-nom-002-stps-checklist/)
+- [Cuántos brigadistas necesita tu planta según NOM-002](/blog/cuantos-brigadistas-nom-002-dimensionamiento/)
 
 ---
 
@@ -86,7 +86,7 @@ La falta de un documento no demuestra por sí sola que un equipo nunca recibió 
 
 Realizamos auditorías previas a inspección STPS con revisión física del centro de trabajo, análisis del expediente documental y entrega de informe con hallazgos priorizados y plan de remediación. Si tienes una visita programada o quieres adelantarte a la siguiente, contáctanos.
 
-[Servicio de Auditoría NOM-002](/servicios/auditoria-seguridad)
+[Servicio de Auditoría NOM-002](/servicios/auditoria-seguridad/)
 
 ## Método de revisión antes de presentar evidencia
 

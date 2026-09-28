@@ -59,6 +59,8 @@ También vale la pena registrar cambios de ubicación, equipos reemplazados y á
 
 Una revisión interna breve después de cada atención ayuda a detectar problemas recurrentes: registros que no coinciden, áreas sin responsable, documentos que llegan incompletos o unidades temporales que no se conciliaron. Corregir esos puntos a tiempo hace que la siguiente coordinación sea más clara, sin convertir una ausencia temporal de equipos en una incertidumbre operativa.
 
+Si todavía no tienes proveedor, el [directorio de empresas de extintores](/empresas/extintores/) permite comparar alcance y cobertura; una ficha verificada como la de [MANEXT, en Tlalnepantla](/empresas/extintores/estado-de-mexico/manext/), muestra qué información conviene pedir antes de cotizar. Para reponer unidades, el [catálogo de extintores](/productos/extintores/) ordena los equipos por agente y capacidad.
+
 ## Preguntas frecuentes
 
 ### ¿Qué debo pedir antes de contratar una recarga de extintores?
@@ -81,4 +83,3 @@ Actualiza cada registro con los documentos recibidos, observaciones, ubicación 
 
 - [NOM-002-STPS-2010 — STPS](https://www.stps.gob.mx/bp/secciones/dgsst/normatividad/normas/Nom-002.pdf)
 - [NOM-154-SCFI-2005 — PLATIICA, Secretaría de Economía](https://platiica.economia.gob.mx/normalizacion/nom-154-scfi-2005/)
-- [Revista Fortuna — La recarga de extintores es asunto de profesionales](https://revistafortuna.com.mx/2023/02/22/prevenir-es-lo-mejor-la-recarga-de-extintores-es-asunto-de-profesionales/)

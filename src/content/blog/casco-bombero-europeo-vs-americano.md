@@ -129,7 +129,7 @@ En rescate técnico, selecciona un casco certificado para el uso previsto y veri
 
 **Corporaciones Municipales con Presupuesto Limitado o Licitaciones Masivas**
 
-El [catálogo de cascos NFPA](/productos/cascos-nfpa) incluye el Bullard USTM y otras opciones. Para una compra por volumen, define primero la certificación, las tallas, los accesorios aprobados y el plan de refacciones; después solicita una cotización comparable para cada configuración.
+El [catálogo de cascos NFPA](/productos/cascos-nfpa/) incluye el Bullard USTM y otras opciones. Para una compra por volumen, define primero la certificación, las tallas, los accesorios aprobados y el plan de refacciones; después solicita una cotización comparable para cada configuración.
 
 ---
 
@@ -164,9 +164,9 @@ Eso no lo responde el catálogo. Lo responde la prueba.
 
 ## Enlaces para completar la evaluación
 
-- [Compatibilidad casco-SCBA: lo que nadie verifica](/blog/compatibilidad-casco-scba-bomberos) — el problema silencioso que se descubre adentro del incendio
-- [Comparativa de marcas y configuraciones](/blog/cascos-bombero-comparativa-marcas-2026) — criterios para leer una ficha antes de elegir
-- [NFPA 1970: cambios en certificación EPP](/blog/nfpa-1970-nueva-norma-trajes-bombero) — qué actualizó la norma y cómo afecta las licitaciones actuales
+- [Compatibilidad casco-SCBA: lo que nadie verifica](/blog/compatibilidad-casco-scba-bomberos/) — el problema silencioso que se descubre adentro del incendio
+- [Comparativa de marcas y configuraciones](/blog/cascos-bombero-comparativa-marcas-2026/) — criterios para leer una ficha antes de elegir
+- [NFPA 1970: cambios en certificación EPP](/blog/nfpa-1970-nueva-norma-trajes-bombero/) — qué actualizó la norma y cómo afecta las licitaciones actuales
 
 ---
 
@@ -174,7 +174,7 @@ Eso no lo responde el catálogo. Lo responde la prueba.
 
 El [catálogo de cascos para bombero](/productos/cascos-nfpa/) permite revisar familias y fichas disponibles. El Gallet F1 XF debe pedirse por sus homologaciones EN publicadas, no como casco NFPA. Si la compra incluye el conjunto estructural, revisa también el [EPP para bombero](/productos/epp-bombero/) y la [guía para elegir un SCBA](/blog/guia-compra-scba-equipos-respiracion-autonoma/) antes de cerrar la especificación.
 
-[Solicitar cotización](/cotizacion)
+[Solicitar cotización](/cotizacion/)
 
 ## Preguntas frecuentes
 

@@ -128,9 +128,9 @@ Si estás preparando bases técnicas o un análisis comparativo para tu corporac
 
 ## Artículos relacionados
 
-- [TPP y THL: los parámetros que marcan la diferencia](/blog/tpp-thl-trajes-bombero-nfpa) — cómo leer los números de protección antes de firmar una licitación
-- [NFPA 1970: qué cambió para EPP](/blog/nfpa-1970-nueva-norma-trajes-bombero) — la actualización normativa que afecta a toda la cadena de certificación
-- [Cómo elegir traje bombero para tu corporación](/blog/como-elegir-traje-bombero-nfpa) — guía de decisión por perfil de operación y presupuesto
+- [TPP y THL: los parámetros que marcan la diferencia](/blog/tpp-thl-trajes-bombero-nfpa/) — cómo leer los números de protección antes de firmar una licitación
+- [NFPA 1970: qué cambió para EPP](/blog/nfpa-1970-nueva-norma-trajes-bombero/) — la actualización normativa que afecta a toda la cadena de certificación
+- [Cómo elegir traje bombero para tu corporación](/blog/como-elegir-traje-bombero-nfpa/) — guía de decisión por perfil de operación y presupuesto
 
 ---
 

@@ -191,9 +191,9 @@ La certificación individual de cada componente es el punto de partida. La prueb
 
 ## Recursos para completar la especificación
 
-- [Casco europeo vs americano: cómo elegir](/blog/casco-bombero-europeo-vs-americano) — cola de pato vs perfil bajo según tu operación
-- [MSA G1 vs Dräger PSS 7000](/blog/msa-g1-vs-drager-pss7000-scba) — criterios documentales para comparar configuraciones
-- [Guía de compra SCBA en México](/blog/guia-compra-scba-equipos-respiracion-autonoma) — criterios técnicos y de mantenimiento
+- [Casco europeo vs americano: cómo elegir](/blog/casco-bombero-europeo-vs-americano/) — cola de pato vs perfil bajo según tu operación
+- [MSA G1 vs Dräger PSS 7000](/blog/msa-g1-vs-drager-pss7000-scba/) — criterios documentales para comparar configuraciones
+- [Guía de compra SCBA en México](/blog/guia-compra-scba-equipos-respiracion-autonoma/) — criterios técnicos y de mantenimiento
 
 ---
 
@@ -201,7 +201,7 @@ La certificación individual de cada componente es el punto de partida. La prueb
 
 La compatibilidad empieza por elegir una configuración documentada y probar el conjunto. El [catálogo de cascos](/productos/cascos-nfpa/) y el [catálogo de SCBA](/productos/equipos-scba/) ayudan a identificar los modelos que deben figurar en la muestra y el expediente de compra.
 
-[Solicitar cotización](/cotizacion)
+[Solicitar cotización](/cotizacion/)
 
 ## Preguntas frecuentes
 
