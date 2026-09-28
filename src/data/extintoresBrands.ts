@@ -27,7 +27,7 @@ export const extintoresBrandList: EquipmentBrand[] = [
       'El polvo químico seco ABC es el agente más versátil del mercado. Actúa sobre los tres tipos de fuego más comunes (A, B y C) con una sola unidad. Es el extintor estándar en la mayoría de los programas de Protección Civil — la opción obligatoria para oficinas, comercios, bodegas, industria general y programas institucionales en México.',
       'Cada extintor incluye etiqueta NOM con número de dictamen verificable ante la Secretaría de Economía, collar de garantía tras cada recarga y reporte documental para tu expediente de Protección Civil, STPS e IMSS. Seis modelos en línea para cubrir desde un vehículo hasta una planta industrial de alta carga de fuego.',
     ],
-    heroBadges: ['NOM-100-STPS', 'NFPA 10', 'Clase A · B · C', 'Polvo químico seco', '1 · 2.5 · 4.5 · 6 · 9 · 12 kg', 'Collar de garantía', 'Expediente PC'],
+    heroBadges: ['Fabricante Kidde', 'NOM-100-STPS', 'NFPA 10', 'Clase A · B · C', 'Polvo químico seco', '1 · 2.5 · 4.5 · 6 · 9 · 12 kg', 'Collar de garantía', 'Expediente PC'],
     seoTitle: 'Extintores PQS ABC NOM-100-STPS — 1 a 12 kg · Venta y Recarga México',
     seoDescription: 'Extintores PQS ABC NOM-100-STPS y NFPA 10 en México: 1, 2.5, 4.5, 6, 9 y 12 kg para clase A, B y C. Collar de garantía y recarga NOM-154-SCFI.',
     stats: [
@@ -147,7 +147,7 @@ export const extintoresBrandList: EquipmentBrand[] = [
       'El dióxido de carbono se usa en fuegos clase B y C, no deja residuo conductor y puede emplearse cerca de equipos activos. El PQS ABC deja residuo en circuitos y es difícil de limpiar; el CO₂ se disipa tras la descarga.',
       'Seis modelos en línea — desde el compacto de 2.3 kg para racks de telecomunicaciones hasta el de 15 kg para salas de servidores de alta densidad o como respaldo de sistemas fijos. Todos certificados NOM-102-STPS con etiqueta de dictamen verificable ante la Secretaría de Economía.',
     ],
-    heroBadges: ['NOM-102-STPS', 'NFPA 10', 'Clase B · C', 'Dióxido de carbono', '2.3 · 4.5 · 6.8 · 9 · 10 · 15 kg', 'Cero residuo', 'No conduce electricidad'],
+    heroBadges: ['Fabricante Kidde', 'NOM-102-STPS', 'NFPA 10', 'Clase B · C', 'Dióxido de carbono', '2.3 · 4.5 · 6.8 · 9 · 10 · 15 kg', 'Cero residuo', 'No conduce electricidad'],
     seoTitle: 'Extintor de CO2 (dióxido de carbono) clase B:C — NOM-102-STPS',
     seoDescription: 'Extintor de CO2 para equipo eléctrico y líquidos inflamables: qué fuegos apaga, diferencia con PQS, cómo usar un extintor de dióxido de carbono y mantenimiento.',
     stats: [
@@ -295,7 +295,7 @@ export const extintoresBrandList: EquipmentBrand[] = [
     heroTitleAccent: 'para cocinas industriales.',
     heroLead: 'El extintor tipo K es el extintor diseñado para fuegos de clase K: los incendios de aceites y grasas vegetales o animales que se producen en cocinas industriales, restaurantes y comedores. Su agente extintor es un químico húmedo a base de acetato de potasio que apaga el fuego de la freidora, la plancha o la parrilla donde el polvo químico seco y el CO₂ no son eficaces. Suministramos extintores clase K de 6 L y 9 L para cocinas profesionales en México.',
     heroIntro: [],
-    heroBadges: ['Clase K', 'Acetato de potasio', 'NOM-002-STPS', 'NFPA 10', '6 L · 9 L'],
+    heroBadges: ['Fabricante Kidde', 'Clase K', 'Acetato de potasio', 'NOM-002-STPS', 'NFPA 10', '6 L · 9 L'],
     seoTitle: 'Extintor tipo K (clase K) para cocinas: 6 L y 9 L',
     seoDescription: 'Extintor tipo K de acetato de potasio para fuegos clase K de aceites y grasas en cocinas industriales/restaurantes: cómo funciona, NOM-002, NFPA 10 y ubicación.',
     stats: [
@@ -390,7 +390,7 @@ export const extintoresBrandList: EquipmentBrand[] = [
       'Cada extintor especializado resuelve un riesgo específico que los extintores de uso general no pueden controlar correctamente. El PQS ABC no extingue fuegos clase K — la grasa se re-enciende. El CO₂ no es suficiente para data centers de alta disponibilidad. El agua limpia o la espuma AFFF son más eficaces en clase A y B que el polvo, y sin los residuos del polvo.',
       'Seis modelos en la línea especializada: Agua 9L, Agua+Aditivo AF 9L, Espuma AFFF 9L, Tipo K 6L, Tipo K 9L y Agente Limpio FM-200 2.5 kg. Cada uno con la norma, el agente y la aplicación correcta para el riesgo específico que ningún extintor de uso general puede resolver.',
     ],
-    heroBadges: ['Servicio NOM-154-SCFI', 'NFPA 10 · NFPA 96', 'Clase A · B · K', 'Agua · AFFF · Tipo K · FM-200', 'Sin residuo', 'Cocinas · Data center · Hidrocarburos'],
+    heroBadges: ['Fabricante Kidde', 'Servicio NOM-154-SCFI', 'NFPA 10 · NFPA 96', 'Clase A · B · K', 'Agua · AFFF · Tipo K · FM-200', 'Sin residuo', 'Cocinas · Data center · Hidrocarburos'],
     seoTitle: 'Extintores Especializados — Agua, Espuma AFFF, Tipo K y FM-200 · NOM · México',
     seoDescription: 'Extintores especializados en México: Agua 9L (NOM-103-STPS), Espuma AFFF, Tipo K (NFPA 10 · NFPA 96) y Agente Limpio FM-200 (NFPA 2001) para data centers. Servicio NOM-154-SCFI.',
     stats: [
@@ -501,7 +501,7 @@ export const extintoresBrandList: EquipmentBrand[] = [
       'Los extintores sobre ruedas cubren riesgos de gran magnitud donde la capacidad de un extintor portátil de 12 kg es insuficiente. Su descarga extendida (40 a 90+ segundos según capacidad), la manguera de 6 m y las ruedas de alta resistencia los hacen indispensables en plantas industriales, helipuertos y terminales petroquímicas.',
       'Seis modelos en línea: PQS ABC en 25, 50, 75 y 125 kg; CO₂ en 25 kg; y Espuma AFFF en 25L. Los modelos PQS se rigen por NOM-100-STPS y los de CO₂ por NOM-102-STPS; todos cuentan con programa de mantenimiento documentado conforme NOM-154-SCFI.',
     ],
-    heroBadges: ['NOM-100-STPS · NOM-102-STPS', 'NFPA 10 · NFPA 11', 'PQS ABC · CO₂ · AFFF', '25 · 50 · 75 · 125 kg', 'Descarga extendida', 'Industrial · Aeronáutico · Petroquímica'],
+    heroBadges: ['Fabricante Kidde', 'NOM-100-STPS · NOM-102-STPS', 'NFPA 10 · NFPA 11', 'PQS ABC · CO₂ · AFFF', '25 · 50 · 75 · 125 kg', 'Descarga extendida', 'Industrial · Aeronáutico · Petroquímica'],
     seoTitle: 'Extintores sobre Ruedas 25 a 125 kg — PQS, CO₂ y AFFF · México',
     seoDescription: 'Extintores sobre ruedas en México: PQS ABC 25/50/75/125 kg (NOM-100-STPS), CO₂ 25 kg (NOM-102-STPS) y Espuma AFFF 25L, con servicio NOM-154-SCFI.',
     stats: [

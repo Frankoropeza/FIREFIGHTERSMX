@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
-import { featuredProducts, type Product } from '@data/products';
+import { featuredProducts, fabricanteDe, type Product } from '@data/products';
 import { brandPages } from '@data/brandPages';
 import { categories } from '@data/categories';
 import { SITE, whatsappUrl, CANAL_CONTACTO } from '@config/site';
@@ -16,6 +16,9 @@ export function getStaticPaths() {
 interface Props { product: Product; }
 
 const { product } = Astro.props;
+/* Fabricante confirmado: sólo con él se afirma «distribuidor autorizado de …». */
+const fabricante = fabricanteDe(product);
+const esDistribuidor = Boolean(fabricante) && !product.suppressDefaultClaims;
 const canonicalURL = `${SITE.url}${product.href}/`;
 const categoryPath = product.href.split('/').slice(0, 3).join('/');
 
@@ -111,16 +114,18 @@ const certSentence = product.normClaim ?? (normaCertificada
   ? `Certificado bajo ${product.norm} por laboratorio acreditado — número de modelo y serie verificables directamente con el fabricante.`
   : 'Solicita la ficha técnica y la documentación de norma del modelo antes de especificarlo.');
 const introPara1 = `${product.description}${specSummary} ${certSentence}`;
-const introPara2 = product.dossierClaim ?? `Como distribuidores autorizados de ${product.brand ?? 'esta marca'} en México, entregamos el dossier documental completo para licitaciones públicas (CompraNet, IMSS, gobiernos estatales) y corporativas: ${normaCertificada ? `certificado de conformidad ${product.norm}, ` : ''}ficha técnica oficial en español, carta de distribuidor autorizado y manifiesto de cumplimiento de norma por partida. Stock permanente en CDMX con entrega en 24–48 h.`;
+const introPara2 = product.dossierClaim ?? (esDistribuidor
+  ? `Como distribuidores autorizados de ${fabricante} en México, entregamos el dossier documental completo para licitaciones públicas (CompraNet, IMSS, gobiernos estatales) y corporativas: ${normaCertificada ? `certificado de conformidad ${product.norm}, ` : ''}ficha técnica oficial en español, carta de distribuidor autorizado y manifiesto de cumplimiento de norma por partida. Stock permanente en CDMX con entrega en 24–48 h.`
+  : `Entregamos el dossier documental para licitaciones públicas (CompraNet, IMSS, gobiernos estatales) y corporativas: ${normaCertificada ? `certificado de conformidad ${product.norm}, ` : ''}ficha técnica en español y manifiesto de cumplimiento de norma por partida. Stock permanente en CDMX con entrega en 24–48 h.`);
 const heroParas = product.detailIntro ?? [introPara1, introPara2];
 
 const heroBadges = [
   product.norm,
-  product.brand,
+  fabricante,
   product.badge,
   product.tier,
   ...(!product.suppressDefaultClaims ? [
-    'Distribuidor autorizado MX',
+    ...(esDistribuidor ? ['Distribuidor autorizado MX'] : []),
     'Stock CDMX · 24–48 h',
     'Ficha técnica incluida',
     'Licitación pública / privada',
@@ -460,7 +465,7 @@ const seoNorm = product.norm
   ?.split(' · ')
   .filter((part) => !product.title.toLocaleLowerCase().includes(part.toLocaleLowerCase()))
   .join(' · ');
-const seoTituloLargo = `${product.title}${seoNorm ? ` ${seoNorm}` : ''} — ${product.brand ?? product.category}`;
+const seoTituloLargo = `${product.title}${seoNorm ? ` ${seoNorm}` : ''} — ${fabricante ?? product.brand ?? product.category}`;
 const seoTituloCorto =
   seoTituloLargo.length <= 70
     ? seoTituloLargo
@@ -497,7 +502,7 @@ const descBase = product.description.length >= 110
   : `${product.description} ${product.title}: especificaciones, ${product.norm ? `${product.norm}, ` : ''}ficha técnica y cotización en México.`;
 const seoDesc = (product.suppressDefaultClaims
   ? descBase
-  : `${product.description} Distribuidor autorizado ${product.brand ?? ''} en México. ${product.norm ?? ''} certificado con documentación completa para licitación.`
+  : `${product.description}${esDistribuidor ? ` Distribuidor autorizado ${fabricante} en México.` : ''} ${product.norm ?? ''} certificado con documentación completa para licitación.`
 ).replace(/\s+/g, ' ').trim().slice(0, 158);
 ---
 
@@ -542,7 +547,7 @@ const seoDesc = (product.suppressDefaultClaims
         {/* ── Columna izquierda ─────────────────────────────────────── */}
         <div>
           <span class="section-eyebrow mb-5 inline-flex">
-            {[product.brand, product.norm, product.tier].filter(Boolean).join(' · ')}
+            {[...new Set([fabricante, product.brand, product.norm, product.tier])].filter(Boolean).join(' · ')}
           </span>
 
           <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
@@ -554,7 +559,7 @@ const seoDesc = (product.suppressDefaultClaims
           <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
             {product.description}
             {!product.suppressDefaultClaims && normaCertificada && <> Certificado <strong style="color:#FFFFFF">{product.norm}</strong>.</>}
-            {!product.suppressDefaultClaims && ' Distribuidor autorizado en México.'}
+            {esDistribuidor && ` Distribuidor autorizado ${fabricante} en México.`}
           </p>
 
           <div class="flex flex-col sm:flex-row gap-3">
@@ -632,7 +637,7 @@ const seoDesc = (product.suppressDefaultClaims
                 ))}
               </div>
               <p class="text-[10px] mt-2 text-right" style="color:var(--forge-300)">
-                {product.category} · {product.brand ?? ''}{!product.suppressDefaultClaims && ' · Distribuidor autorizado México'}
+                {[product.category, fabricante ?? product.brand].filter(Boolean).join(' · ')}{esDistribuidor && ' · Distribuidor autorizado México'}
               </p>
             </div>
           )}
@@ -640,14 +645,14 @@ const seoDesc = (product.suppressDefaultClaims
           {/* Descripción + specs */}
           <div style="background:#040A12;border:1px solid rgba(74,117,153,0.18)">
             <div class="p-6 pb-0">
-              <span class="section-eyebrow mb-4 inline-flex">{product.norm ?? product.category} · {product.brand ?? 'Fabricante'}</span>
+              <span class="section-eyebrow mb-4 inline-flex">{[product.norm ?? product.category, fabricante ?? product.brand].filter(Boolean).join(' · ')}</span>
               <h2 class="font-display font-bold mb-5" style="color:#FFFFFF;font-size:clamp(1.5rem,3vw,2.25rem);line-height:1.1">
                 Descripción técnica <span style="color:#F75000">del equipo.</span>
               </h2>
               <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">{product.description}</p>
-              {!product.suppressDefaultClaims && (
+              {esDistribuidor && (
                 <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">
-                  Como distribuidor autorizado de {product.brand ?? 'esta marca'} en México, entregamos cada unidad con número de serie verificable{normaCertificada ? `, certificado de conformidad ${product.norm} con el número de laboratorio acreditado,` : ','} y documentación completa para licitación pública o proceso de compra corporativo.
+                  Como distribuidor autorizado de {fabricante} en México, entregamos cada unidad con número de serie verificable{normaCertificada ? `, certificado de conformidad ${product.norm} con el número de laboratorio acreditado,` : ','} y documentación completa para licitación pública o proceso de compra corporativo.
                 </p>
               )}
               <a href={whatsappUrl(`Hola, quiero la ficha técnica completa del ${product.title} (${product.norm ?? ''}) para evaluación.`)} target="_blank" rel="noopener" class="btn btn-ghost" style="margin-bottom:1.5rem">
@@ -787,7 +792,7 @@ const seoDesc = (product.suppressDefaultClaims
           {!product.suppressDefaultClaims && (
           <div style="background:#040A12;border:1px solid rgba(74,117,153,0.18)">
             <div class="px-6 py-4" style="border-bottom:1px solid rgba(74,117,153,0.18)">
-              <span class="section-eyebrow inline-flex">Distribuidor autorizado · Stock CDMX</span>
+              <span class="section-eyebrow inline-flex">{esDistribuidor ? 'Distribuidor autorizado · Stock CDMX' : 'Stock CDMX · Licitación'}</span>
             </div>
             <div class="p-6">
               <h2 class="font-display font-bold mb-3" style="color:#FFFFFF;font-size:clamp(1.25rem,2.5vw,1.875rem);line-height:1.1">
@@ -800,7 +805,9 @@ const seoDesc = (product.suppressDefaultClaims
                 {[
                   { svg: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>`, t: normaCertificada ? `Certificado ${product.norm}` : 'Documentación de norma', d: normaCertificada ? 'Laboratorio acreditado, verificable' : 'Ficha técnica del fabricante por modelo', color: '#34D399' },
                   { svg: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>`, t: 'Ficha técnica oficial', d: 'Datasheet en español del fabricante', color: '#60A5FA' },
-                  { svg: `<path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>`, t: 'Carta de distribuidor', d: 'FIREFIGHTERSMX distribuidor autorizado', color: '#F5A623' },
+                  esDistribuidor
+                    ? { svg: `<path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>`, t: 'Carta de distribuidor', d: `FIREFIGHTERSMX distribuidor autorizado ${fabricante}`, color: '#F5A623' }
+                    : { svg: '', t: 'Manifiesto por partida', d: 'Cumplimiento de norma por partida licitada', color: '#F5A623' },
                   { svg: `<path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>`, t: 'Garantía de fábrica', d: 'Refacciones y servicio directo con fábrica', color: '#A78BFA' },
                 ].map((d, i) => (
                   <div class="flex items-start gap-3 p-4" style={`background:${i % 2 === 0 ? '#060D18' : '#080F1A'};border-top:2px solid ${d.color}`}>
@@ -815,7 +822,7 @@ const seoDesc = (product.suppressDefaultClaims
                 ))}
               </div>
               <div class="flex flex-col sm:flex-row gap-3">
-                <a href={whatsappUrl(`Hola, necesito el dossier de licitación para el ${product.title} (${product.norm ?? ''}): certificado NFPA, ficha técnica y carta de distribuidor.`)} target="_blank" rel="noopener" class="btn btn-primary">
+                <a href={whatsappUrl(`Hola, necesito el dossier de licitación para el ${product.title} (${product.norm ?? ''}): certificado de norma, ficha técnica${esDistribuidor ? ' y carta de distribuidor' : ''}.`)} target="_blank" rel="noopener" class="btn btn-primary">
                   Solicitar dossier completo 
                 </a>
                 <a href="/cotizacion" class="btn btn-ghost">Cotización formal</a>
@@ -834,7 +841,7 @@ const seoDesc = (product.suppressDefaultClaims
             <div class="p-5">
               <p class="text-[10px] font-display font-bold uppercase tracking-widest mb-1" style="color:rgba(255,255,255,0.7)">Cotización inmediata</p>
               <p class="font-display font-bold text-base mb-3" style="color:#FFFFFF;line-height:1.2">{product.title}</p>
-              {product.norm && <p class="text-[10px] mb-4" style="color:rgba(255,255,255,0.75)">{product.norm}{!product.suppressDefaultClaims && ' · Distribuidor autorizado MX'}</p>}
+              {product.norm && <p class="text-[10px] mb-4" style="color:rgba(255,255,255,0.75)">{product.norm}{esDistribuidor && ' · Distribuidor autorizado MX'}</p>}
               <a href={whatsappUrl(`Hola, quiero cotizar el ${product.title}${product.norm ? ` (${product.norm})` : ''}. ¿Precio y disponibilidad?`)} target="_blank" rel="noopener"
                  class="block text-center text-sm font-display font-bold py-3 px-4 w-full hover:opacity-90"
                  style="background:#FFFFFF;color:#F75000">
@@ -1059,9 +1066,9 @@ const seoDesc = (product.suppressDefaultClaims
       <div class="container-site">
         <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
-            {!product.suppressDefaultClaims && (
+            {esDistribuidor && (
               <span class="text-[9px] font-bold uppercase tracking-widest block mb-1" style="color:var(--forge-300)">
-                Distribuidor autorizado en México
+                Distribuidor autorizado {fabricante} en México
               </span>
             )}
             <p class="font-display font-bold text-lg m-0" style="color:#FFFFFF">

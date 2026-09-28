@@ -3,7 +3,11 @@ export interface Product {
   title: string;
   description: string;
   category: string;
+  /** Grupo de catálogo: marca o, en líneas genéricas (PQS ABC, CO2, Red Hidráulica…), la línea. */
   brand?: string;
+  /** Fabricante real del modelo cuando `brand` es una línea genérica. Es el único
+   *  valor que habilita el claim «distribuidor autorizado de …». */
+  fabricante?: string;
   norm?: string;
   badge?: string;
   image?: string;
@@ -68,6 +72,13 @@ export interface Product {
   /** Si es el modelo estelar de la categoría */
   highlight?: boolean;
 }
+
+/** Valores de `brand` que nombran una línea de catálogo, no un fabricante. */
+export const LINEAS_GENERICAS = new Set(['PQS ABC', 'CO2', 'Especializados', 'Sobre Ruedas', 'Red Hidráulica']);
+
+/** Fabricante declarable de un producto; `undefined` si no hay fabricante confirmado. */
+export const fabricanteDe = (p: Product): string | undefined =>
+  p.fabricante ?? (p.brand && !LINEAS_GENERICAS.has(p.brand) ? p.brand : undefined);
 
 export const featuredProducts: Product[] = [
 
@@ -1109,6 +1120,7 @@ export const featuredProducts: Product[] = [
     description: "El extintor más compacto de la línea ABC. Diseñado para automóviles, motocicletas, lanchas y mochilas de emergencia. Bajo NOM-100-STPS — confiable a pesar de su tamaño.",
     category: "Extintores",
     brand: "PQS ABC",
+    fabricante: "Kidde",
     norm: "NOM-100-STPS · NFPA 10",
     badge: "Vehículos · Compacto",
     tier: "Portátil · Movilidad máxima",
@@ -1132,6 +1144,7 @@ export const featuredProducts: Product[] = [
     description: "Extintor portátil de polvo ABC para pequeñas oficinas, consultorías, locales comerciales y vehículos de carga ligera. Equilibrio óptimo entre capacidad de agente y facilidad de manejo.",
     category: "Extintores",
     brand: "PQS ABC",
+    fabricante: "Kidde",
     norm: "NOM-100-STPS · NFPA 10",
     badge: "Locales · Oficinas chicas",
     tier: "Uso general · Portable",
@@ -1155,6 +1168,7 @@ export const featuredProducts: Product[] = [
     description: "El extintor de mayor movilidad para fuegos clase A, B y C en comercios, oficinas y vehículos de servicio. Fácil de operar sin entrenamiento especializado. Bajo NOM-100-STPS.",
     category: "Extintores",
     brand: "PQS ABC",
+    fabricante: "Kidde",
     norm: "NOM-100-STPS · NFPA 10",
     badge: "Vehículos · Comercios",
     tier: "Uso general · Portable",
@@ -1178,6 +1192,7 @@ export const featuredProducts: Product[] = [
     description: "Extintor portátil de polvo ABC para establecimientos medianos: restaurantes, tiendas de autoservicio, clínicas y naves de manufactura ligera. Capacidad intermedia entre el estándar de 4.5 kg y el industrial de 9 kg.",
     category: "Extintores",
     brand: "PQS ABC",
+    fabricante: "Kidde",
     norm: "NOM-100-STPS · NFPA 10",
     badge: "Establecimientos medianos",
     tier: "Uso general · Comercial",
@@ -1201,6 +1216,7 @@ export const featuredProducts: Product[] = [
     description: "Extintor PQS ABC de 9 kg para fuegos clase A, B y C en bodegas, industria general, plantas de manufactura y programas institucionales de Protección Civil.",
     category: "Extintores",
     brand: "PQS ABC",
+    fabricante: "Kidde",
     norm: "NOM-100-STPS · NFPA 10",
     badge: "PQS ABC · 9 kg",
     tier: "Industria · Institucional",
@@ -1225,6 +1241,7 @@ export const featuredProducts: Product[] = [
     description: "Máxima capacidad en formato portátil para zonas industriales de alta carga de fuego: talleres mecánicos, plantas de pintura, almacenes de materiales inflamables y salas de compresores.",
     category: "Extintores",
     brand: "PQS ABC",
+    fabricante: "Kidde",
     norm: "NOM-100-STPS · NFPA 10",
     badge: "Industrial · Alta carga",
     tier: "Industrial · Carga de fuego alta",
@@ -1250,6 +1267,7 @@ export const featuredProducts: Product[] = [
     description: "El extintor CO₂ más compacto — ideal para pequeños tableros eléctricos, cajas de registro, mini servidores y equipos de telecomunicaciones. Cero residuo, sin daño a equipos delicados.",
     category: "Extintores",
     brand: "CO2",
+    fabricante: "Kidde",
     norm: "NOM-102-STPS · NFPA 10",
     badge: "Tableros pequeños",
     tier: "Alta especificación · Compacto",
@@ -1273,6 +1291,7 @@ export const featuredProducts: Product[] = [
     description: "Extintor CO₂ para oficinas de tecnología, cuartos de telecomunicaciones y salas de UPS. La capacidad más versátil de la línea CO₂ para ambientes con múltiples equipos activos.",
     category: "Extintores",
     brand: "CO2",
+    fabricante: "Kidde",
     norm: "NOM-102-STPS · NFPA 10",
     badge: "Oficinas TI · UPS",
     tier: "Alta especificación",
@@ -1296,6 +1315,7 @@ export const featuredProducts: Product[] = [
     description: "Extintor CO₂ para salas de servidores medianas, centros de datos secundarios y cuartos de switcheo. Mayor tiempo de descarga para cubrir áreas con múltiples puntos de ignición.",
     category: "Extintores",
     brand: "CO2",
+    fabricante: "Kidde",
     norm: "NOM-102-STPS · NFPA 10",
     badge: "Servidores · Switcheo",
     tier: "Alta especificación",
@@ -1319,6 +1339,7 @@ export const featuredProducts: Product[] = [
     description: "Para salas de servidores con alta densidad de equipos, centros de operaciones de red (NOC) y grandes cuartos de control industrial. Máximo tiempo de descarga en la línea portátil CO₂.",
     category: "Extintores",
     brand: "CO2",
+    fabricante: "Kidde",
     norm: "NOM-102-STPS · NFPA 10",
     badge: "Data center · NOC",
     tier: "Alta especificación · Premium",
@@ -1342,6 +1363,7 @@ export const featuredProducts: Product[] = [
     description: "Extintor CO₂ de 10 kg para instalaciones industriales y de TI. Extingue sin dejar residuo — no daña equipos ni superficies. Certificado NOM-102-STPS y NFPA 10.",
     category: "Extintores",
     brand: "CO2",
+    fabricante: "Kidde",
     norm: "NOM-102-STPS · NFPA 10",
     badge: "CO₂ · 10 kg",
     tier: "Alta especificación · Industrial",
@@ -1366,6 +1388,7 @@ export const featuredProducts: Product[] = [
     description: "La mayor capacidad disponible en formato portátil CO₂. Para plantas de proceso con áreas de alta concentración de equipos eléctricos y electrónicos, o como respaldo de sistemas fijos.",
     category: "Extintores",
     brand: "CO2",
+    fabricante: "Kidde",
     norm: "NOM-102-STPS · NFPA 10",
     badge: "Máxima capacidad portátil",
     tier: "Industrial · Gran instalación",
@@ -1391,6 +1414,7 @@ export const featuredProducts: Product[] = [
     description: "El extintor más ecológico del mercado para fuegos clase A: sólidos combustibles como madera, papel, cartón y tela. Sin productos químicos — el agente más limpio y de menor impacto ambiental.",
     category: "Extintores",
     brand: "Especializados",
+    fabricante: "Kidde",
     norm: "NOM-103-STPS · NFPA 10",
     badge: "Ecológico · Clase A",
     tier: "Archivo · Papelería · Clase A",
@@ -1414,6 +1438,7 @@ export const featuredProducts: Product[] = [
     description: "Extintor de espuma formadora de película acuosa (AFFF) para fuegos clase A y B. Sella la superficie del combustible formando una capa que impide la reignición — el más eficaz para hidrocarburos derramados.",
     category: "Extintores",
     brand: "Especializados",
+    fabricante: "Kidde",
     norm: "NFPA 11",
     badge: "Hidrocarburos · Clase A·B",
     tier: "Industrial · Líquidos inflamables",
@@ -1437,6 +1462,7 @@ export const featuredProducts: Product[] = [
     description: "Extintor de agua con aditivo anticongelante y potenciador de penetración para fuegos clase A de alta profundidad: pacas de papel, madera apilada, textiles compactados y residuos sólidos.",
     category: "Extintores",
     brand: "Especializados",
+    fabricante: "Kidde",
     norm: "NOM-103-STPS · NFPA 10",
     badge: "Clase A profundo",
     tier: "Especial · Clase A profundo",
@@ -1460,6 +1486,7 @@ export const featuredProducts: Product[] = [
     description: "El extintor de acetato de potasio para cocinas industriales medianas. Controla fuegos de aceites y grasas vegetales y animales a temperatura extrema — el PQS ABC es insuficiente para clase K.",
     category: "Extintores",
     brand: "Especializados",
+    fabricante: "Kidde",
     norm: "NFPA 10 · NFPA 96",
     badge: "Cocinas · Clase K",
     tier: "Riesgo especial · Cocina industrial",
@@ -1482,6 +1509,7 @@ export const featuredProducts: Product[] = [
     description: "El extintor Tipo K de mayor capacidad para grandes cocinas industriales: restaurantes de alta rotación, comedores industriales, cocinas de hospital y hoteles con cocina de producción.",
     category: "Extintores",
     brand: "Especializados",
+    fabricante: "Kidde",
     norm: "NFPA 10 · NFPA 96",
     badge: "Cocina premium · Alta carga",
     tier: "Riesgo especial · Gran cocina",
@@ -1505,6 +1533,7 @@ export const featuredProducts: Product[] = [
     description: "Extintor portátil de HFC-227ea (FM-200) para la protección local de equipos críticos: salas de servidores, racks de comunicación y cuartos de control. Extinción en segundos sin residuo.",
     category: "Extintores",
     brand: "Especializados",
+    fabricante: "Kidde",
     norm: "NFPA 2001 · UL 2129",
     badge: "Data center · Sin residuo",
     tier: "Alta especificación · TI crítica",
@@ -1530,6 +1559,7 @@ export const featuredProducts: Product[] = [
     description: "El extintor móvil de entrada para riesgos industriales moderados: talleres, almacenes medianos, patios de maniobras y áreas de carga y descarga. Mayor autonomía que cualquier portátil.",
     category: "Extintores",
     brand: "Sobre Ruedas",
+    fabricante: "Kidde",
     norm: "NOM-100-STPS · NFPA 10",
     badge: "Almacenes · Talleres",
     tier: "Industrial · Acceso fácil",
@@ -1553,6 +1583,7 @@ export const featuredProducts: Product[] = [
     description: "Para plantas de manufactura, bodegas de gran altura y zonas de producción con alta carga de fuego. La capacidad estándar en programas de protección industrial de nivel medio.",
     category: "Extintores",
     brand: "Sobre Ruedas",
+    fabricante: "Kidde",
     norm: "NOM-100-STPS · NFPA 10",
     badge: "Manufactura · Bodega",
     tier: "Industrial · Nivel medio",
@@ -1576,6 +1607,7 @@ export const featuredProducts: Product[] = [
     description: "Para plantas petroquímicas, refinerías, terminales de combustible y grandes naves industriales con almacenamiento de materiales de alta peligrosidad. Protección de alto nivel para riesgos severos.",
     category: "Extintores",
     brand: "Sobre Ruedas",
+    fabricante: "Kidde",
     norm: "NOM-100-STPS · NFPA 10",
     badge: "Petroquímica · Refinería",
     tier: "Industrial · Riesgo severo",
@@ -1599,6 +1631,7 @@ export const featuredProducts: Product[] = [
     description: "La máxima capacidad en PQS sobre ruedas para terminales aeroportuarias, plataformas offshore, helipuertos y refinerías de gran escala. El extintor móvil más potente del catálogo.",
     category: "Extintores",
     brand: "Sobre Ruedas",
+    fabricante: "Kidde",
     norm: "NOM-100-STPS · NFPA 10",
     badge: "Máxima capacidad",
     tier: "Industrial · Crítico · Aeropuertos",
@@ -1623,6 +1656,7 @@ export const featuredProducts: Product[] = [
     description: "Extintor móvil de CO₂ para zonas con alta concentración de equipos eléctricos y electrónicos: salas de transformadores, subestaciones, cuartos de máquinas CNC y áreas de proceso robotizado.",
     category: "Extintores",
     brand: "Sobre Ruedas",
+    fabricante: "Kidde",
     norm: "NOM-102-STPS · NFPA 10",
     badge: "Eléctrico · CO₂ móvil",
     tier: "Industrial · Alta especificación",
@@ -1646,6 +1680,7 @@ export const featuredProducts: Product[] = [
     description: "Extintor móvil de espuma AFFF para control de derrames de hidrocarburos e incendios clase B de gran superficie. Estándar en helipuertos, terminales de combustible y plantas petroquímicas bajo NFPA 11.",
     category: "Extintores",
     brand: "Sobre Ruedas",
+    fabricante: "Kidde",
     norm: "NFPA 11",
     badge: "Hidrocarburos · ARFF",
     tier: "Industrial · Aeronáutico",
