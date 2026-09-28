@@ -119,6 +119,16 @@ export const navigation: { main: NavItem[] } = { main: [
         ],
       },
       {
+        label: 'Rescate vertical y técnico',
+        href: '/productos/rescate-vertical',
+        description: 'Petzl · CMC · Ferno · cuerda, descenso y camillas',
+      },
+      {
+        label: 'Equipo para incendio forestal',
+        href: '/productos/equipo-forestal',
+        description: 'Council Tool · Truper · Indian · EPP forestal',
+      },
+      {
         label: "Cámaras Térmicas",
         href: "/productos/camaras-termicas",
         description: "FLIR, MSA Evolution, Bullard",

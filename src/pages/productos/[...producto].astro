@@ -43,17 +43,22 @@ const titleWords  = product.title.split(' ');
 const h1line1     = titleWords[0] ?? product.title;
 const h1line2     = titleWords.slice(1).join(' ');
 
-/* ── Related: same brand first, then same category ─────────────────────── */
-const relatedBrand = featuredProducts.filter(
-  (p) => p.slug !== product.slug && p.brand === product.brand && p.specs,
-).slice(0, 2);
-const relatedCat = featuredProducts.filter(
-  (p) =>
-    p.slug !== product.slug &&
-    p.category === product.category &&
-    p.specs &&
-    !relatedBrand.find((r) => r.slug === p.slug),
-).slice(0, 4 - relatedBrand.length);
+/* ── Related: misma marca primero, luego misma categoría ─────────────────
+   Selección rotativa a partir de la posición de la ficha: cada modelo enlaza a
+   los siguientes de su lista, así ninguno queda sin enlaces entrantes (antes se
+   tomaban siempre los primeros y los modelos al final de la lista quedaban
+   huérfanos). */
+const rotarDesde = <T,>(lista: T[], ancla: (x: T) => boolean): T[] => {
+  const i = lista.findIndex(ancla);
+  return i < 0 ? lista : [...lista.slice(i + 1), ...lista.slice(0, i)];
+};
+const mismaCategoria = featuredProducts.filter((p) => p.category === product.category && p.specs);
+const relatedBrand = rotarDesde(mismaCategoria.filter((p) => p.brand === product.brand || p.slug === product.slug), (p) => p.slug === product.slug)
+  .filter((p) => p.slug !== product.slug)
+  .slice(0, 2);
+const relatedCat = rotarDesde(mismaCategoria, (p) => p.slug === product.slug)
+  .filter((p) => p.slug !== product.slug && !relatedBrand.find((r) => r.slug === p.slug))
+  .slice(0, 4 - relatedBrand.length);
 const related = [...relatedBrand, ...relatedCat].slice(0, 4);
 
 /* ── Spec metadata: label + explanation + benchmark ────────────────────── */
@@ -64,7 +69,7 @@ const specMeta: Record<string, SpecMeta> = {
   outer:      { label: 'Shell exterior',    explica: 'Material de la capa externa del sistema de 3 capas. Determina resistencia al desgaste, agentes químicos y calor de contacto.' },
   weight:     { label: 'Peso total',        explica: 'Peso del conjunto completo de 3 capas. Incide directamente en la fatiga del bombero durante operaciones de larga duración.' },
   extra:      { label: 'Especificación',    explica: 'Característica adicional del fabricante relevante para la selección del modelo.' },
-  norma:      { label: 'Norma NFPA',        explica: 'Certificación vigente del equipo. NFPA 1970 para cascos estructurales; NFPA 1950 para incendios forestales; NFPA 1970 Proximity para ARFF.' },
+  norma:      { label: 'Norma',             explica: 'Norma bajo la que el fabricante certifica el casco: NFPA 1970 para estructural y proximidad, NFPA 1950 para forestal y rescate técnico, EN 443 para cascos europeos de estilo integral.' },
   material:   { label: 'Material carcasa',  explica: 'Material de la carcasa externa del casco. Fibra de vidrio ofrece máxima resistencia térmica; composite aramida/PP es más ligero; ABS es económico y durable.' },
   protector:  { label: 'Visera facial',     explica: 'Tipo de protector facial — retráctil integrado o abatible exterior. El integrado preserva el perfil de certificación NFPA y es de operación con una sola mano.' },
   suspension: { label: 'Suspensión',        explica: 'Sistema de suspensión y ajuste interno — define comodidad, absorción de impacto y distribución del peso sobre la cabeza del bombero.' },
@@ -144,6 +149,18 @@ const metaPorCategoria: Record<string, Record<string, Partial<SpecMeta>>> = {
   },
   'Equipos HAZMAT': { norma: NORMA_GENERICA, ideal: { label: 'Aplicación', explica: 'Escenarios para los que el fabricante orienta el equipo.' }, autonomia: { label: 'Batería', explica: 'Duración de la batería en operación continua, según el fabricante.' }, ip: { explica: 'Grado de protección IEC 60529 contra polvo y agua; relevante en descontaminación y lluvia.' } },
   'Sistemas CI':    { norma: NORMA_GENERICA },
+  'Rescate Vertical': {
+    norma:    NORMA_GENERICA,
+    material: { label: 'Material', explica: 'Materiales principales del equipo según el fabricante.' },
+    peso:     { label: 'Peso', explica: 'Peso publicado por el fabricante; cuenta en el equipo que se lleva al punto de anclaje.' },
+    fuerza:   { label: 'Carga y resistencia', explica: 'Carga de trabajo y resistencia de rotura publicadas por el fabricante; definen el margen de seguridad del sistema de rescate.' },
+    rango:    { label: 'Cuerda compatible', explica: 'Diámetros de cuerda con los que el fabricante certifica el dispositivo.' },
+  },
+  'Equipo Forestal': {
+    material:  { label: 'Material', explica: 'Materiales de la cabeza y del mango según el fabricante.' },
+    peso:      { label: 'Peso', explica: 'Peso publicado por el fabricante; en jornadas de línea de control influye directamente en la fatiga.' },
+    capacidad: { label: 'Capacidad', explica: 'Volumen del tanque o depósito según el fabricante.' },
+  },
   'Detectores de Humo': {
     sensor:  { label: 'Tecnología de detección', explica: 'Principio con el que el equipo detecta humo o CO: el fotoeléctrico responde mejor a fuegos latentes con humo visible; el sensor electroquímico mide monóxido de carbono.' },
     bateria: { label: 'Alimentación', explica: 'Fuente de energía y respaldo del detector; define el mantenimiento y la sustitución.' },
@@ -917,6 +934,16 @@ const seoDesc = metaCerrada(product.description, [
               </div>
             </div>
           </div>
+          )}
+
+          {/* Comparación rápida con modelos vecinos (enlazado contextual) */}
+          {related.length > 0 && (
+            <p class="text-sm m-0 px-1" style="color:#94A3B8">
+              Compáralo con:{' '}
+              {related.slice(0, 3).map((r, i) => (
+                <>{i > 0 && ' · '}<a href={`${r.href}/`} class="hover:text-[#FF6B26]" style="color:#FF6B26">{r.title.split(' — ')[0]}</a></>
+              ))}
+            </p>
           )}
 
           {/* Preguntas frecuentes del modelo */}
