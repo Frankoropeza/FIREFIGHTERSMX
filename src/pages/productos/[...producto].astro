@@ -77,6 +77,13 @@ const specMeta: Record<string, SpecMeta> = {
   netd:          { label: 'NETD (sensibilidad)', explica: 'Noise Equivalent Temperature Difference: la menor diferencia de temperatura que distingue el sensor. Un valor menor muestra más detalle en humo denso.' },
   rango_temp:    { label: 'Rango de medición', explica: 'Temperaturas que la cámara mide y representa; en combate interior importa que no se sature ante incendios desarrollados.' },
   pantalla:      { label: 'Pantalla', explica: 'Tamaño y tipo de pantalla; define la lectura con visor de SCBA y guantes.' },
+  agente:          { label: 'Agente extintor', explica: 'Sustancia que descarga el extintor; define las clases de fuego que atiende y si deja residuo.' },
+  rating:          { label: 'Clasificación de fuego', explica: 'Capacidad de extinción certificada por clase (A, B, C, K). Un número mayor indica mayor capacidad frente a esa clase.' },
+  tiempo_descarga: { label: 'Tiempo de descarga', explica: 'Duración de la descarga continua; determina cuánto tiempo tiene el operador para controlar el conato.' },
+  presion:         { label: 'Presión', explica: 'Presión de operación o de trabajo nominal publicada por el fabricante.' },
+  caudal:          { label: 'Caudal', explica: 'Flujo nominal de agua o agente; se contrasta con la demanda de la memoria de cálculo.' },
+  factor_k:        { label: 'Factor K', explica: 'Coeficiente de descarga del rociador: relaciona presión y caudal. Un K mayor entrega más agua a la misma presión.' },
+  sensores:        { label: 'Sensores', explica: 'Tecnología de cada sensor (electroquímico, catalítico, infrarrojo, PID) y gases que cubre.' },
   cert_lab:   { label: 'Lab. certificador', explica: 'Organismo independiente que realizó los ensayos de certificación. UL (Underwriters Laboratories) y SGS son los más aceptados en licitaciones mexicanas (CompraNet, IMSS, PEMEX).' },
   autonomia:  { label: 'Autonomía',         explica: 'Duración nominal del cilindro bajo demanda respiratoria estándar. NFPA 1970 exige que el sistema entregue el volumen declarado bajo condiciones certificadas.' },
   cilindro:   { label: 'Cilindro',          explica: 'Material y presión de trabajo del cilindro. Fibra de carbono ofrece menor peso; acero, mayor robustez mecánica y costo menor.' },
@@ -118,6 +125,8 @@ const metaPorCategoria: Record<string, Record<string, Partial<SpecMeta>>> = {
     ideal:     { label: 'Aplicación', explica: 'Operaciones para las que el fabricante orienta el equipo.' },
   },
   'Extintores': {
+    capacidad: { label: 'Capacidad', explica: 'Carga nominal de agente extintor; no es el peso total del equipo.' },
+    alcance:   { label: 'Alcance de descarga', explica: 'Distancia útil del chorro; define a qué distancia del fuego debe colocarse el operador.' },
     material:  { label: 'Material del cilindro', explica: 'Material del recipiente a presión del extintor.' },
     peso:      { label: 'Peso', explica: 'Peso del extintor cargado; determina quién puede operarlo y el soporte o gabinete que requiere.' },
     norma:     { label: 'Norma', explica: 'Norma de producto que ampara el extintor (NOM) y norma de selección e instalación (NFPA 10).' },
@@ -130,9 +139,10 @@ const metaPorCategoria: Record<string, Record<string, Partial<SpecMeta>>> = {
     norma: { label: 'Norma', explica: 'Norma bajo la que el fabricante certifica o declara el conjunto: NFPA 1970 para estructural y proximidad; NFPA 1950 para forestal y rescate técnico.' },
     outer: { explica: 'Material de la capa exterior: recibe llama, abrasión y calor de contacto. En conjuntos multicapa se combina con barrera de humedad y forro térmico.' },
   },
-  'Equipos SCBA':   { norma: NORMA_GENERICA },
-  'Equipos HAZMAT': { norma: NORMA_GENERICA, ideal: { label: 'Aplicación', explica: 'Escenarios para los que el fabricante orienta el equipo.' } },
+  'Equipos HAZMAT': { norma: NORMA_GENERICA, ideal: { label: 'Aplicación', explica: 'Escenarios para los que el fabricante orienta el equipo.' }, autonomia: { label: 'Batería', explica: 'Duración de la batería en operación continua, según el fabricante.' }, ip: { explica: 'Grado de protección IEC 60529 contra polvo y agua; relevante en descontaminación y lluvia.' } },
   'Sistemas CI':    { norma: NORMA_GENERICA },
+  'Señalización y Emergencia': { norma: NORMA_GENERICA },
+  'Equipos SCBA':   { norma: NORMA_GENERICA, peso: { label: 'Peso', explica: 'Peso del equipo según la configuración publicada por el fabricante.' } },
 };
 const metaDe = (k: string): Partial<SpecMeta> => ({ ...specMeta[k], ...(metaPorCategoria[product.category]?.[k] ?? {}) });
 

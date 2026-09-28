@@ -38,6 +38,13 @@ export interface Product {
     netd?: string;
     rango_temp?: string;
     pantalla?: string;
+    agente?: string;
+    rating?: string;
+    tiempo_descarga?: string;
+    presion?: string;
+    caudal?: string;
+    factor_k?: string;
+    sensores?: string;
     /* Cascos */
     norma?: string;
     material?: string;
