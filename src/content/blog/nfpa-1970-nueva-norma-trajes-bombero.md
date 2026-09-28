@@ -1,19 +1,18 @@
 ---
 title: "NFPA 1970: La Nueva Norma de Trajes para Bombero y Qué Significa para tu Compra"
 seoTitle: "NFPA 1970: la nueva norma de trajes para bombero"
-description: "La NFPA 1970:2024 reemplaza a la NFPA 1971. Calendario de cumplimiento, cambios clave en trajes estructurales y cómo afecta tus compras en México."
+description: "Fechas y alcance de NFPA 1970 (2025), norma que consolidó NFPA 1971, y cómo redactar una compra o licitación durante la transición."
 pubDate: 2026-06-02
+updatedDate: 2026-09-28
 author: "Ing. Carlos Mendoza"
 category: "Normatividad"
-tags: ["NFPA 1970", "NFPA 1971", "trajes bomberos", "normatividad"]
+tags: ["NFPA 1970", "trajes bombero", "licitaciones", "normatividad"]
 image:
   url: "/images/blog/blog-nfpa-1970-norma.avif"
-  alt: "Bombero con traje certificado NFPA 1970 — nueva norma de trajes estructurales México"
+  alt: "Conjunto estructural para bombero conforme a NFPA 1970"
 ---
 
-Si llevas algunos años en el sector, te acostumbraste a una palabra: 1971. La pedías en las bases, la buscabas en la etiqueta, la dabas por sentada. Esa palabra acaba de cambiar, y no es un tecnicismo menor. Desde septiembre de 2024 el traje estructural se compra bajo otra referencia —la **NFPA 1970**— y todavía me encuentro órdenes de compra y bases de licitación que citan la norma anterior como si nada hubiera pasado.
-
-El riesgo no es teórico. Una especificación desactualizada es la clase de detalle que un órgano de control señala en una auditoría, o que una aseguradora usa para objetar un siniestro. Vale la pena entender qué cambió antes de firmar tu próxima compra.
+NFPA 1970 (edición 2025) es la referencia vigente para el conjunto estructural y de proximidad que antes se identificaba principalmente como NFPA 1971. No basta con sustituir un número en una ficha: la norma consolidó cuatro documentos, reorganizó sus requisitos y dejó un periodo limitado para despachar equipo certificado bajo la edición 2018. Si una licitación aún dice “NFPA 1971 ed. 2018”, debe reconocer la transición y definir qué evidencia acepta.
 
 ## De cuatro normas a una sola
 
@@ -23,62 +22,84 @@ Estas son las cuatro normas que quedaron absorbidas:
 
 | Norma anterior | Qué cubría | Hoy |
 |---|---|---|
-| NFPA 1971 | Conjunto estructural: traje, casco, guantes, botas, capucha | Dentro de NFPA 1970 |
-| NFPA 1975 | Uniforme de estación / ropa de trabajo | Dentro de NFPA 1970 |
-| NFPA 1981 | Equipo de aire autónomo (SCBA) | Dentro de NFPA 1970 |
-| NFPA 1982 | Sistema de alerta personal (PASS) | Dentro de NFPA 1970 |
+| NFPA 1971 anterior | Conjunto estructural: traje, casco, guantes, botas, capucha | Consolidada dentro de NFPA 1970 |
+| NFPA 1975 anterior | Uniforme de estación / ropa de trabajo | Consolidada dentro de NFPA 1970 |
+| NFPA 1981 anterior | Equipo de aire autónomo (SCBA) | Consolidada dentro de NFPA 1970 |
+| NFPA 1982 anterior | Sistema de alerta personal (PASS) | Consolidada dentro de NFPA 1970 |
 
 Así que cuando alguien dice "traje certificado 1971", en realidad se refiere a la parte del conjunto estructural que ahora vive dentro de la NFPA 1970. La protección no se reinventó; se reorganizó y se endureció en puntos concretos.
 
-## Las fechas que de verdad importan
+## Fechas de la transición
 
-La transición fue escalonada a propósito, para que ni los fabricantes ni los compradores tuvieran que frenar su operación de un día para otro. Conviene tenerlas claras:
+NFPA emitió la edición 2025 el **29 de agosto de 2024** y la hizo efectiva el **18 de septiembre de 2024**. El programa de certificación permitió despachar producto certificado a NFPA 1971 edición 2018 hasta el **18 de marzo de 2026**. Esa fecha es una regla para el despacho de producto certificado, no una orden de retirar de inmediato el equipo que ya estaba en servicio.
 
-- **18 de septiembre de 2024** — entra en vigor la NFPA 1970.
-- **28 de septiembre de 2024** — todo producto **nuevo** fabricado desde esa fecha debe cumplir la 1970.
-- **28 de septiembre de 2025** — los trajes que aún se certificaban bajo 1971 ya debían estar bajo 1970.
-- **28 de marzo de 2026** — el SCBA antes conforme a 1981 debe cumplir la 1970.
+Por eso todavía puede haber etiquetas o expedientes legítimos que digan “NFPA 1971 ed. 2018”. En una compra nueva, pide al oferente que identifique la edición del certificado, la fecha de fabricación y la fecha de despacho. No conviertas una referencia histórica en una afirmación de certificación actual sin comprobarla.
 
-A mediados de 2026, todas esas fechas ya quedaron atrás. La regla práctica es simple: **cualquier traje que compres hoy como producto nuevo tiene que estar certificado bajo NFPA 1970**, con el respaldo de un laboratorio de tercera parte acreditado —UL, Intertek o SGS, normalmente.
+## Dónde quedó el traje estructural
 
-Ahora bien, una duda que escucho seguido en las estaciones: *"¿tengo que tirar los trajes que ya tengo?"*. No. La norma no obliga a retirar el equipo en servicio que fue certificado bajo la 1971:2018. Esos trajes siguen siendo válidos hasta el final de su vida útil. Lo que cambia es lo que puedes adquirir nuevo de aquí en adelante.
+La NFPA 1970 reunió NFPA 1971 (conjuntos estructurales y de proximidad), NFPA 1975 (ropa de trabajo), NFPA 1981 (SCBA de circuito abierto) y NFPA 1982 (PASS). Los requisitos del traje estructural y de proximidad se encuentran en los **capítulos 5 a 9**. Esa ubicación es útil para revisar que una ficha o un pliego hable del conjunto correcto y no de ropa de estación, SCBA o alarma personal.
 
-## Lo que realmente cambió en el traje
-
-Más allá del cambio de número, hay cinco modificaciones que sí se notan en el equipo que recibes.
-
-La más importante tiene nombre propio: **la capucha con bloqueo de partículas dejó de ser opcional**. Bajo la 1971:2018 era un extra que algunos departamentos pedían y otros no. Hoy es obligatoria, y por una buena razón: el cuello y la cara son la zona donde la piel absorbe más carcinógenos, porque el tejido de punto de una capucha tradicional deja pasar las partículas finas del humo. Esta sola actualización es, en términos de salud a largo plazo, la más relevante de toda la norma.
-
-El resto de los cambios apunta en la misma dirección —menos exposición, más durabilidad real:
-
-- **Camino hacia materiales libres de PFAS.** La norma abre criterios para que los fabricantes declaren productos sin "forever chemicals" y flexibiliza ciertos requisitos de la barrera de humedad para permitir membranas sin flúor.
-- **Limpieza y descontaminación reforzadas.** El traje debe poder descontaminarse de forma efectiva sin perder rendimiento; esto enlaza directo con la NFPA 1850 de cuidado y mantenimiento.
-- **Desempeño que dura.** Nuevos métodos de prueba verifican que el traje conserve su protección a lo largo de su vida útil, no solo el día que sale de fábrica.
-- **Transpirabilidad medida.** Se incorpora una prueba de *breathability*, porque el estrés por calor es un riesgo tan real como la llama.
+Entre los temas de la edición están la certificación independiente sobre sustancias restringidas —PFAS, metales pesados, retardantes bromados o clorados y ftalatos—, una etiqueta opcional para “PFAS (total fluorine) ≤ 100 ppm”, resistencia evaporativa (Ret) y requisitos de durabilidad. No conviene atribuir estos atributos a un modelo sin su documentación específica.
 
 ## NFPA 1971:2018 frente a NFPA 1970 de un vistazo
 
 | Criterio | NFPA 1971:2018 | NFPA 1970 |
 |---|---|---|
-| Capucha con barrera de partículas | Opcional | **Obligatoria** |
-| Declaración libre de PFAS | Sin criterio | Camino definido |
-| Limpiabilidad / descontaminación | Básica | Reforzada |
-| Retención de desempeño en vida útil | No evaluada explícitamente | Método de prueba nuevo |
-| Transpirabilidad | No exigida | Requisito nuevo |
-| Umbrales THL / TPP | THL ≥ 205 W/m², TPP ≥ 35 | Se mantienen como mínimos |
+| Referencia de certificación | NFPA 1971 (2018) | NFPA 1970 (2025) |
+| Conjunto estructural y de proximidad | Documento independiente | Capítulos 5 a 9 |
+| Despacho de producto certificado 2018 | Permitido durante transición | Hasta 18-mar-2026 |
+| TPP y THL del conjunto estructural | TPP ≥ 35; THL ≥ 205 W/m² | Se mantienen como mínimos |
 
 ## Cómo blindar tu próxima compra
 
 Cuando revises una cotización o redactes bases, no te quedes con la frase "cumple NFPA". Pide que la propuesta traiga, por escrito:
 
-1. El **certificado NFPA 1970** vigente del conjunto, con número verificable —no la simple mención.
-2. La **capucha con bloqueo de partículas** incluida como parte del conjunto.
-3. La **etiqueta de conformidad** cosida al traje, con norma, edición, fabricante y fecha de fabricación.
+1. El certificado del **conjunto** y la edición aplicable, con organismo de tercera parte y número verificable.
+2. La etiqueta de conformidad, fabricante y fecha de fabricación.
+3. La explicación de la equivalencia si el pliego conserva la expresión “NFPA 1971 ed. 2018”.
 4. La **hoja de datos** con los valores THL y TPP del modelo exacto que cotizan.
 5. Las **instrucciones de cuidado** conforme a NFPA 1850, porque de ellas depende la garantía y la vida útil.
 
-Esos cinco documentos separan a un proveedor serio de uno que solo está moviendo cajas.
+Como apoyo para redactar los requisitos, consulta [especificaciones de trajes para licitaciones](/blog/especificaciones-traje-bombero-licitaciones/), la [ficha de TrajesBombero México](/empresas/venta-equipo/ciudad-de-mexico/trajesbombero-mexico/) y el [catálogo de trajes](/productos/trajes-bombero/). Un modelo que ilustra cómo se identifica una familia de producto es [Globe G-XTREME 3.0](/productos/trajes-bombero/globe-gxtreme-3/).
 
 Al final, la NFPA 1970 no te pide aprender de nuevo tu oficio. Te pide actualizar una palabra en tus especificaciones y exigir una capucha que antes era opcional. Es poco esfuerzo a cambio de años de protección bien fundada para tu gente.
 
-¿Vas a renovar el equipo de tu brigada bajo la nueva norma? Revisa el [catálogo de trajes para bombero](/productos/trajes-bombero) certificados o [solicita una cotización](/cotizacion) con la especificación NFPA 1970 ya incluida. Y si quieres entender qué hay dentro del traje que estás por comprar, sigue con [Anatomía de un traje de bombero](/blog/anatomia-traje-bombero-capas-materiales).
+## Cómo redactar una cláusula de transición en una licitación
+
+Una convocatoria puede conservar la referencia histórica cuando necesita compatibilidad con inventarios o requisitos aprobados previamente, pero debe hacerlo con precisión. En lugar de solicitar solamente “NFPA 1971”, identifica el objeto de compra como conjunto estructural, establece la edición que corresponde al certificado que se aceptará y pide la documentación de transición. Así se evita que el postor ofrezca una declaración genérica de cumplimiento o que la evaluación descarte documentación válida sólo porque la etiqueta usa la nomenclatura anterior.
+
+Una redacción técnica debe separar tres conceptos: la norma solicitada, la edición y el organismo que certifica. También debe especificar que el certificado corresponde al conjunto terminado y a la configuración ofrecida. El shell, la barrera y el forro son una combinación: cambiar uno puede requerir otra evidencia de conformidad.
+
+| Elemento del pliego | Redacción verificable |
+|---|---|
+| Objeto | Conjunto estructural para combate de incendios |
+| Norma | NFPA 1970 (2025), o certificado NFPA 1971 edición 2018 dentro del periodo de transición documentado |
+| Evidencia | Listado o certificado de tercera parte, modelo y fabricante |
+| Configuración | Composite completo y accesorios incluidos |
+| Recepción | Etiqueta, fecha de fabricación, tallas y manual de cuidado |
+
+No es recomendable convertir el número de norma en una marca encubierta. Las especificaciones deben describir desempeño, documentación y uso previsto para permitir comparación entre propuestas que satisfagan el requisito. Los materiales se evalúan por la ficha de la configuración ofertada; no se debe asumir que “PBI”, “Nomex” o una membrana determinada equivalen a una certificación.
+
+El personal que recibe el equipo debe conservar el certificado, el manual y la fecha de fabricación en el control de inventario. La última fecha será necesaria para el programa de retiro de NFPA 1850. Cuando se requiera entrenamiento, mantenimiento o una reparación, sigue primero las instrucciones del fabricante y el procedimiento de la organización.
+
+Para revisar el contenido de la partida antes de publicarla, utiliza el [checklist de especificaciones de traje](/blog/especificaciones-traje-bombero-licitaciones/). Si la operación contempla más de un riesgo, compara [estructural, proximidad y forestal](/blog/traje-estructural-proximidad-forestal-diferencias/) en vez de intentar sustituirlos con un solo conjunto. El [catálogo de trajes para bombero](/productos/trajes-bombero/) sirve para ubicar las familias y fichas disponibles, sin sustituir la evidencia del fabricante.
+
+## Preguntas frecuentes
+
+### ¿Una etiqueta NFPA 1971 edición 2018 es necesariamente falsa?
+
+No. Fue la referencia anterior y el despacho de producto certificado bajo esa edición se permitió hasta el 18 de marzo de 2026. Revisa certificado, fabricación y despacho antes de decidir.
+
+### ¿Dónde se regula el traje estructural dentro de NFPA 1970?
+
+Los requisitos del conjunto estructural y de proximidad quedaron en los capítulos 5 a 9 de la edición 2025.
+
+### ¿Debo reemplazar el equipo que ya está en servicio sólo por el cambio de norma?
+
+El cambio de referencia no sustituye el programa de inspección y retiro. La vida útil y el cuidado se revisan bajo NFPA 1850 (2026), antes NFPA 1851 y 1852.
+
+## Fuentes
+
+- [NFPA 1970 — Standard Development (edición 2025)](https://www.nfpa.org/codes-and-standards/nfpa-1970-standard-development/1970)
+- [UL Solutions — transición a NFPA 1970](https://www.ul.com/news/nfpa-consolidates-firefighter-ppe-standards-new-nfpa-1970)
+- [NFPA 1850 — Standard Development (edición 2026)](https://www.nfpa.org/codes-and-standards/nfpa-1850-standard-development/1850)

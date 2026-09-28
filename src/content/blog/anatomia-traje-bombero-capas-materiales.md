@@ -1,14 +1,15 @@
 ---
 title: "Anatomía de un Traje de Bombero: Capas, Materiales y Marcas que Debes Exigir"
 seoTitle: "Traje de bombero: capas, materiales y marcas"
-description: "Las 3 capas del traje estructural, los materiales de cada una (Nomex, Kevlar, PBI, Gore Crosstech) y comparativa de marcas Globe, Lion y MSA Cairns en México."
+description: "Las tres capas del traje estructural, materiales publicados para cada una y cómo revisar el composite, TPP y THL antes de comprar."
 pubDate: 2026-05-08
+updatedDate: 2026-09-28
 author: "Ing. Carlos Mendoza"
 category: "Equipos EPP"
-tags: ["trajes bomberos", "materiales", "PBI", "Nomex", "marcas"]
+tags: ["traje estructural", "materiales", "PBI", "Nomex", "capas"]
 image:
   url: "/images/blog/blog-anatomia-capas-traje.avif"
-  alt: "Bombero con equipo estructural NFPA 1970 — anatomía y capas del traje de combate"
+  alt: "Capas exterior, barrera de humedad y forro térmico de un traje estructural"
 ---
 
 Dos trajes pueden estar colgados uno al lado del otro, verse idénticos, y proteger de manera radicalmente distinta. La diferencia casi nunca está en lo que se ve. Está en la composición de cada capa, en cómo están rematadas las costuras y en el balance que el fabricante decidió entre protección y confort. Quien aprende a leer esa anatomía deja de comprar por logotipo o por precio y empieza a comprar por desempeño.
@@ -35,7 +36,7 @@ No todos los materiales son intercambiables, y aquí es donde un proveedor hones
 | Barrera de humedad | Gore® Crosstech®, Crosstech® Black, Stedair® | Impermeabilidad con transpiración; Crosstech® Black suma protección CBRN |
 | Forro térmico | Caldura®, Glide®, acolchado PBI®/Kevlar® | Aislamiento térmico y confort |
 
-En la capa externa, el **PBI** (polibencimidazol) es el material de gama alta: soporta temperaturas extremas sin carbonizarse ni volverse quebradizo, aunque encarece notablemente el traje. El **Nomex®** es el caballo de batalla de la industria —excelente relación protección/precio y disponibilidad— y el más extendido en México. El **Kevlar®** rara vez va solo; aporta resistencia mecánica y suele tejerse junto al Nomex® para reforzar la trama frente a desgarros.
+PBI, Nomex y Kevlar aparecen en materiales publicados por sus fabricantes para prendas resistentes a la flama. Sus propiedades, proporciones y construcción dependen de la presentación comercial; consulta la hoja específica y no atribuyas precio, disponibilidad o desempeño del conjunto a una fibra aislada.
 
 ## THL y TPP: la balanza que define tu traje
 
@@ -49,7 +50,7 @@ Si solo te llevas dos números de este artículo, que sean estos. Resumen el ren
 | Máxima protección térmica | TPP alto | Más calor y peso (menos THL) |
 | Confort y menor estrés térmico | THL alto | Algo menos de margen térmico |
 
-Subir uno casi siempre baja el otro. Por eso, para la mayoría de las brigadas, el acierto no está en el extremo sino en el equilibrio: un TPP cómodamente sobre el mínimo y un THL alto que reduzca la carga cardiovascular en las operaciones largas. Cuando un proveedor te entrega los dos valores del modelo que cotiza, está hablando en serio. Cuando solo te dice "cumple la norma", apenas está empezando la conversación.
+TPP y THL deben revisarse en conjunto con el riesgo y los procedimientos operativos. El proveedor debe entregar los valores del modelo configurado, no sólo una afirmación general de cumplimiento.
 
 ## Los detalles que se pagan caros si faltan
 
@@ -57,14 +58,44 @@ Hay terminaciones que no aparecen en la ficha comercial pero que se sienten el d
 
 ## Las marcas que se consiguen en México
 
-| Marca | Modelos de referencia | Perfil | Dónde brilla |
-|---|---|---|---|
-| **Globe Manufacturing** (USA) | GX-7, G-Xtreme | Premium / alto desempeño | THL alto y materiales PBI de primera generación |
-| **Lion** (USA) | Janesville, V-Force | Equilibrio precio/protección | Buen confort y opciones CBRN |
-| **MSA / Cairns** (USA) | Cairns RS1, IST | Integración de conjunto | Compatibilidad con cascos MSA y refacciones en el país |
+| Fabricante | Modelo con ficha en el catálogo | Dato publicado para revisar |
+|---|---|---|
+| Globe / MSA | [Globe G-XTREME 3.0](/productos/trajes-bombero/globe-gxtreme-3/) | Configuración de shell según la ficha del modelo |
+| LION | [LION V-Force](/productos/trajes-bombero/lion-v-force/) | Mangas raglán e IsoDri; shell PBI Max según configuración |
+| Morning Pride | [Morning Pride TAILS](/productos/trajes-bombero/morning-pride-tails/) | Conjunto estructural publicado con referencia NFPA 1971 |
 
-No existe "la mejor marca" en abstracto, y desconfía de quien te la venda así. La elección correcta depende de tu presupuesto, del escenario que enfrenta tu gente y —algo que se subestima siempre— de qué tan fácil será conseguir refacciones y servicio en tu región dentro de tres años. Lo único universal es exigir certificación NFPA 1970 vigente y la hoja de datos con THL y TPP del modelo exacto.
+No existe una “mejor marca” en abstracto. La comparación debe partir del riesgo, el certificado o listado del conjunto, el composite, TPP, THL y las instrucciones de cuidado del modelo exacto. Cairns corresponde a cascos de MSA y no debe usarse como referencia de trajes.
 
 Aprender a leer un traje toma una tarde; comprar mal cuesta diez años de servicio. Mira la composición, los números y las costuras antes que la marca, y estarás protegiendo a tu gente y a tu presupuesto con el mismo gesto.
 
-Conoce el [Traje Estructural Globe G-XTREME 3.0 NFPA 1970](/productos/trajes-bombero/globe-gxtreme-3/) o el [catálogo completo de trajes](/productos/trajes-bombero). Si vas a comprar bajo la norma actual, empieza por [NFPA 1970: la nueva norma de trajes](/blog/nfpa-1970-nueva-norma-trajes-bombero); y para que esa inversión rinda su vida completa, sigue con [Inspección y vida útil del traje](/blog/inspeccion-cuidado-vida-util-traje-bombero).
+El nombre de un material no describe por sí mismo el desempeño del traje. PBI Matrix, PBI Max, mezclas Nomex/Kevlar, Kombat Flex, GORE CROSSTECH, STEDAIR, Caldura, Quantum3D y Glide son nombres de materiales o componentes publicados por sus fabricantes; Kombat Flex, en particular, es un shell de TenCate y no un traje. Pide siempre la configuración completa y no atribuyas la certificación de un conjunto a una capa suelta.
+
+Para comparar configuraciones, revisa [Globe G-XTREME 3.0](/productos/trajes-bombero/globe-gxtreme-3/), el [catálogo de trajes](/productos/trajes-bombero/) y [cómo cambió NFPA 1970](/blog/nfpa-1970-nueva-norma-trajes-bombero/). El cuidado posterior se explica en [inspección y vida útil](/blog/inspeccion-cuidado-vida-util-traje-bombero/).
+
+## Cómo leer una ficha de composite
+
+Al revisar una ficha, identifica primero los tres nombres comerciales: shell, barrera de humedad y forro térmico. Después confirma que esos componentes, en ese orden, son los que aparecen en la documentación de certificación del modelo. La misma prenda puede ofrecer configuraciones distintas; no traslades datos de una a otra. Pide también instrucciones de lavado y reparación, porque el mantenimiento de cada material puede variar. Esta revisión evita que una descripción de tela se convierta indebidamente en una promesa sobre el conjunto.
+
+## Preguntas frecuentes
+
+La ficha debe distinguir materiales de resultados. Un nombre comercial puede identificar una tela, una membrana o un forro, mientras que TPP y THL describen un composite preparado para ensayo. Esta diferencia evita comparar un dato de tela con un certificado de prenda completa.
+
+### ¿Una capa exterior PBI o Nomex acredita NFPA 1970?
+
+No. La certificación corresponde al conjunto terminado: shell, barrera de humedad, forro, confección y configuración identificada.
+
+### ¿Qué función tiene la barrera de humedad?
+
+Es la capa intermedia diseñada para limitar la entrada de líquidos y permitir el transporte de vapor conforme a sus especificaciones. Debe revisarse como parte del composite, no aisladamente.
+
+### ¿Puedo sustituir una capa por otra equivalente?
+
+Sólo conforme a instrucciones del fabricante y documentación de la configuración. Cambiar un componente puede modificar el desempeño del conjunto.
+
+## Fuentes
+
+- [NFPA 1970](https://www.nfpa.org/codes-and-standards/nfpa-1970-standard-development/1970)
+- [MSA — Globe G-XTREME 3.0](https://us.msasafety.com/p/gxtremeJacket)
+- [GORE — CROSSTECH](https://www.goretexprofessional.com/)
+- [PBI Performance Products](https://www.pbiproducts.com/)
+- [Arclin — Nomex](https://www.arclin.com/nomex/)
