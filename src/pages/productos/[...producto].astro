@@ -8,6 +8,8 @@ import { join } from 'node:path';
 import { brandPages } from '@data/brandPages';
 import { categories } from '@data/categories';
 import { SITE, whatsappUrl, CANAL_CONTACTO } from '@config/site';
+import RelatedLinks from '@components/common/RelatedLinks.astro';
+import { BLOG_POR_CATEGORIA, guiasPorCategoria } from '@lib/enlaces-directorio';
 
 export function getStaticPaths() {
   return featuredProducts.map((product) => ({
@@ -19,6 +21,9 @@ export function getStaticPaths() {
 interface Props { product: Product; }
 
 const { product } = Astro.props;
+const categoriaSlug = product.href.split('/').filter(Boolean)[1];
+const guiasBlog = await guiasPorCategoria(BLOG_POR_CATEGORIA[categoriaSlug ?? ''] ?? [], product.slug);
+const enlacesGuiaProducto = guiasBlog.map((post) => ({ href: `/blog/${post.id}/`, label: post.data.title }));
 /* Fabricante confirmado: sólo con él se afirma «distribuidor autorizado de …». */
 const fabricante = fabricanteDe(product);
 const esDistribuidor = Boolean(fabricante) && !product.suppressDefaultClaims;
@@ -1358,6 +1363,8 @@ const seoDesc = metaCerrada(product.description, [
       </div>
     </section>
   )}
+
+  <RelatedLinks ruta={product.href} enlacesExtra={enlacesGuiaProducto} />
 
 </BaseLayout>
 

@@ -1,13 +1,30 @@
 ---
 import { relacionados } from '@data/interlinking';
+import type { GiroKey } from '@data/giros';
+import { ANCLA_GIRO, giroDeCategoria } from '@lib/enlaces-directorio';
+
+type EnlaceExtra = { href: string; label: string; desc?: string };
 
 interface Props {
   ruta: string;
   titulo?: string;
+  giro?: GiroKey;
+  incluirDirectorio?: boolean;
+  enlacesExtra?: EnlaceExtra[];
 }
 
-const { ruta, titulo = 'Productos y servicios relacionados' } = Astro.props;
-const enlaces = relacionados(ruta);
+const { ruta, titulo = 'Productos y servicios relacionados', giro, incluirDirectorio = true, enlacesExtra = [] } = Astro.props;
+const categoriaDeRuta = ruta.split('/').filter(Boolean)[1];
+const giroResuelto = incluirDirectorio ? (giro ?? (categoriaDeRuta ? giroDeCategoria(categoriaDeRuta) : undefined)) : undefined;
+const enlaceDirectorio: EnlaceExtra[] = giroResuelto
+  ? [{ href: `/empresas/${giroResuelto}/`, label: ANCLA_GIRO[giroResuelto] }]
+  : [];
+const vistos = new Set<string>();
+const enlaces: EnlaceExtra[] = [...relacionados(ruta), ...enlaceDirectorio, ...enlacesExtra].filter((enlace) => {
+  if (vistos.has(enlace.href)) return false;
+  vistos.add(enlace.href);
+  return true;
+});
 ---
 
 {enlaces.length > 0 && (

@@ -4,6 +4,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import EmpresaCard from '@components/empresas/EmpresaCard.astro';
 import FichaVip from '@components/empresas/FichaVip.astro';
+import RelatedLinks from '@components/common/RelatedLinks.astro';
 import { SITE, whatsappUrl } from '@config/site';
 import { giroMap, planConfig, confianzaConfig, INDEXAR_FICHAS_BASICAS } from '@data/giros';
 import { allCategories } from '@data/categories';
@@ -11,6 +12,7 @@ import { estadoConEstaciones } from '@lib/estaciones';
 import { relEmpresa } from '@lib/rel-portafolio';
 import { todasLasEmpresas, enlacesParaFichaEmpresa, estadoMeta, urlEmpresa, colonia, type Empresa } from '@lib/empresas';
 import { urlsLineasDeEmpresa } from '@lib/lineas';
+import { guiasPara } from '@lib/enlaces-directorio';
 import type { GetStaticPaths } from 'astro';
 
 /*
@@ -69,6 +71,11 @@ const otrosGiros = e.giros.filter((x) => x !== e.giroPrincipal).map((x) => giroM
 const { cercanas, otrosGiros: otrasEmpresasEstado, nacionales: empresasNacionales } = await enlacesParaFichaEmpresa(e);
 const dirEst = await estadoConEstaciones(e.estado);
 const estaciones = dirEst ? dirEst.estaciones.filter((s) => s.ciudad === e.ciudad || s.municipio === e.municipio).slice(0, 4) : [];
+const guiasDirectorio = await guiasPara(e.giroPrincipal, e.slug);
+const enlacesGuiaDirectorio = [
+  ...(dirEst && dirEst.estaciones.length > 0 ? [{ href: `/estaciones/${e.estado}/`, label: `Estaciones de bomberos en ${edo.nombre}` }] : []),
+  ...guiasDirectorio.map((post) => ({ href: `/blog/${post.id}/`, label: post.data.title })),
+];
 const cats = allCategories.filter((c) => g.categoriasRelacionadas.includes(c.slug)).slice(0, 4);
 const hasMap = !!e.coordenadas;
 const fuentes = e.fuentes.map((f) => (typeof f === 'string' ? { nombre: f, url: f } : f));
@@ -383,6 +390,13 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
       </aside>
     </div>
   </section>
+
+  <RelatedLinks
+    ruta={urlEmpresa(e)}
+    titulo={`Guías y bomberos en ${edo.nombre}`}
+    incluirDirectorio={false}
+    enlacesExtra={enlacesGuiaDirectorio}
+  />
 
   {hasMap && (
     <Fragment>
