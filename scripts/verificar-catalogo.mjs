@@ -85,7 +85,7 @@ if (avisos.length) console.log(`  CATÁLOGO avisos → ${resumen(avisos)}`);
 if (ESTRICTO) fallos.push(...avisos);
 if (fallos.length) {
   console.error(`✗ CATÁLOGO: ${fallos.length} incumplimientos → ${resumen(fallos)}`);
-  for (const [c, r, d] of fallos.slice(0, 40)) console.error(`  ${c}  ${r}  ${d}`);
+  for (const [c, r, d] of [...fallos].sort((a, b) => a[0].localeCompare(b[0])).slice(0, 40)) console.error(`  ${c}  ${r}  ${d}`);
   process.exit(1);
 }
 console.log(`✓ CATÁLOGO: ${paginas.filter((p) => p.esModelo).length} fichas y ${paginas.length - paginas.filter((p) => p.esModelo).length} páginas de catálogo sin placeholders, claims de línea, metas cortadas ni imágenes ajenas`);
