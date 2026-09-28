@@ -74,6 +74,18 @@ export interface Product {
   /** Copy factual para fichas que no deben usar los claims institucionales por defecto. */
   detailIntro?: string[];
   suppressDefaultClaims?: boolean;
+  /** Guía de selección propia del modelo (párrafos). Hechos del fabricante y
+   *  explicación de norma o aplicación; nada inventado sobre el producto. */
+  seleccion?: string[];
+  /** Casos de uso propios del modelo (sustituyen a los genéricos de la categoría). */
+  idealPara?: string[];
+  aConsiderar?: string[];
+  /** Presentaciones, componentes o accesorios que publica el fabricante. */
+  incluye?: string[];
+  /** Preguntas frecuentes específicas del modelo (FAQPage). */
+  faqs?: { q: string; a: string }[];
+  /** Fuentes del fabricante que respaldan la ficha (hoja técnica, página oficial). */
+  fuentes?: { titulo: string; url: string }[];
   /** Tres características destacadas */
   features?: string[];
   /** Si es el modelo estelar de la categoría */

@@ -301,6 +301,12 @@ const useCases: UseCases = catUseCases[product.category] ?? {
     'Solicitar la ficha técnica completa y el certificado de conformidad antes de la compra',
   ],
 };
+/* Casos propios del modelo cuando existen; si no, los de la categoría. */
+const casos = {
+  si: product.idealPara?.length ? product.idealPara : useCases.si,
+  considera: product.aConsiderar?.length ? product.aConsiderar : useCases.considera,
+};
+const muestraAplicaciones = !product.suppressDefaultClaims || Boolean(product.seleccion?.length || product.idealPara?.length);
 
 /* ── Imágenes del modelo ────────────────────────────────────────────────
    Sólo fotografías del propio modelo. Si la imagen es la genérica de la
@@ -521,6 +527,14 @@ const productoConPrecio = product.precio
     }
   : null;
 
+const faqSchema = product.faqs?.length
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: product.faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+    }
+  : null;
+
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
@@ -581,7 +595,7 @@ const seoDesc = metaCerrada(product.description, [
   description={seoDesc}
   canonicalURL={canonicalURL}
   ogType="product"
-  schema={[productSchema, breadcrumbSchema, ...(productoConPrecio ? [productoConPrecio] : [])]}
+  schema={[productSchema, breadcrumbSchema, ...(productoConPrecio ? [productoConPrecio] : []), ...(faqSchema ? [faqSchema] : [])]}
 >
 
   {/* ══ BREADCRUMB ══════════════════════════════════════════════════════ */}
@@ -721,6 +735,14 @@ const seoDesc = metaCerrada(product.description, [
                   Como distribuidor autorizado de {fabricante} en México, entregamos cada unidad con número de serie verificable{normaCertificada ? `, certificado de conformidad ${product.norm} con el número de laboratorio acreditado,` : ','} y documentación completa para licitación pública o proceso de compra corporativo.
                 </p>
               )}
+              {product.incluye && product.incluye.length > 0 && (
+                <div class="mb-5">
+                  <p class="text-[10px] font-display font-bold uppercase tracking-widest mb-2" style="color:var(--forge-300)">Presentaciones y componentes</p>
+                  <ul class="m-0 pl-4 flex flex-col gap-1" style="color:#94A3B8">
+                    {product.incluye.map((x) => <li class="text-sm leading-relaxed">{x}</li>)}
+                  </ul>
+                </div>
+              )}
               <a href={whatsappUrl(`Hola, quiero la ficha técnica completa del ${product.title} (${product.norm ?? ''}) para evaluación.`)} target="_blank" rel="noopener" class="btn btn-ghost" style="margin-bottom:1.5rem">
                 Solicitar ficha técnica 
               </a>
@@ -806,7 +828,7 @@ const seoDesc = metaCerrada(product.description, [
           )}
 
           {/* Aplicaciones */}
-          {!product.suppressDefaultClaims && (
+          {muestraAplicaciones && (
           <div style="background:#040A12;border:1px solid rgba(74,117,153,0.18)">
             <div class="px-6 py-4" style="border-bottom:1px solid rgba(74,117,153,0.18)">
               <span class="section-eyebrow inline-flex">Cuándo es la opción correcta</span>
@@ -815,6 +837,9 @@ const seoDesc = metaCerrada(product.description, [
               <h2 class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.25rem,2.5vw,1.875rem);line-height:1.1">
                 Cuándo elegir <span style="color:#F75000">{nombreCorto}</span>
               </h2>
+              {product.seleccion?.map((p) => (
+                <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">{p}</p>
+              ))}
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-px" style="border-top:1px solid rgba(74,117,153,0.18)">
               <div style="background:#080F1A;border-top:3px solid #34D399">
@@ -822,9 +847,9 @@ const seoDesc = metaCerrada(product.description, [
                   <span class="text-[10px] font-display font-bold uppercase tracking-widest" style="color:#34D399">Ideal para</span>
                 </div>
                 <ul class="flex flex-col list-none m-0 p-0">
-                  {useCases.si.map((item, i) => (
+                  {casos.si.map((item, i) => (
                     <li class="flex items-start gap-2 px-5 py-3"
-                        style={`border-bottom:${i < useCases.si.length - 1 ? '1px solid rgba(74,117,153,0.08)' : 'none'}`}>
+                        style={`border-bottom:${i < casos.si.length - 1 ? '1px solid rgba(74,117,153,0.08)' : 'none'}`}>
                       
                       <span class="text-xs leading-relaxed" style="color:#94A3B8">{item}</span>
                     </li>
@@ -836,9 +861,9 @@ const seoDesc = metaCerrada(product.description, [
                   <span class="text-[10px] font-display font-bold uppercase tracking-widest" style="color:#F5A623"> A considerar</span>
                 </div>
                 <ul class="flex flex-col list-none m-0 p-0">
-                  {useCases.considera.map((item, i) => (
+                  {casos.considera.map((item, i) => (
                     <li class="flex items-start gap-2 px-5 py-3"
-                        style={`border-bottom:${i < useCases.considera.length - 1 ? '1px solid rgba(74,117,153,0.08)' : 'none'}`}>
+                        style={`border-bottom:${i < casos.considera.length - 1 ? '1px solid rgba(74,117,153,0.08)' : 'none'}`}>
                       
                       <span class="text-xs leading-relaxed" style="color:#94A3B8">{item}</span>
                     </li>
@@ -851,6 +876,37 @@ const seoDesc = metaCerrada(product.description, [
                 </div>
               </div>
             </div>
+          </div>
+          )}
+
+          {/* Preguntas frecuentes del modelo */}
+          {product.faqs && product.faqs.length > 0 && (
+          <div style="background:#040A12;border:1px solid rgba(74,117,153,0.18)">
+            <div class="p-6 pb-2">
+              <h2 class="font-display font-bold mb-4" style="color:#FFFFFF;font-size:clamp(1.25rem,2.5vw,1.875rem);line-height:1.1">
+                Preguntas frecuentes <span style="color:#F75000">sobre {nombreCorto}</span>
+              </h2>
+            </div>
+            <div class="px-6 pb-6 flex flex-col gap-px">
+              {product.faqs.map((f) => (
+                <details style="background:#080F1A;border:1px solid rgba(74,117,153,0.12)">
+                  <summary class="cursor-pointer px-4 py-3 font-display font-semibold text-sm" style="color:#FFFFFF">{f.q}</summary>
+                  <p class="px-4 pb-4 text-sm leading-relaxed m-0" style="color:#94A3B8">{f.a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+          )}
+
+          {/* Fuentes del fabricante */}
+          {product.fuentes && product.fuentes.length > 0 && (
+          <div class="px-1">
+            <p class="text-[10px] font-display font-bold uppercase tracking-widest mb-2" style="color:var(--forge-300)">Fuentes del fabricante</p>
+            <ul class="list-none m-0 p-0 flex flex-col gap-1">
+              {product.fuentes.map((s) => (
+                <li class="text-xs"><a href={s.url} target="_blank" rel="nofollow noopener" class="hover:text-[#FF6B26]" style="color:#94A3B8">{s.titulo}</a></li>
+              ))}
+            </ul>
           </div>
           )}
 
