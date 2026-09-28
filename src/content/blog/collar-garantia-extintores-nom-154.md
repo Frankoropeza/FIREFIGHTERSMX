@@ -76,6 +76,8 @@ Esta disciplina también evita dos errores comunes. El primero es confundir una 
 
 Cuando se modifique el riesgo del área —por ejemplo, por una remodelación, cambio de proceso o incorporación de una cocina— revisa además si el agente y la ubicación siguen correspondiendo a la clase de fuego. El collarín documenta el control de servicio, pero no sustituye el análisis de dotación ni la capacitación de quienes responderían a un conato.
 
+Para comparar prestadores del servicio, conviene revisar fichas verificadas del directorio. La de [Proyecto Red, en Tlalnepantla](/empresas/extintores/estado-de-mexico/proyecto-red/) reúne extintores, equipo para bomberos, sistemas y capacitación en una sola empresa, lo que ayuda a ver qué se contrata como mantenimiento y qué como venta de equipo nuevo.
+
 ## Preguntas frecuentes
 
 ### ¿NOM-154-SCFI-2005 certifica el extintor?

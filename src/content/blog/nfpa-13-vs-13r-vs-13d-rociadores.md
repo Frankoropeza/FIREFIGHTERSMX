@@ -105,6 +105,8 @@ Antes de iniciar obra, verifica que la versión de planos coincida con la memori
 
 Esta práctica no convierte un criterio residencial en uno comercial ni reemplaza una evaluación profesional. Su finalidad es mantener visible la razón por la que se eligió NFPA 13, 13R o 13D y las condiciones en que esa decisión sigue siendo aplicable.
 
+Si el proyecto ya está definido y buscas quién suministre componentes de red, la [ficha de GAMA de México en la Ciudad de México](/empresas/equipos-contra-incendio/ciudad-de-mexico/gama-de-mexico/) desglosa sus líneas de equipo contra incendio con normas de referencia, útil para contrastar lo que pide la norma con lo que ofrece un proveedor.
+
 ## Preguntas frecuentes
 
 ### ¿NFPA 13R es una NFPA 13 más barata?

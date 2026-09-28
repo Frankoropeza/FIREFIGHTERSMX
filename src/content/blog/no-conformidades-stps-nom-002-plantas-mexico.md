@@ -98,6 +98,8 @@ El tercer bloque es el equipo. Para cada extintor, confirma clase de fuego posib
 
 Finalmente, enlaza capacitación, brigada y simulacro. El programa anual debe indicar puestos, contenidos, duración, periodo y responsable. La asignación de brigada debe reflejar turnos y rotación; la planeación del simulacro se prepara por escrito; y el resultado debe registrar recursos, desviaciones y recomendaciones. Esta cadena permite corregir una desviación con una acción concreta, en vez de archivar documentos inconexos.
 
+Para cerrar hallazgos que requieren equipo o instalación —extintores faltantes, hidrantes o rociadores—, el directorio incluye fichas verificadas como la de [MESECI](/empresas/equipos-contra-incendio/ciudad-de-mexico/meseci/), con sedes en Benito Juárez (CDMX) y Tlalnepantla, que abarca extintores, equipamiento para bomberos y sistemas contra incendio.
+
 ## Preguntas frecuentes
 
 ### ¿La NOM-002 establece una lista de no conformidades frecuentes?

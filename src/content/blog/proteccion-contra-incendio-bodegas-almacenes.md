@@ -79,6 +79,8 @@ Antes de autorizar trabajos, pide que la propuesta indique:
 
 Una propuesta clara puede señalar que un dato está pendiente de confirmar. Lo que no debe hacer es convertir esa falta de información en una certeza técnica. Pide la actualización antes de comprar, especialmente si se trata de almacenamiento nuevo, expansión de racks, cambios de productos o ampliaciones de nave.
 
+Cuando la bodega requiere red hidráulica, hidrantes o gabinetes, conviene comparar proveedores con ficha verificada; la de [GAMA de México (CDMX)](/empresas/equipos-contra-incendio/ciudad-de-mexico/gama-de-mexico/) es un punto de partida para revisar líneas de producto y normas de referencia antes de pedir una propuesta.
+
 ## Preguntas frecuentes
 
 ### ¿Un cambio de inventario puede requerir una nueva evaluación?

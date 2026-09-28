@@ -93,6 +93,8 @@ También establece un procedimiento para cambios operativos. Una modificación d
 
 La memoria correcta no promete que un trámite será aprobado ni que un sistema cubrirá cualquier uso futuro. Su valor es otro: hacer visibles los criterios, las limitaciones y la evidencia con la que se diseñó la red. Esa trazabilidad es lo que permite revisar la instalación con rigor antes de que sea necesaria en una emergencia.
 
+Para proyectos en el Bajío, la [ficha de GAMA de México en Querétaro](/empresas/equipos-contra-incendio/queretaro/gama-de-mexico/) reúne sus líneas de equipo para redes contra incendio; tener a la mano las fichas técnicas del proveedor facilita alimentar la memoria de cálculo con datos del equipo que realmente se instalará.
+
 ## Preguntas frecuentes
 
 ### ¿La memoria de cálculo es lo mismo que el plano de rociadores?

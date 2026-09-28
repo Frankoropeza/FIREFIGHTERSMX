@@ -63,6 +63,8 @@ Antes de distribuir las unidades, confirma que cada ubicación prevista cuenta c
 
 Esa decisión debe comunicarse al personal responsable.
 
+Si la compra se hace con un proveedor de la zona metropolitana, la [ficha de Proyecto Red](/empresas/extintores/estado-de-mexico/proyecto-red/) muestra sus dos domicilios en Tlalnepantla y sus líneas de producto; con esos datos puedes pedir por escrito qué documentación entregará con cada unidad.
+
 ## Preguntas frecuentes
 
 ### ¿Qué hago si el extintor no coincide con la cotización?

@@ -79,6 +79,8 @@ El expediente técnico no debe terminar en el momento de la entrega. Conserva la
 
 Esta práctica también facilita una reposición futura: la entidad puede comparar la configuración anterior con una nueva necesidad sin confundir el modelo, la variante o la edición normativa. En equipos que se integran a un sistema existente, documentar compatibilidades desde la primera compra evita pedir una pieza que no pueda conectarse, instalarse o mantenerse conforme al proyecto.
 
+En licitaciones de industria pesada, los monitores de alto caudal suelen especificarse por caudal, presión, material y tipo de control. La [ficha de AQUEON México](/empresas/equipos-contra-incendio/ciudad-de-mexico/aqueon-mexico/) muestra cómo se documentan esos parámetros por modelo, incluidos requisitos de PEMEX y opciones ATEX, y sirve como referencia para redactar la partida.
+
 ## Preguntas frecuentes
 
 ### ¿Compras MX sustituyó a CompraNet?

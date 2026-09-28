@@ -71,6 +71,8 @@ Al final, confirma por escrito qué entregará el proveedor, qué dudas permanec
 
 Después, integra el documento en un [expediente documental de seguridad](/blog/expediente-documental-nom-002-stps-checklist/). Si el proyecto incluye rociadores, revisa también [qué debe documentar una memoria de cálculo hidráulico](/blog/memoria-calculo-hidraulico-rociadores-nfpa-13/). Estas piezas permiten que la cotización evolucione hacia un proyecto verificable en lugar de permanecer como una lista de artículos.
 
+Para preparar la visita, revisa antes la ficha del proveedor en el directorio: la de [Equipos Contra Incendio, en Miguel Hidalgo](/empresas/equipos-contra-incendio/ciudad-de-mexico/equipos-contra-incendio/), por ejemplo, detalla servicios, domicilio verificado y fuentes, lo que permite llegar a la reunión con preguntas concretas sobre alcance.
+
 ## Preguntas frecuentes
 
 ### ¿La visita técnica obliga a contratar al proveedor?

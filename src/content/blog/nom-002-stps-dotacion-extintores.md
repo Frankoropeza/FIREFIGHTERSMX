@@ -176,6 +176,8 @@ La dotación correcta de extintores es el sistema de protección contra incendio
 
 Para comparar familias de equipo, consulta el [catálogo de extintores](/productos/extintores/) y el [comparativo de PQS, CO₂ y tipo K](/blog/pqs-abc-vs-co2-vs-tipo-k-extintores/). Antes de decidir una compra, deja documentado el riesgo, las rutas de recorrido y el programa de revisión.
 
+Cuando el cálculo de dotación ya está hecho, el siguiente paso es cotizarlo. En el directorio, la [ficha de Equipos Contra Incendio (CDMX)](/empresas/equipos-contra-incendio/ciudad-de-mexico/equipos-contra-incendio/) combina venta de extintores, recarga y mantenimiento, detección y alarma y consultoría en NOM-002-STPS, un perfil útil cuando se quiere resolver dotación y servicio con el mismo proveedor.
+
 ## Preguntas frecuentes
 
 ### ¿Cuántos extintores exige NOM-002-STPS-2010?

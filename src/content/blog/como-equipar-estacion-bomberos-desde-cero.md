@@ -89,6 +89,8 @@ Reserva desde el proyecto un espacio para guardar EPP limpio y seco, cilindros y
 
 Crea un inventario con categoría, fabricante, modelo, número de serie o lote cuando exista, fecha de fabricación, persona o unidad asignada, condición y próxima acción de servicio. El inventario no reemplaza una inspección técnica; permite programarla y probar que una pieza se revisó conforme al programa definido. Cuando se dé de baja una prenda o componente, registra la razón y conserva el historial de sustitución.
 
+Para mangueras y accesorios de ataque, la [ficha de LGA Contra Incendios](/empresas/equipos-contra-incendio/queretaro/lga-contra-incendios/), con base en Querétaro, es de las más detalladas del directorio: desglosa su catálogo de mangueras por tipo de construcción, un buen ejemplo del nivel de detalle que conviene exigir al cotizar.
+
 ## Preguntas frecuentes
 
 ### ¿Qué se define antes de comprar el primer equipo?
