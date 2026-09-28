@@ -180,7 +180,7 @@ Para comparar familias de equipo, consulta el [catálogo de extintores](/product
 
 ### ¿Cuántos extintores exige NOM-002-STPS-2010?
 
-El numeral 7.17 establece un extintor por cada 300 m² o fracción en riesgo ordinario y uno por cada 200 m² o fracción en riesgo alto. La cantidad final también debe cumplir las distancias máximas de recorrido de la Tabla 1.
+La base es la superficie del numeral 7.17 (300 m² por extintor en riesgo ordinario y 200 m² en riesgo alto, redondeando la fracción hacia arriba); la cantidad final además debe cumplir las distancias máximas de recorrido de la Tabla 1.
 
 ### ¿A qué altura debe colocarse un extintor?
 

@@ -99,7 +99,7 @@ Si el riesgo principal son equipos eléctricos energizados o líquidos inflamabl
 
 ## ¿Cuántos extintores necesita una empresa según la NOM-002-STPS?
 
-El numeral 7.17 establece al menos un extintor por cada 300 m² de superficie o fracción en riesgo ordinario, y uno por cada 200 m² o fracción en riesgo alto. Además, deben corresponder a la clase de fuego y colocarse a una altura no mayor de 1.50 m desde el piso hasta la parte más alta del extintor.
+Para la cantidad, el numeral 7.17 fija una superficie máxima por extintor que es menor en riesgo alto que en riesgo ordinario; el cálculo completo está en la [guía de dotación](/blog/nom-002-stps-dotacion-extintores/). Además, deben corresponder a la clase de fuego y colocarse a una altura no mayor de 1.50 m desde el piso hasta la parte más alta del extintor.
 
 | Riesgo de incendio | A, C y D | B | K |
 |---|---:|---:|---:|

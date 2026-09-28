@@ -1,9 +1,9 @@
 ---
 title: "Expediente documental NOM-002: qué papeles necesitas tener listos antes de que llegue el inspector"
 seoTitle: "Expediente NOM-002-STPS: checklist de documentos"
-description: "Checklist del expediente NOM-002-STPS que revisa la STPS en plantas mexicanas. Qué documentos son obligatorios y cómo organizarlos antes de la inspección."
+description: "Checklist del expediente para acreditar NOM-002-STPS-2010: clasificación, plano, plan de emergencia, extintores, capacitación, simulacros y registros."
 pubDate: 2026-03-19
-updatedDate: 2026-06-25
+updatedDate: 2026-09-28
 author: "Ing. Marco García"
 category: "Auditoría NOM-002"
 tags: ["NOM-002-STPS", "expediente documental", "STPS", "protección civil", "auditoría"]
@@ -12,9 +12,7 @@ image:
   alt: "Carpeta con expediente documental NOM-002 para inspección STPS"
 ---
 
-Una planta en el parque industrial de Querétaro pasó su última inspección STPS sin una sola no-conformidad crítica. Sus extintores estaban vigentes, la señalización en orden, los detectores funcionando. Pero el factor que lo hizo posible no fue el hardware: fue una carpeta azul con 14 secciones bien organizadas que el supervisor entregó al inspector en los primeros dos minutos.
-
-Ese expediente no se armó el día de la visita. Se construyó con meses de anticipación.
+El expediente de la NOM-002 no es un formato único ni una carpeta con un número obligatorio de separadores. Es la manera práctica de reunir las evidencias que la norma pide exhibir cuando la autoridad laboral las solicite: clasificación de riesgo, plano, plan de emergencia, registros de extintores, capacitación y simulacros, entre otras que correspondan al centro de trabajo.
 
 La NOM-002-STPS-2010 no solo regula lo físico: la instalación de extintores, las salidas de emergencia, los sistemas de supresión. También exige que la empresa documente, conserve y tenga disponible en el centro de trabajo evidencia de que cumple con cada requisito. Sin los papeles, el cumplimiento físico no cuenta.
 
@@ -130,3 +128,28 @@ Los documentos físicos tardan días en conseguirse. Las constancias DC-3 de cap
 Revisamos tu expediente documental completo antes de que llegue la STPS. Identificamos los huecos, te ayudamos a conseguir los documentos faltantes y te entregamos el expediente organizado y listo para presentar. El servicio incluye revisión física del centro de trabajo.
 
 [Servicio de Auditoría NOM-002](/servicios/auditoria-seguridad)
+
+## Verificación cruzada del expediente
+
+Antes de archivar, compara nombres, fechas y ubicaciones entre documentos. La clasificación debe corresponder al centro y áreas descritas en el plano; el plan debe nombrar los recursos que aparecen en el inventario; la capacitación debe atender funciones de la brigada; y el simulacro debe usar el escenario y los procedimientos previstos. Una discrepancia puede señalar que cambió la operación o que el documento requiere actualización.
+
+Es útil conservar una relación de responsables, pero no convertirla en sustituto de los registros. Cada responsable debe poder ubicar la evidencia de su actividad y escalar una anomalía. Así, el expediente apoya el control cotidiano de riesgos, no sólo la preparación de una carpeta cuando se anuncia una visita.
+
+## Preguntas frecuentes
+
+### ¿La NOM-002 exige una carpeta con un número fijo de documentos?
+
+No. Exige documentos y registros concretos según el riesgo y las condiciones del centro. Organizar los archivos por bloques facilita exhibirlos, pero los separadores no son un requisito normativo.
+
+### ¿Qué contiene el registro mensual de extintores?
+
+Fecha, responsable, resultado de la revisión, anomalías y seguimiento. Debe formar parte del programa anual de revisión mensual previsto en los numerales 7.2 y 7.3.
+
+### ¿Qué se conserva del simulacro?
+
+La planeación por escrito y el registro de resultados con los elementos del numeral 10.3: áreas, personas, recursos, desviaciones, recomendaciones, duración y coordinadores.
+
+## Fuentes
+
+- [DOF — NOM-002-STPS-2010](https://dof.gob.mx/normasOficiales/4228/stps.htm)
+- [STPS — NOM-002-STPS-2010 en PDF](https://www.stps.gob.mx/bp/secciones/dgsst/normatividad/normas/nom-002.pdf)

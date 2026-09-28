@@ -1,9 +1,9 @@
 ---
-title: "Las 8 no-conformidades más frecuentes que encuentra la STPS en plantas mexicanas"
-seoTitle: "NOM-002-STPS: las 8 no conformidades más frecuentes"
-description: "Inspector STPS llega sin avisar. Estas 8 fallas NOM-002 son las que más multas generan en plantas de Monterrey, Querétaro y el Bajío."
+title: "NOM-002-STPS: incumplimientos que conviene revisar en una planta"
+seoTitle: "NOM-002-STPS: revisión de incumplimientos"
+description: "Revisión de incumplimientos físicos y documentales de la NOM-002-STPS-2010: rutas, extintores, plan, brigadas, simulacros y registros."
 pubDate: 2026-03-19
-updatedDate: 2026-06-25
+updatedDate: 2026-09-28
 author: "Ing. Marco García"
 category: "Auditoría NOM-002"
 tags: ["auditoría NOM-002", "STPS inspección", "no conformidades", "protección civil", "NOM-002-STPS"]
@@ -12,15 +12,11 @@ image:
   alt: "Inspector STPS revisando extintores en planta industrial mexicana"
 ---
 
-Son las 9:40 de un martes en una planta automotriz en San Luis Potosí. El supervisor de seguridad lleva dos semanas sin revisar el cuarto de extintores porque andaban en auditoría de calidad. Ese mismo día se presenta un inspector de la STPS con credencial y orden de visita. Treinta minutos después, el gerente de planta está firmando un acta de infracciones.
-
-Eso no es un caso raro. Es el patrón que veo repetirse en plantas del Bajío, Monterrey y el corredor industrial de Querétaro.
-
-La NOM-002-STPS-2010 es la norma que regula la prevención y protección contra incendios en los centros de trabajo. Tiene más de 15 años vigente y aun así las mismas 8 no-conformidades siguen apareciendo en acta tras acta. Te explico cuáles son y por qué siguen ocurriendo.
+La NOM-002-STPS-2010 regula la prevención y protección contra incendios en centros de trabajo. Esta revisión reúne condiciones que vale la pena contrastar con el texto de la norma antes de una evaluación interna o una visita de autoridad. No pretende sustituir una clasificación de riesgo, ni afirma una frecuencia oficial de hallazgos o un monto de sanción.
 
 ## 1. Extintores fuera de fecha o sin mantenimiento anual
 
-La norma es clara: cada extintor debe tener mantenimiento anual con empresa verificadora reconocida, y la constancia debe estar vigente. Lo que encuentran los inspectores con más frecuencia: etiquetas de mantenimiento vencidas desde hace 3, 6 o hasta 18 meses.
+La NOM pide mantenimiento al menos una vez al año, garantizado conforme a NOM-154-SCFI-2005, además de revisión mensual dentro de un programa anual. La recarga se hace después del uso y, si corresponde, como resultado del mantenimiento.
 
 El error operativo es dejarlo a criterio del almacenista o del supervisor de turno. Sin un sistema de control de vencimientos, nadie lo ve venir.
 
@@ -52,7 +48,7 @@ Un programa desactualizado no es una no-conformidad menor. Para el inspector, es
 
 ## 6. Brigada contra incendio sin entrenamiento documentado
 
-Tener una lista de brigadistas no es suficiente. La norma exige capacitación práctica con evidencia: constancias DC-3, listas de asistencia firmadas y registros de simulacros con evaluación.
+Tener una lista de brigadistas no es suficiente. La norma exige programa anual teórico-práctico y capacitación congruente con los riesgos y el plan. Una DC-3 puede respaldar capacitación laboral, pero no es un requisito que el texto de la NOM nombre de forma expresa.
 
 Lo que encuentro: listas de brigadistas con nombres de personas que ya no laboran en la planta, o constancias de capacitación con una empresa que no tiene registro ante STPS.
 
@@ -70,30 +66,11 @@ Esta es la que más sorprende a los gerentes: tener todo físicamente en orden p
 
 Qué debe tener ese expediente lo cubrimos en detalle en [Expediente documental NOM-002: qué papeles necesitas](/blog/expediente-documental-nom-002-stps-checklist).
 
-## El patrón detrás de las 8
+## Prioriza condiciones y evidencia
 
-La mayoría de estas no-conformidades no son fallas de ignorancia. Son fallas de sistema: nadie tiene asignada la responsabilidad de mantener actualizado cada elemento, y cuando llega la inspección, aparecen los huecos.
+La NOM-002 no publica una tabla de “ocho faltas más frecuentes”, ni permite asignar una multa o una criticidad fija a cada hallazgo. Prioriza lo que afecta la respuesta segura: rutas utilizables, equipos acordes al riesgo, alertamiento, capacitación vinculada al plan y registros de actividades reales. Después comprueba que cada medida tenga responsable, fecha y seguimiento.
 
-El cuadro siguiente resume la criticidad y la frecuencia que observo en auditorías previas a inspección STPS:
-
-| No-conformidad | Frecuencia | Nivel de sanción |
-|---|---|---|
-| Extintores vencidos | Muy alta | Moderado–alto |
-| Dotación incorrecta | Alta | Moderado |
-| Rutas obstruidas | Alta | Alto |
-| Sistema fijo sin doc | Media | Alto |
-| Programa desactualizado | Muy alta | Moderado |
-| Brigada sin constancias | Alta | Moderado |
-| Alarma sin prueba | Media | Alto |
-| Expediente incompleto | Muy alta | Moderado |
-
-## El criterio que importa antes de una inspección
-
-Si tienes que priorizar, ataca primero las que combinan alta frecuencia con nivel de sanción alto: rutas obstruidas, sistemas sin documentación y alarmas sin prueba de funcionamiento. Son las que más rápido escalan a multa y a paro de actividades.
-
-Las documentales (expediente, programa, constancias) las puedes resolver en días si tienes la información. Las físicas (dotación, mantenimiento) requieren gestión con proveedores certificados, lo que puede tomar semanas.
-
-No esperes la visita para descubrirlas.
+La falta de un documento no demuestra por sí sola que un equipo nunca recibió servicio, pero sí impide acreditarlo cuando la autoridad solicita evidencia. La corrección debe atender primero la condición física y conservar registros desde la actividad que efectivamente se realice; nunca se deben reconstruir bitácoras como si fueran anteriores.
 
 ---
 
@@ -110,3 +87,32 @@ No esperes la visita para descubrirlas.
 Realizamos auditorías previas a inspección STPS con revisión física del centro de trabajo, análisis del expediente documental y entrega de informe con hallazgos priorizados y plan de remediación. Si tienes una visita programada o quieres adelantarte a la siguiente, contáctanos.
 
 [Servicio de Auditoría NOM-002](/servicios/auditoria-seguridad)
+
+## Método de revisión antes de presentar evidencia
+
+Empieza por la clasificación de riesgo. Comprueba que conserva el inventario máximo del último año, superficie, número máximo de personas por turno, cálculo, fecha y responsable. Si aumentaron inventarios máximos de materiales o sustancias, el Apéndice A exige una nueva determinación. Esto evita evaluar una instalación modificada con una clasificación que ya no representa su operación.
+
+Después recorre la instalación con el plano actualizado. Verifica que muestre áreas de riesgo, detección, equipos, sistemas, rutas, salidas, lugares seguros, EPP de brigada y materiales de primeros auxilios. El recorrido permite detectar una diferencia común entre un plano correcto y una ruta que no puede usarse con la ocupación real o en el horario en que opera el área.
+
+El tercer bloque es el equipo. Para cada extintor, confirma clase de fuego posible, ubicación, recorrido, altura, señalización, accesibilidad, revisión mensual y mantenimiento. Para riesgo ordinario, el mínimo de dotación es un extintor por cada 300 m² o fracción; para riesgo alto, uno por cada 200 m² o fracción. Las distancias de recorrido también cambian por clase de fuego. Un inventario sin recorrido medido puede no demostrar que una persona llega al equipo a tiempo.
+
+Finalmente, enlaza capacitación, brigada y simulacro. El programa anual debe indicar puestos, contenidos, duración, periodo y responsable. La asignación de brigada debe reflejar turnos y rotación; la planeación del simulacro se prepara por escrito; y el resultado debe registrar recursos, desviaciones y recomendaciones. Esta cadena permite corregir una desviación con una acción concreta, en vez de archivar documentos inconexos.
+
+## Preguntas frecuentes
+
+### ¿La NOM-002 establece una lista de no conformidades frecuentes?
+
+No. La norma establece obligaciones y la evaluación de conformidad revisa evidencia respecto de ellas. Una lista interna debe usarse como guía de revisión, no como tabla oficial de infracciones.
+
+### ¿La DC-3 sustituye el programa anual de capacitación?
+
+No. La constancia individual puede respaldar capacitación, mientras que el programa anual de NOM-002 debe definir puestos, temas, duración, periodo y responsable.
+
+### ¿Qué evidencia corresponde a los extintores?
+
+El programa anual de revisión mensual, sus registros, mantenimiento al menos anual conforme a NOM-154-SCFI-2005 y recarga después del uso o cuando resulte del mantenimiento.
+
+## Fuentes
+
+- [DOF — NOM-002-STPS-2010](https://dof.gob.mx/normasOficiales/4228/stps.htm)
+- [STPS — NOM-002-STPS-2010 en PDF](https://www.stps.gob.mx/bp/secciones/dgsst/normatividad/normas/nom-002.pdf)

@@ -1,9 +1,9 @@
 ---
 title: "EPP de brigadista contra incendio: qué es obligatorio, qué es recomendado y qué es marketing"
 seoTitle: "EPP de brigadista contra incendio: qué es obligatorio"
-description: "Guía práctica del EPP para brigadistas industriales en México. Qué exige la NOM-002-STPS, qué conviene agregar y qué equipo no justifica su costo."
+description: "Cómo seleccionar EPP para brigadistas contra incendio desde el análisis de riesgos, conforme a NOM-002-STPS-2010 y NOM-017-STPS-2024."
 pubDate: 2026-03-20
-updatedDate: 2026-06-25
+updatedDate: 2026-09-28
 author: "Ing. Marco García"
 category: "Brigadas Empresariales"
 tags: ["EPP brigadas", "protección personal", "NOM-002-STPS", "brigadistas", "equipo contra incendio"]
@@ -12,11 +12,7 @@ image:
   alt: "Brigadista industrial con casco y equipo de protección personal contra incendio"
 ---
 
-En una planta industrial, un proveedor puede proponer cascos estructurales, trajes de proximidad, SCBA y botas de cuero con punta de acero para toda la brigada. La decisión no debe partir de un catálogo ni de la intención de cubrir todos los escenarios posibles: debe partir del análisis de riesgo y del alcance real de la brigada.
-
-Seis meses después, el equipo está en la bodega. Los brigadistas nunca recibieron entrenamiento para usar el SCBA, los cascos no caben en los casilleros y los trajes de proximidad son para acercarse a fuego radiante, no para el tipo de emergencias que ocurren en esa planta.
-
-Ese dinero no compró seguridad. Compró inventario.
+La decisión de EPP para una brigada no parte de un catálogo. Parte del análisis de riesgo, las funciones definidas en el plan de atención a emergencias y el alcance real de la respuesta. Adquirir protección que no corresponde al escenario o que nadie ha sido preparado para usar puede crear una falsa sensación de capacidad.
 
 La pregunta correcta no es "¿qué EPP existe para brigadistas?" sino "¿qué EPP necesita un brigadista industrial en México para las emergencias que realmente puede enfrentar?".
 
@@ -26,19 +22,11 @@ La norma no tiene un catálogo de EPP para brigadistas. Lo que establece es la o
 
 Esto significa que el EPP obligatorio varía por planta. No es una lista universal.
 
-Sin embargo, hay elementos que prácticamente ningún inspector cuestiona como mínimo en una brigada industrial:
-
-- Casco con protección facial (no necesariamente de bombero)
-- Guantes de protección térmica
-- Calzado de seguridad con protección al calor
-- Ropa de trabajo con retardancia al fuego (no necesariamente traje estructural)
-- Linterna o iluminación de mano
-
-Eso es el piso. Lo que va arriba depende del riesgo.
+La guía III de la NOM presenta componentes y características generales como referencia, pero no convierte sus piezas en una lista universal. Documenta el peligro, la exposición, la zona corporal, la función que se ejecutará y la protección seleccionada. Esa relación permite justificar casco, protección ocular o facial, guantes, calzado, ropa resistente a la flama, iluminación u otra pieza sólo cuando el riesgo y el procedimiento lo requieren.
 
 ## La diferencia entre brigadista industrial y bombero
 
-Esta distinción es fundamental y muchos proveedores la difuminan deliberadamente.
+Esta distinción es fundamental al definir el alcance de una respuesta.
 
 Un brigadista industrial tiene una sola función en un incendio: **combate inicial**. Eso significa actuar en los primeros segundos o minutos con el extintor portátil o la manguera de gabinete, antes de que el fuego escale. Si el conato se convierte en incendio declarado, el brigadista evacúa. No entra al edificio en llamas. No opera en ambiente IDLH (inmediatamente peligroso para la vida).
 
@@ -108,3 +96,29 @@ Para dimensionar cuántos brigadistas necesitas en tu planta antes de decidir qu
 Ayudamos a las plantas industriales a seleccionar el EPP correcto para su brigada, sin sobrevender ni dejar huecos de protección. El servicio incluye diagnóstico de riesgo, propuesta de equipo justificada y capacitación práctica para que el EPP se use bien.
 
 [Servicio de Brigadas Empresariales](/servicios/brigadas-empresariales)
+
+## Cómo pedir el EPP por escrito
+
+Solicita que la propuesta identifique el riesgo y la función que cubre cada pieza, sus instrucciones de uso, limitaciones, talla y mantenimiento. Evita comprar un conjunto bajo el rótulo genérico de “bombero” si el análisis sólo contempla control inicial y evacuación. El catálogo de [EPP para bomberos y brigadas](/productos/epp-bombero/) permite identificar categorías, mientras que la ficha de [TrajesBombero México](/empresas/venta-equipo/ciudad-de-mexico/trajesbombero-mexico/) ayuda a distinguir familias de prendas por operación.
+
+Para una brigada industrial, un [traje de brigadista](https://trajesbomberos.com/trajes/brigadista/) se debe cotejar contra la exposición real, no usarlo para justificar combate estructural. Si se especifica una fibra aramida, escribe el material y la construcción verificables; Nomex se refiere hoy como “Nomex (Arclin, antes DuPont)”. La selección no termina con la compra: requiere capacitación, inspección y reemplazo conforme a las instrucciones del fabricante y al sistema de gestión del EPP.
+
+## Preguntas frecuentes
+
+### ¿La NOM-002 publica una lista universal de EPP para brigadistas?
+
+No. El numeral 5.9 exige dotar EPP considerando las funciones y riesgos de las personas integrantes de la brigada. La selección, uso y manejo se atienden conforme a NOM-017-STPS-2024.
+
+### ¿Un traje estructural convierte a un brigadista en bombero estructural?
+
+No. El conjunto no amplía por sí mismo el alcance del plan, la capacitación ni los procedimientos. El trabajo en atmósfera peligrosa o condiciones que rebasan la respuesta inicial debe quedar fuera del alcance de quien no cuenta con preparación, equipo y organización para ello.
+
+### ¿Cuándo corresponde revisar la selección de EPP?
+
+Cuando cambian las funciones, procesos, sustancias, equipos, resultados de simulacros o condiciones de riesgo. La evaluación debe documentar el peligro, la parte del cuerpo expuesta y la protección seleccionada.
+
+## Fuentes
+
+- [DOF — NOM-002-STPS-2010, numeral 5.9 y guía III](https://dof.gob.mx/normasOficiales/4228/stps.htm)
+- [DOF — NOM-017-STPS-2024](https://dof.gob.mx/normasOficiales/9496/stps/stps.html)
+- [TrajesBombero México — trajes para brigadista](https://trajesbomberos.com/trajes/brigadista/)
