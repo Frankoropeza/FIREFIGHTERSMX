@@ -9,6 +9,11 @@ export interface Product {
    *  valor que habilita el claim «distribuidor autorizado de …». */
   fabricante?: string;
   norm?: string;
+  /** Número de parte o referencia del fabricante (schema `mpn`). */
+  mpn?: string;
+  /** Precio de referencia publicado en MXN. Sólo con él se emite Product + Offer
+   *  (Google invalida un Product sin precio, reseñas ni calificación). */
+  precio?: { valor: number; iva: 'incluido' | 'mas-iva'; vigenteHasta: string };
   badge?: string;
   image?: string;
   /** Fotografías adicionales DEL MISMO MODELO (nunca de otros modelos). */

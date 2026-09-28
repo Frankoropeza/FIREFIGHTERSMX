@@ -496,6 +496,31 @@ const productSchema = {
   publisher: { '@id': `${SITE.url}/#business` },
 };
 
+/* Product + Offer: se activa por ficha el día que tenga precio de referencia. */
+const productoConPrecio = product.precio
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'Product',
+      '@id': `${canonicalURL}#product`,
+      name: product.title,
+      description: product.description,
+      url: canonicalURL,
+      category: product.category,
+      ...(fabricante ? { brand: { '@type': 'Brand', name: fabricante } } : {}),
+      ...(product.mpn ? { mpn: product.mpn } : {}),
+      ...(product.image && !imagenEsReferencia ? { image: `${SITE.url}${product.image}` } : {}),
+      additionalProperty: specRows.map((s) => ({ '@type': 'PropertyValue', name: s.label, value: s.val })),
+      offers: {
+        '@type': 'Offer',
+        url: canonicalURL,
+        price: product.precio.valor,
+        priceCurrency: 'MXN',
+        priceValidUntil: product.precio.vigenteHasta,
+        seller: { '@id': `${SITE.url}/#business` },
+      },
+    }
+  : null;
+
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
@@ -556,7 +581,7 @@ const seoDesc = metaCerrada(product.description, [
   description={seoDesc}
   canonicalURL={canonicalURL}
   ogType="product"
-  schema={[productSchema, breadcrumbSchema]}
+  schema={[productSchema, breadcrumbSchema, ...(productoConPrecio ? [productoConPrecio] : [])]}
 >
 
   {/* ══ BREADCRUMB ══════════════════════════════════════════════════════ */}
