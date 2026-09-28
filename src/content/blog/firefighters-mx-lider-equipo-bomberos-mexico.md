@@ -1,19 +1,19 @@
 ---
-title: "FIREFIGHTERS MX: equipo bomberil certificado en México"
-description: "Cómo trabaja FIREFIGHTERS MX con cuerpos de bomberos, industria y gobierno para documentar equipo certificado NFPA y NOM."
+title: "FIREFIGHTERS MX: equipo para bomberos en México"
+description: "Cómo trabaja FIREFIGHTERS MX en la selección y documentación de equipo contra incendio para bomberos, industria y gobierno en México."
 pubDate: 2026-06-10
-updatedDate: 2026-06-10
+updatedDate: 2026-09-28
 author: "Lic. Ana Ramírez"
 category: "Empresa"
 tags: ["FIREFIGHTERS MX", "equipo para bomberos", "NFPA", "NOM", "México"]
 image:
   url: "/images/blog/blog-firefightersmx-lider.avif"
-  alt: "Bombero equipado con EPP certificado NFPA — FIREFIGHTERS MX"
+  alt: "Bombero con equipo de protección personal y casco"
 ---
 
-Hay una imagen que cualquiera que trabaje en este medio reconoce: el comandante que recibe un traje nuevo, lo voltea y busca la etiqueta cosida en el interior. Está comprobando que la certificación corresponda al modelo y esté vigente. Ese gesto resume nuestro trabajo mejor que cualquier folleto. Cuando alguien va a entrar a un incendio con ese traje puesto, esa etiqueta deja de ser un trámite.
+FIREFIGHTERS MX suministra equipo para bomberos, protección contra incendio y rescate en México. El punto de partida de una propuesta es identificar el riesgo, el modelo requerido, la configuración y los documentos que acompañarán la entrega. Esa información permite que el comprador compare opciones y conserve un expediente útil para operación, auditoría y servicio posterior.
 
-FIREFIGHTERS MX tiene más de 15 años trabajando con dependencias federales, estatales y municipales. De eso queremos hablar aquí: de quiénes somos, de cómo trabajamos y de cómo apoyamos a cuerpos de bomberos, brigadas industriales e instituciones de gobierno cuando necesitan documentar su equipo.
+La empresa tiene más de 15 años trabajando con dependencias federales, estatales y municipales, y ha equipado más de 500 estaciones. Esta página explica el alcance comercial confirmado de FIREFIGHTERS MX y los criterios que conviene revisar antes de adquirir equipo.
 
 ## No vendemos de todo. Vendemos esto.
 
@@ -27,18 +27,18 @@ México no es un solo país cuando se trata de incendios. La realidad de un cuer
 
 | Lo que tenemos | Lo que significa para ti |
 |---|---|
-| Cobertura en los 32 estados | El mismo respaldo técnico, sin importar el código postal |
-| Stock permanente en CDMX | Tallas y refacciones a la mano, sin esperar contenedores |
-| Red de distribuidores autorizados | Atención cercana, con respaldo nacional detrás |
+| Cobertura nacional | Atención a proyectos en los 32 estados |
+| Stock permanente en CDMX | Entrega en 24–48 horas para existencias disponibles |
+| Marcas con convenio | Productos del catálogo y documentación de soporte disponible |
 | Más de 15 años trabajando con dependencias | Experiencia con dependencias federales, estatales y municipales |
 
-Si quieres ver el alcance real, ahí está el detalle de nuestra [cobertura nacional](/cobertura) y de la red de [distribuidores autorizados](/distribuidores).
+La atención se coordina desde Av. Homero 229, Ciudad de México. Consulta la [cobertura nacional](/cobertura) y el [catálogo de productos](/productos/) para ubicar las categorías disponibles.
 
 ## Marcas del catálogo, producto original, sin asteriscos
 
-En este punto no hay matices que valga la pena discutir: trabajamos con marcas reconocidas a nivel internacional y entregamos producto original de fábrica. Punto. El equipo "equivalente", el reacondicionado que se vende como nuevo o la certificación que "ya casi sale" no entran a nuestro catálogo, porque cualquiera de esas tres cosas pone en riesgo a su personal y tumba un expediente de protección civil en cuanto alguien lo revisa con cuidado.
+FIREFIGHTERS MX es distribuidor autorizado de las marcas del catálogo y cuenta con servicio técnico autorizado. Al cotizar, pide que se identifique el modelo, variante, configuración, garantía y documentación disponible. La revisión debe centrarse en el producto realmente ofertado: un nombre comercial o una imagen no acreditan por sí solos una certificación.
 
-Entre las marcas que integramos están MSA, con equipos de respiración G1 y cascos Gallet F1 XF; Dräger, con la línea PSS 7000; 3M Scott y Air-Pak X3 Pro; Globe y Lion en trajes estructurales; Holmatro en herramienta de rescate vehicular; y Bullard y Cairns en cascos. La lista completa, con modelos y aplicaciones, vive en la página de [marcas](/marcas), y el [catálogo de productos](/productos) está organizado por categoría.
+Las marcas del catálogo incluyen MSA, Dräger, 3M Scott, Globe, LION, Holmatro, Bullard y Cairns, entre otras. La lista y sus aplicaciones se consultan en [marcas](/marcas/); para comparar criterios, revisa la guía de [marcas de equipo para bomberos](/blog/mejores-marcas-equipo-bomberos-mexico/).
 
 ## La confianza se documenta, no se promete
 
@@ -48,17 +48,17 @@ Es fácil decir "somos confiables". Lo importante es poder demostrarlo con papel
 
 | Línea de producto | Norma de referencia |
 |---|---|
-| Trajes estructurales | NFPA 1970 / cuidado NFPA 1850 |
-| Equipos SCBA | NFPA 1970 |
-| Trajes forestales | NFPA 1950 |
+| Trajes estructurales | NFPA 1970 (2025) / cuidado NFPA 1850 (2026) |
+| Equipos SCBA | NFPA 1970 (2025) |
+| Trajes forestales | NFPA 1950 (2025) |
 | Extintores portátiles | NOM-100 a NOM-103-STPS-1994 / NOM-154-SCFI-2005 |
 | Centros de trabajo | NOM-002-STPS-2010 |
 
-El detalle completo está en la sección de [certificaciones](/certificaciones).
+La documentación se revisa por modelo, configuración y uso previsto.
 
 ## Tres mundos distintos, el mismo respaldo
 
-Con los años aprendimos que a nuestra puerta llegan, en realidad, tres tipos de cliente muy diferentes. Están los cuerpos de bomberos municipales y estatales, que pelean por equipar bien a su gente dentro de presupuestos públicos y procesos de [licitación](/licitaciones) que no perdonan errores. Está la industria de alto riesgo (petróleo, química, energía, aeropuertos) que necesita brigadas listas para combate estructural, de proximidad o HAZMAT, y que encuentra en nuestras [industrias](/industrias) el enfoque que su operación exige. Y están las brigadas y empresas que arrancan un programa de protección civil desde cero y que, más que un proveedor, buscan alguien que las tome de la mano en el camino.
+Los proyectos pueden corresponder a cuerpos de bomberos, industria o brigadas que inician un programa de protección civil. Cada uno requiere identificar la exposición, la capacidad operativa y los documentos que acompañarán el equipo.
 
 A cada uno le hablamos en su idioma, pero a todos les entregamos lo mismo: equipo correcto, certificado y respaldado.
 
@@ -66,4 +66,43 @@ A cada uno le hablamos en su idioma, pero a todos les entregamos lo mismo: equip
 
 Si tuviéramos que resumirlo sin adornos: buscamos que la pieza corresponda al riesgo y que su documentación pueda revisarse en una auditoría. A veces significa recomendar algo distinto a lo que se pidió y, en otras, definir primero el riesgo antes de comprar. La propuesta técnica debe indicar el modelo, la certificación, los accesorios y las condiciones de servicio.
 
-¿Vas a equipar a tu cuerpo o brigada? [Pide una cotización](/cotizacion) y recibirás una propuesta técnica en menos de 24 horas, o [escríbenos](/contacto) para iniciar con una asesoría técnica.
+## Cómo se prepara una solicitud útil
+
+Para recibir una propuesta técnica en menos de 24 horas, comparte la aplicación, cantidad, destino, fecha requerida, requisición o bases si existen, y los documentos que debe presentar el proveedor. Si el proyecto es una licitación, agrega el número de procedimiento y las partidas. Si se trata de reemplazar una pieza, comparte la marca, modelo y datos de identificación del equipo instalado para revisar compatibilidad.
+
+La propuesta debe separar producto, accesorios, servicio y condiciones de entrega. Antes de aceptar, compara la ficha técnica, el alcance de garantía y la evidencia disponible para cada configuración. Para esa revisión consulta [fichas técnicas de licitación](/blog/fichas-tecnicas-compranet-equipo-contra-incendio/).
+
+## Qué se revisa antes de entregar una partida
+
+La recepción comienza con el documento que describe la oferta aceptada. La persona compradora debe comparar cantidad, modelo, configuración, accesorios y tallas contra ese documento, no contra una imagen de catálogo. Cuando el equipo tenga número de serie, lote o fecha de fabricación, esos datos se registran en el acta o en el inventario. La garantía, los manuales y la documentación técnica deben quedar ligados a la misma partida.
+
+En equipo de protección personal, la configuración del conjunto importa. Una referencia a un material o a una marca no sustituye la documentación del producto terminado. En equipos que requieren mantenimiento, aclara quién realizará el servicio, qué piezas pueden sustituirse y qué registro quedará de cada intervención. Esta revisión permite que una compra privada o pública continúe con un programa de uso y conservación verificable.
+
+También conviene separar lo que está incluido en una entrega de lo que sería un servicio posterior. Instalación, puesta en marcha, capacitación, pruebas, mantenimiento y refacciones pueden requerir alcances diferentes. Pedirlos por escrito evita que una cotización de producto se interprete como un contrato de servicio completo. Para una partida de licitación, estos campos se relacionan con la matriz de cumplimiento y los anexos que solicitan las bases.
+
+## Información comercial confirmada
+
+FIREFIGHTERS MX opera desde Av. Homero 229, Ciudad de México. Las existencias permanentes en CDMX tienen entrega de 24–48 horas; para artículos que requieren configuración, importación o servicio especializado, la propuesta debe indicar las condiciones específicas en vez de asumir el mismo plazo. La empresa emite CFDI 4.0 y puede estructurar una propuesta técnica en menos de 24 horas cuando recibe la información necesaria para revisar la solicitud.
+
+Estos datos no sustituyen la verificación de cada partida. Una compra responsable mantiene separadas las afirmaciones comerciales de la evidencia técnica del producto, como fichas, manuales, certificados, garantías y documentos de entrega. Esa separación permite que el área operativa revise el equipo con los criterios que corresponden a su riesgo.
+
+## Preguntas frecuentes
+
+### ¿FIREFIGHTERS MX es líder de equipo bomberil en México?
+
+No usamos ese superlativo como afirmación comercial. La empresa comunica datos verificables: más de 15 años de trabajo con dependencias, más de 500 estaciones equipadas, distribución autorizada de las marcas del catálogo y servicio técnico autorizado.
+
+### ¿Qué información debe tener una cotización?
+
+Modelo, configuración, cantidad, documentos disponibles, garantía, alcance de servicio y condiciones de entrega. Si es una compra pública, también debe relacionarse con cada requisito de las bases.
+
+### ¿Cuál es la dirección de FIREFIGHTERS MX?
+
+La atención se coordina desde Av. Homero 229, Ciudad de México. Para un proyecto, solicita una [cotización](/cotizacion/) o consulta la página de [contacto](/contacto/).
+
+## Fuentes
+
+- [NFPA 1970](https://www.nfpa.org/codes-and-standards/nfpa-1970-standard-development/1970)
+- [NFPA 1850](https://www.nfpa.org/codes-and-standards/nfpa-1850-standard-development/1850)
+- [NFPA 1950](https://www.nfpa.org/codes-and-standards/nfpa-1950-standard-development/1950)
+- [STPS — NOM-002-STPS-2010](https://www.stps.gob.mx/bp/secciones/dgsst/normatividad/normas/Nom-002.pdf)

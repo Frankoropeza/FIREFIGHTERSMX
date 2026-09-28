@@ -1,9 +1,9 @@
 ---
-title: "Casco y SCBA: El Problema de Compatibilidad Que Se Descubre Adentro del Incendio"
+title: "Casco y SCBA: compatibilidad que debes verificar antes del uso"
 seoTitle: "Compatibilidad de casco y SCBA en bomberos"
 description: "La certificación individual del casco y del SCBA no sustituye una prueba de compatibilidad. Cómo verificar el conjunto antes de una licitación en México."
 pubDate: 2026-02-10
-updatedDate: 2026-06-25
+updatedDate: 2026-09-28
 author: "FIREFIGHTERS MX"
 category: "Cascos NFPA"
 tags: ["casco SCBA", "compatibilidad EPP", "NFPA 1970", "máscara facial", "cascos bombero"]
@@ -20,7 +20,7 @@ Por eso la evaluación debe ocurrir antes de la recepción operativa, con el con
 
 ---
 
-## El Problema Que Creaste Cuando Compraste Por Separado
+## Por qué una compra por partidas necesita una prueba conjunta
 
 NFPA 1970, edición 2025, consolida requisitos antes contenidos en NFPA 1971, 1975, 1981 y 1982. La documentación de cada componente debe revisarse junto con el certificado aplicable al modelo ofrecido.
 
@@ -32,7 +32,7 @@ El expediente debe reunir certificados, instrucciones del fabricante y resultado
 
 ---
 
-## Dónde Ocurre la Incompatibilidad — La Anatomía del Problema
+## Puntos de contacto entre casco, pieza facial y arnés
 
 La interfaz crítica entre el casco y el SCBA está en una zona muy específica: el borde superior de la máscara facial y el borde inferior del casco — ya sea el ala frontal en los diseños americanos o la visera integrada en los europeos.
 
@@ -44,13 +44,13 @@ Cuánto espacio es suficiente depende de la geometría específica del casco y d
 
 ---
 
-## Máscaras de Perfil Tradicional vs Low-Profile — La Distinción que Cambia Todo
+## No presupongas compatibilidad por la forma de la máscara
 
 Las máscaras faciales de SCBA del mercado actual se dividen en dos familias geométricas:
 
 **Máscaras con geometría de mayor proyección:** algunos diseños pueden sobresalir más al frente o en la frente. La geometría no debe evaluarse por la familia comercial: debe revisarse con la pieza facial y el casco exactos que se ofrecerán.
 
-**Máscaras con geometría compacta:** algunas piezas faciales dejan distinta separación respecto del borde del casco. [3M Scott Air-Pak](/productos/equipos-scba/scott-air-pak), [MSA G1](/productos/equipos-scba/msa-g1) y Dräger PSS 7000 requieren confirmar la pieza facial, configuración y documentación correspondiente con el proveedor.
+**Máscaras con geometría compacta:** algunas piezas faciales dejan distinta separación respecto del borde del casco. 3M Scott Air-Pak X3 Pro, MSA G1 y Dräger PSS 7000 requieren confirmar pieza facial, configuración y documentación con el proveedor.
 
 Las licitaciones mixtas deben evitar asumir compatibilidad por la forma general del casco o el origen del diseño. Un cambio de casco, máscara, suspensión o talla exige repetir la prueba de la interfaz.
 
@@ -60,7 +60,7 @@ La secuencia correcta cuando actualizas equipo: primero define qué SCBA y qué 
 
 ---
 
-## Las Consecuencias de un Sello Comprometido — Por Qué No Puedes Asumir que el Bombero Lo Nota
+## Qué hacer cuando el ajuste no se conserva
 
 Un ajuste facial que no se mantiene en una atmósfera peligrosa debe tratarse como una condición que requiere corrección antes del uso. La brigada debe seguir el procedimiento de selección, colocación y verificación indicado por el fabricante:
 
@@ -74,7 +74,7 @@ La compatibilidad casco-SCBA es un criterio de selección y mantenimiento. Docum
 
 ---
 
-## Cómo Verificar la Compatibilidad — El Protocolo Que Debes Aplicar
+## Protocolo de verificación con la muestra ofertada
 
 La verificación de compatibilidad casco-SCBA es una prueba física, no un trámite documental. No existe certificado que la reemplace.
 
@@ -92,11 +92,11 @@ El procedimiento:
 8. Gira la cabeza a izquierda y a la derecha al máximo. Repite la verificación de sello.
 9. Realiza movimiento activo — caminar, agacharse y gatear según corresponda — y verifica que el casco no se desplace y que la máscara conserve el ajuste.
 
-Si el sello falla en cualquiera de estos pasos, la combinación es incompatible para uso en intervención. Sin excepciones.
+Si el ajuste no se conserva en alguno de estos pasos, no destines esa combinación a intervención hasta identificar la causa, aplicar la corrección autorizada y repetir la evaluación.
 
 ---
 
-## La Interferencia que Nadie Ve — La Cola de Pato y el Arnés del SCBA
+## Revisa también la parte posterior del casco
 
 Hay un segundo punto de interferencia a revisar: la parte posterior del casco y las correas del arnés del SCBA.
 
@@ -106,7 +106,7 @@ Según la talla, ajuste y configuración del equipo, la parte posterior del casc
 - La parte delantera baja
 - El ala frontal presiona el borde superior de la máscara
 
-El resultado es exactamente el mismo que con la interfaz directa ala-máscara: sello comprometido. Pero la causa es menos obvia porque el problema no está en el contacto directo entre el casco y la máscara — está en la interacción entre el casco y el arnés del SCBA que eventualmente afecta la máscara.
+La interacción posterior puede modificar la posición relativa de los componentes. Por ello se observa durante la prueba, sin asumir de antemano que un diseño de casco o arnés causará una falla.
 
 La inspección previa y posterior debe incluir correas, herrajes y puntos de contacto para identificar desgaste o necesidad de ajuste conforme a las instrucciones del fabricante.
 
@@ -114,7 +114,7 @@ La forma de detectarla es la prueba física completa — con el cilindro montado
 
 ---
 
-## Combinaciones a Verificar con el Fabricante — La Tabla que Debes Consultar Antes de Comprar
+## Matriz de combinaciones que se deben probar
 
 Cuando exista, una declaración de compatibilidad del fabricante es información útil para iniciar la revisión. Debe corresponder al modelo y configuración exactos y no sustituye la evaluación con la muestra ofertada.
 
@@ -122,22 +122,17 @@ Toma esto como punto de partida, no como sustituto de la prueba física en campo
 
 | Casco | SCBA / Máscara | Estado de compatibilidad | Observaciones clave |
 |---|---|---|---|
-| **[MSA Gallet F1 XF](/productos/cascos-nfpa/msa-gallet)** | MSA G1 SCBA / pieza facial compatible | Verificar con fabricante | Confirmar talla, suspensión y ajuste |
-| **MSA Gallet F1 XF** | MSA Advantage 3200 | Verificar con fabricante | Evaluar conjunto completo |
-| **Bullard USTM** | Scott Air-Pak / pieza facial compatible | Verificar con fabricante | Solicitar documentación del modelo |
-| **Cairns N6A** | Scott Air-Pak / pieza facial compatible | Verificar con fabricante | Probar con inclinación de cabeza |
-| **Cairns N6A** | MSA G1 / pieza facial compatible | Verificar con fabricante | Evaluar borde frontal y arnés |
-| **Dräger HPS 7000** | [Dräger PSS 7000](/productos/equipos-scba/drager-pss) / FPS 7000 | Verificar con fabricante | Confirmar configuración ofertada |
-| **Dräger HPS 7000** | 3M Scott Air-Pak / pieza facial compatible | Prueba de campo requerida | Sin afirmación de compatibilidad cruzada |
-| **Bullard FH Series** | Scott Air-Pak / pieza facial compatible | Verificar con fabricante | Evaluar muestra física |
-| **3M Scott ProStream** | Scott Air-Pak / pieza facial compatible | Verificar con fabricante | Confirmar documentación del conjunto |
-| **MSA Cairns XF** | MSA G1 / pieza facial compatible | Verificar con fabricante | Probar la configuración propuesta |
+| **[MSA Gallet F1 XF](/productos/cascos-nfpa/msa-gallet-f1xf/)** | MSA G1 / pieza facial de la configuración ofertada | Prueba y documentación requeridas | Confirmar talla, suspensión y ajuste |
+| **Bullard USTM** | Air-Pak X3 Pro / pieza facial de la propuesta | Prueba y documentación requeridas | Solicitar documentación del modelo |
+| **Cairns N6A** | MSA G1 / pieza facial de la propuesta | Prueba y documentación requeridas | Evaluar borde frontal y arnés |
+| **Dräger HPS 7000** | PSS 7000 / configuración ofertada | Prueba y documentación requeridas | Confirmar configuración ofertada |
+| **Cualquier casco de muestra** | SCBA existente o nuevo | Prueba de campo requerida | Registrar talla, visor y accesorios |
 
 La tabla funciona como una lista de revisión, no como autorización de uso. Para combinaciones de una o varias marcas, solicita la documentación aplicable y realiza una prueba física registrada.
 
 ---
 
-## El Checklist de Verificación Antes de Firmar la Licitación
+## Lista de revisión antes de adjudicar
 
 Puede aplicarse por el equipo técnico evaluador durante la aceptación de muestras. Debe integrarse con los requisitos internos y las instrucciones vigentes de los fabricantes.
 
@@ -166,7 +161,7 @@ Puede aplicarse por el equipo técnico evaluador durante la aceptación de muest
 
 ---
 
-## Cómo Especificarlo en las Bases de Licitación Mexicanas
+## Cómo reflejarlo en las bases de compra
 
 En procesos de adquisición pública o privada, la evaluación de compatibilidad casco-SCBA puede incluirse en las bases técnicas. El objetivo es vincular la documentación del equipo con una evaluación de la muestra.
 
@@ -178,7 +173,7 @@ En procesos de adquisición pública o privada, la evaluación de compatibilidad
 
 ---
 
-## La Diferencia Entre Equipo Certificado y Equipo que Funciona
+## La documentación y la prueba cumplen funciones distintas
 
 Termino con la distinción que da sentido a todo lo anterior:
 
@@ -194,7 +189,7 @@ La certificación individual de cada componente es el punto de partida. La prueb
 
 ---
 
-## Artículos relacionados
+## Recursos para completar la especificación
 
 - [Casco europeo vs americano: cómo elegir](/blog/casco-bombero-europeo-vs-americano) — cola de pato vs perfil bajo según tu operación
 - [MSA G1 vs Dräger PSS 7000](/blog/msa-g1-vs-drager-pss7000-scba) — criterios documentales para comparar configuraciones
@@ -202,8 +197,30 @@ La certificación individual de cada componente es el punto de partida. La prueb
 
 ---
 
-## Catálogos Cascos NFPA y Equipos SCBA en FIREFIGHTERS MX
+## Catálogos del conjunto
 
-La compatibilidad empieza por elegir una configuración documentada y probar el conjunto. Como distribuidor autorizado, podemos apoyar la revisión de certificados, fichas y muestras de casco y SCBA antes de la compra.
+La compatibilidad empieza por elegir una configuración documentada y probar el conjunto. El [catálogo de cascos](/productos/cascos-nfpa/) y el [catálogo de SCBA](/productos/equipos-scba/) ayudan a identificar los modelos que deben figurar en la muestra y el expediente de compra.
 
-[Guía de Cascos NFPA](/productos/cascos-nfpa) · [Guía de Equipos SCBA](/productos/equipos-scba) · [Solicitar cotización](/cotizacion)
+[Solicitar cotización](/cotizacion)
+
+## Preguntas frecuentes
+
+### ¿La certificación individual del casco prueba que sellará con cualquier máscara?
+
+No. La certificación y el manual sirven para comprobar el componente y su configuración. La interfaz con una pieza facial, casco, capucha y arnés requiere una evaluación de la combinación de servicio.
+
+### ¿Qué tallas deben incluirse en la prueba de aceptación?
+
+Las tallas representativas que utilizará la corporación. El acta debe identificar talla de casco, talla de pieza facial, visor, cubrenuca y versión del SCBA para que el resultado se pueda repetir al recibir el lote.
+
+### ¿Una carta del proveedor reemplaza la prueba física?
+
+No. La carta puede aportar información documental, pero no muestra cómo se comporta el conjunto puesto sobre una persona usuaria en los movimientos definidos por el procedimiento de la brigada.
+
+## Fuentes
+
+- [NFPA 1970 — Standard on Protective Ensembles](https://www.nfpa.org/codes-and-standards/nfpa-1970-standard-development/1970)
+- [NIOSH — respiradores aprobados](https://www.cdc.gov/niosh/npptl/topics/respirators/cel/default.html)
+- [MSA — aprobación G1 2025](https://docs.msasafety.com/g1scba2025cbrn/G1%202024%20CBRN%20PN%20TBD/NFPA_Approval_Information.htm)
+- [Dräger — PSS 7000 NFPA](https://www.draeger.com/en-us_us/Products/PSS-7000-NFPA)
+- [3M — Air-Pak X3 Pro](https://www.3m.com/3M/en_US/p/d/b5005672007/)

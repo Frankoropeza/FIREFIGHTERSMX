@@ -1,107 +1,118 @@
 ---
-title: "Memoria de cálculo hidráulico para rociadores: qué debe incluir para que tu DRO la apruebe"
-seoTitle: "Memoria de cálculo hidráulico de rociadores NFPA 13"
-description: "Una memoria de cálculo hidráulico incompleta paraliza tu permiso de construcción. Conoce los datos mínimos que exige el DRO para rociadores NFPA 13."
+title: "Memoria de cálculo hidráulico para rociadores: qué debe documentar"
+seoTitle: "Memoria de cálculo hidráulico para rociadores"
+description: "Qué debe documentar una memoria de cálculo hidráulico para rociadores: riesgo, suministro de agua, área de diseño, planos y pruebas de aceptación."
 pubDate: 2026-03-18
-updatedDate: 2026-06-25
+updatedDate: 2026-09-28
 author: "Ing. Marco García"
 category: "Instalación de Sistemas CI"
-tags: ["rociadores NFPA 13", "memoria de cálculo", "DRO", "sistemas contra incendio", "instalación CI"]
+tags: ["rociadores contra incendio", "cálculo hidráulico", "NFPA 13", "diseño hidráulico", "sistemas de agua"]
 image:
   url: "/images/servicios/instalacion-sistemas-ci.avif"
-  alt: "Memoria de cálculo hidráulico para sistema de rociadores NFPA 13 en planta industrial"
+  alt: "Plano y cálculo hidráulico de una red de rociadores contra incendio"
 ---
 
-## La memoria que paraliza obras (y cómo evitarlo)
+Una memoria de cálculo hidráulico explica por qué una red de rociadores puede entregar el caudal y la presión que su diseño requiere. No es una lista de materiales ni un plano isométrico: relaciona el riesgo protegido, el área de operación, los rociadores, la tubería, las pérdidas de presión y la fuente de agua. Para un sistema diseñado conforme a NFPA 13 (edición 2025), la memoria es una parte esencial del expediente técnico que permite revisar los supuestos antes de instalar.
 
-Un contratista general en Cuautitlán Izcalli, Estado de México, presenta los planos de rociadores de un centro de distribución al DRO. Tres semanas después llega la respuesta: rechazados. El motivo: la memoria de cálculo hidráulico no incluye el análisis del área de operación ni la curva de demanda del sistema.
+El documento también evita un error habitual: elegir bomba, tubería o rociadores primero y justificar después. El orden debe ser inverso. Se identifica el uso real del inmueble y los materiales presentes; se define el criterio de diseño aplicable; se modela el sistema con sus condiciones de suministro; y se documenta el resultado con planos, cálculos y notas de instalación. La autoridad, aseguradora o responsable de obra puede pedir entregables adicionales; confirma desde el inicio qué formato, firmas y anexos requiere el trámite específico.
 
-Resultado: 45 días de retraso en obra, penalización al contratista principal y un rediseño de emergencia que costó más del doble que haberlo hecho bien desde el inicio.
+## Qué demuestra una memoria hidráulica
 
-Lo he visto más veces de las que quisiera contar. Quince años instalando sistemas contra incendio en parques industriales del corredor Toluca-Cuautitlán y en desarrollos de la CDMX me han enseñado que la memoria de cálculo no es un trámite burocrático: es el documento técnico que determina si tu sistema realmente va a funcionar en una emergencia real.
+La red de rociadores no descarga toda al mismo tiempo. El cálculo estudia el conjunto de rociadores que representa el área de operación definida por el criterio de diseño. Para cada tramo se consideran el recorrido del agua, las elevaciones, el diámetro y material de la tubería, los accesorios, las válvulas y las demandas que se conectan al sistema. La suma permite conocer la presión y el caudal requeridos en un punto de referencia.
 
-Y cuando el DRO la rechaza, no rechaza un papel. Rechaza toda la lógica detrás del diseño.
+El resultado debe compararse con una fuente de abastecimiento que también esté documentada. Esa fuente puede ser una red pública, una cisterna con bomba contra incendio, un tanque o una combinación prevista para el sistema. No es válido copiar la presión de una visita anterior o suponer que una toma de agua tiene el mismo comportamiento en cualquier condición. Las mediciones, curvas o datos utilizados deben identificarse con fecha, método y responsable.
 
-## Qué es la memoria de cálculo hidráulico y qué no es
+La ecuación hidráulica de un rociador suele expresarse como `Q = K × √P`, donde Q es el caudal, K es el factor del rociador y P es la presión. Esta relación ayuda a entender por qué cambiar un modelo, un factor K o la presión disponible altera el diseño. No autoriza, por sí sola, a sustituir un rociador: la selección debe ser compatible con la aplicación, el listado y el cálculo completo.
 
-La memoria de cálculo hidráulico es el documento que demuestra, con números verificables, que el sistema de rociadores diseñado puede entregar la densidad de descarga requerida por NFPA 13 sobre el área de operación más desfavorable, con la presión disponible en el punto de conexión a la red.
+## Información de partida que no debe quedar implícita
 
-No es un resumen ejecutivo. No es una lista de componentes. No es el plano isométrico de la tubería.
+Una memoria revisable identifica el proyecto sin depender de la memoria de quien la elaboró. Como mínimo, conviene que exponga la información siguiente y que diga de dónde proviene:
 
-Es el soporte matemático completo del diseño: desde los datos de entrada hasta la verificación de que el sistema no va a colapsar hidráulicamente en el momento en que más lo necesitas.
+| Tema | Información que debe describirse | Por qué es relevante |
+|---|---|---|
+| Uso del inmueble | Actividades, ocupación y áreas protegidas | Define el riesgo y evita diseñar para un uso distinto al real |
+| Almacenamiento | Mercancía, empaque, altura y disposición, si aplica | Puede modificar el criterio de diseño y la selección de rociadores |
+| Geometría | Niveles, alturas, muros, plafones y zonas especiales | Afecta cobertura, elevación y recorrido de tubería |
+| Fuente de agua | Prueba, curva, tanque, bomba o condición de suministro | Permite comprobar que la demanda tiene respaldo real |
+| Equipo propuesto | Rociadores, válvulas, tubería, bombas y alarmas | Vincula el cálculo con piezas compatibles y documentadas |
+| Supuestos y exclusiones | Datos pendientes, límites de alcance y cambios que obligan a revisar | Evita que una inferencia se convierta en una condición de diseño oculta |
 
-Muchos ingenieros —sobre todo los que vienen del sector habitacional donde NFPA 13R tiene requerimientos más simples— confunden la memoria con el plano. Son documentos distintos que se complementan. El plano muestra dónde va cada elemento. La memoria demuestra por qué va ahí y cómo va a responder.
+El inventario debe ser preciso cuando el inmueble almacena o procesa productos. “Bodega general” no explica la carga de fuego, el tipo de empaque ni la forma de estiba. Si la operación planea cambiar mercancía, altura de almacenamiento o distribución, esa posibilidad debe registrarse para que la memoria no se use fuera de las condiciones con las que fue preparada.
 
-## Contenido mínimo de la memoria hidráulica según NFPA 13
+## Clasificación y área de operación
 
-Esta es la información que debe aparecer en tu memoria. Si falta cualquiera de estos puntos, el DRO tiene fundamento para rechazarla:
+NFPA 13 organiza los criterios de diseño según el tipo de ocupación y el peligro protegido. La memoria debe declarar el criterio empleado y mostrar cómo se relaciona con la operación del sitio. En proyectos complejos puede haber más de un riesgo: oficinas, proceso, almacenamiento, cuartos técnicos y áreas exteriores no siempre se resuelven con la misma densidad o con el mismo tipo de rociador.
 
-| Sección | Contenido requerido |
-|---|---|
-| Datos del proyecto | Clasificación de ocupación, dimensiones del área protegida, tipo de almacenamiento si aplica |
-| Clasificación de riesgo | Riesgo ordinario, extra o especial según NFPA 13 Capítulo 5 |
-| Área de operación | Superficie del área más desfavorable (mínimo 139 m² para riesgo ordinario grupo 2) |
-| Densidad de diseño | Densidad en mm/min conforme a la curva de densidad/área de NFPA 13 |
-| Selección de rociadores | K-factor, temperatura de operación, orientación (colgante/montante/lateral) |
-| Cálculo de caudal por rociador | Q = K × √P para cada rociador en el área de operación |
-| Cálculo de tubería | Velocidades, pérdidas por fricción (Hazen-Williams), pérdidas por accesorios |
-| Punto de diseño | Caudal total y presión requerida en la conexión al sistema de suministro |
-| Curva de demanda del sistema | Gráfica presión-caudal del sistema vs curva de suministro disponible |
-| Fuente de abastecimiento | Datos de presión estática y residual de la red municipal o cisterna con bomba |
-| Margen de seguridad | Verificación de que la curva de suministro supera la curva de demanda |
-| Software utilizado | Nombre y versión del programa de cálculo (HydraCALC, SprinkCAD, etc.) |
+El área de operación no se selecciona para que la bomba salga menor. Es la parte del sistema que se analiza como demandante bajo el criterio aplicable. El documento debe identificarla en planos y explicar por qué representa el caso hidráulicamente relevante: trayecto al suministro, elevación, número de rociadores, ramales y condiciones de descarga. Si hay varias alternativas posibles, la memoria debe mostrar la que gobierna o explicar por qué una queda descartada.
 
-Si tu proyecto está en un parque industrial del Bajío o en una nave en la zona norte del Estado de México, el DRO local puede pedir adicionalmente los datos de la red municipal de CONAGUA o la memoria de la cisterna y bombas de presurización. Tenlo listo.
+Aquí conviene separar dos conceptos que suelen mezclarse. La cobertura del rociador se refiere al espacio que el diseño le asigna; el área de operación se refiere al conjunto de rociadores que participa en el cálculo. Reducir uno no sustituye la revisión del otro. Un plano con rociadores bien distribuidos aún puede requerir cambios si la demanda hidráulica no corresponde a la fuente disponible.
 
-## Los dos errores que más rechaza el DRO
+## Rociadores, tubería y pérdidas de presión
 
-Después de revisar decenas de memorias rechazadas —propias y ajenas— los dos problemas que concentran la mayoría de los rechazos son siempre los mismos.
+Cada rociador debe estar identificado con la información que afecta el cálculo y la instalación: factor K, orientación, respuesta, temperatura nominal, tipo de cobertura y uso previsto. No atribuyas características de alta estiba a un modelo sólo por su nombre. La serie TY-B de Tyco, por ejemplo, incluye el TY315 como rociador vertical K-5.6 de cobertura y respuesta estándar; no es un rociador ESFR. La ficha del fabricante y el criterio de diseño deben coincidir.
 
-**Primero: el área de operación no se justifica.** El ingeniero escoge un área, hace los cálculos y entrega el documento. Pero no explica por qué ese es el área más desfavorable hidráulicamente. El DRO no puede asumir que el diseñador lo sabe: necesita verlo documentado. La selección del área de operación debe incluir el razonamiento: distancia al punto de suministro, elevación, cantidad de rociadores activos y distribución de la tubería.
+El cálculo sigue el flujo desde los rociadores seleccionados hasta la conexión con el suministro. La memoria debe indicar los diámetros y materiales de la tubería, los cambios de dirección, las válvulas, elevaciones y demás elementos que producen pérdidas. Según el método empleado, se documentan los coeficientes de fricción, las longitudes equivalentes u otros datos que permitan repetir la revisión. Es importante que el plano y el cálculo usen la misma nomenclatura: si un tramo cambia de diámetro en obra, debe evaluarse y no corregirse sólo con una nota manuscrita.
 
-**Segundo: la curva de demanda no aparece o está mal construida.** Este fue exactamente el caso del centro de distribución en Cuautitlán. El cálculo de los rociadores estaba bien hecho, pero el ingeniero no graficó la curva del sistema ni la comparó contra la curva de suministro disponible. Sin esa gráfica, es imposible demostrar que el sistema tiene el margen de seguridad requerido. El DRO no aprueba lo que no puede verificar.
+La red tampoco se limita a los ramales. El análisis debe incluir los colectores, montantes, válvulas y equipos entre el área calculada y la fuente de agua que afecten la demanda. Cuando se instala una bomba, su curva y sus condiciones de operación forman parte de la comprobación. NFPA 20 (edición 2025) es la referencia para la instalación de bombas estacionarias de protección contra incendio; no se debe especificar una bomba por caudal nominal sin revisar la curva y el sistema al que se conectará.
 
-Ambos errores tienen el mismo origen: confundir el cálculo con la memoria. Hacer los números en una hoja de cálculo es solo la mitad del trabajo. Documentar la lógica detrás de cada decisión es la otra mitad, y es la que aprueba el DRO.
+## Cómo leer la relación entre demanda y suministro
 
-## Cómo presentar la curva de demanda correctamente
+La memoria suele resumir el resultado mediante un punto de demanda y una comparación con la capacidad de suministro. El punto de demanda expresa el caudal y la presión que el sistema requiere en la condición calculada. La fuente de agua, por su parte, se representa con los datos de prueba o la curva de bomba que corresponde. Ambos deben usar el mismo punto de referencia y las mismas unidades.
 
-La curva de demanda del sistema es la representación gráfica de la relación entre el caudal total que requiere el sistema y la presión necesaria en el punto de conexión para entregarlo.
+La revisión busca confirmar que la fuente puede entregar la condición requerida por el sistema. Si se usa una red pública, hay que identificar la prueba de flujo y cualquier condición que afecte su uso. Si se usa tanque y bomba, se documentan la autonomía, la curva de equipo y los accesorios entre la descarga y la red. Si intervienen varias fuentes o una conexión a red existente, el alcance debe indicar cómo se coordinan.
 
-Se construye calculando el punto de diseño (Q total, P en conexión) y luego generando puntos adicionales variando el caudal. La curva resultante sube de izquierda a derecha: a mayor caudal requerido, mayor presión necesaria.
+No conviene describir esta comparación como un “margen garantizado” si los datos de suministro no lo acreditan. El informe debe permitir a un revisor ubicar el punto calculado, reconocer los datos de entrada y entender qué pasa si cambia la fuente. Si las pruebas disponibles son antiguas, incompletas o no representan la condición de operación, el proyecto debe resolver esa incertidumbre antes de instalar.
 
-Sobre esa curva se traza la curva de suministro disponible: los datos de presión estática y residual de la fuente de agua, que típicamente baja de izquierda a derecha. La intersección entre ambas curvas define la capacidad máxima del sistema.
+## Planos y anexos que vuelven auditable el cálculo
 
-Para que el DRO apruebe, la curva de suministro debe quedar por encima y a la derecha del punto de diseño del sistema. Si se cruzan antes, el sistema no tiene agua suficiente para operar correctamente.
+Una memoria aislada es difícil de revisar. Debe acompañarse de planos que permitan asociar cada número con el sistema físico. El nivel de detalle depende del proyecto, pero un expediente técnico normalmente necesita identificar áreas protegidas, ubicación de rociadores, diámetros, nodos o tramos de cálculo, válvulas de control, conexiones, fuente de agua, elevaciones y equipos de bombeo cuando existan.
 
-En proyectos con red municipal —frecuente en desarrollos habitacionales en CDMX y en algunos parques industriales con toma directa— los datos de presión los debe proporcionar SACMEX o la empresa operadora local. No uses datos asumidos. El DRO los va a verificar.
+Incluye la lista de materiales o especificaciones sólo cuando corresponda al alcance, y cuida que sea consistente con el cálculo. Si el diseño cita un rociador, no debe terminar instalado otro de distinto factor K o respuesta sin una revisión formal. También conviene anotar las condiciones que se verifican en obra: alturas reales, obstrucciones, tipo de plafón, distribución de almacenamiento, accesos a válvulas y señalización de equipos.
 
-## Antes de entregar: lista de verificación del ingeniero
+Los anexos pueden incluir resultados de pruebas de agua, curvas de bomba, fichas técnicas, listados de equipo, datos de software si se utilizó, hojas de cálculo y la identificación del responsable del diseño. El software puede agilizar operaciones, pero no sustituye la revisión de entradas. Una salida impresa es confiable sólo si representa el inmueble, los materiales y los equipos que realmente se instalarán.
 
-Antes de firmar y entregar la memoria al DRO, revisa que puedas responder sí a cada uno de estos puntos:
+## Revisión antes de entregar o construir
 
-- [ ] ¿Está documentada la clasificación de riesgo con referencia al capítulo de NFPA 13?
-- [ ] ¿Se justifica por qué el área de operación seleccionada es la más desfavorable?
-- [ ] ¿Aparece el cálculo individual de cada rociador en el área activa?
-- [ ] ¿Las pérdidas en tubería usan el coeficiente C de Hazen-Williams correcto para el material?
-- [ ] ¿Están incluidas las pérdidas por accesorios (codos, tés, válvulas)?
-- [ ] ¿El punto de diseño (Q, P) está claramente identificado?
-- [ ] ¿La curva de demanda está graficada y confrontada contra la curva de suministro?
-- [ ] ¿Los datos de suministro (presión estática y residual) tienen fuente verificable?
-- [ ] ¿El software de cálculo está identificado con versión?
-- [ ] ¿La memoria lleva sello y firma del ingeniero responsable con número de cédula?
+Antes de liberar compras o iniciar tubería, revisa que el proyecto responda estas preguntas:
 
-Si hay una sola casilla sin marcar, no entregues todavía. El tiempo que tardas en completarla es una fracción del tiempo que perderás si te regresan el expediente.
+- ¿La clasificación de riesgo se explica con la operación y los materiales actuales?
+- ¿El plano muestra el área de operación y la ruta hidráulica que se calculó?
+- ¿Los rociadores del cálculo coinciden con sus fichas técnicas y con los que se pretenden instalar?
+- ¿Las pruebas o curvas de suministro son identificables y aplicables a la fuente real?
+- ¿Los equipos de bombeo, si existen, están vinculados con la demanda del sistema?
+- ¿El documento nombra supuestos, exclusiones y cambios que obligarían a recalcular?
+- ¿Los planos, cálculos, especificaciones y alcance de instalación usan la misma versión?
 
----
+Cuando se requiera un proveedor para desarrollar o revisar este alcance, el directorio de [empresas de sistemas contra incendio](/empresas/sistemas-ci/) permite localizar especialistas. Para explorar familias de equipo sin sustituir la ingeniería, consulta [rociadores contra incendio](/productos/sistemas-ci/rociadores-contra-incendio/) y el catálogo de [sistemas contra incendio](/productos/sistemas-ci/). La selección de norma entre vivienda y otros usos se explica en [NFPA 13, 13R y 13D: diferencias de aplicación](/blog/nfpa-13-vs-13r-vs-13d-rociadores/).
 
-## Artículos relacionados
+## Pruebas de aceptación y cambios posteriores
 
-- [NFPA 13 vs 13R vs 13D: cuál aplica a tu proyecto de rociadores](/blog/nfpa-13-vs-13r-vs-13d-rociadores)
-- [Detección vs alarma vs supresión: tres sistemas que no deben instalarse como si fueran uno](/blog/deteccion-alarma-supresion-nfpa-72-2001)
-- [FM-200 vs Novec 1230: cuál agente limpio elegir para tu cuarto de servidores](/blog/fm200-vs-novec-1230-agente-limpio)
+La memoria demuestra una condición de diseño; las pruebas de aceptación corroboran que el sistema instalado corresponde al proyecto y funciona con los procedimientos aplicables. Conserva los registros de pruebas, las correcciones de obra, los planos finales y cualquier cambio autorizado. Esos documentos son el punto de partida para mantenimiento, ampliaciones o una investigación posterior.
 
-## Instalación de Sistemas CI en FIREFIGHTERS MX
+También establece un procedimiento para cambios operativos. Una modificación de mercancía, empaque, estiba, procesos, distribución interior, plafones o fuente de agua puede invalidar los supuestos que hicieron válido el cálculo. Avisar antes de ejecutar el cambio permite decidir si basta una revisión puntual o si se necesita una nueva memoria.
 
-¿Necesitas que tu memoria de cálculo hidráulico pase el DRO sin contratiempos? En FIREFIGHTERS MX diseñamos e instalamos sistemas de rociadores NFPA 13 con toda la documentación técnica requerida para trámites en CDMX, Estado de México y los principales parques industriales del Bajío.
+La memoria correcta no promete que un trámite será aprobado ni que un sistema cubrirá cualquier uso futuro. Su valor es otro: hacer visibles los criterios, las limitaciones y la evidencia con la que se diseñó la red. Esa trazabilidad es lo que permite revisar la instalación con rigor antes de que sea necesaria en una emergencia.
 
-[Servicio de Instalación de Sistemas CI](/servicios/instalacion-sistemas-ci)
+## Preguntas frecuentes
+
+### ¿La memoria de cálculo es lo mismo que el plano de rociadores?
+
+No. El plano muestra la disposición física de los componentes; la memoria documenta el criterio de diseño, los datos hidráulicos y la comprobación de la fuente de agua. Deben ser consistentes entre sí.
+
+### ¿Puedo cambiar un rociador por otro si ambos caben en la tubería?
+
+No sin revisión. El factor K, la respuesta, la orientación y el listado del rociador afectan el diseño. El cambio debe validarse contra el cálculo y la documentación aplicable.
+
+### ¿Una red municipal elimina la necesidad de documentar el suministro?
+
+No. La memoria debe identificar los datos que respaldan la capacidad de la fuente. No es seguro basarse en una presión asumida o en una medición sin contexto.
+
+### ¿Cuándo debe actualizarse la memoria?
+
+Cuando cambian condiciones relevantes del riesgo, el almacenamiento, la distribución, el sistema de tubería, la fuente de agua o los equipos considerados en el cálculo.
+
+## Fuentes
+
+- [NFPA 13, Standard for the Installation of Sprinkler Systems (edición 2025)](https://www.nfpa.org/codes-and-standards/nfpa-standard-development-process/13)
+- [NFPA 20, Standard for the Installation of Stationary Pumps for Fire Protection (edición 2025)](https://www.nfpa.org/codes-and-standards/nfpa-20-standard-development/20)
+- [Tyco — TFP152, rociadores TY315/TY325 de factor K 5.6](https://docs.johnsoncontrols.com/tycofire/api/khub/documents/sHaKx63LNR0Plc0DRhpTjA/content)

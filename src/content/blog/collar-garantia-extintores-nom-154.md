@@ -1,96 +1,101 @@
 ---
-title: "Collar de garantía en extintores: qué es, por qué Protección Civil lo exige y qué pasa sin él"
-seoTitle: "Collar de garantía en extintores: qué es y por qué se exige"
-description: "El collar de garantía en extintores no es opcional. Te explicamos qué es, qué exige la NOM-154-SCFI y qué pasa si faltan en una inspección de PC."
+title: "Collar de garantía en extintores: qué revisar en el servicio NOM-154"
+seoTitle: "Collar de garantía en extintores y servicio NOM-154"
+description: "Qué revisar en el collarín y etiqueta de un extintor tras su servicio: alcance de NOM-154-SCFI-2005, revisión mensual y trazabilidad documental."
 pubDate: 2026-03-17
-updatedDate: 2026-06-25
+updatedDate: 2026-09-28
 author: "Ing. Marco García"
 category: "Mantenimiento y Recarga"
-tags: ["extintores", "collar de garantía", "NOM-154-SCFI", "protección civil", "mantenimiento extintores"]
+tags: ["extintores", "collarín de servicio", "mantenimiento", "recarga", "NOM-154-SCFI"]
 image:
   url: "/images/servicios/mantenimiento.avif"
-  alt: "Collar de garantía en extintor durante mantenimiento"
+  alt: "Collarín de servicio colocado en la válvula de un extintor de polvo químico seco"
 ---
 
-Un inspector de Protección Civil llega a una bodega logística en Monterrey. Los extintores están cargados, rojos, en sus soportes, con el manómetro en verde. Todo parece en orden. El inspector los revisa uno por uno y los reprueba a todos. El encargado de instalaciones no entiende qué pasó. La respuesta del inspector fue sencilla: ninguno tenía collar de garantía.
-
-El encargado nunca había escuchado ese término. Llevaba tres años coordinando el mantenimiento de esa bodega y ninguno de sus proveedores se lo había mencionado. Ese día la empresa recibió una orden de medidas de seguridad y tuvo que llamar de emergencia a otra empresa para corregir el problema antes de la reinspección.
-
-Eso es lo que me encuentro con frecuencia en parques industriales de Monterrey, el Estado de México y el Bajío: extintores en buen estado de carga pero sin el collar, o con uno incompleto que no cumple lo que pide la NOM-154-SCFI.
+El collarín o collar de garantía es una de las evidencias que se revisan durante la inspección mensual de un extintor de polvo químico seco. Su presencia no prueba por sí sola que el equipo sea adecuado para el riesgo, pero su ausencia, daño o información ilegible debe registrarse y atenderse. La NOM-002-STPS-2010, numeral 7.2, incluye el collarín entre los puntos de la revisión mensual; la NOM-154-SCFI-2005 regula el servicio de mantenimiento y recarga, no la certificación del producto.
 
 ## Qué es el collar de garantía (y por qué no es un accesorio opcional)
 
-El collar de garantía es un anillo de plástico o metal que se coloca en la válvula del extintor después de cada mantenimiento. Su función es simple pero crítica: sellar visualmente que el extintor fue abierto, revisado y recargado por una empresa certificada, y que nadie lo manipuló después.
+El collarín es un elemento colocado en la válvula de los extintores de PQS como parte de la evidencia visual de que el equipo recibió servicio. Debe revisarse junto con la etiqueta de mantenimiento, el sello o fleje, el manómetro cuando aplique y la condición física del equipo.
 
-Si el collar está roto, partido o ausente, hay dos posibles lecturas: o el extintor fue abierto sin autorización, o nunca se le hizo mantenimiento correcto. Protección Civil asume lo peor en los dos casos.
+Si el collar está roto, partido o ausente, no se debe inferir que el extintor está listo para uso ni que su servicio es vigente. El responsable debe documentar la anomalía y solicitar la revisión correspondiente.
 
-El collar no es un adorno. Es evidencia física del mantenimiento. Sin él, el extintor no puede acreditar que cumple con la normatividad vigente, aunque esté perfectamente cargado.
+El collarín no es un adorno ni reemplaza la documentación del servicio. Un manómetro en zona operativa tampoco sustituye la revisión mensual ni el mantenimiento anual.
 
-## Lo que la NOM-154-SCFI exige en el collar
+## Qué se revisa junto con el collarín
 
-La NOM-154-SCFI-2010 regula los servicios de mantenimiento y recarga de extintores portátiles en México. Establece qué debe incluir el collar de garantía con precisión. No hay interpretación: o está, o no cumple.
+La versión vigente es la NOM-154-SCFI-2005, modificada en 2010. Su alcance es el servicio de mantenimiento y recarga de extintores. Por eso no es correcto describir un cilindro como “extintor certificado NOM-154”: la norma se aplica a la prestación del servicio.
 
-### Datos obligatorios en el collar de garantía según NOM-154-SCFI
+La NOM-002 no convierte el collarín en la única evidencia del cumplimiento. En el programa de revisión mensual del numeral 7.2 se verifica, según corresponda, ubicación, señalización, sello o fleje, manómetro, etiqueta con mes y año del último mantenimiento y collarín en los extintores de PQS. Estos elementos se registran conforme al numeral 7.3.
 
-| Campo requerido | Descripción |
-|---|---|
-| Nombre o razón social | De la empresa que realizó el mantenimiento |
-| RFC | De la empresa prestadora del servicio |
-| Número de certificación | Emitido por organismo acreditado ante la EMA |
-| Tipo de servicio | Recarga, mantenimiento anual o prueba hidrostática |
-| Fecha del servicio | Día, mes y año de realización |
-| Folio o número de orden | Trazabilidad del servicio en registros internos |
-| Próxima fecha de servicio | Fecha límite para el siguiente mantenimiento requerido |
+| Elemento | Qué conviene comprobar | Qué hacer ante una anomalía |
+|---|---|---|
+| Collarín de PQS | Que esté presente, íntegro y legible | Registrar la condición y solicitar revisión |
+| Etiqueta de servicio | Mes y año del último mantenimiento | Confrontar con el programa anual del centro de trabajo |
+| Sello o fleje | Que no presente rotura o manipulación | Retirar de la condición de disponible y revisar |
+| Manómetro, cuando aplique | Lectura y estado físico | Reportar la desviación para servicio |
+| Registro mensual | Fecha, responsable, resultado y seguimiento | Conservarlo como evidencia de control |
 
-Cualquier campo faltante convierte el collar en inválido ante una inspección. He visto collares con logotipo y número de teléfono de la empresa pero sin RFC ni número de certificación. Para Protección Civil, ese collar no existe.
+El collarín y la etiqueta permiten identificar una condición que debe revisarse; no autorizan por sí mismos a concluir que cualquier agente o capacidad es correcto para el área.
 
 ## El error de contratar mantenimiento sin verificar el collar
 
-El problema no suele ser que las empresas no pongan collar. El problema es que muchas ponen un collar genérico, incompleto o con datos falsos. Y el responsable de la empresa contratante raramente lo revisa.
+Al recibir un servicio, no basta con pagar la factura o comprobar que el cilindro está en su soporte. Conviene pedir la documentación que el proveedor entrega para el trabajo realizado, vincularla con el inventario del centro de trabajo y comprobar que cada unidad vuelve a su ubicación o queda temporalmente sustituida.
 
-Cuando contratas mantenimiento de extintores en una bodega industrial, tu responsabilidad no termina en pagar la factura. Tienes que verificar que el collar colocado cumple con todos los campos de la NOM-154-SCFI y que el número de certificación de la empresa es válido.
+La pregunta útil no es sólo cuánto cuesta el servicio, sino qué trabajo se realizará, cómo se identificará cada unidad y qué evidencia quedará para el programa interno de revisión. Esto permite diferenciar el mantenimiento exigido al menos una vez al año de una recarga, que procede después del uso o si el mantenimiento la determina.
 
-COFEPRIS y la EMA (Entidad Mexicana de Acreditación) publican los registros de empresas certificadas. Si el número de certificación en el collar no aparece en ese registro, estás expuesto. He visto instalaciones en parques de Apodaca y San Nicolás que llevaban años contratando empresas no certificadas sin saberlo, porque nadie en la empresa verificó ese dato.
+## Qué hacer cuando el collarín falta o está dañado
 
-La pregunta correcta al contratar mantenimiento no es "¿cuánto cobran?". Es "¿cuál es su número de certificación y puedo verificarlo?"
+Un collarín ausente no permite saber desde una inspección visual si el sello se manipuló, si el equipo se descargó o si el servicio está vigente. La respuesta prudente es separar el hallazgo del diagnóstico: registra la anomalía, confirma el inventario y canaliza el equipo al proceso de revisión definido por la empresa.
 
-## Cuándo Protección Civil rechaza el extintor aunque esté cargado
+El reemplazo temporal importa. El numeral 7.18 de la NOM-002 exige que, durante el mantenimiento, se sustituya el equipo por otro del mismo tipo. Así se conserva la protección del área mientras una unidad está fuera de servicio. La necesidad de recarga no se presume por una fecha: el numeral 7.19 la exige después de uso y, en su caso, como resultado del mantenimiento.
 
-Un extintor puede estar perfectamente cargado, con el agente extintor correcto, manómetro en zona verde y fecha de vencimiento vigente, y aun así ser rechazado en inspección. El collar de garantía es una de las causas más comunes de rechazo que no implica un defecto técnico del equipo.
+Una revisión ordenada puede seguir esta secuencia:
 
-Protección Civil en Nuevo León, Estado de México y CDMX tiene criterios claros: el extintor debe mostrar evidencia documental de que fue mantenido por empresa certificada. Esa evidencia es el collar. Si falta, el extintor no puede acreditar cumplimiento, independientemente de su estado físico.
-
-Otros motivos de rechazo relacionados con el collar:
-
-- Collar sin número de certificación válido
-- Fecha de próximo servicio ya vencida
-- Collar roto o con señales de haber sido retirado y recolocado
-- Datos del collar que no coinciden con la factura del servicio
-
-En una reinspección, cada extintor rechazado representa tiempo, costo y exposición legal para la empresa. En instalaciones con 50 o 100 extintores, un proveedor que no pone collares correctos puede costarte decenas de miles de pesos en correcciones de emergencia.
+1. Anota número de inventario, ubicación, tipo de agente y condición observada.
+2. Comprueba la etiqueta de último mantenimiento contra el registro mensual.
+3. Revisa sello o fleje, manómetro cuando aplique y acceso al equipo.
+4. Sustituye temporalmente la unidad si debe salir a servicio.
+5. Archiva el comprobante de servicio junto con la actualización de la bitácora.
 
 ## Cómo verificar que tu proveedor cumple
 
-Antes de firmar cualquier contrato de mantenimiento, pide estos tres documentos:
+Antes de contratar o recibir un servicio, conviene pedir y conservar estos elementos:
 
-1. **Certificado de acreditación vigente** ante la EMA o el organismo acreditador correspondiente. Verifica la vigencia y el número.
-2. **Modelo de collar** que utilizan. Pide que te muestren físicamente cómo luce el collar con todos los campos llenos.
-3. **Factura con desglose por extintor**. El folio de la factura debe poder cruzarse con el folio del collar en cada equipo.
+1. **Alcance del servicio por escrito.** Debe distinguir mantenimiento, recarga cuando corresponda y cualquier prueba aplicable.
+2. **Identificación por unidad.** El proveedor y la empresa usuaria deben poder relacionar el servicio con el inventario del centro de trabajo.
+3. **Comprobante y registro actualizado.** La información debe quedar disponible para la revisión mensual y el programa anual.
 
-Si tu proveedor actual no puede entregarte estos tres documentos sin dudar, tienes un problema. No es burocracia: es la diferencia entre pasar o reprobar una inspección de Protección Civil.
+Para definir el agente y la cobertura del área, revisa [tipos de extintores en México](/blog/tipos-de-extintores-mexico/) y la [dotación de extintores conforme a NOM-002](/blog/nom-002-stps-dotacion-extintores/). El [catálogo de extintores](/productos/extintores/) ayuda a identificar las familias, y el directorio de [empresas de extintores](/empresas/extintores/) permite comparar proveedores sin sustituir la verificación de sus documentos.
 
-En instalaciones grandes, especialmente bodegas de distribución, parques petroquímicos o hospitales, recomiendo hacer una revisión cruzada de los collares contra el padrón de certificados cada vez que se recibe el servicio. No requiere mucho tiempo y elimina el riesgo de sorpresas en inspección.
+## Cómo integrar el collarín a la revisión mensual
 
----
+El programa no debe depender de que una sola persona recuerde la fecha del servicio. Asigna a cada equipo una identificación interna, una ubicación y un responsable de revisión. Durante el recorrido mensual, compara el estado del collarín y la etiqueta con el registro anterior. Si no hay cambio, anota la fecha, resultado y responsable. Si existe daño, falta de información o cualquier otra desviación, abre una acción de seguimiento y no la cierres hasta que la condición quede aclarada.
 
-## Artículos relacionados
+Esta disciplina también evita dos errores comunes. El primero es confundir una fecha de mantenimiento con una autorización para omitir la revisión visual mensual. El segundo es retirar varios equipos para servicio sin haber previsto sustitutos. La bitácora permite distinguir una unidad temporal, una unidad propia que regresó del servicio y una unidad que aún requiere atención.
 
-- [NOM-002-STPS: cuántos extintores necesitas y dónde colocarlos](/blog/nom-002-stps-dotacion-extintores)
-- [PQS ABC vs CO2 vs Tipo K: cuál extintor usar en cada riesgo](/blog/pqs-abc-vs-co2-vs-tipo-k-extintores)
-- [SCBA: cuándo hacer la prueba hidrostática de cilindros y qué pasa si la omites](/blog/prueba-hidrostatica-cilindros-scba-nfpa)
+Cuando se modifique el riesgo del área —por ejemplo, por una remodelación, cambio de proceso o incorporación de una cocina— revisa además si el agente y la ubicación siguen correspondiendo a la clase de fuego. El collarín documenta el control de servicio, pero no sustituye el análisis de dotación ni la capacitación de quienes responderían a un conato.
 
-## Mantenimiento y Recarga en FIREFIGHTERS MX
+## Preguntas frecuentes
 
-¿Tus extintores tienen collar de garantía con todos los campos completos? En FIREFIGHTERS MX realizamos mantenimiento y recarga de extintores con certificación vigente y collar NOM-154-SCFI que cumple cada requisito de inspección.
+### ¿NOM-154-SCFI-2005 certifica el extintor?
 
-[Servicio de Mantenimiento y Recarga](/servicios/mantenimiento)
+No. La NOM-154 regula el servicio de mantenimiento y recarga. Para PQS, por ejemplo, la norma de producto es NOM-100-STPS-1994; el servicio se documenta conforme a NOM-154.
+
+### ¿Qué se revisa cada mes además del collarín?
+
+El numeral 7.2 de la NOM-002 contempla ubicación, señalización, sello o fleje, manómetro cuando aplique, etiqueta de último mantenimiento y collarín en PQS. La revisión debe registrarse.
+
+### ¿El collarín significa que el extintor fue recargado ese día?
+
+No necesariamente. El mantenimiento y la recarga no son sinónimos. La NOM-002 exige mantenimiento al menos anual y recarga después de uso o cuando el mantenimiento la determine.
+
+### ¿Qué debe pasar mientras un extintor está en mantenimiento?
+
+Debe colocarse temporalmente otro del mismo tipo, conforme al numeral 7.18 de la NOM-002, para no dejar desprotegida el área.
+
+## Fuentes
+
+- [NOM-002-STPS-2010 — STPS](https://www.stps.gob.mx/bp/secciones/dgsst/normatividad/normas/Nom-002.pdf)
+- [NOM-154-SCFI-2005 — PLATIICA, Secretaría de Economía](https://platiica.economia.gob.mx/normalizacion/nom-154-scfi-2005/)
+- [NOM-100-STPS-1994 — PLATIICA, Secretaría de Economía](https://platiica.economia.gob.mx/normalizacion/nom-100-stps-1994/)

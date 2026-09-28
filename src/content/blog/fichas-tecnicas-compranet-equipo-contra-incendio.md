@@ -1,22 +1,20 @@
 ---
-title: "Fichas técnicas para CompraNet: los errores que descalifican una propuesta de equipo CI"
+title: "Fichas técnicas para CompraNet: cómo documentar una propuesta de equipo CI"
 seoTitle: "Fichas técnicas para CompraNet de equipo contra incendio"
-description: "Los errores en fichas técnicas que descartan propuestas de equipo contra incendio en CompraNet, PEMEX y CFE. Guía para licitantes en México."
+description: "Cómo preparar fichas técnicas de equipo contra incendio para procedimientos federales, con matriz de cumplimiento, evidencia y referencias vigentes."
 pubDate: 2026-03-21
-updatedDate: 2026-06-25
+updatedDate: 2026-09-28
 author: "Ing. Marco García"
 category: "Soporte para Licitaciones"
 tags: ["licitaciones CompraNet", "fichas técnicas", "equipo contra incendio", "NFPA NOM", "propuesta técnica"]
 image:
   url: "/images/servicios/licitaciones.avif"
-  alt: "Documentos de propuesta técnica para licitación de equipo contra incendio en CompraNet"
+  alt: "Documentos de propuesta técnica para licitación de equipo contra incendio"
 ---
 
-Una empresa distribuidora de equipo contra incendio en Monterrey ganó la evaluación económica de una licitación PEMEX por un margen significativo. Tenía el precio más bajo, los tiempos de entrega eran viables y la empresa tenía experiencia. La propuesta fue descalificada en la revisión técnica porque la ficha del extintor listaba capacidad en libras en lugar de kilogramos, y la norma de producto citada (UL 299) no era la que la convocatoria exigía para PQS (NOM-100-STPS-1994).
+Una ficha técnica para una licitación no es un folleto comercial. Es el documento que relaciona una partida de las bases con el equipo realmente ofertado, su configuración y la evidencia que lo respalda. La evaluación debe poder localizar cada requisito sin inferencias: si las bases piden una capacidad, una edición normativa, una talla o un documento, la ficha debe mostrar dónde se acredita.
 
-Dos datos incorrectos en una sola página. Meses de trabajo perdidos.
-
-Las fichas técnicas en licitaciones de equipo contra incendio tienen un nivel de exigencia que no tiene paralelo en las ventas privadas. Los evaluadores no interpretan: comparan lo que el licitante declara contra lo que la convocatoria requiere, campo por campo.
+El slug conserva CompraNet por continuidad, pero la plataforma federal vigente se identifica como Compras MX. Antes de preparar la propuesta, usa el medio y el plazo de la convocatoria, y verifica si las reglas de la entidad compradora añaden formatos propios.
 
 ## Por qué las fichas CI son más críticas que en otras categorías
 
@@ -34,7 +32,7 @@ Lo que hace un evaluador: toma las bases, extrae cada especificación técnica m
 
 Para extintores: identifica la NOM de producto según el agente: NOM-100-STPS-1994 para PQS, NOM-101-STPS-1994 para espuma química, NOM-102-STPS-1994 para CO₂ y NOM-103-STPS-1994 para agua. NOM-154-SCFI-2005 aplica al servicio de mantenimiento y recarga. La confusión entre referencias puede descalificar propuestas.
 
-Para equipos respiratorios tipo SCBA: la referencia es la NFPA 1970 con el año de edición correcto. Si la convocatoria pide NFPA 1981 edición 2019 y la ficha dice "cumple NFPA 1970" sin especificar edición, el evaluador puede rechazarla.
+Para SCBA, NFPA 1970 (2025) consolidó a la antigua NFPA 1981. Si una convocatoria conserva la edición 2019, la ficha debe identificar esa referencia histórica y, cuando proceda, la correspondencia con la referencia vigente; no basta con declarar «cumple NFPA 1970» sin edición ni evidencia.
 
 Para rociadores y sistemas fijos: NFPA 13 con año de edición, y en licitaciones con componente mexicano, verificar si se exige NOM aplicable.
 
@@ -90,16 +88,29 @@ Los huecos son los que descalifican. No el precio, no la calidad del equipo, no 
 
 ---
 
-## Artículos relacionados
+## Validación final y soporte técnico
 
-- [Junta de aclaraciones en licitaciones de equipo CI](/blog/junta-aclaraciones-licitacion-equipo-ci)
-- [Licitaciones de equipo contra incendio en México](/blog/licitaciones-equipo-contra-incendio-mexico-nom-nfpa)
-- [NFPA 13 vs 13R vs 13D: rociadores](/blog/nfpa-13-vs-13r-vs-13d-rociadores)
+Haz una última revisión en cuatro columnas: requisito de las bases, dato del producto ofertado, anexo que lo prueba y responsable de validarlo. La misma matriz sirve al recibir el bien: compara modelo, accesorios, documentación y datos de identificación contra la propuesta adjudicada. Si las bases contemplan instalación o servicio, confirma también qué documento acredita la puesta en marcha y a quién corresponde el mantenimiento.
 
----
+La ficha se complementa con la [junta de aclaraciones](/blog/junta-aclaraciones-licitacion-equipo-ci/) y con la guía de [licitaciones de equipo contra incendio](/blog/licitaciones-equipo-contra-incendio-mexico-nom-nfpa/). Para contrastar familias de producto, consulta el [catálogo](/productos/) y los [equipos SCBA](/productos/equipos-scba/). FIREFIGHTERS MX puede revisar una requisición y preparar una [cotización](/cotizacion/) con los documentos disponibles para el modelo solicitado.
 
-## Soporte para Licitaciones en FIREFIGHTERS MX
+## Preguntas frecuentes
 
-Apoyamos a distribuidores y fabricantes en la preparación de propuestas técnicas para licitaciones de equipo contra incendio en CompraNet, PEMEX, CFE y dependencias federales. Revisión de bases, construcción de fichas técnicas y acompañamiento en junta de aclaraciones.
+### ¿Una ficha técnica sustituye un certificado?
 
-[Servicio de Soporte para Licitaciones](/servicios/licitaciones)
+No. La ficha explica cómo el modelo ofertado cumple las bases; si la convocatoria solicita un certificado, listado o carta, ese documento debe presentarse por separado y corresponder a la variante ofertada.
+
+### ¿Debo conservar el nombre CompraNet en la propuesta?
+
+Usa el nombre, formato y medio que indique la convocatoria. La plataforma federal vigente se presenta como Compras MX, aunque documentos históricos y este slug sigan usando CompraNet.
+
+### ¿Cómo documento una conversión de unidades?
+
+Conserva el dato original del fabricante, identifica la unidad solicitada por las bases y muestra la conversión de manera trazable. No cambies una especificación sin dejar claro qué valor se está comparando.
+
+## Fuentes
+
+- [Compras MX — Plataforma Digital de Contrataciones Públicas](https://compranet.buengobierno.gob.mx/compras-mx)
+- [Ley de Adquisiciones, Arrendamientos y Servicios del Sector Público, 2025](https://dgesui.ses.sep.gob.mx/sites/default/files/2025-05/LAASSP.pdf)
+- [NFPA 1970](https://www.nfpa.org/codes-and-standards/nfpa-1970-standard-development/1970)
+- [STPS — NOM-002-STPS-2010](https://www.stps.gob.mx/bp/secciones/dgsst/normatividad/normas/Nom-002.pdf)

@@ -1,40 +1,30 @@
 ---
-title: "PQS ABC vs CO₂ vs Tipo K: elegir el extintor equivocado puede empeorar el incendio"
+title: "PQS ABC vs CO₂ vs tipo K: cómo elegir el extintor por riesgo"
 seoTitle: "Extintor PQS vs CO₂ vs tipo K: cuál elegir"
-description: "Cómo elegir el agente extintor correcto según tu riesgo: PQS ABC, CO₂ y Tipo K. Criterios técnicos, normativa NOM-002-STPS y errores comunes en licitaciones."
+description: "Comparativo entre PQS ABC, CO₂ y tipo K para seleccionar el agente por clase de fuego, residuos, cocina comercial y criterios de NOM-002-STPS-2010."
 pubDate: 2026-03-15
-updatedDate: 2026-06-25
+updatedDate: 2026-09-28
 author: "Ing. Marco García"
 category: "Extintores"
-tags: ["PQS ABC", "CO2", "extintor Tipo K", "clases de fuego", "NOM-154-SCFI"]
+tags: ["PQS ABC", "CO₂", "tipo K", "clases de fuego", "extintores"]
 image:
   url: "/images/categorias/extintores.avif"
   alt: "Comparativa de extintores PQS ABC, CO₂ y Tipo K por agente extintor y aplicación"
 ---
 
-En una cocina industrial, una brigada puede encontrar una llama en aceite de cocción y tomar el extintor más cercano. Antes de intervenir, el procedimiento debe confirmar que el agente corresponde a fuego clase K.
-
-El [PQS ABC](/productos/extintores/pqs-abc) no sustituye al agente previsto para aceites y grasas de cocción. La guía de la NOM-002-STPS-2010 identifica el químico húmedo para clase K y no recomienda PQS ni CO₂ para esa clase.
-
-La selección del extintor debe quedar definida antes de una emergencia: un agente puede ser adecuado para ciertos riesgos y no serlo para aceite de cocción.
-
----
-
-La pregunta "¿qué extintor pongo aquí?" parece simple. Pero la respuesta equivocada no es solo ineficaz: en varios escenarios, puede aumentar el riesgo. El PQS ABC es un agente de uso general, pero no sustituye el análisis del riesgo específico.
-
-La selección correcta no es por "cuál es mejor en general". Es por "cuál protege mi riesgo específico". Y ese riesgo tienes que definirlo antes de comprar el extintor, no durante el incendio.
+PQS ABC, CO₂ y tipo K no son tres nombres intercambiables para el mismo equipo. El PQS ABC se usa para riesgos A, B y C; el CO₂ se aplica a B y C sin dejar residuo, y el químico húmedo tipo K corresponde a aceites y grasas de cocción. La Guía de referencia VII de la [NOM-002-STPS-2010](https://www.stps.gob.mx/bp/secciones/dgsst/normatividad/normas/Nom-002.pdf) identifica químico húmedo para clase K y no asigna esa clase a PQS ni CO₂. La elección se deja resuelta antes de una emergencia, a partir de los combustibles y condiciones de cada zona.
 
 ## Las clases de fuego: el vocabulario que necesitas entender
 
 La nomenclatura de las clases de fuego no es capricho académico. Es el mapa que conecta tu riesgo con el agente correcto.
 
-**Clase A** — sólidos combustibles que dejan brasa: madera, papel, textiles, plásticos. La mayoría de los incendios de oficina y bodega son Clase A. El fuego puede ser profundo: la brasa interior sigue activa aunque la llama superficial se apague.
+**Clase A** — sólidos combustibles, generalmente orgánicos: madera, papel, textiles, cartón y algunos plásticos. El fuego puede conservar brasas aunque la llama superficial disminuya.
 
-**Clase B** — líquidos inflamables y gases: gasolina, thinner, aceite de maquinaria, acetona, gas LP. El fuego está en la superficie del líquido o en el gas. No hay brasa, pero la re-ignición es inmediata si el agente no es el correcto.
+**Clase B** — líquidos y gases inflamables: gasolina, solventes, pinturas y gas inflamable. La selección del agente debe limitar la combustión sin introducir una incompatibilidad con el líquido o gas presente.
 
 **Clase C** — equipos eléctricos energizados: tableros, motores, UPS, servidores. La electricidad es el riesgo adicional, no el combustible en sí. Una vez que cortas la corriente, el fuego se convierte en Clase A o B según el material que arde.
 
-**Clase D** — metales combustibles: magnesio, litio, titanio, sodio. Rarísimo en entornos convencionales, pero crítico en laboratorios de manufactura especial o plantas de procesamiento de baterías.
+**Clase D** — metales combustibles: magnesio, litio, titanio, sodio y potasio. Requieren un agente definido para el metal y proceso específicos.
 
 **Clase K** — aceites y grasas de cocción a alta temperatura. Esta es la clase que más se confunde. No es Clase B aunque sea un líquido. Los aceites de cocción calientes se comportan de manera completamente diferente a los líquidos inflamables industriales.
 
@@ -42,79 +32,63 @@ La nomenclatura de las clases de fuego no es capricho académico. Es el mapa que
 
 ### Cómo funciona realmente
 
-El polvo químico seco (fosfato monoamónico, principalmente) actúa interrumpiendo la reacción en cadena de la combustión a nivel molecular. Los radicales fosfóricos que libera al calentarse capturan los radicales H• y OH• que sostienen la llama. Sin esos radicales, la reacción no puede continuar.
+El PQS ABC emplea fosfato monoamónico y cubre clases A, B y C. Los equipos BC usan otros polvos para B y C; no son equivalentes al ABC cuando existen sólidos combustibles. La NOM-104-STPS-2001 corresponde al agente ABC a base de fosfato monoamónico y la NOM-106-STPS-1994 al agente BC a base de bicarbonato de sodio. La NOM-100-STPS-1994 regula las especificaciones del extintor de PQS con presión contenida.
 
-También tiene un efecto secundario de sofocación superficial: el polvo se deposita sobre el combustible y forma una costra que aísla la superficie del oxígeno.
-
-Es un agente polivalente. Cubre fuegos A, B y C. Esa versatilidad es su mayor virtud y, paradójicamente, la razón por la que se aplica incorrectamente: se asume que "si cubre todo, funciona en todo".
+La versatilidad de un ABC es útil en áreas generales, pero no convierte al equipo en solución para todas las clases. En especial, no está contemplado para clase K ni para clase D.
 
 ### Dónde funciona bien
 
 El PQS ABC es la primera elección correcta en:
 
-- Bodegas con materiales mixtos (cartón, plásticos, embalaje)
-- Talleres de manufactura con fuentes de calor y aceites de maquinaria
-- Vehículos de carga y maquinaria pesada
-- Áreas de almacenamiento de gas LP
-- Cualquier espacio donde el riesgo combinado A/B/C no tiene un componente dominante que exija especialización
+- Oficinas y comercios con riesgos ordinarios A, B y C.
+- Bodegas donde el análisis identifica sólidos combustibles y otros riesgos compatibles.
+- Talleres y áreas operativas donde el agente previsto cubra los materiales presentes.
 
-Es barato, está disponible en toda la cadena de suministro mexicana, y para la mayoría de los incendios ordinarios cumple su función.
+La ficha técnica y la clasificación declarada en la etiqueta deben coincidir con el riesgo evaluado. La capacidad se define después de calcular dotación, recorridos y acceso, no sólo por el nombre del agente.
 
 ### Dónde el PQS es el agente incorrecto
 
-**Cuartos de servidores y data centers.** El fosfato monoamónico es higroscópico: absorbe humedad ambiental y forma ácidos fosfóricos suaves. Ese residuo, depositado sobre circuitos impresos, ventiladores y conectores, genera corrosión progresiva. Los componentes que sobrevivieron el incendio pueden fallar semanas o meses después por el residuo del extintor.
-
-El residuo de PQS requiere una evaluación de limpieza y compatibilidad antes de volver a operar equipo electrónico. El plan de protección debe definir el agente adecuado para cada zona y revisar las condiciones de cobertura aplicables.
+**Áreas con electrónica o materiales sensibles al residuo.** Un PQS deja polvo después de la descarga. Si ese residuo puede afectar la recuperación de equipo o materiales, el análisis debe comparar alternativas compatibles con las clases de fuego del área y documentar cómo se hará la limpieza segura.
 
 **Cocinas con aceites de cocción.** El PQS no realiza la saponificación requerida para la clase K. La guía de la NOM-002-STPS-2010 señala químico húmedo para este riesgo y excluye PQS y CO₂ de esa aplicación.
 
-**Archivos, museos y espacios con materiales históricos.** El residuo del PQS daña documentos, obras de arte y materiales que no pueden limpiarse sin riesgo. En estos entornos, la pérdida causada por el extintor puede ser mayor que la causada por el fuego contenido.
+**Áreas con materiales sensibles.** Antes de seleccionar PQS en archivos o colecciones, se revisa el efecto del residuo, la clasificación de fuego y la estrategia de recuperación. No es suficiente elegir un agente sólo porque es de uso general.
 
 ## [CO₂](/productos/extintores/co2): el agente que no deja nada
 
 ### Cómo funciona
 
-El CO₂ opera por sofocación: desplaza el oxígeno en el área de descarga. También tiene un efecto de enfriamiento por expansión.
-
-La ventaja crítica: no deja absolutamente nada. Sin residuo sólido, sin humedad, sin riesgo de daño secundario al equipo.
+El CO₂ opera principalmente al desplazar el oxígeno en el área de descarga. Es un agente no conductor y no deja residuo, por lo que se considera en riesgos B y C donde el polvo no sería conveniente.
 
 ### Dónde es la elección correcta
 
-**Cuartos de servidores, data centers, equipos de telecomunicaciones.** Es el agente portátil de referencia para cualquier espacio donde el equipo electrónico no puede contaminarse. La descarga apaga el fuego y el espacio puede volver a operación sin limpieza adicional del agente.
+**Tableros y equipos eléctricos energizados.** El CO₂ no conduce electricidad y no deja residuo. La desenergización sigue siendo una acción de seguridad cuando puede realizarse sin exponerse.
 
-**Tableros eléctricos de alta densidad, subestaciones, UPS.** El CO₂ no conduce electricidad y no daña los componentes. Cuando la fuente eléctrica sigue activa, el CO₂ es más seguro que el PQS porque no crea un riesgo de conducción aunque tampoco "extingue" el riesgo eléctrico: el corte de corriente sigue siendo necesario.
-
-**Laboratorios con solventes en espacios cerrados.** La sofocación es efectiva cuando el espacio está delimitado. En laboratorio interior, el CO₂ puede alcanzar la concentración necesaria de extinción.
+**Riesgos de líquidos inflamables en interiores.** Puede ser una opción para B cuando el análisis considera el volumen, ventilación y ocupación del recinto. La clase de fuego y la etiqueta del equipo delimitan su uso.
 
 ### Las limitaciones que mucha gente no considera
 
-**En exteriores o espacios amplios con ventilación, el CO₂ pierde eficacia drásticamente.** El gas se dispersa antes de alcanzar la concentración necesaria para extinguir. Un almacén con ventilación industrial activa no es el entorno adecuado para CO₂ como agente primario.
+**En exteriores o donde hay corrientes de aire, el CO₂ puede dispersarse.** La Guía VII de la NOM-002 indica un alcance de 1 a 2.5 metros y señala que no se use al aire libre o con viento o corrientes.
 
-**En sólidos Clase A con brasa profunda, la re-ignición es probable.** El CO₂ apaga la llama superficial, pero no penetra el material. Una viga de madera con brasa interior va a re-ignitar cuando el CO₂ se disperse y el oxígeno vuelva. Para Clase A profundo, el PQS o el agua tienen mejor desempeño.
+**En sólidos clase A, no es el agente previsto.** La tabla de la Guía VII lo clasifica para B y C, no para A. Si hay combustible sólido, la selección debe considerar un agente compatible con ese material.
 
-**En espacios confinados con personas, el CO₂ requiere controles de seguridad.** En cuartos de servidores sin sistema automático, el procedimiento debe considerar la evacuación antes de una descarga manual.
+**En espacios cerrados ocupados, el CO₂ requiere controles de seguridad.** La misma guía advierte que reduce el oxígeno necesario para la vida; el procedimiento debe priorizar la evacuación y la seguridad de las personas.
 
 ## [Tipo K](/productos/extintores/especializados): agente previsto para cocinas con aceites y grasas
 
 ### Por qué las otras clases de fuego no aplican aquí
 
-Un aceite de cocción a temperatura de trabajo se comporta de manera diferente a un líquido inflamable industrial.
+Los aceites y grasas de cocción corresponden a una clase distinta de los líquidos inflamables industriales en la NOM-002. El agente previsto debe controlar tanto la combustión como el calor del aceite para limitar la reignición.
 
-Su punto de inflamación es alto comparado con solventes, pero una vez que se enciende, tiene tres características que lo hacen extraordinariamente peligroso:
-
-1. **Alta densidad energética.** El aceite en combustión libera mucha más energía por unidad de superficie que un líquido inflamable industrial típico.
-2. **Temperatura de ignición sostenida.** El aceite puede conservar calor aun cuando la llama visible disminuye, por lo que se debe evitar una aplicación que no controle la re-ignición.
-3. **Reacción con agua.** El agua no es el agente previsto para aceite de cocción y puede proyectar el combustible en combustión.
-
-El CO₂ no saponifica. El PQS no saponifica. El agua empeora el incendio. Nada de lo anterior resuelve el problema.
+El CO₂ y el PQS no realizan la saponificación que requiere este riesgo. El agua tampoco se selecciona para un aceite de cocción en llamas: la respuesta se basa en el agente y procedimiento definidos para clase K.
 
 ### Cómo funciona el Tipo K
 
 El agente de acetato de potasio opera mediante dos mecanismos simultáneos que ningún otro agente tiene:
 
-**Saponificación:** el acetato de potasio reacciona con los ácidos grasos del aceite a alta temperatura y forma una capa de jabón de potasio sobre la superficie. Esa capa sella el aceite e impide el contacto con el oxígeno. Sin oxígeno, no hay combustión posible.
+**Saponificación:** el acetato de potasio forma una capa sobre la superficie del aceite que contribuye a separar el combustible del oxígeno.
 
-**Enfriamiento por neblina.** La aplicación en forma de neblina fina (no chorro sólido) absorbe calor de forma muy eficiente. La temperatura del aceite baja por debajo del punto de re-ignición. La capa de jabón se mantiene intacta mientras el aceite se enfría.
+**Enfriamiento.** El agente también enfría el aceite. Esa combinación explica por qué se selecciona para clase K en lugar de trasladar una solución prevista para B o C.
 
 El agente combina la formación de una capa superficial y el enfriamiento del combustible. Por ello se selecciona para controlar la re-ignición en fuegos de clase K.
 
@@ -122,9 +96,7 @@ El agente combina la formación de una capa superficial y el enfriamiento del co
 
 La guía de la NOM-002-STPS-2010 contempla químico húmedo para clase K y establece un recorrido máximo de 10 m para esa clase. El sistema fijo de campana es la protección primaria; el extintor tipo K funciona como respaldo manual.
 
-En México, la selección debe documentarse contra la NOM-002-STPS-2010 y las disposiciones aplicables de Protección Civil. Solicita al proveedor la ficha del equipo y verifica que la protección fija y portátil correspondan al riesgo de la cocina.
-
-Un restaurante con sistema de supresión fijo pero sin extintor Tipo K portátil como complemento incumple NFPA 10. El sistema fijo se diseña para supresión automática; el extintor portátil es para que el personal intervenga antes de que el sistema descargue o después de que lo haya hecho.
+En México, la selección debe documentarse contra la NOM-002-STPS-2010 y las disposiciones aplicables al establecimiento. Solicita la ficha del equipo y verifica que la protección fija y portátil correspondan al riesgo de la cocina.
 
 ## La selección en el mercado mexicano
 
@@ -132,26 +104,19 @@ El costo de adquisición no debe definir por sí solo la selección del agente. 
 
 Una cotización responsable identifica si hay cocina industrial, cuarto de servidores u otros riesgos que exijan un agente específico. El cliente debe revisar la ficha técnica y la aplicación propuesta antes de aprobarla.
 
-El problema aparece cuando hay un incendio real, cuando llega el inspector de STPS o Protección Civil que sí revisa el tipo de agente instalado versus el riesgo documentado del área, o cuando la aseguradora del inmueble niega la reclamación porque el sistema de extinción no correspondía al riesgo asegurado.
-
-La diferencia en precio entre instalar correctamente y hacer lo mínimo barato es pequeña comparada con esos escenarios. Pero requiere que alguien en la organización haga la pregunta correcta antes de aprobar la cotización.
+Una cotización útil identifica los riesgos del plano, el tipo de agente propuesto, la ubicación y el programa de servicio. Esa información permite comparar propuestas por alcance técnico, no sólo por la cantidad de cilindros.
 
 ## Tabla comparativa: los 3 agentes en 10 criterios
 
 | Criterio | PQS ABC | CO₂ | Tipo K |
 |---|---|---|---|
-| Mecanismo principal | Inhibición química | Sofocación + enfriamiento leve | Saponificación + enfriamiento |
-| Clase A (sólidos) | Sí | Parcial (re-ignición probable) | Sí (parcial) |
-| Clase B (líquidos inf.) | Sí | Sí | No recomendado |
-| Clase C (eléctrico) | Sí (no conduce) | Sí (ideal) | No (conductora) |
-| Clase K (aceites cocción) | No recomendado | No recomendado | Sí — agente previsto |
-| Residuo post-descarga | Sí, abundante y abrasivo | Ninguno | Sí, acuoso (limpiable) |
-| Daño a equipo electrónico | Alto (corrosión progresiva) | Ninguno | No aplica |
-| Eficacia en exterior | Buena | Baja (se dispersa) | Buena (neblina) |
-| Disponibilidad en México | Confirmar con proveedor | Confirmar con proveedor | Confirmar con proveedor |
-| Costo relativo | Solicitar cotización | Solicitar cotización | Solicitar cotización |
+| Clases contempladas | A, B y C | B y C | K |
+| Agente | Fosfato monoamónico | Bióxido de carbono | Químico húmedo a base de acetato de potasio |
+| Residuo tras descarga | Deja polvo | No deja residuo | Deja agente químico húmedo |
+| Limitación clave | No cubre D ni K | No usar al aire libre, con viento o corrientes | Es específico para aceites y grasas de cocción |
+| Criterio de ubicación | Riesgo general A, B y C | Riesgo B o C donde el residuo sea relevante | Instalaciones de cocina con aceites y grasas |
 
-La columna que más importa leer es "Clase K": en aceites de cocción, el PQS y el CO₂ no son opciones incorrectas — son peligrosas. Esa es la diferencia entre "no funciona" y "empeora la situación".
+La fila decisiva en una cocina es la clase K: PQS y CO₂ no son los agentes identificados por la guía de la NOM-002 para ese riesgo. La clase del fuego, la etiqueta del equipo y el análisis del sitio prevalecen sobre la costumbre de instalar un solo tipo de extintor.
 
 ## Cómo seleccionar el agente correcto para cada espacio
 
@@ -159,46 +124,51 @@ La decisión no es técnicamente compleja. Requiere responder tres preguntas ant
 
 **¿Qué materiales hay en este espacio y cómo se incendiarían?** No el uso general del espacio: los materiales específicos. Una oficina con sala de servidores tiene dos riesgos distintos en el mismo nivel.
 
-**¿Hay equipo eléctrico de alto valor o equipos de precisión que no toleren residuo?** Si la respuesta es sí, el PQS queda descartado para esa zona.
+**¿Hay equipos o materiales sensibles al residuo?** Si la respuesta es sí, se comparan alternativas compatibles con las clases de fuego del área y se define el procedimiento de recuperación.
 
 **¿Hay equipo de cocción con aceites?** Si la respuesta es sí, incorpora Tipo K y revisa la protección fija de campana conforme al riesgo.
 
-| Tipo de espacio | Agente recomendado | Por qué |
+| Tipo de espacio | Pregunta de selección | Resultado que debe documentarse |
 |---|---|---|
-| Oficina administrativa | PQS ABC 4–6 kg | Riesgo A/B/C general |
-| Área de cómputo dentro de oficina | CO₂ 5 kg | Sin residuo, sin daño a hardware |
-| Data center / cuarto de servidores | CO₂ o agente limpio (FM-200/Novec) | Preservación del equipo, sin residuo |
-| Cocina comercial con freidoras | Tipo K 6–9 L | Único eficaz en Clase K |
-| Bodega de solventes | PQS ABC 9 kg (4-A:80-B:C) | Alta clasificación B |
-| Taller con soldadura | PQS ABC 6–9 kg | Versatilidad A/B/C |
-| Tablero eléctrico / subestación | CO₂ 10 kg | No conductor, sin residuo |
-| Archivo histórico / museo | Agente limpio (Novec 1230) | Sin residuo, sin daño a materiales |
-| Vehículo de transporte | PQS ABC 1–4 kg | Polivalencia, reglamento de tránsito |
+| Área general | ¿Hay combustibles A, B o C? | Agente compatible, cantidad y recorrido |
+| Tablero eléctrico | ¿Permanece energizado y el residuo es relevante? | Agente B:C compatible y procedimiento de desenergización |
+| Cocina comercial | ¿Hay aceites o grasas de cocción? | Protección clase K y revisión de la campana |
+| Proceso con metales | ¿Qué metal y condiciones intervienen? | Agente especial y procedimiento específico |
+
+En cada caso conviene conservar la evidencia de la decisión: plano o croquis del área, materiales identificados, clase de fuego, tipo de extintor propuesto y ruta de acceso. Esa trazabilidad facilita revisar cambios de proceso, reubicar equipos cuando se modifica el inmueble y programar el servicio sin confundir una revisión visual con el mantenimiento técnico.
 
 ## La pregunta que nadie hace en la cotización
 
-Cuando alguien te cotiza [extintores](/productos/extintores) para tu empresa y pone PQS ABC en todos los espacios del plano, la pregunta correcta es:
+Cuando una cotización de [extintores](/productos/extintores/) coloca PQS ABC en todos los espacios del plano, una pregunta útil es:
 
 "¿Revisaste cuáles de estos espacios tienen equipo eléctrico de alto valor, cuáles tienen aceites de cocción, y cuáles tienen materiales que no toleran residuo?"
 
-Si el instalador no puede responder esa pregunta con datos del plano, no hizo el análisis. Te está cotizando volumen, no protección.
+La respuesta debe estar en el plano y en la evaluación de riesgo: clases de fuego, ubicación de los equipos, recorrido, condición de ventilación y método de servicio. Un mismo inmueble puede necesitar agentes distintos en áreas distintas.
 
-Un extintor del agente incorrecto no es una protección incompleta. En algunos escenarios, como el operador de freidora con el PQS en la mano, es una herramienta que convierte un incendio controlable en una emergencia con víctimas.
+Para calcular la dotación consulta [NOM-002-STPS: dotación de extintores](/blog/nom-002-stps-dotacion-extintores/); para una explicación amplia de las clases y agentes, revisa [tipos de extintores en México](/blog/tipos-de-extintores-mexico/). El [extintor tipo K](/productos/extintores/extintor-tipo-k/) y el [catálogo de extintores](/productos/extintores/) permiten identificar esas familias, mientras que el directorio de [proveedores de extintores](/empresas/extintores/) ayuda a comparar opciones de servicio.
 
-La selección correcta toma 20 minutos de análisis del plano y el riesgo de cada área. Lo que no toma es dinero adicional significativo. Lo que sí cuesta es no haberlo hecho.
+## Preguntas frecuentes
 
----
+### ¿PQS ABC y PQS BC son el mismo agente?
 
-## Artículos relacionados
+No. El ABC usa fosfato monoamónico y se emplea para A, B y C. El BC se usa para B y C; no cubre sólidos combustibles clase A. La ficha del equipo y el riesgo del área determinan cuál corresponde.
 
-- [NOM-002-STPS: lo que el inspector ve que tú no habías calculado](/blog/nom-002-stps-dotacion-extintores) — cómo calcular la dotación correcta por área y nivel de riesgo
-- [Tipos de Extintores en México](/blog/tipos-de-extintores-mexico) — clasificación completa por agente, clase de fuego y aplicación
-- [NOM-002-STPS Guía Completa](/blog/nom-002-stps-guia-completa) — referencia normativa extendida para cumplimiento ante STPS
+### ¿Cuándo conviene evaluar CO₂ en vez de PQS?
 
----
+Cuando el riesgo es B o C y el residuo del polvo es una consideración importante. También se evalúan ventilación, ocupación y el hecho de que el CO₂ no se recomienda al aire libre o con corrientes de aire.
 
-## Catálogo Extintores en FIREFIGHTERS MX
+### ¿Un extintor tipo K sustituye el sistema fijo de una campana?
 
-Ofrecemos extintores PQS ABC, CO₂ y Tipo K para cada tipo de riesgo, con la clasificación correcta para cumplir la NOM-002-STPS. Si tienes cocinas comerciales, cuartos de servidores o áreas con solventes, nuestro equipo puede ayudarte a seleccionar el agente correcto antes de que llegue el inspector.
+No. El tipo K es el equipo portátil previsto para aceites y grasas de cocción. La protección fija de la campana se revisa como un sistema distinto, de acuerdo con el riesgo de la cocina.
 
-[Catálogo completo de Extintores](/productos/extintores) · [Solicitar cotización](/cotizacion)
+### ¿Qué distancia máxima se permite para llegar a un extintor tipo K?
+
+La Tabla 1 de la NOM-002-STPS-2010 fija 10 metros para clase K, tanto en riesgo ordinario como alto. El recorrido se mide por la ruta real hasta el equipo, no en línea recta.
+
+## Fuentes
+
+- [NOM-002-STPS-2010 — STPS](https://www.stps.gob.mx/bp/secciones/dgsst/normatividad/normas/Nom-002.pdf)
+- [NOM-100-STPS-1994 — PLATIICA, Secretaría de Economía](https://platiica.economia.gob.mx/normalizacion/nom-100-stps-1994/)
+- [NOM-102-STPS-1994 — PLATIICA, Secretaría de Economía](https://platiica.economia.gob.mx/normalizacion/nom-102-stps-1994/)
+- [NOM-104-STPS-2001 — PLATIICA, Secretaría de Economía](https://platiica.economia.gob.mx/normalizacion/nom-104-stps-2001/)
+- [NOM-106-STPS-1994 — PLATIICA, Secretaría de Economía](https://platiica.economia.gob.mx/normalizacion/nom-106-stps-1994/)

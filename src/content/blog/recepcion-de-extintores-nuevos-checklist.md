@@ -2,7 +2,8 @@
 title: "Recepción de extintores nuevos: checklist para empresas"
 seoTitle: "Recepción de extintores nuevos: checklist empresarial"
 description: "Checklist para recibir extintores nuevos: cotización, estado físico, etiquetas, documentos, inventario, instalación y diferencias."
-pubDate: "2026-10-07"
+pubDate: 2026-09-28
+updatedDate: 2026-09-28
 category: "Extintores"
 tags: ["extintores", "guía de compra", "trazabilidad", "mantenimiento extintores"]
 image:
@@ -50,6 +51,18 @@ Antes de integrar los extintores a la operación, comunica al personal responsab
 
 Una recepción ordenada no reemplaza las revisiones y servicios posteriores. Para profundizar en cómo cambian las preguntas según el canal de compra, consulta [la comparación entre compra en línea y con distribuidor](/blog/comprar-equipo-contra-incendio-en-linea-o-distribuidor/). Guarda el checklist firmado, los pendientes y la evidencia fotográfica con el expediente de compra.
 
+## Cierra la recepción con una lista de pendientes verificable
+
+No todas las diferencias se resuelven mientras el transportista está presente. La clave es que ninguna quede sólo en una conversación. Elabora una relación con la identificación de cada unidad, la diferencia encontrada, las fotografías si ayudan a describirla, la persona que recibió el reporte y la fecha comprometida para responder. Si una unidad no puede instalarse porque falta documentación, presenta daño visible o no coincide con el pedido, mantén ese estado en el inventario y evita asignarla como parte de la dotación operativa.
+
+Al concluir, compara tres conjuntos de información: lo que se ordenó, lo que físicamente se recibió y lo que se dio de alta. Esta conciliación previene que una factura global o una caja sin identificación se conviertan más tarde en un equipo sin ubicación ni seguimiento. También permite entregar a mantenimiento un inventario inicial consistente para las revisiones mensuales que pide la NOM-002-STPS-2010.
+
+La persona que firma puede anotar “recibido con observaciones” cuando exista una diferencia pendiente; la redacción específica dependerá del procedimiento de compras de la empresa. Lo importante es no usar una aceptación sin reservas como sustituto de la revisión técnica y documental. Una vez aclaradas las diferencias, actualiza el expediente con la respuesta, la corrección realizada y la fecha de cierre.
+
+Antes de distribuir las unidades, confirma que cada ubicación prevista cuenta con acceso libre, señalización y una ruta de llegada coherente con la evaluación de riesgo. La recepción administrativa queda completa cuando también existe una decisión documentada sobre dónde quedará cada equipo y quién revisará su condición mes a mes.
+
+Esa decisión debe comunicarse al personal responsable.
+
 ## Preguntas frecuentes
 
 ### ¿Qué hago si el extintor no coincide con la cotización?
@@ -67,3 +80,9 @@ Registra el pendiente y solicítalo al proveedor por escrito. Conserva la comuni
 ### ¿La recepción incluye instalar los extintores?
 
 Sólo si ese alcance fue acordado. Confirma quién realizará la instalación, señalización y definición de ubicaciones antes de dar el proceso por terminado.
+
+## Fuentes
+
+- [NOM-002-STPS-2010 — STPS](https://www.stps.gob.mx/bp/secciones/dgsst/normatividad/normas/Nom-002.pdf)
+- [NOM-100-STPS-1994 — PLATIICA, Secretaría de Economía](https://platiica.economia.gob.mx/normalizacion/nom-100-stps-1994/)
+- [Pyme.es — Importancia de contar con extintores de calidad](https://www.pyme.es/importancia-de-contar-con-extintores-de-calidad/)

@@ -1,8 +1,9 @@
 ---
-title: "SCBA para Bomberos: Lo que Nadie te Dice antes de Firmar el Pedido"
+title: "SCBA para bomberos: guía de compra antes de firmar el pedido"
+seoTitle: "Guía de compra de SCBA para bomberos"
 description: "Guía para comprar SCBA: documentación, cilindros, prueba de ajuste y criterios de mantenimiento para MSA G1, 3M Scott y Dräger."
 pubDate: 2026-06-23
-updatedDate: 2026-06-23
+updatedDate: 2026-09-28
 author: "FIREFIGHTERS MX"
 category: "Guías de compra"
 tags: ["SCBA", "respiración autónoma", "3M Scott", "MSA", "Dräger", "NFPA 1970", "equipo bomberos"]
@@ -11,26 +12,22 @@ image:
   alt: "Bombero ajustando su equipo SCBA antes de entrar a una estructura en llamas — guía de compra 2026"
 ---
 
-Por ejemplo, una corporación puede recibir un SCBA que no conserva el ajuste esperado con la capucha o el casco existentes. Antes de usarlo en una atmósfera peligrosa, debe revisarse la configuración, realizarse la prueba de ajuste indicada por el fabricante y documentarse el resultado. El criterio de compra no debe limitarse al precio: también debe considerar certificación, servicio, compatibilidad y disponibilidad de componentes.
-
-Esta guía existe para que no pases por eso. No voy a venderte nada en las próximas líneas; voy a darte el criterio que necesitas para comprar bien, con cualquier proveedor.
+Una corporación puede recibir un SCBA que no conserva el ajuste esperado con la capucha o el casco existentes. Antes de usarlo en una atmósfera peligrosa, debe revisarse la configuración, realizarse la prueba indicada por el fabricante y documentarse el resultado. El criterio de compra no se limita al precio: también debe considerar certificación, servicio, compatibilidad y disponibilidad de componentes.
 
 ![Bombero ajustando su SCBA antes de entrar a intervención estructural nocturna](/images/blog/blog-scba-entrada-estructura.avif)
 *El ajuste y la verificación pre-entrada deben seguir el procedimiento del fabricante y el programa de seguridad de la brigada.*
 
 ---
 
-## Por qué el SCBA no es un equipo más
+## Por qué el SCBA se compra como sistema
 
-Hay equipos de protección que fallan y el bombero sigue de pie. El casco recibe un impacto fuera de especificación y aún absorbe energía. El traje pierde integridad en una costura y todavía da protección térmica parcial. El SCBA no funciona así. Si el sistema de aire falla dentro de un edificio en llamas, no hay degradación gradual ni plan B: hay una emergencia dentro de la emergencia.
-
-Por eso, la decisión de qué SCBA comprar no se toma como se elige un vehículo o una herramienta. Se toma con la misma seriedad con que se elige a quién confiarle la vida de tu gente. Y en esa decisión entran factores que ningún catálogo te va a decir por sí solo.
+Un SCBA se usa en atmósferas que pueden ser inmediatamente peligrosas para la vida o la salud. El conjunto integra cilindro, arnés, regulador, pieza facial, alarmas y componentes electrónicos según su configuración; una compra que omite cualquiera de ellos no permite evaluar el sistema que llegará a servicio.
 
 ---
 
 ## La norma: NFPA 1970 edición 2025
 
-La **NFPA 1970**, edición 2025, consolida requisitos antes contenidos en NFPA 1971, 1975, 1981 y 1982. Para un SCBA, solicita la documentación de certificación aplicable al modelo y configuración que se cotizan, además de la aprobación NIOSH que corresponda.
+La **NFPA 1970**, edición 2025, consolidó los requisitos de las anteriores NFPA 1971, 1975, 1981 y 1982. Para un SCBA, solicita la documentación de certificación aplicable al modelo y configuración que se cotizan, además de la aprobación NIOSH que corresponda.
 
 Los puntos que más pesan al momento de comparar:
 
@@ -71,14 +68,14 @@ Los registros deben identificar la configuración utilizada en cada turno.
 
 Por eso la corporación que de verdad quiere tiempo adentro no compra el cilindro más liviano: compra el equilibrio correcto entre peso y autonomía para sus escenarios reales.
 
-**Mi recomendación general:**
+**Criterios por escenario:**
 - Incendios estructurales urbanos: compara la duración nominal, presión y ajuste del cilindro con el procedimiento de relevo.
 - Incendios industriales prolongados o rescate en espacios confinados: define la autonomía requerida en la evaluación de riesgos y confirma la configuración compatible.
 - Equipos de intervención rápida o reconocimiento: verifica que el conjunto seleccionado cumple la función, certificación y programa de inspección requeridos.
 
 ---
 
-## Aluminio, fibra de vidrio o carbono: el material del cilindro importa más de lo que crees
+## Cilindro: material, permiso especial y programa de control
 
 El cilindro es el componente que más peso añade al equipo y el que más diferencia hay entre opciones. Antes de decidir cuál quieres, entiende qué hay detrás de cada material.
 
@@ -97,7 +94,7 @@ El material no debe decidirse por una regla general. Compara las opciones que el
 
 ---
 
-## La compatibilidad que nadie pregunta (hasta que es tarde)
+## Compatibilidad con la flota y el EPP existente
 
 Aquí está uno de los errores más frecuentes en licitaciones: cambiar de marca sin verificar compatibilidad con la flota existente. Las consecuencias son costosas y lentas de resolver.
 
@@ -115,7 +112,7 @@ Pregunta qué refacciones críticas se contemplan en el programa de servicio, c�
 
 ---
 
-## Comparativa de marcas: Scott, MSA, Dräger e Interspiro
+## Comparación de configuraciones verificadas
 
 Hay distintas marcas y configuraciones de SCBA. La selección debe partir de la certificación, los componentes aprobados y el servicio técnico documentado para cada modelo.
 
@@ -143,7 +140,7 @@ El mantenimiento debe realizarse conforme al programa del fabricante y por el se
 
 ### MSA Safety — G1 SCBA
 
-MSA Safety fue fundada en 1914 y tiene sede en Cranberry Township, Pennsylvania. El **G1 SCBA** cuenta con aprobaciones NIOSH CBRN y NFPA 1981 en su documentación; la versión G1 XR se documenta con NIOSH y SEI NFPA 1970, edición 2025.
+MSA Safety fue fundada en 1914 y tiene sede en Cranberry Township, Pennsylvania. El **G1 SCBA** cuenta con aprobaciones NIOSH CBRN y una referencia NFPA 1981 anterior a la consolidación; la versión G1 XR se documenta con NIOSH y SEI NFPA 1970, edición 2025.
 
 La ergonomía del G1 debe evaluarse con la talla, cilindro y accesorios que se ofertan. La prueba debe incluir colocación, ajuste, movilidad y compatibilidad con el resto del EPP de la brigada.
 
@@ -185,35 +182,19 @@ Solicita al proveedor la cobertura de servicio técnico autorizado, el alcance d
 
 ---
 
-### Interspiro — SPIROMATIC 90
+## Tabla comparativa para la muestra de compra
 
-Interspiro ofrece la plataforma **SPIROMATIC 90**. Para incorporarla a una comparación, solicita la certificación, ficha vigente, pieza facial aprobada, cilindros y programa de servicio de la configuración exacta.
-
-No atribuyas campo visual, ruido de flujo, peso o capacidad de comunicación sin la documentación vigente del modelo. Evalúa el ajuste, movilidad, indicadores y operación con una muestra física.
-
-Como para cualquier marca, verifica por escrito la cobertura de servicio técnico autorizado, las refacciones y el procedimiento de mantenimiento antes de formalizar la compra.
-
-La decisión debe basarse en certificados, prueba de compatibilidad, disponibilidad documentada de servicio y la evaluación de riesgos de la organización.
-
----
-
-## Tabla comparativa: las 4 marcas de un vistazo
-
-| Criterio | 3M Scott Air-Pak | MSA G1 | Dräger PSS 7000 | Interspiro SPIROMATIC 90 |
-|---|---|---|---|---|
-| Peso | Ver ficha | Ver ficha | Ver ficha | Ver ficha |
-| Indicadores | Verificar configuración | Verificar configuración | Verificar configuración | Verificar configuración |
-| Telemetría | Verificar accesorios | Verificar configuración | Verificar configuración | Verificar configuración |
-| Pieza facial | Probar y documentar | Probar y documentar | Probar y documentar | Probar y documentar |
-| Servicio técnico | Solicitar programa | Solicitar programa | Solicitar programa | Solicitar programa |
-| Conexiones | Verificar aprobaciones | Verificar aprobaciones | Verificar aprobaciones | Verificar aprobaciones |
-| Refacciones | Solicitar disponibilidad | Solicitar disponibilidad | Solicitar disponibilidad | Solicitar disponibilidad |
-| Cotización | — | — | — | — |
-| Selección | Según requisitos | Según requisitos | Según requisitos | Según requisitos |
+| Criterio | 3M Scott Air-Pak X3 Pro | MSA G1 | Dräger PSS 7000 |
+|---|---|---|---|
+| Certificación | NFPA 1970 (2025) publicada para X3 Pro | Revisar aprobación NIOSH y certificación del conjunto ofertado | Solicitar documento de la versión ofertada |
+| Cilindro | Confirmar configuración | 2216, 4500 o 5500 psi según configuración | Confirmar configuración; 6.8 L/300 bar en versión europea |
+| Indicadores y PASS | Confirmar documentación | EOSTI integrado; PASS según módulos | Sentinel 7000 según configuración |
+| Pieza facial | Probar y documentar | Probar y documentar | Probar y documentar |
+| Servicio y refacciones | Solicitar programa | Solicitar programa | Solicitar programa |
 
 ---
 
-## El checklist que deberías llevar a cada reunión con un proveedor
+## Lista de preguntas para la reunión con el proveedor
 
 No necesitas ser ingeniero para hacer las preguntas correctas. Estas son las que no deben quedar sin respuesta antes de firmar nada:
 
@@ -241,9 +222,9 @@ Un proveedor debe responder estas preguntas con documentación del modelo, certi
 
 ---
 
-## Vida útil, retiro del servicio y lo que dice la NFPA 1850
+## Cuidado, mantenimiento y retiro del servicio
 
-La **NFPA 1850**, edición 2026, consolida NFPA 1851 y NFPA 1852 para el mantenimiento de SCBA. El retiro, inspección y mantenimiento deben seguir el programa aplicable al equipo y a cada cilindro:
+La **NFPA 1850**, edición 2026, consolidó las anteriores NFPA 1851 y NFPA 1852 para el mantenimiento de SCBA. El retiro, inspección y mantenimiento deben seguir el programa aplicable al equipo y a cada cilindro:
 
 - El cilindro compuesto de fibra de carbono alcanza su vida útil documentada; en DOT-CFFC, es de 15 años salvo extensión autorizada.
 - Cualquier componente presenta daño o condición que el fabricante indique como motivo de retiro.
@@ -257,12 +238,35 @@ La condición visual no sustituye los límites de vida útil, inspección y reca
 
 ---
 
-## La última palabra antes de decidir
+## Cierre de la decisión de compra
 
 No existe una configuración única para todas las corporaciones. El SCBA adecuado es el que corresponde a la evaluación de riesgos, certificación, infraestructura de llenado, prueba de compatibilidad y programa de mantenimiento de la organización.
 
-En [FIREFIGHTERS MX](/productos/equipos-scba) contamos con servicio técnico autorizado. Si necesitas comparar configuraciones para tu corporación, [solicita una asesoría técnica](/cotizacion); prepara el escenario operativo, la infraestructura de llenado y los requisitos documentales para revisar el conjunto.
+El [catálogo de equipos SCBA](/productos/equipos-scba/) permite identificar configuraciones para la muestra de compra. Para completar el expediente, revisa [MSA G1 frente a Dräger PSS 7000](/blog/msa-g1-vs-drager-pss7000-scba/), [cilindros de fibra de carbono y acero](/blog/cilindros-scba-fibra-carbono-vs-acero/) y la [compatibilidad entre casco y SCBA](/blog/compatibilidad-casco-scba-bomberos/). Si necesitas comparar propuestas, [solicita una cotización](/cotizacion) con escenario operativo e infraestructura de llenado definidos.
 
 ---
 
-*¿Estás equipando una brigada industrial o pública y necesitas comparar opciones de SCBA para licitación? Consulta también nuestra guía sobre [especificaciones técnicas para licitaciones de equipo contra incendio](/blog/especificaciones-traje-bombero-licitaciones) y la guía general de [cómo equipar una estación desde cero](/blog/como-equipar-estacion-bomberos-desde-cero).*
+*Para el conjunto estructural también puedes consultar [especificaciones de equipo para licitaciones](/blog/especificaciones-traje-bombero-licitaciones) y [EPP para bombero](/productos/epp-bombero/).*
+
+## Preguntas frecuentes
+
+### ¿NFPA 1970 reemplazó a NFPA 1981 y NFPA 1982?
+
+Sí. La edición 2025 de NFPA 1970 consolidó las normas previas, incluidas las relativas a SCBA y PASS. En documentación de equipos aún pueden aparecer referencias a ediciones anteriores; deben leerse con su fecha y alcance, no como una certificación nueva automática.
+
+### ¿Un cilindro de 60 minutos garantiza una hora de intervención?
+
+No. La duración es nominal. La planificación de entrada, salida y relevo se define con el procedimiento de la brigada, los indicadores del equipo y la evaluación de riesgos, sin convertir la etiqueta en un tiempo operativo fijo.
+
+### ¿Qué debe mostrar la propuesta de un SCBA CBRN?
+
+La aprobación NIOSH correspondiente, la certificación aplicable a la configuración y los componentes incluidos. No debe suponerse protección CBRN porque la familia comercial se anuncie para bomberos.
+
+## Fuentes
+
+- [NFPA 1970 — Standard on Protective Ensembles](https://www.nfpa.org/codes-and-standards/nfpa-1970-standard-development/1970)
+- [NFPA 1850 — selección, cuidado y mantenimiento](https://link.nfpa.org/all-publications/33/2007)
+- [NIOSH — respiradores aprobados](https://www.cdc.gov/niosh/npptl/topics/respirators/cel/default.html)
+- [MSA — información de aprobación G1](https://docs.msasafety.com/g1scba2025cbrn/G1%202024%20CBRN%20PN%20TBD/NFPA_Approval_Information.htm)
+- [Dräger — PSS 7000 NFPA](https://www.draeger.com/en-us_us/Products/PSS-7000-NFPA)
+- [3M — Air-Pak X3 Pro](https://www.3m.com/3M/en_US/p/d/b5005672007/)

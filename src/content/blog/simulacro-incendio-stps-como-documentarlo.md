@@ -1,9 +1,9 @@
 ---
-title: "Cómo diseñar el simulacro que sí convence a la STPS — sin improvisar en el día"
+title: "Cómo planear y documentar un simulacro de incendio conforme a NOM-002"
 seoTitle: "Simulacro de incendio STPS: cómo planearlo y documentarlo"
-description: "Guía práctica para planear y documentar un simulacro de incendio que cumpla NOM-002-STPS y convenza a Protección Civil en planta industrial mexicana."
+description: "Cómo planear y registrar un simulacro de incendio conforme a NOM-002-STPS-2010: alcance, escenario, participantes, recursos, desviaciones y mejoras."
 pubDate: 2026-03-16
-updatedDate: 2026-06-25
+updatedDate: 2026-09-28
 author: "Ing. Marco García"
 category: "Capacitación Certificada"
 tags: ["simulacro evacuación", "STPS", "NOM-002-STPS", "brigadas", "protección civil"]
@@ -12,23 +12,11 @@ image:
   alt: "Simulacro de incendio documentado para inspección STPS en planta industrial mexicana"
 ---
 
-En noviembre pasado, una maquiladora en Ciudad Juárez realizó su simulacro anual de incendio. Todo salió de diez: el personal evacuó en cuatro minutos, la brigada despejó las rutas sin problema, nadie se lastimó. El coordinador de seguridad mandó un correo al gerente de planta diciendo "el simulacro salió bien" y adjuntó tres fotos del punto de reunión.
+Un simulacro de incendio no se acredita con fotografías aisladas ni con una frase de que “salió bien”. La NOM-002-STPS-2010 pide una planeación escrita antes del ejercicio y un registro de resultados después. Ambos documentos permiten comparar lo previsto con lo que ocurrió y actualizar el plan de atención a emergencias.
 
-Tres meses después llegó Protección Civil Municipal a verificar el expediente de seguridad.
+## La función de la planeación y el registro
 
-El coordinador buscó el archivo. Tenía las fotos y el correo electrónico. Eso fue todo.
-
-No era suficiente. La visita se convirtió en observación con plazo de 30 días para subsanar. Y el simulacro que "salió bien" no existía en papel.
-
-## El simulacro que "salió bien" pero no existe en papel
-
-El ejercicio de evacuación existe para dos cosas: practicar la respuesta real y demostrarle a la autoridad que la practicaste.
-
-Si solo haces lo primero, hiciste la mitad del trabajo.
-
-La NOM-002-STPS-2010 no dice que el simulacro debe "salir bien". Dice que debe realizarse y documentarse. Para la STPS y para Protección Civil, un simulacro sin expediente es un simulacro que no ocurrió. No importa qué tan rápido evacuó tu personal.
-
-En maquiladoras de Ciudad Juárez, Monterrey o el corredor industrial de Nuevo León, donde las auditorías de clientes OEM y de autoridades municipales se trasladan y se sobrelapan, este expediente puede ser lo que te salva o lo que te hunde en un mes de revisiones cruzadas.
+El ejercicio permite practicar la respuesta y revisar el plan con información observable. La NOM no exige que “salga bien” ni fija una meta universal de minutos. Exige realizarlo con la frecuencia aplicable, conservar la planeación escrita y registrar sus resultados. El valor del registro está en identificar desviaciones y convertirlas en recomendaciones para actualizar el plan.
 
 ## Lo que NOM-002-STPS exige antes del simulacro
 
@@ -44,7 +32,7 @@ La norma exige que el simulacro sea planeado dentro del programa de prevención 
 
 **La lista de participantes por área.** Quién es el responsable de cada zona, quiénes son los brigadistas activos ese día y quién funge como observador o evaluador externo.
 
-**La hora y fecha de notificación interna.** Protección Civil municipal, en ciudades como Juárez o Monterrey, puede solicitar ser notificada con al menos 24 horas de anticipación. Si no tienes ese oficio o correo de aviso, la autoridad puede invalidar el ejercicio aunque todo lo demás esté bien.
+**La participación externa, cuando aplique.** El numeral 10.2 permite prever cuerpos especializados de la localidad si existen y el escenario lo requiere. Cualquier aviso o requisito municipal se confirma directamente con la autoridad competente; no existe un plazo municipal universal en la NOM-002.
 
 ## Lo que debes capturar durante el ejercicio
 
@@ -68,12 +56,10 @@ Este es el expediente que debes poder presentar en una revisión de STPS o Prote
 |---|---|---|
 | Plan del simulacro | Objetivo, escenario, fecha, hora, rutas activas | Antes del ejercicio |
 | Lista de participantes | Nombre, área, función (brigadista / trabajador / observador) | Antes del ejercicio |
-| Oficio de notificación | Aviso a Protección Civil municipal (si aplica en tu municipio) | Antes del ejercicio |
-| Bitácora de tiempos | Hora de inicio, hora de llegada al punto de reunión por área, tiempo total | Durante el ejercicio |
-| Registro de incidencias | Situaciones que se salieron del protocolo y cómo se manejaron | Durante el ejercicio |
-| Evidencia fotográfica | Fotos o video con fecha y hora visible, mínimo 5 imágenes del ejercicio | Durante el ejercicio |
-| Acta de cierre | Resultados, conclusiones, áreas de mejora, firmas de responsables | Inmediatamente después |
-| Plan de mejora | Acciones correctivas derivadas de las incidencias | Dentro de los 5 días posteriores |
+| Participación externa | Cuerpos especializados, sólo si se previeron para el escenario | Antes o durante el ejercicio |
+| Registro de resultados | Centro, áreas, personas, recursos, desviaciones, recomendaciones, duración y coordinadores | Después del ejercicio |
+| Evidencia adicional | Fotografías, video o bitácoras, si el centro decide conservarlas | Durante el ejercicio |
+| Actualización del plan | Recomendaciones derivadas de las desviaciones observadas | Después del análisis |
 
 Ninguno de estos documentos puede generarse de memoria tres meses después de que ocurrió el simulacro.
 
@@ -83,9 +69,7 @@ Muchos coordinadores piensan que pueden reconstruir el expediente a posteriori s
 
 La autoridad no solo revisa si el documento existe — revisa si es coherente. Si el acta de cierre tiene una fecha de noviembre pero el plan del simulacro fue firmado en enero del año siguiente, eso es una inconsistencia documental. Y las inconsistencias documentales, en el contexto de una inspección de STPS o de Protección Civil, equivalen a evidencia fabricada.
 
-En auditorías de clientes internacionales — algo frecuente en maquiladoras del norte del país — este tipo de inconsistencias puede desencadenar un proceso de descalificación como proveedor.
-
-Además, el plan de mejora posterior al simulacro tiene una función legal: muestra que la empresa identificó áreas de riesgo y actuó. Si lo fabricas después, pierdes esa función y tu programa de prevención queda sin continuidad demostrable.
+Las fechas, nombres y resultados deben describir lo ocurrido. Las recomendaciones se usan para actualizar el plan de atención a emergencias y dar seguimiento a las desviaciones, en lugar de rellenar documentación retrospectivamente.
 
 ## Cómo presentarlo ante Protección Civil o STPS
 
@@ -93,7 +77,7 @@ Cuando llegue la autoridad, el expediente del simulacro debe ser parte del progr
 
 La presentación correcta es así: el inspector pide el programa NOM-002, tú abres la sección de simulacros, y ahí están: el plan, la bitácora, el acta, la evidencia fotográfica y el plan de mejora, todos fechados, todos firmados por el responsable de seguridad y por el representante de los trabajadores si tu empresa tiene Comisión Mixta de Seguridad e Higiene activa.
 
-Algunos municipios de Nuevo León y Chihuahua solicitan que el representante de Protección Civil firme como observador del ejercicio. Si ese es tu caso, necesitas el nombre del funcionario y su firma en el acta de cierre. Sin eso, el simulacro puede ser válido para STPS pero no para la autoridad municipal.
+Los requisitos de aviso, testigos o firmas adicionales dependen de la autoridad local. Deben revisarse con la jurisdicción aplicable, sin atribuirlos a la NOM-002 cuando no aparecen en su texto.
 
 El criterio para saber si tu expediente está listo: dáselo a alguien que no estuvo en el simulacro y pídele que te diga qué pasó. Si puede reconstruir el ejercicio completo solo con los documentos — quién participó, qué escenario se simuló, cuánto tardó la evacuación, qué salió mal y cómo se va a corregir —, el expediente es sólido.
 
@@ -112,3 +96,30 @@ Si no puede, tienes huecos que llenar antes de que los encuentre el inspector.
 Si necesitas apoyo para diseñar, ejecutar y documentar simulacros que cumplan NOM-002-STPS y resistan cualquier inspección de Protección Civil o STPS, en FIREFIGHTERS MX lo hacemos contigo: desde el plan hasta el expediente cerrado.
 
 [Servicio de capacitación certificada ](/servicios/capacitacion)
+
+## Secuencia de trabajo verificable
+
+Primero define el alcance: todo el centro o áreas determinadas. Después establece responsables y medidas de seguridad, fecha y hora, escenario crítico y secuencia de acciones. Durante la ejecución, identifica las personas y recursos que intervienen. Al cierre, registra lo exigido por el numeral 10.3 y formula recomendaciones para actualizar el plan de atención a emergencias.
+
+La duración puede medirse porque es un campo obligatorio del registro, pero la NOM-002 no establece una meta general de evacuación para todos los ejercicios. Cuando la ruta a un lugar seguro supera 40 metros, el numeral 7.15 fija un máximo de tres minutos; esa condición se revisa con el plano y las rutas efectivamente disponibles, no se extrapola a cualquier edificio.
+
+Un escenario útil toma en cuenta tipo y cantidad de materiales inflamables o explosivos, características y riesgo de las áreas, además de las actividades del personal. No requiere usar fuego real. La prioridad es realizar el ejercicio sin añadir peligros y obtener observaciones que sirvan para mejorar la respuesta.
+
+## Preguntas frecuentes
+
+### ¿Cuántos simulacros de incendio exige la NOM-002?
+
+Al menos uno al año en riesgo ordinario y al menos dos al año en riesgo alto. El simulacro puede abarcar áreas o todo el centro de trabajo.
+
+### ¿Qué debe contener la planeación escrita?
+
+Responsables y medidas de seguridad, fecha y hora, alcance, escenarios críticos, secuencia de acciones y, cuando aplique, participación de cuerpos especializados de la localidad.
+
+### ¿La NOM fija un número de fotografías o un plazo para el plan de mejora?
+
+No. Puede conservarse evidencia adicional si es útil, pero el mínimo exigible es el registro del numeral 10.3. Las recomendaciones obtenidas deben utilizarse para actualizar el plan de atención a emergencias.
+
+## Fuentes
+
+- [DOF — NOM-002-STPS-2010, capítulo 10](https://dof.gob.mx/normasOficiales/4228/stps.htm)
+- [STPS — NOM-002-STPS-2010 en PDF](https://www.stps.gob.mx/bp/secciones/dgsst/normatividad/normas/nom-002.pdf)

@@ -1,19 +1,20 @@
 ---
 title: "Tipos de extintores en México: guía completa por clase de fuego"
-description: "Tipos de extintores y su uso según la clase de fuego: PQS, CO₂, agua, espuma, químico húmedo clase K y agente limpio. Normas NOM y cuántos necesitas."
+seoTitle: "Tipos de extintores en México por clase de fuego"
+description: "Guía para elegir extintores por clase de fuego en México: PQS, CO₂, agua, espuma y clase K, con criterios de NOM-002-STPS-2010."
 pubDate: 2026-01-15
-updatedDate: 2026-09-15
+updatedDate: 2026-09-28
 author: "Ing. Marco García"
 category: "Extintores"
-tags: ["extintores", "NOM-100", "clases de fuego", "protección civil"]
+tags: ["extintores", "clases de fuego", "PQS", "CO₂", "protección contra incendios"]
 image:
   url: "/images/blog/blog-tipos-extintores.avif"
-  alt: "Tipos de extintores: polvo químico seco, CO₂, agua, químico húmedo y agente limpio"
+  alt: "Extintores de polvo químico seco, CO₂, agua y químico húmedo para distintos riesgos"
 ---
 
 Elegir el tipo de extintor adecuado importa más de lo que parece. Un agente que no corresponde puede no apagar el fuego y, en ciertos casos, empeorarlo. Agua sobre un equipo eléctrico energizado o sobre líquidos inflamables es un ejemplo claro. Antes de comprar, hay que reconocer el combustible, la clase de fuego y el lugar donde podría iniciar un conato de incendio.
 
-Yo suelo partir de una pregunta sencilla: ¿qué se puede quemar aquí? Con esa respuesta se elige el agente extintor, se define dónde colocarlo y se revisa cuántos equipos hacen falta.
+La pregunta inicial es sencilla: ¿qué se puede quemar aquí? Con esa respuesta se elige el agente extintor, se define dónde colocarlo y se revisa cuántos equipos hacen falta. La [NOM-002-STPS-2010](https://www.stps.gob.mx/bp/secciones/dgsst/normatividad/normas/Nom-002.pdf) clasifica el fuego por el material involucrado; la apariencia de la flama o el tamaño del negocio no reemplazan esa evaluación.
 
 ## ¿Qué es un extintor y cómo apaga el fuego?
 
@@ -39,7 +40,7 @@ Un fuego clase A no se atiende igual que un fuego clase B. Tampoco debe tratarse
 
 ### Extintores de polvo químico seco (PQS)
 
-Los extintores de polvo químico seco son muy comunes porque hay versiones BC y ABC. El PQS de bicarbonato de sodio o de potasio sirve para clases B y C. El de fosfato monoamónico se conoce como ABC y también atiende clase A. Por eso los extintores de polvo ABC suelen llamarse extintores multipropósito.
+Los extintores de polvo químico seco son muy comunes porque hay versiones BC y ABC. El PQS de bicarbonato de sodio sirve para clases B y C; el de fosfato monoamónico se conoce como ABC y también atiende clase A. Por eso los extintores de polvo ABC suelen llamarse extintores multipropósito. La NOM-104-STPS-2001 corresponde al agente ABC a base de fosfato monoamónico y la NOM-106-STPS-1994 al agente BC de bicarbonato de sodio; la NOM-100-STPS-1994 regula las especificaciones del extintor de PQS con presión contenida.
 
 Son una opción práctica para oficinas, comercios, vehículos y áreas con combustibles sólidos, líquidos inflamables o riesgo eléctrico. Su desventaja es el residuo: el polvo puede ensuciar y complicar la limpieza de equipos eléctricos. Si hay electrónica sensible, conviene valorar otro agente.
 
@@ -59,7 +60,7 @@ El extintor de espuma AFFF se usa en fuego clase B y también puede atender clas
 
 ### Extintor de acetato de potasio (clase K)
 
-El agente químico húmedo de acetato de potasio está diseñado para clase K. En aceites y grasas calientes, saponifica y enfría la superficie. Es la solución específica para instalaciones de cocina, como freidoras. Un PQS no reemplaza automáticamente la protección que necesita una cocina comercial.
+El agente químico húmedo de acetato de potasio está diseñado para clase K. En aceites y grasas calientes, saponifica y enfría la superficie. Es la solución específica para instalaciones de cocina, como freidoras. Un PQS no reemplaza automáticamente la protección que necesita una cocina comercial. El extintor K es un respaldo para la respuesta inicial; la protección fija de la campana se evalúa de forma independiente según el riesgo de la instalación.
 
 ### Extintores de agente limpio
 
@@ -88,7 +89,7 @@ Los metales combustibles requieren agentes especiales para clase D. Magnesio, so
 
 Los extintores portátiles son los que una persona puede llevar para atacar un conato de incendio. Funcionan bien cuando están accesibles, señalizados y el personal sabe usarlos. Su presencia no autoriza a exponerse a humo, calor o una ruta de salida comprometida.
 
-Los equipos sobre ruedas se consideran en áreas industriales o de alto riesgo cuando se requiere mayor capacidad y movilidad. La NOM-002-STPS-2010 contempla, para clase B en riesgo alto, una distancia de recorrido de hasta 15 m cuando el extintor es móvil. No significa que cualquier área requiera uno: depende de la clasificación de riesgo y de los materiales presentes.
+Los equipos sobre ruedas se consideran en áreas industriales o de alto riesgo cuando se requiere mayor capacidad y movilidad. La NOM-002-STPS-2010 contempla, para clase B en riesgo alto, una distancia de recorrido de hasta 15 m cuando el extintor es móvil. No significa que cualquier área requiera uno: depende de la clasificación de riesgo, los materiales presentes y de que el recorrido realmente permita llevarlo al conato.
 
 ## ¿Qué son los extintores PQS y CO₂ y cuándo usar cada uno?
 
@@ -98,7 +99,7 @@ Si el riesgo principal son equipos eléctricos energizados o líquidos inflamabl
 
 ## ¿Cuántos extintores necesita una empresa según la NOM-002-STPS?
 
-El numeral 7.17 establece al menos un extintor por cada 300 m² de superficie o fracción en riesgo ordinario, y uno por cada 200 m² o fracción en riesgo alto. Además, deben corresponder a la clase de fuego y colocarse a una altura no mayor de 1.50 m desde el piso hasta la parte más alta del extintor.
+Para la cantidad, el numeral 7.17 fija una superficie máxima por extintor que es menor en riesgo alto que en riesgo ordinario; el cálculo completo está en la [guía de dotación](/blog/nom-002-stps-dotacion-extintores/). Además, deben corresponder a la clase de fuego y colocarse a una altura no mayor de 1.50 m desde el piso hasta la parte más alta del extintor.
 
 | Riesgo de incendio | A, C y D | B | K |
 |---|---:|---:|---:|
@@ -121,15 +122,15 @@ Estas son las distancias máximas de recorrido de la Tabla 1. No basta con divid
 
 La NOM-002 define obligaciones del centro de trabajo y la NOM-154 establece lo relacionado con mantenimiento y recarga. NFPA 10 puede ser una referencia técnica estadounidense, pero no sustituye las obligaciones mexicanas aplicables.
 
-## Mantenimiento: revisión mensual, servicio y prueba hidrostática
+## Mantenimiento: revisión mensual, servicio y recarga
 
-¿Los extintores tienen fecha de caducidad? No hay una fecha única que permita olvidarse del equipo. La NOM-002 pide un programa anual de revisión mensual de los extintores con registro de fecha, responsable, resultado, anomalías y seguimiento. También pide un programa anual de revisión y pruebas de los equipos contra incendio y medios de detección.
+¿Los extintores tienen fecha de caducidad? No hay una fecha única que permita olvidarse del equipo. El numeral 7.2 de la NOM-002 pide un programa anual de revisión mensual de los extintores; entre otros puntos, se revisan ubicación, señalización, sello o fleje, manómetro cuando aplique, etiqueta de último mantenimiento y collarín en PQS. El numeral 7.3 exige registrar los resultados, anomalías y seguimiento.
 
-El servicio y la recarga se rigen por la NOM-154-SCFI-2005. Esa norma pide prueba hidrostática a los cinco años del cilindro. Después de una descarga, por pequeña que parezca, el extintor debe entrar al proceso de servicio correspondiente. Un manómetro en verde no sustituye la revisión documentada.
+El servicio y la recarga se rigen por la NOM-154-SCFI-2005. El numeral 7.18 de la NOM-002 exige mantenimiento al menos una vez al año conforme a esa norma y un reemplazo temporal por otro equipo igual mientras está en servicio. El numeral 7.19 exige recargar después de usarlo y, en su caso, por el resultado del mantenimiento: no existe una recarga anual automática para todos los equipos. Para CO₂, la Guía de referencia VII de la NOM-002 indica prueba hidrostática cada cinco años, hasta cuatro veces, con una vida máxima de 20 años. Un manómetro en verde no sustituye la revisión documentada.
 
 ## Cómo elegir el extintor adecuado
 
-Yo recomiendo este orden antes de comprar o reubicar equipos:
+Este orden ayuda antes de comprar o reubicar equipos:
 
 1. Identifica el combustible y la clase de fuego posible en cada área.
 2. Revisa si hay equipos eléctricos energizados, líquidos inflamables, gases inflamables o aceites y grasas.
@@ -139,4 +140,30 @@ Yo recomiendo este orden antes de comprar o reubicar equipos:
 
 La mejor selección combina extintores y su uso con una estrategia completa de protección contra incendios. No se trata de llenar muros de equipos, sino de que cada uno pueda responder al riesgo para el que fue instalado.
 
-Si quieres revisar opciones de extintores PQS, CO₂ y [tipo K](/productos/extintores/extintor-tipo-k/), puedo orientarte a partir de los materiales y áreas de tu operación. También contamos con [mantenimiento y recarga de extintores](/servicios/mantenimiento/). Para entender cómo se integra todo en el centro de trabajo, consulta la [guía de la NOM-002-STPS-2010](/blog/nom-002-stps-guia-completa/).
+El [catálogo de extintores](/productos/extintores/) permite ubicar las familias disponibles, incluidas las opciones PQS, CO₂ y [tipo K](/productos/extintores/extintor-tipo-k/). Para entender cómo se integra la dotación al centro de trabajo, consulta la [guía de la NOM-002-STPS-2010](/blog/nom-002-stps-guia-completa/) y el [comparativo entre PQS, CO₂ y tipo K](/blog/pqs-abc-vs-co2-vs-tipo-k-extintores/). Si se requiere evaluar opciones de servicio, el directorio reúne [empresas de extintores](/empresas/extintores/).
+
+## Preguntas frecuentes
+
+### ¿Un extintor ABC sustituye todos los demás equipos?
+
+No. El ABC cubre clases A, B y C, pero no clase D ni K. Una cocina con aceites y grasas o un proceso con metales combustibles necesita protección definida para ese riesgo.
+
+### ¿Para qué sirve un extintor de CO₂ si ya hay PQS ABC?
+
+El CO₂ puede ser apropiado para riesgos B y C donde el residuo de polvo afectaría equipos o la recuperación operativa. También se deben considerar su alcance limitado, la dispersión por viento y la disminución de oxígeno en interiores.
+
+### ¿Cada cuándo se recarga un extintor?
+
+Se recarga después de usarse y cuando el mantenimiento lo determine. La NOM-002 exige mantenimiento al menos anual conforme a NOM-154, pero no establece una recarga anual automática para todos los equipos.
+
+### ¿Qué extintor corresponde a una freidora comercial?
+
+El riesgo de aceites y grasas corresponde a clase K. La NOM-002 identifica al químico húmedo como agente para esa clase y fija una distancia máxima de recorrido de 10 metros; la protección fija de la campana se evalúa por separado.
+
+## Fuentes
+
+- [NOM-002-STPS-2010 — STPS](https://www.stps.gob.mx/bp/secciones/dgsst/normatividad/normas/Nom-002.pdf)
+- [NOM-100-STPS-1994 — PLATIICA, Secretaría de Economía](https://platiica.economia.gob.mx/normalizacion/nom-100-stps-1994/)
+- [NOM-102-STPS-1994 — PLATIICA, Secretaría de Economía](https://platiica.economia.gob.mx/normalizacion/nom-102-stps-1994/)
+- [NOM-103-STPS-1994 — PLATIICA, Secretaría de Economía](https://platiica.economia.gob.mx/normalizacion/nom-103-stps-1994/)
+- [NOM-154-SCFI-2005 — PLATIICA, Secretaría de Economía](https://platiica.economia.gob.mx/normalizacion/nom-154-scfi-2005/)

@@ -2,9 +2,10 @@
 title: "Incendios en cocinas comerciales: rutina de prevención, supresión y extintor tipo K"
 seoTitle: "Incendios en cocinas: prevención y tipo K"
 description: "Guía para ordenar la limpieza, supresión, extintor tipo K, capacitación y registros en una cocina comercial."
-pubDate: "2026-09-30"
+pubDate: 2026-09-28
+updatedDate: 2026-09-28
 category: "Extintores"
-tags: ["cocinas comerciales", "extintor Tipo K", "prevención de incendios", "mantenimiento"]
+tags: ["cocinas comerciales", "extintor tipo K", "prevención de incendios", "mantenimiento"]
 image:
   url: "/images/categorias/extintores.avif"
   alt: "Cocina comercial con línea de cocción y equipo de protección contra incendio"
@@ -80,3 +81,9 @@ Debe ubicarse donde el personal pueda acceder sin atravesar el área afectada y 
 ### ¿Qué debe hacer el personal si se enciende aceite de cocina?
 
 No debe usar agua ni mover el recipiente en llamas. Debe seguir el procedimiento de emergencia del establecimiento, activar el aviso interno, usar el medio previsto sólo si es seguro y retirarse para pedir apoyo cuando la situación lo requiera.
+
+## Fuentes
+
+- [NOM-002-STPS-2010 — STPS](https://www.stps.gob.mx/bp/secciones/dgsst/normatividad/normas/Nom-002.pdf)
+- [NOM-154-SCFI-2005 — PLATIICA, Secretaría de Economía](https://platiica.economia.gob.mx/normalizacion/nom-154-scfi-2005/)
+- [Mundo Contact — Protección contra incendios en restaurantes](https://mundocontact.com/proteccion-contra-incendios-en-restaurantes-extintores-tipo-k-mantenimiento-y-equipo-certificado-para-cocinas-comerciales/)

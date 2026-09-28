@@ -2,7 +2,8 @@
 title: "Cómo elegir un servicio de recarga de extintores para tu empresa"
 seoTitle: "Cómo elegir recarga de extintores"
 description: "Guía para evaluar un servicio de recarga y mantenimiento de extintores, revisar entregables e integrarlo al control interno."
-pubDate: "2026-10-08"
+pubDate: 2026-09-28
+updatedDate: 2026-09-28
 category: "Extintores"
 tags: ["extintores", "mantenimiento extintores", "trazabilidad"]
 image:
@@ -75,3 +76,9 @@ Compara la relación de salida y devolución, verifica identificaciones, estado 
 ### ¿Cómo integro el servicio al inventario de la empresa?
 
 Actualiza cada registro con los documentos recibidos, observaciones, ubicación y seguimiento aplicable. Conserva el expediente junto con la cotización, las autorizaciones y la evidencia de entrega y devolución.
+
+## Fuentes
+
+- [NOM-002-STPS-2010 — STPS](https://www.stps.gob.mx/bp/secciones/dgsst/normatividad/normas/Nom-002.pdf)
+- [NOM-154-SCFI-2005 — PLATIICA, Secretaría de Economía](https://platiica.economia.gob.mx/normalizacion/nom-154-scfi-2005/)
+- [Revista Fortuna — La recarga de extintores es asunto de profesionales](https://revistafortuna.com.mx/2023/02/22/prevenir-es-lo-mejor-la-recarga-de-extintores-es-asunto-de-profesionales/)

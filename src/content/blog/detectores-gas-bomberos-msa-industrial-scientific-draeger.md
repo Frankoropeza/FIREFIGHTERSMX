@@ -3,7 +3,7 @@ title: "Detectores de Gas para Bomberos: selección y uso en operación"
 seoTitle: "Detector de gas para bomberos y brigadas: guía de compra"
 description: "Guía técnica de detectores multigás para bomberos: configuraciones MSA ALTAIR, Industrial Scientific Ventis y Dräger X-am."
 pubDate: 2026-06-23
-updatedDate: 2026-09-16
+updatedDate: 2026-09-28
 author: "Ing. Carlos Mendoza"
 category: "Guías de compra"
 tags: ["detectores de gas", "monóxido de carbono", "MSA ALTAIR", "Industrial Scientific", "Dräger X-am", "gas multigás"]
@@ -22,7 +22,6 @@ En México no existe una NOM específica de detección de gases para bomberos. L
 
 Un detector multigás puede configurarse para gases combustibles, oxígeno y gases tóxicos. La selección de sensores debe documentarse conforme al riesgo identificado.
 
-![Diagrama de los gases tóxicos producidos en un incendio de estructura urbana moderna — CO, HCN, NO2 y gases inflamables](/images/blog/blog-detectores-gases-incendio-diagrama.avif)
 *La lectura del instrumento debe interpretarse junto con el procedimiento de evaluación de la atmósfera.*
 
 ### Monóxido de carbono (CO): lectura con sensor específico
@@ -153,10 +152,30 @@ El bump test confirma que el sensor responde; no sustituye la calibración. Indu
 
 ---
 
-En [FIREFIGHTERS MX](/productos) suministramos detectores MSA ALTAIR, Industrial Scientific Ventis y Dräger X-am, con kits de calibración y gas de referencia. Para seleccionar un equipo, revisa los gases, el uso previsto y la documentación técnica.
+La comparación final debe incluir los gases de interés, sensores, bomba cuando se requiera muestreo remoto, energía, protección ambiental y el programa de prueba funcional. Revisa las fichas de [Dräger X-am 5600](/productos/hazmat/drager-x-am-5600-detector-multigas), [Dräger X-am 5800](/productos/hazmat/drager-x-am-5800-detector-multigas), [MSA ALTAIR 4XR](/productos/hazmat/msa-altair-4xr/) e [Industrial Scientific Ventis Pro5](/productos/hazmat/industrial-scientific-ventis-pro5/), además del [catálogo de detectores de gas](/productos/hazmat/detectores-de-gas/). Si el monitoreo condiciona la selección de protección, consulta los [niveles HAZMAT EPA](/blog/niveles-proteccion-hazmat-epa-abc/).
 
-Fichas disponibles: [Dräger Pac 6500](/productos/hazmat/drager-pac-6500-detector-monogas), [Dräger X-am 5600](/productos/hazmat/drager-x-am-5600-detector-multigas), [Dräger X-am 5800](/productos/hazmat/drager-x-am-5800-detector-multigas), [Honeywell BW Clip4](/productos/hazmat/honeywell-bw-clip4-detector-4-gases) e [Industrial Scientific Ventis Pro5](/productos/hazmat/industrial-scientific-ventis-pro5). Compara todos en [detectores de gas](/productos/hazmat/detectores-de-gas/).
+## Preguntas frecuentes
 
----
+### ¿El Ventis MX4 tiene protección IP68?
 
-*Consulta también nuestra guía de [SCBA: lo que nadie te dice antes de firmar el pedido](/blog/guia-compra-scba-equipos-respiracion-autonoma) y el artículo sobre las [marcas de equipo para bomberos en México](/blog/mejores-marcas-equipo-bomberos-mexico).*
+No. El Ventis MX4 declara IP66/67. El Ventis Pro5 es el modelo de Industrial Scientific que declara IP68 en las fuentes de este artículo.
+
+### ¿El Dräger X-am 2500 es un modelo vigente?
+
+Está en fin de venta. Dräger identifica al X-am 2800 como su sucesor para uno a cuatro gases.
+
+### ¿El MSA ALTAIR io360 es un detector personal?
+
+No. Es un monitor de área con indicación y alarma de 360°, no un instrumento personal portátil.
+
+### ¿El bump test reemplaza la calibración?
+
+No. La prueba funcional confirma la respuesta del instrumento; la calibración ajusta su lectura. Industrial Scientific recomienda bump test diario y calibración mensual para Ventis MX4.
+
+## Fuentes
+
+- [MSA ALTAIR 4XR](https://us.msasafety.com/p/000080001600001026?default=1&locale=en)
+- [Industrial Scientific Ventis MX4](https://www.indsci.com/es/detectores-de-gases/multi/ventis-mx4)
+- [Dräger X-am 5600](https://www.draeger.com/en-us_us/Products/X-am-5600)
+- [Dräger X-am 5800](https://www.draeger.com/en-us_us/Products/X-am-5800)
+- [NOM-010-STPS-2014](https://www.dof.gob.mx/nota_detalle.php?codigo=5346809)

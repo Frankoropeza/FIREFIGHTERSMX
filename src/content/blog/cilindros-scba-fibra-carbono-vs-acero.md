@@ -1,9 +1,9 @@
 ---
 title: "Cilindros SCBA: fibra de carbono vs acero"
 seoTitle: "Cilindros SCBA: fibra de carbono vs acero"
-description: "Comparación técnica de cilindros SCBA de fibra de carbono y acero, con sus requisitos de requalificación."
+description: "Cómo comparar cilindros SCBA de fibra de carbono y acero por su marcado DOT, vida útil, requalificación y control documental."
 pubDate: 2026-02-15
-updatedDate: 2026-09-16
+updatedDate: 2026-09-28
 author: "Ing. Marco García"
 category: "Equipos SCBA"
 tags: ["cilindros SCBA", "fibra de carbono", "acero", "NFPA 1850", "prueba hidrostática"]
@@ -18,7 +18,7 @@ El expediente de cada cilindro debe conservar sus datos de fabricación, inspecc
 
 ---
 
-## El argumento que lleva a la compra equivocada
+## El material no sustituye el expediente técnico
 
 La fibra de carbono y el acero responden a requisitos de mantenimiento diferentes. Antes de especificar un material, revisa el permiso DOT, la documentación del fabricante y la capacidad de controlar los vencimientos de la flota.
 
@@ -26,7 +26,7 @@ El material no sustituye el control técnico. La elección debe integrarse con e
 
 ---
 
-## Qué le pasa a cada material cuando recibe un impacto severo
+## Qué revisar después de un impacto o condición inusual
 
 Después de un impacto, inspecciona el cilindro de acuerdo con las instrucciones del fabricante y registra el incidente. La inspección visual de cilindros compuestos forma parte de su programa de control.
 
@@ -38,7 +38,7 @@ Después de un impacto, inspecciona el cilindro de acuerdo con las instrucciones
 
 ---
 
-## El protocolo post-impacto que toda corporación debe implementar ahora
+## Protocolo documentado después de un evento
 
 **Retiro de servicio para evaluación.** Un cilindro que haya sufrido un evento que pueda afectar su condición debe evaluarse conforme a las instrucciones del fabricante antes de volver a operación.
 
@@ -52,7 +52,7 @@ Después de un impacto, inspecciona el cilindro de acuerdo con las instrucciones
 
 ---
 
-## TCO: información para una flota de cilindros
+## Costos que una flota debe comparar
 
 El costo de adquisición no sustituye la evaluación del ciclo de mantenimiento. La tabla permite documentar los conceptos que una flota debe revisar sin asignar valores no verificados.
 
@@ -72,17 +72,17 @@ La comparación debe usar cotizaciones vigentes, especificaciones del cilindro y
 
 ---
 
-## Dónde en México cada material es la respuesta correcta
+## Selección por operación y capacidad de control
 
-### Corredor petroquímico Veracruz-Coatzacoalcos y refinerías PEMEX
+### Operación petroquímica e industrial
 
 En una operación industrial, especifica el cilindro con base en la evaluación del riesgo, el marcado DOT y el programa de mantenimiento disponible.
 
-### ARFF — AICM, aeropuerto GDL, aeropuerto MTY y aeropuertos de carga
+### Operación ARFF y aeroportuaria
 
 En operaciones aeroportuarias, verifica que el cilindro seleccionado sea compatible con el SCBA y con los procedimientos de inspección de la organización.
 
-### Brigadas municipales — HCBCM, corporaciones estatales, Protección Civil
+### Brigadas municipales y de protección civil
 
 Para una brigada municipal, el inventario por número de serie permite programar la requalificación y conservar el historial de cada cilindro.
 
@@ -92,14 +92,14 @@ En operaciones con exposición a impactos o abrasión, aplica la inspección y l
 
 ---
 
-## Tabla de decisión por escenario
+## Matriz de decisión por escenario
 
 La recomendación debe documentar el riesgo, el tipo de cilindro y el mantenimiento disponible.
 
 | Escenario operacional | Recomendación | Argumento principal |
 |---|---|---|
-| ARFF en AICM, GDL, MTY | Según evaluación técnica | Compatibilidad con SCBA y programa de inspección |
-| Refinería PEMEX / corredor petroquímico | Según evaluación técnica | Marcado DOT y control de mantenimiento |
+| ARFF y aeropuerto | Según evaluación técnica | Compatibilidad con SCBA y programa de inspección |
+| Petroquímica o refinería | Según evaluación técnica | Marcado DOT y control de mantenimiento |
 | Industria química con solventes orgánicos | Según evaluación técnica | Procedimiento del fabricante |
 | Incendio estructural urbano — primera entrada | Según evaluación técnica | Programa de requalificación |
 | Rescate técnico vertical / altura | Según evaluación técnica | Compatibilidad con el sistema SCBA |
@@ -109,7 +109,7 @@ La recomendación debe documentar el riesgo, el tipo de cilindro y el mantenimie
 
 ---
 
-## La trampa en las licitaciones públicas
+## Qué debe pedir una licitación
 
 Una especificación de cilindros debe incluir el marcado aplicable, la vida útil, el programa de requalificación y la documentación que se entregará con el equipo.
 
@@ -123,9 +123,9 @@ La NFPA 1850, edición 2026 (antes NFPA 1852 para SCBA), debe consultarse junto 
 
 ---
 
-## Recomendación final por tipo de corporación
+## Decisión final para la flota
 
-**Corporaciones ARFF en aeropuertos internacionales de México:** selecciona el cilindro con base en la compatibilidad con el SCBA, el marcado DOT y el programa de inspección disponible.
+**Corporaciones ARFF:** selecciona el cilindro con base en la compatibilidad con el SCBA, el marcado DOT y el programa de inspección disponible.
 
 **Brigadas industriales en refinería o petroquímica:** documenta los criterios de selección, control de inventario y requalificación antes de incorporar cilindros a la flota.
 
@@ -137,7 +137,7 @@ La condición del cilindro depende de su diseño, su historial documentado y el 
 
 ---
 
-## Artículos relacionados
+## Enlaces para el programa SCBA
 
 - [MSA G1 vs Dräger PSS 7000: comparativa real](/blog/msa-g1-vs-drager-pss7000-scba) — compatibilidad con equipo SCBA
 - [Guía de compra SCBA en México](/blog/guia-compra-scba-equipos-respiracion-autonoma) — qué preguntar antes de comprometer el presupuesto
@@ -145,8 +145,29 @@ La condición del cilindro depende de su diseño, su historial documentado y el 
 
 ---
 
-## Catálogo Equipos SCBA en FIREFIGHTERS MX
+## Catálogo y control del conjunto
 
-Los cilindros forman parte del sistema SCBA. Contamos con equipos SCBA completos, con opciones de cilindro de acero y fibra de carbono según el perfil operacional de tu corporación o brigada industrial.
+Los cilindros forman parte del sistema SCBA. Consulta el [catálogo de equipos de respiración autónoma](/productos/equipos-scba/) junto con la [prueba hidrostática de cilindros SCBA](/blog/prueba-hidrostatica-cilindros-scba-nfpa/), la [guía de compra de SCBA](/blog/guia-compra-scba-equipos-respiracion-autonoma/) y el [EPP para bombero](/productos/epp-bombero/) para no especificar el cilindro como una partida aislada.
 
-[Catálogo completo de Equipos SCBA](/productos/equipos-scba) · [Solicitar cotización](/cotizacion)
+[Solicitar cotización](/cotizacion)
+
+## Preguntas frecuentes
+
+### ¿Todos los cilindros compuestos de carbono tienen vida útil de 15 años?
+
+No se debe generalizar sin leer el marcado y el permiso especial. Los cilindros DOT-CFFC señalados en la documentación de SCBA tienen 15 años de vida útil; ciertos diseños autorizados específicamente pueden alcanzar 30 años. La requalificación no extiende por sí sola el límite de vida útil.
+
+### ¿Cuál es la diferencia entre inspección visual y requalificación?
+
+La inspección visual revisa la condición del cilindro conforme al procedimiento aplicable. Para los compuestos de fibra de carbono, la requalificación de cinco años incorpora inspección externa e interna y prueba hidrostática. Conserva el resultado en el expediente individual.
+
+### ¿NOM-020-STPS-2011 regula los cilindros SCBA?
+
+No. Su numeral 2.2 g excluye recipientes portátiles que contienen gases comprimidos. El control del cilindro SCBA debe atender su marcado DOT, permiso especial, fabricante y programa de cuidado del equipo.
+
+## Fuentes
+
+- [eCFR — 49 CFR 180.209, requalificación de cilindros](https://www.ecfr.gov/current/title-49/subtitle-B/chapter-I/subchapter-C/part-180/subpart-C/section-180.209)
+- [PHMSA — permisos especiales](https://www.phmsa.dot.gov/hazmat/registration-lookup)
+- [CGA — publicaciones técnicas](https://www.cganet.com/)
+- [NFPA 1850 — selección, cuidado y mantenimiento](https://link.nfpa.org/all-publications/33/2007)

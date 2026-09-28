@@ -1,187 +1,100 @@
 ---
 title: "FLIR, MSA y Bullard: comparativa de cámaras térmicas para bomberos"
 seoTitle: "FLIR vs MSA vs Bullard: cámaras térmicas para bomberos"
-description: "Comparativa de especificaciones verificadas de cámaras térmicas FLIR, MSA y Bullard para orientar una evaluación técnica."
+description: "Compara cámaras térmicas vigentes de FLIR, MSA y Bullard con datos de fabricante, certificación aplicable y criterios de compra."
 pubDate: 2026-02-15
-updatedDate: 2026-09-16
+updatedDate: 2026-09-28
 author: "Ing. Marco García"
 category: "Cámaras Térmicas"
-tags: ["cámaras térmicas", "FLIR", "MSA Evolution", "Bullard TXS", "NFPA 1930"]
+tags: ["cámaras térmicas", "FLIR", "MSA", "Bullard", "NFPA 1930"]
 image:
   url: "/images/categorias/camaras-termicas.avif"
-  alt: "Comparativa de cámaras térmicas FLIR K-Series, MSA Evolution y Bullard TXS para bomberos"
+  alt: "Cámaras térmicas FLIR, MSA y Bullard para respuesta de bomberos"
 ---
 
-## El primer error es comprar una sola cámara para todas las funciones
+Elegir entre FLIR, MSA y Bullard no consiste en ordenar las cámaras por resolución. Para bomberos, primero se define la misión —búsqueda dentro de humo, localización de puntos calientes, orientación o una integración con SCBA— y después se revisa la ficha del modelo exacto, sus baterías y su certificación. La referencia vigente para cámaras térmicas del servicio de bomberos es NFPA 1930 (2025), que sustituyó a NFPA 1801. Una etiqueta o certificado antiguo de NFPA 1801 debe leerse como antecedente, no como la norma actual.
 
-El bombero que entra primero al incendio necesita orientación, búsqueda y rescate. Una cámara térmica puede ayudar a ver a través del humo, seguir la propagación del fuego e identificar puntos calientes.
+Esta comparativa reúne modelos vigentes o documentados por sus fabricantes. Sirve para preparar una evaluación técnica; no sustituye una práctica con el equipo ofertado ni la capacitación del personal que lo utilizará.
 
-El comandante de incidente requiere información útil para coordinar la operación. Esa necesidad debe traducirse en requisitos verificables para el modelo y el sistema de equipos que se evaluarán.
+## Qué debe resolver una cámara térmica en una emergencia
 
-Estas son misiones distintas. La selección debe considerar si se requiere una cámara independiente o un equipo que forme parte de un sistema ya existente.
+Una cámara térmica representa diferencias de radiación infrarroja mediante una imagen visible. En un incendio estructural puede ayudar a distinguir paredes, puertas, víctimas, trayectorias de propagación y zonas con mayor temperatura aparente cuando el humo limita la visibilidad. También apoya la revisión de puntos calientes después de controlar el fuego. No ve “a través” de una pared ni convierte una medición de pantalla en autorización para avanzar: la lectura depende de la escena, el modo de sensibilidad y las condiciones de uso.
 
-Este análisis está dirigido a jefaturas de corporación, operación y adquisiciones. Resume los datos verificados de los modelos y señala qué información debe solicitarse antes de una compra.
+Por esa razón, antes de comparar marcas conviene responder cuatro preguntas. ¿La cámara será independiente o parte de un sistema respiratorio? ¿Qué información necesita quien la porta y quién coordina? ¿Qué baterías, cargadores y accesorios están incluidos? ¿La licitación exige que el modelo esté certificado bajo la edición vigente? Las respuestas separan requisitos operativos de atributos comerciales.
 
----
+Los modos de sensibilidad importan en esa conversación. La alta sensibilidad favorece la lectura de diferencias térmicas moderadas; la baja sensibilidad amplía el rango y reduce la saturación de la imagen en escenas de mayor temperatura. El operador debe saber qué muestra cada modo y practicar la interpretación con el procedimiento de su corporación.
 
-## FLIR: modelos vigentes para evaluar
+## Modelos FLIR: distinguir la línea de bomberos de una cámara industrial
 
-Una evaluación de [MSA Evolution](/productos/camaras-termicas/msa-evolution), [Bullard TXS](/productos/camaras-termicas/bullard-txs) y FLIR debe comparar modelos vigentes, su uso previsto y la documentación de certificación disponible.
+En la [línea de cámaras térmicas FLIR](/productos/camaras-termicas/flir/), la K75 declara 320×240 píxeles, 30 Hz, rango de −20 a 650 °C, autonomía aproximada de cuatro horas, FSX y transmisión Wi‑Fi a la aplicación Flir Responder. La ficha también publica protección IP67. Es un conjunto de especificaciones, no una certificación NFPA indicada para ese modelo; si la compra la requiere, debe pedirse el documento del equipo ofertado.
 
-La [línea FLIR para bomberos](/productos/camaras-termicas/flir) incluye la K75 y la K85-N. La K75 ofrece resolución de 320×240 a 30 Hz; la K85-N ofrece 640×480 a 30 Hz y está certificada bajo NFPA 1930 (2025).
+La [FLIR K85-N](/productos/camaras-termicas/flir-k85-n/) declara 640×480 píxeles a 30 Hz, rango de −20 a 650 °C, alrededor de cuatro horas de batería, FSX, Wi‑Fi, IP67 y certificación NFPA 1930 (2025). Es importante no trasladar esa certificación de un producto a toda una familia. En una oferta, el número de modelo y la edición del certificado deben coincidir.
 
-K75 y K85-N declaran un rango de −20 a 650 °C, aproximadamente cuatro horas de autonomía, FSX y transmisión Wi-Fi a la aplicación Flir Responder. K45, K65 y K1 están descontinuadas; la K65 fue reemplazada por la K85-N.
+La FLIR K45, K65 y K1 están descontinuadas. La K65 contó con certificación NFPA 1801 (2021) y fue sustituida por la K85-N. No tiene sentido comparar una existencia antigua como si tuviera el mismo soporte y documentación que una cámara vigente. Si una corporación conserva una de ellas, debe administrar su inventario y mantenimiento conforme a la documentación disponible, pero la adquisición nueva debe identificar la alternativa vigente.
 
-La integración de una cámara con otros equipos debe verificarse por modelo y sistema; no debe inferirse por la marca.
+La FLIR T560 merece una separación explícita: es una cámara industrial, no una cámara para bomberos ni un equipo con certificación NFPA publicada para ese uso. Su resolución de 640×480, sus rangos de hasta 1,500 °C y su peso de 1.4 kg no la vuelven equivalente a una TIC de combate. Puede tener un lugar en inspección, pero el uso previsto decide la categoría.
 
----
+## MSA: cámara independiente o integración con el SCBA
 
-## MSA Evolution 6000 y MSA G1 iTIC
+La [MSA Evolution 6000](/productos/camaras-termicas/msa-evolution-6000/) es una cámara independiente de 320×240 píxeles. MSA publica un rango de −40 a 160 °C en alta sensibilidad y de −40 a 550 °C en baja sensibilidad, un peso de 1.25 kg y autonomía de 2.5 a 3.5 horas. Las versiones certificadas se documentaron bajo NFPA 1801; ese dato debe conservar su contexto histórico, pues la referencia actual es NFPA 1930 (2025). Evolution 5200 y Evolution 6000 Plus no deben presentarse como alternativas vigentes sin documentación que lo confirme.
 
-La MSA Evolution 6000 tiene resolución de 320×240, rangos de −40 a 160 °C en alta sensibilidad y de −40 a 550 °C en baja sensibilidad, peso de 1.25 kg y autonomía de 2.5 a 3.5 horas. Las versiones certificadas indican la norma anterior, antes NFPA 1801. Evolution 6000 Plus y Evolution 5200 no tienen vigencia verificada.
+La [MSA G1 iTIC](/productos/camaras-termicas/msa-g1-tic/) no es una cámara montada en la máscara. Está integrada al módulo de control del SCBA G1, utiliza la pantalla a color y la energía del propio equipo respiratorio. Declara 220×176 píxeles, 30 Hz y medición de 0 a 500 °C. Las aprobaciones del SCBA G1 corresponden al equipo respiratorio, no a una certificación independiente de la cámara térmica.
 
-La MSA G1 iTIC es una cámara integrada al módulo de control del SCBA G1, no a la máscara. Usa la pantalla a color y la energía del G1; ofrece 220×176 a 30 Hz y medición de 0 a 500 °C. Las aprobaciones NFPA 1981/1982 corresponden al SCBA G1, no a la cámara térmica.
+Esa diferencia modifica la evaluación. Una solución integrada puede reducir el número de dispositivos que el usuario maneja, pero obliga a revisar la configuración completa: SCBA, módulo, visualización, energía, mantenimiento y capacitación. No es correcto anunciar que una certificación del respirador certifica la TIC, ni asumir que un componente podrá intercambiarse con otra configuración.
 
-La integración con SCBA u otros sistemas debe revisarse en la documentación de la configuración ofertada.
+## Bullard: resolución, autonomía y certificado por modelo
 
-Lo que una evaluación de integración debe confirmar:
+La [Bullard TXS](/productos/camaras-termicas/bullard-txs/) declara 320×240 píxeles a 30 Hz, peso de 0.73 kg con batería, hasta seis horas de autonomía y resistencia a picos de 260 °C. No se publica una certificación NFPA verificada para este modelo en las fuentes revisadas; por tanto, debe pedirse evidencia específica si ese criterio forma parte del pliego.
 
-- La cámara, SCBA y accesorios incluidos en la configuración ofertada
-- La fuente de energía y la pantalla utilizadas por el modelo
-- La documentación aplicable a la cámara y al SCBA
-- El procedimiento de uso y mantenimiento indicado por el fabricante
+La [Bullard QXT Pro](/productos/camaras-termicas/bullard-qxt-pro/) declara 640×480 píxeles a 60 Hz, pantalla de 3.5 pulgadas, campo visual de 40×50° y hasta 6.5 horas de batería. La [Bullard NXT Pro](/productos/camaras-termicas/bullard-nxt-pro/) declara 640×480 píxeles a 60 Hz, pantalla de 3.5 pulgadas, hasta 6.5 horas y certificación NFPA 1930 (2025). Para quien privilegia continuidad de operación, la [Bullard DXT](/productos/camaras-termicas/bullard-dxt/) declara 320×240 píxeles a 60 Hz, pantalla de 3.5 pulgadas, hasta 8.5 horas y realce X‑Factor 2.0.
 
-La decisión operativa debe considerar el procedimiento de la corporación y la información que el sistema pueda documentar para la configuración elegida.
+T4MAX, Eclipse y la QXT original están descontinuadas. Tampoco debe agregarse “montaje en casco” a estos modelos sin que la documentación vigente del fabricante lo indique. Los accesorios cambian la ergonomía y la gestión del equipo, por lo que deben cotizarse y verificarse por separado.
 
-No se incluyen casos de uso de corporaciones o instalaciones específicas porque no están documentados en las fuentes consultadas.
+## Comparación de especificaciones publicadas
 
-Antes de elegir una solución integrada, confirma compatibilidad, accesorios, capacitación y soporte de la configuración completa.
+| Modelo | Resolución / frecuencia | Autonomía publicada | Dato diferencial | Certificación publicada |
+|---|---|---:|---|---|
+| FLIR K75 | 320×240 / 30 Hz | ~4 h | FSX, Wi‑Fi, IP67 | No indicada |
+| FLIR K85-N | 640×480 / 30 Hz | ~4 h | FSX, Wi‑Fi, IP67 | NFPA 1930 (2025) |
+| MSA Evolution 6000 | 320×240 | 2.5–3.5 h | Dos rangos de sensibilidad | NFPA 1801 en versiones certificadas |
+| MSA G1 iTIC | 220×176 / 30 Hz | Usa energía del G1 | Módulo de control de SCBA | Aprobación del SCBA por separado |
+| Bullard TXS | 320×240 / 30 Hz | Hasta 6 h | 0.73 kg con batería | No verificada |
+| Bullard NXT Pro | 640×480 / 60 Hz | Hasta 6.5 h | Pantalla de 3.5 pulgadas | NFPA 1930 (2025) |
 
----
+La tabla no premia automáticamente el número más alto. La resolución puede aportar detalle, pero el resultado en una intervención depende asimismo de la interpretación, el contraste de la escena, la pantalla, la manipulación con guantes y el entrenamiento. Una corporación debe comparar sólo valores publicados para el modelo solicitado y dejar “no indicado” donde la ficha no da un dato.
 
-## Bullard TXS: cuando la misión no necesita red, necesita confiabilidad
+## Cómo convertir la comparación en una compra verificable
 
-Bullard ofrece modelos de cámara térmica para bomberos con especificaciones distintas. La selección debe basarse en el modelo vigente y la misión prevista.
+Pide la propuesta desglosada. Cámara, baterías, cargadores, estuche, accesorios, garantía, procedimiento de reparación y capacitación deben aparecer como partidas identificables. Así se puede comparar una autonomía publicada con el número de baterías realmente disponible por guardia, sin inventar tiempos de reemplazo ni soporte local.
 
-La TXS ofrece 320×240 a 30 Hz, pesa 0.73 kg con batería, tiene autonomía de hasta seis horas y soporta picos de 260 °C. No hay certificación NFPA verificada para este modelo.
+La prueba de aceptación también debe parecerse al uso. El personal puede operar los controles con sus guantes, encender el equipo, interpretar el cambio de sensibilidad y confirmar el procedimiento de batería. La evaluación no busca reproducir un incendio; busca comprobar que el modelo ofertado, con los accesorios cotizados, se puede usar conforme al programa de la corporación.
 
-Bullard QXT Pro ofrece 640×480 a 60 Hz y hasta 6.5 horas de autonomía. Bullard NXT Pro ofrece 640×480 a 60 Hz y certificación NFPA 1930. Bullard DXT ofrece 320×240 a 60 Hz y hasta 8.5 horas de autonomía.
+En una licitación que solicita NFPA 1930, incorpora el modelo exacto, edición requerida y evidencia del certificado como requisito documental. Si se acepta una certificación anterior, especifica por qué y evita escribirla como si fuera la norma vigente. Esta revisión es complementaria a la guía sobre la [transición de NFPA 1801 a NFPA 1930](/blog/nfpa-1801-camaras-termicas-bomberos/).
 
-Bullard T4MAX, Eclipse y QXT original están descontinuadas. No se debe asumir montaje en casco, conectividad o certificación si no figura en la documentación del modelo vigente.
+Para una compra inicial o una renovación, consulta el [catálogo de cámaras térmicas](/productos/camaras-termicas/), la ficha de la [K75](/productos/camaras-termicas/flir-k75/) y los criterios para [herramientas hidráulicas de rescate](/blog/herramientas-hidraulicas-rescate-holmatro-hurst-weber/), donde la misma disciplina de modelo, norma y prueba de aceptación evita equivalencias falsas.
 
----
+## Preguntas frecuentes
 
-## La tabla que importa: especificaciones que tienen impacto operacional real
+### ¿La FLIR K85-N sustituye a la K65?
 
-La siguiente tabla incluye solo los parámetros que en operación real marcan diferencia. No está el tamaño del display en pulgadas, no está el ángulo de campo de visión exacto — parámetros de hoja técnica que rara vez son determinantes en campo.
+Sí. La K65 está descontinuada y la K85-N es la sucesora identificada por FLIR. La K85-N declara certificación NFPA 1930 (2025); la K65 conservaba una referencia histórica a NFPA 1801 (2021).
 
-| Parámetro | FLIR K75 | FLIR K85-N | MSA Evolution 6000 | Bullard TXS | Bullard NXT Pro |
-|---|---|---|---|---|---|
-| Resolución del detector | 320×240 | 640×480 | 320×240 | 320×240 | 640×480 |
-| Rango de temperatura | −20 a 650 °C | −20 a 650 °C | −40 a 160 °C / −40 a 550 °C | — | — |
-| Frecuencia de actualización | 30 Hz | 30 Hz | — | 30 Hz | 60 Hz |
-| Conectividad | Wi-Fi a Flir Responder | Wi-Fi a Flir Responder | — | — | — |
-| Integración SCBA | — | — | Consultar configuración | — | — |
-| Duración de batería | ~4 h | ~4 h | 2.5–3.5 h | Hasta 6 h | Hasta 6.5 h |
-| Clasificación IP | — | — | — | — | — |
-| Certificación NFPA | No indicada | NFPA 1930 (2025) | Norma anterior, antes NFPA 1801, en versiones certificadas | No verificada | NFPA 1930 |
-| Peso aproximado | — | — | 1.25 kg | 0.73 kg con batería | — |
-| Precio de referencia | — | — | — | — | — |
+### ¿La MSA G1 iTIC está instalada en la máscara?
 
-Tres observaciones que no son obvias en la tabla:
+No. La iTIC se integra al módulo de control del SCBA G1 y usa su pantalla a color y fuente de energía. Sus especificaciones deben separarse de las aprobaciones del equipo respiratorio.
 
-Primero, el rango de temperatura. K75 y K85-N indican −20 a 650 °C; MSA Evolution 6000 declara rangos distintos para alta y baja sensibilidad. El comprador debe comparar esos datos con la aplicación prevista.
+### ¿Una cámara industrial de 640×480 reemplaza una cámara para bomberos?
 
-Segundo, el peso. Las fuentes indican 1.25 kg para MSA Evolution 6000 y 0.73 kg con batería para Bullard TXS. La evaluación operativa debe realizarse con guantes y el equipo de protección de la corporación.
+No por resolución. La FLIR T560 está destinada a uso industrial y no se publica como cámara para bomberos ni con certificación NFPA para ese fin. Evalúa el uso previsto y el certificado del modelo.
 
-Tercero, la comparación comercial debe separar la cámara, baterías, accesorios, capacitación y cualquier integración con SCBA.
+### ¿Qué significa una referencia a NFPA 1801 en una cámara?
 
----
+Puede ser una certificación de una edición anterior. NFPA 1801 fue sustituida por NFPA 1930 (2025); la oferta debe explicar cuál es la norma aplicable y a qué modelo corresponde el certificado.
 
-## Evaluación con guantes: lo que ninguna ficha técnica te dice
+## Fuentes
 
-Una cámara térmica se opera con guantes de protección estructural. Si el equipo de adquisición la evaluó en oficina con mano desnuda, evaluó un producto diferente al que va a usar el bombero en campo.
-
-La operación enguantada debe evaluarse con cada modelo ofertado.
-
-Para FLIR K75 y K85-N, verifica la operación de controles, la visualización y el procedimiento de uso con el equipo de protección de la corporación.
-
-Para MSA Evolution 6000, valida la ergonomía y el procedimiento de operación con el equipo de protección de la corporación.
-
-Para Bullard TXS, QXT Pro, NXT Pro y DXT, valida la ergonomía, la pantalla y los controles del modelo ofertado.
-
-La recomendación práctica antes de cualquier licitación es incluir una evaluación de producto con guantes, casco y traje de aproximación, y documentar los resultados para cada modelo.
-
----
-
-## México: cómo estructurar la evaluación por tipo de operación
-
-Las corporaciones municipales, brigadas industriales, equipos de rescate y servicios aeroportuarios pueden tener requerimientos operativos distintos. La evaluación debe documentar la misión, la capacitación y el equipo existente.
-
-Para cualquier operación, solicita documentación de garantía, servicio técnico, baterías y capacitación para el modelo ofertado.
-
-En operaciones con SCBA, la MSA G1 iTIC puede evaluarse como cámara integrada al módulo de control del G1. Sus aprobaciones NFPA 1981/1982 corresponden al SCBA, por lo que la documentación debe separarse de la relativa a la cámara térmica.
-
-En brigadas industriales, define el uso de la cámara en procedimientos de inspección, respuesta y mantenimiento, y confirma que el modelo sea apropiado para la misión.
-
-En corporaciones con múltiples unidades, documenta compatibilidad, mantenimiento, capacitación y disponibilidad de baterías antes de estandarizar un modelo.
-
----
-
-## El error de compra más común y cómo evitarlo
-
-Un riesgo de adquisición es comprar [cámaras térmicas](/productos/camaras-termicas) sin definir baterías de reemplazo, servicio técnico y entrenamiento antes de la primera operación.
-
-Una batería degradada puede reducir la autonomía disponible. El entrenamiento documentado con el modelo adquirido ayuda a que el personal conozca sus controles y límites de uso.
-
-Los aspectos que deben estar en las bases de cualquier licitación:
-
-La disponibilidad de baterías de reemplazo en México, con condiciones de suministro documentadas. Las baterías son un consumible de la cámara térmica.
-
-El proceso de garantía y servicio técnico en México. Solicita el procedimiento y el alcance de servicio para el modelo ofertado.
-
-Entrenamiento documentado del personal operativo antes de la primera operación real. No capacitación de fabricante en sala de juntas — simulación con el equipo de guantes, casco y traje, en condición de oscuridad o visibilidad limitada, con cronómetro.
-
----
-
-## Recomendación concreta por tipo de corporación
-
-No existe la cámara correcta en abstracto. Existe la cámara correcta para la misión, el presupuesto y el ecosistema de equipamiento de cada corporación. Las siguientes recomendaciones son directas:
-
-**Corporación municipal (extinción estructural como misión primaria):** Evalúa FLIR K75, FLIR K85-N, MSA Evolution 6000 o Bullard según la misión, la certificación requerida y la documentación de soporte.
-
-**Corporación con coordinación multi-equipo:** Define si se requiere integración con SCBA y confirma la compatibilidad de la configuración ofertada antes de seleccionar un modelo.
-
-**Servicio ARFF:** Documenta los requisitos de respuesta, la certificación de cámara aplicable y la integración con el equipo existente antes de seleccionar un modelo.
-
-**Brigada industrial:** Define el uso previsto y compara las fichas vigentes de FLIR K75, K85-N, MSA Evolution 6000 y los modelos Bullard disponibles.
-
-**Equipo SAR o rescate técnico:** Documenta el escenario de uso y realiza una evaluación operativa con el equipo de protección antes de seleccionar el modelo.
-
----
-
-## El argumento de ciclo de vida: no compras una cámara, compras operación continua
-
-La selección y el mantenimiento definen la continuidad operativa de una cámara térmica. La decisión debe contemplar soporte, baterías, capacitación y el equipo existente.
-
-Si se requiere integración con SCBA, la compra debe confirmar la compatibilidad de la configuración completa. Si cambia la misión operativa, revisa si el modelo disponible sigue cubriendo los requisitos.
-
-Define la misión operacional proyectada y selecciona el equipo que documentadamente cubra sus requisitos técnicos y de mantenimiento.
-
-La cámara adecuada es la que alinea calidad de imagen, conectividad, integración, soporte y uso previsto con la misión de la corporación. Ese análisis debe realizarse antes del proceso de adquisición.
-
----
-
-## Artículos relacionados
-
-- [NFPA 1930: guía técnica completa](/blog/nfpa-1801-camaras-termicas-bomberos) — cómo distinguir una cámara certificada de una industrial disfrazada
-- [Comparativa MSA G1 y Dräger](/blog/msa-g1-vs-drager-pss7000-scba) — misma lógica de ecosistema integrado vs modularidad industrial en SCBA
-- [Tipos de traje: estructural, proximidad y forestal](/blog/traje-estructural-proximidad-forestal-diferencias) — el EPP completo del bombero más allá de la cámara
-
----
-
-## Catálogo Cámaras Térmicas en FIREFIGHTERS MX
-
-Consulta cámaras térmicas para bomberos y solicita la ficha técnica, la certificación aplicable y la documentación de soporte del modelo de interés.
-
-[Catálogo completo de Cámaras Térmicas](/productos/camaras-termicas) · [Solicitar cotización](/cotizacion)
+- [NFPA 1930, Standard on Thermal Imagers for the Fire Service](https://www.nfpa.org/codes-and-standards/nfpa-1930-standard-development/1930)
+- [FLIR K75](https://www.flir.com/products/k75/)
+- [FLIR K85-N](https://www.flir.com/en-eu/products/k85-n/)
+- [MSA G1 iTIC](https://us.msasafety.com/g1-scba/itic?locale=en)
+- [Bullard NXT Pro](https://www.bullard.com/all-products/thermal-imaging/nxt-pro/)

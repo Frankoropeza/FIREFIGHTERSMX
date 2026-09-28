@@ -1,115 +1,106 @@
 ---
 title: "Cuántos brigadistas necesita tu planta según NOM-002 y cómo dimensionarlos por turno"
-seoTitle: "Cuántos brigadistas necesita tu empresa según NOM-002"
-description: "Método para calcular el número de brigadistas por turno según NOM-002-STPS. Casos reales en plantas de Monterrey, Coatzacoalcos y el Bajío."
+seoTitle: "Cuántos brigadistas requiere una planta según NOM-002"
+description: "La NOM-002-STPS no fija porcentajes de brigadistas. Aprende a dimensionar la brigada por turno, rotación, escenarios y resultados de simulacros."
 pubDate: 2026-03-20
-updatedDate: 2026-06-25
+updatedDate: 2026-09-28
 author: "Ing. Marco García"
 category: "Brigadas Empresariales"
-tags: ["brigadas empresariales", "NOM-002-STPS", "dimensionamiento brigada", "seguridad industrial", "DC-3"]
+tags: ["brigadas empresariales", "NOM-002-STPS-2010", "dimensionamiento", "turnos", "simulacros"]
 image:
   url: "/images/servicios/brigadas-empresariales.avif"
-  alt: "Brigadistas contra incendio en planta industrial con equipo de protección"
+  alt: "Integrantes de una brigada industrial durante práctica de respuesta a incendio"
 ---
 
-La planta tiene 340 trabajadores en turno matutino, 180 en vespertino y 40 en nocturno. El coordinador de seguridad armó la brigada con 12 personas, todas del turno de día. Cuando la STPS llegó a revisar, el inspector preguntó: ¿quién cubre la brigada en el turno de noche?
+La NOM-002-STPS-2010 no dice que una brigada deba representar 5%, 10% ni otra proporción de la plantilla. Para un centro de trabajo con riesgo de incendio alto, exige integrar brigada y señala tres elementos mínimos para definir su tamaño: trabajadores por turno, asignación y rotación entre turnos, y resultados de simulacros frente a los accidentes previsibles más graves. El número defendible sale de documentar esos elementos, no de copiar un porcentaje.
 
-Silencio. El expediente no tenía respuesta para eso.
+Este método sirve para convertir esa regla en una decisión operativa. Parte de la premisa correcta: una brigada debe estar disponible cuando el centro opera, con personas capaces de ejecutar las funciones previstas en el plan de emergencia.
 
-Ese error cuesta caro, y no solo en la inspección. Un turno nocturno sin brigadistas capacitados es una vulnerabilidad real, no solo documental.
+## Qué exige realmente el numeral 9.1
 
-La NOM-002-STPS-2010 habla de brigadas, pero no da un número exacto de brigadistas por trabajador. Eso genera confusión. Lo que sí establece es el marco para determinarlo, y la práctica en campo tiene criterios bien asentados que te explico aquí.
+La obligación de contar con brigada contra incendio aplica a los centros de trabajo clasificados con riesgo alto. Para determinar el número de integrantes, el numeral 9.1 de la NOM-002 manda considerar, al menos, lo siguiente:
 
-## Lo que dice la NOM-002 sobre brigadas
+- El número de trabajadores por turno.
+- La asignación y rotación de trabajadores en los distintos turnos.
+- Los resultados de los simulacros, considerando los accidentes previsibles más graves en las áreas de la instalación.
 
-El apartado 8.4 de la norma obliga al patrón a integrar, capacitar y mantener activa una brigada contra incendio. Los requisitos específicos incluyen:
+No hay un mínimo de tres personas, un porcentaje por planta ni una tabla de brigadistas por ocupación dentro de la norma. Esos números pueden servir como referencias internas de una empresa, pero no deben presentarse como exigencia de STPS. Tampoco es suficiente sumar toda la plantilla: una brigada integrada sólo por personal del turno diurno no demuestra capacidad de respuesta durante un turno nocturno que opera con autonomía.
 
-- Que la brigada esté formada por trabajadores del centro de trabajo
-- Que cuenten con capacitación teórica y práctica
-- Que las constancias de capacitación estén emitidas bajo el sistema DC-3
-- Que la brigada cubra los horarios de operación del centro de trabajo
+Las personas seleccionadas deben ser trabajadores con disposición y aptitud física y mental para las funciones asignadas. La brigada, bajo su responsable o quien tome el mando, evalúa la emergencia y opera equipos, herramientas, sistemas fijos y EPP de acuerdo con los procedimientos, instrucciones de fabricantes y capacitación recibida.
 
-Ese último punto es el que más se ignora. La brigada no opera por planta: opera por turno.
+## Empieza por el escenario, no por la nómina
 
-## El criterio de dimensionamiento que funciona en campo
+Antes de contar personas, revisa el plan de atención a emergencias. El plan identifica las áreas y procesos de riesgo, rutas, alertamiento, evacuación, funciones de brigada, equipos disponibles, solicitud de auxilio y retorno seguro. En riesgo alto también considera brigadas de primeros auxilios, comunicación y evacuación, con recursos y procedimientos propios.
 
-No existe una fórmula universal en la norma, pero el criterio que aplican la mayoría de los asesores en protección civil y que los inspectores STPS aceptan sin objeción es el siguiente:
+El escenario no es una historia imaginaria para llenar un formato. Debe estar basado en los materiales inflamables, combustibles, explosivos o pirofóricos, su cantidad máxima, el proceso, las rutas y la ocupación. Una nave con solventes y un almacén de cartón pueden requerir funciones distintas aunque tengan la misma superficie y el mismo número de trabajadores.
 
-**Mínimo 5% de la plantilla por turno, con un piso de 3 brigadistas activos en cualquier momento.**
+Una manera práctica de organizar el análisis es esta:
 
-En riesgo alto (plantas químicas, petroquímica, almacenamiento de inflamables), se eleva a 10%.
+| Pregunta | Evidencia que conviene revisar | Decisión que orienta |
+|---|---|---|
+| ¿Qué área presenta el escenario más severo previsible? | Clasificación de riesgo, inventarios y hojas de datos de seguridad | Tipo de respuesta y equipo disponible |
+| ¿Cuántas personas hay en cada horario? | Plantilla y registros de acceso por turno | Cobertura real, no total anual |
+| ¿Dónde están asignadas? | Plano, layout y puestos críticos | Distribución por zonas |
+| ¿Quién puede ausentarse o rotar? | Turnos, vacaciones, incapacidades y reemplazos | Suplencias y actualización |
+| ¿Qué mostró el último ejercicio? | Registro de simulacro y desviaciones | Ajustes al número o funciones |
 
-Esto significa que el cálculo se hace turno por turno, no sobre el total de trabajadores.
+El resultado debe ser coherente con el escenario y anotarse en el plan. Si una persona tiene una tarea incompatible con abandonar su puesto en una contingencia, enlistarla como brigadista no resuelve la cobertura. Lo mismo ocurre con una persona que trabaja en otro horario o que no está físicamente disponible en el área a la que fue asignada.
 
-| Turno | Trabajadores | Riesgo ordinario (5%) | Riesgo alto (10%) |
-|---|---|---|---|
-| Matutino | 340 | 17 brigadistas | 34 brigadistas |
-| Vespertino | 180 | 9 brigadistas | 18 brigadistas |
-| Nocturno | 40 | 3 brigadistas | 4 brigadistas |
+## Dimensionamiento por turno: ejemplo ilustrativo
 
-El nocturno con 3 brigadistas mínimos es el punto de quiebre más frecuente. Las plantas lo olvidan porque operativamente es el turno con menos presencia gerencial.
+Supón una operación que tiene 120 personas en el turno A, 70 en el B y 20 en el C. No se aplica una división fija de plantilla. Primero se identifican las áreas críticas presentes en cada horario y las funciones que requiere el plan; después se designan integrantes y suplentes por turno. El análisis puede presentarse así:
 
-## Por qué el número es solo el inicio
+| Turno | Ocupación | Áreas que permanecen activas | Personas asignadas a brigada | Cobertura a validar |
+|---|---:|---|---:|---|
+| A | 120 | Producción, almacén, oficinas | Según evaluación propia | Combate inicial, evacuación, comunicación y primeros auxilios si aplican |
+| B | 70 | Producción y almacén | Según evaluación propia | Las funciones necesarias mientras continúa la operación |
+| C | 20 | Vigilancia, proceso continuo o mantenimiento | Según evaluación propia | Alertamiento, evacuación y respuesta prevista en ese horario |
 
-Tener los números en papel no resuelve nada si la brigada no funciona. Estos son los problemas de implementación que encuentro con más frecuencia:
+Este es un ejemplo ilustrativo, no una fórmula. El expediente debe explicar por qué se asignó cada función, quién la cubre y quién suple ausencias. Si el turno C sólo realiza vigilancia, el plan puede definir una respuesta distinta a la del turno con producción completa; si conserva materiales y equipos en operación, el análisis debe demostrar que la cobertura es adecuada para esa condición.
 
-**Rotación de personal no reflejada en el expediente.** Un brigadista renunció, otro fue transferido de turno. La lista no se actualiza. El inspector la revisa y encuentra que 4 de los 17 brigadistas ya no están en ese turno. La brigada efectiva queda por debajo del mínimo.
+## Usa el simulacro para comprobar la cobertura
 
-**Capacitación que no corresponde al turno.** El curso se da en horario matutino y los brigadistas del vespertino no asisten. Las constancias DC-3 existen, pero son de personas que están en el turno equivocado.
+La norma no permite fijar la brigada y olvidar el resultado. Los simulacros se realizan por áreas o en todo el centro y sus resultados se registran. El registro incluye áreas, participantes, recursos usados, desviaciones, recomendaciones para actualizar el plan, duración y coordinadores. Precisamente esas desviaciones deben alimentar el dimensionamiento.
 
-**Brigada en papel vs. brigada activa.** La gente está listada pero nunca ha tocado un extintor en una práctica real. Cuando llegue el inspector y pida una demostración, el hueco queda expuesto.
+Por ejemplo, si durante un ejercicio el responsable de área no pudo informar una ausencia, si el brigadista asignado estaba en otra zona o si una función quedó sin ejecutar, el hallazgo no se corrige poniendo una cifra más alta sin análisis. Puede requerir redistribuir integrantes, crear suplencias, modificar comunicación, capacitar a personal de otro turno o ajustar rutas y recursos. La [guía para documentar simulacros de incendio](/blog/simulacro-incendio-stps-como-documentarlo/) detalla la evidencia que debe conservarse.
 
-## Cómo estructurar la brigada por turno
+En riesgo ordinario la NOM exige al menos un simulacro anual; en riesgo alto, al menos dos. Planear ejercicios en horarios que reflejen la operación real evita que la evidencia sólo represente el turno más poblado.
 
-La estructura que recomiendo para plantas medianas (100–500 trabajadores por turno) es esta:
+## Roles y límites de la brigada
 
-**Jefe de brigada:** 1 por turno. Responsable de la coordinación durante la emergencia, comunicación con bomberos externos y reporte post-incidente. Debe tener curso de coordinación de emergencias, no solo el curso básico.
+La NOM describe funciones mínimas de evaluación y operación de recursos, no una estructura con puestos obligatorios llamados “jefe”, “líder de piso” o “brigadista de primera intervención”. Es válido usar esos nombres internos si el plan define qué hacen y cómo se coordinan, pero no deben sustituir la capacitación ni el alcance seguro de la respuesta.
 
-**Brigadistas de primera intervención:** según el porcentaje calculado. Son los que operan los extintores y el equipo de primeros auxilios.
+Un brigadista industrial no se convierte en bombero estructural por recibir un casco o un traje. La respuesta debe detenerse y solicitar auxilio cuando rebasa los procedimientos, el entrenamiento o el EPP previsto. El [EPP de una brigada contra incendio](/blog/epp-brigadista-contra-incendio-que-necesitas/) se selecciona por las funciones y riesgos identificados, conforme a NOM-017-STPS-2024 y a la obligación de la NOM-002.
 
-**Responsable de evacuación:** 1 por área o zona definida. Puede coincidir con un brigadista de primera intervención, pero debe tener asignación explícita de su zona.
+También conviene separar dos listas: la lista vigente de asignación por turno y el historial de capacitación. Así, una constancia de capacitación no se confunde con disponibilidad actual. La [capacitación para brigadas empresariales](/servicios/brigadas-empresariales/) debe vincular contenidos y prácticas con el plan de emergencia que la brigada ejecutará.
 
-Para el EPP que necesita cada rol dentro de la brigada, revisa [EPP de brigadista contra incendio: qué es obligatorio y qué es marketing](/blog/epp-brigadista-contra-incendio-que-necesitas).
+## Cómo mantener el cálculo vigente
 
-## Las constancias DC-3: lo que acepta y lo que rechaza la STPS
+Revisa el dimensionamiento cuando se modifiquen los escenarios, inventarios, layout, turnos o funciones críticas. Para el riesgo de incendio, la NOM pide una nueva determinación cuando cambian los inventarios máximos registrados. Aunque el cambio no modifique el tipo de riesgo, puede alterar el escenario de respuesta y hacer necesario actualizar brigada, capacitación, EPP o simulacros.
 
-La capacitación de brigadistas en México se certifica mediante el sistema DC-3 (antes DC-3). Requisitos para que la constancia sea válida ante la STPS:
+Una revisión periódica puede confirmar que los nombres siguen en la plantilla, que los suplentes conocen su asignación, que el EPP está disponible y que los teléfonos y medios de comunicación coinciden con el plan. La evidencia ordenada debe conectarse con el [expediente documental de la NOM-002](/blog/expediente-documental-nom-002-stps-checklist/), no quedar dispersa en listas sin fecha.
 
-- Emitida por instructor o empresa con Agente Capacitador Externo (ACE) registrado ante la STPS
-- Nombre y firma del trabajador, nombre y firma del instructor, datos del centro de trabajo
-- Descripción del curso: debe especificar "prevención y combate de incendios" o equivalente
-- Fecha de emisión (vigencia no especificada en ley, pero inspectores cuestionan cursos de más de 3 años)
+Para productos de control inicial, el número de brigadistas no reemplaza la dotación y accesibilidad de [extintores para cada riesgo](/productos/extintores/). Si se requiere apoyo especializado para procedimientos o entrenamiento, la ficha de [MESECI en el directorio](/empresas/equipos-contra-incendio/ciudad-de-mexico/meseci/) permite revisar un proveedor dentro del giro correspondiente.
 
-Lo que no vale: diplomas de empresas sin número de ACE, constancias sin datos del instructor, cursos en línea sin componente práctico documentado.
+## Preguntas frecuentes
 
-## El simulacro como prueba del dimensionamiento
+### ¿La NOM-002 obliga a tener un porcentaje de brigadistas por turno?
 
-Un dimensionamiento correcto se verifica en el simulacro. Si con los brigadistas disponibles no puedes evacuar el área crítica en menos de 3 minutos y contener un conato en menos de 90 segundos, el número es insuficiente o la asignación de zonas está mal.
+No. El numeral 9.1 no establece porcentajes. Indica que el número debe considerar trabajadores por turno, rotación y resultados de simulacros frente a los accidentes previsibles más graves.
 
-El registro del simulacro debe mostrar cuántos brigadistas participaron por turno, no solo el total. Si el simulacro fue en turno matutino y nunca has hecho uno en nocturno, tienes una brecha documental y operativa.
+### ¿La brigada es obligatoria en riesgo de incendio ordinario?
 
-Para entender qué debe incluir el expediente de simulacros y la brigada, el artículo [Expediente documental NOM-002](/blog/expediente-documental-nom-002-stps-checklist) tiene la lista completa.
+La obligación expresa de contar con brigada contra incendio en la NOM-002 corresponde al riesgo alto. El centro con riesgo ordinario conserva otras obligaciones, como plan de emergencia, capacitación, equipos y simulacro anual.
 
-## El criterio para dimensionar correctamente
+### ¿Una DC-3 determina que una persona está disponible en un turno?
 
-Cuando un cliente me pregunta cuántos brigadistas necesita, mi primera pregunta es: ¿cuántos turnos operan y cuántas personas hay en cada uno? No el total. El turno.
+No. La constancia puede respaldar capacitación, pero la disponibilidad se acredita con la asignación vigente, la rotación y la organización efectiva del turno.
 
-Después revisamos el nivel de riesgo por área. Una planta de alimentos con riesgo ordinario no se dimensiona igual que un almacén de solventes en Coatzacoalcos.
+### ¿Cuándo conviene revisar otra vez el dimensionamiento?
 
-Con esos dos datos, el número sale solo. Lo que cuesta trabajo no es el cálculo: es mantenerlo vigente cuando la plantilla cambia, cuando hay vacaciones, cuando hay paros temporales. Eso requiere un proceso de actualización, no un número fijo en un documento.
+Cuando cambian turnos, inventarios, procesos, distribución, personal clave o los simulacros revelan desviaciones. El plan y las listas deben reflejar el funcionamiento real del centro.
 
----
+## Fuentes
 
-## Artículos relacionados
-
-- [EPP de brigadista contra incendio: qué es obligatorio y qué es marketing](/blog/epp-brigadista-contra-incendio-que-necesitas)
-- [Expediente documental NOM-002: checklist completo](/blog/expediente-documental-nom-002-stps-checklist)
-- [Las 8 no-conformidades más frecuentes en inspecciones STPS](/blog/no-conformidades-stps-nom-002-plantas-mexico)
-
----
-
-## Brigadas Empresariales en FIREFIGHTERS MX
-
-Diseñamos, integramos y capacitamos brigadas contra incendio para plantas industriales en todo México. Incluye análisis de dimensionamiento por turno, plan de capacitación, gestión de constancias DC-3 y acompañamiento en el primer simulacro.
-
-[Servicio de Brigadas Empresariales](/servicios/brigadas-empresariales)
+- [DOF — NOM-002-STPS-2010, capítulos 8 a 10](https://dof.gob.mx/normasOficiales/4228/stps.htm)
+- [DOF — NOM-017-STPS-2024](https://dof.gob.mx/normasOficiales/9496/stps/stps.html)

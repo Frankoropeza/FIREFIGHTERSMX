@@ -1,12 +1,12 @@
 ---
-title: "Iluminación Táctica para Bomberos: Ver en la Oscuridad que el Humo Crea"
+title: "Iluminación táctica para bomberos: criterios de selección y verificación"
 seoTitle: "Linternas para bomberos: Streamlight, Peli y Ledlenser"
 description: "Guía de iluminación táctica para bomberos: criterios para evaluar linternas de casco, escena y búsqueda de Streamlight, Peli y LED Lenser."
 pubDate: 2026-06-23
-updatedDate: 2026-06-23
+updatedDate: 2026-09-28
 author: "Ing. Carlos Mendoza"
 category: "Guías de compra"
-tags: ["iluminación táctica", "linternas bomberos", "Streamlight", "Peli", "LED Lenser", "Foxfury", "linterna de casco"]
+tags: ["iluminación táctica", "linternas bomberos", "Streamlight", "Peli", "LED Lenser"]
 image:
   url: "/images/blog/blog-iluminacion-tactica.avif"
   alt: "Bombero en estructura con humo denso usando linterna de casco y linterna de mano — iluminación táctica profesional"
@@ -28,8 +28,6 @@ El humo es un aerosol de partículas sólidas, líquidas y gases en suspensión.
 
 En humo denso, la **visibilidad efectiva** —la distancia a la que el bombero puede distinguir objetos— depende del patrón del haz, la densidad del humo y la posición de la lámpara; compara el modo flood y el spot del equipo en una prueba operativa controlada.
 
-![Comparativa de visibilidad con distintos patrones de haz en cámara de humo denso](/images/blog/blog-iluminacion-backscatter-humo.avif)
-*En humo denso, más lúmenes no significa más visibilidad. Compara el patrón de haz y la dispersión antes de elegir una linterna para interior.*
 
 Esto no significa que se compren linternas débiles. Significa que la potencia máxima es para reconocimiento en exteriores o en espacios con visibilidad libre; el modo de interior con humo necesita un haz flood de potencia controlada. Las mejores linternas para bomberos tienen esa capacidad de ajuste.
 
@@ -87,12 +85,10 @@ Para la escena exterior —accidente vehicular, colapso estructural, incendio fo
 
 ## Comparativa de marcas
 
-### Streamlight — el estándar más instalado en México
+### Streamlight — revisar modelo y uso previsto
 
 Streamlight ofrece líneas de iluminación de emergencia como **Vantage, Survivor** y **Fire Vulcan**. Al evaluarlas, confirma compatibilidad con el casco, tipo de alimentación, mantenimiento y disponibilidad de refacciones con el proveedor.
 
-![Streamlight Vantage 180 montado en casco MSA Cairns 1044 — posición de trabajo y modo flood activo en escena de interior](/images/blog/blog-iluminacion-streamlight-vantage.avif)
-*El Vantage 180 usa un clip de casco y un patrón de haz. Confirma la compatibilidad con el modelo de casco de tu corporación antes de adquirirlo.*
 
 **Streamlight Vantage 180 — linterna de casco**
 
@@ -120,12 +116,10 @@ El Fire Vulcan es un faro de área. Verifica el patrón de luz, la sujeción, la
 
 ---
 
-### Peli Products — cuando la certificación no es opcional
+### Peli — confirmar certificación aplicable al modelo
 
 Peli (Pelican en EUA) construyó su reputación en contenedores resistentes y la extendió a linternas con la misma filosofía: nada de lo que prometen en la ficha técnica es marketing. Sus modelos pasan pruebas de terceros, no solo de fábrica.
 
-![Peli 2780R con carga USB-C — detalle del sistema de montaje en casco y el modo boost de 620 lm activo](/images/blog/blog-iluminacion-peli-2780r.avif)
-*Para operaciones con agua, verifica el grado de protección declarado, el cierre de puertos y el método de recarga antes de incorporar el equipo.*
 
 **Peli 2780R — linterna de casco recargable**
 
@@ -151,14 +145,12 @@ La Peli 9495 es una torre portátil. Evalúa el despliegue, el soporte, la auton
 
 ---
 
-### LED Lenser — la óptica que marca diferencia en visibilidad real
+### Ledlenser — comparar la ficha de cada linterna
 
 LED Lenser (parte del Leatherman Group, Alemania) tiene la ventaja técnica más clara del segmento en una dimensión específica: la calidad óptica. Su sistema **Advanced Focus System (AFS)** permite transitar de haz spot a haz flood de manera continua, no en saltos de modo, lo que permite adaptar la iluminación exactamente al escenario en tiempo real.
 
 En la práctica de un rescate, eso se traduce así: comienzas la búsqueda con haz spot para ver al fondo del pasillo, ajustas al flood cuando llegas a la habitación y necesitas evaluar el área completa, vuelves al spot cuando encuentras a la víctima y necesitas ver el estado específico de la lesión. Todo con el mismo movimiento continuo del control deslizante, con guante de bombero puesto.
 
-![LED Lenser iF3R en casco Rosenbauer HEROS xtreme — haz spot (izquierda) y haz flood (derecha) en el mismo modelo, ajuste continuo sin cambio de modo](/images/blog/blog-iluminacion-led-lenser-if3r.avif)
-*El AFS de LED Lenser no tiene posiciones fijas de modo. El haz va de spot a flood de manera continua, lo que permite ajustar la iluminación exactamente a lo que el escenario necesita en cada momento.*
 
 **LED Lenser iF3R — linterna de casco certificada para bomberos**
 
@@ -187,8 +179,6 @@ Foxfury es californiana y su portafolio completo existe para un solo sector: ser
 
 La **Nomad Force** es un faro de área que puede colgarse, adherirse magnéticamente o apoyarse en una superficie. Confirma el patrón de iluminación, los accesorios incluidos y la estabilidad de montaje en la ficha vigente.
 
-![Foxfury Nomad Force colgada en un punto de trabajo de rescate técnico](/images/blog/blog-iluminacion-foxfury-nomad.avif)
-*La Nomad Force puede montarse en un punto alto o estable. Verifica la orientación y estabilidad antes de dejarla operando sin supervisión.*
 
 **Foxfury Nomad Force:**
 - Confirma los modos de iluminación y autonomía en la ficha vigente.
@@ -253,18 +243,39 @@ Para una combinación de casco, mano y área, compara compatibilidad, alimentaci
 
 ## Lo que no se negocia, sin importar el presupuesto
 
-**IP rating certificado por laboratorio.** El IP68 declarado solo por el fabricante puede no resistir las condiciones reales. Pide el certificado de prueba de inmersión de un laboratorio independiente.
+**Clasificación publicada para el modelo.** La protección IP, UL 913, ATEX, lúmenes y autonomía sólo deben incorporarse a la evaluación cuando figuren en la documentación vigente del fabricante y correspondan al modelo ofertado.
 
 **Temperatura de operación del cuerpo completo.** No del LED, sino del alojamiento, la batería y el sistema de montaje. La ficha debe cubrir el ambiente térmico de la operación; de otro modo, la batería puede perder capacidad y el montaje puede fallar.
 
-**Batería o pilas disponibles en México.** Una linterna con batería propietaria sin stock local queda fuera de servicio cuando la batería falla y no hay repuesto. Antes de comprar, verifica que el proveedor tiene baterías de repuesto en inventario en México.
+**Batería o pilas identificadas.** Antes de comprar, verifica por escrito el tipo de alimentación, cargador, número de repuestos solicitados y procedimiento de sustitución para el modelo elegido.
 
-**Garantía con canal local de reclamación.** El proceso de garantía directo con fábrica en EUA o Europa puede dejar al equipo sin iluminación durante semanas. La garantía necesita un representante en México con facultad de resolver.
-
----
-
-En [FIREFIGHTERS MX](/productos) contamos con las líneas Streamlight, Peli, LED Lenser y Foxfury con stock en México. Si tu corporación está equipando unidades de rescate o renovando la dotación individual de iluminación, [solicita una propuesta técnica](/cotizacion) con la configuración correcta para cada escenario de tu operación.
+**Garantía y servicio documentados.** La propuesta debe explicar el procedimiento de garantía y reparación aplicable, sin asumir plazos de atención o disponibilidad local que no hayan sido documentados.
 
 ---
 
-*¿Estás configurando la dotación completa del bombero? Consulta también nuestra guía de [SCBA: lo que nadie te dice antes de firmar el pedido](/blog/guia-compra-scba-equipos-respiracion-autonoma) y la guía de [cómo equipar una estación de bomberos desde cero](/blog/como-equipar-estacion-bomberos-desde-cero).*
+Para cerrar la evaluación, registra la categoría de uso, el modo de alimentación, la ficha de modelo y la certificación aplicable. Una linterna de casco, una de mano y un faro de área no resuelven la misma tarea; la configuración debe corresponder al procedimiento de la unidad. El [catálogo de rescate vertical](/productos/rescate-vertical/) ayuda a separar la iluminación portátil de otros recursos para escena técnica. Complementa esa revisión con [cámaras térmicas para bomberos](/productos/camaras-termicas/), [señalización de emergencia](/productos/senalizacion-emergencia/) y la guía de [cámaras térmicas FLIR, MSA y Bullard](/blog/flir-vs-msa-vs-bullard-camaras-termicas/); cada recurso cubre una función distinta de la escena.
+
+## Preguntas frecuentes
+
+### ¿Más lúmenes significa que una linterna es mejor para humo?
+
+No necesariamente. El patrón del haz, la forma de uso, la alimentación y la práctica con el EPP también importan. Compara los lúmenes sólo cuando el fabricante los publica para ese modelo.
+
+### ¿UL 913 y ATEX son intercambiables?
+
+No. Son referencias distintas. Si el escenario exige una clasificación para atmósfera potencialmente explosiva, solicita el certificado y confirma que corresponda al modelo y a la zona a evaluar.
+
+### ¿Qué debe incluir una prueba de aceptación?
+
+El modelo cotizado, sus controles con guantes, método de carga o batería, montaje cuando aplique y la documentación de cualquier clasificación declarada. La prueba no debe atribuir resistencia térmica que el fabricante no publica.
+
+### ¿Una linterna de casco sustituye la iluminación de escena?
+
+No. La primera acompaña al usuario; un faro de área ilumina el espacio de trabajo. La selección parte de la tarea que se debe resolver.
+
+## Fuentes
+
+- [Streamlight, catálogo de productos](https://www.streamlight.com/products)
+- [Peli, iluminación profesional](https://www.peli.com/us/en/products/lighting/)
+- [Ledlenser, linternas profesionales](https://www.ledlenser.com/)
+- [NOM-025-STPS-2008](https://www.dof.gob.mx/nota_detalle.php?codigo=5076393)
