@@ -31,6 +31,9 @@ export interface Product {
     extra?: string;
     colores?: string;
     cert_lab?: string;
+    barrera_humedad?: string;
+    forro_termico?: string;
+    configuracion?: string;
     /* Cascos */
     norma?: string;
     material?: string;
