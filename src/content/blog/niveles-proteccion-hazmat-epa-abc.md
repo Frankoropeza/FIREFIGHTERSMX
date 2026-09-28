@@ -1,12 +1,12 @@
 ---
-title: "Niveles de Protección HAZMAT según la EPA: Cómo elegir A, B, C o D sin cometer el error que cuesta vidas"
+title: "Niveles de protección HAZMAT según la EPA: cómo elegir A, B, C o D"
 seoTitle: "Niveles de protección HAZMAT A, B, C y D: cómo elegir"
 description: "Guía de campo para elegir el nivel de protección HAZMAT correcto: cuándo usar A, B o C según el agente, la concentración y el rol del respondedor."
 pubDate: 2026-03-01
-updatedDate: 2026-06-25
+updatedDate: 2026-09-28
 author: "Ing. Marco García"
 category: "Equipos HAZMAT"
-tags: ["HAZMAT", "niveles protección EPA", "traje HAZMAT", "NFPA 472", "respuesta emergencias"]
+tags: ["HAZMAT", "niveles protección EPA", "traje HAZMAT", "NFPA 1990", "respuesta emergencias"]
 image:
   url: "/images/categorias/hazmat.avif"
   alt: "Bombero con traje HAZMAT nivel A en incidente con materiales peligrosos"
@@ -181,7 +181,7 @@ México no tiene un equivalente directo al sistema EPA A-B-C-D en una sola norma
 
 **NOM-010-STPS-2014** — Agentes químicos contaminantes del ambiente laboral. Reconocimiento, evaluación y control. Define límites de exposición que son el equivalente mexicano a los TLV-TWA de ACGIH.
 
-**ASEA** supervisa todo lo relacionado con hidrocarburos: refinerías PEMEX Tula, Salamanca, Cadereyta, Minatitlán, y el corredor petroquímico del Golfo. Si tu corporación atiende incidentes en instalaciones PEMEX o de la industria privada de hidrocarburos, los protocolos ASEA son referencia obligatoria junto con el sistema EPA.
+La decisión de protección debe apoyarse en la hoja de datos de seguridad, identificación del agente, monitoreo disponible y el plan de respuesta. Las responsabilidades aplicables se verifican en la normativa y procedimientos que correspondan a la instalación o jurisdicción.
 
 La competencia del personal debe definirse por el procedimiento de la organización, la autoridad competente y el tipo de operación. Verifica los requisitos de capacitación aplicables antes de autorizar trabajos en zona caliente.
 
@@ -209,13 +209,13 @@ Este es el proceso que funciona en la realidad, no el diagrama de flujo de 14 ca
 
 Antes de que firmes esa orden de compra de trajes Nivel A para tu corporación, responde estas preguntas:
 
-¿Tienes SCBA suficientes y calibrados para operar con los trajes? ¿Tienes PID calibrado y con el factor de corrección para el agente de tu escenario más probable? ¿Tienes personal con certificación NFPA 472 Technician que pueda legalmente operar en zona caliente con ese equipo? ¿Tienes protocolo de descontaminación establecido y el área física para ejecutarlo?
+¿Está identificado el agente o se reconoce que falta información? ¿Hay monitoreo adecuado al peligro? ¿El traje, la protección respiratoria y el protocolo de descontaminación son compatibles con el escenario? ¿El personal está capacitado conforme a su programa de respuesta?
 
-Si la respuesta a cualquiera de estas preguntas es no, el traje Nivel A en tu bodega no es un activo. Es una garantía falsa que le cuesta la vida a alguien el día que lo necesitas de verdad.
+Si falta una de estas condiciones, el equipo debe aislar el área, controlar el acceso y solicitar el apoyo que establezca su plan. Un traje almacenado no compensa una selección sin información ni procedimiento.
 
 El EPP correcto no es el más caro de la lista. Es el que corresponde al riesgo real de tu territorio, que tu personal sabe usar, que está mantenido, y que tiene el soporte logístico para emplearse en una operación real.
 
-Una corporación con exposición a sustancias peligrosas debe definir un [programa HAZMAT](/productos/hazmat) de acuerdo con sus riesgos, recursos y procedimientos de escalamiento. Para riesgos que exceden su capacidad, el plan debe indicar cuándo aislar, evacuar y solicitar apoyo especializado.
+Una corporación con exposición a sustancias peligrosas debe definir un [programa HAZMAT](/productos/hazmat/) de acuerdo con sus riesgos, recursos y procedimientos de escalamiento. Para riesgos que exceden su capacidad, el plan debe indicar cuándo aislar, evacuar y solicitar apoyo especializado.
 
 La trampa del catálogo es vender el nivel más alto como si fuera la solución universal. No lo es.
 
@@ -233,20 +233,30 @@ Todo lo demás es presión. Y la presión en HAZMAT es el mecanismo principal po
 
 ---
 
-*Referencias: EPA "Personal Protective Equipment" (EPA 9280.00-2C), NFPA 472 (2018 Edition), NIOSH Pocket Guide to Chemical Hazards, NOM-018-STPS-2015, NOM-010-STPS-2014, Emergency Response Guidebook 2024, OSHA HAZWOPER 29 CFR 1910.120.*
+Para seleccionar por modelo, consulta las [tablas de permeación](/blog/tablas-permeacion-dupont-lakeland-hazmat/), los [detectores de gas](/blog/detectores-gas-bomberos-msa-industrial-scientific-draeger/) y el [catálogo HAZMAT](/productos/hazmat/). La certificación NFPA 1990 se verifica por número de modelo y capítulo aplicable; no se extiende a una familia completa.
 
----
+## Preguntas frecuentes
 
-## Artículos relacionados
+### ¿Qué nivel ofrece la mayor protección respiratoria y dérmica?
 
-- [Tablas de Permeación: DuPont Tychem vs Lakeland ChemMax](/blog/tablas-permeacion-dupont-lakeland-hazmat) — cómo leer los datos de ruptura para seleccionar el traje correcto
-- [Detectores de Gas para Bomberos: MSA, Industrial Scientific y Dräger](/blog/detectores-gas-bomberos-msa-industrial-scientific-draeger) — instrumentos de monitoreo para verificar niveles antes de descalar protección
-- [Licitaciones de Equipo Contra Incendio en México](/blog/licitaciones-equipo-contra-incendio-mexico-nom-nfpa) — cómo especificar EPP HAZMAT correctamente en procesos de adquisición pública
+El Nivel A se evalúa cuando se requiere la mayor protección respiratoria y dérmica. La elección exige compatibilidad química del traje, configuración y procedimiento; no basta usar el nombre del nivel.
 
----
+### ¿Qué diferencia el Nivel B del Nivel C?
 
-## Catálogo Equipos HAZMAT en FIREFIGHTERS MX
+El Nivel B se usa con la mayor protección respiratoria disponible y protección contra salpicaduras; el Nivel C se considera cuando el agente y concentración están identificados y se puede usar respirador purificador conforme al programa aplicable.
 
-Contamos con trajes encapsulados Nivel A y B, incluyendo líneas DuPont Tychem, Lakeland ChemMax y Kappler Zytron certificados para respuesta a materiales peligrosos. Cada equipo se acompaña de asesoría técnica para que tu corporación elija el nivel correcto según el riesgo de tu territorio.
+### ¿NFPA 1991, 1992 y 1994 siguen siendo referencias separadas?
 
-[Catálogo completo de Equipos HAZMAT](/productos/hazmat) · [Solicitar cotización](/cotizacion)
+No. Fueron consolidadas en NFPA 1990 (2022). Al revisar un traje, verifica el capítulo y el número de modelo, no sólo el nombre comercial.
+
+### ¿Tychem 10000 es automáticamente Nivel A?
+
+No. TK612T/TK613T son modelos encapsulados documentados bajo NFPA 1990 (1994 Clase 2). La categoría EPA depende de la configuración y el agente; debe confirmarse con la documentación y la tabla de permeación.
+
+## Fuentes
+
+- [EPA, Personal Protective Equipment](https://www.epa.gov/emergency-response/personal-protective-equipment)
+- [NFPA 1990, Standard for Protective Ensembles](https://www.nfpa.org/codes-and-standards/nfpa-1990-standard-development/1990)
+- [NOM-010-STPS-2014](https://www.dof.gob.mx/nota_detalle.php?codigo=5346809)
+- [DuPont Tychem 10000 TK613T](https://www.dupont.com/content/dupont/apac/ap/en/products/personal-protection/safespec/tychem-10000-tk613t-ly.html)
+- [Kappler NFPA standards by model](https://www.kappler.com/nfpa-standards/)

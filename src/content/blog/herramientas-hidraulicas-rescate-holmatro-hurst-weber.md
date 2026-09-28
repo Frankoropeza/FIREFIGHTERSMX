@@ -3,10 +3,10 @@ title: "Herramientas Hidráulicas de Rescate: Holmatro, Hurst y Weber"
 seoTitle: "Herramientas hidráulicas de rescate: Holmatro, Hurst y Weber"
 description: "Guía técnica de herramientas hidráulicas para rescate vehicular: modelos vigentes de Holmatro, Hurst Jaws of Life y Weber Rescue."
 pubDate: 2026-06-23
-updatedDate: 2026-09-16
+updatedDate: 2026-09-28
 author: "Ing. Carlos Mendoza"
 category: "Guías de compra"
-tags: ["herramientas hidráulicas", "rescate vehicular", "Holmatro", "Hurst", "Weber-Rescue", "excarcelación", "NFPA 1960"]
+tags: ["herramientas hidráulicas", "rescate vehicular", "Holmatro", "Hurst", "NFPA 1960"]
 image:
   url: "/images/blog/blog-herramientas-hidraulicas.avif"
   alt: "Herramientas hidráulicas de rescate para excarcelación vehicular"
@@ -20,10 +20,8 @@ La selección de herramientas hidráulicas de rescate debe considerar el tipo de
 
 Los vehículos actuales pueden incorporar aceros de alta resistencia. Antes de intervenir, consulta la ficha de rescate del vehículo específico y selecciona la herramienta conforme a sus datos técnicos y al procedimiento operativo.
 
-![Comparativa visual de microestructura de acero convencional vs. UHSS — diferencia de grano y dureza que explica la resistencia al corte](/images/blog/blog-herramientas-acero-uhss-comparativa.avif)
-*La identificación del material y la ficha de rescate del vehículo apoyan la planeación de la intervención.*
 
-La clasificación de corte publicada por los fabricantes puede expresarse con letras A–F y niveles 1–9. EN 13204:2025 sustituyó a la edición 2016 y clasifica cizallas con letras A–K y perfiles 1–5.
+La ficha de una cizalla puede incluir una clasificación de corte propia del fabricante. Úsala sólo para contrastar el modelo indicado; la explicación completa de las referencias NFPA y EN 13204 está en la [guía de NFPA 1960](/blog/nfpa-1936-herramientas-rescate-excarcelacion/).
 
 ---
 
@@ -41,8 +39,6 @@ Para separadores, cizallas, herramientas combinadas y arietes, revisa apertura, 
 
 Las herramientas a batería integran la fuente de energía en el equipo. Las herramientas con manguera dependen de una unidad de poder. La configuración adecuada depende del procedimiento, el inventario de baterías y la compatibilidad del sistema.
 
-![Bombero de rescate operando expansor hidráulico autónomo — sin mangueras, directamente sobre el vehículo accidentado](/images/blog/blog-herramientas-holmatro-spc-campo.avif)
-*La configuración de la herramienta debe evaluarse con el procedimiento operativo y la ficha técnica del fabricante.*
 
 ---
 
@@ -52,8 +48,6 @@ Las herramientas a batería integran la fuente de energía en el equipo. Las her
 
 Holmatro fue fundada en 1967 en Woerden, Países Bajos. La línea Pentheon fue lanzada en 2020 y usa batería PBPA288.
 
-![Detalle de herramienta Holmatro en operación](/images/blog/blog-herramientas-holmatro-spc-detalle.avif)
-*La ficha técnica del modelo permite comparar apertura, peso y fuerza publicada.*
 
 | Herramienta | Modelo | Fuerza máx. | Apertura / Boca | Peso | Dato comercial |
 |---|---|---|---|---|---|
@@ -66,8 +60,6 @@ Holmatro fue fundada en 1967 en Woerden, Países Bajos. La línea Pentheon fue l
 
 Hurst Jaws of Life presentó su primer modelo de producción JL-32 en 1972. La generación actual es E3 Connect.
 
-![Cizalla Hurst en una operación de rescate](/images/blog/blog-herramientas-hurst-ct1200.avif)
-*La clasificación de corte debe verificarse para el modelo de cizalla ofertado.*
 
 | Herramienta | Modelo | Fuerza máx. | Apertura / Boca | Peso | Dato comercial |
 |---|---|---|---|---|---|
@@ -80,8 +72,6 @@ Hurst Jaws of Life presentó su primer modelo de producción JL-32 en 1972. La g
 
 Weber fue fundada en 1939 en Stuttgart-Untertürkheim y tiene su sede actual en Güglingen, Alemania. La generación actual es E-FORCE3; sus herramientas pueden convertirse entre versión a batería y con manguera.
 
-![Herramienta Weber Rescue en operación](/images/blog/blog-herramientas-weber-rsx-cuchillas.avif)
-*La configuración a batería o con manguera debe definirse para el modelo solicitado.*
 
 | Herramienta | Modelo | Fuerza máx. | Apertura / Boca | Peso | Dato comercial |
 |---|---|---|---|---|---|
@@ -139,8 +129,39 @@ Lukas puede considerarse en una evaluación de fabricantes, pero esta guía no i
 
 ---
 
-En [FIREFIGHTERS MX](/productos/herramientas-rescate) trabajamos con Holmatro, Hurst, Weber-Rescue y Lukas. Si tu corporación está evaluando herramientas de rescate, [solicita una demostración técnica en campo](/cotizacion).
+La selección de una [herramienta de rescate](/productos/herramientas-rescate/) no termina al comparar una tabla. En recepción, confirma que modelo, batería, cargador y manual coincidan con lo cotizado; después incorpora la herramienta al programa de práctica y mantenimiento de la unidad. Para profundizar en criterios documentales, consulta la [guía sobre NFPA 1960](/blog/nfpa-1936-herramientas-rescate-excarcelacion/) y la comparación de [Holmatro y Lukas](/blog/holmatro-vs-lukas-herramientas-rescate/).
 
----
+## Selección por tipo de herramienta y maniobra
 
-*¿Estás evaluando el equipamiento completo de una unidad de rescate? Consulta también nuestra guía de [cómo equipar una estación de bomberos desde cero](/blog/como-equipar-estacion-bomberos-desde-cero) y la guía de [mejores marcas de equipo para bomberos en México](/blog/mejores-marcas-equipo-bomberos-mexico).*
+Una cizalla, un separador, una combinada y un ariete no son sustitutos directos. La cizalla se selecciona para cortes previstos por el procedimiento; el separador abre o crea espacio; la combinada reúne funciones con sus propias dimensiones; el ariete produce empuje en una carrera determinada. Antes de armar una dotación, identifica qué maniobras debe cubrir la unidad y documenta el orden de despliegue con su personal.
+
+El peso y la apertura publicada ayudan a anticipar manipulación y alcance, pero no reemplazan una práctica. Holmatro PCU50 declara 182 mm de apertura y 21.6 kg lista para uso; PSP50 declara 725 mm y 21 kg. HURST S 789 E3 declara cerca de 205 mm de apertura y 22.5 kg, mientras que SP 555 E3 declara cerca de 729 mm y 18.4 kg. Cada cifra debe conservar el nombre de su modelo para evitar convertirla en atributo de toda la marca.
+
+La configuración energética se revisa como parte del sistema. Baterías, cargadores y, cuando corresponda, mangueras y unidad de poder deben aparecer en el inventario de recepción. Si la unidad va a alternar entre herramientas, el procedimiento de cambio y carga se practica antes de necesitarlo. Las [cizallas Pentheon](/productos/herramientas-rescate/holmatro-pentheon-cizalla/), los [separadores Pentheon](/productos/herramientas-rescate/holmatro-pentheon-separador/) y los [arietes HURST](/productos/herramientas-rescate/hurst-edraulic-ariete/) permiten identificar categorías de producto antes de solicitar una ficha puntual.
+
+Una prueba de aceptación puede registrar tareas simples y observables: transporte hasta el punto de trabajo, conexión o cambio de batería según el manual, operación de controles con guantes, estabilidad de la postura y devolución segura al estuche. No se deben convertir esas observaciones en una promesa de desempeño universal ni usar un vehículo determinado como prueba para toda la flota. La ficha de rescate del vehículo que realmente se atenderá sigue siendo el documento para planear la intervención.
+
+## Preguntas frecuentes
+
+### ¿Cuál es la norma vigente para herramientas hidráulicas de rescate?
+
+NFPA 1960, edición 2024, consolidó la anterior NFPA 1936. Una referencia a 1936 debe mantenerse sólo como contexto de documentación previa.
+
+### ¿La fuerza de corte en kN permite comparar cizallas?
+
+No debe usarse como capacidad de corte. Los fabricantes no publican esa fuerza teórica como criterio de corte; revisa la clasificación publicada, apertura y ficha del modelo.
+
+### ¿Qué datos verificables hay para una Holmatro PCU50?
+
+Holmatro publica una apertura de 182 mm y peso listo para uso de 21.6 kg. La configuración debe identificarse con su batería PBPA288.
+
+### ¿Puedo comprar Lukas basándome en cifras de otra marca?
+
+No. Para Lukas no hay especificaciones de modelo verificadas en esta guía. Solicita la ficha y documentación del modelo exacto antes de atribuirle apertura, peso o clasificación.
+
+## Fuentes
+
+- [NFPA 1960, Standard for Rescue Tools](https://www.nfpa.org/codes-and-standards/nfpa-1960-standard-development/1960)
+- [Holmatro PCU50](https://www.holmatro.com/es/rescate/cizalla-pcu50/)
+- [HURST E3 Connect](https://www.jawsoflife.com/e3-connect)
+- [Weber Rescue E-FORCE3 manual](https://weber-rescue.com/wAssets/docs/feuerwehr/hydraulische-rettungsgeraete/akkugeraete/BA_E-FORCE3_EN.pdf)

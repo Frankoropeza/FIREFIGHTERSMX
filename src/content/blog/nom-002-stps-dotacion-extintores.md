@@ -1,79 +1,43 @@
 ---
-title: "NOM-002-STPS: lo que el inspector ve que tú no habías calculado"
-description: "Cómo calcular la dotación de extintores según NOM-002-STPS-2010: fórmulas, clases de riesgo y errores frecuentes en verificación de cumplimiento normativo."
+title: "NOM-002-STPS: dotación, recorrido y revisión de extintores"
+seoTitle: "NOM-002-STPS: dotación y recorrido de extintores"
+description: "Cómo revisar la dotación de extintores conforme a NOM-002-STPS-2010: riesgo ordinario o alto, recorrido, altura, revisión mensual y mantenimiento."
 pubDate: 2026-03-15
-updatedDate: 2026-06-25
+updatedDate: 2026-09-28
 author: "Ing. Marco García"
 category: "Extintores"
-tags: ["NOM-002-STPS", "dotación extintores", "extintores México", "protección civil", "seguridad industrial"]
+tags: ["NOM-002-STPS", "dotación de extintores", "recorrido", "mantenimiento", "seguridad contra incendios"]
 image:
   url: "/images/categorias/extintores.avif"
   alt: "Dotación de extintores según NOM-002-STPS-2010 — cálculo por área y nivel de riesgo"
 ---
 
-Una visita de verificación puede encontrar que el centro de trabajo tiene extintores, pero que su ubicación, mantenimiento o señalización no corresponden al riesgo de cada área. Comprar y colgar unidades no basta para demostrar que la dotación fue calculada.
+Una visita de verificación puede encontrar que el centro de trabajo tiene extintores, pero que su ubicación, mantenimiento o señalización no corresponden al riesgo de cada área. Comprar y colgar unidades no basta para demostrar que la dotación fue calculada conforme a la [NOM-002-STPS-2010](https://www.stps.gob.mx/bp/secciones/dgsst/normatividad/normas/Nom-002.pdf).
 
 Un escenario frecuente es el de un almacén con unidades colocadas por disponibilidad, no por el análisis del área. El problema no es la ausencia total de extintores: es la dotación mal calculada, el extintor colocado solo para cubrir visualmente un pasillo y la falta de una explicación técnica sobre cómo seleccionar y distribuir el equipo.
 
-La NOM-002-STPS-2010 no es complicada. Pero tiene más requisitos de los que la mayoría de los responsables de mantenimiento sabe que existen.
+La NOM-002-STPS-2010 relaciona la dotación con el riesgo de incendio, la clase de fuego, la superficie y la distancia de recorrido. También exige revisión mensual y mantenimiento al menos anual. Este artículo separa esos requisitos para que la verificación no se convierta en una suma de cilindros sin contexto.
 
-## Primero lo primero: clasificar el riesgo de cada área
+## Clasificar el riesgo y las clases de fuego
 
-Antes de hacer cualquier cálculo, tienes que saber a qué nivel de riesgo pertenece cada zona de tu centro de trabajo. La norma distingue tres categorías, y el criterio es simple: qué tan fácil se enciende lo que hay ahí y qué tan rápido se propagaría el fuego.
+Antes de hacer un cálculo, identifica el riesgo de incendio que corresponde a cada zona de trabajo y los materiales que pueden arder. La NOM-002 trabaja con riesgo ordinario y alto para definir la dotación del numeral 7.17; además, el numeral 4.11 clasifica el fuego como A, B, C, D o K. Un inmueble puede tener zonas con combustibles distintos, por lo que no se debe aplicar una sola selección a todas las áreas sin revisar el plano y la operación.
 
-**Riesgo bajo** comprende áreas donde predominan combustibles ordinarios: madera, papel y textiles normales. Piensa en oficinas administrativas, salas de juntas, vestíbulos y auditorios. La clasificación debe confirmarse contra los materiales y condiciones reales del área.
+La clase de fuego define el agente; el nivel de riesgo, la superficie y el recorrido definen la dotación. Un área de oficinas puede tener sólidos clase A y equipos energizados clase C, mientras que una cocina con aceites y grasas requiere considerar clase K. La [guía de tipos de extintores](/blog/tipos-de-extintores-mexico/) explica esa selección de agentes antes de pasar a los números.
 
-**Riesgo ordinario** abarca la mayoría de los espacios industriales y comerciales: manufactura ligera, almacenes de producto terminado no inflamable, comercios al menudeo, cocinas comerciales sin fritura intensiva, talleres de mantenimiento general. Es el nivel más frecuente en la industria nacional y donde más errores de cálculo ocurren precisamente porque parece "normal".
+## Dotación por superficie y distancia de recorrido
 
-**Riesgo alto** es cualquier área donde hay líquidos inflamables o combustibles en cantidad relevante, procesos con calor intenso, o materiales con alta carga energética. Bodegas de pintura, talleres con solventes, plantas petroquímicas, rampas de carga con manejo de gas LP, almacenes de químicos. Aquí el fuego puede ser inmanejable en segundos si el sistema no responde correctamente.
+El numeral 7.17 establece como base un extintor por cada 300 m² o fracción en riesgo ordinario y uno por cada 200 m² o fracción en riesgo alto. El cálculo debe hacerse por área que corresponda a cada nivel de riesgo y siempre redondear la fracción hacia arriba. Por ejemplo ilustrativo, un área ordinaria de 610 m² parte de 610 ÷ 300 = 2.03, por lo que requiere al menos tres extintores antes de comprobar las demás condiciones.
 
-El punto que casi siempre se pasa por alto: un solo inmueble puede tener múltiples niveles de riesgo. Las oficinas son riesgo bajo; la bodega adjunta puede ser riesgo alto. Calculas cada área por separado, no el edificio entero como si fuera homogéneo.
+El resultado por superficie no cierra la revisión. La Tabla 1 fija la distancia máxima de recorrido: 23 metros para clases A, C y D; para B, 15 metros en riesgo ordinario y 10 metros en riesgo alto, con excepción de 15 metros si el equipo es móvil; para K, 10 metros en ambos niveles de riesgo. La distancia se verifica por la ruta real de acceso al equipo, no con una línea que atraviese muros, estanterías o zonas restringidas.
 
-## La fórmula, explicada para alguien que tiene que tomar decisiones
+| Criterio | Riesgo ordinario | Riesgo alto |
+|---|---:|---:|
+| Dotación base por superficie | Un extintor por cada 300 m² o fracción | Un extintor por cada 200 m² o fracción |
+| Recorrido para A, C y D | 23 m | 23 m |
+| Recorrido para B | 15 m | 10 m; 15 m si el equipo es móvil |
+| Recorrido para K | 10 m | 10 m |
 
-No para ingenieros. Para el responsable de mantenimiento que tiene el plano en la mano y necesita saber cuántos extintores le piden.
-
-Pongamos un ejemplo concreto antes de ver los números.
-
-Tienes una bodega de 800 m² donde almacenas solventes: thinner, alcohol isopropílico, acetona. Eso es riesgo alto sin discusión. La pregunta es: ¿cuántos extintores necesitas?
-
-La NOM-002-STPS establece que cada extintor cubre un área máxima según el nivel de riesgo. Para riesgo alto, ese límite es **93 m² por extintor**. La fórmula es:
-
-```
-Número de extintores = Área total ÷ Área máxima por extintor
-```
-
-Para tu bodega de 800 m²:
-
-```
-800 ÷ 93 = 8.6  se redondea siempre hacia arriba  9 extintores
-```
-
-Pero eso no termina el cálculo. La norma tiene un segundo criterio que opera de forma independiente: la **distancia máxima de recorrido**. Es decir, cualquier punto del área debe quedar a no más de cierta distancia del extintor más cercano. Para riesgo alto ese límite es 15 metros. Para riesgo bajo y ordinario, 23 metros.
-
-¿Por qué importa esto? Porque puedes tener el número matemáticamente correcto de extintores pero todos agrupados en una esquina. El punto más lejano del área quedaría a 40 metros del extintor más cercano. Eso no cumple, aunque la aritmética cuadre.
-
-La regla es siempre la más restrictiva de las dos: si el criterio de distancia te pide más extintores que el criterio de área, vas con el de distancia.
-
-## La tabla que necesitas tener a la mano
-
-| Nivel de riesgo | Área máxima por extintor | Distancia máxima de recorrido |
-|---|---|---|
-| Bajo | 279 m² | 23 metros |
-| Ordinario | 139 m² | 23 metros |
-| Alto | 93 m² | 15 metros |
-
-Lo que esta tabla te dice en la práctica: en una bodega de riesgo alto, si colocas los extintores a más de 15 metros uno del otro, ya incumples — aunque tengas el número "correcto" según el área. El inspector mide distancias. Tiene una cinta. La usa.
-
-## Qué capacidad mínima pide la norma
-
-El número de extintores es solo una parte. La norma también establece la capacidad mínima expresada en unidades extintoras (la clasificación que ves en la etiqueta: 2-A:10-B:C, por ejemplo).
-
-- **Riesgo bajo:** mínimo 2-A:10-B:C (extintor de 4 kg en [PQS ABC](/productos/extintores/pqs-abc), generalmente)
-- **Riesgo ordinario:** mínimo 2-A:20-B:C (extintor de 6 kg)
-- **Riesgo alto:** mínimo 4-A:80-B:C (extintor de 9 kg)
-
-Un extintor de 1 kg de PQS ABC puesto en el pasillo de una bodega industrial no cumple con la clasificación requerida aunque "esté ahí". Eso es lo que llamo el extintor de relleno: unidades que existen en el plano de evacuación pero que no tienen la capacidad para el riesgo que enfrentan.
+Si la distancia de recorrido pide más unidades que el cálculo por superficie, se instala la cantidad que satisfaga ambos criterios. La ubicación también debe permitir tomar el extintor: el numeral 7.17 limita la parte más alta a 1.50 metros desde el piso y exige que el equipo corresponda a la clase de fuego.
 
 ## La trampa del extintor de relleno
 
@@ -210,8 +174,29 @@ La dotación correcta de extintores es el sistema de protección contra incendio
 
 ---
 
-## Catálogo Extintores en FIREFIGHTERS MX
+Para comparar familias de equipo, consulta el [catálogo de extintores](/productos/extintores/) y el [comparativo de PQS, CO₂ y tipo K](/blog/pqs-abc-vs-co2-vs-tipo-k-extintores/). Antes de decidir una compra, deja documentado el riesgo, las rutas de recorrido y el programa de revisión.
 
-Contamos con extintores PQS ABC (NOM-100-STPS), CO₂ (NOM-102-STPS) y Tipo K para los niveles de riesgo requeridos por la NOM-002-STPS. Ofrecemos asesoría de cálculo de dotación, instalación y servicio de mantenimiento anual conforme NOM-154-SCFI para mantener tu bitácora en orden ante cualquier inspección.
+## Preguntas frecuentes
 
-[Catálogo completo de Extintores](/productos/extintores) · [Solicitar cotización](/cotizacion)
+### ¿Cuántos extintores exige NOM-002-STPS-2010?
+
+El numeral 7.17 establece un extintor por cada 300 m² o fracción en riesgo ordinario y uno por cada 200 m² o fracción en riesgo alto. La cantidad final también debe cumplir las distancias máximas de recorrido de la Tabla 1.
+
+### ¿A qué altura debe colocarse un extintor?
+
+La parte más alta del extintor no debe quedar a más de 1.50 metros del piso, conforme al numeral 7.17. Además, el acceso debe mantenerse libre y el equipo debe estar señalado.
+
+### ¿La revisión mensual sustituye el mantenimiento anual?
+
+No. La revisión mensual forma parte del programa del numeral 7.2. El numeral 7.18 exige mantenimiento al menos una vez al año conforme a NOM-154-SCFI-2005.
+
+### ¿Cuándo se recarga un extintor?
+
+Después de usarlo y, en su caso, cuando el mantenimiento lo determine, conforme al numeral 7.19. La obligación anual es de mantenimiento, no una recarga automática de todos los equipos.
+
+## Fuentes
+
+- [NOM-002-STPS-2010 — STPS](https://www.stps.gob.mx/bp/secciones/dgsst/normatividad/normas/Nom-002.pdf)
+- [NOM-154-SCFI-2005 — PLATIICA, Secretaría de Economía](https://platiica.economia.gob.mx/normalizacion/nom-154-scfi-2005/)
+- [NOM-100-STPS-1994 — PLATIICA, Secretaría de Economía](https://platiica.economia.gob.mx/normalizacion/nom-100-stps-1994/)
+- [NOM-102-STPS-1994 — PLATIICA, Secretaría de Economía](https://platiica.economia.gob.mx/normalizacion/nom-102-stps-1994/)

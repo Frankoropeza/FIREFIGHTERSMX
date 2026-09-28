@@ -1,22 +1,20 @@
 ---
-title: "Botas para Bombero: El Equipo que Más Horas Trabaja y Menos Atención Recibe"
+title: "Botas para bombero: criterios para comparar HAIX, LION y Jolly"
 seoTitle: "Botas de bombero: comparativa HAIX, Lion y Jolly"
-description: "Guía técnica de botas de bombero NFPA 1970: materiales, membranas, protecciones y comparativa HAIX, Lion Apparel, Jolly y Ranger en México 2026."
+description: "Cómo comparar botas para bombero HAIX, LION y Jolly por certificación, materiales, ajuste, mantenimiento y compatibilidad con el EPP."
 pubDate: 2026-06-23
-updatedDate: 2026-06-23
+updatedDate: 2026-09-28
 author: "Ing. Carlos Mendoza"
 category: "Guías de compra"
 tags: ["botas bombero", "HAIX", "Lion Apparel", "Jolly", "NFPA 1970", "calzado estructural", "EPP"]
 image:
   url: "/images/blog/blog-botas-bombero.avif"
-  alt: "Botas para bombero estructural certificadas NFPA 1970 — comparativa HAIX Fire Hero, Lion Terrain XTR y Jolly Omega"
+  alt: "Botas para bombero para comparar ajuste, materiales y certificación"
 ---
 
 En la compra de calzado de bombero es fácil concentrarse en los componentes más visibles del EPP y relegar la bota. Sin embargo, el calzado debe seleccionarse por el riesgo, la compatibilidad con el conjunto y la ficha técnica del modelo.
 
-Lo entiendo. Hay presupuestos que no alcanzan y hay que elegir dónde invertir. Pero la decisión de recortar en calzado tiene consecuencias que no aparecen en el reporte de accidentes formales: aparecen en la baja médica por esguince del tobillo que nadie vio venir, en la fascitis plantar que dos elementos llevan arrastrando desde hace dos años, en la infección del pie de un bombero que estuvo tres horas con agua contaminada dentro de la bota porque la membrana había perdido impermeabilidad hace meses.
-
-El calzado es el equipo que más horas acumula. No el que más llama la atención en una presentación, sino el que acompaña al bombero desde que llega a la guardia hasta que se va. Y cuando ese equipo falla, no falla de golpe: falla de manera que el bombero normaliza el malestar hasta que ya no puede ignorarlo.
+La compra debe tratar la bota como parte del sistema de protección: talla, calcetín, pantalón, tipo de cierre, puntera, suela, condición del material y certificación influyen en el uso. Un modelo puede ser adecuado para una tarea y no para otra; la apariencia o el precio no reemplazan una ficha vigente ni una prueba de ajuste.
 
 ---
 
@@ -30,13 +28,13 @@ El calzado de bombero estructural forma parte del conjunto de EPP regulado por l
 
 **Transmisión de calor a través de la suela.** Pide el reporte de desempeño aplicable y verifica que el conjunto de materiales corresponda al riesgo térmico. La protección debe evaluarse junto con la suela, las costuras y el empeine.
 
-**Resistencia de costuras.** Las costuras de la suela con el cuerpo de la bota son el punto de falla más frecuente en calzado de uso intensivo. La norma exige resistencia a la separación bajo temperatura. Una bota que se descose a los 18 meses no es una bota NFPA 1970, aunque originalmente lo fuera.
+**Construcción y costuras.** Confirma el diseño de unión, las instrucciones de inspección y las piezas reparables. Un daño o modificación puede requerir retiro o evaluación conforme al fabricante; la certificación original no autoriza cambios no aprobados.
 
 ### Protección mecánica: punta, metatarso y suela antipenetración
 
 **Punta certificada.** Confirma el tipo de protección contra impacto y compresión indicado por el fabricante. La puntera debe corresponder al entorno de escombros, herramientas y materiales que enfrenta la corporación.
 
-**Protección del metatarso.** No obligatoria en todos los modelos pero disponible en variantes específicas. Protege el dorso del pie ante caídas de objetos sobre la parte delantera del calzado, que la puntera de acero estándar no cubre. En rescate técnico con escombros o en trabajos con herramientas hidráulicas, el metatarso es el punto de impacto más frecuente.
+**Protección del metatarso.** Si la operación la requiere, pide el dato de la configuración exacta. No supongas que una bota con puntera tiene el mismo nivel de cobertura en el empeine.
 
 **Resistencia a la penetración de la suela.** Confirma que el modelo incorpora la protección requerida para escombros, clavos, varillas y fragmentos puntiagudos. Revisa también el desgaste del perfil, porque una suela dañada cambia el desempeño del conjunto.
 
@@ -44,9 +42,7 @@ El calzado de bombero estructural forma parte del conjunto de EPP regulado por l
 
 La membrana interior debe evaluarse contra los líquidos y contaminantes esperados. Pide al proveedor la documentación específica de impermeabilidad y resistencia química del modelo, sin extrapolarla a otras configuraciones.
 
-Esto no es un requisito burocrático: en una escena de incendio post-extracción, el suelo está cubierto de agua contaminada con aceites de motor, refrigerante, sangre del accidentado y residuos de combustión. El bombero trabaja en ese líquido durante horas. Sin membrana funcional, todo eso entra a la bota.
-
-La membrana también protege de **agentes biológicos de transmisión sanguínea (ASTM F1671)**. Para corporaciones que hacen primeros auxilios simultáneamente con el combate de incendio, eso puede ser la diferencia entre exposición y no exposición a patógenos.
+La condición de la membrana y de las uniones debe revisarse en el programa de inspección. Cuando el fabricante declara desempeño frente a fluidos o agentes biológicos, conserva la ficha específica; no atribuyas esa prestación a otra bota de la misma marca.
 
 ---
 
@@ -67,16 +63,14 @@ La membrana interior de la bota es el componente que más determina el precio de
 
 ---
 
-## Comparativa de marcas: HAIX, Lion Apparel, Jolly y Ranger
+## Comparativa de marcas: HAIX, LION y Jolly
 
-### HAIX — la ingeniería biomecánica aplicada al calzado de servicio
+### HAIX — evaluar el modelo y su certificado
 
-HAIX fabrica calzado profesional para aplicaciones como bomberos, fuerzas armadas, policía y rescate. La configuración y las certificaciones deben confirmarse en la ficha vigente de cada modelo.
+HAIX fabrica calzado profesional para bomberos y rescate. Antes de compararlo, solicita la página o ficha oficial del modelo vigente, certificación, rango de tallas, construcción, accesorios y límites de uso. No uses una reseña ni la especificación de una versión anterior como sustituto de esa documentación.
 
-Lo que diferencia a HAIX en el mercado no es solo la certificación: es el proceso de diseño. Sus ingenieros trabajan con biomecánicos y con bomberos activos para documentar cómo afecta el calzado a la postura, la fatiga muscular y el rendimiento en intervenciones largas. Ese proceso produce botas que se sienten distintas desde el primer día, no porque sean más cómodas de inmediato, sino porque distribuyen el peso y el esfuerzo de manera diferente.
-
-![HAIX Fire Hero Xtreme — detalle del sistema Climate System de estabilizador de tobillo y la suela HAIX CERFLEX con perfil para escombros](/images/blog/blog-botas-haix-fire-hero.avif)
-*El estabilizador de tobillo del Fire Hero Xtreme no es una plantilla rígida: es un sistema de guías laterales que permite el movimiento natural del tobillo mientras lo protege ante torceduros en superficie irregular. La diferencia se nota en escaleras y en escombros.*
+![Bota HAIX para bomberos](/images/blog/blog-botas-haix-fire-hero.avif)
+*La muestra debe probarse con pantalón, calcetín y plantilla definidos para el conjunto de servicio.*
 
 **HAIX Fire Hero Xtreme — modelo estructural**
 
@@ -101,102 +95,59 @@ Para operaciones donde la agilidad es prioritaria, compara el modelo con el ries
 
 ---
 
-### Lion Apparel — el sistema integrado con los trajes Globe y Lion
+### LION — modelos con información oficial publicada
 
-Lion Apparel (EUA) es conocida principalmente por sus trajes estructurales Globe y Lion, pero su línea de calzado **Terrain** tiene una integración que las otras marcas no ofrecen: las botas Terrain están diseñadas para hacer sistema con los trajes Globe y Lion, con solapas de interfaz compatibles que eliminan el gap entre la caña de la bota y el dobladillo del pantalón del traje.
+Para LION, las páginas oficiales consultadas documentan dos opciones útiles para contrastar: V-Force USA y HellFire Felt. No se deben trasladar esas características a modelos Terrain, ni inferir que un diseño de bota resuelve por sí mismo la interfaz con el pantalón; esa interfaz se prueba con el conjunto real.
 
-Para corporaciones que ya tienen trajes Globe o Lion, esa integración tiene valor operativo real: sin el gap, no hay punto de entrada para escombros, agua contaminada o calor radiante entre el traje y la bota.
+![Bota LION para bomberos](/images/blog/blog-botas-lion-terrain-xtr.avif)
+*Comprueba el sistema de cierre de la versión cotizada con guantes y durante movimientos de trabajo.*
 
-![Lion Terrain XTR con suela Vibram Megagrip — perfil del sistema de cierre triple: cremallera lateral, correas Velcro y cordón interior](/images/blog/blog-botas-lion-terrain-xtr.avif)
-*El sistema de cierre triple del Terrain XTR (cremallera + velcro + cordón) es el más rápido de ponerse y quitarse de todos los modelos comparados. En situaciones donde el bombero necesita equiparse rápido, esa diferencia de tiempo importa.*
+**LION V-Force USA y HellFire Felt**
 
-**Lion Terrain XTR — la bota que se pone más rápido**
-
-El sistema de cierre del Terrain XTR debe probarse con guantes y con el conjunto completo. Un cierre rápido puede ser útil si mantiene el ajuste y no crea puntos de falla durante la operación.
-
-En una corporación con alta rotación, estandariza el procedimiento de colocación y verifica que el calzado se ajuste sin holguras antes de salir. La rapidez no compensa una interfaz mal cerrada o una talla incorrecta.
-
-- **Material exterior:** cuero Vibram® con recubrimiento retardante integrado
-- **Membrana:** SympaTex® con tratamiento CBRN básico
-- **Suela:** Vibram® Megagrip — el perfil de agarre más agresivo del segmento, desarrollado específicamente para superficies húmedas y escombros
-- **Puntera:** confirmar material y desempeño certificado.
-- **Altura de caña:** confirmar medida y cobertura con el pantalón.
-- **Peso:** confirmar en la talla y configuración cotizadas.
+V-Force USA declara certificación NFPA 1970 y laminado GORE-TEX CROSSTECH sin PFAS; la ficha indica resistencia a agua, químicos, patógenos transmitidos por sangre y virus. HellFire Felt declara NFPA 1970 estructural y construcción de caucho vulcanizado, placa inferior resistente a punción y puntera de acero. Verifica la talla y variante en la cotización porque la configuración es parte de la compra.
 
 | Modelo | Caña | Peso | Membrana | Suela | Cierre | Norma | Referencia comercial |
 |---|---|---|---|---|---|---|---|
-| Lion Terrain XTR | — | — | Confirmar ficha vigente | Confirmar ficha vigente | Confirmar ficha vigente | Confirmar ficha vigente | Solicitar cotización |
-| Lion Terrain XT | — | — | Confirmar ficha vigente | Confirmar ficha vigente | Confirmar ficha vigente | Confirmar ficha vigente | Solicitar cotización |
+| LION V-Force USA | Consultar ficha | Consultar ficha | GORE-TEX CROSSTECH sin PFAS | Consultar ficha | Consultar ficha | NFPA 1970 | Solicitar cotización |
+| LION HellFire Felt | Consultar ficha | Consultar ficha | No declarar sin ficha de variante | Caucho vulcanizado | Consultar ficha | NFPA 1970 estructural | Solicitar cotización |
 
 ---
 
-### Jolly Firefighter — la referencia italiana con mejor acceso en Latinoamérica
+### Jolly — comparar la certificación publicada por modelo
 
-Jolly es italiana, con sede en Vicenza, y tiene el mayor porcentaje de mercado en Europa mediterránea y un posicionamiento sólido en Latinoamérica. Su filosofía es diferente a HAIX: donde HAIX prioriza la biomecánica y el sistema, Jolly prioriza la robustez del material y la facilidad de mantenimiento en campo.
+Jolly publica certificaciones por modelo. Como referencia verificable, Specialguard Boot 2.0 (9072/A) aparece con EN 15090:2012 F2A HI3 CI SRC, parte superior de cuero hidrorrepelente y suela de caucho de nitrilo resistente al calor de contacto hasta 300 °C. Esos datos corresponden a ese modelo y no se deben extender a toda la marca.
 
-La bota Jolly se puede limpiar, secar y revisar sin herramientas especiales. El cuero sintético del exterior resiste el rozamiento con escombros sin el mantenimiento del cuero natural que requieren HAIX y Lion. Para corporaciones que no tienen protocolo de cuidado de calzado formalizado —que es la mayoría— esa resistencia pasiva al descuido tiene valor real.
+**Jolly Specialguard Boot 2.0 — modelo documentado**
 
-**Jolly Omega Pro — el modelo de mayor distribución**
+El modelo se ofrece con cremallera separable y mecanismo Quick-Release. La ficha señala puntera protectora, resistencia a perforación y construcción para bomberos; la prueba de recepción debe verificar que versión, talla y cierre recibidos sean los de la documentación revisada.
 
-- **Material exterior:** cuero sintético de alta densidad con FR integrado
-- **Membrana:** Gore-Tex® Pro en versión premium, Jolly-Tex en versión estándar
-- **Suela:** confirmar composición y desempeño en la ficha vigente.
-- **Puntera:** confirmar material y protección certificada.
-- **Cierre:** probar el ajuste y el procedimiento de retiro con el equipo completo.
-
-El sistema de apertura de emergencia es el detalle que más aprecian los bomberos que han usado Jolly en situaciones donde necesitaron sacar el calzado rápidamente. HAIX y Lion no tienen este sistema en sus modelos estándar.
-
-**Jolly Wildfire — la variante forestal-estructural**
-
-Para corporaciones que operan en ambos entornos, define si se requieren conjuntos distintos y confirma la norma declarada para cada modelo antes de asignarlo a una tarea.
-
-![Jolly Omega Pro — sistema de apertura de emergencia de la traba superior para extracción rápida del calzado](/images/blog/blog-botas-jolly-omega-pro.avif)
-*El sistema de apertura de emergencia del Jolly Omega Pro permite quitar la bota de un tirón en situaciones de quemadura o trauma del pie. Es un detalle que no aparece en las fichas técnicas de HAIX o Lion y que algunos bomberos valoran más que cualquier especificación de membrana.*
+![Bota Jolly con cierre de liberación rápida](/images/blog/blog-botas-jolly-omega-pro.avif)
+*El cierre debe evaluarse con guantes y conforme a las instrucciones del fabricante.*
 
 | Modelo | Caña | Peso | Membrana | Escenario | Norma | Referencia comercial |
 |---|---|---|---|---|---|---|
-| Jolly Omega Pro | — | — | Confirmar ficha vigente | Estructural | Confirmar ficha vigente | Solicitar cotización |
-| Jolly Omega | — | — | Confirmar ficha vigente | Estructural | Confirmar ficha vigente | Solicitar cotización |
-| Jolly Wildfire | — | — | Confirmar ficha vigente | Confirmar escenario | Confirmar ficha vigente | Solicitar cotización |
+| Jolly Specialguard Boot 2.0 | 30 cm en talla 42 | Aprox. 2,380 g en talla 42 | Cambrelle | Bomberos, rescate y capacitación | EN 15090:2012 F2A HI3 CI SRC | Solicitar cotización |
 
 ---
 
-### Ranger — la conversación que hay que tener con honestidad
+## Tabla comparativa de modelos con fuentes oficiales
 
-Ranger es la marca de origen mexicano más presente en corporaciones municipales de presupuesto ajustado. Aparece frecuentemente en licitaciones locales como alternativa "que cumple la norma". La conversación honesta que hay que tener es cuál norma.
+No incluyas una marca ni un modelo en una especificación solo porque aparece en una lista comercial. Si no hay ficha oficial vigente, certificado identificable y manual de inspección para la variante, el requisito debe quedar pendiente de documentación antes de adjudicar.
 
-El calzado Ranger FR (retardante a la llama) cumple la **NOM-113-STPS-2009** para calzado de uso industrial general. No es una norma de calzado de bombero. La diferencia no es burocrática: la NOM-113 no exige la transmisión de calor a través de la suela que NFPA 1970 sí mide. No exige la impermeabilidad a fluidos biológicos. No exige la resistencia a penetración de clavo que NFPA 1970 establece.
-
-Hay un lugar para el Ranger FR: brigadas industriales de primer respuesta con bajo volumen de incendios anuales, donde el riesgo es controlado y los escenarios son conocidos. No hay lugar para él como calzado principal de un bombero estructural que entra a edificios en llamas con regularidad.
-
-| Modelo | Caña | Peso | Norma | Membrana | Vida útil en uso intensivo | Referencia comercial |
-|---|---|---|---|---|---|---|
-| Ranger FR Industrial | — | — | NOM-113 | Confirmar ficha vigente | Definir por inspección | Solicitar cotización |
-
----
-
-## Tabla comparativa completa: las cuatro marcas
-
-| Criterio | HAIX Fire Hero Xtreme | Lion Terrain XTR | Jolly Omega Pro | Ranger FR |
-|---|---|---|---|---|
-| Norma | NFPA 1970 | NFPA 1970 | NFPA 1970 | NOM-113 (no NFPA) |
-| Membrana | Gore-Tex Crosstech | SympaTex | Gore-Tex Pro | No aplica |
-| Barrera biológica (F1671) | Sí | Parcial | Sí (versión Pro) | No |
-| Peso | Confirmar ficha vigente | Confirmar ficha vigente | Confirmar ficha vigente | Confirmar ficha vigente |
-| Suela especializada | HAIX CERFLEX | Vibram Megagrip | FR estándar | Industrial |
-| Sistema de cierre | Cordón + velcro | Cremallera + velcro + cordón | Cordón + emergencia | Cordón |
-| Estabilizador tobillo | Sí (Climate System) | Sí (TPU medial) | Básico | No |
-| Apertura de emergencia | No | No | Sí | No |
-| Integración con trajes | Compatible general | Optimizada Globe/Lion | Compatible general | No aplica |
-| Vida útil en uso intensivo | Definir por inspección | Definir por inspección | Definir por inspección | Definir por inspección |
-| Referencia comercial | Solicitar cotización | Solicitar cotización | Solicitar cotización | Solicitar cotización |
-| Ideal para | Corporaciones de alto volumen | Equipos con trajes Lion/Globe | Corporaciones con presupuesto medio | Brigadas industriales básicas |
+| Criterio | HAIX Fire Hero Xtreme | LION V-Force USA | Jolly Specialguard Boot 2.0 |
+|---|---|---|---|
+| Norma | Solicitar certificado de la variante | NFPA 1970 | EN 15090:2012 F2A HI3 CI SRC |
+| Materiales | Solicitar ficha vigente | Laminado GORE-TEX CROSSTECH sin PFAS | Cuero hidrorrepelente y suela de nitrilo |
+| Peso | Confirmar talla y configuración | Confirmar talla y configuración | Aprox. 2,380 g en talla 42 |
+| Cierre | Confirmar ficha vigente | Confirmar ficha vigente | Cremallera separable Quick-Release |
+| Inspección | Manual del fabricante | Manual del fabricante | Manual del fabricante |
+| Uso | Según certificado de la variante | Según modelo y evaluación de riesgos | Según certificado y evaluación de riesgos |
 
 ---
 
-## El mantenimiento que nadie hace y que lo cambia todo
+## Mantenimiento que conserva la condición de la bota
 
-Una bota NFPA 1970 no dura 5 años sola. Dura 5 años con cuidado. Y el cuidado no es complicado: es consistente.
+La vida útil y los criterios de retiro dependen del fabricante, condición y programa de inspección. El cuidado periódico no prolonga un límite de retiro establecido, pero ayuda a detectar daño antes de asignar la bota a servicio.
 
 **Después de cada intervención:**
 - Retirar la bota de la guardia si está empapada. El cuero y las membranas se degradan cuando permanecen húmedos por periodos largos.
@@ -204,32 +155,72 @@ Una bota NFPA 1970 no dura 5 años sola. Dura 5 años con cuidado. Y el cuidado 
 - Retirar los escombros del perfil de la suela. Los fragmentos de material que quedan entre el perfil degradan el caucho y reducen el agarre.
 
 **Mensual:**
-- Aplicar acondicionador de cuero al exterior (excepto en cuero sintético como el Jolly). El cuero seco pierde flexibilidad y se fisura en los pliegues del empeine, que son los puntos de mayor esfuerzo mecánico.
-- Verificar el estado de las costuras de la suela. Separación incipiente se puede corregir con adhesivo especializado; si ya hay separación visible en más de 2 cm, la bota debe revisarse por un técnico.
+- Aplicar únicamente los productos de cuidado autorizados por el fabricante para el material de la bota.
+- Revisar costuras, suela, cierre, puntera, empeine y forro; no repares con adhesivos o componentes no aprobados.
 
 **Anual:**
 - Solicitar una inspección conforme al procedimiento del fabricante. Si hay filtración o daño visible, retirar la bota de servicio hasta contar con una evaluación competente.
-- Revisar el estado de la punta de acero desde el interior: si hay deformación visible en la punta interior, la protección está comprometida.
+- Revisar puntera y protección antipenetración conforme al manual; un daño visible requiere la decisión técnica indicada por el fabricante.
 
 ---
 
-## Cuándo retirar las botas del servicio activo
+## Cuándo separar botas del servicio
 
 La **NFPA 1850** y el procedimiento del fabricante orientan el mantenimiento y retiro del conjunto de protección. Para el calzado, confirma el criterio aplicable al modelo:
 
 - Vida útil y fecha de retiro según el fabricante y el programa de inspección
 - Separación de suela que comprometa la función de la bota
-- Fisura o rotura del empeine que expose la membrana
+- Fisura o rotura del empeine que exponga la membrana
 - Membrana que no pasa la prueba de impermeabilidad de campo
 - Punta de acero deformada o expuesta
 - Costura de suela abierta en zona de carga de impacto
 
-El error más frecuente: mantener en servicio botas con cuero en buen estado visual pero con membrana ya no funcional. Una bota que parece bien por fuera pero absorbe agua en la primera manguera es una bota que ya no protege al bombero de contaminantes biológicos ni del vapor a presión. El aspecto externo no es un indicador confiable del estado de la membrana.
+El aspecto exterior no es el único indicador de condición. Ante filtración, daño en la construcción, pérdida de componentes o incumplimiento del criterio de inspección, separa la bota y sigue el procedimiento del fabricante antes de devolverla a servicio.
 
 ---
 
-En [FIREFIGHTERS MX](/productos) trabajamos con HAIX, Lion Apparel y Jolly. Si tu corporación está definiendo la renovación de calzado para toda la dotación, [contáctanos con el número de elementos y las tallas](/cotizacion): preparamos la propuesta en menos de 24 horas con la especificación técnica correcta para tu escenario operativo.
+Para especificar calzado junto con el resto del conjunto, consulta [EPP para bombero](/productos/epp-bombero/), [cómo elegir un traje de bombero](/blog/como-elegir-traje-bombero-nfpa/), [cascos para bombero](/blog/cascos-bombero-comparativa-marcas-2026/) y el [catálogo de productos](/productos/). La solicitud de cotización debe incluir modelo, variante, talla, certificación y accesorios que se pretenden recibir.
 
 ---
 
-*¿Estás definiendo el conjunto completo de EPP? Consulta también nuestra guía de [cómo elegir un traje para bombero certificado NFPA](/blog/como-elegir-traje-bombero-nfpa) y la guía de [cascos para bombero: por qué la marca no es lo primero](/blog/cascos-bombero-comparativa-marcas-2026).*
+## Protocolo de prueba antes de estandarizar una bota
+
+Una ficha técnica ordena la comparación, pero no responde cómo quedará la bota en el conjunto de cada persona. Antes de adjudicar un lote, selecciona una muestra de tallas representativas y registra modelo, variante, talla de la bota, calcetín utilizado, plantilla incluida y pantalón con el que se hizo la prueba. No cambies esos elementos entre una muestra y otra; hacerlo altera el ajuste y vuelve incomparable la evaluación.
+
+La primera revisión es estática. Con la bota puesta y el pantalón de intervención colocado como indica su fabricante, confirma que el cierre llega a la posición prevista, que no existe presión anormal en empeine o pantorrilla y que la caña se integra con el dobladillo sin depender de una modificación improvisada. Revisa el acceso al cierre con guantes y la posibilidad de retirar la bota siguiendo el procedimiento del modelo. Si la muestra tiene piezas extraíbles, anota cuáles se usaron.
+
+Después realiza movimientos definidos por la operación: caminar, subir y bajar escalones, agacharse, arrodillarse y recorrer una superficie seca establecida para la prueba. El objetivo no es medir comodidad con una calificación subjetiva, sino observar si la talla conserva el ajuste, si el cierre permanece asegurado y si el pantalón o los accesorios interfieren. Las condiciones del ejercicio deben anotarse para que el dictamen no dependa de recuerdos posteriores.
+
+Para una compra de varias tallas, no aceptes una muestra única como evidencia de toda la dotación. Comprueba las tallas que representan los extremos y las configuraciones de pantalón que la corporación utiliza. Si el modelo requiere una plantilla o calcetín específico, conviértelo en un componente explícito de la partida; de otra manera la bota entregada puede no coincidir con la evaluada.
+
+El acta de aceptación debe separar tres resultados: cumplimiento documental, ajuste de la muestra y condición del lote recibido. El primero compara certificado, ficha y manual con el modelo ofertado. El segundo registra la prueba física. El tercero verifica que cajas, etiquetas, tallas y accesorios de las unidades entregadas correspondan a los documentos. Esta separación evita declarar aprobada una compra cuando solo se revisó una parte del conjunto.
+
+## Criterios para redactar la partida de calzado
+
+Describe la finalidad de uso antes de nombrar una marca. Indica la norma o certificación requerida, el modelo o equivalente comprobable, talla, construcción, sistema de cierre, puntera, requisitos de resistencia y documentación de mantenimiento. Para cada accesorio opcional, define si es obligatorio y cómo se verificará en la recepción. La redacción debe permitir comparar propuestas sin sustituir datos faltantes por promesas comerciales.
+
+Pide que el proveedor entregue manuales correspondientes al modelo, instrucciones de inspección, procedimiento de limpieza autorizado, límites de retiro y el canal para piezas compatibles. También registra la fecha de recepción y asigna un identificador de inventario a cada par. Aunque el fabricante no establezca una fecha universal de reemplazo, estos registros permiten identificar daño, desgaste o inconsistencias antes de que la bota vuelva a servicio.
+
+---
+
+## Preguntas frecuentes
+
+### ¿La certificación de una bota se puede asumir por la marca?
+
+No. La certificación corresponde al modelo y configuración publicados. En la compra, exige el documento aplicable a la variante, talla y uso previsto, y revisa que coincida con la muestra y la entrega.
+
+### ¿Qué modelos LION tienen datos oficiales verificables?
+
+LION publica V-Force USA con NFPA 1970 y laminado GORE-TEX CROSSTECH sin PFAS, y HellFire Felt con NFPA 1970 estructural. Las demás configuraciones deben verificarse con su página o ficha oficial vigente antes de incorporarlas a un pliego.
+
+### ¿Qué certificación publica Jolly para Specialguard Boot 2.0?
+
+El modelo 9072/A publica EN 15090:2012 F2A HI3 CI SRC. Esta referencia identifica el modelo citado; no convierte automáticamente a otras botas Jolly en equivalentes ni sustituye la evaluación del riesgo.
+
+## Fuentes
+
+- [NFPA 1970 — Standard on Protective Ensembles](https://www.nfpa.org/codes-and-standards/nfpa-1970-standard-development/1970)
+- [LION — V-Force USA Boot](https://www.lionprotects.com/vforce-usa-boot-0)
+- [LION — HellFire Felt](https://www.lionprotects.com/hellfire-felt)
+- [Jolly — Specialguard Boot 2.0, 9072/A](https://www.jollyscarpe.com/de/prodotti/9072-a/)
+- [Jolly — tecnología y EN 15090](https://www.jollyscarpe.com/en/technologies/)

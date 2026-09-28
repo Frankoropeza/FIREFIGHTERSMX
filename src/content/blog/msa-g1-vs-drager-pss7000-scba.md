@@ -3,7 +3,7 @@ title: "MSA G1 vs Dräger PSS 7000: criterios para revisar la compra"
 seoTitle: "MSA G1 vs Dräger PSS 7000: comparativa de SCBA"
 description: "MSA G1 vs Dräger PSS 7000: criterios de documentación, compatibilidad y mantenimiento para revisar una compra de SCBA."
 pubDate: 2026-02-15
-updatedDate: 2026-06-25
+updatedDate: 2026-09-28
 author: "FIREFIGHTERS MX"
 category: "Equipos SCBA"
 tags: ["SCBA", "MSA G1", "Dräger PSS 7000", "NFPA 1970", "equipo respiración autónoma"]
@@ -12,9 +12,7 @@ image:
   alt: "Comparativa SCBA MSA G1 y Dräger PSS 7000 para combate estructural de incendio"
 ---
 
-En una licitación de SCBA, el equipo técnico puede comparar las fichas del [MSA G1](/productos/equipos-scba/msa-g1) y del [Dräger PSS 7000](/productos/equipos-scba/drager-pss). El G1 cuenta con aprobaciones NIOSH CBRN y NFPA 1981 en su documentación; el PSS 7000 existe en versión certificada NFPA. Para una oferta actual, pide el certificado correspondiente al modelo y configuración exactos.
-
-La respuesta honesta es que en papel, casi nada. En el campo, todo.
+En una licitación de SCBA, el equipo técnico puede comparar las fichas del MSA G1 y del Dräger PSS 7000. El G1 cuenta con aprobación NIOSH CBRN y referencias NFPA en su documentación; el PSS 7000 existe en versión certificada NFPA. Para una oferta actual, pide el certificado correspondiente al modelo y configuración exactos.
 
 Una comparativa útil no debe depender solo de peso, presión o cifras de catálogo. Debe preguntar qué piezas faciales son compatibles, qué certificación tiene la configuración propuesta, cómo se realizará el mantenimiento y qué documentación acompañará a cada unidad.
 
@@ -22,7 +20,7 @@ Eso es lo que vamos a revisar aquí.
 
 ---
 
-## El dilema real: integración de fábrica contra modularidad industrial
+## Qué comparar entre integración y configuración
 
 La diferencia de fondo entre el G1 y el PSS 7000 no es el peso ni la presión de trabajo. Es la filosofía de diseño.
 
@@ -34,7 +32,7 @@ Ninguno de los dos enfoques es incorrecto. El problema surge cuando no se entien
 
 ---
 
-## Cómo documentar el alcance de una flota con telemetría
+## Cómo documentar el alcance de la telemetría
 
 Cuando una licitación pide telemetría de flota para monitoreo desde puesto de mando, la propuesta debe describir los componentes que integran el sistema y las condiciones de operación. No basta con usar el término “telemetría” sin indicar qué recibe el puesto de mando, qué información se transmite y qué accesorios se incluyen.
 
@@ -60,7 +58,7 @@ Si la telemetría es un requisito, debe figurar en el análisis comparativo y en
 
 ---
 
-## La máscara: el diferenciador que nadie menciona hasta que duele
+## La pieza facial requiere una prueba con el casco
 
 Hay una conversación que los vendedores de SCBA evitan tener hasta que la compra ya está hecha. Se trata de la compatibilidad entre la máscara del SCBA y el casco estructural del bombero.
 
@@ -70,13 +68,11 @@ El G1 debe evaluarse con la pieza facial aprobada para la configuración propues
 
 El PSS 7000 puede requerir la misma revisión con su pieza facial y el casco propuestos. El Dräger HPS 7000 está documentado con EN 443, EN 16471 y EN 16473; esa información no equivale por sí sola a una declaración de compatibilidad con una pieza facial concreta.
 
-Esto no es un defecto de ninguno de los dos equipos. Es una consecuencia de que los estándares NFPA y EN no definieron una geometría de interfaz casco-máscara universal.
-
-**Lo que debes hacer antes de comprometerte con cualquier SCBA:** exige al proveedor una prueba de ajuste (fit test) con los cascos que ya tiene tu flota. No con cascos de muestra que trae el vendedor — con los tuyos. Y exige que el fit test lo realicen bomberos con rangos de talla extremos en tu corporación, no solo el que tiene "talla media promedio."
+No se debe atribuir la interferencia a un fabricante sin documentar el conjunto que se probó. Antes de comprometerte con cualquier SCBA, exige una prueba de ajuste conforme al manual con los cascos, capuchas y tallas representativas que realmente utilizará la corporación.
 
 ---
 
-## Infraestructura de llenado: el argumento que el PSS 7000 gana en ciertos contextos
+## Infraestructura de llenado y versión del PSS 7000
 
 La infraestructura de llenado debe revisarse antes de cambiar de plataforma SCBA. La presión nominal del cilindro, conexiones, procedimiento de llenado y mantenimiento deben coincidir con lo indicado por el fabricante.
 
@@ -90,7 +86,7 @@ En cualquier corporación, documenta la presión máxima certificada de la estac
 
 ---
 
-## Cilindros: las consecuencias de la rosca
+## Cilindros y conexiones aprobadas
 
 Los cilindros y conexiones deben ser los aprobados para cada SCBA. No se deben asumir intercambiables entre marcas o configuraciones sin documentación del fabricante y de la certificación aplicable.
 
@@ -110,7 +106,7 @@ Conserva los formatos firmados, fotografías de la muestra y comunicaciones del 
 
 ---
 
-## Arnés y ergonomía: evaluación con la brigada
+## Arnés y ergonomía: evaluación con usuarios
 
 El peso de una configuración SCBA depende del cilindro, pieza facial, accesorios y versión del equipo. La información disponible no permite establecer un peso comparable para todas las configuraciones; pide la ficha del conjunto exacto.
 
@@ -122,7 +118,7 @@ El análisis de uso debe considerar el entorno operativo, las instrucciones de i
 
 ---
 
-## PASS y telemetría: dónde se separan los sistemas
+## PASS, EOSTI y telemetría: documenta cada función
 
 La documentación del G1 incluye PASS integrado, activado tras 30 segundos sin movimiento. Para el PSS 7000 y cualquier configuración con alarma, solicita el documento de aprobación y las instrucciones de comprobación correspondientes.
 
@@ -132,11 +128,11 @@ Con el **MSA G1**, revisa qué funciones de telemetría bidireccional están inc
 
 Con el **PSS 7000**, revisa la configuración de telemetría que ofrece el proveedor y compárala contra los requerimientos de la brigada. La función debe verificarse con equipo demostrativo y documentación de la versión ofertada.
 
-Para corporaciones que operan en estructuras complejas — el HCBCM respondiendo en Torres Mayor, Bomberos Guadalajara en el centro histórico, cualquier brigada con responsabilidad en hospitales de alta densidad — la telemetría de flota en tiempo real no es opcional. Es la diferencia entre rescatar a un bombero caído en los primeros tres minutos o encontrarlo demasiado tarde.
+La telemetría puede ser un requisito de compra cuando la evaluación de riesgos y el procedimiento de mando la contemplan. En ese caso, especifica qué datos se necesitan, qué componentes los transmiten y cómo se verificará el funcionamiento de la configuración recibida.
 
 ---
 
-## Compatibilidad ambiental: Golfo de México y zonas tropicales
+## Ambiente de operación y programa de inspección
 
 En ambientes húmedos, polvosos o salinos, la inspección y el mantenimiento de componentes electrónicos deben seguir las instrucciones del fabricante. El entorno operativo debe quedar descrito en el plan de servicio.
 
@@ -166,7 +162,7 @@ El **Dräger PSS 7000** puede evaluarse cuando:
 
 ---
 
-## Antes de firmar la orden de compra: tres preguntas que debes responder
+## Tres preguntas antes de firmar la orden
 
 Primera: ¿La infraestructura de llenado corresponde a la presión y conexiones del cilindro ofertado? Solicita el dato documentado de la compresora y compáralo con la ficha de la configuración propuesta.
 
@@ -178,7 +174,7 @@ Las preguntas documentadas antes de comprar reducen incertidumbre durante la rec
 
 ---
 
-## Recomendación final por tipo de corporación
+## Criterios por tipo de operación
 
 **Cuerpo de bomberos municipal o estatal:** evalúa el MSA G1 y el PSS 7000 con una matriz que incluya certificados, prueba de ajuste, cilindros, programa de servicio y alcance de telemetría.
 
@@ -194,16 +190,38 @@ Lo que no cambia en ninguna corporación es la necesidad de exigir al proveedor 
 
 ---
 
-## Artículos relacionados
+## Lecturas y productos relacionados
 
-- [Cilindros SCBA: fibra de carbono vs acero](/blog/cilindros-scba-fibra-carbono-vs-acero) — TCO a 10 años y protocolo post-impacto para cada material
+- [Cilindros SCBA: fibra de carbono vs acero](/blog/cilindros-scba-fibra-carbono-vs-acero/) — cómo leer el marcado, vida útil y requalificación
 - [Compatibilidad casco-SCBA: el problema silencioso](/blog/compatibilidad-casco-scba-bomberos) — por qué certificación individual no garantiza que los equipos funcionen juntos
 - [Guía de compra SCBA en México](/blog/guia-compra-scba-equipos-respiracion-autonoma) — criterios técnicos y preguntas clave antes de firmar la licitación
 
 ---
 
-## Catálogo Equipos SCBA en FIREFIGHTERS MX
+## Catálogo para documentar la propuesta
 
-Distribuimos equipos SCBA de MSA y Dräger con servicio técnico autorizado. Podemos apoyar la revisión documental de la configuración propuesta y de la infraestructura de llenado existente en tu corporación.
+El [catálogo de equipos SCBA](/productos/equipos-scba/) y las fichas de [MSA G1 estructural](/productos/equipos-scba/msa-g1-estructural/) y [PSS 7000 NFPA](/productos/equipos-scba/drager-pss7000-nfpa/) ayudan a identificar las configuraciones que deben aparecer en la muestra, certificado y programa de mantenimiento. Completa el expediente con [la guía de compra de SCBA](/blog/guia-compra-scba-equipos-respiracion-autonoma/) y una solicitud de cotización que detalle los componentes.
 
-[Catálogo completo de Equipos SCBA](/productos/equipos-scba) · [Solicitar cotización](/cotizacion)
+[Solicitar cotización](/cotizacion)
+
+## Preguntas frecuentes
+
+### ¿El MSA G1 y el PSS 7000 se certifican con cualquier cilindro disponible?
+
+No debe suponerse. La aprobación y la configuración del fabricante identifican los componentes aplicables. En la orden de compra, cilindro, pieza facial, regulador, alarmas y accesorios tienen que coincidir con la documentación del conjunto ofertado.
+
+### ¿Qué dato de presión se debe contrastar con la estación de llenado?
+
+La presión y el procedimiento especificados para el cilindro que se recibirá. El G1 se documenta con configuraciones de 2216, 4500 y 5500 psi; la versión europea del PSS 7000 se publica con un cilindro de 6.8 L a 300 bar. No son datos intercambiables.
+
+### ¿El PSS 7000 se puede declarar CBRN para cualquier versión?
+
+No. La documentación localizada confirma una versión PSS 7000 certificada NFPA, pero la condición CBRN y la edición normativa deben verificarse en el certificado de la versión exacta propuesta.
+
+## Fuentes
+
+- [MSA — aprobación G1 2025](https://docs.msasafety.com/g1scba2025cbrn/G1%202024%20CBRN%20PN%20TBD/NFPA_Approval_Information.htm)
+- [MSA — manual G1 CBRN](https://docs.msasafety.com/g1scba2025cbrn/G1%202024%20CBRN%20PN%20TBD/PDF/G1_2025_CBRN_10246168.pdf)
+- [Dräger — PSS 7000 NFPA](https://www.draeger.com/en-us_us/Products/PSS-7000-NFPA)
+- [Dräger — instrucciones PSS 7000 con Sentinel 7000](https://www.draeger.com/Content/Documents/Products/pss-7000-series-self-contained-breathing-apparatus-with-sentinel-7000-ifu-3356233-en-us.pdf)
+- [NFPA 1970 — Standard on Protective Ensembles](https://www.nfpa.org/codes-and-standards/nfpa-1970-standard-development/1970)
