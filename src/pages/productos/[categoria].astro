@@ -27,6 +27,11 @@ const products = cat.productCategory
   : [];
 /* Marcas con página L4 dedicada en esta categoría (sistema BrandPage) */
 const marcas = brandPages.filter((b) => b.categorySlug === cat.slug);
+/* Ancla de las cards de marca: categoría + marca («Cámaras Térmicas FLIR»),
+   salvo que la etiqueta ya nombre la categoría («Extintores PQS ABC»). */
+const raizCat = cat.label.split(' ')[0].toLowerCase().slice(0, 5);
+const anclaMarca = (label: string) =>
+  label.toLowerCase().includes(raizCat) ? label : `${cat.label} ${label}`;
 
 const canonicalURL = `${SITE.url}/productos/${cat.slug}/`;
 
@@ -122,7 +127,7 @@ const otherCategories = allCategories.filter((c) => c.slug !== cat.slug).slice(0
               <h3 class="font-display font-bold text-xl group-hover:text-[#FF6B26]" style="color:#FFFFFF">{b.brandLabel}</h3>
               <p class="text-xs leading-relaxed flex-1" style="color:#64748B">{b.crossDesc}</p>
               <span class="inline-flex items-center gap-1.5 text-xs font-display font-semibold uppercase tracking-wider" style="color:#FF8F57">
-                Ver catálogo
+                {anclaMarca(b.brandLabel)}
                 
               </span>
             </a>

@@ -387,8 +387,8 @@ const checkIcon = ``;
               {/* Ver ficha L3 */}
               <a href={`/estaciones/${estado.slug}/${e.slug}`}
                 class="inline-flex items-center gap-1.5 mt-auto pt-1 font-display font-semibold text-xs uppercase tracking-wider"
-                style="color:#FF8F57" aria-label={`Ver ficha de ${e.nombre}`}>
-                Ficha completa de la estación
+                style="color:#FF8F57">
+                Bomberos de {e.municipio}{e.telefono ? ': dirección y teléfono' : ': ubicación y servicios'}
                 
               </a>
 

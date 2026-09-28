@@ -22,12 +22,12 @@ const factores = [
 ];
 
 const categorias = [
-  { title: 'Extintores', text: 'Define agente, capacidad, aplicación, cantidad y servicio requerido.', guide: '/productos/extintores/' },
-  { title: 'Sistemas contra incendio', text: 'Separa ingeniería, suministro, instalación, pruebas y mantenimiento.', guide: '/productos/sistemas-ci/' },
-  { title: 'Trajes para bomberos', text: 'Especifica tipo de operación, tallas, configuración y documentación requerida.', guide: '/productos/trajes-bombero/' },
-  { title: 'Equipos SCBA', text: 'Indica duración nominal, cilindros, compatibilidad, accesorios y soporte necesario.', guide: '/productos/equipos-scba/' },
-  { title: 'Cascos y EPP', text: 'Detalla uso, tallas, accesorios, compatibilidad y norma solicitada.', guide: '/productos/cascos-nfpa/' },
-  { title: 'Herramientas de rescate', text: 'Compara tecnología, fuente de energía, accesorios, capacitación y mantenimiento.', guide: '/productos/herramientas-rescate/' },
+  { title: 'Extintores', text: 'Define agente, capacidad, aplicación, cantidad y servicio requerido.', guide: '/productos/extintores/', ancla: 'Venta de extintores' },
+  { title: 'Sistemas contra incendio', text: 'Separa ingeniería, suministro, instalación, pruebas y mantenimiento.', guide: '/productos/sistemas-ci/', ancla: 'Sistemas contra incendio' },
+  { title: 'Trajes para bomberos', text: 'Especifica tipo de operación, tallas, configuración y documentación requerida.', guide: '/productos/trajes-bombero/', ancla: 'Trajes de bombero' },
+  { title: 'Equipos SCBA', text: 'Indica duración nominal, cilindros, compatibilidad, accesorios y soporte necesario.', guide: '/productos/equipos-scba/', ancla: 'Equipo de respiración autónoma' },
+  { title: 'Cascos y EPP', text: 'Detalla uso, tallas, accesorios, compatibilidad y norma solicitada.', guide: '/productos/cascos-nfpa/', ancla: 'Cascos de bombero' },
+  { title: 'Herramientas de rescate', text: 'Compara tecnología, fuente de energía, accesorios, capacitación y mantenimiento.', guide: '/productos/herramientas-rescate/', ancla: 'Herramientas de rescate' },
 ];
 
 const datosCotizacion = [
@@ -103,7 +103,7 @@ const faqSchema = {
         </p>
         <div class="flex flex-col sm:flex-row gap-3">
           <a href="/cotizacion/" class="btn btn-primary btn-lg">Solicitar cotización</a>
-          <a href="/productos/" class="btn btn-ghost btn-lg">Ver catálogo de equipo</a>
+          <a href="/productos/" class="btn btn-ghost btn-lg">Catálogo de equipo para bomberos</a>
         </div>
       </div>
     </div>
@@ -144,7 +144,7 @@ const faqSchema = {
             <h3 class="font-display font-bold text-xl mb-3" style="color:#FFFFFF">{categoria.title}</h3>
             <p class="text-xs leading-relaxed mb-6 flex-1" style="color:#64748B">{categoria.text}</p>
             <div class="flex flex-wrap gap-2">
-              <a href={categoria.guide} class="btn btn-sm btn-dark">Ver catálogo</a>
+              <a href={categoria.guide} class="btn btn-sm btn-dark">{categoria.ancla}</a>
               <a href="/cotizacion/" class="btn btn-sm btn-outline">Cotizar</a>
             </div>
           </article>

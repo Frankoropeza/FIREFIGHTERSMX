@@ -18,6 +18,7 @@ const sections = [
     title: 'Nosotros',
     tag: 'Quiénes somos',
     href: '/nosotros',
+    cta: 'Historia de FIREFIGHTERS MX',
     desc: 'Historia, misión y el equipo detrás de más de 500 estaciones equipadas en el país.',
     accent: '#F75000',
     icon: ``,
@@ -26,6 +27,7 @@ const sections = [
     title: 'Certificaciones',
     tag: 'NFPA · NOM · STPS',
     href: '/certificaciones',
+    cta: 'Certificaciones NFPA y NOM',
     desc: 'Las normas que avalan nuestro equipo y cómo saber cuál aplica a tu operación.',
     accent: '#F5A623',
     icon: ``,
@@ -34,6 +36,7 @@ const sections = [
     title: 'Cobertura Nacional',
     tag: '32 estados',
     href: '/cobertura',
+    cta: 'Cobertura en los 32 estados',
     desc: 'Logística y servicio en sitio en toda la República, con tiempos de entrega comprometidos.',
     accent: '#34D399',
     icon: ``,
@@ -42,6 +45,7 @@ const sections = [
     title: 'Distribuidores',
     tag: 'Red autorizada',
     href: '/distribuidores',
+    cta: 'Distribuidores autorizados',
     desc: 'Alianzas y puntos de distribución que acercan el equipo certificado a tu región.',
     accent: '#7AA4C4',
     icon: ``,
@@ -50,6 +54,7 @@ const sections = [
     title: 'Marcas Autorizadas',
     tag: 'Distribuidor oficial',
     href: '/marcas',
+    cta: 'Marcas de equipo para bomberos',
     desc: 'Las marcas líderes del mundo que representamos de forma oficial en México.',
     accent: '#FF8F57',
     icon: ``,
@@ -58,6 +63,7 @@ const sections = [
     title: 'Contacto',
     tag: 'Hablemos',
     href: '/contacto',
+    cta: 'Contacto y cotización',
     desc: CONTACTO_DIRECTO_ACTIVO ? 'Atención por teléfono, correo o WhatsApp con un ejecutivo asignado a tu cuenta.' : 'Atención por teléfono o correo con un ejecutivo asignado a tu cuenta.',
     accent: '#FF6B26',
     icon: ``,
@@ -242,7 +248,7 @@ const aboutSchema = {
               <h3 class="font-display font-bold text-lg leading-tight group-hover:text-[#FF6B26]" style="color:#FFFFFF">{s.title}</h3>
               <p class="text-xs leading-relaxed" style="color:#64748B;flex:1">{s.desc}</p>
               <span class="flex items-center gap-1.5 text-xs font-display font-semibold uppercase tracking-wider" style="color:#FF8F57;letter-spacing:0.1em">
-                Ver más
+                {s.cta}
                 
               </span>
             </div>
