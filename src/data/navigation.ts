@@ -102,9 +102,9 @@ export const navigation: { main: NavItem[] } = { main: [
         ],
       },
       {
-        label: "Equipos HAZMAT",
+        label: "HAZMAT y detección de gases",
         href: "/productos/hazmat",
-        description: "DuPont Tychem · Lakeland · MSA · Kappler",
+        description: "Trajes Tychem · Lakeland · Kappler · detectores MSA y Dräger",
         children: [
           { label: "DuPont Tychem",       href: "/productos/hazmat/dupont-tychem",     description: "NFPA 1990 · Nivel A encapsulado · Tychem 10000" },
           { label: "Lakeland Industries", href: "/productos/hazmat/lakeland-chemmax",  description: "ChemMax · Interceptor Plus · Pyrolon CRFR" },

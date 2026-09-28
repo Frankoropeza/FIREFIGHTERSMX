@@ -19,9 +19,11 @@ const seoMeta = {
 /* ── Productos por marca ─────────────────────────────────────────────────── */
 const dupontProducts   = featuredProducts.filter((p) => p.category === 'Equipos HAZMAT' && p.brand === 'DuPont Tychem'      && p.specs);
 const lakelandProducts = featuredProducts.filter((p) => p.category === 'Equipos HAZMAT' && p.brand === 'Lakeland Industries' && p.specs);
-const msaProducts      = featuredProducts.filter((p) => p.category === 'Equipos HAZMAT' && p.brand === 'MSA Safety'          && p.specs);
 const kapplerProducts  = featuredProducts.filter((p) => p.category === 'Equipos HAZMAT' && p.brand === 'Kappler'              && p.specs);
 const todosHazmat      = featuredProducts.filter((p) => p.category === 'Equipos HAZMAT' && p.specs);
+/* Detección de gases: familia propia dentro de HAZMAT (auditoría del catálogo 2026-09-28). */
+const esDetector = (p: (typeof featuredProducts)[number]) => Boolean(p.specs?.gases) || /detector|altair|x-am|pac\s|ventis|bw\s|galaxy/i.test(p.title);
+const detectores = todosHazmat.filter(esDetector);
 
 /* ── Niveles de protección EPA ───────────────────────────────────────────── */
 const niveles = [
@@ -540,20 +542,21 @@ const articulos = [
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
-          <span class="section-eyebrow mb-4 inline-flex">MSA Safety · Altair · ATEX · Cl I Div 1 · Distribuidor Autorizado MX</span>
+          <span class="section-eyebrow mb-4 inline-flex">Detección de gases · MSA · Dräger · Honeywell · Industrial Scientific</span>
           <h2 id="msa-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
-            Monitores MSA Altair<br/>
-            <span style="color:#34D399">detección HAZMAT certificada.</span>
+            Detección de gases<br/>
+            <span style="color:#34D399">monogás y multigás.</span>
           </h2>
         </div>
         <div style="border-left:2px solid rgba(52,211,153,0.4);padding-left:1.75rem">
           <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
-            MSA ALTAIR 4XR es un detector multigás para combustibles, oxígeno y pares tóxicos según
-            configuración. MSA ALTAIR 2X es un detector monogás o de configuraciones dobles. Selecciona
-            sensores, alarmas y procedimientos de verificación conforme al riesgo de la operación.
+            La segunda familia del catálogo HAZMAT: detectores personales y portátiles para medir
+            oxígeno, combustibles (LEL) y tóxicos antes y durante la intervención. Monogás para un riesgo
+            conocido, multigás para espacios confinados y respuesta a fugas; selecciona sensores, alarmas
+            y la estación de prueba funcional conforme al riesgo de la operación.
           </p>
           <div class="flex flex-wrap gap-2">
-            {['ALTAIR 4XR multigás','ALTAIR 2X monogás','Configuración por gas','Prueba funcional','Calibración','Distribuidor autorizado MX'].map(b => (
+            {['Monogás','Multigás','O₂ · LEL · CO · H₂S','Prueba funcional','Calibración'].map(b => (
               <span class="badge badge-dark text-[9px]">{b}</span>
             ))}
           </div>
@@ -561,7 +564,7 @@ const articulos = [
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        {msaProducts.map((p) => (
+        {detectores.map((p) => (
           <ProductCard product={p} />
         ))}
       </div>
@@ -569,15 +572,18 @@ const articulos = [
       <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(52,211,153,0.15)">
         <div class="flex-1">
           <p class="text-sm leading-relaxed m-0" style="color:#64748B">
-            Comparativa ALTAIR 4XR y ALTAIR 2X, selección de sensores y protocolo de prueba funcional,
-            calibración y mantenimiento conforme al fabricante para operaciones HAZMAT.
+            Guía de selección de detectores de gas: tipos de sensor, dónde medir, prueba funcional y
+            calibración; y el catálogo MSA ALTAIR completo con su estación de prueba Galaxy GX2.
           </p>
         </div>
         <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full sm:w-auto min-w-0">
-          <a href="/productos/hazmat/msa-deteccion" class="btn btn-primary btn-lg">
-            Catálogo MSA Altair completo 
+          <a href="/productos/hazmat/detectores-de-gas/" class="btn btn-primary btn-lg">
+            Guía de detectores de gas
           </a>
-          <a href={whatsappUrl('Hola, quiero cotizar monitores multi-gas MSA Altair ATEX para HAZMAT o espacios confinados.')}
+          <a href="/productos/hazmat/msa-deteccion/" class="btn btn-ghost btn-lg">
+            Catálogo MSA ALTAIR
+          </a>
+          <a href={whatsappUrl('Hola, quiero cotizar detectores de gas para HAZMAT o espacios confinados.')}
             target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
             Cotizar por {CANAL_CONTACTO}
           </a>

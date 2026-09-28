@@ -268,11 +268,11 @@ export const catalogo: FamiliaCatalogo[] = [
       },
       {
         slug: 'hazmat',
-        titulo: 'Equipos HAZMAT',
+        titulo: 'HAZMAT y detección de gases',
         norma: 'NFPA 1990',
         texto: 'Trajes de protección química nivel A y B y detectores de gas para respuesta a materiales peligrosos.',
         href: '/productos/hazmat/',
-        cta: 'Ver equipos HAZMAT',
+        cta: 'Ver HAZMAT y detección',
         imagenAlt: 'Traje encapsulado de protección química nivel A y detector de gas portátil',
         icon: cat('hazmat').icon,
         accent: cat('hazmat').accent,
