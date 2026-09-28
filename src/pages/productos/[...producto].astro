@@ -3,6 +3,8 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import { featuredProducts, fabricanteDe, type Product } from '@data/products';
 import { metaCerrada } from '@lib/meta-seo';
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
 import { brandPages } from '@data/brandPages';
 import { categories } from '@data/categories';
 import { SITE, whatsappUrl, CANAL_CONTACTO } from '@config/site';
@@ -298,15 +300,29 @@ const useCases: UseCases = catUseCases[product.category] ?? {
   ],
 };
 
-/* ── Galería: imagen principal + 5 de la misma categoría ───────────────── */
+/* ── Imágenes del modelo ────────────────────────────────────────────────
+   Sólo fotografías del propio modelo. Si la imagen es la genérica de la
+   categoría o la comparte con otras fichas, se rotula como imagen de
+   referencia y su alt no la presenta como foto del modelo. Nunca se muestran
+   fotos de otros modelos en la galería (auditoría del catálogo 2026-09-28). */
 type GalleryImg = { src: string; alt: string };
+const catSlug = categoryPath.split('/')[2] ?? '';
+const imagenCategoria = [`/images/categorias/${catSlug}.avif`, `/images/catalogo/${catSlug}.avif`]
+  .find((src) => existsSync(join(process.cwd(), 'public', src)));
+const usosImagen = product.image ? featuredProducts.filter((p) => p.image === product.image).length : 0;
+const imagenEsReferencia = !product.image || usosImagen > 1 || product.image.startsWith('/images/categorias/');
+const imagenPrincipal = product.image ?? imagenCategoria;
+const nombreCategoria: Record<string, string> = {
+  'Trajes Bombero': 'traje de bombero', 'Cascos NFPA': 'casco de bombero', 'Equipos SCBA': 'equipo de respiración autónoma',
+  'Herramientas Rescate': 'herramienta de rescate', 'Drones Emergencia': 'dron de emergencia', 'Cámaras Térmicas': 'cámara térmica',
+  'Extintores': 'extintor', 'Sistemas CI': 'sistema contra incendio', 'Equipos HAZMAT': 'equipo HAZMAT',
+};
 const galleryImages: GalleryImg[] = [
-  ...(product.image ? [{ src: product.image, alt: product.title }] : []),
-  ...featuredProducts
-    .filter((p) => p.category === product.category && p.image && p.slug !== product.slug)
-    .slice(0, 5)
-    .map((p) => ({ src: p.image!, alt: p.title })),
-].slice(0, 6);
+  ...(imagenPrincipal
+    ? [{ src: imagenPrincipal, alt: imagenEsReferencia ? `Imagen de referencia de ${nombreCategoria[product.category] ?? product.category.toLowerCase()}` : product.title }]
+    : []),
+  ...(product.galeria ?? []).map((src, i) => ({ src, alt: `${product.title} — vista ${i + 2}` })),
+];
 
 /* ── Sidebar: productos de la misma marca ──────────────────────────────── */
 const sidebarBrandProds = featuredProducts
@@ -474,7 +490,7 @@ const productSchema = {
   url: canonicalURL,
   inLanguage: 'es-MX',
   isPartOf: { '@id': `${SITE.url}/#website` },
-  ...(product.image ? { primaryImageOfPage: { '@type': 'ImageObject', url: `${SITE.url}${product.image}` } } : {}),
+  ...(product.image && !imagenEsReferencia ? { primaryImageOfPage: { '@type': 'ImageObject', url: `${SITE.url}${product.image}` } } : {}),
   publisher: { '@id': `${SITE.url}/#business` },
 };
 
@@ -630,43 +646,39 @@ const seoDesc = metaCerrada(product.description, [
         {/* ── MAIN CONTENT ─────────────────────────────────────────────── */}
         <main class="flex flex-col gap-8">
 
-          {/* Galería 3×2 */}
+          {/* Imagen del modelo (y galería sólo si hay más fotos del MISMO modelo) */}
           {galleryImages.length > 0 && (
-            <div>
-              <div class="grid grid-cols-3 gap-1.5" aria-label={`Galería ${product.category} — ${product.brand ?? ''}`}>
+            <figure class="m-0">
+              <div class={galleryImages.length > 1 ? 'grid grid-cols-3 gap-1.5' : ''} aria-label={`Imágenes de ${product.title}`}>
                 {galleryImages.map((img, i) => (
-                  <figure class="m-0 overflow-hidden group relative"
-                          style="background:#060D18;border:1px solid rgba(74,117,153,0.18)">
+                  <div class="overflow-hidden relative"
+                       style={`background:#060D18;border:1px solid rgba(74,117,153,0.18);${galleryImages.length > 1 && i === 0 ? 'grid-column:1 / -1;' : ''}`}>
                     <img
                       src={img.src}
-                      alt={`${img.alt} — ${product.norm ?? product.category}`}
-                      width="400" height="300"
+                      alt={img.alt}
+                      width="1200" height="750"
                       loading={i === 0 ? 'eager' : 'lazy'}
                       fetchpriority={i === 0 ? 'high' : 'auto'}
                       decoding="async"
                       class="w-full block"
-                      style="aspect-ratio:4/3;object-fit:cover;object-position:center"
+                      style={`aspect-ratio:${i === 0 ? '16/10' : '4/3'};object-fit:cover;object-position:center`}
                     />
                     {i === 0 && product.badge && (
                       <div class="absolute top-2 left-2 pointer-events-none">
                         <span class="text-[9px] font-display font-bold uppercase tracking-widest px-2 py-1"
-                              style="background:#F75000;color:#FFFFFF"> {product.badge}</span>
+                              style="background:#F75000;color:#FFFFFF">{product.badge}</span>
                       </div>
                     )}
-                  </figure>
-                ))}
-                {/* Rellenar con placeholders si hay menos de 6 imágenes */}
-                {Array.from({ length: Math.max(0, 6 - galleryImages.length) }).map((_, i) => (
-                  <div class="flex flex-col items-center justify-center gap-2"
-                       style="aspect-ratio:4/3;background:#060D18;border:1px solid rgba(74,117,153,0.12)">
-                    
                   </div>
                 ))}
               </div>
-              <p class="text-[10px] mt-2 text-right" style="color:var(--forge-300)">
-                {[product.category, fabricante ?? product.brand].filter(Boolean).join(' · ')}{esDistribuidor && ' · Distribuidor autorizado México'}
-              </p>
-            </div>
+              <figcaption class="text-[10px] mt-2 flex flex-wrap justify-between gap-2" style="color:var(--forge-300)">
+                <span>{imagenEsReferencia
+                  ? 'Imagen de referencia de la categoría. La fotografía del modelo se entrega con su ficha técnica.'
+                  : product.title}</span>
+                <span>{[product.category, fabricante ?? product.brand].filter(Boolean).join(' · ')}{esDistribuidor && ' · Distribuidor autorizado México'}</span>
+              </figcaption>
+            </figure>
           )}
 
           {/* Descripción + specs */}

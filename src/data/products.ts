@@ -11,6 +11,8 @@ export interface Product {
   norm?: string;
   badge?: string;
   image?: string;
+  /** Fotografías adicionales DEL MISMO MODELO (nunca de otros modelos). */
+  galeria?: string[];
   href: string;
   /** Tier de mercado, e.g. "Internacional" */
   tier?: string;
