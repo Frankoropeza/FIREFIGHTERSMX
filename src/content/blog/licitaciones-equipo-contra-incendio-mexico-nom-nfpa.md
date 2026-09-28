@@ -1,20 +1,20 @@
 ---
 title: "Licitaciones de equipo contra incendio en México: cómo cumplir NOM y NFPA"
 seoTitle: "Licitaciones de equipo contra incendio: NOM y NFPA"
-description: "Qué exige una licitación de equipo bomberil en México, cómo redactar especificaciones técnicas correctas y evitar descalificaciones por certificación."
+description: "Guía para estructurar partidas de equipo contra incendio en licitaciones públicas, con normas vigentes, evidencia técnica y trazabilidad."
 pubDate: 2026-06-07
-updatedDate: 2026-06-10
+updatedDate: 2026-09-28
 author: "Lic. Ana Ramírez"
 category: "Licitaciones"
 tags: ["licitaciones", "compras públicas", "NOM", "NFPA", "especificaciones técnicas"]
 image:
   url: "/images/blog/blog-licitaciones-equipo.avif"
-  alt: "Equipo contra incendio organizado para licitación pública NOM NFPA México"
+  alt: "Equipo contra incendio y documentos para una licitación pública en México"
 ---
 
-Hay licitaciones que se pierden por una coma. No es exageración: he visto propuestas técnicamente impecables quedar fuera porque la especificación pedía una edición de la norma distinta a la que ofertó el proveedor, o porque faltaba una carta que cualquiera habría podido conseguir a tiempo. Y al revés, he visto convocatorias tan mal redactadas que terminaron comprando equipo que dejaba al cuerpo operativo peor de lo que estaba.
+Una licitación de equipo contra incendio debe permitir comparar ofertas equivalentes sin describir el catálogo de una sola marca. Para lograrlo, el área convocante necesita separar el riesgo, la partida, la norma aplicable, la evidencia solicitada y las condiciones de recepción. El licitante, a su vez, debe demostrar cada requisito con documentos que correspondan al modelo ofrecido. Ese método evita que una declaración comercial sustituya una especificación comprobable.
 
-Las compras de equipo para bomberos en el sector público se mueven por licitación, y en este terreno los detalles deciden. Este artículo es para los dos lados de la mesa: para quien convoca y necesita redactar bien las especificaciones, y para quien participa y quiere cumplirlas sin tropezar.
+Desde 2025, el marco federal es la nueva Ley de Adquisiciones, Arrendamientos y Servicios del Sector Público (LAASSP). La plataforma que el Gobierno Federal identifica como **Compras MX** es la Plataforma Digital de Contrataciones Públicas; por eso una convocatoria vigente puede usar ese nombre aunque documentos o expedientes históricos aún digan CompraNet. Esta guía se concentra en la parte técnica de las partidas de protección contra incendio; revisa siempre las bases y la legislación aplicable a la entidad que convoca.
 
 ## Por qué esta licitación no es como las demás
 
@@ -28,40 +28,78 @@ Una especificación bien hecha ata cada partida a su norma, con todo y edición.
 
 | Partida | Norma a exigir |
 |---|---|
-| Traje estructural | NFPA 1970 (absorbe la 1971) |
-| Cuidado e inspección del traje | NFPA 1850 (absorbe la 1851) |
-| Equipo de respiración autónoma (SCBA) | NFPA 1970 (absorbe la 1981) |
-| Traje forestal | NFPA 1950 |
-| Extintores portátiles | NOM-100 a NOM-103-STPS-1994 / NOM-154-SCFI-2005 |
+| Traje estructural | NFPA 1970 (2025), que consolidó la antigua NFPA 1971 |
+| Cuidado e inspección del traje | NFPA 1850 (2026), antes NFPA 1851 |
+| Equipo de respiración autónoma (SCBA) | NFPA 1970 (2025), que consolidó la antigua NFPA 1981 |
+| Traje forestal | NFPA 1950 (2025), antes NFPA 1977 |
+| Extintores portátiles | NOM-100 a NOM-103-STPS-1994 según el agente |
+| Servicio de mantenimiento y recarga | NOM-154-SCFI-2005 |
 | Prevención en centros de trabajo | NOM-002-STPS-2010 |
 
-Nombrar la norma, y su año, es la forma más simple de cerrarle la puerta a productos "equivalentes" que llegan sin certificación válida. Un detalle de actualidad: desde 2024 el conjunto estructural y el SCBA se certifican bajo NFPA 1970, así que conviene redactar con esa referencia y no con las normas que quedaron absorbidas.
+Nombra la norma y su edición, pero no la uses como una fórmula vacía. NFPA 1970 (2025) consolidó las referencias anteriores; en licitaciones y etiquetas aún puede aparecer NFPA 1971 edición 2018. Las bases deben definir qué evidencia aceptan y cómo se acreditará la correspondencia, sin suponer que una mención genérica de «NFPA» demuestra el cumplimiento.
 
 ## Cómo escribir especificaciones que no se presten a maña
 
-El arte está en ser preciso sin amarrar la compra a una sola marca, porque en el momento en que la especificación describe el número de parte de un único fabricante, la licitación se vuelve impugnable. ¿Cómo se logra ese equilibrio? Describiendo desempeño y norma en lugar de copiar el catálogo de un proveedor. Detallando la construcción real: para un traje, exige tejido exterior certificado, barrera de humedad, forro térmico y capucha con bloqueo de partículas bajo NFPA 1970, no un genérico "traje de bombero" que cualquier cosa cumple. Pidiendo la documentación como requisito de admisión, no como un anexo opcional: certificado de fábrica, ficha técnica y carta de distribuidor autorizado. Y poniendo por escrito los criterios de tallaje, plazos y lugar de entrega, además de exigir servicio posventa con refacciones originales.
+El objetivo es ser preciso sin amarrar la compra a un número de parte. Describe el desempeño, la configuración y la evidencia requerida, en vez de copiar un catálogo. Para un traje, identifica piezas incluidas, tallas, construcción requerida por el riesgo, documentación del conjunto terminado, garantía y condiciones de recepción. Para un SCBA, especifica la configuración completa; para un extintor, el agente, capacidad, clasificación requerida y NOM de producto que corresponda. Pide que la ficha, el certificado y la oferta se refieran al mismo modelo y variante.
 
-## Los tropiezos que descalifican (y se repiten)
+## Errores que deben prevenirse desde las bases
 
-Del lado de quien participa, los errores son sorprendentemente predecibles. Ofertar producto sin certificación vigente o con la documentación incompleta. Presentar equipo "equivalente" sin respaldo de norma, confiando en que nadie va a revisar a fondo. No acreditar el carácter de distribuidor autorizado de la marca. Cotizar sin contemplar las refacciones y el servicio que las bases piden con todas sus letras. O entregar fuera del plazo o con un tallaje distinto al especificado. Cualquiera de estos, por sí solo, basta para quedar fuera.
+Una propuesta no debe afirmar más de lo que acredita. Los problemas habituales son que la documentación corresponda a otra variante, que una norma de servicio se presente como certificado de producto, que las unidades no coincidan con las bases o que el alcance de instalación y mantenimiento quede indeterminado. También es un error pedir una carta de distribuidor sin indicar el contenido, la vigencia o la relación con la marca ofertada. La evaluación debe basarse en lo que la convocatoria solicitó y en la evidencia asociada a cada renglón.
 
-## Ten el expediente listo antes de que abra la convocatoria
+## Integra una matriz de cumplimiento por partida
 
-La diferencia entre responder con holgura y correr a última hora es preparar la documentación de antemano. Conviene tener a la mano:
+Una tabla de cumplimiento permite localizar cada soporte y comparar las propuestas sin interpretaciones. Incluye, como mínimo:
 
-- [ ] Certificados de fábrica por cada modelo ofertado (NFPA / NOM)
-- [ ] Fichas técnicas en español
-- [ ] Carta de distribuidor autorizado
-- [ ] Catálogo y evidencia de trazabilidad (marca, modelo, lote)
-- [ ] Plan de servicio posventa y refacciones
-- [ ] Tiempos de entrega por partida
+- [ ] Partida, unidad de medida, cantidad y lugar de entrega.
+- [ ] Marca, modelo, variante y número de parte cuando exista.
+- [ ] Norma, edición y alcance que pide la convocatoria.
+- [ ] Ficha técnica y certificado o listado aplicable al modelo ofertado.
+- [ ] Tallas, accesorios, número de serie, lote o fecha de fabricación cuando aplique.
+- [ ] Garantía, responsable de servicio y documentos de recepción.
+
+La trazabilidad relaciona lo ofertado, lo certificado y lo recibido. No pidas «certificación NOM-154» para un extintor: la NOM-154-SCFI-2005 regula el servicio de mantenimiento y recarga, no certifica el producto nuevo. Para conocer familias y configuraciones antes de preparar la partida, consulta [equipo contra incendio por categoría](/productos/) y los [trajes para bombero](/productos/trajes-bombero/).
+
+## Usa la junta de aclaraciones para resolver contradicciones
+
+Si las bases mezclan ediciones de normas, solicitan una propiedad que no corresponde al producto o no definen qué documento prueba un requisito, no adivines. Formula una pregunta con el apartado exacto, la contradicción identificada y la aclaración que permitiría ofertar. Las respuestas y modificaciones que emita la convocante se integran al expediente del procedimiento. Esta preparación se explica paso a paso en [cómo preparar una junta de aclaraciones](/blog/junta-aclaraciones-licitacion-equipo-ci/).
+
+En procedimientos nacionales pueden existir requisitos de nacionalidad y contenido nacional. Revisa el carácter y los formatos de la convocatoria, así como las disposiciones vigentes que correspondan al bien. No declares un porcentaje de contenido nacional sin el sustento documental del fabricante o proveedor. El Reglamento de la LAASSP y las reglas aplicables prevén controles sobre esa información.
 
 ## En qué te entra FIREFIGHTERS MX
 
-Trabajamos de forma habitual con cuerpos municipales, estatales e instituciones que compran por licitación, y conocemos el terreno desde los dos lados. Cuando alguien convoca, lo apoyamos a redactar especificaciones técnicas ancladas a norma, que protejan el presupuesto sin volverse impugnables. Cuando alguien participa, entregamos la documentación de certificación completa y lista para expediente, con producto original de marcas líderes y carta de distribuidor, respaldado por cobertura en los 32 estados y servicio posventa. El detalle está en nuestras páginas de [licitaciones](/licitaciones) y de [certificaciones](/certificaciones).
+FIREFIGHTERS MX tiene más de 15 años de trabajo con dependencias federales, estatales y municipales. Para una solicitud de cotización podemos identificar modelos del catálogo, documentación disponible y alcance de servicio sin sustituir las decisiones de la convocante. Consulta [licitaciones](/licitaciones/) y solicita una [cotización técnica](/cotizacion/) con las bases o requisición.
 
-## En resumen
+## De la especificación a la recepción
 
-Una licitación de equipo contra incendio bien hecha cuida dos cosas al mismo tiempo: el dinero público y la vida de quien va a usar ese equipo. La fórmula no es complicada, solo exige disciplina: ata cada partida a su norma, exige certificación documentada y elige un proveedor que vaya a seguir ahí cuando toque la primera refacción.
+La revisión no termina con el fallo. Al recibir, compara modelo, tallas, accesorios, documentos y datos de identificación contra la oferta adjudicada. Registra cualquier diferencia antes de aceptar la entrega y conserva la evidencia junto con la garantía y el programa de servicio. Ese expediente será útil para auditoría, mantenimiento y reposición.
 
-¿Estás armando una convocatoria o preparando una propuesta? [Pide asesoría sin costo](/cotizacion) y te ayudamos a alinear especificaciones, normas y documentación, o [escríbenos](/contacto) directamente.
+## Conserva evidencia durante toda la vigencia del contrato
+
+El expediente técnico no debe terminar en el momento de la entrega. Conserva la oferta adjudicada, los anexos que acreditaron cada partida, las actas de recepción, los datos de identificación y las comunicaciones que modifiquen el alcance. Si el contrato incluye mantenimiento o sustitución de componentes, agrega los registros de cada servicio. Así se puede comprobar qué se compró, qué se recibió y bajo qué condiciones se atendió posteriormente.
+
+Esta práctica también facilita una reposición futura: la entidad puede comparar la configuración anterior con una nueva necesidad sin confundir el modelo, la variante o la edición normativa. En equipos que se integran a un sistema existente, documentar compatibilidades desde la primera compra evita pedir una pieza que no pueda conectarse, instalarse o mantenerse conforme al proyecto.
+
+## Preguntas frecuentes
+
+### ¿Compras MX sustituyó a CompraNet?
+
+El portal oficial identifica a Compras MX como la Plataforma Digital de Contrataciones Públicas de la Administración Pública Federal y señala que CompraNet se transformó. Sigue siempre el medio y los plazos indicados en la convocatoria vigente.
+
+### ¿Puedo pedir NFPA 1971 en una licitación nueva?
+
+NFPA 1970 (2025) consolidó a NFPA 1971. Si las bases conservan la referencia anterior, deben indicar la edición aceptada y la evidencia requerida; cualquier ajuste debe hacerse mediante la aclaración formal de la convocante.
+
+### ¿Qué debe demostrar una ficha técnica?
+
+Debe relacionar el modelo y la configuración ofertados con cada requisito de la convocatoria. No sustituye un certificado cuando las bases lo piden como documento distinto.
+
+### ¿Qué confirma la NOM-154-SCFI-2005?
+
+Su alcance es el servicio de mantenimiento y recarga de extintores. Para un extintor nuevo, revisa la NOM aplicable al agente y los requisitos de la convocatoria.
+
+## Fuentes
+
+- [Ley de Adquisiciones, Arrendamientos y Servicios del Sector Público, 2025](https://dgesui.ses.sep.gob.mx/sites/default/files/2025-05/LAASSP.pdf)
+- [Compras MX — Plataforma Digital de Contrataciones Públicas](https://compranet.buengobierno.gob.mx/compras-mx)
+- [NFPA 1970](https://www.nfpa.org/codes-and-standards/nfpa-1970-standard-development/1970)
+- [STPS — NOM-002-STPS-2010](https://www.stps.gob.mx/bp/secciones/dgsst/normatividad/normas/Nom-002.pdf)

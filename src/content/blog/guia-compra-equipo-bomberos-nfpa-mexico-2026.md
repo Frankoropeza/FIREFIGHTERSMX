@@ -1,19 +1,20 @@
 ---
-title: "Guía de compra de equipo para bomberos certificado NFPA en México 2026"
-description: "Cómo comprar equipo bomberil sin errores: qué norma exigir, cómo comparar SCBA, trajes y cascos, y los puntos que debes verificar antes de pagar."
+title: "Guía de compra de equipo para bomberos con referencia NFPA en México"
+seoTitle: "Guía de compra de equipo para bomberos en México"
+description: "Cómo comparar equipo para bomberos: riesgo, documentación, configuración, servicio y referencias NFPA antes de comprar en México."
 pubDate: 2026-06-09
-updatedDate: 2026-06-10
+updatedDate: 2026-09-28
 author: "Ing. Carlos Mendoza"
 category: "Guías de compra"
 tags: ["guía de compra", "NFPA", "EPP bomberos", "SCBA", "trajes estructurales"]
 image:
   url: "/images/blog/blog-guia-compra-equipo-2026.avif"
-  alt: "Tienda de equipo para bomberos con productos certificados NFPA 2026 México"
+  alt: "Equipo para bomberos y documentos técnicos para una compra en México"
 ---
 
-He visto comprar trajes de bombero como quien compra refrigeradores: pidiendo descuento por volumen y eligiendo el de la foto más bonita. Y he visto el resultado meses después, cuando ese mismo equipo no pasa una revisión, o cuando un comandante descubre que las tallas que llegaron no le quedan a la mitad de su gente. Comprar equipo bomberil se parece poco a cualquier otra compra: aquí lo barato puede salir carísimo, y no me refiero solo al dinero.
+La compra de equipo para bomberos comienza por el riesgo y termina con un expediente de recepción y servicio. Antes de comparar precio, identifica la operación que se cubrirá, la configuración requerida, los documentos que debe entregar el proveedor y quién atenderá el equipo después. Una fotografía o una descripción general no permiten comprobar esas condiciones.
 
-Esta guía es, básicamente, la conversación que tengo con quien me llama antes de gastar su presupuesto. La ordené en cinco pasos para que la puedas seguir incluso si no eres técnico.
+Esta guía ordena la revisión para EPP, SCBA, cascos y otros equipos. La referencia normativa es un criterio técnico importante, pero debe corresponder al producto y a la configuración ofrecida.
 
 ## Primero la norma. Siempre.
 
@@ -40,7 +41,7 @@ En una [licitación](/licitaciones) este punto es directamente eliminatorio. Sin
 
 Aquí es donde conviene afinar el ojo, porque dos equipos que se ven idénticos pueden ser muy distintos por dentro.
 
-En **trajes estructurales**, no todos nacen iguales. Lo que cambia el desempeño (y el precio) es el tejido exterior (PBI, Nomex NXT o mezclas, que marcan la resistencia térmica y la durabilidad), la barrera de humedad como Crosstech, que equilibra la protección contra agua y químicos con la transpirabilidad, el forro térmico que define cuánto calor le entra al cuerpo, y detalles que parecen menores hasta que fallan: costuras de doble aguja reforzadas y cinta reflejante 3M Scotchlite. Desde la edición 2024, la norma además exige capucha con bloqueo de partículas: asegúrate de que venga incluida. El detalle de cada construcción está en [trajes para bomberos](/productos/trajes-bombero).
+En **trajes estructurales**, compara el conjunto terminado: capa exterior, barrera de humedad, barrera térmica, accesorios y tallas. Nomex (Arclin, antes DuPont), PBI y otros materiales no sustituyen por sí solos la certificación del conjunto. Pide que la ficha y la documentación identifiquen la configuración realmente ofertada. El detalle de las familias está en [trajes para bomberos](/productos/trajes-bombero).
 
 En **equipos SCBA** se concentra la mayor inversión y, francamente, el mayor riesgo. Compara la autonomía real según tu operación (30, 45 o 60 minutos no es un capricho), la presión del cilindro (fibra de carbono a 4,500 psi), la electrónica de seguridad como la alarma PASS, el EOSTI y la telemetría para el puesto de mando, y algo que muchos olvidan hasta que es tarde: el servicio. Prueba hidrostática, prueba de flujo anual y refacciones originales. Las plataformas disponibles están en [equipos SCBA](/productos/equipos-scba).
 
@@ -55,9 +56,9 @@ Una pregunta que casi nadie hace al inicio y todos terminan haciéndose: ¿cuán
 | Inspección y lavado técnico | Anual o por uso (NFPA 1850) |
 | Pruebas de SCBA | Hidrostática y flujo anual |
 | Refacciones originales | Su disponibilidad mantiene viva la certificación |
-| Vida útil del traje | Normalmente 10 años desde fabricación |
+| Vida útil del traje | Revisa la fecha de fabricación y el programa de retiro aplicable; NFPA 1850 fija un máximo de diez años desde fabricación para EPP estructural |
 
-El traje barato de un proveedor que mañana no tiene refacciones suele terminar costando más que el "caro" con respaldo. Lo he visto demasiadas veces.
+El precio de compra no muestra por sí solo los costos de inspección, limpieza, reparación, refacciones y retiro. Pide ese alcance por escrito antes de comparar cotizaciones.
 
 ## Y por último: ¿quién contesta el teléfono después de la venta?
 
@@ -72,4 +73,33 @@ El proveedor correcto no desaparece cuando le firmas la factura. Busca uno que o
 - [ ] Plan de mantenimiento y refacciones garantizado
 - [ ] Proveedor con servicio posventa que se pueda comprobar
 
-Si quieres, revisamos tu requerimiento equipo por equipo y te decimos con franqueza qué conviene y qué no. [Pide una cotización sin costo](/cotizacion) y un asesor técnico se sienta contigo a comparar opciones certificadas.
+Para revisar una requisición, FIREFIGHTERS MX puede preparar una [cotización](/cotizacion/) que identifique el modelo, la documentación disponible y las condiciones de servicio. Revisa también [cómo equipar una estación desde cero](/blog/como-equipar-estacion-bomberos-desde-cero/) y el [catálogo de productos](/productos/).
+
+## Documenta la recepción, no sólo la selección
+
+Al recibir, abre el expediente de cada partida con la cotización aceptada, la ficha que sustentó la compra, los certificados o listados que correspondan, la factura y el registro de identificación disponible. Comprueba que la marca, modelo, configuración, talla y accesorios sean los mismos que se compararon. Si una pieza cambia, pide al proveedor que explique la modificación y entrega de nuevo la evidencia aplicable antes de darla por aceptada.
+
+Para un conjunto de protección, anota a quién se asigna, qué talla se entregó y la fecha de fabricación que aparece en su etiqueta. Para equipo con número de serie, registra el número y vincúlalo con la garantía y el plan de mantenimiento. Para sistemas, conserva además los documentos de instalación, pruebas y puesta en marcha. Un archivo ordenado evita que, más adelante, el mantenimiento se decida sólo por memoria o por fotografías incompletas.
+
+La compra también debe incluir una conversación sobre capacitación. Entregar una herramienta, un SCBA o una prenda no demuestra por sí mismo que el personal conoce sus límites, su inspección previa o su retiro de servicio. Define quién impartirá la capacitación, qué registros se conservarán y en qué condiciones debe dejar de usarse el equipo. Esos puntos son parte de la capacidad operativa, no extras negociables al final de la orden.
+
+## Preguntas frecuentes
+
+### ¿Qué reviso antes de comparar precios?
+
+El uso previsto, la configuración completa, la norma o referencia que aplique, la evidencia documental, el tallaje y el responsable de garantía y servicio. Sólo después conviene comparar ofertas equivalentes.
+
+### ¿NFPA 1970 reemplazó a NFPA 1971 y NFPA 1981?
+
+NFPA 1970 (2025) consolidó esas normas. Si una ficha o una convocatoria cita una edición anterior, verifica el alcance y la evidencia que se pide para el modelo ofertado.
+
+### ¿La fecha de fabricación importa al comprar un traje?
+
+Sí. Forma parte de la trazabilidad y del programa de cuidado y retiro. NFPA 1850 (2026) establece un máximo de diez años desde la fabricación para el EPP estructural.
+
+## Fuentes
+
+- [NFPA 1970](https://www.nfpa.org/codes-and-standards/nfpa-1970-standard-development/1970)
+- [NFPA 1850](https://www.nfpa.org/codes-and-standards/nfpa-1850-standard-development/1850)
+- [Arclin — Nomex](https://arclin.com/nomex/)
+- [STPS — NOM-002-STPS-2010](https://www.stps.gob.mx/bp/secciones/dgsst/normatividad/normas/Nom-002.pdf)

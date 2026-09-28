@@ -3,6 +3,7 @@ title: "Comprar equipo contra incendio en línea o con distribuidor: qué revisa
 seoTitle: "Equipo contra incendio: compra en línea o distribuidor"
 description: "Guía para comparar la compra de equipo contra incendio en línea o con distribuidor, con foco en documentos, trazabilidad y soporte."
 pubDate: "2026-09-27"
+updatedDate: 2026-09-28
 category: "Guías de compra"
 tags: ["equipo contra incendio", "guía de compra", "trazabilidad", "mantenimiento"]
 image:
@@ -83,3 +84,8 @@ Pide evidencia que corresponda al modelo exacto ofrecido y revisa etiquetas, fic
 ### ¿Qué reviso al recibir el equipo?
 
 Compara producto, cantidad, accesorios y documentación contra la cotización y la factura. Registra los datos de identificación disponibles y reporta diferencias antes de cerrar la recepción.
+
+## Fuentes
+
+- [STPS — NOM-002-STPS-2010](https://www.stps.gob.mx/bp/secciones/dgsst/normatividad/normas/Nom-002.pdf)
+- [NFPA 1850](https://www.nfpa.org/codes-and-standards/nfpa-1850-standard-development/1850)

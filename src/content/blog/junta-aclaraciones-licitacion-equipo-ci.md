@@ -1,9 +1,9 @@
 ---
 title: "Junta de aclaraciones en licitaciones de equipo CI: cómo preparar las preguntas que realmente importan"
 seoTitle: "Junta de aclaraciones en licitaciones de equipo contra incendio"
-description: "Cómo usar la junta de aclaraciones en CompraNet, PEMEX y CFE para corregir especificaciones técnicas de equipo CI antes de presentar propuesta."
+description: "Cómo preparar preguntas técnicas para una junta de aclaraciones de equipo contra incendio y documentar respuestas antes de presentar propuesta."
 pubDate: 2026-03-21
-updatedDate: 2026-06-25
+updatedDate: 2026-09-28
 author: "Ing. Marco García"
 category: "Soporte para Licitaciones"
 tags: ["licitaciones", "junta de aclaraciones", "CompraNet", "PEMEX", "CFE equipo CI"]
@@ -12,11 +12,9 @@ image:
   alt: "Mesa de trabajo con bases de licitación y equipos contra incendio para junta de aclaraciones"
 ---
 
-Las bases de una licitación CFE para equipo de extinción salieron con un error en la especificación del agente extintor: pedían PQS multiusos con 90% de eficiencia mínima en prueba UL, pero citaron NOM-154-SCFI-2005, que aplica al servicio de mantenimiento y recarga, en lugar de la norma de producto correspondiente. Los licitantes que no lo detectaron presentaron equipo que cumplía uno pero no el otro.
+La junta de aclaraciones permite formular preguntas sobre las bases dentro del medio y plazo que establezca la convocatoria. En una compra de equipo contra incendio es útil para resolver una partida ambigua, una referencia normativa incompatible o un documento de evidencia mal definido antes de presentar una propuesta. No sustituye el análisis de las bases ni autoriza a modificar por cuenta propia la oferta.
 
-Dos empresas levantaron la pregunta en la junta de aclaraciones. El convocante emitió una adenda que corrigió la especificación. Esas dos empresas pudieron ofertar con claridad. Las otras nueve no.
-
-La junta de aclaraciones es la única instancia formal donde el licitante puede modificar las bases de la convocatoria antes de presentar su propuesta. Muy pocos distribuidores de equipo CI la usan de forma estratégica.
+La plataforma federal vigente se identifica como Compras MX, aunque algunas convocatorias, expedientes históricos y este slug aún nombren CompraNet. Consulta siempre las bases para conocer la fecha límite, el formato de preguntas y la forma en que se publica el acta.
 
 ## Qué es y qué no es la junta de aclaraciones
 
@@ -57,17 +55,11 @@ El proceso que funciona:
 - Cita la norma o referencia técnica que genera la contradicción
 - Termina con una pregunta específica o una propuesta de corrección
 
-## Ejemplos de preguntas que cambian el resultado
+## Ejemplos de preguntas técnicamente útiles
 
-Para una licitación de extintores en una dependencia federal en CDMX, encontré estas situaciones que merecieron pregunta formal:
+Una pregunta debe identificar el apartado y pedir una precisión que permita a todas las personas participantes preparar la misma evidencia. Por ejemplo: «En la partida __, ¿la presión indicada corresponde a presión de carga o a presión de prueba? Favor de precisar la unidad y el documento con el que deberá acreditarse». Si las bases citan NOM-154-SCFI-2005 para un extintor nuevo, puede solicitarse que la convocante confirme la NOM de producto que corresponde al agente y que distinga el servicio de mantenimiento.
 
-**Caso 1:** Las bases pedían extintor PQS de 6 kg con presión de trabajo de 15 bar. La pregunta fue: "En el apartado 3.2, la especificación señala presión de trabajo de 15 bar. ¿Esto se refiere a la presión de carga o a la presión de prueba hidrostática? Si es presión de prueba, solicitamos se aclare la norma de producto aplicable, ya que NOM-154-SCFI corresponde al servicio de mantenimiento y recarga."
-
-El convocante emitió adenda aclarando que se refería a presión de carga. Eso cambió qué equipos podían ofertarse.
-
-**Caso 2:** Una licitación PEMEX para SCBA pedía "certificación NFPA 1981 edición 2019" pero en el mismo párrafo decía "o equivalente aprobado por la autoridad". ¿Qué significa "equivalente"? Esa ambigüedad deja al evaluador con discrecionalidad total. La pregunta fue: "¿Cuáles son los criterios que PEMEX considera para determinar que una certificación es equivalente a NFPA 1981 edición 2019? ¿Se aceptan certificaciones EN 137 u otras normas internacionales bajo esa definición?"
-
-Esa pregunta forzó al convocante a definir exactamente qué aceptarían, eliminando la discrecionalidad.
+Otro ejemplo: «La partida __ cita una referencia histórica de protección respiratoria. Considerando que NFPA 1970 (2025) consolidó a la antigua NFPA 1981, favor de indicar la edición y el certificado que serán aceptados para la configuración ofertada». La pregunta no supone una respuesta ni propone una marca; permite que la convocante defina su criterio documental.
 
 Para entender mejor las especificaciones técnicas de SCBA que aparecen en licitaciones, revisa [MSA G1 vs Dräger PSS7000](/blog/msa-g1-vs-drager-pss7000-scba).
 
@@ -93,16 +85,30 @@ Participar en una licitación mal redactada sin hacer preguntas en la junta es e
 
 ---
 
-## Artículos relacionados
+## Cierre de la revisión
 
-- [Fichas técnicas para CompraNet: los errores que descalifican](/blog/fichas-tecnicas-compranet-equipo-contra-incendio)
-- [Licitaciones de equipo contra incendio en México](/blog/licitaciones-equipo-contra-incendio-mexico-nom-nfpa)
-- [MSA G1 vs Dräger PSS7000: comparativa SCBA](/blog/msa-g1-vs-drager-pss7000-scba)
+Después de la junta, descarga el acta completa, incorpora cada aclaración a la matriz de cumplimiento y revisa de nuevo marca, modelo, configuración y anexos. La siguiente etapa es preparar [fichas técnicas comparables](/blog/fichas-tecnicas-compranet-equipo-contra-incendio/); para el marco general consulta [licitaciones de equipo contra incendio](/blog/licitaciones-equipo-contra-incendio-mexico-nom-nfpa/). El [catálogo de productos](/productos/) ayuda a identificar categorías, pero la convocatoria define la evidencia exigible.
 
----
+Conserva las preguntas enviadas, el acuse disponible y el acta publicada en el mismo expediente de la propuesta. Al cerrar la oferta, verifica que no quede una respuesta pendiente de incorporar en la ficha o en los anexos.
 
-## Soporte para Licitaciones en FIREFIGHTERS MX
+FIREFIGHTERS MX puede revisar una requisición o preparar una [cotización](/cotizacion/) con la documentación disponible del modelo solicitado.
 
-Acompañamos a empresas distribuidoras y fabricantes en todo el proceso de licitación: análisis de bases, preparación de preguntas para junta de aclaraciones, construcción de propuesta técnica y revisión de fichas antes del cierre. Operamos en CompraNet, PEMEX, CFE y licitaciones de protección civil estatal.
+## Preguntas frecuentes
 
-[Servicio de Soporte para Licitaciones](/servicios/licitaciones)
+### ¿La junta sirve para cambiar la oferta de un licitante?
+
+No. Sirve para solicitar aclaraciones a la convocante dentro de las reglas del procedimiento. La propuesta debe ajustarse después a las bases y a las aclaraciones formalmente publicadas.
+
+### ¿Qué hago si una respuesta contradice una base?
+
+Conserva el acta, identifica la modificación y actualiza la matriz de cumplimiento. Si persiste una duda relevante, utiliza los medios y plazos que establezca la convocatoria.
+
+### ¿Cómo pregunto por una norma consolidada?
+
+Indica la partida, la referencia citada y solicita que se precise la edición, el alcance y la evidencia aceptable. NFPA 1970 (2025) consolidó, entre otras, la antigua NFPA 1981.
+
+## Fuentes
+
+- [Ley de Adquisiciones, Arrendamientos y Servicios del Sector Público, 2025](https://dgesui.ses.sep.gob.mx/sites/default/files/2025-05/LAASSP.pdf)
+- [Compras MX — Plataforma Digital de Contrataciones Públicas](https://compranet.buengobierno.gob.mx/compras-mx)
+- [NFPA 1970](https://www.nfpa.org/codes-and-standards/nfpa-1970-standard-development/1970)
