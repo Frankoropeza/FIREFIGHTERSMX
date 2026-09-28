@@ -122,6 +122,10 @@ const metaPorCategoria: Record<string, Record<string, Partial<SpecMeta>>> = {
     peso:      { label: 'Peso', explica: 'Peso de la herramienta lista para operar; influye en la fatiga del operador en rescates prolongados.' },
     norma:     { label: 'Norma / clasificación', explica: 'Clasificación de la herramienta según EN 13204 o NFPA, publicada por el fabricante.' },
   },
+  'Trajes Bombero': {
+    norma: { label: 'Norma', explica: 'Norma bajo la que el fabricante certifica o declara el conjunto: NFPA 1970 para estructural y proximidad; NFPA 1950 para forestal y rescate técnico.' },
+    outer: { explica: 'Material de la capa exterior: recibe llama, abrasión y calor de contacto. En conjuntos multicapa se combina con barrera de humedad y forro térmico.' },
+  },
   'Equipos SCBA':   { norma: NORMA_GENERICA },
   'Equipos HAZMAT': { norma: NORMA_GENERICA, ideal: { label: 'Aplicación', explica: 'Escenarios para los que el fabricante orienta el equipo.' } },
   'Sistemas CI':    { norma: NORMA_GENERICA },
