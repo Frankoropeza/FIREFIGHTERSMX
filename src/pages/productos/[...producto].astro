@@ -37,6 +37,8 @@ const brandEntry = product.brand
 const brandPath = brandEntry ? `/productos/${brandEntry.categorySlug}/${brandEntry.slug}` : null;
 
 /* ── H1 split — word 1 white, rest orange ──────────────────────────────── */
+/* Nombre corto del modelo para encabezados: sin el complemento tras « — ». */
+const nombreCorto = product.title.split(' — ')[0].trim();
 const titleWords  = product.title.split(' ');
 const h1line1     = titleWords[0] ?? product.title;
 const h1line2     = titleWords.slice(1).join(' ');
@@ -686,7 +688,7 @@ const seoDesc = metaCerrada(product.description, [
             <div class="p-6 pb-0">
               <span class="section-eyebrow mb-4 inline-flex">{[product.norm ?? product.category, fabricante ?? product.brand].filter(Boolean).join(' · ')}</span>
               <h2 class="font-display font-bold mb-5" style="color:#FFFFFF;font-size:clamp(1.5rem,3vw,2.25rem);line-height:1.1">
-                Descripción técnica <span style="color:#F75000">del equipo.</span>
+                Descripción técnica: <span style="color:#F75000">{nombreCorto}</span>
               </h2>
               <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">{product.description}</p>
               {esDistribuidor && (
@@ -752,7 +754,7 @@ const seoDesc = metaCerrada(product.description, [
               </div>
               <div class="p-6 pb-4">
                 <h2 class="font-display font-bold mb-2" style="color:#FFFFFF;font-size:clamp(1.25rem,2.5vw,1.875rem);line-height:1.1">
-                  Lo que distingue <span style="color:#F75000">a este equipo.</span>
+                  Características <span style="color:#F75000">principales</span>
                 </h2>
                 {!product.suppressDefaultClaims && (
                   <p class="text-sm leading-relaxed mb-6" style="color:#64748B">
@@ -786,7 +788,7 @@ const seoDesc = metaCerrada(product.description, [
             </div>
             <div class="p-6 pb-4">
               <h2 class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.25rem,2.5vw,1.875rem);line-height:1.1">
-                Aplicaciones y <span style="color:#F75000">casos de uso.</span>
+                Cuándo elegir <span style="color:#F75000">{nombreCorto}</span>
               </h2>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-px" style="border-top:1px solid rgba(74,117,153,0.18)">
@@ -835,7 +837,7 @@ const seoDesc = metaCerrada(product.description, [
             </div>
             <div class="p-6">
               <h2 class="font-display font-bold mb-3" style="color:#FFFFFF;font-size:clamp(1.25rem,2.5vw,1.875rem);line-height:1.1">
-                Todo lo que necesitas <span style="color:#F75000">para la licitación.</span>
+                Documentación <span style="color:#F75000">para licitación</span>
               </h2>
               <p class="text-sm leading-relaxed mb-5" style="color:#64748B">
                 Entregamos el dossier completo para CompraNet, IMSS, gobiernos estatales y corporativos. Respuesta en &lt;24 h.
@@ -1135,7 +1137,7 @@ const seoDesc = metaCerrada(product.description, [
             <h2 id="related-title" class="font-display font-bold"
                 style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
               Otros modelos<br/>
-              <span style="color:#F75000">que pueden interesarte.</span>
+              <span style="color:#F75000">{product.brand ? `de ${fabricante ?? product.brand}` : `de ${product.category}`}</span>
             </h2>
           </div>
           {!product.suppressDefaultClaims && (
