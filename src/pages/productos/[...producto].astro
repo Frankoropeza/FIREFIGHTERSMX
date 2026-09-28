@@ -941,6 +941,26 @@ const seoDesc = metaCerrada(product.description, [
           </div>
           )}
 
+          {/* Proveedores del directorio */}
+          {product.proveedores && product.proveedores.length > 0 && (
+          <div style="background:#040A12;border:1px solid rgba(74,117,153,0.18)">
+            <div class="p-6 pb-2">
+              <h2 class="font-display font-bold mb-2" style="color:#FFFFFF;font-size:clamp(1.25rem,2.5vw,1.875rem);line-height:1.1">
+                Proveedores <span style="color:#F75000">en el directorio</span>
+              </h2>
+              <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">Empresas verificadas del directorio FIREFIGHTERS MX que ofrecen este tipo de equipo. Pide a cada una la hoja técnica y el listado UL/FM del modelo que cotice.</p>
+            </div>
+            <ul class="list-none m-0 px-6 pb-6 grid grid-cols-1 sm:grid-cols-2 gap-px">
+              {product.proveedores.map((pv) => (
+                <li class="p-4" style="background:#080F1A;border:1px solid rgba(74,117,153,0.12)">
+                  <a href={pv.href} class="font-display font-semibold text-sm hover:text-[#FF6B26]" style="color:#FFFFFF">{pv.nombre}</a>
+                  <p class="text-xs mt-1 mb-0" style="color:#64748B">{pv.nota}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+          )}
+
           {/* Fuentes del fabricante */}
           {product.fuentes && product.fuentes.length > 0 && (
           <div class="px-1">

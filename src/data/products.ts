@@ -98,6 +98,8 @@ export interface Product {
   incluye?: string[];
   /** Preguntas frecuentes específicas del modelo (FAQPage). */
   faqs?: { q: string; a: string }[];
+  /** Empresas del directorio que ofrecen este tipo de equipo (enlace interno a su ficha). */
+  proveedores?: { nombre: string; href: string; nota: string }[];
   /** Fuentes del fabricante que respaldan la ficha (hoja técnica, página oficial). */
   fuentes?: { titulo: string; url: string }[];
   /** Tres características destacadas */
@@ -5230,4 +5232,31 @@ for (const producto of featuredProducts) {
   if (complementoLote6 && producto.seleccion) producto.seleccion.push(complementoLote6);
   const complementoR11a = complementoSeleccionR11a[producto.slug];
   if (complementoR11a && producto.seleccion) producto.seleccion.push(complementoR11a);
+}
+
+/* Proveedores del directorio para el equipo de red hidráulica (sin fabricante confirmado). */
+const proveedoresRed: Record<string, Product["proveedores"]> = {
+  gabinetes: [
+    { nombre: 'Gama de México · gabinetes e hidrantes', href: '/empresas/equipos-contra-incendio/queretaro/gama-de-mexico/gabinetes-hidrantes-contra-incendio/', nota: 'Línea de gabinetes e hidrantes contra incendio; sedes en Querétaro y CDMX.' },
+    { nombre: 'Gama de México · mangueras', href: '/empresas/equipos-contra-incendio/queretaro/gama-de-mexico/mangueras-contra-incendio/', nota: 'Mangueras para gabinete y red de hidrantes.' },
+    { nombre: 'LGA Contra Incendios', href: '/empresas/equipos-contra-incendio/queretaro/lga-contra-incendios/', nota: 'Mangueras por construcción técnica y equipo contra incendio en el Bajío.' },
+    { nombre: 'MESECI', href: '/empresas/equipos-contra-incendio/ciudad-de-mexico/meseci/', nota: 'Equipo contra incendio y sistemas en CDMX y Estado de México.' },
+  ],
+  bombas: [
+    { nombre: 'MESECI', href: '/empresas/equipos-contra-incendio/ciudad-de-mexico/meseci/', nota: 'Sistemas contra incendio y equipo en CDMX y Estado de México.' },
+    { nombre: 'Equipos Contra Incendio', href: '/empresas/equipos-contra-incendio/ciudad-de-mexico/equipos-contra-incendio/', nota: 'Equipo, sistemas contra incendio y capacitación en CDMX.' },
+    { nombre: 'Proyecto Red', href: '/empresas/extintores/estado-de-mexico/proyecto-red/', nota: 'Sistemas contra incendio, extintores y capacitación en Tlalnepantla.' },
+    { nombre: 'AQUEON México', href: '/empresas/equipos-contra-incendio/ciudad-de-mexico/aqueon-mexico/', nota: 'Monitores de alto caudal y sistemas para industria pesada.' },
+  ],
+  valvulas: [
+    { nombre: 'Gama de México · válvulas', href: '/empresas/equipos-contra-incendio/queretaro/gama-de-mexico/valvulas-contra-incendio/', nota: 'Línea de válvulas contra incendio.' },
+    { nombre: 'Gama de México · conexiones y herrajes', href: '/empresas/equipos-contra-incendio/queretaro/gama-de-mexico/conexiones-herrajes-contra-incendio/', nota: 'Conexiones y herrajes para red contra incendio.' },
+    { nombre: 'MESECI', href: '/empresas/equipos-contra-incendio/ciudad-de-mexico/meseci/', nota: 'Sistemas contra incendio y equipo en CDMX y Estado de México.' },
+    { nombre: 'Equipos Contra Incendio', href: '/empresas/equipos-contra-incendio/ciudad-de-mexico/equipos-contra-incendio/', nota: 'Equipo, sistemas contra incendio y capacitación en CDMX.' },
+  ],
+};
+const asignacionProveedores: Record<string, keyof typeof proveedoresRed> = {"gabinete-ci-tipo-i-30m": "gabinetes", "gabinete-ci-tipo-ii-20m": "gabinetes", "bomba-jockey-ci-5hp": "bombas", "bomba-principal-electrica-20hp": "bombas", "bomba-diesel-emergencia-ci": "bombas", "valvula-osy-nfpa-20": "valvulas"};
+for (const producto of featuredProducts) {
+  const grupo = asignacionProveedores[producto.slug];
+  if (grupo) producto.proveedores = proveedoresRed[grupo];
 }
