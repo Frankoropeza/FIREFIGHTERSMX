@@ -96,10 +96,7 @@ export const featuredProducts: Product[] = [
     tier: "Internacional",
     highlight: true,
     specs: {
-      tpp: "—",
-      thl: "—",
       outer: "PBI MAX o PBI MAX LP, según configuración",
-      weight: "—",
     },
     features: [
       "Shell PBI MAX disponible en configuraciones de 7.0 o 6.0 oz",
@@ -119,10 +116,6 @@ export const featuredProducts: Product[] = [
     href: "/productos/trajes-bombero/globe-athletix",
     tier: "Internacional",
     specs: {
-      tpp: "—",
-      thl: "—",
-      outer: "—",
-      weight: "—",
     },
     features: [
       "Barrera GORE-TEX CROSSTECH Innovate",
@@ -142,10 +135,6 @@ export const featuredProducts: Product[] = [
     href: "/productos/trajes-bombero/globe-classix",
     tier: "Internacional",
     specs: {
-      tpp: "—",
-      thl: "—",
-      outer: "—",
-      weight: "—",
     },
     features: [
       "Certificación NFPA 1970 indicada por MSA",
@@ -165,10 +154,6 @@ export const featuredProducts: Product[] = [
     href: "/productos/trajes-bombero/globe-gxcel",
     tier: "Internacional",
     specs: {
-      tpp: "—",
-      thl: "—",
-      outer: "—",
-      weight: "—",
     },
     features: [
       "Certificación NFPA 1970 indicada por MSA",
@@ -182,16 +167,12 @@ export const featuredProducts: Product[] = [
     description: "Traje de proximidad Globe con shell de tejido de punto en mezcla PBI y película aluminizada laminada.",
     category: "Trajes Bombero",
     brand: "Globe Manufacturing",
-    norm: "—",
     badge: "Proximidad",
     image: "/images/productos/traje-jacket-detalle-nfpa.avif",
     href: "/productos/trajes-bombero/globe-proximity-arff",
     tier: "Internacional",
     specs: {
-      tpp: "—",
-      thl: "—",
       outer: "Tejido de punto PBI con película aluminizada laminada",
-      extra: "—",
     },
     features: [
       "Shell con mezcla PBI y película aluminizada laminada",
@@ -215,10 +196,7 @@ export const featuredProducts: Product[] = [
     tier: "Internacional",
     highlight: true,
     specs: {
-      tpp: "—",
-      thl: "—",
       outer: "PBI Max, según configuración",
-      weight: "—",
     },
     features: [
       "Sistema de humedad IsoDri",
@@ -232,16 +210,11 @@ export const featuredProducts: Product[] = [
     description: "Traje estructural Lion RedZone vigente.",
     category: "Trajes Bombero",
     brand: "Lion Apparel",
-    norm: "—",
     badge: "Traje estructural",
     image: "/images/productos/traje-bombero-reflectivo-3m.avif",
     href: "/productos/trajes-bombero/lion-redzone",
     tier: "Internacional",
     specs: {
-      tpp: "—",
-      thl: "—",
-      outer: "—",
-      weight: "—",
     },
     features: [
       "Traje estructural Lion vigente",
@@ -255,16 +228,11 @@ export const featuredProducts: Product[] = [
     description: "Evolución del traje estructural Lion V-Force.",
     category: "Trajes Bombero",
     brand: "Lion Apparel",
-    norm: "—",
     badge: "Traje estructural",
     image: "/images/productos/bombero-ajustando-goggles-premium.avif",
     href: "/productos/trajes-bombero/lion-v-force-evo",
     tier: "Internacional",
     specs: {
-      tpp: "—",
-      thl: "—",
-      outer: "—",
-      weight: "—",
     },
     features: [
       "Evolución de Lion V-Force",
@@ -278,16 +246,11 @@ export const featuredProducts: Product[] = [
     description: "Traje estructural Lion Super-Deluxe vigente.",
     category: "Trajes Bombero",
     brand: "Lion Apparel",
-    norm: "—",
     badge: "Traje estructural",
     image: "/images/productos/bombero-casco-visor-equipo-completo.avif",
     href: "/productos/trajes-bombero/lion-super-deluxe",
     tier: "Internacional",
     specs: {
-      tpp: "—",
-      thl: "—",
-      outer: "—",
-      weight: "—",
     },
     features: [
       "Traje estructural Lion vigente",
@@ -307,10 +270,7 @@ export const featuredProducts: Product[] = [
     href: "/productos/trajes-bombero/lion-engage-wildland",
     tier: "Internacional",
     specs: {
-      tpp: "—",
-      thl: "—",
       outer: "Sarga de aramida FR",
-      weight: "—",
     },
     features: [
       "Shell de sarga de aramida FR",
@@ -333,10 +293,6 @@ export const featuredProducts: Product[] = [
     tier: "Internacional",
     highlight: true,
     specs: {
-      tpp: "—",
-      thl: "—",
-      outer: "—",
-      weight: "—",
     },
     features: [
       "Traje estructural Morning Pride",
@@ -356,10 +312,6 @@ export const featuredProducts: Product[] = [
     href: "/productos/trajes-bombero/morning-pride-viper",
     tier: "Internacional",
     specs: {
-      tpp: "—",
-      thl: "—",
-      outer: "—",
-      weight: "—",
     },
     features: [
       "Traje estructural Morning Pride",
@@ -379,9 +331,6 @@ export const featuredProducts: Product[] = [
     href: "/productos/trajes-bombero/morning-pride-tails-proximity",
     tier: "Internacional",
     specs: {
-      tpp: "—",
-      thl: "—",
-      outer: "—",
       extra: "Zonas de entrepierna y asiento reemplazables",
     },
     features: [
@@ -402,9 +351,6 @@ export const featuredProducts: Product[] = [
     href: "/productos/trajes-bombero/morning-pride-viper-proximity",
     tier: "Internacional",
     specs: {
-      tpp: "—",
-      thl: "—",
-      outer: "—",
       extra: "Malla TES Nomex",
     },
     features: [
@@ -428,10 +374,7 @@ export const featuredProducts: Product[] = [
     tier: "Internacional",
     highlight: true,
     specs: {
-      tpp: "—",
-      thl: "—",
       outer: "TECGEN71: Nomex/Kevlar y fibra TECGEN, sarga ripstop",
-      weight: "—",
     },
     features: [
       "Shell TECGEN71 exclusivo de Fire-Dex, desarrollado con Milliken",
@@ -451,10 +394,7 @@ export const featuredProducts: Product[] = [
     href: "/productos/trajes-bombero/firedex-tecgen51",
     tier: "Internacional",
     specs: {
-      tpp: "—",
-      thl: "—",
       outer: "TECGEN51 de una capa",
-      weight: "—",
     },
     features: [
       "Disponible como chamarra, pantalón y overol",
@@ -474,10 +414,6 @@ export const featuredProducts: Product[] = [
     href: "/productos/trajes-bombero/firedex-aeroflex",
     tier: "Internacional",
     specs: {
-      tpp: "—",
-      thl: "—",
-      outer: "—",
-      weight: "—",
     },
     features: [
       "Traje estructural Fire-Dex vigente",
@@ -497,8 +433,6 @@ export const featuredProducts: Product[] = [
     href: "/productos/trajes-bombero/firedex-proximity",
     tier: "Internacional",
     specs: {
-      tpp: "—",
-      thl: "—",
       outer: "Newtex Z-Flex II P-202 o Norfab Choice Aluminized AL8",
       extra: "Basado en diseño FXR",
     },
@@ -520,10 +454,7 @@ export const featuredProducts: Product[] = [
     href: "/productos/trajes-bombero/firedex-wildland",
     tier: "Internacional",
     specs: {
-      tpp: "—",
-      thl: "—",
       outer: "Algodón Ultrasoft o Nomex Essential",
-      weight: "—",
     },
     features: [
       "Disponible como chamarra, pantalón y overol",
@@ -553,10 +484,7 @@ export const featuredProducts: Product[] = [
     dossierClaim: "Sköld Safety fabrica en Monterrey, Nuevo León. Para procesos de adquisición entregamos la ficha técnica del fabricante en español, el número de certificación UL del modelo y el registro SKÖLDTracker para el expediente de vida útil NFPA 1850. Al ser fabricación nacional, acredita contenido nacional y reduce los tiempos de refacción y reparación frente a una marca de importación.",
     specs: {
       outer: "PBI MAX 7.0 — 70% PBI / 30% Kevlar",
-      tpp: "—",
-      thl: "—",
       cert_lab: "UL — NFPA 1971 (2018)",
-      colores: "—",
       extra: "Stedair 3000 + Defender M · DRD",
     },
     features: [
@@ -580,9 +508,6 @@ export const featuredProducts: Product[] = [
     dossierClaim: "Sköld Safety fabrica en Monterrey, Nuevo León. Para este modelo entregamos la ficha técnica del fabricante con la composición exacta por capa, los datos mecánicos de laboratorio (desgarre, tensión, contracción térmica y flamabilidad vertical) y la declaración de equivalencia por escrito. Las piezas se venden por separado —chaquetón FPJ01, pantalón FP001 y tirantes FPT01—, de modo que una prenda dañada no obliga a reponer el conjunto.",
     specs: {
       outer: "Nomex IIIA",
-      tpp: "—",
-      thl: "—",
-      colores: "—",
       extra: "Barrera de neopreno",
     },
     features: [
@@ -606,10 +531,7 @@ export const featuredProducts: Product[] = [
     dossierClaim: "Sköld Safety fabrica en Monterrey, Nuevo León. Entregamos la ficha técnica del fabricante con la composición y el gramaje del tejido, y la declaración de equivalencia por escrito. Al venderse por piezas, una brigada puede reponer solo el pantalón o solo el chaquetón según el desgaste real de la temporada.",
     specs: {
       outer: "Nomex IIIA con repelente al agua",
-      tpp: "—",
-      thl: "—",
       extra: "Chamarra FPFTJ · pantalón FPFTP",
-      ideal: "—",
     },
     features: [
       "Conjunto de chamarra FPFTJ y pantalón FPFTP",
@@ -623,7 +545,6 @@ export const featuredProducts: Product[] = [
     description: "Traje de aproximación Sköld FPAPROX91 para brigadista y FPAPROX13 profesional con DRD, con shell Kevlar aluminizado, liner Nomex/Kevlar y barrera configurable.",
     category: "Trajes Bombero",
     brand: "Sköld",
-    norm: "—",
     badge: "Aproximación",
     image: "/images/productos/traje-bombero-completo-equipo.avif",
     href: "/productos/trajes-bombero/skold-aproximacion",
@@ -632,10 +553,7 @@ export const featuredProducts: Product[] = [
     dossierClaim: "Sköld Safety fabrica en Monterrey, Nuevo León. Entregamos la ficha técnica del fabricante con el detalle de las cinco capas del shell, los materiales de forro desmontable y las dimensiones de confección. El guante aluminizado de aproximación FPGAP se cotiza como parte del mismo conjunto.",
     specs: {
       outer: "Kevlar aluminizado 11 oz",
-      tpp: "—",
-      thl: "—",
       extra: "Liner Nomex/Kevlar 7.5 oz · neopreno (91) o Stedair 3000 (13)",
-      ideal: "—",
     },
     features: [
       "FPAPROX91 para brigadista",
@@ -659,8 +577,6 @@ export const featuredProducts: Product[] = [
     specs: {
       outer: "Tela FR certificada NFPA 2112",
       extra: "Hilo Kevlar",
-      colores: "—",
-      ideal: "—",
     },
     features: [
       "Tela FR con certificación NFPA 2112",
@@ -886,17 +802,14 @@ export const featuredProducts: Product[] = [
     description: "Cámara de imagen térmica para búsqueda y rescate estructural, con FSX y transmisión Wi-Fi a la app Flir Responder.",
     category: "Cámaras Térmicas",
     brand: "FLIR",
-    norm: "—",
     badge: "Búsqueda y rescate",
     image: "/images/categorias/camaras-termicas.avif",
     href: "/productos/camaras-termicas/flir-k75",
     tier: "Internacional",
     specs: {
-      norma: "—",
       resolucion: "320×240 px",
       sensor: "Microbolómetro VOx · -20 a 650 °C",
       autonomia: "~4 h",
-      peso: "—",
     },
     features: [
       "FSX — realce de escena con detalle de bordes en tiempo real",
@@ -921,7 +834,6 @@ export const featuredProducts: Product[] = [
       resolucion: "640×480 px",
       sensor: "Microbolómetro VOx · -20 a 650 °C",
       autonomia: "~4 h",
-      peso: "—",
     },
     features: [
       "Certificada NFPA 1930 (2025)",
@@ -988,17 +900,14 @@ export const featuredProducts: Product[] = [
     description: "Cámara térmica integrada al módulo de control del SCBA MSA G1; utiliza la pantalla a color y la energía del equipo.",
     category: "Cámaras Térmicas",
     brand: "MSA Safety",
-    norm: "—",
     badge: "Integrada en SCBA G1",
     image: "/images/categorias/camaras-termicas.avif",
     href: "/productos/camaras-termicas/msa-g1-tic",
     tier: "Internacional",
     specs: {
-      norma: "—",
       resolucion: "220×176 px",
       sensor: "Microbolómetro · 0 a 500 °C",
       autonomia: "Energía del G1",
-      peso: "—",
     },
     features: [
       "Cámara integrada al módulo de control del SCBA G1",
@@ -1014,14 +923,12 @@ export const featuredProducts: Product[] = [
     description: "Cámara térmica Bullard para búsqueda y rescate, con sensor de 320×240 px.",
     category: "Cámaras Térmicas",
     brand: "Bullard",
-    norm: "—",
     badge: "Búsqueda y Rescate",
     image: "/images/categorias/camaras-termicas.avif",
     href: "/productos/camaras-termicas/bullard-txs-tic",
     tier: "Internacional",
     highlight: true,
     specs: {
-      norma: "—",
       resolucion: "320×240 px",
       sensor: "Microbolómetro · picos de 260 °C",
       autonomia: "Hasta 6 h",
@@ -1040,17 +947,13 @@ export const featuredProducts: Product[] = [
     description: "Cámara térmica Bullard QXT Pro para búsqueda y rescate.",
     category: "Cámaras Térmicas",
     brand: "Bullard",
-    norm: "—",
     badge: "Personal · Compacta",
     image: "/images/categorias/camaras-termicas.avif",
     href: "/productos/camaras-termicas/bullard-qxt-pro",
     tier: "Internacional",
     specs: {
-      norma: "—",
       resolucion: "640×480 px",
-      sensor: "—",
       autonomia: "Hasta 6.5 h",
-      peso: "—",
     },
     features: [
       "Resolución de 640×480 px",
@@ -1073,9 +976,6 @@ export const featuredProducts: Product[] = [
     specs: {
       norma: "NFPA 1930",
       resolucion: "640×480 px",
-      sensor: "—",
-      autonomia: "—",
-      peso: "—",
     },
     features: [
       "Certificada NFPA 1930",
@@ -1090,17 +990,13 @@ export const featuredProducts: Product[] = [
     description: "Cámara térmica Bullard DXT para búsqueda y rescate.",
     category: "Cámaras Térmicas",
     brand: "Bullard",
-    norm: "—",
     badge: "Búsqueda y Rescate",
     image: "/images/categorias/camaras-termicas.avif",
     href: "/productos/camaras-termicas/bullard-dxt",
     tier: "Internacional",
     specs: {
-      norma: "—",
       resolucion: "320×240 px",
-      sensor: "—",
       autonomia: "Hasta 8.5 h",
-      peso: "—",
     },
     features: [
       "Resolución de 320×240 px",
@@ -1716,10 +1612,6 @@ export const featuredProducts: Product[] = [
       norma: "EN 443:2008",
       material: "Termoplásticos de alta temperatura",
       protector: "Visores EN 14458:2018",
-      suspension: "—",
-      peso: "—",
-      colores: "—",
-      cert_lab: "—",
     },
     features: [
       "Certificación EN 443:2008 para casco estructural europeo tipo B",
@@ -1744,10 +1636,6 @@ export const featuredProducts: Product[] = [
       norma: "EN 16471:2014",
       material: "Termoplástico de alta temperatura",
       protector: "Visores EN 14458:2018",
-      suspension: "—",
-      peso: "—",
-      colores: "—",
-      cert_lab: "—",
     },
     features: [
       "Uso multipropósito en incendios forestales, rescate técnico y USAR",
@@ -1772,11 +1660,6 @@ export const featuredProducts: Product[] = [
     specs: {
       norma: "NFPA 1971",
       material: "Fibra de vidrio Thermoglas",
-      protector: "—",
-      suspension: "—",
-      peso: "—",
-      colores: "—",
-      cert_lab: "—",
     },
     features: [
       "Diseño tradicional para operaciones estructurales",
@@ -1800,11 +1683,6 @@ export const featuredProducts: Product[] = [
     specs: {
       norma: "NFPA 1970 (2025)",
       material: "Fibra de vidrio compuesta con resina termofija retardante",
-      protector: "—",
-      suspension: "—",
-      peso: "—",
-      colores: "—",
-      cert_lab: "—",
     },
     features: [
       "Diseño tradicional para combate estructural",
@@ -1829,11 +1707,6 @@ export const featuredProducts: Product[] = [
     specs: {
       norma: "NFPA 1971 (2018)",
       material: "Cuero",
-      protector: "—",
-      suspension: "—",
-      peso: "—",
-      colores: "—",
-      cert_lab: "—",
     },
     features: [
       "Diseño tradicional Cairns N6A Houston",
@@ -1857,11 +1730,6 @@ export const featuredProducts: Product[] = [
     specs: {
       norma: "NFPA 1971 (2018)",
       material: "Fibra de vidrio compuesta",
-      protector: "—",
-      suspension: "—",
-      peso: "—",
-      colores: "—",
-      cert_lab: "—",
     },
     features: [
       "Diseño tradicional Cairns",
@@ -1885,12 +1753,6 @@ export const featuredProducts: Product[] = [
     href: "/productos/cascos-nfpa/msa-gallet-f2-xtrem",
     specs: {
       norma: "EN 16471 y EN 16473",
-      material: "—",
-      protector: "—",
-      suspension: "—",
-      peso: "—",
-      colores: "—",
-      cert_lab: "—",
     },
     features: [
       "Uso en incendios forestales, rescate técnico y USAR",
@@ -1914,12 +1776,6 @@ export const featuredProducts: Product[] = [
     href: "/productos/cascos-nfpa/cairns-xf1",
     specs: {
       norma: "NFPA 1971 (2018)",
-      material: "—",
-      protector: "—",
-      suspension: "—",
-      peso: "—",
-      colores: "—",
-      cert_lab: "—",
     },
     features: [
       "Casco tipo jet de MSA Cairns",
@@ -2113,8 +1969,6 @@ export const featuredProducts: Product[] = [
     specs: {
       norma: "NFPA 1971",
       material: "Termoplástico de alta temperatura",
-      protector: "—",
-      suspension: "—",
       peso: "peso conforme a la ficha técnica",
       colores: "Dorado (jefe sector) · Plateado (chief/comandante)",
       cert_lab: "UL Listed — cuero certificado NFPA 1970",
@@ -2218,15 +2072,12 @@ export const featuredProducts: Product[] = [
     description: "Cizalla de excarcelación a batería de la línea Holmatro Pentheon.",
     category: "Herramientas Rescate",
     brand: "Holmatro",
-    norm: "—",
     badge: "Búsqueda y rescate",
     image: "/images/categorias/herramientas-rescate.avif",
     href: "/productos/herramientas-rescate/holmatro-pentheon-cizalla",
     tier: "Internacional",
     highlight: true,
     specs: {
-      norma: "—",
-      fuerza: "—",
       rango: "Apertura 182 mm",
       fuente: "Batería PBPA288",
       peso: "21.6 kg con batería",
@@ -2244,12 +2095,10 @@ export const featuredProducts: Product[] = [
     description: "Separador hidráulico a batería de la línea Holmatro Pentheon para apertura y empuje.",
     category: "Herramientas Rescate",
     brand: "Holmatro",
-    norm: "—",
     image: "/images/categorias/herramientas-rescate.avif",
     href: "/productos/herramientas-rescate/holmatro-pentheon-separador",
     tier: "Internacional",
     specs: {
-      norma: "—",
       fuerza: "366 kN",
       rango: "Apertura 725 mm",
       fuente: "Batería PBPA288",
@@ -2268,15 +2117,11 @@ export const featuredProducts: Product[] = [
     description: "Herramienta combinada a batería de la línea Holmatro Pentheon.",
     category: "Herramientas Rescate",
     brand: "Holmatro",
-    norm: "—",
     badge: "Versátil · 2 en 1",
     image: "/images/categorias/herramientas-rescate.avif",
     href: "/productos/herramientas-rescate/holmatro-pentheon-combinada",
     tier: "Internacional",
     specs: {
-      norma: "—",
-      fuerza: "—",
-      rango: "—",
       fuente: "Batería PBPA288",
       peso: "20.5 kg",
     },
@@ -2293,14 +2138,11 @@ export const featuredProducts: Product[] = [
     description: "Ariete a batería de la línea Holmatro Pentheon para empuje y creación de espacio.",
     category: "Herramientas Rescate",
     brand: "Holmatro",
-    norm: "—",
     image: "/images/categorias/herramientas-rescate.avif",
     href: "/productos/herramientas-rescate/holmatro-pentheon-ariete",
     tier: "Internacional",
     specs: {
-      norma: "—",
       fuerza: "136 kN en toda la carrera",
-      rango: "—",
       fuente: "Batería PBPA288",
       peso: "18.4 kg",
     },
@@ -2326,7 +2168,6 @@ export const featuredProducts: Product[] = [
     highlight: true,
     specs: {
       norma: "NFPA A8/B9/C8/D9/E9/F5",
-      fuerza: "—",
       rango: "Apertura ≈205 mm",
       fuente: "Batería eDRAULIC",
       peso: "22.5 kg",
@@ -2344,13 +2185,10 @@ export const featuredProducts: Product[] = [
     description: "Separador Jaws of Life® de la línea eDRAULIC E3 Connect a batería.",
     category: "Herramientas Rescate",
     brand: "Hurst",
-    norm: "—",
     image: "/images/categorias/herramientas-rescate.avif",
     href: "/productos/herramientas-rescate/hurst-edraulic-separador",
     tier: "Internacional",
     specs: {
-      norma: "—",
-      fuerza: "—",
       rango: "Apertura ≈729 mm",
       fuente: "Batería eDRAULIC",
       peso: "18.4 kg",
@@ -2375,7 +2213,6 @@ export const featuredProducts: Product[] = [
     tier: "Internacional",
     specs: {
       norma: "NFPA A7/B8/C7/D8/E7/F4",
-      fuerza: "—",
       rango: "Separación 368 mm · corte 309 mm",
       fuente: "Batería eDRAULIC",
       peso: "18.3 kg",
@@ -2393,13 +2230,10 @@ export const featuredProducts: Product[] = [
     description: "Ariete Jaws of Life® de la línea eDRAULIC E3 Connect a batería.",
     category: "Herramientas Rescate",
     brand: "Hurst",
-    norm: "—",
     image: "/images/categorias/herramientas-rescate.avif",
     href: "/productos/herramientas-rescate/hurst-edraulic-ariete",
     tier: "Internacional",
     specs: {
-      norma: "—",
-      fuerza: "—",
       rango: "Cerrado 579 mm",
       fuente: "Batería eDRAULIC",
       peso: "18.9 kg",
@@ -2426,7 +2260,6 @@ export const featuredProducts: Product[] = [
     highlight: true,
     specs: {
       norma: "EN 13204:2025 · F-CU2-187K",
-      fuerza: "—",
       rango: "Apertura 187 mm",
       fuente: "E-FORCE3",
       peso: "20.6 kg",
@@ -2444,12 +2277,10 @@ export const featuredProducts: Product[] = [
     description: "Separador Weber Rescue de la generación E-FORCE3.",
     category: "Herramientas Rescate",
     brand: "Weber Rescue",
-    norm: "—",
     image: "/images/categorias/herramientas-rescate.avif",
     href: "/productos/herramientas-rescate/weber-eforce-separador",
     tier: "Internacional",
     specs: {
-      norma: "—",
       fuerza: "55–501 kN",
       rango: "Apertura 735 mm",
       fuente: "E-FORCE3",
@@ -2468,14 +2299,11 @@ export const featuredProducts: Product[] = [
     description: "Herramienta combinada Weber Rescue de la generación E-FORCE3.",
     category: "Herramientas Rescate",
     brand: "Weber Rescue",
-    norm: "—",
     badge: "Versátil · 2 en 1",
     image: "/images/categorias/herramientas-rescate.avif",
     href: "/productos/herramientas-rescate/weber-eforce-combinada",
     tier: "Internacional",
     specs: {
-      norma: "—",
-      fuerza: "—",
       rango: "Apertura 405 mm",
       fuente: "E-FORCE3",
       peso: "20.8 kg",
@@ -2493,12 +2321,10 @@ export const featuredProducts: Product[] = [
     description: "Ariete Weber Rescue de la generación E-FORCE3.",
     category: "Herramientas Rescate",
     brand: "Weber Rescue",
-    norm: "—",
     image: "/images/categorias/herramientas-rescate.avif",
     href: "/productos/herramientas-rescate/weber-eforce-ariete",
     tier: "Internacional",
     specs: {
-      norma: "—",
       fuerza: "108 kN (1.ª etapa) / 62 kN (2.ª)",
       rango: "Cerrado 587 mm · extendido 1,387 mm",
       fuente: "E-FORCE3",
@@ -3670,7 +3496,6 @@ export const featuredProducts: Product[] = [
     href: "/productos/drones-emergencia/dji-enterprise/dock-2",
     tier: "Autónomo · 24/7 · Sin piloto",
     specs: {
-      autonomia: "—",
       sensor: "Matrice 3D/3TD",
       alcance: "10 km radio",
       ip: "IP55 · 34 kg",

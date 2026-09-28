@@ -90,16 +90,46 @@ const specMeta: Record<string, SpecMeta> = {
   capacidad:  { label: 'Capacidad',         explica: 'Capacidad indicada para el centro de trabajo.' },
 };
 
+/* Etiqueta y explicación por categoría: un mismo campo (peso, autonomía, sensor…)
+   no significa lo mismo en un casco, un SCBA, una cámara o un extintor. */
+const NORMA_GENERICA: Partial<SpecMeta> = { label: 'Norma', explica: 'Norma o certificación bajo la que el fabricante presenta el equipo.' };
+const metaPorCategoria: Record<string, Record<string, Partial<SpecMeta>>> = {
+  'Cámaras Térmicas': {
+    sensor:    { label: 'Sensor y rango', explica: 'Tipo de detector infrarrojo y rango de temperatura que mide la cámara, según el fabricante.' },
+    autonomia: { explica: 'Duración de la batería en operación continua, según el fabricante.' },
+    peso:      { label: 'Peso', explica: 'Peso de la cámara con batería; influye en la operación con una mano y con guantes de bombero.' },
+    norma:     NORMA_GENERICA,
+  },
+  'Drones Emergencia': {
+    sensor:    { label: 'Cargas útiles', explica: 'Cámaras y sensores que integra la aeronave, según el fabricante.' },
+    autonomia: { label: 'Tiempo de vuelo', explica: 'Tiempo máximo de vuelo publicado por el fabricante; en operación real disminuye con viento, carga útil y temperatura.' },
+    ideal:     { label: 'Aplicación', explica: 'Operaciones para las que el fabricante orienta el equipo.' },
+  },
+  'Extintores': {
+    material:  { label: 'Material del cilindro', explica: 'Material del recipiente a presión del extintor.' },
+    peso:      { label: 'Peso', explica: 'Peso del extintor cargado; determina quién puede operarlo y el soporte o gabinete que requiere.' },
+    norma:     { label: 'Norma', explica: 'Norma de producto que ampara el extintor (NOM) y norma de selección e instalación (NFPA 10).' },
+  },
+  'Herramientas Rescate': {
+    peso:      { label: 'Peso', explica: 'Peso de la herramienta lista para operar; influye en la fatiga del operador en rescates prolongados.' },
+    norma:     { label: 'Norma / clasificación', explica: 'Clasificación de la herramienta según EN 13204 o NFPA, publicada por el fabricante.' },
+  },
+  'Equipos SCBA':   { norma: NORMA_GENERICA },
+  'Equipos HAZMAT': { norma: NORMA_GENERICA, ideal: { label: 'Aplicación', explica: 'Escenarios para los que el fabricante orienta el equipo.' } },
+  'Sistemas CI':    { norma: NORMA_GENERICA },
+};
+const metaDe = (k: string): Partial<SpecMeta> => ({ ...specMeta[k], ...(metaPorCategoria[product.category]?.[k] ?? {}) });
+
 type SpecRow = { label: string; val: string; explica: string; min?: string; alto?: string };
 const specRows: SpecRow[] = product.specs
   ? (Object.entries(product.specs) as [string, string | undefined][])
       .filter(([, v]) => v)
       .map(([k, v]) => ({
-        label:   specMeta[k]?.label   ?? k,
+        label:   metaDe(k).label   ?? k,
         val:     v as string,
-        explica: product.suppressDefaultClaims ? '' : (specMeta[k]?.explica ?? ''),
-        min:     specMeta[k]?.min,
-        alto:    specMeta[k]?.alto,
+        explica: product.suppressDefaultClaims ? '' : (metaDe(k).explica ?? ''),
+        min:     metaDe(k).min,
+        alto:    metaDe(k).alto,
       }))
   : [];
 
@@ -1149,7 +1179,7 @@ const seoDesc = (product.suppressDefaultClaims
                       .map(([k, v]) => (
                         <span class="text-[9px] font-semibold px-1.5 py-0.5"
                               style="background:#040A12;color:var(--forge-300);border:1px solid rgba(74,117,153,0.2)">
-                          {specMeta[k]?.label ?? k}: {v}
+                          {metaPorCategoria[p.category]?.[k]?.label ?? specMeta[k]?.label ?? k}: {v}
                         </span>
                       ))}
                   </div>
