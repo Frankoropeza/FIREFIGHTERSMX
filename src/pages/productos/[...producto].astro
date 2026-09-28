@@ -375,7 +375,7 @@ const catSlug = categoryPath.split('/')[2] ?? '';
 const imagenCategoria = [`/images/categorias/${catSlug}.avif`, `/images/catalogo/${catSlug}.avif`]
   .find((src) => existsSync(join(process.cwd(), 'public', src)));
 const usosImagen = product.image ? featuredProducts.filter((p) => p.image === product.image).length : 0;
-const imagenEsReferencia = !product.image || usosImagen > 1 || product.image.startsWith('/images/categorias/');
+const imagenEsReferencia = !product.image || usosImagen > 1 || /^\/images\/(categorias|productos\/tipos)\//.test(product.image);
 const imagenPrincipal = product.image ?? imagenCategoria;
 const nombreCategoria: Record<string, string> = {
   'Trajes Bombero': 'traje de bombero', 'Cascos NFPA': 'casco de bombero', 'Equipos SCBA': 'equipo de respiración autónoma',
@@ -748,7 +748,7 @@ const seoDesc = metaCerrada(product.description, [
               </div>
               <figcaption class="text-[10px] mt-2 flex flex-wrap justify-between gap-2" style="color:var(--forge-300)">
                 <span>{imagenEsReferencia
-                  ? 'Imagen de referencia de la categoría. La fotografía del modelo se entrega con su ficha técnica.'
+                  ? `Imagen de referencia ${product.image?.startsWith('/images/productos/tipos/') ? 'del tipo de equipo' : 'de la categoría'}. La fotografía del modelo se entrega con su ficha técnica.`
                   : product.title}</span>
                 <span>{[product.category, fabricante ?? product.brand].filter(Boolean).join(' · ')}{esDistribuidor && ' · Distribuidor autorizado México'}</span>
               </figcaption>

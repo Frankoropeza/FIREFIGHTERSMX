@@ -1,3 +1,4 @@
+import { imagenTipo } from './imagenes-tipo';
 export interface Product {
   slug: string;
   title: string;
@@ -5390,4 +5391,18 @@ const asignacionProveedores: Record<string, keyof typeof proveedoresRed> = {"gab
 for (const producto of featuredProducts) {
   const grupo = asignacionProveedores[producto.slug];
   if (grupo) producto.proveedores = proveedoresRed[grupo];
+}
+
+/* Imagen de referencia por TIPO de equipo (Frank 2026-09-28: imágenes generadas).
+   Sustituye la imagen genérica de categoría o compartida; una fotografía propia y
+   única del modelo se conserva. La plantilla la rotula como referencia del tipo. */
+{
+  const usos = new Map<string, number>();
+  for (const p of featuredProducts) if (p.image) usos.set(p.image, (usos.get(p.image) ?? 0) + 1);
+  for (const p of featuredProducts) {
+    const propia = p.image && !p.image.startsWith('/images/categorias/') && (usos.get(p.image) ?? 0) === 1;
+    if (propia) continue;
+    const tipo = imagenTipo(p.category, p.title);
+    if (tipo) p.image = tipo;
+  }
 }
