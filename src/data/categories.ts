@@ -76,6 +76,66 @@ export const trajesBombero: Category = {
  */
 export const categories: Category[] = [
   {
+    slug: 'detectores-de-humo',
+    label: 'Detectores de humo',
+    norm: 'NFPA 72 · UL 217',
+    description: 'Detectores autónomos Kidde de humo y humo/CO para vivienda: opciones a batería, cableadas e interconectables conforme a NFPA 72 y UL 217.',
+    shortDesc: 'Alarmas autónomas Kidde para detección local de humo y monóxido de carbono.',
+    accent: '#F5A623',
+    icon: '',
+    intro: [
+      'Un detector autónomo emite alarma en el punto donde se instala y puede interconectarse con unidades compatibles según el modelo. Es distinto de un sistema de detección con panel, módulos, circuitos y notificación diseñado para un inmueble; esa arquitectura se consulta en Sistemas Contra Incendio.',
+      'La selección comienza por la alimentación disponible, el tipo de sensor publicado y la compatibilidad de interconexión. Revise el manual del modelo para ubicación, separación de fuentes de vapor o cocción, prueba periódica y fecha de reemplazo; una alarma no detecta humo que no alcanza su cámara.',
+    ],
+    items: [
+      { name: 'Kidde P9050', detail: 'Detector fotoeléctrico autónomo con batería de 9 V.' },
+      { name: 'Kidde 30CUAR-VRF', detail: 'Alarma cableada de humo/CO con respaldo AA e interconexión inalámbrica.' },
+      { name: 'Kidde 20SAR-VRF', detail: 'Detector de humo cableado con respaldo AA e interconexión inalámbrica.' },
+      { name: 'Kidde P4010ACSAQ-WF', detail: 'Detector fotoeléctrico cableado con respaldo sellado y monitor de calidad de aire.' },
+    ],
+    productCategory: 'Detectores de Humo',
+  },
+  {
+    slug: 'desfibriladores',
+    label: 'Desfibriladores (DEA)',
+    norm: 'IEC 60601-2-4',
+    description: 'Desfibriladores externos automáticos ZOLL, Philips, Mindray y Powerheart para programas de respuesta, con consumibles y configuración por modelo.',
+    shortDesc: 'DEA para respuesta a paro cardiaco, con consumibles y accesorios por modelo.',
+    accent: '#34D399',
+    icon: '',
+    intro: [
+      'Un DEA analiza el ritmo y guía la respuesta con instrucciones del fabricante; no sustituye la activación del servicio médico de emergencias, la capacitación ni el programa de revisión del sitio. Compare modalidad semiautomática o automática, guía de RCP, protección ambiental y opciones pediátricas publicadas para cada referencia.',
+      'El programa debe asignar responsables para revisar estado, batería, electrodos y gabinete, además de conservar instrucciones y formación aplicable. Antes de compra o instalación en México, solicite el registro sanitario COFEPRIS vigente del modelo y compruebe las fechas de vigencia de batería y electrodos.',
+    ],
+    items: [
+      { name: 'ZOLL AED Plus', detail: 'DEA con Real CPR Help, electrodos CPR-D-padz e índice IP55.' },
+      { name: 'ZOLL AED 3', detail: 'DEA con pantalla a color, modo infantil integrado y análisis RapidShock.' },
+      { name: 'Philips HeartStart FRx', detail: 'DEA con indicaciones de voz y opción de llave pediátrica.' },
+      { name: 'Mindray BeneHeart C1A', detail: 'DEA disponible en versiones semiautomática y automática.' },
+    ],
+    productCategory: 'Desfibriladores DEA',
+  },
+  {
+    slug: 'epp-bombero',
+    label: 'Botas, guantes y capuchas para bombero',
+    norm: 'NFPA 1970',
+    description: 'Botas, guantes y capuchas para combate estructural, con referencias Lion y Globe de MSA bajo NFPA 1970 y herramientas Council Tool.',
+    shortDesc: 'Protección complementaria y herramientas manuales para la dotación bomberil.',
+    accent: '#F75000',
+    icon: '',
+    intro: [
+      'Botas, guantes y capucha deben seleccionarse como parte de la interfaz entre traje, casco, SCBA y tarea. La etiqueta del artículo y las instrucciones de uso son las referencias para confirmar cumplimiento de NFPA 1970 en la configuración adquirida; materiales o accesorios distintos pueden cambiar el conjunto aplicable.',
+      'Defina tallas, ancho de bota, mano dominante, compatibilidad con la máscara y la protección requerida antes de pedir. Inspeccione costuras, barreras, suelas, cierres y herrajes después de exposición o limpieza. Las hachas y barras de entrada forzada son herramientas de operación y requieren entrenamiento específico.',
+    ],
+    items: [
+      { name: 'Lion Battalion', detail: 'Bota de cuero para incendio estructural, proximidad y salpicadura líquida.' },
+      { name: 'Lion Primus', detail: 'Guante estructural certificado NFPA 1970 con CROSSTECH y Kovenex.' },
+      { name: 'Globe Guard Hood', detail: 'Capucha con barrera de partículas para cabeza y cuello.' },
+      { name: 'Council Tool FE6', detail: 'Hacha plana de entrada forzada compatible con barra Halligan.' },
+    ],
+    productCategory: 'EPP Bombero',
+  },
+  {
     slug: 'cascos-nfpa',
     shortDesc: 'Cascos de combate y forestales con protección facial integrada y suspensión avanzada.',
     accent: '#F75000',

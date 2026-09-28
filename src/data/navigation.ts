@@ -40,6 +40,23 @@ export const navigation: { main: NavItem[] } = { main: [
         ],
       },
       {
+        label: 'Detectores de humo',
+        href: '/productos/detectores-de-humo',
+        description: 'Kidde · autónomos · humo y humo/CO',
+      },
+      {
+        label: 'Desfibriladores (DEA)',
+        href: '/productos/desfibriladores',
+        description: 'ZOLL · Philips · Mindray · Powerheart',
+        children: [
+          { label: 'ZOLL AED Plus', href: '/productos/desfibriladores/zoll-aed-plus', description: 'Real CPR Help · IP55' },
+          { label: 'ZOLL AED 3', href: '/productos/desfibriladores/zoll-aed-3', description: 'Modo infantil · RapidShock' },
+          { label: 'Philips HeartStart FRx', href: '/productos/desfibriladores/philips-heartstart-frx', description: 'SMART Pads II · IP55' },
+          { label: 'Mindray BeneHeart C1A', href: '/productos/desfibriladores/mindray-beneheart-c1a', description: 'Automático o semiautomático' },
+          { label: 'ZOLL Powerheart G5', href: '/productos/desfibriladores/zoll-powerheart-g5', description: 'Intellisense CPR · IP55' },
+        ],
+      },
+      {
         label: 'Señalización y Emergencia',
         href: '/productos/senalizacion-emergencia',
         description: 'Señalamientos, lámparas de emergencia y botiquines',
@@ -62,6 +79,15 @@ export const navigation: { main: NavItem[] } = { main: [
         ],
       },
       {
+        label: 'Botas, guantes y capuchas',
+        href: '/productos/epp-bombero',
+        description: 'Lion · Globe MSA · Council Tool · NFPA 1970',
+        children: [
+          { label: 'Hacha Council Tool FE6-36', href: '/productos/epp-bombero/council-tool-fe6-36', description: 'Entrada forzada · 6 lb' },
+          { label: 'Barra Council Tool HAL1P30', href: '/productos/epp-bombero/council-tool-hal1p30', description: 'Halligan · 30 pulgadas' },
+        ],
+      },
+      {
         label: "Cascos NFPA",
         href: "/productos/cascos-nfpa",
         description: "MSA, Bullard, Cairns",
@@ -69,6 +95,7 @@ export const navigation: { main: NavItem[] } = { main: [
           { label: "MSA Gallet", href: "/productos/cascos-nfpa/msa-gallet", description: "F1 XF · cascos estilo jet EN 443" },
           { label: "Bullard",    href: "/productos/cascos-nfpa/bullard",    description: "USTM · ala completa · NFPA 1970" },
           { label: "Cairns",     href: "/productos/cascos-nfpa/cairns",     description: "N6A Houston · cuero · NFPA 1970" },
+          { label: 'Dräger HPS 7000', href: '/productos/cascos-nfpa/drager-hps-7000', description: 'EN 443 · casco integral' },
         ],
       },
       {

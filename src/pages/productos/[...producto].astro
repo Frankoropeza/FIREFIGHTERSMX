@@ -107,6 +107,9 @@ const specMeta: Record<string, SpecMeta> = {
   potencia:   { label: 'Iluminación',       explica: 'Potencia y cantidad de lámparas LED.' },
   prueba:     { label: 'Prueba',            explica: 'Mecanismo para verificar el funcionamiento.' },
   capacidad:  { label: 'Capacidad',         explica: 'Capacidad indicada para el centro de trabajo.' },
+  energia:    { label: 'Energía',           explica: 'Energía de desfibrilación o rango que el fabricante publica para el equipo.' },
+  dimensiones:{ label: 'Dimensiones',       explica: 'Medidas externas publicadas por el fabricante para planear gabinete, transporte o montaje.' },
+  interconexion: { label: 'Interconexión',  explica: 'Forma y límite de conexión con alarmas compatibles, según la documentación del fabricante.' },
 };
 
 /* Etiqueta y explicación por categoría: un mismo campo (peso, autonomía, sensor…)
@@ -141,6 +144,22 @@ const metaPorCategoria: Record<string, Record<string, Partial<SpecMeta>>> = {
   },
   'Equipos HAZMAT': { norma: NORMA_GENERICA, ideal: { label: 'Aplicación', explica: 'Escenarios para los que el fabricante orienta el equipo.' }, autonomia: { label: 'Batería', explica: 'Duración de la batería en operación continua, según el fabricante.' }, ip: { explica: 'Grado de protección IEC 60529 contra polvo y agua; relevante en descontaminación y lluvia.' } },
   'Sistemas CI':    { norma: NORMA_GENERICA },
+  'Detectores de Humo': {
+    sensor:  { label: 'Tecnología de detección', explica: 'Principio con el que el equipo detecta humo o CO: el fotoeléctrico responde mejor a fuegos latentes con humo visible; el sensor electroquímico mide monóxido de carbono.' },
+    bateria: { label: 'Alimentación', explica: 'Fuente de energía y respaldo del detector; define el mantenimiento y la sustitución.' },
+    norma:   NORMA_GENERICA,
+  },
+  'Desfibriladores DEA': {
+    norma:   NORMA_GENERICA,
+    bateria: { label: 'Batería', explica: 'Tipo y vida útil de la batería según el fabricante; se controla junto con la caducidad de los electrodos.' },
+    peso:    { label: 'Peso', explica: 'Peso del equipo con batería, según el fabricante.' },
+    ip:      { explica: 'Grado de protección IEC 60529 contra polvo y agua; relevante en exteriores, vehículos y lluvia.' },
+  },
+  'EPP Bombero': {
+    norma:    NORMA_GENERICA,
+    material: { label: 'Material', explica: 'Materiales principales de la pieza según el fabricante.' },
+    peso:     { label: 'Peso', explica: 'Peso publicado por el fabricante.' },
+  },
   'Señalización y Emergencia': { norma: NORMA_GENERICA },
   'Equipos SCBA':   { norma: NORMA_GENERICA, peso: { label: 'Peso', explica: 'Peso del equipo según la configuración publicada por el fabricante.' } },
 };
