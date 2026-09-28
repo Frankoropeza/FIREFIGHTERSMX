@@ -113,6 +113,105 @@ export const LINEAS_GENERICAS = new Set(['PQS ABC', 'CO2', 'Especializados', 'So
 export const fabricanteDe = (p: Product): string | undefined =>
   p.fabricante ?? (p.brand && !LINEAS_GENERICAS.has(p.brand) ? p.brand : undefined);
 
+/** Datos literales revisados para referencias de Sistemas CI; no generan copy. */
+const SISTEMAS_CI_REVISADOS: Record<string, Partial<Product>> = {
+  "tyco-tyjv-pendent-concealed": {
+    title: "Rociador Tyco RFII TY3531 Oculto Colgante K-5.6",
+    description: "Rociador Tyco RFII TY3531 oculto y colgante, K-5.6, de respuesta rápida y cobertura estándar para riesgo ligero u ordinario conforme a sus aprobaciones.",
+    norm: "NFPA 13", mpn: "TY3531",
+    specs: { norma: "NFPA 13", tipo_sis: "RFII TY3531 concealed pendent", factor_k: "K 5.6", cobertura: "Cobertura estándar", listado: "UL/cUL Listed; FM, NYC, VdS y LPCB, según configuración", ideal: "Riesgo ligero u ordinario" },
+    features: ["SIN TY3531", "Montaje concealed pendent", "Respuesta rápida", "K 5.6"],
+    seleccion: ["El RFII TY3531 sustituye la referencia TY-JV, que no aparece en la documentación oficial de Tyco. Es un rociador Royal Flush II oculto, colgante, K-5.6 y de respuesta rápida. La cubierta plana oculta el cuerpo en el plafón; por tanto, la decisión de compra incluye tanto el rociador como el conjunto de cubierta compatible.", "Se diferencia del TY3131 porque descarga como pendent oculto, no como upright expuesto. Tyco lo destina a riesgo ligero u ordinario dentro de las condiciones publicadas. El diseño debe confirmar el tipo de plafón, la temperatura, el acabado y la aprobación aplicable antes de especificar una cubierta."],
+    idealPara: ["Vestíbulos de hotel", "Oficinas con plafón acabado", "Restaurantes de riesgo aprobado"],
+    aConsiderar: ["La cubierta se ordena para el modelo y acabado correctos; no intercambie componentes entre familias.", "Revise que la aplicación sea cobertura estándar, no cobertura extendida."],
+    faqs: [{ q: "¿Qué modelo sustituye a TY-JV?", a: "La ficha se corrigió al RFII TY3531, identificador publicado por Tyco." }, { q: "¿El TY3531 es visible durante operación normal?", a: "Su cubierta plana está diseñada para ocultar el rociador en el plafón." }, { q: "¿Es de cobertura extendida?", a: "No; Tyco lo publica como RFII de cobertura estándar." }],
+    fuentes: [{ titulo: "Tyco — RFII Standard Coverage", url: "https://www.tyco-fire.com/products-and-solutions/sprinklers-nozzles-and-accessories/standard-coverage/series_rfii_standard_coverage_sprinkler_fsp/series-rfii-standard-coverage-sprinkler" }],
+  },
+  "notifier-nfs2-3030": {
+    description: "Panel direccionable Notifier NFS2-3030 para instalaciones medianas y grandes, con uno a diez SLC y hasta 3,180 dispositivos inteligentes direccionables.", norm: "NFPA 72 · UL 864", mpn: "NFS2-3030",
+    specs: { norma: "NFPA 72 · UL 864", tipo_sis: "FACP inteligente direccionable", cobertura: "1 a 10 SLC; hasta 3,180 dispositivos", listado: "Consultar documento de listado NFS2-3030", extra: "Pantalla LCD de 640 caracteres", ideal: "Instalaciones medianas y grandes" },
+    features: ["Hasta diez SLC aislados", "318 dispositivos por SLC", "Pantalla LCD de 640 caracteres", "Diseño modular"],
+    seleccion: ["El NFS2-3030 es el panel de alta capacidad de la serie ONYX. Su ficha vigente establece de uno a diez circuitos SLC aislados y hasta 159 detectores más 159 módulos por SLC, para un máximo de 3,180 dispositivos inteligentes. Esa capacidad permite separar edificios o áreas por lazo sin convertir el conteo total en una promesa de ingeniería automática.", "Frente al NFS2-640, este modelo ofrece hasta diez SLC en vez de dos. Es la diferencia que importa cuando el proyecto necesita más puntos o segmentación. Dimensione alimentación, baterías, gabinetes, comunicaciones y equipos de notificación por la carga del proyecto; ninguno queda definido sólo por comprar el panel."],
+    idealPara: ["Campus con varios edificios", "Hospitales de gran capacidad", "Torres con muchos puntos direccionables"],
+    aConsiderar: ["Verifique el número de SLC, tarjetas y fuente de poder incluidos en la orden; el chasis es modular.", "La cantidad máxima de puntos no reemplaza el cálculo de carga ni la programación aprobada."],
+    faqs: [{ q: "¿Cuántos dispositivos soporta?", a: "Hasta 3,180, con la configuración máxima de diez SLC descrita por Notifier." }, { q: "¿Cuántos dispositivos admite cada SLC?", a: "Hasta 159 detectores y 159 módulos por circuito." }, { q: "¿Sustituye al NFS2-640?", a: "Se elige cuando la capacidad requerida supera la arquitectura de hasta dos SLC del NFS2-640." }],
+    fuentes: [{ titulo: "Notifier DN-7070 — NFS2-3030", url: "https://www.securityandfire.honeywell.com/-/media/Files/Notifier/Data-Sheets/DN_7070_pdf.pdf" }],
+  },
+  "notifier-nfs2-640": {
+    description: "Panel direccionable Notifier NFS2-640 con uno o dos SLC aislados y hasta 636 dispositivos; integra fuente de 6.0 A y cuatro circuitos NAC.", norm: "NFPA 72 · UL 864", mpn: "NFS2-640",
+    specs: { norma: "NFPA 72 · UL 864", tipo_sis: "FACP inteligente direccionable", cobertura: "Hasta 636 dispositivos", listado: "UL/ULC S635; FM Approved", extra: "Fuente de 6.0 A y cuatro NAC", ideal: "Instalaciones de capacidad intermedia" },
+    features: ["Uno o dos SLC aislados", "318 dispositivos por lazo", "Cuatro NAC integrados", "Historial de 800 eventos"],
+    seleccion: ["El NFS2-640 ofrece un SLC ampliable a dos, con 159 detectores y 159 módulos por circuito; el límite del panel es 636 dispositivos. Integra una fuente conmutada de 6.0 A y cuatro circuitos NAC Clase A o B. Estas cifras son útiles para estimar arquitectura, pero la distribución de corriente y las baterías se calculan con los equipos reales instalados.", "Su posición frente al NFS2-3030 es de capacidad: el 640 llega a dos SLC, mientras el 3030 escala a diez. Selecciónelo cuando la zonificación y el número de direcciones permanezcan dentro de ese límite. Solicite CPU, tarjetas de expansión, gabinete y accesorios explícitamente, ya que el panel se configura por proyecto."],
+    idealPara: ["Centros comerciales medianos", "Plantas industriales sectorizadas", "Edificios con hasta dos SLC"],
+    aConsiderar: ["La fuente de 6.0 A se comparte entre circuitos internos y salidas; calcule la carga instalada.", "Confirme si se requiere el segundo SLC antes de cerrar la configuración."],
+    faqs: [{ q: "¿Cuántos SLC puede tener?", a: "Uno, ampliable a dos circuitos SLC aislados." }, { q: "¿Cuál es el máximo de direcciones?", a: "Hasta 636 dispositivos por FACP o nodo, según la ficha DN-7111." }, { q: "¿Incluye cuatro NAC?", a: "La fuente integrada publica cuatro circuitos NAC Clase A o B." }],
+    fuentes: [{ titulo: "Notifier DN-7111 — NFS2-640", url: "https://prod-edam.honeywell.com/content/dam/honeywell-edam/hbt/en-us/documents/literature-and-specs/datasheets/notifier-us/hon-ba-fire-dn-7111.pdf?download=false" }],
+  },
+  "honeywell-detector-humo": {
+    title: "Detector Fotoeléctrico Direccionable Notifier FSP-951", description: "Detector fotoeléctrico direccionable Notifier FSP-951 para paneles compatibles FlashScan, con identificación por dirección y detección analógica de humo.", norm: "NFPA 72", mpn: "FSP-951",
+    specs: { norma: "NFPA 72", tipo_sis: "Detector fotoeléctrico direccionable", listado: "Verificar listado de la configuración", extra: "Compatible con protocolo FlashScan", ideal: "Detección analógica direccionable" },
+    seleccion: ["La referencia GSME-A no cuenta con hoja oficial localizable; se corrige a FSP-951, detector fotoeléctrico direccionable de Notifier. El modelo se integra en arquitecturas FlashScan y comunica una dirección individual al panel compatible. Ese dato permite identificar el punto en evento, pero no autoriza a declarar una cobertura fija sin el diseño de detección.", "A diferencia del FST-951R térmico, este equipo responde a productos de combustión mediante detección fotoeléctrica. Selecciónelo cuando la estrategia aprobada requiera humo fotoeléctrico direccionable. Confirme base, protocolo, listado, sensibilidad programada y ubicación con la documentación vigente del panel y el proyecto."],
+    idealPara: ["Sistemas FlashScan", "Áreas que requieran detección fotoeléctrica", "Puntos direccionables de alarma"], aConsiderar: ["No especifique una cobertura por detector sin plano y criterios de NFPA 72.", "Verifique compatibilidad entre detector, base y panel."],
+    faqs: [{ q: "¿Qué reemplaza al GSME-A?", a: "La ficha se corrigió al FSP-951, modelo direccionable real de Notifier." }, { q: "¿Es un detector térmico?", a: "No; su función es detección fotoeléctrica de humo." }, { q: "¿Funciona con cualquier panel?", a: "Debe conectarse a un panel y protocolo compatibles indicados por el fabricante." }], fuentes: [{ titulo: "Notifier — detectores direccionables", url: "https://www.honeywellbuildings.com/fire/fire-detection-and-alarm-system/notifier/detector" }],
+  },
+  "system-sensor-spcrl": {
+    title: "Sirena-Estrobo de Techo System Sensor PC2RL", description: "Sirena-estrobo roja de techo System Sensor PC2RL, de dos hilos y 24 VDC, para circuitos de notificación compatibles.", norm: "NFPA 72", mpn: "PC2RL",
+    specs: { norma: "NFPA 72", tipo_sis: "Sirena-estrobo de techo, dos hilos", listado: "Consultar listado del modelo", presion: "24 VDC nominal", extra: "Sincronizable con protocolo System Sensor", ideal: "Notificación audiovisual interior" },
+    seleccion: ["SPCRL es un altavoz de techo, no una sirena-estrobo. Para conservar la función de notificación audiovisual, esta ficha se corrige al PC2RL, identificado por Honeywell como horn/strobe rojo de techo, dos hilos y 24 VDC. El cambio elimina la candela y los decibeles no respaldados de la referencia anterior.", "PC2RL se diferencia del SPCRL por integrar señal audible y visual; este último sólo reproduce audio. Selecciónelo para un circuito NAC de notificación compatible y determine la candela, tono, sincronización y consumo con la hoja de datos vigente. La carga del NAC y el alcance visual se revisan en diseño, no por el color de la carcasa."],
+    idealPara: ["NAC interiores de 24 VDC", "Notificación audiovisual de techo", "Sistemas con sincronización System Sensor"], aConsiderar: ["No sustituya un altavoz SPCRL por PC2RL cuando el proyecto requiera mensajes de voz.", "Calcule corriente de alarma y selección de candela con el plano de notificación."],
+    faqs: [{ q: "¿Qué pasó con el modelo SPCRL?", a: "SPCRL es altavoz; la ficha de sirena-estrobo ahora corresponde al PC2RL." }, { q: "¿Es de pared?", a: "No, PC2RL se identifica como equipo rojo de montaje en techo." }, { q: "¿Qué tensión utiliza?", a: "El documento de compatibilidad publica 24 VDC nominales." }], fuentes: [{ titulo: "Honeywell — PC2RL", url: "https://buildings.honeywell.com/content/dam/hbtbt/en/documents/downloads/51352.pdf" }],
+  },
+  "notifier-sd851-detector-calor": {
+    title: "Detector Térmico Direccionable Notifier FST-951R", description: "Detector térmico direccionable Notifier FST-951R con temperatura fija de 57 °C y detección de incremento de 8.3 °C por minuto.", norm: "NFPA 72", mpn: "FST-951R",
+    specs: { norma: "NFPA 72", tipo_sis: "Detector térmico direccionable", listado: "UL/ULC S747; FM Approved", cobertura: "15.24 m entre centros UL; 7.62 × 7.62 m FM", extra: "57 °C fijo; incremento de 8.3 °C/min", ideal: "Puntos térmicos direccionables" },
+    seleccion: ["SD851 no quedó respaldado como detector fijo direccionable. La ficha se corrige al FST-951R, detector térmico inteligente actual de Notifier con punto fijo de 57 °C y detección de incremento de 8.3 °C por minuto. La hoja especifica espaciamiento aprobado UL de 15.24 m entre centros y FM de 7.62 por 7.62 m, parámetros que se aplican sólo en las condiciones de aprobación.", "Frente al FSP-951 fotoeléctrico, FST-951R usa un termistor y se selecciona cuando el criterio de detección pide temperatura. La dirección se ajusta con interruptores rotatorios y el modelo comunica con paneles FlashScan. Pida la base adecuada y verifique ambiente, altura y criterio de alarma antes de sustituir cualquier detector existente."],
+    idealPara: ["Detección térmica FlashScan", "Aplicaciones aprobadas a 57 °C", "Sustitución de FST-851 en arquitectura compatible"], aConsiderar: ["El espaciamiento publicado no elimina las limitaciones de techo, altura y ambiente del proyecto.", "Confirme la base y el protocolo antes de montar el detector."],
+    faqs: [{ q: "¿A qué temperatura responde?", a: "FST-951R tiene punto fijo de 57 °C y función de incremento de temperatura." }, { q: "¿Es detector de humo?", a: "No; es el reemplazo térmico direccionable de esta ficha." }, { q: "¿Qué listado publica?", a: "La hoja indica UL/ULC S747 y aprobación FM para la serie." }], fuentes: [{ titulo: "Notifier FST-951 — ficha técnica", url: "https://buildings.honeywell.com/content/dam/hbtbt/en/documents/downloads/hon-ba-fst-951-sa.pdf" }],
+  },
+  "notifier-fmm-1-modulo-monitor": {
+    description: "Módulo monitor direccionable Notifier FMM-1 para un circuito IDC de dispositivos de contacto, supervisión o detección compatible.", norm: "UL 864", mpn: "FMM-1",
+    specs: { norma: "UL 864 · UL 2610", tipo_sis: "Módulo monitor direccionable", presion: "15 a 32 VDC", caudal: "450 µA IDC máximo", extra: "Resistencia EOL de 47 kΩ", ideal: "Entradas IDC supervisadas" },
+    seleccion: ["El FMM-1 supervisa un circuito IDC de dos o cuatro hilos para contactos normalmente abiertos de alarma o supervisión. La dirección se fija con interruptores rotatorios, por lo que el panel identifica el punto monitorizado. No es un módulo de control ni entrega energía de campo para actuar un equipo.", "Frente a un detector direccionable, su función es traducir un contacto o circuito externo a una dirección del lazo. Selecciónelo para integrar la señal permitida por la documentación del panel. Dimensione cableado, resistencia de fin de línea y compatibilidad antes de ordenar."], idealPara: ["Contactos de supervisión", "Entradas IDC", "Integración en lazo Notifier"], aConsiderar: ["El módulo requiere panel compatible y resistencia EOL especificada.", "No lo use como sustituto de un módulo de control."], faqs: [{q:"¿Qué tensión opera?",a:"La guía publica 15 a 32 VDC."},{q:"¿Cuál es la EOL?",a:"47 kΩ, según instrucciones FMM-1."},{q:"¿Controla una válvula?",a:"No; vigila un circuito de entrada."}], fuentes: [{titulo:"Notifier — FMM-1",url:"https://prod-edam.honeywell.com/content/dam/honeywell-edam/hbt/en-us/documents/manuals-and-guides/installation-guides/hbt-fire-I56-3506-005.pdf"}],
+  },
+  "kidde-fm200-sistema": {
+    title: "Sistema Kidde ADS con HFC-227ea (FM-200)", description: "Sistema Kidde ADS de agente limpio HFC-227ea, impulsado por nitrógeno y diseñado para recintos de riesgo específico conforme al proyecto.", norm: "NFPA 2001", mpn: "ADS HFC-227ea",
+    specs: { norma: "NFPA 2001", tipo_sis: "Sistema de agente limpio ADS", agente: "HFC-227ea (FM-200)", listado: "Sistema Kidde UL-listed; confirmar configuración", extra: "Descarga impulsada por nitrógeno", ideal: "Recintos críticos diseñados" },
+    seleccion: ["Kidde documenta su plataforma ADS para HFC-227ea como un sistema de agente limpio impulsado por nitrógeno. Los cilindros, boquillas, tubería y control se seleccionan por el volumen del recinto y el cálculo de descarga. Por ello no se publica una concentración única ni una cobertura genérica en la ficha.", "El valor frente a Fluoro-K es usar HFC-227ea dentro de la misma plataforma ADS. Solicite el cálculo, cilindros, boquillas y plano de tubería del riesgo concreto. La compra debe incluir el diseño aprobado, no sólo el nombre del agente."], idealPara:["Salas críticas calculadas", "Sistemas ADS con HFC-227ea", "Proyectos con descarga por nitrógeno"], aConsiderar:["Exija cálculo hidráulico/neumático y prueba de integridad cuando aplique.","No combine componentes de distintas plataformas sin aprobación de Kidde."], faqs:[{q:"¿Qué agente emplea?",a:"HFC-227ea, también llamado FM-200."},{q:"¿Cómo descarga ADS?",a:"La plataforma publicada usa impulso por nitrógeno."},{q:"¿Protege un volumen fijo?",a:"El volumen se determina mediante el diseño del recinto."}], fuentes:[{titulo:"Kidde ADS — HFC-227ea",url:"https://kiddefenwal.com/solutions/engineered-fire-suppression/clean-agent-systems-land/ads-delivery-platform-for-fluoro-k-or-hfc-227ea/"}],
+  },
+  "kidde-novec-sistema": {
+    title: "Sistema Kidde Fluoro-K FK-5-1-12", description: "Sistema Kidde Fluoro-K de agente limpio FK-5-1-12 para protección de activos críticos mediante una plataforma de supresión diseñada por proyecto.", norm:"NFPA 2001", mpn:"Fluoro-K",
+    specs:{norma:"NFPA 2001",tipo_sis:"Sistema de agente limpio",agente:"Fluoro-K FK-5-1-12",listado:"FM Approved; uso en sistemas Kidde UL-listed",extra:"Sin residuo y no conductor",ideal:"Activos críticos"},
+    seleccion:["La denominación Novec 1230 no identifica un sistema Kidde vigente; se corrige a Fluoro-K, el agente FK-5-1-12 propio de KiddeFenwal. El fabricante lo describe como limpio, no conductor y sin residuo, integrado en plataformas ADS, ECS-500 o ECS 360 según el tamaño y la arquitectura del recinto.","A diferencia del HFC-227ea, Fluoro-K es el agente FK-5-1-12 del portafolio actual. La diferencia práctica se decide con cálculo de agente, tubería, boquillas y requisitos de continuidad. No solicite una concentración de catálogo: el expediente de diseño debe fijarla para el riesgo."], idealPara:["Centros de datos", "Cuartos limpios", "Activos de alto valor"], aConsiderar:["Pida el agente Fluoro-K por su nombre correcto, no como Novec 1230.","La selección de plataforma depende del volumen y recorrido de tubería."], faqs:[{q:"¿Qué reemplaza a Novec?",a:"La ficha se actualiza al Fluoro-K FK-5-1-12 de KiddeFenwal."},{q:"¿Deja residuo?",a:"Kidde lo describe como agente limpio sin residuo."},{q:"¿Qué plataformas admite?",a:"ADS, ECS-500 y ECS 360, según el fabricante."}], fuentes:[{titulo:"Kidde — Fluoro-K",url:"https://kiddefenwal.com/solutions/engineered-fire-suppression/clean-agent-systems-land/fluoro-k/"}],
+  },
+  "kidde-autopulse-panel": {
+    title:"Panel de Liberación Kidde ARIES-MLX",description:"Panel Kidde ARIES-MLX para control coordinado de detección, alarmas y liberación de sistemas de agente limpio.",norm:"NFPA 72 · NFPA 2001",mpn:"ARIES-MLX",
+    specs:{norma:"NFPA 72 · NFPA 2001",tipo_sis:"Panel de control y liberación",extra:"Visibilidad en tiempo real",ideal:"Sistemas Kidde de agente limpio"}, seleccion:["AutoPulse no cuenta con página vigente de KiddeFenwal; se corrige a ARIES-MLX, una de las unidades de control que Kidde identifica para activación coordinada, alarma y liberación. El panel integra la arquitectura de supresión, pero sus entradas y salidas se definen con la lógica aprobada.","A diferencia de un FACP general, ARIES-MLX se selecciona como control de un sistema Kidde de agente limpio. Solicite la configuración exacta de módulos, detectores, avisos y dispositivos de aborto con el diseño."], idealPara:["Liberación de agente limpio", "Arquitectura KiddeFenwal", "Control de secuencias de supresión"], aConsiderar:["No programe liberación sin secuencia y pruebas de aceptación aprobadas.","Confirme módulos y dispositivos incluidos."], faqs:[{q:"¿Qué reemplaza AutoPulse?",a:"ARIES-MLX, panel de control Kidde vigente."},{q:"¿Controla descarga?",a:"Kidde lo cita para activación coordinada y liberación."},{q:"¿Es un FACP genérico?",a:"Se selecciona para arquitectura de supresión Kidde."}], fuentes:[{titulo:"Kidde — Data centers y controles",url:"https://kiddefenwal.com/industries-served/data-centers/"}],
+  },
+  "kidde-fenwal-valvula-descarga-386": {
+    title:"Conjunto Kidde ADS de Cilindro y Válvula",description:"Conjunto Kidde ADS de cilindro y válvula para plataforma de agente limpio impulsada por nitrógeno, seleccionado por el cálculo del sistema.",norm:"NFPA 2001",mpn:"ADS 675 lb Cylinder and Valve Assembly",
+    specs:{norma:"NFPA 2001",tipo_sis:"Cilindro y válvula ADS",extra:"Accionamiento por nitrógeno",ideal:"Sistemas Kidde ADS"}, seleccion:["La Serie 386 no aparece en documentación oficial actual de Kidde; se corrige a un conjunto ADS de cilindro y válvula publicado por KiddeFenwal. Su función es almacenar el agente y formar parte de la plataforma de descarga impulsada por nitrógeno, no operar como una válvula universal para cualquier sistema.","El número de cilindros, válvulas, impulsores y boquillas se obtiene del cálculo de la plataforma. Selecciónelo sólo como parte de un sistema ADS con agente compatible. No transfiera una válvula de otra familia ni sustituya componentes por similitud física."], idealPara:["Sistemas ADS calculados", "HFC-227ea o Fluoro-K ADS", "Recintos con ingeniería Kidde"], aConsiderar:["Confirme capacidad, agente y actuador en el submittal del proyecto.","La válvula se recibe como parte de un conjunto diseñado, no como accesorio genérico."], faqs:[{q:"¿Qué reemplaza la Serie 386?",a:"El conjunto ADS de cilindro y válvula publicado por Kidde."},{q:"¿Funciona con cualquier agente?",a:"Sólo con los agentes y plataforma compatibles definidos por Kidde."},{q:"¿Cómo se dimensiona?",a:"Mediante el cálculo del sistema de supresión."}], fuentes:[{titulo:"Kidde — plataforma ADS",url:"https://kiddefenwal.com/solutions/engineered-fire-suppression/clean-agent-systems-land/ads-delivery-platform-for-fluoro-k-or-hfc-227ea/"}],
+  },
+  "kidde-co2-alta-presion-sistema": {
+    description:"Sistema Kidde de CO₂ de alta presión para inundación total, aplicación local o línea de manguera, diseñado para riesgos industriales específicos.",norm:"NFPA 12",mpn:"HP CO₂ Industrial",
+    specs:{norma:"NFPA 12",tipo_sis:"CO₂ de alta presión",listado:"UL Listed; FM Approved; USCG Approved",extra:"Inundación total, aplicación local o línea de manguera",ideal:"Riesgos industriales"}, seleccion:["El HP CO₂ de Kidde se configura para inundación total, aplicación local o línea de manguera. El fabricante lo orienta a líquidos y vapores inflamables, incendios profundos y operaciones industriales como prensas, generadores, tanques o freidoras. El CO₂ reduce oxígeno y absorbe calor durante la descarga.","La diferencia frente a un agente limpio es el riesgo a las personas: Kidde señala que el CO₂ se recomienda normalmente para áreas no ocupadas por peligro de asfixia. Selecciónelo sólo con análisis de riesgo, detección, alarmas, bloqueo y procedimientos de evacuación adecuados."], idealPara:["Prensas de impresión", "Generadores y turbinas", "Tanques de inmersión"], aConsiderar:["El uso en áreas ocupadas exige salvaguardas y procedimientos específicos.","Elija inundación total o aplicación local según la geometría del riesgo."], faqs:[{q:"¿Qué configuraciones ofrece?",a:"Inundación total, aplicación local y línea de manguera."},{q:"¿Deja residuo?",a:"Es un gas no conductor que se disipa tras descargar."},{q:"¿Es apto para áreas ocupadas?",a:"Kidde advierte riesgo de asfixia; requiere evaluación y salvaguardas."}], fuentes:[{titulo:"Kidde — HP CO₂ Industrial",url:"https://kiddefenwal.com/solutions/engineered-fire-suppression/clean-agent-systems-co2-systems/high-pressure-co2-industrial/"}],
+  },
+  "gabinete-ci-tipo-i-30m": { description:"Gabinete de conexión de manguera para una red interior, definido por el diseño del sistema conforme a NFPA 14 y NOM-002-STPS-2010.",norm:"NFPA 14 · NOM-002-STPS-2010",specs:{norma:"NFPA 14 · NOM-002-STPS-2010",tipo_sis:"Gabinete de manguera",ideal:"Red diseñada por proyecto",extra:"Componentes y dimensiones según el proyecto NFPA 14"},seleccion:["La compra se define mediante el sistema de mangueras diseñado conforme a NFPA 14 y el programa de seguridad aplicable.","Exija gabinete, válvula, manguera, boquilla, longitud, conexión y montaje en la orden. Sin ese expediente no debe suponerse qué incluye ni qué listado posee cada componente."],idealPara:["Redes interiores especificadas","Proyectos con conexión de manguera","Edificios sujetos a NOM-002"],aConsiderar:["Exija plano, diámetro, longitud y accesorios antes de cotizar.","No atribuya UL/FM sin fabricante y certificado del componente."],faqs:[{q:"¿Incluye extintor?",a:"La ficha no lo afirma; debe quedar escrito en la orden."},{q:"¿Qué norma referencia?",a:"NFPA 14 y NOM-002-STPS-2010, según el proyecto."},{q:"¿Qué se especifica?",a:"Gabinete, manguera, válvula, boquilla, conexiones y montaje."}],fuentes:[{titulo:"NFPA 14",url:"https://www.nfpa.org/codes-and-standards/nfpa-14-standard-development/14"},{titulo:"NOM-002-STPS-2010",url:"https://www.dof.gob.mx/normasOficiales/3924/stps/stps.htm"}]},
+  "gabinete-ci-tipo-ii-20m": { description:"Gabinete de conexión de manguera para red interior, a configurar por proyecto conforme a NFPA 14 y NOM-002-STPS-2010.",norm:"NFPA 14 · NOM-002-STPS-2010",specs:{norma:"NFPA 14 · NOM-002-STPS-2010",tipo_sis:"Gabinete de conexión de manguera",ideal:"Instalación interior diseñada",extra:"Medidas y componentes según el proyecto NFPA 14"},seleccion:["El gabinete tipo II resuelve una conexión de manguera que debe documentarse mediante proyecto.","La distinción con Tipo I debe describirse en planos y especificaciones, no deducirse de las cifras heredadas. Pida gabinete, manguera, válvula, boquilla, carrete cuando aplique y accesorios como un conjunto."],idealPara:["Pasillos con red diseñada","Edificios con cálculo aprobado","Protección hidráulica interior"],aConsiderar:["No acepte longitud o diámetro presuntos.","Compruebe que el montaje conserve evacuación."],faqs:[{q:"¿Tiene manguera de 20 m?",a:"No se afirma sin especificación del fabricante o proyecto."},{q:"¿Es encastrado?",a:"El montaje debe definirse en la orden."},{q:"¿Qué debe cotizarse?",a:"Gabinete, válvula, manguera, boquilla, conexiones y montaje."}],fuentes:[{titulo:"NFPA 14",url:"https://www.nfpa.org/codes-and-standards/nfpa-14-standard-development/14"},{titulo:"NOM-002-STPS-2010",url:"https://www.dof.gob.mx/normasOficiales/3924/stps/stps.htm"}]},
+  "bomba-jockey-ci-5hp": { description:"Bomba jockey para mantener presión en red contra incendio; su curva, potencia y controlador se determinan por ingeniería y fabricante seleccionado.",norm:"NFPA 20",specs:{norma:"NFPA 20",tipo_sis:"Bomba de mantenimiento de presión",ideal:"Red con bomba principal diseñada",extra:"Curva y controlador por especificar"},seleccion:["No existe fabricante que respalde la potencia, cobertura o listado heredados. La jockey compensa pequeñas pérdidas de presión sin demandar la bomba principal, dentro de una instalación diseñada conforme a NFPA 20.","El comprador debe definir caudal, presión de arranque y paro, curva, motor, alimentación, controlador y listado. No se selecciona por caballos de fuerza aislados."],idealPara:["Mantenimiento de presión","Cuartos de bombas diseñados","Sistemas con cálculo hidráulico"],aConsiderar:["Solicite curva certificada y controlador compatible.","Confirme requisitos UL/FM del proyecto."],faqs:[{q:"¿Es de 5 HP?",a:"La potencia debe especificarse con fabricante y curva."},{q:"¿Sustituye a la principal?",a:"No; mantiene presión de la red."},{q:"¿Qué debe cotizarse?",a:"Curva, motor, controlador, alimentación y conexiones."}],fuentes:[{titulo:"NFPA 20",url:"https://www.nfpa.org/codes-and-standards/nfpa-20-standard-development/20"}]},
+  "bomba-principal-electrica-20hp": { description:"Bomba principal eléctrica para red contra incendio, seleccionada por curva hidráulica, motor, controlador y requisitos de NFPA 20.",norm:"NFPA 20",specs:{norma:"NFPA 20",tipo_sis:"Bomba principal eléctrica",ideal:"Red calculada",extra:"Caudal, presión y listado por especificar"},seleccion:["No existe fabricante que respalde potencia, impulsor, arrancador o listado heredados. Esta ficha describe la función de bomba principal eléctrica conforme a NFPA 20; el nombre no acredita capacidad ni certificación.","Frente a la jockey, la bomba principal atiende demanda de incendio. La orden debe indicar caudal, presión, curva, motor, tensión, controlador, base y listado requerido."],idealPara:["Redes con demanda calculada","Cuartos de bombas eléctricos","Sistemas NFPA 20"],aConsiderar:["Exija curva y controlador antes de adjudicar.","No compre por 20 HP sin punto de operación."],faqs:[{q:"¿Es de 20 HP?",a:"La potencia heredada no está documentada."},{q:"¿Qué listado se pide?",a:"El comprador debe especificar UL/FM cuando aplique."},{q:"¿Qué datos faltan?",a:"Caudal, presión, curva, motor, tensión y controlador."}],fuentes:[{titulo:"NFPA 20",url:"https://www.nfpa.org/codes-and-standards/nfpa-20-standard-development/20"}]},
+  "bomba-diesel-emergencia-ci": { description:"Bomba principal diésel para red contra incendio cuando el diseño requiera fuente motriz independiente, configurada conforme a NFPA 20.",norm:"NFPA 20",specs:{norma:"NFPA 20",tipo_sis:"Bomba principal con motor diésel",ideal:"Fuente motriz independiente",extra:"Motor, tanque, controlador y curva según el proyecto NFPA 20"},seleccion:["Una bomba diésel se selecciona como conjunto de bomba, motor, combustible, baterías, controlador y ventilación mediante la demanda hidráulica.","La diferencia con una eléctrica es la fuente motriz, no una capacidad universal de respaldo. Especifique caudal, presión, curva, tanque, baterías, escape, ventilación y listados requeridos."],idealPara:["Cuartos de bombas diésel","Proyectos con fuente independiente","Redes NFPA 20"],aConsiderar:["Confirme ventilación, combustible, escape y mantenimiento.","Exija conjunto UL/FM si el proyecto lo requiere."],faqs:[{q:"¿Es de 40 HP?",a:"No se afirma sin modelo de fabricante."},{q:"¿Cuánta autonomía tiene?",a:"Tanque y autonomía se definen para el conjunto."},{q:"¿Qué se compra?",a:"Bomba, motor, tanque, baterías, controlador y accesorios."}],fuentes:[{titulo:"NFPA 20",url:"https://www.nfpa.org/codes-and-standards/nfpa-20-standard-development/20"}]},
+  "valvula-osy-nfpa-20": { description:"Válvula de control OS&Y para red contra incendio; tamaño, listado, supervisión y accesorios dependen del fabricante y diseño aprobado.",norm:"NFPA 13 · NFPA 20",specs:{norma:"NFPA 13 · NFPA 20",tipo_sis:"Válvula de control OS&Y",ideal:"Control y sectorización",extra:"Tamaño, listado y supervisión por especificar"},seleccion:["No hay fabricante que sostenga tamaños, material, recubrimiento o switch incluidos. La OS&Y se conserva como válvula de control con vástago exterior visible; el proyecto debe definir diámetro, extremos, presión y supervisión.","Su indicación externa no sustituye una supervisión aprobada cuando el proyecto la requiere. Compre válvula e interruptor compatibles como conjunto documentado, sin afirmar UL/FM antes de revisar certificado."],idealPara:["Sectorización hidráulica","Válvulas de control visibles","Redes supervisadas"],aConsiderar:["Especifique diámetro, presión, extremos, listado y tamper.","No afirme UL/FM sin certificado del fabricante."],faqs:[{q:"¿Incluye tamper?",a:"Debe indicarse en la orden con modelo compatible."},{q:"¿Qué tamaños ofrece?",a:"No se publica rango sin fabricante confirmado."},{q:"¿Para qué sirve?",a:"Controla una red con indicación exterior del vástago."}],fuentes:[{titulo:"NFPA 13",url:"https://www.nfpa.org/codes-and-standards/nfpa-13-standard-development/13"},{titulo:"NFPA 20",url:"https://www.nfpa.org/codes-and-standards/nfpa-20-standard-development/20"}]},
+};
+
+const TITULOS_SISTEMAS_CI_CORREGIDOS: Record<string, string> = {
+  "gabinete-ci-tipo-i-30m": "Gabinete Contra Incendio Tipo I — Red de Mangueras",
+  "gabinete-ci-tipo-ii-20m": "Gabinete Contra Incendio Tipo II — Red de Mangueras",
+  "bomba-jockey-ci-5hp": "Bomba Jockey de Presurización — Red Contra Incendio",
+  "bomba-principal-electrica-20hp": "Bomba Principal Eléctrica — Sistema Contra Incendio",
+  "bomba-diesel-emergencia-ci": "Bomba Diésel de Emergencia — Red Contra Incendio",
+  "valvula-osy-nfpa-20": "Válvula OS&Y — Control de Red Contra Incendio",
+};
+
 export const featuredProducts: Product[] = [
 
   /* ─── Globe Manufacturing — 5 modelos estructurales ──────────── */
@@ -2375,7 +2474,7 @@ export const featuredProducts: Product[] = [
   {
     slug: "tyco-tyb-pendant",
     title: "Rociador Tyco TY-B Colgante (Pendant) Respuesta Estándar",
-    description: "El rociador estándar más distribuido de Tyco. Colgante de respuesta estándar (RTI 80–350), certificado NFPA 13, UL Listed y FM Approved. Apto para riesgo ligero y ordinario en oficinas, hoteles, hospitales y bodegas.",
+    description: "Rociador Tyco Serie TY-B colgante, de cobertura estándar y respuesta estándar, disponible en factores K hasta 8.0 para ocupaciones de riesgo ligero, ordinario y extra.",
     category: "Sistemas CI",
     brand: "Tyco Viking",
     norm: "NFPA 13",
@@ -2384,22 +2483,37 @@ export const featuredProducts: Product[] = [
     tier: "Internacional · UL Listed · FM Approved",
     specs: {
       norma: "NFPA 13",
-      tipo_sis: "Rociador colgante (pendant)",
-      cobertura: "9–12 m² según riesgo",
-      listado: "UL Listed · FM Approved",
-      ideal: "Oficinas · hoteles · bodegas",
+      tipo_sis: "Rociador TY-B colgante de cobertura estándar",
+      factor_k: "Hasta K 8.0",
+      listado: "UL/cUL Listed; FM Approved, según configuración",
+      presion: "Consultar la tabla de aprobación de la configuración",
+      ideal: "Riesgo ligero, ordinario o extra según el diseño",
     },
     features: [
-      "Respuesta estándar RTI 80–350 m½·s½",
-      "Cuerpo de bronce ½\" y ¾\" NPT",
-      "Temperatura de activación 57–343 °C según modelo",
-      "Deflector de distribución uniforme orientado hacia abajo",
+      "Orientación colgante para descarga bajo el deflector",
+      "Familia disponible con varios factores K",
+      "Respuesta estándar para la aplicación listada",
+    ],
+    seleccion: [
+      "El TY-B colgante corresponde a la orientación pendent de la serie de cobertura estándar Tyco. La familia admite factores K hasta 8.0 y se aplica, de acuerdo con la página del fabricante, en ocupaciones comerciales de riesgo ligero, ordinario o extra. Esa amplitud no sustituye el cálculo: el factor K, la temperatura nominal, la conexión y el acabado deben coincidir con la tabla de aprobación de la pieza que se ordene.",
+      "Frente al TY315 vertical del mismo catálogo, esta ficha dirige el agua hacia abajo desde la tubería situada sobre el plano protegido; por eso la diferencia útil para compra es la orientación, no una supuesta capacidad hidráulica adicional. Selecciónelo cuando el proyecto requiera rociador colgante y el plano hidráulico ya defina espaciamiento, densidad y presión. La familia también contempla versiones empotradas, pero una roseta no vuelve compatible cualquier combinación de rociador y plafón.",
+    ],
+    idealPara: ["Oficinas con rociadores bajo plafón", "Hoteles definidos como riesgo ligero", "Áreas comerciales calculadas con NFPA 13"],
+    aConsiderar: ["Pida el SIN, factor K, temperatura, rosca y acabado exactos; la serie reúne varias combinaciones.", "Confirme en la hoja vigente que la orientación colgante y la instalación prevista conservan el listado aplicable."],
+    faqs: [
+      { q: "¿El TY-B colgante es de respuesta rápida?", a: "No. La página de Tyco identifica a la Serie TY-B como respuesta estándar; para respuesta rápida la familia separada es TY-FRB." },
+      { q: "¿Qué factor K debo pedir?", a: "La familia llega hasta K 8.0, pero el factor se selecciona con la memoria hidráulica y la aprobación del modelo exacto." },
+      { q: "¿Puede montarse con roseta?", a: "Sólo cuando la combinación de rociador y roseta figure en la documentación técnica y el diseño del plafón la admita." },
+    ],
+    fuentes: [
+      { titulo: "Tyco — Serie TY-B", url: "https://www.tyco-fire.com/products-and-solutions/sprinklers-nozzles-and-accessories/standard-coverage/series_tyb_sprinklers_fsp/series-ty-b-sprinklers" },
+      { titulo: "Tyco TFP152 — TY-B K 5.6", url: "https://docs.johnsoncontrols.com/tycofire/v/u/Tyco/en-US/Series-TY-B-5.6-K-factor-Upright-Pendent-and-Recessed-Pendent-Sprinklers-Standard-Response-Standard-Coverage/09-2022" },
     ],
   },
   {
     slug: "tyco-tyb-upright",
     title: "Rociador Tyco TY-B Vertical (Upright) Respuesta Estándar",
-    description: "Versión vertical (upright) del rociador TY-B de Tyco. Diseñado para tuberías expuestas donde se requiere orientación hacia arriba. NFPA 13, UL Listed, para riesgo ordinario en naves industriales y bodegas.",
+    description: "Rociador Tyco Serie TY-B vertical, de cobertura y respuesta estándar; la familia se ofrece con factores K hasta 8.0 para riesgos definidos por el diseño de rociadores.",
     category: "Sistemas CI",
     brand: "Tyco Viking",
     norm: "NFPA 13",
@@ -2409,45 +2523,75 @@ export const featuredProducts: Product[] = [
     specs: {
       norma: "NFPA 13",
       tipo_sis: "Rociador vertical (upright)",
-      cobertura: "9–12 m² según riesgo",
-      listado: "UL Listed · FM Approved",
-      ideal: "Naves industriales · tuberías expuestas",
+      factor_k: "Hasta K 8.0",
+      listado: "UL/cUL Listed; FM Approved, según configuración",
+      presion: "Consultar tabla de aprobación del SIN",
+      ideal: "Ocupaciones de riesgo ligero, ordinario o extra",
     },
     features: [
-      "Orientación vertical — deflector parabólico hacia arriba",
-      "Compatible con tuberías de acero negro y CPVC",
-      "Cuerpo ½\" y ¾\" NPT en bronce o latón",
-      "Respuesta estándar RTI 80–350 m½·s½",
+      "Configuración upright de la Serie TY-B",
+      "Cobertura estándar y respuesta estándar",
+      "Factores K disponibles hasta 8.0",
+    ],
+    seleccion: [
+      "La versión vertical de la Serie TY-B se distingue por instalarse upright: el deflector queda orientado hacia arriba respecto de la conexión. Tyco clasifica a esta familia como rociador de cobertura estándar y respuesta estándar, para ocupaciones de riesgo ligero, ordinario y extra. El fabricante ofrece distintos factores K y orientaciones dentro de la misma serie; por tanto, el nombre TY-B no basta para cerrar una orden de compra.",
+      "A diferencia del TY-B colgante de esta selección, el valor operativo del vertical está en resolver la orientación requerida por la ubicación de la tubería y la descarga definida en planos. No es una sustitución automática del colgante ni del TY3131 de respuesta rápida: este modelo conserva respuesta estándar. Pida la identificación SIN, temperatura de operación, factor K, rosca y acabado, y confróntelos con la hoja técnica y la memoria hidráulica antes de liberar material.",
+    ],
+    idealPara: ["Tubería elevada que requiera montaje upright", "Diseños de cobertura estándar", "Riesgos clasificados en el cálculo hidráulico"],
+    aConsiderar: ["No cambie una orientación colgante por vertical sólo por disponibilidad; revise el plano aprobado.", "El listado depende de la combinación concreta de factor K, temperatura, acabado y aplicación."],
+    faqs: [
+      { q: "¿Qué diferencia al TY-B vertical del colgante?", a: "La orientación de instalación y del deflector; ambos pertenecen a la misma familia de respuesta estándar." },
+      { q: "¿El vertical sirve para cualquier nave?", a: "La aplicabilidad depende de la clasificación de riesgo, el diseño hidráulico y el listado de la configuración pedida." },
+      { q: "¿Se pide sólo como TY-B?", a: "No. La orden debe identificar el SIN y los parámetros que la hoja técnica distingue." },
+    ],
+    fuentes: [
+      { titulo: "Tyco — Serie TY-B", url: "https://www.tyco-fire.com/products-and-solutions/sprinklers-nozzles-and-accessories/standard-coverage/series_tyb_sprinklers_fsp/series-ty-b-sprinklers" },
+      { titulo: "Tyco TFP152 — TY-B K 5.6", url: "https://docs.johnsoncontrols.com/tycofire/v/u/Tyco/en-US/Series-TY-B-5.6-K-factor-Upright-Pendent-and-Recessed-Pendent-Sprinklers-Standard-Response-Standard-Coverage/09-2022" },
     ],
   },
   {
     slug: "tyco-ty315-esfr",
-    title: "Rociador ESFR Tyco TY315 K-25 — Almacenes de Alta Estiba",
-    description: "El rociador ESFR (Early Suppression Fast Response) de Tyco para almacenes de alta estiba. Factor K-25, activación rápida, caudal de supresión temprana sin rociadores en rack. Conforme NFPA 13 para almacenamiento hasta 13.7 m de altura.",
+    title: "Rociador Tyco TY315 Vertical K-5.6 de Respuesta Estándar",
+    description: "Rociador Tyco TY315 de la Serie TY-B: vertical, K-5.6, cobertura estándar y respuesta estándar para ocupaciones comerciales definidas por su diseño de protección.",
     category: "Sistemas CI",
     brand: "Tyco Viking",
     norm: "NFPA 13",
     image: "/images/categorias/sistemas-ci.avif",
-    href: "/productos/sistemas-ci/tyco-ty315-esfr",
+    href: "/productos/sistemas-ci/tyco-ty315-vertical",
     tier: "Internacional · UL Listed · FM Approved",
     specs: {
       norma: "NFPA 13",
-      tipo_sis: "Rociador ESFR (supresión temprana)",
-      cobertura: "Almacenes hasta 13.7 m altura",
-      listado: "UL Listed · FM Approved",
-      ideal: "Almacenes alta estiba · centros de distribución",
+      tipo_sis: "TY315 vertical, cobertura estándar",
+      factor_k: "K 5.6 (80.6 métrico)",
+      listado: "Consultar TFP152 para la configuración",
+      presion: "Consultar tabla de aprobación del SIN TY315",
+      ideal: "Riesgos definidos por NFPA 13 y la hoja técnica",
     },
     features: [
-      "Factor K-25 — alto caudal de descarga sin rociadores en rack",
-      "Respuesta rápida (RTI ≤ 50) para supresión temprana",
-      "Elimina rociadores intermedios en estantes",
-      "Para almacenamiento clase I-IV y commodities especiales",
+      "SIN TY315: orientación vertical",
+      "Factor K 5.6 (80.6 métrico)",
+      "Respuesta estándar y cobertura estándar",
+    ],
+    seleccion: [
+      "La referencia TY315 no es un ESFR K-25: Tyco la identifica como rociador TY-B vertical de K 5.6, equivalente a 80.6 en unidades métricas, con cobertura y respuesta estándar. Esta corrección importa en una licitación de almacenamiento: un rociador ESFR se selecciona por criterios de supresión y almacenamiento distintos, mientras que el TY315 debe evaluarse como spray estándar conforme a su documentación vigente.",
+      "Su diferencia frente al TY-B colgante de esta página es la orientación vertical; frente al TY3131, es la respuesta estándar. Eso permite al comprador evitar comparar únicamente el número de parte o el acabado. Use el TY315 cuando los planos exijan un upright K-5.6 dentro de la aplicación aprobada. Antes de surtirlo, confirme temperatura nominal, presión de trabajo, acabado, rosca y toda condición de listado en TFP152; ninguno de esos parámetros debe inferirse del nombre comercial.",
+    ],
+    idealPara: ["Diseños que especifiquen SIN TY315", "Sistemas de cobertura estándar", "Tubería con orientación vertical aprobada"],
+    aConsiderar: ["No lo especifique como ESFR ni para sustituir un rociador K-25 de almacenamiento.", "La clasificación del riesgo y el arreglo de rociadores se resuelven con NFPA 13 y el cálculo del proyecto."],
+    faqs: [
+      { q: "¿El TY315 es un rociador ESFR?", a: "No. La hoja TFP152 lo identifica como TY-B vertical K-5.6, de respuesta y cobertura estándar." },
+      { q: "¿Por qué se corrigió el título?", a: "Porque K-25 y supresión temprana no corresponden a la identificación publicada TY315." },
+      { q: "¿Cuándo conviene el TY315?", a: "Cuando el diseño pida un rociador vertical K-5.6 con las condiciones de aprobación aplicables." },
+    ],
+    fuentes: [
+      { titulo: "Tyco TFP152 — identificación TY315", url: "https://docs.johnsoncontrols.com/tycofire/v/u/Tyco/en-US/Series-TY-B-5.6-K-factor-Upright-Pendent-and-Recessed-Pendent-Sprinklers-Standard-Response-Standard-Coverage/09-2022" },
+      { titulo: "Tyco — Serie TY-B", url: "https://www.tyco-fire.com/products-and-solutions/sprinklers-nozzles-and-accessories/standard-coverage/series_tyb_sprinklers_fsp/series-ty-b-sprinklers" },
     ],
   },
   {
     slug: "viking-vk100-estandar",
-    title: "Rociador Viking VK100 Estándar Colgante NFPA 13",
-    description: "Rociador estándar colgante VK100 de Viking, certificado NFPA 13 y UL Listed. Compatible con sistemas húmedos y secos. Amplia disponibilidad de temperaturas y acabados para integración arquitectónica.",
+    title: "Rociador Viking VK100 Vertical K-5.6 de Respuesta Estándar",
+    description: "Rociador Viking VK100 Micromatic vertical, K-5.6, de respuesta estándar y bulbo de vidrio para ocupaciones de riesgo ligero, ordinario o extra según sus aprobaciones.",
     category: "Sistemas CI",
     brand: "Tyco Viking",
     norm: "NFPA 13",
@@ -2456,22 +2600,39 @@ export const featuredProducts: Product[] = [
     tier: "Internacional · UL Listed",
     specs: {
       norma: "NFPA 13",
-      tipo_sis: "Rociador estándar VK100",
-      cobertura: "9–12 m² según riesgo",
-      listado: "UL Listed",
-      ideal: "Oficinas · comercios · espacios arquitectónicos",
+      tipo_sis: "VK100 Micromatic vertical",
+      factor_k: "K 5.6 (81 métrico)",
+      presion: "175 psi (12 bar) máxima",
+      listado: "Consultar certificados UL y FM de Viking",
+      ideal: "Riesgo ligero, ordinario o extra según aprobación",
     },
     features: [
-      "Acabados cromado, blanco y bronce para integración arquitectónica",
-      "Compatible con tubería húmeda y seca (dry pipe)",
-      "8 temperaturas de fusión disponibles (57–260 °C)",
-      "Roscas NPT ½\" y ¾\" — amplia compatibilidad de instalación",
+      "SIN VK100 de orientación vertical",
+      "K 5.6 (81 métrico)",
+      "175 psi (12 bar) de presión máxima",
+      "Bulbo de vidrio y respuesta estándar",
+    ],
+    mpn: "12986, 12993, 10138 o 10193, según configuración",
+    seleccion: [
+      "El VK100 Micromatic es el rociador vertical de respuesta estándar de Viking con factor K 5.6, o 81 en la convención métrica. La ficha oficial publica una presión máxima de trabajo de 175 psi, equivalente a 12 bar, conexión de 1/2 pulgada NPT o 15 mm BSP y bulbo de vidrio. Viking lo identifica para ocupaciones de riesgo ligero, ordinario y extra dentro de las condiciones de sus aprobaciones.",
+      "Esta referencia no es un colgante: Viking reserva VK102 para la orientación pendent. Por ello el VK100 resuelve la compra cuando el proyecto requiere un upright K-5.6 y no simplemente un rociador de aspecto similar. Sus números base 12986, 12993, 10138 y 10193 muestran por qué la orden debe fijar la variante, no limitarse a escribir “VK100”. Verifique además el acabado, la temperatura nominal y el certificado aplicable antes de instalarlo en una atmósfera corrosiva o en una ocupación con requisitos particulares.",
+    ],
+    idealPara: ["Proyectos que indiquen VK100 vertical", "Riesgos aprobados con K-5.6", "Sistemas de rociadores con conexión 1/2 pulgada NPT"],
+    aConsiderar: ["No use la ficha de VK100 para pedir un VK102 colgante; son orientaciones y números de parte diferentes.", "Las aprobaciones de resistencia a corrosión dependen del recubrimiento elegido y deben verificarse en el certificado."],
+    faqs: [
+      { q: "¿Cuál es el factor K del VK100?", a: "El fabricante publica K 5.6, equivalente a 81 en unidades métricas." },
+      { q: "¿El VK100 puede colocarse colgante?", a: "No. VK100 es vertical; la orientación colgante de esta familia corresponde al VK102." },
+      { q: "¿Qué presión máxima declara Viking?", a: "175 psi, equivalentes a 12 bar, conforme a la ficha técnica del modelo." },
+    ],
+    fuentes: [
+      { titulo: "Viking — VK100 Micromatic", url: "https://www.vikinggroupinc.com/products/fire-sprinklers/standard-coverage-sr/upright-conventional/vk100" },
+      { titulo: "Viking — tabla técnica VK100", url: "https://www.vikinggroupinc.com/databook/sprinklers/standard/sr/stcov/052104.pdf" },
     ],
   },
   {
     slug: "tyco-ty3131-respuesta-rapida",
-    title: "Rociador Tyco TY3131 Respuesta Rápida Colgante NFPA 13",
-    description: "Rociador colgante de respuesta rápida (QR, RTI ≤ 50 m½·s½) Tyco TY3131. Certificado NFPA 13, UL Listed y FM Approved. Para hospitales, asilos, hoteles y edificios donde el tiempo de activación es crítico para la seguridad de ocupantes.",
+    title: "Rociador Tyco TY3131 Vertical K-5.6 de Respuesta Rápida",
+    description: "Rociador Tyco TY3131 de la Serie TY-FRB: vertical, K-5.6, cobertura estándar y respuesta rápida para riesgos ligero y ordinario dentro de la documentación del fabricante.",
     category: "Sistemas CI",
     brand: "Tyco Viking",
     norm: "NFPA 13",
@@ -2480,27 +2641,42 @@ export const featuredProducts: Product[] = [
     tier: "Internacional · UL Listed · FM Approved",
     specs: {
       norma: "NFPA 13",
-      tipo_sis: "Rociador QR colgante (respuesta rápida)",
-      cobertura: "9–16.8 m² según riesgo",
-      listado: "UL Listed · FM Approved",
-      ideal: "Hospitales · hoteles · asilos · edificios residenciales",
+      tipo_sis: "TY-FRB TY3131 vertical, respuesta rápida",
+      factor_k: "K 5.6 (80.6 métrico)",
+      listado: "Consultar TFP171 y el listado de la configuración",
+      presion: "Consultar tabla de aprobación del SIN",
+      ideal: "Riesgos ligero y ordinario definidos por el proyecto",
     },
     features: [
-      "Respuesta rápida RTI ≤ 50 m½·s½ — activa antes que el estándar ante el mismo estímulo térmico",
-      "Bulbo de vidrio 3 mm en temperaturas 57 °C, 68 °C y 79 °C para selección precisa por zona",
-      "Reduce el daño a ocupantes en dormitorios y habitaciones al acortar el tiempo de activación",
-      "Compatible con sistemas húmedos — el más común en edificios residenciales y comerciales en México",
+      "SIN TY3131 con orientación vertical",
+      "Serie TY-FRB de respuesta rápida",
+      "K 5.6 (80.6 métrico)",
+    ],
+    seleccion: [
+      "Tyco identifica el TY3131 como el SIN vertical de K 5.6 de su Serie TY-FRB; el equivalente colgante es TY3231. La familia TY-FRB se diferencia de TY-B porque es de respuesta rápida y Tyco la sitúa en aplicaciones de riesgo ligero y ordinario. Esa respuesta no convierte por sí misma al equipo en rociador residencial, ESFR o de cobertura extendida: la aprobación concreta define la aplicación admisible.",
+      "La orientación publicada corrige la descripción heredada que lo llamaba colgante. Para el comprador, esa distinción evita recibir un modelo que no corresponde a la posición del ramal en planos. Elija TY3131 cuando se requiera un upright K-5.6 de respuesta rápida; si el diseño exige pendent, revise TY3231 dentro de la misma familia. Solicite la combinación completa de temperatura, acabado, rosca, presión y listado para la aplicación, pues cada una condiciona la pieza que puede instalarse.",
+    ],
+    idealPara: ["Planos que especifiquen SIN TY3131", "Riesgo ligero con respuesta rápida aprobada", "Riesgo ordinario evaluado con TY-FRB"],
+    aConsiderar: ["No lo compre como rociador colgante; su identificación Tyco corresponde a orientación vertical.", "Respuesta rápida no elimina la obligación de calcular espaciamiento, demanda y suministro de agua."],
+    faqs: [
+      { q: "¿TY3131 y TY3231 son iguales?", a: "Comparten familia y K-5.6, pero TY3131 es vertical y TY3231 es colgante." },
+      { q: "¿Qué aporta TY-FRB frente a TY-B?", a: "TY-FRB es la serie de respuesta rápida, mientras que TY-B es de respuesta estándar." },
+      { q: "¿El TY3131 es K-25?", a: "No. El fabricante lo identifica como K-5.6, o K80.6 en la convención métrica." },
+    ],
+    fuentes: [
+      { titulo: "Tyco — Serie TY-FRB", url: "https://www.tyco-fire.com/products-and-solutions/sprinklers-nozzles-and-accessories/standard-coverage/series_tyfrb_sprinklers_fsp/series-ty-frb-sprinklers" },
+      { titulo: "Tyco — Serie TY-FRB", url: "https://www.tyco-fire.com/products-and-solutions/sprinklers-nozzles-and-accessories/standard-coverage/series_tyfrb_sprinklers_fsp/series-ty-frb-sprinklers" },
     ],
   },
   {
     slug: "tyco-tyjv-pendent-concealed",
-    title: "Rociador Tyco TY-JV Colgante Oculto (Concealed) NFPA 13",
-    description: "Rociador Tyco TY-JV con cubierta decorativa desmontable para instalaciones arquitectónicas de alto nivel: centros comerciales premium, hoteles boutique, oficinas corporativas y museos. Respuesta rápida QR, NFPA 13, UL Listed.",
+    title: "Rociador Tyco RFII TY3531 Oculto Colgante K-5.6",
+    description: "Rociador Tyco RFII TY3531 oculto colgante, K-5.6, de respuesta rápida y cobertura estándar para ocupaciones de riesgo ligero u ordinario.",
     category: "Sistemas CI",
     brand: "Tyco Viking",
     norm: "NFPA 13",
     image: "/images/categorias/sistemas-ci.avif",
-    href: "/productos/sistemas-ci/tyco-tyjv-pendent-concealed",
+    href: "/productos/sistemas-ci/tyco-rfii-ty3531-oculto",
     highlight: true,
     tier: "Internacional · UL Listed · FM Approved",
     specs: {
@@ -2569,8 +2745,8 @@ export const featuredProducts: Product[] = [
   },
   {
     slug: "honeywell-detector-humo",
-    title: "Detector de Humo Fotoeléctrico Honeywell GSME-A Direccionable",
-    description: "Detector fotoeléctrico direccionable Honeywell GSME-A para lazos SLC Notifier. Compensación electrónica de suciedad, prealerta y sensibilidad programable desde el panel.",
+    title: "Detector Fotoeléctrico Direccionable Notifier FSP-951",
+    description: "Detector fotoeléctrico direccionable Notifier FSP-951 para paneles compatibles FlashScan.",
     category: "Sistemas CI",
     brand: "Honeywell Notifier",
     norm: "NFPA 72",
@@ -2593,13 +2769,13 @@ export const featuredProducts: Product[] = [
   },
   {
     slug: "system-sensor-spcrl",
-    title: "Sirena-Estrobo System Sensor SPCRL — Notificación NFPA 72",
+    title: "Sirena-Estrobo de Techo System Sensor PC2RL",
     description: "Dispositivo de notificación combinado sirena y estrobo System Sensor para sistemas Notifier. NFPA 72 compliant. Candela seleccionable 15/30/75/110 cd. Para pasillos, oficinas y áreas de alto ruido.",
     category: "Sistemas CI",
     brand: "Honeywell Notifier",
     norm: "NFPA 72",
     image: "/images/categorias/sistemas-ci.avif",
-    href: "/productos/sistemas-ci/system-sensor-spcrl",
+    href: "/productos/sistemas-ci/system-sensor-pc2rl-sirena-estrobo",
     tier: "Internacional · UL Listed",
     specs: {
       norma: "NFPA 72",
@@ -2620,13 +2796,13 @@ export const featuredProducts: Product[] = [
 
   {
     slug: "notifier-sd851-detector-calor",
-    title: "Detector de Calor Fijo Notifier SD851 Direccionable 57 °C NFPA 72",
-    description: "Detector de calor de temperatura fija Notifier SD851, direccionable, para zonas donde el humo genera falsas alarmas: cocinas industriales, cuartos de maquinaria, áreas con vapor o polvo. Temperatura de activación 57 °C. Certificado UL Listed y NFPA 72.",
+    title: "Detector Térmico Direccionable Notifier FST-951R",
+    description: "Detector térmico direccionable Notifier FST-951R, con temperatura fija de 57 °C y detección de incremento de 8.3 °C por minuto.",
     category: "Sistemas CI",
     brand: "Honeywell Notifier",
     norm: "NFPA 72",
     image: "/images/categorias/sistemas-ci.avif",
-    href: "/productos/sistemas-ci/notifier-sd851-detector-calor",
+    href: "/productos/sistemas-ci/notifier-fst-951r-detector-termico",
     tier: "Internacional · UL Listed · NFPA 72",
     specs: {
       norma: "NFPA 72",
@@ -2694,7 +2870,7 @@ export const featuredProducts: Product[] = [
   },
   {
     slug: "kidde-novec-sistema",
-    title: "Sistema Fijo Novec 1230 Kidde Fenwal (FK-5-1-12) NFPA 2001",
+    title: "Sistema Kidde Fluoro-K FK-5-1-12",
     description: "Sistema fijo con Novec 1230 (FK-5-1-12) de Kidde Fenwal. GWP = 1, la menor huella ambiental de los agentes limpios. Concentración de diseño 5-6% v/v. Extinción en segundos sin residuo.",
     category: "Sistemas CI",
     brand: "Kidde Fenwal",
@@ -2717,38 +2893,14 @@ export const featuredProducts: Product[] = [
     ],
   },
   {
-    slug: "kidde-ecaro25-sistema",
-    title: "Sistema Fijo Ecaro-25 Kidde Fenwal (HFC-125) NFPA 2001",
-    description: "Sistema fijo HFC-125 (Ecaro-25) de Kidde Fenwal. Alternativa económica para transición desde Halón. Concentración de diseño 8.7% v/v. Sin residuo. UL Listed, NFPA 2001.",
-    category: "Sistemas CI",
-    brand: "Kidde Fenwal",
-    norm: "NFPA 2001",
-    image: "/images/categorias/sistemas-ci.avif",
-    href: "/productos/sistemas-ci/kidde-ecaro25-sistema",
-    tier: "Internacional · UL Listed",
-    specs: {
-      norma: "NFPA 2001",
-      tipo_sis: "Agente limpio HFC-125",
-      cobertura: "Concentración diseño 8.7% v/v",
-      listado: "UL Listed",
-      ideal: "Cuartos eléctricos · transición Halón",
-    },
-    features: [
-      "Menor costo inicial vs. FM-200 y Novec",
-      "Sin residuo — no daña equipos electrónicos",
-      "Compatible con cilindros de sistemas Halón existentes",
-      "Ideal para modernización de protección contra incendio",
-    ],
-  },
-  {
     slug: "kidde-autopulse-panel",
-    title: "Panel de Control AutoPulse Kidde Fenwal — Agente Limpio NFPA 72",
-    description: "Panel de control de descarga AutoPulse de Kidde Fenwal para sistemas de supresión con agente limpio. UL 864 y NFPA 72. Cross-zoning dual-knock, retardo programable y aborto manual.",
+    title: "Panel de Liberación Kidde ARIES-MLX",
+    description: "Panel Kidde ARIES-MLX para control coordinado de detección, alarmas y liberación de sistemas de agente limpio.",
     category: "Sistemas CI",
     brand: "Kidde Fenwal",
     norm: "NFPA 2001 · NFPA 72",
     image: "/images/categorias/sistemas-ci.avif",
-    href: "/productos/sistemas-ci/kidde-autopulse-panel",
+    href: "/productos/sistemas-ci/kidde-aries-mlx-panel",
     tier: "Internacional · UL 864 Listed",
     specs: {
       norma: "NFPA 2001 · NFPA 72",
@@ -2768,13 +2920,13 @@ export const featuredProducts: Product[] = [
 
   {
     slug: "kidde-fenwal-valvula-descarga-386",
-    title: "Válvula de Descarga de Alta Velocidad Kidde Fenwal Serie 386 NFPA 2001",
-    description: "Válvula de descarga de alta velocidad Kidde Fenwal Serie 386 para sistemas de supresión con agente limpio FM-200, Novec 1230 y ECARO-25. Apertura neumática en milisegundos para garantizar la concentración de diseño NFPA 2001 en el área protegida.",
+    title: "Conjunto Kidde ADS de Cilindro y Válvula",
+    description: "Conjunto Kidde ADS de cilindro y válvula para una plataforma de agente limpio impulsada por nitrógeno y dimensionada por proyecto.",
     category: "Sistemas CI",
     brand: "Kidde Fenwal",
     norm: "NFPA 2001",
     image: "/images/categorias/sistemas-ci.avif",
-    href: "/productos/sistemas-ci/kidde-fenwal-valvula-descarga-386",
+    href: "/productos/sistemas-ci/kidde-ads-cilindro-valvula",
     tier: "Internacional · UL Listed · FM Approved",
     specs: {
       norma: "NFPA 2001",
@@ -4611,8 +4763,14 @@ for (const producto of featuredProducts) {
     ?? enriquecimientoR9Lote2Rescate[producto.slug]
     ?? enriquecimientoR9Lote2Drones[producto.slug]
     ?? enriquecimientoR9Lote3Scba[producto.slug]
-    ?? enriquecimientoR9Lote3Cascos[producto.slug];
+    ?? enriquecimientoR9Lote3Cascos[producto.slug]
+    ?? SISTEMAS_CI_REVISADOS[producto.slug];
   if (ficha) Object.assign(producto, ficha);
+  const tituloCorregido = TITULOS_SISTEMAS_CI_CORREGIDOS[producto.slug];
+  if (tituloCorregido) producto.title = tituloCorregido;
+  if (producto.category === 'Sistemas CI' && producto.fuentes) {
+    producto.fuentes = producto.fuentes.filter((fuente) => !fuente.url.includes('dof.gob.mx'));
+  }
   const detalle = detalleSeleccionPorModelo[producto.slug];
   if (detalle && producto.seleccion) producto.seleccion.push(detalle);
   const complemento = complementoSeleccionR9Lote3[producto.slug];

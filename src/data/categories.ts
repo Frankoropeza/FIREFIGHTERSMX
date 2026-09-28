@@ -39,14 +39,14 @@ export const trajesBombero: Category = {
     icon: ``,
   label: 'Trajes para Bomberos',
   norm: 'NFPA 1970 · 1950',
-  description: 'Trajes estructurales, de proximidad y forestales certificados NFPA 1970 y 1950 en México: Globe, Lion y MSA. Tallas S–4XL con entrega en 32 estados.',
+  description: 'Trajes estructurales, de proximidad y forestales certificados NFPA 1970 y 1950 en México: Globe, Lion, Morning Pride, Fire-Dex y Sköld, con entrega en 32 estados.',
   intro: [
     'Trajes de combate estructural de 3 capas, trajes aluminizados de proximidad para ARFF y trajes forestales ligeros — todos certificados por laboratorio acreditado bajo NFPA 1970 o NFPA 1950, con número de serie verificable con fábrica.',
-    'Distribuimos Globe, Lion y MSA en tallas S–4XL con stock permanente en CDMX. Cada conjunto incluye ficha técnica para licitación, asesoría de tallaje y acceso al programa de inspección y mantenimiento NFPA 1850.',
+    'Distribuimos Globe (MSA), Lion, Morning Pride, Fire-Dex y la mexicana Sköld, con stock permanente en CDMX. Cada conjunto incluye ficha técnica para licitación, asesoría de tallaje y acceso al programa de inspección y mantenimiento NFPA 1850.',
   ],
   items: [
-    { name: 'Globe GX-7', detail: 'Estructural premium con Crosstech y PBI/Kevlar' },
-    { name: 'Lion TechGen', detail: 'Estructural NFPA 1970 de uso intensivo' },
+    { name: 'Globe G-XTREME 3.0', detail: 'Estructural con shell PBI MAX y barrera GORE-TEX CROSSTECH Innovate' },
+    { name: 'Lion V-Force', detail: 'Estructural con sistema de humedad IsoDri y mangas raglán' },
     { name: 'Trajes de proximidad', detail: 'Aluminizados para ARFF y exposición radiante' },
     { name: 'Trajes forestales NFPA 1950', detail: 'Ligeros y transpirables para incendio vegetal' },
   ],
@@ -56,13 +56,13 @@ export const trajesBombero: Category = {
     highlight: 'NFPA 1970 y NFPA 1950',
     paragraphs: [
       'El traje estructural es la última barrera entre el bombero y el fuego. Distribuimos conjuntos completos —chaquetón y pantalón— certificados por laboratorio acreditado bajo NFPA 1970 (la norma que desde 2024 absorbió a la NFPA 1971), con número de serie verificable con fábrica y ficha técnica lista para licitación o auditoría STPS.',
-      'Manejamos las líneas Globe, Lion y MSA en tallas S–4XL, con stock permanente de las configuraciones más demandadas y entrega en 24–48 horas en CDMX. Cada compra incluye asesoría de tallaje y el programa de inspección y mantenimiento conforme a NFPA 1850.',
+      'Manejamos Globe, Lion, Morning Pride, Fire-Dex y Sköld, con stock permanente de las configuraciones más demandadas y entrega en 24–48 horas en CDMX. Cada compra incluye asesoría de tallaje y el programa de inspección y mantenimiento conforme a NFPA 1850.',
     ],
     subsections: [
-      { name: 'Trajes estructurales', detail: 'Combate interior de edificios. 3 capas: tejido exterior PBI/Nomex NXT, barrera de humedad Crosstech y forro térmico. Costuras de doble aguja reforzadas y trim reflejante 3M Scotchlite.' },
-      { name: 'Trajes de proximidad', detail: 'Aluminizados para exposición radiante extrema: ARFF en aeropuertos, refinerías y fundiciones. Reflejan hasta el 90 % del calor radiante.' },
+      { name: 'Trajes estructurales', detail: 'Combate interior de edificios. Sistema de tres capas —shell exterior, barrera de humedad y forro térmico— certificado como conjunto; el TPP y el THL dependen del compuesto elegido.' },
+      { name: 'Trajes de proximidad', detail: 'Aluminizados para exposición a calor radiante: ARFF en aeropuertos, refinerías y fundiciones. Globe Proximity, Fire-Dex Proximity, Morning Pride TAILS y VIPER Proximity y Sköld Aproximación.' },
       { name: 'Trajes forestales NFPA 1950', detail: 'Ligeros y transpirables para incendio vegetal: camisola y pantalón en Nomex IIIA, diseñados para jornadas largas con golpe de calor mínimo.' },
-      { name: 'Tallaje, stock y mantenimiento', detail: 'Tallas S–4XL con asesoría de ajuste, stock permanente en CDMX y programa de inspección avanzada, lavado técnico y reparación certificada NFPA 1850.' },
+      { name: 'Tallaje, stock y mantenimiento', detail: 'Asesoría de tallaje con prueba de ajuste, stock permanente en CDMX y programa de inspección avanzada, lavado técnico y reparación certificada NFPA 1850.' },
     ],
     image: '/images/categorias/trajes-bombero.avif',
     imageAlt: 'Ilustración técnica de traje estructural para bombero certificado NFPA 1970 con casco y bandas reflejantes',
@@ -89,7 +89,7 @@ export const categories: Category[] = [
     ],
     items: [
       { name: 'MSA Gallet F1 XF', detail: 'Casco europeo integral con visor retráctil y protección nucal' },
-      { name: 'Bullard USTM / USTERM', detail: 'Casco tradicional americano, fibra de vidrio termoendurecida' },
+      { name: 'Bullard UST / USTM y UST LowRider', detail: 'Casco tradicional americano de fibra de vidrio' },
       { name: 'Cairns N6A Houston', detail: 'Casco de cuero clásico para cuerpos con tradición' },
       { name: 'Cascos forestales NFPA 1950', detail: 'Ligeros, ventilados, compatibles con goggles y capucha' },
     ],
@@ -103,7 +103,7 @@ export const categories: Category[] = [
       ],
       subsections: [
         { name: 'Estilo europeo integral', detail: 'MSA Gallet F1 XF: visor retráctil interno, protección nucal integrada, módulo de lámpara y comunicación. El estándar en cuerpos metropolitanos y ARFF.' },
-        { name: 'Estilo americano tradicional', detail: 'Bullard USTM/USTERM y Cairns N6A Houston: fibra de vidrio termoendurecida o cuero, ala completa contra escurrimientos y escudo frontal personalizable.' },
+        { name: 'Estilo americano tradicional', detail: 'Bullard UST/USTM, UST LowRider y Cairns N6A Houston: fibra de vidrio termoendurecida o cuero, ala completa contra escurrimientos y escudo frontal personalizable.' },
         { name: 'Cascos forestales NFPA 1950', detail: 'Ligeros y ventilados para incendio vegetal: compatibles con goggles, capucha y protección auditiva en jornadas largas.' },
         { name: 'Accesorios y refacciones', detail: 'Visores, goggles, lámparas, escudos frontales personalizados y suspensiones de repuesto — todo original de fábrica para conservar la certificación.' },
       ],
@@ -160,8 +160,8 @@ export const categories: Category[] = [
       'Cada venta institucional incluye demostración en sitio y capacitación básica de operación. Ofrecemos también mantenimiento preventivo anual con refacciones originales para mantener la certificación del equipo.',
     ],
     items: [
-      { name: 'Holmatro SPR 4250 SC', detail: 'Separador de alto tonelaje para vehículos modernos' },
-      { name: 'Holmatro CT 4260 HCS', detail: 'Herramienta combinada corte/separación' },
+      { name: 'Holmatro Pentheon', detail: 'Cizalla, separador, combinada y ariete a batería' },
+      { name: 'Hurst eDRAULIC 3.0 y Weber E-FORCE3', detail: 'Herramientas a batería para vehículos de acero de alta resistencia' },
       { name: 'Arietes telescópicos', detail: 'Empuje de tablero y estabilización de cargas' },
       { name: 'Línea Pentheon (batería)', detail: 'Sin mangueras: despliegue en segundos, sin unidad de poder' },
     ],
@@ -174,7 +174,7 @@ export const categories: Category[] = [
         'Cada venta institucional incluye demostración en sitio y capacitación básica de operación. Damos mantenimiento preventivo anual con refacciones originales para conservar la certificación y el rendimiento del equipo.',
       ],
       subsections: [
-        { name: 'Cizallas y separadores', detail: 'Holmatro SPR 4250 SC y CT 4260 HCS: alto tonelaje para postes B reforzados y aceros al boro de vehículos recientes.' },
+        { name: 'Cizallas y separadores', detail: 'Holmatro Pentheon, Hurst eDRAULIC 3.0 y Weber E-FORCE3: alto tonelaje para postes B reforzados y aceros al boro de vehículos recientes.' },
         { name: 'Línea Pentheon a batería', detail: 'Sin mangueras ni unidad de poder: despliegue en segundos, velocidad bajo carga y operación silenciosa para triage.' },
         { name: 'Arietes y estabilización', detail: 'Arietes telescópicos para empuje de tablero, calzas y puntales de estabilización para vehículos y estructuras.' },
         { name: 'Demostración y capacitación', detail: 'Demo en tu estación con escenarios reales, capacitación de operación y mantenimiento preventivo anual certificado.' },
@@ -269,7 +269,7 @@ export const categories: Category[] = [
     ],
     items: [
       { name: 'FLIR K75 / K85-N', detail: 'Línea estructural con FSX y transmisión Wi-Fi' },
-      { name: 'MSA Evolution 6000', detail: 'Integración con SCBA G1 y telemetría' },
+      { name: 'MSA Evolution 6000 y G1 iTIC', detail: 'Cámara de mano e imagen térmica integrada al SCBA G1' },
       { name: 'Bullard TXS / NXT', detail: 'Ligeras, intuitivas, alta resolución' },
       { name: 'Cámaras personales', detail: 'Una cámara por bombero: decisión táctica inmediata' },
     ],
