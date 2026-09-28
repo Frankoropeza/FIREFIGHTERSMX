@@ -13,7 +13,7 @@ export interface Brand {
   emoji: string;
   /** Descripción corta (card del índice, ≤100 chars) */
   description: string;
-  /** País de origen con bandera */
+  /** País de origen (texto; sin banderas ni emojis) */
   country?: string;
   /** Descripción larga para landing individual (1–2 párrafos) */
   longDesc: string[];
@@ -33,7 +33,7 @@ export const brands: Brand[] = [
     name: 'MSA Safety',
     emoji: '️',
     description: 'EPP para bomberos: SCBA, cascos, trajes y detectores de gas.',
-    country: '🇺🇸 USA',
+    country: 'Estados Unidos',
     longDesc: [
       'MSA Safety es un fabricante de equipos de protección personal para bomberos. Su SCBA G1 es el estándar de facto en cuerpos de bomberos que exigen telemetría integrada, alarma PASS y cumplimiento NFPA 1970. El casco Gallet F1 XF, de estilo europeo integral, se utiliza en cuerpos metropolitanos y aeropuertos ARFF por su visor retráctil y módulo de comunicación.',
       'Somos distribuidores autorizados MSA Safety en México. Cada equipo se entrega con número de serie verificable, certificado de laboratorio acreditado y carta de fabricante — documentación lista para anexo técnico de licitación CompraNet, auditoría STPS y expediente de Protección Civil.',
@@ -52,7 +52,7 @@ export const brands: Brand[] = [
     name: 'Dräger',
     emoji: '',
     description: 'Tecnología alemana de precisión. SCBA, equipos médicos y detección de gases.',
-    country: '🇩🇪 Alemania',
+    country: 'Alemania',
     longDesc: [
       'Dräger es un fabricante alemán de equipos de seguridad para la vida. Su SCBA PSS 7000 cuenta con ergonomía de arnés, presión positiva constante y rendimiento en operaciones prolongadas de hasta 60 minutos. La plataforma de detección de gases Dräger-Tubes se usa para identificación de HAZMAT.',
       'En FIREFIGHTERS MX distribuimos los equipos Dräger más demandados en industria petrolera, brigadas industriales y aeropuertos ARFF, con soporte técnico local y prueba hidrostática autorizada.',
@@ -71,7 +71,7 @@ export const brands: Brand[] = [
     name: '3M Scott',
     emoji: '',
     description: 'SCBA Scott Air-Pak, mascarillas y equipos respiratorios para emergencias.',
-    country: '🇺🇸 USA',
+    country: 'Estados Unidos',
     longDesc: [
       'El 3M Scott Air-Pak X3 Pro está certificado NFPA 1970 (2025) por SEI con aprobación NIOSH. Su EOSTI está recalibrado al 31 % en 4500 psi conforme NFPA 1970.',
       'Distribuimos 3M Scott en México con soporte técnico, refacciones originales y prueba hidrostática de cilindros. Ideales para cuerpos de bomberos que buscan localización integrada sin infraestructura adicional.',
@@ -90,7 +90,7 @@ export const brands: Brand[] = [
     name: 'Globe Manufacturing',
     emoji: '',
     description: 'Fabricante de trajes estructurales para bomberos en Norteamérica.',
-    country: '🇺🇸 USA',
+    country: 'Estados Unidos',
     longDesc: [
       'Globe Manufacturing es un fabricante de trajes estructurales de Norteamérica y la marca de referencia para cuerpos de bomberos que exigen cumplimiento NFPA 1970 con diseño a medida. Su modelo GX-7 combina tela exterior PBI/Kevlar NXT, barrera de humedad Crosstech y forro térmico, con costuras de doble aguja y trim reflejante 3M Scotchlite.',
       'En FIREFIGHTERS MX distribuimos trajes Globe con toma de medidas directa en estación, stock permanente en tallas S–4XL y programa de inspección avanzada y lavado técnico certificado NFPA 1850. Ideales para licitaciones que exigen certificado de laboratorio acreditado y carta de fabricante.',
@@ -109,7 +109,7 @@ export const brands: Brand[] = [
     name: 'Holmatro',
     emoji: '️',
     description: 'Herramientas hidráulicas de rescate vehicular: cizallas, expansores, cilindros.',
-    country: '🇳🇱 Países Bajos',
+    country: 'Países Bajos',
     longDesc: [
       'Holmatro es una marca holandesa de herramientas hidráulicas para rescate vehicular. Su línea Pentheon inalámbrica permite despliegue en segundos sin unidad de poder central — útil en accidentes carreteros con vehículos de aceros endurecidos de tercera generación. El separador SPR 4250 SC y la herramienta combinada CT 4260 HCS forman parte de su línea para cuerpos de bomberos metropolitanos.',
       'Distribuimos Holmatro con refacciones originales, servicio técnico y calibración. Compatible con sistemas hidráulicos de unidad de poder existentes o en configuración inalámbrica Pentheon de última generación.',
@@ -128,7 +128,7 @@ export const brands: Brand[] = [
     name: 'Bullard',
     emoji: '️',
     description: 'Cascos para bomberos, cámaras de imagen térmica y EPP de alta performance.',
-    country: '🇺🇸 USA',
+    country: 'Estados Unidos',
     longDesc: [
       'Bullard es un fabricante estadounidense de cascos para bomberos estructurales. Sus modelos USTM y USTERM de fibra de vidrio termoendurecida son el estándar en cuerpos con tradición americana: ala completa, escudo frontal personalizable y resistencia térmica superior. La línea de cámaras de imagen térmica T3 Max ofrece resolución y autonomía para búsqueda en interior.',
       'En FIREFIGHTERS MX distribuimos cascos Bullard con escudo frontal personalizado para tu cuerpo de bomberos, refacciones originales (visores, suspensiones, escudos) y soporte técnico. Ideales para licitaciones que exigen NFPA 1970 con certificado de laboratorio acreditado.',
@@ -147,7 +147,7 @@ export const brands: Brand[] = [
     name: 'Honeywell',
     emoji: '',
     description: 'Detectores de gas, alarmas contra incendio y soluciones de seguridad integral.',
-    country: '🇺🇸 USA',
+    country: 'Estados Unidos',
     longDesc: [
       'Honeywell es uno de los fabricantes más completos en seguridad industrial y contra incendio: desde detectores de gas fijos y portátiles hasta sistemas de alarma, paneles y sistemas de supresión. Su portafolio cubre brigadas industriales, aeropuertos y grandes instalaciones con un solo proveedor.',
       'Distribuimos los productos Honeywell más demandados en México para brigadas industriales y sistemas de detección en centros de trabajo, bajo los requerimientos de la NOM-002-STPS-2010 y NFPA 72.',
@@ -166,7 +166,7 @@ export const brands: Brand[] = [
     name: 'Kidde / UTC',
     emoji: '',
     description: 'Extintores, sistemas de supresión y alarmas para mercado comercial e industrial.',
-    country: '🇺🇸 USA',
+    country: 'Estados Unidos',
     longDesc: [
       'Kidde, parte de UTC (United Technologies), es un fabricante internacional en extintores portátiles y sistemas de supresión. Sus extintores PQS, CO₂ y Clase K se ofrecen para comercio, industria y gobierno con opciones de disponibilidad, precio y servicio.',
       'Distribuimos extintores Kidde y accesorios con mantenimiento y recarga conforme a NOM-154-SCFI-2005, entregando ficha técnica y constancia de servicio lista para expediente ante Protección Civil y STPS.',
@@ -185,7 +185,7 @@ export const brands: Brand[] = [
     name: 'Ansul',
     emoji: '',
     description: 'Sistemas de supresión para cocinas industriales, transformadores y riesgos especiales.',
-    country: '🇺🇸 USA',
+    country: 'Estados Unidos',
     longDesc: [
       'Ansul, marca de Tyco / Johnson Controls, es el estándar mundial en sistemas de supresión de cocinas industriales. Su sistema R-102 es el de mayor instalación en cocinas de restaurantes, hoteles y cafeterías en todo el mundo, con activación automática al detectar calor excesivo en la campana.',
       'Distribuimos e instalamos sistemas Ansul R-102 con mantenimiento semestral certificado y refacciones originales. Ideales para restaurantes, hoteles, comedores industriales y cocinas de cualquier giro que exigen cumplimiento con el seguro y con Protección Civil.',
@@ -204,7 +204,7 @@ export const brands: Brand[] = [
     name: 'NAFFCO',
     emoji: '️',
     description: 'Fabricante global de extintores, equipos CI y vehículos bomberos.',
-    country: '🇦🇪 EAU',
+    country: 'Emiratos Árabes Unidos',
     longDesc: [
       'NAFFCO (National Fire Fighting Manufacturing) es un fabricante de equipos contra incendio de Oriente Medio. Su catálogo abarca extintores portátiles, sistemas de rociadores, gabinetes, mangueras, vehículos contra incendio y equipo de respuesta de emergencia.',
       'Distribuimos extintores NAFFCO y accesorios de sistemas CI en México, con relación calidad-precio competitiva para proyectos de gran volumen y equipamiento de estaciones.',
@@ -223,7 +223,7 @@ export const brands: Brand[] = [
     name: 'Tyco / Johnson Controls',
     emoji: '',
     description: 'Rociadores NFPA 13, sistemas de alarma y soluciones CI a gran escala.',
-    country: '🇮🇪 Irlanda',
+    country: 'Irlanda',
     longDesc: [
       'Tyco, ahora integrado en Johnson Controls, es uno de los mayores fabricantes de sistemas contra incendio del mundo. Sus rociadores automáticos, válvulas y sistemas de detección están presentes en los edificios más importantes de México.',
       'Suministramos materiales Tyco / Johnson Controls para proyectos de sistemas hidráulicos CI bajo NFPA 13, con asesoría técnica en diseño hidráulico, selección de rociadores y requerimientos de la aseguradora.',
@@ -242,7 +242,7 @@ export const brands: Brand[] = [
     name: 'Rosenbauer',
     emoji: '',
     description: 'Vehículos y equipos para cuerpos de bomberos a nivel mundial.',
-    country: '🇦🇹 Austria',
+    country: 'Austria',
     longDesc: [
       'Rosenbauer es el mayor fabricante de vehículos y equipos para bomberos de Europa. Sus unidades PANTHER (ARFF), COMMANDER y FORCE son de los más avanzados en cobertura de aeropuertos, combate estructural y rescate. También fabrica monitores, bombas y sistemas de espuma.',
       'Trabajamos con equipos auxiliares y accesorios Rosenbauer para cuerpos de bomberos en México, además de soporte en especificaciones para licitación de vehículos.',
@@ -261,7 +261,7 @@ export const brands: Brand[] = [
     name: 'Lion Apparel',
     emoji: '',
     description: 'Trajes estructurales y de proximidad, capas y prendas de protección.',
-    country: '🇺🇸 USA',
+    country: 'Estados Unidos',
     longDesc: [
       'Lion Apparel es un fabricante de trajes estructurales para bomberos de Norteamérica. Su línea TechGen es reconocida por la combinación de protección térmica, transpirabilidad y durabilidad en condiciones de combate interior. También fabrica trajes de proximidad y ropa de estación.',
       'Distribuimos trajes Lion en México con toma de medidas, stock permanente y programa de inspección NFPA 1850 — la segunda opción premium junto a Globe para cuerpos que requieren variedad de fabricante en licitaciones.',
@@ -280,7 +280,7 @@ export const brands: Brand[] = [
     name: 'Cairns Helmets',
     emoji: '️',
     description: 'Cascos tradicionales para bomberos estructurales, iconos del sector.',
-    country: '🇺🇸 USA',
+    country: 'Estados Unidos',
     longDesc: [
       'Cairns Helmets es una marca americana de cascos de cuero y fibra de vidrio para el sector bomberos. El modelo N6A Houston de cuero se ofrece para cuerpos con tradición americana que buscan imagen y durabilidad. Sus cascos de fibra de vidrio ofrecen protección NFPA 1970 con estilo clásico americano.',
       'Distribuimos cascos Cairns con escudo frontal personalizado para tu cuerpo de bomberos y refacciones originales: visores, suspensiones y guarniciones de repuesto.',
@@ -299,7 +299,7 @@ export const brands: Brand[] = [
     name: 'FLIR / Teledyne',
     emoji: '',
     description: 'Cámaras de imagen térmica para bomberos y búsqueda y rescate.',
-    country: '🇺🇸 USA',
+    country: 'Estados Unidos',
     longDesc: [
       'FLIR, ahora parte de Teledyne, es el fabricante de referencia en cámaras de imagen térmica (TIC) para bomberos. Sus modelos K75 y K85-N ofrecen la resolución y el contraste necesarios para localizar víctimas y puntos calientes en interior con cero visibilidad. Resistentes al agua, polvo y caídas, diseñadas para trabajo real en combate.',
       'Distribuimos cámaras FLIR con garantía oficial, calibración y soporte técnico. La inversión correcta para equipos de búsqueda y rescate que trabajan en condiciones de visibilidad cero.',
@@ -318,7 +318,7 @@ export const brands: Brand[] = [
     name: 'DJI Enterprise',
     emoji: '',
     description: 'Drones para emergencias, búsqueda y rescate y vigilancia aérea.',
-    country: '🇨🇳 China',
+    country: 'China',
     longDesc: [
       'DJI Enterprise ofrece la línea de drones más avanzada para uso en emergencias y seguridad pública. Los modelos Matrice 30T y Mavic 3 Thermal integran cámara térmica y RGB en la misma plataforma, con alcance de 15 km y autonomía de hasta 41 minutos — la herramienta de reconocimiento aéreo más accesible para cuerpos de bomberos y protección civil.',
       'Distribuimos drones DJI Enterprise con capacitación de vuelo, gestión de permisos AFAC y configuración para operaciones de emergencia en México.',

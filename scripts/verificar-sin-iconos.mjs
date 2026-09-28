@@ -18,7 +18,7 @@ const DIST = process.argv[2] ?? 'dist';
 const walk = (d) => readdirSync(d, { withFileTypes: true }).flatMap((e) =>
   e.isDirectory() ? walk(join(d, e.name)) : e.name.endsWith('.html') ? [join(d, e.name)] : []);
 
-const EMOJI = /[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}\u{2B50}\u{2B06}\u{2194}-\u{21FF}\u{2190}-\u{2193}]/gu;
+const EMOJI = /[\u{1F1E6}-\u{1F1FF}\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}\u{2B50}\u{2B06}\u{2194}-\u{21FF}\u{2190}-\u{2193}]/gu;
 const reglas = [
   ['svg', /<svg\b(?![^>]*\bdata-logo\b)[^>]*>/g],
   ['numeración', />\s*0[1-9]\s*</g],
