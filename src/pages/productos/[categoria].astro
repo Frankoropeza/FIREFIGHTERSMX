@@ -5,6 +5,8 @@ import { allCategories, type Category } from '@data/categories';
 import { featuredProducts } from '@data/products';
 import { brandPages } from '@data/brandPages';
 import { SITE, whatsappUrl } from '@config/site';
+import RelatedLinks from '@components/common/RelatedLinks.astro';
+import { BLOG_POR_CATEGORIA, guiasPorCategoria } from '@lib/enlaces-directorio';
 
 export function getStaticPaths() {
   // Slugs con página estática dedicada (productos/<slug>/index.astro) — excluir del dinámico
@@ -27,6 +29,14 @@ const products = cat.productCategory
   : [];
 /* Marcas con página L4 dedicada en esta categoría (sistema BrandPage) */
 const marcas = brandPages.filter((b) => b.categorySlug === cat.slug);
+/* Relacionados: directorio del giro (lo resuelve RelatedLinks por la ruta) y dos guías del blog. */
+const guiasCategoria = (await guiasPorCategoria(BLOG_POR_CATEGORIA[cat.slug] ?? [], cat.slug))
+  .map((post) => ({ href: `/blog/${post.id}/`, label: post.data.title }));
+/* Ancla de las cards de marca: categoría + marca («Cámaras Térmicas FLIR»),
+   salvo que la etiqueta ya nombre la categoría («Extintores PQS ABC»). */
+const raizCat = cat.label.split(' ')[0].toLowerCase().slice(0, 5);
+const anclaMarca = (label: string) =>
+  label.toLowerCase().includes(raizCat) ? label : `${cat.label} ${label}`;
 
 const canonicalURL = `${SITE.url}/productos/${cat.slug}/`;
 
@@ -40,6 +50,10 @@ const breadcrumbSchema = {
   ],
 };
 
+const faqSchema = cat.faqs?.length
+  ? { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: cat.faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }
+  : null;
+
 const otherCategories = allCategories.filter((c) => c.slug !== cat.slug).slice(0, 5);
 ---
 
@@ -47,7 +61,7 @@ const otherCategories = allCategories.filter((c) => c.slug !== cat.slug).slice(0
   title={`${cat.label} ${cat.norm.split('·')[0].trim()} — México`}
   description={cat.description}
   canonicalURL={canonicalURL}
-  schema={breadcrumbSchema}
+  schema={[breadcrumbSchema, ...(faqSchema ? [faqSchema] : [])]}
 >
   <!-- Breadcrumb -->
   <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
@@ -118,7 +132,7 @@ const otherCategories = allCategories.filter((c) => c.slug !== cat.slug).slice(0
               <h3 class="font-display font-bold text-xl group-hover:text-[#FF6B26]" style="color:#FFFFFF">{b.brandLabel}</h3>
               <p class="text-xs leading-relaxed flex-1" style="color:#64748B">{b.crossDesc}</p>
               <span class="inline-flex items-center gap-1.5 text-xs font-display font-semibold uppercase tracking-wider" style="color:#FF8F57">
-                Ver catálogo
+                {anclaMarca(b.brandLabel)}
                 
               </span>
             </a>
@@ -184,6 +198,46 @@ const otherCategories = allCategories.filter((c) => c.slug !== cat.slug).slice(0
     </div>
   </section>
 
+  <!-- Guía editorial de la categoría -->
+  {cat.guia && cat.guia.length > 0 && (
+    <section class="section" style="background:#040A12" aria-label={`Guía de ${cat.label.toLowerCase()}`}>
+      <div class="container-site prose-guia" style="max-width:52rem">
+        {cat.guia.map((sec) => (
+          <div class="mb-10">
+            <h2 class="font-display font-bold mb-4" style="color:#FFFFFF;font-size:clamp(1.5rem,2.5vw,2.1rem);line-height:1.1">{sec.titulo}</h2>
+            {sec.parrafos.map((p) => <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">{p}</p>)}
+            {sec.lista && sec.lista.length > 0 && (
+              <ul class="pl-5 flex flex-col gap-2 mb-4" style="color:#94A3B8">
+                {sec.lista.map((li) => <li class="text-sm leading-relaxed">{li}</li>)}
+              </ul>
+            )}
+          </div>
+        ))}
+        {cat.faqs && cat.faqs.length > 0 && (
+          <div class="mb-10">
+            <h2 class="font-display font-bold mb-4" style="color:#FFFFFF;font-size:clamp(1.5rem,2.5vw,2.1rem);line-height:1.1">Preguntas frecuentes sobre {cat.label.toLowerCase()}</h2>
+            <div class="flex flex-col gap-px">
+              {cat.faqs.map((f) => (
+                <details style="background:#080F1A;border:1px solid rgba(74,117,153,0.12)">
+                  <summary class="cursor-pointer px-4 py-3 font-display font-semibold text-sm" style="color:#FFFFFF">{f.q}</summary>
+                  <p class="px-4 pb-4 text-sm leading-relaxed m-0" style="color:#94A3B8">{f.a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        )}
+        {cat.fuentes && cat.fuentes.length > 0 && (
+          <div>
+            <p class="text-[10px] font-display font-bold uppercase tracking-widest mb-2" style="color:var(--forge-300)">Fuentes</p>
+            <ul class="list-none m-0 p-0 flex flex-col gap-1">
+              {cat.fuentes.map((s) => <li class="text-xs"><a href={s.url} target="_blank" rel="nofollow noopener" class="hover:text-[#FF6B26]" style="color:#94A3B8">{s.titulo}</a></li>)}
+            </ul>
+          </div>
+        )}
+      </div>
+    </section>
+  )}
+
   <!-- Otras categorías (internal linking) -->
   <section class="section-tight" style="background:#040A12" aria-labelledby="otras-title">
     <div class="container-site">
@@ -198,4 +252,6 @@ const otherCategories = allCategories.filter((c) => c.slug !== cat.slug).slice(0
       </div>
     </div>
   </section>
+  <RelatedLinks ruta={`/productos/${cat.slug}/`} enlacesExtra={guiasCategoria} />
+
 </BaseLayout>

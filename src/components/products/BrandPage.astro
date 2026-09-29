@@ -16,6 +16,7 @@ import RelatedLinks from '@components/common/RelatedLinks.astro';
 import { featuredProducts } from '@data/products';
 import { SITE, whatsappUrl, CANAL_CONTACTO } from '@config/site';
 import { tipoEquipo, categoriaMarca, hermanasMarca, type EquipmentBrand } from '@data/brandPages';
+import { giroDeCategoria } from '@lib/enlaces-directorio';
 
 interface Props {
   brand: EquipmentBrand;
@@ -592,7 +593,7 @@ const faqSchema = {
     </div>
   </section>
 )}
-<RelatedLinks ruta={ruta} />
+<RelatedLinks ruta={ruta} giro={giroDeCategoria(brand.categorySlug) ?? 'venta-equipo'} />
 
 </BaseLayout>
 

@@ -8,6 +8,8 @@ import { join } from 'node:path';
 import { brandPages } from '@data/brandPages';
 import { categories } from '@data/categories';
 import { SITE, whatsappUrl, CANAL_CONTACTO } from '@config/site';
+import RelatedLinks from '@components/common/RelatedLinks.astro';
+import { BLOG_POR_CATEGORIA, guiasPorCategoria } from '@lib/enlaces-directorio';
 
 export function getStaticPaths() {
   return featuredProducts.map((product) => ({
@@ -19,6 +21,9 @@ export function getStaticPaths() {
 interface Props { product: Product; }
 
 const { product } = Astro.props;
+const categoriaSlug = product.href.split('/').filter(Boolean)[1];
+const guiasBlog = await guiasPorCategoria(BLOG_POR_CATEGORIA[categoriaSlug ?? ''] ?? [], product.slug);
+const enlacesGuiaProducto = guiasBlog.map((post) => ({ href: `/blog/${post.id}/`, label: post.data.title }));
 /* Fabricante confirmado: sólo con él se afirma «distribuidor autorizado de …». */
 const fabricante = fabricanteDe(product);
 const esDistribuidor = Boolean(fabricante) && !product.suppressDefaultClaims;
@@ -375,7 +380,7 @@ const catSlug = categoryPath.split('/')[2] ?? '';
 const imagenCategoria = [`/images/categorias/${catSlug}.avif`, `/images/catalogo/${catSlug}.avif`]
   .find((src) => existsSync(join(process.cwd(), 'public', src)));
 const usosImagen = product.image ? featuredProducts.filter((p) => p.image === product.image).length : 0;
-const imagenEsReferencia = !product.image || usosImagen > 1 || product.image.startsWith('/images/categorias/');
+const imagenEsReferencia = !product.image || usosImagen > 1 || /^\/images\/(categorias|productos\/tipos)\//.test(product.image);
 const imagenPrincipal = product.image ?? imagenCategoria;
 const nombreCategoria: Record<string, string> = {
   'Trajes Bombero': 'traje de bombero', 'Cascos NFPA': 'casco de bombero', 'Equipos SCBA': 'equipo de respiración autónoma',
@@ -718,7 +723,7 @@ const seoDesc = metaCerrada(product.description, [
       <div class="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-10 items-start">
 
         {/* ── MAIN CONTENT ─────────────────────────────────────────────── */}
-        <main class="flex flex-col gap-8">
+        <article class="flex flex-col gap-8">
 
           {/* Imagen del modelo (y galería sólo si hay más fotos del MISMO modelo) */}
           {galleryImages.length > 0 && (
@@ -748,7 +753,7 @@ const seoDesc = metaCerrada(product.description, [
               </div>
               <figcaption class="text-[10px] mt-2 flex flex-wrap justify-between gap-2" style="color:var(--forge-300)">
                 <span>{imagenEsReferencia
-                  ? 'Imagen de referencia de la categoría. La fotografía del modelo se entrega con su ficha técnica.'
+                  ? `Imagen de referencia ${product.image?.startsWith('/images/productos/tipos/') ? 'del tipo de equipo' : 'de la categoría'}. La fotografía del modelo se entrega con su ficha técnica.`
                   : product.title}</span>
                 <span>{[product.category, fabricante ?? product.brand].filter(Boolean).join(' · ')}{esDistribuidor && ' · Distribuidor autorizado México'}</span>
               </figcaption>
@@ -941,6 +946,26 @@ const seoDesc = metaCerrada(product.description, [
           </div>
           )}
 
+          {/* Proveedores del directorio */}
+          {product.proveedores && product.proveedores.length > 0 && (
+          <div style="background:#040A12;border:1px solid rgba(74,117,153,0.18)">
+            <div class="p-6 pb-2">
+              <h2 class="font-display font-bold mb-2" style="color:#FFFFFF;font-size:clamp(1.25rem,2.5vw,1.875rem);line-height:1.1">
+                Proveedores <span style="color:#F75000">en el directorio</span>
+              </h2>
+              <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">Empresas verificadas del directorio FIREFIGHTERS MX que ofrecen este tipo de equipo. Pide a cada una la hoja técnica y el listado UL/FM del modelo que cotice.</p>
+            </div>
+            <ul class="list-none m-0 px-6 pb-6 grid grid-cols-1 sm:grid-cols-2 gap-px">
+              {product.proveedores.map((pv) => (
+                <li class="p-4" style="background:#080F1A;border:1px solid rgba(74,117,153,0.12)">
+                  <a href={pv.href} class="font-display font-semibold text-sm hover:text-[#FF6B26]" style="color:#FFFFFF">{pv.nombre}</a>
+                  <p class="text-xs mt-1 mb-0" style="color:#64748B">{pv.nota}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+          )}
+
           {/* Fuentes del fabricante */}
           {product.fuentes && product.fuentes.length > 0 && (
           <div class="px-1">
@@ -996,7 +1021,7 @@ const seoDesc = metaCerrada(product.description, [
           </div>
           )}
 
-        </main>
+        </article>
 
         {/* ── SIDEBAR ──────────────────────────────────────────────────── */}
         <aside class="flex flex-col gap-4" style="position:sticky;top:1.5rem">
@@ -1338,6 +1363,8 @@ const seoDesc = metaCerrada(product.description, [
       </div>
     </section>
   )}
+
+  <RelatedLinks ruta={product.href} enlacesExtra={enlacesGuiaProducto} />
 
 </BaseLayout>
 

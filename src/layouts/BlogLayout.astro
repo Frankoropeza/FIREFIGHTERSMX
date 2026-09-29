@@ -6,6 +6,7 @@ import { whatsappUrl, CANAL_CONTACTO } from '@config/site';
 import { slugifyTag } from '@lib/slug';
 import RelatedLinks from '@components/common/RelatedLinks.astro';
 import { faqSchemaDesdeMarkdown } from '@lib/faq-blog';
+import { giroDeBlog } from '@lib/enlaces-directorio';
 
 export interface Props {
   post: CollectionEntry<'blog'>;
@@ -133,7 +134,7 @@ const faqSchema = faqSchemaDesdeMarkdown(post.body);
       </div>
 
       <!-- CTA post-artículo -->
-      <RelatedLinks ruta={`/blog/${post.id}/`} />
+      <RelatedLinks ruta={`/blog/${post.id}/`} giro={giroDeBlog(category)} />
 
       <div class="mt-12 p-8 text-center" style="background:linear-gradient(135deg, #0C1825 0%, rgba(247,80,0,0.14) 130%);border:1px solid rgba(247,80,0,0.3)">
         <h2 class="font-display font-bold text-2xl mb-3" style="color:#FFFFFF">¿Necesitas asesoría o cotización?</h2>
