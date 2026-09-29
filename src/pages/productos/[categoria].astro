@@ -118,14 +118,14 @@ const otherCategories = allCategories.filter((c) => c.slug !== cat.slug).slice(0
               <span style="color:var(--c-accent)">marca.</span>
             </h2>
           </div>
-          <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+          <div style="padding-left:1.75rem">
             <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
               Cada marca tiene su catálogo dedicado con comparativa técnica, anatomía del modelo insignia, guía de
               selección y FAQ. Distribuidor autorizado con stock en CDMX y ficha para licitación.
             </p>
           </div>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="card-grid">
           {marcas.map((b) => (
             <a href={`/productos/${b.categorySlug}/${b.slug}`} class="group flex flex-col gap-3 p-7" style="background:var(--c-bg);border:1px solid var(--c-line)">
               <h3 class="font-display font-bold text-xl group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{b.brandLabel}</h3>
@@ -162,7 +162,7 @@ const otherCategories = allCategories.filter((c) => c.slug !== cat.slug).slice(0
           <h2 class="font-display font-bold mb-8" style="color:var(--c-ink);font-size:clamp(1.5rem,2.5vw,2.25rem)">
             Productos destacados
           </h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px" style="background:var(--c-line);border:1px solid var(--c-line)">
+          <div class="card-grid card-grid--cells" >
             {products.map((product) => (
               <a href={product.href} class="grid-cell group flex flex-col overflow-hidden">
                 {product.image && (

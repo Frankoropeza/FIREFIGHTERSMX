@@ -50,7 +50,7 @@ const giroMeta = Object.fromEntries(giros.map((g) => [g.slug, { l: g.labelCorto,
   <span id={`${id}-count`} class="font-display text-xs uppercase tracking-wider shrink-0" style="color:var(--forge-300)">{indexSrc && total > visibles.length ? `${visibles.length} de ${total}` : `${total} resultados`}</span>
 </div>
 
-<div id={`${id}-grid`} class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" data-dimension={dimension}
+<div id={`${id}-grid`} class="card-grid" data-dimension={dimension}
   data-index-src={indexSrc} data-alcance-giro={alcance.giro} data-alcance-estado={alcance.estado} data-mostrar-estado={mostrarEstado ? '1' : '0'} data-giros={JSON.stringify(giroMeta)} data-limite={limite}>
   {visibles.map((e) => <EmpresaCard e={e} mostrarEstado={mostrarEstado} />)}
 </div>
@@ -67,7 +67,7 @@ const giroMeta = Object.fromEntries(giros.map((g) => [g.slug, { l: g.labelCorto,
       <span class="font-display font-bold text-xs uppercase tracking-widest" style="color:var(--c-text-2)">Índice completo · {total} empresas</span>
       <span class="font-display text-lg" style="color:var(--c-accent)" aria-hidden="true">+</span>
     </summary>
-    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 list-none m-0 px-6 pb-6" style="columns:auto">
+    <ul class="card-grid list-none m-0 px-6 pb-6" style="columns:auto">
       {empresas.map((e) => <li class="py-1 text-xs truncate" style="border-bottom:1px solid var(--c-line)"><a href={`/empresas/${e.giroPrincipal}/${e.estado}/${e.slug}/`} class="hover:text-[var(--c-accent)]" style="color:var(--c-text)">{e.nombre}</a><span style="color:var(--forge-300)"> · {e.ciudad}{mostrarEstado ? `, ${e.estadoNombre}` : ''}</span></li>)}
     </ul>
   </details>
@@ -87,7 +87,7 @@ const giroMeta = Object.fromEntries(giros.map((g) => [g.slug, { l: g.labelCorto,
     const g = giros[r.gp]; const conf = CONF[r.k] ?? CONF.baja; const dest = r.p === 'destacado';
     const esp = r.s.map((s) => g?.e?.[s]).filter(Boolean).slice(0, 3);
     const otros = r.g.filter((x) => x !== r.gp).map((x) => giros[x]?.l).filter(Boolean);
-    return `<article class="emp-card flex flex-col gap-3 p-5" style="background:${dest ? 'var(--c-surface)' : 'var(--c-bg)'};border:1px solid ${dest ? 'rgba(181,71,8,0.35)' : 'var(--c-line)'};border-top:2px solid ${dest ? 'var(--c-amber)' : g?.c ?? 'var(--c-accent)'}">
+    return `<article class="emp-card flex flex-col gap-3 p-5" style="background:${dest ? 'var(--c-surface)' : 'var(--c-bg)'};border:1px solid var(--c-line)">
       <div class="flex items-start justify-between gap-3"><span class="font-display font-bold text-[10px] uppercase tracking-wider px-2 py-1" style="color:${g?.c};background:${g?.c}1A;border:1px solid ${g?.c}40">${esc(g?.l ?? r.gp)}</span>
       <span class="font-display text-[9px] uppercase tracking-wider px-1.5 py-0.5" style="color:${conf[1]};border:1px solid ${conf[1]}33">${conf[0]}</span></div>
       <h3 class="font-display font-bold text-base leading-snug" style="color:var(--c-ink)"><a href="${r.u}" class="hover:text-[var(--c-accent)]">${esc(r.n)}</a></h3>

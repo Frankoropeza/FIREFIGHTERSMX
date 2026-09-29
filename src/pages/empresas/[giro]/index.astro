@@ -179,7 +179,6 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
         </div>
       </div>
     </div>
-    <div class="absolute bottom-0 left-0 right-0 h-px" aria-hidden="true" style="background:linear-gradient(90deg, transparent, rgba(200,16,46,0.4) 30%, rgba(200,16,46,0.4) 70%, transparent)"></div>
   </section>
 
   <QuickLinksBar />
@@ -205,7 +204,7 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
         </div>
         <p class="text-sm leading-[1.9] m-0" style="color:var(--c-text-2)">{guide.intro}</p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-px" style="background:var(--c-line);border:1px solid var(--c-line)">
+      <div class="card-grid card-grid--cells" >
         {guide.comparar.map((item, i) => (
           <article class="p-7" style="background:var(--c-bg-alt)">
             <span class="font-display font-bold text-xs" style={`color:${g.color}`}></span>
@@ -252,7 +251,7 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
           <span class="section-eyebrow mb-4 inline-flex">Por estado</span>
           <h2 id="estados-heading" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">{g.outline.estados.linea1}<br/><span style={`color:var(--c-accent)`}>{g.outline.estados.linea2}</span></h2>
         </div>
-        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+        <div style="padding-left:1.75rem">
           <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">Cada estado tiene su directorio propio con mapa, buscador y filtros por especialidad. Presencia destacada en {ciudades.slice(0, 5).map((c) => c.ciudad).join(', ')}.</p>
         </div>
       </div>
@@ -272,7 +271,7 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
           <span class="section-eyebrow mb-4 inline-flex">Listado nacional</span>
           <h2 id="lista-heading" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">{g.outline.lista.linea1}<br/><span style={`color:var(--c-accent)`}>{g.outline.lista.linea2}</span></h2>
         </div>
-        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+        <div style="padding-left:1.75rem">
           <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">Busca por nombre, ciudad o municipio y filtra por especialidad. Cada ficha indica el nivel de verificación de sus datos y la fuente de origen.</p>
         </div>
       </div>

@@ -143,7 +143,7 @@ const collectionSchema = {
               No hay artículos publicados con esta etiqueta todavía.
             </p>
           ) : (
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div class="card-grid">
               {posts.map((post) => <BlogCard post={post} />)}
             </div>
           )}
@@ -186,7 +186,7 @@ const collectionSchema = {
               </h2>
               <ul class="flex flex-col list-none m-0 p-0">
                 {[
-                  { label: 'Catálogo de productos', href: '/productos' },
+                  { label: 'Equipo para bomberos', href: '/productos' },
                   { label: 'Certificaciones NFPA/NOM', href: '/certificaciones' },
                   { label: 'Servicios contra incendio', href: '/servicios' },
                   { label: 'Cobertura nacional', href: '/cobertura' },

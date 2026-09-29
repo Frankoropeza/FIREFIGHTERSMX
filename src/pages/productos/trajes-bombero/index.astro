@@ -253,7 +253,6 @@ const razones = [
         </div>
       </div>
     </div>
-    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(200,16,46,0.4) 30%, rgba(200,16,46,0.4) 70%, transparent)" aria-hidden="true"></div>
   </section>
 
   <section id="guia-trajes" class="section" style="background:var(--c-bg)" aria-labelledby="guia-trajes-title">
@@ -356,9 +355,9 @@ const razones = [
   <!-- Trust Pillars -->
   <section class="section-tight" style="background:var(--c-bg-alt)" aria-label="Por qué distribuimos estas marcas">
     <div class="container-site">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style="border:1px solid var(--c-line)">
+      <div class="card-grid card-grid--cells" style="border:1px solid var(--c-line)">
         {razones.map((r, i) => (
-          <div class="flex flex-col gap-3 p-6" style={`background:var(--c-bg-alt);${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.12)' : ''}`}>
+          <div class="flex flex-col gap-3 p-6" style={`background:var(--c-bg-alt);${i < 3 ? 'border-right:1px solid var(--c-line)' : ''}`}>
             
             <h3 class="font-display font-bold text-sm" style="color:var(--c-ink)">{r.t}</h3>
             <p class="text-xs leading-relaxed m-0" style="color:var(--c-muted)">{r.d}</p>
@@ -379,7 +378,7 @@ const razones = [
             <span style="color:var(--c-accent)">según el fuego.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+        <div style="padding-left:1.75rem">
           <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
             No todos los incendios son iguales. Elegir entre estructural, proximidad o forestal
             según el riesgo dominante de tu brigada es lo que separa una compra acertada de
@@ -388,7 +387,7 @@ const razones = [
         </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div class="card-grid">
         {tipos.map((t) => (
           <article class="flex flex-col gap-4 p-7" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
             <div class="flex items-center justify-between gap-2">
@@ -415,7 +414,7 @@ const razones = [
             <span style="color:var(--c-accent)">certificados NFPA.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+        <div style="padding-left:1.75rem">
           <p class="text-sm leading-relaxed mb-4" style="color:var(--c-text-2)">
             Globe Manufacturing — parte de MSA Safety — fabrica trajes estructurales
             con documentación técnica para licitaciones mexicanas. Su catálogo incluye
@@ -430,7 +429,7 @@ const razones = [
       </div>
 
       {/* Grid de productos — 3 por fila */}
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="card-grid">
         {globeProducts.map((p) => (
           <ProductCard product={p} />
         ))}
@@ -472,7 +471,7 @@ const razones = [
             <span style="color:var(--c-accent)">certificados NFPA.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+        <div style="padding-left:1.75rem">
           <p class="text-sm leading-relaxed mb-4" style="color:var(--c-text-2)">
             Lion Apparel — fundada en 1889 — fabrica trajes de bombero para
             departamentos metropolitanos, corporativos industriales y brigadas ARFF.
@@ -485,7 +484,7 @@ const razones = [
           </div>
         </div>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="card-grid">
         {lionProducts.map((p) => (
           <ProductCard product={p} />
         ))}
@@ -520,7 +519,7 @@ const razones = [
             <span style="color:var(--c-accent)">certificados NFPA.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+        <div style="padding-left:1.75rem">
           <p class="text-sm leading-relaxed mb-4" style="color:var(--c-text-2)">
             Honeywell Morning Pride es la marca de referencia para operaciones de alto riesgo
             en petroquímica, refinerías y brigadas HAZMAT. Fuerte presencia en Pemex, CFE
@@ -533,7 +532,7 @@ const razones = [
           </div>
         </div>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="card-grid">
         {honeywellProducts.map((p) => (
           <ProductCard product={p} />
         ))}
@@ -568,7 +567,7 @@ const razones = [
             <span style="color:var(--c-accent)">certificados NFPA.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+        <div style="padding-left:1.75rem">
           <p class="text-sm leading-relaxed mb-4" style="color:var(--c-text-2)">
             Fire-Dex ofrece documentación para licitaciones en México.
             Su línea incluye shells de fibra sintética TECGEN®.
@@ -581,7 +580,7 @@ const razones = [
           </div>
         </div>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="card-grid">
         {firedexProducts.map((p) => (
           <ProductCard product={p} />
         ))}
@@ -616,7 +615,7 @@ const razones = [
             <span style="color:var(--c-accent)">fabricados en México.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+        <div style="padding-left:1.75rem">
           <p class="text-sm leading-relaxed mb-4" style="color:var(--c-text-2)">
             Sköld fabrica en Monterrey, N.L. las cinco líneas que cubren el ciclo completo de respuesta:
             estructural, brigadista industrial, forestal, aproximación y rescate. El Herö es su única línea
@@ -630,7 +629,7 @@ const razones = [
           </div>
         </div>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="card-grid">
         {skoldProducts.map((p) => (
           <ProductCard product={p} />
         ))}
@@ -659,7 +658,6 @@ const razones = [
   <section class="section-tight" style="background:var(--c-bg)" aria-label="Galería trajes para bomberos">
     <div class="container-site">
       <div class="flex items-center gap-4 mb-6">
-        <span class="w-8 h-px" style="background:var(--c-accent)"></span>
         <span class="text-xs font-display font-semibold uppercase tracking-[0.18em]" style="color:var(--c-accent)">Trajes en uso real</span>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-2 lg:gap-3">
@@ -787,7 +785,7 @@ const razones = [
         </div>
         <div class="flex flex-col">
           {faqs.map((f, i) => (
-            <details class="faq-item group" style={`border-top:1px solid var(--c-line);${i === faqs.length - 1 ? 'border-bottom:1px solid rgba(74,117,153,0.18);' : ''}`}>
+            <details class="faq-item group" style={`border-top:1px solid var(--c-line);${i === faqs.length - 1 ? 'border-bottom:1px solid var(--c-line);' : ''}`}>
               <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer">
                 <span class="font-display font-semibold text-sm" style="color:var(--c-ink)">{f.q}</span>
                 <span class="faq-icon font-display font-bold text-xl shrink-0" style="color:var(--c-accent)">+</span>
@@ -887,23 +885,23 @@ const razones = [
   <section style="background:var(--c-bg);border-top:1px solid var(--c-line)" aria-labelledby="cats-rel-title">
     <div class="container-site py-10 sm:py-12">
       <p id="cats-rel-title" class="text-[9px] font-display font-bold uppercase tracking-widest mb-6" style="color:var(--forge-300)">Categorías relacionadas</p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="card-grid">
         <a href="/productos/cascos-nfpa"
-           class="group flex flex-col gap-2 p-5 hover:border-[var(--c-accent)]"
+           class="group flex flex-col gap-2 p-5 hover:border-[var(--c-line-strong)]"
            style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
           <span class="text-sm font-display font-bold group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Cascos NFPA</span>
           <span class="text-xs leading-relaxed" style="color:var(--c-muted)">MSA Gallet · Bullard · Cairns</span>
           <span class="text-[11px] font-semibold mt-1" style="color:var(--c-accent)">Guía de Cascos NFPA </span>
         </a>
         <a href="/productos/equipos-scba"
-           class="group flex flex-col gap-2 p-5 hover:border-[var(--c-accent)]"
+           class="group flex flex-col gap-2 p-5 hover:border-[var(--c-line-strong)]"
            style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
           <span class="text-sm font-display font-bold group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Equipos SCBA</span>
           <span class="text-xs leading-relaxed" style="color:var(--c-muted)">MSA G1 · Dräger PSS 7000 · 3M Scott</span>
           <span class="text-[11px] font-semibold mt-1" style="color:var(--c-accent)">Guía de Equipos SCBA </span>
         </a>
         <a href="/productos/camaras-termicas"
-           class="group flex flex-col gap-2 p-5 hover:border-[var(--c-accent)]"
+           class="group flex flex-col gap-2 p-5 hover:border-[var(--c-line-strong)]"
            style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
           <span class="text-sm font-display font-bold group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Cámaras Térmicas</span>
           <span class="text-xs leading-relaxed" style="color:var(--c-muted)">FLIR · MSA Evolution · Bullard TXS</span>
@@ -917,7 +915,7 @@ const razones = [
 </BaseLayout>
 
 <style>
-  .model-card:hover { border-color: rgba(200,16,46,0.45) !important; }
+  .model-card:hover { border-color: var(--c-line-strong) !important; }
   details.faq-item summary { list-style: none; }
   details.faq-item summary::-webkit-details-marker { display: none; }
   details.faq-item[open] .faq-icon { transform: rotate(45deg); }

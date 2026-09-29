@@ -90,13 +90,13 @@ const faqSchema = {
         <span class="section-eyebrow">Líneas</span>
         <h2 id="lineas-title">Señalización, iluminación y<br/><span>primeros auxilios.</span></h2>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div class="card-grid">
         {lineas.map((linea) => (
           <a href={`/productos/${linea.categorySlug}/${linea.slug}/`} class="group flex flex-col gap-4 p-7" style="background:var(--c-bg);border:1px solid var(--c-line)">
             <span class="badge badge-dark self-start">{linea.eyebrow}</span>
             <h3 class="font-display font-bold text-xl group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{linea.brandLabel}</h3>
             <p class="text-sm leading-relaxed flex-1" style="color:var(--c-text-2)">{linea.crossDesc}</p>
-            <span class="text-xs font-display font-semibold uppercase tracking-wider" style="color:var(--c-accent)">Catálogo de {linea.brandLabel.toLowerCase()}</span>
+            <span class="text-xs font-display font-semibold uppercase tracking-wider" style="color:var(--c-accent)">Equipo {linea.brandLabel}</span>
           </a>
         ))}
       </div>
@@ -109,7 +109,7 @@ const faqSchema = {
         <span class="section-eyebrow">Productos</span>
         <h2 id="productos-title">Productos de señalización<br/><span>y emergencia.</span></h2>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="card-grid">
         {products.map((product) => <ProductCard product={product} />)}
       </div>
     </div>

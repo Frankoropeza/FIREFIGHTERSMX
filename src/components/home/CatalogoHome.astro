@@ -4,18 +4,9 @@
  * (que repetían las mismas líneas). Fuente única: src/data/catalogo.ts.
  * Sin animaciones: sólo el botón cambia de estado.
  */
-import { existsSync } from 'node:fs';
-import { join } from 'node:path';
 import { catalogo } from '@data/catalogo';
-
-// Imagen de la línea: primero la propia del catálogo; si no existe, la de la
-// categoría homónima (mismo formato 1200×750). Así ninguna card queda en blanco.
-const img = (slug: string) => {
-  for (const src of [`/images/catalogo/${slug}.avif`, `/images/categorias/${slug}.avif`]) {
-    if (existsSync(join(process.cwd(), 'public', src))) return src;
-  }
-  return null;
-};
+import { imagenLinea } from '@lib/linea-card';
+import LineaCard from '@components/products/LineaCard.astro';
 ---
 
 <section class="section home-deferred-section ch" aria-labelledby="catalogo-heading">
@@ -33,7 +24,6 @@ const img = (slug: string) => {
       </p>
       <a href="/productos/" class="ch-link">
         Catálogo de equipo contra incendio
-        
       </a>
     </div>
   </div>
@@ -42,97 +32,57 @@ const img = (slug: string) => {
     <div class="container-site ch-fam" aria-labelledby={`fam-${familia.slug}`}>
       <header class="ch-fam-head">
         <div>
-          <span class="ch-fam-num"></span>
-          <div>
-            <p class="ch-fam-eyebrow">{familia.eyebrow}</p>
-            <h3 id={`fam-${familia.slug}`} class="ch-fam-title">{familia.titulo}</h3>
-          </div>
+          <p class="ch-fam-eyebrow">{familia.eyebrow}</p>
+          <h3 id={`fam-${familia.slug}`} class="ch-fam-title">{familia.titulo}</h3>
         </div>
         <p class="ch-fam-text">{familia.texto}</p>
       </header>
 
-      <ul class:list={['ch-grid', `ch-grid--${familia.lineas.length}`]} role="list">
-        {familia.lineas.map((l, i) => {
-          const src = img(l.slug);
-          return (
-            <li class:list={['ch-card', i === 0 && familia.lineas.length % 2 === 1 && 'ch-card--wide']} style={`--a:${l.accent}`}>
-              <a href={l.href} class="ch-media" tabindex="-1" aria-hidden="true">
-                {src
-                  ? <img src={src} alt={l.imagenAlt} width="1200" height="750" loading="lazy" decoding="async" />
-                  : <span class="ch-ph"><span class="ch-ico" set:html={l.icon} /></span>}
-                <span class="ch-norm">{l.norma}</span>
-              </a>
-              <div class="ch-body">
-                <h4 class="ch-title"><a href={l.href}>{l.titulo}</a></h4>
-                <p class="ch-text">{l.texto}</p>
-                <a href={l.href} class="ch-btn">
-                  {l.cta}
-                  
-                </a>
-              </div>
-            </li>
-          );
-        })}
+      <ul class="card-grid ch-grid" role="list">
+        {familia.lineas.map((l) => (
+          <li>
+            <LineaCard href={l.href} norma={l.norma} titulo={l.titulo} texto={l.texto} imagen={imagenLinea(l.slug)} imagenAlt={l.imagenAlt} hijas={l.hijas} cta={l.cta} />
+          </li>
+        ))}
       </ul>
 
-      <a href={familia.hub.href} class="ch-link ch-hub">
-        {familia.hub.label}
-        
-      </a>
+      <div class="ch-hub"><a href={familia.hub.href} class="btn btn-ghost">{familia.hub.label}</a></div>
     </div>
   ))}
 </section>
 
 <style>
+  /* Catálogo de la portada · v3 — rejilla de 4 columnas en escritorio */
   .ch { background: var(--c-bg); }
-  .ch-head { display: grid; gap: 2.5rem; align-items: end; margin-bottom: 3.5rem; }
-  @media (min-width: 1024px) { .ch-head { grid-template-columns: 1fr 1fr; gap: 5rem; } }
-  .ch-h2 { color: var(--c-ink); font-size: clamp(1.75rem, 3vw, 2.5rem); line-height: 1.1; }
-  .ch-h2 span { color: var(--c-accent); }
-  .ch-intro { border-left: 2px solid var(--c-accent); padding-left: 1.75rem; }
-  .ch-intro p { margin: 0 0 .75rem; font-size: .9375rem; line-height: 1.7; color: var(--c-text-2); }
-  .ch-link { display: inline-flex; align-items: center; gap: .5rem; font-size: .875rem; font-weight: 600; color: var(--c-accent); text-decoration: none; }
-  .ch-link:hover { color: var(--c-accent-hover); text-decoration: underline; }
-  .ch-link svg, .ch-btn svg { width: .875rem; height: .875rem; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
-
-  .ch-fam + .ch-fam { margin-top: 4rem; }
-  .ch-fam-head { display: grid; gap: 1rem; align-items: end; padding-bottom: 1.25rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--c-line); }
-  @media (min-width: 1024px) { .ch-fam-head { grid-template-columns: 1fr 1fr; gap: 5rem; } }
-  .ch-fam-head > div { display: flex; align-items: center; gap: 1rem; }
-  .ch-fam-num { font-family: var(--font-display); font-size: 2.25rem; font-weight: 700; line-height: 1; color: var(--c-line-strong); }
-  .ch-fam-eyebrow { margin: 0; font-size: .75rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--c-accent); }
-  .ch-fam-title { margin: .25rem 0 0; font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; letter-spacing: -.02em; color: var(--c-ink); }
-  .ch-fam-text { margin: 0; font-size: .875rem; line-height: 1.6; color: var(--c-text-2); }
-
-  .ch-grid { display: grid; gap: 1.25rem; margin: 0; padding: 0; list-style: none; grid-template-columns: 1fr; }
-  @media (min-width: 640px) { .ch-grid { grid-template-columns: repeat(2, 1fr); } }
+  /* Encabezados a dos columnas 50/50: título | texto, separados por una
+     regla vertical y centrados entre sí para que ninguna columna quede hueca. */
+  .ch-head, .ch-fam-head { display: grid; gap: 1.25rem; }
   @media (min-width: 1024px) {
-    .ch-grid--7 { grid-template-columns: repeat(4, 1fr); }
-    .ch-grid--6 { grid-template-columns: repeat(3, 1fr); }
+    .ch-head, .ch-fam-head { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0; align-items: center; }
+    .ch-head > :first-child, .ch-fam-head > :first-child { padding-right: 3rem; }
+    .ch-head > :last-child, .ch-fam-head > :last-child { padding-left: 3rem; border-left: 1px solid var(--c-line); }
+    .ch-intro p, .ch-fam-text { text-align: justify; hyphens: auto; }
   }
-  @media (min-width: 640px) { .ch-card--wide { grid-column: span 2; } }
+  .ch-head { margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--c-line); }
+  /* Escala ligada a la mitad del contenedor: la línea más larga («para cada
+     tipo de riesgo.» ≈ 11.45em) ocupa ~93 % de su columna sin partirse. */
+  .ch-h2 { margin: 0; color: var(--c-ink); font-size: clamp(1.625rem, 7.2vw, 2.5rem); line-height: 1.05; letter-spacing: -.025em; text-wrap: balance; }
+  @media (min-width: 1024px) { .ch-h2 { font-size: clamp(2rem, calc(4.1vw - 8px), 4.25rem); } }
+  .ch-h2 span { color: var(--c-accent); }
+  .ch-intro p { margin: 0 0 1rem; font-size: 1rem; line-height: 1.75; color: var(--c-text-2); }
+  .ch-link { display: inline-flex; align-items: center; gap: .5rem; font-size: .875rem; font-weight: 600; color: var(--c-accent); text-decoration: none; }
+  .ch-link:hover { color: var(--c-accent-hover); text-decoration: underline; text-underline-offset: 3px; }
 
-  .ch-card { display: flex; flex-direction: column; overflow: hidden; background: #FFFFFF; border: 1px solid var(--c-line); border-radius: var(--radius-card); box-shadow: var(--shadow-card); }
-  .ch-card:hover { border-color: var(--c-line-strong); box-shadow: var(--shadow-card-hover); }
-  .ch-media { position: relative; display: block; aspect-ratio: 16 / 10; overflow: hidden; background: var(--c-bg-alt); }
-  .ch-card--wide .ch-media { aspect-ratio: auto; flex: 1; min-height: 200px; }
-  .ch-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-  
-  .ch-ph { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background:
-      radial-gradient(circle at 50% 45%, color-mix(in srgb, var(--a) 16%, transparent) 0, transparent 62%),
-      linear-gradient(var(--c-tint) 1px, transparent 1px) 0 0 / 28px 28px,
-      linear-gradient(90deg, var(--c-tint) 1px, transparent 1px) 0 0 / 28px 28px,
-      linear-gradient(135deg, var(--c-surface), var(--c-bg)); }
-  .ch-ico { display: flex; align-items: center; justify-content: center; width: 76px; height: 76px; border-radius: 50%; background: rgba(4,10,18,.75); border: 1.5px solid color-mix(in srgb, var(--a) 35%, transparent); color: var(--a); }
-  .ch-ico :global(svg) { width: 34px; height: 34px; }
-  .ch-norm { position: absolute; left: .875rem; bottom: .875rem; z-index: 1; padding: .3125rem .5625rem; font-size: .6875rem; font-weight: 600; letter-spacing: .02em; color: var(--c-ink); background: #FFFFFF; border: 1px solid var(--c-line); border-left: 3px solid var(--c-accent); border-radius: 4px; box-shadow: var(--shadow-sm); }
+  /* Familia */
+  .ch-fam + .ch-fam { margin-top: 4rem; padding-top: 4rem; border-top: 1px solid var(--c-line); }
+  .ch-fam-head { margin-bottom: 2rem; }
+  .ch-fam-eyebrow { margin: 0; font-size: .75rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--c-accent); }
+  .ch-fam-title { margin: .375rem 0 0; font-family: var(--font-display); font-size: clamp(1.5rem, 2.4vw, 2.125rem); font-weight: 700; letter-spacing: -.02em; line-height: 1.2; color: var(--c-ink); text-wrap: balance; }
+  .ch-fam-text { margin: 0; font-size: 1rem; line-height: 1.7; color: var(--c-text-2); }
 
-  .ch-body { display: flex; flex-direction: column; gap: .625rem; padding: 1.25rem; }
-  .ch-card:not(.ch-card--wide) .ch-body { flex: 1; }
-  .ch-title { margin: 0; font-family: var(--font-display); font-size: 1.125rem; font-weight: 600; letter-spacing: -.01em; line-height: 1.3; }
-  .ch-title a { color: var(--c-ink); text-decoration: none; }
-  .ch-text { flex: 1; margin: 0; font-size: .875rem; line-height: 1.6; color: var(--c-text-2); }
-  .ch-btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; margin-top: .5rem; min-height: 44px; padding: .625rem 1rem; font-size: .875rem; font-weight: 600; text-decoration: none; color: var(--c-ink); border: 1px solid var(--c-line-strong); border-radius: var(--radius-btn); background: #FFFFFF; transition: background-color .15s, border-color .15s, color .15s; }
-  .ch-btn:hover, .ch-btn:focus-visible { border-color: var(--c-ink); color: var(--c-ink); background: var(--c-bg-alt); }
-  .ch-hub { margin-top: 1.5rem; }
+  /* Rejilla: 1 · 2 · 4 columnas */
+  .ch-grid { margin: 0; padding: 0; list-style: none; }
+
+  .ch-hub { display: flex; justify-content: flex-end; margin-top: 1.75rem; }
+  @media (max-width: 639px) { .ch-hub .btn { width: 100%; white-space: normal; text-align: center; } }
 </style>

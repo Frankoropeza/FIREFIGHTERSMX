@@ -87,7 +87,6 @@ const estados = [
         </div>
       </div>
     </div>
-    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(200,16,46,0.4) 30%, rgba(200,16,46,0.4) 70%, transparent)" aria-hidden="true"></div>
   </section>
 
   <!-- Accesos rápidos -->
@@ -98,7 +97,7 @@ const estados = [
     <div class="container-site">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style="border:1px solid var(--c-line)">
         {ventajas.map((v, i) => (
-          <div class="flex flex-col gap-3 p-6" style={`background:var(--c-surface);${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.18);' : ''}`}>
+          <div class="flex flex-col gap-3 p-6" style={`background:var(--c-surface);${i < 3 ? 'border-right:1px solid var(--c-line);' : ''}`}>
             <span class="block" style="width:24px;height:24px;color:var(--c-accent)" set:html={v.icon}/>
             <h2 class="font-display font-bold text-sm" style="color:var(--c-ink)">{v.label}</h2>
             <p class="text-xs leading-relaxed" style="color:var(--c-muted)">{v.desc}</p>
@@ -119,7 +118,7 @@ const estados = [
             <span style="color:var(--c-accent)">en todo México.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+        <div style="padding-left:1.75rem">
           <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
             Estados a los que enviamos con mayor frecuencia. ¿No ves el tuyo?
             Enviamos a toda la República y coordinamos servicio en sitio donde lo necesites.
@@ -165,7 +164,7 @@ const estados = [
             {[
               { label: 'Cobertura nacional', desc: 'Tiempos de entrega por estado', href: '/cobertura' },
               { label: 'Marcas que distribuimos', desc: 'Globe, MSA, Dräger, Holmatro y más', href: '/marcas' },
-              { label: 'Catálogo de productos', desc: 'Equipo certificado por categoría', href: '/productos' },
+              { label: 'Equipo para bomberos', desc: 'Equipo certificado por categoría', href: '/productos' },
               { label: 'Contacto', desc: CONTACTO_DIRECTO_ACTIVO ? 'Teléfono, WhatsApp y correo' : 'Teléfono, correo y formulario de cotización', href: '/contacto' },
               { label: 'Volver a la empresa', desc: 'Visión general de FIREFIGHTERS MX', href: '/empresa' },
             ].map((l) => (

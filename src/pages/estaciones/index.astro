@@ -205,10 +205,6 @@ const faqSchema = {
       </div>
     </div>
 
-    <!-- Línea de acento inferior -->
-    <div class="absolute bottom-0 left-0 right-0 h-px" aria-hidden="true"
-      style="background:linear-gradient(90deg, transparent, rgba(200,16,46,0.4) 30%, rgba(200,16,46,0.4) 70%, transparent)">
-    </div>
   </section>
 
   <!-- ── QuickLinksBar ───────────────────────────────────────── -->
@@ -241,7 +237,7 @@ const faqSchema = {
           },
         ].map((c, i) => (
           <div class="flex flex-col gap-3 p-6"
-            style={`background:var(--c-surface);${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.18);' : ''}`}>
+            style={`background:var(--c-surface);${i < 3 ? 'border-right:1px solid var(--c-line);' : ''}`}>
             <span class="w-6 h-6 block" style="color:var(--c-accent)" set:html={c.icon}/>
             <h2 class="font-display font-bold text-sm" style="color:var(--c-accent)">{c.title}</h2>
             <p class="text-xs leading-relaxed" style="color:var(--c-muted)">{c.text}</p>
@@ -264,7 +260,7 @@ const faqSchema = {
             <span style="color:var(--c-accent)">de bomberos.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+        <div style="padding-left:1.75rem">
           <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
             En México los cuerpos de bomberos operan bajo diferentes jurisdicciones y
             especializaciones. Cada tipo tiene competencias, normas aplicables y
@@ -274,10 +270,10 @@ const faqSchema = {
         </div>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      <div class="card-grid">
         {conteoTipos.map(t => (
           <div class="flex flex-col gap-3 p-5"
-            style={`background:var(--c-bg-alt);border:1px solid var(--c-line);border-top:2px solid ${t.color}`}>
+            style={`background:var(--c-bg-alt);border:1px solid var(--c-line)`}>
             <div class="flex items-center justify-between">
               <span class="font-display font-bold text-xs uppercase tracking-wider" style={`color:${t.color}`}>
                 {t.label}
@@ -313,7 +309,7 @@ const faqSchema = {
             <span style="color:var(--c-accent)">tu estado.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+        <div style="padding-left:1.75rem">
           <p class="text-sm leading-relaxed mb-5" style="color:var(--c-text-2)">
             Encuentra las estaciones y cuerpos de bomberos de cada entidad federativa.
             Cada tarjeta muestra el número de estaciones listadas, la región y los tipos disponibles.
@@ -334,7 +330,7 @@ const faqSchema = {
       </div>
 
       <!-- Grid de estados (todas las regiones) -->
-      <div id="estados-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      <div id="estados-grid" class="card-grid">
         {estados.map((est) => <EstadoCard est={est} />)}
       </div>
 

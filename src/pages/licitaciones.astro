@@ -208,7 +208,6 @@ const faqSchema = {
       </div>
     </div>
 
-    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(200,16,46,0.4) 30%, rgba(200,16,46,0.4) 70%, transparent)" aria-hidden="true"></div>
   </section>
 
   <!-- Accesos rápidos (interlinking) -->
@@ -226,7 +225,7 @@ const faqSchema = {
             <span style="color:var(--c-accent)">resuelto.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+        <div style="padding-left:1.75rem">
           <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
             Una propuesta técnica se gana en los detalles: la certificación correcta por partida,
             el manifiesto firmado, la carta de distribuidor y los tiempos de entrega creíbles.
@@ -235,9 +234,9 @@ const faqSchema = {
         </div>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="card-grid">
         {capacidades.map((c) => (
-          <article class="cap-card group relative flex flex-col overflow-hidden" style="background:#FFFFFF;border:1px solid var(--c-line);border-top:3px solid var(--c-accent);border-radius:var(--radius-card);box-shadow:var(--shadow-card)">
+          <article class="cap-card group relative flex flex-col overflow-hidden" style="background:#FFFFFF;border:1px solid var(--c-line);border-radius:var(--radius-card);box-shadow:var(--shadow-card)">
             <div class="flex flex-col flex-1 p-5 gap-2.5">
               <span class="text-[9px] font-display font-semibold uppercase tracking-widest" style="color:var(--forge-300)">{c.tag}</span>
               <h3 class="font-display font-bold text-lg leading-tight" style="color:var(--c-ink)">{c.title}</h3>
@@ -261,7 +260,7 @@ const faqSchema = {
             <span style="color:var(--c-accent)">su documento.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+        <div style="padding-left:1.75rem">
           <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
             Las convocatorias se ganan o se descalifican por la documentación. Esto es lo que
             pide una base típica y lo que entregamos para cubrirlo sin observaciones.
@@ -275,7 +274,7 @@ const faqSchema = {
           <div class="p-4" style="border-left:1px solid var(--c-line)"><span class="font-display font-bold text-xs uppercase tracking-widest" style="color:var(--c-accent)">Lo que entregamos</span></div>
         </div>
         {requisitos.map(([req, ent], i) => (
-          <div class="grid grid-cols-1 sm:grid-cols-2" style={`background:${i % 2 === 0 ? 'var(--c-bg-alt)' : 'var(--c-bg-alt)'};${i < requisitos.length - 1 ? 'border-bottom:1px solid rgba(74,117,153,0.12);' : ''}`}>
+          <div class="grid grid-cols-1 sm:grid-cols-2" style={`background:${i % 2 === 0 ? 'var(--c-bg-alt)' : 'var(--c-bg-alt)'};${i < requisitos.length - 1 ? 'border-bottom:1px solid var(--c-line);' : ''}`}>
             <div class="p-4 flex items-center gap-3">
               <span class="w-1.5 h-1.5 rounded-full shrink-0" style="background:var(--c-line-strong)" aria-hidden="true"></span>
               <span class="text-sm" style="color:var(--c-text)">{req}</span>
@@ -304,7 +303,7 @@ const faqSchema = {
           </h2>
           <ul class="grid grid-cols-1 sm:grid-cols-2 list-none m-0 p-0" style="border:1px solid var(--c-line)">
             {plataformas.map((p, i) => (
-              <li class="grid-cell flex items-center gap-3 p-4" style={`border-bottom:1px solid var(--c-line);${i % 2 === 0 ? 'border-right:1px solid rgba(74,117,153,0.12);' : ''}`}>
+              <li class="grid-cell flex items-center gap-3 p-4" style={`border-bottom:1px solid var(--c-line);${i % 2 === 0 ? 'border-right:1px solid var(--c-line);' : ''}`}>
                 
                 <span class="text-xs leading-snug" style="color:var(--c-text-2)">{p}</span>
               </li>
@@ -357,7 +356,7 @@ const faqSchema = {
 
         <div class="flex flex-col">
           {faqs.map((f, i) => (
-            <details class="faq-item group" style={`border-top:1px solid var(--c-line);${i === faqs.length - 1 ? 'border-bottom:1px solid rgba(74,117,153,0.18);' : ''}`}>
+            <details class="faq-item group" style={`border-top:1px solid var(--c-line);${i === faqs.length - 1 ? 'border-bottom:1px solid var(--c-line);' : ''}`}>
               <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer">
                 <span class="font-display font-semibold text-sm" style="color:var(--c-ink)">{f.q}</span>
                 <span class="faq-icon font-display font-bold text-xl shrink-0" style="color:var(--c-accent)">+</span>
@@ -398,7 +397,7 @@ const faqSchema = {
           </h2>
           <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
             {[
-              { label: 'Catálogo de productos', desc: 'Equipo NFPA y NOM en 10 categorías', href: '/productos' },
+              { label: 'Equipo para bomberos', desc: 'Equipo NFPA y NOM en 10 categorías', href: '/productos' },
               { label: 'Soporte para licitaciones (servicio)', desc: 'Alcance y entregables del servicio', href: '/servicios/licitaciones' },
               { label: 'Guía de normas y certificaciones', desc: 'Qué NOM y NFPA aplican por bien', href: '/certificaciones' },
               { label: 'Cómo especificar trajes en licitaciones', desc: 'Guía técnica para redactar bases', href: '/blog/especificaciones-traje-bombero-licitaciones' },
@@ -425,7 +424,7 @@ const faqSchema = {
 </BaseLayout>
 
 <style>
-  .cap-card:hover { border-color: rgba(200,16,46,0.45) !important; }
+  .cap-card:hover { border-color: var(--c-line-strong) !important; }
   details.faq-item summary { list-style: none; }
   details.faq-item summary::-webkit-details-marker { display: none; }
   details.faq-item[open] .faq-icon { transform: rotate(45deg); }

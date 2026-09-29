@@ -129,7 +129,6 @@ const collectionSchema = {
       </div>
     </div>
 
-    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(200,16,46,0.4) 30%, rgba(200,16,46,0.4) 70%, transparent)" aria-hidden="true"></div>
   </section>
 
   <!-- Accesos rápidos (interlinking) -->
@@ -180,7 +179,7 @@ const collectionSchema = {
             )}
 
             <!-- Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5" id="blog-grid">
+            <div class="card-grid" id="blog-grid">
               {rest.map((post) => (
                 <div class="blog-item" data-category={post.data.category}>
                   <BlogCard post={post} />
@@ -282,7 +281,7 @@ const collectionSchema = {
               </div>
 
               <!-- CTA -->
-              <div class="p-6 text-center" style="background:linear-gradient(135deg, var(--c-surface) 0%, rgba(200,16,46,0.12) 130%);border:1px solid rgba(200,16,46,0.3)">
+              <div class="p-6 text-center" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
                 <h3 class="font-display font-bold text-lg mb-2" style="color:var(--c-ink)">¿Dudas sobre normatividad?</h3>
                 <p class="text-xs leading-relaxed mb-5" style="color:var(--c-text-2)">
                   Un especialista te orienta sobre la norma y el equipo correcto para tu operación.
@@ -320,7 +319,7 @@ const collectionSchema = {
     border: 1px solid var(--c-line-strong);
     cursor: pointer;
   }
-  .blog-filter:hover { color: var(--c-ink); border-color: rgba(200,16,46,0.45); }
+  .blog-filter:hover { color: var(--c-ink); border-color: var(--c-line-strong); }
   .blog-filter.is-active { background: rgba(200,16,46,0.15); color: var(--c-accent); border-color: rgba(200,16,46,0.5); }
 
   /* Categorías y posts del sidebar */

@@ -16,7 +16,7 @@ const topPorGiro = Object.fromEntries(await Promise.all(giros.map(async (g) => [
         <span class="section-eyebrow mb-4 inline-flex">Por giro</span>
         <h2 id="giros-heading" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">Cinco giros de equipo contra incendio:<br/><span style="color:var(--c-accent)">extintores, hidrantes, sistemas y EPP.</span></h2>
       </div>
-      <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+      <div style="padding-left:1.75rem">
         <p class="text-sm leading-relaxed mb-3" style="color:var(--c-text-2)">El sector no tiene clasificación oficial propia: el SCIAN reparte a estas empresas en más de treinta clases. Nosotros las agrupamos por lo que realmente hacen, para que un jefe de bomberos, una brigada industrial o un comprador de gobierno encuentre al proveedor correcto sin intermediarios.</p>
         <a href="/empresas/" class="inline-flex items-center gap-2 text-xs font-display font-semibold uppercase tracking-wider hover:text-[var(--c-accent)]" style="color:var(--c-accent);letter-spacing:0.1em">Directorio completo de equipo contra incendios </a>
       </div>
@@ -26,7 +26,7 @@ const topPorGiro = Object.fromEntries(await Promise.all(giros.map(async (g) => [
       {giros.map((g) => {
         const top = topPorGiro[g.slug] as { slug: string; nombre: string; total: number }[];
         return (
-          <article class="giro-card group relative flex flex-col overflow-hidden" style={`--giro:${g.color};background:var(--c-bg);border:1px solid var(--c-line);border-top:3px solid ${g.color}`}>
+          <article class="giro-card group relative flex flex-col overflow-hidden" style={`--giro:${g.color};background:var(--c-bg);border:1px solid var(--c-line)`}>
 
             {/* Imagen */}
             <a href={`/empresas/${g.slug}/`} class="relative block overflow-hidden" style="aspect-ratio:16/10" aria-label={`Empresas de ${g.labelCorto.toLowerCase()} en México`}>

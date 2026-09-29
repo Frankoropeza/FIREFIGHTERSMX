@@ -198,7 +198,7 @@ const faqSchema = {
     <div style="border-top:1px solid var(--c-line)">
       <div class="grid grid-cols-2 sm:grid-cols-4">
         {brand.stats.filter((s) => dato(s.valor)).map((s, i) => (
-          <div class="flex flex-col gap-1 px-6 py-5" style={`${i > 0 ? 'border-left:1px solid rgba(74,117,153,0.14)' : ''}`}>
+          <div class="flex flex-col gap-1 px-6 py-5" style={`${i > 0 ? 'border-left:1px solid var(--c-line)' : ''}`}>
             <span class="font-display font-bold" style="color:var(--c-accent);font-size:clamp(1.4rem,3vw,2rem);line-height:1">{s.valor}</span>
             <span class="text-xs uppercase tracking-widest" style="color:var(--forge-300)">{s.etiq}</span>
           </div>
@@ -207,7 +207,6 @@ const faqSchema = {
     </div>
 
   </div>
-  <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(200,16,46,0.4) 30%, rgba(200,16,46,0.4) 70%, transparent)" aria-hidden="true"></div>
 </section>
 
 {/* ══ QUICK LINKS ═════════════════════════════════════════════════════ */}
@@ -216,9 +215,9 @@ const faqSchema = {
 {/* ══ CREDENCIALES ════════════════════════════════════════════════════ */}
 <section class="section-tight" style="background:var(--c-bg-alt)" aria-label={`Por qué ${brand.brandLabel}`}>
   <div class="container-site">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style="border:1px solid var(--c-line)">
+    <div class="card-grid card-grid--cells" style="border:1px solid var(--c-line)">
       {brand.credenciales.map((r, i) => (
-        <div class="flex flex-col gap-3 p-6" style={`background:var(--c-bg-alt);${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.12)' : ''}`}>
+        <div class="flex flex-col gap-3 p-6" style={`background:var(--c-bg-alt);${i < 3 ? 'border-right:1px solid var(--c-line)' : ''}`}>
           
           <h3 class="font-display font-bold text-sm" style="color:var(--c-ink)">{r.t}</h3>
           <p class="text-xs leading-relaxed m-0" style="color:var(--c-muted)">{r.d}</p>
@@ -240,7 +239,7 @@ const faqSchema = {
         <p class="content-copy mb-5">{parrafo}</p>
       ))}
       {bloque.items && (
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-8">
+        <div class="card-grid mt-8">
           {bloque.items.map((item) => (
             <article class="p-6" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
               <h3 class="font-display font-bold text-lg mb-3" style="color:var(--c-ink)">{item.t}</h3>
@@ -268,7 +267,7 @@ const faqSchema = {
         </div>
       )}
       {bloque.pasos && (
-        <ol class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 list-none p-0 m-0 mt-8">
+        <ol class="card-grid list-none p-0 m-0 mt-8">
           {bloque.pasos.map((paso, pasoIndex) => (
             <li class="p-5" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
               <span class="font-display font-bold text-xl block mb-3" style="color:var(--c-accent)"></span>
@@ -294,17 +293,17 @@ const faqSchema = {
           <span style="color:var(--c-accent)">por tipo de riesgo.</span>
         </h2>
       </div>
-      <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+      <div style="padding-left:1.75rem">
         <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">{brand.linesIntro}</p>
       </div>
     </div>
 
-    <div class={`grid grid-cols-1 sm:grid-cols-2 ${safeLineas.length >= 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3'} gap-px`} style="border:1px solid var(--c-line)">
+    <div class="card-grid card-grid--cells">
       {safeLineas.map((l, i) => {
         const meta = tipoEquipo[l.tipo] ?? { color: '#475467', icon: '' };
         const last = i === safeLineas.length - 1;
         return (
-          <div class="flex flex-col gap-5 p-7" style={`background:var(--c-bg-alt);${!last ? 'border-right:1px solid rgba(74,117,153,0.12)' : ''}`}>
+          <div class="flex flex-col gap-5 p-7" style={`background:var(--c-bg-alt);${!last ? 'border-right:1px solid var(--c-line)' : ''}`}>
             <div class="flex items-center justify-center" style={`width:48px;height:48px;background:${meta.color}1a;border:1.5px solid ${meta.color}59;color:${meta.color}`}>
               
             </div>
@@ -339,7 +338,7 @@ const faqSchema = {
           <span style="color:var(--c-accent)">para tu operación.</span>
         </h2>
       </div>
-      <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+      <div style="padding-left:1.75rem">
         <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
           Cada modelo está certificado por laboratorio acreditado con número de serie verificable con fábrica,
           y se entrega con ficha técnica y manifiesto de cumplimiento NFPA por partida para licitación.
@@ -347,7 +346,7 @@ const faqSchema = {
       </div>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    <div class="card-grid">
       {productos.map((p) => (
         <ProductCard product={p} />
       ))}
@@ -379,14 +378,14 @@ const faqSchema = {
           <span style="color:var(--c-accent)">{brand.flagship}.</span>
         </h2>
       </div>
-      <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+      <div style="padding-left:1.75rem">
         <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">{brand.anatomiaIntro}</p>
       </div>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px" style="border:1px solid var(--c-line)">
+    <div class="card-grid card-grid--cells" style="border:1px solid var(--c-line)">
       {safeAnatomia.map((a, i) => (
-        <div class="flex flex-col gap-3 p-7" style={`background:var(--c-bg-alt);${i % 3 !== 2 ? 'border-right:1px solid rgba(74,117,153,0.12);' : ''}${i < 3 ? 'border-bottom:1px solid rgba(74,117,153,0.12)' : ''}`}>
+        <div class="flex flex-col gap-3 p-7" style={`background:var(--c-bg-alt);${i % 3 !== 2 ? 'border-right:1px solid var(--c-line);' : ''}${i < 3 ? 'border-bottom:1px solid var(--c-line)' : ''}`}>
           <span class="font-display font-bold text-sm" style="color:var(--c-accent)"></span>
           <h3 class="font-display font-bold text-sm" style="color:var(--c-ink)">{a.t}</h3>
           <p class="text-xs leading-relaxed m-0" style="color:var(--c-muted)">{a.d}</p>
@@ -408,7 +407,7 @@ const faqSchema = {
           <span style="color:var(--c-accent)">cara a cara.</span>
         </h2>
       </div>
-      <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+      <div style="padding-left:1.75rem">
         <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
           Compara tipo, norma y especificaciones de toda la línea {brand.brandLabel} para elegir el modelo
           correcto según el escenario de tu brigada. Cada modelo se entrega con número de serie verificable y
@@ -496,7 +495,7 @@ const faqSchema = {
           <span style="color:var(--c-accent)">{esLinea ? nombreLinea : brand.brandLabel}.</span>
         </h2>
       </div>
-      <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+      <div style="padding-left:1.75rem">
         <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">{brand.segmentosIntro}</p>
       </div>
     </div>
@@ -505,10 +504,9 @@ const faqSchema = {
       {safeSegmentos.map((seg, i) => {
         const color = (tipoEquipo[seg.tipo] ?? { color: '#475467' }).color;
         return (
-          <div class="flex flex-col gap-4 p-7" style={`background:var(--c-bg-alt);${[0,1].includes(i) ? 'border-bottom:1px solid rgba(74,117,153,0.12)' : ''}${[0,2].includes(i) ? ';border-right:1px solid var(--c-line)' : ''}`}>
+          <div class="flex flex-col gap-4 p-7" style={`background:var(--c-bg-alt);${[0,1].includes(i) ? 'border-bottom:1px solid var(--c-line)' : ''}${[0,2].includes(i) ? ';border-right:1px solid var(--c-line)' : ''}`}>
             <div class="flex items-center gap-3">
               
-              <div style={`width:2rem;height:2px;background:${color}`}></div>
             </div>
             <h3 class="font-display font-bold text-sm" style="color:var(--c-ink)">{seg.titulo}</h3>
             <p class="text-xs leading-relaxed" style="color:var(--c-muted)">{seg.desc}</p>
@@ -543,7 +541,7 @@ const faqSchema = {
 
       <div class="flex flex-col">
         {safeFaqs.map((f, i) => (
-          <details class="faq-item group" style={`border-top:1px solid var(--c-line);${i === safeFaqs.length - 1 ? 'border-bottom:1px solid rgba(74,117,153,0.18);' : ''}`}>
+          <details class="faq-item group" style={`border-top:1px solid var(--c-line);${i === safeFaqs.length - 1 ? 'border-bottom:1px solid var(--c-line);' : ''}`}>
             <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer">
               <span class="font-display font-semibold text-sm" style="color:var(--c-ink)">{f.q}</span>
               <span class="faq-icon font-display font-bold text-xl shrink-0" style="color:var(--c-accent)">+</span>
@@ -581,7 +579,7 @@ const faqSchema = {
   <section class="section-tight" style="background:var(--c-bg-alt)">
     <div class="container-site">
       <span class="section-eyebrow mb-4 inline-flex">{etiquetaPlural}</span>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="card-grid">
         {lineasHermanas.map((linea) => (
           <a href={linea.href} class="p-5" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
             <span class="font-display font-bold block" style="color:var(--c-ink)">{linea.label}</span>

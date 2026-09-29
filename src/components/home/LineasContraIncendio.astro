@@ -109,7 +109,7 @@ const lineas = [
           <span style="color:var(--c-accent)">para cada tipo de riesgo.</span>
         </h2>
       </div>
-      <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+      <div style="padding-left:1.75rem">
         <p class="text-sm leading-relaxed mb-3" style="color:var(--c-text-2)">
           Los equipos contra incendios se dividen en cuatro grupos: los que detectan el fuego en su etapa inicial (detectores de humo y alarmas), los que lo combaten (extintores, hidrantes y rociadores), los que orientan la evacuación (señalamientos y lámparas de emergencia) y el equipo de protección personal de quien responde. Surtimos las cuatro familias con equipo contra incendios certificado bajo normas internacionales y Normas Oficiales Mexicanas, y te ayudamos a ubicarlo en los lugares estratégicos de oficinas, comercios, hoteles, almacenes e industria de alto riesgo.
         </p>
@@ -124,7 +124,7 @@ const lineas = [
   </div>
 
   <div class="container-site">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+    <div class="card-grid">
       {lineas.map((linea) => (
         <CategoryCard
           href={linea.href}

@@ -11,12 +11,12 @@ const cards = allCategories.filter((c) => c.slug !== 'drones-emergencia');
         <span class="section-eyebrow mb-4 inline-flex">Guías de compra</span>
         <h2 id="guias-heading" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">Qué pedir, qué norma aplica<br/><span style="color:var(--c-accent)">y cómo comparar equipo contra incendios certificado.</span></h2>
       </div>
-      <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+      <div style="padding-left:1.75rem">
         <p class="text-sm leading-relaxed mb-3" style="color:var(--c-text-2)">Ocho categorías de equipo con ficha técnica de referencia, norma NFPA o NOM aplicable, marcas del mercado y criterios de evaluación para licitación. Úsalas antes de pedir cotización a cualquier empresa del directorio.</p>
         <a href="/productos/" class="inline-flex items-center gap-2 text-xs font-display font-semibold uppercase tracking-wider hover:text-[var(--c-accent)]" style="color:var(--c-accent);letter-spacing:0.1em">Todas las guías de compra de equipo para bomberos </a>
       </div>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+    <div class="card-grid">
       {cards.map((cat) => <CategoryCard cat={cat} />)}
     </div>
   </div>

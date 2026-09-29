@@ -33,7 +33,7 @@ const badges = [
           <span style="color:var(--c-accent)">los 32 estados.</span>
         </h2>
       </div>
-      <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+      <div style="padding-left:1.75rem">
         <p class="text-sm leading-relaxed mb-4" style="color:var(--c-text-2)">
           Operamos desde la Ciudad de México con stock permanente de los equipos más
           demandados. Entregamos en 24–48 horas en la zona metropolitana y coordinamos
@@ -54,9 +54,6 @@ const badges = [
           class="coverage-cell relative flex flex-col gap-2 p-7"
           style={`background:${r.featured ? 'var(--c-surface-2)' : 'var(--c-surface)'};border-right:1px solid var(--c-line);border-bottom:1px solid var(--c-line)`}
         >
-          {r.featured && (
-            <div class="absolute left-0 top-0 bottom-0 w-[3px]" style="background:var(--c-accent)" aria-hidden="true"></div>
-          )}
           <CardMedia src={r.img} alt={`Cobertura de entrega: ${r.name}`} />
           <div class="flex items-center justify-between gap-3">
             <h3 class="font-display font-bold text-lg leading-tight" style="color:var(--c-ink)">{r.name}</h3>

@@ -113,7 +113,6 @@ const trustPoints = [
       </div>
     </div>
 
-    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(200,16,46,0.4) 30%, rgba(200,16,46,0.4) 70%, transparent)" aria-hidden="true"></div>
   </section>
 
   <!-- Accesos rápidos (interlinking) -->
@@ -124,7 +123,7 @@ const trustPoints = [
     <div class="container-site">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style="border:1px solid var(--c-line)">
         {trustPoints.map((t, i) => (
-          <div class="flex flex-col gap-2 p-6" style={`background:var(--c-surface);${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.18);' : ''}`}>
+          <div class="flex flex-col gap-2 p-6" style={`background:var(--c-surface);${i < 3 ? 'border-right:1px solid var(--c-line);' : ''}`}>
             <h2 class="font-display font-bold text-sm" style="color:var(--c-accent)">{t.title}</h2>
             <p class="text-xs leading-relaxed" style="color:var(--c-muted)">{t.text}</p>
           </div>
@@ -145,7 +144,7 @@ const trustPoints = [
             <span style="color:var(--c-accent)">una solución a la medida.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+        <div style="padding-left:1.75rem">
           <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
             Cada sector tiene su propia página con los riesgos típicos del giro, la solución
             recomendada, el equipamiento y los servicios que aplican, y respuestas a las
@@ -154,9 +153,9 @@ const trustPoints = [
         </div>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="card-grid">
         {industries.map((ind) => (
-          <a href={ind.href} class="industry-card group relative flex flex-col overflow-hidden" style="background:#FFFFFF;border:1px solid var(--c-line);border-top:3px solid var(--c-accent);border-radius:var(--radius-card);box-shadow:var(--shadow-card)">
+          <a href={ind.href} class="industry-card group relative flex flex-col overflow-hidden" style="background:#FFFFFF;border:1px solid var(--c-line);border-radius:var(--radius-card);box-shadow:var(--shadow-card)">
             <div class="flex flex-col flex-1 p-5 gap-2.5">
               <span class="text-[9px] font-display font-semibold uppercase tracking-widest" style="color:var(--forge-300)">{ind.norm}</span>
               <h3 class="font-display font-bold text-lg leading-tight group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{ind.name}</h3>
@@ -221,7 +220,7 @@ const trustPoints = [
           </h2>
           <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
             {[
-              { label: 'Catálogo de productos', desc: 'Equipo NFPA y NOM en 10 categorías', href: '/productos' },
+              { label: 'Equipo para bomberos', desc: 'Equipo NFPA y NOM en 10 categorías', href: '/productos' },
               { label: 'Servicios profesionales', desc: 'Capacitación, mantenimiento, instalación y auditoría', href: '/servicios' },
               { label: 'Guía de normas y certificaciones', desc: 'Qué NOM y NFPA aplican según tu giro', href: '/certificaciones' },
               { label: 'Soporte para licitaciones', desc: 'CompraNet, PEMEX, CFE y municipios', href: '/licitaciones' },
@@ -248,5 +247,5 @@ const trustPoints = [
 </BaseLayout>
 
 <style>
-  .industry-card:hover { border-color: rgba(200,16,46,0.45) !important; }
+  .industry-card:hover { border-color: var(--c-line-strong) !important; }
 </style>

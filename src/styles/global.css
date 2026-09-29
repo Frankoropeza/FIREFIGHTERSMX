@@ -450,10 +450,7 @@ details.faq-item[open] .faq-icon { transform: rotate(45deg); }
 .emp-card:hover { border-color: var(--c-line-strong) !important; box-shadow: var(--shadow-card-hover); }
 .emp-card:hover h3 a { color: var(--c-accent); }
 
-/* Ledger de estados/giros: acento lateral al hover, instantáneo */
 .ledger-cell { position: relative; }
-.ledger-cell::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 0; background: var(--c-accent); }
-.ledger-cell:hover::before { width: 3px; }
 
 /* Buscador del hero */
 .hero-search { background: #fff; border: 1px solid var(--c-line-strong); box-shadow: var(--shadow-card); border-radius: var(--radius-card); }
@@ -468,3 +465,26 @@ details.faq-item[open] .faq-icon { transform: rotate(45deg); }
 
 /* Leaflet: aislar stacking context del mapa */
 .mapa-empresas, #ficha-map, #estado-map { position: relative; z-index: 0; isolation: isolate; }
+
+/* ================================================================
+   Rejilla de cards homologada · 4 por fila
+   1 columna en móvil · 2 desde 640px · 4 desde 1024px.
+   Con 3 elementos usa 3 columnas y con 2 usa 2, para no dejar huecos.
+   .card-grid--cells: franjas de celdas antiguas (gap-px) que se pintan como cards.
+   ================================================================ */
+.card-grid { display: grid; gap: 1.25rem; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 640px) { .card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) {
+  .card-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .card-grid:not(:has(> :nth-child(4))) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .card-grid:not(:has(> :nth-child(3))) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+.card-grid--cells { background: transparent !important; border: 0 !important; }
+.card-grid--cells > * {
+  background: var(--c-surface) !important;
+  border: 1px solid var(--c-line) !important;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+.card-grid--cells > *:hover { border-color: var(--c-line-strong) !important; box-shadow: var(--shadow-card-hover); }

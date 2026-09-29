@@ -52,11 +52,11 @@ const planes = [
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div><span class="section-eyebrow mb-4 inline-flex">Niveles de ficha</span><h2 id="planes-heading" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">Tres niveles,<br/><span style="color:var(--c-accent)">una regla.</span></h2></div>
-        <div style="border-left:2px solid rgba(200,16,46,0.5);padding-left:1.75rem"><p class="text-sm leading-relaxed" style="color:var(--c-text-2)">El nivel comercial de una ficha y la verificación de sus datos son cosas distintas. Pagar no sube el sello de verificación: ese lo otorga la redacción contra fuentes. Lo que compra el plan es visibilidad, nunca credibilidad.</p></div>
+        <div style="padding-left:1.75rem"><p class="text-sm leading-relaxed" style="color:var(--c-text-2)">El nivel comercial de una ficha y la verificación de sus datos son cosas distintas. Pagar no sube el sello de verificación: ese lo otorga la redacción contra fuentes. Lo que compra el plan es visibilidad, nunca credibilidad.</p></div>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-px" style="background:var(--c-line);border:1px solid var(--c-line)">
         {planes.map((p) => { const c = planConfig[p.key]; return (
-          <div class="flex flex-col gap-4 p-7" style={`background:var(--c-bg);border-top:2px solid ${c.color}`}>
+          <div class="flex flex-col gap-4 p-7" style={`background:var(--c-bg)`}>
             <span class="font-display font-bold text-[10px] uppercase tracking-wider" style={`color:${c.color}`}>{p.titulo}</span>
             <span class="font-display font-bold text-3xl" style="color:var(--c-ink);line-height:1">{p.precio}</span>
             <p class="text-xs leading-relaxed" style="color:var(--c-muted)">{p.desc}</p>

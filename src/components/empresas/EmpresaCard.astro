@@ -26,7 +26,7 @@ const destacado = e.plan === 'destacado';
   data-giro-txt={e.giros.map((x) => giroMap[x].labelCorto).join(' ')}
   data-esp={e.especialidades.join(' ')}
   data-estado={e.estado}
-  style={`background:${destacado ? 'var(--c-surface)' : 'var(--c-bg)'};border:1px solid ${destacado ? 'rgba(181,71,8,0.35)' : 'var(--c-line)'};border-top:2px solid ${destacado ? 'var(--c-amber)' : g.color}`}
+  style={`background:${destacado ? 'var(--c-surface)' : 'var(--c-bg)'};border:1px solid var(--c-line)`}
 >
   <div class="flex items-start justify-between gap-3">
     <span class="inline-flex items-center gap-1.5 font-display font-bold text-[10px] uppercase tracking-wider px-2 py-1"

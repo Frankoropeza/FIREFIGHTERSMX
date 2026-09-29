@@ -102,7 +102,7 @@ const faqSchema = {
         </p>
         <div class="flex flex-col sm:flex-row gap-3">
           <a href="/cotizacion/" class="btn btn-primary btn-lg">Solicitar cotización</a>
-          <a href="/productos/" class="btn btn-ghost btn-lg">Catálogo de equipo para bomberos</a>
+          <a href="/productos/" class="btn btn-ghost btn-lg">Equipo para bomberos NFPA</a>
         </div>
       </div>
     </div>
@@ -120,7 +120,7 @@ const faqSchema = {
         </h2>
         <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">Para comparar propuestas, define primero un alcance común. Un importe aislado no permite saber si dos propuestas cubren la misma solución.</p>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px" style="background:var(--c-line);border:1px solid var(--c-line)">
+      <div class="card-grid card-grid--cells" >
         {factores.map((factor) => (
           <article class="p-7" style="background:var(--c-bg-alt)">
             <h3 class="font-display font-bold text-lg mb-3" style="color:var(--c-ink)">{factor.title}</h3>
@@ -137,7 +137,7 @@ const faqSchema = {
         <span class="section-eyebrow mb-4 inline-flex">Por categoría</span>
         <h2 id="categorias-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">Qué definir antes de<br/><span style="color:var(--c-accent)">solicitar precios.</span></h2>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="card-grid">
         {categorias.map((categoria) => (
           <article class="flex flex-col p-7" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
             <h3 class="font-display font-bold text-xl mb-3" style="color:var(--c-ink)">{categoria.title}</h3>

@@ -129,14 +129,14 @@ const faqSchema = faqSchemaDesdeMarkdown(post.body);
       )}
 
       <!-- Contenido del artículo -->
-      <div class="prose prose-lg max-w-none min-w-0 prose-table:block prose-table:overflow-x-auto prose-table:whitespace-nowrap sm:prose-table:whitespace-normal prose-headings:font-display prose-headings:text-[var(--c-ink)] prose-headings:tracking-[-0.02em] prose-h2:text-2xl prose-h3:text-xl prose-p:text-[var(--c-text)] prose-li:text-[var(--c-text)] prose-strong:text-[var(--c-ink-2)] prose-a:text-[var(--c-accent)] prose-a:font-medium prose-a:no-underline hover:prose-a:underline prose-code:text-[#C8102E] prose-code:bg-[var(--c-surface-2)] prose-code:rounded prose-code:px-1.5 prose-code:py-0.5 prose-img:rounded prose-img:border prose-img:border-[var(--c-line)] prose-blockquote:border-l-4 prose-blockquote:border-[var(--c-accent)] prose-blockquote:bg-[var(--c-bg-alt)] prose-blockquote:text-[var(--c-ink-2)] prose-th:text-[var(--c-ink)] prose-th:bg-[var(--c-bg-alt)] prose-td:text-[var(--c-text)]">
+      <div class="prose prose-lg max-w-none min-w-0 prose-table:block prose-table:overflow-x-auto prose-table:whitespace-nowrap sm:prose-table:whitespace-normal prose-headings:font-display prose-headings:text-[var(--c-ink)] prose-headings:tracking-[-0.02em] prose-h2:text-2xl prose-h3:text-xl prose-p:text-[var(--c-text)] prose-li:text-[var(--c-text)] prose-strong:text-[var(--c-ink-2)] prose-a:text-[var(--c-accent)] prose-a:font-medium prose-a:no-underline hover:prose-a:underline prose-code:text-[#C8102E] prose-code:bg-[var(--c-surface-2)] prose-code:rounded prose-code:px-1.5 prose-code:py-0.5 prose-img:rounded prose-img:border prose-img:border-[var(--c-line)] prose-blockquote:border-l-4 prose-blockquote:border-[var(--c-line-strong)] prose-blockquote:bg-[var(--c-bg-alt)] prose-blockquote:text-[var(--c-ink-2)] prose-th:text-[var(--c-ink)] prose-th:bg-[var(--c-bg-alt)] prose-td:text-[var(--c-text)]">
         <slot />
       </div>
 
       <!-- CTA post-artículo -->
       <RelatedLinks ruta={`/blog/${post.id}/`} giro={giroDeBlog(category)} />
 
-      <div class="mt-12 p-8 text-center" style="background:linear-gradient(135deg, var(--c-surface) 0%, rgba(200,16,46,0.14) 130%);border:1px solid rgba(200,16,46,0.3)">
+      <div class="mt-12 p-8 text-center" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
         <h2 class="font-display font-bold text-2xl mb-3" style="color:var(--c-ink)">¿Necesitas asesoría o cotización?</h2>
         <p class="mb-6" style="color:var(--c-text-2)">Nuestros especialistas te ayudan a elegir el equipo correcto según norma.</p>
         <div class="flex flex-wrap justify-center gap-3">

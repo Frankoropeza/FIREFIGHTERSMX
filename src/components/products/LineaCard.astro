@@ -1,0 +1,63 @@
+---
+/**
+ * Card de línea de producto — pieza única del catálogo (portada, /productos/, directorio).
+ * Estructura fija: imagen · norma · título · texto · botones de subcategoría · botón principal.
+ * Sin íconos ni animaciones; sólo los botones cambian de estado.
+ */
+export interface Props {
+  href: string;
+  norma: string;
+  titulo: string;
+  texto: string;
+  imagen?: string | null;
+  imagenAlt: string;
+  hijas?: { label: string; href: string }[];
+  cta: string;
+  nivel?: 'h3' | 'h4';
+  max?: number;
+}
+const { href, norma, titulo, texto, imagen = null, imagenAlt, hijas = [], cta, nivel = 'h4', max = 4 } = Astro.props;
+const subcategorias = hijas.filter((h) => h.href !== href).slice(0, max);
+const Titulo = nivel;
+---
+
+<article class="lc">
+  <a href={href} class="lc-media" tabindex="-1" aria-hidden="true">
+    {imagen
+      ? <img src={imagen} alt={imagenAlt} width="1200" height="750" loading="lazy" decoding="async" />
+      : <span class="lc-ph">{titulo}</span>}
+    <span class="lc-norm">{norma}</span>
+  </a>
+  <div class="lc-body">
+    <Titulo class="lc-title"><a href={href}>{titulo}</a></Titulo>
+    <p class="lc-text">{texto}</p>
+    {subcategorias.length > 0 && (
+      <ul class="lc-sub" role="list" aria-label={`Subcategorías de ${titulo}`}>
+        {subcategorias.map((h) => <li><a href={h.href} class="lc-chip">{h.label}</a></li>)}
+      </ul>
+    )}
+    <a href={href} class="lc-cta">{cta}</a>
+  </div>
+</article>
+
+<style>
+  .lc { display: flex; flex-direction: column; height: 100%; overflow: hidden; background: var(--c-surface); border: 1px solid var(--c-line); border-radius: var(--radius-card); box-shadow: var(--shadow-card); }
+  .lc:hover { border-color: var(--c-line-strong); box-shadow: var(--shadow-card-hover); }
+  .lc-media { position: relative; display: block; aspect-ratio: 16 / 10; overflow: hidden; background: var(--c-bg-alt); }
+  .lc-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .lc-ph { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 1rem; text-align: center; font-family: var(--font-display); font-weight: 600; color: var(--c-ink-2); background: var(--c-bg-alt); }
+  .lc-norm { position: absolute; left: .875rem; bottom: .875rem; z-index: 1; max-width: calc(100% - 1.75rem); padding: .3125rem .5625rem; font-size: .6875rem; font-weight: 600; letter-spacing: .02em; line-height: 1.3; color: var(--c-ink); background: #FFFFFF; border: 1px solid var(--c-line); border-left: 3px solid var(--c-accent); border-radius: 4px; box-shadow: var(--shadow-sm); }
+
+  .lc-body { display: flex; flex: 1; flex-direction: column; gap: .75rem; padding: 1.25rem; }
+  .lc-title { margin: 0; font-family: var(--font-display); font-size: 1.125rem; font-weight: 600; letter-spacing: -.01em; line-height: 1.3; }
+  .lc-title a { color: var(--c-ink); text-decoration: none; }
+  .lc-title a:hover { color: var(--c-accent); }
+  .lc-text { flex: 1; margin: 0; font-size: .875rem; line-height: 1.6; color: var(--c-text-2); }
+
+  .lc-sub { display: flex; flex-wrap: wrap; gap: .5rem; margin: .25rem 0 0; padding: .875rem 0 0; list-style: none; border-top: 1px solid var(--c-line); }
+  .lc-chip { display: inline-flex; align-items: center; min-height: 2.25rem; padding: .375rem .75rem; font-size: .8125rem; font-weight: 500; line-height: 1.25; text-decoration: none; color: var(--c-ink-2); background: var(--c-bg-alt); border: 1px solid var(--c-line); border-radius: var(--radius-btn); transition: background-color .15s, border-color .15s, color .15s; }
+  .lc-chip:hover, .lc-chip:focus-visible { color: var(--c-accent); background: var(--c-surface); border-color: var(--c-accent); }
+
+  .lc-cta { display: inline-flex; align-items: center; justify-content: center; width: 100%; min-height: 2.75rem; margin-top: .25rem; padding: .625rem 1rem; font-size: .875rem; font-weight: 600; line-height: 1.25; text-align: center; text-decoration: none; color: #FFFFFF; background: var(--c-accent); border: 1px solid var(--c-accent); border-radius: var(--radius-btn); transition: background-color .15s, border-color .15s; }
+  .lc-cta:hover, .lc-cta:focus-visible { background: var(--c-accent-hover); border-color: var(--c-accent-hover); }
+</style>

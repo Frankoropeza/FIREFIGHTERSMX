@@ -340,7 +340,6 @@ const tablaComparativa = [
         </div>
       </div>
     </div>
-    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(6,118,71,0.4) 30%, rgba(6,118,71,0.4) 70%, transparent)" aria-hidden="true"></div>
   </section>
 
   <!-- QuickLinksBar -->
@@ -416,7 +415,7 @@ const tablaComparativa = [
       </div>
 
       <p class="content-copy mt-10 mb-5">Explora cada línea:</p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="card-grid">
         {guiaLineas.map((linea) => (
           <a href={linea.href} class="p-5 font-display font-bold text-sm" style="background:var(--c-bg-alt);border:1px solid var(--c-line);color:var(--c-ink)">{linea.label}</a>
         ))}
@@ -433,9 +432,9 @@ const tablaComparativa = [
           Materiales listados. Memoria firmada. Dossier completo.
         </h2>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style="border:1px solid var(--c-line)">
+      <div class="card-grid card-grid--cells" style="border:1px solid var(--c-line)">
         {razones.map((r, i) => (
-          <div class="flex flex-col gap-3 p-6" style={`background:var(--c-bg-alt);${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.12)' : ''}`}>
+          <div class="flex flex-col gap-3 p-6" style={`background:var(--c-bg-alt);${i < 3 ? 'border-right:1px solid var(--c-line)' : ''}`}>
             
             <h3 class="font-display font-bold text-sm" style="color:var(--c-ink)">{r.t}</h3>
             <p class="text-xs leading-relaxed m-0" style="color:var(--c-muted)">{r.d}</p>
@@ -457,7 +456,7 @@ const tablaComparativa = [
             <span style="color:var(--c-accent)">certificados UL Listed · FM.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(6,118,71,0.4);padding-left:1.75rem">
+        <div style="padding-left:1.75rem">
           <p class="text-sm leading-relaxed mb-4" style="color:var(--c-text-2)">
             Tyco y Viking (Johnson Controls —NYSE: JCI— ) son los rociadores automáticos más
             distribuidos en instalaciones industriales y comerciales de México. Portafolio completo:
@@ -472,13 +471,13 @@ const tablaComparativa = [
         </div>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="card-grid">
         {tycoProducts.map((p) => (
           <ProductCard product={p} />
         ))}
       </div>
 
-      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(6,118,71,0.15)">
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid var(--c-line)">
         <div class="flex-1">
           <p class="text-sm leading-relaxed m-0" style="color:var(--c-muted)">
             Comparativa completa de modelos (K-factor, temperatura, cobertura), hoja de datos UL
@@ -511,7 +510,7 @@ const tablaComparativa = [
             <span style="color:var(--c-accent)">certificados UL Listed · cUL.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(96,165,250,0.4);padding-left:1.75rem">
+        <div style="padding-left:1.75rem">
           <p class="text-sm leading-relaxed mb-4" style="color:var(--c-text-2)">
             Honeywell International —NASDAQ: HON— fabrica los paneles FACP direccionables Notifier
             y los detectores de humo y calor más instalados en México. El NFS2-3030 soporta hasta
@@ -527,13 +526,13 @@ const tablaComparativa = [
         </div>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="card-grid">
         {honeywellProducts.map((p) => (
           <ProductCard product={p} />
         ))}
       </div>
 
-      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(96,165,250,0.15)">
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid var(--c-line)">
         <div class="flex-1">
           <p class="text-sm leading-relaxed m-0" style="color:var(--c-muted)">
             Comparativa de paneles por capacidad de puntos, programación de matrices causa-efecto
@@ -566,7 +565,7 @@ const tablaComparativa = [
             <span style="color:var(--c-accent)">certificados UL Listed · FM.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(167,139,250,0.4);padding-left:1.75rem">
+        <div style="padding-left:1.75rem">
           <p class="text-sm leading-relaxed mb-4" style="color:var(--c-text-2)">
             Kidde Fenwal —Carrier Global, NYSE: CARR— es el principal fabricante de sistemas
             de supresión con agente limpio del mundo. FM-200 (HFC-227ea) extingue en menos de 10
@@ -581,13 +580,13 @@ const tablaComparativa = [
         </div>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="card-grid">
         {kiddeFenwalProducts.map((p) => (
           <ProductCard product={p} />
         ))}
       </div>
 
-      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(167,139,250,0.15)">
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid var(--c-line)">
         <div class="flex-1">
           <p class="text-sm leading-relaxed m-0" style="color:var(--c-muted)">
             Comparativa de agentes por GWP, concentración de diseño y costo por kg. Cálculo de
@@ -620,7 +619,7 @@ const tablaComparativa = [
             <span style="color:var(--c-accent)">y Válvulas Supervisadas.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(251,146,60,0.4);padding-left:1.75rem">
+        <div style="padding-left:1.75rem">
           <p class="text-sm leading-relaxed mb-4" style="color:var(--c-text-2)">
             La red hidráulica es la columna vertebral de cualquier sistema contra incendio.
             Gabinetes con manguera para primera respuesta, sala de bombas NFPA 20 con bomba
@@ -638,13 +637,13 @@ const tablaComparativa = [
         </div>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="card-grid">
         {redHidraulicaProducts.map((p) => (
           <ProductCard product={p} />
         ))}
       </div>
 
-      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(251,146,60,0.15)">
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid var(--c-line)">
         <div class="flex-1">
           <p class="text-sm leading-relaxed m-0" style="color:var(--c-muted)">
             Diseño hidráulico con memoria de cálculo firmada por DRO. Prueba de aceptación NFPA 20
@@ -676,7 +675,7 @@ const tablaComparativa = [
             <span style="color:var(--c-accent)">puesta en marcha.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(6,118,71,0.4);padding-left:1.75rem">
+        <div style="padding-left:1.75rem">
           <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
             Un sistema contra incendio moderno integra rociadores, detección, supresión especial
             y redes hidráulicas en un solo proyecto. Diseñamos cada subsistema en conjunto para
@@ -769,7 +768,7 @@ const tablaComparativa = [
       <div style="overflow-x:auto;max-width:100%;min-width:0">
         <table style="width:100%;border-collapse:collapse;min-width:700px;font-size:12px">
           <thead>
-            <tr style="border-bottom:2px solid rgba(6,118,71,0.35)">
+            <tr >
               {['Subsistema','Norma','Activación','Ocupación típica','Entregable clave','Mantenimiento'].map((c, i) => (
                 <th class="text-left font-display font-bold uppercase tracking-widest p-3" style={`color:${i === 0 ? 'var(--c-ink)' : 'var(--forge-300)'};font-size:10px;background:var(--c-bg-alt)`}>{c}</th>
               ))}
@@ -804,7 +803,7 @@ const tablaComparativa = [
             <span style="color:var(--c-accent)">al expediente final.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(6,118,71,0.4);padding-left:1.75rem">
+        <div style="padding-left:1.75rem">
           <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
             Cada proyecto sigue una metodología documentada con entregables definidos en cada etapa.
             El propietario recibe visibilidad total del avance y un dossier completo al final — no solo el sistema instalado.
@@ -874,7 +873,7 @@ const tablaComparativa = [
           <span style="color:var(--c-accent)">que rigen tu sistema.</span>
         </h2>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="card-grid">
         {normas.map((n) => (
           <article class="flex flex-col gap-3 p-7" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
             <div class="flex items-center justify-between gap-4">
@@ -956,7 +955,7 @@ const tablaComparativa = [
 
         <div class="flex flex-col">
           {faqs.map((f, i) => (
-            <details class="faq-item group" style={`border-top:1px solid var(--c-line);${i === faqs.length - 1 ? 'border-bottom:1px solid rgba(74,117,153,0.18);' : ''}`}>
+            <details class="faq-item group" style={`border-top:1px solid var(--c-line);${i === faqs.length - 1 ? 'border-bottom:1px solid var(--c-line);' : ''}`}>
               <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer">
                 <span class="font-display font-semibold text-sm" style="color:var(--c-ink)">{f.q}</span>
                 <span class="faq-icon font-display font-bold text-xl shrink-0" style="color:var(--c-success)">+</span>
@@ -970,7 +969,7 @@ const tablaComparativa = [
   </section>
 
   <!-- CTA Band -->
-  <section style="background:rgb(26 58 46);padding-block:4rem;border-top:2px solid var(--c-success)" aria-label="Cotizar sistema contra incendio">
+  <section style="background:rgb(26 58 46);padding-block:4rem" aria-label="Cotizar sistema contra incendio">
     <div class="container-site">
       <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
         <div>
@@ -1054,23 +1053,23 @@ const tablaComparativa = [
   <section style="background:var(--c-bg);border-top:1px solid var(--c-line)" aria-labelledby="cats-rel-title">
     <div class="container-site py-10 sm:py-12">
       <p id="cats-rel-title" class="text-[9px] font-display font-bold uppercase tracking-widest mb-6" style="color:var(--forge-300)">Categorías relacionadas</p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="card-grid">
         <a href="/productos/extintores"
-           class="group flex flex-col gap-2 p-5 hover:border-[var(--c-accent)]"
+           class="group flex flex-col gap-2 p-5 hover:border-[var(--c-line-strong)]"
            style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
           <span class="text-sm font-display font-bold group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Extintores</span>
           <span class="text-xs leading-relaxed" style="color:var(--c-muted)">PQS ABC · CO₂ · Agente Limpio · Sobre Ruedas</span>
           <span class="text-[11px] font-semibold mt-1" style="color:var(--c-accent)">Guía de Extintores </span>
         </a>
         <a href="/productos/hazmat"
-           class="group flex flex-col gap-2 p-5 hover:border-[var(--c-accent)]"
+           class="group flex flex-col gap-2 p-5 hover:border-[var(--c-line-strong)]"
            style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
           <span class="text-sm font-display font-bold group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Equipos HAZMAT</span>
           <span class="text-xs leading-relaxed" style="color:var(--c-muted)">DuPont Tychem · Lakeland · MSA · Kappler</span>
           <span class="text-[11px] font-semibold mt-1" style="color:var(--c-accent)">Guía de Equipos HAZMAT </span>
         </a>
         <a href="/productos/herramientas-rescate"
-           class="group flex flex-col gap-2 p-5 hover:border-[var(--c-accent)]"
+           class="group flex flex-col gap-2 p-5 hover:border-[var(--c-line-strong)]"
            style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
           <span class="text-sm font-display font-bold group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Herramientas de Rescate</span>
           <span class="text-xs leading-relaxed" style="color:var(--c-muted)">Holmatro · Hurst · Weber Rescue</span>

@@ -455,7 +455,7 @@ const mapPinIcon = ``;
           {/* Stats operativos (cuando existen) */}
           {(estacion.elementos || estacion.estacionesFisicas || estacion.unidades) && (
             <div class="flex flex-wrap items-center gap-x-6 gap-y-2 mb-6"
-              style="border-left:3px solid var(--c-accent);padding-left:0.875rem">
+              style="padding-left:0.875rem">
               {estacion.elementos && (
                 <div class="flex items-baseline gap-1.5">
                   <span class="font-display font-bold text-2xl" style="color:var(--c-accent)">{estacion.elementos}</span>
@@ -495,7 +495,6 @@ const mapPinIcon = ``;
         <div>
           {/* Eyebrow */}
           <div class="flex items-center gap-3 mb-5">
-            <div class="w-8 h-px shrink-0" style="background:var(--c-accent)"></div>
             <span class="font-display font-bold text-[10px] uppercase tracking-widest" style="color:var(--c-accent)">
               Acerca de esta corporación
             </span>
@@ -542,8 +541,6 @@ const mapPinIcon = ``;
       </div>
     </div>
 
-    <div class="absolute bottom-0 left-0 right-0 h-px" aria-hidden="true"
-      style="background:linear-gradient(90deg,transparent,rgba(200,16,46,0.35) 30%,rgba(200,16,46,0.35) 70%,transparent)"></div>
   </section>
 
   <QuickLinksBar />
@@ -559,7 +556,6 @@ const mapPinIcon = ``;
           {/* ── §1 Perfil institucional ── */}
           <section aria-labelledby="perfil-h2">
             <div class="flex items-center gap-3 mb-6">
-              <div class="w-1 h-6 shrink-0" style="background:var(--c-accent);border-radius:2px"></div>
               <h2 id="perfil-h2" class="font-display font-bold m-0"
                 style="color:var(--c-ink);font-size:clamp(1.1rem,2vw,1.35rem);letter-spacing:-0.01em">
                 Perfil institucional
@@ -617,7 +613,6 @@ const mapPinIcon = ``;
           {(estacion.elementos || estacion.estacionesFisicas || estacion.unidades) && (
             <section aria-labelledby="operativa-h2">
               <div class="flex items-center gap-3 mb-6">
-                <div class="w-1 h-6 shrink-0" style="background:var(--c-accent);border-radius:2px"></div>
                 <h2 id="operativa-h2" class="font-display font-bold m-0"
                   style="color:var(--c-ink);font-size:clamp(1.1rem,2vw,1.35rem);letter-spacing:-0.01em">
                   Capacidad operativa
@@ -625,7 +620,7 @@ const mapPinIcon = ``;
               </div>
               <div class={`grid gap-4 ${[estacion.elementos, estacion.estacionesFisicas, estacion.unidades].filter(Boolean).length === 1 ? 'grid-cols-1 max-w-xs' : [estacion.elementos, estacion.estacionesFisicas, estacion.unidades].filter(Boolean).length === 2 ? 'grid-cols-2' : 'grid-cols-2 sm:grid-cols-3'}`}>
                 {estacion.elementos && (
-                  <div class="p-5 flex flex-col gap-2" style="background:var(--c-bg);border:1px solid var(--c-line);border-top:3px solid var(--c-accent)">
+                  <div class="p-5 flex flex-col gap-2" style="background:var(--c-bg);border:1px solid var(--c-line)">
                     <h3 class="font-display font-bold m-0 leading-none" style="color:var(--c-ink);font-size:2.5rem">{estacion.elementos}</h3>
                     <p class="text-xs uppercase tracking-wider m-0" style="color:var(--c-accent)">Personal activo</p>
                     <p class="text-[11px] leading-relaxed m-0" style="color:var(--c-muted)">Elementos en servicio activo incluyendo bomberos de carrera y personal operativo</p>
@@ -639,7 +634,7 @@ const mapPinIcon = ``;
                   </div>
                 )}
                 {estacion.unidades && (
-                  <div class="p-5 flex flex-col gap-2" style="background:var(--c-bg);border:1px solid var(--c-line);border-top:3px solid var(--c-success)">
+                  <div class="p-5 flex flex-col gap-2" style="background:var(--c-bg);border:1px solid var(--c-line)">
                     <h3 class="font-display font-bold m-0 leading-none" style="color:var(--c-ink);font-size:2.5rem">{estacion.unidades}</h3>
                     <p class="text-xs uppercase tracking-wider m-0" style="color:var(--c-success)">Vehículos</p>
                     <p class="text-[11px] leading-relaxed m-0" style="color:var(--c-muted)">Autobombas, escaleras, unidades de rescate y vehículos de apoyo logístico</p>
@@ -652,7 +647,6 @@ const mapPinIcon = ``;
           {/* ── §3 Servicios de emergencia (categorizados) ── */}
           <section aria-labelledby="servicios-h2">
             <div class="flex items-center gap-3 mb-3">
-              <div class="w-1 h-6 shrink-0" style="background:var(--c-accent);border-radius:2px"></div>
               <h2 id="servicios-h2" class="font-display font-bold m-0"
                 style="color:var(--c-ink);font-size:clamp(1.1rem,2vw,1.35rem);letter-spacing:-0.01em">
                 Servicios de emergencia
@@ -672,7 +666,7 @@ const mapPinIcon = ``;
                   <ul class="flex flex-col m-0 p-0 list-none" style="border:1px solid var(--c-line)">
                     {cat.items.map((s, i) => (
                       <li class="flex items-start gap-3 px-4 py-3 text-sm"
-                        style={`color:var(--c-text);background:var(--c-bg);${i > 0 ? 'border-top:1px solid rgba(74,117,153,0.1)' : ''}`}>
+                        style={`color:var(--c-text);background:var(--c-bg);${i > 0 ? 'border-top:1px solid var(--c-line)' : ''}`}>
                         <span class="shrink-0 mt-1.5 w-1 h-1 rounded-full" style={`background:${cat.color}`}></span>
                         {s}
                       </li>
@@ -738,7 +732,6 @@ const mapPinIcon = ``;
           {/* ── §5 Equipamiento certificado NFPA ── */}
           <section aria-labelledby="equipo-h2">
             <div class="flex items-center gap-3 mb-3">
-              <div class="w-1 h-6 shrink-0" style="background:var(--c-accent);border-radius:2px"></div>
               <h2 id="equipo-h2" class="font-display font-bold m-0"
                 style="color:var(--c-ink);font-size:clamp(1.1rem,2vw,1.35rem);letter-spacing:-0.01em">
                 Equipamiento certificado NFPA para corporaciones {cfg.label.toLowerCase()}
@@ -768,7 +761,7 @@ const mapPinIcon = ``;
               ))}
             </div>
             <div class="p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3"
-              style="background:var(--c-bg);border:1px solid rgba(200,16,46,0.2)">
+              style="background:var(--c-bg);border:1px solid var(--c-line)">
               <p class="text-xs m-0" style="color:var(--c-text-2)">
                 ¿Buscas quién surte este equipo en {estado.nombre}? El directorio reúne a los distribuidores de
                 EPP, recargadoras de extintores, instaladoras de sistemas contra incendio y centros de capacitación
@@ -862,7 +855,7 @@ const mapPinIcon = ``;
           <div class="flex flex-col gap-5" style="position:sticky;top:1.5rem">
 
             {/* ── Bloque 1: Contacto ── */}
-            <div style={`background:var(--c-bg);border:1px solid var(--c-line);border-top:2px solid ${cfg.color}`}>
+            <div style={`background:var(--c-bg);border:1px solid var(--c-line)`}>
               {/* Header */}
               <div class="px-5 pt-4 pb-3" style="border-bottom:1px solid var(--c-line)">
                 <div class="flex items-center justify-between">
@@ -988,7 +981,7 @@ const mapPinIcon = ``;
             </div>
 
             {/* ── Bloque 2: Equipo para esta corporación ── */}
-            <div style="background:var(--c-bg);border:1px solid var(--c-line);border-top:2px solid var(--c-accent)">
+            <div style="background:var(--c-bg);border:1px solid var(--c-line)">
               <div class="px-5 pt-4 pb-3" style="border-bottom:1px solid var(--c-line)">
                 <div class="flex items-center gap-2">
                   <span class="w-3.5 h-3.5 shrink-0" style="color:var(--c-accent)" set:html={tagIcon} aria-hidden="true"/>
@@ -1002,7 +995,7 @@ const mapPinIcon = ``;
                 {prodLinks.map((p, i) => (
                   <a href={p.href}
                     class="flex items-center justify-between px-5 py-2.5 hover:bg-[rgba(200,16,46,0.06)] group"
-                    style={i > 0 ? 'border-top:1px solid rgba(74,117,153,0.1)' : ''}>
+                    style={i > 0 ? 'border-top:1px solid var(--c-line)' : ''}>
                     <span class="text-xs group-hover:text-[var(--c-accent)]" style="color:var(--c-text)">{p.label}</span>
                     <span class="w-3.5 h-3.5 shrink-0 opacity-40 group-hover:opacity-100 group-hover:text-[var(--c-accent)]"
                       style="color:var(--forge-300)" set:html={arrowIcon} aria-hidden="true"/>
@@ -1010,7 +1003,7 @@ const mapPinIcon = ``;
                 ))}
                 <div class="px-5 pt-3 pb-4" style="border-top:1px solid var(--c-line)">
                   <a href="/productos" class="text-[10px] uppercase tracking-wider hover:text-[var(--c-accent)]" style="color:var(--forge-300)">
-                    Catálogo de equipo para bomberos 
+                    Equipo para bomberos
                   </a>
                 </div>
               </div>
@@ -1036,7 +1029,7 @@ const mapPinIcon = ``;
                     return (
                       <a href={`/estaciones/${estado.slug}/${h.slug}/`}
                         class="flex items-start gap-3 px-5 py-3 hover:bg-[var(--c-tint)] group"
-                        style={i > 0 ? 'border-top:1px solid rgba(74,117,153,0.1)' : ''}>
+                        style={i > 0 ? 'border-top:1px solid var(--c-line)' : ''}>
                         <span class="shrink-0 mt-1 w-1.5 h-1.5 rounded-full" style={`background:${hcfg.color};margin-top:0.35rem`}></span>
                         <div class="flex flex-col gap-0.5 min-w-0">
                           <span class="text-xs leading-snug group-hover:text-[var(--c-accent)] truncate" style="color:var(--c-text)">{h.nombre}</span>
@@ -1070,7 +1063,7 @@ const mapPinIcon = ``;
                 </div>
                 <div class="flex flex-col">
                   {estacionesNacionales.map((nacional, i) => (
-                    <a href={`/estaciones/${nacional.estado}/${nacional.slug}/`} class="flex items-start gap-3 px-5 py-3 hover:bg-[var(--c-tint)] group" style={i > 0 ? 'border-top:1px solid rgba(74,117,153,0.1)' : ''}>
+                    <a href={`/estaciones/${nacional.estado}/${nacional.slug}/`} class="flex items-start gap-3 px-5 py-3 hover:bg-[var(--c-tint)] group" style={i > 0 ? 'border-top:1px solid var(--c-line)' : ''}>
                       <div class="flex flex-col gap-0.5 min-w-0"><span class="text-xs leading-snug group-hover:text-[var(--c-accent)] truncate" style="color:var(--c-text)">{nacional.nombre}</span><span class="text-[10px]" style="color:var(--forge-300)">{nacional.ciudad}, {nacional.estado}</span></div>
                     </a>
                   ))}
@@ -1090,7 +1083,7 @@ const mapPinIcon = ``;
                 {blogLinks.map((b, i) => (
                   <a href={b.href}
                     class="flex items-start gap-2.5 px-5 py-3 hover:bg-[var(--c-tint)] group"
-                    style={i > 0 ? 'border-top:1px solid rgba(74,117,153,0.1)' : ''}>
+                    style={i > 0 ? 'border-top:1px solid var(--c-line)' : ''}>
                     <span class="shrink-0 font-display text-[10px] font-bold mt-0.5" style="color:var(--forge-300)"></span>
                     <span class="text-xs leading-snug group-hover:text-[var(--c-accent)]" style="color:var(--c-text-2)">{b.label}</span>
                   </a>
@@ -1116,7 +1109,7 @@ const mapPinIcon = ``;
                   {estadosRegion.map((e, i) => (
                     <a href={`/estaciones/${e.slug}/`}
                       class="flex items-center justify-between px-5 py-2.5 hover:bg-[var(--c-tint)] group"
-                      style={i > 0 ? 'border-top:1px solid rgba(74,117,153,0.1)' : ''}>
+                      style={i > 0 ? 'border-top:1px solid var(--c-line)' : ''}>
                       <div class="flex flex-col gap-0.5">
                         <span class="text-xs group-hover:text-[var(--c-accent)]" style="color:var(--c-text)">{e.nombre}</span>
                         <span class="text-[10px]" style="color:var(--forge-300)">{e.estaciones.length} corporacion{e.estaciones.length !== 1 ? 'es' : ''}</span>
@@ -1159,7 +1152,7 @@ const mapPinIcon = ``;
             return (
               <a href={`/estaciones/${estado.slug}/${h.slug}/`}
                 class="group flex flex-col gap-2 p-4"
-                style={`background:var(--c-bg-alt);border:1px solid var(--c-line);border-left:3px solid ${hcfg.color}`}>
+                style={`background:var(--c-bg-alt);border:1px solid var(--c-line)`}>
                 <span class="font-display text-[9px] uppercase tracking-wider" style={`color:${hcfg.color}`}>{hcfg.label}</span>
                 <span class="font-display font-bold text-sm leading-tight group-hover:text-[var(--c-accent)]"
                   style="color:var(--c-ink)">{h.nombre}</span>

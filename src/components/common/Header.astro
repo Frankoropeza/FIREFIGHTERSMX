@@ -17,7 +17,6 @@ const activoItem = (item: { href: string; zona?: string }) =>
 
 <header id="site-header" class="fixed top-0 inset-x-0 z-50">
   <TopBar />
-  <div class="h-[3px] bg-[var(--c-accent)]"></div>
 
   <div class="header-glass" style="background-color:#FFFFFF;border-bottom:1px solid var(--c-line)">
     <div class="container-site h-[68px] flex items-center justify-between gap-6 xl:gap-2 2xl:gap-6">
@@ -62,7 +61,7 @@ const activoItem = (item: { href: string; zona?: string }) =>
 
                 <!-- Dropdown panel (pt-2 = puente continuo de hover) -->
                 <div class={`nav-dropdown absolute top-full ${item.zona === 'directorio' ? 'right-0' : 'left-0'} pt-2 z-50`} style="width:19rem" role="menu">
-                  <div class="drop-panel" style="background:#FFFFFF;border:1px solid var(--c-line);border-top:2px solid var(--c-accent);border-radius:0 0 var(--radius-card) var(--radius-card);box-shadow:0 12px 32px rgba(16,24,40,0.10)">
+                  <div class="drop-panel" style="background:#FFFFFF;border:1px solid var(--c-line);border-radius:0 0 var(--radius-card) var(--radius-card);box-shadow:0 12px 32px rgba(16,24,40,0.10)">
                     <div class="py-1.5">
                       {item.children.map((child) => (
                         child.children ? (
@@ -88,7 +87,7 @@ const activoItem = (item: { href: string; zona?: string }) =>
 
                             <!-- Sub-panel fly-out a la derecha (pl-0.5 = puente) -->
                             <div class={`nav-sub-panel absolute top-0 ${item.zona === 'directorio' ? 'right-full pr-0.5' : 'left-full pl-0.5'} z-50`} style="width:15rem">
-                              <div style="background:#FFFFFF;border:1px solid var(--c-line);border-top:2px solid var(--c-accent);border-radius:0 0 var(--radius-card) var(--radius-card);box-shadow:0 12px 32px rgba(16,24,40,0.10)">
+                              <div style="background:#FFFFFF;border:1px solid var(--c-line);border-radius:0 0 var(--radius-card) var(--radius-card);box-shadow:0 12px 32px rgba(16,24,40,0.10)">
                                 <div class="px-4 py-2.5" style="border-bottom:1px solid var(--c-line)">
                                   <span class="text-[9px] font-display font-bold uppercase tracking-[0.16em]" style="color:var(--c-accent)">Subcategorías</span>
                                 </div>

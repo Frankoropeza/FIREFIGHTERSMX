@@ -118,7 +118,6 @@ const trustPoints = [
       </div>
     </div>
 
-    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(200,16,46,0.4) 30%, rgba(200,16,46,0.4) 70%, transparent)" aria-hidden="true"></div>
   </section>
   <!-- Accesos rápidos (interlinking) -->
   <QuickLinksBar />
@@ -129,7 +128,7 @@ const trustPoints = [
     <div class="container-site">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style="border:1px solid var(--c-line)">
         {trustPoints.map((t, i) => (
-          <div class="flex flex-col gap-2 p-6" style={`background:var(--c-surface);${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.18);' : ''}`}>
+          <div class="flex flex-col gap-2 p-6" style={`background:var(--c-surface);${i < 3 ? 'border-right:1px solid var(--c-line);' : ''}`}>
             <h3 class="font-display font-bold text-sm" style="color:var(--c-accent)">{t.title}</h3>
             <p class="text-xs leading-relaxed" style="color:var(--c-muted)">{t.text}</p>
           </div>
@@ -150,7 +149,7 @@ const trustPoints = [
             <span style="color:var(--c-accent)">todo certificado.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+        <div style="padding-left:1.75rem">
           <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
             Cada categoría tiene su propia página con líneas disponibles, normas aplicables
             y productos destacados. Si no encuentras un modelo específico, lo conseguimos:
@@ -159,7 +158,7 @@ const trustPoints = [
         </div>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="card-grid">
         {allCategories.map((cat) => <CategoryCard cat={cat} />)}
       </div>
 
@@ -190,7 +189,7 @@ const trustPoints = [
         </a>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px" style="background:var(--c-line);border:1px solid var(--c-line)">
+      <div class="card-grid card-grid--cells" >
         {featuredProducts.map((product) => (
           <a href={product.href} class="grid-cell group flex flex-col gap-3 p-6">
             <div class="flex gap-2 flex-wrap">

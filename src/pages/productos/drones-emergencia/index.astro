@@ -196,7 +196,6 @@ const otrasCategorias = allCategories.filter((c) => c.slug !== 'drones-emergenci
         </div>
       </div>
     </div>
-    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(200,16,46,0.4) 30%, rgba(200,16,46,0.4) 70%, transparent)" aria-hidden="true"></div>
   </section>
 
   <section id="guia-drones" class="section" style="background:var(--c-bg)" aria-labelledby="guia-drones-title">
@@ -249,9 +248,9 @@ const otrasCategorias = allCategories.filter((c) => c.slug !== 'drones-emergenci
   <!-- Trust Pillars -->
   <section class="section-tight" style="background:var(--c-bg-alt)" aria-label="Por qué distribuimos DJI Enterprise">
     <div class="container-site">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style="border:1px solid var(--c-line)">
+      <div class="card-grid card-grid--cells" style="border:1px solid var(--c-line)">
         {razones.map((r, i) => (
-          <div class="flex flex-col gap-3 p-6" style={`background:var(--c-bg-alt);${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.12)' : ''}`}>
+          <div class="flex flex-col gap-3 p-6" style={`background:var(--c-bg-alt);${i < 3 ? 'border-right:1px solid var(--c-line)' : ''}`}>
             
             <h3 class="font-display font-bold text-sm" style="color:var(--c-ink)">{r.t}</h3>
             <p class="text-xs leading-relaxed m-0" style="color:var(--c-muted)">{r.d}</p>
@@ -272,7 +271,7 @@ const otrasCategorias = allCategories.filter((c) => c.slug !== 'drones-emergenci
             <span style="color:var(--c-accent)">según la misión.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+        <div style="padding-left:1.75rem">
           <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
             No todas las emergencias piden lo mismo. La evaluación táctica de un incendio estructural,
             la búsqueda nocturna de una persona o el reconocimiento de un derrame HAZMAT tienen
@@ -281,7 +280,7 @@ const otrasCategorias = allCategories.filter((c) => c.slug !== 'drones-emergenci
         </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="card-grid">
         {misiones.map((m) => (
           <article class="flex flex-col gap-4 p-7" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
             <div class="flex items-center justify-between gap-2">
@@ -307,7 +306,7 @@ const otrasCategorias = allCategories.filter((c) => c.slug !== 'drones-emergenci
               <span style="color:var(--c-accent)">para emergencias.</span>
             </h2>
           </div>
-          <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+          <div style="padding-left:1.75rem">
             <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
               DJI Enterprise es una plataforma de drones para cuerpos de bomberos y protección
               civil a nivel mundial. Distribuimos los tres modelos de referencia con soporte técnico,
@@ -315,7 +314,7 @@ const otrasCategorias = allCategories.filter((c) => c.slug !== 'drones-emergenci
             </p>
           </div>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="card-grid">
           {marcas.map((b) => (
             <a href={`/productos/${b.categorySlug}/${b.slug}`} class="group flex flex-col gap-3 p-7" style="background:var(--c-bg);border:1px solid var(--c-line)">
               <h3 class="font-display font-bold text-xl group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{b.brandLabel}</h3>
@@ -343,7 +342,7 @@ const otrasCategorias = allCategories.filter((c) => c.slug !== 'drones-emergenci
             <span style="color:var(--c-accent)">tres misiones.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+        <div style="padding-left:1.75rem">
           <p class="text-sm leading-relaxed mb-4" style="color:var(--c-text-2)">
             Desde la plataforma institucional completa hasta el dron compacto de respuesta rápida y la
             estación autónoma 24/7 — un solo distribuidor para toda la flota con capacitación y AFAC incluidos.
@@ -356,7 +355,7 @@ const otrasCategorias = allCategories.filter((c) => c.slug !== 'drones-emergenci
         </div>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="card-grid">
         {dronesProducts.map((p) => (
           <ProductCard product={p} />
         ))}
@@ -386,7 +385,6 @@ const otrasCategorias = allCategories.filter((c) => c.slug !== 'drones-emergenci
   <section class="section-tight" style="background:var(--c-bg)" aria-label="Dron de emergencia en operación">
     <div class="container-site">
       <div class="flex items-center gap-4 mb-6">
-        <span class="w-8 h-px" style="background:var(--c-accent)"></span>
         <span class="text-xs font-display font-semibold uppercase tracking-[0.18em]" style="color:var(--c-accent)">Drones en operación real</span>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -508,7 +506,7 @@ const otrasCategorias = allCategories.filter((c) => c.slug !== 'drones-emergenci
         </div>
         <div class="flex flex-col">
           {faqs.map((f, i) => (
-            <details class="faq-item group" style={`border-top:1px solid var(--c-line);${i === faqs.length - 1 ? 'border-bottom:1px solid rgba(74,117,153,0.18);' : ''}`}>
+            <details class="faq-item group" style={`border-top:1px solid var(--c-line);${i === faqs.length - 1 ? 'border-bottom:1px solid var(--c-line);' : ''}`}>
               <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer">
                 <span class="font-display font-semibold text-sm" style="color:var(--c-ink)">{f.q}</span>
                 <span class="faq-icon font-display font-bold text-xl shrink-0" style="color:var(--c-accent)">+</span>

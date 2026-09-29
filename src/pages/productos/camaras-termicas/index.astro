@@ -241,7 +241,6 @@ const articulos = [
 
       </div>
     </div>
-    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(200,16,46,0.4) 30%, rgba(200,16,46,0.4) 70%, transparent)" aria-hidden="true"></div>
   </section>
 
   <section id="guia-camaras" class="section" style="background:var(--c-bg)" aria-labelledby="guia-camaras-title">
@@ -316,9 +315,9 @@ const articulos = [
           Tres marcas líderes. Una sola fuente. Soporte técnico real.
         </h2>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style="border:1px solid var(--c-line)">
+      <div class="card-grid card-grid--cells" style="border:1px solid var(--c-line)">
         {razones.map((r, i) => (
-          <div class="flex flex-col gap-3 p-6" style={`background:var(--c-bg-alt);${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.12)' : ''}`}>
+          <div class="flex flex-col gap-3 p-6" style={`background:var(--c-bg-alt);${i < 3 ? 'border-right:1px solid var(--c-line)' : ''}`}>
             
             <h3 class="font-display font-bold text-sm" style="color:var(--c-ink)">{r.t}</h3>
             <p class="text-xs leading-relaxed m-0" style="color:var(--c-muted)">{r.d}</p>
@@ -339,9 +338,9 @@ const articulos = [
         </h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-14">
+      <div class="card-grid mb-14">
         {tipos.map(t => (
-          <div class="flex flex-col gap-4 p-8" style={`background:var(--c-bg-alt);border:1px solid var(--c-line);border-top:3px solid ${t.accent}`}>
+          <div class="flex flex-col gap-4 p-8" style={`background:var(--c-bg-alt);border:1px solid var(--c-line)`}>
             <div class="flex items-center gap-3">
               <div class="shrink-0 flex items-center justify-center w-10 h-10 rounded-full" style={`background:${t.accent}18`}>
                 
@@ -395,7 +394,7 @@ const articulos = [
             <span style="color:var(--c-accent)">K75 y K85-N (NFPA 1930).</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+        <div style="padding-left:1.75rem">
           <p class="text-sm leading-relaxed mb-4" style="color:var(--c-text-2)">
             Teledyne FLIR es el mayor fabricante mundial de sensores de imagen térmica. Su línea K
             para bomberos define el estándar global: K75 para entrada personal, K85-N para mando con
@@ -410,13 +409,13 @@ const articulos = [
         </div>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="card-grid">
         {flirProducts.map((p) => (
           <ProductCard product={p} />
         ))}
       </div>
 
-      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(200,16,46,0.15)">
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid var(--c-line)">
         <div class="flex-1">
           <p class="text-sm leading-relaxed m-0" style="color:var(--c-muted)">
             Comparativa completa de modelos FLIR (resolución, rango de temperatura, grabación),
@@ -449,7 +448,7 @@ const articulos = [
             <span style="color:var(--c-accent)">Evolution 6000 y G1 iTIC.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(96,165,250,0.4);padding-left:1.75rem">
+        <div style="padding-left:1.75rem">
           <p class="text-sm leading-relaxed mb-4" style="color:var(--c-text-2)">
             MSA Safety —NYSE: MSA— integra su cámara Evolution 6000 con el ecosistema completo de EPP:
             montaje nativo en casco Gallet, integración con máscara SCBA G1 y transmisión inalámbrica
@@ -464,13 +463,13 @@ const articulos = [
         </div>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="card-grid">
         {msaProducts.map((p) => (
           <ProductCard product={p} />
         ))}
       </div>
 
-      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(96,165,250,0.15)">
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid var(--c-line)">
         <div class="flex-1">
           <p class="text-sm leading-relaxed m-0" style="color:var(--c-muted)">
             Comparativa Evolution 6000 vs Evolution 6000 vs Evolution 6000 Industrial, guía de integración con casco
@@ -503,7 +502,7 @@ const articulos = [
             <span style="color:var(--c-accent)">TXS, QXT Pro, DXT y NXT Pro.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(181,71,8,0.4);padding-left:1.75rem">
+        <div style="padding-left:1.75rem">
           <p class="text-sm leading-relaxed mb-4" style="color:var(--c-text-2)">
             Bullard fabrica EPP para bomberos. Su línea TXS y NXT Pro destaca por
             resistencia mecánica extrema — probadas a caídas de 2 m sobre concreto mientras están
@@ -519,13 +518,13 @@ const articulos = [
         </div>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="card-grid">
         {bullardProducts.map((p) => (
           <ProductCard product={p} />
         ))}
       </div>
 
-      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(181,71,8,0.15)">
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid var(--c-line)">
         <div class="flex-1">
           <p class="text-sm leading-relaxed m-0" style="color:var(--c-muted)">
             Comparativa TXS vs NXT Pro vs NXT Pro, pruebas de resistencia mecánica y ficha técnica
@@ -617,7 +616,7 @@ const articulos = [
 
         <div class="flex flex-col">
           {faqs.map((f, i) => (
-            <details class="faq-item group" style={`border-top:1px solid var(--c-line);${i === faqs.length - 1 ? 'border-bottom:1px solid rgba(74,117,153,0.18);' : ''}`}>
+            <details class="faq-item group" style={`border-top:1px solid var(--c-line);${i === faqs.length - 1 ? 'border-bottom:1px solid var(--c-line);' : ''}`}>
               <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer">
                 <span class="font-display font-semibold text-sm" style="color:var(--c-ink)">{f.q}</span>
                 <span class="faq-icon font-display font-bold text-xl shrink-0" style="color:var(--c-amber)">+</span>
@@ -632,7 +631,7 @@ const articulos = [
   </section>
 
   {/* ══ CTA BAND ════════════════════════════════════════════════════════ */}
-  <section class="section" style="background:#ECFDF3;border-top:1px solid rgba(6,118,71,0.2);border-bottom:1px solid rgba(6,118,71,0.2)" aria-label="Llamada a la acción">
+  <section class="section" style="background:#ECFDF3;border-top:1px solid var(--c-line);border-bottom:1px solid var(--c-line)" aria-label="Llamada a la acción">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         <div>
@@ -674,14 +673,14 @@ const articulos = [
           La cámara trabaja en conjunto con tu EPP.
         </h2>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="card-grid">
         {[
           { label: 'Cascos NFPA 1970',            desc: 'MSA Gallet · Bullard · Pacific Helmets',       href: '/productos/cascos-nfpa',         accent: '#C8102E' },
           { label: 'Trajes de Bombero NFPA 1970', desc: 'Globe · Fire-Dex · Honeywell Morning Pride',   href: '/productos/trajes-bombero',       accent: '#B54708' },
           { label: 'Equipos SCBA',                desc: 'MSA G1 · Dräger PA5000 · Scott X3Pro',         href: '/productos/equipos-scba',         accent: '#175CD3' },
           { label: 'Herramientas de Rescate',     desc: 'Holmatro · AMKUS · Weber Rescue',              href: '/productos/herramientas-rescate', accent: '#067647' },
         ].map((l) => (
-          <a href={l.href} class="group flex flex-col gap-2 p-5" style={`background:var(--c-bg-alt);border:1px solid var(--c-line);border-top:2px solid ${l.accent}`}>
+          <a href={l.href} class="group flex flex-col gap-2 p-5" style={`background:var(--c-bg-alt);border:1px solid var(--c-line)`}>
             <span class="font-display font-bold text-sm" style={`color:${l.accent}`}>{l.label}</span>
             <span class="text-xs leading-relaxed" style="color:var(--c-muted)">{l.desc}</span>
             <span class="text-xs font-semibold mt-auto pt-2" style="color:var(--forge-300)">Guía de {l.label} </span>
@@ -700,7 +699,7 @@ const articulos = [
           Más categorías certificadas NFPA
         </h2>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="card-grid">
         {otrasCategorias.map(c => (
           <a href={`/productos/${c.slug}`}
             class="flex flex-col gap-2 p-6"
@@ -720,23 +719,23 @@ const articulos = [
   <section style="background:var(--c-bg);border-top:1px solid var(--c-line)" aria-labelledby="cats-rel-title">
     <div class="container-site py-10 sm:py-12">
       <p id="cats-rel-title" class="text-[9px] font-display font-bold uppercase tracking-widest mb-6" style="color:var(--forge-300)">Categorías relacionadas</p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="card-grid">
         <a href="/productos/equipos-scba"
-           class="group flex flex-col gap-2 p-5 hover:border-[var(--c-accent)]"
+           class="group flex flex-col gap-2 p-5 hover:border-[var(--c-line-strong)]"
            style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
           <span class="text-sm font-display font-bold group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Equipos SCBA</span>
           <span class="text-xs leading-relaxed" style="color:var(--c-muted)">MSA G1 · Dräger PSS · 3M Scott</span>
           <span class="text-[11px] font-semibold mt-1" style="color:var(--c-accent)">Guía de Equipos SCBA </span>
         </a>
         <a href="/productos/trajes-bombero"
-           class="group flex flex-col gap-2 p-5 hover:border-[var(--c-accent)]"
+           class="group flex flex-col gap-2 p-5 hover:border-[var(--c-line-strong)]"
            style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
           <span class="text-sm font-display font-bold group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Trajes Bombero</span>
           <span class="text-xs leading-relaxed" style="color:var(--c-muted)">Globe · Lion Apparel · Honeywell · Fire-Dex</span>
           <span class="text-[11px] font-semibold mt-1" style="color:var(--c-accent)">Guía de Trajes Bombero </span>
         </a>
         <a href="/productos/cascos-nfpa"
-           class="group flex flex-col gap-2 p-5 hover:border-[var(--c-accent)]"
+           class="group flex flex-col gap-2 p-5 hover:border-[var(--c-line-strong)]"
            style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
           <span class="text-sm font-display font-bold group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Cascos NFPA</span>
           <span class="text-xs leading-relaxed" style="color:var(--c-muted)">MSA Gallet · Bullard · Cairns</span>

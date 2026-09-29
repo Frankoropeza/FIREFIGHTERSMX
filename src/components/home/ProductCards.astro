@@ -21,7 +21,7 @@ const cards = allCategories.filter((c) => c.slug !== 'drones-emergencia');
           <span style="color:var(--c-accent)">y sistemas en un solo proveedor.</span>
         </h2>
       </div>
-      <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+      <div style="padding-left:1.75rem">
         <p class="text-sm leading-relaxed mb-3" style="color:var(--c-text-2)">
           Todo el equipamiento que un cuerpo de bomberos, brigada industrial o área de protección civil necesita:
           <strong style="color:var(--c-text)">trajes NFPA 1970, SCBA, herramientas de rescate, extintores, sistemas CI, cámaras térmicas y HAZMAT</strong> —
@@ -44,7 +44,7 @@ const cards = allCategories.filter((c) => c.slug !== 'drones-emergencia');
 
   <!-- Cards grid -->
   <div class="container-site">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+    <div class="card-grid">
       {cards.map((cat) => <CategoryCard cat={cat} />)}
     </div>
   </div>

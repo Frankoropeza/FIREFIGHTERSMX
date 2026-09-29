@@ -18,7 +18,7 @@ const lista = destacadas
           <span style="color:var(--c-accent)">que distribuimos en México.</span>
         </h2>
       </div>
-      <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+      <div style="padding-left:1.75rem">
         <p class="text-sm leading-relaxed mb-3" style="color:var(--c-text-2)">
           Rociadores y válvulas Tyco, paneles de alarma Notifier y detectores Honeywell para el sistema contra incendio; trajes Globe y Lion, cascos Bullard y MSA Gallet, equipo de respiración autónoma MSA, Dräger y 3M Scott, herramientas de rescate Holmatro y cámaras térmicas FLIR para el equipo de bomberos. Cada equipo se entrega con número de serie verificable y certificado de fábrica.
         </p>
@@ -33,7 +33,7 @@ const lista = destacadas
   </div>
 
   <div class="container-site">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style="background:var(--c-line);border:1px solid var(--c-line)">
+    <div class="card-grid card-grid--cells" >
       {lista.map((b) => (
         <a href={`/marcas/${b.slug}/`} class="grid-cell ledger-cell flex flex-col gap-2 p-6" style="background:var(--c-bg-alt)">
           <CardMedia src={`/images/home/marca-${b.slug}.avif`} alt={`Equipo de la línea ${b.name}`} class="mb-2" />

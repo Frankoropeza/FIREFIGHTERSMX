@@ -81,7 +81,7 @@ const ctaWeb = urlCotizar(web);
       Las seis líneas que la empresa publica en su catálogo, con las familias que componen cada una. Cada card lleva a la página de esa línea en su sitio, donde están los modelos y las fichas técnicas del fabricante.
     </p>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5 mb-10">
+    <div class="card-grid mb-10">
       {v.lineas.map((l) => (
         <article class="flex flex-col" style={`background:var(--c-surface);border:1px solid ${borde}`}>
           {l.imagen && (
@@ -251,7 +251,7 @@ const ctaWeb = urlCotizar(web);
       ))}
     </div>
     {ctaWeb && (
-      <div class="mt-6 p-5 flex flex-col sm:flex-row sm:items-center gap-4" style={`background:var(--c-surface);border:1px solid ${borde};border-left:3px solid ${g.color}`}>
+      <div class="mt-6 p-5 flex flex-col sm:flex-row sm:items-center gap-4" style={`background:var(--c-surface);border:1px solid ${borde}`}>
         <p class="text-sm leading-relaxed flex-1" style="color:var(--c-text-2)">La empresa recibe solicitudes de cotización directamente en su sitio. Ten a la mano número de parte o categoría, cantidades, razón social y ciudad de entrega.</p>
         <a href={ctaWeb} target="_blank" rel={relEmpresa(ctaWeb)} class="btn btn-sm btn-primary shrink-0">Cotizar {g.labelCorto.toLowerCase()}</a>
       </div>

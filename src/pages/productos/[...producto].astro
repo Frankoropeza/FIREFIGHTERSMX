@@ -706,9 +706,6 @@ const seoDesc = metaCerrada(product.description, [
       </div>
     </div>
 
-    <div class="absolute bottom-0 left-0 right-0 h-px"
-         style="background:linear-gradient(90deg, transparent, rgba(200,16,46,0.4) 30%, rgba(200,16,46,0.4) 70%, transparent)"
-         aria-hidden="true"></div>
   </section>
 
   {/* ══ QUICKLINKS ══════════════════════════════════════════════════════ */}
@@ -850,7 +847,7 @@ const seoDesc = metaCerrada(product.description, [
                   const colors = ['#C8102E','#B54708','#067647','#175CD3','#6941C6'];
                   const color = colors[i % colors.length];
                   return (
-                    <div class="flex flex-col gap-3 p-5" style={`background:var(--c-bg-alt);border-top:3px solid ${color}`}>
+                    <div class="flex flex-col gap-3 p-5" style={`background:var(--c-bg-alt)`}>
                       <div class="w-8 h-8 flex items-center justify-center rounded-full" style={`background:${color}18`}>
                         
                       </div>
@@ -877,7 +874,7 @@ const seoDesc = metaCerrada(product.description, [
               ))}
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-px" style="border-top:1px solid var(--c-line)">
-              <div style="background:var(--c-bg-alt);border-top:3px solid var(--c-success)">
+              <div style="background:var(--c-bg-alt)">
                 <div class="px-5 pt-4 pb-3" style="border-bottom:1px solid var(--c-line)">
                   <span class="text-[10px] font-display font-bold uppercase tracking-widest" style="color:var(--c-success)">Ideal para</span>
                 </div>
@@ -891,7 +888,7 @@ const seoDesc = metaCerrada(product.description, [
                   ))}
                 </ul>
               </div>
-              <div style="background:var(--c-bg-alt);border-top:3px solid var(--c-amber)">
+              <div style="background:var(--c-bg-alt)">
                 <div class="px-5 pt-4 pb-3" style="border-bottom:1px solid var(--c-line)">
                   <span class="text-[10px] font-display font-bold uppercase tracking-widest" style="color:var(--c-amber)"> A considerar</span>
                 </div>
@@ -997,7 +994,7 @@ const seoDesc = metaCerrada(product.description, [
                     : { svg: '', t: 'Manifiesto por partida', d: 'Cumplimiento de norma por partida licitada', color: '#B54708' },
                   { svg: `<path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>`, t: 'Garantía de fábrica', d: 'Refacciones y servicio directo con fábrica', color: '#6941C6' },
                 ].map((d, i) => (
-                  <div class="flex items-start gap-3 p-4" style={`background:${i % 2 === 0 ? 'var(--c-bg-alt)' : 'var(--c-bg-alt)'};border-top:2px solid ${d.color}`}>
+                  <div class="flex items-start gap-3 p-4" style={`background:${i % 2 === 0 ? 'var(--c-bg-alt)' : 'var(--c-bg-alt)'}`}>
                     <div class="shrink-0 w-7 h-7 flex items-center justify-center" style={`background:${d.color}18`}>
                       
                     </div>
@@ -1192,7 +1189,7 @@ const seoDesc = metaCerrada(product.description, [
               </div>
               <div class="px-4 py-3" style="border-top:1px solid var(--c-line)">
                 <a href="/productos" class="text-[10px] font-display font-semibold hover:text-[var(--c-accent)]" style="color:var(--forge-300)">
-                  Catálogo de equipo para bomberos 
+                  Equipo para bomberos
                 </a>
               </div>
             </div>
@@ -1223,7 +1220,7 @@ const seoDesc = metaCerrada(product.description, [
           )}
 
           {/* ¿Necesitas ayuda? */}
-          <div style="background:var(--c-bg);border:1px solid var(--c-line-strong);border-top:2px solid var(--c-accent)">
+          <div style="background:var(--c-bg);border:1px solid var(--c-line-strong)">
             <div class="p-5">
               <p class="font-display font-bold text-sm mb-1" style="color:var(--c-ink)">¿Necesitas asesoría técnica?</p>
               <p class="text-xs leading-relaxed mb-4" style="color:var(--c-muted)">
@@ -1287,7 +1284,7 @@ const seoDesc = metaCerrada(product.description, [
             </h2>
           </div>
           {!product.suppressDefaultClaims && (
-            <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+            <div style="padding-left:1.75rem">
               <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
                 Cada modelo se entrega con su ficha técnica y la documentación de norma que publica el fabricante.
                 Te asesoramos para identificar la opción más adecuada para tu operación y presupuesto.
@@ -1296,7 +1293,7 @@ const seoDesc = metaCerrada(product.description, [
           )}
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="card-grid">
           {related.map((p) => (
             <a
               href={p.href}

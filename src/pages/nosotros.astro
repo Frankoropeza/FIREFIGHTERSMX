@@ -106,7 +106,6 @@ const razones = [
         </div>
       </div>
     </div>
-    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(200,16,46,0.4) 30%, rgba(200,16,46,0.4) 70%, transparent)" aria-hidden="true"></div>
   </section>
 
   <!-- Accesos rápidos -->
@@ -117,7 +116,7 @@ const razones = [
     <div class="container-site">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style="border:1px solid var(--c-line)">
         {figures.map((f, i) => (
-          <div class="flex flex-col gap-2 p-6" style={`background:var(--c-surface);${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.18);' : ''}`}>
+          <div class="flex flex-col gap-2 p-6" style={`background:var(--c-surface);${i < 3 ? 'border-right:1px solid var(--c-line);' : ''}`}>
             <span class="font-display font-bold" style="color:var(--c-accent);font-size:2.25rem;line-height:1">{f.value}</span>
             <h2 class="font-display font-bold text-sm" style="color:var(--c-ink)">{f.label}</h2>
             <p class="text-xs leading-relaxed" style="color:var(--c-muted)">{f.text}</p>
@@ -131,7 +130,6 @@ const razones = [
   <section class="section-tight" style="background:var(--c-bg)" aria-label="FIREFIGHTERS MX en acción">
     <div class="container-site">
       <div class="flex items-center gap-4 mb-8">
-        <span class="w-8 h-px" style="background:var(--c-accent)"></span>
         <span class="text-xs font-display font-semibold uppercase tracking-[0.18em]" style="color:var(--c-accent)">15 años equipando a quienes nos protegen</span>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-2 lg:gap-3">
@@ -168,14 +166,14 @@ const razones = [
             <span style="color:var(--c-accent)">y valores.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+        <div style="padding-left:1.75rem">
           <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
             Equipar a quien arriesga su vida no admite atajos. Estos principios definen cómo
             seleccionamos producto, cómo asesoramos y cómo respondemos cuando una brigada nos necesita.
           </p>
         </div>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div class="card-grid">
         {pillars.map((p) => (
           <div class="flex flex-col gap-4 p-7" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
             <div class="flex items-center justify-center rounded-full" style="width:52px;height:52px;background:rgba(200,16,46,0.1);border:1.5px solid rgba(200,16,46,0.35);color:var(--c-accent)">
@@ -221,7 +219,7 @@ const razones = [
           </h2>
           <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
             {[
-              { label: 'Catálogo de productos', desc: 'Equipo NFPA y NOM en 10 categorías', href: '/productos' },
+              { label: 'Equipo para bomberos', desc: 'Equipo NFPA y NOM en 10 categorías', href: '/productos' },
               { label: 'Certificaciones', desc: 'Las normas que avalan nuestro equipo', href: '/certificaciones' },
               { label: 'Cobertura nacional', desc: 'Entrega y servicio en los 32 estados', href: '/cobertura' },
               { label: 'Marcas que distribuimos', desc: 'Globe, MSA, Dräger, Holmatro y más', href: '/marcas' },

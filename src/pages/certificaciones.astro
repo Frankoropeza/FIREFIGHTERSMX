@@ -99,7 +99,6 @@ const grupos = [
         </div>
       </div>
     </div>
-    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(200,16,46,0.4) 30%, rgba(200,16,46,0.4) 70%, transparent)" aria-hidden="true"></div>
   </section>
 
   <!-- Accesos rápidos -->
@@ -113,7 +112,7 @@ const grupos = [
           <span class="section-eyebrow mb-4 inline-flex">{g.eyebrow}</span>
           <h2 class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">{g.grupo}</h2>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="card-grid">
           {g.items.map((cert) => (
             <article class="norm-card flex flex-col gap-3 p-6" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
               <span class="badge badge-fire w-fit">{cert.norm}</span>
@@ -149,7 +148,7 @@ const grupos = [
           </h2>
           <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
             {[
-              { label: 'Catálogo de productos', desc: 'Equipo certificado por categoría', href: '/productos' },
+              { label: 'Equipo para bomberos', desc: 'Equipo certificado por categoría', href: '/productos' },
               { label: 'Blog: NFPA 1970, la nueva norma', desc: 'Qué cambió en trajes estructurales', href: '/blog/nfpa-1970-nueva-norma-trajes-bombero' },
               { label: 'Soporte para licitaciones', desc: 'Manifiestos de norma por partida', href: '/licitaciones' },
               { label: 'Industrias que atendemos', desc: 'La norma que rige cada sector', href: '/industrias' },
@@ -174,5 +173,5 @@ const grupos = [
 </BaseLayout>
 
 <style>
-  .norm-card:hover { border-color: rgba(200,16,46,0.45) !important; }
+  .norm-card:hover { border-color: var(--c-line-strong) !important; }
 </style>

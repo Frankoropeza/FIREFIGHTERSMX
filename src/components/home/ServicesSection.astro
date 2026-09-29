@@ -19,7 +19,7 @@ import CardMedia from '@components/common/CardMedia.astro';
           <span style="color:var(--c-accent)">brigadas y cuerpos de bomberos.</span>
         </h2>
       </div>
-      <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+      <div style="padding-left:1.75rem">
         <p class="text-sm leading-relaxed mb-3" style="color:var(--c-text-2)">
           Venta, capacitación, mantenimiento, instalación y soporte para licitaciones.
           Todo desde un solo proveedor, para que tu operación cumpla la normativa
@@ -33,7 +33,7 @@ import CardMedia from '@components/common/CardMedia.astro';
     </div>
 
     <!-- Lista numerada -->
-    <ol class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px list-none m-0 p-0" style="background:var(--c-line);border:1px solid var(--c-line)">
+    <ol class="card-grid card-grid--cells list-none m-0 p-0" >
       {services.map((s, i) => (
         <li class="m-0 p-0" style="background:var(--c-bg-alt)">
           <a

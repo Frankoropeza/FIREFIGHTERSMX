@@ -235,8 +235,6 @@ const checkIcon = ``;
     </div>
 
     {/* Línea de acento inferior */}
-    <div class="absolute bottom-0 left-0 right-0 h-px" aria-hidden="true"
-      style="background:linear-gradient(90deg, transparent, rgba(200,16,46,0.4) 30%, rgba(200,16,46,0.4) 70%, transparent)"></div>
   </section>
 
   {/* ─── QuickLinksBar ─── */}
@@ -272,7 +270,7 @@ const checkIcon = ``;
             <span style="color:var(--c-accent)">de bomberos.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+        <div style="padding-left:1.75rem">
           <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
             Cada tarjeta muestra el tipo de jurisdicción, la ubicación por ciudad y municipio, los servicios
             operativos, las certificaciones aplicables y los teléfonos de contacto. La información proviene de
@@ -298,7 +296,7 @@ const checkIcon = ``;
         </div>
       </div>
 
-      <div id="estaciones-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div id="estaciones-grid" class="card-grid">
         {estaciones.map((e) => {
           const cfg = tipoConfig[e.tipo];
           const conf = e.confianza ? confianzaConfig[e.confianza] : null;
@@ -307,7 +305,7 @@ const checkIcon = ``;
               data-nombre={e.nombre.toLowerCase()}
               data-ciudad={`${e.ciudad} ${e.municipio}`.toLowerCase()}
               data-tipo={e.tipo}
-              style={`background:var(--c-bg);border:1px solid var(--c-line);border-top:2px solid ${cfg.color}`}>
+              style={`background:var(--c-bg);border:1px solid var(--c-line)`}>
 
               {/* Cabecera: tipo + fundación */}
               <div class="flex items-start justify-between gap-3">
@@ -415,7 +413,7 @@ const checkIcon = ``;
             <span style="color:var(--c-accent)">en {estado.nombre}.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+        <div style="padding-left:1.75rem">
           <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
             Conjunto de servicios y especialidades que cubren las {plural(totalEst, 'estación', 'estaciones')} listadas
             en el estado, desde atención a incendios estructurales hasta rescate especializado y materiales peligrosos.
@@ -426,7 +424,7 @@ const checkIcon = ``;
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" style="border:1px solid var(--c-line)">
         {serviciosUnicos.map((s, i) => (
           <div class="flex items-start gap-4 p-5"
-            style={`background:var(--c-bg-alt);border-bottom:1px solid var(--c-line);${(i % 3 !== 2) ? 'border-right:1px solid rgba(74,117,153,0.12);' : ''}`}>
+            style={`background:var(--c-bg-alt);border-bottom:1px solid var(--c-line);${(i % 3 !== 2) ? 'border-right:1px solid var(--c-line);' : ''}`}>
             <span class="shrink-0 font-display font-bold text-xs" style="color:var(--c-accent);min-width:1.5rem" aria-hidden="true">
               
             </span>
@@ -485,7 +483,7 @@ const checkIcon = ``;
 
         {/* Tarjeta de emergencias */}
         <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
-          <div class="flex flex-col gap-4 p-7" style="background:var(--c-bg);border:1px solid rgba(200,16,46,0.25);border-top:2px solid var(--c-accent)">
+          <div class="flex flex-col gap-4 p-7" style="background:var(--c-bg);border:1px solid var(--c-line)">
             <span class="w-7 h-7" style="color:var(--c-accent)" set:html={phoneIcon} aria-hidden="true"/>
             <h3 class="font-display font-bold text-lg leading-snug" style="color:var(--c-ink)">
               Teléfono de emergencias en {estado.nombre}
@@ -524,7 +522,7 @@ const checkIcon = ``;
           <a href="/estaciones" class="btn btn-ghost">Estaciones de bomberos en los 32 estados </a>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="card-grid">
           {otrosEstados.map((o) => {
             const tipos = [...new Set(o.estaciones.map((e) => e.tipo))];
             return (

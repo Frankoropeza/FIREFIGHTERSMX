@@ -255,8 +255,8 @@ const productosRel = productosMap[s.slug] ?? [];
             <figure class="relative m-0">
               <div class="relative overflow-hidden" style="border:1px solid var(--c-line-strong)">
                 <img src={s.spotlight.image} alt={s.spotlight.imageAlt} width="640" height="720" loading="lazy" decoding="async" class="w-full h-auto block" />
-                <div class="absolute top-0 left-0 w-12 h-12 pointer-events-none" style="border-top:3px solid var(--c-accent);border-left:3px solid var(--c-accent)" aria-hidden="true"></div>
-                <div class="absolute bottom-0 right-0 w-12 h-12 pointer-events-none" style="border-bottom:3px solid var(--c-accent);border-right:3px solid var(--c-accent)" aria-hidden="true"></div>
+                <div class="absolute top-0 left-0 w-12 h-12 pointer-events-none"  aria-hidden="true"></div>
+                <div class="absolute bottom-0 right-0 w-12 h-12 pointer-events-none"  aria-hidden="true"></div>
               </div>
               <figcaption class="flex items-center justify-between gap-3 mt-3 text-[10px] font-display font-semibold uppercase tracking-widest" style="color:var(--forge-300)">
                 <span>{s.title}</span>
@@ -373,7 +373,7 @@ const productosRel = productosMap[s.slug] ?? [];
             </div>
             <div class="px-4 py-3" style="border-top:1px solid var(--c-line)">
               <a href="/productos" class="text-[10px] font-display font-semibold hover:text-[var(--c-accent)]" style="color:var(--forge-300)">
-                Catálogo de equipo para bomberos 
+                Equipo para bomberos
               </a>
             </div>
           </div>
@@ -406,9 +406,9 @@ const productosRel = productosMap[s.slug] ?? [];
     <section style="background:var(--c-bg);border-top:1px solid var(--c-line)" aria-labelledby="svs-rel-title">
       <div class="container-site py-10 sm:py-12">
         <p id="svs-rel-title" class="text-[9px] font-display font-bold uppercase tracking-widest mb-6" style="color:var(--forge-300)">Servicios relacionados</p>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="card-grid">
           {serviciosRel.map((sv) => (
-            <a href={sv.href} class="group flex flex-col gap-2 p-5 hover:border-[var(--c-accent)]"
+            <a href={sv.href} class="group flex flex-col gap-2 p-5 hover:border-[var(--c-line-strong)]"
                style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
               <span class="text-sm font-display font-bold group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{sv.title}</span>
               <span class="text-xs leading-relaxed" style="color:var(--c-muted)">{sv.norm}</span>

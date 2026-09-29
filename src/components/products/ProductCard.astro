@@ -85,14 +85,13 @@ const pid = `pat-${p.slug}`;
         {p.brand}
       </span>
       {p.norm && (
-        <span class="text-[9px] font-display font-semibold uppercase tracking-widest px-2 py-0.5" style="background:#FFFFFF;border:1px solid var(--c-line);border-left:3px solid var(--c-accent);color:var(--c-ink);border-radius:4px">
+        <span class="text-[9px] font-display font-semibold uppercase tracking-widest px-2 py-0.5" style="background:#FFFFFF;border:1px solid var(--c-line);color:var(--c-ink);border-radius:4px">
           {p.norm}
         </span>
       )}
     </div>
 
     {/* Línea naranja inferior */}
-    <div class="absolute bottom-0 left-0 right-0" style="height:2px;background:linear-gradient(90deg,var(--c-accent) 0%,rgba(200,16,46,0.0) 100%)" aria-hidden="true"></div>
   </div>
 
   {/* ══ BODY ═══════════════════════════════════════════════════════════════ */}
@@ -162,9 +161,9 @@ const pid = `pat-${p.slug}`;
 </article>
 
 <style>
-  .pc:hover                  { border-color: rgba(200,16,46,0.50) !important; }
+  .pc:hover                  { border-color: var(--c-line-strong) !important; }
   .pc:hover .pc-header       { background: linear-gradient(135deg,#F7F8FA 0%,var(--c-bg-alt) 100%) !important; }
-  .pc-outline:hover          { border-color: rgba(200,16,46,0.45) !important; color:var(--c-accent) !important; }
+  .pc-outline:hover          { border-color: var(--c-line-strong) !important; color:var(--c-accent) !important; }
   .spec-chip {
     display: inline-flex;
     align-items: center;

@@ -1,26 +1,43 @@
 ---
+/**
+ * Card de categoría de /productos/ y del directorio: envuelve LineaCard para que toda
+ * card de producto del sitio tenga la misma estructura (imagen · norma · título · texto ·
+ * subcategorías · botón principal). Textos, subcategorías y botón salen de src/data/catalogo.ts;
+ * si la categoría no tiene línea propia, se arman con los datos de la categoría.
+ */
 import type { Category } from '@data/categories';
+import LineaCard from './LineaCard.astro';
+import { imagenLinea, lineaPorSlug } from '@lib/linea-card';
+
 type CategoryProps = { cat: Category; href?: string; norm?: string; label?: string; desc?: string; items?: string[]; ctaLabel?: string; accent?: string; image?: string; imageAlt?: string; };
 type ExplicitProps = { cat?: never; href: string; norm: string; label: string; desc: string; items: string[]; ctaLabel?: string; accent: string; image?: string; imageAlt?: string; };
 export type Props = CategoryProps | ExplicitProps;
+
 const props = Astro.props;
 const cat = 'cat' in props && props.cat ? props.cat : undefined;
-const href = cat ? props.href ?? `/productos/${cat.slug}` : props.href;
-const norm = cat ? props.norm ?? cat.norm : props.norm;
-const label = cat ? props.label ?? cat.label : props.label;
-const desc = cat ? props.desc ?? cat.shortDesc : props.desc;
-const items = (cat ? props.items ?? cat.items.map((item) => item.name) : props.items) ?? [];
-const ctaLabel = cat ? props.ctaLabel ?? `Guía de ${cat.label}` : props.ctaLabel ?? `Guía de ${props.label}`;
-const accent = cat ? props.accent ?? cat.accent : props.accent;
-const image = cat ? props.image ?? cat.spotlight?.image : props.image;
-const imageAlt = cat ? props.imageAlt ?? cat.spotlight?.imageAlt ?? cat.label : props.imageAlt ?? props.label;
+const slug = cat?.slug ?? '';
+const linea = lineaPorSlug(slug);
+
+// Categorías que agrupan varias líneas o no tienen línea propia en el catálogo
+const HIJAS_EXTRA: Record<string, { label: string; href: string }[]> = {
+  'sistemas-ci': ['rociadores', 'deteccion-alarma', 'bombas-red-hidraulica', 'hidrantes-gabinetes']
+    .map((s) => lineaPorSlug(s)!)
+    .map((l) => ({ label: l.cta, href: l.href })),
+  'drones-emergencia': [{ label: 'Drones DJI Enterprise', href: '/productos/drones-emergencia/dji-enterprise/' }],
+};
+const CTA_EXTRA: Record<string, string> = { 'sistemas-ci': 'Sistemas contra incendio para inmuebles' };
+
+const href = (cat ? props.href ?? `/productos/${cat.slug}/` : props.href) as string;
+const norma = (cat ? props.norm ?? cat.norm : props.norm) as string;
+const titulo = (cat ? props.label ?? linea?.titulo ?? cat.label : props.label) as string;
+const texto = (cat ? props.desc ?? linea?.texto ?? cat.shortDesc : props.desc) as string;
+const hijas = linea?.hijas ?? HIJAS_EXTRA[slug] ?? [];
+const cta = props.ctaLabel ?? linea?.cta ?? CTA_EXTRA[slug] ?? titulo;
+const imagen = cat
+  ? props.image ?? imagenLinea(slug) ?? cat.spotlight?.image ?? null
+  : props.image ?? null;
+const imagenAlt = cat
+  ? props.imageAlt ?? linea?.imagenAlt ?? cat.spotlight?.imageAlt ?? cat.label
+  : (props.imageAlt ?? props.label) as string;
 ---
-<a href={href} class="cat-card cc" style={`--cc-a:${accent}`}>
-  <div class:list={['cc-top', !image && 'cc-top--panel']}>
-    {image ? <img src={image} alt={imageAlt} width="320" height="148" loading="lazy" decoding="async" class="cc-img" /> : <span class="cc-fallback">{norm}<strong>{label}</strong></span>}
-  </div>
-  <div class="cc-body"><span class="cc-norm">{norm}</span><h3 class="cc-title">{label}</h3><p class="cc-desc">{desc}</p><ul class="cc-list">{items.slice(0, 3).map((item) => <li>{item}</li>)}</ul><span class="cc-cta">{ctaLabel}</span></div>
-</a>
-<style is:global>
-  .cc { position:relative; display:flex; flex-direction:column; overflow:hidden; background:#FFFFFF; border:1px solid var(--c-line); border-radius:var(--radius-card); box-shadow:var(--shadow-card); text-decoration:none; }.cc:hover { border-color:var(--c-line-strong); box-shadow:var(--shadow-card-hover); }.cc-top { position:relative; height:148px; display:flex; align-items:center; justify-content:center; overflow:hidden; }.cc-top--panel { background:var(--c-bg-alt); border-bottom:1px solid var(--c-line); }.cc-img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 20%; }.cc-fallback { position:relative; z-index:2; display:flex; flex-direction:column; align-items:center; gap:.5rem; padding:1rem; text-align:center; color:var(--c-accent); font-size:.7rem; text-transform:uppercase; letter-spacing:.1em; }.cc-fallback strong { color:var(--c-ink); font-family:var(--font-display); font-size:1rem; letter-spacing:normal; text-transform:none; }.cc-body { display:flex; flex-direction:column; flex:1; gap:.75rem; padding:1.25rem; }.cc-norm { font-size:.6875rem; font-weight:600; text-transform:uppercase; letter-spacing:.06em; color:var(--c-accent); }.cc-title { margin:0; font-family:var(--font-display); font-size:1.125rem; font-weight:700; line-height:1.25; color:var(--c-ink); }.cc-desc { flex:1; margin:0; font-size:.8125rem; line-height:1.6; color:var(--c-text-2); }.cc-list { display:flex; flex-direction:column; gap:.375rem; margin:0; padding:.75rem 0; list-style:none; border-block:1px solid var(--c-line); }.cc-list li { font-size:.75rem; color:var(--c-muted); }.cc-cta { display:inline-flex; align-items:center; justify-content:center; width:100%; margin-top:.25rem; padding:.625rem 1rem; font-size:.8125rem; font-weight:600; color:var(--c-ink); background:#FFFFFF; border:1px solid var(--c-line-strong); border-radius:var(--radius-btn); }
-</style>
+<LineaCard href={href} norma={norma} titulo={titulo} texto={texto} imagen={imagen} imagenAlt={imagenAlt} hijas={hijas} cta={cta} nivel="h3" />
