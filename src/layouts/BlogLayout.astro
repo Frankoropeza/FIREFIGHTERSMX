@@ -9,9 +9,13 @@ import { faqSchemaDesdeMarkdown } from '@lib/faq-blog';
 
 export interface Props {
   post: CollectionEntry<'blog'>;
+  headings?: { depth: number; slug: string; text: string }[];
 }
 
-const { post } = Astro.props;
+const { post, headings = [] } = Astro.props;
+
+// Índice «En este artículo»: H2 del cuerpo sin la sección de fuentes; sólo si hay 4 o más.
+const indice = headings.filter((h) => h.depth === 2 && !/^(Fuentes|Referencias)$/i.test(h.text.trim()));
 const { title, seoTitle, description, pubDate, updatedDate, author, category, tags } = post.data;
 const image = portadaBlog(post);
 
@@ -107,6 +111,20 @@ const faqSchema = faqSchemaDesdeMarkdown(post.body);
             <figcaption class="text-center text-sm mt-3 italic" style="color:#64748B">{image.caption}</figcaption>
           )}
         </figure>
+      )}
+
+      <!-- Índice del artículo (H2). <details> nativo: sin animación. -->
+      {indice.length >= 4 && (
+        <nav class="mb-10 p-6" aria-label="Contenido del artículo" style="background:#0C1825;border:1px solid rgba(74,117,153,0.18)">
+          <details open>
+            <summary class="font-display font-bold text-sm uppercase cursor-pointer" style="color:#FFFFFF;letter-spacing:0.08em">En este artículo</summary>
+            <ul class="mt-4 space-y-2 list-none p-0 m-0">
+              {indice.map((h) => (
+                <li><a href={`#${h.slug}`} class="text-sm hover:underline" style="color:#CBD5E1">{h.text}</a></li>
+              ))}
+            </ul>
+          </details>
+        </nav>
       )}
 
       <!-- Contenido del artículo -->
