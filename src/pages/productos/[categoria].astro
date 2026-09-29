@@ -5,6 +5,8 @@ import { allCategories, type Category } from '@data/categories';
 import { featuredProducts } from '@data/products';
 import { brandPages } from '@data/brandPages';
 import { SITE, whatsappUrl } from '@config/site';
+import RelatedLinks from '@components/common/RelatedLinks.astro';
+import { BLOG_POR_CATEGORIA, guiasPorCategoria } from '@lib/enlaces-directorio';
 
 export function getStaticPaths() {
   // Slugs con página estática dedicada (productos/<slug>/index.astro) — excluir del dinámico
@@ -27,6 +29,9 @@ const products = cat.productCategory
   : [];
 /* Marcas con página L4 dedicada en esta categoría (sistema BrandPage) */
 const marcas = brandPages.filter((b) => b.categorySlug === cat.slug);
+/* Relacionados: directorio del giro (lo resuelve RelatedLinks por la ruta) y dos guías del blog. */
+const guiasCategoria = (await guiasPorCategoria(BLOG_POR_CATEGORIA[cat.slug] ?? [], cat.slug))
+  .map((post) => ({ href: `/blog/${post.id}/`, label: post.data.title }));
 /* Ancla de las cards de marca: categoría + marca («Cámaras Térmicas FLIR»),
    salvo que la etiqueta ya nombre la categoría («Extintores PQS ABC»). */
 const raizCat = cat.label.split(' ')[0].toLowerCase().slice(0, 5);
@@ -247,4 +252,6 @@ const otherCategories = allCategories.filter((c) => c.slug !== cat.slug).slice(0
       </div>
     </div>
   </section>
+  <RelatedLinks ruta={`/productos/${cat.slug}/`} enlacesExtra={guiasCategoria} />
+
 </BaseLayout>

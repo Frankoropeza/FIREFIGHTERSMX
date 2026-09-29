@@ -19,6 +19,8 @@ import { SITE, whatsappUrl, CANAL_CONTACTO } from '@config/site';
 import type { GetStaticPaths } from 'astro';
 import { featuredProducts, fabricanteDe } from '@data/products';
 import { brandPages } from '@data/brandPages';
+import RelatedLinks from '@components/common/RelatedLinks.astro';
+import { giroDeCategoria } from '@lib/enlaces-directorio';
 
 export const getStaticPaths = (() => {
   return brands.map((brand) => ({
@@ -28,6 +30,8 @@ export const getStaticPaths = (() => {
 }) satisfies GetStaticPaths;
 
 const { brand } = Astro.props;
+/* Giro del directorio según la primera categoría de la marca (equipo para bomberos si no mapea). */
+const giroMarca = giroDeCategoria(brand.categoryLinks[0] ?? '') ?? 'venta-equipo';
 const canonicalURL = `${SITE.url}/marcas/${brand.slug}/`;
 
 // ── SEO: title (≤60c) y description (≤160c) keyword-first ───────────
@@ -381,5 +385,7 @@ const waMsg = `Hola, quiero información sobre productos ${brand.name} que distr
       </div>
     </div>
   </section>
+
+  <RelatedLinks ruta={`/marcas/${brand.slug}/`} titulo="Directorio de proveedores en México" giro={giroMarca} />
 
 </BaseLayout>
