@@ -10,27 +10,45 @@ const estadosConEmpresas = (await conteoPorEstado()).filter((e) => e.total > 0).
 ---
 
 <section class="section home-deferred-section" style="background:var(--c-bg-alt)" aria-labelledby="dir-sec-heading">
-  <div class="container-site grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-12 lg:gap-20 items-start">
-    <div>
-      <span class="section-eyebrow mb-4 inline-flex">Sección · Directorio nacional</span>
-      <h2 id="dir-sec-heading" class="font-display font-bold mb-5" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">Directorio nacional de bomberos<br/><span style="color:var(--c-accent)">y empresas del sector.</span></h2>
-      <p class="text-sm leading-[1.9] mb-4" style="color:var(--c-text-2)">Además de la tienda, FIREFIGHTERS MX publica un directorio nacional con {estaciones} estaciones de bomberos y {totalEmpresas} empresas del sector en {estadosConEmpresas} estados. Son registros de terceros, organizados por giro, estado y municipio, cada uno con su fuente.</p>
-      <p class="text-sm leading-[1.9] mb-8" style="color:var(--c-text-2)">El directorio es una sección independiente del catálogo: las condiciones comerciales de cada empresa se confirman directamente con ella.</p>
-      <div class="flex flex-wrap gap-3">
-        <a href="/directorio/" class="btn btn-primary">Directorio de empresas contra incendio</a>
-        <a href="/estaciones/" class="text-sm font-display font-semibold uppercase tracking-wider self-center" style="color:var(--c-accent)">Estaciones de bomberos </a>
+  <div class="container-site">
+    <header class="grid grid-cols-1 lg:grid-cols-[1.05fr_1fr] gap-8 lg:gap-16 items-end mb-10 lg:mb-12">
+      <div>
+        <span class="section-eyebrow mb-4 inline-flex">Sección · Directorio nacional</span>
+        <h2 id="dir-sec-heading" class="font-display font-bold mb-8" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">Directorio nacional de bomberos<br/><span style="color:var(--c-accent)">y empresas del sector.</span></h2>
+        <dl class="grid grid-cols-3" style="border-top:1px solid var(--c-line)">
+          <div class="pt-4 pr-4">
+            <dt class="text-[11px] font-display font-semibold uppercase tracking-wider" style="color:var(--c-muted)">Estaciones</dt>
+            <dd class="font-display font-bold tabular-nums" style="color:var(--c-ink);font-size:clamp(1.5rem,2.4vw,2rem);line-height:1.1">{estaciones.toLocaleString('es-MX')}</dd>
+          </div>
+          <div class="pt-4 px-4" style="border-left:1px solid var(--c-line)">
+            <dt class="text-[11px] font-display font-semibold uppercase tracking-wider" style="color:var(--c-muted)">Empresas</dt>
+            <dd class="font-display font-bold tabular-nums" style="color:var(--c-ink);font-size:clamp(1.5rem,2.4vw,2rem);line-height:1.1">{totalEmpresas.toLocaleString('es-MX')}</dd>
+          </div>
+          <div class="pt-4 pl-4" style="border-left:1px solid var(--c-line)">
+            <dt class="text-[11px] font-display font-semibold uppercase tracking-wider" style="color:var(--c-muted)">Estados</dt>
+            <dd class="font-display font-bold tabular-nums" style="color:var(--c-ink);font-size:clamp(1.5rem,2.4vw,2rem);line-height:1.1">{estadosConEmpresas}</dd>
+          </div>
+        </dl>
       </div>
-    </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-px" style="background:var(--c-line);border:1px solid var(--c-line)">
+      <div>
+        <p class="text-sm leading-[1.9] mb-4" style="color:var(--c-text-2)">Además de la tienda, FIREFIGHTERS MX publica un directorio nacional con {estaciones} estaciones de bomberos y {totalEmpresas} empresas del sector en {estadosConEmpresas} estados. Son registros de terceros, organizados por giro, estado y municipio, cada uno con su fuente.</p>
+        <p class="text-sm leading-[1.9] mb-6" style="color:var(--c-text-2)">El directorio es una sección independiente del catálogo: las condiciones comerciales de cada empresa se confirman directamente con ella.</p>
+        <div class="flex flex-wrap items-center gap-x-6 gap-y-3">
+          <a href="/directorio/" class="btn btn-primary">Directorio de empresas contra incendio</a>
+          <a href="/estaciones/" class="text-sm font-display font-semibold uppercase tracking-wider" style="color:var(--c-accent)">Estaciones de bomberos</a>
+        </div>
+      </div>
+    </header>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px" style="background:var(--c-line);border:1px solid var(--c-line)">
       {giros.map((g) => (
-        <a href={`/empresas/${g.slug}/`} class="grid-cell ledger-cell flex flex-col gap-1 p-5" style="background:var(--c-bg)">
-          <CardMedia src={`/images/giros/${g.slug}.avif`} alt={g.imagenAlt} class="mb-2" />
+        <a href={`/empresas/${g.slug}/`} class="grid-cell ledger-cell flex flex-col gap-1 p-5 h-full" style="background:var(--c-bg)">
+          <CardMedia src={`/images/giros/${g.slug}.avif`} alt={g.imagenAlt} class="mb-3" />
           <span class="font-display font-semibold text-base leading-tight" style="color:var(--c-ink)">{g.labelCorto}</span>
           <span class="text-xs leading-relaxed" style="color:var(--c-muted)">{g.claim}</span>
         </a>
       ))}
-      <a href="/cobertura/" class="grid-cell ledger-cell flex flex-col gap-1 p-5" style="background:var(--c-bg)">
-        <CardMedia src="/images/giros/estados.avif" alt="Mapa de México para consultar empresas por estado" class="mb-2" />
+      <a href="/cobertura/" class="grid-cell ledger-cell flex flex-col gap-1 p-5 h-full" style="background:var(--c-bg)">
+        <CardMedia src="/images/giros/estados.avif" alt="Mapa de México para consultar empresas por estado" class="mb-3" />
         <span class="font-display font-semibold text-base leading-tight" style="color:var(--c-ink)">Empresas por estado</span>
         <span class="text-xs leading-relaxed" style="color:var(--c-muted)">Consulta el directorio por entidad.</span>
       </a>
