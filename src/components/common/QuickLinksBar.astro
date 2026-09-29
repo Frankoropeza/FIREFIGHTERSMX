@@ -89,21 +89,20 @@ const links = pools[variant].filter((l) => l.href !== pathname).slice(0, 4);
 const cta = (esDirectorio ? ctasDirectorio : ctasTienda)[variant];
 ---
 
-<nav aria-label={variant === 'top' ? 'Accesos rápidos' : 'Más secciones del sitio'} style="background:var(--c-bg-alt);border-top:1px solid var(--c-line-strong);border-bottom:1px solid var(--c-line-strong)">
+<nav aria-label={variant === 'top' ? 'Accesos rápidos' : 'Más secciones del sitio'} style="background:#FFFFFF;border-top:1px solid var(--c-line);border-bottom:1px solid var(--c-line)">
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 w-full">
 
     {links.map((l) => (
       <a
         href={l.href}
-        class="quick-link group flex items-center justify-center gap-3 py-5 px-4"
+        class="quick-link group flex items-center gap-3 py-5 px-6"
         style="border-bottom:1px solid var(--c-line);border-right:1px solid var(--c-line)"
       >
-        <span class="w-6 h-6 shrink-0 block" style="color:var(--c-accent)" set:html={l.icon}/>
         <span class="flex flex-col min-w-0">
-          <span class="font-display font-bold text-sm uppercase tracking-wider leading-tight group-hover:text-[var(--c-accent)]" style="color:var(--c-ink);letter-spacing:0.08em">
+          <span class="font-semibold text-[0.9375rem] leading-tight group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">
             {l.label}
           </span>
-          <span class="text-[10px] uppercase tracking-widest mt-0.5" style="color:var(--forge-300)">{l.sub}</span>
+          <span class="text-xs mt-1" style="color:var(--c-muted)">{l.sub}</span>
         </span>
       </a>
     ))}
@@ -113,14 +112,14 @@ const cta = (esDirectorio ? ctasDirectorio : ctasTienda)[variant];
       href={cta.href}
       target={cta.external ? '_blank' : undefined}
       rel={cta.external ? 'noopener' : undefined}
-      class="quick-link-cta group flex items-center justify-center gap-3 py-5 px-4"
+      class="quick-link-cta group flex items-center gap-3 py-5 px-6"
       style="background:var(--c-accent);border-bottom:1px solid var(--c-line)"
     >
       <span class="flex flex-col min-w-0">
-        <span class="font-display font-bold text-sm uppercase tracking-wider leading-tight" style="color:var(--c-ink);letter-spacing:0.08em">
+        <span class="font-semibold text-[0.9375rem] leading-tight" style="color:#FFFFFF">
           {cta.label}
         </span>
-        <span class="text-[10px] uppercase tracking-widest mt-0.5" style="color:rgba(16,24,40,0.75)" set:html={cta.sub}/>
+        <span class="text-xs mt-1" style="color:rgba(255,255,255,0.85)" set:html={cta.sub}/>
       </span>
     </a>
 
@@ -129,7 +128,7 @@ const cta = (esDirectorio ? ctasDirectorio : ctasTienda)[variant];
 
 <style>
   /* Hover instantáneo, sin transiciones */
-  .quick-link { background: var(--c-bg-alt); }
-  .quick-link:hover { background: var(--c-surface); }
-  .quick-link-cta:hover { background: var(--c-accent) !important; }
+  .quick-link { background: #FFFFFF; }
+  .quick-link:hover { background: var(--c-bg-alt); }
+  .quick-link-cta:hover { background: var(--c-accent-hover) !important; }
 </style>

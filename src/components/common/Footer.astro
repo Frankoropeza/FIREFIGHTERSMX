@@ -111,13 +111,13 @@ const redes = [
 ];
 ---
 
-<footer class="bg-[var(--forge-900)] border-t border-[var(--color-border)]">
+<footer class="site-footer">
 
   <!-- ══ CTA Bar ══════════════════════════════════════════════════ -->
-  <div class="bg-gradient-to-r from-[var(--ember-600)] to-[var(--ember-500)]">
+  <div class="f-cta">
     <div class="container-site py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
       <div>
-        <p class="font-display font-bold text-white text-lg uppercase tracking-wider">
+        <p class="font-display font-bold text-white text-xl tracking-[-0.01em]">
           ¿Necesitas equipo certificado?
         </p>
         <p class="text-white/80 text-sm hidden sm:block mt-0.5">
@@ -126,11 +126,11 @@ const redes = [
       </div>
       <div class="flex items-center gap-3 shrink-0">
         <a href="/cotizacion/"
-           class="btn btn-sm bg-white text-[var(--ember-600)] hover:bg-[var(--ember-100)] border-white font-display font-bold">
+           class="btn btn-sm f-cta-btn">
           Cotizar equipo NFPA
         </a>
         <a href={whatsappUrl('Hola, quiero cotizar equipo para bomberos.')} target="_blank" rel="noopener"
-           class="btn btn-sm bg-[var(--ember-700)] hover:bg-[var(--ember-800)] text-white border-transparent font-display flex items-center gap-2">
+           class="btn btn-sm f-cta-btn-ghost">
           
           {CONTACTO_DIRECTO_ACTIVO ? 'WhatsApp' : 'Contactar por correo'}
         </a>
@@ -153,10 +153,10 @@ const redes = [
             </svg>
           </div>
           <div>
-            <div class="font-display font-bold text-[1.1rem] text-white leading-none tracking-[0.06em] uppercase">
-              Firefighters<span class="text-[var(--ember-500)]"> MX</span>
+            <div class="font-display font-bold text-[1.1rem] text-white leading-none">
+              Firefighters<span class="text-[var(--c-footer-accent)]"> MX</span>
             </div>
-            <div class="text-[9px] text-[var(--forge-300)] font-medium tracking-[0.22em] uppercase mt-0.5">Equipo certificado</div>
+            <div class="text-[9px] text-[var(--forge-300)] font-medium tracking-[0.16em] uppercase mt-1">Equipo certificado</div>
           </div>
         </a>
 
@@ -308,7 +308,7 @@ const redes = [
   </div>
 
   <!-- ══ Bottom Bar ══════════════════════════════════════════════ -->
-  <div class="border-t border-[var(--color-border)] py-5">
+  <div class="f-bottom border-t border-[var(--color-border)] py-5">
     <div class="container-site flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[var(--forge-400)]">
       <p>© {year} FIREFIGHTERS MX — Todos los derechos reservados.</p>
       <div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
@@ -345,14 +345,33 @@ const redes = [
     .f-floor--estados { grid-template-columns: 1.3fr repeat(4, minmax(0, 1fr)); }
   }
 
+  /* Footer: único bloque oscuro del sitio (v3). Reasigna los alias
+     legado dentro de su ámbito para que el marcado existente se lea
+     sobre gris carbón sin reescribir cada clase. */
+  .site-footer {
+    --forge-200: var(--c-footer-text);
+    --forge-300: var(--c-footer-muted);
+    --forge-400: var(--c-footer-muted);
+    --color-border: var(--c-footer-line);
+    --ember-400: #F58A97;
+    --ember-300: #FFFFFF;
+    --c-footer-accent: #EF4A5F;
+    background: var(--c-footer);
+    color: var(--c-footer-text);
+  }
+  .f-bottom { background: var(--c-footer-2); }
+  .f-cta { background: var(--c-accent); }
+  .f-cta-btn { background:#FFFFFF; color:var(--c-accent); border-color:#FFFFFF; }
+  .f-cta-btn:hover { background:var(--c-accent-soft); }
+  .f-cta-btn-ghost { background:transparent; color:#FFFFFF; border-color:rgba(255,255,255,0.55); }
+  .f-cta-btn-ghost:hover { background:rgba(255,255,255,0.1); border-color:#FFFFFF; }
+
   /* Encabezados de sección */
   .f-heading {
     font-family: var(--font-display, sans-serif);
-    font-weight: 700;
-    color: white;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
+    font-weight: 600;
+    color: #FFFFFF;
+    font-size: 0.75rem;
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
@@ -364,7 +383,7 @@ const redes = [
     display: block;
     width: 14px;
     height: 2px;
-    background: var(--ember-500);
+    background: var(--c-footer-accent);
     flex-shrink: 0;
   }
 
@@ -390,7 +409,7 @@ const redes = [
     color: var(--ember-400);
     font-weight: 600;
   }
-  .f-link--strong:hover { color: var(--ember-300, #fca568); }
+  .f-link--strong:hover { color: #FFFFFF; }
 
   .f-list--compact .f-link { font-size: 0.8125rem; }
 </style>

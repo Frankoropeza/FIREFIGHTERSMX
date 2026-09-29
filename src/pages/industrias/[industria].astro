@@ -88,10 +88,9 @@ const otherIndustries = industries.filter((x) => x.slug !== ind.slug);
 
   <!-- Hero -->
   <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:4.5rem">
-    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(200,16,46,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
     <div class="container-site relative z-10">
       <span class="section-eyebrow mb-5 inline-flex">{ind.norm}</span>
-      <h1 class="font-display font-bold uppercase mb-6" style="color:var(--c-ink);font-size:clamp(2.5rem,6vw,4.5rem);line-height:0.95">
+      <h1 class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(2.25rem,4.5vw,3.5rem);line-height:1.08">
         {ind.name}
       </h1>
       <div class="max-w-3xl flex flex-col gap-4">
@@ -141,7 +140,7 @@ const otherIndustries = industries.filter((x) => x.slug !== ind.slug);
 
         <div>
           <span class="section-eyebrow mb-5 inline-flex">Nuestra solución</span>
-          <h2 id={`solucion-${ind.slug}`} class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(2rem,3.8vw,3rem);line-height:1.05">
+          <h2 id={`solucion-${ind.slug}`} class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             {ind.spotlight.title}<br/>
             <span style="color:var(--c-accent)">{ind.spotlight.highlight}</span>
           </h2>
@@ -212,7 +211,7 @@ const otherIndustries = industries.filter((x) => x.slug !== ind.slug);
   <!-- Servicios recomendados (cross-selling a servicios) -->
   <section class="section-tight" style="background:var(--c-bg)" aria-labelledby="servicios-rec-title">
     <div class="container-site">
-      <h2 id="servicios-rec-title" class="font-display font-bold text-sm uppercase tracking-widest mb-6" style="color:var(--forge-300)">
+      <h2 id="servicios-rec-title" class="font-display font-bold text-sm mb-6" style="color:var(--forge-300)">
         Servicios que aplican a tu sector
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px" style="background:var(--c-line);border:1px solid var(--c-line)">
@@ -268,7 +267,7 @@ const otherIndustries = industries.filter((x) => x.slug !== ind.slug);
   <!-- Otras industrias (internal linking) -->
   <section class="section-tight" style="background:var(--c-bg)" aria-labelledby="otras-ind-title">
     <div class="container-site">
-      <h2 id="otras-ind-title" class="font-display font-bold text-sm uppercase tracking-widest mb-6" style="color:var(--forge-300)">
+      <h2 id="otras-ind-title" class="font-display font-bold text-sm mb-6" style="color:var(--forge-300)">
         Otros sectores que equipamos
       </h2>
       <div class="flex flex-wrap gap-3">

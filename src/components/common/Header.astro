@@ -17,9 +17,9 @@ const activoItem = (item: { href: string; zona?: string }) =>
 
 <header id="site-header" class="fixed top-0 inset-x-0 z-50">
   <TopBar />
-  <div class="h-[3px] bg-gradient-to-r from-[var(--ember-600)] via-[var(--ember-500)] to-[var(--gold-500)]"></div>
+  <div class="h-[3px] bg-[var(--c-accent)]"></div>
 
-  <div class="header-glass backdrop-blur-md" style="background-color:rgba(7,14,26,0.97);border-bottom:1px solid var(--c-line-strong)">
+  <div class="header-glass" style="background-color:#FFFFFF;border-bottom:1px solid var(--c-line)">
     <div class="container-site h-[68px] flex items-center justify-between gap-6 xl:gap-2 2xl:gap-6">
 
       <!-- ── LOGO ─────────────────────────────────────────────────── -->
@@ -31,10 +31,10 @@ const activoItem = (item: { href: string; zona?: string }) =>
           </svg>
         </div>
         <div>
-          <div class="font-display font-bold text-[1.1rem] text-white leading-none tracking-[0.06em] uppercase">
+          <div class="font-display font-bold text-[1.1rem] leading-none" style="color:var(--c-ink)">
             Firefighters<span style="color:var(--ember-500)"> MX</span>
           </div>
-          <div class="text-[9px] font-medium tracking-[0.22em] uppercase mt-0.5" style="color:var(--forge-200)">Equipo contra incendio</div>
+          <div class="text-[9px] font-medium tracking-[0.16em] uppercase mt-1" style="color:var(--c-muted)">Equipo contra incendio</div>
         </div>
       </a>
 
@@ -44,7 +44,7 @@ const activoItem = (item: { href: string; zona?: string }) =>
           <>
           {item.zona === 'directorio' && (
             <span class="flex items-center gap-2 pl-2 pr-1" aria-hidden="true">
-              <span class="block w-px h-6" style="background:rgba(94,140,176,0.45)"></span>
+              <span class="block w-px h-6" style="background:var(--c-line-strong)"></span>
             </span>
           )}
           <div class="nav-group relative">
@@ -53,7 +53,7 @@ const activoItem = (item: { href: string; zona?: string }) =>
                 <!-- Trigger -->
                 <a
                   href={item.href}
-                  class={`nav-trigger flex items-center gap-1.5 px-3 py-2 text-sm font-medium rounded-sm ${activoItem(item) ? 'text-[var(--ember-400)]' : 'text-[var(--slate-300)] hover:text-white'}`}
+                  class={`nav-trigger flex items-center gap-1.5 px-3 py-2 text-sm font-medium rounded-sm ${activoItem(item) ? 'text-[var(--ember-400)]' : 'text-[var(--c-ink-2)] hover:text-[var(--c-accent)]'}`}
                   aria-haspopup="true"
                 >
                   {item.label}
@@ -62,7 +62,7 @@ const activoItem = (item: { href: string; zona?: string }) =>
 
                 <!-- Dropdown panel (pt-2 = puente continuo de hover) -->
                 <div class={`nav-dropdown absolute top-full ${item.zona === 'directorio' ? 'right-0' : 'left-0'} pt-2 z-50`} style="width:19rem" role="menu">
-                  <div class="drop-panel" style="background:var(--c-bg-alt);border:1px solid var(--c-line-strong);border-top:2px solid var(--ember-500);box-shadow:0 12px 40px rgba(16,24,40,0.12)">
+                  <div class="drop-panel" style="background:#FFFFFF;border:1px solid var(--c-line);border-top:2px solid var(--c-accent);border-radius:0 0 var(--radius-card) var(--radius-card);box-shadow:0 12px 32px rgba(16,24,40,0.10)">
                     <div class="py-1.5">
                       {item.children.map((child) => (
                         child.children ? (
@@ -70,7 +70,7 @@ const activoItem = (item: { href: string; zona?: string }) =>
                           <div class="nav-sub-group relative">
                             <a
                               href={child.href}
-                              class={`drop-item flex items-center justify-between gap-2 px-4 py-3 text-sm ${isActive(child.href) ? 'text-[var(--ember-400)]' : 'text-[var(--slate-300)] hover:text-white'}`}
+                              class={`drop-item flex items-center justify-between gap-2 px-4 py-3 text-sm ${isActive(child.href) ? 'text-[var(--ember-400)]' : 'text-[var(--c-ink-2)] hover:text-[var(--c-accent)]'}`}
                               role="menuitem"
                             >
                               <span class="flex flex-col gap-0.5">
@@ -88,14 +88,14 @@ const activoItem = (item: { href: string; zona?: string }) =>
 
                             <!-- Sub-panel fly-out a la derecha (pl-0.5 = puente) -->
                             <div class={`nav-sub-panel absolute top-0 ${item.zona === 'directorio' ? 'right-full pr-0.5' : 'left-full pl-0.5'} z-50`} style="width:15rem">
-                              <div style="background:var(--c-bg-alt);border:1px solid var(--c-line-strong);border-top:2px solid var(--ember-500);box-shadow:0 12px 40px rgba(16,24,40,0.12)">
+                              <div style="background:#FFFFFF;border:1px solid var(--c-line);border-top:2px solid var(--c-accent);border-radius:0 0 var(--radius-card) var(--radius-card);box-shadow:0 12px 32px rgba(16,24,40,0.10)">
                                 <div class="px-4 py-2.5" style="border-bottom:1px solid var(--c-line)">
                                   <span class="text-[9px] font-display font-bold uppercase tracking-[0.16em]" style="color:var(--c-accent)">Subcategorías</span>
                                 </div>
                                 {child.children.map((sub) => (
                                   <a
                                     href={sub.href}
-                                    class={`flex flex-col gap-0.5 px-4 py-3 text-sm group/sub ${isActive(sub.href) ? 'text-[var(--ember-400)]' : 'text-[var(--slate-300)] hover:text-white hover:bg-[var(--c-tint)]'}`}
+                                    class={`flex flex-col gap-0.5 px-4 py-3 text-sm group/sub ${isActive(sub.href) ? 'text-[var(--ember-400)]' : 'text-[var(--c-ink-2)] hover:text-[var(--c-accent)] hover:bg-[var(--c-tint)]'}`}
                                     role="menuitem"
                                   >
                                     <span class="flex items-center gap-2">
@@ -115,7 +115,7 @@ const activoItem = (item: { href: string; zona?: string }) =>
                           /* ── Ítem normal ── */
                           <a
                             href={child.href}
-                            class={`drop-item flex flex-col gap-0.5 px-4 py-3 text-sm ${child.label.startsWith('Ver') ? 'text-[var(--ember-400)] hover:text-[var(--ember-300)] border-t border-[var(--c-line)] mt-1 pt-3' : ''}${isActive(child.href) && !child.label.startsWith('Ver') ? 'text-[var(--ember-400)]' : !child.label.startsWith('Ver') ? 'text-[var(--slate-300)] hover:text-white' : ''}`}
+                            class={`drop-item flex flex-col gap-0.5 px-4 py-3 text-sm ${child.label.startsWith('Ver') ? 'text-[var(--ember-400)] hover:text-[var(--ember-300)] border-t border-[var(--c-line)] mt-1 pt-3' : ''}${isActive(child.href) && !child.label.startsWith('Ver') ? 'text-[var(--ember-400)]' : !child.label.startsWith('Ver') ? 'text-[var(--c-ink-2)] hover:text-[var(--c-accent)]' : ''}`}
                             role="menuitem"
                           >
                             {!child.label.startsWith('Ver') && (
@@ -143,7 +143,7 @@ const activoItem = (item: { href: string; zona?: string }) =>
             ) : (
               <a
                 href={item.href}
-                class={`block px-3 py-2 text-sm font-medium rounded-sm ${isActive(item.href) ? 'text-[var(--ember-400)]' : 'text-[var(--slate-300)] hover:text-white'}`}
+                class={`block px-3 py-2 text-sm font-medium rounded-sm ${isActive(item.href) ? 'text-[var(--ember-400)]' : 'text-[var(--c-ink-2)] hover:text-[var(--c-accent)]'}`}
               >
                 {item.label}
               </a>
@@ -158,23 +158,19 @@ const activoItem = (item: { href: string; zona?: string }) =>
         {TELEFONO_ACTIVO && (
 <a
           href={`tel:${SITE.phoneE164}`}
-          class="hidden 2xl:flex items-center gap-1.5 text-xs font-medium px-3 py-2 border border-[var(--color-border)] rounded-sm hover:border-[var(--ember-500)]"
-          style="color:var(--forge-200)"
+          class="hidden 2xl:flex items-center gap-1.5 text-sm font-medium px-3 py-2 hover:text-[var(--c-accent)]"
+          style="color:var(--c-ink-2)"
         >
           
           {SITE.phone}
         </a>
 )}
 
-        {CONTACTO_DIRECTO_ACTIVO && <a
+        {CONTACTO_DIRECTO_ACTIVO && <div class="hidden md:block"><a
           href={whatsappUrl('Hola, quiero cotizar equipo para bomberos.')}
           target="_blank" rel="noopener"
-          class="hidden md:flex items-center justify-center w-9 h-9 rounded-sm text-white"
-          style="background:#25d366"
-          aria-label="WhatsApp"
-        >
-          
-        </a>}
+          class="btn btn-whatsapp btn-sm"
+        >WhatsApp</a></div>}
 
         <!-- El wrapper lleva el `hidden`: en el propio <a> la regla .btn de
              global.css (display:inline-flex) gana a la utilidad .hidden por
@@ -190,8 +186,8 @@ const activoItem = (item: { href: string; zona?: string }) =>
         <!-- Hamburger móvil -->
         <button
           id="mobile-menu-btn"
-          class="xl:hidden p-2"
-          style="color:var(--slate-300)"
+          class="xl:hidden px-3 py-2 text-sm font-semibold border border-[var(--c-line-strong)] rounded-md"
+          style="color:var(--c-ink)"
           aria-label="Abrir menú"
           aria-expanded="false"
           aria-controls="mobile-menu"

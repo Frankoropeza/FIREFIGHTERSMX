@@ -1,13 +1,13 @@
 ---
 const industries = [
-  { slug: 'bomberos-municipales',  name: 'Bomberos Municipales',  tagline: 'Equipamiento integral y soporte para licitaciones CompraNet', color: '#F75000', image: '/images/industrias/bomberos-municipales.avif',  imageAlt: 'Cuerpo de bomberos municipales con equipo NFPA certificado México', icon: `` },
-  { slug: 'brigadas-industriales', name: 'Brigadas Industriales', tagline: 'NOM-002-STPS llave en mano: equipo + capacitación DC-3',         color: '#F5A623', image: '/images/industrias/brigadas-industriales.avif', imageAlt: 'Brigada industrial equipada NOM-002-STPS capacitación contra incendio', icon: `` },
-  { slug: 'aeropuertos-arff',      name: 'Aeropuertos ARFF',      tagline: 'Trajes de proximidad, SCBA 60 min y espuma AFFF',               color: '#F75000', image: '/images/industrias/aeropuertos-arff.avif',      imageAlt: 'Equipo ARFF para aeropuertos traje proximidad SCBA 60 minutos', icon: `` },
-  { slug: 'hospitales',            name: 'Hospitales y Salud',    tagline: 'Agentes limpios FM-200, alarmas y brigada certificada',         color: '#34D399', image: '/images/industrias/hospitales.avif',            imageAlt: 'Sistema contra incendio hospitales FM-200 NFPA brigada certificada', icon: `` },
-  { slug: 'refinerias-pemex',      name: 'Refinerías PEMEX',      tagline: 'HAZMAT Nivel A/B, SCBA 60 min, detectores ATEX',               color: '#F75000', image: '/images/industrias/refinerias-pemex.avif',      imageAlt: 'Equipo HAZMAT nivel A/B refinería PEMEX SCBA 60 min detectores ATEX', icon: `` },
-  { slug: 'hoteles',               name: 'Hoteles y Turismo',     tagline: 'Rociadores NFPA 13, alarmas de voz y brigada',                  color: '#F5A623', image: '/images/industrias/hoteles.avif',               imageAlt: 'Sistema contra incendio hotel rociadores NFPA 13 alarmas voz', icon: `` },
-  { slug: 'mineria',               name: 'Minería',               tagline: 'SCBA espacios confinados, detectores multi-gas NOM-032',        color: '#F75000', image: '/images/industrias/mineria.avif',               imageAlt: 'SCBA espacios confinados minería detectores multi-gas NOM-032 México', icon: `` },
-  { slug: 'proteccion-civil',      name: 'Protección Civil',      tagline: 'Equipamiento y capacitación NFPA para PC estatal y municipal',  color: '#34D399', image: '/images/industrias/proteccion-civil.avif',      imageAlt: 'Protección civil estatal municipal equipo NFPA capacitación México', icon: `` },
+  { slug: 'bomberos-municipales',  name: 'Bomberos Municipales',  tagline: 'Equipamiento integral y soporte para licitaciones CompraNet', color: '#C8102E', image: '/images/industrias/bomberos-municipales.avif',  imageAlt: 'Cuerpo de bomberos municipales con equipo NFPA certificado México', icon: `` },
+  { slug: 'brigadas-industriales', name: 'Brigadas Industriales', tagline: 'NOM-002-STPS llave en mano: equipo + capacitación DC-3',         color: '#B54708', image: '/images/industrias/brigadas-industriales.avif', imageAlt: 'Brigada industrial equipada NOM-002-STPS capacitación contra incendio', icon: `` },
+  { slug: 'aeropuertos-arff',      name: 'Aeropuertos ARFF',      tagline: 'Trajes de proximidad, SCBA 60 min y espuma AFFF',               color: '#C8102E', image: '/images/industrias/aeropuertos-arff.avif',      imageAlt: 'Equipo ARFF para aeropuertos traje proximidad SCBA 60 minutos', icon: `` },
+  { slug: 'hospitales',            name: 'Hospitales y Salud',    tagline: 'Agentes limpios FM-200, alarmas y brigada certificada',         color: '#067647', image: '/images/industrias/hospitales.avif',            imageAlt: 'Sistema contra incendio hospitales FM-200 NFPA brigada certificada', icon: `` },
+  { slug: 'refinerias-pemex',      name: 'Refinerías PEMEX',      tagline: 'HAZMAT Nivel A/B, SCBA 60 min, detectores ATEX',               color: '#C8102E', image: '/images/industrias/refinerias-pemex.avif',      imageAlt: 'Equipo HAZMAT nivel A/B refinería PEMEX SCBA 60 min detectores ATEX', icon: `` },
+  { slug: 'hoteles',               name: 'Hoteles y Turismo',     tagline: 'Rociadores NFPA 13, alarmas de voz y brigada',                  color: '#B54708', image: '/images/industrias/hoteles.avif',               imageAlt: 'Sistema contra incendio hotel rociadores NFPA 13 alarmas voz', icon: `` },
+  { slug: 'mineria',               name: 'Minería',               tagline: 'SCBA espacios confinados, detectores multi-gas NOM-032',        color: '#C8102E', image: '/images/industrias/mineria.avif',               imageAlt: 'SCBA espacios confinados minería detectores multi-gas NOM-032 México', icon: `` },
+  { slug: 'proteccion-civil',      name: 'Protección Civil',      tagline: 'Equipamiento y capacitación NFPA para PC estatal y municipal',  color: '#067647', image: '/images/industrias/proteccion-civil.avif',      imageAlt: 'Protección civil estatal municipal equipo NFPA capacitación México', icon: `` },
 ].map((ind) => ({
   ...ind,
   cta: {
@@ -30,7 +30,7 @@ const industries = [
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end">
       <div>
         <span class="section-eyebrow mb-4 inline-flex">Sectores</span>
-        <h2 class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+        <h2 class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
           Protección contra incendios<br/>
           <span style="color:var(--c-accent)">para cada industria.</span>
         </h2>
@@ -71,16 +71,12 @@ const industries = [
               class="w-full h-full block"
               style="object-fit:cover;object-position:center 20%"
             />
-            <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(to bottom, rgba(4,10,18,0.1) 0%, rgba(4,10,18,0.0) 30%, rgba(4,10,18,0.88) 100%)" aria-hidden="true"></div>
           </div>
         )}
 
         <!-- Contenido -->
         <div class="flex flex-col gap-3 p-5 flex-1">
           <!-- Ícono -->
-          <div class="w-10 h-10 flex items-center justify-center shrink-0" style={`border:1px solid var(--c-line-strong);color:${ind.color}`}>
-            <span class="w-5 h-5 block" set:html={ind.icon}/>
-          </div>
 
           <!-- Título + tagline -->
           <div class="flex flex-col gap-1.5 flex-1">

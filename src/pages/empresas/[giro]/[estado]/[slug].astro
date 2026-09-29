@@ -207,7 +207,6 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
   </nav>
 
   <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:4rem" aria-labelledby="ficha-heading">
-    <div class="absolute top-0 right-0 w-2/3 h-full pointer-events-none" aria-hidden="true" style={`background:radial-gradient(ellipse 70% 60% at 85% 40%, ${g.color}12 0%, transparent 65%)`}></div>
     <div class="container-site relative z-10 grid grid-cols-1 lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-14 items-center">
       <div>
       <div class="flex flex-wrap items-center gap-2 mb-5">
@@ -242,7 +241,7 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
       <div class="flex flex-col gap-12 min-w-0">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Perfil</span>
-          <h2 class="font-display font-bold mb-5" style="color:var(--c-ink);font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.05">{g.labelCorto} en {e.ciudad},<br/><span style={`color:${g.color}`}>{edo.nombre}.</span></h2>
+          <h2 class="font-display font-bold mb-5" style="color:var(--c-ink);font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.05">{g.labelCorto} en {e.ciudad},<br/><span style={`color:var(--c-accent)`}>{edo.nombre}.</span></h2>
           {(perfilParrafos.length ? perfilParrafos : [g.intro[0]]).map((par) => (
             <p class="text-sm leading-[1.9] mb-4" style="color:var(--c-text-2)">{par}</p>
           ))}
@@ -365,7 +364,7 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
           <div style="border:1px solid var(--c-line-strong)">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
             <div id="ficha-map" data-lat={e.coordenadas!.lat} data-lng={e.coordenadas!.lng} data-color={g.color} style="height:240px;background:var(--c-surface)" role="img" aria-label={`Mapa de ${e.nombre}`}></div>
-            <a href={`https://www.google.com/maps?q=${e.coordenadas!.lat},${e.coordenadas!.lng}`} target="_blank" rel="noopener nofollow" class="block px-4 py-2.5 font-display text-[11px] uppercase tracking-wider hover:text-[var(--c-accent)]" style="color:var(--c-accent);background:var(--c-surface);border-top:1px solid var(--c-line)">Ubicación de {e.nombre} en Google Maps</a>
+            <a href={`https://www.google.com/maps?q=${e.coordenadas!.lat},${e.coordenadas!.lng}`} target="_blank" rel="noopener nofollow" class="block px-4 py-2.5 font-display text-[11px] hover:text-[var(--c-accent)]" style="color:var(--c-accent);background:var(--c-surface);border-top:1px solid var(--c-line)">Ubicación de {e.nombre} en Google Maps</a>
           </div>
         )}
 
@@ -406,8 +405,8 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
           var el = document.getElementById('ficha-map'); if (!el || typeof L === 'undefined') return;
           var lat = +el.dataset.lat, lng = +el.dataset.lng;
           var map = L.map(el, { scrollWheelZoom: false, zoomControl: false }).setView([lat, lng], 15);
-          L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', { maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" rel="noopener nofollow">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions" rel="noopener nofollow">CARTO</a>' }).addTo(map);
-          L.circleMarker([lat, lng], { radius: 9, color: '#040A12', weight: 2, fillColor: el.dataset.color || '#F75000', fillOpacity: 1 }).addTo(map);
+          L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" rel="noopener nofollow">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions" rel="noopener nofollow">CARTO</a>' }).addTo(map);
+          L.circleMarker([lat, lng], { radius: 9, color: '#FFFFFF', weight: 2, fillColor: el.dataset.color || '#C8102E', fillOpacity: 1 }).addTo(map);
         });
       </script>
     </Fragment>

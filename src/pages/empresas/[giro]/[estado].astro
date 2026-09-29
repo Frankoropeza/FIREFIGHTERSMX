@@ -72,13 +72,12 @@ const waMsg = `Hola, busco proveedores de ${g.sustantivo} en ${estado.nombre}. �
   </nav>
 
   <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:5rem" aria-labelledby="ge-heading">
-    <div class="absolute top-0 right-0 w-2/3 h-full pointer-events-none" aria-hidden="true" style={`background:radial-gradient(ellipse 70% 60% at 85% 40%, ${g.color}14 0%, transparent 65%)`}></div>
     <div class="container-site relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div>
           <span class="section-eyebrow mb-5 inline-flex">Directorio · {estado.abreviatura} · {g.labelCorto}</span>
-          <h1 id="ge-heading" class="font-display font-bold uppercase mb-6" style="color:var(--c-ink);font-size:clamp(2rem,4.6vw,3.6rem);line-height:0.95">
-            {g.label.split(':')[0].trim()}<br/><span style={`color:${g.color}`}>en {estado.nombre}</span>
+          <h1 id="ge-heading" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(2rem,4.6vw,3.6rem);line-height:1.08">
+            {g.label.split(':')[0].trim()}<br/><span style={`color:var(--c-accent)`}>en {estado.nombre}</span>
           </h1>
           {vacio ? (
             <p class="text-sm leading-[1.9] mb-8" style="color:var(--c-text-2)">Todavía no tenemos empresas de {g.sustantivo} registradas en {estado.nombre}. Si tu empresa opera aquí, regístrala gratis y aparecerá en este directorio con mapa y ficha propia.</p>
@@ -112,7 +111,7 @@ const waMsg = `Hola, busco proveedores de ${g.sustantivo} en ${estado.nombre}. �
     <section class="section-tight" style="background:var(--c-bg-alt)" aria-label={`Mapa de ${tituloCorto}`}>
       <div class="container-site">
         <span class="section-eyebrow mb-4 inline-flex">Mapa</span>
-        <h2 class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.05">{g.labelCorto}<br/><span style={`color:${g.color}`}>en el mapa de {estado.nombre}.</span></h2>
+        <h2 class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.05">{g.labelCorto}<br/><span style={`color:var(--c-accent)`}>en el mapa de {estado.nombre}.</span></h2>
         <MapaEmpresas puntos={puntos} id={`mapa-${giro}-${estado.slug}`} zoom={7} centro={centro} altura="440px" ariaLabel={`Mapa de empresas de ${g.sustantivo} en ${estado.nombre}`} />
       </div>
     </section>
@@ -124,7 +123,7 @@ const waMsg = `Hola, busco proveedores de ${g.sustantivo} en ${estado.nombre}. �
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-10">
           <div>
             <span class="section-eyebrow mb-4 inline-flex">{tituloCorto}</span>
-            <h2 id="lista-heading" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Empresas de<br/><span style={`color:${g.color}`}>{g.sustantivo}.</span></h2>
+            <h2 id="lista-heading" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">Empresas de<br/><span style={`color:var(--c-accent)`}>{g.sustantivo}.</span></h2>
           </div>
           <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
             <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">Las fichas destacadas y verificadas aparecen primero. Los registros básicos provienen del DENUE y se marcan como registro público hasta que la empresa reclama y verifica su ficha.</p>

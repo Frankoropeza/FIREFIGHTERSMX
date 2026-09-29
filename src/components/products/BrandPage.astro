@@ -165,14 +165,13 @@ const faqSchema = {
 
 {/* ══ HERO ════════════════════════════════════════════════════════════ */}
 <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:5rem 0">
-  <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(200,16,46,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
 
   <div class="container-site relative z-10">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center pb-16">
 
       <div>
         <span class="section-eyebrow mb-5 inline-flex">{brand.eyebrow}</span>
-        <h1 class="font-display font-bold uppercase mb-6" style="color:var(--c-ink);font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+        <h1 class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(2.25rem,4.5vw,3.5rem);line-height:1.08">
           {brand.heroTitleTop}<br/>
           <span style="color:var(--c-accent)">{brand.heroTitleAccent}</span>
         </h1>
@@ -221,7 +220,7 @@ const faqSchema = {
       {brand.credenciales.map((r, i) => (
         <div class="flex flex-col gap-3 p-6" style={`background:var(--c-bg-alt);${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.12)' : ''}`}>
           
-          <h3 class="font-display font-bold text-sm uppercase tracking-wide" style="color:var(--c-ink)">{r.t}</h3>
+          <h3 class="font-display font-bold text-sm" style="color:var(--c-ink)">{r.t}</h3>
           <p class="text-xs leading-relaxed m-0" style="color:var(--c-muted)">{r.d}</p>
         </div>
       ))}
@@ -290,7 +289,7 @@ const faqSchema = {
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
       <div>
         <span class="section-eyebrow mb-4 inline-flex">{safeLineas.length} familias · un distribuidor</span>
-        <h2 id="lineas-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+        <h2 id="lineas-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
           {esLinea ? `Portafolio de ${nombreLinea}` : `Portafolio ${brand.brandLabel}`}<br/>
           <span style="color:var(--c-accent)">por tipo de riesgo.</span>
         </h2>
@@ -302,7 +301,7 @@ const faqSchema = {
 
     <div class={`grid grid-cols-1 sm:grid-cols-2 ${safeLineas.length >= 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3'} gap-px`} style="border:1px solid var(--c-line)">
       {safeLineas.map((l, i) => {
-        const meta = tipoEquipo[l.tipo] ?? { color: '#94A3B8', icon: '' };
+        const meta = tipoEquipo[l.tipo] ?? { color: '#475467', icon: '' };
         const last = i === safeLineas.length - 1;
         return (
           <div class="flex flex-col gap-5 p-7" style={`background:var(--c-bg-alt);${!last ? 'border-right:1px solid rgba(74,117,153,0.12)' : ''}`}>
@@ -311,7 +310,7 @@ const faqSchema = {
             </div>
             <div>
               {dato(l.badge) && <span class="inline-block text-[10px] font-display font-bold uppercase tracking-widest px-2 py-1 mb-3" style={`background:${meta.color}22;color:${meta.color};border:1px solid ${meta.color}44`}>{l.badge}</span>}
-              <h3 class="font-display font-bold text-base uppercase tracking-wide mb-1" style="color:var(--c-ink)">{l.titulo}</h3>
+              <h3 class="font-display font-bold text-base mb-1" style="color:var(--c-ink)">{l.titulo}</h3>
               <p class="text-xs mb-0" style="color:var(--c-accent)">{l.modelos}</p>
             </div>
             <p class="text-xs leading-relaxed" style="color:var(--c-muted)">{l.desc}</p>
@@ -335,7 +334,7 @@ const faqSchema = {
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
       <div>
         <span class="section-eyebrow mb-4 inline-flex">Catálogo completo — {productos.length} modelos</span>
-        <h2 id="catalogo-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+        <h2 id="catalogo-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
           {esLinea ? `Elige el equipo de ${nombreLinea}` : `Elige tu ${brand.brandLabel}`}<br/>
           <span style="color:var(--c-accent)">para tu operación.</span>
         </h2>
@@ -375,7 +374,7 @@ const faqSchema = {
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
       <div>
         <span class="section-eyebrow mb-4 inline-flex">Ingeniería {brand.brandLabel}</span>
-        <h2 id="anat-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+        <h2 id="anat-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
           Anatomía del<br/>
           <span style="color:var(--c-accent)">{brand.flagship}.</span>
         </h2>
@@ -389,7 +388,7 @@ const faqSchema = {
       {safeAnatomia.map((a, i) => (
         <div class="flex flex-col gap-3 p-7" style={`background:var(--c-bg-alt);${i % 3 !== 2 ? 'border-right:1px solid rgba(74,117,153,0.12);' : ''}${i < 3 ? 'border-bottom:1px solid rgba(74,117,153,0.12)' : ''}`}>
           <span class="font-display font-bold text-sm" style="color:var(--c-accent)"></span>
-          <h3 class="font-display font-bold text-sm uppercase tracking-wide" style="color:var(--c-ink)">{a.t}</h3>
+          <h3 class="font-display font-bold text-sm" style="color:var(--c-ink)">{a.t}</h3>
           <p class="text-xs leading-relaxed m-0" style="color:var(--c-muted)">{a.d}</p>
         </div>
       ))}
@@ -404,7 +403,7 @@ const faqSchema = {
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-10">
       <div>
         <span class="section-eyebrow mb-4 inline-flex">Comparativa técnica</span>
-        <h2 id="comp-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+        <h2 id="comp-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
           Los {brand.comparativa.length} modelos<br/>
           <span style="color:var(--c-accent)">cara a cara.</span>
         </h2>
@@ -431,7 +430,7 @@ const faqSchema = {
         </thead>
         <tbody>
           {(brand.comparativa ?? []).map((row, i) => {
-            const meta = (row.tipo ? tipoEquipo[row.tipo] : undefined) ?? { color: '#94A3B8', icon: '', label: '' };
+            const meta = (row.tipo ? tipoEquipo[row.tipo] : undefined) ?? { color: '#475467', icon: '', label: '' };
             return (
               <tr style={`background:${i % 2 === 0 ? 'var(--c-bg-alt)' : 'var(--c-bg-alt)'}`}>
                 <td class="p-4 font-display font-bold text-sm" style="color:var(--c-ink);border-bottom:1px solid var(--c-line)">
@@ -440,7 +439,7 @@ const faqSchema = {
                 </td>
                 <td class="p-4 text-xs font-display font-semibold" style={`color:${meta.color};border-bottom:1px solid var(--c-line);border-left:1px solid var(--c-line)`}>{meta.label}</td>
                 {colsComparativa.map((col) => (
-                  <td class={`p-4 text-xs ${col.align === 'center' ? 'text-center' : ''} ${col.accent ? 'font-display font-semibold' : ''}`} style={`color:${col.accent ? 'var(--c-accent)' : 'var(--c-text-2)'};border-bottom:1px solid var(--c-line);border-left:1px solid var(--c-line)`}>{dato((row as any)[col.key]) ? (row as any)[col.key] : <span style="color:#475569">No publicado</span>}</td>
+                  <td class={`p-4 text-xs ${col.align === 'center' ? 'text-center' : ''} ${col.accent ? 'font-display font-semibold' : ''}`} style={`color:${col.accent ? 'var(--c-accent)' : 'var(--c-text-2)'};border-bottom:1px solid var(--c-line);border-left:1px solid var(--c-line)`}>{dato((row as any)[col.key]) ? (row as any)[col.key] : <span style="color:#667085">No publicado</span>}</td>
                 ))}
               </tr>
             );
@@ -492,7 +491,7 @@ const faqSchema = {
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
       <div>
         <span class="section-eyebrow mb-4 inline-flex">Segmentos de operación</span>
-        <h2 id="seg-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+        <h2 id="seg-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
           {esLinea ? 'Aplicaciones de' : 'Para quién es'}<br/>
           <span style="color:var(--c-accent)">{esLinea ? nombreLinea : brand.brandLabel}.</span>
         </h2>
@@ -504,14 +503,14 @@ const faqSchema = {
 
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-px" style="border:1px solid var(--c-line)">
       {safeSegmentos.map((seg, i) => {
-        const color = (tipoEquipo[seg.tipo] ?? { color: '#94A3B8' }).color;
+        const color = (tipoEquipo[seg.tipo] ?? { color: '#475467' }).color;
         return (
           <div class="flex flex-col gap-4 p-7" style={`background:var(--c-bg-alt);${[0,1].includes(i) ? 'border-bottom:1px solid rgba(74,117,153,0.12)' : ''}${[0,2].includes(i) ? ';border-right:1px solid var(--c-line)' : ''}`}>
             <div class="flex items-center gap-3">
               
               <div style={`width:2rem;height:2px;background:${color}`}></div>
             </div>
-            <h3 class="font-display font-bold text-sm uppercase tracking-wide" style="color:var(--c-ink)">{seg.titulo}</h3>
+            <h3 class="font-display font-bold text-sm" style="color:var(--c-ink)">{seg.titulo}</h3>
             <p class="text-xs leading-relaxed" style="color:var(--c-muted)">{seg.desc}</p>
             <div class="flex items-center gap-2 mt-auto">
               <span class="text-[10px] uppercase tracking-widest" style="color:var(--forge-300)">Modelos </span>
@@ -562,14 +561,14 @@ const faqSchema = {
   <div class="container-site">
     <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
       <div>
-        <p class="text-xs font-display font-bold uppercase tracking-[0.2em] mb-3" style="color:rgba(16,24,40,0.65)">{brand.ctaKicker}</p>
-        <h2 class="font-display font-bold uppercase" style="color:var(--c-ink);font-size:clamp(1.75rem,4vw,3rem);line-height:1.05" set:html={brand.ctaTitleHtml}/>
+        <p class="text-xs font-display font-bold uppercase tracking-[0.2em] mb-3" style="color:rgba(255,255,255,0.65)">{brand.ctaKicker}</p>
+        <h2 class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05" set:html={brand.ctaTitleHtml}/>
       </div>
       <div class="flex flex-col sm:flex-row gap-3 shrink-0">
-        <a href={whatsappUrl(waStock)} target="_blank" rel="noopener" class="btn btn-lg" style="background:#FFFFFF;color:var(--c-accent);border-color:var(--c-line);font-weight:700">
+        <a href={whatsappUrl(waStock)} target="_blank" rel="noopener" class="btn btn-lg" style="background:#FFFFFF;color:var(--c-accent);border-color:#FFFFFF;font-weight:700">
           Cotizar por {CANAL_CONTACTO} 
         </a>
-        <a href="/cotizacion" class="btn btn-lg" style="background:transparent;color:var(--c-ink);border:2px solid rgba(16,24,40,0.5)">
+        <a href="/cotizacion" class="btn btn-lg" style="background:transparent;color:#FFFFFF;border:2px solid rgba(255,255,255,0.5)">
           Cotización formal
         </a>
       </div>

@@ -69,14 +69,13 @@ const trustPoints = [
 
   <!-- Hero -->
   <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:5rem">
-    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(200,16,46,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
 
     <div class="container-site relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
         <div>
           <span class="section-eyebrow mb-5 inline-flex">Soluciones por sector</span>
-          <h1 class="font-display font-bold uppercase mb-6" style="color:var(--c-ink);font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+          <h1 class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(2.25rem,4.5vw,3.5rem);line-height:1.08">
             Industrias que<br/>
             <span style="color:var(--c-accent)">Equipamos</span>
           </h1>
@@ -126,7 +125,7 @@ const trustPoints = [
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style="border:1px solid var(--c-line)">
         {trustPoints.map((t, i) => (
           <div class="flex flex-col gap-2 p-6" style={`background:var(--c-surface);${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.18);' : ''}`}>
-            <h2 class="font-display font-bold text-sm uppercase tracking-wider" style="color:var(--c-accent)">{t.title}</h2>
+            <h2 class="font-display font-bold text-sm" style="color:var(--c-accent)">{t.title}</h2>
             <p class="text-xs leading-relaxed" style="color:var(--c-muted)">{t.text}</p>
           </div>
         ))}
@@ -141,7 +140,7 @@ const trustPoints = [
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Sectores</span>
-          <h2 id="industrias-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="industrias-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Ocho sectores,<br/>
             <span style="color:var(--c-accent)">una solución a la medida.</span>
           </h2>
@@ -157,15 +156,7 @@ const trustPoints = [
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {industries.map((ind) => (
-          <a href={ind.href} class="industry-card group relative flex flex-col overflow-hidden" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
-            <div class="relative flex items-center justify-center overflow-hidden" style="height:110px">
-              <div class="absolute inset-0" style={`background:linear-gradient(135deg, ${ind.accent}26 0%, rgba(4,10,18,0.94) 100%)`}></div>
-              <div class="relative z-10 flex items-center justify-center rounded-full"
-                   style={`width:60px;height:60px;background:rgba(4,10,18,0.7);border:1.5px solid ${ind.accent}44;color:${ind.accent}`}>
-                <span class="block" style="width:26px;height:26px" set:html={ind.icon}/>
-              </div>
-              <div class="absolute bottom-0 left-0 right-0 h-8 pointer-events-none" style="background:linear-gradient(to bottom, transparent, var(--c-bg-alt))"></div>
-            </div>
+          <a href={ind.href} class="industry-card group relative flex flex-col overflow-hidden" style="background:#FFFFFF;border:1px solid var(--c-line);border-top:3px solid var(--c-accent);border-radius:var(--radius-card);box-shadow:var(--shadow-card)">
             <div class="flex flex-col flex-1 p-5 gap-2.5">
               <span class="text-[9px] font-display font-semibold uppercase tracking-widest" style="color:var(--forge-300)">{ind.norm}</span>
               <h3 class="font-display font-bold text-lg leading-tight group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{ind.name}</h3>
@@ -198,7 +189,7 @@ const trustPoints = [
       whatsappMsg={`Hola, quiero una solución contra incendio para ${ind.name.toLowerCase()}.`}
       captionLeft={ind.name}
       captionRight={ind.norm}
-      background={i % 2 === 0 ? '#070E1A' : '#040A12'}
+      background={i % 2 === 0 ? '#F7F8FA' : '#FFFFFF'}
     />
   ))}
 
@@ -225,7 +216,7 @@ const trustPoints = [
         </div>
 
         <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
-          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">
+          <h2 class="font-display font-bold text-sm mb-5" style="color:var(--forge-300)">
             También te puede servir
           </h2>
           <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">

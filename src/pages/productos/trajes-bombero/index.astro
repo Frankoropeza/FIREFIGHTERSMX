@@ -49,21 +49,21 @@ const tipos = [
   {
     title: 'Estructural',
     norm: 'NFPA 1970',
-    accent: '#F75000',
+    accent: '#C8102E',
     desc: 'Combate de incendio dentro de edificios. Tres capas —shell, barrera de humedad y forro térmico— para calor radiante intenso, llama súbita y vapor a presión.',
     icon: ``,
   },
   {
     title: 'Proximidad',
     norm: 'NFPA 1970',
-    accent: '#F5A623',
+    accent: '#B54708',
     desc: 'Conjunto aluminizado que refleja el calor radiante. Para aproximación a fuegos de combustible, ARFF en aeropuertos, refinerías y fundiciones.',
     icon: ``,
   },
   {
     title: 'Forestal',
     norm: 'NFPA 1950',
-    accent: '#34D399',
+    accent: '#067647',
     desc: 'Monocapa ligera y transpirable para incendio de vegetación e interfaz. Privilegia movilidad y manejo del estrés por calor en jornadas largas.',
     icon: ``,
   },
@@ -221,13 +221,12 @@ const razones = [
 
   <!-- Hero -->
   <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:5rem">
-    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(200,16,46,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
 
     <div class="container-site relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div>
           <span class="section-eyebrow mb-5 inline-flex">{cat.norm}</span>
-          <h1 class="font-display font-bold uppercase mb-4" style="color:var(--c-ink);font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+          <h1 class="font-display font-bold mb-4" style="color:var(--c-ink);font-size:clamp(2.25rem,4.5vw,3.5rem);line-height:1.08">
             Traje de bombero<br/>
             <span style="color:var(--c-accent)">trajes de protección para bomberos NFPA 1970.</span>
           </h1>
@@ -361,7 +360,7 @@ const razones = [
         {razones.map((r, i) => (
           <div class="flex flex-col gap-3 p-6" style={`background:var(--c-bg-alt);${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.12)' : ''}`}>
             
-            <h3 class="font-display font-bold text-sm uppercase tracking-wide" style="color:var(--c-ink)">{r.t}</h3>
+            <h3 class="font-display font-bold text-sm" style="color:var(--c-ink)">{r.t}</h3>
             <p class="text-xs leading-relaxed m-0" style="color:var(--c-muted)">{r.d}</p>
           </div>
         ))}
@@ -375,7 +374,7 @@ const razones = [
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Tres tipos, tres físicas</span>
-          <h2 id="tipos-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="tipos-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             El traje correcto<br/>
             <span style="color:var(--c-accent)">según el fuego.</span>
           </h2>
@@ -392,9 +391,6 @@ const razones = [
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
         {tipos.map((t) => (
           <article class="flex flex-col gap-4 p-7" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
-            <div class="flex items-center justify-center rounded-full" style={`width:52px;height:52px;background:${t.accent}1a;border:1.5px solid ${t.accent}59;color:${t.accent}`}>
-              <span class="block" style="width:24px;height:24px" set:html={t.icon}/>
-            </div>
             <div class="flex items-center justify-between gap-2">
               <h3 class="font-display font-bold text-xl" style="color:var(--c-ink)">{t.title}</h3>
               <span class="badge badge-dark text-[9px]">{t.norm}</span>
@@ -414,7 +410,7 @@ const razones = [
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Globe Manufacturing · MSA Safety</span>
-          <h2 id="modelos-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="modelos-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Trajes Globe<br/>
             <span style="color:var(--c-accent)">certificados NFPA.</span>
           </h2>
@@ -471,7 +467,7 @@ const razones = [
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Lion Apparel · 135 años de historia</span>
-          <h2 id="lion-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="lion-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Trajes Lion<br/>
             <span style="color:var(--c-accent)">certificados NFPA.</span>
           </h2>
@@ -519,7 +515,7 @@ const razones = [
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Honeywell Morning Pride · Pemex · Refinería</span>
-          <h2 id="honeywell-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="honeywell-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Trajes Honeywell<br/>
             <span style="color:var(--c-accent)">certificados NFPA.</span>
           </h2>
@@ -567,7 +563,7 @@ const razones = [
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Fire-Dex · La marca que más crece en MX</span>
-          <h2 id="firedex-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="firedex-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Trajes Fire-Dex<br/>
             <span style="color:var(--c-accent)">certificados NFPA.</span>
           </h2>
@@ -615,7 +611,7 @@ const razones = [
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Sköld Safety · Fabricación mexicana</span>
-          <h2 id="skold-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="skold-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Trajes Sköld<br/>
             <span style="color:var(--c-accent)">fabricados en México.</span>
           </h2>
@@ -694,7 +690,7 @@ const razones = [
     <div class="container-site">
       <div class="mb-10">
         <span class="section-eyebrow mb-4 inline-flex">Comparativa</span>
-        <h2 id="comp-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+        <h2 id="comp-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
           Estructural · Proximidad · <span style="color:var(--c-accent)">Forestal</span>
         </h2>
       </div>
@@ -748,7 +744,7 @@ const razones = [
         </div>
 
         <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
-          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">
+          <h2 class="font-display font-bold text-sm mb-5" style="color:var(--forge-300)">
             Aprende más en el blog
           </h2>
           <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
@@ -809,8 +805,8 @@ const razones = [
     <div class="container-site">
       <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
         <div>
-          <p class="text-xs font-display font-bold uppercase tracking-[0.2em] mb-3" style="color:rgba(16,24,40,0.65)">Globe · Lion · Honeywell · Fire-Dex · Sköld · Stock CDMX</p>
-          <h2 class="font-display font-bold uppercase" style="color:var(--c-ink);font-size:clamp(1.75rem,4vw,3rem);line-height:1.05">
+          <p class="text-xs font-display font-bold uppercase tracking-[0.2em] mb-3" style="color:rgba(255,255,255,0.65)">Globe · Lion · Honeywell · Fire-Dex · Sköld · Stock CDMX</p>
+          <h2 class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Certificado NFPA 1970.<br/>Entrega en 48 h.
           </h2>
         </div>
@@ -819,11 +815,11 @@ const razones = [
             href={whatsappUrl('Hola, quiero cotizar trajes para bomberos NFPA 1970. ¿Tienen stock disponible?')}
             target="_blank" rel="noopener"
             class="btn btn-lg"
-            style="background:#FFFFFF;color:var(--c-accent);border-color:var(--c-line);font-weight:700"
+            style="background:#FFFFFF;color:var(--c-accent);border-color:#FFFFFF;font-weight:700"
           >
             Cotizar por {CANAL_CONTACTO} 
           </a>
-          <a href="/cotizacion" class="btn btn-lg" style="background:transparent;color:var(--c-ink);border:2px solid rgba(16,24,40,0.5)">
+          <a href="/cotizacion" class="btn btn-lg" style="background:transparent;color:#FFFFFF;border:2px solid rgba(255,255,255,0.5)">
             Cotización formal
           </a>
         </div>
@@ -848,7 +844,7 @@ const razones = [
           <a href={whatsappUrl('Hola, quiero equipar el conjunto completo de EPP para mi brigada.')} target="_blank" rel="noopener" class="btn btn-primary">Cotizar conjunto completo</a>
         </div>
         <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
-          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">
+          <h2 class="font-display font-bold text-sm mb-5" style="color:var(--forge-300)">
             También te puede servir
           </h2>
           <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
@@ -875,7 +871,7 @@ const razones = [
 
       <!-- Otras categorías -->
       <div class="mt-14 pt-10" style="border-top:1px solid var(--c-line)">
-        <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-6" style="color:var(--forge-300)">Otras categorías del catálogo</h2>
+        <h2 class="font-display font-bold text-sm mb-6" style="color:var(--forge-300)">Otras categorías del catálogo</h2>
         <div class="flex flex-wrap gap-3">
           {otrasCategorias.map((c) => (
             <a href={`/productos/${c.slug}`} class="btn btn-sm btn-dark">{c.label}</a>

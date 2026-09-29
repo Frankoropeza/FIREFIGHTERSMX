@@ -78,12 +78,11 @@ const otherCategories = allCategories.filter((c) => c.slug !== cat.slug).slice(0
 
   <!-- Hero de categoría -->
   <section class="relative overflow-hidden" style="background:var(--c-bg)" aria-labelledby={`hero-${cat.slug}`}>
-    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(200,16,46,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
 
     <div class="container-site relative z-10">
       <div class="flex flex-col justify-center py-14 lg:py-20">
         <span class="section-eyebrow mb-5 inline-flex">{cat.norm}</span>
-        <h1 id={`hero-${cat.slug}`} class="font-display font-bold uppercase mb-6" style="color:var(--c-ink);font-size:clamp(2.5rem,6vw,4.5rem);line-height:0.95">
+        <h1 id={`hero-${cat.slug}`} class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(2.25rem,4.5vw,3.5rem);line-height:1.06">
           {cat.label}
         </h1>
         <div class="flex flex-col gap-4 mb-8" style="max-width:48rem">
@@ -114,7 +113,7 @@ const otherCategories = allCategories.filter((c) => c.slug !== cat.slug).slice(0
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-10">
           <div>
             <span class="section-eyebrow mb-4 inline-flex">Marcas autorizadas</span>
-            <h2 id="marcas-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.05">
+            <h2 id="marcas-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
               Catálogo por<br/>
               <span style="color:var(--c-accent)">marca.</span>
             </h2>
@@ -178,7 +177,6 @@ const otherCategories = allCategories.filter((c) => c.slug !== cat.slug).slice(0
                       class="w-full h-full block"
                       style="object-fit:cover;object-position:center"
                     />
-                    <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(to top, rgba(4,10,18,0.85) 0%, rgba(4,10,18,0.0) 60%)" aria-hidden="true"></div>
                   </div>
                 )}
                 <div class="flex flex-col gap-3 p-6 flex-1">
@@ -241,7 +239,7 @@ const otherCategories = allCategories.filter((c) => c.slug !== cat.slug).slice(0
   <!-- Otras categorías (internal linking) -->
   <section class="section-tight" style="background:var(--c-bg)" aria-labelledby="otras-title">
     <div class="container-site">
-      <h2 id="otras-title" class="font-display font-bold text-sm uppercase tracking-widest mb-6" style="color:var(--forge-300)">
+      <h2 id="otras-title" class="font-display font-bold text-sm mb-6" style="color:var(--forge-300)">
         Otras categorías del catálogo
       </h2>
       <div class="flex flex-wrap gap-3">

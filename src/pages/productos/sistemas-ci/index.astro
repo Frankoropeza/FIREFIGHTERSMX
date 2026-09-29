@@ -28,7 +28,7 @@ const subsistemas = [
     norm: 'NFPA 13',
     label: 'Rociadores Automáticos',
     marcas: 'Tyco · Viking · Victaulic',
-    accent: '#34D399',
+    accent: '#067647',
     aplicacion: 'Bodegas · naves industriales · centros comerciales · hoteles · edificios de oficinas · plantas de manufactura',
     desc: 'El sistema de supresión más extendido a nivel mundial. Los rociadores automáticos activan únicamente en el área del fuego, controlando el incendio antes de que se propague. El diseño hidráulico por densidad de riesgo conforme NFPA 13 garantiza la cobertura correcta para cada tipo de ocupación.',
     items: [
@@ -45,7 +45,7 @@ const subsistemas = [
     norm: 'NFPA 72',
     label: 'Detección y Alarma',
     marcas: 'Honeywell · Notifier · System Sensor',
-    accent: '#60A5FA',
+    accent: '#175CD3',
     aplicacion: 'Cualquier inmueble — complementa el sistema de rociadores o se usa en áreas donde los rociadores no aplican',
     desc: 'Un sistema de detección temprana puede dar 3 a 10 minutos adicionales de evacuación antes de que lleguen los rociadores. Los paneles FACP (Fire Alarm Control Panel) direccionables de Honeywell y Notifier identifican el detector exacto en alarma, aceleran la respuesta y se integran con HVAC, elevadores y supresión.',
     items: [
@@ -64,7 +64,7 @@ const subsistemas = [
     norm: 'NFPA 2001',
     label: 'Supresión Agente Limpio',
     marcas: 'Kidde Fenwal · Fike · Amerex',
-    accent: '#A78BFA',
+    accent: '#6941C6',
     aplicacion: 'Data centers · salas de servidores · cuartos de control · archivos críticos · telecomunicaciones · salas de arte',
     desc: 'La solución óptima para activos que no pueden mojarse, polvearse ni quedar fuera de servicio. Los agentes limpios FM-200 (HFC-227ea) y Novec 1230 (FK-5-1-12) extinguen en menos de 10 segundos sin residuo, sin dañar equipos y en un espacio seguro para personas. El sistema fijo con detección VESDA o dual-knock ofrece la respuesta más rápida posible.',
     items: [
@@ -81,7 +81,7 @@ const subsistemas = [
     norm: 'NFPA 20',
     label: 'Redes Hidráulicas y Bombas',
     marcas: 'Grundfos · Armstrong · Aurora',
-    accent: '#FB923C',
+    accent: '#C8102E',
     aplicacion: 'Todo sistema de rociadores o gabinetes requiere una red hidráulica y, en la mayoría de los casos, un cuarto de bombas NFPA 20',
     desc: 'El corazón del sistema de rociadores: la red de tuberías y el cuarto de bombas que garantizan el caudal y la presión en cada rociador. El diseño hidráulico por computadora (pipe schedule o cálculo por densidad) determina los diámetros, la presión residual y la bomba necesaria — todo conforme NFPA 20 y la memoria de cálculo que exige tu aseguradora.',
     items: [
@@ -284,10 +284,10 @@ const articulos = [
 
 /* Tabla comparativa subsistemas */
 const tablaComparativa = [
-  { sub: 'Rociadores automáticos', norm: 'NFPA 13', activ: 'Automática — calor 68–93 °C', ocup: 'Bodegas · manufactura · comercios · hoteles', entr: 'Memoria de cálculo + prueba hidrostática', mant: 'NFPA 25 · anual', accent: '#34D399' },
-  { sub: 'Detección y alarma',     norm: 'NFPA 72', activ: 'Automática — humo · calor · CO · llama', ocup: 'Cualquier inmueble, complementa rociadores', entr: 'Reporte aceptación NFPA 72 Cap. 14 + matrices', mant: 'NFPA 72 · anual', accent: '#60A5FA' },
-  { sub: 'Agente limpio',          norm: 'NFPA 2001', activ: 'Automática — dual-knock (2 detectores)', ocup: 'Data centers · cuartos de control · archivos', entr: 'Cálculo de masa + door fan test integridad', mant: 'NFPA 2001 · semestral', accent: '#A78BFA' },
-  { sub: 'Redes y bombas',         norm: 'NFPA 20', activ: 'Automática — switch de presión o flujo', ocup: 'Todo sistema de rociadores o gabinetes', entr: 'Memoria hidráulica + curva bomba-sistema', mant: 'NFPA 20 · semanal (jockey) + anual', accent: '#FB923C' },
+  { sub: 'Rociadores automáticos', norm: 'NFPA 13', activ: 'Automática — calor 68–93 °C', ocup: 'Bodegas · manufactura · comercios · hoteles', entr: 'Memoria de cálculo + prueba hidrostática', mant: 'NFPA 25 · anual', accent: '#067647' },
+  { sub: 'Detección y alarma',     norm: 'NFPA 72', activ: 'Automática — humo · calor · CO · llama', ocup: 'Cualquier inmueble, complementa rociadores', entr: 'Reporte aceptación NFPA 72 Cap. 14 + matrices', mant: 'NFPA 72 · anual', accent: '#175CD3' },
+  { sub: 'Agente limpio',          norm: 'NFPA 2001', activ: 'Automática — dual-knock (2 detectores)', ocup: 'Data centers · cuartos de control · archivos', entr: 'Cálculo de masa + door fan test integridad', mant: 'NFPA 2001 · semestral', accent: '#6941C6' },
+  { sub: 'Redes y bombas',         norm: 'NFPA 20', activ: 'Automática — switch de presión o flujo', ocup: 'Todo sistema de rociadores o gabinetes', entr: 'Memoria hidráulica + curva bomba-sistema', mant: 'NFPA 20 · semanal (jockey) + anual', accent: '#C8102E' },
 ];
 ---
 
@@ -308,15 +308,14 @@ const tablaComparativa = [
 
   <!-- Hero -->
   <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:5rem">
-    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(6,118,71,0.07) 0%, transparent 65%)" aria-hidden="true"></div>
 
     <div class="container-site relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div>
           <span class="section-eyebrow mb-5 inline-flex">{cat.norm} · Diseño · Instalación · Entregables</span>
-          <h1 class="font-display font-bold uppercase mb-6" style="color:var(--c-ink);font-size:clamp(2.25rem,5vw,4rem);line-height:0.95">
+          <h1 class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(2.25rem,4.5vw,3.5rem);line-height:1.08">
             Sistemas contra incendio<br/>
-            <span style="color:var(--c-success)">protección contra incendios que tu aseguradora acepta.</span>
+            <span style="color:var(--c-accent)">protección contra incendios que tu aseguradora acepta.</span>
           </h1>
           <p class="text-sm leading-relaxed mb-8" style="color:var(--c-text-2)">
             Diseñamos, suministramos e instalamos sistemas fijos de protección:
@@ -438,7 +437,7 @@ const tablaComparativa = [
         {razones.map((r, i) => (
           <div class="flex flex-col gap-3 p-6" style={`background:var(--c-bg-alt);${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.12)' : ''}`}>
             
-            <h3 class="font-display font-bold text-sm uppercase tracking-wide" style="color:var(--c-ink)">{r.t}</h3>
+            <h3 class="font-display font-bold text-sm" style="color:var(--c-ink)">{r.t}</h3>
             <p class="text-xs leading-relaxed m-0" style="color:var(--c-muted)">{r.d}</p>
           </div>
         ))}
@@ -453,9 +452,9 @@ const tablaComparativa = [
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Tyco · Viking (Johnson Controls) · NFPA 13 · Distribuidor Autorizado MX</span>
-          <h2 id="tyco-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="tyco-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Rociadores Tyco / Viking<br/>
-            <span style="color:var(--c-success)">certificados UL Listed · FM.</span>
+            <span style="color:var(--c-accent)">certificados UL Listed · FM.</span>
           </h2>
         </div>
         <div style="border-left:2px solid rgba(6,118,71,0.4);padding-left:1.75rem">
@@ -507,9 +506,9 @@ const tablaComparativa = [
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Honeywell · Notifier · NFPA 72 · Distribuidor Autorizado MX</span>
-          <h2 id="honeywell-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="honeywell-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Paneles Honeywell / Notifier<br/>
-            <span style="color:var(--c-info)">certificados UL Listed · cUL.</span>
+            <span style="color:var(--c-accent)">certificados UL Listed · cUL.</span>
           </h2>
         </div>
         <div style="border-left:2px solid rgba(96,165,250,0.4);padding-left:1.75rem">
@@ -562,9 +561,9 @@ const tablaComparativa = [
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Kidde Fenwal · Carrier Global · NFPA 2001 · Distribuidor Autorizado MX</span>
-          <h2 id="kidde-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="kidde-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Agente Limpio FM-200 / Novec<br/>
-            <span style="color:var(--c-violet)">certificados UL Listed · FM.</span>
+            <span style="color:var(--c-accent)">certificados UL Listed · FM.</span>
           </h2>
         </div>
         <div style="border-left:2px solid rgba(167,139,250,0.4);padding-left:1.75rem">
@@ -610,13 +609,13 @@ const tablaComparativa = [
   </section>
 
   <!-- Red Hidráulica CI — NFPA 20 -->
-  <section class="section" style="background:#07111F" aria-labelledby="red-hidraulica-title">
+  <section class="section" style="background:#F7F8FA" aria-labelledby="red-hidraulica-title">
     <div class="container-site">
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Red Hidráulica CI · NFPA 20 · NFPA 14 · NOM-002-STPS · UL Listed · FM Approved</span>
-          <h2 id="red-hidraulica-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="red-hidraulica-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Gabinetes CI · Bombas NFPA 20<br/>
             <span style="color:var(--c-accent)">y Válvulas Supervisadas.</span>
           </h2>
@@ -672,9 +671,9 @@ const tablaComparativa = [
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-14">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Cuatro subsistemas, un proyecto integrado</span>
-          <h2 id="subsistemas-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="subsistemas-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Del diseño a la<br/>
-            <span style="color:var(--c-success)">puesta en marcha.</span>
+            <span style="color:var(--c-accent)">puesta en marcha.</span>
           </h2>
         </div>
         <div style="border-left:2px solid rgba(6,118,71,0.4);padding-left:1.75rem">
@@ -693,9 +692,6 @@ const tablaComparativa = [
             {/* Panel izquierdo */}
             <div class="flex flex-col gap-5 p-8" style="background:var(--c-bg-alt);border-right:1px solid var(--c-line)">
               <div class="flex items-start gap-4">
-                <div class="flex items-center justify-center shrink-0" style={`width:56px;height:56px;background:${s.accent}1a;border:1.5px solid ${s.accent}55;color:${s.accent}`}>
-                  <span class="block" style="width:26px;height:26px" set:html={s.icon}/>
-                </div>
                 <div>
                   <span class="text-xs font-display font-bold tracking-widest uppercase" style={`color:${s.accent}`}>{s.norm}</span>
                   <h3 class="font-display font-bold text-xl leading-tight" style="color:var(--c-ink)">{s.label}</h3>
@@ -803,9 +799,9 @@ const tablaComparativa = [
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Metodología de proyecto</span>
-          <h2 id="proceso-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="proceso-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             De la cotización<br/>
-            <span style="color:var(--c-success)">al expediente final.</span>
+            <span style="color:var(--c-accent)">al expediente final.</span>
           </h2>
         </div>
         <div style="border-left:2px solid rgba(6,118,71,0.4);padding-left:1.75rem">
@@ -825,7 +821,7 @@ const tablaComparativa = [
               </div>
             )}
             
-            <h3 class="font-display font-bold text-sm uppercase tracking-wide" style="color:var(--c-ink)">{e.t}</h3>
+            <h3 class="font-display font-bold text-sm" style="color:var(--c-ink)">{e.t}</h3>
             <p class="text-xs leading-relaxed m-0" style="color:var(--c-muted)">{e.d}</p>
           </article>
         ))}
@@ -841,7 +837,7 @@ const tablaComparativa = [
           <span class="section-eyebrow mb-4 inline-flex">Dossier de proyecto</span>
           <h2 id="entregables-title" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.05">
             Lo que entregamos<br/>
-            <span style="color:var(--c-success)">al cierre del proyecto.</span>
+            <span style="color:var(--c-accent)">al cierre del proyecto.</span>
           </h2>
           <p class="text-sm leading-relaxed mb-8" style="color:var(--c-text-2)">
             El sistema instalado es solo una parte. El dossier técnico-legal es lo que protege
@@ -858,7 +854,7 @@ const tablaComparativa = [
             <article class="flex flex-col gap-2 p-5" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
               <div class="flex items-center gap-2 mb-1">
                 
-                <h3 class="font-display font-bold text-xs uppercase tracking-wide" style="color:var(--c-ink)">{e.t}</h3>
+                <h3 class="font-display font-bold text-xs" style="color:var(--c-ink)">{e.t}</h3>
               </div>
               <p class="text-xs leading-relaxed m-0" style="color:var(--c-muted)">{e.d}</p>
             </article>
@@ -873,9 +869,9 @@ const tablaComparativa = [
     <div class="container-site">
       <div class="mb-10">
         <span class="section-eyebrow mb-4 inline-flex">Marco normativo</span>
-        <h2 id="normas-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+        <h2 id="normas-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
           Las cinco NFPA<br/>
-          <span style="color:var(--c-success)">que rigen tu sistema.</span>
+          <span style="color:var(--c-accent)">que rigen tu sistema.</span>
         </h2>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -901,7 +897,7 @@ const tablaComparativa = [
           <span class="section-eyebrow mb-4 inline-flex">Cómo elegir el sistema correcto</span>
           <h2 id="guia-title" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Del riesgo<br/>
-            <span style="color:var(--c-success)">a la memoria de cálculo.</span>
+            <span style="color:var(--c-accent)">a la memoria de cálculo.</span>
           </h2>
           <ol class="flex flex-col gap-4 list-none m-0 p-0">
             {guia.map((s) => (
@@ -919,7 +915,7 @@ const tablaComparativa = [
         </div>
 
         <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
-          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">Aprende más</h2>
+          <h2 class="font-display font-bold text-sm mb-5" style="color:var(--forge-300)">Aprende más</h2>
           <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
             {articulos.map((l) => (
               <li style="border-bottom:1px solid var(--c-line)">
@@ -947,7 +943,7 @@ const tablaComparativa = [
           <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes</span>
           <h2 id="faq-title" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Las preguntas que<br/>
-            <span style="color:var(--c-success)">nos hacen antes</span><br/>
+            <span style="color:var(--c-accent)">nos hacen antes</span><br/>
             del proyecto.
           </h2>
           <p class="text-sm leading-relaxed mb-8" style="color:var(--c-muted)">
@@ -979,7 +975,7 @@ const tablaComparativa = [
       <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
         <div>
           <p class="text-xs font-display font-bold uppercase tracking-[0.2em] mb-3" style="color:rgba(6,118,71,0.7)">NFPA 13 · 72 · 2001 · Memoria de cálculo · Dossier completo</p>
-          <h2 class="font-display font-bold uppercase" style="color:var(--c-ink);font-size:clamp(1.75rem,4vw,3rem);line-height:1.05">
+          <h2 class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Materiales UL Listed.<br/>Memoria firmada por DRO.
           </h2>
         </div>
@@ -988,7 +984,7 @@ const tablaComparativa = [
             href={whatsappUrl('Hola, quiero solicitar una cotización para un sistema contra incendio (rociadores / detección / agente limpio). ¿Me pueden enviar información?')}
             target="_blank" rel="noopener"
             class="btn btn-lg"
-            style="background:var(--c-success);color:#0A1A14;border-color:var(--c-success);font-weight:700"
+            style="background:var(--c-success);color:#FFFFFF;border-color:var(--c-success);font-weight:700"
           >
             Cotizar proyecto 
           </a>
@@ -1008,7 +1004,7 @@ const tablaComparativa = [
           <span class="section-eyebrow mb-4 inline-flex">Sistema completo</span>
           <h2 id="cross-title" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             El sistema fijo<br/>
-            <span style="color:var(--c-success)">necesita EPP y extintores.</span>
+            <span style="color:var(--c-accent)">necesita EPP y extintores.</span>
           </h2>
           <p class="text-sm leading-relaxed mb-8" style="color:var(--c-text-2)">
             Un sistema contra incendio fijo no reemplaza al extintor portátil ni al EPP de la brigada.
@@ -1018,7 +1014,7 @@ const tablaComparativa = [
           <a href={whatsappUrl('Hola, quiero cotizar la protección contra incendio completa: sistema fijo, extintores y EPP de brigada.')} target="_blank" rel="noopener" class="btn btn-primary">Cotizar protección completa</a>
         </div>
         <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
-          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">También te puede servir</h2>
+          <h2 class="font-display font-bold text-sm mb-5" style="color:var(--forge-300)">También te puede servir</h2>
           <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
             {[
               { label: 'Extintores',     desc: 'PQS ABC NOM-100-STPS · CO₂ NOM-102-STPS · Tipo K · Agente limpio',              href: '/productos/extintores' },
@@ -1042,7 +1038,7 @@ const tablaComparativa = [
       </div>
 
       <div class="mt-14 pt-10" style="border-top:1px solid var(--c-line)">
-        <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-6" style="color:var(--forge-300)">Otras categorías del catálogo</h2>
+        <h2 class="font-display font-bold text-sm mb-6" style="color:var(--forge-300)">Otras categorías del catálogo</h2>
         <div class="flex flex-wrap gap-3">
           {otrasCategorias.map((c) => (
             <a href={`/productos/${c.slug}`} class="btn btn-sm btn-dark">{c.label}</a>

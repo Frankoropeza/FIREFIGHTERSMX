@@ -69,7 +69,7 @@ export const giros: Giro[] = [
     labelCorto: 'Equipo y EPP',
     sustantivo: 'equipo para bomberos y EPP',
     description: 'Distribuidores de equipo para bomberos, EPP estructural, SCBA, cascos, herramientas de rescate y seguridad industrial',
-    color: 'var(--c-accent)',
+    color: '#C8102E',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/>`,
     imagen: '/images/giros/venta-equipo.avif',
     imagenAlt: 'Equipo de protección personal para bombero: chaquetón, casco, guantes y botas',
@@ -108,7 +108,7 @@ export const giros: Giro[] = [
     labelCorto: 'Equipos contra incendios',
     sustantivo: 'equipos contra incendios',
     description: 'Empresas de equipos contra incendios en México: monitores, boquillas, mangueras, válvulas, conexiones, gabinetes e hidrantes',
-    color: 'var(--c-accent)',
+    color: '#C8102E',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M3 12h4l2-3 3 6 2-4h7M5 12v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6M9 6V4h6v2"/>`,
     imagen: '/images/giros/equipos-contra-incendio.avif',
     imagenAlt: 'Boquillas, coples, válvulas y monitor para red contra incendio',
@@ -146,7 +146,7 @@ export const giros: Giro[] = [
     labelCorto: 'Extintores',
     sustantivo: 'extintores',
     description: 'Empresas de venta, recarga, mantenimiento y prueba hidrostática de extintores en México',
-    color: 'var(--c-accent)',
+    color: '#C8102E',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 5a3 3 0 0 1 6 0v1H9V5zM8 7h8a1 1 0 0 1 1 1v12a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V8a1 1 0 0 1 1-1zM12 2v3M15 8l4-3"/>`,
     // TODO Frank: generar foto de extintores (PQS/CO2 en fila o recarga en taller). Placeholder temporal.
     imagen: '/images/giros/extintores.avif',
@@ -183,7 +183,7 @@ export const giros: Giro[] = [
     labelCorto: 'Sistemas CI',
     sustantivo: 'sistemas contra incendio',
     description: 'Empresas de ingeniería, instalación y mantenimiento de sistemas contra incendio: rociadores, detección, redes hidráulicas y agentes limpios',
-    color: 'var(--c-info)',
+    color: '#175CD3',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M12 3v6M8 9h8M12 9c0 4-4 5-4 9a4 4 0 0 0 8 0c0-4-4-5-4-9zM5 6h14"/>`,
     // TODO Frank: generar foto de rociadores / red hidráulica / tablero de detección. Placeholder temporal.
     imagen: '/images/giros/sistemas-ci.avif',
@@ -221,7 +221,7 @@ export const giros: Giro[] = [
     labelCorto: 'Capacitación',
     sustantivo: 'capacitación y consultoría',
     description: 'Centros de capacitación de brigadas contra incendio, consultoría NOM-002-STPS, DC-3 y asesoría en protección civil',
-    color: 'var(--c-success)',
+    color: '#067647',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M12 3 2 8l10 5 10-5-10-5zM6 10.5V16c0 1.5 3 3 6 3s6-1.5 6-3v-5.5M22 8v6"/>`,
     imagen: '/images/giros/capacitacion.avif',
     imagenAlt: 'Práctica de brigada con línea de manguera en campo de entrenamiento',
@@ -265,17 +265,17 @@ export const giroMap: Record<GiroKey, Giro> = Object.fromEntries(giros.map((g) =
 /** Niveles comerciales de listing — independiente de `confianza` (veracidad editorial) */
 export type PlanKey = 'basico' | 'verificado' | 'destacado';
 export const planConfig: Record<PlanKey, { label: string; color: string; bgColor: string; orden: number }> = {
-  destacado:  { label: 'Destacado',  color: 'var(--c-amber)', bgColor: 'rgba(181,71,8,0.12)', orden: 0 },
-  verificado: { label: 'Verificado', color: 'var(--c-success)', bgColor: 'rgba(6,118,71,0.10)', orden: 1 },
-  basico:     { label: 'Básico',     color: 'var(--c-muted)', bgColor: 'var(--c-line)', orden: 2 },
+  destacado:  { label: 'Destacado',  color: '#B54708', bgColor: 'rgba(181,71,8,0.12)', orden: 0 },
+  verificado: { label: 'Verificado', color: '#067647', bgColor: 'rgba(6,118,71,0.10)', orden: 1 },
+  basico:     { label: 'Básico',     color: '#667085', bgColor: '#E4E7EC', orden: 2 },
 };
 
 /** Niveles de confianza editorial — mismos valores que el directorio de estaciones */
 export type ConfianzaKey = 'alta' | 'media' | 'baja';
 export const confianzaConfig: Record<ConfianzaKey, { label: string; color: string; bgColor: string; descripcion: string }> = {
-  alta:  { label: 'Datos verificados', color: 'var(--c-success)', bgColor: 'rgba(6,118,71,0.1)',  descripcion: 'Contacto y giro confirmados contra fuente oficial y sitio propio.' },
-  media: { label: 'Datos confirmados', color: 'var(--c-amber)', bgColor: 'rgba(181,71,8,0.1)',  descripcion: 'Existencia y giro confirmados; contacto pendiente de verificación.' },
-  baja:  { label: 'Registro público',  color: 'var(--c-text-2)', bgColor: 'rgba(148,163,184,0.12)', descripcion: 'Tomado del registro público del DENUE (INEGI). Pendiente de verificación directa.' },
+  alta:  { label: 'Datos verificados', color: '#067647', bgColor: 'rgba(6,118,71,0.1)',  descripcion: 'Contacto y giro confirmados contra fuente oficial y sitio propio.' },
+  media: { label: 'Datos confirmados', color: '#B54708', bgColor: 'rgba(181,71,8,0.1)',  descripcion: 'Existencia y giro confirmados; contacto pendiente de verificación.' },
+  baja:  { label: 'Registro público',  color: '#475467', bgColor: 'rgba(148,163,184,0.12)', descripcion: 'Tomado del registro público del DENUE (INEGI). Pendiente de verificación directa.' },
 };
 
 /** Todas las fichas del directorio permanecen indexables para cubrir la intención nacional y local. */

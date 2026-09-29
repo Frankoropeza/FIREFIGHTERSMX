@@ -45,12 +45,11 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEn
   </nav>
 
   <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:5rem" aria-labelledby="emp-heading">
-    <div class="absolute top-0 right-0 w-2/3 h-full pointer-events-none" aria-hidden="true" style="background:radial-gradient(ellipse 70% 60% at 85% 40%, rgba(200,16,46,0.07) 0%, transparent 65%)"></div>
     <div class="container-site relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div>
           <span class="section-eyebrow mb-5 inline-flex">Directorio nacional · 32 estados</span>
-          <h1 id="emp-heading" class="font-display font-bold uppercase mb-6" style="color:var(--c-ink);font-size:clamp(2.2rem,5vw,4rem);line-height:0.95">
+          <h1 id="emp-heading" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(2.25rem,4.5vw,3.5rem);line-height:1.08">
             Directorio de empresas<br/><span style="color:var(--c-accent)">de equipo contra incendio</span><br/>en México
           </h1>
           <p class="text-sm leading-[1.9] mb-4" style="color:var(--c-text-2)">
@@ -90,7 +89,7 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEn
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Por giro</span>
-          <h2 id="giros-heading" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Cinco giros para equipar a bomberos, brigadas y protección civil<br/><span style="color:var(--c-accent)">en un solo directorio.</span></h2>
+          <h2 id="giros-heading" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">Cinco giros para equipar a bomberos, brigadas y protección civil<br/><span style="color:var(--c-accent)">en un solo directorio.</span></h2>
         </div>
         <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
           <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">Agrupamos a las empresas por la actividad que describen sus fuentes públicas: vender equipo de protección personal, suministrar equipos para redes contra incendio, dar servicio a extintores, instalar sistemas fijos o capacitar brigadas. Una empresa puede aparecer en más de un giro.</p>
@@ -99,8 +98,6 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEn
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-px" style="background:var(--c-line);border:1px solid var(--c-line)">
         {giros.map((g) => { return (
           <a href={`/empresas/${g.slug}/`} class="grid-cell flex flex-col gap-4 p-7" style="background:var(--c-bg)">
-            <span class="w-10 h-10 flex items-center justify-center" style={`color:${g.color};border:1px solid ${g.color}55`}>
-              </span>
             <span class="font-display font-bold text-lg leading-snug" style="color:var(--c-ink)">{g.label}</span>
             <span class="text-xs leading-relaxed" style="color:var(--c-muted)">{g.description}</span>
             <span class="mt-auto font-display font-semibold text-xs uppercase tracking-wider" style="color:var(--c-accent)">{g.labelCorto} en México </span>
@@ -128,7 +125,7 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEn
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Por estado</span>
-          <h2 id="estados-heading" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Equipo contra incendio, extintores, hidrantes, mangueras, boquillas y gabinetes<br/><span style="color:var(--c-accent)">en los 32 estados.</span></h2>
+          <h2 id="estados-heading" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">Equipo contra incendio, extintores, hidrantes, mangueras, boquillas y gabinetes<br/><span style="color:var(--c-accent)">en los 32 estados.</span></h2>
         </div>
         <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
           <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">Cada estado tiene su propio directorio con mapa, buscador y filtros por giro. Elige tu entidad para ver a los proveedores más cercanos.</p>
@@ -150,7 +147,7 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEn
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-10">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Buscador</span>
-          <h2 id="buscar-heading" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Busca entre distribuidores y empresas de equipo de bombero<br/><span style="color:var(--c-accent)">en toda la República.</span></h2>
+          <h2 id="buscar-heading" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">Busca entre distribuidores y empresas de equipo de bombero<br/><span style="color:var(--c-accent)">en toda la República.</span></h2>
         </div>
         <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
           <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">Escribe el nombre de la empresa, la ciudad o el municipio. Filtra por giro. El listado prioriza a las empresas con ficha verificada o destacada.</p>
@@ -163,10 +160,10 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEn
   {/* Registro */}
   <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="alta-heading">
     <div class="container-site">
-      <div class="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-10 items-center p-8 lg:p-12" style="background:var(--c-surface);border:1px solid var(--c-line-strong);border-left:3px solid var(--c-amber)">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-10 items-center p-8 lg:p-12" style="background:var(--c-surface);border:1px solid var(--c-line-strong);border-left:3px solid var(--c-accent)">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Para empresas del sector</span>
-          <h2 id="alta-heading" class="font-display font-bold mb-3" style="color:var(--c-ink);font-size:clamp(1.6rem,3vw,2.5rem);line-height:1.05">¿Tu empresa ya está listada?<br/><span style="color:var(--c-amber)">Reclama y verifica tu ficha.</span></h2>
+          <h2 id="alta-heading" class="font-display font-bold mb-3" style="color:var(--c-ink);font-size:clamp(1.6rem,3vw,2.5rem);line-height:1.05">¿Tu empresa ya está listada?<br/><span style="color:var(--c-accent)">Reclama y verifica tu ficha.</span></h2>
           <p class="text-sm leading-relaxed max-w-2xl" style="color:var(--c-text-2)">Los registros básicos provienen del registro público del DENUE. Al reclamar tu ficha puedes completar contacto, marcas que distribuyes, certificaciones y cobertura, y obtener el sello de datos verificados. Las fichas destacadas aparecen primero en su giro y estado.</p>
         </div>
         <div class="flex flex-col gap-3 shrink-0">
@@ -182,7 +179,7 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEn
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-start">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes</span>
-          <h2 id="faq-heading" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Cómo elegir un proveedor y verificar equipo certificado<br/><span style="color:var(--c-accent)">bajo norma NFPA.</span></h2>
+          <h2 id="faq-heading" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">Cómo elegir un proveedor y verificar equipo certificado<br/><span style="color:var(--c-accent)">bajo norma NFPA.</span></h2>
           <p class="text-sm leading-relaxed mt-6" style="color:var(--c-text-2)">Consulta la metodología, el alcance de las fichas y la forma correcta de contactar a cada empresa antes de solicitar una cotización.</p>
         </div>
         <div class="flex flex-col" style="border-top:1px solid var(--c-line)">

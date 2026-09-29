@@ -36,7 +36,7 @@ export const services: Service[] = [
     norm: 'DC-3 STPS · NFPA 1001',
     description: 'Capacitación contra incendio con constancia DC-3 STPS: brigadas NOM-002, bombero NFPA 1001, uso de SCBA, rescate y HAZMAT. Cursos en tu planta o estación.',
     shortDesc: 'Cursos NFPA y NOM-002 con constancia DC-3 válida ante STPS e IMSS.',
-    accent: 'var(--c-accent)',
+    accent: '#C8102E',
     icon: ``,
     href: '/servicios/capacitacion',
     intro: [
@@ -77,7 +77,7 @@ export const services: Service[] = [
     norm: 'NFPA 1850 · NOM-154',
     description: 'Mantenimiento y recarga certificada: extintores con collar de garantía, SCBA con prueba de flujo, herramientas Holmatro y EPP conforme NFPA 1850 en México.',
     shortDesc: 'Extintores, SCBA, herramientas hidráulicas y EPP — con reporte para auditoría.',
-    accent: 'var(--c-amber)',
+    accent: '#B54708',
     icon: ``,
     href: '/servicios/mantenimiento',
     intro: [
@@ -118,7 +118,7 @@ export const services: Service[] = [
     norm: 'NFPA 13 · 72 · 2001',
     description: 'Diseño e instalación de sistemas contra incendio: rociadores NFPA 13, detección y alarma NFPA 72, supresión FM-200/Novec. Memoria de cálculo y llave en mano.',
     shortDesc: 'Rociadores, detección y alarma, y agentes limpios — proyecto llave en mano.',
-    accent: 'var(--c-success)',
+    accent: '#067647',
     icon: ``,
     href: '/servicios/instalacion-sistemas-ci',
     intro: [
@@ -159,7 +159,7 @@ export const services: Service[] = [
     norm: 'NOM-002-STPS-2010',
     description: 'Auditoría de cumplimiento NOM-002-STPS-2010: diagnóstico de instalaciones, brigada y documentación contra incendio, con plan de cierre de brechas priorizado.',
     shortDesc: 'Diagnóstico integral de planta + plan de cierre de brechas priorizado.',
-    accent: 'var(--c-accent)',
+    accent: '#C8102E',
     icon: ``,
     href: '/servicios/auditoria-seguridad',
     intro: [
@@ -200,7 +200,7 @@ export const services: Service[] = [
     norm: 'NOM-002 · DC-3',
     description: 'Diseño, equipamiento y capacitación de brigadas contra incendio empresariales llave en mano: estructura, EPP, protocolos y DC-3 STPS incluido.',
     shortDesc: 'Diseño, equipamiento y capacitación de tu brigada — llave en mano.',
-    accent: 'var(--c-amber)',
+    accent: '#B54708',
     icon: ``,
     href: '/servicios/brigadas-empresariales',
     intro: [
@@ -241,7 +241,7 @@ export const services: Service[] = [
     norm: 'CompraNet · PEMEX · CFE',
     description: 'Soporte técnico para licitaciones de equipo contra incendio: fichas técnicas NOM/NFPA, manifiestos, juntas de aclaraciones y plantillas CompraNet, PEMEX y CFE.',
     shortDesc: 'Fichas técnicas, manifiestos y acompañamiento en CompraNet, PEMEX y CFE.',
-    accent: 'var(--c-success)',
+    accent: '#067647',
     icon: ``,
     href: '/servicios/licitaciones',
     intro: [

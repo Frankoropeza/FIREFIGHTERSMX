@@ -18,42 +18,42 @@ const capacidades = [
     title: 'Documentación técnica',
     tag: 'Por partida',
     desc: 'Fichas técnicas del fabricante y manifiestos de cumplimiento de norma listos para anexar a tu propuesta.',
-    accent: '#F75000',
+    accent: '#C8102E',
     icon: ``,
   },
   {
     title: 'Equipo certificado',
     tag: 'NOM · NFPA',
     desc: 'Catálogo completo con certificación de tercera parte acreditada para cada bien requerido en la convocatoria.',
-    accent: '#F5A623',
+    accent: '#B54708',
     icon: ``,
   },
   {
     title: 'Proveedor habilitado',
     tag: 'CompraNet',
     desc: 'Empresa registrada como proveedor en CompraNet y en padrones estatales, con expediente al día.',
-    accent: '#34D399',
+    accent: '#067647',
     icon: ``,
   },
   {
     title: 'Entrega y cumplimiento',
     tag: 'Conforme a bases',
     desc: 'Compromiso en firme de tiempos, lugar y condiciones de entrega, evitando penas convencionales.',
-    accent: '#7AA4C4',
+    accent: '#475467',
     icon: ``,
   },
   {
     title: 'Facturación CFDI 4.0',
     tag: 'Sector gobierno',
     desc: 'Comprobantes fiscales con todos los requisitos para dependencias federales, estatales y municipales.',
-    accent: '#FF8F57',
+    accent: '#C8102E',
     icon: ``,
   },
   {
     title: 'Acompañamiento técnico',
     tag: 'Junta de aclaraciones',
     desc: 'Apoyo en la interpretación de partidas, especificaciones y normas durante todo el proceso.',
-    accent: '#FF6B26',
+    accent: '#C8102E',
     icon: ``,
   },
 ];
@@ -164,14 +164,13 @@ const faqSchema = {
 
   <!-- Hero -->
   <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:5rem">
-    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(200,16,46,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
 
     <div class="container-site relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
         <div>
           <span class="section-eyebrow mb-5 inline-flex">Sector gobierno · CompraNet</span>
-          <h1 class="font-display font-bold uppercase mb-6" style="color:var(--c-ink);font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+          <h1 class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(2.25rem,4.5vw,3.5rem);line-height:1.08">
             Licitaciones de<br/>
             <span style="color:var(--c-accent)">equipo contra incendio</span>
           </h1>
@@ -222,7 +221,7 @@ const faqSchema = {
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Qué entregamos</span>
-          <h2 id="capacidades-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="capacidades-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             El expediente técnico,<br/>
             <span style="color:var(--c-accent)">resuelto.</span>
           </h2>
@@ -238,15 +237,7 @@ const faqSchema = {
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {capacidades.map((c) => (
-          <article class="cap-card group relative flex flex-col overflow-hidden" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
-            <div class="relative flex items-center justify-center overflow-hidden" style="height:110px">
-              <div class="absolute inset-0" style={`background:linear-gradient(135deg, ${c.accent}26 0%, rgba(4,10,18,0.94) 100%)`}></div>
-              <div class="relative z-10 flex items-center justify-center rounded-full"
-                   style={`width:60px;height:60px;background:rgba(4,10,18,0.7);border:1.5px solid ${c.accent}44;color:${c.accent}`}>
-                <span class="block" style="width:26px;height:26px" set:html={c.icon}/>
-              </div>
-              <div class="absolute bottom-0 left-0 right-0 h-8 pointer-events-none" style="background:linear-gradient(to bottom, transparent, var(--c-bg-alt))"></div>
-            </div>
+          <article class="cap-card group relative flex flex-col overflow-hidden" style="background:#FFFFFF;border:1px solid var(--c-line);border-top:3px solid var(--c-accent);border-radius:var(--radius-card);box-shadow:var(--shadow-card)">
             <div class="flex flex-col flex-1 p-5 gap-2.5">
               <span class="text-[9px] font-display font-semibold uppercase tracking-widest" style="color:var(--forge-300)">{c.tag}</span>
               <h3 class="font-display font-bold text-lg leading-tight" style="color:var(--c-ink)">{c.title}</h3>
@@ -265,7 +256,7 @@ const faqSchema = {
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Punto por punto</span>
-          <h2 id="requisitos-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="requisitos-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Cada requisito,<br/>
             <span style="color:var(--c-accent)">su documento.</span>
           </h2>
@@ -402,7 +393,7 @@ const faqSchema = {
         </div>
 
         <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
-          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">
+          <h2 class="font-display font-bold text-sm mb-5" style="color:var(--forge-300)">
             También te puede servir
           </h2>
           <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">

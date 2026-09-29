@@ -41,7 +41,7 @@ export interface Category {
 export const trajesBombero: Category = {
   slug: 'trajes-bombero',
     shortDesc: 'Trajes estructurales y forestales certificados para protección térmica extrema.',
-    accent: 'var(--c-accent)',
+    accent: '#C8102E',
     icon: ``,
   label: 'Trajes para Bomberos',
   norm: 'NFPA 1970 · 1950',
@@ -87,7 +87,7 @@ export const categories: Category[] = [
     norm: 'NFPA 72 · UL 217',
     description: 'Detector de humo autónomo para vivienda: opciones Kidde a batería, cableadas e interconectables, con referencias UL 217 y NFPA 72.',
     shortDesc: 'Alarmas autónomas Kidde para detección local de humo y monóxido de carbono.',
-    accent: 'var(--c-amber)',
+    accent: '#B54708',
     icon: '',
     intro: [
       'Un detector de humo autónomo avisa en el lugar donde está instalado. Para vivienda, la elección depende del sensor, la alimentación y la posibilidad de enlazar unidades compatibles. Su objetivo es advertir para que las personas evacúen y activen la respuesta de emergencia; no sustituye un plan familiar ni la atención de un incendio.',
@@ -198,7 +198,7 @@ export const categories: Category[] = [
     norm: 'IEC 60601-2-4',
     description: 'Desfibrilador externo automático (DEA) para programas de respuesta: selección, consumibles y mantenimiento por modelo en México.',
     shortDesc: 'DEA para respuesta a paro cardiaco, con consumibles y accesorios por modelo.',
-    accent: 'var(--c-success)',
+    accent: '#067647',
     icon: '',
     intro: [
       'Un desfibrilador externo automático (DEA) analiza determinados ritmos cardiacos y guía al respondiente mediante las indicaciones del equipo. Forma parte de la respuesta ante un posible paro cardiaco; no sustituye activar el servicio médico de emergencias, la capacitación certificada en RCP/DEA ni las instrucciones de uso del fabricante.',
@@ -302,7 +302,7 @@ export const categories: Category[] = [
     norm: 'NFPA 1970',
     description: 'Botas de bombero, guantes, capuchas y herramientas de entrada forzada: selección de EPP estructural con referencia NFPA 1970.',
     shortDesc: 'Protección complementaria y herramientas manuales para la dotación bomberil.',
-    accent: 'var(--c-accent)',
+    accent: '#C8102E',
     icon: '',
     intro: [
       'Botas de bombero, guantes y capucha trabajan como interfaces entre traje, casco, SCBA y la tarea asignada. La etiqueta, el manual y la documentación del artículo adquirido son la evidencia para confirmar su alcance; accesorios, materiales o configuración pueden modificarlo.',
@@ -404,7 +404,7 @@ export const categories: Category[] = [
   {
     slug: 'cascos-nfpa',
     shortDesc: 'Cascos de combate y forestales con protección facial integrada y suspensión avanzada.',
-    accent: 'var(--c-accent)',
+    accent: '#C8102E',
     icon: ``,
     label: 'Cascos NFPA',
     norm: 'NFPA 1970 · 1950',
@@ -440,7 +440,7 @@ export const categories: Category[] = [
   {
     slug: 'equipos-scba',
     shortDesc: 'Equipos de respiración autónoma de circuito abierto para atmósferas inmediatamente peligrosas.',
-    accent: 'var(--c-amber)',
+    accent: '#B54708',
     icon: ``,
     label: 'Equipos SCBA',
     norm: 'NFPA 1970 · NIOSH',
@@ -476,7 +476,7 @@ export const categories: Category[] = [
   {
     slug: 'herramientas-rescate',
     shortDesc: 'Sistemas hidráulicos de excarcelación y rescate vehicular de alto rendimiento.',
-    accent: 'var(--c-accent)',
+    accent: '#C8102E',
     icon: ``,
     label: 'Herramientas de Rescate',
     norm: 'EN 13204 · NFPA 1960',
@@ -512,7 +512,7 @@ export const categories: Category[] = [
   {
     slug: 'extintores',
     shortDesc: 'Extintores portátiles y sobre ruedas para fuegos clase A, B, C, D y K.',
-    accent: 'var(--c-amber)',
+    accent: '#B54708',
     icon: ``,
     label: 'Extintores',
     norm: 'NOM-100-STPS · NOM-102-STPS · NFPA 10',
@@ -548,7 +548,7 @@ export const categories: Category[] = [
   {
     slug: 'sistemas-ci',
     shortDesc: 'Rociadores automáticos, paneles de detección y agentes limpios para instalaciones críticas.',
-    accent: 'var(--c-success)',
+    accent: '#067647',
     icon: ``,
     label: 'Sistemas Contra Incendio',
     norm: 'NFPA 13 · 72 · 2001',
@@ -584,7 +584,7 @@ export const categories: Category[] = [
   {
     slug: 'camaras-termicas',
     shortDesc: 'Cámaras de imagen térmica para búsqueda y rescate en ambientes de visibilidad cero.',
-    accent: 'var(--c-amber)',
+    accent: '#B54708',
     icon: ``,
     label: 'Cámaras Térmicas',
     norm: 'NFPA 1930',
@@ -620,7 +620,7 @@ export const categories: Category[] = [
   {
     slug: 'hazmat',
     shortDesc: 'Trajes de protección química Nivel A y B para respuesta a materiales peligrosos.',
-    accent: 'var(--c-accent)',
+    accent: '#C8102E',
     icon: ``,
     label: 'Equipos HAZMAT',
     norm: 'NFPA 1990',
@@ -659,7 +659,7 @@ export const categories: Category[] = [
     norm: 'NFPA 2500 · EN según fabricante',
     description: 'Equipo de rescate vertical: arneses, cuerdas, descensores, poleas y camillas con selección por sistema y manual del fabricante.',
     shortDesc: 'Equipo de cuerda, control de descenso y transporte de paciente para rescate técnico.',
-    accent: 'var(--c-amber)',
+    accent: '#B54708',
     icon: '',
     intro: [
       'El equipo de rescate vertical se configura como un sistema: arnés, cuerda, anclajes, control de descenso, aseguramiento, ventaja mecánica y empaque del paciente. La compatibilidad depende del modelo, diámetro, conectores y manuales; piezas visualmente parecidas no son automáticamente intercambiables.',
@@ -765,7 +765,7 @@ export const categories: Category[] = [
     norm: 'NFPA 1950 para EPP · herramientas por fabricante',
     description: 'Herramientas forestales para brigadas: batefuegos, McLeod, Pulaski y bomba de mochila, con selección y cuidado por tarea.',
     shortDesc: 'Herramientas forestales, bombas de mochila y acceso al EPP para combate de vegetación.',
-    accent: 'var(--c-success)',
+    accent: '#067647',
     icon: '',
     intro: [
       'Las herramientas forestales permiten construir líneas, mover combustible y atender puntos con agua de mochila. La dotación manual no reemplaza análisis de terreno, comportamiento del fuego, clima, comunicaciones, rutas de escape, zonas seguras, mando de incidentes ni capacitación de brigada.',
@@ -869,7 +869,7 @@ export const categories: Category[] = [
   {
     slug: 'drones-emergencia',
     shortDesc: 'Drones con cámara térmica para evaluación aérea, búsqueda y reconocimiento HAZMAT.',
-    accent: 'var(--c-success)',
+    accent: '#067647',
     icon: ``,
     label: 'Drones de Emergencia',
     norm: 'Certificación AFAC',
@@ -904,7 +904,7 @@ export const categories: Category[] = [
   {
     slug: 'senalizacion-emergencia',
     shortDesc: 'Señalamientos de seguridad, lámparas de emergencia y botiquines de primeros auxilios para centros de trabajo.',
-    accent: 'var(--c-success)',
+    accent: '#067647',
     icon: ``,
     label: 'Señalización y Emergencia',
     norm: 'NOM-026-STPS · NOM-003-SSPC · UL 924',

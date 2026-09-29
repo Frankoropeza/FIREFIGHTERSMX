@@ -52,7 +52,7 @@ const props = [
     <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
       <div>
         <span class="section-eyebrow mb-4 inline-flex">Por qué elegirnos</span>
-        <h2 class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+        <h2 class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
           Equipo contra incendio certificado<br/>
           <span style="color:var(--c-accent)">con respaldo de fábrica.</span>
         </h2>
@@ -70,8 +70,8 @@ const props = [
         href={p.href}
         class="group relative flex flex-col gap-5 p-8 xl:p-10"
         style={`background:var(--c-surface);border-right:${i < 3 ? '1px solid var(--c-line)' : 'none'};border-bottom:1px solid var(--c-line)`}
-        onmouseover="this.style.background='#122133'"
-        onmouseout="this.style.background='#0C1825'"
+        onmouseover="this.style.background='#F2F4F7'"
+        onmouseout="this.style.background='#FFFFFF'"
       >
         <!-- Número gigante de fondo -->
         
@@ -80,9 +80,6 @@ const props = [
 
         <!-- Top: ícono + métrica -->
         <div class="flex items-start justify-between gap-4 relative z-10">
-          <div class="w-10 h-10 flex items-center justify-center shrink-0" style="border:1px solid var(--c-line-strong);color:var(--c-accent)">
-            <span class="w-5 h-5 block" set:html={p.icon}/>
-          </div>
           <span class="text-xs font-display font-semibold uppercase tracking-wider text-right" style="color:var(--c-success);letter-spacing:0.08em">
             Sí {p.metric}
           </span>

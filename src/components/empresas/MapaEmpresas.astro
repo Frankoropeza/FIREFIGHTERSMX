@@ -24,14 +24,14 @@ const colores = Object.fromEntries(giros.map((g) => [g.slug, g.color]));
       if (typeof L === 'undefined' || el.dataset.init) return; el.dataset.init = '1';
       var colores = JSON.parse(el.dataset.colores || '{}');
       var map = L.map(el, { scrollWheelZoom: false, zoomControl: true }).setView(JSON.parse(el.dataset.centro), +el.dataset.zoom);
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', { attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" rel="noopener nofollow">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions" rel="noopener nofollow">CARTO</a>', maxZoom: 18 }).addTo(map);
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" rel="noopener nofollow">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions" rel="noopener nofollow">CARTO</a>', maxZoom: 18 }).addTo(map);
       function pintar(puntos) {
         var grupo = (typeof L.markerClusterGroup === 'function')
           ? L.markerClusterGroup({ maxClusterRadius: 48, iconCreateFunction: function (c) { var n = c.getChildCount(); return L.divIcon({ html: '<div style="background:var(--c-accent);color:#fff;font:700 12px Rajdhani,sans-serif;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border:2px solid var(--c-line);box-shadow:0 0 0 2px rgba(200,16,46,.35)">' + n + '</div>', className: '', iconSize: [36, 36] }); } })
           : L.layerGroup();
         puntos.forEach(function (p) {
-          var m = L.circleMarker([p[0], p[1]], { radius: 6, color: '#040A12', weight: 1.5, fillColor: colores[p[4]] || '#F75000', fillOpacity: 0.95 });
-          m.bindPopup('<a href="' + p[3] + '" style="font:600 13px Sora,sans-serif;color:#FFFFFF">' + p[2] + '</a>');
+          var m = L.circleMarker([p[0], p[1]], { radius: 6, color: '#FFFFFF', weight: 1.5, fillColor: colores[p[4]] || '#C8102E', fillOpacity: 0.95 });
+          m.bindPopup('<a href="' + p[3] + '" style="font:600 13px Inter,sans-serif;color:#C8102E">' + p[2] + '</a>');
           grupo.addLayer(m);
         });
         map.addLayer(grupo);

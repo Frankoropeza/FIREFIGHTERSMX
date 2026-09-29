@@ -25,12 +25,8 @@ import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl, TELEFONO_ACTIVO } from '@co
   {CONTACTO_DIRECTO_ACTIVO && <a
     href={whatsappUrl('Hola, quiero cotizar equipo para bomberos.')}
     target="_blank" rel="noopener"
-    class="flex items-center justify-center w-11 h-11 rounded-sm shrink-0 text-white"
-    style="background:#25d366"
-    aria-label="WhatsApp"
-  >
-    
-  </a>}
+    class="btn btn-whatsapp shrink-0 text-sm"
+  >WhatsApp</a>}
 </div>
 
 <!-- Nav items -->
@@ -48,7 +44,7 @@ import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl, TELEFONO_ACTIVO } from '@co
           <div class="flex items-stretch">
             <a
               href={item.href}
-              class={`mob-link flex-1 flex items-center px-1 py-4 text-[15px] font-display font-semibold ${'text-white'}`}
+              class={`mob-link flex-1 flex items-center px-1 py-4 text-[15px] font-display font-semibold ${'text-[var(--c-ink)]'}`}
             >
               {item.label}
             </a>
@@ -115,8 +111,8 @@ import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl, TELEFONO_ACTIVO } from '@co
                   /* ── L2 ítem normal ── */
                   <a
                     href={child.href}
-                    class={`mob-link flex flex-col px-3 py-3 text-sm ${child.label.startsWith('Ver') ? 'mt-1 pt-3' : ''}${child.label.startsWith('Ver') ? 'text-[var(--ember-500)] font-semibold' : 'text-[var(--slate-400)] hover:text-white'}`}
-                    style={child.label.startsWith('Ver') ? 'border-top:1px solid rgba(74,117,153,0.15)' : ''}
+                    class={`mob-link flex flex-col px-3 py-3 text-sm ${child.label.startsWith('Ver') ? 'mt-1 pt-3' : ''}${child.label.startsWith('Ver') ? 'text-[var(--ember-500)] font-semibold' : 'text-[var(--slate-400)] hover:text-[var(--c-accent)]'}`}
+                    style={child.label.startsWith('Ver') ? 'border-top:1px solid var(--c-line)' : ''}
                   >
                     <span class="font-medium">{child.label}</span>
                     {child.description && !child.label.startsWith('Ver') && (
@@ -132,7 +128,7 @@ import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl, TELEFONO_ACTIVO } from '@co
         /* ── Item simple sin dropdown ── */
         <a
           href={item.href}
-          class={`mob-link block px-1 py-4 text-[15px] font-display font-semibold ${'text-white'}`}
+          class={`mob-link block px-1 py-4 text-[15px] font-display font-semibold ${'text-[var(--c-ink)]'}`}
         >
           {item.label}
         </a>

@@ -178,10 +178,9 @@ const productosRel = productosMap[s.slug] ?? [];
 
   <!-- Hero -->
   <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:4.5rem">
-    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(200,16,46,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
     <div class="container-site relative z-10">
       <span class="section-eyebrow mb-5 inline-flex">{s.norm}</span>
-      <h1 class="font-display font-bold uppercase mb-6" style="color:var(--c-ink);font-size:clamp(2.5rem,6vw,4.5rem);line-height:0.95">
+      <h1 class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(2.25rem,4.5vw,3.5rem);line-height:1.08">
         {s.title}
       </h1>
       <div class="max-w-3xl flex flex-col gap-4">
@@ -233,7 +232,7 @@ const productosRel = productosMap[s.slug] ?? [];
 
             <div>
               <span class="section-eyebrow mb-5 inline-flex">{s.norm}</span>
-              <h2 id={`detalle-${s.slug}`} class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(2rem,3.8vw,3rem);line-height:1.05">
+              <h2 id={`detalle-${s.slug}`} class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
                 {s.spotlight.title}<br/>
                 <span style="color:var(--c-accent)">{s.spotlight.highlight}</span>
               </h2>
@@ -383,15 +382,15 @@ const productosRel = productosMap[s.slug] ?? [];
         <!-- Bloque 4: CTA cotización -->
         <div style="background:var(--c-accent)">
           <div class="p-5 flex flex-col gap-3">
-            <p class="text-[10px] font-display font-bold uppercase tracking-widest" style="color:rgba(16,24,40,0.7)">¿Necesitas cotización?</p>
-            <p class="text-xs leading-relaxed" style="color:rgba(16,24,40,0.9)">Respuesta el mismo día hábil. Un especialista te atiende por {CANAL_CONTACTO}.</p>
+            <p class="text-[10px] font-display font-bold uppercase tracking-widest" style="color:rgba(255,255,255,0.7)">¿Necesitas cotización?</p>
+            <p class="text-xs leading-relaxed" style="color:rgba(255,255,255,0.9)">Respuesta el mismo día hábil. Un especialista te atiende por {CANAL_CONTACTO}.</p>
             <a href={whatsappUrl(`Hola, quiero cotizar el servicio de ${s.title.toLowerCase()}.`)}
                target="_blank" rel="noopener"
                class="text-xs font-display font-bold uppercase tracking-wider py-2.5 px-4 text-center"
-               style="background:var(--c-bg);color:var(--c-ink)">
+               style="background:var(--c-bg);color:#FFFFFF">
               Cotizar por {CANAL_CONTACTO}
             </a>
-            <a href="/cotizacion" class="text-[10px] text-center hover:opacity-80" style="color:rgba(16,24,40,0.7)">
+            <a href="/cotizacion" class="text-[10px] text-center hover:opacity-80" style="color:rgba(255,255,255,0.7)">
               Cotización formal 
             </a>
           </div>
@@ -426,7 +425,7 @@ const productosRel = productosMap[s.slug] ?? [];
   <!-- Otros servicios (internal linking) -->
   <section class="section-tight" style="background:var(--c-bg-alt)" aria-labelledby="otros-title">
     <div class="container-site">
-      <h2 id="otros-title" class="font-display font-bold text-sm uppercase tracking-widest mb-6" style="color:var(--forge-300)">
+      <h2 id="otros-title" class="font-display font-bold text-sm mb-6" style="color:var(--forge-300)">
         Otros servicios
       </h2>
       <div class="flex flex-wrap gap-3">

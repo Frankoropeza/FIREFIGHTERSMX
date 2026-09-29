@@ -20,7 +20,7 @@ const sections = [
     href: '/nosotros',
     cta: 'Historia de FIREFIGHTERS MX',
     desc: 'Historia, misión y el equipo detrás de más de 500 estaciones equipadas en el país.',
-    accent: '#F75000',
+    accent: '#C8102E',
     icon: ``,
   },
   {
@@ -29,7 +29,7 @@ const sections = [
     href: '/certificaciones',
     cta: 'Certificaciones NFPA y NOM',
     desc: 'Las normas que avalan nuestro equipo y cómo saber cuál aplica a tu operación.',
-    accent: '#F5A623',
+    accent: '#B54708',
     icon: ``,
   },
   {
@@ -38,7 +38,7 @@ const sections = [
     href: '/cobertura',
     cta: 'Cobertura en los 32 estados',
     desc: 'Logística y servicio en sitio en toda la República, con tiempos de entrega comprometidos.',
-    accent: '#34D399',
+    accent: '#067647',
     icon: ``,
   },
   {
@@ -47,7 +47,7 @@ const sections = [
     href: '/distribuidores',
     cta: 'Distribuidores autorizados',
     desc: 'Alianzas y puntos de distribución que acercan el equipo certificado a tu región.',
-    accent: '#7AA4C4',
+    accent: '#475467',
     icon: ``,
   },
   {
@@ -56,7 +56,7 @@ const sections = [
     href: '/marcas',
     cta: 'Marcas de equipo para bomberos',
     desc: 'Las marcas líderes del mundo que representamos de forma oficial en México.',
-    accent: '#FF8F57',
+    accent: '#C8102E',
     icon: ``,
   },
   {
@@ -65,7 +65,7 @@ const sections = [
     href: '/contacto',
     cta: 'Contacto y cotización',
     desc: CONTACTO_DIRECTO_ACTIVO ? 'Atención por teléfono, correo o WhatsApp con un ejecutivo asignado a tu cuenta.' : 'Atención por teléfono o correo con un ejecutivo asignado a tu cuenta.',
-    accent: '#FF6B26',
+    accent: '#C8102E',
     icon: ``,
   },
 ];
@@ -145,14 +145,13 @@ const aboutSchema = {
 
   <!-- Hero -->
   <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:5rem">
-    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(200,16,46,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
 
     <div class="container-site relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
         <div>
           <span class="section-eyebrow mb-5 inline-flex">Quiénes somos</span>
-          <h1 class="font-display font-bold uppercase mb-6" style="color:var(--c-ink);font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+          <h1 class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(2.25rem,4.5vw,3.5rem);line-height:1.08">
             La empresa que<br/>
             <span style="color:var(--c-accent)">equipa a México</span>
           </h1>
@@ -203,7 +202,7 @@ const aboutSchema = {
         {figures.map((f, i) => (
           <div class="flex flex-col gap-2 p-6" style={`background:var(--c-surface);${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.18);' : ''}`}>
             <span class="font-display font-bold" style="color:var(--c-accent);font-size:2.25rem;line-height:1">{f.value}</span>
-            <h2 class="font-display font-bold text-sm uppercase tracking-wider" style="color:var(--c-ink)">{f.label}</h2>
+            <h2 class="font-display font-bold text-sm" style="color:var(--c-ink)">{f.label}</h2>
             <p class="text-xs leading-relaxed" style="color:var(--c-muted)">{f.text}</p>
           </div>
         ))}
@@ -218,7 +217,7 @@ const aboutSchema = {
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Conócenos</span>
-          <h2 id="empresa-secciones-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="empresa-secciones-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Todo sobre<br/>
             <span style="color:var(--c-accent)">FIREFIGHTERS MX.</span>
           </h2>
@@ -234,15 +233,7 @@ const aboutSchema = {
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {sections.map((s) => (
-          <a href={s.href} class="empresa-card group relative flex flex-col overflow-hidden" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
-            <div class="relative flex items-center justify-center overflow-hidden" style="height:110px">
-              <div class="absolute inset-0" style={`background:linear-gradient(135deg, ${s.accent}26 0%, rgba(4,10,18,0.94) 100%)`}></div>
-              <div class="relative z-10 flex items-center justify-center rounded-full"
-                   style={`width:60px;height:60px;background:rgba(4,10,18,0.7);border:1.5px solid ${s.accent}44;color:${s.accent}`}>
-                <span class="block" style="width:26px;height:26px" set:html={s.icon}/>
-              </div>
-              <div class="absolute bottom-0 left-0 right-0 h-8 pointer-events-none" style="background:linear-gradient(to bottom, transparent, var(--c-bg-alt))"></div>
-            </div>
+          <a href={s.href} class="empresa-card group relative flex flex-col overflow-hidden" style="background:#FFFFFF;border:1px solid var(--c-line);border-top:3px solid var(--c-accent);border-radius:var(--radius-card);box-shadow:var(--shadow-card)">
             <div class="flex flex-col flex-1 p-5 gap-2.5">
               <span class="text-[9px] font-display font-semibold uppercase tracking-widest" style="color:var(--forge-300)">{s.tag}</span>
               <h3 class="font-display font-bold text-lg leading-tight group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{s.title}</h3>
@@ -265,7 +256,7 @@ const aboutSchema = {
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Lo que nos mueve</span>
-          <h2 id="mvv-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="mvv-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Misión, visión<br/>
             <span style="color:var(--c-accent)">y valores.</span>
           </h2>
@@ -319,7 +310,7 @@ const aboutSchema = {
         </div>
 
         <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
-          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">
+          <h2 class="font-display font-bold text-sm mb-5" style="color:var(--forge-300)">
             También te puede servir
           </h2>
           <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">

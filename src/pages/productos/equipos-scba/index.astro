@@ -32,28 +32,28 @@ const configuraciones = [
   {
     title: 'Estructural',
     badge: 'NFPA 1970 · 30/45 min',
-    accent: '#F75000',
+    accent: '#C8102E',
     desc: 'Combate de incendio en edificios. Cilindro de fibra de carbono 4500 psi de 30 ó 45 minutos, presión positiva, EOSTI y alarma PASS integrados.',
     icon: ``,
   },
   {
     title: 'Industrial / 60 min',
     badge: 'NFPA 1970 · 60 min',
-    accent: '#F5A623',
+    accent: '#B54708',
     desc: 'Autonomía extendida para industria pesada, petroquímica, túneles y espacios confinados. Opción ATEX antiestática. Mayor peso, mayor margen operativo.',
     icon: ``,
   },
   {
     title: 'CBRN / HAZMAT',
     badge: 'NIOSH CBRN · NFPA 1970',
-    accent: '#34D399',
+    accent: '#067647',
     desc: 'Aprobación NIOSH CBRN para agentes químicos, biológicos, radiológicos y nucleares. Materiales descontaminables, compatible con trajes Nivel A encapsulados.',
     icon: ``,
   },
   {
     title: 'RIT / Rescate',
     badge: 'NFPA 1970 · RIT',
-    accent: '#60A5FA',
+    accent: '#175CD3',
     desc: 'Rescate de bombero caído: segunda fuente de aire, conexión de transferencia (buddy breathing) y bolsa de despliegue rápido de alta visibilidad.',
     icon: ``,
   },
@@ -172,15 +172,14 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
 
   <!-- Hero -->
   <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:5rem">
-    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(181,71,8,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
 
     <div class="container-site relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div>
           <span class="section-eyebrow mb-5 inline-flex">{cat.norm}</span>
-          <h1 class="font-display font-bold uppercase mb-4" style="color:var(--c-ink);font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+          <h1 class="font-display font-bold mb-4" style="color:var(--c-ink);font-size:clamp(2.25rem,4.5vw,3.5rem);line-height:1.08">
             Equipo de respiración autónoma<br/>
-            <span style="color:var(--c-amber)">SCBA para bomberos e industria.</span>
+            <span style="color:var(--c-accent)">SCBA para bomberos e industria.</span>
           </h1>
           <p class="text-base leading-relaxed mb-8 max-w-xl" style="color:var(--c-text-2)">
             Distribuidores autorizados de MSA Safety, Dräger y 3M Scott en México. Equipos de
@@ -204,7 +203,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
         </div>
       </div>
     </div>
-    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(181,71,8,0.4) 30%, rgba(181,71,8,0.4) 70%, transparent)" aria-hidden="true"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(200,16,46,0.4) 30%, rgba(200,16,46,0.4) 70%, transparent)" aria-hidden="true"></div>
   </section>
 
   <section id="guia-scba" class="section" style="background:var(--c-bg)" aria-labelledby="guia-scba-title">
@@ -234,7 +233,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
       <div class="section-head mt-14 mb-5"><h2>¿Cuánto dura un equipo de respiración autónoma?</h2></div>
       <p>Las botellas se clasifican en 30, 45 y 60 minutos, pero esa es una duración nominal. La autonomía real depende del consumo de aire del usuario: el esfuerzo, el calor y el estrés la reducen. Por eso la NFPA 1970 recalibró la alarma de fin de servicio para que suene entre el 28 % y el 34 % de la presión (31 % en un equipo de 4500 psi). La vida útil de las botellas de fibra de carbono es de 15 años.</p>
       <div class="section-head mt-14 mb-5"><h2>Cómo se coloca y se revisa antes de usarlo</h2></div>
-      <ol class="flex flex-col gap-4 list-none m-0 p-0">{['Revisa que la botella esté llena en el manómetro y que la válvula abra por completo.', 'Colócate la espaldera y ajusta hombreras y cinturón para que el peso quede en la cadera.', 'Ponte la máscara, ajusta las correas y comprueba el sello antes de conectar el pulmoautomático.', 'Verifica que suenen las alarmas y que el PASS esté activo.', 'Después de cada uso: limpieza, inspección, recarga de la botella y registro de la revisión.'].map((paso, index) => <li class="flex items-start gap-4"><span class="font-display font-bold text-xl shrink-0" style="color:var(--c-amber)">{index + 1}</span><span>{paso}</span></li>)}</ol>
+      <ol class="flex flex-col gap-4 list-none m-0 p-0">{['Revisa que la botella esté llena en el manómetro y que la válvula abra por completo.', 'Colócate la espaldera y ajusta hombreras y cinturón para que el peso quede en la cadera.', 'Ponte la máscara, ajusta las correas y comprueba el sello antes de conectar el pulmoautomático.', 'Verifica que suenen las alarmas y que el PASS esté activo.', 'Después de cada uso: limpieza, inspección, recarga de la botella y registro de la revisión.'].map((paso, index) => <li class="flex items-start gap-4"><span class="font-display font-bold text-xl shrink-0" style="color:var(--c-accent)">{index + 1}</span><span>{paso}</span></li>)}</ol>
       <div class="section-head mt-14 mb-5"><h2>Normativa: NFPA 1970, NIOSH y NFPA 1850</h2></div>
       <p>En 2024 la NFPA consolidó en la NFPA 1970 las normas de trajes, ropa de trabajo, SCBA (antes NFPA 1981) y PASS (antes NFPA 1982). Para SCBA exige certificación por un tercero como SEI y la aprobación de respiradores de NIOSH; los equipos CBRN llevan además la aprobación NIOSH CBRN. El mantenimiento de los SCBA se rige hoy por la NFPA 1850, edición 2026, que integró la antigua NFPA 1852. En Europa el estándar equivalente es EN 137.</p>
       <div class="section-head mt-14 mb-5"><h2>Marcas de SCBA que manejamos</h2></div>
@@ -254,7 +253,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
         {razones.map((r, i) => (
           <div class="flex flex-col gap-3 p-6" style={`background:var(--c-bg-alt);${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.12)' : ''}`}>
             
-            <h3 class="font-display font-bold text-sm uppercase tracking-wide" style="color:var(--c-ink)">{r.t}</h3>
+            <h3 class="font-display font-bold text-sm" style="color:var(--c-ink)">{r.t}</h3>
             <p class="text-xs leading-relaxed m-0" style="color:var(--c-muted)">{r.d}</p>
           </div>
         ))}
@@ -268,12 +267,12 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Cuatro escenarios, una plataforma</span>
-          <h2 id="conf-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="conf-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             La configuración correcta<br/>
-            <span style="color:var(--c-amber)">según la operación.</span>
+            <span style="color:var(--c-accent)">según la operación.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(181,71,8,0.4);padding-left:1.75rem">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
           <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
             Un SCBA estructural no es lo mismo que uno industrial de 60 minutos, ni que un equipo CBRN.
             Elegir la configuración según el riesgo dominante de tu brigada —y la autonomía real de la operación—
@@ -285,9 +284,6 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {configuraciones.map((c) => (
           <article class="flex flex-col gap-4 p-7" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
-            <div class="flex items-center justify-center rounded-full" style={`width:52px;height:52px;background:${c.accent}1a;border:1.5px solid ${c.accent}59;color:${c.accent}`}>
-              <span class="block" style="width:24px;height:24px" set:html={c.icon}/>
-            </div>
             <div class="flex flex-col gap-1">
               <h3 class="font-display font-bold text-lg" style="color:var(--c-ink)">{c.title}</h3>
               <span class="badge badge-dark text-[9px]">{c.badge}</span>
@@ -305,12 +301,12 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">MSA Safety · NYSE: MSA · Distribuidor Autorizado MX</span>
-          <h2 id="msa-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="msa-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             SCBA MSA G1<br/>
-            <span style="color:var(--c-amber)">certificado NFPA.</span>
+            <span style="color:var(--c-accent)">certificado NFPA.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(181,71,8,0.4);padding-left:1.75rem">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
           <p class="text-sm leading-relaxed mb-4" style="color:var(--c-text-2)">
             MSA Safety cotiza en la Bolsa de Nueva York (NYSE: MSA). El G1 integra PASS y EOSTI,
             telemetría y cilindros de 2216, 4500 y 5500 psi.
@@ -354,12 +350,12 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Dräger, fundada en Lübeck en 1889</span>
-          <h2 id="drager-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="drager-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             SCBA Dräger PSS 7000<br/>
-            <span style="color:var(--c-amber)">certificado NFPA.</span>
+            <span style="color:var(--c-accent)">certificado NFPA.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(181,71,8,0.4);padding-left:1.75rem">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
           <p class="text-sm leading-relaxed mb-4" style="color:var(--c-text-2)">
             Dräger es el referente europeo en tecnología respiratoria para emergencias. El PSS 7000 destaca
             por su arnés ergonómico de distribución de carga superior — menos fatiga en operaciones largas —
@@ -404,12 +400,12 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">3M Scott · Air-Pak X3 Pro</span>
-          <h2 id="scott-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="scott-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             SCBA 3M Scott Air-Pak X3 Pro<br/>
-            <span style="color:var(--c-amber)">NFPA 1970 (2025).</span>
+            <span style="color:var(--c-accent)">NFPA 1970 (2025).</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(181,71,8,0.4);padding-left:1.75rem">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
           <p class="text-sm leading-relaxed mb-4" style="color:var(--c-text-2)">
             El Air-Pak X3 Pro está certificado NFPA 1970 (2025) por SEI con aprobación NIOSH.
             Su EOSTI está recalibrado al 31 % en 4500 psi conforme NFPA 1970.
@@ -450,8 +446,8 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
   <section class="section-tight" style="background:var(--c-bg)" aria-label="Galería equipos SCBA para bomberos">
     <div class="container-site">
       <div class="flex items-center gap-4 mb-6">
-        <span class="w-8 h-px" style="background:var(--c-amber)"></span>
-        <span class="text-xs font-display font-semibold uppercase tracking-[0.18em]" style="color:var(--c-amber)">SCBA en uso real</span>
+        <span class="w-8 h-px" style="background:var(--c-accent)"></span>
+        <span class="text-xs font-display font-semibold uppercase tracking-[0.18em]" style="color:var(--c-accent)">SCBA en uso real</span>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-2 lg:gap-3">
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
@@ -481,8 +477,8 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
     <div class="container-site">
       <div class="mb-10">
         <span class="section-eyebrow mb-4 inline-flex">Comparativa</span>
-        <h2 id="comp-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
-          Estructural · Industrial · <span style="color:var(--c-amber)">CBRN · RIT</span>
+        <h2 id="comp-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+          Estructural · Industrial · <span style="color:var(--c-accent)">CBRN · RIT</span>
         </h2>
       </div>
 
@@ -492,7 +488,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
             <tr style="background:var(--c-surface)">
               <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:var(--forge-300);border-bottom:1px solid var(--c-line)">Característica</th>
               <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:var(--c-accent);border-bottom:1px solid var(--c-line);border-left:1px solid var(--c-line)">Estructural</th>
-              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:var(--c-amber);border-bottom:1px solid var(--c-line);border-left:1px solid var(--c-line)">Industrial 60 min</th>
+              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:var(--c-accent);border-bottom:1px solid var(--c-line);border-left:1px solid var(--c-line)">Industrial 60 min</th>
               <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:var(--c-success);border-bottom:1px solid var(--c-line);border-left:1px solid var(--c-line)">CBRN</th>
               <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:var(--c-info);border-bottom:1px solid var(--c-line);border-left:1px solid var(--c-line)">RIT / Rescate</th>
             </tr>
@@ -522,7 +518,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
           <span class="section-eyebrow mb-4 inline-flex">Cómo elegir</span>
           <h2 id="guia-title" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Del riesgo<br/>
-            <span style="color:var(--c-amber)">a la decisión.</span>
+            <span style="color:var(--c-accent)">a la decisión.</span>
           </h2>
           <ol class="flex flex-col gap-4 list-none m-0 p-0">
             {guia.map((s) => (
@@ -538,7 +534,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
         </div>
 
         <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
-          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">
+          <h2 class="font-display font-bold text-sm mb-5" style="color:var(--forge-300)">
             Aprende más en el blog
           </h2>
           <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
@@ -567,7 +563,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
           <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes</span>
           <h2 id="faq-title" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Lo que más nos<br/>
-            <span style="color:var(--c-amber)">preguntan.</span>
+            <span style="color:var(--c-accent)">preguntan.</span>
           </h2>
           <p class="text-sm leading-relaxed mb-8" style="color:var(--c-text-2)">
             ¿Tu duda no aparece? Escríbenos por {CANAL_CONTACTO} con el detalle de tu operación y te
@@ -576,7 +572,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
           <a href={whatsappUrl('Hola, tengo una pregunta técnica sobre equipos SCBA NFPA 1970 para mi brigada.')}
             target="_blank" rel="noopener"
             class="btn btn-primary"
-            style="background:var(--c-amber);border-color:var(--c-amber);color:#FFFFFF">
+            style="background:var(--c-accent);border-color:var(--c-accent);color:#FFFFFF">
             Consulta técnica gratis
           </a>
         </div>
@@ -585,7 +581,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
             <details class="faq-item group" style={`border-top:1px solid var(--c-line);${i === faqs.length - 1 ? 'border-bottom:1px solid rgba(74,117,153,0.18);' : ''}`}>
               <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer">
                 <span class="font-display font-semibold text-sm" style="color:var(--c-ink)">{f.q}</span>
-                <span class="faq-icon font-display font-bold text-xl shrink-0" style="color:var(--c-amber)">+</span>
+                <span class="faq-icon font-display font-bold text-xl shrink-0" style="color:var(--c-accent)">+</span>
               </summary>
               <p class="text-sm leading-relaxed pb-5 m-0" style="color:var(--c-text-2)">{f.a}</p>
             </details>
@@ -596,12 +592,12 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
   </section>
 
   <!-- CTA Band -->
-  <section style="background:var(--c-amber);padding-block:4rem" aria-label="Cotizar equipos SCBA">
+  <section style="background:var(--c-accent);padding-block:4rem" aria-label="Cotizar equipos SCBA">
     <div class="container-site">
       <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
         <div>
-          <p class="text-xs font-display font-bold uppercase tracking-[0.2em] mb-3" style="color:rgba(16,24,40,0.65)">MSA G1 · Dräger PSS 7000 · 3M Scott Air-Pak X3 Pro · Stock CDMX</p>
-          <h2 class="font-display font-bold uppercase" style="color:var(--c-ink);font-size:clamp(1.75rem,4vw,3rem);line-height:1.05">
+          <p class="text-xs font-display font-bold uppercase tracking-[0.2em] mb-3" style="color:rgba(255,255,255,0.65)">MSA G1 · Dräger PSS 7000 · 3M Scott Air-Pak X3 Pro · Stock CDMX</p>
+          <h2 class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Certificado NFPA 1970.<br/>Entrega en 48 h.
           </h2>
         </div>
@@ -610,11 +606,11 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
             href={whatsappUrl('Hola, quiero cotizar equipos SCBA NFPA 1970. ¿Tienen stock disponible?')}
             target="_blank" rel="noopener"
             class="btn btn-lg"
-            style="background:#FFFFFF;color:var(--c-amber);border-color:var(--c-line);font-weight:700"
+            style="background:#FFFFFF;color:var(--c-accent);border-color:#FFFFFF;font-weight:700"
           >
             Cotizar por {CANAL_CONTACTO} 
           </a>
-          <a href="/cotizacion" class="btn btn-lg" style="background:transparent;color:var(--c-ink);border:2px solid rgba(16,24,40,0.5)">
+          <a href="/cotizacion" class="btn btn-lg" style="background:transparent;color:#FFFFFF;border:2px solid rgba(255,255,255,0.5)">
             Cotización formal
           </a>
         </div>
@@ -630,7 +626,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
           <span class="section-eyebrow mb-4 inline-flex">Equipa el conjunto completo</span>
           <h2 id="cross-title" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             El SCBA es<br/>
-            <span style="color:var(--c-amber)">solo una pieza.</span>
+            <span style="color:var(--c-accent)">solo una pieza.</span>
           </h2>
           <p class="text-sm leading-relaxed mb-8" style="color:var(--c-text-2)">
             Un bombero protegido necesita traje, casco, guantes y botas certificados — y un programa de
@@ -639,7 +635,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
           <a href={whatsappUrl('Hola, quiero equipar el conjunto completo de EPP para mi brigada.')} target="_blank" rel="noopener" class="btn btn-primary">Cotizar conjunto completo</a>
         </div>
         <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
-          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">
+          <h2 class="font-display font-bold text-sm mb-5" style="color:var(--forge-300)">
             También te puede servir
           </h2>
           <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
@@ -666,7 +662,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
 
       <!-- Otras categorías -->
       <div class="mt-14 pt-10" style="border-top:1px solid var(--c-line)">
-        <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-6" style="color:var(--forge-300)">Otras categorías del catálogo</h2>
+        <h2 class="font-display font-bold text-sm mb-6" style="color:var(--forge-300)">Otras categorías del catálogo</h2>
         <div class="flex flex-wrap gap-3">
           {otrasCategorias.map((c) => (
             <a href={`/productos/${c.slug}`} class="btn btn-sm btn-dark">{c.label}</a>

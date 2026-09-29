@@ -35,42 +35,42 @@ const tipos = [
   {
     title: 'PQS ABC',
     norm: 'NOM-100-STPS (agente: NOM-104-STPS-2001) · NFPA 10',
-    accent: '#F75000',
+    accent: '#C8102E',
     desc: 'Polvo químico seco multiuso para fuegos clase A, B y C. El estándar obligatorio en oficinas, comercios, bodegas e industria general. De 1 kg a 12 kg.',
     icon: ``,
   },
   {
     title: 'CO₂',
     norm: 'NOM-102-STPS · NFPA 10',
-    accent: '#60A5FA',
+    accent: '#175CD3',
     desc: 'Dióxido de carbono sin residuo para fuegos clase B y C. Una opción para tableros eléctricos, servidores y equipos electrónicos de alto valor.',
     icon: ``,
   },
   {
     title: 'Agua',
     norm: 'NOM-103-STPS · NFPA 10',
-    accent: '#38BDF8',
+    accent: '#175CD3',
     desc: 'El agente más ecológico para fuegos clase A: sólidos combustibles como madera, papel y cartón. Sin residuo tóxico. NUNCA usar en presencia de corriente eléctrica.',
     icon: ``,
   },
   {
     title: 'Espuma AFFF',
     norm: 'NFPA 11',
-    accent: '#FB923C',
+    accent: '#C8102E',
     desc: 'Espuma formadora de película acuosa para fuegos clase A y B. Sella la superficie del combustible e impide la re-ignición — el más eficaz para hidrocarburos derramados.',
     icon: ``,
   },
   {
     title: 'Tipo K',
     norm: 'NOM-002-STPS · NFPA 10',
-    accent: '#F5A623',
+    accent: '#B54708',
     desc: 'Acetato de potasio para fuegos clase K: aceites y grasas vegetales y animales a alta temperatura. Para cocinas industriales y restaurantes con freidoras.',
     icon: ``,
   },
   {
     title: 'Agente Limpio',
     norm: 'NFPA 2001 · UL 2129',
-    accent: '#34D399',
+    accent: '#067647',
     desc: 'HFC-227ea (FM-200) para data centers y salas de control. Extinción en segundos sin residuo, sin daño a equipos, espacio habitable e ininterrumpible tras descarga.',
     icon: ``,
   },
@@ -233,15 +233,14 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
 
   <!-- Hero -->
   <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:5rem">
-    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(181,71,8,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
 
     <div class="container-site relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div>
           <span class="section-eyebrow mb-5 inline-flex">{cat.norm} · Venta · Recarga · Mantenimiento</span>
-          <h1 class="font-display font-bold uppercase mb-6" style="color:var(--c-ink);font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+          <h1 class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(2.25rem,4.5vw,3.5rem);line-height:1.08">
             Extintores<br/>
-            <span style="color:var(--c-amber)">venta de extintores PQS, CO₂ y tipo K en México.</span>
+            <span style="color:var(--c-accent)">venta de extintores PQS, CO₂ y tipo K en México.</span>
           </h1>
           <p class="text-base leading-relaxed mb-8 max-w-xl" style="color:var(--c-text-2)">
             Venta de extintores portátiles y sobre ruedas, con recarga y mantenimiento
@@ -265,7 +264,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
         </div>
       </div>
     </div>
-    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(181,71,8,0.4) 30%, rgba(181,71,8,0.4) 70%, transparent)" aria-hidden="true"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(200,16,46,0.4) 30%, rgba(200,16,46,0.4) 70%, transparent)" aria-hidden="true"></div>
   </section>
 
   <section id="guia-extintores" class="section" style="background:var(--c-bg)" aria-labelledby="guia-extintores-title">
@@ -369,7 +368,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
         {razones.map((r, i) => (
           <div class="flex flex-col gap-3 p-6" style={`background:var(--c-bg-alt);${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.12)' : ''}`}>
             
-            <h3 class="font-display font-bold text-sm uppercase tracking-wide" style="color:var(--c-ink)">{r.t}</h3>
+            <h3 class="font-display font-bold text-sm" style="color:var(--c-ink)">{r.t}</h3>
             <p class="text-xs leading-relaxed m-0" style="color:var(--c-muted)">{r.d}</p>
           </div>
         ))}
@@ -383,12 +382,12 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Seis agentes, cada uno para su fuego</span>
-          <h2 id="tipos-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="tipos-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             El agente correcto<br/>
-            <span style="color:var(--c-amber)">según el riesgo.</span>
+            <span style="color:var(--c-accent)">según el riesgo.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(181,71,8,0.4);padding-left:1.75rem">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
           <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
             Usar el agente equivocado no solo no extingue el fuego — puede agravarlo. La clase de fuego
             determina el agente, nunca al revés. Te asesoramos la dotación correcta por área sin costo.
@@ -399,9 +398,6 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5">
         {tipos.map((t) => (
           <article class="flex flex-col gap-4 p-7" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
-            <div class="flex items-center justify-center" style={`width:52px;height:52px;background:${t.accent}1a;border:1.5px solid ${t.accent}59;color:${t.accent}`}>
-              <span class="block" style="width:24px;height:24px" set:html={t.icon}/>
-            </div>
             <div class="flex items-center justify-between gap-2 flex-wrap">
               <h3 class="font-display font-bold text-xl" style="color:var(--c-ink)">{t.title}</h3>
               <span class="badge badge-dark text-[9px]">{t.norm.split(' · ')[0]}</span>
@@ -420,12 +416,12 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">El estándar de uso general</span>
-          <h2 id="pqs-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="pqs-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Extintores PQS ABC<br/>
-            <span style="color:var(--c-amber)">certificados NOM.</span>
+            <span style="color:var(--c-accent)">certificados NOM.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(181,71,8,0.4);padding-left:1.75rem">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
           <p class="text-sm leading-relaxed mb-4" style="color:var(--c-text-2)">
             El polvo químico seco ABC es el agente más versátil del mercado: actúa sobre los tres tipos
             de fuego más comunes (A, B y C) con una sola unidad. Obligatorio en la mayoría de los programas
@@ -472,12 +468,12 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Tableros · Servidores · Electrónica</span>
-          <h2 id="co2-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="co2-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Extintores CO₂<br/>
-            <span style="color:var(--c-amber)">sin residuo.</span>
+            <span style="color:var(--c-accent)">sin residuo.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(181,71,8,0.4);padding-left:1.75rem">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
           <p class="text-sm leading-relaxed mb-4" style="color:var(--c-text-2)">
             La solución correcta para activos electrónicos de alto valor. El CO₂ extingue sin dejar residuo:
             no daña equipos, no requiere limpieza posterior y no conduce electricidad. Una opción adecuada
@@ -524,12 +520,12 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Agua · Espuma · Tipo K · Agente limpio</span>
-          <h2 id="especializados-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="especializados-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Extintores<br/>
-            <span style="color:var(--c-amber)">especializados.</span>
+            <span style="color:var(--c-accent)">especializados.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(181,71,8,0.4);padding-left:1.75rem">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
           <p class="text-sm leading-relaxed mb-4" style="color:var(--c-text-2)">
             Más allá del PQS ABC, cada riesgo especial exige el agente correcto: agua limpia o AFFF para
             clase A y B, Tipo K exclusivamente para aceites a alta temperatura en cocinas industriales,
@@ -579,12 +575,12 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Alta capacidad · Industrial · Aeronáutico</span>
-          <h2 id="ruedas-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="ruedas-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Extintores sobre ruedas<br/>
-            <span style="color:var(--c-amber)">25 a 125 kg.</span>
+            <span style="color:var(--c-accent)">25 a 125 kg.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(181,71,8,0.4);padding-left:1.75rem">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
           <p class="text-sm leading-relaxed mb-4" style="color:var(--c-text-2)">
             Cuando el portátil no tiene la capacidad de agente necesaria para el riesgo, el extintor sobre ruedas
             es la solución. De 25 kg para almacenes y talleres hasta 125 kg para terminales aeroportuarias,
@@ -628,8 +624,8 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
   <section class="section-tight" style="background:var(--c-bg)" aria-label="Galería extintores y protección contra incendio">
     <div class="container-site">
       <div class="flex items-center gap-4 mb-6">
-        <span class="w-8 h-px" style="background:var(--c-amber)"></span>
-        <span class="text-xs font-display font-semibold uppercase tracking-[0.18em]" style="color:var(--c-amber)">Extintores y protección en uso real</span>
+        <span class="w-8 h-px" style="background:var(--c-accent)"></span>
+        <span class="text-xs font-display font-semibold uppercase tracking-[0.18em]" style="color:var(--c-accent)">Extintores y protección en uso real</span>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-2 lg:gap-3">
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
@@ -660,12 +656,12 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-10">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Guía rápida de selección</span>
-          <h2 id="tabla-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="tabla-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             ¿Cuál extintor<br/>
-            <span style="color:var(--c-amber)">para cuál fuego?</span>
+            <span style="color:var(--c-accent)">para cuál fuego?</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(181,71,8,0.4);padding-left:1.75rem">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
           <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
             La clase de fuego determina el agente. Esta tabla resume la compatibilidad
             de cada tipo de extintor según la clasificación internacional de fuegos.
@@ -681,7 +677,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
               <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:var(--forge-300);border-bottom:1px solid var(--c-line);border-left:1px solid var(--c-line)">Ejemplos</th>
               <th class="text-center p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:var(--c-accent);border-bottom:1px solid var(--c-line);border-left:1px solid var(--c-line)">PQS ABC</th>
               <th class="text-center p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:var(--c-info);border-bottom:1px solid var(--c-line);border-left:1px solid var(--c-line)">CO₂</th>
-              <th class="text-center p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:var(--c-amber);border-bottom:1px solid var(--c-line);border-left:1px solid var(--c-line)">Tipo K</th>
+              <th class="text-center p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:var(--c-accent);border-bottom:1px solid var(--c-line);border-left:1px solid var(--c-line)">Tipo K</th>
               <th class="text-center p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:var(--c-success);border-bottom:1px solid var(--c-line);border-left:1px solid var(--c-line)">Ag. Limpio</th>
               <th class="text-center p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:var(--c-violet);border-bottom:1px solid var(--c-line);border-left:1px solid var(--c-line)">Ruedas</th>
             </tr>
@@ -711,12 +707,12 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Más allá de la venta</span>
-          <h2 id="servicios-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="servicios-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             El extintor activo<br/>
-            <span style="color:var(--c-amber)">todo el año.</span>
+            <span style="color:var(--c-accent)">todo el año.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(181,71,8,0.4);padding-left:1.75rem">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
           <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
             Un extintor sin mantenimiento es un objeto decorativo. El servicio que realmente
             protege tu instalación — y cumple con NOM-002-STPS — incluye recarga, inspección
@@ -728,12 +724,12 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {servicios.map((s) => (
           <article class="flex flex-col gap-4 p-7" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
-            <div class="flex items-center justify-center" style="width:52px;height:52px;background:rgba(181,71,8,0.1);border:1.5px solid rgba(181,71,8,0.35);color:var(--c-amber)">
+            <div class="flex items-center justify-center" style="width:52px;height:52px;background:rgba(200,16,46,0.1);border:1.5px solid rgba(200,16,46,0.35);color:var(--c-accent)">
               <span class="block" style="width:24px;height:24px" set:html={s.icon}/>
             </div>
             <div>
               
-              <h3 class="font-display font-bold text-sm uppercase tracking-wide" style="color:var(--c-ink)">{s.t}</h3>
+              <h3 class="font-display font-bold text-sm" style="color:var(--c-ink)">{s.t}</h3>
             </div>
             <p class="text-xs leading-relaxed m-0" style="color:var(--c-muted)">{s.d}</p>
           </article>
@@ -760,7 +756,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
           <span class="section-eyebrow mb-4 inline-flex">Cómo elegir</span>
           <h2 id="guia-title" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Del riesgo<br/>
-            <span style="color:var(--c-amber)">al agente correcto.</span>
+            <span style="color:var(--c-accent)">al agente correcto.</span>
           </h2>
           <ol class="flex flex-col gap-4 list-none m-0 p-0">
             {guia.map((s) => (
@@ -778,7 +774,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
         </div>
 
         <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
-          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">
+          <h2 class="font-display font-bold text-sm mb-5" style="color:var(--forge-300)">
             Aprende más en el blog
           </h2>
           <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
@@ -797,11 +793,11 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
 
           <!-- Normativa compacta -->
           <div class="mt-8 pt-6" style="border-top:1px solid var(--c-line)">
-            <h3 class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:var(--forge-300)">Marco normativo</h3>
+            <h3 class="font-display font-bold text-xs mb-4" style="color:var(--forge-300)">Marco normativo</h3>
             <div class="flex flex-col gap-3">
               {normas.map((n) => (
                 <div class="flex items-start gap-3">
-                  <span class="font-display font-bold text-sm shrink-0" style="color:var(--c-amber);min-width:7rem">{n.clave}</span>
+                  <span class="font-display font-bold text-sm shrink-0" style="color:var(--c-accent);min-width:7rem">{n.clave}</span>
                   <p class="text-xs leading-relaxed m-0" style="color:var(--c-muted)">{n.titulo} — {n.desc.substring(0, 80)}…</p>
                 </div>
               ))}
@@ -820,7 +816,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
           <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes</span>
           <h2 id="faq-title" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Lo que más nos<br/>
-            <span style="color:var(--c-amber)">preguntan.</span>
+            <span style="color:var(--c-accent)">preguntan.</span>
           </h2>
           <p class="text-sm leading-relaxed mb-8" style="color:var(--c-text-2)">
             ¿Tu duda no aparece? Escríbenos por {CANAL_CONTACTO} con el tipo de establecimiento y el riesgo
@@ -837,7 +833,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
             <details class="faq-item group" style={`border-top:1px solid var(--c-line);${i === faqs.length - 1 ? 'border-bottom:1px solid rgba(74,117,153,0.18);' : ''}`}>
               <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer">
                 <span class="font-display font-semibold text-sm" style="color:var(--c-ink)">{f.q}</span>
-                <span class="faq-icon font-display font-bold text-xl shrink-0" style="color:var(--c-amber)">+</span>
+                <span class="faq-icon font-display font-bold text-xl shrink-0" style="color:var(--c-accent)">+</span>
               </summary>
               <p class="text-sm leading-relaxed pb-5 m-0" style="color:var(--c-text-2)">{f.a}</p>
             </details>
@@ -848,12 +844,12 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
   </section>
 
   <!-- CTA Band -->
-  <section style="background:var(--c-amber);padding-block:4rem" aria-label="Cotizar extintores">
+  <section style="background:var(--c-accent);padding-block:4rem" aria-label="Cotizar extintores">
     <div class="container-site">
       <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
         <div>
-          <p class="text-xs font-display font-bold uppercase tracking-[0.2em] mb-3" style="color:rgba(16,24,40,0.7)">PQS ABC · CO₂ · Tipo K · Agente limpio · Recarga · Mantenimiento</p>
-          <h2 class="font-display font-bold uppercase" style="color:var(--c-ink);font-size:clamp(1.75rem,4vw,3rem);line-height:1.05">
+          <p class="text-xs font-display font-bold uppercase tracking-[0.2em] mb-3" style="color:rgba(255,255,255,0.7)">PQS ABC · CO₂ · Tipo K · Agente limpio · Recarga · Mantenimiento</p>
+          <h2 class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Servicio NOM-154-SCFI.<br/>Expediente completo para PC.
           </h2>
         </div>
@@ -862,11 +858,11 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
             href={whatsappUrl('Hola, quiero cotizar extintores. ¿Hacen recarga y mantenimiento?')}
             target="_blank" rel="noopener"
             class="btn btn-lg whitespace-normal text-center"
-            style="background:#FFFFFF;color:var(--c-amber);border-color:var(--c-line);font-weight:700"
+            style="background:#FFFFFF;color:var(--c-accent);border-color:#FFFFFF;font-weight:700"
           >
             Cotizar por {CANAL_CONTACTO} 
           </a>
-          <a href="/cotizacion" class="btn btn-lg whitespace-normal text-center" style="background:transparent;color:var(--c-ink);border:2px solid rgba(16,24,40,0.5)">
+          <a href="/cotizacion" class="btn btn-lg whitespace-normal text-center" style="background:transparent;color:#FFFFFF;border:2px solid rgba(255,255,255,0.5)">
             Cotización formal
           </a>
         </div>
@@ -882,7 +878,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
           <span class="section-eyebrow mb-4 inline-flex">Protección completa</span>
           <h2 id="cross-title" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             El extintor es<br/>
-            <span style="color:var(--c-amber)">la primera línea.</span>
+            <span style="color:var(--c-accent)">la primera línea.</span>
           </h2>
           <p class="text-sm leading-relaxed mb-8" style="color:var(--c-text-2)">
             Una protección completa combina extintores portátiles, sistemas fijos de rociadores
@@ -891,7 +887,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
           <a href={whatsappUrl('Hola, quiero cotizar la protección contra incendio completa para mi instalación.')} target="_blank" rel="noopener" class="btn btn-primary">Cotizar protección completa</a>
         </div>
         <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
-          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">También te puede servir</h2>
+          <h2 class="font-display font-bold text-sm mb-5" style="color:var(--forge-300)">También te puede servir</h2>
           <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
             {[
               { label: 'Sistemas Contra Incendio', desc: 'Rociadores NFPA 13 · detección NFPA 72 · agente limpio', href: '/productos/sistemas-ci' },
@@ -915,7 +911,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
       </div>
 
       <div class="mt-14 pt-10" style="border-top:1px solid var(--c-line)">
-        <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-6" style="color:var(--forge-300)">Otras categorías del catálogo</h2>
+        <h2 class="font-display font-bold text-sm mb-6" style="color:var(--forge-300)">Otras categorías del catálogo</h2>
         <div class="flex flex-wrap gap-3">
           {otrasCategorias.map((c) => (
             <a href={`/productos/${c.slug}`} class="btn btn-sm btn-dark">{c.label}</a>

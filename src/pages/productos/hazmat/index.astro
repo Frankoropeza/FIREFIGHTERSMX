@@ -31,7 +31,7 @@ const niveles = [
     id: 'nivel-a',
     nivel: 'Nivel A',
     norm: 'EPA · Nivel de protección',
-    accent: '#EF4444',
+    accent: '#D92D20',
     escenario: 'Atmósferas desconocidas · CBRN · vapor y gas tóxico',
     desc: 'Máxima protección disponible. Traje encapsulado hermético (vapor-tight) con SCBA interno. Obligatorio cuando el agente es desconocido, la concentración es alta o existe riesgo de exposición cutánea a vapores tóxicos. La selección de Nivel A no puede basarse solo en el nivel — requiere verificación con la tabla de permeación del traje para el agente específico.',
     marcas: 'DuPont Tychem 10000 · Lakeland ChemMax 4',
@@ -41,7 +41,7 @@ const niveles = [
     id: 'nivel-b',
     nivel: 'Nivel B',
     norm: 'EPA · Nivel de protección',
-    accent: '#F5A623',
+    accent: '#B54708',
     escenario: 'Agente conocido · salpicadura de líquidos · SCBA externo',
     desc: 'Protección contra salpicadura de líquidos con máxima protección respiratoria (SCBA externo). El agente debe ser conocido y la ruta de exposición debe ser por líquido —no vapor— verificada con tabla de permeación. Menor estrés térmico que Nivel A, permite operaciones más prolongadas cuando el riesgo de vapor ya fue descartado.',
     marcas: 'DuPont Tychem 4000S · Lakeland ChemMax 4 Plus',
@@ -51,7 +51,7 @@ const niveles = [
     id: 'nivel-c',
     nivel: 'Nivel C',
     norm: 'EPA · Nivel de protección',
-    accent: '#34D399',
+    accent: '#067647',
     escenario: 'Agente conocido · bajo riesgo respiratorio · APR en lugar de SCBA',
     desc: 'Protección contra salpicadura con respirador purificador de aire (APR) en lugar de SCBA. Solo aplica cuando el agente está completamente caracterizado, la concentración atmosférica es conocida y no supera los umbrales que requieren SCBA. Usado principalmente en descontaminación de segunda línea y muestreo ambiental.',
     marcas: 'DuPont Tychem 2000 · Lakeland Pyrolon CRFR',
@@ -61,7 +61,7 @@ const niveles = [
     id: 'reconocimiento',
     nivel: 'Reconocimiento',
     norm: 'Pre-entrada',
-    accent: '#60A5FA',
+    accent: '#175CD3',
     escenario: 'Antes de seleccionar el nivel · caracterización del agente',
     desc: 'El paso más crítico de la respuesta HAZMAT es caracterizar el agente antes de seleccionar el nivel de protección. Un detector configurado para los gases esperados permite monitorear la atmósfera durante la operación; sin reconocimiento, la selección del nivel de protección es una estimación.',
     marcas: 'MSA ALTAIR 4XR · MSA ALTAIR 2X',
@@ -186,16 +186,15 @@ const articulos = [
 
   {/* ══ HERO ════════════════════════════════════════════════════════════ */}
   <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:5rem">
-    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(239,68,68,0.07) 0%, transparent 65%)" aria-hidden="true"></div>
 
     <div class="container-site relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
         <div>
           <span class="section-eyebrow mb-5 inline-flex">{cat.norm} · DuPont Tychem · Lakeland ChemMax · MSA Altair · Distribuidor Autorizado MX</span>
-          <h1 class="font-display font-bold uppercase mb-6" style="color:var(--c-ink);font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+          <h1 class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(2.25rem,4.5vw,3.5rem);line-height:1.08">
             Traje HAZMAT<br/>
-            <span style="color:var(--c-danger)">trajes de protección química y materiales peligrosos.</span>
+            <span style="color:var(--c-accent)">trajes de protección química y materiales peligrosos.</span>
           </h1>
           <p class="text-lg leading-relaxed mb-8 max-w-xl" style="color:var(--c-text-2)">
             Trajes encapsulados Nivel A, trajes de salpicadura Nivel B/C y monitores
@@ -347,7 +346,7 @@ const articulos = [
   <QuickLinksBar />
 
   {/* ══ TRUST PILLARS ════════════════════════════════════════════════════ */}
-  <section class="section-tight" style="background:#0D0101" aria-labelledby="razones-haz-title">
+  <section class="section-tight" style="background:#FFFFFF" aria-labelledby="razones-haz-title">
     <div class="container-site">
       <div class="text-center mb-8">
         <span class="section-eyebrow mb-3 inline-flex">Por qué elegir FIREFIGHTERSMX para tu equipo HAZMAT</span>
@@ -357,9 +356,9 @@ const articulos = [
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style="border:1px solid rgba(239,68,68,0.18)">
         {razones.map((r, i) => (
-          <div class="flex flex-col gap-3 p-6" style={`background:#0A0202;${i < 3 ? 'border-right:1px solid rgba(239,68,68,0.1)' : ''}`}>
+          <div class="flex flex-col gap-3 p-6" style={`background:#FFFFFF;${i < 3 ? 'border-right:1px solid rgba(239,68,68,0.1)' : ''}`}>
             
-            <h3 class="font-display font-bold text-sm uppercase tracking-wide" style="color:var(--c-ink)">{r.t}</h3>
+            <h3 class="font-display font-bold text-sm" style="color:var(--c-ink)">{r.t}</h3>
             <p class="text-xs leading-relaxed m-0" style="color:var(--c-muted)">{r.d}</p>
           </div>
         ))}
@@ -415,7 +414,7 @@ const articulos = [
       </div>
 
       {/* Aviso de selección */}
-      <div class="p-6 flex gap-4 items-start" style="background:#1A0505;border:1px solid rgba(239,68,68,0.3)">
+      <div class="p-6 flex gap-4 items-start" style="background:#FDF0F2;border:1px solid rgba(239,68,68,0.3)">
         
         <div>
           <p class="text-sm font-bold mb-1" style="color:var(--c-danger)">Selección de nivel: el nivel EPA es un punto de partida, no la decisión completa</p>
@@ -437,9 +436,9 @@ const articulos = [
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">DuPont Safety Products · Tychem · NFPA 1990 · Distribuidor Autorizado MX</span>
-          <h2 id="dupont-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="dupont-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Trajes DuPont Tychem<br/>
-            <span style="color:var(--c-danger)">barrera química certificada.</span>
+            <span style="color:var(--c-accent)">barrera química certificada.</span>
           </h2>
         </div>
         <div style="border-left:2px solid rgba(239,68,68,0.4);padding-left:1.75rem">
@@ -490,9 +489,9 @@ const articulos = [
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Lakeland Industries · ChemMax · NFPA 1990 · Distribuidor Autorizado MX</span>
-          <h2 id="lakeland-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="lakeland-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Trajes Lakeland ChemMax<br/>
-            <span style="color:var(--c-amber)">350+ sustancias documentadas.</span>
+            <span style="color:var(--c-accent)">350+ sustancias documentadas.</span>
           </h2>
         </div>
         <div style="border-left:2px solid rgba(181,71,8,0.4);padding-left:1.75rem">
@@ -543,9 +542,9 @@ const articulos = [
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Detección de gases · MSA · Dräger · Honeywell · Industrial Scientific</span>
-          <h2 id="msa-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="msa-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Detección de gases<br/>
-            <span style="color:var(--c-success)">monogás y multigás.</span>
+            <span style="color:var(--c-accent)">monogás y multigás.</span>
           </h2>
         </div>
         <div style="border-left:2px solid rgba(6,118,71,0.4);padding-left:1.75rem">
@@ -594,15 +593,15 @@ const articulos = [
   </section>
 
   <!-- Kappler — Trajes HAZMAT Zytron · CBRN · Frontline FR -->
-  <section class="section" style="background:#07111F" aria-labelledby="kappler-title">
+  <section class="section" style="background:#F7F8FA" aria-labelledby="kappler-title">
     <div class="container-site">
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Kappler Inc. · NFPA 1990 por modelo · Distribuidor Autorizado MX</span>
-          <h2 id="kappler-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="kappler-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Kappler Zytron 500<br/>
-            <span style="color:#F59E0B">certificación NFPA según modelo.</span>
+            <span style="color:var(--c-accent)">certificación NFPA según modelo.</span>
           </h2>
         </div>
         <div style="border-left:2px solid rgba(245,158,11,0.4);padding-left:1.75rem">
@@ -612,7 +611,7 @@ const articulos = [
             Nivel A con NFPA 1990 (1991) y opciones de flash fire solo para escape y gas licuado.
             Confirma siempre el número de modelo y la tabla de permeación antes de seleccionar.
           </p>
-          <div class="flex gap-4 text-xs font-mono" style="color:#F59E0B">
+          <div class="flex gap-4 text-xs font-mono" style="color:#B54708">
             <span>NFPA según modelo</span>
             <span>·</span>
             <span>NFPA 1994 Clase 2</span>
@@ -656,7 +655,7 @@ const articulos = [
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Cómo seleccionar el nivel correcto</span>
           <h2 id="guia-haz-title" class="font-display font-bold mb-8" style="color:var(--c-ink);font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.1">
-            Del agente<br/><span style="color:var(--c-danger)">a la tabla de permeación.</span>
+            Del agente<br/><span style="color:var(--c-accent)">a la tabla de permeación.</span>
           </h2>
           <ol class="flex flex-col gap-4 list-none m-0 p-0">
             {guia.map((s) => (
@@ -676,7 +675,7 @@ const articulos = [
           </div>
         </div>
         <div class="lg:pl-16" style="border-left:1px solid rgba(239,68,68,0.15)">
-          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">Aprende más</h2>
+          <h2 class="font-display font-bold text-sm mb-5" style="color:var(--forge-300)">Aprende más</h2>
           <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
             {articulos.map((l) => (
               <li style="border-bottom:1px solid var(--c-line)">
@@ -704,7 +703,7 @@ const articulos = [
           <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes · Equipos HAZMAT</span>
           <h2 id="faq-title" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Lo que más nos<br/>
-            <span style="color:var(--c-danger)">preguntan.</span>
+            <span style="color:var(--c-accent)">preguntan.</span>
           </h2>
           <p class="text-sm leading-relaxed mb-8" style="color:var(--c-text-2)">
             ¿Tu duda no aparece? Escríbenos por {CANAL_CONTACTO} con el agente o escenario de tu operación — te
@@ -737,7 +736,7 @@ const articulos = [
   </section>
 
   {/* ══ CTA BAND ════════════════════════════════════════════════════════ */}
-  <section class="section" style="background:#1A0505;border-top:1px solid rgba(239,68,68,0.2);border-bottom:1px solid rgba(239,68,68,0.2)" aria-label="Llamada a la acción">
+  <section class="section" style="background:#FDF0F2;border-top:1px solid rgba(239,68,68,0.2);border-bottom:1px solid rgba(239,68,68,0.2)" aria-label="Llamada a la acción">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         <div>
@@ -782,10 +781,10 @@ const articulos = [
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {[
-          { label: 'Cascos NFPA 1970',            desc: 'MSA Gallet · Bullard · Pacific Helmets',       href: '/productos/cascos-nfpa',         accent: '#F75000' },
-          { label: 'Trajes de Bombero NFPA 1970', desc: 'Globe · Fire-Dex · Honeywell Morning Pride',   href: '/productos/trajes-bombero',       accent: '#F5A623' },
-          { label: 'Equipos SCBA',                desc: 'MSA G1 · Dräger PA5000 · Scott X3Pro',         href: '/productos/equipos-scba',         accent: '#60A5FA' },
-          { label: 'Sistemas Contra Incendio',    desc: 'Rociadores NFPA 13 · Detección NFPA 72 · FM-200', href: '/productos/sistemas-ci',       accent: '#34D399' },
+          { label: 'Cascos NFPA 1970',            desc: 'MSA Gallet · Bullard · Pacific Helmets',       href: '/productos/cascos-nfpa',         accent: '#C8102E' },
+          { label: 'Trajes de Bombero NFPA 1970', desc: 'Globe · Fire-Dex · Honeywell Morning Pride',   href: '/productos/trajes-bombero',       accent: '#B54708' },
+          { label: 'Equipos SCBA',                desc: 'MSA G1 · Dräger PA5000 · Scott X3Pro',         href: '/productos/equipos-scba',         accent: '#175CD3' },
+          { label: 'Sistemas Contra Incendio',    desc: 'Rociadores NFPA 13 · Detección NFPA 72 · FM-200', href: '/productos/sistemas-ci',       accent: '#067647' },
         ].map((l) => (
           <a href={l.href} class="group flex flex-col gap-2 p-5" style={`background:var(--c-bg-alt);border:1px solid var(--c-line);border-top:2px solid ${l.accent}`}>
             <span class="font-display font-bold text-sm" style={`color:${l.accent}`}>{l.label}</span>

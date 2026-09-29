@@ -72,14 +72,13 @@ const trustPoints = [
 
   <!-- Hero del catálogo -->
   <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:5rem">
-    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(200,16,46,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
 
     <div class="container-site relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
         <div>
           <span class="section-eyebrow mb-5 inline-flex">Catálogo completo · NFPA y NOM</span>
-          <h1 class="font-display font-bold uppercase mb-6" style="color:var(--c-ink);font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+          <h1 class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(2.25rem,4.5vw,3.5rem);line-height:1.08">
             Equipo para Bomberos<br/>
             <span style="color:var(--c-accent)">y Contra Incendio</span>
           </h1>
@@ -131,7 +130,7 @@ const trustPoints = [
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style="border:1px solid var(--c-line)">
         {trustPoints.map((t, i) => (
           <div class="flex flex-col gap-2 p-6" style={`background:var(--c-surface);${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.18);' : ''}`}>
-            <h3 class="font-display font-bold text-sm uppercase tracking-wider" style="color:var(--c-accent)">{t.title}</h3>
+            <h3 class="font-display font-bold text-sm" style="color:var(--c-accent)">{t.title}</h3>
             <p class="text-xs leading-relaxed" style="color:var(--c-muted)">{t.text}</p>
           </div>
         ))}
@@ -146,7 +145,7 @@ const trustPoints = [
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Categorías</span>
-          <h2 id="categorias-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="categorias-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Diez categorías,<br/>
             <span style="color:var(--c-accent)">todo certificado.</span>
           </h2>
@@ -171,7 +170,7 @@ const trustPoints = [
   {allCategories
     .filter((cat) => cat.spotlight)
     .map((cat, i) => (
-      <CategorySpotlight cat={cat} background={i % 2 === 0 ? '#070E1A' : '#040A12'} />
+      <CategorySpotlight cat={cat} background={i % 2 === 0 ? '#F7F8FA' : '#FFFFFF'} />
     ))}
 
   <!-- Productos destacados -->
@@ -181,7 +180,7 @@ const trustPoints = [
       <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Lo más cotizado</span>
-          <h2 id="destacados-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="destacados-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Productos<br/>
             <span style="color:var(--c-accent)">destacados.</span>
           </h2>
@@ -240,7 +239,7 @@ const trustPoints = [
         </div>
 
         <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
-          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">
+          <h2 class="font-display font-bold text-sm mb-5" style="color:var(--forge-300)">
             También te puede servir
           </h2>
           <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">

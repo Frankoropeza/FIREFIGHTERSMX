@@ -150,13 +150,12 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
   </nav>
 
   <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:5rem" aria-labelledby="giro-heading">
-    <div class="absolute top-0 right-0 w-2/3 h-full pointer-events-none" aria-hidden="true" style={`background:radial-gradient(ellipse 70% 60% at 85% 40%, ${g.color}14 0%, transparent 65%)`}></div>
     <div class="container-site relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div>
           <span class="section-eyebrow mb-5 inline-flex">Directorio nacional · {g.labelCorto}</span>
-          <h1 id="giro-heading" class="font-display font-bold uppercase mb-6" style="color:var(--c-ink);font-size:clamp(2rem,4.6vw,3.6rem);line-height:0.95">
-            {g.outline.h1.linea1}<br/><span style={`color:${g.color}`}>{g.outline.h1.linea2}</span>
+          <h1 id="giro-heading" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(2rem,4.6vw,3.6rem);line-height:1.08">
+            {g.outline.h1.linea1}<br/><span style={`color:var(--c-accent)`}>{g.outline.h1.linea2}</span>
           </h1>
           {g.intro.map((p) => <p class="text-sm leading-[1.9] mb-4" style="color:var(--c-text-2)">{p}</p>)}
           <div class="flex flex-wrap gap-2 mt-2 mb-8">{g.normas.map((n) => <span class="badge badge-dark font-display text-[10px]">{n}</span>)}</div>
@@ -189,7 +188,7 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
     <div class="container-site grid grid-cols-1 lg:grid-cols-[1fr_1.7fr] gap-8 lg:gap-16 items-start">
       <div>
         <span class="section-eyebrow mb-4 inline-flex">Alcance del directorio</span>
-        <h2 id="alcance-heading" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.05">{g.outline.alcance.linea1}<br/><span style={`color:${g.color}`}>{g.outline.alcance.linea2}</span></h2>
+        <h2 id="alcance-heading" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.05">{g.outline.alcance.linea1}<br/><span style={`color:var(--c-accent)`}>{g.outline.alcance.linea2}</span></h2>
       </div>
       <p class="text-sm leading-[1.9] m-0" style="color:var(--c-text-2)">
         Esta página organiza empresas de {g.sustantivo} por entidad, ciudad y especialidad. Puedes revisar {esp.slice(0, 6).map((e) => e.label).join(', ')} y confirmar con cada ficha los datos de contacto, alcance, documentación y disponibilidad.
@@ -202,7 +201,7 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
       <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.35fr] gap-10 lg:gap-20 mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Guía de comparación</span>
-          <h2 id="comparar-heading" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">{g.outline.comparar.linea1}<br/><span style={`color:${g.color}`}>{g.outline.comparar.linea2}</span></h2>
+          <h2 id="comparar-heading" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">{g.outline.comparar.linea1}<br/><span style={`color:var(--c-accent)`}>{g.outline.comparar.linea2}</span></h2>
         </div>
         <p class="text-sm leading-[1.9] m-0" style="color:var(--c-text-2)">{guide.intro}</p>
       </div>
@@ -222,14 +221,14 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
     <div class="container-site grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
       <div>
         <span class="section-eyebrow mb-4 inline-flex">Selección responsable</span>
-        <h2 id="verificar-heading" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.05">{g.outline.verificar.linea1}<br/><span style={`color:${g.color}`}>{g.outline.verificar.linea2}</span></h2>
+        <h2 id="verificar-heading" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.05">{g.outline.verificar.linea1}<br/><span style={`color:var(--c-accent)`}>{g.outline.verificar.linea2}</span></h2>
         <ol class="flex flex-col gap-3 m-0 pl-5 text-sm leading-relaxed" style="color:var(--c-text)">
           {guide.verificar.map((item) => <li>{item}</li>)}
         </ol>
       </div>
       <div style="border-left:1px solid var(--c-line);padding-left:clamp(1.5rem,4vw,3rem)">
         <span class="section-eyebrow mb-4 inline-flex">Solicitud comparable</span>
-        <h2 class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.05">{g.outline.cotizar.linea1}<br/><span style={`color:${g.color}`}>{g.outline.cotizar.linea2}</span></h2>
+        <h2 class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.05">{g.outline.cotizar.linea1}<br/><span style={`color:var(--c-accent)`}>{g.outline.cotizar.linea2}</span></h2>
         <ul class="flex flex-col gap-3 m-0 pl-5 text-sm leading-relaxed" style="color:var(--c-text)">
           {guide.cotizar.map((item) => <li>{item}</li>)}
         </ul>
@@ -241,7 +240,7 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
   <section class="section-tight" style="background:var(--c-bg-alt)" aria-label={`Mapa nacional de ${g.sustantivo}`}>
     <div class="container-site">
       <span class="section-eyebrow mb-4 inline-flex">Mapa</span>
-      <h2 class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.05">{g.outline.mapa.linea1}<br/><span style={`color:${g.color}`}>{g.outline.mapa.linea2}</span></h2>
+      <h2 class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.05">{g.outline.mapa.linea1}<br/><span style={`color:var(--c-accent)`}>{g.outline.mapa.linea2}</span></h2>
       <MapaEmpresas src="/data/empresas-puntos.json" filtroGiro={giro} id={`mapa-${giro}`} ariaLabel={`Mapa de empresas de ${g.sustantivo} en México`} />
     </div>
   </section>
@@ -251,7 +250,7 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Por estado</span>
-          <h2 id="estados-heading" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">{g.outline.estados.linea1}<br/><span style={`color:${g.color}`}>{g.outline.estados.linea2}</span></h2>
+          <h2 id="estados-heading" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">{g.outline.estados.linea1}<br/><span style={`color:var(--c-accent)`}>{g.outline.estados.linea2}</span></h2>
         </div>
         <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
           <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">Cada estado tiene su directorio propio con mapa, buscador y filtros por especialidad. Presencia destacada en {ciudades.slice(0, 5).map((c) => c.ciudad).join(', ')}.</p>
@@ -271,7 +270,7 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-10">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Listado nacional</span>
-          <h2 id="lista-heading" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">{g.outline.lista.linea1}<br/><span style={`color:${g.color}`}>{g.outline.lista.linea2}</span></h2>
+          <h2 id="lista-heading" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">{g.outline.lista.linea1}<br/><span style={`color:var(--c-accent)`}>{g.outline.lista.linea2}</span></h2>
         </div>
         <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
           <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">Busca por nombre, ciudad o municipio y filtra por especialidad. Cada ficha indica el nivel de verificación de sus datos y la fuente de origen.</p>
@@ -282,9 +281,9 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
   </section>
 
   <section class="section" style="background:var(--c-bg)" aria-labelledby="faq-heading">
-    <div class="container-site max-w-4xl">
+    <div class="container-site">
       <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes</span>
-      <h2 id="faq-heading" class="font-display font-bold mb-8" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">{g.outline.faq.linea1}<br/><span style={`color:${g.color}`}>{g.outline.faq.linea2}</span></h2>
+      <h2 id="faq-heading" class="font-display font-bold mb-8" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">{g.outline.faq.linea1}<br/><span style={`color:var(--c-accent)`}>{g.outline.faq.linea2}</span></h2>
       <div class="flex flex-col" style="border-top:1px solid var(--c-line)">
         {faqItems.map((f) => (
           <details style="border-bottom:1px solid var(--c-line)">

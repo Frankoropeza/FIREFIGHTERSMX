@@ -165,9 +165,6 @@ const checkIcon = ``;
   {/* ─── Hero ─── */}
   <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:5rem" aria-labelledby="estado-heading">
 
-    {/* Glow decorativo */}
-    <div class="absolute top-0 right-0 w-2/3 h-full pointer-events-none" aria-hidden="true"
-      style="background:radial-gradient(ellipse 70% 60% at 85% 40%, rgba(200,16,46,0.07) 0%, transparent 65%)"></div>
     {/* Grid pattern decorativo */}
     <div class="absolute inset-0 pointer-events-none" aria-hidden="true"
       style="background-image:linear-gradient(var(--c-tint) 1px, transparent 1px),linear-gradient(90deg,var(--c-tint) 1px,transparent 1px);background-size:40px 40px;mask-image:radial-gradient(ellipse 80% 80% at 80% 30%, black, transparent)"></div>
@@ -178,8 +175,8 @@ const checkIcon = ``;
         {/* Col izquierda */}
         <div>
           <span class="section-eyebrow mb-5 inline-flex">Directorio · {estado.abreviatura} · {estado.region}</span>
-          <h1 id="estado-heading" class="font-display font-bold uppercase mb-6"
-            style="color:var(--c-ink);font-size:clamp(2.2rem,5vw,4rem);line-height:0.95">
+          <h1 id="estado-heading" class="font-display font-bold mb-6"
+            style="color:var(--c-ink);font-size:clamp(2.25rem,4.5vw,3.5rem);line-height:1.08">
             Estaciones de<br/>
             <span style="color:var(--c-accent)">Bomberos</span><br/>
             en {estado.nombre}
@@ -270,7 +267,7 @@ const checkIcon = ``;
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Directorio · {estado.nombre}</span>
           <h2 id="estaciones-heading" class="font-display font-bold"
-            style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             {totalEst} {plural(totalEst, 'estación', 'estaciones')}<br/>
             <span style="color:var(--c-accent)">de bomberos.</span>
           </h2>
@@ -292,10 +289,10 @@ const checkIcon = ``;
             class="w-full pl-10 pr-4 py-2.5 text-sm font-display" style="background:var(--c-surface);border:1px solid var(--c-line-strong);color:var(--c-ink);outline:none" />
         </div>
         <div class="flex flex-wrap gap-1.5" role="group" aria-label="Filtrar por tipo">
-          <button type="button" class="est-filter font-display text-[10px] uppercase tracking-wider px-3 py-1.5" data-tipo="todos"
+          <button type="button" class="est-filter font-display text-[10px] px-3 py-1.5" data-tipo="todos"
             style="color:#FFFFFF;background:var(--c-accent);border:1px solid var(--c-accent)">Todos</button>
           {tiposUnicos.map((t) => (
-            <button type="button" class="est-filter font-display text-[10px] uppercase tracking-wider px-3 py-1.5" data-tipo={t}
+            <button type="button" class="est-filter font-display text-[10px] px-3 py-1.5" data-tipo={t}
               style={`color:${tipoConfig[t].color};background:transparent;border:1px solid ${tipoConfig[t].color}40`}>{tipoConfig[t].label}</button>
           ))}
         </div>
@@ -413,7 +410,7 @@ const checkIcon = ``;
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Capacidades</span>
           <h2 id="servicios-heading" class="font-display font-bold"
-            style="color:var(--c-ink);font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.05">
+            style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Servicios operativos<br/>
             <span style="color:var(--c-accent)">en {estado.nombre}.</span>
           </h2>
@@ -519,7 +516,7 @@ const checkIcon = ``;
           <div>
             <span class="section-eyebrow mb-4 inline-flex">Sigue explorando</span>
             <h2 id="otros-heading" class="font-display font-bold"
-              style="color:var(--c-ink);font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.05">
+              style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
               Otros estados<br/>
               <span style="color:var(--c-accent)">del directorio.</span>
             </h2>
@@ -654,8 +651,8 @@ const checkIcon = ``;
       activeTipo = btn.dataset.tipo ?? 'todos';
       filters.forEach((x) => {
         const on = x === btn;
-        x.style.background = on ? '#F75000' : 'transparent';
-        x.style.color = on ? '#FFFFFF' : '#94A3B8';
+        x.style.background = on ? '#C8102E' : 'transparent';
+        x.style.color = on ? '#FFFFFF' : '#475467';
       });
       apply();
     }));
@@ -672,7 +669,7 @@ const checkIcon = ``;
           var puntos = JSON.parse(el.dataset.puntos || '[]');
           if (!puntos.length) return;
           var map = L.map(el, { scrollWheelZoom: false });
-          L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', { maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" rel="noopener nofollow">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions" rel="noopener nofollow">CARTO</a>' }).addTo(map);
+          L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" rel="noopener nofollow">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions" rel="noopener nofollow">CARTO</a>' }).addTo(map);
           var bounds = [];
           puntos.forEach(function (p) {
             L.marker([p.lat, p.lng]).addTo(map).bindPopup('<strong>' + p.ciudad + '</strong><br>' + p.n + (p.n === 1 ? ' estación' : ' estaciones'));

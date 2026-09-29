@@ -145,10 +145,6 @@ const faqSchema = {
   <!-- ── Hero ───────────────────────────────────────────────── -->
   <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:5rem" aria-labelledby="hero-title">
 
-    <!-- Glow decorativo -->
-    <div class="absolute top-0 right-0 w-2/3 h-full pointer-events-none" aria-hidden="true"
-      style="background:radial-gradient(ellipse 70% 60% at 85% 40%, rgba(200,16,46,0.07) 0%, transparent 65%)">
-    </div>
     <!-- Grid pattern decorativo -->
     <div class="absolute inset-0 pointer-events-none" aria-hidden="true"
       style="background-image:linear-gradient(var(--c-tint) 1px, transparent 1px),linear-gradient(90deg,var(--c-tint) 1px,transparent 1px);background-size:40px 40px;mask-image:radial-gradient(ellipse 80% 80% at 80% 30%, black, transparent)">
@@ -159,8 +155,8 @@ const faqSchema = {
 
         <div>
           <span class="section-eyebrow mb-5 inline-flex">Directorio nacional · 32 estados</span>
-          <h1 id="hero-title" class="font-display font-bold uppercase mb-6"
-            style="color:var(--c-ink);font-size:clamp(2.4rem,5vw,4.25rem);line-height:0.95">
+          <h1 id="hero-title" class="font-display font-bold mb-6"
+            style="color:var(--c-ink);font-size:clamp(2.25rem,4.5vw,3.5rem);line-height:1.08">
             Estaciones de<br/>
             <span style="color:var(--c-accent)">Bomberos</span><br/>
             en México
@@ -247,7 +243,7 @@ const faqSchema = {
           <div class="flex flex-col gap-3 p-6"
             style={`background:var(--c-surface);${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.18);' : ''}`}>
             <span class="w-6 h-6 block" style="color:var(--c-accent)" set:html={c.icon}/>
-            <h2 class="font-display font-bold text-sm uppercase tracking-wider" style="color:var(--c-accent)">{c.title}</h2>
+            <h2 class="font-display font-bold text-sm" style="color:var(--c-accent)">{c.title}</h2>
             <p class="text-xs leading-relaxed" style="color:var(--c-muted)">{c.text}</p>
           </div>
         ))}
@@ -263,7 +259,7 @@ const faqSchema = {
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Clasificación</span>
           <h2 id="tipos-title" class="font-display font-bold"
-            style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Tipos de cuerpos<br/>
             <span style="color:var(--c-accent)">de bomberos.</span>
           </h2>
@@ -312,7 +308,7 @@ const faqSchema = {
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Directorio · 32 estados</span>
           <h2 id="directorio-title" class="font-display font-bold"
-            style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Selecciona<br/>
             <span style="color:var(--c-accent)">tu estado.</span>
           </h2>
@@ -360,7 +356,7 @@ const faqSchema = {
           <div>
             <span class="section-eyebrow mb-4 inline-flex">Cuerpos históricos</span>
             <h2 id="destacadas-title" class="font-display font-bold"
-              style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+              style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
               Cuerpos de bomberos<br/>
               <span style="color:var(--c-accent)">con historia.</span>
             </h2>
@@ -451,7 +447,7 @@ const faqSchema = {
 
         <!-- FAQ -->
         <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
-          <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-6" style="color:var(--forge-300)">
+          <h2 class="font-display font-bold text-sm mb-6" style="color:var(--forge-300)">
             Preguntas frecuentes
           </h2>
           <div class="flex flex-col" style="border-top:1px solid var(--c-line)">

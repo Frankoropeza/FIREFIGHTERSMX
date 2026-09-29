@@ -129,7 +129,7 @@
   --shadow-glow:       none;
 
   /* Layout */
-  --container-max:     1440px;
+  --container-max:     100%;
   --container-padding: 1.25rem;
   --header-height:     104px;
 }

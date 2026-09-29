@@ -244,14 +244,14 @@ function categorizarServicios(servicios: string[]): CatServ[] {
     return { titulo, color, items };
   }
   const grupos = [
-    cat('Extinción de incendios',              '#EF4444', /incendio|extinc|fuego|pastizal|forestal|combusti/i),
-    cat('Rescate y salvamento',                '#F75000', /rescate|salvam|vertical|confinado|atrapado|altura|extrication|minero|aeronáut/i),
-    cat('Materiales peligrosos',               '#F59E0B', /hazmat|derrame|gas|quím|peligros|tóxico|enjambre/i),
-    cat('Atención médica prehospitalaria',     '#34D399', /auxilio|médic|paramé|prehospital|atenc.*médic/i),
-    cat('Protección civil y formación',        '#60A5FA', /evacuac|protección.?civil|formación|capacit|coord|escuela/i),
+    cat('Extinción de incendios',              '#D92D20', /incendio|extinc|fuego|pastizal|forestal|combusti/i),
+    cat('Rescate y salvamento',                '#C8102E', /rescate|salvam|vertical|confinado|atrapado|altura|extrication|minero|aeronáut/i),
+    cat('Materiales peligrosos',               '#B54708', /hazmat|derrame|gas|quím|peligros|tóxico|enjambre/i),
+    cat('Atención médica prehospitalaria',     '#067647', /auxilio|médic|paramé|prehospital|atenc.*médic/i),
+    cat('Protección civil y formación',        '#175CD3', /evacuac|protección.?civil|formación|capacit|coord|escuela/i),
   ];
   const resto = servicios.filter(s => !matched.has(s));
-  if (resto.length > 0) grupos.push({ titulo: 'Servicios adicionales', color: '#94A3B8', items: resto });
+  if (resto.length > 0) grupos.push({ titulo: 'Servicios adicionales', color: '#475467', items: resto });
   return grupos.filter(g => g.items.length > 0);
 }
 const catServicios: CatServ[] = categorizarServicios(estacion.serviciosDetalle);
@@ -413,9 +413,6 @@ const mapPinIcon = ``;
 
   {/* ── Hero 2 columnas (homologado con index) ── */}
   <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:4rem 3.5rem" aria-labelledby="est-heading">
-    {/* Glow naranja derecha */}
-    <div class="absolute inset-0 pointer-events-none" aria-hidden="true"
-      style="background:radial-gradient(ellipse 55% 70% at 85% 50%, rgba(200,16,46,0.09) 0%, transparent 60%)"></div>
     {/* Separador vertical central */}
     <div class="absolute top-0 bottom-0 pointer-events-none hidden lg:block" aria-hidden="true"
       style="left:52%;width:1px;background:linear-gradient(to bottom,transparent 5%,var(--c-line) 30%,var(--c-line) 70%,transparent 95%)"></div>
@@ -507,7 +504,7 @@ const mapPinIcon = ``;
           {estacion.descripcion ? (
             <div class="flex flex-col gap-5">
               {estacion.descripcion.split('\n\n').slice(0, 2).map((parrafo, i) => (
-                <p class="text-sm leading-[1.9] m-0" style={i === 0 ? 'color:#CBD5E1;font-weight:500' : 'color:#94A3B8'}>
+                <p class="text-sm leading-[1.9] m-0" style={i === 0 ? 'color:#344054;font-weight:500' : 'color:#475467'}>
                   {parrafo}
                 </p>
               ))}
@@ -573,12 +570,12 @@ const mapPinIcon = ``;
               <div class="flex flex-col gap-5 mb-8">
                 {estacion.descripcion.split('\n\n').map((p, i) => (
                   <p class="text-sm leading-[1.95] m-0"
-                    style={i === 0 ? 'color:#CBD5E1;font-weight:450' : 'color:#94A3B8'}>{p}</p>
+                    style={i === 0 ? 'color:#344054;font-weight:450' : 'color:#475467'}>{p}</p>
                 ))}
               </div>
             )}
 
-            <h3 class="font-display font-bold text-xs uppercase tracking-widest mb-3 m-0" style="color:var(--forge-300)">
+            <h3 class="font-display font-bold text-xs mb-3 m-0" style="color:var(--forge-300)">
               Ficha técnica institucional
             </h3>
             <div class="overflow-hidden" style="border:1px solid var(--c-line)">
@@ -723,7 +720,7 @@ const mapPinIcon = ``;
             </div>
             {estacion.certificaciones && estacion.certificaciones.length > 0 && (
               <div class="mt-5">
-                <h3 class="font-display font-bold text-xs uppercase tracking-widest mb-3 m-0" style="color:var(--c-success)">
+                <h3 class="font-display font-bold text-xs mb-3 m-0" style="color:var(--c-success)">
                   Certificaciones activas
                 </h3>
                 <div class="flex flex-wrap gap-2">
@@ -886,7 +883,7 @@ const mapPinIcon = ``;
                   <div>
                     <div class="text-[9px] uppercase tracking-widest mb-1" style="color:var(--forge-300)">Emergencias</div>
                     <a href={`tel:${TELEFONO_EMERGENCIAS}`}
-                      class="font-display font-bold text-2xl hover:text-[#ff8c5a]" style="color:var(--c-accent)">
+                      class="font-display font-bold text-2xl hover:text-[#C8102E]" style="color:var(--c-accent)">
                       {TELEFONO_EMERGENCIAS}
                     </a>
                   </div>
@@ -1188,7 +1185,7 @@ const mapPinIcon = ``;
         /* Carto en vez de tile.openstreetmap.org: la política de uso de OSM
            pide no servir sus teselas desde sitios con tráfico sistemático,
            y el basemap oscuro además va con el diseño. */
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
           maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" rel="noopener nofollow">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions" rel="noopener nofollow">CARTO</a>'
         }).addTo(map);
         var icon = L.divIcon({

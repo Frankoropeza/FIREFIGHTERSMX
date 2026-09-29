@@ -38,32 +38,32 @@ export interface TipoMeta {
 export const tipoEquipo: Record<TipoKey, TipoMeta> = {
   estructural: {
     label: 'Estructural',
-    color: 'var(--c-accent)',
+    color: '#C8102E',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M3 14a9 9 0 0 1 18 0M3 14h18v3a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1zM8 14v-2"/>`,
   },
   proximidad: {
     label: 'Proximidad ARFF',
-    color: 'var(--c-info)',
+    color: '#175CD3',
     icon: `<circle cx="12" cy="12" r="4.5"/><path stroke-linecap="round" d="M12 1.5v3M12 19.5v3M4 4l2 2M18 18l2 2M1.5 12h3M19.5 12h3M4 20l2-2M18 6l2-2"/>`,
   },
   forestal: {
     label: 'Forestal',
-    color: 'var(--c-success)',
+    color: '#067647',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M12 2 4 22h16L12 2zM12 9v7"/>`,
   },
   usar: {
     label: 'USAR / Rescate',
-    color: 'var(--c-amber)',
+    color: '#B54708',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>`,
   },
   mando: {
     label: 'Mando',
-    color: 'var(--c-violet)',
+    color: '#6941C6',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.5a.6.6 0 0 1 1.04 0l2.3 4.66 5.14.75a.6.6 0 0 1 .33 1.02l-3.72 3.63.88 5.12a.6.6 0 0 1-.87.63L12 17.5l-4.6 2.42a.6.6 0 0 1-.87-.63l.88-5.12L3.7 10.5a.6.6 0 0 1 .33-1.02l5.14-.75z"/>`,
   },
   industrial: {
     label: 'Industrial',
-    color: 'var(--c-amber)',
+    color: '#B54708',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/>`,
   },
   cbrn: {
@@ -73,32 +73,32 @@ export const tipoEquipo: Record<TipoKey, TipoMeta> = {
   },
   corte: {
     label: 'Corte / Cizalla',
-    color: 'var(--c-accent)',
+    color: '#C8102E',
     icon: `<circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><path stroke-linecap="round" stroke-linejoin="round" d="M20 4 8 14.5M20 20 8 9.5"/>`,
   },
   separacion: {
     label: 'Separación',
-    color: 'var(--c-info)',
+    color: '#175CD3',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M5 4l6 8-6 8M19 4l-6 8 6 8"/>`,
   },
   combinada: {
     label: 'Combinada',
-    color: 'var(--c-amber)',
+    color: '#B54708',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>`,
   },
   estabilizacion: {
     label: 'Empuje y Estabilización',
-    color: 'var(--c-success)',
+    color: '#067647',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M2 12h6M8 9l3 3-3 3M12 7h10v10H12z"/>`,
   },
   rociadores: {
     label: 'Rociadores',
-    color: 'var(--c-info)',
+    color: '#175CD3',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M12 2v4M6.34 6.34 3.51 3.51M4 12H0M6.34 17.66l-2.83 2.83M12 18v4M17.66 17.66l2.83 2.83M20 12h4M17.66 6.34l2.83-2.83"/><circle cx="12" cy="12" r="3"/>`,
   },
   deteccion: {
     label: 'Detección / Alarma',
-    color: 'var(--c-amber)',
+    color: '#B54708',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0 1 18 14.158V11a6 6 0 0 0-5-5.917V4a1 1 0 0 0-2 0v1.083A6 6 0 0 0 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 0 1-6 0v-1m6 0H9"/>`,
   },
   'agente-ci': {
@@ -108,42 +108,42 @@ export const tipoEquipo: Record<TipoKey, TipoMeta> = {
   },
   'red-hidraulica': {
     label: 'Red Hidráulica',
-    color: 'var(--c-info)',
+    color: '#175CD3',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/><circle cx="5" cy="12" r="2"/><circle cx="19" cy="12" r="2"/>`,
   },
   'traje-nivel-a': {
     label: 'Nivel A Encapsulado',
-    color: 'var(--c-danger)',
+    color: '#D92D20',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M12 2 4 5v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V5l-8-3z"/><circle cx="12" cy="12" r="2"/>`,
   },
   'traje-nivel-b': {
     label: 'Nivel B/C Salpicadura',
-    color: 'var(--c-amber)',
+    color: '#B54708',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M12 2 4 5v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V5l-8-3z"/>`,
   },
   'detector-multigases': {
     label: 'Detección Multi-Gas',
-    color: 'var(--c-success)',
+    color: '#067647',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/><circle cx="12" cy="12" r="2"/>`,
   },
   'kit-descon': {
     label: 'Infraestructura / Calibración',
-    color: 'var(--c-violet)',
+    color: '#6941C6',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><circle cx="12" cy="12" r="3"/>`,
   },
   senalizacion: {
     label: 'Señalización',
-    color: 'var(--c-success)',
+    color: '#067647',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M4 4h16v16H4zM8 12h8M13 8l4 4-4 4"/>`,
   },
   'iluminacion-emergencia': {
     label: 'Iluminación de emergencia',
-    color: 'var(--c-amber)',
+    color: '#B54708',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 2h6l-1 7h3l-5 13 1-9H9l0-11z"/>`,
   },
   'primeros-auxilios': {
     label: 'Primeros auxilios',
-    color: 'var(--c-info)',
+    color: '#175CD3',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M4 5h16v14H4zM12 8v8M8 12h8"/>`,
   },
 };

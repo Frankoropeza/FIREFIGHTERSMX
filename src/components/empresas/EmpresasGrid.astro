@@ -42,9 +42,9 @@ const giroMeta = Object.fromEntries(giros.map((g) => [g.slug, { l: g.labelCorto,
   </div>
   {filtros.length > 0 && (
     <div class="flex flex-wrap gap-1.5" role="group" aria-label="Filtrar">
-      <button type="button" class="emp-filter font-display text-[10px] uppercase tracking-wider px-3 py-1.5" data-key="todos" data-grid={id} style="color:#FFFFFF;background:var(--c-accent);border:1px solid var(--c-accent)">Todos</button>
+      <button type="button" class="emp-filter font-display text-[10px] px-3 py-1.5" data-key="todos" data-grid={id} style="color:#FFFFFF;background:var(--c-accent);border:1px solid var(--c-accent)">Todos</button>
       {filtros.map((f) => (
-        <button type="button" class="emp-filter font-display text-[10px] uppercase tracking-wider px-3 py-1.5" data-key={f.key} data-grid={id} data-color={f.color} style={`color:${f.color};background:transparent;border:1px solid ${f.color}40`}>{f.label}</button>))}
+        <button type="button" class="emp-filter font-display text-[10px] px-3 py-1.5" data-key={f.key} data-grid={id} data-color={f.color} style={`color:${f.color};background:transparent;border:1px solid ${f.color}40`}>{f.label}</button>))}
     </div>
   )}
   <span id={`${id}-count`} class="font-display text-xs uppercase tracking-wider shrink-0" style="color:var(--forge-300)">{indexSrc && total > visibles.length ? `${visibles.length} de ${total}` : `${total} resultados`}</span>
@@ -79,7 +79,7 @@ const giroMeta = Object.fromEntries(giros.map((g) => [g.slug, { l: g.labelCorto,
   const tokens = (q: string) => norm(q).split(/\s+/).filter((t) => t.length > 1);
   const coincide = (hay: string, toks: string[]) => toks.every((t) => hay.includes(t));
   const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c] as string));
-  const CONF: Record<string, [string, string]> = { alta: ['Datos verificados', '#34D399'], media: ['Datos confirmados', '#F5A623'], baja: ['Registro público', '#94A3B8'] };
+  const CONF: Record<string, [string, string]> = { alta: ['Datos verificados', '#067647'], media: ['Datos confirmados', '#B54708'], baja: ['Registro público', '#475467'] };
   const ordenPlan: Record<string, number> = { destacado: 0, verificado: 1, basico: 2 };
   const ordenConf: Record<string, number> = { alta: 0, media: 1, baja: 2 };
 
@@ -152,7 +152,7 @@ const giroMeta = Object.fromEntries(giros.map((g) => [g.slug, { l: g.labelCorto,
     more?.addEventListener('click', () => aplicarIndice(true));
     filters.forEach((btn) => btn.addEventListener('click', () => {
       active = btn.dataset.key ?? 'todos';
-      filters.forEach((x) => { const on = x === btn; x.style.background = on ? (x.dataset.color ?? '#F75000') : 'transparent'; x.style.color = on ? '#FFFFFF' : (x.dataset.color ?? '#94A3B8'); });
+      filters.forEach((x) => { const on = x === btn; x.style.background = on ? (x.dataset.color ?? '#C8102E') : 'transparent'; x.style.color = on ? '#FFFFFF' : (x.dataset.color ?? '#475467'); });
       aplicar();
     }));
   });

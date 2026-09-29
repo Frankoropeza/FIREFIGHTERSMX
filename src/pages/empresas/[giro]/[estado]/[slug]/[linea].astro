@@ -90,13 +90,12 @@ const h2s = 'color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1'
   </nav>
 
   <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:4rem" aria-labelledby="linea-heading">
-    <div class="absolute top-0 right-0 w-2/3 h-full pointer-events-none" aria-hidden="true" style={`background:radial-gradient(ellipse 70% 60% at 85% 40%, ${g.color}12 0%, transparent 65%)`}></div>
     <div class="container-site relative z-10 grid grid-cols-1 lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-14 items-center">
       <div>
         <div class="flex flex-wrap items-center gap-2 mb-5">
           <span class="inline-flex items-center gap-1.5 font-display font-bold text-[10px] uppercase tracking-wider px-2 py-1" style={`color:${g.color};background:${g.color}1A;border:1px solid ${g.color}40`}>
 {g.labelCorto}</span>
-          <a href={fichaURL} class="font-display text-[10px] uppercase tracking-wider px-2 py-1 hover:text-[var(--c-accent)]" style="color:var(--c-amber);background:rgba(181,71,8,0.12);border:1px solid rgba(181,71,8,0.35)">Línea de {e.nombre}</a>
+          <a href={fichaURL} class="font-display text-[10px] px-2 py-1 hover:text-[var(--c-accent)]" style="color:var(--c-amber);background:rgba(181,71,8,0.12);border:1px solid rgba(181,71,8,0.35)">Línea de {e.nombre}</a>
           <span class="font-display text-[10px] uppercase tracking-wider px-2 py-1" style="color:var(--c-text-2);border:1px solid var(--c-line-strong)">{e.ciudad}, {edo.abreviatura}</span>
         </div>
         <h1 id="linea-heading" class="font-display font-bold mb-3" style="color:var(--c-ink);font-size:clamp(1.9rem,4.2vw,3.4rem);line-height:1">{l.nombre}</h1>
@@ -156,7 +155,7 @@ const h2s = 'color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1'
                   <p class="text-sm leading-[1.85]" style="color:var(--c-text-2)">{f.descripcion}</p>
                   {f.cuando && (
                     <div>
-                      <h4 class="font-display text-[10px] uppercase tracking-wider mb-1" style="color:var(--forge-300)">Cuándo conviene<span class="sr-only"> el {f.nombre.toLowerCase()}</span></h4>
+                      <h4 class="font-display text-[10px] mb-1" style="color:var(--forge-300)">Cuándo conviene<span class="sr-only"> el {f.nombre.toLowerCase()}</span></h4>
                       <p class="text-sm leading-[1.8]" style="color:var(--c-text)">{f.cuando}</p>
                     </div>
                   )}

@@ -2,13 +2,13 @@
 import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl, TELEFONO_ACTIVO } from '@config/site';
 ---
 
-<div class="hidden md:block w-full" style="background:#020810;border-bottom:1px solid var(--c-line)">
+<div class="hidden md:block w-full" style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line)">
   <div class="container-site h-9 flex items-center justify-between gap-4">
 
     <!-- Izquierda: marca + disponibilidad + cobertura -->
     <div class="flex items-center gap-5 min-w-0">
 
-      <span class="font-display font-bold text-[11px] tracking-[0.18em] uppercase shrink-0 whitespace-nowrap" style="color:var(--c-accent)">
+      <span class="font-semibold text-[11px] tracking-[0.06em] uppercase shrink-0 whitespace-nowrap" style="color:var(--c-ink-2)">
         Equipo para bomberos y contra incendio
       </span>
 
@@ -36,8 +36,8 @@ import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl, TELEFONO_ACTIVO } from '@co
       <!-- Normas -->
       <div class="hidden xl:flex items-center gap-2">
         {['NFPA 1970', 'NOM-002-STPS', 'UL Listed'].map(n => (
-          <span class="text-[10px] font-display font-semibold tracking-wider px-2 py-0.5 whitespace-nowrap"
-                style="color:var(--c-muted);border:1px solid var(--c-line);letter-spacing:0.08em">
+          <span class="text-[10px] font-semibold px-2 py-0.5 whitespace-nowrap rounded"
+                style="color:var(--c-text-2);background:#FFFFFF;border:1px solid var(--c-line);letter-spacing:0.04em">
             {n}
           </span>
         ))}
@@ -49,9 +49,7 @@ import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl, TELEFONO_ACTIVO } from '@co
       <a
         href={`mailto:${SITE.email}`}
         class="hidden lg:flex items-center gap-1.5"
-        style="color:var(--forge-300)"
-        onmouseover="this.style.color='#CBD5E1'"
-        onmouseout="this.style.color='var(--forge-300)'"
+        style="color:var(--c-text-2)"
       >
         
         <span class="text-[11px]">{SITE.email}</span>
@@ -65,8 +63,6 @@ import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl, TELEFONO_ACTIVO } from '@co
         href={`tel:${SITE.phoneE164}`}
         class="flex items-center gap-1.5"
         style="color:var(--c-text-2)"
-        onmouseover="this.style.color='#F75000'"
-        onmouseout="this.style.color='#94A3B8'"
       >
         
         <span class="text-[11px] font-medium">{SITE.phone}</span>
@@ -80,10 +76,8 @@ import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl, TELEFONO_ACTIVO } from '@co
       <a
         href={whatsappUrl('Hola, necesito información sobre equipo de bomberos.')}
         target="_blank" rel="noopener"
-        class="flex items-center gap-1.5 px-2.5 py-1"
-        style={CONTACTO_DIRECTO_ACTIVO ? 'background:rgba(37,211,102,0.1);border:1px solid rgba(37,211,102,0.2);color:#25d366' : 'background:rgba(247,80,0,0.1);border:1px solid rgba(247,80,0,0.2);color:#FF8F57'}
-        onmouseover="this.style.background='rgba(37,211,102,0.18)'"
-        onmouseout="this.style.background='rgba(37,211,102,0.1)'"
+        class="flex items-center gap-1.5 px-2.5 py-0.5 rounded"
+        style={CONTACTO_DIRECTO_ACTIVO ? 'background:#E7F8EE;border:1px solid rgba(6,118,71,0.2);color:var(--c-success)' : 'background:var(--c-accent-soft);border:1px solid rgba(200,16,46,0.2);color:var(--c-accent)'}
       >
         
         <span class="text-[11px] font-medium">{CONTACTO_DIRECTO_ACTIVO ? 'WhatsApp' : 'Correo'}</span>

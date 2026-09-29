@@ -14,7 +14,7 @@ const topPorGiro = Object.fromEntries(await Promise.all(giros.map(async (g) => [
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
       <div>
         <span class="section-eyebrow mb-4 inline-flex">Por giro</span>
-        <h2 id="giros-heading" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Cinco giros de equipo contra incendio:<br/><span style="color:var(--c-accent)">extintores, hidrantes, sistemas y EPP.</span></h2>
+        <h2 id="giros-heading" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">Cinco giros de equipo contra incendio:<br/><span style="color:var(--c-accent)">extintores, hidrantes, sistemas y EPP.</span></h2>
       </div>
       <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
         <p class="text-sm leading-relaxed mb-3" style="color:var(--c-text-2)">El sector no tiene clasificación oficial propia: el SCIAN reparte a estas empresas en más de treinta clases. Nosotros las agrupamos por lo que realmente hacen, para que un jefe de bomberos, una brigada industrial o un comprador de gobierno encuentre al proveedor correcto sin intermediarios.</p>
@@ -32,9 +32,8 @@ const topPorGiro = Object.fromEntries(await Promise.all(giros.map(async (g) => [
             <a href={`/empresas/${g.slug}/`} class="relative block overflow-hidden" style="aspect-ratio:16/10" aria-label={`Empresas de ${g.labelCorto.toLowerCase()} en México`}>
               <img src={g.imagen} alt={g.imagenAlt} width="640" height="400" loading="lazy" decoding="async"
                 class="giro-img absolute inset-0 w-full h-full object-cover" style="object-position:center 30%" />
-              <div class="absolute inset-0" aria-hidden="true" style="background:linear-gradient(180deg, rgba(4,10,18,0.1) 0%, rgba(4,10,18,0.05) 55%, rgba(4,10,18,0.75) 100%)"></div>
               {/* Chip del giro */}
-              <span class="absolute top-4 left-4 inline-flex items-center gap-1.5 font-display font-bold text-[10px] uppercase tracking-wider px-2 py-1" style={`color:var(--c-ink);background:${g.color};box-shadow:0 2px 12px ${g.color}66`}>
+              <span class="absolute top-4 left-4 inline-flex items-center gap-1.5 font-display font-bold text-[10px] uppercase tracking-wider px-2 py-1" style={`color:#FFFFFF;background:${g.color};box-shadow:0 2px 12px ${g.color}66`}>
                 {g.labelCorto}
               </span>
             </a>

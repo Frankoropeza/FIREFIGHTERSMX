@@ -116,9 +116,7 @@ const descripcion =
       <>
         {/* Fondo placeholder de marca: gradiente navy + glow naranja */}
         <div class="absolute inset-0" aria-hidden="true"
-          style="background:linear-gradient(140deg,#0E2236 0%,#0A1626 45%,var(--c-bg-alt) 100%)"></div>
-        <div class="absolute inset-0 pointer-events-none" aria-hidden="true"
-          style="background:radial-gradient(ellipse 75% 70% at 80% 15%, rgba(200,16,46,0.16) 0%, transparent 65%)"></div>
+          style="background:var(--c-bg-alt)"></div>
         {/* Patrón de grid */}
         
         {/* Abreviatura watermark */}
@@ -133,13 +131,13 @@ const descripcion =
     {/* Eyebrow región — arriba izquierda */}
     <div class="relative z-10 flex items-start justify-between gap-2">
       <span class="font-display font-semibold text-[9px] uppercase tracking-[0.22em] px-2 py-1"
-        style="background:rgba(4,10,18,0.55);border:1px solid var(--c-line-strong);color:var(--c-text-2);backdrop-filter:blur(2px)">
+        style="background:#FFFFFF;border:1px solid var(--c-line);color:var(--c-ink-2);border-radius:4px">
         {est.abreviatura} · {est.region}
       </span>
 
       {/* Pill de conteo — arriba derecha */}
       <span class="flex items-baseline gap-1 px-2.5 py-1"
-        style="background:rgba(200,16,46,0.14);border:1px solid rgba(200,16,46,0.45)">
+        style="background:#FFFFFF;border:1px solid var(--c-line);border-radius:4px">
         <span class="font-display font-bold text-lg leading-none" style="color:var(--c-accent)">{count}</span>
         <span class="font-display font-semibold text-[8px] uppercase tracking-widest" style="color:var(--c-accent)">
           {count === 1 ? 'estación' : 'estaciones'}
@@ -149,11 +147,7 @@ const descripcion =
 
     {/* Ícono circular — abajo izquierda */}
     <div class="relative z-10 flex items-center gap-2.5">
-      <span class="flex items-center justify-center rounded-full shrink-0"
-        style="width:42px;height:42px;background:rgba(4,10,18,0.65);border:1.5px solid rgba(200,16,46,0.45);color:var(--c-accent)">
-        
-      </span>
-      <span class="font-display font-semibold text-[10px] uppercase tracking-widest" style="color:rgba(16,24,40,0.55)">
+      <span class="font-display font-semibold text-[10px] uppercase tracking-widest" style="color:#FFFFFF;background:var(--c-accent);padding:0.25rem 0.5rem;border-radius:4px">
         Directorio
       </span>
     </div>
@@ -171,7 +165,7 @@ const descripcion =
     </h3>
 
     {/* Texto — descripción ampliada del estado */}
-    <p class="text-xs m-0" style="color:#7C8DA3;line-height:1.75">
+    <p class="text-xs m-0" style="color:#667085;line-height:1.75">
       {descripcion}
     </p>
 
@@ -188,8 +182,8 @@ const descripcion =
     {/* Botón — Ver estaciones del estado */}
     <div class="mt-auto pt-1">
       <span
-        class="ec-cta inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 font-display font-bold text-xs uppercase tracking-wider"
-        style="background:var(--c-accent);color:#FFFFFF;letter-spacing:0.08em"
+        class="ec-cta inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 font-display font-bold text-xs "
+        style="background:var(--c-accent);color:#FFFFFF"
       >
         Bomberos en {est.nombre}
         

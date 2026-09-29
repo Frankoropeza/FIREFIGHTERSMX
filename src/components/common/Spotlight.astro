@@ -26,7 +26,7 @@ export interface Props {
 const {
   id, eyebrow, title, highlight, paragraphs, subsections,
   image, imageAlt, href, ctaLabel, whatsappMsg,
-  captionLeft, captionRight, background = '#070E1A',
+  captionLeft, captionRight, background = '#F7F8FA',
 } = Astro.props;
 ---
 
@@ -38,7 +38,7 @@ const {
       <div>
         <span class="section-eyebrow mb-5 inline-flex">{eyebrow}</span>
 
-        <h2 id={`spotlight-${id}`} class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(2rem,3.8vw,3rem);line-height:1.05">
+        <h2 id={`spotlight-${id}`} class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
           {title}<br/>
           <span style="color:var(--c-accent)">{highlight}</span>
         </h2>

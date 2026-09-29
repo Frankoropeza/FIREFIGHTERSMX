@@ -1,41 +1,28 @@
 ---
 ---
 
-<section class="relative overflow-hidden" style="background:var(--c-bg);min-height:calc(100vh - 108px)" aria-label="Hero">
+<section class="relative border-b" style="background:linear-gradient(180deg, var(--c-bg) 0%, var(--c-bg) 55%, var(--c-bg-alt) 100%);border-color:var(--c-line)" aria-label="Hero">
 
-  <!-- Glow naranja derecho -->
-  <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(200,16,46,0.10) 0%, transparent 65%)" aria-hidden="true"></div>
-  <!-- Glow azul abajo izquierdo -->
-  <div class="absolute bottom-0 left-0 w-2/5 h-2/3 pointer-events-none" style="background:radial-gradient(ellipse 80% 60% at 0% 100%, rgba(18,33,51,0.95) 0%, transparent 70%)" aria-hidden="true"></div>
-
-  <!-- Grid de líneas sutil -->
-  
-
-  <!-- Línea divisoria vertical decorativa -->
-  <div class="absolute inset-y-0 left-[52%] w-px hidden xl:block pointer-events-none"
-       style="background:linear-gradient(to bottom, transparent 5%, rgba(200,16,46,0.12) 25%, rgba(200,16,46,0.12) 75%, transparent 95%)"
-       aria-hidden="true"></div>
-
-  <!-- Layout principal -->
-  <div class="container-site relative z-10 grid grid-cols-1 xl:grid-cols-[55fr_45fr] gap-0" style="min-height:calc(100vh - 108px)">
+  <!-- Layout principal: dos columnas al 50 % exacto (grid-cols-2 = minmax(0,1fr) × 2) -->
+  <div class="container-site relative grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 xl:gap-20 items-stretch py-14 sm:py-16 lg:py-24">
 
     <!-- ─── COLUMNA IZQUIERDA: Título ─── -->
-    <div class="flex flex-col justify-center py-16 lg:py-20 xl:pr-20">
+    <div class="flex flex-col justify-center min-w-0">
 
       <!-- Eyebrow -->
-      <div class="flex flex-wrap items-center gap-3 mb-8">
+      <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mb-6">
         <span class="section-eyebrow">Distribución Autorizada · México</span>
-        <span class="flex items-center gap-1.5 text-xs font-medium" style="color:var(--c-accent)">
+        <span class="flex items-center gap-1.5 text-xs font-medium" style="color:var(--c-text-2)">
           <span class="w-1.5 h-1.5 rounded-full shrink-0" style="background:var(--c-accent)"></span>
           32 estados · Respuesta &lt; 24 h
         </span>
       </div>
 
       <!-- Headline principal -->
-      <h1 class="font-display font-bold uppercase mb-8" style="line-height:0.88;letter-spacing:0.01em">
-        <span class="block" style="font-size:clamp(3rem,7.5vw,7rem);color:var(--c-ink)">Equipo contra</span>
-        <span class="block" style="font-size:clamp(3rem,7.5vw,7rem);color:var(--c-accent)">Incendio</span>
-        <span class="block mt-3" style="font-size:clamp(1.1rem,2.2vw,1.75rem);color:var(--c-text-2);letter-spacing:0.06em;font-weight:600">
+      <h1 class="font-display font-bold mb-9" style="line-height:1.02;letter-spacing:-0.035em">
+        <span class="block" style="font-size:clamp(2.5rem,5.2vw,5.75rem);color:var(--c-ink)">Equipo contra</span>
+        <span class="block" style="font-size:clamp(2.5rem,5.2vw,5.75rem);color:var(--c-accent)">incendio</span>
+        <span class="block mt-7 pt-7 border-t" style="border-color:var(--c-line);font-size:clamp(1.125rem,1.45vw,1.375rem);color:var(--c-text-2);letter-spacing:-0.005em;font-weight:500;line-height:1.5">
           Extintores, sistemas contra incendio y equipo para bomberos certificado NFPA
         </span>
       </h1>
@@ -47,25 +34,25 @@
     </div>
 
     <!-- ─── COLUMNA DERECHA: Por qué elegirnos ─── -->
-    <div class="flex flex-col" style="border-left:1px solid var(--c-line)">
+    <div class="flex flex-col min-w-0 overflow-hidden" style="background:var(--c-surface);border:1px solid var(--c-line);border-top:3px solid var(--c-accent);border-radius:var(--radius-card);box-shadow:var(--shadow-card-hover)">
 
       <!-- Texto: Por qué elegirnos -->
-      <div class="flex flex-col justify-center py-10 px-8 xl:px-12 flex-1">
+      <div class="flex flex-col justify-center p-7 sm:p-10 xl:p-12 flex-1">
 
         <!-- Eyebrow -->
-        <div class="flex items-center gap-2 mb-6">
+        <div class="flex items-center gap-2 mb-7">
           <span class="w-8 h-px shrink-0" style="background:var(--c-accent)"></span>
-          <span class="text-xs font-display font-semibold uppercase tracking-[0.18em]" style="color:var(--c-accent)">
+          <span class="text-xs font-semibold uppercase tracking-[0.08em]" style="color:var(--c-accent)">
             Por qué elegirnos
           </span>
         </div>
 
         <!-- Párrafo 1 -->
-        <div class="mb-6 pb-6" style="border-bottom:1px solid var(--c-line)">
-          <h2 class="font-display font-bold text-lg mb-3 leading-snug" style="color:var(--c-ink)">
+        <div class="mb-7 pb-7" style="border-bottom:1px solid var(--c-line)">
+          <h2 class="font-display font-semibold text-[1.0625rem] xl:text-lg mb-3 leading-snug" style="color:var(--c-ink);letter-spacing:-0.01em">
             Distribuidor autorizado de Tyco, Honeywell, MSA, Dräger, Globe y Holmatro, con 15 años equipando a empresas y cuerpos de bomberos en México.
           </h2>
-          <p class="text-sm leading-[1.9]" style="color:var(--c-muted)">
+          <p class="text-sm xl:text-[0.9375rem] leading-[1.75]" style="color:var(--c-text-2)">
             Somos distribuidores autorizados de <strong style="color:var(--c-text)">Tyco, Honeywell, Globe, MSA, Dräger, Bullard,
             Holmatro y 3M Scott</strong> en México: del extintor y el detector de humo al sistema contra incendio completo. Cada equipo lleva número de serie verificable con fábrica
             y ficha técnica lista para auditoría STPS, CompraNet o PEMEX.
@@ -74,10 +61,10 @@
 
         <!-- Párrafo 2 -->
         <div>
-          <h2 class="font-display font-bold text-lg mb-3 leading-snug" style="color:var(--c-ink)">
+          <h2 class="font-display font-semibold text-[1.0625rem] xl:text-lg mb-3 leading-snug" style="color:var(--c-ink);letter-spacing:-0.01em">
             Protección contra incendios certificada NFPA y NOM, con documentación para licitación en menos de 24 horas.
           </h2>
-          <p class="text-sm leading-[1.9]" style="color:var(--c-muted)">
+          <p class="text-sm xl:text-[0.9375rem] leading-[1.75]" style="color:var(--c-text-2)">
             Asesoría técnica en <strong style="color:var(--c-text)">NOM-002-STPS, protección civil y licitaciones</strong>.
             Cobertura en los 32 estados, stock permanente, capacitación DC-3 incluida y garantía de fábrica
             de hasta 10 años.
@@ -87,8 +74,5 @@
       </div>
     </div>
   </div>
-
-  <!-- Línea de acento inferior -->
-  <div class="h-px w-full" style="background:linear-gradient(90deg, transparent, rgba(200,16,46,0.4) 30%, rgba(200,16,46,0.4) 70%, transparent)"></div>
 
 </section>

@@ -38,7 +38,7 @@ export const industries: Industry[] = [
     norm: 'NFPA 1970 · CompraNet',
     description: 'Equipamiento integral para cuerpos de bomberos municipales: trajes NFPA 1970, SCBA, herramientas de rescate y soporte completo para licitaciones públicas.',
     shortDesc: 'Equipamiento integral y soporte para licitaciones de cuerpos de bomberos.',
-    accent: 'var(--c-accent)',
+    accent: '#C8102E',
     icon: ``,
     href: '/industrias/bomberos-municipales',
     intro: [
@@ -81,7 +81,7 @@ export const industries: Industry[] = [
     norm: 'NOM-002-STPS · DC-3',
     description: 'Equipamiento y capacitación para brigadas industriales conforme NOM-002-STPS: EPP, extintores, detección y constancias DC-3. Llave en mano para tu planta.',
     shortDesc: 'NOM-002 llave en mano: equipo, capacitación DC-3 y documentación.',
-    accent: 'var(--c-amber)',
+    accent: '#B54708',
     icon: ``,
     href: '/industrias/brigadas-industriales',
     intro: [
@@ -124,7 +124,7 @@ export const industries: Industry[] = [
     norm: 'NFPA 403 · OACI',
     description: 'Equipamiento ARFF para aeropuertos: trajes de proximidad aluminizados, SCBA 60 min, espuma AFFF y capacitación para rescate y extinción en aeronaves.',
     shortDesc: 'Trajes de proximidad, SCBA de 60 min y espuma para rescate en aeronaves.',
-    accent: 'var(--c-accent)',
+    accent: '#C8102E',
     icon: ``,
     href: '/industrias/aeropuertos-arff',
     intro: [
@@ -167,7 +167,7 @@ export const industries: Industry[] = [
     norm: 'NFPA 101 · NOM-002',
     description: 'Protección contra incendio para hospitales: agentes limpios, detección y alarma por zonas, brigadas con evacuación de pacientes y cumplimiento COFEPRIS.',
     shortDesc: 'Agentes limpios, alarmas por zona y brigadas con evacuación de pacientes.',
-    accent: 'var(--c-success)',
+    accent: '#067647',
     icon: ``,
     href: '/industrias/hospitales',
     intro: [
@@ -210,7 +210,7 @@ export const industries: Industry[] = [
     norm: 'NFPA 101 · NOM-002',
     description: 'Protección contra incendio para hoteles: rociadores, detección en habitaciones, señalización de evacuación multilingüe y brigadas — cumplimiento PC y aseguradoras.',
     shortDesc: 'Rociadores, detección en habitaciones y brigadas para huéspedes seguros.',
-    accent: 'var(--c-amber)',
+    accent: '#B54708',
     icon: ``,
     href: '/industrias/hoteles',
     intro: [
@@ -253,7 +253,7 @@ export const industries: Industry[] = [
     norm: 'NFPA · ASEA · PEMEX',
     description: 'Equipamiento contra incendio para refinerías y petroquímica: HAZMAT Nivel A, SCBA 60 min, detección de gases, espumas y cumplimiento de anexos PEMEX.',
     shortDesc: 'HAZMAT, SCBA de autonomía extendida y detección para hidrocarburos.',
-    accent: 'var(--c-accent)',
+    accent: '#C8102E',
     icon: ``,
     href: '/industrias/refinerias-pemex',
     intro: [
@@ -296,7 +296,7 @@ export const industries: Industry[] = [
     norm: 'NOM-023-STPS · NOM-032',
     description: 'Equipamiento contra incendio y rescate para minería: SCBA para espacios confinados, detección multi-gas NOM-032, autorrescatadores y brigadas de rescate minero.',
     shortDesc: 'SCBA, detección multi-gas y rescate para tiro y tajo abierto.',
-    accent: 'var(--c-amber)',
+    accent: '#B54708',
     icon: ``,
     href: '/industrias/mineria',
     intro: [
@@ -339,7 +339,7 @@ export const industries: Industry[] = [
     norm: 'SINAPROC · NFPA',
     description: 'Equipamiento para unidades de Protección Civil estatal y municipal: EPP de respondiente, rescate urbano USAR, drones térmicos y capacitación certificada.',
     shortDesc: 'EPP, rescate USAR y drones para coordinaciones estatales y municipales.',
-    accent: 'var(--c-success)',
+    accent: '#067647',
     icon: ``,
     href: '/industrias/proteccion-civil',
     intro: [
