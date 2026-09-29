@@ -39,11 +39,16 @@ import LineaCard from '@components/products/LineaCard.astro';
       </header>
 
       <ul class="card-grid ch-grid" role="list">
-        {familia.lineas.map((l) => (
-          <li>
+        {familia.lineas.map((l, i) => {
+          // Fila final incompleta (4 por fila): sus cards se ensanchan para cerrar la fila sin huecos.
+          const n = familia.lineas.length, r = n % 4, enUltimaFila = r > 0 && i >= n - r;
+          const ancho = !enUltimaFila ? '' : r === 1 ? 'ch-span-4' : r === 2 ? 'ch-span-2' : (i === n - r ? 'ch-span-2' : '');
+          return (
+          <li class={ancho || undefined}>
             <LineaCard href={l.href} norma={l.norma} titulo={l.titulo} texto={l.texto} imagen={imagenLinea(l.slug)} imagenAlt={l.imagenAlt} hijas={l.hijas} cta={l.cta} />
           </li>
-        ))}
+          );
+        })}
       </ul>
 
       <div class="ch-hub"><a href={familia.hub.href} class="btn btn-ghost">{familia.hub.label}</a></div>
@@ -82,6 +87,16 @@ import LineaCard from '@components/products/LineaCard.astro';
 
   /* Rejilla: 1 · 2 · 4 columnas */
   .ch-grid { margin: 0; padding: 0; list-style: none; }
+  /* Cards que cierran una fila incompleta: ocupan 2 (o 4) columnas y pasan a
+     formato horizontal (imagen a la izquierda, contenido a la derecha). */
+  @media (min-width: 1024px) {
+    .ch-span-2 { grid-column: span 2; }
+    .ch-span-4 { grid-column: span 4; }
+    .ch-span-2 :global(.lc), .ch-span-4 :global(.lc) { flex-direction: row; }
+    .ch-span-2 :global(.lc-media), .ch-span-4 :global(.lc-media) { flex: 0 0 46%; aspect-ratio: auto; min-height: 100%; }
+    .ch-span-4 :global(.lc-media) { flex-basis: 40%; }
+    .ch-span-2 :global(.lc-body), .ch-span-4 :global(.lc-body) { padding: 1.5rem; }
+  }
 
   .ch-hub { display: flex; justify-content: flex-end; margin-top: 1.75rem; }
   @media (max-width: 639px) { .ch-hub .btn { width: 100%; white-space: normal; text-align: center; } }
