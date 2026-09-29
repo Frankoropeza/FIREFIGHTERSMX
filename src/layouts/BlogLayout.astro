@@ -5,6 +5,7 @@ import { portadaBlog } from '@lib/portada-blog';
 import { whatsappUrl, CANAL_CONTACTO } from '@config/site';
 import { slugifyTag } from '@lib/slug';
 import RelatedLinks from '@components/common/RelatedLinks.astro';
+import { faqSchemaDesdeMarkdown } from '@lib/faq-blog';
 
 export interface Props {
   post: CollectionEntry<'blog'>;
@@ -32,6 +33,9 @@ const articleSchema = {
   dateModified: (updatedDate ?? pubDate).toISOString(),
   mainEntityOfPage: Astro.url.href,
 };
+
+// FAQPage derivado de la sección «Preguntas frecuentes» visible del artículo.
+const faqSchema = faqSchemaDesdeMarkdown(post.body);
 ---
 {/* Sin sufijo fijo en el title: los titulares de blog ya son largos y el
     sufijo sólo provocaba que Google truncara. SEO.astro lo anexa si cabe. */}
@@ -40,7 +44,7 @@ const articleSchema = {
   description={description}
   ogType="article"
   ogImage={image?.url}
-  schema={articleSchema}
+  schema={faqSchema ? [articleSchema, faqSchema] : articleSchema}
 >
   <!-- LCP preload hint -->
   {image?.url && (
