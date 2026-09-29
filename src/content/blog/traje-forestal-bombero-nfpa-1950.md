@@ -12,9 +12,9 @@ image:
   alt: "Combatiente forestal con camisola amarilla trabajando una línea de fuego en un bosque de pino"
 ---
 
-Un traje forestal para bombero es ropa de una capa para que tú trabajes en vegetación con movilidad durante jornadas largas. La referencia vigente es NFPA 1950 (2025), que sustituyó la antigua NFPA 1977. Un estructural y un overol industrial cubren riesgos distintos. No los intercambies por disponibilidad.
+Un traje forestal para bombero es ropa de una capa que permite trabajar en vegetación con movilidad durante jornadas largas. La referencia vigente es NFPA 1950 (2025), que sustituyó la antigua NFPA 1977. Un estructural y un overol industrial cubren riesgos distintos, por lo que no deben intercambiarse por disponibilidad.
 
-¿Tu gente camina en línea de fuego con herramienta y mochila? Ejemplo: una unidad que avanza por terreno irregular necesita que chaqueta, guantes, goggles y botas permitan moverse juntos. La ropa ayuda. Tú aún necesitas agua, relevo, comunicación y una ruta de escape.
+¿Tu gente camina en línea de fuego con herramienta y mochila? Una unidad que avanza por terreno irregular necesita que chaqueta, guantes, goggles y botas permitan moverse en conjunto. La ropa ayuda, pero también se requieren agua, relevo, comunicación y una ruta de escape.
 
 > **Lo esencial**
 >
@@ -26,13 +26,13 @@ Un traje forestal para bombero es ropa de una capa para que tú trabajes en vege
 
 ## ¿Qué es un traje forestal para bombero?
 
-Un incendio forestal combina combustibles vegetales, terreno irregular, desplazamientos repetidos, cambios de viento y tareas que pueden prolongarse durante muchas horas. La ropa debe contribuir a proteger frente a flama. Calor y partículas propias de esa operación. Sin impedir que el combatiente camine, se hidrate, opere herramienta o conserve una salida segura.
+Un incendio forestal combina combustibles vegetales, terreno irregular, desplazamientos repetidos, cambios de viento y tareas que pueden prolongarse durante muchas horas. La ropa debe contribuir a proteger frente a flama, calor y partículas propias de esa operación, sin impedir que el combatiente camine, se hidrate, opere herramienta o conserve una salida segura.
 
 Por eso el traje forestal no se define como “un estructural más ligero”. El conjunto estructural se construye normalmente con una capa exterior, una barrera de humedad y un forro térmico, y se selecciona para combate estructural conforme a su certificación. El forestal se concibe para un escenario distinto, con una construcción usualmente de una capa de material resistente a la flama. El desempeño, la carga térmica y las interfaces que se necesitan no son intercambiables.
 
 La [guía completa del traje de bombero](/blog/traje-de-bombero-guia-completa/) ofrece una vista general de las familias de protección. Para decidir entre ellas, empieza por la operación real: línea de fuego en vegetación, incendio de interfaz, rescate técnico o ataque interior. El nombre “bombero” no alcanza para seleccionar la misma ropa en todos los casos.
 
-Tu ruta importa. Tú vigilas el viento. Tus botas sostienen el paso. Te retiras si cambia el escenario.
+La ruta, el viento y la estabilidad del paso importan tanto como la ropa; si cambia el escenario, hay que retirarse.
 
 ## ¿Qué exige la NFPA 1950 al traje forestal?
 
@@ -42,8 +42,8 @@ La actualización del nombre de la norma no convierte automáticamente un produc
 
 | Documento o referencia | Cómo debe interpretarse hoy | Qué pedir al proveedor |
 |---|---|---|
-| la referencia forestal vigente | Norma vigente que consolidó, entre otras, la antigua la referencia anterior | Certificado o declaración aplicable al modelo ofertado |
-| la referencia anterior en ficha histórica | Referencia anterior para equipo forestal | Edición, fecha de la ficha y correspondencia documentada |
+| NFPA 1950 (2025) | Norma vigente que consolidó, entre otras, la antigua NFPA 1977 | Certificado o declaración aplicable al modelo ofertado |
+| NFPA 1977 en ficha histórica | Referencia anterior para equipo forestal | Edición, fecha de la ficha y correspondencia documentada |
 | “Equivalente NFPA” | Declaración que no acredita por sí misma a certificación de tercero | Alcance, soporte y límites del término “equivalente” |
 | Tela resistente a la flama | Característica de un material, no certificación automática del conjunto | Material, construcción, uso previsto y expediente de la prenda |
 
@@ -88,7 +88,7 @@ El [catálogo de equipo forestal](/productos/equipo-forestal/) sirve para ubicar
 
 El trabajo forestal puede acumular calor metabólico por caminar, cargar herramienta y operar en clima caliente, además del calor del incendio. La construcción de una capa busca reducir parte de esa carga frente a un conjunto multicapa, pero no elimina el riesgo de agotamiento por calor. El estado físico, hidratación, sombra, relevo, tiempo de trabajo, terreno y supervisión siguen definiendo la exposición real.
 
-Evita usar valores de TPP o THL de un traje estructural para declarar que un conjunto forestal “es más fresco” o “protege menos” en términos absolutos. Son familias que se prueban y se seleccionan para riesgos distintos. La pregunta correcta es si la prenda forestal ofertada tiene el soporte adecuada para el escenario de vegetación, no si supera a un estructural en una cifra aislada.
+Evita usar valores de TPP o THL de un traje estructural para declarar que un conjunto forestal “es más fresco” o “protege menos” en términos absolutos. Son familias que se prueban y se seleccionan para riesgos distintos. La pregunta correcta es si la prenda forestal ofertada tiene el soporte adecuado para el escenario de vegetación, no si supera a un estructural en una cifra aislada.
 
 El responsable operativo puede incluir controles como los siguientes dentro de su procedimiento, conforme al análisis del sitio:
 
@@ -96,7 +96,7 @@ El responsable operativo puede incluir controles como los siguientes dentro de s
 2. **Asegurar agua, comunicación y orientación.** No dejes que el equipo de protección se convierta en el único control previsto frente al calor o la pérdida de ruta.
 3. **Vigilar cambios del entorno.** Viento, pendiente, combustible y humo pueden cambiar la tarea y exigir retirada o reasignación.
 4. **Inspeccionar el conjunto entre jornadas.** Busca contaminación, daño, humedad atrapada y piezas que reduzcan movilidad o visibilidad.
-5. **Mantener una decisión de no ingreso.** Si el riesgo no coincide con el alcance de la ropa. El control es retirarse y escalar la respuesta, no añadir capas al azar.
+5. **Mantener una decisión de no ingreso.** Si el riesgo no coincide con el alcance de la ropa, el control es retirarse y escalar la respuesta, no añadir capas al azar.
 
 Estas medidas no dependen de una marca de traje. Convierten la protección personal en parte de un sistema de trabajo que reconoce que la exposición forestal se administra antes, durante y después de la línea de fuego.
 
@@ -106,18 +106,18 @@ La disponibilidad de inventario puede empujar a usar la prenda que está en bode
 
 | Familia | Escenario principal | Construcción habitual | Referencia que orienta la compra |
 |---|---|---|---|
-| Forestal | Incendio en vegetación y tareas prolongadas en terreno | Una capa resistente a la flama | la referencia forestal vigente (antes la referencia anterior) |
-| Estructural | Ataque estructural conforme al conjunto certificado | Exterior, barrera de humedad y barrera térmica | la referencia estructural vigente |
-| Brigadista industrial | Primera respuesta y tareas delimitadas en un centro de trabajo | Depende del riesgo y la ficha de la prenda | la NOM de incendios, la NOM de EPP y referencias de producto aplicables |
+| Forestal | Incendio en vegetación y tareas prolongadas en terreno | Una capa resistente a la flama | NFPA 1950 (2025), antes NFPA 1977 |
+| Estructural | Ataque estructural conforme al conjunto certificado | Exterior, barrera de humedad y barrera térmica | NFPA 1970 (2025) |
+| Brigadista industrial | Primera respuesta y tareas delimitadas en un centro de trabajo | Depende del riesgo y la ficha de la prenda | NOM-002-STPS-2010, NOM-017-STPS-2024 y referencias de producto aplicables |
 | Aproximación | Calor radiante intenso en una operación controlada | Exterior aluminizado con capas internas según modelo | Certificación y uso publicados para el conjunto |
 
-La [comparación de traje estructural, proximidad y forestal](/blog/traje-estructural-proximidad-forestal-diferencias/) explica el alcance de estas diferencias. Si una brigada industrial necesita proteger un conato dentro de una instalación. Revisa antes [cómo elegir un traje de bombero brigadista](/blog/traje-de-bombero-brigadista/); si combate vegetación, no conviertas una prenda de planta en “forestal” sólo por su color o por ser resistente a la flama.
+La [comparación de traje estructural, proximidad y forestal](/blog/traje-estructural-proximidad-forestal-diferencias/) explica el alcance de estas diferencias. Si una brigada industrial necesita proteger un conato dentro de una instalación, revisa antes [cómo elegir un traje de bombero brigadista](/blog/traje-de-bombero-brigadista/); si combate vegetación, no conviertas una prenda de planta en “forestal” sólo por su color o por ser resistente a la flama.
 
 ## ¿Cómo comprar un traje forestal?
 
 Una especificación útil describe la necesidad sin inventar rendimiento ni cerrar la competencia a una etiqueta incompleta. Debe permitir que compras, seguridad y proveedor hablen del mismo conjunto. Empieza por el uso previsto y separa la ropa de los accesorios que se cotizan aparte.
 
-Haz el recorrido con tu cuadrilla y con la herramienta que usan. ¿Tu manga sigue traslapando el guante cuando levantas los brazos? ¿Tus goggles se mantienen en su sitio al mirar hacia abajo? Ejemplo: una prueba de movilidad puede mostrar que tu mochila golpea un bolsillo. Tú puedes corregir el requisito antes de adjudicar. Tus relevos también necesitan conocer el conjunto. Te será más fácil cuidar lo que todos han probado.
+Haz el recorrido con tu cuadrilla y con la herramienta que usan. Comprueba que la manga traslape el guante al levantar los brazos y que los goggles se mantengan en su sitio al mirar hacia abajo. Una prueba de movilidad puede mostrar, por ejemplo, que la mochila golpea un bolsillo; así podrás corregir el requisito antes de adjudicar. Los relevos también deben conocer el conjunto para cuidar aquello que ya probaron.
 
 - Indica que la aplicación es combate de incendios forestales o de vegetación y describe las tareas de la unidad.
 - Solicita modelo, fabricante, materiales, construcción, tallas y cuidados de chaqueta y pantalón u overol.
@@ -125,11 +125,11 @@ Haz el recorrido con tu cuadrilla y con la herramienta que usan. ¿Tu manga sigu
 - Define los accesorios requeridos por el programa: casco, goggles, guantes, botas, protección de cuello, hidratación, radio u otros.
 - Exige prueba de talla y movilidad con los accesorios que se usarán realmente.
 - Especifica qué documentos se entregan con cada conjunto: etiquetas, manual, instrucciones de limpieza y datos para trazabilidad.
-- Incluye criterios de recepción para verificar que la conjunto entregada coincide con la oferta evaluada.
+- Incluye criterios de recepción para verificar que el conjunto entregado coincide con la oferta evaluada.
 
-La oferta no debe presentar una tela suelta como soporte suficiente de todo el conjunto. Por ejemplo, [Fire-Dex Wildland](/productos/trajes-bombero/firedex-wildland/) publica variantes de dos piezas u overol para esa familia. Mientras que [LION ENgage Wildland](/productos/trajes-bombero/lion-engage-wildland/) identifica una sarga de aramida FR y la referencia EN 15614. Son puntos de partida para pedir expediente de cada modelo, no una declaración de que ambos tienen el mismo alcance normativo.
+La oferta no debe presentar una tela suelta como soporte suficiente de todo el conjunto. Por ejemplo, [Fire-Dex Wildland](/productos/trajes-bombero/firedex-wildland/) publica variantes de dos piezas u overol para esa familia, mientras que [LION ENgage Wildland](/productos/trajes-bombero/lion-engage-wildland/) identifica una sarga de aramida FR y la referencia EN 15614. Son puntos de partida para pedir el expediente de cada modelo, no una declaración de que ambos tienen el mismo alcance normativo.
 
-Para la evaluación de un proveedor del giro, [un proveedor mexicano con línea forestal](/blog/trajesbombero-mexico-proveedor-especializado-trajes-bomberos/) puede aportar contexto de catálogo; el expediente de compra debe conservar, además, el soporte directamente asociada a la prenda que se adjudique.
+Para evaluar a un proveedor del giro, [un proveedor mexicano con línea forestal](/blog/trajesbombero-mexico-proveedor-especializado-trajes-bomberos/) puede aportar contexto de catálogo; el expediente de compra debe conservar, además, el soporte directamente asociado a la prenda que se adjudique.
 
 ## Inspección, limpieza y retiro del traje forestal
 
@@ -147,7 +147,7 @@ No pidas sólo “traje NFPA”. Indica modelo, edición, alcance, piezas y prue
 
 ### ¿Qué norma aplica al traje forestal para bombero?
 
-La referencia vigente es la referencia forestal vigente, que consolidó los requisitos antes tratados en la referencia anterior para equipo de combate de incendios forestales. Al comprar, no alcanza con citar el número de norma: solicita el modelo, edición, alcance y certificado o declaración del fabricante. Muchas fichas aún muestran la referencia anterior; deben interpretarse como referencia anterior y comprobarse contra la expediente disponible.
+La referencia vigente es NFPA 1950 (2025), que consolidó los requisitos antes tratados en NFPA 1977 para equipo de combate de incendios forestales. Al comprar, no alcanza con citar el número de norma: solicita el modelo, la edición, el alcance y el certificado o declaración del fabricante. Muchas fichas aún muestran NFPA 1977; deben interpretarse como referencias anteriores y comprobarse contra el expediente disponible.
 
 ### ¿Por qué el traje forestal tiene una sola capa?
 
@@ -159,11 +159,11 @@ No debe elegirse como reemplazo automático. El estructural está diseñado para
 
 ### ¿Qué incluye el equipo de un combatiente forestal?
 
-Además de la ropa principal, el conjunto puede requerir casco, goggles, protección de cuello, guantes, botas y elementos de hidratación o comunicación, según el programa operativo. Algunas organizaciones también prevén recursos específicos como refugio. Lo importante es revisar las interfaces con la ropa. El terreno y la tarea: ninguna lista genérica sustituye la evaluación de riesgo y el entrenamiento del personal que la usará.
+Además de la ropa principal, el conjunto puede requerir casco, goggles, protección de cuello, guantes, botas y elementos de hidratación o comunicación, según el programa operativo. Algunas organizaciones también prevén recursos específicos como refugio. Lo importante es revisar las interfaces con la ropa: el terreno y la tarea impiden que una lista genérica sustituya la evaluación de riesgo y el entrenamiento del personal que la usará.
 
 ### ¿Las botas forestales deben llevar puntera de acero?
 
-La especificación debe partir del riesgo de terreno, herramientas, calor y protección mecánica, no de una preferencia genérica. Si una operación requiere una puntera determinada o necesita excluirla por compatibilidad con su programa, debe escribirlo de forma verificable y evaluar la bota completa. No atribuyas una característica de bota a la referencia forestal vigente sin confirmar que corresponde al modelo y al requisito concreto.
+La especificación debe partir del riesgo de terreno, herramientas, calor y protección mecánica, no de una preferencia genérica. Si una operación requiere una puntera determinada o necesita excluirla por compatibilidad con su programa, debe escribirlo de forma verificable y evaluar la bota completa. No atribuyas una característica de bota a NFPA 1950 (2025) sin confirmar que corresponde al modelo y al requisito concreto.
 
 ### ¿Cómo se lava un traje forestal para bombero?
 
@@ -171,7 +171,7 @@ Sigue las instrucciones del fabricante de la prenda específica. La ropa puede a
 
 ### ¿Un overol industrial resistente a la flama sirve para incendios forestales?
 
-No se debe asumir. Que una prenda sea resistente a la flama o tenga una referencia industrial no prueba que sea un conjunto forestal. Deben coincidir el uso que declara el fabricante, la construcción, la movilidad, las interfaces y el soporte normativa o técnica aplicable. La compra debe comparar productos destinados a la misma operación, en vez de usar el nombre de una fibra como equivalencia.
+No se debe asumir. Que una prenda sea resistente a la flama o tenga una referencia industrial no prueba que sea un conjunto forestal. Deben coincidir el uso que declara el fabricante, la construcción, la movilidad, las interfaces y el soporte normativo o técnico aplicable. La compra debe comparar productos destinados a la misma operación, en vez de usar el nombre de una fibra como equivalencia.
 
 ## Fuentes
 

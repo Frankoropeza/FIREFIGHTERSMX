@@ -92,7 +92,7 @@ Consulta las familias de [equipos SCBA](/productos/equipos-scba/) y compara [cu�
 
 ## DRD, cierres, cinta y refuerzos
 
-No son adornos. El DRD es el dispositivo de rescate por arrastre en los modelos que lo incluyen. Los cierres y solapas mantienen el frente conforme al diseño. Bolsillos, rodilleras, refuerzos y cinta retrorreflectante afectan la operación, el desgaste o la visibilidad.
+El DRD es el dispositivo de rescate por arrastre en los modelos que lo incluyen. Los cierres y solapas mantienen el frente conforme al diseño, mientras que bolsillos, rodilleras, refuerzos y cinta retrorreflectante afectan la operación, el desgaste o la visibilidad.
 
 | Componente | Uso | Revisión de entrega |
 |---|---|---|
@@ -118,11 +118,11 @@ Usa una lista por persona, no una revisión general de cajas. Pide fabricante, m
 
 La [ficha de TrajesBombero México en el directorio](/empresas/venta-equipo/ciudad-de-mexico/trajesbombero-mexico/) ilustra el desglose por familia. Esa disciplina evita adjudicar una muestra y recibir una combinación distinta. También te permite rastrear un cambio de talla o componente durante la vida útil.
 
-La lista funciona mejor si tú la recorres con la persona que recibirá el equipo. No entregues cajas cerradas y esperes a la primera emergencia. Pídele que se coloque cada pieza en el orden de su procedimiento. Tú observa cuello, muñecas, cintura, bastas, máscara y arnés; después anota cualquier interferencia con radio, herramientas o visibilidad.
+La lista funciona mejor si la recorres con la persona que recibirá el equipo. No entregues cajas cerradas para esperar a la primera emergencia: pídele que se coloque cada pieza en el orden de su procedimiento y observa cuello, muñecas, cintura, bastas, máscara y arnés. Después, anota cualquier interferencia con radio, herramientas o visibilidad.
 
 **Ejemplo:** una monja de talla distinta puede hacer que tu casco quede más alto o que la máscara cambie de posición. Aunque chaquetón y pantalonera parezcan correctos, la interfaz de cabeza ya no será la misma. Una prueba corta en estación te deja corregir talla antes de que el conjunto entre a guardia.
 
-Para que el registro sirva, anota modelo, talla, número de inventario y fecha de fabricación. Añade quién lo recibió y qué accesorios quedan autorizados con ese conjunto. Si tú cambias casco, ERA o botas después, registra el cambio. La lista no busca burocracia: le da a tu equipo una referencia para la siguiente inspección.
+Para que el registro sirva, anota modelo, talla, número de inventario y fecha de fabricación. Añade quién lo recibió y qué accesorios quedan autorizados con ese conjunto; si cambias casco, ERA o botas después, registra también ese cambio. La lista no busca burocracia: le da a tu equipo una referencia para la siguiente inspección.
 
 Tú también puedes usar el registro al preparar una compra nueva. Compara las piezas solicitadas con lo que la estación tiene realmente. Así sabes si la cotización incluye un faltante o si estás contando dos veces una pieza que ya pertenece a otro equipo. Esa revisión vuelve más clara la asignación de responsabilidades entre operación, almacén y compras.
 
@@ -137,7 +137,7 @@ Tú recibes un conjunto por cajas, pero el usuario lo usa como sistema. Abre cad
 | Bota y pantalonera | Caminar, subir y agacharse | Basta arrastrada o abertura |
 | Cintura y chaquetón | Flexionar y levantar brazos | Separación entre prendas |
 
-Haz que tú y el usuario vean esas cuatro zonas durante la primera prueba. Es rápido. También revela si una talla de muestra no corresponde a la entrega. Guarda la hoja con el expediente de inventario.
+Haz que tú y el usuario revisen esas cuatro zonas durante la primera prueba. Esa comprobación también revela si una talla de muestra no corresponde a la entrega. Guarda la hoja con el expediente de inventario.
 
 ### Señales para sacar una pieza de revisión
 
@@ -147,7 +147,7 @@ No esperes a que una pieza falle en servicio. Cinta desprendida, costura abierta
 
 Tu registro no tiene que ser complejo. Anota fecha, pieza, usuario, hallazgo y acción. Esa información te permite ver si un problema apareció después de limpieza, una salida o un cambio de accesorio. Además, ayuda a que el siguiente turno no vuelva a colocar una pieza pendiente dentro del conjunto.
 
-Tú conoces la rutina de tu estación. Tu lista debe parecerse a esa rutina y no a un formato ajeno. Si tú revisas estas piezas con el usuario, tu recepción deja de ser un conteo de cajas. Se vuelve una comprobación de uso.
+La lista debe parecerse a la rutina de tu estación y no a un formato ajeno. Al revisar estas piezas con el usuario, la recepción deja de ser un conteo de cajas y se vuelve una comprobación de uso.
 
 ## Preguntas frecuentes
 

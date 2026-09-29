@@ -28,9 +28,9 @@ El conjunto de protección conserva su desempeño sólo si se recibe, inspeccion
 
 La idea central no es que todos los cuarteles tengan el mismo diseño. El objetivo es impedir que la forma de almacenar introduzca riesgos evitables: humedad retenida, contacto con suciedad, deformación por apilamiento, exposición a radiación ultravioleta, transferencia de contaminantes y confusión entre equipo pendiente de revisión y equipo listo para uso. El programa debe considerar el tipo de servicio, el número de elementos por guardia, el clima, la circulación interna y el método de lavado autorizado.
 
-Ejemplo: una estación puede tener casilleros nuevos y aun así fallar si el personal deja ahí el traje que volvió mojado de una intervención. Tú defines el recorrido desde el retorno hasta el gabinete limpio. Tú decides dónde se identifica el equipo. Tú separas lo húmedo. Tú revisas lo que vuelve. Tú asignas el espacio de reserva. Tú mantienes los manuales disponibles. ¿Tu gente puede reconocer el estado del conjunto de un vistazo? ¿Puede tomar el traje sin mover equipo de otro elemento?
+Ejemplo: una estación puede tener casilleros nuevos y aun así fallar si el personal deja ahí el traje que volvió mojado de una intervención. Define el recorrido desde el retorno hasta el gabinete limpio, dónde se identifica el equipo, cómo se separa lo húmedo, qué se revisa al volver y dónde queda el espacio de reserva. Mantén los manuales disponibles y comprueba que tu gente pueda reconocer el estado del conjunto de un vistazo y tomarlo sin mover el equipo de otro elemento.
 
-El punto es práctico. Si tú mezclas retorno, secado y almacenamiento limpio, el gabinete deja de ayudarte. Si tú mantienes estados claros, cada turno sabe qué puede usar y qué requiere atención. Tú no necesitas un mueble complejo para lograrlo. Necesitas que el flujo de la estación coincida con cómo trabaja tu guardia.
+El punto es práctico: si mezclas retorno, secado y almacenamiento limpio, el gabinete deja de ayudarte. Mantener estados claros permite que cada turno sepa qué puede usar y qué requiere atención. No hace falta un mueble complejo; hace falta que el flujo de la estación coincida con cómo trabaja tu guardia.
 
 NFPA 1850 (2026) consolidó las antiguas NFPA 1851 y 1852. Para un conjunto estructural o de proximidad, esa norma establece un marco de selección, cuidado y mantenimiento; no autoriza a sustituir los procedimientos del fabricante por una regla genérica de estación. Si tu operación parte de cero, revisa la [guía de traje de bombero y sus familias](/blog/traje-de-bombero-guia-completa/) antes de asignar casilleros: las necesidades de un conjunto estructural, uno forestal o una prenda de rescate técnico no son idénticas.
 
@@ -112,7 +112,7 @@ El gabinete permite detectar problemas, pero no reemplaza la inspección. Define
 
 Si el programa de mantenimiento identifica que un conjunto llegó al límite de retiro establecido por NFPA 1850 o por el fabricante, el gabinete no extiende esa vida de servicio. El almacenamiento correcto conserva las condiciones que el equipo aún puede mantener; no corrige daño, contaminación ni envejecimiento.
 
-Al abrir el gabinete, tu guardia debe entender de inmediato qué hay disponible. Tu identificación debe ser legible. Tu zona de retorno debe quedar aparte. Tus botas no deben aplastar el chaquetón. Tus guantes deben estar donde los buscas. Tu casco necesita soporte estable. Tu registro acompaña cada conjunto. Tu rutina de inspección detecta cambios. Tu responsable decide el retiro. Tu estación gana orden. Tu equipo conserva una condición más clara.
+Al abrir el gabinete, tu guardia debe entender de inmediato qué hay disponible. La identificación debe ser legible, la zona de retorno debe quedar aparte y las botas no deben aplastar el chaquetón. Conserva los guantes en un sitio accesible, el casco en un soporte estable y el registro junto a cada conjunto; la rutina de inspección y el responsable de retiro completan un orden que hace más clara la condición del equipo.
 
 ## Preguntas frecuentes
 

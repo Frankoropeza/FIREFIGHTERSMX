@@ -36,16 +36,14 @@ La referencia vigente es **NFPA 1950 (2025)**, que consolidó a la antigua NFPA 
 
 NFPA 1970 (2025) corresponde a conjuntos estructurales y de proximidad. Su construcción responde a una exposición térmica distinta. NFPA 2112, en cambio, trata prendas para riesgo de flash fire industrial. Ninguna de las dos convierte por sí misma a un overol en un traje de rescate técnico.
 
-Esto baja a una revisión muy concreta. Si el proveedor ofrece el [overol de rescate Sköld](/productos/trajes-bombero/skold-overol-rescate/), su ficha publica tela y reflejante antiflama bajo NFPA 2112, hilo de Kevlar y bolsillos de radio y carga. Tómalo por lo que declara. No le atribuyas una certificación de rescate técnico que el fabricante no publicó.
+Esto se traduce en una revisión muy concreta. Si el proveedor ofrece el [overol de rescate Sköld](/productos/trajes-bombero/skold-overol-rescate/), su ficha publica tela y reflejante antiflama bajo NFPA 2112, hilo de Kevlar y bolsillos de radio y carga. Tómalo por lo que declara; no le atribuyas una certificación de rescate técnico que el fabricante no publicó.
 
 | Referencia | Alcance que conviene comprobar | Lo que no permite concluir |
 |---|---|---|
-| Referencia | Qué te ayuda a confirmar | Lo que no afirma |
-|---|---|---|
-| Rescate técnico vigente | Uso declarado para el conjunto | Ataque interior o protección química específica |
-| Estructural y proximidad | Conjunto para esa exposición | Que sea la mejor opción para extricación |
-| Flash fire industrial | Prenda para esa exposición | Certificación de rescate técnico |
-| Selección de EPP laboral | Elegir desde el riesgo | Que color o marca reemplacen el análisis |
+| NFPA 1950 (2025) | Uso declarado para el conjunto de rescate técnico | Ataque interior o protección química específica |
+| NFPA 1970 (2025) | Conjunto para exposición estructural y de proximidad | Que sea la mejor opción para extricación |
+| NFPA 2112 | Prenda para exposición a flash fire industrial | Certificación de rescate técnico |
+| NOM-017-STPS-2024 | Selección del EPP a partir del riesgo | Que el color o la marca reemplacen el análisis |
 
 ## ¿Qué riesgos hay en rescate vehicular?
 
@@ -115,23 +113,23 @@ No aceptes “alta visibilidad” o “rescate profesional” como criterios de 
 
 La compra correcta no pretende que la ropa sea la única barrera. Busca que el conjunto responda a la tarea y no interfiera con ella. El [perfil de TrajesBombero México](/blog/trajesbombero-mexico-proveedor-especializado-trajes-bomberos/) ubica la familia de extricación como complemento del estructural en salidas por accidente vial.
 
-Haz una prueba sencilla antes de cerrar la compra. Pide a quien usará el traje que se arrodille, alcance una herramienta, suba y baje de una unidad y se incline sobre una puerta. ¿El radio queda accesible? ¿La manga cubre al usar el guante? ¿La cinta sigue visible cuando se coloca el arnés? Tú conoces las maniobras que más se repiten en tu guardia; incorpora esas maniobras a la revisión, no una demostración preparada por el proveedor. Tu muestra debe parecerse a tu salida real.
+Antes de cerrar la compra, pide a quien usará el traje que se arrodille, alcance una herramienta, suba y baje de una unidad y se incline sobre una puerta. Comprueba que el radio quede accesible, la manga cubra con el guante puesto y la cinta siga visible al colocarse el arnés. Incorpora a la revisión las maniobras que más se repiten en tu guardia; la muestra debe parecerse a una salida real, no a una demostración preparada por el proveedor.
 
-También define qué hará tu equipo cuando una prenda vuelva con lodo, vidrio o líquido. Tú puedes separar el conjunto, registrar lo que ocurrió y enviarlo al proceso interno antes de devolverlo al casillero. Si tú dejas esa decisión al turno siguiente, la condición del traje se vuelve una suposición. Esta disciplina cuida a tu personal y hace que tus reemplazos se justifiquen con hechos de operación.
+También define qué hará tu equipo cuando una prenda vuelva con lodo, vidrio o líquido. Separa el conjunto, registra lo que ocurrió y envíalo al proceso interno antes de devolverlo al casillero. Dejar esa decisión al turno siguiente convierte la condición del traje en una suposición y dificulta justificar los reemplazos con hechos de operación.
 
-En una revisión de muestra, tú debes abrir y cerrar bolsillos con guantes puestos, porque ahí aparece pronto si el diseño ayuda a la operación real. Hazlo sin prisa. Prueba también la radio. Cuando tú te arrodillas junto a una puerta deformada, el largo de la chaqueta y la posición de los refuerzos cambian cómo trabajas. Mira cada unión. Repite el movimiento. Si tú necesitas quitar una pieza para alcanzar una herramienta, esa interferencia merece quedar anotada antes de que la compra llegue a la estación.
+Durante la revisión de muestra, abre y cierra los bolsillos con guantes puestos y prueba la radio; ahí aparece pronto si el diseño ayuda a la operación real. Al arrodillarte junto a una puerta deformada, el largo de la chaqueta y la posición de los refuerzos cambian cómo trabajas. Repite el movimiento y anota cualquier interferencia que te obligue a quitar una pieza para alcanzar una herramienta antes de que la compra llegue a la estación.
 
-El casco importa mucho. Cuando tú inclinas la cabeza para mirar dentro del habitáculo, el cuello, los lentes y la monja deben seguir trabajando como conjunto. Haz esa prueba. Usa tus lentes. Si tú llevas el radio en el pecho, revisa que su cable, clip y antena no creen un punto de enganche al acercarte. Piensa en cristales. Piensa en cinturones. Cuando tú haces el movimiento completo con una herramienta, aparecen los puntos que una ficha técnica nunca describe con suficiente detalle.
+El casco también importa. Al inclinar la cabeza para mirar dentro del habitáculo, el cuello, los lentes y la monja deben seguir trabajando como conjunto. Prueba con los lentes de uso y, si llevas el radio en el pecho, revisa que el cable, el clip y la antena no creen un punto de enganche entre cristales o cinturones. El movimiento completo con una herramienta revela detalles que una ficha técnica no describe con suficiente precisión.
 
-La talla no termina. Tú debes probar hombros, rodillas, tiros y puños con las capas y accesorios que cada turno usa durante una salida. Sube a la unidad. Baja otra vez. Cuando tú alcanzas equipo en el compartimiento, una pierna demasiado larga o un cierre incómodo puede restarte tiempo y concentración innecesariamente. Haz esa maniobra. Comprueba las botas. Si tú compras por talla nominal sin esa revisión, dejas que la adaptación ocurra hasta la primera emergencia.
+La talla se confirma al probar hombros, rodillas, tiros y puños con las capas y accesorios que cada turno usa durante una salida. Sube y baja de la unidad, y alcanza equipo en el compartimiento para comprobar las botas. Una pierna demasiado larga o un cierre incómodo puede restarte tiempo y concentración; comprar por talla nominal sin esa revisión deja la adaptación para la primera emergencia.
 
-La visibilidad se observa. Tú debes mirar el traje bajo la iluminación disponible y desde los ángulos que verá quien se acerca a la escena. Apaga luces secundarias. Coloca el arnés. Cuando tú cubres una banda con un chaleco, una manguera o una herramienta, el patrón de contraste deja de ser el que aprobaste. Muévete varios metros. Mira de frente. Si tú sólo revisas la prenda extendida, no sabes qué silueta verá un conductor o tu compañero.
+La visibilidad se comprueba bajo la iluminación disponible y desde los ángulos de quien se acerca a la escena. Coloca el arnés y observa el conjunto a varios metros, de frente y con las luces secundarias apagadas. Si una banda queda cubierta por un chaleco, una manguera o una herramienta, el patrón de contraste deja de ser el aprobado; revisar sólo la prenda extendida no muestra la silueta que verá un conductor o un compañero.
 
-La recepción también cuenta. Tú debes cotejar una prenda al azar de cada talla con el modelo, etiqueta, accesorios y manuales incluidos en la orden. Abre el empaque. Lee la etiqueta. Cuando tú comparas antes de asignar, puedes detectar una variante de cinta, bolsillo o talla que no corresponde a la muestra aprobada. Registra la diferencia. Detén la entrega. Si tú esperas a que el inventario ya esté distribuido, corregir la partida resulta mucho más difícil para todos.
+La recepción también cuenta. Coteja una prenda al azar de cada talla con el modelo, la etiqueta, los accesorios y los manuales incluidos en la orden. Comparar antes de asignar permite detectar una variante de cinta, bolsillo o talla que no corresponde a la muestra aprobada; registra la diferencia y detén la entrega. Si esperas a que el inventario ya esté distribuido, corregir la partida resultará mucho más difícil.
 
-El cuidado empieza temprano. Tú debes separar cualquier traje que regrese con daño, vidrio, lodo o fluidos antes de que vuelva al espacio limpio. Marca su estado. Sigue el proceso. Cuando tú mantienes junto al conjunto sus instrucciones de lavado, secado e inspección, evitas aplicar una rutina ajena al modelo que compraste. Guarda los manuales. Actualiza el registro. Si tú pierdes esa información, la estación conserva ropa, pero pierde criterio para cuidarla durante su servicio.
+El cuidado empieza temprano. Separa cualquier traje que regrese con daño, vidrio, lodo o fluidos antes de que vuelva al espacio limpio, identifica su estado y sigue el proceso correspondiente. Conserva junto al conjunto sus instrucciones de lavado, secado e inspección, así como los manuales y el registro actualizado, para evitar aplicar una rutina ajena al modelo que compraste.
 
-El mando define límites. Tú debes explicar a cada integrante cuándo el traje de extricación deja de ser suficiente para la exposición que enfrenta. Dilo antes del servicio. Repásalo en prácticas. Cuando tú estableces esa transición, el personal entiende que movilidad y visibilidad no son permiso para entrar a un incendio estructural. Mantén la regla visible. Practica la retirada. Si tú haces esa conversación sólo después de un incidente, llegas tarde al momento en que realmente importa.
+El mando define los límites. Explica a cada integrante, antes del servicio y durante las prácticas, cuándo el traje de extricación deja de ser suficiente para la exposición que enfrenta. Así el personal entiende que la movilidad y la visibilidad no autorizan la entrada a un incendio estructural; la regla y la retirada deben practicarse antes de un incidente.
 
 ## Preguntas frecuentes
 
@@ -141,7 +139,7 @@ Es ropa de protección para rescate técnico, como liberar personas atrapadas en
 
 ### ¿Qué norma aplica al traje de rescate técnico?
 
-La referencia vigente consolidó la antigua NFPA 1951 para rescate técnico. Revisa el documento aplicable al modelo y uso ofrecidos. Si la etiqueta es de una edición anterior, identifica qué certifica y para qué tarea.
+NFPA 1950 (2025) consolidó la antigua NFPA 1951 para rescate técnico. Revisa el documento aplicable al modelo y uso ofrecidos. Si la etiqueta es de una edición anterior, identifica qué certifica y para qué tarea.
 
 ### ¿Se puede usar traje estructural para rescate vehicular?
 
@@ -149,7 +147,7 @@ Sí, el mando puede determinarlo en una situación concreta. No suele ser la mej
 
 ### ¿Un overol para flash fire sirve para rescate técnico?
 
-No. Esa referencia trata prendas para flash fire industrial. Puede ser relevante para esa exposición, pero no acredita por sí sola un traje de rescate técnico. Lee el alcance que el fabricante publica para el modelo.
+No. NFPA 2112 trata prendas para flash fire industrial. Puede ser relevante para esa exposición, pero no acredita por sí sola un traje de rescate técnico. Lee el alcance que el fabricante publica para el modelo.
 
 ### ¿Qué color debe tener un traje de rescate vehicular?
 

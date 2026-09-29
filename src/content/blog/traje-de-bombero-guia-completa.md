@@ -41,7 +41,7 @@ Un traje forestal no gana capacidades estructurales por llevar cinta reflejante.
 
 ## ¿Qué partes tiene un traje de bombero?
 
-El chaquetón y la pantalonera son la base visible, pero un conjunto deja zonas de unión. Cuello, muñecas, cintura, botas, casco y máscara deben seguir cubiertos cuando tú levantas los brazos, te agachas o llevas el arnés del ERA.
+El chaquetón y la pantalonera son la base visible, pero un conjunto también tiene zonas de unión. Cuello, muñecas, cintura, botas, casco y máscara deben seguir cubiertos al levantar los brazos, agacharse o llevar el arnés del ERA.
 
 | Pieza | Función en el conjunto | Revisión práctica |
 |---|---|---|
@@ -70,7 +70,7 @@ Todavía verás etiquetas o pliegos con NFPA 1971 edición 2018. No es un motivo
 
 ## Cómo eliges la talla y las interfaces
 
-Una talla correcta no se confirma con el equipo colgado en un perchero. Haz la prueba con las piezas que el usuario llevará. Debe poder colocarse el conjunto, cerrar el chaquetón, usar guantes, mover cabeza y brazos, caminar y comprobar el traslape con botas, casco, capucha y máscara.
+Una talla correcta no se confirma con el equipo colgado en un perchero. Haz la prueba con las piezas que el usuario llevará: debe poder colocarse el conjunto, cerrar el chaquetón, usar guantes, mover cabeza y brazos, caminar y comprobar el traslape con botas, casco, capucha y máscara.
 
 **Ejemplo:** si el arnés del ERA modifica cómo cae el chaquetón, la prueba con ropa sola no detecta el problema. Verifica el cierre, el alcance a los mandos y el sello previsto de la máscara con la monja que se entregará.
 
@@ -107,11 +107,11 @@ No empieces por el color, la marca ni el precio. Describe la salida más exigent
 
 Si el escenario es industrial, consulta [qué cubre un traje de brigadista](/blog/traje-de-bombero-brigadista/). Para calor radiante, revisa el [traje de aproximación aluminizado](/blog/traje-de-aproximacion-aluminizado-bomberos/); para vegetación, el [traje forestal](/blog/traje-forestal-bombero-nfpa-1950/); y para colisiones, el [traje de extricación](/blog/traje-de-extricacion-rescate-tecnico/). También conviene comparar [cuánto pesa el equipo completo](/blog/cuanto-pesa-un-traje-de-bombero/) y entender los límites de [color y visibilidad](/blog/colores-del-traje-de-bombero-visibilidad/). Si necesitas una ficha de proveedor, el directorio incluye [TrajesBombero México](/empresas/venta-equipo/ciudad-de-mexico/trajesbombero-mexico/).
 
-Cuando tú prepares la requisición, evita escribir sólo “traje de bombero completo”. Ese texto no dice si recibirás capucha, casco, botas o ERA, ni qué talla tendrá cada elemento. Divide lo que tú esperas por usuario y deja una columna para la evidencia entregada. Es una forma práctica de detectar una exclusión antes de asignar el equipo.
+Al preparar la requisición, evita escribir sólo “traje de bombero completo”. Ese texto no dice si recibirás capucha, casco, botas o ERA, ni qué talla tendrá cada elemento. Divide lo esperado por usuario y deja una columna para la evidencia entregada; así podrás detectar una exclusión antes de asignar el equipo.
 
 **Ejemplo:** una compra para diez personas puede requerir diez tallas distintas de pantalonera y chaquetón. Si tu partida no conserva esas medidas, el proveedor puede entregar el modelo correcto con una talla que no funciona en campo. La prueba de movimiento no es un trámite: te deja observar si el usuario alcanza radio, guantes, máscara y controles sin abrir una interfaz.
 
-No todo se resuelve con el modelo más robusto. Tú puedes necesitar varias familias dentro de la misma organización porque las salidas son distintas. Un inventario claro dice quién usa qué, para qué operación y desde qué fecha. Eso permite que tu relevo encuentre el equipo asignado y que la siguiente compra mantenga el mismo criterio.
+No todo se resuelve con el modelo más robusto. Una misma organización puede necesitar varias familias porque las salidas son distintas. Un inventario claro dice quién usa qué, para qué operación y desde qué fecha; así, el relevo encuentra el equipo asignado y la siguiente compra mantiene el mismo criterio.
 
 Revisa también lo que pasa después de la salida. Si tu personal usa el conjunto en una escena con contaminantes o daño visible, el programa de cuidado define la ruta de limpieza, inspección y reparación. Guardar la información de tu recepción junto con esos registros evita que una prenda cambie de mano sin historial.
 
@@ -136,13 +136,13 @@ No dejes el conjunto junto a gases de motor, sol directo o humedad persistente. 
 
 **Ejemplo:** tú recibes un chaquetón de regreso después de una salida. Antes de devolverlo al gabinete, identifica si falta un cierre, si la cinta está desprendida o si el exterior tiene un daño nuevo. Ese registro breve permite que el siguiente turno encuentre una decisión clara: seguir en servicio, limpiar, reparar o retirar.
 
-La rutina funciona si está cerca de la operación. Tú no necesitas convertir cada revisión en un informe largo; sí conservar la información que cambia la decisión sobre esa prenda. Modelo, usuario asignado, fecha de fabricación, hallazgo y acción tomada forman una base suficiente para seguir la historia del equipo.
+La rutina funciona si está cerca de la operación. No es necesario convertir cada revisión en un informe largo, pero sí conservar la información que cambia la decisión sobre esa prenda. Modelo, usuario asignado, fecha de fabricación, hallazgo y acción tomada forman una base suficiente para seguir la historia del equipo.
 
 También revisa cómo se seca el conjunto. Colgarlo sin identificar la causa de humedad deja preguntas abiertas: ¿fue lluvia, limpieza, sudor o exposición a líquidos? Tú puedes separar ese dato en el registro y seguir la instrucción del fabricante para el secado. La prenda no mejora por verse seca; debe volver a servicio con sus capas, cierres e interfaces en condición adecuada.
 
 Cuando hay relevo, entrega el historial junto con el equipo. Un usuario nuevo debe saber qué talla recibió, qué piezas le pertenecen y qué hallazgos siguen pendientes. Esto vuelve más fácil que tú detectes una pantalonera intercambiada, una monja faltante o un casco que ya no corresponde al conjunto. En operación, esos detalles se acumulan rápido.
 
-Tú decides la compra con un riesgo y un presupuesto concretos. Tu personal necesita una prenda que pueda ponerse sin ayuda innecesaria, que conserve las interfaces al moverse y que tenga una ficha legible cuando llegue el siguiente relevo. Si tú registras esas pruebas desde el primer día, tu criterio de compra mejora con cada recepción. Esa es la parte práctica.
+La compra parte de un riesgo y un presupuesto concretos. El personal necesita una prenda que pueda ponerse sin ayuda innecesaria, que conserve las interfaces al moverse y que tenga una ficha legible cuando llegue el siguiente relevo. Registrar esas pruebas desde el primer día mejora el criterio de compra con cada recepción.
 
 ## Preguntas frecuentes
 

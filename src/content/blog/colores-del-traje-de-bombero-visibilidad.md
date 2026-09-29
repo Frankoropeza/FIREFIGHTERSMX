@@ -30,9 +30,9 @@ Para comprar o renovar una partida, empieza por la operación: ataque estructura
 
 NFPA 1970 (2025) consolidó las referencias previas para conjuntos estructurales y de proximidad. Si una propuesta declara cumplimiento, pide la evidencia del conjunto terminado y no infieras ese estado de una fotografía o una tela. Un shell puede tener varias opciones de color y el mismo color puede aparecer en prendas destinadas a riesgos distintos. Lo que protege es el sistema documentado para su uso previsto, junto con el programa de inspección y cuidado.
 
-Ejemplo: tu corporación puede preferir arena porque facilita identificar visualmente una partida, mientras una brigada industrial elige amarillo por su política interna. Ninguna decisión elimina el paso técnico. Tú revisas el modelo. Tú comparas la muestra. Tú confirmas qué cinta lleva. Tú pruebas el traje con casco y radio. ¿Qué verá tu personal entre humo, vehículos y luz cambiante? ¿Qué parte de la cinta queda cubierta al usar arnés o chaleco?
+Ejemplo: tu corporación puede preferir arena porque facilita identificar visualmente una partida, mientras una brigada industrial elige amarillo por su política interna. Ninguna decisión elimina el paso técnico: revisa el modelo, compara la muestra, confirma qué cinta lleva y prueba el traje con casco y radio. Considera qué verá tu personal entre humo, vehículos y luz cambiante, y qué parte de la cinta queda cubierta al usar arnés o chaleco.
 
-El color debe servir a tu operación, no dictarla. Si tú empiezas por el tono, corres el riesgo de pedir una prenda equivocada para la tarea. Si tú empiezas por el riesgo, el color se vuelve un criterio claro y fácil de revisar al recibir.
+El color debe servir a tu operación, no dictarla. Si empiezas por el tono, corres el riesgo de pedir una prenda equivocada para la tarea; si empiezas por el riesgo, el color se vuelve un criterio claro y fácil de revisar al recibir.
 
 ### Qué aporta el color de fondo y qué no aporta
 

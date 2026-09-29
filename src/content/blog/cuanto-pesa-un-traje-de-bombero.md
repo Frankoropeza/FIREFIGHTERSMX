@@ -58,14 +58,14 @@ Las cifras siguientes no se suman entre sí: corresponden a cilindros MSA G1 con
 
 | Componente o conjunto | Peso publicado | Alcance de la cifra |
 |---|---:|---|
-| Cilindro MSA G1 Eclipse, 30 min | 10.141 lb / 4.600 kg | Cilindro ensamblado, 4,500 psig |
-| Cilindro MSA G1 Eclipse, 45 min | 13.889 lb / 6.300 kg | Cilindro ensamblado, 4,500 psig |
+| Cilindro MSA G1 Eclipse, 30 min | 10.1 lb / 4.6 kg | Cilindro ensamblado, 4,500 psig |
+| Cilindro MSA G1 Eclipse, 45 min | 13.9 lb / 6.3 kg | Cilindro ensamblado, 4,500 psig |
 | Cilindro MSA G1, 60 min | El fabricante no publica peso en la ficha revisada | La gama sí incluye 60 min |
 | Casco | El fabricante no la publica en las fuentes revisadas | No sumar una estimación |
 | Botas | El fabricante no la publica en las fuentes revisadas | Registrar modelo y talla |
 | Chaquetón y pantalonera | El fabricante no la publica en las fuentes revisadas | Pedir ficha del composite ofertado |
 
-No llenes las últimas tres filas con un promedio de internet. Tú puedes pesar el artículo recibido y anotarlo como medición local, pero no convertirlo en una especificación del fabricante. Esta diferencia protege la comparación: una medición de tu estación y una ficha comercial responden a preguntas distintas.
+No llenes las últimas tres filas con un promedio de internet. Puedes pesar el artículo recibido y anotarlo como medición local, pero no convertirlo en una especificación del fabricante. Esta diferencia protege la comparación: una medición de tu estación y una ficha comercial responden a preguntas distintas.
 
 **Ejemplo:** dos expedientes presentan 20 kg. Uno suma ropa, casco, botas y ERA listo para uso; el otro reporta ropa y arnés sin cilindro. El número coincide, pero las cargas no. En tu tabla, las exclusiones deben verse, no quedarse en letra pequeña.
 
@@ -137,15 +137,15 @@ Antes de entregar el equipo a una persona, confirma que la ficha corresponde al 
 
 No busques que todos den el mismo peso. Busca que cada cifra describa el mismo conjunto que usarán tus elementos. Esa claridad permite planear la tarea, los relevos y la compra posterior.
 
-Cuando tú registres el resultado, separa peso publicado y peso medido. El primero viene de la ficha; el segundo depende de la báscula, el estado del equipo y las piezas presentes ese día. Ambos son útiles si tú escribes su alcance. Mezclarlos sin etiqueta produce un número atractivo, pero no una comparación que tu equipo pueda repetir.
+Al registrar el resultado, separa el peso publicado del peso medido. El primero viene de la ficha; el segundo depende de la báscula, el estado del equipo y las piezas presentes ese día. Ambos son útiles si se documenta su alcance; mezclarlos sin etiqueta produce un número atractivo, pero no una comparación repetible.
 
-**Ejemplo:** tú pesas una pantalonera seca, después la misma pieza junto con botas y un radio. Las dos mediciones son correctas, pero responden a preguntas diferentes. En tu inventario, nombra cada conjunto de forma clara: “ropa”, “EPP sin aire” o “equipo completo con cilindro”.
+**Ejemplo:** puedes pesar una pantalonera seca y después la misma pieza junto con botas y un radio. Las dos mediciones son correctas, pero responden a preguntas diferentes. En el inventario, nombra cada conjunto de forma clara: “ropa”, “EPP sin aire” o “equipo completo con cilindro”.
 
-Revisa la distribución además de la suma. Una persona puede notar la carga en hombros por el arnés, en cuello por casco y máscara, o en pies por botas. Tú no decides la aptitud física individual con esa observación; sí puedes usarla para diseñar una prueba de movilidad, turnos y rehabilitación acordes con la salida.
+Revisa la distribución además de la suma. Una persona puede notar la carga en hombros por el arnés, en cuello por casco y máscara, o en pies por botas. Esa observación no decide la aptitud física individual, pero sí puede orientar una prueba de movilidad, los turnos y la rehabilitación acordes con la salida.
 
-Si tu organización cambia cilindro, lámpara o radio, vuelve a medir el conjunto que en verdad se usará. Esa actualización toma poco tiempo y evita que la hoja de control quede detrás de la operación. Tu referencia final debe servir a quienes reciben, asignan y supervisan el equipo, no sólo a quien preparó la cotización.
+Si tu organización cambia cilindro, lámpara o radio, vuelve a medir el conjunto que en verdad se usará. Esa actualización evita que la hoja de control quede detrás de la operación. La referencia final debe servir a quienes reciben, asignan y supervisan el equipo, no sólo a quien preparó la cotización.
 
-Para reducir carga, tú puedes ordenar accesorios por salida, ajustar las tallas y elegir sólo el conjunto que corresponde al riesgo. No cambies la familia de protección por una cifra menor. Una revisión de inventario te permite separar lo indispensable de lo que llegó por costumbre. Después prueba el resultado con movimiento real.
+Para reducir carga, ordena los accesorios por salida, ajusta las tallas y elige sólo el conjunto que corresponde al riesgo. No cambies la familia de protección por una cifra menor. Una revisión de inventario permite separar lo indispensable de lo que llegó por costumbre; después, prueba el resultado con movimiento real.
 
 ## Preguntas frecuentes
 
@@ -180,6 +180,6 @@ Sí, como control de recepción. Registra báscula, fecha, talla, modelo y todas
 - [NIOSH: antecedente sobre carga de intervención](https://archive.cdc.gov/www_cdc_gov/niosh/updates/upd-09-29-09.html)
 - [NFPA 1970](https://www.nfpa.org/codes-and-standards/nfpa-1970-standard-development/1970)
 - [NFPA 1850](https://www.nfpa.org/codes-and-standards/nfpa-1850-standard-development/1850)
-- [MSA G1 Eclipse 30 min: 10.141 lb / 4.600 kg](https://us.msasafety.com/pn/10204941?locale=en)
-- [MSA G1 Eclipse 45 min: 13.889 lb / 6.300 kg](https://us.msasafety.com/pn/10204948)
+- [MSA G1 Eclipse 30 min: 10.1 lb / 4.6 kg](https://us.msasafety.com/pn/10204941?locale=en)
+- [MSA G1 Eclipse 45 min: 13.9 lb / 6.3 kg](https://us.msasafety.com/pn/10204948)
 - [MSA G1: gama de cilindros de 30, 45 y 60 min](https://us.msasafety.com/c/G1-SCBA-Cylinders/p/000010000800002001?locale=en)

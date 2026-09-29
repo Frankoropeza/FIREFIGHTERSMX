@@ -35,7 +35,7 @@ El catálogo separa la ropa por operación. Ese punto parece básico, pero evita
 | Entrada | Ingreso breve a flama bajo protocolo | Aluminizado multicapa con ERA | Ficha del fabricante |
 | Extricación | Rescate vehicular y técnico | Monocapa contra corte y punción | NFPA 1950, antes NFPA 1951 |
 
-La diferencia no es de precio ni de color. Es de exposición. Un estructural puede ser demasiado pesado para una línea de fuego forestal; el forestal no es equipo de ataque interior. En [la comparación entre traje estructural, de proximidad y forestal](/blog/traje-estructural-proximidad-forestal-diferencias/) puedes ubicar los límites de cada familia antes de pedir cotizaciones.
+La diferencia no es de precio ni de color, sino de exposición. Un estructural puede ser demasiado pesado para una línea de fuego forestal; el forestal no es equipo de ataque interior. En [la comparación entre traje estructural, de proximidad y forestal](/blog/traje-estructural-proximidad-forestal-diferencias/) puedes ubicar los límites de cada familia antes de pedir cotizaciones.
 
 **Ejemplo:** una brigada de planta que controla conatos, apoya la evacuación y espera a la corporación externa no describe de entrada el mismo trabajo que una cuadrilla que entrará con humo. La primera conversación debe ser sobre esa operación, no sobre la marca del cascarón.
 
@@ -58,7 +58,7 @@ La NFPA 1970 (2025) consolidó las referencias que antes aparecían por separado
 
 Para un cuerpo de bomberos que compra por licitación, la utilidad está en redactar partidas comparables y en el levantamiento de medidas por elemento. [Esta guía de especificaciones para licitaciones](/blog/especificaciones-traje-bombero-licitaciones/) te sirve para aterrizar ese pliego antes de recibir ofertas.
 
-Para una brigada industrial, el valor está en desglosar chaquetón, pantalón, casco, guantes, botas y escafandra. Así el área de compras sabe qué incluye cada renglón y tú puedes relacionarlo con la dotación definida para la brigada.
+Para una brigada industrial, el valor está en desglosar chaquetón, pantalón, casco, guantes, botas y escafandra. Así, el área de compras sabe qué incluye cada renglón y puede relacionarlo con la dotación definida para la brigada.
 
 En aeropuertos, petroquímica o fundición, aproximación y entrada no son sinónimos. La primera familia atiende trabajo cerca de calor radiante; la segunda se reserva para una exposición más severa y de duración limitada, con ERA y procedimiento específico. ¿Tu personal va a acercarse al foco o a entrar en él? La respuesta cambia la familia entera.
 
@@ -88,11 +88,11 @@ Llega con cuatro datos: quién usará el equipo, qué operación cubrirá, cuán
 
 Puedes partir de su [catálogo de trajes estructurales](https://trajesbomberos.com/trajes/estructural/) o de los [trajes para brigadista](https://trajesbomberos.com/trajes/brigadista/). Para interpretar una referencia vigente, también publica [qué cambió con la NFPA 1970](https://trajesbomberos.com/blog/nfpa-1970-que-cambio/). En FIREFIGHTERS MX encontrarás [la explicación de NFPA 1970](/blog/nfpa-1970-nueva-norma-trajes-bombero/) y el [catálogo de trajes para bombero](/productos/trajes-bombero/).
 
-Antes de enviar la solicitud, describe una salida real. Di si tu gente hará ataque interior, si trabajará a la intemperie, cuánto tiempo porta el equipo y qué interfaces ya tiene. Esa conversación aterriza la partida. También evita que una fotografía de catálogo se convierta en el único criterio de tu compra.
+Antes de enviar la solicitud, describe una salida real: si el personal hará ataque interior, si trabajará a la intemperie, cuánto tiempo portará el equipo y qué interfaces ya tiene. Esa conversación aterriza la partida y evita que una fotografía de catálogo se convierta en el único criterio de compra.
 
-**Ejemplo:** si tu estación ya usa un modelo de ERA, indícalo. El proveedor puede considerar el arnés, la máscara y el cuello que acompañarán al chaquetón. Si tú esperas un DRD, una monja o una cinta específica, inclúyelos en el texto inicial. Así tu comparación empieza con los mismos campos para todas las opciones.
+**Ejemplo:** si tu estación ya usa un modelo de ERA, indícalo para que el proveedor considere el arnés, la máscara y el cuello que acompañarán al chaquetón. Si esperas un DRD, una monja o una cinta específica, inclúyelos en el texto inicial para que todas las opciones se comparen con los mismos campos.
 
-Lleva una lista sencilla: operación, número de usuarios, piezas, tallas disponibles, fecha esperada de recepción y requisitos del pliego. Con esa lista puedes leer la respuesta línea por línea. Tu equipo de compras ve cantidades; tú puedes confirmar que la ropa propuesta cubre la operación declarada. Ambos necesitan el mismo documento, pero lo leen desde tareas diferentes.
+Lleva una lista sencilla: operación, número de usuarios, piezas, tallas disponibles, fecha esperada de recepción y requisitos del pliego. Con ella puedes leer la respuesta línea por línea. El equipo de compras ve cantidades y tú puedes confirmar que la ropa propuesta cubre la operación declarada; ambos necesitan el mismo documento, aunque lo lean desde tareas diferentes.
 
 No esperes a la entrega para preguntar por la etiqueta o los manuales. Solicita desde la propuesta una muestra de cómo se identificará el modelo. Después, durante la recepción, coteja talla, composite, refuerzos y fecha contra lo que tú autorizaste. Ese orden mantiene la conversación técnica cerca de la operación y le da a tu estación un registro útil para inspección futura.
 
