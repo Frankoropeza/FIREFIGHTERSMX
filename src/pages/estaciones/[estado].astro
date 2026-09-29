@@ -150,27 +150,27 @@ const checkIcon = ``;
 >
 
   {/* ─── Breadcrumb ─── */}
-  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+  <nav class="py-3" style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line)" aria-label="Breadcrumb">
     <div class="container-site">
       <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
-        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li><a href="/" class="hover:text-[var(--c-accent)]">Inicio</a></li>
         <li aria-hidden="true">/</li>
-        <li><a href="/estaciones" class="hover:text-[#FF6B26]">Directorio de Estaciones</a></li>
+        <li><a href="/estaciones" class="hover:text-[var(--c-accent)]">Directorio de Estaciones</a></li>
         <li aria-hidden="true">/</li>
-        <li><span style="color:#94A3B8" aria-current="page">{estado.nombre}</span></li>
+        <li><span style="color:var(--c-text-2)" aria-current="page">{estado.nombre}</span></li>
       </ol>
     </div>
   </nav>
 
   {/* ─── Hero ─── */}
-  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem" aria-labelledby="estado-heading">
+  <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:5rem" aria-labelledby="estado-heading">
 
     {/* Glow decorativo */}
     <div class="absolute top-0 right-0 w-2/3 h-full pointer-events-none" aria-hidden="true"
-      style="background:radial-gradient(ellipse 70% 60% at 85% 40%, rgba(247,80,0,0.07) 0%, transparent 65%)"></div>
+      style="background:radial-gradient(ellipse 70% 60% at 85% 40%, rgba(200,16,46,0.07) 0%, transparent 65%)"></div>
     {/* Grid pattern decorativo */}
     <div class="absolute inset-0 pointer-events-none" aria-hidden="true"
-      style="background-image:linear-gradient(rgba(74,117,153,0.04) 1px, transparent 1px),linear-gradient(90deg,rgba(74,117,153,0.04) 1px,transparent 1px);background-size:40px 40px;mask-image:radial-gradient(ellipse 80% 80% at 80% 30%, black, transparent)"></div>
+      style="background-image:linear-gradient(var(--c-tint) 1px, transparent 1px),linear-gradient(90deg,var(--c-tint) 1px,transparent 1px);background-size:40px 40px;mask-image:radial-gradient(ellipse 80% 80% at 80% 30%, black, transparent)"></div>
 
     <div class="container-site relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -179,20 +179,20 @@ const checkIcon = ``;
         <div>
           <span class="section-eyebrow mb-5 inline-flex">Directorio · {estado.abreviatura} · {estado.region}</span>
           <h1 id="estado-heading" class="font-display font-bold uppercase mb-6"
-            style="color:#FFFFFF;font-size:clamp(2.2rem,5vw,4rem);line-height:0.95">
+            style="color:var(--c-ink);font-size:clamp(2.2rem,5vw,4rem);line-height:0.95">
             Estaciones de<br/>
-            <span style="color:#F75000">Bomberos</span><br/>
+            <span style="color:var(--c-accent)">Bomberos</span><br/>
             en {estado.nombre}
           </h1>
-          <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">
+          <p class="text-sm leading-[1.9] mb-4" style="color:var(--c-text-2)">
             El directorio de FIREFIGHTERS MX reúne {totalEst} {plural(totalEst, 'estación', 'estaciones')} de bomberos
             en {estado.nombre}{tiposLista ? `, entre cuerpos ${tiposLista}` : ''}. Consulta la ubicación por
             municipio, los teléfonos de emergencia y los servicios de cada unidad.
           </p>
-          <p class="text-sm leading-[1.9] mb-8" style="color:#94A3B8">
+          <p class="text-sm leading-[1.9] mb-8" style="color:var(--c-text-2)">
             Cada registro indica el tipo de corporación, el municipio que atiende y sus servicios operativos, con la
             fuente citada. Si buscas quién surte a estos cuerpos de bomberos, el directorio de
-            <strong style="color:#CBD5E1">proveedores de equipo contra incendio en {estado.nombre}</strong> reúne a las
+            <strong style="color:var(--c-text)">proveedores de equipo contra incendio en {estado.nombre}</strong> reúne a las
             empresas de extintores, EPP, sistemas contra incendio y capacitación de la entidad.
           </p>
           <div class="flex flex-col sm:flex-row gap-3">
@@ -209,7 +209,7 @@ const checkIcon = ``;
         </div>
 
         {/* Col derecha — stats */}
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
           <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:var(--forge-300)">Municipios con cobertura</p>
           <ul class="flex flex-wrap gap-2 list-none m-0 p-0 mb-5">
             {municipios.slice(0, 14).map((m) => (
@@ -217,10 +217,10 @@ const checkIcon = ``;
             ))}
             {municipios.length > 14 && <li class="badge badge-dark font-display text-[10px]">y más</li>}
           </ul>
-          <p class="text-xs mb-2" style="color:#64748B">Emergencias en todo el país: <strong style="color:#CBD5E1">911</strong>. Verifica el número local de tu municipio.</p>
+          <p class="text-xs mb-2" style="color:var(--c-muted)">Emergencias en todo el país: <strong style="color:var(--c-text)">911</strong>. Verifica el número local de tu municipio.</p>
           {ultimaVerifEstadoLabel && (
-            <p class="text-xs mb-5 m-0" style="color:#64748B">
-              Registros verificados en <strong style="color:#CBD5E1">{ultimaVerifEstadoLabel}</strong>; cada ficha cita su fuente.
+            <p class="text-xs mb-5 m-0" style="color:var(--c-muted)">
+              Registros verificados en <strong style="color:var(--c-text)">{ultimaVerifEstadoLabel}</strong>; cada ficha cita su fuente.
             </p>
           )}
 
@@ -239,7 +239,7 @@ const checkIcon = ``;
 
     {/* Línea de acento inferior */}
     <div class="absolute bottom-0 left-0 right-0 h-px" aria-hidden="true"
-      style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)"></div>
+      style="background:linear-gradient(90deg, transparent, rgba(200,16,46,0.4) 30%, rgba(200,16,46,0.4) 70%, transparent)"></div>
   </section>
 
   {/* ─── QuickLinksBar ─── */}
@@ -247,15 +247,15 @@ const checkIcon = ``;
 
   {/* ─── Mapa del estado ─── */}
   {puntosMapa.length > 0 && (
-    <section class="section-tight" style="background:#040A12" aria-label="Mapa del estado">
+    <section class="section-tight" style="background:var(--c-bg)" aria-label="Mapa del estado">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
       <div class="container-site">
         <span class="section-eyebrow mb-4 inline-flex">Mapa</span>
-        <h2 class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.05">
-          Ubicación de las<br/><span style="color:#F75000">corporaciones.</span>
+        <h2 class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.05">
+          Ubicación de las<br/><span style="color:var(--c-accent)">corporaciones.</span>
         </h2>
         <div id="estado-map" data-puntos={JSON.stringify(puntosMapa)}
-          style="height:440px;border:1px solid rgba(74,117,153,0.25);background:#0C1825"
+          style="height:440px;border:1px solid var(--c-line-strong);background:var(--c-surface)"
           role="img" aria-label={`Mapa de corporaciones de bomberos en ${estado.nombre}`}></div>
         <p class="text-[11px] mt-2" style="color:var(--forge-300)">Ubicaciones aproximadas a nivel localidad, con fines de referencia.</p>
       </div>
@@ -263,20 +263,20 @@ const checkIcon = ``;
   )}
 
   {/* ─── Todas las estaciones en cards ─── */}
-  <section id="estaciones" class="section" style="background:#070E1A" aria-labelledby="estaciones-heading">
+  <section id="estaciones" class="section" style="background:var(--c-bg-alt)" aria-labelledby="estaciones-heading">
     <div class="container-site">
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Directorio · {estado.nombre}</span>
           <h2 id="estaciones-heading" class="font-display font-bold"
-            style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             {totalEst} {plural(totalEst, 'estación', 'estaciones')}<br/>
-            <span style="color:#F75000">de bomberos.</span>
+            <span style="color:var(--c-accent)">de bomberos.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
             Cada tarjeta muestra el tipo de jurisdicción, la ubicación por ciudad y municipio, los servicios
             operativos, las certificaciones aplicables y los teléfonos de contacto. La información proviene de
             datos públicos de los cuerpos de bomberos y se actualiza continuamente.
@@ -289,11 +289,11 @@ const checkIcon = ``;
         <div class="relative flex-1">
           
           <input id="est-search" type="search" placeholder="Buscar por nombre, ciudad o municipio…" aria-label="Buscar estación"
-            class="w-full pl-10 pr-4 py-2.5 text-sm font-display" style="background:#0C1825;border:1px solid rgba(74,117,153,0.3);color:#FFFFFF;outline:none" />
+            class="w-full pl-10 pr-4 py-2.5 text-sm font-display" style="background:var(--c-surface);border:1px solid var(--c-line-strong);color:var(--c-ink);outline:none" />
         </div>
         <div class="flex flex-wrap gap-1.5" role="group" aria-label="Filtrar por tipo">
           <button type="button" class="est-filter font-display text-[10px] uppercase tracking-wider px-3 py-1.5" data-tipo="todos"
-            style="color:#FFFFFF;background:#F75000;border:1px solid #F75000">Todos</button>
+            style="color:#FFFFFF;background:var(--c-accent);border:1px solid var(--c-accent)">Todos</button>
           {tiposUnicos.map((t) => (
             <button type="button" class="est-filter font-display text-[10px] uppercase tracking-wider px-3 py-1.5" data-tipo={t}
               style={`color:${tipoConfig[t].color};background:transparent;border:1px solid ${tipoConfig[t].color}40`}>{tipoConfig[t].label}</button>
@@ -310,7 +310,7 @@ const checkIcon = ``;
               data-nombre={e.nombre.toLowerCase()}
               data-ciudad={`${e.ciudad} ${e.municipio}`.toLowerCase()}
               data-tipo={e.tipo}
-              style={`background:#040A12;border:1px solid rgba(74,117,153,0.18);border-top:2px solid ${cfg.color}`}>
+              style={`background:var(--c-bg);border:1px solid var(--c-line);border-top:2px solid ${cfg.color}`}>
 
               {/* Cabecera: tipo + fundación */}
               <div class="flex items-start justify-between gap-3">
@@ -332,27 +332,27 @@ const checkIcon = ``;
               </div>
 
               {/* Nombre */}
-              <h3 class="font-display font-bold text-base leading-snug" style="color:#FFFFFF">{e.nombre}</h3>
+              <h3 class="font-display font-bold text-base leading-snug" style="color:var(--c-ink)">{e.nombre}</h3>
 
               {/* Ubicación */}
               <div class="flex items-start gap-2">
-                <span class="w-4 h-4 shrink-0 mt-0.5" style="color:#FF6B26" set:html={pinIcon} aria-hidden="true"/>
-                <span class="text-xs leading-relaxed" style="color:#94A3B8">
-                  {e.ciudad}{e.municipio !== e.ciudad ? <span style="color:#64748B"> · Mpio. {e.municipio}</span> : null}
-                  {e.direccion && <span class="block mt-0.5" style="color:#64748B">{e.direccion}</span>}
+                <span class="w-4 h-4 shrink-0 mt-0.5" style="color:var(--c-accent)" set:html={pinIcon} aria-hidden="true"/>
+                <span class="text-xs leading-relaxed" style="color:var(--c-text-2)">
+                  {e.ciudad}{e.municipio !== e.ciudad ? <span style="color:var(--c-muted)"> · Mpio. {e.municipio}</span> : null}
+                  {e.direccion && <span class="block mt-0.5" style="color:var(--c-muted)">{e.direccion}</span>}
                 </span>
               </div>
 
               {/* Descripción (si existe) */}
               {e.descripcion && (
-                <p class="text-xs leading-relaxed m-0" style="color:#64748B">{e.descripcion}</p>
+                <p class="text-xs leading-relaxed m-0" style="color:var(--c-muted)">{e.descripcion}</p>
               )}
 
               {/* Servicios */}
               <div class="flex flex-wrap gap-1.5">
                 {e.serviciosDetalle.map((s) => (
                   <span class="font-display text-[9px] uppercase tracking-wider px-2 py-0.5"
-                    style="color:var(--forge-300);background:rgba(74,117,153,0.12);border:1px solid rgba(74,117,153,0.2)">
+                    style="color:var(--forge-300);background:var(--c-line);border:1px solid var(--c-line)">
                     {s}
                   </span>
                 ))}
@@ -363,7 +363,7 @@ const checkIcon = ``;
                 <div class="flex flex-wrap gap-1.5">
                   {e.certificaciones.map((c) => (
                     <span class="inline-flex items-center gap-1 font-display text-[9px] uppercase tracking-wider px-2 py-0.5"
-                      style="color:#34D399;background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.25)">
+                      style="color:var(--c-success);background:rgba(6,118,71,0.1);border:1px solid rgba(6,118,71,0.25)">
                       <span class="w-2.5 h-2.5" set:html={checkIcon} aria-hidden="true"/>{c}
                     </span>
                   ))}
@@ -372,11 +372,11 @@ const checkIcon = ``;
 
               {/* Contacto */}
               <div class="flex flex-wrap items-center gap-x-4 gap-y-1.5 pt-3"
-                style="border-top:1px solid rgba(74,117,153,0.15)">
+                style="border-top:1px solid var(--c-line)">
                 {TELEFONO_EMERGENCIAS && (
                   <span class="inline-flex items-center gap-1.5">
-                    <span class="w-3.5 h-3.5 shrink-0" style="color:#F75000" set:html={phoneIcon} aria-hidden="true"/>
-                    <span class="font-display font-bold text-sm" style="color:#F75000">Emergencias {TELEFONO_EMERGENCIAS}</span>
+                    <span class="w-3.5 h-3.5 shrink-0" style="color:var(--c-accent)" set:html={phoneIcon} aria-hidden="true"/>
+                    <span class="font-display font-bold text-sm" style="color:var(--c-accent)">Emergencias {TELEFONO_EMERGENCIAS}</span>
                   </span>
                 )}
                 {e.telefono && (
@@ -387,7 +387,7 @@ const checkIcon = ``;
               {/* Ver ficha L3 */}
               <a href={`/estaciones/${estado.slug}/${e.slug}`}
                 class="inline-flex items-center gap-1.5 mt-auto pt-1 font-display font-semibold text-xs uppercase tracking-wider"
-                style="color:#FF8F57">
+                style="color:var(--c-accent)">
                 Bomberos de {e.municipio}{e.telefono ? ': dirección y teléfono' : ': ubicación y servicios'}
                 
               </a>
@@ -399,41 +399,41 @@ const checkIcon = ``;
 
       <div id="est-no-results" class="hidden py-16 text-center">
         <p class="font-display font-bold text-lg mb-2" style="color:var(--forge-300)">Sin resultados</p>
-        <p class="text-sm" style="color:#64748B">Ajusta el buscador o el filtro de tipo.</p>
+        <p class="text-sm" style="color:var(--c-muted)">Ajusta el buscador o el filtro de tipo.</p>
       </div>
 
     </div>
   </section>
 
   {/* ─── Servicios y especialidades en el estado ─── */}
-  <section class="section" style="background:#040A12" aria-labelledby="servicios-heading">
+  <section class="section" style="background:var(--c-bg)" aria-labelledby="servicios-heading">
     <div class="container-site">
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-10">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Capacidades</span>
           <h2 id="servicios-heading" class="font-display font-bold"
-            style="color:#FFFFFF;font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.05">
+            style="color:var(--c-ink);font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.05">
             Servicios operativos<br/>
-            <span style="color:#F75000">en {estado.nombre}.</span>
+            <span style="color:var(--c-accent)">en {estado.nombre}.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
             Conjunto de servicios y especialidades que cubren las {plural(totalEst, 'estación', 'estaciones')} listadas
             en el estado, desde atención a incendios estructurales hasta rescate especializado y materiales peligrosos.
           </p>
         </div>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" style="border:1px solid rgba(74,117,153,0.18)">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" style="border:1px solid var(--c-line)">
         {serviciosUnicos.map((s, i) => (
           <div class="flex items-start gap-4 p-5"
-            style={`background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.12);${(i % 3 !== 2) ? 'border-right:1px solid rgba(74,117,153,0.12);' : ''}`}>
-            <span class="shrink-0 font-display font-bold text-xs" style="color:#F75000;min-width:1.5rem" aria-hidden="true">
+            style={`background:var(--c-bg-alt);border-bottom:1px solid var(--c-line);${(i % 3 !== 2) ? 'border-right:1px solid rgba(74,117,153,0.12);' : ''}`}>
+            <span class="shrink-0 font-display font-bold text-xs" style="color:var(--c-accent);min-width:1.5rem" aria-hidden="true">
               
             </span>
-            <span class="text-sm font-semibold" style="color:#CBD5E1">{s}</span>
+            <span class="text-sm font-semibold" style="color:var(--c-text)">{s}</span>
           </div>
         ))}
       </div>
@@ -452,18 +452,18 @@ const checkIcon = ``;
   </section>
 
   {/* ─── Emergencias y marco normativo ─── */}
-  <section class="section" style="background:#070E1A" aria-labelledby="normas-heading">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="normas-heading">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
 
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Marco normativo</span>
           <h2 id="normas-heading" class="font-display font-bold mb-6"
-            style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.75rem);line-height:1.05">
+            style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.75rem);line-height:1.05">
             Normas que rigen a los<br/>
-            <span style="color:#F75000">bomberos en {estado.nombre}.</span>
+            <span style="color:var(--c-accent)">bomberos en {estado.nombre}.</span>
           </h2>
-          <p class="text-sm leading-[1.9] mb-6" style="color:#94A3B8">
+          <p class="text-sm leading-[1.9] mb-6" style="color:var(--c-text-2)">
             Los cuerpos de bomberos de {estado.nombre} operan bajo normas nacionales (NOM) e internacionales (NFPA).
             El equipamiento debe cumplir estas certificaciones para garantizar la seguridad del personal y la
             eficiencia operativa en cada intervención.
@@ -475,9 +475,9 @@ const checkIcon = ``;
               { norm: 'NFPA 472',     desc: 'Respuesta a incidentes con materiales peligrosos (HAZMAT)' },
               { norm: 'NOM-002-STPS', desc: 'Condiciones de seguridad contra incendio — aplica a brigadas industriales' },
             ].map(({ norm, desc }) => (
-              <div class="flex items-start gap-4 py-3" style="border-bottom:1px solid rgba(74,117,153,0.12)">
+              <div class="flex items-start gap-4 py-3" style="border-bottom:1px solid var(--c-line)">
                 <span class="badge badge-fire shrink-0 font-display text-[10px]">{norm}</span>
-                <p class="text-xs leading-relaxed m-0" style="color:#94A3B8">{desc}</p>
+                <p class="text-xs leading-relaxed m-0" style="color:var(--c-text-2)">{desc}</p>
               </div>
             ))}
           </div>
@@ -487,18 +487,18 @@ const checkIcon = ``;
         </div>
 
         {/* Tarjeta de emergencias */}
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
-          <div class="flex flex-col gap-4 p-7" style="background:#040A12;border:1px solid rgba(247,80,0,0.25);border-top:2px solid #F75000">
-            <span class="w-7 h-7" style="color:#F75000" set:html={phoneIcon} aria-hidden="true"/>
-            <h3 class="font-display font-bold text-lg leading-snug" style="color:#FFFFFF">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
+          <div class="flex flex-col gap-4 p-7" style="background:var(--c-bg);border:1px solid rgba(200,16,46,0.25);border-top:2px solid var(--c-accent)">
+            <span class="w-7 h-7" style="color:var(--c-accent)" set:html={phoneIcon} aria-hidden="true"/>
+            <h3 class="font-display font-bold text-lg leading-snug" style="color:var(--c-ink)">
               Teléfono de emergencias en {estado.nombre}
             </h3>
             <div class="flex items-baseline gap-3">
-              <span class="font-display font-bold" style="color:#F75000;font-size:3rem;line-height:1">911</span>
+              <span class="font-display font-bold" style="color:var(--c-accent);font-size:3rem;line-height:1">911</span>
               <span class="text-xs uppercase tracking-widest" style="color:var(--forge-300)">número único de emergencias</span>
             </div>
-            <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">
-              El <strong style="color:#CBD5E1">911</strong> es el número único de emergencias en todo México y el
+            <p class="text-sm leading-relaxed m-0" style="color:var(--c-text-2)">
+              El <strong style="color:var(--c-text)">911</strong> es el número único de emergencias en todo México y el
               que atiende a los cuerpos de bomberos de {estado.nombre}. El antiguo 068 sigue operando en algunos
               municipios, pero ya no es la vía general. Cada ficha del directorio indica además el teléfono
               administrativo de la corporación, que no sustituye al 911 en una emergencia.
@@ -513,15 +513,15 @@ const checkIcon = ``;
 
   {/* ─── Otros estados (cross-link) ─── */}
   {otrosEstados.length > 0 && (
-    <section class="section" style="background:#040A12" aria-labelledby="otros-heading">
+    <section class="section" style="background:var(--c-bg)" aria-labelledby="otros-heading">
       <div class="container-site">
         <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
           <div>
             <span class="section-eyebrow mb-4 inline-flex">Sigue explorando</span>
             <h2 id="otros-heading" class="font-display font-bold"
-              style="color:#FFFFFF;font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.05">
+              style="color:var(--c-ink);font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.05">
               Otros estados<br/>
-              <span style="color:#F75000">del directorio.</span>
+              <span style="color:var(--c-accent)">del directorio.</span>
             </h2>
           </div>
           <a href="/estaciones" class="btn btn-ghost">Estaciones de bomberos en los 32 estados </a>
@@ -533,18 +533,18 @@ const checkIcon = ``;
             return (
               <a href={`/estaciones/${o.slug}`}
                 class="estado-card group flex flex-col gap-4 p-5"
-                style="background:#070E1A;border:1px solid rgba(74,117,153,0.18)"
+                style="background:var(--c-bg-alt);border:1px solid var(--c-line)"
                 aria-label={`${o.nombre} — ${o.estaciones.length} estaciones`}>
                 <div class="flex items-start justify-between gap-3">
                   <div>
                     <span class="font-display font-bold text-[10px] uppercase tracking-[0.2em] mb-1 block" style="color:var(--forge-300)">
                       {o.abreviatura} · {o.region}
                     </span>
-                    <h3 class="font-display font-bold text-base leading-tight group-hover:text-[#FF6B26]" style="color:#FFFFFF">
+                    <h3 class="font-display font-bold text-base leading-tight group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">
                       {o.nombre}
                     </h3>
                   </div>
-                  <span class="font-display font-bold text-2xl shrink-0" style="color:#F75000">{o.estaciones.length}</span>
+                  <span class="font-display font-bold text-2xl shrink-0" style="color:var(--c-accent)">{o.estaciones.length}</span>
                 </div>
                 <div class="flex flex-wrap gap-1.5">
                   {tipos.map((t) => (
@@ -555,7 +555,7 @@ const checkIcon = ``;
                   ))}
                 </div>
                 <div class="flex items-center gap-1.5 mt-auto">
-                  <span class="font-display font-semibold text-xs uppercase tracking-wider" style="color:#FF8F57">Bomberos en {o.nombre}</span>
+                  <span class="font-display font-semibold text-xs uppercase tracking-wider" style="color:var(--c-accent)">Bomberos en {o.nombre}</span>
                   
                 </div>
               </a>
@@ -567,17 +567,17 @@ const checkIcon = ``;
   )}
 
   {/* ─── CTA de cierre ─── */}
-  <section class="section-tight" style="background:#070E1A;border-top:1px solid rgba(74,117,153,0.15)" aria-label="Siguiente paso">
+  <section class="section-tight" style="background:var(--c-bg-alt);border-top:1px solid var(--c-line)" aria-label="Siguiente paso">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Los dos lados del mismo mercado</span>
           <h2 class="font-display font-bold mb-4"
-            style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.1">
+            style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.1">
             Proveedores de equipo<br/>
-            <span style="color:#F75000">contra incendio en {estado.nombre}.</span>
+            <span style="color:var(--c-accent)">contra incendio en {estado.nombre}.</span>
           </h2>
-          <p class="text-sm leading-relaxed mb-6" style="color:#94A3B8">
+          <p class="text-sm leading-relaxed mb-6" style="color:var(--c-text-2)">
             Los cuerpos de bomberos de esta página son quienes compran. En el directorio de empresas están
             los que venden: distribuidores de EPP, recargadoras de extintores, instaladoras de sistemas contra
             incendio y centros de capacitación de {estado.nombre}, con su giro, especialidad y fuente citada.
@@ -594,11 +594,11 @@ const checkIcon = ``;
             </a>
           </div>
         </div>
-        <div style="border-left:1px solid rgba(74,117,153,0.12);padding-left:2rem">
+        <div style="border-left:1px solid var(--c-line);padding-left:2rem">
           <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:var(--forge-300)">
             También te puede servir
           </p>
-          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
             {[
               ...girosConOferta.map((g) => ({
                 label: `${g.meta.labelCorto} en ${estado.nombre}`,
@@ -608,11 +608,11 @@ const checkIcon = ``;
               { label: 'Guías de compra de equipo',        desc: 'Qué pedir, qué norma aplica y cómo comparar', href: '/productos/' },
               { label: 'Estaciones de bomberos en México', desc: 'El directorio nacional en los 32 estados',     href: '/estaciones/' },
             ].map((l) => (
-              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+              <li style="border-bottom:1px solid var(--c-line)">
                 <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
                   <span class="flex flex-col gap-0.5">
-                    <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
-                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
+                    <span class="font-display font-semibold text-sm group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{l.label}</span>
+                    <span class="text-xs" style="color:var(--c-muted)">{l.desc}</span>
                   </span>
                   
                 </a>

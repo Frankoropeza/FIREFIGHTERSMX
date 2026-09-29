@@ -41,28 +41,28 @@ const breadcrumbSchema = {
 <BaseLayout {...seoMeta} schema={[breadcrumbSchema]}>
 
   <!-- Breadcrumb -->
-  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+  <nav class="py-3" style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line)" aria-label="Breadcrumb">
     <div class="container-site">
       <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
-        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li><a href="/" class="hover:text-[var(--c-accent)]">Inicio</a></li>
         <li aria-hidden="true">/</li>
-        <li><span style="color:#94A3B8" aria-current="page">Cotización</span></li>
+        <li><span style="color:var(--c-text-2)" aria-current="page">Cotización</span></li>
       </ol>
     </div>
   </nav>
 
   <!-- Hero -->
-  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">
-    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
+  <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:5rem">
+    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(200,16,46,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
 
     <div class="container-site relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
         <div>
           <span class="section-eyebrow mb-5 inline-flex">Respuesta en menos de 2 horas</span>
-          <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+          <h1 class="font-display font-bold uppercase mb-6" style="color:var(--c-ink);font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
             Solicitar<br/>
-            <span style="color:#F75000">Cotización</span>
+            <span style="color:var(--c-accent)">Cotización</span>
           </h1>
           <div class="flex flex-col sm:flex-row gap-3">
             <a href="#formulario" class="btn btn-primary btn-lg">Llenar formulario</a>
@@ -76,14 +76,14 @@ const breadcrumbSchema = {
           </div>
         </div>
 
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
-          <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
+          <p class="text-sm leading-[1.9] mb-5" style="color:var(--c-text-2)">
             Solicita tu cotización de equipos para bomberos en FIREFIGHTERS MX:
-            <strong style="color:#CBD5E1">trajes NFPA, SCBA, herramientas de rescate y sistemas
+            <strong style="color:var(--c-text)">trajes NFPA, SCBA, herramientas de rescate y sistemas
             contra incendio</strong>. Propuestas técnicas personalizadas en menos de 2 horas en
             días hábiles.
           </p>
-          <p class="text-sm leading-[1.9] mb-6" style="color:#64748B">
+          <p class="text-sm leading-[1.9] mb-6" style="color:var(--c-muted)">
             Cada propuesta incluye fichas técnicas listas para licitaciones, normas aplicables
             y tiempos de entrega en firme. Cuéntanos qué necesitas y arma tu requerimiento
             categoría por categoría.
@@ -93,33 +93,33 @@ const breadcrumbSchema = {
       </div>
     </div>
 
-    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)" aria-hidden="true"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(200,16,46,0.4) 30%, rgba(200,16,46,0.4) 70%, transparent)" aria-hidden="true"></div>
   </section>
 
   <!-- Accesos rápidos (interlinking) -->
   <QuickLinksBar />
 
   <!-- Formulario -->
-  <section id="formulario" class="section" style="background:#070E1A" aria-labelledby="formulario-title">
+  <section id="formulario" class="section" style="background:var(--c-bg-alt)" aria-labelledby="formulario-title">
     <div class="container-site">
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Cuéntanos tu necesidad</span>
-          <h2 id="formulario-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="formulario-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Tu cotización,<br/>
-            <span style="color:#F75000">en marcha.</span>
+            <span style="color:var(--c-accent)">en marcha.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
             Propuestas técnicas personalizadas en menos de 2 horas en días hábiles.
             Incluye fichas técnicas para licitaciones.
           </p>
         </div>
       </div>
 
-      <div class="max-w-3xl" style="background:#0C1825;border:1px solid rgba(74,117,153,0.18);padding:2rem">
+      <div class="max-w-3xl" style="background:var(--c-surface);border:1px solid var(--c-line);padding:2rem">
         <form data-wa-form data-wa={SITE.whatsapp} data-mail={SITE.email} method="POST" action="/api/cotizacion" class="flex flex-col gap-6">
           <div class="grid sm:grid-cols-2 gap-5">
             <div>
@@ -160,8 +160,8 @@ const breadcrumbSchema = {
             <label class="label">Categorías de equipo de interés</label>
             <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-2">
               {categorias.map((cat) => (
-                <label class="flex items-center gap-2 cursor-pointer text-sm" style="color:#94A3B8">
-                  <input type="checkbox" name="categorias" value={cat} class="rounded" style="accent-color:#F75000"/>
+                <label class="flex items-center gap-2 cursor-pointer text-sm" style="color:var(--c-text-2)">
+                  <input type="checkbox" name="categorias" value={cat} class="rounded" style="accent-color:var(--c-accent)"/>
                   {cat}
                 </label>
               ))}
@@ -191,7 +191,7 @@ const breadcrumbSchema = {
           <button type="submit" class="btn btn-primary btn-lg w-full mt-2">
             Enviar solicitud de cotización gratuita
           </button>
-          <p class="text-xs text-center" style="color:#64748B">
+          <p class="text-xs text-center" style="color:var(--c-muted)">
             Recibirás tu cotización en menos de 2 horas en días hábiles.
             Tus datos están protegidos y nunca serán compartidos.
           </p>

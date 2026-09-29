@@ -6,10 +6,10 @@
 import { SITE, TELEFONO_ACTIVO, CONTACTO_DIRECTO_ACTIVO, whatsappUrl, CANAL_CONTACTO } from '@config/site';
 ---
 
-<section class="home-deferred-section relative overflow-hidden" style="background:#070E1A;padding-block:6rem" aria-labelledby="cta-final-title">
+<section class="home-deferred-section relative overflow-hidden" style="background:var(--c-bg-alt);padding-block:6rem" aria-labelledby="cta-final-title">
 
   <!-- Glow -->
-  <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse 50% 80% at 85% 100%, rgba(247,80,0,0.12) 0%, transparent 70%)" aria-hidden="true"></div>
+  <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse 50% 80% at 85% 100%, rgba(200,16,46,0.12) 0%, transparent 70%)" aria-hidden="true"></div>
 
   <div class="container-site relative z-10">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -18,12 +18,12 @@ import { SITE, TELEFONO_ACTIVO, CONTACTO_DIRECTO_ACTIVO, whatsappUrl, CANAL_CONT
       <div>
         <span class="section-eyebrow mb-6 inline-flex">Cotización sin compromiso</span>
 
-        <h2 id="cta-final-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(2.25rem,4.5vw,3.75rem);line-height:1.02">
+        <h2 id="cta-final-title" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(2.25rem,4.5vw,3.75rem);line-height:1.02">
           ¿Listo para equipar<br/>
-          a quienes <span style="color:#F75000">protegen vidas?</span>
+          a quienes <span style="color:var(--c-accent)">protegen vidas?</span>
         </h2>
 
-        <p class="text-base leading-relaxed" style="color:#94A3B8">
+        <p class="text-base leading-relaxed" style="color:var(--c-text-2)">
           Mándanos por {CANAL_CONTACTO} tu lista de equipo, las bases de tu licitación o
           simplemente cuéntanos tu operación. Regresamos propuesta con precios,
           fichas técnicas y tiempos de entrega en menos de 24 horas hábiles.
@@ -31,7 +31,7 @@ import { SITE, TELEFONO_ACTIVO, CONTACTO_DIRECTO_ACTIVO, whatsappUrl, CANAL_CONT
       </div>
 
       <!-- Columna derecha: acciones -->
-      <div class="flex flex-col gap-4 lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+      <div class="flex flex-col gap-4 lg:pl-16" style="border-left:1px solid var(--c-line)">
         <div class="flex flex-col gap-3 lg:max-w-md">
           <a
             href={whatsappUrl('Hola, quiero una cotización de equipo para bomberos / contra incendio.')}
@@ -49,13 +49,13 @@ import { SITE, TELEFONO_ACTIVO, CONTACTO_DIRECTO_ACTIVO, whatsappUrl, CANAL_CONT
             'Respuesta en menos de 24 h hábiles',
             'Fichas técnicas y certificados incluidos',
           ].map((t) => (
-            <div class="flex items-center gap-3 text-sm" style="color:#94A3B8">
+            <div class="flex items-center gap-3 text-sm" style="color:var(--c-text-2)">
               
               {t}
             </div>
           ))}
           {TELEFONO_ACTIVO && (
-<a href={`tel:${SITE.phoneE164}`} class="flex items-center gap-3 text-sm hover:text-[#FF6B26]" style="color:#94A3B8">
+<a href={`tel:${SITE.phoneE164}`} class="flex items-center gap-3 text-sm hover:text-[var(--c-accent)]" style="color:var(--c-text-2)">
             
             Tel. {SITE.phone}
           </a>
@@ -67,5 +67,5 @@ import { SITE, TELEFONO_ACTIVO, CONTACTO_DIRECTO_ACTIVO, whatsappUrl, CANAL_CONT
   </div>
 
   <!-- Línea de acento inferior -->
-  <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)" aria-hidden="true"></div>
+  <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(200,16,46,0.4) 30%, rgba(200,16,46,0.4) 70%, transparent)" aria-hidden="true"></div>
 </section>

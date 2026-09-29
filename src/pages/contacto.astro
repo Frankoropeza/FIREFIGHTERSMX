@@ -65,43 +65,43 @@ const canales = canalesTodos.filter(
 <BaseLayout {...seoMeta} schema={[breadcrumbSchema, localBusinessSchema]}>
 
   <!-- Breadcrumb -->
-  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+  <nav class="py-3" style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line)" aria-label="Breadcrumb">
     <div class="container-site">
       <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
-        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li><a href="/" class="hover:text-[var(--c-accent)]">Inicio</a></li>
         <li aria-hidden="true">/</li>
-        <li><a href="/empresa" class="hover:text-[#FF6B26]">Empresa</a></li>
+        <li><a href="/empresa" class="hover:text-[var(--c-accent)]">Empresa</a></li>
         <li aria-hidden="true">/</li>
-        <li><span style="color:#94A3B8" aria-current="page">Contacto</span></li>
+        <li><span style="color:var(--c-text-2)" aria-current="page">Contacto</span></li>
       </ol>
     </div>
   </nav>
 
   <!-- Hero -->
-  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">
-    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
+  <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:5rem">
+    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(200,16,46,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
 
     <div class="container-site relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div>
           <span class="section-eyebrow mb-5 inline-flex">Atención · Respuesta &lt; 2 h</span>
-          <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+          <h1 class="font-display font-bold uppercase mb-6" style="color:var(--c-ink);font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
             Hablemos de<br/>
-            <span style="color:#F75000">tu proyecto</span>
+            <span style="color:var(--c-accent)">tu proyecto</span>
           </h1>
           <div class="flex flex-col sm:flex-row gap-3">
             <a href={whatsappUrl('Hola, quiero asesoría sobre equipo contra incendio.')} target="_blank" rel="noopener" class="btn btn-primary btn-lg">Escribir por {CANAL_CONTACTO}</a>
             <a href="/cotizacion" class="btn btn-ghost btn-lg">Solicitar cotización de equipo contra incendio</a>
           </div>
         </div>
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
-          <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
+          <p class="text-sm leading-[1.9] mb-5" style="color:var(--c-text-2)">
             Un especialista te atiende para
-            <strong style="color:#CBD5E1">cotizaciones, información de productos, capacitación,
+            <strong style="color:var(--c-text)">cotizaciones, información de productos, capacitación,
             instalación, mantenimiento o licitaciones</strong>. Sin conmutadores: un ejecutivo
             responsable de tu cuenta.
           </p>
-          <p class="text-sm leading-[1.9] mb-6" style="color:#64748B">
+          <p class="text-sm leading-[1.9] mb-6" style="color:var(--c-muted)">
             Atendemos a cuerpos de bomberos, brigadas industriales, protección civil y dependencias
             de gobierno en los 32 estados, con respuesta en menos de 2 horas en días hábiles.
           </p>
@@ -113,38 +113,38 @@ const canales = canalesTodos.filter(
         </div>
       </div>
     </div>
-    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)" aria-hidden="true"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(200,16,46,0.4) 30%, rgba(200,16,46,0.4) 70%, transparent)" aria-hidden="true"></div>
   </section>
 
   <!-- Accesos rápidos -->
   <QuickLinksBar />
 
   <!-- Canales + Formulario -->
-  <section class="section" style="background:#040A12" aria-labelledby="contacto-title">
+  <section class="section" style="background:var(--c-bg)" aria-labelledby="contacto-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
 
         <!-- Canales -->
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Canales de atención</span>
-          <h2 id="contacto-title" class="font-display font-bold mb-8" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+          <h2 id="contacto-title" class="font-display font-bold mb-8" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Por donde<br/>
-            <span style="color:#F75000">prefieras.</span>
+            <span style="color:var(--c-accent)">prefieras.</span>
           </h2>
 
-          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.18)">
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
             {canales.map((c) => (
-              <li style="border-bottom:1px solid rgba(74,117,153,0.18)">
+              <li style="border-bottom:1px solid var(--c-line)">
                 <div class="flex items-center gap-4 py-4">
-                  <span class="flex items-center justify-center rounded-full shrink-0" style="width:44px;height:44px;background:rgba(247,80,0,0.1);border:1.5px solid rgba(247,80,0,0.35);color:#FF6B26">
+                  <span class="flex items-center justify-center rounded-full shrink-0" style="width:44px;height:44px;background:rgba(200,16,46,0.1);border:1.5px solid rgba(200,16,46,0.35);color:var(--c-accent)">
                     <span class="block" style="width:20px;height:20px" set:html={c.icon}/>
                   </span>
                   <span class="flex flex-col gap-0.5 min-w-0">
                     <span class="text-[10px] font-display font-semibold uppercase tracking-widest" style="color:var(--forge-300)">{c.label}</span>
                     {c.href ? (
-                      <a href={c.href} target={c.href.startsWith('http') ? '_blank' : undefined} rel={c.href.startsWith('http') ? 'noopener' : undefined} class="font-display font-semibold text-sm hover:text-[#FF6B26]" style="color:#FFFFFF">{c.value}</a>
+                      <a href={c.href} target={c.href.startsWith('http') ? '_blank' : undefined} rel={c.href.startsWith('http') ? 'noopener' : undefined} class="font-display font-semibold text-sm hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{c.value}</a>
                     ) : (
-                      <span class="font-display font-semibold text-sm" style="color:#FFFFFF">{c.value}</span>
+                      <span class="font-display font-semibold text-sm" style="color:var(--c-ink)">{c.value}</span>
                     )}
                   </span>
                 </div>
@@ -152,9 +152,9 @@ const canales = canalesTodos.filter(
             ))}
           </ul>
 
-          <div class="mt-8 p-6" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
-            <h3 class="font-display font-bold text-sm uppercase tracking-wider mb-2" style="color:#FF6B26">Cobertura nacional</h3>
-            <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">
+          <div class="mt-8 p-6" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
+            <h3 class="font-display font-bold text-sm uppercase tracking-wider mb-2" style="color:var(--c-accent)">Cobertura nacional</h3>
+            <p class="text-sm leading-relaxed m-0" style="color:var(--c-text-2)">
               Distribuidores autorizados y logística en los 32 estados. Entrega express en CDMX
               en 24–48 h hábiles; interior del país en 3–5 días hábiles.
             </p>
@@ -162,8 +162,8 @@ const canales = canalesTodos.filter(
         </div>
 
         <!-- Formulario -->
-        <div class="p-7" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
-          <h2 class="font-display font-bold text-xl mb-6" style="color:#FFFFFF">Envíanos un mensaje</h2>
+        <div class="p-7" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
+          <h2 class="font-display font-bold text-xl mb-6" style="color:var(--c-ink)">Envíanos un mensaje</h2>
           <form data-wa-form data-wa={SITE.whatsapp} data-mail={SITE.email} method="POST" action="/api/contacto" class="flex flex-col gap-5">
             <div class="grid sm:grid-cols-2 gap-4">
               <div>
@@ -201,7 +201,7 @@ const canales = canalesTodos.filter(
               <textarea id="mensaje" name="mensaje" rows="4" required class="textarea" placeholder="Cuéntanos en qué podemos ayudarte..."></textarea>
             </div>
             <button type="submit" class="btn btn-primary btn-lg w-full mt-2">Enviar mensaje</button>
-            <p class="text-xs text-center m-0" style="color:#64748B">Respondemos en menos de 2 horas en días hábiles.</p>
+            <p class="text-xs text-center m-0" style="color:var(--c-muted)">Respondemos en menos de 2 horas en días hábiles.</p>
           </form>
         </div>
 

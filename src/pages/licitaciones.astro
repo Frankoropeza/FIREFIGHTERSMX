@@ -152,28 +152,28 @@ const faqSchema = {
 <BaseLayout {...seoMeta} schema={[breadcrumbSchema, serviceSchema, faqSchema]}>
 
   <!-- Breadcrumb -->
-  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+  <nav class="py-3" style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line)" aria-label="Breadcrumb">
     <div class="container-site">
       <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
-        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li><a href="/" class="hover:text-[var(--c-accent)]">Inicio</a></li>
         <li aria-hidden="true">/</li>
-        <li><span style="color:#94A3B8" aria-current="page">Licitaciones</span></li>
+        <li><span style="color:var(--c-text-2)" aria-current="page">Licitaciones</span></li>
       </ol>
     </div>
   </nav>
 
   <!-- Hero -->
-  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">
-    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
+  <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:5rem">
+    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(200,16,46,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
 
     <div class="container-site relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
         <div>
           <span class="section-eyebrow mb-5 inline-flex">Sector gobierno · CompraNet</span>
-          <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+          <h1 class="font-display font-bold uppercase mb-6" style="color:var(--c-ink);font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
             Licitaciones de<br/>
-            <span style="color:#F75000">equipo contra incendio</span>
+            <span style="color:var(--c-accent)">equipo contra incendio</span>
           </h1>
           <div class="flex flex-col sm:flex-row gap-3">
             <a
@@ -187,14 +187,14 @@ const faqSchema = {
           </div>
         </div>
 
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
-          <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
+          <p class="text-sm leading-[1.9] mb-5" style="color:var(--c-text-2)">
             Acompañamos a dependencias y a proveedores en concursos públicos de equipo para bomberos
-            y sistemas contra incendio: <strong style="color:#CBD5E1">fichas técnicas, manifiestos de
+            y sistemas contra incendio: <strong style="color:var(--c-text)">fichas técnicas, manifiestos de
             cumplimiento de norma NOM y NFPA, cartas de distribuidor y catálogos</strong> listos para
             integrarse a la propuesta técnica de cada partida.
           </p>
-          <p class="text-sm leading-[1.9] mb-6" style="color:#64748B">
+          <p class="text-sm leading-[1.9] mb-6" style="color:var(--c-muted)">
             Somos proveedor habilitado en CompraNet, facturamos con CFDI 4.0 y entregamos en los
             32 estados con tiempos en firme. Federal, estatal o municipal: cubrimos el expediente
             técnico que el órgano fiscalizador va a auditar.
@@ -209,26 +209,26 @@ const faqSchema = {
       </div>
     </div>
 
-    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)" aria-hidden="true"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(200,16,46,0.4) 30%, rgba(200,16,46,0.4) 70%, transparent)" aria-hidden="true"></div>
   </section>
 
   <!-- Accesos rápidos (interlinking) -->
   <QuickLinksBar />
 
   <!-- Capacidades -->
-  <section class="section" style="background:#040A12" aria-labelledby="capacidades-title">
+  <section class="section" style="background:var(--c-bg)" aria-labelledby="capacidades-title">
     <div class="container-site">
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Qué entregamos</span>
-          <h2 id="capacidades-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="capacidades-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             El expediente técnico,<br/>
-            <span style="color:#F75000">resuelto.</span>
+            <span style="color:var(--c-accent)">resuelto.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
             Una propuesta técnica se gana en los detalles: la certificación correcta por partida,
             el manifiesto firmado, la carta de distribuidor y los tiempos de entrega creíbles.
             Eso es exactamente lo que preparamos contigo.
@@ -238,19 +238,19 @@ const faqSchema = {
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {capacidades.map((c) => (
-          <article class="cap-card group relative flex flex-col overflow-hidden" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
+          <article class="cap-card group relative flex flex-col overflow-hidden" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
             <div class="relative flex items-center justify-center overflow-hidden" style="height:110px">
               <div class="absolute inset-0" style={`background:linear-gradient(135deg, ${c.accent}26 0%, rgba(4,10,18,0.94) 100%)`}></div>
               <div class="relative z-10 flex items-center justify-center rounded-full"
                    style={`width:60px;height:60px;background:rgba(4,10,18,0.7);border:1.5px solid ${c.accent}44;color:${c.accent}`}>
                 <span class="block" style="width:26px;height:26px" set:html={c.icon}/>
               </div>
-              <div class="absolute bottom-0 left-0 right-0 h-8 pointer-events-none" style="background:linear-gradient(to bottom, transparent, #080F1A)"></div>
+              <div class="absolute bottom-0 left-0 right-0 h-8 pointer-events-none" style="background:linear-gradient(to bottom, transparent, var(--c-bg-alt))"></div>
             </div>
             <div class="flex flex-col flex-1 p-5 gap-2.5">
               <span class="text-[9px] font-display font-semibold uppercase tracking-widest" style="color:var(--forge-300)">{c.tag}</span>
-              <h3 class="font-display font-bold text-lg leading-tight" style="color:#FFFFFF">{c.title}</h3>
-              <p class="text-xs leading-relaxed" style="color:#64748B">{c.desc}</p>
+              <h3 class="font-display font-bold text-lg leading-tight" style="color:var(--c-ink)">{c.title}</h3>
+              <p class="text-xs leading-relaxed" style="color:var(--c-muted)">{c.desc}</p>
             </div>
           </article>
         ))}
@@ -260,38 +260,38 @@ const faqSchema = {
   </section>
 
   <!-- Requisito  entregable -->
-  <section class="section" style="background:#070E1A" aria-labelledby="requisitos-title">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="requisitos-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Punto por punto</span>
-          <h2 id="requisitos-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="requisitos-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Cada requisito,<br/>
-            <span style="color:#F75000">su documento.</span>
+            <span style="color:var(--c-accent)">su documento.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
             Las convocatorias se ganan o se descalifican por la documentación. Esto es lo que
             pide una base típica y lo que entregamos para cubrirlo sin observaciones.
           </p>
         </div>
       </div>
 
-      <div style="border:1px solid rgba(74,117,153,0.18)">
-        <div class="grid grid-cols-1 sm:grid-cols-2" style="background:#0C1825;border-bottom:1px solid rgba(74,117,153,0.18)">
-          <div class="p-4"><span class="font-display font-bold text-xs uppercase tracking-widest" style="color:#FF6B26">Requisito de la convocatoria</span></div>
-          <div class="p-4" style="border-left:1px solid rgba(74,117,153,0.18)"><span class="font-display font-bold text-xs uppercase tracking-widest" style="color:#FF6B26">Lo que entregamos</span></div>
+      <div style="border:1px solid var(--c-line)">
+        <div class="grid grid-cols-1 sm:grid-cols-2" style="background:var(--c-surface);border-bottom:1px solid var(--c-line)">
+          <div class="p-4"><span class="font-display font-bold text-xs uppercase tracking-widest" style="color:var(--c-accent)">Requisito de la convocatoria</span></div>
+          <div class="p-4" style="border-left:1px solid var(--c-line)"><span class="font-display font-bold text-xs uppercase tracking-widest" style="color:var(--c-accent)">Lo que entregamos</span></div>
         </div>
         {requisitos.map(([req, ent], i) => (
-          <div class="grid grid-cols-1 sm:grid-cols-2" style={`background:${i % 2 === 0 ? '#080F1A' : '#0A1320'};${i < requisitos.length - 1 ? 'border-bottom:1px solid rgba(74,117,153,0.12);' : ''}`}>
+          <div class="grid grid-cols-1 sm:grid-cols-2" style={`background:${i % 2 === 0 ? 'var(--c-bg-alt)' : 'var(--c-bg-alt)'};${i < requisitos.length - 1 ? 'border-bottom:1px solid rgba(74,117,153,0.12);' : ''}`}>
             <div class="p-4 flex items-center gap-3">
-              <span class="w-1.5 h-1.5 rounded-full shrink-0" style="background:#4A7599" aria-hidden="true"></span>
-              <span class="text-sm" style="color:#CBD5E1">{req}</span>
+              <span class="w-1.5 h-1.5 rounded-full shrink-0" style="background:var(--c-line-strong)" aria-hidden="true"></span>
+              <span class="text-sm" style="color:var(--c-text)">{req}</span>
             </div>
-            <div class="p-4 flex items-center gap-3" style="border-left:1px solid rgba(74,117,153,0.12)">
+            <div class="p-4 flex items-center gap-3" style="border-left:1px solid var(--c-line)">
               
-              <span class="text-sm" style="color:#94A3B8">{ent}</span>
+              <span class="text-sm" style="color:var(--c-text-2)">{ent}</span>
             </div>
           </div>
         ))}
@@ -300,39 +300,39 @@ const faqSchema = {
   </section>
 
   <!-- Plataformas + Proceso -->
-  <section class="section" style="background:#040A12" aria-labelledby="plataformas-title">
+  <section class="section" style="background:var(--c-bg)" aria-labelledby="plataformas-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
 
         <!-- Plataformas -->
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Dónde participamos</span>
-          <h2 id="plataformas-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+          <h2 id="plataformas-title" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Federal, estatal<br/>
-            <span style="color:#F75000">y municipal.</span>
+            <span style="color:var(--c-accent)">y municipal.</span>
           </h2>
-          <ul class="grid grid-cols-1 sm:grid-cols-2 list-none m-0 p-0" style="border:1px solid rgba(74,117,153,0.18)">
+          <ul class="grid grid-cols-1 sm:grid-cols-2 list-none m-0 p-0" style="border:1px solid var(--c-line)">
             {plataformas.map((p, i) => (
-              <li class="grid-cell flex items-center gap-3 p-4" style={`border-bottom:1px solid rgba(74,117,153,0.12);${i % 2 === 0 ? 'border-right:1px solid rgba(74,117,153,0.12);' : ''}`}>
+              <li class="grid-cell flex items-center gap-3 p-4" style={`border-bottom:1px solid var(--c-line);${i % 2 === 0 ? 'border-right:1px solid rgba(74,117,153,0.12);' : ''}`}>
                 
-                <span class="text-xs leading-snug" style="color:#94A3B8">{p}</span>
+                <span class="text-xs leading-snug" style="color:var(--c-text-2)">{p}</span>
               </li>
             ))}
           </ul>
         </div>
 
         <!-- Proceso -->
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
           <span class="section-eyebrow mb-4 inline-flex">Cómo te acompañamos</span>
-          <h2 class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+          <h2 class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             De la convocatoria<br/>
-            <span style="color:#F75000">al fallo.</span>
+            <span style="color:var(--c-accent)">al fallo.</span>
           </h2>
           <ol class="flex flex-col gap-4 list-none m-0 p-0">
             {pasos.map((s) => (
               <li class="flex items-start gap-4">
                 
-                <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{s.t}</p>
+                <p class="text-sm leading-relaxed m-0" style="color:var(--c-text-2)">{s.t}</p>
               </li>
             ))}
           </ol>
@@ -348,17 +348,17 @@ const faqSchema = {
   </section>
 
   <!-- FAQ -->
-  <section class="section" style="background:#070E1A" aria-labelledby="faq-title">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="faq-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
 
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes</span>
-          <h2 id="faq-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+          <h2 id="faq-title" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Lo que más nos<br/>
-            <span style="color:#F75000">preguntan.</span>
+            <span style="color:var(--c-accent)">preguntan.</span>
           </h2>
-          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+          <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
             ¿Tu duda no aparece aquí? Escríbenos por {CANAL_CONTACTO} con los datos de tu convocatoria
             y te respondemos con la solución concreta para esa licitación.
           </p>
@@ -366,12 +366,12 @@ const faqSchema = {
 
         <div class="flex flex-col">
           {faqs.map((f, i) => (
-            <details class="faq-item group" style={`border-top:1px solid rgba(74,117,153,0.18);${i === faqs.length - 1 ? 'border-bottom:1px solid rgba(74,117,153,0.18);' : ''}`}>
+            <details class="faq-item group" style={`border-top:1px solid var(--c-line);${i === faqs.length - 1 ? 'border-bottom:1px solid rgba(74,117,153,0.18);' : ''}`}>
               <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer">
-                <span class="font-display font-semibold text-sm" style="color:#FFFFFF">{f.q}</span>
-                <span class="faq-icon font-display font-bold text-xl shrink-0" style="color:#FF6B26">+</span>
+                <span class="font-display font-semibold text-sm" style="color:var(--c-ink)">{f.q}</span>
+                <span class="faq-icon font-display font-bold text-xl shrink-0" style="color:var(--c-accent)">+</span>
               </summary>
-              <p class="text-sm leading-relaxed pb-5 m-0" style="color:#94A3B8">{f.a}</p>
+              <p class="text-sm leading-relaxed pb-5 m-0" style="color:var(--c-text-2)">{f.a}</p>
             </details>
           ))}
         </div>
@@ -381,17 +381,17 @@ const faqSchema = {
   </section>
 
   <!-- Cross-links -->
-  <section class="section" style="background:#040A12" aria-labelledby="cross-title">
+  <section class="section" style="background:var(--c-bg)" aria-labelledby="cross-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
 
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Un solo proveedor</span>
-          <h2 id="cross-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+          <h2 id="cross-title" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Equipo, servicio<br/>
-            <span style="color:#F75000">y expediente.</span>
+            <span style="color:var(--c-accent)">y expediente.</span>
           </h2>
-          <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
+          <p class="text-sm leading-relaxed mb-8" style="color:var(--c-text-2)">
             Más allá de la licitación, somos tu proveedor integral: catálogo certificado,
             servicios que mantienen el equipo vigente y la documentación auditable que cierra
             cada contrato. Cuéntanos tu caso y lo armamos completo.
@@ -401,11 +401,11 @@ const faqSchema = {
           </a>
         </div>
 
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
           <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">
             También te puede servir
           </h2>
-          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
             {[
               { label: 'Catálogo de productos', desc: 'Equipo NFPA y NOM en 10 categorías', href: '/productos' },
               { label: 'Soporte para licitaciones (servicio)', desc: 'Alcance y entregables del servicio', href: '/servicios/licitaciones' },
@@ -414,11 +414,11 @@ const faqSchema = {
               { label: 'Cobertura nacional', desc: 'Entrega y servicio en los 32 estados', href: '/cobertura' },
               { label: 'Conoce la empresa', desc: 'Quiénes somos, cobertura y certificaciones', href: '/empresa' },
             ].map((l) => (
-              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+              <li style="border-bottom:1px solid var(--c-line)">
                 <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
                   <span class="flex flex-col gap-0.5">
-                    <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
-                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
+                    <span class="font-display font-semibold text-sm group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{l.label}</span>
+                    <span class="text-xs" style="color:var(--c-muted)">{l.desc}</span>
                   </span>
                   
                 </a>
@@ -434,7 +434,7 @@ const faqSchema = {
 </BaseLayout>
 
 <style>
-  .cap-card:hover { border-color: rgba(247, 80, 0, 0.45) !important; }
+  .cap-card:hover { border-color: rgba(200,16,46,0.45) !important; }
   details.faq-item summary { list-style: none; }
   details.faq-item summary::-webkit-details-marker { display: none; }
   details.faq-item[open] .faq-icon { transform: rotate(45deg); }

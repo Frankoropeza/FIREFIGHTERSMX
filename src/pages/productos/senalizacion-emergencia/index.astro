@@ -36,33 +36,33 @@ const faqSchema = {
 ---
 
 <BaseLayout title="Señalización y emergencia — México" description={cat.description} canonicalURL={canonicalURL} schema={[breadcrumbSchema, faqSchema]}>
-  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+  <nav class="py-3" style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line)" aria-label="Breadcrumb">
     <div class="container-site">
       <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
-        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li><a href="/" class="hover:text-[var(--c-accent)]">Inicio</a></li>
         <li aria-hidden="true">/</li>
-        <li><a href="/productos/" class="hover:text-[#FF6B26]">Productos</a></li>
+        <li><a href="/productos/" class="hover:text-[var(--c-accent)]">Productos</a></li>
         <li aria-hidden="true">/</li>
-        <li><span style="color:#94A3B8" aria-current="page">{cat.label}</span></li>
+        <li><span style="color:var(--c-text-2)" aria-current="page">{cat.label}</span></li>
       </ol>
     </div>
   </nav>
 
-  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">
-    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(52,211,153,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
+  <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:5rem">
+    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(6,118,71,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
     <div class="container-site relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div>
           <span class="section-eyebrow mb-5 inline-flex">{cat.norm}</span>
-          <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+          <h1 class="font-display font-bold uppercase mb-6" style="color:var(--c-ink);font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
             Señalización y emergencia<br/>
-            <span style="color:#F75000">para evacuar y atender con seguridad.</span>
+            <span style="color:var(--c-accent)">para evacuar y atender con seguridad.</span>
           </h1>
           <a href={whatsappUrl('Cotiza señalamientos de seguridad, lámparas de emergencia y botiquines de primeros auxilios con un especialista.')} target="_blank" rel="noopener" class="btn btn-primary btn-lg">Cotizar por {CANAL_CONTACTO}</a>
         </div>
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
           {cat.intro.map((paragraph) => (
-            <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">{paragraph}</p>
+            <p class="text-sm leading-[1.9] mb-5" style="color:var(--c-text-2)">{paragraph}</p>
           ))}
         </div>
       </div>
@@ -71,10 +71,10 @@ const faqSchema = {
 
   <QuickLinksBar />
 
-  <section class="section-tight" style="background:#040A12" aria-labelledby="dea-title">
+  <section class="section-tight" style="background:var(--c-bg)" aria-labelledby="dea-title">
     <div class="container-site">
-      <h2 id="dea-title" class="font-display font-bold text-lg mb-4" style="color:#FFFFFF">Respuesta ante paro cardiaco</h2>
-      <p class="text-sm leading-relaxed mb-5" style="color:#94A3B8">Los DEA se seleccionan con consumibles, responsable de inspección y el registro sanitario COFEPRIS vigente del modelo.</p>
+      <h2 id="dea-title" class="font-display font-bold text-lg mb-4" style="color:var(--c-ink)">Respuesta ante paro cardiaco</h2>
+      <p class="text-sm leading-relaxed mb-5" style="color:var(--c-text-2)">Los DEA se seleccionan con consumibles, responsable de inspección y el registro sanitario COFEPRIS vigente del modelo.</p>
       <div class="flex flex-wrap gap-3">
         <a href="/productos/desfibriladores/zoll-aed-plus/" class="btn btn-sm btn-dark">ZOLL AED Plus</a>
         <a href="/productos/desfibriladores/zoll-aed-3/" class="btn btn-sm btn-dark">ZOLL AED 3</a>
@@ -85,7 +85,7 @@ const faqSchema = {
     </div>
   </section>
 
-  <section class="section" style="background:#070E1A" aria-labelledby="lineas-title">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="lineas-title">
     <div class="container-site">
       <div class="section-head">
         <span class="section-eyebrow">Líneas</span>
@@ -93,18 +93,18 @@ const faqSchema = {
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
         {lineas.map((linea) => (
-          <a href={`/productos/${linea.categorySlug}/${linea.slug}/`} class="group flex flex-col gap-4 p-7" style="background:#040A12;border:1px solid rgba(74,117,153,0.18)">
+          <a href={`/productos/${linea.categorySlug}/${linea.slug}/`} class="group flex flex-col gap-4 p-7" style="background:var(--c-bg);border:1px solid var(--c-line)">
             <span class="badge badge-dark self-start">{linea.eyebrow}</span>
-            <h3 class="font-display font-bold text-xl group-hover:text-[#FF6B26]" style="color:#FFFFFF">{linea.brandLabel}</h3>
-            <p class="text-sm leading-relaxed flex-1" style="color:#94A3B8">{linea.crossDesc}</p>
-            <span class="text-xs font-display font-semibold uppercase tracking-wider" style="color:#FF8F57">Catálogo de {linea.brandLabel.toLowerCase()}</span>
+            <h3 class="font-display font-bold text-xl group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{linea.brandLabel}</h3>
+            <p class="text-sm leading-relaxed flex-1" style="color:var(--c-text-2)">{linea.crossDesc}</p>
+            <span class="text-xs font-display font-semibold uppercase tracking-wider" style="color:var(--c-accent)">Catálogo de {linea.brandLabel.toLowerCase()}</span>
           </a>
         ))}
       </div>
     </div>
   </section>
 
-  <section class="section" style="background:#040A12" aria-labelledby="productos-title">
+  <section class="section" style="background:var(--c-bg)" aria-labelledby="productos-title">
     <div class="container-site">
       <div class="section-head">
         <span class="section-eyebrow">Productos</span>
@@ -116,17 +116,17 @@ const faqSchema = {
     </div>
   </section>
 
-  <section class="section" style="background:#070E1A" aria-labelledby="faq-title">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="faq-title">
     <div class="container-site max-w-4xl">
       <div class="section-head">
         <span class="section-eyebrow">Preguntas frecuentes</span>
         <h2 id="faq-title">Información para<br/><span>tu centro de trabajo.</span></h2>
       </div>
-      <div class="flex flex-col" style="border-top:1px solid rgba(74,117,153,0.18)">
+      <div class="flex flex-col" style="border-top:1px solid var(--c-line)">
         {faqs.map((faq) => (
-          <article class="py-6" style="border-bottom:1px solid rgba(74,117,153,0.18)">
-            <h3 class="font-display font-bold text-lg mb-3" style="color:#FFFFFF">{faq.q}</h3>
-            <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{faq.a}</p>
+          <article class="py-6" style="border-bottom:1px solid var(--c-line)">
+            <h3 class="font-display font-bold text-lg mb-3" style="color:var(--c-ink)">{faq.q}</h3>
+            <p class="text-sm leading-relaxed m-0" style="color:var(--c-text-2)">{faq.a}</p>
           </article>
         ))}
       </div>

@@ -175,31 +175,31 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
 <BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema, faqSchema]}>
 
   <!-- Breadcrumb -->
-  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+  <nav class="py-3" style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line)" aria-label="Breadcrumb">
     <div class="container-site">
       <ol class="flex items-center gap-2 text-xs list-none m-0 p-0 flex-wrap" style="color:var(--forge-300)">
-        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li><a href="/" class="hover:text-[var(--c-accent)]">Inicio</a></li>
         <li aria-hidden="true">/</li>
-        <li><a href="/productos" class="hover:text-[#FF6B26]">Productos</a></li>
+        <li><a href="/productos" class="hover:text-[var(--c-accent)]">Productos</a></li>
         <li aria-hidden="true">/</li>
-        <li><span style="color:#94A3B8" aria-current="page">Herramientas de Rescate</span></li>
+        <li><span style="color:var(--c-text-2)" aria-current="page">Herramientas de Rescate</span></li>
       </ol>
     </div>
   </nav>
 
   <!-- Hero -->
-  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">
-    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
+  <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:5rem">
+    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(200,16,46,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
 
     <div class="container-site relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div>
           <span class="section-eyebrow mb-5 inline-flex">{cat.norm} · Holmatro · Hurst · Weber Rescue · Distribuidor Autorizado MX</span>
-          <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+          <h1 class="font-display font-bold uppercase mb-6" style="color:var(--c-ink);font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
             Quijadas de la vida<br/>
-            <span style="color:#F75000">herramientas hidráulicas de rescate Holmatro, Hurst y Weber.</span>
+            <span style="color:var(--c-accent)">herramientas hidráulicas de rescate Holmatro, Hurst y Weber.</span>
           </h1>
-          <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
+          <p class="text-sm leading-relaxed mb-8" style="color:var(--c-text-2)">
             Distribuidor autorizado de Holmatro, Hurst Jaws of Life® y Weber Rescue en México.
             Líneas a batería sin mangueras, clasificación EN 13204:2025 verificable y demostración en sitio incluida.
           </p>
@@ -208,9 +208,9 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
             <a href="/cotizacion" class="btn btn-ghost btn-lg">Cotización formal</a>
           </div>
         </div>
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
           {cat.intro.map((p) => (
-            <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">{p}</p>
+            <p class="text-sm leading-[1.9] mb-5" style="color:var(--c-text-2)">{p}</p>
           ))}
           <div class="flex flex-wrap gap-2">
             {['NFPA 1960','EN 13204:2025','Batería autocontenida','Aceros al boro','Cizalla · Separador · Combinada · Ariete','Holmatro · Hurst · Weber'].map(n => (
@@ -220,22 +220,22 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
         </div>
       </div>
     </div>
-    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)" aria-hidden="true"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(200,16,46,0.4) 30%, rgba(200,16,46,0.4) 70%, transparent)" aria-hidden="true"></div>
   </section>
 
-  <section id="guia-rescate" class="section" style="background:#040A12" aria-labelledby="guia-rescate-title">
+  <section id="guia-rescate" class="section" style="background:var(--c-bg)" aria-labelledby="guia-rescate-title">
     <div class="container-site content-copy">
       <div class="section-head mb-5"><h2 id="guia-rescate-title">¿Qué son las quijadas de la vida?</h2></div>
       <p class="mb-8">«Quijadas de la vida» es el nombre con el que se conoce en México a las herramientas hidráulicas de rescate que usan los bomberos para liberar a personas atrapadas en vehículos y estructuras. El nombre viene de <em>Jaws of Life</em>, marca registrada de Hurst: la herramienta se presentó en 1971 y su primer modelo de producción, el JL-32, salió en 1972. Hoy el término se usa para cualquier herramienta de excarcelación, de cualquier fabricante.</p>
 
       <div class="section-head mt-14 mb-5"><h2>Tipos de herramientas hidráulicas de rescate</h2></div>
-      <div class="overflow-x-auto max-w-full min-w-0 mb-4"><table class="w-full text-left text-sm" style="border-collapse:collapse;min-width:640px;color:#CBD5E1">
-        <thead><tr><th class="p-3" style="background:#0C1825;color:#FFFFFF">Herramienta</th><th class="p-3" style="background:#0C1825;color:#FFFFFF">Función</th><th class="p-3" style="background:#0C1825;color:#FFFFFF">Uso típico</th></tr></thead>
+      <div class="overflow-x-auto max-w-full min-w-0 mb-4"><table class="w-full text-left text-sm" style="border-collapse:collapse;min-width:640px;color:var(--c-text)">
+        <thead><tr><th class="p-3" style="background:var(--c-surface);color:var(--c-ink)">Herramienta</th><th class="p-3" style="background:var(--c-surface);color:var(--c-ink)">Función</th><th class="p-3" style="background:var(--c-surface);color:var(--c-ink)">Uso típico</th></tr></thead>
         <tbody>
-          <tr><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Cizalla</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Cortar</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Postes, bisagras y el techo del vehículo</td></tr>
-          <tr><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Separador</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Abrir, separar y levantar</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Puertas atoradas y espacios para trabajar</td></tr>
-          <tr><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Combinada</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Cortar y separar con una sola herramienta</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Unidades de primera respuesta con espacio limitado</td></tr>
-          <tr><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Ariete</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Empujar y estabilizar</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Desplazar el tablero y liberar las piernas</td></tr>
+          <tr><td class="p-3" style="border-bottom:1px solid var(--c-line)">Cizalla</td><td class="p-3" style="border-bottom:1px solid var(--c-line)">Cortar</td><td class="p-3" style="border-bottom:1px solid var(--c-line)">Postes, bisagras y el techo del vehículo</td></tr>
+          <tr><td class="p-3" style="border-bottom:1px solid var(--c-line)">Separador</td><td class="p-3" style="border-bottom:1px solid var(--c-line)">Abrir, separar y levantar</td><td class="p-3" style="border-bottom:1px solid var(--c-line)">Puertas atoradas y espacios para trabajar</td></tr>
+          <tr><td class="p-3" style="border-bottom:1px solid var(--c-line)">Combinada</td><td class="p-3" style="border-bottom:1px solid var(--c-line)">Cortar y separar con una sola herramienta</td><td class="p-3" style="border-bottom:1px solid var(--c-line)">Unidades de primera respuesta con espacio limitado</td></tr>
+          <tr><td class="p-3" style="border-bottom:1px solid var(--c-line)">Ariete</td><td class="p-3" style="border-bottom:1px solid var(--c-line)">Empujar y estabilizar</td><td class="p-3" style="border-bottom:1px solid var(--c-line)">Desplazar el tablero y liberar las piernas</td></tr>
         </tbody>
       </table></div>
 
@@ -247,14 +247,14 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
       <p>La fuerza de corte en kilonewtons es un valor teórico calculado; para comparar cizallas, usa la clasificación de corte publicada del modelo.</p>
 
       <div class="section-head mt-14 mb-5"><h2>Modelos por marca</h2></div>
-      <ul class="list-disc pl-6 space-y-2 text-sm leading-relaxed" style="color:#CBD5E1">
+      <ul class="list-disc pl-6 space-y-2 text-sm leading-relaxed" style="color:var(--c-text)">
         <li><strong>Holmatro Pentheon</strong> (Países Bajos, fundada en 1967): cizalla PCU50 (apertura 182 mm), separador PSP50 (725 mm, 366 kN máx.), combinada PCT50 con puntas desmontables y ariete PRA50 (136 kN).</li>
         <li><strong>Hurst eDRAULIC E3</strong> (Jaws of Life): cizalla S 789 E3 (NFPA A8/B9/C8/D9/E9/F5), separador SP 555 E3, combinada SC 358 E3 y ariete R 521 E3.</li>
         <li><strong>Weber Rescue E-FORCE3</strong> (Alemania): cizalla RSC 190 (EN 13204:2025 F-CU2-187K), separador SP 54 AS (55–501 kN), combinada SPS 400 MK2 y ariete telescópico RZT 2-1360.</li>
       </ul>
 
       <div class="section-head mt-14 mb-5"><h2>¿Cómo elegir herramientas de rescate?</h2></div>
-      <ol class="list-none pl-6 space-y-2 text-sm leading-relaxed" style="color:#CBD5E1">
+      <ol class="list-none pl-6 space-y-2 text-sm leading-relaxed" style="color:var(--c-text)">
         <li>Revisa los accidentes que atiende tu unidad: autos, transporte pesado o estructuras.</li>
         <li>Compara la clasificación de corte con los aceros de alta resistencia de los vehículos modernos.</li>
         <li>Define si necesitas un juego completo (cizalla, separador y ariete) o una combinada para primera respuesta.</li>
@@ -269,14 +269,14 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
   <QuickLinksBar />
 
   <!-- Trust Pillars -->
-  <section class="section-tight" style="background:#070E1A" aria-label="Por qué distribuimos estas marcas">
+  <section class="section-tight" style="background:var(--c-bg-alt)" aria-label="Por qué distribuimos estas marcas">
     <div class="container-site">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style="border:1px solid rgba(74,117,153,0.18)">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style="border:1px solid var(--c-line)">
         {razones.map((r, i) => (
-          <div class="flex flex-col gap-3 p-6" style={`background:#080F1A;${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.12)' : ''}`}>
+          <div class="flex flex-col gap-3 p-6" style={`background:var(--c-bg-alt);${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.12)' : ''}`}>
             
-            <h3 class="font-display font-bold text-sm uppercase tracking-wide" style="color:#FFFFFF">{r.t}</h3>
-            <p class="text-xs leading-relaxed m-0" style="color:#64748B">{r.d}</p>
+            <h3 class="font-display font-bold text-sm uppercase tracking-wide" style="color:var(--c-ink)">{r.t}</h3>
+            <p class="text-xs leading-relaxed m-0" style="color:var(--c-muted)">{r.d}</p>
           </div>
         ))}
       </div>
@@ -284,18 +284,18 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
   </section>
 
   <!-- Familias de herramientas -->
-  <section class="section" style="background:#040A12" aria-labelledby="familias-title">
+  <section class="section" style="background:var(--c-bg)" aria-labelledby="familias-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Cuatro herramientas, una misión</span>
-          <h2 id="familias-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="familias-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             La herramienta correcta<br/>
-            <span style="color:#F75000">para cada maniobra.</span>
+            <span style="color:var(--c-accent)">para cada maniobra.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
             En excarcelación vehicular cada herramienta tiene una función específica. Un equipo bien
             dimensionado combina cizalla + separador + ariete para la escena completa; un cuerpo ligero
             puede empezar con la herramienta combinada. Asesoramos la configuración exacta según
@@ -306,15 +306,15 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {familias.map((f) => (
-          <article class="flex flex-col gap-4 p-7" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
+          <article class="flex flex-col gap-4 p-7" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
             <div class="flex items-center justify-center rounded-full" style={`width:52px;height:52px;background:${f.accent}1a;border:1.5px solid ${f.accent}59;color:${f.accent}`}>
               <span class="block" style="width:24px;height:24px" set:html={f.icon}/>
             </div>
             <div class="flex flex-col gap-1">
-              <h3 class="font-display font-bold text-lg" style="color:#FFFFFF">{f.title}</h3>
+              <h3 class="font-display font-bold text-lg" style="color:var(--c-ink)">{f.title}</h3>
               <span class="badge badge-dark text-[9px]">{f.badge}</span>
             </div>
-            <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{f.desc}</p>
+            <p class="text-sm leading-relaxed m-0" style="color:var(--c-text-2)">{f.desc}</p>
           </article>
         ))}
       </div>
@@ -322,18 +322,18 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
   </section>
 
   <!-- Holmatro -->
-  <section class="section" style="background:#070E1A" aria-labelledby="holmatro-title">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="holmatro-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Holmatro · Ingeniería neerlandesa · Pentheon a batería</span>
-          <h2 id="holmatro-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="holmatro-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Herramientas Holmatro<br/>
-            <span style="color:#F75000">Holmatro, Hurst y Weber.</span>
+            <span style="color:var(--c-accent)">Holmatro, Hurst y Weber.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed mb-4" style="color:var(--c-text-2)">
             Holmatro es una de las referencias mundiales en herramientas hidráulicas de rescate.
             Su línea Pentheon es autocontenida a batería: sin mangueras ni unidad de poder,
             se despliega en segundos y el operador se mueve libremente alrededor del vehículo.
@@ -353,9 +353,9 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
         ))}
       </div>
 
-      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(74,117,153,0.15)">
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid var(--c-line)">
         <div class="flex-1">
-          <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+          <p class="text-sm leading-relaxed m-0" style="color:var(--c-muted)">
             ¿Quieres la comparativa técnica completa, la anatomía de la Pentheon y el FAQ de clasificación EN 13204:2025?
             Accede al catálogo dedicado de la marca.
           </p>
@@ -373,18 +373,18 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
   </section>
 
   <!-- Hurst Jaws of Life -->
-  <section class="section" style="background:#040A12" aria-labelledby="hurst-title">
+  <section class="section" style="background:var(--c-bg)" aria-labelledby="hurst-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Hurst · Inventor del Jaws of Life® · Desde 1972</span>
-          <h2 id="hurst-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="hurst-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Hurst Jaws of Life®<br/>
-            <span style="color:#F75000">eDRAULIC NFPA 1960.</span>
+            <span style="color:var(--c-accent)">eDRAULIC NFPA 1960.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed mb-4" style="color:var(--c-text-2)">
             Hurst presentó Jaws of Life® en 1971 y define el rescate vehicular desde entonces.
             Su línea eDRAULIC es autocontenida a batería — sin mangueras ni bomba — y es la herramienta
             de excarcelación reconocida en rescate vehicular, presente en miles de cuerpos de bomberos.
@@ -404,9 +404,9 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
         ))}
       </div>
 
-      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(74,117,153,0.15)">
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid var(--c-line)">
         <div class="flex-1">
-          <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+          <p class="text-sm leading-relaxed m-0" style="color:var(--c-muted)">
             ¿Tu brigada conoce el Jaws of Life® y quiere la tecnología a batería más moderna?
             El eDRAULIC es la evolución sin mangueras de la herramienta más famosa del rescate.
           </p>
@@ -424,18 +424,18 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
   </section>
 
   <!-- Weber Rescue -->
-  <section class="section" style="background:#070E1A" aria-labelledby="weber-title">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="weber-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Weber Rescue · Ingeniería alemana · E-FORCE</span>
-          <h2 id="weber-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="weber-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Weber Rescue E-FORCE<br/>
-            <span style="color:#F75000">con clasificación EN 13204.</span>
+            <span style="color:var(--c-accent)">con clasificación EN 13204.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed mb-4" style="color:var(--c-text-2)">
             Weber Rescue —del grupo Weber-Hydraulik, ingeniería alemana— es la referencia en
             relación peso-potencia: equipos compactos y ligeros sin sacrificar fuerza de corte.
             La línea E-FORCE a batería destaca por su maniobrabilidad en habitáculos reducidos
@@ -455,9 +455,9 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
         ))}
       </div>
 
-      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(74,117,153,0.15)">
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid var(--c-line)">
         <div class="flex-1">
-          <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+          <p class="text-sm leading-relaxed m-0" style="color:var(--c-muted)">
             ¿Buscas la herramienta compacta con máxima fuerza de corte?
             Weber E-FORCE es la opción alemana con mejor relación peso-potencia del mercado.
           </p>
@@ -475,20 +475,20 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
   </section>
 
   <!-- Galería -->
-  <section class="section-tight" style="background:#040A12" aria-label="Herramientas de rescate en operación">
+  <section class="section-tight" style="background:var(--c-bg)" aria-label="Herramientas de rescate en operación">
     <div class="container-site">
       <div class="flex items-center gap-4 mb-6">
-        <span class="w-8 h-px" style="background:#F75000"></span>
-        <span class="text-xs font-display font-semibold uppercase tracking-[0.18em]" style="color:#F75000">Rescate en la escena</span>
+        <span class="w-8 h-px" style="background:var(--c-accent)"></span>
+        <span class="text-xs font-display font-semibold uppercase tracking-[0.18em]" style="color:var(--c-accent)">Rescate en la escena</span>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-2 lg:gap-3">
-        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
+        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
           <img src="/images/productos/bombero-hacha-halligan-rescate.avif" alt="Bombero con hacha Halligan en operación de rescate — herramientas de entrada forzada" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
-        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
+        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
           <img src="/images/productos/bombero-herramientas-entrada-forzada.avif" alt="Bombero con herramientas de entrada forzada — rescate vehicular y estructural" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
-        <figure class="m-0 overflow-hidden col-span-2 md:col-span-1" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
+        <figure class="m-0 overflow-hidden col-span-2 md:col-span-1" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
           <img src="/images/categorias/herramientas-rescate.avif" alt="Separador hidráulico de rescate vehicular — Holmatro Hurst Weber" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
       </div>
@@ -496,42 +496,42 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
   </section>
 
   <!-- Tabla comparativa -->
-  <section class="section" style="background:#040A12" aria-labelledby="comp-title">
+  <section class="section" style="background:var(--c-bg)" aria-labelledby="comp-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-10">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Comparativa técnica</span>
-          <h2 id="comp-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
-            Cizalla · Separador · <span style="color:#F75000">Combinada · Ariete.</span>
+          <h2 id="comp-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            Cizalla · Separador · <span style="color:var(--c-accent)">Combinada · Ariete.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
             Cada herramienta tiene una función diferente en la escena. Esta tabla resume
             lo que más pregunta un jefe de compras antes de especificar en licitación.
           </p>
         </div>
       </div>
 
-      <div class="overflow-x-auto" style="border:1px solid rgba(74,117,153,0.18)">
+      <div class="overflow-x-auto" style="border:1px solid var(--c-line)">
         <table class="w-full border-collapse" style="min-width:700px">
           <thead>
-            <tr style="background:#0C1825">
-              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:var(--forge-300);border-bottom:1px solid rgba(74,117,153,0.18)">Característica</th>
-              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:#F75000;border-bottom:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">Cizalla</th>
-              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:#F5A623;border-bottom:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">Separador</th>
-              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:#34D399;border-bottom:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">Combinada</th>
-              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:#60A5FA;border-bottom:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">Ariete</th>
+            <tr style="background:var(--c-surface)">
+              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:var(--forge-300);border-bottom:1px solid var(--c-line)">Característica</th>
+              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:var(--c-accent);border-bottom:1px solid var(--c-line);border-left:1px solid var(--c-line)">Cizalla</th>
+              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:var(--c-amber);border-bottom:1px solid var(--c-line);border-left:1px solid var(--c-line)">Separador</th>
+              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:var(--c-success);border-bottom:1px solid var(--c-line);border-left:1px solid var(--c-line)">Combinada</th>
+              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:var(--c-info);border-bottom:1px solid var(--c-line);border-left:1px solid var(--c-line)">Ariete</th>
             </tr>
           </thead>
           <tbody>
             {comparativa.map((row, i) => (
-              <tr style={`background:${i % 2 === 0 ? '#080F1A' : '#0A1320'}`}>
-                <td class="p-4 text-sm font-display font-semibold" style="color:#CBD5E1;border-bottom:1px solid rgba(74,117,153,0.12)">{row[0]}</td>
-                <td class="p-4 text-xs" style="color:#94A3B8;border-bottom:1px solid rgba(74,117,153,0.12);border-left:1px solid rgba(74,117,153,0.12)">{row[1]}</td>
-                <td class="p-4 text-xs" style="color:#94A3B8;border-bottom:1px solid rgba(74,117,153,0.12);border-left:1px solid rgba(74,117,153,0.12)">{row[2]}</td>
-                <td class="p-4 text-xs" style="color:#94A3B8;border-bottom:1px solid rgba(74,117,153,0.12);border-left:1px solid rgba(74,117,153,0.12)">{row[3]}</td>
-                <td class="p-4 text-xs" style="color:#94A3B8;border-bottom:1px solid rgba(74,117,153,0.12);border-left:1px solid rgba(74,117,153,0.12)">{row[4]}</td>
+              <tr style={`background:${i % 2 === 0 ? 'var(--c-bg-alt)' : 'var(--c-bg-alt)'}`}>
+                <td class="p-4 text-sm font-display font-semibold" style="color:var(--c-text);border-bottom:1px solid var(--c-line)">{row[0]}</td>
+                <td class="p-4 text-xs" style="color:var(--c-text-2);border-bottom:1px solid var(--c-line);border-left:1px solid var(--c-line)">{row[1]}</td>
+                <td class="p-4 text-xs" style="color:var(--c-text-2);border-bottom:1px solid var(--c-line);border-left:1px solid var(--c-line)">{row[2]}</td>
+                <td class="p-4 text-xs" style="color:var(--c-text-2);border-bottom:1px solid var(--c-line);border-left:1px solid var(--c-line)">{row[3]}</td>
+                <td class="p-4 text-xs" style="color:var(--c-text-2);border-bottom:1px solid var(--c-line);border-left:1px solid var(--c-line)">{row[4]}</td>
               </tr>
             ))}
           </tbody>
@@ -542,20 +542,20 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
   </section>
 
   <!-- Guía + Blog -->
-  <section class="section" style="background:#070E1A" aria-labelledby="guia-title">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="guia-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Cómo elegir</span>
-          <h2 id="guia-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+          <h2 id="guia-title" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Del vehículo<br/>
-            <span style="color:#F75000">a la herramienta.</span>
+            <span style="color:var(--c-accent)">a la herramienta.</span>
           </h2>
           <ol class="flex flex-col gap-4 list-none m-0 p-0">
             {guia.map((s) => (
               <li class="flex items-start gap-4">
                 
-                <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{s.t}</p>
+                <p class="text-sm leading-relaxed m-0" style="color:var(--c-text-2)">{s.t}</p>
               </li>
             ))}
           </ol>
@@ -564,17 +564,17 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
           </div>
         </div>
 
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
           <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">
             Aprende más en el blog
           </h2>
-          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
             {articulos.map((l) => (
-              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+              <li style="border-bottom:1px solid var(--c-line)">
                 <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
                   <span class="flex flex-col gap-0.5">
-                    <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
-                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
+                    <span class="font-display font-semibold text-sm group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{l.label}</span>
+                    <span class="text-xs" style="color:var(--c-muted)">{l.desc}</span>
                   </span>
                   
                 </a>
@@ -587,16 +587,16 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
   </section>
 
   <!-- FAQ -->
-  <section class="section" style="background:#040A12" aria-labelledby="faq-title">
+  <section class="section" style="background:var(--c-bg)" aria-labelledby="faq-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes · Rescate</span>
-          <h2 id="faq-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+          <h2 id="faq-title" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Lo que más nos<br/>
-            <span style="color:#F75000">preguntan.</span>
+            <span style="color:var(--c-accent)">preguntan.</span>
           </h2>
-          <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
+          <p class="text-sm leading-relaxed mb-8" style="color:var(--c-text-2)">
             ¿Tu duda no aparece? Escríbenos por {CANAL_CONTACTO} con el detalle de tu brigada y los vehículos
             de tu zona — te asesoramos sobre la herramienta y la marca correctas.
           </p>
@@ -606,12 +606,12 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
         </div>
         <div class="flex flex-col">
           {faqs.map((f, i) => (
-            <details class="faq-item group" style={`border-top:1px solid rgba(74,117,153,0.18);${i === faqs.length - 1 ? 'border-bottom:1px solid rgba(74,117,153,0.18);' : ''}`}>
+            <details class="faq-item group" style={`border-top:1px solid var(--c-line);${i === faqs.length - 1 ? 'border-bottom:1px solid rgba(74,117,153,0.18);' : ''}`}>
               <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer">
-                <span class="font-display font-semibold text-sm" style="color:#FFFFFF">{f.q}</span>
-                <span class="faq-icon font-display font-bold text-xl shrink-0" style="color:#FF6B26">+</span>
+                <span class="font-display font-semibold text-sm" style="color:var(--c-ink)">{f.q}</span>
+                <span class="faq-icon font-display font-bold text-xl shrink-0" style="color:var(--c-accent)">+</span>
               </summary>
-              <p class="text-sm leading-relaxed pb-5 m-0" style="color:#94A3B8">{f.a}</p>
+              <p class="text-sm leading-relaxed pb-5 m-0" style="color:var(--c-text-2)">{f.a}</p>
             </details>
           ))}
         </div>
@@ -620,12 +620,12 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
   </section>
 
   <!-- CTA Band -->
-  <section style="background:#F75000;padding-block:4rem" aria-label="Cotizar herramientas de rescate">
+  <section style="background:var(--c-accent);padding-block:4rem" aria-label="Cotizar herramientas de rescate">
     <div class="container-site">
       <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
         <div>
-          <p class="text-xs font-display font-bold uppercase tracking-[0.2em] mb-3" style="color:rgba(255,255,255,0.65)">Holmatro · Hurst Jaws of Life® · Weber Rescue · Demo en sitio</p>
-          <h2 class="font-display font-bold uppercase" style="color:#FFFFFF;font-size:clamp(1.75rem,4vw,3rem);line-height:1.05">
+          <p class="text-xs font-display font-bold uppercase tracking-[0.2em] mb-3" style="color:rgba(16,24,40,0.65)">Holmatro · Hurst Jaws of Life® · Weber Rescue · Demo en sitio</p>
+          <h2 class="font-display font-bold uppercase" style="color:var(--c-ink);font-size:clamp(1.75rem,4vw,3rem);line-height:1.05">
             Certificado NFPA 1960.<br/>Despliega en segundos.
           </h2>
         </div>
@@ -634,11 +634,11 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
             href={whatsappUrl('Hola, quiero cotizar herramientas de rescate vehicular NFPA 1960. ¿Tienen demo disponible?')}
             target="_blank" rel="noopener"
             class="btn btn-lg"
-            style="background:#FFFFFF;color:#F75000;border-color:#FFFFFF;font-weight:700"
+            style="background:#FFFFFF;color:var(--c-accent);border-color:var(--c-line);font-weight:700"
           >
             Cotizar por {CANAL_CONTACTO} 
           </a>
-          <a href="/cotizacion" class="btn btn-lg" style="background:transparent;color:#FFFFFF;border:2px solid rgba(255,255,255,0.5)">
+          <a href="/cotizacion" class="btn btn-lg" style="background:transparent;color:var(--c-ink);border:2px solid rgba(16,24,40,0.5)">
             Cotización formal
           </a>
         </div>
@@ -647,25 +647,25 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
   </section>
 
   <!-- Cross-links + otras categorías -->
-  <section class="section" style="background:#070E1A" aria-labelledby="cross-title">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="cross-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Equipa el vehículo completo</span>
-          <h2 id="cross-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+          <h2 id="cross-title" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             La herramienta es<br/>
-            <span style="color:#F75000">solo el inicio.</span>
+            <span style="color:var(--c-accent)">solo el inicio.</span>
           </h2>
-          <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
+          <p class="text-sm leading-relaxed mb-8" style="color:var(--c-text-2)">
             El equipo de excarcelación necesita bomberos protegidos: traje, casco, SCBA y guantes
             certificados. Armamos el EPP completo y las herramientas con un solo proveedor
             y un expediente auditable.
           </p>
           <a href={whatsappUrl('Hola, quiero equipar el conjunto completo de EPP y herramientas para mi brigada de rescate.')} target="_blank" rel="noopener" class="btn btn-primary">Cotizar conjunto completo</a>
         </div>
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
           <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">También te puede servir</h2>
-          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
             {[
               { label: 'Trajes para Bomberos',  desc: 'Globe, Lion, Honeywell, Fire-Dex — NFPA 1970',  href: '/productos/trajes-bombero' },
               { label: 'Cascos NFPA',           desc: 'MSA Gallet, Bullard y Cairns — NFPA 1970',      href: '/productos/cascos-nfpa' },
@@ -673,11 +673,11 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
               { label: 'Cámaras Térmicas',      desc: 'FLIR, MSA, Bullard — NFPA 1930',               href: '/productos/camaras-termicas' },
               { label: 'Soporte para licitaciones', desc: 'Fichas técnicas y manifiestos por partida', href: '/licitaciones' },
             ].map((l) => (
-              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+              <li style="border-bottom:1px solid var(--c-line)">
                 <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
                   <span class="flex flex-col gap-0.5">
-                    <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
-                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
+                    <span class="font-display font-semibold text-sm group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{l.label}</span>
+                    <span class="text-xs" style="color:var(--c-muted)">{l.desc}</span>
                   </span>
                   
                 </a>
@@ -688,7 +688,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
       </div>
 
       <!-- Otras categorías -->
-      <div class="mt-14 pt-10" style="border-top:1px solid rgba(74,117,153,0.15)">
+      <div class="mt-14 pt-10" style="border-top:1px solid var(--c-line)">
         <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-6" style="color:var(--forge-300)">Otras categorías del catálogo</h2>
         <div class="flex flex-wrap gap-3">
           {otrasCategorias.map((c) => (
@@ -702,30 +702,30 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
 
 
   {/* ══ CATEGORÍAS RELACIONADAS ═══════════════════════════════════════ */}
-  <section style="background:#040A12;border-top:1px solid rgba(74,117,153,0.15)" aria-labelledby="cats-rel-title">
+  <section style="background:var(--c-bg);border-top:1px solid var(--c-line)" aria-labelledby="cats-rel-title">
     <div class="container-site py-10 sm:py-12">
       <p id="cats-rel-title" class="text-[9px] font-display font-bold uppercase tracking-widest mb-6" style="color:var(--forge-300)">Categorías relacionadas</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <a href="/productos/equipos-scba"
-           class="group flex flex-col gap-2 p-5 hover:border-[#F75000]"
-           style="background:#080F1A;border:1px solid rgba(74,117,153,0.2)">
-          <span class="text-sm font-display font-bold group-hover:text-[#F75000]" style="color:#FFFFFF">Equipos SCBA</span>
-          <span class="text-xs leading-relaxed" style="color:#64748B">MSA G1 · Dräger PSS · 3M Scott</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Equipos SCBA </span>
+           class="group flex flex-col gap-2 p-5 hover:border-[var(--c-accent)]"
+           style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
+          <span class="text-sm font-display font-bold group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Equipos SCBA</span>
+          <span class="text-xs leading-relaxed" style="color:var(--c-muted)">MSA G1 · Dräger PSS · 3M Scott</span>
+          <span class="text-[11px] font-semibold mt-1" style="color:var(--c-accent)">Guía de Equipos SCBA </span>
         </a>
         <a href="/productos/trajes-bombero"
-           class="group flex flex-col gap-2 p-5 hover:border-[#F75000]"
-           style="background:#080F1A;border:1px solid rgba(74,117,153,0.2)">
-          <span class="text-sm font-display font-bold group-hover:text-[#F75000]" style="color:#FFFFFF">Trajes Bombero</span>
-          <span class="text-xs leading-relaxed" style="color:#64748B">Globe · Lion Apparel · Honeywell · Fire-Dex</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Trajes Bombero </span>
+           class="group flex flex-col gap-2 p-5 hover:border-[var(--c-accent)]"
+           style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
+          <span class="text-sm font-display font-bold group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Trajes Bombero</span>
+          <span class="text-xs leading-relaxed" style="color:var(--c-muted)">Globe · Lion Apparel · Honeywell · Fire-Dex</span>
+          <span class="text-[11px] font-semibold mt-1" style="color:var(--c-accent)">Guía de Trajes Bombero </span>
         </a>
         <a href="/productos/cascos-nfpa"
-           class="group flex flex-col gap-2 p-5 hover:border-[#F75000]"
-           style="background:#080F1A;border:1px solid rgba(74,117,153,0.2)">
-          <span class="text-sm font-display font-bold group-hover:text-[#F75000]" style="color:#FFFFFF">Cascos NFPA</span>
-          <span class="text-xs leading-relaxed" style="color:#64748B">MSA Gallet · Bullard · Cairns</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Cascos NFPA </span>
+           class="group flex flex-col gap-2 p-5 hover:border-[var(--c-accent)]"
+           style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
+          <span class="text-sm font-display font-bold group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Cascos NFPA</span>
+          <span class="text-xs leading-relaxed" style="color:var(--c-muted)">MSA Gallet · Bullard · Cairns</span>
+          <span class="text-[11px] font-semibold mt-1" style="color:var(--c-accent)">Guía de Cascos NFPA </span>
         </a>
       </div>
     </div>

@@ -111,16 +111,16 @@ const waMsg = `Hola, quiero información sobre productos ${brand.name} que distr
   {/* ─── Breadcrumb ─── */}
   <nav
     class="py-3"
-    style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)"
+    style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line)"
     aria-label="Breadcrumb"
   >
     <div class="container-site">
       <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
-        <li><a href="/"        class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li><a href="/"        class="hover:text-[var(--c-accent)]">Inicio</a></li>
         <li aria-hidden="true">/</li>
-        <li><a href="/marcas"  class="hover:text-[#FF6B26]">Marcas</a></li>
+        <li><a href="/marcas"  class="hover:text-[var(--c-accent)]">Marcas</a></li>
         <li aria-hidden="true">/</li>
-        <li><span style="color:#94A3B8" aria-current="page">{brand.name}</span></li>
+        <li><span style="color:var(--c-text-2)" aria-current="page">{brand.name}</span></li>
       </ol>
     </div>
   </nav>
@@ -128,13 +128,13 @@ const waMsg = `Hola, quiero información sobre productos ${brand.name} que distr
   {/* ─── Hero de la marca ─── */}
   <section
     class="relative overflow-hidden"
-    style="background:#040A12;padding-block:5rem"
+    style="background:var(--c-bg);padding-block:5rem"
     aria-labelledby="marca-heading"
   >
     {/* Glow decorativo */}
     <div
       class="absolute top-0 right-0 w-1/2 h-full pointer-events-none"
-      style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.07) 0%, transparent 65%)"
+      style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(200,16,46,0.07) 0%, transparent 65%)"
       aria-hidden="true"
     ></div>
 
@@ -148,7 +148,7 @@ const waMsg = `Hola, quiero información sobre productos ${brand.name} que distr
           {/* Monograma visual de la marca */}
           <div
             class="flex items-center justify-center rounded-2xl mb-6 font-display font-bold"
-            style="width:80px;height:80px;background:rgba(247,80,0,0.1);border:2px solid rgba(247,80,0,0.35);color:#FF6B26;font-size:2.5rem"
+            style="width:80px;height:80px;background:rgba(200,16,46,0.1);border:2px solid rgba(200,16,46,0.35);color:var(--c-accent);font-size:2.5rem"
             aria-hidden="true"
           >
             {brand.name.replace(/[^A-Za-z0-9]/g, '').charAt(0).toUpperCase()}
@@ -157,7 +157,7 @@ const waMsg = `Hola, quiero información sobre productos ${brand.name} que distr
           <h1
             id="marca-heading"
             class="font-display font-bold uppercase mb-3"
-            style="color:#FFFFFF;font-size:clamp(2.2rem,5vw,4rem);line-height:0.95"
+            style="color:var(--c-ink);font-size:clamp(2.2rem,5vw,4rem);line-height:0.95"
           >
             {brand.name}
           </h1>
@@ -187,9 +187,9 @@ const waMsg = `Hola, quiero información sobre productos ${brand.name} que distr
         </div>
 
         {/* Col derecha — descripción larga */}
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
           {brand.longDesc.map((para) => (
-            <p class="text-sm leading-[1.9] mb-4 last:mb-0" style="color:#94A3B8">{para}</p>
+            <p class="text-sm leading-[1.9] mb-4 last:mb-0" style="color:var(--c-text-2)">{para}</p>
           ))}
         </div>
 
@@ -198,7 +198,7 @@ const waMsg = `Hola, quiero información sobre productos ${brand.name} que distr
 
     <div
       class="absolute bottom-0 left-0 right-0 h-px"
-      style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)"
+      style="background:linear-gradient(90deg, transparent, rgba(200,16,46,0.4) 30%, rgba(200,16,46,0.4) 70%, transparent)"
       aria-hidden="true"
     ></div>
   </section>
@@ -209,7 +209,7 @@ const waMsg = `Hola, quiero información sobre productos ${brand.name} que distr
   {/* ─── Productos que distribuimos ─── */}
   <section
     class="section"
-    style="background:#040A12"
+    style="background:var(--c-bg)"
     aria-labelledby="productos-heading"
   >
     <div class="container-site">
@@ -220,14 +220,14 @@ const waMsg = `Hola, quiero información sobre productos ${brand.name} que distr
           <h2
             id="productos-heading"
             class="font-display font-bold"
-            style="color:#FFFFFF;font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.05"
+            style="color:var(--c-ink);font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.05"
           >
-            Productos <span style="color:#F75000">{brand.name}</span><br/>
+            Productos <span style="color:var(--c-accent)">{brand.name}</span><br/>
             que distribuimos
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
             Cada equipo se entrega con número de serie verificable, certificado de laboratorio
             acreditado y carta de fabricante — listo para licitación CompraNet, auditoría STPS
             y expediente de Protección Civil.
@@ -238,7 +238,7 @@ const waMsg = `Hola, quiero información sobre productos ${brand.name} que distr
       {/* Grid de productos */}
       <div
         class="grid grid-cols-1 sm:grid-cols-2 gap-px"
-        style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)"
+        style="background:var(--c-line);border:1px solid var(--c-line)"
       >
         {brand.products.map((product, i) => (
           <div class="grid-cell p-6">
@@ -246,7 +246,7 @@ const waMsg = `Hola, quiero información sobre productos ${brand.name} que distr
               {/* Número de orden */}
               <span
                 class="shrink-0 font-display font-bold text-xs"
-                style="color:#F75000;min-width:1.5rem"
+                style="color:var(--c-accent);min-width:1.5rem"
                 aria-hidden="true"
               >
                 
@@ -254,11 +254,11 @@ const waMsg = `Hola, quiero información sobre productos ${brand.name} que distr
               <div>
                 <h3
                   class="font-display font-bold mb-2"
-                  style="color:#FFFFFF;font-size:1rem"
+                  style="color:var(--c-ink);font-size:1rem"
                 >
                   {product.name}
                 </h3>
-                <p class="text-sm leading-relaxed" style="color:#64748B">
+                <p class="text-sm leading-relaxed" style="color:var(--c-muted)">
                   {product.detail}
                 </p>
               </div>
@@ -270,33 +270,33 @@ const waMsg = `Hola, quiero información sobre productos ${brand.name} que distr
       {/* Fichas técnicas de la marca en el catálogo */}
       {fichasMarca.length > 0 && (
         <div class="mt-12">
-          <h3 class="font-display font-bold mb-2" style="color:#FFFFFF;font-size:clamp(1.25rem,2.5vw,1.75rem)">
-            Fichas técnicas <span style="color:#F75000">{brand.name}</span> en el catálogo
+          <h3 class="font-display font-bold mb-2" style="color:var(--c-ink);font-size:clamp(1.25rem,2.5vw,1.75rem)">
+            Fichas técnicas <span style="color:var(--c-accent)">{brand.name}</span> en el catálogo
           </h3>
-          <p class="text-sm mb-5" style="color:#64748B">{fichasMarca.length} modelos con especificaciones, norma y documentación para licitación.</p>
+          <p class="text-sm mb-5" style="color:var(--c-muted)">{fichasMarca.length} modelos con especificaciones, norma y documentación para licitación.</p>
           <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px list-none m-0 p-0"
-              style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
+              style="background:var(--c-line);border:1px solid var(--c-line)">
             {fichasMarca.map((p) => (
               <li class="grid-cell p-4">
-                <a href={`${p.href}/`} class="font-display font-semibold text-sm hover:text-[#FF6B26]" style="color:#FFFFFF">{p.title.split(' — ')[0]}</a>
-                <p class="text-xs mt-1 mb-0" style="color:#64748B">{[p.category, p.norm].filter(Boolean).join(' · ')}</p>
+                <a href={`${p.href}/`} class="font-display font-semibold text-sm hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{p.title.split(' — ')[0]}</a>
+                <p class="text-xs mt-1 mb-0" style="color:var(--c-muted)">{[p.category, p.norm].filter(Boolean).join(' · ')}</p>
               </li>
             ))}
           </ul>
         </div>
       )}
       {lineasMarca.length > 0 && (
-        <p class="text-sm mt-6" style="color:#94A3B8">
+        <p class="text-sm mt-6" style="color:var(--c-text-2)">
           Catálogos completos por categoría:{' '}
           {lineasMarca.map((l, i) => (
-            <>{i > 0 && ' · '}<a href={`/productos/${l.categorySlug}/${l.slug}/`} class="hover:text-[#FF6B26]" style="color:#FF6B26">{l.brandLabel}</a></>
+            <>{i > 0 && ' · '}<a href={`/productos/${l.categorySlug}/${l.slug}/`} class="hover:text-[var(--c-accent)]" style="color:var(--c-accent)">{l.brandLabel}</a></>
           ))}
         </p>
       )}
 
       {/* CTA bajo el grid */}
       <div class="mt-8 text-center">
-        <p class="text-sm mb-4" style="color:#64748B">
+        <p class="text-sm mb-4" style="color:var(--c-muted)">
           ¿Buscas un modelo específico? Lo conseguimos: manejamos pedidos sobre especificación técnica.
         </p>
         <a
@@ -316,7 +316,7 @@ const waMsg = `Hola, quiero información sobre productos ${brand.name} que distr
   {brand.norms.length > 0 && (
     <section
       class="section"
-      style="background:#070E1A"
+      style="background:var(--c-bg-alt)"
       aria-labelledby="normas-heading"
     >
       <div class="container-site">
@@ -324,24 +324,24 @@ const waMsg = `Hola, quiero información sobre productos ${brand.name} que distr
         <h2
           id="normas-heading"
           class="font-display font-bold mb-8"
-          style="color:#FFFFFF;font-size:clamp(1.6rem,3vw,2.4rem)"
+          style="color:var(--c-ink);font-size:clamp(1.6rem,3vw,2.4rem)"
         >
           Normas y certificaciones que<br/>
-          <span style="color:#F75000">respaldan esta marca</span>
+          <span style="color:var(--c-accent)">respaldan esta marca</span>
         </h2>
 
         <div class="flex flex-wrap gap-3 mb-8">
           {brand.norms.map((norm) => (
             <span
               class="inline-flex items-center gap-2 px-4 py-2 rounded font-display font-bold text-xs"
-              style="background:rgba(247,80,0,0.08);border:1px solid rgba(247,80,0,0.3);color:#FF6B26"
+              style="background:rgba(200,16,46,0.08);border:1px solid rgba(200,16,46,0.3);color:var(--c-accent)"
             >
               Sí {norm}
             </span>
           ))}
         </div>
 
-        <p class="text-sm max-w-2xl" style="color:#64748B">
+        <p class="text-sm max-w-2xl" style="color:var(--c-muted)">
           Cada equipo {brand.name} que entregamos lleva certificado de laboratorio
           acreditado, número de serie verificable y ficha técnica — la documentación que
           el área de compras, el órgano fiscalizador y tu aseguradora pueden auditar.
@@ -353,17 +353,17 @@ const waMsg = `Hola, quiero información sobre productos ${brand.name} que distr
   {/* ─── CTA de cierre ─── */}
   <section
     class="section"
-    style="background:#040A12;border-top:1px solid rgba(74,117,153,0.12)"
+    style="background:var(--c-bg);border-top:1px solid var(--c-line)"
   >
     <div class="container-site text-center">
       <span class="section-eyebrow mb-4 inline-flex">Siguiente paso</span>
       <h2
         class="font-display font-bold mb-4"
-        style="color:#FFFFFF;font-size:clamp(1.8rem,3.5vw,2.8rem)"
+        style="color:var(--c-ink);font-size:clamp(1.8rem,3.5vw,2.8rem)"
       >
-        ¿Necesitas <span style="color:#F75000">equipo {brand.name}</span>?
+        ¿Necesitas <span style="color:var(--c-accent)">equipo {brand.name}</span>?
       </h2>
-      <p class="text-sm mb-8 max-w-xl mx-auto" style="color:#94A3B8">
+      <p class="text-sm mb-8 max-w-xl mx-auto" style="color:var(--c-text-2)">
         Cuéntanos qué necesitas — modelo, cantidad y destino — y te respondemos
         con disponibilidad, precio y tiempos de entrega en menos de 24 horas.
       </p>

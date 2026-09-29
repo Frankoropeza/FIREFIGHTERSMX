@@ -397,28 +397,28 @@ const mapPinIcon = ``;
   )}
 
   {/* ── Breadcrumb ── */}
-  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+  <nav class="py-3" style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line)" aria-label="Breadcrumb">
     <div class="container-site">
       <ol class="flex items-center gap-2 text-xs list-none m-0 p-0 flex-wrap" style="color:var(--forge-300)">
-        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li><a href="/" class="hover:text-[var(--c-accent)]">Inicio</a></li>
         <li aria-hidden="true" class="opacity-40">/</li>
-        <li><a href="/estaciones" class="hover:text-[#FF6B26]">Directorio</a></li>
+        <li><a href="/estaciones" class="hover:text-[var(--c-accent)]">Directorio</a></li>
         <li aria-hidden="true" class="opacity-40">/</li>
-        <li><a href={`/estaciones/${estado.slug}/`} class="hover:text-[#FF6B26]">{estado.nombre}</a></li>
+        <li><a href={`/estaciones/${estado.slug}/`} class="hover:text-[var(--c-accent)]">{estado.nombre}</a></li>
         <li aria-hidden="true" class="opacity-40">/</li>
-        <li><span style="color:#CBD5E1" aria-current="page">{estacion.nombre}</span></li>
+        <li><span style="color:var(--c-text)" aria-current="page">{estacion.nombre}</span></li>
       </ol>
     </div>
   </nav>
 
   {/* ── Hero 2 columnas (homologado con index) ── */}
-  <section class="relative overflow-hidden" style="background:#040A12;padding-block:4rem 3.5rem" aria-labelledby="est-heading">
+  <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:4rem 3.5rem" aria-labelledby="est-heading">
     {/* Glow naranja derecha */}
     <div class="absolute inset-0 pointer-events-none" aria-hidden="true"
-      style="background:radial-gradient(ellipse 55% 70% at 85% 50%, rgba(247,80,0,0.09) 0%, transparent 60%)"></div>
+      style="background:radial-gradient(ellipse 55% 70% at 85% 50%, rgba(200,16,46,0.09) 0%, transparent 60%)"></div>
     {/* Separador vertical central */}
     <div class="absolute top-0 bottom-0 pointer-events-none hidden lg:block" aria-hidden="true"
-      style="left:52%;width:1px;background:linear-gradient(to bottom,transparent 5%,rgba(74,117,153,0.18) 30%,rgba(74,117,153,0.18) 70%,transparent 95%)"></div>
+      style="left:52%;width:1px;background:linear-gradient(to bottom,transparent 5%,var(--c-line) 30%,var(--c-line) 70%,transparent 95%)"></div>
 
     <div class="container-site relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
@@ -437,44 +437,44 @@ const mapPinIcon = ``;
             )}
             {estacion.fundacion && (
               <span class="font-display text-[10px] uppercase tracking-wider px-2.5 py-1"
-                style="color:var(--forge-300);border:1px solid rgba(74,117,153,0.3)">Desde {estacion.fundacion}</span>
+                style="color:var(--forge-300);border:1px solid var(--c-line-strong)">Desde {estacion.fundacion}</span>
             )}
             <span class="font-display text-[10px] uppercase tracking-wider px-2.5 py-1"
-              style="color:var(--forge-300);border:1px solid rgba(74,117,153,0.3)">{estado.region}</span>
+              style="color:var(--forge-300);border:1px solid var(--c-line-strong)">{estado.region}</span>
           </div>
 
           {/* H1 */}
           <h1 id="est-heading" class="font-display font-bold mb-4"
-            style="color:#FFFFFF;font-size:clamp(1.6rem,3.2vw,2.75rem);line-height:1.06">
+            style="color:var(--c-ink);font-size:clamp(1.6rem,3.2vw,2.75rem);line-height:1.06">
             {estacion.nombre}
           </h1>
 
           {/* Ubicación */}
-          <p class="flex items-center gap-2 text-sm mb-5" style="color:#94A3B8">
-            <span class="w-4 h-4 shrink-0" style="color:#FF6B26" set:html={pinIcon} aria-hidden="true"/>
+          <p class="flex items-center gap-2 text-sm mb-5" style="color:var(--c-text-2)">
+            <span class="w-4 h-4 shrink-0" style="color:var(--c-accent)" set:html={pinIcon} aria-hidden="true"/>
             {estacion.ciudad}{estacion.municipio !== estacion.ciudad ? ` · Mpio. ${estacion.municipio}` : ''}, {estado.nombre}
           </p>
 
           {/* Stats operativos (cuando existen) */}
           {(estacion.elementos || estacion.estacionesFisicas || estacion.unidades) && (
             <div class="flex flex-wrap items-center gap-x-6 gap-y-2 mb-6"
-              style="border-left:3px solid #F75000;padding-left:0.875rem">
+              style="border-left:3px solid var(--c-accent);padding-left:0.875rem">
               {estacion.elementos && (
                 <div class="flex items-baseline gap-1.5">
-                  <span class="font-display font-bold text-2xl" style="color:#F75000">{estacion.elementos}</span>
-                  <span class="text-xs" style="color:#64748B">elementos</span>
+                  <span class="font-display font-bold text-2xl" style="color:var(--c-accent)">{estacion.elementos}</span>
+                  <span class="text-xs" style="color:var(--c-muted)">elementos</span>
                 </div>
               )}
               {estacion.estacionesFisicas && (
                 <div class="flex items-baseline gap-1.5">
-                  <span class="font-display font-bold text-2xl" style="color:#F75000">{estacion.estacionesFisicas}</span>
-                  <span class="text-xs" style="color:#64748B">cuarteles</span>
+                  <span class="font-display font-bold text-2xl" style="color:var(--c-accent)">{estacion.estacionesFisicas}</span>
+                  <span class="text-xs" style="color:var(--c-muted)">cuarteles</span>
                 </div>
               )}
               {estacion.unidades && (
                 <div class="flex items-baseline gap-1.5">
-                  <span class="font-display font-bold text-2xl" style="color:#F75000">{estacion.unidades}</span>
-                  <span class="text-xs" style="color:#64748B">vehículos</span>
+                  <span class="font-display font-bold text-2xl" style="color:var(--c-accent)">{estacion.unidades}</span>
+                  <span class="text-xs" style="color:var(--c-muted)">vehículos</span>
                 </div>
               )}
             </div>
@@ -498,8 +498,8 @@ const mapPinIcon = ``;
         <div>
           {/* Eyebrow */}
           <div class="flex items-center gap-3 mb-5">
-            <div class="w-8 h-px shrink-0" style="background:#F75000"></div>
-            <span class="font-display font-bold text-[10px] uppercase tracking-widest" style="color:#F75000">
+            <div class="w-8 h-px shrink-0" style="background:var(--c-accent)"></div>
+            <span class="font-display font-bold text-[10px] uppercase tracking-widest" style="color:var(--c-accent)">
               Acerca de esta corporación
             </span>
           </div>
@@ -512,7 +512,7 @@ const mapPinIcon = ``;
                 </p>
               ))}
               {estacion.descripcion.split('\n\n').length > 2 && (
-                <a href="#perfil" class="text-xs uppercase tracking-wider hover:text-[#FF6B26]"
+                <a href="#perfil" class="text-xs uppercase tracking-wider hover:text-[var(--c-accent)]"
                   style="color:var(--forge-300)">Descripción completa de la estación</a>
               )}
             </div>
@@ -528,13 +528,13 @@ const mapPinIcon = ``;
                   { label: 'Emergencias', value: TELEFONO_EMERGENCIAS },
                   { label: 'Municipio',  value: estacion.municipio },
                 ].slice(0, 4).map(({ label, value }) => (
-                  <div class="flex flex-col gap-1 p-3" style="background:#070E1A;border:1px solid rgba(74,117,153,0.15)">
+                  <div class="flex flex-col gap-1 p-3" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
                     <span class="text-[9px] uppercase tracking-widest" style="color:var(--forge-300)">{label}</span>
-                    <span class="text-sm font-medium" style="color:#CBD5E1">{value}</span>
+                    <span class="text-sm font-medium" style="color:var(--c-text)">{value}</span>
                   </div>
                 ))}
               </div>
-              <p class="text-xs leading-relaxed m-0" style="color:#64748B">
+              <p class="text-xs leading-relaxed m-0" style="color:var(--c-muted)">
                 Corporación {cfg.label.toLowerCase()} con cobertura en {estacion.municipio}, {estado.nombre}.
                 Datos de contacto y servicios disponibles en el directorio verificado.
               </p>
@@ -546,13 +546,13 @@ const mapPinIcon = ``;
     </div>
 
     <div class="absolute bottom-0 left-0 right-0 h-px" aria-hidden="true"
-      style="background:linear-gradient(90deg,transparent,rgba(247,80,0,0.35) 30%,rgba(247,80,0,0.35) 70%,transparent)"></div>
+      style="background:linear-gradient(90deg,transparent,rgba(200,16,46,0.35) 30%,rgba(200,16,46,0.35) 70%,transparent)"></div>
   </section>
 
   <QuickLinksBar />
 
   {/* ── Cuerpo principal ── */}
-  <section class="section" style="background:#070E1A" aria-label="Información de la estación">
+  <section class="section" style="background:var(--c-bg-alt)" aria-label="Información de la estación">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10">
 
@@ -562,9 +562,9 @@ const mapPinIcon = ``;
           {/* ── §1 Perfil institucional ── */}
           <section aria-labelledby="perfil-h2">
             <div class="flex items-center gap-3 mb-6">
-              <div class="w-1 h-6 shrink-0" style="background:#F75000;border-radius:2px"></div>
+              <div class="w-1 h-6 shrink-0" style="background:var(--c-accent);border-radius:2px"></div>
               <h2 id="perfil-h2" class="font-display font-bold m-0"
-                style="color:#FFFFFF;font-size:clamp(1.1rem,2vw,1.35rem);letter-spacing:-0.01em">
+                style="color:var(--c-ink);font-size:clamp(1.1rem,2vw,1.35rem);letter-spacing:-0.01em">
                 Perfil institucional
               </h2>
             </div>
@@ -581,7 +581,7 @@ const mapPinIcon = ``;
             <h3 class="font-display font-bold text-xs uppercase tracking-widest mb-3 m-0" style="color:var(--forge-300)">
               Ficha técnica institucional
             </h3>
-            <div class="overflow-hidden" style="border:1px solid rgba(74,117,153,0.2)">
+            <div class="overflow-hidden" style="border:1px solid var(--c-line)">
               <table class="w-full text-sm" style="border-collapse:collapse">
                 <tbody>
                   {([
@@ -606,9 +606,9 @@ const mapPinIcon = ``;
                     ...(estacion.unidades ? [{ campo: 'Flota vehicular',   valor: `${estacion.unidades} vehículos` }] : []),
                     { campo: 'Número de emergencias',  valor: TELEFONO_EMERGENCIAS },
                   ] as { campo: string; valor: string }[]).map(({ campo, valor }, i) => (
-                    <tr style={`border-bottom:1px solid rgba(74,117,153,0.12);background:${i % 2 === 0 ? '#040A12' : '#060D16'}`}>
+                    <tr style={`border-bottom:1px solid var(--c-line);background:${i % 2 === 0 ? 'var(--c-bg)' : 'var(--c-bg-alt)'}`}>
                       <td class="px-4 py-3 text-xs font-medium whitespace-nowrap" style="color:var(--forge-300);width:38%">{campo}</td>
-                      <td class="px-4 py-3 text-sm" style="color:#CBD5E1">{valor}</td>
+                      <td class="px-4 py-3 text-sm" style="color:var(--c-text)">{valor}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -620,32 +620,32 @@ const mapPinIcon = ``;
           {(estacion.elementos || estacion.estacionesFisicas || estacion.unidades) && (
             <section aria-labelledby="operativa-h2">
               <div class="flex items-center gap-3 mb-6">
-                <div class="w-1 h-6 shrink-0" style="background:#F75000;border-radius:2px"></div>
+                <div class="w-1 h-6 shrink-0" style="background:var(--c-accent);border-radius:2px"></div>
                 <h2 id="operativa-h2" class="font-display font-bold m-0"
-                  style="color:#FFFFFF;font-size:clamp(1.1rem,2vw,1.35rem);letter-spacing:-0.01em">
+                  style="color:var(--c-ink);font-size:clamp(1.1rem,2vw,1.35rem);letter-spacing:-0.01em">
                   Capacidad operativa
                 </h2>
               </div>
               <div class={`grid gap-4 ${[estacion.elementos, estacion.estacionesFisicas, estacion.unidades].filter(Boolean).length === 1 ? 'grid-cols-1 max-w-xs' : [estacion.elementos, estacion.estacionesFisicas, estacion.unidades].filter(Boolean).length === 2 ? 'grid-cols-2' : 'grid-cols-2 sm:grid-cols-3'}`}>
                 {estacion.elementos && (
-                  <div class="p-5 flex flex-col gap-2" style="background:#040A12;border:1px solid rgba(74,117,153,0.18);border-top:3px solid #F75000">
-                    <h3 class="font-display font-bold m-0 leading-none" style="color:#FFFFFF;font-size:2.5rem">{estacion.elementos}</h3>
-                    <p class="text-xs uppercase tracking-wider m-0" style="color:#F75000">Personal activo</p>
-                    <p class="text-[11px] leading-relaxed m-0" style="color:#64748B">Elementos en servicio activo incluyendo bomberos de carrera y personal operativo</p>
+                  <div class="p-5 flex flex-col gap-2" style="background:var(--c-bg);border:1px solid var(--c-line);border-top:3px solid var(--c-accent)">
+                    <h3 class="font-display font-bold m-0 leading-none" style="color:var(--c-ink);font-size:2.5rem">{estacion.elementos}</h3>
+                    <p class="text-xs uppercase tracking-wider m-0" style="color:var(--c-accent)">Personal activo</p>
+                    <p class="text-[11px] leading-relaxed m-0" style="color:var(--c-muted)">Elementos en servicio activo incluyendo bomberos de carrera y personal operativo</p>
                   </div>
                 )}
                 {estacion.estacionesFisicas && (
-                  <div class="p-5 flex flex-col gap-2" style="background:#040A12;border:1px solid rgba(74,117,153,0.18);border-top:3px solid #4A7599">
-                    <h3 class="font-display font-bold m-0 leading-none" style="color:#FFFFFF;font-size:2.5rem">{estacion.estacionesFisicas}</h3>
+                  <div class="p-5 flex flex-col gap-2" style="background:var(--c-bg);border:1px solid var(--c-line);border-top:3px solid var(--c-line-strong)">
+                    <h3 class="font-display font-bold m-0 leading-none" style="color:var(--c-ink);font-size:2.5rem">{estacion.estacionesFisicas}</h3>
                     <p class="text-xs uppercase tracking-wider m-0" style="color:var(--forge-300)">Cuarteles</p>
-                    <p class="text-[11px] leading-relaxed m-0" style="color:#64748B">Bases operativas que garantizan cobertura territorial en turnos de 24 horas</p>
+                    <p class="text-[11px] leading-relaxed m-0" style="color:var(--c-muted)">Bases operativas que garantizan cobertura territorial en turnos de 24 horas</p>
                   </div>
                 )}
                 {estacion.unidades && (
-                  <div class="p-5 flex flex-col gap-2" style="background:#040A12;border:1px solid rgba(74,117,153,0.18);border-top:3px solid #34D399">
-                    <h3 class="font-display font-bold m-0 leading-none" style="color:#FFFFFF;font-size:2.5rem">{estacion.unidades}</h3>
-                    <p class="text-xs uppercase tracking-wider m-0" style="color:#34D399">Vehículos</p>
-                    <p class="text-[11px] leading-relaxed m-0" style="color:#64748B">Autobombas, escaleras, unidades de rescate y vehículos de apoyo logístico</p>
+                  <div class="p-5 flex flex-col gap-2" style="background:var(--c-bg);border:1px solid var(--c-line);border-top:3px solid var(--c-success)">
+                    <h3 class="font-display font-bold m-0 leading-none" style="color:var(--c-ink);font-size:2.5rem">{estacion.unidades}</h3>
+                    <p class="text-xs uppercase tracking-wider m-0" style="color:var(--c-success)">Vehículos</p>
+                    <p class="text-[11px] leading-relaxed m-0" style="color:var(--c-muted)">Autobombas, escaleras, unidades de rescate y vehículos de apoyo logístico</p>
                   </div>
                 )}
               </div>
@@ -655,13 +655,13 @@ const mapPinIcon = ``;
           {/* ── §3 Servicios de emergencia (categorizados) ── */}
           <section aria-labelledby="servicios-h2">
             <div class="flex items-center gap-3 mb-3">
-              <div class="w-1 h-6 shrink-0" style="background:#F75000;border-radius:2px"></div>
+              <div class="w-1 h-6 shrink-0" style="background:var(--c-accent);border-radius:2px"></div>
               <h2 id="servicios-h2" class="font-display font-bold m-0"
-                style="color:#FFFFFF;font-size:clamp(1.1rem,2vw,1.35rem);letter-spacing:-0.01em">
+                style="color:var(--c-ink);font-size:clamp(1.1rem,2vw,1.35rem);letter-spacing:-0.01em">
                 Servicios de emergencia
               </h2>
             </div>
-            <p class="text-sm mb-6 m-0 leading-relaxed" style="color:#94A3B8">
+            <p class="text-sm mb-6 m-0 leading-relaxed" style="color:var(--c-text-2)">
               Especialidades operativas de {estacion.nombre}, agrupadas por categoría conforme a los estándares NFPA y protocolos de protección civil aplicables.
             </p>
             <div class="flex flex-col gap-6">
@@ -672,10 +672,10 @@ const mapPinIcon = ``;
                     <span class="w-2 h-2 rounded-full shrink-0 inline-block" style={`background:${cat.color}`}></span>
                     {cat.titulo}
                   </h3>
-                  <ul class="flex flex-col m-0 p-0 list-none" style="border:1px solid rgba(74,117,153,0.15)">
+                  <ul class="flex flex-col m-0 p-0 list-none" style="border:1px solid var(--c-line)">
                     {cat.items.map((s, i) => (
                       <li class="flex items-start gap-3 px-4 py-3 text-sm"
-                        style={`color:#CBD5E1;background:#040A12;${i > 0 ? 'border-top:1px solid rgba(74,117,153,0.1)' : ''}`}>
+                        style={`color:var(--c-text);background:var(--c-bg);${i > 0 ? 'border-top:1px solid rgba(74,117,153,0.1)' : ''}`}>
                         <span class="shrink-0 mt-1.5 w-1 h-1 rounded-full" style={`background:${cat.color}`}></span>
                         {s}
                       </li>
@@ -689,20 +689,20 @@ const mapPinIcon = ``;
           {/* ── §4 Normativa y estándares aplicables ── */}
           <section aria-labelledby="normativa-h2">
             <div class="flex items-center gap-3 mb-3">
-              <div class="w-1 h-6 shrink-0" style="background:#4A7599;border-radius:2px"></div>
+              <div class="w-1 h-6 shrink-0" style="background:var(--c-line-strong);border-radius:2px"></div>
               <h2 id="normativa-h2" class="font-display font-bold m-0"
-                style="color:#FFFFFF;font-size:clamp(1.1rem,2vw,1.35rem);letter-spacing:-0.01em">
+                style="color:var(--c-ink);font-size:clamp(1.1rem,2vw,1.35rem);letter-spacing:-0.01em">
                 Normativa y estándares aplicables
               </h2>
             </div>
-            <p class="text-sm mb-5 m-0 leading-relaxed" style="color:#94A3B8">
+            <p class="text-sm mb-5 m-0 leading-relaxed" style="color:var(--c-text-2)">
               Marco normativo de referencia para la dotación de equipamiento en corporaciones {cfg.label.toLowerCase()} en México.
               Incluye estándares NFPA internacionales y Normas Oficiales Mexicanas (NOM) vigentes.
             </p>
-            <div class="overflow-x-auto" style="border:1px solid rgba(74,117,153,0.2)">
+            <div class="overflow-x-auto" style="border:1px solid var(--c-line)">
               <table class="w-full" style="border-collapse:collapse;min-width:520px">
                 <thead>
-                  <tr style="background:#040A12;border-bottom:2px solid rgba(74,117,153,0.3)">
+                  <tr style="background:var(--c-bg);border-bottom:2px solid var(--c-line-strong)">
                     <th class="px-4 py-3 text-left text-[10px] font-bold uppercase tracking-wider" style="color:var(--forge-300);width:18%">Norma</th>
                     <th class="px-4 py-3 text-left text-[10px] font-bold uppercase tracking-wider" style="color:var(--forge-300);width:30%">Área de aplicación</th>
                     <th class="px-4 py-3 text-left text-[10px] font-bold uppercase tracking-wider" style="color:var(--forge-300)">Descripción</th>
@@ -710,12 +710,12 @@ const mapPinIcon = ``;
                 </thead>
                 <tbody>
                   {normaTable.map((row, i) => (
-                    <tr style={`border-bottom:1px solid rgba(74,117,153,0.1);background:${i % 2 === 0 ? '#040A12' : '#060D16'}`}>
+                    <tr style={`border-bottom:1px solid var(--c-line);background:${i % 2 === 0 ? 'var(--c-bg)' : 'var(--c-bg-alt)'}`}>
                       <td class="px-4 py-3">
-                        <h4 class="font-display font-bold text-xs m-0" style="color:#F75000">{row.norma}</h4>
+                        <h4 class="font-display font-bold text-xs m-0" style="color:var(--c-accent)">{row.norma}</h4>
                       </td>
-                      <td class="px-4 py-3 text-xs font-medium" style="color:#CBD5E1">{row.area}</td>
-                      <td class="px-4 py-3 text-xs leading-relaxed" style="color:#64748B">{row.descripcion}</td>
+                      <td class="px-4 py-3 text-xs font-medium" style="color:var(--c-text)">{row.area}</td>
+                      <td class="px-4 py-3 text-xs leading-relaxed" style="color:var(--c-muted)">{row.descripcion}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -723,13 +723,13 @@ const mapPinIcon = ``;
             </div>
             {estacion.certificaciones && estacion.certificaciones.length > 0 && (
               <div class="mt-5">
-                <h3 class="font-display font-bold text-xs uppercase tracking-widest mb-3 m-0" style="color:#34D399">
+                <h3 class="font-display font-bold text-xs uppercase tracking-widest mb-3 m-0" style="color:var(--c-success)">
                   Certificaciones activas
                 </h3>
                 <div class="flex flex-wrap gap-2">
                   {estacion.certificaciones.map((c) => (
                     <span class="inline-flex items-center gap-1.5 font-display text-[11px] uppercase tracking-wider px-3 py-1.5"
-                      style="color:#34D399;background:rgba(52,211,153,0.08);border:1px solid rgba(52,211,153,0.25)">
+                      style="color:var(--c-success);background:rgba(6,118,71,0.08);border:1px solid rgba(6,118,71,0.25)">
                       <span class="w-3 h-3" set:html={checkIcon} aria-hidden="true"/>{c}
                     </span>
                   ))}
@@ -741,38 +741,38 @@ const mapPinIcon = ``;
           {/* ── §5 Equipamiento certificado NFPA ── */}
           <section aria-labelledby="equipo-h2">
             <div class="flex items-center gap-3 mb-3">
-              <div class="w-1 h-6 shrink-0" style="background:#F75000;border-radius:2px"></div>
+              <div class="w-1 h-6 shrink-0" style="background:var(--c-accent);border-radius:2px"></div>
               <h2 id="equipo-h2" class="font-display font-bold m-0"
-                style="color:#FFFFFF;font-size:clamp(1.1rem,2vw,1.35rem);letter-spacing:-0.01em">
+                style="color:var(--c-ink);font-size:clamp(1.1rem,2vw,1.35rem);letter-spacing:-0.01em">
                 Equipamiento certificado NFPA para corporaciones {cfg.label.toLowerCase()}
               </h2>
             </div>
-            <p class="text-sm mb-6 m-0 leading-relaxed" style="color:#94A3B8">
+            <p class="text-sm mb-6 m-0 leading-relaxed" style="color:var(--c-text-2)">
               Equipo que suele especificarse para una corporación de este tipo en {estado.nombre}. Las fichas enlazadas pertenecen al catálogo de FIREFIGHTERS MX, que es independiente de este directorio.
             </p>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
               {equipoDescs.map((eq) => (
                 <a href={eq.href}
                   class="flex flex-col gap-2 p-5 group"
-                  style="background:#040A12;border:1px solid rgba(74,117,153,0.18);text-decoration:none">
+                  style="background:var(--c-bg);border:1px solid var(--c-line);text-decoration:none">
                   <div class="flex items-start justify-between gap-3">
-                    <h3 class="font-display font-bold text-sm m-0 leading-snug group-hover:text-[#FF6B26]"
-                      style="color:#CBD5E1">{eq.label}</h3>
+                    <h3 class="font-display font-bold text-sm m-0 leading-snug group-hover:text-[var(--c-accent)]"
+                      style="color:var(--c-text)">{eq.label}</h3>
                     <span class="font-display font-bold text-[9px] uppercase tracking-wider shrink-0 px-1.5 py-0.5"
-                      style="color:#F75000;background:rgba(247,80,0,0.1);border:1px solid rgba(247,80,0,0.2);white-space:nowrap">
+                      style="color:var(--c-accent);background:rgba(200,16,46,0.1);border:1px solid rgba(200,16,46,0.2);white-space:nowrap">
                       {eq.norma}
                     </span>
                   </div>
-                  <p class="text-xs leading-relaxed m-0" style="color:#64748B">{eq.desc}</p>
-                  <span class="text-xs mt-auto group-hover:text-[#FF6B26]" style="color:var(--forge-300)">
+                  <p class="text-xs leading-relaxed m-0" style="color:var(--c-muted)">{eq.desc}</p>
+                  <span class="text-xs mt-auto group-hover:text-[var(--c-accent)]" style="color:var(--forge-300)">
                     Equipo para bomberos 
                   </span>
                 </a>
               ))}
             </div>
             <div class="p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3"
-              style="background:#040A12;border:1px solid rgba(247,80,0,0.2)">
-              <p class="text-xs m-0" style="color:#94A3B8">
+              style="background:var(--c-bg);border:1px solid rgba(200,16,46,0.2)">
+              <p class="text-xs m-0" style="color:var(--c-text-2)">
                 ¿Buscas quién surte este equipo en {estado.nombre}? El directorio reúne a los distribuidores de
                 EPP, recargadoras de extintores, instaladoras de sistemas contra incendio y centros de capacitación
                 de la entidad, con su giro y su fuente.
@@ -794,19 +794,19 @@ const mapPinIcon = ``;
           {hasMap && (
             <section aria-labelledby="ubicacion-h2">
               <div class="flex items-center gap-3 mb-6">
-                <div class="w-1 h-6 shrink-0" style="background:#4A7599;border-radius:2px"></div>
+                <div class="w-1 h-6 shrink-0" style="background:var(--c-line-strong);border-radius:2px"></div>
                 <h2 id="ubicacion-h2" class="font-display font-bold m-0"
-                  style="color:#FFFFFF;font-size:clamp(1.1rem,2vw,1.35rem);letter-spacing:-0.01em">
+                  style="color:var(--c-ink);font-size:clamp(1.1rem,2vw,1.35rem);letter-spacing:-0.01em">
                   Infraestructura y ubicación
                 </h2>
               </div>
-              <div class="overflow-hidden" style="border:1px solid rgba(74,117,153,0.25)">
+              <div class="overflow-hidden" style="border:1px solid var(--c-line-strong)">
                 <div
                   id="estacion-map"
                   data-lat={mapLat}
                   data-lng={mapLng}
                   data-nombre={estacion.nombre}
-                  style="height:360px;background:#0C1825"
+                  style="height:360px;background:var(--c-surface)"
                   role="img"
                   aria-label={`Mapa de ubicación de ${estacion.nombre}`}
                 ></div>
@@ -828,17 +828,17 @@ const mapPinIcon = ``;
           {estacion.fuentes && estacion.fuentes.length > 0 && (
             <section aria-labelledby="fuentes-h2">
               <div class="flex items-center gap-3 mb-4">
-                <div class="w-1 h-6 shrink-0" style="background:#4A7599;border-radius:2px"></div>
+                <div class="w-1 h-6 shrink-0" style="background:var(--c-line-strong);border-radius:2px"></div>
                 <h2 id="fuentes-h2" class="font-display font-bold m-0"
-                  style="color:#FFFFFF;font-size:clamp(1.1rem,2vw,1.35rem);letter-spacing:-0.01em">
+                  style="color:var(--c-ink);font-size:clamp(1.1rem,2vw,1.35rem);letter-spacing:-0.01em">
                   Fuentes oficiales
                 </h2>
               </div>
-              <p class="text-xs mb-4 m-0 leading-relaxed" style="color:#64748B">
+              <p class="text-xs mb-4 m-0 leading-relaxed" style="color:var(--c-muted)">
                 Información verificada con fuentes de gobierno y registros documentales públicos.
                 Última verificación: {verif ?? 'reciente'}.
               </p>
-              <div class="flex flex-col gap-2 p-4" style="background:#040A12;border:1px solid rgba(74,117,153,0.18)">
+              <div class="flex flex-col gap-2 p-4" style="background:var(--c-bg);border:1px solid var(--c-line)">
                 {estacion.fuentes.map((f, i) => {
                   const fUrl = typeof f === 'string' ? f : f.url;
                   const fLabel = typeof f === 'string' ? f : f.nombre;
@@ -847,9 +847,9 @@ const mapPinIcon = ``;
                       <span class="font-display text-[10px] font-bold shrink-0 mt-0.5" style="color:var(--forge-300)"></span>
                       {fUrl ? (
                         <a href={fUrl} target="_blank" rel="noopener noreferrer nofollow"
-                          class="text-xs break-all hover:text-[#FF6B26]" style="color:var(--forge-300)">{fLabel}</a>
+                          class="text-xs break-all hover:text-[var(--c-accent)]" style="color:var(--forge-300)">{fLabel}</a>
                       ) : (
-                        <span class="text-xs break-all" style="color:var(--forge-300)">{fLabel} <span style="color:#64748B">· publicación retirada por la fuente</span></span>
+                        <span class="text-xs break-all" style="color:var(--forge-300)">{fLabel} <span style="color:var(--c-muted)">· publicación retirada por la fuente</span></span>
                       )}
                     </div>
                   );
@@ -865,11 +865,11 @@ const mapPinIcon = ``;
           <div class="flex flex-col gap-5" style="position:sticky;top:1.5rem">
 
             {/* ── Bloque 1: Contacto ── */}
-            <div style={`background:#040A12;border:1px solid rgba(74,117,153,0.2);border-top:2px solid ${cfg.color}`}>
+            <div style={`background:var(--c-bg);border:1px solid var(--c-line);border-top:2px solid ${cfg.color}`}>
               {/* Header */}
-              <div class="px-5 pt-4 pb-3" style="border-bottom:1px solid rgba(74,117,153,0.12)">
+              <div class="px-5 pt-4 pb-3" style="border-bottom:1px solid var(--c-line)">
                 <div class="flex items-center justify-between">
-                  <span class="font-display font-bold text-xs uppercase tracking-widest" style="color:#FFFFFF">Contacto</span>
+                  <span class="font-display font-bold text-xs uppercase tracking-widest" style="color:var(--c-ink)">Contacto</span>
                   {conf && (
                     <span class="inline-flex items-center gap-1 font-display text-[9px] uppercase tracking-wider px-1.5 py-0.5"
                       style={`color:${conf.color};background:${conf.bgColor};border:1px solid ${conf.color}30`}>
@@ -886,7 +886,7 @@ const mapPinIcon = ``;
                   <div>
                     <div class="text-[9px] uppercase tracking-widest mb-1" style="color:var(--forge-300)">Emergencias</div>
                     <a href={`tel:${TELEFONO_EMERGENCIAS}`}
-                      class="font-display font-bold text-2xl hover:text-[#ff8c5a]" style="color:#F75000">
+                      class="font-display font-bold text-2xl hover:text-[#ff8c5a]" style="color:var(--c-accent)">
                       {TELEFONO_EMERGENCIAS}
                     </a>
                   </div>
@@ -899,7 +899,7 @@ const mapPinIcon = ``;
                     <div>
                       <div class="text-[9px] uppercase tracking-widest mb-0.5" style="color:var(--forge-300)">Conmutador</div>
                       <a href={`tel:${estacion.telefono.replace(/[^0-9+]/g, '')}`}
-                        class="text-sm hover:text-[#FF6B26]" style="color:#CBD5E1">{estacion.telefono}</a>
+                        class="text-sm hover:text-[var(--c-accent)]" style="color:var(--c-text)">{estacion.telefono}</a>
                     </div>
                   </div>
                 )}
@@ -913,7 +913,7 @@ const mapPinIcon = ``;
                       <div class="flex flex-col gap-0.5">
                         {estacion.telefonosAdicionales.map((t) => (
                           <a href={`tel:${t.replace(/[^0-9+]/g, '')}`}
-                            class="text-sm hover:text-[#FF6B26]" style="color:#CBD5E1">{t}</a>
+                            class="text-sm hover:text-[var(--c-accent)]" style="color:var(--c-text)">{t}</a>
                         ))}
                       </div>
                     </div>
@@ -926,7 +926,7 @@ const mapPinIcon = ``;
                     <span class="w-4 h-4 shrink-0 mt-0.5" style="color:var(--forge-300)" set:html={mailIcon} aria-hidden="true"/>
                     <div>
                       <div class="text-[9px] uppercase tracking-widest mb-0.5" style="color:var(--forge-300)">Correo oficial</div>
-                      <a href={`mailto:${estacion.email}`} class="text-xs break-all hover:text-[#FF6B26]" style="color:#CBD5E1">{estacion.email}</a>
+                      <a href={`mailto:${estacion.email}`} class="text-xs break-all hover:text-[var(--c-accent)]" style="color:var(--c-text)">{estacion.email}</a>
                     </div>
                   </div>
                 )}
@@ -938,7 +938,7 @@ const mapPinIcon = ``;
                     <div>
                       <div class="text-[9px] uppercase tracking-widest mb-0.5" style="color:var(--forge-300)">Sitio oficial</div>
                       <a href={estacion.sitioWeb} target="_blank" rel="noopener noreferrer"
-                        class="text-xs break-all hover:text-[#FF6B26]" style="color:#CBD5E1">
+                        class="text-xs break-all hover:text-[var(--c-accent)]" style="color:var(--c-text)">
                         {estacion.sitioWeb.replace(/^https?:\/\//, '').replace(/\/$/, '')}
                       </a>
                     </div>
@@ -946,37 +946,37 @@ const mapPinIcon = ``;
                 )}
 
                 {/* Jurisdicción + operador */}
-                <div class="pt-3" style="border-top:1px solid rgba(74,117,153,0.12)">
+                <div class="pt-3" style="border-top:1px solid var(--c-line)">
                   <div class="text-[9px] uppercase tracking-widest mb-1" style="color:var(--forge-300)">Jurisdicción</div>
-                  <p class="text-xs m-0" style="color:#94A3B8">
+                  <p class="text-xs m-0" style="color:var(--c-text-2)">
                     <span style={`color:${cfg.color}`}>{cfg.label}</span>
                     {' · '}{estacion.municipio}, {estado.nombre}
                   </p>
                   {estacion.operador && (
-                    <p class="text-[11px] m-0 mt-1" style="color:#64748B">Operador: {estacion.operador}</p>
+                    <p class="text-[11px] m-0 mt-1" style="color:var(--c-muted)">Operador: {estacion.operador}</p>
                   )}
                 </div>
 
                 {/* Capacidad (mini) si NO hay descripción larga que la muestre */}
                 {(estacion.elementos || estacion.estacionesFisicas || estacion.unidades) && !estacion.descripcion && (
-                  <div class="pt-3 flex flex-col gap-2" style="border-top:1px solid rgba(74,117,153,0.12)">
+                  <div class="pt-3 flex flex-col gap-2" style="border-top:1px solid var(--c-line)">
                     <div class="text-[9px] uppercase tracking-widest" style="color:var(--forge-300)">Capacidad</div>
                     {estacion.elementos && (
                       <div class="flex items-center justify-between">
-                        <span class="text-xs" style="color:#64748B">Personal</span>
-                        <span class="font-display font-bold text-sm" style="color:#CBD5E1">{estacion.elementos} elem.</span>
+                        <span class="text-xs" style="color:var(--c-muted)">Personal</span>
+                        <span class="font-display font-bold text-sm" style="color:var(--c-text)">{estacion.elementos} elem.</span>
                       </div>
                     )}
                     {estacion.estacionesFisicas && (
                       <div class="flex items-center justify-between">
-                        <span class="text-xs" style="color:#64748B">Cuarteles</span>
-                        <span class="font-display font-bold text-sm" style="color:#CBD5E1">{estacion.estacionesFisicas}</span>
+                        <span class="text-xs" style="color:var(--c-muted)">Cuarteles</span>
+                        <span class="font-display font-bold text-sm" style="color:var(--c-text)">{estacion.estacionesFisicas}</span>
                       </div>
                     )}
                     {estacion.unidades && (
                       <div class="flex items-center justify-between">
-                        <span class="text-xs" style="color:#64748B">Flota</span>
-                        <span class="font-display font-bold text-sm" style="color:#CBD5E1">{estacion.unidades} veh.</span>
+                        <span class="text-xs" style="color:var(--c-muted)">Flota</span>
+                        <span class="font-display font-bold text-sm" style="color:var(--c-text)">{estacion.unidades} veh.</span>
                       </div>
                     )}
                   </div>
@@ -991,11 +991,11 @@ const mapPinIcon = ``;
             </div>
 
             {/* ── Bloque 2: Equipo para esta corporación ── */}
-            <div style="background:#040A12;border:1px solid rgba(74,117,153,0.2);border-top:2px solid #F75000">
-              <div class="px-5 pt-4 pb-3" style="border-bottom:1px solid rgba(74,117,153,0.12)">
+            <div style="background:var(--c-bg);border:1px solid var(--c-line);border-top:2px solid var(--c-accent)">
+              <div class="px-5 pt-4 pb-3" style="border-bottom:1px solid var(--c-line)">
                 <div class="flex items-center gap-2">
-                  <span class="w-3.5 h-3.5 shrink-0" style="color:#F75000" set:html={tagIcon} aria-hidden="true"/>
-                  <span class="font-display font-bold text-xs uppercase tracking-widest" style="color:#FFFFFF">
+                  <span class="w-3.5 h-3.5 shrink-0" style="color:var(--c-accent)" set:html={tagIcon} aria-hidden="true"/>
+                  <span class="font-display font-bold text-xs uppercase tracking-widest" style="color:var(--c-ink)">
                     Equipo para {cfg.label}
                   </span>
                 </div>
@@ -1004,15 +1004,15 @@ const mapPinIcon = ``;
               <div class="flex flex-col">
                 {prodLinks.map((p, i) => (
                   <a href={p.href}
-                    class="flex items-center justify-between px-5 py-2.5 hover:bg-[rgba(247,80,0,0.06)] group"
+                    class="flex items-center justify-between px-5 py-2.5 hover:bg-[rgba(200,16,46,0.06)] group"
                     style={i > 0 ? 'border-top:1px solid rgba(74,117,153,0.1)' : ''}>
-                    <span class="text-xs group-hover:text-[#FF6B26]" style="color:#CBD5E1">{p.label}</span>
-                    <span class="w-3.5 h-3.5 shrink-0 opacity-40 group-hover:opacity-100 group-hover:text-[#FF6B26]"
+                    <span class="text-xs group-hover:text-[var(--c-accent)]" style="color:var(--c-text)">{p.label}</span>
+                    <span class="w-3.5 h-3.5 shrink-0 opacity-40 group-hover:opacity-100 group-hover:text-[var(--c-accent)]"
                       style="color:var(--forge-300)" set:html={arrowIcon} aria-hidden="true"/>
                   </a>
                 ))}
-                <div class="px-5 pt-3 pb-4" style="border-top:1px solid rgba(74,117,153,0.1)">
-                  <a href="/productos" class="text-[10px] uppercase tracking-wider hover:text-[#FF6B26]" style="color:var(--forge-300)">
+                <div class="px-5 pt-3 pb-4" style="border-top:1px solid var(--c-line)">
+                  <a href="/productos" class="text-[10px] uppercase tracking-wider hover:text-[var(--c-accent)]" style="color:var(--forge-300)">
                     Catálogo de equipo para bomberos 
                   </a>
                 </div>
@@ -1021,11 +1021,11 @@ const mapPinIcon = ``;
 
             {/* ── Bloque 3: Otras estaciones en el estado ── */}
             {hermanasSidebar.length > 0 && (
-              <div style="background:#040A12;border:1px solid rgba(74,117,153,0.2);border-top:2px solid #4A7599">
-                <div class="px-5 pt-4 pb-3" style="border-bottom:1px solid rgba(74,117,153,0.12)">
+              <div style="background:var(--c-bg);border:1px solid var(--c-line);border-top:2px solid var(--c-line-strong)">
+                <div class="px-5 pt-4 pb-3" style="border-bottom:1px solid var(--c-line)">
                   <div class="flex items-center gap-2">
                     <span class="w-3.5 h-3.5 shrink-0" style="color:var(--forge-300)" set:html={mapPinIcon} aria-hidden="true"/>
-                    <span class="font-display font-bold text-xs uppercase tracking-widest" style="color:#FFFFFF">
+                    <span class="font-display font-bold text-xs uppercase tracking-widest" style="color:var(--c-ink)">
                       En {estado.nombre}
                     </span>
                   </div>
@@ -1038,26 +1038,26 @@ const mapPinIcon = ``;
                     const hcfg = tipoConfig[h.tipo];
                     return (
                       <a href={`/estaciones/${estado.slug}/${h.slug}/`}
-                        class="flex items-start gap-3 px-5 py-3 hover:bg-[rgba(74,117,153,0.06)] group"
+                        class="flex items-start gap-3 px-5 py-3 hover:bg-[var(--c-tint)] group"
                         style={i > 0 ? 'border-top:1px solid rgba(74,117,153,0.1)' : ''}>
                         <span class="shrink-0 mt-1 w-1.5 h-1.5 rounded-full" style={`background:${hcfg.color};margin-top:0.35rem`}></span>
                         <div class="flex flex-col gap-0.5 min-w-0">
-                          <span class="text-xs leading-snug group-hover:text-[#FF6B26] truncate" style="color:#CBD5E1">{h.nombre}</span>
+                          <span class="text-xs leading-snug group-hover:text-[var(--c-accent)] truncate" style="color:var(--c-text)">{h.nombre}</span>
                           <span class="text-[10px]" style={`color:${hcfg.color}`}>{hcfg.label} · {h.ciudad}</span>
                         </div>
                       </a>
                     );
                   })}
                   {todasHermanas.length > 8 && (
-                    <div class="px-5 pt-3 pb-4" style="border-top:1px solid rgba(74,117,153,0.1)">
-                      <a href={`/estaciones/${estado.slug}/`} class="text-[10px] uppercase tracking-wider hover:text-[#FF6B26]" style="color:var(--forge-300)">
+                    <div class="px-5 pt-3 pb-4" style="border-top:1px solid var(--c-line)">
+                      <a href={`/estaciones/${estado.slug}/`} class="text-[10px] uppercase tracking-wider hover:text-[var(--c-accent)]" style="color:var(--forge-300)">
                         {todasHermanas.length} cuerpos de bomberos en {estado.nombre} 
                       </a>
                     </div>
                   )}
                   {todasHermanas.length <= 8 && (
-                    <div class="px-5 pt-3 pb-4" style="border-top:1px solid rgba(74,117,153,0.1)">
-                      <a href={`/estaciones/${estado.slug}/`} class="text-[10px] uppercase tracking-wider hover:text-[#FF6B26]" style="color:var(--forge-300)">
+                    <div class="px-5 pt-3 pb-4" style="border-top:1px solid var(--c-line)">
+                      <a href={`/estaciones/${estado.slug}/`} class="text-[10px] uppercase tracking-wider hover:text-[var(--c-accent)]" style="color:var(--forge-300)">
                         Directorio {estado.nombre} 
                       </a>
                     </div>
@@ -1067,14 +1067,14 @@ const mapPinIcon = ``;
             )}
 
             {estacionesNacionales.length > 0 && (
-              <div style="background:#040A12;border:1px solid rgba(74,117,153,0.2);border-top:2px solid #4A7599">
-                <div class="px-5 pt-4 pb-3" style="border-bottom:1px solid rgba(74,117,153,0.12)">
-                  <span class="font-display font-bold text-xs uppercase tracking-widest" style="color:#FFFFFF">Otros cuerpos de bomberos en México</span>
+              <div style="background:var(--c-bg);border:1px solid var(--c-line);border-top:2px solid var(--c-line-strong)">
+                <div class="px-5 pt-4 pb-3" style="border-bottom:1px solid var(--c-line)">
+                  <span class="font-display font-bold text-xs uppercase tracking-widest" style="color:var(--c-ink)">Otros cuerpos de bomberos en México</span>
                 </div>
                 <div class="flex flex-col">
                   {estacionesNacionales.map((nacional, i) => (
-                    <a href={`/estaciones/${nacional.estado}/${nacional.slug}/`} class="flex items-start gap-3 px-5 py-3 hover:bg-[rgba(74,117,153,0.06)] group" style={i > 0 ? 'border-top:1px solid rgba(74,117,153,0.1)' : ''}>
-                      <div class="flex flex-col gap-0.5 min-w-0"><span class="text-xs leading-snug group-hover:text-[#FF6B26] truncate" style="color:#CBD5E1">{nacional.nombre}</span><span class="text-[10px]" style="color:var(--forge-300)">{nacional.ciudad}, {nacional.estado}</span></div>
+                    <a href={`/estaciones/${nacional.estado}/${nacional.slug}/`} class="flex items-start gap-3 px-5 py-3 hover:bg-[var(--c-tint)] group" style={i > 0 ? 'border-top:1px solid rgba(74,117,153,0.1)' : ''}>
+                      <div class="flex flex-col gap-0.5 min-w-0"><span class="text-xs leading-snug group-hover:text-[var(--c-accent)] truncate" style="color:var(--c-text)">{nacional.nombre}</span><span class="text-[10px]" style="color:var(--forge-300)">{nacional.ciudad}, {nacional.estado}</span></div>
                     </a>
                   ))}
                 </div>
@@ -1082,24 +1082,24 @@ const mapPinIcon = ``;
             )}
 
             {/* ── Bloque 4: Artículos técnicos relacionados ── */}
-            <div style="background:#040A12;border:1px solid rgba(74,117,153,0.2);border-top:2px solid #64748B">
-              <div class="px-5 pt-4 pb-3" style="border-bottom:1px solid rgba(74,117,153,0.12)">
+            <div style="background:var(--c-bg);border:1px solid var(--c-line);border-top:2px solid var(--c-line-strong)">
+              <div class="px-5 pt-4 pb-3" style="border-bottom:1px solid var(--c-line)">
                 <div class="flex items-center gap-2">
-                  <span class="w-3.5 h-3.5 shrink-0" style="color:#64748B" set:html={articleIcon} aria-hidden="true"/>
-                  <span class="font-display font-bold text-xs uppercase tracking-widest" style="color:#FFFFFF">Guías técnicas</span>
+                  <span class="w-3.5 h-3.5 shrink-0" style="color:var(--c-muted)" set:html={articleIcon} aria-hidden="true"/>
+                  <span class="font-display font-bold text-xs uppercase tracking-widest" style="color:var(--c-ink)">Guías técnicas</span>
                 </div>
               </div>
               <div class="flex flex-col">
                 {blogLinks.map((b, i) => (
                   <a href={b.href}
-                    class="flex items-start gap-2.5 px-5 py-3 hover:bg-[rgba(74,117,153,0.06)] group"
+                    class="flex items-start gap-2.5 px-5 py-3 hover:bg-[var(--c-tint)] group"
                     style={i > 0 ? 'border-top:1px solid rgba(74,117,153,0.1)' : ''}>
                     <span class="shrink-0 font-display text-[10px] font-bold mt-0.5" style="color:var(--forge-300)"></span>
-                    <span class="text-xs leading-snug group-hover:text-[#FF6B26]" style="color:#94A3B8">{b.label}</span>
+                    <span class="text-xs leading-snug group-hover:text-[var(--c-accent)]" style="color:var(--c-text-2)">{b.label}</span>
                   </a>
                 ))}
-                <div class="px-5 pt-3 pb-4" style="border-top:1px solid rgba(74,117,153,0.1)">
-                  <a href="/blog" class="text-[10px] uppercase tracking-wider hover:text-[#FF6B26]" style="color:var(--forge-300)">
+                <div class="px-5 pt-3 pb-4" style="border-top:1px solid var(--c-line)">
+                  <a href="/blog" class="text-[10px] uppercase tracking-wider hover:text-[var(--c-accent)]" style="color:var(--forge-300)">
                     Blog técnico para bomberos 
                   </a>
                 </div>
@@ -1108,9 +1108,9 @@ const mapPinIcon = ``;
 
             {/* ── Bloque 5: Directorio regional ── */}
             {estadosRegion.length > 0 && (
-              <div style="background:#040A12;border:1px solid rgba(74,117,153,0.2);border-top:2px solid rgba(74,117,153,0.5)">
-                <div class="px-5 pt-4 pb-3" style="border-bottom:1px solid rgba(74,117,153,0.12)">
-                  <span class="font-display font-bold text-xs uppercase tracking-widest" style="color:#FFFFFF">
+              <div style="background:var(--c-bg);border:1px solid var(--c-line);border-top:2px solid var(--c-line-strong)">
+                <div class="px-5 pt-4 pb-3" style="border-bottom:1px solid var(--c-line)">
+                  <span class="font-display font-bold text-xs uppercase tracking-widest" style="color:var(--c-ink)">
                     Región {estado.region}
                   </span>
                   <p class="text-[10px] mt-1 m-0" style="color:var(--forge-300)">Otros estados de la región</p>
@@ -1118,18 +1118,18 @@ const mapPinIcon = ``;
                 <div class="flex flex-col">
                   {estadosRegion.map((e, i) => (
                     <a href={`/estaciones/${e.slug}/`}
-                      class="flex items-center justify-between px-5 py-2.5 hover:bg-[rgba(74,117,153,0.06)] group"
+                      class="flex items-center justify-between px-5 py-2.5 hover:bg-[var(--c-tint)] group"
                       style={i > 0 ? 'border-top:1px solid rgba(74,117,153,0.1)' : ''}>
                       <div class="flex flex-col gap-0.5">
-                        <span class="text-xs group-hover:text-[#FF6B26]" style="color:#CBD5E1">{e.nombre}</span>
+                        <span class="text-xs group-hover:text-[var(--c-accent)]" style="color:var(--c-text)">{e.nombre}</span>
                         <span class="text-[10px]" style="color:var(--forge-300)">{e.estaciones.length} corporacion{e.estaciones.length !== 1 ? 'es' : ''}</span>
                       </div>
                       <span class="w-3.5 h-3.5 shrink-0 opacity-30 group-hover:opacity-80"
                         style="color:var(--forge-300)" set:html={arrowIcon} aria-hidden="true"/>
                     </a>
                   ))}
-                  <div class="px-5 pt-3 pb-4" style="border-top:1px solid rgba(74,117,153,0.1)">
-                    <a href="/estaciones" class="text-[10px] uppercase tracking-wider hover:text-[#FF6B26]" style="color:var(--forge-300)">
+                  <div class="px-5 pt-3 pb-4" style="border-top:1px solid var(--c-line)">
+                    <a href="/estaciones" class="text-[10px] uppercase tracking-wider hover:text-[var(--c-accent)]" style="color:var(--forge-300)">
                       Directorio nacional de estaciones 
                     </a>
                   </div>
@@ -1146,13 +1146,13 @@ const mapPinIcon = ``;
 
   {/* ── Más estaciones del estado (grid bottom) ── */}
   {herManasGrid.length > 0 && (
-    <section class="section-tight" style="background:#040A12;border-top:1px solid rgba(74,117,153,0.15)"
+    <section class="section-tight" style="background:var(--c-bg);border-top:1px solid var(--c-line)"
       aria-labelledby="hermanas-heading">
       <div class="container-site">
         <div class="flex items-end justify-between gap-4 mb-6">
           <h2 id="hermanas-heading" class="font-display font-bold m-0"
-            style="color:#FFFFFF;font-size:clamp(1.25rem,2.5vw,1.75rem)">
-            Más estaciones en <span style="color:#F75000">{estado.nombre}</span>
+            style="color:var(--c-ink);font-size:clamp(1.25rem,2.5vw,1.75rem)">
+            Más estaciones en <span style="color:var(--c-accent)">{estado.nombre}</span>
           </h2>
           <a href={`/estaciones/${estado.slug}/`} class="btn btn-ghost btn-sm shrink-0">Todas las estaciones de {estado.nombre} </a>
         </div>
@@ -1162,11 +1162,11 @@ const mapPinIcon = ``;
             return (
               <a href={`/estaciones/${estado.slug}/${h.slug}/`}
                 class="group flex flex-col gap-2 p-4"
-                style={`background:#070E1A;border:1px solid rgba(74,117,153,0.18);border-left:3px solid ${hcfg.color}`}>
+                style={`background:var(--c-bg-alt);border:1px solid var(--c-line);border-left:3px solid ${hcfg.color}`}>
                 <span class="font-display text-[9px] uppercase tracking-wider" style={`color:${hcfg.color}`}>{hcfg.label}</span>
-                <span class="font-display font-bold text-sm leading-tight group-hover:text-[#FF6B26]"
-                  style="color:#FFFFFF">{h.nombre}</span>
-                <span class="text-[11px]" style="color:#64748B">{h.ciudad}</span>
+                <span class="font-display font-bold text-sm leading-tight group-hover:text-[var(--c-accent)]"
+                  style="color:var(--c-ink)">{h.nombre}</span>
+                <span class="text-[11px]" style="color:var(--c-muted)">{h.ciudad}</span>
               </a>
             );
           })}
@@ -1192,7 +1192,7 @@ const mapPinIcon = ``;
           maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" rel="noopener nofollow">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions" rel="noopener nofollow">CARTO</a>'
         }).addTo(map);
         var icon = L.divIcon({
-          html: '<div style="width:12px;height:12px;background:#F75000;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 3px rgba(247,80,0,0.3)"></div>',
+          html: '<div style="width:12px;height:12px;background:var(--c-accent);border-radius:50%;border:2px solid var(--c-line);box-shadow:0 0 0 3px rgba(200,16,46,0.3)"></div>',
           iconSize: [12, 12], iconAnchor: [6, 6], className: ''
         });
         L.marker([lat, lng], { icon: icon }).addTo(map).bindPopup(el.dataset.nombre);

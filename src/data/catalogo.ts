@@ -100,7 +100,7 @@ export const catalogo: FamiliaCatalogo[] = [
         cta: 'Alarma contra incendio',
         imagenAlt: 'Panel de alarma contra incendio con detector de humo, estación manual y estrobo',
         icon: ICON.alarma,
-        accent: '#F5A623',
+        accent: 'var(--c-amber)',
         hijas: [
           { label: 'Alarma contra incendio', href: '/productos/sistemas-ci/alarma-contra-incendio/' },
           { label: 'Honeywell y Notifier', href: '/productos/sistemas-ci/honeywell-notifier/' },
@@ -131,7 +131,7 @@ export const catalogo: FamiliaCatalogo[] = [
         cta: 'Bombas contra incendio',
         imagenAlt: 'Cuarto de bombas contra incendio con bomba principal, bomba jockey y tuberías rojas',
         icon: ICON.bomba,
-        accent: '#F75000',
+        accent: 'var(--c-accent)',
         hijas: [
           { label: 'Bombas contra incendio', href: '/productos/sistemas-ci/bombas-contra-incendio/' },
           { label: 'Red hidráulica', href: '/productos/sistemas-ci/red-hidraulica/' },
@@ -147,7 +147,7 @@ export const catalogo: FamiliaCatalogo[] = [
         cta: 'Hidrantes contra incendio',
         imagenAlt: 'Gabinete contra incendio abierto con manguera enrollada, válvula y extintor',
         icon: ICON.hidrante,
-        accent: '#60A5FA',
+        accent: 'var(--c-info)',
         hijas: [
           { label: 'Hidrantes contra incendio', href: '/productos/sistemas-ci/hidrantes-contra-incendio/' },
         ],

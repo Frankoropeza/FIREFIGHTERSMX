@@ -2,25 +2,25 @@
 /** FAQ del directorio — acordeón nativo <details>, sin JS */
 import { directorioFaqs as faqs } from '@data/faqs';
 ---
-<section class="section home-deferred-section" style="background:#070E1A" aria-labelledby="faq-heading">
+<section class="section home-deferred-section" style="background:var(--c-bg-alt)" aria-labelledby="faq-heading">
   <div class="container-site grid grid-cols-1 lg:grid-cols-[minmax(0,420px)_1fr] gap-10 lg:gap-20 items-start">
     <div class="lg:sticky lg:top-28">
       <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes</span>
-      <h2 id="faq-heading" class="font-display font-bold mb-4" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Cómo funciona el directorio<br/><span style="color:#F75000">de bomberos y equipo contra incendio.</span></h2>
-      <p class="text-sm leading-relaxed mb-6" style="color:#94A3B8">Lo que preguntan jefes de cuerpo, coordinadores de seguridad, áreas de compras y las propias empresas del sector.</p>
+      <h2 id="faq-heading" class="font-display font-bold mb-4" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Cómo funciona el directorio<br/><span style="color:var(--c-accent)">de bomberos y equipo contra incendio.</span></h2>
+      <p class="text-sm leading-relaxed mb-6" style="color:var(--c-text-2)">Lo que preguntan jefes de cuerpo, coordinadores de seguridad, áreas de compras y las propias empresas del sector.</p>
       <div class="flex flex-col gap-3">
         <a href="/empresas/" class="btn btn-primary">Empresas contra incendio</a>
         <a href="/contacto/" class="btn btn-ghost">Contactar a FIREFIGHTERS MX </a>
       </div>
     </div>
-    <div style="border:1px solid rgba(74,117,153,0.2);background:#0C1825">
+    <div style="border:1px solid var(--c-line);background:var(--c-surface)">
       {faqs.map((f, i) => (
-        <details class="group" style="border-bottom:1px solid rgba(74,117,153,0.15)" open={i === 0}>
+        <details class="group" style="border-bottom:1px solid var(--c-line)" open={i === 0}>
           <summary class="flex items-start justify-between gap-4 px-6 py-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-            <span class="font-display font-semibold text-base leading-snug" style="color:#FFFFFF">{f.q}</span>
-            <span class="shrink-0 w-6 h-6 flex items-center justify-center font-display text-lg group-open:rotate-45" style="color:#F75000;border:1px solid rgba(247,80,0,0.35)" aria-hidden="true">+</span>
+            <span class="font-display font-semibold text-base leading-snug" style="color:var(--c-ink)">{f.q}</span>
+            <span class="shrink-0 w-6 h-6 flex items-center justify-center font-display text-lg group-open:rotate-45" style="color:var(--c-accent);border:1px solid rgba(200,16,46,0.35)" aria-hidden="true">+</span>
           </summary>
-          <p class="px-6 pb-6 text-sm leading-[1.85]" style="color:#94A3B8">{f.a}</p>
+          <p class="px-6 pb-6 text-sm leading-[1.85]" style="color:var(--c-text-2)">{f.a}</p>
         </details>))}
     </div>
   </div>

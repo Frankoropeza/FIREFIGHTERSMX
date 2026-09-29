@@ -38,23 +38,23 @@ const {
       <div>
         <span class="section-eyebrow mb-5 inline-flex">{eyebrow}</span>
 
-        <h2 id={`spotlight-${id}`} class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(2rem,3.8vw,3rem);line-height:1.05">
+        <h2 id={`spotlight-${id}`} class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(2rem,3.8vw,3rem);line-height:1.05">
           {title}<br/>
-          <span style="color:#F75000">{highlight}</span>
+          <span style="color:var(--c-accent)">{highlight}</span>
         </h2>
 
         {paragraphs.map((p) => (
-          <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">{p}</p>
+          <p class="text-sm leading-[1.9] mb-4" style="color:var(--c-text-2)">{p}</p>
         ))}
 
         <!-- Subsecciones -->
-        <div class="flex flex-col mt-6 mb-8" style="border-top:1px solid rgba(74,117,153,0.18)">
+        <div class="flex flex-col mt-6 mb-8" style="border-top:1px solid var(--c-line)">
           {subsections.map((sub) => (
-            <div class="flex items-start gap-4 py-4" style="border-bottom:1px solid rgba(74,117,153,0.18)">
-              <span class="w-1.5 h-1.5 mt-2 shrink-0" style="background:#F75000" aria-hidden="true"></span>
+            <div class="flex items-start gap-4 py-4" style="border-bottom:1px solid var(--c-line)">
+              <span class="w-1.5 h-1.5 mt-2 shrink-0" style="background:var(--c-accent)" aria-hidden="true"></span>
               <div>
-                <h3 class="font-display font-bold text-base leading-tight mb-1" style="color:#FFFFFF">{sub.name}</h3>
-                <p class="text-xs leading-relaxed m-0" style="color:#64748B">{sub.detail}</p>
+                <h3 class="font-display font-bold text-base leading-tight mb-1" style="color:var(--c-ink)">{sub.name}</h3>
+                <p class="text-xs leading-relaxed m-0" style="color:var(--c-muted)">{sub.detail}</p>
               </div>
             </div>
           ))}
@@ -74,7 +74,7 @@ const {
 
       <!-- Columna imagen -->
       <figure class="relative m-0">
-        <div class="relative overflow-hidden" style="border:1px solid rgba(74,117,153,0.25)">
+        <div class="relative overflow-hidden" style="border:1px solid var(--c-line-strong)">
           <img
             src={image}
             alt={imageAlt}
@@ -82,12 +82,12 @@ const {
             loading="lazy" decoding="async"
             class="w-full h-auto block"
           />
-          <div class="absolute top-0 left-0 w-12 h-12 pointer-events-none" style="border-top:3px solid #F75000;border-left:3px solid #F75000" aria-hidden="true"></div>
-          <div class="absolute bottom-0 right-0 w-12 h-12 pointer-events-none" style="border-bottom:3px solid #F75000;border-right:3px solid #F75000" aria-hidden="true"></div>
+          <div class="absolute top-0 left-0 w-12 h-12 pointer-events-none" style="border-top:3px solid var(--c-accent);border-left:3px solid var(--c-accent)" aria-hidden="true"></div>
+          <div class="absolute bottom-0 right-0 w-12 h-12 pointer-events-none" style="border-bottom:3px solid var(--c-accent);border-right:3px solid var(--c-accent)" aria-hidden="true"></div>
         </div>
         <figcaption class="flex items-center justify-between gap-3 mt-3 text-[10px] font-display font-semibold uppercase tracking-widest" style="color:var(--forge-300)">
           <span>{captionLeft}</span>
-          <span style="color:#FF8F57">{captionRight}</span>
+          <span style="color:var(--c-accent)">{captionRight}</span>
         </figcaption>
       </figure>
 

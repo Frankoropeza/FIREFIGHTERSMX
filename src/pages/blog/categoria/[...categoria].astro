@@ -85,52 +85,52 @@ const collectionSchema = {
   {/* ─── Breadcrumb ─── */}
   <nav
     class="py-3"
-    style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)"
+    style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line)"
     aria-label="Breadcrumb"
   >
     <div class="container-site">
       <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
-        <li><a href="/"      class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li><a href="/"      class="hover:text-[var(--c-accent)]">Inicio</a></li>
         <li aria-hidden="true">/</li>
-        <li><a href="/blog"  class="hover:text-[#FF6B26]">Blog</a></li>
+        <li><a href="/blog"  class="hover:text-[var(--c-accent)]">Blog</a></li>
         <li aria-hidden="true">/</li>
-        <li><span style="color:#94A3B8" aria-current="page">{category}</span></li>
+        <li><span style="color:var(--c-text-2)" aria-current="page">{category}</span></li>
       </ol>
     </div>
   </nav>
 
   {/* ─── Hero de categoría ─── */}
-  <section style="background:#040A12;padding-block:4rem">
+  <section style="background:var(--c-bg);padding-block:4rem">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
           <span class="section-eyebrow mb-3 inline-flex">Categoría · {posts.length} artículo{posts.length !== 1 ? 's' : ''}</span>
           <h1
             class="font-display font-bold uppercase"
-            style="color:#FFFFFF;font-size:clamp(2rem,4.5vw,3.5rem);line-height:1"
+            style="color:var(--c-ink);font-size:clamp(2rem,4.5vw,3.5rem);line-height:1"
           >
             {category.split(' ').map((word, i) => (
               i === 0
                 ? <span>{word} </span>
-                : <span style="color:#F75000">{word} </span>
+                : <span style="color:var(--c-accent)">{word} </span>
             ))}
           </h1>
         </div>
-        <div class="lg:pl-12" style="border-left:1px solid rgba(74,117,153,0.1)">
+        <div class="lg:pl-12" style="border-left:1px solid var(--c-line)">
           {categoriaInfo ? (
             <>
               {categoriaInfo.intro.map((paragraph) => (
-                <p class="text-sm leading-relaxed" style="color:#94A3B8">{paragraph}</p>
+                <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">{paragraph}</p>
               ))}
               <div class="flex flex-wrap gap-3">
                 {categoriaInfo.enlaces.map((enlace) => (
-                  <a href={enlace.href} class="text-sm font-bold hover:text-[#FF6B26]" style="color:#CBD5E1">{enlace.label} </a>
+                  <a href={enlace.href} class="text-sm font-bold hover:text-[var(--c-accent)]" style="color:var(--c-text)">{enlace.label} </a>
                 ))}
               </div>
             </>
           ) : (
-            <p class="text-sm leading-relaxed" style="color:#94A3B8">
-            Artículos técnicos en la categoría <strong style="color:#CBD5E1">{category}</strong> —
+            <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
+            Artículos técnicos en la categoría <strong style="color:var(--c-text)">{category}</strong> —
             guías referenciadas a la norma vigente (NFPA, NOM) para bomberos, brigadas y
             responsables de protección civil.
             </p>
@@ -143,14 +143,14 @@ const collectionSchema = {
   <QuickLinksBar />
 
   {/* ─── Artículos + Sidebar ─── */}
-  <section class="section" style="background:#040A12" aria-label={`Artículos de ${category}`}>
+  <section class="section" style="background:var(--c-bg)" aria-label={`Artículos de ${category}`}>
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
 
         {/* ── Columna principal ── */}
         <div class="lg:col-span-8">
           {posts.length === 0 ? (
-            <p class="py-12 text-center text-sm" style="color:#64748B">
+            <p class="py-12 text-center text-sm" style="color:var(--c-muted)">
               No hay artículos publicados en esta categoría todavía.
             </p>
           ) : (
@@ -165,10 +165,10 @@ const collectionSchema = {
           <div class="flex flex-col gap-6 lg:sticky" style="top:124px">
 
             {/* Otras categorías */}
-            <div style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
+            <div style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
               <h2
                 class="font-display font-bold text-sm uppercase tracking-widest px-5 py-4"
-                style="color:#FF6B26;letter-spacing:0.1em;border-bottom:1px solid rgba(74,117,153,0.18)"
+                style="color:var(--c-accent);letter-spacing:0.1em;border-bottom:1px solid var(--c-line)"
               >
                 Otras categorías
               </h2>
@@ -176,20 +176,20 @@ const collectionSchema = {
                 <li>
                   <a
                     href="/blog"
-                    class="flex items-center justify-between gap-3 px-5 py-3 hover:bg-[#0C1825]"
-                    style="border-top:1px solid rgba(74,117,153,0.12)"
+                    class="flex items-center justify-between gap-3 px-5 py-3 hover:bg-[var(--c-surface)]"
+                    style="border-top:1px solid var(--c-line)"
                   >
-                    <span class="font-display text-sm" style="color:#CBD5E1">Todas</span>
+                    <span class="font-display text-sm" style="color:var(--c-text)">Todas</span>
                     
                   </a>
                 </li>
                 {allCategories.filter((c) => c !== category).map((cat) => (
-                  <li style="border-top:1px solid rgba(74,117,153,0.12)">
+                  <li style="border-top:1px solid var(--c-line)">
                     <a
                       href={`/blog/categoria/${slugifyCategory(cat)}`}
-                      class="flex items-center justify-between gap-3 px-5 py-3 hover:bg-[#0C1825]"
+                      class="flex items-center justify-between gap-3 px-5 py-3 hover:bg-[var(--c-surface)]"
                     >
-                      <span class="font-display text-sm" style="color:#CBD5E1">{cat}</span>
+                      <span class="font-display text-sm" style="color:var(--c-text)">{cat}</span>
                       
                     </a>
                   </li>
@@ -198,10 +198,10 @@ const collectionSchema = {
             </div>
 
             {/* Recursos */}
-            <div style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
+            <div style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
               <h2
                 class="font-display font-bold text-sm uppercase tracking-widest px-5 py-4"
-                style="color:#FF6B26;letter-spacing:0.1em;border-bottom:1px solid rgba(74,117,153,0.18)"
+                style="color:var(--c-accent);letter-spacing:0.1em;border-bottom:1px solid var(--c-line)"
               >
                 También te puede servir
               </h2>
@@ -212,12 +212,12 @@ const collectionSchema = {
                   { label: 'Servicios contra incendio', href: '/servicios' },
                   { label: 'Industrias que atendemos', href: '/industrias' },
                 ].map((r) => (
-                  <li style="border-top:1px solid rgba(74,117,153,0.12)">
+                  <li style="border-top:1px solid var(--c-line)">
                     <a
                       href={r.href}
-                      class="flex items-center justify-between gap-3 px-5 py-3 hover:bg-[#0C1825]"
+                      class="flex items-center justify-between gap-3 px-5 py-3 hover:bg-[var(--c-surface)]"
                     >
-                      <span class="font-display text-sm" style="color:#CBD5E1">{r.label}</span>
+                      <span class="font-display text-sm" style="color:var(--c-text)">{r.label}</span>
                       
                     </a>
                   </li>

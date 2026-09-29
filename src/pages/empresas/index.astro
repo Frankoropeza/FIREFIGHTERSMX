@@ -38,25 +38,25 @@ const faqItems = [
 const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqItems.map((f) => ({ '@type': 'Question', name: f.pregunta, acceptedAnswer: { '@type': 'Answer', text: f.respuesta } })) };
 ---
 <BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema, faqSchema]}>
-  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+  <nav class="py-3" style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line)" aria-label="Breadcrumb">
     <div class="container-site"><ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
-      <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li><li aria-hidden="true">/</li>
-      <li><span style="color:#94A3B8" aria-current="page">Directorio de Empresas</span></li></ol></div>
+      <li><a href="/" class="hover:text-[var(--c-accent)]">Inicio</a></li><li aria-hidden="true">/</li>
+      <li><span style="color:var(--c-text-2)" aria-current="page">Directorio de Empresas</span></li></ol></div>
   </nav>
 
-  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem" aria-labelledby="emp-heading">
-    <div class="absolute top-0 right-0 w-2/3 h-full pointer-events-none" aria-hidden="true" style="background:radial-gradient(ellipse 70% 60% at 85% 40%, rgba(247,80,0,0.07) 0%, transparent 65%)"></div>
+  <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:5rem" aria-labelledby="emp-heading">
+    <div class="absolute top-0 right-0 w-2/3 h-full pointer-events-none" aria-hidden="true" style="background:radial-gradient(ellipse 70% 60% at 85% 40%, rgba(200,16,46,0.07) 0%, transparent 65%)"></div>
     <div class="container-site relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div>
           <span class="section-eyebrow mb-5 inline-flex">Directorio nacional · 32 estados</span>
-          <h1 id="emp-heading" class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.2rem,5vw,4rem);line-height:0.95">
-            Directorio de empresas<br/><span style="color:#F75000">de equipo contra incendio</span><br/>en México
+          <h1 id="emp-heading" class="font-display font-bold uppercase mb-6" style="color:var(--c-ink);font-size:clamp(2.2rem,5vw,4rem);line-height:0.95">
+            Directorio de empresas<br/><span style="color:var(--c-accent)">de equipo contra incendio</span><br/>en México
           </h1>
-          <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">
+          <p class="text-sm leading-[1.9] mb-4" style="color:var(--c-text-2)">
             Encuentra empresas que equipan a cuerpos de bomberos, brigadas y protección civil con equipo para bomberos y EPP, extintores, sistemas contra incendios y capacitación en los 32 estados. Cada registro muestra su ubicación y la fuente de origen disponible.
           </p>
-          <p class="text-sm leading-[1.9] mb-8" style="color:#94A3B8">
+          <p class="text-sm leading-[1.9] mb-8" style="color:var(--c-text-2)">
             Clasificamos a cada empresa por giro y especialidad —venta de equipos, protección contra incendio, sistemas de detección, hidrantes, mangueras, gabinetes y rociadores— para que un cuerpo de bomberos, una brigada industrial o un comprador institucional pueda equipar su operación y elegir un sistema contra incendios comparando la información publicada de proveedores y distribuidores en su estado.
           </p>
           <p class="font-display text-xs uppercase tracking-widest mb-8" style="color:var(--forge-300)">{totalEmpresas.toLocaleString('es-MX')} empresas registradas · 32 estados</p>
@@ -65,13 +65,13 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEn
             <a href="/empresas/registro/" class="btn btn-ghost btn-lg">Registrar mi empresa </a>
           </div>
         </div>
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
           <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:var(--forge-300)">Entra por giro</p>
-          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
             {giros.map((g) => (
-              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+              <li style="border-bottom:1px solid var(--c-line)">
                 <a href={`/empresas/${g.slug}/`} class="group flex items-center justify-between gap-4 py-3.5">
-                  <span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{g.label}</span><span class="text-xs" style="color:#64748B">{g.description}</span></span>
+                  <span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{g.label}</span><span class="text-xs" style="color:var(--c-muted)">{g.description}</span></span>
                   
                 </a>
               </li>))}
@@ -79,65 +79,65 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEn
         </div>
       </div>
     </div>
-    <div class="absolute bottom-0 left-0 right-0 h-px" aria-hidden="true" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-px" aria-hidden="true" style="background:linear-gradient(90deg, transparent, rgba(200,16,46,0.4) 30%, rgba(200,16,46,0.4) 70%, transparent)"></div>
   </section>
 
   <QuickLinksBar />
 
   {/* Giros */}
-  <section class="section" style="background:#070E1A" aria-labelledby="giros-heading">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="giros-heading">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Por giro</span>
-          <h2 id="giros-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Cinco giros para equipar a bomberos, brigadas y protección civil<br/><span style="color:#F75000">en un solo directorio.</span></h2>
+          <h2 id="giros-heading" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Cinco giros para equipar a bomberos, brigadas y protección civil<br/><span style="color:var(--c-accent)">en un solo directorio.</span></h2>
         </div>
-        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:#94A3B8">Agrupamos a las empresas por la actividad que describen sus fuentes públicas: vender equipo de protección personal, suministrar equipos para redes contra incendio, dar servicio a extintores, instalar sistemas fijos o capacitar brigadas. Una empresa puede aparecer en más de un giro.</p>
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">Agrupamos a las empresas por la actividad que describen sus fuentes públicas: vender equipo de protección personal, suministrar equipos para redes contra incendio, dar servicio a extintores, instalar sistemas fijos o capacitar brigadas. Una empresa puede aparecer en más de un giro.</p>
         </div>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-px" style="background:var(--c-line);border:1px solid var(--c-line)">
         {giros.map((g) => { return (
-          <a href={`/empresas/${g.slug}/`} class="grid-cell flex flex-col gap-4 p-7" style="background:#040A12">
+          <a href={`/empresas/${g.slug}/`} class="grid-cell flex flex-col gap-4 p-7" style="background:var(--c-bg)">
             <span class="w-10 h-10 flex items-center justify-center" style={`color:${g.color};border:1px solid ${g.color}55`}>
               </span>
-            <span class="font-display font-bold text-lg leading-snug" style="color:#FFFFFF">{g.label}</span>
-            <span class="text-xs leading-relaxed" style="color:#64748B">{g.description}</span>
-            <span class="mt-auto font-display font-semibold text-xs uppercase tracking-wider" style="color:#FF8F57">{g.labelCorto} en México </span>
+            <span class="font-display font-bold text-lg leading-snug" style="color:var(--c-ink)">{g.label}</span>
+            <span class="text-xs leading-relaxed" style="color:var(--c-muted)">{g.description}</span>
+            <span class="mt-auto font-display font-semibold text-xs uppercase tracking-wider" style="color:var(--c-accent)">{g.labelCorto} en México </span>
           </a>); })}
       </div>
     </div>
   </section>
 
   {/* Mapa nacional */}
-  <section class="section-tight" style="background:#040A12" aria-label="Mapa nacional de empresas">
+  <section class="section-tight" style="background:var(--c-bg)" aria-label="Mapa nacional de empresas">
     <div class="container-site">
       <span class="section-eyebrow mb-4 inline-flex">Mapa nacional</span>
-      <h2 class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.05">Proveedores de venta de equipos contra incendios y sistema de detección<br/><span style="color:#F75000">en el mapa nacional.</span></h2>
+      <h2 class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.05">Proveedores de venta de equipos contra incendios y sistema de detección<br/><span style="color:var(--c-accent)">en el mapa nacional.</span></h2>
       <MapaEmpresas src="/data/empresas-puntos.json" ariaLabel="Mapa nacional de empresas de equipo contra incendio" />
       <div class="flex flex-wrap gap-4 mt-3">
-        {giros.map((g) => <span class="inline-flex items-center gap-2 text-[11px]" style="color:#94A3B8"><span class="w-2.5 h-2.5 rounded-full" style={`background:${g.color}`}></span>{g.labelCorto}</span>)}
+        {giros.map((g) => <span class="inline-flex items-center gap-2 text-[11px]" style="color:var(--c-text-2)"><span class="w-2.5 h-2.5 rounded-full" style={`background:${g.color}`}></span>{g.labelCorto}</span>)}
         <span class="text-[11px]" style="color:var(--forge-300)">Coordenadas del registro público DENUE (INEGI).</span>
       </div>
     </div>
   </section>
 
   {/* Por estado */}
-  <section class="section" style="background:#070E1A" aria-labelledby="estados-heading">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="estados-heading">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Por estado</span>
-          <h2 id="estados-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Equipo contra incendio, extintores, hidrantes, mangueras, boquillas y gabinetes<br/><span style="color:#F75000">en los 32 estados.</span></h2>
+          <h2 id="estados-heading" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Equipo contra incendio, extintores, hidrantes, mangueras, boquillas y gabinetes<br/><span style="color:var(--c-accent)">en los 32 estados.</span></h2>
         </div>
-        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:#94A3B8">Cada estado tiene su propio directorio con mapa, buscador y filtros por giro. Elige tu entidad para ver a los proveedores más cercanos.</p>
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">Cada estado tiene su propio directorio con mapa, buscador y filtros por giro. Elige tu entidad para ver a los proveedores más cercanos.</p>
         </div>
       </div>
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-8 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-8 gap-px" style="background:var(--c-line);border:1px solid var(--c-line)">
         {porEstado.map((s) => (
-          <a href={`/empresas/estado/${s.slug}/`} class="grid-cell ledger-cell flex flex-col gap-1 p-4" style="background:#040A12">
-            <span class="font-display font-semibold text-sm leading-tight" style="color:#FFFFFF">{s.nombre}</span>
+          <a href={`/empresas/estado/${s.slug}/`} class="grid-cell ledger-cell flex flex-col gap-1 p-4" style="background:var(--c-bg)">
+            <span class="font-display font-semibold text-sm leading-tight" style="color:var(--c-ink)">{s.nombre}</span>
             <span class="text-[10px] uppercase tracking-widest" style="color:var(--forge-300)">{estadosMeta.find((e) => e.slug === s.slug)?.region}</span>
           </a>))}
       </div>
@@ -145,15 +145,15 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEn
   </section>
 
   {/* Buscador global */}
-  <section id="buscar" class="section" style="background:#040A12" aria-labelledby="buscar-heading">
+  <section id="buscar" class="section" style="background:var(--c-bg)" aria-labelledby="buscar-heading">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-10">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Buscador</span>
-          <h2 id="buscar-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Busca entre distribuidores y empresas de equipo de bombero<br/><span style="color:#F75000">en toda la República.</span></h2>
+          <h2 id="buscar-heading" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Busca entre distribuidores y empresas de equipo de bombero<br/><span style="color:var(--c-accent)">en toda la República.</span></h2>
         </div>
-        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:#94A3B8">Escribe el nombre de la empresa, la ciudad o el municipio. Filtra por giro. El listado prioriza a las empresas con ficha verificada o destacada.</p>
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">Escribe el nombre de la empresa, la ciudad o el municipio. Filtra por giro. El listado prioriza a las empresas con ficha verificada o destacada.</p>
         </div>
       </div>
       <EmpresasGrid empresas={all} mostrarEstado filtros={giros.map((g) => ({ key: g.slug, label: g.labelCorto, color: g.color }))} id="hub" indexSrc="/data/empresas-index.json" limite={36} />
@@ -161,13 +161,13 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEn
   </section>
 
   {/* Registro */}
-  <section class="section" style="background:#070E1A" aria-labelledby="alta-heading">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="alta-heading">
     <div class="container-site">
-      <div class="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-10 items-center p-8 lg:p-12" style="background:#0C1825;border:1px solid rgba(74,117,153,0.25);border-left:3px solid #F5A623">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-10 items-center p-8 lg:p-12" style="background:var(--c-surface);border:1px solid var(--c-line-strong);border-left:3px solid var(--c-amber)">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Para empresas del sector</span>
-          <h2 id="alta-heading" class="font-display font-bold mb-3" style="color:#FFFFFF;font-size:clamp(1.6rem,3vw,2.5rem);line-height:1.05">¿Tu empresa ya está listada?<br/><span style="color:#F5A623">Reclama y verifica tu ficha.</span></h2>
-          <p class="text-sm leading-relaxed max-w-2xl" style="color:#94A3B8">Los registros básicos provienen del registro público del DENUE. Al reclamar tu ficha puedes completar contacto, marcas que distribuyes, certificaciones y cobertura, y obtener el sello de datos verificados. Las fichas destacadas aparecen primero en su giro y estado.</p>
+          <h2 id="alta-heading" class="font-display font-bold mb-3" style="color:var(--c-ink);font-size:clamp(1.6rem,3vw,2.5rem);line-height:1.05">¿Tu empresa ya está listada?<br/><span style="color:var(--c-amber)">Reclama y verifica tu ficha.</span></h2>
+          <p class="text-sm leading-relaxed max-w-2xl" style="color:var(--c-text-2)">Los registros básicos provienen del registro público del DENUE. Al reclamar tu ficha puedes completar contacto, marcas que distribuyes, certificaciones y cobertura, y obtener el sello de datos verificados. Las fichas destacadas aparecen primero en su giro y estado.</p>
         </div>
         <div class="flex flex-col gap-3 shrink-0">
           <a href="/empresas/registro/" class="btn btn-gold btn-lg">Registrar o reclamar ficha</a>
@@ -177,19 +177,19 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEn
     </div>
   </section>
 
-  <section class="section" style="background:#040A12" aria-labelledby="faq-heading">
+  <section class="section" style="background:var(--c-bg)" aria-labelledby="faq-heading">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-start">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes</span>
-          <h2 id="faq-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Cómo elegir un proveedor y verificar equipo certificado<br/><span style="color:#F75000">bajo norma NFPA.</span></h2>
-          <p class="text-sm leading-relaxed mt-6" style="color:#94A3B8">Consulta la metodología, el alcance de las fichas y la forma correcta de contactar a cada empresa antes de solicitar una cotización.</p>
+          <h2 id="faq-heading" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Cómo elegir un proveedor y verificar equipo certificado<br/><span style="color:var(--c-accent)">bajo norma NFPA.</span></h2>
+          <p class="text-sm leading-relaxed mt-6" style="color:var(--c-text-2)">Consulta la metodología, el alcance de las fichas y la forma correcta de contactar a cada empresa antes de solicitar una cotización.</p>
         </div>
-        <div class="flex flex-col" style="border-top:1px solid rgba(74,117,153,0.2)">
+        <div class="flex flex-col" style="border-top:1px solid var(--c-line)">
           {faqItems.map((f) => (
-            <details style="border-bottom:1px solid rgba(74,117,153,0.2)">
-              <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer font-display font-semibold text-sm" style="color:#FFFFFF">{f.pregunta}<span style="color:#F75000" aria-hidden="true">+</span></summary>
-              <p class="text-sm leading-relaxed pb-5" style="color:#94A3B8">{f.respuesta}{f.pregunta === '¿Cómo registro o corrijo una ficha?' && <> <a href="/empresas/registro/" class="underline" style="color:#FF8F57">Ir al registro.</a></>}</p>
+            <details style="border-bottom:1px solid var(--c-line)">
+              <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer font-display font-semibold text-sm" style="color:var(--c-ink)">{f.pregunta}<span style="color:var(--c-accent)" aria-hidden="true">+</span></summary>
+              <p class="text-sm leading-relaxed pb-5" style="color:var(--c-text-2)">{f.respuesta}{f.pregunta === '¿Cómo registro o corrijo una ficha?' && <> <a href="/empresas/registro/" class="underline" style="color:var(--c-accent)">Ir al registro.</a></>}</p>
             </details>
           ))}
         </div>

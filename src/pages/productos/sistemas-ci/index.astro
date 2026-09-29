@@ -294,31 +294,31 @@ const tablaComparativa = [
 <BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema, faqSchema, serviceSchema]}>
 
   <!-- Breadcrumb -->
-  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+  <nav class="py-3" style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line)" aria-label="Breadcrumb">
     <div class="container-site">
       <ol class="flex items-center gap-2 text-xs list-none m-0 p-0 flex-wrap" style="color:var(--forge-300)">
-        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li><a href="/" class="hover:text-[var(--c-accent)]">Inicio</a></li>
         <li aria-hidden="true">/</li>
-        <li><a href="/productos" class="hover:text-[#FF6B26]">Productos</a></li>
+        <li><a href="/productos" class="hover:text-[var(--c-accent)]">Productos</a></li>
         <li aria-hidden="true">/</li>
-        <li><span style="color:#94A3B8" aria-current="page">Sistemas Contra Incendio</span></li>
+        <li><span style="color:var(--c-text-2)" aria-current="page">Sistemas Contra Incendio</span></li>
       </ol>
     </div>
   </nav>
 
   <!-- Hero -->
-  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">
-    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(52,211,153,0.07) 0%, transparent 65%)" aria-hidden="true"></div>
+  <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:5rem">
+    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(6,118,71,0.07) 0%, transparent 65%)" aria-hidden="true"></div>
 
     <div class="container-site relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div>
           <span class="section-eyebrow mb-5 inline-flex">{cat.norm} · Diseño · Instalación · Entregables</span>
-          <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.25rem,5vw,4rem);line-height:0.95">
+          <h1 class="font-display font-bold uppercase mb-6" style="color:var(--c-ink);font-size:clamp(2.25rem,5vw,4rem);line-height:0.95">
             Sistemas contra incendio<br/>
-            <span style="color:#34D399">protección contra incendios que tu aseguradora acepta.</span>
+            <span style="color:var(--c-success)">protección contra incendios que tu aseguradora acepta.</span>
           </h1>
-          <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
+          <p class="text-sm leading-relaxed mb-8" style="color:var(--c-text-2)">
             Diseñamos, suministramos e instalamos sistemas fijos de protección:
             rociadores NFPA 13, detección y alarma NFPA 72 y supresión por agente
             limpio NFPA 2001. Entregamos la memoria de cálculo firmada por DRO y el
@@ -329,9 +329,9 @@ const tablaComparativa = [
             <a href="/cotizacion" class="btn btn-ghost btn-lg">Propuesta técnica formal</a>
           </div>
         </div>
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
           {cat.intro.map((p: string) => (
-            <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">{p}</p>
+            <p class="text-sm leading-[1.9] mb-5" style="color:var(--c-text-2)">{p}</p>
           ))}
           <div class="flex flex-wrap gap-2 mt-4">
             {['NFPA 13','NFPA 72','NFPA 2001','NFPA 20','NFPA 25','UL Listed','FM Global','Tyco','Viking','Honeywell','Notifier','FM-200','Novec 1230'].map((n: string) => (
@@ -341,13 +341,13 @@ const tablaComparativa = [
         </div>
       </div>
     </div>
-    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(52,211,153,0.4) 30%, rgba(52,211,153,0.4) 70%, transparent)" aria-hidden="true"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(6,118,71,0.4) 30%, rgba(6,118,71,0.4) 70%, transparent)" aria-hidden="true"></div>
   </section>
 
   <!-- QuickLinksBar -->
   <QuickLinksBar />
 
-  <section id="guia-sistemas" class="section" style="background:#040A12" aria-labelledby="guia-sistemas-title">
+  <section id="guia-sistemas" class="section" style="background:var(--c-bg)" aria-labelledby="guia-sistemas-title">
     <div class="container-site">
       <div class="section-head mb-5">
         <h2 id="guia-sistemas-title">¿Qué es un sistema contra incendio?</h2>
@@ -360,7 +360,7 @@ const tablaComparativa = [
       <div class="overflow-x-auto max-w-full min-w-0">
         <table class="w-full text-left text-sm" style="border-collapse:collapse;min-width:700px">
           <thead>
-            <tr style="background:#0C1825;color:#FFFFFF">
+            <tr style="background:var(--c-surface);color:var(--c-ink)">
               <th class="p-4">Tipo de sistema</th>
               <th class="p-4">Qué hace</th>
               <th class="p-4">Dónde se usa</th>
@@ -375,7 +375,7 @@ const tablaComparativa = [
               ['Supresión con CO₂ o espuma', 'Agua o agentes extintores especiales para materiales inflamables', 'Cuartos de máquinas, almacenes de materiales peligrosos, tanques'],
               ['Extintores portátiles', 'Primer ataque sobre un conato de incendio', 'Obligatorios en todo centro de trabajo'],
             ].map((fila) => (
-              <tr style="border-bottom:1px solid rgba(74,117,153,.18);color:#94A3B8">
+              <tr style="border-bottom:1px solid var(--c-line);color:var(--c-text-2)">
                 {fila.map((celda, index) => <td class="p-4" style={index === 0 ? 'color:#FFFFFF;font-family:var(--font-display);font-weight:700' : ''}>{celda}</td>)}
               </tr>
             ))}
@@ -384,13 +384,13 @@ const tablaComparativa = [
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-14">
-        <article class="p-7" style="background:#080F1A;border:1px solid rgba(74,117,153,.18)">
-          <h2 class="font-display font-bold text-2xl mb-4" style="color:#FFFFFF">¿Cómo funciona un sistema contra incendios?</h2>
+        <article class="p-7" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
+          <h2 class="font-display font-bold text-2xl mb-4" style="color:var(--c-ink)">¿Cómo funciona un sistema contra incendios?</h2>
           <p class="content-copy m-0">Ante la presencia de humo o calor, un detector envía la señal al tablero de control. El tablero activa las alarmas sonoras y visuales para una evacuación rápida por las rutas de evacuación, avisa a la brigada y a los servicios de emergencia y, si el diseño lo prevé, dispara la supresión. En un sistema de rociadores, el rociador expuesto al calor se abre, la presión en la tubería baja y arrancan las bombas contra incendios para dar un suministro constante de agua hasta controlar un incendio.</p>
         </article>
-        <article class="p-7" style="background:#080F1A;border:1px solid rgba(74,117,153,.18)">
-          <h2 class="font-display font-bold text-2xl mb-4" style="color:#FFFFFF">Componentes de un sistema contra incendio</h2>
-          <ul class="flex flex-col gap-3 m-0 pl-5 text-sm leading-relaxed" style="color:#94A3B8">
+        <article class="p-7" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
+          <h2 class="font-display font-bold text-2xl mb-4" style="color:var(--c-ink)">Componentes de un sistema contra incendio</h2>
+          <ul class="flex flex-col gap-3 m-0 pl-5 text-sm leading-relaxed" style="color:var(--c-text-2)">
             <li><strong>Detección:</strong> detectores de humo, de calor y de flama, estaciones manuales y tablero de control.</li>
             <li><strong>Notificación:</strong> sirenas y luces estroboscópicas que ayudan a alertar a los ocupantes del edificio.</li>
             <li><strong>Abastecimiento y bombeo:</strong> cisterna, bomba eléctrica, bomba diesel y bomba jockey conforme a NFPA 20; garantizan el suministro de agua.</li>
@@ -398,20 +398,20 @@ const tablaComparativa = [
             <li><strong>Supresión:</strong> rociadores, boquillas de agente limpio, CO₂ o espuma, y extintores portátiles.</li>
           </ul>
         </article>
-        <article class="p-7" style="background:#080F1A;border:1px solid rgba(74,117,153,.18)">
-          <h2 class="font-display font-bold text-2xl mb-4" style="color:#FFFFFF">Protección activa y pasiva contra incendios</h2>
+        <article class="p-7" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
+          <h2 class="font-display font-bold text-2xl mb-4" style="color:var(--c-ink)">Protección activa y pasiva contra incendios</h2>
           <p class="content-copy m-0">La protección activa incluye los equipos que actúan ante el fuego: detección, alarmas contra incendios, rociadores, hidrantes y extintores. La protección pasiva limita el avance del fuego sin intervenir: muros y puertas cortafuego, sellos en pasos de instalaciones eléctricas y compartimentación. Un programa completo de prevención y protección contra incendios combina ambas.</p>
         </article>
-        <article class="p-7" style="background:#080F1A;border:1px solid rgba(74,117,153,.18)">
-          <h2 class="font-display font-bold text-2xl mb-4" style="color:#FFFFFF">Normativas: sistemas contra incendios en México</h2>
+        <article class="p-7" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
+          <h2 class="font-display font-bold text-2xl mb-4" style="color:var(--c-ink)">Normativas: sistemas contra incendios en México</h2>
           <p class="content-copy m-0">La norma oficial mexicana NOM-002-STPS-2010 obliga a clasificar el tipo de riesgo de incendio del centro de trabajo (ordinario o alto) y a contar con equipo contra incendio acorde a ese riesgo; en riesgo alto exige además sistemas fijos de protección y de alarma. El diseño técnico se toma de las normas NFPA: NFPA 13 para rociadores, NFPA 14 para hidrantes, NFPA 20 para bombas, NFPA 72 para detección y alarma y NFPA 25 para las inspecciones y el mantenimiento. También aplican los reglamentos de construcción locales y el dictamen de protección civil.</p>
         </article>
-        <article class="p-7" style="background:#080F1A;border:1px solid rgba(74,117,153,.18)">
-          <h2 class="font-display font-bold text-2xl mb-4" style="color:#FFFFFF">¿Cuánto cuesta instalar un sistema contra incendios?</h2>
+        <article class="p-7" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
+          <h2 class="font-display font-bold text-2xl mb-4" style="color:var(--c-ink)">¿Cuánto cuesta instalar un sistema contra incendios?</h2>
           <p class="content-copy m-0">No hay un precio por metro cuadrado válido para todos los proyectos. El costo depende de la superficie y la altura del inmueble, del tipo de riesgo y de los materiales almacenados, del sistema elegido, de si existe suministro de agua suficiente o hace falta cisterna y cuarto de bombas, y de lo que pida la aseguradora. Por eso cotizamos a partir de un levantamiento y un cálculo hidráulico, con partidas separadas de equipo, instalación y pruebas.</p>
         </article>
-        <article class="p-7" style="background:#080F1A;border:1px solid rgba(74,117,153,.18)">
-          <h2 class="font-display font-bold text-2xl mb-4" style="color:#FFFFFF">Mantenimiento y confiabilidad del sistema</h2>
+        <article class="p-7" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
+          <h2 class="font-display font-bold text-2xl mb-4" style="color:var(--c-ink)">Mantenimiento y confiabilidad del sistema</h2>
           <p class="content-copy m-0">Un sistema solo protege si funciona el día del incendio. Las inspecciones, pruebas y mantenimiento periódicos conforme a NFPA 25 y NFPA 72 verifican el correcto funcionamiento de detectores, tablero, bombas, válvulas y rociadores, y dejan evidencia para la aseguradora y la STPS. Ofrecemos soluciones de protección con programa de mantenimiento para garantizar la seguridad y mantener entornos seguros en instalaciones comerciales e industriales y en proyectos residenciales de gran tamaño.</p>
         </article>
       </div>
@@ -419,27 +419,27 @@ const tablaComparativa = [
       <p class="content-copy mt-10 mb-5">Explora cada línea:</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {guiaLineas.map((linea) => (
-          <a href={linea.href} class="p-5 font-display font-bold text-sm" style="background:#080F1A;border:1px solid rgba(74,117,153,.18);color:#FFFFFF">{linea.label}</a>
+          <a href={linea.href} class="p-5 font-display font-bold text-sm" style="background:var(--c-bg-alt);border:1px solid var(--c-line);color:var(--c-ink)">{linea.label}</a>
         ))}
       </div>
     </div>
   </section>
 
   <!-- Trust Pillars -->
-  <section class="section-tight" style="background:#070E1A" aria-labelledby="razones-ci-title">
+  <section class="section-tight" style="background:var(--c-bg-alt)" aria-labelledby="razones-ci-title">
     <div class="container-site">
       <div class="text-center mb-8">
         <span class="section-eyebrow mb-3 inline-flex">Por qué elegir FIREFIGHTERSMX para tu sistema CI</span>
-        <h2 id="razones-ci-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.5rem,3vw,2.25rem)">
+        <h2 id="razones-ci-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.5rem,3vw,2.25rem)">
           Materiales listados. Memoria firmada. Dossier completo.
         </h2>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style="border:1px solid rgba(74,117,153,0.18)">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style="border:1px solid var(--c-line)">
         {razones.map((r, i) => (
-          <div class="flex flex-col gap-3 p-6" style={`background:#080F1A;${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.12)' : ''}`}>
+          <div class="flex flex-col gap-3 p-6" style={`background:var(--c-bg-alt);${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.12)' : ''}`}>
             
-            <h3 class="font-display font-bold text-sm uppercase tracking-wide" style="color:#FFFFFF">{r.t}</h3>
-            <p class="text-xs leading-relaxed m-0" style="color:#64748B">{r.d}</p>
+            <h3 class="font-display font-bold text-sm uppercase tracking-wide" style="color:var(--c-ink)">{r.t}</h3>
+            <p class="text-xs leading-relaxed m-0" style="color:var(--c-muted)">{r.d}</p>
           </div>
         ))}
       </div>
@@ -447,19 +447,19 @@ const tablaComparativa = [
   </section>
 
   {/* ══ TYCO / VIKING — ROCIADORES NFPA 13 ════════════════════════════════ */}
-  <section class="section" style="background:#070E1A" aria-labelledby="tyco-title">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="tyco-title">
     <div class="container-site">
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Tyco · Viking (Johnson Controls) · NFPA 13 · Distribuidor Autorizado MX</span>
-          <h2 id="tyco-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="tyco-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Rociadores Tyco / Viking<br/>
-            <span style="color:#34D399">certificados UL Listed · FM.</span>
+            <span style="color:var(--c-success)">certificados UL Listed · FM.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(52,211,153,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
+        <div style="border-left:2px solid rgba(6,118,71,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed mb-4" style="color:var(--c-text-2)">
             Tyco y Viking (Johnson Controls —NYSE: JCI— ) son los rociadores automáticos más
             distribuidos en instalaciones industriales y comerciales de México. Portafolio completo:
             respuesta estándar TY-B, respuesta rápida TY-FRB, ESFR de alta estiba TY315 K-25 y
@@ -479,9 +479,9 @@ const tablaComparativa = [
         ))}
       </div>
 
-      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(52,211,153,0.15)">
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(6,118,71,0.15)">
         <div class="flex-1">
-          <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+          <p class="text-sm leading-relaxed m-0" style="color:var(--c-muted)">
             Comparativa completa de modelos (K-factor, temperatura, cobertura), hoja de datos UL
             y ficha técnica para incluir en la memoria de cálculo. Cotización con lote y trazabilidad.
           </p>
@@ -501,25 +501,25 @@ const tablaComparativa = [
   </section>
 
   {/* ══ HONEYWELL / NOTIFIER — DETECCIÓN NFPA 72 ═══════════════════════════ */}
-  <section class="section" style="background:#040A12" aria-labelledby="honeywell-title">
+  <section class="section" style="background:var(--c-bg)" aria-labelledby="honeywell-title">
     <div class="container-site">
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Honeywell · Notifier · NFPA 72 · Distribuidor Autorizado MX</span>
-          <h2 id="honeywell-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="honeywell-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Paneles Honeywell / Notifier<br/>
-            <span style="color:#60A5FA">certificados UL Listed · cUL.</span>
+            <span style="color:var(--c-info)">certificados UL Listed · cUL.</span>
           </h2>
         </div>
         <div style="border-left:2px solid rgba(96,165,250,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
+          <p class="text-sm leading-relaxed mb-4" style="color:var(--c-text-2)">
             Honeywell International —NASDAQ: HON— fabrica los paneles FACP direccionables Notifier
             y los detectores de humo y calor más instalados en México. El NFS2-3030 soporta hasta
             3,030 puntos y se integra con ONYXWorks para gestión centralizada en campus y edificios
             de gran altura. Solución completa: detectores, sirenas, módulos de control y tablero FACP.
           </p>
-          <a href="/productos/sistemas-ci/alarma-contra-incendio/" class="text-sm font-bold hover:text-[#60A5FA]" style="color:#FFFFFF">Alarma contra incendio </a>
+          <a href="/productos/sistemas-ci/alarma-contra-incendio/" class="text-sm font-bold hover:text-[var(--c-info)]" style="color:var(--c-ink)">Alarma contra incendio </a>
           <div class="flex flex-wrap gap-2">
             {['NFPA 72','UL Listed','cUL','NFS2-3030','NFS2-640','FACP Direccionable','Detección CLIP','SWIFT Wireless','Distribuidor autorizado MX'].map(b => (
               <span class="badge badge-dark text-[9px]">{b}</span>
@@ -536,7 +536,7 @@ const tablaComparativa = [
 
       <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(96,165,250,0.15)">
         <div class="flex-1">
-          <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+          <p class="text-sm leading-relaxed m-0" style="color:var(--c-muted)">
             Comparativa de paneles por capacidad de puntos, programación de matrices causa-efecto
             y protocolos de prueba de aceptación NFPA 72 Capítulo 14 entregados al propietario.
           </p>
@@ -556,19 +556,19 @@ const tablaComparativa = [
   </section>
 
   {/* ══ KIDDE FENWAL — AGENTE LIMPIO NFPA 2001 ═════════════════════════════ */}
-  <section class="section" style="background:#070E1A" aria-labelledby="kidde-title">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="kidde-title">
     <div class="container-site">
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Kidde Fenwal · Carrier Global · NFPA 2001 · Distribuidor Autorizado MX</span>
-          <h2 id="kidde-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="kidde-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Agente Limpio FM-200 / Novec<br/>
-            <span style="color:#A78BFA">certificados UL Listed · FM.</span>
+            <span style="color:var(--c-violet)">certificados UL Listed · FM.</span>
           </h2>
         </div>
         <div style="border-left:2px solid rgba(167,139,250,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
+          <p class="text-sm leading-relaxed mb-4" style="color:var(--c-text-2)">
             Kidde Fenwal —Carrier Global, NYSE: CARR— es el principal fabricante de sistemas
             de supresión con agente limpio del mundo. FM-200 (HFC-227ea) extingue en menos de 10
             segundos sin residuo. Novec 1230 (FK-5-1-12, GWP = 1) es la alternativa ESG. El
@@ -590,7 +590,7 @@ const tablaComparativa = [
 
       <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(167,139,250,0.15)">
         <div class="flex-1">
-          <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+          <p class="text-sm leading-relaxed m-0" style="color:var(--c-muted)">
             Comparativa de agentes por GWP, concentración de diseño y costo por kg. Cálculo de
             masa conforme NFPA 2001 y análisis de integridad del recinto (door fan test) incluidos.
           </p>
@@ -616,20 +616,20 @@ const tablaComparativa = [
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Red Hidráulica CI · NFPA 20 · NFPA 14 · NOM-002-STPS · UL Listed · FM Approved</span>
-          <h2 id="red-hidraulica-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="red-hidraulica-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Gabinetes CI · Bombas NFPA 20<br/>
-            <span style="color:#FB923C">y Válvulas Supervisadas.</span>
+            <span style="color:var(--c-accent)">y Válvulas Supervisadas.</span>
           </h2>
         </div>
         <div style="border-left:2px solid rgba(251,146,60,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
+          <p class="text-sm leading-relaxed mb-4" style="color:var(--c-text-2)">
             La red hidráulica es la columna vertebral de cualquier sistema contra incendio.
             Gabinetes con manguera para primera respuesta, sala de bombas NFPA 20 con bomba
             jockey, eléctrica y diesel de emergencia (UL Listed · FM Approved), y válvulas OS&Y
             con tamper switch supervisado. La NFPA 20 exige arranque automático por caída de
             presión.
           </p>
-          <div class="flex gap-4 text-xs font-mono" style="color:#FB923C">
+          <div class="flex gap-4 text-xs font-mono" style="color:var(--c-accent)">
             <span>NFPA 20 · Arranque automático</span>
             <span>·</span>
             <span>8 h autonomía diesel</span>
@@ -647,7 +647,7 @@ const tablaComparativa = [
 
       <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(251,146,60,0.15)">
         <div class="flex-1">
-          <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+          <p class="text-sm leading-relaxed m-0" style="color:var(--c-muted)">
             Diseño hidráulico con memoria de cálculo firmada por DRO. Prueba de aceptación NFPA 20
             con medición de curva de bomba en tres puntos. Entregable para aseguradoras internacionales.
           </p>
@@ -667,18 +667,18 @@ const tablaComparativa = [
   </section>
 
   <!-- Subsistemas -->
-  <section class="section" style="background:#040A12" aria-labelledby="subsistemas-title">
+  <section class="section" style="background:var(--c-bg)" aria-labelledby="subsistemas-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-14">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Cuatro subsistemas, un proyecto integrado</span>
-          <h2 id="subsistemas-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="subsistemas-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Del diseño a la<br/>
-            <span style="color:#34D399">puesta en marcha.</span>
+            <span style="color:var(--c-success)">puesta en marcha.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(52,211,153,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+        <div style="border-left:2px solid rgba(6,118,71,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
             Un sistema contra incendio moderno integra rociadores, detección, supresión especial
             y redes hidráulicas en un solo proyecto. Diseñamos cada subsistema en conjunto para
             garantizar la compatibilidad, la redundancia y el expediente unificado.
@@ -688,24 +688,24 @@ const tablaComparativa = [
 
       <div class="flex flex-col gap-8">
         {subsistemas.map((s) => (
-          <article id={s.id} class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-0" style="border:1px solid rgba(74,117,153,0.18)">
+          <article id={s.id} class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-0" style="border:1px solid var(--c-line)">
 
             {/* Panel izquierdo */}
-            <div class="flex flex-col gap-5 p-8" style="background:#080F1A;border-right:1px solid rgba(74,117,153,0.14)">
+            <div class="flex flex-col gap-5 p-8" style="background:var(--c-bg-alt);border-right:1px solid var(--c-line)">
               <div class="flex items-start gap-4">
                 <div class="flex items-center justify-center shrink-0" style={`width:56px;height:56px;background:${s.accent}1a;border:1.5px solid ${s.accent}55;color:${s.accent}`}>
                   <span class="block" style="width:26px;height:26px" set:html={s.icon}/>
                 </div>
                 <div>
                   <span class="text-xs font-display font-bold tracking-widest uppercase" style={`color:${s.accent}`}>{s.norm}</span>
-                  <h3 class="font-display font-bold text-xl leading-tight" style="color:#FFFFFF">{s.label}</h3>
+                  <h3 class="font-display font-bold text-xl leading-tight" style="color:var(--c-ink)">{s.label}</h3>
                   <span class="text-xs" style="color:var(--forge-300)">{s.marcas}</span>
                 </div>
               </div>
 
-              <p class="text-sm leading-relaxed" style="color:#94A3B8">{s.desc}</p>
+              <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">{s.desc}</p>
 
-              <div class="pt-4" style="border-top:1px solid rgba(74,117,153,0.15)">
+              <div class="pt-4" style="border-top:1px solid var(--c-line)">
                 <p class="text-[10px] font-display font-bold uppercase tracking-widest mb-2" style="color:var(--forge-300)">Aplicación típica</p>
                 <p class="text-xs" style={`color:${s.accent};font-weight:600`}>{s.aplicacion}</p>
               </div>
@@ -718,7 +718,7 @@ const tablaComparativa = [
             {/* Panel derecho — tipos + entregables */}
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-0">
               {/* Tipos */}
-              <div class="flex flex-col gap-0 p-8" style="background:#070E1A;border-right:1px solid rgba(74,117,153,0.14)">
+              <div class="flex flex-col gap-0 p-8" style="background:var(--c-bg-alt);border-right:1px solid var(--c-line)">
                 <p class="text-[10px] font-display font-bold uppercase tracking-widest mb-5" style="color:var(--forge-300)">Componentes y variantes</p>
                 <ul class="flex flex-col gap-4 list-none m-0 p-0">
                   {s.items.map((item) => (
@@ -727,24 +727,24 @@ const tablaComparativa = [
                         <span class="shrink-0" style={`color:${s.accent}`}>
                           
                         </span>
-                        <span class="font-display font-semibold text-xs" style="color:#FFFFFF">{item.t}</span>
+                        <span class="font-display font-semibold text-xs" style="color:var(--c-ink)">{item.t}</span>
                       </span>
-                      <p class="text-xs leading-relaxed m-0 pl-[20px]" style="color:#64748B">{item.d}</p>
+                      <p class="text-xs leading-relaxed m-0 pl-[20px]" style="color:var(--c-muted)">{item.d}</p>
                     </li>
                   ))}
                 </ul>
               </div>
 
               {/* Entregables */}
-              <div class="flex flex-col gap-4 p-8" style="background:#080F1A">
+              <div class="flex flex-col gap-4 p-8" style="background:var(--c-bg-alt)">
                 <p class="text-[10px] font-display font-bold uppercase tracking-widest mb-1" style="color:var(--forge-300)">Entregables del proyecto</p>
                 <ul class="flex flex-col gap-3 list-none m-0 p-0">
                   {s.entregables.map((e) => (
                     <li class="flex items-start gap-2">
-                      <span class="shrink-0 mt-0.5" style="color:#34D399">
+                      <span class="shrink-0 mt-0.5" style="color:var(--c-success)">
                         
                       </span>
-                      <span class="text-xs leading-relaxed" style="color:#94A3B8">{e}</span>
+                      <span class="text-xs leading-relaxed" style="color:var(--c-text-2)">{e}</span>
                     </li>
                   ))}
                 </ul>
@@ -758,14 +758,14 @@ const tablaComparativa = [
   </section>
 
   {/* ══ TABLA COMPARATIVA ═══════════════════════════════════════════════ */}
-  <section class="section" style="background:#070E1A" aria-labelledby="comparativa-title">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="comparativa-title">
     <div class="container-site">
       <div class="mb-10">
         <span class="section-eyebrow mb-4 inline-flex">Comparativa de subsistemas</span>
-        <h2 id="comparativa-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.1">
+        <h2 id="comparativa-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.1">
           Los cuatro subsistemas<br/>en un solo cuadro.
         </h2>
-        <p class="text-sm leading-relaxed mt-3 max-w-2xl" style="color:#64748B">
+        <p class="text-sm leading-relaxed mt-3 max-w-2xl" style="color:var(--c-muted)">
           La mayoría de los proyectos integran más de un subsistema. Esta tabla resume cuándo aplica
           cada uno — con tu asesor determinas el alcance correcto para tu ocupación y aseguradora.
         </p>
@@ -773,21 +773,21 @@ const tablaComparativa = [
       <div style="overflow-x:auto;max-width:100%;min-width:0">
         <table style="width:100%;border-collapse:collapse;min-width:700px;font-size:12px">
           <thead>
-            <tr style="border-bottom:2px solid rgba(52,211,153,0.35)">
+            <tr style="border-bottom:2px solid rgba(6,118,71,0.35)">
               {['Subsistema','Norma','Activación','Ocupación típica','Entregable clave','Mantenimiento'].map((c, i) => (
-                <th class="text-left font-display font-bold uppercase tracking-widest p-3" style={`color:${i === 0 ? '#FFFFFF' : 'var(--forge-300)'};font-size:10px;background:#080F1A`}>{c}</th>
+                <th class="text-left font-display font-bold uppercase tracking-widest p-3" style={`color:${i === 0 ? 'var(--c-ink)' : 'var(--forge-300)'};font-size:10px;background:var(--c-bg-alt)`}>{c}</th>
               ))}
             </tr>
           </thead>
           <tbody>
             {tablaComparativa.map((f, i) => (
-              <tr style={`border-bottom:1px solid rgba(74,117,153,0.15);background:${i % 2 === 0 ? '#070E1A' : '#080F1A'}`}>
+              <tr style={`border-bottom:1px solid var(--c-line);background:${i % 2 === 0 ? 'var(--c-bg-alt)' : 'var(--c-bg-alt)'}`}>
                 <td class="p-3 font-display font-bold text-xs" style={`color:${f.accent};white-space:nowrap`}>{f.sub}</td>
-                <td class="p-3" style="color:#94A3B8;white-space:nowrap">{f.norm}</td>
-                <td class="p-3" style="color:#94A3B8">{f.activ}</td>
-                <td class="p-3" style="color:#94A3B8">{f.ocup}</td>
-                <td class="p-3" style="color:#94A3B8">{f.entr}</td>
-                <td class="p-3" style="color:#94A3B8;white-space:nowrap">{f.mant}</td>
+                <td class="p-3" style="color:var(--c-text-2);white-space:nowrap">{f.norm}</td>
+                <td class="p-3" style="color:var(--c-text-2)">{f.activ}</td>
+                <td class="p-3" style="color:var(--c-text-2)">{f.ocup}</td>
+                <td class="p-3" style="color:var(--c-text-2)">{f.entr}</td>
+                <td class="p-3" style="color:var(--c-text-2);white-space:nowrap">{f.mant}</td>
               </tr>
             ))}
           </tbody>
@@ -798,18 +798,18 @@ const tablaComparativa = [
   </section>
 
   <!-- Proceso de proyecto -->
-  <section class="section" style="background:#070E1A" aria-labelledby="proceso-title">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="proceso-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Metodología de proyecto</span>
-          <h2 id="proceso-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="proceso-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             De la cotización<br/>
-            <span style="color:#34D399">al expediente final.</span>
+            <span style="color:var(--c-success)">al expediente final.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(52,211,153,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+        <div style="border-left:2px solid rgba(6,118,71,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
             Cada proyecto sigue una metodología documentada con entregables definidos en cada etapa.
             El propietario recibe visibilidad total del avance y un dossier completo al final — no solo el sistema instalado.
           </p>
@@ -818,15 +818,15 @@ const tablaComparativa = [
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
         {etapas.map((e, i) => (
-          <article class="relative flex flex-col gap-3 p-6" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
+          <article class="relative flex flex-col gap-3 p-6" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
             {i < etapas.length - 1 && (
               <div class="hidden lg:block absolute top-1/2 -right-4 z-10" style="transform:translateY(-50%)">
                 
               </div>
             )}
             
-            <h3 class="font-display font-bold text-sm uppercase tracking-wide" style="color:#FFFFFF">{e.t}</h3>
-            <p class="text-xs leading-relaxed m-0" style="color:#64748B">{e.d}</p>
+            <h3 class="font-display font-bold text-sm uppercase tracking-wide" style="color:var(--c-ink)">{e.t}</h3>
+            <p class="text-xs leading-relaxed m-0" style="color:var(--c-muted)">{e.d}</p>
           </article>
         ))}
       </div>
@@ -834,16 +834,16 @@ const tablaComparativa = [
   </section>
 
   <!-- Entregables del dossier -->
-  <section class="section" style="background:#040A12" aria-labelledby="entregables-title">
+  <section class="section" style="background:var(--c-bg)" aria-labelledby="entregables-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Dossier de proyecto</span>
-          <h2 id="entregables-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.05">
+          <h2 id="entregables-title" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.05">
             Lo que entregamos<br/>
-            <span style="color:#34D399">al cierre del proyecto.</span>
+            <span style="color:var(--c-success)">al cierre del proyecto.</span>
           </h2>
-          <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
+          <p class="text-sm leading-relaxed mb-8" style="color:var(--c-text-2)">
             El sistema instalado es solo una parte. El dossier técnico-legal es lo que protege
             al propietario en una auditoría de Protección Civil, en una reclamación de seguro
             y en el mantenimiento futuro. Cada proyecto entrega el expediente completo.
@@ -855,12 +855,12 @@ const tablaComparativa = [
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {entregables.map((e) => (
-            <article class="flex flex-col gap-2 p-5" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
+            <article class="flex flex-col gap-2 p-5" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
               <div class="flex items-center gap-2 mb-1">
                 
-                <h3 class="font-display font-bold text-xs uppercase tracking-wide" style="color:#FFFFFF">{e.t}</h3>
+                <h3 class="font-display font-bold text-xs uppercase tracking-wide" style="color:var(--c-ink)">{e.t}</h3>
               </div>
-              <p class="text-xs leading-relaxed m-0" style="color:#64748B">{e.d}</p>
+              <p class="text-xs leading-relaxed m-0" style="color:var(--c-muted)">{e.d}</p>
             </article>
           ))}
         </div>
@@ -869,23 +869,23 @@ const tablaComparativa = [
   </section>
 
   <!-- Normativa -->
-  <section class="section" style="background:#070E1A" aria-labelledby="normas-title">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="normas-title">
     <div class="container-site">
       <div class="mb-10">
         <span class="section-eyebrow mb-4 inline-flex">Marco normativo</span>
-        <h2 id="normas-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+        <h2 id="normas-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
           Las cinco NFPA<br/>
-          <span style="color:#34D399">que rigen tu sistema.</span>
+          <span style="color:var(--c-success)">que rigen tu sistema.</span>
         </h2>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {normas.map((n) => (
-          <article class="flex flex-col gap-3 p-7" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
+          <article class="flex flex-col gap-3 p-7" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
             <div class="flex items-center justify-between gap-4">
-              <span class="font-display font-bold text-xl" style="color:#34D399">{n.clave}</span>
+              <span class="font-display font-bold text-xl" style="color:var(--c-success)">{n.clave}</span>
               <span class="badge badge-dark text-[9px]">{n.titulo}</span>
             </div>
-            <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{n.desc}</p>
+            <p class="text-sm leading-relaxed m-0" style="color:var(--c-text-2)">{n.desc}</p>
           </article>
         ))}
       </div>
@@ -893,21 +893,21 @@ const tablaComparativa = [
   </section>
 
   {/* ══ GUÍA + BLOG ═════════════════════════════════════════════════════ */}
-  <section class="section" style="background:#040A12" aria-labelledby="guia-title">
+  <section class="section" style="background:var(--c-bg)" aria-labelledby="guia-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
 
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Cómo elegir el sistema correcto</span>
-          <h2 id="guia-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+          <h2 id="guia-title" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Del riesgo<br/>
-            <span style="color:#34D399">a la memoria de cálculo.</span>
+            <span style="color:var(--c-success)">a la memoria de cálculo.</span>
           </h2>
           <ol class="flex flex-col gap-4 list-none m-0 p-0">
             {guia.map((s) => (
               <li class="flex items-start gap-4">
                 
-                <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{s.t}</p>
+                <p class="text-sm leading-relaxed m-0" style="color:var(--c-text-2)">{s.t}</p>
               </li>
             ))}
           </ol>
@@ -918,15 +918,15 @@ const tablaComparativa = [
           </div>
         </div>
 
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
           <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">Aprende más</h2>
-          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
             {articulos.map((l) => (
-              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+              <li style="border-bottom:1px solid var(--c-line)">
                 <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
                   <span class="flex flex-col gap-0.5">
-                    <span class="font-display font-semibold text-sm group-hover:text-[#34D399]" style="color:#FFFFFF">{l.label}</span>
-                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
+                    <span class="font-display font-semibold text-sm group-hover:text-[var(--c-success)]" style="color:var(--c-ink)">{l.label}</span>
+                    <span class="text-xs" style="color:var(--c-muted)">{l.desc}</span>
                   </span>
                   
                 </a>
@@ -940,17 +940,17 @@ const tablaComparativa = [
   </section>
 
   <!-- FAQ -->
-  <section class="section" style="background:#070E1A" aria-labelledby="faq-title">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="faq-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.75fr] gap-12 lg:gap-20">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes</span>
-          <h2 id="faq-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+          <h2 id="faq-title" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Las preguntas que<br/>
-            <span style="color:#34D399">nos hacen antes</span><br/>
+            <span style="color:var(--c-success)">nos hacen antes</span><br/>
             del proyecto.
           </h2>
-          <p class="text-sm leading-relaxed mb-8" style="color:#64748B">
+          <p class="text-sm leading-relaxed mb-8" style="color:var(--c-muted)">
             ¿Tienes una pregunta que no está aquí? Escríbenos — respondemos en menos de 2 horas en horario de oficina.
           </p>
           <a href={whatsappUrl('Hola, tengo una pregunta sobre sistemas contra incendio para mi instalación.')} target="_blank" rel="noopener" class="btn btn-primary">
@@ -960,12 +960,12 @@ const tablaComparativa = [
 
         <div class="flex flex-col">
           {faqs.map((f, i) => (
-            <details class="faq-item group" style={`border-top:1px solid rgba(74,117,153,0.18);${i === faqs.length - 1 ? 'border-bottom:1px solid rgba(74,117,153,0.18);' : ''}`}>
+            <details class="faq-item group" style={`border-top:1px solid var(--c-line);${i === faqs.length - 1 ? 'border-bottom:1px solid rgba(74,117,153,0.18);' : ''}`}>
               <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer">
-                <span class="font-display font-semibold text-sm" style="color:#FFFFFF">{f.q}</span>
-                <span class="faq-icon font-display font-bold text-xl shrink-0" style="color:#34D399">+</span>
+                <span class="font-display font-semibold text-sm" style="color:var(--c-ink)">{f.q}</span>
+                <span class="faq-icon font-display font-bold text-xl shrink-0" style="color:var(--c-success)">+</span>
               </summary>
-              <p class="text-sm leading-relaxed pb-5 m-0" style="color:#94A3B8">{f.a}</p>
+              <p class="text-sm leading-relaxed pb-5 m-0" style="color:var(--c-text-2)">{f.a}</p>
             </details>
           ))}
         </div>
@@ -974,12 +974,12 @@ const tablaComparativa = [
   </section>
 
   <!-- CTA Band -->
-  <section style="background:rgb(26 58 46);padding-block:4rem;border-top:2px solid #34D399" aria-label="Cotizar sistema contra incendio">
+  <section style="background:rgb(26 58 46);padding-block:4rem;border-top:2px solid var(--c-success)" aria-label="Cotizar sistema contra incendio">
     <div class="container-site">
       <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
         <div>
-          <p class="text-xs font-display font-bold uppercase tracking-[0.2em] mb-3" style="color:rgba(52,211,153,0.7)">NFPA 13 · 72 · 2001 · Memoria de cálculo · Dossier completo</p>
-          <h2 class="font-display font-bold uppercase" style="color:#FFFFFF;font-size:clamp(1.75rem,4vw,3rem);line-height:1.05">
+          <p class="text-xs font-display font-bold uppercase tracking-[0.2em] mb-3" style="color:rgba(6,118,71,0.7)">NFPA 13 · 72 · 2001 · Memoria de cálculo · Dossier completo</p>
+          <h2 class="font-display font-bold uppercase" style="color:var(--c-ink);font-size:clamp(1.75rem,4vw,3rem);line-height:1.05">
             Materiales UL Listed.<br/>Memoria firmada por DRO.
           </h2>
         </div>
@@ -988,11 +988,11 @@ const tablaComparativa = [
             href={whatsappUrl('Hola, quiero solicitar una cotización para un sistema contra incendio (rociadores / detección / agente limpio). ¿Me pueden enviar información?')}
             target="_blank" rel="noopener"
             class="btn btn-lg"
-            style="background:#34D399;color:#0A1A14;border-color:#34D399;font-weight:700"
+            style="background:var(--c-success);color:#0A1A14;border-color:var(--c-success);font-weight:700"
           >
             Cotizar proyecto 
           </a>
-          <a href="/cotizacion" class="btn btn-lg" style="background:transparent;color:#FFFFFF;border:2px solid rgba(255,255,255,0.4)">
+          <a href="/cotizacion" class="btn btn-lg" style="background:transparent;color:var(--c-ink);border:2px solid rgba(16,24,40,0.4)">
             Propuesta técnica formal
           </a>
         </div>
@@ -1001,25 +1001,25 @@ const tablaComparativa = [
   </section>
 
   <!-- Cross-links -->
-  <section class="section" style="background:#070E1A" aria-labelledby="cross-title">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="cross-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Sistema completo</span>
-          <h2 id="cross-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+          <h2 id="cross-title" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             El sistema fijo<br/>
-            <span style="color:#34D399">necesita EPP y extintores.</span>
+            <span style="color:var(--c-success)">necesita EPP y extintores.</span>
           </h2>
-          <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
+          <p class="text-sm leading-relaxed mb-8" style="color:var(--c-text-2)">
             Un sistema contra incendio fijo no reemplaza al extintor portátil ni al EPP de la brigada.
             Los tres niveles trabajan juntos: el sistema fijo compra tiempo, los extintores son la
             primera respuesta manual y la brigada necesita el equipo certificado para actuar.
           </p>
           <a href={whatsappUrl('Hola, quiero cotizar la protección contra incendio completa: sistema fijo, extintores y EPP de brigada.')} target="_blank" rel="noopener" class="btn btn-primary">Cotizar protección completa</a>
         </div>
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
           <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">También te puede servir</h2>
-          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
             {[
               { label: 'Extintores',     desc: 'PQS ABC NOM-100-STPS · CO₂ NOM-102-STPS · Tipo K · Agente limpio',              href: '/productos/extintores' },
               { label: 'Trajes de Bombero NFPA 1970',  desc: 'Globe · Honeywell Morning Pride · Fire-Dex — equipo de la brigada',  href: '/productos/trajes-bombero' },
@@ -1027,11 +1027,11 @@ const tablaComparativa = [
               { label: 'Equipos SCBA NFPA 1970',       desc: 'MSA G1 · Dräger · Scott — aire autónomo para la brigada',      href: '/productos/equipos-scba' },
               { label: 'Herramientas de Rescate 1936', desc: 'Holmatro · Hurst · Weber — rescate vehicular certificado',     href: '/productos/herramientas-rescate' },
             ].map((l) => (
-              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+              <li style="border-bottom:1px solid var(--c-line)">
                 <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
                   <span class="flex flex-col gap-0.5">
-                    <span class="font-display font-semibold text-sm group-hover:text-[#34D399]" style="color:#FFFFFF">{l.label}</span>
-                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
+                    <span class="font-display font-semibold text-sm group-hover:text-[var(--c-success)]" style="color:var(--c-ink)">{l.label}</span>
+                    <span class="text-xs" style="color:var(--c-muted)">{l.desc}</span>
                   </span>
                   
                 </a>
@@ -1041,7 +1041,7 @@ const tablaComparativa = [
         </div>
       </div>
 
-      <div class="mt-14 pt-10" style="border-top:1px solid rgba(74,117,153,0.15)">
+      <div class="mt-14 pt-10" style="border-top:1px solid var(--c-line)">
         <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-6" style="color:var(--forge-300)">Otras categorías del catálogo</h2>
         <div class="flex flex-wrap gap-3">
           {otrasCategorias.map((c) => (
@@ -1055,30 +1055,30 @@ const tablaComparativa = [
 
 
   {/* ══ CATEGORÍAS RELACIONADAS ═══════════════════════════════════════ */}
-  <section style="background:#040A12;border-top:1px solid rgba(74,117,153,0.15)" aria-labelledby="cats-rel-title">
+  <section style="background:var(--c-bg);border-top:1px solid var(--c-line)" aria-labelledby="cats-rel-title">
     <div class="container-site py-10 sm:py-12">
       <p id="cats-rel-title" class="text-[9px] font-display font-bold uppercase tracking-widest mb-6" style="color:var(--forge-300)">Categorías relacionadas</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <a href="/productos/extintores"
-           class="group flex flex-col gap-2 p-5 hover:border-[#F75000]"
-           style="background:#080F1A;border:1px solid rgba(74,117,153,0.2)">
-          <span class="text-sm font-display font-bold group-hover:text-[#F75000]" style="color:#FFFFFF">Extintores</span>
-          <span class="text-xs leading-relaxed" style="color:#64748B">PQS ABC · CO₂ · Agente Limpio · Sobre Ruedas</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Extintores </span>
+           class="group flex flex-col gap-2 p-5 hover:border-[var(--c-accent)]"
+           style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
+          <span class="text-sm font-display font-bold group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Extintores</span>
+          <span class="text-xs leading-relaxed" style="color:var(--c-muted)">PQS ABC · CO₂ · Agente Limpio · Sobre Ruedas</span>
+          <span class="text-[11px] font-semibold mt-1" style="color:var(--c-accent)">Guía de Extintores </span>
         </a>
         <a href="/productos/hazmat"
-           class="group flex flex-col gap-2 p-5 hover:border-[#F75000]"
-           style="background:#080F1A;border:1px solid rgba(74,117,153,0.2)">
-          <span class="text-sm font-display font-bold group-hover:text-[#F75000]" style="color:#FFFFFF">Equipos HAZMAT</span>
-          <span class="text-xs leading-relaxed" style="color:#64748B">DuPont Tychem · Lakeland · MSA · Kappler</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Equipos HAZMAT </span>
+           class="group flex flex-col gap-2 p-5 hover:border-[var(--c-accent)]"
+           style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
+          <span class="text-sm font-display font-bold group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Equipos HAZMAT</span>
+          <span class="text-xs leading-relaxed" style="color:var(--c-muted)">DuPont Tychem · Lakeland · MSA · Kappler</span>
+          <span class="text-[11px] font-semibold mt-1" style="color:var(--c-accent)">Guía de Equipos HAZMAT </span>
         </a>
         <a href="/productos/herramientas-rescate"
-           class="group flex flex-col gap-2 p-5 hover:border-[#F75000]"
-           style="background:#080F1A;border:1px solid rgba(74,117,153,0.2)">
-          <span class="text-sm font-display font-bold group-hover:text-[#F75000]" style="color:#FFFFFF">Herramientas de Rescate</span>
-          <span class="text-xs leading-relaxed" style="color:#64748B">Holmatro · Hurst · Weber Rescue</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Herramientas de Rescate </span>
+           class="group flex flex-col gap-2 p-5 hover:border-[var(--c-accent)]"
+           style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
+          <span class="text-sm font-display font-bold group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Herramientas de Rescate</span>
+          <span class="text-xs leading-relaxed" style="color:var(--c-muted)">Holmatro · Hurst · Weber Rescue</span>
+          <span class="text-[11px] font-semibold mt-1" style="color:var(--c-accent)">Guía de Herramientas de Rescate </span>
         </a>
       </div>
     </div>

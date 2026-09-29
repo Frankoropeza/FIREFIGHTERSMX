@@ -20,7 +20,7 @@ import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl, TELEFONO_ACTIVO } from '@co
 
 
 <!-- Search / CTA bar -->
-<div class="container-site pt-5 pb-4 flex gap-3" style="border-bottom:1px solid rgba(74,117,153,0.15)">
+<div class="container-site pt-5 pb-4 flex gap-3" style="border-bottom:1px solid var(--c-line)">
   <a href="/cotizacion/" class="btn btn-primary flex-1 justify-center text-sm">Cotizar equipo</a>
   {CONTACTO_DIRECTO_ACTIVO && <a
     href={whatsappUrl('Hola, quiero cotizar equipo para bomberos.')}
@@ -40,7 +40,7 @@ import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl, TELEFONO_ACTIVO } from '@co
     {item.zona === 'directorio' && (
       <p class="pt-6 pb-1 px-1 m-0 text-[10px] font-display font-bold uppercase tracking-[0.18em]" style="color:var(--forge-300)">Directorio nacional · registros de terceros</p>
     )}
-    <div class="mob-l1" style="border-bottom:1px solid rgba(74,117,153,0.12)">
+    <div class="mob-l1" style="border-bottom:1px solid var(--c-line)">
 
       {item.children ? (
         /* ── Item con dropdown ── */
@@ -65,7 +65,7 @@ import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl, TELEFONO_ACTIVO } from '@co
 
           <!-- L1 panel -->
           <div class="mob-l1-panel hidden" data-l1-panel={idx}>
-            <div class="ml-3 pl-3 flex flex-col pb-2" style="border-left:1px solid rgba(74,117,153,0.2)">
+            <div class="ml-3 pl-3 flex flex-col pb-2" style="border-left:1px solid var(--c-line)">
               {item.children.map((child, cidx) => (
                 child.children ? (
                   /* ── L2 ítem con sub-dropdown ── */
@@ -93,7 +93,7 @@ import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl, TELEFONO_ACTIVO } from '@co
 
                     <!-- L2 sub-panel -->
                     <div class="mob-l2-panel hidden" data-l2-panel={`${idx}-${cidx}`}>
-                      <div class="ml-4 pl-3 py-1" style="border-left:2px solid rgba(247,80,0,0.3)">
+                      <div class="ml-4 pl-3 py-1" style="border-left:2px solid rgba(200,16,46,0.3)">
                         {child.children.map((sub) => (
                           <a
                             href={sub.href}
@@ -142,7 +142,7 @@ import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl, TELEFONO_ACTIVO } from '@co
   ))}
 
   <!-- Info de contacto al pie del menú -->
-  <div class="mt-5 pt-4 flex flex-col gap-2" style="border-top:1px solid rgba(74,117,153,0.15)">
+  <div class="mt-5 pt-4 flex flex-col gap-2" style="border-top:1px solid var(--c-line)">
     {TELEFONO_ACTIVO && (
 <a
       href={`tel:${SITE.phoneE164}`}

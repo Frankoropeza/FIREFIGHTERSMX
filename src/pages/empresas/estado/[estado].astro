@@ -38,35 +38,35 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
   mainEntity: { '@type': 'ItemList', numberOfItems: porGiro.length, itemListElement: porGiro.map((g, i) => ({ '@type': 'ListItem', position: i + 1, name: `${g.nombre} en ${estado.nombre}`, url: `${SITE.url}/empresas/${g.giro}/${estado.slug}/` })) } };
 ---
 <BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema]}>
-  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+  <nav class="py-3" style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line)" aria-label="Breadcrumb">
     <div class="container-site"><ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
-      <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li><li aria-hidden="true">/</li>
-      <li><a href="/empresas/" class="hover:text-[#FF6B26]">Directorio de Empresas</a></li><li aria-hidden="true">/</li>
-      <li><span style="color:#94A3B8" aria-current="page">{estado.nombre}</span></li></ol></div>
+      <li><a href="/" class="hover:text-[var(--c-accent)]">Inicio</a></li><li aria-hidden="true">/</li>
+      <li><a href="/empresas/" class="hover:text-[var(--c-accent)]">Directorio de Empresas</a></li><li aria-hidden="true">/</li>
+      <li><span style="color:var(--c-text-2)" aria-current="page">{estado.nombre}</span></li></ol></div>
   </nav>
 
-  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem" aria-labelledby="edo-heading">
-    <div class="absolute top-0 right-0 w-2/3 h-full pointer-events-none" aria-hidden="true" style="background:radial-gradient(ellipse 70% 60% at 85% 40%, rgba(247,80,0,0.07) 0%, transparent 65%)"></div>
+  <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:5rem" aria-labelledby="edo-heading">
+    <div class="absolute top-0 right-0 w-2/3 h-full pointer-events-none" aria-hidden="true" style="background:radial-gradient(ellipse 70% 60% at 85% 40%, rgba(200,16,46,0.07) 0%, transparent 65%)"></div>
     <div class="container-site relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div>
           <span class="section-eyebrow mb-5 inline-flex">Directorio · {estado.abreviatura} · {estado.region}</span>
-          <h1 id="edo-heading" class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.2rem,5vw,4rem);line-height:0.95">Empresas de equipo<br/><span style="color:#F75000">contra incendio</span><br/>en {estado.nombre}</h1>
-          <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">
+          <h1 id="edo-heading" class="font-display font-bold uppercase mb-6" style="color:var(--c-ink);font-size:clamp(2.2rem,5vw,4rem);line-height:0.95">Empresas de equipo<br/><span style="color:var(--c-accent)">contra incendio</span><br/>en {estado.nombre}</h1>
+          <p class="text-sm leading-[1.9] mb-4" style="color:var(--c-text-2)">
             Empresas de {porGiro.map((g) => g.nombre.toLowerCase()).join(', ')} en {estado.nombre}, con presencia en {ciudades.slice(0, 4).map((c) => c.ciudad).join(', ')}. Cada registro está georreferenciado y clasificado por giro y especialidad, con su fuente de origen.
           </p>
-          {cob && <p class="text-sm leading-[1.9] mb-8" style="color:#94A3B8">{cob.longDesc[0]}</p>}
+          {cob && <p class="text-sm leading-[1.9] mb-8" style="color:var(--c-text-2)">{cob.longDesc[0]}</p>}
           <div class="flex flex-col sm:flex-row gap-3">
             <a href="#empresas" class="btn btn-primary btn-lg">Empresas en {estado.nombre}</a>
             <a href="/empresas/registro/" class="btn btn-ghost btn-lg">Registrar empresa en {estado.nombre} </a>
           </div>
         </div>
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
-          <div class="grid grid-cols-2 gap-px" style="background:rgba(74,117,153,0.15);border:1px solid rgba(74,117,153,0.18)">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
+          <div class="grid grid-cols-2 gap-px" style="background:var(--c-line);border:1px solid var(--c-line)">
             {porGiro.map((g) => { const meta = giros.find((x) => x.slug === g.giro)!; return (
-              <a href={`/empresas/${g.giro}/${estado.slug}/`} class="grid-cell ledger-cell flex flex-col gap-2 p-6" style="background:#0C1825">
+              <a href={`/empresas/${g.giro}/${estado.slug}/`} class="grid-cell ledger-cell flex flex-col gap-2 p-6" style="background:var(--c-surface)">
                 <span class="w-9 h-9 flex items-center justify-center" style={`color:${meta.color};border:1px solid ${meta.color}55`}></span>
-                <div class="font-display font-bold text-sm uppercase tracking-wider" style="color:#FFFFFF">{meta.labelCorto}</div>
+                <div class="font-display font-bold text-sm uppercase tracking-wider" style="color:var(--c-ink)">{meta.labelCorto}</div>
                 <div class="text-[10px] uppercase tracking-widest" style="color:var(--forge-300)">en {estado.nombre} </div>
               </a>); })}
           </div>
@@ -76,56 +76,56 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
         </div>
       </div>
     </div>
-    <div class="absolute bottom-0 left-0 right-0 h-px" aria-hidden="true" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-px" aria-hidden="true" style="background:linear-gradient(90deg, transparent, rgba(200,16,46,0.4) 30%, rgba(200,16,46,0.4) 70%, transparent)"></div>
   </section>
 
   <QuickLinksBar />
 
   {puntos.length > 0 && (
-    <section class="section-tight" style="background:#070E1A" aria-label={`Mapa de empresas en ${estado.nombre}`}>
+    <section class="section-tight" style="background:var(--c-bg-alt)" aria-label={`Mapa de empresas en ${estado.nombre}`}>
       <div class="container-site">
         <span class="section-eyebrow mb-4 inline-flex">Mapa</span>
-        <h2 class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.05">Ubicación de las empresas<br/><span style="color:#F75000">en {estado.nombre}.</span></h2>
+        <h2 class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.05">Ubicación de las empresas<br/><span style="color:var(--c-accent)">en {estado.nombre}.</span></h2>
         <MapaEmpresas puntos={puntos} id={`mapa-${estado.slug}`} zoom={7} centro={centro} altura="460px" ariaLabel={`Mapa de empresas de equipo contra incendio en ${estado.nombre}`} />
       </div>
     </section>
   )}
 
-  <section id="empresas" class="section" style="background:#040A12" aria-labelledby="lista-heading">
+  <section id="empresas" class="section" style="background:var(--c-bg)" aria-labelledby="lista-heading">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-10">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Directorio · {estado.nombre}</span>
-          <h2 id="lista-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Empresas contra incendio<br/><span style="color:#F75000">en {estado.nombre}.</span></h2>
+          <h2 id="lista-heading" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Empresas contra incendio<br/><span style="color:var(--c-accent)">en {estado.nombre}.</span></h2>
         </div>
-        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:#94A3B8">Filtra por giro o busca por nombre, ciudad o municipio. Para ver un giro con sus especialidades y su propio mapa, entra al directorio de ese giro en {estado.nombre}.</p>
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">Filtra por giro o busca por nombre, ciudad o municipio. Para ver un giro con sus especialidades y su propio mapa, entra al directorio de ese giro en {estado.nombre}.</p>
         </div>
       </div>
       <EmpresasGrid empresas={lista} filtros={porGiro.map((g) => { const m = giros.find((x) => x.slug === g.giro)!; return { key: g.giro, label: `${m.labelCorto} · ${g.total}`, color: m.color }; })} id={`edo-${estado.slug}`} indexSrc={lista.length > 48 ? '/data/empresas-index.json' : undefined} alcance={{ estado: estado.slug }} limite={48} />
     </div>
   </section>
 
-  <section class="section" style="background:#070E1A" aria-label="Contenido relacionado">
+  <section class="section" style="background:var(--c-bg-alt)" aria-label="Contenido relacionado">
     <div class="container-site grid grid-cols-1 lg:grid-cols-3 gap-10">
       <div>
         <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:var(--forge-300)">Por giro en {estado.nombre}</p>
-        <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
-          {porGiro.map((g) => { const m = giros.find((x) => x.slug === g.giro)!; return (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/empresas/${g.giro}/${estado.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{m.label}</span><span style={`color:${m.color}`}></span></a></li>); })}
+        <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
+          {porGiro.map((g) => { const m = giros.find((x) => x.slug === g.giro)!; return (<li style="border-bottom:1px solid var(--c-line)"><a href={`/empresas/${g.giro}/${estado.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{m.label}</span><span style={`color:${m.color}`}></span></a></li>); })}
         </ul>
       </div>
       <div>
         <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:var(--forge-300)">Estados de la región {estado.region}</p>
-        <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
-          {vecinos.map((v) => (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/empresas/estado/${v.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Empresas en {v.nombre}</span><span style="color:var(--forge-300)"></span></a></li>))}
+        <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
+          {vecinos.map((v) => (<li style="border-bottom:1px solid var(--c-line)"><a href={`/empresas/estado/${v.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Empresas en {v.nombre}</span><span style="color:var(--forge-300)"></span></a></li>))}
         </ul>
       </div>
       <div>
         <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:var(--forge-300)">También en {estado.nombre}</p>
-        <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
-          {dirEst && dirEst.estaciones.length > 0 && <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/estaciones/${estado.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Estaciones de bomberos en {estado.nombre}</span><span class="text-xs" style="color:#64748B">Municipales, estatales, industriales y aeroportuarias</span></span><span style="color:var(--forge-300)"></span></a></li>}
-          {cob && <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/cobertura/${estado.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Cobertura y logística en {estado.nombre}</span><span class="text-xs" style="color:#64748B">{cob.dias}</span></span><span style="color:var(--forge-300)"></span></a></li>}
-          <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href="/empresas/" class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Directorio nacional</span><span style="color:var(--forge-300)"></span></a></li>
+        <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
+          {dirEst && dirEst.estaciones.length > 0 && <li style="border-bottom:1px solid var(--c-line)"><a href={`/estaciones/${estado.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Estaciones de bomberos en {estado.nombre}</span><span class="text-xs" style="color:var(--c-muted)">Municipales, estatales, industriales y aeroportuarias</span></span><span style="color:var(--forge-300)"></span></a></li>}
+          {cob && <li style="border-bottom:1px solid var(--c-line)"><a href={`/cobertura/${estado.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Cobertura y logística en {estado.nombre}</span><span class="text-xs" style="color:var(--c-muted)">{cob.dias}</span></span><span style="color:var(--forge-300)"></span></a></li>}
+          <li style="border-bottom:1px solid var(--c-line)"><a href="/empresas/" class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Directorio nacional</span><span style="color:var(--forge-300)"></span></a></li>
         </ul>
       </div>
     </div>

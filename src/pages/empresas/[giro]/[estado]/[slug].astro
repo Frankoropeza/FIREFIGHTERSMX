@@ -197,16 +197,16 @@ const waMsg = `Hola, vi la ficha de ${e.nombre} en el directorio FIREFIGHTERS MX
 const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>`;
 ---
 <BaseLayout {...seoMeta} schema={faqSchemaFicha ? [breadcrumbSchema, businessSchema, faqSchemaFicha] : [breadcrumbSchema, businessSchema]}>
-  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+  <nav class="py-3" style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line)" aria-label="Breadcrumb">
     <div class="container-site"><ol class="flex items-center gap-2 text-xs list-none m-0 p-0 flex-wrap" style="color:var(--forge-300)">
-      <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li><li aria-hidden="true">/</li>
-      <li><a href="/empresas/" class="hover:text-[#FF6B26]">Empresas</a></li><li aria-hidden="true">/</li>
-      <li><a href={`/empresas/${e.giroPrincipal}/`} class="hover:text-[#FF6B26]">{g.labelCorto}</a></li><li aria-hidden="true">/</li>
-      <li><a href={`/empresas/${e.giroPrincipal}/${e.estado}/`} class="hover:text-[#FF6B26]">{edo.nombre}</a></li><li aria-hidden="true">/</li>
-      <li><span style="color:#94A3B8" aria-current="page">{e.nombre}</span></li></ol></div>
+      <li><a href="/" class="hover:text-[var(--c-accent)]">Inicio</a></li><li aria-hidden="true">/</li>
+      <li><a href="/empresas/" class="hover:text-[var(--c-accent)]">Empresas</a></li><li aria-hidden="true">/</li>
+      <li><a href={`/empresas/${e.giroPrincipal}/`} class="hover:text-[var(--c-accent)]">{g.labelCorto}</a></li><li aria-hidden="true">/</li>
+      <li><a href={`/empresas/${e.giroPrincipal}/${e.estado}/`} class="hover:text-[var(--c-accent)]">{edo.nombre}</a></li><li aria-hidden="true">/</li>
+      <li><span style="color:var(--c-text-2)" aria-current="page">{e.nombre}</span></li></ol></div>
   </nav>
 
-  <section class="relative overflow-hidden" style="background:#040A12;padding-block:4rem" aria-labelledby="ficha-heading">
+  <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:4rem" aria-labelledby="ficha-heading">
     <div class="absolute top-0 right-0 w-2/3 h-full pointer-events-none" aria-hidden="true" style={`background:radial-gradient(ellipse 70% 60% at 85% 40%, ${g.color}12 0%, transparent 65%)`}></div>
     <div class="container-site relative z-10 grid grid-cols-1 lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-14 items-center">
       <div>
@@ -217,38 +217,38 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
         {e.plan !== 'basico' && <span class="font-display text-[10px] uppercase tracking-wider px-2 py-1" style={`color:${plan.color};background:${plan.bgColor};border:1px solid ${plan.color}55`}>{plan.label}</span>}
         <span class="font-display text-[10px] uppercase tracking-wider px-2 py-1" title={conf.descripcion} style={`color:${conf.color};background:${conf.bgColor};border:1px solid ${conf.color}33`}>{conf.label}{verif && ` · ${verif}`}</span>
       </div>
-      <h1 id="ficha-heading" class="font-display font-bold mb-3" style="color:#FFFFFF;font-size:clamp(1.9rem,4.2vw,3.4rem);line-height:1">{e.nombre}</h1>
+      <h1 id="ficha-heading" class="font-display font-bold mb-3" style="color:var(--c-ink);font-size:clamp(1.9rem,4.2vw,3.4rem);line-height:1">{e.nombre}</h1>
       {e.razonSocial && <p class="font-display text-sm uppercase tracking-wider mb-4" style="color:var(--forge-300)">{e.razonSocial}</p>}
-      <p class="flex items-start gap-2 text-sm mb-0" style="color:#94A3B8">
+      <p class="flex items-start gap-2 text-sm mb-0" style="color:var(--c-text-2)">
         <span>{e.direccion ? `${e.direccion} · ` : ''}{e.ciudad}{e.municipio !== e.ciudad ? `, ${e.municipio}` : ''}, {edo.nombre}</span>
       </p>
       </div>
 
-      <div class="lg:pl-14 lg:border-l" style="border-left-style:solid;border-color:rgba(74,117,153,0.28)">
-        {heroParrafos.map((par) => <p class="text-sm leading-[1.95] mb-4 last:mb-0" style="color:#94A3B8">{par}</p>)}
+      <div class="lg:pl-14 lg:border-l" style="border-left-style:solid;border-color:var(--c-line-strong)">
+        {heroParrafos.map((par) => <p class="text-sm leading-[1.95] mb-4 last:mb-0" style="color:var(--c-text-2)">{par}</p>)}
         <a href={`/empresas/${e.giroPrincipal}/${e.estado}/`} class="inline-flex items-center gap-2 text-sm font-display font-semibold mt-5" style={`color:${g.color}`}>
           {g.labelCorto} en {edo.nombre}
         </a>
       </div>
     </div>
-    <div class="absolute bottom-0 left-0 right-0 h-px" aria-hidden="true" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-px" aria-hidden="true" style="background:linear-gradient(90deg, transparent, rgba(200,16,46,0.4) 30%, rgba(200,16,46,0.4) 70%, transparent)"></div>
   </section>
 
   <QuickLinksBar />
 
-  <section class="section" style="background:#070E1A">
+  <section class="section" style="background:var(--c-bg-alt)">
     <div class="container-site grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-10 lg:gap-14 items-start">
 
       <div class="flex flex-col gap-12 min-w-0">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Perfil</span>
-          <h2 class="font-display font-bold mb-5" style="color:#FFFFFF;font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.05">{g.labelCorto} en {e.ciudad},<br/><span style={`color:${g.color}`}>{edo.nombre}.</span></h2>
+          <h2 class="font-display font-bold mb-5" style="color:var(--c-ink);font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.05">{g.labelCorto} en {e.ciudad},<br/><span style={`color:${g.color}`}>{edo.nombre}.</span></h2>
           {(perfilParrafos.length ? perfilParrafos : [g.intro[0]]).map((par) => (
-            <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">{par}</p>
+            <p class="text-sm leading-[1.9] mb-4" style="color:var(--c-text-2)">{par}</p>
           ))}
           {basica && (
-            <div class="mt-6 p-5 flex flex-col sm:flex-row sm:items-center gap-4" style="background:#0C1825;border:1px solid rgba(74,117,153,0.25);border-left:3px solid #94A3B8">
-              <p class="text-xs leading-relaxed flex-1" style="color:#94A3B8"><strong style="color:#CBD5E1">Registro público sin verificar.</strong> Los datos provienen del DENUE (INEGI) y no han sido confirmados por la empresa. Si eres el responsable, reclama la ficha para completarla y obtener el sello de datos verificados.</p>
+            <div class="mt-6 p-5 flex flex-col sm:flex-row sm:items-center gap-4" style="background:var(--c-surface);border:1px solid var(--c-line-strong);border-left:3px solid var(--c-line-strong)">
+              <p class="text-xs leading-relaxed flex-1" style="color:var(--c-text-2)"><strong style="color:var(--c-text)">Registro público sin verificar.</strong> Los datos provienen del DENUE (INEGI) y no han sido confirmados por la empresa. Si eres el responsable, reclama la ficha para completarla y obtener el sello de datos verificados.</p>
               <a href="/empresas/registro/" class="btn btn-sm btn-outline shrink-0">Reclamar esta ficha</a>
             </div>
           )}
@@ -260,8 +260,8 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
         {esp.length > 0 && (
           <div>
             <span class="section-eyebrow mb-4 inline-flex">Especialidades</span>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
-              {esp.map((x) => <a href={`/empresas/${e.giroPrincipal}/${e.estado}/`} class="grid-cell p-5 font-display font-semibold text-sm" style="background:#040A12;color:#FFFFFF">{x.label}</a>)}
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-px" style="background:var(--c-line);border:1px solid var(--c-line)">
+              {esp.map((x) => <a href={`/empresas/${e.giroPrincipal}/${e.estado}/`} class="grid-cell p-5 font-display font-semibold text-sm" style="background:var(--c-bg);color:var(--c-ink)">{x.label}</a>)}
             </div>
           </div>
         )}
@@ -292,7 +292,7 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
                   <div class="flex flex-wrap gap-2">{e.normas.map((n) => <span class="badge badge-dark font-display text-[10px]">{n}</span>)}</div>
                 </div>
               )}
-              <div class="flex flex-wrap gap-x-8 gap-y-2 text-sm" style="color:#94A3B8">
+              <div class="flex flex-wrap gap-x-8 gap-y-2 text-sm" style="color:var(--c-text-2)">
                 {e.fundacion && <span><span class="font-display text-[10px] uppercase tracking-wider mr-2" style="color:var(--forge-300)">Fundación</span>{e.fundacion}</span>}
                 {e.cobertura.length > 0 && <span><span class="font-display text-[10px] uppercase tracking-wider mr-2" style="color:var(--forge-300)">Cobertura</span>{e.cobertura.includes('nacional') ? 'Nacional, 32 estados' : e.cobertura.join(', ')}</span>}
               </div>
@@ -303,29 +303,29 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Marco normativo del giro</span>
           <div class="flex flex-wrap gap-2 mb-4">{g.normas.map((n) => <span class="badge badge-dark font-display text-[10px]">{n}</span>)}</div>
-          <p class="text-sm leading-[1.9]" style="color:#94A3B8">{g.intro[1]}</p>
+          <p class="text-sm leading-[1.9]" style="color:var(--c-text-2)">{g.intro[1]}</p>
         </div>
 
         {cercanas.length > 0 && (
           <div>
             <span class="section-eyebrow mb-4 inline-flex">Otras empresas de {g.labelCorto.toLowerCase()} en {edo.nombre}</span>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">{cercanas.map((c) => <EmpresaCard e={c} />)}</div>
-            <a href={`/empresas/${e.giroPrincipal}/${e.estado}/`} class="inline-flex mt-5 font-display font-semibold text-xs uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57">Todas las empresas de {g.labelCorto.toLowerCase()} en {edo.nombre}</a>
+            <a href={`/empresas/${e.giroPrincipal}/${e.estado}/`} class="inline-flex mt-5 font-display font-semibold text-xs uppercase tracking-wider hover:text-[var(--c-accent)]" style="color:var(--c-accent)">Todas las empresas de {g.labelCorto.toLowerCase()} en {edo.nombre}</a>
           </div>
         )}
 
         {otrasEmpresasEstado.length > 0 && (
           <div>
             <span class="section-eyebrow mb-4 inline-flex">Otras empresas en {edo.nombre}</span>
-            <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+            <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
               {otrasEmpresasEstado.map((otra) => {
                 const otroGiro = giroMap[otra.giroPrincipal];
-                return <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={urlEmpresa(otra)} class="group flex items-center justify-between gap-4 py-3"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{otra.nombre}</span><span class="text-xs" style="color:#64748B">{otroGiro.labelCorto} en {otra.ciudad}</span></span></a></li>;
+                return <li style="border-bottom:1px solid var(--c-line)"><a href={urlEmpresa(otra)} class="group flex items-center justify-between gap-4 py-3"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{otra.nombre}</span><span class="text-xs" style="color:var(--c-muted)">{otroGiro.labelCorto} en {otra.ciudad}</span></span></a></li>;
               })}
             </ul>
             <div class="flex flex-col gap-2 mt-5">
-              <a href={`/empresas/estado/${e.estado}/`} class="inline-flex font-display font-semibold text-xs uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57">Directorio de empresas en {edo.nombre}</a>
-              <a href={`/cobertura/${e.estado}/`} class="inline-flex font-display font-semibold text-xs uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57">Cobertura en {edo.nombre}</a>
+              <a href={`/empresas/estado/${e.estado}/`} class="inline-flex font-display font-semibold text-xs uppercase tracking-wider hover:text-[var(--c-accent)]" style="color:var(--c-accent)">Directorio de empresas en {edo.nombre}</a>
+              <a href={`/cobertura/${e.estado}/`} class="inline-flex font-display font-semibold text-xs uppercase tracking-wider hover:text-[var(--c-accent)]" style="color:var(--c-accent)">Cobertura en {edo.nombre}</a>
             </div>
           </div>
         )}
@@ -333,8 +333,8 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
         {empresasNacionales.length > 0 && (
           <div>
             <span class="section-eyebrow mb-4 inline-flex">Otras empresas en México</span>
-            <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
-              {empresasNacionales.map((nacional) => <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={urlEmpresa(nacional)} class="group flex items-center justify-between gap-4 py-3"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{nacional.nombre}</span><span class="text-xs" style="color:#64748B">{giroMap[nacional.giroPrincipal].labelCorto} en {nacional.ciudad}</span></span></a></li>)}
+            <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
+              {empresasNacionales.map((nacional) => <li style="border-bottom:1px solid var(--c-line)"><a href={urlEmpresa(nacional)} class="group flex items-center justify-between gap-4 py-3"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{nacional.nombre}</span><span class="text-xs" style="color:var(--c-muted)">{giroMap[nacional.giroPrincipal].labelCorto} en {nacional.ciudad}</span></span></a></li>)}
             </ul>
           </div>
         )}
@@ -342,50 +342,50 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
         {estaciones.length > 0 && (
           <div>
             <span class="section-eyebrow mb-4 inline-flex">Cuerpos de bomberos en la zona</span>
-            <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
-              {estaciones.map((s) => (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/estaciones/${e.estado}/${s.slug}/`} class="group flex items-center justify-between gap-4 py-3"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{s.nombre}</span><span class="text-xs" style="color:#64748B">{s.tipo} · {s.ciudad}</span></span></a></li>))}
+            <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
+              {estaciones.map((s) => (<li style="border-bottom:1px solid var(--c-line)"><a href={`/estaciones/${e.estado}/${s.slug}/`} class="group flex items-center justify-between gap-4 py-3"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{s.nombre}</span><span class="text-xs" style="color:var(--c-muted)">{s.tipo} · {s.ciudad}</span></span></a></li>))}
             </ul>
           </div>
         )}
       </div>
 
       <aside class="flex flex-col gap-4 lg:sticky lg:top-28">
-        <div class="p-6" style="background:#0C1825;border:1px solid rgba(74,117,153,0.25)">
+        <div class="p-6" style="background:var(--c-surface);border:1px solid var(--c-line-strong)">
           <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:var(--forge-300)">Contacto</p>
           <ul class="flex flex-col gap-3 list-none m-0 p-0 text-sm">
-            {e.telefono && <li class="flex items-center gap-3"><span class="font-display text-[10px] uppercase tracking-wider w-16 shrink-0" style="color:var(--forge-300)">Tel.</span><a href={`tel:${e.telefono}`} class="hover:text-[#FF6B26]" style="color:#FFFFFF">{e.telefono}</a></li>}
-            {e.email && <li class="flex items-center gap-3"><span class="font-display text-[10px] uppercase tracking-wider w-16 shrink-0" style="color:var(--forge-300)">Correo</span><a href={`mailto:${e.email}`} class="hover:text-[#FF6B26] break-all" style="color:#FFFFFF">{e.email}</a></li>}
-            {webPublicable && <li class="flex items-center gap-3"><span class="font-display text-[10px] uppercase tracking-wider w-16 shrink-0" style="color:var(--forge-300)">Web</span><a href={webPublicable} target="_blank" rel={relEmpresa(webPublicable)} class="hover:text-[#FF6B26] break-all" style="color:#FFFFFF">{webHost}</a></li>}
-            {e.direccion && <li class="flex items-start gap-3"><span class="font-display text-[10px] uppercase tracking-wider w-16 shrink-0 mt-0.5" style="color:var(--forge-300)">Dirección</span><span style="color:#CBD5E1">{e.direccion}</span></li>}
-            {!e.telefono && !e.email && !webPublicable && <li class="text-xs" style="color:#64748B">Sin datos de contacto en el registro público.</li>}
+            {e.telefono && <li class="flex items-center gap-3"><span class="font-display text-[10px] uppercase tracking-wider w-16 shrink-0" style="color:var(--forge-300)">Tel.</span><a href={`tel:${e.telefono}`} class="hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{e.telefono}</a></li>}
+            {e.email && <li class="flex items-center gap-3"><span class="font-display text-[10px] uppercase tracking-wider w-16 shrink-0" style="color:var(--forge-300)">Correo</span><a href={`mailto:${e.email}`} class="hover:text-[var(--c-accent)] break-all" style="color:var(--c-ink)">{e.email}</a></li>}
+            {webPublicable && <li class="flex items-center gap-3"><span class="font-display text-[10px] uppercase tracking-wider w-16 shrink-0" style="color:var(--forge-300)">Web</span><a href={webPublicable} target="_blank" rel={relEmpresa(webPublicable)} class="hover:text-[var(--c-accent)] break-all" style="color:var(--c-ink)">{webHost}</a></li>}
+            {e.direccion && <li class="flex items-start gap-3"><span class="font-display text-[10px] uppercase tracking-wider w-16 shrink-0 mt-0.5" style="color:var(--forge-300)">Dirección</span><span style="color:var(--c-text)">{e.direccion}</span></li>}
+            {!e.telefono && !e.email && !webPublicable && <li class="text-xs" style="color:var(--c-muted)">Sin datos de contacto en el registro público.</li>}
           </ul>
         </div>
 
         {hasMap && (
-          <div style="border:1px solid rgba(74,117,153,0.25)">
+          <div style="border:1px solid var(--c-line-strong)">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
-            <div id="ficha-map" data-lat={e.coordenadas!.lat} data-lng={e.coordenadas!.lng} data-color={g.color} style="height:240px;background:#0C1825" role="img" aria-label={`Mapa de ${e.nombre}`}></div>
-            <a href={`https://www.google.com/maps?q=${e.coordenadas!.lat},${e.coordenadas!.lng}`} target="_blank" rel="noopener nofollow" class="block px-4 py-2.5 font-display text-[11px] uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57;background:#0C1825;border-top:1px solid rgba(74,117,153,0.2)">Ubicación de {e.nombre} en Google Maps</a>
+            <div id="ficha-map" data-lat={e.coordenadas!.lat} data-lng={e.coordenadas!.lng} data-color={g.color} style="height:240px;background:var(--c-surface)" role="img" aria-label={`Mapa de ${e.nombre}`}></div>
+            <a href={`https://www.google.com/maps?q=${e.coordenadas!.lat},${e.coordenadas!.lng}`} target="_blank" rel="noopener nofollow" class="block px-4 py-2.5 font-display text-[11px] uppercase tracking-wider hover:text-[var(--c-accent)]" style="color:var(--c-accent);background:var(--c-surface);border-top:1px solid var(--c-line)">Ubicación de {e.nombre} en Google Maps</a>
           </div>
         )}
 
-        <div class="p-6" style="background:#0C1825;border:1px solid rgba(74,117,153,0.25)">
+        <div class="p-6" style="background:var(--c-surface);border:1px solid var(--c-line-strong)">
           <p class="font-display font-bold text-xs uppercase tracking-widest mb-3" style="color:var(--forge-300)">Fuente del registro</p>
-          <ul class="flex flex-col gap-2 list-none m-0 p-0">{fuentes.map((f) => <li><a href={f.url} data-fuente target="_blank" rel="noopener nofollow" class="text-xs hover:text-[#FF6B26]" style="color:#CBD5E1">{f.nombre}</a></li>)}</ul>
-          {e.claseDENUE && <p class="text-[11px] mt-3 leading-relaxed" style="color:#64748B">Clase de actividad: {e.claseDENUE}</p>}
-          <p class="text-[11px] mt-3 leading-relaxed" style="color:#64748B">{conf.descripcion}</p>
+          <ul class="flex flex-col gap-2 list-none m-0 p-0">{fuentes.map((f) => <li><a href={f.url} data-fuente target="_blank" rel="noopener nofollow" class="text-xs hover:text-[var(--c-accent)]" style="color:var(--c-text)">{f.nombre}</a></li>)}</ul>
+          {e.claseDENUE && <p class="text-[11px] mt-3 leading-relaxed" style="color:var(--c-muted)">Clase de actividad: {e.claseDENUE}</p>}
+          <p class="text-[11px] mt-3 leading-relaxed" style="color:var(--c-muted)">{conf.descripcion}</p>
         </div>
 
-        <div class="p-6" style={`background:#0C1825;border:1px solid rgba(245,166,35,0.35);border-left:3px solid #F5A623`}>
-          <p class="font-display font-bold text-sm mb-2" style="color:#FFFFFF">¿Es tu empresa?</p>
-          <p class="text-xs leading-relaxed mb-4" style="color:#94A3B8">Reclama la ficha, completa tus datos y obtén el sello de verificación. Las fichas destacadas aparecen primero en {edo.nombre}.</p>
+        <div class="p-6" style={`background:var(--c-surface);border:1px solid rgba(181,71,8,0.35);border-left:3px solid var(--c-amber)`}>
+          <p class="font-display font-bold text-sm mb-2" style="color:var(--c-ink)">¿Es tu empresa?</p>
+          <p class="text-xs leading-relaxed mb-4" style="color:var(--c-text-2)">Reclama la ficha, completa tus datos y obtén el sello de verificación. Las fichas destacadas aparecen primero en {edo.nombre}.</p>
           <a href="/empresas/registro/" class="btn btn-gold btn-sm w-full text-center">Reclamar esta ficha</a>
-          <a href={whatsappUrl(waMsg)} target="_blank" rel="noopener noreferrer" class="block text-center mt-3 font-display text-[11px] uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57">Escribir a FIREFIGHTERS MX</a>
+          <a href={whatsappUrl(waMsg)} target="_blank" rel="noopener noreferrer" class="block text-center mt-3 font-display text-[11px] uppercase tracking-wider hover:text-[var(--c-accent)]" style="color:var(--c-accent)">Escribir a FIREFIGHTERS MX</a>
         </div>
 
-        <div class="p-6" style="background:#0C1825;border:1px solid rgba(74,117,153,0.25)">
+        <div class="p-6" style="background:var(--c-surface);border:1px solid var(--c-line-strong)">
           <p class="font-display font-bold text-xs uppercase tracking-widest mb-3" style="color:var(--forge-300)">Guías de compra</p>
-          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">{cats.map((c) => <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/productos/${c.slug}/`} class="block py-2.5 font-display font-semibold text-sm hover:text-[#FF6B26]" style="color:#FFFFFF">{c.label}</a></li>)}</ul>
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">{cats.map((c) => <li style="border-bottom:1px solid var(--c-line)"><a href={`/productos/${c.slug}/`} class="block py-2.5 font-display font-semibold text-sm hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{c.label}</a></li>)}</ul>
         </div>
       </aside>
     </div>

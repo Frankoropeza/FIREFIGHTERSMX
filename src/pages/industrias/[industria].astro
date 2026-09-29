@@ -74,29 +74,29 @@ const otherIndustries = industries.filter((x) => x.slug !== ind.slug);
   schema={[serviceSchema, breadcrumbSchema, faqSchema]}
 >
   <!-- Breadcrumb -->
-  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+  <nav class="py-3" style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line)" aria-label="Breadcrumb">
     <div class="container-site">
       <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
-        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li><a href="/" class="hover:text-[var(--c-accent)]">Inicio</a></li>
         <li aria-hidden="true">/</li>
-        <li><a href="/industrias" class="hover:text-[#FF6B26]">Industrias</a></li>
+        <li><a href="/industrias" class="hover:text-[var(--c-accent)]">Industrias</a></li>
         <li aria-hidden="true">/</li>
-        <li><span style="color:#94A3B8" aria-current="page">{ind.name}</span></li>
+        <li><span style="color:var(--c-text-2)" aria-current="page">{ind.name}</span></li>
       </ol>
     </div>
   </nav>
 
   <!-- Hero -->
-  <section class="relative overflow-hidden" style="background:#040A12;padding-block:4.5rem">
-    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
+  <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:4.5rem">
+    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(200,16,46,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
     <div class="container-site relative z-10">
       <span class="section-eyebrow mb-5 inline-flex">{ind.norm}</span>
-      <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,6vw,4.5rem);line-height:0.95">
+      <h1 class="font-display font-bold uppercase mb-6" style="color:var(--c-ink);font-size:clamp(2.5rem,6vw,4.5rem);line-height:0.95">
         {ind.name}
       </h1>
       <div class="max-w-3xl flex flex-col gap-4">
         {ind.intro.map((p) => (
-          <p class="text-sm leading-[1.9]" style="color:#94A3B8">{p}</p>
+          <p class="text-sm leading-[1.9]" style="color:var(--c-text-2)">{p}</p>
         ))}
       </div>
       <div class="flex flex-col sm:flex-row gap-3 mt-8">
@@ -118,16 +118,16 @@ const otherIndustries = industries.filter((x) => x.slug !== ind.slug);
   <RelatedLinks ruta={ind.href} />
 
   <!-- Riesgos del sector -->
-  <section class="section" style="background:#070E1A" aria-labelledby="riesgos-title">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="riesgos-title">
     <div class="container-site">
-      <h2 id="riesgos-title" class="font-display font-bold mb-8" style="color:#FFFFFF;font-size:clamp(1.5rem,2.5vw,2.25rem)">
+      <h2 id="riesgos-title" class="font-display font-bold mb-8" style="color:var(--c-ink);font-size:clamp(1.5rem,2.5vw,2.25rem)">
         Riesgos típicos del sector
       </h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style="border-top:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style="border-top:1px solid var(--c-line);border-left:1px solid var(--c-line)">
         {ind.risks.map((r) => (
-          <div class="grid-cell flex flex-col gap-2 p-6" style="border-right:1px solid rgba(74,117,153,0.18);border-bottom:1px solid rgba(74,117,153,0.18)">
-            <h3 class="font-display font-bold text-base" style="color:#FFFFFF">{r.name}</h3>
-            <p class="text-xs leading-relaxed" style="color:#64748B">{r.detail}</p>
+          <div class="grid-cell flex flex-col gap-2 p-6" style="border-right:1px solid var(--c-line);border-bottom:1px solid var(--c-line)">
+            <h3 class="font-display font-bold text-base" style="color:var(--c-ink)">{r.name}</h3>
+            <p class="text-xs leading-relaxed" style="color:var(--c-muted)">{r.detail}</p>
           </div>
         ))}
       </div>
@@ -135,26 +135,26 @@ const otherIndustries = industries.filter((x) => x.slug !== ind.slug);
   </section>
 
   <!-- Solución (detalle 2-col con imagen) -->
-  <section class="section" style="background:#040A12" aria-labelledby={`solucion-${ind.slug}`}>
+  <section class="section" style="background:var(--c-bg)" aria-labelledby={`solucion-${ind.slug}`}>
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
         <div>
           <span class="section-eyebrow mb-5 inline-flex">Nuestra solución</span>
-          <h2 id={`solucion-${ind.slug}`} class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(2rem,3.8vw,3rem);line-height:1.05">
+          <h2 id={`solucion-${ind.slug}`} class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(2rem,3.8vw,3rem);line-height:1.05">
             {ind.spotlight.title}<br/>
-            <span style="color:#F75000">{ind.spotlight.highlight}</span>
+            <span style="color:var(--c-accent)">{ind.spotlight.highlight}</span>
           </h2>
           {ind.spotlight.paragraphs.map((p) => (
-            <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">{p}</p>
+            <p class="text-sm leading-[1.9] mb-4" style="color:var(--c-text-2)">{p}</p>
           ))}
-          <div class="flex flex-col mt-6" style="border-top:1px solid rgba(74,117,153,0.18)">
+          <div class="flex flex-col mt-6" style="border-top:1px solid var(--c-line)">
             {ind.spotlight.subsections.map((sub) => (
-              <div class="flex items-start gap-4 py-4" style="border-bottom:1px solid rgba(74,117,153,0.18)">
-                <span class="w-1.5 h-1.5 mt-2 shrink-0" style="background:#F75000" aria-hidden="true"></span>
+              <div class="flex items-start gap-4 py-4" style="border-bottom:1px solid var(--c-line)">
+                <span class="w-1.5 h-1.5 mt-2 shrink-0" style="background:var(--c-accent)" aria-hidden="true"></span>
                 <div>
-                  <h3 class="font-display font-bold text-base leading-tight mb-1" style="color:#FFFFFF">{sub.name}</h3>
-                  <p class="text-xs leading-relaxed m-0" style="color:#64748B">{sub.detail}</p>
+                  <h3 class="font-display font-bold text-base leading-tight mb-1" style="color:var(--c-ink)">{sub.name}</h3>
+                  <p class="text-xs leading-relaxed m-0" style="color:var(--c-muted)">{sub.detail}</p>
                 </div>
               </div>
             ))}
@@ -162,14 +162,14 @@ const otherIndustries = industries.filter((x) => x.slug !== ind.slug);
         </div>
 
         <figure class="relative m-0">
-          <div class="relative overflow-hidden" style="border:1px solid rgba(74,117,153,0.25)">
+          <div class="relative overflow-hidden" style="border:1px solid var(--c-line-strong)">
             <img src={ind.spotlight.image} alt={ind.spotlight.imageAlt} width="640" height="720" loading="lazy" decoding="async" class="w-full h-auto block" />
-            <div class="absolute top-0 left-0 w-12 h-12 pointer-events-none" style="border-top:3px solid #F75000;border-left:3px solid #F75000" aria-hidden="true"></div>
-            <div class="absolute bottom-0 right-0 w-12 h-12 pointer-events-none" style="border-bottom:3px solid #F75000;border-right:3px solid #F75000" aria-hidden="true"></div>
+            <div class="absolute top-0 left-0 w-12 h-12 pointer-events-none" style="border-top:3px solid var(--c-accent);border-left:3px solid var(--c-accent)" aria-hidden="true"></div>
+            <div class="absolute bottom-0 right-0 w-12 h-12 pointer-events-none" style="border-bottom:3px solid var(--c-accent);border-right:3px solid var(--c-accent)" aria-hidden="true"></div>
           </div>
           <figcaption class="flex items-center justify-between gap-3 mt-3 text-[10px] font-display font-semibold uppercase tracking-widest" style="color:var(--forge-300)">
             <span>{ind.name}</span>
-            <span style="color:#FF8F57">{ind.norm}</span>
+            <span style="color:var(--c-accent)">{ind.norm}</span>
           </figcaption>
         </figure>
 
@@ -178,31 +178,31 @@ const otherIndustries = industries.filter((x) => x.slug !== ind.slug);
   </section>
 
   <!-- Equipamiento recomendado (cross-selling a productos) -->
-  <section class="section" style="background:#070E1A" aria-labelledby="equipo-rec-title">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="equipo-rec-title">
     <div class="container-site">
       <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Equipamiento recomendado</span>
-          <h2 id="equipo-rec-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+          <h2 id="equipo-rec-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Lo que tu operación<br/>
-            <span style="color:#F75000">necesita primero.</span>
+            <span style="color:var(--c-accent)">necesita primero.</span>
           </h2>
         </div>
         <a href="/productos" class="btn btn-outline btn-sm self-start sm:self-auto shrink-0">Catálogo completo </a>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px" style="background:var(--c-line);border:1px solid var(--c-line)">
         {recCategories.map((cat) => (
           <a href={`/productos/${cat!.slug}`} class="grid-cell group flex flex-col gap-3 p-6">
             <div class="flex items-center justify-between gap-3">
-              <span class="w-9 h-9 flex items-center justify-center shrink-0" style={`border:1px solid rgba(74,117,153,0.3);color:${cat!.accent}`}>
+              <span class="w-9 h-9 flex items-center justify-center shrink-0" style={`border:1px solid var(--c-line-strong);color:${cat!.accent}`}>
                 <span class="w-4 h-4 block" set:html={cat!.icon}/>
               </span>
               <span class="text-[9px] font-display font-semibold uppercase tracking-widest text-right" style="color:var(--forge-300)">{cat!.norm}</span>
             </div>
-            <h3 class="font-display font-bold text-base leading-snug group-hover:text-[#FF6B26]" style="color:#FFFFFF">{cat!.label}</h3>
-            <p class="text-xs leading-relaxed" style="color:#64748B;flex:1">{cat!.shortDesc}</p>
-            <span class="text-xs font-display font-semibold uppercase tracking-wider" style="color:#FF8F57">Guía de {cat!.label} </span>
+            <h3 class="font-display font-bold text-base leading-snug group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{cat!.label}</h3>
+            <p class="text-xs leading-relaxed" style="color:var(--c-muted);flex:1">{cat!.shortDesc}</p>
+            <span class="text-xs font-display font-semibold uppercase tracking-wider" style="color:var(--c-accent)">Guía de {cat!.label} </span>
           </a>
         ))}
       </div>
@@ -210,17 +210,17 @@ const otherIndustries = industries.filter((x) => x.slug !== ind.slug);
   </section>
 
   <!-- Servicios recomendados (cross-selling a servicios) -->
-  <section class="section-tight" style="background:#040A12" aria-labelledby="servicios-rec-title">
+  <section class="section-tight" style="background:var(--c-bg)" aria-labelledby="servicios-rec-title">
     <div class="container-site">
       <h2 id="servicios-rec-title" class="font-display font-bold text-sm uppercase tracking-widest mb-6" style="color:var(--forge-300)">
         Servicios que aplican a tu sector
       </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px" style="background:var(--c-line);border:1px solid var(--c-line)">
         {recServices.map((s) => (
           <a href={s!.href} class="grid-cell group flex flex-col gap-2 p-5">
             <span class="text-[9px] font-display font-semibold uppercase tracking-widest" style="color:var(--forge-300)">{s!.norm}</span>
-            <h3 class="font-display font-bold text-base leading-snug group-hover:text-[#FF6B26]" style="color:#FFFFFF">{s!.title}</h3>
-            <p class="text-xs leading-relaxed" style="color:#64748B">{s!.shortDesc}</p>
+            <h3 class="font-display font-bold text-base leading-snug group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{s!.title}</h3>
+            <p class="text-xs leading-relaxed" style="color:var(--c-muted)">{s!.shortDesc}</p>
           </a>
         ))}
       </div>
@@ -228,16 +228,16 @@ const otherIndustries = industries.filter((x) => x.slug !== ind.slug);
   </section>
 
   <!-- FAQ del sector -->
-  <section class="section" style="background:#070E1A" aria-labelledby="faq-industria-title">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="faq-industria-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-start">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes</span>
-          <h2 id="faq-industria-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+          <h2 id="faq-industria-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Lo que preguntan los responsables<br/>
-            <span style="color:#F75000">de seguridad del sector.</span>
+            <span style="color:var(--c-accent)">de seguridad del sector.</span>
           </h2>
-          <p class="text-sm mt-4 leading-relaxed" style="color:#64748B">
+          <p class="text-sm mt-4 leading-relaxed" style="color:var(--c-muted)">
             ¿Tu caso es distinto? Escríbenos por {CANAL_CONTACTO} y un especialista que conoce
             tu giro te responde el mismo día hábil.
           </p>
@@ -246,18 +246,18 @@ const otherIndustries = industries.filter((x) => x.slug !== ind.slug);
           </a>
         </div>
 
-        <div style="border:1px solid rgba(74,117,153,0.2);background:#0C1825">
+        <div style="border:1px solid var(--c-line);background:var(--c-surface)">
           {ind.faqs.map((faq) => (
-            <details class="faq-item group" style="border-bottom:1px solid rgba(74,117,153,0.15)">
+            <details class="faq-item group" style="border-bottom:1px solid var(--c-line)">
               <summary class="flex items-start justify-between gap-4 cursor-pointer select-none list-none p-6">
-                <h3 class="font-display font-semibold pr-2 group-open:text-[#FF6B26] m-0" style="color:#FFFFFF;font-size:0.875rem;line-height:1.375">
+                <h3 class="font-display font-semibold pr-2 group-open:text-[var(--c-accent)] m-0" style="color:var(--c-ink);font-size:0.875rem;line-height:1.375">
                   {faq.q}
                 </h3>
-                <span class="faq-icon shrink-0 mt-0.5 w-5 h-5 flex items-center justify-center" style="border:1px solid rgba(74,117,153,0.3);color:var(--forge-300)">
+                <span class="faq-icon shrink-0 mt-0.5 w-5 h-5 flex items-center justify-center" style="border:1px solid var(--c-line-strong);color:var(--forge-300)">
                   
                 </span>
               </summary>
-              <p class="px-6 pb-6 text-sm leading-relaxed" style="color:#64748B">{faq.a}</p>
+              <p class="px-6 pb-6 text-sm leading-relaxed" style="color:var(--c-muted)">{faq.a}</p>
             </details>
           ))}
         </div>
@@ -266,7 +266,7 @@ const otherIndustries = industries.filter((x) => x.slug !== ind.slug);
   </section>
 
   <!-- Otras industrias (internal linking) -->
-  <section class="section-tight" style="background:#040A12" aria-labelledby="otras-ind-title">
+  <section class="section-tight" style="background:var(--c-bg)" aria-labelledby="otras-ind-title">
     <div class="container-site">
       <h2 id="otras-ind-title" class="font-display font-bold text-sm uppercase tracking-widest mb-6" style="color:var(--forge-300)">
         Otros sectores que equipamos

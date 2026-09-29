@@ -22,27 +22,27 @@ export interface TipoCascoMeta {
 export const tipoCasco: Record<TipoCascoKey, TipoCascoMeta> = {
   estructural: {
     label: 'Estructural',
-    color: '#F75000',
+    color: 'var(--c-accent)',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M3 14a9 9 0 0 1 18 0M3 14h18v3a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1zM8 14v-2"/>`,
   },
   proximidad: {
     label: 'Proximidad ARFF',
-    color: '#4A9ED4',
+    color: 'var(--c-info)',
     icon: `<circle cx="12" cy="12" r="4.5"/><path stroke-linecap="round" d="M12 1.5v3M12 19.5v3M4 4l2 2M18 18l2 2M1.5 12h3M19.5 12h3M4 20l2-2M18 6l2-2"/>`,
   },
   forestal: {
     label: 'Forestal',
-    color: '#34D399',
+    color: 'var(--c-success)',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M12 2 4 22h16L12 2zM12 9v7"/>`,
   },
   usar: {
     label: 'USAR / Rescate',
-    color: '#F5A623',
+    color: 'var(--c-amber)',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>`,
   },
   mando: {
     label: 'Mando',
-    color: '#A78BFA',
+    color: 'var(--c-violet)',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.5a.6.6 0 0 1 1.04 0l2.3 4.66 5.14.75a.6.6 0 0 1 .33 1.02l-3.72 3.63.88 5.12a.6.6 0 0 1-.87.63L12 17.5l-4.6 2.42a.6.6 0 0 1-.87-.63l.88-5.12L3.7 10.5a.6.6 0 0 1 .33-1.02l5.14-.75z"/>`,
   },
 };

@@ -7,25 +7,25 @@ import { services } from '@data/services';
 import CardMedia from '@components/common/CardMedia.astro';
 ---
 
-<section class="home-deferred-section section" style="background:#070E1A" aria-labelledby="services-title">
+<section class="home-deferred-section section" style="background:var(--c-bg-alt)" aria-labelledby="services-title">
   <div class="container-site">
 
     <!-- Header -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
       <div>
         <span class="section-eyebrow mb-4 inline-flex">Servicios profesionales</span>
-        <h2 id="services-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+        <h2 id="services-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
           Servicios contra incendio para empresas,<br/>
-          <span style="color:#F75000">brigadas y cuerpos de bomberos.</span>
+          <span style="color:var(--c-accent)">brigadas y cuerpos de bomberos.</span>
         </h2>
       </div>
-      <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-        <p class="text-sm leading-relaxed mb-3" style="color:#94A3B8">
+      <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+        <p class="text-sm leading-relaxed mb-3" style="color:var(--c-text-2)">
           Venta, capacitación, mantenimiento, instalación y soporte para licitaciones.
           Todo desde un solo proveedor, para que tu operación cumpla la normativa
           vigente sin coordinar a tres empresas distintas.
         </p>
-        <a href="/servicios" class="inline-flex items-center gap-2 text-xs font-display font-semibold uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57;letter-spacing:0.1em">
+        <a href="/servicios" class="inline-flex items-center gap-2 text-xs font-display font-semibold uppercase tracking-wider hover:text-[var(--c-accent)]" style="color:var(--c-accent);letter-spacing:0.1em">
           Todos los servicios contra incendio
           
         </a>
@@ -33,22 +33,22 @@ import CardMedia from '@components/common/CardMedia.astro';
     </div>
 
     <!-- Lista numerada -->
-    <ol class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px list-none m-0 p-0" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
+    <ol class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px list-none m-0 p-0" style="background:var(--c-line);border:1px solid var(--c-line)">
       {services.map((s, i) => (
-        <li class="m-0 p-0" style="background:#070E1A">
+        <li class="m-0 p-0" style="background:var(--c-bg-alt)">
           <a
             href={s.href}
             class="service-row group flex flex-col gap-5 p-6 lg:p-7"
-            style="background:#070E1A;height:100%"
+            style="background:var(--c-bg-alt);height:100%"
           >
             <CardMedia src={s.spotlight?.image ?? `/images/servicios/${s.slug}.avif`} alt={s.spotlight?.imageAlt ?? s.title} />
             <span class="flex items-start gap-5">
-            <span class="font-display font-bold text-2xl shrink-0 group-hover:text-[#F75000]" style="color:rgba(74,117,153,0.55);min-width:2.5rem" aria-hidden="true">
+            <span class="font-display font-bold text-2xl shrink-0 group-hover:text-[var(--c-accent)]" style="color:var(--c-muted);min-width:2.5rem" aria-hidden="true">
               
             </span>
             <span class="flex flex-col gap-1.5 flex-1">
-              <span class="font-display font-bold text-lg leading-tight group-hover:text-[#FF6B26]" style="color:#FFFFFF">{s.title}</span>
-              <span class="text-sm leading-relaxed" style="color:#64748B">{s.shortDesc}</span>
+              <span class="font-display font-bold text-lg leading-tight group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{s.title}</span>
+              <span class="text-sm leading-relaxed" style="color:var(--c-muted)">{s.shortDesc}</span>
             </span>
             
             </span>
@@ -61,5 +61,5 @@ import CardMedia from '@components/common/CardMedia.astro';
 </section>
 
 <style>
-  .service-row:hover { background: #0C1825 !important; }
+  .service-row:hover { background: var(--c-surface) !important; }
 </style>

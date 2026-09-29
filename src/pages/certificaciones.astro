@@ -51,43 +51,43 @@ const grupos = [
 <BaseLayout {...seoMeta} schema={[breadcrumbSchema]}>
 
   <!-- Breadcrumb -->
-  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+  <nav class="py-3" style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line)" aria-label="Breadcrumb">
     <div class="container-site">
       <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
-        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li><a href="/" class="hover:text-[var(--c-accent)]">Inicio</a></li>
         <li aria-hidden="true">/</li>
-        <li><a href="/empresa" class="hover:text-[#FF6B26]">Empresa</a></li>
+        <li><a href="/empresa" class="hover:text-[var(--c-accent)]">Empresa</a></li>
         <li aria-hidden="true">/</li>
-        <li><span style="color:#94A3B8" aria-current="page">Certificaciones</span></li>
+        <li><span style="color:var(--c-text-2)" aria-current="page">Certificaciones</span></li>
       </ol>
     </div>
   </nav>
 
   <!-- Hero -->
-  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">
-    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
+  <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:5rem">
+    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(200,16,46,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
 
     <div class="container-site relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div>
           <span class="section-eyebrow mb-5 inline-flex">Normatividad · NFPA y NOM</span>
-          <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+          <h1 class="font-display font-bold uppercase mb-6" style="color:var(--c-ink);font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
             Certificaciones<br/>
-            <span style="color:#F75000">que respaldan</span>
+            <span style="color:var(--c-accent)">que respaldan</span>
           </h1>
           <div class="flex flex-col sm:flex-row gap-3">
             <a href={whatsappUrl('Hola, tengo una duda sobre qué norma aplica a mi equipo.')} target="_blank" rel="noopener" class="btn btn-primary btn-lg">Consultar norma</a>
             <a href="/cotizacion" class="btn btn-ghost btn-lg">Solicitar cotización de equipo contra incendio</a>
           </div>
         </div>
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
-          <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
+          <p class="text-sm leading-[1.9] mb-5" style="color:var(--c-text-2)">
             Todo nuestro catálogo está certificado bajo
-            <strong style="color:#CBD5E1">normas NFPA, NOM-002-STPS e ISO 9001</strong>, con
+            <strong style="color:var(--c-text)">normas NFPA, NOM-002-STPS e ISO 9001</strong>, con
             verificación de laboratorio de tercera parte acreditado. Aquí te explicamos qué
             certifica cada norma y cómo se acredita.
           </p>
-          <p class="text-sm leading-[1.9] mb-6" style="color:#64748B">
+          <p class="text-sm leading-[1.9] mb-6" style="color:var(--c-muted)">
             Cada equipo se entrega con su certificado de conformidad, ficha técnica y, cuando
             aplica, el manifiesto de cumplimiento listo para auditoría STPS, Protección Civil
             o tu expediente de licitación.
@@ -100,7 +100,7 @@ const grupos = [
         </div>
       </div>
     </div>
-    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)" aria-hidden="true"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(200,16,46,0.4) 30%, rgba(200,16,46,0.4) 70%, transparent)" aria-hidden="true"></div>
   </section>
 
   <!-- Accesos rápidos -->
@@ -108,18 +108,18 @@ const grupos = [
 
   <!-- Grupos de normas -->
   {grupos.map((g, gi) => (
-    <section class="section" style={`background:${gi % 2 === 0 ? '#040A12' : '#070E1A'}`} aria-label={g.grupo}>
+    <section class="section" style={`background:${gi % 2 === 0 ? 'var(--c-bg)' : 'var(--c-bg-alt)'}`} aria-label={g.grupo}>
       <div class="container-site">
         <div class="mb-10">
           <span class="section-eyebrow mb-4 inline-flex">{g.eyebrow}</span>
-          <h2 class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">{g.grupo}</h2>
+          <h2 class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">{g.grupo}</h2>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {g.items.map((cert) => (
-            <article class="norm-card flex flex-col gap-3 p-6" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
+            <article class="norm-card flex flex-col gap-3 p-6" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
               <span class="badge badge-fire w-fit">{cert.norm}</span>
-              <h3 class="font-display font-bold text-lg leading-tight" style="color:#FFFFFF">{cert.title}</h3>
-              <p class="text-xs leading-relaxed" style="color:#64748B">{cert.desc}</p>
+              <h3 class="font-display font-bold text-lg leading-tight" style="color:var(--c-ink)">{cert.title}</h3>
+              <p class="text-xs leading-relaxed" style="color:var(--c-muted)">{cert.desc}</p>
             </article>
           ))}
         </div>
@@ -128,27 +128,27 @@ const grupos = [
   ))}
 
   <!-- CTA + cross-links -->
-  <section class="section" style="background:#040A12" aria-labelledby="cert-cross-title">
+  <section class="section" style="background:var(--c-bg)" aria-labelledby="cert-cross-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">¿Qué norma aplica?</span>
-          <h2 id="cert-cross-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+          <h2 id="cert-cross-title" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Te decimos exactamente<br/>
-            <span style="color:#F75000">qué exige tu giro.</span>
+            <span style="color:var(--c-accent)">qué exige tu giro.</span>
           </h2>
-          <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
+          <p class="text-sm leading-relaxed mb-8" style="color:var(--c-text-2)">
             La norma correcta depende de tu operación: no es lo mismo un centro de trabajo bajo
             NOM-002-STPS que un cuerpo de bomberos que exige NFPA 1970. Cuéntanos tu caso y te
             mapeamos el marco aplicable y el equipo que lo cumple.
           </p>
           <a href={whatsappUrl('Hola, quiero saber qué normas aplican a mi operación.')} target="_blank" rel="noopener" class="btn btn-primary">Consultar por {CANAL_CONTACTO}</a>
         </div>
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
           <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">
             También te puede servir
           </h2>
-          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
             {[
               { label: 'Catálogo de productos', desc: 'Equipo certificado por categoría', href: '/productos' },
               { label: 'Blog: NFPA 1970, la nueva norma', desc: 'Qué cambió en trajes estructurales', href: '/blog/nfpa-1970-nueva-norma-trajes-bombero' },
@@ -156,11 +156,11 @@ const grupos = [
               { label: 'Industrias que atendemos', desc: 'La norma que rige cada sector', href: '/industrias' },
               { label: 'Volver a la empresa', desc: 'Visión general de FIREFIGHTERS MX', href: '/empresa' },
             ].map((l) => (
-              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+              <li style="border-bottom:1px solid var(--c-line)">
                 <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
                   <span class="flex flex-col gap-0.5">
-                    <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
-                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
+                    <span class="font-display font-semibold text-sm group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{l.label}</span>
+                    <span class="text-xs" style="color:var(--c-muted)">{l.desc}</span>
                   </span>
                   
                 </a>
@@ -175,5 +175,5 @@ const grupos = [
 </BaseLayout>
 
 <style>
-  .norm-card:hover { border-color: rgba(247, 80, 0, 0.45) !important; }
+  .norm-card:hover { border-color: rgba(200,16,46,0.45) !important; }
 </style>

@@ -133,28 +133,28 @@ const aboutSchema = {
 <BaseLayout {...seoMeta} schema={[breadcrumbSchema, aboutSchema]}>
 
   <!-- Breadcrumb -->
-  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+  <nav class="py-3" style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line)" aria-label="Breadcrumb">
     <div class="container-site">
       <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
-        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li><a href="/" class="hover:text-[var(--c-accent)]">Inicio</a></li>
         <li aria-hidden="true">/</li>
-        <li><span style="color:#94A3B8" aria-current="page">Empresa</span></li>
+        <li><span style="color:var(--c-text-2)" aria-current="page">Empresa</span></li>
       </ol>
     </div>
   </nav>
 
   <!-- Hero -->
-  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">
-    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
+  <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:5rem">
+    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(200,16,46,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
 
     <div class="container-site relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
         <div>
           <span class="section-eyebrow mb-5 inline-flex">Quiénes somos</span>
-          <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+          <h1 class="font-display font-bold uppercase mb-6" style="color:var(--c-ink);font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
             La empresa que<br/>
-            <span style="color:#F75000">equipa a México</span>
+            <span style="color:var(--c-accent)">equipa a México</span>
           </h1>
           <div class="flex flex-col sm:flex-row gap-3">
             <a
@@ -168,14 +168,14 @@ const aboutSchema = {
           </div>
         </div>
 
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
-          <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
+          <p class="text-sm leading-[1.9] mb-5" style="color:var(--c-text-2)">
             FIREFIGHTERS MX es el portal especializado en
-            <strong style="color:#CBD5E1">equipo para bomberos, protección civil e industria</strong>
+            <strong style="color:var(--c-text)">equipo para bomberos, protección civil e industria</strong>
             en México. Llevamos más de 15 años como distribuidores autorizados de las marcas más
             confiables del mundo, con todo el catálogo certificado bajo NFPA y NOM-002-STPS.
           </p>
-          <p class="text-sm leading-[1.9] mb-6" style="color:#64748B">
+          <p class="text-sm leading-[1.9] mb-6" style="color:var(--c-muted)">
             No vendemos cajas: acompañamos cada compra con la norma correcta, el servicio
             que la mantiene vigente y la documentación que tu autoridad va a auditar. Por eso
             nos eligen cuerpos municipales, brigadas industriales y dependencias en los 32 estados.
@@ -190,21 +190,21 @@ const aboutSchema = {
       </div>
     </div>
 
-    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)" aria-hidden="true"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(200,16,46,0.4) 30%, rgba(200,16,46,0.4) 70%, transparent)" aria-hidden="true"></div>
   </section>
 
   <!-- Accesos rápidos (interlinking) -->
   <QuickLinksBar />
 
   <!-- Cifras -->
-  <section class="section-tight" style="background:#070E1A" aria-label="La empresa en cifras">
+  <section class="section-tight" style="background:var(--c-bg-alt)" aria-label="La empresa en cifras">
     <div class="container-site">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style="border:1px solid rgba(74,117,153,0.18)">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style="border:1px solid var(--c-line)">
         {figures.map((f, i) => (
-          <div class="flex flex-col gap-2 p-6" style={`background:#0C1825;${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.18);' : ''}`}>
-            <span class="font-display font-bold" style="color:#F75000;font-size:2.25rem;line-height:1">{f.value}</span>
-            <h2 class="font-display font-bold text-sm uppercase tracking-wider" style="color:#FFFFFF">{f.label}</h2>
-            <p class="text-xs leading-relaxed" style="color:#64748B">{f.text}</p>
+          <div class="flex flex-col gap-2 p-6" style={`background:var(--c-surface);${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.18);' : ''}`}>
+            <span class="font-display font-bold" style="color:var(--c-accent);font-size:2.25rem;line-height:1">{f.value}</span>
+            <h2 class="font-display font-bold text-sm uppercase tracking-wider" style="color:var(--c-ink)">{f.label}</h2>
+            <p class="text-xs leading-relaxed" style="color:var(--c-muted)">{f.text}</p>
           </div>
         ))}
       </div>
@@ -212,19 +212,19 @@ const aboutSchema = {
   </section>
 
   <!-- Grid de secciones -->
-  <section class="section" style="background:#040A12" aria-labelledby="empresa-secciones-title">
+  <section class="section" style="background:var(--c-bg)" aria-labelledby="empresa-secciones-title">
     <div class="container-site">
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Conócenos</span>
-          <h2 id="empresa-secciones-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="empresa-secciones-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Todo sobre<br/>
-            <span style="color:#F75000">FIREFIGHTERS MX.</span>
+            <span style="color:var(--c-accent)">FIREFIGHTERS MX.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
             Cada área de la empresa tiene su propia página: quiénes somos, las normas que
             avalan nuestro equipo, hasta dónde llega nuestra cobertura, nuestra red de
             distribuidores, las marcas que representamos y cómo contactarnos.
@@ -234,20 +234,20 @@ const aboutSchema = {
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {sections.map((s) => (
-          <a href={s.href} class="empresa-card group relative flex flex-col overflow-hidden" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
+          <a href={s.href} class="empresa-card group relative flex flex-col overflow-hidden" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
             <div class="relative flex items-center justify-center overflow-hidden" style="height:110px">
               <div class="absolute inset-0" style={`background:linear-gradient(135deg, ${s.accent}26 0%, rgba(4,10,18,0.94) 100%)`}></div>
               <div class="relative z-10 flex items-center justify-center rounded-full"
                    style={`width:60px;height:60px;background:rgba(4,10,18,0.7);border:1.5px solid ${s.accent}44;color:${s.accent}`}>
                 <span class="block" style="width:26px;height:26px" set:html={s.icon}/>
               </div>
-              <div class="absolute bottom-0 left-0 right-0 h-8 pointer-events-none" style="background:linear-gradient(to bottom, transparent, #080F1A)"></div>
+              <div class="absolute bottom-0 left-0 right-0 h-8 pointer-events-none" style="background:linear-gradient(to bottom, transparent, var(--c-bg-alt))"></div>
             </div>
             <div class="flex flex-col flex-1 p-5 gap-2.5">
               <span class="text-[9px] font-display font-semibold uppercase tracking-widest" style="color:var(--forge-300)">{s.tag}</span>
-              <h3 class="font-display font-bold text-lg leading-tight group-hover:text-[#FF6B26]" style="color:#FFFFFF">{s.title}</h3>
-              <p class="text-xs leading-relaxed" style="color:#64748B;flex:1">{s.desc}</p>
-              <span class="flex items-center gap-1.5 text-xs font-display font-semibold uppercase tracking-wider" style="color:#FF8F57;letter-spacing:0.1em">
+              <h3 class="font-display font-bold text-lg leading-tight group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{s.title}</h3>
+              <p class="text-xs leading-relaxed" style="color:var(--c-muted);flex:1">{s.desc}</p>
+              <span class="flex items-center gap-1.5 text-xs font-display font-semibold uppercase tracking-wider" style="color:var(--c-accent);letter-spacing:0.1em">
                 {s.cta}
                 
               </span>
@@ -260,18 +260,18 @@ const aboutSchema = {
   </section>
 
   <!-- Misión · Visión · Valores -->
-  <section class="section" style="background:#070E1A" aria-labelledby="mvv-title">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="mvv-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Lo que nos mueve</span>
-          <h2 id="mvv-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="mvv-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Misión, visión<br/>
-            <span style="color:#F75000">y valores.</span>
+            <span style="color:var(--c-accent)">y valores.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
             Equipar a quien arriesga su vida no admite atajos. Estos principios definen
             cómo seleccionamos producto, cómo asesoramos y cómo respondemos cuando una
             brigada nos necesita.
@@ -281,12 +281,12 @@ const aboutSchema = {
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
         {pillars.map((p) => (
-          <div class="flex flex-col gap-4 p-7" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
-            <div class="flex items-center justify-center rounded-full" style="width:52px;height:52px;background:rgba(247,80,0,0.1);border:1.5px solid rgba(247,80,0,0.35);color:#FF6B26">
+          <div class="flex flex-col gap-4 p-7" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
+            <div class="flex items-center justify-center rounded-full" style="width:52px;height:52px;background:rgba(200,16,46,0.1);border:1.5px solid rgba(200,16,46,0.35);color:var(--c-accent)">
               <span class="block" style="width:24px;height:24px" set:html={p.icon}/>
             </div>
-            <h3 class="font-display font-bold text-xl" style="color:#FFFFFF">{p.title}</h3>
-            <p class="text-sm leading-relaxed" style="color:#94A3B8">{p.text}</p>
+            <h3 class="font-display font-bold text-xl" style="color:var(--c-ink)">{p.title}</h3>
+            <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">{p.text}</p>
           </div>
         ))}
       </div>
@@ -294,17 +294,17 @@ const aboutSchema = {
   </section>
 
   <!-- Cross-links + CTA -->
-  <section class="section" style="background:#040A12" aria-labelledby="empresa-cross-title">
+  <section class="section" style="background:var(--c-bg)" aria-labelledby="empresa-cross-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
 
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Trabajemos juntos</span>
-          <h2 id="empresa-cross-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+          <h2 id="empresa-cross-title" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Del catálogo a la<br/>
-            <span style="color:#F75000">entrega documentada.</span>
+            <span style="color:var(--c-accent)">entrega documentada.</span>
           </h2>
-          <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
+          <p class="text-sm leading-relaxed mb-8" style="color:var(--c-text-2)">
             Equipo certificado, servicio que lo mantiene vigente y soporte para tus
             licitaciones — todo con un solo proveedor y un ejecutivo responsable de tu cuenta.
             Cuéntanos qué necesitas y armamos la solución con el método de siempre:
@@ -318,11 +318,11 @@ const aboutSchema = {
           </div>
         </div>
 
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
           <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">
             También te puede servir
           </h2>
-          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
             {[
               { label: 'Catálogo de productos', desc: 'Equipo NFPA y NOM en 10 categorías', href: '/productos' },
               { label: 'Servicios profesionales', desc: 'Capacitación, mantenimiento, instalación y auditoría', href: '/servicios' },
@@ -330,11 +330,11 @@ const aboutSchema = {
               { label: 'Blog técnico', desc: 'Guías de normativa, selección y mantenimiento', href: '/blog' },
               { label: 'Soporte para licitaciones', desc: 'CompraNet, PEMEX, CFE y gobiernos', href: '/licitaciones' },
             ].map((l) => (
-              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+              <li style="border-bottom:1px solid var(--c-line)">
                 <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
                   <span class="flex flex-col gap-0.5">
-                    <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
-                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
+                    <span class="font-display font-semibold text-sm group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{l.label}</span>
+                    <span class="text-xs" style="color:var(--c-muted)">{l.desc}</span>
                   </span>
                   
                 </a>
@@ -350,5 +350,5 @@ const aboutSchema = {
 </BaseLayout>
 
 <style>
-  .empresa-card:hover { border-color: rgba(247, 80, 0, 0.45) !important; }
+  .empresa-card:hover { border-color: rgba(200,16,46,0.45) !important; }
 </style>

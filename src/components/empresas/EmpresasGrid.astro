@@ -38,11 +38,11 @@ const giroMeta = Object.fromEntries(giros.map((g) => [g.slug, { l: g.labelCorto,
   <div class="relative flex-1">
     
     <input id={`${id}-search`} type="search" placeholder={placeholder} aria-label="Buscar empresa" autocomplete="off"
-      class="w-full pl-10 pr-4 py-2.5 text-sm font-display" style="background:#0C1825;border:1px solid rgba(74,117,153,0.3);color:#FFFFFF;outline:none" />
+      class="w-full pl-10 pr-4 py-2.5 text-sm font-display" style="background:var(--c-surface);border:1px solid var(--c-line-strong);color:var(--c-ink);outline:none" />
   </div>
   {filtros.length > 0 && (
     <div class="flex flex-wrap gap-1.5" role="group" aria-label="Filtrar">
-      <button type="button" class="emp-filter font-display text-[10px] uppercase tracking-wider px-3 py-1.5" data-key="todos" data-grid={id} style="color:#FFFFFF;background:#F75000;border:1px solid #F75000">Todos</button>
+      <button type="button" class="emp-filter font-display text-[10px] uppercase tracking-wider px-3 py-1.5" data-key="todos" data-grid={id} style="color:#FFFFFF;background:var(--c-accent);border:1px solid var(--c-accent)">Todos</button>
       {filtros.map((f) => (
         <button type="button" class="emp-filter font-display text-[10px] uppercase tracking-wider px-3 py-1.5" data-key={f.key} data-grid={id} data-color={f.color} style={`color:${f.color};background:transparent;border:1px solid ${f.color}40`}>{f.label}</button>))}
     </div>
@@ -57,18 +57,18 @@ const giroMeta = Object.fromEntries(giros.map((g) => [g.slug, { l: g.labelCorto,
 {indexSrc && total > visibles.length && (
   <div class="mt-6 flex flex-col sm:flex-row sm:items-center gap-3">
     <button type="button" id={`${id}-more`} class="btn btn-outline btn-sm">Mostrar las {total} empresas</button>
-    <span class="text-xs" style="color:#64748B">Mostrando las primeras {visibles.length}. Escribe en el buscador para buscar entre las {total}.</span>
+    <span class="text-xs" style="color:var(--c-muted)">Mostrando las primeras {visibles.length}. Escribe en el buscador para buscar entre las {total}.</span>
   </div>
 )}
-<p id={`${id}-none`} class="hidden text-sm py-10 text-center" style="color:#64748B">Ninguna empresa coincide con la búsqueda.</p>
+<p id={`${id}-none`} class="hidden text-sm py-10 text-center" style="color:var(--c-muted)">Ninguna empresa coincide con la búsqueda.</p>
 {indiceCompleto && indexSrc && total > visibles.length && (
-  <details class="mt-10" style="border:1px solid rgba(74,117,153,0.2);background:#0C1825">
+  <details class="mt-10" style="border:1px solid var(--c-line);background:var(--c-surface)">
     <summary class="flex items-center justify-between gap-4 px-6 py-4 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-      <span class="font-display font-bold text-xs uppercase tracking-widest" style="color:#94A3B8">Índice completo · {total} empresas</span>
-      <span class="font-display text-lg" style="color:#F75000" aria-hidden="true">+</span>
+      <span class="font-display font-bold text-xs uppercase tracking-widest" style="color:var(--c-text-2)">Índice completo · {total} empresas</span>
+      <span class="font-display text-lg" style="color:var(--c-accent)" aria-hidden="true">+</span>
     </summary>
     <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 list-none m-0 px-6 pb-6" style="columns:auto">
-      {empresas.map((e) => <li class="py-1 text-xs truncate" style="border-bottom:1px solid rgba(74,117,153,0.1)"><a href={`/empresas/${e.giroPrincipal}/${e.estado}/${e.slug}/`} class="hover:text-[#FF6B26]" style="color:#CBD5E1">{e.nombre}</a><span style="color:var(--forge-300)"> · {e.ciudad}{mostrarEstado ? `, ${e.estadoNombre}` : ''}</span></li>)}
+      {empresas.map((e) => <li class="py-1 text-xs truncate" style="border-bottom:1px solid var(--c-line)"><a href={`/empresas/${e.giroPrincipal}/${e.estado}/${e.slug}/`} class="hover:text-[var(--c-accent)]" style="color:var(--c-text)">{e.nombre}</a><span style="color:var(--forge-300)"> · {e.ciudad}{mostrarEstado ? `, ${e.estadoNombre}` : ''}</span></li>)}
     </ul>
   </details>
 )}
@@ -87,13 +87,13 @@ const giroMeta = Object.fromEntries(giros.map((g) => [g.slug, { l: g.labelCorto,
     const g = giros[r.gp]; const conf = CONF[r.k] ?? CONF.baja; const dest = r.p === 'destacado';
     const esp = r.s.map((s) => g?.e?.[s]).filter(Boolean).slice(0, 3);
     const otros = r.g.filter((x) => x !== r.gp).map((x) => giros[x]?.l).filter(Boolean);
-    return `<article class="emp-card flex flex-col gap-3 p-5" style="background:${dest ? '#0C1825' : '#040A12'};border:1px solid ${dest ? 'rgba(245,166,35,0.35)' : 'rgba(74,117,153,0.18)'};border-top:2px solid ${dest ? '#F5A623' : g?.c ?? '#F75000'}">
+    return `<article class="emp-card flex flex-col gap-3 p-5" style="background:${dest ? 'var(--c-surface)' : 'var(--c-bg)'};border:1px solid ${dest ? 'rgba(181,71,8,0.35)' : 'var(--c-line)'};border-top:2px solid ${dest ? 'var(--c-amber)' : g?.c ?? 'var(--c-accent)'}">
       <div class="flex items-start justify-between gap-3"><span class="font-display font-bold text-[10px] uppercase tracking-wider px-2 py-1" style="color:${g?.c};background:${g?.c}1A;border:1px solid ${g?.c}40">${esc(g?.l ?? r.gp)}</span>
       <span class="font-display text-[9px] uppercase tracking-wider px-1.5 py-0.5" style="color:${conf[1]};border:1px solid ${conf[1]}33">${conf[0]}</span></div>
-      <h3 class="font-display font-bold text-base leading-snug" style="color:#FFFFFF"><a href="${r.u}" class="hover:text-[#FF6B26]">${esc(r.n)}</a></h3>
-      <div class="text-xs leading-relaxed" style="color:#94A3B8">${esc(r.c)}${r.m !== r.c ? ` <span style="color:#64748B">· ${esc(r.m)}</span>` : ''}${mostrarEstado ? ` <span style="color:#64748B">· ${esc(r.en)}</span>` : ''}</div>
-      ${esp.length || otros.length ? `<div class="flex flex-wrap gap-1.5">${esp.map((s) => `<span class="text-[10px] px-2 py-0.5" style="color:#94A3B8;border:1px solid rgba(74,117,153,0.3)">${esc(s as string)}</span>`).join('')}${otros.map((s) => `<span class="text-[10px] px-2 py-0.5" style="color:var(--forge-300);border:1px dashed rgba(74,117,153,0.3)">+ ${esc(s)}</span>`).join('')}</div>` : ''}
-      <div class="mt-auto pt-3 flex items-center justify-between gap-3" style="border-top:1px solid rgba(74,117,153,0.12)"><span class="text-[10px] uppercase tracking-widest" style="color:var(--forge-300)">${esc(r.t ? r.t.replace(' personas', ' pers.') : 'Registro público')}</span><a href="${r.u}" class="font-display font-semibold text-xs uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57">${esc(g?.l ?? r.gp)} en ${esc(r.c)} </a></div></article>`;
+      <h3 class="font-display font-bold text-base leading-snug" style="color:var(--c-ink)"><a href="${r.u}" class="hover:text-[var(--c-accent)]">${esc(r.n)}</a></h3>
+      <div class="text-xs leading-relaxed" style="color:var(--c-text-2)">${esc(r.c)}${r.m !== r.c ? ` <span style="color:var(--c-muted)">· ${esc(r.m)}</span>` : ''}${mostrarEstado ? ` <span style="color:var(--c-muted)">· ${esc(r.en)}</span>` : ''}</div>
+      ${esp.length || otros.length ? `<div class="flex flex-wrap gap-1.5">${esp.map((s) => `<span class="text-[10px] px-2 py-0.5" style="color:var(--c-text-2);border:1px solid var(--c-line-strong)">${esc(s as string)}</span>`).join('')}${otros.map((s) => `<span class="text-[10px] px-2 py-0.5" style="color:var(--forge-300);border:1px dashed var(--c-line-strong)">+ ${esc(s)}</span>`).join('')}</div>` : ''}
+      <div class="mt-auto pt-3 flex items-center justify-between gap-3" style="border-top:1px solid var(--c-line)"><span class="text-[10px] uppercase tracking-widest" style="color:var(--forge-300)">${esc(r.t ? r.t.replace(' personas', ' pers.') : 'Registro público')}</span><a href="${r.u}" class="font-display font-semibold text-xs uppercase tracking-wider hover:text-[var(--c-accent)]" style="color:var(--c-accent)">${esc(g?.l ?? r.gp)} en ${esc(r.c)} </a></div></article>`;
   }
 
   document.querySelectorAll<HTMLElement>('[data-emp-toolbar]').forEach((bar) => {

@@ -32,20 +32,20 @@ export const TELEFONO_EMERGENCIAS = '911';
 
 /** Configuración visual de cada tipo */
 export const tipoConfig: Record<TipoEstacion, { label: string; color: string; bgColor: string }> = {
-  Municipal:    { label: 'Municipal',    color: '#F75000', bgColor: 'rgba(247,80,0,0.1)' },
-  Estatal:      { label: 'Estatal',      color: '#F5A623', bgColor: 'rgba(245,166,35,0.1)' },
-  Industrial:   { label: 'Industrial',   color: '#4A7599', bgColor: 'rgba(74,117,153,0.15)' },
-  Aeropuerto:   { label: 'Aeropuerto',   color: '#34D399', bgColor: 'rgba(52,211,153,0.1)' },
-  PEMEX:        { label: 'PEMEX',        color: '#60A5FA', bgColor: 'rgba(96,165,250,0.1)' },
-  CFE:          { label: 'CFE',          color: '#A78BFA', bgColor: 'rgba(167,139,250,0.1)' },
-  Voluntarios:  { label: 'Voluntarios',  color: '#94A3B8', bgColor: 'rgba(148,163,184,0.1)' },
+  Municipal:    { label: 'Municipal',    color: 'var(--c-accent)', bgColor: 'rgba(200,16,46,0.1)' },
+  Estatal:      { label: 'Estatal',      color: 'var(--c-amber)', bgColor: 'rgba(181,71,8,0.1)' },
+  Industrial:   { label: 'Industrial',   color: 'var(--c-muted)', bgColor: 'var(--c-line)' },
+  Aeropuerto:   { label: 'Aeropuerto',   color: 'var(--c-success)', bgColor: 'rgba(6,118,71,0.1)' },
+  PEMEX:        { label: 'PEMEX',        color: 'var(--c-info)', bgColor: 'rgba(96,165,250,0.1)' },
+  CFE:          { label: 'CFE',          color: 'var(--c-violet)', bgColor: 'rgba(167,139,250,0.1)' },
+  Voluntarios:  { label: 'Voluntarios',  color: 'var(--c-text-2)', bgColor: 'rgba(148,163,184,0.1)' },
 };
 
 /** Configuración visual de los niveles de confianza/verificación */
 export const confianzaConfig: Record<Confianza, { label: string; color: string; bgColor: string }> = {
-  alta:  { label: 'Verificado',    color: '#34D399', bgColor: 'rgba(52,211,153,0.1)' },
-  media: { label: 'Confirmado',    color: '#F5A623', bgColor: 'rgba(245,166,35,0.1)' },
-  baja:  { label: 'Por confirmar', color: '#94A3B8', bgColor: 'rgba(148,163,184,0.12)' },
+  alta:  { label: 'Verificado',    color: 'var(--c-success)', bgColor: 'rgba(6,118,71,0.1)' },
+  media: { label: 'Confirmado',    color: 'var(--c-amber)', bgColor: 'rgba(181,71,8,0.1)' },
+  baja:  { label: 'Por confirmar', color: 'var(--c-text-2)', bgColor: 'rgba(148,163,184,0.12)' },
 };
 
 /**

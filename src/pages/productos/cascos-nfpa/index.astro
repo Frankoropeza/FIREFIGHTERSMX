@@ -166,32 +166,32 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
 <BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema, faqSchema]}>
 
   {/* ══ BREADCRUMB ══════════════════════════════════════════════════════ */}
-  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+  <nav class="py-3" style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line)" aria-label="Breadcrumb">
     <div class="container-site">
       <ol class="flex items-center gap-2 text-xs list-none m-0 p-0 flex-wrap" style="color:var(--forge-300)">
-        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li><a href="/" class="hover:text-[var(--c-accent)]">Inicio</a></li>
         <li aria-hidden="true">/</li>
-        <li><a href="/productos" class="hover:text-[#FF6B26]">Productos</a></li>
+        <li><a href="/productos" class="hover:text-[var(--c-accent)]">Productos</a></li>
         <li aria-hidden="true">/</li>
-        <li><span style="color:#94A3B8" aria-current="page">Cascos NFPA</span></li>
+        <li><span style="color:var(--c-text-2)" aria-current="page">Cascos NFPA</span></li>
       </ol>
     </div>
   </nav>
 
   {/* ══ HERO ════════════════════════════════════════════════════════════ */}
-  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">
-    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
+  <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:5rem">
+    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(200,16,46,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
 
     <div class="container-site relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
         <div>
           <span class="section-eyebrow mb-5 inline-flex">{cat.norm} · MSA Gallet · Bullard · Cairns · Distribuidor Autorizado MX</span>
-          <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+          <h1 class="font-display font-bold uppercase mb-6" style="color:var(--c-ink);font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
             Casco de bombero<br/>
-            <span style="color:#F75000">cascos para bomberos estructurales, de rescate y forestales.</span>
+            <span style="color:var(--c-accent)">cascos para bomberos estructurales, de rescate y forestales.</span>
           </h1>
-          <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
+          <p class="text-sm leading-relaxed mb-8" style="color:var(--c-text-2)">
             Distribuidor autorizado de MSA Gallet, Bullard y Cairns en México. Stock permanente
             con entrega en 24–48 h en CDMX y ficha técnica completa para licitación.
           </p>
@@ -203,9 +203,9 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
           </div>
         </div>
 
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
           {cat.intro.map((p) => (
-            <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">{p}</p>
+            <p class="text-sm leading-[1.9] mb-5" style="color:var(--c-text-2)">{p}</p>
           ))}
           <div class="flex flex-wrap gap-2">
             {['NFPA 1970','NFPA 1950','MSA Gallet F1 XF','Bullard USTM','Cairns N6A','Visor integrado','Distribuidor autorizado MX'].map(n => (
@@ -216,13 +216,13 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
 
       </div>
     </div>
-    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)" aria-hidden="true"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(200,16,46,0.4) 30%, rgba(200,16,46,0.4) 70%, transparent)" aria-hidden="true"></div>
   </section>
 
-  <section class="section-tight" style="background:#070E1A" aria-labelledby="complementos-title">
+  <section class="section-tight" style="background:var(--c-bg-alt)" aria-labelledby="complementos-title">
     <div class="container-site">
-      <h2 id="complementos-title" class="font-display font-bold text-lg mb-4" style="color:#FFFFFF">Protección y herramientas complementarias</h2>
-      <p class="text-sm leading-relaxed mb-5" style="color:#94A3B8">Revise la compatibilidad del casco con la capucha, el SCBA y las herramientas manuales previstas para la operación.</p>
+      <h2 id="complementos-title" class="font-display font-bold text-lg mb-4" style="color:var(--c-ink)">Protección y herramientas complementarias</h2>
+      <p class="text-sm leading-relaxed mb-5" style="color:var(--c-text-2)">Revise la compatibilidad del casco con la capucha, el SCBA y las herramientas manuales previstas para la operación.</p>
       <div class="flex flex-wrap gap-3">
         <a href="/productos/cascos-nfpa/drager-hps-7000/" class="btn btn-sm btn-dark">Dräger HPS 7000</a>
         <a href="/productos/epp-bombero/council-tool-fe6-36/" class="btn btn-sm btn-dark">Hacha Council Tool FE6-36</a>
@@ -231,7 +231,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
     </div>
   </section>
 
-  <section id="guia-cascos" class="section" style="background:#040A12" aria-labelledby="guia-cascos-title">
+  <section id="guia-cascos" class="section" style="background:var(--c-bg)" aria-labelledby="guia-cascos-title">
     <div class="container-site content-copy">
       <div class="section-head mb-5">
         <h2 id="guia-cascos-title">¿Cómo se llama el casco de los bomberos y para qué sirve?</h2>
@@ -242,19 +242,19 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
         <h2>Tipos de cascos de bombero</h2>
       </div>
       <div class="overflow-x-auto mb-8">
-        <table class="w-full text-left text-sm" style="border-collapse:collapse;min-width:640px;color:#CBD5E1">
+        <table class="w-full text-left text-sm" style="border-collapse:collapse;min-width:640px;color:var(--c-text)">
           <thead>
             <tr>
-              <th class="p-3" style="background:#0C1825;color:#FFFFFF">Tipo de casco</th>
-              <th class="p-3" style="background:#0C1825;color:#FFFFFF">Diseño</th>
-              <th class="p-3" style="background:#0C1825;color:#FFFFFF">Uso</th>
+              <th class="p-3" style="background:var(--c-surface);color:var(--c-ink)">Tipo de casco</th>
+              <th class="p-3" style="background:var(--c-surface);color:var(--c-ink)">Diseño</th>
+              <th class="p-3" style="background:var(--c-surface);color:var(--c-ink)">Uso</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Tradicional o americano</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Ala larga que desvía el agua y los escombros; en cuero o compuesto</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Combate estructural</td></tr>
-            <tr><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Moderno</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Perfil más compacto y ligero con visor integrado</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Combate estructural y rescate</td></tr>
-            <tr><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Estilo jet (europeo)</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Casco integral con visor y protección ocular retráctiles</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Incendio y rescate</td></tr>
-            <tr><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Cascos de rescate</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Ligeros y ventilados</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Salvamento, rescate vehicular y técnico</td></tr>
+            <tr><td class="p-3" style="border-bottom:1px solid var(--c-line)">Tradicional o americano</td><td class="p-3" style="border-bottom:1px solid var(--c-line)">Ala larga que desvía el agua y los escombros; en cuero o compuesto</td><td class="p-3" style="border-bottom:1px solid var(--c-line)">Combate estructural</td></tr>
+            <tr><td class="p-3" style="border-bottom:1px solid var(--c-line)">Moderno</td><td class="p-3" style="border-bottom:1px solid var(--c-line)">Perfil más compacto y ligero con visor integrado</td><td class="p-3" style="border-bottom:1px solid var(--c-line)">Combate estructural y rescate</td></tr>
+            <tr><td class="p-3" style="border-bottom:1px solid var(--c-line)">Estilo jet (europeo)</td><td class="p-3" style="border-bottom:1px solid var(--c-line)">Casco integral con visor y protección ocular retráctiles</td><td class="p-3" style="border-bottom:1px solid var(--c-line)">Incendio y rescate</td></tr>
+            <tr><td class="p-3" style="border-bottom:1px solid var(--c-line)">Cascos de rescate</td><td class="p-3" style="border-bottom:1px solid var(--c-line)">Ligeros y ventilados</td><td class="p-3" style="border-bottom:1px solid var(--c-line)">Salvamento, rescate vehicular y técnico</td></tr>
             <tr><td class="p-3">Forestal</td><td class="p-3">Ligero y ventilado para jornadas largas</td><td class="p-3">Extinción de incendios forestales</td></tr>
           </tbody>
         </table>
@@ -264,7 +264,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
       <p>En América, los cascos estructurales se certifican conforme a la NFPA 1970, la norma que desde 2024 consolidó la antigua NFPA 1971. La certificación la otorga un tercero; por ejemplo, el Bullard UST LowRider está certificado NFPA 1970 (edición 2025) por el Safety Equipment Institute (SEI). Los cascos estilo jet europeos, como el MSA Gallet F1 XF y el Dräger HPS 7000, se certifican con la norma europea EN 443. Elige la certificación que pida tu cuerpo de bomberos o tu licitación y verifica la etiqueta del casco.</p>
 
       <div class="section-head mt-14 mb-5"><h2>Materiales y características de protección</h2></div>
-      <ul class="list-disc pl-6 space-y-2 text-sm leading-relaxed" style="color:#CBD5E1">
+      <ul class="list-disc pl-6 space-y-2 text-sm leading-relaxed" style="color:var(--c-text)">
         <li><strong>Coraza:</strong> termoplástico, compuesto de fibra o cuero, resistente al impacto y al calor.</li>
         <li><strong>Suspensión y arnés:</strong> ajustan el casco a la cabeza y amortiguan el golpe.</li>
         <li><strong>Cubrenuca y orejeras:</strong> protegen orejas y cuello del calor; deben bajarse al usar el casco.</li>
@@ -273,7 +273,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
       </ul>
 
       <div class="section-head mt-14 mb-5"><h2>Marcas de cascos de bombero</h2></div>
-      <ul class="list-disc pl-6 space-y-2 text-sm leading-relaxed" style="color:#CBD5E1">
+      <ul class="list-disc pl-6 space-y-2 text-sm leading-relaxed" style="color:var(--c-text)">
         <li><strong>MSA Cairns:</strong> marca fundada en 1836 y parte de MSA desde 2000; su N6A Houston fue el primer casco de cuero aprobado por NFPA.</li>
         <li><strong>Bullard:</strong> fabricante estadounidense fundado en 1898, con sede en Cynthiana, Kentucky.</li>
         <li><strong>MSA Gallet:</strong> cascos estilo jet con certificación EN 443.</li>
@@ -295,14 +295,14 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
   <QuickLinksBar />
 
   {/* ══ TRUST PILLARS ══════════════════════════════════════════════════ */}
-  <section class="section-tight" style="background:#070E1A" aria-label="Por qué distribuimos estas marcas">
+  <section class="section-tight" style="background:var(--c-bg-alt)" aria-label="Por qué distribuimos estas marcas">
     <div class="container-site">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style="border:1px solid rgba(74,117,153,0.18)">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style="border:1px solid var(--c-line)">
         {razones.map((r, i) => (
-          <div class="flex flex-col gap-3 p-6" style={`background:#080F1A;${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.12)' : ''}`}>
+          <div class="flex flex-col gap-3 p-6" style={`background:var(--c-bg-alt);${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.12)' : ''}`}>
             
-            <h3 class="font-display font-bold text-sm uppercase tracking-wide" style="color:#FFFFFF">{r.t}</h3>
-            <p class="text-xs leading-relaxed m-0" style="color:#64748B">{r.d}</p>
+            <h3 class="font-display font-bold text-sm uppercase tracking-wide" style="color:var(--c-ink)">{r.t}</h3>
+            <p class="text-xs leading-relaxed m-0" style="color:var(--c-muted)">{r.d}</p>
           </div>
         ))}
       </div>
@@ -310,19 +310,19 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
   </section>
 
   {/* ══ TIPOS DE CASCO ══════════════════════════════════════════════════ */}
-  <section class="section" style="background:#040A12" aria-labelledby="tipos-title">
+  <section class="section" style="background:var(--c-bg)" aria-labelledby="tipos-title">
     <div class="container-site">
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Tres estilos, un estándar</span>
-          <h2 id="tipos-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="tipos-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             El casco correcto<br/>
-            <span style="color:#F75000">para tu operación.</span>
+            <span style="color:var(--c-accent)">para tu operación.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
             La elección del casco combina norma, escenario y tradición del cuerpo. Los tres estilos
             cumplen las exigencias físicas de la NFPA — la diferencia está en cómo integran protección,
             identidad y compatibilidad con el resto del EPP.
@@ -332,15 +332,15 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
         {tipos.map((t) => (
-          <article class="flex flex-col gap-4 p-7" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
+          <article class="flex flex-col gap-4 p-7" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
             <div class="flex items-center justify-center" style={`width:52px;height:52px;background:${t.accent}1a;border:1.5px solid ${t.accent}59;color:${t.accent}`}>
               
             </div>
             <div class="flex items-center justify-between gap-2">
-              <h3 class="font-display font-bold text-xl" style="color:#FFFFFF">{t.title}</h3>
+              <h3 class="font-display font-bold text-xl" style="color:var(--c-ink)">{t.title}</h3>
               <span class="badge badge-dark text-[9px]">{t.norm}</span>
             </div>
-            <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{t.desc}</p>
+            <p class="text-sm leading-relaxed m-0" style="color:var(--c-text-2)">{t.desc}</p>
           </article>
         ))}
       </div>
@@ -349,19 +349,19 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
   </section>
 
   {/* ══ MSA SAFETY — GALLET ═════════════════════════════════════════════ */}
-  <section class="section" style="background:#070E1A" aria-labelledby="msa-title">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="msa-title">
     <div class="container-site">
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">MSA Safety · Gallet · Distribuidor Autorizado MX</span>
-          <h2 id="msa-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="msa-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Cascos MSA Gallet<br/>
-            <span style="color:#F75000">cascos estilo jet EN 443.</span>
+            <span style="color:var(--c-accent)">cascos estilo jet EN 443.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed mb-4" style="color:var(--c-text-2)">
             MSA Safety cotiza en la Bolsa de Nueva York (NYSE: MSA).
           </p>
           <div class="flex flex-wrap gap-2">
@@ -378,9 +378,9 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
         ))}
       </div>
 
-      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(74,117,153,0.15)">
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid var(--c-line)">
         <div class="flex-1">
-          <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+          <p class="text-sm leading-relaxed m-0" style="color:var(--c-muted)">
             ¿Quieres la comparativa de las 8 configuraciones Gallet, la anatomía del F1 XF y el FAQ técnico,
             o cotizar con ficha para licitación? Accede al catálogo dedicado de la marca.
           </p>
@@ -403,19 +403,19 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
   </section>
 
   {/* ══ BULLARD ═════════════════════════════════════════════════════════ */}
-  <section class="section" style="background:#040A12" aria-labelledby="bullard-title">
+  <section class="section" style="background:var(--c-bg)" aria-labelledby="bullard-title">
     <div class="container-site">
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Bullard · Desde 1898 · Estilo americano</span>
-          <h2 id="bullard-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="bullard-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Cascos Bullard<br/>
-            <span style="color:#F75000">certificados NFPA.</span>
+            <span style="color:var(--c-accent)">certificados NFPA.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed mb-4" style="color:var(--c-text-2)">
             Bullard lleva más de 125 años fabricando EPP para bomberos desde California. Su línea
             USTM/UST LowRider define el estilo americano de ala completa en material composite: escudo frontal
             personalizable con emblema institucional, alta resistencia térmica y amplia compatibilidad
@@ -435,9 +435,9 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
         ))}
       </div>
 
-      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(74,117,153,0.15)">
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid var(--c-line)">
         <div class="flex-1">
-          <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+          <p class="text-sm leading-relaxed m-0" style="color:var(--c-muted)">
             ¿Quieres la comparativa de las 8 configuraciones Bullard, la anatomía del USTM y el FAQ técnico,
             o cotizar con ficha para licitación? Accede al catálogo dedicado de la marca.
           </p>
@@ -460,19 +460,19 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
   </section>
 
   {/* ══ CAIRNS ══════════════════════════════════════════════════════════ */}
-  <section class="section" style="background:#070E1A" aria-labelledby="cairns-title">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="cairns-title">
     <div class="container-site">
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Cairns · Desde 1836 · El casco icónico</span>
-          <h2 id="cairns-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="cairns-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Cascos Cairns<br/>
-            <span style="color:#F75000">certificados NFPA.</span>
+            <span style="color:var(--c-accent)">certificados NFPA.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed mb-4" style="color:var(--c-text-2)">
             Cairns fue fundada en 1836 y forma parte de MSA desde 2000
             en 1836. El N6A Houston en cuero y polipropileno es el casco más reconocible del servicio
             en el continente. El 1836 lleva el ADN Cairns a materiales modernos con visor
@@ -492,9 +492,9 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
         ))}
       </div>
 
-      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(74,117,153,0.15)">
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid var(--c-line)">
         <div class="flex-1">
-          <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+          <p class="text-sm leading-relaxed m-0" style="color:var(--c-muted)">
             ¿Quieres la comparativa de las 8 configuraciones Cairns, la anatomía del N6A Houston y el FAQ técnico,
             o cotizar con ficha para licitación? Accede al catálogo dedicado de la marca.
           </p>
@@ -517,29 +517,29 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
   </section>
 
   {/* ══ GALERÍA ═════════════════════════════════════════════════════════ */}
-  <section class="section-tight" style="background:#040A12" aria-label="Galería cascos para bomberos">
+  <section class="section-tight" style="background:var(--c-bg)" aria-label="Galería cascos para bomberos">
     <div class="container-site">
       <div class="flex items-center gap-4 mb-6">
-        <span class="w-8 h-px" style="background:#F75000"></span>
-        <span class="text-xs font-display font-semibold uppercase tracking-[0.18em]" style="color:#F75000">Cascos en uso real</span>
+        <span class="w-8 h-px" style="background:var(--c-accent)"></span>
+        <span class="text-xs font-display font-semibold uppercase tracking-[0.18em]" style="color:var(--c-accent)">Cascos en uso real</span>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-2 lg:gap-3">
-        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
+        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
           <img src="/images/productos/casco-bombero-visor-facial-nfpa-1970.avif" alt="Casco bombero con visor facial NFPA 1970 certificado — MSA Gallet F1 XF México" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
-        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
+        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
           <img src="/images/productos/casco-msa-studio-lateral.avif" alt="Casco MSA Gallet vista lateral certificado NFPA 1970 — distribuidor autorizado México" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
-        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
+        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
           <img src="/images/productos/casco-bombero-visor-integrado.avif" alt="Casco bombero con visor retráctil integrado NFPA 1970 protección estructural" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
-        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
+        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
           <img src="/images/productos/bombero-casco-visor-equipo-completo.avif" alt="Bombero con casco, visor y equipo completo NFPA 1970 en operación estructural" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
-        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
+        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
           <img src="/images/productos/casco-puesto-equipado.avif" alt="Casco bombero puesto y equipado con lámpara y comunicación certificado NFPA" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
-        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
+        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
           <img src="/images/productos/casco-mexico-escena-incendio.avif" alt="Casco bombero certificado NFPA 1970 en escena de incendio México" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
       </div>
@@ -547,19 +547,19 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
   </section>
 
   {/* ══ TABLA COMPARATIVA ══════════════════════════════════════════════ */}
-  <section class="section" style="background:#040A12" aria-labelledby="comp-title">
+  <section class="section" style="background:var(--c-bg)" aria-labelledby="comp-title">
     <div class="container-site">
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-10">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Comparativa técnica</span>
-          <h2 id="comp-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="comp-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Europeo · Americano<br/>
-            <span style="color:#F75000">cara a cara.</span>
+            <span style="color:var(--c-accent)">cara a cara.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
             Las tres familias cumplen NFPA — la diferencia está en cómo integran protección,
             identidad y compatibilidad. Esta tabla compara lo que más pregunta un jefe de compras
             antes de especificar un modelo en licitación.
@@ -567,29 +567,29 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
         </div>
       </div>
 
-      <div class="overflow-x-auto" style="border:1px solid rgba(74,117,153,0.18)">
+      <div class="overflow-x-auto" style="border:1px solid var(--c-line)">
         <table class="w-full border-collapse" style="min-width:680px">
           <thead>
-            <tr style="background:#0C1825">
-              <th class="text-left p-4 text-xs font-display font-bold uppercase tracking-widest" style="color:var(--forge-300);border-bottom:1px solid rgba(74,117,153,0.18)">Característica</th>
-              <th class="text-left p-4 text-xs font-display font-bold uppercase tracking-widest" style="color:#F75000;border-bottom:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.12)">
+            <tr style="background:var(--c-surface)">
+              <th class="text-left p-4 text-xs font-display font-bold uppercase tracking-widest" style="color:var(--forge-300);border-bottom:1px solid var(--c-line)">Característica</th>
+              <th class="text-left p-4 text-xs font-display font-bold uppercase tracking-widest" style="color:var(--c-accent);border-bottom:1px solid var(--c-line);border-left:1px solid var(--c-line)">
                 Europeo<br/><span class="text-[10px] font-normal normal-case tracking-normal" style="color:var(--forge-300)">MSA Gallet F1 XF</span>
               </th>
-              <th class="text-left p-4 text-xs font-display font-bold uppercase tracking-widest" style="color:#F5A623;border-bottom:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.12)">
+              <th class="text-left p-4 text-xs font-display font-bold uppercase tracking-widest" style="color:var(--c-amber);border-bottom:1px solid var(--c-line);border-left:1px solid var(--c-line)">
                 Americano<br/><span class="text-[10px] font-normal normal-case tracking-normal" style="color:var(--forge-300)">Bullard USTM · Cairns N6A</span>
               </th>
-              <th class="text-left p-4 text-xs font-display font-bold uppercase tracking-widest" style="color:#34D399;border-bottom:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.12)">
+              <th class="text-left p-4 text-xs font-display font-bold uppercase tracking-widest" style="color:var(--c-success);border-bottom:1px solid var(--c-line);border-left:1px solid var(--c-line)">
                 Forestal<br/><span class="text-[10px] font-normal normal-case tracking-normal" style="color:var(--forge-300)">MSA Gallet Gallet F2XR</span>
               </th>
             </tr>
           </thead>
           <tbody>
             {comparativa.map((row, i) => (
-              <tr style={`background:${i % 2 === 0 ? '#080F1A' : '#0A1320'}`}>
-                <td class="p-4 text-sm font-display font-semibold" style="color:#CBD5E1;border-bottom:1px solid rgba(74,117,153,0.12)">{row.caract}</td>
-                <td class="p-4 text-xs" style="color:#94A3B8;border-bottom:1px solid rgba(74,117,153,0.12);border-left:1px solid rgba(74,117,153,0.12)">{row.europeo}</td>
-                <td class="p-4 text-xs" style="color:#94A3B8;border-bottom:1px solid rgba(74,117,153,0.12);border-left:1px solid rgba(74,117,153,0.12)">{row.americano}</td>
-                <td class="p-4 text-xs" style="color:#94A3B8;border-bottom:1px solid rgba(74,117,153,0.12);border-left:1px solid rgba(74,117,153,0.12)">{row.forestal}</td>
+              <tr style={`background:${i % 2 === 0 ? 'var(--c-bg-alt)' : 'var(--c-bg-alt)'}`}>
+                <td class="p-4 text-sm font-display font-semibold" style="color:var(--c-text);border-bottom:1px solid var(--c-line)">{row.caract}</td>
+                <td class="p-4 text-xs" style="color:var(--c-text-2);border-bottom:1px solid var(--c-line);border-left:1px solid var(--c-line)">{row.europeo}</td>
+                <td class="p-4 text-xs" style="color:var(--c-text-2);border-bottom:1px solid var(--c-line);border-left:1px solid var(--c-line)">{row.americano}</td>
+                <td class="p-4 text-xs" style="color:var(--c-text-2);border-bottom:1px solid var(--c-line);border-left:1px solid var(--c-line)">{row.forestal}</td>
               </tr>
             ))}
           </tbody>
@@ -604,21 +604,21 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
   </section>
 
   {/* ══ GUÍA + BLOG ═════════════════════════════════════════════════════ */}
-  <section class="section" style="background:#070E1A" aria-labelledby="guia-title">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="guia-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
 
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Cómo elegir</span>
-          <h2 id="guia-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+          <h2 id="guia-title" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Del estilo<br/>
-            <span style="color:#F75000">a la configuración.</span>
+            <span style="color:var(--c-accent)">a la configuración.</span>
           </h2>
           <ol class="flex flex-col gap-4 list-none m-0 p-0">
             {guia.map((s) => (
               <li class="flex items-start gap-4">
                 
-                <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{s.t}</p>
+                <p class="text-sm leading-relaxed m-0" style="color:var(--c-text-2)">{s.t}</p>
               </li>
             ))}
           </ol>
@@ -629,15 +629,15 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
           </div>
         </div>
 
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
           <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">Aprende más</h2>
-          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
             {articulos.map((l) => (
-              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+              <li style="border-bottom:1px solid var(--c-line)">
                 <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
                   <span class="flex flex-col gap-0.5">
-                    <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
-                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
+                    <span class="font-display font-semibold text-sm group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{l.label}</span>
+                    <span class="text-xs" style="color:var(--c-muted)">{l.desc}</span>
                   </span>
                 </a>
               </li>
@@ -650,17 +650,17 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
   </section>
 
   {/* ══ FAQ ═════════════════════════════════════════════════════════════ */}
-  <section class="section" style="background:#040A12" aria-labelledby="faq-title">
+  <section class="section" style="background:var(--c-bg)" aria-labelledby="faq-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
 
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes · Cascos</span>
-          <h2 id="faq-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+          <h2 id="faq-title" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Lo que más nos<br/>
-            <span style="color:#F75000">preguntan.</span>
+            <span style="color:var(--c-accent)">preguntan.</span>
           </h2>
-          <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
+          <p class="text-sm leading-relaxed mb-8" style="color:var(--c-text-2)">
             ¿Tu duda no aparece? Escríbenos por {CANAL_CONTACTO} con el detalle de tu operación — te
             asesoramos sobre el modelo y la configuración correctos para tu brigada.
           </p>
@@ -675,12 +675,12 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
 
         <div class="flex flex-col">
           {faqs.map((f, i) => (
-            <details class="faq-item group" style={`border-top:1px solid rgba(74,117,153,0.18);${i === faqs.length - 1 ? 'border-bottom:1px solid rgba(74,117,153,0.18);' : ''}`}>
+            <details class="faq-item group" style={`border-top:1px solid var(--c-line);${i === faqs.length - 1 ? 'border-bottom:1px solid rgba(74,117,153,0.18);' : ''}`}>
               <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer">
-                <span class="font-display font-semibold text-sm" style="color:#FFFFFF">{f.q}</span>
-                <span class="faq-icon font-display font-bold text-xl shrink-0" style="color:#FF6B26">+</span>
+                <span class="font-display font-semibold text-sm" style="color:var(--c-ink)">{f.q}</span>
+                <span class="faq-icon font-display font-bold text-xl shrink-0" style="color:var(--c-accent)">+</span>
               </summary>
-              <p class="text-sm leading-relaxed pb-5 m-0" style="color:#94A3B8">{f.a}</p>
+              <p class="text-sm leading-relaxed pb-5 m-0" style="color:var(--c-text-2)">{f.a}</p>
             </details>
           ))}
         </div>
@@ -690,12 +690,12 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
   </section>
 
   {/* ══ CTA BAND ════════════════════════════════════════════════════════ */}
-  <section style="background:#F75000;padding-block:4rem" aria-label="Cotizar cascos para bomberos">
+  <section style="background:var(--c-accent);padding-block:4rem" aria-label="Cotizar cascos para bomberos">
     <div class="container-site">
       <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
         <div>
-          <p class="text-xs font-display font-bold uppercase tracking-[0.2em] mb-3" style="color:rgba(255,255,255,0.65)">MSA Gallet · Bullard · Cairns · Stock CDMX</p>
-          <h2 class="font-display font-bold uppercase" style="color:#FFFFFF;font-size:clamp(1.75rem,4vw,3rem);line-height:1.05">
+          <p class="text-xs font-display font-bold uppercase tracking-[0.2em] mb-3" style="color:rgba(16,24,40,0.65)">MSA Gallet · Bullard · Cairns · Stock CDMX</p>
+          <h2 class="font-display font-bold uppercase" style="color:var(--c-ink);font-size:clamp(1.75rem,4vw,3rem);line-height:1.05">
             Certificado NFPA.<br/>Entrega en 48 h.
           </h2>
         </div>
@@ -704,11 +704,11 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
             href={whatsappUrl('Hola, quiero cotizar cascos para bomberos NFPA 1970. ¿Tienen stock disponible?')}
             target="_blank" rel="noopener"
             class="btn btn-lg"
-            style="background:#FFFFFF;color:#F75000;border-color:#FFFFFF;font-weight:700"
+            style="background:#FFFFFF;color:var(--c-accent);border-color:var(--c-line);font-weight:700"
           >
             Cotizar por {CANAL_CONTACTO} 
           </a>
-          <a href="/cotizacion" class="btn btn-lg" style="background:transparent;color:#FFFFFF;border:2px solid rgba(255,255,255,0.5)">
+          <a href="/cotizacion" class="btn btn-lg" style="background:transparent;color:var(--c-ink);border:2px solid rgba(16,24,40,0.5)">
             Cotización formal
           </a>
         </div>
@@ -717,17 +717,17 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
   </section>
 
   {/* ══ CROSS-LINKS ═════════════════════════════════════════════════════ */}
-  <section class="section" style="background:#070E1A" aria-labelledby="cross-title">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="cross-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
 
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Equipa el conjunto completo</span>
-          <h2 id="cross-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+          <h2 id="cross-title" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             El casco trabaja<br/>
-            <span style="color:#F75000">con todo el EPP.</span>
+            <span style="color:var(--c-accent)">con todo el EPP.</span>
           </h2>
-          <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
+          <p class="text-sm leading-relaxed mb-8" style="color:var(--c-text-2)">
             Casco, traje, SCBA y capucha de partículas deben integrarse sin interferencias.
             Armamos el conjunto completo certificado con un solo proveedor y un expediente auditable.
           </p>
@@ -740,9 +740,9 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
           </a>
         </div>
 
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
           <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">También te puede servir</h2>
-          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
             {[
               { label: 'Trajes para Bomberos',      desc: 'Globe, Lion, Honeywell, Fire-Dex — NFPA 1970',  href: '/productos/trajes-bombero' },
               { label: 'Equipos SCBA',              desc: 'MSA G1, Dräger PSS, 3M Scott — NFPA 1970',     href: '/productos/equipos-scba' },
@@ -750,11 +750,11 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
               { label: 'Mantenimiento y vida útil', desc: 'Inspección y retiro NFPA 1850',                 href: '/servicios/mantenimiento' },
               { label: 'Soporte para licitaciones', desc: 'Fichas técnicas y manifiestos por partida',     href: '/licitaciones' },
             ].map((l) => (
-              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+              <li style="border-bottom:1px solid var(--c-line)">
                 <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
                   <span class="flex flex-col gap-0.5">
-                    <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
-                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
+                    <span class="font-display font-semibold text-sm group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{l.label}</span>
+                    <span class="text-xs" style="color:var(--c-muted)">{l.desc}</span>
                   </span>
                 </a>
               </li>
@@ -765,7 +765,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
       </div>
 
       {/* Otras categorías */}
-      <div class="mt-14 pt-10" style="border-top:1px solid rgba(74,117,153,0.15)">
+      <div class="mt-14 pt-10" style="border-top:1px solid var(--c-line)">
         <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-6" style="color:var(--forge-300)">Otras categorías del catálogo</h2>
         <div class="flex flex-wrap gap-3">
           {otrasCategorias.map((c) => (
@@ -780,30 +780,30 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
 
 
   {/* ══ CATEGORÍAS RELACIONADAS ═══════════════════════════════════════ */}
-  <section style="background:#040A12;border-top:1px solid rgba(74,117,153,0.15)" aria-labelledby="cats-rel-title">
+  <section style="background:var(--c-bg);border-top:1px solid var(--c-line)" aria-labelledby="cats-rel-title">
     <div class="container-site py-10 sm:py-12">
       <p id="cats-rel-title" class="text-[9px] font-display font-bold uppercase tracking-widest mb-6" style="color:var(--forge-300)">Categorías relacionadas</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <a href="/productos/trajes-bombero"
-           class="group flex flex-col gap-2 p-5 hover:border-[#F75000]"
-           style="background:#080F1A;border:1px solid rgba(74,117,153,0.2)">
-          <span class="text-sm font-display font-bold group-hover:text-[#F75000]" style="color:#FFFFFF">Trajes Bombero</span>
-          <span class="text-xs leading-relaxed" style="color:#64748B">Globe · Lion Apparel · Honeywell · Fire-Dex</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Trajes Bombero </span>
+           class="group flex flex-col gap-2 p-5 hover:border-[var(--c-accent)]"
+           style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
+          <span class="text-sm font-display font-bold group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Trajes Bombero</span>
+          <span class="text-xs leading-relaxed" style="color:var(--c-muted)">Globe · Lion Apparel · Honeywell · Fire-Dex</span>
+          <span class="text-[11px] font-semibold mt-1" style="color:var(--c-accent)">Guía de Trajes Bombero </span>
         </a>
         <a href="/productos/equipos-scba"
-           class="group flex flex-col gap-2 p-5 hover:border-[#F75000]"
-           style="background:#080F1A;border:1px solid rgba(74,117,153,0.2)">
-          <span class="text-sm font-display font-bold group-hover:text-[#F75000]" style="color:#FFFFFF">Equipos SCBA</span>
-          <span class="text-xs leading-relaxed" style="color:#64748B">MSA G1 · Dräger PSS 7000 · 3M Scott</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Equipos SCBA </span>
+           class="group flex flex-col gap-2 p-5 hover:border-[var(--c-accent)]"
+           style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
+          <span class="text-sm font-display font-bold group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Equipos SCBA</span>
+          <span class="text-xs leading-relaxed" style="color:var(--c-muted)">MSA G1 · Dräger PSS 7000 · 3M Scott</span>
+          <span class="text-[11px] font-semibold mt-1" style="color:var(--c-accent)">Guía de Equipos SCBA </span>
         </a>
         <a href="/productos/herramientas-rescate"
-           class="group flex flex-col gap-2 p-5 hover:border-[#F75000]"
-           style="background:#080F1A;border:1px solid rgba(74,117,153,0.2)">
-          <span class="text-sm font-display font-bold group-hover:text-[#F75000]" style="color:#FFFFFF">Herramientas de Rescate</span>
-          <span class="text-xs leading-relaxed" style="color:#64748B">Holmatro · Hurst · Weber Rescue</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Herramientas de Rescate </span>
+           class="group flex flex-col gap-2 p-5 hover:border-[var(--c-accent)]"
+           style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
+          <span class="text-sm font-display font-bold group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Herramientas de Rescate</span>
+          <span class="text-xs leading-relaxed" style="color:var(--c-muted)">Holmatro · Hurst · Weber Rescue</span>
+          <span class="text-[11px] font-semibold mt-1" style="color:var(--c-accent)">Guía de Herramientas de Rescate </span>
         </a>
       </div>
     </div>

@@ -46,24 +46,24 @@ const steps = [
 ];
 ---
 
-<section class="home-deferred-section" style="background:#070E1A;padding-block:5rem" aria-label="Cómo trabajamos">
+<section class="home-deferred-section" style="background:var(--c-bg-alt);padding-block:5rem" aria-label="Cómo trabajamos">
 
   <!-- Header -->
   <div class="container-site mb-12">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end">
       <div>
         <span class="section-eyebrow mb-4 inline-flex">Cómo trabajamos</span>
-        <h2 class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+        <h2 class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
           Un proceso claro<br/>
-          <span style="color:#F75000">de consulta a entrega.</span>
+          <span style="color:var(--c-accent)">de consulta a entrega.</span>
         </h2>
       </div>
-      <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-        <p class="text-sm leading-relaxed mb-3" style="color:#94A3B8">
+      <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+        <p class="text-sm leading-relaxed mb-3" style="color:var(--c-text-2)">
           Sin sorpresas, sin demoras. Equipar a un cuerpo de bomberos o una brigada
           industrial requiere precisión técnica y seguimiento profesional.
         </p>
-        <p class="text-sm leading-relaxed" style="color:#94A3B8">
+        <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
           Un solo ejecutivo te acompaña de principio a fin: conoce tu operación, tus
           fechas de licitación y tus criterios técnicos. Cero rotación, cero intermediarios.
         </p>
@@ -72,11 +72,11 @@ const steps = [
   </div>
 
   <!-- Steps grid full-width -->
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4" style="border-top:1px solid rgba(74,117,153,0.2)">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4" style="border-top:1px solid var(--c-line)">
     {steps.map((step, i) => (
       <article
         class="grid-cell group relative flex flex-col gap-5 p-8 xl:p-10"
-        style={`border-right:${i < 3 ? '1px solid rgba(74,117,153,0.15)' : 'none'};border-bottom:1px solid rgba(74,117,153,0.15)`}
+        style={`border-right:${i < 3 ? '1px solid var(--c-line)' : 'none'};border-bottom:1px solid var(--c-line)`}
       >
         <!-- Número de fondo -->
         <span class="absolute bottom-4 right-6 font-display font-bold select-none pointer-events-none"
@@ -86,24 +86,24 @@ const steps = [
 
         <!-- Ícono + número step -->
         <div class="flex items-start justify-between gap-4 relative z-10">
-          <div class="w-10 h-10 flex items-center justify-center shrink-0" style="border:1px solid rgba(74,117,153,0.3);color:#FF6B26">
+          <div class="w-10 h-10 flex items-center justify-center shrink-0" style="border:1px solid var(--c-line-strong);color:var(--c-accent)">
             <span class="w-5 h-5 block" set:html={step.icon}/>
           </div>
-          <span class="font-display font-bold text-xs tracking-widest" style="color:rgba(74,117,153,0.5);letter-spacing:0.2em">
+          <span class="font-display font-bold text-xs tracking-widest" style="color:var(--c-muted);letter-spacing:0.2em">
             PASO 
           </span>
         </div>
 
         <!-- Contenido -->
         <div class="relative z-10 flex flex-col gap-3 flex-1">
-          <h3 class="font-display font-bold" style="font-size:1.4rem;color:#FFFFFF;line-height:1.1">
+          <h3 class="font-display font-bold" style="font-size:1.4rem;color:var(--c-ink);line-height:1.1">
             {step.title}
           </h3>
-          <p class="text-sm leading-relaxed" style="color:#64748B">{step.text}</p>
+          <p class="text-sm leading-relaxed" style="color:var(--c-muted)">{step.text}</p>
         </div>
 
         <!-- Métrica -->
-        <div class="relative z-10 flex items-center gap-2 text-xs font-semibold" style="color:#34D399">
+        <div class="relative z-10 flex items-center gap-2 text-xs font-semibold" style="color:var(--c-success)">
           
           {step.metric}
         </div>
@@ -113,7 +113,7 @@ const steps = [
           href={step.href}
           target={step.href.startsWith('http') ? '_blank' : undefined}
           rel={step.href.startsWith('http') ? 'noopener' : undefined}
-          class="relative z-10 flex items-center gap-2 text-xs font-display font-semibold uppercase tracking-wider group-hover:text-[#FF6B26]"
+          class="relative z-10 flex items-center gap-2 text-xs font-display font-semibold uppercase tracking-wider group-hover:text-[var(--c-accent)]"
           style="color:var(--forge-300);letter-spacing:0.1em"
         >
           {step.cta}

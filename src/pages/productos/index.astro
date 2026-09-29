@@ -60,28 +60,28 @@ const trustPoints = [
 <BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema]}>
 
   <!-- Breadcrumb -->
-  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+  <nav class="py-3" style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line)" aria-label="Breadcrumb">
     <div class="container-site">
       <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
-        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li><a href="/" class="hover:text-[var(--c-accent)]">Inicio</a></li>
         <li aria-hidden="true">/</li>
-        <li><span style="color:#94A3B8" aria-current="page">Productos</span></li>
+        <li><span style="color:var(--c-text-2)" aria-current="page">Productos</span></li>
       </ol>
     </div>
   </nav>
 
   <!-- Hero del catálogo -->
-  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">
-    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
+  <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:5rem">
+    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(200,16,46,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
 
     <div class="container-site relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
         <div>
           <span class="section-eyebrow mb-5 inline-flex">Catálogo completo · NFPA y NOM</span>
-          <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+          <h1 class="font-display font-bold uppercase mb-6" style="color:var(--c-ink);font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
             Equipo para Bomberos<br/>
-            <span style="color:#F75000">y Contra Incendio</span>
+            <span style="color:var(--c-accent)">y Contra Incendio</span>
           </h1>
           <div class="flex flex-col sm:flex-row gap-3">
             <a
@@ -95,15 +95,15 @@ const trustPoints = [
           </div>
         </div>
 
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
-          <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
+          <p class="text-sm leading-[1.9] mb-5" style="color:var(--c-text-2)">
             Nueve categorías de equipamiento certificado para cuerpos de bomberos, brigadas
-            industriales y protección civil: <strong style="color:#CBD5E1">trajes estructurales NFPA 1970 (antes 1971),
+            industriales y protección civil: <strong style="color:var(--c-text)">trajes estructurales NFPA 1970 (antes 1971),
             cascos, equipos de respiración autónoma SCBA, herramientas de rescate
             Holmatro, extintores PQS NOM-100-STPS y CO₂ NOM-102-STPS, sistemas contra incendio, cámaras térmicas
             NFPA 1930, trajes HAZMAT, drones de emergencia, señalamientos de seguridad, lámparas de emergencia y botiquines de primeros auxilios</strong>.
           </p>
-          <p class="text-sm leading-[1.9] mb-6" style="color:#64748B">
+          <p class="text-sm leading-[1.9] mb-6" style="color:var(--c-muted)">
             Somos distribuidores autorizados de Globe, MSA, Dräger, Bullard, Holmatro y 3M Scott
             en México. Cada equipo se entrega con número de serie verificable, certificado de
             laboratorio acreditado y ficha técnica lista para licitación, auditoría STPS o
@@ -119,20 +119,20 @@ const trustPoints = [
       </div>
     </div>
 
-    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)" aria-hidden="true"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(200,16,46,0.4) 30%, rgba(200,16,46,0.4) 70%, transparent)" aria-hidden="true"></div>
   </section>
   <!-- Accesos rápidos (interlinking) -->
   <QuickLinksBar />
 
 
   <!-- Pilares de confianza -->
-  <section class="section-tight" style="background:#070E1A" aria-label="Garantías de compra">
+  <section class="section-tight" style="background:var(--c-bg-alt)" aria-label="Garantías de compra">
     <div class="container-site">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style="border:1px solid rgba(74,117,153,0.18)">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style="border:1px solid var(--c-line)">
         {trustPoints.map((t, i) => (
-          <div class="flex flex-col gap-2 p-6" style={`background:#0C1825;${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.18);' : ''}`}>
-            <h3 class="font-display font-bold text-sm uppercase tracking-wider" style="color:#FF6B26">{t.title}</h3>
-            <p class="text-xs leading-relaxed" style="color:#64748B">{t.text}</p>
+          <div class="flex flex-col gap-2 p-6" style={`background:var(--c-surface);${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.18);' : ''}`}>
+            <h3 class="font-display font-bold text-sm uppercase tracking-wider" style="color:var(--c-accent)">{t.title}</h3>
+            <p class="text-xs leading-relaxed" style="color:var(--c-muted)">{t.text}</p>
           </div>
         ))}
       </div>
@@ -140,19 +140,19 @@ const trustPoints = [
   </section>
 
   <!-- Categorías -->
-  <section class="section" style="background:#040A12" aria-labelledby="categorias-title">
+  <section class="section" style="background:var(--c-bg)" aria-labelledby="categorias-title">
     <div class="container-site">
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Categorías</span>
-          <h2 id="categorias-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="categorias-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Diez categorías,<br/>
-            <span style="color:#F75000">todo certificado.</span>
+            <span style="color:var(--c-accent)">todo certificado.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
             Cada categoría tiene su propia página con líneas disponibles, normas aplicables
             y productos destacados. Si no encuentras un modelo específico, lo conseguimos:
             trabajamos directo con fábrica y manejamos pedidos especiales sobre especificación técnica.
@@ -175,15 +175,15 @@ const trustPoints = [
     ))}
 
   <!-- Productos destacados -->
-  <section class="section" style="background:#070E1A" aria-labelledby="destacados-title">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="destacados-title">
     <div class="container-site">
 
       <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Lo más cotizado</span>
-          <h2 id="destacados-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="destacados-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Productos<br/>
-            <span style="color:#F75000">destacados.</span>
+            <span style="color:var(--c-accent)">destacados.</span>
           </h2>
         </div>
         <a href={whatsappUrl('Hola, quiero cotizar productos del catálogo.')} target="_blank" rel="noopener" class="btn btn-outline btn-sm self-start sm:self-auto shrink-0">
@@ -191,7 +191,7 @@ const trustPoints = [
         </a>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px" style="background:var(--c-line);border:1px solid var(--c-line)">
         {featuredProducts.map((product) => (
           <a href={product.href} class="grid-cell group flex flex-col gap-3 p-6">
             <div class="flex gap-2 flex-wrap">
@@ -199,9 +199,9 @@ const trustPoints = [
               {product.brand && <span class="badge badge-dark">{product.brand}</span>}
               {product.badge && <span class="badge badge-gold">{product.badge}</span>}
             </div>
-            <h3 class="font-display font-bold text-lg leading-snug group-hover:text-[#FF6B26]" style="color:#FFFFFF">{product.title}</h3>
-            <p class="text-xs leading-relaxed" style="color:#64748B">{product.description}</p>
-            <span class="text-xs font-display font-semibold uppercase tracking-wider mt-auto" style="color:#FF8F57">Ficha técnica de {product.title} </span>
+            <h3 class="font-display font-bold text-lg leading-snug group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{product.title}</h3>
+            <p class="text-xs leading-relaxed" style="color:var(--c-muted)">{product.description}</p>
+            <span class="text-xs font-display font-semibold uppercase tracking-wider mt-auto" style="color:var(--c-accent)">Ficha técnica de {product.title} </span>
           </a>
         ))}
       </div>
@@ -210,15 +210,15 @@ const trustPoints = [
   </section>
 
   <!-- Cómo cotizar + cross-links -->
-  <section class="section" style="background:#040A12" aria-labelledby="como-cotizar-title">
+  <section class="section" style="background:var(--c-bg)" aria-labelledby="como-cotizar-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
 
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Cómo cotizar</span>
-          <h2 id="como-cotizar-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+          <h2 id="como-cotizar-title" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Del catálogo a tu operación<br/>
-            <span style="color:#F75000">en menos de 24 horas.</span>
+            <span style="color:var(--c-accent)">en menos de 24 horas.</span>
           </h2>
           <ol class="flex flex-col gap-4 list-none m-0 p-0">
             {[
@@ -228,7 +228,7 @@ const trustPoints = [
             ].map((s) => (
               <li class="flex items-start gap-4">
                 
-                <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{s.t}</p>
+                <p class="text-sm leading-relaxed m-0" style="color:var(--c-text-2)">{s.t}</p>
               </li>
             ))}
           </ol>
@@ -239,11 +239,11 @@ const trustPoints = [
           </div>
         </div>
 
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
           <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">
             También te puede servir
           </h2>
-          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
             {[
               { label: 'Guía de normas y certificaciones', desc: 'Qué NOM y NFPA aplican según tu giro', href: '/certificaciones' },
               { label: 'Servicios de mantenimiento y recarga', desc: 'Extintores, SCBA e hidráulicas — NFPA 1850', href: '/servicios/mantenimiento' },
@@ -252,11 +252,11 @@ const trustPoints = [
               { label: 'Cobertura de entrega', desc: '24–48 h CDMX · 3–5 días nacional', href: '/cobertura' },
               { label: 'Conoce la empresa', desc: 'Quiénes somos, cobertura y certificaciones', href: '/empresa' },
             ].map((l) => (
-              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+              <li style="border-bottom:1px solid var(--c-line)">
                 <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
                   <span class="flex flex-col gap-0.5">
-                    <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
-                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
+                    <span class="font-display font-semibold text-sm group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{l.label}</span>
+                    <span class="text-xs" style="color:var(--c-muted)">{l.desc}</span>
                   </span>
                   
                 </a>

@@ -27,28 +27,28 @@ const breadcrumbSchema = {
 <BaseLayout {...seoMeta} schema={[breadcrumbSchema]}>
 
   <!-- Breadcrumb -->
-  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+  <nav class="py-3" style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line)" aria-label="Breadcrumb">
     <div class="container-site">
       <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
-        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li><a href="/" class="hover:text-[var(--c-accent)]">Inicio</a></li>
         <li aria-hidden="true">/</li>
-        <li><span style="color:#94A3B8" aria-current="page">Marcas</span></li>
+        <li><span style="color:var(--c-text-2)" aria-current="page">Marcas</span></li>
       </ol>
     </div>
   </nav>
 
   <!-- Hero -->
-  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">
-    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
+  <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:5rem">
+    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(200,16,46,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
 
     <div class="container-site relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
         <div>
           <span class="section-eyebrow mb-5 inline-flex">Distribuidores autorizados</span>
-          <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+          <h1 class="font-display font-bold uppercase mb-6" style="color:var(--c-ink);font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
             Marcas que<br/>
-            <span style="color:#F75000">Distribuimos</span>
+            <span style="color:var(--c-accent)">Distribuimos</span>
           </h1>
           <div class="flex flex-col sm:flex-row gap-3">
             <a
@@ -62,13 +62,13 @@ const breadcrumbSchema = {
           </div>
         </div>
 
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
-          <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">
-            Distribuidores autorizados de <strong style="color:#CBD5E1">fabricantes internacionales
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
+          <p class="text-sm leading-[1.9] mb-5" style="color:var(--c-text-2)">
+            Distribuidores autorizados de <strong style="color:var(--c-text)">fabricantes internacionales
             a nivel mundial en equipos de protección personal y sistemas contra incendio</strong>:
             MSA Safety, Dräger, 3M Scott, Globe Manufacturing, Holmatro, Bullard, Honeywell y más.
           </p>
-          <p class="text-sm leading-[1.9] mb-6" style="color:#64748B">
+          <p class="text-sm leading-[1.9] mb-6" style="color:var(--c-muted)">
             Cada equipo se entrega con número de serie verificable, certificado de laboratorio
             acreditado y ficha técnica lista para licitación, auditoría STPS o expediente de
             Protección Civil — bajo las normas NFPA 1970 (antes 1971) y NOM aplicables.
@@ -83,26 +83,26 @@ const breadcrumbSchema = {
       </div>
     </div>
 
-    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)" aria-hidden="true"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(200,16,46,0.4) 30%, rgba(200,16,46,0.4) 70%, transparent)" aria-hidden="true"></div>
   </section>
 
   <!-- Accesos rápidos (interlinking) -->
   <QuickLinksBar />
 
   <!-- Marcas -->
-  <section class="section" style="background:#040A12" aria-labelledby="marcas-title">
+  <section class="section" style="background:var(--c-bg)" aria-labelledby="marcas-title">
     <div class="container-site">
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Fabricantes</span>
-          <h2 id="marcas-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="marcas-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Marcas líderes,<br/>
-            <span style="color:#F75000">respaldo de fábrica.</span>
+            <span style="color:var(--c-accent)">respaldo de fábrica.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
             Trabajamos directo con fabricantes del sector para garantizar
             equipo original, repuestos verificables y soporte técnico. Si no encuentras una marca
             específica, la conseguimos: manejamos pedidos especiales sobre especificación técnica.
@@ -110,7 +110,7 @@ const breadcrumbSchema = {
         </div>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px" style="background:var(--c-line);border:1px solid var(--c-line)">
         {brands.map((brand) => {
           const monogram = brand.name.replace(/[^A-Za-z0-9]/g, '').charAt(0).toUpperCase();
           const country = brand.country?.replace(/[\u{1F1E6}-\u{1F1FF}]/gu, '').trim();
@@ -122,18 +122,18 @@ const breadcrumbSchema = {
             >
               <span
                 class="flex items-center justify-center rounded-full shrink-0 font-display font-bold"
-                style="width:48px;height:48px;background:rgba(247,80,0,0.1);border:1.5px solid rgba(247,80,0,0.35);color:#FF6B26;font-size:1.25rem"
+                style="width:48px;height:48px;background:rgba(200,16,46,0.1);border:1.5px solid rgba(200,16,46,0.35);color:var(--c-accent);font-size:1.25rem"
               >
                 {monogram}
               </span>
               <div>
                 <h3
-                  class="font-display font-bold mb-1 group-hover:text-[#FF6B26]"
-                  style="color:#FFFFFF"
+                  class="font-display font-bold mb-1 group-hover:text-[var(--c-accent)]"
+                  style="color:var(--c-ink)"
                 >
                   {brand.name}
                 </h3>
-                <p class="text-sm leading-relaxed mb-2" style="color:#64748B">
+                <p class="text-sm leading-relaxed mb-2" style="color:var(--c-muted)">
                   {brand.description}
                 </p>
                 <div class="flex items-center gap-2 flex-wrap">

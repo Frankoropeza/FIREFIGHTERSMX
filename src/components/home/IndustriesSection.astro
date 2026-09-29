@@ -23,23 +23,23 @@ const industries = [
 }));
 ---
 
-<section class="home-deferred-section" style="background:#040A12;padding-block:5rem" aria-label="Sectores que atendemos">
+<section class="home-deferred-section" style="background:var(--c-bg);padding-block:5rem" aria-label="Sectores que atendemos">
 
   <!-- Header -->
   <div class="container-site mb-12">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end">
       <div>
         <span class="section-eyebrow mb-4 inline-flex">Sectores</span>
-        <h2 class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+        <h2 class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
           Protección contra incendios<br/>
-          <span style="color:#F75000">para cada industria.</span>
+          <span style="color:var(--c-accent)">para cada industria.</span>
         </h2>
       </div>
-      <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-        <p class="text-sm leading-relaxed mb-3" style="color:#94A3B8">
+      <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+        <p class="text-sm leading-relaxed mb-3" style="color:var(--c-text-2)">
           Más de 15 años atendiendo industrias, comercios y cuerpos de emergencia: desde brigadas internas de empresas hasta cuerpos de bomberos estatales y plantas petroquímicas.
         </p>
-        <p class="text-sm leading-relaxed" style="color:#94A3B8">
+        <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
           Cada sector tiene normas, presupuestos y calendarios distintos.
           Te asignamos un ejecutivo que ya equipó proyectos similares al tuyo.
         </p>
@@ -48,12 +48,12 @@ const industries = [
   </div>
 
   <!-- Grid full-width -->
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style="border-top:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style="border-top:1px solid var(--c-line);border-left:1px solid var(--c-line)">
     {industries.map((ind) => (
       <a
         href={`/industrias/${ind.slug}`}
         class="grid-cell group relative flex flex-col overflow-hidden"
-        style="border-right:1px solid rgba(74,117,153,0.18);border-bottom:1px solid rgba(74,117,153,0.18)"
+        style="border-right:1px solid var(--c-line);border-bottom:1px solid var(--c-line)"
       >
         <!-- Accent bar left -->
         <div class="absolute left-0 top-0 bottom-0 w-[3px] z-10 opacity-0 group-hover:opacity-100" style={`background:${ind.color}`}></div>
@@ -78,20 +78,20 @@ const industries = [
         <!-- Contenido -->
         <div class="flex flex-col gap-3 p-5 flex-1">
           <!-- Ícono -->
-          <div class="w-10 h-10 flex items-center justify-center shrink-0" style={`border:1px solid rgba(74,117,153,0.3);color:${ind.color}`}>
+          <div class="w-10 h-10 flex items-center justify-center shrink-0" style={`border:1px solid var(--c-line-strong);color:${ind.color}`}>
             <span class="w-5 h-5 block" set:html={ind.icon}/>
           </div>
 
           <!-- Título + tagline -->
           <div class="flex flex-col gap-1.5 flex-1">
-            <h3 class="font-display font-bold" style="font-size:1.1rem;color:#FFFFFF;line-height:1.1">
+            <h3 class="font-display font-bold" style="font-size:1.1rem;color:var(--c-ink);line-height:1.1">
               {ind.name}
             </h3>
-            <p class="text-xs leading-relaxed" style="color:#64748B">{ind.tagline}</p>
+            <p class="text-xs leading-relaxed" style="color:var(--c-muted)">{ind.tagline}</p>
           </div>
 
           <!-- CTA -->
-          <div class="flex items-center gap-1.5 text-xs font-display font-semibold uppercase tracking-wider group-hover:text-[#FF6B26]" style="color:var(--forge-300);letter-spacing:0.1em">
+          <div class="flex items-center gap-1.5 text-xs font-display font-semibold uppercase tracking-wider group-hover:text-[var(--c-accent)]" style="color:var(--forge-300);letter-spacing:0.1em">
             {ind.cta}
             
           </div>

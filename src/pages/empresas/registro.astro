@@ -22,26 +22,26 @@ const planes = [
 ] as const;
 ---
 <BaseLayout {...seoMeta} schema={[breadcrumbSchema]}>
-  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+  <nav class="py-3" style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line)" aria-label="Breadcrumb">
     <div class="container-site"><ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
-      <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li><li aria-hidden="true">/</li>
-      <li><a href="/empresas/" class="hover:text-[#FF6B26]">Directorio de Empresas</a></li><li aria-hidden="true">/</li>
-      <li><span style="color:#94A3B8" aria-current="page">Registro</span></li></ol></div>
+      <li><a href="/" class="hover:text-[var(--c-accent)]">Inicio</a></li><li aria-hidden="true">/</li>
+      <li><a href="/empresas/" class="hover:text-[var(--c-accent)]">Directorio de Empresas</a></li><li aria-hidden="true">/</li>
+      <li><span style="color:var(--c-text-2)" aria-current="page">Registro</span></li></ol></div>
   </nav>
 
-  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem" aria-labelledby="reg-heading">
-    <div class="absolute top-0 right-0 w-2/3 h-full pointer-events-none" aria-hidden="true" style="background:radial-gradient(ellipse 70% 60% at 85% 40%, rgba(245,166,35,0.08) 0%, transparent 65%)"></div>
+  <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:5rem" aria-labelledby="reg-heading">
+    <div class="absolute top-0 right-0 w-2/3 h-full pointer-events-none" aria-hidden="true" style="background:radial-gradient(ellipse 70% 60% at 85% 40%, rgba(181,71,8,0.08) 0%, transparent 65%)"></div>
     <div class="container-site relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
       <div>
         <span class="section-eyebrow mb-5 inline-flex">Para empresas del sector</span>
-        <h1 id="reg-heading" class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.2rem,5vw,4rem);line-height:0.95">Registra o reclama<br/><span style="color:#F5A623">tu empresa.</span></h1>
-        <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">El directorio reúne a las empresas de equipo para bomberos, extintores, sistemas contra incendio y capacitación de todo el país. Si tu empresa ya aparece, reclama la ficha y verifica tus datos. Si no aparece, regístrala: el alta básica es gratuita.</p>
-        <p class="text-sm leading-[1.9]" style="color:#94A3B8">Quien te busca aquí es un cuerpo de bomberos, una brigada industrial, un responsable de protección civil o un comprador de gobierno. Una ficha verificada y completa es la diferencia entre que te encuentren o no.</p>
+        <h1 id="reg-heading" class="font-display font-bold uppercase mb-6" style="color:var(--c-ink);font-size:clamp(2.2rem,5vw,4rem);line-height:0.95">Registra o reclama<br/><span style="color:var(--c-amber)">tu empresa.</span></h1>
+        <p class="text-sm leading-[1.9] mb-4" style="color:var(--c-text-2)">El directorio reúne a las empresas de equipo para bomberos, extintores, sistemas contra incendio y capacitación de todo el país. Si tu empresa ya aparece, reclama la ficha y verifica tus datos. Si no aparece, regístrala: el alta básica es gratuita.</p>
+        <p class="text-sm leading-[1.9]" style="color:var(--c-text-2)">Quien te busca aquí es un cuerpo de bomberos, una brigada industrial, un responsable de protección civil o un comprador de gobierno. Una ficha verificada y completa es la diferencia entre que te encuentren o no.</p>
       </div>
-      <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
+      <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
         <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:var(--forge-300)">Qué obtienes al reclamar tu ficha</p>
-        <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
-          {['Contacto completo, logo y descripción', 'Marcas que distribuyes y certificaciones', 'Sello de datos verificados', 'Posición prioritaria en tu giro y estado (destacado)'].map((x) => (<li class="py-3 text-sm" style="border-bottom:1px solid rgba(74,117,153,0.15);color:#CBD5E1">{x}</li>))}
+        <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
+          {['Contacto completo, logo y descripción', 'Marcas que distribuyes y certificaciones', 'Sello de datos verificados', 'Posición prioritaria en tu giro y estado (destacado)'].map((x) => (<li class="py-3 text-sm" style="border-bottom:1px solid var(--c-line);color:var(--c-text)">{x}</li>))}
         </ul>
       </div>
     </div>
@@ -49,29 +49,29 @@ const planes = [
 
   <QuickLinksBar />
 
-  <section class="section" style="background:#070E1A" aria-labelledby="planes-heading">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="planes-heading">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
-        <div><span class="section-eyebrow mb-4 inline-flex">Niveles de ficha</span><h2 id="planes-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Tres niveles,<br/><span style="color:#F5A623">una regla.</span></h2></div>
-        <div style="border-left:2px solid rgba(245,166,35,0.5);padding-left:1.75rem"><p class="text-sm leading-relaxed" style="color:#94A3B8">El nivel comercial de una ficha y la verificación de sus datos son cosas distintas. Pagar no sube el sello de verificación: ese lo otorga la redacción contra fuentes. Lo que compra el plan es visibilidad, nunca credibilidad.</p></div>
+        <div><span class="section-eyebrow mb-4 inline-flex">Niveles de ficha</span><h2 id="planes-heading" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Tres niveles,<br/><span style="color:var(--c-amber)">una regla.</span></h2></div>
+        <div style="border-left:2px solid rgba(181,71,8,0.5);padding-left:1.75rem"><p class="text-sm leading-relaxed" style="color:var(--c-text-2)">El nivel comercial de una ficha y la verificación de sus datos son cosas distintas. Pagar no sube el sello de verificación: ese lo otorga la redacción contra fuentes. Lo que compra el plan es visibilidad, nunca credibilidad.</p></div>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-px" style="background:var(--c-line);border:1px solid var(--c-line)">
         {planes.map((p) => { const c = planConfig[p.key]; return (
-          <div class="flex flex-col gap-4 p-7" style={`background:#040A12;border-top:2px solid ${c.color}`}>
+          <div class="flex flex-col gap-4 p-7" style={`background:var(--c-bg);border-top:2px solid ${c.color}`}>
             <span class="font-display font-bold text-[10px] uppercase tracking-wider" style={`color:${c.color}`}>{p.titulo}</span>
-            <span class="font-display font-bold text-3xl" style="color:#FFFFFF;line-height:1">{p.precio}</span>
-            <p class="text-xs leading-relaxed" style="color:#64748B">{p.desc}</p>
-            <ul class="flex flex-col gap-2 list-none m-0 p-0 mt-2">{p.puntos.map((x) => <li class="flex items-start gap-2 text-xs" style="color:#CBD5E1"><span style={`color:${c.color}`}>Sí</span>{x}</li>)}</ul>
+            <span class="font-display font-bold text-3xl" style="color:var(--c-ink);line-height:1">{p.precio}</span>
+            <p class="text-xs leading-relaxed" style="color:var(--c-muted)">{p.desc}</p>
+            <ul class="flex flex-col gap-2 list-none m-0 p-0 mt-2">{p.puntos.map((x) => <li class="flex items-start gap-2 text-xs" style="color:var(--c-text)"><span style={`color:${c.color}`}>Sí</span>{x}</li>)}</ul>
           </div>); })}
       </div>
     </div>
   </section>
 
-  <section id="formulario" class="section" style="background:#040A12" aria-labelledby="form-heading">
+  <section id="formulario" class="section" style="background:var(--c-bg)" aria-labelledby="form-heading">
     <div class="container-site grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 items-start">
       <div>
         <span class="section-eyebrow mb-4 inline-flex">Solicitud</span>
-        <h2 id="form-heading" class="font-display font-bold mb-8" style="color:#FFFFFF;font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.05">Envíanos los datos<br/><span style="color:#F5A623">de tu empresa.</span></h2>
+        <h2 id="form-heading" class="font-display font-bold mb-8" style="color:var(--c-ink);font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.05">Envíanos los datos<br/><span style="color:var(--c-amber)">de tu empresa.</span></h2>
         <form data-reg-form data-mail={SITE.email} class="flex flex-col gap-5" method="POST" action={`mailto:${SITE.email}`}>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div><label class="label" for="r-tipo">Tipo de solicitud</label><select id="r-tipo" name="tipo" class="select" required><option value="reclamar">Reclamar una ficha existente</option><option value="alta">Registrar una empresa nueva</option></select></div>
@@ -90,20 +90,20 @@ const planes = [
           <div><label class="label" for="r-msg">Especialidades, marcas que distribuyes, cobertura</label><textarea id="r-msg" name="mensaje" class="textarea" rows="4"></textarea></div>
           <div class="flex flex-col sm:flex-row sm:items-center gap-4">
             <button type="submit" class="btn btn-gold btn-lg">Enviar solicitud de registro</button>
-            <span class="text-xs" style="color:#64748B">Se abre tu correo con la solicitud prellenada. Respondemos en 1–2 días hábiles.</span>
+            <span class="text-xs" style="color:var(--c-muted)">Se abre tu correo con la solicitud prellenada. Respondemos en 1–2 días hábiles.</span>
           </div>
         </form>
       </div>
       <aside class="flex flex-col gap-4 lg:sticky lg:top-28">
-        <div class="p-6" style="background:#0C1825;border:1px solid rgba(74,117,153,0.25)">
+        <div class="p-6" style="background:var(--c-surface);border:1px solid var(--c-line-strong)">
           <p class="font-display font-bold text-xs uppercase tracking-widest mb-3" style="color:var(--forge-300)">Qué verificamos</p>
-          <ul class="flex flex-col gap-2 list-none m-0 p-0 text-xs" style="color:#CBD5E1">
+          <ul class="flex flex-col gap-2 list-none m-0 p-0 text-xs" style="color:var(--c-text)">
             <li>· Que la empresa existe y opera en el giro declarado</li><li>· Que el contacto responde desde un dominio o teléfono de la empresa</li><li>· Que las certificaciones declaradas son verificables</li><li>· Que las marcas distribuidas coinciden con lo público del fabricante</li>
           </ul>
         </div>
-        <div class="p-6" style="background:#0C1825;border:1px solid rgba(74,117,153,0.25)">
+        <div class="p-6" style="background:var(--c-surface);border:1px solid var(--c-line-strong)">
           <p class="font-display font-bold text-xs uppercase tracking-widest mb-3" style="color:var(--forge-300)">De dónde salen los registros básicos</p>
-          <p class="text-xs leading-relaxed" style="color:#94A3B8">Del Directorio Estadístico Nacional de Unidades Económicas (DENUE) del INEGI, filtrado y clasificado por giro por nuestra redacción. Si un registro es incorrecto o ya no opera, <a href="/contacto/" class="hover:text-[#FF6B26]" style="color:#FF8F57">avísanos</a> y lo corregimos.</p>
+          <p class="text-xs leading-relaxed" style="color:var(--c-text-2)">Del Directorio Estadístico Nacional de Unidades Económicas (DENUE) del INEGI, filtrado y clasificado por giro por nuestra redacción. Si un registro es incorrecto o ya no opera, <a href="/contacto/" class="hover:text-[var(--c-accent)]" style="color:var(--c-accent)">avísanos</a> y lo corregimos.</p>
         </div>
       </aside>
     </div>

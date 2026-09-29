@@ -41,42 +41,42 @@ const estados = [
 <BaseLayout {...seoMeta} schema={[breadcrumbSchema]}>
 
   <!-- Breadcrumb -->
-  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+  <nav class="py-3" style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line)" aria-label="Breadcrumb">
     <div class="container-site">
       <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
-        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li><a href="/" class="hover:text-[var(--c-accent)]">Inicio</a></li>
         <li aria-hidden="true">/</li>
-        <li><a href="/empresa" class="hover:text-[#FF6B26]">Empresa</a></li>
+        <li><a href="/empresa" class="hover:text-[var(--c-accent)]">Empresa</a></li>
         <li aria-hidden="true">/</li>
-        <li><span style="color:#94A3B8" aria-current="page">Distribuidores</span></li>
+        <li><span style="color:var(--c-text-2)" aria-current="page">Distribuidores</span></li>
       </ol>
     </div>
   </nav>
 
   <!-- Hero -->
-  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">
-    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
+  <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:5rem">
+    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(200,16,46,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
 
     <div class="container-site relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div>
           <span class="section-eyebrow mb-5 inline-flex">Cobertura · 32 estados</span>
-          <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+          <h1 class="font-display font-bold uppercase mb-6" style="color:var(--c-ink);font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
             Cobertura<br/>
-            <span style="color:#F75000">nacional</span>
+            <span style="color:var(--c-accent)">nacional</span>
           </h1>
           <div class="flex flex-col sm:flex-row gap-3">
             <a href={whatsappUrl('Hola, quiero saber cómo envían a mi ciudad.')} target="_blank" rel="noopener" class="btn btn-primary btn-lg">Consultar envío a mi estado</a>
             <a href="/cotizacion" class="btn btn-ghost btn-lg">Solicitar cotización de equipo contra incendio</a>
           </div>
         </div>
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
-          <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
+          <p class="text-sm leading-[1.9] mb-5" style="color:var(--c-text-2)">
             Enviamos equipo certificado a
-            <strong style="color:#CBD5E1">los 32 estados de la República</strong>, con garantía de
+            <strong style="color:var(--c-text)">los 32 estados de la República</strong>, con garantía de
             fábrica, refacciones originales y coordinación de servicio en sitio.
           </p>
-          <p class="text-sm leading-[1.9] mb-6" style="color:#64748B">
+          <p class="text-sm leading-[1.9] mb-6" style="color:var(--c-muted)">
             ¿Te interesa ser distribuidor o no encuentras tu estado? Enviamos a toda la República
             y evaluamos nuevas alianzas comerciales para acercar el equipo certificado a tu región.
           </p>
@@ -88,21 +88,21 @@ const estados = [
         </div>
       </div>
     </div>
-    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)" aria-hidden="true"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(200,16,46,0.4) 30%, rgba(200,16,46,0.4) 70%, transparent)" aria-hidden="true"></div>
   </section>
 
   <!-- Accesos rápidos -->
   <QuickLinksBar />
 
   <!-- Ventajas -->
-  <section class="section-tight" style="background:#070E1A" aria-label="Ventajas de la red">
+  <section class="section-tight" style="background:var(--c-bg-alt)" aria-label="Ventajas de la red">
     <div class="container-site">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style="border:1px solid rgba(74,117,153,0.18)">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style="border:1px solid var(--c-line)">
         {ventajas.map((v, i) => (
-          <div class="flex flex-col gap-3 p-6" style={`background:#0C1825;${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.18);' : ''}`}>
-            <span class="block" style="width:24px;height:24px;color:#FF6B26" set:html={v.icon}/>
-            <h2 class="font-display font-bold text-sm uppercase tracking-wider" style="color:#FFFFFF">{v.label}</h2>
-            <p class="text-xs leading-relaxed" style="color:#64748B">{v.desc}</p>
+          <div class="flex flex-col gap-3 p-6" style={`background:var(--c-surface);${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.18);' : ''}`}>
+            <span class="block" style="width:24px;height:24px;color:var(--c-accent)" set:html={v.icon}/>
+            <h2 class="font-display font-bold text-sm uppercase tracking-wider" style="color:var(--c-ink)">{v.label}</h2>
+            <p class="text-xs leading-relaxed" style="color:var(--c-muted)">{v.desc}</p>
           </div>
         ))}
       </div>
@@ -110,31 +110,31 @@ const estados = [
   </section>
 
   <!-- Estados con presencia -->
-  <section class="section" style="background:#040A12" aria-labelledby="dist-estados-title">
+  <section class="section" style="background:var(--c-bg)" aria-labelledby="dist-estados-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Dónde estamos</span>
-          <h2 id="dist-estados-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="dist-estados-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Presencia<br/>
-            <span style="color:#F75000">en todo México.</span>
+            <span style="color:var(--c-accent)">en todo México.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
             Estados a los que enviamos con mayor frecuencia. ¿No ves el tuyo?
             Enviamos a toda la República y coordinamos servicio en sitio donde lo necesites.
           </p>
         </div>
       </div>
 
-      <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">
+      <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 list-none m-0 p-0" style="border-top:1px solid var(--c-line);border-left:1px solid var(--c-line)">
         {estados.map((e) => (
-          <li class="grid-cell flex items-center gap-3 p-4" style="border-bottom:1px solid rgba(74,117,153,0.18);border-right:1px solid rgba(74,117,153,0.18)">
+          <li class="grid-cell flex items-center gap-3 p-4" style="border-bottom:1px solid var(--c-line);border-right:1px solid var(--c-line)">
             
             <span class="flex flex-col gap-0.5 min-w-0">
-              <span class="font-display font-semibold text-sm" style="color:#FFFFFF">{e}</span>
-              <span class="text-xs" style="color:#64748B">Envíos y servicio</span>
+              <span class="font-display font-semibold text-sm" style="color:var(--c-ink)">{e}</span>
+              <span class="text-xs" style="color:var(--c-muted)">Envíos y servicio</span>
             </span>
           </li>
         ))}
@@ -143,26 +143,26 @@ const estados = [
   </section>
 
   <!-- CTA + cross-links -->
-  <section class="section" style="background:#070E1A" aria-labelledby="dist-cross-title">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="dist-cross-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">¿Quieres ser distribuidor?</span>
-          <h2 id="dist-cross-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+          <h2 id="dist-cross-title" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Hagamos equipo<br/>
-            <span style="color:#F75000">en tu región.</span>
+            <span style="color:var(--c-accent)">en tu región.</span>
           </h2>
-          <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
+          <p class="text-sm leading-relaxed mb-8" style="color:var(--c-text-2)">
             Buscamos aliados comerciales que quieran llevar equipo certificado a su estado.
             Si te interesa distribuir o necesitas ubicar el punto más cercano, escríbenos.
           </p>
           <a href={whatsappUrl('Hola, me interesa ser distribuidor de FIREFIGHTERS MX.')} target="_blank" rel="noopener" class="btn btn-primary">Quiero ser distribuidor</a>
         </div>
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
           <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">
             También te puede servir
           </h2>
-          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
             {[
               { label: 'Cobertura nacional', desc: 'Tiempos de entrega por estado', href: '/cobertura' },
               { label: 'Marcas que distribuimos', desc: 'Globe, MSA, Dräger, Holmatro y más', href: '/marcas' },
@@ -170,11 +170,11 @@ const estados = [
               { label: 'Contacto', desc: CONTACTO_DIRECTO_ACTIVO ? 'Teléfono, WhatsApp y correo' : 'Teléfono, correo y formulario de cotización', href: '/contacto' },
               { label: 'Volver a la empresa', desc: 'Visión general de FIREFIGHTERS MX', href: '/empresa' },
             ].map((l) => (
-              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+              <li style="border-bottom:1px solid var(--c-line)">
                 <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
                   <span class="flex flex-col gap-0.5">
-                    <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
-                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
+                    <span class="font-display font-semibold text-sm group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{l.label}</span>
+                    <span class="text-xs" style="color:var(--c-muted)">{l.desc}</span>
                   </span>
                   
                 </a>

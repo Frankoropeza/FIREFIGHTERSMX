@@ -30,23 +30,23 @@ const riskLevels = [
 ];
 ---
 
-<section class="home-deferred-section section" style="background:#070E1A" aria-labelledby="risk-guide-title">
+<section class="home-deferred-section section" style="background:var(--c-bg-alt)" aria-labelledby="risk-guide-title">
   <div class="container-site">
 
     <!-- Header -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
       <div>
         <span class="section-eyebrow mb-4 inline-flex">Guía de selección</span>
-        <h2 id="risk-guide-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+        <h2 id="risk-guide-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
           ¿Qué equipo contra incendio necesitas<br/>
-          <span style="color:#F75000">según tu nivel de riesgo?</span>
+          <span style="color:var(--c-accent)">según tu nivel de riesgo?</span>
         </h2>
       </div>
-      <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-        <p class="text-sm leading-relaxed mb-3" style="color:#94A3B8">
-          La selección correcta parte de determinar el grado de riesgo de incendio de tu centro de trabajo conforme a la <strong style="color:#CBD5E1">NOM-002-STPS-2010</strong>. Es riesgo alto si la superficie construida es de 3,000 m² o más, si el inventario supera 1,400 L de líquidos inflamables, 2,000 L de líquidos combustibles, 3,000 L de gases inflamables o 15,000 kg de sólidos combustibles, o si hay materiales pirofóricos o explosivos; en cualquier otro caso es riesgo ordinario.
+      <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+        <p class="text-sm leading-relaxed mb-3" style="color:var(--c-text-2)">
+          La selección correcta parte de determinar el grado de riesgo de incendio de tu centro de trabajo conforme a la <strong style="color:var(--c-text)">NOM-002-STPS-2010</strong>. Es riesgo alto si la superficie construida es de 3,000 m² o más, si el inventario supera 1,400 L de líquidos inflamables, 2,000 L de líquidos combustibles, 3,000 L de gases inflamables o 15,000 kg de sólidos combustibles, o si hay materiales pirofóricos o explosivos; en cualquier otro caso es riesgo ordinario.
         </p>
-        <p class="text-sm leading-relaxed" style="color:#94A3B8">
+        <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
           Esta tabla resume el equipamiento mínimo y los complementos recomendados por nivel.
           Un diagnóstico técnico presencial — que en FIREFIGHTERS MX hacemos sin costo —
           afina cantidades, agentes y ubicaciones según tu instalación.
@@ -55,29 +55,29 @@ const riskLevels = [
     </div>
 
     <!-- Tabla -->
-    <div class="overflow-x-auto" style="border:1px solid rgba(74,117,153,0.2)">
+    <div class="overflow-x-auto" style="border:1px solid var(--c-line)">
       <table class="w-full text-left" style="border-collapse:collapse;min-width:880px">
         <caption class="sr-only">Equipamiento contra incendio mínimo y recomendado según nivel de riesgo NOM-002-STPS</caption>
         <thead>
-          <tr style="background:#122133">
-            <th scope="col" class="p-5 font-display font-bold text-xs uppercase tracking-widest" style="color:#FFFFFF;border-bottom:1px solid rgba(74,117,153,0.25)">Nivel de riesgo</th>
-            <th scope="col" class="p-5 font-display font-bold text-xs uppercase tracking-widest" style="color:#FFFFFF;border-bottom:1px solid rgba(74,117,153,0.25)">Ejemplos de instalaciones</th>
-            <th scope="col" class="p-5 font-display font-bold text-xs uppercase tracking-widest" style="color:#FFFFFF;border-bottom:1px solid rgba(74,117,153,0.25)">Equipamiento mínimo</th>
-            <th scope="col" class="p-5 font-display font-bold text-xs uppercase tracking-widest" style="color:#FFFFFF;border-bottom:1px solid rgba(74,117,153,0.25)">Complementos recomendados</th>
+          <tr style="background:var(--c-surface-2)">
+            <th scope="col" class="p-5 font-display font-bold text-xs uppercase tracking-widest" style="color:var(--c-ink);border-bottom:1px solid var(--c-line-strong)">Nivel de riesgo</th>
+            <th scope="col" class="p-5 font-display font-bold text-xs uppercase tracking-widest" style="color:var(--c-ink);border-bottom:1px solid var(--c-line-strong)">Ejemplos de instalaciones</th>
+            <th scope="col" class="p-5 font-display font-bold text-xs uppercase tracking-widest" style="color:var(--c-ink);border-bottom:1px solid var(--c-line-strong)">Equipamiento mínimo</th>
+            <th scope="col" class="p-5 font-display font-bold text-xs uppercase tracking-widest" style="color:var(--c-ink);border-bottom:1px solid var(--c-line-strong)">Complementos recomendados</th>
           </tr>
         </thead>
         <tbody>
           {riskLevels.map((r, i) => (
-            <tr style={`background:${i % 2 === 0 ? '#0C1825' : '#0A1420'}`}>
-              <th scope="row" class="p-5 align-top" style="border-bottom:1px solid rgba(74,117,153,0.12)">
-                <span class="inline-flex items-center gap-2 font-display font-bold text-base" style="color:#FFFFFF">
+            <tr style={`background:${i % 2 === 0 ? 'var(--c-surface)' : 'var(--c-bg-alt)'}`}>
+              <th scope="row" class="p-5 align-top" style="border-bottom:1px solid var(--c-line)">
+                <span class="inline-flex items-center gap-2 font-display font-bold text-base" style="color:var(--c-ink)">
                   <span class="w-2 h-2 shrink-0" style={`background:${r.color}`} aria-hidden="true"></span>
                   {r.nivel}
                 </span>
               </th>
-              <td class="p-5 align-top text-sm leading-relaxed" style="color:#94A3B8;border-bottom:1px solid rgba(74,117,153,0.12)">{r.ejemplos}</td>
-              <td class="p-5 align-top text-sm leading-relaxed" style="color:#94A3B8;border-bottom:1px solid rgba(74,117,153,0.12)">{r.minimo}</td>
-              <td class="p-5 align-top text-sm leading-relaxed" style="color:#64748B;border-bottom:1px solid rgba(74,117,153,0.12)">{r.recomendado}</td>
+              <td class="p-5 align-top text-sm leading-relaxed" style="color:var(--c-text-2);border-bottom:1px solid var(--c-line)">{r.ejemplos}</td>
+              <td class="p-5 align-top text-sm leading-relaxed" style="color:var(--c-text-2);border-bottom:1px solid var(--c-line)">{r.minimo}</td>
+              <td class="p-5 align-top text-sm leading-relaxed" style="color:var(--c-muted);border-bottom:1px solid var(--c-line)">{r.recomendado}</td>
             </tr>
           ))}
         </tbody>
@@ -85,11 +85,11 @@ const riskLevels = [
     </div>
 
     <!-- Nota + CTA -->
-    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mt-8 p-6" style="background:#0C1825;border:1px solid rgba(247,80,0,0.2)">
-      <p class="text-sm leading-relaxed max-w-2xl" style="color:#94A3B8">
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mt-8 p-6" style="background:var(--c-surface);border:1px solid rgba(200,16,46,0.2)">
+      <p class="text-sm leading-relaxed max-w-2xl" style="color:var(--c-text-2)">
         Estas cifras son orientativas. Un diagnóstico técnico presencial determina la cantidad
         exacta, los agentes necesarios y la ubicación óptima según la distribución de tu inmueble.
-        <strong style="color:#CBD5E1">En FIREFIGHTERS MX realizamos este diagnóstico sin costo.</strong>
+        <strong style="color:var(--c-text)">En FIREFIGHTERS MX realizamos este diagnóstico sin costo.</strong>
       </p>
       <a
         href={whatsappUrl('Hola, necesito un diagnóstico técnico de mi instalación.')}

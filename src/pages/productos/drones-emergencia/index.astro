@@ -152,31 +152,31 @@ const otrasCategorias = allCategories.filter((c) => c.slug !== 'drones-emergenci
 <BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema, faqSchema]}>
 
   <!-- Breadcrumb -->
-  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+  <nav class="py-3" style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line)" aria-label="Breadcrumb">
     <div class="container-site">
       <ol class="flex items-center flex-wrap gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
-        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li><a href="/" class="hover:text-[var(--c-accent)]">Inicio</a></li>
         <li aria-hidden="true">/</li>
-        <li><a href="/productos" class="hover:text-[#FF6B26]">Productos</a></li>
+        <li><a href="/productos" class="hover:text-[var(--c-accent)]">Productos</a></li>
         <li aria-hidden="true">/</li>
-        <li><span style="color:#94A3B8" aria-current="page">Drones de Emergencia</span></li>
+        <li><span style="color:var(--c-text-2)" aria-current="page">Drones de Emergencia</span></li>
       </ol>
     </div>
   </nav>
 
   <!-- Hero -->
-  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">
-    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(52,211,153,0.06) 0%, transparent 65%)" aria-hidden="true"></div>
+  <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:5rem">
+    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(6,118,71,0.06) 0%, transparent 65%)" aria-hidden="true"></div>
 
     <div class="container-site relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div>
           <span class="section-eyebrow mb-5 inline-flex">{cat.norm}</span>
-          <h1 class="font-display font-bold uppercase mb-4" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+          <h1 class="font-display font-bold uppercase mb-4" style="color:var(--c-ink);font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
             Dron con cámara térmica<br/>
-            <span style="color:#F75000">drones DJI Enterprise para bomberos y protección civil.</span>
+            <span style="color:var(--c-accent)">drones DJI Enterprise para bomberos y protección civil.</span>
           </h1>
-          <p class="text-base leading-relaxed mb-8 max-w-xl" style="color:#94A3B8">
+          <p class="text-base leading-relaxed mb-8 max-w-xl" style="color:var(--c-text-2)">
             Distribuidores autorizados de DJI Enterprise en México. Matrice 30T con térmica radiométrica,
             Mavic 3 Thermal y Dock 2 autónomo — más capacitación de piloto y trámite AFAC incluidos.
           </p>
@@ -185,9 +185,9 @@ const otrasCategorias = allCategories.filter((c) => c.slug !== 'drones-emergenci
             <a href="/cotizacion" class="btn btn-ghost btn-lg">Cotización formal</a>
           </div>
         </div>
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
           {cat.intro.map((p) => (
-            <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">{p}</p>
+            <p class="text-sm leading-[1.9] mb-5" style="color:var(--c-text-2)">{p}</p>
           ))}
           <div class="flex flex-wrap gap-2">
             {['DJI Matrice 30T','Mavic 3 Thermal','Dock 2','AFAC México','Térmica radiométrica','Rescate · HAZMAT · ISR'].map(n => (
@@ -197,10 +197,10 @@ const otrasCategorias = allCategories.filter((c) => c.slug !== 'drones-emergenci
         </div>
       </div>
     </div>
-    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)" aria-hidden="true"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(200,16,46,0.4) 30%, rgba(200,16,46,0.4) 70%, transparent)" aria-hidden="true"></div>
   </section>
 
-  <section id="guia-drones" class="section" style="background:#040A12" aria-labelledby="guia-drones-title">
+  <section id="guia-drones" class="section" style="background:var(--c-bg)" aria-labelledby="guia-drones-title">
     <div class="container-site content-copy">
       <div class="section-head mb-5"><h2 id="guia-drones-title">¿Para qué sirve un dron con cámara térmica en emergencias?</h2></div>
       <p class="mb-8">Un dron con cámara térmica permite ver el calor desde el aire, de día y de noche. Los cuerpos de bomberos y de protección civil lo usan en combate de incendios, búsqueda y rescate, inspección y operaciones nocturnas. Desde el aire, el mando obtiene una vista completa del incidente sin exponer al personal.</p>
@@ -209,13 +209,13 @@ const otrasCategorias = allCategories.filter((c) => c.slug !== 'drones-emergenci
       <p>Una cámara radiométrica mide la temperatura de cada píxel, no solo muestra contraste. Los modelos DJI Matrice 30T, Mavic 3 Thermal y Matrice 4T usan sensores de 640×512 con precisión de ±2 °C o ±2 %. Así se pueden registrar temperaturas en la imagen y compararlas entre vuelos.</p>
 
       <div class="section-head mt-14 mb-5"><h2>Comparativa de drones térmicos DJI Enterprise</h2></div>
-      <div class="overflow-x-auto max-w-full min-w-0 mb-4"><table class="w-full text-left text-sm" style="border-collapse:collapse;min-width:640px;color:#CBD5E1">
-        <thead><tr><th class="p-3" style="background:#0C1825;color:#FFFFFF">Modelo</th><th class="p-3" style="background:#0C1825;color:#FFFFFF">Térmica</th><th class="p-3" style="background:#0C1825;color:#FFFFFF">Vuelo</th><th class="p-3" style="background:#0C1825;color:#FFFFFF">Protección</th><th class="p-3" style="background:#0C1825;color:#FFFFFF">Peso</th></tr></thead>
+      <div class="overflow-x-auto max-w-full min-w-0 mb-4"><table class="w-full text-left text-sm" style="border-collapse:collapse;min-width:640px;color:var(--c-text)">
+        <thead><tr><th class="p-3" style="background:var(--c-surface);color:var(--c-ink)">Modelo</th><th class="p-3" style="background:var(--c-surface);color:var(--c-ink)">Térmica</th><th class="p-3" style="background:var(--c-surface);color:var(--c-ink)">Vuelo</th><th class="p-3" style="background:var(--c-surface);color:var(--c-ink)">Protección</th><th class="p-3" style="background:var(--c-surface);color:var(--c-ink)">Peso</th></tr></thead>
         <tbody>
-          <tr><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Mavic 3 Thermal</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">640×512 radiométrica</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">45 min</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Sin IP</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">920 g</td></tr>
-          <tr><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Matrice 4T</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">640×512 radiométrica</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">49 min</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">—</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">1.22 kg</td></tr>
-          <tr><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Matrice 30T</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">640×512 radiométrica + telémetro láser</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">41 min</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">IP55</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">3.77 kg</td></tr>
-          <tr><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Matrice 350 RTK</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Según carga útil</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">55 min sin carga</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">IP55</td><td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">9.2 kg máx. al despegue</td></tr>
+          <tr><td class="p-3" style="border-bottom:1px solid var(--c-line)">Mavic 3 Thermal</td><td class="p-3" style="border-bottom:1px solid var(--c-line)">640×512 radiométrica</td><td class="p-3" style="border-bottom:1px solid var(--c-line)">45 min</td><td class="p-3" style="border-bottom:1px solid var(--c-line)">Sin IP</td><td class="p-3" style="border-bottom:1px solid var(--c-line)">920 g</td></tr>
+          <tr><td class="p-3" style="border-bottom:1px solid var(--c-line)">Matrice 4T</td><td class="p-3" style="border-bottom:1px solid var(--c-line)">640×512 radiométrica</td><td class="p-3" style="border-bottom:1px solid var(--c-line)">49 min</td><td class="p-3" style="border-bottom:1px solid var(--c-line)">—</td><td class="p-3" style="border-bottom:1px solid var(--c-line)">1.22 kg</td></tr>
+          <tr><td class="p-3" style="border-bottom:1px solid var(--c-line)">Matrice 30T</td><td class="p-3" style="border-bottom:1px solid var(--c-line)">640×512 radiométrica + telémetro láser</td><td class="p-3" style="border-bottom:1px solid var(--c-line)">41 min</td><td class="p-3" style="border-bottom:1px solid var(--c-line)">IP55</td><td class="p-3" style="border-bottom:1px solid var(--c-line)">3.77 kg</td></tr>
+          <tr><td class="p-3" style="border-bottom:1px solid var(--c-line)">Matrice 350 RTK</td><td class="p-3" style="border-bottom:1px solid var(--c-line)">Según carga útil</td><td class="p-3" style="border-bottom:1px solid var(--c-line)">55 min sin carga</td><td class="p-3" style="border-bottom:1px solid var(--c-line)">IP55</td><td class="p-3" style="border-bottom:1px solid var(--c-line)">9.2 kg máx. al despegue</td></tr>
         </tbody>
       </table></div>
 
@@ -224,7 +224,7 @@ const otrasCategorias = allCategories.filter((c) => c.slug !== 'drones-emergenci
 
       <div class="section-head mt-14 mb-5"><h2>Normativa: NOM-107-SCT3-2019</h2></div>
       <p>En México, los drones se regulan con la NOM-107-SCT3-2019, vigente y confirmada en 2024. Lo más importante para bomberos y protección civil:</p>
-      <ul class="list-disc pl-6 space-y-2 text-sm leading-relaxed" style="color:#CBD5E1">
+      <ul class="list-disc pl-6 space-y-2 text-sm leading-relaxed" style="color:var(--c-text)">
         <li>Todo dron de más de 250 g requiere registro ante la autoridad aeronáutica.</li>
         <li>Categorías por peso: micro (hasta 2 kg), pequeño (más de 2 y hasta 25 kg) y grande (más de 25 kg).</li>
         <li>Las operaciones de gobierno siguen los requisitos del uso privado no comercial: seguro de responsabilidad civil y, en drones pequeños, autorización de operación y de piloto.</li>
@@ -233,7 +233,7 @@ const otrasCategorias = allCategories.filter((c) => c.slug !== 'drones-emergenci
       <p>Por peso, el Mavic 3 Thermal y el Matrice 4T son micro; el Matrice 30T y el Matrice 350 RTK son pequeños.</p>
 
       <div class="section-head mt-14 mb-5"><h2>¿Cómo elegir un dron térmico?</h2></div>
-      <ol class="list-none pl-6 space-y-2 text-sm leading-relaxed" style="color:#CBD5E1">
+      <ol class="list-none pl-6 space-y-2 text-sm leading-relaxed" style="color:var(--c-text)">
         <li>Define la misión: respuesta rápida, búsqueda y rescate de largo alcance o patrullaje automatizado.</li>
         <li>Elige entre un dron compacto (despliegue rápido) y uno con protección IP55 para lluvia y polvo.</li>
         <li>Verifica que la cámara sea radiométrica si necesitas medir temperaturas.</li>
@@ -248,14 +248,14 @@ const otrasCategorias = allCategories.filter((c) => c.slug !== 'drones-emergenci
   <QuickLinksBar />
 
   <!-- Trust Pillars -->
-  <section class="section-tight" style="background:#070E1A" aria-label="Por qué distribuimos DJI Enterprise">
+  <section class="section-tight" style="background:var(--c-bg-alt)" aria-label="Por qué distribuimos DJI Enterprise">
     <div class="container-site">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style="border:1px solid rgba(74,117,153,0.18)">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style="border:1px solid var(--c-line)">
         {razones.map((r, i) => (
-          <div class="flex flex-col gap-3 p-6" style={`background:#080F1A;${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.12)' : ''}`}>
+          <div class="flex flex-col gap-3 p-6" style={`background:var(--c-bg-alt);${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.12)' : ''}`}>
             
-            <h3 class="font-display font-bold text-sm uppercase tracking-wide" style="color:#FFFFFF">{r.t}</h3>
-            <p class="text-xs leading-relaxed m-0" style="color:#64748B">{r.d}</p>
+            <h3 class="font-display font-bold text-sm uppercase tracking-wide" style="color:var(--c-ink)">{r.t}</h3>
+            <p class="text-xs leading-relaxed m-0" style="color:var(--c-muted)">{r.d}</p>
           </div>
         ))}
       </div>
@@ -263,18 +263,18 @@ const otrasCategorias = allCategories.filter((c) => c.slug !== 'drones-emergenci
   </section>
 
   <!-- Tipos de misión -->
-  <section class="section" style="background:#040A12" aria-labelledby="misiones-title">
+  <section class="section" style="background:var(--c-bg)" aria-labelledby="misiones-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Cuatro escenarios críticos</span>
-          <h2 id="misiones-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="misiones-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             El dron correcto<br/>
-            <span style="color:#F75000">según la misión.</span>
+            <span style="color:var(--c-accent)">según la misión.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
             No todas las emergencias piden lo mismo. La evaluación táctica de un incendio estructural,
             la búsqueda nocturna de una persona o el reconocimiento de un derrame HAZMAT tienen
             configuraciones distintas — y la plataforma correcta sale de la misión, no del catálogo.
@@ -284,15 +284,15 @@ const otrasCategorias = allCategories.filter((c) => c.slug !== 'drones-emergenci
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
         {misiones.map((m) => (
-          <article class="flex flex-col gap-4 p-7" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
+          <article class="flex flex-col gap-4 p-7" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
             <div class="flex items-center justify-center rounded-full" style={`width:52px;height:52px;background:${m.accent}1a;border:1.5px solid ${m.accent}59;color:${m.accent}`}>
               <span class="block" style="width:24px;height:24px" set:html={m.icon}/>
             </div>
             <div class="flex items-center justify-between gap-2">
-              <h3 class="font-display font-bold text-base" style="color:#FFFFFF">{m.title}</h3>
+              <h3 class="font-display font-bold text-base" style="color:var(--c-ink)">{m.title}</h3>
               <span class="badge badge-dark text-[9px]">{m.norm}</span>
             </div>
-            <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{m.desc}</p>
+            <p class="text-sm leading-relaxed m-0" style="color:var(--c-text-2)">{m.desc}</p>
           </article>
         ))}
       </div>
@@ -301,18 +301,18 @@ const otrasCategorias = allCategories.filter((c) => c.slug !== 'drones-emergenci
 
   <!-- Marca DJI Enterprise — card L4 -->
   {marcas.length > 0 && (
-    <section class="section" style="background:#070E1A" aria-labelledby="marcas-title">
+    <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="marcas-title">
       <div class="container-site">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-10">
           <div>
             <span class="section-eyebrow mb-4 inline-flex">Distribuidor autorizado</span>
-            <h2 id="marcas-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            <h2 id="marcas-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
               Plataformas DJI<br/>
-              <span style="color:#F75000">para emergencias.</span>
+              <span style="color:var(--c-accent)">para emergencias.</span>
             </h2>
           </div>
-          <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-            <p class="text-sm leading-relaxed" style="color:#94A3B8">
+          <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+            <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
               DJI Enterprise es una plataforma de drones para cuerpos de bomberos y protección
               civil a nivel mundial. Distribuimos los tres modelos de referencia con soporte técnico,
               capacitación y trámite AFAC en un solo paquete llave en mano.
@@ -321,10 +321,10 @@ const otrasCategorias = allCategories.filter((c) => c.slug !== 'drones-emergenci
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {marcas.map((b) => (
-            <a href={`/productos/${b.categorySlug}/${b.slug}`} class="group flex flex-col gap-3 p-7" style="background:#040A12;border:1px solid rgba(74,117,153,0.18)">
-              <h3 class="font-display font-bold text-xl group-hover:text-[#FF6B26]" style="color:#FFFFFF">{b.brandLabel}</h3>
-              <p class="text-xs leading-relaxed flex-1" style="color:#64748B">{b.crossDesc}</p>
-              <span class="inline-flex items-center gap-1.5 text-xs font-display font-semibold uppercase tracking-wider" style="color:#FF8F57">
+            <a href={`/productos/${b.categorySlug}/${b.slug}`} class="group flex flex-col gap-3 p-7" style="background:var(--c-bg);border:1px solid var(--c-line)">
+              <h3 class="font-display font-bold text-xl group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{b.brandLabel}</h3>
+              <p class="text-xs leading-relaxed flex-1" style="color:var(--c-muted)">{b.crossDesc}</p>
+              <span class="inline-flex items-center gap-1.5 text-xs font-display font-semibold uppercase tracking-wider" style="color:var(--c-accent)">
                 Catálogo completo de drones de emergencia
                 
               </span>
@@ -336,19 +336,19 @@ const otrasCategorias = allCategories.filter((c) => c.slug !== 'drones-emergenci
   )}
 
   <!-- Productos DJI — 3 fichas técnicas -->
-  <section class="section" style="background:#040A12" aria-labelledby="modelos-title">
+  <section class="section" style="background:var(--c-bg)" aria-labelledby="modelos-title">
     <div class="container-site">
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Matrice 30T · Mavic 3 Thermal · Dock 2</span>
-          <h2 id="modelos-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="modelos-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Tres modelos,<br/>
-            <span style="color:#F75000">tres misiones.</span>
+            <span style="color:var(--c-accent)">tres misiones.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed mb-4" style="color:var(--c-text-2)">
             Desde la plataforma institucional completa hasta el dron compacto de respuesta rápida y la
             estación autónoma 24/7 — un solo distribuidor para toda la flota con capacitación y AFAC incluidos.
           </p>
@@ -366,9 +366,9 @@ const otrasCategorias = allCategories.filter((c) => c.slug !== 'drones-emergenci
         ))}
       </div>
 
-      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(74,117,153,0.15)">
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid var(--c-line)">
         <div class="flex-1">
-          <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+          <p class="text-sm leading-relaxed m-0" style="color:var(--c-muted)">
             ¿Necesitas la ficha técnica completa, comparativa detallada o el paquete con capacitación y AFAC?
             Accede al catálogo dedicado de DJI Enterprise.
           </p>
@@ -387,22 +387,22 @@ const otrasCategorias = allCategories.filter((c) => c.slug !== 'drones-emergenci
   </section>
 
   <!-- Imagen de categoría -->
-  <section class="section-tight" style="background:#040A12" aria-label="Dron de emergencia en operación">
+  <section class="section-tight" style="background:var(--c-bg)" aria-label="Dron de emergencia en operación">
     <div class="container-site">
       <div class="flex items-center gap-4 mb-6">
-        <span class="w-8 h-px" style="background:#F75000"></span>
-        <span class="text-xs font-display font-semibold uppercase tracking-[0.18em]" style="color:#F75000">Drones en operación real</span>
+        <span class="w-8 h-px" style="background:var(--c-accent)"></span>
+        <span class="text-xs font-display font-semibold uppercase tracking-[0.18em]" style="color:var(--c-accent)">Drones en operación real</span>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-        <figure class="m-0 overflow-hidden" style="aspect-ratio:16/9;border:1px solid rgba(74,117,153,0.18)">
+        <figure class="m-0 overflow-hidden" style="aspect-ratio:16/9;border:1px solid var(--c-line)">
           <img src="/images/categorias/drones-emergencia.avif" alt="Dron DJI Matrice 30T con cámara térmica en operación de búsqueda y rescate — protección civil México" width="800" height="450" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center"/>
         </figure>
         <div class="grid grid-cols-2 gap-3">
           {(cat.spotlight?.subsections ?? []).map((s) => (
-            <div class="flex flex-col gap-2 p-5" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
-              <span class="font-display font-bold text-sm" style="color:#F75000"></span>
-              <h3 class="font-display font-bold text-sm" style="color:#FFFFFF">{s.name}</h3>
-              <p class="text-xs leading-relaxed m-0" style="color:#64748B">{s.detail}</p>
+            <div class="flex flex-col gap-2 p-5" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
+              <span class="font-display font-bold text-sm" style="color:var(--c-accent)"></span>
+              <h3 class="font-display font-bold text-sm" style="color:var(--c-ink)">{s.name}</h3>
+              <p class="text-xs leading-relaxed m-0" style="color:var(--c-muted)">{s.detail}</p>
             </div>
           ))}
         </div>
@@ -411,32 +411,32 @@ const otrasCategorias = allCategories.filter((c) => c.slug !== 'drones-emergenci
   </section>
 
   <!-- Tabla comparativa -->
-  <section class="section" style="background:#070E1A" aria-labelledby="comp-title">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="comp-title">
     <div class="container-site">
       <div class="mb-10">
         <span class="section-eyebrow mb-4 inline-flex">Comparativa de modelos</span>
-        <h2 id="comp-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
-          Matrice 30T · Mavic 3T · <span style="color:#F75000">Dock 2</span>
+        <h2 id="comp-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          Matrice 30T · Mavic 3T · <span style="color:var(--c-accent)">Dock 2</span>
         </h2>
       </div>
 
-      <div class="overflow-x-auto" style="border:1px solid rgba(74,117,153,0.18)">
+      <div class="overflow-x-auto" style="border:1px solid var(--c-line)">
         <table class="w-full border-collapse" style="min-width:640px">
           <thead>
-            <tr style="background:#0C1825">
-              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:var(--forge-300);border-bottom:1px solid rgba(74,117,153,0.18)">Característica</th>
-              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:#FF6B26;border-bottom:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">Matrice 30T</th>
-              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:#F5A623;border-bottom:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">Mavic 3T</th>
-              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:#34D399;border-bottom:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">Dock 2</th>
+            <tr style="background:var(--c-surface)">
+              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:var(--forge-300);border-bottom:1px solid var(--c-line)">Característica</th>
+              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:var(--c-accent);border-bottom:1px solid var(--c-line);border-left:1px solid var(--c-line)">Matrice 30T</th>
+              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:var(--c-amber);border-bottom:1px solid var(--c-line);border-left:1px solid var(--c-line)">Mavic 3T</th>
+              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:var(--c-success);border-bottom:1px solid var(--c-line);border-left:1px solid var(--c-line)">Dock 2</th>
             </tr>
           </thead>
           <tbody>
             {comparativa.map((row, i) => (
-              <tr style={`background:${i % 2 === 0 ? '#080F1A' : '#0A1320'}`}>
-                <td class="p-4 text-sm font-display font-semibold" style="color:#CBD5E1;border-bottom:1px solid rgba(74,117,153,0.12)">{row[0]}</td>
-                <td class="p-4 text-sm" style="color:#94A3B8;border-bottom:1px solid rgba(74,117,153,0.12);border-left:1px solid rgba(74,117,153,0.12)">{row[1]}</td>
-                <td class="p-4 text-sm" style="color:#94A3B8;border-bottom:1px solid rgba(74,117,153,0.12);border-left:1px solid rgba(74,117,153,0.12)">{row[2]}</td>
-                <td class="p-4 text-sm" style="color:#94A3B8;border-bottom:1px solid rgba(74,117,153,0.12);border-left:1px solid rgba(74,117,153,0.12)">{row[3]}</td>
+              <tr style={`background:${i % 2 === 0 ? 'var(--c-bg-alt)' : 'var(--c-bg-alt)'}`}>
+                <td class="p-4 text-sm font-display font-semibold" style="color:var(--c-text);border-bottom:1px solid var(--c-line)">{row[0]}</td>
+                <td class="p-4 text-sm" style="color:var(--c-text-2);border-bottom:1px solid var(--c-line);border-left:1px solid var(--c-line)">{row[1]}</td>
+                <td class="p-4 text-sm" style="color:var(--c-text-2);border-bottom:1px solid var(--c-line);border-left:1px solid var(--c-line)">{row[2]}</td>
+                <td class="p-4 text-sm" style="color:var(--c-text-2);border-bottom:1px solid var(--c-line);border-left:1px solid var(--c-line)">{row[3]}</td>
               </tr>
             ))}
           </tbody>
@@ -446,20 +446,20 @@ const otrasCategorias = allCategories.filter((c) => c.slug !== 'drones-emergenci
   </section>
 
   <!-- Guía de selección + blog -->
-  <section class="section" style="background:#040A12" aria-labelledby="guia-title">
+  <section class="section" style="background:var(--c-bg)" aria-labelledby="guia-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Cómo elegir</span>
-          <h2 id="guia-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+          <h2 id="guia-title" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             De la misión<br/>
-            <span style="color:#F75000">a la decisión.</span>
+            <span style="color:var(--c-accent)">a la decisión.</span>
           </h2>
           <ol class="flex flex-col gap-4 list-none m-0 p-0">
             {guia.map((s) => (
               <li class="flex items-start gap-4">
                 
-                <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{s.t}</p>
+                <p class="text-sm leading-relaxed m-0" style="color:var(--c-text-2)">{s.t}</p>
               </li>
             ))}
           </ol>
@@ -468,17 +468,17 @@ const otrasCategorias = allCategories.filter((c) => c.slug !== 'drones-emergenci
           </div>
         </div>
 
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
           <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">
             Aprende más en el blog
           </h2>
-          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
             {articulos.map((l) => (
-              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+              <li style="border-bottom:1px solid var(--c-line)">
                 <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
                   <span class="flex flex-col gap-0.5">
-                    <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
-                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
+                    <span class="font-display font-semibold text-sm group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{l.label}</span>
+                    <span class="text-xs" style="color:var(--c-muted)">{l.desc}</span>
                   </span>
                   
                 </a>
@@ -491,16 +491,16 @@ const otrasCategorias = allCategories.filter((c) => c.slug !== 'drones-emergenci
   </section>
 
   <!-- FAQ -->
-  <section class="section" style="background:#070E1A" aria-labelledby="faq-title">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="faq-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes</span>
-          <h2 id="faq-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+          <h2 id="faq-title" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Lo que más nos<br/>
-            <span style="color:#F75000">preguntan.</span>
+            <span style="color:var(--c-accent)">preguntan.</span>
           </h2>
-          <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
+          <p class="text-sm leading-relaxed mb-8" style="color:var(--c-text-2)">
             ¿Tu duda no aparece? Escríbenos por {CANAL_CONTACTO} con el detalle de tu operación y te
             asesoramos sobre la plataforma y los trámites AFAC para tu institución.
           </p>
@@ -512,12 +512,12 @@ const otrasCategorias = allCategories.filter((c) => c.slug !== 'drones-emergenci
         </div>
         <div class="flex flex-col">
           {faqs.map((f, i) => (
-            <details class="faq-item group" style={`border-top:1px solid rgba(74,117,153,0.18);${i === faqs.length - 1 ? 'border-bottom:1px solid rgba(74,117,153,0.18);' : ''}`}>
+            <details class="faq-item group" style={`border-top:1px solid var(--c-line);${i === faqs.length - 1 ? 'border-bottom:1px solid rgba(74,117,153,0.18);' : ''}`}>
               <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer">
-                <span class="font-display font-semibold text-sm" style="color:#FFFFFF">{f.q}</span>
-                <span class="faq-icon font-display font-bold text-xl shrink-0" style="color:#FF6B26">+</span>
+                <span class="font-display font-semibold text-sm" style="color:var(--c-ink)">{f.q}</span>
+                <span class="faq-icon font-display font-bold text-xl shrink-0" style="color:var(--c-accent)">+</span>
               </summary>
-              <p class="text-sm leading-relaxed pb-5 m-0" style="color:#94A3B8">{f.a}</p>
+              <p class="text-sm leading-relaxed pb-5 m-0" style="color:var(--c-text-2)">{f.a}</p>
             </details>
           ))}
         </div>
@@ -526,12 +526,12 @@ const otrasCategorias = allCategories.filter((c) => c.slug !== 'drones-emergenci
   </section>
 
   <!-- CTA Band -->
-  <section style="background:#F75000;padding-block:4rem" aria-label="Cotizar drones de emergencia">
+  <section style="background:var(--c-accent);padding-block:4rem" aria-label="Cotizar drones de emergencia">
     <div class="container-site">
       <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
         <div>
-          <p class="text-xs font-display font-bold uppercase tracking-[0.2em] mb-3" style="color:rgba(255,255,255,0.65)">DJI Matrice 30T · Mavic 3 Thermal · Dock 2 · Capacitación + AFAC</p>
-          <h2 class="font-display font-bold uppercase" style="color:#FFFFFF;font-size:clamp(1.75rem,4vw,3rem);line-height:1.05">
+          <p class="text-xs font-display font-bold uppercase tracking-[0.2em] mb-3" style="color:rgba(16,24,40,0.65)">DJI Matrice 30T · Mavic 3 Thermal · Dock 2 · Capacitación + AFAC</p>
+          <h2 class="font-display font-bold uppercase" style="color:var(--c-ink);font-size:clamp(1.75rem,4vw,3rem);line-height:1.05">
             Cámara térmica radiométrica.<br/>Llave en mano con AFAC.
           </h2>
         </div>
@@ -540,11 +540,11 @@ const otrasCategorias = allCategories.filter((c) => c.slug !== 'drones-emergenci
             href={whatsappUrl('Hola, quiero cotizar drones de emergencia con cámara térmica. ¿Tienen disponibilidad?')}
             target="_blank" rel="noopener"
             class="btn btn-lg"
-            style="background:#FFFFFF;color:#F75000;border-color:#FFFFFF;font-weight:700"
+            style="background:#FFFFFF;color:var(--c-accent);border-color:var(--c-line);font-weight:700"
           >
             Cotizar por {CANAL_CONTACTO} 
           </a>
-          <a href="/cotizacion" class="btn btn-lg" style="background:transparent;color:#FFFFFF;border:2px solid rgba(255,255,255,0.5)">
+          <a href="/cotizacion" class="btn btn-lg" style="background:transparent;color:var(--c-ink);border:2px solid rgba(16,24,40,0.5)">
             Cotización formal
           </a>
         </div>
@@ -553,27 +553,27 @@ const otrasCategorias = allCategories.filter((c) => c.slug !== 'drones-emergenci
   </section>
 
   <!-- Cross-links + otras categorías -->
-  <section class="section" style="background:#070E1A" aria-labelledby="cross-title">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="cross-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Equipa el conjunto completo</span>
-          <h2 id="cross-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+          <h2 id="cross-title" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             El dron amplifica<br/>
-            <span style="color:#F75000">al equipo en tierra.</span>
+            <span style="color:var(--c-accent)">al equipo en tierra.</span>
           </h2>
-          <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
+          <p class="text-sm leading-relaxed mb-8" style="color:var(--c-text-2)">
             La vista aérea es tan buena como el equipo que actúa con esa información. Cámaras
             térmicas portátiles, herramientas de rescate y EPP completo para la brigada en tierra
             — todo en un solo proveedor.
           </p>
           <a href={whatsappUrl('Hola, quiero equipar el conjunto completo de respuesta con drones y EPP para mi corporación.')} target="_blank" rel="noopener" class="btn btn-primary">Cotizar conjunto completo</a>
         </div>
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
           <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">
             También te puede servir
           </h2>
-          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
             {[
               { label: 'Cámaras Térmicas portátiles', desc: 'FLIR y MSA para exploración en tierra', href: '/productos/camaras-termicas' },
               { label: 'Herramientas de rescate', desc: 'Hidráulico Holmatro y USAR', href: '/productos/herramientas-rescate' },
@@ -581,11 +581,11 @@ const otrasCategorias = allCategories.filter((c) => c.slug !== 'drones-emergenci
               { label: 'Capacitación operativa', desc: 'Cursos de piloto y protocolos de misión', href: '/servicios/capacitacion' },
               { label: 'Soporte para licitaciones', desc: 'Fichas técnicas y manifiestos por partida', href: '/licitaciones' },
             ].map((l) => (
-              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+              <li style="border-bottom:1px solid var(--c-line)">
                 <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
                   <span class="flex flex-col gap-0.5">
-                    <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
-                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
+                    <span class="font-display font-semibold text-sm group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{l.label}</span>
+                    <span class="text-xs" style="color:var(--c-muted)">{l.desc}</span>
                   </span>
                   
                 </a>
@@ -596,7 +596,7 @@ const otrasCategorias = allCategories.filter((c) => c.slug !== 'drones-emergenci
       </div>
 
       <!-- Otras categorías -->
-      <div class="mt-14 pt-10" style="border-top:1px solid rgba(74,117,153,0.15)">
+      <div class="mt-14 pt-10" style="border-top:1px solid var(--c-line)">
         <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-6" style="color:var(--forge-300)">Otras categorías del catálogo</h2>
         <div class="flex flex-wrap gap-3">
           {otrasCategorias.map((c) => (

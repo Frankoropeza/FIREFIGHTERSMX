@@ -114,16 +114,16 @@ const waMsg = `Hola, necesito equipo para bomberos en ${estado.name}. ¿Cuál es
   {/* ─── Breadcrumb ─── */}
   <nav
     class="py-3"
-    style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)"
+    style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line)"
     aria-label="Breadcrumb"
   >
     <div class="container-site">
       <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
-        <li><a href="/"           class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li><a href="/"           class="hover:text-[var(--c-accent)]">Inicio</a></li>
         <li aria-hidden="true">/</li>
-        <li><a href="/cobertura"  class="hover:text-[#FF6B26]">Cobertura</a></li>
+        <li><a href="/cobertura"  class="hover:text-[var(--c-accent)]">Cobertura</a></li>
         <li aria-hidden="true">/</li>
-        <li><span style="color:#94A3B8" aria-current="page">{estado.name}</span></li>
+        <li><span style="color:var(--c-text-2)" aria-current="page">{estado.name}</span></li>
       </ol>
     </div>
   </nav>
@@ -131,12 +131,12 @@ const waMsg = `Hola, necesito equipo para bomberos en ${estado.name}. ¿Cuál es
   {/* ─── Hero del estado ─── */}
   <section
     class="relative overflow-hidden"
-    style="background:#040A12;padding-block:5rem"
+    style="background:var(--c-bg);padding-block:5rem"
     aria-labelledby="estado-heading"
   >
     <div
       class="absolute top-0 right-0 w-1/2 h-full pointer-events-none"
-      style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.07) 0%, transparent 65%)"
+      style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(200,16,46,0.07) 0%, transparent 65%)"
       aria-hidden="true"
     ></div>
 
@@ -149,10 +149,10 @@ const waMsg = `Hola, necesito equipo para bomberos en ${estado.name}. ¿Cuál es
           <h1
             id="estado-heading"
             class="font-display font-bold uppercase mb-4"
-            style="color:#FFFFFF;font-size:clamp(2.2rem,5vw,4rem);line-height:0.95"
+            style="color:var(--c-ink);font-size:clamp(2.2rem,5vw,4rem);line-height:0.95"
           >
             Cobertura en<br/>
-            <span style="color:#F75000">{estado.name}</span>
+            <span style="color:var(--c-accent)">{estado.name}</span>
           </h1>
 
           <div class="flex flex-wrap gap-2 mb-8">
@@ -180,9 +180,9 @@ const waMsg = `Hola, necesito equipo para bomberos en ${estado.name}. ¿Cuál es
         </div>
 
         {/* Col derecha — descripción larga */}
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
           {estado.longDesc.map((para) => (
-            <p class="text-sm leading-[1.9] mb-4 last:mb-0" style="color:#94A3B8">{para}</p>
+            <p class="text-sm leading-[1.9] mb-4 last:mb-0" style="color:var(--c-text-2)">{para}</p>
           ))}
         </div>
 
@@ -191,7 +191,7 @@ const waMsg = `Hola, necesito equipo para bomberos en ${estado.name}. ¿Cuál es
 
     <div
       class="absolute bottom-0 left-0 right-0 h-px"
-      style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)"
+      style="background:linear-gradient(90deg, transparent, rgba(200,16,46,0.4) 30%, rgba(200,16,46,0.4) 70%, transparent)"
       aria-hidden="true"
     ></div>
   </section>
@@ -202,7 +202,7 @@ const waMsg = `Hola, necesito equipo para bomberos en ${estado.name}. ¿Cuál es
   {/* ─── Sectores que atendemos en este estado ─── */}
   <section
     class="section"
-    style="background:#040A12"
+    style="background:var(--c-bg)"
     aria-labelledby="sectores-heading"
   >
     <div class="container-site">
@@ -210,26 +210,26 @@ const waMsg = `Hola, necesito equipo para bomberos en ${estado.name}. ¿Cuál es
       <h2
         id="sectores-heading"
         class="font-display font-bold mb-8"
-        style="color:#FFFFFF;font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.05"
+        style="color:var(--c-ink);font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.05"
       >
           Actividades registradas<br/>
-        <span style="color:#F75000">en {estado.name}</span>
+        <span style="color:var(--c-accent)">en {estado.name}</span>
       </h2>
 
       <div
         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px"
-        style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)"
+        style="background:var(--c-line);border:1px solid var(--c-line)"
       >
         {estado.industries.map((sector, i) => (
           <div class="grid-cell flex items-start gap-4 p-5">
             <span
               class="shrink-0 font-display font-bold text-xs"
-              style="color:#F75000;min-width:1.5rem"
+              style="color:var(--c-accent);min-width:1.5rem"
               aria-hidden="true"
             >
               
             </span>
-            <span class="text-sm font-semibold" style="color:#CBD5E1">{sector}</span>
+            <span class="text-sm font-semibold" style="color:var(--c-text)">{sector}</span>
           </div>
         ))}
       </div>
@@ -240,7 +240,7 @@ const waMsg = `Hola, necesito equipo para bomberos en ${estado.name}. ¿Cuál es
   {estado.bomberos.length > 0 && (
     <section
       class="section"
-      style="background:#070E1A"
+      style="background:var(--c-bg-alt)"
       aria-labelledby="bomberos-heading"
     >
       <div class="container-site">
@@ -248,25 +248,25 @@ const waMsg = `Hola, necesito equipo para bomberos en ${estado.name}. ¿Cuál es
         <h2
           id="bomberos-heading"
           class="font-display font-bold mb-6"
-          style="color:#FFFFFF;font-size:clamp(1.6rem,3vw,2.4rem)"
+          style="color:var(--c-ink);font-size:clamp(1.6rem,3vw,2.4rem)"
         >
           Cuerpos de bomberos y<br/>
-          <span style="color:#F75000">organismos de PC en {estado.name}</span>
+          <span style="color:var(--c-accent)">organismos de PC en {estado.name}</span>
         </h2>
 
-        <ul class="list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+        <ul class="list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
           {estado.bomberos.map((cuerpo) => (
             <li
               class="flex items-center gap-4 py-4"
-              style="border-bottom:1px solid rgba(74,117,153,0.15)"
+              style="border-bottom:1px solid var(--c-line)"
             >
-              <span style="color:#FF6B26" aria-hidden="true">▸</span>
-              <span class="text-sm font-semibold" style="color:#CBD5E1">{cuerpo}</span>
+              <span style="color:var(--c-accent)" aria-hidden="true">▸</span>
+              <span class="text-sm font-semibold" style="color:var(--c-text)">{cuerpo}</span>
             </li>
           ))}
         </ul>
 
-        <p class="text-sm mt-6" style="color:#64748B">
+        <p class="text-sm mt-6" style="color:var(--c-muted)">
           ¿Tu cuerpo de bomberos no está en la lista? Consulta el directorio para localizar empresas de la entidad
           y confirma directamente con ellas disponibilidad y cotizaciones para licitación.
         </p>
@@ -277,7 +277,7 @@ const waMsg = `Hola, necesito equipo para bomberos en ${estado.name}. ¿Cuál es
   {/* ─── Cómo leer la cobertura del directorio ─── */}
   <section
     class="section"
-    style="background:#040A12"
+    style="background:var(--c-bg)"
     aria-labelledby="logistica-heading"
   >
     <div class="container-site">
@@ -285,15 +285,15 @@ const waMsg = `Hola, necesito equipo para bomberos en ${estado.name}. ¿Cuál es
       <h2
         id="logistica-heading"
         class="font-display font-bold mb-8"
-        style="color:#FFFFFF;font-size:clamp(1.8rem,3.5vw,2.8rem)"
+        style="color:var(--c-ink);font-size:clamp(1.8rem,3.5vw,2.8rem)"
       >
         Empresas registradas en {estado.name}:<br/>
-        <span style="color:#F75000">compara su cobertura</span>
+        <span style="color:var(--c-accent)">compara su cobertura</span>
       </h2>
 
       <div
         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px"
-        style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)"
+        style="background:var(--c-line);border:1px solid var(--c-line)"
       >
         {[
           { icon: '', title: 'Empresas registradas', desc: 'Consulta los giros y municipios presentes en cada ficha' },
@@ -303,15 +303,15 @@ const waMsg = `Hola, necesito equipo para bomberos en ${estado.name}. ¿Cuál es
         ].map((f) => (
           <div class="grid-cell flex flex-col gap-3 p-6">
             <span class="text-2xl" aria-hidden="true">{f.icon}</span>
-            <h3 class="font-display font-bold text-sm uppercase tracking-wider" style="color:#FFFFFF">
+            <h3 class="font-display font-bold text-sm uppercase tracking-wider" style="color:var(--c-ink)">
               {f.title}
             </h3>
-            <p class="text-xs leading-relaxed" style="color:#64748B">{f.desc}</p>
+            <p class="text-xs leading-relaxed" style="color:var(--c-muted)">{f.desc}</p>
           </div>
         ))}
       </div>
 
-      <p class="text-sm mt-6" style="color:#64748B">
+      <p class="text-sm mt-6" style="color:var(--c-muted)">
         La presencia de una empresa en este estado no acredita cobertura fuera de su ubicación.
         Confirma directamente con cada empresa disponibilidad, alcance, tiempos y condiciones de servicio.
       </p>
@@ -321,7 +321,7 @@ const waMsg = `Hola, necesito equipo para bomberos en ${estado.name}. ¿Cuál es
   {/* ─── FAQ del estado ─── */}
   <section
     class="section"
-    style="background:#070E1A"
+    style="background:var(--c-bg-alt)"
     aria-labelledby="faq-heading"
   >
     <div class="container-site">
@@ -329,15 +329,15 @@ const waMsg = `Hola, necesito equipo para bomberos en ${estado.name}. ¿Cuál es
       <h2
         id="faq-heading"
         class="font-display font-bold mb-8"
-        style="color:#FFFFFF;font-size:clamp(1.6rem,3vw,2.4rem)"
+        style="color:var(--c-ink);font-size:clamp(1.6rem,3vw,2.4rem)"
       >
         Preguntas frecuentes sobre<br/>
-        <span style="color:#F75000">cobertura en {estado.name}</span>
+        <span style="color:var(--c-accent)">cobertura en {estado.name}</span>
       </h2>
 
       <dl
         class="flex flex-col gap-px"
-        style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)"
+        style="background:var(--c-line);border:1px solid var(--c-line)"
       >
         {[
           {
@@ -354,8 +354,8 @@ const waMsg = `Hola, necesito equipo para bomberos en ${estado.name}. ¿Cuál es
           },
         ].map(({ q, a }) => (
           <div class="grid-cell p-6">
-            <dt class="font-display font-bold mb-2" style="color:#FFFFFF;font-size:0.95rem">{q}</dt>
-            <dd class="text-sm leading-relaxed m-0" style="color:#64748B">{a}</dd>
+            <dt class="font-display font-bold mb-2" style="color:var(--c-ink);font-size:0.95rem">{q}</dt>
+            <dd class="text-sm leading-relaxed m-0" style="color:var(--c-muted)">{a}</dd>
           </div>
         ))}
       </dl>
@@ -364,12 +364,12 @@ const waMsg = `Hola, necesito equipo para bomberos en ${estado.name}. ¿Cuál es
 
   {/* ─── Estados relacionados ─── */}
   {otrosEstados.length > 0 && (
-    <section class="section-tight" style="background:#070E1A;border-top:1px solid rgba(74,117,153,0.12)" aria-labelledby="otros-estados-heading">
+    <section class="section-tight" style="background:var(--c-bg-alt);border-top:1px solid var(--c-line)" aria-labelledby="otros-estados-heading">
       <div class="container-site">
         <span class="section-eyebrow mb-4 inline-flex">Cobertura nacional</span>
-        <h2 id="otros-estados-heading" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.5rem,3vw,2.25rem)">Otros estados con cobertura</h2>
-        <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15);border-left:1px solid rgba(74,117,153,0.15)">
-          {otrosEstados.map((otro) => <li style="border-bottom:1px solid rgba(74,117,153,0.15);border-right:1px solid rgba(74,117,153,0.15)"><a href={`/cobertura/${otro.slug}/`} class="group flex items-center justify-between gap-4 p-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Cobertura en {otro.name}</span><span style="color:var(--forge-300)"></span></a></li>)}
+        <h2 id="otros-estados-heading" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.5rem,3vw,2.25rem)">Otros estados con cobertura</h2>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 list-none m-0 p-0" style="border-top:1px solid var(--c-line);border-left:1px solid var(--c-line)">
+          {otrosEstados.map((otro) => <li style="border-bottom:1px solid var(--c-line);border-right:1px solid var(--c-line)"><a href={`/cobertura/${otro.slug}/`} class="group flex items-center justify-between gap-4 p-4"><span class="font-display font-semibold text-sm group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Cobertura en {otro.name}</span><span style="color:var(--forge-300)"></span></a></li>)}
         </ul>
       </div>
     </section>
@@ -378,18 +378,18 @@ const waMsg = `Hola, necesito equipo para bomberos en ${estado.name}. ¿Cuál es
   {/* ─── CTA de cierre ─── */}
   <section
     class="section"
-    style="background:#040A12;border-top:1px solid rgba(74,117,153,0.12)"
+    style="background:var(--c-bg);border-top:1px solid var(--c-line)"
   >
     <div class="container-site text-center">
       <span class="section-eyebrow mb-4 inline-flex">Siguiente paso</span>
       <h2
         class="font-display font-bold mb-4"
-        style="color:#FFFFFF;font-size:clamp(1.8rem,3.5vw,2.8rem)"
+        style="color:var(--c-ink);font-size:clamp(1.8rem,3.5vw,2.8rem)"
       >
         ¿Necesitas equipo para<br/>
-        <span style="color:#F75000">bomberos en {estado.name}?</span>
+        <span style="color:var(--c-accent)">bomberos en {estado.name}?</span>
       </h2>
-      <p class="text-sm mb-8 max-w-xl mx-auto" style="color:#94A3B8">
+      <p class="text-sm mb-8 max-w-xl mx-auto" style="color:var(--c-text-2)">
         Cuéntanos qué necesitas — producto, cantidad y destino — y te respondemos
         con disponibilidad, precio y tiempo de entrega en menos de 24 horas.
       </p>

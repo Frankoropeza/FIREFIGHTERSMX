@@ -23,7 +23,7 @@ const readingTime = Math.ceil((post.body ?? '').split(' ').length / 200);
 
 <article
   class={`blog-card group relative flex overflow-hidden ${featured ? 'flex-col lg:flex-row' : 'flex-col'}`}
-  style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)"
+  style="background:var(--c-bg-alt);border:1px solid var(--c-line)"
 >
   <!-- Imagen -->
   <a
@@ -44,13 +44,13 @@ const readingTime = Math.ceil((post.body ?? '').split(' ').length / 200);
         style={featured ? 'min-height:240px' : 'height:180px'}
       />
     ) : (
-      <div class="w-full h-full flex items-center justify-center" style={`${featured ? 'min-height:240px' : 'height:180px'};background:linear-gradient(135deg, rgba(247,80,0,0.18) 0%, #040A12 100%)`}>
+      <div class="w-full h-full flex items-center justify-center" style={`${featured ? 'min-height:240px' : 'height:180px'};background:linear-gradient(135deg, rgba(200,16,46,0.18) 0%, var(--c-bg) 100%)`}>
         
       </div>
     )}
     <!-- Categoría sobre imagen -->
     <span class="absolute top-3 left-3 badge badge-fire">{category}</span>
-    <div class="absolute bottom-0 left-0 right-0 h-10 pointer-events-none" style="background:linear-gradient(to bottom, transparent, #080F1A)"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-10 pointer-events-none" style="background:linear-gradient(to bottom, transparent, var(--c-bg-alt))"></div>
   </a>
 
   <!-- Contenido -->
@@ -59,11 +59,11 @@ const readingTime = Math.ceil((post.body ?? '').split(' ').length / 200);
       <span class="text-[10px] font-display font-semibold uppercase tracking-widest" style="color:var(--forge-300)">{readingTime} min de lectura</span>
     </div>
 
-    <h3 class={`font-display font-bold leading-tight text-balance ${featured ? 'text-2xl' : 'text-lg'}`} style="color:#FFFFFF">
-      <a href={`/blog/${slug}`} class="group-hover:text-[#FF6B26]">{title}</a>
+    <h3 class={`font-display font-bold leading-tight text-balance ${featured ? 'text-2xl' : 'text-lg'}`} style="color:var(--c-ink)">
+      <a href={`/blog/${slug}`} class="group-hover:text-[var(--c-accent)]">{title}</a>
     </h3>
 
-    <p class={`text-sm leading-relaxed ${featured ? '' : 'line-clamp-3'}`} style="color:#64748B">{description}</p>
+    <p class={`text-sm leading-relaxed ${featured ? '' : 'line-clamp-3'}`} style="color:var(--c-muted)">{description}</p>
 
     {tags && tags.length > 0 && (
       <div class="flex flex-wrap gap-1.5 pt-1">
@@ -76,7 +76,7 @@ const readingTime = Math.ceil((post.body ?? '').split(' ').length / 200);
     <a
       href={`/blog/${slug}`}
       class="inline-flex items-center gap-2 mt-auto pt-3 text-xs font-display font-semibold uppercase tracking-wider group-hover:gap-3"
-      style="color:#FF6B26;letter-spacing:0.08em"
+      style="color:var(--c-accent);letter-spacing:0.08em"
     >
       Guía: {tags[0] ?? category}
       
@@ -85,5 +85,5 @@ const readingTime = Math.ceil((post.body ?? '').split(' ').length / 200);
 </article>
 
 <style>
-  .blog-card:hover { border-color: rgba(247, 80, 0, 0.45) !important; }
+  .blog-card:hover { border-color: rgba(200,16,46,0.45) !important; }
 </style>

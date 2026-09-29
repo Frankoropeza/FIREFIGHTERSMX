@@ -9,32 +9,32 @@ import { allCategories } from '@data/categories';
 const cards = allCategories.filter((c) => c.slug !== 'drones-emergencia');
 ---
 
-<section style="background:#040A12;padding-block:5rem" aria-label="Catálogo de productos">
+<section style="background:var(--c-bg);padding-block:5rem" aria-label="Catálogo de productos">
 
   <!-- Header -->
   <div class="container-site mb-12">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end">
       <div>
         <span class="section-eyebrow mb-4 inline-flex">Catálogo por categoría</span>
-        <h2 class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+        <h2 class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
           Traje de bombero, SCBA, extintores<br/>
-          <span style="color:#F75000">y sistemas en un solo proveedor.</span>
+          <span style="color:var(--c-accent)">y sistemas en un solo proveedor.</span>
         </h2>
       </div>
-      <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-        <p class="text-sm leading-relaxed mb-3" style="color:#94A3B8">
+      <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+        <p class="text-sm leading-relaxed mb-3" style="color:var(--c-text-2)">
           Todo el equipamiento que un cuerpo de bomberos, brigada industrial o área de protección civil necesita:
-          <strong style="color:#CBD5E1">trajes NFPA 1970, SCBA, herramientas de rescate, extintores, sistemas CI, cámaras térmicas y HAZMAT</strong> —
+          <strong style="color:var(--c-text)">trajes NFPA 1970, SCBA, herramientas de rescate, extintores, sistemas CI, cámaras térmicas y HAZMAT</strong> —
           cada categoría con ficha técnica y certificado listos.
         </p>
-        <p class="text-sm leading-relaxed mb-3" style="color:#94A3B8">
+        <p class="text-sm leading-relaxed mb-3" style="color:var(--c-text-2)">
           Para incendio estructural, el equipo completo de un bombero reúne traje de capas con barrera térmica
           (Nomex o PBI), casco, capucha, guantes, botas y equipo de respiración autónoma. Para incendio forestal
           se usa ropa ligera específica, y para rescate y primera respuesta, equipo de rescate hidráulico y cámaras térmicas.
         </p>
         <a href="/productos"
-           class="inline-flex items-center gap-2 text-xs font-display font-semibold uppercase tracking-wider hover:text-[#FF6B26]"
-           style="color:#FF8F57;letter-spacing:0.1em">
+           class="inline-flex items-center gap-2 text-xs font-display font-semibold uppercase tracking-wider hover:text-[var(--c-accent)]"
+           style="color:var(--c-accent);letter-spacing:0.1em">
           Catálogo de equipo para bomberos y contra incendio
           
         </a>

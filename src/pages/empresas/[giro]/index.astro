@@ -142,180 +142,180 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
   mainEntity: { '@type': 'ItemList', numberOfItems: porEstado.length, itemListElement: porEstado.map((s, i) => ({ '@type': 'ListItem', position: i + 1, name: `${g.labelCorto} en ${s.nombre}`, url: `${SITE.url}/empresas/${giro}/${s.slug}/` })) } };
 ---
 <BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema, faqSchema]} noBrandSuffix>
-  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+  <nav class="py-3" style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line)" aria-label="Breadcrumb">
     <div class="container-site"><ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
-      <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li><li aria-hidden="true">/</li>
-      <li><a href="/empresas/" class="hover:text-[#FF6B26]">Directorio de Empresas</a></li><li aria-hidden="true">/</li>
-      <li><span style="color:#94A3B8" aria-current="page">{g.labelCorto}</span></li></ol></div>
+      <li><a href="/" class="hover:text-[var(--c-accent)]">Inicio</a></li><li aria-hidden="true">/</li>
+      <li><a href="/empresas/" class="hover:text-[var(--c-accent)]">Directorio de Empresas</a></li><li aria-hidden="true">/</li>
+      <li><span style="color:var(--c-text-2)" aria-current="page">{g.labelCorto}</span></li></ol></div>
   </nav>
 
-  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem" aria-labelledby="giro-heading">
+  <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:5rem" aria-labelledby="giro-heading">
     <div class="absolute top-0 right-0 w-2/3 h-full pointer-events-none" aria-hidden="true" style={`background:radial-gradient(ellipse 70% 60% at 85% 40%, ${g.color}14 0%, transparent 65%)`}></div>
     <div class="container-site relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div>
           <span class="section-eyebrow mb-5 inline-flex">Directorio nacional · {g.labelCorto}</span>
-          <h1 id="giro-heading" class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2rem,4.6vw,3.6rem);line-height:0.95">
+          <h1 id="giro-heading" class="font-display font-bold uppercase mb-6" style="color:var(--c-ink);font-size:clamp(2rem,4.6vw,3.6rem);line-height:0.95">
             {g.outline.h1.linea1}<br/><span style={`color:${g.color}`}>{g.outline.h1.linea2}</span>
           </h1>
-          {g.intro.map((p) => <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">{p}</p>)}
+          {g.intro.map((p) => <p class="text-sm leading-[1.9] mb-4" style="color:var(--c-text-2)">{p}</p>)}
           <div class="flex flex-wrap gap-2 mt-2 mb-8">{g.normas.map((n) => <span class="badge badge-dark font-display text-[10px]">{n}</span>)}</div>
           <div class="flex flex-col sm:flex-row gap-3">
             <a href="#empresas" class="btn btn-primary btn-lg">{g.labelCorto} en México</a>
             <a href="/empresas/registro/" class="btn btn-ghost btn-lg">Registrar empresa de {g.sustantivo} </a>
           </div>
         </div>
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
           <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:var(--forge-300)">Principales estados</p>
-          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
             {porEstado.slice(0, 8).map((s) => (
-              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+              <li style="border-bottom:1px solid var(--c-line)">
                 <a href={`/empresas/${giro}/${s.slug}/`} class="group flex items-center justify-between gap-4 py-3">
-                  <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{g.labelCorto} en {s.nombre}</span>
+                  <span class="font-display font-semibold text-sm group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{g.labelCorto} en {s.nombre}</span>
                   
                 </a>
               </li>))}
           </ul>
-          <a href="#estados" class="inline-flex mt-4 font-display font-semibold text-xs uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57">{g.labelCorto} en todos los estados </a>
+          <a href="#estados" class="inline-flex mt-4 font-display font-semibold text-xs uppercase tracking-wider hover:text-[var(--c-accent)]" style="color:var(--c-accent)">{g.labelCorto} en todos los estados </a>
         </div>
       </div>
     </div>
-    <div class="absolute bottom-0 left-0 right-0 h-px" aria-hidden="true" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-px" aria-hidden="true" style="background:linear-gradient(90deg, transparent, rgba(200,16,46,0.4) 30%, rgba(200,16,46,0.4) 70%, transparent)"></div>
   </section>
 
   <QuickLinksBar />
 
-  <section class="section-tight" style="background:#070E1A" aria-labelledby="alcance-heading">
+  <section class="section-tight" style="background:var(--c-bg-alt)" aria-labelledby="alcance-heading">
     <div class="container-site grid grid-cols-1 lg:grid-cols-[1fr_1.7fr] gap-8 lg:gap-16 items-start">
       <div>
         <span class="section-eyebrow mb-4 inline-flex">Alcance del directorio</span>
-        <h2 id="alcance-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.05">{g.outline.alcance.linea1}<br/><span style={`color:${g.color}`}>{g.outline.alcance.linea2}</span></h2>
+        <h2 id="alcance-heading" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.05">{g.outline.alcance.linea1}<br/><span style={`color:${g.color}`}>{g.outline.alcance.linea2}</span></h2>
       </div>
-      <p class="text-sm leading-[1.9] m-0" style="color:#94A3B8">
+      <p class="text-sm leading-[1.9] m-0" style="color:var(--c-text-2)">
         Esta página organiza empresas de {g.sustantivo} por entidad, ciudad y especialidad. Puedes revisar {esp.slice(0, 6).map((e) => e.label).join(', ')} y confirmar con cada ficha los datos de contacto, alcance, documentación y disponibilidad.
       </p>
     </div>
   </section>
 
-  <section class="section" style="background:#040A12" aria-labelledby="comparar-heading">
+  <section class="section" style="background:var(--c-bg)" aria-labelledby="comparar-heading">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.35fr] gap-10 lg:gap-20 mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Guía de comparación</span>
-          <h2 id="comparar-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">{g.outline.comparar.linea1}<br/><span style={`color:${g.color}`}>{g.outline.comparar.linea2}</span></h2>
+          <h2 id="comparar-heading" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">{g.outline.comparar.linea1}<br/><span style={`color:${g.color}`}>{g.outline.comparar.linea2}</span></h2>
         </div>
-        <p class="text-sm leading-[1.9] m-0" style="color:#94A3B8">{guide.intro}</p>
+        <p class="text-sm leading-[1.9] m-0" style="color:var(--c-text-2)">{guide.intro}</p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-px" style="background:var(--c-line);border:1px solid var(--c-line)">
         {guide.comparar.map((item, i) => (
-          <article class="p-7" style="background:#070E1A">
+          <article class="p-7" style="background:var(--c-bg-alt)">
             <span class="font-display font-bold text-xs" style={`color:${g.color}`}></span>
-            <h3 class="font-display font-bold text-lg mt-3 mb-3" style="color:#FFFFFF">{item.title}</h3>
-            <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{item.text}</p>
+            <h3 class="font-display font-bold text-lg mt-3 mb-3" style="color:var(--c-ink)">{item.title}</h3>
+            <p class="text-sm leading-relaxed m-0" style="color:var(--c-text-2)">{item.text}</p>
           </article>
         ))}
       </div>
     </div>
   </section>
 
-  <section class="section-tight" style="background:#070E1A" aria-labelledby="verificar-heading">
+  <section class="section-tight" style="background:var(--c-bg-alt)" aria-labelledby="verificar-heading">
     <div class="container-site grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
       <div>
         <span class="section-eyebrow mb-4 inline-flex">Selección responsable</span>
-        <h2 id="verificar-heading" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.05">{g.outline.verificar.linea1}<br/><span style={`color:${g.color}`}>{g.outline.verificar.linea2}</span></h2>
-        <ol class="flex flex-col gap-3 m-0 pl-5 text-sm leading-relaxed" style="color:#CBD5E1">
+        <h2 id="verificar-heading" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.05">{g.outline.verificar.linea1}<br/><span style={`color:${g.color}`}>{g.outline.verificar.linea2}</span></h2>
+        <ol class="flex flex-col gap-3 m-0 pl-5 text-sm leading-relaxed" style="color:var(--c-text)">
           {guide.verificar.map((item) => <li>{item}</li>)}
         </ol>
       </div>
-      <div style="border-left:1px solid rgba(74,117,153,0.18);padding-left:clamp(1.5rem,4vw,3rem)">
+      <div style="border-left:1px solid var(--c-line);padding-left:clamp(1.5rem,4vw,3rem)">
         <span class="section-eyebrow mb-4 inline-flex">Solicitud comparable</span>
-        <h2 class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.05">{g.outline.cotizar.linea1}<br/><span style={`color:${g.color}`}>{g.outline.cotizar.linea2}</span></h2>
-        <ul class="flex flex-col gap-3 m-0 pl-5 text-sm leading-relaxed" style="color:#CBD5E1">
+        <h2 class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.05">{g.outline.cotizar.linea1}<br/><span style={`color:${g.color}`}>{g.outline.cotizar.linea2}</span></h2>
+        <ul class="flex flex-col gap-3 m-0 pl-5 text-sm leading-relaxed" style="color:var(--c-text)">
           {guide.cotizar.map((item) => <li>{item}</li>)}
         </ul>
-        <a href="/cotizacion/" class="inline-flex mt-7 font-display font-semibold text-xs uppercase tracking-wider hover:text-[#FF6B26]" style="color:#FF8F57">Consultar la guía de cotización </a>
+        <a href="/cotizacion/" class="inline-flex mt-7 font-display font-semibold text-xs uppercase tracking-wider hover:text-[var(--c-accent)]" style="color:var(--c-accent)">Consultar la guía de cotización </a>
       </div>
     </div>
   </section>
 
-  <section class="section-tight" style="background:#070E1A" aria-label={`Mapa nacional de ${g.sustantivo}`}>
+  <section class="section-tight" style="background:var(--c-bg-alt)" aria-label={`Mapa nacional de ${g.sustantivo}`}>
     <div class="container-site">
       <span class="section-eyebrow mb-4 inline-flex">Mapa</span>
-      <h2 class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.05">{g.outline.mapa.linea1}<br/><span style={`color:${g.color}`}>{g.outline.mapa.linea2}</span></h2>
+      <h2 class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.05">{g.outline.mapa.linea1}<br/><span style={`color:${g.color}`}>{g.outline.mapa.linea2}</span></h2>
       <MapaEmpresas src="/data/empresas-puntos.json" filtroGiro={giro} id={`mapa-${giro}`} ariaLabel={`Mapa de empresas de ${g.sustantivo} en México`} />
     </div>
   </section>
 
-  <section id="estados" class="section" style="background:#040A12" aria-labelledby="estados-heading">
+  <section id="estados" class="section" style="background:var(--c-bg)" aria-labelledby="estados-heading">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Por estado</span>
-          <h2 id="estados-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">{g.outline.estados.linea1}<br/><span style={`color:${g.color}`}>{g.outline.estados.linea2}</span></h2>
+          <h2 id="estados-heading" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">{g.outline.estados.linea1}<br/><span style={`color:${g.color}`}>{g.outline.estados.linea2}</span></h2>
         </div>
-        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:#94A3B8">Cada estado tiene su directorio propio con mapa, buscador y filtros por especialidad. Presencia destacada en {ciudades.slice(0, 5).map((c) => c.ciudad).join(', ')}.</p>
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">Cada estado tiene su directorio propio con mapa, buscador y filtros por especialidad. Presencia destacada en {ciudades.slice(0, 5).map((c) => c.ciudad).join(', ')}.</p>
         </div>
       </div>
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-8 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-8 gap-px" style="background:var(--c-line);border:1px solid var(--c-line)">
         {porEstado.map((s) => (
-          <a href={`/empresas/${giro}/${s.slug}/`} class="grid-cell ledger-cell flex flex-col gap-1 p-4" style="background:#070E1A">
-            <span class="font-display font-semibold text-sm leading-tight" style="color:#FFFFFF">{s.nombre}</span>
+          <a href={`/empresas/${giro}/${s.slug}/`} class="grid-cell ledger-cell flex flex-col gap-1 p-4" style="background:var(--c-bg-alt)">
+            <span class="font-display font-semibold text-sm leading-tight" style="color:var(--c-ink)">{s.nombre}</span>
           </a>))}
       </div>
     </div>
   </section>
 
-  <section id="empresas" class="section" style="background:#070E1A" aria-labelledby="lista-heading">
+  <section id="empresas" class="section" style="background:var(--c-bg-alt)" aria-labelledby="lista-heading">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-10">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Listado nacional</span>
-          <h2 id="lista-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">{g.outline.lista.linea1}<br/><span style={`color:${g.color}`}>{g.outline.lista.linea2}</span></h2>
+          <h2 id="lista-heading" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">{g.outline.lista.linea1}<br/><span style={`color:${g.color}`}>{g.outline.lista.linea2}</span></h2>
         </div>
-        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:#94A3B8">Busca por nombre, ciudad o municipio y filtra por especialidad. Cada ficha indica el nivel de verificación de sus datos y la fuente de origen.</p>
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">Busca por nombre, ciudad o municipio y filtra por especialidad. Cada ficha indica el nivel de verificación de sus datos y la fuente de origen.</p>
         </div>
       </div>
       <EmpresasGrid empresas={lista} mostrarEstado dimension="esp" filtros={esp.map((s) => ({ key: s.slug, label: `${s.label} · ${s.total}`, color: g.color }))} id={`giro-${giro}`} indexSrc="/data/empresas-index.json" alcance={{ giro }} limite={36} />
     </div>
   </section>
 
-  <section class="section" style="background:#040A12" aria-labelledby="faq-heading">
+  <section class="section" style="background:var(--c-bg)" aria-labelledby="faq-heading">
     <div class="container-site max-w-4xl">
       <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes</span>
-      <h2 id="faq-heading" class="font-display font-bold mb-8" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">{g.outline.faq.linea1}<br/><span style={`color:${g.color}`}>{g.outline.faq.linea2}</span></h2>
-      <div class="flex flex-col" style="border-top:1px solid rgba(74,117,153,0.18)">
+      <h2 id="faq-heading" class="font-display font-bold mb-8" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">{g.outline.faq.linea1}<br/><span style={`color:${g.color}`}>{g.outline.faq.linea2}</span></h2>
+      <div class="flex flex-col" style="border-top:1px solid var(--c-line)">
         {faqItems.map((f) => (
-          <details style="border-bottom:1px solid rgba(74,117,153,0.18)">
-            <summary class="cursor-pointer py-5 font-display font-semibold text-base" style="color:#FFFFFF">{f.q}</summary>
-            <p class="pb-5 text-sm leading-relaxed" style="color:#94A3B8">{f.a}</p>
+          <details style="border-bottom:1px solid var(--c-line)">
+            <summary class="cursor-pointer py-5 font-display font-semibold text-base" style="color:var(--c-ink)">{f.q}</summary>
+            <p class="pb-5 text-sm leading-relaxed" style="color:var(--c-text-2)">{f.a}</p>
           </details>
         ))}
       </div>
     </div>
   </section>
 
-  <section class="section" style="background:#040A12" aria-label="Contenido relacionado">
+  <section class="section" style="background:var(--c-bg)" aria-label="Contenido relacionado">
     <div class="container-site grid grid-cols-1 lg:grid-cols-3 gap-10">
       <div>
         <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:var(--forge-300)">Otros giros del directorio</p>
-        <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
-          {otros.map((o) => (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/empresas/${o.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{o.label}</span><span class="text-xs" style="color:#64748B">{o.description}</span></span><span style={`color:${o.color}`}></span></a></li>))}
+        <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
+          {otros.map((o) => (<li style="border-bottom:1px solid var(--c-line)"><a href={`/empresas/${o.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{o.label}</span><span class="text-xs" style="color:var(--c-muted)">{o.description}</span></span><span style={`color:${o.color}`}></span></a></li>))}
         </ul>
       </div>
       <div>
         <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:var(--forge-300)">Guías de compra relacionadas</p>
-        <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
-          {cats.map((c) => (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={`/productos/${c.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{c.label}</span><span class="text-xs" style="color:#64748B">{c.norm}</span></span><span style="color:var(--forge-300)"></span></a></li>))}
+        <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
+          {cats.map((c) => (<li style="border-bottom:1px solid var(--c-line)"><a href={`/productos/${c.slug}/`} class="group flex items-center justify-between gap-4 py-4"><span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{c.label}</span><span class="text-xs" style="color:var(--c-muted)">{c.norm}</span></span><span style="color:var(--forge-300)"></span></a></li>))}
         </ul>
       </div>
       <div>
         <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:var(--forge-300)">Servicios y normativa</p>
-        <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
-          {servs.map((s) => (<li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href={s.href} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{s.title}</span><span style="color:var(--forge-300)"></span></a></li>))}
-          <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href="/blog/categoria/normatividad/" class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Normatividad NFPA y NOM</span><span style="color:var(--forge-300)"></span></a></li>
-          <li style="border-bottom:1px solid rgba(74,117,153,0.15)"><a href="/estaciones/" class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">Directorio de estaciones de bomberos</span><span style="color:var(--forge-300)"></span></a></li>
+        <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
+          {servs.map((s) => (<li style="border-bottom:1px solid var(--c-line)"><a href={s.href} class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{s.title}</span><span style="color:var(--forge-300)"></span></a></li>))}
+          <li style="border-bottom:1px solid var(--c-line)"><a href="/blog/categoria/normatividad/" class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Normatividad NFPA y NOM</span><span style="color:var(--forge-300)"></span></a></li>
+          <li style="border-bottom:1px solid var(--c-line)"><a href="/estaciones/" class="group flex items-center justify-between gap-4 py-4"><span class="font-display font-semibold text-sm group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Directorio de estaciones de bomberos</span><span style="color:var(--forge-300)"></span></a></li>
         </ul>
       </div>
     </div>

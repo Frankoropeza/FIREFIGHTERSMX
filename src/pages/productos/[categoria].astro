@@ -64,31 +64,31 @@ const otherCategories = allCategories.filter((c) => c.slug !== cat.slug).slice(0
   schema={[breadcrumbSchema, ...(faqSchema ? [faqSchema] : [])]}
 >
   <!-- Breadcrumb -->
-  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+  <nav class="py-3" style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line)" aria-label="Breadcrumb">
     <div class="container-site">
       <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
-        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li><a href="/" class="hover:text-[var(--c-accent)]">Inicio</a></li>
         <li aria-hidden="true">/</li>
-        <li><a href="/productos" class="hover:text-[#FF6B26]">Productos</a></li>
+        <li><a href="/productos" class="hover:text-[var(--c-accent)]">Productos</a></li>
         <li aria-hidden="true">/</li>
-        <li><span style="color:#94A3B8" aria-current="page">{cat.label}</span></li>
+        <li><span style="color:var(--c-text-2)" aria-current="page">{cat.label}</span></li>
       </ol>
     </div>
   </nav>
 
   <!-- Hero de categoría -->
-  <section class="relative overflow-hidden" style="background:#040A12" aria-labelledby={`hero-${cat.slug}`}>
-    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
+  <section class="relative overflow-hidden" style="background:var(--c-bg)" aria-labelledby={`hero-${cat.slug}`}>
+    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(200,16,46,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
 
     <div class="container-site relative z-10">
       <div class="flex flex-col justify-center py-14 lg:py-20">
         <span class="section-eyebrow mb-5 inline-flex">{cat.norm}</span>
-        <h1 id={`hero-${cat.slug}`} class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,6vw,4.5rem);line-height:0.95">
+        <h1 id={`hero-${cat.slug}`} class="font-display font-bold uppercase mb-6" style="color:var(--c-ink);font-size:clamp(2.5rem,6vw,4.5rem);line-height:0.95">
           {cat.label}
         </h1>
         <div class="flex flex-col gap-4 mb-8" style="max-width:48rem">
           {cat.intro.map((p) => (
-            <p class="text-sm leading-[1.9]" style="color:#94A3B8">{p}</p>
+            <p class="text-sm leading-[1.9]" style="color:var(--c-text-2)">{p}</p>
           ))}
         </div>
         <div class="flex flex-col sm:flex-row gap-3">
@@ -109,18 +109,18 @@ const otherCategories = allCategories.filter((c) => c.slug !== cat.slug).slice(0
 
   <!-- Catálogo por marca (páginas L4 dedicadas) -->
   {marcas.length > 0 && (
-    <section class="section" style="background:#070E1A" aria-labelledby="marcas-title">
+    <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="marcas-title">
       <div class="container-site">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-10">
           <div>
             <span class="section-eyebrow mb-4 inline-flex">Marcas autorizadas</span>
-            <h2 id="marcas-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.05">
+            <h2 id="marcas-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.05">
               Catálogo por<br/>
-              <span style="color:#F75000">marca.</span>
+              <span style="color:var(--c-accent)">marca.</span>
             </h2>
           </div>
-          <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-            <p class="text-sm leading-relaxed" style="color:#94A3B8">
+          <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+            <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
               Cada marca tiene su catálogo dedicado con comparativa técnica, anatomía del modelo insignia, guía de
               selección y FAQ. Distribuidor autorizado con stock en CDMX y ficha para licitación.
             </p>
@@ -128,10 +128,10 @@ const otherCategories = allCategories.filter((c) => c.slug !== cat.slug).slice(0
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {marcas.map((b) => (
-            <a href={`/productos/${b.categorySlug}/${b.slug}`} class="group flex flex-col gap-3 p-7" style="background:#040A12;border:1px solid rgba(74,117,153,0.18)">
-              <h3 class="font-display font-bold text-xl group-hover:text-[#FF6B26]" style="color:#FFFFFF">{b.brandLabel}</h3>
-              <p class="text-xs leading-relaxed flex-1" style="color:#64748B">{b.crossDesc}</p>
-              <span class="inline-flex items-center gap-1.5 text-xs font-display font-semibold uppercase tracking-wider" style="color:#FF8F57">
+            <a href={`/productos/${b.categorySlug}/${b.slug}`} class="group flex flex-col gap-3 p-7" style="background:var(--c-bg);border:1px solid var(--c-line)">
+              <h3 class="font-display font-bold text-xl group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{b.brandLabel}</h3>
+              <p class="text-xs leading-relaxed flex-1" style="color:var(--c-muted)">{b.crossDesc}</p>
+              <span class="inline-flex items-center gap-1.5 text-xs font-display font-semibold uppercase tracking-wider" style="color:var(--c-accent)">
                 {anclaMarca(b.brandLabel)}
                 
               </span>
@@ -144,26 +144,26 @@ const otherCategories = allCategories.filter((c) => c.slug !== cat.slug).slice(0
 
 
   <!-- Líneas / modelos -->
-  <section class="section" style="background:#070E1A" aria-labelledby="lineas-title">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="lineas-title">
     <div class="container-site">
-      <h2 id="lineas-title" class="font-display font-bold mb-8" style="color:#FFFFFF;font-size:clamp(1.5rem,2.5vw,2.25rem)">
+      <h2 id="lineas-title" class="font-display font-bold mb-8" style="color:var(--c-ink);font-size:clamp(1.5rem,2.5vw,2.25rem)">
         Líneas disponibles
       </h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style="border-top:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style="border-top:1px solid var(--c-line);border-left:1px solid var(--c-line)">
         {cat.items.map((item) => (
-          <div class="grid-cell flex flex-col gap-2 p-6" style="border-right:1px solid rgba(74,117,153,0.18);border-bottom:1px solid rgba(74,117,153,0.18)">
-            <h3 class="font-display font-bold text-base" style="color:#FFFFFF">{item.name}</h3>
-            <p class="text-xs leading-relaxed" style="color:#64748B">{item.detail}</p>
+          <div class="grid-cell flex flex-col gap-2 p-6" style="border-right:1px solid var(--c-line);border-bottom:1px solid var(--c-line)">
+            <h3 class="font-display font-bold text-base" style="color:var(--c-ink)">{item.name}</h3>
+            <p class="text-xs leading-relaxed" style="color:var(--c-muted)">{item.detail}</p>
           </div>
         ))}
       </div>
 
       {products.length > 0 && (
         <div class="mt-12">
-          <h2 class="font-display font-bold mb-8" style="color:#FFFFFF;font-size:clamp(1.5rem,2.5vw,2.25rem)">
+          <h2 class="font-display font-bold mb-8" style="color:var(--c-ink);font-size:clamp(1.5rem,2.5vw,2.25rem)">
             Productos destacados
           </h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px" style="background:var(--c-line);border:1px solid var(--c-line)">
             {products.map((product) => (
               <a href={product.href} class="grid-cell group flex flex-col overflow-hidden">
                 {product.image && (
@@ -186,9 +186,9 @@ const otherCategories = allCategories.filter((c) => c.slug !== cat.slug).slice(0
                     {product.norm && <span class="badge badge-fire">{product.norm}</span>}
                     {product.brand && <span class="badge badge-dark">{product.brand}</span>}
                   </div>
-                  <h3 class="font-display font-bold text-lg leading-snug group-hover:text-[#FF6B26]" style="color:#FFFFFF">{product.title}</h3>
-                  <p class="text-xs leading-relaxed" style="color:#64748B">{product.description}</p>
-                  <span class="text-xs font-display font-semibold uppercase tracking-wider mt-auto" style="color:#FF8F57">Ficha técnica de {product.title} </span>
+                  <h3 class="font-display font-bold text-lg leading-snug group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{product.title}</h3>
+                  <p class="text-xs leading-relaxed" style="color:var(--c-muted)">{product.description}</p>
+                  <span class="text-xs font-display font-semibold uppercase tracking-wider mt-auto" style="color:var(--c-accent)">Ficha técnica de {product.title} </span>
                 </div>
               </a>
             ))}
@@ -200,14 +200,14 @@ const otherCategories = allCategories.filter((c) => c.slug !== cat.slug).slice(0
 
   <!-- Guía editorial de la categoría -->
   {cat.guia && cat.guia.length > 0 && (
-    <section class="section" style="background:#040A12" aria-label={`Guía de ${cat.label.toLowerCase()}`}>
+    <section class="section" style="background:var(--c-bg)" aria-label={`Guía de ${cat.label.toLowerCase()}`}>
       <div class="container-site prose-guia" style="max-width:52rem">
         {cat.guia.map((sec) => (
           <div class="mb-10">
-            <h2 class="font-display font-bold mb-4" style="color:#FFFFFF;font-size:clamp(1.5rem,2.5vw,2.1rem);line-height:1.1">{sec.titulo}</h2>
-            {sec.parrafos.map((p) => <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">{p}</p>)}
+            <h2 class="font-display font-bold mb-4" style="color:var(--c-ink);font-size:clamp(1.5rem,2.5vw,2.1rem);line-height:1.1">{sec.titulo}</h2>
+            {sec.parrafos.map((p) => <p class="text-sm leading-[1.9] mb-4" style="color:var(--c-text-2)">{p}</p>)}
             {sec.lista && sec.lista.length > 0 && (
-              <ul class="pl-5 flex flex-col gap-2 mb-4" style="color:#94A3B8">
+              <ul class="pl-5 flex flex-col gap-2 mb-4" style="color:var(--c-text-2)">
                 {sec.lista.map((li) => <li class="text-sm leading-relaxed">{li}</li>)}
               </ul>
             )}
@@ -215,12 +215,12 @@ const otherCategories = allCategories.filter((c) => c.slug !== cat.slug).slice(0
         ))}
         {cat.faqs && cat.faqs.length > 0 && (
           <div class="mb-10">
-            <h2 class="font-display font-bold mb-4" style="color:#FFFFFF;font-size:clamp(1.5rem,2.5vw,2.1rem);line-height:1.1">Preguntas frecuentes sobre {cat.label.toLowerCase()}</h2>
+            <h2 class="font-display font-bold mb-4" style="color:var(--c-ink);font-size:clamp(1.5rem,2.5vw,2.1rem);line-height:1.1">Preguntas frecuentes sobre {cat.label.toLowerCase()}</h2>
             <div class="flex flex-col gap-px">
               {cat.faqs.map((f) => (
-                <details style="background:#080F1A;border:1px solid rgba(74,117,153,0.12)">
-                  <summary class="cursor-pointer px-4 py-3 font-display font-semibold text-sm" style="color:#FFFFFF">{f.q}</summary>
-                  <p class="px-4 pb-4 text-sm leading-relaxed m-0" style="color:#94A3B8">{f.a}</p>
+                <details style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
+                  <summary class="cursor-pointer px-4 py-3 font-display font-semibold text-sm" style="color:var(--c-ink)">{f.q}</summary>
+                  <p class="px-4 pb-4 text-sm leading-relaxed m-0" style="color:var(--c-text-2)">{f.a}</p>
                 </details>
               ))}
             </div>
@@ -230,7 +230,7 @@ const otherCategories = allCategories.filter((c) => c.slug !== cat.slug).slice(0
           <div>
             <p class="text-[10px] font-display font-bold uppercase tracking-widest mb-2" style="color:var(--forge-300)">Fuentes</p>
             <ul class="list-none m-0 p-0 flex flex-col gap-1">
-              {cat.fuentes.map((s) => <li class="text-xs"><a href={s.url} target="_blank" rel="nofollow noopener" class="hover:text-[#FF6B26]" style="color:#94A3B8">{s.titulo}</a></li>)}
+              {cat.fuentes.map((s) => <li class="text-xs"><a href={s.url} target="_blank" rel="nofollow noopener" class="hover:text-[var(--c-accent)]" style="color:var(--c-text-2)">{s.titulo}</a></li>)}
             </ul>
           </div>
         )}
@@ -239,7 +239,7 @@ const otherCategories = allCategories.filter((c) => c.slug !== cat.slug).slice(0
   )}
 
   <!-- Otras categorías (internal linking) -->
-  <section class="section-tight" style="background:#040A12" aria-labelledby="otras-title">
+  <section class="section-tight" style="background:var(--c-bg)" aria-labelledby="otras-title">
     <div class="container-site">
       <h2 id="otras-title" class="font-display font-bold text-sm uppercase tracking-widest mb-6" style="color:var(--forge-300)">
         Otras categorías del catálogo

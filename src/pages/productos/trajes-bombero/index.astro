@@ -207,31 +207,31 @@ const razones = [
 <BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema, faqSchema]}>
 
   <!-- Breadcrumb -->
-  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+  <nav class="py-3" style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line)" aria-label="Breadcrumb">
     <div class="container-site">
       <ol class="flex items-center flex-wrap gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
-        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li><a href="/" class="hover:text-[var(--c-accent)]">Inicio</a></li>
         <li aria-hidden="true">/</li>
-        <li><a href="/productos" class="hover:text-[#FF6B26]">Productos</a></li>
+        <li><a href="/productos" class="hover:text-[var(--c-accent)]">Productos</a></li>
         <li aria-hidden="true">/</li>
-        <li><span style="color:#94A3B8" aria-current="page">Trajes para Bomberos</span></li>
+        <li><span style="color:var(--c-text-2)" aria-current="page">Trajes para Bomberos</span></li>
       </ol>
     </div>
   </nav>
 
   <!-- Hero -->
-  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">
-    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
+  <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:5rem">
+    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(200,16,46,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
 
     <div class="container-site relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div>
           <span class="section-eyebrow mb-5 inline-flex">{cat.norm}</span>
-          <h1 class="font-display font-bold uppercase mb-4" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+          <h1 class="font-display font-bold uppercase mb-4" style="color:var(--c-ink);font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
             Traje de bombero<br/>
-            <span style="color:#F75000">trajes de protección para bomberos NFPA 1970.</span>
+            <span style="color:var(--c-accent)">trajes de protección para bomberos NFPA 1970.</span>
           </h1>
-          <p class="text-base leading-relaxed mb-8 max-w-xl" style="color:#94A3B8">
+          <p class="text-base leading-relaxed mb-8 max-w-xl" style="color:var(--c-text-2)">
             Distribuidores autorizados de Globe Manufacturing, Lion Apparel, Honeywell Morning Pride
             y Fire-Dex en México, más la línea nacional Sköld Safety. Trajes estructurales certificados
             NFPA 1970 con PBI, Nomex y Crosstech — todos los materiales de alta performance en un solo
@@ -242,9 +242,9 @@ const razones = [
             <a href="/cotizacion" class="btn btn-ghost btn-lg">Cotización formal</a>
           </div>
         </div>
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
           {cat.intro.map((p) => (
-            <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">{p}</p>
+            <p class="text-sm leading-[1.9] mb-5" style="color:var(--c-text-2)">{p}</p>
           ))}
           <div class="flex flex-wrap gap-2">
             {['NFPA 1970','NFPA 1950','NFPA 1850','PBI','Crosstech','5 marcas · internacional y nacional'].map(n => (
@@ -254,10 +254,10 @@ const razones = [
         </div>
       </div>
     </div>
-    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)" aria-hidden="true"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(200,16,46,0.4) 30%, rgba(200,16,46,0.4) 70%, transparent)" aria-hidden="true"></div>
   </section>
 
-  <section id="guia-trajes" class="section" style="background:#040A12" aria-labelledby="guia-trajes-title">
+  <section id="guia-trajes" class="section" style="background:var(--c-bg)" aria-labelledby="guia-trajes-title">
     <div class="container-site content-copy">
       <div class="section-head mb-5">
         <h2 id="guia-trajes-title">¿Cómo se llama el traje que usan los bomberos?</h2>
@@ -267,7 +267,7 @@ const razones = [
       <div class="section-head mt-14 mb-5">
         <h2>¿Qué incluye un traje de bombero?</h2>
       </div>
-      <ul class="list-disc pl-6 space-y-2 text-sm leading-relaxed" style="color:#CBD5E1">
+      <ul class="list-disc pl-6 space-y-2 text-sm leading-relaxed" style="color:var(--c-text)">
         <li><strong>Chaqueta y pantalón:</strong> las dos piezas del traje, con cierres, refuerzos y cintas de alta visibilidad.</li>
         <li><strong>Casco:</strong> protección de la cabeza contra impacto y calor.</li>
         <li><strong>Capucha:</strong> protege cuello y rostro entre la máscara y la chaqueta.</li>
@@ -279,21 +279,21 @@ const razones = [
         <h2>Capas del traje de bombero estructural</h2>
       </div>
       <div class="overflow-x-auto mb-8">
-        <table class="w-full text-left text-sm" style="border-collapse:collapse;min-width:640px;color:#CBD5E1">
+        <table class="w-full text-left text-sm" style="border-collapse:collapse;min-width:640px;color:var(--c-text)">
           <thead>
             <tr>
-              <th class="p-3" style="background:#0C1825;color:#FFFFFF">Capa</th>
-              <th class="p-3" style="background:#0C1825;color:#FFFFFF">Función</th>
+              <th class="p-3" style="background:var(--c-surface);color:var(--c-ink)">Capa</th>
+              <th class="p-3" style="background:var(--c-surface);color:var(--c-ink)">Función</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Capa externa</td>
-              <td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Resiste llamas, abrasión y cortes; es la primera barrera contra el calor</td>
+              <td class="p-3" style="border-bottom:1px solid var(--c-line)">Capa externa</td>
+              <td class="p-3" style="border-bottom:1px solid var(--c-line)">Resiste llamas, abrasión y cortes; es la primera barrera contra el calor</td>
             </tr>
             <tr>
-              <td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Barrera de humedad</td>
-              <td class="p-3" style="border-bottom:1px solid rgba(74,117,153,.18)">Impide el paso de agua, vapor y líquidos, y permite la transpiración</td>
+              <td class="p-3" style="border-bottom:1px solid var(--c-line)">Barrera de humedad</td>
+              <td class="p-3" style="border-bottom:1px solid var(--c-line)">Impide el paso de agua, vapor y líquidos, y permite la transpiración</td>
             </tr>
             <tr>
               <td class="p-3">Barrera térmica</td>
@@ -307,7 +307,7 @@ const razones = [
       <div class="section-head mt-14 mb-5">
         <h2>Cómo elegir un traje de bombero profesional</h2>
       </div>
-      <ol class="list-none pl-6 space-y-2 text-sm leading-relaxed" style="color:#CBD5E1">
+      <ol class="list-none pl-6 space-y-2 text-sm leading-relaxed" style="color:var(--c-text)">
         <li>Define el tipo de combate: estructural, proximidad, forestal o rescate.</li>
         <li>Pide la certificación vigente en la etiqueta y el certificado del laboratorio.</li>
         <li>Mide a cada bombero: la talla correcta evita zonas sin protección y mejora la movilidad.</li>
@@ -318,7 +318,7 @@ const razones = [
       <div class="section-head mt-14 mb-5">
         <h2>Tipos de trajes de bombero</h2>
       </div>
-      <ul class="list-disc pl-6 space-y-2 text-sm leading-relaxed" style="color:#CBD5E1">
+      <ul class="list-disc pl-6 space-y-2 text-sm leading-relaxed" style="color:var(--c-text)">
         <li><strong>Estructural:</strong> para combate de incendios en edificios; es el traje más completo.</li>
         <li><strong>Proximidad o aluminizado:</strong> con capa exterior reflectiva para el calor radiante, como en rescate aeroportuario (ARFF) e industria.</li>
         <li><strong>Forestal:</strong> ligero y transpirable para incendios forestales y jornadas largas.</li>
@@ -339,7 +339,7 @@ const razones = [
       <div class="section-head mt-14 mb-5">
         <h2>Marcas de trajes para bomberos</h2>
       </div>
-      <ul class="list-disc pl-6 space-y-2 text-sm leading-relaxed" style="color:#CBD5E1">
+      <ul class="list-disc pl-6 space-y-2 text-sm leading-relaxed" style="color:var(--c-text)">
         <li><strong>Globe:</strong> fundada en 1887 en Pittsfield, New Hampshire; parte de MSA desde 2017.</li>
         <li><strong>LION:</strong> fabricante con sede en Dayton, Ohio.</li>
       </ul>
@@ -355,14 +355,14 @@ const razones = [
   <QuickLinksBar />
 
   <!-- Trust Pillars -->
-  <section class="section-tight" style="background:#070E1A" aria-label="Por qué distribuimos estas marcas">
+  <section class="section-tight" style="background:var(--c-bg-alt)" aria-label="Por qué distribuimos estas marcas">
     <div class="container-site">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style="border:1px solid rgba(74,117,153,0.18)">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style="border:1px solid var(--c-line)">
         {razones.map((r, i) => (
-          <div class="flex flex-col gap-3 p-6" style={`background:#080F1A;${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.12)' : ''}`}>
+          <div class="flex flex-col gap-3 p-6" style={`background:var(--c-bg-alt);${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.12)' : ''}`}>
             
-            <h3 class="font-display font-bold text-sm uppercase tracking-wide" style="color:#FFFFFF">{r.t}</h3>
-            <p class="text-xs leading-relaxed m-0" style="color:#64748B">{r.d}</p>
+            <h3 class="font-display font-bold text-sm uppercase tracking-wide" style="color:var(--c-ink)">{r.t}</h3>
+            <p class="text-xs leading-relaxed m-0" style="color:var(--c-muted)">{r.d}</p>
           </div>
         ))}
       </div>
@@ -370,18 +370,18 @@ const razones = [
   </section>
 
   <!-- Tipos de traje -->
-  <section class="section" style="background:#040A12" aria-labelledby="tipos-title">
+  <section class="section" style="background:var(--c-bg)" aria-labelledby="tipos-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Tres tipos, tres físicas</span>
-          <h2 id="tipos-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="tipos-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             El traje correcto<br/>
-            <span style="color:#F75000">según el fuego.</span>
+            <span style="color:var(--c-accent)">según el fuego.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
             No todos los incendios son iguales. Elegir entre estructural, proximidad o forestal
             según el riesgo dominante de tu brigada es lo que separa una compra acertada de
             una cara equivocación.
@@ -391,15 +391,15 @@ const razones = [
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
         {tipos.map((t) => (
-          <article class="flex flex-col gap-4 p-7" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
+          <article class="flex flex-col gap-4 p-7" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
             <div class="flex items-center justify-center rounded-full" style={`width:52px;height:52px;background:${t.accent}1a;border:1.5px solid ${t.accent}59;color:${t.accent}`}>
               <span class="block" style="width:24px;height:24px" set:html={t.icon}/>
             </div>
             <div class="flex items-center justify-between gap-2">
-              <h3 class="font-display font-bold text-xl" style="color:#FFFFFF">{t.title}</h3>
+              <h3 class="font-display font-bold text-xl" style="color:var(--c-ink)">{t.title}</h3>
               <span class="badge badge-dark text-[9px]">{t.norm}</span>
             </div>
-            <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{t.desc}</p>
+            <p class="text-sm leading-relaxed m-0" style="color:var(--c-text-2)">{t.desc}</p>
           </article>
         ))}
       </div>
@@ -407,20 +407,20 @@ const razones = [
   </section>
 
   <!-- Productos Globe — 5 cards profesionales -->
-  <section class="section" style="background:#070E1A" aria-labelledby="modelos-title">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="modelos-title">
     <div class="container-site">
 
       {/* Header de sección */}
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Globe Manufacturing · MSA Safety</span>
-          <h2 id="modelos-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="modelos-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Trajes Globe<br/>
-            <span style="color:#F75000">certificados NFPA.</span>
+            <span style="color:var(--c-accent)">certificados NFPA.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed mb-4" style="color:var(--c-text-2)">
             Globe Manufacturing — parte de MSA Safety — fabrica trajes estructurales
             con documentación técnica para licitaciones mexicanas. Su catálogo incluye
             modelos para distintos escenarios operativos.
@@ -441,9 +441,9 @@ const razones = [
       </div>
 
       {/* CTA — catálogo Globe + link L2 */}
-      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(74,117,153,0.15)">
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid var(--c-line)">
         <div class="flex-1">
-          <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+          <p class="text-sm leading-relaxed m-0" style="color:var(--c-muted)">
             ¿Quieres ver la comparativa técnica completa, el FAQ de Globe o cotizar con ficha técnica para licitación?
             Accede al catálogo dedicado de la marca.
           </p>
@@ -466,18 +466,18 @@ const razones = [
   </section>
 
   <!-- Productos Lion Apparel — 6 cards -->
-  <section class="section" style="background:#040A12" aria-labelledby="lion-title">
+  <section class="section" style="background:var(--c-bg)" aria-labelledby="lion-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Lion Apparel · 135 años de historia</span>
-          <h2 id="lion-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="lion-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Trajes Lion<br/>
-            <span style="color:#F75000">certificados NFPA.</span>
+            <span style="color:var(--c-accent)">certificados NFPA.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed mb-4" style="color:var(--c-text-2)">
             Lion Apparel — fundada en 1889 — fabrica trajes de bombero para
             departamentos metropolitanos, corporativos industriales y brigadas ARFF.
             Líneas estructurales, de proximidad y forestales NFPA 1950.
@@ -494,9 +494,9 @@ const razones = [
           <ProductCard product={p} />
         ))}
       </div>
-      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(74,117,153,0.15)">
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid var(--c-line)">
         <div class="flex-1">
-          <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+          <p class="text-sm leading-relaxed m-0" style="color:var(--c-muted)">
             ¿Necesitas configuración personalizada de tallas o un modelo Lion específico para licitación?
             Cotizamos cualquier modelo sobre especificación técnica con entrega verificada.
           </p>
@@ -514,18 +514,18 @@ const razones = [
   </section>
 
   <!-- Productos Honeywell Morning Pride — 6 cards -->
-  <section class="section" style="background:#070E1A" aria-labelledby="honeywell-title">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="honeywell-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Honeywell Morning Pride · Pemex · Refinería</span>
-          <h2 id="honeywell-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="honeywell-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Trajes Honeywell<br/>
-            <span style="color:#F75000">certificados NFPA.</span>
+            <span style="color:var(--c-accent)">certificados NFPA.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed mb-4" style="color:var(--c-text-2)">
             Honeywell Morning Pride es la marca de referencia para operaciones de alto riesgo
             en petroquímica, refinerías y brigadas HAZMAT. Fuerte presencia en Pemex, CFE
             y aeropuertos internacionales en México. Líneas estructurales, proximity y CBRN.
@@ -542,9 +542,9 @@ const razones = [
           <ProductCard product={p} />
         ))}
       </div>
-      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(74,117,153,0.15)">
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid var(--c-line)">
         <div class="flex-1">
-          <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+          <p class="text-sm leading-relaxed m-0" style="color:var(--c-muted)">
             ¿Operaciones en refinería, planta petroquímica o brigada HAZMAT? Honeywell Morning Pride
             tiene la línea correcta. Cotizamos con ficha técnica para concurso.
           </p>
@@ -562,18 +562,18 @@ const razones = [
   </section>
 
   <!-- Productos Fire-Dex — 6 cards -->
-  <section class="section" style="background:#040A12" aria-labelledby="firedex-title">
+  <section class="section" style="background:var(--c-bg)" aria-labelledby="firedex-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Fire-Dex · La marca que más crece en MX</span>
-          <h2 id="firedex-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="firedex-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Trajes Fire-Dex<br/>
-            <span style="color:#F75000">certificados NFPA.</span>
+            <span style="color:var(--c-accent)">certificados NFPA.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed mb-4" style="color:var(--c-text-2)">
             Fire-Dex ofrece documentación para licitaciones en México.
             Su línea incluye shells de fibra sintética TECGEN®.
             Para departamentos que buscan tecnología avanzada con opciones de cotización.
@@ -590,9 +590,9 @@ const razones = [
           <ProductCard product={p} />
         ))}
       </div>
-      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(74,117,153,0.15)">
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid var(--c-line)">
         <div class="flex-1">
-          <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+          <p class="text-sm leading-relaxed m-0" style="color:var(--c-muted)">
             ¿Buscas un traje Fire-Dex con certificación NFPA? TECGEN
             es la respuesta. Cotizamos con comparativo técnico vs. Nomex incluido.
           </p>
@@ -610,18 +610,18 @@ const razones = [
   </section>
 
   <!-- Productos Sköld — 6 cards -->
-  <section class="section" style="background:#070E1A" aria-labelledby="skold-title">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="skold-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Sköld Safety · Fabricación mexicana</span>
-          <h2 id="skold-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="skold-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Trajes Sköld<br/>
-            <span style="color:#F75000">fabricados en México.</span>
+            <span style="color:var(--c-accent)">fabricados en México.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed mb-4" style="color:var(--c-text-2)">
             Sköld fabrica en Monterrey, N.L. las cinco líneas que cubren el ciclo completo de respuesta:
             estructural, brigadista industrial, forestal, aproximación y rescate. El Herö es su única línea
             con certificación UL de tercero (NFPA 1971 Ed. 2018, lab MH60435); las demás declaran
@@ -639,9 +639,9 @@ const razones = [
           <ProductCard product={p} />
         ))}
       </div>
-      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid rgba(74,117,153,0.15)">
+      <div class="mt-10 pt-8 flex flex-col sm:flex-row gap-4 items-start" style="border-top:1px solid var(--c-line)">
         <div class="flex-1">
-          <p class="text-sm leading-relaxed m-0" style="color:#64748B">
+          <p class="text-sm leading-relaxed m-0" style="color:var(--c-muted)">
             ¿Necesita equipar una brigada completa con presupuesto acotado, o acreditar contenido nacional
             en su licitación? Sköld es fabricante, no importador: refacciones, tallas especiales y reparación
             dentro del país.
@@ -660,29 +660,29 @@ const razones = [
   </section>
 
   <!-- Galería de producto -->
-  <section class="section-tight" style="background:#040A12" aria-label="Galería trajes para bomberos">
+  <section class="section-tight" style="background:var(--c-bg)" aria-label="Galería trajes para bomberos">
     <div class="container-site">
       <div class="flex items-center gap-4 mb-6">
-        <span class="w-8 h-px" style="background:#F75000"></span>
-        <span class="text-xs font-display font-semibold uppercase tracking-[0.18em]" style="color:#F75000">Trajes en uso real</span>
+        <span class="w-8 h-px" style="background:var(--c-accent)"></span>
+        <span class="text-xs font-display font-semibold uppercase tracking-[0.18em]" style="color:var(--c-accent)">Trajes en uso real</span>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-2 lg:gap-3">
-        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
+        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
           <img src="/images/productos/traje-globe-gx7-estructural-1.avif" alt="Traje Globe G-XTREME 3.0 estructural NFPA 1970 en uso real — equipo certificado México" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
-        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
+        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
           <img src="/images/productos/traje-jacket-detalle-nfpa.avif" alt="Detalle chaqueta traje bombero NFPA 1970 costuras reforzadas Nomex resistente al fuego" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
-        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
+        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
           <img src="/images/productos/traje-bombero-reflectivo-3m.avif" alt="Traje bombero con bandas reflectivas 3M certificado NFPA visibilidad nocturna" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
-        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
+        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
           <img src="/images/productos/traje-bombero-en-servicio.avif" alt="Bombero en traje estructural NFPA 1970 durante servicio de emergencia incendio" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
-        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
+        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
           <img src="/images/productos/traje-bombero-completo-equipo.avif" alt="Equipo completo bombero traje estructural casco SCBA certificado NFPA 1970 México" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
-        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
+        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
           <img src="/images/productos/traje-bombero-preparacion.avif" alt="Bombero preparándose con traje estructural NFPA 1970 listo para emergencia" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
       </div>
@@ -690,32 +690,32 @@ const razones = [
   </section>
 
   <!-- Tabla comparativa -->
-  <section class="section" style="background:#040A12" aria-labelledby="comp-title">
+  <section class="section" style="background:var(--c-bg)" aria-labelledby="comp-title">
     <div class="container-site">
       <div class="mb-10">
         <span class="section-eyebrow mb-4 inline-flex">Comparativa</span>
-        <h2 id="comp-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
-          Estructural · Proximidad · <span style="color:#F75000">Forestal</span>
+        <h2 id="comp-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          Estructural · Proximidad · <span style="color:var(--c-accent)">Forestal</span>
         </h2>
       </div>
 
-      <div class="overflow-x-auto" style="border:1px solid rgba(74,117,153,0.18)">
+      <div class="overflow-x-auto" style="border:1px solid var(--c-line)">
         <table class="w-full border-collapse" style="min-width:640px">
           <thead>
-            <tr style="background:#0C1825">
-              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:var(--forge-300);border-bottom:1px solid rgba(74,117,153,0.18)">Característica</th>
-              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:#FF6B26;border-bottom:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">Estructural</th>
-              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:#F5A623;border-bottom:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">Proximidad</th>
-              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:#34D399;border-bottom:1px solid rgba(74,117,153,0.18);border-left:1px solid rgba(74,117,153,0.18)">Forestal</th>
+            <tr style="background:var(--c-surface)">
+              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:var(--forge-300);border-bottom:1px solid var(--c-line)">Característica</th>
+              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:var(--c-accent);border-bottom:1px solid var(--c-line);border-left:1px solid var(--c-line)">Estructural</th>
+              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:var(--c-amber);border-bottom:1px solid var(--c-line);border-left:1px solid var(--c-line)">Proximidad</th>
+              <th class="text-left p-4 font-display font-bold text-xs uppercase tracking-widest" style="color:var(--c-success);border-bottom:1px solid var(--c-line);border-left:1px solid var(--c-line)">Forestal</th>
             </tr>
           </thead>
           <tbody>
             {comparativa.map((row, i) => (
-              <tr style={`background:${i % 2 === 0 ? '#080F1A' : '#0A1320'}`}>
-                <td class="p-4 text-sm font-display font-semibold" style="color:#CBD5E1;border-bottom:1px solid rgba(74,117,153,0.12)">{row[0]}</td>
-                <td class="p-4 text-sm" style="color:#94A3B8;border-bottom:1px solid rgba(74,117,153,0.12);border-left:1px solid rgba(74,117,153,0.12)">{row[1]}</td>
-                <td class="p-4 text-sm" style="color:#94A3B8;border-bottom:1px solid rgba(74,117,153,0.12);border-left:1px solid rgba(74,117,153,0.12)">{row[2]}</td>
-                <td class="p-4 text-sm" style="color:#94A3B8;border-bottom:1px solid rgba(74,117,153,0.12);border-left:1px solid rgba(74,117,153,0.12)">{row[3]}</td>
+              <tr style={`background:${i % 2 === 0 ? 'var(--c-bg-alt)' : 'var(--c-bg-alt)'}`}>
+                <td class="p-4 text-sm font-display font-semibold" style="color:var(--c-text);border-bottom:1px solid var(--c-line)">{row[0]}</td>
+                <td class="p-4 text-sm" style="color:var(--c-text-2);border-bottom:1px solid var(--c-line);border-left:1px solid var(--c-line)">{row[1]}</td>
+                <td class="p-4 text-sm" style="color:var(--c-text-2);border-bottom:1px solid var(--c-line);border-left:1px solid var(--c-line)">{row[2]}</td>
+                <td class="p-4 text-sm" style="color:var(--c-text-2);border-bottom:1px solid var(--c-line);border-left:1px solid var(--c-line)">{row[3]}</td>
               </tr>
             ))}
           </tbody>
@@ -725,20 +725,20 @@ const razones = [
   </section>
 
   <!-- Guía de selección + blog -->
-  <section class="section" style="background:#070E1A" aria-labelledby="guia-title">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="guia-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Cómo elegir</span>
-          <h2 id="guia-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+          <h2 id="guia-title" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Del riesgo<br/>
-            <span style="color:#F75000">a la decisión.</span>
+            <span style="color:var(--c-accent)">a la decisión.</span>
           </h2>
           <ol class="flex flex-col gap-4 list-none m-0 p-0">
             {guia.map((s) => (
               <li class="flex items-start gap-4">
                 
-                <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{s.t}</p>
+                <p class="text-sm leading-relaxed m-0" style="color:var(--c-text-2)">{s.t}</p>
               </li>
             ))}
           </ol>
@@ -747,17 +747,17 @@ const razones = [
           </div>
         </div>
 
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
           <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">
             Aprende más en el blog
           </h2>
-          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
             {articulos.map((l) => (
-              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+              <li style="border-bottom:1px solid var(--c-line)">
                 <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
                   <span class="flex flex-col gap-0.5">
-                    <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
-                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
+                    <span class="font-display font-semibold text-sm group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{l.label}</span>
+                    <span class="text-xs" style="color:var(--c-muted)">{l.desc}</span>
                   </span>
                   
                 </a>
@@ -770,16 +770,16 @@ const razones = [
   </section>
 
   <!-- FAQ -->
-  <section class="section" style="background:#040A12" aria-labelledby="faq-title">
+  <section class="section" style="background:var(--c-bg)" aria-labelledby="faq-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes</span>
-          <h2 id="faq-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+          <h2 id="faq-title" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Lo que más nos<br/>
-            <span style="color:#F75000">preguntan.</span>
+            <span style="color:var(--c-accent)">preguntan.</span>
           </h2>
-          <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
+          <p class="text-sm leading-relaxed mb-8" style="color:var(--c-text-2)">
             ¿Tu duda no aparece? Escríbenos por {CANAL_CONTACTO} con el detalle de tu operación y te
             asesoramos sobre el traje y el tallaje correctos.
           </p>
@@ -791,12 +791,12 @@ const razones = [
         </div>
         <div class="flex flex-col">
           {faqs.map((f, i) => (
-            <details class="faq-item group" style={`border-top:1px solid rgba(74,117,153,0.18);${i === faqs.length - 1 ? 'border-bottom:1px solid rgba(74,117,153,0.18);' : ''}`}>
+            <details class="faq-item group" style={`border-top:1px solid var(--c-line);${i === faqs.length - 1 ? 'border-bottom:1px solid rgba(74,117,153,0.18);' : ''}`}>
               <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer">
-                <span class="font-display font-semibold text-sm" style="color:#FFFFFF">{f.q}</span>
-                <span class="faq-icon font-display font-bold text-xl shrink-0" style="color:#FF6B26">+</span>
+                <span class="font-display font-semibold text-sm" style="color:var(--c-ink)">{f.q}</span>
+                <span class="faq-icon font-display font-bold text-xl shrink-0" style="color:var(--c-accent)">+</span>
               </summary>
-              <p class="text-sm leading-relaxed pb-5 m-0" style="color:#94A3B8">{f.a}</p>
+              <p class="text-sm leading-relaxed pb-5 m-0" style="color:var(--c-text-2)">{f.a}</p>
             </details>
           ))}
         </div>
@@ -805,12 +805,12 @@ const razones = [
   </section>
 
   <!-- CTA Band -->
-  <section style="background:#F75000;padding-block:4rem" aria-label="Cotizar trajes para bomberos">
+  <section style="background:var(--c-accent);padding-block:4rem" aria-label="Cotizar trajes para bomberos">
     <div class="container-site">
       <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
         <div>
-          <p class="text-xs font-display font-bold uppercase tracking-[0.2em] mb-3" style="color:rgba(255,255,255,0.65)">Globe · Lion · Honeywell · Fire-Dex · Sköld · Stock CDMX</p>
-          <h2 class="font-display font-bold uppercase" style="color:#FFFFFF;font-size:clamp(1.75rem,4vw,3rem);line-height:1.05">
+          <p class="text-xs font-display font-bold uppercase tracking-[0.2em] mb-3" style="color:rgba(16,24,40,0.65)">Globe · Lion · Honeywell · Fire-Dex · Sköld · Stock CDMX</p>
+          <h2 class="font-display font-bold uppercase" style="color:var(--c-ink);font-size:clamp(1.75rem,4vw,3rem);line-height:1.05">
             Certificado NFPA 1970.<br/>Entrega en 48 h.
           </h2>
         </div>
@@ -819,11 +819,11 @@ const razones = [
             href={whatsappUrl('Hola, quiero cotizar trajes para bomberos NFPA 1970. ¿Tienen stock disponible?')}
             target="_blank" rel="noopener"
             class="btn btn-lg"
-            style="background:#FFFFFF;color:#F75000;border-color:#FFFFFF;font-weight:700"
+            style="background:#FFFFFF;color:var(--c-accent);border-color:var(--c-line);font-weight:700"
           >
             Cotizar por {CANAL_CONTACTO} 
           </a>
-          <a href="/cotizacion" class="btn btn-lg" style="background:transparent;color:#FFFFFF;border:2px solid rgba(255,255,255,0.5)">
+          <a href="/cotizacion" class="btn btn-lg" style="background:transparent;color:var(--c-ink);border:2px solid rgba(16,24,40,0.5)">
             Cotización formal
           </a>
         </div>
@@ -832,26 +832,26 @@ const razones = [
   </section>
 
   <!-- Cross-links + otras categorías -->
-  <section class="section" style="background:#070E1A" aria-labelledby="cross-title">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="cross-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Equipa el conjunto completo</span>
-          <h2 id="cross-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+          <h2 id="cross-title" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             El traje es<br/>
-            <span style="color:#F75000">solo una capa.</span>
+            <span style="color:var(--c-accent)">solo una capa.</span>
           </h2>
-          <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
+          <p class="text-sm leading-relaxed mb-8" style="color:var(--c-text-2)">
             Un bombero protegido necesita casco, SCBA, guantes y botas certificados — y un
             programa que mantenga todo vigente. Armamos el conjunto completo con un solo proveedor.
           </p>
           <a href={whatsappUrl('Hola, quiero equipar el conjunto completo de EPP para mi brigada.')} target="_blank" rel="noopener" class="btn btn-primary">Cotizar conjunto completo</a>
         </div>
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
           <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">
             También te puede servir
           </h2>
-          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
             {[
               { label: 'Cascos NFPA', desc: 'MSA Gallet, Bullard y Cairns', href: '/productos/cascos-nfpa' },
               { label: 'Equipos SCBA', desc: 'MSA G1, Dräger y 3M Scott', href: '/productos/equipos-scba' },
@@ -859,11 +859,11 @@ const razones = [
               { label: 'Normas y certificaciones', desc: 'NFPA 1970, 1950 y 1850', href: '/certificaciones' },
               { label: 'Soporte para licitaciones', desc: 'Fichas y manifiestos por partida', href: '/licitaciones' },
             ].map((l) => (
-              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+              <li style="border-bottom:1px solid var(--c-line)">
                 <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
                   <span class="flex flex-col gap-0.5">
-                    <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
-                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
+                    <span class="font-display font-semibold text-sm group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{l.label}</span>
+                    <span class="text-xs" style="color:var(--c-muted)">{l.desc}</span>
                   </span>
                   
                 </a>
@@ -874,7 +874,7 @@ const razones = [
       </div>
 
       <!-- Otras categorías -->
-      <div class="mt-14 pt-10" style="border-top:1px solid rgba(74,117,153,0.15)">
+      <div class="mt-14 pt-10" style="border-top:1px solid var(--c-line)">
         <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-6" style="color:var(--forge-300)">Otras categorías del catálogo</h2>
         <div class="flex flex-wrap gap-3">
           {otrasCategorias.map((c) => (
@@ -888,30 +888,30 @@ const razones = [
 
 
   {/* ══ CATEGORÍAS RELACIONADAS ═══════════════════════════════════════ */}
-  <section style="background:#040A12;border-top:1px solid rgba(74,117,153,0.15)" aria-labelledby="cats-rel-title">
+  <section style="background:var(--c-bg);border-top:1px solid var(--c-line)" aria-labelledby="cats-rel-title">
     <div class="container-site py-10 sm:py-12">
       <p id="cats-rel-title" class="text-[9px] font-display font-bold uppercase tracking-widest mb-6" style="color:var(--forge-300)">Categorías relacionadas</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <a href="/productos/cascos-nfpa"
-           class="group flex flex-col gap-2 p-5 hover:border-[#F75000]"
-           style="background:#080F1A;border:1px solid rgba(74,117,153,0.2)">
-          <span class="text-sm font-display font-bold group-hover:text-[#F75000]" style="color:#FFFFFF">Cascos NFPA</span>
-          <span class="text-xs leading-relaxed" style="color:#64748B">MSA Gallet · Bullard · Cairns</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Cascos NFPA </span>
+           class="group flex flex-col gap-2 p-5 hover:border-[var(--c-accent)]"
+           style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
+          <span class="text-sm font-display font-bold group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Cascos NFPA</span>
+          <span class="text-xs leading-relaxed" style="color:var(--c-muted)">MSA Gallet · Bullard · Cairns</span>
+          <span class="text-[11px] font-semibold mt-1" style="color:var(--c-accent)">Guía de Cascos NFPA </span>
         </a>
         <a href="/productos/equipos-scba"
-           class="group flex flex-col gap-2 p-5 hover:border-[#F75000]"
-           style="background:#080F1A;border:1px solid rgba(74,117,153,0.2)">
-          <span class="text-sm font-display font-bold group-hover:text-[#F75000]" style="color:#FFFFFF">Equipos SCBA</span>
-          <span class="text-xs leading-relaxed" style="color:#64748B">MSA G1 · Dräger PSS 7000 · 3M Scott</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Equipos SCBA </span>
+           class="group flex flex-col gap-2 p-5 hover:border-[var(--c-accent)]"
+           style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
+          <span class="text-sm font-display font-bold group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Equipos SCBA</span>
+          <span class="text-xs leading-relaxed" style="color:var(--c-muted)">MSA G1 · Dräger PSS 7000 · 3M Scott</span>
+          <span class="text-[11px] font-semibold mt-1" style="color:var(--c-accent)">Guía de Equipos SCBA </span>
         </a>
         <a href="/productos/camaras-termicas"
-           class="group flex flex-col gap-2 p-5 hover:border-[#F75000]"
-           style="background:#080F1A;border:1px solid rgba(74,117,153,0.2)">
-          <span class="text-sm font-display font-bold group-hover:text-[#F75000]" style="color:#FFFFFF">Cámaras Térmicas</span>
-          <span class="text-xs leading-relaxed" style="color:#64748B">FLIR · MSA Evolution · Bullard TXS</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:#F75000">Guía de Cámaras Térmicas </span>
+           class="group flex flex-col gap-2 p-5 hover:border-[var(--c-accent)]"
+           style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
+          <span class="text-sm font-display font-bold group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Cámaras Térmicas</span>
+          <span class="text-xs leading-relaxed" style="color:var(--c-muted)">FLIR · MSA Evolution · Bullard TXS</span>
+          <span class="text-[11px] font-semibold mt-1" style="color:var(--c-accent)">Guía de Cámaras Térmicas </span>
         </a>
       </div>
     </div>
@@ -921,7 +921,7 @@ const razones = [
 </BaseLayout>
 
 <style>
-  .model-card:hover { border-color: rgba(247, 80, 0, 0.45) !important; }
+  .model-card:hover { border-color: rgba(200,16,46,0.45) !important; }
   details.faq-item summary { list-style: none; }
   details.faq-item summary::-webkit-details-marker { display: none; }
   details.faq-item[open] .faq-icon { transform: rotate(45deg); }

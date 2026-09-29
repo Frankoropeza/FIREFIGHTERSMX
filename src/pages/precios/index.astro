@@ -76,29 +76,29 @@ const faqSchema = {
 ---
 
 <BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema, faqSchema]}>
-  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+  <nav class="py-3" style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line)" aria-label="Breadcrumb">
     <div class="container-site">
       <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
-        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li><a href="/" class="hover:text-[var(--c-accent)]">Inicio</a></li>
         <li aria-hidden="true">/</li>
-        <li><span style="color:#94A3B8" aria-current="page">Precios de equipo</span></li>
+        <li><span style="color:var(--c-text-2)" aria-current="page">Precios de equipo</span></li>
       </ol>
     </div>
   </nav>
 
-  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">
-    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
+  <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:5rem">
+    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(200,16,46,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
     <div class="container-site relative z-10">
       <div class="max-w-4xl">
         <span class="section-eyebrow mb-5 inline-flex">Guía de compra · México</span>
-        <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.4rem,5.5vw,4.4rem);line-height:0.95">
+        <h1 class="font-display font-bold uppercase mb-6" style="color:var(--c-ink);font-size:clamp(2.4rem,5.5vw,4.4rem);line-height:0.95">
           Precios de equipo<br/>
-          <span style="color:#F75000">para bomberos.</span>
+          <span style="color:var(--c-accent)">para bomberos.</span>
         </h1>
-        <p class="text-base leading-[1.9] mb-4 max-w-3xl" style="color:#94A3B8">
+        <p class="text-base leading-[1.9] mb-4 max-w-3xl" style="color:var(--c-text-2)">
           El precio de equipo para bomberos y contra incendios depende de la especificación, cantidad, documentación, logística y servicios incluidos. Esta página explica qué información reunir para que te enviemos una cotización completa y comparable.
         </p>
-        <p class="text-sm leading-[1.9] mb-8 max-w-3xl" style="color:#64748B">
+        <p class="text-sm leading-[1.9] mb-8 max-w-3xl" style="color:var(--c-muted)">
           No publicamos una lista de precios fijos: cada partida se cotiza por escrito con disponibilidad, condiciones de entrega y la documentación que requiera tu proyecto.
         </p>
         <div class="flex flex-col sm:flex-row gap-3">
@@ -111,38 +111,38 @@ const faqSchema = {
 
   <QuickLinksBar />
 
-  <section class="section" style="background:#070E1A" aria-labelledby="factores-title">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="factores-title">
     <div class="container-site">
       <div class="max-w-3xl mb-10">
         <span class="section-eyebrow mb-4 inline-flex">Costo total</span>
-        <h2 id="factores-title" class="font-display font-bold mb-4" style="color:#FFFFFF;font-size:clamp(1.9rem,3.8vw,3rem);line-height:1.05">
+        <h2 id="factores-title" class="font-display font-bold mb-4" style="color:var(--c-ink);font-size:clamp(1.9rem,3.8vw,3rem);line-height:1.05">
           Factores que cambian el precio<br/>
-          <span style="color:#F75000">del equipo contra incendio.</span>
+          <span style="color:var(--c-accent)">del equipo contra incendio.</span>
         </h2>
-        <p class="text-sm leading-relaxed" style="color:#94A3B8">Para comparar propuestas, define primero un alcance común. Un importe aislado no permite saber si dos propuestas cubren la misma solución.</p>
+        <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">Para comparar propuestas, define primero un alcance común. Un importe aislado no permite saber si dos propuestas cubren la misma solución.</p>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px" style="background:var(--c-line);border:1px solid var(--c-line)">
         {factores.map((factor) => (
-          <article class="p-7" style="background:#080F1A">
-            <h3 class="font-display font-bold text-lg mb-3" style="color:#FFFFFF">{factor.title}</h3>
-            <p class="text-xs leading-relaxed m-0" style="color:#64748B">{factor.text}</p>
+          <article class="p-7" style="background:var(--c-bg-alt)">
+            <h3 class="font-display font-bold text-lg mb-3" style="color:var(--c-ink)">{factor.title}</h3>
+            <p class="text-xs leading-relaxed m-0" style="color:var(--c-muted)">{factor.text}</p>
           </article>
         ))}
       </div>
     </div>
   </section>
 
-  <section class="section" style="background:#040A12" aria-labelledby="categorias-title">
+  <section class="section" style="background:var(--c-bg)" aria-labelledby="categorias-title">
     <div class="container-site">
       <div class="max-w-3xl mb-10">
         <span class="section-eyebrow mb-4 inline-flex">Por categoría</span>
-        <h2 id="categorias-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.9rem,3.8vw,3rem);line-height:1.05">Qué definir antes de<br/><span style="color:#F75000">solicitar precios.</span></h2>
+        <h2 id="categorias-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.9rem,3.8vw,3rem);line-height:1.05">Qué definir antes de<br/><span style="color:var(--c-accent)">solicitar precios.</span></h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {categorias.map((categoria) => (
-          <article class="flex flex-col p-7" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
-            <h3 class="font-display font-bold text-xl mb-3" style="color:#FFFFFF">{categoria.title}</h3>
-            <p class="text-xs leading-relaxed mb-6 flex-1" style="color:#64748B">{categoria.text}</p>
+          <article class="flex flex-col p-7" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
+            <h3 class="font-display font-bold text-xl mb-3" style="color:var(--c-ink)">{categoria.title}</h3>
+            <p class="text-xs leading-relaxed mb-6 flex-1" style="color:var(--c-muted)">{categoria.text}</p>
             <div class="flex flex-wrap gap-2">
               <a href={categoria.guide} class="btn btn-sm btn-dark">{categoria.ancla}</a>
               <a href="/cotizacion/" class="btn btn-sm btn-outline">Cotizar</a>
@@ -153,19 +153,19 @@ const faqSchema = {
     </div>
   </section>
 
-  <section class="section" style="background:#070E1A" aria-labelledby="datos-title">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="datos-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Solicitud comparable</span>
-          <h2 id="datos-title" class="font-display font-bold mb-5" style="color:#FFFFFF;font-size:clamp(1.9rem,3.8vw,3rem);line-height:1.05">Datos para pedir una<br/><span style="color:#F75000">cotización completa.</span></h2>
-          <p class="text-sm leading-relaxed" style="color:#94A3B8">Con esta información preparamos una propuesta completa, sin supuestos que después cambien el importe final.</p>
+          <h2 id="datos-title" class="font-display font-bold mb-5" style="color:var(--c-ink);font-size:clamp(1.9rem,3.8vw,3rem);line-height:1.05">Datos para pedir una<br/><span style="color:var(--c-accent)">cotización completa.</span></h2>
+          <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">Con esta información preparamos una propuesta completa, sin supuestos que después cambien el importe final.</p>
         </div>
-        <ol class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.18)">
+        <ol class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
           {datosCotizacion.map((dato, index) => (
-            <li class="flex items-start gap-4 py-4" style="border-bottom:1px solid rgba(74,117,153,0.18)">
-              <span class="font-display font-bold text-sm shrink-0" style="color:#F75000"></span>
-              <span class="text-sm leading-relaxed" style="color:#94A3B8">{dato}</span>
+            <li class="flex items-start gap-4 py-4" style="border-bottom:1px solid var(--c-line)">
+              <span class="font-display font-bold text-sm shrink-0" style="color:var(--c-accent)"></span>
+              <span class="text-sm leading-relaxed" style="color:var(--c-text-2)">{dato}</span>
             </li>
           ))}
         </ol>
@@ -173,21 +173,21 @@ const faqSchema = {
     </div>
   </section>
 
-  <section class="section" style="background:#040A12" aria-labelledby="faq-precios-title">
+  <section class="section" style="background:var(--c-bg)" aria-labelledby="faq-precios-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes</span>
-          <h2 id="faq-precios-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.9rem,3.8vw,3rem);line-height:1.05">Cómo comparar precios<br/><span style="color:#F75000">sin perder alcance.</span></h2>
+          <h2 id="faq-precios-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.9rem,3.8vw,3rem);line-height:1.05">Cómo comparar precios<br/><span style="color:var(--c-accent)">sin perder alcance.</span></h2>
         </div>
-        <div style="border:1px solid rgba(74,117,153,0.2);background:#0C1825">
+        <div style="border:1px solid var(--c-line);background:var(--c-surface)">
           {faqs.map((faq) => (
-            <details class="faq-item group" style="border-bottom:1px solid rgba(74,117,153,0.15)">
+            <details class="faq-item group" style="border-bottom:1px solid var(--c-line)">
               <summary class="flex items-start justify-between gap-4 cursor-pointer select-none list-none p-6">
-                <h3 class="font-display font-semibold pr-2 m-0" style="color:#FFFFFF;font-size:0.875rem;line-height:1.375">{faq.q}</h3>
-                <span class="faq-icon shrink-0" style="color:#FF6B26">+</span>
+                <h3 class="font-display font-semibold pr-2 m-0" style="color:var(--c-ink);font-size:0.875rem;line-height:1.375">{faq.q}</h3>
+                <span class="faq-icon shrink-0" style="color:var(--c-accent)">+</span>
               </summary>
-              <p class="px-6 pb-6 text-sm leading-relaxed" style="color:#64748B">{faq.a}</p>
+              <p class="px-6 pb-6 text-sm leading-relaxed" style="color:var(--c-muted)">{faq.a}</p>
             </details>
           ))}
         </div>
@@ -195,14 +195,14 @@ const faqSchema = {
     </div>
   </section>
 
-  <section style="background:#F75000;padding-block:4rem" aria-label="Solicitar cotización de equipo para bomberos">
+  <section style="background:var(--c-accent);padding-block:4rem" aria-label="Solicitar cotización de equipo para bomberos">
     <div class="container-site">
       <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
         <div>
-          <p class="text-xs font-display font-bold uppercase tracking-[0.2em] mb-3" style="color:rgba(255,255,255,0.7)">Distribuidor autorizado · envíos a los 32 estados</p>
-          <h2 class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.75rem,3.5vw,2.5rem);line-height:1.1">Cotiza tu equipo<br/>con FIREFIGHTERS MX.</h2>
+          <p class="text-xs font-display font-bold uppercase tracking-[0.2em] mb-3" style="color:rgba(16,24,40,0.7)">Distribuidor autorizado · envíos a los 32 estados</p>
+          <h2 class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3.5vw,2.5rem);line-height:1.1">Cotiza tu equipo<br/>con FIREFIGHTERS MX.</h2>
         </div>
-        <a href="/cotizacion/" class="btn" style="background:#FFFFFF;color:#F75000;font-weight:700">Solicitar cotización</a>
+        <a href="/cotizacion/" class="btn" style="background:#FFFFFF;color:var(--c-accent);font-weight:700">Solicitar cotización</a>
       </div>
     </div>
   </section>

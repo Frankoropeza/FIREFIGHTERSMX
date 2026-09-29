@@ -2,21 +2,21 @@
 /** Fabricantes de referencia del sector — monogramas tipográficos, sin logos */
 import { brands } from '@data/brands';
 ---
-<section class="section home-deferred-section" style="background:#040A12" aria-labelledby="marcas-heading">
+<section class="section home-deferred-section" style="background:var(--c-bg)" aria-labelledby="marcas-heading">
   <div class="container-site">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-10">
       <div>
         <span class="section-eyebrow mb-4 inline-flex">Fabricantes</span>
-        <h2 id="marcas-heading" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Las marcas que definen el estándar<br/><span style="color:#F75000">en trajes de bombero, cascos y equipo de respiración autónoma.</span></h2>
+        <h2 id="marcas-heading" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">Las marcas que definen el estándar<br/><span style="color:var(--c-accent)">en trajes de bombero, cascos y equipo de respiración autónoma.</span></h2>
       </div>
-      <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-        <p class="text-sm leading-relaxed" style="color:#94A3B8">Perfiles de los fabricantes internacionales y mexicanos que dominan las licitaciones y las brigadas del país: qué líneas tienen, bajo qué normas certifican y qué categorías cubren. Sirven para especificar bases técnicas por desempeño, no por marca.</p>
+      <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+        <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">Perfiles de los fabricantes internacionales y mexicanos que dominan las licitaciones y las brigadas del país: qué líneas tienen, bajo qué normas certifican y qué categorías cubren. Sirven para especificar bases técnicas por desempeño, no por marca.</p>
       </div>
     </div>
-    <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-px" style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
+    <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-px" style="background:var(--c-line);border:1px solid var(--c-line)">
       {brands.map((b) => (
-        <a href={`/marcas/${b.slug}/`} class="grid-cell ledger-cell flex flex-col items-center justify-center gap-2 p-6 text-center min-h-[120px]" style="background:#070E1A">
-          <span class="font-display font-bold text-2xl" style="color:#FFFFFF;letter-spacing:0.02em">{b.name.split(' ')[0]}</span>
+        <a href={`/marcas/${b.slug}/`} class="grid-cell ledger-cell flex flex-col items-center justify-center gap-2 p-6 text-center min-h-[120px]" style="background:var(--c-bg-alt)">
+          <span class="font-display font-bold text-2xl" style="color:var(--c-ink);letter-spacing:0.02em">{b.name.split(' ')[0]}</span>
           <span class="text-[10px] uppercase tracking-widest" style="color:var(--forge-300)">{b.country?.replace(/^\S+\s/, '') ?? ''}</span>
         </a>))}
     </div>

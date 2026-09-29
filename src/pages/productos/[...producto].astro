@@ -637,30 +637,30 @@ const seoDesc = metaCerrada(product.description, [
 >
 
   {/* ══ BREADCRUMB ══════════════════════════════════════════════════════ */}
-  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+  <nav class="py-3" style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line)" aria-label="Breadcrumb">
     <div class="container-site">
       <ol class="flex items-center flex-wrap gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
-        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li><a href="/" class="hover:text-[var(--c-accent)]">Inicio</a></li>
         <li aria-hidden="true">/</li>
-        <li><a href="/productos" class="hover:text-[#FF6B26]">Productos</a></li>
+        <li><a href="/productos" class="hover:text-[var(--c-accent)]">Productos</a></li>
         <li aria-hidden="true">/</li>
-        <li><a href={categoryPath} class="hover:text-[#FF6B26]">{product.category}</a></li>
+        <li><a href={categoryPath} class="hover:text-[var(--c-accent)]">{product.category}</a></li>
         <li aria-hidden="true">/</li>
         {brandPath && product.brand && (
           <>
-            <li><a href={brandPath} class="hover:text-[#FF6B26]">{product.brand}</a></li>
+            <li><a href={brandPath} class="hover:text-[var(--c-accent)]">{product.brand}</a></li>
             <li aria-hidden="true">/</li>
           </>
         )}
-        <li><span style="color:#94A3B8" aria-current="page">{product.title}</span></li>
+        <li><span style="color:var(--c-text-2)" aria-current="page">{product.title}</span></li>
       </ol>
     </div>
   </nav>
 
   {/* ══ HERO — patrón idéntico al resto del sitio ═══════════════════════ */}
-  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">
+  <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:5rem">
     <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none"
-         style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.08) 0%, transparent 65%)"
+         style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(200,16,46,0.08) 0%, transparent 65%)"
          aria-hidden="true"></div>
 
     <div class="container-site relative z-10">
@@ -672,15 +672,15 @@ const seoDesc = metaCerrada(product.description, [
             {[...new Set([fabricante, product.brand, product.norm, product.tier])].filter(Boolean).join(' · ')}
           </span>
 
-          <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+          <h1 class="font-display font-bold uppercase mb-6" style="color:var(--c-ink);font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
             {h1line1}{h1line2 && (
-              <><br/><span style="color:#F75000">{h1line2}</span></>
+              <><br/><span style="color:var(--c-accent)">{h1line2}</span></>
             )}
           </h1>
 
-          <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
+          <p class="text-sm leading-relaxed mb-8" style="color:var(--c-text-2)">
             {product.description}
-            {!product.suppressDefaultClaims && normaCertificada && <> Certificado <strong style="color:#FFFFFF">{product.norm}</strong>.</>}
+            {!product.suppressDefaultClaims && normaCertificada && <> Certificado <strong style="color:var(--c-ink)">{product.norm}</strong>.</>}
             {esDistribuidor && ` Distribuidor autorizado ${fabricante} en México.`}
           </p>
 
@@ -701,16 +701,16 @@ const seoDesc = metaCerrada(product.description, [
         </div>
 
         {/* ── Columna derecha — párrafos SEO/marketing ────────────────── */}
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
           {heroParas.map((p) => (
-            <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">{p}</p>
+            <p class="text-sm leading-[1.9] mb-5" style="color:var(--c-text-2)">{p}</p>
           ))}
         </div>
       </div>
     </div>
 
     <div class="absolute bottom-0 left-0 right-0 h-px"
-         style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)"
+         style="background:linear-gradient(90deg, transparent, rgba(200,16,46,0.4) 30%, rgba(200,16,46,0.4) 70%, transparent)"
          aria-hidden="true"></div>
   </section>
 
@@ -718,7 +718,7 @@ const seoDesc = metaCerrada(product.description, [
   <QuickLinksBar />
 
   {/* ══ LAYOUT PRINCIPAL: MAIN + SIDEBAR ════════════════════════════════ */}
-  <div style="background:#070E1A">
+  <div style="background:var(--c-bg-alt)">
     <div class="container-site" style="padding-block:3.5rem">
       <div class="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-10 items-start">
 
@@ -731,7 +731,7 @@ const seoDesc = metaCerrada(product.description, [
               <div class={galleryImages.length > 1 ? 'grid grid-cols-3 gap-1.5' : ''} aria-label={`Imágenes de ${product.title}`}>
                 {galleryImages.map((img, i) => (
                   <div class="overflow-hidden relative"
-                       style={`background:#060D18;border:1px solid rgba(74,117,153,0.18);${galleryImages.length > 1 && i === 0 ? 'grid-column:1 / -1;' : ''}`}>
+                       style={`background:var(--c-bg-alt);border:1px solid var(--c-line);${galleryImages.length > 1 && i === 0 ? 'grid-column:1 / -1;' : ''}`}>
                     <img
                       src={img.src}
                       alt={img.alt}
@@ -745,7 +745,7 @@ const seoDesc = metaCerrada(product.description, [
                     {i === 0 && product.badge && (
                       <div class="absolute top-2 left-2 pointer-events-none">
                         <span class="text-[9px] font-display font-bold uppercase tracking-widest px-2 py-1"
-                              style="background:#F75000;color:#FFFFFF">{product.badge}</span>
+                              style="background:var(--c-accent);color:#FFFFFF">{product.badge}</span>
                       </div>
                     )}
                   </div>
@@ -761,22 +761,22 @@ const seoDesc = metaCerrada(product.description, [
           )}
 
           {/* Descripción + specs */}
-          <div style="background:#040A12;border:1px solid rgba(74,117,153,0.18)">
+          <div style="background:var(--c-bg);border:1px solid var(--c-line)">
             <div class="p-6 pb-0">
               <span class="section-eyebrow mb-4 inline-flex">{[product.norm ?? product.category, fabricante ?? product.brand].filter(Boolean).join(' · ')}</span>
-              <h2 class="font-display font-bold mb-5" style="color:#FFFFFF;font-size:clamp(1.5rem,3vw,2.25rem);line-height:1.1">
-                Descripción técnica: <span style="color:#F75000">{nombreCorto}</span>
+              <h2 class="font-display font-bold mb-5" style="color:var(--c-ink);font-size:clamp(1.5rem,3vw,2.25rem);line-height:1.1">
+                Descripción técnica: <span style="color:var(--c-accent)">{nombreCorto}</span>
               </h2>
-              <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">{product.description}</p>
+              <p class="text-sm leading-[1.9] mb-4" style="color:var(--c-text-2)">{product.description}</p>
               {esDistribuidor && (
-                <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">
+                <p class="text-sm leading-[1.9] mb-4" style="color:var(--c-text-2)">
                   Como distribuidor autorizado de {fabricante} en México, entregamos cada unidad con número de serie verificable{normaCertificada ? `, certificado de conformidad ${product.norm} con el número de laboratorio acreditado,` : ','} y documentación completa para licitación pública o proceso de compra corporativo.
                 </p>
               )}
               {product.incluye && product.incluye.length > 0 && (
                 <div class="mb-5">
                   <p class="text-[10px] font-display font-bold uppercase tracking-widest mb-2" style="color:var(--forge-300)">Presentaciones y componentes</p>
-                  <ul class="m-0 pl-4 flex flex-col gap-1" style="color:#94A3B8">
+                  <ul class="m-0 pl-4 flex flex-col gap-1" style="color:var(--c-text-2)">
                     {product.incluye.map((x) => <li class="text-sm leading-relaxed">{x}</li>)}
                   </ul>
                 </div>
@@ -788,40 +788,40 @@ const seoDesc = metaCerrada(product.description, [
 
             {/* Specs table */}
             {specRows.length > 0 && (
-              <div style="border-top:1px solid rgba(74,117,153,0.18)">
-                <div class="px-6 py-3" style="background:#080F1A">
+              <div style="border-top:1px solid var(--c-line)">
+                <div class="px-6 py-3" style="background:var(--c-bg-alt)">
                   <span class="text-[10px] font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Especificaciones técnicas</span>
                 </div>
                 <div style="overflow-x:auto">
                   <table style="width:100%;border-collapse:collapse;min-width:400px">
                     <thead>
-                      <tr style="background:#080F1A;border-bottom:1px solid rgba(74,117,153,0.25)">
+                      <tr style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line-strong)">
                         <th class="text-left p-3 text-[10px] font-display font-bold uppercase tracking-widest" style="color:var(--forge-300);width:30%">Parámetro</th>
-                        <th class="text-left p-3 text-[10px] font-display font-bold uppercase tracking-widest" style="color:#F75000;width:22%">Valor</th>
+                        <th class="text-left p-3 text-[10px] font-display font-bold uppercase tracking-widest" style="color:var(--c-accent);width:22%">Valor</th>
                         <th class="text-left p-3 text-[10px] font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Referencia</th>
                       </tr>
                     </thead>
                     <tbody>
                       {specRows.map((s, i) => (
-                        <tr style={`border-bottom:1px solid rgba(74,117,153,0.1);background:${i % 2 === 0 ? '#040A12' : '#080F1A'}`}>
-                          <td class="p-3 font-display font-semibold text-xs" style="color:#CBD5E1">{s.label}</td>
-                          <td class="p-3 font-display font-bold text-xs" style="color:#F75000">{s.val}</td>
-                          <td class="p-3 text-xs leading-relaxed" style="color:#64748B">{s.explica}</td>
+                        <tr style={`border-bottom:1px solid var(--c-line);background:${i % 2 === 0 ? 'var(--c-bg)' : 'var(--c-bg-alt)'}`}>
+                          <td class="p-3 font-display font-semibold text-xs" style="color:var(--c-text)">{s.label}</td>
+                          <td class="p-3 font-display font-bold text-xs" style="color:var(--c-accent)">{s.val}</td>
+                          <td class="p-3 text-xs leading-relaxed" style="color:var(--c-muted)">{s.explica}</td>
                         </tr>
                       ))}
                     </tbody>
                   </table>
                 </div>
                 {specRows.some((s) => s.min || s.alto) && (
-                  <div class="p-4" style="border-top:1px solid rgba(74,117,153,0.15);background:#080F1A">
+                  <div class="p-4" style="border-top:1px solid var(--c-line);background:var(--c-bg-alt)">
                     <p class="text-[10px] font-display font-bold uppercase tracking-widest mb-3" style="color:var(--forge-300)">Contexto de desempeño</p>
                     <div class="flex flex-col gap-2">
                       {specRows.filter((s) => s.min || s.alto).map((s) => (
                         <div class="flex items-center gap-3 text-xs flex-wrap">
-                          <span style="color:#64748B;min-width:80px">{s.label}</span>
-                          {s.min && <span class="px-2 py-0.5" style="background:#040A12;color:var(--forge-300);border:1px solid rgba(74,117,153,0.2)">Mín NFPA: {s.min}</span>}
-                          <span class="px-2 py-0.5 font-semibold" style="background:rgba(247,80,0,0.12);color:#F75000;border:1px solid rgba(247,80,0,0.3)">Este modelo: {s.val}</span>
-                          {s.alto && <span class="px-2 py-0.5" style="background:#040A12;color:#34D399;border:1px solid rgba(52,211,153,0.2)">Alta perf: {s.alto}</span>}
+                          <span style="color:var(--c-muted);min-width:80px">{s.label}</span>
+                          {s.min && <span class="px-2 py-0.5" style="background:var(--c-bg);color:var(--forge-300);border:1px solid var(--c-line)">Mín NFPA: {s.min}</span>}
+                          <span class="px-2 py-0.5 font-semibold" style="background:rgba(200,16,46,0.12);color:var(--c-accent);border:1px solid rgba(200,16,46,0.3)">Este modelo: {s.val}</span>
+                          {s.alto && <span class="px-2 py-0.5" style="background:var(--c-bg);color:var(--c-success);border:1px solid rgba(6,118,71,0.2)">Alta perf: {s.alto}</span>}
                         </div>
                       ))}
                     </div>
@@ -833,31 +833,31 @@ const seoDesc = metaCerrada(product.description, [
 
           {/* Características */}
           {product.features && product.features.length > 0 && (
-            <div style="background:#040A12;border:1px solid rgba(74,117,153,0.18)">
-              <div class="px-6 py-4 flex items-center gap-3" style="border-bottom:1px solid rgba(74,117,153,0.18)">
+            <div style="background:var(--c-bg);border:1px solid var(--c-line)">
+              <div class="px-6 py-4 flex items-center gap-3" style="border-bottom:1px solid var(--c-line)">
                 <span class="section-eyebrow inline-flex">Características · {product.norm ?? product.category}</span>
               </div>
               <div class="p-6 pb-4">
-                <h2 class="font-display font-bold mb-2" style="color:#FFFFFF;font-size:clamp(1.25rem,2.5vw,1.875rem);line-height:1.1">
-                  Características <span style="color:#F75000">principales</span>
+                <h2 class="font-display font-bold mb-2" style="color:var(--c-ink);font-size:clamp(1.25rem,2.5vw,1.875rem);line-height:1.1">
+                  Características <span style="color:var(--c-accent)">principales</span>
                 </h2>
                 {!product.suppressDefaultClaims && (
-                  <p class="text-sm leading-relaxed mb-6" style="color:#64748B">
+                  <p class="text-sm leading-relaxed mb-6" style="color:var(--c-muted)">
                     Documentado en la ficha técnica oficial — verificable por número de modelo y laboratorio acreditado.
                   </p>
                 )}
               </div>
               <div class={`grid grid-cols-1 ${product.features.length === 2 ? 'sm:grid-cols-2' : 'sm:grid-cols-3'} gap-px`}
-                   style="border-top:1px solid rgba(74,117,153,0.18)">
+                   style="border-top:1px solid var(--c-line)">
                 {product.features.map((feat, i) => {
                   const colors = ['#F75000','#F5A623','#34D399','#60A5FA','#A78BFA'];
                   const color = colors[i % colors.length];
                   return (
-                    <div class="flex flex-col gap-3 p-5" style={`background:#080F1A;border-top:3px solid ${color}`}>
+                    <div class="flex flex-col gap-3 p-5" style={`background:var(--c-bg-alt);border-top:3px solid ${color}`}>
                       <div class="w-8 h-8 flex items-center justify-center rounded-full" style={`background:${color}18`}>
                         
                       </div>
-                      <p class="text-xs leading-relaxed m-0" style="color:#94A3B8">{feat}</p>
+                      <p class="text-xs leading-relaxed m-0" style="color:var(--c-text-2)">{feat}</p>
                     </div>
                   );
                 })}
@@ -867,48 +867,48 @@ const seoDesc = metaCerrada(product.description, [
 
           {/* Aplicaciones */}
           {muestraAplicaciones && (
-          <div style="background:#040A12;border:1px solid rgba(74,117,153,0.18)">
-            <div class="px-6 py-4" style="border-bottom:1px solid rgba(74,117,153,0.18)">
+          <div style="background:var(--c-bg);border:1px solid var(--c-line)">
+            <div class="px-6 py-4" style="border-bottom:1px solid var(--c-line)">
               <span class="section-eyebrow inline-flex">Cuándo es la opción correcta</span>
             </div>
             <div class="p-6 pb-4">
-              <h2 class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.25rem,2.5vw,1.875rem);line-height:1.1">
-                Cuándo elegir <span style="color:#F75000">{nombreCorto}</span>
+              <h2 class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.25rem,2.5vw,1.875rem);line-height:1.1">
+                Cuándo elegir <span style="color:var(--c-accent)">{nombreCorto}</span>
               </h2>
               {product.seleccion?.map((p) => (
-                <p class="text-sm leading-[1.9] mb-4" style="color:#94A3B8">{p}</p>
+                <p class="text-sm leading-[1.9] mb-4" style="color:var(--c-text-2)">{p}</p>
               ))}
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-px" style="border-top:1px solid rgba(74,117,153,0.18)">
-              <div style="background:#080F1A;border-top:3px solid #34D399">
-                <div class="px-5 pt-4 pb-3" style="border-bottom:1px solid rgba(74,117,153,0.12)">
-                  <span class="text-[10px] font-display font-bold uppercase tracking-widest" style="color:#34D399">Ideal para</span>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-px" style="border-top:1px solid var(--c-line)">
+              <div style="background:var(--c-bg-alt);border-top:3px solid var(--c-success)">
+                <div class="px-5 pt-4 pb-3" style="border-bottom:1px solid var(--c-line)">
+                  <span class="text-[10px] font-display font-bold uppercase tracking-widest" style="color:var(--c-success)">Ideal para</span>
                 </div>
                 <ul class="flex flex-col list-none m-0 p-0">
                   {casos.si.map((item, i) => (
                     <li class="flex items-start gap-2 px-5 py-3"
-                        style={`border-bottom:${i < casos.si.length - 1 ? '1px solid rgba(74,117,153,0.08)' : 'none'}`}>
+                        style={`border-bottom:${i < casos.si.length - 1 ? '1px solid var(--c-tint)' : 'none'}`}>
                       
-                      <span class="text-xs leading-relaxed" style="color:#94A3B8">{item}</span>
+                      <span class="text-xs leading-relaxed" style="color:var(--c-text-2)">{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
-              <div style="background:#080F1A;border-top:3px solid #F5A623">
-                <div class="px-5 pt-4 pb-3" style="border-bottom:1px solid rgba(74,117,153,0.12)">
-                  <span class="text-[10px] font-display font-bold uppercase tracking-widest" style="color:#F5A623"> A considerar</span>
+              <div style="background:var(--c-bg-alt);border-top:3px solid var(--c-amber)">
+                <div class="px-5 pt-4 pb-3" style="border-bottom:1px solid var(--c-line)">
+                  <span class="text-[10px] font-display font-bold uppercase tracking-widest" style="color:var(--c-amber)"> A considerar</span>
                 </div>
                 <ul class="flex flex-col list-none m-0 p-0">
                   {casos.considera.map((item, i) => (
                     <li class="flex items-start gap-2 px-5 py-3"
-                        style={`border-bottom:${i < casos.considera.length - 1 ? '1px solid rgba(74,117,153,0.08)' : 'none'}`}>
+                        style={`border-bottom:${i < casos.considera.length - 1 ? '1px solid var(--c-tint)' : 'none'}`}>
                       
-                      <span class="text-xs leading-relaxed" style="color:#94A3B8">{item}</span>
+                      <span class="text-xs leading-relaxed" style="color:var(--c-text-2)">{item}</span>
                     </li>
                   ))}
                 </ul>
-                <div class="px-5 py-4" style="border-top:1px solid rgba(74,117,153,0.12)">
-                  <a href={whatsappUrl(`Hola, necesito asesoría para saber si el ${product.title} es la opción correcta para mi operación.`)} target="_blank" rel="noopener" class="text-xs font-display font-semibold hover:text-[#FF6B26]" style="color:var(--forge-300)">
+                <div class="px-5 py-4" style="border-top:1px solid var(--c-line)">
+                  <a href={whatsappUrl(`Hola, necesito asesoría para saber si el ${product.title} es la opción correcta para mi operación.`)} target="_blank" rel="noopener" class="text-xs font-display font-semibold hover:text-[var(--c-accent)]" style="color:var(--forge-300)">
                     Consulta técnica gratuita 
                   </a>
                 </div>
@@ -919,27 +919,27 @@ const seoDesc = metaCerrada(product.description, [
 
           {/* Comparación rápida con modelos vecinos (enlazado contextual) */}
           {related.length > 0 && (
-            <p class="text-sm m-0 px-1" style="color:#94A3B8">
+            <p class="text-sm m-0 px-1" style="color:var(--c-text-2)">
               Compáralo con:{' '}
               {related.slice(0, 3).map((r, i) => (
-                <>{i > 0 && ' · '}<a href={`${r.href}/`} class="hover:text-[#FF6B26]" style="color:#FF6B26">{r.title.split(' — ')[0]}</a></>
+                <>{i > 0 && ' · '}<a href={`${r.href}/`} class="hover:text-[var(--c-accent)]" style="color:var(--c-accent)">{r.title.split(' — ')[0]}</a></>
               ))}
             </p>
           )}
 
           {/* Preguntas frecuentes del modelo */}
           {product.faqs && product.faqs.length > 0 && (
-          <div style="background:#040A12;border:1px solid rgba(74,117,153,0.18)">
+          <div style="background:var(--c-bg);border:1px solid var(--c-line)">
             <div class="p-6 pb-2">
-              <h2 class="font-display font-bold mb-4" style="color:#FFFFFF;font-size:clamp(1.25rem,2.5vw,1.875rem);line-height:1.1">
-                Preguntas frecuentes <span style="color:#F75000">sobre {nombreCorto}</span>
+              <h2 class="font-display font-bold mb-4" style="color:var(--c-ink);font-size:clamp(1.25rem,2.5vw,1.875rem);line-height:1.1">
+                Preguntas frecuentes <span style="color:var(--c-accent)">sobre {nombreCorto}</span>
               </h2>
             </div>
             <div class="px-6 pb-6 flex flex-col gap-px">
               {product.faqs.map((f) => (
-                <details style="background:#080F1A;border:1px solid rgba(74,117,153,0.12)">
-                  <summary class="cursor-pointer px-4 py-3 font-display font-semibold text-sm" style="color:#FFFFFF">{f.q}</summary>
-                  <p class="px-4 pb-4 text-sm leading-relaxed m-0" style="color:#94A3B8">{f.a}</p>
+                <details style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
+                  <summary class="cursor-pointer px-4 py-3 font-display font-semibold text-sm" style="color:var(--c-ink)">{f.q}</summary>
+                  <p class="px-4 pb-4 text-sm leading-relaxed m-0" style="color:var(--c-text-2)">{f.a}</p>
                 </details>
               ))}
             </div>
@@ -948,18 +948,18 @@ const seoDesc = metaCerrada(product.description, [
 
           {/* Proveedores del directorio */}
           {product.proveedores && product.proveedores.length > 0 && (
-          <div style="background:#040A12;border:1px solid rgba(74,117,153,0.18)">
+          <div style="background:var(--c-bg);border:1px solid var(--c-line)">
             <div class="p-6 pb-2">
-              <h2 class="font-display font-bold mb-2" style="color:#FFFFFF;font-size:clamp(1.25rem,2.5vw,1.875rem);line-height:1.1">
-                Proveedores <span style="color:#F75000">en el directorio</span>
+              <h2 class="font-display font-bold mb-2" style="color:var(--c-ink);font-size:clamp(1.25rem,2.5vw,1.875rem);line-height:1.1">
+                Proveedores <span style="color:var(--c-accent)">en el directorio</span>
               </h2>
-              <p class="text-sm leading-relaxed mb-4" style="color:#94A3B8">Empresas verificadas del directorio FIREFIGHTERS MX que ofrecen este tipo de equipo. Pide a cada una la hoja técnica y el listado UL/FM del modelo que cotice.</p>
+              <p class="text-sm leading-relaxed mb-4" style="color:var(--c-text-2)">Empresas verificadas del directorio FIREFIGHTERS MX que ofrecen este tipo de equipo. Pide a cada una la hoja técnica y el listado UL/FM del modelo que cotice.</p>
             </div>
             <ul class="list-none m-0 px-6 pb-6 grid grid-cols-1 sm:grid-cols-2 gap-px">
               {product.proveedores.map((pv) => (
-                <li class="p-4" style="background:#080F1A;border:1px solid rgba(74,117,153,0.12)">
-                  <a href={pv.href} class="font-display font-semibold text-sm hover:text-[#FF6B26]" style="color:#FFFFFF">{pv.nombre}</a>
-                  <p class="text-xs mt-1 mb-0" style="color:#64748B">{pv.nota}</p>
+                <li class="p-4" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
+                  <a href={pv.href} class="font-display font-semibold text-sm hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{pv.nombre}</a>
+                  <p class="text-xs mt-1 mb-0" style="color:var(--c-muted)">{pv.nota}</p>
                 </li>
               ))}
             </ul>
@@ -972,7 +972,7 @@ const seoDesc = metaCerrada(product.description, [
             <p class="text-[10px] font-display font-bold uppercase tracking-widest mb-2" style="color:var(--forge-300)">Fuentes del fabricante</p>
             <ul class="list-none m-0 p-0 flex flex-col gap-1">
               {product.fuentes.map((s) => (
-                <li class="text-xs"><a href={s.url} target="_blank" rel="nofollow noopener" class="hover:text-[#FF6B26]" style="color:#94A3B8">{s.titulo}</a></li>
+                <li class="text-xs"><a href={s.url} target="_blank" rel="nofollow noopener" class="hover:text-[var(--c-accent)]" style="color:var(--c-text-2)">{s.titulo}</a></li>
               ))}
             </ul>
           </div>
@@ -980,18 +980,18 @@ const seoDesc = metaCerrada(product.description, [
 
           {/* Documentación para licitación */}
           {!product.suppressDefaultClaims && (
-          <div style="background:#040A12;border:1px solid rgba(74,117,153,0.18)">
-            <div class="px-6 py-4" style="border-bottom:1px solid rgba(74,117,153,0.18)">
+          <div style="background:var(--c-bg);border:1px solid var(--c-line)">
+            <div class="px-6 py-4" style="border-bottom:1px solid var(--c-line)">
               <span class="section-eyebrow inline-flex">{esDistribuidor ? 'Distribuidor autorizado · Stock CDMX' : 'Stock CDMX · Licitación'}</span>
             </div>
             <div class="p-6">
-              <h2 class="font-display font-bold mb-3" style="color:#FFFFFF;font-size:clamp(1.25rem,2.5vw,1.875rem);line-height:1.1">
-                Documentación <span style="color:#F75000">para licitación</span>
+              <h2 class="font-display font-bold mb-3" style="color:var(--c-ink);font-size:clamp(1.25rem,2.5vw,1.875rem);line-height:1.1">
+                Documentación <span style="color:var(--c-accent)">para licitación</span>
               </h2>
-              <p class="text-sm leading-relaxed mb-5" style="color:#64748B">
+              <p class="text-sm leading-relaxed mb-5" style="color:var(--c-muted)">
                 Entregamos el dossier completo para CompraNet, IMSS, gobiernos estatales y corporativos. Respuesta en &lt;24 h.
               </p>
-              <div class="grid grid-cols-2 gap-px mb-5" style="border:1px solid rgba(74,117,153,0.18)">
+              <div class="grid grid-cols-2 gap-px mb-5" style="border:1px solid var(--c-line)">
                 {[
                   { svg: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>`, t: normaCertificada ? `Certificado ${product.norm}` : 'Documentación de norma', d: normaCertificada ? 'Laboratorio acreditado, verificable' : 'Ficha técnica del fabricante por modelo', color: '#34D399' },
                   { svg: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>`, t: 'Ficha técnica oficial', d: 'Datasheet en español del fabricante', color: '#60A5FA' },
@@ -1000,13 +1000,13 @@ const seoDesc = metaCerrada(product.description, [
                     : { svg: '', t: 'Manifiesto por partida', d: 'Cumplimiento de norma por partida licitada', color: '#F5A623' },
                   { svg: `<path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>`, t: 'Garantía de fábrica', d: 'Refacciones y servicio directo con fábrica', color: '#A78BFA' },
                 ].map((d, i) => (
-                  <div class="flex items-start gap-3 p-4" style={`background:${i % 2 === 0 ? '#060D18' : '#080F1A'};border-top:2px solid ${d.color}`}>
+                  <div class="flex items-start gap-3 p-4" style={`background:${i % 2 === 0 ? 'var(--c-bg-alt)' : 'var(--c-bg-alt)'};border-top:2px solid ${d.color}`}>
                     <div class="shrink-0 w-7 h-7 flex items-center justify-center" style={`background:${d.color}18`}>
                       
                     </div>
                     <div>
-                      <p class="font-display font-bold text-xs mb-0.5" style="color:#FFFFFF">{d.t}</p>
-                      <p class="text-[11px] leading-relaxed m-0" style="color:#64748B">{d.d}</p>
+                      <p class="font-display font-bold text-xs mb-0.5" style="color:var(--c-ink)">{d.t}</p>
+                      <p class="text-[11px] leading-relaxed m-0" style="color:var(--c-muted)">{d.d}</p>
                     </div>
                   </div>
                 ))}
@@ -1027,17 +1027,17 @@ const seoDesc = metaCerrada(product.description, [
         <aside class="flex flex-col gap-4" style="position:sticky;top:1.5rem">
 
           {/* CTA cotizar */}
-          <div style="background:#F75000;border:1px solid rgba(247,80,0,0.6)">
+          <div style="background:var(--c-accent);border:1px solid rgba(200,16,46,0.6)">
             <div class="p-5">
-              <p class="text-[10px] font-display font-bold uppercase tracking-widest mb-1" style="color:rgba(255,255,255,0.7)">Cotización inmediata</p>
-              <p class="font-display font-bold text-base mb-3" style="color:#FFFFFF;line-height:1.2">{product.title}</p>
-              {product.norm && <p class="text-[10px] mb-4" style="color:rgba(255,255,255,0.75)">{product.norm}{esDistribuidor && ' · Distribuidor autorizado MX'}</p>}
+              <p class="text-[10px] font-display font-bold uppercase tracking-widest mb-1" style="color:rgba(16,24,40,0.7)">Cotización inmediata</p>
+              <p class="font-display font-bold text-base mb-3" style="color:var(--c-ink);line-height:1.2">{product.title}</p>
+              {product.norm && <p class="text-[10px] mb-4" style="color:rgba(16,24,40,0.75)">{product.norm}{esDistribuidor && ' · Distribuidor autorizado MX'}</p>}
               <a href={whatsappUrl(`Hola, quiero cotizar el ${product.title}${product.norm ? ` (${product.norm})` : ''}. ¿Precio y disponibilidad?`)} target="_blank" rel="noopener"
                  class="block text-center text-sm font-display font-bold py-3 px-4 w-full hover:opacity-90"
-                 style="background:#FFFFFF;color:#F75000">
+                 style="background:#FFFFFF;color:var(--c-accent)">
                 Cotizar por {CANAL_CONTACTO} 
               </a>
-              <a href="/cotizacion" class="block text-center text-xs mt-2 py-2 font-display font-semibold" style="color:rgba(255,255,255,0.8)">
+              <a href="/cotizacion" class="block text-center text-xs mt-2 py-2 font-display font-semibold" style="color:rgba(16,24,40,0.8)">
                 Cotización formal
               </a>
             </div>
@@ -1045,16 +1045,16 @@ const seoDesc = metaCerrada(product.description, [
 
           {/* Especificaciones rápidas */}
           {specRows.length > 0 && (
-            <div style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
-              <div class="px-4 py-3" style="background:#040A12;border-bottom:1px solid rgba(74,117,153,0.18)">
+            <div style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
+              <div class="px-4 py-3" style="background:var(--c-bg);border-bottom:1px solid var(--c-line)">
                 <span class="text-[9px] font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Especificaciones</span>
               </div>
               <div class="flex flex-col">
                 {specRows.map((s, i) => (
                   <div class="flex items-center justify-between gap-2 px-4 py-2.5"
-                       style={`border-bottom:${i < specRows.length - 1 ? '1px solid rgba(74,117,153,0.1)' : 'none'}`}>
-                    <span class="text-[11px]" style="color:#64748B">{s.label}</span>
-                    <span class="font-display font-bold text-xs" style="color:#F75000">{s.val}</span>
+                       style={`border-bottom:${i < specRows.length - 1 ? '1px solid var(--c-line)' : 'none'}`}>
+                    <span class="text-[11px]" style="color:var(--c-muted)">{s.label}</span>
+                    <span class="font-display font-bold text-xs" style="color:var(--c-accent)">{s.val}</span>
                   </div>
                 ))}
               </div>
@@ -1063,25 +1063,25 @@ const seoDesc = metaCerrada(product.description, [
 
           {/* Más productos de la marca */}
           {sidebarBrandProds.length > 0 && (
-            <div style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
-              <div class="px-4 py-3" style="background:#040A12;border-bottom:1px solid rgba(74,117,153,0.18)">
+            <div style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
+              <div class="px-4 py-3" style="background:var(--c-bg);border-bottom:1px solid var(--c-line)">
                 <span class="text-[9px] font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Más de {product.brand}</span>
               </div>
               <div class="flex flex-col">
                 {sidebarBrandProds.map((p, i) => (
                   <a href={p.href}
-                     class="flex items-center gap-3 px-4 py-3 group hover:bg-[#040A12]"
-                     style={`border-bottom:${i < sidebarBrandProds.length - 1 ? '1px solid rgba(74,117,153,0.1)' : 'none'}`}>
+                     class="flex items-center gap-3 px-4 py-3 group hover:bg-[var(--c-bg)]"
+                     style={`border-bottom:${i < sidebarBrandProds.length - 1 ? '1px solid var(--c-line)' : 'none'}`}>
                     {p.image ? (
                       <img src={p.image} alt={p.title} width="48" height="48" loading="lazy"
-                           class="shrink-0" style="width:48px;height:48px;object-fit:cover;object-position:center;background:#060D18" />
+                           class="shrink-0" style="width:48px;height:48px;object-fit:cover;object-position:center;background:var(--c-bg-alt)" />
                     ) : (
-                      <div class="shrink-0 flex items-center justify-center" style="width:48px;height:48px;background:#060D18;border:1px solid rgba(74,117,153,0.15)">
+                      <div class="shrink-0 flex items-center justify-center" style="width:48px;height:48px;background:var(--c-bg-alt);border:1px solid var(--c-line)">
                         
                       </div>
                     )}
                     <div class="flex-1 min-w-0">
-                      <p class="font-display font-semibold text-xs truncate group-hover:text-[#F75000]" style="color:#FFFFFF">{p.title}</p>
+                      <p class="font-display font-semibold text-xs truncate group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{p.title}</p>
                       {p.norm && <p class="text-[10px] mt-0.5" style="color:var(--forge-300)">{p.norm}</p>}
                     </div>
                     
@@ -1089,8 +1089,8 @@ const seoDesc = metaCerrada(product.description, [
                 ))}
               </div>
               {brandPath && (
-                <div class="px-4 py-3" style="border-top:1px solid rgba(74,117,153,0.15)">
-                  <a href={brandPath} class="text-[10px] font-display font-semibold hover:text-[#FF6B26]" style="color:var(--forge-300)">
+                <div class="px-4 py-3" style="border-top:1px solid var(--c-line)">
+                  <a href={brandPath} class="text-[10px] font-display font-semibold hover:text-[var(--c-accent)]" style="color:var(--forge-300)">
                     Catálogo completo {product.brand} 
                   </a>
                 </div>
@@ -1100,31 +1100,31 @@ const seoDesc = metaCerrada(product.description, [
 
           {/* Más en la categoría */}
           {sidebarCatProds.length > 0 && (
-            <div style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
-              <div class="px-4 py-3" style="background:#040A12;border-bottom:1px solid rgba(74,117,153,0.18)">
+            <div style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
+              <div class="px-4 py-3" style="background:var(--c-bg);border-bottom:1px solid var(--c-line)">
                 <span class="text-[9px] font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Más en {product.category}</span>
               </div>
               <div class="flex flex-col">
                 {sidebarCatProds.map((p, i) => (
                   <a href={p.href}
-                     class="flex items-center gap-3 px-4 py-3 group hover:bg-[#040A12]"
-                     style={`border-bottom:${i < sidebarCatProds.length - 1 ? '1px solid rgba(74,117,153,0.1)' : 'none'}`}>
+                     class="flex items-center gap-3 px-4 py-3 group hover:bg-[var(--c-bg)]"
+                     style={`border-bottom:${i < sidebarCatProds.length - 1 ? '1px solid var(--c-line)' : 'none'}`}>
                     {p.image ? (
                       <img src={p.image} alt={p.title} width="40" height="40" loading="lazy"
-                           class="shrink-0" style="width:40px;height:40px;object-fit:cover;background:#060D18" />
+                           class="shrink-0" style="width:40px;height:40px;object-fit:cover;background:var(--c-bg-alt)" />
                     ) : (
-                      <div class="shrink-0" style="width:40px;height:40px;background:#060D18;border:1px solid rgba(74,117,153,0.12)"></div>
+                      <div class="shrink-0" style="width:40px;height:40px;background:var(--c-bg-alt);border:1px solid var(--c-line)"></div>
                     )}
                     <div class="flex-1 min-w-0">
-                      <p class="font-display font-semibold text-xs truncate group-hover:text-[#F75000]" style="color:#CBD5E1">{p.title}</p>
+                      <p class="font-display font-semibold text-xs truncate group-hover:text-[var(--c-accent)]" style="color:var(--c-text)">{p.title}</p>
                       {p.brand && <p class="text-[10px] mt-0.5" style="color:var(--forge-300)">{p.brand}</p>}
                     </div>
                     
                   </a>
                 ))}
               </div>
-              <div class="px-4 py-3" style="border-top:1px solid rgba(74,117,153,0.15)">
-                <a href={categoryPath} class="text-[10px] font-display font-semibold hover:text-[#FF6B26]" style="color:var(--forge-300)">
+              <div class="px-4 py-3" style="border-top:1px solid var(--c-line)">
+                <a href={categoryPath} class="text-[10px] font-display font-semibold hover:text-[var(--c-accent)]" style="color:var(--forge-300)">
                   Todo el catálogo de {product.category} 
                 </a>
               </div>
@@ -1132,46 +1132,46 @@ const seoDesc = metaCerrada(product.description, [
           )}
 
           {/* Otras categorías */}
-          <div style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
-            <div class="px-4 py-3" style="background:#040A12;border-bottom:1px solid rgba(74,117,153,0.18)">
+          <div style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
+            <div class="px-4 py-3" style="background:var(--c-bg);border-bottom:1px solid var(--c-line)">
               <span class="text-[9px] font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Otras categorías</span>
             </div>
-            <div class="grid grid-cols-2 gap-px" style="border-bottom:1px solid rgba(74,117,153,0.15)">
+            <div class="grid grid-cols-2 gap-px" style="border-bottom:1px solid var(--c-line)">
               {sidebarCats.slice(0, 8).map((cat) => (
                 <a href={`/productos/${cat.slug}`}
-                   class="flex items-center gap-2 px-3 py-2.5 group hover:bg-[#040A12]"
-                   style="border-right:1px solid rgba(74,117,153,0.1)">
+                   class="flex items-center gap-2 px-3 py-2.5 group hover:bg-[var(--c-bg)]"
+                   style="border-right:1px solid var(--c-line)">
                   <div class="shrink-0 w-5 h-5 flex items-center justify-center" style="color:var(--forge-300)">
                     
                   </div>
-                  <span class="text-[10px] font-display font-semibold truncate group-hover:text-[#F75000]" style="color:#94A3B8">{cat.label}</span>
+                  <span class="text-[10px] font-display font-semibold truncate group-hover:text-[var(--c-accent)]" style="color:var(--c-text-2)">{cat.label}</span>
                 </a>
               ))}
             </div>
             <div class="px-4 py-3">
-              <a href="/productos" class="text-[10px] font-display font-semibold hover:text-[#FF6B26]" style="color:var(--forge-300)">
+              <a href="/productos" class="text-[10px] font-display font-semibold hover:text-[var(--c-accent)]" style="color:var(--forge-300)">
                 Todos los productos para bomberos 
               </a>
             </div>
           </div>
 
           {/* Artículos relacionados */}
-          <div style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
-            <div class="px-4 py-3" style="background:#040A12;border-bottom:1px solid rgba(74,117,153,0.18)">
+          <div style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
+            <div class="px-4 py-3" style="background:var(--c-bg);border-bottom:1px solid var(--c-line)">
               <span class="text-[9px] font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Artículos relacionados</span>
             </div>
             <div class="flex flex-col">
               {sidebarArticulos.map((art, i) => (
                 <a href={art.href}
-                   class="flex flex-col gap-0.5 px-4 py-3 group hover:bg-[#040A12]"
-                   style={`border-bottom:${i < sidebarArticulos.length - 1 ? '1px solid rgba(74,117,153,0.1)' : 'none'}`}>
-                  <span class="text-xs font-display font-semibold leading-snug group-hover:text-[#F75000]" style="color:#FFFFFF">{art.label}</span>
-                  <span class="text-[11px]" style="color:#64748B">{art.desc}</span>
+                   class="flex flex-col gap-0.5 px-4 py-3 group hover:bg-[var(--c-bg)]"
+                   style={`border-bottom:${i < sidebarArticulos.length - 1 ? '1px solid var(--c-line)' : 'none'}`}>
+                  <span class="text-xs font-display font-semibold leading-snug group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{art.label}</span>
+                  <span class="text-[11px]" style="color:var(--c-muted)">{art.desc}</span>
                 </a>
               ))}
             </div>
-            <div class="px-4 py-3" style="border-top:1px solid rgba(74,117,153,0.15)">
-              <a href="/blog" class="text-[10px] font-display font-semibold hover:text-[#FF6B26]" style="color:var(--forge-300)">
+            <div class="px-4 py-3" style="border-top:1px solid var(--c-line)">
+              <a href="/blog" class="text-[10px] font-display font-semibold hover:text-[var(--c-accent)]" style="color:var(--forge-300)">
                 Todos los artículos del blog técnico 
               </a>
             </div>
@@ -1179,22 +1179,22 @@ const seoDesc = metaCerrada(product.description, [
 
           {/* Completa tu equipo */}
           {catEquipo.length > 0 && (
-            <div style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
-              <div class="px-4 py-3" style="background:#040A12;border-bottom:1px solid rgba(74,117,153,0.18)">
+            <div style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
+              <div class="px-4 py-3" style="background:var(--c-bg);border-bottom:1px solid var(--c-line)">
                 <span class="text-[9px] font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Completa tu equipo</span>
               </div>
               <div class="flex flex-col">
                 {catEquipo.map((eq, i) => (
                   <a href={eq.href}
-                     class="flex flex-col gap-0.5 px-4 py-3 group hover:bg-[#040A12]"
-                     style={`border-bottom:${i < catEquipo.length - 1 ? '1px solid rgba(74,117,153,0.1)' : 'none'}`}>
-                    <span class="text-xs font-display font-semibold leading-snug group-hover:text-[#F75000]" style="color:#FFFFFF">{eq.label}</span>
-                    <span class="text-[11px]" style="color:#64748B">{eq.brands}</span>
+                     class="flex flex-col gap-0.5 px-4 py-3 group hover:bg-[var(--c-bg)]"
+                     style={`border-bottom:${i < catEquipo.length - 1 ? '1px solid var(--c-line)' : 'none'}`}>
+                    <span class="text-xs font-display font-semibold leading-snug group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{eq.label}</span>
+                    <span class="text-[11px]" style="color:var(--c-muted)">{eq.brands}</span>
                   </a>
                 ))}
               </div>
-              <div class="px-4 py-3" style="border-top:1px solid rgba(74,117,153,0.15)">
-                <a href="/productos" class="text-[10px] font-display font-semibold hover:text-[#FF6B26]" style="color:var(--forge-300)">
+              <div class="px-4 py-3" style="border-top:1px solid var(--c-line)">
+                <a href="/productos" class="text-[10px] font-display font-semibold hover:text-[var(--c-accent)]" style="color:var(--forge-300)">
                   Catálogo de equipo para bomberos 
                 </a>
               </div>
@@ -1203,22 +1203,22 @@ const seoDesc = metaCerrada(product.description, [
 
           {/* Servicios para este equipo */}
           {catServicios.length > 0 && (
-            <div style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
-              <div class="px-4 py-3" style="background:#040A12;border-bottom:1px solid rgba(74,117,153,0.18)">
+            <div style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
+              <div class="px-4 py-3" style="background:var(--c-bg);border-bottom:1px solid var(--c-line)">
                 <span class="text-[9px] font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Servicios para este equipo</span>
               </div>
               <div class="flex flex-col">
                 {catServicios.map((sv, i) => (
                   <a href={sv.href}
-                     class="flex flex-col gap-0.5 px-4 py-3 group hover:bg-[#040A12]"
-                     style={`border-bottom:${i < catServicios.length - 1 ? '1px solid rgba(74,117,153,0.1)' : 'none'}`}>
-                    <span class="text-xs font-display font-semibold leading-snug group-hover:text-[#F75000]" style="color:#FFFFFF">{sv.label}</span>
-                    <span class="text-[11px]" style="color:#64748B">{sv.norm}</span>
+                     class="flex flex-col gap-0.5 px-4 py-3 group hover:bg-[var(--c-bg)]"
+                     style={`border-bottom:${i < catServicios.length - 1 ? '1px solid var(--c-line)' : 'none'}`}>
+                    <span class="text-xs font-display font-semibold leading-snug group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{sv.label}</span>
+                    <span class="text-[11px]" style="color:var(--c-muted)">{sv.norm}</span>
                   </a>
                 ))}
               </div>
-              <div class="px-4 py-3" style="border-top:1px solid rgba(74,117,153,0.15)">
-                <a href="/servicios" class="text-[10px] font-display font-semibold hover:text-[#FF6B26]" style="color:var(--forge-300)">
+              <div class="px-4 py-3" style="border-top:1px solid var(--c-line)">
+                <a href="/servicios" class="text-[10px] font-display font-semibold hover:text-[var(--c-accent)]" style="color:var(--forge-300)">
                   Servicios contra incendio 
                 </a>
               </div>
@@ -1226,16 +1226,16 @@ const seoDesc = metaCerrada(product.description, [
           )}
 
           {/* ¿Necesitas ayuda? */}
-          <div style="background:#040A12;border:1px solid rgba(74,117,153,0.22);border-top:2px solid #F75000">
+          <div style="background:var(--c-bg);border:1px solid var(--c-line-strong);border-top:2px solid var(--c-accent)">
             <div class="p-5">
-              <p class="font-display font-bold text-sm mb-1" style="color:#FFFFFF">¿Necesitas asesoría técnica?</p>
-              <p class="text-xs leading-relaxed mb-4" style="color:#64748B">
+              <p class="font-display font-bold text-sm mb-1" style="color:var(--c-ink)">¿Necesitas asesoría técnica?</p>
+              <p class="text-xs leading-relaxed mb-4" style="color:var(--c-muted)">
                 Nuestro equipo te ayuda a elegir el equipo correcto para tu operación y presupuesto — sin compromiso.
               </p>
               <a href={whatsappUrl('Hola, necesito asesoría técnica para elegir el equipo correcto para mi operación.')}
                  target="_blank" rel="noopener"
                  class="block text-center text-xs font-display font-bold py-2.5 px-4 w-full hover:opacity-90"
-                 style="background:#F75000;color:#FFFFFF">
+                 style="background:var(--c-accent);color:#FFFFFF">
                 Hablar con un asesor 
               </a>
               <a href="/certificaciones" class="block text-center text-[10px] mt-2 font-display" style="color:var(--forge-300)">
@@ -1252,7 +1252,7 @@ const seoDesc = metaCerrada(product.description, [
 
   {/* ══ BRAND STRIP ═════════════════════════════════════════════════════ */}
   {brandPath && product.brand && (
-    <section class="section-tight" style="background:#070E1A;border-top:1px solid rgba(74,117,153,0.15)" aria-label={`Catálogo ${product.brand}`}>
+    <section class="section-tight" style="background:var(--c-bg-alt);border-top:1px solid var(--c-line)" aria-label={`Catálogo ${product.brand}`}>
       <div class="container-site">
         <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
@@ -1261,10 +1261,10 @@ const seoDesc = metaCerrada(product.description, [
                 Distribuidor autorizado {fabricante} en México
               </span>
             )}
-            <p class="font-display font-bold text-lg m-0" style="color:#FFFFFF">
+            <p class="font-display font-bold text-lg m-0" style="color:var(--c-ink)">
               {product.brand}
-              <span style="color:#F75000"> · </span>
-              <span style="color:#94A3B8;font-size:0.875rem;font-weight:400">Catálogo completo de modelos</span>
+              <span style="color:var(--c-accent)"> · </span>
+              <span style="color:var(--c-text-2);font-size:0.875rem;font-weight:400">Catálogo completo de modelos</span>
             </p>
           </div>
           <a href={brandPath} class="btn btn-ghost max-w-full min-w-0 whitespace-normal text-center">
@@ -1277,21 +1277,21 @@ const seoDesc = metaCerrada(product.description, [
 
   {/* ══ RELACIONADOS ════════════════════════════════════════════════════ */}
   {related.length > 0 && (
-    <section class="section" style="background:#040A12" aria-labelledby="related-title">
+    <section class="section" style="background:var(--c-bg)" aria-labelledby="related-title">
       <div class="container-site">
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-10">
           <div>
             <span class="section-eyebrow mb-4 inline-flex">Catálogo {product.category}</span>
             <h2 id="related-title" class="font-display font-bold"
-                style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+                style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
               Otros modelos<br/>
-              <span style="color:#F75000">{product.brand ? `de ${fabricante ?? product.brand}` : `de ${product.category}`}</span>
+              <span style="color:var(--c-accent)">{product.brand ? `de ${fabricante ?? product.brand}` : `de ${product.category}`}</span>
             </h2>
           </div>
           {!product.suppressDefaultClaims && (
-            <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-              <p class="text-sm leading-relaxed" style="color:#94A3B8">
+            <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+              <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
                 Cada modelo se entrega con su ficha técnica y la documentación de norma que publica el fabricante.
                 Te asesoramos para identificar la opción más adecuada para tu operación y presupuesto.
               </p>
@@ -1304,10 +1304,10 @@ const seoDesc = metaCerrada(product.description, [
             <a
               href={p.href}
               class="group flex flex-col overflow-hidden"
-              style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)"
+              style="background:var(--c-bg-alt);border:1px solid var(--c-line)"
             >
               {p.image ? (
-                <div class="overflow-hidden" style="aspect-ratio:4/3;background:#060D18">
+                <div class="overflow-hidden" style="aspect-ratio:4/3;background:var(--c-bg-alt)">
                   <img
                     src={p.image} alt={p.title}
                     width="400" height="300"
@@ -1317,8 +1317,8 @@ const seoDesc = metaCerrada(product.description, [
                   />
                 </div>
               ) : (
-                <div class="flex items-center justify-center" style="aspect-ratio:4/3;background:#060D18">
-                  <span class="text-[9px] uppercase tracking-widest" style="color:rgba(74,117,153,0.3)">Sin imagen</span>
+                <div class="flex items-center justify-center" style="aspect-ratio:4/3;background:var(--c-bg-alt)">
+                  <span class="text-[9px] uppercase tracking-widest" style="color:var(--c-muted)">Sin imagen</span>
                 </div>
               )}
 
@@ -1327,9 +1327,9 @@ const seoDesc = metaCerrada(product.description, [
                   {p.norm  && <span class="badge badge-fire text-[9px]">{p.norm}</span>}
                   {p.badge && <span class="badge badge-gold text-[9px]">{p.badge}</span>}
                 </div>
-                <h3 class="font-display font-bold text-sm leading-snug group-hover:text-[#F75000]"
-                    style="color:#FFFFFF">{p.title}</h3>
-                <p class="text-xs leading-relaxed m-0 line-clamp-2" style="color:#64748B">{p.description}</p>
+                <h3 class="font-display font-bold text-sm leading-snug group-hover:text-[var(--c-accent)]"
+                    style="color:var(--c-ink)">{p.title}</h3>
+                <p class="text-xs leading-relaxed m-0 line-clamp-2" style="color:var(--c-muted)">{p.description}</p>
 
                 {p.specs && (
                   <div class="flex flex-wrap gap-1 mt-2">
@@ -1338,7 +1338,7 @@ const seoDesc = metaCerrada(product.description, [
                       .slice(0, 3)
                       .map(([k, v]) => (
                         <span class="text-[9px] font-semibold px-1.5 py-0.5"
-                              style="background:#040A12;color:var(--forge-300);border:1px solid rgba(74,117,153,0.2)">
+                              style="background:var(--c-bg);color:var(--forge-300);border:1px solid var(--c-line)">
                           {metaPorCategoria[p.category]?.[k]?.label ?? specMeta[k]?.label ?? k}: {v}
                         </span>
                       ))}
@@ -1346,15 +1346,15 @@ const seoDesc = metaCerrada(product.description, [
                 )}
 
                 <span class="text-xs font-display font-semibold uppercase tracking-wider mt-auto pt-2"
-                      style="color:#F75000">Ficha técnica completa </span>
+                      style="color:var(--c-accent)">Ficha técnica completa </span>
               </div>
             </a>
           ))}
         </div>
 
-        <div class="mt-8 pt-6" style="border-top:1px solid rgba(74,117,153,0.15)">
+        <div class="mt-8 pt-6" style="border-top:1px solid var(--c-line)">
           <a href={categoryPath}
-             class="text-sm font-display font-semibold hover:text-[#FF6B26]"
+             class="text-sm font-display font-semibold hover:text-[var(--c-accent)]"
              style="color:var(--forge-300)">
              Catálogo completo de {product.category}
           </a>

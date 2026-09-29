@@ -58,43 +58,43 @@ const razones = [
 <BaseLayout {...seoMeta} schema={[breadcrumbSchema]}>
 
   <!-- Breadcrumb -->
-  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+  <nav class="py-3" style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line)" aria-label="Breadcrumb">
     <div class="container-site">
       <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
-        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li><a href="/" class="hover:text-[var(--c-accent)]">Inicio</a></li>
         <li aria-hidden="true">/</li>
-        <li><a href="/empresa" class="hover:text-[#FF6B26]">Empresa</a></li>
+        <li><a href="/empresa" class="hover:text-[var(--c-accent)]">Empresa</a></li>
         <li aria-hidden="true">/</li>
-        <li><span style="color:#94A3B8" aria-current="page">Nosotros</span></li>
+        <li><span style="color:var(--c-text-2)" aria-current="page">Nosotros</span></li>
       </ol>
     </div>
   </nav>
 
   <!-- Hero -->
-  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">
-    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
+  <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:5rem">
+    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(200,16,46,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
 
     <div class="container-site relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div>
           <span class="section-eyebrow mb-5 inline-flex">Nuestra historia</span>
-          <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+          <h1 class="font-display font-bold uppercase mb-6" style="color:var(--c-ink);font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
             Equipamos a<br/>
-            <span style="color:#F75000">quienes nos protegen</span>
+            <span style="color:var(--c-accent)">quienes nos protegen</span>
           </h1>
           <div class="flex flex-col sm:flex-row gap-3">
             <a href={whatsappUrl('Hola, quiero conocer más sobre FIREFIGHTERS MX.')} target="_blank" rel="noopener" class="btn btn-primary btn-lg">Hablar por {CANAL_CONTACTO}</a>
             <a href="/contacto" class="btn btn-ghost btn-lg">Contáctanos</a>
           </div>
         </div>
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
-          <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
+          <p class="text-sm leading-[1.9] mb-5" style="color:var(--c-text-2)">
             Llevamos más de 15 años dedicados a una sola cosa:
-            <strong style="color:#CBD5E1">poner el equipo certificado correcto en manos de bomberos,
+            <strong style="color:var(--c-text)">poner el equipo certificado correcto en manos de bomberos,
             brigadas industriales y protección civil</strong> en todo México. Somos distribuidores
             autorizados de las marcas más confiables del mundo.
           </p>
-          <p class="text-sm leading-[1.9] mb-6" style="color:#64748B">
+          <p class="text-sm leading-[1.9] mb-6" style="color:var(--c-muted)">
             En ese camino hemos equipado a más de 500 estaciones, desde cuerpos municipales con
             presupuesto ajustado hasta brigadas industriales — siempre con la misma exigencia
             de norma, calidad y documentación auditable.
@@ -107,21 +107,21 @@ const razones = [
         </div>
       </div>
     </div>
-    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)" aria-hidden="true"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(200,16,46,0.4) 30%, rgba(200,16,46,0.4) 70%, transparent)" aria-hidden="true"></div>
   </section>
 
   <!-- Accesos rápidos -->
   <QuickLinksBar />
 
   <!-- Cifras -->
-  <section class="section-tight" style="background:#070E1A" aria-label="La empresa en cifras">
+  <section class="section-tight" style="background:var(--c-bg-alt)" aria-label="La empresa en cifras">
     <div class="container-site">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style="border:1px solid rgba(74,117,153,0.18)">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style="border:1px solid var(--c-line)">
         {figures.map((f, i) => (
-          <div class="flex flex-col gap-2 p-6" style={`background:#0C1825;${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.18);' : ''}`}>
-            <span class="font-display font-bold" style="color:#F75000;font-size:2.25rem;line-height:1">{f.value}</span>
-            <h2 class="font-display font-bold text-sm uppercase tracking-wider" style="color:#FFFFFF">{f.label}</h2>
-            <p class="text-xs leading-relaxed" style="color:#64748B">{f.text}</p>
+          <div class="flex flex-col gap-2 p-6" style={`background:var(--c-surface);${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.18);' : ''}`}>
+            <span class="font-display font-bold" style="color:var(--c-accent);font-size:2.25rem;line-height:1">{f.value}</span>
+            <h2 class="font-display font-bold text-sm uppercase tracking-wider" style="color:var(--c-ink)">{f.label}</h2>
+            <p class="text-xs leading-relaxed" style="color:var(--c-muted)">{f.text}</p>
           </div>
         ))}
       </div>
@@ -129,29 +129,29 @@ const razones = [
   </section>
 
   <!-- Galería fotográfica -->
-  <section class="section-tight" style="background:#040A12" aria-label="FIREFIGHTERS MX en acción">
+  <section class="section-tight" style="background:var(--c-bg)" aria-label="FIREFIGHTERS MX en acción">
     <div class="container-site">
       <div class="flex items-center gap-4 mb-8">
-        <span class="w-8 h-px" style="background:#F75000"></span>
-        <span class="text-xs font-display font-semibold uppercase tracking-[0.18em]" style="color:#F75000">15 años equipando a quienes nos protegen</span>
+        <span class="w-8 h-px" style="background:var(--c-accent)"></span>
+        <span class="text-xs font-display font-semibold uppercase tracking-[0.18em]" style="color:var(--c-accent)">15 años equipando a quienes nos protegen</span>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-2 lg:gap-3">
-        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
+        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
           <img src="/images/nosotros/bombero-equipo-nfpa-firefightersmx.avif" alt="Equipo estructural completo de bombero en su rack" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
-        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
+        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
           <img src="/images/nosotros/nosotros-equipo-bombero-uniformado.avif" alt="Bombero con traje estructural completo caminando en la estación" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
-        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
+        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
           <img src="/images/nosotros/nosotros-distribuidor-autorizado-mexico.avif" alt="Equipo contra incendio empacado y listo para envío" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
-        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
+        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
           <img src="/images/nosotros/bombero-proteccion-completa-mexico.avif" alt="Cierre del chaquetón de un traje estructural de bombero" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
-        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
+        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
           <img src="/images/nosotros/nosotros-bombero-emergencia-accion.avif" alt="Bomberos avanzando con una línea de manguera hacia un incendio" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
-        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid rgba(74,117,153,0.18)">
+        <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
           <img src="/images/nosotros/firefightersmx-equipo-profesional-mexico.avif" alt="Casco, cámara térmica y máscara de respiración sobre banco" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
       </div>
@@ -159,18 +159,18 @@ const razones = [
   </section>
 
   <!-- Misión · Visión · Valores -->
-  <section class="section" style="background:#040A12" aria-labelledby="mvv-title">
+  <section class="section" style="background:var(--c-bg)" aria-labelledby="mvv-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Lo que nos mueve</span>
-          <h2 id="mvv-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="mvv-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Misión, visión<br/>
-            <span style="color:#F75000">y valores.</span>
+            <span style="color:var(--c-accent)">y valores.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
             Equipar a quien arriesga su vida no admite atajos. Estos principios definen cómo
             seleccionamos producto, cómo asesoramos y cómo respondemos cuando una brigada nos necesita.
           </p>
@@ -178,12 +178,12 @@ const razones = [
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
         {pillars.map((p) => (
-          <div class="flex flex-col gap-4 p-7" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
-            <div class="flex items-center justify-center rounded-full" style="width:52px;height:52px;background:rgba(247,80,0,0.1);border:1.5px solid rgba(247,80,0,0.35);color:#FF6B26">
+          <div class="flex flex-col gap-4 p-7" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
+            <div class="flex items-center justify-center rounded-full" style="width:52px;height:52px;background:rgba(200,16,46,0.1);border:1.5px solid rgba(200,16,46,0.35);color:var(--c-accent)">
               <span class="block" style="width:24px;height:24px" set:html={p.icon}/>
             </div>
-            <h3 class="font-display font-bold text-xl" style="color:#FFFFFF">{p.title}</h3>
-            <p class="text-sm leading-relaxed" style="color:#94A3B8">{p.text}</p>
+            <h3 class="font-display font-bold text-xl" style="color:var(--c-ink)">{p.title}</h3>
+            <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">{p.text}</p>
           </div>
         ))}
       </div>
@@ -191,22 +191,22 @@ const razones = [
   </section>
 
   <!-- Por qué elegirnos + cross-links -->
-  <section class="section" style="background:#070E1A" aria-labelledby="porque-title">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="porque-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Por qué elegirnos</span>
-          <h2 id="porque-title" class="font-display font-bold mb-8" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+          <h2 id="porque-title" class="font-display font-bold mb-8" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             La diferencia está<br/>
-            <span style="color:#F75000">en el detalle.</span>
+            <span style="color:var(--c-accent)">en el detalle.</span>
           </h2>
           <ul class="flex flex-col gap-5 list-none m-0 p-0">
             {razones.map((r) => (
               <li class="flex items-start gap-4">
                 
                 <div>
-                  <h3 class="font-display font-semibold text-base mb-1" style="color:#FFFFFF">{r.title}</h3>
-                  <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{r.desc}</p>
+                  <h3 class="font-display font-semibold text-base mb-1" style="color:var(--c-ink)">{r.title}</h3>
+                  <p class="text-sm leading-relaxed m-0" style="color:var(--c-text-2)">{r.desc}</p>
                 </div>
               </li>
             ))}
@@ -216,11 +216,11 @@ const razones = [
           </div>
         </div>
 
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
           <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">
             También te puede servir
           </h2>
-          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
             {[
               { label: 'Catálogo de productos', desc: 'Equipo NFPA y NOM en 10 categorías', href: '/productos' },
               { label: 'Certificaciones', desc: 'Las normas que avalan nuestro equipo', href: '/certificaciones' },
@@ -228,11 +228,11 @@ const razones = [
               { label: 'Marcas que distribuimos', desc: 'Globe, MSA, Dräger, Holmatro y más', href: '/marcas' },
               { label: 'Volver a la empresa', desc: 'Visión general de FIREFIGHTERS MX', href: '/empresa' },
             ].map((l) => (
-              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+              <li style="border-bottom:1px solid var(--c-line)">
                 <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
                   <span class="flex flex-col gap-0.5">
-                    <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
-                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
+                    <span class="font-display font-semibold text-sm group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{l.label}</span>
+                    <span class="text-xs" style="color:var(--c-muted)">{l.desc}</span>
                   </span>
                   
                 </a>

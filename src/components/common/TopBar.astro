@@ -2,26 +2,26 @@
 import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl, TELEFONO_ACTIVO } from '@config/site';
 ---
 
-<div class="hidden md:block w-full" style="background:#020810;border-bottom:1px solid rgba(74,117,153,0.12)">
+<div class="hidden md:block w-full" style="background:#020810;border-bottom:1px solid var(--c-line)">
   <div class="container-site h-9 flex items-center justify-between gap-4">
 
     <!-- Izquierda: marca + disponibilidad + cobertura -->
     <div class="flex items-center gap-5 min-w-0">
 
-      <span class="font-display font-bold text-[11px] tracking-[0.18em] uppercase shrink-0 whitespace-nowrap" style="color:#F75000">
+      <span class="font-display font-bold text-[11px] tracking-[0.18em] uppercase shrink-0 whitespace-nowrap" style="color:var(--c-accent)">
         Equipo para bomberos y contra incendio
       </span>
 
-      <span class="w-px h-3 shrink-0" style="background:rgba(74,117,153,0.2)"></span>
+      <span class="w-px h-3 shrink-0" style="background:var(--c-line)"></span>
 
       <div class="flex items-center gap-1.5">
-        <span class="w-1.5 h-1.5 rounded-full shrink-0" style="background:#34D399"></span>
-        <span class="text-[11px] font-medium tracking-wide whitespace-nowrap" style="color:#64748B">
+        <span class="w-1.5 h-1.5 rounded-full shrink-0" style="background:var(--c-success)"></span>
+        <span class="text-[11px] font-medium tracking-wide whitespace-nowrap" style="color:var(--c-muted)">
           Envíos a los 32 estados
         </span>
       </div>
 
-      <span class="w-px h-3 shrink-0" style="background:rgba(74,117,153,0.2)"></span>
+      <span class="w-px h-3 shrink-0" style="background:var(--c-line)"></span>
 
       <div class="hidden 2xl:flex items-center gap-1.5">
         
@@ -37,13 +37,13 @@ import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl, TELEFONO_ACTIVO } from '@co
       <div class="hidden xl:flex items-center gap-2">
         {['NFPA 1970', 'NOM-002-STPS', 'UL Listed'].map(n => (
           <span class="text-[10px] font-display font-semibold tracking-wider px-2 py-0.5 whitespace-nowrap"
-                style="color:rgba(74,117,153,0.7);border:1px solid rgba(74,117,153,0.15);letter-spacing:0.08em">
+                style="color:var(--c-muted);border:1px solid var(--c-line);letter-spacing:0.08em">
             {n}
           </span>
         ))}
       </div>
 
-      <span class="hidden xl:block w-px h-3 shrink-0" style="background:rgba(74,117,153,0.2)"></span>
+      <span class="hidden xl:block w-px h-3 shrink-0" style="background:var(--c-line)"></span>
 
       <!-- Email -->
       <a
@@ -57,14 +57,14 @@ import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl, TELEFONO_ACTIVO } from '@co
         <span class="text-[11px]">{SITE.email}</span>
       </a>
 
-      <span class="hidden lg:block w-px h-3 shrink-0" style="background:rgba(74,117,153,0.2)"></span>
+      <span class="hidden lg:block w-px h-3 shrink-0" style="background:var(--c-line)"></span>
 
       <!-- Teléfono (solo si hay número verificado) -->
       {TELEFONO_ACTIVO && (
             <a
         href={`tel:${SITE.phoneE164}`}
         class="flex items-center gap-1.5"
-        style="color:#94A3B8"
+        style="color:var(--c-text-2)"
         onmouseover="this.style.color='#F75000'"
         onmouseout="this.style.color='#94A3B8'"
       >
@@ -74,7 +74,7 @@ import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl, TELEFONO_ACTIVO } from '@co
 
       )}
 
-      <span class="w-px h-3 shrink-0" style="background:rgba(74,117,153,0.2)"></span>
+      <span class="w-px h-3 shrink-0" style="background:var(--c-line)"></span>
 
       <!-- Canal de contacto verificado -->
       <a

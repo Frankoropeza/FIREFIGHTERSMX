@@ -16,25 +16,25 @@ const norms = [
 ];
 ---
 
-<section class="section home-deferred-section" style="background:#040A12" aria-labelledby="norms-title">
+<section class="section home-deferred-section" style="background:var(--c-bg)" aria-labelledby="norms-title">
   <div class="container-site">
 
     <!-- Header -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
       <div>
         <span class="section-eyebrow mb-4 inline-flex">Respaldo normativo</span>
-        <h2 id="norms-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+        <h2 id="norms-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
           NOM y NFPA:<br/>
-          <span style="color:#F75000">las normas que respaldan cada compra.</span>
+          <span style="color:var(--c-accent)">las normas que respaldan cada compra.</span>
         </h2>
       </div>
-      <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-        <p class="text-sm leading-relaxed mb-3" style="color:#94A3B8">
+      <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+        <p class="text-sm leading-relaxed mb-3" style="color:var(--c-text-2)">
           Tener el equipo no basta si no puedes demostrar su conformidad. En una inspección,
           la autoridad verifica certificados de laboratorio acreditado, número de serie,
           vigencia de mantenimiento y bitácora — no solo la presencia física del equipo.
         </p>
-        <p class="text-sm leading-relaxed" style="color:#94A3B8">
+        <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
           Usa esta tabla para saber qué norma debe cumplir cada equipo que compras. Con cada
           entrega te damos la documentación: ficha técnica, certificado de laboratorio acreditado
           y bitácora de mantenimiento, lista para STPS, Protección Civil o CompraNet.
@@ -43,32 +43,32 @@ const norms = [
     </div>
 
     <!-- Tabla -->
-    <div class="overflow-x-auto" style="border:1px solid rgba(74,117,153,0.2)">
+    <div class="overflow-x-auto" style="border:1px solid var(--c-line)">
       <table class="w-full text-left" style="border-collapse:collapse;min-width:760px">
         <caption class="sr-only">Normas NOM y NFPA aplicables a equipos contra incendio en México</caption>
         <thead>
-          <tr style="background:#122133">
-            <th scope="col" class="p-5 font-display font-bold text-xs uppercase tracking-widest" style="color:#FFFFFF;border-bottom:1px solid rgba(74,117,153,0.25)">Norma / Estándar</th>
-            <th scope="col" class="p-5 font-display font-bold text-xs uppercase tracking-widest" style="color:#FFFFFF;border-bottom:1px solid rgba(74,117,153,0.25)">Alcance</th>
-            <th scope="col" class="p-5 font-display font-bold text-xs uppercase tracking-widest" style="color:#FFFFFF;border-bottom:1px solid rgba(74,117,153,0.25)">Aplica a</th>
+          <tr style="background:var(--c-surface-2)">
+            <th scope="col" class="p-5 font-display font-bold text-xs uppercase tracking-widest" style="color:var(--c-ink);border-bottom:1px solid var(--c-line-strong)">Norma / Estándar</th>
+            <th scope="col" class="p-5 font-display font-bold text-xs uppercase tracking-widest" style="color:var(--c-ink);border-bottom:1px solid var(--c-line-strong)">Alcance</th>
+            <th scope="col" class="p-5 font-display font-bold text-xs uppercase tracking-widest" style="color:var(--c-ink);border-bottom:1px solid var(--c-line-strong)">Aplica a</th>
           </tr>
         </thead>
         <tbody>
           {norms.map((n, i) => (
-            <tr style={`background:${i % 2 === 0 ? '#0C1825' : '#0A1420'}`}>
-              <th scope="row" class="p-5 align-top font-display font-bold text-sm whitespace-nowrap" style="color:#FF6B26;border-bottom:1px solid rgba(74,117,153,0.12)">{n.norma}</th>
-              <td class="p-5 align-top text-sm leading-relaxed" style="color:#94A3B8;border-bottom:1px solid rgba(74,117,153,0.12)">{n.alcance}</td>
-              <td class="p-5 align-top text-sm leading-relaxed" style="color:#64748B;border-bottom:1px solid rgba(74,117,153,0.12)">{n.aplica}</td>
+            <tr style={`background:${i % 2 === 0 ? 'var(--c-surface)' : 'var(--c-bg-alt)'}`}>
+              <th scope="row" class="p-5 align-top font-display font-bold text-sm whitespace-nowrap" style="color:var(--c-accent);border-bottom:1px solid var(--c-line)">{n.norma}</th>
+              <td class="p-5 align-top text-sm leading-relaxed" style="color:var(--c-text-2);border-bottom:1px solid var(--c-line)">{n.alcance}</td>
+              <td class="p-5 align-top text-sm leading-relaxed" style="color:var(--c-muted);border-bottom:1px solid var(--c-line)">{n.aplica}</td>
             </tr>
           ))}
         </tbody>
       </table>
     </div>
 
-    <p class="text-sm leading-relaxed mt-6 max-w-3xl" style="color:#64748B">
+    <p class="text-sm leading-relaxed mt-6 max-w-3xl" style="color:var(--c-muted)">
       ¿No sabes qué normas aplican a tu centro de trabajo? El marco depende del tamaño,
       la actividad y el nivel de riesgo —
-      <a href="/certificaciones" class="font-semibold hover:text-[#FF6B26]" style="color:#FF8F57">consulta la guía completa de certificaciones </a>
+      <a href="/certificaciones" class="font-semibold hover:text-[var(--c-accent)]" style="color:var(--c-accent)">consulta la guía completa de certificaciones </a>
     </p>
 
   </div>

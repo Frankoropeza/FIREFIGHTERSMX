@@ -57,28 +57,28 @@ const trustPoints = [
 <BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema]}>
 
   <!-- Breadcrumb -->
-  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+  <nav class="py-3" style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line)" aria-label="Breadcrumb">
     <div class="container-site">
       <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
-        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li><a href="/" class="hover:text-[var(--c-accent)]">Inicio</a></li>
         <li aria-hidden="true">/</li>
-        <li><span style="color:#94A3B8" aria-current="page">Industrias</span></li>
+        <li><span style="color:var(--c-text-2)" aria-current="page">Industrias</span></li>
       </ol>
     </div>
   </nav>
 
   <!-- Hero -->
-  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">
-    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
+  <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:5rem">
+    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(200,16,46,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
 
     <div class="container-site relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
         <div>
           <span class="section-eyebrow mb-5 inline-flex">Soluciones por sector</span>
-          <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+          <h1 class="font-display font-bold uppercase mb-6" style="color:var(--c-ink);font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
             Industrias que<br/>
-            <span style="color:#F75000">Equipamos</span>
+            <span style="color:var(--c-accent)">Equipamos</span>
           </h1>
           <div class="flex flex-col sm:flex-row gap-3">
             <a
@@ -92,14 +92,14 @@ const trustPoints = [
           </div>
         </div>
 
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
-          <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
+          <p class="text-sm leading-[1.9] mb-5" style="color:var(--c-text-2)">
             Cada sector responde a riesgos y marcos normativos distintos:
-            <strong style="color:#CBD5E1">cuerpos de bomberos municipales, brigadas industriales NOM-002,
+            <strong style="color:var(--c-text)">cuerpos de bomberos municipales, brigadas industriales NOM-002,
             aeropuertos ARFF, hospitales, hoteles, refinerías y petroquímica, minería y unidades de
             Protección Civil</strong>. Conocemos los ocho porque llevamos más de 15 años equipándolos.
           </p>
-          <p class="text-sm leading-[1.9] mb-6" style="color:#64748B">
+          <p class="text-sm leading-[1.9] mb-6" style="color:var(--c-muted)">
             Por eso no vendemos catálogo genérico: cada solución combina el equipo certificado,
             los servicios y la documentación que tu autoridad específica va a auditar — STPS,
             Protección Civil, AFAC, ASEA, COFEPRIS o el órgano fiscalizador de tu municipio.
@@ -114,20 +114,20 @@ const trustPoints = [
       </div>
     </div>
 
-    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)" aria-hidden="true"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(200,16,46,0.4) 30%, rgba(200,16,46,0.4) 70%, transparent)" aria-hidden="true"></div>
   </section>
 
   <!-- Accesos rápidos (interlinking) -->
   <QuickLinksBar />
 
   <!-- Pilares -->
-  <section class="section-tight" style="background:#070E1A" aria-label="Por qué por sector">
+  <section class="section-tight" style="background:var(--c-bg-alt)" aria-label="Por qué por sector">
     <div class="container-site">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style="border:1px solid rgba(74,117,153,0.18)">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style="border:1px solid var(--c-line)">
         {trustPoints.map((t, i) => (
-          <div class="flex flex-col gap-2 p-6" style={`background:#0C1825;${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.18);' : ''}`}>
-            <h2 class="font-display font-bold text-sm uppercase tracking-wider" style="color:#FF6B26">{t.title}</h2>
-            <p class="text-xs leading-relaxed" style="color:#64748B">{t.text}</p>
+          <div class="flex flex-col gap-2 p-6" style={`background:var(--c-surface);${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.18);' : ''}`}>
+            <h2 class="font-display font-bold text-sm uppercase tracking-wider" style="color:var(--c-accent)">{t.title}</h2>
+            <p class="text-xs leading-relaxed" style="color:var(--c-muted)">{t.text}</p>
           </div>
         ))}
       </div>
@@ -135,19 +135,19 @@ const trustPoints = [
   </section>
 
   <!-- Grid de industrias -->
-  <section class="section" style="background:#040A12" aria-labelledby="industrias-title">
+  <section class="section" style="background:var(--c-bg)" aria-labelledby="industrias-title">
     <div class="container-site">
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Sectores</span>
-          <h2 id="industrias-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="industrias-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Ocho sectores,<br/>
-            <span style="color:#F75000">una solución a la medida.</span>
+            <span style="color:var(--c-accent)">una solución a la medida.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
             Cada sector tiene su propia página con los riesgos típicos del giro, la solución
             recomendada, el equipamiento y los servicios que aplican, y respuestas a las
             preguntas que más nos hacen sus responsables de seguridad.
@@ -157,20 +157,20 @@ const trustPoints = [
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {industries.map((ind) => (
-          <a href={ind.href} class="industry-card group relative flex flex-col overflow-hidden" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
+          <a href={ind.href} class="industry-card group relative flex flex-col overflow-hidden" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
             <div class="relative flex items-center justify-center overflow-hidden" style="height:110px">
               <div class="absolute inset-0" style={`background:linear-gradient(135deg, ${ind.accent}26 0%, rgba(4,10,18,0.94) 100%)`}></div>
               <div class="relative z-10 flex items-center justify-center rounded-full"
                    style={`width:60px;height:60px;background:rgba(4,10,18,0.7);border:1.5px solid ${ind.accent}44;color:${ind.accent}`}>
                 <span class="block" style="width:26px;height:26px" set:html={ind.icon}/>
               </div>
-              <div class="absolute bottom-0 left-0 right-0 h-8 pointer-events-none" style="background:linear-gradient(to bottom, transparent, #080F1A)"></div>
+              <div class="absolute bottom-0 left-0 right-0 h-8 pointer-events-none" style="background:linear-gradient(to bottom, transparent, var(--c-bg-alt))"></div>
             </div>
             <div class="flex flex-col flex-1 p-5 gap-2.5">
               <span class="text-[9px] font-display font-semibold uppercase tracking-widest" style="color:var(--forge-300)">{ind.norm}</span>
-              <h3 class="font-display font-bold text-lg leading-tight group-hover:text-[#FF6B26]" style="color:#FFFFFF">{ind.name}</h3>
-              <p class="text-xs leading-relaxed" style="color:#64748B;flex:1">{ind.shortDesc}</p>
-              <span class="flex items-center gap-1.5 text-xs font-display font-semibold uppercase tracking-wider" style="color:#FF8F57;letter-spacing:0.1em">
+              <h3 class="font-display font-bold text-lg leading-tight group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{ind.name}</h3>
+              <p class="text-xs leading-relaxed" style="color:var(--c-muted);flex:1">{ind.shortDesc}</p>
+              <span class="flex items-center gap-1.5 text-xs font-display font-semibold uppercase tracking-wider" style="color:var(--c-accent);letter-spacing:0.1em">
                 Equipo contra incendio para el sector
                 
               </span>
@@ -203,17 +203,17 @@ const trustPoints = [
   ))}
 
   <!-- Cross-links -->
-  <section class="section" style="background:#070E1A" aria-labelledby="cross-title">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="cross-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
 
         <div>
           <span class="section-eyebrow mb-4 inline-flex">¿Tu sector no aparece?</span>
-          <h2 id="cross-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+          <h2 id="cross-title" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             Toda operación con riesgo<br/>
-            <span style="color:#F75000">tiene una solución.</span>
+            <span style="color:var(--c-accent)">tiene una solución.</span>
           </h2>
-          <p class="text-sm leading-relaxed mb-8" style="color:#94A3B8">
+          <p class="text-sm leading-relaxed mb-8" style="color:var(--c-text-2)">
             Centros logísticos, escuelas, centros comerciales, data centers, agroindustria —
             si tu operación tiene personal y riesgo de incendio, la NOM-002-STPS ya te aplica
             y nosotros ya hemos equipado a alguien parecido a ti. Cuéntanos tu caso y armamos
@@ -224,11 +224,11 @@ const trustPoints = [
           </a>
         </div>
 
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
           <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">
             También te puede servir
           </h2>
-          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
             {[
               { label: 'Catálogo de productos', desc: 'Equipo NFPA y NOM en 10 categorías', href: '/productos' },
               { label: 'Servicios profesionales', desc: 'Capacitación, mantenimiento, instalación y auditoría', href: '/servicios' },
@@ -237,11 +237,11 @@ const trustPoints = [
               { label: 'Cobertura nacional', desc: 'Entrega y servicio en los 32 estados', href: '/cobertura' },
               { label: 'Conoce la empresa', desc: 'Quiénes somos, cobertura y certificaciones', href: '/empresa' },
             ].map((l) => (
-              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+              <li style="border-bottom:1px solid var(--c-line)">
                 <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
                   <span class="flex flex-col gap-0.5">
-                    <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
-                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
+                    <span class="font-display font-semibold text-sm group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{l.label}</span>
+                    <span class="text-xs" style="color:var(--c-muted)">{l.desc}</span>
                   </span>
                   
                 </a>
@@ -257,5 +257,5 @@ const trustPoints = [
 </BaseLayout>
 
 <style>
-  .industry-card:hover { border-color: rgba(247, 80, 0, 0.45) !important; }
+  .industry-card:hover { border-color: rgba(200,16,46,0.45) !important; }
 </style>

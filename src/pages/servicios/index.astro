@@ -73,28 +73,28 @@ const trustPoints = [
 <BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema]}>
 
   <!-- Breadcrumb -->
-  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+  <nav class="py-3" style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line)" aria-label="Breadcrumb">
     <div class="container-site">
       <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
-        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li><a href="/" class="hover:text-[var(--c-accent)]">Inicio</a></li>
         <li aria-hidden="true">/</li>
-        <li><span style="color:#94A3B8" aria-current="page">Servicios</span></li>
+        <li><span style="color:var(--c-text-2)" aria-current="page">Servicios</span></li>
       </ol>
     </div>
   </nav>
 
   <!-- Hero -->
-  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">
-    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
+  <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:5rem">
+    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(200,16,46,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
 
     <div class="container-site relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
         <div>
           <span class="section-eyebrow mb-5 inline-flex">Servicios profesionales · NFPA y NOM</span>
-          <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+          <h1 class="font-display font-bold uppercase mb-6" style="color:var(--c-ink);font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
             Servicios Contra<br/>
-            <span style="color:#F75000">Incendio</span>
+            <span style="color:var(--c-accent)">Incendio</span>
           </h1>
           <div class="flex flex-col sm:flex-row gap-3">
             <a
@@ -108,14 +108,14 @@ const trustPoints = [
           </div>
         </div>
 
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
-          <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
+          <p class="text-sm leading-[1.9] mb-5" style="color:var(--c-text-2)">
             Seis servicios para que tu operación cumpla la normativa y tu gente sepa responder:
-            <strong style="color:#CBD5E1">capacitación con constancia DC-3 STPS, mantenimiento y recarga
+            <strong style="color:var(--c-text)">capacitación con constancia DC-3 STPS, mantenimiento y recarga
             certificada, instalación de sistemas contra incendio NFPA 13/72, auditoría NOM-002-STPS,
             brigadas empresariales llave en mano y soporte técnico para licitaciones</strong>.
           </p>
-          <p class="text-sm leading-[1.9] mb-6" style="color:#64748B">
+          <p class="text-sm leading-[1.9] mb-6" style="color:var(--c-muted)">
             Cada servicio entrega la evidencia documental que pide la autoridad: constancias,
             bitácoras, reportes fotográficos, collares de garantía y memorias de cálculo.
             Personal certificado, cobertura en los 32 estados y un ejecutivo responsable de tu cuenta.
@@ -130,20 +130,20 @@ const trustPoints = [
       </div>
     </div>
 
-    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)" aria-hidden="true"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(200,16,46,0.4) 30%, rgba(200,16,46,0.4) 70%, transparent)" aria-hidden="true"></div>
   </section>
 
   <!-- Accesos rápidos (interlinking) -->
   <QuickLinksBar />
 
   <!-- Pilares -->
-  <section class="section-tight" style="background:#070E1A" aria-label="Por qué nuestros servicios">
+  <section class="section-tight" style="background:var(--c-bg-alt)" aria-label="Por qué nuestros servicios">
     <div class="container-site">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style="border:1px solid rgba(74,117,153,0.18)">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style="border:1px solid var(--c-line)">
         {trustPoints.map((t, i) => (
-          <div class="flex flex-col gap-2 p-6" style={`background:#0C1825;${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.18);' : ''}`}>
-            <h2 class="font-display font-bold text-sm uppercase tracking-wider" style="color:#FF6B26">{t.title}</h2>
-            <p class="text-xs leading-relaxed" style="color:#64748B">{t.text}</p>
+          <div class="flex flex-col gap-2 p-6" style={`background:var(--c-surface);${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.18);' : ''}`}>
+            <h2 class="font-display font-bold text-sm uppercase tracking-wider" style="color:var(--c-accent)">{t.title}</h2>
+            <p class="text-xs leading-relaxed" style="color:var(--c-muted)">{t.text}</p>
           </div>
         ))}
       </div>
@@ -151,19 +151,19 @@ const trustPoints = [
   </section>
 
   <!-- Grid de servicios -->
-  <section class="section" style="background:#040A12" aria-labelledby="servicios-title">
+  <section class="section" style="background:var(--c-bg)" aria-labelledby="servicios-title">
     <div class="container-site">
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Servicios</span>
-          <h2 id="servicios-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+          <h2 id="servicios-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Seis servicios,<br/>
-            <span style="color:#F75000">un solo expediente.</span>
+            <span style="color:var(--c-accent)">un solo expediente.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
             Cada servicio tiene su propia página con alcances, entregables y preguntas frecuentes.
             Si tu necesidad cruza varios — equipar, capacitar y documentar a la vez —
             armamos un programa integral con un solo contrato y calendario.
@@ -173,31 +173,31 @@ const trustPoints = [
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {services.map((s, i) => (
-          <a href={s.href} class="service-card group relative flex flex-col overflow-hidden" style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
+          <a href={s.href} class="service-card group relative flex flex-col overflow-hidden" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
             <div class="relative flex items-center justify-center overflow-hidden" style="height:120px">
               <div class="absolute inset-0" style={`background:linear-gradient(135deg, ${s.accent}26 0%, rgba(4,10,18,0.94) 100%)`}></div>
               <div class="relative z-10 flex items-center justify-center rounded-full"
                    style={`width:64px;height:64px;background:rgba(4,10,18,0.7);border:1.5px solid ${s.accent}44;color:${s.accent}`}>
                 <span class="block" style="width:28px;height:28px" set:html={s.icon}/>
               </div>
-              <div class="absolute bottom-0 left-0 right-0 h-8 pointer-events-none" style="background:linear-gradient(to bottom, transparent, #080F1A)"></div>
-              <span class="absolute top-4 right-5 font-display font-bold text-2xl select-none" style="color:rgba(74,117,153,0.4)" aria-hidden="true"></span>
+              <div class="absolute bottom-0 left-0 right-0 h-8 pointer-events-none" style="background:linear-gradient(to bottom, transparent, var(--c-bg-alt))"></div>
+              <span class="absolute top-4 right-5 font-display font-bold text-2xl select-none" style="color:var(--c-muted)" aria-hidden="true"></span>
             </div>
 
             <div class="flex flex-col flex-1 p-5 gap-3">
               <span class="text-[9px] font-display font-semibold uppercase tracking-widest" style="color:var(--forge-300)">{s.norm}</span>
-              <h3 class="font-display font-bold text-lg leading-tight" style="color:#FFFFFF">{s.title}</h3>
-              <p class="text-xs leading-relaxed" style="color:#64748B;flex:1">{s.shortDesc}</p>
-              <ul class="flex flex-col gap-1.5 py-3 list-none m-0" style="border-top:1px solid rgba(74,117,153,0.12);border-bottom:1px solid rgba(74,117,153,0.12)">
+              <h3 class="font-display font-bold text-lg leading-tight" style="color:var(--c-ink)">{s.title}</h3>
+              <p class="text-xs leading-relaxed" style="color:var(--c-muted);flex:1">{s.shortDesc}</p>
+              <ul class="flex flex-col gap-1.5 py-3 list-none m-0" style="border-top:1px solid var(--c-line);border-bottom:1px solid var(--c-line)">
                 {s.items.slice(0, 3).map((item) => (
-                  <li class="flex items-center gap-2 text-[11px]" style="color:#64748B">
+                  <li class="flex items-center gap-2 text-[11px]" style="color:var(--c-muted)">
                     <span class="w-1 h-1 rounded-full shrink-0" style={`background:${s.accent};opacity:0.7`} aria-hidden="true"></span>
                     {item.name}
                   </li>
                 ))}
               </ul>
               <div class="pt-1">
-                <span class="inline-flex items-center gap-2 w-full justify-center text-xs font-display font-semibold uppercase tracking-wider py-2.5 px-4" style={`color:#040A12;background:${s.accent};letter-spacing:0.08em`}>
+                <span class="inline-flex items-center gap-2 w-full justify-center text-xs font-display font-semibold uppercase tracking-wider py-2.5 px-4" style={`color:#FFFFFF;background:${s.accent};letter-spacing:0.08em`}>
                   {anclaServicio[s.slug] ?? s.title}
                   
                 </span>
@@ -231,15 +231,15 @@ const trustPoints = [
   ))}
 
   <!-- Cómo trabajamos + cross-links -->
-  <section class="section" style="background:#070E1A" aria-labelledby="como-trabajamos-title">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="como-trabajamos-title">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
 
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Cómo trabajamos</span>
-          <h2 id="como-trabajamos-title" class="font-display font-bold mb-6" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+          <h2 id="como-trabajamos-title" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
             De la necesidad al expediente<br/>
-            <span style="color:#F75000">en tres pasos.</span>
+            <span style="color:var(--c-accent)">en tres pasos.</span>
           </h2>
           <ol class="flex flex-col gap-4 list-none m-0 p-0">
             {[
@@ -249,7 +249,7 @@ const trustPoints = [
             ].map((s) => (
               <li class="flex items-start gap-4">
                 
-                <p class="text-sm leading-relaxed m-0" style="color:#94A3B8">{s.t}</p>
+                <p class="text-sm leading-relaxed m-0" style="color:var(--c-text-2)">{s.t}</p>
               </li>
             ))}
           </ol>
@@ -260,11 +260,11 @@ const trustPoints = [
           </div>
         </div>
 
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
           <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-5" style="color:var(--forge-300)">
             También te puede servir
           </h2>
-          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
             {[
               { label: 'Catálogo de productos', desc: 'Equipo NFPA y NOM en 10 categorías', href: '/productos' },
               { label: 'Guía de normas y certificaciones', desc: 'Qué NOM y NFPA aplican según tu giro', href: '/certificaciones' },
@@ -273,11 +273,11 @@ const trustPoints = [
               { label: 'Cobertura de servicio', desc: 'En sitio en los 32 estados', href: '/cobertura' },
               { label: 'Conoce la empresa', desc: 'Quiénes somos, cobertura y certificaciones', href: '/empresa' },
             ].map((l) => (
-              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+              <li style="border-bottom:1px solid var(--c-line)">
                 <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
                   <span class="flex flex-col gap-0.5">
-                    <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
-                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
+                    <span class="font-display font-semibold text-sm group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{l.label}</span>
+                    <span class="text-xs" style="color:var(--c-muted)">{l.desc}</span>
                   </span>
                   
                 </a>
@@ -293,5 +293,5 @@ const trustPoints = [
 </BaseLayout>
 
 <style>
-  .service-card:hover { border-color: rgba(247, 80, 0, 0.45) !important; }
+  .service-card:hover { border-color: rgba(200,16,46,0.45) !important; }
 </style>

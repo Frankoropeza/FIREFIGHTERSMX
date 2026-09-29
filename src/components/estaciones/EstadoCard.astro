@@ -94,7 +94,7 @@ const descripcion =
   class="estado-card group relative flex flex-col overflow-hidden"
   data-nombre={est.nombre.toLowerCase()}
   data-region={est.region.toLowerCase()}
-  style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)"
+  style="background:var(--c-bg-alt);border:1px solid var(--c-line)"
 >
   {/* ══ HEADER VISUAL ════════════════════════════════════════════════ */}
   <div class="ec-visual relative flex flex-col justify-between overflow-hidden" style="height:152px;padding:0.9rem 1rem">
@@ -116,15 +116,15 @@ const descripcion =
       <>
         {/* Fondo placeholder de marca: gradiente navy + glow naranja */}
         <div class="absolute inset-0" aria-hidden="true"
-          style="background:linear-gradient(140deg,#0E2236 0%,#0A1626 45%,#060E18 100%)"></div>
+          style="background:linear-gradient(140deg,#0E2236 0%,#0A1626 45%,var(--c-bg-alt) 100%)"></div>
         <div class="absolute inset-0 pointer-events-none" aria-hidden="true"
-          style="background:radial-gradient(ellipse 75% 70% at 80% 15%, rgba(247,80,0,0.16) 0%, transparent 65%)"></div>
+          style="background:radial-gradient(ellipse 75% 70% at 80% 15%, rgba(200,16,46,0.16) 0%, transparent 65%)"></div>
         {/* Patrón de grid */}
         
         {/* Abreviatura watermark */}
         <span class="ec-watermark absolute font-display font-bold pointer-events-none select-none"
           aria-hidden="true"
-          style="bottom:-0.35em;left:0.4rem;line-height:1;font-size:5.5rem;color:rgba(255,255,255,0.05);letter-spacing:-0.04em">
+          style="bottom:-0.35em;left:0.4rem;line-height:1;font-size:5.5rem;color:rgba(16,24,40,0.05);letter-spacing:-0.04em">
           {est.abreviatura}
         </span>
       </>
@@ -133,15 +133,15 @@ const descripcion =
     {/* Eyebrow región — arriba izquierda */}
     <div class="relative z-10 flex items-start justify-between gap-2">
       <span class="font-display font-semibold text-[9px] uppercase tracking-[0.22em] px-2 py-1"
-        style="background:rgba(4,10,18,0.55);border:1px solid rgba(74,117,153,0.30);color:#7AA4C4;backdrop-filter:blur(2px)">
+        style="background:rgba(4,10,18,0.55);border:1px solid var(--c-line-strong);color:var(--c-text-2);backdrop-filter:blur(2px)">
         {est.abreviatura} · {est.region}
       </span>
 
       {/* Pill de conteo — arriba derecha */}
       <span class="flex items-baseline gap-1 px-2.5 py-1"
-        style="background:rgba(247,80,0,0.14);border:1px solid rgba(247,80,0,0.45)">
-        <span class="font-display font-bold text-lg leading-none" style="color:#FF6B26">{count}</span>
-        <span class="font-display font-semibold text-[8px] uppercase tracking-widest" style="color:#FF8F57">
+        style="background:rgba(200,16,46,0.14);border:1px solid rgba(200,16,46,0.45)">
+        <span class="font-display font-bold text-lg leading-none" style="color:var(--c-accent)">{count}</span>
+        <span class="font-display font-semibold text-[8px] uppercase tracking-widest" style="color:var(--c-accent)">
           {count === 1 ? 'estación' : 'estaciones'}
         </span>
       </span>
@@ -150,23 +150,23 @@ const descripcion =
     {/* Ícono circular — abajo izquierda */}
     <div class="relative z-10 flex items-center gap-2.5">
       <span class="flex items-center justify-center rounded-full shrink-0"
-        style="width:42px;height:42px;background:rgba(4,10,18,0.65);border:1.5px solid rgba(247,80,0,0.45);color:#FF6B26">
+        style="width:42px;height:42px;background:rgba(4,10,18,0.65);border:1.5px solid rgba(200,16,46,0.45);color:var(--c-accent)">
         
       </span>
-      <span class="font-display font-semibold text-[10px] uppercase tracking-widest" style="color:rgba(255,255,255,0.55)">
+      <span class="font-display font-semibold text-[10px] uppercase tracking-widest" style="color:rgba(16,24,40,0.55)">
         Directorio
       </span>
     </div>
 
     {/* Línea naranja inferior */}
-    <div class="absolute bottom-0 left-0 right-0" style="height:2px;background:linear-gradient(90deg,#F75000 0%,rgba(247,80,0,0) 85%)" aria-hidden="true"></div>
+    <div class="absolute bottom-0 left-0 right-0" style="height:2px;background:linear-gradient(90deg,var(--c-accent) 0%,rgba(200,16,46,0) 85%)" aria-hidden="true"></div>
   </div>
 
   {/* ══ CONTENIDO ════════════════════════════════════════════════════ */}
   <div class="flex flex-col flex-1 gap-3 p-5">
 
     {/* Título */}
-    <h3 class="ec-title font-display font-bold text-xl leading-tight m-0" style="color:#FFFFFF">
+    <h3 class="ec-title font-display font-bold text-xl leading-tight m-0" style="color:var(--c-ink)">
       {est.nombre}
     </h3>
 
@@ -176,7 +176,7 @@ const descripcion =
     </p>
 
     {/* Chips de tipo */}
-    <div class="flex flex-wrap gap-1.5 pt-3" style="border-top:1px solid rgba(74,117,153,0.12)">
+    <div class="flex flex-wrap gap-1.5 pt-3" style="border-top:1px solid var(--c-line)">
       {tiposUnicos.map((t) => (
         <span class="font-display font-semibold text-[9px] uppercase tracking-wider px-2 py-0.5"
           style={`color:${tipoConfig[t].color};background:${tipoConfig[t].bgColor};border:1px solid ${tipoConfig[t].color}33`}>
@@ -189,7 +189,7 @@ const descripcion =
     <div class="mt-auto pt-1">
       <span
         class="ec-cta inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 font-display font-bold text-xs uppercase tracking-wider"
-        style="background:#F75000;color:#040A12;letter-spacing:0.08em"
+        style="background:var(--c-accent);color:#FFFFFF;letter-spacing:0.08em"
       >
         Bomberos en {est.nombre}
         
@@ -200,7 +200,7 @@ const descripcion =
 
 <style>
   /* Hover: solo borde (instantáneo) + brillo del botón. Sin movimiento de layout. */
-  .estado-card:hover { border-color: rgba(247,80,0,0.50) !important; }
-  .estado-card:hover .ec-title { color: #FF6B26; }
-  .estado-card:hover .ec-cta { background: #FF6B26 !important; }
+  .estado-card:hover { border-color: rgba(200,16,46,0.50) !important; }
+  .estado-card:hover .ec-title { color: var(--c-accent); }
+  .estado-card:hover .ec-cta { background: var(--c-accent) !important; }
 </style>

@@ -82,27 +82,27 @@ const collectionSchema = {
 <BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema]}>
 
   <!-- Breadcrumb -->
-  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+  <nav class="py-3" style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line)" aria-label="Breadcrumb">
     <div class="container-site">
       <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
-        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li><a href="/" class="hover:text-[var(--c-accent)]">Inicio</a></li>
         <li aria-hidden="true">/</li>
-        <li><span style="color:#94A3B8" aria-current="page">Blog</span></li>
+        <li><span style="color:var(--c-text-2)" aria-current="page">Blog</span></li>
       </ol>
     </div>
   </nav>
 
   <!-- Hero -->
-  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem">
-    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(247,80,0,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
+  <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:5rem">
+    <div class="absolute top-0 right-0 w-1/2 h-full pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 90% 30%, rgba(200,16,46,0.08) 0%, transparent 65%)" aria-hidden="true"></div>
 
     <div class="container-site relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div>
           <span class="section-eyebrow mb-5 inline-flex">Blog técnico · NFPA y NOM</span>
-          <h1 class="font-display font-bold uppercase mb-6" style="color:#FFFFFF;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
+          <h1 class="font-display font-bold uppercase mb-6" style="color:var(--c-ink);font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.95">
             Conocimiento<br/>
-            <span style="color:#F75000">contra incendio</span>
+            <span style="color:var(--c-accent)">contra incendio</span>
           </h1>
           <div class="flex flex-col sm:flex-row gap-3">
             <a href="#articulos" class="btn btn-primary btn-lg">Artículos sobre equipo para bomberos y normativa</a>
@@ -110,14 +110,14 @@ const collectionSchema = {
           </div>
         </div>
 
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
-          <p class="text-sm leading-[1.9] mb-5" style="color:#94A3B8">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
+          <p class="text-sm leading-[1.9] mb-5" style="color:var(--c-text-2)">
             Guías técnicas, normatividad y criterios de selección para
-            <strong style="color:#CBD5E1">bomberos, brigadas industriales y responsables
+            <strong style="color:var(--c-text)">bomberos, brigadas industriales y responsables
             de protección civil</strong>. Material redactado por especialistas y
             referenciado a la norma vigente.
           </p>
-          <p class="text-sm leading-[1.9] mb-6" style="color:#64748B">
+          <p class="text-sm leading-[1.9] mb-6" style="color:var(--c-muted)">
             Cada artículo cruza con el directorio, los servicios descritos y la guía de
             certificaciones para que pases de la teoría a la decisión de compra con respaldo documental.
           </p>
@@ -130,19 +130,19 @@ const collectionSchema = {
       </div>
     </div>
 
-    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)" aria-hidden="true"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(200,16,46,0.4) 30%, rgba(200,16,46,0.4) 70%, transparent)" aria-hidden="true"></div>
   </section>
 
   <!-- Accesos rápidos (interlinking) -->
   <QuickLinksBar />
 
   <!-- Artículos + Sidebar -->
-  <section id="articulos" class="section" style="background:#040A12" aria-labelledby="blog-title">
+  <section id="articulos" class="section" style="background:var(--c-bg)" aria-labelledby="blog-title">
     <div class="container-site">
 
       {allPosts.length === 0 ? (
-        <div class="text-center py-20" style="color:#64748B">
-          <p class="text-lg mb-2" style="color:#94A3B8">Blog próximamente</p>
+        <div class="text-center py-20" style="color:var(--c-muted)">
+          <p class="text-lg mb-2" style="color:var(--c-text-2)">Blog próximamente</p>
           <p class="text-sm">Estamos preparando guías técnicas especializadas para el sector bomberos.</p>
         </div>
       ) : (
@@ -153,8 +153,8 @@ const collectionSchema = {
 
             <div class="mb-8">
               <span class="section-eyebrow mb-4 inline-flex">Últimas publicaciones</span>
-              <h2 id="blog-title" class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
-                Artículos <span style="color:#F75000">técnicos</span>
+              <h2 id="blog-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
+                Artículos <span style="color:var(--c-accent)">técnicos</span>
               </h2>
             </div>
 
@@ -189,7 +189,7 @@ const collectionSchema = {
               ))}
             </div>
 
-            <p id="blog-empty" class="py-12 text-center text-sm" style="color:#64748B" hidden>
+            <p id="blog-empty" class="py-12 text-center text-sm" style="color:var(--c-muted)" hidden>
               No hay artículos en esta categoría por ahora.
             </p>
           </div>
@@ -199,8 +199,8 @@ const collectionSchema = {
             <div class="flex flex-col gap-8 lg:sticky" style="top:124px">
 
               <!-- Categorías (links reales  SEO crawlable) -->
-              <div style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
-                <h3 class="font-display font-bold text-sm uppercase tracking-widest px-5 py-4" style="color:#FF6B26;letter-spacing:0.1em;border-bottom:1px solid rgba(74,117,153,0.18)">
+              <div style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
+                <h3 class="font-display font-bold text-sm uppercase tracking-widest px-5 py-4" style="color:var(--c-accent);letter-spacing:0.1em;border-bottom:1px solid var(--c-line)">
                   Categorías
                 </h3>
                 <ul class="flex flex-col list-none m-0 p-0">
@@ -211,7 +211,7 @@ const collectionSchema = {
                     </a>
                   </li>
                   {categories.map((cat) => (
-                    <li style="border-top:1px solid rgba(74,117,153,0.12)">
+                    <li style="border-top:1px solid var(--c-line)">
                       <a
                         href={`/blog/categoria/${slugify(cat)}`}
                         class="side-cat w-full flex items-center justify-between gap-3 px-5 py-3"
@@ -226,16 +226,16 @@ const collectionSchema = {
               </div>
 
               <!-- Artículos destacados (sin fecha) -->
-              <div style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
-                <h3 class="font-display font-bold text-sm uppercase tracking-widest px-5 py-4" style="color:#FF6B26;letter-spacing:0.1em;border-bottom:1px solid rgba(74,117,153,0.18)">
+              <div style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
+                <h3 class="font-display font-bold text-sm uppercase tracking-widest px-5 py-4" style="color:var(--c-accent);letter-spacing:0.1em;border-bottom:1px solid var(--c-line)">
                   Artículos destacados
                 </h3>
                 <ul class="flex flex-col list-none m-0 p-0">
                   {allPosts.slice(0, 5).map((post) => (
-                    <li style="border-top:1px solid rgba(74,117,153,0.12)">
+                    <li style="border-top:1px solid var(--c-line)">
                       <a href={`/blog/${post.id}`} class="side-post group flex flex-col gap-1 px-5 py-4">
                         <span class="text-[10px] font-display font-semibold uppercase tracking-widest" style="color:var(--forge-300)">{post.data.category}</span>
-                        <span class="font-display font-semibold text-sm leading-snug group-hover:text-[#FF6B26]" style="color:#E2E8F0">{post.data.title}</span>
+                        <span class="font-display font-semibold text-sm leading-snug group-hover:text-[var(--c-accent)]" style="color:var(--c-ink-2)">{post.data.title}</span>
                       </a>
                     </li>
                   ))}
@@ -244,15 +244,15 @@ const collectionSchema = {
 
               <!-- Temas frecuentes (links reales  SEO crawlable) -->
               {allTags.length > 0 && (
-                <div style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
-                  <h3 class="font-display font-bold text-sm uppercase tracking-widest px-5 py-4" style="color:#FF6B26;letter-spacing:0.1em;border-bottom:1px solid rgba(74,117,153,0.18)">
+                <div style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
+                  <h3 class="font-display font-bold text-sm uppercase tracking-widest px-5 py-4" style="color:var(--c-accent);letter-spacing:0.1em;border-bottom:1px solid var(--c-line)">
                     Temas frecuentes
                   </h3>
                   <div class="flex flex-wrap gap-2 p-5">
                     {allTags.map((tag) => (
                       <a
                         href={`/blog/tag/${slugify(tag)}`}
-                        class="badge badge-dark text-[10px] hover:bg-[#FF6B26] hover:text-white"
+                        class="badge badge-dark text-[10px] hover:bg-[var(--c-accent)] hover:text-white"
                         style="text-decoration:none"
                       >
                         #{tag}
@@ -263,17 +263,17 @@ const collectionSchema = {
               )}
 
               <!-- Recursos (interlinking) -->
-              <div style="background:#080F1A;border:1px solid rgba(74,117,153,0.18)">
-                <h3 class="font-display font-bold text-sm uppercase tracking-widest px-5 py-4" style="color:#FF6B26;letter-spacing:0.1em;border-bottom:1px solid rgba(74,117,153,0.18)">
+              <div style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
+                <h3 class="font-display font-bold text-sm uppercase tracking-widest px-5 py-4" style="color:var(--c-accent);letter-spacing:0.1em;border-bottom:1px solid var(--c-line)">
                   También te puede servir
                 </h3>
                 <ul class="flex flex-col list-none m-0 p-0">
                   {recursos.map((r) => (
-                    <li style="border-top:1px solid rgba(74,117,153,0.12)">
+                    <li style="border-top:1px solid var(--c-line)">
                       <a href={r.href} class="side-post group flex items-center justify-between gap-3 px-5 py-4">
                         <span class="flex flex-col gap-0.5">
-                          <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#E2E8F0">{r.label}</span>
-                          <span class="text-xs" style="color:#64748B">{r.desc}</span>
+                          <span class="font-display font-semibold text-sm group-hover:text-[var(--c-accent)]" style="color:var(--c-ink-2)">{r.label}</span>
+                          <span class="text-xs" style="color:var(--c-muted)">{r.desc}</span>
                         </span>
                         
                       </a>
@@ -283,9 +283,9 @@ const collectionSchema = {
               </div>
 
               <!-- CTA -->
-              <div class="p-6 text-center" style="background:linear-gradient(135deg, #0C1825 0%, rgba(247,80,0,0.12) 130%);border:1px solid rgba(247,80,0,0.3)">
-                <h3 class="font-display font-bold text-lg mb-2" style="color:#FFFFFF">¿Dudas sobre normatividad?</h3>
-                <p class="text-xs leading-relaxed mb-5" style="color:#94A3B8">
+              <div class="p-6 text-center" style="background:linear-gradient(135deg, var(--c-surface) 0%, rgba(200,16,46,0.12) 130%);border:1px solid rgba(200,16,46,0.3)">
+                <h3 class="font-display font-bold text-lg mb-2" style="color:var(--c-ink)">¿Dudas sobre normatividad?</h3>
+                <p class="text-xs leading-relaxed mb-5" style="color:var(--c-text-2)">
                   Un especialista te orienta sobre la norma y el equipo correcto para tu operación.
                 </p>
                 <div class="flex flex-col gap-2">
@@ -316,20 +316,20 @@ const collectionSchema = {
     letter-spacing: 0.04em;
     padding: 0.4rem 0.9rem;
     border-radius: 2px;
-    background: #0C1825;
-    color: #94A3B8;
-    border: 1px solid rgba(74,117,153,0.25);
+    background: var(--c-surface);
+    color: var(--c-text-2);
+    border: 1px solid var(--c-line-strong);
     cursor: pointer;
   }
-  .blog-filter:hover { color: #FFFFFF; border-color: rgba(247,80,0,0.45); }
-  .blog-filter.is-active { background: rgba(247,80,0,0.15); color: #FF6B26; border-color: rgba(247,80,0,0.5); }
+  .blog-filter:hover { color: var(--c-ink); border-color: rgba(200,16,46,0.45); }
+  .blog-filter.is-active { background: rgba(200,16,46,0.15); color: var(--c-accent); border-color: rgba(200,16,46,0.5); }
 
   /* Categorías y posts del sidebar */
-  .side-cat { background: transparent; color: #CBD5E1; border: none; cursor: pointer; text-align: left; }
-  .side-cat:hover { background: #0C1825; color: #FFFFFF; }
-  .side-cat.is-active { background: rgba(247,80,0,0.1); color: #FF6B26; }
-  .side-cat.is-active .text-xs { color: #FF6B26 !important; }
-  .side-post:hover { background: #0C1825; }
+  .side-cat { background: transparent; color: var(--c-text); border: none; cursor: pointer; text-align: left; }
+  .side-cat:hover { background: var(--c-surface); color: var(--c-ink); }
+  .side-cat.is-active { background: rgba(200,16,46,0.1); color: var(--c-accent); }
+  .side-cat.is-active .text-xs { color: var(--c-accent) !important; }
+  .side-post:hover { background: var(--c-surface); }
 </style>
 
 <script>

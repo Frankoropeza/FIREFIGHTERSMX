@@ -132,26 +132,26 @@ const faqSchema = {
 <BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema, estacionesSchema, faqSchema]}>
 
   <!-- ── Breadcrumb ──────────────────────────────────────────── -->
-  <nav class="py-3" style="background:#070E1A;border-bottom:1px solid rgba(74,117,153,0.15)" aria-label="Breadcrumb">
+  <nav class="py-3" style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line)" aria-label="Breadcrumb">
     <div class="container-site">
       <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
-        <li><a href="/" class="hover:text-[#FF6B26]">Inicio</a></li>
+        <li><a href="/" class="hover:text-[var(--c-accent)]">Inicio</a></li>
         <li aria-hidden="true">/</li>
-        <li><span style="color:#94A3B8" aria-current="page">Directorio de Estaciones</span></li>
+        <li><span style="color:var(--c-text-2)" aria-current="page">Directorio de Estaciones</span></li>
       </ol>
     </div>
   </nav>
 
   <!-- ── Hero ───────────────────────────────────────────────── -->
-  <section class="relative overflow-hidden" style="background:#040A12;padding-block:5rem" aria-labelledby="hero-title">
+  <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:5rem" aria-labelledby="hero-title">
 
     <!-- Glow decorativo -->
     <div class="absolute top-0 right-0 w-2/3 h-full pointer-events-none" aria-hidden="true"
-      style="background:radial-gradient(ellipse 70% 60% at 85% 40%, rgba(247,80,0,0.07) 0%, transparent 65%)">
+      style="background:radial-gradient(ellipse 70% 60% at 85% 40%, rgba(200,16,46,0.07) 0%, transparent 65%)">
     </div>
     <!-- Grid pattern decorativo -->
     <div class="absolute inset-0 pointer-events-none" aria-hidden="true"
-      style="background-image:linear-gradient(rgba(74,117,153,0.04) 1px, transparent 1px),linear-gradient(90deg,rgba(74,117,153,0.04) 1px,transparent 1px);background-size:40px 40px;mask-image:radial-gradient(ellipse 80% 80% at 80% 30%, black, transparent)">
+      style="background-image:linear-gradient(var(--c-tint) 1px, transparent 1px),linear-gradient(90deg,var(--c-tint) 1px,transparent 1px);background-size:40px 40px;mask-image:radial-gradient(ellipse 80% 80% at 80% 30%, black, transparent)">
     </div>
 
     <div class="container-site relative z-10">
@@ -160,12 +160,12 @@ const faqSchema = {
         <div>
           <span class="section-eyebrow mb-5 inline-flex">Directorio nacional · 32 estados</span>
           <h1 id="hero-title" class="font-display font-bold uppercase mb-6"
-            style="color:#FFFFFF;font-size:clamp(2.4rem,5vw,4.25rem);line-height:0.95">
+            style="color:var(--c-ink);font-size:clamp(2.4rem,5vw,4.25rem);line-height:0.95">
             Estaciones de<br/>
-            <span style="color:#F75000">Bomberos</span><br/>
+            <span style="color:var(--c-accent)">Bomberos</span><br/>
             en México
           </h1>
-          <p class="text-sm leading-[1.9] mb-8" style="color:#94A3B8">
+          <p class="text-sm leading-[1.9] mb-8" style="color:var(--c-text-2)">
             Cuerpos de bomberos municipales y estatales, voluntarios, brigadas industriales y
             unidades ARFF de los 32 estados, con ubicación, contacto y la fuente citada en cada registro.
           </p>
@@ -179,20 +179,20 @@ const faqSchema = {
           </div>
         </div>
 
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.1)">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
           <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:var(--forge-300)">Tipos de corporación en el directorio</p>
-          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
             {conteoTipos.map(t => (
-              <li class="flex items-center gap-3 py-3" style="border-bottom:1px solid rgba(74,117,153,0.15)">
+              <li class="flex items-center gap-3 py-3" style="border-bottom:1px solid var(--c-line)">
                 <span class="w-2.5 h-2.5 shrink-0" style={`background:${t.color}`}></span>
-                <span class="font-display font-semibold text-sm" style="color:#FFFFFF">{t.label}</span>
+                <span class="font-display font-semibold text-sm" style="color:var(--c-ink)">{t.label}</span>
               </li>
             ))}
           </ul>
-          <p class="text-xs mt-4" style="color:#64748B">Emergencias en todo el país: <strong style="color:#CBD5E1">911</strong>.</p>
+          <p class="text-xs mt-4" style="color:var(--c-muted)">Emergencias en todo el país: <strong style="color:var(--c-text)">911</strong>.</p>
           {ultimaVerifLabel && (
-            <p class="text-xs mt-2 m-0" style="color:#64748B">
-              Registros verificados en <strong style="color:#CBD5E1">{ultimaVerifLabel}</strong>; cada ficha cita su fuente.
+            <p class="text-xs mt-2 m-0" style="color:var(--c-muted)">
+              Registros verificados en <strong style="color:var(--c-text)">{ultimaVerifLabel}</strong>; cada ficha cita su fuente.
             </p>
           )}
 
@@ -211,7 +211,7 @@ const faqSchema = {
 
     <!-- Línea de acento inferior -->
     <div class="absolute bottom-0 left-0 right-0 h-px" aria-hidden="true"
-      style="background:linear-gradient(90deg, transparent, rgba(247,80,0,0.4) 30%, rgba(247,80,0,0.4) 70%, transparent)">
+      style="background:linear-gradient(90deg, transparent, rgba(200,16,46,0.4) 30%, rgba(200,16,46,0.4) 70%, transparent)">
     </div>
   </section>
 
@@ -219,9 +219,9 @@ const faqSchema = {
   <QuickLinksBar />
 
   <!-- ── Acerca del directorio ──────────────────────────────── -->
-  <section class="section-tight" style="background:#070E1A" aria-label="Sobre el directorio">
+  <section class="section-tight" style="background:var(--c-bg-alt)" aria-label="Sobre el directorio">
     <div class="container-site">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style="border:1px solid rgba(74,117,153,0.18)">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style="border:1px solid var(--c-line)">
         {[
           {
             icon: ``,
@@ -245,10 +245,10 @@ const faqSchema = {
           },
         ].map((c, i) => (
           <div class="flex flex-col gap-3 p-6"
-            style={`background:#0C1825;${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.18);' : ''}`}>
-            <span class="w-6 h-6 block" style="color:#FF6B26" set:html={c.icon}/>
-            <h2 class="font-display font-bold text-sm uppercase tracking-wider" style="color:#FF6B26">{c.title}</h2>
-            <p class="text-xs leading-relaxed" style="color:#64748B">{c.text}</p>
+            style={`background:var(--c-surface);${i < 3 ? 'border-right:1px solid rgba(74,117,153,0.18);' : ''}`}>
+            <span class="w-6 h-6 block" style="color:var(--c-accent)" set:html={c.icon}/>
+            <h2 class="font-display font-bold text-sm uppercase tracking-wider" style="color:var(--c-accent)">{c.title}</h2>
+            <p class="text-xs leading-relaxed" style="color:var(--c-muted)">{c.text}</p>
           </div>
         ))}
       </div>
@@ -256,20 +256,20 @@ const faqSchema = {
   </section>
 
   <!-- ── Tipos de estaciones ────────────────────────────────── -->
-  <section class="section" style="background:#040A12" aria-labelledby="tipos-title">
+  <section class="section" style="background:var(--c-bg)" aria-labelledby="tipos-title">
     <div class="container-site">
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Clasificación</span>
           <h2 id="tipos-title" class="font-display font-bold"
-            style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Tipos de cuerpos<br/>
-            <span style="color:#F75000">de bomberos.</span>
+            <span style="color:var(--c-accent)">de bomberos.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:#94A3B8">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
             En México los cuerpos de bomberos operan bajo diferentes jurisdicciones y
             especializaciones. Cada tipo tiene competencias, normas aplicables y
             equipamiento distintos. Conoce las diferencias para identificar la unidad
@@ -281,14 +281,14 @@ const faqSchema = {
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {conteoTipos.map(t => (
           <div class="flex flex-col gap-3 p-5"
-            style={`background:#070E1A;border:1px solid rgba(74,117,153,0.18);border-top:2px solid ${t.color}`}>
+            style={`background:var(--c-bg-alt);border:1px solid var(--c-line);border-top:2px solid ${t.color}`}>
             <div class="flex items-center justify-between">
               <span class="font-display font-bold text-xs uppercase tracking-wider" style={`color:${t.color}`}>
                 {t.label}
               </span>
               <span class="font-display font-bold text-2xl" style={`color:${t.color}`}>{t.count}</span>
             </div>
-            <p class="text-xs leading-relaxed" style="color:#64748B">
+            <p class="text-xs leading-relaxed" style="color:var(--c-muted)">
               {t.tipo === 'Municipal'   && 'Dependen del ayuntamiento. Atienden la mayor parte de las emergencias ciudadanas. Certificación base: NFPA 1001 y NOM.'}
               {t.tipo === 'Estatal'     && 'Coordinados por la Secretaría de Seguridad Pública estatal. Apoyan a municipios de menor capacidad.'}
               {t.tipo === 'Industrial'  && 'Brigadas privadas o mixtas en parques industriales. Certificadas NFPA 1001 y NOM-002-STPS.'}
@@ -305,20 +305,20 @@ const faqSchema = {
   </section>
 
   <!-- ── Directorio por estado ──────────────────────────────── -->
-  <section id="estados" class="section" style="background:#070E1A" aria-labelledby="directorio-title">
+  <section id="estados" class="section" style="background:var(--c-bg-alt)" aria-labelledby="directorio-title">
     <div class="container-site">
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-10">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Directorio · 32 estados</span>
           <h2 id="directorio-title" class="font-display font-bold"
-            style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+            style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
             Selecciona<br/>
-            <span style="color:#F75000">tu estado.</span>
+            <span style="color:var(--c-accent)">tu estado.</span>
           </h2>
         </div>
-        <div style="border-left:2px solid rgba(247,80,0,0.4);padding-left:1.75rem">
-          <p class="text-sm leading-relaxed mb-5" style="color:#94A3B8">
+        <div style="border-left:2px solid rgba(200,16,46,0.4);padding-left:1.75rem">
+          <p class="text-sm leading-relaxed mb-5" style="color:var(--c-text-2)">
             Encuentra las estaciones y cuerpos de bomberos de cada entidad federativa.
             Cada tarjeta muestra el número de estaciones listadas, la región y los tipos disponibles.
           </p>
@@ -331,7 +331,7 @@ const faqSchema = {
               placeholder="Buscar estado…"
               aria-label="Buscar estado en el directorio"
               class="w-full pl-10 pr-4 py-2.5 text-sm font-display"
-              style="background:#0C1825;border:1px solid rgba(74,117,153,0.3);color:#FFFFFF;outline:none"
+              style="background:var(--c-surface);border:1px solid var(--c-line-strong);color:var(--c-ink);outline:none"
             />
           </div>
         </div>
@@ -345,7 +345,7 @@ const faqSchema = {
       <!-- Mensaje cuando no hay resultados -->
       <div id="no-results" class="hidden py-16 text-center">
         <p class="font-display font-bold text-lg mb-2" style="color:var(--forge-300)">Sin resultados</p>
-        <p class="text-sm" style="color:#64748B">Intenta con otro nombre de estado.</p>
+        <p class="text-sm" style="color:var(--c-muted)">Intenta con otro nombre de estado.</p>
       </div>
 
     </div>
@@ -353,24 +353,24 @@ const faqSchema = {
 
   <!-- ── Estaciones destacadas ──────────────────────────────── -->
   {estacionesDestacadas.length > 0 && (
-    <section class="section" style="background:#040A12" aria-labelledby="destacadas-title">
+    <section class="section" style="background:var(--c-bg)" aria-labelledby="destacadas-title">
       <div class="container-site">
 
         <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
           <div>
             <span class="section-eyebrow mb-4 inline-flex">Cuerpos históricos</span>
             <h2 id="destacadas-title" class="font-display font-bold"
-              style="color:#FFFFFF;font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
+              style="color:var(--c-ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.05">
               Cuerpos de bomberos<br/>
-              <span style="color:#F75000">con historia.</span>
+              <span style="color:var(--c-accent)">con historia.</span>
             </h2>
           </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-px"
-          style="background:rgba(74,117,153,0.18);border:1px solid rgba(74,117,153,0.18)">
+          style="background:var(--c-line);border:1px solid var(--c-line)">
           {estacionesDestacadas.map((est) => (
-            <div class="grid-cell flex flex-col gap-4 p-7" style="background:#070E1A">
+            <div class="grid-cell flex flex-col gap-4 p-7" style="background:var(--c-bg-alt)">
               <div class="flex gap-2 flex-wrap">
                 <span class="badge badge-fire">{est.tipo}</span>
                 {est.fundacion && (
@@ -378,22 +378,22 @@ const faqSchema = {
                 )}
                 <span class="badge badge-dark">{est.estadoNombre}</span>
               </div>
-              <h3 class="font-display font-bold text-lg leading-snug" style="color:#FFFFFF">
-                <a href={urlEstacion(est)} class="hover:text-[#FF6B26]" style="color:#FFFFFF">{est.nombre}</a>
+              <h3 class="font-display font-bold text-lg leading-snug" style="color:var(--c-ink)">
+                <a href={urlEstacion(est)} class="hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{est.nombre}</a>
               </h3>
-              <p class="text-xs leading-relaxed" style="color:#64748B">{est.descripcion}</p>
+              <p class="text-xs leading-relaxed" style="color:var(--c-muted)">{est.descripcion}</p>
               <div class="flex flex-wrap gap-2 mt-auto">
                 {est.servicios.slice(0, 4).map(s => (
                   <span class="text-[10px] font-display uppercase tracking-wider px-2 py-0.5"
-                    style="color:var(--forge-300);background:rgba(74,117,153,0.12);border:1px solid rgba(74,117,153,0.2)">
+                    style="color:var(--forge-300);background:var(--c-line);border:1px solid var(--c-line)">
                     {capacidadLabel(s)}
                   </span>
                 ))}
               </div>
               {TELEFONO_EMERGENCIAS && (
-                <div class="flex items-center gap-2 pt-3" style="border-top:1px solid rgba(74,117,153,0.15)">
+                <div class="flex items-center gap-2 pt-3" style="border-top:1px solid var(--c-line)">
                   
-                  <span class="font-display font-bold text-sm" style="color:#F75000">
+                  <span class="font-display font-bold text-sm" style="color:var(--c-accent)">
                     Emergencias: {TELEFONO_EMERGENCIAS}
                   </span>
                   {est.telefono && (
@@ -410,7 +410,7 @@ const faqSchema = {
   )}
 
   <!-- ── Normas y certificaciones ───────────────────────────── -->
-  <section class="section" style="background:#070E1A" aria-labelledby="normas-title">
+  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="normas-title">
     <div class="container-site">
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
@@ -418,11 +418,11 @@ const faqSchema = {
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Marco normativo</span>
           <h2 id="normas-title" class="font-display font-bold mb-6"
-            style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.75rem);line-height:1.05">
+            style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.75rem);line-height:1.05">
             Normas que rigen a los<br/>
-            <span style="color:#F75000">bomberos en México.</span>
+            <span style="color:var(--c-accent)">bomberos en México.</span>
           </h2>
-          <p class="text-sm leading-[1.9] mb-6" style="color:#94A3B8">
+          <p class="text-sm leading-[1.9] mb-6" style="color:var(--c-text-2)">
             Los cuerpos de bomberos en México están sujetos a normas nacionales (NOM) e
             internacionales (NFPA). El equipamiento debe cumplir con estas certificaciones
             para garantizar la seguridad del personal y la eficiencia operativa.
@@ -436,9 +436,9 @@ const faqSchema = {
               { norm: 'NFPA 472',  desc: 'Respuesta a incidentes con materiales peligrosos (HAZMAT)' },
               { norm: 'NOM-002-STPS', desc: 'Condiciones de seguridad en instalaciones — aplica a brigadas industriales' },
             ].map(({ norm, desc }) => (
-              <div class="flex items-start gap-4 py-3" style="border-bottom:1px solid rgba(74,117,153,0.12)">
+              <div class="flex items-start gap-4 py-3" style="border-bottom:1px solid var(--c-line)">
                 <span class="badge badge-fire shrink-0 font-display text-[10px]">{norm}</span>
-                <p class="text-xs leading-relaxed m-0" style="color:#94A3B8">{desc}</p>
+                <p class="text-xs leading-relaxed m-0" style="color:var(--c-text-2)">{desc}</p>
               </div>
             ))}
           </div>
@@ -450,15 +450,15 @@ const faqSchema = {
         </div>
 
         <!-- FAQ -->
-        <div class="lg:pl-16" style="border-left:1px solid rgba(74,117,153,0.15)">
+        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
           <h2 class="font-display font-bold text-sm uppercase tracking-widest mb-6" style="color:var(--forge-300)">
             Preguntas frecuentes
           </h2>
-          <div class="flex flex-col" style="border-top:1px solid rgba(74,117,153,0.15)">
+          <div class="flex flex-col" style="border-top:1px solid var(--c-line)">
             {faqs.map((faq) => (
-              <div class="py-5" style="border-bottom:1px solid rgba(74,117,153,0.15)">
-                <h3 class="font-display font-bold text-sm mb-2" style="color:#FFFFFF">{faq.q}</h3>
-                <p class="text-xs leading-relaxed m-0" style="color:#64748B">{faq.a}</p>
+              <div class="py-5" style="border-bottom:1px solid var(--c-line)">
+                <h3 class="font-display font-bold text-sm mb-2" style="color:var(--c-ink)">{faq.q}</h3>
+                <p class="text-xs leading-relaxed m-0" style="color:var(--c-muted)">{faq.a}</p>
               </div>
             ))}
           </div>
@@ -470,17 +470,17 @@ const faqSchema = {
   </section>
 
   <!-- ── ¿Tienes una estación? ──────────────────────────────── -->
-  <section class="section-tight" style="background:#040A12;border-top:1px solid rgba(74,117,153,0.15)" aria-label="Registro de estación">
+  <section class="section-tight" style="background:var(--c-bg);border-top:1px solid var(--c-line)" aria-label="Registro de estación">
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
         <div>
           <span class="section-eyebrow mb-4 inline-flex">¿Tu estación no aparece?</span>
           <h2 class="font-display font-bold mb-4"
-            style="color:#FFFFFF;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.1">
+            style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.1">
             Registra tu cuerpo<br/>
-            <span style="color:#F75000">de bomberos.</span>
+            <span style="color:var(--c-accent)">de bomberos.</span>
           </h2>
-          <p class="text-sm leading-relaxed mb-6" style="color:#94A3B8">
+          <p class="text-sm leading-relaxed mb-6" style="color:var(--c-text-2)">
             Si representas un cuerpo de bomberos, brigada o unidad especializada que aún no
             aparece en el directorio, contáctanos. El alta es gratuita y ayuda a que más
             ciudadanos e instituciones encuentren tu unidad.
@@ -496,11 +496,11 @@ const faqSchema = {
             <a href="/contacto" class="btn btn-ghost">Contacto formal</a>
           </div>
         </div>
-        <div style="border-left:1px solid rgba(74,117,153,0.12);padding-left:2rem">
+        <div style="border-left:1px solid var(--c-line);padding-left:2rem">
           <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:var(--forge-300)">
             También te puede servir
           </p>
-          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid rgba(74,117,153,0.15)">
+          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
             {[
               { label: 'Equipo para cuerpos de bomberos', desc: 'Trajes NFPA, cascos, SCBA y herramientas', href: '/productos/trajes-bombero' },
               { label: 'Industria bomberos municipales',   desc: 'Soluciones específicas para ayuntamientos',   href: '/industrias/bomberos-municipales' },
@@ -508,11 +508,11 @@ const faqSchema = {
               { label: 'Soporte a licitaciones',          desc: 'CompraNet, PEMEX, CFE y municipios',          href: '/licitaciones' },
               { label: 'Blog técnico — normas NFPA',      desc: 'Guías sobre certificaciones y equipo',        href: '/blog' },
             ].map((l) => (
-              <li style="border-bottom:1px solid rgba(74,117,153,0.15)">
+              <li style="border-bottom:1px solid var(--c-line)">
                 <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
                   <span class="flex flex-col gap-0.5">
-                    <span class="font-display font-semibold text-sm group-hover:text-[#FF6B26]" style="color:#FFFFFF">{l.label}</span>
-                    <span class="text-xs" style="color:#64748B">{l.desc}</span>
+                    <span class="font-display font-semibold text-sm group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{l.label}</span>
+                    <span class="text-xs" style="color:var(--c-muted)">{l.desc}</span>
                   </span>
                   
                 </a>
