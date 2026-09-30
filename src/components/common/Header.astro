@@ -4,300 +4,433 @@ import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl, TELEFONO_ACTIVO } from '@co
 import TopBar from '@components/common/TopBar.astro';
 
 const pathname = Astro.url.pathname;
+const sinBarra = (href: string) => href.replace(/\/$/, '');
 // Coincidencia por segmento: /empresa no debe marcarse activo dentro de /empresas/.
 const isActive = (href: string) => {
   if (href === '/') return pathname === '/';
-  const base = href.replace(/\/$/, '');
+  const base = sinBarra(href);
   return pathname === base || pathname.startsWith(`${base}/`);
 };
+const isExact = (href: string) => (href === '/' ? pathname === '/' : sinBarra(pathname) === sinBarra(href));
 const ZONA_DIRECTORIO = ['/directorio', '/empresas', '/estaciones', '/cobertura'];
 const activoItem = (item: { href: string; zona?: string }) =>
   item.zona === 'directorio' ? ZONA_DIRECTORIO.some((p) => isActive(p)) : isActive(item.href);
+const esVer = (label: string) => label.startsWith('Ver');
 ---
 
 <header id="site-header" class="fixed top-0 inset-x-0 z-50">
   <TopBar />
 
-  <div class="header-glass" style="background-color:#FFFFFF;border-bottom:1px solid var(--c-line)">
-    <div class="container-site h-[68px] flex items-center justify-between gap-6 xl:gap-2 2xl:gap-6">
+  <div class="header-glass hd-bar">
+    <div class="container-site hd-row">
 
       <!-- ── LOGO ─────────────────────────────────────────────────── -->
-      <a href="/" class="flex items-center gap-3 shrink-0" aria-label="FIREFIGHTERS MX">
-        <div class="w-9 h-9 shrink-0">
-          <svg data-logo viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
-            <polygon points="18,2 32,10 32,26 18,34 4,26 4,10" fill="var(--ember-500)"/>
-            <path d="M18 10c0 0-5 4-3 8 1 2 3 2 3 2s-1-2 0-4c1-2 3-2 3-2s-1 3 1 5c.8.8 1 2 1 2s2-1.5 2-4c0-3-2-5-2-5s1 2 0 4c0 0-2-4-5-6z" fill="white" opacity="0.95"/>
-          </svg>
-        </div>
-        <div>
-          <div class="font-display font-bold text-[1.1rem] leading-none" style="color:var(--c-ink)">
-            Firefighters<span style="color:var(--ember-500)"> MX</span>
-          </div>
-          <div class="text-[9px] font-medium tracking-[0.16em] uppercase mt-1" style="color:var(--c-muted)">Equipo contra incendio</div>
-        </div>
+      <a href="/" class="hd-brand" aria-label="FIREFIGHTERS MX">
+        <svg data-logo viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="hd-mark">
+          <polygon points="18,2 32,10 32,26 18,34 4,26 4,10" fill="var(--c-accent)"/>
+          <path d="M18 10c0 0-5 4-3 8 1 2 3 2 3 2s-1-2 0-4c1-2 3-2 3-2s-1 3 1 5c.8.8 1 2 1 2s2-1.5 2-4c0-3-2-5-2-5s1 2 0 4c0 0-2-4-5-6z" fill="white" opacity="0.95"/>
+        </svg>
+        <span>
+          <span class="hd-name">Firefighters<span> MX</span></span>
+          <span class="hd-tag">Equipo contra incendio</span>
+        </span>
       </a>
 
-      <!-- ── DESKTOP NAV ───────────────────────────────────────────── -->
-      <nav class="hidden xl:flex items-center gap-0.5" role="navigation" aria-label="Navegación principal">
-        {navigation.main.map((item) => (
-          <>
-          {item.zona === 'directorio' && (
-            <span class="flex items-center gap-2 pl-2 pr-1" aria-hidden="true">
-              <span class="block w-px h-6" style="background:var(--c-line-strong)"></span>
-            </span>
-          )}
-          <div class="nav-group relative">
-            {item.children ? (
+      <!-- ── NAVEGACIÓN DE ESCRITORIO (≥ 1280 px) ───────────────────── -->
+      <nav class="hd-nav" aria-label="Navegación principal">
+        <ul class="nav-list">
+          {navigation.main.map((item) => {
+            const drop = item.children ?? null;
+            const mega = !!drop?.some((c) => c.children);
+            const filasPanel = mega ? Math.max(...drop!.map((c) => c.children?.length ?? 1)) : 0;
+            const porDefecto = mega ? drop!.findIndex((c) => c.children) : -1;
+            return (
               <>
-                <!-- Trigger -->
-                <a
-                  href={item.href}
-                  class={`nav-trigger flex items-center gap-1.5 px-3 py-2 text-sm font-medium rounded-sm ${activoItem(item) ? 'text-[var(--ember-400)]' : 'text-[var(--c-ink-2)] hover:text-[var(--c-accent)]'}`}
-                  aria-haspopup="true"
-                >
-                  {item.label}
-                  
-                </a>
-
-                <!-- Dropdown panel (pt-2 = puente continuo de hover) -->
-                <div class={`nav-dropdown absolute top-full ${item.zona === 'directorio' ? 'right-0' : 'left-0'} pt-2 z-50`} style="width:19rem" role="menu">
-                  <div class="drop-panel" style="background:#FFFFFF;border:1px solid var(--c-line);border-radius:0 0 var(--radius-card) var(--radius-card);box-shadow:0 12px 32px rgba(16,24,40,0.10)">
-                    <div class="py-1.5">
-                      {item.children.map((child) => (
-                        child.children ? (
-                          /* ── Ítem con subcategorías  fly-out ── */
-                          <div class="nav-sub-group relative">
-                            <a
-                              href={child.href}
-                              class={`drop-item flex items-center justify-between gap-2 px-4 py-3 text-sm ${isActive(child.href) ? 'text-[var(--ember-400)]' : 'text-[var(--c-ink-2)] hover:text-[var(--c-accent)]'}`}
-                              role="menuitem"
-                            >
-                              <span class="flex flex-col gap-0.5">
-                                <span class="flex items-center gap-2.5">
-                                  <span class="w-1 h-1 rounded-full bg-[var(--ember-500)] shrink-0 opacity-70"></span>
-                                  <span class="font-medium">{child.label}</span>
-                                </span>
-                                {child.description && (
-                                  <span class="pl-[18px] text-[10px]" style="color:var(--forge-300)">{child.description}</span>
-                                )}
-                              </span>
-                              <!-- Chevron derecho: indica submenú -->
-                              
-                            </a>
-
-                            <!-- Sub-panel fly-out a la derecha (pl-0.5 = puente) -->
-                            <div class={`nav-sub-panel absolute top-0 ${item.zona === 'directorio' ? 'right-full pr-0.5' : 'left-full pl-0.5'} z-50`} style="width:15rem">
-                              <div style="background:#FFFFFF;border:1px solid var(--c-line);border-radius:0 0 var(--radius-card) var(--radius-card);box-shadow:0 12px 32px rgba(16,24,40,0.10)">
-                                <div class="px-4 py-2.5" style="border-bottom:1px solid var(--c-line)">
-                                  <span class="text-[9px] font-display font-bold uppercase tracking-[0.16em]" style="color:var(--c-accent)">Subcategorías</span>
-                                </div>
-                                {child.children.map((sub) => (
+                {item.zona === 'directorio' && <li class="nav-sep" aria-hidden="true"></li>}
+                <li class:list={['nav-group', drop && 'has-drop', activoItem(item) && 'is-current']}>
+                  <a href={item.href} class="nav-link" aria-current={isExact(item.href) ? 'page' : undefined}>{item.label}</a>
+                  {drop && (
+                    <>
+                      <button type="button" class="nav-toggle" aria-expanded="false" aria-label={`Mostrar submenú de ${item.label}`}>
+                        <span class="caret" aria-hidden="true"></span>
+                      </button>
+                      <div class:list={['nav-drop', mega ? 'nav-drop--mega' : 'nav-drop--simple', item.zona === 'directorio' && 'nav-drop--right']}>
+                        <div class="drop-panel" style={mega ? `--pane-rows:${filasPanel}` : undefined}>
+                          <ul class="drop-list">
+                            {drop.map((child, i) => {
+                              const conPanel = mega && !esVer(child.label) && (child.children || child.description);
+                              return (
+                                <li class:list={['drop-row', conPanel && 'has-pane', mega && i === porDefecto && 'is-default', esVer(child.label) && 'is-more']}>
                                   <a
-                                    href={sub.href}
-                                    class={`flex flex-col gap-0.5 px-4 py-3 text-sm group/sub ${isActive(sub.href) ? 'text-[var(--ember-400)]' : 'text-[var(--c-ink-2)] hover:text-[var(--c-accent)] hover:bg-[var(--c-tint)]'}`}
-                                    role="menuitem"
+                                    href={child.href}
+                                    class:list={['drop-link', isActive(child.href) && !esVer(child.label) && (sinBarra(child.href) !== sinBarra(item.href) || isExact(child.href)) && 'is-current']}
+                                    aria-current={isExact(child.href) ? 'page' : undefined}
                                   >
-                                    <span class="flex items-center gap-2">
-                                      
-                                      <span class="font-medium">{sub.label}</span>
-                                    </span>
-                                    {sub.description && (
-                                      <span class="pl-5 text-[10px]" style="color:var(--forge-300)">{sub.description}</span>
-                                    )}
+                                    <span class="drop-title">{child.label}</span>
+                                    {!mega && child.description && !esVer(child.label) && <span class="drop-desc">{child.description}</span>}
+                                    {mega && child.children && <span class="caret caret--r" aria-hidden="true"></span>}
                                   </a>
-                                ))}
-                              </div>
-                            </div>
-
-                          </div>
-                        ) : (
-                          /* ── Ítem normal ── */
-                          <a
-                            href={child.href}
-                            class={`drop-item flex flex-col gap-0.5 px-4 py-3 text-sm ${child.label.startsWith('Ver') ? 'text-[var(--ember-400)] hover:text-[var(--ember-300)] border-t border-[var(--c-line)] mt-1 pt-3' : ''}${isActive(child.href) && !child.label.startsWith('Ver') ? 'text-[var(--ember-400)]' : !child.label.startsWith('Ver') ? 'text-[var(--c-ink-2)] hover:text-[var(--c-accent)]' : ''}`}
-                            role="menuitem"
-                          >
-                            {!child.label.startsWith('Ver') && (
-                              <span class="flex items-center gap-2.5">
-                                <span class="w-1 h-1 rounded-full bg-[var(--ember-500)] shrink-0 opacity-50"></span>
-                                <span class="font-medium">{child.label}</span>
-                              </span>
-                            )}
-                            {child.label.startsWith('Ver') && (
-                              <span class="flex items-center gap-2 text-xs font-display font-semibold uppercase tracking-wide">
-                                {child.label}
-                                
-                              </span>
-                            )}
-                            {child.description && !child.label.startsWith('Ver') && (
-                              <span class="pl-[18px] text-[10px]" style="color:var(--forge-300)">{child.description}</span>
-                            )}
-                          </a>
-                        )
-                      ))}
-                    </div>
-                  </div>
-                </div>
+                                  {conPanel && (
+                                    <div class="drop-pane">
+                                      <p class="pane-title">{child.label}</p>
+                                      {child.description && <p class="pane-desc">{child.description}</p>}
+                                      {child.children && (
+                                        <ul class="pane-list">
+                                          {child.children.map((sub) => (
+                                            <li>
+                                              <a
+                                                href={sub.href}
+                                                class:list={['pane-link', isActive(sub.href) && 'is-current']}
+                                                aria-current={isExact(sub.href) ? 'page' : undefined}
+                                              >
+                                                <span class="drop-title">{sub.label}</span>
+                                                {sub.description && <span class="drop-desc">{sub.description}</span>}
+                                              </a>
+                                            </li>
+                                          ))}
+                                        </ul>
+                                      )}
+                                    </div>
+                                  )}
+                                </li>
+                              );
+                            })}
+                          </ul>
+                        </div>
+                      </div>
+                    </>
+                  )}
+                </li>
               </>
-            ) : (
-              <a
-                href={item.href}
-                class={`block px-3 py-2 text-sm font-medium rounded-sm ${isActive(item.href) ? 'text-[var(--ember-400)]' : 'text-[var(--c-ink-2)] hover:text-[var(--c-accent)]'}`}
-              >
-                {item.label}
-              </a>
-            )}
-          </div>
-          </>
-        ))}
+            );
+          })}
+        </ul>
       </nav>
 
-      <!-- ── ACCIONES DESKTOP ─────────────────────────────────────── -->
-      <div class="flex items-center gap-2">
+      <!-- ── ACCIONES ─────────────────────────────────────────────── -->
+      <div class="hd-actions">
         {TELEFONO_ACTIVO && (
-<a
-          href={`tel:${SITE.phoneE164}`}
-          class="hidden 2xl:flex items-center gap-1.5 text-sm font-medium px-3 py-2 hover:text-[var(--c-accent)]"
-          style="color:var(--c-ink-2)"
-        >
-          
-          {SITE.phone}
-        </a>
-)}
+          <a href={`tel:${SITE.phoneE164}`} class="hd-phone">{SITE.phone}</a>
+        )}
 
-        {CONTACTO_DIRECTO_ACTIVO && <div class="hidden md:block"><a
-          href={whatsappUrl('Hola, quiero cotizar equipo para bomberos.')}
-          target="_blank" rel="noopener"
-          class="btn btn-whatsapp btn-sm"
-        >WhatsApp</a></div>}
+        <!-- Los wrappers llevan la visibilidad: la regla .btn de global.css
+             (display:inline-flex) ganaría a un display:none puesto en el <a>. -->
+        {CONTACTO_DIRECTO_ACTIVO && (
+          <div class="hd-wa">
+            <a href={whatsappUrl('Hola, quiero cotizar equipo para bomberos.')} target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm">WhatsApp</a>
+          </div>
+        )}
 
-        <!-- El wrapper lleva el `hidden`: en el propio <a> la regla .btn de
-             global.css (display:inline-flex) gana a la utilidad .hidden por
-             orden de cascada y el botón se mostraba en móvil, empujando el
-             hamburguesa fuera de la pantalla. -->
-        <div class="hidden sm:block">
-          <a href="/cotizacion/" class="btn btn-primary btn-sm">
-            Cotizar equipo
-            
-          </a>
+        <div class="hd-cta">
+          <a href="/cotizacion/" class="btn btn-primary btn-sm">Cotizar equipo</a>
         </div>
 
-        <!-- Hamburger móvil -->
+        <!-- Botón del menú móvil / tablet (< 1280 px) -->
         <button
+          type="button"
           id="mobile-menu-btn"
-          class="xl:hidden px-3 py-2 text-sm font-semibold border border-[var(--c-line-strong)] rounded-md"
-          style="color:var(--c-ink)"
+          class="mm-open-btn"
           aria-label="Abrir menú"
           aria-expanded="false"
           aria-controls="mobile-menu"
         >
-          <span id="icon-burger">Menú</span>
-          <span id="icon-close" class="hidden">Cerrar</span>
+          <span data-mm-label>Menú</span>
         </button>
       </div>
     </div>
   </div>
 
-  <!-- ══ MOBILE MENU ═══════════════════════════════════════════════════════
-       Contenedor vacío: el contenido se pide a /parciales/menu-movil/ la
-       primera vez que se abre. Ver MenuMovilContenido.astro.
+  <!-- ══ MENÚ MÓVIL ════════════════════════════════════════════════════════
+       Panel a pantalla completa bajo el header. El contenido se pide a
+       /parciales/menu-movil/ la primera vez que se abre (ver
+       MenuMovilContenido.astro), así el markup no viaja en cada página.
   ══════════════════════════════════════════════════════════════════════ -->
-  <div
-    id="mobile-menu"
-    class="xl:hidden hidden overflow-y-auto overscroll-contain"
-    style="background:var(--c-bg);border-bottom:1px solid var(--c-line);max-height:calc(100dvh - 71px)"
-    role="dialog" aria-modal="true" aria-label="Menú principal"
-    data-parcial="/parciales/menu-movil/"
-  ></div>
+  <div id="mobile-menu" hidden role="dialog" aria-modal="true" aria-label="Menú principal" data-parcial="/parciales/menu-movil/">
+    <p class="mm-status" role="status">Cargando menú…</p>
+  </div>
 </header>
 
 <!-- Spacer para compensar el header fixed -->
 <div class="h-[71px] md:h-[107px]" aria-hidden="true"></div>
 
-<style>
-  /* ── Dropdown desktop — hover continuo con puente pt-2 ── */
-  .nav-dropdown          { opacity:0; visibility:hidden; pointer-events:none; }
-  .nav-sub-panel         { opacity:0; visibility:hidden; pointer-events:none; }
+<style is:global>
+  /* ════════════════════════════════════════════════════════════════
+     HEADER — barra
+     Sin animaciones ni transiciones (regla del sitio): los paneles
+     aparecen y desaparecen al instante.
+  ════════════════════════════════════════════════════════════════ */
+  .hd-bar { background: var(--c-bg); border-bottom: 1px solid var(--c-line); }
+  .hd-bar.scrolled { box-shadow: 0 4px 16px rgba(16, 24, 40, 0.08); }
+  .hd-row { height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
 
-  .nav-group:hover      > .nav-dropdown,
-  .nav-group:focus-within > .nav-dropdown {
-    opacity:1; visibility:visible; pointer-events:auto;
+  .hd-brand { display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; }
+  .hd-mark { width: 36px; height: 36px; flex-shrink: 0; }
+  .hd-name { display: block; font-family: var(--font-display); font-weight: 700; font-size: 1.125rem; line-height: 1; letter-spacing: -0.01em; color: var(--c-ink); }
+  .hd-name > span { color: var(--c-accent); }
+  .hd-tag { display: block; margin-top: 0.3125rem; font-size: 0.625rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; line-height: 1; color: var(--c-muted); }
+
+  /* ── Navegación de escritorio ── */
+  .hd-nav { display: none; align-self: stretch; }
+  @media (min-width: 1280px) { .hd-nav { display: block; } }
+  .nav-list { display: flex; align-items: stretch; height: 100%; margin: 0; padding: 0; list-style: none; }
+  .nav-sep { align-self: center; width: 1px; height: 1.5rem; margin: 0 0.5rem; background: var(--c-line-strong); }
+  .nav-group { position: relative; display: flex; align-items: stretch; }
+
+  .nav-link { display: flex; align-items: center; padding: 0 0.625rem; font-size: 0.875rem; font-weight: 500; color: var(--c-ink-2); white-space: nowrap; }
+  .nav-group.has-drop .nav-link { padding-right: 0.125rem; }
+  .nav-toggle { display: flex; align-items: center; justify-content: center; width: 1.375rem; margin: 0 0.125rem 0 0; padding: 0; background: none; border: 0; color: var(--c-muted); cursor: pointer; }
+  .nav-link:focus-visible, .nav-toggle:focus-visible { outline: 2px solid var(--c-accent); outline-offset: -3px; border-radius: 6px; }
+
+  /* Caret dibujado con bordes (indicador funcional, no es un ícono) */
+  .caret { display: block; width: 0.4375rem; height: 0.4375rem; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateY(-2px) rotate(45deg); }
+  .caret--r { flex: none; transform: rotate(-45deg); color: var(--c-muted); }
+
+  /* Estado: hover, abierto por clic/teclado, sección actual */
+  .nav-group:hover .nav-link, .nav-group.is-open .nav-link { color: var(--c-ink); }
+  .nav-group.is-current .nav-link { color: var(--c-accent); }
+  .nav-group:hover .nav-toggle, .nav-group.is-open .nav-toggle { color: var(--c-accent); }
+  .nav-group:hover .nav-toggle .caret, .nav-group.is-open .nav-toggle .caret { transform: translateY(2px) rotate(225deg); }
+  .nav-group::after { content: ''; position: absolute; left: 0.625rem; right: 0.5rem; bottom: -1px; height: 2px; background: var(--c-ink); display: none; }
+  .nav-group.has-drop::after { right: 0.375rem; }
+  .nav-group:hover::after, .nav-group.is-open::after, .nav-group.is-current::after { display: block; }
+
+  /* ── Paneles desplegables ── */
+  .nav-drop { display: none; position: absolute; top: calc(100% + 1px); left: 0; z-index: 60; }
+  .nav-drop--right { left: auto; right: 0; }
+  .nav-group:hover > .nav-drop, .nav-group.is-open > .nav-drop, .nav-group:has(.nav-drop :focus-visible) > .nav-drop { display: block; }
+
+  .drop-panel {
+    position: relative; display: flex; flex-direction: column;
+    max-height: calc(100dvh - 132px);
+    background: var(--c-bg); border: 1px solid var(--c-line); border-top: 0;
+    border-radius: 0 0 var(--radius-card) var(--radius-card);
+    box-shadow: 0 16px 40px rgba(16, 24, 40, 0.12), 0 2px 6px rgba(16, 24, 40, 0.05);
   }
+  .nav-drop--simple .drop-panel { width: 21rem; }
+  .nav-drop--mega .drop-panel { --col: 16.5rem; width: 41rem; }
 
-  /* Fly-out: hover sobre el ítem padre O sobre el sub-panel */
-  .nav-sub-group:hover  > .nav-sub-panel,
-  .nav-sub-group:focus-within > .nav-sub-panel {
-    opacity:1; visibility:visible; pointer-events:auto;
+  .drop-list { margin: 0; padding: 0.5rem; list-style: none; overflow-y: auto; overscroll-behavior: contain; }
+  .drop-link { display: block; padding: 0.5625rem 0.75rem; border-radius: 6px; color: var(--c-ink-2); }
+  .drop-title { display: block; font-size: 0.875rem; font-weight: 500; line-height: 1.35; color: inherit; }
+  .drop-desc { display: block; margin-top: 0.125rem; font-size: 0.75rem; line-height: 1.4; color: var(--c-muted); }
+  .drop-link:hover, .drop-row:hover > .drop-link { background: var(--c-tint); color: var(--c-ink); }
+  .drop-link.is-current, .pane-link.is-current { color: var(--c-accent); }
+  .drop-link:focus-visible, .pane-link:focus-visible { outline: 2px solid var(--c-accent); outline-offset: -2px; }
+  .drop-row.is-more { margin-top: 0.25rem; padding-top: 0.25rem; border-top: 1px solid var(--c-line); }
+
+  /* Mega: lista de categorías a la izquierda, detalle a la derecha.
+     La lista hace scroll propio; el detalle (.drop-pane) se ancla al panel,
+     no a la lista, así que ni el scroll ni el ancho lo recortan. */
+  .nav-drop--mega .drop-list { width: var(--col); min-height: calc(var(--pane-rows) * 3.1rem + 7.5rem); }
+  .drop-row { position: static; }
+  .nav-drop--mega .drop-link { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; }
+  .drop-pane {
+    display: none; position: absolute; top: 0; bottom: 0; left: var(--col); right: 0;
+    padding: 1.25rem 1.5rem; overflow-y: auto; overscroll-behavior: contain;
+    background: var(--c-tint); border-left: 1px solid var(--c-line);
+    border-radius: 0 0 var(--radius-card) 0;
   }
+  .drop-row:hover > .drop-pane, .drop-row:focus-within > .drop-pane { display: block; }
+  .drop-panel:not(:has(.drop-row:hover, .drop-row:focus-within)) .drop-row.is-default > .drop-pane { display: block; }
+  .drop-panel:not(:has(.drop-row:hover, .drop-row:focus-within)) .drop-row.is-default > .drop-link,
+  .drop-row.has-pane:focus-within > .drop-link { background: var(--c-tint); color: var(--c-ink); }
+  .pane-title { margin: 0; font-size: 1rem; font-weight: 600; line-height: 1.3; letter-spacing: -0.01em; color: var(--c-ink); }
+  .pane-desc { margin: 0.25rem 0 0; font-size: 0.8125rem; line-height: 1.45; color: var(--c-muted); }
+  .pane-list { margin: 0.875rem 0 0; padding: 0.5rem 0 0; list-style: none; border-top: 1px solid var(--c-line); }
+  .pane-link { display: block; margin: 0 -0.5rem; padding: 0.3125rem 0.5rem; border-radius: 6px; color: var(--c-ink-2); }
+  .pane-link:hover { background: var(--c-bg); color: var(--c-accent); }
 
-  /* Caret del trigger principal */
-  .nav-group:hover .nav-caret,
-  .nav-group:focus-within .nav-caret { transform:rotate(180deg); opacity:0.9; }
+  /* ── Acciones ── */
+  .hd-actions { display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0; }
+  .hd-phone { display: none; padding: 0 0.5rem; font-size: 0.875rem; font-weight: 500; color: var(--c-ink-2); white-space: nowrap; }
+  .hd-phone:hover { color: var(--c-accent); }
+  .hd-wa { display: none; }
+  .hd-cta { display: none; }
+  @media (min-width: 640px)  { .hd-cta { display: block; } }
+  @media (min-width: 1440px) { .hd-wa { display: block; } }
+  @media (min-width: 1600px) { .hd-phone { display: inline-flex; } }
 
-  /* Hover highlight en drop-items */
-  .drop-item:hover { background:var(--c-tint); }
+  .mm-open-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-width: 5rem; min-height: 2.75rem; padding: 0 1rem;
+    background: var(--c-bg); color: var(--c-ink);
+    border: 1px solid var(--c-line-strong); border-radius: var(--radius-btn);
+    font-family: inherit; font-size: 0.875rem; font-weight: 600; line-height: 1; cursor: pointer;
+  }
+  .mm-open-btn[aria-expanded="true"] { background: var(--c-ink); border-color: var(--c-ink); color: #fff; }
+  @media (min-width: 1280px) { .mm-open-btn { display: none; } }
+  /* Pantallas muy angostas (320–380 px): sin la línea descriptiva del logo para que el botón siempre quepa. */
+  @media (max-width: 380px) { .hd-tag { display: none; } .hd-row { gap: 0.75rem; } .mm-open-btn { min-width: 4.5rem; padding: 0 0.75rem; } }
 
-  /* Highlight del sub-group cuando su panel está abierto */
-  .nav-sub-group:hover > a  { background:rgba(200,16,46,0.07); }
-  .nav-sub-group:hover .sub-chevron { color:var(--ember-400) !important; }
+  /* ════════════════════════════════════════════════════════════════
+     MENÚ MÓVIL / TABLET — panel a pantalla completa bajo el header
+     El markup llega por fetch: los estilos viven aquí y son globales.
+  ════════════════════════════════════════════════════════════════ */
+  #mobile-menu {
+    position: absolute; left: 0; right: 0; top: 100%;
+    height: calc(100dvh - var(--mm-top, 69px));
+    display: flex; flex-direction: column;
+    background: var(--c-bg); border-top: 1px solid var(--c-line);
+  }
+  #mobile-menu[hidden] { display: none; }
+  html.mm-lock, html.mm-lock body { overflow: hidden; }
+  /* El botón flotante de WhatsApp taparía las acciones del panel (que ya incluyen WhatsApp). */
+  html.mm-lock #whatsapp-btn { display: none; }
 
-  /* ── Acordeón móvil ──
-     :global() porque el markup se inyecta por fetch desde
-     /parciales/menu-movil/ y no lleva el atributo de scope de Astro. */
-  :global(.mob-acc-btn[aria-expanded="true"] .mob-caret)     { transform:rotate(180deg); }
-  :global(.mob-sub-btn[aria-expanded="true"] .mob-sub-caret) { transform:rotate(90deg); color:var(--ember-400) !important; }
+  .mm-scroll { flex: 1 1 auto; min-height: 0; overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; padding: 0.25rem 0 1.5rem; }
+  .mm-nav { max-width: 42rem; margin: 0 auto; padding: 0 1rem; }
+  .mm-list { margin: 0; padding: 0; list-style: none; }
+  .mm-l1 { border-bottom: 1px solid var(--c-line); }
+  .mm-row { display: flex; align-items: stretch; }
 
-  /* Scroll shadow en header */
-  .header-glass.scrolled { box-shadow:0 4px 24px rgba(16,24,40,0.12); }
+  .mm-link { flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center; min-height: 3.25rem; padding: 0.5rem 0.25rem; font-size: 1rem; font-weight: 600; line-height: 1.3; color: var(--c-ink); }
+  .mm-l2 .mm-link { min-height: 3rem; font-size: 0.9375rem; font-weight: 500; color: var(--c-ink-2); }
+  .mm-l3 .mm-link { min-height: 2.75rem; font-size: 0.875rem; font-weight: 500; color: var(--c-text-2); }
+  .mm-link.is-current { color: var(--c-accent); }
+  .mm-desc { display: block; margin-top: 0.125rem; font-size: 0.75rem; font-weight: 400; line-height: 1.4; color: var(--c-muted); }
+  .mm-link:active { background: var(--c-tint); }
+  .mm-link:focus-visible, .mm-toggle:focus-visible { outline: 2px solid var(--c-accent); outline-offset: -2px; border-radius: 6px; }
+
+  .mm-toggle { flex: none; display: flex; align-items: center; justify-content: center; width: 3.25rem; min-height: 3rem; margin: 0; padding: 0; background: none; border: 0; border-left: 1px solid var(--c-line); color: var(--c-muted); cursor: pointer; }
+  .mm-toggle[aria-expanded="true"] { color: var(--c-accent); }
+  .mm-toggle .caret { width: 0.5rem; height: 0.5rem; transform: translateY(-2px) rotate(45deg); }
+  .mm-toggle[aria-expanded="true"] .caret { transform: translateY(2px) rotate(225deg); }
+
+  .mm-panel { margin: 0 0 0.5rem 0.25rem; padding: 0 0 0 0.75rem; border-left: 2px solid var(--c-line); }
+  .mm-panel[hidden] { display: none; }
+  .mm-sublist { margin: 0; padding: 0; list-style: none; }
+  .mm-l3 { margin: 0; padding: 0; }
+  .mm-l2 > .mm-row .mm-toggle { min-height: 3rem; }
+
+  .mm-eyebrow { margin: 1.5rem 0 0.25rem; padding: 0 0.25rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--c-muted); }
+
+  .mm-foot { flex: none; padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom)); background: var(--c-bg); border-top: 1px solid var(--c-line); box-shadow: 0 -4px 12px rgba(16, 24, 40, 0.06); }
+  .mm-cta { display: grid; grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); gap: 0.75rem; max-width: 42rem; margin: 0 auto; }
+  .mm-cta .btn { width: 100%; min-height: 3rem; }
+  .mm-contact { max-width: 42rem; margin: 0.625rem auto 0; font-size: 0.8125rem; line-height: 1.4; color: var(--c-muted); text-align: center; }
+  .mm-contact a { font-weight: 600; color: var(--c-ink-2); }
+  @media (max-height: 520px) { .mm-contact { display: none; } }
+
+  .mm-status { margin: 0; padding: 2rem 1rem; text-align: center; font-size: 0.9375rem; color: var(--c-muted); }
+  .mm-status .btn { margin: 0.75rem 0.25rem 0; }
 </style>
 
 <script>
 /* ════════════════════════════════════════════════════════════════
-   MOBILE MENU — abrir/cerrar + scroll lock
+   MENÚ MÓVIL / TABLET — abrir, cerrar, acordeones, foco y accesibilidad
 ════════════════════════════════════════════════════════════════ */
-const btn        = document.getElementById('mobile-menu-btn') as HTMLButtonElement | null;
-const menu       = document.getElementById('mobile-menu');
-const iconBurger = document.getElementById('icon-burger');
-const iconClose  = document.getElementById('icon-close');
+const hdr   = document.getElementById('site-header');
+const btn   = document.getElementById('mobile-menu-btn') as HTMLButtonElement | null;
+const menu  = document.getElementById('mobile-menu') as HTMLElement | null;
+const label = btn?.querySelector<HTMLElement>('[data-mm-label]');
+const XL    = window.matchMedia('(min-width: 1280px)');
 
-/* El contenido del drawer vive en /parciales/menu-movil/ y se pide una
-   sola vez, al primer toque del hamburguesa. Ver MenuMovilContenido.astro. */
 let cargando = false;
 
-function bindAcordeones(root: HTMLElement) {
-  root.querySelectorAll<HTMLButtonElement>('.mob-acc-btn').forEach((b) => {
-    b.addEventListener('click', () => {
-      const panel = root.querySelector(`[data-l1-panel="${b.dataset.l1}"]`);
-      const open  = b.getAttribute('aria-expanded') === 'true';
-      b.setAttribute('aria-expanded', String(!open));
-      panel?.classList.toggle('hidden', open);
-    });
-  });
-  root.querySelectorAll<HTMLButtonElement>('.mob-sub-btn').forEach((b) => {
-    b.addEventListener('click', () => {
-      const panel = root.querySelector(`[data-l2-panel="${b.dataset.l2}"]`);
-      const open  = b.getAttribute('aria-expanded') === 'true';
-      b.setAttribute('aria-expanded', String(!open));
-      panel?.classList.toggle('hidden', open);
-    });
-  });
-  root.querySelectorAll('a.mob-link').forEach((a) => {
-    a.addEventListener('click', () => setMenuOpen(false));
+const abierto = () => !!menu && !menu.hidden;
+
+/* El panel ocupa todo el alto libre bajo el header (con o sin TopBar). */
+function medirHeader() {
+  if (hdr && menu) menu.style.setProperty('--mm-top', `${Math.round(hdr.getBoundingClientRect().height)}px`);
+}
+
+/* Mientras el menú está abierto, el resto de la página no recibe foco ni lector de pantalla. */
+function aislarPagina(aislar: boolean) {
+  Array.from(document.body.children).forEach((el) => {
+    if (el === hdr || el.tagName === 'SCRIPT') return;
+    (el as HTMLElement).inert = aislar;
   });
 }
 
-/* El parcial es común a todo el sitio: el enlace de la sección actual se
-   resalta aquí, con la misma regla que usa la barra de escritorio. */
+function abrirPanel(b: HTMLButtonElement, abrir: boolean) {
+  const panel = b.getAttribute('aria-controls') ? document.getElementById(b.getAttribute('aria-controls')!) : null;
+  b.setAttribute('aria-expanded', String(abrir));
+  if (panel) panel.hidden = !abrir;
+}
+
+function alternar(b: HTMLButtonElement) {
+  const abrir = b.getAttribute('aria-expanded') !== 'true';
+  /* Acordeón exclusivo en el primer nivel: una sección abierta a la vez. */
+  if (abrir && b.dataset.nivel === '1') {
+    menu?.querySelectorAll<HTMLButtonElement>('.mm-toggle[data-nivel="1"]').forEach((o) => {
+      if (o !== b) abrirPanel(o, false);
+    });
+  }
+  abrirPanel(b, abrir);
+  if (abrir) b.closest('.mm-l1')?.scrollIntoView({ block: 'nearest' });
+}
+
+/* Mismo criterio que el header de escritorio: coincidencia por segmento. */
+const sinBarra = (s: string) => s.replace(/\/$/, '');
+function enSegmento(aqui: string, href: string) {
+  if (href === '/') return aqui === '/';
+  const base = sinBarra(href);
+  return sinBarra(aqui) === base || aqui.startsWith(base + '/');
+}
+
+/* El parcial es el mismo para todas las páginas: la sección actual se marca
+   aquí, en cliente, y su acordeón se abre solo. */
 function marcaActivos(root: HTMLElement) {
   const aqui = location.pathname;
-  root.querySelectorAll<HTMLAnchorElement>('a.mob-link[href^="/"]').forEach((a) => {
+  root.querySelectorAll<HTMLAnchorElement>('a.mm-link[href^="/"]').forEach((a) => {
     const href = a.getAttribute('href') || '';
-    const activo = href === '/' ? aqui === '/' : aqui.startsWith(href);
-    if (!activo) return;
-    a.classList.remove('text-white', 'text-[var(--slate-300)]', 'text-[var(--slate-400)]');
-    a.style.color = 'var(--ember-400)';
-    a.setAttribute('aria-current', 'page');
+    const exacto = sinBarra(aqui) === sinBarra(href) || (href === '/' && aqui === '/');
+    /* Un enlace anidado que apunta al mismo destino que su sección (p. ej.
+       «Catálogo completo» → /productos) sólo cuenta cuando es exacto. */
+    const l1 = a.closest('.mm-l1')?.querySelector<HTMLAnchorElement>(':scope > .mm-row > .mm-link');
+    const repite = l1 && l1 !== a && sinBarra(l1.getAttribute('href') || '') === sinBarra(href);
+    if (!(repite ? exacto : enSegmento(aqui, href))) return;
+    a.classList.add('is-current');
+    if (exacto) a.setAttribute('aria-current', 'page');
+    let p = a.closest<HTMLElement>('.mm-panel');
+    while (p) {
+      const t = root.querySelector<HTMLButtonElement>(`[aria-controls="${p.id}"]`);
+      if (t) abrirPanel(t, true);
+      p = p.parentElement?.closest<HTMLElement>('.mm-panel') ?? null;
+    }
   });
+  /* La zona Directorio se resalta cuando cualquiera de sus páginas está activa. */
+  root.querySelectorAll<HTMLElement>('.mm-l1').forEach((li) => {
+    if (li.querySelector('.mm-panel a.is-current')) {
+      li.querySelector(':scope > .mm-row > .mm-link')?.classList.add('is-current');
+    }
+  });
+}
+
+/* Sin red o parcial caído: se arma un menú mínimo con los enlaces de la
+   barra de escritorio, que siempre viajan en el HTML. */
+function menuDeEmergencia() {
+  if (!menu) return;
+  menu.replaceChildren();
+  const scroll = document.createElement('div');
+  scroll.className = 'mm-scroll';
+  const aviso = document.createElement('div');
+  aviso.className = 'mm-status';
+  const p = document.createElement('p');
+  p.textContent = 'No se pudo cargar el menú completo.';
+  const reintentar = document.createElement('button');
+  reintentar.type = 'button';
+  reintentar.className = 'btn btn-primary btn-sm';
+  reintentar.dataset.mmRetry = '1';
+  reintentar.textContent = 'Reintentar';
+  aviso.append(p, reintentar);
+  const ul = document.createElement('ul');
+  ul.className = 'mm-list mm-nav';
+  document.querySelectorAll<HTMLAnchorElement>('.hd-nav .nav-link').forEach((src) => {
+    const li = document.createElement('li');
+    li.className = 'mm-l1';
+    const a = document.createElement('a');
+    a.className = 'mm-link';
+    a.href = src.getAttribute('href') || '/';
+    a.textContent = src.textContent;
+    const row = document.createElement('div');
+    row.className = 'mm-row';
+    row.append(a);
+    li.append(row);
+    ul.append(li);
+  });
+  scroll.append(aviso, ul);
+  menu.append(scroll);
 }
 
 async function cargarMenu() {
@@ -305,6 +438,7 @@ async function cargarMenu() {
   const url = menu.dataset.parcial;
   if (!url) return;
   cargando = true;
+  menu.setAttribute('aria-busy', 'true');
   try {
     const r = await fetch(url);
     if (!r.ok) throw new Error(String(r.status));
@@ -312,140 +446,129 @@ async function cargarMenu() {
        doctype que aquí no pinta nada. */
     menu.innerHTML = (await r.text()).replace(/^\s*<!DOCTYPE[^>]*>/i, '');
     menu.dataset.cargado = '1';
-    bindAcordeones(menu);
     marcaActivos(menu);
   } catch {
-    /* Sin red o parcial caído: el menú queda vacío pero el sitio sigue
-       navegable por el footer y por la barra de escritorio. */
-    menu.innerHTML =
-      '<div class="container-site py-6 text-sm" style="color:var(--forge-200)">' +
-      'No se pudo cargar el menú. <a class="underline" href="/">Ir al inicio</a></div>';
+    menuDeEmergencia();
   } finally {
     cargando = false;
+    menu.removeAttribute('aria-busy');
   }
 }
 
-/* Precarga en cuanto el dedo toca el botón, para que el panel ya esté
-   listo cuando termine el tap. */
-btn?.addEventListener('pointerdown', () => { void cargarMenu(); }, { once: true });
+/* Precarga en cuanto el dedo o el cursor llega al botón. */
+['pointerenter', 'touchstart', 'focus'].forEach((ev) =>
+  btn?.addEventListener(ev, () => { void cargarMenu(); }, { once: true, passive: true }),
+);
 
 function setMenuOpen(open: boolean) {
-  if (!menu) return;
-  if (open) void cargarMenu();
-  menu.classList.toggle('hidden', !open);
-  iconBurger?.classList.toggle('hidden', open);
-  iconClose?.classList.toggle('hidden', !open);
-  btn?.setAttribute('aria-expanded', String(open));
-  btn?.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
-  document.body.style.overflow = open ? 'hidden' : '';
+  if (!menu || !btn || open === abierto()) return;
+  if (open) { medirHeader(); void cargarMenu(); }
+  menu.hidden = !open;
+  btn.setAttribute('aria-expanded', String(open));
+  btn.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+  if (label) label.textContent = open ? 'Cerrar' : 'Menú';
+  document.documentElement.classList.toggle('mm-lock', open);
+  aislarPagina(open);
 }
 
-btn?.addEventListener('click', () => {
-  setMenuOpen(menu?.classList.contains('hidden') ?? true);
+btn?.addEventListener('click', () => setMenuOpen(!abierto()));
+
+/* Delegación: el contenido llega por fetch, así que un solo listener sirve
+   para el markup actual y para cualquier recarga. */
+menu?.addEventListener('click', (e) => {
+  const t = e.target as HTMLElement;
+  const toggle = t.closest<HTMLButtonElement>('.mm-toggle');
+  if (toggle) { alternar(toggle); return; }
+  if (t.closest('[data-mm-retry]')) {
+    menu.dataset.cargado = '';
+    menu.replaceChildren();
+    const s = document.createElement('p');
+    s.className = 'mm-status';
+    s.textContent = 'Cargando menú…';
+    menu.append(s);
+    void cargarMenu();
+    return;
+  }
+  if (t.closest('a[href]')) setMenuOpen(false);
 });
 
-/* Cerrar con Escape */
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && !menu?.classList.contains('hidden')) setMenuOpen(false);
+  if (!abierto() || !menu || !btn) return;
+  if (e.key === 'Escape') { e.preventDefault(); setMenuOpen(false); btn.focus(); return; }
+  if (e.key !== 'Tab') return;
+  /* Foco atrapado: botón del header + contenido visible del panel. */
+  const foco = [btn, ...Array.from(menu.querySelectorAll<HTMLElement>('a[href], button:not([disabled])'))]
+    .filter((el) => el === btn || el.offsetParent !== null);
+  const primero = foco[0];
+  const ultimo = foco[foco.length - 1];
+  if (e.shiftKey && document.activeElement === primero) { e.preventDefault(); ultimo.focus(); }
+  else if (!e.shiftKey && document.activeElement === ultimo) { e.preventDefault(); primero.focus(); }
 });
 
-/* Volver a desktop cierra el menú */
-window.matchMedia('(min-width: 1280px)').addEventListener('change', (e) => {
-  if (e.matches) setMenuOpen(false);
+/* Rotar el dispositivo o cambiar el tamaño reajusta el panel; llegar a escritorio lo cierra. */
+window.addEventListener('resize', () => { if (abierto()) medirHeader(); }, { passive: true });
+XL.addEventListener('change', (e) => { if (e.matches) setMenuOpen(false); });
+
+/* ════════════════════════════════════════════════════════════════
+   NAVEGACIÓN DE ESCRITORIO — paneles por hover, clic (táctil) y teclado
+   El hover abre por CSS. El botón de flecha abre por clic y por teclado
+   (pantallas táctiles ≥ 1280 px, lectores de pantalla). Escape y clic
+   fuera cierran.
+════════════════════════════════════════════════════════════════ */
+const grupos = Array.from(document.querySelectorAll<HTMLElement>('.nav-group.has-drop'));
+
+function cerrarGrupos(salvo?: HTMLElement) {
+  grupos.forEach((g) => {
+    if (g === salvo) return;
+    g.classList.remove('is-open');
+    g.querySelector('.nav-toggle')?.setAttribute('aria-expanded', 'false');
+  });
+}
+
+/* El panel se recoloca si se saldría de la ventana por el lado horizontal. */
+function ajustar(g: HTMLElement) {
+  const d = g.querySelector<HTMLElement>('.nav-drop');
+  if (!d) return;
+  d.style.left = ''; d.style.right = '';
+  const r = d.getBoundingClientRect();
+  if (!r.width) return;
+  const M = 8;
+  if (r.right > window.innerWidth - M) { d.style.left = 'auto'; d.style.right = '0px'; }
+  else if (r.left < M) { d.style.right = 'auto'; d.style.left = '0px'; }
+}
+
+grupos.forEach((g) => {
+  const t = g.querySelector<HTMLButtonElement>('.nav-toggle');
+  t?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const abrir = !g.classList.contains('is-open');
+    cerrarGrupos(g);
+    g.classList.toggle('is-open', abrir);
+    t.setAttribute('aria-expanded', String(abrir));
+    if (abrir) ajustar(g);
+  });
+  g.addEventListener('mouseenter', () => { cerrarGrupos(g); ajustar(g); });
+  g.addEventListener('focusin', () => ajustar(g));
+});
+
+document.addEventListener('click', (e) => {
+  if (!(e.target as HTMLElement).closest('.nav-group')) cerrarGrupos();
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key !== 'Escape') return;
+  const g = grupos.find((x) => x.classList.contains('is-open') || x.contains(document.activeElement));
+  if (!g) return;
+  cerrarGrupos();
+  const t = g.querySelector<HTMLElement>('.nav-toggle');
+  if (g.contains(document.activeElement) && document.activeElement !== t) t?.focus();
 });
 
 /* ════════════════════════════════════════════════════════════════
-   DROPDOWNS DESKTOP — encajar siempre dentro de la ventana
-
-   El menú "Productos" mide ~740 px de alto y los fly-out de nivel 3
-   nacen a la altura de su ítem padre: en pantallas de 768–900 px de
-   alto (y en ventanas angostas) varios enlaces caían fuera de la
-   pantalla y eran imposibles de clicar. Aquí se recalcula la posición
-   de cada panel al abrirlo.
+   SOMBRA del header al hacer scroll
 ════════════════════════════════════════════════════════════════ */
-const MARGIN = 10;
-const headerEl = document.getElementById('site-header');
-const safeTop = () => (headerEl?.getBoundingClientRect().bottom ?? 0) + 4;
-
-/* Panel de nivel 2 — alto máximo y volteo horizontal si no cabe */
-function placeDropdown(group: Element) {
-  const dd    = group.querySelector<HTMLElement>('.nav-dropdown');
-  const panel = dd?.querySelector<HTMLElement>('.drop-panel');
-  if (!dd || !panel) return;
-
-  dd.style.left = ''; dd.style.right = '';
-  panel.style.maxHeight = ''; panel.style.overflowY = '';
-
-  const r = dd.getBoundingClientRect();
-  const avail = window.innerHeight - r.top - MARGIN * 2;
-  if (panel.scrollHeight > avail) {
-    panel.style.maxHeight = `${Math.max(200, avail)}px`;
-    panel.style.overflowY = 'auto';
-  }
-  if (r.left + r.width + MARGIN > window.innerWidth) {
-    dd.style.left = 'auto';
-    dd.style.right = '0px';
-  }
-}
-
-/* Fly-out de nivel 3 — se saca del panel con position:fixed para que
-   el scroll del panel padre no lo recorte, y se clava dentro de la ventana.
-   El origen del bloque contenedor se mide en caliente (el backdrop-filter
-   del header lo convierte en contenedor de los elementos fixed). */
-function placeFlyout(sub: Element) {
-  const panel = sub.querySelector<HTMLElement>('.nav-sub-panel');
-  const inner = panel?.firstElementChild as HTMLElement | null;
-  if (!panel || !inner) return;
-
-  const anchor = sub.getBoundingClientRect();
-  panel.style.position = 'fixed';
-  panel.style.top = '0px';
-  panel.style.left = '0px';
-  panel.style.zIndex = '60';
-
-  const origin = panel.getBoundingClientRect();
-  const box    = inner.getBoundingClientRect();
-  const w = box.width  || 240;
-  const h = box.height || 0;
-
-  let x = anchor.right;
-  if (x + w + MARGIN > window.innerWidth) x = anchor.left - w;
-  x = Math.max(MARGIN, Math.min(x, window.innerWidth - w - MARGIN));
-
-  let y = Math.min(anchor.top, window.innerHeight - h - MARGIN);
-  y = Math.max(safeTop(), y);
-
-  panel.style.left = `${x - origin.left}px`;
-  panel.style.top  = `${y - origin.top}px`;
-}
-
-function resetFlyout(sub: Element) {
-  const panel = sub.querySelector<HTMLElement>('.nav-sub-panel');
-  if (!panel) return;
-  panel.style.position = ''; panel.style.top = ''; panel.style.left = ''; panel.style.zIndex = '';
-}
-
-document.querySelectorAll('.nav-group').forEach((g) => {
-  const open = () => {
-    placeDropdown(g);
-    g.querySelectorAll('.nav-sub-group').forEach(resetFlyout);
-  };
-  g.addEventListener('mouseenter', open);
-  g.addEventListener('focusin', open);
-});
-
-document.querySelectorAll('.nav-sub-group').forEach((s) => {
-  s.addEventListener('mouseenter', () => placeFlyout(s));
-  s.addEventListener('focusin',    () => placeFlyout(s));
-  s.addEventListener('mouseleave', () => resetFlyout(s));
-});
-
-/* ════════════════════════════════════════════════════════════════
-   SCROLL SHADOW en header
-════════════════════════════════════════════════════════════════ */
-const header = document.getElementById('site-header');
-const glass  = header?.querySelector('.header-glass');
+const barra = hdr?.querySelector('.header-glass');
 window.addEventListener('scroll', () => {
-  glass?.classList.toggle('scrolled', window.scrollY > 8);
+  barra?.classList.toggle('scrolled', window.scrollY > 8);
 }, { passive: true });
 </script>

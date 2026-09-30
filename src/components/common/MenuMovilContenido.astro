@@ -1,154 +1,115 @@
 ---
 /*
-  Contenido del drawer móvil del header.
+  Contenido del panel móvil / tablet del header.
 
   Vive fuera de Header.astro porque se sirve como parcial estático en
   /parciales/menu-movil/ y el header lo inyecta la primera vez que se
-  toca el hamburguesa. Así el markup (≈50 KB) deja de viajar en cada
-  una de las 2,711 páginas. No pierde enlaces: los mismos destinos ya
-  están en la navegación de escritorio, que sí viaja en el HTML.
+  toca el botón del menú. Así el markup deja de viajar en cada una de
+  las páginas del sitio. No pierde enlaces: los mismos destinos ya están
+  en la navegación de escritorio, que sí viaja en el HTML.
+
+  Los estilos (.mm-*) y el comportamiento (acordeones, sección activa,
+  foco) viven en Header.astro: el parcial no lleva CSS ni JS propios.
+  El parcial es el mismo para todas las páginas, así que no puede saber
+  la ruta actual: el resaltado lo pone el header en cliente.
 */
 import { navigation } from '@data/navigation';
 import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl, TELEFONO_ACTIVO } from '@config/site';
 
-/*
-  El parcial es el mismo para las 2,711 páginas, así que no puede saber
-  cuál es la ruta actual: el resaltado del enlace activo lo pone el
-  header en cliente al inyectar el markup (marcaActivos en Header.astro).
-*/
+const esVer = (label: string) => label.startsWith('Ver');
+const grupos = [
+  { titulo: null as string | null, items: navigation.main.filter((i) => i.zona !== 'directorio') },
+  { titulo: 'Directorio nacional · registros de terceros', items: navigation.main.filter((i) => i.zona === 'directorio') },
+].filter((g) => g.items.length);
 ---
 
+<div class="mm-scroll">
+  <nav class="mm-nav" aria-label="Menú móvil">
+    {grupos.map((grupo) => (
+      <>
+        {grupo.titulo && <p class="mm-eyebrow">{grupo.titulo}</p>}
+        <ul class="mm-list">
+          {grupo.items.map((item) => {
+            const idx = navigation.main.indexOf(item);
+            return (
+              <li class="mm-l1">
+                <div class="mm-row">
+                  <a href={item.href} class="mm-link">{item.label}</a>
+                  {item.children && (
+                    <button
+                      type="button"
+                      class="mm-toggle"
+                      data-nivel="1"
+                      aria-expanded="false"
+                      aria-controls={`mm-p1-${idx}`}
+                      aria-label={`Mostrar opciones de ${item.label}`}
+                    >
+                      <span class="caret" aria-hidden="true"></span>
+                    </button>
+                  )}
+                </div>
 
-<!-- Search / CTA bar -->
-<div class="container-site pt-5 pb-4 flex gap-3" style="border-bottom:1px solid var(--c-line)">
-  <a href="/cotizacion/" class="btn btn-primary flex-1 justify-center text-sm">Cotizar equipo</a>
-  {CONTACTO_DIRECTO_ACTIVO && <a
-    href={whatsappUrl('Hola, quiero cotizar equipo para bomberos.')}
-    target="_blank" rel="noopener"
-    class="btn btn-whatsapp shrink-0 text-sm"
-  >WhatsApp</a>}
+                {item.children && (
+                  <div class="mm-panel" id={`mm-p1-${idx}`} hidden>
+                    <ul class="mm-sublist">
+                      {item.children.map((child, cidx) => (
+                        <li class="mm-l2">
+                          <div class="mm-row">
+                            <a href={child.href} class="mm-link">
+                              <span>{child.label}</span>
+                              {child.description && !esVer(child.label) && <span class="mm-desc">{child.description}</span>}
+                            </a>
+                            {child.children && (
+                              <button
+                                type="button"
+                                class="mm-toggle"
+                                data-nivel="2"
+                                aria-expanded="false"
+                                aria-controls={`mm-p2-${idx}-${cidx}`}
+                                aria-label={`Mostrar opciones de ${child.label}`}
+                              >
+                                <span class="caret" aria-hidden="true"></span>
+                              </button>
+                            )}
+                          </div>
+
+                          {child.children && (
+                            <div class="mm-panel" id={`mm-p2-${idx}-${cidx}`} hidden>
+                              <ul class="mm-sublist">
+                                {child.children.map((sub) => (
+                                  <li class="mm-l3">
+                                    <a href={sub.href} class="mm-link">
+                                      <span>{sub.label}</span>
+                                      {sub.description && <span class="mm-desc">{sub.description}</span>}
+                                    </a>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+      </>
+    ))}
+  </nav>
 </div>
 
-<!-- Nav items -->
-<nav class="container-site pb-6" aria-label="Menú móvil">
-  {navigation.main.map((item, idx) => (
-    <>
-    {item.zona === 'directorio' && (
-      <p class="pt-6 pb-1 px-1 m-0 text-[10px] font-display font-bold uppercase tracking-[0.18em]" style="color:var(--forge-300)">Directorio nacional · registros de terceros</p>
+<!-- Pie fijo del panel: acciones siempre a la mano -->
+<div class="mm-foot">
+  <div class="mm-cta">
+    <a href="/cotizacion/" class="btn btn-primary">Cotizar equipo</a>
+    {CONTACTO_DIRECTO_ACTIVO && (
+      <a href={whatsappUrl('Hola, quiero cotizar equipo para bomberos.')} target="_blank" rel="noopener" class="btn btn-whatsapp">WhatsApp</a>
     )}
-    <div class="mob-l1" style="border-bottom:1px solid var(--c-line)">
-
-      {item.children ? (
-        /* ── Item con dropdown ── */
-        <>
-          <div class="flex items-stretch">
-            <a
-              href={item.href}
-              class={`mob-link flex-1 flex items-center px-1 py-4 text-[15px] font-display font-semibold ${'text-[var(--c-ink)]'}`}
-            >
-              {item.label}
-            </a>
-            <button
-              class="mob-acc-btn flex items-center justify-center w-12 shrink-0"
-              style="color:var(--forge-300)"
-              data-l1={idx}
-              aria-expanded="false"
-              aria-label={`Expandir ${item.label}`}
-            >
-              
-            </button>
-          </div>
-
-          <!-- L1 panel -->
-          <div class="mob-l1-panel hidden" data-l1-panel={idx}>
-            <div class="ml-3 pl-3 flex flex-col pb-2" style="border-left:1px solid var(--c-line)">
-              {item.children.map((child, cidx) => (
-                child.children ? (
-                  /* ── L2 ítem con sub-dropdown ── */
-                  <div class="mob-l2">
-                    <div class="flex items-stretch">
-                      <a
-                        href={child.href}
-                        class={`mob-link flex-1 flex flex-col justify-center px-3 py-3 text-sm ${'text-[var(--slate-300)]'}`}
-                      >
-                        <span class="font-medium">{child.label}</span>
-                        {child.description && (
-                          <span class="text-[10px] mt-0.5" style="color:var(--forge-300)">{child.description}</span>
-                        )}
-                      </a>
-                      <button
-                        class="mob-sub-btn flex items-center justify-center w-10 shrink-0"
-                        style="color:var(--forge-400)"
-                        data-l2={`${idx}-${cidx}`}
-                        aria-expanded="false"
-                        aria-label={`Expandir ${child.label}`}
-                      >
-                        
-                      </button>
-                    </div>
-
-                    <!-- L2 sub-panel -->
-                    <div class="mob-l2-panel hidden" data-l2-panel={`${idx}-${cidx}`}>
-                      <div class="ml-4 pl-3 py-1" >
-                        {child.children.map((sub) => (
-                          <a
-                            href={sub.href}
-                            class={`mob-link flex flex-col px-2 py-2.5 text-xs ${'text-[var(--slate-400)] hover:text-[var(--ember-300)]'}`}
-                          >
-                            <span class="flex items-center gap-1.5">
-                              
-                              <span class="font-medium">{sub.label}</span>
-                            </span>
-                            {sub.description && (
-                              <span class="pl-4 text-[10px]" style="color:var(--forge-300)">{sub.description}</span>
-                            )}
-                          </a>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                ) : (
-                  /* ── L2 ítem normal ── */
-                  <a
-                    href={child.href}
-                    class={`mob-link flex flex-col px-3 py-3 text-sm ${child.label.startsWith('Ver') ? 'mt-1 pt-3' : ''}${child.label.startsWith('Ver') ? 'text-[var(--ember-500)] font-semibold' : 'text-[var(--slate-400)] hover:text-[var(--c-accent)]'}`}
-                    style={child.label.startsWith('Ver') ? 'border-top:1px solid var(--c-line)' : ''}
-                  >
-                    <span class="font-medium">{child.label}</span>
-                    {child.description && !child.label.startsWith('Ver') && (
-                      <span class="text-[10px] mt-0.5" style="color:var(--forge-300)">{child.description}</span>
-                    )}
-                  </a>
-                )
-              ))}
-            </div>
-          </div>
-        </>
-      ) : (
-        /* ── Item simple sin dropdown ── */
-        <a
-          href={item.href}
-          class={`mob-link block px-1 py-4 text-[15px] font-display font-semibold ${'text-[var(--c-ink)]'}`}
-        >
-          {item.label}
-        </a>
-      )}
-    </div>
-    </>
-  ))}
-
-  <!-- Info de contacto al pie del menú -->
-  <div class="mt-5 pt-4 flex flex-col gap-2" style="border-top:1px solid var(--c-line)">
-    {TELEFONO_ACTIVO && (
-<a
-      href={`tel:${SITE.phoneE164}`}
-      class="flex items-center gap-2 text-sm py-1"
-      style="color:var(--forge-200)"
-    >
-      
-      {SITE.phone}
-    </a>
-)}
-    <p class="text-xs" style="color:var(--forge-400)">{SITE.hours}</p>
   </div>
-</nav>
+  <p class="mm-contact">
+    {TELEFONO_ACTIVO && <><a href={`tel:${SITE.phoneE164}`}>{SITE.phone}</a> · </>}{SITE.hours}
+  </p>
+</div>
