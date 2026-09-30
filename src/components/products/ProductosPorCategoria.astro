@@ -1,0 +1,101 @@
+---
+/**
+ * Productos por categoría (/productos/) — sustituye la rejilla de 128 cards por
+ * grupos plegables con una lista tabular (Modelo · Marca · Norma). Todos los
+ * modelos y sus enlaces siguen en el HTML; <details> es nativo, sin animación.
+ */
+import { featuredProducts } from '@data/products';
+import { allCategories } from '@data/categories';
+import { lineaPorSlug } from '@lib/linea-card';
+
+// product.category → categoría: por `productCategory` de categories.ts; el mapa cubre las que no lo declaran.
+const SLUG: Record<string, string> = {
+  'Trajes Bombero': 'trajes-bombero',
+  'Cascos NFPA': 'cascos-nfpa',
+  'Equipos SCBA': 'equipos-scba',
+  'Herramientas Rescate': 'herramientas-rescate',
+  'Extintores': 'extintores',
+  'Sistemas CI': 'sistemas-ci',
+  'Cámaras Térmicas': 'camaras-termicas',
+  'Equipos HAZMAT': 'hazmat',
+  'Drones Emergencia': 'drones-emergencia',
+};
+const slugDe = (categoria: string) =>
+  allCategories.find((c) => c.productCategory === categoria)?.slug ?? SLUG[categoria];
+
+const grupos: { slug: string; label: string; cta: string; items: typeof featuredProducts }[] = [];
+for (const p of featuredProducts) {
+  const slug = slugDe(p.category);
+  if (!slug) throw new Error(`Producto «${p.slug}»: categoría «${p.category}» sin página en categories.ts`);
+  let g = grupos.find((x) => x.slug === slug);
+  if (!g) {
+    const cat = allCategories.find((c) => c.slug === slug);
+    const label = cat?.label ?? p.category;
+    g = { slug, label, cta: lineaPorSlug(slug)?.cta ?? label, items: [] };
+    grupos.push(g);
+  }
+  g.items.push(p);
+}
+---
+
+<div class="pp">
+  {grupos.map((g, gi) => (
+    <details class="pp-group" id={`productos-${g.slug}`} open={gi === 0}>
+      <summary class="pp-sum">
+        <h3 class="pp-title">{g.label}</h3>
+        <span class="pp-count">{g.items.length} modelos</span>
+      </summary>
+      <div class="pp-panel">
+        <div class="pp-head" aria-hidden="true"><span>Modelo</span><span>Marca</span><span>Norma</span></div>
+        <ul class="pp-list" role="list">
+          {g.items.map((p) => (
+            <li class="pp-row">
+              <div class="pp-model">
+                <a href={p.href} class="pp-name">{p.title}</a>
+                {p.badge && <span class="pp-badge">{p.badge}</span>}
+                <p class="pp-desc">{p.description}</p>
+              </div>
+              <div class="pp-brand">{p.brand ?? ''}</div>
+              <div class="pp-norm">{p.norm && <span class="badge badge-fire">{p.norm}</span>}</div>
+            </li>
+          ))}
+        </ul>
+        <div class="pp-foot"><a href={`/productos/${g.slug}/`} class="btn btn-ghost">{g.cta}</a></div>
+      </div>
+    </details>
+  ))}
+</div>
+
+<style>
+  .pp { display: flex; flex-direction: column; gap: .75rem; }
+  .pp-group { background: var(--c-surface); border: 1px solid var(--c-line); border-radius: var(--radius-card); scroll-margin-top: calc(var(--header-height) + 1rem); }
+  .pp-group[open] { box-shadow: var(--shadow-card); }
+  .pp-sum { display: flex; align-items: center; gap: 1rem; min-height: 3.75rem; padding: .875rem 1.25rem; cursor: pointer; list-style: none; transition: background-color .15s; }
+  .pp-sum::-webkit-details-marker { display: none; }
+  .pp-sum:hover { background: var(--c-bg-alt); }
+  .pp-sum::after { content: "Mostrar modelos"; margin-left: auto; font-size: .8125rem; font-weight: 600; color: var(--c-accent); white-space: nowrap; }
+  .pp-group[open] > .pp-sum::after { content: "Ocultar modelos"; }
+  .pp-group[open] > .pp-sum { border-bottom: 1px solid var(--c-line); }
+  .pp-title { margin: 0; font-family: var(--font-display); font-size: 1.0625rem; font-weight: 600; color: var(--c-ink); }
+  .pp-count { font-size: .8125rem; color: var(--c-muted); white-space: nowrap; }
+
+  .pp-panel { padding: 0 1.25rem 1.25rem; }
+  .pp-head { display: none; }
+  .pp-list { margin: 0; padding: 0; list-style: none; }
+  .pp-row { display: grid; gap: .375rem; padding: .875rem 0; border-bottom: 1px solid var(--c-line); }
+  /* Móvil: modelo arriba; marca y norma en una sola línea debajo */
+  @media (max-width: 767px) { .pp-row { grid-template-columns: auto minmax(0, 1fr); column-gap: .75rem; align-items: center; } .pp-model { grid-column: 1 / -1; } .pp-brand { font-size: .8125rem; } }
+  @media (min-width: 768px) {
+    .pp-head, .pp-row { grid-template-columns: minmax(0, 1fr) 10rem 13rem; column-gap: 1.5rem; }
+    .pp-head { display: grid; padding: .75rem 0 .5rem; font-size: .6875rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--c-muted); border-bottom: 1px solid var(--c-line); }
+    .pp-row { align-items: start; }
+  }
+  .pp-name { font-size: .9375rem; font-weight: 600; line-height: 1.35; color: var(--c-ink); text-decoration: none; transition: color .15s; }
+  .pp-name:hover, .pp-name:focus-visible { color: var(--c-accent); text-decoration: underline; text-underline-offset: 3px; }
+  .pp-badge { display: inline-block; margin-left: .5rem; padding: .125rem .5rem; font-size: .6875rem; font-weight: 600; line-height: 1.4; letter-spacing: 0; color: var(--c-ink-2); background: var(--c-bg-alt); border: 1px solid var(--c-line); border-radius: 4px; vertical-align: .125rem; }
+  .pp-desc { margin: .25rem 0 0; font-size: .8125rem; line-height: 1.55; color: var(--c-text-2); }
+  .pp-brand { font-size: .875rem; font-weight: 500; color: var(--c-ink-2); padding-top: .0625rem; }
+  .pp-norm .badge { white-space: normal; line-height: 1.35; }
+  .pp-foot { display: flex; justify-content: flex-end; padding-top: 1rem; }
+  @media (max-width: 639px) { .pp-foot .btn { width: 100%; justify-content: center; white-space: normal; text-align: center; } .pp-sum { flex-wrap: wrap; } .pp-sum::after { margin-left: 0; width: 100%; } }
+</style>

@@ -1,0 +1,120 @@
+---
+/**
+ * Barra lateral de /productos/ — navegación fija del catálogo (Frank, 2026-09-30).
+ * Bloques: «En esta página» (anclas con scroll-spy) · una lista por familia de
+ * src/data/catalogo.ts · caja de cotización. Sin íconos ni animaciones: sólo
+ * cambian color, fondo y borde de los enlaces.
+ * En escritorio es sticky y siempre abierta; en móvil es un <details> plegado.
+ */
+import { catalogo } from '@data/catalogo';
+import { allCategories } from '@data/categories';
+import { whatsappUrl, CANAL_CONTACTO } from '@config/site';
+
+export interface Props {
+  secciones: { id: string; label: string }[];
+}
+const { secciones } = Astro.props;
+
+// Categorías con página propia que no son línea de catalogo.ts
+const EXTRA: Record<string, string[]> = { 'equipo-bomberos': ['drones-emergencia'] };
+const familias = catalogo.map((f) => ({
+  slug: f.slug,
+  label: f.eyebrow,
+  links: [
+    ...f.lineas.map((l) => ({ label: l.titulo, href: l.href })),
+    ...(EXTRA[f.slug] ?? [])
+      .map((s) => allCategories.find((c) => c.slug === s))
+      .filter(Boolean)
+      .map((c) => ({ label: c!.label, href: `/productos/${c!.slug}/` })),
+  ],
+  hub: f.hub,
+}));
+---
+
+<aside class="pc-side" aria-label="Navegación del catálogo">
+  <details class="pc-nav" open data-pc-nav>
+    <summary class="pc-sum">Navegar el catálogo</summary>
+
+    <div class="pc-nav-body">
+      <nav class="pc-block" aria-label="En esta página">
+        <p class="pc-label">En esta página</p>
+        <ul class="pc-list" role="list">
+          {secciones.map((s) => <li><a href={`#${s.id}`} class="pc-link" data-spy={s.id}>{s.label}</a></li>)}
+        </ul>
+      </nav>
+
+      {familias.map((f) => (
+        <nav class="pc-block" aria-label={f.label}>
+          <p class="pc-label">{f.label}</p>
+          <ul class="pc-list" role="list">
+            {f.links.map((l) => <li><a href={l.href} class="pc-link">{l.label}</a></li>)}
+            <li><a href={f.hub.href} class="pc-link pc-link--hub">{f.hub.label}</a></li>
+          </ul>
+        </nav>
+      ))}
+
+      <div class="pc-quote">
+        <p class="pc-quote-title">Cotiza tu equipo</p>
+        <p class="pc-quote-text">Envíanos tu lista, las bases de tu licitación o una foto del equipo a renovar.</p>
+        <a href={whatsappUrl('Hola, quiero cotizar equipo del catálogo.')} target="_blank" rel="noopener" class="btn btn-primary pc-btn">Cotizar por {CANAL_CONTACTO}</a>
+        <a href="/cotizacion/" class="btn btn-ghost pc-btn">Cotización formal</a>
+      </div>
+    </div>
+  </details>
+</aside>
+
+<script>
+  const nav = document.querySelector<HTMLDetailsElement>('[data-pc-nav]');
+  if (nav) {
+    const mq = window.matchMedia('(min-width: 1024px)');
+    const sync = () => { nav.open = mq.matches; };
+    sync();
+    mq.addEventListener('change', sync);
+  }
+  // Scroll-spy: marca la sección visible (sin desplazamiento suave)
+  const links = Array.from(document.querySelectorAll<HTMLAnchorElement>('[data-spy]'));
+  const byId = new Map(links.map((a) => [a.dataset.spy!, a]));
+  const targets = links.map((a) => document.getElementById(a.dataset.spy!)).filter((el): el is HTMLElement => !!el);
+  if ('IntersectionObserver' in window && targets.length) {
+    const visibles = new Set<string>();
+    const pintar = () => {
+      const activo = targets.find((t) => visibles.has(t.id))?.id;
+      links.forEach((a) => (a.dataset.spy === activo ? a.setAttribute('aria-current', 'true') : a.removeAttribute('aria-current')));
+    };
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => (e.isIntersecting ? visibles.add(e.target.id) : visibles.delete(e.target.id)));
+      pintar();
+    }, { rootMargin: '-35% 0px -55% 0px' });
+    targets.forEach((t) => io.observe(t));
+  }
+</script>
+
+<style>
+  .pc-side { min-width: 0; }
+  @media (min-width: 1024px) {
+    .pc-side { position: sticky; top: calc(var(--header-height) + 1.5rem); max-height: calc(100vh - var(--header-height) - 3rem); overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; padding-right: .25rem; }
+  }
+
+  .pc-nav { border: 1px solid var(--c-line); border-radius: var(--radius-card); background: var(--c-surface); }
+  @media (min-width: 1024px) { .pc-nav { border: 0; background: transparent; } }
+  .pc-sum { display: flex; align-items: center; justify-content: space-between; min-height: 3rem; padding: .75rem 1rem; font-size: .9375rem; font-weight: 600; color: var(--c-ink); cursor: pointer; list-style: none; }
+  .pc-sum::-webkit-details-marker { display: none; }
+  .pc-sum::after { content: "Mostrar"; font-size: .8125rem; font-weight: 500; color: var(--c-accent); }
+  .pc-nav[open] .pc-sum::after { content: "Ocultar"; }
+  @media (min-width: 1024px) { .pc-sum { display: none; } }
+  .pc-nav-body { display: flex; flex-direction: column; gap: 1.75rem; padding: 0 1rem 1rem; }
+  @media (min-width: 1024px) { .pc-nav-body { padding: 0; } }
+
+  .pc-label { margin: 0 0 .5rem; font-size: .6875rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--c-muted); }
+  .pc-list { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--c-line); }
+  .pc-list li { border-bottom: 1px solid var(--c-line); }
+  .pc-link { display: flex; align-items: center; min-height: 2.375rem; padding: .4375rem .625rem; font-size: .875rem; font-weight: 500; line-height: 1.3; color: var(--c-ink-2); text-decoration: none; border-left: 2px solid transparent; transition: color .15s, background-color .15s, border-color .15s; }
+  .pc-link:hover, .pc-link:focus-visible, .pc-link[aria-current] { color: var(--c-accent); background: var(--c-bg-alt); border-left-color: var(--c-accent); }
+  .pc-link[aria-current] { font-weight: 600; }
+  .pc-link--hub { font-weight: 600; color: var(--c-ink); }
+
+  .pc-quote { display: flex; flex-direction: column; gap: .625rem; padding: 1.25rem; background: var(--c-bg-alt); border: 1px solid var(--c-line); border-radius: var(--radius-card); }
+  .pc-quote-title { margin: 0; font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--c-ink); }
+  .pc-quote-text { margin: 0 0 .25rem; font-size: .8125rem; line-height: 1.55; color: var(--c-text-2); }
+  .pc-btn { width: 100%; justify-content: center; text-align: center; white-space: normal; }
+</style>
