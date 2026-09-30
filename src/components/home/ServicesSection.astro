@@ -1,10 +1,12 @@
 ---
 /**
- * Servicios numerados 01–06 — lista editorial estilo"ledger".
+ * Servicios de la portada — cards estándar del sitio (LineaCard): imagen · norma ·
+ * título · texto · conceptos incluidos (enlazan a su ancla) · botón principal.
  * Fuente de datos: src/data/services.ts
  */
 import { services } from '@data/services';
-import CardMedia from '@components/common/CardMedia.astro';
+import LineaCard from '@components/products/LineaCard.astro';
+import { slugify } from '@lib/slug';
 ---
 
 <section class="home-deferred-section section" style="background:var(--c-bg-alt)" aria-labelledby="services-title">
@@ -32,34 +34,43 @@ import CardMedia from '@components/common/CardMedia.astro';
       </div>
     </div>
 
-    <!-- Lista numerada -->
-    <ol class="card-grid card-grid--cells list-none m-0 p-0" >
-      {services.map((s, i) => (
-        <li class="m-0 p-0" style="background:var(--c-bg-alt)">
-          <a
-            href={s.href}
-            class="service-row group flex flex-col gap-5 p-6 lg:p-7"
-            style="background:var(--c-bg-alt);height:100%"
-          >
-            <CardMedia src={s.spotlight?.image ?? `/images/servicios/${s.slug}.avif`} alt={s.spotlight?.imageAlt ?? s.title} />
-            <span class="flex items-start gap-5">
-            <span class="font-display font-bold text-2xl shrink-0 group-hover:text-[var(--c-accent)]" style="color:var(--c-muted);min-width:2.5rem" aria-hidden="true">
-              
-            </span>
-            <span class="flex flex-col gap-1.5 flex-1">
-              <span class="font-display font-bold text-lg leading-tight group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{s.title}</span>
-              <span class="text-sm leading-relaxed" style="color:var(--c-muted)">{s.shortDesc}</span>
-            </span>
-            
-            </span>
-          </a>
-        </li>
-      ))}
-    </ol>
+    <!-- Cards de servicio: misma pieza que el catálogo (LineaCard) -->
+    <ul class="card-grid sv-grid" role="list">
+      {services.map((s, i) => {
+        const base = s.href.endsWith('/') ? s.href : `${s.href}/`;
+        // Fila final incompleta (4 por fila): sus cards se ensanchan y pasan a formato horizontal.
+        const n = services.length, r = n % 4, enUltimaFila = r > 0 && i >= n - r;
+        const ancho = !enUltimaFila ? '' : r === 1 ? 'sv-span-4' : r === 2 ? 'sv-span-2' : (i === n - r ? 'sv-span-2' : '');
+        return (
+          <li class={ancho || undefined}>
+            <LineaCard
+              href={base}
+              norma={s.norm}
+              titulo={s.title}
+              texto={s.shortDesc}
+              imagen={s.spotlight?.image ?? `/images/servicios/${s.slug}.avif`}
+              imagenAlt={s.spotlight?.imageAlt ?? s.title}
+              hijas={s.items.map((it) => ({ label: it.name, href: `${base}#incluye-${slugify(it.name)}` }))}
+              cta={s.cta}
+              nivel="h3"
+              subLabel="Qué incluye"
+            />
+          </li>
+        );
+      })}
+    </ul>
 
   </div>
 </section>
 
 <style>
-  .service-row:hover { background: var(--c-surface) !important; }
+  .sv-grid { margin: 0; padding: 0; list-style: none; }
+  @media (min-width: 1024px) {
+    .sv-span-2 { grid-column: span 2; }
+    .sv-span-4 { grid-column: span 4; }
+    .sv-span-2 :global(.lc), .sv-span-4 :global(.lc) { flex-direction: row; }
+    .sv-span-2 :global(.lc-media), .sv-span-4 :global(.lc-media) { flex: 0 0 46%; aspect-ratio: auto; min-height: 100%; }
+    .sv-span-4 :global(.lc-media) { flex-basis: 40%; }
+    .sv-span-2 :global(.lc-body), .sv-span-4 :global(.lc-body) { padding: 1.5rem; }
+  }
 </style>

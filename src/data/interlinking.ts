@@ -62,14 +62,14 @@ export const interlinking: Record<string, NodoRel> = {
   '/servicios/auditoria-seguridad/': { hermanas: [instalacion, mantenimiento], industrias: [industria('brigadas-industriales', 'Auditoría para brigadas industriales')], guias: [nomGuia], marcas: [senalizacion, senalamientos, lamparas, botiquines] },
   '/servicios/brigadas-empresariales/': { hermanas: [capacitacion, auditoria], industrias: [industria('brigadas-industriales', 'Brigadas industriales')], guias: [nomGuia], marcas: [senalizacion, senalamientos, lamparas, botiquines] },
   '/servicios/licitaciones/': { hermanas: [instalacion, mantenimiento], industrias: [industria('proteccion-civil', 'Compras para Protección Civil')], guias: [nomGuia] },
-  '/industrias/bomberos-municipales/': { hermanas: [industria('proteccion-civil', 'Equipo para Protección Civil')], servicios: [servicio('capacitacion', 'Capacitación contra incendio')], marcas: [producto('trajes-bombero', 'Trajes para bomberos NFPA'), producto('equipos-scba', 'Equipos SCBA'), detectoresGas, marca('flir-teledyne', 'Teledyne FLIR'), marca('lion-apparel', 'Lion Apparel'), marca('cairns-helmets', 'Cairns')] },
-  '/industrias/brigadas-industriales/': { hermanas: [industria('proteccion-civil', 'Equipo para Protección Civil')], servicios: [capacitacion, auditoria], marcas: [sistemas, senalizacion, senalamientos, lamparas, botiquines] },
-  '/industrias/aeropuertos-arff/': { hermanas: [industria('bomberos-municipales', 'Equipo para bomberos municipales')], servicios: [servicio('capacitacion', 'Capacitación contra incendio')], marcas: [producto('trajes-bombero', 'Trajes para bomberos NFPA'), marca('rosenbauer', 'Rosenbauer')] },
+  '/industrias/bomberos-municipales/': { guias: [guia('como-equipar-estacion-bomberos-desde-cero', 'Cómo equipar una estación de bomberos desde cero'), guia('guia-compra-equipo-bomberos-nfpa-mexico-2026', 'Guía de compra de equipo para bomberos NFPA')], hermanas: [industria('proteccion-civil', 'Equipo para Protección Civil')], servicios: [servicio('capacitacion', 'Capacitación contra incendio')], marcas: [producto('trajes-bombero', 'Trajes para bomberos NFPA'), producto('equipos-scba', 'Equipos SCBA'), detectoresGas, marca('flir-teledyne', 'Teledyne FLIR'), marca('lion-apparel', 'Lion Apparel'), marca('cairns-helmets', 'Cairns')] },
+  '/industrias/brigadas-industriales/': { guias: [guia('epp-brigadista-contra-incendio-que-necesitas', 'EPP del brigadista contra incendio'), guia('cuantos-brigadistas-nom-002-dimensionamiento', 'Cuántos brigadistas exige la NOM-002')], hermanas: [industria('proteccion-civil', 'Equipo para Protección Civil')], servicios: [capacitacion, auditoria], marcas: [sistemas, senalizacion, senalamientos, lamparas, botiquines] },
+  '/industrias/aeropuertos-arff/': { guias: [guia('traje-de-aproximacion-aluminizado-bomberos', 'Traje de aproximación aluminizado')], hermanas: [industria('bomberos-municipales', 'Equipo para bomberos municipales')], servicios: [servicio('capacitacion', 'Capacitación contra incendio')], marcas: [producto('trajes-bombero', 'Trajes para bomberos NFPA'), marca('rosenbauer', 'Rosenbauer')] },
   '/industrias/hospitales/': { hermanas: [industria('hoteles', 'Sistemas contra incendio para hoteles')], servicios: [instalacion, mantenimiento, auditoria], guias: [deteccionGuia, nomGuia], marcas: [alarma, notifier, tyco, rociadores, bombas, hidrantes, tipoK] },
-  '/industrias/hoteles/': { hermanas: [industria('hospitales', 'Sistemas contra incendio para hospitales')], servicios: [instalacion, mantenimiento], guias: [deteccionGuia], marcas: [alarma, tyco, rociadores, bombas, hidrantes, tipoK] },
-  '/industrias/refinerias-pemex/': { hermanas: [industria('mineria', 'Protección contra incendio para minería')], servicios: [instalacion, servicio('capacitacion', 'Capacitación contra incendio')], marcas: [agentes, producto('hazmat', 'Equipos HAZMAT'), detectoresGas, bombas, hidrantes] },
-  '/industrias/mineria/': { hermanas: [industria('refinerias-pemex', 'Protección para refinerías')], servicios: [servicio('capacitacion', 'Capacitación contra incendio'), mantenimiento], marcas: [producto('herramientas-rescate', 'Herramientas de rescate'), detectoresGas] },
-  '/industrias/proteccion-civil/': { hermanas: [industria('bomberos-municipales', 'Equipo para bomberos municipales')], servicios: [capacitacion, servicio('licitaciones', 'Soporte para licitaciones')], marcas: [sistemas, senalizacion, senalamientos, lamparas, botiquines, marca('dji-enterprise', 'DJI Enterprise')] },
+  '/industrias/hoteles/': { hermanas: [industria('hospitales', 'Sistemas contra incendio para hospitales')], servicios: [instalacion, mantenimiento], guias: [deteccionGuia, guia('incendios-en-cocinas-comerciales-prevencion-extintor-k', 'Incendios en cocinas comerciales y extintor tipo K')], marcas: [alarma, tyco, rociadores, bombas, hidrantes, tipoK] },
+  '/industrias/refinerias-pemex/': { guias: [guia('niveles-proteccion-hazmat-epa-abc', 'Niveles de protección HAZMAT EPA A, B y C'), guia('licitaciones-equipo-contra-incendio-mexico-nom-nfpa', 'Licitaciones de equipo contra incendio')], hermanas: [industria('mineria', 'Protección contra incendio para minería')], servicios: [instalacion, servicio('capacitacion', 'Capacitación contra incendio')], marcas: [agentes, producto('hazmat', 'Equipos HAZMAT'), detectoresGas, bombas, hidrantes] },
+  '/industrias/mineria/': { guias: [guia('detectores-gas-bomberos-msa-industrial-scientific-draeger', 'Detectores de gas para bomberos y brigadas')], hermanas: [industria('refinerias-pemex', 'Protección para refinerías')], servicios: [servicio('capacitacion', 'Capacitación contra incendio'), mantenimiento], marcas: [producto('herramientas-rescate', 'Herramientas de rescate'), detectoresGas] },
+  '/industrias/proteccion-civil/': { guias: [guia('simulacro-incendio-stps-como-documentarlo', 'Cómo documentar un simulacro de incendio'), guia('licitaciones-equipo-contra-incendio-mexico-nom-nfpa', 'Licitaciones de equipo contra incendio')], hermanas: [industria('bomberos-municipales', 'Equipo para bomberos municipales')], servicios: [capacitacion, servicio('licitaciones', 'Soporte para licitaciones')], marcas: [sistemas, senalizacion, senalamientos, lamparas, botiquines, marca('dji-enterprise', 'DJI Enterprise')] },
   '/blog/tipos-de-extintores-mexico/': { hermanas: [guia('nom-002-stps-guia-completa', 'Guía NOM-002-STPS-2010')], servicios: [mantenimiento], marcas: [producto('extintores', 'Extintores para cada clase de fuego'), tipoK], guias: [co2('extintor-co2-2-3kg', 'Extintor CO₂ 2–3 kg'), co2('extintor-co2-4-5kg', 'Extintor CO₂ 4–5 kg'), co2('extintor-co2-6-8kg', 'Extintor CO₂ 6–8 kg'), co2('extintor-co2-9kg', 'Extintor CO₂ 9 kg'), co2('extintor-co2-10kg', 'Extintor CO₂ 10 kg'), co2('extintor-co2-15kg', 'Extintor CO₂ 15 kg')] },
   '/blog/nom-002-stps-guia-completa/': { hermanas: [guia('tipos-de-extintores-mexico', 'Tipos de extintores en México'), deteccionGuia], servicios: [auditoria, instalacion], industrias: [industria('brigadas-industriales', 'Cumplimiento para brigadas industriales')], marcas: [alarma, sistemas, rociadores, bombas, hidrantes, senalizacion, senalamientos, lamparas, botiquines] },
   '/blog/deteccion-alarma-supresion-nfpa-72-2001/': { hermanas: [nomGuia], servicios: [instalacion, mantenimiento], industrias: [industria('hospitales', 'Sistemas para hospitales'), industria('hoteles', 'Sistemas para hoteles')], marcas: [alarma, notifier, agentes] },
@@ -80,8 +80,54 @@ const normalizar = (ruta: string) => {
   return sinDominio === '/' ? '/' : `${sinDominio.replace(/\/+$/, '')}/`;
 };
 
+/**
+ * Nodo de la ruta o, si no tiene uno propio, el de su ancestro más cercano dentro
+ * de /productos/ (las fichas de modelo heredan el nodo de su línea o categoría:
+ * productos hermanos, servicios, industrias, guías y marcas). Interlinking 2026-09-30.
+ */
+export function nodoDe(ruta: string): NodoRel | undefined {
+  let actual = normalizar(ruta);
+  if (interlinking[actual]) return interlinking[actual];
+  if (!actual.startsWith('/productos/')) return undefined;
+  while (actual.split('/').filter(Boolean).length > 2) {
+    actual = `/${actual.split('/').filter(Boolean).slice(0, -1).join('/')}/`;
+    if (interlinking[actual]) return interlinking[actual];
+  }
+  return undefined;
+}
+
+/* Marca del producto (campo `brand` de products.ts) → página /marcas/{slug}/.
+   Sólo marcas con página propia cuyo contenido cubre esa línea; las líneas
+   genéricas (PQS ABC, CO2, Red Hidráulica…) y las marcas sin página no enlazan. */
+const MARCA_POR_BRAND: Record<string, { slug: string; label: string }> = {
+  'MSA Safety': { slug: 'msa-safety', label: 'MSA Safety' },
+  Bullard: { slug: 'bullard', label: 'Bullard' },
+  'Dräger': { slug: 'drager', label: 'Dräger' },
+  Kidde: { slug: 'kidde-utc', label: 'Kidde Fenwal' },
+  'Kidde Fenwal': { slug: 'kidde-utc', label: 'Kidde Fenwal' },
+  Cairns: { slug: 'cairns-helmets', label: 'Cairns Helmets' },
+  'Tyco Viking': { slug: 'tyco-johnson-controls', label: 'Tyco / Johnson Controls' },
+  'Honeywell Notifier': { slug: 'honeywell', label: 'Honeywell Notifier' },
+  Honeywell: { slug: 'honeywell', label: 'Honeywell' },
+  'Lion Apparel': { slug: 'lion-apparel', label: 'Lion Apparel' },
+  Lion: { slug: 'lion-apparel', label: 'Lion Apparel' },
+  'Globe Manufacturing': { slug: 'globe-manufacturing', label: 'Globe Manufacturing' },
+  Holmatro: { slug: 'holmatro', label: 'Holmatro' },
+  FLIR: { slug: 'flir-teledyne', label: 'FLIR / Teledyne' },
+  'DJI Enterprise': { slug: 'dji-enterprise', label: 'DJI Enterprise' },
+  Rosenbauer: { slug: 'rosenbauer', label: 'Rosenbauer' },
+  Ansul: { slug: 'ansul', label: 'Ansul' },
+  NAFFCO: { slug: 'naffco', label: 'NAFFCO' },
+  '3M Scott': { slug: '3m-scott', label: '3M Scott' },
+};
+export const marcaDeBrand = (brand?: string): EnlaceRel | undefined => {
+  const m = brand ? MARCA_POR_BRAND[brand] : undefined;
+  return m ? { href: `/marcas/${m.slug}/`, label: m.label } : undefined;
+};
+export const marcasConPagina = () => [...new Set(Object.values(MARCA_POR_BRAND).map((m) => m.slug))];
+
 export function relacionados(ruta: string): EnlaceRel[] {
-  const nodo = interlinking[normalizar(ruta)];
+  const nodo = nodoDe(ruta);
   if (!nodo) return [];
   const vistos = new Set<string>();
   return [nodo.hermanas, nodo.servicios, nodo.industrias, nodo.guias, nodo.marcas]

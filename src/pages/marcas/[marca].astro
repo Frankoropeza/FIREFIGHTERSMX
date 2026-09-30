@@ -20,7 +20,9 @@ import type { GetStaticPaths } from 'astro';
 import { featuredProducts, fabricanteDe } from '@data/products';
 import { brandPages } from '@data/brandPages';
 import RelatedLinks from '@components/common/RelatedLinks.astro';
-import { giroDeCategoria } from '@lib/enlaces-directorio';
+import { giroDeCategoria, guiasPorCategoria, BLOG_POR_CATEGORIA } from '@lib/enlaces-directorio';
+import { nodoDe, marcaDeBrand } from '@data/interlinking';
+import { allCategories } from '@data/categories';
 
 export const getStaticPaths = (() => {
   return brands.map((brand) => ({
@@ -33,6 +35,24 @@ const { brand } = Astro.props;
 /* Giro del directorio según la primera categoría de la marca (equipo para bomberos si no mapea). */
 const giroMarca = giroDeCategoria(brand.categoryLinks[0] ?? '') ?? 'venta-equipo';
 const canonicalURL = `${SITE.url}/marcas/${brand.slug}/`;
+
+/* ── Interlinking 2026-09-30: la marca enlaza a sus categorías reales (derivadas de los
+   productos del catálogo con esa marca), a los servicios e industrias de esas categorías
+   y a guías del blog de las mismas. Antes sólo enlazaba al directorio. */
+const catsMarca = [...new Set([
+  ...featuredProducts
+    .filter((p) => marcaDeBrand(p.brand)?.href === `/marcas/${brand.slug}/`)
+    .map((p) => p.href.split('/').filter(Boolean)[1]),
+  ...brand.categoryLinks,
+].filter((c): c is string => !!c && allCategories.some((x) => x.slug === c)))];
+const nodosMarca = catsMarca.map((c) => nodoDe(`/productos/${c}/`)).filter((n) => !!n);
+const guiasMarca = await guiasPorCategoria(catsMarca.flatMap((c) => BLOG_POR_CATEGORIA[c] ?? []), brand.slug, 3);
+const enlacesMarca = [
+  ...catsMarca.map((c) => { const cat = allCategories.find((x) => x.slug === c)!; return { href: `/productos/${c}/`, label: cat.label }; }),
+  ...nodosMarca.flatMap((n) => [...(n!.servicios ?? []), ...(n!.industrias ?? [])]),
+  ...guiasMarca.map((post) => ({ href: `/blog/${post.id}/`, label: post.data.title })),
+  ...nodosMarca.flatMap((n) => n!.guias ?? []),
+];
 
 // ── SEO: title (≤60c) y description (≤160c) keyword-first ───────────
 // Patrón: "[Marca] en México | Distribuidor autorizado | VIGILES"
@@ -375,6 +395,6 @@ const waMsg = `Hola, quiero información sobre productos ${brand.name} que distr
     </div>
   </section>
 
-  <RelatedLinks ruta={`/marcas/${brand.slug}/`} titulo="Directorio de proveedores en México" giro={giroMarca} />
+  <RelatedLinks ruta={`/marcas/${brand.slug}/`} titulo={`${brand.name}: categorías, servicios y guías`} giro={giroMarca} enlacesExtra={enlacesMarca} incluirCobertura />
 
 </BaseLayout>
