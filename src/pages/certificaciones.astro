@@ -1,16 +1,212 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
+import LineaCard from '@components/products/LineaCard.astro';
+import L2Sidebar from '@components/l2/L2Sidebar.astro';
+import L2Guia from '@components/l2/L2Guia.astro';
+import L2Cotizar from '@components/l2/L2Cotizar.astro';
+import { bloqueCategorias, bloqueMarcas, bloqueIndustrias, bloqueServicios, bloqueGuias, anchoFila, type L2Link } from '@lib/l2';
+import '@styles/l2.css';
 import { SITE, whatsappUrl, CANAL_CONTACTO } from '@config/site';
 
 const canonicalURL = `${SITE.url}/certificaciones/`;
 
 const seoMeta = {
-  title: `Certificaciones NFPA y NOM — Equipo para Bomberos`,
+  title: `Certificaciones NFPA y NOM para Bomberos`,
   description:
     'Normas aplicables al equipo y al servicio: NFPA 1970, NFPA 1850, NFPA 1950, NOM-002-STPS, NOM-154-SCFI e ISO 9001. Qué regula cada una y cómo se acredita.',
   canonicalURL,
 };
+
+/* ─── Normas: 3 grupos, una tarjeta por norma ──────────────────────────
+   `href` = página que mejor responde a la norma (categoría o guía);
+   `hijas` = equipo y guías relacionados (lista índice de la tarjeta). */
+const P = '/images/blog/portadas/';
+const C = '/images/catalogo/';
+
+interface Norma {
+  norm: string; title: string; desc: string; href: string; cta: string;
+  image: string; alt: string; hijas: { label: string; href: string }[];
+}
+interface Grupo { id: string; eyebrow: string; h2: string; lead: string; items: Norma[] }
+
+const grupos: Grupo[] = [
+  {
+    id: 'normas-epp',
+    eyebrow: 'Protección personal',
+    h2: 'Normas NFPA de protección personal para bomberos',
+    lead: 'Regulan el conjunto estructural, el equipo de respiración autónoma, su cuidado y los trajes para incendios forestales y materiales peligrosos.',
+    items: [
+      {
+        norm: 'NFPA 1970', title: 'Conjuntos de protección estructural',
+        desc: 'Standard on Protective Ensembles for Structural and Proximity Fire Fighting. Desde 2024 consolida la antigua NFPA 1971.',
+        href: '/productos/trajes-bombero/', cta: 'Trajes de bombero NFPA 1970',
+        image: `${C}trajes-bombero.avif`, alt: 'Traje estructural de bombero certificado NFPA 1970',
+        hijas: [
+          { label: 'Cascos de bombero NFPA', href: '/productos/cascos-nfpa/' },
+          { label: 'NFPA 1970: la nueva norma de trajes', href: '/blog/nfpa-1970-nueva-norma-trajes-bombero/' },
+          { label: 'Cómo elegir un traje de bombero NFPA', href: '/blog/como-elegir-traje-bombero-nfpa/' },
+          { label: 'Protección térmica TPP y THL', href: '/blog/tpp-thl-trajes-bombero-nfpa/' },
+        ],
+      },
+      {
+        norm: 'NFPA 1970', title: 'Equipos de respiración SCBA',
+        desc: 'Equipo de aire autónomo de circuito abierto para servicios de emergencia. Desde 2024 dentro de la NFPA 1970 (antes NFPA 1981).',
+        href: '/productos/equipos-scba/', cta: 'Equipos SCBA certificados NFPA',
+        image: `${C}equipos-scba.avif`, alt: 'Equipo de respiración autónoma SCBA certificado NFPA',
+        hijas: [
+          { label: 'Guía de compra de SCBA', href: '/blog/guia-compra-scba-equipos-respiracion-autonoma/' },
+          { label: 'Prueba hidrostática de cilindros', href: '/blog/prueba-hidrostatica-cilindros-scba-nfpa/' },
+          { label: 'Cilindros de fibra de carbono o acero', href: '/blog/cilindros-scba-fibra-carbono-vs-acero/' },
+          { label: 'MSA G1 frente a Dräger PSS 7000', href: '/blog/msa-g1-vs-drager-pss7000-scba/' },
+        ],
+      },
+      {
+        norm: 'NFPA 1850', title: 'Selección, cuidado y mantenimiento',
+        desc: 'Norma de cuidado del conjunto estructural y SCBA. Consolidó la NFPA 1851 y 1852; vida útil máxima de 10 años.',
+        href: '/blog/inspeccion-cuidado-vida-util-traje-bombero/', cta: 'Cuidado y vida útil del traje NFPA 1850',
+        image: `${P}inspeccion-cuidado-vida-util-traje-bombero.avif`, alt: 'Inspección y cuidado de un traje estructural de bombero',
+        hijas: [
+          { label: 'Mantenimiento de equipo contra incendio', href: '/servicios/mantenimiento/' },
+          { label: 'Gabinete para almacenar el traje', href: '/blog/gabinete-para-traje-de-bombero-almacenamiento/' },
+          { label: 'Partes del traje de bombero', href: '/blog/partes-del-traje-de-bombero/' },
+        ],
+      },
+      {
+        norm: 'NFPA 1950', title: 'Trajes para incendios forestales',
+        desc: 'Protective Clothing and Equipment for Wildland Fire Fighting, para operaciones de vegetación e interfaz.',
+        href: '/blog/traje-forestal-bombero-nfpa-1950/', cta: 'Trajes forestales NFPA 1950',
+        image: `${P}traje-forestal-bombero-nfpa-1950.avif`, alt: 'Traje de bombero forestal conforme a NFPA 1950',
+        hijas: [
+          { label: 'Traje estructural, proximidad y forestal', href: '/blog/traje-estructural-proximidad-forestal-diferencias/' },
+          { label: 'Traje de aproximación aluminizado', href: '/blog/traje-de-aproximacion-aluminizado-bomberos/' },
+          { label: 'Trajes de bombero', href: '/productos/trajes-bombero/' },
+        ],
+      },
+      {
+        norm: 'NFPA 1990', title: 'Trajes HAZMAT',
+        desc: 'Equipos de protección para materiales peligrosos, Nivel A y Nivel B.',
+        href: '/productos/hazmat/', cta: 'Trajes HAZMAT NFPA 1990',
+        image: `${C}hazmat.avif`, alt: 'Traje de protección química para materiales peligrosos',
+        hijas: [
+          { label: 'Niveles de protección HAZMAT', href: '/blog/niveles-proteccion-hazmat-epa-abc/' },
+          { label: 'Tablas de permeación DuPont y Lakeland', href: '/blog/tablas-permeacion-dupont-lakeland-hazmat/' },
+          { label: 'Detectores de gas para bomberos', href: '/blog/detectores-gas-bomberos-msa-industrial-scientific-draeger/' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'normas-sistemas',
+    eyebrow: 'Sistemas y equipo técnico',
+    h2: 'Normas NFPA de sistemas, extintores y equipo técnico',
+    lead: 'Rociadores, alarma, extintores portátiles, cámaras térmicas y herramientas de rescate: el marco con el que se especifica, instala y recibe cada sistema.',
+    items: [
+      {
+        norm: 'NFPA 13', title: 'Sistemas de rociadores',
+        desc: 'Standard for the Installation of Sprinkler Systems.',
+        href: '/productos/sistemas-ci/', cta: 'Sistemas de rociadores NFPA 13',
+        image: `${C}rociadores.avif`, alt: 'Sistema de rociadores contra incendio conforme a NFPA 13',
+        hijas: [
+          { label: 'NFPA 13, 13R y 13D', href: '/blog/nfpa-13-vs-13r-vs-13d-rociadores/' },
+          { label: 'Memoria de cálculo hidráulico', href: '/blog/memoria-calculo-hidraulico-rociadores-nfpa-13/' },
+          { label: 'Instalación de sistemas contra incendio', href: '/servicios/instalacion-sistemas-ci/' },
+          { label: 'FM-200 o Novec 1230', href: '/blog/fm200-vs-novec-1230-agente-limpio/' },
+        ],
+      },
+      {
+        norm: 'NFPA 72', title: 'Sistemas de alarma',
+        desc: 'National Fire Alarm and Signaling Code.',
+        href: '/blog/deteccion-alarma-supresion-nfpa-72-2001/', cta: 'Detección y alarma NFPA 72',
+        image: `${C}deteccion-alarma.avif`, alt: 'Sistema de detección de humo y alarma contra incendio',
+        hijas: [
+          { label: 'Sistemas contra incendio', href: '/productos/sistemas-ci/' },
+          { label: 'Instalación de sistemas contra incendio', href: '/servicios/instalacion-sistemas-ci/' },
+          { label: 'Auditoría de seguridad contra incendio', href: '/servicios/auditoria-seguridad/' },
+        ],
+      },
+      {
+        norm: 'NFPA 10', title: 'Extintores portátiles',
+        desc: 'Standard for Portable Fire Extinguishers: selección, instalación, inspección y mantenimiento de extintores.',
+        href: '/productos/extintores/', cta: 'Extintores certificados NFPA 10',
+        image: `${C}extintores.avif`, alt: 'Extintores portátiles certificados',
+        hijas: [
+          { label: 'Tipos de extintores en México', href: '/blog/tipos-de-extintores-mexico/' },
+          { label: 'PQS ABC, CO₂ y tipo K', href: '/blog/pqs-abc-vs-co2-vs-tipo-k-extintores/' },
+          { label: 'Recepción de extintores nuevos', href: '/blog/recepcion-de-extintores-nuevos-checklist/' },
+          { label: 'Mantenimiento y recarga', href: '/servicios/mantenimiento/' },
+        ],
+      },
+      {
+        norm: 'NFPA 1801', title: 'Cámaras térmicas',
+        desc: 'Standard on Thermal Imagers for the Fire Service: desempeño de las cámaras térmicas de mano para bomberos.',
+        href: '/productos/camaras-termicas/', cta: 'Cámaras térmicas NFPA 1801',
+        image: `${C}camaras-termicas.avif`, alt: 'Cámara térmica para bomberos conforme a NFPA 1801',
+        hijas: [
+          { label: 'NFPA 1801 en cámaras térmicas', href: '/blog/nfpa-1801-camaras-termicas-bomberos/' },
+          { label: 'FLIR, MSA y Bullard', href: '/blog/flir-vs-msa-vs-bullard-camaras-termicas/' },
+        ],
+      },
+      {
+        norm: 'NFPA 1936', title: 'Herramientas de rescate',
+        desc: 'Standard on Powered Rescue Tool Systems: herramientas hidráulicas de excarcelación y rescate.',
+        href: '/productos/herramientas-rescate/', cta: 'Herramientas de rescate NFPA 1936',
+        image: `${C}herramientas-rescate.avif`, alt: 'Herramienta hidráulica de rescate y excarcelación',
+        hijas: [
+          { label: 'NFPA 1936 y excarcelación', href: '/blog/nfpa-1936-herramientas-rescate-excarcelacion/' },
+          { label: 'Holmatro frente a Lukas', href: '/blog/holmatro-vs-lukas-herramientas-rescate/' },
+          { label: 'Holmatro, Hurst y Weber', href: '/blog/herramientas-hidraulicas-rescate-holmatro-hurst-weber/' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'normas-mexicanas',
+    eyebrow: 'Normas mexicanas y calidad',
+    h2: 'NOM e ISO 9001: cumplimiento en centros de trabajo y servicio',
+    lead: 'Lo que audita la STPS en un centro de trabajo, cómo se regula el servicio de extintores y qué respalda la calidad del proceso.',
+    items: [
+      {
+        norm: 'NOM-002-STPS-2010', title: 'Norma mexicana principal',
+        desc: 'Condiciones de seguridad, prevención y protección contra incendios en centros de trabajo.',
+        href: '/blog/nom-002-stps-guia-completa/', cta: 'Guía de la NOM-002-STPS-2010',
+        image: `${P}nom-002-stps-guia-completa.avif`, alt: 'Planta industrial con medidas de protección contra incendio NOM-002-STPS',
+        hijas: [
+          { label: 'Dotación de extintores', href: '/blog/nom-002-stps-dotacion-extintores/' },
+          { label: 'Brigadistas por centro de trabajo', href: '/blog/cuantos-brigadistas-nom-002-dimensionamiento/' },
+          { label: 'Expediente documental', href: '/blog/expediente-documental-nom-002-stps-checklist/' },
+          { label: 'No conformidades más frecuentes', href: '/blog/no-conformidades-stps-nom-002-plantas-mexico/' },
+        ],
+      },
+      {
+        norm: 'NOM-154-SCFI', title: 'Servicio de extintores',
+        desc: 'Servicio de mantenimiento y recarga de extintores portátiles en México.',
+        href: '/blog/collar-garantia-extintores-nom-154/', cta: 'Collar de garantía NOM-154',
+        image: `${P}collar-garantia-extintores-nom-154.avif`, alt: 'Collar de garantía de servicio en un extintor',
+        hijas: [
+          { label: 'Cómo elegir un servicio de recarga', href: '/blog/elegir-servicio-de-recarga-de-extintores/' },
+          { label: 'Recepción de extintores nuevos', href: '/blog/recepcion-de-extintores-nuevos-checklist/' },
+          { label: 'Mantenimiento de equipo contra incendio', href: '/servicios/mantenimiento/' },
+        ],
+      },
+      {
+        norm: 'ISO 9001', title: 'Gestión de calidad',
+        desc: 'Certificación internacional de calidad en procesos de manufactura y servicio.',
+        href: '/empresa/', cta: 'Calidad y certificaciones de la empresa',
+        image: `${P}expediente-documental-nom-002-stps-checklist.avif`, alt: 'Carpetas de documentación de calidad y cumplimiento sobre un escritorio',
+        hijas: [
+          { label: 'Soporte para licitaciones', href: '/licitaciones/' },
+          { label: 'Auditoría de seguridad contra incendio', href: '/servicios/auditoria-seguridad/' },
+          { label: 'Conoce la empresa', href: '/empresa/' },
+        ],
+      },
+    ],
+  },
+];
+
+const totalNormas = grupos.reduce((a, g) => a + g.items.length, 0);
+
+/* ─── JSON-LD ──────────────────────────────────────────────── */
 
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
@@ -22,33 +218,65 @@ const breadcrumbSchema = {
   ],
 };
 
-const grupos = [
-  {
-    grupo: 'Equipo de protección personal (NFPA)',
-    eyebrow: 'Protección personal',
-    items: [
-      { norm: 'NFPA 1970', title: 'Conjuntos de protección estructural', desc: 'Standard on Protective Ensembles for Structural and Proximity Fire Fighting. Desde 2024 consolida la antigua NFPA 1971.' },
-      { norm: 'NFPA 1970', title: 'Equipos de respiración SCBA', desc: 'Equipo de aire autónomo de circuito abierto para servicios de emergencia. Desde 2024 dentro de la NFPA 1970 (antes NFPA 1981).' },
-      { norm: 'NFPA 1850', title: 'Selección, cuidado y mantenimiento', desc: 'Norma de cuidado del conjunto estructural y SCBA. Consolidó la NFPA 1851 y 1852; vida útil máxima de 10 años.' },
-      { norm: 'NFPA 1950', title: 'Trajes para incendios forestales', desc: 'Protective Clothing and Equipment for Wildland Fire Fighting, para operaciones de vegetación e interfaz.' },
-      { norm: 'NFPA 1990', title: 'Trajes HAZMAT', desc: 'Equipos de protección para materiales peligrosos, Nivel A y Nivel B.' },
-    ],
+const collectionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  '@id': `${canonicalURL}#collection`,
+  name: 'Normas NFPA, NOM e ISO aplicables al equipo contra incendio',
+  description: seoMeta.description,
+  url: canonicalURL,
+  inLanguage: 'es-MX',
+  isPartOf: { '@id': `${SITE.url}/#website` },
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: totalNormas,
+    itemListElement: grupos.flatMap((g) => g.items).map((n, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: `${n.norm} — ${n.title}`,
+      url: `${SITE.url}${n.href}`,
+    })),
   },
-  {
-    grupo: 'Sistemas y normas mexicanas',
-    eyebrow: 'Sistemas y NOM',
-    items: [
-      { norm: 'NFPA 13', title: 'Sistemas de rociadores', desc: 'Standard for the Installation of Sprinkler Systems.' },
-      { norm: 'NFPA 72', title: 'Sistemas de alarma', desc: 'National Fire Alarm and Signaling Code.' },
-      { norm: 'NOM-002-STPS-2010', title: 'Norma mexicana principal', desc: 'Condiciones de seguridad, prevención y protección contra incendios en centros de trabajo.' },
-      { norm: 'NOM-154-SCFI', title: 'Servicio de extintores', desc: 'Servicio de mantenimiento y recarga de extintores portátiles en México.' },
-      { norm: 'ISO 9001', title: 'Gestión de calidad', desc: 'Certificación internacional de calidad en procesos de manufactura y servicio.' },
-    ],
-  },
+};
+
+/* ─── Plantilla L2 (homologada con /productos/, 2026-10) ────────── */
+const secciones = [
+  ...grupos.map((g) => ({ id: g.id, label: g.eyebrow })),
+  { id: 'acreditacion', label: 'Cómo se acredita' },
+  { id: 'tu-norma', label: 'Tu norma' },
+];
+
+const GUIAS_NORMAS: L2Link[] = [
+  { label: 'NFPA 1970: la nueva norma de trajes', href: '/blog/nfpa-1970-nueva-norma-trajes-bombero/' },
+  { label: 'Cuidado y vida útil del traje (NFPA 1850)', href: '/blog/inspeccion-cuidado-vida-util-traje-bombero/' },
+  { label: 'Traje forestal NFPA 1950', href: '/blog/traje-forestal-bombero-nfpa-1950/' },
+  { label: 'NFPA 13, 13R y 13D en rociadores', href: '/blog/nfpa-13-vs-13r-vs-13d-rociadores/' },
+  { label: 'Detección y alarma NFPA 72', href: '/blog/deteccion-alarma-supresion-nfpa-72-2001/' },
+  { label: 'Guía NOM-002-STPS-2010', href: '/blog/nom-002-stps-guia-completa/' },
+  { label: 'Dotación de extintores NOM-002-STPS', href: '/blog/nom-002-stps-dotacion-extintores/' },
+  { label: 'Collar de garantía NOM-154', href: '/blog/collar-garantia-extintores-nom-154/' },
+  { label: 'Equivalencia NFPA de un traje fabricado en México', href: '/blog/traje-bombero-fabricado-mexico-equivalente-nfpa/' },
+  { label: 'Soporte para licitaciones', href: '/licitaciones/' },
+];
+
+const tambien = [
+  { label: 'Equipo para bomberos', desc: 'Equipo certificado por categoría', href: '/productos' },
+  { label: 'Blog: NFPA 1970, la nueva norma', desc: 'Qué cambió en trajes estructurales', href: '/blog/nfpa-1970-nueva-norma-trajes-bombero' },
+  { label: 'Soporte para licitaciones', desc: 'Manifiestos de norma por partida', href: '/licitaciones' },
+  { label: 'Industrias que atendemos', desc: 'La norma que rige cada sector', href: '/industrias' },
+  { label: 'Servicios profesionales', desc: 'Capacitación, mantenimiento, instalación y auditoría', href: '/servicios' },
+  { label: 'Volver a la empresa', desc: 'Visión general de VIGILES', href: '/empresa' },
+];
+
+const trustPoints = [
+  { title: 'Norma vigente', text: 'NFPA 1970 consolida las antiguas 1971 y 1981; NFPA 1850, la 1851 y 1852. Trabajamos con las ediciones actuales.' },
+  { title: 'Certificado por equipo', text: 'Cada equipo se entrega con su certificado de conformidad y su ficha técnica.' },
+  { title: 'Listo para auditoría', text: 'Manifiesto de cumplimiento para STPS, Protección Civil o tu expediente de licitación.' },
+  { title: 'Norma correcta por giro', text: 'Te decimos qué exige tu operación y qué equipo lo cumple, antes de cotizar.' },
 ];
 ---
 
-<BaseLayout {...seoMeta} schema={[breadcrumbSchema]}>
+<BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema]}>
 
   <!-- Breadcrumb -->
   <nav class="py-3" style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line)" aria-label="Breadcrumb">
@@ -101,77 +329,123 @@ const grupos = [
     </div>
   </section>
 
-  <!-- Accesos rápidos -->
+  <!-- Accesos rápidos (interlinking) -->
   <QuickLinksBar />
 
-  <!-- Grupos de normas -->
-  {grupos.map((g, gi) => (
-    <section class="section" style={`background:${gi % 2 === 0 ? 'var(--c-bg)' : 'var(--c-bg-alt)'}`} aria-label={g.grupo}>
-      <div class="container-site">
-        <div class="mb-10">
-          <span class="section-eyebrow mb-4 inline-flex">{g.eyebrow}</span>
-          <h2 class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">{g.grupo}</h2>
-        </div>
-        <div class="card-grid">
-          {g.items.map((cert) => (
-            <article class="norm-card flex flex-col gap-3 p-6" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
-              <span class="badge badge-fire w-fit">{cert.norm}</span>
-              <h3 class="font-display font-bold text-lg leading-tight" style="color:var(--c-ink)">{cert.title}</h3>
-              <p class="text-xs leading-relaxed" style="color:var(--c-muted)">{cert.desc}</p>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  ))}
-
-  <!-- CTA + cross-links -->
-  <section class="section" style="background:var(--c-bg)" aria-labelledby="cert-cross-title">
+  <!-- Pilares -->
+  <section class="section-tight" style="background:var(--c-bg-alt)" aria-labelledby="garantias-title">
     <div class="container-site">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-        <div>
-          <span class="section-eyebrow mb-4 inline-flex">¿Qué norma aplica?</span>
-          <h2 id="cert-cross-title" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
-            Te decimos exactamente<br/>
-            <span style="color:var(--c-accent)">qué exige tu giro.</span>
-          </h2>
-          <p class="text-sm leading-relaxed mb-8" style="color:var(--c-text-2)">
-            La norma correcta depende de tu operación: no es lo mismo un centro de trabajo bajo
-            NOM-002-STPS que un cuerpo de bomberos que exige NFPA 1970. Cuéntanos tu caso y te
-            mapeamos el marco aplicable y el equipo que lo cumple.
-          </p>
-          <a href={whatsappUrl('Hola, quiero saber qué normas aplican a mi operación.')} target="_blank" rel="noopener" class="btn btn-primary">Consultar por {CANAL_CONTACTO}</a>
-        </div>
-        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
-          <h2 class="font-display font-bold text-sm mb-5" style="color:var(--forge-300)">
-            También te puede servir
-          </h2>
-          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
-            {[
-              { label: 'Equipo para bomberos', desc: 'Equipo certificado por categoría', href: '/productos' },
-              { label: 'Blog: NFPA 1970, la nueva norma', desc: 'Qué cambió en trajes estructurales', href: '/blog/nfpa-1970-nueva-norma-trajes-bombero' },
-              { label: 'Soporte para licitaciones', desc: 'Manifiestos de norma por partida', href: '/licitaciones' },
-              { label: 'Industrias que atendemos', desc: 'La norma que rige cada sector', href: '/industrias' },
-              { label: 'Volver a la empresa', desc: 'Visión general de VIGILES', href: '/empresa' },
-            ].map((l) => (
-              <li style="border-bottom:1px solid var(--c-line)">
-                <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
-                  <span class="flex flex-col gap-0.5">
-                    <span class="font-display font-semibold text-sm group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{l.label}</span>
-                    <span class="text-xs" style="color:var(--c-muted)">{l.desc}</span>
-                  </span>
-                  
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
+      <h2 id="garantias-title" class="sr-only">Qué respalda cada certificación</h2>
+      <div class="l2-trust">
+        {trustPoints.map((t) => (
+          <div><h3>{t.title}</h3><p>{t.text}</p></div>
+        ))}
       </div>
     </div>
   </section>
 
-</BaseLayout>
+  <!-- Plantilla L2: columna principal + barra lateral -->
+  <div class="container-site l2-shell">
+    <L2Sidebar
+      resumen="Navegar las normas"
+      secciones={secciones}
+      bloques={[
+        bloqueGuias(GUIAS_NORMAS, `${totalNormas} normas · guías técnicas`),
+        bloqueCategorias(),
+        bloqueIndustrias(),
+        bloqueServicios(),
+        bloqueMarcas(),
+      ]}
+      cotizar={{ titulo: 'Consulta qué norma aplica', texto: 'Cuéntanos tu operación y te mapeamos el marco aplicable y el equipo que lo cumple.', msg: 'Hola, quiero saber qué normas aplican a mi operación.' }}
+    />
 
-<style>
-  .norm-card:hover { border-color: var(--c-line-strong) !important; }
-</style>
+    <div class="l2-main">
+
+      {grupos.map((g) => (
+        <section id={g.id} class="l2-sec" aria-labelledby={`${g.id}-title`}>
+          <header class="l2-sec-head">
+            <span class="section-eyebrow mb-4 inline-flex">{g.eyebrow}</span>
+            <h2 id={`${g.id}-title`} class="l2-h2">{g.h2}</h2>
+            <p class="l2-lead">{g.lead}</p>
+          </header>
+          <ul class="l2-grid" role="list">
+            {g.items.map((n, i) => (
+              <li class={anchoFila(i, g.items.length) || undefined}>
+                <LineaCard
+                  href={n.href}
+                  norma={n.norm}
+                  titulo={n.title}
+                  texto={n.desc}
+                  imagen={n.image}
+                  imagenAlt={n.alt}
+                  hijas={n.hijas}
+                  cta={n.cta}
+                  nivel="h3"
+                  subLabel="Equipo y guías relacionados"
+                />
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
+
+      <!-- Cómo se acredita -->
+      <section id="acreditacion" class="l2-sec" aria-labelledby="acreditacion-title">
+        <header class="l2-sec-head">
+          <span class="section-eyebrow mb-4 inline-flex">Cómo se acredita</span>
+          <h2 id="acreditacion-title" class="l2-h2">Cómo se acredita el cumplimiento de una norma NFPA y de una NOM</h2>
+          <p class="l2-lead">Una norma NFPA certifica el equipo; una NOM se verifica en el centro de trabajo. La evidencia que se pide es distinta en cada caso.</p>
+        </header>
+        <div class="l2-guias">
+          <L2Guia
+            id="acreditar-nfpa"
+            eyebrow="Normas NFPA"
+            title="Equipo certificado por"
+            highlight="un laboratorio de tercera parte"
+            paragraph="Las normas NFPA de producto (1970, 1950, 1990, 1801, 1936) se acreditan con la certificación de un laboratorio independiente y acreditado, no con la declaración del fabricante. Al comprar, lo que se pide es la evidencia de esa certificación."
+            subsections={[
+              { name: 'Certificado de conformidad', detail: 'Emitido por el organismo de certificación para el modelo y la edición de la norma que se cotiza.' },
+              { name: 'Etiqueta de certificación', detail: 'Cada pieza lleva marcada la norma y la edición bajo la que fue certificada.' },
+              { name: 'Ficha técnica', detail: 'Datos de desempeño y materiales que respaldan el cumplimiento de la norma.' },
+              { name: 'Vida útil y retiro', detail: 'La NFPA 1850 fija cuidado, inspección y un máximo de 10 años para conjuntos estructurales.' },
+            ]}
+            image={`${C}trajes-bombero.avif`}
+            imageAlt="Traje estructural de bombero con etiqueta de certificación NFPA"
+            cta={{ href: '/blog/nfpa-1970-nueva-norma-trajes-bombero/', label: 'Qué cambió con la NFPA 1970' }}
+            whatsappMsg="Hola, necesito el certificado de conformidad NFPA de un equipo."
+          />
+          <L2Guia
+            id="acreditar-nom"
+            eyebrow="Normas mexicanas"
+            title="Cumplimiento que se"
+            highlight="demuestra con evidencia documental"
+            paragraph="La NOM-002-STPS-2010 y la NOM-154-SCFI se verifican en la operación: la autoridad revisa que el centro de trabajo y el servicio cumplan, y pide los registros que lo respaldan."
+            subsections={[
+              { name: 'Expediente documental', detail: 'Plan de emergencia, registros de capacitación, simulacros y dotación de extintores ordenados para auditoría.' },
+              { name: 'Dotación de extintores', detail: 'Tipo y cantidad de extintores según el riesgo y el área del centro de trabajo.' },
+              { name: 'Servicio con collar de garantía', detail: 'El mantenimiento y la recarga conforme a la NOM-154-SCFI quedan identificados en el equipo.' },
+              { name: 'Verificación de la STPS', detail: 'Las no conformidades más comunes se corrigen antes de la visita, no después.' },
+            ]}
+            image={`${C}extintores.avif`}
+            imageAlt="Extintores del centro de trabajo con su identificación de servicio"
+            cta={{ href: '/blog/nom-002-stps-guia-completa/', label: 'Guía de cumplimiento NOM-002-STPS' }}
+            whatsappMsg="Hola, necesito apoyo para cumplir la NOM-002-STPS en mi centro de trabajo."
+          />
+        </div>
+      </section>
+
+      <!-- ¿Qué norma aplica? + cross-links -->
+      <L2Cotizar
+        id="tu-norma"
+        eyebrow="¿Qué norma aplica?"
+        titulo="Te decimos exactamente"
+        destacado="qué exige tu giro."
+        texto="La norma correcta depende de tu operación: no es lo mismo un centro de trabajo bajo NOM-002-STPS que un cuerpo de bomberos que exige NFPA 1970. Cuéntanos tu caso y te mapeamos el marco aplicable y el equipo que lo cumple."
+        cta={{ label: `Consultar por ${CANAL_CONTACTO}`, msg: 'Hola, quiero saber qué normas aplican a mi operación.' }}
+        tambien={tambien}
+      />
+
+    </div>
+  </div>
+
+</BaseLayout>
