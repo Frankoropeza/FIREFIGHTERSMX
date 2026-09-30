@@ -12,6 +12,8 @@ export interface Service {
   /** Ícono SVG inline */
   icon: string;
   href: string;
+  /** Texto del botón principal de la card (palabra clave, sin «ver»/«ir») */
+  cta: string;
   /** Párrafos de introducción SEO de la página del servicio */
   intro: string[];
   /** Qué incluye el servicio */
@@ -39,6 +41,7 @@ export const services: Service[] = [
     accent: '#C8102E',
     icon: ``,
     href: '/servicios/capacitacion',
+    cta: 'Capacitación contra incendio',
     intro: [
       'Una brigada solo responde como fue entrenada. Impartimos cursos teórico-prácticos con fuego real controlado, alineados a NOM-002-STPS-2010 y a los estándares NFPA 1001 y 1041, en tu planta, estación o en campo de entrenamiento.',
       'Toda formación entrega constancia DC-3 válida ante la STPS e IMSS, lista de asistencia firmada y reporte fotográfico — la evidencia documental exacta que pide el inspector en una revisión.',
@@ -80,6 +83,7 @@ export const services: Service[] = [
     accent: '#B54708',
     icon: ``,
     href: '/servicios/mantenimiento',
+    cta: 'Mantenimiento de extintores',
     intro: [
       'Un equipo sin mantenimiento es un riesgo disfrazado de protección. Damos servicio certificado a extintores (recarga y prueba hidrostática NOM-154-SCFI), equipos SCBA (prueba de flujo anual y cilindros), herramientas hidráulicas Holmatro y EPP estructural conforme NFPA 1850.',
       'Cada servicio entrega etiqueta de inspección vigente, collar de garantía cuando aplica y reporte documental para tu expediente ante Protección Civil, STPS o tu aseguradora.',
@@ -121,6 +125,7 @@ export const services: Service[] = [
     accent: '#067647',
     icon: ``,
     href: '/servicios/instalacion-sistemas-ci',
+    cta: 'Sistemas contra incendio',
     intro: [
       'Diseñamos e instalamos sistemas fijos de protección contra incendio llave en mano: rociadores automáticos NFPA 13, detección y alarma NFPA 72 con tableros direccionables, redes hidráulicas con bombas NFPA 20 y supresión por agente limpio NFPA 2001 para activos críticos.',
       'Cada proyecto entrega memoria de cálculo hidráulico, planos as-built, protocolo de pruebas de aceptación y capacitación a tu personal — el expediente completo para tu aseguradora, tu DRO y la autoridad.',
@@ -162,6 +167,7 @@ export const services: Service[] = [
     accent: '#C8102E',
     icon: ``,
     href: '/servicios/auditoria-seguridad',
+    cta: 'Auditoría NOM-002-STPS',
     intro: [
       'Antes de que llegue la inspección, conviene saber exactamente qué va a encontrar. Nuestra auditoría evalúa tu instalación contra la NOM-002-STPS-2010 punto por punto: clasificación de riesgo, equipamiento, señalización, brigada, simulacros y expediente documental.',
       'El entregable es un informe ejecutivo con semáforo de cumplimiento, plan de cierre de brechas priorizado por riesgo y costo, y seguimiento a 90 días para verificar avances.',
@@ -203,6 +209,7 @@ export const services: Service[] = [
     accent: '#B54708',
     icon: ``,
     href: '/servicios/brigadas-empresariales',
+    cta: 'Brigadas contra incendio',
     intro: [
       'Formar una brigada desde cero implica diseño organizacional, equipamiento correcto y entrenamiento certificado. Lo entregamos llave en mano: definimos la estructura según tu plantilla y riesgo, equipamos con EPP conforme a norma y capacitamos con constancia DC-3.',
       'El resultado es una brigada operativa y documentada: organigrama, protocolos de respuesta, equipo asignado por brigadista y programa anual de entrenamiento y simulacros.',
@@ -244,6 +251,7 @@ export const services: Service[] = [
     accent: '#067647',
     icon: ``,
     href: '/servicios/licitaciones',
+    cta: 'Licitaciones de equipo contra incendio',
     intro: [
       'Ganar una licitación de equipo contra incendio se decide en los detalles técnicos: fichas alineadas al anexo, manifiestos de cumplimiento de normas y respuestas precisas en junta de aclaraciones. Llevamos más de 15 años acompañando procesos federales, estatales y municipales.',
       'Te apoyamos como fabricante/distribuidor respaldo o como tu área técnica externa: documentación lista para CompraNet, cartas de distribuidor autorizado y soporte en la evaluación técnica de tu propuesta.',

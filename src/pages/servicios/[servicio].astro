@@ -1,4 +1,5 @@
 ---
+import { slugify } from '@lib/slug';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import RelatedLinks from '@components/common/RelatedLinks.astro';
@@ -218,7 +219,7 @@ const productosRel = productosMap[s.slug] ?? [];
           </h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2" style="border-top:1px solid var(--c-line);border-left:1px solid var(--c-line)">
             {s.items.map((item) => (
-              <div class="grid-cell flex flex-col gap-2 p-6" style="border-right:1px solid var(--c-line);border-bottom:1px solid var(--c-line)">
+              <div id={`incluye-${slugify(item.name)}`} class="grid-cell flex flex-col gap-2 p-6" style="border-right:1px solid var(--c-line);border-bottom:1px solid var(--c-line);scroll-margin-top:8rem">
                 <h3 class="font-display font-bold text-base" style="color:var(--c-ink)">{item.name}</h3>
                 <p class="text-xs leading-relaxed" style="color:var(--c-muted)">{item.detail}</p>
               </div>

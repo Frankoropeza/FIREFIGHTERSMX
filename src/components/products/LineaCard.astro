@@ -15,8 +15,10 @@ export interface Props {
   cta: string;
   nivel?: 'h3' | 'h4';
   max?: number;
+  /** Rótulo del bloque de enlaces (por defecto «Subcategorías»; en servicios, «Qué incluye») */
+  subLabel?: string;
 }
-const { href, norma, titulo, texto, imagen = null, imagenAlt, hijas = [], cta, nivel = 'h4', max = 4 } = Astro.props;
+const { href, norma, titulo, texto, imagen = null, imagenAlt, hijas = [], cta, nivel = 'h4', max = 4, subLabel = 'Subcategorías' } = Astro.props;
 const subcategorias = hijas.filter((h) => h.href !== href).slice(0, max);
 const Titulo = nivel;
 ---
@@ -32,8 +34,8 @@ const Titulo = nivel;
     <Titulo class="lc-title"><a href={href}>{titulo}</a></Titulo>
     <p class="lc-text">{texto}</p>
     {subcategorias.length > 0 && (
-      <nav class="lc-sub" aria-label={`Subcategorías de ${titulo}`} style={`--lc-filas:${max}`}>
-        <p class="lc-sub-label">Subcategorías</p>
+      <nav class="lc-sub" aria-label={`${subLabel} · ${titulo}`} style={`--lc-filas:${max}`}>
+        <p class="lc-sub-label">{subLabel}</p>
         <ul class="lc-list" role="list">
           {subcategorias.map((h) => <li><a href={h.href} class="lc-row">{h.label}</a></li>)}
         </ul>
