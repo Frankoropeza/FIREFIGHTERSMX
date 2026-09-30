@@ -1,4 +1,5 @@
 ---
+import { imgAttrs, SIZES } from '@lib/img';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import RelatedLinks from '@components/common/RelatedLinks.astro';
@@ -627,22 +628,22 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
       </div>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-2 lg:gap-3">
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
-          <img src="/images/categorias/extintores.avif" alt="Extintor PQS ABC con manómetro y collar de garantía" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+          <img src="/images/categorias/extintores.avif" {...imgAttrs("/images/categorias/extintores.avif", SIZES.gal)} alt="Extintor PQS ABC con manómetro y collar de garantía" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
-          <img src="/images/blog/blog-nom-002-stps.avif" alt="Programa de mantenimiento anual NOM-002-STPS extintores — reporte para Protección Civil" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+          <img src="/images/blog/blog-nom-002-stps.avif" {...imgAttrs("/images/blog/blog-nom-002-stps.avif", SIZES.gal)} alt="Programa de mantenimiento anual NOM-002-STPS extintores — reporte para Protección Civil" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
-          <img src="/images/servicios/mantenimiento.avif" alt="Servicio de recarga y mantenimiento de extintor con collar de garantía" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+          <img src="/images/servicios/mantenimiento.avif" {...imgAttrs("/images/servicios/mantenimiento.avif", SIZES.gal)} alt="Servicio de recarga y mantenimiento de extintor con collar de garantía" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
-          <img src="/images/blog/bombero-preparacion-emergencia-industrial.avif" alt="Brigada de emergencia industrial con extintor en planta — capacitación uso método PASS" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+          <img src="/images/blog/bombero-preparacion-emergencia-industrial.avif" {...imgAttrs("/images/blog/bombero-preparacion-emergencia-industrial.avif", SIZES.gal)} alt="Brigada de emergencia industrial con extintor en planta — capacitación uso método PASS" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
-          <img src="/images/servicios/brigadas-empresariales.avif" alt="Brigada empresarial capacitada en uso de extintor — programa Protección Civil NOM-002-STPS" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+          <img src="/images/servicios/brigadas-empresariales.avif" {...imgAttrs("/images/servicios/brigadas-empresariales.avif", SIZES.gal)} alt="Brigada empresarial capacitada en uso de extintor — programa Protección Civil NOM-002-STPS" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
-          <img src="/images/blog/entrenamiento-bomberos-capacitacion-seguridad.avif" alt="Entrenamiento y capacitación en uso de extintor método PASS — bomberos y brigadas México" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+          <img src="/images/blog/entrenamiento-bomberos-capacitacion-seguridad.avif" {...imgAttrs("/images/blog/entrenamiento-bomberos-capacitacion-seguridad.avif", SIZES.gal)} alt="Entrenamiento y capacitación en uso de extintor método PASS — bomberos y brigadas México" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
       </div>
     </div>

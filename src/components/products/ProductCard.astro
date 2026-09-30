@@ -1,4 +1,5 @@
 ---
+import { imgAttrs, SIZES } from '@lib/img';
 import type { Product } from '@data/products';
 import { whatsappUrl, CANAL_CONTACTO, CONTACTO_DIRECTO_ACTIVO } from '@config/site';
 
@@ -48,7 +49,7 @@ const pid = `pat-${p.slug}`;
     {/* Imagen de fondo */}
     {p.image ? (
       <img
-        src={p.image}
+        src={p.image} {...imgAttrs(p.image, SIZES.card3)}
         alt={`${p.title} — ${p.brand ?? ''} ${p.norm ?? ''}`}
         width="480" height="180"
         loading="lazy" decoding="async"

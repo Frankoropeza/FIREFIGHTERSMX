@@ -6,8 +6,29 @@
    Único bloque oscuro del sitio: el footer (gris carbón)
    ================================================================ */
 
-/* Fuentes: se cargan vía <link> en BaseLayout.astro (no bloqueante).
-   No usar @import aquí — bloquea el primer render. */
+/* Fuentes: autoalojadas en /public/fonts (abajo) y precargadas en BaseLayout.astro.
+   No usar @import ni hojas de terceros: bloquean el primer render. */
+
+/* ── Inter autoalojada (subset latin: cubre el español completo) ─────────────
+   Un solo archivo variable (400–700). "Inter Fallback" es Arial reescalada con
+   las métricas reales de Inter (size-adjust + overrides de ascent/descent), de
+   modo que el texto no se desplaza cuando llega la fuente web (CLS ≈ 0). */
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter-latin-var.woff2') format('woff2');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Inter Fallback';
+  src: local('Arial'), local('Helvetica Neue'), local('Helvetica'), local('Liberation Sans');
+  size-adjust: 107.1%;
+  ascent-override: 90.5%;
+  descent-override: 22.5%;
+  line-gap-override: 0%;
+}
 
 @tailwind base;
 @tailwind components;
@@ -114,8 +135,8 @@
   --color-success-bg:    var(--c-success-soft);
 
   /* Tipografías: Inter única */
-  --font-sans:    'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --font-display: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-sans:    'Inter', 'Inter Fallback', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Inter', 'Inter Fallback', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-mono:    ui-monospace, 'SF Mono', Menlo, monospace;
 
   /* Radios */

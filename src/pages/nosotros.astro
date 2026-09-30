@@ -1,4 +1,5 @@
 ---
+import { imgAttrs, SIZES } from '@lib/img';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import { SITE, whatsappUrl, CANAL_CONTACTO } from '@config/site';
@@ -134,22 +135,22 @@ const razones = [
       </div>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-2 lg:gap-3">
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
-          <img src="/images/nosotros/bombero-equipo-nfpa-firefightersmx.avif" alt="Equipo estructural completo de bombero en su rack" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+          <img src="/images/nosotros/bombero-equipo-nfpa-firefightersmx.avif" {...imgAttrs("/images/nosotros/bombero-equipo-nfpa-firefightersmx.avif", SIZES.gal)} alt="Equipo estructural completo de bombero en su rack" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
-          <img src="/images/nosotros/nosotros-equipo-bombero-uniformado.avif" alt="Bombero con traje estructural completo caminando en la estación" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+          <img src="/images/nosotros/nosotros-equipo-bombero-uniformado.avif" {...imgAttrs("/images/nosotros/nosotros-equipo-bombero-uniformado.avif", SIZES.gal)} alt="Bombero con traje estructural completo caminando en la estación" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
-          <img src="/images/nosotros/nosotros-distribuidor-autorizado-mexico.avif" alt="Equipo contra incendio empacado y listo para envío" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+          <img src="/images/nosotros/nosotros-distribuidor-autorizado-mexico.avif" {...imgAttrs("/images/nosotros/nosotros-distribuidor-autorizado-mexico.avif", SIZES.gal)} alt="Equipo contra incendio empacado y listo para envío" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
-          <img src="/images/nosotros/bombero-proteccion-completa-mexico.avif" alt="Cierre del chaquetón de un traje estructural de bombero" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+          <img src="/images/nosotros/bombero-proteccion-completa-mexico.avif" {...imgAttrs("/images/nosotros/bombero-proteccion-completa-mexico.avif", SIZES.gal)} alt="Cierre del chaquetón de un traje estructural de bombero" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
-          <img src="/images/nosotros/nosotros-bombero-emergencia-accion.avif" alt="Bomberos avanzando con una línea de manguera hacia un incendio" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+          <img src="/images/nosotros/nosotros-bombero-emergencia-accion.avif" {...imgAttrs("/images/nosotros/nosotros-bombero-emergencia-accion.avif", SIZES.gal)} alt="Bomberos avanzando con una línea de manguera hacia un incendio" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
-          <img src="/images/nosotros/firefightersmx-equipo-profesional-mexico.avif" alt="Casco, cámara térmica y máscara de respiración sobre banco" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+          <img src="/images/nosotros/firefightersmx-equipo-profesional-mexico.avif" {...imgAttrs("/images/nosotros/firefightersmx-equipo-profesional-mexico.avif", SIZES.gal)} alt="Casco, cámara térmica y máscara de respiración sobre banco" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
       </div>
     </div>

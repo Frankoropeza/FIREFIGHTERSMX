@@ -34,15 +34,10 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <!-- Fonts: preconnect + hoja no bloqueante (sustituye al @import de CSS) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-    />
+    <!-- Inter autoalojada (public/fonts): sin dominios de terceros, preload del archivo
+         variable y fallback con métricas ajustadas (ver global.css) → sin salto de layout. -->
+    <link rel="preload" href="/fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin />
 
     <!-- SEO Component -->
     <SEO
@@ -66,6 +61,7 @@ const {
     <slot name="head" />
     <script is:inline>document.documentElement.classList.remove('no-js');</script>
     <!-- Ahrefs Web Analytics -->
+    <link rel="preconnect" href="https://analytics.ahrefs.com" />
     <script is:inline src="https://analytics.ahrefs.com/analytics.js" data-key="V39kZsbF0O5bbTDIvVBtPA" async></script>
   </head>
   <body class="min-h-screen flex flex-col" style="background-color:#FFFFFF;color:#344054">

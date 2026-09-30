@@ -1,4 +1,5 @@
 ---
+import { imgAttrs, SIZES } from '@lib/img';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import RelatedLinks from '@components/common/RelatedLinks.astro';
@@ -522,22 +523,22 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
       </div>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-2 lg:gap-3">
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
-          <img src="/images/productos/casco-bombero-visor-facial-nfpa-1970.avif" alt="Casco bombero con visor facial NFPA 1970 certificado — MSA Gallet F1 XF México" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+          <img src="/images/productos/casco-bombero-visor-facial-nfpa-1970.avif" {...imgAttrs("/images/productos/casco-bombero-visor-facial-nfpa-1970.avif", SIZES.gal)} alt="Casco bombero con visor facial NFPA 1970 certificado — MSA Gallet F1 XF México" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
-          <img src="/images/productos/casco-msa-studio-lateral.avif" alt="Casco MSA Gallet vista lateral certificado NFPA 1970 — distribuidor autorizado México" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+          <img src="/images/productos/casco-msa-studio-lateral.avif" {...imgAttrs("/images/productos/casco-msa-studio-lateral.avif", SIZES.gal)} alt="Casco MSA Gallet vista lateral certificado NFPA 1970 — distribuidor autorizado México" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
-          <img src="/images/productos/casco-bombero-visor-integrado.avif" alt="Casco bombero con visor retráctil integrado NFPA 1970 protección estructural" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+          <img src="/images/productos/casco-bombero-visor-integrado.avif" {...imgAttrs("/images/productos/casco-bombero-visor-integrado.avif", SIZES.gal)} alt="Casco bombero con visor retráctil integrado NFPA 1970 protección estructural" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
-          <img src="/images/productos/bombero-casco-visor-equipo-completo.avif" alt="Bombero con casco, visor y equipo completo NFPA 1970 en operación estructural" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+          <img src="/images/productos/bombero-casco-visor-equipo-completo.avif" {...imgAttrs("/images/productos/bombero-casco-visor-equipo-completo.avif", SIZES.gal)} alt="Bombero con casco, visor y equipo completo NFPA 1970 en operación estructural" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
-          <img src="/images/productos/casco-puesto-equipado.avif" alt="Casco bombero puesto y equipado con lámpara y comunicación certificado NFPA" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+          <img src="/images/productos/casco-puesto-equipado.avif" {...imgAttrs("/images/productos/casco-puesto-equipado.avif", SIZES.gal)} alt="Casco bombero puesto y equipado con lámpara y comunicación certificado NFPA" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
-          <img src="/images/productos/casco-mexico-escena-incendio.avif" alt="Casco bombero certificado NFPA 1970 en escena de incendio México" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+          <img src="/images/productos/casco-mexico-escena-incendio.avif" {...imgAttrs("/images/productos/casco-mexico-escena-incendio.avif", SIZES.gal)} alt="Casco bombero certificado NFPA 1970 en escena de incendio México" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
       </div>
     </div>

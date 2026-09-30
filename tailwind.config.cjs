@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans:    ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Inter', 'system-ui', 'sans-serif'],
+        sans:    ['Inter', 'Inter Fallback', 'system-ui', 'sans-serif'],
+        display: ['Inter', 'Inter Fallback', 'system-ui', 'sans-serif'],
         mono:    ['ui-monospace', 'SF Mono', 'Menlo', 'monospace'],
       },
       colors: {

@@ -1,4 +1,5 @@
 ---
+import { imgAttrs, SIZES } from '@lib/img';
 const industries = [
   { slug: 'bomberos-municipales',  name: 'Bomberos Municipales',  tagline: 'Equipamiento integral y soporte para licitaciones CompraNet', color: '#C8102E', image: '/images/industrias/bomberos-municipales.avif',  imageAlt: 'Cuerpo de bomberos municipales con equipo NFPA certificado México', icon: `` },
   { slug: 'brigadas-industriales', name: 'Brigadas Industriales', tagline: 'NOM-002-STPS llave en mano: equipo + capacitación DC-3',         color: '#B54708', image: '/images/industrias/brigadas-industriales.avif', imageAlt: 'Brigada industrial equipada NOM-002-STPS capacitación contra incendio', icon: `` },
@@ -61,7 +62,7 @@ const industries = [
         {ind.image && (
           <div class="relative overflow-hidden shrink-0" style="height:9rem">
             <img
-              src={ind.image}
+              src={ind.image} {...imgAttrs(ind.image, SIZES.card3)}
               alt={ind.imageAlt}
               width="320"
               height="144"

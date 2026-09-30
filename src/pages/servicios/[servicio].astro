@@ -1,4 +1,5 @@
 ---
+import { imgAttrs, SIZES } from '@lib/img';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import RelatedLinks from '@components/common/RelatedLinks.astro';
@@ -254,7 +255,7 @@ const productosRel = productosMap[s.slug] ?? [];
 
             <figure class="relative m-0">
               <div class="relative overflow-hidden" style="border:1px solid var(--c-line-strong)">
-                <img src={s.spotlight.image} alt={s.spotlight.imageAlt} width="640" height="720" loading="lazy" decoding="async" class="w-full h-auto block" />
+                <img src={s.spotlight.image} {...imgAttrs(s.spotlight.image, SIZES.spot)} alt={s.spotlight.imageAlt} width="640" height="720" loading="lazy" decoding="async" class="w-full h-auto block" />
                 <div class="absolute top-0 left-0 w-12 h-12 pointer-events-none"  aria-hidden="true"></div>
                 <div class="absolute bottom-0 right-0 w-12 h-12 pointer-events-none"  aria-hidden="true"></div>
               </div>

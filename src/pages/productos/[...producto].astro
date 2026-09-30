@@ -1,4 +1,5 @@
 ---
+import { imgAttrs, SIZES } from '@lib/img';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import { featuredProducts, fabricanteDe, type Product } from '@data/products';
@@ -728,6 +729,7 @@ const seoDesc = metaCerrada(product.description, [
                        style={`background:var(--c-bg-alt);border:1px solid var(--c-line);${galleryImages.length > 1 && i === 0 ? 'grid-column:1 / -1;' : ''}`}>
                     <img
                       src={img.src}
+                      {...imgAttrs(img.src, i === 0 ? SIZES.hero : SIZES.gal)}
                       alt={img.alt}
                       width="1200" height="750"
                       loading={i === 0 ? 'eager' : 'lazy'}
@@ -1067,7 +1069,7 @@ const seoDesc = metaCerrada(product.description, [
                      class="flex items-center gap-3 px-4 py-3 group hover:bg-[var(--c-bg)]"
                      style={`border-bottom:${i < sidebarBrandProds.length - 1 ? '1px solid var(--c-line)' : 'none'}`}>
                     {p.image ? (
-                      <img src={p.image} alt={p.title} width="48" height="48" loading="lazy"
+                      <img src={p.image} {...imgAttrs(p.image, SIZES.thumb48)} alt={p.title} width="48" height="48" loading="lazy" decoding="async"
                            class="shrink-0" style="width:48px;height:48px;object-fit:cover;object-position:center;background:var(--c-bg-alt)" />
                     ) : (
                       <div class="shrink-0 flex items-center justify-center" style="width:48px;height:48px;background:var(--c-bg-alt);border:1px solid var(--c-line)">
@@ -1104,7 +1106,7 @@ const seoDesc = metaCerrada(product.description, [
                      class="flex items-center gap-3 px-4 py-3 group hover:bg-[var(--c-bg)]"
                      style={`border-bottom:${i < sidebarCatProds.length - 1 ? '1px solid var(--c-line)' : 'none'}`}>
                     {p.image ? (
-                      <img src={p.image} alt={p.title} width="40" height="40" loading="lazy"
+                      <img src={p.image} {...imgAttrs(p.image, SIZES.thumb40)} alt={p.title} width="40" height="40" loading="lazy" decoding="async"
                            class="shrink-0" style="width:40px;height:40px;object-fit:cover;background:var(--c-bg-alt)" />
                     ) : (
                       <div class="shrink-0" style="width:40px;height:40px;background:var(--c-bg-alt);border:1px solid var(--c-line)"></div>
@@ -1303,7 +1305,7 @@ const seoDesc = metaCerrada(product.description, [
               {p.image ? (
                 <div class="overflow-hidden" style="aspect-ratio:4/3;background:var(--c-bg-alt)">
                   <img
-                    src={p.image} alt={p.title}
+                    src={p.image} {...imgAttrs(p.image, SIZES.card3)} alt={p.title}
                     width="400" height="300"
                     loading="lazy" decoding="async"
                     class="w-full h-full block"

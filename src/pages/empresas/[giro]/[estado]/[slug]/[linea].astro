@@ -1,4 +1,5 @@
 ---
+import { imgAttrs, SIZES } from '@lib/img';
 /**
  * /empresas/[giro]/[estado]/[slug]/[linea] — L5: página de línea de producto de
  * una empresa VIP. Existe sólo para fichas con `plan: destacado` que tengan una
@@ -124,7 +125,7 @@ const h2s = 'color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1'
         {l.imagen && (
           <figure class="m-0">
             <div class="aspect-[16/9] overflow-hidden" style={`background:var(--c-bg);border:1px solid ${borde}`}>
-              <img src={l.imagen} alt={l.imagenAlt ?? l.nombre} width="1024" height="576" loading="eager" decoding="async" class="w-full h-full object-cover" />
+              <img src={l.imagen} {...imgAttrs(l.imagen, SIZES.hero)} alt={l.imagenAlt ?? l.nombre} width="1024" height="576" loading="eager" decoding="async" class="w-full h-full object-cover" />
             </div>
             <figcaption class="font-display text-[10px] uppercase tracking-wider mt-2" style="color:var(--forge-300)">{l.nombre} · catálogo de {e.nombre}</figcaption>
           </figure>

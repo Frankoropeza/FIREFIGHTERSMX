@@ -1,4 +1,5 @@
 ---
+import { imgAttrs, SIZES } from '@lib/img';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import RelatedLinks from '@components/common/RelatedLinks.astro';
@@ -477,13 +478,13 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'herramientas-rescat
       </div>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-2 lg:gap-3">
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
-          <img src="/images/productos/bombero-hacha-halligan-rescate.avif" alt="Bombero con hacha Halligan en operación de rescate — herramientas de entrada forzada" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+          <img src="/images/productos/bombero-hacha-halligan-rescate.avif" {...imgAttrs("/images/productos/bombero-hacha-halligan-rescate.avif", SIZES.gal)} alt="Bombero con hacha Halligan en operación de rescate — herramientas de entrada forzada" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
-          <img src="/images/productos/bombero-herramientas-entrada-forzada.avif" alt="Bombero con herramientas de entrada forzada — rescate vehicular y estructural" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+          <img src="/images/productos/bombero-herramientas-entrada-forzada.avif" {...imgAttrs("/images/productos/bombero-herramientas-entrada-forzada.avif", SIZES.gal)} alt="Bombero con herramientas de entrada forzada — rescate vehicular y estructural" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
         <figure class="m-0 overflow-hidden col-span-2 md:col-span-1" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
-          <img src="/images/categorias/herramientas-rescate.avif" alt="Separador hidráulico de rescate vehicular — Holmatro Hurst Weber" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+          <img src="/images/categorias/herramientas-rescate.avif" {...imgAttrs("/images/categorias/herramientas-rescate.avif", SIZES.gal)} alt="Separador hidráulico de rescate vehicular — Holmatro Hurst Weber" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
       </div>
     </div>
