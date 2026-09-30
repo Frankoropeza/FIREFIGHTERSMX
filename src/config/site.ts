@@ -1,6 +1,9 @@
 export const SITE = {
   name:        'VIGILES',
   shortName:   'VIGILES',
+  // Experiencia en el mercado: 35 años. Confirmado por Frank Oropeza el 2026-09-30
+  // (sustituye los «15 años» del 2026-09-15). Única fuente de esta cifra.
+  experienceYears: 35,
   // Identidad híbrida (2026-09-15): VIGILES vende y distribuye equipo
   // (la tienda) y además publica el directorio nacional de empresas y estaciones.
   tagline:     'Venta y distribución de equipo para bomberos y equipo contra incendio en México',

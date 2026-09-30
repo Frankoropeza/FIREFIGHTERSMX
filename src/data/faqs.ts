@@ -46,7 +46,7 @@ export const homeFaqs: FAQ[] = [
   },
   {
     q: '¿Pueden facturar a gobierno y participar en licitaciones?',
-    a: 'Por supuesto. Tenemos más de 15 años trabajando con dependencias federales, estatales y municipales. Apoyamos con fichas técnicas formato licitación, manifiestos de normas NFPA/NOM, asistencia a juntas de aclaraciones y plantillas CompraNet. Facturación CFDI 4.0.',
+    a: 'Por supuesto. Tenemos 35 años trabajando con dependencias federales, estatales y municipales. Apoyamos con fichas técnicas formato licitación, manifiestos de normas NFPA/NOM, asistencia a juntas de aclaraciones y plantillas CompraNet. Facturación CFDI 4.0.',
   },
   {
     q: '¿Qué equipo contra incendio exige la NOM-002-STPS-2010 a una empresa?',

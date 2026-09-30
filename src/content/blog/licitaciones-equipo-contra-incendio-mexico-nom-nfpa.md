@@ -67,7 +67,7 @@ En procedimientos nacionales pueden existir requisitos de nacionalidad y conteni
 
 ## En qué te entra VIGILES
 
-VIGILES tiene más de 15 años de trabajo con dependencias federales, estatales y municipales. Para una solicitud de cotización podemos identificar modelos del catálogo, documentación disponible y alcance de servicio sin sustituir las decisiones de la convocante. Consulta [licitaciones](/licitaciones/) y solicita una [cotización técnica](/cotizacion/) con las bases o requisición.
+VIGILES tiene 35 años de trabajo con dependencias federales, estatales y municipales. Para una solicitud de cotización podemos identificar modelos del catálogo, documentación disponible y alcance de servicio sin sustituir las decisiones de la convocante. Consulta [licitaciones](/licitaciones/) y solicita una [cotización técnica](/cotizacion/) con las bases o requisición.
 
 ## De la especificación a la recepción
 

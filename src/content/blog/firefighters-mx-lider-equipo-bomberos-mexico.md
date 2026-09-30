@@ -13,7 +13,7 @@ image:
 
 VIGILES suministra equipo para bomberos, protección contra incendio y rescate en México. El punto de partida de una propuesta es identificar el riesgo, el modelo requerido, la configuración y los documentos que acompañarán la entrega. Esa información permite que el comprador compare opciones y conserve un expediente útil para operación, auditoría y servicio posterior.
 
-La empresa tiene más de 15 años trabajando con dependencias federales, estatales y municipales, y ha equipado más de 500 estaciones. Esta página explica el alcance comercial confirmado de VIGILES y los criterios que conviene revisar antes de adquirir equipo.
+La empresa tiene 35 años trabajando con dependencias federales, estatales y municipales, y ha equipado más de 500 estaciones. Esta página explica el alcance comercial confirmado de VIGILES y los criterios que conviene revisar antes de adquirir equipo.
 
 ## No vendemos de todo. Vendemos esto.
 
@@ -30,7 +30,7 @@ México no es un solo país cuando se trata de incendios. La realidad de un cuer
 | Cobertura nacional | Atención a proyectos en los 32 estados |
 | Stock permanente en CDMX | Entrega en 24–48 horas para existencias disponibles |
 | Marcas con convenio | Productos del catálogo y documentación de soporte disponible |
-| Más de 15 años trabajando con dependencias | Experiencia con dependencias federales, estatales y municipales |
+| 35 años trabajando con dependencias | Experiencia con dependencias federales, estatales y municipales |
 
 La atención se coordina desde Av. Homero 229, Ciudad de México. Consulta la [cobertura nacional](/cobertura/) y el [catálogo de productos](/productos/) para ubicar las categorías disponibles.
 
@@ -90,7 +90,7 @@ Estos datos no sustituyen la verificación de cada partida. Una compra responsab
 
 ### ¿VIGILES es líder de equipo bomberil en México?
 
-No usamos ese superlativo como afirmación comercial. La empresa comunica datos verificables: más de 15 años de trabajo con dependencias, más de 500 estaciones equipadas, distribución autorizada de las marcas del catálogo y servicio técnico autorizado.
+No usamos ese superlativo como afirmación comercial. La empresa comunica datos verificables: 35 años de trabajo con dependencias, más de 500 estaciones equipadas, distribución autorizada de las marcas del catálogo y servicio técnico autorizado.
 
 ### ¿Qué información debe tener una cotización?
 

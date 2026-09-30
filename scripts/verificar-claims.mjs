@@ -16,6 +16,7 @@
  *    Confirmado por Frank Oropeza el 2026-09-15: venta y distribución directa,
  *    bodega y stock propios, logística propia con envíos a todo México,
  *    convenio de distribución con las marcas del catálogo, 15 años de operación
+ *    (actualizado el 2026-09-30: 35 años de experiencia en el mercado)
  *    más de 500 estaciones equipadas, servicio técnico autorizado de las marcas
  *    de SCBA y cámaras térmicas (MSA, Dräger, 3M Scott) y la autoría real del
  *    blog (Ing. Marco García, Ing. Carlos Mendoza, Lic. Ana Ramírez). El stock y
@@ -68,7 +69,7 @@ const SOLO_TIENDA = [
   [/distribuidor(es)?\s+autorizad[oa]s?\s+(de|del|MX|México|en\s+México)/i, 'D-03 · «distribuidor autorizado» fuera de la tienda'],
   [/somos\s+distribuidores?\s+(autorizad|oficial)/i, 'D-03 · «distribuidor autorizado» fuera de la tienda'],
   [/somos\s+servicio\s+(técnico\s+)?autorizado/i, 'D-04 · servicio técnico autorizado fuera de la tienda'],
-  [/(llevamos|tenemos|acumulamos|cumplimos)\s+(más\s+de\s+)?(15|quince)\s+años/i, 'D-05 · antigüedad propia fuera de la tienda'],
+  [/(llevamos|tenemos|acumulamos|cumplimos)\s+(más\s+de\s+)?(15|quince|35|treinta\s+y\s+cinco)\s+años/i, 'D-05 · antigüedad propia fuera de la tienda'],
   [/(más\s+de\s+)?500\s+estaciones\s+equipadas/i, 'D-06 · volumen propio fuera de la tienda'],
   [/\b(distribuimos|vendemos|comercializamos|importamos|instalamos|recargamos)\b/i, 'D-11 · venta en primera persona dentro del directorio'],
   [/\b(entregamos|cotizamos|facturamos|reacondicionamos|calibramos)\b/i, 'D-11 · operación comercial en primera persona dentro del directorio'],

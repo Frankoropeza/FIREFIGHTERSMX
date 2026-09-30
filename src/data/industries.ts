@@ -42,7 +42,7 @@ export const industries: Industry[] = [
     icon: ``,
     href: '/industrias/bomberos-municipales',
     intro: [
-      'Equipar un cuerpo de bomberos municipal es un proyecto de adquisición pública con presupuesto acotado, anexos técnicos exigentes y vidas de por medio. Llevamos más de 15 años acompañando H. Cuerpos de Bomberos en todo el país: del anexo técnico a la entrega con número de serie verificable.',
+      'Equipar un cuerpo de bomberos municipal es un proyecto de adquisición pública con presupuesto acotado, anexos técnicos exigentes y vidas de por medio. Llevamos 35 años acompañando H. Cuerpos de Bomberos en todo el país: del anexo técnico a la entrega con número de serie verificable.',
       'Trabajamos con esquema de precio preferencial para cuerpos de bomberos y programas de equipamiento por fases, para que el presupuesto anual rinda sin sacrificar certificación ni garantía.',
     ],
     risks: [
