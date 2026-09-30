@@ -18,6 +18,10 @@ import { empresasPorEstado } from '@lib/empresas';
 import { estadoConEstaciones } from '@lib/estaciones';
 import { vecinosEnAnillo } from '@lib/enlazado';
 import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl } from '@config/site';
+import RelatedLinks from '@components/common/RelatedLinks.astro';
+import { giros } from '@data/giros';
+import { ANCLA_GIRO } from '@lib/enlaces-directorio';
+import { lineaPorSlug } from '@lib/linea-card';
 import type { GetStaticPaths } from 'astro';
 
 export const getStaticPaths = (() => {
@@ -40,6 +44,27 @@ for (const candidato of vecinosEnAnillo(estados, indiceCobertura, 6)) {
 }
 const tieneEmpresas = (await empresasPorEstado(estado.slug)).length > 0;
 const tieneEstaciones = !!(await estadoConEstaciones(estado.slug))?.estaciones.length;
+
+/* ── Interlinking 2026-09-30: cobertura ↔ catálogo, directorio, servicios, industrias y guías.
+   Antes ninguna de las 33 páginas de cobertura enlazaba a una categoría de producto ni al blog. */
+const empresasEdo = await empresasPorEstado(estado.slug);
+const girosEdo = giros.filter((g) => empresasEdo.some((e) => e.giros.includes(g.slug)));
+const CATS_COBERTURA = ['extintores', 'sistemas-ci', 'trajes-bombero', 'equipos-scba', 'cascos-nfpa', 'senalizacion-emergencia'];
+const enlacesEstado = [
+  ...CATS_COBERTURA.map((c) => ({ href: `/productos/${c}/`, label: lineaPorSlug(c)?.titulo ?? (c === 'sistemas-ci' ? 'Sistemas contra incendio' : c) })),
+  ...girosEdo.map((g) => ({ href: `/empresas/${g.slug}/${estado.slug}/`, label: `${ANCLA_GIRO[g.slug]} en ${estado.name}` })),
+  ...(tieneEstaciones ? [{ href: `/estaciones/${estado.slug}/`, label: `Estaciones de bomberos en ${estado.name}` }] : []),
+  { href: '/servicios/mantenimiento/', label: 'Mantenimiento y recarga de extintores' },
+  { href: '/servicios/capacitacion/', label: 'Capacitación contra incendio DC-3' },
+  { href: '/servicios/instalacion-sistemas-ci/', label: 'Instalación de sistemas contra incendio' },
+  { href: '/servicios/auditoria-seguridad/', label: 'Auditoría NOM-002-STPS' },
+  { href: '/industrias/proteccion-civil/', label: 'Equipo para Protección Civil' },
+  { href: '/industrias/bomberos-municipales/', label: 'Equipo para bomberos municipales' },
+  { href: '/industrias/brigadas-industriales/', label: 'Equipo para brigadas industriales' },
+  { href: '/blog/nom-002-stps-guia-completa/', label: 'Guía NOM-002-STPS-2010' },
+  { href: '/blog/tipos-de-extintores-mexico/', label: 'Tipos de extintores en México' },
+  { href: '/blog/como-equipar-estacion-bomberos-desde-cero/', label: 'Cómo equipar una estación de bomberos' },
+];
 
 // ── SEO: title (≤60c) y description (≤160c) keyword-first ──────────
 // Patrón: "Equipo Bomberos [Estado] | Distribuidor NFPA | VIGILES"
@@ -353,6 +378,8 @@ const waMsg = `Hola, necesito equipo para bomberos en ${estado.name}. ¿Cuál es
   </section>
 
   {/* ─── Estados relacionados ─── */}
+  <RelatedLinks ruta={`/cobertura/${estado.slug}/`} titulo={`Equipo contra incendio con entrega en ${estado.name}`} incluirDirectorio={false} incluirCobertura={false} enlacesExtra={enlacesEstado} />
+
   {otrosEstados.length > 0 && (
     <section class="section-tight" style="background:var(--c-bg-alt);border-top:1px solid var(--c-line)" aria-labelledby="otros-estados-heading">
       <div class="container-site">

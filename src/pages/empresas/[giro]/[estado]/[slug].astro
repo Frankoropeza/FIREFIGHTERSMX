@@ -12,7 +12,7 @@ import { estadoConEstaciones } from '@lib/estaciones';
 import { relEmpresa } from '@lib/rel-portafolio';
 import { todasLasEmpresas, enlacesParaFichaEmpresa, estadoMeta, urlEmpresa, colonia, type Empresa } from '@lib/empresas';
 import { urlsLineasDeEmpresa } from '@lib/lineas';
-import { guiasPara } from '@lib/enlaces-directorio';
+import { guiasPara, INDUSTRIAS_POR_GIRO } from '@lib/enlaces-directorio';
 import type { GetStaticPaths } from 'astro';
 
 /*
@@ -75,6 +75,9 @@ const guiasDirectorio = await guiasPara(e.giroPrincipal, e.slug);
 const enlacesGuiaDirectorio = [
   ...(dirEst && dirEst.estaciones.length > 0 ? [{ href: `/estaciones/${e.estado}/`, label: `Estaciones de bomberos en ${edo.nombre}` }] : []),
   ...guiasDirectorio.map((post) => ({ href: `/blog/${post.id}/`, label: post.data.title })),
+  /* Interlinking 2026-09-30: sector del giro y cobertura del estado (antes 0 % de fichas → industrias) */
+  ...(INDUSTRIAS_POR_GIRO[e.giroPrincipal as keyof typeof INDUSTRIAS_POR_GIRO] ?? []),
+  { href: `/cobertura/${e.estado}/`, label: `Equipo contra incendio en ${edo.nombre}` },
 ];
 const cats = allCategories.filter((c) => g.categoriasRelacionadas.includes(c.slug)).slice(0, 4);
 const hasMap = !!e.coordenadas;

@@ -10,6 +10,7 @@ import { brandPages } from '@data/brandPages';
 import { categories } from '@data/categories';
 import { SITE, whatsappUrl, CANAL_CONTACTO } from '@config/site';
 import RelatedLinks from '@components/common/RelatedLinks.astro';
+import { marcaDeBrand } from '@data/interlinking';
 import { BLOG_POR_CATEGORIA, guiasPorCategoria } from '@lib/enlaces-directorio';
 
 export function getStaticPaths() {
@@ -25,6 +26,8 @@ const { product } = Astro.props;
 const categoriaSlug = product.href.split('/').filter(Boolean)[1];
 const guiasBlog = await guiasPorCategoria(BLOG_POR_CATEGORIA[categoriaSlug ?? ''] ?? [], product.slug);
 const enlacesGuiaProducto = guiasBlog.map((post) => ({ href: `/blog/${post.id}/`, label: post.data.title }));
+/* Interlinking 2026-09-30: página de la marca (/marcas/…) si existe; antes sólo el 1 % de las fichas la enlazaba. */
+const marcaProducto = marcaDeBrand(product.brand);
 /* Fabricante confirmado: sólo con él se afirma «distribuidor autorizado de …». */
 const fabricante = fabricanteDe(product);
 const esDistribuidor = Boolean(fabricante) && !product.suppressDefaultClaims;
@@ -1360,7 +1363,7 @@ const seoDesc = metaCerrada(product.description, [
     </section>
   )}
 
-  <RelatedLinks ruta={product.href} enlacesExtra={enlacesGuiaProducto} />
+  <RelatedLinks ruta={product.href} enlacesExtra={[...(marcaProducto ? [marcaProducto] : []), ...enlacesGuiaProducto]} />
 
 </BaseLayout>
 

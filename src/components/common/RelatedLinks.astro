@@ -1,44 +1,109 @@
 ---
+/**
+ * Enlaces relacionados — bloque único de enlazado interno del sitio.
+ * Reúne el nodo de interlinking de la ruta (heredado del ancestro en /productos/),
+ * el giro del directorio, la cobertura y los enlaces extra de cada plantilla, y los
+ * agrupa POR TIPO DE DESTINO (según la URL, no según el grupo del nodo) en columnas
+ * con formato de lista índice. Interlinking 2026-09-30.
+ * Reglas: todo follow, anclas descriptivas, sin íconos ni animaciones.
+ */
 import { relacionados } from '@data/interlinking';
 import type { GiroKey } from '@data/giros';
 import { ANCLA_GIRO, giroDeCategoria } from '@lib/enlaces-directorio';
 
-type EnlaceExtra = { href: string; label: string; desc?: string };
+type Enlace = { href: string; label: string; desc?: string };
 
 interface Props {
   ruta: string;
   titulo?: string;
   giro?: GiroKey;
   incluirDirectorio?: boolean;
-  enlacesExtra?: EnlaceExtra[];
+  /** Enlace a cobertura; por defecto, el nacional en rutas de /productos/, /servicios/ e /industrias/. */
+  incluirCobertura?: boolean;
+  enlacesExtra?: Enlace[];
+  /** Máximo de enlaces por columna */
+  max?: number;
 }
 
-const { ruta, titulo = 'Productos y servicios relacionados', giro, incluirDirectorio = true, enlacesExtra = [] } = Astro.props;
-const categoriaDeRuta = ruta.split('/').filter(Boolean)[1];
+const { ruta, titulo = 'Productos y servicios relacionados', giro, incluirDirectorio = true, incluirCobertura, enlacesExtra = [], max = 6 } = Astro.props;
+const partes = ruta.split('/').filter(Boolean);
+const categoriaDeRuta = partes[0] === 'productos' ? partes[1] : undefined;
 const giroResuelto = incluirDirectorio ? (giro ?? (categoriaDeRuta ? giroDeCategoria(categoriaDeRuta) : undefined)) : undefined;
-const enlaceDirectorio: EnlaceExtra[] = giroResuelto
-  ? [{ href: `/empresas/${giroResuelto}/`, label: ANCLA_GIRO[giroResuelto] }]
-  : [];
+const conCobertura = incluirCobertura ?? ['productos', 'servicios', 'industrias'].includes(partes[0] ?? '');
+
+const base: Enlace[] = [
+  ...enlacesExtra,
+  ...relacionados(ruta),
+  ...(giroResuelto ? [{ href: `/empresas/${giroResuelto}/`, label: ANCLA_GIRO[giroResuelto] }] : []),
+  ...(conCobertura ? [{ href: '/cobertura/', label: 'Entrega de equipo en los 32 estados' }] : []),
+];
+
+const norm = (h: string) => `${h.split(/[?#]/)[0].replace(/\/+$/, '')}/`;
+const propia = norm(ruta);
 const vistos = new Set<string>();
-const enlaces: EnlaceExtra[] = [...relacionados(ruta), ...enlaceDirectorio, ...enlacesExtra].filter((enlace) => {
-  if (vistos.has(enlace.href)) return false;
-  vistos.add(enlace.href);
+const enlaces = base.filter((e) => {
+  const h = norm(e.href);
+  if (h === propia || vistos.has(h)) return false;
+  vistos.add(h);
   return true;
 });
+
+const GRUPOS = [
+  { key: 'productos', titulo: 'Productos relacionados', test: (h: string) => h.startsWith('/productos/') },
+  { key: 'marcas', titulo: 'Marcas', test: (h: string) => h.startsWith('/marcas/') },
+  { key: 'servicios', titulo: 'Servicios', test: (h: string) => h.startsWith('/servicios/') || h.startsWith('/licitaciones') || h.startsWith('/certificaciones') },
+  { key: 'industrias', titulo: 'Industrias', test: (h: string) => h.startsWith('/industrias/') },
+  { key: 'guias', titulo: 'Guías técnicas', test: (h: string) => h.startsWith('/blog/') },
+  { key: 'directorio', titulo: 'Directorio y cobertura', test: (h: string) => /^\/(empresas|estaciones|cobertura|directorio)(\/|$)/.test(h) },
+];
+const grupos = GRUPOS.map((g) => ({ ...g, items: [] as Enlace[] }));
+const otros: Enlace[] = [];
+for (const e of enlaces) {
+  const g = grupos.find((x) => x.test(e.href));
+  g ? g.items.push(e) : otros.push(e);
+}
+if (otros.length) grupos.push({ key: 'otros', titulo: 'También te puede servir', test: () => true, items: otros });
+const visibles = grupos.map((g) => ({ ...g, items: g.items.slice(0, max) })).filter((g) => g.items.length > 0);
 ---
 
-{enlaces.length > 0 && (
-  <section class="section-tight" style="background:var(--c-bg-alt)" aria-label={titulo}>
+{visibles.length > 0 && (
+  <section class="rl" aria-label={titulo}>
     <div class="container-site">
-      <h2 class="font-display font-bold text-2xl mb-6" style="color:var(--c-ink)">{titulo}</h2>
-      <div class="card-grid">
-        {enlaces.map((enlace) => (
-          <a href={enlace.href} class="group p-5 hover:border-[var(--c-line-strong)]" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
-            <span class="font-display font-bold text-sm block group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{enlace.label}</span>
-            {enlace.desc && <span class="text-xs leading-relaxed mt-2 block" style="color:var(--c-muted)">{enlace.desc}</span>}
-          </a>
+      <h2 class="rl-title">{titulo}</h2>
+      <div class="rl-grid">
+        {visibles.map((g) => (
+          <nav class="rl-col" aria-label={g.titulo}>
+            <p class="rl-label">{g.titulo}</p>
+            <ul class="rl-list" role="list">
+              {g.items.map((e) => (
+                <li>
+                  <a href={e.href} class="rl-link">
+                    <span class="rl-link-label">{e.label}</span>
+                    {e.desc && <span class="rl-link-desc">{e.desc}</span>}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
         ))}
       </div>
     </div>
   </section>
 )}
+
+<style>
+  .rl { padding-block: 3.5rem; background: var(--c-bg-alt); border-top: 1px solid var(--c-line); }
+  .rl-title { margin: 0 0 2rem; font-family: var(--font-display); font-size: clamp(1.375rem, 2.2vw, 1.75rem); font-weight: 700; letter-spacing: -.02em; line-height: 1.2; color: var(--c-ink); }
+  .rl-grid { display: grid; gap: 2rem 2.5rem; grid-template-columns: minmax(0, 1fr); }
+  @media (min-width: 640px) { .rl-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (min-width: 1024px) { .rl-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (min-width: 1280px) { .rl-grid { grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); gap: 2rem; } }
+  .rl-label { margin: 0 0 .5rem; font-size: .6875rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--c-accent); }
+  .rl-list { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--c-line); }
+  .rl-list li { border-bottom: 1px solid var(--c-line); }
+  .rl-link { display: flex; flex-direction: column; gap: .125rem; min-height: 2.5rem; justify-content: center; padding: .5rem .375rem; text-decoration: none; transition: background-color .15s; }
+  .rl-link:hover, .rl-link:focus-visible { background: var(--c-surface); }
+  .rl-link-label { font-size: .875rem; font-weight: 500; line-height: 1.35; color: var(--c-ink-2); transition: color .15s; }
+  .rl-link:hover .rl-link-label, .rl-link:focus-visible .rl-link-label { color: var(--c-accent); }
+  .rl-link-desc { font-size: .75rem; line-height: 1.45; color: var(--c-muted); }
+</style>

@@ -35,6 +35,16 @@ const GIROS_POR_CATEGORIA: Record<string, GiroKey> = {
   'drones-emergencia': 'venta-equipo',
 };
 
+/** Industrias que atiende cada giro del directorio (interlinking 2026-09-30).
+ *  Enlace temático al sector: no afirma que la empresa atienda esa industria. */
+export const INDUSTRIAS_POR_GIRO: Record<GiroKey, { href: string; label: string }[]> = {
+  extintores: [{ href: '/industrias/hoteles/', label: 'Protección contra incendio para hoteles' }, { href: '/industrias/brigadas-industriales/', label: 'Equipo para brigadas industriales' }],
+  'sistemas-ci': [{ href: '/industrias/hospitales/', label: 'Sistemas contra incendio para hospitales' }, { href: '/industrias/hoteles/', label: 'Sistemas contra incendio para hoteles' }],
+  'venta-equipo': [{ href: '/industrias/bomberos-municipales/', label: 'Equipo para bomberos municipales' }, { href: '/industrias/proteccion-civil/', label: 'Equipo para Protección Civil' }],
+  'equipos-contra-incendio': [{ href: '/industrias/refinerias-pemex/', label: 'Protección para refinerías' }, { href: '/industrias/brigadas-industriales/', label: 'Equipo para brigadas industriales' }],
+  capacitacion: [{ href: '/industrias/brigadas-industriales/', label: 'Capacitación para brigadas industriales' }, { href: '/industrias/proteccion-civil/', label: 'Equipo para Protección Civil' }],
+};
+
 export function giroDeCategoria(slugCategoriaProducto: string): GiroKey | undefined {
   return GIROS_POR_CATEGORIA[slugCategoriaProducto];
 }
