@@ -64,6 +64,18 @@ export const blogCategorias: Record<string, BlogCategoryIntro> = {
       },
     ],
   },
+  "drones-de-emergencia": {
+    intro: [
+      "Esta categoría reúne artículos sobre drones para bomberos, Protección Civil y brigadas: qué aportan al mando en un incendio, cómo leer la imagen de una cámara térmica desde el aire y en qué escenarios cambian la decisión, desde el monte hasta la nave industrial.",
+      "Incluye el marco normativo que rige su operación en México, con la NOM-107-SCT3-2019, la AFAC y la norma NFPA 2400, y guías para equipar una corporación: elegir plataforma, formar pilotos y observadores y escribir el protocolo antes de volar el primer dron.",
+    ],
+    enlaces: [
+      {
+        href: "/productos/drones-emergencia/",
+        label: "Explora drones de emergencia con cámara térmica",
+      },
+    ],
+  },
   "equipos-epp": {
     intro: [
       "En esta categoría encontrarás guías sobre equipo de protección personal para respuesta a incendios y rescate. Los textos explican la función de prendas, capas y accesorios, así como los factores que influyen al evaluar protección, movilidad y compatibilidad entre componentes.",
