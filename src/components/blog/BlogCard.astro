@@ -1,4 +1,5 @@
 ---
+import { imgAttrs, SIZES } from '@lib/img';
 /**
  * BlogCard — Design System v2 "Forge & Protect"
  * Card oscura homologada con service-card. SIN fechas.
@@ -34,7 +35,7 @@ const readingTime = Math.ceil((post.body ?? '').split(' ').length / 200);
   >
     {image ? (
       <img
-        src={image.url}
+        src={image.url} {...imgAttrs(image.url, featured ? SIZES.half : SIZES.card3)}
         alt={image.alt}
         class="w-full h-full object-cover"
         loading="lazy"

@@ -1,4 +1,5 @@
 ---
+import { imgAttrs, SIZES } from '@lib/img';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import { SITE, whatsappUrl, CANAL_CONTACTO } from '@config/site';
@@ -6,9 +7,9 @@ import { SITE, whatsappUrl, CANAL_CONTACTO } from '@config/site';
 const canonicalURL = `${SITE.url}/nosotros/`;
 
 const seoMeta = {
-  title: `Sobre FIREFIGHTERS MX — Equipo para Bomberos`,
+  title: `Sobre VIGILES — Equipo para Bomberos`,
   description:
-    'Conoce FIREFIGHTERS MX: 15+ años equipando bomberos, industria y protección civil. 500+ estaciones, distribuidor autorizado y cobertura en los 32 estados.',
+    'Conoce VIGILES: 15+ años equipando bomberos, industria y protección civil. 500+ estaciones, distribuidor autorizado y cobertura en los 32 estados.',
   canonicalURL,
 };
 
@@ -82,7 +83,7 @@ const razones = [
             <span style="color:var(--c-accent)">quienes nos protegen</span>
           </h1>
           <div class="flex flex-col sm:flex-row gap-3">
-            <a href={whatsappUrl('Hola, quiero conocer más sobre FIREFIGHTERS MX.')} target="_blank" rel="noopener" class="btn btn-primary btn-lg">Hablar por {CANAL_CONTACTO}</a>
+            <a href={whatsappUrl('Hola, quiero conocer más sobre VIGILES.')} target="_blank" rel="noopener" class="btn btn-primary btn-lg">Hablar por {CANAL_CONTACTO}</a>
             <a href="/contacto" class="btn btn-ghost btn-lg">Contáctanos</a>
           </div>
         </div>
@@ -127,29 +128,29 @@ const razones = [
   </section>
 
   <!-- Galería fotográfica -->
-  <section class="section-tight" style="background:var(--c-bg)" aria-label="FIREFIGHTERS MX en acción">
+  <section class="section-tight" style="background:var(--c-bg)" aria-label="VIGILES en acción">
     <div class="container-site">
       <div class="flex items-center gap-4 mb-8">
         <span class="text-xs font-display font-semibold uppercase tracking-[0.18em]" style="color:var(--c-accent)">15 años equipando a quienes nos protegen</span>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-2 lg:gap-3">
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
-          <img src="/images/nosotros/bombero-equipo-nfpa-firefightersmx.avif" alt="Equipo estructural completo de bombero en su rack" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+          <img src="/images/nosotros/bombero-equipo-nfpa-firefightersmx.avif" {...imgAttrs("/images/nosotros/bombero-equipo-nfpa-firefightersmx.avif", SIZES.gal)} alt="Equipo estructural completo de bombero en su rack" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
-          <img src="/images/nosotros/nosotros-equipo-bombero-uniformado.avif" alt="Bombero con traje estructural completo caminando en la estación" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+          <img src="/images/nosotros/nosotros-equipo-bombero-uniformado.avif" {...imgAttrs("/images/nosotros/nosotros-equipo-bombero-uniformado.avif", SIZES.gal)} alt="Bombero con traje estructural completo caminando en la estación" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
-          <img src="/images/nosotros/nosotros-distribuidor-autorizado-mexico.avif" alt="Equipo contra incendio empacado y listo para envío" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+          <img src="/images/nosotros/nosotros-distribuidor-autorizado-mexico.avif" {...imgAttrs("/images/nosotros/nosotros-distribuidor-autorizado-mexico.avif", SIZES.gal)} alt="Equipo contra incendio empacado y listo para envío" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
-          <img src="/images/nosotros/bombero-proteccion-completa-mexico.avif" alt="Cierre del chaquetón de un traje estructural de bombero" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+          <img src="/images/nosotros/bombero-proteccion-completa-mexico.avif" {...imgAttrs("/images/nosotros/bombero-proteccion-completa-mexico.avif", SIZES.gal)} alt="Cierre del chaquetón de un traje estructural de bombero" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
-          <img src="/images/nosotros/nosotros-bombero-emergencia-accion.avif" alt="Bomberos avanzando con una línea de manguera hacia un incendio" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+          <img src="/images/nosotros/nosotros-bombero-emergencia-accion.avif" {...imgAttrs("/images/nosotros/nosotros-bombero-emergencia-accion.avif", SIZES.gal)} alt="Bomberos avanzando con una línea de manguera hacia un incendio" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
-          <img src="/images/nosotros/firefightersmx-equipo-profesional-mexico.avif" alt="Casco, cámara térmica y máscara de respiración sobre banco" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+          <img src="/images/nosotros/firefightersmx-equipo-profesional-mexico.avif" {...imgAttrs("/images/nosotros/firefightersmx-equipo-profesional-mexico.avif", SIZES.gal)} alt="Casco, cámara térmica y máscara de respiración sobre banco" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
       </div>
     </div>
@@ -223,7 +224,7 @@ const razones = [
               { label: 'Certificaciones', desc: 'Las normas que avalan nuestro equipo', href: '/certificaciones' },
               { label: 'Cobertura nacional', desc: 'Entrega y servicio en los 32 estados', href: '/cobertura' },
               { label: 'Marcas que distribuimos', desc: 'Globe, MSA, Dräger, Holmatro y más', href: '/marcas' },
-              { label: 'Volver a la empresa', desc: 'Visión general de FIREFIGHTERS MX', href: '/empresa' },
+              { label: 'Volver a la empresa', desc: 'Visión general de VIGILES', href: '/empresa' },
             ].map((l) => (
               <li style="border-bottom:1px solid var(--c-line)">
                 <a href={l.href} class="group flex items-center justify-between gap-4 py-4">

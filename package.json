@@ -2,7 +2,7 @@
   "name": "firefighters-mx",
   "type": "module",
   "version": "1.0.0",
-  "description": "FIREFIGHTERS MX — Portal líder de equipos para bomberos y protección civil en México",
+  "description": "VIGILES — Portal líder de equipos para bomberos y protección civil en México",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",

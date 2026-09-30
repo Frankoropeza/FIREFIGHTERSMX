@@ -4,7 +4,7 @@ seoTitle: "MSA G1 vs Dräger PSS 7000: comparativa de SCBA"
 description: "MSA G1 vs Dräger PSS 7000: criterios de documentación, compatibilidad y mantenimiento para revisar una compra de SCBA."
 pubDate: 2026-02-15
 updatedDate: 2026-09-28
-author: "FIREFIGHTERS MX"
+author: "VIGILES"
 category: "Equipos SCBA"
 tags: ["SCBA", "MSA G1", "Dräger PSS 7000", "NFPA 1970", "equipo respiración autónoma"]
 image:

@@ -1,4 +1,5 @@
 ---
+import { imgAttrs, SIZES } from '@lib/img';
 /**
  * Card de línea de producto — pieza única del catálogo (portada, /productos/, directorio).
  * Estructura fija: imagen · norma · título · texto · botones de subcategoría · botón principal.
@@ -26,7 +27,7 @@ const Titulo = nivel;
 <article class="lc">
   <a href={href} class="lc-media" tabindex="-1" aria-hidden="true">
     {imagen
-      ? <img src={imagen} alt={imagenAlt} width="1200" height="750" loading="lazy" decoding="async" />
+      ? <img src={imagen} {...imgAttrs(imagen, SIZES.card3)} alt={imagenAlt} width="1200" height="750" loading="lazy" decoding="async" />
       : <span class="lc-ph">{titulo}</span>}
     <span class="lc-norm">{norma}</span>
   </a>

@@ -8,7 +8,7 @@ import { estadosMeta } from '@lib/empresas';
 const canonicalURL = `${SITE.url}/empresas/registro/`;
 const seoMeta = {
   title: 'Registra o reclama tu empresa en el directorio',
-  description: `Da de alta tu empresa de equipo contra incendio, extintores, sistemas CI o capacitación en el directorio de FIREFIGHTERS MX, o reclama tu ficha existente y verifica tus datos. Registro básico gratuito.`,
+  description: `Da de alta tu empresa de equipo contra incendio, extintores, sistemas CI o capacitación en el directorio de VIGILES, o reclama tu ficha existente y verifica tus datos. Registro básico gratuito.`,
   canonicalURL,
 };
 const breadcrumbSchema = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
@@ -114,7 +114,7 @@ const planes = [
         ev.preventDefault();
         const d = new FormData(f); const mail = f.dataset.mail ?? '';
         const lineas = [...d.entries()].filter(([, v]) => String(v).trim()).map(([k, v]) => `${k}: ${v}`);
-        const subject = `${d.get('tipo') === 'alta' ? 'Alta' : 'Reclamo de ficha'} — ${d.get('empresa')} — Directorio FIREFIGHTERS MX`;
+        const subject = `${d.get('tipo') === 'alta' ? 'Alta' : 'Reclamo de ficha'} — ${d.get('empresa')} — Directorio VIGILES`;
         window.location.href = `mailto:${mail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lineas.join('\n'))}`;
       });
     });

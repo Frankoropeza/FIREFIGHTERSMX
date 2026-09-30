@@ -1,4 +1,5 @@
 ---
+import { imgAttrs, SIZES } from '@lib/img';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import RelatedLinks from '@components/common/RelatedLinks.astro';
@@ -449,22 +450,22 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
       </div>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-2 lg:gap-3">
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
-          <img src="/images/productos/scba-msa-g1-bombero-estructural.avif" alt="Bombero con SCBA MSA G1 NFPA 1970 en incendio estructural México" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center"/>
+          <img src="/images/productos/scba-msa-g1-bombero-estructural.avif" {...imgAttrs("/images/productos/scba-msa-g1-bombero-estructural.avif", SIZES.gal)} alt="Bombero con SCBA MSA G1 NFPA 1970 en incendio estructural México" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
-          <img src="/images/productos/scba-drager-pa5000-lateral.avif" alt="Dräger PSS 7000 equipo de respiración autónoma en versión certificada NFPA" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center"/>
+          <img src="/images/productos/scba-drager-pa5000-lateral.avif" {...imgAttrs("/images/productos/scba-drager-pa5000-lateral.avif", SIZES.gal)} alt="Dräger PSS 7000 equipo de respiración autónoma en versión certificada NFPA" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
-          <img src="/images/productos/scba-scott-x3-pro-mascara.avif" alt="Scott Air-Pak X3 Pro con máscara panorámica NFPA 1970 certificado" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center"/>
+          <img src="/images/productos/scba-scott-x3-pro-mascara.avif" {...imgAttrs("/images/productos/scba-scott-x3-pro-mascara.avif", SIZES.gal)} alt="Scott Air-Pak X3 Pro con máscara panorámica NFPA 1970 certificado" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
-          <img src="/images/productos/scba-bombero-acceso-edificio.avif" alt="Bombero equipado con SCBA NFPA 1970 en acceso a edificio en llamas" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center"/>
+          <img src="/images/productos/scba-bombero-acceso-edificio.avif" {...imgAttrs("/images/productos/scba-bombero-acceso-edificio.avif", SIZES.gal)} alt="Bombero equipado con SCBA NFPA 1970 en acceso a edificio en llamas" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
-          <img src="/images/productos/scba-msa-g1-hud-display.avif" alt="HUD de presión del MSA G1 en interior de máscara — interface NFPA 1970" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center"/>
+          <img src="/images/productos/scba-msa-g1-hud-display.avif" {...imgAttrs("/images/productos/scba-msa-g1-hud-display.avif", SIZES.gal)} alt="HUD de presión del MSA G1 en interior de máscara — interface NFPA 1970" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
-          <img src="/images/productos/scba-brigada-equipada-incendio.avif" alt="Brigada de bomberos equipada con SCBA NFPA 1970 en operación de incendio" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center"/>
+          <img src="/images/productos/scba-brigada-equipada-incendio.avif" {...imgAttrs("/images/productos/scba-brigada-equipada-incendio.avif", SIZES.gal)} alt="Brigada de bomberos equipada con SCBA NFPA 1970 en operación de incendio" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center"/>
         </figure>
       </div>
     </div>

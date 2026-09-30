@@ -1,4 +1,5 @@
 ---
+import { imgAttrs, SIZES } from '@lib/img';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import RelatedLinks from '@components/common/RelatedLinks.astro';
@@ -662,22 +663,22 @@ const razones = [
       </div>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-2 lg:gap-3">
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
-          <img src="/images/productos/traje-globe-gx7-estructural-1.avif" alt="Traje Globe G-XTREME 3.0 estructural NFPA 1970 en uso real — equipo certificado México" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+          <img src="/images/productos/traje-globe-gx7-estructural-1.avif" {...imgAttrs("/images/productos/traje-globe-gx7-estructural-1.avif", SIZES.gal)} alt="Traje Globe G-XTREME 3.0 estructural NFPA 1970 en uso real — equipo certificado México" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
-          <img src="/images/productos/traje-jacket-detalle-nfpa.avif" alt="Detalle chaqueta traje bombero NFPA 1970 costuras reforzadas Nomex resistente al fuego" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+          <img src="/images/productos/traje-jacket-detalle-nfpa.avif" {...imgAttrs("/images/productos/traje-jacket-detalle-nfpa.avif", SIZES.gal)} alt="Detalle chaqueta traje bombero NFPA 1970 costuras reforzadas Nomex resistente al fuego" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
-          <img src="/images/productos/traje-bombero-reflectivo-3m.avif" alt="Traje bombero con bandas reflectivas 3M certificado NFPA visibilidad nocturna" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+          <img src="/images/productos/traje-bombero-reflectivo-3m.avif" {...imgAttrs("/images/productos/traje-bombero-reflectivo-3m.avif", SIZES.gal)} alt="Traje bombero con bandas reflectivas 3M certificado NFPA visibilidad nocturna" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
-          <img src="/images/productos/traje-bombero-en-servicio.avif" alt="Bombero en traje estructural NFPA 1970 durante servicio de emergencia incendio" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+          <img src="/images/productos/traje-bombero-en-servicio.avif" {...imgAttrs("/images/productos/traje-bombero-en-servicio.avif", SIZES.gal)} alt="Bombero en traje estructural NFPA 1970 durante servicio de emergencia incendio" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
-          <img src="/images/productos/traje-bombero-completo-equipo.avif" alt="Equipo completo bombero traje estructural casco SCBA certificado NFPA 1970 México" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+          <img src="/images/productos/traje-bombero-completo-equipo.avif" {...imgAttrs("/images/productos/traje-bombero-completo-equipo.avif", SIZES.gal)} alt="Equipo completo bombero traje estructural casco SCBA certificado NFPA 1970 México" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">
-          <img src="/images/productos/traje-bombero-preparacion.avif" alt="Bombero preparándose con traje estructural NFPA 1970 listo para emergencia" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
+          <img src="/images/productos/traje-bombero-preparacion.avif" {...imgAttrs("/images/productos/traje-bombero-preparacion.avif", SIZES.gal)} alt="Bombero preparándose con traje estructural NFPA 1970 listo para emergencia" width="640" height="480" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center 20%"/>
         </figure>
       </div>
     </div>

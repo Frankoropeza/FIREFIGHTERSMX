@@ -9,7 +9,7 @@ export interface Props {
   ogImage?: string;
   ogType?: string;
   noindex?: boolean;
-  /** true = no anexar " | FIREFIGHTERS MX" (home: título de 3 módulos de keywords) */
+  /** true = no anexar " | VIGILES" (home: título de 3 módulos de keywords) */
   noBrandSuffix?: boolean;
   schema?: object | object[];
 }
@@ -76,7 +76,7 @@ const orgSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   '@id': `${SITE.url}/#business`,
-  name: 'FIREFIGHTERS MX',
+  name: 'VIGILES',
   description: SITE.description,
   url: 'https://firefighters.mx',
   logo: {
@@ -149,7 +149,7 @@ const webSiteSchema = {
 <meta property="og:image:height" content="630" />
 <meta property="og:image:type" content={ogMimeType} />
 <meta property="og:image:alt" content={fullTitle} />
-<meta property="og:site_name" content="FIREFIGHTERS MX" />
+<meta property="og:site_name" content="VIGILES" />
 <meta property="og:locale" content="es_MX" />
 
 <!-- Twitter Card -->
@@ -160,12 +160,12 @@ const webSiteSchema = {
 <meta name="twitter:image" content={absoluteOgImage} />
 
 <!-- Additional SEO -->
-<meta name="author" content="FIREFIGHTERS MX" />
-<meta name="publisher" content="FIREFIGHTERS MX" />
+<meta name="author" content="VIGILES" />
+<meta name="publisher" content="VIGILES" />
 <meta name="language" content="es-MX" />
 <meta name="geo.region" content="MX" />
 <meta name="geo.placename" content="México" />
-<meta name="copyright" content={`© ${new Date().getFullYear()} FIREFIGHTERS MX`} />
+<meta name="copyright" content={`© ${new Date().getFullYear()} VIGILES`} />
 
 <!-- Structured Data (JSON-LD) -->
 <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />

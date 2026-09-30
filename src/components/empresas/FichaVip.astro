@@ -1,4 +1,5 @@
 ---
+import { imgAttrs, SIZES } from '@lib/img';
 /**
  * FichaVip — bloques de la ficha de plan destacado.
  *
@@ -86,7 +87,7 @@ const ctaWeb = urlCotizar(web);
         <article class="flex flex-col" style={`background:var(--c-surface);border:1px solid ${borde}`}>
           {l.imagen && (
             <div class="aspect-[16/9] overflow-hidden" style="background:var(--c-bg)">
-              <img src={l.imagen} alt={l.imagenAlt ?? l.nombre} width="768" height="432" loading="lazy" decoding="async" class="w-full h-full object-cover" />
+              <img src={l.imagen} {...imgAttrs(l.imagen, SIZES.card3)} alt={l.imagenAlt ?? l.nombre} width="768" height="432" loading="lazy" decoding="async" class="w-full h-full object-cover" />
             </div>
           )}
           <div class="p-5 flex flex-col gap-3 flex-1">

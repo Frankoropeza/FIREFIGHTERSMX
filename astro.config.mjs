@@ -4,6 +4,7 @@ import sitemap from '@astrojs/sitemap';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { execSync } from 'node:child_process';
+import rehypeImagenes from './src/lib/rehype-imagenes.mjs';
 import { existsSync, statSync, readFileSync, writeFileSync, readdirSync } from 'node:fs';
 
 // ─── Sitemap lastmod dinámico ──────────────────────────────────────────────
@@ -104,7 +105,7 @@ const barraFinalInterna = () => ({
       };
       const re = /href="(?:https:\/\/firefighters\.mx)?(\/[^"#?]*?[^\/"#?])([?#][^"]*)?"/g;
       const reAbs = /"https:\/\/firefighters\.mx(\/[^"#?\s<>]*?[^\/"#?\s<>])([?#][^"]*)?"/g;
-      let archivos = 0, cambios = 0;
+      let archivos = 0, cambios = 0, bytesComentarios = 0;
       const recorrer = (d) => {
         for (const e of readdirSync(d, { withFileTypes: true })) {
           const f = join(d, e.name);
@@ -119,15 +120,33 @@ const barraFinalInterna = () => ({
           };
           // 1) href relativos y absolutos · 2) URLs absolutas entre comillas en
           // JSON-LD y metadatos (migas, ItemList, url de entidades)
-          const out = src.replace(re, arreglar).replace(reAbs, arreglar);
-          if (n) { writeFileSync(f, out); archivos++; cambios += n; }
+          const normalizado = src.replace(re, arreglar).replace(reAbs, arreglar);
+          const out = quitarComentariosHtml(normalizado);
+          if (n) { archivos++; cambios += n; }
+          if (out !== src) { writeFileSync(f, out); bytesComentarios += normalizado.length - out.length; }
         }
       };
       recorrer(raiz);
       logger.info(`BARRA FINAL: ${cambios} enlaces internos normalizados en ${archivos} archivos.`);
+      logger.info(`HTML: comentarios de plantilla eliminados (${(bytesComentarios / 1024).toFixed(0)} KB en total).`);
     },
   },
 });
+
+// Comentarios HTML de las plantillas (`<!-- SEO Component -->`, etc.): no aportan
+// al usuario y pesan en cada una de las ~2,700 páginas. Se conservan los
+// condicionales de IE y todo lo que vive dentro de <script>, <style>, <pre> y
+// <textarea>, donde un `<!--` puede ser contenido y no un comentario.
+const quitarComentariosHtml = (html) => {
+  const guardados = [];
+  const protegido = html.replace(/<(script|style|pre|textarea)\b[\s\S]*?<\/\1>/gi, (m) => {
+    guardados.push(m);
+    return `\u0000${guardados.length - 1}\u0000`;
+  });
+  return protegido
+    .replace(/<!--(?!\[if|<!)[\s\S]*?-->/g, '')
+    .replace(/\u0000(\d+)\u0000/g, (_, i) => guardados[Number(i)]);
+};
 
 export default defineConfig({
   site: 'https://firefighters.mx',
@@ -159,6 +178,7 @@ export default defineConfig({
     domains: ['firefighters.mx'],
   },
   markdown: {
+    rehypePlugins: [rehypeImagenes],
     shikiConfig: {
       theme: 'dracula',
     },
@@ -166,9 +186,8 @@ export default defineConfig({
   vite: {
     build: {
       cssCodeSplit: true,
-    },
-    optimizeDeps: {
-      exclude: ['@astrojs/image'],
+      // Sin sourcemaps en producción: menos archivos y peso en el deploy
+      sourcemap: false,
     },
   },
   compressHTML: true,

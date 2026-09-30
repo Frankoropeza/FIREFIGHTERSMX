@@ -1,0 +1,5 @@
+# Activos con hash o inmutables: caché de 1 año sin revalidar
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable

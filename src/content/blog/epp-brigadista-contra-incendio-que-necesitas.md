@@ -91,7 +91,7 @@ Para dimensionar cuántos brigadistas necesitas en tu planta antes de decidir qu
 
 ---
 
-## Brigadas Empresariales en FIREFIGHTERS MX
+## Brigadas Empresariales en VIGILES
 
 Ayudamos a las plantas industriales a seleccionar el EPP correcto para su brigada, sin sobrevender ni dejar huecos de protección. El servicio incluye diagnóstico de riesgo, propuesta de equipo justificada y capacitación práctica para que el EPP se use bien.
 

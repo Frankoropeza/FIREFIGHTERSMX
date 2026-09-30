@@ -1,4 +1,5 @@
 ---
+import { imgAttrs, SIZES } from '@lib/img';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import RelatedLinks from '@components/common/RelatedLinks.astro';
@@ -389,7 +390,7 @@ const otrasCategorias = allCategories.filter((c) => c.slug !== 'drones-emergenci
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
         <figure class="m-0 overflow-hidden" style="aspect-ratio:16/9;border:1px solid var(--c-line)">
-          <img src="/images/categorias/drones-emergencia.avif" alt="Dron DJI Matrice 30T con cámara térmica en operación de búsqueda y rescate — protección civil México" width="800" height="450" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center"/>
+          <img src="/images/categorias/drones-emergencia.avif" {...imgAttrs("/images/categorias/drones-emergencia.avif", SIZES.gal)} alt="Dron DJI Matrice 30T con cámara térmica en operación de búsqueda y rescate — protección civil México" width="800" height="450" loading="lazy" decoding="async" class="w-full h-full block" style="object-fit:cover;object-position:center"/>
         </figure>
         <div class="grid grid-cols-2 gap-3">
           {(cat.spotlight?.subsections ?? []).map((s) => (

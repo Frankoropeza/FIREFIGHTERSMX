@@ -1,4 +1,5 @@
 ---
+import { imgAttrs, SIZES } from '@lib/img';
 /**
  * Hero del portal-directorio — v2 (2026-09-04, a petición de Frank).
  * Dos columnas:
@@ -13,7 +14,7 @@ import { estadosMeta } from '@lib/empresas';
 
   {/* Fondo: foto con velo navy — ambiente, no mensaje */}
   <picture aria-hidden="true">
-    <img src="/images/hero/hero-portada-bombero-equipo-estructural.avif" alt="" width="1920" height="1080" fetchpriority="high" decoding="async"
+    <img src="/images/hero/hero-portada-bombero-equipo-estructural.avif" {...imgAttrs("/images/hero/hero-portada-bombero-equipo-estructural.avif", SIZES.full)} alt="" width="1920" height="1080" fetchpriority="high" decoding="async"
       class="absolute inset-0 w-full h-full object-cover" style="object-position:70% 40%;opacity:0.22;filter:saturate(0.6) contrast(1.05)" />
   </picture>
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true" style="background:linear-gradient(90deg, var(--c-bg) 0%, rgba(255,255,255,0.94) 45%, rgba(255,255,255,0.8) 100%)"></div>
@@ -82,7 +83,7 @@ import { estadosMeta } from '@lib/empresas';
           <span class="text-xs font-display font-semibold uppercase tracking-[0.18em]" style="color:var(--c-accent)">Un solo lugar para todo el sector</span>
         </div>
         <p class="text-sm lg:text-[15px] leading-[1.9] mb-5" style="color:var(--c-text)">
-          FIREFIGHTERS MX reúne dos directorios en uno. Del lado operativo, las <strong style="color:var(--c-ink)">estaciones de bomberos</strong> del país: una ficha por estación física, con sus servicios y su fuente citada. Del lado del suministro, las empresas de <strong style="color:var(--c-ink)">equipo contra incendios y equipo de bombero</strong>: distribuidores de equipo de protección personal estructural, cascos, guantes y equipo de respiración autónoma; venta, recarga de extintores y mantenimiento preventivo; ingenierías de <strong style="color:var(--c-ink)">sistemas contra incendios</strong>, hidrantes, mangueras, rociadores y detección y alarma; equipo forestal y herramientas de rescate; y centros de capacitación de brigadas. Todo clasificado por giro y especialidad, georreferenciado y con fuente, en toda la República.
+          VIGILES reúne dos directorios en uno. Del lado operativo, las <strong style="color:var(--c-ink)">estaciones de bomberos</strong> del país: una ficha por estación física, con sus servicios y su fuente citada. Del lado del suministro, las empresas de <strong style="color:var(--c-ink)">equipo contra incendios y equipo de bombero</strong>: distribuidores de equipo de protección personal estructural, cascos, guantes y equipo de respiración autónoma; venta, recarga de extintores y mantenimiento preventivo; ingenierías de <strong style="color:var(--c-ink)">sistemas contra incendios</strong>, hidrantes, mangueras, rociadores y detección y alarma; equipo forestal y herramientas de rescate; y centros de capacitación de brigadas. Todo clasificado por giro y especialidad, georreferenciado y con fuente, en toda la República.
         </p>
         <p class="text-sm lg:text-[15px] leading-[1.9]" style="color:var(--c-text-2)">
           Si equipas a cuerpos de bomberos municipales, una brigada industrial o un área de protección civil estatal, aquí encuentras al proveedor correcto para tu tipo de riesgo y llegas a la cotización o a la licitación con la norma adecuada: <strong style="color:var(--c-text)">NOM-002-STPS, NOM-154-SCFI, NFPA 1970, NFPA 13 y NFPA 72</strong>. Pide siempre el certificado NFPA del modelo: la certificación NFPA acredita un producto certificado, no un catálogo completo, y una mención comercial no sustituye la evidencia. Si vendes, instalas, recargas o das asesoría y capacitación para el combate de incendios, reclama tu ficha y aparece frente a quienes ya consultan este directorio con el equipo certificado en la mano.

@@ -65,9 +65,9 @@ Si las bases mezclan ediciones de normas, solicitan una propiedad que no corresp
 
 En procedimientos nacionales pueden existir requisitos de nacionalidad y contenido nacional. Revisa el carácter y los formatos de la convocatoria, así como las disposiciones vigentes que correspondan al bien. No declares un porcentaje de contenido nacional sin el sustento documental del fabricante o proveedor. El Reglamento de la LAASSP y las reglas aplicables prevén controles sobre esa información.
 
-## En qué te entra FIREFIGHTERS MX
+## En qué te entra VIGILES
 
-FIREFIGHTERS MX tiene más de 15 años de trabajo con dependencias federales, estatales y municipales. Para una solicitud de cotización podemos identificar modelos del catálogo, documentación disponible y alcance de servicio sin sustituir las decisiones de la convocante. Consulta [licitaciones](/licitaciones/) y solicita una [cotización técnica](/cotizacion/) con las bases o requisición.
+VIGILES tiene más de 15 años de trabajo con dependencias federales, estatales y municipales. Para una solicitud de cotización podemos identificar modelos del catálogo, documentación disponible y alcance de servicio sin sustituir las decisiones de la convocante. Consulta [licitaciones](/licitaciones/) y solicita una [cotización técnica](/cotizacion/) con las bases o requisición.
 
 ## De la especificación a la recepción
 

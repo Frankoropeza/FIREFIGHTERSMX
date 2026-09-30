@@ -79,9 +79,9 @@ Y un consejo que pocos siguen y todos agradecen después: aparta desde el inicio
 
 ## No tienes que hacerlo solo
 
-Equipar una estación es un proyecto, con sus etapas y sus decisiones, no una compra suelta de fin de mes. En FIREFIGHTERS MX acompañamos el proceso completo: definimos el equipo según tu perfil de riesgo, armamos la cotización por etapas, entregamos con la documentación en regla y seguimos disponibles para el servicio en los 32 estados.
+Equipar una estación es un proyecto, con sus etapas y sus decisiones, no una compra suelta de fin de mes. En VIGILES acompañamos el proceso completo: definimos el equipo según tu perfil de riesgo, armamos la cotización por etapas, entregamos con la documentación en regla y seguimos disponibles para el servicio en los 32 estados.
 
-Para estructurar una requisición, consulta el [catálogo de productos](/productos/) y la ficha de [TrajesBombero México](/empresas/venta-equipo/ciudad-de-mexico/trajesbombero-mexico/). FIREFIGHTERS MX puede preparar una [cotización](/cotizacion/) con el perfil de riesgo y la documentación disponible por partida.
+Para estructurar una requisición, consulta el [catálogo de productos](/productos/) y la ficha de [TrajesBombero México](/empresas/venta-equipo/ciudad-de-mexico/trajesbombero-mexico/). VIGILES puede preparar una [cotización](/cotizacion/) con el perfil de riesgo y la documentación disponible por partida.
 
 ## Almacenamiento, inventario y mantenimiento desde el inicio
 

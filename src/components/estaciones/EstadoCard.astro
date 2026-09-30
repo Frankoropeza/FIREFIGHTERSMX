@@ -1,4 +1,5 @@
 ---
+import { imgAttrs, SIZES } from '@lib/img';
 /**
  * EstadoCard — tarjeta de estado del directorio de estaciones.
  * Diseño profesional: header visual (placeholder listo para foto futura),
@@ -102,7 +103,7 @@ const descripcion =
     {image ? (
       <>
         <img
-          src={image}
+          src={image} {...imgAttrs(image, SIZES.card3)}
           alt={imageAlt ?? `Estaciones de bomberos en ${est.nombre}`}
           width="380" height="152"
           loading="lazy" decoding="async"

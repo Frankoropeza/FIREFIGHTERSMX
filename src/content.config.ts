@@ -9,7 +9,7 @@ const blogCollection = defineCollection({
     description: z.string().max(165),
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
-    author: z.string().default('FIREFIGHTERS MX'),
+    author: z.string().default('VIGILES'),
     category: z.string(),
     tags: z.array(z.string()).default([]),
     image: z.object({
