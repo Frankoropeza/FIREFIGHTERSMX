@@ -8,7 +8,7 @@ const canonicalURL = `${SITE.url}/contacto/`;
 const seoMeta = {
   title: `Contacto — Asesoría en Equipo para Bomberos`,
   description:
-    'Contacta a VIGILES: asesoría en equipo para bomberos, cotizaciones, licitaciones y servicios. Oficinas en Polanco, CDMX. Respuesta en 2 horas hábiles.',
+    'Contacta a FIREFIGHTERS MX: asesoría en equipo para bomberos, cotizaciones, licitaciones y servicios. Oficinas en Polanco, CDMX. Respuesta en 2 horas hábiles.',
   canonicalURL,
 };
 
@@ -26,7 +26,7 @@ const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   '@id': `${SITE.url}/#business`,
-  name: SITE.name,
+  name: SITE.metaName,
   url: SITE.url,
   ...(TELEFONO_ACTIVO ? { telephone: SITE.phoneE164 } : {}),
   email: SITE.email,

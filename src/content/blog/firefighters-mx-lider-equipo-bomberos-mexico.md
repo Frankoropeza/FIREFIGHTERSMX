@@ -1,11 +1,11 @@
 ---
-title: "VIGILES: equipo para bomberos en México"
-description: "Cómo trabaja VIGILES en la selección y documentación de equipo contra incendio para bomberos, industria y gobierno en México."
+title: "FIREFIGHTERS MX: equipo para bomberos en México"
+description: "Cómo trabaja FIREFIGHTERS MX en la selección y documentación de equipo contra incendio para bomberos, industria y gobierno en México."
 pubDate: 2026-06-10
 updatedDate: 2026-09-28
 author: "Lic. Ana Ramírez"
 category: "Empresa"
-tags: ["VIGILES", "equipo para bomberos", "NFPA", "NOM", "México"]
+tags: ["FIREFIGHTERS MX", "equipo para bomberos", "NFPA", "NOM", "México"]
 image:
   url: "/images/blog/blog-firefightersmx-lider.avif"
   alt: "Bombero con equipo de protección personal y casco"

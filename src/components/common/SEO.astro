@@ -9,7 +9,7 @@ export interface Props {
   ogImage?: string;
   ogType?: string;
   noindex?: boolean;
-  /** true = no anexar " | VIGILES" (home: título de 3 módulos de keywords) */
+  /** true = no anexar " | FIREFIGHTERS MX" (home: título de 3 módulos de keywords) */
   noBrandSuffix?: boolean;
   schema?: object | object[];
 }
@@ -32,9 +32,9 @@ const {
   buscador truncara o reescribiera el título; ahí vale más el nombre.
 */
 const tituloBase = acortarTitulo(title);
-const tituloConMarca = `${tituloBase} | ${SITE.name}`;
+const tituloConMarca = `${tituloBase} | ${SITE.metaName}`;
 const fullTitle =
-  noBrandSuffix || tituloBase.includes(SITE.name)
+  noBrandSuffix || tituloBase.includes(SITE.metaName)
     ? tituloBase
     : tituloConMarca.length <= TITULO_MAX
       ? tituloConMarca
@@ -76,7 +76,7 @@ const orgSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   '@id': `${SITE.url}/#business`,
-  name: 'VIGILES',
+  name: 'FIREFIGHTERS MX',
   description: SITE.description,
   url: 'https://firefighters.mx',
   logo: {
@@ -123,7 +123,7 @@ const webSiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   '@id': `${SITE.url}/#website`,
-  name: SITE.name,
+  name: SITE.metaName,
   url: SITE.url,
   inLanguage: 'es-MX',
   publisher: { '@id': `${SITE.url}/#business` },
@@ -149,7 +149,7 @@ const webSiteSchema = {
 <meta property="og:image:height" content="630" />
 <meta property="og:image:type" content={ogMimeType} />
 <meta property="og:image:alt" content={fullTitle} />
-<meta property="og:site_name" content="VIGILES" />
+<meta property="og:site_name" content="FIREFIGHTERS MX" />
 <meta property="og:locale" content="es_MX" />
 
 <!-- Twitter Card -->
@@ -160,12 +160,12 @@ const webSiteSchema = {
 <meta name="twitter:image" content={absoluteOgImage} />
 
 <!-- Additional SEO -->
-<meta name="author" content="VIGILES" />
-<meta name="publisher" content="VIGILES" />
+<meta name="author" content="FIREFIGHTERS MX" />
+<meta name="publisher" content="FIREFIGHTERS MX" />
 <meta name="language" content="es-MX" />
 <meta name="geo.region" content="MX" />
 <meta name="geo.placename" content="México" />
-<meta name="copyright" content={`© ${new Date().getFullYear()} VIGILES`} />
+<meta name="copyright" content={`© ${new Date().getFullYear()} FIREFIGHTERS MX`} />
 
 <!-- Structured Data (JSON-LD) -->
 <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />

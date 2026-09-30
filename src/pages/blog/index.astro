@@ -38,7 +38,7 @@ const recursos = [
 const canonicalURL = `${SITE.url}/blog/`;
 
 const seoMeta = {
-  title: `Blog Técnico — Guías NFPA y NOM para Bomberos | ${SITE.name}`,
+  title: `Blog Técnico — Guías NFPA y NOM para Bomberos | ${SITE.metaName}`,
   description:
     'Blog técnico especializado en equipos para bomberos: guías NFPA 1970, normatividad NOM-002-STPS, extintores, SCBA, trajes y sistemas contra incendio en México.',
   canonicalURL,
@@ -57,7 +57,7 @@ const collectionSchema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
   '@id': `${canonicalURL}#collection`,
-  name: 'Blog técnico VIGILES',
+  name: 'Blog técnico FIREFIGHTERS MX',
   description: seoMeta.description,
   url: canonicalURL,
   inLanguage: 'es-MX',

@@ -1,5 +1,8 @@
 export const SITE = {
   name:        'VIGILES',
+  // Nombre para TÍTULOS/DESCRIPCIONES META y datos estructurados (SERP). Decisión de Frank
+  // 2026-09-30: VIGILES va en el contenido visible, NO en títulos ni meta descripciones.
+  metaName:    'FIREFIGHTERS MX',
   shortName:   'VIGILES',
   // Experiencia en el mercado: 35 años. Confirmado por Frank Oropeza el 2026-09-30
   // (sustituye los «15 años» del 2026-09-15). Única fuente de esta cifra.

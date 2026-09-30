@@ -44,7 +44,7 @@ const canonicalURL = `${SITE.url}/blog/categoria/${categoria}/`;
 const categoriaInfo = categoria ? blogCategorias[categoria] : undefined;
 
 const seoMeta = {
-  title: `${category} — Blog técnico bomberos | VIGILES`,
+  title: `${category} — Blog técnico bomberos | FIREFIGHTERS MX`,
   description:
     `Artículos técnicos sobre ${category.toLowerCase()} en equipo para bomberos y sistemas contra incendio. Normatividad NFPA, NOM y criterios de selección.`.slice(0, 160),
   canonicalURL,
@@ -58,7 +58,7 @@ const seoMeta = {
 const collectionSchema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
-  name: `${category} — Blog VIGILES`,
+  name: `${category} — Blog FIREFIGHTERS MX`,
   url: canonicalURL,
   description: seoMeta.description,
   inLanguage: 'es-MX',
