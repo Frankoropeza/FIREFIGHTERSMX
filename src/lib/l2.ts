@@ -10,6 +10,8 @@ import { featuredProducts } from '@data/products';
 import { industries } from '@data/industries';
 import { services } from '@data/services';
 import { marcaDeBrand } from '@data/interlinking';
+import { giros } from '@data/giros';
+import { ANCLA_GIRO } from '@lib/enlaces-directorio';
 
 export interface L2Link { label: string; href: string; n?: number }
 export interface L2Grupo { label?: string; links: L2Link[]; foot?: { label: string; href: string } }
@@ -75,3 +77,18 @@ export const GUIAS_CATALOGO: L2Link[] = [
   { label: 'Guía de compra de equipo para bomberos', href: '/blog/guia-compra-equipo-bomberos-nfpa-mexico-2026/' },
   { label: 'Licitaciones de equipo contra incendio', href: '/licitaciones/' },
 ];
+
+/** Directorio: giros del directorio de empresas + estaciones y cobertura. */
+export function bloqueDirectorio(): L2Bloque {
+  return {
+    id: 'directorio', titulo: 'Directorio', meta: 'Empresas del sector y estaciones de bomberos',
+    grupos: [
+      { label: 'Empresas por giro', links: giros.map((g) => ({ label: ANCLA_GIRO[g.slug], href: `/empresas/${g.slug}/` })) },
+      { label: 'Por ubicación', links: [
+        { label: 'Empresas por estado', href: '/cobertura/' },
+        { label: 'Estaciones de bomberos por estado', href: '/estaciones/' },
+      ] },
+    ],
+    foot: { label: 'Directorio nacional', href: '/empresas/' },
+  };
+}

@@ -17,9 +17,11 @@ export interface Props {
   /** URL de la página actual para marcarla si aparece en un bloque */
   actual?: string;
   cotizar?: { titulo: string; texto: string; msg: string };
+  /** Sustituye la cotización por acciones propias (hubs del directorio: registro de fichas) */
+  accion?: { titulo: string; texto: string; botones: { label: string; href: string; primario?: boolean }[] };
 }
 const {
-  bloques, secciones, resumen = 'Navegar la sección', actual,
+  bloques, secciones, resumen = 'Navegar la sección', actual, accion,
   cotizar = { titulo: 'Cotiza tu equipo', texto: 'Envíanos tu lista, las bases de tu licitación o una foto del equipo a renovar.', msg: 'Hola, quiero cotizar equipo contra incendio.' },
 } = Astro.props;
 ---
@@ -61,12 +63,20 @@ const {
             {secciones.map((s) => <li><a href={`#${s.id}`} class="sb-tab" data-spy={s.id}>{s.label}</a></li>)}
           </ul>
         </nav>
-        <div class="sb-quote">
-          <p class="sb-quote-title">{cotizar.titulo}</p>
-          <p class="sb-quote-text">{cotizar.texto}</p>
-          <a href={whatsappUrl(cotizar.msg)} target="_blank" rel="noopener" class="btn btn-primary sb-btn">Cotizar por {CANAL_CONTACTO}</a>
-          <a href="/cotizacion/" class="btn btn-ghost sb-btn">Cotización formal</a>
-        </div>
+        {accion ? (
+          <div class="sb-quote">
+            <p class="sb-quote-title">{accion.titulo}</p>
+            <p class="sb-quote-text">{accion.texto}</p>
+            {accion.botones.map((b) => <a href={b.href} class={`btn ${b.primario ? 'btn-primary' : 'btn-ghost'} sb-btn`}>{b.label}</a>)}
+          </div>
+        ) : (
+          <div class="sb-quote">
+            <p class="sb-quote-title">{cotizar.titulo}</p>
+            <p class="sb-quote-text">{cotizar.texto}</p>
+            <a href={whatsappUrl(cotizar.msg)} target="_blank" rel="noopener" class="btn btn-primary sb-btn">Cotizar por {CANAL_CONTACTO}</a>
+            <a href="/cotizacion/" class="btn btn-ghost sb-btn">Cotización formal</a>
+          </div>
+        )}
       </div>
 </aside>
 

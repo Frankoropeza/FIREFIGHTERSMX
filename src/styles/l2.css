@@ -75,3 +75,4 @@
 @media (min-width: 1024px) { .l2-trust > div { border-bottom: 0; } .l2-trust > div + div { border-left: 1px solid var(--c-line); } }
 .l2-trust h3 { margin: 0; font-family: var(--font-display); font-size: .875rem; font-weight: 700; color: var(--c-accent); }
 .l2-trust p { margin: 0; font-size: .8125rem; line-height: 1.6; color: var(--c-muted); }
+@media (min-width: 1024px) { .l2-trust--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); } .l2-trust--2 > div:nth-child(odd) { border-left: 0; } .l2-trust--2 > div:nth-child(-n+2) { border-bottom: 1px solid var(--c-line); } }

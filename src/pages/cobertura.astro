@@ -3,6 +3,12 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import { estados, regionesPresentes } from '@data/estados';
 import { SITE } from '@config/site';
+import { empresasPorEstado } from '@lib/empresas';
+import { estadoConEstaciones } from '@lib/estaciones';
+import L2Sidebar from '@components/l2/L2Sidebar.astro';
+import L2Cotizar from '@components/l2/L2Cotizar.astro';
+import { bloqueDirectorio, bloqueCategorias, bloqueServicios, bloqueIndustrias } from '@lib/l2';
+import '@styles/l2.css';
 
 const canonicalURL = `${SITE.url}/cobertura/`;
 const seoMeta = {
@@ -18,6 +24,27 @@ const criterios = [
   { title: 'Correcciones', text: 'Las empresas pueden solicitar revisión de datos o aportar información verificable para completar su ficha.' },
 ];
 
+/* ─── Plantilla L2 (2026-10): estados agrupados por región con conteos reales ─── */
+const filas = await Promise.all(estados.map(async (e) => ({
+  ...e,
+  empresas: (await empresasPorEstado(e.slug)).length,
+  estaciones: (await estadoConEstaciones(e.slug))?.estaciones.length ?? 0,
+})));
+const regiones = regionesPresentes.map((r) => ({ region: r, slug: r.toLowerCase().replace(/[^a-z]+/g, '-'), estados: filas.filter((f) => f.region === r) }));
+const totalEmpresas = filas.reduce((a, f) => a + f.empresas, 0);
+const totalEstaciones = filas.reduce((a, f) => a + f.estaciones, 0);
+const secciones = [
+  { id: 'estados', label: 'Estados' },
+  { id: 'criterios', label: 'Criterios' },
+  { id: 'registro', label: 'Registro' },
+];
+const tambien = [
+  { label: 'Directorio nacional', desc: 'Empresas del sector por giro', href: '/empresas/' },
+  { label: 'Estaciones de bomberos', desc: 'Cuerpos de bomberos por estado', href: '/estaciones/' },
+  { label: 'Equipo contra incendio', desc: 'Catálogo NFPA y NOM por categoría', href: '/productos/' },
+  { label: 'Guía de normas y certificaciones', desc: 'Qué NOM y NFPA aplican según tu giro', href: '/certificaciones/' },
+];
+
 const breadcrumbSchema = {
   '@context': 'https://schema.org', '@type': 'BreadcrumbList',
   itemListElement: [
@@ -29,6 +56,11 @@ const collectionSchema = {
   '@context': 'https://schema.org', '@type': 'CollectionPage', '@id': `${canonicalURL}#collection`,
   name: seoMeta.title, description: seoMeta.description, url: canonicalURL, inLanguage: 'es-MX',
   isPartOf: { '@id': `${SITE.url}/#website` },
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: estados.length,
+    itemListElement: estados.map((e, i) => ({ '@type': 'ListItem', position: i + 1, name: `Empresas en ${e.nombre}`, url: `${SITE.url}/empresas/estado/${e.slug}/` })),
+  },
 };
 ---
 
@@ -44,14 +76,86 @@ const collectionSchema = {
 
   <QuickLinksBar />
 
-  <section class="section-tight" style="background:var(--c-bg-alt)" aria-label="Cómo interpretar la cobertura del directorio"><div class="container-site"><div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style="background:var(--c-line);border:1px solid var(--c-line)">{criterios.map((criterio) => <article class="p-6" style="background:var(--c-bg-alt)"><h2 class="font-display font-bold text-sm mb-3" style="color:var(--c-ink)">{criterio.title}</h2><p class="text-xs leading-relaxed" style="color:var(--c-muted)">{criterio.text}</p></article>)}</div></div></section>
+  <!-- Plantilla L2: columna principal + barra lateral -->
+  <div class="container-site l2-shell">
+    <L2Sidebar
+      resumen="Navegar el directorio"
+      secciones={secciones}
+      bloques={[bloqueDirectorio(), bloqueCategorias(), bloqueServicios(), bloqueIndustrias()]}
+      accion={{ titulo: 'Datos del directorio', texto: '¿Tu empresa no aparece o necesita una corrección?', botones: [{ label: 'Registrar o corregir ficha', href: '/empresas/registro/', primario: true }] }}
+    />
 
-  <section id="estados" class="section" style="background:var(--c-bg)" aria-labelledby="estados-title">
-    <div class="container-site">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12"><div><span class="section-eyebrow mb-4 inline-flex">Cobertura del directorio</span><h2 id="estados-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">Directorio de empresas<br/><span style="color:var(--c-accent)">en cada entidad.</span></h2></div><p class="text-sm leading-relaxed" style="color:var(--c-text-2)">Las 32 entidades se organizan en {regionesPresentes.length} regiones editoriales. Entra a un estado para consultar giros, municipios y fichas disponibles.</p></div>
-      <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 list-none m-0 p-0" style="border-top:1px solid var(--c-line);border-left:1px solid var(--c-line)">{estados.map((estado) => <li style="border-bottom:1px solid var(--c-line);border-right:1px solid var(--c-line)"><a href={`/empresas/estado/${estado.slug}/`} class="grid-cell flex items-center justify-between gap-3 p-4 group"><span><span class="block font-display font-semibold text-sm group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{estado.nombre}</span><span class="block text-[10px] uppercase tracking-wider mt-1" style="color:var(--c-muted)">{estado.region}</span></span><span aria-hidden="true" style="color:var(--c-accent)"></span></a></li>)}</ul>
+    <div class="l2-main">
+
+      <!-- Estados por región -->
+      <section id="estados" class="l2-sec" aria-labelledby="estados-title">
+        <header class="l2-sec-head">
+          <span class="section-eyebrow mb-4 inline-flex">Cobertura del directorio</span>
+          <h2 id="estados-title" class="l2-h2">Empresas de equipo contra incendio en cada estado de México</h2>
+          <p class="l2-lead">Las 32 entidades se organizan en {regionesPresentes.length} regiones editoriales. Entra a un estado para consultar giros, municipios y fichas disponibles.</p>
+          <p class="cb-totales">{totalEmpresas} fichas de empresa · {totalEstaciones} estaciones de bomberos</p>
+        </header>
+        {regiones.map((g) => (
+          <div class="l2-fam" id={`region-${g.slug}`} aria-labelledby={`reg-${g.slug}`}>
+            <p class="l2-fam-eyebrow">Región</p>
+            <h3 id={`reg-${g.slug}`} class="l2-fam-title cb-region">{g.region}</h3>
+            <ul class="cb-grid" role="list">
+              {g.estados.map((e) => (
+                <li class="cb-card">
+                  <a href={`/empresas/estado/${e.slug}/`} class="cb-name">Empresas en {e.nombre}</a>
+                  <p class="cb-meta">{e.empresas} {e.empresas === 1 ? 'ficha' : 'fichas'} · {e.estaciones} {e.estaciones === 1 ? 'estación' : 'estaciones'}</p>
+                  <ul class="cb-links" role="list">
+                    {e.estaciones > 0 && <li><a href={`/estaciones/${e.slug}/`}>Estaciones de bomberos en {e.nombre}</a></li>}
+                    <li><a href={`/cobertura/${e.slug}/`}>Cobertura en {e.nombre}</a></li>
+                  </ul>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </section>
+
+      <!-- Criterios del directorio -->
+      <section id="criterios" class="l2-sec" aria-labelledby="criterios-title">
+        <header class="l2-sec-head">
+          <span class="section-eyebrow mb-4 inline-flex">Criterios</span>
+          <h2 id="criterios-title" class="l2-h2">Cómo interpretar la cobertura del directorio</h2>
+        </header>
+        <div class="l2-trust l2-trust--2">
+          {criterios.map((c) => (
+            <div><h3>{c.title}</h3><p>{c.text}</p></div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Registro -->
+      <L2Cotizar
+        id="registro"
+        eyebrow="Datos del directorio"
+        titulo="¿Tu empresa no aparece o"
+        destacado="necesita una corrección?"
+        texto="Las empresas pueden solicitar revisión de datos o aportar información verificable para completar su ficha."
+        cta={{ label: 'Registrar o corregir ficha', href: '/empresas/registro/' }}
+        tambien={tambien}
+      />
+
     </div>
-  </section>
+  </div>
 
-  <section style="background:var(--c-accent);padding-block:4rem" aria-label="Registrar o corregir una empresa"><div class="container-site"><div class="flex flex-col lg:flex-row items-center justify-between gap-8"><div><p class="text-xs font-display font-bold uppercase tracking-[0.2em] mb-3" style="color:rgba(255,255,255,0.7)">Datos del directorio</p><h2 class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.75rem,3.5vw,2.5rem);line-height:1.1">¿Tu empresa no aparece o<br/>necesita una corrección?</h2></div><a href="/empresas/registro/" class="btn" style="background:#FFFFFF;color:var(--c-accent);font-weight:700">Registrar o corregir ficha</a></div></div></section>
 </BaseLayout>
+
+<style>
+  .cb-totales { margin: .75rem 0 0; font-size: .875rem; font-weight: 600; color: var(--c-ink-2); }
+  .cb-region { margin-bottom: 1.25rem; }
+  #estados .l2-fam + .l2-fam { margin-top: 2.5rem; padding-top: 2.5rem; }
+  .cb-grid { display: grid; gap: .75rem; margin: 0; padding: 0; list-style: none; grid-template-columns: minmax(0, 1fr); }
+  @media (min-width: 640px) { .cb-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (min-width: 1024px) { .cb-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  .cb-card { display: flex; flex-direction: column; gap: .375rem; padding: 1rem 1.125rem; background: var(--c-surface); border: 1px solid var(--c-line); border-radius: var(--radius-card); box-shadow: var(--shadow-card); }
+  .cb-name { font-family: var(--font-display); font-size: 1rem; font-weight: 600; line-height: 1.3; color: var(--c-ink); text-decoration: none; transition: color .15s; }
+  .cb-name:hover, .cb-name:focus-visible { color: var(--c-accent); }
+  .cb-meta { margin: 0; font-size: .75rem; font-variant-numeric: tabular-nums; color: var(--c-muted); }
+  .cb-links { display: flex; flex-direction: column; margin: .375rem 0 0; padding: .375rem 0 0; list-style: none; border-top: 1px solid var(--c-line); }
+  .cb-links a { display: block; padding: .3125rem 0; font-size: .8125rem; font-weight: 500; color: var(--c-ink-2); text-decoration: none; transition: color .15s; }
+  .cb-links a:hover, .cb-links a:focus-visible { color: var(--c-accent); }
+</style>
