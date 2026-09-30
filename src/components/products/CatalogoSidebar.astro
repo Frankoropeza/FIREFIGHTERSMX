@@ -1,81 +1,164 @@
 ---
 /**
- * Barra lateral de /productos/ — navegación fija del catálogo (Frank, 2026-09-30).
- * Regla: SIN scroll interno. Todo el contenido cabe en la ventana: accesos de la
- * página en una fila y familias en listas de dos columnas (la cotización ya vive en el
- * header y en el botón fijo de WhatsApp). Sticky sólo si el panel completo cabe bajo el
- * header; si no, acompaña al contenido (lo decide un script con el alto real).
- * En móvil y tablet (<1280 px) es un <details> plegado arriba del contenido.
+ * Barra lateral de /productos/ — navegación del catálogo y nodo de enlazado interno
+ * (rediseño 3, Frank 2026-09-30: «mucho más profesional» y útil para el interlinking).
+ *
+ * Patrón de catálogo industrial: bloques apilados que avanzan con la página (sin scroll
+ * interno) — Categorías por familia con número de modelos · Marcas con página propia ·
+ * Industrias · Servicios · Normas y guías — y, al final, una tarjeta fija con los
+ * accesos de la página y la cotización, que queda visible el resto del recorrido (es hija
+ * directa del <aside>, que ocupa todo el alto de la columna). Bajo 1280 px los bloques se
+ * pliegan en «Navegar el catálogo» y la tarjeta fija se oculta (el header ya cotiza).
  * Sin íconos ni animaciones: sólo cambian color, fondo y borde de los enlaces.
  */
 import { catalogo } from '@data/catalogo';
 import { allCategories } from '@data/categories';
+import { featuredProducts } from '@data/products';
+import { industries } from '@data/industries';
+import { services } from '@data/services';
+import { marcaDeBrand } from '@data/interlinking';
+import { whatsappUrl, CANAL_CONTACTO } from '@config/site';
 
 export interface Props {
   secciones: { id: string; label: string }[];
 }
 const { secciones } = Astro.props;
 
-// Categorías con página propia que no son línea de catalogo.ts
+const barra = (h: string) => (h.endsWith('/') ? h : `${h}/`);
+const modelosBajo = (href: string) => featuredProducts.filter((p) => barra(p.href).startsWith(barra(href))).length;
+
+// Categorías por familia (+ categorías con página propia que no son línea de catalogo.ts)
 const EXTRA: Record<string, string[]> = { 'equipo-bomberos': ['drones-emergencia'] };
 const familias = catalogo.map((f) => ({
-  slug: f.slug,
   label: f.eyebrow,
   links: [
-    ...f.lineas.map((l) => ({ label: l.titulo, href: l.href })),
+    ...f.lineas.map((l) => ({ label: l.titulo, href: l.href, n: modelosBajo(l.href) })),
     ...(EXTRA[f.slug] ?? [])
       .map((s) => allCategories.find((c) => c.slug === s))
       .filter(Boolean)
-      .map((c) => ({ label: c!.label, href: `/productos/${c!.slug}/` })),
+      .map((c) => ({ label: c!.label, href: `/productos/${c!.slug}/`, n: modelosBajo(`/productos/${c!.slug}/`) })),
   ],
   hub: f.hub,
 }));
+const totalModelos = featuredProducts.length;
+const totalLineas = familias.reduce((a, f) => a + f.links.length, 0);
+
+// Marcas con página propia, ordenadas por número de modelos en el catálogo
+const conteoMarca = new Map<string, { label: string; href: string; n: number }>();
+for (const p of featuredProducts) {
+  const m = marcaDeBrand(p.brand);
+  if (!m) continue;
+  const prev = conteoMarca.get(m.href);
+  conteoMarca.set(m.href, { label: prev?.label ?? m.label, href: m.href, n: (prev?.n ?? 0) + 1 });
+}
+const marcas = [...conteoMarca.values()].sort((a, b) => b.n - a.n || a.label.localeCompare(b.label, 'es'));
+
+const industrias = industries.map((i) => ({ label: i.name, href: barra(i.href) }));
+const servicios = services.map((s) => ({ label: s.title, href: barra(s.href) }));
+const normas = [
+  { label: 'Normas NFPA y NOM aplicables', href: '/certificaciones/' },
+  { label: 'Guía NOM-002-STPS-2010', href: '/blog/nom-002-stps-guia-completa/' },
+  { label: 'Tipos de extintores en México', href: '/blog/tipos-de-extintores-mexico/' },
+  { label: 'NFPA 1970: la nueva norma de trajes', href: '/blog/nfpa-1970-nueva-norma-trajes-bombero/' },
+  { label: 'Guía de compra de equipo para bomberos', href: '/blog/guia-compra-equipo-bomberos-nfpa-mexico-2026/' },
+  { label: 'Licitaciones de equipo contra incendio', href: '/licitaciones/' },
+];
 ---
 
-<aside class="pc-side" aria-label="Navegación del catálogo" data-fija>
-  <details class="pc-nav" open data-pc-nav>
-    <summary class="pc-sum">Navegar el catálogo</summary>
+<aside class="sb" aria-label="Navegación del catálogo">
+  <details class="sb-wrap" open data-sb>
+    <summary class="sb-sum">Navegar el catálogo</summary>
 
-    <div class="pc-panel">
-      <nav aria-label="En esta página">
-        <ul class="pc-tabs" role="list">
-          {secciones.map((s) => <li><a href={`#${s.id}`} class="pc-tab" data-spy={s.id}>{s.label}</a></li>)}
+    <div class="sb-body">
+      <!-- Categorías -->
+      <section class="sb-card" aria-labelledby="sb-cat">
+        <header class="sb-head">
+          <h2 id="sb-cat" class="sb-title">Categorías</h2>
+          <p class="sb-meta">{totalModelos} modelos · {totalLineas} líneas</p>
+        </header>
+        {familias.map((f) => (
+          <nav class="sb-group" aria-label={f.label}>
+            <p class="sb-group-label">{f.label}</p>
+            <ul class="sb-list" role="list">
+              {f.links.map((l) => (
+                <li><a href={l.href} class="sb-row"><span class="sb-row-label">{l.label}</span></a></li>
+              ))}
+            </ul>
+            <a href={f.hub.href} class="sb-foot">{f.hub.label}</a>
+          </nav>
+        ))}
+      </section>
+
+      <!-- Marcas -->
+      <nav class="sb-card" aria-labelledby="sb-mar">
+        <header class="sb-head">
+          <h2 id="sb-mar" class="sb-title">Marcas</h2>
+          <p class="sb-meta">Fabricantes con ficha en el catálogo</p>
+        </header>
+        <ul class="sb-list" role="list">
+          {marcas.map((m) => (
+            <li><a href={m.href} class="sb-row"><span class="sb-row-label">{m.label}</span><span class="sb-count" aria-label={`${m.n} modelos`}>{m.n}</span></a></li>
+          ))}
         </ul>
+        <a href="/marcas/" class="sb-foot">Marcas de equipo para bomberos</a>
       </nav>
 
-      {familias.map((f) => (
-        <nav class="pc-fam" aria-label={f.label}>
-          <p class="pc-label">{f.label}</p>
-          <ul class="pc-grid" role="list">
-            {f.links.map((l) => <li><a href={l.href} class="pc-link">{l.label}</a></li>)}
-            <li class="pc-hub-li"><a href={f.hub.href} class="pc-link pc-link--hub">{f.hub.label}</a></li>
-          </ul>
-        </nav>
-      ))}
+      <!-- Industrias -->
+      <nav class="sb-card" aria-labelledby="sb-ind">
+        <header class="sb-head"><h2 id="sb-ind" class="sb-title">Industrias</h2></header>
+        <ul class="sb-list" role="list">
+          {industrias.map((l) => <li><a href={l.href} class="sb-row"><span class="sb-row-label">{l.label}</span></a></li>)}
+        </ul>
+        <a href="/industrias/" class="sb-foot">Equipo contra incendio por industria</a>
+      </nav>
+
+      <!-- Servicios -->
+      <nav class="sb-card" aria-labelledby="sb-ser">
+        <header class="sb-head"><h2 id="sb-ser" class="sb-title">Servicios</h2></header>
+        <ul class="sb-list" role="list">
+          {servicios.map((l) => <li><a href={l.href} class="sb-row"><span class="sb-row-label">{l.label}</span></a></li>)}
+        </ul>
+        <a href="/servicios/" class="sb-foot">Servicios contra incendio</a>
+      </nav>
+
+      <!-- Normas y guías -->
+      <nav class="sb-card" aria-labelledby="sb-nor">
+        <header class="sb-head"><h2 id="sb-nor" class="sb-title">Normas y guías</h2></header>
+        <ul class="sb-list" role="list">
+          {normas.map((l) => <li><a href={l.href} class="sb-row"><span class="sb-row-label">{l.label}</span></a></li>)}
+        </ul>
+        <a href="/blog/" class="sb-foot">Blog técnico contra incendio</a>
+      </nav>
 
     </div>
   </details>
+
+  <!-- Tarjeta fija: accesos de la página + cotización -->
+      <div class="sb-card sb-sticky">
+        <nav aria-label="En esta página">
+          <p class="sb-group-label">En esta página</p>
+          <ul class="sb-tabs" role="list">
+            {secciones.map((s) => <li><a href={`#${s.id}`} class="sb-tab" data-spy={s.id}>{s.label}</a></li>)}
+          </ul>
+        </nav>
+        <div class="sb-quote">
+          <p class="sb-quote-title">Cotiza tu equipo</p>
+          <p class="sb-quote-text">Envíanos tu lista, las bases de tu licitación o una foto del equipo a renovar.</p>
+          <a href={whatsappUrl('Hola, quiero cotizar equipo del catálogo.')} target="_blank" rel="noopener" class="btn btn-primary sb-btn">Cotizar por {CANAL_CONTACTO}</a>
+          <a href="/cotizacion/" class="btn btn-ghost sb-btn">Cotización formal</a>
+        </div>
+      </div>
 </aside>
 
 <script>
-  const nav = document.querySelector<HTMLDetailsElement>('[data-pc-nav]');
-  if (nav) {
+  const wrap = document.querySelector<HTMLDetailsElement>('[data-sb]');
+  if (wrap) {
     const mq = window.matchMedia('(min-width: 1280px)');
-    const sync = () => { nav.open = mq.matches; };
+    const sync = () => { wrap.open = mq.matches; };
     sync();
     mq.addEventListener('change', sync);
   }
-  // Sin scroll interno: la barra sólo se fija si cabe completa bajo el header
-  const side = document.querySelector<HTMLElement>('.pc-side');
-  if (side) {
-    const ajustar = () => {
-      const header = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-height')) || 106;
-      side.toggleAttribute('data-fija', side.offsetHeight + header + 32 <= window.innerHeight);
-    };
-    ajustar();
-    window.addEventListener('resize', ajustar);
-  }
-  // Scroll-spy: marca la sección visible (sin desplazamiento suave)
+  // Scroll-spy de «En esta página» (sin desplazamiento suave)
   const links = Array.from(document.querySelectorAll<HTMLAnchorElement>('[data-spy]'));
   const targets = links.map((a) => document.getElementById(a.dataset.spy!)).filter((el): el is HTMLElement => !!el);
   if ('IntersectionObserver' in window && targets.length) {
@@ -93,36 +176,51 @@ const familias = catalogo.map((f) => ({
 </script>
 
 <style>
-  .pc-side { min-width: 0; }
-  /* Sticky sólo con alto suficiente para mostrar TODO el panel sin scroll interno */
-  @media (min-width: 1280px) {
-    .pc-side[data-fija] { position: sticky; top: calc(var(--header-height) + 1rem); }
-  }
+  .sb { min-width: 0; }
+  @media (min-width: 1280px) { .sb { align-self: stretch; display: flex; flex-direction: column; gap: 1.25rem; } }
 
-  .pc-nav { background: var(--c-surface); border: 1px solid var(--c-line); border-radius: var(--radius-card); box-shadow: var(--shadow-card); }
-  .pc-sum { display: flex; align-items: center; justify-content: space-between; min-height: 3rem; padding: .75rem 1rem; font-size: .9375rem; font-weight: 600; color: var(--c-ink); cursor: pointer; list-style: none; }
-  .pc-sum::-webkit-details-marker { display: none; }
-  .pc-sum::after { content: "Mostrar"; font-size: .8125rem; font-weight: 500; color: var(--c-accent); }
-  .pc-nav[open] .pc-sum::after { content: "Ocultar"; }
-  @media (min-width: 1280px) { .pc-sum { display: none; } }
+  /* Plegable en móvil y tablet */
+  .sb-wrap { border: 1px solid var(--c-line); border-radius: var(--radius-card); background: var(--c-surface); }
+  @media (min-width: 1280px) { .sb-wrap { border: 0; background: transparent; border-radius: 0; } }
+  .sb-sum { display: flex; align-items: center; justify-content: space-between; min-height: 3rem; padding: .75rem 1rem; font-size: .9375rem; font-weight: 600; color: var(--c-ink); cursor: pointer; list-style: none; }
+  .sb-sum::-webkit-details-marker { display: none; }
+  .sb-sum::after { content: "Mostrar"; font-size: .8125rem; font-weight: 500; color: var(--c-accent); }
+  .sb-wrap[open] .sb-sum::after { content: "Ocultar"; }
+  @media (min-width: 1280px) { .sb-sum { display: none; } }
 
-  .pc-panel { display: flex; flex-direction: column; gap: 1rem; padding: 0 1rem 1rem; }
-  @media (min-width: 1280px) { .pc-panel { padding: 1.25rem; } }
+  .sb-body { display: flex; flex-direction: column; gap: 1.25rem; padding: 0 1rem 1rem; }
+  @media (min-width: 1280px) { .sb-body { padding: 0; } }
 
-  /* Accesos de la página: una fila de pestañas del mismo ancho */
-  .pc-tabs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 0; padding: 0; list-style: none; border: 1px solid var(--c-line); border-radius: var(--radius-btn); overflow: hidden; }
-  .pc-tabs li + li { border-left: 1px solid var(--c-line); }
-  .pc-tab { display: flex; align-items: center; justify-content: center; min-height: 2.25rem; padding: .25rem .375rem; font-size: .8125rem; font-weight: 600; line-height: 1.2; text-align: center; color: var(--c-ink-2); text-decoration: none; background: var(--c-bg-alt); transition: color .15s, background-color .15s; }
-  .pc-tab:hover, .pc-tab:focus-visible { color: var(--c-accent); background: var(--c-surface); }
-  .pc-tab[aria-current] { color: #FFFFFF; background: var(--c-accent); }
+  /* Tarjeta de bloque */
+  .sb-card { background: var(--c-surface); border: 1px solid var(--c-line); border-radius: var(--radius-card); box-shadow: var(--shadow-card); overflow: hidden; }
+  .sb-head { padding: 1rem 1.25rem .875rem; border-bottom: 1px solid var(--c-line); background: var(--c-bg-alt); }
+  .sb-title { margin: 0; font-family: var(--font-display); font-size: 1rem; font-weight: 700; letter-spacing: -.01em; line-height: 1.3; color: var(--c-ink); }
+  .sb-meta { margin: .1875rem 0 0; font-size: .75rem; color: var(--c-muted); }
 
-  /* Familias: lista de dos columnas; cada fila de la rejilla toma el alto de su celda mayor */
-  .pc-label { margin: 0 0 .375rem; font-size: .6875rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--c-accent); }
-  .pc-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: .75rem; margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--c-line); }
-  .pc-grid li { display: flex; border-bottom: 1px solid var(--c-line); }
-  .pc-grid .pc-hub-li { grid-column: 1 / -1; }
-  .pc-link { display: flex; flex: 1; align-items: center; min-height: 2.125rem; padding: .3125rem .375rem; font-size: .8125rem; font-weight: 500; line-height: 1.25; color: var(--c-ink-2); text-decoration: none; transition: color .15s, background-color .15s; }
-  .pc-link:hover, .pc-link:focus-visible { color: var(--c-accent); background: var(--c-bg-alt); }
-  .pc-link--hub { font-weight: 600; color: var(--c-ink); }
+  .sb-group + .sb-group { border-top: 1px solid var(--c-line); }
+  .sb-group-label { margin: 0; padding: .875rem 1.25rem .375rem; font-size: .6875rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--c-accent); }
 
+  .sb-list { margin: 0; padding: 0 .5rem .25rem; list-style: none; }
+  .sb-row { display: flex; align-items: center; gap: .75rem; min-height: 2.375rem; padding: .375rem .75rem; font-size: .875rem; line-height: 1.3; color: var(--c-ink-2); text-decoration: none; border-radius: 6px; border-left: 2px solid transparent; transition: color .15s, background-color .15s, border-color .15s; }
+  .sb-row:hover, .sb-row:focus-visible { color: var(--c-accent); background: var(--c-bg-alt); border-left-color: var(--c-accent); }
+  .sb-row-label { flex: 1; min-width: 0; font-weight: 500; }
+  .sb-count { flex: none; min-width: 1.75rem; padding: .0625rem .4375rem; font-size: .75rem; font-weight: 600; font-variant-numeric: tabular-nums; text-align: center; color: var(--c-text-2); background: var(--c-bg-alt); border: 1px solid var(--c-line); border-radius: 999px; }
+  .sb-row:hover .sb-count { color: var(--c-accent); border-color: rgba(200, 16, 46, .25); }
+
+  .sb-foot { display: block; margin: .25rem 0 0; padding: .75rem 1.25rem; font-size: .8125rem; font-weight: 600; color: var(--c-accent); text-decoration: none; border-top: 1px solid var(--c-line); transition: color .15s, background-color .15s; }
+  .sb-foot:hover, .sb-foot:focus-visible { color: var(--c-accent-hover); background: var(--c-bg-alt); }
+
+  /* Tarjeta fija final */
+  .sb-sticky { display: flex; flex-direction: column; gap: 1rem; padding: 0 1.25rem 1.25rem; }
+  .sb-sticky .sb-group-label { padding-inline: 0; }
+  .sb-sticky { display: none; }
+  @media (min-width: 1280px) { .sb-sticky { display: flex; position: sticky; top: calc(var(--header-height) + 1rem); } }
+  .sb-tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .375rem; margin: 0; padding: 0; list-style: none; }
+  .sb-tab { display: flex; align-items: center; justify-content: center; min-height: 2.25rem; padding: .25rem .5rem; font-size: .8125rem; font-weight: 600; color: var(--c-ink-2); text-align: center; text-decoration: none; background: var(--c-bg-alt); border: 1px solid var(--c-line); border-radius: var(--radius-btn); transition: color .15s, background-color .15s, border-color .15s; }
+  .sb-tab:hover, .sb-tab:focus-visible { color: var(--c-accent); border-color: var(--c-accent); background: var(--c-surface); }
+  .sb-tab[aria-current] { color: #FFFFFF; background: var(--c-accent); border-color: var(--c-accent); }
+  .sb-quote { display: flex; flex-direction: column; gap: .5rem; padding-top: 1rem; border-top: 1px solid var(--c-line); }
+  .sb-quote-title { margin: 0; font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--c-ink); }
+  .sb-quote-text { margin: 0 0 .25rem; font-size: .8125rem; line-height: 1.55; color: var(--c-text-2); }
+  .sb-btn { width: 100%; justify-content: center; text-align: center; white-space: normal; }
 </style>

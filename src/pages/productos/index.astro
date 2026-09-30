@@ -289,7 +289,7 @@ const tambien = [
      primero para que en móvil/tablet el bloque «Navegar el catálogo» quede arriba. */
   @media (min-width: 1280px) {
     .pc-shell { grid-template-columns: minmax(0, 1fr) 21rem; gap: 2.5rem; align-items: start; padding-block: 4rem 6rem; }
-    .pc-shell > :global(.pc-side) { grid-column: 2; grid-row: 1; }
+    .pc-shell > :global(.sb) { grid-column: 2; grid-row: 1; }
     .pc-main { grid-column: 1; grid-row: 1; }
   }
   @media (min-width: 1440px) { .pc-shell { grid-template-columns: minmax(0, 1fr) 24rem; gap: 3rem; } }
