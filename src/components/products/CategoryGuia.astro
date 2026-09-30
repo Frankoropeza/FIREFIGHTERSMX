@@ -8,6 +8,7 @@
 import type { Category } from '@data/categories';
 import { lineaPorSlug } from '@lib/linea-card';
 import { whatsappUrl, CANAL_CONTACTO } from '@config/site';
+import { imgAttrs, SIZES } from '@lib/img';
 
 export interface Props { cat: Category; }
 const { cat } = Astro.props;
@@ -18,7 +19,7 @@ const cta = lineaPorSlug(cat.slug)?.cta ?? cat.label;
 
 <article class="cg" id={cat.slug} aria-labelledby={`guia-${cat.slug}`}>
   <div class="cg-media">
-    <img src={s.image} alt={s.imageAlt} width="1200" height="750" loading="lazy" decoding="async" />
+    <img src={s.image} {...imgAttrs(s.image, SIZES.half)} alt={s.imageAlt} width="1200" height="750" loading="lazy" decoding="async" />
   </div>
   <div class="cg-body">
     <p class="cg-eyebrow">{cat.norm}</p>
