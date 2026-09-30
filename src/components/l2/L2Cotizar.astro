@@ -1,0 +1,50 @@
+---
+/**
+ * Cierre de los hubs L2: «Cómo trabajamos / cómo cotizar» (pasos sin numeración) +
+ * «También te puede servir». Homologado a partir de /productos/ (2026-09-30).
+ */
+import { whatsappUrl } from '@config/site';
+
+export interface Props {
+  id: string;
+  eyebrow: string;
+  titulo: string;
+  destacado: string;
+  pasos: string[];
+  cta: { label: string; msg: string };
+  tambien: { label: string; desc: string; href: string }[];
+}
+const { id, eyebrow, titulo, destacado, pasos, cta, tambien } = Astro.props;
+---
+
+<section id={id} class="l2-sec" aria-labelledby={`${id}-title`}>
+  <div class="l2-cotizar">
+    <div>
+      <span class="section-eyebrow mb-4 inline-flex">{eyebrow}</span>
+      <h2 id={`${id}-title`} class="l2-h2">
+        {titulo}<br/>
+        <span style="color:var(--c-accent)">{destacado}</span>
+      </h2>
+      <ol class="l2-steps" role="list">
+        {pasos.map((t) => <li>{t}</li>)}
+      </ol>
+      <div class="flex flex-col sm:flex-row gap-3 mt-8">
+        <a href={whatsappUrl(cta.msg)} target="_blank" rel="noopener" class="btn btn-primary">{cta.label}</a>
+      </div>
+    </div>
+
+    <div class="l2-also">
+      <h2 class="l2-also-title">También te puede servir</h2>
+      <ul class="l2-also-list" role="list">
+        {tambien.map((l) => (
+          <li>
+            <a href={l.href} class="l2-also-link">
+              <span class="l2-also-label">{l.label}</span>
+              <span class="l2-also-desc">{l.desc}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>

@@ -1,62 +1,27 @@
 ---
 /**
- * Guía de selección de una categoría, en formato panel para la columna principal
- * de /productos/ (sustituye en esa página al Spotlight a pantalla completa).
- * Datos: campo `spotlight` de src/data/categories.ts — sólo el primer párrafo,
- * como en el hub anterior; el desarrollo completo vive en la página de categoría.
+ * Guía de selección de una categoría para /productos/ — envoltura de L2Guia.
+ * Datos: campo `spotlight` de src/data/categories.ts — sólo el primer párrafo;
+ * el desarrollo completo vive en la página de categoría.
  */
 import type { Category } from '@data/categories';
 import { lineaPorSlug } from '@lib/linea-card';
-import { whatsappUrl, CANAL_CONTACTO } from '@config/site';
-import { imgAttrs, SIZES } from '@lib/img';
+import L2Guia from '@components/l2/L2Guia.astro';
 
 export interface Props { cat: Category; }
 const { cat } = Astro.props;
 const s = cat.spotlight;
 if (!s) throw new Error(`La categoría "${cat.slug}" no tiene spotlight definido en categories.ts`);
-const cta = lineaPorSlug(cat.slug)?.cta ?? cat.label;
 ---
-
-<article class="cg" id={cat.slug} aria-labelledby={`guia-${cat.slug}`}>
-  <div class="cg-media">
-    <img src={s.image} {...imgAttrs(s.image, SIZES.half)} alt={s.imageAlt} width="1200" height="750" loading="lazy" decoding="async" />
-  </div>
-  <div class="cg-body">
-    <p class="cg-eyebrow">{cat.norm}</p>
-    <h3 id={`guia-${cat.slug}`} class="cg-title">{s.title} <span>{s.highlight}</span></h3>
-    {s.paragraphs[0] && <p class="cg-text">{s.paragraphs[0]}</p>}
-    <dl class="cg-subs">
-      {s.subsections.map((sub) => (
-        <div class="cg-sub">
-          <dt>{sub.name}</dt>
-          <dd>{sub.detail}</dd>
-        </div>
-      ))}
-    </dl>
-    <div class="cg-actions">
-      <a href={`/productos/${cat.slug}/`} class="btn btn-primary">{cta}</a>
-      <a href={whatsappUrl(`Hola, quiero cotizar ${cat.label.toLowerCase()}.`)} target="_blank" rel="noopener" class="btn btn-ghost">Cotizar por {CANAL_CONTACTO}</a>
-    </div>
-  </div>
-</article>
-
-<style>
-  .cg { display: grid; overflow: hidden; background: var(--c-surface); border: 1px solid var(--c-line); border-radius: var(--radius-card); box-shadow: var(--shadow-card); scroll-margin-top: calc(var(--header-height) + 1rem); }
-  @media (min-width: 1024px) { .cg { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); } }
-  .cg-media { position: relative; aspect-ratio: 16 / 10; background: var(--c-bg-alt); }
-  @media (min-width: 1024px) { .cg-media { aspect-ratio: auto; min-height: 100%; } }
-  .cg-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-  .cg-body { display: flex; flex-direction: column; gap: 1rem; padding: 1.5rem; }
-  @media (min-width: 1024px) { .cg-body { padding: 2rem; } }
-  .cg-eyebrow { margin: 0; font-size: .6875rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--c-accent); }
-  .cg-title { margin: 0; font-family: var(--font-display); font-size: clamp(1.25rem, 1.8vw, 1.625rem); font-weight: 700; line-height: 1.2; letter-spacing: -.015em; color: var(--c-ink); text-wrap: balance; }
-  .cg-title span { color: var(--c-accent); }
-  .cg-text { margin: 0; font-size: .9375rem; line-height: 1.7; color: var(--c-text-2); }
-  .cg-subs { display: grid; gap: 0; margin: 0; border-top: 1px solid var(--c-line); }
-  @media (min-width: 768px) { .cg-subs { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 1.5rem; } }
-  .cg-sub { padding: .875rem 0; border-bottom: 1px solid var(--c-line); }
-  .cg-sub dt { margin: 0 0 .25rem; font-size: .875rem; font-weight: 600; color: var(--c-ink); }
-  .cg-sub dd { margin: 0; font-size: .8125rem; line-height: 1.55; color: var(--c-text-2); }
-  .cg-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: .25rem; }
-  @media (max-width: 639px) { .cg-actions .btn { width: 100%; justify-content: center; white-space: normal; text-align: center; } }
-</style>
+<L2Guia
+  id={cat.slug}
+  eyebrow={cat.norm}
+  title={s.title}
+  highlight={s.highlight}
+  paragraph={s.paragraphs[0]}
+  subsections={s.subsections}
+  image={s.image}
+  imageAlt={s.imageAlt}
+  cta={{ href: `/productos/${cat.slug}/`, label: lineaPorSlug(cat.slug)?.cta ?? cat.label }}
+  whatsappMsg={`Hola, quiero cotizar ${cat.label.toLowerCase()}.`}
+/>

@@ -1,135 +1,55 @@
 ---
 /**
- * Barra lateral de /productos/ — navegación del catálogo y nodo de enlazado interno
- * (rediseño 3, Frank 2026-09-30: «mucho más profesional» y útil para el interlinking).
- *
- * Patrón de catálogo industrial: bloques apilados que avanzan con la página (sin scroll
- * interno) — Categorías por familia con número de modelos · Marcas con página propia ·
- * Industrias · Servicios · Normas y guías — y, al final, una tarjeta fija con los
- * accesos de la página y la cotización, que queda visible el resto del recorrido (es hija
- * directa del <aside>, que ocupa todo el alto de la columna). Bajo 1280 px los bloques se
- * pliegan en «Navegar el catálogo» y la tarjeta fija se oculta (el header ya cotiza).
- * Sin íconos ni animaciones: sólo cambian color, fondo y borde de los enlaces.
+ * Barra lateral de la plantilla L2 (hubs de sección) — homologada a partir de /productos/
+ * (Frank, 2026-09-30). Tarjetas apiladas de enlazado interno que avanzan con la página
+ * (sin scroll interno) y, al final, una tarjeta fija con «En esta página» y cotización.
+ * Bajo 1280 px los bloques se pliegan en un <details>. Sin íconos ni animaciones.
+ * Los bloques salen de src/lib/l2.ts; cada hub decide el orden (el suyo primero).
  */
-import { catalogo } from '@data/catalogo';
-import { allCategories } from '@data/categories';
-import { featuredProducts } from '@data/products';
-import { industries } from '@data/industries';
-import { services } from '@data/services';
-import { marcaDeBrand } from '@data/interlinking';
+import type { L2Bloque, L2Seccion } from '@lib/l2';
 import { whatsappUrl, CANAL_CONTACTO } from '@config/site';
 
 export interface Props {
-  secciones: { id: string; label: string }[];
+  bloques: L2Bloque[];
+  secciones: L2Seccion[];
+  /** Texto del plegable en móvil y nombre accesible de la barra */
+  resumen?: string;
+  /** URL de la página actual para marcarla si aparece en un bloque */
+  actual?: string;
+  cotizar?: { titulo: string; texto: string; msg: string };
 }
-const { secciones } = Astro.props;
-
-const barra = (h: string) => (h.endsWith('/') ? h : `${h}/`);
-const modelosBajo = (href: string) => featuredProducts.filter((p) => barra(p.href).startsWith(barra(href))).length;
-
-// Categorías por familia (+ categorías con página propia que no son línea de catalogo.ts)
-const EXTRA: Record<string, string[]> = { 'equipo-bomberos': ['drones-emergencia'] };
-const familias = catalogo.map((f) => ({
-  label: f.eyebrow,
-  links: [
-    ...f.lineas.map((l) => ({ label: l.titulo, href: l.href, n: modelosBajo(l.href) })),
-    ...(EXTRA[f.slug] ?? [])
-      .map((s) => allCategories.find((c) => c.slug === s))
-      .filter(Boolean)
-      .map((c) => ({ label: c!.label, href: `/productos/${c!.slug}/`, n: modelosBajo(`/productos/${c!.slug}/`) })),
-  ],
-  hub: f.hub,
-}));
-const totalModelos = featuredProducts.length;
-const totalLineas = familias.reduce((a, f) => a + f.links.length, 0);
-
-// Marcas con página propia, ordenadas por número de modelos en el catálogo
-const conteoMarca = new Map<string, { label: string; href: string; n: number }>();
-for (const p of featuredProducts) {
-  const m = marcaDeBrand(p.brand);
-  if (!m) continue;
-  const prev = conteoMarca.get(m.href);
-  conteoMarca.set(m.href, { label: prev?.label ?? m.label, href: m.href, n: (prev?.n ?? 0) + 1 });
-}
-const marcas = [...conteoMarca.values()].sort((a, b) => b.n - a.n || a.label.localeCompare(b.label, 'es'));
-
-const industrias = industries.map((i) => ({ label: i.name, href: barra(i.href) }));
-const servicios = services.map((s) => ({ label: s.title, href: barra(s.href) }));
-const normas = [
-  { label: 'Normas NFPA y NOM aplicables', href: '/certificaciones/' },
-  { label: 'Guía NOM-002-STPS-2010', href: '/blog/nom-002-stps-guia-completa/' },
-  { label: 'Tipos de extintores en México', href: '/blog/tipos-de-extintores-mexico/' },
-  { label: 'NFPA 1970: la nueva norma de trajes', href: '/blog/nfpa-1970-nueva-norma-trajes-bombero/' },
-  { label: 'Guía de compra de equipo para bomberos', href: '/blog/guia-compra-equipo-bomberos-nfpa-mexico-2026/' },
-  { label: 'Licitaciones de equipo contra incendio', href: '/licitaciones/' },
-];
+const {
+  bloques, secciones, resumen = 'Navegar la sección', actual,
+  cotizar = { titulo: 'Cotiza tu equipo', texto: 'Envíanos tu lista, las bases de tu licitación o una foto del equipo a renovar.', msg: 'Hola, quiero cotizar equipo contra incendio.' },
+} = Astro.props;
 ---
 
-<aside class="sb" aria-label="Navegación del catálogo">
+
+<aside class="sb" aria-label={resumen}>
   <details class="sb-wrap" open data-sb>
-    <summary class="sb-sum">Navegar el catálogo</summary>
+    <summary class="sb-sum">{resumen}</summary>
 
     <div class="sb-body">
-      <!-- Categorías -->
-      <section class="sb-card" aria-labelledby="sb-cat">
-        <header class="sb-head">
-          <h2 id="sb-cat" class="sb-title">Categorías</h2>
-          <p class="sb-meta">{totalModelos} modelos · {totalLineas} líneas</p>
-        </header>
-        {familias.map((f) => (
-          <nav class="sb-group" aria-label={f.label}>
-            <p class="sb-group-label">{f.label}</p>
-            <ul class="sb-list" role="list">
-              {f.links.map((l) => (
-                <li><a href={l.href} class="sb-row"><span class="sb-row-label">{l.label}</span></a></li>
-              ))}
-            </ul>
-            <a href={f.hub.href} class="sb-foot">{f.hub.label}</a>
-          </nav>
-        ))}
-      </section>
-
-      <!-- Marcas -->
-      <nav class="sb-card" aria-labelledby="sb-mar">
-        <header class="sb-head">
-          <h2 id="sb-mar" class="sb-title">Marcas</h2>
-          <p class="sb-meta">Fabricantes con ficha en el catálogo</p>
-        </header>
-        <ul class="sb-list" role="list">
-          {marcas.map((m) => (
-            <li><a href={m.href} class="sb-row"><span class="sb-row-label">{m.label}</span><span class="sb-count" aria-label={`${m.n} modelos`}>{m.n}</span></a></li>
+      {bloques.map((b) => (
+        <nav class="sb-card" aria-label={b.titulo}>
+          <header class="sb-head">
+            <p class="sb-title">{b.titulo}</p>
+            {b.meta && <p class="sb-meta">{b.meta}</p>}
+          </header>
+          {b.grupos.map((g) => (
+            <div class="sb-group">
+              {g.label && <p class="sb-group-label">{g.label}</p>}
+              <ul class="sb-list" role="list">
+                {g.links.map((l) => (
+                  <li><a href={l.href} class="sb-row" aria-current={actual && l.href === actual ? 'page' : undefined}><span class="sb-row-label">{l.label}</span>{l.n != null && <span class="sb-count" aria-label={`${l.n} modelos`}>{l.n}</span>}</a></li>
+                ))}
+              </ul>
+              {g.foot && <a href={g.foot.href} class="sb-foot">{g.foot.label}</a>}
+            </div>
           ))}
-        </ul>
-        <a href="/marcas/" class="sb-foot">Marcas de equipo para bomberos</a>
-      </nav>
-
-      <!-- Industrias -->
-      <nav class="sb-card" aria-labelledby="sb-ind">
-        <header class="sb-head"><h2 id="sb-ind" class="sb-title">Industrias</h2></header>
-        <ul class="sb-list" role="list">
-          {industrias.map((l) => <li><a href={l.href} class="sb-row"><span class="sb-row-label">{l.label}</span></a></li>)}
-        </ul>
-        <a href="/industrias/" class="sb-foot">Equipo contra incendio por industria</a>
-      </nav>
-
-      <!-- Servicios -->
-      <nav class="sb-card" aria-labelledby="sb-ser">
-        <header class="sb-head"><h2 id="sb-ser" class="sb-title">Servicios</h2></header>
-        <ul class="sb-list" role="list">
-          {servicios.map((l) => <li><a href={l.href} class="sb-row"><span class="sb-row-label">{l.label}</span></a></li>)}
-        </ul>
-        <a href="/servicios/" class="sb-foot">Servicios contra incendio</a>
-      </nav>
-
-      <!-- Normas y guías -->
-      <nav class="sb-card" aria-labelledby="sb-nor">
-        <header class="sb-head"><h2 id="sb-nor" class="sb-title">Normas y guías</h2></header>
-        <ul class="sb-list" role="list">
-          {normas.map((l) => <li><a href={l.href} class="sb-row"><span class="sb-row-label">{l.label}</span></a></li>)}
-        </ul>
-        <a href="/blog/" class="sb-foot">Blog técnico contra incendio</a>
-      </nav>
-
+          {b.foot && <a href={b.foot.href} class="sb-foot">{b.foot.label}</a>}
+        </nav>
+      ))}
     </div>
   </details>
 
@@ -142,9 +62,9 @@ const normas = [
           </ul>
         </nav>
         <div class="sb-quote">
-          <p class="sb-quote-title">Cotiza tu equipo</p>
-          <p class="sb-quote-text">Envíanos tu lista, las bases de tu licitación o una foto del equipo a renovar.</p>
-          <a href={whatsappUrl('Hola, quiero cotizar equipo del catálogo.')} target="_blank" rel="noopener" class="btn btn-primary sb-btn">Cotizar por {CANAL_CONTACTO}</a>
+          <p class="sb-quote-title">{cotizar.titulo}</p>
+          <p class="sb-quote-text">{cotizar.texto}</p>
+          <a href={whatsappUrl(cotizar.msg)} target="_blank" rel="noopener" class="btn btn-primary sb-btn">Cotizar por {CANAL_CONTACTO}</a>
           <a href="/cotizacion/" class="btn btn-ghost sb-btn">Cotización formal</a>
         </div>
       </div>
@@ -202,6 +122,7 @@ const normas = [
 
   .sb-list { margin: 0; padding: 0 .5rem .25rem; list-style: none; }
   .sb-row { display: flex; align-items: center; gap: .75rem; min-height: 2.375rem; padding: .375rem .75rem; font-size: .875rem; line-height: 1.3; color: var(--c-ink-2); text-decoration: none; border-radius: 6px; border-left: 2px solid transparent; transition: color .15s, background-color .15s, border-color .15s; }
+  .sb-row[aria-current] { color: var(--c-accent); background: var(--c-bg-alt); border-left-color: var(--c-accent); font-weight: 600; }
   .sb-row:hover, .sb-row:focus-visible { color: var(--c-accent); background: var(--c-bg-alt); border-left-color: var(--c-accent); }
   .sb-row-label { flex: 1; min-width: 0; font-weight: 500; }
   .sb-count { flex: none; min-width: 1.75rem; padding: .0625rem .4375rem; font-size: .75rem; font-weight: 600; font-variant-numeric: tabular-nums; text-align: center; color: var(--c-text-2); background: var(--c-bg-alt); border: 1px solid var(--c-line); border-radius: 999px; }
@@ -216,6 +137,7 @@ const normas = [
   .sb-sticky { display: none; }
   @media (min-width: 1280px) { .sb-sticky { display: flex; position: sticky; top: calc(var(--header-height) + 1rem); } }
   .sb-tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .375rem; margin: 0; padding: 0; list-style: none; }
+  .sb-tabs li:last-child:nth-child(odd) { grid-column: 1 / -1; }
   .sb-tab { display: flex; align-items: center; justify-content: center; min-height: 2.25rem; padding: .25rem .5rem; font-size: .8125rem; font-weight: 600; color: var(--c-ink-2); text-align: center; text-decoration: none; background: var(--c-bg-alt); border: 1px solid var(--c-line); border-radius: var(--radius-btn); transition: color .15s, background-color .15s, border-color .15s; }
   .sb-tab:hover, .sb-tab:focus-visible { color: var(--c-accent); border-color: var(--c-accent); background: var(--c-surface); }
   .sb-tab[aria-current] { color: #FFFFFF; background: var(--c-accent); border-color: var(--c-accent); }

@@ -1,0 +1,67 @@
+---
+/**
+ * Panel de guía de la plantilla L2 (imagen | eyebrow · título · párrafo · 2×2 · botones).
+ * Sustituye en los hubs a los Spotlight a pantalla completa. Conserva el ancla `id`.
+ * Homologado a partir de /productos/ (2026-09-30). Sin íconos ni animaciones.
+ */
+import { whatsappUrl, CANAL_CONTACTO } from '@config/site';
+import { imgAttrs, SIZES } from '@lib/img';
+
+export interface Props {
+  id: string;
+  eyebrow: string;
+  title: string;
+  highlight?: string;
+  paragraph?: string;
+  subsections: { name: string; detail: string }[];
+  image: string;
+  imageAlt: string;
+  cta: { href: string; label: string };
+  whatsappMsg: string;
+}
+const { id, eyebrow, title, highlight, paragraph, subsections, image, imageAlt, cta, whatsappMsg } = Astro.props;
+---
+
+<article class="cg" id={id} aria-labelledby={`guia-${id}`}>
+  <div class="cg-media">
+    <img src={image} {...imgAttrs(image, SIZES.half)} alt={imageAlt} width="1200" height="750" loading="lazy" decoding="async" />
+  </div>
+  <div class="cg-body">
+    <p class="cg-eyebrow">{eyebrow}</p>
+    <h3 id={`guia-${id}`} class="cg-title">{title}{highlight && <> <span>{highlight}</span></>}</h3>
+    {paragraph && <p class="cg-text">{paragraph}</p>}
+    <dl class="cg-subs">
+      {subsections.map((sub) => (
+        <div class="cg-sub">
+          <dt>{sub.name}</dt>
+          <dd>{sub.detail}</dd>
+        </div>
+      ))}
+    </dl>
+    <div class="cg-actions">
+      <a href={cta.href} class="btn btn-primary">{cta.label}</a>
+      <a href={whatsappUrl(whatsappMsg)} target="_blank" rel="noopener" class="btn btn-ghost">Cotizar por {CANAL_CONTACTO}</a>
+    </div>
+  </div>
+</article>
+
+<style>
+  .cg { display: grid; overflow: hidden; background: var(--c-surface); border: 1px solid var(--c-line); border-radius: var(--radius-card); box-shadow: var(--shadow-card); scroll-margin-top: calc(var(--header-height) + 1rem); }
+  @media (min-width: 1024px) { .cg { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); } }
+  .cg-media { position: relative; aspect-ratio: 16 / 10; background: var(--c-bg-alt); }
+  @media (min-width: 1024px) { .cg-media { aspect-ratio: auto; min-height: 100%; } }
+  .cg-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .cg-body { display: flex; flex-direction: column; gap: 1rem; padding: 1.5rem; }
+  @media (min-width: 1024px) { .cg-body { padding: 2rem; } }
+  .cg-eyebrow { margin: 0; font-size: .6875rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--c-accent); }
+  .cg-title { margin: 0; font-family: var(--font-display); font-size: clamp(1.25rem, 1.8vw, 1.625rem); font-weight: 700; line-height: 1.2; letter-spacing: -.015em; color: var(--c-ink); text-wrap: balance; }
+  .cg-title span { color: var(--c-accent); }
+  .cg-text { margin: 0; font-size: .9375rem; line-height: 1.7; color: var(--c-text-2); }
+  .cg-subs { display: grid; gap: 0; margin: 0; border-top: 1px solid var(--c-line); }
+  @media (min-width: 768px) { .cg-subs { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 1.5rem; } }
+  .cg-sub { padding: .875rem 0; border-bottom: 1px solid var(--c-line); }
+  .cg-sub dt { margin: 0 0 .25rem; font-size: .875rem; font-weight: 600; color: var(--c-ink); }
+  .cg-sub dd { margin: 0; font-size: .8125rem; line-height: 1.55; color: var(--c-text-2); }
+  .cg-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: .25rem; }
+  @media (max-width: 639px) { .cg-actions .btn { width: 100%; justify-content: center; white-space: normal; text-align: center; } }
+</style>

@@ -1,0 +1,77 @@
+/*
+ * Plantilla L2 — hubs de sección (/productos/, /servicios/, …). Homologada a partir de
+ * /productos/ (Frank, 2026-09-30): columna principal con secciones ancladas + barra
+ * lateral derecha (L2Sidebar). Global: la importa cada página L2.
+ */
+.l2-shell { display: grid; gap: 2rem; padding-block: 3rem 5rem; }
+  /* Barra lateral a la DERECHA y amplia (Frank, 2026-09-30), desde 1280 px. En el DOM va
+     primero para que en móvil/tablet el bloque «Navegar el catálogo» quede arriba. */
+  @media (min-width: 1280px) {
+    .l2-shell { grid-template-columns: minmax(0, 1fr) 21rem; gap: 2.5rem; align-items: start; padding-block: 4rem 6rem; }
+    .l2-shell > .sb { grid-column: 2; grid-row: 1; }
+    .l2-main { grid-column: 1; grid-row: 1; }
+  }
+  @media (min-width: 1440px) { .l2-shell { grid-template-columns: minmax(0, 1fr) 24rem; gap: 3rem; } }
+  @media (min-width: 1680px) { .l2-shell { grid-template-columns: minmax(0, 1fr) 27rem; } }
+  .l2-main { min-width: 0; }
+
+  .l2-sec { scroll-margin-top: calc(var(--header-height) + 1rem); }
+  .l2-sec + .l2-sec { margin-top: 4rem; padding-top: 4rem; border-top: 1px solid var(--c-line); }
+  .l2-sec-head { max-width: 48rem; margin-bottom: 2.25rem; }
+  .l2-h2 { margin: 0; font-family: var(--font-display); font-weight: 700; color: var(--c-ink); font-size: clamp(1.625rem, 2.6vw, 2.25rem); line-height: 1.1; letter-spacing: -.02em; text-wrap: balance; }
+  .l2-lead { margin: 1rem 0 0; font-size: 1rem; line-height: 1.7; color: var(--c-text-2); }
+
+  /* Familias */
+  .l2-fam { scroll-margin-top: calc(var(--header-height) + 1rem); }
+  .l2-fam + .l2-fam { margin-top: 3.5rem; padding-top: 3.5rem; border-top: 1px solid var(--c-line); }
+  .l2-fam-head { display: grid; gap: 1rem; margin-bottom: 1.75rem; }
+  @media (min-width: 1280px) {
+    .l2-fam-head { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0; align-items: center; }
+    .l2-fam-head > :first-child { padding-right: 2.5rem; }
+    .l2-fam-head > :last-child { padding-left: 2.5rem; border-left: 1px solid var(--c-line); text-align: justify; hyphens: auto; }
+  }
+  .l2-fam-eyebrow { margin: 0; font-size: .75rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--c-accent); }
+  .l2-fam-title { margin: .375rem 0 0; font-family: var(--font-display); font-size: clamp(1.375rem, 2vw, 1.875rem); font-weight: 700; letter-spacing: -.02em; line-height: 1.2; color: var(--c-ink); }
+  .l2-fam-text { margin: 0; font-size: .9375rem; line-height: 1.7; color: var(--c-text-2); }
+
+  /* Rejilla: 1 · 2 · 3 por fila (6 subcolumnas en escritorio) */
+  .l2-grid { display: grid; gap: 1.25rem; margin: 0; padding: 0; list-style: none; grid-template-columns: minmax(0, 1fr); }
+  @media (min-width: 640px) { .l2-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (min-width: 1024px) {
+    .l2-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+    .l2-grid > li { grid-column: span 2; }
+    .l2-grid > li.l2-span-3 { grid-column: span 3; }
+    .l2-grid > li.l2-span-6 { grid-column: span 6; }
+    /* Fila final de 2: cards verticales a media fila, imagen panorámica a la misma altura que las de 3 */
+    .l2-span-3 .lc-media { aspect-ratio: 5 / 2; }
+    /* Fila final de 1: card horizontal a fila completa */
+    .l2-span-6 .lc { flex-direction: row; }
+    .l2-span-6 .lc-media { flex: 0 0 40%; aspect-ratio: auto; min-height: 100%; }
+    .l2-span-6 .lc-body { padding: 1.5rem; }
+  }
+  .l2-hub { display: flex; justify-content: flex-end; margin-top: 1.5rem; }
+  @media (max-width: 639px) { .l2-hub .btn { width: 100%; justify-content: center; white-space: normal; text-align: center; } }
+
+  .l2-guias { display: flex; flex-direction: column; gap: 1.5rem; }
+
+  /* Cómo cotizar */
+  .l2-cotizar { display: grid; gap: 3rem; }
+  @media (min-width: 1280px) { .l2-cotizar { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0; } .l2-cotizar > :first-child { padding-right: 3rem; } .l2-cotizar > :last-child { padding-left: 3rem; border-left: 1px solid var(--c-line); } }
+  .l2-steps { margin: 1.75rem 0 0; padding: 0; list-style: none; border-top: 1px solid var(--c-line); }
+  .l2-steps li { padding: 1rem 0; font-size: .9375rem; line-height: 1.65; color: var(--c-text-2); border-bottom: 1px solid var(--c-line); }
+  .l2-also-title { margin: 0 0 1.25rem; font-family: var(--font-display); font-size: .875rem; font-weight: 700; color: var(--c-muted); }
+  .l2-also-list { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--c-line); }
+  .l2-also-list li { border-bottom: 1px solid var(--c-line); }
+  .l2-also-link { display: flex; flex-direction: column; gap: .125rem; padding: 1rem .5rem 1rem 0; text-decoration: none; }
+  .l2-also-label { font-family: var(--font-display); font-size: .9375rem; font-weight: 600; color: var(--c-ink); transition: color .15s; }
+  .l2-also-desc { font-size: .8125rem; color: var(--c-muted); }
+  .l2-also-link:hover .l2-also-label, .l2-also-link:focus-visible .l2-also-label { color: var(--c-accent); }
+
+/* Pilares de confianza bajo el hero (compartido por los hubs L2) */
+.l2-trust { display: grid; grid-template-columns: minmax(0, 1fr); border: 1px solid var(--c-line); background: var(--c-surface); }
+@media (min-width: 640px) { .l2-trust { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .l2-trust { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.l2-trust > div { display: flex; flex-direction: column; gap: .5rem; padding: 1.5rem; border-bottom: 1px solid var(--c-line); }
+@media (min-width: 1024px) { .l2-trust > div { border-bottom: 0; } .l2-trust > div + div { border-left: 1px solid var(--c-line); } }
+.l2-trust h3 { margin: 0; font-family: var(--font-display); font-size: .875rem; font-weight: 700; color: var(--c-accent); }
+.l2-trust p { margin: 0; font-size: .8125rem; line-height: 1.6; color: var(--c-muted); }

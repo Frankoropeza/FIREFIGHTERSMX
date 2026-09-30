@@ -3,7 +3,10 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import CategoryCard from '@components/products/CategoryCard.astro';
 import CategoryGuia from '@components/products/CategoryGuia.astro';
-import CatalogoSidebar from '@components/products/CatalogoSidebar.astro';
+import L2Sidebar from '@components/l2/L2Sidebar.astro';
+import L2Cotizar from '@components/l2/L2Cotizar.astro';
+import { bloqueCategorias, bloqueMarcas, bloqueIndustrias, bloqueServicios, bloqueGuias, GUIAS_CATALOGO, anchoFila } from '@lib/l2';
+import '@styles/l2.css';
 import ProductosPorCategoria from '@components/products/ProductosPorCategoria.astro';
 import LineaCard from '@components/products/LineaCard.astro';
 import { allCategories, type Category } from '@data/categories';
@@ -14,7 +17,7 @@ import { SITE, whatsappUrl, CANAL_CONTACTO } from '@config/site';
 const canonicalURL = `${SITE.url}/productos/`;
 
 const seoMeta = {
-  title: `Catálogo de Equipo para Bomberos y Contra Incendio — ${SITE.metaName}`,
+  title: `Equipo para Bomberos y Contra Incendio — ${SITE.metaName}`,
   description:
     'Catálogo certificado NFPA y NOM: trajes, cascos, SCBA, herramientas de rescate, extintores, sistemas CI, cámaras térmicas, HAZMAT y drones. Cotización en 24 h.',
   canonicalURL,
@@ -165,31 +168,34 @@ const tambien = [
 
 
   <!-- Pilares de confianza -->
-  <section class="section-tight" style="background:var(--c-bg-alt)" aria-label="Garantías de compra">
+  <section class="section-tight" style="background:var(--c-bg-alt)" aria-labelledby="garantias-title">
     <div class="container-site">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style="border:1px solid var(--c-line)">
-        {trustPoints.map((t, i) => (
-          <div class="flex flex-col gap-2 p-6" style={`background:var(--c-surface);${i < 3 ? 'border-right:1px solid var(--c-line);' : ''}`}>
-            <h3 class="font-display font-bold text-sm" style="color:var(--c-accent)">{t.title}</h3>
-            <p class="text-xs leading-relaxed" style="color:var(--c-muted)">{t.text}</p>
-          </div>
+      <h2 id="garantias-title" class="sr-only">Garantías de compra</h2>
+      <div class="l2-trust">
+        {trustPoints.map((t) => (
+          <div><h3>{t.title}</h3><p>{t.text}</p></div>
         ))}
       </div>
     </div>
   </section>
 
   <!-- Catálogo: barra lateral fija + columna principal (rediseño 2026-09-30) -->
-  <div class="container-site pc-shell">
-    <CatalogoSidebar secciones={secciones} />
+  <div class="container-site l2-shell">
+    <L2Sidebar
+      resumen="Navegar el catálogo"
+      secciones={secciones}
+      bloques={[bloqueCategorias(), bloqueMarcas(), bloqueIndustrias(), bloqueServicios(), bloqueGuias(GUIAS_CATALOGO)]}
+      cotizar={{ titulo: 'Cotiza tu equipo', texto: 'Envíanos tu lista, las bases de tu licitación o una foto del equipo a renovar.', msg: 'Hola, quiero cotizar equipo del catálogo.' }}
+    />
 
-    <div class="pc-main">
+    <div class="l2-main">
 
       <!-- Categorías por familia -->
-      <section id="categorias" class="pc-sec" aria-labelledby="categorias-title">
-        <header class="pc-sec-head">
+      <section id="categorias" class="l2-sec" aria-labelledby="categorias-title">
+        <header class="l2-sec-head">
           <span class="section-eyebrow mb-4 inline-flex">Categorías</span>
-          <h2 id="categorias-title" class="pc-h2">Categorías de equipo contra incendio</h2>
-          <p class="pc-lead">
+          <h2 id="categorias-title" class="l2-h2">Categorías de equipo contra incendio</h2>
+          <p class="l2-lead">
             Cada categoría tiene su propia página con líneas disponibles, normas aplicables
             y productos destacados. Si no encuentras un modelo específico, lo conseguimos:
             trabajamos directo con fábrica y manejamos pedidos especiales sobre especificación técnica.
@@ -197,18 +203,17 @@ const tambien = [
         </header>
 
         {familias.map((familia) => (
-          <div class="pc-fam" id={`familia-${familia.slug}`} aria-labelledby={`fam-${familia.slug}`}>
-            <header class="pc-fam-head">
+          <div class="l2-fam" id={`familia-${familia.slug}`} aria-labelledby={`fam-${familia.slug}`}>
+            <header class="l2-fam-head">
               <div>
-                <p class="pc-fam-eyebrow">{familia.eyebrow}</p>
-                <h3 id={`fam-${familia.slug}`} class="pc-fam-title">{familia.titulo}</h3>
+                <p class="l2-fam-eyebrow">{familia.eyebrow}</p>
+                <h3 id={`fam-${familia.slug}`} class="l2-fam-title">{familia.titulo}</h3>
               </div>
-              <p class="pc-fam-text">{familia.texto}</p>
+              <p class="l2-fam-text">{familia.texto}</p>
             </header>
-            <ul class="pc-grid" role="list">
+            <ul class="l2-grid" role="list">
               {familia.items.map((it, i) => {
-                const n = familia.items.length, r = n % 3, ultima = r > 0 && i >= n - r;
-                const ancho = !ultima ? '' : r === 1 ? 'pc-span-6' : 'pc-span-3';
+                const ancho = anchoFila(i, familia.items.length);
                 return (
                   <li class={ancho || undefined}>
                     {it.tipo === 'linea'
@@ -218,135 +223,47 @@ const tambien = [
                 );
               })}
             </ul>
-            <div class="pc-hub"><a href={familia.hub.href} class="btn btn-ghost">{familia.hub.label}</a></div>
+            <div class="l2-hub"><a href={familia.hub.href} class="btn btn-ghost">{familia.hub.label}</a></div>
           </div>
         ))}
       </section>
 
       <!-- Productos por categoría -->
-      <section id="productos" class="pc-sec" aria-labelledby="productos-title">
-        <header class="pc-sec-head">
+      <section id="productos" class="l2-sec" aria-labelledby="productos-title">
+        <header class="l2-sec-head">
           <span class="section-eyebrow mb-4 inline-flex">Lo más cotizado</span>
-          <h2 id="productos-title" class="pc-h2">Productos por categoría</h2>
-          <p class="pc-lead">Modelos con ficha técnica propia, agrupados por categoría, con su marca y la norma que cumplen.</p>
+          <h2 id="productos-title" class="l2-h2">Productos por categoría</h2>
+          <p class="l2-lead">Modelos con ficha técnica propia, agrupados por categoría, con su marca y la norma que cumplen.</p>
         </header>
         <ProductosPorCategoria />
       </section>
 
       <!-- Guías de selección (antes: módulos spotlight a pantalla completa) -->
-      <section id="guias" class="pc-sec" aria-labelledby="guias-title">
-        <header class="pc-sec-head">
+      <section id="guias" class="l2-sec" aria-labelledby="guias-title">
+        <header class="l2-sec-head">
           <span class="section-eyebrow mb-4 inline-flex">Guías de selección</span>
-          <h2 id="guias-title" class="pc-h2">Cómo elegir el equipo de cada categoría</h2>
-          <p class="pc-lead">Qué distingue a cada línea, qué norma aplica y qué revisar antes de cotizar.</p>
+          <h2 id="guias-title" class="l2-h2">Cómo elegir el equipo de cada categoría</h2>
+          <p class="l2-lead">Qué distingue a cada línea, qué norma aplica y qué revisar antes de cotizar.</p>
         </header>
-        <div class="pc-guias">
+        <div class="l2-guias">
           {allCategories.filter((cat) => cat.spotlight).map((cat) => <CategoryGuia cat={cat} />)}
         </div>
       </section>
 
       <!-- Cómo cotizar + cross-links -->
-      <section id="como-cotizar" class="pc-sec" aria-labelledby="como-cotizar-title">
-        <div class="pc-cotizar">
-          <div>
-            <span class="section-eyebrow mb-4 inline-flex">Cómo cotizar</span>
-            <h2 id="como-cotizar-title" class="pc-h2">
-              Del catálogo a tu operación<br/>
-              <span style="color:var(--c-accent)">en menos de 24 horas.</span>
-            </h2>
-            <ol class="pc-steps" role="list">
-              {pasos.map((t) => <li>{t}</li>)}
-            </ol>
-            <div class="flex flex-col sm:flex-row gap-3 mt-8">
-              <a href={whatsappUrl('Hola, quiero cotizar equipo del catálogo.')} target="_blank" rel="noopener" class="btn btn-primary">
-                Iniciar cotización
-              </a>
-            </div>
-          </div>
-
-          <div class="pc-also">
-            <h2 class="pc-also-title">También te puede servir</h2>
-            <ul class="pc-also-list" role="list">
-              {tambien.map((l) => (
-                <li>
-                  <a href={l.href} class="pc-also-link">
-                    <span class="pc-also-label">{l.label}</span>
-                    <span class="pc-also-desc">{l.desc}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
+      <L2Cotizar
+        id="como-cotizar"
+        eyebrow="Cómo cotizar"
+        titulo="Del catálogo a tu operación"
+        destacado="en menos de 24 horas."
+        pasos={pasos}
+        cta={{ label: 'Iniciar cotización', msg: 'Hola, quiero cotizar equipo del catálogo.' }}
+        tambien={tambien}
+      />
 
     </div>
   </div>
 
-<style>
-  .pc-shell { display: grid; gap: 2rem; padding-block: 3rem 5rem; }
-  /* Barra lateral a la DERECHA y amplia (Frank, 2026-09-30), desde 1280 px. En el DOM va
-     primero para que en móvil/tablet el bloque «Navegar el catálogo» quede arriba. */
-  @media (min-width: 1280px) {
-    .pc-shell { grid-template-columns: minmax(0, 1fr) 21rem; gap: 2.5rem; align-items: start; padding-block: 4rem 6rem; }
-    .pc-shell > :global(.sb) { grid-column: 2; grid-row: 1; }
-    .pc-main { grid-column: 1; grid-row: 1; }
-  }
-  @media (min-width: 1440px) { .pc-shell { grid-template-columns: minmax(0, 1fr) 24rem; gap: 3rem; } }
-  @media (min-width: 1680px) { .pc-shell { grid-template-columns: minmax(0, 1fr) 27rem; } }
-  .pc-main { min-width: 0; }
 
-  .pc-sec { scroll-margin-top: calc(var(--header-height) + 1rem); }
-  .pc-sec + .pc-sec { margin-top: 4rem; padding-top: 4rem; border-top: 1px solid var(--c-line); }
-  .pc-sec-head { max-width: 48rem; margin-bottom: 2.25rem; }
-  .pc-h2 { margin: 0; font-family: var(--font-display); font-weight: 700; color: var(--c-ink); font-size: clamp(1.625rem, 2.6vw, 2.25rem); line-height: 1.1; letter-spacing: -.02em; text-wrap: balance; }
-  .pc-lead { margin: 1rem 0 0; font-size: 1rem; line-height: 1.7; color: var(--c-text-2); }
-
-  /* Familias */
-  .pc-fam { scroll-margin-top: calc(var(--header-height) + 1rem); }
-  .pc-fam + .pc-fam { margin-top: 3.5rem; padding-top: 3.5rem; border-top: 1px solid var(--c-line); }
-  .pc-fam-head { display: grid; gap: 1rem; margin-bottom: 1.75rem; }
-  @media (min-width: 1280px) {
-    .pc-fam-head { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0; align-items: center; }
-    .pc-fam-head > :first-child { padding-right: 2.5rem; }
-    .pc-fam-head > :last-child { padding-left: 2.5rem; border-left: 1px solid var(--c-line); text-align: justify; hyphens: auto; }
-  }
-  .pc-fam-eyebrow { margin: 0; font-size: .75rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--c-accent); }
-  .pc-fam-title { margin: .375rem 0 0; font-family: var(--font-display); font-size: clamp(1.375rem, 2vw, 1.875rem); font-weight: 700; letter-spacing: -.02em; line-height: 1.2; color: var(--c-ink); }
-  .pc-fam-text { margin: 0; font-size: .9375rem; line-height: 1.7; color: var(--c-text-2); }
-
-  /* Rejilla: 1 · 2 · 3 por fila (6 subcolumnas en escritorio) */
-  .pc-grid { display: grid; gap: 1.25rem; margin: 0; padding: 0; list-style: none; grid-template-columns: minmax(0, 1fr); }
-  @media (min-width: 640px) { .pc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-  @media (min-width: 1024px) {
-    .pc-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
-    .pc-grid > li { grid-column: span 2; }
-    .pc-grid > li.pc-span-3 { grid-column: span 3; }
-    .pc-grid > li.pc-span-6 { grid-column: span 6; }
-    /* Fila final de 2: cards verticales a media fila, imagen panorámica a la misma altura que las de 3 */
-    .pc-span-3 :global(.lc-media) { aspect-ratio: 5 / 2; }
-    /* Fila final de 1: card horizontal a fila completa */
-    .pc-span-6 :global(.lc) { flex-direction: row; }
-    .pc-span-6 :global(.lc-media) { flex: 0 0 40%; aspect-ratio: auto; min-height: 100%; }
-    .pc-span-6 :global(.lc-body) { padding: 1.5rem; }
-  }
-  .pc-hub { display: flex; justify-content: flex-end; margin-top: 1.5rem; }
-  @media (max-width: 639px) { .pc-hub .btn { width: 100%; justify-content: center; white-space: normal; text-align: center; } }
-
-  .pc-guias { display: flex; flex-direction: column; gap: 1.5rem; }
-
-  /* Cómo cotizar */
-  .pc-cotizar { display: grid; gap: 3rem; }
-  @media (min-width: 1280px) { .pc-cotizar { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0; } .pc-cotizar > :first-child { padding-right: 3rem; } .pc-cotizar > :last-child { padding-left: 3rem; border-left: 1px solid var(--c-line); } }
-  .pc-steps { margin: 1.75rem 0 0; padding: 0; list-style: none; border-top: 1px solid var(--c-line); }
-  .pc-steps li { padding: 1rem 0; font-size: .9375rem; line-height: 1.65; color: var(--c-text-2); border-bottom: 1px solid var(--c-line); }
-  .pc-also-title { margin: 0 0 1.25rem; font-family: var(--font-display); font-size: .875rem; font-weight: 700; color: var(--c-muted); }
-  .pc-also-list { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--c-line); }
-  .pc-also-list li { border-bottom: 1px solid var(--c-line); }
-  .pc-also-link { display: flex; flex-direction: column; gap: .125rem; padding: 1rem .5rem 1rem 0; text-decoration: none; }
-  .pc-also-label { font-family: var(--font-display); font-size: .9375rem; font-weight: 600; color: var(--c-ink); transition: color .15s; }
-  .pc-also-desc { font-size: .8125rem; color: var(--c-muted); }
-  .pc-also-link:hover .pc-also-label, .pc-also-link:focus-visible .pc-also-label { color: var(--c-accent); }
-</style>
 
 </BaseLayout>
