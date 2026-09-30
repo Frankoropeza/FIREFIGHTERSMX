@@ -131,8 +131,10 @@
   /* Layout */
   --container-max:     100%;
   --container-padding: 1.25rem;
-  --header-height:     104px;
+  --header-height:     69px;    /* barra (68 + filete). Desde 768 px suma la TopBar: 106px */
 }
+
+@media (min-width: 768px) { :root { --header-height: 106px; } }
 
 /* ================================================================
    RESET + BASE

@@ -1,574 +1,911 @@
 ---
-import { navigation } from '@data/navigation';
+/*
+  Header del sitio — barra + navegación de escritorio + drawer móvil.
+
+  Arquitectura (rediseño 2026-09-29):
+  · Un solo árbol de navegación en el HTML (el de escritorio). El drawer móvil
+    se construye en cliente clonando ESE árbol la primera vez que se abre, sin
+    ninguna petición de red: no hay parcial que cargar ni estado de "cargando".
+  · Los disparadores de los paneles son <button> (patrón "disclosure"): abren
+    con clic, toque, Enter/Espacio o —con mouse— por intención de hover.
+    El enlace a la página principal de cada sección vive dentro de su panel.
+  · Productos usa un mega-menú (categorías | subcategorías) en lugar de
+    fly-outs anidados; el resto son dropdowns simples.
+  · Regla del sitio: cero animaciones y cero transiciones (sólo los botones).
+    Los paneles se muestran y ocultan al instante.
+*/
+import { navigation, type NavItem } from '@data/navigation';
 import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl, TELEFONO_ACTIVO } from '@config/site';
 import TopBar from '@components/common/TopBar.astro';
 
-const pathname = Astro.url.pathname;
-const sinBarra = (href: string) => href.replace(/\/$/, '');
-// Coincidencia por segmento: /empresa no debe marcarse activo dentro de /empresas/.
-const isActive = (href: string) => {
-  if (href === '/') return pathname === '/';
-  const base = sinBarra(href);
-  return pathname === base || pathname.startsWith(`${base}/`);
+const norm = (h: string) => h.replace(/\/+$/, '') || '/';
+const pathname = norm(Astro.url.pathname);
+
+/** Página actual exacta. */
+const isExact = (href: string) => norm(href) === pathname;
+/** Sección actual: /empresa no debe marcarse activo dentro de /empresas/. */
+const isSection = (href: string) => {
+  const base = norm(href);
+  return base === '/' ? pathname === '/' : pathname === base || pathname.startsWith(`${base}/`);
 };
-const isExact = (href: string) => (href === '/' ? pathname === '/' : sinBarra(pathname) === sinBarra(href));
 const ZONA_DIRECTORIO = ['/directorio', '/empresas', '/estaciones', '/cobertura'];
-const activoItem = (item: { href: string; zona?: string }) =>
-  item.zona === 'directorio' ? ZONA_DIRECTORIO.some((p) => isActive(p)) : isActive(item.href);
-const esVer = (label: string) => label.startsWith('Ver');
+const seccionActiva = (item: NavItem) =>
+  item.zona === 'directorio' ? ZONA_DIRECTORIO.some(isSection) : isSection(item.href);
+
+interface Cat extends NavItem {
+  subs: NavItem[];
+  current: boolean;
+}
+interface Grupo {
+  item: NavItem;
+  cats: Cat[];
+  mega: boolean;
+  activa: number;
+  hub: { href: string; label: string } | null;
+  current: boolean;
+}
+
+/** Normaliza un ítem de primer nivel a lo que necesita el markup. */
+function preparar(item: NavItem): Grupo {
+  const raw = item.children ?? [];
+  const hubIdx = raw.findIndex((c) => norm(c.href) === norm(item.href));
+  const ultimo = raw.length - 1;
+
+  // Un hijo final que apunta al propio hub (p. ej. «Catálogo completo…») es el
+  // enlace de pie del panel. Si el hub está en otra posición, ya es un ítem
+  // normal de la lista; si no aparece, se usa hubLabel.
+  let hub: Grupo['hub'] = null;
+  let lista = raw;
+  if (raw.length) {
+    if (hubIdx === ultimo && hubIdx >= 0) {
+      hub = { href: raw[hubIdx].href, label: raw[hubIdx].label.trim() };
+      lista = raw.slice(0, ultimo);
+    } else if (hubIdx < 0) {
+      hub = { href: item.href, label: item.hubLabel ?? item.label };
+    }
+  }
+
+  const cats: Cat[] = lista.map((c) => ({
+    ...c,
+    label: c.label.trim(),
+    // Los nietos que repiten el href del padre no aportan un destino nuevo.
+    subs: (c.children ?? []).filter((s) => norm(s.href) !== norm(c.href)),
+    current: isSection(c.href),
+  }));
+  // Mega-menú sólo cuando hay muchas categorías con subcategorías (Productos);
+  // las listas cortas (Directorio) se resuelven mejor como dropdown con sub-enlaces.
+  const mega = cats.length >= 8 && cats.some((c) => c.subs.length > 0);
+  const activa = Math.max(0, cats.findIndex((c) => c.current));
+  return { item, cats, mega, activa, hub, current: seccionActiva(item) };
+}
+
+const grupos = navigation.main.map(preparar);
 ---
 
-<header id="site-header" class="fixed top-0 inset-x-0 z-50">
+<header id="site-header" class="hdr">
   <TopBar />
 
-  <div class="header-glass hd-bar">
-    <div class="container-site hd-row">
+  <div class="hdr-main" data-hdr-main>
+    <div class="container-site hdr-bar">
 
-      <!-- ── LOGO ─────────────────────────────────────────────────── -->
-      <a href="/" class="hd-brand" aria-label="FIREFIGHTERS MX">
-        <svg data-logo viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="hd-mark">
-          <polygon points="18,2 32,10 32,26 18,34 4,26 4,10" fill="var(--c-accent)"/>
-          <path d="M18 10c0 0-5 4-3 8 1 2 3 2 3 2s-1-2 0-4c1-2 3-2 3-2s-1 3 1 5c.8.8 1 2 1 2s2-1.5 2-4c0-3-2-5-2-5s1 2 0 4c0 0-2-4-5-6z" fill="white" opacity="0.95"/>
-        </svg>
-        <span>
-          <span class="hd-name">Firefighters<span> MX</span></span>
-          <span class="hd-tag">Equipo contra incendio</span>
+      <!-- ── Marca ───────────────────────────────────────────────── -->
+      <a href="/" class="hdr-brand" aria-label="FIREFIGHTERS MX">
+        <span class="hdr-logo">
+          <svg data-logo viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="18,2 32,10 32,26 18,34 4,26 4,10" fill="var(--ember-500)"/>
+            <path d="M18 10c0 0-5 4-3 8 1 2 3 2 3 2s-1-2 0-4c1-2 3-2 3-2s-1 3 1 5c.8.8 1 2 1 2s2-1.5 2-4c0-3-2-5-2-5s1 2 0 4c0 0-2-4-5-6z" fill="white" opacity="0.95"/>
+          </svg>
+        </span>
+        <span class="hdr-brand-text">
+          <span class="hdr-brand-name">Firefighters<span class="hdr-brand-mx"> MX</span></span>
+          <span class="hdr-tag">Equipo contra incendio</span>
         </span>
       </a>
 
-      <!-- ── NAVEGACIÓN DE ESCRITORIO (≥ 1280 px) ───────────────────── -->
-      <nav class="hd-nav" aria-label="Navegación principal">
-        <ul class="nav-list">
-          {navigation.main.map((item) => {
-            const drop = item.children ?? null;
-            const mega = !!drop?.some((c) => c.children);
-            const filasPanel = mega ? Math.max(...drop!.map((c) => c.children?.length ?? 1)) : 0;
-            const porDefecto = mega ? drop!.findIndex((c) => c.children) : -1;
-            return (
-              <>
-                {item.zona === 'directorio' && <li class="nav-sep" aria-hidden="true"></li>}
-                <li class:list={['nav-group', drop && 'has-drop', activoItem(item) && 'is-current']}>
-                  <a href={item.href} class="nav-link" aria-current={isExact(item.href) ? 'page' : undefined}>{item.label}</a>
-                  {drop && (
-                    <>
-                      <button type="button" class="nav-toggle" aria-expanded="false" aria-label={`Mostrar submenú de ${item.label}`}>
-                        <span class="caret" aria-hidden="true"></span>
-                      </button>
-                      <div class:list={['nav-drop', mega ? 'nav-drop--mega' : 'nav-drop--simple', item.zona === 'directorio' && 'nav-drop--right']}>
-                        <div class="drop-panel" style={mega ? `--pane-rows:${filasPanel}` : undefined}>
-                          <ul class="drop-list">
-                            {drop.map((child, i) => {
-                              const conPanel = mega && !esVer(child.label) && (child.children || child.description);
-                              return (
-                                <li class:list={['drop-row', conPanel && 'has-pane', mega && i === porDefecto && 'is-default', esVer(child.label) && 'is-more']}>
+      <!-- ── Navegación de escritorio (≥1280 px) ─────────────────── -->
+      <nav class="hdr-nav" aria-label="Navegación principal" data-hdr-nav>
+        <ul class="hdr-list">
+          {grupos.map((g, gi) => (
+            <>
+              {g.item.zona === 'directorio' && <li class="hdr-sep" aria-hidden="true"></li>}
+              <li
+                class:list={['hdr-item', { 'is-mega': g.mega, 'is-dir': g.item.zona === 'directorio' }]}
+                data-nav-item
+                data-label={g.item.label}
+                data-href={g.item.href}
+                data-zona={g.item.zona ?? ''}
+                data-current={g.current ? '1' : '0'}
+              >
+                {g.cats.length > 0 ? (
+                  <>
+                    <button
+                      type="button"
+                      class:list={['hdr-trigger', { 'is-current': g.current }]}
+                      aria-expanded="false"
+                      aria-controls={`hdr-panel-${gi}`}
+                    >
+                      <span>{g.item.label}</span>
+                      <span class="hdr-caret" aria-hidden="true"></span>
+                    </button>
+
+                    {g.mega ? (
+                      <div class="hdr-panel hdr-panel--mega" id={`hdr-panel-${gi}`} data-hdr-panel data-default={g.activa}>
+                        <div class="container-site">
+                          <div class="mega-grid">
+                            <ul class="mega-cats">
+                              {g.cats.map((c, ci) => (
+                                <li>
                                   <a
-                                    href={child.href}
-                                    class:list={['drop-link', isActive(child.href) && !esVer(child.label) && (sinBarra(child.href) !== sinBarra(item.href) || isExact(child.href)) && 'is-current']}
-                                    aria-current={isExact(child.href) ? 'page' : undefined}
+                                    href={c.href}
+                                    class:list={['mega-cat', { 'is-active': ci === g.activa, 'is-current': c.current }]}
+                                    data-l2
+                                    data-i={ci}
+                                    data-has-subs={c.subs.length > 0 ? '1' : '0'}
+                                    aria-current={isExact(c.href) ? 'page' : undefined}
                                   >
-                                    <span class="drop-title">{child.label}</span>
-                                    {!mega && child.description && !esVer(child.label) && <span class="drop-desc">{child.description}</span>}
-                                    {mega && child.children && <span class="caret caret--r" aria-hidden="true"></span>}
+                                    <span class="t">{c.label}</span>
+                                    {c.subs.length > 0 && <span class="mega-cat-caret" aria-hidden="true"></span>}
                                   </a>
-                                  {conPanel && (
-                                    <div class="drop-pane">
-                                      <p class="pane-title">{child.label}</p>
-                                      {child.description && <p class="pane-desc">{child.description}</p>}
-                                      {child.children && (
-                                        <ul class="pane-list">
-                                          {child.children.map((sub) => (
-                                            <li>
-                                              <a
-                                                href={sub.href}
-                                                class:list={['pane-link', isActive(sub.href) && 'is-current']}
-                                                aria-current={isExact(sub.href) ? 'page' : undefined}
-                                              >
-                                                <span class="drop-title">{sub.label}</span>
-                                                {sub.description && <span class="drop-desc">{sub.description}</span>}
-                                              </a>
-                                            </li>
-                                          ))}
-                                        </ul>
-                                      )}
-                                    </div>
-                                  )}
                                 </li>
-                              );
-                            })}
-                          </ul>
+                              ))}
+                            </ul>
+
+                            <div class="mega-panes">
+                              {g.cats.map((c, ci) => (
+                                <section class:list={['mega-pane', { 'is-active': ci === g.activa }]} data-pane={ci} aria-label={c.label}>
+                                  <div class="mega-pane-head">
+                                    <a href={c.href} class="mega-pane-title" aria-current={isExact(c.href) ? 'page' : undefined}>{c.label}</a>
+                                    {c.description && <p class="mega-pane-desc" data-d>{c.description}</p>}
+                                  </div>
+                                  {c.subs.length > 0 && (
+                                    <ul class="mega-subs">
+                                      {c.subs.map((s) => (
+                                        <li>
+                                          <a href={s.href} class="mega-sub" data-l3 aria-current={isExact(s.href) ? 'page' : undefined}>
+                                            <span class="t">{s.label}</span>
+                                            {s.description && <span class="d">{s.description}</span>}
+                                          </a>
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  )}
+                                </section>
+                              ))}
+                              {g.hub && <a href={g.hub.href} class="mega-foot" data-hub>{g.hub.label}</a>}
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </>
-                  )}
-                </li>
-              </>
-            );
-          })}
+                    ) : (
+                      <div class="hdr-panel hdr-panel--list" id={`hdr-panel-${gi}`} data-hdr-panel>
+                        <ul class="list-items">
+                          {g.cats.map((c, ci) => (
+                            <li>
+                              <a
+                                href={c.href}
+                                class:list={['list-link', { 'is-current': c.current }]}
+                                data-l2
+                                data-i={ci}
+                                aria-current={isExact(c.href) ? 'page' : undefined}
+                              >
+                                <span class="t">{c.label}</span>
+                                {c.description && <span class="d" data-d>{c.description}</span>}
+                              </a>
+                              {c.subs.length > 0 && (
+                                <ul class="list-subs">
+                                  {c.subs.map((s) => (
+                                    <li><a href={s.href} data-l3 aria-current={isExact(s.href) ? 'page' : undefined}>{s.label}</a></li>
+                                  ))}
+                                </ul>
+                              )}
+                            </li>
+                          ))}
+                        </ul>
+                        {g.hub && <a href={g.hub.href} class="list-foot" data-hub>{g.hub.label}</a>}
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  <a
+                    href={g.item.href}
+                    class:list={['hdr-link', { 'is-current': g.current }]}
+                    aria-current={isExact(g.item.href) ? 'page' : undefined}
+                  >{g.item.label}</a>
+                )}
+              </li>
+            </>
+          ))}
         </ul>
       </nav>
 
-      <!-- ── ACCIONES ─────────────────────────────────────────────── -->
-      <div class="hd-actions">
+      <!-- ── Acciones ────────────────────────────────────────────── -->
+      <div class="hdr-actions">
         {TELEFONO_ACTIVO && (
-          <a href={`tel:${SITE.phoneE164}`} class="hd-phone">{SITE.phone}</a>
+          <a href={`tel:${SITE.phoneE164}`} class="hdr-phone">{SITE.phone}</a>
         )}
 
-        <!-- Los wrappers llevan la visibilidad: la regla .btn de global.css
-             (display:inline-flex) ganaría a un display:none puesto en el <a>. -->
         {CONTACTO_DIRECTO_ACTIVO && (
-          <div class="hd-wa">
-            <a href={whatsappUrl('Hola, quiero cotizar equipo para bomberos.')} target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm">WhatsApp</a>
+          <div class="hdr-wa">
+            <a
+              href={whatsappUrl('Hola, quiero cotizar equipo para bomberos.')}
+              target="_blank" rel="noopener"
+              class="btn btn-whatsapp btn-sm"
+            >WhatsApp</a>
           </div>
         )}
 
-        <div class="hd-cta">
+        <!-- Los wrappers llevan el display: en el propio <a>/<button> la regla
+             .btn (display:inline-flex) de global.css gana a cualquier utilidad
+             de ocultado y el botón se veía donde no debía. -->
+        <div class="hdr-cta">
           <a href="/cotizacion/" class="btn btn-primary btn-sm">Cotizar equipo</a>
         </div>
 
-        <!-- Botón del menú móvil / tablet (< 1280 px) -->
-        <button
-          type="button"
-          id="mobile-menu-btn"
-          class="mm-open-btn"
-          aria-label="Abrir menú"
-          aria-expanded="false"
-          aria-controls="mobile-menu"
-        >
-          <span data-mm-label>Menú</span>
-        </button>
+        <div class="hdr-burger-wrap">
+          <button
+            type="button"
+            id="mobile-menu-btn"
+            class="btn btn-ghost btn-sm hdr-burger"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            aria-label="Abrir menú"
+          >Menú</button>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- ══ MENÚ MÓVIL ════════════════════════════════════════════════════════
-       Panel a pantalla completa bajo el header. El contenido se pide a
-       /parciales/menu-movil/ la primera vez que se abre (ver
-       MenuMovilContenido.astro), así el markup no viaja en cada página.
-  ══════════════════════════════════════════════════════════════════════ -->
-  <div id="mobile-menu" hidden role="dialog" aria-modal="true" aria-label="Menú principal" data-parcial="/parciales/menu-movil/">
-    <p class="mm-status" role="status">Cargando menú…</p>
+  <!-- ══ Drawer móvil ═══════════════════════════════════════════════════════
+       El árbol de enlaces se construye en cliente desde la navegación de
+       escritorio al abrirlo por primera vez (ver <script>). Aquí sólo viven
+       las piezas fijas: acciones de contacto arriba y datos al pie.
+  ═══════════════════════════════════════════════════════════════════════ -->
+  <div
+    id="mobile-menu"
+    class="drw"
+    hidden
+    role="dialog"
+    aria-modal="true"
+    aria-label="Menú principal"
+  >
+    <div class="container-site drw-inner">
+      <div class="drw-cta">
+        <a href="/cotizacion/" class="btn btn-primary drw-cta-main">Cotizar equipo</a>
+        {CONTACTO_DIRECTO_ACTIVO && (
+          <a
+            href={whatsappUrl('Hola, quiero cotizar equipo para bomberos.')}
+            target="_blank" rel="noopener"
+            class="btn btn-whatsapp"
+          >WhatsApp</a>
+        )}
+      </div>
+
+      <nav class="drw-nav" aria-label="Menú móvil" data-drw-nav></nav>
+
+      <div class="drw-foot">
+        {TELEFONO_ACTIVO && <a href={`tel:${SITE.phoneE164}`} class="drw-phone">{SITE.phone}</a>}
+        <p class="drw-hours">{SITE.hours}</p>
+      </div>
+    </div>
   </div>
 </header>
 
-<!-- Spacer para compensar el header fixed -->
-<div class="h-[71px] md:h-[107px]" aria-hidden="true"></div>
+<!-- Espaciador: compensa el header fixed (altura = --header-height) -->
+<div class="hdr-spacer" aria-hidden="true"></div>
 
 <style is:global>
-  /* ════════════════════════════════════════════════════════════════
-     HEADER — barra
-     Sin animaciones ni transiciones (regla del sitio): los paneles
-     aparecen y desaparecen al instante.
-  ════════════════════════════════════════════════════════════════ */
-  .hd-bar { background: var(--c-bg); border-bottom: 1px solid var(--c-line); }
-  .hd-bar.scrolled { box-shadow: 0 4px 16px rgba(16, 24, 40, 0.08); }
-  .hd-row { height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+  /* ══════════════════════════════════════════════════════════════
+     HEADER — todo el CSS del menú vive aquí (prefijos hdr-/mega-/list-/drw-)
+     Regla del sitio: SIN transiciones ni animaciones.
+     ══════════════════════════════════════════════════════════════ */
+  .hdr { position: fixed; top: 0; left: 0; right: 0; z-index: 50; }
+  .hdr-spacer { height: var(--header-height); }
 
-  .hd-brand { display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; }
-  .hd-mark { width: 36px; height: 36px; flex-shrink: 0; }
-  .hd-name { display: block; font-family: var(--font-display); font-weight: 700; font-size: 1.125rem; line-height: 1; letter-spacing: -0.01em; color: var(--c-ink); }
-  .hd-name > span { color: var(--c-accent); }
-  .hd-tag { display: block; margin-top: 0.3125rem; font-size: 0.625rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; line-height: 1; color: var(--c-muted); }
+  .hdr-main {
+    position: relative;
+    background: #fff;
+    border-bottom: 1px solid var(--c-line);
+  }
+  .hdr-main.is-scrolled { box-shadow: 0 4px 16px rgba(16, 24, 40, 0.10); }
+
+  .hdr-bar {
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  /* ── Marca ── */
+  .hdr-brand { display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; min-width: 0; }
+  .hdr-logo { display: block; width: 2.25rem; height: 2.25rem; flex-shrink: 0; }
+  .hdr-logo svg { width: 100%; height: 100%; }
+  .hdr-brand-text { display: flex; flex-direction: column; min-width: 0; }
+  .hdr-brand-name {
+    font-family: var(--font-display); font-weight: 700; font-size: 1.1rem;
+    line-height: 1; color: var(--c-ink); white-space: nowrap;
+  }
+  .hdr-brand-mx { color: var(--ember-500); }
+  .hdr-tag {
+    margin-top: 0.25rem; font-size: 9px; font-weight: 500; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--c-muted); white-space: nowrap;
+  }
+  @media (max-width: 359px) { .hdr-tag { display: none; } }
 
   /* ── Navegación de escritorio ── */
-  .hd-nav { display: none; align-self: stretch; }
-  @media (min-width: 1280px) { .hd-nav { display: block; } }
-  .nav-list { display: flex; align-items: stretch; height: 100%; margin: 0; padding: 0; list-style: none; }
-  .nav-sep { align-self: center; width: 1px; height: 1.5rem; margin: 0 0.5rem; background: var(--c-line-strong); }
-  .nav-group { position: relative; display: flex; align-items: stretch; }
+  .hdr-nav { display: none; }
+  @media (min-width: 1280px) {
+    .hdr-nav { display: flex; flex: 1 1 auto; min-width: 0; justify-content: center; }
+  }
+  .hdr-list {
+    display: flex; align-items: stretch; height: 68px;
+    margin: 0; padding: 0; list-style: none; gap: 0.125rem;
+  }
+  .hdr-item { display: flex; position: relative; }
+  .hdr-item.is-mega { position: static; }
+  .hdr-sep { display: block; align-self: center; width: 1px; height: 1.5rem; margin: 0 0.75rem; background: var(--c-line-strong); }
 
-  .nav-link { display: flex; align-items: center; padding: 0 0.625rem; font-size: 0.875rem; font-weight: 500; color: var(--c-ink-2); white-space: nowrap; }
-  .nav-group.has-drop .nav-link { padding-right: 0.125rem; }
-  .nav-toggle { display: flex; align-items: center; justify-content: center; width: 1.375rem; margin: 0 0.125rem 0 0; padding: 0; background: none; border: 0; color: var(--c-muted); cursor: pointer; }
-  .nav-link:focus-visible, .nav-toggle:focus-visible { outline: 2px solid var(--c-accent); outline-offset: -3px; border-radius: 6px; }
+  .hdr-link,
+  .hdr-trigger {
+    position: relative;
+    display: flex; align-items: center; gap: 0.4rem;
+    height: 100%; padding: 0 0.75rem;
+    font-family: var(--font-sans); font-size: 0.875rem; font-weight: 500; line-height: 1;
+    color: var(--c-ink-2); background: none; border: 0; border-radius: 0;
+    cursor: pointer; white-space: nowrap;
+  }
+  @media (min-width: 1536px) {
+    .hdr-link, .hdr-trigger { font-size: 0.9375rem; padding: 0 0.875rem; }
+  }
+  .hdr-link:hover,
+  .hdr-trigger:hover,
+  .hdr-item.is-open > .hdr-trigger,
+  .hdr-link.is-current,
+  .hdr-trigger.is-current { color: var(--c-accent); }
+  /* Indicador de sección actual / panel abierto: filete inferior */
+  .hdr-link.is-current::after,
+  .hdr-trigger.is-current::after,
+  .hdr-item.is-open > .hdr-trigger::after {
+    content: ''; position: absolute; left: 0.75rem; right: 0.75rem; bottom: -1px;
+    height: 2px; background: var(--c-ink-2);
+  }
 
-  /* Caret dibujado con bordes (indicador funcional, no es un ícono) */
-  .caret { display: block; width: 0.4375rem; height: 0.4375rem; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateY(-2px) rotate(45deg); }
-  .caret--r { flex: none; transform: rotate(-45deg); color: var(--c-muted); }
+  /* Caret CSS (indicador de estado; no es un ícono decorativo) */
+  .hdr-caret {
+    display: inline-block; width: 0.4375rem; height: 0.4375rem; flex-shrink: 0;
+    border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor;
+    transform: translateY(-2px) rotate(45deg);
+  }
+  .hdr-item.is-open > .hdr-trigger .hdr-caret,
+  .drw-toggle[aria-expanded="true"] .hdr-caret { transform: translateY(1px) rotate(-135deg); }
 
-  /* Estado: hover, abierto por clic/teclado, sección actual */
-  .nav-group:hover .nav-link, .nav-group.is-open .nav-link { color: var(--c-ink); }
-  .nav-group.is-current .nav-link { color: var(--c-accent); }
-  .nav-group:hover .nav-toggle, .nav-group.is-open .nav-toggle { color: var(--c-accent); }
-  .nav-group:hover .nav-toggle .caret, .nav-group.is-open .nav-toggle .caret { transform: translateY(2px) rotate(225deg); }
-  .nav-group::after { content: ''; position: absolute; left: 0.625rem; right: 0.5rem; bottom: -1px; height: 2px; background: var(--c-ink); display: none; }
-  .nav-group.has-drop::after { right: 0.375rem; }
-  .nav-group:hover::after, .nav-group.is-open::after, .nav-group.is-current::after { display: block; }
+  /* ── Paneles ── */
+  .hdr-panel {
+    display: none;
+    position: absolute; top: 100%; z-index: 60;
+    background: #fff;
+    border: 1px solid var(--c-line); border-top: 0;
+    box-shadow: 0 18px 36px -10px rgba(16, 24, 40, 0.16);
+    max-height: calc(100dvh - var(--header-height) - 0.75rem);
+    overflow-y: auto; overscroll-behavior: contain;
+  }
+  .hdr-item.is-open > .hdr-panel { display: block; }
 
-  /* ── Paneles desplegables ── */
-  .nav-drop { display: none; position: absolute; top: calc(100% + 1px); left: 0; z-index: 60; }
-  .nav-drop--right { left: auto; right: 0; }
-  .nav-group:hover > .nav-drop, .nav-group.is-open > .nav-drop, .nav-group:has(.nav-drop :focus-visible) > .nav-drop { display: block; }
-
-  .drop-panel {
-    position: relative; display: flex; flex-direction: column;
-    max-height: calc(100dvh - 132px);
-    background: var(--c-bg); border: 1px solid var(--c-line); border-top: 0;
+  /* Dropdown simple */
+  .hdr-panel--list {
+    left: 0; width: 22rem;
+    padding: 0.5rem;
     border-radius: 0 0 var(--radius-card) var(--radius-card);
-    box-shadow: 0 16px 40px rgba(16, 24, 40, 0.12), 0 2px 6px rgba(16, 24, 40, 0.05);
   }
-  .nav-drop--simple .drop-panel { width: 21rem; }
-  .nav-drop--mega .drop-panel { --col: 16.5rem; width: 41rem; }
-
-  .drop-list { margin: 0; padding: 0.5rem; list-style: none; overflow-y: auto; overscroll-behavior: contain; }
-  .drop-link { display: block; padding: 0.5625rem 0.75rem; border-radius: 6px; color: var(--c-ink-2); }
-  .drop-title { display: block; font-size: 0.875rem; font-weight: 500; line-height: 1.35; color: inherit; }
-  .drop-desc { display: block; margin-top: 0.125rem; font-size: 0.75rem; line-height: 1.4; color: var(--c-muted); }
-  .drop-link:hover, .drop-row:hover > .drop-link { background: var(--c-tint); color: var(--c-ink); }
-  .drop-link.is-current, .pane-link.is-current { color: var(--c-accent); }
-  .drop-link:focus-visible, .pane-link:focus-visible { outline: 2px solid var(--c-accent); outline-offset: -2px; }
-  .drop-row.is-more { margin-top: 0.25rem; padding-top: 0.25rem; border-top: 1px solid var(--c-line); }
-
-  /* Mega: lista de categorías a la izquierda, detalle a la derecha.
-     La lista hace scroll propio; el detalle (.drop-pane) se ancla al panel,
-     no a la lista, así que ni el scroll ni el ancho lo recortan. */
-  .nav-drop--mega .drop-list { width: var(--col); min-height: calc(var(--pane-rows) * 3.1rem + 7.5rem); }
-  .drop-row { position: static; }
-  .nav-drop--mega .drop-link { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; }
-  .drop-pane {
-    display: none; position: absolute; top: 0; bottom: 0; left: var(--col); right: 0;
-    padding: 1.25rem 1.5rem; overflow-y: auto; overscroll-behavior: contain;
-    background: var(--c-tint); border-left: 1px solid var(--c-line);
-    border-radius: 0 0 var(--radius-card) 0;
+  .hdr-item.is-dir > .hdr-panel--list { left: auto; right: 0; width: 30rem; }
+  .list-items, .list-subs, .mega-cats, .mega-subs { margin: 0; padding: 0; list-style: none; }
+  .list-link {
+    display: block; padding: 0.625rem 0.75rem; border-radius: var(--radius-btn);
+    color: var(--c-ink-2);
   }
-  .drop-row:hover > .drop-pane, .drop-row:focus-within > .drop-pane { display: block; }
-  .drop-panel:not(:has(.drop-row:hover, .drop-row:focus-within)) .drop-row.is-default > .drop-pane { display: block; }
-  .drop-panel:not(:has(.drop-row:hover, .drop-row:focus-within)) .drop-row.is-default > .drop-link,
-  .drop-row.has-pane:focus-within > .drop-link { background: var(--c-tint); color: var(--c-ink); }
-  .pane-title { margin: 0; font-size: 1rem; font-weight: 600; line-height: 1.3; letter-spacing: -0.01em; color: var(--c-ink); }
-  .pane-desc { margin: 0.25rem 0 0; font-size: 0.8125rem; line-height: 1.45; color: var(--c-muted); }
-  .pane-list { margin: 0.875rem 0 0; padding: 0.5rem 0 0; list-style: none; border-top: 1px solid var(--c-line); }
-  .pane-link { display: block; margin: 0 -0.5rem; padding: 0.3125rem 0.5rem; border-radius: 6px; color: var(--c-ink-2); }
-  .pane-link:hover { background: var(--c-bg); color: var(--c-accent); }
+  .list-link .t { display: block; font-size: 0.875rem; font-weight: 600; line-height: 1.3; }
+  .list-link .d { display: block; margin-top: 0.125rem; font-size: 0.75rem; line-height: 1.4; color: var(--c-muted); }
+  .list-link:hover, .list-link:focus-visible { background: var(--c-bg-alt); color: var(--c-accent); }
+  .list-link.is-current, .list-link[aria-current="page"] { color: var(--c-accent); }
+  .list-subs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 0.5rem; padding: 0 0 0.375rem 1.5rem; }
+  .list-subs a {
+    display: block; padding: 0.375rem 0.75rem; border-radius: var(--radius-btn);
+    font-size: 0.8125rem; color: var(--c-text-2);
+  }
+  .list-subs a:hover, .list-subs a:focus-visible { background: var(--c-bg-alt); color: var(--c-accent); }
+  .list-foot, .mega-foot {
+    display: block; margin: 0.375rem 0.25rem 0; padding: 0.75rem 0.5rem 0.375rem;
+    border-top: 1px solid var(--c-line);
+    font-size: 0.875rem; font-weight: 600; color: var(--c-accent);
+  }
+  .list-foot:hover, .mega-foot:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+  /* Mega-menú (Productos) */
+  .hdr-panel--mega { left: 0; right: 0; border-left: 0; border-right: 0; }
+  .mega-grid {
+    display: grid; grid-template-columns: 19rem minmax(0, 1fr);
+    align-items: start;
+  }
+  .mega-cats { padding: 0.875rem 0.75rem 0.875rem 0; border-right: 1px solid var(--c-line); }
+  .mega-cat {
+    display: flex; align-items: center; justify-content: space-between; gap: 0.75rem;
+    padding: 0.5rem 0.75rem; border-radius: var(--radius-btn);
+    font-size: 0.875rem; font-weight: 500; line-height: 1.3; color: var(--c-ink-2);
+  }
+  .mega-cat-caret {
+    width: 0.4375rem; height: 0.4375rem; flex-shrink: 0;
+    border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor;
+    transform: rotate(-45deg); color: var(--c-muted);
+  }
+  .mega-cat.is-active, .mega-cat:focus-visible { background: var(--c-surface-2); color: var(--c-accent); }
+  .mega-cat.is-active .mega-cat-caret { color: var(--c-accent); }
+  .mega-cat.is-current { font-weight: 600; }
+
+  .mega-panes { padding: 1.125rem 0 1rem 2rem; min-width: 0; }
+  .mega-pane { display: none; }
+  .mega-pane.is-active { display: block; }
+  .mega-pane-head { margin-bottom: 0.875rem; }
+  .mega-pane-title { font-size: 1.0625rem; font-weight: 700; letter-spacing: -0.01em; color: var(--c-ink); }
+  .mega-pane-title:hover { color: var(--c-accent); text-decoration: underline; text-underline-offset: 3px; }
+  .mega-pane-desc { margin: 0.25rem 0 0; font-size: 0.8125rem; line-height: 1.5; color: var(--c-muted); }
+  .mega-subs { display: grid; grid-template-columns: repeat(auto-fill, minmax(15.5rem, 1fr)); gap: 0.125rem 0.75rem; }
+  .mega-sub { display: block; padding: 0.5rem 0.625rem; border-radius: var(--radius-btn); }
+  .mega-sub .t { display: block; font-size: 0.875rem; font-weight: 500; line-height: 1.3; color: var(--c-ink-2); }
+  .mega-sub .d { display: block; margin-top: 0.125rem; font-size: 0.75rem; line-height: 1.4; color: var(--c-muted); }
+  .mega-sub:hover, .mega-sub:focus-visible { background: var(--c-bg-alt); }
+  .mega-sub:hover .t, .mega-sub:focus-visible .t, .mega-sub[aria-current="page"] .t { color: var(--c-accent); }
+  .mega-foot { display: inline-block; margin: 1rem 0 0; padding: 0.75rem 0 0; }
+
+  /* Sin JS: los paneles se abren con hover/foco */
+  .no-js .hdr-item:hover > .hdr-panel,
+  .no-js .hdr-item:focus-within > .hdr-panel { display: block; }
 
   /* ── Acciones ── */
-  .hd-actions { display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0; }
-  .hd-phone { display: none; padding: 0 0.5rem; font-size: 0.875rem; font-weight: 500; color: var(--c-ink-2); white-space: nowrap; }
-  .hd-phone:hover { color: var(--c-accent); }
-  .hd-wa { display: none; }
-  .hd-cta { display: none; }
-  @media (min-width: 640px)  { .hd-cta { display: block; } }
-  @media (min-width: 1440px) { .hd-wa { display: block; } }
-  @media (min-width: 1600px) { .hd-phone { display: inline-flex; } }
-
-  .mm-open-btn {
-    display: inline-flex; align-items: center; justify-content: center;
-    min-width: 5rem; min-height: 2.75rem; padding: 0 1rem;
-    background: var(--c-bg); color: var(--c-ink);
-    border: 1px solid var(--c-line-strong); border-radius: var(--radius-btn);
-    font-family: inherit; font-size: 0.875rem; font-weight: 600; line-height: 1; cursor: pointer;
+  .hdr-actions { display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0; }
+  .hdr-phone {
+    display: none; padding: 0 0.75rem; font-size: 0.875rem; font-weight: 500; color: var(--c-ink-2);
   }
-  .mm-open-btn[aria-expanded="true"] { background: var(--c-ink); border-color: var(--c-ink); color: #fff; }
-  @media (min-width: 1280px) { .mm-open-btn { display: none; } }
-  /* Pantallas muy angostas (320–380 px): sin la línea descriptiva del logo para que el botón siempre quepa. */
-  @media (max-width: 380px) { .hd-tag { display: none; } .hd-row { gap: 0.75rem; } .mm-open-btn { min-width: 4.5rem; padding: 0 0.75rem; } }
+  .hdr-phone:hover { color: var(--c-accent); }
+  .hdr-wa { display: none; }
+  .hdr-cta { display: none; }
+  .hdr-burger-wrap { display: block; }
+  .hdr-actions .hdr-burger { min-height: 44px; padding-inline: 1rem; }
+  @media (min-width: 640px)  { .hdr-cta { display: block; } }
+  @media (min-width: 1280px) { .hdr-burger-wrap { display: none; } }
+  @media (min-width: 1536px) { .hdr-wa { display: block; } .hdr-phone { display: block; } }
 
-  /* ════════════════════════════════════════════════════════════════
-     MENÚ MÓVIL / TABLET — panel a pantalla completa bajo el header
-     El markup llega por fetch: los estilos viven aquí y son globales.
-  ════════════════════════════════════════════════════════════════ */
-  #mobile-menu {
-    position: absolute; left: 0; right: 0; top: 100%;
-    height: calc(100dvh - var(--mm-top, 69px));
-    display: flex; flex-direction: column;
-    background: var(--c-bg); border-top: 1px solid var(--c-line);
+  /* ── Drawer móvil ── */
+  .drw {
+    position: fixed; left: 0; right: 0; top: var(--header-height); bottom: 0; z-index: 49;
+    background: #fff; border-top: 1px solid var(--c-line);
+    overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch;
   }
-  #mobile-menu[hidden] { display: none; }
-  html.mm-lock, html.mm-lock body { overflow: hidden; }
-  /* El botón flotante de WhatsApp taparía las acciones del panel (que ya incluyen WhatsApp). */
-  html.mm-lock #whatsapp-btn { display: none; }
+  .drw[hidden] { display: none; }
+  @media (min-width: 1280px) { .drw, .drw[hidden] { display: none !important; } }
+  /* El botón flotante de WhatsApp no debe tapar el drawer (el contacto ya va arriba). */
+  html.menu-abierto .wa-float { display: none; }
+  .drw-inner { padding-bottom: calc(2rem + env(safe-area-inset-bottom, 0px)); }
 
-  .mm-scroll { flex: 1 1 auto; min-height: 0; overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; padding: 0.25rem 0 1.5rem; }
-  .mm-nav { max-width: 42rem; margin: 0 auto; padding: 0 1rem; }
-  .mm-list { margin: 0; padding: 0; list-style: none; }
-  .mm-l1 { border-bottom: 1px solid var(--c-line); }
-  .mm-row { display: flex; align-items: stretch; }
+  .drw-cta { display: flex; gap: 0.75rem; padding: 1rem 0; border-bottom: 1px solid var(--c-line); }
+  .drw-cta .btn { min-height: 48px; }
+  .drw-cta-main { flex: 1; }
 
-  .mm-link { flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center; min-height: 3.25rem; padding: 0.5rem 0.25rem; font-size: 1rem; font-weight: 600; line-height: 1.3; color: var(--c-ink); }
-  .mm-l2 .mm-link { min-height: 3rem; font-size: 0.9375rem; font-weight: 500; color: var(--c-ink-2); }
-  .mm-l3 .mm-link { min-height: 2.75rem; font-size: 0.875rem; font-weight: 500; color: var(--c-text-2); }
-  .mm-link.is-current { color: var(--c-accent); }
-  .mm-desc { display: block; margin-top: 0.125rem; font-size: 0.75rem; font-weight: 400; line-height: 1.4; color: var(--c-muted); }
-  .mm-link:active { background: var(--c-tint); }
-  .mm-link:focus-visible, .mm-toggle:focus-visible { outline: 2px solid var(--c-accent); outline-offset: -2px; border-radius: 6px; }
+  .drw-eyebrow {
+    margin: 1.25rem 0 0.125rem; padding: 0 0.25rem;
+    font-size: 0.75rem; font-weight: 600; color: var(--c-muted);
+  }
+  .drw-group { border-bottom: 1px solid var(--c-line); }
+  .drw-row { display: flex; align-items: stretch; }
+  .drw-l1 {
+    flex: 1; display: flex; align-items: center; min-height: 3.25rem; padding: 0 0.25rem;
+    font-size: 1rem; font-weight: 600; color: var(--c-ink);
+  }
+  .drw-l1.is-current, .drw-l2.is-current .t { color: var(--c-accent); }
+  .drw-toggle {
+    flex-shrink: 0; display: grid; place-items: center;
+    width: 3.25rem; min-height: 3.25rem; padding: 0;
+    color: var(--c-muted); background: none; border: 0; border-left: 1px solid var(--c-line);
+    cursor: pointer;
+  }
+  .drw-row--2 .drw-toggle { width: 3rem; min-height: 3rem; }
+  .drw-toggle[aria-expanded="true"] { color: var(--c-accent); }
 
-  .mm-toggle { flex: none; display: flex; align-items: center; justify-content: center; width: 3.25rem; min-height: 3rem; margin: 0; padding: 0; background: none; border: 0; border-left: 1px solid var(--c-line); color: var(--c-muted); cursor: pointer; }
-  .mm-toggle[aria-expanded="true"] { color: var(--c-accent); }
-  .mm-toggle .caret { width: 0.5rem; height: 0.5rem; transform: translateY(-2px) rotate(45deg); }
-  .mm-toggle[aria-expanded="true"] .caret { transform: translateY(2px) rotate(225deg); }
+  .drw-panel { padding: 0 0 0.75rem 0.75rem; }
+  .drw-panel[hidden] { display: none; }
+  .drw-l2 {
+    flex: 1; display: flex; flex-direction: column; justify-content: center;
+    min-height: 3rem; padding: 0.5rem 0.75rem; color: var(--c-ink-2);
+  }
+  .drw-l2 .t { font-size: 0.9375rem; font-weight: 500; line-height: 1.3; }
+  .drw-l2 .d { margin-top: 0.125rem; font-size: 0.75rem; line-height: 1.4; color: var(--c-muted); }
+  .drw-panel--3 { padding: 0 0 0.5rem 1rem; border-left: 1px solid var(--c-line); margin-left: 0.75rem; }
+  .drw-l3 {
+    display: block; min-height: 2.75rem; padding: 0.625rem 0.75rem;
+    font-size: 0.875rem; line-height: 1.35; color: var(--c-text-2);
+  }
+  .drw-l3 .d { display: block; margin-top: 0.125rem; font-size: 0.75rem; color: var(--c-muted); }
+  .drw-l3[aria-current="page"], .drw-l3:active, .drw-l2:active .t, .drw-l1:active { color: var(--c-accent); }
+  .drw-hub {
+    display: flex; align-items: center; min-height: 3rem; padding: 0 0.75rem;
+    font-size: 0.9375rem; font-weight: 600; color: var(--c-accent);
+  }
 
-  .mm-panel { margin: 0 0 0.5rem 0.25rem; padding: 0 0 0 0.75rem; border-left: 2px solid var(--c-line); }
-  .mm-panel[hidden] { display: none; }
-  .mm-sublist { margin: 0; padding: 0; list-style: none; }
-  .mm-l3 { margin: 0; padding: 0; }
-  .mm-l2 > .mm-row .mm-toggle { min-height: 3rem; }
-
-  .mm-eyebrow { margin: 1.5rem 0 0.25rem; padding: 0 0.25rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--c-muted); }
-
-  .mm-foot { flex: none; padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom)); background: var(--c-bg); border-top: 1px solid var(--c-line); box-shadow: 0 -4px 12px rgba(16, 24, 40, 0.06); }
-  .mm-cta { display: grid; grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); gap: 0.75rem; max-width: 42rem; margin: 0 auto; }
-  .mm-cta .btn { width: 100%; min-height: 3rem; }
-  .mm-contact { max-width: 42rem; margin: 0.625rem auto 0; font-size: 0.8125rem; line-height: 1.4; color: var(--c-muted); text-align: center; }
-  .mm-contact a { font-weight: 600; color: var(--c-ink-2); }
-  @media (max-height: 520px) { .mm-contact { display: none; } }
-
-  .mm-status { margin: 0; padding: 2rem 1rem; text-align: center; font-size: 0.9375rem; color: var(--c-muted); }
-  .mm-status .btn { margin: 0.75rem 0.25rem 0; }
+  .drw-foot { display: flex; flex-direction: column; gap: 0.25rem; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--c-line); }
+  .drw-phone { display: inline-flex; align-items: center; min-height: 2.75rem; font-size: 1rem; font-weight: 600; color: var(--c-ink); }
+  .drw-hours { margin: 0; font-size: 0.8125rem; color: var(--c-muted); }
 </style>
 
 <script>
-/* ════════════════════════════════════════════════════════════════
-   MENÚ MÓVIL / TABLET — abrir, cerrar, acordeones, foco y accesibilidad
-════════════════════════════════════════════════════════════════ */
-const hdr   = document.getElementById('site-header');
-const btn   = document.getElementById('mobile-menu-btn') as HTMLButtonElement | null;
-const menu  = document.getElementById('mobile-menu') as HTMLElement | null;
-const label = btn?.querySelector<HTMLElement>('[data-mm-label]');
-const XL    = window.matchMedia('(min-width: 1280px)');
+/* ════════════════════════════════════════════════════════════════════
+   NAVEGACIÓN DE ESCRITORIO — paneles con intención de hover, clic/toque,
+   teclado y cierre por Escape / clic fuera / salida de foco.
+════════════════════════════════════════════════════════════════════ */
+const header = document.getElementById('site-header') as HTMLElement;
+const main   = header.querySelector<HTMLElement>('[data-hdr-main]')!;
+const items  = Array.from(header.querySelectorAll<HTMLElement>('[data-nav-item]'))
+  .filter((li) => li.querySelector('[data-hdr-panel]'));
 
-let cargando = false;
+const OPEN_DELAY = 70;    // ms: intención de hover antes de abrir
+const CLOSE_DELAY = 220;  // ms: tolerancia al cruzar huecos o salirse un instante
+const CAT_DELAY = 110;    // ms: intención antes de cambiar de categoría en el mega-menú
 
-const abierto = () => !!menu && !menu.hidden;
+let openItem: HTMLElement | null = null;
+let pinned = false;       // abierto por clic/teclado: no se cierra al salir con el mouse
+let openTimer = 0;
+let closeTimer = 0;
+let lastPointerType = 'mouse';
 
-/* El panel ocupa todo el alto libre bajo el header (con o sin TopBar). */
-function medirHeader() {
-  if (hdr && menu) menu.style.setProperty('--mm-top', `${Math.round(hdr.getBoundingClientRect().height)}px`);
-}
+const triggerOf = (li: HTMLElement) => li.querySelector<HTMLButtonElement>('.hdr-trigger')!;
+const panelOf   = (li: HTMLElement) => li.querySelector<HTMLElement>('[data-hdr-panel]')!;
 
-/* Mientras el menú está abierto, el resto de la página no recibe foco ni lector de pantalla. */
-function aislarPagina(aislar: boolean) {
-  Array.from(document.body.children).forEach((el) => {
-    if (el === hdr || el.tagName === 'SCRIPT') return;
-    (el as HTMLElement).inert = aislar;
+function setCat(li: HTMLElement, index: number) {
+  const panel = panelOf(li);
+  panel.querySelectorAll<HTMLElement>('.mega-cat').forEach((a) => {
+    a.classList.toggle('is-active', a.dataset.i === String(index));
+  });
+  panel.querySelectorAll<HTMLElement>('.mega-pane').forEach((p) => {
+    p.classList.toggle('is-active', p.dataset.pane === String(index));
   });
 }
 
-function abrirPanel(b: HTMLButtonElement, abrir: boolean) {
-  const panel = b.getAttribute('aria-controls') ? document.getElementById(b.getAttribute('aria-controls')!) : null;
-  b.setAttribute('aria-expanded', String(abrir));
-  if (panel) panel.hidden = !abrir;
+function openPanel(li: HTMLElement, pin: boolean) {
+  window.clearTimeout(openTimer);
+  window.clearTimeout(closeTimer);
+  if (openItem && openItem !== li) closePanel(false);
+  if (openItem !== li) {
+    openItem = li;
+    pinned = pin;
+    li.classList.add('is-open');
+    triggerOf(li).setAttribute('aria-expanded', 'true');
+    const panel = panelOf(li);
+    if (panel.dataset.default !== undefined) setCat(li, Number(panel.dataset.default));
+    panel.scrollTop = 0;
+  } else if (pin) {
+    pinned = true;
+  }
 }
 
-function alternar(b: HTMLButtonElement) {
-  const abrir = b.getAttribute('aria-expanded') !== 'true';
-  /* Acordeón exclusivo en el primer nivel: una sección abierta a la vez. */
-  if (abrir && b.dataset.nivel === '1') {
-    menu?.querySelectorAll<HTMLButtonElement>('.mm-toggle[data-nivel="1"]').forEach((o) => {
-      if (o !== b) abrirPanel(o, false);
+function closePanel(returnFocus: boolean) {
+  window.clearTimeout(openTimer);
+  window.clearTimeout(closeTimer);
+  if (!openItem) return;
+  const li = openItem;
+  li.classList.remove('is-open');
+  triggerOf(li).setAttribute('aria-expanded', 'false');
+  openItem = null;
+  pinned = false;
+  if (returnFocus) triggerOf(li).focus();
+}
+
+const isMouse = (e: PointerEvent) => e.pointerType === 'mouse' || e.pointerType === 'pen';
+
+items.forEach((li) => {
+  const trigger = triggerOf(li);
+  const panel = panelOf(li);
+
+  /* Hover con intención (sólo mouse/lápiz; el toque usa clic) */
+  li.addEventListener('pointerenter', (e) => {
+    if (!isMouse(e)) return;
+    window.clearTimeout(closeTimer);
+    if (openItem && openItem !== li) { openPanel(li, false); return; }
+    if (!openItem) {
+      window.clearTimeout(openTimer);
+      openTimer = window.setTimeout(() => openPanel(li, false), OPEN_DELAY);
+    }
+  });
+  li.addEventListener('pointerleave', (e) => {
+    if (!isMouse(e)) return;
+    window.clearTimeout(openTimer);
+    if (openItem === li && !pinned) {
+      closeTimer = window.setTimeout(() => { if (openItem === li && !pinned) closePanel(false); }, CLOSE_DELAY);
+    }
+  });
+
+  /* Clic / toque / Enter / Espacio */
+  trigger.addEventListener('click', () => {
+    if (openItem === li) {
+      if (!pinned) pinned = true;   // se abrió por hover: el clic lo fija
+      else closePanel(false);
+    } else {
+      openPanel(li, true);
+    }
+  });
+
+  /* Mega-menú: categoría activa por hover con intención, foco y toque */
+  panel.querySelectorAll<HTMLAnchorElement>('.mega-cat').forEach((a) => {
+    const idx = Number(a.dataset.i);
+    let t = 0;
+    a.addEventListener('pointerenter', (e) => {
+      if (!isMouse(e)) return;
+      window.clearTimeout(t);
+      t = window.setTimeout(() => setCat(li, idx), CAT_DELAY);
     });
-  }
-  abrirPanel(b, abrir);
-  if (abrir) b.closest('.mm-l1')?.scrollIntoView({ block: 'nearest' });
-}
+    a.addEventListener('pointerleave', () => window.clearTimeout(t));
+    a.addEventListener('focus', () => setCat(li, idx));
+    // El estado se captura en pointerdown: el evento focus (que también activa
+    // la categoría) llega antes que el clic y lo falsearía.
+    let activaAntes = false;
+    a.addEventListener('pointerdown', (e) => {
+      lastPointerType = e.pointerType;
+      activaAntes = a.classList.contains('is-active');
+    });
+    a.addEventListener('click', (e) => {
+      // Con toque, el primer toque descubre las subcategorías; el segundo navega.
+      if (lastPointerType === 'touch' && a.dataset.hasSubs === '1' && !activaAntes) {
+        e.preventDefault();
+        setCat(li, idx);
+      }
+    });
+  });
 
-/* Mismo criterio que el header de escritorio: coincidencia por segmento. */
-const sinBarra = (s: string) => s.replace(/\/$/, '');
-function enSegmento(aqui: string, href: string) {
-  if (href === '/') return aqui === '/';
-  const base = sinBarra(href);
-  return sinBarra(aqui) === base || aqui.startsWith(base + '/');
-}
-
-/* El parcial es el mismo para todas las páginas: la sección actual se marca
-   aquí, en cliente, y su acordeón se abre solo. */
-function marcaActivos(root: HTMLElement) {
-  const aqui = location.pathname;
-  root.querySelectorAll<HTMLAnchorElement>('a.mm-link[href^="/"]').forEach((a) => {
-    const href = a.getAttribute('href') || '';
-    const exacto = sinBarra(aqui) === sinBarra(href) || (href === '/' && aqui === '/');
-    /* Un enlace anidado que apunta al mismo destino que su sección (p. ej.
-       «Catálogo completo» → /productos) sólo cuenta cuando es exacto. */
-    const l1 = a.closest('.mm-l1')?.querySelector<HTMLAnchorElement>(':scope > .mm-row > .mm-link');
-    const repite = l1 && l1 !== a && sinBarra(l1.getAttribute('href') || '') === sinBarra(href);
-    if (!(repite ? exacto : enSegmento(aqui, href))) return;
-    a.classList.add('is-current');
-    if (exacto) a.setAttribute('aria-current', 'page');
-    let p = a.closest<HTMLElement>('.mm-panel');
-    while (p) {
-      const t = root.querySelector<HTMLButtonElement>(`[aria-controls="${p.id}"]`);
-      if (t) abrirPanel(t, true);
-      p = p.parentElement?.closest<HTMLElement>('.mm-panel') ?? null;
+  /* Teclado dentro del panel */
+  li.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && openItem === li) {
+      e.preventDefault();
+      closePanel(true);
+      return;
     }
-  });
-  /* La zona Directorio se resalta cuando cualquiera de sus páginas está activa. */
-  root.querySelectorAll<HTMLElement>('.mm-l1').forEach((li) => {
-    if (li.querySelector('.mm-panel a.is-current')) {
-      li.querySelector(':scope > .mm-row > .mm-link')?.classList.add('is-current');
+    const target = e.target as HTMLElement;
+    const visibles = (root: ParentNode) =>
+      Array.from(root.querySelectorAll<HTMLElement>('a[href]')).filter((a) => a.offsetParent !== null);
+
+    if (target === trigger && (e.key === 'ArrowDown' || e.key === 'ArrowUp')) {
+      e.preventDefault();
+      openPanel(li, true);
+      const links = visibles(panel);
+      (e.key === 'ArrowDown' ? links[0] : links[links.length - 1])?.focus();
+      return;
     }
+    if (!panel.contains(target)) return;
+
+    const enCats = !!target.closest('.mega-cats');
+    const lista = enCats ? visibles(panel.querySelector('.mega-cats')!)
+      : target.closest('.mega-panes') ? visibles(panel.querySelector('.mega-pane.is-active') ?? panel)
+      : visibles(panel);
+    const i = lista.indexOf(target);
+
+    if (e.key === 'ArrowDown') { e.preventDefault(); lista[(i + 1) % lista.length]?.focus(); }
+    else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (i <= 0 && !enCats && !target.closest('.mega-panes')) trigger.focus();
+      else lista[(i - 1 + lista.length) % lista.length]?.focus();
+    }
+    else if (e.key === 'ArrowRight' && enCats) {
+      const first = visibles(panel.querySelector('.mega-pane.is-active') ?? panel)[0];
+      if (first) { e.preventDefault(); first.focus(); }
+    }
+    else if (e.key === 'ArrowLeft' && target.closest('.mega-panes')) {
+      const cat = panel.querySelector<HTMLElement>('.mega-cat.is-active');
+      if (cat) { e.preventDefault(); cat.focus(); }
+    }
+    else if (e.key === 'Home') { e.preventDefault(); lista[0]?.focus(); }
+    else if (e.key === 'End')  { e.preventDefault(); lista[lista.length - 1]?.focus(); }
+  });
+
+  /* Si el foco sale del item, se cierra */
+  li.addEventListener('focusout', (e) => {
+    const to = (e as FocusEvent).relatedTarget as Node | null;
+    if (openItem === li && to && !li.contains(to)) closePanel(false);
+  });
+});
+
+/* Clic/toque fuera */
+document.addEventListener('pointerdown', (e) => {
+  if (openItem && !openItem.contains(e.target as Node)) closePanel(false);
+});
+/* Escape global (cuando el foco no está dentro del panel) */
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && openItem) closePanel(true);
+});
+
+/* ════════════════════════════════════════════════════════════════════
+   DRAWER MÓVIL — se construye desde la navegación de escritorio
+════════════════════════════════════════════════════════════════════ */
+const btn     = document.getElementById('mobile-menu-btn') as HTMLButtonElement | null;
+const drawer  = document.getElementById('mobile-menu') as HTMLElement | null;
+const drwNav  = drawer?.querySelector<HTMLElement>('[data-drw-nav]') ?? null;
+
+let built = false;
+let drawerOpen = false;
+let savedScroll = 0;
+let inerted: HTMLElement[] = [];
+
+function el<K extends keyof HTMLElementTagNameMap>(
+  tag: K, cls?: string, attrs: Record<string, string> = {}, text?: string,
+): HTMLElementTagNameMap[K] {
+  const n = document.createElement(tag);
+  if (cls) n.className = cls;
+  for (const [k, v] of Object.entries(attrs)) n.setAttribute(k, v);
+  if (text !== undefined) n.textContent = text;
+  return n;
+}
+const txt = (root: ParentNode | null, sel: string) => root?.querySelector(sel)?.textContent?.trim() ?? '';
+
+function toggleBtn(label: string, controls: string, open: boolean, cls = 'drw-toggle') {
+  const b = el('button', cls, {
+    type: 'button', 'aria-expanded': String(open), 'aria-controls': controls,
+    'aria-label': `Mostrar u ocultar ${label}`,
+  });
+  b.appendChild(el('span', 'hdr-caret', { 'aria-hidden': 'true' }));
+  return b;
+}
+
+/* Acordeón exclusivo: al abrir un toggle se cierran sus hermanos del mismo nivel. */
+function wireToggle(b: HTMLButtonElement, panel: HTMLElement, siblings: () => Array<[HTMLButtonElement, HTMLElement]>) {
+  b.addEventListener('click', () => {
+    const open = b.getAttribute('aria-expanded') === 'true';
+    if (!open) siblings().forEach(([sb, sp]) => { sb.setAttribute('aria-expanded', 'false'); sp.hidden = true; });
+    b.setAttribute('aria-expanded', String(!open));
+    panel.hidden = open;
   });
 }
 
-/* Sin red o parcial caído: se arma un menú mínimo con los enlaces de la
-   barra de escritorio, que siempre viajan en el HTML. */
-function menuDeEmergencia() {
-  if (!menu) return;
-  menu.replaceChildren();
-  const scroll = document.createElement('div');
-  scroll.className = 'mm-scroll';
-  const aviso = document.createElement('div');
-  aviso.className = 'mm-status';
-  const p = document.createElement('p');
-  p.textContent = 'No se pudo cargar el menú completo.';
-  const reintentar = document.createElement('button');
-  reintentar.type = 'button';
-  reintentar.className = 'btn btn-primary btn-sm';
-  reintentar.dataset.mmRetry = '1';
-  reintentar.textContent = 'Reintentar';
-  aviso.append(p, reintentar);
-  const ul = document.createElement('ul');
-  ul.className = 'mm-list mm-nav';
-  document.querySelectorAll<HTMLAnchorElement>('.hd-nav .nav-link').forEach((src) => {
-    const li = document.createElement('li');
-    li.className = 'mm-l1';
-    const a = document.createElement('a');
-    a.className = 'mm-link';
-    a.href = src.getAttribute('href') || '/';
-    a.textContent = src.textContent;
-    const row = document.createElement('div');
-    row.className = 'mm-row';
-    row.append(a);
-    li.append(row);
-    ul.append(li);
+function buildDrawer() {
+  if (built || !drwNav) return;
+  built = true;
+  const l1Toggles: Array<[HTMLButtonElement, HTMLElement]> = [];
+
+  header.querySelectorAll<HTMLElement>('[data-nav-item]').forEach((li, gi) => {
+    const label = li.dataset.label ?? '';
+    const href  = li.dataset.href ?? '/';
+    const panelSrc = li.querySelector<HTMLElement>('[data-hdr-panel]');
+    const current = li.dataset.current === '1';
+
+    if (li.dataset.zona === 'directorio') {
+      drwNav.appendChild(el('p', 'drw-eyebrow', {}, 'Directorio nacional · registros de terceros'));
+    }
+
+    const group = el('div', 'drw-group');
+    const row = el('div', 'drw-row');
+    const l1 = el('a', 'drw-l1' + (current ? ' is-current' : ''), { href }, label);
+    row.appendChild(l1);
+    group.appendChild(row);
+    drwNav.appendChild(group);
+    if (!panelSrc) return;
+
+    /* Ítem con submenú */
+    const panelId = `drw-l1-${gi}`;
+    const panel = el('div', 'drw-panel', { id: panelId });
+    panel.hidden = !current;
+    const tgl = toggleBtn(label, panelId, current);
+    row.appendChild(tgl);
+    group.appendChild(panel);
+    l1Toggles.push([tgl, panel]);
+    wireToggle(tgl, panel, () => l1Toggles.filter(([b]) => b !== tgl));
+
+    const l2Toggles: Array<[HTMLButtonElement, HTMLElement]> = [];
+    panelSrc.querySelectorAll<HTMLAnchorElement>('[data-l2]').forEach((a, ci) => {
+      const t = txt(a, '.t');
+      const idx = a.dataset.i ?? String(ci);
+      const scope = panelSrc.querySelector<HTMLElement>(`[data-pane="${idx}"]`) ?? a.closest('li') ?? panelSrc;
+      const d = txt(a, '[data-d]') || txt(scope, '[data-d]');
+      const subs = Array.from(scope.querySelectorAll<HTMLAnchorElement>('[data-l3]'));
+      const activeSub = subs.some((s) => s.getAttribute('aria-current') === 'page');
+      const catCurrent = a.classList.contains('is-current') || activeSub;
+
+      const r2 = el('div', 'drw-row drw-row--2');
+      const l2 = el('a', 'drw-l2' + (catCurrent ? ' is-current' : ''), { href: a.getAttribute('href') ?? '/' });
+      l2.appendChild(el('span', 't', {}, t));
+      if (d) l2.appendChild(el('span', 'd', {}, d));
+      if (a.getAttribute('aria-current') === 'page') l2.setAttribute('aria-current', 'page');
+      r2.appendChild(l2);
+      panel.appendChild(r2);
+
+      if (subs.length) {
+        const id3 = `drw-l2-${gi}-${ci}`;
+        const p3 = el('div', 'drw-panel drw-panel--3', { id: id3 });
+        p3.hidden = !catCurrent;
+        const t3 = toggleBtn(t, id3, catCurrent);
+        t3.classList.add('drw-toggle');
+        r2.appendChild(t3);
+        l2Toggles.push([t3, p3]);
+        wireToggle(t3, p3, () => l2Toggles.filter(([b]) => b !== t3));
+        subs.forEach((s) => {
+          const a3 = el('a', 'drw-l3', { href: s.getAttribute('href') ?? '/' });
+          a3.appendChild(el('span', '', {}, txt(s, '.t') || s.textContent?.trim() || ''));
+          const d3 = txt(s, '.d');
+          if (d3) a3.appendChild(el('span', 'd', {}, d3));
+          if (s.getAttribute('aria-current') === 'page') a3.setAttribute('aria-current', 'page');
+          p3.appendChild(a3);
+        });
+        panel.appendChild(p3);
+      }
+    });
+
+    const hub = panelSrc.querySelector<HTMLAnchorElement>('[data-hub]');
+    if (hub) panel.appendChild(el('a', 'drw-hub', { href: hub.getAttribute('href') ?? '/' }, hub.textContent?.trim() ?? ''));
   });
-  scroll.append(aviso, ul);
-  menu.append(scroll);
 }
 
-async function cargarMenu() {
-  if (!menu || cargando || menu.dataset.cargado === '1') return;
-  const url = menu.dataset.parcial;
-  if (!url) return;
-  cargando = true;
-  menu.setAttribute('aria-busy', 'true');
-  try {
-    const r = await fetch(url);
-    if (!r.ok) throw new Error(String(r.status));
-    /* El parcial se sirve como página estática: Astro le antepone un
-       doctype que aquí no pinta nada. */
-    menu.innerHTML = (await r.text()).replace(/^\s*<!DOCTYPE[^>]*>/i, '');
-    menu.dataset.cargado = '1';
-    marcaActivos(menu);
-  } catch {
-    menuDeEmergencia();
-  } finally {
-    cargando = false;
-    menu.removeAttribute('aria-busy');
+/* Bloqueo de scroll compatible con iOS: se fija el body y se restaura la posición. */
+function lockScroll() {
+  savedScroll = window.scrollY;
+  const s = document.body.style;
+  s.position = 'fixed'; s.top = `-${savedScroll}px`; s.left = '0'; s.right = '0'; s.width = '100%';
+}
+function unlockScroll() {
+  const s = document.body.style;
+  s.position = ''; s.top = ''; s.left = ''; s.right = ''; s.width = '';
+  window.scrollTo({ top: savedScroll, left: 0, behavior: 'instant' as ScrollBehavior });
+}
+
+/* El resto de la página no debe recibir foco ni lectura mientras el drawer está abierto. */
+function setInert(on: boolean) {
+  if (on) {
+    inerted = Array.from(document.body.children).filter(
+      (n): n is HTMLElement => n instanceof HTMLElement && n !== header && !n.contains(header) && !n.matches('script,style'),
+    );
+    inerted.forEach((n) => n.setAttribute('inert', ''));
+  } else {
+    inerted.forEach((n) => n.removeAttribute('inert'));
+    inerted = [];
   }
 }
 
-/* Precarga en cuanto el dedo o el cursor llega al botón. */
-['pointerenter', 'touchstart', 'focus'].forEach((ev) =>
-  btn?.addEventListener(ev, () => { void cargarMenu(); }, { once: true, passive: true }),
-);
-
-function setMenuOpen(open: boolean) {
-  if (!menu || !btn || open === abierto()) return;
-  if (open) { medirHeader(); void cargarMenu(); }
-  menu.hidden = !open;
+function setDrawer(open: boolean, returnFocus = true) {
+  if (!drawer || !btn || open === drawerOpen) return;
+  drawerOpen = open;
+  if (open) {
+    closePanel(false);
+    buildDrawer();
+    drawer.hidden = false;
+    document.documentElement.classList.add('menu-abierto');
+    lockScroll();
+    setInert(true);
+    drawer.scrollTop = 0;
+  } else {
+    drawer.hidden = true;
+    document.documentElement.classList.remove('menu-abierto');
+    setInert(false);
+    unlockScroll();
+    if (returnFocus) btn.focus();
+  }
   btn.setAttribute('aria-expanded', String(open));
   btn.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
-  if (label) label.textContent = open ? 'Cerrar' : 'Menú';
-  document.documentElement.classList.toggle('mm-lock', open);
-  aislarPagina(open);
+  btn.textContent = open ? 'Cerrar' : 'Menú';
 }
 
-btn?.addEventListener('click', () => setMenuOpen(!abierto()));
-
-/* Delegación: el contenido llega por fetch, así que un solo listener sirve
-   para el markup actual y para cualquier recarga. */
-menu?.addEventListener('click', (e) => {
-  const t = e.target as HTMLElement;
-  const toggle = t.closest<HTMLButtonElement>('.mm-toggle');
-  if (toggle) { alternar(toggle); return; }
-  if (t.closest('[data-mm-retry]')) {
-    menu.dataset.cargado = '';
-    menu.replaceChildren();
-    const s = document.createElement('p');
-    s.className = 'mm-status';
-    s.textContent = 'Cargando menú…';
-    menu.append(s);
-    void cargarMenu();
-    return;
-  }
-  if (t.closest('a[href]')) setMenuOpen(false);
+btn?.addEventListener('click', () => setDrawer(!drawerOpen));
+drawer?.addEventListener('click', (e) => {
+  const a = (e.target as HTMLElement).closest('a[href]');
+  if (a) setDrawer(false, false);
 });
-
 document.addEventListener('keydown', (e) => {
-  if (!abierto() || !menu || !btn) return;
-  if (e.key === 'Escape') { e.preventDefault(); setMenuOpen(false); btn.focus(); return; }
-  if (e.key !== 'Tab') return;
-  /* Foco atrapado: botón del header + contenido visible del panel. */
-  const foco = [btn, ...Array.from(menu.querySelectorAll<HTMLElement>('a[href], button:not([disabled])'))]
-    .filter((el) => el === btn || el.offsetParent !== null);
-  const primero = foco[0];
-  const ultimo = foco[foco.length - 1];
-  if (e.shiftKey && document.activeElement === primero) { e.preventDefault(); ultimo.focus(); }
-  else if (!e.shiftKey && document.activeElement === ultimo) { e.preventDefault(); primero.focus(); }
+  if (e.key === 'Escape' && drawerOpen) setDrawer(false);
 });
 
-/* Rotar el dispositivo o cambiar el tamaño reajusta el panel; llegar a escritorio lo cierra. */
-window.addEventListener('resize', () => { if (abierto()) medirHeader(); }, { passive: true });
-XL.addEventListener('change', (e) => { if (e.matches) setMenuOpen(false); });
-
-/* ════════════════════════════════════════════════════════════════
-   NAVEGACIÓN DE ESCRITORIO — paneles por hover, clic (táctil) y teclado
-   El hover abre por CSS. El botón de flecha abre por clic y por teclado
-   (pantallas táctiles ≥ 1280 px, lectores de pantalla). Escape y clic
-   fuera cierran.
-════════════════════════════════════════════════════════════════ */
-const grupos = Array.from(document.querySelectorAll<HTMLElement>('.nav-group.has-drop'));
-
-function cerrarGrupos(salvo?: HTMLElement) {
-  grupos.forEach((g) => {
-    if (g === salvo) return;
-    g.classList.remove('is-open');
-    g.querySelector('.nav-toggle')?.setAttribute('aria-expanded', 'false');
-  });
-}
-
-/* El panel se recoloca si se saldría de la ventana por el lado horizontal. */
-function ajustar(g: HTMLElement) {
-  const d = g.querySelector<HTMLElement>('.nav-drop');
-  if (!d) return;
-  d.style.left = ''; d.style.right = '';
-  const r = d.getBoundingClientRect();
-  if (!r.width) return;
-  const M = 8;
-  if (r.right > window.innerWidth - M) { d.style.left = 'auto'; d.style.right = '0px'; }
-  else if (r.left < M) { d.style.right = 'auto'; d.style.left = '0px'; }
-}
-
-grupos.forEach((g) => {
-  const t = g.querySelector<HTMLButtonElement>('.nav-toggle');
-  t?.addEventListener('click', (e) => {
-    e.stopPropagation();
-    const abrir = !g.classList.contains('is-open');
-    cerrarGrupos(g);
-    g.classList.toggle('is-open', abrir);
-    t.setAttribute('aria-expanded', String(abrir));
-    if (abrir) ajustar(g);
-  });
-  g.addEventListener('mouseenter', () => { cerrarGrupos(g); ajustar(g); });
-  g.addEventListener('focusin', () => ajustar(g));
+/* Cruzar el breakpoint o volver por bfcache no deja nada abierto ni la página bloqueada. */
+const desktopMq = window.matchMedia('(min-width: 1280px)');
+desktopMq.addEventListener('change', (e) => {
+  if (e.matches) setDrawer(false, false);
+  else closePanel(false);
+});
+window.addEventListener('pageshow', (e) => {
+  if ((e as PageTransitionEvent).persisted) { setDrawer(false, false); closePanel(false); }
 });
 
-document.addEventListener('click', (e) => {
-  if (!(e.target as HTMLElement).closest('.nav-group')) cerrarGrupos();
-});
-
-document.addEventListener('keydown', (e) => {
-  if (e.key !== 'Escape') return;
-  const g = grupos.find((x) => x.classList.contains('is-open') || x.contains(document.activeElement));
-  if (!g) return;
-  cerrarGrupos();
-  const t = g.querySelector<HTMLElement>('.nav-toggle');
-  if (g.contains(document.activeElement) && document.activeElement !== t) t?.focus();
-});
-
-/* ════════════════════════════════════════════════════════════════
-   SOMBRA del header al hacer scroll
-════════════════════════════════════════════════════════════════ */
-const barra = hdr?.querySelector('.header-glass');
+/* Sombra al hacer scroll */
 window.addEventListener('scroll', () => {
-  barra?.classList.toggle('scrolled', window.scrollY > 8);
+  if (!drawerOpen) main.classList.toggle('is-scrolled', window.scrollY > 8);
 }, { passive: true });
 </script>

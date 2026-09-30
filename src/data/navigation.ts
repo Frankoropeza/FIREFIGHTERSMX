@@ -5,6 +5,12 @@ export interface NavItem {
   children?: NavItem[];   // soporta hasta 3 niveles
   /** 'directorio' = registros de terceros. El header lo separa visualmente de la tienda. */
   zona?: 'tienda' | 'directorio';
+  /**
+   * Texto del enlace a la página principal de la sección dentro de su panel
+   * (el disparador del menú es un botón, así que el hub se enlaza aquí).
+   * Si el último hijo ya apunta al hub, su etiqueta se usa en su lugar.
+   */
+  hubLabel?: string;
 }
 
 export const navigation: { main: NavItem[] } = { main: [
@@ -158,6 +164,7 @@ export const navigation: { main: NavItem[] } = { main: [
   {
     label: "Servicios",
     href: "/servicios",
+    hubLabel: "Todos los servicios",
     children: [
       { label: "Capacitación Certificada",   href: "/servicios/capacitacion",           description: "NFPA, NOM-002, brigadas" },
       { label: "Mantenimiento y Recarga",    href: "/servicios/mantenimiento",          description: "NFPA 1850, extintores" },
@@ -170,6 +177,7 @@ export const navigation: { main: NavItem[] } = { main: [
   {
     label: "Industrias",
     href: "/industrias",
+    hubLabel: "Todas las industrias",
     children: [
       { label: "Bomberos Municipales",       href: "/industrias/bomberos-municipales" },
       { label: "Brigadas Industriales",      href: "/industrias/brigadas-industriales" },
@@ -200,6 +208,7 @@ export const navigation: { main: NavItem[] } = { main: [
     label: "Directorio",
     href: "/directorio",
     zona: "directorio",
+    hubLabel: "Todo el directorio",
     description: "Empresas del sector y estaciones de bomberos",
     children: [
       { label: "Portada del directorio", href: "/directorio", description: "Empresas del sector y estaciones de bomberos" },
