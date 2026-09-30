@@ -1,6 +1,11 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
+import LineaCard from '@components/products/LineaCard.astro';
+import L2Sidebar from '@components/l2/L2Sidebar.astro';
+import L2Cotizar from '@components/l2/L2Cotizar.astro';
+import { bloqueCategorias, bloqueMarcas, bloqueIndustrias, bloqueServicios, bloqueGuias, anchoFila, type L2Link } from '@lib/l2';
+import '@styles/l2.css';
 import { SITE, whatsappUrl, CANAL_CONTACTO } from '@config/site';
 
 const canonicalURL = `${SITE.url}/licitaciones/`;
@@ -8,57 +13,96 @@ const canonicalURL = `${SITE.url}/licitaciones/`;
 const seoMeta = {
   title: `Licitaciones de Equipo para Bomberos`,
   description:
-    'Soporte para licitaciones de equipo contra incendio: fichas técnicas, manifiestos de norma NOM/NFPA y CFDI 4.0. CompraNet, PEMEX, CFE y municipios.',
+    'Soporte para licitaciones de equipo contra incendio: fichas técnicas, manifiestos NOM/NFPA y CFDI 4.0. CompraNet y ComprasMX, PEMEX, CFE y municipios.',
   canonicalURL,
 };
 
-/* ─── Capacidades (cards) ──────────────────────────────────── */
+const P = '/images/blog/portadas/';
+const C = '/images/catalogo/';
+
+/* ─── Capacidades (tarjetas con lista índice) ──────────────── */
 const capacidades = [
   {
-    title: 'Documentación técnica',
-    tag: 'Por partida',
+    norma: 'Por partida', title: 'Documentación técnica',
     desc: 'Fichas técnicas del fabricante y manifiestos de cumplimiento de norma listos para anexar a tu propuesta.',
-    accent: '#C8102E',
-    icon: ``,
+    href: '/blog/fichas-tecnicas-compranet-equipo-contra-incendio/', cta: 'Fichas técnicas para CompraNet',
+    image: `${P}fichas-tecnicas-compranet-equipo-contra-incendio.avif`, alt: 'Fichas técnicas de equipo contra incendio para una propuesta de licitación',
+    hijas: [
+      { label: 'Especificaciones de trajes en bases', href: '/blog/especificaciones-traje-bombero-licitaciones/' },
+      { label: 'Normas NFPA y NOM por bien', href: '/certificaciones/' },
+      { label: 'Soporte para licitaciones (servicio)', href: '/servicios/licitaciones/' },
+    ],
   },
   {
-    title: 'Equipo certificado',
-    tag: 'NOM · NFPA',
+    norma: 'NOM · NFPA', title: 'Equipo certificado',
     desc: 'Catálogo completo con certificación de tercera parte acreditada para cada bien requerido en la convocatoria.',
-    accent: '#B54708',
-    icon: ``,
+    href: '/productos/', cta: 'Equipo para bomberos certificado',
+    image: `${C}cascos-nfpa.avif`, alt: 'Cascos de bombero certificados NFPA para partidas de licitación',
+    hijas: [
+      { label: 'Trajes de bombero', href: '/productos/trajes-bombero/' },
+      { label: 'Equipos SCBA', href: '/productos/equipos-scba/' },
+      { label: 'Extintores', href: '/productos/extintores/' },
+      { label: 'Guía de compra de equipo NFPA', href: '/blog/guia-compra-equipo-bomberos-nfpa-mexico-2026/' },
+    ],
   },
   {
-    title: 'Proveedor habilitado',
-    tag: 'CompraNet',
-    desc: 'Empresa registrada como proveedor en CompraNet y en padrones estatales, con expediente al día.',
-    accent: '#067647',
-    icon: ``,
+    norma: 'CompraNet · ComprasMX', title: 'Proveedor habilitado',
+    desc: 'Empresa registrada como proveedor en CompraNet (hoy ComprasMX) y en padrones estatales, con expediente al día.',
+    href: '/blog/licitaciones-equipo-contra-incendio-mexico-nom-nfpa/', cta: 'Licitaciones de equipo contra incendio',
+    image: `${P}licitaciones-equipo-contra-incendio-mexico-nom-nfpa.avif`, alt: 'Expediente de licitación de equipo contra incendio en México',
+    hijas: [
+      { label: 'Distribuidores autorizados', href: '/distribuidores/' },
+      { label: 'Conoce la empresa', href: '/empresa/' },
+      { label: 'Marcas de equipo para bomberos', href: '/marcas/' },
+    ],
   },
   {
-    title: 'Entrega y cumplimiento',
-    tag: 'Conforme a bases',
+    norma: 'Conforme a bases', title: 'Entrega y cumplimiento',
     desc: 'Compromiso en firme de tiempos, lugar y condiciones de entrega, evitando penas convencionales.',
-    accent: '#475467',
-    icon: ``,
+    href: '/cobertura/', cta: 'Entrega de equipo en los 32 estados',
+    image: `${P}visita-tecnica-proveedor-equipo-contra-incendio.avif`, alt: 'Revisión técnica del proveedor antes de la entrega de equipo contra incendio',
+    hijas: [
+      { label: 'Visita técnica del proveedor', href: '/blog/visita-tecnica-proveedor-equipo-contra-incendio/' },
+      { label: 'Cobertura nacional', href: '/cobertura/' },
+      { label: 'Comprar en línea o con distribuidor', href: '/blog/comprar-equipo-contra-incendio-en-linea-o-distribuidor/' },
+    ],
   },
   {
-    title: 'Facturación CFDI 4.0',
-    tag: 'Sector gobierno',
+    norma: 'Sector gobierno', title: 'Facturación CFDI 4.0',
     desc: 'Comprobantes fiscales con todos los requisitos para dependencias federales, estatales y municipales.',
-    accent: '#C8102E',
-    icon: ``,
+    href: '/servicios/licitaciones/', cta: 'Facturación CFDI 4.0 para licitaciones',
+    image: `${P}especificaciones-traje-bombero-licitaciones.avif`, alt: 'Mesa de revisión técnica de una propuesta para dependencia de gobierno',
+    hijas: [
+      { label: 'Solicitar propuesta', href: '/cotizacion/' },
+      { label: 'Industrias que atendemos', href: '/industrias/' },
+      { label: 'Protección Civil', href: '/industrias/proteccion-civil/' },
+    ],
   },
   {
-    title: 'Acompañamiento técnico',
-    tag: 'Junta de aclaraciones',
+    norma: 'Junta de aclaraciones', title: 'Acompañamiento técnico',
     desc: 'Apoyo en la interpretación de partidas, especificaciones y normas durante todo el proceso.',
-    accent: '#C8102E',
-    icon: ``,
+    href: '/blog/junta-aclaraciones-licitacion-equipo-ci/', cta: 'Junta de aclaraciones en licitaciones',
+    image: `${P}junta-aclaraciones-licitacion-equipo-ci.avif`, alt: 'Documentos de la junta de aclaraciones de una licitación de equipo contra incendio',
+    hijas: [
+      { label: 'Fichas técnicas para CompraNet', href: '/blog/fichas-tecnicas-compranet-equipo-contra-incendio/' },
+      { label: 'Especificaciones de trajes en bases', href: '/blog/especificaciones-traje-bombero-licitaciones/' },
+      { label: 'Normas NFPA y NOM', href: '/certificaciones/' },
+    ],
+  },
+  {
+    norma: 'Auditable', title: 'Expediente documental',
+    desc: 'Evidencia ordenada para el órgano fiscalizador: certificados, manifiestos, cartas y comprobantes por partida.',
+    href: '/blog/expediente-documental-nom-002-stps-checklist/', cta: 'Expediente documental NOM-002-STPS',
+    image: `${P}expediente-documental-nom-002-stps-checklist.avif`, alt: 'Carpetas de expediente documental sobre un escritorio',
+    hijas: [
+      { label: 'Auditoría de seguridad contra incendio', href: '/servicios/auditoria-seguridad/' },
+      { label: 'Guía NOM-002-STPS-2010', href: '/blog/nom-002-stps-guia-completa/' },
+      { label: 'Recepción de extintores nuevos', href: '/blog/recepcion-de-extintores-nuevos-checklist/' },
+    ],
   },
 ];
 
-/* ─── Requisito  entregable ───────────────────────────────── */
+/* ─── Requisito → entregable ───────────────────────────────── */
 const requisitos = [
   ['Certificación de norma por partida', 'Certificados NFPA / NOM emitidos por laboratorio acreditado'],
   ['Ficha técnica del bien', 'Ficha del fabricante del modelo exacto ofertado'],
@@ -68,31 +112,31 @@ const requisitos = [
   ['Facturación a la dependencia', 'CFDI 4.0 con los requisitos fiscales aplicables'],
 ];
 
-/* ─── Plataformas ──────────────────────────────────────────── */
+/* ─── Dónde participamos (con enlace al sector o guía) ─────── */
 const plataformas = [
-  'CompraNet — Función Pública (Federal)',
-  'PEMEX — Petróleos Mexicanos',
-  'CFE — Comisión Federal de Electricidad',
-  'IMSS e ISSSTE',
-  'Secretarías de Seguridad Pública estatales',
-  'Protección Civil estatal y municipal',
-  'Gobiernos estatales',
-  'Municipios en los 32 estados',
+  { nombre: 'CompraNet y ComprasMX — Gobierno federal', label: 'Fichas técnicas para CompraNet', href: '/blog/fichas-tecnicas-compranet-equipo-contra-incendio/' },
+  { nombre: 'PEMEX — Petróleos Mexicanos', label: 'Equipo para refinerías y petroquímica', href: '/industrias/refinerias-pemex/' },
+  { nombre: 'CFE — Comisión Federal de Electricidad', label: 'Equipo para brigadas industriales', href: '/industrias/brigadas-industriales/' },
+  { nombre: 'IMSS e ISSSTE', label: 'Equipo para hospitales y salud', href: '/industrias/hospitales/' },
+  { nombre: 'Secretarías de Seguridad Pública estatales', label: 'Cómo especificar trajes en bases', href: '/blog/especificaciones-traje-bombero-licitaciones/' },
+  { nombre: 'Protección Civil estatal y municipal', label: 'Equipo para Protección Civil', href: '/industrias/proteccion-civil/' },
+  { nombre: 'Gobiernos estatales', label: 'Cobertura en los 32 estados', href: '/cobertura/' },
+  { nombre: 'Municipios en los 32 estados', label: 'Equipo para bomberos municipales', href: '/industrias/bomberos-municipales/' },
 ];
 
 /* ─── Proceso ──────────────────────────────────────────────── */
 const pasos = [
-  { n: '01', t: 'Analizamos la convocatoria y sus partidas: identificamos las normas exigidas y los requisitos técnicos de cada bien.' },
-  { n: '02', t: 'Armamos la propuesta técnica completa: fichas, manifiestos de norma, catálogos y cartas de distribuidor por partida.' },
-  { n: '03', t: 'Cotizamos en firme: precios, tiempos de entrega y condiciones alineados a las bases, sin sorpresas posteriores.' },
-  { n: '04', t: 'Entregamos el equipo certificado con su CFDI 4.0 y la evidencia documental lista para el expediente de la dependencia.' },
+  'Analizamos la convocatoria y sus partidas: identificamos las normas exigidas y los requisitos técnicos de cada bien.',
+  'Armamos la propuesta técnica completa: fichas, manifiestos de norma, catálogos y cartas de distribuidor por partida.',
+  'Cotizamos en firme: precios, tiempos de entrega y condiciones alineados a las bases, sin sorpresas posteriores.',
+  'Entregamos el equipo certificado con su CFDI 4.0 y la evidencia documental lista para el expediente de la dependencia.',
 ];
 
 /* ─── FAQ ──────────────────────────────────────────────────── */
 const faqs = [
   {
-    q: '¿Están registrados como proveedor en CompraNet?',
-    a: 'Sí. Somos proveedor habilitado en CompraNet y en padrones de proveedores estatales, con expediente y documentación legal al día para participar en concursos federales, estatales y municipales.',
+    q: '¿Están registrados como proveedor en CompraNet o ComprasMX?',
+    a: 'Sí. Somos proveedor habilitado en CompraNet (hoy ComprasMX) y en padrones de proveedores estatales, con expediente y documentación legal al día para participar en concursos federales, estatales y municipales.',
   },
   {
     q: '¿Entregan fichas técnicas y manifiestos de norma por partida?',
@@ -112,7 +156,7 @@ const faqs = [
   },
   {
     q: '¿Atienden solo licitaciones federales?',
-    a: 'No. Damos soporte a concursos federales (CompraNet, PEMEX, CFE, IMSS, ISSSTE), estatales y municipales — incluyendo Secretarías de Seguridad Pública y unidades de Protección Civil en todo el país.',
+    a: 'No. Damos soporte a concursos federales (CompraNet y ComprasMX, PEMEX, CFE, IMSS, ISSSTE), estatales y municipales — incluyendo Secretarías de Seguridad Pública y unidades de Protección Civil en todo el país.',
   },
 ];
 
@@ -147,6 +191,42 @@ const faqSchema = {
     acceptedAnswer: { '@type': 'Answer', text: f.a },
   })),
 };
+
+/* ─── Plantilla L2 (homologada con /productos/, 2026-10) ────────── */
+const secciones = [
+  { id: 'capacidades', label: 'Qué entregamos' },
+  { id: 'requisitos', label: 'Requisitos' },
+  { id: 'plataformas', label: 'Dónde participamos' },
+  { id: 'preguntas', label: 'Preguntas' },
+  { id: 'acompanamiento', label: 'Cómo te acompañamos' },
+];
+
+const GUIAS_LICITACION: L2Link[] = [
+  { label: 'Licitaciones de equipo contra incendio en México', href: '/blog/licitaciones-equipo-contra-incendio-mexico-nom-nfpa/' },
+  { label: 'Fichas técnicas para CompraNet', href: '/blog/fichas-tecnicas-compranet-equipo-contra-incendio/' },
+  { label: 'Especificaciones de trajes en licitaciones', href: '/blog/especificaciones-traje-bombero-licitaciones/' },
+  { label: 'Junta de aclaraciones', href: '/blog/junta-aclaraciones-licitacion-equipo-ci/' },
+  { label: 'Visita técnica del proveedor', href: '/blog/visita-tecnica-proveedor-equipo-contra-incendio/' },
+  { label: 'Guía de compra de equipo para bomberos', href: '/blog/guia-compra-equipo-bomberos-nfpa-mexico-2026/' },
+  { label: 'Equivalencia NFPA de un traje fabricado en México', href: '/blog/traje-bombero-fabricado-mexico-equivalente-nfpa/' },
+  { label: 'Normas NFPA y NOM aplicables', href: '/certificaciones/' },
+];
+
+const tambien = [
+  { label: 'Equipo para bomberos', desc: 'Equipo NFPA y NOM en 10 categorías', href: '/productos' },
+  { label: 'Soporte para licitaciones (servicio)', desc: 'Alcance y entregables del servicio', href: '/servicios/licitaciones' },
+  { label: 'Guía de normas y certificaciones', desc: 'Qué NOM y NFPA aplican por bien', href: '/certificaciones' },
+  { label: 'Cómo especificar trajes en licitaciones', desc: 'Guía técnica para redactar bases', href: '/blog/especificaciones-traje-bombero-licitaciones' },
+  { label: 'Cobertura nacional', desc: 'Entrega y servicio en los 32 estados', href: '/cobertura' },
+  { label: 'Conoce la empresa', desc: 'Quiénes somos, cobertura y certificaciones', href: '/empresa' },
+];
+
+const trustPoints = [
+  { title: 'Expediente por partida', text: 'Ficha, certificado y manifiesto de cada bien, listos para anexar a la propuesta técnica.' },
+  { title: 'Norma por bien', text: 'NFPA y NOM revisadas partida por partida, antes de presentar la propuesta.' },
+  { title: 'Entrega en firme', text: 'Tiempos, lugar y condiciones conforme a las bases, en los 32 estados.' },
+  { title: 'Facturación a gobierno', text: 'CFDI 4.0 con los requisitos de dependencias federales, estatales y municipales.' },
+];
 ---
 
 <BaseLayout {...seoMeta} schema={[breadcrumbSchema, serviceSchema, faqSchema]}>
@@ -169,7 +249,7 @@ const faqSchema = {
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
         <div>
-          <span class="section-eyebrow mb-5 inline-flex">Sector gobierno · CompraNet</span>
+          <span class="section-eyebrow mb-5 inline-flex">Sector gobierno · CompraNet y ComprasMX</span>
           <h1 class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(2.25rem,4.5vw,3.5rem);line-height:1.08">
             Licitaciones de<br/>
             <span style="color:var(--c-accent)">equipo contra incendio</span>
@@ -194,12 +274,12 @@ const faqSchema = {
             integrarse a la propuesta técnica de cada partida.
           </p>
           <p class="text-sm leading-[1.9] mb-6" style="color:var(--c-muted)">
-            Somos proveedor habilitado en CompraNet, facturamos con CFDI 4.0 y entregamos en los
+            Somos proveedor habilitado en CompraNet (hoy ComprasMX), facturamos con CFDI 4.0 y entregamos en los
             32 estados con tiempos en firme. Federal, estatal o municipal: cubrimos el expediente
             técnico que el órgano fiscalizador va a auditar.
           </p>
           <div class="flex flex-wrap gap-2">
-            {['CompraNet','PEMEX','CFE','NOM-002-STPS','NFPA 1970','CFDI 4.0'].map(n => (
+            {['CompraNet','ComprasMX','PEMEX','CFE','NOM-002-STPS','NFPA 1970','CFDI 4.0'].map(n => (
             <span class="badge badge-dark font-display text-[10px]">{n}</span>
           ))}
           </div>
@@ -213,219 +293,141 @@ const faqSchema = {
   <!-- Accesos rápidos (interlinking) -->
   <QuickLinksBar />
 
-  <!-- Capacidades -->
-  <section class="section" style="background:var(--c-bg)" aria-labelledby="capacidades-title">
+  <!-- Pilares -->
+  <section class="section-tight" style="background:var(--c-bg-alt)" aria-labelledby="garantias-title">
     <div class="container-site">
+      <h2 id="garantias-title" class="sr-only">Por qué un solo proveedor para tu licitación</h2>
+      <div class="l2-trust">
+        {trustPoints.map((t) => (
+          <div><h3>{t.title}</h3><p>{t.text}</p></div>
+        ))}
+      </div>
+    </div>
+  </section>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
-        <div>
+  <!-- Plantilla L2: columna principal + barra lateral -->
+  <div class="container-site l2-shell">
+    <L2Sidebar
+      resumen="Navegar licitaciones"
+      secciones={secciones}
+      bloques={[
+        bloqueServicios(),
+        bloqueGuias(GUIAS_LICITACION, 'Guías de licitación y compra pública'),
+        bloqueCategorias(),
+        bloqueIndustrias(),
+        bloqueMarcas(),
+      ]}
+      cotizar={{ titulo: 'Envía tu convocatoria', texto: 'Analizamos las partidas y te respondemos con el expediente técnico y la cotización en firme.', msg: 'Hola, tengo una convocatoria y quiero soporte técnico para la propuesta.' }}
+    />
+
+    <div class="l2-main">
+
+      <!-- Qué entregamos -->
+      <section id="capacidades" class="l2-sec" aria-labelledby="capacidades-title">
+        <header class="l2-sec-head">
           <span class="section-eyebrow mb-4 inline-flex">Qué entregamos</span>
-          <h2 id="capacidades-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
-            El expediente técnico,<br/>
-            <span style="color:var(--c-accent)">resuelto.</span>
-          </h2>
-        </div>
-        <div style="padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
+          <h2 id="capacidades-title" class="l2-h2">Soporte para licitaciones de equipo contra incendio: el expediente técnico, resuelto</h2>
+          <p class="l2-lead">
             Una propuesta técnica se gana en los detalles: la certificación correcta por partida,
             el manifiesto firmado, la carta de distribuidor y los tiempos de entrega creíbles.
             Eso es exactamente lo que preparamos contigo.
           </p>
-        </div>
-      </div>
+        </header>
+        <ul class="l2-grid" role="list">
+          {capacidades.map((c, i) => (
+            <li class={anchoFila(i, capacidades.length) || undefined}>
+              <LineaCard
+                href={c.href}
+                norma={c.norma}
+                titulo={c.title}
+                texto={c.desc}
+                imagen={c.image}
+                imagenAlt={c.alt}
+                hijas={c.hijas}
+                cta={c.cta}
+                nivel="h3"
+                subLabel="Recursos relacionados"
+              />
+            </li>
+          ))}
+        </ul>
+      </section>
 
-      <div class="card-grid">
-        {capacidades.map((c) => (
-          <article class="cap-card group relative flex flex-col overflow-hidden" style="background:#FFFFFF;border:1px solid var(--c-line);border-radius:var(--radius-card);box-shadow:var(--shadow-card)">
-            <div class="flex flex-col flex-1 p-5 gap-2.5">
-              <span class="text-[9px] font-display font-semibold uppercase tracking-widest" style="color:var(--forge-300)">{c.tag}</span>
-              <h3 class="font-display font-bold text-lg leading-tight" style="color:var(--c-ink)">{c.title}</h3>
-              <p class="text-xs leading-relaxed" style="color:var(--c-muted)">{c.desc}</p>
-            </div>
-          </article>
-        ))}
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Requisito  entregable -->
-  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="requisitos-title">
-    <div class="container-site">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
-        <div>
+      <!-- Requisito → entregable -->
+      <section id="requisitos" class="l2-sec" aria-labelledby="requisitos-title">
+        <header class="l2-sec-head">
           <span class="section-eyebrow mb-4 inline-flex">Punto por punto</span>
-          <h2 id="requisitos-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
-            Cada requisito,<br/>
-            <span style="color:var(--c-accent)">su documento.</span>
-          </h2>
-        </div>
-        <div style="padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
+          <h2 id="requisitos-title" class="l2-h2">Requisitos de una convocatoria y el documento que los cubre</h2>
+          <p class="l2-lead">
             Las convocatorias se ganan o se descalifican por la documentación. Esto es lo que
             pide una base típica y lo que entregamos para cubrirlo sin observaciones.
           </p>
-        </div>
-      </div>
+        </header>
+        <table class="l2-tabla">
+          <caption class="sr-only">Requisitos de la convocatoria y documentos que entregamos</caption>
+          <thead>
+            <tr><th scope="col">Requisito de la convocatoria</th><th scope="col">Lo que entregamos</th></tr>
+          </thead>
+          <tbody>
+            {requisitos.map(([req, ent]) => (
+              <tr><th scope="row">{req}</th><td>{ent}</td></tr>
+            ))}
+          </tbody>
+        </table>
+      </section>
 
-      <div style="border:1px solid var(--c-line)">
-        <div class="grid grid-cols-1 sm:grid-cols-2" style="background:var(--c-surface);border-bottom:1px solid var(--c-line)">
-          <div class="p-4"><span class="font-display font-bold text-xs uppercase tracking-widest" style="color:var(--c-accent)">Requisito de la convocatoria</span></div>
-          <div class="p-4" style="border-left:1px solid var(--c-line)"><span class="font-display font-bold text-xs uppercase tracking-widest" style="color:var(--c-accent)">Lo que entregamos</span></div>
-        </div>
-        {requisitos.map(([req, ent], i) => (
-          <div class="grid grid-cols-1 sm:grid-cols-2" style={`background:${i % 2 === 0 ? 'var(--c-bg-alt)' : 'var(--c-bg-alt)'};${i < requisitos.length - 1 ? 'border-bottom:1px solid var(--c-line);' : ''}`}>
-            <div class="p-4 flex items-center gap-3">
-              <span class="w-1.5 h-1.5 rounded-full shrink-0" style="background:var(--c-line-strong)" aria-hidden="true"></span>
-              <span class="text-sm" style="color:var(--c-text)">{req}</span>
-            </div>
-            <div class="p-4 flex items-center gap-3" style="border-left:1px solid var(--c-line)">
-              
-              <span class="text-sm" style="color:var(--c-text-2)">{ent}</span>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Plataformas + Proceso -->
-  <section class="section" style="background:var(--c-bg)" aria-labelledby="plataformas-title">
-    <div class="container-site">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-
-        <!-- Plataformas -->
-        <div>
+      <!-- Dónde participamos -->
+      <section id="plataformas" class="l2-sec" aria-labelledby="plataformas-title">
+        <header class="l2-sec-head">
           <span class="section-eyebrow mb-4 inline-flex">Dónde participamos</span>
-          <h2 id="plataformas-title" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
-            Federal, estatal<br/>
-            <span style="color:var(--c-accent)">y municipal.</span>
-          </h2>
-          <ul class="grid grid-cols-1 sm:grid-cols-2 list-none m-0 p-0" style="border:1px solid var(--c-line)">
-            {plataformas.map((p, i) => (
-              <li class="grid-cell flex items-center gap-3 p-4" style={`border-bottom:1px solid var(--c-line);${i % 2 === 0 ? 'border-right:1px solid var(--c-line);' : ''}`}>
-                
-                <span class="text-xs leading-snug" style="color:var(--c-text-2)">{p}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
+          <h2 id="plataformas-title" class="l2-h2">Licitaciones federales, estatales y municipales de equipo contra incendio</h2>
+          <p class="l2-lead">
+            Plataformas y dependencias donde damos soporte, cada una con el equipo o la guía
+            que más se consulta en ese tipo de concurso.
+          </p>
+        </header>
+        <ul class="l2-plat" role="list">
+          {plataformas.map((p) => (
+            <li>
+              <span class="l2-plat-nombre">{p.nombre}</span>
+              <a href={p.href} class="l2-plat-link">{p.label}</a>
+            </li>
+          ))}
+        </ul>
+      </section>
 
-        <!-- Proceso -->
-        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
-          <span class="section-eyebrow mb-4 inline-flex">Cómo te acompañamos</span>
-          <h2 class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
-            De la convocatoria<br/>
-            <span style="color:var(--c-accent)">al fallo.</span>
-          </h2>
-          <ol class="flex flex-col gap-4 list-none m-0 p-0">
-            {pasos.map((s) => (
-              <li class="flex items-start gap-4">
-                
-                <p class="text-sm leading-relaxed m-0" style="color:var(--c-text-2)">{s.t}</p>
-              </li>
-            ))}
-          </ol>
-          <div class="flex flex-col sm:flex-row gap-3 mt-8">
-            <a href={whatsappUrl('Hola, tengo una convocatoria y quiero soporte técnico para la propuesta.')} target="_blank" rel="noopener" class="btn btn-primary">
-              Enviar mi convocatoria
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="faq-title">
-    <div class="container-site">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-
-        <div>
+      <!-- Preguntas frecuentes -->
+      <section id="preguntas" class="l2-sec" aria-labelledby="faq-title">
+        <header class="l2-sec-head">
           <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes</span>
-          <h2 id="faq-title" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
-            Lo que más nos<br/>
-            <span style="color:var(--c-accent)">preguntan.</span>
-          </h2>
-          <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
+          <h2 id="faq-title" class="l2-h2">Preguntas frecuentes sobre licitaciones de equipo contra incendio</h2>
+          <p class="l2-lead">
             ¿Tu duda no aparece aquí? Escríbenos por {CANAL_CONTACTO} con los datos de tu convocatoria
             y te respondemos con la solución concreta para esa licitación.
           </p>
-        </div>
-
-        <div class="flex flex-col">
-          {faqs.map((f, i) => (
-            <details class="faq-item group" style={`border-top:1px solid var(--c-line);${i === faqs.length - 1 ? 'border-bottom:1px solid var(--c-line);' : ''}`}>
-              <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer">
-                <span class="font-display font-semibold text-sm" style="color:var(--c-ink)">{f.q}</span>
-                <span class="faq-icon font-display font-bold text-xl shrink-0" style="color:var(--c-accent)">+</span>
-              </summary>
-              <p class="text-sm leading-relaxed pb-5 m-0" style="color:var(--c-text-2)">{f.a}</p>
+        </header>
+        <div class="l2-faq">
+          {faqs.map((f) => (
+            <details>
+              <summary><span>{f.q}</span><span class="l2-faq-mas" aria-hidden="true">+</span></summary>
+              <p>{f.a}</p>
             </details>
           ))}
         </div>
+      </section>
 
-      </div>
+      <!-- Cómo te acompañamos + cross-links -->
+      <L2Cotizar
+        id="acompanamiento"
+        eyebrow="Cómo te acompañamos"
+        titulo="De la convocatoria"
+        destacado="al fallo."
+        pasos={pasos}
+        cta={{ label: 'Enviar mi convocatoria', msg: 'Hola, tengo una convocatoria y quiero soporte técnico para la propuesta.' }}
+        tambien={tambien}
+      />
+
     </div>
-  </section>
-
-  <!-- Cross-links -->
-  <section class="section" style="background:var(--c-bg)" aria-labelledby="cross-title">
-    <div class="container-site">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-
-        <div>
-          <span class="section-eyebrow mb-4 inline-flex">Un solo proveedor</span>
-          <h2 id="cross-title" class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
-            Equipo, servicio<br/>
-            <span style="color:var(--c-accent)">y expediente.</span>
-          </h2>
-          <p class="text-sm leading-relaxed mb-8" style="color:var(--c-text-2)">
-            Más allá de la licitación, somos tu proveedor integral: catálogo certificado,
-            servicios que mantienen el equipo vigente y la documentación auditable que cierra
-            cada contrato. Cuéntanos tu caso y lo armamos completo.
-          </p>
-          <a href={whatsappUrl('Hola, quiero cotizar equipo para una licitación.')} target="_blank" rel="noopener" class="btn btn-primary">
-            Cotizar por {CANAL_CONTACTO}
-          </a>
-        </div>
-
-        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
-          <h2 class="font-display font-bold text-sm mb-5" style="color:var(--forge-300)">
-            También te puede servir
-          </h2>
-          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
-            {[
-              { label: 'Equipo para bomberos', desc: 'Equipo NFPA y NOM en 10 categorías', href: '/productos' },
-              { label: 'Soporte para licitaciones (servicio)', desc: 'Alcance y entregables del servicio', href: '/servicios/licitaciones' },
-              { label: 'Guía de normas y certificaciones', desc: 'Qué NOM y NFPA aplican por bien', href: '/certificaciones' },
-              { label: 'Cómo especificar trajes en licitaciones', desc: 'Guía técnica para redactar bases', href: '/blog/especificaciones-traje-bombero-licitaciones' },
-              { label: 'Cobertura nacional', desc: 'Entrega y servicio en los 32 estados', href: '/cobertura' },
-              { label: 'Conoce la empresa', desc: 'Quiénes somos, cobertura y certificaciones', href: '/empresa' },
-            ].map((l) => (
-              <li style="border-bottom:1px solid var(--c-line)">
-                <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
-                  <span class="flex flex-col gap-0.5">
-                    <span class="font-display font-semibold text-sm group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{l.label}</span>
-                    <span class="text-xs" style="color:var(--c-muted)">{l.desc}</span>
-                  </span>
-                  
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-      </div>
-    </div>
-  </section>
+  </div>
 
 </BaseLayout>
-
-<style>
-  .cap-card:hover { border-color: var(--c-line-strong) !important; }
-  details.faq-item summary { list-style: none; }
-  details.faq-item summary::-webkit-details-marker { display: none; }
-  details.faq-item[open] .faq-icon { transform: rotate(45deg); }
-</style>
