@@ -1,16 +1,23 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
+import LineaCard from '@components/products/LineaCard.astro';
+import L2Sidebar from '@components/l2/L2Sidebar.astro';
+import L2Cotizar from '@components/l2/L2Cotizar.astro';
+import { bloqueCategorias, bloqueMarcas, bloqueIndustrias, bloqueServicios, bloqueGuias, anchoFila, type L2Link } from '@lib/l2';
+import '@styles/l2.css';
 import { SITE } from '@config/site';
 
 const canonicalURL = `${SITE.url}/precios/`;
 
 const seoMeta = {
-  title: 'Precios de Equipo para Bomberos: Cómo Cotizar con FIREFIGHTERS MX',
+  title: 'Precios de Equipo para Bomberos en México',
   description:
     'Precios de equipo para bomberos y contra incendio en México: qué cambia el costo y qué datos enviarnos para cotizar trajes, SCBA, extintores y sistemas.',
   canonicalURL,
 };
+
+const C = '/images/catalogo/';
 
 const factores = [
   { title: 'Tipo y configuración', text: 'La familia de equipo, capacidad, materiales, accesorios y compatibilidad con otros componentes cambian el alcance de una propuesta.' },
@@ -21,13 +28,80 @@ const factores = [
   { title: 'Mantenimiento y ciclo de vida', text: 'Consumibles, inspecciones, recargas, refacciones y servicio posterior ayudan a comparar el costo más allá de la compra inicial.' },
 ];
 
+/* Categorías: texto y botón principal conservados; se añaden imagen y guías de costo/compra */
 const categorias = [
-  { title: 'Extintores', text: 'Define agente, capacidad, aplicación, cantidad y servicio requerido.', guide: '/productos/extintores/', ancla: 'Venta de extintores' },
-  { title: 'Sistemas contra incendio', text: 'Separa ingeniería, suministro, instalación, pruebas y mantenimiento.', guide: '/productos/sistemas-ci/', ancla: 'Sistemas contra incendio' },
-  { title: 'Trajes para bomberos', text: 'Especifica tipo de operación, tallas, configuración y documentación requerida.', guide: '/productos/trajes-bombero/', ancla: 'Trajes de bombero' },
-  { title: 'Equipos SCBA', text: 'Indica duración nominal, cilindros, compatibilidad, accesorios y soporte necesario.', guide: '/productos/equipos-scba/', ancla: 'Equipo de respiración autónoma' },
-  { title: 'Cascos y EPP', text: 'Detalla uso, tallas, accesorios, compatibilidad y norma solicitada.', guide: '/productos/cascos-nfpa/', ancla: 'Cascos de bombero' },
-  { title: 'Herramientas de rescate', text: 'Compara tecnología, fuente de energía, accesorios, capacitación y mantenimiento.', guide: '/productos/herramientas-rescate/', ancla: 'Herramientas de rescate' },
+  {
+    title: 'Extintores', norma: 'NOM · NFPA 10',
+    text: 'Define agente, capacidad, aplicación, cantidad y servicio requerido.',
+    href: '/productos/extintores/', cta: 'Venta de extintores',
+    image: `${C}extintores.avif`, alt: 'Extintores portátiles para cotizar',
+    hijas: [
+      { label: 'Tipos de extintores en México', href: '/blog/tipos-de-extintores-mexico/' },
+      { label: 'PQS ABC, CO₂ y tipo K', href: '/blog/pqs-abc-vs-co2-vs-tipo-k-extintores/' },
+      { label: 'Cómo elegir un servicio de recarga', href: '/blog/elegir-servicio-de-recarga-de-extintores/' },
+      { label: 'Mantenimiento y recarga', href: '/servicios/mantenimiento/' },
+    ],
+  },
+  {
+    title: 'Sistemas contra incendio', norma: 'NFPA 13 · NFPA 72',
+    text: 'Separa ingeniería, suministro, instalación, pruebas y mantenimiento.',
+    href: '/productos/sistemas-ci/', cta: 'Sistemas contra incendio',
+    image: `${C}rociadores.avif`, alt: 'Rociador de un sistema contra incendio',
+    hijas: [
+      { label: 'NFPA 13, 13R y 13D', href: '/blog/nfpa-13-vs-13r-vs-13d-rociadores/' },
+      { label: 'Memoria de cálculo hidráulico', href: '/blog/memoria-calculo-hidraulico-rociadores-nfpa-13/' },
+      { label: 'FM-200 o Novec 1230', href: '/blog/fm200-vs-novec-1230-agente-limpio/' },
+      { label: 'Instalación de sistemas contra incendio', href: '/servicios/instalacion-sistemas-ci/' },
+    ],
+  },
+  {
+    title: 'Trajes para bomberos', norma: 'NFPA 1970',
+    text: 'Especifica tipo de operación, tallas, configuración y documentación requerida.',
+    href: '/productos/trajes-bombero/', cta: 'Trajes de bombero',
+    image: `${C}trajes-bombero.avif`, alt: 'Traje estructural de bombero para cotizar',
+    hijas: [
+      { label: 'Cuánto cuesta un traje de bombero', href: '/blog/cuanto-cuesta-un-traje-de-bombero/' },
+      { label: 'Cómo elegir un traje NFPA', href: '/blog/como-elegir-traje-bombero-nfpa/' },
+      { label: 'PBI Matrix frente a Nomex', href: '/blog/pbi-matrix-vs-nomex-trajes-bombero/' },
+      { label: 'Especificaciones en licitaciones', href: '/blog/especificaciones-traje-bombero-licitaciones/' },
+    ],
+  },
+  {
+    title: 'Equipos SCBA', norma: 'NFPA 1970',
+    text: 'Indica duración nominal, cilindros, compatibilidad, accesorios y soporte necesario.',
+    href: '/productos/equipos-scba/', cta: 'Equipo de respiración autónoma',
+    image: `${C}equipos-scba.avif`, alt: 'Equipo de respiración autónoma SCBA para cotizar',
+    hijas: [
+      { label: 'Guía de compra de SCBA', href: '/blog/guia-compra-scba-equipos-respiracion-autonoma/' },
+      { label: 'MSA G1 frente a Dräger PSS 7000', href: '/blog/msa-g1-vs-drager-pss7000-scba/' },
+      { label: 'Cilindros de fibra de carbono o acero', href: '/blog/cilindros-scba-fibra-carbono-vs-acero/' },
+      { label: 'Prueba hidrostática de cilindros', href: '/blog/prueba-hidrostatica-cilindros-scba-nfpa/' },
+    ],
+  },
+  {
+    title: 'Cascos y EPP', norma: 'NFPA 1970',
+    text: 'Detalla uso, tallas, accesorios, compatibilidad y norma solicitada.',
+    href: '/productos/cascos-nfpa/', cta: 'Cascos de bombero',
+    image: `${C}cascos-nfpa.avif`, alt: 'Cascos de bombero certificados para cotizar',
+    hijas: [
+      { label: 'Comparativa de cascos 2026', href: '/blog/cascos-bombero-comparativa-marcas-2026/' },
+      { label: 'Casco europeo o americano', href: '/blog/casco-bombero-europeo-vs-americano/' },
+      { label: 'Compatibilidad de casco y SCBA', href: '/blog/compatibilidad-casco-scba-bomberos/' },
+      { label: 'EPP del brigadista', href: '/blog/epp-brigadista-contra-incendio-que-necesitas/' },
+    ],
+  },
+  {
+    title: 'Herramientas de rescate', norma: 'NFPA 1936',
+    text: 'Compara tecnología, fuente de energía, accesorios, capacitación y mantenimiento.',
+    href: '/productos/herramientas-rescate/', cta: 'Herramientas de rescate',
+    image: `${C}herramientas-rescate.avif`, alt: 'Herramienta hidráulica de rescate para cotizar',
+    hijas: [
+      { label: 'Holmatro frente a Lukas', href: '/blog/holmatro-vs-lukas-herramientas-rescate/' },
+      { label: 'Holmatro, Hurst y Weber', href: '/blog/herramientas-hidraulicas-rescate-holmatro-hurst-weber/' },
+      { label: 'NFPA 1936 y excarcelación', href: '/blog/nfpa-1936-herramientas-rescate-excarcelacion/' },
+      { label: 'Capacitación certificada', href: '/servicios/capacitacion/' },
+    ],
+  },
 ];
 
 const datosCotizacion = [
@@ -61,11 +135,16 @@ const collectionSchema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
   '@id': `${canonicalURL}#collection`,
-  name: seoMeta.title,
+  name: 'Precios de equipo para bomberos: cómo cotizar',
   description: seoMeta.description,
   url: canonicalURL,
   inLanguage: 'es-MX',
   isPartOf: { '@id': `${SITE.url}/#website` },
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: categorias.length,
+    itemListElement: categorias.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.title, url: `${SITE.url}${c.href}` })),
+  },
 };
 
 const faqSchema = {
@@ -73,6 +152,42 @@ const faqSchema = {
   '@type': 'FAQPage',
   mainEntity: faqs.map((faq) => ({ '@type': 'Question', name: faq.q, acceptedAnswer: { '@type': 'Answer', text: faq.a } })),
 };
+
+/* ─── Plantilla L2 (homologada con /productos/, 2026-10) ────────── */
+const secciones = [
+  { id: 'factores', label: 'Factores de costo' },
+  { id: 'categorias', label: 'Por categoría' },
+  { id: 'datos', label: 'Datos para cotizar' },
+  { id: 'preguntas', label: 'Preguntas' },
+  { id: 'cotizar', label: 'Cotizar' },
+];
+
+const GUIAS_PRECIOS: L2Link[] = [
+  { label: 'Cuánto cuesta un traje de bombero', href: '/blog/cuanto-cuesta-un-traje-de-bombero/' },
+  { label: 'Guía de compra de equipo para bomberos', href: '/blog/guia-compra-equipo-bomberos-nfpa-mexico-2026/' },
+  { label: 'Comprar en línea o con distribuidor', href: '/blog/comprar-equipo-contra-incendio-en-linea-o-distribuidor/' },
+  { label: 'Guía de compra de SCBA', href: '/blog/guia-compra-scba-equipos-respiracion-autonoma/' },
+  { label: 'Cómo equipar una estación de bomberos', href: '/blog/como-equipar-estacion-bomberos-desde-cero/' },
+  { label: 'Visita técnica del proveedor', href: '/blog/visita-tecnica-proveedor-equipo-contra-incendio/' },
+  { label: 'Normas NFPA y NOM aplicables', href: '/certificaciones/' },
+  { label: 'Soporte para licitaciones', href: '/licitaciones/' },
+];
+
+const tambien = [
+  { label: 'Equipo para bomberos', desc: 'Equipo NFPA y NOM en 10 categorías', href: '/productos' },
+  { label: 'Cuánto cuesta un traje de bombero', desc: 'Qué incluye el precio de un conjunto NFPA', href: '/blog/cuanto-cuesta-un-traje-de-bombero' },
+  { label: 'Soporte para licitaciones', desc: 'CompraNet, PEMEX, CFE y municipios', href: '/licitaciones' },
+  { label: 'Guía de normas y certificaciones', desc: 'Qué NOM y NFPA pedir en la cotización', href: '/certificaciones' },
+  { label: 'Servicios profesionales', desc: 'Instalación, mantenimiento y capacitación', href: '/servicios' },
+  { label: 'Cobertura nacional', desc: 'Entrega y servicio en los 32 estados', href: '/cobertura' },
+];
+
+const trustPoints = [
+  { title: 'Cotización por escrito', text: 'Cada partida con disponibilidad, vigencia y condiciones de entrega.' },
+  { title: 'Alcance comparable', text: 'Equipo, accesorios, entrega y servicios separados para comparar propuestas.' },
+  { title: 'Documentación por partida', text: 'Fichas, certificados y manifiestos cuando tu proyecto los exige.' },
+  { title: 'Envíos a los 32 estados', text: 'Logística y condiciones de entrega definidas desde la solicitud.' },
+];
 ---
 
 <BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema, faqSchema]}>
@@ -108,101 +223,118 @@ const faqSchema = {
     </div>
   </section>
 
+  <!-- Accesos rápidos (interlinking) -->
   <QuickLinksBar />
 
-  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="factores-title">
+  <!-- Pilares -->
+  <section class="section-tight" style="background:var(--c-bg-alt)" aria-labelledby="garantias-title">
     <div class="container-site">
-      <div class="max-w-3xl mb-10">
-        <span class="section-eyebrow mb-4 inline-flex">Costo total</span>
-        <h2 id="factores-title" class="font-display font-bold mb-4" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
-          Factores que cambian el precio<br/>
-          <span style="color:var(--c-accent)">del equipo contra incendio.</span>
-        </h2>
-        <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">Para comparar propuestas, define primero un alcance común. Un importe aislado no permite saber si dos propuestas cubren la misma solución.</p>
-      </div>
-      <div class="card-grid card-grid--cells" >
-        {factores.map((factor) => (
-          <article class="p-7" style="background:var(--c-bg-alt)">
-            <h3 class="font-display font-bold text-lg mb-3" style="color:var(--c-ink)">{factor.title}</h3>
-            <p class="text-xs leading-relaxed m-0" style="color:var(--c-muted)">{factor.text}</p>
-          </article>
+      <h2 id="garantias-title" class="sr-only">Cómo cotizamos el equipo contra incendio</h2>
+      <div class="l2-trust">
+        {trustPoints.map((t) => (
+          <div><h3>{t.title}</h3><p>{t.text}</p></div>
         ))}
       </div>
     </div>
   </section>
 
-  <section class="section" style="background:var(--c-bg)" aria-labelledby="categorias-title">
-    <div class="container-site">
-      <div class="max-w-3xl mb-10">
-        <span class="section-eyebrow mb-4 inline-flex">Por categoría</span>
-        <h2 id="categorias-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">Qué definir antes de<br/><span style="color:var(--c-accent)">solicitar precios.</span></h2>
-      </div>
-      <div class="card-grid">
-        {categorias.map((categoria) => (
-          <article class="flex flex-col p-7" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
-            <h3 class="font-display font-bold text-xl mb-3" style="color:var(--c-ink)">{categoria.title}</h3>
-            <p class="text-xs leading-relaxed mb-6 flex-1" style="color:var(--c-muted)">{categoria.text}</p>
-            <div class="flex flex-wrap gap-2">
-              <a href={categoria.guide} class="btn btn-sm btn-dark">{categoria.ancla}</a>
-              <a href="/cotizacion/" class="btn btn-sm btn-outline">Cotizar</a>
-            </div>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
+  <!-- Plantilla L2: columna principal + barra lateral -->
+  <div class="container-site l2-shell">
+    <L2Sidebar
+      resumen="Navegar precios y compra"
+      secciones={secciones}
+      bloques={[
+        bloqueGuias(GUIAS_PRECIOS, 'Guías de costo y compra'),
+        bloqueCategorias(),
+        bloqueMarcas(),
+        bloqueServicios(),
+        bloqueIndustrias(),
+      ]}
+      cotizar={{ titulo: 'Solicita tu cotización', texto: 'Envíanos equipo, cantidades, norma y estado de entrega; te respondemos por escrito.', msg: 'Hola, quiero cotizar equipo para bomberos y contra incendio.' }}
+    />
 
-  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="datos-title">
-    <div class="container-site">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-        <div>
-          <span class="section-eyebrow mb-4 inline-flex">Solicitud comparable</span>
-          <h2 id="datos-title" class="font-display font-bold mb-5" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">Datos para pedir una<br/><span style="color:var(--c-accent)">cotización completa.</span></h2>
-          <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">Con esta información preparamos una propuesta completa, sin supuestos que después cambien el importe final.</p>
+    <div class="l2-main">
+
+      <!-- Factores de costo -->
+      <section id="factores" class="l2-sec" aria-labelledby="factores-title">
+        <header class="l2-sec-head">
+          <span class="section-eyebrow mb-4 inline-flex">Costo total</span>
+          <h2 id="factores-title" class="l2-h2">Factores que cambian el precio del equipo contra incendio</h2>
+          <p class="l2-lead">Para comparar propuestas, define primero un alcance común. Un importe aislado no permite saber si dos propuestas cubren la misma solución.</p>
+        </header>
+        <div class="l2-factores">
+          {factores.map((f) => (
+            <article><h3>{f.title}</h3><p>{f.text}</p></article>
+          ))}
         </div>
-        <ol class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
-          {datosCotizacion.map((dato, index) => (
-            <li class="flex items-start gap-4 py-4" style="border-bottom:1px solid var(--c-line)">
-              <span class="font-display font-bold text-sm shrink-0" style="color:var(--c-accent)"></span>
-              <span class="text-sm leading-relaxed" style="color:var(--c-text-2)">{dato}</span>
+      </section>
+
+      <!-- Por categoría -->
+      <section id="categorias" class="l2-sec" aria-labelledby="categorias-title">
+        <header class="l2-sec-head">
+          <span class="section-eyebrow mb-4 inline-flex">Por categoría</span>
+          <h2 id="categorias-title" class="l2-h2">Qué definir antes de solicitar precios de cada tipo de equipo</h2>
+          <p class="l2-lead">Cada categoría se cotiza con datos distintos. Estas son las especificaciones clave y las guías que ayudan a comparar.</p>
+        </header>
+        <ul class="l2-grid" role="list">
+          {categorias.map((c, i) => (
+            <li class={anchoFila(i, categorias.length) || undefined}>
+              <LineaCard
+                href={c.href}
+                norma={c.norma}
+                titulo={c.title}
+                texto={c.text}
+                imagen={c.image}
+                imagenAlt={c.alt}
+                hijas={c.hijas}
+                cta={c.cta}
+                nivel="h3"
+                subLabel="Guías de compra"
+              />
             </li>
           ))}
-        </ol>
-      </div>
-    </div>
-  </section>
+        </ul>
+      </section>
 
-  <section class="section" style="background:var(--c-bg)" aria-labelledby="faq-precios-title">
-    <div class="container-site">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-        <div>
+      <!-- Datos para cotizar -->
+      <section id="datos" class="l2-sec" aria-labelledby="datos-title">
+        <header class="l2-sec-head">
+          <span class="section-eyebrow mb-4 inline-flex">Solicitud comparable</span>
+          <h2 id="datos-title" class="l2-h2">Datos para pedir una cotización completa de equipo para bomberos</h2>
+          <p class="l2-lead">Con esta información preparamos una propuesta completa, sin supuestos que después cambien el importe final.</p>
+        </header>
+        <ol class="l2-steps" role="list">
+          {datosCotizacion.map((dato) => <li>{dato}</li>)}
+        </ol>
+      </section>
+
+      <!-- Preguntas frecuentes -->
+      <section id="preguntas" class="l2-sec" aria-labelledby="faq-precios-title">
+        <header class="l2-sec-head">
           <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes</span>
-          <h2 id="faq-precios-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">Cómo comparar precios<br/><span style="color:var(--c-accent)">sin perder alcance.</span></h2>
-        </div>
-        <div style="border:1px solid var(--c-line);background:var(--c-surface)">
-          {faqs.map((faq) => (
-            <details class="faq-item group" style="border-bottom:1px solid var(--c-line)">
-              <summary class="flex items-start justify-between gap-4 cursor-pointer select-none list-none p-6">
-                <h3 class="font-display font-semibold pr-2 m-0" style="color:var(--c-ink);font-size:0.875rem;line-height:1.375">{faq.q}</h3>
-                <span class="faq-icon shrink-0" style="color:var(--c-accent)">+</span>
-              </summary>
-              <p class="px-6 pb-6 text-sm leading-relaxed" style="color:var(--c-muted)">{faq.a}</p>
+          <h2 id="faq-precios-title" class="l2-h2">Cómo comparar precios de equipo contra incendio sin perder alcance</h2>
+        </header>
+        <div class="l2-faq">
+          {faqs.map((f) => (
+            <details>
+              <summary><span>{f.q}</span><span class="l2-faq-mas" aria-hidden="true">+</span></summary>
+              <p>{f.a}</p>
             </details>
           ))}
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <section style="background:var(--c-accent);padding-block:4rem" aria-label="Solicitar cotización de equipo para bomberos">
-    <div class="container-site">
-      <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
-        <div>
-          <p class="text-xs font-display font-bold uppercase tracking-[0.2em] mb-3" style="color:rgba(255,255,255,0.7)">Distribuidor autorizado · envíos a los 32 estados</p>
-          <h2 class="font-display font-bold" style="color:#FFFFFF;font-size:clamp(1.75rem,3.5vw,2.5rem);line-height:1.1">Cotiza tu equipo<br/>con VIGILES.</h2>
-        </div>
-        <a href="/cotizacion/" class="btn" style="background:#FFFFFF;color:var(--c-accent);font-weight:700">Solicitar cotización</a>
-      </div>
+      <!-- Cotizar + cross-links -->
+      <L2Cotizar
+        id="cotizar"
+        eyebrow="Distribuidor autorizado · envíos a los 32 estados"
+        titulo="Cotiza tu equipo"
+        destacado="con VIGILES."
+        texto="Cada partida se cotiza por escrito, con disponibilidad, condiciones de entrega y la documentación que requiera tu proyecto. Envíanos el alcance y te respondemos."
+        cta={{ label: 'Solicitar cotización', href: '/cotizacion/' }}
+        tambien={tambien}
+      />
+
     </div>
-  </section>
+  </div>
 </BaseLayout>

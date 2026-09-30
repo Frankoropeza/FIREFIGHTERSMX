@@ -104,3 +104,11 @@
 .l2-faq-mas { flex: none; font-size: 1.25rem; font-weight: 700; color: var(--c-accent); }
 .l2-faq details[open] .l2-faq-mas { display: none; }
 .l2-faq details p { margin: 0; padding: 0 .25rem 1.25rem; font-size: .9375rem; line-height: 1.7; color: var(--c-text-2); }
+
+/* Factores de costo: celdas de texto separadas por líneas finas */
+.l2-factores { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1px; background: var(--c-line); border: 1px solid var(--c-line); }
+@media (min-width: 640px) { .l2-factores { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .l2-factores { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.l2-factores > article { padding: 1.5rem; background: var(--c-surface); }
+.l2-factores h3 { margin: 0 0 .5rem; font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--c-ink); }
+.l2-factores p { margin: 0; font-size: .875rem; line-height: 1.65; color: var(--c-text-2); }
