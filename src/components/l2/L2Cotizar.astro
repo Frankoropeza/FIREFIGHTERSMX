@@ -10,11 +10,13 @@ export interface Props {
   eyebrow: string;
   titulo: string;
   destacado: string;
-  pasos: string[];
+  /** Pasos (filas con separador, sin numeración) o, en su lugar, un párrafo */
+  pasos?: string[];
+  texto?: string;
   cta: { label: string; msg: string };
   tambien: { label: string; desc: string; href: string }[];
 }
-const { id, eyebrow, titulo, destacado, pasos, cta, tambien } = Astro.props;
+const { id, eyebrow, titulo, destacado, pasos = [], texto, cta, tambien } = Astro.props;
 ---
 
 <section id={id} class="l2-sec" aria-labelledby={`${id}-title`}>
@@ -25,9 +27,12 @@ const { id, eyebrow, titulo, destacado, pasos, cta, tambien } = Astro.props;
         {titulo}<br/>
         <span style="color:var(--c-accent)">{destacado}</span>
       </h2>
-      <ol class="l2-steps" role="list">
-        {pasos.map((t) => <li>{t}</li>)}
-      </ol>
+      {pasos.length > 0 && (
+        <ol class="l2-steps" role="list">
+          {pasos.map((t) => <li>{t}</li>)}
+        </ol>
+      )}
+      {texto && <p class="l2-lead">{texto}</p>}
       <div class="flex flex-col sm:flex-row gap-3 mt-8">
         <a href={whatsappUrl(cta.msg)} target="_blank" rel="noopener" class="btn btn-primary">{cta.label}</a>
       </div>
