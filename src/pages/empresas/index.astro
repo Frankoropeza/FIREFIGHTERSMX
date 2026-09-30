@@ -1,20 +1,26 @@
 ---
-// /empresas — Hub L1 del directorio nacional de empresas
+// /empresas — Hub L2 del directorio nacional de empresas (plantilla L2, 2026-10)
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import MapaEmpresas from '@components/empresas/MapaEmpresas.astro';
 import EmpresasGrid from '@components/empresas/EmpresasGrid.astro';
+import LineaCard from '@components/products/LineaCard.astro';
+import L2Sidebar from '@components/l2/L2Sidebar.astro';
+import L2Cotizar from '@components/l2/L2Cotizar.astro';
+import { bloqueDirectorio, bloqueGuias, bloqueCategorias, bloqueServicios, bloqueIndustrias, anchoFila, type L2Link } from '@lib/l2';
+import '@styles/l2.css';
 import { SITE } from '@config/site';
 import { giros } from '@data/giros';
 import { todasLasEmpresas, estadosMeta } from '@lib/empresas';
+import { ANCLA_GIRO, INDUSTRIAS_POR_GIRO, guiasPara } from '@lib/enlaces-directorio';
 
 const all = await todasLasEmpresas();
-const porEstado = estadosMeta.map((e) => ({ slug: e.slug, nombre: e.nombre }));
+const porEstado = estadosMeta.map((e) => ({ slug: e.slug, nombre: e.nombre, region: e.region }));
 const totalEmpresas = all.length;
 
 const canonicalURL = `${SITE.url}/empresas/`;
 const seoMeta = {
-  title: 'Directorio de Empresas de Equipo Contra Incendio en México',
+  title: 'Directorio de Empresas Contra Incendio',
   description: 'Directorio de proveedores de equipo contra incendio en México: venta de equipos contra incendios, extintores, hidrantes, sistemas contra incendios y capacitación para equipar a bomberos y brigadas en los 32 estados.',
   canonicalURL,
 };
@@ -36,6 +42,53 @@ const faqItems = [
   { pregunta: '¿Cómo registro o corrijo una ficha?', respuesta: 'Puedes solicitar el alta, reclamación o corrección desde la página de registro del directorio.' },
 ];
 const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqItems.map((f) => ({ '@type': 'Question', name: f.pregunta, acceptedAnswer: { '@type': 'Answer', text: f.respuesta } })) };
+
+/* Tarjetas de giro: imagen del giro + lista índice (2 industrias temáticas + 2 guías del blog) */
+const tarjetasGiro = await Promise.all(giros.map(async (g) => {
+  const guias = await guiasPara(g.slug, `hub-${g.slug}`, 2);
+  return {
+    g,
+    hijas: [
+      ...INDUSTRIAS_POR_GIRO[g.slug],
+      ...guias.map((p) => ({ label: p.data.title, href: `/blog/${p.id}/` })),
+    ],
+  };
+}));
+
+/* ─── Plantilla L2 (homologada con /productos/, 2026-10) ────────── */
+const secciones = [
+  { id: 'buscar', label: 'Buscador' },
+  { id: 'giros', label: 'Por giro' },
+  { id: 'mapa', label: 'Mapa nacional' },
+  { id: 'estados', label: 'Por estado' },
+  { id: 'preguntas', label: 'Preguntas' },
+  { id: 'registro', label: 'Registro' },
+];
+
+const GUIAS_DIRECTORIO: L2Link[] = [
+  { label: 'Comprar en línea o con distribuidor', href: '/blog/comprar-equipo-contra-incendio-en-linea-o-distribuidor/' },
+  { label: 'Visita técnica del proveedor', href: '/blog/visita-tecnica-proveedor-equipo-contra-incendio/' },
+  { label: 'Guía de compra de equipo para bomberos', href: '/blog/guia-compra-equipo-bomberos-nfpa-mexico-2026/' },
+  { label: 'Guía NOM-002-STPS-2010', href: '/blog/nom-002-stps-guia-completa/' },
+  { label: 'Elegir un servicio de recarga de extintores', href: '/blog/elegir-servicio-de-recarga-de-extintores/' },
+  { label: 'Normas NFPA y NOM aplicables', href: '/certificaciones/' },
+];
+
+const tambien = [
+  { label: 'Estaciones de bomberos por estado', desc: 'Directorio nacional de estaciones', href: '/estaciones' },
+  { label: 'Empresas por estado', desc: 'Cobertura del directorio en los 32 estados', href: '/cobertura' },
+  { label: 'Normas y certificaciones', desc: 'Qué NOM y NFPA pedir al comparar', href: '/certificaciones' },
+  { label: 'Industrias', desc: 'Sectores que usan equipo contra incendio', href: '/industrias' },
+  { label: 'Blog técnico', desc: 'Guías NFPA y NOM para bomberos y brigadas', href: '/blog' },
+  { label: 'Contacto del directorio', desc: 'Correcciones, dudas y solicitudes de baja', href: '/contacto' },
+];
+
+const trustPoints = [
+  { title: 'Por giro y estado', text: 'Cinco giros y 32 estados para localizar empresas por actividad y ubicación.' },
+  { title: 'Fuente de origen visible', text: 'Cada ficha muestra de dónde proviene su información y cuándo se verificó.' },
+  { title: 'Nivel de confianza', text: 'Las fichas indican si sus datos están verificados contra fuente oficial.' },
+  { title: 'Corrección por la empresa', text: 'Cualquier empresa puede reclamar, completar o corregir su ficha.' },
+];
 ---
 <BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema, faqSchema]}>
   <nav class="py-3" style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line)" aria-label="Breadcrumb">
@@ -61,7 +114,7 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEn
           <p class="font-display text-xs uppercase tracking-widest mb-8" style="color:var(--forge-300)">{totalEmpresas.toLocaleString('es-MX')} empresas registradas · 32 estados</p>
           <div class="flex flex-col sm:flex-row gap-3">
             <a href="#buscar" class="btn btn-primary btn-lg">Buscar empresas contra incendio</a>
-            <a href="/empresas/registro/" class="btn btn-ghost btn-lg">Registrar mi empresa </a>
+            <a href="/empresas/registro/" class="btn btn-ghost btn-lg">Registrar mi empresa</a>
           </div>
         </div>
         <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
@@ -71,7 +124,6 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEn
               <li style="border-bottom:1px solid var(--c-line)">
                 <a href={`/empresas/${g.slug}/`} class="group flex items-center justify-between gap-4 py-3.5">
                   <span class="flex flex-col gap-0.5"><span class="font-display font-semibold text-sm group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{g.label}</span><span class="text-xs" style="color:var(--c-muted)">{g.description}</span></span>
-                  
                 </a>
               </li>))}
           </ul>
@@ -82,114 +134,140 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEn
 
   <QuickLinksBar />
 
-  {/* Giros */}
-  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="giros-heading">
+  <!-- Pilares -->
+  <section class="section-tight" style="background:var(--c-bg-alt)" aria-labelledby="garantias-title">
     <div class="container-site">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
-        <div>
-          <span class="section-eyebrow mb-4 inline-flex">Por giro</span>
-          <h2 id="giros-heading" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">Cinco giros para equipar a bomberos, brigadas y protección civil<br/><span style="color:var(--c-accent)">en un solo directorio.</span></h2>
-        </div>
-        <div style="padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">Agrupamos a las empresas por la actividad que describen sus fuentes públicas: vender equipo de protección personal, suministrar equipos para redes contra incendio, dar servicio a extintores, instalar sistemas fijos o capacitar brigadas. Una empresa puede aparecer en más de un giro.</p>
-        </div>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-px" style="background:var(--c-line);border:1px solid var(--c-line)">
-        {giros.map((g) => { return (
-          <a href={`/empresas/${g.slug}/`} class="grid-cell flex flex-col gap-4 p-7" style="background:var(--c-bg)">
-            <span class="font-display font-bold text-lg leading-snug" style="color:var(--c-ink)">{g.label}</span>
-            <span class="text-xs leading-relaxed" style="color:var(--c-muted)">{g.description}</span>
-            <span class="mt-auto font-display font-semibold text-xs uppercase tracking-wider" style="color:var(--c-accent)">{g.labelCorto} en México </span>
-          </a>); })}
+      <h2 id="garantias-title" class="sr-only">Cómo funciona el directorio</h2>
+      <div class="l2-trust">
+        {trustPoints.map((t) => (
+          <div><h3>{t.title}</h3><p>{t.text}</p></div>
+        ))}
       </div>
     </div>
   </section>
 
-  {/* Mapa nacional */}
-  <section class="section-tight" style="background:var(--c-bg)" aria-label="Mapa nacional de empresas">
-    <div class="container-site">
-      <span class="section-eyebrow mb-4 inline-flex">Mapa nacional</span>
-      <h2 class="font-display font-bold mb-6" style="color:var(--c-ink);font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.05">Proveedores de venta de equipos contra incendios y sistema de detección<br/><span style="color:var(--c-accent)">en el mapa nacional.</span></h2>
-      <MapaEmpresas src="/data/empresas-puntos.json" ariaLabel="Mapa nacional de empresas de equipo contra incendio" />
-      <div class="flex flex-wrap gap-4 mt-3">
-        {giros.map((g) => <span class="inline-flex items-center gap-2 text-[11px]" style="color:var(--c-text-2)"><span class="w-2.5 h-2.5 rounded-full" style={`background:${g.color}`}></span>{g.labelCorto}</span>)}
-        <span class="text-[11px]" style="color:var(--forge-300)">Coordenadas del registro público DENUE (INEGI).</span>
-      </div>
-    </div>
-  </section>
+  <!-- Plantilla L2: columna principal + barra lateral -->
+  <div class="container-site l2-shell">
+    <L2Sidebar
+      resumen="Navegar el directorio"
+      secciones={secciones}
+      bloques={[bloqueDirectorio(), bloqueGuias(GUIAS_DIRECTORIO, 'Cómo comparar proveedores'), bloqueCategorias(), bloqueServicios(), bloqueIndustrias()]}
+      accion={{ titulo: 'Datos del directorio', texto: '¿Tu empresa no aparece o necesita una corrección?', botones: [{ label: 'Registrar o corregir ficha', href: '/empresas/registro/', primario: true }] }}
+    />
 
-  {/* Por estado */}
-  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="estados-heading">
-    <div class="container-site">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
-        <div>
-          <span class="section-eyebrow mb-4 inline-flex">Por estado</span>
-          <h2 id="estados-heading" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">Equipo contra incendio, extintores, hidrantes, mangueras, boquillas y gabinetes<br/><span style="color:var(--c-accent)">en los 32 estados.</span></h2>
-        </div>
-        <div style="padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">Cada estado tiene su propio directorio con mapa, buscador y filtros por giro. Elige tu entidad para ver a los proveedores más cercanos.</p>
-        </div>
-      </div>
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-8 gap-px" style="background:var(--c-line);border:1px solid var(--c-line)">
-        {porEstado.map((s) => (
-          <a href={`/empresas/estado/${s.slug}/`} class="grid-cell ledger-cell flex flex-col gap-1 p-4" style="background:var(--c-bg)">
-            <span class="font-display font-semibold text-sm leading-tight" style="color:var(--c-ink)">{s.nombre}</span>
-            <span class="text-[10px] uppercase tracking-widest" style="color:var(--forge-300)">{estadosMeta.find((e) => e.slug === s.slug)?.region}</span>
-          </a>))}
-      </div>
-    </div>
-  </section>
+    <div class="l2-main">
 
-  {/* Buscador global */}
-  <section id="buscar" class="section" style="background:var(--c-bg)" aria-labelledby="buscar-heading">
-    <div class="container-site">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-10">
-        <div>
+      <!-- Buscador -->
+      <section id="buscar" class="l2-sec" aria-labelledby="buscar-heading">
+        <header class="l2-sec-head">
           <span class="section-eyebrow mb-4 inline-flex">Buscador</span>
-          <h2 id="buscar-heading" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">Busca entre distribuidores y empresas de equipo de bombero<br/><span style="color:var(--c-accent)">en toda la República.</span></h2>
-        </div>
-        <div style="padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">Escribe el nombre de la empresa, la ciudad o el municipio. Filtra por giro. El listado prioriza a las empresas con ficha verificada o destacada.</p>
-        </div>
-      </div>
-      <EmpresasGrid empresas={all} mostrarEstado filtros={giros.map((g) => ({ key: g.slug, label: g.labelCorto, color: g.color }))} id="hub" indexSrc="/data/empresas-index.json" limite={36} />
-    </div>
-  </section>
+          <h2 id="buscar-heading" class="l2-h2">Busca entre distribuidores y empresas de equipo de bombero en toda la República</h2>
+          <p class="l2-lead">Escribe el nombre de la empresa, la ciudad o el municipio. Filtra por giro. El listado prioriza a las empresas con ficha verificada o destacada.</p>
+        </header>
+        <EmpresasGrid empresas={all} mostrarEstado filtros={giros.map((g) => ({ key: g.slug, label: g.labelCorto, color: g.color }))} id="hub" indexSrc="/data/empresas-index.json" limite={36} />
+      </section>
 
-  {/* Registro */}
-  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="alta-heading">
-    <div class="container-site">
-      <div class="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-10 items-center p-8 lg:p-12" style="background:var(--c-surface);border:1px solid var(--c-line-strong)">
-        <div>
-          <span class="section-eyebrow mb-4 inline-flex">Para empresas del sector</span>
-          <h2 id="alta-heading" class="font-display font-bold mb-3" style="color:var(--c-ink);font-size:clamp(1.6rem,3vw,2.5rem);line-height:1.05">¿Tu empresa ya está listada?<br/><span style="color:var(--c-accent)">Reclama y verifica tu ficha.</span></h2>
-          <p class="text-sm leading-relaxed max-w-2xl" style="color:var(--c-text-2)">Los registros básicos provienen del registro público del DENUE. Al reclamar tu ficha puedes completar contacto, marcas que distribuyes, certificaciones y cobertura, y obtener el sello de datos verificados. Las fichas destacadas aparecen primero en su giro y estado.</p>
-        </div>
-        <div class="flex flex-col gap-3 shrink-0">
-          <a href="/empresas/registro/" class="btn btn-gold btn-lg">Registrar o reclamar ficha</a>
-          <a href="/contacto/" class="btn btn-ghost">Contacto del directorio </a>
-        </div>
-      </div>
-    </div>
-  </section>
+      <!-- Giros -->
+      <section id="giros" class="l2-sec" aria-labelledby="giros-heading">
+        <header class="l2-sec-head">
+          <span class="section-eyebrow mb-4 inline-flex">Por giro</span>
+          <h2 id="giros-heading" class="l2-h2">Cinco giros para equipar a bomberos, brigadas y protección civil en un solo directorio</h2>
+          <p class="l2-lead">Agrupamos a las empresas por la actividad que describen sus fuentes públicas: equipo de protección personal, equipos para redes contra incendio, servicio a extintores, sistemas fijos o capacitación de brigadas. Una empresa puede aparecer en más de un giro.</p>
+        </header>
+        <ul class="l2-grid" role="list">
+          {tarjetasGiro.map(({ g, hijas }, i) => (
+            <li class={anchoFila(i, tarjetasGiro.length) || undefined}>
+              <LineaCard
+                href={`/empresas/${g.slug}/`}
+                norma={g.labelCorto}
+                titulo={g.label}
+                texto={g.claim}
+                imagen={g.imagen}
+                imagenAlt={g.imagenAlt}
+                hijas={hijas}
+                cta={ANCLA_GIRO[g.slug]}
+                nivel="h3"
+                subLabel="Sectores y guías"
+              />
+            </li>
+          ))}
+        </ul>
+      </section>
 
-  <section class="section" style="background:var(--c-bg)" aria-labelledby="faq-heading">
-    <div class="container-site">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-start">
-        <div>
+      <!-- Mapa nacional -->
+      <section id="mapa" class="l2-sec" aria-labelledby="mapa-heading">
+        <header class="l2-sec-head">
+          <span class="section-eyebrow mb-4 inline-flex">Mapa nacional</span>
+          <h2 id="mapa-heading" class="l2-h2">Proveedores de equipos contra incendios y sistemas de detección en el mapa nacional</h2>
+        </header>
+        <MapaEmpresas src="/data/empresas-puntos.json" ariaLabel="Mapa nacional de empresas de equipo contra incendio" />
+        <div class="flex flex-wrap gap-4 mt-3">
+          {giros.map((g) => <span class="inline-flex items-center gap-2 text-[11px]" style="color:var(--c-text-2)"><span class="w-2.5 h-2.5 rounded-full" style={`background:${g.color}`}></span>{g.labelCorto}</span>)}
+          <span class="text-[11px]" style="color:var(--forge-300)">Coordenadas del registro público DENUE (INEGI).</span>
+        </div>
+      </section>
+
+      <!-- Por estado -->
+      <section id="estados" class="l2-sec" aria-labelledby="estados-heading">
+        <header class="l2-sec-head">
+          <span class="section-eyebrow mb-4 inline-flex">Por estado</span>
+          <h2 id="estados-heading" class="l2-h2">Equipo contra incendio, extintores, hidrantes, mangueras y gabinetes en los 32 estados</h2>
+          <p class="l2-lead">Cada estado tiene su propio directorio con mapa, buscador y filtros por giro. Elige tu entidad para ver a los proveedores más cercanos.</p>
+        </header>
+        <ul class="em-estados" role="list">
+          {porEstado.map((s) => (
+            <li>
+              <a href={`/empresas/estado/${s.slug}/`}>
+                <span class="em-estado-nombre">{s.nombre}</span>
+                <span class="em-estado-region">{s.region}</span>
+              </a>
+            </li>))}
+        </ul>
+      </section>
+
+      <!-- Preguntas frecuentes -->
+      <section id="preguntas" class="l2-sec" aria-labelledby="faq-heading">
+        <header class="l2-sec-head">
           <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes</span>
-          <h2 id="faq-heading" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">Cómo elegir un proveedor y verificar equipo certificado<br/><span style="color:var(--c-accent)">bajo norma NFPA.</span></h2>
-          <p class="text-sm leading-relaxed mt-6" style="color:var(--c-text-2)">Consulta la metodología, el alcance de las fichas y la forma correcta de contactar a cada empresa antes de solicitar una cotización.</p>
-        </div>
-        <div class="flex flex-col" style="border-top:1px solid var(--c-line)">
+          <h2 id="faq-heading" class="l2-h2">Cómo elegir un proveedor y verificar equipo certificado bajo norma NFPA</h2>
+          <p class="l2-lead">Consulta la metodología, el alcance de las fichas y la forma correcta de contactar a cada empresa antes de solicitar una cotización.</p>
+        </header>
+        <div class="l2-faq">
           {faqItems.map((f) => (
-            <details style="border-bottom:1px solid var(--c-line)">
-              <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer font-display font-semibold text-sm" style="color:var(--c-ink)">{f.pregunta}<span style="color:var(--c-accent)" aria-hidden="true">+</span></summary>
-              <p class="text-sm leading-relaxed pb-5" style="color:var(--c-text-2)">{f.respuesta}{f.pregunta === '¿Cómo registro o corrijo una ficha?' && <> <a href="/empresas/registro/" class="underline" style="color:var(--c-accent)">Ir al registro.</a></>}</p>
+            <details>
+              <summary><span>{f.pregunta}</span><span class="l2-faq-mas" aria-hidden="true">+</span></summary>
+              <p>{f.respuesta}{f.pregunta === '¿Cómo registro o corrijo una ficha?' && <> <a href="/empresas/registro/" class="underline" style="color:var(--c-accent)">Ir al registro.</a></>}</p>
             </details>
           ))}
         </div>
-      </div>
+      </section>
+
+      <!-- Registro + cross-links -->
+      <L2Cotizar
+        id="registro"
+        eyebrow="Para empresas del sector"
+        titulo="¿Tu empresa ya está listada?"
+        destacado="Reclama y verifica tu ficha."
+        texto="Los registros básicos provienen del registro público del DENUE. Al reclamar tu ficha puedes completar contacto, marcas que distribuyes, certificaciones y cobertura, y obtener el sello de datos verificados. Las fichas destacadas aparecen primero en su giro y estado."
+        cta={{ label: 'Registrar o reclamar ficha', href: '/empresas/registro/' }}
+        tambien={tambien}
+      />
+
     </div>
-  </section>
+  </div>
 </BaseLayout>
+
+<style>
+  /* Buscador dentro de la columna L2: 3 fichas por fila (la rejilla global asume ancho completo) */
+  :global(#hub-grid) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  @media (min-width: 1024px) { :global(#hub-grid) { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  .em-estados { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; margin: 0; padding: 0; list-style: none; background: var(--c-line); border: 1px solid var(--c-line); }
+  @media (min-width: 640px) { .em-estados { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (min-width: 1024px) { .em-estados { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+  .em-estados li { display: flex; background: var(--c-surface); }
+  .em-estados a { display: flex; flex: 1; flex-direction: column; gap: .25rem; padding: .875rem 1rem; text-decoration: none; transition: background-color .15s; }
+  .em-estados a:hover, .em-estados a:focus-visible { background: var(--c-bg-alt); }
+  .em-estado-nombre { font-family: var(--font-display); font-size: .875rem; font-weight: 600; line-height: 1.3; color: var(--c-ink); }
+  .em-estados a:hover .em-estado-nombre, .em-estados a:focus-visible .em-estado-nombre { color: var(--c-accent); }
+  .em-estado-region { font-size: .625rem; letter-spacing: .08em; text-transform: uppercase; color: var(--forge-300); }
+</style>
