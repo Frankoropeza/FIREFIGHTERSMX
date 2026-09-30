@@ -17,8 +17,7 @@
 import { navigation, type NavItem } from '@data/navigation';
 import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl, TELEFONO_ACTIVO } from '@config/site';
 import TopBar from '@components/common/TopBar.astro';
-import BrandSymbol from '@components/common/BrandSymbol.astro';
-import BrandWordmark from '@components/common/BrandWordmark.astro';
+import BrandLockup from '@components/common/BrandLockup.astro';
 
 const norm = (h: string) => h.replace(/\/+$/, '') || '/';
 const pathname = norm(Astro.url.pathname);
@@ -91,12 +90,8 @@ const grupos = navigation.main.map(preparar);
     <div class="container-site hdr-bar">
 
       <!-- ── Marca ───────────────────────────────────────────────── -->
-      <a href="/" class="hdr-brand" aria-label="VIGILES">
-        <span class="hdr-logo"><BrandSymbol /></span>
-        <span class="hdr-brand-text">
-          <span class="hdr-brand-name"><BrandWordmark class="hdr-wm" /></span>
-          <span class="hdr-tag">Equipo contra incendio</span>
-        </span>
+      <a href="/" class="hdr-brand" aria-label="VIGILES — inicio">
+        <BrandLockup tagline="Equipo contra incendio" />
       </a>
 
       <!-- ── Navegación de escritorio (≥1280 px) ─────────────────── -->
@@ -314,17 +309,10 @@ const grupos = navigation.main.map(preparar);
   }
 
   /* ── Marca ── */
-  .hdr-brand { display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; min-width: 0; }
-  .hdr-logo { display: block; width: 2.5rem; height: 2.5rem; flex-shrink: 0; }
-  .hdr-logo svg { width: 100%; height: 100%; }
-  .hdr-brand-text { display: flex; flex-direction: column; min-width: 0; }
-  .hdr-brand-name { display: block; line-height: 1; }
-  .hdr-wm { display: block; height: 15px; width: auto; color: var(--c-ink); }
-  .hdr-tag {
-    margin-top: 0.25rem; font-size: 9px; font-weight: 500; letter-spacing: 0.16em;
-    text-transform: uppercase; color: var(--c-muted); white-space: nowrap;
-  }
-  @media (max-width: 359px) { .hdr-tag { display: none; } }
+  .hdr-brand { display: flex; align-items: center; flex-shrink: 0; min-width: 0; --bl-fs: 10px; }
+  @media (max-width: 1023px) { .hdr-brand { --bl-fs: 9px; } }
+  @media (max-width: 479px)  { .hdr-brand { --bl-fs: 8px; } }
+  @media (max-width: 359px)  { .hdr-brand { --bl-fs: 7.5px; } .hdr-brand .bl-tag { display: none; } }
 
   /* ── Navegación de escritorio ── */
   .hdr-nav { display: none; }

@@ -1,8 +1,7 @@
 ---
 import { SITE, CONTACTO_DIRECTO_ACTIVO, DOMICILIO_VERIFICADO, REDES_VERIFICADAS, whatsappUrl, TELEFONO_ACTIVO } from '@config/site';
 import { estados } from '@data/estados';
-import BrandSymbol from '@components/common/BrandSymbol.astro';
-import BrandWordmark from '@components/common/BrandWordmark.astro';
+import BrandLockup from '@components/common/BrandLockup.astro';
 
 const year = new Date().getFullYear();
 
@@ -147,14 +146,8 @@ const redes = [
 
       <!-- Marca y contacto -->
       <div class="flex flex-col gap-5">
-        <a href="/" class="flex items-center gap-3 w-fit" aria-label="VIGILES — inicio">
-          <div class="w-9 h-9 shrink-0">
-            <BrandSymbol variant="dark" class="w-full h-full" />
-          </div>
-          <div>
-            <div class="text-white leading-none"><BrandWordmark class="block h-[15px] w-auto" /></div>
-            <div class="text-[9px] text-[var(--forge-300)] font-medium tracking-[0.16em] uppercase mt-1">Equipo certificado</div>
-          </div>
+        <a href="/" class="block w-fit" style="--bl-fs: 11px" aria-label="VIGILES — inicio">
+          <BrandLockup variant="dark" tagline="Equipo contra incendio" />
         </a>
 
         <p class="text-sm leading-relaxed text-[var(--forge-200)]">
