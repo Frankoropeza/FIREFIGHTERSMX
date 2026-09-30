@@ -1,7 +1,11 @@
 ---
+// /estaciones — Hub L2 del directorio nacional de estaciones de bomberos (plantilla L2, 2026-10)
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
-import EstadoCard from '@components/estaciones/EstadoCard.astro';
+import L2Sidebar from '@components/l2/L2Sidebar.astro';
+import L2Cotizar from '@components/l2/L2Cotizar.astro';
+import { bloqueDirectorio, bloqueGuias, bloqueIndustrias, bloqueServicios, bloqueCategorias, type L2Link } from '@lib/l2';
+import '@styles/l2.css';
 import { SITE, contactoUrl } from '@config/site';
 import { tipoConfig, capacidadLabel, TELEFONO_EMERGENCIAS } from '@data/estaciones-config';
 import { estadosConEstaciones, todasLasEstaciones, conteoPorTipo, ultimaVerificacion, fechaLarga, urlEstacion } from '@lib/estaciones';
@@ -74,19 +78,25 @@ const estacionesSchema = {
   })),
 };
 
-/* ─── Datos de regiones para agrupar ─────────────────────── */
-const regiones = [
-  { label: 'Noroeste',        estados: estados.filter(e => e.region === 'Noroeste') },
-  { label: 'Norte',           estados: estados.filter(e => e.region === 'Norte') },
-  { label: 'Noreste',         estados: estados.filter(e => e.region === 'Noreste') },
-  { label: 'Centro-Norte',    estados: estados.filter(e => e.region === 'Centro-Norte') },
-  { label: 'Centro-Occidente',estados: estados.filter(e => e.region === 'Centro-Occidente') },
-  { label: 'Centro',          estados: estados.filter(e => e.region === 'Centro') },
-  { label: 'Sur',             estados: estados.filter(e => e.region === 'Sur') },
-  { label: 'Peninsular',      estados: estados.filter(e => e.region === 'Peninsular') },
-];
+/* ─── Regiones para agrupar los estados ───────────────────── */
+const nombresRegion = ['Noroeste', 'Norte', 'Noreste', 'Centro-Norte', 'Centro-Occidente', 'Centro', 'Sur', 'Peninsular'];
+const regiones = nombresRegion
+  .map((label) => ({
+    label,
+    slug: label.toLowerCase().replace(/[^a-z]+/g, '-'),
+    estados: estados
+      .filter((e) => e.region === label)
+      .map((e) => ({
+        slug: e.slug,
+        nombre: e.nombre,
+        region: e.region,
+        n: e.estaciones.length,
+        tipos: [...new Set(e.estaciones.map((s) => s.tipo))].map((t) => tipoConfig[t]?.label ?? t),
+      })),
+  }))
+  .filter((r) => r.estados.length > 0);
 
-/* ─── Estaciones con teléfono de emergencias (llamativas) ── */
+/* ─── Cuerpos con historia ────────────────────────────────── */
 const estacionesDestacadas = todas
   .filter((e) => (e.descripcion?.split(/\s+/).length ?? 0) >= 120)
   .slice(0, 4);
@@ -97,6 +107,25 @@ const ultimaVerifLabel = fechaLarga(ultimaVerificacion(todas));
 const conteoTipos = (await conteoPorTipo())
   .map((t) => ({ tipo: t.tipo, ...tipoConfig[t.tipo], count: t.total }))
   .sort((a, b) => b.count - a.count);
+
+const descripcionTipo: Record<string, string> = {
+  Municipal: 'Dependen del ayuntamiento. Atienden la mayor parte de las emergencias ciudadanas. Certificación base: NFPA 1001 y NOM.',
+  Estatal: 'Coordinados por la Secretaría de Seguridad Pública estatal. Apoyan a municipios de menor capacidad.',
+  Industrial: 'Brigadas privadas o mixtas en parques industriales. Certificadas NFPA 1001 y NOM-002-STPS.',
+  Aeropuerto: 'Unidades ARFF (Aircraft Rescue and Fire Fighting). Rigen NFPA 403 e ICAO. Categorización según tráfico.',
+  PEMEX: 'Brigadas especializadas en hidrocarburos y petroquímica. NFPA 11, 472 y procedimientos PEMEX.',
+  CFE: 'Unidades para instalaciones de generación y transmisión eléctrica. Protocolos CFE y NFPA.',
+  Voluntarios: 'Cuerpos formados por personal no remunerado. Presentes en municipios pequeños o como apoyo a municipales.',
+};
+
+const normas = [
+  { norm: 'NFPA 1001', desc: 'Competencias profesionales para bomberos estructurales Nivel I y II' },
+  { norm: 'NFPA 1002', desc: 'Competencias para conductores-operadores de vehículos de bomberos' },
+  { norm: 'NFPA 1006', desc: 'Competencias técnicas de rescate — vehículos, altura, agua, minas' },
+  { norm: 'NFPA 403', desc: 'Servicios de rescate de aeronaves y extinción de incendios (ARFF)' },
+  { norm: 'NFPA 472', desc: 'Respuesta a incidentes con materiales peligrosos (HAZMAT)' },
+  { norm: 'NOM-002-STPS', desc: 'Condiciones de seguridad en instalaciones — aplica a brigadas industriales' },
+];
 
 /* ─── FAQ ─────────────────────────────────────────────────── */
 const faqs = [
@@ -127,6 +156,43 @@ const faqSchema = {
     acceptedAnswer: { '@type': 'Answer', text: f.a },
   })),
 };
+
+/* ─── Plantilla L2 (homologada con /productos/, 2026-10) ────────── */
+const secciones = [
+  { id: 'estados', label: 'Por estado' },
+  { id: 'tipos', label: 'Tipos de cuerpo' },
+  ...(estacionesDestacadas.length > 0 ? [{ id: 'historicos', label: 'Con historia' }] : []),
+  { id: 'normas', label: 'Normas' },
+  { id: 'preguntas', label: 'Preguntas' },
+  { id: 'registro', label: 'Registro' },
+];
+
+const GUIAS_ESTACIONES: L2Link[] = [
+  { label: 'Normas NFPA y NOM para bomberos', href: '/certificaciones/' },
+  { label: 'Cómo equipar una estación de bomberos', href: '/blog/como-equipar-estacion-bomberos-desde-cero/' },
+  { label: 'Guía de compra de equipo para bomberos', href: '/blog/guia-compra-equipo-bomberos-nfpa-mexico-2026/' },
+  { label: 'EPP del brigadista contra incendio', href: '/blog/epp-brigadista-contra-incendio-que-necesitas/' },
+  { label: 'NFPA 1970: la nueva norma de trajes', href: '/blog/nfpa-1970-nueva-norma-trajes-bombero/' },
+  { label: 'Bomberos municipales', href: '/industrias/bomberos-municipales/' },
+];
+
+const tambien = [
+  { label: 'Equipo para cuerpos de bomberos', desc: 'Trajes NFPA, cascos, SCBA y herramientas', href: '/productos/trajes-bombero' },
+  { label: 'Industria bomberos municipales', desc: 'Soluciones específicas para ayuntamientos', href: '/industrias/bomberos-municipales' },
+  { label: 'Cobertura nacional', desc: '32 estados · industria y protección civil', href: '/cobertura' },
+  { label: 'Soporte a licitaciones', desc: 'CompraNet, PEMEX, CFE y municipios', href: '/licitaciones' },
+  { label: 'Blog técnico — normas NFPA', desc: 'Guías sobre certificaciones y equipo', href: '/blog' },
+  { label: 'Contacto formal', desc: 'Correcciones, dudas y solicitudes de alta', href: '/contacto' },
+];
+
+const altaUrl = contactoUrl('Alta de estación en el directorio', 'Hola, represento a un cuerpo de bomberos y quiero dar de alta nuestra estación en el directorio de VIGILES. Estación, municipio y estado:');
+
+const trustPoints = [
+  { title: 'Cobertura nacional', text: 'Estaciones municipales, voluntarias e industriales en los 32 estados de México.' },
+  { title: 'Datos actualizados', text: 'Información verificada con datos públicos de cuerpos de bomberos municipales y estatales.' },
+  { title: 'Búsqueda por estado', text: 'Filtra por entidad federativa para encontrar las estaciones más cercanas a tu operación.' },
+  { title: 'Tipos especializados', text: 'Municipal, industrial, ARFF aeroportuario, PEMEX/CFE y brigadas voluntarias.' },
+];
 ---
 
 <BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema, estacionesSchema, faqSchema]}>
@@ -145,7 +211,6 @@ const faqSchema = {
   <!-- ── Hero ───────────────────────────────────────────────── -->
   <section class="relative overflow-hidden" style="background:var(--c-bg);padding-block:5rem" aria-labelledby="hero-title">
 
-    <!-- Grid pattern decorativo -->
     <div class="absolute inset-0 pointer-events-none" aria-hidden="true"
       style="background-image:linear-gradient(var(--c-tint) 1px, transparent 1px),linear-gradient(90deg,var(--c-tint) 1px,transparent 1px);background-size:40px 40px;mask-image:radial-gradient(ellipse 80% 80% at 80% 30%, black, transparent)">
     </div>
@@ -170,7 +235,7 @@ const faqSchema = {
               Estaciones de bomberos por estado
             </a>
             <a href="/empresas/" class="btn btn-ghost btn-lg">
-              Proveedores de equipo contra incendio 
+              Proveedores de equipo contra incendio
             </a>
           </div>
         </div>
@@ -191,15 +256,6 @@ const faqSchema = {
               Registros verificados en <strong style="color:var(--c-text)">{ultimaVerifLabel}</strong>; cada ficha cita su fuente.
             </p>
           )}
-
-          <div class="mt-5 hidden flex-wrap gap-2">
-            {conteoTipos.map(t => (
-              <span class="badge font-display text-[10px]"
-                style={`color:${t.color};background:${t.bgColor};border:1px solid ${t.color}40`}>
-                {t.label}
-              </span>
-            ))}
-          </div>
         </div>
 
       </div>
@@ -210,311 +266,187 @@ const faqSchema = {
   <!-- ── QuickLinksBar ───────────────────────────────────────── -->
   <QuickLinksBar />
 
-  <!-- ── Acerca del directorio ──────────────────────────────── -->
-  <section class="section-tight" style="background:var(--c-bg-alt)" aria-label="Sobre el directorio">
+  <!-- Pilares -->
+  <section class="section-tight" style="background:var(--c-bg-alt)" aria-labelledby="garantias-title">
     <div class="container-site">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style="border:1px solid var(--c-line)">
-        {[
-          {
-            icon: ``,
-            title: 'Cobertura nacional',
-            text: 'Estaciones municipales, voluntarias e industriales en los 32 estados de México.',
-          },
-          {
-            icon: ``,
-            title: 'Datos actualizados',
-            text: 'Información verificada con datos públicos de cuerpos de bomberos municipales y estatales.',
-          },
-          {
-            icon: ``,
-            title: 'Búsqueda por estado',
-            text: 'Filtra por entidad federativa para encontrar las estaciones más cercanas a tu operación.',
-          },
-          {
-            icon: ``,
-            title: 'Tipos especializados',
-            text: 'Municipal, industrial, ARFF aeroportuario, PEMEX/CFE y brigadas voluntarias.',
-          },
-        ].map((c, i) => (
-          <div class="flex flex-col gap-3 p-6"
-            style={`background:var(--c-surface);${i < 3 ? 'border-right:1px solid var(--c-line);' : ''}`}>
-            <span class="w-6 h-6 block" style="color:var(--c-accent)" set:html={c.icon}/>
-            <h2 class="font-display font-bold text-sm" style="color:var(--c-accent)">{c.title}</h2>
-            <p class="text-xs leading-relaxed" style="color:var(--c-muted)">{c.text}</p>
-          </div>
+      <h2 id="garantias-title" class="sr-only">Sobre el directorio de estaciones</h2>
+      <div class="l2-trust">
+        {trustPoints.map((t) => (
+          <div><h3>{t.title}</h3><p>{t.text}</p></div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- ── Tipos de estaciones ────────────────────────────────── -->
-  <section class="section" style="background:var(--c-bg)" aria-labelledby="tipos-title">
-    <div class="container-site">
+  <!-- Plantilla L2: columna principal + barra lateral -->
+  <div class="container-site l2-shell">
+    <L2Sidebar
+      resumen="Navegar las estaciones"
+      secciones={secciones}
+      bloques={[bloqueDirectorio(), bloqueGuias(GUIAS_ESTACIONES, 'Normas y equipamiento del bombero'), bloqueIndustrias(), bloqueServicios(), bloqueCategorias()]}
+      accion={{ titulo: 'Datos del directorio', texto: '¿Tu estación no aparece o necesita una corrección?', botones: [{ label: 'Registrar estación', href: altaUrl, primario: true }, { label: 'Contacto formal', href: '/contacto' }] }}
+    />
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
-        <div>
-          <span class="section-eyebrow mb-4 inline-flex">Clasificación</span>
-          <h2 id="tipos-title" class="font-display font-bold"
-            style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
-            Tipos de cuerpos<br/>
-            <span style="color:var(--c-accent)">de bomberos.</span>
-          </h2>
+    <div class="l2-main">
+
+      <!-- Estados por región -->
+      <section id="estados" class="l2-sec" aria-labelledby="directorio-title">
+        <header class="l2-sec-head">
+          <span class="section-eyebrow mb-4 inline-flex">Directorio · 32 estados</span>
+          <h2 id="directorio-title" class="l2-h2">Estaciones de bomberos por estado: encuentra tu entidad</h2>
+          <p class="l2-lead">
+            Encuentra las estaciones y cuerpos de bomberos de cada entidad federativa, agrupados
+            por región. Cada estado muestra el número de estaciones listadas y los tipos de corporación disponibles.
+          </p>
+        </header>
+        <div class="es-buscar">
+          <input
+            id="estado-search"
+            type="search"
+            placeholder="Buscar estado…"
+            aria-label="Buscar estado en el directorio"
+            class="w-full px-4 py-2.5 text-sm font-display"
+            style="background:var(--c-surface);border:1px solid var(--c-line-strong);color:var(--c-ink);outline:none"
+          />
         </div>
-        <div style="padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
+        <div id="estados-grid">
+          {regiones.map((g) => (
+            <div class="l2-fam es-region" id={`region-${g.slug}`} aria-labelledby={`reg-${g.slug}`}>
+              <p class="l2-fam-eyebrow">Región</p>
+              <h3 id={`reg-${g.slug}`} class="l2-fam-title es-region-title">{g.label}</h3>
+              <ul class="es-grid" role="list">
+                {g.estados.map((e) => (
+                  <li class="es-card estado-card" data-nombre={e.nombre.toLowerCase()} data-region={e.region.toLowerCase()}>
+                    <a href={`/estaciones/${e.slug}/`} class="es-name">Estaciones de bomberos en {e.nombre}</a>
+                    <p class="es-meta">{e.n} {e.n === 1 ? 'estación' : 'estaciones'} · {e.tipos.join(', ')}</p>
+                    <ul class="es-links" role="list">
+                      <li><a href={`/empresas/estado/${e.slug}/`}>Empresas de equipo contra incendio en {e.nombre}</a></li>
+                    </ul>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+        <div id="no-results" class="hidden py-12 text-center">
+          <p class="font-display font-bold text-lg mb-2" style="color:var(--forge-300)">Sin resultados</p>
+          <p class="text-sm" style="color:var(--c-muted)">Intenta con otro nombre de estado.</p>
+        </div>
+      </section>
+
+      <!-- Tipos de cuerpos de bomberos -->
+      <section id="tipos" class="l2-sec" aria-labelledby="tipos-title">
+        <header class="l2-sec-head">
+          <span class="section-eyebrow mb-4 inline-flex">Clasificación</span>
+          <h2 id="tipos-title" class="l2-h2">Tipos de cuerpos de bomberos en México</h2>
+          <p class="l2-lead">
             En México los cuerpos de bomberos operan bajo diferentes jurisdicciones y
             especializaciones. Cada tipo tiene competencias, normas aplicables y
             equipamiento distintos. Conoce las diferencias para identificar la unidad
             correcta para cada tipo de emergencia o proveedor de equipo.
           </p>
-        </div>
-      </div>
-
-      <div class="card-grid">
-        {conteoTipos.map(t => (
-          <div class="flex flex-col gap-3 p-5"
-            style={`background:var(--c-bg-alt);border:1px solid var(--c-line)`}>
-            <div class="flex items-center justify-between">
-              <span class="font-display font-bold text-xs uppercase tracking-wider" style={`color:${t.color}`}>
-                {t.label}
-              </span>
-              <span class="font-display font-bold text-2xl" style={`color:${t.color}`}>{t.count}</span>
-            </div>
-            <p class="text-xs leading-relaxed" style="color:var(--c-muted)">
-              {t.tipo === 'Municipal'   && 'Dependen del ayuntamiento. Atienden la mayor parte de las emergencias ciudadanas. Certificación base: NFPA 1001 y NOM.'}
-              {t.tipo === 'Estatal'     && 'Coordinados por la Secretaría de Seguridad Pública estatal. Apoyan a municipios de menor capacidad.'}
-              {t.tipo === 'Industrial'  && 'Brigadas privadas o mixtas en parques industriales. Certificadas NFPA 1001 y NOM-002-STPS.'}
-              {t.tipo === 'Aeropuerto' && 'Unidades ARFF (Aircraft Rescue and Fire Fighting). Rigen NFPA 403 e ICAO. Categorización según tráfico.'}
-              {t.tipo === 'PEMEX'      && 'Brigadas especializadas en hidrocarburos y petroquímica. NFPA 11, 472 y procedimientos PEMEX.'}
-              {t.tipo === 'CFE'        && 'Unidades para instalaciones de generación y transmisión eléctrica. Protocolos CFE y NFPA.'}
-              {t.tipo === 'Voluntarios' && 'Cuerpos formados por personal no remunerado. Presentes en municipios pequeños o como apoyo a municipales.'}
-            </p>
-          </div>
-        ))}
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ── Directorio por estado ──────────────────────────────── -->
-  <section id="estados" class="section" style="background:var(--c-bg-alt)" aria-labelledby="directorio-title">
-    <div class="container-site">
-
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-10">
-        <div>
-          <span class="section-eyebrow mb-4 inline-flex">Directorio · 32 estados</span>
-          <h2 id="directorio-title" class="font-display font-bold"
-            style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
-            Selecciona<br/>
-            <span style="color:var(--c-accent)">tu estado.</span>
-          </h2>
-        </div>
-        <div style="padding-left:1.75rem">
-          <p class="text-sm leading-relaxed mb-5" style="color:var(--c-text-2)">
-            Encuentra las estaciones y cuerpos de bomberos de cada entidad federativa.
-            Cada tarjeta muestra el número de estaciones listadas, la región y los tipos disponibles.
-          </p>
-          <!-- Buscador / filtro JS -->
-          <div class="relative">
-            
-            <input
-              id="estado-search"
-              type="search"
-              placeholder="Buscar estado…"
-              aria-label="Buscar estado en el directorio"
-              class="w-full pl-10 pr-4 py-2.5 text-sm font-display"
-              style="background:var(--c-surface);border:1px solid var(--c-line-strong);color:var(--c-ink);outline:none"
-            />
-          </div>
-        </div>
-      </div>
-
-      <!-- Grid de estados (todas las regiones) -->
-      <div id="estados-grid" class="card-grid">
-        {estados.map((est) => <EstadoCard est={est} />)}
-      </div>
-
-      <!-- Mensaje cuando no hay resultados -->
-      <div id="no-results" class="hidden py-16 text-center">
-        <p class="font-display font-bold text-lg mb-2" style="color:var(--forge-300)">Sin resultados</p>
-        <p class="text-sm" style="color:var(--c-muted)">Intenta con otro nombre de estado.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ── Estaciones destacadas ──────────────────────────────── -->
-  {estacionesDestacadas.length > 0 && (
-    <section class="section" style="background:var(--c-bg)" aria-labelledby="destacadas-title">
-      <div class="container-site">
-
-        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
-          <div>
-            <span class="section-eyebrow mb-4 inline-flex">Cuerpos históricos</span>
-            <h2 id="destacadas-title" class="font-display font-bold"
-              style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
-              Cuerpos de bomberos<br/>
-              <span style="color:var(--c-accent)">con historia.</span>
-            </h2>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-px"
-          style="background:var(--c-line);border:1px solid var(--c-line)">
-          {estacionesDestacadas.map((est) => (
-            <div class="grid-cell flex flex-col gap-4 p-7" style="background:var(--c-bg-alt)">
-              <div class="flex gap-2 flex-wrap">
-                <span class="badge badge-fire">{est.tipo}</span>
-                {est.fundacion && (
-                  <span class="badge badge-gold">Fundado {est.fundacion}</span>
-                )}
-                <span class="badge badge-dark">{est.estadoNombre}</span>
-              </div>
-              <h3 class="font-display font-bold text-lg leading-snug" style="color:var(--c-ink)">
-                <a href={urlEstacion(est)} class="hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{est.nombre}</a>
-              </h3>
-              <p class="text-xs leading-relaxed" style="color:var(--c-muted)">{est.descripcion}</p>
-              <div class="flex flex-wrap gap-2 mt-auto">
-                {est.servicios.slice(0, 4).map(s => (
-                  <span class="text-[10px] font-display uppercase tracking-wider px-2 py-0.5"
-                    style="color:var(--forge-300);background:var(--c-line);border:1px solid var(--c-line)">
-                    {capacidadLabel(s)}
-                  </span>
-                ))}
-              </div>
-              {TELEFONO_EMERGENCIAS && (
-                <div class="flex items-center gap-2 pt-3" style="border-top:1px solid var(--c-line)">
-                  
-                  <span class="font-display font-bold text-sm" style="color:var(--c-accent)">
-                    Emergencias: {TELEFONO_EMERGENCIAS}
-                  </span>
-                  {est.telefono && (
-                    <span class="text-xs ml-2" style="color:var(--forge-300)">{est.telefono}</span>
-                  )}
-                </div>
-              )}
-            </div>
+        </header>
+        <div class="l2-factores">
+          {conteoTipos.map((t) => (
+            <article>
+              <h3><span style={`color:${t.color}`}>{t.label}</span> <span class="es-n">{t.count}</span></h3>
+              <p>{descripcionTipo[t.tipo]}</p>
+            </article>
           ))}
         </div>
+      </section>
 
-      </div>
-    </section>
-  )}
+      <!-- Cuerpos con historia -->
+      {estacionesDestacadas.length > 0 && (
+        <section id="historicos" class="l2-sec" aria-labelledby="destacadas-title">
+          <header class="l2-sec-head">
+            <span class="section-eyebrow mb-4 inline-flex">Cuerpos históricos</span>
+            <h2 id="destacadas-title" class="l2-h2">Cuerpos de bomberos con historia</h2>
+          </header>
+          <div class="es-hist">
+            {estacionesDestacadas.map((est) => (
+              <article>
+                <div class="flex gap-2 flex-wrap">
+                  <span class="badge badge-fire">{est.tipo}</span>
+                  {est.fundacion && <span class="badge badge-gold">Fundado {est.fundacion}</span>}
+                  <span class="badge badge-dark">{est.estadoNombre}</span>
+                </div>
+                <h3><a href={urlEstacion(est)}>{est.nombre}</a></h3>
+                <p class="es-hist-text">{est.descripcion}</p>
+                <div class="flex flex-wrap gap-2 mt-auto">
+                  {est.servicios.slice(0, 4).map(s => (
+                    <span class="text-[10px] font-display uppercase tracking-wider px-2 py-0.5"
+                      style="color:var(--forge-300);background:var(--c-line);border:1px solid var(--c-line)">
+                      {capacidadLabel(s)}
+                    </span>
+                  ))}
+                </div>
+                {TELEFONO_EMERGENCIAS && (
+                  <p class="es-hist-tel">
+                    <strong>Emergencias: {TELEFONO_EMERGENCIAS}</strong>
+                    {est.telefono && <span>{est.telefono}</span>}
+                  </p>
+                )}
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
 
-  <!-- ── Normas y certificaciones ───────────────────────────── -->
-  <section class="section" style="background:var(--c-bg-alt)" aria-labelledby="normas-title">
-    <div class="container-site">
-
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-
-        <div>
+      <!-- Normas -->
+      <section id="normas" class="l2-sec" aria-labelledby="normas-title">
+        <header class="l2-sec-head">
           <span class="section-eyebrow mb-4 inline-flex">Marco normativo</span>
-          <h2 id="normas-title" class="font-display font-bold mb-6"
-            style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.75rem);line-height:1.05">
-            Normas que rigen a los<br/>
-            <span style="color:var(--c-accent)">bomberos en México.</span>
-          </h2>
-          <p class="text-sm leading-[1.9] mb-6" style="color:var(--c-text-2)">
+          <h2 id="normas-title" class="l2-h2">Normas que rigen a los bomberos en México</h2>
+          <p class="l2-lead">
             Los cuerpos de bomberos en México están sujetos a normas nacionales (NOM) e
             internacionales (NFPA). El equipamiento debe cumplir con estas certificaciones
             para garantizar la seguridad del personal y la eficiencia operativa.
           </p>
-          <div class="flex flex-col gap-3">
-            {[
-              { norm: 'NFPA 1001', desc: 'Competencias profesionales para bomberos estructurales Nivel I y II' },
-              { norm: 'NFPA 1002', desc: 'Competencias para conductores-operadores de vehículos de bomberos' },
-              { norm: 'NFPA 1006', desc: 'Competencias técnicas de rescate — vehículos, altura, agua, minas' },
-              { norm: 'NFPA 403',  desc: 'Servicios de rescate de aeronaves y extinción de incendios (ARFF)' },
-              { norm: 'NFPA 472',  desc: 'Respuesta a incidentes con materiales peligrosos (HAZMAT)' },
-              { norm: 'NOM-002-STPS', desc: 'Condiciones de seguridad en instalaciones — aplica a brigadas industriales' },
-            ].map(({ norm, desc }) => (
-              <div class="flex items-start gap-4 py-3" style="border-bottom:1px solid var(--c-line)">
-                <span class="badge badge-fire shrink-0 font-display text-[10px]">{norm}</span>
-                <p class="text-xs leading-relaxed m-0" style="color:var(--c-text-2)">{desc}</p>
-              </div>
+        </header>
+        <table class="l2-tabla">
+          <caption class="sr-only">Normas que rigen a los cuerpos de bomberos en México</caption>
+          <thead><tr><th scope="col">Norma</th><th scope="col">Qué regula</th></tr></thead>
+          <tbody>
+            {normas.map(({ norm, desc }) => (
+              <tr><th scope="row">{norm}</th><td>{desc}</td></tr>
             ))}
-          </div>
-          <div class="mt-6">
-            <a href="/certificaciones" class="btn btn-outline btn-sm">
-              Normas NFPA y NOM para bomberos 
-            </a>
-          </div>
+          </tbody>
+        </table>
+        <div class="l2-hub">
+          <a href="/certificaciones" class="btn btn-outline btn-sm">Normas NFPA y NOM para bomberos</a>
         </div>
+      </section>
 
-        <!-- FAQ -->
-        <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
-          <h2 class="font-display font-bold text-sm mb-6" style="color:var(--forge-300)">
-            Preguntas frecuentes
-          </h2>
-          <div class="flex flex-col" style="border-top:1px solid var(--c-line)">
-            {faqs.map((faq) => (
-              <div class="py-5" style="border-bottom:1px solid var(--c-line)">
-                <h3 class="font-display font-bold text-sm mb-2" style="color:var(--c-ink)">{faq.q}</h3>
-                <p class="text-xs leading-relaxed m-0" style="color:var(--c-muted)">{faq.a}</p>
-              </div>
-            ))}
-          </div>
+      <!-- Preguntas frecuentes -->
+      <section id="preguntas" class="l2-sec" aria-labelledby="faq-title">
+        <header class="l2-sec-head">
+          <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes</span>
+          <h2 id="faq-title" class="l2-h2">Preguntas frecuentes sobre los cuerpos de bomberos en México</h2>
+        </header>
+        <div class="l2-faq">
+          {faqs.map((f) => (
+            <details>
+              <summary><span>{f.q}</span><span class="l2-faq-mas" aria-hidden="true">+</span></summary>
+              <p>{f.a}</p>
+            </details>
+          ))}
         </div>
+      </section>
 
-      </div>
+      <!-- Registro + cross-links -->
+      <L2Cotizar
+        id="registro"
+        eyebrow="¿Tu estación no aparece?"
+        titulo="Registra tu cuerpo"
+        destacado="de bomberos."
+        texto="Si representas un cuerpo de bomberos, brigada o unidad especializada que aún no aparece en el directorio, contáctanos. El alta es gratuita y ayuda a que más ciudadanos e instituciones encuentren tu unidad."
+        cta={{ label: 'Registrar estación', href: altaUrl }}
+        tambien={tambien}
+      />
 
     </div>
-  </section>
-
-  <!-- ── ¿Tienes una estación? ──────────────────────────────── -->
-  <section class="section-tight" style="background:var(--c-bg);border-top:1px solid var(--c-line)" aria-label="Registro de estación">
-    <div class="container-site">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
-        <div>
-          <span class="section-eyebrow mb-4 inline-flex">¿Tu estación no aparece?</span>
-          <h2 class="font-display font-bold mb-4"
-            style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.1">
-            Registra tu cuerpo<br/>
-            <span style="color:var(--c-accent)">de bomberos.</span>
-          </h2>
-          <p class="text-sm leading-relaxed mb-6" style="color:var(--c-text-2)">
-            Si representas un cuerpo de bomberos, brigada o unidad especializada que aún no
-            aparece en el directorio, contáctanos. El alta es gratuita y ayuda a que más
-            ciudadanos e instituciones encuentren tu unidad.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-3">
-            <a
-              href={contactoUrl('Alta de estación en el directorio', 'Hola, represento a un cuerpo de bomberos y quiero dar de alta nuestra estación en el directorio de VIGILES. Estación, municipio y estado:')}
-              target="_blank" rel="noopener"
-              class="btn btn-primary"
-            >
-              Registrar estación
-            </a>
-            <a href="/contacto" class="btn btn-ghost">Contacto formal</a>
-          </div>
-        </div>
-        <div style="border-left:1px solid var(--c-line);padding-left:2rem">
-          <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:var(--forge-300)">
-            También te puede servir
-          </p>
-          <ul class="flex flex-col list-none m-0 p-0" style="border-top:1px solid var(--c-line)">
-            {[
-              { label: 'Equipo para cuerpos de bomberos', desc: 'Trajes NFPA, cascos, SCBA y herramientas', href: '/productos/trajes-bombero' },
-              { label: 'Industria bomberos municipales',   desc: 'Soluciones específicas para ayuntamientos',   href: '/industrias/bomberos-municipales' },
-              { label: 'Cobertura nacional',              desc: '32 estados · industria y protección civil',   href: '/cobertura' },
-              { label: 'Soporte a licitaciones',          desc: 'CompraNet, PEMEX, CFE y municipios',          href: '/licitaciones' },
-              { label: 'Blog técnico — normas NFPA',      desc: 'Guías sobre certificaciones y equipo',        href: '/blog' },
-            ].map((l) => (
-              <li style="border-bottom:1px solid var(--c-line)">
-                <a href={l.href} class="group flex items-center justify-between gap-4 py-4">
-                  <span class="flex flex-col gap-0.5">
-                    <span class="font-display font-semibold text-sm group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{l.label}</span>
-                    <span class="text-xs" style="color:var(--c-muted)">{l.desc}</span>
-                  </span>
-                  
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+  </div>
 
   <!-- ── JS: filtro de estados ──────────────────────────────── -->
   <script>
@@ -525,15 +457,19 @@ const faqSchema = {
     if (input && grid && noResult) {
       input.addEventListener('input', () => {
         const q = input.value.trim().toLowerCase();
-        const cards = grid.querySelectorAll<HTMLElement>('.estado-card');
         let visible = 0;
 
-        cards.forEach((card) => {
-          const nombre = card.dataset.nombre ?? '';
-          const region = card.dataset.region ?? '';
-          const match  = !q || nombre.includes(q) || region.includes(q);
-          card.style.display = match ? '' : 'none';
-          if (match) visible++;
+        grid.querySelectorAll<HTMLElement>('.es-region').forEach((reg) => {
+          let enRegion = 0;
+          reg.querySelectorAll<HTMLElement>('.estado-card').forEach((card) => {
+            const nombre = card.dataset.nombre ?? '';
+            const region = card.dataset.region ?? '';
+            const match  = !q || nombre.includes(q) || region.includes(q);
+            card.style.display = match ? '' : 'none';
+            if (match) enRegion++;
+          });
+          reg.style.display = enRegion > 0 ? '' : 'none';
+          visible += enRegion;
         });
 
         noResult.classList.toggle('hidden', visible > 0);
@@ -542,3 +478,29 @@ const faqSchema = {
   </script>
 
 </BaseLayout>
+
+<style>
+  .es-buscar { max-width: 28rem; margin-bottom: 2rem; }
+  .es-region-title { margin-bottom: 1.25rem; }
+  #estados-grid .l2-fam + .l2-fam { margin-top: 2.5rem; padding-top: 2.5rem; }
+  .es-grid { display: grid; gap: .75rem; margin: 0; padding: 0; list-style: none; grid-template-columns: minmax(0, 1fr); }
+  @media (min-width: 640px) { .es-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (min-width: 1024px) { .es-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  .es-card { display: flex; flex-direction: column; gap: .375rem; padding: 1rem 1.125rem; background: var(--c-surface); border: 1px solid var(--c-line); border-radius: var(--radius-card); box-shadow: var(--shadow-card); }
+  .es-name { font-family: var(--font-display); font-size: 1rem; font-weight: 600; line-height: 1.3; color: var(--c-ink); text-decoration: none; transition: color .15s; }
+  .es-name:hover, .es-name:focus-visible { color: var(--c-accent); }
+  .es-meta { margin: 0; font-size: .75rem; color: var(--c-muted); }
+  .es-links { display: flex; flex-direction: column; margin: .375rem 0 0; padding: .375rem 0 0; list-style: none; border-top: 1px solid var(--c-line); }
+  .es-links a { display: block; padding: .3125rem 0; font-size: .8125rem; font-weight: 500; line-height: 1.35; color: var(--c-ink-2); text-decoration: none; transition: color .15s; }
+  .es-links a:hover, .es-links a:focus-visible { color: var(--c-accent); }
+  .es-n { float: right; font-variant-numeric: tabular-nums; color: var(--c-ink); }
+  .es-hist { display: grid; gap: 1px; grid-template-columns: minmax(0, 1fr); background: var(--c-line); border: 1px solid var(--c-line); }
+  @media (min-width: 768px) { .es-hist { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .es-hist > article { display: flex; flex-direction: column; gap: 1rem; padding: 1.5rem; background: var(--c-surface); }
+  .es-hist h3 { margin: 0; font-family: var(--font-display); font-size: 1.125rem; font-weight: 700; line-height: 1.3; }
+  .es-hist h3 a { color: var(--c-ink); text-decoration: none; }
+  .es-hist h3 a:hover, .es-hist h3 a:focus-visible { color: var(--c-accent); }
+  .es-hist-text { margin: 0; font-size: .8125rem; line-height: 1.65; color: var(--c-text-2); }
+  .es-hist-tel { display: flex; flex-wrap: wrap; gap: .25rem .75rem; margin: 0; padding-top: .75rem; border-top: 1px solid var(--c-line); font-size: .875rem; color: var(--c-accent); }
+  .es-hist-tel span { font-size: .75rem; color: var(--forge-300); }
+</style>

@@ -112,3 +112,12 @@
 .l2-factores > article { padding: 1.5rem; background: var(--c-surface); }
 .l2-factores h3 { margin: 0 0 .5rem; font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--c-ink); }
 .l2-factores p { margin: 0; font-size: .875rem; line-height: 1.65; color: var(--c-text-2); }
+
+/* .l2-factores: última celda sola en su fila ocupa el ancho restante (sin hueco gris) */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .l2-factores > article:last-child:nth-child(odd) { grid-column: 1 / -1; }
+}
+@media (min-width: 1024px) {
+  .l2-factores > article:last-child:nth-child(3n + 1) { grid-column: 1 / -1; }
+  .l2-factores > article:last-child:nth-child(3n + 2) { grid-column: span 2; }
+}
