@@ -6,8 +6,8 @@ pubDate: 2026-09-30
 category: "Drones de Emergencia"
 tags: ["drones de emergencia", "incendios forestales", "incendios industriales", "búsqueda y rescate", "dron térmico"]
 image:
-  url: "/images/categorias/drones-emergencia.avif"
-  alt: "Dron con cámara térmica sobre una escena de incendio para apoyar la decisión del mando"
+  url: "/images/blog/portadas/drones-en-incendios-forestales-industriales-estructurales-escenarios.avif"
+  alt: "Columna de humo de un incendio forestal sobre una ladera arbolada, vista aérea"
 ---
 
 El valor de un dron en una emergencia no es el mismo en un incendio forestal que en una nave industrial o en una vivienda. En el monte, la ventaja es la escala y la velocidad para ver un frente de fuego; en una planta, es la posibilidad de observar sin acercar personal a una zona de riesgo; en una estructura, es la vista de la cubierta y de las exposiciones que el suelo no permite ver. Entender esa diferencia evita dos errores de compra y de operación: esperar de la aeronave lo que no puede hacer en cada escenario, o dejar sin usar la función que sí resuelve el problema de la corporación.

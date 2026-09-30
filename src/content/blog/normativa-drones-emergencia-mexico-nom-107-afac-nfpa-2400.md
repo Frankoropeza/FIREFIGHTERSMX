@@ -6,8 +6,8 @@ pubDate: 2026-09-30
 category: "Drones de Emergencia"
 tags: ["drones de emergencia", "NOM-107-SCT3-2019", "AFAC", "NFPA 2400", "normatividad"]
 image:
-  url: "/images/categorias/drones-emergencia.avif"
-  alt: "Documentos de registro y protocolo de operación de un dron de emergencia junto a una aeronave compacta"
+  url: "/images/blog/portadas/normativa-drones-emergencia-mexico-nom-107-afac-nfpa-2400.avif"
+  alt: "Dron blanco de cuatro hélices en vuelo contra un cielo despejado"
 ---
 
 Una corporación de bomberos o de Protección Civil que incorpora un dron asume dos tipos de marco distintos. El primero es obligatorio: la Norma Oficial Mexicana NOM-107-SCT3-2019 y las disposiciones de la Agencia Federal de Aviación Civil (AFAC) determinan cómo puede volar una aeronave no tripulada en el espacio aéreo mexicano. El segundo es una referencia técnica voluntaria: la norma NFPA 2400 describe cómo organizar un programa de drones de seguridad pública, qué debe saber el personal y cómo mantener el equipo. Confundirlos produce dos errores frecuentes: pedir en una compra certificaciones que no existen, o presumir cumplimiento normativo con un documento que no es el aplicable.

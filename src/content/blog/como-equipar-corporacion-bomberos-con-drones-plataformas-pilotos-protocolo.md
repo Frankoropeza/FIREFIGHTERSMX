@@ -6,8 +6,8 @@ pubDate: 2026-09-30
 category: "Drones de Emergencia"
 tags: ["drones de emergencia", "drones para bomberos", "DJI Enterprise", "guía de compra", "capacitación"]
 image:
-  url: "/images/categorias/drones-emergencia.avif"
-  alt: "Dron compacto con cámara térmica y estuche de transporte preparados para una corporación de bomberos"
+  url: "/images/blog/portadas/como-equipar-corporacion-bomberos-con-drones-plataformas-pilotos-protocolo.avif"
+  alt: "Silueta de un dron en vuelo al atardecer"
 ---
 
 Comprar un dron para una corporación de bomberos no es una decisión de ficha técnica. La aeronave es la parte más visible del programa, pero el resultado depende de tres elementos que se resuelven antes de cotizar: la misión principal, las personas que van a volarla y el protocolo con el que sus imágenes llegan al mando. Una corporación con una plataforma excelente y sin piloto entrenado ni procedimiento termina con un equipo guardado; una con una aeronave compacta, dos pilotos formados y un protocolo claro obtiene información útil desde el primer incendio.

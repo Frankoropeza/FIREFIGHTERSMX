@@ -6,8 +6,8 @@ pubDate: 2026-09-30
 category: "Drones de Emergencia"
 tags: ["drones de emergencia", "dron térmico", "cámara térmica", "radiometría", "incendios"]
 image:
-  url: "/images/categorias/drones-emergencia.avif"
-  alt: "Imagen térmica capturada por un dron sobre una estructura con puntos de calor"
+  url: "/images/blog/portadas/dron-camara-termica-incendios-que-ve-y-que-no-ve.avif"
+  alt: "Incendio forestal en una ladera visto de noche desde el aire, con líneas de fuego avanzando"
 ---
 
 La cámara térmica de un dron no ve el fuego: mide radiación infrarroja y la convierte en una imagen que representa diferencias de temperatura aparente. Esa distinción parece técnica, pero es la que separa un uso útil de un error de interpretación en escena. Una ventana oscura no significa necesariamente que el cuarto esté frío, y una cubierta metálica brillante puede mostrar un calor que no tiene. Quien decide con base en la imagen térmica debe saber qué mide el sensor, qué corrige la radiometría y en qué condiciones el resultado deja de ser confiable.

@@ -6,8 +6,8 @@ pubDate: 2026-09-30
 category: "Drones de Emergencia"
 tags: ["drones de emergencia", "drones para bomberos", "dron térmico", "protección civil", "incendios"]
 image:
-  url: "/images/categorias/drones-emergencia.avif"
-  alt: "Dron con cámara térmica sobrevolando la escena de un incendio para apoyar al mando de bomberos"
+  url: "/images/blog/portadas/drones-para-bomberos-mexico-importancia-equipo-contra-incendio.avif"
+  alt: "Vista aérea de un incendio en una nave agrícola con camiones de bomberos y personal en el acceso"
 ---
 
 Un dron con cámara térmica no apaga incendios ni sustituye al mando, pero cambia un elemento que durante décadas dependió de la altura de un vehículo o de la vista de quien llegaba primero: la información del escenario. En pocos minutos permite ver la forma de la columna de humo, el avance del fuego, los accesos, las exposiciones hacia edificios vecinos y los puntos de calor que desde el suelo no son visibles. Esa información llega al jefe de operaciones antes de comprometer personal, y ese orden (primero ver, después entrar) es la razón por la que varias corporaciones en México empiezan a considerar el dron parte del equipo de respuesta y no un accesorio.
