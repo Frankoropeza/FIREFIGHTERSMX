@@ -5,10 +5,7 @@ import LineaCard from '@components/products/LineaCard.astro';
 import L2Sidebar from '@components/l2/L2Sidebar.astro';
 import L2Cotizar from '@components/l2/L2Cotizar.astro';
 import { bloqueCategorias, bloqueServicios, bloqueIndustrias, anchoFila as anchoFilaBlog, type L2Bloque } from '@lib/l2';
-import { BLOG_POR_CATEGORIA } from '@lib/enlaces-directorio';
-import { portadaBlog } from '@lib/portada-blog';
-import { allCategories } from '@data/categories';
-import { lineaPorSlug } from '@lib/linea-card';
+import { tarjetaBlog } from '@lib/blog-l2';
 import '@styles/l2.css';
 import { getCollection } from 'astro:content';
 import { SITE, whatsappUrl, CANAL_CONTACTO } from '@config/site';
@@ -44,27 +41,7 @@ const recursos = [
 ];
 
 /* ─── Plantilla L2 (2026-10) ─────────────────────────────────── */
-/* Categoría del blog → categorías de producto que trata (inverso de BLOG_POR_CATEGORIA) */
-const productosDeCategoriaBlog = (catBlog: string) => Object.entries(BLOG_POR_CATEGORIA)
-  .filter(([, cats]) => cats.includes(catBlog))
-  .map(([slug]) => allCategories.find((c) => c.slug === slug))
-  .filter((c): c is NonNullable<typeof c> => !!c)
-  .slice(0, 2)
-  .map((c) => ({ label: lineaPorSlug(c.slug)?.titulo ?? c.label, href: `/productos/${c.slug}/` }));
-const minutos = (post: (typeof allPosts)[number]) => Math.ceil((post.body ?? '').split(' ').length / 200);
-const tarjeta = (post: (typeof allPosts)[number]) => {
-  const img = portadaBlog(post);
-  return {
-    href: `/blog/${post.id}/`,
-    norma: `${post.data.category} · ${minutos(post)} min de lectura`,
-    titulo: post.data.title,
-    texto: post.data.description,
-    imagen: img?.url ?? null,
-    imagenAlt: img?.alt ?? post.data.title,
-    hijas: productosDeCategoriaBlog(post.data.category),
-    cta: `Guía: ${post.data.tags?.[0] ?? post.data.category}`,
-  };
-};
+const tarjeta = tarjetaBlog;
 const secciones = [
   { id: 'articulos', label: 'Artículos' },
   { id: 'especialista', label: 'Especialista' },

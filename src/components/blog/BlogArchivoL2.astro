@@ -1,0 +1,94 @@
+---
+/**
+ * Marco L2 de los archivos del blog (/blog/categoria/, /blog/tag/, /blog/pagina/).
+ * Breadcrumb · hero de dos columnas · accesos rápidos · columna principal con rejilla
+ * de LineaCard · barra lateral L2. Los archivos son navegación: sin bloque de cierre
+ * comercial; la cotización vive en la tarjeta fija de la barra (decisión 2026-10).
+ * Slots: «titulo» (contenido del h1), «texto» (columna derecha del hero), por defecto
+ * (después de la rejilla: paginador, enlaces).
+ */
+import QuickLinksBar from '@components/common/QuickLinksBar.astro';
+import LineaCard from '@components/products/LineaCard.astro';
+import L2Sidebar from '@components/l2/L2Sidebar.astro';
+import { anchoFila, type L2Bloque } from '@lib/l2';
+import { tarjetaBlog, type PostBlog } from '@lib/blog-l2';
+import '@styles/l2.css';
+
+export interface Props {
+  /** Último tramo del breadcrumb (el nombre de la categoría / etiqueta / página) */
+  actual: string;
+  eyebrow: string;
+  posts: PostBlog[];
+  h2: string;
+  lead: string;
+  ariaLabel: string;
+  bloques: L2Bloque[];
+  resumen?: string;
+  vacio?: string;
+  /** Enlace de la barra lateral que corresponde a esta página (se marca aria-current) */
+  actualHref?: string;
+}
+const { actual, eyebrow, posts, h2, lead, ariaLabel, bloques, resumen = 'Navegar el blog', vacio = 'No hay artículos publicados aquí todavía.', actualHref } = Astro.props;
+---
+
+<!-- Breadcrumb -->
+<nav class="py-3" style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line)" aria-label="Breadcrumb">
+  <div class="container-site">
+    <ol class="flex items-center gap-2 text-xs list-none m-0 p-0" style="color:var(--forge-300)">
+      <li><a href="/" class="hover:text-[var(--c-accent)]">Inicio</a></li>
+      <li aria-hidden="true">/</li>
+      <li><a href="/blog/" class="hover:text-[var(--c-accent)]">Blog</a></li>
+      <li aria-hidden="true">/</li>
+      <li><span style="color:var(--c-text-2)" aria-current="page">{actual}</span></li>
+    </ol>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section style="background:var(--c-bg);padding-block:4rem">
+  <div class="container-site">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="section-eyebrow mb-3 inline-flex">{eyebrow}</span>
+        <h1 class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(2rem,4.5vw,3.5rem);line-height:1.05;overflow-wrap:anywhere">
+          <slot name="titulo" />
+        </h1>
+      </div>
+      <div class="lg:pl-12" style="border-left:1px solid var(--c-line)">
+        <slot name="texto" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<QuickLinksBar />
+
+<div class="container-site l2-shell">
+  <L2Sidebar
+    resumen={resumen}
+    secciones={[{ id: 'articulos', label: 'Artículos' }]}
+    bloques={bloques}
+    actual={actualHref}
+  />
+
+  <div class="l2-main">
+    <section id="articulos" class="l2-sec" aria-labelledby="archivo-title">
+      <header class="l2-sec-head">
+        <h2 id="archivo-title" class="l2-h2">{h2}</h2>
+        <p class="l2-lead">{lead}</p>
+      </header>
+
+      {posts.length === 0 ? (
+        <p class="py-12 text-center text-sm" style="color:var(--c-muted)">{vacio}</p>
+      ) : (
+        <ul class="l2-grid" role="list" aria-label={ariaLabel}>
+          {posts.map((post, i) => (
+            <li class={anchoFila(i, posts.length)}><LineaCard {...tarjetaBlog(post)} nivel="h3" max={2} subLabel="Equipo relacionado" /></li>
+          ))}
+        </ul>
+      )}
+
+      <slot />
+    </section>
+  </div>
+</div>
