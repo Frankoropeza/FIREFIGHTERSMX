@@ -62,7 +62,7 @@ El precio de compra no muestra por sí solo los costos de inspección, limpieza,
 
 ## Y por último: ¿quién contesta el teléfono después de la venta?
 
-El proveedor correcto no desaparece cuando le firmas la factura. Busca uno que ofrezca servicio técnico autorizado, refacciones originales y asesoría de tallaje, esa que evita comprar 30 trajes de "talla promedio" para descubrir que el promedio no existe. En FIREFIGHTERS MX estos servicios vienen integrados, con cobertura en los 32 estados y stock en CDMX; el panorama completo está en [servicios](/servicios/).
+El proveedor correcto no desaparece cuando le firmas la factura. Busca uno que ofrezca servicio técnico autorizado, refacciones originales y asesoría de tallaje, esa que evita comprar 30 trajes de "talla promedio" para descubrir que el promedio no existe. En VIGILES estos servicios vienen integrados, con cobertura en los 32 estados y stock en CDMX; el panorama completo está en [servicios](/servicios/).
 
 ## Antes de pagar, repasa esto
 
@@ -73,7 +73,7 @@ El proveedor correcto no desaparece cuando le firmas la factura. Busca uno que o
 - [ ] Plan de mantenimiento y refacciones garantizado
 - [ ] Proveedor con servicio posventa que se pueda comprobar
 
-Para revisar una requisición, FIREFIGHTERS MX puede preparar una [cotización](/cotizacion/) que identifique el modelo, la documentación disponible y las condiciones de servicio. Revisa también [cómo equipar una estación desde cero](/blog/como-equipar-estacion-bomberos-desde-cero/) y el [catálogo de productos](/productos/).
+Para revisar una requisición, VIGILES puede preparar una [cotización](/cotizacion/) que identifique el modelo, la documentación disponible y las condiciones de servicio. Revisa también [cómo equipar una estación desde cero](/blog/como-equipar-estacion-bomberos-desde-cero/) y el [catálogo de productos](/productos/).
 
 ## Documenta la recepción, no sólo la selección
 

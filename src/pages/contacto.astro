@@ -8,7 +8,7 @@ const canonicalURL = `${SITE.url}/contacto/`;
 const seoMeta = {
   title: `Contacto — Asesoría en Equipo para Bomberos`,
   description:
-    'Contacta a FIREFIGHTERS MX: asesoría en equipo para bomberos, cotizaciones, licitaciones y servicios. Oficinas en Polanco, CDMX. Respuesta en 2 horas hábiles.',
+    'Contacta a VIGILES: asesoría en equipo para bomberos, cotizaciones, licitaciones y servicios. Oficinas en Polanco, CDMX. Respuesta en 2 horas hábiles.',
   canonicalURL,
 };
 
@@ -218,7 +218,7 @@ const canales = canalesTodos.filter(
         if (!f.reportValidity()) return;
         const num = f.getAttribute('data-wa');
         const fd = new FormData(f);
-        const lines: string[] = ['Hola FIREFIGHTERS MX, te escribo desde el sitio web:', ''];
+        const lines: string[] = ['Hola VIGILES, te escribo desde el sitio web:', ''];
         for (const [name, value] of fd.entries()) {
           const v = String(value).trim();
           if (!v) continue;
@@ -234,7 +234,7 @@ const canales = canalesTodos.filter(
       if (num) {
         window.open(`https://api.whatsapp.com/send/?phone=${num}&text=${text}`, '_blank', 'noopener');
       } else if (mail) {
-        window.location.href = `mailto:${mail}?subject=${encodeURIComponent('Cotización — FIREFIGHTERS MX')}&body=${text}`;
+        window.location.href = `mailto:${mail}?subject=${encodeURIComponent('Cotización — VIGILES')}&body=${text}`;
       }
       });
     });

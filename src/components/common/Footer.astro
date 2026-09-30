@@ -1,6 +1,8 @@
 ---
 import { SITE, CONTACTO_DIRECTO_ACTIVO, DOMICILIO_VERIFICADO, REDES_VERIFICADAS, whatsappUrl, TELEFONO_ACTIVO } from '@config/site';
 import { estados } from '@data/estados';
+import BrandSymbol from '@components/common/BrandSymbol.astro';
+import BrandWordmark from '@components/common/BrandWordmark.astro';
 
 const year = new Date().getFullYear();
 
@@ -145,17 +147,12 @@ const redes = [
 
       <!-- Marca y contacto -->
       <div class="flex flex-col gap-5">
-        <a href="/" class="flex items-center gap-3 w-fit" aria-label="FIREFIGHTERS MX — inicio">
+        <a href="/" class="flex items-center gap-3 w-fit" aria-label="VIGILES — inicio">
           <div class="w-9 h-9 shrink-0">
-            <svg data-logo viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
-              <polygon points="18,2 32,10 32,26 18,34 4,26 4,10" fill="var(--ember-500)"/>
-              <path d="M18 10c0 0-5 4-3 8 1 2 3 2 3 2s-1-2 0-4c1-2 3-2 3-2s-1 3 1 5c.8.8 1 2 1 2s2-1.5 2-4c0-3-2-5-2-5s1 2 0 4c0 0-2-4-5-6z" fill="white" opacity="0.95"/>
-            </svg>
+            <BrandSymbol variant="dark" class="w-full h-full" />
           </div>
           <div>
-            <div class="font-display font-bold text-[1.1rem] text-white leading-none">
-              Firefighters<span class="text-[var(--c-footer-accent)]"> MX</span>
-            </div>
+            <div class="text-white leading-none"><BrandWordmark class="block h-[15px] w-auto" /></div>
             <div class="text-[9px] text-[var(--forge-300)] font-medium tracking-[0.16em] uppercase mt-1">Equipo certificado</div>
           </div>
         </a>
@@ -310,7 +307,7 @@ const redes = [
   <!-- ══ Bottom Bar ══════════════════════════════════════════════ -->
   <div class="f-bottom border-t border-[var(--color-border)] py-5">
     <div class="container-site flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[var(--forge-400)]">
-      <p>© {year} FIREFIGHTERS MX — Todos los derechos reservados.</p>
+      <p>© {year} VIGILES — Todos los derechos reservados.</p>
       <div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
         <a href="/aviso-privacidad" class="hover:text-[var(--forge-200)]">Aviso de privacidad</a>
         <a href="/terminos-condiciones" class="hover:text-[var(--forge-200)]">Términos y condiciones</a>

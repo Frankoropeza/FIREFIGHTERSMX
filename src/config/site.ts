@@ -1,7 +1,7 @@
 export const SITE = {
-  name:        'FIREFIGHTERS MX',
-  shortName:   'FFMX',
-  // Identidad híbrida (2026-09-15): FIREFIGHTERS MX vende y distribuye equipo
+  name:        'VIGILES',
+  shortName:   'VIGILES',
+  // Identidad híbrida (2026-09-15): VIGILES vende y distribuye equipo
   // (la tienda) y además publica el directorio nacional de empresas y estaciones.
   tagline:     'Venta y distribución de equipo para bomberos y equipo contra incendio en México',
   description: 'Distribuidor de equipo para bomberos y equipo contra incendio en México: trajes, SCBA, cascos, extintores y sistemas contra incendio, con envíos a los 32 estados. Incluye el directorio nacional de empresas y estaciones de bomberos.',
@@ -101,7 +101,7 @@ export function whatsappLink(msg?: string, num: string = SITE.whatsapp): string 
 export function whatsappUrl(msg: string): string {
   return CONTACTO_DIRECTO_ACTIVO
     ? whatsappLink(msg)
-    : `mailto:${SITE.email}?subject=${encodeURIComponent('Cotización — FIREFIGHTERS MX')}&body=${encodeURIComponent(msg)}`;
+    : `mailto:${SITE.email}?subject=${encodeURIComponent('Cotización — VIGILES')}&body=${encodeURIComponent(msg)}`;
 }
 
 /**
@@ -112,7 +112,7 @@ export function whatsappUrl(msg: string): string {
 export function contactoUrl(asunto: string, msg: string): string {
   return CONTACTO_DIRECTO_ACTIVO
     ? whatsappLink(msg)
-    : `mailto:${SITE.email}?subject=${encodeURIComponent(`${asunto} — FIREFIGHTERS MX`)}&body=${encodeURIComponent(msg)}`;
+    : `mailto:${SITE.email}?subject=${encodeURIComponent(`${asunto} — VIGILES`)}&body=${encodeURIComponent(msg)}`;
 }
 
 /** Link de teléfono (o mailto si no hay contacto directo) */

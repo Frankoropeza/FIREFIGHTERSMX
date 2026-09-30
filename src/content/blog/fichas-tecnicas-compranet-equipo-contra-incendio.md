@@ -92,7 +92,7 @@ Los huecos son los que descalifican. No el precio, no la calidad del equipo, no 
 
 Haz una última revisión en cuatro columnas: requisito de las bases, dato del producto ofertado, anexo que lo prueba y responsable de validarlo. La misma matriz sirve al recibir el bien: compara modelo, accesorios, documentación y datos de identificación contra la propuesta adjudicada. Si las bases contemplan instalación o servicio, confirma también qué documento acredita la puesta en marcha y a quién corresponde el mantenimiento.
 
-La ficha se complementa con la [junta de aclaraciones](/blog/junta-aclaraciones-licitacion-equipo-ci/) y con la guía de [licitaciones de equipo contra incendio](/blog/licitaciones-equipo-contra-incendio-mexico-nom-nfpa/). Para contrastar familias de producto, consulta el [catálogo](/productos/) y los [equipos SCBA](/productos/equipos-scba/). FIREFIGHTERS MX puede revisar una requisición y preparar una [cotización](/cotizacion/) con los documentos disponibles para el modelo solicitado.
+La ficha se complementa con la [junta de aclaraciones](/blog/junta-aclaraciones-licitacion-equipo-ci/) y con la guía de [licitaciones de equipo contra incendio](/blog/licitaciones-equipo-contra-incendio-mexico-nom-nfpa/). Para contrastar familias de producto, consulta el [catálogo](/productos/) y los [equipos SCBA](/productos/equipos-scba/). VIGILES puede revisar una requisición y preparar una [cotización](/cotizacion/) con los documentos disponibles para el modelo solicitado.
 
 ## Preguntas frecuentes
 

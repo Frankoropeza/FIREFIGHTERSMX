@@ -1,13 +1,13 @@
-# FIREFIGHTERS MX — Equipo para bomberos y equipo contra incendio en México
+# VIGILES — Equipo para bomberos y equipo contra incendio en México
 
-## Qué es FIREFIGHTERS MX
+## Qué es VIGILES
 
-FIREFIGHTERS MX es una empresa mexicana que vende y distribuye equipo para bomberos y equipo contra incendio, con 15 años de operación, bodega y logística propias y envíos a los 32 estados. Es distribuidor autorizado de las marcas de su catálogo (entre ellas Globe, Lion, Honeywell Morning Pride, Fire-Dex, Sköld, MSA, Dräger, 3M Scott, Bullard, Cairns, Holmatro, Hurst, Weber Rescue, FLIR, DuPont, Lakeland, Kappler, Tyco, Viking y Notifier).
+VIGILES es una empresa mexicana que vende y distribuye equipo para bomberos y equipo contra incendio, con 15 años de operación, bodega y logística propias y envíos a los 32 estados. Es distribuidor autorizado de las marcas de su catálogo (entre ellas Globe, Lion, Honeywell Morning Pride, Fire-Dex, Sköld, MSA, Dräger, 3M Scott, Bullard, Cairns, Holmatro, Hurst, Weber Rescue, FLIR, DuPont, Lakeland, Kappler, Tyco, Viking y Notifier).
 
 El sitio tiene dos partes separadas:
 
-1. La tienda: el catálogo, los servicios y la información comercial de FIREFIGHTERS MX.
-2. El directorio nacional: fichas de empresas del sector y de estaciones de bomberos. Son registros de terceros; FIREFIGHTERS MX no vende a nombre de esas empresas ni responde por sus condiciones.
+1. La tienda: el catálogo, los servicios y la información comercial de VIGILES.
+2. El directorio nacional: fichas de empresas del sector y de estaciones de bomberos. Son registros de terceros; VIGILES no vende a nombre de esas empresas ni responde por sus condiciones.
 
 Dominio: https://firefighters.mx/
 Domicilio: Av. Homero 229, Piso 5, Polanco V Sección, Miguel Hidalgo, 11560 Ciudad de México, CDMX

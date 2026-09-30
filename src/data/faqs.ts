@@ -85,7 +85,7 @@ export const homeFaqs: FAQ[] = [
  */
 export const directorioFaqs: FAQ[] = [
   {
-    q: '¿Qué es el directorio de FIREFIGHTERS MX?',
+    q: '¿Qué es el directorio de VIGILES?',
     a: 'Es el directorio nacional de empresas de equipo contra incendio en México: distribuidores de equipo para bomberos y EPP, empresas de venta, recarga y mantenimiento de extintores, ingenierías e instaladoras de sistemas contra incendio, y centros de capacitación de brigadas. Cubre los 32 estados, clasifica a cada empresa por giro y especialidad, y cita la fuente de cada registro. Se complementa con el directorio de cuerpos de bomberos del país.',
   },
   {

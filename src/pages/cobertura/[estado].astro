@@ -42,7 +42,7 @@ const tieneEmpresas = (await empresasPorEstado(estado.slug)).length > 0;
 const tieneEstaciones = !!(await estadoConEstaciones(estado.slug))?.estaciones.length;
 
 // ── SEO: title (≤60c) y description (≤160c) keyword-first ──────────
-// Patrón: "Equipo Bomberos [Estado] | Distribuidor NFPA | FFMX"
+// Patrón: "Equipo Bomberos [Estado] | Distribuidor NFPA | VIGILES"
 const seoTitle = `Cobertura en ${estado.name}: industria, bomberos y protección civil`;
 const seoDescription =
   `Qué demanda equipo contra incendio en ${estado.name}: corredores industriales, cuerpos de bomberos y organismos de protección civil. ${estado.description}`

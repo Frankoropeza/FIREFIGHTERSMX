@@ -949,7 +949,7 @@ const seoDesc = metaCerrada(product.description, [
               <h2 class="font-display font-bold mb-2" style="color:var(--c-ink);font-size:clamp(1.25rem,2.5vw,1.875rem);line-height:1.1">
                 Proveedores <span style="color:var(--c-accent)">en el directorio</span>
               </h2>
-              <p class="text-sm leading-relaxed mb-4" style="color:var(--c-text-2)">Empresas verificadas del directorio FIREFIGHTERS MX que ofrecen este tipo de equipo. Pide a cada una la hoja técnica y el listado UL/FM del modelo que cotice.</p>
+              <p class="text-sm leading-relaxed mb-4" style="color:var(--c-text-2)">Empresas verificadas del directorio VIGILES que ofrecen este tipo de equipo. Pide a cada una la hoja técnica y el listado UL/FM del modelo que cotice.</p>
             </div>
             <ul class="list-none m-0 px-6 pb-6 grid grid-cols-1 sm:grid-cols-2 gap-px">
               {product.proveedores.map((pv) => (
@@ -992,7 +992,7 @@ const seoDesc = metaCerrada(product.description, [
                   { svg: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>`, t: normaCertificada ? `Certificado ${product.norm}` : 'Documentación de norma', d: normaCertificada ? 'Laboratorio acreditado, verificable' : 'Ficha técnica del fabricante por modelo', color: '#067647' },
                   { svg: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>`, t: 'Ficha técnica oficial', d: 'Datasheet en español del fabricante', color: '#175CD3' },
                   esDistribuidor
-                    ? { svg: `<path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>`, t: 'Carta de distribuidor', d: `FIREFIGHTERSMX distribuidor autorizado ${fabricante}`, color: '#B54708' }
+                    ? { svg: `<path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>`, t: 'Carta de distribuidor', d: `VIGILES distribuidor autorizado ${fabricante}`, color: '#B54708' }
                     : { svg: '', t: 'Manifiesto por partida', d: 'Cumplimiento de norma por partida licitada', color: '#B54708' },
                   { svg: `<path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>`, t: 'Garantía de fábrica', d: 'Refacciones y servicio directo con fábrica', color: '#6941C6' },
                 ].map((d, i) => (

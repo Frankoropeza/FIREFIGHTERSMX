@@ -82,7 +82,7 @@ La falta de un documento no demuestra por sí sola que un equipo nunca recibió 
 
 ---
 
-## Auditoría NOM-002 en FIREFIGHTERS MX
+## Auditoría NOM-002 en VIGILES
 
 Realizamos auditorías previas a inspección STPS con revisión física del centro de trabajo, análisis del expediente documental y entrega de informe con hallazgos priorizados y plan de remediación. Si tienes una visita programada o quieres adelantarte a la siguiente, contáctanos.
 

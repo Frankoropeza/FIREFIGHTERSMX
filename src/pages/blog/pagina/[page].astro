@@ -41,9 +41,9 @@ const { posts, currentPage, totalPages, totalPosts } = Astro.props;
 const canonicalURL = `${SITE.url}/blog/pagina/${currentPage}/`;
 
 const seoMeta = {
-  title: `Blog técnico bomberos — Página ${currentPage} | FIREFIGHTERS MX`,
+  title: `Blog técnico bomberos — Página ${currentPage} | VIGILES`,
   description:
-    `Blog técnico de FIREFIGHTERS MX, página ${currentPage} de ${totalPages}: artículos sobre equipo para bomberos, normas NFPA y NOM, EPP y sistemas contra incendio.`,
+    `Blog técnico de VIGILES, página ${currentPage} de ${totalPages}: artículos sobre equipo para bomberos, normas NFPA y NOM, EPP y sistemas contra incendio.`,
   canonicalURL,
 };
 
@@ -51,7 +51,7 @@ const seoMeta = {
 const collectionSchema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
-  name: `Blog FIREFIGHTERS MX — Página ${currentPage}`,
+  name: `Blog VIGILES — Página ${currentPage}`,
   url: canonicalURL,
   description: seoMeta.description,
   inLanguage: 'es-MX',

@@ -4,7 +4,7 @@ seoTitle: "Compatibilidad de casco y SCBA en bomberos"
 description: "La certificación individual del casco y del SCBA no sustituye una prueba de compatibilidad. Cómo verificar el conjunto antes de una licitación en México."
 pubDate: 2026-02-10
 updatedDate: 2026-09-28
-author: "FIREFIGHTERS MX"
+author: "VIGILES"
 category: "Cascos NFPA"
 tags: ["casco SCBA", "compatibilidad EPP", "NFPA 1970", "máscara facial", "cascos bombero"]
 image:

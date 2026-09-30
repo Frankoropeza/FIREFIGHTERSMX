@@ -152,7 +152,7 @@ const seoMeta = {
     /* La plaza entra también aquí: sin ella, las sucursales de una cadena en
        un mismo municipio compartían description palabra por palabra — 51
        fichas en 21 grupos, medido el 2026-09-11. */
-    : `${e.nombre}: ${g.sustantivo} en ${plaza ? `${plaza}, ` : ''}${e.ciudad}, ${edo.nombre}.${esp.length ? ' ' + esp.map((x) => x.label.toLowerCase()).join(', ') + '.' : ''} Ubicación, contacto y nivel de verificación en el directorio FIREFIGHTERS MX.`),
+    : `${e.nombre}: ${g.sustantivo} en ${plaza ? `${plaza}, ` : ''}${e.ciudad}, ${edo.nombre}.${esp.length ? ' ' + esp.map((x) => x.label.toLowerCase()).join(', ') + '.' : ''} Ubicación, contacto y nivel de verificación en el directorio VIGILES.`),
   canonicalURL, noindex,
   ...(ogImagenVIP ? { ogImage: ogImagenVIP } : {}),
 };
@@ -193,7 +193,7 @@ const heroAuto = [
 const heroParrafos = parrafos.length ? parrafos.slice(0, 2) : heroAuto;
 const perfilParrafos = parrafos.length > 2 ? parrafos.slice(2) : (parrafos.length ? [] : [g.intro[0]]);
 
-const waMsg = `Hola, vi la ficha de ${e.nombre} en el directorio FIREFIGHTERS MX y quiero reclamarla / actualizar sus datos.`;
+const waMsg = `Hola, vi la ficha de ${e.nombre} en el directorio VIGILES y quiero reclamarla / actualizar sus datos.`;
 const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>`;
 ---
 <BaseLayout {...seoMeta} schema={faqSchemaFicha ? [breadcrumbSchema, businessSchema, faqSchemaFicha] : [breadcrumbSchema, businessSchema]}>
@@ -378,7 +378,7 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
           <p class="font-display font-bold text-sm mb-2" style="color:var(--c-ink)">¿Es tu empresa?</p>
           <p class="text-xs leading-relaxed mb-4" style="color:var(--c-text-2)">Reclama la ficha, completa tus datos y obtén el sello de verificación. Las fichas destacadas aparecen primero en {edo.nombre}.</p>
           <a href="/empresas/registro/" class="btn btn-gold btn-sm w-full text-center">Reclamar esta ficha</a>
-          <a href={whatsappUrl(waMsg)} target="_blank" rel="noopener noreferrer" class="block text-center mt-3 font-display text-[11px] uppercase tracking-wider hover:text-[var(--c-accent)]" style="color:var(--c-accent)">Escribir a FIREFIGHTERS MX</a>
+          <a href={whatsappUrl(waMsg)} target="_blank" rel="noopener noreferrer" class="block text-center mt-3 font-display text-[11px] uppercase tracking-wider hover:text-[var(--c-accent)]" style="color:var(--c-accent)">Escribir a VIGILES</a>
         </div>
 
         <div class="p-6" style="background:var(--c-surface);border:1px solid var(--c-line-strong)">
