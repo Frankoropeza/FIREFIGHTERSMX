@@ -2,16 +2,79 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import { brands } from '@data/brands';
+import { brandPages } from '@data/brandPages';
+import { featuredProducts } from '@data/products';
+import { allCategories } from '@data/categories';
+import { marcaDeBrand } from '@data/interlinking';
+import { imagenLinea, lineaPorSlug } from '@lib/linea-card';
+import LineaCard from '@components/products/LineaCard.astro';
+import L2Sidebar from '@components/l2/L2Sidebar.astro';
+import L2Cotizar from '@components/l2/L2Cotizar.astro';
+import { bloqueCategorias, bloqueMarcas, bloqueIndustrias, bloqueServicios, bloqueGuias, anchoFila, type L2Link } from '@lib/l2';
+import '@styles/l2.css';
 import { SITE, whatsappUrl, CANAL_CONTACTO } from '@config/site';
 
 const canonicalURL = `${SITE.url}/marcas/`;
 
 const seoMeta = {
-  title: `Marcas de Equipo para Bomberos — FIREFIGHTERS MX`,
+  title: `Marcas de Equipo para Bomberos — ${SITE.metaName}`,
   description:
     'Distribuidores autorizados de MSA Safety, Dräger, 3M Scott, Globe, Holmatro, Bullard, Honeywell y más marcas líderes en equipo para bomberos. Cotización en 24 h.',
   canonicalURL,
 };
+
+/* ─── Datos de la plantilla L2 (2026-10) ──────────────────────── */
+const hrefMarca = (slug: string) => `/marcas/${slug}/`;
+/* Categorías reales de cada marca (derivadas de sus modelos en el catálogo) */
+const catsDe = (slug: string) => [...new Set(featuredProducts
+  .filter((p) => marcaDeBrand(p.brand)?.href === hrefMarca(slug))
+  .map((p) => p.href.split('/').filter(Boolean)[1])
+  .filter((c): c is string => !!c && allCategories.some((x) => x.slug === c)))];
+const modelosDe = (slug: string) => featuredProducts.filter((p) => marcaDeBrand(p.brand)?.href === hrefMarca(slug)).length;
+const marcas = brands
+  .map((b) => {
+    const cats = catsDe(b.slug);
+    const lineas = brandPages
+      .filter((bp) => marcaDeBrand(bp.brand)?.href === hrefMarca(b.slug))
+      .map((bp) => {
+        /* «Bullard» a secas no dice qué línea es: se completa con la categoría. */
+        const n = (x: string) => x.toLowerCase().replace(/[^a-z0-9]/g, '');
+        const soloMarca = n(b.name).includes(n(bp.brandLabel));
+        const cat = lineaPorSlug(bp.categorySlug)?.titulo ?? allCategories.find((x) => x.slug === bp.categorySlug)?.label ?? '';
+        const catMin = cat.split(' ').map((w) => (/^[(]?[A-ZÁÉÍÓÚÑ0-9-]{2,}[)]?$/.test(w) ? w : w.toLowerCase())).join(' ');
+        return { label: soloMarca && cat ? `${bp.brandLabel} en ${catMin}` : bp.brandLabel, href: `/productos/${bp.categorySlug}/${bp.slug}/` };
+      });
+    const hijas = [...lineas, ...cats.map((c) => ({ label: lineaPorSlug(c)?.titulo ?? allCategories.find((x) => x.slug === c)!.label, href: `/productos/${c}/` }))];
+    return { ...b, cats, hijas, modelos: modelosDe(b.slug), imagen: cats.map((c) => imagenLinea(c)).find(Boolean) ?? null };
+  })
+  .sort((a, b) => b.modelos - a.modelos || a.name.localeCompare(b.name, 'es'));
+
+/* Marcas por categoría: cada categoría con las marcas que tienen página propia */
+const porCategoria = allCategories
+  .map((c) => ({ c, marcas: marcas.filter((m) => m.cats.includes(c.slug)) }))
+  .filter((x) => x.marcas.length > 0);
+
+const secciones = [
+  { id: 'marcas', label: 'Marcas' },
+  { id: 'por-categoria', label: 'Por categoría' },
+  { id: 'pedido-especial', label: 'Pedido especial' },
+];
+const GUIAS_MARCAS: L2Link[] = [
+  { label: 'Mejores marcas de equipo para bomberos', href: '/blog/mejores-marcas-equipo-bomberos-mexico/' },
+  { label: 'Cascos para bombero: comparativa de marcas', href: '/blog/cascos-bombero-comparativa-marcas-2026/' },
+  { label: 'MSA G1 vs Dräger PSS 7000', href: '/blog/msa-g1-vs-drager-pss7000-scba/' },
+  { label: 'FLIR vs MSA vs Bullard: cámaras térmicas', href: '/blog/flir-vs-msa-vs-bullard-camaras-termicas/' },
+  { label: 'Holmatro, Hurst y Weber: herramientas de rescate', href: '/blog/herramientas-hidraulicas-rescate-holmatro-hurst-weber/' },
+  { label: 'Botas de bombero: HAIX, Lion Apparel y Jolly', href: '/blog/botas-bombero-comparativa-haix-lion-apparel-jolly/' },
+  { label: 'Normas NFPA y NOM aplicables', href: '/certificaciones/' },
+];
+const tambien = [
+  { label: 'Equipo para bomberos', desc: 'Catálogo NFPA y NOM por categoría', href: '/productos/' },
+  { label: 'Servicios profesionales', desc: 'Mantenimiento, capacitación e instalación', href: '/servicios/' },
+  { label: 'Guía de normas y certificaciones', desc: 'Qué NOM y NFPA aplican según tu giro', href: '/certificaciones/' },
+  { label: 'Soporte para licitaciones', desc: 'Cartas de fabricante y fichas técnicas', href: '/licitaciones/' },
+  { label: 'Cobertura nacional', desc: 'Entrega en los 32 estados', href: '/cobertura/' },
+];
 
 /* ─── JSON-LD ──────────────────────────────────────────────── */
 const breadcrumbSchema = {
@@ -22,9 +85,30 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 2, name: 'Marcas', item: canonicalURL },
   ],
 };
+
+/* CollectionPage + ItemList de fabricantes (antes la página sólo tenía BreadcrumbList) */
+const collectionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  '@id': `${canonicalURL}#collection`,
+  name: 'Marcas de equipo para bomberos y contra incendio',
+  description: seoMeta.description,
+  url: canonicalURL,
+  inLanguage: 'es-MX',
+  isPartOf: { '@id': `${SITE.url}/#website` },
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: marcas.length,
+    itemListElement: marcas.map((m, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      item: { '@type': 'Brand', name: m.name, url: `${SITE.url}${hrefMarca(m.slug)}` },
+    })),
+  },
+};
 ---
 
-<BaseLayout {...seoMeta} schema={[breadcrumbSchema]}>
+<BaseLayout {...seoMeta} schema={[breadcrumbSchema, collectionSchema]}>
 
   <!-- Breadcrumb -->
   <nav class="py-3" style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line)" aria-label="Breadcrumb">
@@ -87,66 +171,89 @@ const breadcrumbSchema = {
   <!-- Accesos rápidos (interlinking) -->
   <QuickLinksBar />
 
-  <!-- Marcas -->
-  <section class="section" style="background:var(--c-bg)" aria-labelledby="marcas-title">
-    <div class="container-site">
+  <!-- Plantilla L2: columna principal + barra lateral -->
+  <div class="container-site l2-shell">
+    <L2Sidebar
+      resumen="Navegar las marcas"
+      secciones={secciones}
+      bloques={[bloqueMarcas(), bloqueCategorias(), bloqueServicios(), bloqueIndustrias(), bloqueGuias(GUIAS_MARCAS, 'Comparativas y normas')]}
+      cotizar={{ titulo: 'Cotiza por marca', texto: 'Dinos la marca y el modelo, o la especificación técnica que necesitas cumplir.', msg: 'Hola, quiero información sobre las marcas que distribuyen.' }}
+    />
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
-        <div>
+    <div class="l2-main">
+
+      <!-- Marcas -->
+      <section id="marcas" class="l2-sec" aria-labelledby="marcas-title">
+        <header class="l2-sec-head">
           <span class="section-eyebrow mb-4 inline-flex">Fabricantes</span>
-          <h2 id="marcas-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
-            Marcas líderes,<br/>
-            <span style="color:var(--c-accent)">respaldo de fábrica.</span>
-          </h2>
-        </div>
-        <div style="padding-left:1.75rem">
-          <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">
+          <h2 id="marcas-title" class="l2-h2">Marcas de equipo para bomberos: líderes con respaldo de fábrica</h2>
+          <p class="l2-lead">
             Trabajamos directo con fabricantes del sector para garantizar
-            equipo original, repuestos verificables y soporte técnico. Si no encuentras una marca
-            específica, la conseguimos: manejamos pedidos especiales sobre especificación técnica.
+            equipo original, repuestos verificables y soporte técnico.
           </p>
-        </div>
-      </div>
+        </header>
+        <ul class="l2-grid" role="list">
+          {marcas.map((m, i) => (
+            <li class={anchoFila(i, marcas.length) || undefined}>
+              <LineaCard
+                href={hrefMarca(m.slug)}
+                norma={[m.country, ...m.norms.slice(0, 1)].filter(Boolean).join(' · ')}
+                titulo={m.name}
+                texto={m.description}
+                imagen={m.imagen}
+                imagenAlt={`Equipo ${m.name} para bomberos y contra incendio`}
+                hijas={m.hijas}
+                cta={`Equipo ${m.name}`}
+                nivel="h3"
+                subLabel="Líneas y categorías"
+              />
+            </li>
+          ))}
+        </ul>
+      </section>
 
-      <div class="card-grid card-grid--cells" >
-        {brands.map((brand) => {
-          const monogram = brand.name.replace(/[^A-Za-z0-9]/g, '').charAt(0).toUpperCase();
-          const country = brand.country?.replace(/[\u{1F1E6}-\u{1F1FF}]/gu, '').trim();
-          return (
-            <a
-              href={`/marcas/${brand.slug}`}
-              class="grid-cell flex items-start gap-4 p-6 group"
-              style="text-decoration:none"
-            >
-              <span
-                class="flex items-center justify-center rounded-full shrink-0 font-display font-bold"
-                style="width:48px;height:48px;background:rgba(200,16,46,0.1);border:1.5px solid rgba(200,16,46,0.35);color:var(--c-accent);font-size:1.25rem"
-              >
-                {monogram}
-              </span>
-              <div>
-                <h3
-                  class="font-display font-bold mb-1 group-hover:text-[var(--c-accent)]"
-                  style="color:var(--c-ink)"
-                >
-                  {brand.name}
-                </h3>
-                <p class="text-sm leading-relaxed mb-2" style="color:var(--c-muted)">
-                  {brand.description}
-                </p>
-                <div class="flex items-center gap-2 flex-wrap">
-                  {country && <span class="badge badge-dark">{country}</span>}
-                  <span class="text-[10px] font-display" style="color:var(--forge-300)">
-                    Equipo {brand.name}
-                  </span>
-                </div>
-              </div>
-            </a>
-          );
-        })}
-      </div>
+      <!-- Marcas por categoría -->
+      <section id="por-categoria" class="l2-sec" aria-labelledby="por-categoria-title">
+        <header class="l2-sec-head">
+          <span class="section-eyebrow mb-4 inline-flex">Marcas por categoría</span>
+          <h2 id="por-categoria-title" class="l2-h2">Qué marcas encuentras en cada categoría de equipo</h2>
+          <p class="l2-lead">Fabricantes con ficha en el catálogo, agrupados por la categoría de equipo contra incendio que surten.</p>
+        </header>
+        <ul class="mc-list" role="list">
+          {porCategoria.map(({ c, marcas: ms }) => (
+            <li class="mc-row">
+              <a href={`/productos/${c.slug}/`} class="mc-cat">{lineaPorSlug(c.slug)?.titulo ?? c.label}</a>
+              <ul class="mc-brands" role="list">
+                {ms.map((m) => <li><a href={hrefMarca(m.slug)} class="mc-brand">{m.name}</a></li>)}
+              </ul>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <!-- Pedido especial + cross-links -->
+      <L2Cotizar
+        id="pedido-especial"
+        eyebrow="Pedido especial"
+        titulo="¿Buscas una marca"
+        destacado="que no aparece?"
+        texto="Si no encuentras una marca específica, la conseguimos: manejamos pedidos especiales sobre especificación técnica."
+        cta={{ label: `Consultar por ${CANAL_CONTACTO}`, msg: 'Hola, busco una marca de equipo contra incendio que no aparece en su sitio.' }}
+        tambien={tambien}
+      />
 
     </div>
-  </section>
+  </div>
 
 </BaseLayout>
+
+<style>
+  .mc-list { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--c-line); }
+  .mc-row { display: grid; gap: .5rem; padding: 1rem 0; border-bottom: 1px solid var(--c-line); }
+  @media (min-width: 768px) { .mc-row { grid-template-columns: 16rem minmax(0, 1fr); gap: 1.5rem; align-items: baseline; } }
+  .mc-cat { font-family: var(--font-display); font-size: .9375rem; font-weight: 600; color: var(--c-ink); text-decoration: none; transition: color .15s; }
+  .mc-cat:hover, .mc-cat:focus-visible { color: var(--c-accent); }
+  .mc-brands { display: flex; flex-wrap: wrap; gap: .375rem .5rem; margin: 0; padding: 0; list-style: none; }
+  .mc-brand { display: inline-flex; align-items: center; min-height: 2rem; padding: .25rem .75rem; font-size: .8125rem; font-weight: 500; color: var(--c-ink-2); text-decoration: none; background: var(--c-bg-alt); border: 1px solid var(--c-line); border-radius: var(--radius-btn); transition: color .15s, border-color .15s, background-color .15s; }
+  .mc-brand:hover, .mc-brand:focus-visible { color: var(--c-accent); border-color: var(--c-accent); background: var(--c-surface); }
+</style>
