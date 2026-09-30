@@ -1,7 +1,15 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
-import BlogCard from '@components/blog/BlogCard.astro';
+import LineaCard from '@components/products/LineaCard.astro';
+import L2Sidebar from '@components/l2/L2Sidebar.astro';
+import L2Cotizar from '@components/l2/L2Cotizar.astro';
+import { bloqueCategorias, bloqueServicios, bloqueIndustrias, anchoFila as anchoFilaBlog, type L2Bloque } from '@lib/l2';
+import { BLOG_POR_CATEGORIA } from '@lib/enlaces-directorio';
+import { portadaBlog } from '@lib/portada-blog';
+import { allCategories } from '@data/categories';
+import { lineaPorSlug } from '@lib/linea-card';
+import '@styles/l2.css';
 import { getCollection } from 'astro:content';
 import { SITE, whatsappUrl, CANAL_CONTACTO } from '@config/site';
 
@@ -35,10 +43,52 @@ const recursos = [
   { label: 'Conoce la empresa', desc: 'Quiénes somos y cobertura', href: '/empresa' },
 ];
 
+/* ─── Plantilla L2 (2026-10) ─────────────────────────────────── */
+/* Categoría del blog → categorías de producto que trata (inverso de BLOG_POR_CATEGORIA) */
+const productosDeCategoriaBlog = (catBlog: string) => Object.entries(BLOG_POR_CATEGORIA)
+  .filter(([, cats]) => cats.includes(catBlog))
+  .map(([slug]) => allCategories.find((c) => c.slug === slug))
+  .filter((c): c is NonNullable<typeof c> => !!c)
+  .slice(0, 2)
+  .map((c) => ({ label: lineaPorSlug(c.slug)?.titulo ?? c.label, href: `/productos/${c.slug}/` }));
+const minutos = (post: (typeof allPosts)[number]) => Math.ceil((post.body ?? '').split(' ').length / 200);
+const tarjeta = (post: (typeof allPosts)[number]) => {
+  const img = portadaBlog(post);
+  return {
+    href: `/blog/${post.id}/`,
+    norma: `${post.data.category} · ${minutos(post)} min de lectura`,
+    titulo: post.data.title,
+    texto: post.data.description,
+    imagen: img?.url ?? null,
+    imagenAlt: img?.alt ?? post.data.title,
+    hijas: productosDeCategoriaBlog(post.data.category),
+    cta: `Guía: ${post.data.tags?.[0] ?? post.data.category}`,
+  };
+};
+const secciones = [
+  { id: 'articulos', label: 'Artículos' },
+  { id: 'especialista', label: 'Especialista' },
+];
+const bloquesBlog: L2Bloque[] = [
+  {
+    id: 'blog-categorias', titulo: 'Categorías del blog', meta: `${allPosts.length} artículos técnicos`,
+    grupos: [{ links: categories.map((c) => ({ label: c, href: `/blog/categoria/${slugify(c)}/`, n: categoryCounts[c] })) }],
+  },
+  {
+    id: 'blog-destacados', titulo: 'Artículos destacados',
+    grupos: [{ links: allPosts.slice(0, 5).map((p) => ({ label: p.data.title, href: `/blog/${p.id}/` })) }],
+  },
+  {
+    id: 'blog-temas', titulo: 'Temas frecuentes',
+    grupos: [{ links: allTags.map((t) => ({ label: t, href: `/blog/tag/${slugify(t)}/` })) }],
+  },
+  bloqueCategorias(), bloqueServicios(), bloqueIndustrias(),
+];
+
 const canonicalURL = `${SITE.url}/blog/`;
 
 const seoMeta = {
-  title: `Blog Técnico — Guías NFPA y NOM para Bomberos | ${SITE.metaName}`,
+  title: `Blog Técnico NFPA y NOM para Bomberos | ${SITE.metaName}`,
   description:
     'Blog técnico especializado en equipos para bomberos: guías NFPA 1970, normatividad NOM-002-STPS, extintores, SCBA, trajes y sistemas contra incendio en México.',
   canonicalURL,
@@ -57,7 +107,7 @@ const collectionSchema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
   '@id': `${canonicalURL}#collection`,
-  name: 'Blog técnico FIREFIGHTERS MX',
+  name: `Blog técnico ${SITE.metaName}`,
   description: seoMeta.description,
   url: canonicalURL,
   inLanguage: 'es-MX',
@@ -134,200 +184,81 @@ const collectionSchema = {
   <!-- Accesos rápidos (interlinking) -->
   <QuickLinksBar />
 
-  <!-- Artículos + Sidebar -->
-  <section id="articulos" class="section" style="background:var(--c-bg)" aria-labelledby="blog-title">
-    <div class="container-site">
+  <!-- Plantilla L2: columna principal + barra lateral -->
+  <div class="container-site l2-shell">
+    <L2Sidebar
+      resumen="Navegar el blog"
+      secciones={secciones}
+      bloques={bloquesBlog}
+      accion={{ titulo: '¿Dudas sobre normatividad?', texto: 'Un especialista te orienta sobre la norma y el equipo correcto para tu operación.', botones: [{ label: `Preguntar por ${CANAL_CONTACTO}`, href: whatsappUrl('Hola, tengo una duda técnica sobre normatividad contra incendio.'), primario: true }, { label: 'Solicitar cotización de equipo contra incendio', href: '/cotizacion/' }] }}
+    />
 
-      {allPosts.length === 0 ? (
-        <div class="text-center py-20" style="color:var(--c-muted)">
-          <p class="text-lg mb-2" style="color:var(--c-text-2)">Blog próximamente</p>
-          <p class="text-sm">Estamos preparando guías técnicas especializadas para el sector bomberos.</p>
-        </div>
-      ) : (
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
+    <div class="l2-main">
 
-          <!-- ── Columna principal ────────────────────────────── -->
-          <div class="lg:col-span-8">
-
-            <div class="mb-8">
+      <!-- Artículos -->
+      <section id="articulos" class="l2-sec" aria-labelledby="blog-title">
+        {allPosts.length === 0 ? (
+          <div class="text-center py-20" style="color:var(--c-muted)">
+            <p class="text-lg mb-2" style="color:var(--c-text-2)">Blog próximamente</p>
+            <p class="text-sm">Estamos preparando guías técnicas especializadas para el sector bomberos.</p>
+          </div>
+        ) : (
+          <Fragment>
+            <header class="l2-sec-head">
               <span class="section-eyebrow mb-4 inline-flex">Últimas publicaciones</span>
-              <h2 id="blog-title" class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">
-                Artículos <span style="color:var(--c-accent)">técnicos</span>
-              </h2>
-            </div>
+              <h2 id="blog-title" class="l2-h2">Artículos técnicos sobre equipo contra incendio y normativa</h2>
+              <p class="l2-lead">Guías de selección, normatividad NFPA y NOM y criterios de mantenimiento, ordenados del más reciente al más antiguo.</p>
+            </header>
 
             <!-- Filtros por categoría (JS para UX, href para SEO/accesibilidad) -->
             <div class="flex flex-wrap gap-2 mb-8" id="blog-filters" role="group" aria-label="Filtrar por categoría">
-              <a href="/blog" class="blog-filter is-active" data-filter="all" style="text-decoration:none">Todos</a>
+              <a href="/blog/" class="blog-filter is-active" data-filter="all">Todos</a>
               {categories.map((cat) => (
-                <a
-                  href={`/blog/categoria/${slugify(cat)}`}
-                  class="blog-filter"
-                  data-filter={cat}
-                  style="text-decoration:none"
-                >
-                  {cat}
-                </a>
+                <a href={`/blog/categoria/${slugify(cat)}/`} class="blog-filter" data-filter={cat}>{cat}</a>
               ))}
             </div>
 
-            <!-- Destacado -->
-            {featured && (
-              <div class="blog-item mb-6" data-category={featured.data.category}>
-                <BlogCard post={featured} featured={true} />
-              </div>
-            )}
-
-            <!-- Grid -->
-            <div class="card-grid" id="blog-grid">
-              {rest.map((post) => (
-                <div class="blog-item" data-category={post.data.category}>
-                  <BlogCard post={post} />
-                </div>
+            <ul class="l2-grid" id="blog-grid" role="list">
+              {featured && (
+                <li class="blog-item l2-span-6" data-category={featured.data.category}>
+                  <LineaCard {...tarjeta(featured)} nivel="h3" max={2} subLabel="Equipo relacionado" />
+                </li>
+              )}
+              {rest.map((post, i) => (
+                <li class={`blog-item ${anchoFilaBlog(i, rest.length)}`} data-category={post.data.category}>
+                  <LineaCard {...tarjeta(post)} nivel="h3" max={2} subLabel="Equipo relacionado" />
+                </li>
               ))}
-            </div>
+            </ul>
 
             <p id="blog-empty" class="py-12 text-center text-sm" style="color:var(--c-muted)" hidden>
               No hay artículos en esta categoría por ahora.
             </p>
-          </div>
+          </Fragment>
+        )}
+      </section>
 
-          <!-- ── Sidebar ──────────────────────────────────────── -->
-          <aside class="lg:col-span-4">
-            <div class="flex flex-col gap-8 lg:sticky" style="top:124px">
-
-              <!-- Categorías (links reales  SEO crawlable) -->
-              <div style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
-                <h3 class="font-display font-bold text-sm px-5 py-4" style="color:var(--c-accent);border-bottom:1px solid var(--c-line)">
-                  Categorías
-                </h3>
-                <ul class="flex flex-col list-none m-0 p-0">
-                  <li>
-                    <a href="/blog" class="side-cat w-full flex items-center justify-between gap-3 px-5 py-3 is-active" style="text-decoration:none">
-                      <span class="font-display text-sm">Todas</span>
-                      <span class="text-xs" style="color:var(--forge-300)">{allPosts.length}</span>
-                    </a>
-                  </li>
-                  {categories.map((cat) => (
-                    <li style="border-top:1px solid var(--c-line)">
-                      <a
-                        href={`/blog/categoria/${slugify(cat)}`}
-                        class="side-cat w-full flex items-center justify-between gap-3 px-5 py-3"
-                        style="text-decoration:none"
-                      >
-                        <span class="font-display text-sm">{cat}</span>
-                        <span class="text-xs" style="color:var(--forge-300)">{categoryCounts[cat]}</span>
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <!-- Artículos destacados (sin fecha) -->
-              <div style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
-                <h3 class="font-display font-bold text-sm px-5 py-4" style="color:var(--c-accent);border-bottom:1px solid var(--c-line)">
-                  Artículos destacados
-                </h3>
-                <ul class="flex flex-col list-none m-0 p-0">
-                  {allPosts.slice(0, 5).map((post) => (
-                    <li style="border-top:1px solid var(--c-line)">
-                      <a href={`/blog/${post.id}`} class="side-post group flex flex-col gap-1 px-5 py-4">
-                        <span class="text-[10px] font-display font-semibold uppercase tracking-widest" style="color:var(--forge-300)">{post.data.category}</span>
-                        <span class="font-display font-semibold text-sm leading-snug group-hover:text-[var(--c-accent)]" style="color:var(--c-ink-2)">{post.data.title}</span>
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <!-- Temas frecuentes (links reales  SEO crawlable) -->
-              {allTags.length > 0 && (
-                <div style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
-                  <h3 class="font-display font-bold text-sm px-5 py-4" style="color:var(--c-accent);border-bottom:1px solid var(--c-line)">
-                    Temas frecuentes
-                  </h3>
-                  <div class="flex flex-wrap gap-2 p-5">
-                    {allTags.map((tag) => (
-                      <a
-                        href={`/blog/tag/${slugify(tag)}`}
-                        class="badge badge-dark text-[10px] hover:bg-[var(--c-accent)] hover:text-white"
-                        style="text-decoration:none"
-                      >
-                        #{tag}
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              <!-- Recursos (interlinking) -->
-              <div style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
-                <h3 class="font-display font-bold text-sm px-5 py-4" style="color:var(--c-accent);border-bottom:1px solid var(--c-line)">
-                  También te puede servir
-                </h3>
-                <ul class="flex flex-col list-none m-0 p-0">
-                  {recursos.map((r) => (
-                    <li style="border-top:1px solid var(--c-line)">
-                      <a href={r.href} class="side-post group flex items-center justify-between gap-3 px-5 py-4">
-                        <span class="flex flex-col gap-0.5">
-                          <span class="font-display font-semibold text-sm group-hover:text-[var(--c-accent)]" style="color:var(--c-ink-2)">{r.label}</span>
-                          <span class="text-xs" style="color:var(--c-muted)">{r.desc}</span>
-                        </span>
-                        
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <!-- CTA -->
-              <div class="p-6 text-center" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
-                <h3 class="font-display font-bold text-lg mb-2" style="color:var(--c-ink)">¿Dudas sobre normatividad?</h3>
-                <p class="text-xs leading-relaxed mb-5" style="color:var(--c-text-2)">
-                  Un especialista te orienta sobre la norma y el equipo correcto para tu operación.
-                </p>
-                <div class="flex flex-col gap-2">
-                  <a href={whatsappUrl('Hola, tengo una duda técnica sobre normatividad contra incendio.')} target="_blank" rel="noopener" class="btn btn-primary btn-sm w-full">
-                    Preguntar por {CANAL_CONTACTO}
-                  </a>
-                  <a href="/cotizacion" class="btn btn-ghost btn-sm w-full">Solicitar cotización de equipo contra incendio</a>
-                </div>
-              </div>
-
-            </div>
-          </aside>
-
-        </div>
-      )}
+      <!-- Especialista + cross-links -->
+      <L2Cotizar
+        id="especialista"
+        eyebrow="Asesoría técnica"
+        titulo="¿Dudas sobre"
+        destacado="normatividad?"
+        texto="Un especialista te orienta sobre la norma y el equipo correcto para tu operación."
+        cta={{ label: `Preguntar por ${CANAL_CONTACTO}`, msg: 'Hola, tengo una duda técnica sobre normatividad contra incendio.' }}
+        tambien={recursos}
+      />
 
     </div>
-  </section>
+  </div>
 
 </BaseLayout>
 
 <style>
-  /* Filtros por categoría — botones chip (sin transición, hover instantáneo) */
-  .blog-filter {
-    font-family: var(--font-display);
-    font-size: 0.8125rem;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    padding: 0.4rem 0.9rem;
-    border-radius: 2px;
-    background: var(--c-surface);
-    color: var(--c-text-2);
-    border: 1px solid var(--c-line-strong);
-    cursor: pointer;
-  }
-  .blog-filter:hover { color: var(--c-ink); border-color: var(--c-line-strong); }
-  .blog-filter.is-active { background: rgba(200,16,46,0.15); color: var(--c-accent); border-color: rgba(200,16,46,0.5); }
-
-  /* Categorías y posts del sidebar */
-  .side-cat { background: transparent; color: var(--c-text); border: none; cursor: pointer; text-align: left; }
-  .side-cat:hover { background: var(--c-surface); color: var(--c-ink); }
-  .side-cat.is-active { background: rgba(200,16,46,0.1); color: var(--c-accent); }
-  .side-cat.is-active .text-xs { color: var(--c-accent) !important; }
-  .side-post:hover { background: var(--c-surface); }
+  /* Filtros por categoría — botones chip (sólo cambian color, fondo y borde) */
+  .blog-filter { font-family: var(--font-display); font-size: .8125rem; font-weight: 600; padding: .4rem .9rem; border-radius: var(--radius-btn); background: var(--c-surface); color: var(--c-text-2); border: 1px solid var(--c-line-strong); text-decoration: none; transition: color .15s, background-color .15s, border-color .15s; }
+  .blog-filter:hover { color: var(--c-ink); }
+  .blog-filter.is-active { background: rgba(200,16,46,0.1); color: var(--c-accent); border-color: rgba(200,16,46,0.5); }
 </style>
 
 <script>
