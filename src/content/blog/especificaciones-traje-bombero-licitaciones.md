@@ -1,5 +1,6 @@
 ---
 title: "Cómo Especificar Trajes para Bombero en una Licitación Pública"
+seoTitle: "Especificaciones de trajes para bombero en licitaciones"
 description: "Cómo redactar especificaciones técnicas de trajes en bases de licitación y CompraNet: requisitos NFPA 1970, criterios de evaluación y errores comunes."
 pubDate: 2026-04-03
 updatedDate: 2026-09-28

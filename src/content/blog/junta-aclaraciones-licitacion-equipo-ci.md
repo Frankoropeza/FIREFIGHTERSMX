@@ -1,6 +1,6 @@
 ---
 title: "Junta de aclaraciones en licitaciones de equipo CI: cómo preparar las preguntas que realmente importan"
-seoTitle: "Junta de aclaraciones en licitaciones de equipo contra incendio"
+seoTitle: "Junta de aclaraciones: licitación de equipo contra incendio"
 description: "Cómo preparar preguntas técnicas para una junta de aclaraciones de equipo contra incendio y documentar respuestas antes de presentar propuesta."
 pubDate: 2026-03-21
 updatedDate: 2026-09-28

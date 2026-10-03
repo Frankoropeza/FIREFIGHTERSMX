@@ -9,7 +9,7 @@ export interface Props {
   ogImage?: string;
   ogType?: string;
   noindex?: boolean;
-  /** true = no anexar " | FIREFIGHTERS MX" (home: título de 3 módulos de keywords) */
+  /** Obsoleto (2026-10-03): ya no se anexa marca a ningún title. Se acepta por compatibilidad. */
   noBrandSuffix?: boolean;
   schema?: object | object[];
 }
@@ -21,33 +21,24 @@ const {
   ogImage = '/images/og-default.jpg',
   ogType = 'website',
   noindex = false,
-  noBrandSuffix = false,
   schema,
 } = Astro.props;
 
 /*
-  El sufijo de marca sólo se anexa si el <title> sigue cabiendo en los ~70
-  caracteres que Google alcanza a mostrar. En 1,419 fichas el nombre de la
-  empresa ya se come el renglón y el sufijo únicamente provocaba que el
-  buscador truncara o reescribiera el título; ahí vale más el nombre.
+  Regla de Frank (2026-10-03): títulos meta y meta descriptions sólo con
+  palabras clave de la página y su sección; NUNCA la marca. No se anexa sufijo
+  de marca y tampoco se emiten og:site_name, author, publisher ni copyright.
+  scripts/verificar-metas.mjs (postbuild) rompe el build si la marca reaparece.
 */
-const tituloBase = acortarTitulo(title);
-const tituloConMarca = `${tituloBase} | ${SITE.metaName}`;
-const fullTitle =
-  noBrandSuffix || tituloBase.includes(SITE.metaName)
-    ? tituloBase
-    : tituloConMarca.length <= TITULO_MAX
-      ? tituloConMarca
-      : tituloBase;
+const fullTitle = acortarTitulo(title, TITULO_MAX);
 /* Catálogo (/productos/, /marcas/): la meta se cierra en frase completa ≤155
    caracteres, sin «…» ni cortes a media palabra (auditoría del catálogo 2026-09-28).
    El resto del sitio conserva el recorte a 160 con elipsis. */
 const esCatalogo = /^\/(productos|marcas)(\/|$)/.test(Astro.url.pathname);
+/* Todo el sitio: frase cerrada ≤155, sin «…» ni cortes a media palabra. */
 const metaDescription = esCatalogo
   ? metaCerrada(description, ['Ficha técnica y cotización en todo México'])
-  : description.length > 160
-    ? `${description.slice(0, 157).replace(/\s+[^\s]*$/, '').replace(/[,:;—\-·]+$/, '')}…`
-    : description;
+  : metaCerrada(description);
 const absoluteOgImageRaw = ogImage.startsWith('http') ? ogImage : `https://firefighters.mx${ogImage}`;
 
 // OG requiere formatos universales (WhatsApp/Facebook/Twitter no soportan AVIF/WebP):
@@ -149,7 +140,6 @@ const webSiteSchema = {
 <meta property="og:image:height" content="630" />
 <meta property="og:image:type" content={ogMimeType} />
 <meta property="og:image:alt" content={fullTitle} />
-<meta property="og:site_name" content="FIREFIGHTERS MX" />
 <meta property="og:locale" content="es_MX" />
 
 <!-- Twitter Card -->
@@ -160,12 +150,9 @@ const webSiteSchema = {
 <meta name="twitter:image" content={absoluteOgImage} />
 
 <!-- Additional SEO -->
-<meta name="author" content="FIREFIGHTERS MX" />
-<meta name="publisher" content="FIREFIGHTERS MX" />
 <meta name="language" content="es-MX" />
 <meta name="geo.region" content="MX" />
 <meta name="geo.placename" content="México" />
-<meta name="copyright" content={`© ${new Date().getFullYear()} FIREFIGHTERS MX`} />
 
 <!-- Structured Data (JSON-LD) -->
 <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />

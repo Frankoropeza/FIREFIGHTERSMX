@@ -1,7 +1,7 @@
 ---
 title: "Traje de Bombero Fabricado en México: Qué Significa \"Equivalente a NFPA\" y Cuándo Sirve"
 seoTitle: "Traje de bombero hecho en México: ¿equivale a NFPA?"
-description: "La diferencia entre un traje certificado por laboratorio acreditado y uno declarado equivalente a NFPA, y cuándo cada uno es la decisión correcta en México."
+description: "Diferencia entre un traje de bombero certificado por laboratorio acreditado bajo NFPA 1970 y uno fabricado en México declarado equivalente a NFPA."
 pubDate: 2026-08-05
 updatedDate: 2026-09-28
 author: "Ing. Marco García"

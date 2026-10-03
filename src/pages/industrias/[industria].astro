@@ -66,10 +66,12 @@ const faqSchema = {
 };
 
 const otherIndustries = industries.filter((x) => x.slug !== ind.slug);
+/* «Equipo contra incendio para aeropuertos ARFF»: minúsculas salvo siglas. */
+const sector = ind.name.split(' ').map((w) => (w === w.toUpperCase() ? w : w.toLowerCase())).join(' ');
 ---
 
 <BaseLayout
-  title={`${ind.name}: Equipamiento Contra Incendio`}
+  title={`Equipo contra incendio para ${sector}`}
   description={ind.description}
   canonicalURL={canonicalURL}
   schema={[serviceSchema, breadcrumbSchema, faqSchema]}

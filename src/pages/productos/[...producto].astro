@@ -595,7 +595,9 @@ const seoNorm = product.norm
   ?.split(' · ')
   .filter((part) => !product.title.toLocaleLowerCase().includes(part.toLocaleLowerCase()))
   .join(' · ');
-const seoTituloLargo = `${product.title}${seoNorm ? ` ${seoNorm}` : ''} — ${fabricante ?? product.brand ?? product.category}`;
+const sufijoFab = fabricante ?? product.brand ?? '';
+const fabEnTitulo = !sufijoFab || product.title.toLocaleLowerCase().includes(sufijoFab.toLocaleLowerCase());
+const seoTituloLargo = `${product.title}${seoNorm ? ` ${seoNorm}` : ''}${fabEnTitulo ? '' : ` — ${sufijoFab}`}`;
 const seoTituloCorto =
   seoTituloLargo.length <= 70
     ? seoTituloLargo
@@ -625,6 +627,16 @@ const seoTitle =
   [...seoTituloCorto].length <= 70
     ? seoTituloCorto
     : recortarTituloSEO(product.title);
+/* Títulos cortos (<40): se completan con la palabra clave de la categoría. */
+const catTxt = nombreCategoria[product.category];
+const seoTitleFinal =
+  [...seoTitle].length >= 40
+    ? seoTitle
+    : /Extintores|Sistemas CI/.test(product.category)
+      ? `${seoTitle} — ficha técnica y cotización`
+      : catTxt && !seoTitle.toLocaleLowerCase().includes(catTxt.split(' ')[0])
+        ? `${seoTitle} — ${catTxt}`
+        : `${seoTitle} para bomberos`;
 const seoDesc = metaCerrada(product.description, [
   esDistribuidor && `Distribuidor autorizado ${fabricante} en México`,
   normaCertificada && /NFPA|NOM|EN\s?\d|UL\b|ANSI|NIOSH|ISO/.test(product.norm ?? '') && `Norma ${product.norm}`,
@@ -633,7 +645,7 @@ const seoDesc = metaCerrada(product.description, [
 ---
 
 <BaseLayout
-  title={seoTitle}
+  title={seoTitleFinal}
   description={seoDesc}
   canonicalURL={canonicalURL}
   ogType="product"

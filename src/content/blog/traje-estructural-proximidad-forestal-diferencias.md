@@ -1,5 +1,6 @@
 ---
 title: "Traje Estructural, de Proximidad o Forestal: Cuál Necesita tu Brigada"
+seoTitle: "Traje estructural, de proximidad o forestal: diferencias"
 description: "Diferencias entre traje estructural NFPA 1970, de proximidad aluminizado y forestal NFPA 1950: materiales, peso, uso y norma. Guía para elegir correctamente."
 pubDate: 2026-05-20
 updatedDate: 2026-09-28

@@ -157,10 +157,20 @@ const productosMap: Record<string, {label: string; href: string; marcas: string}
   ],
 };
 const productosRel = productosMap[s.slug] ?? [];
+/* Title sólo con palabras clave del servicio (sin marca), ≤60 caracteres. */
+const seoTitles: Record<string, string> = {
+  'capacitacion': 'Capacitación contra incendio con constancia DC-3 STPS',
+  'mantenimiento': 'Mantenimiento y recarga de extintores y equipo SCBA',
+  'instalacion-sistemas-ci': 'Instalación de sistemas contra incendio NFPA',
+  'auditoria-seguridad': 'Auditoría NOM-002-STPS de seguridad contra incendio',
+  'brigadas-empresariales': 'Brigadas contra incendio empresariales NOM-002',
+  'licitaciones': 'Licitaciones de equipo contra incendio: soporte técnico',
+};
+const seoTitle = seoTitles[s.slug] ?? `${s.title} contra incendio en México`;
 ---
 
 <BaseLayout
-  title={`${s.title} — ${SITE.metaName} México`}
+  title={seoTitle}
   description={s.description}
   canonicalURL={canonicalURL}
   schema={[serviceSchema, breadcrumbSchema, faqSchema]}

@@ -45,7 +45,7 @@ const categoriaInfo = categoria ? blogCategorias[categoria] : undefined;
 
 const seoMeta = {
   title: tituloArchivo(category),
-  description: descripcionArchivo(category.toLowerCase()),
+  description: descripcionArchivo(category),
   canonicalURL,
   /* Umbral propio, más bajo que el de las etiquetas: la categoría es la
      navegación del blog y cada artículo declara una sola. Ver @lib/blog-taxonomia. */

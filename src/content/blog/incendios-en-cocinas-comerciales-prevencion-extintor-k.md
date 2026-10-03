@@ -1,7 +1,7 @@
 ---
 title: "Incendios en cocinas comerciales: rutina de prevención, supresión y extintor tipo K"
 seoTitle: "Incendios en cocinas: prevención y tipo K"
-description: "Guía para ordenar la limpieza, supresión, extintor tipo K, capacitación y registros en una cocina comercial."
+description: "Prevención de incendios en cocinas comerciales: limpieza de campanas, sistema de supresión, extintor tipo K, capacitación del personal y registros."
 pubDate: 2026-09-28
 updatedDate: 2026-09-28
 category: "Extintores"
