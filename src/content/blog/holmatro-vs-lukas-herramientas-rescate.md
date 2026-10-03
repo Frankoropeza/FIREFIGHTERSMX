@@ -1,5 +1,6 @@
 ---
 title: "Holmatro vs Lukas: Comparativa de Herramientas de Rescate Vehicular"
+seoTitle: "Holmatro vs Lukas: herramientas de rescate vehicular"
 description: "Criterios técnicos para comparar herramientas de rescate Holmatro y Lukas: apertura, peso, configuración y documentación del modelo."
 pubDate: 2026-03-01
 updatedDate: 2026-09-28

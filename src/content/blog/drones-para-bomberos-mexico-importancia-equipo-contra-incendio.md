@@ -1,6 +1,6 @@
 ---
 title: "Drones para bomberos en México: por qué ya son parte del equipo contra incendio"
-seoTitle: "Drones para bomberos en México: por qué ya son parte del equipo"
+seoTitle: "Drones para bomberos en México: usos y equipo"
 description: "Qué aporta un dron térmico a una corporación de bomberos, qué casos hay en México y qué límites debe conocer el mando antes de incorporarlo al equipo."
 pubDate: 2026-09-30
 category: "Drones de Emergencia"

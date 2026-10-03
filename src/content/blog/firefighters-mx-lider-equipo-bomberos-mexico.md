@@ -1,11 +1,12 @@
 ---
-title: "FIREFIGHTERS MX: equipo para bomberos en México"
-description: "Cómo trabaja FIREFIGHTERS MX en la selección y documentación de equipo contra incendio para bomberos, industria y gobierno en México."
+title: "INPROSEG: equipo para bomberos en México"
+seoTitle: "Proveedor de equipo para bomberos en México: normas y marcas"
+description: "Selección y documentación de equipo contra incendio para bomberos, industria y gobierno: normas NFPA y NOM, marcas autorizadas y servicio técnico."
 pubDate: 2026-06-10
 updatedDate: 2026-09-28
 author: "Lic. Ana Ramírez"
 category: "Empresa"
-tags: ["FIREFIGHTERS MX", "equipo para bomberos", "NFPA", "NOM", "México"]
+tags: ["equipo para bomberos", "NFPA", "NOM", "México"]
 image:
   url: "/images/blog/blog-firefightersmx-lider.avif"
   alt: "Bombero con equipo de protección personal y casco"

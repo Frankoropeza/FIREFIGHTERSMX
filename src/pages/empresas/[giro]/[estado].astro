@@ -40,7 +40,7 @@ const vacio = lista.length === 0;
 const canonicalURL = `${SITE.url}/empresas/${giro}/${estado.slug}/`;
 const tituloCorto = `${g.labelCorto} en ${estado.nombre}`;
 const seoMeta = {
-  title: `${g.label.split(':')[0].trim()} en ${estado.nombre} — Directorio`,
+  title: `Empresas de ${g.sustantivo} en ${estado.nombre}`,
   description: vacio
     ? `Directorio de empresas de ${g.sustantivo} en ${estado.nombre}. Aún no hay empresas registradas en este giro y estado: registra la tuya gratis.`
     : (() => {

@@ -1,6 +1,7 @@
 ---
 title: "NFPA 1936 (hoy NFPA 1960): guía técnica para herramientas de rescate y excarcelación"
-description: "Guía de referencia para herramientas de rescate y excarcelación conforme a NFPA 1960 (2024), antes NFPA 1936."
+seoTitle: "NFPA 1960 y NFPA 1936: herramientas de excarcelación"
+description: "Requisitos de NFPA 1960 (2024), antes NFPA 1936, para herramientas de rescate y excarcelación: tipos, desempeño, certificación y mantenimiento."
 pubDate: 2026-03-01
 updatedDate: 2026-09-28
 author: "Ing. Marco García"

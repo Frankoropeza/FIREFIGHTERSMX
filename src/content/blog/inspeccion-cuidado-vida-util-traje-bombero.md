@@ -1,5 +1,6 @@
 ---
 title: "Inspección, Cuidado y Vida Útil del Traje de Bombero: Guía NFPA 1850"
+seoTitle: "Inspección y vida útil del traje de bombero: NFPA 1850"
 description: "Cómo inspeccionar, lavar y descontaminar el traje estructural según NFPA 1850, cuándo retirarlo (10 años) y cómo proteger tu inversión. Checklist incluido."
 pubDate: 2026-04-22
 updatedDate: 2026-09-28

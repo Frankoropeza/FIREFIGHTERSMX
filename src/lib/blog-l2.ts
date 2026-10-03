@@ -14,7 +14,6 @@ import type { L2Bloque } from '@lib/l2';
 
 export type PostBlog = CollectionEntry<'blog'>;
 
-const MARCA = 'FIREFIGHTERS MX';
 
 /** Categorías de producto que trata una categoría del blog (inverso de BLOG_POR_CATEGORIA). */
 const productosDeCategoriaBlog = (catBlog: string) =>
@@ -108,10 +107,10 @@ export function etiquetasPorFrecuencia(posts: PostBlog[]): string[] {
 /** Title con cascada: el más descriptivo que quepa en 60 caracteres. */
 export function tituloArchivo(nombre: string): string {
   const opciones = [
-    `${nombre} — Blog técnico bomberos | ${MARCA}`,
-    `${nombre} | Blog técnico ${MARCA}`,
-    `${nombre} | Blog ${MARCA}`,
-    `${nombre} | ${MARCA}`,
+    `${nombre}: artículos técnicos de equipo contra incendio`,
+    `${nombre}: artículos técnicos contra incendio`,
+    `${nombre}: guías técnicas para bomberos`,
+    `${nombre}: guías técnicas`,
   ];
   return opciones.find((t) => t.length <= 60) ?? nombre.slice(0, 60);
 }
@@ -119,9 +118,9 @@ export function tituloArchivo(nombre: string): string {
 /** Description con cascada: la más completa que quepa en 160 caracteres. */
 export function descripcionArchivo(tema: string): string {
   const opciones = [
-    `Artículos técnicos sobre ${tema} en equipo para bomberos y sistemas contra incendio. Normatividad NFPA, NOM y criterios de selección.`,
-    `Artículos sobre ${tema} para bomberos y sistemas contra incendio en México: normas NFPA, NOM y criterios de compra.`,
-    `Artículos sobre ${tema} para bomberos y sistemas contra incendio en México.`,
+    `Artículos técnicos sobre ${tema} en equipo para bomberos y sistemas contra incendio: normas NFPA y NOM y criterios de selección en México.`,
+    `Artículos técnicos sobre ${tema} para bomberos y sistemas contra incendio: normas NFPA y NOM.`,
+    `Artículos técnicos sobre ${tema} para bomberos y sistemas contra incendio.`,
   ];
-  return opciones.find((d) => d.length <= 160) ?? opciones[2].slice(0, 157).replace(/\s+\S*$/, '') + '…';
+  return opciones.find((d) => d.length <= 155) ?? opciones[2];
 }

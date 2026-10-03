@@ -1,6 +1,6 @@
 ---
 title: "Normativa para drones de emergencia en México: NOM-107-SCT3-2019, AFAC y NFPA 2400"
-seoTitle: "Normativa de drones de emergencia en México: NOM-107 y NFPA 2400"
+seoTitle: "Drones de emergencia en México: NOM-107 y NFPA 2400"
 description: "Qué regula la NOM-107-SCT3-2019, qué corresponde a la AFAC y qué pide la NFPA 2400 a un programa de drones de bomberos, con lo verificado y lo que debe confirmarse."
 pubDate: 2026-09-30
 category: "Drones de Emergencia"

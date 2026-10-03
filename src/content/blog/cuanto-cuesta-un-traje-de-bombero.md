@@ -1,7 +1,7 @@
 ---
 title: "¿Cuánto cuesta un traje de bombero? Qué define su precio"
 seoTitle: "Cuánto cuesta un traje de bombero y qué define su precio"
-description: "Qué determina el precio de un traje de bombero en México: materiales, certificación, tallas y vida útil, y cómo pedir una cotización que sí puedas comparar."
+description: "Qué determina el precio de un traje de bombero en México: capas y materiales, certificación NFPA 1970, tallas, cantidad y vida útil del conjunto."
 pubDate: 2026-09-28
 updatedDate: 2026-09-28
 author: "Ing. Carlos Mendoza"

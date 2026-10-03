@@ -56,10 +56,19 @@ const faqSchema = cat.faqs?.length
   : null;
 
 const otherCategories = allCategories.filter((c) => c.slug !== cat.slug).slice(0, 5);
+/* Títulos sólo con palabras clave de la categoría (sin marca ni «— México» de relleno). */
+const seoTitlesCat: Record<string, string> = {
+  'desfibriladores': 'Desfibriladores DEA para empresas y brigadas',
+  'detectores-de-humo': 'Detectores de humo NFPA 72 para vivienda y empresa',
+  'epp-bombero': 'Botas, guantes y capuchas para bombero NFPA 1970',
+  'equipo-forestal': 'Equipo para incendio forestal NFPA 1950',
+  'rescate-vertical': 'Equipo de rescate vertical y técnico NFPA 2500',
+};
+const seoTitleCat = seoTitlesCat[cat.slug] ?? `${cat.label} ${cat.norm.split('·')[0].trim()}`;
 ---
 
 <BaseLayout
-  title={`${cat.label} ${cat.norm.split('·')[0].trim()} — México`}
+  title={seoTitleCat}
   description={cat.description}
   canonicalURL={canonicalURL}
   schema={[breadcrumbSchema, ...(faqSchema ? [faqSchema] : [])]}

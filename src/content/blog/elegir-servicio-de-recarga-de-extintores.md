@@ -1,6 +1,6 @@
 ---
 title: "Cómo elegir un servicio de recarga de extintores para tu empresa"
-seoTitle: "Cómo elegir recarga de extintores"
+seoTitle: "Recarga de extintores: cómo elegir el servicio"
 description: "Guía para evaluar un servicio de recarga y mantenimiento de extintores, revisar entregables e integrarlo al control interno."
 pubDate: 2026-09-28
 updatedDate: 2026-09-28

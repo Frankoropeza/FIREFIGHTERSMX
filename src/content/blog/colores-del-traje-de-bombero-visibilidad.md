@@ -1,7 +1,7 @@
 ---
 title: "¿De qué color es el traje de bombero? Arena, negro o amarillo"
 seoTitle: "Colores del traje de bombero: arena, negro o amarillo"
-description: "Por qué los trajes de bombero son arena, negros o amarillos, qué aporta la cinta reflejante y qué te dice (y qué no) el color sobre la protección del equipo."
+description: "Por qué los trajes de bombero son color arena, negro o amarillo, qué aporta la cinta reflejante y cómo influye el color en la visibilidad y el calor."
 pubDate: 2026-09-28
 updatedDate: 2026-09-28
 author: "Ing. Carlos Mendoza"
