@@ -114,7 +114,7 @@ const planes = [
         ev.preventDefault();
         const d = new FormData(f); const mail = f.dataset.mail ?? '';
         const lineas = [...d.entries()].filter(([, v]) => String(v).trim()).map(([k, v]) => `${k}: ${v}`);
-        const subject = `${d.get('tipo') === 'alta' ? 'Alta' : 'Reclamo de ficha'} — ${d.get('empresa')} — Directorio INPROSEG FIRE`;
+        const subject = `${d.get('tipo') === 'alta' ? 'Alta' : 'Reclamo de ficha'} — ${d.get('empresa')} — Directorio INPROSEG`;
         window.location.href = `mailto:${mail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lineas.join('\n'))}`;
       });
     });

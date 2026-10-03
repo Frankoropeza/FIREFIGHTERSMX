@@ -91,7 +91,7 @@ Después de la junta, descarga el acta completa, incorpora cada aclaración a la
 
 Conserva las preguntas enviadas, el acuse disponible y el acta publicada en el mismo expediente de la propuesta. Al cerrar la oferta, verifica que no quede una respuesta pendiente de incorporar en la ficha o en los anexos.
 
-INPROSEG FIRE puede revisar una requisición o preparar una [cotización](/cotizacion/) con la documentación disponible del modelo solicitado.
+INPROSEG puede revisar una requisición o preparar una [cotización](/cotizacion/) con la documentación disponible del modelo solicitado.
 
 ## Preguntas frecuentes
 

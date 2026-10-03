@@ -18,7 +18,7 @@ import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 
 const DIST = process.argv[2] ?? 'dist';
-const WHATSAPP_PROPIO = '525510054323';
+const WHATSAPP_PROPIO = '525569325015';
 
 /** Hosts permitidos en cualquier ficha: fuentes, mapas y assets */
 const PERMITIDOS = [

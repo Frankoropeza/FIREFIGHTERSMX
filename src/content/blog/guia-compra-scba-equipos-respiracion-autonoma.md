@@ -4,7 +4,7 @@ seoTitle: "Guía de compra de SCBA para bomberos"
 description: "Guía para comprar SCBA: documentación, cilindros, prueba de ajuste y criterios de mantenimiento para MSA G1, 3M Scott y Dräger."
 pubDate: 2026-06-23
 updatedDate: 2026-09-28
-author: "INPROSEG FIRE"
+author: "INPROSEG"
 category: "Guías de compra"
 tags: ["SCBA", "respiración autónoma", "3M Scott", "MSA", "Dräger", "NFPA 1970", "equipo bomberos"]
 image:

@@ -46,7 +46,7 @@ export const homeFaqs: FAQ[] = [
   },
   {
     q: '¿Pueden facturar a gobierno y participar en licitaciones?',
-    a: 'Por supuesto. Tenemos 35 años trabajando con dependencias federales, estatales y municipales. Apoyamos con fichas técnicas formato licitación, manifiestos de normas NFPA/NOM, asistencia a juntas de aclaraciones y plantillas CompraNet. Facturación CFDI 4.0.',
+    a: 'Por supuesto. Tenemos más de 45 años trabajando con dependencias federales, estatales y municipales. Apoyamos con fichas técnicas formato licitación, manifiestos de normas NFPA/NOM, asistencia a juntas de aclaraciones y plantillas CompraNet. Facturación CFDI 4.0.',
   },
   {
     q: '¿Qué equipo contra incendio exige la NOM-002-STPS-2010 a una empresa?',
@@ -85,7 +85,7 @@ export const homeFaqs: FAQ[] = [
  */
 export const directorioFaqs: FAQ[] = [
   {
-    q: '¿Qué es el directorio de INPROSEG FIRE?',
+    q: '¿Qué es el directorio de INPROSEG?',
     a: 'Es el directorio nacional de empresas de equipo contra incendio en México: distribuidores de equipo para bomberos y EPP, empresas de venta, recarga y mantenimiento de extintores, ingenierías e instaladoras de sistemas contra incendio, y centros de capacitación de brigadas. Cubre los 32 estados, clasifica a cada empresa por giro y especialidad, y cita la fuente de cada registro. Se complementa con el directorio de cuerpos de bomberos del país.',
   },
   {

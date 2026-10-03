@@ -1,24 +1,27 @@
 export const SITE = {
-  name:        'INPROSEG FIRE',
+  name:        'INPROSEG',
+  // Lema de la marca (Frank 2026-10-03). Va junto al nombre en el contenido visible.
+  lema:        'Ingeniería, Protección y Seguridad Integral',
   // Nombre para TÍTULOS/DESCRIPCIONES META y datos estructurados (SERP). Decisión de Frank
-  // 2026-10-03: marca INPROSEG FIRE sustituye a VIGILES en contenido visible; meta conserva FIREFIGHTERS MX.
+  // 2026-10-03: marca INPROSEG («Ingeniería, Protección y Seguridad Integral») sustituye a VIGILES
+  // en el contenido visible; títulos meta, meta descriptions y datos estructurados conservan FIREFIGHTERS MX.
   metaName:    'FIREFIGHTERS MX',
-  shortName:   'INPROSEG FIRE',
-  // Experiencia en el mercado: 35 años. Confirmado por Frank Oropeza el 2026-09-30
-  // (sustituye los «15 años» del 2026-09-15). Única fuente de esta cifra.
-  experienceYears: 35,
-  // Identidad híbrida (2026-10-03): INPROSEG FIRE vende y distribuye equipo
+  shortName:   'INPROSEG',
+  // Experiencia en el mercado: «más de 45 años». Confirmado por Frank Oropeza el 2026-10-03
+  // (sustituye los «35 años» del 2026-09-30 y los «15 años» del 2026-09-15).
+  experienceYears: 45,
+  // Identidad híbrida (2026-10-03): INPROSEG vende y distribuye equipo
   // (la tienda) y además publica el directorio nacional de empresas y estaciones.
   tagline:     'Venta y distribución de equipo para bomberos y equipo contra incendio en México',
   description: 'Distribuidor de equipo para bomberos y equipo contra incendio en México: trajes, SCBA, cascos, extintores y sistemas contra incendio, con envíos a los 32 estados. Incluye el directorio nacional de empresas y estaciones de bomberos.',
   url:         'https://firefighters.mx',
-  // Teléfono confirmado por Frank Oropeza el 2026-09-15 (ver TELEFONO_ACTIVO).
-  // WhatsApp confirmado el mismo día (ver CONTACTO_DIRECTO_ACTIVO). El valor de la
+  // Teléfono, WhatsApp y correo: INPROSEG, confirmados por Frank Oropeza el 2026-10-03
+  // (sustituyen 55 1005 4323 y firefightersmx50@gmail.com del 2026-09-15). El valor de la
   // plantilla ('55 1234-5678') era falso y no debe volver.
-  phone:       '55 1005 4323',
-  phoneE164:   '+525510054323',
-  email:       'firefightersmx50@gmail.com',
-  whatsapp:    '525510054323', // WhatsApp confirmado por Frank 2026-09-15
+  phone:       '55 6932 5015',
+  phoneE164:   '+525569325015',
+  email:       'inprosegfire@gmail.com',
+  whatsapp:    '525569325015', // WhatsApp confirmado por Frank 2026-10-03
   hours:       'Lun–Vie 8–18 h · Sáb 9–14 h', // confirmado por Frank 2026-09-15
   // Domicilio confirmado por Frank Oropeza el 2026-09-15 (oficinas y operación).
   // El valor de la plantilla ('Av. Baja California 255, Condesa') era falso y
@@ -58,7 +61,7 @@ export const SITE = {
  *   2. Cambiar esta constante a `true`.
  * (Mismo patrón ya probado en FIESTAENCASA.)
  */
-export const CONTACTO_DIRECTO_ACTIVO = true; // WhatsApp 55 1005 4323 confirmado 2026-09-15
+export const CONTACTO_DIRECTO_ACTIVO = true; // WhatsApp 55 6932 5015 confirmado 2026-10-03
 
 /**
  * Teléfono publicado (texto visible, enlaces `tel:` y `telephone` en JSON-LD).
@@ -107,7 +110,7 @@ export function whatsappLink(msg?: string, num: string = SITE.whatsapp): string 
 export function whatsappUrl(msg: string): string {
   return CONTACTO_DIRECTO_ACTIVO
     ? whatsappLink(msg)
-    : `mailto:${SITE.email}?subject=${encodeURIComponent('Cotización — INPROSEG FIRE')}&body=${encodeURIComponent(msg)}`;
+    : `mailto:${SITE.email}?subject=${encodeURIComponent('Cotización — INPROSEG')}&body=${encodeURIComponent(msg)}`;
 }
 
 /**
@@ -118,7 +121,7 @@ export function whatsappUrl(msg: string): string {
 export function contactoUrl(asunto: string, msg: string): string {
   return CONTACTO_DIRECTO_ACTIVO
     ? whatsappLink(msg)
-    : `mailto:${SITE.email}?subject=${encodeURIComponent(`${asunto} — INPROSEG FIRE`)}&body=${encodeURIComponent(msg)}`;
+    : `mailto:${SITE.email}?subject=${encodeURIComponent(`${asunto} — INPROSEG`)}&body=${encodeURIComponent(msg)}`;
 }
 
 /** Link de teléfono (o mailto si no hay contacto directo) */

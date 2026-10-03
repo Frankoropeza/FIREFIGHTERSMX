@@ -77,7 +77,7 @@ const breadcrumbSchema = {
 
         <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
           <p class="text-sm leading-[1.9] mb-5" style="color:var(--c-text-2)">
-            Solicita tu cotización de equipos para bomberos en INPROSEG FIRE:
+            Solicita tu cotización de equipos para bomberos en INPROSEG:
             <strong style="color:var(--c-text)">trajes NFPA, SCBA, herramientas de rescate y sistemas
             contra incendio</strong>. Propuestas técnicas personalizadas en menos de 2 horas en
             días hábiles.
@@ -209,7 +209,7 @@ const breadcrumbSchema = {
         if (!f.reportValidity()) return;
         const num = f.getAttribute('data-wa');
         const fd = new FormData(f);
-        const lines: string[] = ['Hola INPROSEG FIRE, solicito una cotización:', ''];
+        const lines: string[] = ['Hola INPROSEG, solicito una cotización:', ''];
         for (const [name, value] of fd.entries()) {
           const v = String(value).trim();
           if (!v) continue;
@@ -225,7 +225,7 @@ const breadcrumbSchema = {
       if (num) {
         window.open(`https://api.whatsapp.com/send/?phone=${num}&text=${text}`, '_blank', 'noopener');
       } else if (mail) {
-        window.location.href = `mailto:${mail}?subject=${encodeURIComponent('Cotización — INPROSEG FIRE')}&body=${text}`;
+        window.location.href = `mailto:${mail}?subject=${encodeURIComponent('Cotización — INPROSEG')}&body=${text}`;
       }
       });
     });

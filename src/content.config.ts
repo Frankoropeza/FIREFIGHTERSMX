@@ -9,7 +9,7 @@ const blogCollection = defineCollection({
     description: z.string().max(165),
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
-    author: z.string().default('INPROSEG FIRE'),
+    author: z.string().default('INPROSEG'),
     category: z.string(),
     tags: z.array(z.string()).default([]),
     image: z.object({

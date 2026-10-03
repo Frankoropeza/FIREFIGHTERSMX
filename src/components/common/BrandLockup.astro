@@ -1,5 +1,5 @@
 ---
-/** Logo raster horizontal de INPROSEG FIRE; `tagline` se conserva por compatibilidad. */
+/** Logo raster horizontal de INPROSEG; `tagline` se conserva por compatibilidad. */
 interface Props {
   tagline?: string;
   variant?: 'light' | 'dark';
@@ -13,7 +13,7 @@ const stem = dark ? '/brand/inproseg-fire-horizontal-dark' : '/brand/inproseg-fi
 <span class:list={['bl', `bl--${variant}`, cls]}>
   <picture>
     <source srcset={`${stem}-h120.webp 1x, ${stem}-h240.webp 2x`} type="image/webp" />
-    <img src={`${stem}-h240.png`} width="444" height="120" alt="INPROSEG FIRE" decoding="async" fetchpriority={dark ? undefined : "high"} loading={dark ? "lazy" : undefined} />
+    <img src={`${stem}-h240.png`} width="444" height="120" alt="INPROSEG — Ingeniería, Protección y Seguridad Integral" decoding="async" fetchpriority={dark ? undefined : "high"} loading={dark ? "lazy" : undefined} />
   </picture>
 </span>
 

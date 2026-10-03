@@ -9,21 +9,27 @@ import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl, TELEFONO_ACTIVO } from '@co
     <div class="flex items-center gap-5 min-w-0">
 
       <span class="font-semibold text-[11px] tracking-[0.06em] uppercase shrink-0 whitespace-nowrap" style="color:var(--c-ink-2)">
-        Equipo para bomberos y contra incendio
+        {SITE.name} <span style="color:var(--c-accent)">·</span> {SITE.lema}
       </span>
 
-      <span class="w-px h-3 shrink-0" style="background:var(--c-line)"></span>
+      <span class="hidden xl:block w-px h-3 shrink-0" style="background:var(--c-line)"></span>
 
-      <div class="flex items-center gap-1.5">
+      <span class="hidden xl:block text-[11px] font-semibold whitespace-nowrap" style="color:var(--c-accent)">
+        Más de {SITE.experienceYears} años de experiencia
+      </span>
+
+      <span class="hidden 2xl:block w-px h-3 shrink-0" style="background:var(--c-line)"></span>
+
+      <div class="hidden 2xl:flex items-center gap-1.5">
         <span class="w-1.5 h-1.5 rounded-full shrink-0" style="background:var(--c-success)"></span>
         <span class="text-[11px] font-medium tracking-wide whitespace-nowrap" style="color:var(--c-muted)">
           Envíos a los 32 estados
         </span>
       </div>
 
-      <span class="w-px h-3 shrink-0" style="background:var(--c-line)"></span>
+      <span class="hidden min-[1800px]:block w-px h-3 shrink-0" style="background:var(--c-line)"></span>
 
-      <div class="hidden 2xl:flex items-center gap-1.5">
+      <div class="hidden min-[1800px]:flex items-center gap-1.5">
         
         <span class="text-[11px] whitespace-nowrap" style="color:var(--forge-300)">Polanco, CDMX</span>
       </div>
@@ -34,7 +40,7 @@ import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl, TELEFONO_ACTIVO } from '@co
     <div class="flex items-center gap-4 shrink-0">
 
       <!-- Normas -->
-      <div class="hidden 2xl:flex items-center gap-2">
+      <div class="hidden min-[1800px]:flex items-center gap-2">
         {['NFPA 1970', 'NOM-002-STPS', 'UL Listed'].map(n => (
           <span class="text-[10px] font-semibold px-2 py-0.5 whitespace-nowrap rounded"
                 style="color:var(--c-text-2);background:#FFFFFF;border:1px solid var(--c-line);letter-spacing:0.04em">
@@ -43,7 +49,7 @@ import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl, TELEFONO_ACTIVO } from '@co
         ))}
       </div>
 
-      <span class="hidden 2xl:block w-px h-3 shrink-0" style="background:var(--c-line)"></span>
+      <span class="hidden min-[1800px]:block w-px h-3 shrink-0" style="background:var(--c-line)"></span>
 
       <!-- Email -->
       <a

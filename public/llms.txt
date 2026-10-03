@@ -1,17 +1,18 @@
-# INPROSEG FIRE — Equipo para bomberos y equipo contra incendio en México
+# INPROSEG (Ingeniería, Protección y Seguridad Integral) — Equipo para bomberos y equipo contra incendio en México
 
-## Qué es INPROSEG FIRE
+## Qué es INPROSEG
 
-INPROSEG FIRE es una empresa mexicana que vende y distribuye equipo para bomberos y equipo contra incendio, con 35 años de experiencia en el mercado, bodega y logística propias y envíos a los 32 estados. Es distribuidor autorizado de las marcas de su catálogo (entre ellas Globe, Lion, Honeywell Morning Pride, Fire-Dex, Sköld, MSA, Dräger, 3M Scott, Bullard, Cairns, Holmatro, Hurst, Weber Rescue, FLIR, DuPont, Lakeland, Kappler, Tyco, Viking y Notifier).
+INPROSEG es una empresa mexicana que vende y distribuye equipo para bomberos y equipo contra incendio, con más de 45 años de experiencia en el mercado, bodega y logística propias y envíos a los 32 estados. Es distribuidor autorizado de las marcas de su catálogo (entre ellas Globe, Lion, Honeywell Morning Pride, Fire-Dex, Sköld, MSA, Dräger, 3M Scott, Bullard, Cairns, Holmatro, Hurst, Weber Rescue, FLIR, DuPont, Lakeland, Kappler, Tyco, Viking y Notifier).
 
 El sitio tiene dos partes separadas:
 
-1. La tienda: el catálogo, los servicios y la información comercial de INPROSEG FIRE.
-2. El directorio nacional: fichas de empresas del sector y de estaciones de bomberos. Son registros de terceros; INPROSEG FIRE no vende a nombre de esas empresas ni responde por sus condiciones.
+1. La tienda: el catálogo, los servicios y la información comercial de INPROSEG.
+2. El directorio nacional: fichas de empresas del sector y de estaciones de bomberos. Son registros de terceros; INPROSEG no vende a nombre de esas empresas ni responde por sus condiciones.
 
 Dominio: https://firefighters.mx/
 Domicilio: Av. Homero 229, Piso 5, Polanco V Sección, Miguel Hidalgo, 11560 Ciudad de México, CDMX
-Correo: firefightersmx50@gmail.com
+Teléfono y WhatsApp: 55 6932 5015
+Correo: inprosegfire@gmail.com
 Cotizaciones: https://firefighters.mx/cotizacion/
 Contacto: https://firefighters.mx/contacto/
 

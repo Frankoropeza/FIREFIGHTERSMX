@@ -19,7 +19,7 @@ interface QuickLink {
   icon: string;
 }
 
-// Dos juegos de accesos: la tienda (INPROSEG FIRE como vendedor) y el
+// Dos juegos de accesos: la tienda (INPROSEG como vendedor) y el
 // directorio (registros de terceros). La zona sale de la ruta actual.
 const rutaActual = Astro.url.pathname;
 const esDirectorio = ['/directorio', '/empresas', '/estaciones', '/cobertura'].some((p) => rutaActual.startsWith(p));
@@ -45,7 +45,7 @@ const poolsDirectorio: Record<'top' | 'footer', QuickLink[]> = {
   top: [
     { label: 'Directorio de empresas', sub: '5 giros · 32 estados', href: '/empresas', icon: `` },
     { label: 'Estaciones de bomberos', sub: 'Directorio · 32 estados', href: '/estaciones', icon: `` },
-    { label: 'Equipo para bomberos', sub: 'Catálogo INPROSEG FIRE', href: '/productos', icon: `` },
+    { label: 'Equipo para bomberos', sub: 'Catálogo INPROSEG', href: '/productos', icon: `` },
     { label: 'Nuestros servicios', sub: 'Capacitación · Mantenimiento', href: '/servicios', icon: `` },
     { label: 'Trajes para bomberos', sub: 'NFPA 1970 · SCBA', href: '/productos/trajes-bombero', icon: `` },
     { label: 'Sistemas contra incendio', sub: 'Rociadores · Alarmas NFPA', href: '/productos/sistemas-ci', icon: `` },

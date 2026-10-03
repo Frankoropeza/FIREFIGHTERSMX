@@ -33,7 +33,7 @@ const localBusinessSchema = {
   '@type': 'LocalBusiness',
   '@id': `${SITE.url}/#business`,
   name: SITE.metaName,
-  alternateName: ['INPROSEG FIRE', 'Firefighters MX', 'FFMX', 'FireFighters México'],
+  alternateName: ['INPROSEG', 'Firefighters MX', 'FFMX', 'FireFighters México'],
   description: SITE.description,
   url: SITE.url,
   ...(TELEFONO_ACTIVO ? { telephone: SITE.phoneE164 } : {}),

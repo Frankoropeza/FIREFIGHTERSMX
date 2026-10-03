@@ -1,4 +1,5 @@
 ---
+import { SITE } from '@config/site';
 ---
 
 <section class="relative border-b" style="background:linear-gradient(180deg, var(--c-bg) 0%, var(--c-bg) 55%, var(--c-bg-alt) 100%);border-color:var(--c-line)" aria-label="Hero">
@@ -11,10 +12,10 @@
 
       <!-- Eyebrow -->
       <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mb-6">
-        <span class="section-eyebrow">INPROSEG FIRE · 35 años de experiencia en el mercado</span>
+        <span class="section-eyebrow">{SITE.name} · {SITE.lema}</span>
         <span class="flex items-center gap-1.5 text-xs font-medium" style="color:var(--c-text-2)">
           <span class="w-1.5 h-1.5 rounded-full shrink-0" style="background:var(--c-accent)"></span>
-          32 estados · Respuesta &lt; 24 h
+          Más de {SITE.experienceYears} años de experiencia · 32 estados · Respuesta &lt; 24 h
         </span>
       </div>
 
@@ -49,7 +50,7 @@
         <!-- Párrafo 1 -->
         <div class="mb-7 pb-7" style="border-bottom:1px solid var(--c-line)">
           <h2 class="font-display font-semibold text-[1.0625rem] xl:text-lg mb-3 leading-snug" style="color:var(--c-ink);letter-spacing:-0.01em">
-            Distribuidor autorizado de Tyco, Honeywell, MSA, Dräger, Globe y Holmatro, con 35 años equipando a empresas y cuerpos de bomberos en México.
+            Distribuidor autorizado de Tyco, Honeywell, MSA, Dräger, Globe y Holmatro, con más de 45 años equipando a empresas y cuerpos de bomberos en México.
           </h2>
           <p class="text-sm xl:text-[0.9375rem] leading-[1.75]" style="color:var(--c-text-2)">
             Somos distribuidores autorizados de <strong style="color:var(--c-text)">Tyco, Honeywell, Globe, MSA, Dräger, Bullard,

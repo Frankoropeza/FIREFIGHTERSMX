@@ -4,7 +4,7 @@ seoTitle: "TrajesBombero México: especialistas en trajes para bomberos"
 description: "Perfil de TrajesBombero México: seis familias de traje, ficha técnica por partida, NFPA 1970 como referencia y cotización por escrito para bomberos y brigadas."
 pubDate: 2026-09-28
 updatedDate: 2026-09-28
-author: "INPROSEG FIRE"
+author: "INPROSEG"
 category: "Trajes Bombero"
 tags: ["trajes bombero", "NFPA 1970", "proveedores", "licitaciones", "brigadas industriales"]
 image:
@@ -86,7 +86,7 @@ Llega con cuatro datos: quién usará el equipo, qué operación cubrirá, cuán
 | Horario | Lunes a viernes, 9:00 a 18:00 |
 | Cobertura | Envíos a los 32 estados |
 
-Puedes partir de su [catálogo de trajes estructurales](https://trajesbomberos.com/trajes/estructural/) o de los [trajes para brigadista](https://trajesbomberos.com/trajes/brigadista/). Para interpretar una referencia vigente, también publica [qué cambió con la NFPA 1970](https://trajesbomberos.com/blog/nfpa-1970-que-cambio/). En INPROSEG FIRE encontrarás [la explicación de NFPA 1970](/blog/nfpa-1970-nueva-norma-trajes-bombero/) y el [catálogo de trajes para bombero](/productos/trajes-bombero/).
+Puedes partir de su [catálogo de trajes estructurales](https://trajesbomberos.com/trajes/estructural/) o de los [trajes para brigadista](https://trajesbomberos.com/trajes/brigadista/). Para interpretar una referencia vigente, también publica [qué cambió con la NFPA 1970](https://trajesbomberos.com/blog/nfpa-1970-que-cambio/). En INPROSEG encontrarás [la explicación de NFPA 1970](/blog/nfpa-1970-nueva-norma-trajes-bombero/) y el [catálogo de trajes para bombero](/productos/trajes-bombero/).
 
 Antes de enviar la solicitud, describe una salida real: si el personal hará ataque interior, si trabajará a la intemperie, cuánto tiempo portará el equipo y qué interfaces ya tiene. Esa conversación aterriza la partida y evita que una fotografía de catálogo se convierta en el único criterio de compra.
 

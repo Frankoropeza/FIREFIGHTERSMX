@@ -11,13 +11,13 @@ image:
   alt: "Bombero con equipo de protección personal y casco"
 ---
 
-INPROSEG FIRE suministra equipo para bomberos, protección contra incendio y rescate en México. El punto de partida de una propuesta es identificar el riesgo, el modelo requerido, la configuración y los documentos que acompañarán la entrega. Esa información permite que el comprador compare opciones y conserve un expediente útil para operación, auditoría y servicio posterior.
+INPROSEG suministra equipo para bomberos, protección contra incendio y rescate en México. El punto de partida de una propuesta es identificar el riesgo, el modelo requerido, la configuración y los documentos que acompañarán la entrega. Esa información permite que el comprador compare opciones y conserve un expediente útil para operación, auditoría y servicio posterior.
 
-La empresa tiene 35 años trabajando con dependencias federales, estatales y municipales, y ha equipado más de 500 estaciones. Esta página explica el alcance comercial confirmado de INPROSEG FIRE y los criterios que conviene revisar antes de adquirir equipo.
+La empresa tiene más de 45 años trabajando con dependencias federales, estatales y municipales, y ha equipado más de 500 estaciones. Esta página explica el alcance comercial confirmado de INPROSEG y los criterios que conviene revisar antes de adquirir equipo.
 
 ## No vendemos de todo. Vendemos esto.
 
-INPROSEG FIRE se enfoca en protección contra incendio y rescate. Nuestro catálogo se organiza alrededor de las normas que rigen este oficio, como NFPA 1970, NFPA 1850 y NFPA 1950, además de las Normas Oficiales Mexicanas que aplican en cada caso.
+INPROSEG se enfoca en protección contra incendio y rescate. Nuestro catálogo se organiza alrededor de las normas que rigen este oficio, como NFPA 1970, NFPA 1850 y NFPA 1950, además de las Normas Oficiales Mexicanas que aplican en cada caso.
 
 Esa especialización tiene consecuencias prácticas para quien nos compra. Podemos explicar los materiales y la documentación de cada modelo según cómo opere tu gente. El producto se entrega con la certificación y documentación correspondientes a su uso, para que puedan revisarse en una auditoría o licitación. Además, un traje o un equipo de respiración requieren inspección, mantenimiento y refacciones originales durante su vida útil; por eso contamos con servicio técnico autorizado.
 
@@ -30,13 +30,13 @@ México no es un solo país cuando se trata de incendios. La realidad de un cuer
 | Cobertura nacional | Atención a proyectos en los 32 estados |
 | Stock permanente en CDMX | Entrega en 24–48 horas para existencias disponibles |
 | Marcas con convenio | Productos del catálogo y documentación de soporte disponible |
-| 35 años trabajando con dependencias | Experiencia con dependencias federales, estatales y municipales |
+| Más de 45 años trabajando con dependencias | Experiencia con dependencias federales, estatales y municipales |
 
 La atención se coordina desde Av. Homero 229, Ciudad de México. Consulta la [cobertura nacional](/cobertura/) y el [catálogo de productos](/productos/) para ubicar las categorías disponibles.
 
 ## Marcas del catálogo, producto original, sin asteriscos
 
-INPROSEG FIRE es distribuidor autorizado de las marcas del catálogo y cuenta con servicio técnico autorizado. Al cotizar, pide que se identifique el modelo, variante, configuración, garantía y documentación disponible. La revisión debe centrarse en el producto realmente ofertado: un nombre comercial o una imagen no acreditan por sí solos una certificación.
+INPROSEG es distribuidor autorizado de las marcas del catálogo y cuenta con servicio técnico autorizado. Al cotizar, pide que se identifique el modelo, variante, configuración, garantía y documentación disponible. La revisión debe centrarse en el producto realmente ofertado: un nombre comercial o una imagen no acreditan por sí solos una certificación.
 
 Las marcas del catálogo incluyen MSA, Dräger, 3M Scott, Globe, LION, Holmatro, Bullard y Cairns, entre otras. La lista y sus aplicaciones se consultan en [marcas](/marcas/); para comparar criterios, revisa la guía de [marcas de equipo para bomberos](/blog/mejores-marcas-equipo-bomberos-mexico/).
 
@@ -82,21 +82,21 @@ También conviene separar lo que está incluido en una entrega de lo que sería 
 
 ## Información comercial confirmada
 
-INPROSEG FIRE opera desde Av. Homero 229, Ciudad de México. Las existencias permanentes en CDMX tienen entrega de 24–48 horas; para artículos que requieren configuración, importación o servicio especializado, la propuesta debe indicar las condiciones específicas en vez de asumir el mismo plazo. La empresa emite CFDI 4.0 y puede estructurar una propuesta técnica en menos de 24 horas cuando recibe la información necesaria para revisar la solicitud.
+INPROSEG opera desde Av. Homero 229, Ciudad de México. Las existencias permanentes en CDMX tienen entrega de 24–48 horas; para artículos que requieren configuración, importación o servicio especializado, la propuesta debe indicar las condiciones específicas en vez de asumir el mismo plazo. La empresa emite CFDI 4.0 y puede estructurar una propuesta técnica en menos de 24 horas cuando recibe la información necesaria para revisar la solicitud.
 
 Estos datos no sustituyen la verificación de cada partida. Una compra responsable mantiene separadas las afirmaciones comerciales de la evidencia técnica del producto, como fichas, manuales, certificados, garantías y documentos de entrega. Esa separación permite que el área operativa revise el equipo con los criterios que corresponden a su riesgo.
 
 ## Preguntas frecuentes
 
-### ¿INPROSEG FIRE es líder de equipo bomberil en México?
+### ¿INPROSEG es líder de equipo bomberil en México?
 
-No usamos ese superlativo como afirmación comercial. La empresa comunica datos verificables: 35 años de trabajo con dependencias, más de 500 estaciones equipadas, distribución autorizada de las marcas del catálogo y servicio técnico autorizado.
+No usamos ese superlativo como afirmación comercial. La empresa comunica datos verificables: más de 45 años de trabajo con dependencias, más de 500 estaciones equipadas, distribución autorizada de las marcas del catálogo y servicio técnico autorizado.
 
 ### ¿Qué información debe tener una cotización?
 
 Modelo, configuración, cantidad, documentos disponibles, garantía, alcance de servicio y condiciones de entrega. Si es una compra pública, también debe relacionarse con cada requisito de las bases.
 
-### ¿Cuál es la dirección de INPROSEG FIRE?
+### ¿Cuál es la dirección de INPROSEG?
 
 La atención se coordina desde Av. Homero 229, Ciudad de México. Para un proyecto, solicita una [cotización](/cotizacion/) o consulta la página de [contacto](/contacto/).
 
