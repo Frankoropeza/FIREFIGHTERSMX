@@ -1,4 +1,4 @@
-// cobertura.ts — Estados con cobertura de entrega de VIGILES
+// cobertura.ts — Estados con cobertura de entrega de INPROSEG FIRE
 // Alimenta:
 //   • /cobertura.astro         tabla de estados con links
 //   • /cobertura/[estado].astro  landing individual SEO por estado

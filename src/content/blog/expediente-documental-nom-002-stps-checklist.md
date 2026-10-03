@@ -123,7 +123,7 @@ Los documentos físicos tardan días en conseguirse. Las constancias DC-3 de cap
 
 ---
 
-## Auditoría NOM-002 en VIGILES
+## Auditoría NOM-002 en INPROSEG FIRE
 
 Revisamos tu expediente documental completo antes de que llegue la STPS. Identificamos los huecos, te ayudamos a conseguir los documentos faltantes y te entregamos el expediente organizado y listo para presentar. El servicio incluye revisión física del centro de trabajo.
 

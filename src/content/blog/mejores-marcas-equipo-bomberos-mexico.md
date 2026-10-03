@@ -13,7 +13,7 @@ image:
 
 Cada que alguien pregunta qué marca corresponde a su operación, la respuesta empieza con otra pregunta: "¿para qué uso?". En el equipo de bombero no hay una marca que gane en todo. La comparación útil parte del modelo, la certificación, la configuración, las refacciones y el riesgo de la operación. Elegir bien no es seguir la moda ni el logo más vistoso; es revisar la evidencia técnica disponible y cruzarla con lo que tu operación necesita.
 
-Esta es una guía de marcas presentes en el catálogo de VIGILES y de criterios para pedir documentación antes de comprar. No es un ranking: la conveniencia depende de la aplicación y de la configuración documentada del producto.
+Esta es una guía de marcas presentes en el catálogo de INPROSEG FIRE y de criterios para pedir documentación antes de comprar. No es un ranking: la conveniencia depende de la aplicación y de la configuración documentada del producto.
 
 ## Respiración autónoma (SCBA): aquí la marca pesa de verdad
 
@@ -62,7 +62,7 @@ La decisión se afina con criterios prácticos. Piensa en el tipo de intervenci�
 
 ## La marca abre la puerta; el respaldo la mantiene abierta
 
-Una marca no resuelve por sí sola la compra si el producto no es original, la certificación no está vigente o no hay quién dé el servicio después. VIGILES distribuye las marcas del catálogo, cuenta con servicio técnico autorizado y mantiene stock permanente en CDMX con entrega en 24–48 h.
+Una marca no resuelve por sí sola la compra si el producto no es original, la certificación no está vigente o no hay quién dé el servicio después. INPROSEG FIRE distribuye las marcas del catálogo, cuenta con servicio técnico autorizado y mantiene stock permanente en CDMX con entrega en 24–48 h.
 
 ## Sistemas, detección y equipo de apoyo
 
@@ -85,7 +85,7 @@ Antes de pedir cotizaciones, escribe el uso y después compara los mismos campos
 
 No compares una característica aislada sin leer su configuración. Por ejemplo, una plataforma SCBA puede comercializarse en variantes para mercados diferentes; un certificado debe corresponder a la unidad ofertada. Lo mismo ocurre con un traje: el nombre de la línea no identifica por sí solo el composite y la certificación del conjunto terminado. Si la compra será pública, incorpora esos campos a la [ficha técnica de la propuesta](/blog/fichas-tecnicas-compranet-equipo-contra-incendio/).
 
-VIGILES es distribuidor autorizado de las marcas del catálogo, ofrece servicio técnico autorizado y cuenta con stock permanente en CDMX con entrega en 24–48 horas. Pide una [cotización](/cotizacion/) con la aplicación, cantidad y documentación requerida.
+INPROSEG FIRE es distribuidor autorizado de las marcas del catálogo, ofrece servicio técnico autorizado y cuenta con stock permanente en CDMX con entrega en 24–48 horas. Pide una [cotización](/cotizacion/) con la aplicación, cantidad y documentación requerida.
 
 ## Evita comparaciones que no significan lo mismo
 

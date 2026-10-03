@@ -21,8 +21,7 @@ import { services } from '@data/services';
 
 const seoMeta = {
   // Portada de la tienda (2026-09-15). El directorio vive en /directorio/.
-  title: 'Equipo contra Incendio y Equipo para Bomberos en México',
-  noBrandSuffix: true,
+  title: 'Equipo contra incendio para bomberos en México',
   description:
     'Venta de equipo contra incendio en todo México: extintores, sistemas contra incendio, detectores de humo, mangueras y equipo para bomberos certificado NFPA.',
   canonicalURL: `${SITE.url}/`,
@@ -34,7 +33,7 @@ const localBusinessSchema = {
   '@type': 'LocalBusiness',
   '@id': `${SITE.url}/#business`,
   name: SITE.metaName,
-  alternateName: ['VIGILES', 'Firefighters MX', 'FFMX', 'FireFighters México'],
+  alternateName: ['INPROSEG FIRE', 'Firefighters MX', 'FFMX', 'FireFighters México'],
   description: SITE.description,
   url: SITE.url,
   ...(TELEFONO_ACTIVO ? { telephone: SITE.phoneE164 } : {}),

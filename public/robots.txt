@@ -1,4 +1,4 @@
-# Robots.txt — VIGILES
+# Robots.txt — INPROSEG FIRE
 # https://firefighters.mx
 # Nota: sin grupos por bot específico de buscadores tradicionales
 # (Googlebot, Bingbot...) — cada bot lee SOLO su grupo y sobreescribirían

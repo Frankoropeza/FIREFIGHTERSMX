@@ -91,9 +91,9 @@ Si no puede, tienes huecos que llenar antes de que los encuentre el inspector.
 - [Dotación de extintores según NOM-002-STPS: cuántos necesitas y dónde](/blog/nom-002-stps-dotacion-extintores/)
 - [Collar de garantía y NOM-154: qué verifica el inspector en cada extintor](/blog/collar-garantia-extintores-nom-154/)
 
-## Capacitación Certificada en VIGILES
+## Capacitación Certificada en INPROSEG FIRE
 
-Si necesitas apoyo para diseñar, ejecutar y documentar simulacros que cumplan NOM-002-STPS y resistan cualquier inspección de Protección Civil o STPS, en VIGILES lo hacemos contigo: desde el plan hasta el expediente cerrado.
+Si necesitas apoyo para diseñar, ejecutar y documentar simulacros que cumplan NOM-002-STPS y resistan cualquier inspección de Protección Civil o STPS, en INPROSEG FIRE lo hacemos contigo: desde el plan hasta el expediente cerrado.
 
 [Servicio de capacitación certificada ](/servicios/capacitacion/)
 

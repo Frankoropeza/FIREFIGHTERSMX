@@ -1,40 +1,24 @@
 ---
-/**
- * Lockup horizontal de VIGILES: símbolo + wordmark + lema.
- * El lema se reparte (space-between) exactamente al ancho del wordmark,
- * de modo que ambos renglones queden alineados borde a borde.
- * Todo escala con `font-size` (--bl-fs): ajusta el tamaño desde el contenedor.
- */
-import BrandSymbol from '@components/common/BrandSymbol.astro';
-import BrandWordmark from '@components/common/BrandWordmark.astro';
-
+/** Logo raster horizontal de INPROSEG FIRE; `tagline` se conserva por compatibilidad. */
 interface Props {
   tagline?: string;
   variant?: 'light' | 'dark';
   class?: string;
 }
-const { tagline = 'Equipo contra incendio', variant = 'light', class: cls = '' } = Astro.props;
-const words = tagline.split(' ');
+const { variant = 'light', class: cls = '' } = Astro.props;
+const dark = variant === 'dark';
+const stem = dark ? '/brand/inproseg-fire-horizontal-dark' : '/brand/inproseg-fire-horizontal';
 ---
 
 <span class:list={['bl', `bl--${variant}`, cls]}>
-  <BrandSymbol variant={variant} class="bl-mark" />
-  <span class="bl-text">
-    <BrandWordmark class="bl-wm" />
-    <span class="bl-tag">{words.map((w) => <span>{w}</span>)}</span>
-  </span>
+  <picture>
+    <source srcset={`${stem}-h120.webp 1x, ${stem}-h240.webp 2x`} type="image/webp" />
+    <img src={`${stem}-h240.png`} width="444" height="120" alt="INPROSEG FIRE" decoding="async" fetchpriority={dark ? undefined : "high"} loading={dark ? "lazy" : undefined} />
+  </picture>
 </span>
 
 <style is:global>
-  .bl { display: inline-flex; align-items: center; gap: 1.3em; font-size: var(--bl-fs, 10px); line-height: 1; min-width: 0; }
-  .bl-mark { width: 5.6em; height: 5.6em; flex-shrink: 0; display: block; }
-  .bl-text { display: flex; flex-direction: column; width: 17em; min-width: 0; }
-  .bl-wm { display: block; width: 100%; height: auto; color: var(--c-ink); }
-  .bl-tag {
-    display: flex; justify-content: space-between; margin-top: 0.95em;
-    font-size: 0.95em; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
-    line-height: 1; white-space: nowrap; color: var(--bl-tag, var(--c-muted));
-  }
-  .bl--dark .bl-wm { color: #fff; }
-  .bl--dark { --bl-tag: var(--forge-300, #94a3b8); }
+  .bl { display: inline-flex; align-items: center; min-width: 0; }
+  .bl picture, .bl img { display: block; }
+  .bl img { width: auto; height: var(--logo-h, 54px); max-width: 100%; object-fit: contain; }
 </style>
