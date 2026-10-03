@@ -94,10 +94,10 @@ const h2s = 'color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1'
     <div class="container-site relative z-10 grid grid-cols-1 lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-14 items-center">
       <div>
         <div class="flex flex-wrap items-center gap-2 mb-5">
-          <span class="inline-flex items-center gap-1.5 font-display font-bold text-[10px] uppercase tracking-wider px-2 py-1" style={`color:${g.color};background:${g.color}1A;border:1px solid ${g.color}40`}>
+          <span class="inline-flex items-center gap-1.5 font-display font-bold text-2xs uppercase tracking-wider px-2 py-1" style={`color:${g.color};background:${g.color}1A;border:1px solid ${g.color}40`}>
 {g.labelCorto}</span>
-          <a href={fichaURL} class="font-display text-[10px] px-2 py-1 hover:text-[var(--c-accent)]" style="color:var(--c-amber);background:rgba(181,71,8,0.12);border:1px solid rgba(181,71,8,0.35)">Línea de {e.nombre}</a>
-          <span class="font-display text-[10px] uppercase tracking-wider px-2 py-1" style="color:var(--c-text-2);border:1px solid var(--c-line-strong)">{e.ciudad}, {edo.abreviatura}</span>
+          <a href={fichaURL} class="font-display text-2xs px-2 py-1 hover:text-[var(--c-accent)]" style="color:var(--c-amber);background:rgba(181,71,8,0.12);border:1px solid rgba(181,71,8,0.35)">Línea de {e.nombre}</a>
+          <span class="font-display text-2xs uppercase tracking-wider px-2 py-1" style="color:var(--c-text-2);border:1px solid var(--c-line-strong)">{e.ciudad}, {edo.abreviatura}</span>
         </div>
         <h1 id="linea-heading" class="font-display font-bold mb-3" style="color:var(--c-ink);font-size:clamp(1.9rem,4.2vw,3.4rem);line-height:1">{l.nombre}</h1>
         <p class="font-display text-sm uppercase tracking-wider mb-5" style="color:var(--forge-300)">{l.subtitulo}</p>
@@ -127,7 +127,7 @@ const h2s = 'color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1'
             <div class="aspect-[16/9] overflow-hidden" style={`background:var(--c-bg);border:1px solid ${borde}`}>
               <img src={l.imagen} {...imgAttrs(l.imagen, SIZES.hero)} alt={l.imagenAlt ?? l.nombre} width="1024" height="576" loading="eager" decoding="async" class="w-full h-full object-cover" />
             </div>
-            <figcaption class="font-display text-[10px] uppercase tracking-wider mt-2" style="color:var(--forge-300)">{l.nombre} · catálogo de {e.nombre}</figcaption>
+            <figcaption class="font-display text-2xs uppercase tracking-wider mt-2" style="color:var(--forge-300)">{l.nombre} · catálogo de {e.nombre}</figcaption>
           </figure>
         )}
 
@@ -155,13 +155,13 @@ const h2s = 'color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1'
                   <p class="text-sm leading-[1.85]" style="color:var(--c-text-2)">{f.descripcion}</p>
                   {f.cuando && (
                     <div>
-                      <h4 class="font-display text-[10px] mb-1" style="color:var(--forge-300)">Cuándo conviene<span class="sr-only"> el {f.nombre.toLowerCase()}</span></h4>
+                      <h4 class="font-display text-2xs mb-1" style="color:var(--forge-300)">Cuándo conviene<span class="sr-only"> el {f.nombre.toLowerCase()}</span></h4>
                       <p class="text-sm leading-[1.8]" style="color:var(--c-text)">{f.cuando}</p>
                     </div>
                   )}
                   {typeof f.modelos === 'number' && (
                     <div class="mt-auto pt-3" style={`border-top:1px solid ${borde}`}>
-                      <h5 class="font-display text-[10px] uppercase tracking-wider" style="color:var(--forge-300)">En catálogo<span class="sr-only">: {f.nombre.toLowerCase()}</span></h5>
+                      <h5 class="font-display text-2xs uppercase tracking-wider" style="color:var(--forge-300)">En catálogo<span class="sr-only">: {f.nombre.toLowerCase()}</span></h5>
                       <p class="text-sm" style="color:var(--c-text)">{f.modelos} {f.modelos === 1 ? 'modelo' : 'modelos'} declarados por la empresa</p>
                     </div>
                   )}
@@ -181,7 +181,7 @@ const h2s = 'color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1'
                 <thead>
                   <tr style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line-strong)">
                     {['Modelo','Marca','Familia',l.columnaRango ?? 'Caudal','Presión','Material','Certificación','Aplicaciones'].map((c, i) => (
-                      <th scope="col" class="text-left p-3 text-[10px] font-display font-bold uppercase tracking-widest" style={`color:${i === 3 ? g.color : 'var(--forge-300)'}`}>{c}</th>
+                      <th scope="col" class="text-left p-3 text-2xs font-display font-bold uppercase tracking-widest" style={`color:${i === 3 ? g.color : 'var(--forge-300)'}`}>{c}</th>
                     ))}
                   </tr>
                 </thead>
@@ -201,7 +201,7 @@ const h2s = 'color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1'
                 </tbody>
               </table>
             </div>
-            <p class="font-display text-[10px] uppercase tracking-wider mt-3" style="color:var(--forge-300)">Fuente: página de la línea en el sitio de la empresa · datos declarados por modelo</p>
+            <p class="font-display text-2xs uppercase tracking-wider mt-3" style="color:var(--forge-300)">Fuente: página de la línea en el sitio de la empresa · datos declarados por modelo</p>
           </section>
         )}
 
@@ -241,8 +241,8 @@ const h2s = 'color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1'
             <div class="overflow-x-auto" style={`border:1px solid ${borde}`}>
               <table style="width:100%;border-collapse:collapse;min-width:520px">
                 <thead><tr style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line-strong)">
-                  <th scope="col" class="text-left p-3 text-[10px] font-display font-bold uppercase tracking-widest" style="color:var(--forge-300);width:26%">Norma</th>
-                  <th scope="col" class="text-left p-3 text-[10px] font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Alcance</th></tr></thead>
+                  <th scope="col" class="text-left p-3 text-2xs font-display font-bold uppercase tracking-widest" style="color:var(--forge-300);width:26%">Norma</th>
+                  <th scope="col" class="text-left p-3 text-2xs font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Alcance</th></tr></thead>
                 <tbody>{l.normas.map((n, i) => (
                   <tr style={`border-bottom:1px solid var(--c-line);background:${i % 2 === 0 ? 'var(--c-bg)' : 'var(--c-bg-alt)'}`}>
                     <th scope="row" class="p-3 text-left font-display font-semibold text-xs align-top" style="color:var(--c-ink)">{n.norma}</th>
@@ -305,14 +305,14 @@ const h2s = 'color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1'
         )}
       </div>
 
-      <aside class="flex flex-col gap-4 lg:sticky lg:top-28">
+      <aside class="flex flex-col gap-4 lg:sticky lg:top-6">
         <div class="p-6" style="background:var(--c-surface);border:1px solid var(--c-line-strong)">
           <p class="font-display font-bold text-xs uppercase tracking-widest mb-3" style="color:var(--forge-300)">Empresa</p>
           <a href={fichaURL} class="font-display font-bold text-base hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{e.nombre}</a>
           <p class="text-xs leading-relaxed mt-1 mb-4" style="color:var(--c-text-2)">{e.direccion ? `${e.direccion} · ` : ''}{e.ciudad}, {edo.nombre}</p>
           <dl class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 text-sm m-0">
-            {e.telefono && <><dt class="font-display text-[10px] uppercase tracking-wider pt-1" style="color:var(--forge-300)">Tel.</dt><dd class="m-0" style="color:var(--c-ink)"><a href={`tel:${e.telefono.replace(/[^\d+]/g, '')}`} class="hover:text-[var(--c-accent)]">{e.telefono}</a></dd></>}
-            {e.email && <><dt class="font-display text-[10px] uppercase tracking-wider pt-1" style="color:var(--forge-300)">Correo</dt><dd class="m-0 break-all" style="color:var(--c-ink)"><a href={`mailto:${e.email}`} class="hover:text-[var(--c-accent)]">{e.email}</a></dd></>}
+            {e.telefono && <><dt class="font-display text-2xs uppercase tracking-wider pt-1" style="color:var(--forge-300)">Tel.</dt><dd class="m-0" style="color:var(--c-ink)"><a href={`tel:${e.telefono.replace(/[^\d+]/g, '')}`} class="hover:text-[var(--c-accent)]">{e.telefono}</a></dd></>}
+            {e.email && <><dt class="font-display text-2xs uppercase tracking-wider pt-1" style="color:var(--forge-300)">Correo</dt><dd class="m-0 break-all" style="color:var(--c-ink)"><a href={`mailto:${e.email}`} class="hover:text-[var(--c-accent)]">{e.email}</a></dd></>}
           </dl>
           <a href={fichaURL} class="btn btn-sm btn-outline w-full text-center mt-5">Ficha de {e.nombre} en {e.ciudad}</a>
         </div>
@@ -339,7 +339,7 @@ const h2s = 'color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1'
         <div class="p-6" style="background:var(--c-surface);border:1px solid var(--c-line-strong)">
           <p class="font-display font-bold text-xs uppercase tracking-widest mb-3" style="color:var(--forge-300)">Fuentes de esta página</p>
           <ul class="flex flex-col gap-2 list-none m-0 p-0">{l.fuentes.map((f) => <li><a href={f.url} target="_blank" rel="noopener nofollow" class="text-xs hover:text-[var(--c-accent)]" style="color:var(--c-text)">{f.nombre}</a></li>)}</ul>
-          <p class="text-[11px] mt-3 leading-relaxed" style="color:var(--c-muted)">Datos declarados por la empresa en su sitio y verificados en {l.verificadoEl}. La validación final de cada modelo se hace contra la ficha técnica del fabricante.</p>
+          <p class="text-2xs mt-3 leading-relaxed" style="color:var(--c-muted)">Datos declarados por la empresa en su sitio y verificados en {l.verificadoEl}. La validación final de cada modelo se hace contra la ficha técnica del fabricante.</p>
         </div>
       </aside>
     </div>

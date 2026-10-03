@@ -49,7 +49,7 @@ const ctaWeb = urlCotizar(web);
           <p class="text-sm leading-[1.85]" style="color:var(--c-text-2)">{s.descripcion}</p>
           {s.incluye.length > 0 && (
             <div>
-              <h4 class="font-display text-[10px] mb-2" style="color:var(--forge-300)">Qué incluye<span class="sr-only">: {s.titulo.toLowerCase()}</span></h4>
+              <h4 class="font-display text-2xs mb-2" style="color:var(--forge-300)">Qué incluye<span class="sr-only">: {s.titulo.toLowerCase()}</span></h4>
               <ul class="flex flex-col list-none m-0 p-0">
                 {s.incluye.map((i) => (
                   <li class="flex items-start gap-2 text-sm py-2" style={`color:var(--c-text);border-bottom:1px solid ${borde}`}>
@@ -62,7 +62,7 @@ const ctaWeb = urlCotizar(web);
           )}
           {s.entregable && (
             <div class="mt-auto pt-3" style={`border-top:1px solid ${borde}`}>
-              <h5 class="font-display text-[10px] uppercase tracking-wider mb-1" style="color:var(--forge-300)">Entregable<span class="sr-only"> de {s.titulo.toLowerCase()}</span></h5>
+              <h5 class="font-display text-2xs uppercase tracking-wider mb-1" style="color:var(--forge-300)">Entregable<span class="sr-only"> de {s.titulo.toLowerCase()}</span></h5>
               <p class="text-sm" style="color:var(--c-text)">{s.entregable}</p>
             </div>
           )}
@@ -106,7 +106,7 @@ const ctaWeb = urlCotizar(web);
             {l.pagina && lineasInternas[l.pagina] ? (
               <div class="mt-auto flex flex-col gap-2">
                 <a href={lineasInternas[l.pagina]} class="btn btn-sm btn-primary w-full text-center">{l.nombre}</a>
-                {web && l.url && <a href={l.url} target="_blank" rel={relEmpresa(l.url)} class="block text-center font-display text-[11px] uppercase tracking-wider hover:text-[var(--c-accent)]" style="color:var(--forge-300)">Modelos en el sitio de la empresa </a>}
+                {web && l.url && <a href={l.url} target="_blank" rel={relEmpresa(l.url)} class="block text-center font-display text-2xs uppercase tracking-wider hover:text-[var(--c-accent)]" style="color:var(--forge-300)">Modelos en el sitio de la empresa </a>}
               </div>
             ) : (
               web && l.url && <a href={l.url} target="_blank" rel={relEmpresa(l.url)} class="btn btn-sm btn-primary w-full text-center mt-auto">{l.nombre}</a>
@@ -124,12 +124,12 @@ const ctaWeb = urlCotizar(web);
       <table style="width:100%;border-collapse:collapse;min-width:820px">
         <thead>
           <tr style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line-strong)">
-            <th scope="col" class="text-left p-3 text-[10px] font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Línea</th>
-            <th scope="col" class="text-left p-3 text-[10px] font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Familias</th>
-            <th scope="col" class="text-left p-3 text-[10px] font-display font-bold uppercase tracking-widest" style={`color:${g.color}`}>Rango declarado</th>
-            <th scope="col" class="text-left p-3 text-[10px] font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Materiales</th>
-            <th scope="col" class="text-left p-3 text-[10px] font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Certificación</th>
-            <th scope="col" class="text-left p-3 text-[10px] font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Normas</th>
+            <th scope="col" class="text-left p-3 text-2xs font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Línea</th>
+            <th scope="col" class="text-left p-3 text-2xs font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Familias</th>
+            <th scope="col" class="text-left p-3 text-2xs font-display font-bold uppercase tracking-widest" style={`color:${g.color}`}>Rango declarado</th>
+            <th scope="col" class="text-left p-3 text-2xs font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Materiales</th>
+            <th scope="col" class="text-left p-3 text-2xs font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Certificación</th>
+            <th scope="col" class="text-left p-3 text-2xs font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Normas</th>
           </tr>
         </thead>
         <tbody>
@@ -137,7 +137,7 @@ const ctaWeb = urlCotizar(web);
             <tr style={`border-bottom:1px solid var(--c-line);background:${i % 2 === 0 ? 'var(--c-bg)' : 'var(--c-bg-alt)'}`}>
               <th scope="row" class="p-3 text-left font-display font-semibold text-xs align-top" style="color:var(--c-ink)">
                 {l.nombre}
-                {l.modelos && <span class="block font-normal text-[11px] mt-1" style="color:var(--forge-300)">{l.modelos}</span>}
+                {l.modelos && <span class="block font-normal text-2xs mt-1" style="color:var(--forge-300)">{l.modelos}</span>}
               </th>
               <td class="p-3 text-xs align-top leading-relaxed" style="color:var(--c-text)">{l.familias.join(' · ')}</td>
               <td class="p-3 font-display font-bold text-xs align-top" style={`color:${g.color}`}>{l.rango ?? '—'}</td>
@@ -149,7 +149,7 @@ const ctaWeb = urlCotizar(web);
         </tbody>
       </table>
     </div>
-    <p class="font-display text-[10px] uppercase tracking-wider mt-3" style="color:var(--forge-300)">Fuente: catálogo publicado por la empresa · rangos y certificaciones declarados por familia</p>
+    <p class="font-display text-2xs uppercase tracking-wider mt-3" style="color:var(--forge-300)">Fuente: catálogo publicado por la empresa · rangos y certificaciones declarados por familia</p>
 
     {v.criterios.length > 0 && (
       <div class="mt-8">
@@ -203,8 +203,8 @@ const ctaWeb = urlCotizar(web);
       <table style="width:100%;border-collapse:collapse;min-width:520px">
         <thead>
           <tr style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line-strong)">
-            <th scope="col" class="text-left p-3 text-[10px] font-display font-bold uppercase tracking-widest" style="color:var(--forge-300);width:32%">Concepto</th>
-            <th scope="col" class="text-left p-3 text-[10px] font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Condición declarada</th>
+            <th scope="col" class="text-left p-3 text-2xs font-display font-bold uppercase tracking-widest" style="color:var(--forge-300);width:32%">Concepto</th>
+            <th scope="col" class="text-left p-3 text-2xs font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Condición declarada</th>
           </tr>
         </thead>
         <tbody>

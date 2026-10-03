@@ -57,7 +57,7 @@ const planes = [
       <div class="grid grid-cols-1 md:grid-cols-3 gap-px" style="background:var(--c-line);border:1px solid var(--c-line)">
         {planes.map((p) => { const c = planConfig[p.key]; return (
           <div class="flex flex-col gap-4 p-7" style={`background:var(--c-bg)`}>
-            <span class="font-display font-bold text-[10px] uppercase tracking-wider" style={`color:${c.color}`}>{p.titulo}</span>
+            <span class="font-display font-bold text-2xs uppercase tracking-wider" style={`color:${c.color}`}>{p.titulo}</span>
             <span class="font-display font-bold text-3xl" style="color:var(--c-ink);line-height:1">{p.precio}</span>
             <p class="text-xs leading-relaxed" style="color:var(--c-muted)">{p.desc}</p>
             <ul class="flex flex-col gap-2 list-none m-0 p-0 mt-2">{p.puntos.map((x) => <li class="flex items-start gap-2 text-xs" style="color:var(--c-text)"><span style={`color:${c.color}`}>Sí</span>{x}</li>)}</ul>
@@ -93,7 +93,7 @@ const planes = [
           </div>
         </form>
       </div>
-      <aside class="flex flex-col gap-4 lg:sticky lg:top-28">
+      <aside class="flex flex-col gap-4 lg:sticky lg:top-6">
         <div class="p-6" style="background:var(--c-surface);border:1px solid var(--c-line-strong)">
           <p class="font-display font-bold text-xs uppercase tracking-widest mb-3" style="color:var(--forge-300)">Qué verificamos</p>
           <ul class="flex flex-col gap-2 list-none m-0 p-0 text-xs" style="color:var(--c-text)">

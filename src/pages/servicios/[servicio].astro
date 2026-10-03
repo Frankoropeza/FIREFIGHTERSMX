@@ -270,7 +270,7 @@ const seoTitle = seoTitles[s.slug] ?? `${s.title} contra incendio en México`;
                 <div class="absolute top-0 left-0 w-12 h-12 pointer-events-none"  aria-hidden="true"></div>
                 <div class="absolute bottom-0 right-0 w-12 h-12 pointer-events-none"  aria-hidden="true"></div>
               </div>
-              <figcaption class="flex items-center justify-between gap-3 mt-3 text-[10px] font-display font-semibold uppercase tracking-widest" style="color:var(--forge-300)">
+              <figcaption class="flex items-center justify-between gap-3 mt-3 text-2xs font-display font-semibold uppercase tracking-widest" style="color:var(--forge-300)">
                 <span>{s.title}</span>
                 <span style="color:var(--c-accent)">{s.norm}</span>
               </figcaption>
@@ -318,13 +318,13 @@ const seoTitle = seoTitles[s.slug] ?? `${s.title} contra incendio en México`;
       </div>
 
       <!-- Sidebar -->
-      <aside class="flex flex-col gap-4 lg:sticky lg:top-20">
+      <aside class="flex flex-col gap-4 lg:sticky lg:top-6">
 
         <!-- Bloque 1: Artículos sobre este servicio -->
         {catArticulos.length > 0 && (
           <div style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
             <div class="px-4 py-3" style="background:var(--c-bg);border-bottom:1px solid var(--c-line)">
-              <span class="text-[9px] font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Artículos sobre este servicio</span>
+              <span class="text-2xs font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Artículos sobre este servicio</span>
             </div>
             <div class="flex flex-col">
               {catArticulos.map((art, i) => (
@@ -336,7 +336,7 @@ const seoTitle = seoTitles[s.slug] ?? `${s.title} contra incendio en México`;
               ))}
             </div>
             <div class="px-4 py-3" style="border-top:1px solid var(--c-line)">
-              <a href="/blog" class="text-[10px] font-display font-semibold hover:text-[var(--c-accent)]" style="color:var(--forge-300)">
+              <a href="/blog" class="text-2xs font-display font-semibold hover:text-[var(--c-accent)]" style="color:var(--forge-300)">
                 Todos los artículos del blog técnico 
               </a>
             </div>
@@ -347,7 +347,7 @@ const seoTitle = seoTitles[s.slug] ?? `${s.title} contra incendio en México`;
         {serviciosRel.length > 0 && (
           <div style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
             <div class="px-4 py-3" style="background:var(--c-bg);border-bottom:1px solid var(--c-line)">
-              <span class="text-[9px] font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Servicios relacionados</span>
+              <span class="text-2xs font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Servicios relacionados</span>
             </div>
             <div class="flex flex-col">
               {serviciosRel.map((sv, i) => (
@@ -355,12 +355,12 @@ const seoTitle = seoTitles[s.slug] ?? `${s.title} contra incendio en México`;
                    class="flex flex-col gap-0.5 px-4 py-3 group hover:bg-[var(--c-bg)]"
                    style={`border-bottom:${i < serviciosRel.length - 1 ? '1px solid var(--c-line)' : 'none'}`}>
                   <span class="text-xs font-display font-semibold leading-snug group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{sv.title}</span>
-                  <span class="text-[11px]" style="color:var(--c-muted)">{sv.norm}</span>
+                  <span class="text-2xs" style="color:var(--c-muted)">{sv.norm}</span>
                 </a>
               ))}
             </div>
             <div class="px-4 py-3" style="border-top:1px solid var(--c-line)">
-              <a href="/servicios" class="text-[10px] font-display font-semibold hover:text-[var(--c-accent)]" style="color:var(--forge-300)">
+              <a href="/servicios" class="text-2xs font-display font-semibold hover:text-[var(--c-accent)]" style="color:var(--forge-300)">
                 Todos los servicios contra incendio 
               </a>
             </div>
@@ -371,7 +371,7 @@ const seoTitle = seoTitles[s.slug] ?? `${s.title} contra incendio en México`;
         {productosRel.length > 0 && (
           <div style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
             <div class="px-4 py-3" style="background:var(--c-bg);border-bottom:1px solid var(--c-line)">
-              <span class="text-[9px] font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Productos que necesitas</span>
+              <span class="text-2xs font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Productos que necesitas</span>
             </div>
             <div class="flex flex-col">
               {productosRel.map((pr, i) => (
@@ -379,12 +379,12 @@ const seoTitle = seoTitles[s.slug] ?? `${s.title} contra incendio en México`;
                    class="flex flex-col gap-0.5 px-4 py-3 group hover:bg-[var(--c-bg)]"
                    style={`border-bottom:${i < productosRel.length - 1 ? '1px solid var(--c-line)' : 'none'}`}>
                   <span class="text-xs font-display font-semibold leading-snug group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{pr.label}</span>
-                  <span class="text-[11px]" style="color:var(--c-muted)">{pr.marcas}</span>
+                  <span class="text-2xs" style="color:var(--c-muted)">{pr.marcas}</span>
                 </a>
               ))}
             </div>
             <div class="px-4 py-3" style="border-top:1px solid var(--c-line)">
-              <a href="/productos" class="text-[10px] font-display font-semibold hover:text-[var(--c-accent)]" style="color:var(--forge-300)">
+              <a href="/productos" class="text-2xs font-display font-semibold hover:text-[var(--c-accent)]" style="color:var(--forge-300)">
                 Equipo para bomberos
               </a>
             </div>
@@ -394,7 +394,7 @@ const seoTitle = seoTitles[s.slug] ?? `${s.title} contra incendio en México`;
         <!-- Bloque 4: CTA cotización -->
         <div style="background:var(--c-accent)">
           <div class="p-5 flex flex-col gap-3">
-            <p class="text-[10px] font-display font-bold uppercase tracking-widest" style="color:rgba(255,255,255,0.7)">¿Necesitas cotización?</p>
+            <p class="text-2xs font-display font-bold uppercase tracking-widest" style="color:rgba(255,255,255,0.7)">¿Necesitas cotización?</p>
             <p class="text-xs leading-relaxed" style="color:rgba(255,255,255,0.9)">Respuesta el mismo día hábil. Un especialista te atiende por {CANAL_CONTACTO}.</p>
             <a href={whatsappUrl(`Hola, quiero cotizar el servicio de ${s.title.toLowerCase()}.`)}
                target="_blank" rel="noopener"
@@ -402,7 +402,7 @@ const seoTitle = seoTitles[s.slug] ?? `${s.title} contra incendio en México`;
                style="background:var(--c-bg);color:#FFFFFF">
               Cotizar por {CANAL_CONTACTO}
             </a>
-            <a href="/cotizacion" class="text-[10px] text-center hover:opacity-80" style="color:rgba(255,255,255,0.7)">
+            <a href="/cotizacion" class="text-2xs text-center hover:opacity-80" style="color:rgba(255,255,255,0.7)">
               Cotización formal 
             </a>
           </div>
@@ -417,14 +417,14 @@ const seoTitle = seoTitles[s.slug] ?? `${s.title} contra incendio en México`;
   {serviciosRel.length > 0 && (
     <section style="background:var(--c-bg);border-top:1px solid var(--c-line)" aria-labelledby="svs-rel-title">
       <div class="container-site py-10 sm:py-12">
-        <p id="svs-rel-title" class="text-[9px] font-display font-bold uppercase tracking-widest mb-6" style="color:var(--forge-300)">Servicios relacionados</p>
+        <p id="svs-rel-title" class="text-2xs font-display font-bold uppercase tracking-widest mb-6" style="color:var(--forge-300)">Servicios relacionados</p>
         <div class="card-grid">
           {serviciosRel.map((sv) => (
             <a href={sv.href} class="group flex flex-col gap-2 p-5 hover:border-[var(--c-line-strong)]"
                style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
               <span class="text-sm font-display font-bold group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{sv.title}</span>
               <span class="text-xs leading-relaxed" style="color:var(--c-muted)">{sv.norm}</span>
-              <span class="text-[11px] font-semibold mt-1" style="color:var(--c-accent)">Servicio de {sv.title.toLowerCase()} </span>
+              <span class="text-2xs font-semibold mt-1" style="color:var(--c-accent)">Servicio de {sv.title.toLowerCase()} </span>
             </a>
           ))}
         </div>

@@ -8,13 +8,13 @@ import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl, TELEFONO_ACTIVO } from '@co
     <!-- Izquierda: marca + disponibilidad + cobertura -->
     <div class="flex items-center gap-5 min-w-0">
 
-      <span class="font-semibold text-[11px] tracking-[0.06em] uppercase shrink-0 whitespace-nowrap" style="color:var(--c-ink-2)">
+      <span class="font-semibold text-2xs tracking-[0.06em] uppercase shrink-0 whitespace-nowrap" style="color:var(--c-ink-2)">
         {SITE.name} <span style="color:var(--c-accent)">·</span> {SITE.lema}
       </span>
 
       <span class="hidden xl:block w-px h-3 shrink-0" style="background:var(--c-line)"></span>
 
-      <span class="hidden xl:block text-[11px] font-semibold whitespace-nowrap" style="color:var(--c-accent)">
+      <span class="hidden xl:block text-2xs font-semibold whitespace-nowrap" style="color:var(--c-accent)">
         Más de {SITE.experienceYears} años de experiencia
       </span>
 
@@ -22,7 +22,7 @@ import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl, TELEFONO_ACTIVO } from '@co
 
       <div class="hidden 2xl:flex items-center gap-1.5">
         <span class="w-1.5 h-1.5 rounded-full shrink-0" style="background:var(--c-success)"></span>
-        <span class="text-[11px] font-medium tracking-wide whitespace-nowrap" style="color:var(--c-muted)">
+        <span class="text-2xs font-medium tracking-wide whitespace-nowrap" style="color:var(--c-muted)">
           Envíos a los 32 estados
         </span>
       </div>
@@ -31,7 +31,7 @@ import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl, TELEFONO_ACTIVO } from '@co
 
       <div class="hidden min-[1800px]:flex items-center gap-1.5">
         
-        <span class="text-[11px] whitespace-nowrap" style="color:var(--forge-300)">Polanco, CDMX</span>
+        <span class="text-2xs whitespace-nowrap" style="color:var(--forge-300)">Polanco, CDMX</span>
       </div>
 
     </div>
@@ -42,7 +42,7 @@ import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl, TELEFONO_ACTIVO } from '@co
       <!-- Normas -->
       <div class="hidden min-[1800px]:flex items-center gap-2">
         {['NFPA 1970', 'NOM-002-STPS', 'UL Listed'].map(n => (
-          <span class="text-[10px] font-semibold px-2 py-0.5 whitespace-nowrap rounded"
+          <span class="text-2xs font-semibold px-2 py-0.5 whitespace-nowrap rounded"
                 style="color:var(--c-text-2);background:#FFFFFF;border:1px solid var(--c-line);letter-spacing:0.04em">
             {n}
           </span>
@@ -58,7 +58,7 @@ import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl, TELEFONO_ACTIVO } from '@co
         style="color:var(--c-text-2)"
       >
         
-        <span class="text-[11px]">{SITE.email}</span>
+        <span class="text-2xs">{SITE.email}</span>
       </a>
 
       <span class="hidden lg:block w-px h-3 shrink-0" style="background:var(--c-line)"></span>
@@ -71,7 +71,7 @@ import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl, TELEFONO_ACTIVO } from '@co
         style="color:var(--c-text-2)"
       >
         
-        <span class="text-[11px] font-medium">{SITE.phone}</span>
+        <span class="text-2xs font-medium">{SITE.phone}</span>
       </a>
 
       )}
@@ -86,7 +86,7 @@ import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl, TELEFONO_ACTIVO } from '@co
         style={CONTACTO_DIRECTO_ACTIVO ? 'background:#E7F8EE;border:1px solid rgba(6,118,71,0.2);color:var(--c-success)' : 'background:var(--c-accent-soft);border:1px solid rgba(200,16,46,0.2);color:var(--c-accent)'}
       >
         
-        <span class="text-[11px] font-medium">{CONTACTO_DIRECTO_ACTIVO ? 'WhatsApp' : 'Correo'}</span>
+        <span class="text-2xs font-medium">{CONTACTO_DIRECTO_ACTIVO ? 'WhatsApp' : 'Correo'}</span>
       </a>
 
     </div>

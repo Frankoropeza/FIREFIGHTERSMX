@@ -755,14 +755,14 @@ const seoDesc = metaCerrada(product.description, [
                     />
                     {i === 0 && product.badge && (
                       <div class="absolute top-2 left-2 pointer-events-none">
-                        <span class="text-[9px] font-display font-bold uppercase tracking-widest px-2 py-1"
+                        <span class="text-2xs font-display font-bold uppercase tracking-widest px-2 py-1"
                               style="background:var(--c-accent);color:#FFFFFF">{product.badge}</span>
                       </div>
                     )}
                   </div>
                 ))}
               </div>
-              <figcaption class="text-[10px] mt-2 flex flex-wrap justify-between gap-2" style="color:var(--forge-300)">
+              <figcaption class="text-2xs mt-2 flex flex-wrap justify-between gap-2" style="color:var(--forge-300)">
                 <span>{imagenEsReferencia
                   ? `Imagen de referencia ${product.image?.startsWith('/images/productos/tipos/') ? 'del tipo de equipo' : 'de la categoría'}. La fotografía del modelo se entrega con su ficha técnica.`
                   : product.title}</span>
@@ -786,7 +786,7 @@ const seoDesc = metaCerrada(product.description, [
               )}
               {product.incluye && product.incluye.length > 0 && (
                 <div class="mb-5">
-                  <p class="text-[10px] font-display font-bold uppercase tracking-widest mb-2" style="color:var(--forge-300)">Presentaciones y componentes</p>
+                  <p class="text-2xs font-display font-bold uppercase tracking-widest mb-2" style="color:var(--forge-300)">Presentaciones y componentes</p>
                   <ul class="m-0 pl-4 flex flex-col gap-1" style="color:var(--c-text-2)">
                     {product.incluye.map((x) => <li class="text-sm leading-relaxed">{x}</li>)}
                   </ul>
@@ -801,15 +801,15 @@ const seoDesc = metaCerrada(product.description, [
             {specRows.length > 0 && (
               <div style="border-top:1px solid var(--c-line)">
                 <div class="px-6 py-3" style="background:var(--c-bg-alt)">
-                  <span class="text-[10px] font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Especificaciones técnicas</span>
+                  <span class="text-2xs font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Especificaciones técnicas</span>
                 </div>
                 <div style="overflow-x:auto">
                   <table style="width:100%;border-collapse:collapse;min-width:400px">
                     <thead>
                       <tr style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line-strong)">
-                        <th class="text-left p-3 text-[10px] font-display font-bold uppercase tracking-widest" style="color:var(--forge-300);width:30%">Parámetro</th>
-                        <th class="text-left p-3 text-[10px] font-display font-bold uppercase tracking-widest" style="color:var(--c-accent);width:22%">Valor</th>
-                        <th class="text-left p-3 text-[10px] font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Referencia</th>
+                        <th class="text-left p-3 text-2xs font-display font-bold uppercase tracking-widest" style="color:var(--forge-300);width:30%">Parámetro</th>
+                        <th class="text-left p-3 text-2xs font-display font-bold uppercase tracking-widest" style="color:var(--c-accent);width:22%">Valor</th>
+                        <th class="text-left p-3 text-2xs font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Referencia</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -825,7 +825,7 @@ const seoDesc = metaCerrada(product.description, [
                 </div>
                 {specRows.some((s) => s.min || s.alto) && (
                   <div class="p-4" style="border-top:1px solid var(--c-line);background:var(--c-bg-alt)">
-                    <p class="text-[10px] font-display font-bold uppercase tracking-widest mb-3" style="color:var(--forge-300)">Contexto de desempeño</p>
+                    <p class="text-2xs font-display font-bold uppercase tracking-widest mb-3" style="color:var(--forge-300)">Contexto de desempeño</p>
                     <div class="flex flex-col gap-2">
                       {specRows.filter((s) => s.min || s.alto).map((s) => (
                         <div class="flex items-center gap-3 text-xs flex-wrap">
@@ -893,7 +893,7 @@ const seoDesc = metaCerrada(product.description, [
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-px" style="border-top:1px solid var(--c-line)">
               <div style="background:var(--c-bg-alt)">
                 <div class="px-5 pt-4 pb-3" style="border-bottom:1px solid var(--c-line)">
-                  <span class="text-[10px] font-display font-bold uppercase tracking-widest" style="color:var(--c-success)">Ideal para</span>
+                  <span class="text-2xs font-display font-bold uppercase tracking-widest" style="color:var(--c-success)">Ideal para</span>
                 </div>
                 <ul class="flex flex-col list-none m-0 p-0">
                   {casos.si.map((item, i) => (
@@ -907,7 +907,7 @@ const seoDesc = metaCerrada(product.description, [
               </div>
               <div style="background:var(--c-bg-alt)">
                 <div class="px-5 pt-4 pb-3" style="border-bottom:1px solid var(--c-line)">
-                  <span class="text-[10px] font-display font-bold uppercase tracking-widest" style="color:var(--c-amber)"> A considerar</span>
+                  <span class="text-2xs font-display font-bold uppercase tracking-widest" style="color:var(--c-amber)"> A considerar</span>
                 </div>
                 <ul class="flex flex-col list-none m-0 p-0">
                   {casos.considera.map((item, i) => (
@@ -980,7 +980,7 @@ const seoDesc = metaCerrada(product.description, [
           {/* Fuentes del fabricante */}
           {product.fuentes && product.fuentes.length > 0 && (
           <div class="px-1">
-            <p class="text-[10px] font-display font-bold uppercase tracking-widest mb-2" style="color:var(--forge-300)">Fuentes del fabricante</p>
+            <p class="text-2xs font-display font-bold uppercase tracking-widest mb-2" style="color:var(--forge-300)">Fuentes del fabricante</p>
             <ul class="list-none m-0 p-0 flex flex-col gap-1">
               {product.fuentes.map((s) => (
                 <li class="text-xs"><a href={s.url} target="_blank" rel="nofollow noopener" class="hover:text-[var(--c-accent)]" style="color:var(--c-text-2)">{s.titulo}</a></li>
@@ -1017,7 +1017,7 @@ const seoDesc = metaCerrada(product.description, [
                     </div>
                     <div>
                       <p class="font-display font-bold text-xs mb-0.5" style="color:var(--c-ink)">{d.t}</p>
-                      <p class="text-[11px] leading-relaxed m-0" style="color:var(--c-muted)">{d.d}</p>
+                      <p class="text-2xs leading-relaxed m-0" style="color:var(--c-muted)">{d.d}</p>
                     </div>
                   </div>
                 ))}
@@ -1040,9 +1040,9 @@ const seoDesc = metaCerrada(product.description, [
           {/* CTA cotizar */}
           <div style="background:var(--c-accent);border:1px solid rgba(200,16,46,0.6)">
             <div class="p-5">
-              <p class="text-[10px] font-display font-bold uppercase tracking-widest mb-1" style="color:rgba(255,255,255,0.7)">Cotización inmediata</p>
+              <p class="text-2xs font-display font-bold uppercase tracking-widest mb-1" style="color:rgba(255,255,255,0.7)">Cotización inmediata</p>
               <p class="font-display font-bold text-base mb-3" style="color:#FFFFFF;line-height:1.2">{product.title}</p>
-              {product.norm && <p class="text-[10px] mb-4" style="color:rgba(255,255,255,0.75)">{product.norm}{esDistribuidor && ' · Distribuidor autorizado MX'}</p>}
+              {product.norm && <p class="text-2xs mb-4" style="color:rgba(255,255,255,0.75)">{product.norm}{esDistribuidor && ' · Distribuidor autorizado MX'}</p>}
               <a href={whatsappUrl(`Hola, quiero cotizar el ${product.title}${product.norm ? ` (${product.norm})` : ''}. ¿Precio y disponibilidad?`)} target="_blank" rel="noopener"
                  class="block text-center text-sm font-display font-bold py-3 px-4 w-full hover:opacity-90"
                  style="background:#FFFFFF;color:var(--c-accent)">
@@ -1058,13 +1058,13 @@ const seoDesc = metaCerrada(product.description, [
           {specRows.length > 0 && (
             <div style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
               <div class="px-4 py-3" style="background:var(--c-bg);border-bottom:1px solid var(--c-line)">
-                <span class="text-[9px] font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Especificaciones</span>
+                <span class="text-2xs font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Especificaciones</span>
               </div>
               <div class="flex flex-col">
                 {specRows.map((s, i) => (
                   <div class="flex items-center justify-between gap-2 px-4 py-2.5"
                        style={`border-bottom:${i < specRows.length - 1 ? '1px solid var(--c-line)' : 'none'}`}>
-                    <span class="text-[11px]" style="color:var(--c-muted)">{s.label}</span>
+                    <span class="text-2xs" style="color:var(--c-muted)">{s.label}</span>
                     <span class="font-display font-bold text-xs" style="color:var(--c-accent)">{s.val}</span>
                   </div>
                 ))}
@@ -1076,7 +1076,7 @@ const seoDesc = metaCerrada(product.description, [
           {sidebarBrandProds.length > 0 && (
             <div style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
               <div class="px-4 py-3" style="background:var(--c-bg);border-bottom:1px solid var(--c-line)">
-                <span class="text-[9px] font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Más de {product.brand}</span>
+                <span class="text-2xs font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Más de {product.brand}</span>
               </div>
               <div class="flex flex-col">
                 {sidebarBrandProds.map((p, i) => (
@@ -1093,7 +1093,7 @@ const seoDesc = metaCerrada(product.description, [
                     )}
                     <div class="flex-1 min-w-0">
                       <p class="font-display font-semibold text-xs truncate group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{p.title}</p>
-                      {p.norm && <p class="text-[10px] mt-0.5" style="color:var(--forge-300)">{p.norm}</p>}
+                      {p.norm && <p class="text-2xs mt-0.5" style="color:var(--forge-300)">{p.norm}</p>}
                     </div>
                     
                   </a>
@@ -1101,7 +1101,7 @@ const seoDesc = metaCerrada(product.description, [
               </div>
               {brandPath && (
                 <div class="px-4 py-3" style="border-top:1px solid var(--c-line)">
-                  <a href={brandPath} class="text-[10px] font-display font-semibold hover:text-[var(--c-accent)]" style="color:var(--forge-300)">
+                  <a href={brandPath} class="text-2xs font-display font-semibold hover:text-[var(--c-accent)]" style="color:var(--forge-300)">
                     Catálogo completo {product.brand} 
                   </a>
                 </div>
@@ -1113,7 +1113,7 @@ const seoDesc = metaCerrada(product.description, [
           {sidebarCatProds.length > 0 && (
             <div style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
               <div class="px-4 py-3" style="background:var(--c-bg);border-bottom:1px solid var(--c-line)">
-                <span class="text-[9px] font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Más en {product.category}</span>
+                <span class="text-2xs font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Más en {product.category}</span>
               </div>
               <div class="flex flex-col">
                 {sidebarCatProds.map((p, i) => (
@@ -1128,14 +1128,14 @@ const seoDesc = metaCerrada(product.description, [
                     )}
                     <div class="flex-1 min-w-0">
                       <p class="font-display font-semibold text-xs truncate group-hover:text-[var(--c-accent)]" style="color:var(--c-text)">{p.title}</p>
-                      {p.brand && <p class="text-[10px] mt-0.5" style="color:var(--forge-300)">{p.brand}</p>}
+                      {p.brand && <p class="text-2xs mt-0.5" style="color:var(--forge-300)">{p.brand}</p>}
                     </div>
                     
                   </a>
                 ))}
               </div>
               <div class="px-4 py-3" style="border-top:1px solid var(--c-line)">
-                <a href={categoryPath} class="text-[10px] font-display font-semibold hover:text-[var(--c-accent)]" style="color:var(--forge-300)">
+                <a href={categoryPath} class="text-2xs font-display font-semibold hover:text-[var(--c-accent)]" style="color:var(--forge-300)">
                   Todo el catálogo de {product.category} 
                 </a>
               </div>
@@ -1145,7 +1145,7 @@ const seoDesc = metaCerrada(product.description, [
           {/* Otras categorías */}
           <div style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
             <div class="px-4 py-3" style="background:var(--c-bg);border-bottom:1px solid var(--c-line)">
-              <span class="text-[9px] font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Otras categorías</span>
+              <span class="text-2xs font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Otras categorías</span>
             </div>
             <div class="grid grid-cols-2 gap-px" style="border-bottom:1px solid var(--c-line)">
               {sidebarCats.slice(0, 8).map((cat) => (
@@ -1155,12 +1155,12 @@ const seoDesc = metaCerrada(product.description, [
                   <div class="shrink-0 w-5 h-5 flex items-center justify-center" style="color:var(--forge-300)">
                     
                   </div>
-                  <span class="text-[10px] font-display font-semibold truncate group-hover:text-[var(--c-accent)]" style="color:var(--c-text-2)">{cat.label}</span>
+                  <span class="text-2xs font-display font-semibold truncate group-hover:text-[var(--c-accent)]" style="color:var(--c-text-2)">{cat.label}</span>
                 </a>
               ))}
             </div>
             <div class="px-4 py-3">
-              <a href="/productos" class="text-[10px] font-display font-semibold hover:text-[var(--c-accent)]" style="color:var(--forge-300)">
+              <a href="/productos" class="text-2xs font-display font-semibold hover:text-[var(--c-accent)]" style="color:var(--forge-300)">
                 Todos los productos para bomberos 
               </a>
             </div>
@@ -1169,7 +1169,7 @@ const seoDesc = metaCerrada(product.description, [
           {/* Artículos relacionados */}
           <div style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
             <div class="px-4 py-3" style="background:var(--c-bg);border-bottom:1px solid var(--c-line)">
-              <span class="text-[9px] font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Artículos relacionados</span>
+              <span class="text-2xs font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Artículos relacionados</span>
             </div>
             <div class="flex flex-col">
               {sidebarArticulos.map((art, i) => (
@@ -1177,12 +1177,12 @@ const seoDesc = metaCerrada(product.description, [
                    class="flex flex-col gap-0.5 px-4 py-3 group hover:bg-[var(--c-bg)]"
                    style={`border-bottom:${i < sidebarArticulos.length - 1 ? '1px solid var(--c-line)' : 'none'}`}>
                   <span class="text-xs font-display font-semibold leading-snug group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{art.label}</span>
-                  <span class="text-[11px]" style="color:var(--c-muted)">{art.desc}</span>
+                  <span class="text-2xs" style="color:var(--c-muted)">{art.desc}</span>
                 </a>
               ))}
             </div>
             <div class="px-4 py-3" style="border-top:1px solid var(--c-line)">
-              <a href="/blog" class="text-[10px] font-display font-semibold hover:text-[var(--c-accent)]" style="color:var(--forge-300)">
+              <a href="/blog" class="text-2xs font-display font-semibold hover:text-[var(--c-accent)]" style="color:var(--forge-300)">
                 Todos los artículos del blog técnico 
               </a>
             </div>
@@ -1192,7 +1192,7 @@ const seoDesc = metaCerrada(product.description, [
           {catEquipo.length > 0 && (
             <div style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
               <div class="px-4 py-3" style="background:var(--c-bg);border-bottom:1px solid var(--c-line)">
-                <span class="text-[9px] font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Completa tu equipo</span>
+                <span class="text-2xs font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Completa tu equipo</span>
               </div>
               <div class="flex flex-col">
                 {catEquipo.map((eq, i) => (
@@ -1200,12 +1200,12 @@ const seoDesc = metaCerrada(product.description, [
                      class="flex flex-col gap-0.5 px-4 py-3 group hover:bg-[var(--c-bg)]"
                      style={`border-bottom:${i < catEquipo.length - 1 ? '1px solid var(--c-line)' : 'none'}`}>
                     <span class="text-xs font-display font-semibold leading-snug group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{eq.label}</span>
-                    <span class="text-[11px]" style="color:var(--c-muted)">{eq.brands}</span>
+                    <span class="text-2xs" style="color:var(--c-muted)">{eq.brands}</span>
                   </a>
                 ))}
               </div>
               <div class="px-4 py-3" style="border-top:1px solid var(--c-line)">
-                <a href="/productos" class="text-[10px] font-display font-semibold hover:text-[var(--c-accent)]" style="color:var(--forge-300)">
+                <a href="/productos" class="text-2xs font-display font-semibold hover:text-[var(--c-accent)]" style="color:var(--forge-300)">
                   Equipo para bomberos
                 </a>
               </div>
@@ -1216,7 +1216,7 @@ const seoDesc = metaCerrada(product.description, [
           {catServicios.length > 0 && (
             <div style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
               <div class="px-4 py-3" style="background:var(--c-bg);border-bottom:1px solid var(--c-line)">
-                <span class="text-[9px] font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Servicios para este equipo</span>
+                <span class="text-2xs font-display font-bold uppercase tracking-widest" style="color:var(--forge-300)">Servicios para este equipo</span>
               </div>
               <div class="flex flex-col">
                 {catServicios.map((sv, i) => (
@@ -1224,12 +1224,12 @@ const seoDesc = metaCerrada(product.description, [
                      class="flex flex-col gap-0.5 px-4 py-3 group hover:bg-[var(--c-bg)]"
                      style={`border-bottom:${i < catServicios.length - 1 ? '1px solid var(--c-line)' : 'none'}`}>
                     <span class="text-xs font-display font-semibold leading-snug group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{sv.label}</span>
-                    <span class="text-[11px]" style="color:var(--c-muted)">{sv.norm}</span>
+                    <span class="text-2xs" style="color:var(--c-muted)">{sv.norm}</span>
                   </a>
                 ))}
               </div>
               <div class="px-4 py-3" style="border-top:1px solid var(--c-line)">
-                <a href="/servicios" class="text-[10px] font-display font-semibold hover:text-[var(--c-accent)]" style="color:var(--forge-300)">
+                <a href="/servicios" class="text-2xs font-display font-semibold hover:text-[var(--c-accent)]" style="color:var(--forge-300)">
                   Servicios contra incendio 
                 </a>
               </div>
@@ -1249,7 +1249,7 @@ const seoDesc = metaCerrada(product.description, [
                  style="background:var(--c-accent);color:#FFFFFF">
                 Hablar con un asesor 
               </a>
-              <a href="/certificaciones" class="block text-center text-[10px] mt-2 font-display" style="color:var(--forge-300)">
+              <a href="/certificaciones" class="block text-center text-2xs mt-2 font-display" style="color:var(--forge-300)">
                 Certificaciones y normas NFPA y NOM
               </a>
             </div>
@@ -1268,7 +1268,7 @@ const seoDesc = metaCerrada(product.description, [
         <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
             {esDistribuidor && (
-              <span class="text-[9px] font-bold uppercase tracking-widest block mb-1" style="color:var(--forge-300)">
+              <span class="text-2xs font-bold uppercase tracking-widest block mb-1" style="color:var(--forge-300)">
                 Distribuidor autorizado {fabricante} en México
               </span>
             )}
@@ -1329,14 +1329,14 @@ const seoDesc = metaCerrada(product.description, [
                 </div>
               ) : (
                 <div class="flex items-center justify-center" style="aspect-ratio:4/3;background:var(--c-bg-alt)">
-                  <span class="text-[9px] uppercase tracking-widest" style="color:var(--c-muted)">Sin imagen</span>
+                  <span class="text-2xs uppercase tracking-widest" style="color:var(--c-muted)">Sin imagen</span>
                 </div>
               )}
 
               <div class="flex flex-col gap-2 p-4 flex-1">
                 <div class="flex flex-wrap gap-1.5">
-                  {p.norm  && <span class="badge badge-fire text-[9px]">{p.norm}</span>}
-                  {p.badge && <span class="badge badge-gold text-[9px]">{p.badge}</span>}
+                  {p.norm  && <span class="badge badge-fire text-2xs">{p.norm}</span>}
+                  {p.badge && <span class="badge badge-gold text-2xs">{p.badge}</span>}
                 </div>
                 <h3 class="font-display font-bold text-sm leading-snug group-hover:text-[var(--c-accent)]"
                     style="color:var(--c-ink)">{p.title}</h3>
@@ -1348,7 +1348,7 @@ const seoDesc = metaCerrada(product.description, [
                       .filter(([, v]) => !!v)
                       .slice(0, 3)
                       .map(([k, v]) => (
-                        <span class="text-[9px] font-semibold px-1.5 py-0.5"
+                        <span class="text-2xs font-semibold px-1.5 py-0.5"
                               style="background:var(--c-bg);color:var(--forge-300);border:1px solid var(--c-line)">
                           {metaPorCategoria[p.category]?.[k]?.label ?? specMeta[k]?.label ?? k}: {v}
                         </span>

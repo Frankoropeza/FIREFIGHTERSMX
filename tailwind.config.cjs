@@ -61,6 +61,11 @@ module.exports = {
           50:  '#F8F8F8',
         },
       },
+      // Rótulos y badges: única talla por debajo de text-xs (sustituye a los
+      // text-[9px]/[10px]/[11px] sueltos). En táctil sube a 12 px (global.css).
+      fontSize: {
+        '2xs': '0.6875rem',
+      },
       maxWidth: {
         site: '1440px',
       },

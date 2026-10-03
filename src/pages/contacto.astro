@@ -106,7 +106,7 @@ const canales = canalesTodos.filter(
           </p>
           <div class="flex flex-wrap gap-2">
             {['Cotización 24 h','32 estados','Asesoría técnica','CFDI 4.0'].map(n => (
-            <span class="badge badge-dark font-display text-[10px]">{n}</span>
+            <span class="badge badge-dark font-display text-2xs">{n}</span>
           ))}
           </div>
         </div>
@@ -138,7 +138,7 @@ const canales = canalesTodos.filter(
                     <span class="block" style="width:20px;height:20px" set:html={c.icon}/>
                   </span>
                   <span class="flex flex-col gap-0.5 min-w-0">
-                    <span class="text-[10px] font-display font-semibold uppercase tracking-widest" style="color:var(--forge-300)">{c.label}</span>
+                    <span class="text-2xs font-display font-semibold uppercase tracking-widest" style="color:var(--forge-300)">{c.label}</span>
                     {c.href ? (
                       <a href={c.href} target={c.href.startsWith('http') ? '_blank' : undefined} rel={c.href.startsWith('http') ? 'noopener' : undefined} class="font-display font-semibold text-sm hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{c.value}</a>
                     ) : (

@@ -65,11 +65,11 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
             {porGiro.map((g) => { const meta = giros.find((x) => x.slug === g.giro)!; return (
               <a href={`/empresas/${g.giro}/${estado.slug}/`} class="grid-cell ledger-cell flex flex-col gap-2 p-6" style="background:var(--c-surface)">
                 <div class="font-display font-bold text-sm uppercase tracking-wider" style="color:var(--c-ink)">{meta.labelCorto}</div>
-                <div class="text-[10px] uppercase tracking-widest" style="color:var(--forge-300)">en {estado.nombre} </div>
+                <div class="text-2xs uppercase tracking-widest" style="color:var(--forge-300)">en {estado.nombre} </div>
               </a>); })}
           </div>
           <div class="mt-5 flex flex-wrap gap-2">
-            {ciudades.slice(0, 8).map((c) => <span class="badge badge-dark font-display text-[10px]">{c.ciudad}</span>)}
+            {ciudades.slice(0, 8).map((c) => <span class="badge badge-dark font-display text-2xs">{c.ciudad}</span>)}
           </div>
         </div>
       </div>

@@ -236,7 +236,7 @@ const seoTitleCat = seoTitlesCat[cat.slug] ?? `${cat.label} ${cat.norm.split('·
         )}
         {cat.fuentes && cat.fuentes.length > 0 && (
           <div>
-            <p class="text-[10px] font-display font-bold uppercase tracking-widest mb-2" style="color:var(--forge-300)">Fuentes</p>
+            <p class="text-2xs font-display font-bold uppercase tracking-widest mb-2" style="color:var(--forge-300)">Fuentes</p>
             <ul class="list-none m-0 p-0 flex flex-col gap-1">
               {cat.fuentes.map((s) => <li class="text-xs"><a href={s.url} target="_blank" rel="nofollow noopener" class="hover:text-[var(--c-accent)]" style="color:var(--c-text-2)">{s.titulo}</a></li>)}
             </ul>

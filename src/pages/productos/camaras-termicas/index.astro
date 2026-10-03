@@ -215,7 +215,7 @@ const articulos = [
             ].map(s => (
               <div class="flex flex-col items-center justify-center text-center p-5" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
                 <span class="font-display font-bold text-2xl mb-1" style="color:var(--c-accent)">{s.v}</span>
-                <span class="text-[10px] uppercase tracking-widest" style="color:var(--forge-300)">{s.l}</span>
+                <span class="text-2xs uppercase tracking-widest" style="color:var(--forge-300)">{s.l}</span>
               </div>
             ))}
           </div>
@@ -233,7 +233,7 @@ const articulos = [
             ].map(s => (
               <div class="flex flex-col items-center justify-center text-center p-5" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
                 <span class="font-display font-bold text-2xl mb-1" style="color:var(--c-accent)">{s.v}</span>
-                <span class="text-[10px] uppercase tracking-widest" style="color:var(--forge-300)">{s.l}</span>
+                <span class="text-2xs uppercase tracking-widest" style="color:var(--forge-300)">{s.l}</span>
               </div>
             ))}
           </div>
@@ -346,7 +346,7 @@ const articulos = [
                 
               </div>
               <div>
-                <span class="text-[9px] font-bold uppercase tracking-widest block" style={`color:${t.accent}`}>{t.norm}</span>
+                <span class="text-2xs font-bold uppercase tracking-widest block" style={`color:${t.accent}`}>{t.norm}</span>
                 <h3 class="font-display font-bold text-base leading-tight" style="color:var(--c-ink)">{t.title}</h3>
               </div>
             </div>
@@ -360,10 +360,10 @@ const articulos = [
         <table class="w-full text-sm" style="border-collapse:collapse">
           <thead>
             <tr style="background:var(--c-bg);border-bottom:1px solid var(--c-line-strong)">
-              <th class="text-left py-3 px-4 text-[10px] font-bold uppercase tracking-widest" style="color:var(--forge-300);min-width:140px">Característica</th>
-              <th class="text-center py-3 px-4 text-[10px] font-bold uppercase tracking-widest" style="color:var(--c-accent)">FLIR</th>
-              <th class="text-center py-3 px-4 text-[10px] font-bold uppercase tracking-widest" style="color:var(--c-info)">MSA Safety</th>
-              <th class="text-center py-3 px-4 text-[10px] font-bold uppercase tracking-widest" style="color:var(--c-amber)">Bullard</th>
+              <th class="text-left py-3 px-4 text-2xs font-bold uppercase tracking-widest" style="color:var(--forge-300);min-width:140px">Característica</th>
+              <th class="text-center py-3 px-4 text-2xs font-bold uppercase tracking-widest" style="color:var(--c-accent)">FLIR</th>
+              <th class="text-center py-3 px-4 text-2xs font-bold uppercase tracking-widest" style="color:var(--c-info)">MSA Safety</th>
+              <th class="text-center py-3 px-4 text-2xs font-bold uppercase tracking-widest" style="color:var(--c-amber)">Bullard</th>
             </tr>
           </thead>
           <tbody>
@@ -403,7 +403,7 @@ const articulos = [
           </p>
           <div class="flex flex-wrap gap-2">
             {['NFPA 1930','FLIR K75','FLIR K85-N','FLIR T560','Teledyne FLIR','Wi-Fi · Flir Responder','Distribuidor autorizado MX'].map(b => (
-              <span class="badge badge-dark text-[9px]">{b}</span>
+              <span class="badge badge-dark text-2xs">{b}</span>
             ))}
           </div>
         </div>
@@ -457,7 +457,7 @@ const articulos = [
           </p>
           <div class="flex flex-wrap gap-2">
             {['NFPA 1930','MSA Evolution 6000','Evolution 6000','Montaje Gallet','SCBA G1 integrado','Transmisión Wi-Fi','Distribuidor autorizado MX'].map(b => (
-              <span class="badge badge-dark text-[9px]">{b}</span>
+              <span class="badge badge-dark text-2xs">{b}</span>
             ))}
           </div>
         </div>
@@ -512,7 +512,7 @@ const articulos = [
           </p>
           <div class="flex flex-wrap gap-2">
             {['NFPA 1930','Bullard TXS','Bullard NXT Pro','NXT Pro mando','640×480 · 60 Hz','NXT Pro NFPA 1930','Resistencia mecánica','Distribuidor autorizado MX'].map(b => (
-              <span class="badge badge-dark text-[9px]">{b}</span>
+              <span class="badge badge-dark text-2xs">{b}</span>
             ))}
           </div>
         </div>
@@ -705,7 +705,7 @@ const articulos = [
             class="flex flex-col gap-2 p-6"
             style="background:var(--c-bg-alt);border:1px solid var(--c-line)"
           >
-            <span class="text-[9px] font-bold uppercase tracking-widest" style="color:var(--c-accent)">{c.norm}</span>
+            <span class="text-2xs font-bold uppercase tracking-widest" style="color:var(--c-accent)">{c.norm}</span>
             <span class="font-display font-bold text-base" style="color:var(--c-ink)">{c.label}</span>
             <span class="text-xs leading-relaxed" style="color:var(--c-muted)">{c.shortDesc}</span>
           </a>
@@ -718,28 +718,28 @@ const articulos = [
   {/* ══ CATEGORÍAS RELACIONADAS ═══════════════════════════════════════ */}
   <section style="background:var(--c-bg);border-top:1px solid var(--c-line)" aria-labelledby="cats-rel-title">
     <div class="container-site py-10 sm:py-12">
-      <p id="cats-rel-title" class="text-[9px] font-display font-bold uppercase tracking-widest mb-6" style="color:var(--forge-300)">Categorías relacionadas</p>
+      <p id="cats-rel-title" class="text-2xs font-display font-bold uppercase tracking-widest mb-6" style="color:var(--forge-300)">Categorías relacionadas</p>
       <div class="card-grid">
         <a href="/productos/equipos-scba"
            class="group flex flex-col gap-2 p-5 hover:border-[var(--c-line-strong)]"
            style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
           <span class="text-sm font-display font-bold group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Equipos SCBA</span>
           <span class="text-xs leading-relaxed" style="color:var(--c-muted)">MSA G1 · Dräger PSS · 3M Scott</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:var(--c-accent)">Guía de Equipos SCBA </span>
+          <span class="text-2xs font-semibold mt-1" style="color:var(--c-accent)">Guía de Equipos SCBA </span>
         </a>
         <a href="/productos/trajes-bombero"
            class="group flex flex-col gap-2 p-5 hover:border-[var(--c-line-strong)]"
            style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
           <span class="text-sm font-display font-bold group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Trajes Bombero</span>
           <span class="text-xs leading-relaxed" style="color:var(--c-muted)">Globe · Lion Apparel · Honeywell · Fire-Dex</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:var(--c-accent)">Guía de Trajes Bombero </span>
+          <span class="text-2xs font-semibold mt-1" style="color:var(--c-accent)">Guía de Trajes Bombero </span>
         </a>
         <a href="/productos/cascos-nfpa"
            class="group flex flex-col gap-2 p-5 hover:border-[var(--c-line-strong)]"
            style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
           <span class="text-sm font-display font-bold group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Cascos NFPA</span>
           <span class="text-xs leading-relaxed" style="color:var(--c-muted)">MSA Gallet · Bullard · Cairns</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:var(--c-accent)">Guía de Cascos NFPA </span>
+          <span class="text-2xs font-semibold mt-1" style="color:var(--c-accent)">Guía de Cascos NFPA </span>
         </a>
       </div>
     </div>

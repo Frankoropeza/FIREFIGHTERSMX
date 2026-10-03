@@ -66,7 +66,7 @@ const pid = `pat-${p.slug}`;
 
     {/* Highlight ribbon */}
     {p.highlight && (
-      <div class="absolute top-0 left-0 text-[9px] font-display font-bold uppercase tracking-widest px-3 py-1 z-10" style="background:var(--c-accent);color:#FFFFFF;letter-spacing:0.12em">
+      <div class="absolute top-0 left-0 text-2xs font-display font-bold uppercase tracking-widest px-3 py-1 z-10" style="background:var(--c-accent);color:#FFFFFF;letter-spacing:0.12em">
          Más solicitado
       </div>
     )}
@@ -74,7 +74,7 @@ const pid = `pat-${p.slug}`;
     {/* Tier pill — top right */}
     {p.tier && (
     <div class="flex justify-end relative z-10" style={p.highlight ? 'margin-top:0.5rem' : ''}>
-      <span class="text-[9px] font-display font-semibold uppercase tracking-widest px-2.5 py-1" style="background:#FFFFFF;border:1px solid var(--c-line);color:var(--c-ink);border-radius:4px">
+      <span class="text-2xs font-display font-semibold uppercase tracking-widest px-2.5 py-1" style="background:#FFFFFF;border:1px solid var(--c-line);color:var(--c-ink);border-radius:4px">
         {p.tier}
       </span>
     </div>
@@ -86,7 +86,7 @@ const pid = `pat-${p.slug}`;
         {p.brand}
       </span>
       {p.norm && (
-        <span class="text-[9px] font-display font-semibold uppercase tracking-widest px-2 py-0.5" style="background:#FFFFFF;border:1px solid var(--c-line);color:var(--c-ink);border-radius:4px">
+        <span class="text-2xs font-display font-semibold uppercase tracking-widest px-2 py-0.5" style="background:#FFFFFF;border:1px solid var(--c-line);color:var(--c-ink);border-radius:4px">
           {p.norm}
         </span>
       )}
@@ -100,7 +100,7 @@ const pid = `pat-${p.slug}`;
 
     {/* Badge personalizado */}
     {p.badge && (
-      <span class="self-start text-[9px] font-display font-semibold uppercase tracking-widest px-2 py-0.5" style="background:rgba(200,16,46,0.10);border:1px solid rgba(200,16,46,0.28);color:var(--c-accent)">
+      <span class="self-start text-2xs font-display font-semibold uppercase tracking-widest px-2 py-0.5" style="background:rgba(200,16,46,0.10);border:1px solid rgba(200,16,46,0.28);color:var(--c-accent)">
         {p.badge}
       </span>
     )}
@@ -128,7 +128,7 @@ const pid = `pat-${p.slug}`;
     {p.features && p.features.length > 0 && (
       <ul class="flex flex-col gap-2 list-none m-0 p-0 pt-1">
         {p.features.map((f) => (
-          <li class="flex items-start gap-2.5 text-[11px] leading-relaxed" style="color:var(--c-text-2)">
+          <li class="flex items-start gap-2.5 text-2xs leading-relaxed" style="color:var(--c-text-2)">
             
             {f}
           </li>
@@ -168,7 +168,7 @@ const pid = `pat-${p.slug}`;
   .spec-chip {
     display: inline-flex;
     align-items: center;
-    font-size: 10px;
+    font-size: 0.6875rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.06em;
@@ -177,4 +177,5 @@ const pid = `pat-${p.slug}`;
     border: 1px solid var(--c-line-strong);
     color: var(--c-text-2);
   }
+  @media (max-width: 1023px) { .spec-chip { font-size: 0.75rem; } }
 </style>

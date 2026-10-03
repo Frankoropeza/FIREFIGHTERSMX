@@ -169,7 +169,7 @@ const sector = ind.name.split(' ').map((w) => (w === w.toUpperCase() ? w : w.toL
             <div class="absolute top-0 left-0 w-12 h-12 pointer-events-none"  aria-hidden="true"></div>
             <div class="absolute bottom-0 right-0 w-12 h-12 pointer-events-none"  aria-hidden="true"></div>
           </div>
-          <figcaption class="flex items-center justify-between gap-3 mt-3 text-[10px] font-display font-semibold uppercase tracking-widest" style="color:var(--forge-300)">
+          <figcaption class="flex items-center justify-between gap-3 mt-3 text-2xs font-display font-semibold uppercase tracking-widest" style="color:var(--forge-300)">
             <span>{ind.name}</span>
             <span style="color:var(--c-accent)">{ind.norm}</span>
           </figcaption>
@@ -200,7 +200,7 @@ const sector = ind.name.split(' ').map((w) => (w === w.toUpperCase() ? w : w.toL
               <span class="w-9 h-9 flex items-center justify-center shrink-0" style={`border:1px solid var(--c-line-strong);color:${cat!.accent}`}>
                 <span class="w-4 h-4 block" set:html={cat!.icon}/>
               </span>
-              <span class="text-[9px] font-display font-semibold uppercase tracking-widest text-right" style="color:var(--forge-300)">{cat!.norm}</span>
+              <span class="text-2xs font-display font-semibold uppercase tracking-widest text-right" style="color:var(--forge-300)">{cat!.norm}</span>
             </div>
             <h3 class="font-display font-bold text-base leading-snug group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{cat!.label}</h3>
             <p class="text-xs leading-relaxed" style="color:var(--c-muted);flex:1">{cat!.shortDesc}</p>
@@ -220,7 +220,7 @@ const sector = ind.name.split(' ').map((w) => (w === w.toUpperCase() ? w : w.toL
       <div class="card-grid card-grid--cells" >
         {recServices.map((s) => (
           <a href={s!.href} class="grid-cell group flex flex-col gap-2 p-5">
-            <span class="text-[9px] font-display font-semibold uppercase tracking-widest" style="color:var(--forge-300)">{s!.norm}</span>
+            <span class="text-2xs font-display font-semibold uppercase tracking-widest" style="color:var(--forge-300)">{s!.norm}</span>
             <h3 class="font-display font-bold text-base leading-snug group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{s!.title}</h3>
             <p class="text-xs leading-relaxed" style="color:var(--c-muted)">{s!.shortDesc}</p>
           </a>

@@ -17,15 +17,15 @@ const estadosConEmpresas = (await conteoPorEstado()).filter((e) => e.total > 0).
         <h2 id="dir-sec-heading" class="font-display font-bold mb-8" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">Directorio nacional de bomberos<br/><span style="color:var(--c-accent)">y empresas del sector.</span></h2>
         <dl class="grid grid-cols-3" style="border-top:1px solid var(--c-line)">
           <div class="pt-4 pr-4">
-            <dt class="text-[11px] font-display font-semibold uppercase tracking-wider" style="color:var(--c-muted)">Estaciones</dt>
+            <dt class="text-2xs font-display font-semibold uppercase tracking-wider" style="color:var(--c-muted)">Estaciones</dt>
             <dd class="font-display font-bold tabular-nums" style="color:var(--c-ink);font-size:clamp(1.5rem,2.4vw,2rem);line-height:1.1">{estaciones.toLocaleString('es-MX')}</dd>
           </div>
           <div class="pt-4 px-4" style="border-left:1px solid var(--c-line)">
-            <dt class="text-[11px] font-display font-semibold uppercase tracking-wider" style="color:var(--c-muted)">Empresas</dt>
+            <dt class="text-2xs font-display font-semibold uppercase tracking-wider" style="color:var(--c-muted)">Empresas</dt>
             <dd class="font-display font-bold tabular-nums" style="color:var(--c-ink);font-size:clamp(1.5rem,2.4vw,2rem);line-height:1.1">{totalEmpresas.toLocaleString('es-MX')}</dd>
           </div>
           <div class="pt-4 pl-4" style="border-left:1px solid var(--c-line)">
-            <dt class="text-[11px] font-display font-semibold uppercase tracking-wider" style="color:var(--c-muted)">Estados</dt>
+            <dt class="text-2xs font-display font-semibold uppercase tracking-wider" style="color:var(--c-muted)">Estados</dt>
             <dd class="font-display font-bold tabular-nums" style="color:var(--c-ink);font-size:clamp(1.5rem,2.4vw,2rem);line-height:1.1">{estadosConEmpresas}</dd>
           </div>
         </dl>

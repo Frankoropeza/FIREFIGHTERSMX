@@ -209,7 +209,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
           ))}
           <div class="flex flex-wrap gap-2">
             {['NFPA 1970','NFPA 1950','MSA Gallet F1 XF','Bullard USTM','Cairns N6A','Visor integrado','Distribuidor autorizado MX'].map(n => (
-            <span class="badge badge-dark font-display text-[10px]">{n}</span>
+            <span class="badge badge-dark font-display text-2xs">{n}</span>
           ))}
           </div>
         </div>
@@ -337,7 +337,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
             </div>
             <div class="flex items-center justify-between gap-2">
               <h3 class="font-display font-bold text-xl" style="color:var(--c-ink)">{t.title}</h3>
-              <span class="badge badge-dark text-[9px]">{t.norm}</span>
+              <span class="badge badge-dark text-2xs">{t.norm}</span>
             </div>
             <p class="text-sm leading-relaxed m-0" style="color:var(--c-text-2)">{t.desc}</p>
           </article>
@@ -365,7 +365,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
           </p>
           <div class="flex flex-wrap gap-2">
             {['EN 443','EN 14458','MSA Safety · NYSE','Distribuidor autorizado MX'].map(b => (
-              <span class="badge badge-dark text-[9px]">{b}</span>
+              <span class="badge badge-dark text-2xs">{b}</span>
             ))}
           </div>
         </div>
@@ -422,7 +422,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
           </p>
           <div class="flex flex-wrap gap-2">
             {['NFPA 1970','Composite ABS / UST LowRider','Ala completa','Escudo frontal','TIC Mount','Distribuidor autorizado MX'].map(b => (
-              <span class="badge badge-dark text-[9px]">{b}</span>
+              <span class="badge badge-dark text-2xs">{b}</span>
             ))}
           </div>
         </div>
@@ -479,7 +479,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
           </p>
           <div class="flex flex-wrap gap-2">
             {['NFPA 1970','Cuero / Composite','N6A Houston','1836','Desde 1836','Distribuidor autorizado MX'].map(b => (
-              <span class="badge badge-dark text-[9px]">{b}</span>
+              <span class="badge badge-dark text-2xs">{b}</span>
             ))}
           </div>
         </div>
@@ -571,13 +571,13 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
             <tr style="background:var(--c-surface)">
               <th class="text-left p-4 text-xs font-display font-bold uppercase tracking-widest" style="color:var(--forge-300);border-bottom:1px solid var(--c-line)">Característica</th>
               <th class="text-left p-4 text-xs font-display font-bold uppercase tracking-widest" style="color:var(--c-accent);border-bottom:1px solid var(--c-line);border-left:1px solid var(--c-line)">
-                Europeo<br/><span class="text-[10px] font-normal normal-case tracking-normal" style="color:var(--forge-300)">MSA Gallet F1 XF</span>
+                Europeo<br/><span class="text-2xs font-normal normal-case tracking-normal" style="color:var(--forge-300)">MSA Gallet F1 XF</span>
               </th>
               <th class="text-left p-4 text-xs font-display font-bold uppercase tracking-widest" style="color:var(--c-amber);border-bottom:1px solid var(--c-line);border-left:1px solid var(--c-line)">
-                Americano<br/><span class="text-[10px] font-normal normal-case tracking-normal" style="color:var(--forge-300)">Bullard USTM · Cairns N6A</span>
+                Americano<br/><span class="text-2xs font-normal normal-case tracking-normal" style="color:var(--forge-300)">Bullard USTM · Cairns N6A</span>
               </th>
               <th class="text-left p-4 text-xs font-display font-bold uppercase tracking-widest" style="color:var(--c-success);border-bottom:1px solid var(--c-line);border-left:1px solid var(--c-line)">
-                Forestal<br/><span class="text-[10px] font-normal normal-case tracking-normal" style="color:var(--forge-300)">MSA Gallet Gallet F2XR</span>
+                Forestal<br/><span class="text-2xs font-normal normal-case tracking-normal" style="color:var(--forge-300)">MSA Gallet Gallet F2XR</span>
               </th>
             </tr>
           </thead>
@@ -780,28 +780,28 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'cascos-nfpa').slice
   {/* ══ CATEGORÍAS RELACIONADAS ═══════════════════════════════════════ */}
   <section style="background:var(--c-bg);border-top:1px solid var(--c-line)" aria-labelledby="cats-rel-title">
     <div class="container-site py-10 sm:py-12">
-      <p id="cats-rel-title" class="text-[9px] font-display font-bold uppercase tracking-widest mb-6" style="color:var(--forge-300)">Categorías relacionadas</p>
+      <p id="cats-rel-title" class="text-2xs font-display font-bold uppercase tracking-widest mb-6" style="color:var(--forge-300)">Categorías relacionadas</p>
       <div class="card-grid">
         <a href="/productos/trajes-bombero"
            class="group flex flex-col gap-2 p-5 hover:border-[var(--c-line-strong)]"
            style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
           <span class="text-sm font-display font-bold group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Trajes Bombero</span>
           <span class="text-xs leading-relaxed" style="color:var(--c-muted)">Globe · Lion Apparel · Honeywell · Fire-Dex</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:var(--c-accent)">Guía de Trajes Bombero </span>
+          <span class="text-2xs font-semibold mt-1" style="color:var(--c-accent)">Guía de Trajes Bombero </span>
         </a>
         <a href="/productos/equipos-scba"
            class="group flex flex-col gap-2 p-5 hover:border-[var(--c-line-strong)]"
            style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
           <span class="text-sm font-display font-bold group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Equipos SCBA</span>
           <span class="text-xs leading-relaxed" style="color:var(--c-muted)">MSA G1 · Dräger PSS 7000 · 3M Scott</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:var(--c-accent)">Guía de Equipos SCBA </span>
+          <span class="text-2xs font-semibold mt-1" style="color:var(--c-accent)">Guía de Equipos SCBA </span>
         </a>
         <a href="/productos/herramientas-rescate"
            class="group flex flex-col gap-2 p-5 hover:border-[var(--c-line-strong)]"
            style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
           <span class="text-sm font-display font-bold group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Herramientas de Rescate</span>
           <span class="text-xs leading-relaxed" style="color:var(--c-muted)">Holmatro · Hurst · Weber Rescue</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:var(--c-accent)">Guía de Herramientas de Rescate </span>
+          <span class="text-2xs font-semibold mt-1" style="color:var(--c-accent)">Guía de Herramientas de Rescate </span>
         </a>
       </div>
     </div>

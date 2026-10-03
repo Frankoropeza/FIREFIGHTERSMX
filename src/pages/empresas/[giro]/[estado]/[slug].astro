@@ -215,11 +215,11 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
     <div class="container-site relative z-10 grid grid-cols-1 lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-14 items-center">
       <div>
       <div class="flex flex-wrap items-center gap-2 mb-5">
-        <span class="inline-flex items-center gap-1.5 font-display font-bold text-[10px] uppercase tracking-wider px-2 py-1" style={`color:${g.color};background:${g.color}1A;border:1px solid ${g.color}40`}>
+        <span class="inline-flex items-center gap-1.5 font-display font-bold text-2xs uppercase tracking-wider px-2 py-1" style={`color:${g.color};background:${g.color}1A;border:1px solid ${g.color}40`}>
 {g.labelCorto}</span>
-        {otrosGiros.map((o) => <span class="font-display text-[10px] uppercase tracking-wider px-2 py-1" style={`color:${o.color};border:1px dashed ${o.color}55`}>+ {o.labelCorto}</span>)}
-        {e.plan !== 'basico' && <span class="font-display text-[10px] uppercase tracking-wider px-2 py-1" style={`color:${plan.color};background:${plan.bgColor};border:1px solid ${plan.color}55`}>{plan.label}</span>}
-        <span class="font-display text-[10px] uppercase tracking-wider px-2 py-1" title={conf.descripcion} style={`color:${conf.color};background:${conf.bgColor};border:1px solid ${conf.color}33`}>{conf.label}{verif && ` · ${verif}`}</span>
+        {otrosGiros.map((o) => <span class="font-display text-2xs uppercase tracking-wider px-2 py-1" style={`color:${o.color};border:1px dashed ${o.color}55`}>+ {o.labelCorto}</span>)}
+        {e.plan !== 'basico' && <span class="font-display text-2xs uppercase tracking-wider px-2 py-1" style={`color:${plan.color};background:${plan.bgColor};border:1px solid ${plan.color}55`}>{plan.label}</span>}
+        <span class="font-display text-2xs uppercase tracking-wider px-2 py-1" title={conf.descripcion} style={`color:${conf.color};background:${conf.bgColor};border:1px solid ${conf.color}33`}>{conf.label}{verif && ` · ${verif}`}</span>
       </div>
       <h1 id="ficha-heading" class="font-display font-bold mb-3" style="color:var(--c-ink);font-size:clamp(1.9rem,4.2vw,3.4rem);line-height:1">{e.nombre}</h1>
       {e.razonSocial && <p class="font-display text-sm uppercase tracking-wider mb-4" style="color:var(--forge-300)">{e.razonSocial}</p>}
@@ -279,25 +279,25 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
             <div class="flex flex-col gap-4">
               {e.marcas.length > 0 && (
                 <div class="flex flex-col gap-2">
-                  <span class="font-display text-[10px] uppercase tracking-wider" style="color:var(--forge-300)">Marcas que maneja</span>
-                  <div class="flex flex-wrap gap-2">{e.marcas.map((m) => <span class="badge badge-dark font-display text-[10px]">{m}</span>)}</div>
+                  <span class="font-display text-2xs uppercase tracking-wider" style="color:var(--forge-300)">Marcas que maneja</span>
+                  <div class="flex flex-wrap gap-2">{e.marcas.map((m) => <span class="badge badge-dark font-display text-2xs">{m}</span>)}</div>
                 </div>
               )}
               {e.certificaciones.length > 0 && (
                 <div class="flex flex-col gap-2">
-                  <span class="font-display text-[10px] uppercase tracking-wider" style="color:var(--forge-300)">Certificaciones de producto</span>
-                  <div class="flex flex-wrap gap-2">{e.certificaciones.map((c) => <span class="badge badge-dark font-display text-[10px]">{c}</span>)}</div>
+                  <span class="font-display text-2xs uppercase tracking-wider" style="color:var(--forge-300)">Certificaciones de producto</span>
+                  <div class="flex flex-wrap gap-2">{e.certificaciones.map((c) => <span class="badge badge-dark font-display text-2xs">{c}</span>)}</div>
                 </div>
               )}
               {e.normas.length > 0 && (
                 <div class="flex flex-col gap-2">
-                  <span class="font-display text-[10px] uppercase tracking-wider" style="color:var(--forge-300)">Normas de referencia</span>
-                  <div class="flex flex-wrap gap-2">{e.normas.map((n) => <span class="badge badge-dark font-display text-[10px]">{n}</span>)}</div>
+                  <span class="font-display text-2xs uppercase tracking-wider" style="color:var(--forge-300)">Normas de referencia</span>
+                  <div class="flex flex-wrap gap-2">{e.normas.map((n) => <span class="badge badge-dark font-display text-2xs">{n}</span>)}</div>
                 </div>
               )}
               <div class="flex flex-wrap gap-x-8 gap-y-2 text-sm" style="color:var(--c-text-2)">
-                {e.fundacion && <span><span class="font-display text-[10px] uppercase tracking-wider mr-2" style="color:var(--forge-300)">Fundación</span>{e.fundacion}</span>}
-                {e.cobertura.length > 0 && <span><span class="font-display text-[10px] uppercase tracking-wider mr-2" style="color:var(--forge-300)">Cobertura</span>{e.cobertura.includes('nacional') ? 'Nacional, 32 estados' : e.cobertura.join(', ')}</span>}
+                {e.fundacion && <span><span class="font-display text-2xs uppercase tracking-wider mr-2" style="color:var(--forge-300)">Fundación</span>{e.fundacion}</span>}
+                {e.cobertura.length > 0 && <span><span class="font-display text-2xs uppercase tracking-wider mr-2" style="color:var(--forge-300)">Cobertura</span>{e.cobertura.includes('nacional') ? 'Nacional, 32 estados' : e.cobertura.join(', ')}</span>}
               </div>
             </div>
           </div>
@@ -305,7 +305,7 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
 
         <div>
           <span class="section-eyebrow mb-4 inline-flex">Marco normativo del giro</span>
-          <div class="flex flex-wrap gap-2 mb-4">{g.normas.map((n) => <span class="badge badge-dark font-display text-[10px]">{n}</span>)}</div>
+          <div class="flex flex-wrap gap-2 mb-4">{g.normas.map((n) => <span class="badge badge-dark font-display text-2xs">{n}</span>)}</div>
           <p class="text-sm leading-[1.9]" style="color:var(--c-text-2)">{g.intro[1]}</p>
         </div>
 
@@ -352,14 +352,14 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
         )}
       </div>
 
-      <aside class="flex flex-col gap-4 lg:sticky lg:top-28">
+      <aside class="flex flex-col gap-4 lg:sticky lg:top-6">
         <div class="p-6" style="background:var(--c-surface);border:1px solid var(--c-line-strong)">
           <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:var(--forge-300)">Contacto</p>
           <ul class="flex flex-col gap-3 list-none m-0 p-0 text-sm">
-            {e.telefono && <li class="flex items-center gap-3"><span class="font-display text-[10px] uppercase tracking-wider w-16 shrink-0" style="color:var(--forge-300)">Tel.</span><a href={`tel:${e.telefono}`} class="hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{e.telefono}</a></li>}
-            {e.email && <li class="flex items-center gap-3"><span class="font-display text-[10px] uppercase tracking-wider w-16 shrink-0" style="color:var(--forge-300)">Correo</span><a href={`mailto:${e.email}`} class="hover:text-[var(--c-accent)] break-all" style="color:var(--c-ink)">{e.email}</a></li>}
-            {webPublicable && <li class="flex items-center gap-3"><span class="font-display text-[10px] uppercase tracking-wider w-16 shrink-0" style="color:var(--forge-300)">Web</span><a href={webPublicable} target="_blank" rel={relEmpresa(webPublicable)} class="hover:text-[var(--c-accent)] break-all" style="color:var(--c-ink)">{webHost}</a></li>}
-            {e.direccion && <li class="flex items-start gap-3"><span class="font-display text-[10px] uppercase tracking-wider w-16 shrink-0 mt-0.5" style="color:var(--forge-300)">Dirección</span><span style="color:var(--c-text)">{e.direccion}</span></li>}
+            {e.telefono && <li class="flex items-center gap-3"><span class="font-display text-2xs uppercase tracking-wider w-16 shrink-0" style="color:var(--forge-300)">Tel.</span><a href={`tel:${e.telefono}`} class="hover:text-[var(--c-accent)]" style="color:var(--c-ink)">{e.telefono}</a></li>}
+            {e.email && <li class="flex items-center gap-3"><span class="font-display text-2xs uppercase tracking-wider w-16 shrink-0" style="color:var(--forge-300)">Correo</span><a href={`mailto:${e.email}`} class="hover:text-[var(--c-accent)] break-all" style="color:var(--c-ink)">{e.email}</a></li>}
+            {webPublicable && <li class="flex items-center gap-3"><span class="font-display text-2xs uppercase tracking-wider w-16 shrink-0" style="color:var(--forge-300)">Web</span><a href={webPublicable} target="_blank" rel={relEmpresa(webPublicable)} class="hover:text-[var(--c-accent)] break-all" style="color:var(--c-ink)">{webHost}</a></li>}
+            {e.direccion && <li class="flex items-start gap-3"><span class="font-display text-2xs uppercase tracking-wider w-16 shrink-0 mt-0.5" style="color:var(--forge-300)">Dirección</span><span style="color:var(--c-text)">{e.direccion}</span></li>}
             {!e.telefono && !e.email && !webPublicable && <li class="text-xs" style="color:var(--c-muted)">Sin datos de contacto en el registro público.</li>}
           </ul>
         </div>
@@ -368,22 +368,22 @@ const iconPin = `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circ
           <div style="border:1px solid var(--c-line-strong)">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
             <div id="ficha-map" data-lat={e.coordenadas!.lat} data-lng={e.coordenadas!.lng} data-color={g.color} style="height:240px;background:var(--c-surface)" role="img" aria-label={`Mapa de ${e.nombre}`}></div>
-            <a href={`https://www.google.com/maps?q=${e.coordenadas!.lat},${e.coordenadas!.lng}`} target="_blank" rel="noopener nofollow" class="block px-4 py-2.5 font-display text-[11px] hover:text-[var(--c-accent)]" style="color:var(--c-accent);background:var(--c-surface);border-top:1px solid var(--c-line)">Ubicación de {e.nombre} en Google Maps</a>
+            <a href={`https://www.google.com/maps?q=${e.coordenadas!.lat},${e.coordenadas!.lng}`} target="_blank" rel="noopener nofollow" class="block px-4 py-2.5 font-display text-2xs hover:text-[var(--c-accent)]" style="color:var(--c-accent);background:var(--c-surface);border-top:1px solid var(--c-line)">Ubicación de {e.nombre} en Google Maps</a>
           </div>
         )}
 
         <div class="p-6" style="background:var(--c-surface);border:1px solid var(--c-line-strong)">
           <p class="font-display font-bold text-xs uppercase tracking-widest mb-3" style="color:var(--forge-300)">Fuente del registro</p>
           <ul class="flex flex-col gap-2 list-none m-0 p-0">{fuentes.map((f) => <li><a href={f.url} data-fuente target="_blank" rel="noopener nofollow" class="text-xs hover:text-[var(--c-accent)]" style="color:var(--c-text)">{f.nombre}</a></li>)}</ul>
-          {e.claseDENUE && <p class="text-[11px] mt-3 leading-relaxed" style="color:var(--c-muted)">Clase de actividad: {e.claseDENUE}</p>}
-          <p class="text-[11px] mt-3 leading-relaxed" style="color:var(--c-muted)">{conf.descripcion}</p>
+          {e.claseDENUE && <p class="text-2xs mt-3 leading-relaxed" style="color:var(--c-muted)">Clase de actividad: {e.claseDENUE}</p>}
+          <p class="text-2xs mt-3 leading-relaxed" style="color:var(--c-muted)">{conf.descripcion}</p>
         </div>
 
         <div class="p-6" style={`background:var(--c-surface);border:1px solid var(--c-line)`}>
           <p class="font-display font-bold text-sm mb-2" style="color:var(--c-ink)">¿Es tu empresa?</p>
           <p class="text-xs leading-relaxed mb-4" style="color:var(--c-text-2)">Reclama la ficha, completa tus datos y obtén el sello de verificación. Las fichas destacadas aparecen primero en {edo.nombre}.</p>
           <a href="/empresas/registro/" class="btn btn-gold btn-sm w-full text-center">Reclamar esta ficha</a>
-          <a href={whatsappUrl(waMsg)} target="_blank" rel="noopener noreferrer" class="block text-center mt-3 font-display text-[11px] uppercase tracking-wider hover:text-[var(--c-accent)]" style="color:var(--c-accent)">Escribir a INPROSEG</a>
+          <a href={whatsappUrl(waMsg)} target="_blank" rel="noopener noreferrer" class="block text-center mt-3 font-display text-2xs uppercase tracking-wider hover:text-[var(--c-accent)]" style="color:var(--c-accent)">Escribir a INPROSEG</a>
         </div>
 
         <div class="p-6" style="background:var(--c-surface);border:1px solid var(--c-line-strong)">

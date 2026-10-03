@@ -13,14 +13,14 @@ const destacados = ['ciudad-de-mexico', 'estado-de-mexico', 'jalisco', 'nuevo-le
       <h2 id="est-heading" class="font-display font-bold mb-5" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">Estaciones de bomberos y cuerpos de bomberos municipales<br/><span style="color:var(--c-accent)">en toda la República.</span></h2>
       <p class="text-sm leading-[1.9] mb-4" style="color:var(--c-text-2)">Municipales, estatales, voluntarios, industriales, aeroportuarios, PEMEX y CFE: cada corporación con ubicación, contacto verificado, servicios operativos y fuentes citadas.</p>
       <p class="text-sm leading-[1.9] mb-8" style="color:var(--c-text-2)">Es el lado de la demanda del mismo mercado: quien busca un proveedor aquí, también encuentra a quién le compra. Y cada ficha de estación enlaza con las empresas de su zona.</p>
-      <div class="flex flex-wrap gap-2 mb-8">{tipos.map((t) => <a href="/estaciones/" class="badge font-display text-[10px]" style={`color:${tipoConfig[t].color};background:${tipoConfig[t].bgColor};border:1px solid ${tipoConfig[t].color}40`}>{tipoConfig[t].label}</a>)}</div>
+      <div class="flex flex-wrap gap-2 mb-8">{tipos.map((t) => <a href="/estaciones/" class="badge font-display text-2xs" style={`color:${tipoConfig[t].color};background:${tipoConfig[t].bgColor};border:1px solid ${tipoConfig[t].color}40`}>{tipoConfig[t].label}</a>)}</div>
       <a href="/estaciones/" class="btn btn-primary">Estaciones de bomberos</a>
     </div>
     <div class="card-grid card-grid--cells" >
       {destacados.map((e) => (
         <a href={`/estaciones/${e.slug}/`} class="grid-cell ledger-cell flex flex-col gap-1 p-5" style="background:var(--c-bg-alt)">
           <span class="font-display font-semibold text-base leading-tight" style="color:var(--c-ink)">Bomberos en {e.nombre}</span>
-          <span class="text-[10px] uppercase tracking-widest" style="color:var(--forge-300)">{e.region}</span>
+          <span class="text-2xs uppercase tracking-widest" style="color:var(--forge-300)">{e.region}</span>
         </a>))}
     </div>
   </div>

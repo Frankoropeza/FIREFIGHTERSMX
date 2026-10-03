@@ -34,7 +34,7 @@ const topPorGiro = Object.fromEntries(await Promise.all(giros.map(async (g) => [
               <img src={g.imagen} {...imgAttrs(g.imagen, SIZES.card3)} alt={g.imagenAlt} width="640" height="400" loading="lazy" decoding="async"
                 class="giro-img absolute inset-0 w-full h-full object-cover" style="object-position:center 30%" />
               {/* Chip del giro */}
-              <span class="absolute top-4 left-4 inline-flex items-center gap-1.5 font-display font-bold text-[10px] uppercase tracking-wider px-2 py-1" style={`color:#FFFFFF;background:${g.color};box-shadow:0 2px 12px ${g.color}66`}>
+              <span class="absolute top-4 left-4 inline-flex items-center gap-1.5 font-display font-bold text-2xs uppercase tracking-wider px-2 py-1" style={`color:#FFFFFF;background:${g.color};box-shadow:0 2px 12px ${g.color}66`}>
                 {g.labelCorto}
               </span>
             </a>

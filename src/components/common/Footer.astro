@@ -161,7 +161,7 @@ const redes = [
           directorio nacional de empresas del sector y de estaciones de bomberos.
         </p>
 
-        <div class="flex flex-col gap-2.5 text-sm text-[var(--forge-200)]">
+        <div class="f-contact flex flex-col gap-2.5 text-sm text-[var(--forge-200)]">
           {TELEFONO_ACTIVO && (
             <a href={`tel:${SITE.phoneE164}`} class="flex items-center gap-2.5 hover:text-[var(--ember-400)]">
               
@@ -407,4 +407,20 @@ const redes = [
   .f-link--strong:hover { color: #FFFFFF; }
 
   .f-list--compact .f-link { font-size: 0.8125rem; }
+
+  /* Táctil (< 1024 px): objetivos de toque de ~40 px sin cambiar el aspecto.
+     El espacio entre enlaces pasa del gap al padding del propio enlace. */
+  @media (max-width: 1023px) {
+    .f-list, .f-list--compact { gap: 0; }
+    .f-link { display: block; padding-block: 0.625rem; }
+    .f-link--strong { display: inline-block; }
+    .f-contact { gap: 0; }
+    .f-contact > a, .f-contact > span { min-height: 2.75rem; }
+    .f-bottom a { display: inline-flex; align-items: center; min-height: 2.75rem; }
+  }
+  /* Móvil: los 32 estados en dos columnas en lugar de una lista de 32 filas */
+  @media (max-width: 639px) {
+    .f-floor--estados { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 1rem; row-gap: 0; }
+    .f-floor--estados .f-floor__intro { margin-bottom: 1rem; }
+  }
 </style>

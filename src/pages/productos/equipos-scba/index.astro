@@ -198,7 +198,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
           ))}
           <div class="flex flex-wrap gap-2">
             {['NFPA 1970','NIOSH CBRN','4500 psi','30/45/60 min','EOSTI','PASS','MSA · Dräger · 3M Scott'].map(n => (
-            <span class="badge badge-dark font-display text-[10px]">{n}</span>
+            <span class="badge badge-dark font-display text-2xs">{n}</span>
           ))}
           </div>
         </div>
@@ -286,7 +286,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
           <article class="flex flex-col gap-4 p-7" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
             <div class="flex flex-col gap-1">
               <h3 class="font-display font-bold text-lg" style="color:var(--c-ink)">{c.title}</h3>
-              <span class="badge badge-dark text-[9px]">{c.badge}</span>
+              <span class="badge badge-dark text-2xs">{c.badge}</span>
             </div>
             <p class="text-sm leading-relaxed m-0" style="color:var(--c-text-2)">{c.desc}</p>
           </article>
@@ -313,7 +313,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
           </p>
           <div class="flex flex-wrap gap-2">
             {['NFPA 1970','NIOSH CBRN','EOSTI integrado','Telemetría ICM','4500 psi','Distribuidor autorizado MX'].map(b => (
-              <span class="badge badge-dark text-[9px]">{b}</span>
+              <span class="badge badge-dark text-2xs">{b}</span>
             ))}
           </div>
         </div>
@@ -363,7 +363,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
           </p>
           <div class="flex flex-wrap gap-2">
             {['NFPA 1970','NIOSH CBRN','Arnés ergonómico','Distribución de carga','4500 psi','Servicio autorizado MX'].map(b => (
-              <span class="badge badge-dark text-[9px]">{b}</span>
+              <span class="badge badge-dark text-2xs">{b}</span>
             ))}
           </div>
         </div>
@@ -412,7 +412,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
           </p>
           <div class="flex flex-wrap gap-2">
             {['NFPA 1970 (2025)','SEI','NIOSH','EOSTI al 31 %','4500 psi','Distribuidor autorizado MX'].map(b => (
-              <span class="badge badge-dark text-[9px]">{b}</span>
+              <span class="badge badge-dark text-2xs">{b}</span>
             ))}
           </div>
         </div>
@@ -676,28 +676,28 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'equipos-scba').slic
   {/* ══ CATEGORÍAS RELACIONADAS ═══════════════════════════════════════ */}
   <section style="background:var(--c-bg);border-top:1px solid var(--c-line)" aria-labelledby="cats-rel-title">
     <div class="container-site py-10 sm:py-12">
-      <p id="cats-rel-title" class="text-[9px] font-display font-bold uppercase tracking-widest mb-6" style="color:var(--forge-300)">Categorías relacionadas</p>
+      <p id="cats-rel-title" class="text-2xs font-display font-bold uppercase tracking-widest mb-6" style="color:var(--forge-300)">Categorías relacionadas</p>
       <div class="card-grid">
         <a href="/productos/trajes-bombero"
            class="group flex flex-col gap-2 p-5 hover:border-[var(--c-line-strong)]"
            style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
           <span class="text-sm font-display font-bold group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Trajes Bombero</span>
           <span class="text-xs leading-relaxed" style="color:var(--c-muted)">Globe · Lion Apparel · Honeywell · Fire-Dex</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:var(--c-accent)">Guía de Trajes Bombero </span>
+          <span class="text-2xs font-semibold mt-1" style="color:var(--c-accent)">Guía de Trajes Bombero </span>
         </a>
         <a href="/productos/cascos-nfpa"
            class="group flex flex-col gap-2 p-5 hover:border-[var(--c-line-strong)]"
            style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
           <span class="text-sm font-display font-bold group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Cascos NFPA</span>
           <span class="text-xs leading-relaxed" style="color:var(--c-muted)">MSA Gallet · Bullard · Cairns</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:var(--c-accent)">Guía de Cascos NFPA </span>
+          <span class="text-2xs font-semibold mt-1" style="color:var(--c-accent)">Guía de Cascos NFPA </span>
         </a>
         <a href="/productos/camaras-termicas"
            class="group flex flex-col gap-2 p-5 hover:border-[var(--c-line-strong)]"
            style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
           <span class="text-sm font-display font-bold group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Cámaras Térmicas</span>
           <span class="text-xs leading-relaxed" style="color:var(--c-muted)">FLIR · MSA Evolution · Bullard TXS</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:var(--c-accent)">Guía de Cámaras Térmicas </span>
+          <span class="text-2xs font-semibold mt-1" style="color:var(--c-accent)">Guía de Cámaras Térmicas </span>
         </a>
       </div>
     </div>

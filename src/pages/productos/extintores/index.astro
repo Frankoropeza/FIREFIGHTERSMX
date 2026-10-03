@@ -259,7 +259,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
           ))}
           <div class="flex flex-wrap gap-2">
             {['NOM-154-SCFI','NOM-002-STPS','NFPA 10','PQS ABC','CO₂','Tipo K','Agente limpio','Collar de garantía'].map(n => (
-            <span class="badge badge-dark font-display text-[10px]">{n}</span>
+            <span class="badge badge-dark font-display text-2xs">{n}</span>
           ))}
           </div>
         </div>
@@ -400,7 +400,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
           <article class="flex flex-col gap-4 p-7" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
             <div class="flex items-center justify-between gap-2 flex-wrap">
               <h3 class="font-display font-bold text-xl" style="color:var(--c-ink)">{t.title}</h3>
-              <span class="badge badge-dark text-[9px]">{t.norm.split(' · ')[0]}</span>
+              <span class="badge badge-dark text-2xs">{t.norm.split(' · ')[0]}</span>
             </div>
             <p class="text-sm leading-relaxed m-0" style="color:var(--c-text-2)">{t.desc}</p>
           </article>
@@ -429,7 +429,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
           </p>
           <div class="flex flex-wrap gap-2">
             {['NOM-100-STPS (agente: NOM-104-STPS-2001)','NFPA 10','Clase A · B · C','Polvo químico seco','4.5 · 6 · 9 · 12 kg'].map(b => (
-              <span class="badge badge-dark text-[9px]">{b}</span>
+              <span class="badge badge-dark text-2xs">{b}</span>
             ))}
           </div>
         </div>
@@ -481,7 +481,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
           </p>
           <div class="flex flex-wrap gap-2">
             {['NOM-102-STPS','NFPA 10','Clase B · C','Dióxido de carbono','2.3 · 4.5 · 6.8 · 9 · 10 · 15 kg','Cero residuo'].map(b => (
-              <span class="badge badge-dark text-[9px]">{b}</span>
+              <span class="badge badge-dark text-2xs">{b}</span>
             ))}
           </div>
         </div>
@@ -533,7 +533,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
           </p>
           <div class="flex flex-wrap gap-2">
             {['Agua clase A','Espuma AFFF','Tipo K — NFPA 10','FM-200 NFPA 2001','Sin residuo','Cocinas · Data center'].map(b => (
-              <span class="badge badge-dark text-[9px]">{b}</span>
+              <span class="badge badge-dark text-2xs">{b}</span>
             ))}
           </div>
         </div>
@@ -588,7 +588,7 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
           </p>
           <div class="flex flex-wrap gap-2">
             {['25 · 50 · 75 · 125 kg','PQS ABC · CO₂ · AFFF','NFPA 10 · NFPA 11','Aeropuertos · Plataformas','Descarga extendida'].map(b => (
-              <span class="badge badge-dark text-[9px]">{b}</span>
+              <span class="badge badge-dark text-2xs">{b}</span>
             ))}
           </div>
         </div>
@@ -925,28 +925,28 @@ const otrasCategorias = categories.filter((c) => c.slug !== 'extintores').slice(
   {/* ══ CATEGORÍAS RELACIONADAS ═══════════════════════════════════════ */}
   <section style="background:var(--c-bg);border-top:1px solid var(--c-line)" aria-labelledby="cats-rel-title">
     <div class="container-site py-10 sm:py-12">
-      <p id="cats-rel-title" class="text-[9px] font-display font-bold uppercase tracking-widest mb-6" style="color:var(--forge-300)">Categorías relacionadas</p>
+      <p id="cats-rel-title" class="text-2xs font-display font-bold uppercase tracking-widest mb-6" style="color:var(--forge-300)">Categorías relacionadas</p>
       <div class="card-grid">
         <a href="/productos/sistemas-ci"
            class="group flex flex-col gap-2 p-5 hover:border-[var(--c-line-strong)]"
            style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
           <span class="text-sm font-display font-bold group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Sistemas CI</span>
           <span class="text-xs leading-relaxed" style="color:var(--c-muted)">Tyco Viking · Honeywell Notifier · Kidde Fenwal · Red Hidráulica</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:var(--c-accent)">Guía de Sistemas CI </span>
+          <span class="text-2xs font-semibold mt-1" style="color:var(--c-accent)">Guía de Sistemas CI </span>
         </a>
         <a href="/productos/herramientas-rescate"
            class="group flex flex-col gap-2 p-5 hover:border-[var(--c-line-strong)]"
            style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
           <span class="text-sm font-display font-bold group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Herramientas de Rescate</span>
           <span class="text-xs leading-relaxed" style="color:var(--c-muted)">Holmatro · Hurst · Weber Rescue</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:var(--c-accent)">Guía de Herramientas de Rescate </span>
+          <span class="text-2xs font-semibold mt-1" style="color:var(--c-accent)">Guía de Herramientas de Rescate </span>
         </a>
         <a href="/productos/hazmat"
            class="group flex flex-col gap-2 p-5 hover:border-[var(--c-line-strong)]"
            style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
           <span class="text-sm font-display font-bold group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Equipos HAZMAT</span>
           <span class="text-xs leading-relaxed" style="color:var(--c-muted)">DuPont Tychem · Lakeland · MSA · Kappler</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:var(--c-accent)">Guía de Equipos HAZMAT </span>
+          <span class="text-2xs font-semibold mt-1" style="color:var(--c-accent)">Guía de Equipos HAZMAT </span>
         </a>
       </div>
     </div>

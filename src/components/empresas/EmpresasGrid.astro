@@ -42,9 +42,9 @@ const giroMeta = Object.fromEntries(giros.map((g) => [g.slug, { l: g.labelCorto,
   </div>
   {filtros.length > 0 && (
     <div class="flex flex-wrap gap-1.5" role="group" aria-label="Filtrar">
-      <button type="button" class="emp-filter font-display text-[10px] px-3 py-1.5" data-key="todos" data-grid={id} style="color:#FFFFFF;background:var(--c-accent);border:1px solid var(--c-accent)">Todos</button>
+      <button type="button" class="emp-filter font-display text-2xs px-3 py-1.5" data-key="todos" data-grid={id} style="color:#FFFFFF;background:var(--c-accent);border:1px solid var(--c-accent)">Todos</button>
       {filtros.map((f) => (
-        <button type="button" class="emp-filter font-display text-[10px] px-3 py-1.5" data-key={f.key} data-grid={id} data-color={f.color} style={`color:${f.color};background:transparent;border:1px solid ${f.color}40`}>{f.label}</button>))}
+        <button type="button" class="emp-filter font-display text-2xs px-3 py-1.5" data-key={f.key} data-grid={id} data-color={f.color} style={`color:${f.color};background:transparent;border:1px solid ${f.color}40`}>{f.label}</button>))}
     </div>
   )}
   <span id={`${id}-count`} class="font-display text-xs uppercase tracking-wider shrink-0" style="color:var(--forge-300)">{indexSrc && total > visibles.length ? `${visibles.length} de ${total}` : `${total} resultados`}</span>
@@ -88,12 +88,12 @@ const giroMeta = Object.fromEntries(giros.map((g) => [g.slug, { l: g.labelCorto,
     const esp = r.s.map((s) => g?.e?.[s]).filter(Boolean).slice(0, 3);
     const otros = r.g.filter((x) => x !== r.gp).map((x) => giros[x]?.l).filter(Boolean);
     return `<article class="emp-card flex flex-col gap-3 p-5" style="background:${dest ? 'var(--c-surface)' : 'var(--c-bg)'};border:1px solid var(--c-line)">
-      <div class="flex flex-wrap items-start justify-between gap-2"><span class="font-display font-bold text-[10px] uppercase tracking-wider px-2 py-1" style="color:${g?.c};background:${g?.c}1A;border:1px solid ${g?.c}40">${esc(g?.l ?? r.gp)}</span>
-      <span class="font-display text-[9px] uppercase tracking-wider px-1.5 py-0.5" style="color:${conf[1]};border:1px solid ${conf[1]}33">${conf[0]}</span></div>
+      <div class="flex flex-wrap items-start justify-between gap-2"><span class="font-display font-bold text-2xs uppercase tracking-wider px-2 py-1" style="color:${g?.c};background:${g?.c}1A;border:1px solid ${g?.c}40">${esc(g?.l ?? r.gp)}</span>
+      <span class="font-display text-2xs uppercase tracking-wider px-1.5 py-0.5" style="color:${conf[1]};border:1px solid ${conf[1]}33">${conf[0]}</span></div>
       <h3 class="font-display font-bold text-base leading-snug" style="color:var(--c-ink)"><a href="${r.u}" class="hover:text-[var(--c-accent)]">${esc(r.n)}</a></h3>
       <div class="text-xs leading-relaxed" style="color:var(--c-text-2)">${esc(r.c)}${r.m !== r.c ? ` <span style="color:var(--c-muted)">· ${esc(r.m)}</span>` : ''}${mostrarEstado ? ` <span style="color:var(--c-muted)">· ${esc(r.en)}</span>` : ''}</div>
-      ${esp.length || otros.length ? `<div class="flex flex-wrap gap-1.5">${esp.map((s) => `<span class="text-[10px] px-2 py-0.5" style="color:var(--c-text-2);border:1px solid var(--c-line-strong)">${esc(s as string)}</span>`).join('')}${otros.map((s) => `<span class="text-[10px] px-2 py-0.5" style="color:var(--forge-300);border:1px dashed var(--c-line-strong)">+ ${esc(s)}</span>`).join('')}</div>` : ''}
-      <div class="mt-auto pt-3 flex flex-wrap items-center justify-between gap-x-3 gap-y-1" style="border-top:1px solid var(--c-line)"><span class="text-[10px] uppercase tracking-widest" style="color:var(--forge-300)">${esc(r.t ? r.t.replace(' personas', ' pers.') : 'Registro público')}</span><a href="${r.u}" class="font-display font-semibold text-xs uppercase tracking-wider hover:text-[var(--c-accent)]" style="color:var(--c-accent)">${esc(g?.l ?? r.gp)} en ${esc(r.c)} </a></div></article>`;
+      ${esp.length || otros.length ? `<div class="flex flex-wrap gap-1.5">${esp.map((s) => `<span class="text-2xs px-2 py-0.5" style="color:var(--c-text-2);border:1px solid var(--c-line-strong)">${esc(s as string)}</span>`).join('')}${otros.map((s) => `<span class="text-2xs px-2 py-0.5" style="color:var(--forge-300);border:1px dashed var(--c-line-strong)">+ ${esc(s)}</span>`).join('')}</div>` : ''}
+      <div class="mt-auto pt-3 flex flex-wrap items-center justify-between gap-x-3 gap-y-1" style="border-top:1px solid var(--c-line)"><span class="text-2xs uppercase tracking-widest" style="color:var(--forge-300)">${esc(r.t ? r.t.replace(' personas', ' pers.') : 'Registro público')}</span><a href="${r.u}" class="-my-3 py-3 font-display font-semibold text-xs uppercase tracking-wider hover:text-[var(--c-accent)]" style="color:var(--c-accent)">${esc(g?.l ?? r.gp)} en ${esc(r.c)} </a></div></article>`;
   }
 
   document.querySelectorAll<HTMLElement>('[data-emp-toolbar]').forEach((bar) => {

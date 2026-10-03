@@ -43,7 +43,7 @@ const fmt = new Intl.DateTimeFormat('es-MX', { day: 'numeric', month: 'long', ye
             {portadaBlog(post) && <CardMedia src={portadaBlog(post)!.url} alt={portadaBlog(post)!.alt} />}
             <div class="flex items-center justify-between gap-3">
               <span class="badge badge-fire">{post.data.category}</span>
-              <time datetime={post.data.pubDate.toISOString().split('T')[0]} class="text-[11px] uppercase tracking-wider" style="color:var(--forge-300)">
+              <time datetime={post.data.pubDate.toISOString().split('T')[0]} class="text-2xs uppercase tracking-wider" style="color:var(--forge-300)">
                 {fmt.format(post.data.pubDate)}
               </time>
             </div>

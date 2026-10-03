@@ -334,7 +334,7 @@ const tablaComparativa = [
           ))}
           <div class="flex flex-wrap gap-2 mt-4">
             {['NFPA 13','NFPA 72','NFPA 2001','NFPA 20','NFPA 25','UL Listed','FM Global','Tyco','Viking','Honeywell','Notifier','FM-200','Novec 1230'].map((n: string) => (
-            <span class="badge badge-dark font-display text-[10px]">{n}</span>
+            <span class="badge badge-dark font-display text-2xs">{n}</span>
           ))}
           </div>
         </div>
@@ -465,7 +465,7 @@ const tablaComparativa = [
           </p>
           <div class="flex flex-wrap gap-2">
             {['NFPA 13','UL Listed','FM Approved','TY-B Pendant','TY-FRB Quick Response','TY315 ESFR K-25','Diluvio AFFF','Distribuidor autorizado MX'].map(b => (
-              <span class="badge badge-dark text-[9px]">{b}</span>
+              <span class="badge badge-dark text-2xs">{b}</span>
             ))}
           </div>
         </div>
@@ -520,7 +520,7 @@ const tablaComparativa = [
           <a href="/productos/sistemas-ci/alarma-contra-incendio/" class="text-sm font-bold hover:text-[var(--c-info)]" style="color:var(--c-ink)">Alarma contra incendio </a>
           <div class="flex flex-wrap gap-2">
             {['NFPA 72','UL Listed','cUL','NFS2-3030','NFS2-640','FACP Direccionable','Detección CLIP','SWIFT Wireless','Distribuidor autorizado MX'].map(b => (
-              <span class="badge badge-dark text-[9px]">{b}</span>
+              <span class="badge badge-dark text-2xs">{b}</span>
             ))}
           </div>
         </div>
@@ -574,7 +574,7 @@ const tablaComparativa = [
           </p>
           <div class="flex flex-wrap gap-2">
             {['NFPA 2001','UL Listed','FM Approved','FM-200 HFC-227ea','Novec 1230 FK-5-1-12','Ecaro-25 HFC-125','AutoPulse','Data centers','Distribuidor autorizado MX'].map(b => (
-              <span class="badge badge-dark text-[9px]">{b}</span>
+              <span class="badge badge-dark text-2xs">{b}</span>
             ))}
           </div>
         </div>
@@ -701,7 +701,7 @@ const tablaComparativa = [
               <p class="text-sm leading-relaxed" style="color:var(--c-text-2)">{s.desc}</p>
 
               <div class="pt-4" style="border-top:1px solid var(--c-line)">
-                <p class="text-[10px] font-display font-bold uppercase tracking-widest mb-2" style="color:var(--forge-300)">Aplicación típica</p>
+                <p class="text-2xs font-display font-bold uppercase tracking-widest mb-2" style="color:var(--forge-300)">Aplicación típica</p>
                 <p class="text-xs" style={`color:${s.accent};font-weight:600`}>{s.aplicacion}</p>
               </div>
 
@@ -714,7 +714,7 @@ const tablaComparativa = [
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-0">
               {/* Tipos */}
               <div class="flex flex-col gap-0 p-8" style="background:var(--c-bg-alt);border-right:1px solid var(--c-line)">
-                <p class="text-[10px] font-display font-bold uppercase tracking-widest mb-5" style="color:var(--forge-300)">Componentes y variantes</p>
+                <p class="text-2xs font-display font-bold uppercase tracking-widest mb-5" style="color:var(--forge-300)">Componentes y variantes</p>
                 <ul class="flex flex-col gap-4 list-none m-0 p-0">
                   {s.items.map((item) => (
                     <li class="flex flex-col gap-1">
@@ -732,7 +732,7 @@ const tablaComparativa = [
 
               {/* Entregables */}
               <div class="flex flex-col gap-4 p-8" style="background:var(--c-bg-alt)">
-                <p class="text-[10px] font-display font-bold uppercase tracking-widest mb-1" style="color:var(--forge-300)">Entregables del proyecto</p>
+                <p class="text-2xs font-display font-bold uppercase tracking-widest mb-1" style="color:var(--forge-300)">Entregables del proyecto</p>
                 <ul class="flex flex-col gap-3 list-none m-0 p-0">
                   {s.entregables.map((e) => (
                     <li class="flex items-start gap-2">
@@ -770,7 +770,7 @@ const tablaComparativa = [
           <thead>
             <tr >
               {['Subsistema','Norma','Activación','Ocupación típica','Entregable clave','Mantenimiento'].map((c, i) => (
-                <th class="text-left font-display font-bold uppercase tracking-widest p-3" style={`color:${i === 0 ? 'var(--c-ink)' : 'var(--forge-300)'};font-size:10px;background:var(--c-bg-alt)`}>{c}</th>
+                <th class="text-left font-display font-bold uppercase tracking-widest p-3" style={`color:${i === 0 ? 'var(--c-ink)' : 'var(--forge-300)'};font-size:0.6875rem;background:var(--c-bg-alt)`}>{c}</th>
               ))}
             </tr>
           </thead>
@@ -878,7 +878,7 @@ const tablaComparativa = [
           <article class="flex flex-col gap-3 p-7" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
             <div class="flex items-center justify-between gap-4">
               <span class="font-display font-bold text-xl" style="color:var(--c-success)">{n.clave}</span>
-              <span class="badge badge-dark text-[9px]">{n.titulo}</span>
+              <span class="badge badge-dark text-2xs">{n.titulo}</span>
             </div>
             <p class="text-sm leading-relaxed m-0" style="color:var(--c-text-2)">{n.desc}</p>
           </article>
@@ -1052,28 +1052,28 @@ const tablaComparativa = [
   {/* ══ CATEGORÍAS RELACIONADAS ═══════════════════════════════════════ */}
   <section style="background:var(--c-bg);border-top:1px solid var(--c-line)" aria-labelledby="cats-rel-title">
     <div class="container-site py-10 sm:py-12">
-      <p id="cats-rel-title" class="text-[9px] font-display font-bold uppercase tracking-widest mb-6" style="color:var(--forge-300)">Categorías relacionadas</p>
+      <p id="cats-rel-title" class="text-2xs font-display font-bold uppercase tracking-widest mb-6" style="color:var(--forge-300)">Categorías relacionadas</p>
       <div class="card-grid">
         <a href="/productos/extintores"
            class="group flex flex-col gap-2 p-5 hover:border-[var(--c-line-strong)]"
            style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
           <span class="text-sm font-display font-bold group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Extintores</span>
           <span class="text-xs leading-relaxed" style="color:var(--c-muted)">PQS ABC · CO₂ · Agente Limpio · Sobre Ruedas</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:var(--c-accent)">Guía de Extintores </span>
+          <span class="text-2xs font-semibold mt-1" style="color:var(--c-accent)">Guía de Extintores </span>
         </a>
         <a href="/productos/hazmat"
            class="group flex flex-col gap-2 p-5 hover:border-[var(--c-line-strong)]"
            style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
           <span class="text-sm font-display font-bold group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Equipos HAZMAT</span>
           <span class="text-xs leading-relaxed" style="color:var(--c-muted)">DuPont Tychem · Lakeland · MSA · Kappler</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:var(--c-accent)">Guía de Equipos HAZMAT </span>
+          <span class="text-2xs font-semibold mt-1" style="color:var(--c-accent)">Guía de Equipos HAZMAT </span>
         </a>
         <a href="/productos/herramientas-rescate"
            class="group flex flex-col gap-2 p-5 hover:border-[var(--c-line-strong)]"
            style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
           <span class="text-sm font-display font-bold group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Herramientas de Rescate</span>
           <span class="text-xs leading-relaxed" style="color:var(--c-muted)">Holmatro · Hurst · Weber Rescue</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:var(--c-accent)">Guía de Herramientas de Rescate </span>
+          <span class="text-2xs font-semibold mt-1" style="color:var(--c-accent)">Guía de Herramientas de Rescate </span>
         </a>
       </div>
     </div>

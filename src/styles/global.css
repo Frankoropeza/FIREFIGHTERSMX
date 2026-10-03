@@ -152,10 +152,10 @@
   /* Layout */
   --container-max:     100%;
   --container-padding: 1.25rem;
-  --header-height:     69px;    /* barra (68 + filete). Desde 768 px suma la TopBar: 106px */
+  /* El header no es fijo (2026-10-03): los anclajes y los elementos sticky
+     sólo necesitan un respiro superior, no compensar una barra encima. */
+  --sticky-offset:     1.5rem;
 }
-
-@media (min-width: 768px) { :root { --header-height: 106px; } }
 
 /* ================================================================
    RESET + BASE
@@ -163,7 +163,7 @@
 *, *::before, *::after { box-sizing: border-box; }
 
 html {
-  scroll-padding-top: var(--header-height);
+  scroll-padding-top: var(--sticky-offset);
   font-family: var(--font-sans);
   -webkit-text-size-adjust: 100%;
   background-color: var(--c-bg);
@@ -511,3 +511,36 @@ details.faq-item[open] .faq-icon { transform: rotate(45deg); }
   overflow: hidden;
 }
 .card-grid--cells > *:hover { border-color: var(--c-line-strong) !important; box-shadow: var(--shadow-card-hover); }
+
+/* ================================================================
+   RESPONSIVE Y ROBUSTEZ (2026-10-03)
+   Reglas transversales que evitan desbordes y textos ilegibles en
+   cualquier plantilla, sin depender de que cada página lo resuelva.
+   ================================================================ */
+
+/* Botones: nunca más anchos que su contenedor. En móvil un texto largo
+   pasa a dos líneas en lugar de empujar la página fuera del viewport. */
+.btn, .btn-gold { max-width: 100%; }
+@media (max-width: 639px) {
+  .btn, .btn-gold { white-space: normal; text-align: center; }
+}
+
+/* Filas de botones: si no caben en una línea, bajan a la siguiente. */
+.flex:has(> .btn, > .btn-gold):not(.flex-nowrap) { flex-wrap: wrap; }
+
+/* Palabras largas (URLs, correos, claves de norma) no rompen el ancho. */
+p, li, dd, td, th, figcaption, blockquote { overflow-wrap: break-word; }
+
+/* Medios embebidos y tablas del contenido: nunca más anchos que la columna. */
+iframe, embed, object { max-width: 100%; }
+
+/* Piso tipográfico en pantallas táctiles: nada por debajo de 12 px. */
+@media (max-width: 1023px) {
+  .text-2xs, .badge { font-size: 0.75rem; }
+}
+
+/* Controles táctiles: casillas y filtros con área de toque suficiente. */
+@media (pointer: coarse) {
+  input[type="checkbox"], input[type="radio"] { width: 1.25rem; height: 1.25rem; }
+  .emp-filter, .est-filter { min-height: 2.5rem; }
+}

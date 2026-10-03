@@ -15,14 +15,14 @@
   @media (min-width: 1680px) { .l2-shell { grid-template-columns: minmax(0, 1fr) 27rem; } }
   .l2-main { min-width: 0; }
 
-  .l2-sec { scroll-margin-top: calc(var(--header-height) + 1rem); }
+  .l2-sec { scroll-margin-top: var(--sticky-offset); }
   .l2-sec + .l2-sec { margin-top: 4rem; padding-top: 4rem; border-top: 1px solid var(--c-line); }
   .l2-sec-head { max-width: 48rem; margin-bottom: 2.25rem; }
   .l2-h2 { margin: 0; font-family: var(--font-display); font-weight: 700; color: var(--c-ink); font-size: clamp(1.625rem, 2.6vw, 2.25rem); line-height: 1.1; letter-spacing: -.02em; text-wrap: balance; }
   .l2-lead { margin: 1rem 0 0; font-size: 1rem; line-height: 1.7; color: var(--c-text-2); }
 
   /* Familias */
-  .l2-fam { scroll-margin-top: calc(var(--header-height) + 1rem); }
+  .l2-fam { scroll-margin-top: var(--sticky-offset); }
   .l2-fam + .l2-fam { margin-top: 3.5rem; padding-top: 3.5rem; border-top: 1px solid var(--c-line); }
   .l2-fam-head { display: grid; gap: 1rem; margin-bottom: 1.75rem; }
   @media (min-width: 1280px) {

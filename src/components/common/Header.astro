@@ -13,6 +13,9 @@
     fly-outs anidados; el resto son dropdowns simples.
   · Regla del sitio: cero animaciones y cero transiciones (sólo los botones).
     Los paneles se muestran y ocultan al instante.
+  · 2026-10-03: el header deja de ser fijo — fluye con la página y se va al
+    hacer scroll. El drawer móvil sí es fixed y calcula su borde superior al
+    abrirse (justo debajo de la barra, esté donde esté en el viewport).
 */
 import { navigation, type NavItem } from '@data/navigation';
 import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl, TELEFONO_ACTIVO } from '@config/site';
@@ -282,37 +285,38 @@ const grupos = navigation.main.map(preparar);
   </div>
 </header>
 
-<!-- Espaciador: compensa el header fixed (altura = --header-height) -->
-<div class="hdr-spacer" aria-hidden="true"></div>
-
 <style is:global>
   /* ══════════════════════════════════════════════════════════════
      HEADER — todo el CSS del menú vive aquí (prefijos hdr-/mega-/list-/drw-)
      Regla del sitio: SIN transiciones ni animaciones.
      ══════════════════════════════════════════════════════════════ */
-  .hdr { position: fixed; top: 0; left: 0; right: 0; z-index: 50; }
-  .hdr-spacer { height: var(--header-height); }
+  /* Header en flujo normal (no fixed / no sticky): se desplaza con la página.
+     z-index para que los paneles desplegables queden sobre el contenido. */
+  .hdr { position: relative; z-index: 50; }
 
   .hdr-main {
     position: relative;
     background: #fff;
     border-bottom: 1px solid var(--c-line);
   }
-  .hdr-main.is-scrolled { box-shadow: 0 4px 16px rgba(16, 24, 40, 0.10); }
+
+  /* Altura de la barra: única fuente para .hdr-bar y .hdr-list */
+  .hdr-main { --hdr-bar-h: 72px; }
+  @media (min-width: 1024px) { .hdr-main { --hdr-bar-h: 84px; } }
 
   .hdr-bar {
-    height: 68px;
+    height: var(--hdr-bar-h);
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
   }
 
-  /* ── Marca ── */
-  .hdr-brand { display: flex; align-items: center; flex-shrink: 0; min-width: 0; --logo-h: 54px; }
-  @media (max-width: 1023px) { .hdr-brand { --logo-h: 44px; } }
-  @media (max-width: 479px)  { .hdr-brand { --logo-h: 42px; } }
-  @media (max-width: 359px)  { .hdr-brand { --logo-h: 40px; } }
+  /* ── Marca (logo +20 % el 2026-10-03: 54→65 · 44→53 · 42→50 · 40→48) ── */
+  .hdr-brand { display: flex; align-items: center; flex-shrink: 0; min-width: 0; --logo-h: 65px; }
+  @media (max-width: 1023px) { .hdr-brand { --logo-h: 53px; } }
+  @media (max-width: 479px)  { .hdr-brand { --logo-h: 50px; } }
+  @media (max-width: 359px)  { .hdr-brand { --logo-h: 48px; } }
 
   /* ── Navegación de escritorio ── */
   .hdr-nav { display: none; }
@@ -320,7 +324,7 @@ const grupos = navigation.main.map(preparar);
     .hdr-nav { display: flex; flex: 1 1 auto; min-width: 0; justify-content: center; }
   }
   .hdr-list {
-    display: flex; align-items: stretch; height: 68px;
+    display: flex; align-items: stretch; height: var(--hdr-bar-h);
     margin: 0; padding: 0; list-style: none; gap: 0.125rem;
   }
   .hdr-item { display: flex; position: relative; }
@@ -368,7 +372,8 @@ const grupos = navigation.main.map(preparar);
     background: #fff;
     border: 1px solid var(--c-line); border-top: 0;
     box-shadow: 0 18px 36px -10px rgba(16, 24, 40, 0.16);
-    max-height: calc(100dvh - var(--header-height) - 0.75rem);
+    max-height: calc(100vh - var(--hdr-bar-h) - 0.75rem);
+    max-height: calc(100dvh - var(--hdr-bar-h) - 0.75rem);
     overflow-y: auto; overscroll-behavior: contain;
   }
   .hdr-item.is-open > .hdr-panel { display: block; }
@@ -457,15 +462,17 @@ const grupos = navigation.main.map(preparar);
   @media (min-width: 1536px) { .hdr-wa { display: block; } .hdr-phone { display: block; } }
 
   /* ── Drawer móvil ── */
+  /* --drw-top lo fija el script al abrir (borde inferior visible de la barra). */
   .drw {
-    position: fixed; left: 0; right: 0; top: var(--header-height); bottom: 0; z-index: 49;
+    position: fixed; left: 0; right: 0; top: var(--drw-top, 0px); bottom: 0; z-index: 49;
     background: #fff; border-top: 1px solid var(--c-line);
     overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch;
   }
   .drw[hidden] { display: none; }
   @media (min-width: 1280px) { .drw, .drw[hidden] { display: none !important; } }
   /* El botón flotante de WhatsApp no debe tapar el drawer (el contacto ya va arriba). */
-  html.menu-abierto .wa-float { display: none; }
+  html.menu-abierto .wa-float,
+  html.menu-abierto #whatsapp-btn { display: none; }
   .drw-inner { padding-bottom: calc(2rem + env(safe-area-inset-bottom, 0px)); }
 
   .drw-cta { display: flex; gap: 0.75rem; padding: 1rem 0; border-bottom: 1px solid var(--c-line); }
@@ -576,7 +583,7 @@ function closePanel(returnFocus: boolean) {
   triggerOf(li).setAttribute('aria-expanded', 'false');
   openItem = null;
   pinned = false;
-  if (returnFocus) triggerOf(li).focus();
+  if (returnFocus) triggerOf(li).focus({ preventScroll: true });
 }
 
 const isMouse = (e: PointerEvent) => e.pointerType === 'mouse' || e.pointerType === 'pen';
@@ -844,12 +851,24 @@ function setInert(on: boolean) {
   }
 }
 
+/* El header ya no es fijo: si la barra está cortada por arriba se alinea al
+   borde superior del viewport (así el botón «Cerrar» queda completo a la vista)
+   y el drawer arranca justo debajo de ella. */
+function placeDrawer() {
+  if (!drawer) return;
+  const top = main.getBoundingClientRect().top;
+  if (top < 0) window.scrollTo({ top: window.scrollY + top, left: 0, behavior: 'instant' as ScrollBehavior });
+  const bottom = Math.max(0, Math.round(main.getBoundingClientRect().bottom));
+  drawer.style.setProperty('--drw-top', `${bottom}px`);
+}
+
 function setDrawer(open: boolean, returnFocus = true) {
   if (!drawer || !btn || open === drawerOpen) return;
   drawerOpen = open;
   if (open) {
     closePanel(false);
     buildDrawer();
+    placeDrawer();
     drawer.hidden = false;
     document.documentElement.classList.add('menu-abierto');
     lockScroll();
@@ -860,7 +879,8 @@ function setDrawer(open: boolean, returnFocus = true) {
     document.documentElement.classList.remove('menu-abierto');
     setInert(false);
     unlockScroll();
-    if (returnFocus) btn.focus();
+    // preventScroll: el header no es fijo y el foco no debe mover la página.
+    if (returnFocus) btn.focus({ preventScroll: true });
   }
   btn.setAttribute('aria-expanded', String(open));
   btn.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
@@ -886,8 +906,10 @@ window.addEventListener('pageshow', (e) => {
   if ((e as PageTransitionEvent).persisted) { setDrawer(false, false); closePanel(false); }
 });
 
-/* Sombra al hacer scroll */
-window.addEventListener('scroll', () => {
-  if (!drawerOpen) main.classList.toggle('is-scrolled', window.scrollY > 8);
+/* Rotación / cambio de tamaño con el drawer abierto: recolocar su borde superior. */
+window.addEventListener('resize', () => {
+  if (drawerOpen && drawer) {
+    drawer.style.setProperty('--drw-top', `${Math.max(0, Math.round(main.getBoundingClientRect().bottom))}px`);
+  }
 }, { passive: true });
 </script>

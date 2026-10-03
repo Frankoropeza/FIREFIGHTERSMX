@@ -248,7 +248,7 @@ const razones = [
           ))}
           <div class="flex flex-wrap gap-2">
             {['NFPA 1970','NFPA 1950','NFPA 1850','PBI','Crosstech','5 marcas · internacional y nacional'].map(n => (
-            <span class="badge badge-dark font-display text-[10px]">{n}</span>
+            <span class="badge badge-dark font-display text-2xs">{n}</span>
           ))}
           </div>
         </div>
@@ -393,7 +393,7 @@ const razones = [
           <article class="flex flex-col gap-4 p-7" style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
             <div class="flex items-center justify-between gap-2">
               <h3 class="font-display font-bold text-xl" style="color:var(--c-ink)">{t.title}</h3>
-              <span class="badge badge-dark text-[9px]">{t.norm}</span>
+              <span class="badge badge-dark text-2xs">{t.norm}</span>
             </div>
             <p class="text-sm leading-relaxed m-0" style="color:var(--c-text-2)">{t.desc}</p>
           </article>
@@ -423,7 +423,7 @@ const razones = [
           </p>
           <div class="flex flex-wrap gap-2">
             {['NFPA 1970','PBI MAX','GORE-TEX CrossTech','Distribuidor autorizado MX'].map(b => (
-              <span class="badge badge-dark text-[9px]">{b}</span>
+              <span class="badge badge-dark text-2xs">{b}</span>
             ))}
           </div>
         </div>
@@ -480,7 +480,7 @@ const razones = [
           </p>
           <div class="flex flex-wrap gap-2">
             {['NFPA 1970','NFPA 1950','PBI MAX','V-Force®','Distribuidor autorizado MX'].map(b => (
-              <span class="badge badge-dark text-[9px]">{b}</span>
+              <span class="badge badge-dark text-2xs">{b}</span>
             ))}
           </div>
         </div>
@@ -528,7 +528,7 @@ const razones = [
           </p>
           <div class="flex flex-wrap gap-2">
             {['NFPA 1970','NFPA 2112','PBI Gold','VIPER®','TAILS® CBRN'].map(b => (
-              <span class="badge badge-dark text-[9px]">{b}</span>
+              <span class="badge badge-dark text-2xs">{b}</span>
             ))}
           </div>
         </div>
@@ -576,7 +576,7 @@ const razones = [
           </p>
           <div class="flex flex-wrap gap-2">
             {['NFPA 1970','TECGEN® 71','TECGEN® 51','PBI/TECGEN Hybrid','NFPA 2112'].map(b => (
-              <span class="badge badge-dark text-[9px]">{b}</span>
+              <span class="badge badge-dark text-2xs">{b}</span>
             ))}
           </div>
         </div>
@@ -625,7 +625,7 @@ const razones = [
           </p>
           <div class="flex flex-wrap gap-2">
             {['NFPA 1971 Ed. 2018','UL MH60435','NFPA 2112','Equiv. NFPA 1977','PBI Max 7.0','Nomex IIIA'].map(b => (
-              <span class="badge badge-dark text-[9px]">{b}</span>
+              <span class="badge badge-dark text-2xs">{b}</span>
             ))}
           </div>
         </div>
@@ -885,28 +885,28 @@ const razones = [
   {/* ══ CATEGORÍAS RELACIONADAS ═══════════════════════════════════════ */}
   <section style="background:var(--c-bg);border-top:1px solid var(--c-line)" aria-labelledby="cats-rel-title">
     <div class="container-site py-10 sm:py-12">
-      <p id="cats-rel-title" class="text-[9px] font-display font-bold uppercase tracking-widest mb-6" style="color:var(--forge-300)">Categorías relacionadas</p>
+      <p id="cats-rel-title" class="text-2xs font-display font-bold uppercase tracking-widest mb-6" style="color:var(--forge-300)">Categorías relacionadas</p>
       <div class="card-grid">
         <a href="/productos/cascos-nfpa"
            class="group flex flex-col gap-2 p-5 hover:border-[var(--c-line-strong)]"
            style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
           <span class="text-sm font-display font-bold group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Cascos NFPA</span>
           <span class="text-xs leading-relaxed" style="color:var(--c-muted)">MSA Gallet · Bullard · Cairns</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:var(--c-accent)">Guía de Cascos NFPA </span>
+          <span class="text-2xs font-semibold mt-1" style="color:var(--c-accent)">Guía de Cascos NFPA </span>
         </a>
         <a href="/productos/equipos-scba"
            class="group flex flex-col gap-2 p-5 hover:border-[var(--c-line-strong)]"
            style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
           <span class="text-sm font-display font-bold group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Equipos SCBA</span>
           <span class="text-xs leading-relaxed" style="color:var(--c-muted)">MSA G1 · Dräger PSS 7000 · 3M Scott</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:var(--c-accent)">Guía de Equipos SCBA </span>
+          <span class="text-2xs font-semibold mt-1" style="color:var(--c-accent)">Guía de Equipos SCBA </span>
         </a>
         <a href="/productos/camaras-termicas"
            class="group flex flex-col gap-2 p-5 hover:border-[var(--c-line-strong)]"
            style="background:var(--c-bg-alt);border:1px solid var(--c-line)">
           <span class="text-sm font-display font-bold group-hover:text-[var(--c-accent)]" style="color:var(--c-ink)">Cámaras Térmicas</span>
           <span class="text-xs leading-relaxed" style="color:var(--c-muted)">FLIR · MSA Evolution · Bullard TXS</span>
-          <span class="text-[11px] font-semibold mt-1" style="color:var(--c-accent)">Guía de Cámaras Térmicas </span>
+          <span class="text-2xs font-semibold mt-1" style="color:var(--c-accent)">Guía de Cámaras Térmicas </span>
         </a>
       </div>
     </div>
