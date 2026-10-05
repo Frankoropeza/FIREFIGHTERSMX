@@ -74,12 +74,6 @@ const webSiteSchema = {
   description: SITE.description,
   inLanguage: 'es-MX',
   publisher: { '@id': `${SITE.url}/#business` },
-  // La búsqueda del sitio es la del directorio de empresas.
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: { '@type': 'EntryPoint', urlTemplate: `${SITE.url}/empresas/?q={search_term_string}` },
-    'query-input': 'required name=search_term_string',
-  },
 };
 
 const faqSchema = {
