@@ -150,6 +150,7 @@ const quitarComentariosHtml = (html) => {
 
 export default defineConfig({
   site: 'https://firefighters.mx',
+  cacheDir: '.astro',
   // Canonical: siempre slash final — así lo sirve producción (Cloudflare
   // redirige 308 /pagina → /pagina/). Medido 2026-08-12.
   trailingSlash: 'always',
@@ -184,6 +185,7 @@ export default defineConfig({
     },
   },
   vite: {
+    cacheDir: '.astro/vite',
     build: {
       cssCodeSplit: true,
       // Sin sourcemaps en producción: menos archivos y peso en el deploy
