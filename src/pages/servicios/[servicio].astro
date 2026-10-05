@@ -159,8 +159,8 @@ const productosMap: Record<string, {label: string; href: string; marcas: string}
 const productosRel = productosMap[s.slug] ?? [];
 /* Title sólo con palabras clave del servicio (sin marca), ≤60 caracteres. */
 const seoTitles: Record<string, string> = {
-  'capacitacion': 'Capacitación contra incendio con constancia DC-3 STPS',
-  'mantenimiento': 'Mantenimiento y recarga de extintores y equipo SCBA',
+  'capacitacion': 'Capacitación contra incendios con constancia DC-3 STPS',
+  'mantenimiento': 'Mantenimiento de equipo contra incendio, SCBA y EPP',
   'instalacion-sistemas-ci': 'Instalación de sistemas contra incendio NFPA',
   'auditoria-seguridad': 'Auditoría NOM-002-STPS de seguridad contra incendio',
   'brigadas-empresariales': 'Brigadas contra incendio empresariales NOM-002',
@@ -238,6 +238,79 @@ const seoTitle = seoTitles[s.slug] ?? `${s.title} contra incendio en México`;
           </div>
         </div>
 
+        {s.sections?.map((section) => (
+          <section aria-labelledby={`${section.id}-${s.slug}`} class="max-w-prose">
+            <h2 id={`${section.id}-${s.slug}`} class="font-display text-2xl font-bold leading-tight text-[var(--c-ink)] sm:text-3xl">
+              {section.title}
+            </h2>
+            <div class="mt-5 space-y-4 text-base leading-relaxed text-[var(--c-text-2)]">
+              {section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+            </div>
+            {section.bullets && (
+              <ul class="mt-5 list-disc space-y-2 pl-5 text-base leading-relaxed text-[var(--c-text-2)] marker:text-[var(--c-accent)]">
+                {section.bullets.map((bullet) => <li>{bullet}</li>)}
+              </ul>
+            )}
+          </section>
+        ))}
+
+        {s.process && (
+          <section aria-labelledby={`proceso-${s.slug}`} class="max-w-prose">
+            <h2 id={`proceso-${s.slug}`} class="font-display text-2xl font-bold leading-tight text-[var(--c-ink)] sm:text-3xl">
+              Cómo trabajamos en {s.title.toLowerCase()}
+            </h2>
+            <ol class="mt-6 list-decimal space-y-4 pl-5 text-base leading-relaxed text-[var(--c-text-2)] marker:font-display marker:font-bold marker:text-[var(--c-accent)]">
+              {s.process.map((item) => (
+                <li class="pl-2">
+                  <span class="font-display font-bold text-[var(--c-ink)]">{item.step}.</span>{' '}
+                  {item.detail}
+                </li>
+              ))}
+            </ol>
+          </section>
+        )}
+
+        {s.deliverables && (
+          <section aria-labelledby={`entregables-${s.slug}`} class="max-w-prose">
+            <h2 id={`entregables-${s.slug}`} class="font-display text-2xl font-bold leading-tight text-[var(--c-ink)] sm:text-3xl">
+              Entregables documentales
+            </h2>
+            <ul class="mt-6 list-disc space-y-2 pl-5 text-base leading-relaxed text-[var(--c-text-2)] marker:text-[var(--c-accent)]">
+              {s.deliverables.map((item) => <li>{item}</li>)}
+            </ul>
+          </section>
+        )}
+
+        {s.normas && (
+          <section aria-labelledby={`normas-${s.slug}`}>
+            <h2 id={`normas-${s.slug}`} class="font-display text-2xl font-bold leading-tight text-[var(--c-ink)] sm:text-3xl">
+              Normas aplicables
+            </h2>
+            <div class="mt-6 overflow-x-auto border border-[var(--c-line)] bg-[var(--c-surface)]">
+              <table class="w-full border-collapse text-left text-sm sm:text-base">
+                <thead class="bg-[var(--c-bg-alt)] text-sm font-semibold text-[var(--c-ink)]">
+                  <tr>
+                    <th scope="col" class="border-b border-[var(--c-line)] px-4 py-3">Norma</th>
+                    <th scope="col" class="border-b border-[var(--c-line)] px-4 py-3">Alcance</th>
+                  </tr>
+                </thead>
+                <tbody class="text-[var(--c-text-2)]">
+                  {s.normas.map((norma) => (
+                    <tr>
+                      <th scope="row" class="w-[38%] break-words border-b border-[var(--c-line)] px-3 py-3 align-top sm:w-1/4 sm:px-4 font-display font-bold text-[var(--c-ink)]">
+                        {norma.href
+                          ? <a href={norma.href} class="text-[var(--c-accent)] underline underline-offset-4">{norma.code}</a>
+                          : norma.code}
+                      </th>
+                      <td class="border-b border-[var(--c-line)] px-3 py-3 leading-relaxed sm:px-4">{norma.scope}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+        )}
+
         <!-- Detalle (subsecciones del spotlight) + imagen -->
         <div aria-labelledby={`detalle-${s.slug}`}>
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -314,6 +387,19 @@ const seoTitle = seoTitles[s.slug] ?? `${s.title} contra incendio en México`;
             </div>
           </div>
         </div>
+
+        {s.related && (
+          <section aria-labelledby={`relacionados-${s.slug}`} class="max-w-prose">
+            <h2 id={`relacionados-${s.slug}`} class="font-display text-2xl font-bold leading-tight text-[var(--c-ink)] sm:text-3xl">
+              Recursos relacionados
+            </h2>
+            <ul class="mt-6 list-disc space-y-2 pl-5 text-base leading-relaxed marker:text-[var(--c-accent)]">
+              {s.related.map((link) => (
+                <li><a href={link.href} class="font-semibold text-[var(--c-accent)] underline underline-offset-4">{link.label}</a></li>
+              ))}
+            </ul>
+          </section>
+        )}
 
       </div>
 
