@@ -40,8 +40,6 @@ descripcion: "La Unidad Municipal de Protección Civil y Bomberos de El Llano pr
 
   Ante la ausencia de cuerpos de socorro privados en el municipio, la unidad cubre fugas de gas LP en tanques estacionarios domésticos, apoya en evacuaciones preventivas durante alertas por fenómenos hidrometeorológicos y coordina con la Coordinación Estatal de Protección Civil de Aguascalientes en incidentes de mayor magnitud que superen la capacidad de respuesta local."
 fuentes:
-  - nombre: "proteccioncivil.gob.mx"
-    url: "http://www.proteccioncivil.gob.mx/work/models/sismos/Resource/42/1/images/directorio_umpc.pdf"
   - nombre: "municipiodeelllano.gob.mx"
     url: "https://municipiodeelllano.gob.mx/"
 verificadoEl: "2026-06-25"

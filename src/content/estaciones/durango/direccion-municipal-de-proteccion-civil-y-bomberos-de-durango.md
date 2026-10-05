@@ -19,7 +19,6 @@ telefono: "(618) 137-8460"
 telefonosAdicionales:
   - "(618) 814-4555"
 email: "direccionproteccioncivil@gmail.com"
-sitioWeb: "https://pc.durangocapital.gob.mx/"
 servicios:
   - "incendios-estructurales"
   - "proteccion-civil"
@@ -30,8 +29,6 @@ serviciosDetalle:
   - "Centro Municipal de Monitoreo de Riesgos"
 descripcion: "Corporación municipal responsable de incendios, emergencias y protección civil en la capital del estado, reconocida a nivel nacional por su Centro Municipal de Monitoreo de Riesgos y su enfoque preventivo."
 fuentes:
-  - nombre: "pc.durangocapital.gob.mx"
-    url: "https://pc.durangocapital.gob.mx/bomberos-2/"
   - nombre: "proteccioncivil.durango.gob.mx"
     url: "https://proteccioncivil.durango.gob.mx/wp-content/uploads/sites/39/2023/04/DIRECTORIO-DE-COORDINADORES-MUNICIPALES-DE-P.-C.-sin-dp-2022-2025.pdf"
 verificadoEl: "2026-06"

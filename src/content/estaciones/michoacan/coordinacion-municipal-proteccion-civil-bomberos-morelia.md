@@ -42,8 +42,6 @@ fuentes:
     url: "https://www.quadratin.com.mx/principal/cuenta-morelia-con-un-bombero-por-cada-18-mil-habitantes/"
   - nombre: "Contramuro — 3 estaciones Morelia 2026"
     url: "https://www.contramuro.com/suman-170-incendios-en-morelia-en-lo-que-va-de-2026/"
-  - nombre: "morelia.gob.mx — referencia de actividad"
-    url: "https://www.morelia.gob.mx/saldo-blanco-tras-sismo-proteccion-civil-y-bomberos-de-morelia/"
   - nombre: "DENUE — INEGI"
     url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=2702526"
 verificadoEl: "2026-09"

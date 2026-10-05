@@ -35,11 +35,7 @@ descripcion: "La Unidad de Bomberos de Coatzacoalcos es la corporación de emerg
   Coatzacoalcos es el corazón del corredor petroquímico del Istmo: alberga el Complejo Petroquímico Pajaritos —escenario de la explosión de la Planta Clorados III el 20 de abril de 2016 que causó 32 muertos y 100 heridos graves, la peor catástrofe industrial de Veracruz en décadas—, los complejos Cangrejera, Morelos y Cosoleacaque, y la Terminal Marítima PEMEX en la desembocadura del río Coatzacoalcos. La respuesta a emergencias industriales de escala mayor se coordina a través del Comité Local de Ayuda Mutua (CLAM), consorcio de brigadas internas de las plantas del corredor."
 fuentes:
   - nombre: "coatzacoalcos.gob.mx"
-    url: "https://www.coatzacoalcos.gob.mx/prensa/conmemoran-147-aniversario-del-heroico-cuerpo-de-bomberos/"
-  - nombre: "coatzacoalcos.gob.mx"
     url: "https://www.coatzacoalcos.gob.mx/prensa/alcalde-de-coatzacoalcos-reconoce-50-anos-de-servicio-del-comandante-de-bomberos-jorge-garcia-cruz/"
-  - nombre: "coatzacoalcos.gob.mx"
-    url: "https://www.coatzacoalcos.gob.mx/telefonos-de-emergencia/"
   - nombre: "municipiosur.com"
     url: "https://municipiosur.com/2024/04/09/jorge-garcia-cruz-comandante-de-los-bomberos-portenos-durante-el-periodo-de-vacaciones-de-semana-santa-la-unidad-de-bomberos-de-coatzacoalcos-atendio-150-incendios-de-pastizales/"
 verificadoEl: "2026-06-25"

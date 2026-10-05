@@ -15,7 +15,6 @@ coordenadas:
   lng: -104.843
   precision: "aproximada"
 telefono: "(311) 214-1850"
-sitioWeb: "https://www.asa.gob.mx/es/ASA/TEPIC"
 operador: "Grupo Aeroportuario Turístico Mexicano (GATM) — concesión 45 años desde ene. 2023"
 servicios:
   - "incendios-estructurales"

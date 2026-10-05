@@ -753,7 +753,6 @@ export const categories: Category[] = [
     ],
     fuentes: [
       { titulo: 'NFPA — NFPA 2500, desarrollo de la norma', url: 'https://www.nfpa.org/codes-and-standards/nfpa-2500-standard-development/2500' },
-      { titulo: 'Petzl — inspección de cuerda', url: 'https://www.petzl.com/FI/en/Professional/News/2020-3-6/How-To-Inspect-Your-Rope' },
       { titulo: 'Petzl — MAESTRO S', url: 'https://www.petzl.com/ES/es/Profesional/Descensores/MAESTRO-S' },
       { titulo: 'CMC — MPD', url: 'https://www.cmcpro.com/equipment/mpd/' },
       { titulo: 'Ferno — Model 71 Basket Stretcher', url: 'https://www.ferno.com/us/product/model-71-basket-stretcher?hl=en-us' },

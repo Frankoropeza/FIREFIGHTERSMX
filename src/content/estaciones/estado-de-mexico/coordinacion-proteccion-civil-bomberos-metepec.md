@@ -36,8 +36,6 @@ descripcion: "Unidad municipal única de Metepec, dentro de la zona metropolitan
 fuentes:
   - nombre: "Directorio CGPC EDOMEX jun 2025"
     url: "https://cgproteccioncivil.edomex.gob.mx/sites/cgproteccioncivil.edomex.gob.mx/files/files/Que%20ofrecemos%202025/DIR-U-MUNICPALES/DIRECTORIO-JUNIO2025.pdf"
-  - nombre: "metepec.gob.mx — verificadores PC"
-    url: "https://metepec.gob.mx/verificadores/protciv.php"
   - nombre: "DENUE — INEGI"
     url: "https://www.inegi.org.mx/app/mapa/denue/default.aspx?id=8683866"
 verificadoEl: "2026-09"

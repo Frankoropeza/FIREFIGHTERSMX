@@ -32,8 +32,6 @@ descripcion: "Estación de la Sierra Norte del Heroico Cuerpo de Bomberos y Bomb
 fuentes:
   - nombre: "heraldodepuebla.com"
     url: "https://heraldodepuebla.com/2022/08/22/marquez-reconoce-heroica-labor-del-cuerpo-de-bomberos-en-zacatlan/"
-  - nombre: "nmas.com.mx"
-    url: "https://nmas.com.mx/noticias/nacional/convocatoria-bomberos-ssp-puebla-2025-requisitos-sueldo/"
 verificadoEl: "2026-06"
 confianza: "media"
 activa: true

@@ -30,8 +30,6 @@ serviciosDetalle:
   - "Primeros auxilios"
 descripcion: "Corporación de bomberos voluntarios que atiende Tulancingo de Bravo, tercera ciudad en importancia del estado de Hidalgo. Opera bajo convenio de colaboración con el Municipio de Tulancingo a través de la Dirección de Bomberos y Protección Civil Municipal. Personal activo documentado respondiendo a emergencias en 2024 y 2025."
 fuentes:
-  - nombre: "2016-2020.tulancingo.gob.mx"
-    url: "https://2016-2020.tulancingo.gob.mx/telefonos-de-emergencia/"
   - nombre: "transparencia.tulancingo.gob.mx"
     url: "https://transparencia.tulancingo.gob.mx/2020-2024/2024/01trimestre/A69/F-09/A69_F9_1TM_I1_2024.pdf"
 verificadoEl: "2026-06"

@@ -186,6 +186,5 @@ El costo depende de la plataforma, el número de baterías y accesorios, el soft
 - [DJI Enterprise: especificaciones de la Matrice 4 Series](https://enterprise.dji.com/matrice-4-series/specs)
 - [DJI Enterprise: especificaciones de la Matrice 30 Series](https://enterprise.dji.com/matrice-30/specs)
 - [DJI Enterprise: especificaciones del Dock 3](https://enterprise.dji.com/dock-3/specs)
-- [Baker McKenzie: New regulation for drones in Mexico](https://bakermckenzie.com/en/insight/publications/2019/12/new-regulation-drone-mexico)
 - [NFPA 2400-2024 en el catálogo de ANSI](https://webstore.ansi.org/standards/nfpa/nfpa24002024)
 - [OH&S: New NFPA standard issued for public safety drone operations](https://ohsonline.com/articles/2018/12/06/new-nfpa-standard-for-drone-operations.aspx)

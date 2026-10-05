@@ -187,7 +187,6 @@ Según su alcance publicado, no es una certificación de producto. La NFPA 2400 
 
 ## Fuentes
 
-- [Baker McKenzie: New regulation for drones in Mexico](https://bakermckenzie.com/en/insight/publications/2019/12/new-regulation-drone-mexico)
 - [AFAC: presentación del Comité de Seguridad Operacional de UAS, sesión 01/21](https://www.gob.mx/cms/uploads/attachment/file/670889/presentacion-01-21-com-uas.pdf)
 - [NFPA 2400-2024 en el catálogo de ANSI](https://webstore.ansi.org/standards/nfpa/nfpa24002024)
 - [OH&S: New NFPA standard issued for public safety drone operations](https://ohsonline.com/articles/2018/12/06/new-nfpa-standard-for-drone-operations.aspx)

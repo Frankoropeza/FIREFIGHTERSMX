@@ -44,13 +44,7 @@ fuentes:
   - nombre: "sefintlax.gob.mx"
     url: "https://sefintlax.gob.mx/portalsf/index.php/telefonos-emergencia"
   - nombre: "coracyt.gob.mx"
-    url: "https://coracyt.gob.mx/noticias/locales/9600-celebran-41-anos-de-servicio-del-heroico-cuerpo-de-bomberos-del-estado-de-tlaxcala"
-  - nombre: "coracyt.gob.mx"
     url: "https://coracyt.gob.mx/noticias/titulares/4969-celebro-gobernadora-lorena-cuellar-40-aniversario-del-heroico-cuerpo-de-bomberos-de-tlaxcala"
-  - nombre: "comunicacion.tlaxcala.gob.mx"
-    url: "https://comunicacion.tlaxcala.gob.mx/index.php?view=article&id=19289"
-  - nombre: "sma.tlaxcala.gob.mx"
-    url: "https://sma.tlaxcala.gob.mx/fuego/pemf.pdf"
 verificadoEl: "2026-06-25"
 confianza: "alta"
 activa: true

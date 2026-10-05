@@ -41,8 +41,6 @@ descripcion: "La Unidad Municipal de Protección Civil y Bomberos de San José d
 
   El municipio limita al poniente con el estado de Zacatecas y tiene vocación agropecuaria y forestal, con extracción de cantera y producción de maíz y ganadería extensiva. La unidad de Protección Civil también atiende emergencias derivadas de las presas Plutarco Elías Calles, del Jocoque y Cincuenta Aniversario, así como fugas de gas LP y accidentes en caminos rurales que conectan las 13 comunidades del municipio."
 fuentes:
-  - nombre: "proteccioncivil.gob.mx"
-    url: "http://www.proteccioncivil.gob.mx/work/models/sismos/Resource/42/1/images/directorio_umpc.pdf"
   - nombre: "sanjosedegracia.gob.mx"
     url: "https://sanjosedegracia.gob.mx/"
   - nombre: "binoticias.com"

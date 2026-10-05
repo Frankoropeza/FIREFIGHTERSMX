@@ -34,7 +34,7 @@ serviciosDetalle:
 descripcion: "Unidad municipal de PC de Cuauhtémoc que cumple funciones de bomberos en la cabecera y comunidades como Quesería, con apoyo de la UEPC y Bomberos de Colima. El municipio se extiende por el valle agrícola al oriente de la capital, con caña, limón e ingenio en Quesería, y queda dentro del área de influencia del Volcán de Fuego."
 fuentes:
   - nombre: "proteccioncivil.gob.mx"
-    url: "http://www.proteccioncivil.gob.mx/work/models/sismos/Resource/42/1/images/directorio_umpc.pdf"
+    retirada: "http://www.proteccioncivil.gob.mx/work/models/sismos/Resource/42/1/images/directorio_umpc.pdf"
 verificadoEl: "2026-06"
 confianza: "media"
 activa: true

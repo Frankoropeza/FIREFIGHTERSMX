@@ -35,8 +35,6 @@ descripcion: "La Dirección de Protección Civil y Bomberos de Nuevo Laredo es l
 fuentes:
   - nombre: "po.tamaulipas.gob.mx"
     url: "http://po.tamaulipas.gob.mx/wp-content/uploads/2024/03/020_Laredo_Bomberos.pdf"
-  - nombre: "tamaulipas.gob.mx"
-    url: "https://www.tamaulipas.gob.mx/datosabiertos/datos_abiertos/proteccion-civil-y-bomberos-nuevo-laredo/"
   - nombre: "diariolaredo.com"
     url: "https://diariolaredo.com/laredo-texas/entrenamiento-binacional-reune-a-bomberos-de-varias-ciudades-de-mexico-en-laredo/"
 verificadoEl: "2026-06-25"

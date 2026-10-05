@@ -29,8 +29,6 @@ serviciosDetalle:
   - "Capacitación y brigadas"
 descripcion: "Oficina de Protección Civil del Ayuntamiento de Tecomán para la gestión integral del riesgo y la respuesta a emergencias. El municipio suma a la mancha urbana un valle citrícola de riego y una costa de playas abiertas, con temporada de ciclones del Pacífico de junio a noviembre."
 fuentes:
-  - nombre: "proteccioncivil.gob.mx"
-    url: "http://www.proteccioncivil.gob.mx/work/models/sismos/Resource/42/1/images/directorio_umpc.pdf"
   - nombre: "tecoman.gob.mx"
     url: "https://www.tecoman.gob.mx/directorio.html"
 verificadoEl: "2026-06"
