@@ -14,7 +14,7 @@ const canonicalURL = `${SITE.url}/certificaciones/`;
 const seoMeta = {
   title: 'Certificaciones NFPA y NOM para equipo de bomberos',
   description:
-    'Normas NFPA y NOM para equipo de bomberos y servicios contra incendio: NFPA 1970, NFPA 1850, NFPA 1950, NOM-002-STPS, NOM-154-SCFI e ISO 9001.',
+    'Normas NFPA y NOM para equipo de bomberos y servicios contra incendio: NFPA 1970, NFPA 1850, NFPA 1950, NOM-002-STPS y NOM-154-SCFI.',
   canonicalURL,
 };
 
@@ -163,7 +163,7 @@ const grupos: Grupo[] = [
   {
     id: 'normas-mexicanas',
     eyebrow: 'Normas mexicanas y calidad',
-    h2: 'NOM e ISO 9001: cumplimiento en centros de trabajo y servicio',
+    h2: 'Normas mexicanas: cumplimiento en centros de trabajo y servicio',
     lead: 'Lo que audita la STPS en un centro de trabajo, cómo se regula el servicio de extintores y qué respalda la calidad del proceso.',
     items: [
       {
@@ -190,9 +190,9 @@ const grupos: Grupo[] = [
         ],
       },
       {
-        norm: 'ISO 9001', title: 'Gestión de calidad',
-        desc: 'Certificación internacional de calidad en procesos de manufactura y servicio.',
-        href: '/empresa/', cta: 'Calidad y certificaciones de la empresa',
+        norm: 'ISO 9001', title: 'Calidad del fabricante',
+        desc: 'Sistema de gestión de calidad de la planta que fabrica el equipo: pide su certificado junto con la ficha técnica del modelo.',
+        href: '/licitaciones/', cta: 'Documentación para licitaciones',
         image: `${P}expediente-documental-nom-002-stps-checklist.avif`, alt: 'Carpetas de documentación de calidad y cumplimiento sobre un escritorio',
         hijas: [
           { label: 'Soporte para licitaciones', href: '/licitaciones/' },
@@ -310,7 +310,7 @@ const trustPoints = [
         <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
           <p class="text-sm leading-[1.9] mb-5" style="color:var(--c-text-2)">
             Todo nuestro catálogo está certificado bajo
-            <strong style="color:var(--c-text)">normas NFPA, NOM-002-STPS e ISO 9001</strong>, con
+            <strong style="color:var(--c-text)">normas NFPA y NOM-002-STPS</strong>, con
             verificación de laboratorio de tercera parte acreditado. Aquí te explicamos qué
             certifica cada norma y cómo se acredita.
           </p>
@@ -320,7 +320,7 @@ const trustPoints = [
             o tu expediente de licitación.
           </p>
           <div class="flex flex-wrap gap-2">
-            {['NFPA 1970','NFPA 1850','NFPA 1950','NOM-002-STPS','NOM-154-SCFI','ISO 9001'].map(n => (
+            {['NFPA 1970','NFPA 1850','NFPA 1950','NOM-002-STPS','NOM-154-SCFI','UL Listed'].map(n => (
             <span class="badge badge-dark font-display text-2xs">{n}</span>
           ))}
           </div>
