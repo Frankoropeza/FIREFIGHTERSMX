@@ -85,3 +85,7 @@ tmp/
 
 # Locks huerfanos de git y cuarentena de borrado (sandbox sin permiso de unlink)
 _to_delete/
+
+# Contenido API (local, nunca al repo)
+.api/
+scripts/api/

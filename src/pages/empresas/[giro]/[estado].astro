@@ -4,12 +4,14 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import MapaEmpresas from '@components/empresas/MapaEmpresas.astro';
 import EmpresasGrid from '@components/empresas/EmpresasGrid.astro';
+import GuiaInventario from '@components/empresas/GuiaInventario.astro';
 import { SITE, whatsappUrl } from '@config/site';
 import { giros, giroMap, type GiroKey } from '@data/giros';
 import { allCategories } from '@data/categories';
 import { estadoConEstaciones } from '@lib/estaciones';
 import { getCollection } from 'astro:content';
 import { todasLasEmpresas, empresasPorGiroEstado, conteoPorEstado, conteoPorGiro, puntosMapa, topCiudades, especialidadesPresentes, estadosMeta } from '@lib/empresas';
+import { entradaGuia } from '@lib/guias-inventario';
 import type { GetStaticPaths } from 'astro';
 
 // Solo combinaciones giro × estado con al menos una empresa: una L3 vacía sería
@@ -36,6 +38,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).slice(0, 4);
 const centro: [number, number] | undefined = puntos.length ? [puntos.reduce((a, p) => a + p[0], 0) / puntos.length, puntos.reduce((a, p) => a + p[1], 0) / puntos.length] : undefined;
 const vacio = lista.length === 0;
+const entrada = vacio ? null : entradaGuia(`empresas/${giro}/${estado.slug}`);
 
 const canonicalURL = `${SITE.url}/empresas/${giro}/${estado.slug}/`;
 const tituloCorto = `${g.labelCorto} en ${estado.nombre}`;
@@ -131,7 +134,7 @@ const waMsg = `Hola, busco proveedores de ${g.sustantivo} en ${estado.nombre}. �
         <EmpresasGrid empresas={lista} dimension="esp" filtros={esp.map((s) => ({ key: s.slug, label: `${s.label} · ${s.total}`, color: g.color }))} id={`ge-${giro}-${estado.slug}`} placeholder="Buscar por nombre, ciudad o municipio…" indexSrc={lista.length > 48 ? '/data/empresas-index.json' : undefined} alcance={{ giro, estado: estado.slug }} limite={48} indiceCompleto />
       </div>
     </section>
-  )}
+  )}{entrada && <GuiaInventario entrada={entrada} titulo={tituloCorto} idBase={`ge-${giro}-${estado.slug}`} />}
 
   <section class="section" style={`background:${vacio ? 'var(--c-bg)' : 'var(--c-bg-alt)'}`} aria-label="Contenido relacionado">
     <div class="container-site grid grid-cols-1 lg:grid-cols-3 gap-10">

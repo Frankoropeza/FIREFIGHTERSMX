@@ -1,0 +1,78 @@
+---
+import type { EntradaGuia } from '@lib/guias-inventario';
+
+interface Props {
+  entrada: EntradaGuia;
+  titulo: string;
+  idBase: string;
+}
+
+const { entrada, titulo, idBase } = Astro.props;
+const fechaRevisada = new Intl.DateTimeFormat('es-MX', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+  timeZone: 'UTC',
+}).format(new Date(`${entrada.revisado}T00:00:00Z`));
+const faqSchema = entrada.faqs.length > 0
+  ? JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: entrada.faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.pregunta,
+        acceptedAnswer: { '@type': 'Answer', text: faq.respuesta },
+      })),
+    }).replace(/</g, '\\u003c')
+  : null;
+---
+
+<section class="section" style="background:var(--c-bg-alt);border-top:1px solid var(--c-line)">
+  <div class="container-site">
+    {entrada.guia && (
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-start">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Guía de directorio</span>
+          <h2 id={`${idBase}-guia`} class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">Guía para elegir<br/><span style="color:var(--c-accent)">{titulo}.</span></h2>
+        </div>
+        <div class="grid gap-8">
+          <div>
+            <h3 class="font-display font-semibold text-base mb-2" style="color:var(--c-ink)">Qué hay en el directorio</h3>
+            <p class="text-sm leading-[1.9]" style="color:var(--c-text-2)">{entrada.guia.panorama}</p>
+          </div>
+          <div>
+            <h3 class="font-display font-semibold text-base mb-2" style="color:var(--c-ink)">Dónde están</h3>
+            <p class="text-sm leading-[1.9]" style="color:var(--c-text-2)">{entrada.guia.ubicacion}</p>
+          </div>
+          <div>
+            <h3 class="font-display font-semibold text-base mb-2" style="color:var(--c-ink)">Cómo elegir</h3>
+            <p class="text-sm leading-[1.9]" style="color:var(--c-text-2)">{entrada.guia.eleccion}</p>
+          </div>
+        </div>
+      </div>
+    )}
+
+    {entrada.guia && entrada.faqs.length > 0 && <div style="border-top:1px solid var(--c-line);margin-block:3rem"></div>}
+
+    {entrada.faqs.length > 0 && (
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-start">
+        <div>
+          <span class="section-eyebrow mb-4 inline-flex">Preguntas frecuentes</span>
+          <h2 id={`${idBase}-faq`} class="font-display font-bold" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">Preguntas sobre<br/><span style="color:var(--c-accent)">{titulo}.</span></h2>
+        </div>
+        <div>
+          {entrada.faqs.map((faq) => (
+            <details style="border-top:1px solid var(--c-line)">
+              <summary class="cursor-pointer py-5 font-display font-semibold text-base leading-snug" style="color:var(--c-ink)">{faq.pregunta}</summary>
+              <p class="pb-5 text-sm leading-[1.9]" style="color:var(--c-text-2)">{faq.respuesta}</p>
+            </details>
+          ))}
+          <div style="border-top:1px solid var(--c-line)"></div>
+        </div>
+      </div>
+    )}
+
+    <p class="mt-10 text-xs" style="color:var(--c-muted)">Revisado: {fechaRevisada}</p>
+  </div>
+  {faqSchema && <script type="application/ld+json" set:html={faqSchema} />}
+</section>

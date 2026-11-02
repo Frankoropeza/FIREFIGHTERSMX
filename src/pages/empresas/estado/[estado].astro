@@ -4,11 +4,13 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
 import MapaEmpresas from '@components/empresas/MapaEmpresas.astro';
 import EmpresasGrid from '@components/empresas/EmpresasGrid.astro';
+import GuiaInventario from '@components/empresas/GuiaInventario.astro';
 import { SITE } from '@config/site';
 import { giros } from '@data/giros';
 import { estados as estadosCobertura } from '@data/cobertura';
 import { estadoConEstaciones } from '@lib/estaciones';
 import { empresasPorEstado, conteoPorGiro, puntosMapa, topCiudades, estadosMeta } from '@lib/empresas';
+import { entradaGuia } from '@lib/guias-inventario';
 import type { GetStaticPaths } from 'astro';
 
 export const getStaticPaths = (() => estadosMeta.map((e) => ({ params: { estado: e.slug }, props: { estado: e } }))) satisfies GetStaticPaths;
@@ -22,6 +24,7 @@ const cob = estadosCobertura.find((c) => c.slug === estado.slug);
 const dirEst = await estadoConEstaciones(estado.slug);
 const vecinos = estadosMeta.filter((e) => e.region === estado.region && e.slug !== estado.slug);
 const centro: [number, number] | undefined = puntos.length ? [puntos.reduce((a, p) => a + p[0], 0) / puntos.length, puntos.reduce((a, p) => a + p[1], 0) / puntos.length] : undefined;
+const entrada = entradaGuia(`empresas/estado/${estado.slug}`);
 
 const canonicalURL = `${SITE.url}/empresas/estado/${estado.slug}/`;
 const seoMeta = {
@@ -103,7 +106,7 @@ const collectionSchema = { '@context': 'https://schema.org', '@type': 'Collectio
     </div>
   </section>
 
-  <section class="section" style="background:var(--c-bg-alt)" aria-label="Contenido relacionado">
+  {entrada && <GuiaInventario entrada={entrada} titulo={`empresas contra incendio en ${estado.nombre}`} idBase={`edo-${estado.slug}`} />}<section class="section" style="background:var(--c-bg-alt)" aria-label="Contenido relacionado">
     <div class="container-site grid grid-cols-1 lg:grid-cols-3 gap-10">
       <div>
         <p class="font-display font-bold text-xs uppercase tracking-widest mb-4" style="color:var(--forge-300)">Por giro en {estado.nombre}</p>
