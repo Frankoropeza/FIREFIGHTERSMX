@@ -2,7 +2,7 @@
 // /empresas/registro — Alta y reclamo de ficha (fase 1: por correo; fase 5: backend)
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
-import { SITE } from '@config/site';
+import { SITE, whatsappLink } from '@config/site';
 import { giros, planConfig } from '@data/giros';
 import { estadosMeta } from '@lib/empresas';
 const canonicalURL = `${SITE.url}/empresas/registro/`;
@@ -71,7 +71,8 @@ const planes = [
       <div>
         <span class="section-eyebrow mb-4 inline-flex">Solicitud</span>
         <h2 id="form-heading" class="font-display font-bold mb-8" style="color:var(--c-ink);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.05">Envíanos los datos<br/><span style="color:var(--c-accent)">de tu empresa.</span></h2>
-        <form data-reg-form data-mail={SITE.email} class="flex flex-col gap-5" method="POST" action={`mailto:${SITE.email}`}>
+        <form data-wa-form data-wa-intro="Hola INPROSEG, solicitud para el directorio:" class="flex flex-col gap-5" method="GET" action={whatsappLink()} target="_blank">
+          <input type="hidden" name="phone" value={SITE.whatsapp} />
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div><label class="label" for="r-tipo">Tipo de solicitud</label><select id="r-tipo" name="tipo" class="select" required><option value="reclamar">Reclamar una ficha existente</option><option value="alta">Registrar una empresa nueva</option></select></div>
             <div><label class="label" for="r-url">URL de la ficha (si existe)</label><input id="r-url" name="url" class="input" type="url" placeholder="https://firefighters.mx/empresas/…" /></div>
@@ -89,7 +90,7 @@ const planes = [
           <div><label class="label" for="r-msg">Especialidades, marcas que distribuyes, cobertura</label><textarea id="r-msg" name="mensaje" class="textarea" rows="4"></textarea></div>
           <div class="flex flex-col sm:flex-row sm:items-center gap-4">
             <button type="submit" class="btn btn-gold btn-lg">Enviar solicitud de registro</button>
-            <span class="text-xs" style="color:var(--c-muted)">Se abre tu correo con la solicitud prellenada. Respondemos en 1–2 días hábiles.</span>
+            <span class="text-xs" style="color:var(--c-muted)">Se abre WhatsApp con la solicitud prellenada. Respondemos en 1–2 días hábiles.</span>
           </div>
         </form>
       </div>
@@ -109,14 +110,8 @@ const planes = [
   </section>
 
   <script>
-    document.querySelectorAll<HTMLFormElement>('[data-reg-form]').forEach((f) => {
-      f.addEventListener('submit', (ev) => {
-        ev.preventDefault();
-        const d = new FormData(f); const mail = f.dataset.mail ?? '';
-        const lineas = [...d.entries()].filter(([, v]) => String(v).trim()).map(([k, v]) => `${k}: ${v}`);
-        const subject = `${d.get('tipo') === 'alta' ? 'Alta' : 'Reclamo de ficha'} — ${d.get('empresa')} — Directorio INPROSEG`;
-        window.location.href = `mailto:${mail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lineas.join('\n'))}`;
-      });
-    });
+    // Envío sin backend: arma un mensaje de WhatsApp con los campos (ver @lib/wa-form).
+    import { bindWaForms } from '@lib/wa-form';
+    bindWaForms();
   </script>
 </BaseLayout>

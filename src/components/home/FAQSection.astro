@@ -1,5 +1,5 @@
 ---
-import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl, CANAL_CONTACTO } from '@config/site';
+import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl, whatsappLink, CANAL_CONTACTO } from '@config/site';
 import { homeFaqs as faqs } from '@data/faqs';
 ---
 
@@ -63,7 +63,8 @@ import { homeFaqs as faqs } from '@data/faqs';
             Respuesta en menos de 2 horas en días hábiles. Con fichas técnicas incluidas.
           </p>
 
-          <form data-wa-form data-wa={SITE.whatsapp} data-mail={SITE.email} method="POST" action="/api/cotizacion" class="flex flex-col gap-4">
+          <form data-wa-form data-wa-intro="Hola INPROSEG, solicito una cotización:" method="GET" action={whatsappLink()} target="_blank" class="flex flex-col gap-4">
+            <input type="hidden" name="phone" value={SITE.whatsapp} />
             <div class="grid grid-cols-2 gap-3">
               <div>
                 <label for="faq-nombre" class="label">Nombre *</label>
@@ -109,34 +110,7 @@ import { homeFaqs as faqs } from '@data/faqs';
 </section>
 
 <script>
-  // Envío sin backend  arma un mensaje de WhatsApp con los campos del formulario.
-  document.querySelectorAll('form[data-wa-form]').forEach((form) => {
-    const f = form as HTMLFormElement;
-    if (f.dataset.bound) return;
-    f.dataset.bound = '1';
-    f.addEventListener('submit', (e) => {
-      e.preventDefault();
-      if (!f.reportValidity()) return;
-      const num = f.getAttribute('data-wa');
-      const fd = new FormData(f);
-      const lines: string[] = ['Hola INPROSEG, solicito una cotización:', ''];
-      for (const [name, value] of fd.entries()) {
-        const v = String(value).trim();
-        if (!v) continue;
-        const field = f.querySelector(`[name="${name}"]`) as HTMLElement | null;
-        const id = field?.id ?? '';
-        const labelEl = id ? f.querySelector(`label[for="${id}"]`) : null;
-        const label = labelEl?.textContent?.replace('*', '').trim() || name;
-        lines.push(`${label}: ${v}`);
-      }
-      const text = encodeURIComponent(lines.join('\n'));
-      // Sin número verificado (CONTACTO_DIRECTO_ACTIVO=false) el form cae a correo.
-      const mail = f.getAttribute('data-mail');
-      if (num) {
-        window.open(`https://api.whatsapp.com/send/?phone=${num}&text=${text}`, '_blank', 'noopener');
-      } else if (mail) {
-        window.location.href = `mailto:${mail}?subject=${encodeURIComponent('Cotización — INPROSEG')}&body=${text}`;
-      }
-    });
-  });
+  // Envío sin backend: arma un mensaje de WhatsApp con los campos (ver @lib/wa-form).
+  import { bindWaForms } from '@lib/wa-form';
+  bindWaForms();
 </script>

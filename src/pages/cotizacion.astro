@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import QuickLinksBar from '@components/common/QuickLinksBar.astro';
-import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl, CANAL_CONTACTO } from '@config/site';
+import { SITE, CONTACTO_DIRECTO_ACTIVO, whatsappUrl, whatsappLink, CANAL_CONTACTO } from '@config/site';
 
 const canonicalURL = `${SITE.url}/cotizacion/`;
 
@@ -118,7 +118,8 @@ const breadcrumbSchema = {
       </div>
 
       <div class="max-w-3xl" style="background:var(--c-surface);border:1px solid var(--c-line);padding:2rem">
-        <form data-wa-form data-wa={SITE.whatsapp} data-mail={SITE.email} method="POST" action="/api/cotizacion" class="flex flex-col gap-6">
+        <form data-wa-form data-wa-intro="Hola INPROSEG, solicito una cotización:" method="GET" action={whatsappLink()} target="_blank" class="flex flex-col gap-6">
+          <input type="hidden" name="phone" value={SITE.whatsapp} />
           <div class="grid sm:grid-cols-2 gap-5">
             <div>
               <label for="nombre" class="label">Nombre completo *</label>
@@ -159,7 +160,7 @@ const breadcrumbSchema = {
             <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-2">
               {categorias.map((cat) => (
                 <label class="flex items-center gap-2 cursor-pointer text-sm" style="color:var(--c-text-2)">
-                  <input type="checkbox" name="categorias" value={cat} class="rounded" style="accent-color:var(--c-accent)"/>
+                  <input type="checkbox" name="categorias" value={cat} data-wa-label="Categorías de equipo de interés" class="rounded" style="accent-color:var(--c-accent)"/>
                   {cat}
                 </label>
               ))}
@@ -199,35 +200,8 @@ const breadcrumbSchema = {
   </section>
 
   <script>
-    // Envío sin backend  arma un mensaje de WhatsApp con los campos del formulario.
-    document.querySelectorAll('form[data-wa-form]').forEach((form) => {
-      const f = form as HTMLFormElement;
-      if (f.dataset.bound) return;
-      f.dataset.bound = '1';
-      f.addEventListener('submit', (e) => {
-        e.preventDefault();
-        if (!f.reportValidity()) return;
-        const num = f.getAttribute('data-wa');
-        const fd = new FormData(f);
-        const lines: string[] = ['Hola INPROSEG, solicito una cotización:', ''];
-        for (const [name, value] of fd.entries()) {
-          const v = String(value).trim();
-          if (!v) continue;
-          const field = f.querySelector(`[name="${name}"]`) as HTMLElement | null;
-          const id = field?.id ?? '';
-          const labelEl = id ? f.querySelector(`label[for="${id}"]`) : null;
-          const label = labelEl?.textContent?.replace('*', '').trim() || name;
-          lines.push(`${label}: ${v}`);
-        }
-        const text = encodeURIComponent(lines.join('\n'));
-        // Sin número verificado (CONTACTO_DIRECTO_ACTIVO=false) el form cae a correo.
-      const mail = f.getAttribute('data-mail');
-      if (num) {
-        window.open(`https://api.whatsapp.com/send/?phone=${num}&text=${text}`, '_blank', 'noopener');
-      } else if (mail) {
-        window.location.href = `mailto:${mail}?subject=${encodeURIComponent('Cotización — INPROSEG')}&body=${text}`;
-      }
-      });
-    });
+    // Envío sin backend: arma un mensaje de WhatsApp con los campos (ver @lib/wa-form).
+    import { bindWaForms } from '@lib/wa-form';
+    bindWaForms();
   </script>
 </BaseLayout>
