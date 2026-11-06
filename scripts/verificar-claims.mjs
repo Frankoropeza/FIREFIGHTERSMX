@@ -15,8 +15,9 @@
  *    en primera persona como empresa que vende y distribuye.
  *    Confirmado por Frank Oropeza el 2026-09-15: venta y distribución directa,
  *    bodega y stock propios, logística propia con envíos a todo México,
- *    convenio de distribución con las marcas del catálogo, 15 años de operación
- *    (actualizado el 2026-09-30: 35 años; el 2026-10-03: más de 45 años de experiencia)
+ *    convenio de distribución con las marcas del catálogo, más de 45 años de
+ *    experiencia (cifra vigente desde el 2026-10-03; sustituye los 15 y 35 años
+ *    anteriores; la fuente única es SITE.experienceYears y la regla T-01 lo exige),
  *    más de 500 estaciones equipadas, servicio técnico autorizado de las marcas
  *    de SCBA y cámaras térmicas (MSA, Dräger, 3M Scott) y la autoría real del
  *    blog (Ing. Marco García, Ing. Carlos Mendoza, Lic. Ana Ramírez). El stock y
@@ -80,6 +81,20 @@ const SOLO_TIENDA = [
   [/schema\.org\/(InStock|OutOfStock|PreOrder|LimitedAvailability)/i, 'D-13 · disponibilidad declarada dentro del directorio'],
 ];
 
+/* ── Tienda: la antigüedad propia es una sola cifra ────────────────────── */
+// «Más de 45 años» (Frank Oropeza, 2026-10-03; SSoT: SITE.experienceYears).
+// Cualquier otra cifra de experiencia propia es una contradicción y se rechaza.
+const ANTIGUEDAD = 45;
+const CIFRA_ANTIGUEDAD = /(?:más\s+de|llevamos|tenemos|acumulamos|cumplimos|con)\s+(\d{1,3}|quince|treinta\s+y\s+cinco|cuarenta)\s*\+?\s+años\s+(?:de\s+(?:experiencia|trayectoria|operaci[oó]n|trabajo)|en\s+el\s+mercado|equipando|atendiendo|acompañando|trabajando|dedicados|como\s+distribuidor)/gi;
+function antiguedadDistinta(html) {
+  for (const m of html.matchAll(CIFRA_ANTIGUEDAD)) {
+    if (m[1] !== String(ANTIGUEDAD)) return m[0];
+  }
+  const stat = html.match(/>\s*(\d{1,3})\+\s*<(?:[^>]*>\s*<){0,4}[^>]*>\s*Años\s+de\s+experiencia/i);
+  if (stat && stat[1] !== String(ANTIGUEDAD)) return stat[0];
+  return null;
+}
+
 /* ── Tienda: no manda al cliente a la competencia ──────────────────────── */
 // Un enlace de texto al directorio es aceptable; un botón (CTA) no.
 const SEPARACION_TIENDA = [
@@ -134,6 +149,10 @@ for (const file of htmls(DIST)) {
   for (const [re, motivo, texto] of reglas) {
     const m = texto.match(re);
     if (m) reportar(ruta, m[0].slice(0, 90), motivo);
+  }
+  if (zona !== 'directorio') {
+    const otra = antiguedadDistinta(html);
+    if (otra) reportar(ruta, otra.slice(0, 90), `T-01 · antigüedad distinta de «más de ${ANTIGUEDAD} años»`);
   }
   const oferta = ofertaSinPrecio(html);
   if (oferta) reportar(ruta, oferta, 'F-14 · oferta sin precio en JSON-LD (no hay precios publicados)');

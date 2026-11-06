@@ -1,3 +1,4 @@
+import { SITE } from '@config/site';
 export interface Service {
   slug: string;
   title: string;
@@ -569,7 +570,7 @@ export const services: Service[] = [
     href: '/servicios/licitaciones',
     cta: 'Licitaciones de equipo contra incendio',
     intro: [
-      'Ganar una licitación de equipo contra incendio se decide en los detalles técnicos: fichas alineadas al anexo, manifiestos de cumplimiento de normas y respuestas precisas en junta de aclaraciones. Llevamos más de 45 años acompañando procesos federales, estatales y municipales.',
+      `Ganar una licitación de equipo contra incendio se decide en los detalles técnicos: fichas alineadas al anexo, manifiestos de cumplimiento de normas y respuestas precisas en junta de aclaraciones. Llevamos más de ${SITE.experienceYears} años acompañando procesos federales, estatales y municipales.`,
       'Te apoyamos como fabricante/distribuidor respaldo o como tu área técnica externa: documentación para procedimientos de Compras MX (antes CompraNet), cartas de distribuidor autorizado y soporte en la evaluación técnica de tu propuesta.',
     ],
     items: [

@@ -8,7 +8,7 @@ const canonicalURL = `${SITE.url}/empresa/`;
 const seoMeta = {
   title: 'Distribuidor de equipo certificado para bomberos en México',
   description:
-    'Distribuidor de equipo para bomberos y protección civil en México: más de 45 años, marcas certificadas NFPA y NOM-002 y cobertura en los 32 estados.',
+    `Distribuidor de equipo para bomberos y protección civil en México: más de ${SITE.experienceYears} años, marcas certificadas NFPA y NOM-002 y cobertura en los 32 estados.`,
   canonicalURL,
 };
 
@@ -72,7 +72,7 @@ const sections = [
 
 /* ─── Cifras de la empresa ─────────────────────────────────── */
 const figures = [
-  { value: '45+', label: 'Años de experiencia', text: 'Más de cuatro décadas equipando a bomberos, industria y protección civil en México.' },
+  { value: `${SITE.experienceYears}+`, label: 'Años de experiencia', text: 'Más de cuatro décadas equipando a bomberos, industria y protección civil en México.' },
   { value: '500+', label: 'Estaciones equipadas', text: 'Desde cuerpos municipales hasta brigadas industriales y de protección civil.' },
   { value: '32', label: 'Estados con cobertura', text: 'Logística y servicio en sitio en toda la República Mexicana.' },
   { value: '100%', label: 'Equipo certificado', text: 'Todo cumple NFPA, NOM-002-STPS y normativa vigente.' },
@@ -171,7 +171,7 @@ const aboutSchema = {
           <p class="text-sm leading-[1.9] mb-5" style="color:var(--c-text-2)">
             INPROSEG es el portal especializado en
             <strong style="color:var(--c-text)">equipo para bomberos, protección civil e industria</strong>
-            en México. Llevamos más de 45 años como distribuidores autorizados de las marcas más
+            en México. Llevamos más de {SITE.experienceYears} años como distribuidores autorizados de las marcas más
             confiables del mundo, con todo el catálogo certificado bajo NFPA y NOM-002-STPS.
           </p>
           <p class="text-sm leading-[1.9] mb-6" style="color:var(--c-muted)">

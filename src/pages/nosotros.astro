@@ -9,7 +9,7 @@ const canonicalURL = `${SITE.url}/nosotros/`;
 const seoMeta = {
   title: 'Proveedor de equipo para bomberos y protección civil',
   description:
-    'Proveedor de equipo para bomberos, industria y protección civil con más de 45 años: más de 500 estaciones equipadas y distribución autorizada en México.',
+    `Proveedor de equipo para bomberos, industria y protección civil con más de ${SITE.experienceYears} años: más de 500 estaciones equipadas y distribución autorizada en México.`,
   canonicalURL,
 };
 
@@ -24,7 +24,7 @@ const breadcrumbSchema = {
 };
 
 const figures = [
-  { value: '45+', label: 'Años de experiencia', text: 'Más de cuatro décadas equipando a bomberos, industria y protección civil en México.' },
+  { value: `${SITE.experienceYears}+`, label: 'Años de experiencia', text: 'Más de cuatro décadas equipando a bomberos, industria y protección civil en México.' },
   { value: '500+', label: 'Estaciones equipadas', text: 'Desde cuerpos municipales hasta brigadas industriales y de protección civil.' },
   { value: '32', label: 'Estados con cobertura', text: 'Logística y servicio en sitio en toda la República Mexicana.' },
   { value: '100%', label: 'Equipo certificado', text: 'Todo cumple NFPA, NOM-002-STPS y normativa vigente.' },
@@ -89,7 +89,7 @@ const razones = [
         </div>
         <div class="lg:pl-16" style="border-left:1px solid var(--c-line)">
           <p class="text-sm leading-[1.9] mb-5" style="color:var(--c-text-2)">
-            Llevamos más de 45 años dedicados a una sola cosa:
+            Llevamos más de {SITE.experienceYears} años dedicados a una sola cosa:
             <strong style="color:var(--c-text)">poner el equipo certificado correcto en manos de bomberos,
             brigadas industriales y protección civil</strong> en todo México. Somos distribuidores
             autorizados de las marcas más confiables del mundo.
@@ -131,7 +131,7 @@ const razones = [
   <section class="section-tight" style="background:var(--c-bg)" aria-label="INPROSEG en acción">
     <div class="container-site">
       <div class="flex items-center gap-4 mb-8">
-        <span class="text-xs font-display font-semibold uppercase tracking-[0.18em]" style="color:var(--c-accent)">Más de 45 años equipando a quienes nos protegen</span>
+        <span class="text-xs font-display font-semibold uppercase tracking-[0.18em]" style="color:var(--c-accent)">Más de {SITE.experienceYears} años equipando a quienes nos protegen</span>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-2 lg:gap-3">
         <figure class="m-0 overflow-hidden" style="aspect-ratio:4/3;border:1px solid var(--c-line)">

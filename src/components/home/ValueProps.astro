@@ -1,4 +1,5 @@
 ---
+import { SITE } from '@config/site';
 import CardMedia from '@components/common/CardMedia.astro';
 
 const props = [
@@ -58,7 +59,7 @@ const props = [
         </h2>
       </div>
       <p class="text-sm max-w-xs leading-relaxed sm:text-right" style="color:var(--c-muted)">
-        Más de 45 años equipando empresas, industria, cuerpos de bomberos y protección civil en México.
+        Más de {SITE.experienceYears} años equipando empresas, industria, cuerpos de bomberos y protección civil en México.
       </p>
     </div>
   </div>
