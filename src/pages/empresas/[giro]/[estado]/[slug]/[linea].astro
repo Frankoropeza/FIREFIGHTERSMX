@@ -88,7 +88,7 @@ const webPageSchema = { '@context': 'https://schema.org', '@type': 'WebPage', '@
   ...(l.imagen ? { primaryImageOfPage: { '@type': 'ImageObject', url: `${SITE.url}${l.imagen}` } } : {}) };
 const schemas = faqSchema ? [breadcrumbSchema, webPageSchema, faqSchema] : [breadcrumbSchema, webPageSchema];
 const h2 = 'font-display font-bold mb-3';
-const h2s = 'color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1';
+const h2s = 'color:var(--c-ink);font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1';
 ---
 <BaseLayout {...seoMeta} schema={schemas}>
   <nav class="py-3" style="background:var(--c-bg-alt);border-bottom:1px solid var(--c-line)" aria-label="Breadcrumb">
