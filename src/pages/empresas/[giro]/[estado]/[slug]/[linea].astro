@@ -57,10 +57,21 @@ const singular = l.singular ?? l.nombre.toLowerCase();
 const intro = parr(l.intro);
 const contexto = parr(l.contexto);
 const web = e.plan === 'destacado' ? l.urlEmpresa : undefined;
+const esEditorial = l.origenContenido === 'editorial';
+const detalleCatalogo = [
+  l.familias.length > 0
+    ? esEditorial
+      ? `${l.familias.length} ${l.familias.length === 1 ? 'ruta de comparación' : 'rutas de comparación'}`
+      : `${l.familias.length} ${l.familias.length === 1 ? 'familia' : 'familias'}`
+    : '',
+  l.modelos.length > 0
+    ? `${l.modelos.length} ${l.modelos.length === 1 ? 'modelo' : 'modelos'} con ${(l.columnaRango ?? 'caudal').toLowerCase()}, presión y documentación técnica`
+    : '',
+].filter(Boolean).join(' y ');
 
 const seoMeta = {
   title: `${l.nombre} — ${e.nombre}, ${edo.abreviatura}`,
-  description: recorta(`${l.nombre} de ${e.nombre} en ${e.ciudad}: ${l.subtitulo.toLowerCase()}. ${l.familias.length} familias y ${l.modelos.length} modelos con ${(l.columnaRango ?? 'caudal').toLowerCase()}, presión y certificación, criterios de selección y qué enviar para cotizar.`),
+  description: recorta(l.metaDescripcion ?? `${l.nombre} de ${e.nombre} en ${e.ciudad}: ${l.subtitulo.toLowerCase()}. ${detalleCatalogo ? `${detalleCatalogo}, ` : ''}criterios de selección y qué enviar para cotizar.`),
   canonicalURL,
   ...(l.imagen ? { ogImage: l.imagen } : {}),
 };
@@ -127,7 +138,7 @@ const h2s = 'color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1'
             <div class="aspect-[16/9] overflow-hidden" style={`background:var(--c-bg);border:1px solid ${borde}`}>
               <img src={l.imagen} {...imgAttrs(l.imagen, SIZES.hero)} alt={l.imagenAlt ?? l.nombre} width="1024" height="576" loading="eager" decoding="async" class="w-full h-full object-cover" />
             </div>
-            <figcaption class="font-display text-2xs uppercase tracking-wider mt-2" style="color:var(--forge-300)">{l.nombre} · catálogo de {e.nombre}</figcaption>
+            <figcaption class="font-display text-2xs uppercase tracking-wider mt-2" style="color:var(--forge-300)">{l.nombre} · {esEditorial ? 'guía editorial de selección' : `catálogo de ${e.nombre}`}</figcaption>
           </figure>
         )}
 
@@ -145,9 +156,11 @@ const h2s = 'color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1'
 
         {l.familias.length > 0 && (
           <section aria-labelledby="linea-familias">
-            <span class="section-eyebrow mb-4 inline-flex">Familias</span>
-            <h2 id="linea-familias" class={h2} style={h2s}>Las {l.familias.length} familias de {l.nombre.toLowerCase()} que maneja {e.nombre}</h2>
-            <p class="text-sm leading-[1.9] mb-6" style="color:var(--c-text-2)">Cada familia es una ruta de selección distinta, no un producto: la empresa las separa por geometría de descarga y por respaldo documental. Un mismo modelo puede pertenecer a más de una.</p>
+            <span class="section-eyebrow mb-4 inline-flex">{esEditorial ? 'Rutas de comparación' : 'Familias'}</span>
+            <h2 id="linea-familias" class={h2} style={h2s}>{esEditorial ? `Las ${l.familias.length} rutas para comparar ${l.nombre.toLowerCase()}` : `Las ${l.familias.length} familias de ${l.nombre.toLowerCase()} que maneja ${e.nombre}`}</h2>
+            <p class="text-sm leading-[1.9] mb-6" style="color:var(--c-text-2)">{esEditorial
+              ? 'Estas rutas ordenan la comparación por forma de operación, integración y datos que deben comprobarse. No describen familias comerciales ni sustituyen el catálogo vigente.'
+              : 'Cada familia es una ruta de selección distinta, no un producto: la empresa las separa por geometría de descarga y por respaldo documental. Un mismo modelo puede pertenecer a más de una.'}</p>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-px" style={`background:${borde};border:1px solid ${borde}`}>
               {l.familias.map((f) => (
                 <article id={`familia-${anchorId(f.nombre)}`} class="p-6 flex flex-col gap-3" style="background:var(--c-bg)">
@@ -208,8 +221,10 @@ const h2s = 'color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1'
         {l.criterios.length > 0 && (
           <section aria-labelledby="linea-criterios">
             <span class="section-eyebrow mb-4 inline-flex">Cómo elegir</span>
-            <h2 id="linea-criterios" class={h2} style={h2s}>Los {l.criterios.length} criterios con los que {e.nombre} especifica {singular}</h2>
-            <p class="text-sm leading-[1.9] mb-6" style="color:var(--c-text-2)">En el orden en que la empresa los aplica. El primero descarta familias; el último descarta modelos.</p>
+            <h2 id="linea-criterios" class={h2} style={h2s}>{esEditorial ? `Los ${l.criterios.length} criterios para comparar ${singular}` : `Los ${l.criterios.length} criterios con los que ${e.nombre} especifica ${singular}`}</h2>
+            <p class="text-sm leading-[1.9] mb-6" style="color:var(--c-text-2)">{esEditorial
+              ? 'Del escenario de uso a la prueba de aceptación: este orden ayuda a descartar una opción antes de pedir documentos del modelo.'
+              : 'En el orden en que la empresa los aplica. El primero descarta familias; el último descarta modelos.'}</p>
             <ol class="flex flex-col gap-px list-none m-0 p-0" style={`background:${borde};border:1px solid ${borde}`}>
               {l.criterios.map((c, i) => (
                 <li class="p-5" style="background:var(--c-bg)">
@@ -226,7 +241,7 @@ const h2s = 'color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1'
         {l.aplicaciones.length > 0 && (
           <section aria-labelledby="linea-aplicaciones">
             <span class="section-eyebrow mb-4 inline-flex">Aplicaciones</span>
-            <h2 id="linea-aplicaciones" class={h2} style={h2s}>Dónde se instalan los {l.nombre.toLowerCase()}</h2>
+            <h2 id="linea-aplicaciones" class={h2} style={h2s}>{esEditorial ? 'Escenarios de aplicación' : `Dónde se instalan los ${l.nombre.toLowerCase()}`}</h2>
             <ul class="grid grid-cols-2 md:grid-cols-3 gap-px list-none m-0 p-0 mt-5" style={`background:${borde};border:1px solid ${borde}`}>
               {l.aplicaciones.map((a) => <li class="p-4 font-display font-semibold text-sm" style="background:var(--c-bg);color:var(--c-ink)">{a}</li>)}
             </ul>
@@ -256,8 +271,10 @@ const h2s = 'color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1'
         {l.datosParaCotizar.length > 0 && (
           <section aria-labelledby="linea-cotizar">
             <span class="section-eyebrow mb-4 inline-flex">Para cotizar</span>
-            <h2 id="linea-cotizar" class={h2} style={h2s}>Qué pide {e.nombre} para cotizar {singular}</h2>
-            <p class="text-sm leading-[1.9] mb-5" style="color:var(--c-text-2)">Con estos datos la empresa compromete propuesta formal en menos de 24 horas hábiles.</p>
+            <h2 id="linea-cotizar" class={h2} style={h2s}>{esEditorial ? `Qué conviene reunir para cotizar ${singular}` : `Qué pide ${e.nombre} para cotizar ${singular}`}</h2>
+            <p class="text-sm leading-[1.9] mb-5" style="color:var(--c-text-2)">{esEditorial
+              ? 'Estos datos permiten pedir propuestas comparables y detectar supuestos antes de elegir un equipo.'
+              : 'La empresa solicita estos datos para preparar la propuesta de la línea.'}</p>
             <ul class="flex flex-col list-none m-0 p-0" style={`border:1px solid ${borde}`}>
               {l.datosParaCotizar.map((d, i) => (
                 <li class="flex items-start gap-3 text-sm p-4" style={`color:var(--c-text);background:${i % 2 === 0 ? 'var(--c-bg)' : 'var(--c-bg-alt)'};border-bottom:1px solid ${borde}`}>
@@ -267,7 +284,9 @@ const h2s = 'color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1'
             </ul>
             {web && (
               <div class="mt-6 p-5 flex flex-col sm:flex-row sm:items-center gap-4" style={`background:var(--c-surface);border:1px solid ${borde}`}>
-                <p class="text-sm leading-relaxed flex-1" style="color:var(--c-text-2)">Los modelos completos, con ficha técnica por producto, están en la página de la línea en el sitio de la empresa.</p>
+                <p class="text-sm leading-relaxed flex-1" style="color:var(--c-text-2)">{esEditorial
+                  ? 'Consulte la oferta vigente en la página de la empresa y solicite la documentación del modelo cotizado.'
+                  : 'Los modelos completos, con ficha técnica por producto, están en la página de la línea en el sitio de la empresa.'}</p>
                 <a href={web} target="_blank" rel={relEmpresa(web)} class="btn btn-sm btn-primary shrink-0">{l.nombre}</a>
               </div>
             )}
@@ -339,7 +358,9 @@ const h2s = 'color:#FFFFFF;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.1'
         <div class="p-6" style="background:var(--c-surface);border:1px solid var(--c-line-strong)">
           <p class="font-display font-bold text-xs uppercase tracking-widest mb-3" style="color:var(--forge-300)">Fuentes de esta página</p>
           <ul class="flex flex-col gap-2 list-none m-0 p-0">{l.fuentes.map((f) => <li><a href={f.url} target="_blank" rel="noopener nofollow" class="text-xs hover:text-[var(--c-accent)]" style="color:var(--c-text)">{f.nombre}</a></li>)}</ul>
-          <p class="text-2xs mt-3 leading-relaxed" style="color:var(--c-muted)">Datos declarados por la empresa en su sitio y verificados en {l.verificadoEl}. La validación final de cada modelo se hace contra la ficha técnica del fabricante.</p>
+          <p class="text-2xs mt-3 leading-relaxed" style="color:var(--c-muted)">{esEditorial
+            ? `La categoría y sus canales se verificaron en las fuentes enlazadas en ${l.verificadoEl}. Los criterios de selección son elaboración editorial de ${SITE.name}; confirme la oferta vigente y la documentación del modelo con la empresa.`
+            : `Datos declarados por la empresa en su sitio y verificados en ${l.verificadoEl}. La validación final de cada modelo se hace contra la ficha técnica del fabricante.`}</p>
         </div>
       </aside>
     </div>

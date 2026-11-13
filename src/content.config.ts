@@ -239,6 +239,9 @@ const lineasCollection = defineCollection({
        «Diámetro · longitud» en mangueras, «Tamaño · presión» en válvulas */
     columnaRango: z.string().optional(),
     subtitulo: z.string(),
+    metaDescripcion: z.string().max(160).optional(),
+    /* Distingue datos publicados por la empresa de criterios elaborados por el sitio. */
+    origenContenido: z.enum(['empresa', 'editorial']).default('empresa'),
     imagen: z.string().optional(),
     imagenAlt: z.string().optional(),
     /* Párrafos separados por línea en blanco: los dos primeros van al hero */

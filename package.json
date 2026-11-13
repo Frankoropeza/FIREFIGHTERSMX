@@ -18,7 +18,9 @@
     "lint": "eslint . --ext .ts,.astro",
     "type-check": "astro check",
     "check-catalogo": "node scripts/verificar-catalogo.mjs dist",
-    "check-catalogo:estricto": "node scripts/verificar-catalogo.mjs dist --estricto"
+    "check-catalogo:estricto": "node scripts/verificar-catalogo.mjs dist --estricto",
+    "test:t1c-aqueon": "node --test scripts/test-aqueon-tier.mjs",
+    "test:t1c-aqueon:dist": "node --test scripts/test-aqueon-tier-dist.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^6.0.0",

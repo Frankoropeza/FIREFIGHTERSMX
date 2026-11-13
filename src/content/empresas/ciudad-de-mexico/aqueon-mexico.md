@@ -15,7 +15,7 @@ marcas: ["Elkhart Brass", "Akron Brass", "Task Force Tips", "Williams Fire", "An
 certificaciones: ["FM Approved", "UL Listed", "ATEX", "IECEx", "ISO 9001"]
 normas: ["NFPA 11", "NFPA 15", "NFPA 24", "NFPA 25", "NFPA 30", "NFPA 50", "NFPA 403", "NFPA 850", "NFPA 851", "NOM-002-STPS", "NOM-023-STPS", "FM Approved", "UL Listed", "ATEX/IECEx", "ISO 9001", "requisitos de PEMEX"]
 email: "contacto@aqueon.com.mx"
-sitioWeb: "https://monitorescontraincendios.com"
+sitioWeb: "https://monitorescontraincendios.com/"
 fundacion: 2009
 descripcion: |
   AQUEON México, razón social AQUEON Protección Industrial, concentra su perfil en monitores contra incendio de alto caudal para operaciones industriales. Registra cobertura en la República Mexicana y atención de lunes a viernes de 8:00 a 18:00. Sus sectores abarcan petróleo y gas, petroquímica, manufactura e industria, generación de energía, minería, aviación, cuerpos de bomberos y gobierno. Entre las aplicaciones enumeradas están refinerías, plantas petroquímicas, instalaciones de manufactura, centrales de generación, terminales de almacenamiento, puertos y parques industriales. La especialización es más acotada que la de un proveedor generalista: el eje de la ficha es el control de grandes volúmenes de agua y otros agentes mediante monitores fijos, portátiles o automáticos.
@@ -57,16 +57,19 @@ vip:
     - nombre: "Monitores fijos"
       subtitulo: "Equipos de alto caudal con opciones manuales y remotas."
       url: "https://monitorescontraincendios.com/monitores-fijos/"
+      pagina: "monitores-fijos"
       familias: ["MI-1500", "MG-4000", "MR-3000"]
       normas: "La selección puede involucrar NFPA 15, NFPA 24, FM Approved, UL Listed y los requisitos específicos del proyecto."
     - nombre: "Monitores portátiles"
       subtitulo: "Monitores móviles para aplicaciones que requieren despliegue flexible."
       url: "https://monitorescontraincendios.com/monitores-portatiles/"
+      pagina: "monitores-portatiles"
       familias: ["monitores portátiles"]
       normas: "La aplicación debe definirse por riesgo, caudal, presión, alimentación y condiciones de operación."
     - nombre: "Monitores automáticos"
       subtitulo: "Monitores automáticos e inteligentes con opciones de control remoto."
       url: "https://monitorescontraincendios.com/monitores-automaticos/"
+      pagina: "monitores-automaticos"
       familias: ["monitores automáticos", "monitores inteligentes", "control remoto"]
       normas: "El control y la integración deben revisarse con el proyecto, la red y los requisitos normativos aplicables."
     - nombre: "Boquillas y accesorios"
