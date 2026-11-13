@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build && node scripts/verificar-claims.mjs dist && node scripts/verificar-enlaces.mjs dist && node scripts/verificar-interlinking.mjs dist && node scripts/verificar-matriz-enlaces.mjs dist && node scripts/verificar-sitemap.mjs dist && node scripts/contar-enlaces-entrantes.mjs dist --prefijo /cobertura/ --min 3 && node scripts/contar-enlaces-entrantes.mjs dist --prefijo /empresas/ --min 3 && node scripts/contar-enlaces-entrantes.mjs dist --prefijo /estaciones/ --min 3 && node scripts/verificar-sin-iconos.mjs dist && node scripts/verificar-catalogo.mjs dist && node scripts/verificar-metas.mjs dist",
+    "build": "astro build && npm run test:heading-contrast && node scripts/verificar-claims.mjs dist && node scripts/verificar-enlaces.mjs dist && node scripts/verificar-interlinking.mjs dist && node scripts/verificar-matriz-enlaces.mjs dist && node scripts/verificar-sitemap.mjs dist && node scripts/contar-enlaces-entrantes.mjs dist --prefijo /cobertura/ --min 3 && node scripts/contar-enlaces-entrantes.mjs dist --prefijo /empresas/ --min 3 && node scripts/contar-enlaces-entrantes.mjs dist --prefijo /estaciones/ --min 3 && node scripts/verificar-sin-iconos.mjs dist && node scripts/verificar-catalogo.mjs dist && node scripts/verificar-metas.mjs dist",
     "postbuild": "node scripts/sitemap-check.mjs",
     "check-claims": "node scripts/verificar-claims.mjs dist",
     "check-enlaces": "node scripts/verificar-enlaces.mjs dist",
@@ -35,6 +35,7 @@
     "@tailwindcss/typography": "^0.5.20",
     "@types/node": "^22.5.0",
     "autoprefixer": "^10.4.21",
+    "parse5": "^7.3.0",
     "typescript": "^5.9.3"
   }
 }
