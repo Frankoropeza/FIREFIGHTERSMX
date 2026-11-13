@@ -59,7 +59,7 @@ const headingColor = (node) => {
   if (declared) return resolveColor(declared);
   const className = attribute(node, 'class');
   if (className.split(/\s+/).includes('text-white')) return [255, 255, 255];
-  return resolveColor(colorFromClass(className, 'text'));
+  return resolveColor(colorFromClass(className, 'text')) ?? resolveColor('var(--c-ink)');
 };
 
 const nearestBackground = (node) => {
@@ -126,7 +126,12 @@ test('la auditoría acepta títulos blancos sobre el fondo de acento', () => {
   assert.deepEqual(auditHtml(fixture), []);
 });
 
-test('todos los títulos con color explícito del sitio generado cumplen WCAG AA', () => {
+test('la auditoría detecta un CTA cuyo título hereda la tinta global', () => {
+  const fixture = '<section style="background:var(--c-accent)"><h2>Contraste insuficiente</h2></section>';
+  assert.equal(auditHtml(fixture).length, 1);
+});
+
+test('todos los títulos del sitio generado cumplen WCAG AA', () => {
   const files = htmlFiles(dist);
   assert.ok(files.length > 2500, `se esperaban más de 2500 páginas generadas; se encontraron ${files.length}`);
 
